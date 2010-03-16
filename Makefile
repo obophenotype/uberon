@@ -361,8 +361,8 @@ newterms-fma-cyc.obo:
 newterms-fma-gemina.obo:
 	obol -u onto_grep onto-3-way-align -r fma_downcase -r gemina_anatomy -r uberon -ont1 gemina_anatomy -ont2 fma -ont3 uberon > $@
 
-newterms-fma-birnlex.obo: birnlex_anatomy_s.obo
-	obol -u onto_grep onto-3-way-align -i $< -r fma2 -r uberon -ont1 birnlex_anatomy -ont2 fma -ont3 uberon > $@
+newterms-fma-nif.obo: 
+	obol -u onto_grep onto-3-way-align -r fma_downcase -r nif_downcase -i uberon_CL.obo -r uberon -ont1 birnlex_anatomy -ont2 fma -ont3 uberon > $@
 
 newterms-mouse-birnlex.obo: birnlex_anatomy_s.obo
 	obol -u onto_grep onto-3-way-align -i $< -r mouse_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
@@ -529,5 +529,6 @@ fma-mireot.obo: fma_xp.obo
 .PRECIOUS: fma-mireot.obo
 
 mappings-FMA-MA.cmp: mappings-FMA-MA.rdf
-	blip-findall -r uberon -r mouse_anatomy -r fma -i mappings-FMA-MA.rdf -u ontol_bridge_from_bp_mappings -index "metadata_db:entity_label(1,1)" "compare_mapping/4" -label > $@
+	blip-findall -r uberon -r mouse_anatomy -r fma -i mappings-FMA-MA.rdf -u metadata_mappings -table_pred "ontol_db:bf_parentRT/2" -index "metadata_db:entity_label(1,1)" "compare_mapping(uberon,bp,_,_,_,_,_)" -label > $@
+#	blip-findall -r uberon -r mouse_anatomy -r fma -i mappings-FMA-MA.rdf -u ontol_bridge_from_bp_mappings -index "metadata_db:entity_label(1,1)" "compare_mapping/4" -label > $@
 
