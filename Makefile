@@ -51,7 +51,7 @@ efo_anat.obo:
 	blip -r efo ontol-subset -query "subclassRT(ID,'EFO:0000635')" -to obo > $@.tmp && mv $@.tmp $@
 
 fma_xp-obol.obo:
-	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
+	obol -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
 
 fma_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
@@ -368,7 +368,7 @@ newterms-mouse-birnlex.obo: birnlex_anatomy_s.obo
 	obol -u onto_grep onto-3-way-align -i $< -r mouse_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
 
 newterms-xenopus-zebrafish.obo:
-	obol -u onto_grep onto-3-way-align -r xenopus_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -i uberon_CL -r xenopus_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
 
 newterms-zebrafish-mouse.obo:
 	obol -u onto_grep onto-3-way-align -r mouse_anatomy -r zebrafish_anatomy -r uberon -ont1 adult_mouse_anatomy.gxd -ont2 zebrafish_anatomy -ont3 uberon > $@
@@ -404,7 +404,7 @@ newterms-spider-fly.obo:
 	obol -u onto_grep onto-3-way-align -r fly_anatomy -r obo/spider_anatomy -r uberon -ont1 fly_anatomy.ontology -ont2 spider_anatomy -ont3 uberon > $@
 
 newterms-brenda-fma.obo:
-	obol -u onto_grep onto-3-way-align -r fma -r obo/brenda -r uberon -ont1 BrendaTissue545 -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r fma_downcase -r obo/brenda -r uberon -ont1 BrendaTissue545 -ont2 fma -ont3 uberon > $@
 
 newterms-ncit-fma.obo:
 	obol -u onto_grep onto-3-way-align -r fma -r ncit -r uberon -ont1 fma -ont2 'ncithesaurus:' -ont3 uberon > $@
@@ -415,6 +415,10 @@ newterms-ncit-emapa.obo:
 newterms-ncit-xao.obo:
 	obol -u onto_grep onto-3-way-align -r xenopus_anatomy -r ncit -r uberon -ont1 xenopus_anatomy -ont2 'ncithesaurus:' -ont3 uberon > $@
 
+# --
+# creation of classes based on xps in external ontologies
+# --
+
 uberon-xp-new-ma.pro:
 	blip -i adult_mouse_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
@@ -424,6 +428,9 @@ uberon-xp-new-fma.pro:
 #uberon-xp-new-ma.pro:
 #	blip -i adult_mouse_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
+# --
+# alignment of classes based on xps in external ontologies and in uberon
+# --
 uberon-xp-xref-ma.obo:
 	blip -i adult_mouse_xp.obo -i adult_mouse_xp_uberon.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
 
