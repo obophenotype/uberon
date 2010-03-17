@@ -269,7 +269,7 @@ uberon-dv2.txt: uberon.obo
 	 obo-promote-dbxref-to-relationship.pl --minimal --idspace CARO --relation is_a $*.obo > $@.tmp && mv $@.tmp $@
 
 %-cmt.obo: %.obo
-	obo-add-comments.pl animal_gross_anatomy/*/*.obo ../cell_type/cell.obo ../caro/caro.obo MIAA.obo animal_gross_anatomy/*/*/*.obo ~/cvs/fma-conversion/fma2/fma2.obo gemina_anatomy.obo birnlex_anatomy.obo NIF-GrossAnatomy.obo hao.obo HOG.obo efo_anat.obo $< > $@
+	obo-add-comments.pl -t xref -t intersection_of uberon_edit.obo animal_gross_anatomy/*/*.obo ../cell_type/cell.obo ../caro/caro.obo MIAA.obo animal_gross_anatomy/*/*/*.obo ~/cvs/fma-conversion/fma2/fma2.obo gemina_anatomy.obo birnlex_anatomy.obo NIF-GrossAnatomy.obo hao.obo HOG.obo efo_anat.obo $< > $@
 
 uberon_ext.pro:
 	blip -debug anatomy -r zebrafish_anatomy -r xenopus_anatomy -r uberon -u query_anatomy -i zfa-xao-aln.tbl findall extend_ontology/0 > $@
@@ -420,7 +420,10 @@ newterms-ncit-xao.obo:
 # --
 
 uberon-xp-new-ma.pro:
-	blip -i adult_mouse_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
+	blip -i mouse_anatomy_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
+
+uberon-xp-new-ma-u.pro:
+	blip -i mouse_anatomy_xp.obo -i mouse_anatomy_xp_uberon.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
 uberon-xp-new-fma.pro:
 	blip -i fma_xp.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
@@ -428,14 +431,22 @@ uberon-xp-new-fma.pro:
 uberon-xp-new-fma-u.pro:
 	blip -i fma_xp.obo -i fma_xp_uberon.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
+# use this:
+newxp-%-ontol_db.pro:
+	blip -r $* -i $*_xp.obo -i uberon_edit.obo -u query_anatomy findall "uberon_xp(Fact)" -select Fact -write_prolog > $@.tmp && sort -u $@.tmp > $@
+.PRECIOUS: newxp-%-ontol_db.pro
+
+newxp-%-ontol_db.obo: newxp-%-ontol_db.pro
+	blip -i $< -f ontol_db:pro io-convert -to obo -o $@
+
 #uberon-xp-new-ma.pro:
-#	blip -i adult_mouse_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
+#	blip -i mouse_anatomy_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
 # --
 # alignment of classes based on xps in external ontologies and in uberon
 # --
 uberon-xp-xref-ma.obo:
-	blip -i adult_mouse_xp.obo -i adult_mouse_xp_uberon.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
+	blip -i mouse_anatomy_xp.obo -i mouse_anatomy_xp_uberon.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
 
 uberon-xp-xref-fma.obo:
 	blip -i fma_xp.obo -i fma_xp_uberon.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
@@ -449,12 +460,7 @@ uberon-xp-xref-hog.obo:
 uberon-xp-xref-xao.obo:
 	blip -i xenopus_anatomy_xp.obo -r xenopus_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
 
-newxp-%-ontol_db.pro:
-	blip -r $* -i $*_xp.obo -i uberon_edit.obo -u query_anatomy findall "uberon_xp(Fact)" -select Fact -write_prolog > $@.tmp && sort -u $@.tmp > $@
-.PRECIOUS: newxp-%-ontol_db.pro
-
-newxp-%-ontol_db.obo: newxp-%-ontol_db.pro
-	blip -i $< -f ontol_db:pro io-convert -to obo -o $@
+#
 
 uberon-new-mp.obo:
 	blip -u query_anatomy -i uberon_edit.obo -r cell -r emap -r emapa -r mammalian_phenotype -r mammalian_phenotype_xp -r fma_downcase -r nif_downcase -r zebrafish_anatomy -r emapa -r mammalian_phenotype_xp_nif -r mouse_anatomy findall uberon_mpxp_write > $@

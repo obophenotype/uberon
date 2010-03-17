@@ -4,7 +4,6 @@ subsetdef: uberon_slim "Uberon slim"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
 default-namespace: uberon
-remark: cvs version $Revision: 1.201 $
 treat-xrefs-as-equivalent: CARO
 
 [Term]
@@ -22911,6 +22910,13 @@ intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0001637 ! artery
 relationship: part_of UBERON:0001637 ! artery
 xref: ncithesaurus:Artery_Endothelium ! Artery Endothelium
+
+[Term]
+id: UBERON:0004700
+name: arterial system endothelium
+xref: MA:0000703 ! arterial system endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0004572 ! part_of arterial system
 
 [Term]
 id: UBERON:0001918
@@ -58677,7 +58683,7 @@ is_a: UBERON:0002049 ! vasculature
 xref: MA:0002719 ! arterial system
 
 [Term]
-id: UBERON:0004572
+id: UBERON:0004573
 name: systemic artery
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:0004571 ! systemic arterial system
@@ -59589,6 +59595,78 @@ synonym: "bulbo-urethral gland secretion" EXACT [FMA:62968]
 xref: FMA:62968 ! secretion of bulbo-urethral gland
 xref: MA:0002524 ! bulbourethral gland secretion
 relationship: secreted_by UBERON:0002366 ! bulbo-urethral gland
+
+format-version: 1.2
+
+[Term]
+id: UBERON:0004692
+name: external naris epithelium
+xref: MA:0001321 ! external naris epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000003 ! part_of naris
+
+[Term]
+id: UBERON:0004693
+name: peyer's patch epithelium
+xref: MA:0000731 ! peyer's patch epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001211 ! part_of Peyer's patch
+
+[Term]
+id: UBERON:0004694
+name: harderian gland epithelium
+xref: MA:0001248 ! harderian gland epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0004187 ! part_of Harderian gland
+
+[Term]
+id: UBERON:0004695
+name: arterial system smooth muscle
+xref: MA:0000704 ! arterial system smooth muscle
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: part_of UBERON:0004572 ! part_of arterial system
+
+[Term]
+id: UBERON:0004696
+name: venous system smooth muscle
+xref: MA:0000715 ! venous system smooth muscle
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: part_of UBERON:0004582 ! part_of venous system
+
+[Term]
+id: UBERON:0004697
+name: peyer's patch germinal center
+xref: MA:0000734 ! peyer's patch germinal center
+intersection_of: UBERON:0001745 ! secondary nodular lymphoid tissue
+intersection_of: part_of UBERON:0001211 ! part_of Peyer's patch
+
+[Term]
+id: UBERON:0004698
+name: vena cava endothelium
+xref: MA:0000713 ! vena cava endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0004087 ! part_of vena cava
+
+[Term]
+id: UBERON:0004699
+name: outflow tract endothelium
+xref: MA:0000490 ! outflow tract endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0004145 ! part_of outflow tract
+
+[Term]
+id: UBERON:0004701
+name: venous system endothelium
+xref: MA:0000714 ! venous system endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0004582 ! part_of venous system
+
+[Term]
+id: UBERON:0004702
+name: respiratory system blood vessel endothelium
+xref: MA:0001805 ! respiratory system blood vessel endothelium
+intersection_of: UBERON:0004638 ! blood vessel endothelium
+intersection_of: part_of UBERON:0001004 ! part_of respiratory system
 
 [Typedef]
 id: adjacent_to
