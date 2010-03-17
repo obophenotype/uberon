@@ -425,6 +425,9 @@ uberon-xp-new-ma.pro:
 uberon-xp-new-fma.pro:
 	blip -i fma_xp.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
+uberon-xp-new-fma-u.pro:
+	blip -i fma_xp.obo -i fma_xp_uberon.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
+
 #uberon-xp-new-ma.pro:
 #	blip -i adult_mouse_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
