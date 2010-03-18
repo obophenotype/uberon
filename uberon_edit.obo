@@ -402,6 +402,7 @@ xref: FBbt:00004508 ! eye
 xref: HAO:0000217 ! compound eye
 is_a: UBERON:0000970 ! eye
 relationship: has_part UBERON:0000971 ! ommatidium
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 xref: BTO:0001921 ! compound eye
 
 [Term]
@@ -913,9 +914,10 @@ is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000966 ! retina
 xref: ncithesaurus:Macula ! Macula
 xref: BTO:0003015 ! macula lutea
+disjoint_from: UBERON:0000054 ! macula
 
 [Term]
-id: UBERON:0000054
+id: UBERON:0000054 ! macula
 name: macula
 def: "Patches of thickened, pseudostratified epithelium of the inner ear, consisting of regular arrays of sensory hair cells interspersed with supporting cells. Each patch has its own charcteristic shape and polarity pattern." [ZFIN:curator]
 subset: uberon_slim
@@ -2541,7 +2543,8 @@ synonym: "Doudenal mucosa" EXACT [FMA:14942]
 synonym: "Duodenal mucous membrane" EXACT [FMA:14942]
 xref: BTO:0000367
 xref: FMA:14942 ! Mucosa of duodenum
-is_a: UBERON:0000064 ! organ part
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002114 ! duodenum
 
 [Term]
 id: UBERON:0000322
@@ -2726,15 +2729,17 @@ id: UBERON:0000344
 name: mucosa
 alt_id: UBERON:BTO_0000886-FMA_85355
 def: "A lining of mostly endodermal origin, covered in epithelium, which is involved in absorption and secretion. They line various body cavities that are exposed to the external environment and internal organs. It is at several places continuous with skin: at the nostrils, the lips, the ears, the genital area, and the anus. The sticky, thick fluid secreted by the mucous membranes and gland is termed mucus. The term mucous membrane refers to where they are found in the body and not every mucous membrane secretes mucus[WP]" [Wikipedia:Mucous_membrane]
-comment: TODO - check - mucosa vs region of mucosa
+comment: TODO - check - mucosa vs region of mucosa. In FMA these are subtypes of Mucosa: Mucosa of {gallbladder, tongue, ...}. The following are subtypes of Region of mucosa: Mucosa of {zone of stomach, trachea, bronchus, dorsum of tongue...}. Depends on whether the covered area is an organ or organ component. Uberon does not regard organ vs organ component as crucial distinction and thus collapses these into a single class deliberately
 synonym: "mucosa of organ" EXACT [FMA:85355]
 synonym: "mucous membrane" EXACT [FMA:85355]
 synonym: "organ mucosa" EXACT [FMA:85355]
+synonym: "region of mucosa" RELATED [FMA:85358]
+is_a: UBERON:0000064 ! organ part
 xref: BTO:0000886
 xref: FMA:85355 ! Mucosa
-is_a: UBERON:0000064 ! organ part
 xref: ncithesaurus:Mucosa ! Mucosa
 xref: GAID:297 ! mucous membrane
+xref: FMA:85358 ! Region of mucosa
 xref: galen:Mucosa ! mucosa
 xref: OpenCyc:Mx4rvmKNOpwpEbGdrcN5Y29ycA ! mucous membrane
 
@@ -2851,6 +2856,7 @@ xref: EFO:0000295
 xref: FMA:83041 ! Blastocyst
 is_a: UBERON:0002050 ! embryonic structure
 relationship: has_part UBERON:0000087 ! inner cell mass
+relationship: only_in_taxon NCBITaxon:32525 ! Theria
 xref: OGEM:000006 ! blastula
 xref: OGES:000021 ! blastula
 xref: OGES:000016 ! blastula
@@ -4717,6 +4723,7 @@ xref: MAT:0000298 ! abdomen
 xref: MIAA:0000298 ! abdomen
 xref: OpenCyc:Mx4rvVjgyZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000475 ! organism subdivision
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: OpenCyc:Mx4rvVjgyZwpEbGdrcN5Y29ycA ! abdomen
 
 [Term]
@@ -5116,6 +5123,7 @@ xref: FBbt:00001761 ! imaginal disc
 xref: MAT:0000064 ! imaginal disc
 xref: MIAA:0000064 ! imaginal disc
 is_a: UBERON:0000481 ! multi-tissue structure
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: UBERON:0000941
@@ -5780,6 +5788,7 @@ xref: MA:0001331 ! sternum
 xref: OpenCyc:Mx4rvVjO6JwpEbGdrcN5Y29ycA
 is_a: UBERON:0001474 ! bone
 relationship: part_of UBERON:0000915 ! thorax
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: ncithesaurus:Sternum ! Sternum
 xref: EHDAA:9561 ! sternum
 xref: galen:Sternum ! sternum
@@ -6440,6 +6449,7 @@ xref: FBbt:00004970 ! cuticle
 xref: MAT:0000150 ! exoskeleton
 xref: OpenCyc:Mx4rvVkBTJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001002 ! cuticle
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 xref: EFO:0000944 ! exoskeleton
 xref: OpenCyc:Mx4rvVkBTJwpEbGdrcN5Y29ycA ! exoskeleton
 
@@ -6570,6 +6580,7 @@ xref: ncithesaurus:Trachea ! Trachea
 is_a: UBERON:0001005 ! respiratory airway
 relationship: part_of UBERON:0001558 ! lower respiratory tract
 relationship: part_of UBERON:0002224 ! thoracic cavity
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: EFO:0000935 ! trachea
 xref: OpenCyc:Mx4rvViOX5wpEbGdrcN5Y29ycA ! windpipe
 
@@ -6583,13 +6594,14 @@ synonym: "invertebrate trachea" EXACT SENSU []
 xref: FBbt:00005043 ! trachea
 is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0001005 ! trachea
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: UBERON:0001006
 name: spiracle
 alt_id: UBERON:FBbt_00005054-MIAA_0000208
 def: "The mostly slit-like opening on the body surface through which air is taken into the respiratory system." [ISBN:3110148986, Wikipedia:Spiracle]
-comment: This class was created automatically from a combination of ontologies. In elasmobranchs (sharks and rays), a spiracle is found behind each eye, and is often used to pump water through the gills while the animal is at rest (Fouts, 2003). A spiracle is also found in primitive bony fishes as the chirrups.
+comment: This class was created automatically from a combination of ontologies. In elasmobranchs (sharks and rays), a spiracle is found behind each eye, and is often used to pump water through the gills while the animal is at rest (Fouts, 2003). A spiracle is also found in primitive bony fishes as the chirrups. TODO - check GO:0035277-spiracle morphogenesis, open tracheal system - taxon constraint in GO
 subset: uberon_slim
 synonym: "spiracular gland" RELATED []
 xref: FBbt:00005054 ! spiracle
@@ -6891,16 +6903,19 @@ relationship: part_of UBERON:0001013 ! adipose tissue
 id: UBERON:0003917
 name: arthropod fat body
 def: "an insect gland dorsal to the insect gut, with a function analogous to that of the vertebrate liver. It is a storage organ for fats, glycogen and protein and is a major site of intermediary metabolism." [GO:0007503]
+synonym: "fat body" EXACT SENSU [FBbt:00005066]
 xref: FBbt:00005066 ! fat body
 xref: GAID:1213 ! fat body
 xref: MIAA:0000096 ! fat body
 is_a: UBERON:0000062 ! organ
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: UBERON:0001014
 name: fat body
 alt_id: UBERON:FBbt_00005066-FMA_58616-MA_0002481-MIAA_0000096-XAO_0003050
 is_obsolete: true
+consider: UBERON:0003917 ! arthropod fat body
 synonym: "fat pad" EXACT []
 def: "the encapsulated adipose tissue." [MP:0005334]
 
@@ -6947,6 +6962,7 @@ disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 relationship: develops_from UBERON:0000924 ! ectoderm
+relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
 xref: ncithesaurus:Nervous_System ! Nervous System
 xref: BTO:0001484 ! nervous system
 xref: OpenCyc:Mx4rvViT_pwpEbGdrcN5Y29ycA ! nervous system
@@ -8461,6 +8477,7 @@ is_a: UBERON:0003913 ! tooth-like structure
 relationship: develops_from UBERON:0001048 ! primordium
 relationship: has_part UBERON:0001751 ! dentine
 relationship: has_part UBERON:0001752 ! enamel
+relationship: never_in_taxon NCBITaxon:8782 ! Aves
 xref: ncithesaurus:Tooth ! Tooth
 xref: OpenCyc:Mx4rvVjUEZwpEbGdrcN5Y29ycA ! tooth
 
@@ -8517,6 +8534,7 @@ xref: MA:0001422 ! cervical vertebra 2
 xref: EHDAA:10608 ! axis
 xref: FMA:12520 ! Axis
 xref: GAID:237 ! axis
+xref: ZFA:0000092 ! axis
 is_a: UBERON:0002413 ! cervical vertebra
 xref: ncithesaurus:Axis ! Axis
 xref: OpenCyc:Mx4rv-zaJJwpEbGdrcN5Y29ycA ! second cervical vertebra
@@ -14209,6 +14227,7 @@ id: UBERON:0004288
 name: skeleton
 def: "all the bones in the body. With the articular system, this comprises the skeletal system." [Wikipedia:Skeleton]
 subset: uberon_slim
+comment: The skeleton is the bony framework of the body in vertebrates (endoskeleton) or the hard outer envelope of insects (exoskeleton or dermoskeleton) GO:0001501
 synonym: "set of all bones" EXACT []
 synonym: "set of bones of body" EXACT []
 xref: EFO:0000806 ! skeleton
@@ -14228,6 +14247,7 @@ id: UBERON:0001434
 name: skeletal system
 alt_id: UBERON:FMA_23875-FMA_23881-MA_0000018-MIAA_0000032-XAO_0003060-ZFA_0000434
 def: "Organ system subdivision which consists of the skeleton and the articular system." [AAO:0000566, Wikipedia:Skeleton]
+comment: The skeleton is the bony framework of the body in vertebrates (endoskeleton) or the hard outer envelope of insects (exoskeleton or dermoskeleton) GO:0001501
 subset: uberon_slim
 synonym: "skeletal system" EXACT []
 synonym: "skeleton system" EXACT []
@@ -18492,13 +18512,14 @@ xref: ncithesaurus:Trigeminal_Ganglion ! Trigeminal Ganglion
 id: UBERON:0001676
 name: occipital bone
 alt_id: UBERON:FMA_52735-MA_0001468
-def: "." [Wikipedia:Occipital_bone]
+def: ", a saucer-shaped membrane bone situated at the back and lower part of the cranium, is trapezoid in shape and curved on itself. It is pierced by a large oval aperture, the foramen magnum, through which the cranial cavity communicates with the vertebral canal." [Wikipedia:Occipital_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:52735 ! Occipital bone
 xref: GAID:227 ! occipital bone
 xref: MA:0001468 ! occipital bone
 is_a: UBERON:0001474 ! bone
+relationship: part_of UBERON:0003128 ! cranium
 xref: ncithesaurus:Occipital_Bone ! Occipital Bone
 xref: OpenCyc:Mx4rwQtsiZwpEbGdrcN5Y29ycA ! occipital bone
 
@@ -18506,7 +18527,7 @@ xref: OpenCyc:Mx4rwQtsiZwpEbGdrcN5Y29ycA ! occipital bone
 id: UBERON:0001677
 name: sphenoid bone
 alt_id: UBERON:FMA_52736-MA_0001472
-def: "." [Wikipedia:Sphenoid_bone]
+def: "an unpaired bone  situated at the base of the skull in front of the temporal bone and basilar part of the occipital bone. The sphenoid bone is one of the seven bones that articulate to form the orbit. Its shape somewhat resembles that of a butterfly  or bat with its wings extended." [Wikipedia:Sphenoid_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "sphenoid" EXACT []
@@ -18515,6 +18536,7 @@ xref: FMA:52736 ! Sphenoid bone
 xref: GAID:230 ! sphenoid bone
 xref: MA:0001472 ! sphenoid bone
 is_a: UBERON:0001474 ! bone
+relationship: part_of UBERON:0003128 ! cranium
 xref: ncithesaurus:Sphenoid_Bone ! Sphenoid Bone
 xref: OpenCyc:Mx4rwAU9XpwpEbGdrcN5Y29ycA ! sphenoid
 
@@ -18522,8 +18544,8 @@ xref: OpenCyc:Mx4rwAU9XpwpEbGdrcN5Y29ycA ! sphenoid
 id: UBERON:0001678
 name: temporal bone
 alt_id: UBERON:FMA_52737-MA_0001476
-def: "." [Wikipedia:Temporal_bone]
-comment: This class was created automatically from a combination of ontologies
+def: "The temporal bones are situated at the sides and base of the skull, and lateral to the temporal lobes of the cerebrum." [Wikipedia:Temporal_bone]
+comment: The temporal bone consists of four parts:    * Squama temporalis    * Mastoid portion    * Petrous portion (Petrosal ridge)    * Tympanic part
 subset: uberon_slim
 xref: EHDAA:6035 ! temporal bone
 xref: FMA:52737 ! Temporal bone
@@ -18532,6 +18554,7 @@ xref: HOG:0000800 ! temporal bone
 xref: MA:0001476 ! temporal bone
 xref: OpenCyc:Mx4rvbkAk5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001474 ! bone
+relationship: part_of UBERON:0003128 ! cranium
 xref: ncithesaurus:Temporal_Bone ! Temporal Bone
 xref: OpenCyc:Mx4rvbkAk5wpEbGdrcN5Y29ycA ! temporal bone
 
@@ -18539,8 +18562,8 @@ xref: OpenCyc:Mx4rvbkAk5wpEbGdrcN5Y29ycA ! temporal bone
 id: UBERON:0001679
 name: ethmoid
 alt_id: UBERON:FMA_52740-MA_0001483-ZFA_0000323
-def: "Median unpaired cartilage bone that ossifies as a perichondral lamellae ensheathing the nasal septum anterodorsally and laterally (Harrington, 1955). In adult D. rerio, the center of the mesethmoid remains cartilaginous (Cubbage & Mabee, 1996). The mesethmoid meets the supraethmoid dorsally, the lateral ethmoids posterolaterally, and the vomer and parasphenoid ventrally in synostoses. Anterolaterally the mesthmoid meets the preethmoids in synchondroses." [Wikipedia:Ethmoid, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "a bone in the skull  that separates the nasal cavity from the brain. As such, it is located at the roof of the nose, between the two orbits. The cubical bone is lightweight due to a spongy  construction. The ethmoid bone is one of the bones that makes up the orbit of the eye[WP]. Median unpaired cartilage bone that ossifies as a perichondral lamellae ensheathing the nasal septum anterodorsally and laterally (Harrington, 1955). In adult D. rerio, the center of the mesethmoid remains cartilaginous (Cubbage & Mabee, 1996). The mesethmoid meets the supraethmoid dorsally, the lateral ethmoids posterolaterally, and the vomer and parasphenoid ventrally in synostoses. Anterolaterally the mesthmoid meets the preethmoids in synchondroses[ZFA]." [Wikipedia:Ethmoid, ZFIN:curator]
+comment: TODO - check mesethmoid
 subset: uberon_slim
 synonym: "ethmoid bone" EXACT []
 synonym: "ethmoidal bone" EXACT []
@@ -18561,14 +18584,14 @@ xref: OpenCyc:Mx4rvuUPh5wpEbGdrcN5Y29ycA ! ethmoid
 id: UBERON:0001680
 name: lacrimal bone
 alt_id: UBERON:FMA_52741-MA_0001486
-def: "." [Wikipedia:Lacrimal_bone]
-comment: This class was created automatically from a combination of ontologies
+def: "the smallest and most fragile bone of the face, is situated at the front part of the medial wall of the orbit. It has two surfaces and four borders. In early lobe-finned fishes and ancestral tetrapods, the lacrimal bone is a relatively large and robust bone, running from the orbit to the nostrils. It forms part of the side of the face, between the nasal bones and the maxilla. In primitive forms, it is often accompanied by a much smaller septomaxilla  bone, lying immediately behind the nasal opening, but this is lost in most modern species. The lacrimal bone is often smaller in living vertebrates, and is no longer always directly associated with the nasal opening, although it retains its connection with the orbit. The bone is entirely absent in living amphibians, as well as some reptilian species." [Wikipedia:Lacrimal_bone]
+comment: Consider also ZFA:0000223 infraorbital 1 TODO CHECK seems dubious...
 subset: uberon_slim
-synonym: "lacrymal bone" RELATED []
+synonym: "lacrymal bone" EXACT []
 xref: FMA:52741 ! Lacrimal bone
 xref: HOG:0001149 ! lacrimal bone
 xref: MA:0001486 ! lacrimal bone
-is_a: UBERON:0000062 ! organ
+is_a: UBERON:0001474 ! bone
 relationship: part_of UBERON:0001704 ! viscerocranium
 xref: ncithesaurus:Lacrimal_Bone ! Lacrimal Bone
 
@@ -18852,21 +18875,23 @@ is_a: UBERON:0001474 ! bone
 def: "the thin, platelike part of the temporal bone." [MP:0004423]
 
 [Term]
-id: UBERON:0001697
+id: UBERON:0001697 ! orbit
 name: orbit
 alt_id: UBERON:FMA_53074-MA_0002482
-def: "." [Wikipedia:Orbit_(anatomy)]
+def: "the orbital bone is the cavity or socket of the skull in which the eye  and its appendages  are situated." [Wikipedia:Orbit_(anatomy)]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "orbit of skull" EXACT []
 xref: AAO:0000343 ! orbit
 xref: FMA:53074 ! Orbit
 xref: GAID:223 ! orbit
-xref: HAO:0000672 ! orbit
 xref: MA:0002482 ! orbit
 xref: ncithesaurus:Orbit
 xref: OpenCyc:Mx4rvW8EgZwpEbGdrcN5Y29ycA
+xref: XAO:0003171 ! orbital region
+xref: ZFA:0001410 ! orbital region
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0003128 ! cranium
 relationship: part_of UBERON:0001456 ! face
 xref: galen:Orbit ! orbit
 
@@ -18966,7 +18991,6 @@ synonym: "cranial skeleton" RELATED []
 synonym: "craniofacial bone" RELATED []
 synonym: "epicranial plate" RELATED []
 synonym: "skeletal system of head" RELATED []
-xref: EFO:0000831 ! cranium
 xref: FMA:46565 ! Skull
 is_a: UBERON:0000032 ! cranial structure
 relationship: has_part UBERON:0001684 ! mandible
@@ -21108,6 +21132,7 @@ xref: FMA:59328 ! Orbital septum
 xref: MA:0001259 ! orbital septum
 is_a: UBERON:0003037 ! septum
 relationship: part_of UBERON:0002204 ! musculoskeletal system
+relationship: surrounds UBERON:0001697 ! orbit
 
 [Term]
 id: UBERON:0001823
@@ -22479,15 +22504,25 @@ xref: ncithesaurus:Medulla_Oblongata ! Medulla Oblongata
 xref: OpenCyc:Mx4rwCqnXJwpEbGdrcN5Y29ycA ! medulla oblongata
 
 [Term]
+id: UBERON:0004703
+name: dorsal thalamus
+comment: MA and ZFA think there is a distinct dorsal thalamus, but FMA says its an exact synonym. TODO. http://www.ncbi.nlm.nih.gov/pubmed/8167659
+synonym: "dorsal thalamus" RELATED [FMA:62007]
+synonym: "thalamus, pars dorsalis" EXACT [ZFA:0000653 ]
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001897 ! thalamus
+xref: ZFA:0000653 ! dorsal thalamus
+xref: MA:0000180 ! dorsal thalamus
+
+[Term]
 id: UBERON:0001897
 name: thalamus
 alt_id: UBERON:FMA_62007-MA_0000179-MIAA_0000109-ZFA_0001215
-def: "." [Wikipedia:Thalamus]
-comment: This class was created automatically from a combination of ontologies
+def: "A midline paired symmetrical structure within the brains of vertebrates, including humans. It is situated between the cerebral cortex and midbrain, both in terms of location and neurological connections. Its function includes relaying sensation, special sense and motor signals to the cerebral cortex, along with the regulation of consciousness, sleep and alertness. The thalamus surrounds the third ventricle. It is the main product of the embryonic diencephalon." [Wikipedia:Thalamus]
+comment: MA and ZFA think there is a distinct dorsal thalamus, but FMA says its an exact synonym
 subset: uberon_slim
-synonym: "dorsal thalamus" EXACT []
-synonym: "dorsal thalamus (anthoney)" EXACT []
-synonym: "future thalamus" BROAD []
+synonym: "dorsal thalamus" RELATED [FMA:62007]
+synonym: "dorsal thalamus (anthoney)" EXACT [FMA:62007]
 xref: BTO:0001365
 xref: EFO:0000910 ! thalamus
 xref: FMA:62007 ! Thalamus
@@ -22806,6 +22841,7 @@ xref: ncithesaurus:Mammary_Gland
 xref: OpenCyc:Mx4rvVjVq5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002530 ! gland
 relationship: part_of UBERON:0000477 ! anatomical cluster
+relationship: only_in_taxon NCBITaxon:40674 ! Mammalia
 xref: OpenCyc:Mx4rvVjVq5wpEbGdrcN5Y29ycA ! mammary gland
 
 [Term]
@@ -24310,6 +24346,7 @@ xref: MAT:0000279 ! placenta
 xref: MIAA:0000279 ! placenta
 is_a: UBERON:0000478 ! extraembryonic structure
 relationship: part_of UBERON:0000990 ! reproductive system
+relationship: only_in_taxon NCBITaxon:32525 ! Theria
 xref: ncithesaurus:Placenta ! Placenta
 xref: EFO:0001407 ! placenta
 xref: OpenCyc:Mx4rvv4zZ5wpEbGdrcN5Y29ycA ! placenta
@@ -24926,6 +24963,7 @@ is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 relationship: part_of UBERON:0002420 ! basal ganglia
 xref: ncithesaurus:Claustrum ! Claustrum
+disjoint_from: ZFA:0001592 ! claustrum bone
 
 [Term]
 id: UBERON:0002024
@@ -27896,7 +27934,7 @@ id: UBERON:0003893 ! capsule
 name: capsule
 xref: FMA:85272 ! Capsule 
 def: "a cover or envelope partly or wholly surrounding a structure. Examples: egg shell, articular capsules, renal capsules[WP]." [Wikipedia:Capsule_(anatomy)]
-comment: see also: protective structure surrounding some species of bacteria and fungi.
+comment: see also: protective structure surrounding some species of bacteria and fungi. Note that FMA has classes such as Articular capsule that are not subtypes of Capsule (which is undefined in FMA)
 is_a: UBERON:0000158 ! membranous layer
 xref: GO:0042603 ! capsule
 xref: EHDAA:4739 ! capsule
@@ -28356,7 +28394,7 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0002221
 name: fontanelle
 alt_id: UBERON:FMA_75438-MA_0001465
-def: "." [Wikipedia:Fontanelle]
+def: "Anatomical structure that is a membranous gap between bones of the skull[TAO]. In humans: Fontanelles are soft spots on a baby's head which, during birth, enable the bony plates of the skull to flex, allowing the child's head to pass through the birth canal. The ossification  of the bones of the skull cause the fontanelles to close over by a child's second birthday. The closures eventually form the sutures of the neurocranium. Although there are the two anterior and posterior fontanelles, there are two more fontanelles of interest, the mastoid fontanelle, and the sphenoidal fontanelle[WP]." [Wikipedia:Fontanelle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "fontanel" EXACT []
@@ -28364,7 +28402,8 @@ xref: FMA:75438 ! Fontanelle
 xref: MA:0001465 ! fontanel
 xref: TAO:0001738 ! fontanel
 is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000033 ! head
+relationship: part_of UBERON:0002241 ! chondrocranium
+relationship: adjacent_to UBERON:0000969 ! suture
 xref: ncithesaurus:Fontanelle ! Fontanelle
 
 [Term]
@@ -29208,6 +29247,7 @@ xref: TAO:0001621 ! otolith
 xref: ZFA:0001617 ! otolith
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of UBERON:0001846 ! internal ear
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: ncithesaurus:Otolith ! Otolith
 
 [Term]
@@ -30394,8 +30434,8 @@ xref: OpenCyc:Mx4rvdZIBpwpEbGdrcN5Y29ycA ! dorsal vertebra
 id: UBERON:0002348
 name: epicardium
 alt_id: UBERON:FMA_9461-XAO_0000316-ZFA_0005057
-def: "Region of visceral serous pericardium which has as its part, the mesothelium, subepicardial layer of epicardium and the fibroelastic connective tissue that is attached to the myocardium and is continuous with the parietal serous pericardium. // External layer of the heart." [Wikipedia:Epicardium, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "Region of visceral serous pericardium which has as its part, the mesothelium, subepicardial layer of epicardium and the fibroelastic connective tissue that is attached to the myocardium and is continuous with the parietal serous pericardium[FMA]. External layer of the heart[ZFA]." [Wikipedia:Epicardium, ZFIN:curator]
+comment: TODO - check links with UBERON:0002425 visceral serous pericardium
 subset: uberon_slim
 synonym: "heart epicardium" EXACT []
 synonym: "visceral serous pericardium of heart" EXACT []
@@ -30407,8 +30447,26 @@ xref: ZFA:0005057 ! epicardium
 is_a: UBERON:0000064 ! organ part
 relationship: develops_from UBERON:0001048 ! primordium
 relationship: part_of UBERON:0000948 ! heart
+relationship: part_of UBERON:0002425 ! visceral serous pericardium
 xref: ncithesaurus:Epicardium ! Epicardium
 xref: HOG:0000119 ! heart epicardium
+
+[Term]
+id: UBERON:0002425
+name: visceral serous pericardium
+alt_id: UBERON:MA_0000484-FMA_84882
+def: "Visceral serous membrane which is continuous with the parietal serous pericardium and is attached to the myocardium[FMA]." [Wikipedia:Visceral_pericardium]
+subset: uberon_slim
+synonym: "epicardium" RELATED [MA:0000484]
+synonym: "visceral lamina of serous pericardium" EXACT []
+synonym: "visceral layer of serous pericardium" EXACT []
+synonym: "visceral pericardium" EXACT []
+xref: FMA:84882 ! Visceral serous pericardium
+xref: HOG:0000538 ! visceral pericardium
+xref: MA:0000484 ! visceral serous pericardium
+is_a: UBERON:0002357 ! serous pericardium
+relationship: attached_to UBERON:0002349 ! myocardium
+xref: synonym:epicardium ! visceral pericardium
 
 [Term]
 id: UBERON:0001133
@@ -32117,23 +32175,6 @@ relationship: part_of UBERON:0000166 ! oral opening
 xref: BTO:0001775 ! oral epithelium
 
 [Term]
-id: UBERON:0002425
-name: visceral serous pericardium
-alt_id: UBERON:MA_0000484-FMA_84882
-def: "." [Wikipedia:Visceral_pericardium]
-subset: uberon_slim
-synonym: "epicardium" RELATED [MA:0000484]
-synonym: "visceral lamina of serous pericardium" EXACT []
-synonym: "visceral layer of serous pericardium" EXACT []
-synonym: "visceral pericardium" EXACT []
-xref: FMA:84882 ! Visceral serous pericardium
-xref: HOG:0000538 ! visceral pericardium
-xref: MA:0000484 ! visceral serous pericardium
-is_a: UBERON:0002357 ! serous pericardium
-relationship: attached_to UBERON:0002349 ! myocardium
-xref: synonym:epicardium ! visceral pericardium
-
-[Term]
 id: UBERON:0002426
 name: chest muscle
 alt_id: UBERON:MA_0000548-FMA_9619
@@ -33462,7 +33503,8 @@ relationship: part_of UBERON:0001438 ! metaphysis
 id: UBERON:0002517
 name: basicranium
 alt_id: UBERON:MA_0002840-FMA_52801
-def: "." [Wikipedia:Base_of_skull]
+def: "The base of skull is the most inferior  area of the skull, composed of the endocranium  and lower parts of the skull roof." [Wikipedia:Base_of_skull]
+comment: # Ethmoid bone # Sphenoid bone # Occipital bone # Frontal bone # Parietal bone # Temporal bone
 subset: uberon_slim
 synonym: "base of skull" EXACT []
 synonym: "cranial base" RELATED [MA:0002840]
@@ -33470,7 +33512,7 @@ xref: FMA:52801 ! Basicranium
 xref: MA:0002840 ! basicranium
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000032 ! cranial structure
-relationship: systemic_part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0001703 ! neurocranium
 
 [Term]
 id: UBERON:0002518
@@ -40981,6 +41023,7 @@ subset: uberon_slim
 synonym: "nematode cuticle" RELATED []
 xref: WBbt:0005755 ! cuticle
 is_a: UBERON:0001002 ! cuticle
+relationship: only_in_taxon NCBITaxon:6231 ! Nematoda
 
 [Term]
 id: UBERON:0003050
@@ -42176,6 +42219,7 @@ xref: TAO:0001227 ! mandibular arch
 xref: ZFA:0001227 ! mandibular arch skeleton
 is_a: UBERON:0002539 ! pharyngeal arch
 relationship: part_of UBERON:0001704 ! viscerocranium
+relationship: only_in_taxon NCBITaxon:7776 ! Gnathostomata
 xref: ncithesaurus:Jaw ! Jaw
 xref: BTO:0001749 ! jaw
 xref: OpenCyc:Mx4rvVjjEZwpEbGdrcN5Y29ycA ! jaw
@@ -47551,6 +47595,8 @@ synonym: "lower extremity bone organ" EXACT [OBOL:automatic]
 id: UBERON:0003465
 name: chondrocranium bone
 xref: MA:0001478 ! chondrocranium bone
+xref: ZFA:0001544 ! obsolete
+comment: ZFA class made obsolete
 intersection_of: UBERON:0001474 ! bone
 intersection_of: part_of UBERON:0002241 ! chondrocranium
 synonym: "bone of chondrocranium" EXACT [OBOL:automatic]
@@ -50931,6 +50977,7 @@ def: "an epithelial and lymphoid organ that develops as a dorsal diverticulum of
 is_a: UBERON:0000062 ! organ
 relationship: site_of GO:0030183 ! B cell differentiation
 relationship: has_part UBERON:0003904 ! bursal plica
+relationship: only_in_taxon NCBITaxon:8457 ! Sauropsida
 xref: GAID:1205 ! bursa of fabricius
 xref: BTO:0001699 ! bursa of Fabricius
 
@@ -51475,10 +51522,11 @@ def: "any of the rapidly adapting mechanoreceptors found in subcutaneous tissue 
 [Term]
 id: UBERON:0003720
 name: anterior cranial fossa
+def: "The floor of the anterior fossa is formed by the orbital plates of the frontal, the cribriform plate of the ethmoid, and the small wings and front part of the body of the sphenoid; it is limited behind by the posterior borders of the small wings of the sphenoid and by the anterior margin of the chiasmatic groove. The lesser wings of the sphenoid separate the anterior and middle fossae." [Wikipedia:Anterior_cranial_fossa]
 xref: FMA:9682 ! Anterior cranial fossa
 xref: GAID:83 ! anterior cranial fossa
-is_a: UBERON:0002553 ! anatomical cavity
-relationship: part_of UBERON:0000033 ! head
+is_a: UBERON:0004704 ! bone fossa
+relationship: part_of UBERON:0003128 ! cranium
 xref: ncithesaurus:Anterior_Fossa ! Anterior Cranial Fossa
 
 [Term]
@@ -51494,9 +51542,26 @@ id: UBERON:0003722
 name: middle cranial fossa
 xref: FMA:54369 ! Middle cranial fossa
 xref: GAID:84 ! middle cranial fossa
-is_a: UBERON:0002553 ! anatomical cavity
-relationship: part_of UBERON:0000033 ! head
+is_a: UBERON:0004704 ! bone fossa
+relationship: part_of UBERON:0003128 ! cranium
 xref: ncithesaurus:Middle_Fossa ! Middle Cranial Fossa
+
+[Term]
+id: UBERON:0004704 ! bone fossa
+name: bone fossa
+def: "a depression or hollow in a bone[WP]." [Wikipedia:Fossa#Anatomy]
+synonym: "fossa" EXACT []
+xref: FMA:45791 ! Fossa
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0001474 ! bone
+
+[Term]
+id: UBERON:0004705 ! fenestra
+name: fenestra
+def: "an opening in the skull or other bones[WP]." [Wikipedia:Fenestra]
+synonym: "fossa" EXACT []
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0001474 ! bone
 
 [Term]
 id: UBERON:0003723
@@ -52918,8 +52983,8 @@ xref: MA:0002948 ! pelvis ligament
 [Term]
 id: UBERON:0003995
 name: subarcuate fossa
-def: "the irregular depression found on the posterior inner surface of the petrous portion of the temporal bone just below its crest and above and lateral to the internal acoustic meatus" [MP:0009822]
-is_a: UBERON:0000061 ! anatomical structure
+def: "the irregular depression found on the posterior inner surface of the petrous portion of the temporal bone just below its crest and above and lateral to the internal acoustic meatus[MP]. In the temporal bone, above and between the aquæductus vestibuli  is an irregular depression which lodges a process of the dura mater and transmits a small vein and the subarcuate artery[1]  a branch of the internal auditory artery, which is an end artery that supplies blood to the inner ear ; in the infant this depression is represented by a large fossa, the subarcuate fossa, which extends backward as a blind tunnel under the superior semicircular canal. It is extensive in most primates (except for great apes) and nearly all mammals. In these animals, the subarcuate fossa houses a part of the cerebellum, the petrosal lobe[WP]." [MP:0009822]
+is_a: UBERON:0004704 ! bone fossa
 relationship: part_of UBERON:0001678 ! temporal bone
 xref: FMA:56418 ! subarcuate fossa
 
@@ -59230,17 +59295,6 @@ xref: FMA:13305 ! Diaphysis of humerus
 xref: MA:0002807 ! humerus diaphysis
 
 [Term]
-id: UBERON:0004653
-name: zygomatic process of temporal bone
-is_a: UBERON:0004529 ! anatomical projection
-relationship: part_of UBERON:0001678 ! temporal bone
-relationship: part_of UBERON:0002500 ! zygomatic arch
-synonym: "Processus zygomaticus" EXACT [FMA:52886]
-synonym: "Temporal zygomatic process" EXACT [FMA:52886]
-xref: FMA:52886 ! Zygomatic process of temporal bone
-xref: MA:0002811 ! temporal bone zygomatic process
-
-[Term]
 id: UBERON:0004654
 name: temporal process of zygomatic bone
 def: "The temporal process of the zygomatic bone, directed backward and medialward, is concave, presenting medially a rough, triangular area, for articulation with the maxilla, and laterally a smooth, concave surface, the upper part of which forms the anterior boundary of the temporal fossa, the lower a part of the infratemporal fossa. Near the center of this surface is the zygomaticotemporal foramen for the transmission of the zygomaticotemporal nerve." [Wikipedia:Temporal_process_of_the_zygomatic_bone]
@@ -59254,6 +59308,7 @@ xref: MA:0002812 ! zygomatic bone temporal process
 
 [Term]
 id: UBERON:0004655
+alt_id: UBERON:0004653
 name: zygomatic process of temporal bone
 def: "The zygomatic process of the temporal bone is a long, arched process projecting from the lower part of the squamous portion of the temporal bone. It articulates with the zygomatic bone. This process is at first directed lateralward, its two surfaces looking upward and downward; it then appears as if twisted inward upon itself, and runs forward, its surfaces now looking medialward and lateralward." [Wikipedia:Zygomatic_process_of_temporal_bone]
 is_a: UBERON:0004529 ! anatomical projection
@@ -59268,7 +59323,7 @@ xref: MA:0002811 ! temporal bone zygomatic process
 [Term]
 id: UBERON:0004657
 name: mandible condylar process
-def: "The posterior process on the ramus of the mandible composed of two parts: a superior part, the articular portion, and an inferior part, the condylar neck." [BTO:0001750]
+def: "The posterior process on the ramus of the mandible composed of two parts: a superior part, the articular portion, and an inferior part, the condylar neck." [BTO:0001750, Wikipedia:Mandibular_condyle]
 is_a: UBERON:0004529 ! anatomical projection
 relationship: part_of UBERON:0001684 ! mandible
 synonym: "mandibular condyloid process" RELATED [MA:0002816]
@@ -59994,3 +60049,10 @@ name: proximal_to
 id: distal_to
 name: distal_to
 
+[Typedef]
+id: never_in_taxon
+name: never_in_taxon
+
+[Typedef]
+id: only_in_taxon
+name: only_in_taxon

@@ -51,7 +51,7 @@ efo_anat.obo:
 	blip -r efo ontol-subset -query "subclassRT(ID,'EFO:0000635')" -to obo > $@.tmp && mv $@.tmp $@
 
 fma_xp-obol.obo:
-	obol -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
+	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
 
 fma_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
@@ -546,5 +546,15 @@ fma-mireot.obo: fma_xp.obo
 
 mappings-FMA-MA.cmp: mappings-FMA-MA.rdf
 	blip-findall -r uberon -r mouse_anatomy -r fma -i mappings-FMA-MA.rdf -u metadata_mappings -table_pred "ontol_db:bf_parentRT/2" -index "metadata_db:entity_label(1,1)" "compare_mapping(uberon,bp,_,_,_,_,_)" -label > $@
-#	blip-findall -r uberon -r mouse_anatomy -r fma -i mappings-FMA-MA.rdf -u ontol_bridge_from_bp_mappings -index "metadata_db:entity_label(1,1)" "compare_mapping/4" -label > $@
 
+mappings-ZFA-MA.cmp: mappings-ZFA-MA.rdf
+	blip-findall -r uberon -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA.rdf -u metadata_mappings -table_pred "ontol_db:bf_parentRT/2" -index "metadata_db:entity_label(1,1)" "compare_mapping(uberon,bp,_,_,_,_,_)" -label > $@
+
+
+uberon2tax-ontol_db.pro:
+	blip-findall -r uberon -r gotax -r goxp/biological_process_xp_uber_anatomy "restriction(X,only_in_taxon,T),differentium(X,_,U),id_idspace(U,'UBERON'),entity_label(U,_)" -select "restriction(U,only_in_taxon,T)"  -write_prolog > $@
+
+# e.g. fma_xp-obol-gd-mismatch.txt
+#      some of these will due to single inheritance dogma in FMA. e.g Bile duct
+%-gd-mismatch.txt: %.obo
+	blip-findall -r fma -i $< "genus(X,G),\+subclassRT(X,G),subclass(X,Y)" -select "mm(X,G,Y)" -label
