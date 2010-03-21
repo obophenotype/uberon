@@ -558,3 +558,13 @@ uberon2tax-ontol_db.pro:
 #      some of these will due to single inheritance dogma in FMA. e.g Bile duct
 %-gd-mismatch.txt: %.obo
 	blip-findall -r fma -i $< "genus(X,G),\+subclassRT(X,G),subclass(X,Y)" -select "mm(X,G,Y)" -label
+
+dbpedia.pro:
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@
+
+dbpedia_all.pro: dbpedia.pro
+	blip-findall -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" > $@
+
+# then do obo-add-defs.pl defs.txt uberon_edit.obo
+defs.txt:
+	blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "class_newdef(C,D)" | cut -f2,3 > $@
