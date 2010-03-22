@@ -489,9 +489,11 @@ xref: BTO:0001463 ! wing
 id: UBERON:0000024
 name: forelimb wing
 def: "Forelimb that is used to produce lift for flight through the air." []
+comment: TODO - check specific definition of forelimb
 subset: uberon_slim
 is_a: UBERON:0000023 ! wing
 is_a: UBERON:0002102 ! forelimb
+relationship: homologous_to UBERON:0002102 ! forelimb
 
 [Term]
 id: UBERON:0000025
@@ -525,7 +527,8 @@ relationship: has_quality PATO:0001873 ! cylindrical
 [Term]
 id: UBERON:0000026
 name: appendage
-def: "Organ or organ part that is attached to the trunk of an organism. For example a limb[GO]." [GO:0048736, Wikipedia:Appendage]
+def: "Organ or organ part that is attached to the body of an organism. For example a limb[GO, modified]. An appendage is an external body part, or natural prolongation, that protrudes from an organism's body, such as a vertebrate's limbs[BILA]." [GO:0048736, BILA:0000018, Wikipedia:Appendage]
+comment: GO includes tree trunks, but excludes  antennae. We modify trunk to body in our definition
 subset: uberon_slim
 xref: BILA:0000018
 xref: EFO:0000799 ! appendage
@@ -698,7 +701,7 @@ xref: MA:0002909 ! ovary antral follicle
 [Term]
 id: UBERON:0000037
 name: tertiary ovarian follicle
-def: "." [Wikipedia:Graafian_follicle]
+def: "Ovarian follicle is the basic unit of female reproductive biology and is composed of roughly spherical aggregations of cells found in the ovary. They contain a single oocyte (aka ovum or egg). These structures are periodically initiated to grow and develop, culminating in ovulation of usually a single competent oocyte. These eggs/ova are only developed once every menstrual cycle (i. e, once a month). [WP,unvetted]." [Wikipedia:Graafian_follicle]
 subset: uberon_slim
 synonym: "folliculus ovaricus tertiarius" EXACT []
 synonym: "folliculus ovaricus tertiarius (vesiculous)" EXACT []
@@ -877,7 +880,7 @@ relationship: has_part UBERON:0000965 ! lens
 [Term]
 id: UBERON:0000051
 name: fornix of vagina
-def: "." [Wikipedia:Fornix_vaginae]
+def: "There are three named fornices: The posterior fornix is the larger recess, behind the cervix. It is close to the rectouterine pouch. There are two smaller recesses in front and at the sides: the anterior fornix is close to the vesicouterine pouch. the lateral fornix. Some women receive enjoyment from stimulation of the fornices, while other women say that their fornices cannot be stimulated without stimulation of the cervix, which may be painful. The fornices appear to be close to at least two erogenous zones, the AFE zone, which is near the anterior fornix, and the cul-de-sac, which is near the posterior fornix. [WP,unvetted]." [Wikipedia:Fornix_vaginae]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "fornix" BROAD []
@@ -1804,9 +1807,12 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0000151
 name: pectoral fin
 def: "The paired pectoral fins are located on each side, usually just behind the operculum, and are homologous to the forelimbs of tetrapods." [Wikipedia:Pectoral_fin#Fins]
+comment: check definition of limb such that is excludes fins
 xref: TAO:0001161 ! pectoral fin
 xref: ZFA:0001161 ! pectoral fin
 is_a: UBERON:0002534 ! fin
+relationship: UBERON:0000153 ! anterior region of body
+relationship: homologous_to UBERON:0002102 ! forelimb
 
 [Term]
 id: UBERON:0000152
@@ -1815,15 +1821,17 @@ def: "The paired pelvic or ventral fins are located ventrally below the pectoral
 xref: TAO:0001184 ! pelvic fin
 xref: ZFA:0001184 ! pelvic fin
 is_a: UBERON:0002534 ! fin
+relationship: UBERON:0000154 ! posterior region of body
+relationship: homologous_to UBERON:0002103 ! hindlimb
 
 [Term]
-id: UBERON:0000153
+id: UBERON:0000153 ! anterior region of body
 name: anterior region of body
 is_a: UBERON:0000475 ! organism subdivision
 relationship: part_of UBERON:0002100 ! trunk
 
 [Term]
-id: UBERON:0000154
+id: UBERON:0000154 ! posterior region of body
 name: posterior region of body
 is_a: UBERON:0000475 ! organism subdivision
 relationship: part_of UBERON:0002100 ! trunk
@@ -8553,7 +8561,7 @@ xref: OpenCyc:Mx4rv-zaJJwpEbGdrcN5Y29ycA ! second cervical vertebra
 id: UBERON:0001094
 name: sacral vertebra
 alt_id: UBERON:FMA_12526-XAO_0003078
-def: "." [Wikipedia:Sacral_vertebra]
+def: "The sacrum is a large, triangular bone at the base of the spine and at the upper and back part of the pelvic cavity, where it is inserted like a wedge between the two hip bones. Its upper part connects with the last lumbar vertebra, and bottom part with the coccyx (tailbone). In children, it consists of usually five unfused vertebrae which begin to fuse between ages 16-18 and are usually completely fused into a single bone by age 26. It is curved upon itself and placed obliquely (that is, tilted forward). It is kyphotic — that is, concave facing forwards. The base projects forward as the sacral promontory internally, and articulates with the last lumbar vertebra to form the prominent sacrovertebral angle. The central part is curved outward towards the posterior, allowing greater room for the pelvic cavity. [WP,unvetted]." [Wikipedia:Sacral_vertebra]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "sacral segment" EXACT []
@@ -8616,7 +8624,7 @@ synonym: "wall of oesophagus" EXACT [OBOL:automatic]
 id: UBERON:0001097
 name: axillary lymph node
 alt_id: UBERON:FMA_12771-MA_0000735
-def: "." [Wikipedia:Axillary_lymph_node]
+def: "The Axillary lymph nodes are of large size, vary from twenty to thirty in number, and may be arranged in the following groups: brachial lymph nodes (or "lateral") pectoral axillary lymph nodes (or "anterior") subscapular axillary lymph nodes (or "posterior") central lymph nodes apical lymph nodes (or "medial" or "subclavicular") [WP,unvetted]." [Wikipedia:Axillary_lymph_node]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "axillary node" EXACT []
@@ -8663,7 +8671,7 @@ xref: ncithesaurus:Subcostal_Vein ! Subcostal Vein
 id: UBERON:0001100
 name: pectoralis minor
 alt_id: UBERON:FMA_13109-MA_0002355
-def: "." [Wikipedia:Pectoralis_minor]
+def: "The Pectoralis minor is a thin, triangular muscle, situated at the upper part of the chest, beneath the Pectoralis major. [WP,unvetted]." [Wikipedia:Pectoralis_minor]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EHDAA:8313 ! pectoralis minor
@@ -8781,7 +8789,7 @@ xref: OpenCyc:Mx4rwTpbQZwpEbGdrcN5Y29ycA ! cephalic vein
 id: UBERON:0001107
 name: sternohyoid
 alt_id: UBERON:FMA_13341-MA_0002383-ZFA_0000283
-def: "." [Wikipedia:Sternohyoid]
+def: "The sternohyoid muscle is a thin, narrow muscle attaching the hyoid bone to the sternum, one of the paired strap muscles of the infrahyoid muscles serving to depress the hyoid bone. It is innervated by the ansa cervicalis. The muscle arises from the posterior border of the medial end of the clavicle, the posterior sternoclavicular ligament, and the upper and posterior part of the manubrium sterni. Passing upward and medially, it is inserted by short tendinous fibers into the lower border of the body of the hyoid bone. [WP,unvetted]." [Wikipedia:Sternohyoid]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:13341 ! Sternohyoid
@@ -8798,7 +8806,7 @@ xref: ncithesaurus:Sternohyoid ! Sternohyoid
 id: UBERON:0001108
 name: omohyoid
 alt_id: UBERON:FMA_13342-MA_0002348
-def: "." [Wikipedia:Omohyoid]
+def: "The omohyoid muscle is a muscle at the front of the neck that consists of two bellies separated by an intermediate tendon. It belongs to the group of infrahyoid muscles. [WP,unvetted]." [Wikipedia:Omohyoid]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:13342 ! Omohyoid
@@ -8810,7 +8818,7 @@ xref: ncithesaurus:Omohyoid ! Omohyoid
 id: UBERON:0001109
 name: sternothyroid
 alt_id: UBERON:FMA_13343-MA_0002386
-def: "." [Wikipedia:Sternothyroid]
+def: "The Sternothyreoideus (or Sternothyroid muscle) is shorter and wider than the Sternohyoideus, beneath which it is situated. It arises from the posterior surface of the manubrium sterni, below the origin of the Sternohyoideus, and from the edge of the cartilage of the first rib, and sometimes that of the second rib, it is inserted into the oblique line on the lamina of the thyroid cartilage. This muscle is in close contact with its fellow at the lower part of the neck, but diverges somewhat as it ascends; it is occasionally traversed by a transverse or oblique tendinous inscription. [WP,unvetted]." [Wikipedia:Sternothyroid]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:13343 ! Sternothyroid
@@ -8851,7 +8859,7 @@ xref: OpenCyc:Mx4rwQo8QJwpEbGdrcN5Y29ycA ! intercostal muscle
 id: UBERON:0001112
 name: latissimus dorsi
 alt_id: UBERON:FMA_13357-MA_0002331
-def: "." [Wikipedia:Latissimus_dorsi]
+def: "The latissimus dorsi is the larger, flat, dorso-lateral muscle on the trunk, posterior to the arm, and partly covered by the trapezius on its median dorsal region. [WP,unvetted]." [Wikipedia:Latissimus_dorsi]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EHDAA:8307 ! latissimus dorsi
@@ -9049,7 +9057,7 @@ xref: OpenCyc:Mx4rvVji0JwpEbGdrcN5Y29ycA ! shoulder blade
 id: UBERON:0001125
 name: serratus anterior
 alt_id: UBERON:FMA_13397-MA_0002378
-def: "." [Wikipedia:Serratus_anterior]
+def: "The serratus anterior is a muscle that originates on the surface of the upper eight or nine ribs at the side of the chest and inserts along the entire anterior length of the medial border of the scapula. [WP,unvetted]." [Wikipedia:Serratus_anterior]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Boxer's muscle" EXACT []
@@ -9068,7 +9076,7 @@ xref: OpenCyc:Mx4rvWn_D5wpEbGdrcN5Y29ycA ! serratus anterior muscle
 id: UBERON:0001126
 name: serratus posterior superior
 alt_id: UBERON:FMA_13401-MA_0002377
-def: "." [Wikipedia:Serratus_posterior_superior]
+def: "The Serratus posterior superior is a thin, quadrilateral muscle, situated at the upper and back part of the thorax. It arises by a thin and broad aponeurosis from the lower part of the ligamentum nuchae, from the spinous processes of the seventh cervical and upper two or three thoracic vertebræ and from the supraspinal ligament. Inclining downward and lateralward it becomes muscular, and is inserted, by four fleshy digitations, into the upper borders of the second, third, fourth, and fifth ribs, a little beyond their angles. [WP,unvetted]." [Wikipedia:Serratus_posterior_superior]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "serratus dorsalis cranialis" EXACT []
@@ -9096,7 +9104,7 @@ xref: ncithesaurus:Serratus_Dorsalis_Caudalis ! Serratus Dorsalis Caudalis
 id: UBERON:0001128
 name: sternocleidomastoid
 alt_id: UBERON:FMA_13407-MA_0002384
-def: "." [Wikipedia:Sternocleidomastoid]
+def: "In human anatomy, the sternocleidomastoid muscle, also known as sternomastoid and commonly abbreviated as SCM, is a paired muscle in the superficial layers of the anterior portion of the neck. It acts to flex and rotate the head. It also acts as an accessory muscle of inspiration, along with the scalene muscles of the neck. [WP,unvetted]." [Wikipedia:Sternocleidomastoid]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "sternocleidomastoid muscle" EXACT []
@@ -9112,7 +9120,7 @@ xref: OpenCyc:Mx4rv2bMg5wpEbGdrcN5Y29ycA ! sternocleidomastoid muscle
 id: UBERON:0001129
 name: subscapularis
 alt_id: UBERON:FMA_13413-MA_0002388
-def: "." [Wikipedia:Subscapularis]
+def: "The Subscapularis is a large triangular muscle which fills the subscapular fossa and inserts into the lesser tubercle of the humerus and the front of the capsule of the shoulder-joint. [WP,unvetted]." [Wikipedia:Subscapularis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "subscapularis muscle" EXACT []
@@ -9349,7 +9357,7 @@ xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvdUXKJwpEbGdrcN5Y29ycA ! right ren
 id: UBERON:0001142
 name: left renal vein
 alt_id: UBERON:FMA_14336-MA_0002211
-def: "." [Wikipedia:Left_renal_vein]
+def: "The renal veins are veins that drain the kidney. They connect the kidney to the inferior vena cava. It is usually singular to each kidney, except in the condition "multiple renal veins". It also divides into 2 divisions upon entering the kidney: the anterior branch which receives blood from the anterior portion of the kidney and, the posterior branch which receives blood from the posterior portion. Often, each renal vein will have a branch that receives blood from the ureter. [WP,unvetted]." [Wikipedia:Left_renal_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:14336 ! Left renal vein
@@ -10123,7 +10131,7 @@ xref: OpenCyc:Mx4rveOFHpwpEbGdrcN5Y29ycA ! renal artery
 id: UBERON:0001185
 name: right renal artery
 alt_id: UBERON:FMA_14752-MA_0002037
-def: "." [Wikipedia:Right_renal_artery]
+def: "The renal arteries normally arise off the side of the abdominal aorta, immediately below the superior mesenteric artery, and supply the kidneys with blood. Each is directed across the crus of the diaphragm, so as to form nearly a right angle with the aorta. The renal arteries carry a large portion of total blood flow to the kidneys. Up to a third of total cardiac output can pass through the renal arteries to be filtered by the kidneys. The arterial supply of the kidneys is variable and there may be one or more renal arteries supplying each kidney. It is located above the renal vein. It has a radius of approximately 0.25cm, 0.26 cm at the root. The measured mean diameter can differ depending on the imaging method used. For example, the diameter was found to be 5.04 ± 0.74 mm using ultrasound, but 5.68 ± 1.19 mm using angiography. [WP,unvetted]." [Wikipedia:Right_renal_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "right renal arterial tree" EXACT []
@@ -10721,7 +10729,7 @@ xref: ncithesaurus:Ileocolic_Vein ! Ileocolic Vein
 id: UBERON:0001220
 name: quadratus lumborum
 alt_id: UBERON:FMA_15569-MA_0002362
-def: "." [Wikipedia:Quadratus_lumborum]
+def: "The Quadratus lumborum is irregular and quadrilateral in shape, and broader below than above. [WP,unvetted]." [Wikipedia:Quadratus_lumborum]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "muscle of posterior abdominal wall" EXACT []
@@ -10735,7 +10743,7 @@ xref: OpenCyc:Mx4rvj1wcpwpEbGdrcN5Y29ycA ! quadratus lumborum
 id: UBERON:0001221
 name: transversus abdominis
 alt_id: UBERON:FMA_15570-MA_0002396
-def: "." [Wikipedia:Transversus_abdominis]
+def: "The transversus abdominis muscle, also known as the transversalis muscle and transverse abdominal muscle, is a muscle layer of the anterior and lateral abdominal wall which is just deep to (layered below) the internal oblique muscle. It is thought to be a major muscle of the functional core of the human body; although some argue that due to its small cross-sectional area, it cannot generate the forces required to be a prime core stabilizer. [WP,unvetted]." [Wikipedia:Transversus_abdominis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "transverse abdominal" EXACT []
@@ -10873,7 +10881,7 @@ xref: ZFA:0005281 ! renal corpuscle
 id: UBERON:0001230
 name: glomerular capsule
 alt_id: UBERON:FMA_15626-MA_0001660
-def: "." [Wikipedia:Glomerular_capsule]
+def: "The Bowman's capsule is a cup-like sac at the beginning of the tubular component of a nephron in the mammalian kidney. A glomerulus is enclosed in the sac. Fluids from blood in the glomerulus are collected in the Bowman's capsule and further processed along the nephron to form urine. This process is known as ultrafiltration. [WP,unvetted]." [Wikipedia:Glomerular_capsule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Bowman's capsule" EXACT []
@@ -12223,7 +12231,7 @@ xref: EFO:0001970 ! myometrium
 id: UBERON:0001298
 name: psoas major
 alt_id: UBERON:FMA_18060-MA_0002358
-def: "." [Wikipedia:Psoas_major]
+def: "The psoas major is a long fusiform muscle placed on the side of the lumbar region of the vertebral column and brim of the lesser pelvis. It joins the iliacus muscle to form the iliopsoas. In less than 50 per cent of subjects the psoas major is accompanied by the psoas minor. [WP,unvetted]." [Wikipedia:Psoas_major]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "psoas major muscle" EXACT []
@@ -13262,7 +13270,7 @@ xref: ncithesaurus:External_Anal_Sphincter ! External Anal Sphincter
 id: UBERON:0001368
 name: obturator externus
 alt_id: UBERON:FMA_22299-MA_0002347
-def: "." [Wikipedia:Obturator_externus]
+def: "The obturator externus muscle is a flat, triangular muscle, which covers the outer surface of the anterior wall of the pelvis. It is sometimes considered part of the medial compartment of thigh, and sometimes considered part of the gluteal region. [WP,unvetted]." [Wikipedia:Obturator_externus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "external obturator" EXACT []
@@ -13274,7 +13282,7 @@ is_a: UBERON:0002000 ! gluteal muscle
 id: UBERON:0001369
 name: iliacus
 alt_id: UBERON:FMA_22310-MA_0002318
-def: "." [Wikipedia:Iliacus]
+def: "The iliacus is a flat, triangular muscle, which fills the iliac fossa. [WP,unvetted]." [Wikipedia:Iliacus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "anterior muscle of pelvic girdle" EXACT []
@@ -13287,7 +13295,7 @@ xref: ncithesaurus:Iliacus ! Iliacus
 id: UBERON:0001370
 name: gluteus maximus
 alt_id: UBERON:FMA_22314-MA_0002309
-def: "." [Wikipedia:Gluteus_maximus]
+def: "The gluteus maximus (or glutæus maximus) is the largest and most superficial of the three gluteal muscles. It makes up a large portion of the shape and appearance of the buttocks. It is a broad and thick fleshy mass of a quadrilateral shape, and forms the prominence of the nates. Its large size is one of the most characteristic features of the muscular system in humans, connected as it is with the power of maintaining the trunk in the erect posture. The muscle is remarkably coarse in structure, being made up of fasciculi lying parallel with one another and collected together into large bundles separated by fibrous septa. [WP,unvetted]." [Wikipedia:Gluteus_maximus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "gluteus superficialis" RELATED []
@@ -13303,7 +13311,7 @@ xref: OpenCyc:Mx4rvVjdMZwpEbGdrcN5Y29ycA ! gluteus maximus
 id: UBERON:0001371
 name: gluteus medius
 alt_id: UBERON:FMA_22315-MA_0002310
-def: "." [Wikipedia:Gluteus_medius]
+def: "The gluteus medius (or glutæus medius), one of the three gluteal muscles, is a broad, thick, radiating muscle, situated on the outer surface of the pelvis. Its posterior third is covered by the gluteus maximus, its anterior two-thirds by the gluteal aponeurosis, which separates it from the superficial fascia and integument. [WP,unvetted]." [Wikipedia:Gluteus_medius]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22315 ! Gluteus medius
@@ -13316,7 +13324,7 @@ xref: ncithesaurus:Gluteus_Medius ! Gluteus Medius
 id: UBERON:0001372
 name: psoas minor
 alt_id: UBERON:FMA_22350-MA_0002359
-def: "." [Wikipedia:Psoas_minor]
+def: "The psoas minor is a long, slender skeletal muscle that, when present, is placed in front of the psoas major muscle. It is absent in 40% of individuals. [WP,unvetted]." [Wikipedia:Psoas_minor]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "psoas minor muscle" EXACT []
@@ -13345,7 +13353,7 @@ xref: galen:Sartorius ! sartorius
 id: UBERON:0001374
 name: biceps femoris
 alt_id: UBERON:FMA_22356-MA_0002270
-def: "." [Wikipedia:Biceps_femoris]
+def: "The biceps femoris is a muscle of the posterior (the back) thigh. As its name implies, it has two parts, one of which (the long head) forms part of the hamstrings muscle group. [WP,unvetted]." [Wikipedia:Biceps_femoris]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22356 ! Biceps femoris
@@ -13411,7 +13419,7 @@ xref: OpenCyc:Mx4rvVjd-JwpEbGdrcN5Y29ycA ! quadriceps
 id: UBERON:0001378
 name: rectus femoris
 alt_id: UBERON:FMA_22430-MA_0002365
-def: "." [Wikipedia:Rectus_femoris]
+def: "The Rectus femoris muscle is one of the four quadriceps muscles of the human body. (The others are the vastus medialis, the vastus intermedius, and the vastus lateralis. All four combine to form the quadriceps tendon, which inserts into the patella and continues as the patellar ligament. ) The Rectus femoris is situated in the middle of the front of the thigh; it is fusiform in shape, and its superficial fibers are arranged in a bipenniform manner, the deep fibers running straight down to the deep aponeurosis. [WP,unvetted]." [Wikipedia:Rectus_femoris]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "musculus rectos femoris" EXACT []
@@ -13426,7 +13434,7 @@ xref: BTO:0001564 ! rectus femoris
 id: UBERON:0001379
 name: vastus lateralis
 alt_id: UBERON:FMA_22431-MA_0002402
-def: "." [Wikipedia:Vastus_lateralis]
+def: "The Vastus lateralis (Vastus externus) is the largest part of the Quadriceps femoris. It arises by a broad aponeurosis, which is attached to the upper part of the intertrochanteric line, to the anterior and inferior borders of the greater trochanter, to the lateral lip of the gluteal tuberosity, and to the upper half of the lateral lip of the linea aspera; this aponeurosis covers the upper three-fourths of the muscle, and from its deep surface many fibers take origin. A few additional fibers arise from the tendon of the Glutæus maximus, and from the lateral intermuscular septum between the Vastus lateralis and short head of the Biceps femoris. The fibers form a large fleshy mass, which is attached to a strong aponeurosis, placed on the deep surface of the lower part of the muscle: this aponeurosis becomes contracted and thickened into a flat tendon inserted into the lateral border of the patella, blending with the Quadriceps femoris tendon, and giving an expansion to the capsule of the knee-joint. [WP,unvetted]." [Wikipedia:Vastus_lateralis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22431 ! Vastus lateralis
@@ -13455,7 +13463,7 @@ xref: galen:VastusMedialis ! vastus medialis
 id: UBERON:0001381
 name: semimembranosus
 alt_id: UBERON:FMA_22438-MA_0002371
-def: "." [Wikipedia:Semimembranosus]
+def: "The semimembranosus is a muscle in the back of the thigh. It is the most medial of the three hamstring muscles. [WP,unvetted]." [Wikipedia:Semimembranosus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22438 ! Semimembranosus
@@ -13470,7 +13478,7 @@ xref: galen:Semimembranosus ! semimembranosus
 id: UBERON:0001382
 name: pectineus
 alt_id: UBERON:FMA_22440-MA_0002353
-def: "." [Wikipedia:Pectineus]
+def: "The pectineus muscle is a flat, quadrangular muscle, situated at the anterior part of the upper and medial aspect of the thigh. It can be classified in the medial compartment of thigh (when the function is emphasized) or the anterior compartment of thigh (when the nerve is emphasized). [WP,unvetted]." [Wikipedia:Pectineus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22440 ! Pectineus
@@ -13514,7 +13522,7 @@ xref: EFO:0002472 ! somatomotor cortex
 id: UBERON:0001385
 name: tibialis anterior
 alt_id: UBERON:FMA_22532-MA_0002395
-def: "." [Wikipedia:Tibialis_anterior]
+def: "In human anatomy, the tibialis anterior is a muscle that originates in the upper two-thirds of the lateral surface of the tibia and inserts into the medial cuneiform and first metatarsal bones of the foot. Its acts to invert the foot. It is situated on the lateral side of the tibia; it is thick and fleshy above, tendinous below. This muscle overlaps the anterior tibial vessels and deep peroneal nerve in the upper part of the leg. [WP,unvetted]." [Wikipedia:Tibialis_anterior]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "tibilais cranialis" EXACT []
@@ -13528,7 +13536,7 @@ xref: galen:TibialisAnterior ! tibialis anterior
 id: UBERON:0001386
 name: extensor digitorum longus
 alt_id: UBERON:FMA_22534-MA_0002295
-def: "." [Wikipedia:Extensor_digitorum_longus]
+def: "The Extensor digitorum longus is a pennate muscle, situated at the lateral part of the front of the leg. [WP,unvetted]." [Wikipedia:Extensor_digitorum_longus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: BTO:0000436
@@ -13541,7 +13549,7 @@ xref: ncithesaurus:Extensor_Digitorum_Longus ! Extensor Digitorum Longus
 id: UBERON:0001387
 name: fibularis longus
 alt_id: UBERON:FMA_22539-MA_0002356
-def: "." [Wikipedia:Fibularis_longus]
+def: "In human anatomy, the peroneus longus (also known as fibularis longus) is a superficial muscle in the lateral compartment of the leg, and acts to evert and plantar flex the ankle. It is situated at the upper part of the lateral side of the leg, and is the most superficial of the three peroneus muscles. It is innervated by the superficial fibular nerve (superficial peroneal nerve). [WP,unvetted]." [Wikipedia:Fibularis_longus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "peroneus longus" EXACT []
@@ -13555,7 +13563,7 @@ xref: galen:PeroneusLongus ! peroneus longus
 id: UBERON:0001388
 name: gastrocnemius
 alt_id: UBERON:FMA_22541-MA_0002306
-def: "." [Wikipedia:Gastrocnemius]
+def: "In humans, the gastrocnemius muscle is a very powerful superficial muscle that is in the back part of the lower leg and also called the calf. It runs from its two heads just above the knee to the heel, and is involved in standing, walking, running and jumping. Along with the soleus muscle it forms the calf muscle. [WP,unvetted]." [Wikipedia:Gastrocnemius]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "m.gastrocnemius" EXACT []
@@ -13613,7 +13621,7 @@ is_a: UBERON:0001383 ! muscle of leg
 id: UBERON:0001392
 name: flexor hallucis longus
 alt_id: UBERON:FMA_22593-MA_0002301
-def: "." [Wikipedia:Flexor_hallucis_longus]
+def: "The Flexor hallucis longus muscle (FHL) is a muscle of the leg. It is one of the deep muscles of the posterior compartment of the leg. The other deep muscles of the leg are flexor digitorum longus and tibialis posterior. FHL is the largest and most powerful of these deep muscles. The Flexor hallucis longus is situated on the fibular side of the leg. It arises from the inferior two-thirds of the posterior surface of the body of the fibula, with the exception of 2.5 cm. at its lowest part; from the lower part of the interosseous membrane; from an intermuscular septum between it and the Peronæi, laterally, and from the fascia covering the Tibialis posterior, medially. The fibers pass obliquely downward and backward, and end in a tendon which occupies nearly the whole length of the posterior surface of the muscle. This tendon lies in a groove which crosses the posterior surface of the lower end of the tibia, the posterior surface of the talus, and the under surface of the sustentaculum tali of the calcaneus; in the sole of the foot it runs forward between the two heads of the Flexor hallucis brevis, and is inserted into the base of the last phalanx of the great toe. The grooves on the talus and calcaneus, which contain the tendon of the muscle, are converted by tendinous fibers into distinct canals, lined by a mucous sheath. As the tendon passes forward in the sole of the foot, it is situated above, and crosses from the lateral to the medial side of the tendon of the Flexor digitorum longus, to which it is connected by a fibrous slip. [WP,unvetted]." [Wikipedia:Flexor_hallucis_longus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22593 ! Flexor hallucis longus
@@ -13625,7 +13633,7 @@ xref: ncithesaurus:Flexor_Hallucis_Longus ! Flexor Hallucis Longus
 id: UBERON:0001393
 name: auditory cortex
 alt_id: UBERON:FMA_226221-MA_0000942
-def: "." [Wikipedia:Auditory_cortex]
+def: "The primary auditory cortex is the region of the brain that is responsible for processing of auditory information. [WP,unvetted]." [Wikipedia:Auditory_cortex]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:226221 ! Auditory cortex
@@ -13714,7 +13722,7 @@ xref: OpenCyc:Mx4rwM-i5JwpEbGdrcN5Y29ycA ! brachial artery
 id: UBERON:0001399
 name: deep brachial artery
 alt_id: UBERON:FMA_22695-MA_0002026
-def: "." [Wikipedia:Deep_brachial_artery]
+def: "The arteria profunda brachii (also known as deep artery of the arm and the deep brachial artery) is a large vessel which arises from the medial and back part of the brachial, just below the lower border of the Teres major. [WP,unvetted]." [Wikipedia:Deep_brachial_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "profunda brachii artery" EXACT []
@@ -13727,7 +13735,7 @@ relationship: part_of UBERON:0001460 ! arm
 id: UBERON:0001400
 name: iliocostalis thoracis
 alt_id: UBERON:FMA_22703-MA_0002320
-def: "." [Wikipedia:Iliocostalis_thoracis]
+def: "The iliocostalis is the muscle immediately lateral to the longissimus that is the nearest to the furrow that separates the epaxial muscles from the hypaxial. It lies very deep to the fleshy portion of the serratus ventralis (serratus anterior). [WP,unvetted]." [Wikipedia:Iliocostalis_thoracis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22703 ! Iliocostalis thoracis
@@ -13738,7 +13746,7 @@ is_a: UBERON:0002251 ! iliocostalis
 id: UBERON:0001401
 name: longissimus thoracis
 alt_id: UBERON:FMA_22709-MA_0002339
-def: "." [Wikipedia:Longissimus_thoracis]
+def: "The longissimus is the muscle lateral to the semispinalis. It is the longest subdivision of the sacrospinalis that extends forward into the transverse processes of the posterior cervical vertebrae. [WP,unvetted]." [Wikipedia:Longissimus_thoracis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22709 ! Longissimus thoracis
@@ -13751,7 +13759,7 @@ xref: BTO:0001651 ! longissimus thoracis
 id: UBERON:0001402
 name: longissimus cervicis
 alt_id: UBERON:FMA_22711-MA_0002337
-def: "." [Wikipedia:Longissimus_cervicis]
+def: "The longissimus is the muscle lateral to the semispinalis. It is the longest subdivision of the sacrospinalis that extends forward into the transverse processes of the posterior cervical vertebrae. [WP,unvetted]." [Wikipedia:Longissimus_cervicis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22711 ! Longissimus cervicis
@@ -13764,7 +13772,7 @@ xref: BTO:0001650 ! longissimus cervicis
 id: UBERON:0001403
 name: longissimus capitis
 alt_id: UBERON:FMA_22714-MA_0002336
-def: "." [Wikipedia:Longissimus_capitis]
+def: "The longissimus is the muscle lateral to the semispinalis. It is the longest subdivision of the sacrospinalis that extends forward into the transverse processes of the posterior cervical vertebrae. [WP,unvetted]." [Wikipedia:Longissimus_capitis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22714 ! Longissimus capitis
@@ -13871,7 +13879,7 @@ xref: OpenCyc:Mx4rvwrxEpwpEbGdrcN5Y29ycA ! basilic vein
 id: UBERON:0001413
 name: brachial vein
 alt_id: UBERON:FMA_22934-MA_0002087
-def: "." [Wikipedia:Brachial_vein]
+def: "In human anatomy, the brachial veins are venae comitantes of the brachial artery in the arm proper. Because they are deep to muscle, they are considered deep veins. Their course is that of the brachial artery (in reverse): they begin where radial veins and ulnar veins join (corresponding to the bifurcation of the brachial artery). They end at the inferior border of the teres major muscle. At this point, the brachial veins join the basilic vein to form the axillary vein. The brachial veins also have small tributaries that drain the muscles of the upper arm, such as biceps brachii muscle and triceps brachii muscle. [WP,unvetted]." [Wikipedia:Brachial_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:22934 ! Brachial vein
@@ -14139,7 +14147,7 @@ xref: galen:Lunate ! lunate
 id: UBERON:0001429
 name: pisiform
 alt_id: UBERON:FMA_23718-MA_0001339
-def: "." [Wikipedia:Pisiform]
+def: "The pisiform bone (also called pisiform or lentiform bone) is a small knobbly, pea-shaped wrist bone. The pisiform bone is found in the proximal row of the carpus. It is located where the ulna (inner bone of the forearm when in anatomical position) joins the carpus (wrist). It articulates only with the triquetral. It is a sesamoid bone. The pisiform bone may be known by its small size, and by its presenting a single articular facet. It is situated on a plane anterior to the other carpal bones and is spheroidal in form. The etymology derives from the Latin pīsum which means "pea." [WP,unvetted]." [Wikipedia:Pisiform]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "accessory carpal bone" RELATED []
@@ -14198,7 +14206,7 @@ xref: OpenCyc:Mx4rvxNWBJwpEbGdrcN5Y29ycA ! trapezoid
 id: UBERON:0001432
 name: capitate
 alt_id: UBERON:FMA_23727-MA_0001342
-def: "." [Wikipedia:Capitate]
+def: "The capitate bone is a bone in the human hand. The capitate bone is the largest of the carpal bones, and occupies the center of the wrist. It presents, above, a rounded portion or head, which is received into the concavity formed by the scaphoid and lunate bones; a constricted portion or neck; and below this, the body. The bone is also found in many other mammals, and is homologous with the "third distal carpal" of reptiles and amphibians. The etymology derives from the Latin capitātus, "having a head," from capit-, meaning "head." [WP,unvetted]." [Wikipedia:Capitate]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "capitate bone" EXACT []
@@ -14216,7 +14224,7 @@ xref: ncithesaurus:Capitate_Bone ! Capitate Bone
 id: UBERON:0001433
 name: hamate
 alt_id: UBERON:FMA_23730-MA_0001343
-def: "." [Wikipedia:Hamate]
+def: "The hamate bone (unciform bone) is a bone in the human hand that may be readily distinguished by its wedge-shaped form, and the hook-like process which projects from its volar surface. It is situated at the medial and lower angle of the carpus, with its base downward, resting on the fourth and fifth metacarpal bones, and its apex directed upward and lateralward. The bone is also found in many other mammals, and is homologous with the "fourth distal carpal" of reptiles and amphibians. The etymology derives from the Latin hamatus "hooked," from hamus which means "hook." [WP,unvetted]." [Wikipedia:Hamate]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "hamate bone" EXACT []
@@ -14302,7 +14310,7 @@ is_a: UBERON:0002428 ! limb bone
 id: UBERON:0001435
 name: carpal bone
 alt_id: UBERON:FMA_23889-MA_0000296
-def: "." [Wikipedia:Carpal_bone]
+def: "In tetrapods, the carpals is the sole cluster of the bones in the wrist between the radius and ulna and the metacarpus. The bones of the carpus do not belong to individual fingers (or toes in quadrupeds), whereas those of the metacarpus do. The corresponding part of the foot is the tarsus. The carpal bones allow the wrist to move and rotate vertically, horizontally and laterally. In human anatomy, the main role of the carpus is to facilitate effective positioning of the hand and powerful use of the extensors and flexors of the forearm, but the mobility of individual carpal bones increase the freedom of movements at the wrist. [WP,unvetted]." [Wikipedia:Carpal_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "bone of carpus" EXACT []
@@ -14622,7 +14630,7 @@ xref: galen:TarsalBone ! tarsal bone
 id: UBERON:0002374
 name: metacarpal bone
 alt_id: UBERON:FMA_9612-MA_0000302
-def: "." [Wikipedia:Metacarpal_bone]
+def: "The metacarpus is the intermediate part of the hand skeleton that is located between the phalanges (bones of the fingers) distally and the carpus which forms the connection to the forearm. The metacarpus consists of metacarpal bones. The metacarpals form a transverse arch to which the rigid row of distal carpal bones are fixed. The peripheral metacarpals (those of the thumb and little finger) form the sides of the cup of the palmar gutter and as they are brought together they deepen this concavity. The index metacarpal is the most firmly fixed, while the thumb metacarpal articulates with the trapezium and acts independently from the others. The middle metacarpals are tightly united to the carpus by intrinsic interlocking bone elements at their bases. The ring metacarpal forms a transitional element of the semi-independent last metacarpal. [WP,unvetted]." [Wikipedia:Metacarpal_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "metacarpal" EXACT []
@@ -14639,7 +14647,7 @@ xref: OpenCyc:Mx4rv1Bk45wpEbGdrcN5Y29ycA ! metacarpal
 id: UBERON:0001448
 name: metatarsal bone
 alt_id: UBERON:FMA_24492-MA_0000303
-def: "." [Wikipedia:Metatarsal_bone]
+def: "The metatarsus or metatarsal bones are a group of five long bones in the foot located between the tarsal bones of the hind- and mid-foot and the phalanges of the toes. Lacking individual names, the metatarsal bones are numbered from the medial side (side of big toe): the first, second, third, fourth, and fifth metatarsal. The metatarsals are analogous to the metacarpal bones of the hand. [WP,unvetted]." [Wikipedia:Metatarsal_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:24492 ! Metatarsal bone
@@ -15157,7 +15165,7 @@ xref: OpenCyc:Mx4rwVT4_ZwpEbGdrcN5Y29ycA ! infraspinatus muscle
 id: UBERON:0001478
 name: teres major
 alt_id: UBERON:FMA_32549-MA_0002392
-def: "." [Wikipedia:Teres_major]
+def: "Teres major is a muscle of the upper limb and one of six scapulohumeral muscles. It is a thick but somewhat flattened muscle. [WP,unvetted]." [Wikipedia:Teres_major]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "teres major muscle" EXACT []
@@ -15252,7 +15260,7 @@ relationship: part_of UBERON:0002217 ! synovial joint
 id: UBERON:0001485
 name: knee joint
 alt_id: UBERON:FMA_35175-MA_0000471
-def: "." [Wikipedia:Knee_joint]
+def: "The knee joint joins the thigh with the leg and consists of two articulations: one between the femur and tibia, and one between the femur and patella. It is the largest and most complicated joint in the human body. The knee is a mobile trocho-ginglymus (i.e. a pivotal hinge joint), which permits flexion and extension as well as a slight medial and lateral rotation. Since in humans the knee supports nearly the whole weight of the body, it is the joint most vulnerable both to acute injury and the development of osteoarthritis. [WP,unvetted]." [Wikipedia:Knee_joint]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:35175 ! Knee joint
@@ -15348,7 +15356,7 @@ synonym: "lower extremity distal free limb segment joint" EXACT [OBOL:automatic]
 id: UBERON:0001488
 name: ankle joint
 alt_id: UBERON:FMA_35195-MA_0000463
-def: "." [Wikipedia:Ankle_joint]
+def: "In human anatomy, the ankle joint is formed where the foot and the leg meet. The ankle, or talocrural joint, is a synovial hinge joint that connects the distal ends of the tibia and fibula in the lower limb with the proximal end of the talus bone in the foot. The articulation between the tibia and the talus bears more weight than between the smaller fibula and the talus. The term "ankle" is used to describe structures in the region of the ankle joint proper. [WP,unvetted]." [Wikipedia:Ankle_joint]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "talocrural joint" EXACT []
@@ -15431,7 +15439,7 @@ synonym: "joint of elbow" EXACT [OBOL:automatic]
 id: UBERON:0001491
 name: wrist joint
 alt_id: UBERON:FMA_35291-MA_0000460
-def: "." [Wikipedia:Wrist_joint]
+def: "In human anatomy, the wrist is variously defined as (1) the carpus or carpal bones, the complex of eight bones forming the proximal skeletal segment of the hand; (2) the wrist joint or radiocarpal joint, the joint between the radius and the carpus; and (3) the anatomical region surrounding the carpus including the distal parts of the bones of the forearm and the proximal parts of the metacarpus or five metacarpal bones and the series of joints between these bones, thus referred to as wrist joints. This region also include the carpal tunnel, the anatomical snuff box, the flexor retinaculum, and the extensor retinaculum. As a consequence of these various definitions, fractures to the carpal bones are referred to as carpal fractures, while fractures such as distal radius fracture are considered fractures to the wrist. [WP,unvetted]." [Wikipedia:Wrist_joint]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "joint of wrist" EXACT []
@@ -15507,7 +15515,7 @@ xref: ncithesaurus:Ulnar_Nerve ! Ulnar Nerve
 id: UBERON:0001495
 name: pectoral muscle
 alt_id: UBERON:FMA_37349-MA_0002423
-def: "." [Wikipedia:Pectoral_muscle]
+def: "The pectoralis major is a thick, fan-shaped muscle, situated at the upper front of the chest wall. It makes up the bulk of the chest muscles in the male and lies under the breast in the female. Underneath the pectoralis major is the pectoralis minor, a thin, triangular muscle. [WP,unvetted]." [Wikipedia:Pectoral_muscle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "muscle of pectoral part of chest" EXACT []
@@ -15726,7 +15734,7 @@ xref: ncithesaurus:Coracobrachialis ! Coracobrachialis
 id: UBERON:0001506
 name: brachialis
 alt_id: UBERON:FMA_37667-MA_0002271
-def: "." [Wikipedia:Brachialis]
+def: "The brachialis (brachialis anticus) is a muscle in the upper arm that flexes the elbow joint. It lies just deep of the biceps brachii, and is a synergist that assists the biceps brachii in flexing at the elbow. It makes up part of the floor of the region known as the cubital fossa. [WP,unvetted]." [Wikipedia:Brachialis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Casserio's muscle" EXACT []
@@ -15741,7 +15749,7 @@ xref: ncithesaurus:Brachialis ! Brachialis
 id: UBERON:0001507
 name: biceps brachii
 alt_id: UBERON:FMA_37670-MA_0002269
-def: "." [Wikipedia:Biceps_brachii]
+def: "In human anatomy, the biceps brachii is a muscle located on the upper arm. The biceps has several functions, the most important being to rotate the forearm and to flex the elbow. [WP,unvetted]." [Wikipedia:Biceps_brachii]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:37670 ! Biceps brachii
@@ -15754,7 +15762,7 @@ xref: BTO:0003419 ! biceps brachii
 id: UBERON:0001509
 name: triceps brachii
 alt_id: UBERON:FMA_37688-MA_0002399
-def: "." [Wikipedia:Triceps_brachii]
+def: "The triceps brachii muscle (Latin for "three-headed" muscle of the arm, it is called a three headed muscle because there are three bundles of muscle, each of different origin, joining together at the elbow) is the large muscle on the back of the human upper limb. It is the muscle principally responsible for extension of the elbow joint (i.e. straightening of the arm). Though a similarly-named muscle, the triceps surae, is found on the lower leg, the triceps brachii is commonly called simply the "triceps". [WP,unvetted]." [Wikipedia:Triceps_brachii]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:37688 ! Triceps brachii
@@ -16000,7 +16008,7 @@ synonym: "zone of skin of proximal segment of free upper limb distal free limb s
 id: UBERON:0001520
 name: pronator teres
 alt_id: UBERON:FMA_38450-MA_0002357
-def: "." [Wikipedia:Pronator_teres]
+def: "The pronator teres is a muscle of the human body (located mainly in the forearm) that, along with the pronator quadratus, serves to pronate the forearm (turning it so the palm faces posteriorly). [WP,unvetted]." [Wikipedia:Pronator_teres]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:38450 ! Pronator teres
@@ -16013,7 +16021,7 @@ xref: ncithesaurus:Pronator_Teres ! Pronator Teres
 id: UBERON:0001521
 name: flexor carpi radialis
 alt_id: UBERON:FMA_38459-MA_0002297
-def: "." [Wikipedia:Flexor_carpi_radialis]
+def: "In anatomy, flexor carpi radialis is a muscle of the human forearm that acts to flex and abduct the hand. [WP,unvetted]." [Wikipedia:Flexor_carpi_radialis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:38459 ! Flexor carpi radialis
@@ -16039,7 +16047,7 @@ xref: ncithesaurus:Flexor_Carpi_Ulnaris ! Flexor Carpi Ulnaris
 id: UBERON:0001523
 name: flexor digitorum profundus
 alt_id: UBERON:FMA_38478-MA_0002300
-def: "." [Wikipedia:Flexor_digitorum_profundus]
+def: "In human anatomy, the flexor digitorum profundus is a muscle in the forearm that flexes the fingers. It is considered to be an extrinsic muscle because its action is at a different location than the main body of the muscle. Flexor digitorum profundus, along with flexor digitorum superficialis have long tendons that run down the arm and through the carpal tunnel and attach to the palmar side of the phalanges of the fingers. This muscle originates from the upper 3/4ths anterior and medial side of the ulna. Flexor digitorum profundus lies deep to superficialis, but it attaches more distally. To get around this problem profundus's tendons go through the tendons of superficialis, and end up attaching to the distal phalanx. [WP,unvetted]." [Wikipedia:Flexor_digitorum_profundus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: BTO:0001246
@@ -16052,7 +16060,7 @@ xref: ncithesaurus:Flexor_Digitorum_Profundus ! Flexor Digitorum Profundus
 id: UBERON:0001524
 name: extensor carpi radialis longus
 alt_id: UBERON:FMA_38494-MA_0002291
-def: "." [Wikipedia:Extensor_carpi_radialis_longus]
+def: "Extensor carpi radialis longus is one of the five main muscles that control movements at the wrist. This muscle is quite long, starting on the lateral side of the humerus, and attaching to the base of the second metacarpal bone (metacarpal of the index finger). [WP,unvetted]." [Wikipedia:Extensor_carpi_radialis_longus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:38494 ! Extensor carpi radialis longus
@@ -16065,7 +16073,7 @@ xref: ncithesaurus:Extensor_Carpi_Radialis_Longus ! Extensor Carpi Radialis Long
 id: UBERON:0001525
 name: extensor carpi radialis brevis
 alt_id: UBERON:FMA_38497-MA_0002290
-def: "." [Wikipedia:Extensor_carpi_radialis_brevis]
+def: "The Extensor carpi radialis brevis is shorter and thicker than the extensor carpi radialis longus. The longus muscle can be found above the distal end of the Extensor carpi radialis brevis. [WP,unvetted]." [Wikipedia:Extensor_carpi_radialis_brevis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:38497 ! Extensor carpi radialis brevis
@@ -16078,7 +16086,7 @@ xref: ncithesaurus:Extensor_Carpi_Radialis_Brevis ! Extensor Carpi Radialis Brev
 id: UBERON:0001526
 name: extensor carpi ulnaris
 alt_id: UBERON:FMA_38506-MA_0002292
-def: "." [Wikipedia:Extensor_carpi_ulnaris]
+def: "Extensor carpi ulnaris is a muscle located in the human forearm that acts to extend and adduct the wrist. Being an extensor muscle, extensor carpi ulnaris is on the posterior side of the forearm. [WP,unvetted]." [Wikipedia:Extensor_carpi_ulnaris]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:38506 ! Extensor carpi ulnaris
@@ -16091,7 +16099,7 @@ xref: ncithesaurus:Extensor_Carpi_Ulnaris ! Extensor Carpi Ulnaris
 id: UBERON:0001527
 name: abductor pollicis longus
 alt_id: UBERON:FMA_38515-MA_0002266
-def: "." [Wikipedia:Abductor_pollicis_longus]
+def: "The Abductor pollicis longus lies immediately below the Supinator and is sometimes united with it. [WP,unvetted]." [Wikipedia:Abductor_pollicis_longus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:38515 ! Abductor pollicis longus
@@ -16162,7 +16170,7 @@ xref: OpenCyc:Mx4rvg7rcJwpEbGdrcN5Y29ycA ! carotid artery
 id: UBERON:0001531
 name: right common carotid artery
 alt_id: UBERON:FMA_3941-MA_0001928
-def: "." [Wikipedia:Right_common_carotid_artery]
+def: "In human anatomy, the common carotid artery is an artery that supplies the head and neck with oxygenated blood; it divides in the neck to form the external and internal carotid arteries. [WP,unvetted]." [Wikipedia:Right_common_carotid_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "trunk of right common carotid tree" EXACT []
@@ -16223,7 +16231,7 @@ xref: OpenCyc:Mx4rvp8u1JwpEbGdrcN5Y29ycA ! subclavian artery
 id: UBERON:0001534
 name: right subclavian artery
 alt_id: UBERON:FMA_3953-MA_0002047
-def: "." [Wikipedia:Right_subclavian_artery]
+def: "In human anatomy, the subclavian artery is a major artery of the upper thorax that mainly supplies blood to the head and arms. It is located below the clavicle, hence the name. There is a left subclavian and a right subclavian. On the left side of the body, the subclavian comes directly off the arch of aorta. On the right side of the body, the subclavian arises from the relatively short brachiocephalic artery (trunk) when it bifurcates into the subclavian and the right common carotid artery. The usual branches of the subclavian on both sides of the body are the vertebral artery, the internal thoracic artery, the thyrocervical trunk, the costocervical trunk and the dorsal scapular artery. The subclavian becomes the axillary artery at the lateral border of the first rib. [WP,unvetted]." [Wikipedia:Right_subclavian_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:3953 ! Right subclavian artery
@@ -16258,7 +16266,7 @@ xref: OpenCyc:Mx4rvg_ir5wpEbGdrcN5Y29ycA ! vertebral artery
 id: UBERON:0001536
 name: left common carotid artery
 alt_id: UBERON:FMA_4058-MA_0001927
-def: "." [Wikipedia:Left_common_carotid_artery]
+def: "In human anatomy, the common carotid artery is an artery that supplies the head and neck with oxygenated blood; it divides in the neck to form the external and internal carotid arteries. [WP,unvetted]." [Wikipedia:Left_common_carotid_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "trunk of left common carotid tree" EXACT []
@@ -16355,7 +16363,7 @@ xref: ncithesaurus:Inguinal_Lymph_Node ! Inguinal Lymph Node
 id: UBERON:0001543
 name: popliteal lymph node
 alt_id: UBERON:FMA_44227-MA_0000738
-def: "." [Wikipedia:Popliteal_lymph_node]
+def: "The popliteal lymph nodes, small in size and some six or seven in number, are imbedded in the fat contained in the popliteal fossa. One lies immediately beneath the popliteal fascia, near the terminal part of the small saphenous vein, and drains the region from which this vein derives its tributaries. Another is placed between the popliteal artery and the posterior surface of the knee-joint; it receives the lymphatic vessels from the knee-joint together with those which accompany the genicular arteries. The others lie at the sides of the popliteal vessels, and receive as efferents the trunks which accompany the anterior and posterior tibial vessels. The efferents of the popliteal glands pass almost entirely alongside the femoral vessels to the deep inguinal glands, but a few may accompany the great saphenous vein, and end in the glands of the superficial subinguinal group. [WP,unvetted]." [Wikipedia:Popliteal_lymph_node]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:44227 ! Popliteal lymph node
@@ -16606,7 +16614,7 @@ xref: MA:0000589 ! neck organ
 id: UBERON:0001561
 name: subcostal artery
 alt_id: UBERON:FMA_4613-MA_0002048
-def: "." [Wikipedia:Subcostal_artery]
+def: "The subcostal arteries, so named because they lie below the last ribs, constitute the lowest pair of branches derived from the thoracic aorta, and are in series with the intercostal arteries. Each passes along the lower border of the twelfth rib behind the kidney and in front of the Quadratus lumborum muscle, and is accompanied by the twelfth thoracic nerve. It then pierces the posterior aponeurosis of the Transversus abdominis, and, passing forward between this muscle and the Obliquus internus, anastomoses with the superior epigastric, lower intercostal, and lumbar arteries. Each subcostal artery gives off a posterior branch which has a similar distribution to the posterior ramus of an intercostal artery. [WP,unvetted]." [Wikipedia:Subcostal_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:4613 ! Subcostal artery
@@ -16629,7 +16637,7 @@ is_a: UBERON:0002377 ! muscle of neck
 id: UBERON:0001563
 name: longus capitis
 alt_id: UBERON:FMA_46308-MA_0002340
-def: "." [Wikipedia:Longus_capitis]
+def: "The longus capitis (rectus capitis anticus major), broad and thick above, narrow below, arises by four tendinous slips, from the anterior tubercles of the transverse processes of the third, fourth, fifth, and sixth cervical vertebræ, and ascends, converging toward its fellow of the opposite side, to be inserted into the inferior surface of the basilar part of the occipital bone. It is innervated by a branch of cervical plexus. [WP,unvetted]." [Wikipedia:Longus_capitis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:46308 ! Longus capitis
@@ -16716,7 +16724,7 @@ synonym: "muscle organ of larynx" EXACT [OBOL:automatic]
 id: UBERON:0001569
 name: constrictor muscle of pharynx
 alt_id: UBERON:FMA_46620-MA_0002278
-def: "." [Wikipedia:Constrictor_muscle_of_pharynx]
+def: "The superior pharyngeal constrictor muscle is a quadrilateral muscle, thinner and paler than the inferior pharyngeal constrictor muscle and middle pharyngeal constrictor muscle. [WP,unvetted]." [Wikipedia:Constrictor_muscle_of_pharynx]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "pharyngeal constrictor muscle" EXACT []
@@ -16728,7 +16736,7 @@ is_a: UBERON:0000933 ! pharyngeal muscle
 id: UBERON:0001570
 name: inferior pharyngeal constrictor
 alt_id: UBERON:FMA_46623-MA_0002279
-def: "." [Wikipedia:Inferior_pharyngeal_constrictor]
+def: "The Inferior pharyngeal constrictor, the thickest of the three constrictors, arises from the sides of the cricoid and thyroid cartilage. Similarly to the superior and middle pharyngeal constrictor muscles, it is innervated by the vagus nerve (cranial nerve X), specifically, by branches from the pharyngeal plexus and by neuronal branches from the recurrent laryngeal nerve. [WP,unvetted]." [Wikipedia:Inferior_pharyngeal_constrictor]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "constrictor muscle of pharynx inferior" EXACT []
@@ -16783,7 +16791,7 @@ xref: ncithesaurus:Styloglossus ! Styloglossus
 id: UBERON:0001574
 name: palatoglossus
 alt_id: UBERON:FMA_46697-MA_0002351
-def: "." [Wikipedia:Palatoglossus]
+def: "The palatoglossus, glossopalatinus, or palatoglossal muscle is a small fleshy fasciculus, narrower in the middle than at either end, forming, with the mucous membrane covering its surface, the glossopalatine arch. It arises from the anterior surface of the soft palate, where it is continuous with the muscle of the opposite side, and passing downward, forward, and lateralward in front of the palatine tonsil, is inserted into the side of the tongue, some of its fibers spreading over the dorsum, and others passing deeply into the substance of the organ to intermingle with the Transversus linguæ. [WP,unvetted]." [Wikipedia:Palatoglossus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:46697 ! Palatoglossus
@@ -16817,7 +16825,7 @@ is_a: UBERON:0002376 ! muscle of head
 id: UBERON:0001577
 name: muscle of face
 alt_id: UBERON:FMA_46751-XAO_0001013
-def: "." [Wikipedia:Facial_muscle]
+def: "The facial muscles are a group of striated muscles innervated by the facial nerve that, among other things, control facial expression. These muscles are also called mimetic muscles. [WP,unvetted]." [Wikipedia:Facial_muscle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "face muscle" EXACT []
@@ -16889,7 +16897,7 @@ xref: ncithesaurus:Levator_Labii_Superioris ! Levator Labii Superioris
 id: UBERON:0001581
 name: depressor labii inferioris
 alt_id: UBERON:FMA_46816-MA_0002287
-def: "." [Wikipedia:Depressor_labii_inferioris]
+def: "The depressor labii inferioris (or quadratus labii inferioris) is a facial muscle that helps lower the bottom lip. [WP,unvetted]." [Wikipedia:Depressor_labii_inferioris]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:46816 ! Depressor labii inferioris
@@ -16923,7 +16931,7 @@ relationship: part_of UBERON:0001595 ! auricular muscle
 id: UBERON:0001584
 name: left subclavian artery
 alt_id: UBERON:FMA_4694-MA_0002046
-def: "." [Wikipedia:Left_subclavian_artery]
+def: "In human anatomy, the subclavian artery is a major artery of the upper thorax that mainly supplies blood to the head and arms. It is located below the clavicle, hence the name. There is a left subclavian and a right subclavian. On the left side of the body, the subclavian comes directly off the arch of aorta. On the right side of the body, the subclavian arises from the relatively short brachiocephalic artery (trunk) when it bifurcates into the subclavian and the right common carotid artery. The usual branches of the subclavian on both sides of the body are the vertebral artery, the internal thoracic artery, the thyrocervical trunk, the costocervical trunk and the dorsal scapular artery. The subclavian becomes the axillary artery at the lateral border of the first rib. [WP,unvetted]." [Wikipedia:Left_subclavian_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:4694 ! Left subclavian artery
@@ -17036,7 +17044,7 @@ xref: ncithesaurus:Thymic_Vein ! Thymic Vein
 id: UBERON:0001592
 name: bronchial vein
 alt_id: UBERON:FMA_4749-MA_0002088
-def: "." [Wikipedia:Bronchial_vein]
+def: "The bronchial veins are small vessels that return blood from the larger bronchi and structures at the roots of the lungs. The right side drains into the azygos vein, while the left side drains into the left superior intercostal vein or the accessory hemiazygos vein. The bronchial veins are counterparts to the bronchial arteries. The veins, however, do not return all of the blood supplied by the arteries; much of the blood that is carried in the bronchial arteries is returned to the heart via the pulmonary veins. [WP,unvetted]." [Wikipedia:Bronchial_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "bronchial venous tree" EXACT []
@@ -17203,7 +17211,7 @@ relationship: part_of UBERON:0002376 ! muscle of head
 id: UBERON:0001603
 name: lateral rectus
 alt_id: UBERON:FMA_49038-ZFA_0000383
-def: "." [Wikipedia:Lateral_rectus]
+def: "For the muscle of the neck, see Rectus capitis lateralis muscle The lateral rectus muscle is a muscle in the orbit. It is one of six extraocular muscles that control the movements of the eye (abduction in this case) and the only muscle innervated by the abducens nerve, cranial nerve VI. [WP,unvetted]." [Wikipedia:Lateral_rectus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:49038 ! Lateral rectus
@@ -17216,7 +17224,7 @@ relationship: part_of UBERON:0002376 ! muscle of head
 id: UBERON:0001604
 name: levator palpebrae superioris
 alt_id: UBERON:FMA_49041-MA_0001272
-def: "." [Wikipedia:Levator_palpebrae_superioris]
+def: "The levator palpebrae superioris (or levator muscle of upper eyelid) is the muscle in the orbit that elevates the superior (upper) eyelid. [WP,unvetted]." [Wikipedia:Levator_palpebrae_superioris]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:49041 ! Levator palpebrae superioris
@@ -17271,7 +17279,7 @@ intersection_of: part_of UBERON:0001769 ! iris
 id: UBERON:0001608
 name: dilatator pupillae
 alt_id: UBERON:FMA_49158-MA_0001288
-def: "." [Wikipedia:Dilator_pupillae]
+def: "The iris dilator muscle (pupil dilator muscle, pupillary dilator, radial muscle of iris, radiating fibers), is a smooth muscle of the eye, running radially in the iris and therefore fit as a dilator. It is innervated by the sympathetic system, which acts by releasing noradrenaline, which acts on α1-receptors.. Thus, when presented with a threatening stimuli that activates the fight-or-flight response, this innervation dilates the iris, thus temporarily letting more light reach the retina. [WP,unvetted]." [Wikipedia:Dilator_pupillae]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "dilator muscle of pupil" EXACT []
@@ -17762,7 +17770,7 @@ xref: ncithesaurus:Thoracic_Duct ! Thoracic Duct
 id: UBERON:0001632
 name: temporal artery
 alt_id: UBERON:FMA_50438-MA_0002061
-def: "." [Wikipedia:Temporal_artery]
+def: "In human anatomy, the superficial temporal artery is a major artery of the head. It arises from the external carotid artery when it bifurcates into the superficial temporal artery and maxillary artery. Its pulse is palpable superior to the zygomatic arch, anterior and superior to the tragus. [WP,unvetted]." [Wikipedia:Temporal_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:50438 ! Temporal artery
@@ -17934,7 +17942,7 @@ xref: ncithesaurus:Coeliac_Artery ! Coeliac Artery
 id: UBERON:0001641
 name: transverse sinus
 alt_id: UBERON:FMA_50763-MA_0001868
-def: "." [Wikipedia:Transverse_sinus]
+def: "The transverse sinuses (left and right lateral sinuses), within a human head, are two areas beneath the brain, which allow blood veins to span the area, from the back of the head towards the nose. They drain from the straight sinus and superior sagittal sinus (along the top and back of the brain) to the sigmoid sinuses (at the center of the head), at the internal jugular vein. See diagram (at right): labeled under the brain as "" . The transverse sinuses are of large size and begin at the internal occipital protuberance; one, generally the right, being the direct continuation of the superior sagittal sinus, the other of the straight sinus. Each transverse sinus passes lateralward and forward, describing a slight curve with its convexity upward, to the base of the petrous portion of the temporal bone, and lies, in this part of its course, in the attached margin of the tentorium cerebelli; it then leaves the tentorium and curves downward and medialward to reach the jugular foramen, where it ends in the internal jugular vein. In its course it rests upon the squama of the occipital, the mastoid angle of the parietal, the mastoid part of the temporal, and, just before its termination, the jugular process of the occipital; the portion which occupies the groove on the mastoid part of the temporal is sometimes termed the sigmoid sinus. The transverse sinuses are frequently of unequal size, with the one formed by the superior sagittal sinus being the larger; they increase in size as they proceed, from back to center. On transverse section, the horizontal portion exhibits a prismatic form, the curved portion has a semicylindrical form. They receive the blood from the superior petrosal sinuses at the base of the petrous portion of the temporal bone; they communicate with the veins of the pericranium by means of the mastoid and condyloid emissary veins; and they receive some of the inferior cerebral and inferior cerebellar veins, and some veins from the diploë. The petrosquamous sinus, when present, runs backward along the junction of the squama and petrous portion of the temporal, and opens into the transverse sinus. [WP,unvetted]." [Wikipedia:Transverse_sinus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "lateral sinus" EXACT []
@@ -18193,7 +18201,7 @@ xref: OpenCyc:Mx4rv9eWA5wpEbGdrcN5Y29ycA ! hypoglossal nerve
 id: UBERON:0001651
 name: right pulmonary artery
 alt_id: UBERON:FMA_50872-MA_0002500
-def: "." [Wikipedia:Right_pulmonary_artery]
+def: "The pulmonary arteries carry blood from heart to the lungs. They are the only arteries (other than umbilical arteries in the fetus) that carry deoxygenated blood. In the human heart, the pulmonary trunk (pulmonary artery or main pulmonary artery) begins at the base of the right ventricle. It is short and wide - approximately 5 cm (2 inches) in length and 3 cm (1.2 inches) in diameter. It then branches into two pulmonary arteries (left and right), which deliver deoxygenated blood to the corresponding lung. [WP,unvetted]." [Wikipedia:Right_pulmonary_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "right main pulmonary artery" EXACT []
@@ -18208,7 +18216,7 @@ xref: galen:RightPulmonaryArtery ! right pulmonary artery
 id: UBERON:0001652
 name: left pulmonary artery
 alt_id: UBERON:FMA_50873-MA_0002032
-def: "." [Wikipedia:Left_pulmonary_artery]
+def: "The pulmonary arteries carry blood from heart to the lungs. They are the only arteries (other than umbilical arteries in the fetus) that carry deoxygenated blood. In the human heart, the pulmonary trunk (pulmonary artery or main pulmonary artery) begins at the base of the right ventricle. It is short and wide - approximately 5 cm (2 inches) in length and 3 cm (1.2 inches) in diameter. It then branches into two pulmonary arteries (left and right), which deliver deoxygenated blood to the corresponding lung. [WP,unvetted]." [Wikipedia:Left_pulmonary_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "left main pulmonary artery" EXACT []
@@ -18240,7 +18248,7 @@ xref: OpenCyc:Mx4rvziz3JwpEbGdrcN5Y29ycA ! facial vein
 id: UBERON:0001654
 name: supra-orbital vein
 alt_id: UBERON:FMA_50904-MA_0002228
-def: "." [Wikipedia:Supra-orbital_vein]
+def: "The supraorbital vein begins on the forehead where it communicates with the frontal branch of the superficial temporal vein. It runs downward superficial to the Frontalis muscle, and joins the frontal vein at the medial angle of the orbit to form the angular vein. Previous to its junction with the frontal vein, it sends through the supraorbital notch into the orbit a branch which communicates with the ophthalmic vein; as this vessel passes through the notch, it receives the frontal diploic vein through a foramen at the bottom of the notch. The areas drained by this vessel are the forehead, eyebrow and upper eyelid. [WP,unvetted]." [Wikipedia:Supra-orbital_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "supraorbital vein" EXACT []
@@ -18301,7 +18309,7 @@ is_a: UBERON:0001671 ! temporal vein
 id: UBERON:0001659
 name: transverse facial vein
 alt_id: UBERON:FMA_50938-MA_0002247
-def: "." [Wikipedia:Transverse_facial_vein]
+def: "The superficial temporal vein is a vein of the side of the head. [WP,unvetted]." [Wikipedia:Transverse_facial_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:50938 ! Transverse facial vein
@@ -18312,7 +18320,7 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0001660
 name: maxillary vein
 alt_id: UBERON:FMA_50941-MA_0002169
-def: "." [Wikipedia:Maxillary_vein]
+def: "The maxillary veins (internal maxillary vein in older sources) consist of a short trunk which accompanies the first part of the internal maxillary artery. It is formed by a confluence of the veins of the pterygoid plexus, and passes backward between the sphenomandibular ligament and the neck of the mandible, and unites with the superficial temporal vein to form the retromandibular vein. [WP,unvetted]." [Wikipedia:Maxillary_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:50941 ! Maxillary vein
@@ -18356,7 +18364,7 @@ xref: ncithesaurus:Cerebral_Vein ! Cerebral Vein
 id: UBERON:0001664
 name: inferior cerebral vein
 alt_id: UBERON:FMA_50986-MA_0002097
-def: "." [Wikipedia:Inferior_cerebral_vein]
+def: "The inferior cerebral veins, of small size, drain the under surfaces of the hemispheres. Those on the orbital surface of the frontal lobe join the superior cerebral veins, and through these open into the superior sagittal sinus. Those of the temporal lobe anastomose with the middle cerebral and basal veins, and join the cavernous, sphenoparietal, and superior petrosal sinuses. [WP,unvetted]." [Wikipedia:Inferior_cerebral_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:50986 ! Inferior cerebral vein
@@ -18380,7 +18388,7 @@ xref: ncithesaurus:Triceps_Surae ! Triceps Surae
 id: UBERON:0001666
 name: flexor digitorum longus
 alt_id: UBERON:FMA_51071-MA_0002299
-def: "." [Wikipedia:Flexor_digitorum_longus]
+def: "The Flexor digitorum longus is situated on the tibial side of the leg. At its origin it is thin and pointed, but it gradually increases in size as it descends. This muscle serves to curl the second, third, fourth, and fifth toes (flexion of phalanges II-V). [WP,unvetted]." [Wikipedia:Flexor_digitorum_longus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: BTO:0000466
@@ -18393,7 +18401,7 @@ xref: ncithesaurus:Flexor_Digitorum_Longus ! Flexor Digitorum Longus
 id: UBERON:0001667
 name: tibialis posterior
 alt_id: UBERON:FMA_51099-MA_0002394
-def: "." [Wikipedia:Tibialis_posterior]
+def: "The Tibialis posterior is the most central of all the leg muscles, and is located in the posterior compartment of the leg. It is the key stabilizing muscle of the lower leg. [WP,unvetted]." [Wikipedia:Tibialis_posterior]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "tibialis caudalis" EXACT []
@@ -18447,7 +18455,7 @@ is_a: UBERON:0001668 ! cerebellar vein
 id: UBERON:0001671
 name: temporal vein
 alt_id: UBERON:FMA_51302-MA_0002239
-def: "." [Wikipedia:Temporal_vein]
+def: "The superficial temporal vein is a vein of the side of the head. [WP,unvetted]." [Wikipedia:Temporal_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:51302 ! Temporal vein
@@ -18857,7 +18865,7 @@ relationship: part_of UBERON:0002021 ! occipital lobe
 id: UBERON:0001694
 name: petrous part of temporal bone
 alt_id: UBERON:FMA_52871-MA_0001477
-def: "." [Wikipedia:Petrous_bone]
+def: "The temporal bones are situated at the sides and base of the skull. The temporal bone supports that part of the face known as the temple. [WP,unvetted]." [Wikipedia:Petrous_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "pars petrosa (os temporale)" EXACT []
@@ -19198,7 +19206,7 @@ xref: OpenCyc:Mx4rvVi4m5wpEbGdrcN5Y29ycA ! eyelid
 id: UBERON:0001712
 name: upper eyelid
 alt_id: UBERON:FMA_54439-MA_0001267
-def: "." [Wikipedia:Upper_eyelid]
+def: "An eyelid is a thin fold of skin that covers and protects an eye. With the exception of the prepuce and the labia minora, it has the thinnest skin of the whole body. The levator palpebrae superioris muscle retracts the eyelid to "open" the eye. This can be either voluntarily or involuntarily. The human eyelid features a row of eyelashes which serve to heighten the protection of the eye from dust and foreign debris, as well as from perspiration. "Palpebral" (and "blepharo") means relating to the eyelids. Its key function is to regularly spread the tears and other secretion on the eye surface to keep it moist, since the cornea must be continuously moist. They keep the eyes from drying out when asleep. Moreover, the blink reflex protects the eye from foreign bodies. [WP,unvetted]." [Wikipedia:Upper_eyelid]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "superior eyelid" EXACT []
@@ -19214,7 +19222,7 @@ xref: OpenCyc:Mx4rvg4ohJwpEbGdrcN5Y29ycA ! upper eyelid
 id: UBERON:0001713
 name: lower eyelid
 alt_id: UBERON:FMA_54442-MA_0001263-XAO_0000007
-def: "." [Wikipedia:Lower_eyelid]
+def: "An eyelid is a thin fold of skin that covers and protects an eye. With the exception of the prepuce and the labia minora, it has the thinnest skin of the whole body. The levator palpebrae superioris muscle retracts the eyelid to "open" the eye. This can be either voluntarily or involuntarily. The human eyelid features a row of eyelashes which serve to heighten the protection of the eye from dust and foreign debris, as well as from perspiration. "Palpebral" (and "blepharo") means relating to the eyelids. Its key function is to regularly spread the tears and other secretion on the eye surface to keep it moist, since the cornea must be continuously moist. They keep the eyes from drying out when asleep. Moreover, the blink reflex protects the eye from foreign bodies. [WP,unvetted]." [Wikipedia:Lower_eyelid]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "inferior eyelid" EXACT []
@@ -19677,7 +19685,7 @@ xref: ncithesaurus:Arytenoid_Cartilage ! Arytenoid Cartilage
 id: UBERON:0001741
 name: corniculate cartilage
 alt_id: UBERON:FMA_55110-MA_0001885
-def: "." [Wikipedia:Corniculate_cartilage]
+def: "The corniculate cartilages (cartilages of Santorini) are two small conical nodules consisting of yellow elastic cartilage, which articulate with the summits of the arytenoid cartilages and serve to prolong them posteriorly and medially. They are situated in the posterior parts of the aryepiglottic folds of mucous membrane, and are sometimes fused with the arytenoid cartilages. [WP,unvetted]." [Wikipedia:Corniculate_cartilage]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cartilage of santorini" EXACT []
@@ -20205,7 +20213,7 @@ xref: ncithesaurus:Iris ! Iris
 id: UBERON:0001770
 name: lacrimal canaliculus
 alt_id: UBERON:FMA_58245-MA_0001294
-def: "." [Wikipedia:Lacrimal_canaliculus]
+def: "The lacrimal canaliculi, also known as the lacrimal canals or lacrimal ducts, are the small channels in each eyelid that commence at minute orifices, termed puncta lacrimalia, on the summits of the papillae lacrimales, seen on the margins of the lids at the lateral extremity of the lacus lacrimalis. The superior duct, the smaller and shorter of the two, at first ascends, and then bends at an acute angle, and passes medialward and downward to the lacrimal sac. The inferior duct at first descends, and then runs almost horizontally to the lacrimal sac. At the angles they are dilated into ampullæ. Microscopically, they are lined by nonkeratinizing stratified squamous epithelium surrounded by fibrous tissue. Outside the latter is a layer of striped muscle, continuous with the lacrimal part of the Orbicularis oculi; at the base of each lacrimal papilla the muscular fibers are circularly arranged and form a kind of sphincter. [WP,unvetted]." [Wikipedia:Lacrimal_canaliculus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:58245 ! Lacrimal canaliculus
@@ -20768,7 +20776,7 @@ xref: ncithesaurus:Vitreous_Body ! Vitreous Body
 id: UBERON:0001799
 name: vitreous chamber of eyeball
 alt_id: UBERON:FMA_58848-MA_0002461
-def: "." [Wikipedia:Vitreous_chamber]
+def: "The posterior chamber is a narrow chink behind the peripheral part of the iris of the human eye, and in front of the suspensory ligament of the lens and the ciliary processes the Posterior Chamber consists of small space directly posterior of the Iris but anterior to the lens. [WP,unvetted]." [Wikipedia:Vitreous_chamber]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "camera postrema" EXACT []
@@ -21069,7 +21077,7 @@ xref: EFO:0001389 ! lacrimal gland
 id: UBERON:0001818
 name: tarsal gland
 alt_id: UBERON:FMA_59104-MA_0001249
-def: "." [Wikipedia:Tarsal_gland]
+def: "The meibomian glands (or tarsal glands) are a special kind of sebaceous glands at the rim of the eyelids, responsible for the supply of sebum, an oily substance that prevents evaporation of the eye's tear film, prevents tear spillage onto the cheek, and makes the closed lids airtight. There are approximately 50 glands on the upper eyelids and 25 glands on the lower eyelids. The glands are named after Heinrich Meibom (1638-1700), a German physician. [WP,unvetted]." [Wikipedia:Tarsal_gland]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "gland of meibom" EXACT []
@@ -21183,7 +21191,7 @@ synonym: "organ mucosa of larynx" EXACT [OBOL:automatic]
 id: UBERON:0001825
 name: paranasal sinus
 alt_id: UBERON:FMA_59679-MA_0000431
-def: "." [Wikipedia:Paranasal_sinus]
+def: "Paranasal sinuses are air-filled spaces, communicating with the nasal cavity, within the bones of the skull and face. [WP,unvetted]." [Wikipedia:Paranasal_sinus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:59679 ! Paranasal sinus
@@ -21437,7 +21445,7 @@ relationship: part_of UBERON:0001832 ! sublingual gland
 id: UBERON:0001839
 name: bony labyrinth
 alt_id: UBERON:FMA_60179-MA_0000238-XAO_0000193
-def: "." [Wikipedia:Bony_labyrinth]
+def: "For more uses of the word labyrinth, see Labyrinth (disambiguation) The labyrinth is a system of fluid passages in the inner ear, including both the cochlea, which is part of the auditory system, and the vestibular system, which provides the sense of balance. It is named by analogy with the mythical maze that imprisoned the Minotaur, because of its appearance. The bony labyrinth, or osseous labyrinth, is the network of passages with bony walls lined with periosteum. The bony labyrinth is lined with the membranous labyrinth. There is a layer of perilymph between them. The three parts of the bony labyrinth are the vestibule of the ear, the semicircular canals, and the cochlea. The vestibular system is the region of the inner ear where the semicircular canals converge, close to the cochlea (the hearing organ). The vestibular system works with the visual system to keep objects in focus when the head is moving. Joint and muscle receptors also are important in maintaining balance. The brain receives, interprets, and processes the information from these systems that control our balance. [WP,unvetted]." [Wikipedia:Bony_labyrinth]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "osseous labyrinth" EXACT []
@@ -21776,7 +21784,7 @@ relationship: part_of UBERON:0001841 ! anterior semicircular canal
 id: UBERON:0001858
 name: posterior semicircular duct
 alt_id: UBERON:FMA_61126-MA_0001214
-def: "." [Wikipedia:Posterior_semicircular_duct]
+def: "The semicircular canals are three half-circular, interconnected tubes located inside each ear. The three canals are the horizontal semicircular canal (also known as the lateral semicircular canal), superior semicircular canal (also known as the anterior semicircular canal), and the posterior semicircular canal. The canals are aligned approximately orthogonally to one another. The horizontal canal is aligned roughly horizontally in the head. The superior and anterior canals are aligned roughly at a 45 degree angle to a vertical plane drawn from the nose to the back of the skull. Thus, the horizontal canal detects horizontal head movements (such as when doing a pirouette), while the superior and posterior canals detect vertical head movements. Each canal is filled with a fluid called endolymph and contains a motion sensor with little hairs whose ends are embedded in a gelatinous structure called the cupula. As the skull twists in any direction, the endolymph is thrown into different sections of the canals. The cilia detect when the endolymph rushes past, and a signal is then sent to the brain. The semicircular canals are a component of the Labyrinth. Among species of mammals, the size of the semicircular canals is correlated with their type of locomotion. Specifically, species that are agile and have fast, jerky locomotion have larger canals relative to their body size than those that move more cautiously. [WP,unvetted]." [Wikipedia:Posterior_semicircular_duct]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:61126 ! Posterior semicircular duct
@@ -21879,7 +21887,7 @@ relationship: part_of UBERON:0001352 ! external acoustic meatus
 id: UBERON:0001866
 name: sebum
 alt_id: UBERON:FMA_61304-MA_0002538
-def: "." [Wikipedia:Sebum]
+def: "The sebaceous glands are microscopic glands in the skin which secrete an oily/waxy matter, called sebum, to lubricate the skin and hair of animals. [WP,unvetted]." [Wikipedia:Sebum]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: ENVO:02000037
@@ -23836,7 +23844,7 @@ xref: ncithesaurus:Bronchus-Associated_Lymphoid_Tissue ! Bronchus-Associated Lym
 id: UBERON:0001964
 name: least splanchnic nerve
 alt_id: UBERON:FMA_6283-MA_0002635
-def: "." [Wikipedia:Least_splanchnic_nerve]
+def: "Thoracic splanchnic nerves are splanchnic nerves that arise from the sympathetic trunk in the thorax and travel inferiorly to provide sympathetic innervation to the abdomen. The nerves contain preganglionic sympathetic and visceral afferent fibers. There are three main thoracic splanchnic nerves: The nerve's origins can be remembered by the "4-3-2 rule", accounting for the number of ganglia giving rise to each nerve. However, different sources define the nerves in different ways, so this rule may not always be reliable. [WP,unvetted]." [Wikipedia:Least_splanchnic_nerve]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "least thoracic splanchnic nerve" EXACT []
@@ -26292,7 +26300,7 @@ xref: galen:Mesentery ! mesentery
 id: UBERON:0002098
 name: apex of heart
 alt_id: UBERON:FMA_7164-MA_0000488
-def: "." [Wikipedia:Apex_of_heart]
+def: "The apex of the heart is the lowest superficial part of the heart. It is directed downward, forward, and to the left, and is overlapped by the left lung and pleura. [WP,unvetted]." [Wikipedia:Apex_of_heart]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cardiac apex" EXACT []
@@ -26348,6 +26356,24 @@ xref: galen:Trunk ! trunk
 xref: OpenCyc:Mx4rvVkJjpwpEbGdrcN5Y29ycA ! torso
 
 [Term]
+id: UBERON:0004708 ! limb/fin
+name: limb/fin
+comment: this class is the union of the classes limb and fin. TODO - should limb subsume fin? GO treats these as siblings, yet the GO definition appears to apply to fins
+is_a: UBERON:0000026 ! appendage
+
+[Term]
+id: UBERON:0004709
+name: limb/fin of posterior region of body
+intersection_of: UBERON:0004708 ! limb/fin
+intersection_of: UBERON:0000154 ! posterior region of body
+
+[Term]
+id: UBERON:0004710
+name: limb/fin of anterior region of body
+intersection_of: UBERON:0004708 ! limb/fin
+intersection_of: UBERON:0000153 ! anterior region of body
+
+[Term]
 id: UBERON:0002101
 name: limb
 alt_id: UBERON:FMA_7182-MA_0000007-MIAA_0000090-XAO_0003027
@@ -26365,7 +26391,7 @@ xref: MA:0000007 ! limb
 xref: MAT:0000090 ! limb sensu vertebrata
 xref: MIAA:0000090 ! limb sensu vertebrata
 xref: XAO:0003027 ! limb
-is_a: UBERON:0000026 ! appendage
+is_a: UBERON:0004708 ! limb/fin
 xref: ncithesaurus:Limb ! Limb
 xref: BTO:0001492 ! limb
 xref: EFO:0000876 ! vertebrate limb
@@ -26397,7 +26423,7 @@ xref: EFO:0001410 ! arm
 xref: OpenCyc:Mx4rvVjp5ZwpEbGdrcN5Y29ycA ! arm
 
 [Term]
-id: UBERON:0002102
+id: UBERON:0002102 ! forelimb
 name: forelimb
 alt_id: UBERON:FMA_7183-MA_0000025-MIAA_0000394-XAO_0003030
 def: "anterior-most limb on a body. Note distinction between arm and forelimb. hand is part of forelimb, but not part of arm" [BTO:0001729, ISBN:0471209627, Wikipedia:Forelimb]
@@ -26423,6 +26449,7 @@ xref: MIAA:0000394 ! forelimb
 xref: XAO:0003030 ! forelimb
 is_a: UBERON:0002101 ! limb
 relationship: anterior_to UBERON:0002103 ! hindlimb
+relationship: UBERON:0000153 ! anterior region of body
 xref: ncithesaurus:Upper_Extremity ! Upper Extremity
 xref: BTO:0001729 ! forelimb
 xref: galen:UpperExtremity ! upper extremity
@@ -26451,6 +26478,7 @@ xref: MAT:0000395 ! hindlimb
 xref: MIAA:0000395 ! hindlimb
 xref: XAO:0003031 ! hind limb
 is_a: UBERON:0002101 ! limb
+relationship: UBERON:0000154 ! posterior region of body
 xref: ncithesaurus:Lower_Extremity ! Lower Extremity
 xref: BTO:0002345 ! hindlimb
 xref: galen:LowerExtremity ! lower extremity
@@ -26471,6 +26499,7 @@ xref: TAO:0001127 ! visual system
 xref: ZFA:0001127 ! visual system
 is_a: UBERON:0001032 ! sense organ system
 relationship: spatially_disjoint_from UBERON:0002105 ! auditory system
+relationship: capable_of GO:0007601 ! visual perception
 xref: ncithesaurus:Visual_System ! Visual System
 xref: OpenCyc:Mx4rvViCtpwpEbGdrcN5Y29ycA ! visual system
 
@@ -27122,7 +27151,7 @@ relationship: part_of UBERON:0001943 ! midbrain tegmentum
 id: UBERON:0002141
 name: parvocellular oculomotor nucleus
 alt_id: UBERON:FMA_72424-MA_0001071
-def: "." [Wikipedia:Edinger-westphal_nucleus]
+def: "The Edinger-Westphal nucleus (also known as the accessory oculomotor nucleus) is the accessory parasympathetic cranial nerve nucleus of the oculomotor nerve, supplying the constricting muscles of the iris. Alternatively, the Edinger-Westphal nucleus is a term often used to refer to the adjacent population of non-preganglionic neurons that do not project to the ciliary ganglion, but rather project to the spinal cord, dorsal raphe nucleus, and septal nuclei. Unlike the classical, preganglionic Edinger-Westphal neurons that contain choline acetyltransferase, neurons of the non-preganglionic Edinger-Westphal nucleus have been shown to contain various stress- and feeding-related neuropeptides, such as Urocortin and cocaine- and amphetamine-regulated transcript. Proper nomenclature for this distinct brain region has not yet been established. [WP,unvetted]." [Wikipedia:Edinger-westphal_nucleus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "accessory oculomotor nucleus" EXACT []
@@ -27280,7 +27309,7 @@ relationship: part_of UBERON:0002298 ! brainstem
 id: UBERON:0002152
 name: middle cerebellar peduncle
 alt_id: UBERON:FMA_72515-MA_0002745
-def: "." [Wikipedia:Middle_cerebellar_peduncle]
+def: "The middle cerebellar peduncles (brachia pontis) are composed entirely of centripetal fibers, which arise from the cells of the nuclei pontis of the opposite side and end in the cerebellar cortex; the fibers are arranged in three fasciculi, superior, inferior, and deep. The superior fasciculus, the most superficial, is derived from the upper transverse fibers of the pons; it is directed backward and lateralward superficial to the other two fasciculi, and is distributed mainly to the lobules on the inferior surface of the cerebellar hemisphere and to the parts of the superior surface adjoining the posterior and lateral margins. The inferior fasciculus is formed by the lowest transverse fibers of the pons; it passes under cover of the superior fasciculus and is continued downward and backward more or less parallel with it, to be distributed to the folia on the under surface close to the vermis. The deep fasciculus comprises most of the deep transverse fibers of the pons. It is at first covered by the superior and inferior fasciculi, but crosses obliquely and appears on the medial side of the superior, from which it receives a bundle; its fibers spread out and pass to the upper anterior cerebellar folia. The fibers of this fasciculus cover those of the restiform body. [WP,unvetted]." [Wikipedia:Middle_cerebellar_peduncle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:72515 ! Middle cerebellar peduncle
@@ -27718,7 +27747,7 @@ relationship: part_of UBERON:0002240 ! spinal cord
 id: UBERON:0002180
 name: ventral funiculus
 alt_id: UBERON:FMA_74003-ZFA_0000605
-def: "." [Wikipedia:Ventral_funiculus]
+def: "The most lateral of the bundles of the anterior nerve roots is generally taken as a dividing line that separates the antero-lateral region into two parts, viz. , an anterior funiculus, between the anterior median fissure and the most lateral of the anterior nerve roots; and a lateral funiculus, between the exit of these roots and the postero-lateral sulcus. [WP,unvetted]." [Wikipedia:Ventral_funiculus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "anterior funiculus of spinal cord" EXACT []
@@ -28644,7 +28673,7 @@ xref: ncithesaurus:Rib_Tubercle ! Rib Tubercle
 id: UBERON:0002236
 name: costal cartilage
 alt_id: UBERON:FMA_7591-MA_0000106
-def: "." [Wikipedia:Costal_cartilage]
+def: "The costal cartilages are bars of hyaline cartilage which serve to prolong the ribs forward and contribute very materially to the elasticity of the walls of the thorax. [WP,unvetted]." [Wikipedia:Costal_cartilage]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:7591 ! Costal cartilage
@@ -28670,7 +28699,7 @@ xref: OpenCyc:Mx4rv4-iWJwpEbGdrcN5Y29ycA ! true rib
 id: UBERON:0002238
 name: false rib
 alt_id: UBERON:FMA_7594-MA_0001398
-def: "." [Wikipedia:False_rib]
+def: "The false ribs are the five sets of ribs below the top seven true ribs. Of these: the first three (eighth, ninth, and tenth rib) have their cartilages attached to the cartilage of the rib above (vertebro-chondral): the last two are free at their anterior extremities and are termed floating ribs or vertebral ribs. [WP,unvetted]." [Wikipedia:False_rib]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "costa spuria" EXACT []
@@ -28814,7 +28843,7 @@ xref: EFO:0000975 ! uterus
 id: UBERON:0002248
 name: transverse pericardial sinus
 alt_id: UBERON:FMA_77132-MA_0001880
-def: "." [Wikipedia:Transverse_pericardial_sinus]
+def: "There are two Pericardial sinuses: transverse and oblique. The cul-de-sac enclosed between the limbs of the inverted U of the venous mesocardium lies behind the left atrium and is known as the oblique sinus. . The passage between the venous and arterial mesocardia—i.e. , between the aorta and pulmonary artery in front and the superior vena cava behind—is termed the transverse sinus. Also, the sinus that forms in the pericardial cavity where the dorso-mesentary pericardium reside. Can be used to pass ligature during cardiac surgery. [WP,unvetted]." [Wikipedia:Transverse_pericardial_sinus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Thiele's canal" EXACT []
@@ -28963,7 +28992,7 @@ xref: ZFA:0000702 ! ventral horn spinal cord
 id: UBERON:0002258
 name: dorsal funiculus
 alt_id: UBERON:FMA_77461-ZFA_0000501
-def: "." [Wikipedia:Dorsal_funiculus]
+def: "The portion of the medulla spinalis which lies between the posterolateral sulcus and the posterior median sulcus is named the posterior funiculus. This area includes the dorsal columns (also called the posterior columns) which contains the fasciculus gracilis and, higher in the body, the fasciculus cuneatus, which are separated by a partition of glial cells. Histologically, these two fasciculi are on other sides of the dorsal intermediate sulcus. [WP,unvetted]." [Wikipedia:Dorsal_funiculus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "dorsal funiculus of spinal cord" EXACT []
@@ -29022,7 +29051,7 @@ relationship: part_of UBERON:0002240 ! spinal cord
 id: UBERON:0002262
 name: celiac ganglion
 alt_id: UBERON:FMA_77570-MA_0001158
-def: "." [Wikipedia:Celiac_ganglion]
+def: "The celiac ganglia are two large irregularly shaped masses of nerve tissue in the upper abdomen. Part of the sympathetic subdivision of the autonomic nervous system (ANS), the two celiac ganglia are the largest ganglia in the ANS, and they innervate most of the digestive tract. They have the appearance of lymph glands and are placed on either side of the midline in front of the crura of the diaphragm, close to the suprarenal glands (also called adrenal glands). The ganglion on the right side is placed behind the inferior vena cava. They are sometimes referred to as the semilunar ganglia or the solar ganglia. [WP,unvetted]." [Wikipedia:Celiac_ganglion]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "coeliac ganglion" RELATED []
@@ -29562,7 +29591,7 @@ xref: ncithesaurus:Biliary_Tract ! Biliary Tract
 id: UBERON:0002295
 name: scala media
 alt_id: UBERON:FMA_79789-MA_0002458
-def: "." [Wikipedia:Scala_media]
+def: "Error creating thumbnail: Invalid Parameter - white This article needs additional citations for verification. The cochlear duct (or scala media) is an endolymph filled cavity inside the cochlea, located in between the scala tympani and the scala vestibuli, separated by the basilar membrane and Reissner's membrane (the vestibular membrane) respectively. Scala media houses the organ of Corti. [WP,unvetted]." [Wikipedia:Scala_media]
 comment: This class was created automatically from a combination of ontologies. TODO: check w wikipedia, cochlear duct
 subset: uberon_slim
 synonym: "cochlear duct" RELATED []
@@ -30441,7 +30470,7 @@ xref: ncithesaurus:Neuroectoderm ! Neuroectoderm
 id: UBERON:0002347
 name: thoracic vertebra
 alt_id: UBERON:FMA_9139-MA_0000314
-def: "." [Wikipedia:Thoracic_vertebra]
+def: "The 12 thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae. They are intermediate in size between those of the cervical and lumbar regions; they increase in size as one proceeds down the spine, the upper vertebrae being much smaller than those in the lower part of the region. They are distinguished by the presence of facets on the sides of the bodies for articulation with the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. [WP,unvetted]." [Wikipedia:Thoracic_vertebra]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "dorsal vertebra" EXACT []
@@ -31332,8 +31361,9 @@ synonym: "perineum muscle organ" EXACT [OBOL:automatic]
 id: UBERON:0002380
 name: trapezius
 alt_id: UBERON:FMA_9626-MA_0002398
-def: "." [Wikipedia:Trapezius]
+def: "In human anatomy, the trapezius is a large superficial muscle that extends longitudinally from the occipital bone to the lower thoracic vertebrae and laterally to the spine of the scapula (shoulder blade). Its functions are to move the scapulae and support the arm. The trapezius has three functional regions: the superior region (descending part), which supports the weight of the arm; the intermediate region (transverse part), which retracts the scapulae; and the inferior region (ascending part), which medially rotates and depresses the scapulae. [WP,unvetted]." [Wikipedia:Trapezius]
 comment: This class was created automatically from a combination of ontologies
+synonym: "trapezius muscle" EXACT []
 subset: uberon_slim
 xref: FMA:9626 ! Trapezius
 xref: HOG:0000834 ! trapezius
@@ -31344,7 +31374,7 @@ is_a: UBERON:0001482 ! muscle of shoulder
 id: UBERON:0002381
 name: pectoralis major
 alt_id: UBERON:FMA_9627-MA_0002354
-def: "." [Wikipedia:Pectoralis_major]
+def: "The pectoralis major is a thick, fan-shaped muscle, situated at the upper front of the chest wall. It makes up the bulk of the chest muscles in the male and lies under the breast in the female. Underneath the pectoralis major is the pectoralis minor, a thin, triangular muscle. [WP,unvetted]." [Wikipedia:Pectoralis_major]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EHDAA:8311 ! pectoralis major
@@ -31373,7 +31403,7 @@ xref: ncithesaurus:Rectus_Abdominis ! Rectus Abdominis
 id: UBERON:0002383
 name: supraspinatus
 alt_id: UBERON:FMA_9629-MA_0002389
-def: "." [Wikipedia:Supraspinatus]
+def: "The supraspinatus is a relatively small muscle of the upper limb that takes its name from its origin from the supraspinous fossa superior to the spine of the scapula. It is one of the four rotator cuff muscles and also abducts the arm at the shoulder. The spine of the scapula separates the supraspinatus muscle from the infraspinatus muscle, which originates below the spine. [WP,unvetted]." [Wikipedia:Supraspinatus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EHDAA:8319 ! supraspinatus
@@ -31779,7 +31809,7 @@ xref: OpenCyc:Mx4rwCKAppwpEbGdrcN5Y29ycA ! pleural cavity
 id: UBERON:0002403
 name: internal intercostal muscle
 alt_id: UBERON:FMA_9757-MA_0002326
-def: "." [Wikipedia:Internal_intercostal_muscle]
+def: "Intercostal muscles are several groups of muscles that run between the ribs, and help form and move the chest wall. There are three principal layers; the external intercostal muscles, which aid in quiet and forced inhalation. They originate on ribs 1-11 and have their insertion on ribs 2-12. The external intercostals are responsible for the elevation of the ribs, and expanding the transverse dimensions of the thoracic cavity. Located around the ribs the internal intercostal muscles, which aid in forced expiration (quiet expiration is a passive process). They originate on ribs 2-12 and have their insertions on ribs 1-11. The internal intercostals are responsible for the depression of the ribs decreasing the transverse dimensions of the thoracic cavity. the innermost intercostal muscle, the deep layers of the internal intercostal muscles which are separated from them by the neurovascular bundle. Both the external and internal muscles are innervated by the intercostal nerves, and are provided by the intercostal arteries and intercostal veins. Their fibers run in opposite directions. [WP,unvetted]." [Wikipedia:Internal_intercostal_muscle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "intercostal muscle internal layer" RELATED []
@@ -32123,7 +32153,7 @@ xref: BTO:0000235 ! basal ganglion
 id: UBERON:0002421
 name: hippocampal formation
 alt_id: UBERON:MA_0000189-FMA_74038
-def: "." [Wikipedia:Hippocampal_formation]
+def: "The hippocampus is a major component of the brains of humans and other mammals. It belongs to the limbic system and plays important roles in long-term memory and spatial navigation. Like the cerebral cortex, with which it is closely associated, it is a paired structure, with mirror-image halves in the left and right sides of the brain. In humans and other primates, the hippocampus is located inside the medial temporal lobe, beneath the cortical surface. Its curved shape reminded early anatomists of the horns of a ram (Cornu Ammonis), or a seahorse. The name was taken by the sixteenth century anatomist Julius Caesar Aranzi from the Greek word for seahorse . In Alzheimer's disease the hippocampus is one of the first regions of the brain to suffer damage; memory problems and disorientation appear among the first symptoms. Damage to the hippocampus can also result from oxygen starvation, encephalitis, or medial temporal lobe epilepsy. People with extensive hippocampal damage may experience amnesia—the inability to form or retain new memories. In rodents, the hippocampus has been studied extensively as part of the brain system responsible for spatial memory and navigation. Many neurons in the rat and mouse hippocampus respond as place cells: that is, they fire bursts of action potentials when the animal passes through a specific part of its environment. Hippocampal place cells interact extensively with head direction cells, whose activity acts as an inertial compass, and with grid cells in the neighboring entorhinal cortex. Because of its densely packed layers of neurons, the hippocampus has frequently been used as a model system for studying neurophysiology. The form of neural plasticity known as long-term potentiation (LTP) was first discovered to occur in the hippocampus and has often been studied in this structure. LTP is widely believed to be one of the main neural mechanisms by which memory is stored in the brain. [WP,unvetted]." [Wikipedia:Hippocampal_formation]
 subset: uberon_slim
 synonym: "archipallium" RELATED [MA:0000189]
 synonym: "hippocampus (crosby)" EXACT []
@@ -32381,7 +32411,7 @@ xref: EFO:0000109 ! obsolete_CNS brain striatum MMHCC
 id: UBERON:0002436
 name: primary visual cortex
 alt_id: UBERON:MA_0000914-FMA_236871
-def: "." [Wikipedia:Primary_visual_cortex]
+def: "The term visual cortex refers to the primary visual cortex (also known as striate cortex or V1) and extrastriate visual cortical areas such as V2, V3, V4, and V5. The primary visual cortex is anatomically equivalent to Brodmann area 17, or BA17. The extrastriate cortical areas consist of Brodmann area 18 and Brodmann area 19. [WP,unvetted]." [Wikipedia:Primary_visual_cortex]
 subset: uberon_slim
 synonym: "area striata" RELATED []
 synonym: "BA17" RELATED [Wikipedia:Visual_cortex]
@@ -32462,7 +32492,7 @@ is_a: UBERON:0001991 ! cervical ganglion
 id: UBERON:0002441
 name: cervicothoracic ganglion
 alt_id: UBERON:MA_0001157-FMA_6469
-def: "." [Wikipedia:Cervicothoracic_ganglion]
+def: "The stellate ganglion (or cervicothoracic ganglion) is a sympathetic ganglion formed by the fusion of the inferior cervical ganglion and the first thoracic ganglion. Stellate ganglion is located at the level of C7, anterior to the transverse process of C7, posterior to the neck of the first rib, and just below the subclavian artery. [WP,unvetted]." [Wikipedia:Cervicothoracic_ganglion]
 subset: uberon_slim
 synonym: "cervicothoracic sympathetic ganglion" EXACT []
 synonym: "stellate ganglion" EXACT []
@@ -32567,7 +32597,7 @@ xref: galen:Patella ! patella
 id: UBERON:0002447
 name: palatine gland
 alt_id: UBERON:MA_0001584-FMA_71616
-def: "." [Wikipedia:Palatine_gland]
+def: "The palatine glands form a continuous layer on its posterior surface and around the uvula. They are primarily mucous secreting glands, as opposed to serous or mixed secreting glands. [WP,unvetted]." [Wikipedia:Palatine_gland]
 subset: uberon_slim
 synonym: "salivary palatine gland" EXACT []
 synonym: "palatine salivary gland" EXACT []
@@ -32782,7 +32812,7 @@ xref: OpenCyc:Mx4rwC7lnJwpEbGdrcN5Y29ycA ! erector spinae
 id: UBERON:0002463
 name: hamstring muscle
 alt_id: UBERON:MA_0002312-FMA_81022
-def: "." [Wikipedia:Hamstring_muscles]
+def: "The biceps femoris is a muscle of the posterior (the back) thigh. As its name implies, it has two parts, one of which (the long head) forms part of the hamstrings muscle group. [WP,unvetted]." [Wikipedia:Hamstring_muscles]
 subset: uberon_slim
 synonym: "hamstring muscles" EXACT []
 synonym: "hamstring muscles set" EXACT []
@@ -32841,7 +32871,7 @@ xref: ncithesaurus:Filiform_Papilla ! Filiform Papilla
 id: UBERON:0002468
 name: foliate papilla
 alt_id: UBERON:MA_0002679-FMA_71450
-def: "." [Wikipedia:Foliate_papilla]
+def: "Taste-buds, the end-organs of the gustatory sense, are scattered over the mucous membrane of the mouth and tongue at irregular intervals. They occur especially in the sides of the vallate papillae. There is a localized area at the side of the base of the tongue, the foliate papillae, in which they are especially abundant. [WP,unvetted]." [Wikipedia:Foliate_papilla]
 subset: uberon_slim
 synonym: "foliate papillae" EXACT []
 synonym: "foliate papillae set" EXACT []
@@ -32926,7 +32956,7 @@ relationship: part_of UBERON:0002316 ! white matter of neuraxis
 id: UBERON:0002474
 name: cerebellar peduncle
 alt_id: UBERON:MA_0002742-FMA_77791
-def: "." [Wikipedia:Cerebellar_peduncle]
+def: "The cerebellum (Latin for little brain) is a region of the brain that plays an important role in the integration of sensory perception, coordination and motor control. In order to coordinate motor control, there are many neural pathways linking the cerebellum with the cerebral motor cortex (which sends information to the muscles causing them to move) and the spinocerebellar tract (which provides proprioceptive feedback on the position of the body in space). The cerebellum integrates these pathways using the constant feedback to fine-tune motor activity. Because of this 'updating' function of the cerebellum, lesions within it are not so debilitating as to cause paralysis, but rather present as feedback deficits resulting in disorders in fine movement, equilibrium, posture, and motor learning. Initial observations by physiologists during the 18th century indicated that patients with cerebellar damage show problems with motor coordination and movement. Research into cerebellar function during the early to mid 19th century was done via lesion and ablation studies in animals. Research physiologists noted that such lesions led to animals with strange movements, awkward gait, and muscular weakness. These observations and studies led to the conclusion that the cerebellum was a motor control structure. However, modern research shows that the cerebellum has a broader role in a number of key cognitive functions, including attention and the processing of language, music, and other sensory temporal stimuli. [WP,unvetted]." [Wikipedia:Cerebellar_peduncle]
 comment: todo checkk FMA see also FMA:77791 Set of cerebellar peduncles
 subset: uberon_slim
 synonym: "cerebellar peduncles" EXACT []
@@ -33053,7 +33083,7 @@ is_a: UBERON:0002481 ! bone tissue
 id: UBERON:0002483
 name: trabecular bone
 alt_id: UBERON:MA_0002782-FMA_24019
-def: "." [Wikipedia:Trabecular_bone]
+def: "Cancellous bone, synonymous with trabecular bone or spongy bone, is one of the two types of osseous tissue that form bones. Compared to compact bone, which is the other type of osseous tissue, it has a higher surface area but is less dense, softer, weaker, and less stiff. It typically occupies the interior region of bones. Cancellous bone is highly vascular and frequently contains red bone marrow where hematopoiesis, which is the production of blood cells, occurs. The primary anatomical and functional unit of cancellous bone is the trabecula. Its Latin name is substantia spongiosa or substantia spongiosa ossium. The words cancellous and trabecular refer to the tiny, lattice-shaped that form the tissue. [WP,unvetted]." [Wikipedia:Trabecular_bone]
 subset: uberon_slim
 synonym: "cancellous bone" RELATED [MA:0002782]
 synonym: "spongy bone" EXACT []
@@ -33286,7 +33316,7 @@ is_a: UBERON:0000064 ! organ part
 id: UBERON:0002499
 name: cochlear labyrinth
 alt_id: UBERON:MA_0002809-FMA_61259
-def: "." [Wikipedia:Cochlear_labyrinth]
+def: "For more uses of the word labyrinth, see Labyrinth (disambiguation) The labyrinth is a system of fluid passages in the inner ear, including both the cochlea, which is part of the auditory system, and the vestibular system, which provides the sense of balance. It is named by analogy with the mythical maze that imprisoned the Minotaur, because of its appearance. The bony labyrinth, or osseous labyrinth, is the network of passages with bony walls lined with periosteum. The bony labyrinth is lined with the membranous labyrinth. There is a layer of perilymph between them. The three parts of the bony labyrinth are the vestibule of the ear, the semicircular canals, and the cochlea. The vestibular system is the region of the inner ear where the semicircular canals converge, close to the cochlea (the hearing organ). The vestibular system works with the visual system to keep objects in focus when the head is moving. Joint and muscle receptors also are important in maintaining balance. The brain receives, interprets, and processes the information from these systems that control our balance. [WP,unvetted]." [Wikipedia:Cochlear_labyrinth]
 comment: WP - The labyrinth can be divided by layer or by region. Bony vs. membranous / Vestibular vs. cochlear
 subset: uberon_slim
 xref: FMA:61259 ! Cochlear labyrinth
@@ -33406,7 +33436,7 @@ synonym: "abdomen lymph node" EXACT [OBOL:automatic]
 id: UBERON:0002508
 name: celiac lymph node
 alt_id: UBERON:MA_0002828-FMA_12792
-def: "." [Wikipedia:Celiac_lymph_node]
+def: "The visceral glands are associated with the branches of the celiac, superior and inferior mesenteric arteries. Those related to the branches of the celiac artery (the celiac lymph nodes) form three sets, gastric, hepatic, and pancreaticolienal. gastric lymph nodes hepatic lymph nodes splenic lymph nodes [WP,unvetted]." [Wikipedia:Celiac_lymph_node]
 subset: uberon_slim
 synonym: "celiac node" EXACT []
 synonym: "coeliac node" EXACT []
@@ -33584,7 +33614,7 @@ is_a: UBERON:0000029 ! lymph node
 id: UBERON:0002521
 name: elastic tissue
 alt_id: UBERON:MA_0002853-FMA_20113
-def: "." [Wikipedia:Elastic_tissue]
+def: "Elastic fibers (or yellow fibers) are bundles of proteins found in extracellular matrix of connective tissue and produced by fibroblasts and smooth muscle cells in arteries. These fibers can stretch up to 1.5 times their length, and snap back to their original length when relaxed. Elastic fibers include elastin, elaunin and oxytalan. Elastic tissue is classified as "connective tissue proper". The elastic fiber is formed from the elastic microfibril and amorphous elastin. The microfibril scaffolds and organizes the deposition of amorphous elastin. Amorphous elastin forms from monomers of soluble tropoelastin which is insolubilized and crosslinked into amorphous elastin by lysyl oxidase. Lysyl oxidase reacts with specific lysine residues and by oxidative deamination generates reactive aldehydes and allysine. These reactive aldehydes and allysines can react with lysine and other allysine residues to crosslink and form desmosine, isodesmosine, and a number of other polyfunctional crosslinks that join surrounding elastin molecules to build an elastin matrix and elastic fiber. These unique crosslinks are responsible for elastin's elasticity. [WP,unvetted]." [Wikipedia:Elastic_tissue]
 subset: uberon_slim
 synonym: "elastic connective tissue" EXACT []
 synonym: "textus connectivus elasticus" EXACT []
@@ -34405,7 +34435,7 @@ relationship: part_of UBERON:0001944 ! pretectal region
 id: UBERON:0002573
 name: pontine reticular formation
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1050-FMA_68876
-def: "." [Wikipedia:Pontine_reticular_formation]
+def: "The reticular formation is a part of the brain that is involved in actions such as awaking/sleeping cycle, and filtering incoming stimuli to discriminate irrelevant background stimuli. It is essential for governing some of the basic functions of higher organisms, and is one of the phylogenetically oldest portions of the brain. [WP,unvetted]." [Wikipedia:Pontine_reticular_formation]
 subset: uberon_slim
 synonym: "reticular formation of pons" EXACT [FMA:68876]
 xref: FMA:68876 ! Pontine reticular formation
@@ -35146,7 +35176,7 @@ is_a: UBERON:0002665 ! supracallosal gyrus
 id: UBERON:0002604
 name: ventral nucleus of lateral lemniscus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1140-FMA_72484
-def: "." [Wikipedia:Ventral_nucleus_of_the_lateral_lemniscus]
+def: "The lateral lemniscus is a tract of axons in the brainstem that carries information about sound from the cochlear nucleus to various brainstem nuclei and ultimately the contralateral inferior colliculus of the midbrain. Three distinct, primarily inhibitory, cellular groups are located interspersed within these fibers, and are thus named the nuclei of the lateral lemniscus. [WP,unvetted]." [Wikipedia:Ventral_nucleus_of_the_lateral_lemniscus]
 subset: uberon_slim
 synonym: "anterior nucleus of lateral lemniscus" EXACT [FMA:72484]
 synonym: "ventral nucleus of the lateral lemniscus" EXACT [FMA:72484]
@@ -36296,7 +36326,7 @@ relationship: part_of UBERON:0001925 ! ventral lateral nucleus
 id: UBERON:0002688
 name: supramarginal gyrus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1381-FMA_61897
-def: "." [Wikipedia:Supramarginal_gyrus]
+def: "Brodmann area 40, or BA40, is part of the parietal cortex in the human brain. The inferior part of BA40 is in the area of the supramarginal gyrus, which lies at the posterior end of the lateral fissure, in the inferior lateral part of the parietal lobe. It is bounded approximately by the intraparietal sulcus, the inferior postcentral sulcus, the posterior subcentral sulcus and the lateral sulcus. Cytoarchitecturally it is bounded caudally by the angular area 39 (H), rostrally and dorsally by the caudal postcentral area 2, and ventrally by the subcentral area 43 and the superior temporal area 22 (Brodmann-1909). Cytoarchitectonically defined subregions of rostral BA40/the supramarginal gyrus are PF, PFcm, PFm, PFop, and PFt. Area PF is the homologue to macaque area PF, part of the mirror neuron system, and active in humans during imitation. The supramarginal gyrus part of Brodmann area 40 is the region in the inferior parietal lobe that is involved in reading both in regards to meaning and phonology. [WP,unvetted]." [Wikipedia:Supramarginal_gyrus]
 subset: uberon_slim
 synonym: "anterior part of inferior parietal lobule" EXACT [FMA:61897]
 synonym: "inferior parietal lobule (krieg)" EXACT []
@@ -36380,7 +36410,7 @@ is_a: UBERON:0000477 ! anatomical cluster
 id: UBERON:0002695
 name: parieto-occipital sulcus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1428-FMA_83754
-def: "." [Wikipedia:Parieto-occipital_sulcus]
+def: "Only a small part of the Parietooccipital Fissure (or parieto-occipital sulcus) is seen on the lateral surface of the hemisphere, its chief part being on the medial surface. The lateral part of the parietooccipital fissure (Fig. 726) is situated about 5 cm. in front of the occipital pole of the hemisphere, and measures about 1.25 cm. in length. The medial part of the parietooccipital fissure (Fig. 727) runs downward and forward as a deep cleft on the medial surface of the hemisphere, and joins the calcarine fissure below and behind the posterior end of the corpus callosum. In most cases it contains a submerged gyrus. [WP,unvetted]." [Wikipedia:Parieto-occipital_sulcus]
 subset: uberon_slim
 synonym: "parieto-occipital fissure" EXACT [FMA:83754]
 synonym: "parieto-occipital incisure" EXACT [FMA:83754]
@@ -36478,7 +36508,7 @@ xref: ncithesaurus:Middle_Frontal_Gyrus ! Middle Frontal Gyrus
 id: UBERON:0002703
 name: precentral gyrus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1455-FMA_61894
-def: "." [Wikipedia:Precentral_gyrus]
+def: "The primary motor cortex (or M1) is a brain region that in humans is located in the posterior portion of the frontal lobe. It works in association with pre-motor areas to plan and execute movements. M1 contains large neurons known as Betz cells which send long axons down the spinal cord to synapse onto alpha motor neurons which connect to the muscles. Pre-motor areas are involved in planning actions (in concert with the basal ganglia) and refining movements based upon sensory input (this requires the cerebellum). [WP,unvetted]." [Wikipedia:Precentral_gyrus]
 subset: uberon_slim
 synonym: "precentral convolution" EXACT [FMA:61894]
 synonym: "prerolandic gyrus" EXACT [FMA:61894]
@@ -36534,7 +36564,7 @@ xref: BTO:0002461 ! posterior hypothalamic nucleus
 id: UBERON:0002707
 name: pyramidal tract
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1464-FMA_72634
-def: "." [Wikipedia:Pyramidal_tract]
+def: "The corticospinal or pyramidal tract is a collection of axons that travel between the cerebral cortex of the brain and the spinal cord. The corticospinal tract mostly contains motor axons. It actually consists of two separate tracts in the spinal cord: the lateral corticospinal tract and the medial corticospinal tract. An understanding of these tracts leads to an understanding of why for the most part, one side of the body is controlled by the opposite side of the brain. Also the corticobulbar tract is considered to be a pyramidal tract. The corticobulbar tract carries signals that control motor neurons located in cranial nerve brain nuclei rather than motor neurons located in the spinal cord. The neurons of the pyramidal tracts are pyramidal neurons, but that is not how the pyramidal tract got its name, as most of the pyramidal neurons send their axons elsewhere. Instead, it got its name from the shape of the corticospinal axon tracts: when the pyramidal tract passes the medulla, it forms a dense bundle of nerve fibres that is shaped somewhat like a pyramid. [WP,unvetted]." [Wikipedia:Pyramidal_tract]
 subset: uberon_slim
 xref: FMA:72634 ! Pyramidal tract
 xref: NIF_GrossAnatomy:birnlex_1464 ! Pyramidal tract
@@ -36928,7 +36958,7 @@ is_a: UBERON:0002316 ! white matter of neuraxis
 id: UBERON:0002733
 name: intralaminar nuclear group
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1530-FMA_62021
-def: "." [Wikipedia:Intralaminar_thalamic_nuclei]
+def: "The intralaminar nucleus is a nucleus of the thalamus that contains the following nuclei: central lateral centromedian (or "central medial") paracentral parafascicular. Some sources also include a "central dorsal" nucleus. [WP,unvetted]." [Wikipedia:Intralaminar_thalamic_nuclei]
 subset: uberon_slim
 synonym: "intralaminar nuclear group" EXACT [FMA:62021]
 synonym: "intralaminar nuclei of thalamus" EXACT [FMA:62021]
@@ -37190,7 +37220,7 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0002753
 name: posterior spinocerebellar tract
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1585-FMA_72641
-def: "." [Wikipedia:Posterior_spinocerebellar_tract]
+def: "The dorsal spinocerebellar tract (posterior spinocerebellar tract, Flechsig's fasciculus, Flechsig's tract) conveys proprioceptive information from the body to the cerebellum. It is part of the somatosensory system and runs in parallel with the ventral spinocerebellar tract. Proprioceptive information is taken to the via central processes of dorsal root ganglia (first order neurons). These central processes travel through the dorsal horn where they synapse with second order neurons of Clarke's nucleus. Axon fibers from Clarke's Nucleus convey this proprioceptive information in the spinal cord in the peripheral region of the posteriolateral funiculus ipsilaterally until it reaches the cerebellum, where unconscious proprioceptive information is processed. This tract involves two neurons and ends up on the same side of the body. [WP,unvetted]." [Wikipedia:Posterior_spinocerebellar_tract]
 subset: uberon_slim
 synonym: "dorsal spinocerebellar tract" EXACT [FMA:72641]
 synonym: "flechsig's tract" EXACT [FMA:72641]
@@ -37232,7 +37262,7 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0002756
 name: anterior cingulate gyrus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1603-FMA_61916
-def: "." [Wikipedia:Anterior_cingulate_gyrus]
+def: "The Anterior cingulate cortex (ACC) is the frontal part of the cingulate cortex, that resembles a "collar" form around the corpus callosum, the fibrous bundle that relays neural signals between the right and left cerebral hemispheres of the brain. It includes both the ventral and dorsal areas of the cingulate cortex, and appears to play a role in a wide variety of autonomic functions, such as regulating blood pressure and heart rate, as well as rational cognitive functions, such as reward anticipation, decision-making, empathy and emotion. [WP,unvetted]." [Wikipedia:Anterior_cingulate_gyrus]
 subset: uberon_slim
 xref: FMA:61916 ! Anterior cingulate gyrus
 xref: NIF_GrossAnatomy:birnlex_1603 ! Anterior cingulate gyrus
@@ -37296,7 +37326,7 @@ xref: BTO:0002672 ! medial nucleus of medial geniculate body
 id: UBERON:0002760
 name: ventral corticospinal tract
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1618-FMA_72636
-def: "." [Wikipedia:Ventral_corticospinal_tract]
+def: "The anterior corticospinal tract (also called the ventral corticospinal tract, medial corticospinal tract, direct pyramidal tract, or anterior cerebrospinal fasciculus) is a small bundle of descending fibers that connect the cerebral cortex to the spinal cord. It is usually small, varying inversely in size with the lateral corticospinal tract, which is the main part of the corticospinal tract. It lies close to the anterior median fissure, and is present only in the upper part of the medulla spinalis; gradually diminishing in size as it descends, it ends about the middle of the thoracic region. It consists of descending fibers which arise from cells in the motor area of the cerebral hemisphere of the same side, and which, as they run downward in the medulla spinalis, cross in succession through the anterior white commissure to the opposite side, where they end, either directly or indirectly, by arborizing around the motor neurons in the anterior column. A few of its fibers are said to pass to the lateral column of the same side and to the gray matter at the base of the posterior column. They conduct voluntary motor impulses from the precentral gyrus to the motor centers of the cord. [WP,unvetted]." [Wikipedia:Ventral_corticospinal_tract]
 subset: uberon_slim
 synonym: "anterior corticospinal tract" EXACT [FMA:72636]
 synonym: "anterior pyramidal tract" EXACT [FMA:72636]
@@ -37528,7 +37558,7 @@ is_a: UBERON:0002020 ! gray matter of neuraxis
 id: UBERON:0002779
 name: lateral superior olivary nucleus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1675-FMA_72472
-def: "." [Wikipedia:Accessory_olivary_nucleus]
+def: "In anatomy, the olivary bodies or simply olives (Latin oliva and olivae, singular and plural, respectively) are a pair of prominent oval structures in the medulla oblongata, the lower portion of the brainstem. They contain the olivary nuclei. [WP,unvetted]." [Wikipedia:Accessory_olivary_nucleus]
 subset: uberon_slim
 synonym: "accessory olivary nucleus" EXACT [FMA:72472]
 synonym: "accessory superior olivary nucleus" EXACT [FMA:72472]
@@ -38219,7 +38249,7 @@ relationship: part_of UBERON:0001690 ! ear
 id: UBERON:0002828
 name: ventral cochlear nucleus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_2567-FMA_54621
-def: "." [Wikipedia:Ventral_cochlear_nucleus]
+def: "The ventral cochlear nucleus (or anterior, or accessory), placed between the two divisions of the cochlear nerve, is on the ventral aspect of the inferior peduncle. Composed of several regions of distinct cell types, this nucleus serves primarily as a relay station for ascending auditory information. Bushy cells in the anterior ventral cochlear nucleus (AVCN), which receive end bulbs of held from auditory nerve fibers, project to the superior olivary complex through the trapezoid body and intermediate acoustic stria. Other cell types project to the lateral lemniscus and the inferior colliculus directly. [WP,unvetted]." [Wikipedia:Ventral_cochlear_nucleus]
 subset: uberon_slim
 synonym: "ventral cochlear nucleus" EXACT [FMA:54621]
 xref: FMA:54621 ! Anterior cochlear nucleus
@@ -39270,7 +39300,7 @@ is_a: UBERON:0000093 ! sulcus
 id: UBERON:0002921
 name: longitudinal fissure
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_4041-FMA_83727
-def: "." [Wikipedia:Longitudinal_fissure]
+def: "The great longitudinal fissure (or longitudinal cerebral fissure, or longitudinal fissure, or interhemispheric fissure) is the deep groove which separates the two hemispheres of the vertebrate brain. The falx cerebri, a dural brain covering, lies within the medial longitudinal fissure. [WP,unvetted]." [Wikipedia:Longitudinal_fissure]
 subset: uberon_slim
 synonym: "hemispheric sulcus" EXACT [FMA:83727]
 synonym: "interhemispheric fissure" EXACT [FMA:83727]
@@ -39325,7 +39355,7 @@ is_a: UBERON:0000488 ! atypical epithelium
 id: UBERON:0002927
 name: circumvallate papilla
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_4106_2-MA_0001594
-def: "." [Wikipedia:Circumvallate_papilla]
+def: "The circumvallate papillae (or vallate papillae) are of large size (dome-shaped structures), and vary from eight to twelve in number. They are situated on the dorsum of the tongue immediately in front of the foramen cecum and sulcus terminalis, forming a row on either side; the two rows run backward and medially, and meet in the midline, like the limbs of the letter V inverted. Each consists of a projection of mucous membrane from 1 to 2 mm. wide, attached to the bottom of a circular depression of the mucous membrane (some text referred to as moats); the margin of the depression is elevated to form a wall (vallum), and between this and the papilla is a circular sulcus termed the fossa. The papilla is shaped like a truncated cone, the smaller end being directed downward and attached to the tongue, the broader part or base projecting a little above the surface of the tongue and being studded with numerous small secondary papillæ and covered by stratified squamous epithelium. Ducts of lingual salivary glands, referred to as Von Ebner's glands empty serous secretion into the base of the circular depression (moats). The function of the secretion is presumed to flush materials from the base of circular depression to ensure that taste buds can respond to changing stimuli rapidly. The circumvallate papillae get SVA innervation from cranial nerve IX, the glossopharyngeal nerve, even though they are anterior to the sulcus terminalis. The rest of the anterior 2/3s of the tongue gets SVA innervation from the chorda tympani of cranial nerve VII, distributed with the lingual nerve of cranial nerve V. [WP,unvetted]." [Wikipedia:Circumvallate_papilla]
 subset: uberon_slim
 xref: MA:0001594 ! circumvallate papilla
 xref: NIF_GrossAnatomy:birnlex_4106_2 ! Circumvallate papilla
@@ -43390,7 +43420,7 @@ xref: ncithesaurus:Hard_Palate ! Hard Palate
 id: UBERON:0003217
 name: neural lobe of neurohypophysis
 alt_id: UBERON:FMA_74636-ZFA_0001271
-def: "." [Wikipedia:Neurohypophysis]
+def: "The posterior pituitary (or neurohypophysis) comprises the posterior lobe of the pituitary gland and is part of the endocrine system. Despite its name, the posterior pituitary gland is not a gland, per se; rather, it is largely a collection of axonal projections from the hypothalamus that terminate behind the anterior pituitary gland. [WP,unvetted]." [Wikipedia:Neurohypophysis]
 comment: TODO - compare with UBERON:0002198
 subset: uberon_slim
 synonym: "pars nervosa of hypophysis" EXACT []
@@ -60068,6 +60098,10 @@ name: connects
 [Typedef]
 id: secreted_by
 name: secreted_by
+
+[Typedef]
+id: homologous_to
+name: homologous_to
 
 [Typedef]
 id: only_in_taxon
