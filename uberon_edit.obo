@@ -2558,12 +2558,16 @@ def: "The cytotrophoblast (or layer of Langhans) is the inner layer of the troph
 
 [Term]
 id: UBERON:0000320
+alt_id: UBERON:0003348
 name: duodenal mucosa
 alt_id: UBERON:BTO_0000367-FMA_14942
 synonym: "Doudenal mucosa" EXACT [FMA:14942]
 synonym: "Duodenal mucous membrane" EXACT [FMA:14942]
+synonym: "mucous membrane of duodenum" EXACT [OBOL:automatic]
+synonym: "mucosa of duodenum" EXACT [OBOL:automatic]
 xref: BTO:0000367
 xref: FMA:14942 ! Mucosa of duodenum
+xref: EMAPA:27235 ! mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0002114 ! duodenum
 
@@ -45167,20 +45171,6 @@ synonym: "mucous membrane of large bowel" EXACT [OBOL:automatic]
 synonym: "organ mucosa of colon" EXACT [OBOL:automatic]
 synonym: "organ mucosa of large bowel" EXACT [OBOL:automatic]
 
-[Term]
-id: UBERON:0003348
-name: mucosa of duodenum
-xref: EMAPA:27235 ! mucosa
-intersection_of: UBERON:0000344 ! mucosa
-intersection_of: part_of UBERON:0002114 ! duodenum
-synonym: "duodenum mucosa" EXACT [OBOL:automatic]
-synonym: "duodenum mucosa of organ" EXACT [OBOL:automatic]
-synonym: "duodenum mucous membrane" EXACT [OBOL:automatic]
-synonym: "duodenum organ mucosa" EXACT [OBOL:automatic]
-synonym: "mucosa of organ of duodenum" EXACT [OBOL:automatic]
-synonym: "mucous membrane of duodenum" EXACT [OBOL:automatic]
-synonym: "organ mucosa of duodenum" EXACT [OBOL:automatic]
-
 
 [Term]
 id: UBERON:0003350
@@ -51652,7 +51642,7 @@ relationship: part_of UBERON:0001474 ! bone
 id: UBERON:0004705 ! fenestra
 name: fenestra
 def: "an opening in the skull or other bones[WP]." [Wikipedia:Fenestra]
-synonym: "fossa" EXACT []
+comment: TODO check fenestra vs fossa. fenestra = hole, fossa = depression with bottom?
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of UBERON:0001474 ! bone
 
