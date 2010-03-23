@@ -1812,7 +1812,7 @@ comment: check definition of limb such that is excludes fins
 xref: TAO:0001161 ! pectoral fin
 xref: ZFA:0001161 ! pectoral fin
 is_a: UBERON:0002534 ! fin
-relationship: UBERON:0000153 ! anterior region of body
+relationship: part_of UBERON:0000153 ! anterior region of body
 relationship: homologous_to UBERON:0002102 ! forelimb
 
 [Term]
@@ -1822,7 +1822,7 @@ def: "The paired pelvic or ventral fins are located ventrally below the pectoral
 xref: TAO:0001184 ! pelvic fin
 xref: ZFA:0001184 ! pelvic fin
 is_a: UBERON:0002534 ! fin
-relationship: UBERON:0000154 ! posterior region of body
+relationship: part_of UBERON:0000154 ! posterior region of body
 relationship: homologous_to UBERON:0002103 ! hindlimb
 
 [Term]
@@ -26471,7 +26471,7 @@ xref: MIAA:0000394 ! forelimb
 xref: XAO:0003030 ! forelimb
 is_a: UBERON:0002101 ! limb
 relationship: anterior_to UBERON:0002103 ! hindlimb
-relationship: UBERON:0000153 ! anterior region of body
+relationship: part_of UBERON:0000153 ! anterior region of body
 xref: ncithesaurus:Upper_Extremity ! Upper Extremity
 xref: BTO:0001729 ! forelimb
 xref: galen:UpperExtremity ! upper extremity
@@ -26500,7 +26500,7 @@ xref: MAT:0000395 ! hindlimb
 xref: MIAA:0000395 ! hindlimb
 xref: XAO:0003031 ! hind limb
 is_a: UBERON:0002101 ! limb
-relationship: UBERON:0000154 ! posterior region of body
+relationship: part_of UBERON:0000154 ! posterior region of body
 xref: ncithesaurus:Lower_Extremity ! Lower Extremity
 xref: BTO:0002345 ! hindlimb
 xref: galen:LowerExtremity ! lower extremity
@@ -58874,7 +58874,7 @@ xref: FMA:45626 ! Systemic venous system
 id: UBERON:0004582 ! venous system
 name: venous system
 is_a: UBERON:0002049 ! vasculature
-relationship: regional_part_of UBERON:0004535 ! cardiovascular system
+relationship: part_of UBERON:0004535 ! cardiovascular system
 synonym: "vein system" EXACT []
 xref: MA:0002720 ! venous system
 
@@ -59241,7 +59241,7 @@ id: UBERON:0004637
 name: otic capsule
 is_a: UBERON:0003932 ! chondrocranium cartilage
 relationship: part_of UBERON:0001846 ! internal ear
-relationship: end UBERON:0000113 ! post-juvenile adult stage
+relationship: existence_ends_during UBERON:0000113 ! post-juvenile adult stage
 relationship: part_of UBERON:0001703 ! neurocranium
 synonym: "periotic capsule" RELATED [MA:0000252]
 synonym: "otic capsule" EXACT [ZFA:0001500]
@@ -59553,8 +59553,8 @@ id: UBERON:0004671
 name: gyrus rectus
 is_a: UBERON:0002791 ! regional part of telencephalon
 is_a: UBERON:0003022 ! lobe parts of cerebral cortex
-relationship: regional_part_of UBERON:0001870 ! frontal lobe
-relationship: regional_part_of UBERON:0001950 ! neocortex
+relationship: part_of UBERON:0001870 ! frontal lobe
+relationship: part_of UBERON:0001950 ! neocortex
 synonym: "gyrus rectus" EXACT [NIF_GrossAnatomy:birnlex_1103]
 synonym: "medial part of gyri orbitales" EXACT [FMA:61893]
 synonym: "rectal gyrus" EXACT [FMA:61893]
@@ -59566,7 +59566,7 @@ xref: NIF_GrossAnatomy:birnlex_1103 ! Gyrus rectus
 id: UBERON:0004672
 name: posterior horn lateral ventricle
 is_a: UBERON:0004086 ! brain ventricle
-relationship: regional_part_of UBERON:0002285 ! lateral ventricle
+relationship: part_of UBERON:0002285 ! lateral ventricle
 synonym: "posterior horn lateral ventricle" EXACT [NIF_GrossAnatomy:birnlex_1297]
 synonym: "posterior horn of lateral ventricle" EXACT [FMA:83700]
 xref: FMA:83700 ! occipital horn of lateral ventricle
@@ -59645,7 +59645,7 @@ xref: NIF_GrossAnatomy:birnlex_2670 ! Apex of spinal cord dorsal horn
 id: UBERON:0004679
 name: dentate gyrus molecular layer
 is_a: UBERON:0002304 ! layer of dentate gyrus
-relationship: http://www.obofoundry.org/ro/ro.owl#proper_part_of UBERON:0001885 ! dentate gyrus of hippocampal formation
+relationship: part_of UBERON:0001885 ! dentate gyrus of hippocampal formation
 synonym: "dentate gyrus molecular layer" EXACT [NIF_GrossAnatomy:birnlex_4127]
 xref: FMA:83677 ! molecular layer of dentate gyrus
 xref: NIF_GrossAnatomy:birnlex_4127 ! Dentate gyrus molecular layer
@@ -59706,7 +59706,7 @@ xref: BTO:0003387 ! raphe nucleus
 id: UBERON:0004685
 name: middle temporal area
 is_a: UBERON:0002619 ! regional part of cerebral cortex
-relationship: regional_part_of UBERON:0000956 ! cerebral cortex
+relationship: part_of UBERON:0000956 ! cerebral cortex
 synonym: "middle temporal area" EXACT [NIF_GrossAnatomy:nlx_anat_20090308]
 synonym: "area 21 of brodmann" EXACT [FMA:68618]
 synonym: "middle temporal area" EXACT [FMA:68618]
@@ -60179,3 +60179,16 @@ name: never_in_taxon
 [Typedef]
 id: only_in_taxon
 name: only_in_taxon
+
+[Typedef]
+id: in_left_side_of
+xref: BSPO:0000120
+name: in_left_side_of
+def: "X left_side_of Y <=> if Y is subdivided into two left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
+inverse_of_on_instance_level: BSPO:0000121 ! right_side_of
+
+[Typedef]
+id: in_right_side_of
+xref: BSPO:0000121
+name: in_right_side_of
+def: "X right_side_of Y <=> if Y is subdivided into two left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
