@@ -2,6 +2,7 @@
 :- use_module(bio(bioprolog_util)).
 :- use_module(bio(ontol_db)).
 :- use_module(bio(metadata_db)).
+:- use_module(bio(metadata_nlp)).
 :- use_module(bio(ontol_reasoner)).
 :- use_module(bio(mode)).
 :- use_module(bio(dbmeta)).
@@ -57,22 +58,58 @@ xref(C,X):-
         entity_alternate_identifier(C,X).
 
 
-% from dbpedia
-class_page_redirect(C,Page,RedirectTo):-
-	def_xref(C,X),
+wpxref_url(X,Page,URL) :-
 	atom_concat('Wikipedia:',Page,X),
-	atom_concat('http://dbpedia.org/resource/',Page,URL),
-	dbpedia_redirects(URL,RedirectTo).
+	atom_concat('http://dbpedia.org/resource/',Page,URL).
+
+%% class_page_canonical(?C,?Page,?CanonicalTo)
+% Page is e.g. Amnion
+% CanonicalURL is the canonical URL
+class_page_canonical(C,Page,CanonicalURL):-
+	def_xref(C,X),
+	wpxref_url(X,Page,URL),
+	dbpedia_canonical(URL,CanonicalURL).
 
 class_newdef(C,Def) :-
 	def(C,'.'),
-	class_page_redirect(C,_,URL),
+	class_page_canonical(C,_,URL),
 	rdf(URL,'http://dbpedia.org/property/abstract',literal(lang(en,Def1))),
 	atom_concat(Def1,' [WP,unvetted].',Def).
 
-dbpedia_redirects(Page,RedirectTo) :-
-	rdf(Page,'http://dbpedia.org/property/redirect',RedirectTo).
-dbpedia_redirects(Page,Page) :-
+dbpedia_devfrom(Post,Pre) :-
+	class_page_canonical(Pre,_,XPre),
+	rdf(XPre,'http://dbpedia.org/property/givesriseto',XPost),
+	class_page_canonical(Post,_,XPost),
+	\+ restriction(Post,develops_from,Pre),
+	\+ restriction(Pre,develops_into,Post).
+
+dbpedia_syn(C,Syn) :-
+	class_page_canonical(C,_,Canonical),
+	rdf(SynURL,'http://dbpedia.org/property/redirect',Canonical),
+	atom_concat('http://dbpedia.org/resource/',SynPage,SynURL),
+	concat_atom(Toks,'_',SynPage),
+	concat_atom(Toks,' ',SynUC),
+	downcase_atom(SynUC,Syn),
+	term_token_stemmed(Syn,SynStemmed,true),
+	\+entity_label_token_stemmed(_,_,SynStemmed,true).
+
+dbpedia(Page) :-
+	setof(Page,T^rdf(Page,'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',T),Pages),
+	member(Page,Pages).
+
+dbpedia_new(URL) :-
+	dbpedia(URL),
+	atom_concat('http://dbpedia.org/resource/',Page,URL),
+	\+class_page_canonical(_,Page,_).
+
+	     
+
+	
+	
+
+dbpedia_canonical(Page,CanonicalURL) :-
+	rdf(Page,'http://dbpedia.org/property/canonical',CanonicalURL).
+dbpedia_canonical(Page,Page) :-
 	\+ \+ rdf(Page,'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',_).
 
 

@@ -563,8 +563,21 @@ dbpedia.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@
 
 dbpedia_all.pro: dbpedia.pro
-	blip-findall -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" > $@
+	blip-findall -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
+
+dbpedia_ontol.obo: dbpedia_all.pro
+	blip -i $< -u ontol_bridge_from_dbpedia io-convert -to obo > $@
+
 
 # then do obo-add-defs.pl defs.txt uberon_edit.obo
 defs.txt:
 	blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "class_newdef(C,D)" | cut -f2,3 > $@
+
+syns.txt:
+	blip-findall -index "metadata_nlp:entity_label_token_stemmed(1,0,1,0)" -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "dbpedia_syn(C,S),class(C,N)" -select "s(C,N,S)" > $@
+
+df.txt:
+	blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "dbpedia_devfrom(Post,Pre)" -select Post-Pre | cut -f2,3 > $@
+
+new.txt:
+	blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "dbpedia_new(C)" -select C > $@
