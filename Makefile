@@ -352,6 +352,9 @@ uberon-mouse-missing-below-%.txt:
 newterms-fma-mouse.obo:
 	obol -u onto_grep onto-3-way-align -r mouse_anatomy -r fma2 -r uberon -ont1 adult_mouse_anatomy.gxd -ont2 fma -ont3 uberon > $@
 
+newterms-mouse-wpanat.obo:
+	obol -u onto_grep onto-3-way-align -r wpanat -r mouse_anatomy -r uberon -ont1 wikipedia -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
+
 newterms-fma-envo.obo:
 	obol -u onto_grep onto-3-way-align -r envo -r fma -r uberon -ont1 ENVO -ont2 fma -ont3 uberon > $@
 
@@ -404,7 +407,10 @@ newterms-spider-fly.obo:
 	obol -u onto_grep onto-3-way-align -r fly_anatomy -r obo/spider_anatomy -r uberon -ont1 fly_anatomy.ontology -ont2 spider_anatomy -ont3 uberon > $@
 
 newterms-brenda-fma.obo:
-	obol -u onto_grep onto-3-way-align -r fma_downcase -r obo/brenda -r uberon -ont1 BrendaTissue545 -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r fma_downcase -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 fma -ont3 uberon > $@
+
+newterms-brenda-wpanat.obo:
+	obol -u onto_grep onto-3-way-align -r wpanat -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 wikipedia -ont3 uberon > $@
 
 newterms-ncit-fma.obo:
 	obol -u onto_grep onto-3-way-align -r fma -r ncit -r uberon -ont1 fma -ont2 'ncithesaurus:' -ont3 uberon > $@

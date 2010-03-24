@@ -99,18 +99,18 @@ dbpedia(Page) :-
 
 dbpedia_new(URL) :-
 	dbpedia(URL),
-	atom_concat('http://dbpedia.org/resource/',Page,URL),
-	\+class_page_canonical(_,Page,_).
+	atom_concat('http://dbpedia.org/resource/',_Page,URL),
+	\+class_page_canonical(_,_,URL).
 
-	     
+
 
 	
 	
 
-dbpedia_canonical(Page,CanonicalURL) :-
-	rdf(Page,'http://dbpedia.org/property/canonical',CanonicalURL).
-dbpedia_canonical(Page,Page) :-
-	\+ \+ rdf(Page,'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',_).
+dbpedia_canonical(InURL,CanonicalURL) :-
+	rdf(InURL,'http://dbpedia.org/property/redirect',CanonicalURL).
+dbpedia_canonical(InURL,InURL) :-
+	\+ \+ rdf(InURL,'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',_).
 
 
 
