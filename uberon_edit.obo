@@ -1102,6 +1102,7 @@ synonym: "juvenile-adult stage" EXACT []
 synonym: "adult stage" BROAD []
 xref: FBdv:00005369
 xref: XAO:1000009 ! adult
+xref: WBls:0000041 ! adult
 is_a: UBERON:0000092 ! post-embryonic stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
 
@@ -1109,23 +1110,20 @@ relationship: preceded_by UBERON:0000111 ! organogenesis stage
 id: UBERON:0000067
 name: embryo stage part
 def: "A stage that is part of the embryo stage." [UBERON:cjm]
-synonym: "embryonic stage" EXACT []
-xref: XAO:1000012 ! embryonic stage
+synonym: "embryonic stage part" EXACT []
 is_a: UBERON:0000105 ! life cycle stage
 intersection_of: UBERON:0000105 ! life cycle stage
 intersection_of: part_of UBERON:0000068 ! embryo stage
 relationship: part_of UBERON:0000068 ! embryo stage
-xref: FBdv:00005289 ! embryonic stage
-synonym: "developmental stage of embryo stage" EXACT [OBOL:automatic]
-synonym: "embryo stage developmental stage" EXACT [OBOL:automatic]
-synonym: "embryo stage life cycle stage" EXACT [OBOL:automatic]
-synonym: "life cycle stage of embryo stage" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0000068
 name: embryo stage
 def: "A life cycle stage that starts with fertilization and ends with the fully formed embryo." []
+synonym: "embryonic stage" EXACT []
 synonym: "embryogenesis" RELATED []
+xref: XAO:1000012 ! embryonic stage
+xref: FBdv:00005289 ! embryonic stage
 is_a: UBERON:0000105 ! life cycle stage
 relationship: coincides_with GO:0009790
 relationship: part_of UBERON:0000104 ! life cycle
@@ -1133,16 +1131,77 @@ relationship: part_of UBERON:0000104 ! life cycle
 [Term]
 id: UBERON:0000069
 name: larval stage
+def: "a distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." [Wikipedia:Larva]
 synonym: "larva stage" EXACT []
-xref: FBdv:00005336
+synonym: "larva" RELATED []
+synonym: "planula" NARROW SENSU [Wikipedia:Larva]
+synonym: "nauplius" NARROW SENSU [Wikipedia:Larva]
+synonym: "zoea" NARROW SENSU [Wikipedia:Larva]
+synonym: "nymph" NARROW SENSU [Wikipedia:Larva]
+synonym: "naiad, nymph" NARROW SENSU [Wikipedia:Larva]
+synonym: "caterpillar" NARROW SENSU [Wikipedia:Larva]
+synonym: "grub" NARROW SENSU [Wikipedia:Larva]
+synonym: "maggot" NARROW SENSU [Wikipedia:Larva]
+synonym: "wriggler" NARROW SENSU [Wikipedia:Larva]
+synonym: "trochophore" NARROW SENSU [Wikipedia:Larva]
+synonym: "veliger" NARROW SENSU [Wikipedia:Larva]
+synonym: "glochidium" NARROW SENSU [Wikipedia:Larva]
+synonym: "ammocoete" NARROW SENSU [Wikipedia:Larva]
+synonym: "leptocephalus" NARROW SENSU [Wikipedia:Larva]
+synonym: "bipinnaria" NARROW SENSU [Wikipedia:Larva]
+synonym: "planula stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "nauplius stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "zoea stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "nymph stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "naiad, nymph stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "caterpillar stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "grub stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "maggot stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "wriggler stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "trochophore stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "veliger stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "glochidium stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "ammocoete stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "leptocephalus stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "bipinnaria stage" NARROW SENSU [Wikipedia:Larva]
+comment: It is a misunderstanding that the larval form always reflects the group's evolutionary history. It could be the case, but often the larval stage has evolved secondarily, as in insects. In these cases the larval form might differ more from the group's common origin than the adult form[WP]. Uberon includes clade-specific subclasses.
 is_a: UBERON:0000092 ! post-embryonic stage
 relationship: coincides_with GO:0002164
 relationship: directly_preceded_by UBERON:0000068 ! embryo stage
 xref: EFO:0001303 ! larval stage
 
 [Term]
+id: UBERON:0004728
+name: amphibian larval stage
+def: "Amphibian larvae, sometimes called pollywogs or tadpoles, hatch from eggs and begin to grow limbs and other adult physical features at various times, depending on the species, before they metamorphose into the adult form." [GO:0002117]
+synonym: "tadpole stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "polliwog stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "tadpole" NARROW SENSU [Wikipedia:Larva]
+synonym: "polliwog" NARROW SENSU [Wikipedia:Larva]
+is_a: UBERON:0000069 ! larval stage
+relationship: coincides_with GO:0002117 ! amphibian larval development
+xref: XAO:1000008 ! tadpole
+
+[Term]
+id: UBERON:0004729
+name: nematode larval stage
+def: "Nematode larval development begins with the newly hatched first-stage larva (L1) and ends with the end of the last larval stage (for example the fourth larval stage (L4) in C. elegans). Each stage of nematode larval development is characterized by proliferation of specific cell lineages and an increase in body size without alteration of the basic body plan. Nematode larval stages are separated by molts in which each stage-specific exoskeleton, or cuticle, is shed and replaced anew." [GO:0002119]
+is_a: UBERON:0000069 ! larval stage
+relationship: coincides_with GO:0002119 ! nematode larval development
+xref: WBls:0000023 ! larva
+
+[Term]
+id: UBERON:0004730
+name: instar larval stage
+def: "This begins with the newly hatched first-instar larva, through its maturation to the end of the last larval stage. An example of this process is found in Drosophila melanogaster." [GO:0002168]
+is_a: UBERON:0000069 ! larval stage
+xref: FBdv:00005336
+relationship: coincides_with GO:0002168 ! instar larval development
+
+[Term]
 id: UBERON:0000070
 name: pupal stage
+def: "A life stage of some insects undergoing transformation. The pupal stage is found only in holometabolous insects, those that undergo a complete metamorphosis, going through four life stages; embryo, larva, pupa and imago." [Wikipedia:Pupa]
 synonym: "pupa stage" EXACT []
 xref: FBdv:00005349
 is_a: UBERON:0000092 ! post-embryonic stage
@@ -1448,11 +1507,14 @@ relationship: develops_from UBERON:0000087 ! inner cell mass
 id: UBERON:0000092
 name: post-embryonic stage
 def: "stage succeeding embryo, including mature structure" [UBERON:cjm]
+synonym: "postembryonic stage" EXACT []
+synonym: "postembryonic" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
 disjoint_from: UBERON:0000068 ! embryo stage
 relationship: part_of UBERON:0000104 ! life cycle
 relationship: coincides_with GO:0009791
 relationship: preceded_by UBERON:0000068 ! embryo stage
+xref: WBls:0000022 ! postembryonic
 
 [Term]
 id: UBERON:0000093
@@ -1539,10 +1601,12 @@ id: UBERON:0000105
 name: life cycle stage
 def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:cjm]
 synonym: "developmental stage" EXACT []
+synonym: "stage" NARROW []
 xref: BILS:0000105
 xref: EFO:0000399
 xref: XAO:1000000 ! Xenopus developmental stage
 xref: ZFS:0100000 ! zebrafish stage
+xref: WBls:0000002 ! all stages
 is_a: UBERON:0000000 ! processual entity
 relationship: has_end UBERON:0000103 ! life cycle stage boundary
 relationship: has_start UBERON:0000103 ! life cycle stage boundary
@@ -1551,8 +1615,10 @@ xref: ncithesaurus:Developmental_Stage ! Developmental Stage
 [Term]
 id: UBERON:0000106
 name: zygote stage
+def: "A stage at which the organism is a single cell produced by means of sexual reproduction." [Wikipedia:Zygote]
 synonym: "one cell stage" RELATED []
 xref: BILS:0000106
+xref: ZFS:0000001 ! Zygote:1-cell
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: starts UBERON:0000104 ! life cycle
@@ -1572,6 +1638,7 @@ xref: EFO:0001290 ! cleavage stage
 [Term]
 id: UBERON:0000108
 name: blastula stage
+def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [Wikipedia:Blastula]
 xref: BILS:0000108
 xref: XAO:1000003 ! blastula
 is_a: UBERON:0000105 ! life cycle stage
@@ -1582,6 +1649,7 @@ xref: EFO:0001282 ! blastula stage
 [Term]
 id: UBERON:0000109
 name: gastrula stage
+def: "A stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage during embryonic development of most animals. The details of gastrulation vary from species to species, but usually result in the formation of the three primary germ layers, ectoderm, mesoderm and endoderm." [GO:0007369]
 xref: BILS:0000109
 xref: XAO:1000005 ! gastrula
 is_a: UBERON:0000105 ! life cycle stage
@@ -1603,7 +1671,7 @@ xref: BTO:0001766 ! neurula
 [Term]
 id: UBERON:0000110
 name: neurula stage
-def: "The formation of a tube from the flat layer of ectodermal cells known as the neural plate. This will give rise to the central nervous system." [GO:0001841]
+def: "Staged defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate. This will give rise to the central nervous system." [GO:0001841]
 xref: BILS:0000110
 xref: XAO:1000006 ! neurula
 is_a: UBERON:0000105 ! life cycle stage
@@ -1614,7 +1682,7 @@ relationship: preceded_by UBERON:0000109 ! gastrula stage
 [Term]
 id: UBERON:0000111
 name: organogenesis stage
-def: "Process by which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [Wikipedia:Organogenesis]
+def: "A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [Wikipedia:Organogenesis]
 synonym: "segmentation stage" RELATED []
 xref: BILS:0000111
 is_a: UBERON:0000105 ! life cycle stage
@@ -1625,6 +1693,8 @@ relationship: preceded_by UBERON:0000110 ! neurula stage
 [Term]
 id: UBERON:0004707
 name: pharyngula stage
+def: "A stage that follows the blastula, gastrula and neurula stages. At the pharyngula stage, all vertebrate  embryos show remarkable similarities." [Wikipedia:Pharyngula]
+comment: TODO: check with evo-devo biologists
 synonym: "phylotypic stage" EXACT []
 synonym: "pharyngula" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
@@ -1639,6 +1709,8 @@ xref: BILS:0000112
 xref: XAO:1000010 ! juvenile
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000066 ! juvenile-adult stage
+xref: ZFS:0000042 ! Juvenile:Days 30-44
+xref: ZFS:0000043 ! Juvenile:Days 45-89
 xref: EFO:0001300 ! juvenile stage
 
 [Term]
@@ -1650,6 +1722,7 @@ synonym: "adult stage" BROAD []
 xref: BILS:0000113
 xref: MIAA:0000403 ! adult stage
 xref: ZFS:0000044 ! adult
+xref: XAO:1000009 ! adult
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000066 ! juvenile-adult stage
 relationship: preceded_by UBERON:0000112 ! juvenile stage
@@ -2414,7 +2487,7 @@ xref: EHDAA:136 ! amnion
 id: UBERON:0000307
 name: blastula
 alt_id: UBERON:BTO_0000128-FMA_83041
-def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [Wikipedia:Blastula]
+def: "Organism at the blastula stage - an early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [Wikipedia:Blastula]
 comment: TODO - check relationship with epiblast
 synonym: "blastosphere" RELATED [Wikipedia:Blastula]
 xref: BTO:0000128
@@ -42788,8 +42861,8 @@ xref: BTO:0001110 ! prepupa
 [Term]
 id: UBERON:0003143
 name: pupa
+def: "Organism at the pupal stage. The pupal stage is a life stage of some insects undergoing transformation. The pupal stage is found only in holometabolous insects, those that undergo a complete metamorphosis, going through four life stages; embryo, larva, pupa and imago." [Wikipedia:Pupa]
 alt_id: UBERON:FBbt_00002953-HAO_0000886
-synonym: "P" RELATED [FBbt:00002953]
 xref: FBbt:00002953 ! pupa
 xref: HAO:0000886 ! pupa
 is_a: UBERON:0000468 ! multi-cellular organism

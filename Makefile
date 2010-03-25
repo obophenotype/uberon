@@ -5,6 +5,9 @@ PO_OBO=$(HOME)/cvs/Poc/ontology/OBO_format/po_anatomy.obo
 
 all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_xp.obo worm_anatomy_xp.obo dictyostelium_anatomy_xp.obo xenopus_anatomy_xp.obo fungal_anatomy-cellular_component-aln.txt
 
+%.owl: %.obo
+	obo2owl -allowdangling -mapping ncbo -o file://`pwd`/$@ $<
+
 OBOL=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -u obol_anatomy_xp -r obol_av 
 
 po_anatomy_xp.obo:
@@ -565,11 +568,14 @@ uberon2tax-ontol_db.pro:
 %-gd-mismatch.txt: %.obo
 	blip-findall -r fma -i $< "genus(X,G),\+subclassRT(X,G),subclass(X,Y)" -select "mm(X,G,Y)" -label
 
-dbpedia.pro:
+dbpedia_all_AnatomicalStructure.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@
 
-dbpedia_all.pro: dbpedia.pro
+dbpedia_all.pro: dbpedia_all_AnatomicalStructure.pro
 	blip-findall -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
+
+dbpedia_rest.pro: dbpedia_all_AnatomicalStructure.pro
+	blip-findall -i adhoc_uberon.pro -r uberon -i $< -u sparql_util "def_xref(C,X),wpxref_url(X,_,A),\+row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
 
 dbpedia_ontol.obo: dbpedia_all.pro
 	blip -i $< -u ontol_bridge_from_dbpedia io-convert -to obo > $@
