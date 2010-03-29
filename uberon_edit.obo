@@ -529,7 +529,7 @@ relationship: has_quality PATO:0001873 ! cylindrical
 id: UBERON:0000026
 name: appendage
 def: "Organ or organ part that is attached to the body of an organism. For example a limb[GO, modified]. An appendage is an external body part, or natural prolongation, that protrudes from an organism's body, such as a vertebrate's limbs[BILA]." [GO:0048736, BILA:0000018, Wikipedia:Appendage]
-comment: GO includes tree trunks, but excludes  antennae. We modify trunk to body in our definition
+comment: GO includes tree trunks, but excludes  antennae. We modify trunk to body in our definition. Note this is currently a subtype of organism subdivision - which would exclude feathers
 subset: uberon_slim
 xref: BILA:0000018
 xref: EFO:0000799 ! appendage
@@ -1063,12 +1063,6 @@ relationship: part_of UBERON:0000467 ! anatomical system
 xref: ncithesaurus:Organ ! Organ
 xref: OpenCyc:Mx4rv5XMb5wpEbGdrcN5Y29ycA ! organ
 
-[Term]
-id: UBERON:0000063
-name: organ segment
-def: "Organ region with one or more fixed or anchored fiat boundaries. Examples: artery, trunk of nerve, cervical part of esophagus, pelvic part of vagina, horn of thyroid cartilage, anterior segment of eyeball[FMA]." [FMA:86140]
-xref: FMA:86140 ! Organ segment
-is_a: UBERON:0000064 ! organ part
 
 [Term]
 id: UBERON:0000064
@@ -1224,21 +1218,112 @@ xref: ncithesaurus:Death ! Death
 id: UBERON:0000072
 name: segment of respiratory tract
 xref: MA:0000434 ! respiratory tract
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000065 ! respiratory tract
+intersection_of: UBERON:0000063 ! organ segment
+intersection_of: part_of UBERON:0000065 ! respiratory tract
+
+[Term]
+id: UBERON:0000063
+name: organ segment
+def: "Organ region with one or more fixed or anchored fiat boundaries. Examples: artery, trunk of nerve, cervical part of esophagus, pelvic part of vagina, horn of thyroid cartilage, anterior segment of eyeball[FMA]." [FMA:86140]
+xref: FMA:86140 ! Organ segment
+is_a: UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0000914
+name: organismal segment
+alt_id: UBERON:FBbt_00000003-FMA_11367-MIAA_0000271
+def: "One of the repeated divisions of the whole organism." [FB:gg, Wikipedia:Segmentation_(biology)]
+comment: TODO - organ segment vs segment vs segmental subdivision
+subset: uberon_slim
+xref: FBbt:00000003 ! segment
+xref: HAO:0000929 ! segment
+xref: MAT:0000271 ! segment - adult
+xref: MIAA:0000271 ! segment - adult
+is_a: UBERON:0000475 ! organism subdivision
+xref: ncithesaurus:Segmental ! Segmental
 
 [Term]
 id: UBERON:0000073
 name: regional part of nervous system
-synonym: "neural segment" EXACT []
-synonym: "neuromere" EXACT []
-xref: FBbt:00005140 ! neuromere
-xref: TAO:0001328 ! neuromere
-xref: ZFA:0001328 ! neuromere
-is_a: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: part_of UBERON:0001016 ! nervous system
+comment: grouping class
 created_by: Melissa Haendel
 creation_date: 2009-06-18T09:00:04Z
-def: "the segments of the developing neural tube." [MP:0003208]
+
+[Term]
+id: UBERON:0004732 ! segmental subdivision of nervous system
+name: segmental subdivision of nervous system
+intersection_of: UBERON:0000063 ! organ segment
+intersection_of: part_of UBERON:0001016 ! nervous system
+xref: FBbt:00005140 ! neuromere
+synonym: "neuromere" RELATED [FBbt:00005140]
+
+[Term]
+id: UBERON:0004733 ! segmental subdivision of hindbrain
+name: segmental subdivision of hindbrain
+intersection_of: UBERON:0000063 ! organ segment
+intersection_of: part_of UBERON:0002028 ! hindbrain
+xref: FMA:61998 ! Segment of hindbrain
+synonym: "hindbrain segment" EXACT [FMA:61998]
+synonym: "segment of hindbrain" EXACT [FMA:61998]
+
+[Term]
+id: UBERON:0004731 ! neuromere
+name: neuromere
+def: "A segment of the developing neural tube[MP]. A metameric segment of the central nervous system[ZFA]. morphologically or molecularly defined transient segments of the early developing brain. Rhombomeres are such segments that make up the rhombencephalon or hindbrain. [WP]." [Wikipedia:Neuromere, MP:0003208]
+synonym: "neural segment" EXACT []
+synonym: "neural tube segment" EXACT []
+synonym: "neuromere" EXACT []
+comment: WP says: "More controversially, some argue that there exist early developmental segments that give rise to structures of the midbrain (mesomeres) and forebrain (prosomeres).". Note that ZFA has spinal neuromere
+xref: TAO:0001328 ! neuromere
+xref: ZFA:0001328 ! neuromere
+intersection_of: UBERON:0004732 ! segmental subdivision of nervous system
+intersection_of: part_of UBERON:0001049 ! neural tube
+created_by: Melissa Haendel
+creation_date: 2009-06-18T09:00:04Z
+
+[Term]
+id: UBERON:0001892
+name: rhombomere
+alt_id: UBERON:FMA_61998-MIAA_0000272-ZFA_0001064
+def: "A segment of the developing hindbrain[ZFA]. In the vertebrate embryo, a rhombomere  is a transiently divided segment of the developing neural tube, within the hindbrain region (a neuromere) in the area that will eventually become the rhombencephalon. The rhombomeres appear as a series of slightly constricted swellings in the neural tube, caudal to the cephalic flexure. In human embryonic development, the rhombomeres are present by day 29[WP]." [Wikipedia:Rhombomere, ZFIN:curator]
+subset: uberon_slim
+synonym: "future rhombencephalon" RELATED [MIAA:0000272]
+synonym: "hindbrain segment" BROAD [ZFA:0001064]
+synonym: "rhombomere" EXACT []
+synonym: "segment of hindbrain" BROAD [ZFA:0001064]
+xref: HOG:0000672 ! rhombomere
+xref: MAT:0000272 ! rhombomere
+xref: MIAA:0000272 ! rhombomere
+xref: TAO:0001064 ! rhombomere
+xref: ZFA:0001064 ! rhombomere
+intersection_of: UBERON:0004731 ! neuromere
+intersection_of: part_of UBERON:0002028 ! hindbrain
+
+[Term]
+id: UBERON:0002028
+name: hindbrain
+alt_id: UBERON:FMA_67687-MA_0000195-MIAA_0000107-XAO_0000015-ZFA_0000029
+def: "Organ component of neuraxis that has as its parts the pons, cerebellum and medulla oblongata . Examples: There is only one hindbrain. // The most posterior of the three principal regions of the brain, forming the rhombencephalon and all or most of the metencephalon. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Hindbrain, ZFIN:curator]
+subset: uberon_slim
+synonym: "rhombencephalon" RELATED []
+xref: BTO:0000672
+xref: EFO:0000923 ! hindbrain
+xref: EHDAA:3514 ! hindbrain
+xref: EHDAA:6487 ! hindbrain
+xref: FMA:67687 ! Hindbrain
+xref: HOG:0000070 ! hindbrain
+xref: MA:0000195 ! hindbrain
+xref: MAT:0000107 ! hindbrain
+xref: MIAA:0000107 ! hindbrain
+xref: NIF_GrossAnatomy:birnlex_942 ! Hindbrain
+xref: TAO:0000029 ! hindbrain
+xref: XAO:0000015 ! hindbrain
+xref: ZFA:0000029 ! hindbrain
+is_a: UBERON:0004732 ! segmental subdivision of nervous system
+relationship: develops_from UBERON:0003076 ! posterior neural tube
+relationship: part_of UBERON:0000955 ! brain
 
 [Term]
 id: UBERON:0000074
@@ -2136,8 +2221,8 @@ xref: EFO:0001975 ! obsolete_oral cavity
 id: UBERON:0000168
 name: segment of colon
 xref: FMA:222905 ! Segment of colon
-is_a: UBERON:0000063 ! organ segment
-relationship: part_of UBERON:0001155 ! colon
+intersection_of: UBERON:0000063 ! organ segment
+intersection_of: part_of UBERON:0001155 ! colon
 
 
 [Term]
@@ -4778,20 +4863,6 @@ synonym: "tissue fluid" EXACT [ENVO:02000042]
 xref: ENVO:02000042
 xref: FMA:9673 ! Tissue fluid
 is_a: UBERON:0000463 ! portion of organism substance
-
-[Term]
-id: UBERON:0000914
-name: segment
-alt_id: UBERON:FBbt_00000003-FMA_11367-MIAA_0000271
-def: "One of the repeated divisions of the whole organism." [FB:gg, Wikipedia:Segment]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: FBbt:00000003 ! segment
-xref: HAO:0000929 ! segment
-xref: MAT:0000271 ! segment - adult
-xref: MIAA:0000271 ! segment - adult
-is_a: UBERON:0000475 ! organism subdivision
-xref: ncithesaurus:Segmental ! Segmental
 
 [Term]
 id: UBERON:0000915
@@ -9383,8 +9454,9 @@ xref: EHDAA:640 ! mesothelium
 xref: EHDAA:646 ! mesothelium
 xref: FMA:14074 ! Mesothelium
 xref: MA:0000565 ! mesothelium
-is_a: UBERON:0000487 ! simple squamous epithelium
-relationship: develops_from UBERON:0000926 ! mesoderm
+intersection_of: UBERON:0000487 ! simple squamous epithelium
+intersection_of: develops_from UBERON:0000926 ! mesoderm
+intersection_of: adjacent_to UBERON:0000042 ! serous membrane
 xref: ncithesaurus:Mesothelium ! Mesothelium
 xref: BTO:0002422 ! mesothelium
 
@@ -9392,7 +9464,7 @@ xref: BTO:0002422 ! mesothelium
 id: UBERON:0001137
 name: back
 alt_id: UBERON:FMA_14181-MA_0000020
-def: "." [Wikipedia:Back]
+def: "In humans: large posterior area of the human body, rising from the top of the buttocks to the back of the neck and the shoulders. It is the surface opposite to the chest, its height being defined by the vertebral column (commonly referred to as the spine or backbone) and its breadth being supported by the ribcage and shoulders. The spinal canal runs through the spine and provides nerves to the rest of the body[WP]." [Wikipedia:Back]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:14181 ! Back
@@ -22518,27 +22590,6 @@ relationship: part_of UBERON:0002298 ! brainstem
 xref: OpenCyc:Mx4rvsBUqpwpEbGdrcN5Y29ycA ! midbrain
 
 [Term]
-id: UBERON:0001892
-name: rhombomere
-alt_id: UBERON:FMA_61998-MIAA_0000272-ZFA_0001064
-def: "A segment of the developing hindbrain[ZFA]" [Wikipedia:Rhombomere, ZFIN:curator]
-comment: Note - we include FMA segment of hindbrain, but this is dodgy
-subset: uberon_slim
-synonym: "future rhombencephalon" RELATED [MIAA:0000272]
-synonym: "hindbrain segment" RELATED []
-synonym: "rhombomere" EXACT []
-synonym: "rhombomeres" RELATED []
-synonym: "Segment of hindbrain" RELATED []
-xref: FMA:61998 ! Segment of hindbrain
-xref: HOG:0000672 ! rhombomere
-xref: MAT:0000272 ! rhombomere
-xref: MIAA:0000272 ! rhombomere
-xref: TAO:0001064 ! rhombomere
-xref: ZFA:0001064 ! rhombomere
-is_a: UBERON:0000073 ! regional part of nervous system
-relationship: part_of UBERON:0002028 ! hindbrain
-
-[Term]
 id: UBERON:0001893
 name: telencephalon
 alt_id: UBERON:FMA_6200-FMA_62000-MA_0000183-MIAA_0000421-XAO_0000012-ZFA_0000079
@@ -22609,7 +22660,7 @@ xref: GAID:594 ! metencephalon
 xref: HOG:0000741 ! metencephalon
 xref: MA:0000197 ! metencephalon
 xref: NIF_GrossAnatomy:birnlex_965 ! Metencephalon
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0000063 ! organ segment
 relationship: part_of UBERON:0002028 ! hindbrain
 
 [Term]
@@ -25180,31 +25231,6 @@ xref: BTO:0000344 ! stratum corneum
 xref: ncithesaurus:Stratum_Corneum ! Stratum Corneum
 
 [Term]
-id: UBERON:0002028
-name: hindbrain
-alt_id: UBERON:FMA_67687-MA_0000195-MIAA_0000107-XAO_0000015-ZFA_0000029
-def: "Organ component of neuraxis that has as its parts the pons, cerebellum and medulla oblongata . Examples: There is only one hindbrain. // The most posterior of the three principal regions of the brain, forming the rhombencephalon and all or most of the metencephalon. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Hindbrain, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "rhombencephalon" RELATED []
-xref: BTO:0000672
-xref: EFO:0000923 ! hindbrain
-xref: EHDAA:3514 ! hindbrain
-xref: EHDAA:6487 ! hindbrain
-xref: FMA:67687 ! Hindbrain
-xref: HOG:0000070 ! hindbrain
-xref: MA:0000195 ! hindbrain
-xref: MAT:0000107 ! hindbrain
-xref: MIAA:0000107 ! hindbrain
-xref: NIF_GrossAnatomy:birnlex_942 ! Hindbrain
-xref: TAO:0000029 ! hindbrain
-xref: XAO:0000015 ! hindbrain
-xref: ZFA:0000029 ! hindbrain
-is_a: UBERON:0002616 ! regional part of brain
-relationship: develops_from UBERON:0003076 ! posterior neural tube
-relationship: part_of UBERON:0000955 ! brain
-
-[Term]
 id: UBERON:0002029
 name: epithelium of gall bladder
 alt_id: UBERON:FMA_67711-MA_0001632
@@ -25560,8 +25586,8 @@ relationship: part_of UBERON:0000988 ! pons
 id: UBERON:0002048
 name: lung
 alt_id: UBERON:FMA_68877-FMA_7195-MA_0000415-MIAA_0000135-XAO_0000119
-def: "Lobular organ the parenchyma of which consists of air-filled alveoli which communicate with the tracheobronchial tree. Examples: There are only two instances, right lung and left lung. // Saccular thoracic organ that constitutes the basic respiratory organ." [BTO:0000763, Wikipedia:Lung]
-comment: This class was created automatically from a combination of ontologies
+def: "Lobular organ the parenchyma of which consists of air-filled alveoli which communicate with the tracheobronchial tree. Examples: There are only two instances, right lung and left lung[FMA]. // Saccular thoracic organ that constitutes the basic respiratory organ[XAO]." [BTO:0000763, Wikipedia:Lung]
+comment: respiration organ in all air-breathing animals, including most tetrapods, a few fish and a few snails. In mammals  and the more complex life forms, the two lungs are located in the chest on either side of the heart. Their principal function is to transport oxygen from the atmosphere into the bloodstream, and to release carbon dioxide from the bloodstream into the atmosphere. This exchange of gases is accomplished in the mosaic of specialized cells that form millions of tiny, exceptionally thin-walled air sacs called alveoli. // Avian lungs do not have alveoli as mammalian lungs do, they have Faveolar lungs. They contain millions of tiny passages known as para-bronchi, connected at both ends by the dorsobronchi // Snakes and limbless lizards typically possess only the right lung as a major respiratory organ; the left lung is greatly reduced, or even absent. Amphisbaenians, however, have the opposite arrangement, with a major left lung, and a reduced or absent right lung [WP]
 subset: uberon_slim
 xref: AAO:0000275 ! lungs
 xref: BTO:0000763
@@ -27840,7 +27866,8 @@ synonym: "right bronchus" EXACT []
 synonym: "right principal bronchus" EXACT []
 xref: FMA:7395 ! Right main bronchus
 xref: MA:0001849 ! right main bronchus
-is_a: UBERON:0002182 ! main bronchus
+intersection_of: UBERON:0002182 ! main bronchus
+intersection_of: continuous_with UBERON:0002167 ! right lung
 xref: ncithesaurus:Right_Main_Bronchus ! Right Main Bronchus
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvoIuvJwpEbGdrcN5Y29ycA ! right main bronchus
 
@@ -27855,7 +27882,8 @@ synonym: "left bronchus" EXACT []
 synonym: "left principal bronchus" EXACT []
 xref: FMA:7396 ! Left main bronchus
 xref: MA:0001843 ! left main bronchus
-is_a: UBERON:0002182 ! main bronchus
+intersection_of: UBERON:0002182 ! main bronchus
+intersection_of: continuous_with UBERON:0002168 ! left lung
 xref: ncithesaurus:Left_Main_Bronchus ! Left Main Bronchus
 
 [Term]
@@ -27972,12 +28000,11 @@ xref: OpenCyc:Mx4rwQGFgZwpEbGdrcN5Y29ycA ! segmental bronchus
 id: UBERON:0002185
 name: bronchus
 alt_id: UBERON:FMA_7409-MA_0000436-MIAA_0000133-XAO_0000121
-def: "The bronchus is the portion of the airway that connects to the lungs[GO]." [Wikipedia:Bronchus]
-comment: This class was created automatically from a combination of ontologies
+def: "A portion of the airway that connects to the lungs[GO]." [Wikipedia:Bronchus]
+comment: Note: term used as a generic class with subtypes left main bronchus etc. Do we need a class for the whole tree?
 subset: uberon_slim
 synonym: "bronchial trunk" EXACT []
 synonym: "bronchi" EXACT PLURAL []
-synonym: "main bronchus" RELATED []
 xref: BTO:0001340
 xref: FMA:7409 ! Bronchus
 xref: HOG:0000262 ! bronchus
@@ -29790,8 +29817,9 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "alveolus" RELATED []
 synonym: "lung alveolus" EXACT []
-synonym: "pulmonary alveolus" RELATED []
+synonym: "pulmonary alveolus" EXACT []
 xref: BTO:0000060
+xref: FMA:7318 ! Pulmonary alveolus
 xref: HOG:0001445 ! lung alveolus
 xref: MA:0000420 ! lung alveolus
 is_a: UBERON:0003215 ! alveolus
