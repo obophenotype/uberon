@@ -5,7 +5,10 @@ PO_OBO=$(HOME)/cvs/Poc/ontology/OBO_format/po_anatomy.obo
 
 all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_xp.obo worm_anatomy_xp.obo dictyostelium_anatomy_xp.obo xenopus_anatomy_xp.obo fungal_anatomy-cellular_component-aln.txt
 
-%.owl: %.obo
+%.obo-owlsafe: %.obo
+	perl -npe 's/\-\-/-\\\\-/g' $< > $@
+
+%.owl: %.obo-owlsafe
 	obo2owl -allowdangling -mapping ncbo -o file://`pwd`/$@ $<
 
 OBOL=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -u obol_anatomy_xp -r obol_av 
@@ -336,7 +339,7 @@ uberon-grep-go.pro:
 	obol -r obol_av -debug obol -u onto_grep -i uberon_edit.obo -r go onto-grep  -optimize -query "belongs(ID,biological_process)" > $@.tmp && mv $@.tmp $@
 
 align-uberon-%.obo:
-	obol -u onto_grep -r $* -i uberon_edit.obo onto-exact-align -ont2 uberon -exclude_xref_strict -exclude_xref -disp 'format(obo)' > $@.tmp && mv $@.tmp $@
+	obol -u onto_grep -r $* -i uberon_edit.obo onto-exact-align -ont2 uberon -exclude_xref_strict -exclude_xref -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' -disp 'format(obo)' > $@.tmp && mv $@.tmp $@
 .PRECIOUS: align-uberon-%.obo
 
 merge-uberon-%.obo: align-uberon-%.obo
