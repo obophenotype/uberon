@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 24:03:2010 17:27
+date: 31:03:2010 16:16
 subsetdef: uberon_slim "Uberon slim"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
@@ -82,6 +82,8 @@ xref: OpenCyc:Mx4rvViCbJwpEbGdrcN5Y29ycA
 xref: TAO:0000047
 xref: ZFA:0000047
 is_a: UBERON:0000005 ! chemosensory sensory organ
+is_a: UBERON:0002268 ! implied link automatically realized ! olfactory organ
+relationship: capable_of GO:0007608
 relationship: develops_from UBERON:0003050 ! olfactory placode
 
 [Term]
@@ -101,7 +103,9 @@ xref: OpenCyc:Mx4rvViw75wpEbGdrcN5Y29ycA
 xref: TAO:0001149
 xref: XAO:0000201
 xref: ZFA:0001149
-is_a: UBERON:0000020 ! sense organ
+is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
+intersection_of: UBERON:0000020 ! sense organ
+intersection_of: capable_of GO:0007606
 
 [Term]
 id: UBERON:0000006
@@ -191,7 +195,6 @@ xref: TAO:0000142
 xref: XAO:0000178
 xref: ZFA:0000142
 is_a: UBERON:0000073 ! regional part of nervous system
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -235,7 +238,6 @@ xref: MIAA:0000099
 xref: MIAA:0000342
 xref: WBbt:0005760
 is_a: UBERON:0000073 ! regional part of nervous system
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000010 ! peripheral nervous system
 
 [Term]
@@ -456,7 +458,7 @@ relationship: has_quality PATO:0001873
 id: UBERON:0000026
 name: appendage
 def: "Organ or organ part that is attached to the body of an organism. For example a limb[GO, modified]. An appendage is an external body part, or natural prolongation, that protrudes from an organism's body, such as a vertebrate's limbs[BILA]." [BILA:0000018, GO:0048736, Wikipedia:Appendage]
-comment: GO includes tree trunks, but excludes  antennae. We modify trunk to body in our definition
+comment: GO includes tree trunks, but excludes  antennae. We modify trunk to body in our definition. Note this is currently a subtype of organism subdivision - which would exclude feathers
 subset: uberon_slim
 synonym: "limbs/digits/tail" RELATED [MP:0000001]
 xref: BILA:0000018
@@ -647,7 +649,8 @@ def: "The fluid surrounding the OVUM and GRANULOSA CELLS in the Graafian follicl
 comment: Follicular fluid is a liquid which fills the follicular antrum and surrounds the ovum in an ovarian follicle. This fluid is rich in hyaluronic acid.
 subset: uberon_slim
 synonym: "antral fluid, ovarian follicle" RELATED []
-synonym: "liquor folliculi" RELATED []
+synonym: "liquor folliculi" EXACT []
+xref: FMA:18665
 xref: GAID:372
 is_a: UBERON:0000463 ! portion of organism substance
 relationship: part_of UBERON:0001305 ! follicle of ovary
@@ -659,6 +662,7 @@ id: UBERON:0000039
 name: follicular antrum
 def: "Region of ovarian follicle filled with follicular fluid." [http://en.wikipedia.org/wiki/Follicular_antrum, Wikipedia:Follicular_antrum]
 subset: uberon_slim
+xref: FMA:18675
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001305 ! follicle of ovary
@@ -777,8 +781,8 @@ xref: TAO:0000190
 xref: WBbt:0005189
 xref: XAO:0000209
 xref: ZFA:0000190
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -1135,20 +1139,18 @@ relationship: part_of UBERON:0000104 ! life cycle
 id: UBERON:0000072
 name: segment of respiratory tract
 xref: MA:0000434
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000063 ! implied link automatically realized ! organ segment
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-relationship: part_of UBERON:0000065 ! respiratory tract
+intersection_of: UBERON:0000063 ! organ segment
+intersection_of: part_of UBERON:0000065 ! respiratory tract
 
 [Term]
 id: UBERON:0000073
 name: regional part of nervous system
-def: "the segments of the developing neural tube." [MP:0003208]
-synonym: "neural segment" EXACT []
-synonym: "neuromere" EXACT []
-xref: FBbt:00005140
-xref: TAO:0001328
-xref: ZFA:0001328
-is_a: UBERON:0000061 ! anatomical structure
+comment: grouping class
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: part_of UBERON:0001016 ! nervous system
 created_by: Melissa Haendel
 creation_date: 2009-06-18T09:00:04Z
 
@@ -1444,6 +1446,7 @@ def: "Structure around the opening into the archenteron during the embryonic sta
 xref: BTO:0001695
 xref: XAO:0000208
 is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0004735 ! archenteron
 
 [Term]
 id: UBERON:0000101
@@ -1539,6 +1542,9 @@ name: blastula stage
 def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [Wikipedia:Blastula]
 xref: BILS:0000108
 xref: EFO:0001282
+xref: OGES:000003
+xref: OGES:000016
+xref: OGES:000021
 xref: XAO:1000003
 is_a: UBERON:0000067 ! implied link automatically realized ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
@@ -1737,7 +1743,7 @@ synonym: "nucleus" BROAD []
 synonym: "nucleus of neuraxis" RELATED []
 xref: FMA:83686
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: has_part GO:0043025
 relationship: part_of UBERON:0001016 ! nervous system
 
@@ -2022,9 +2028,10 @@ relationship: part_of UBERON:0000165 ! mouth
 id: UBERON:0000168
 name: segment of colon
 xref: FMA:222905
-is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0000063 ! implied link automatically realized ! organ segment
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-relationship: part_of UBERON:0001155 ! colon
+intersection_of: UBERON:0000063 ! organ segment
+intersection_of: part_of UBERON:0001155 ! colon
 
 [Term]
 id: UBERON:0000170
@@ -2377,11 +2384,9 @@ xref: BTO:0000128
 xref: FMA:83041
 xref: GAID:1294
 xref: OGEM:000006
-xref: OGES:000003
-xref: OGES:000016
-xref: OGES:000021
 xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0000922 ! embryo
+relationship: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
 
 [Term]
 id: UBERON:0000309
@@ -2791,6 +2796,7 @@ xref: ncithesaurus:Ophthalmic_Nerve
 xref: OpenCyc:Mx4rwEs_K5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
 is_a: UBERON:0001021 ! nerve
+is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
 relationship: branch_of UBERON:0001645 ! trigeminal nerve
 
 [Term]
@@ -2819,7 +2825,7 @@ id: UBERON:0000353
 name: parenchyma
 alt_id: UBERON:BTO_0000999-FMA_45732
 def: "functional part of an organ in the body. This is in contrast to the stroma, which refers to the structural tissue of organs, being exactly, connective tissues. Early in development the mammalian embryo has three distinct layers: ectoderm (external layer), endoderm (internal layer) and in between those two layers the middle layer or mesoderm. The parenchyma of most organs is of ectodermal (brain, skin) or endodermal origin (lungs, gastrointestinal tract, liver, pancreas). The parenchyma of a few organs (spleen, kidneys, heart) is of mesodermal origin. The stroma of all organs is of mesodermal origin[WP]." [Wikipedia:Parenchyma]
-xref: BTO:0000999
+comment: BTO:0000999 rejected as this refers specifically to plant
 xref: EHDAA:3015
 xref: EHDAA:3905
 xref: EHDAA:3999
@@ -3063,6 +3069,7 @@ xref: ncithesaurus:Inferior_Maxillary_Nerve
 xref: OpenCyc:Mx4rvcQKSpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
 is_a: UBERON:0001021 ! nerve
+is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
 relationship: branch_of UBERON:0001645 ! trigeminal nerve
 
 [Term]
@@ -3116,6 +3123,7 @@ xref: GAID:836
 xref: OpenCyc:Mx4rvWNU9JwpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
 is_a: UBERON:0001021 ! nerve
+is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
 relationship: branch_of UBERON:0001645 ! trigeminal nerve
 
 [Term]
@@ -3413,7 +3421,7 @@ xref: BTO:0001835
 xref: FMA:6572
 is_a: UBERON:0000063 ! organ segment
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
 relationship: part_of UBERON:0001991 ! cervical ganglion
 
 [Term]
@@ -3754,6 +3762,7 @@ synonym: "septum (NN)" EXACT [FMA:61842]
 synonym: "telencephalon septum" EXACT [FMA:61842]
 xref: BTO:0002705
 xref: FMA:61842
+xref: MA:0000924
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 relationship: part_of UBERON:0001893 ! telencephalon
@@ -4548,7 +4557,7 @@ synonym: "commissure of fornix" RELATED [Wikipedia:Commissure_of_fornix]
 xref: FMA:61970
 xref: MA:0002723
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: attached_to UBERON:0001954 ! hippocampus
 relationship: part_of UBERON:0002316 ! white matter of neuraxis
 
@@ -4610,10 +4619,10 @@ is_a: UBERON:0000463 ! portion of organism substance
 
 [Term]
 id: UBERON:0000914
-name: segment
+name: organismal segment
 alt_id: UBERON:FBbt_00000003-FMA_11367-MIAA_0000271
-def: "One of the repeated divisions of the whole organism." [FB:gg, Wikipedia:Segment]
-comment: This class was created automatically from a combination of ontologies
+def: "One of the repeated divisions of the whole organism." [FB:gg, Wikipedia:Segmentation_(biology)]
+comment: TODO - organ segment vs segment vs segmental subdivision
 subset: uberon_slim
 xref: FBbt:00000003
 xref: HAO:0000929
@@ -4670,8 +4679,8 @@ synonym: "segment of abdomen" EXACT [OBOL:automatic]
 xref: FBbt:00000021
 xref: HAO:0000016
 xref: SPD:0000055
-is_a: UBERON:0000914 ! segment
-intersection_of: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! organismal segment
+intersection_of: UBERON:0000914 ! organismal segment
 intersection_of: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0000916 ! abdomen
 
@@ -4924,8 +4933,8 @@ synonym: "segment of embryo" EXACT [OBOL:automatic]
 xref: FBbt:00000154
 xref: MAT:0000244
 xref: MIAA:0000244
-is_a: UBERON:0000914 ! segment
-intersection_of: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! organismal segment
+intersection_of: UBERON:0000914 ! organismal segment
 intersection_of: part_of UBERON:0000922 ! embryo
 
 [Term]
@@ -5399,8 +5408,8 @@ xref: OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA
 xref: TAO:0000008
 xref: XAO:0000010
 xref: ZFA:0000008
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000489 ! cavitated compound organ
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0001049 ! neural tube
 relationship: part_of UBERON:0001017 ! central nervous system
 
@@ -5987,7 +5996,7 @@ is_a: UBERON:0000023 ! wing
 intersection_of: UBERON:0000023 ! wing
 intersection_of: part_of UBERON:0000915 ! thorax
 relationship: develops_from UBERON:0000939 ! imaginal disc
-relationship: part_of UBERON:0000914 ! segment
+relationship: part_of UBERON:0000914 ! organismal segment
 
 [Term]
 id: UBERON:0000985
@@ -6025,7 +6034,7 @@ xref: MIAA:0000203
 xref: OpenCyc:Mx4rwL1JcJwpEbGdrcN5Y29ycA
 is_a: UBERON:0000026 ! appendage
 relationship: develops_from UBERON:0000939 ! imaginal disc
-relationship: part_of UBERON:0000914 ! segment
+relationship: part_of UBERON:0000914 ! organismal segment
 
 [Term]
 id: UBERON:0000988
@@ -6607,6 +6616,7 @@ xref: FBbt:00005056
 xref: FMA:7159
 xref: GAID:391
 xref: HOG:0000723
+xref: MA:0000325
 xref: MAT:0000027
 xref: MIAA:0000027
 xref: ncithesaurus:Urinary_System
@@ -6811,7 +6821,6 @@ xref: TAO:0000012
 xref: XAO:0000215
 xref: ZFA:0000012
 is_a: UBERON:0000073 ! regional part of nervous system
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -6880,8 +6889,8 @@ xref: OpenCyc:Mx4rwP3lkpwpEbGdrcN5Y29ycA
 xref: TAO:0007009
 xref: XAO:0003047
 xref: ZFA:0007009
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001016 ! nervous system
 
@@ -6986,8 +6995,8 @@ xref: FBbt:00005142
 xref: FMA:61803
 xref: GAID:809
 xref: GO:0031594
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -6998,8 +7007,8 @@ comment: This class was created automatically from a combination of ontologies
 synonym: "ribbon synapse" EXACT []
 xref: FBbt:00005143
 xref: FMA:67107
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0001025 ! synapse
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001029 ! neuromuscular junction
 
 [Term]
@@ -7016,8 +7025,8 @@ xref: FBbt:00005151
 xref: FMA:62976
 xref: GAID:730
 xref: ncithesaurus:Sheath_of_Schwann
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -7327,7 +7336,7 @@ is_a: UBERON:0001021 ! nerve
 id: UBERON:0001048
 name: primordium
 alt_id: UBERON:FBbt_00005495-FMA_86589-XAO_0003043
-def: "Primordia are populations of contiguous cells that are morphologically distinct and already correspond in extent to a later organ/tissue. // An embryonic structure that is the rudiment or commencement of a part or organ." [BTO:0001886, FB:DJS, FB:FBrf0089570, FB:FBrf0178740, Wikipedia:Primordium]
+def: "Primordia are populations of contiguous cells that are morphologically distinct and already correspond in extent to a later organ/tissue[FBbt]. An embryonic structure that is the rudiment or commencement of a part or organ." [BTO:0001886, FB:DJS, FB:FBrf0089570, FB:FBrf0178740, Wikipedia:Primordium]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "placode" RELATED []
@@ -7436,14 +7445,14 @@ xref: FBbt:00005757
 xref: MAT:0000212
 xref: MIAA:0000212
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0001054
 name: malpighian tubule
 alt_id: UBERON:FBbt_00005786-MIAA_0000123
-def: "The most important structure of the insect's excretory organ, which may comprise cystiform or labyrinthine highly versatile tubules having their outlet into the inital section of the rectum." [ISBN:3110148986, Wikipedia:Malpighian_tubule]
+def: "The most important structure of the insect's excretory organ, which may comprise cystiform or labyrinthine highly versatile tubules having their outlet into the inital section of the rectum[FBbt]. Any of a group of long blind vessels opening into the posterior part of the alimentary canal in most insects and some other arthropods and functioning primarily as excretory organs[BTO]." [ISBN:3110148986, Wikipedia:Malpighian_tubule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "malpighian tubules" EXACT []
@@ -7523,7 +7532,7 @@ xref: FBbt:00005802
 xref: MAT:0000337
 xref: MIAA:0000337
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -7788,6 +7797,7 @@ synonym: "processus spinosus" EXACT []
 synonym: "vertebra spinous process" EXACT []
 xref: FMA:11948
 xref: MA:0001455
+xref: ZFA:0001336
 is_a: UBERON:0000063 ! organ segment
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002412 ! vertebra
@@ -8941,15 +8951,17 @@ xref: EHDAA:646
 xref: FMA:14074
 xref: MA:0000565
 xref: ncithesaurus:Mesothelium
-is_a: UBERON:0000487 ! simple squamous epithelium
+is_a: UBERON:0000487 ! implied link automatically realized ! simple squamous epithelium
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: develops_from UBERON:0000926 ! mesoderm
+intersection_of: UBERON:0000487 ! simple squamous epithelium
+intersection_of: adjacent_to UBERON:0000042 ! serous membrane
+intersection_of: develops_from UBERON:0000926 ! mesoderm
 
 [Term]
 id: UBERON:0001137
 name: back
 alt_id: UBERON:FMA_14181-MA_0000020
-def: "." [Wikipedia:Back]
+def: "In humans: large posterior area of the human body, rising from the top of the buttocks to the back of the neck and the shoulders. It is the surface opposite to the chest, its height being defined by the vertebral column (commonly referred to as the spine or backbone) and its breadth being supported by the ribcage and shoulders. The spinal canal runs through the spine and provides nerves to the rest of the body[WP]." [Wikipedia:Back]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EFO:0001405
@@ -9244,7 +9256,7 @@ xref: MIAA:0000288
 xref: ncithesaurus:Cecum
 xref: OpenCyc:Mx4rve6u4JwpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0000168 ! implied link automatically realized ! segment of colon
 relationship: part_of UBERON:0001156 ! ascending colon
 
 [Term]
@@ -18435,6 +18447,7 @@ xref: ncithesaurus:Nasal_Bone
 xref: OpenCyc:Mx4rwGOTZJwpEbGdrcN5Y29ycA
 xref: TAO:0000365
 xref: ZFA:0000365
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
 relationship: part_of UBERON:0000004 ! olfactory apparatus
@@ -18760,6 +18773,7 @@ xref: TAO:0000679
 xref: ZFA:0000679
 is_a: UBERON:0002211 ! segment of nerve
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
+is_a: UBERON:0004733 ! implied link automatically realized ! segmental subdivision of hindbrain
 relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
@@ -18889,6 +18903,7 @@ xref: HOG:0000017
 xref: MA:0000285
 xref: ncithesaurus:Nasal_Septum
 xref: OpenCyc:Mx4rv7e-k5wpEbGdrcN5Y29ycA
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003037 ! septum
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
@@ -19080,7 +19095,7 @@ xref: NIF_GrossAnatomy:birnlex_1240
 xref: TAO:0000553
 xref: ZFA:0000553
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -20801,7 +20816,7 @@ xref: FMA:5901
 xref: MA:0002407
 xref: ncithesaurus:Nerve_Plexus
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -21086,6 +21101,7 @@ xref: GAID:302
 xref: MA:0001324
 xref: ncithesaurus:Nasal_Cavity_Epithelium
 is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 intersection_of: UBERON:0000344 ! mucosa
@@ -22244,23 +22260,21 @@ relationship: part_of UBERON:0002298 ! brainstem
 id: UBERON:0001892
 name: rhombomere
 alt_id: UBERON:FMA_61998-MIAA_0000272-ZFA_0001064
-def: "A segment of the developing hindbrain[ZFA]" [Wikipedia:Rhombomere, ZFIN:curator]
-comment: Note - we include FMA segment of hindbrain, but this is dodgy
+def: "A segment of the developing hindbrain[ZFA]. In the vertebrate embryo, a rhombomere  is a transiently divided segment of the developing neural tube, within the hindbrain region (a neuromere) in the area that will eventually become the rhombencephalon. The rhombomeres appear as a series of slightly constricted swellings in the neural tube, caudal to the cephalic flexure. In human embryonic development, the rhombomeres are present by day 29[WP]." [Wikipedia:Rhombomere, ZFIN:curator]
 subset: uberon_slim
 synonym: "future rhombencephalon" RELATED [MIAA:0000272]
-synonym: "hindbrain segment" RELATED []
+synonym: "hindbrain segment" BROAD [ZFA:0001064]
 synonym: "rhombomere" EXACT []
-synonym: "rhombomeres" RELATED []
-synonym: "Segment of hindbrain" RELATED []
-xref: FMA:61998
+synonym: "segment of hindbrain" BROAD [ZFA:0001064]
 xref: HOG:0000672
 xref: MAT:0000272
 xref: MIAA:0000272
 xref: TAO:0001064
 xref: ZFA:0001064
-is_a: UBERON:0000073 ! regional part of nervous system
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
-relationship: part_of UBERON:0002028 ! hindbrain
+is_a: UBERON:0004731 ! implied link automatically realized ! neuromere
+is_a: UBERON:0004733 ! implied link automatically realized ! segmental subdivision of hindbrain
+intersection_of: UBERON:0004731 ! neuromere
+intersection_of: part_of UBERON:0002028 ! hindbrain
 
 [Term]
 id: UBERON:0001893
@@ -22333,8 +22347,8 @@ xref: GAID:594
 xref: HOG:0000741
 xref: MA:0000197
 xref: NIF_GrossAnatomy:birnlex_965
-is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0004733 ! implied link automatically realized ! segmental subdivision of hindbrain
 relationship: part_of UBERON:0002028 ! hindbrain
 
 [Term]
@@ -23006,7 +23020,7 @@ xref: FMA:62211
 xref: MA:0000870
 xref: NIF_GrossAnatomy:birnlex_1670
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -23543,7 +23557,7 @@ xref: FMA:62486
 xref: MA:0000923
 xref: NIF_GrossAnatomy:birnlex_1108
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -24385,6 +24399,7 @@ xref: ncithesaurus:Olfactory_Epithelium
 xref: NIF_GrossAnatomy:birnlex_2703
 xref: TAO:0000554
 xref: ZFA:0000554
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0003350 ! implied link automatically realized ! epithelium of mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
@@ -24759,8 +24774,8 @@ xref: MA:0001112
 xref: ncithesaurus:Gray_Matter
 xref: OpenCyc:Mx4rwDdKMpwpEbGdrcN5Y29ycA
 xref: ZFA:0001681
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -24911,7 +24926,6 @@ id: UBERON:0002028
 name: hindbrain
 alt_id: UBERON:FMA_67687-MA_0000195-MIAA_0000107-XAO_0000015-ZFA_0000029
 def: "Organ component of neuraxis that has as its parts the pons, cerebellum and medulla oblongata . Examples: There is only one hindbrain. // The most posterior of the three principal regions of the brain, forming the rhombencephalon and all or most of the metencephalon. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Hindbrain, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "rhombencephalon" RELATED []
 xref: BTO:0000672
@@ -24927,7 +24941,8 @@ xref: NIF_GrossAnatomy:birnlex_942
 xref: TAO:0000029
 xref: XAO:0000015
 xref: ZFA:0000029
-is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0004732 ! segmental subdivision of nervous system
 relationship: develops_from UBERON:0003076 ! posterior neural tube
 relationship: part_of UBERON:0000955 ! brain
 
@@ -25295,8 +25310,8 @@ relationship: part_of UBERON:0000988 ! pons
 id: UBERON:0002048
 name: lung
 alt_id: UBERON:FMA_68877-FMA_7195-MA_0000415-MIAA_0000135-XAO_0000119
-def: "Lobular organ the parenchyma of which consists of air-filled alveoli which communicate with the tracheobronchial tree. Examples: There are only two instances, right lung and left lung. // Saccular thoracic organ that constitutes the basic respiratory organ." [BTO:0000763, Wikipedia:Lung]
-comment: This class was created automatically from a combination of ontologies
+def: "Lobular organ the parenchyma of which consists of air-filled alveoli which communicate with the tracheobronchial tree. Examples: There are only two instances, right lung and left lung[FMA]. // Saccular thoracic organ that constitutes the basic respiratory organ[XAO]." [BTO:0000763, Wikipedia:Lung]
+comment: respiration organ in all air-breathing animals, including most tetrapods, a few fish and a few snails. In mammals  and the more complex life forms, the two lungs are located in the chest on either side of the heart. Their principal function is to transport oxygen from the atmosphere into the bloodstream, and to release carbon dioxide from the bloodstream into the atmosphere. This exchange of gases is accomplished in the mosaic of specialized cells that form millions of tiny, exceptionally thin-walled air sacs called alveoli. // Avian lungs do not have alveoli as mammalian lungs do, they have Faveolar lungs. They contain millions of tiny passages known as para-bronchi, connected at both ends by the dorsobronchi // Snakes and limbless lizards typically possess only the right lung as a major respiratory organ; the left lung is greatly reduced, or even absent. Amphisbaenians, however, have the opposite arrangement, with a major left lung, and a reduced or absent right lung [WP]
 subset: uberon_slim
 xref: AAO:0000275
 xref: BTO:0000763
@@ -26475,6 +26490,7 @@ synonym: "pare of nostrils" EXACT []
 xref: FMA:72005
 xref: ncithesaurus:Nostril
 xref: OpenCyc:Mx4rvViCLpwpEbGdrcN5Y29ycA
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003102 ! surface structure
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
@@ -27007,8 +27023,8 @@ xref: MA:0002941
 xref: NIF_GrossAnatomy:birnlex_1028
 xref: TAO:0000683
 xref: ZFA:0000683
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000481 ! multi-tissue structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -27601,7 +27617,7 @@ synonym: "spinal cord intermediolateral nucleus" EXACT []
 xref: FMA:73915
 xref: MA:0002753
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -27612,7 +27628,7 @@ comment: This class was created automatically from a combination of ontologies
 xref: FMA:73921
 xref: MA:0002755
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0002256 ! dorsal horn of spinal cord
 
 [Term]
@@ -27628,7 +27644,9 @@ xref: FMA:7395
 xref: MA:0001849
 xref: ncithesaurus:Right_Main_Bronchus
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvoIuvJwpEbGdrcN5Y29ycA
-is_a: UBERON:0002182 ! main bronchus
+is_a: UBERON:0002182 ! implied link automatically realized ! main bronchus
+intersection_of: UBERON:0002182 ! main bronchus
+intersection_of: continuous_with UBERON:0002167 ! right lung
 
 [Term]
 id: UBERON:0002178
@@ -27642,7 +27660,9 @@ synonym: "left principal bronchus" EXACT []
 xref: FMA:7396
 xref: MA:0001843
 xref: ncithesaurus:Left_Main_Bronchus
-is_a: UBERON:0002182 ! main bronchus
+is_a: UBERON:0002182 ! implied link automatically realized ! main bronchus
+intersection_of: UBERON:0002182 ! main bronchus
+intersection_of: continuous_with UBERON:0002168 ! left lung
 
 [Term]
 id: UBERON:0002179
@@ -27655,8 +27675,8 @@ synonym: "lateral funiculus of spinal cord" EXACT []
 xref: FMA:74000
 xref: TAO:0000533
 xref: ZFA:0000533
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000122 ! nerve fiber bundle
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -27671,8 +27691,8 @@ synonym: "ventral funiculus of spinal cord" EXACT []
 xref: FMA:74003
 xref: TAO:0000605
 xref: ZFA:0000605
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000122 ! nerve fiber bundle
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -27690,7 +27710,7 @@ xref: GAID:701
 xref: MA:0001124
 xref: ncithesaurus:Substantia_Gelatinosa
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0002256 ! dorsal horn of spinal cord
 
 [Term]
@@ -27761,12 +27781,11 @@ is_a: UBERON:0002185 ! bronchus
 id: UBERON:0002185
 name: bronchus
 alt_id: UBERON:FMA_7409-MA_0000436-MIAA_0000133-XAO_0000121
-def: "The bronchus is the portion of the airway that connects to the lungs[GO]." [Wikipedia:Bronchus]
-comment: This class was created automatically from a combination of ontologies
+def: "A portion of the airway that connects to the lungs[GO]." [Wikipedia:Bronchus]
+comment: Note: term used as a generic class with subtypes left main bronchus etc. Do we need a class for the whole tree?
 subset: uberon_slim
 synonym: "bronchi" EXACT PLURAL []
 synonym: "bronchial trunk" EXACT []
-synonym: "main bronchus" RELATED []
 xref: BTO:0001340
 xref: EFO:0000932
 xref: FMA:7409
@@ -27778,7 +27797,7 @@ xref: MIAA:0000133
 xref: ncithesaurus:Bronchus
 xref: XAO:0000121
 is_a: UBERON:0000063 ! organ segment
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0000072 ! implied link automatically realized ! segment of respiratory tract
 relationship: part_of UBERON:0001558 ! lower respiratory tract
 relationship: part_of UBERON:0002224 ! thoracic cavity
 
@@ -27868,7 +27887,7 @@ xref: MA:0000960
 xref: ncithesaurus:Subiculum
 xref: NIF_GrossAnatomy:birnlex_1305
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -27979,7 +27998,7 @@ xref: HOG:0001179
 xref: MA:0000859
 xref: NIF_GrossAnatomy:birnlex_925
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -28233,7 +28252,7 @@ subset: uberon_slim
 synonym: "neural segment" RELATED []
 xref: FMA:74941
 is_a: UBERON:0000063 ! organ segment
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
 relationship: part_of UBERON:0001021 ! nerve
 
 [Term]
@@ -28364,7 +28383,7 @@ xref: FMA:75260
 xref: GAID:795
 xref: MA:0000940
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -28561,6 +28580,7 @@ xref: BTO:0001697
 xref: FMA:75801
 xref: MA:0000287
 is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000171 ! implied link automatically realized ! respiration organ
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
@@ -28689,8 +28709,8 @@ xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
 xref: TAO:0000075
 xref: XAO:0000020
 xref: ZFA:0000075
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000489 ! cavitated compound organ
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0003076 ! posterior neural tube
 relationship: part_of UBERON:0001017 ! central nervous system
 relationship: part_of UBERON:0001137 ! back
@@ -28791,7 +28811,7 @@ synonym: "Stilling-Clarke's nucleus" EXACT []
 xref: FMA:77023
 xref: MA:0001121
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0002256 ! dorsal horn of spinal cord
 
 [Term]
@@ -28913,7 +28933,7 @@ xref: GAID:354
 xref: HOG:0000665
 xref: MA:0000289
 is_a: UBERON:0000020 ! sense organ
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -28935,7 +28955,6 @@ xref: MA:0001119
 xref: NIF_GrossAnatomy:birnlex_2667
 xref: ZFA:0000649
 is_a: UBERON:0001948 ! regional part of spinal cord
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0002315 ! gray matter of spinal cord
 
 [Term]
@@ -28955,7 +28974,6 @@ xref: MA:0001134
 xref: NIF_GrossAnatomy:birnlex_2668
 xref: ZFA:0000702
 is_a: UBERON:0001948 ! regional part of spinal cord
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0002315 ! gray matter of spinal cord
 
 [Term]
@@ -28970,8 +28988,8 @@ synonym: "posterior funiculus of spinal cord" EXACT []
 xref: FMA:77461
 xref: TAO:0000501
 xref: ZFA:0000501
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000122 ! nerve fiber bundle
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -29004,7 +29022,7 @@ xref: NIF_GrossAnatomy:nlx_anat_20090209
 xref: TAO:0000705
 xref: ZFA:0000705
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -29084,7 +29102,6 @@ xref: MA:0000975
 xref: ncithesaurus:Olfactory_Tract
 xref: NIF_GrossAnatomy:birnlex_1663
 is_a: UBERON:0000073 ! regional part of nervous system
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -29121,13 +29138,15 @@ relationship: part_of UBERON:0000988 ! pons
 id: UBERON:0002268
 name: olfactory organ
 alt_id: UBERON:FMA_77659-XAO_0000273
-comment: This class was created automatically from a combination of ontologies
+comment: note - fma general anatomical term. xao has no subtypes (but Johnstons organ develops from this)
 xref: BTO:0001772
 xref: FMA:77659
 xref: HOG:0000287
 xref: XAO:0000273
-is_a: UBERON:0000020 ! sense organ
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+intersection_of: UBERON:0000020 ! sense organ
+intersection_of: capable_of GO:0007608
 relationship: develops_from UBERON:0003050 ! olfactory placode
 relationship: part_of UBERON:0001016 ! nervous system
 
@@ -29647,8 +29666,9 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "alveolus" RELATED []
 synonym: "lung alveolus" EXACT []
-synonym: "pulmonary alveolus" RELATED []
+synonym: "pulmonary alveolus" EXACT []
 xref: BTO:0000060
+xref: FMA:7318
 xref: HOG:0001445
 xref: MA:0000420
 is_a: UBERON:0003215 ! alveolus
@@ -29855,8 +29875,8 @@ xref: BTO:0003951
 xref: FMA:83846
 xref: TAO:0000543
 xref: ZFA:0000543
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000481 ! multi-tissue structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -29884,7 +29904,7 @@ synonym: "nodulus" RELATED []
 xref: FMA:83882
 xref: MA:0001007
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -29965,8 +29985,8 @@ xref: MA:0001135
 xref: ncithesaurus:White_Matter
 xref: OpenCyc:Mx4rwOAsDZwpEbGdrcN5Y29ycA
 xref: ZFA:0001682
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -30854,8 +30874,8 @@ xref: ncithesaurus:Meninges
 xref: OpenCyc:Mx4rwDOl8JwpEbGdrcN5Y29ycA
 xref: ZFA:0001355
 is_a: UBERON:0000062 ! organ
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0001017 ! central nervous system
 
@@ -31929,7 +31949,6 @@ xref: NIF_GrossAnatomy:birnlex_1123
 xref: TAO:0001574
 xref: ZFA:0001574
 is_a: UBERON:0000073 ! regional part of nervous system
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -32074,7 +32093,7 @@ relationship: part_of UBERON:0002100 ! trunk
 id: UBERON:0002418
 name: cartilage
 alt_id: UBERON:MA_0000104-MIAA_0000189-XAO_0000170
-def: "a portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA]." [FMA:37377, GO:0051216, Wikipedia:Cartilage]
+def: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA].  an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes (Plate 4) separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." [FMA:37377, GO:0051216, Wikipedia:Cartilage]
 comment: see also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage
 subset: uberon_slim
 xref: AAO:0000060
@@ -32847,7 +32866,7 @@ xref: EHDAA:4675
 xref: FMA:5913
 xref: MA:0002408
 is_a: UBERON:0000063 ! organ segment
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -33101,6 +33120,7 @@ name: orbitosphenoid
 alt_id: UBERON:MA_0002773-ZFA_0000253
 synonym: "lesser wing of sphenoid bone" RELATED [MA:0002773]
 xref: AAO:0000345
+xref: FMA:52869
 xref: HOG:0001153
 xref: MA:0002773
 xref: ZFA:0000253
@@ -33792,8 +33812,8 @@ synonym: "segment of limb" EXACT []
 synonym: "subdivision of limb" EXACT []
 xref: FMA:9661
 xref: MA:0002889
-is_a: UBERON:0000914 ! implied link automatically realized ! segment
-intersection_of: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! implied link automatically realized ! organismal segment
+intersection_of: UBERON:0000914 ! organismal segment
 intersection_of: part_of UBERON:0002101 ! limb
 relationship: part_of UBERON:0002101 ! limb
 
@@ -33931,7 +33951,7 @@ xref: HAO:0000933
 xref: MAT:0000163
 xref: MIAA:0000163
 is_a: UBERON:0000020 ! sense organ
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -34093,12 +34113,15 @@ is_a: UBERON:0000045 ! ganglion
 id: UBERON:0002546
 name: cranial placode
 alt_id: UBERON:MIAA_0000369-XAO_0000305
-comment: This class was created automatically from a combination of ontologies
+def: "n area of thickening in the embryonic epithelial layer where some organ or structure later develops. The term usually refers to cranial placodes, peripheral nervous system structures associated with the special senses and cranial ganglia. Placodes also develop in the formation of other structures, such as teeth and feathers." [Wikipedia:Placode]
+comment: TODO - add subtypes. Consider more generic superclass, see also  FBbt:00005495 primordium
 synonym: "cranial placodes" RELATED []
 synonym: "neurogenic placode" RELATED []
+synonym: "placode" RELATED [Wikipedia:Placode]
 xref: MAT:0000369
 xref: MIAA:0000369
 xref: XAO:0000305
+xref: ZFA:0001309
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000924 ! ectoderm
 
@@ -35374,7 +35397,6 @@ synonym: "segment of brain" EXACT [NIF_GrossAnatomy:birnlex_1167]
 xref: FMA:55676
 xref: NIF_GrossAnatomy:birnlex_1167
 is_a: UBERON:0000073 ! regional part of nervous system
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0000061 ! anatomical structure
 intersection_of: part_of UBERON:0000955 ! brain
 
@@ -37605,6 +37627,7 @@ def: "a long process of a CNS neuron, that carries efferent (outgoing) action po
 subset: uberon_slim
 xref: FMA:72646
 xref: NIF_GrossAnatomy:birnlex_1643
+xref: ZFA:0000709
 is_a: UBERON:0002316 ! white matter of neuraxis
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
 is_a: UBERON:0003545 ! implied link automatically realized ! brainstem white matter
@@ -38407,6 +38430,7 @@ def: "The vestibular nerve ganglion (also called Scarpa's ganglion) is the gangl
 subset: uberon_slim
 synonym: "scarpa's ganglion" EXACT [FMA:53435]
 xref: FMA:53435
+xref: MA:0001086
 xref: ncithesaurus:Vestibular_Ganglion
 xref: NIF_GrossAnatomy:birnlex_2549
 is_a: UBERON:0001714 ! ganglion of cranial nerve
@@ -39166,6 +39190,7 @@ synonym: "Brodmann area 28" EXACT []
 synonym: "entorhinal cortex" RELATED [FMA:72356]
 synonym: "secondary olfactory cortex" EXACT [FMA:72356]
 synonym: "secondary olfactory cortical area (carpenter)" EXACT []
+xref: FMA:68625
 xref: NIF_GrossAnatomy:birnlex_2709
 is_a: UBERON:0002616 ! regional part of brain
 
@@ -40886,6 +40911,8 @@ subset: uberon_slim
 synonym: "central lobule of cerebellum" EXACT [FMA:72519]
 synonym: "central lobule of cerebellum [II and III]" EXACT [FMA:72519]
 xref: FMA:72519
+xref: MA:0000999
+xref: MA:0001000
 xref: NIF_GrossAnatomy:birnlex_920
 is_a: UBERON:0000477 ! anatomical cluster
 
@@ -41452,8 +41479,8 @@ xref: EHDAA:894
 xref: EHDAA:916
 xref: XAO:0000022
 xref: ZFA:0007058
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -41863,8 +41890,8 @@ xref: HOG:0000117
 xref: TAO:0001294
 xref: XAO:0000284
 xref: ZFA:0001294
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0003067 ! dorsolateral placode
 relationship: part_of UBERON:0000010 ! peripheral nervous system
 
@@ -41943,8 +41970,8 @@ xref: EHDAA:910
 xref: TAO:0000022
 xref: XAO:0000306
 xref: ZFA:0000022
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -42784,8 +42811,8 @@ xref: MIAA:0000137
 xref: ncithesaurus:Trachea
 xref: OpenCyc:Mx4rvViOX5wpEbGdrcN5Y29ycA
 xref: XAO:0000118
+is_a: UBERON:0000072 ! implied link automatically realized ! segment of respiratory tract
 is_a: UBERON:0001005 ! respiratory airway
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0001558 ! lower respiratory tract
 relationship: part_of UBERON:0002224 ! thoracic cavity
@@ -42948,7 +42975,7 @@ name: antennal segment
 alt_id: UBERON:FBbt_00000009-HAO_0000104
 xref: FBbt:00000009
 xref: HAO:0000104
-is_a: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! organismal segment
 
 [Term]
 id: UBERON:0003138
@@ -42956,7 +42983,7 @@ name: thoracic segment
 alt_id: UBERON:FBbt_00000016-HAO_0001013
 xref: FBbt:00000016
 xref: HAO:0001013
-is_a: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! organismal segment
 relationship: part_of UBERON:0000915 ! thorax
 
 [Term]
@@ -43217,7 +43244,7 @@ alt_id: UBERON:FBbt_00004534-HAO_0000804
 synonym: "theca" RELATED [FBbt:00004534]
 xref: FBbt:00004534
 xref: HAO:0000804
-is_a: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! organismal segment
 
 [Term]
 id: UBERON:0003167
@@ -43388,7 +43415,7 @@ alt_id: UBERON:FBbt_00004641-HAO_0000228
 xref: FBbt:00004641
 xref: HAO:0000228
 is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! organismal segment
 is_a: UBERON:0002529 ! implied link automatically realized ! limb segment
 relationship: part_of UBERON:0000978 ! leg
 
@@ -43399,7 +43426,7 @@ alt_id: UBERON:FBbt_00004653-HAO_0000820
 xref: FBbt:00004653
 xref: HAO:0000820
 is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! organismal segment
 is_a: UBERON:0002529 ! implied link automatically realized ! limb segment
 relationship: part_of UBERON:0000978 ! leg
 
@@ -43580,7 +43607,7 @@ alt_id: UBERON:FBbt_00007018-HAO_0000145
 xref: FBbt:00007018
 xref: HAO:0000145
 is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0000914 ! segment
+is_a: UBERON:0000914 ! organismal segment
 
 [Term]
 id: UBERON:0003209
@@ -45616,6 +45643,7 @@ synonym: "epithelial tissue of nasal septum" EXACT [OBOL:automatic]
 synonym: "nasal septum epithelial tissue" EXACT [OBOL:automatic]
 synonym: "nasal septum epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:18442
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001706 ! nasal septum
@@ -45761,8 +45789,8 @@ synonym: "Jacobson's organ epithelium" EXACT [OBOL:automatic]
 synonym: "vomeronasal organ epithelial tissue" EXACT [OBOL:automatic]
 synonym: "vomeronasal organ epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:18444
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002255 ! vomeronasal organ
 
@@ -47203,6 +47231,7 @@ id: UBERON:0003407
 name: cartilage of nasal septum
 synonym: "nasal septum cartilage" EXACT [OBOL:automatic]
 xref: EMAPA:25091
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002418 ! implied link automatically realized ! cartilage
 intersection_of: UBERON:0002418 ! cartilage
 intersection_of: part_of UBERON:0001706 ! nasal septum
@@ -47305,6 +47334,7 @@ id: UBERON:0003415
 name: mesenchyme of nasal septum
 synonym: "nasal septum mesenchyme" EXACT [OBOL:automatic]
 xref: EMAPA:18443
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0001706 ! nasal septum
@@ -47375,8 +47405,8 @@ synonym: "Jacobson's organ mesenchyme" EXACT [OBOL:automatic]
 synonym: "mesenchyme of Jacobson's organ" EXACT [OBOL:automatic]
 synonym: "vomeronasal organ mesenchyme" EXACT [OBOL:automatic]
 xref: EMAPA:18445
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0002255 ! vomeronasal organ
 
@@ -48248,9 +48278,9 @@ id: UBERON:0003474
 name: meningeal artery
 xref: GAID:499
 xref: MA:0002001
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0001637 ! implied link automatically realized ! artery
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0001637 ! artery
 intersection_of: part_of UBERON:0002360 ! meninx
 
@@ -49152,8 +49182,8 @@ synonym: "vagus x nerve torso" EXACT [OBOL:automatic]
 synonym: "vagus x nerve trunk" EXACT [OBOL:automatic]
 xref: FMA:6221
 xref: MA:0001150
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002100 ! implied link automatically realized ! trunk
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0002100 ! trunk
 intersection_of: part_of UBERON:0001759 ! vagus nerve
 
@@ -50550,6 +50580,7 @@ synonym: "cartilage of windpipe" EXACT [OBOL:automatic]
 synonym: "cartilaginous trachea cartilage" EXACT [OBOL:automatic]
 synonym: "vertebrate trachea cartilage" EXACT [OBOL:automatic]
 synonym: "windpipe cartilage" EXACT [OBOL:automatic]
+xref: FMA:7434
 xref: MA:0001857
 xref: ncithesaurus:Trachea_Cartilage
 is_a: UBERON:0003571 ! implied link automatically realized ! trachea connective tissue
@@ -52078,8 +52109,8 @@ xref: FMA:9642
 xref: GAID:609
 xref: ncithesaurus:Nervous_Tissue
 xref: OpenCyc:Mx4rVmfYCsQ_QdeM_bFAeS8NRQ
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -52107,8 +52138,8 @@ synonym: "golgi mazzoni corpuscle" RELATED [GAID:817]
 synonym: "golgi-mazzoni corpuscle" EXACT [FMA:83609]
 xref: FMA:83609
 xref: GAID:817
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -52121,8 +52152,8 @@ synonym: "neuromuscular spindle" EXACT [FMA:83607]
 xref: FMA:83607
 xref: GAID:819
 xref: ncithesaurus:Muscle_Spindle
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -52131,8 +52162,8 @@ name: pacinian corpuscle
 def: "any of the rapidly adapting mechanoreceptors found in subcutaneous tissue beneath both hairy and glabrous skin, and which normally contain an afferent nerve fiber surrounded by a capsule with multiple concentric layers." [MP:0000988, Wikipedia:Pacinian_corpuscle]
 xref: FMA:83604
 xref: GAID:820
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000010 ! peripheral nervous system
 
 [Term]
@@ -52173,6 +52204,7 @@ synonym: "vestibular root of acoustic nerve" EXACT [FMA:53401]
 synonym: "vestibular root of eighth cranial nerve" EXACT [FMA:53401]
 xref: FMA:53401
 xref: GAID:840
+xref: MA:0001086
 xref: ncithesaurus:Vestibular_Nerve
 xref: OpenCyc:Mx4rvxAWX5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001785 ! cranial nerve
@@ -52255,6 +52287,7 @@ synonym: "organ mucosa of adult mouth" EXACT [OBOL:automatic]
 synonym: "organ mucosa of mouth" EXACT [OBOL:automatic]
 xref: FMA:59660
 xref: GAID:951
+xref: MA:0002794
 is_a: UBERON:0000344 ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 intersection_of: UBERON:0000344 ! mucosa
@@ -52324,6 +52357,7 @@ synonym: "zeugopod of leg" EXACT []
 synonym: "zeugopod of lower extremity" EXACT [OBOL:automatic]
 xref: EHDAA:5165
 xref: EHDAA:6190
+xref: FMA:24984
 xref: MA:0000051
 xref: OpenCyc:Mx4rvczZBpwpEbGdrcN5Y29ycA
 is_a: UBERON:0002471 ! zeugopod
@@ -52742,6 +52776,7 @@ name: spinal cord neural plate
 synonym: "neural plate of spinal cord" EXACT [OBOL:automatic]
 xref: HOG:0000439
 xref: ZFA:0007021
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003075 ! implied link automatically realized ! neural plate
 intersection_of: UBERON:0003075 ! neural plate
 intersection_of: part_of UBERON:0002240 ! spinal cord
@@ -53455,6 +53490,7 @@ name: mesenchyme of adult kidney
 synonym: "adult mammalian kidney mesenchyme" EXACT [OBOL:automatic]
 synonym: "kidney stroma" EXACT [GO:0072072]
 synonym: "mesenchyme of adult mammalian kidney" EXACT [OBOL:automatic]
+xref: FMA:70983
 is_a: UBERON:0003918 ! implied link automatically realized ! mesenchyme of kidney
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0000082 ! adult mammalian kidney
@@ -53712,6 +53748,7 @@ relationship: part_of UBERON:0001393 ! auditory cortex
 id: UBERON:0003941
 name: cerebellum anterior vermis
 def: "the anterior portion of the narrow middle zone between the two hemispheres of the cerebellum that is located anterior to the primary fissure" [MP:0000867]
+xref: FMA:72255
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 relationship: part_of UBERON:0002131 ! anterior lobe of cerebellum
@@ -53720,8 +53757,8 @@ relationship: part_of UBERON:0002131 ! anterior lobe of cerebellum
 id: UBERON:0003942
 name: somatic sensory system
 def: "the neural tissue involved in the transmission of sensory signals" [MP:0000959]
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0001032 ! sensory system
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000012 ! somatic nervous system
 
 [Term]
@@ -53729,8 +53766,8 @@ id: UBERON:0003943
 name: L4 dorsal root ganglion
 def: "the group of nerve cell bodies located on the dorsal spinal roots within the vertebral column at the level of the fourth lumbar vertebra" [MP:0001019]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000044 ! dorsal root ganglion
 relationship: part_of UBERON:0002414 ! lumbar vertebra
 
@@ -53739,8 +53776,8 @@ id: UBERON:0003944
 name: L5 dorsal root ganglion
 def: "the group of nerve cell bodies located on the dorsal spinal roots within the vertebral column at the level of the fifth lumbar vertebra" [MP:0001022]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000044 ! dorsal root ganglion
 relationship: part_of UBERON:0002414 ! lumbar vertebra
 
@@ -53749,7 +53786,7 @@ id: UBERON:0003945
 name: somatic motor system
 def: "the neural tissue involved in the transmission of motor signals" [MP:0001051]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0000012 ! somatic nervous system
 
 [Term]
@@ -53843,6 +53880,7 @@ name: molar crown
 def: "the part of a molar that is covered by enamel" [MP:0003932]
 synonym: "molar tooth tooth crown" EXACT [OBOL:automatic]
 synonym: "tooth crown of molar tooth" EXACT [OBOL:automatic]
+xref: FMA:85301
 is_a: UBERON:0003675 ! tooth crown
 intersection_of: UBERON:0003675 ! tooth crown
 intersection_of: part_of UBERON:0003655 ! molar tooth
@@ -53905,7 +53943,7 @@ name: pterygopalatine ganglion
 def: "the small parasympathetic ganglion that supplies nerve fibers to the lacrimal, nasal, palatine and pharyngeal glands" [MP:0008314, Wikipedia:Pterygopalatine_ganglion]
 xref: FMA:6965
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001808 ! parasympathetic ganglion
 
 [Term]
@@ -53914,7 +53952,7 @@ name: otic ganglion
 def: "the ganglion that supplies nerve fibers to the parotid gland" [MP:0008315, Wikipedia:Otic_ganglion]
 xref: FMA:6967
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001808 ! parasympathetic ganglion
 
 [Term]
@@ -53923,7 +53961,7 @@ name: prevertebral ganglion
 def: "the sympathetic ganglia located in front of the vertebral column and are associated with the major branches of the abdominal aorta; these include the celiac, aorticorenal, superior and inferior mesenteric ganglia" [MP:0008316]
 xref: FMA:5892
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001806 ! sympathetic ganglion
 
 [Term]
@@ -53931,7 +53969,7 @@ id: UBERON:0003965
 name: sympathetic afferent fiber
 def: "the fibers that conduct sensory nerve impulses from the viscera through the posterior dorsal roots into the spinal cord" [MP:0008319]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0000013 ! sympathetic nervous system
 
 [Term]
@@ -54016,6 +54054,7 @@ relationship: part_of UBERON:0000996 ! vagina
 id: UBERON:0003975
 name: internal female genitalia
 def: "the internal feminine genital organs, including the ovaries, uterine tubes, uterus, uterine cervix, and vagina" [MP:0009209]
+xref: FMA:45654
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000997 ! vulva
 
@@ -54130,6 +54169,7 @@ relationship: part_of UBERON:0002125 ! lobule of thymus
 id: UBERON:0003989
 name: medulla oblongata anterior median fissure
 def: "the longitudinal groove in the midline of the anterior aspect of the medulla oblongata" [MP:0009680]
+xref: FMA:83734
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
@@ -54139,7 +54179,7 @@ id: UBERON:0003990
 name: spinal cord motor column
 def: "the subclasses of motor neurons which are organized into longitudinally oriented columns that occupy distinct and, in some cases, discontinuous domains along the rostrocaudal axis of the spinal cord; motor neurons within a single column send their axons to a common peripheral target" [MP:0009685]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -54208,6 +54248,7 @@ relationship: part_of UBERON:0001092 ! atlas
 id: UBERON:0003997
 name: hyoid bone greater horn
 def: "the larger and more lateral of the paired processes on either side of the hyoid bone" [MP:0009913]
+xref: FMA:59496
 xref: MA:0002959
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
@@ -54217,6 +54258,7 @@ relationship: part_of UBERON:0001685 ! hyoid bone
 id: UBERON:0003998
 name: hyoid bone lesser horn
 def: "shorter and more medial of the paired processes on either side of the hyoid bone" [MP:0009914]
+xref: FMA:59499
 xref: MA:0002960
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
@@ -54250,6 +54292,7 @@ relationship: part_of UBERON:0002264 ! olfactory bulb
 id: UBERON:0004002
 name: cerebellum posterior lobe
 def: "the region of the cerebellum that is posterior to the primary fissure and anterior to the posteriolateral fissure" [MP:0009962]
+xref: FMA:72252
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 relationship: part_of UBERON:0002129 ! cerebellar cortex
@@ -54258,6 +54301,7 @@ relationship: part_of UBERON:0002129 ! cerebellar cortex
 id: UBERON:0004003
 name: cerebellum hemisphere lobule
 def: "the region of a cerebellar lobule that resides in either of the lateral sections of the cerebellum outside the vermis; in mammals, the vermis portion of the cerebellum has a foliation pattern along the AP axis that is distinct from the lateral cerebellar hemispheres" [MP:0009963]
+xref: FMA:83880
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
@@ -54428,7 +54472,7 @@ synonym: "embryonic/fetal subventricular zone" EXACT []
 synonym: "fetal subventricular zone" EXACT []
 synonym: "subventricular zone" RELATED []
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -54444,7 +54488,7 @@ name: lateral ganglionic eminence
 def: "a distinct elevation of a transient proliferating cell mass of the fetal subventricular zone; this mass contributes most of its cells to the striatum; however, neocortex, thalamus, septum and olfactory bulb neurons are also partly derived from the LGE" [MP:0004277]
 comment: TODO fetal subventricular zone
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -54452,7 +54496,7 @@ id: UBERON:0004026
 name: caudal ganglionic eminence
 def: "the caudally located, distinct elevation of a transient proliferating cell mass of the fetal subventricular zone, located adjacent to the lateral ventricle" [MP:0004278]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -54673,12 +54717,14 @@ relationship: adjacent_to UBERON:0002336 ! corpus callosum
 id: UBERON:0004053
 name: external male genitalia
 def: "the external masculine genital organs, including the penis and scrotum" [MP:0009199]
+xref: FMA:45642
 is_a: UBERON:0000079 ! male reproductive system
 
 [Term]
 id: UBERON:0004054
 name: internal male genitalia
 def: "the internal masculine genital organs, including the testes, epididymides, deferent ducts, seminal vesicles, prostate, ejaculatory ducts, and bulbourethral glands" [MP:0009205]
+xref: FMA:45655
 is_a: UBERON:0000079 ! male reproductive system
 
 [Term]
@@ -54765,8 +54811,8 @@ relationship: part_of UBERON:0001049 ! neural tube
 id: UBERON:0004065
 name: primordial meninx
 def: "the outermost mesenchymal covering of the developing brain and spinal cord that is composed of tough fibrous connective tissue from which the arachnoid mater, pia mater and dura mater are formed" [MP:0009726]
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003104 ! mesenchyme
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -55038,6 +55084,7 @@ id: UBERON:0004101
 name: nasolabial region
 def: "." [HP:0005289]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
 [Term]
@@ -55579,6 +55626,7 @@ name: coronary vein
 def: "Vein of heart" [GOC:Obol]
 synonym: "heart vein" EXACT [OBOL:automatic]
 synonym: "vein of heart" EXACT [OBOL:automatic]
+xref: FMA:12846
 xref: galen:CoronaryVein
 xref: ncithesaurus:Coronary_Vein
 is_a: UBERON:0001638 ! vein
@@ -55758,8 +55806,8 @@ is_a: UBERON:0001018 ! axon tract
 id: UBERON:0004170
 name: spinal cord ventral commissure
 def: "." [GO:0021965]
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0001020 ! commissure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -56063,6 +56111,7 @@ xref: EMAPA:19576
 xref: EMAPA:19588
 xref: EMAPA:25170
 xref: EMAPA:25236
+xref: FMA:63522
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001287 ! proximal convoluted tubule
@@ -56079,6 +56128,7 @@ xref: EMAPA:19579
 xref: EMAPA:19589
 xref: EMAPA:25171
 xref: EMAPA:25237
+xref: FMA:63523
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001287 ! proximal convoluted tubule
@@ -60514,6 +60564,7 @@ name: bony projection
 def: "Portion of connective tissue that is an extension of a bone." []
 synonym: "bone process" BROAD []
 synonym: "projection of bone" EXACT []
+xref: FMA:75433
 xref: ZFA:0001637
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004529 ! implied link automatically realized ! anatomical projection
@@ -60759,6 +60810,7 @@ name: hindlimb digital vein
 def: "The palmar digital veins (or volar digital veins) on each finger are connected to the dorsal digital veins by oblique intercapitular veins." [Wikipedia:Palmar_digital_veins]
 synonym: "palmar digital vein" EXACT []
 synonym: "plantar digital vein" EXACT []
+xref: FMA:44517
 xref: MA:0002120
 xref: MA:0002133
 is_a: UBERON:0004562 ! implied link automatically realized ! digital vein
@@ -61544,6 +61596,7 @@ xref: FMA:52610
 xref: NIF_GrossAnatomy:birnlex_1346
 is_a: UBERON:0002211 ! segment of nerve
 is_a: UBERON:0002680 ! regional part of metencephalon
+is_a: UBERON:0004733 ! implied link automatically realized ! segmental subdivision of hindbrain
 relationship: part_of UBERON:0001645 ! trigeminal nerve
 
 [Term]
@@ -61557,6 +61610,7 @@ xref: FMA:53418
 xref: NIF_GrossAnatomy:birnlex_1513
 is_a: UBERON:0002211 ! segment of nerve
 is_a: UBERON:0002680 ! regional part of metencephalon
+is_a: UBERON:0004733 ! implied link automatically realized ! segmental subdivision of hindbrain
 relationship: part_of UBERON:0001647 ! facial nerve
 
 [Term]
@@ -61570,6 +61624,7 @@ xref: FMA:72632
 xref: NIF_GrossAnatomy:birnlex_1588
 is_a: UBERON:0002211 ! segment of nerve
 is_a: UBERON:0002678 ! regional part of medulla oblongata
+is_a: UBERON:0004733 ! implied link automatically realized ! segmental subdivision of hindbrain
 relationship: part_of UBERON:0001650 ! hypoglossal nerve
 relationship: part_of UBERON:0001896 ! medulla oblongata
 
@@ -61740,8 +61795,8 @@ relationship: secreted_by UBERON:0002366 ! bulbo-urethral gland
 id: UBERON:0004692
 name: external naris epithelium
 xref: MA:0001321
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000003 ! naris
 
@@ -61937,6 +61992,7 @@ synonym: "penile corpus cavernosum" RELATED [BTO:0002019]
 synonym: "spongy body of male urethra" RELATED [BTO:0002019]
 synonym: "spongy body of penis" RELATED [BTO:0002019]
 xref: BTO:0002019
+xref: FMA:19618
 xref: Wikipedia:Corpus_cavernosum_penis
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
@@ -61949,6 +62005,7 @@ def: "The septum pellucidum  is made up of two thin sheets of mostly glial-like 
 synonym: "pellucidum" RELATED [BTO:0003448]
 synonym: "septum lucidum" RELATED [BTO:0003448]
 xref: BTO:0003448
+xref: FMA:61844
 xref: Wikipedia:Septum_pellucidum
 is_a: UBERON:0000119 ! cell layer
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
@@ -61980,6 +62037,7 @@ name: Brodmann area 29
 def: "A cytoarchitecturally defined portion of the retrosplenial region of the cerebral cortex. In the human it is a narrow band located in the isthmus of cingulate gyrus. Cytoarchitecturally it is bounded internally by the ectosplenial area 26 and externally by the agranular retrolimbic area 30." [BTO:0003978]
 synonym: "granular retrolimbic area 29" RELATED [BTO:0003978, Wikipedia:Brodmann_area_29]
 xref: BTO:0003978
+xref: FMA:68626
 xref: Wikipedia:Brodmann_area_29
 is_a: UBERON:0002619 ! regional part of cerebral cortex
 
@@ -61989,6 +62047,7 @@ name: Brodmann area 26
 def: "In the human this area is called ectosplenial area 26. It is a cytoarchitecturally defined portion of the retrosplenial region of the cerebral cortex. It is a narrow band located in the isthmus of cingulate gyrus adjacent to the fasciolar gyrus internally. It is bounded externally by the granular retrolimbic area 29." [BTO:0003979]
 synonym: "ectosplenial area 26" RELATED [BTO:0003979, Wikipedia:Brodmann_area_26]
 xref: BTO:0003979
+xref: FMA:68623
 xref: Wikipedia:Brodmann_area_26
 is_a: UBERON:0002619 ! regional part of cerebral cortex
 
@@ -62017,6 +62076,7 @@ name: crista ampullaris
 def: "The crista ampullaris is the sensory organ of rotation located in the semicircular canal of the inner ear. The function of the crista ampullaris is to sense angular acceleration and deceleration." [Wikipedia:Crista_ampullaris]
 synonym: "ampullary crest" RELATED [MA:0002771]
 synonym: "cristae ampullares" RELATED [Wikipedia:Crista_ampullaris]
+xref: FMA:77714
 xref: MA:0002771
 xref: Wikipedia:Crista_ampullaris
 
@@ -62118,6 +62178,63 @@ def: "This begins with the newly hatched first-instar larva, through its maturat
 xref: FBdv:00005336
 is_a: UBERON:0000069 ! larval stage
 relationship: coincides_with GO:0002168
+
+[Term]
+id: UBERON:0004731
+name: neuromere
+def: "A segment of the developing neural tube[MP]. A metameric segment of the central nervous system[ZFA]. morphologically or molecularly defined transient segments of the early developing brain. Rhombomeres are such segments that make up the rhombencephalon or hindbrain. [WP]." [MP:0003208, Wikipedia:Neuromere]
+comment: WP says: "More controversially, some argue that there exist early developmental segments that give rise to structures of the midbrain (mesomeres) and forebrain (prosomeres).". Note that ZFA has spinal neuromere
+synonym: "neural segment" EXACT []
+synonym: "neural tube segment" EXACT []
+synonym: "neuromere" EXACT []
+xref: TAO:0001328
+xref: ZFA:0001328
+is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
+intersection_of: UBERON:0004732 ! segmental subdivision of nervous system
+intersection_of: part_of UBERON:0001049 ! neural tube
+created_by: Melissa Haendel
+creation_date: 2009-06-18T09:00:04Z
+
+[Term]
+id: UBERON:0004732
+name: segmental subdivision of nervous system
+synonym: "neuromere" RELATED [FBbt:00005140]
+xref: FBbt:00005140
+is_a: UBERON:0000063 ! implied link automatically realized ! organ segment
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+intersection_of: UBERON:0000063 ! organ segment
+intersection_of: part_of UBERON:0001016 ! nervous system
+
+[Term]
+id: UBERON:0004733
+name: segmental subdivision of hindbrain
+synonym: "hindbrain segment" EXACT [FMA:61998]
+synonym: "segment of hindbrain" EXACT [FMA:61998]
+xref: FMA:61998
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
+intersection_of: UBERON:0000063 ! organ segment
+intersection_of: part_of UBERON:0002028 ! hindbrain
+
+[Term]
+id: UBERON:0004734
+name: gastrula
+def: "Organism at the gastrula stage." [Wikipedia:Gastrula]
+xref: BTO:0001403
+xref: GAID:1302
+xref: MIAA:0000179
+is_a: UBERON:0000922 ! embryo
+relationship: existence_starts_and_ends_during UBERON:0000109 ! gastrula stage
+
+[Term]
+id: UBERON:0004735
+name: archenteron
+def: "The cavity of a gastrula forming a primitive gut[BTO]. The primitive gut that forms during gastrulation  in the developing blastula. It develops into the digestive tract of an animal. As primary mesenchyme cells detach from the vegetal pole in the blastula and enter the fluid filled cavity in the center (the blastocoel), the remaining cells at the vegetal pole flatten to form a vegetal plate. This buckles inwards towards the blastocoel in a process called invagination. The cells continue to be rearranged until the shallow dip formed by invagination transforms into a deeper, narrower pouch formed by the gastrula's endoderm. This narrowing and lengthening of the archenteron is driven by convergent extension. The open end of the archenteron is called the blastopore. The filopodia--thin fibers formed by the mesenchyme cells--found in a late gastrula contract to drag the tip of the archenteron across the blastocoel. The endoderm of the archenteron will fuse with the ectoderm of the blastocoel wall. At this point gastrulation is complete, and the gastrula has a functional digestive tube. The indentation that is actually formed is called the lip of the blastopore in amphibians and fish, and the primitive streak in birds and mammals. Each is controlled by the dorsal blastopore, and primitive node (also known as Hensen's node), respectively." [Wikipedia:Archenteron]
+synonym: "gastrocoel" RELATED [XAO:0000092]
+xref: BTO:0001696
+xref: XAO:0000092
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0004734 ! gastrula
 
 [Typedef]
 id: adjacent_to

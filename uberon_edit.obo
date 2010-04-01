@@ -81,6 +81,7 @@ xref: TAO:0000047 ! peripheral olfactory organ
 xref: ZFA:0000047 ! peripheral olfactory organ
 is_a: UBERON:0000005 ! chemosensory sensory organ
 relationship: develops_from UBERON:0003050 ! olfactory placode
+relationship: capable_of GO:0007608
 xref: ncithesaurus:Nose ! Nose
 xref: galen:Nose ! nose
 xref: OpenCyc:Mx4rvViCbJwpEbGdrcN5Y29ycA ! nose
@@ -100,7 +101,8 @@ xref: MA:0002445 ! olfactory system
 xref: TAO:0001149 ! olfactory system
 xref: XAO:0000201 ! olfactory apparatus
 xref: ZFA:0001149 ! olfactory system
-is_a: UBERON:0000020 ! sense organ
+intersection_of: UBERON:0000020 ! sense organ
+intersection_of: capable_of GO:0007606 ! sensory perception of chemical stimulus
 xref: EFO:0001973 ! olfactory system
 xref: OpenCyc:Mx4rvViw75wpEbGdrcN5Y29ycA ! olfactory system
 
@@ -1631,11 +1633,22 @@ creation_date: 2009-07-30T07:57:38Z
 xref: ZFA:0001648 ! cardiac neural crest
 
 [Term]
+id: UBERON:0004735 ! archenteron
+name: archenteron
+def: "The cavity of a gastrula forming a primitive gut[BTO]. The primitive gut that forms during gastrulation  in the developing blastula. It develops into the digestive tract of an animal. As primary mesenchyme cells detach from the vegetal pole in the blastula and enter the fluid filled cavity in the center (the blastocoel), the remaining cells at the vegetal pole flatten to form a vegetal plate. This buckles inwards towards the blastocoel in a process called invagination. The cells continue to be rearranged until the shallow dip formed by invagination transforms into a deeper, narrower pouch formed by the gastrula's endoderm. This narrowing and lengthening of the archenteron is driven by convergent extension. The open end of the archenteron is called the blastopore. The filopodia--thin fibers formed by the mesenchyme cells--found in a late gastrula contract to drag the tip of the archenteron across the blastocoel. The endoderm of the archenteron will fuse with the ectoderm of the blastocoel wall. At this point gastrulation is complete, and the gastrula has a functional digestive tube. The indentation that is actually formed is called the lip of the blastopore in amphibians and fish, and the primitive streak in birds and mammals. Each is controlled by the dorsal blastopore, and primitive node (also known as Hensen's node), respectively." [Wikipedia:Archenteron]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0004734 ! gastrula
+synonym: "gastrocoel" RELATED [XAO:0000092]
+xref: BTO:0001696 ! archenteron
+xref: XAO:0000092 ! archenteron
+
+[Term]
 id: UBERON:0000100
 name: blastopore
 def: "Structure around the opening into the archenteron during the embryonic stages of an organism. The distinction between protostomes and deuterostomes is based on the direction in which the mouth (stoma) develops in relation to the blastopore." [Wikipedia:Blastopore]
 xref: XAO:0000208 ! blastopore
 is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0004735 ! archenteron
 xref: BTO:0001695 ! blastopore
 
 [Term]
@@ -1728,13 +1741,16 @@ name: blastula stage
 def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [Wikipedia:Blastula]
 xref: BILS:0000108
 xref: XAO:1000003 ! blastula
+xref: OGES:000021 ! blastula
+xref: OGES:000016 ! blastula
+xref: OGES:000003 ! Blastula
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000107 ! cleavage stage
 xref: EFO:0001282 ! blastula stage
 
 [Term]
-id: UBERON:0000109
+id: UBERON:0000109 ! gastrula stage
 name: gastrula stage
 def: "A stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage during embryonic development of most animals. The details of gastrulation vary from species to species, but usually result in the formation of the three primary germ layers, ectoderm, mesoderm and endoderm." [GO:0007369]
 xref: BILS:0000109
@@ -2579,13 +2595,21 @@ comment: TODO - check relationship with epiblast
 synonym: "blastosphere" RELATED [Wikipedia:Blastula]
 xref: BTO:0000128
 xref: FMA:83041 ! Blastocyst
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0000922 ! embryo
+relationship: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
 xref: OGEM:000006 ! blastula
-xref: OGES:000021 ! blastula
-xref: OGES:000016 ! blastula
-xref: OGES:000003 ! Blastula
 xref: GAID:1294 ! blastula
 xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg ! blastula
+
+[Term]
+id: UBERON:0004734 ! gastrula
+name: gastrula
+def: "Organism at the gastrula stage." [Wikipedia:Gastrula]
+is_a: UBERON:0000922 ! embryo
+relationship: existence_starts_and_ends_during UBERON:0000109 ! gastrula stage
+xref: MIAA:0000179 ! gastrula
+xref: BTO:0001403 ! gastrula
+xref: GAID:1302 ! gastrula
 
 [Term]
 id: UBERON:0000309
@@ -3013,7 +3037,7 @@ id: UBERON:0000353
 name: parenchyma
 alt_id: UBERON:BTO_0000999-FMA_45732
 def: "functional part of an organ in the body. This is in contrast to the stroma, which refers to the structural tissue of organs, being exactly, connective tissues. Early in development the mammalian embryo has three distinct layers: ectoderm (external layer), endoderm (internal layer) and in between those two layers the middle layer or mesoderm. The parenchyma of most organs is of ectodermal (brain, skin) or endodermal origin (lungs, gastrointestinal tract, liver, pancreas). The parenchyma of a few organs (spleen, kidneys, heart) is of mesodermal origin. The stroma of all organs is of mesodermal origin[WP]." [Wikipedia:Parenchyma]
-xref: BTO:0000999
+comment: BTO:0000999 rejected as this refers specifically to plant
 xref: FMA:45732 ! Parenchyma
 is_a: UBERON:0000064 ! organ part
 xref: ncithesaurus:Parenchyma ! Parenchyma
@@ -7711,7 +7735,7 @@ xref: ncithesaurus:Glomerulus ! Glomerulus
 id: UBERON:0001048
 name: primordium
 alt_id: UBERON:FBbt_00005495-FMA_86589-XAO_0003043
-def: "Primordia are populations of contiguous cells that are morphologically distinct and already correspond in extent to a later organ/tissue. // An embryonic structure that is the rudiment or commencement of a part or organ." [BTO:0001886, FB:DJS, FB:FBrf0089570, FB:FBrf0178740, Wikipedia:Primordium]
+def: "Primordia are populations of contiguous cells that are morphologically distinct and already correspond in extent to a later organ/tissue[FBbt]. An embryonic structure that is the rudiment or commencement of a part or organ." [BTO:0001886, FB:DJS, FB:FBrf0089570, FB:FBrf0178740, Wikipedia:Primordium]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "placode" RELATED []
@@ -7826,7 +7850,7 @@ xref: BTO:0002106 ! neurohemal organ
 id: UBERON:0001054
 name: malpighian tubule
 alt_id: UBERON:FBbt_00005786-MIAA_0000123
-def: "The most important structure of the insect's excretory organ, which may comprise cystiform or labyrinthine highly versatile tubules having their outlet into the inital section of the rectum." [ISBN:3110148986, Wikipedia:Malpighian_tubule]
+def: "The most important structure of the insect's excretory organ, which may comprise cystiform or labyrinthine highly versatile tubules having their outlet into the inital section of the rectum[FBbt]. Any of a group of long blind vessels opening into the posterior part of the alimentary canal in most insects and some other arthropods and functioning primarily as excretory organs[BTO]." [ISBN:3110148986, Wikipedia:Malpighian_tubule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "malpighian tubules" EXACT []
@@ -8191,6 +8215,7 @@ synonym: "processus spinosus" EXACT []
 synonym: "vertebra spinous process" EXACT []
 xref: FMA:11948 ! Spinous process of vertebra
 xref: MA:0001455 ! vertebra spinous process
+xref: ZFA:0001336 ! neural spine
 is_a: UBERON:0000063 ! organ segment
 relationship: part_of UBERON:0002412 ! vertebra
 
@@ -29307,11 +29332,12 @@ xref: BTO:0004016 ! laterodorsal tegmental nucleus
 id: UBERON:0002268
 name: olfactory organ
 alt_id: UBERON:FMA_77659-XAO_0000273
-comment: This class was created automatically from a combination of ontologies
+comment: note - fma general anatomical term. xao has no subtypes (but Johnstons organ develops from this)
 xref: FMA:77659 ! Olfactory organ
 xref: HOG:0000287 ! olfactory organ
 xref: XAO:0000273 ! olfactory organ
-is_a: UBERON:0000020 ! sense organ
+intersection_of: UBERON:0000020 ! sense organ
+intersection_of: capable_of GO:0007608
 relationship: develops_from UBERON:0003050 ! olfactory placode
 relationship: part_of UBERON:0001016 ! nervous system
 xref: BTO:0001772 ! olfactory organ
@@ -32259,7 +32285,7 @@ relationship: part_of UBERON:0002100 ! trunk
 id: UBERON:0002418
 name: cartilage
 alt_id: UBERON:MA_0000104-MIAA_0000189-XAO_0000170
-def: "a portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA]." [Wikipedia:Cartilage, GO:0051216, FMA:37377]
+def: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA].  an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes (Plate 4) separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." [Wikipedia:Cartilage, GO:0051216, FMA:37377]
 comment: see also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage
 subset: uberon_slim
 xref: AAO:0000060 ! cartilage
@@ -34181,13 +34207,16 @@ is_a: UBERON:0000045 ! ganglion
 [Term]
 id: UBERON:0002546
 name: cranial placode
+def: "n area of thickening in the embryonic epithelial layer where some organ or structure later develops. The term usually refers to cranial placodes, peripheral nervous system structures associated with the special senses and cranial ganglia. Placodes also develop in the formation of other structures, such as teeth and feathers." [Wikipedia:Placode]
 alt_id: UBERON:MIAA_0000369-XAO_0000305
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - add subtypes. Consider more generic superclass, see also  FBbt:00005495 primordium 
 synonym: "cranial placodes" RELATED []
 synonym: "neurogenic placode" RELATED []
+synonym: "placode" RELATED [Wikipedia:Placode]
 xref: MAT:0000369 ! cranial placode
 xref: MIAA:0000369 ! cranial placode
 xref: XAO:0000305 ! cranial placode
+xref: ZFA:0001309 ! neurogenic placode
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000924 ! ectoderm
 
@@ -37594,6 +37623,7 @@ def: "a long process of a CNS neuron, that carries efferent (outgoing) action po
 subset: uberon_slim
 xref: FMA:72646 ! Vestibulospinal tract
 xref: NIF_GrossAnatomy:birnlex_1643 ! Vestibulospinal tract
+xref: ZFA:0000709 ! vestibulo-spinal tract
 is_a: UBERON:0002316 ! white matter of neuraxis
 relationship: part_of UBERON:0001896 ! medulla oblongata
 
