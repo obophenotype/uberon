@@ -377,7 +377,10 @@ newterms-mouse-birnlex.obo: birnlex_anatomy_s.obo
 	obol -u onto_grep onto-3-way-align -i $< -r mouse_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
 
 newterms-xenopus-zebrafish.obo:
-	obol -u onto_grep onto-3-way-align -i uberon_CL -r xenopus_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r xenopus_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
+
+newterms-aao-zebrafish.obo:
+	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r amphibian_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 amphibanat -ont3 uberon > $@
 
 newterms-zebrafish-mouse.obo:
 	obol -u onto_grep onto-3-way-align -r mouse_anatomy -r zebrafish_anatomy -r uberon -ont1 adult_mouse_anatomy.gxd -ont2 zebrafish_anatomy -ont3 uberon > $@

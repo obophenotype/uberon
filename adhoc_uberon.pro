@@ -113,5 +113,25 @@ dbpedia_canonical(InURL,InURL) :-
 	\+ \+ rdf(InURL,'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',_).
 
 
+idspace_map('TAO',_) :- fail,!.
+idspace_map('MIAA',_) :- fail,!.
+idspace_map('ZFA','ZFA/ZFS') :- !.
+idspace_map('ZFS','ZFA/ZFS') :- !.
+idspace_map('BILA','BILA/BILS') :- !.
+idspace_map('BILS','BILA/BILS') :- !.
+idspace_map(X,X).
 
-	
+
+
+uberon_xref_in(E,X,S) :-
+	entity_xref(E,X),
+	id_idspace(X,S1),
+	idspace_map(S1,S).
+
+uberon_xref_count(S,Num) :-
+	aggregate(count,
+		  X,
+		  E^uberon_xref_in(E,X,S),
+		  Num),
+	Num > 32.
+
