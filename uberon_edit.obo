@@ -1330,10 +1330,13 @@ relationship: develops_from UBERON:0003076 ! posterior neural tube
 relationship: part_of UBERON:0000955 ! brain
 
 [Term]
-id: UBERON:0000074
+id: UBERON:0000074 ! renal glomerulus
 name: renal glomerulus
+synonym: "glomerulus " EXACT []
 synonym: "glomerular tuft " RELATED []
 synonym: "renal corpuscle " RELATED []
+def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]. the capillary loops of the kidney that normally function as a filtration unit[MP]." [MP:0005325, Wikipedia:Glomerulus]
+comment: ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries
 xref: FMA:15624 ! Glomerulus
 xref: MA:0001657 ! glomerulus
 xref: XAO:0000146 ! glomerulus
@@ -1343,7 +1346,23 @@ is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001230 ! glomerular capsule
 created_by: Melissa Haendel
 creation_date: 2009-06-18T09:26:37Z
-def: "the capillary loops of the kidney that normally function as a filtration unit." [MP:0005325]
+
+[Term]
+id: UBERON:0004736
+name: metanephric glomerulus
+def: "glomerulus of the mature vertebrate kidney, or metanephros." [GO:0072224]
+synonym: "glomerulus of metanephros" EXACT []
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0004739
+name: pronephric glomerulus
+def: "glomerulus of the pronephros." [OBOL:automatic]
+synonym: "glomerulus of pronephros" EXACT []
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: part_of UBERON:0002120 ! pronephros
+xref: ZFA:0001557 ! pronephric glomerulus
 
 [Term]
 id: UBERON:0000075
@@ -1463,9 +1482,9 @@ xref: EHDAA:1581 ! mesonephros
 xref: EHDAA:5903 ! mesonephros
 
 [Term]
-id: UBERON:0000081
+id: UBERON:0000081 ! metanephros
 name: metanephros
-def: "In mammals, the metanephros is the excretory organ of the fetus, which develops into the mature kidney and is formed from the rear portion of the nephrogenic cord[GO]. During the fifth week of gestation, the mesonephric duct develops an outpouching, the ureteric bud, near its attachment to the cloaca. This bud, also called the metanephrogenic diverticulum, grows posteriorly and towards the head of the embryo. The elongated stalk of the ureteric bud, the metanephric duct, later forms the ureter. As the cranial end of the bud extends into the intermediate mesoderm, it undergoes a series of branchings to form the collecting duct system of the kidney. It also forms the major and minor calyces and the renal pelvis." [GO:0001656, Wikipedia:Metanephros#Metanephros]
+def: "In mammals, the metanephros is the excretory organ of the fetus, which develops into the mature kidney and is formed from the rear portion of the nephrogenic cord. The metanephros is an endocrine and metabolic organ that filters the blood and excretes the end products of body metabolism in the form of urine[GO]. During the fifth week of gestation, the mesonephric duct develops an outpouching, the ureteric bud, near its attachment to the cloaca. This bud, also called the metanephrogenic diverticulum, grows posteriorly and towards the head of the embryo. The elongated stalk of the ureteric bud, the metanephric duct, later forms the ureter. As the cranial end of the bud extends into the intermediate mesoderm, it undergoes a series of branchings to form the collecting duct system of the kidney. It also forms the major and minor calyces and the renal pelvis." [GO:0001656, Wikipedia:Metanephros#Metanephros]
 xref: FMA:72172 ! Metanephros
 xref: HOG:0000039 ! metanephros
 is_a: UBERON:0002113 ! kidney
@@ -5434,6 +5453,7 @@ name: cardial valve
 alt_id: UBERON:FBbt_00003140-FMA_7110-MA_0000086-ZFA_0005065
 def: "Flap of tissue that prevents regurgitation of blood from the ventricles to the atria or from the pulmonary arteries or aorta to the ventricles." [Wikipedia:Cardiac_valve]
 subset: uberon_slim
+comment: Rector et al: One might be tempted to define “heart valve” equivalently to “valve in the heart”, and “valve” as a “structure which functions as a valve”.  But this combination results in the “foramen ovale” being classified as a kind of “heart valve”, since it is undoubtedly located in the heart and functions as a valve
 synonym: "cardiac valve" RELATED []
 synonym: "heart valve" EXACT []
 synonym: "heart valves" RELATED []
@@ -6365,7 +6385,6 @@ relationship: site_of GO:0007276 ! gamete generation
 intersection_of: UBERON:0003133 ! reproductive organ
 intersection_of: has_part CL:0000586 ! germ cell
 xref: ncithesaurus:Gonad ! Gonad
-xref: synonym:primordium ! gonadal
 xref: OpenCyc:Mx4rwQvdiZwpEbGdrcN5Y29ycA ! gonad
 
 [Term]
@@ -7726,10 +7745,9 @@ alt_id: UBERON:FBbt_00005386
 def: "Roundish subunit structure of a neuropil, often ensheathed by glial lamellae. Also, unit structure of the antennal lobe." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Glomerulus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "Glomerulus" EXACT []
+synonym: "glomerulus" BROAD []
 xref: FBbt:00005386 ! glomerulus
 is_a: UBERON:0001021 ! nerve
-xref: ncithesaurus:Glomerulus ! Glomerulus
 
 [Term]
 id: UBERON:0001048
@@ -8698,7 +8716,6 @@ synonym: "set of teeth" EXACT [FMA:75150]
 synonym: "teeth" EXACT [FMA:75150]
 synonym: "teeth set" EXACT [FMA:75150]
 synonym: "dental plate" RELATED []
-synonym: "dentition" BROAD []
 synonym: "pharyngeal teeth" RELATED []
 synonym: "teeth" RELATED []
 xref: ZFA:0000644 ! dental plate
@@ -11117,22 +11134,23 @@ relationship: part_of UBERON:0001229 ! renal corpuscle
 id: UBERON:0001231
 name: renal tubule
 alt_id: UBERON:FMA_15627-ZFA_0001287
-def: "." [Wikipedia:Renal_tubule]
+alt_id: UBERON:0004210
+def: "An epithelial tube that is part of the nephron, the functional part of the kidney." [GO:0072078, Wikipedia:Renal_tubule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "renal tubules" RELATED []
+synonym: "nephron tubule" EXACT [GO:0072078]
 synonym: "tubulus renalis" EXACT []
 xref: BTO:0000343
 xref: FMA:15627 ! Renal tubule
 xref: MA:0000377 ! renal tubule
 xref: TAO:0001287 ! renal tubule
 xref: ZFA:0001287 ! renal tubule
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0003914 ! epithelial tube
 relationship: part_of UBERON:0001285 ! nephron
 xref: ncithesaurus:Renal_Tubule ! Renal Tubule
 
 [Term]
-id: UBERON:0001232
+id: UBERON:0001232 ! collecting duct of renal tubule
 name: collecting duct of renal tubule
 alt_id: UBERON:FMA_15628-MA_0000371
 def: " The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient" [GO:0072044]
@@ -11150,7 +11168,15 @@ xref: ZFA:0005294 ! collecting duct
 xref: EMAPA:28407 ! collecting duct
 is_a: UBERON:0000058 ! duct
 relationship: part_of UBERON:0002113 ! kidney
+relationship: part_of UBERON:0001285 ! nephron
 xref: BTO:0000761 ! collecting duct
+
+[Term]
+id: UBERON:0004737
+name: metanephric collecting duct
+synonym: "collecting duct of metanephros" EXACT []
+intersection_of: UBERON:0001232 ! collecting duct of renal tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0001233
@@ -16861,7 +16887,7 @@ is_a: UBERON:0002377 ! muscle of neck
 id: UBERON:0001563
 name: longus capitis
 alt_id: UBERON:FMA_46308-MA_0002340
-def: "The longus capitis (rectus capitis anticus major), broad and thick above, narrow below, arises by four tendinous slips, from the anterior tubercles of the transverse processes of the third, fourth, fifth, and sixth cervical vertebræ, and ascends, converging toward its fellow of the opposite side, to be inserted into the inferior surface of the basilar part of the occipital bone. It is innervated by a branch of cervical plexus. [WP,unvetted]." [Wikipedia:Longus_capitis]
+def: "The longus capitis (rectus capitis anticus major), broad and thick above, narrow below, arises by four tendinous slips, from the anterior tubercles of the transverse processes of the third, fourth, fifth, and sixth cervical vertebrae, and ascends, converging toward its fellow of the opposite side, to be inserted into the inferior surface of the basilar part of the occipital bone. It is innervated by a branch of cervical plexus. [WP,unvetted]." [Wikipedia:Longus_capitis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:46308 ! Longus capitis
@@ -18905,7 +18931,6 @@ is_a: UBERON:0001474 ! bone
 relationship: part_of UBERON:0001704 ! viscerocranium
 xref: ncithesaurus:Hyoid_Bone ! Hyoid Bone
 xref: HOG:0001325 ! hyoid bone
-xref: synonym:pre-cartilage_condensation ! hyoid bone
 
 [Term]
 id: UBERON:0001686
@@ -19139,16 +19164,35 @@ xref: galen:Orbit ! orbit
 
 [Term]
 id: UBERON:0001698
-name: foramen ovale
+name: foramen ovale of skull
 alt_id: UBERON:FMA_53155-MA_0001873
-def: "." [Wikipedia:Foramen_ovale]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
+def: "one of the larger of the several holes at the base of the skull that transmit nerves through the skull. The foramen ovale is situated in the anterior part of the sphenoid bone, posteriolateral to the foramen rotundum.." [Wikipedia:Foramen_ovale_(skull)]
+synonym: "foramen ovale" NARROW [AAO:0000169, FMA:53155]
+synonym: "foramen ovale (skull)" EXACT [FMA:53155]
+synonym: "foramen ovale basis cranii" EXACT [galen:ForamenOvaleBasisCranii]
 xref: EHDAA:10627 ! foramen ovale
+xref: EMAPA:18711 ! foramen ovale
 xref: FMA:53155 ! Foramen ovale
-xref: galen:ForamenOvale
 xref: HOG:0001189 ! foramen ovale
+xref: AAO:0000169 ! fenestra_ovalis
+xref: galen:ForamenOvaleBasisCranii
+is_a: UBERON:0000464 ! anatomical space
+relationship: part_of UBERON:0003129 ! skull
+disjoint_from: UBERON:0004754 ! foramen ovale of heart
+
+[Term]
+id: UBERON:0004754 ! foramen ovale of heart
+name: foramen ovale of heart
+def: "In the fetal heart, the foramen ovale (also ostium secundum of Born or falx septi) allows blood to enter the left atrium from the right atrium. It is one of two fetal cardiac shunts, the other being the ductus arteriosus (which allows blood that still escapes to the right ventricle to bypass the pulmonary circulation). Another similar adaptation in the fetus is the ductus venosus. In most individuals, the foramen ovale (pronounced /fɒˈreɪmən oʊˈvɑːli/) closes at birth. It later forms the fossa ovalis[WP]." [Wikipedia:Foramen_ovale_(heart)]
+synonym: "ostium secundum of Born" EXACT  [Wikipedia:Foramen_ovale_(heart)]
+synonym: "falx septi" EXACT  [Wikipedia:Foramen_ovale_(heart)]
+synonym: "foramen ovale" NARROW [MA:0001873, galen:ForamenOvale]
+synonym: "foramen ovale cordis" EXACT [galen:ForamenOvaleCordis]
+synonym: "Bottalo's foramen" EXACT [FMA:86043]
+xref: FMA:86043 ! foramen ovale of heart
 xref: MA:0001873 ! foramen ovale
+xref: galen:ForamenOvale
+xref: galen:ForamenOvaleCordis
 is_a: UBERON:0000464 ! anatomical space
 relationship: part_of UBERON:0002085 ! interatrial septum
 
@@ -20197,7 +20241,6 @@ xref: MA:0000259 ! auricle
 is_a: UBERON:0001444 ! subdivision of head
 relationship: part_of UBERON:0001691 ! external ear
 xref: ncithesaurus:Auricle ! Auricle
-xref: synonym:auricle ! pinna
 xref: OpenCyc:Mx4rvs_VC5wpEbGdrcN5Y29ycA ! pinna
 
 [Term]
@@ -22643,7 +22686,6 @@ xref: XAO:0000012 ! telencephalon
 xref: ZFA:0000079 ! telencephalon
 is_a: UBERON:0002780 ! regional part of forebrain
 relationship: part_of UBERON:0001890 ! forebrain
-xref: synonym:future_cerebral_hemisphere ! telencephalon
 
 [Term]
 id: UBERON:0001894
@@ -28384,10 +28426,9 @@ xref: XAO:0000228 ! eye vesicle
 xref: ZFA:0000050 ! optic vesicle
 xref: EMAPA:16540 ! optic vesicle
 synonym: "optic vesicle" RELATED []
+synonym: "evagination" RELATED []
 relationship: develops_from UBERON:0003071 ! eye primordium
 xref: HOG:0000165 ! optic vesicle
-xref: synonym:evagination ! optic vesicle
-xref: ncithesaurus:Optic_Vesicle ! Optic Vesicle
 
 [Term]
 id: UBERON:0003072
@@ -29900,18 +29941,26 @@ relationship: part_of UBERON:0001950 ! neocortex
 
 [Term]
 id: UBERON:0002303
-name: juxtaglomerular complex
+name: juxtaglomerular apparatus
 alt_id: UBERON:FMA_83599-MA_0002546
-def: "." [Wikipedia:Juxtaglomerular_apparatus]
-comment: This class was created automatically from a combination of ontologies
+def: "An anatomical structure which consists of juxtaglomerular cells, extraglomerular mesangial cells and the macula densa. The juxtaglomerular apparatus lies adjacent to the glomerulus and regulates kidney function by maintaining the blood flow to the kidney and the filtration rate[GO]. a microscopic structure in the kidney, which regulates the function of each nephron. The juxtaglomerular apparatus is named for its proximity to the glomerulus: it is found between the vascular pole of the renal corpuscle and the returning distal convoluted tubule of the same nephron. This location is critical to its function in regulating renal blood flow and glomerular filtration rate. The three cellular components of the apparatus are the macula densa, extraglomerular mesangial cells, and juxtaglomerular cells (also known as granular cells)[WP]." [GO:0072206, Wikipedia:Juxtaglomerular_apparatus]
 subset: uberon_slim
-synonym: "juxtaglomerular apparatus" RELATED []
+synonym: "juxtaglomerular complex" EXACT []
 xref: FMA:83599 ! Juxtaglomerular complex
 xref: GAID:432 ! juxtaglomerular apparatus
 xref: MA:0002546 ! juxtaglomerular complex
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001225 ! cortex of kidney
+relationship: has_part CL:0000648 ! juxtaglomerular cell
 xref: ncithesaurus:Juxtaglomerular_Apparatus ! Juxtaglomerular Apparatus
+
+[Term]
+id: UBERON:0004738
+name: metanephric juxtaglomerular apparatus
+def: "juxtaglomerular apparatus of the mature vertebrate kidney, or metanephros." [GO:0072206]
+synonym: "juxtaglomerular apparatus of metanephros" EXACT []
+intersection_of: UBERON:0002303 ! juxtaglomerular apparatus
+intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0002304
@@ -30181,6 +30230,7 @@ xref: FMA:84139 ! Mesangium
 xref: MA:0002617 ! mesangium
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0002113 ! kidney
+relationship: part_of UBERON:0000074 ! renal glomerulus
 xref: ncithesaurus:Mesangium ! Mesangium
 xref: BTO:0002494 ! mesangium
 
@@ -30713,7 +30763,6 @@ xref: HOG:0000538 ! visceral pericardium
 xref: MA:0000484 ! visceral serous pericardium
 is_a: UBERON:0002357 ! serous pericardium
 relationship: attached_to UBERON:0002349 ! myocardium
-xref: synonym:epicardium ! visceral pericardium
 
 [Term]
 id: UBERON:0001133
@@ -32191,6 +32240,7 @@ id: UBERON:0002413
 name: cervical vertebra
 alt_id: UBERON:FMA_9915-MA_0000311-XAO_0003076
 def: "A vertebra immediately inferior to the skull[WP]." [Wikipedia:Cervical_vertebra]
+synonym: "cervical vertebrae" EXACT PLURAL []
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:9915 ! Cervical vertebra
@@ -41537,21 +41587,34 @@ relationship: part_of UBERON:0002390 ! hematopoietic system
 xref: ncithesaurus:Blood_Island ! Blood Island
 
 [Term]
-id: UBERON:0003062
-name: dorsal marginal zone
+id: UBERON:0003062 ! primitive knot
+name: primitive knot
 alt_id: UBERON:XAO_0000072-ZFA_0000071
-def: "." [Wikipedia:Regional_specification#Dorsal.2Fventral_axis_.26_organizer]
-comment: This class was created automatically from a combination of ontologies
+def: "organizer for gastrulation in vertebrates. The primitive knot starts as a regional knot of cells that forms on the blastodisc immediately anterior to where the outer layer of cells will begin to migrate inwards - an area known as the primitive streak. Posterior to the node is the primitive pit, where the cells of the epiblast  (the upper layer of embryonic cells) initially begin to invaginate. This invagination expands posteriorly into the primitive groove as the cells layers continue to move into the space between the embryonic cells and the yolk. This differentiates the embryo into the germ layers - endoderm, mesoderm, and ectoderm. The primitive knot migrates posteriorly as gastrulation proceeds, eventually being absorbed into the tail bud.[WP]." [Wikipedia:Primitive_knot, Wikipedia:Regional_specification#Dorsal.2Fventral_axis_.26_organizer]
+comment: TODO check XAO
 subset: uberon_slim
 synonym: "organizer" RELATED []
 synonym: "shield" EXACT []
-synonym: "Spemann Mangold organizer" RELATED []
-synonym: "Spemann's organizer" RELATED []
+synonym: "Spemann Mangold organizer" EXACT SENSU []
+synonym: "Spemann's organizer" EXACT SENSU []
+synonym: "Spemanns organizer" EXACT SENSU []
+synonym: "Spemann organizer" EXACT SENSU []
+synonym: "dorsal marginal zone" RELATED [XAO:0000072]
+synonym: "embryonic organizer" EXACT [GAID:1312]
+synonym: "embryo organizer" EXACT [GAID:1312]
+synonym: "Hensen node" EXACT SENSU [GAID:1312, Wikipedia:Primitive_knot]
+synonym: "Hensen's node" EXACT SENSU [GAID:1312, Wikipedia:Primitive_knot]
+synonym: "primitive node" EXACT [Wikipedia:Primitive_knot]
+xref: BILA:0000053 ! organizer 
+xref: BTO:0003395 ! Spemanns organizer
+xref: GAID:1312 ! embryonic organizer 
 xref: TAO:0000071 ! shield
 xref: XAO:0000072 ! dorsal marginal zone
 xref: ZFA:0000071 ! shield
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002541 ! germ ring
+
+
 
 [Term]
 id: UBERON:0003063
@@ -43013,7 +43076,6 @@ alt_id: UBERON:FBbt_00004478-HAO_0000345
 xref: FBbt:00004478 ! foramen
 xref: HAO:0000345 ! foramen
 is_a: UBERON:0000464 ! anatomical space
-xref: synonym:ostium ! foramen
 
 [Term]
 id: UBERON:0003152
@@ -43652,7 +43714,8 @@ is_a: UBERON:0003037 ! septum
 [Term]
 id: UBERON:0003220
 name: metanephric blastema
-def: "one of the two embryological structures that give rise to the kidney (the other is the ureteric bud). The metanephric blastema mostly develops into nephrons, but can also form parts of the collecting duct system.[WP]" [Wikipedia:Metanephric_blastema]
+def: "one of the two embryological structures that give rise to the kidney (the other is the ureteric bud). The metanephric blastema mostly develops into nephrons, but can also form parts of the collecting duct system.[WP]. Metanephric mesenchyme is the tissue made up of loosely connected mesenchymal cells in the metanephros[GO]" [GO:0072075, Wikipedia:Metanephric_blastema]
+comment: TODO - split?
 synonym: "metanephric mesenchyme" EXACT [Wikipedia:Metanephric_blastema]
 synonym: "metanephric mesoderm" EXACT [Wikipedia:Metanephric_blastema]
 is_a: UBERON:0002050 ! embryonic structure
@@ -48301,6 +48364,7 @@ intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0000966 ! retina
 synonym: "blood vessel of inner layer of eyeball" EXACT [OBOL:automatic]
 synonym: "blood vessel of retina" EXACT [OBOL:automatic]
+synonym: "retinal blood vessel" EXACT [OBOL:automatic]
 synonym: "blood vessel of tunica interna of eyeball" EXACT [OBOL:automatic]
 synonym: "inner layer of eyeball blood vessel" EXACT [OBOL:automatic]
 synonym: "tunica interna of eyeball blood vessel" EXACT [OBOL:automatic]
@@ -53464,6 +53528,7 @@ id: UBERON:0004019
 name: baroreceptor
 def: "the sensory nerve endings in the wall of the atria of the heart, vena cava, aortic arch and carotid sinus that are sensitive to changes in blood pressure" [MP:0004118]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: capable_of GO:0003073 ! regulation of systemic arterial blood pressure
 xref: FMA:85601 ! baroreceptor
 
 [Term]
@@ -54399,7 +54464,6 @@ is_a: UBERON:0000061 ! anatomical structure
 relationship: develops_from UBERON:0004291 ! heart rudiment
 xref: EMAPA:16106 ! cardiogenic plate
 xref: HOG:0000975 ! cardiogenic plate
-xref: synonym:myocardial_plate ! cardiogenic plate
 
 [Term]
 id: UBERON:0004141
@@ -54890,9 +54954,14 @@ xref: MA:0001247 ! harderian gland
 id: UBERON:0004188
 name: glomerular epithelium
 def: "The glomerular epithelium is an epithelial tissue that covers the outer surfaces of the glomerulus" [GO:0072010]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000074 ! renal glomerulus
+synonym: "kidney glomerular epithelium" EXACT [MA:0002847]
+synonym: "epithelium of glomerulus" EXACT []
+synonym: "epithelium of renal glomerulus" EXACT []
+synonym: "epithelium of kidney glomerulus" EXACT []
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000074 ! renal glomerulus
 xref: BTO:0001515 ! glomerular epithelium
+xref: MA:0002847 ! kidney glomerular epithelium
 
 [Term]
 id: UBERON:0004189
@@ -55075,13 +55144,6 @@ relationship: part_of UBERON:0000483 ! epithelium
 relationship: part_of UBERON:0001285 ! nephron
 xref: EMAPA:27678 ! renal vesicle
 xref: EMAPA:27829 ! renal vesicle
-
-[Term]
-id: UBERON:0004210
-name: nephron tubule
-def: "A nephron tubule is an epithelial tube that is part of the nephron, the functional part of the kidney" [GO:0072078]
-is_a: UBERON:0003914 ! epithelial tube
-relationship: part_of UBERON:0001285 ! nephron
 
 [Term]
 id: UBERON:0004211
@@ -60193,6 +60255,177 @@ synonym: "arteriolae recti" RELATED [Wikipedia:Vasa_recta]
 synonym: "vasa rectae" RELATED [Wikipedia:Vasa_recta]
 xref: MA:0002595 ! vasa recta
 xref: Wikipedia:Vasa_recta ! vasa recta
+
+
+[Term]
+id: UBERON:0004740
+name: basibranchial
+def: "Median elements that are ossified within copulae and are not assigned to a specific branchial arch number. They articulate posterolaterally with the hypobranchials." [ZFA:0000170]
+is_a: UBERON:0002513 ! endochondral bone
+synonym: "basibranchials" EXACT [ZFA:0000170]
+synonym: "copula I" RELATED [AAO:0000686]
+xref: AAO:0000686 ! basibranchial
+xref: ZFA:0000170 ! basibranchial
+
+[Term]
+id: UBERON:0004741
+name: cleithrum
+def: "Transversely oriented bone connecting the occipital region of the skull dorsally and pectoral girdle ventrally; appears near the end of embryogenesis." [ZFA:0000184]
+is_a: UBERON:0002513 ! endochondral bone
+relationship: part_of UBERON:0001421 ! pectoral girdle
+synonym: "cleithra" EXACT [ZFA:0000184]
+xref: AAO:0000750 ! cleithrum
+xref: ZFA:0000184 ! cleithrum
+
+[Term]
+id: UBERON:0004742
+name: dentary
+def: "Dermal bone that forms the antero-lateral part of the lower jaw. It first appears around the anterior end of Meckel's cartilage (5.1 mm NL). In the adult, the dentary meets its counterpart anteriorly at the mandibular symphysis. The dentary abuts the retroarticular posteriorly, and it surround the anguloarticular. The dentary is connected to the maxilla by the maxillo-mandibular ligament. Dentary teeth are absent in cypriniforms, but are present in other ostariophysans." [ZFA:0000191]
+is_a: UBERON:0002514 ! intramembranous bone
+relationship: part_of UBERON:0003113 ! dermal bone cranium
+relationship: part_of UBERON:0001710 ! lower jaw
+synonym: "dentary bone" EXACT [ZFA:0000191]
+synonym: "dentale" RELATED [AAO:0000124]
+synonym: "os dentale" RELATED [AAO:0000124]
+synonym: "sur-angulaire" RELATED [AAO:0000124]
+xref: AAO:0000124 ! dentary
+xref: ZFA:0000191 ! dentary
+
+[Term]
+id: UBERON:0004743
+name: coracoid
+def: "Endochondral bone of the pectoral girdle that develops from the scapulocoracoid cartilage and occupies the ventral part of the pectoral girdle. The coracoid is a paired bone that articulates approximately dorsally with the cleithrum, scapula and mesocoracoid." [ZFA:0000332]
+is_a: UBERON:0002513 ! endochondral bone
+relationship: part_of UBERON:0001421 ! pectoral girdle
+synonym: "coracoids" EXACT [ZFA:0000332]
+synonym: "scapulocoracoid" RELATED [ZFA:0000332]
+synonym: "clavicula" RELATED [AAO:0000764]
+synonym: "clavicula posterior" RELATED [AAO:0000764]
+synonym: "clavicula vera" RELATED [AAO:0000764]
+synonym: "coracoideum" RELATED [AAO:0000764]
+synonym: "coracoidien" RELATED [AAO:0000764]
+synonym: "pars sternalis scapulae" RELATED [AAO:0000764]
+xref: AAO:0000764 ! coracoid
+xref: ZFA:0000332 ! coracoid
+
+[Term]
+id: UBERON:0004744
+name: anguloarticular
+def: "The anguloarticular is a compound bone that results of the fusion of the dermal angular and the cartilaginous articular and forms the posterior part of the lower jaw. The dermal part ossifies initially on the posterolateral surface of Meckel's cartilage near the articulation with the quadrate (5.5 mm NL). A posterior process forms, creating a synovial joint with the quadrate." [ZFA:0000467]
+is_a: UBERON:0002513 ! endochondral bone
+relationship: develops_from UBERON:0001086 ! articular cartilage
+relationship: part_of UBERON:0003113 ! dermal bone cranium
+relationship: part_of UBERON:0001710 ! lower jaw
+synonym: "articular" EXACT [ZFA:0000467]
+synonym: "angulaire" RELATED [AAO:0000028]
+synonym: "angulare" RELATED [AAO:0000028]
+synonym: "dermarticulare" RELATED [AAO:0000028]
+synonym: "goniale" RELATED [AAO:0000028]
+synonym: "operculo angulaire" RELATED [AAO:0000028]
+xref: AAO:0000028 ! articular
+xref: ZFA:0000467 ! anguloarticular
+
+[Term]
+id: UBERON:0004745
+name: parasphenoid
+def: "Long, unpaired median dermal bone that runs almost the entire length of the cranium. Contacts the prevomer anteriorly, and the prootic and basioccipital posteriorly. Anteriorly the parasphenoid is a long, thin bone that widens abruptly at the point of contact with the prootic." [ZFA:0000561]
+is_a: UBERON:0002514 ! intramembranous bone
+relationship: part_of UBERON:0003111 ! sphenoid region
+relationship: part_of UBERON:0003112 ! olfactory region
+relationship: part_of UBERON:0003113 ! dermal bone cranium
+relationship: part_of UBERON:0001697 ! orbit
+relationship: part_of UBERON:0001703 ! neurocranium
+synonym: "keilbein" RELATED [AAO:0000385]
+synonym: "os parasphenoidale" RELATED [AAO:0000385]
+synonym: "os sphenoideum" RELATED [AAO:0000385]
+synonym: "parabasale" RELATED [AAO:0000385]
+xref: AAO:0000385 ! parasphenoid
+xref: ZFA:0000561 ! parasphenoid
+
+[Term]
+id: UBERON:0004746
+name: prootic
+def: "Paired cartilage bone that contacts the pterosphenoid anteriorly, the sphenotic and the pterotic dorsally, and the epiotic and basioccipital posteriorly. The parasphenoid covers the ventral region of each prootic, the upper edge of which contributes to the hyomandibular facet. Bear foramina that accommodate branches of the trigeminal and facial nerves." [ZFA:0000575]
+is_a: UBERON:0002513 ! endochondral bone
+relationship: develops_from UBERON:0004637 ! otic capsule
+relationship: part_of UBERON:0003110 ! otic region
+relationship: part_of UBERON:0002241 ! chondrocranium
+relationship: part_of UBERON:0001703 ! neurocranium
+synonym: "prootics" EXACT [ZFA:0000575]
+xref: AAO:0000514 ! prootic
+xref: ZFA:0000575 ! prootic
+
+[Term]
+id: UBERON:0004747
+name: supraoccipital
+def: "Large shield-shaped unpaired median cartilage bone that contact the parietal anteriorly, and the exocciptial and epiotic laterally. Forms the posterodorsal most point of the cranium. The supraoccipital usually bears a crest that extends posterodorsally." [ZFA:0000595]
+is_a: UBERON:0002513 ! endochondral bone
+relationship: part_of UBERON:0002021 ! occipital lobe
+relationship: part_of UBERON:0002241 ! chondrocranium
+relationship: part_of UBERON:0001703 ! neurocranium
+xref: AAO:0000588 ! supraoccipital
+xref: ZFA:0000595 ! supraoccipital
+
+[Term]
+id: UBERON:0004748
+name: autopalatine
+def: "The cartilaginous autopalatine forms from the anterior palatoquadrate arch. The first sign of ossification is visible at the anterior tip where it articulates with the maxilla (7.6 mm). In adults there are three processes at the anterior portion of the palatine: a ventromedial process, which forms the socket of the small ball- and- socket joint with the preethmoid; a dorsomedial process, which is connected by a short ligament to the ethmoid; and a lateral process, which extends toward the first infraorbital. Possession of a dorsomedial process, which abuts the ethmoid, is a unique feature shared by Cypriniformes (Fink and Fink, 1981). The palatine has two components, the autopalatine (derived from pars autopalatine) and the dermal component having teeth, the dermopalatine Arratia & Schultze 1990. The element in cypriniforms is only the cartilage part, so that it is more correct to name it autopalatine and not as palatine in general that it implies a fusion of elements (as in perciforms)." [ZFA:0000620]
+is_a: UBERON:0002513 ! endochondral bone
+relationship: part_of UBERON:0001709 ! upper jaw
+synonym: "palatine" EXACT [ZFA:0000620]
+synonym: "neopalatine" BROAD [AAO:0000372]
+xref: AAO:0000372 ! palatine
+xref: ZFA:0000620 ! autopalatine
+
+[Term]
+id: UBERON:0004749
+name: blastodisc
+def: "a small, circular, white spot (approximately 2-3 mm across) on the surface of the yellow yolk of an egg that has been laid. The nucleus of the egg is in the germinal disc." [Wikipedia:Germinal_disc]
+synonym: "germinal disc" EXACT [Wikipedia:Germinal_disc]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: start UBERON:0000106 ! zygote stage
+xref: AAO:0000043 ! blastodisc
+xref: ZFA:0001175 ! blastodisc
+
+[Term]
+id: UBERON:0004750
+name: blastoderm
+def: "A layer of cells formed at one pole of macrolecithal eggs such as the yolky egg of birds. The yolk prevents the division from taking place through the egg, resulting in meroblastic cleavage during the many cleavage divisions. At the animal pole (containing less yolk than the vegetal pole), the zygote divides and subdivides, forming the blastoderm, which gradually spreads around the yolk and forms the embryo. The blastoderm is composed of two layers, the epiblast  and the hypoblast, which enclose the fluid-filled blastocoel cavity." [Wikipedia:Blastoderm]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: has_part UBERON:0002532 ! epiblast
+relationship: has_part UBERON:0000089 ! hypoblast
+xref: AAO:0000042 ! blastoderm
+xref: ZFA:0001176 ! blastoderm
+
+[Term]
+id: UBERON:0004751
+name: hypohyal bone
+def: "Hypohyals are the most anterior of the bilaterally paired ventral hyoid arch elements. The two hypohyals in zebrafish ossify at the anterodorsal and anteroventral tips of the ceratohyal cartilages; no separate hypohyal cartilages are present." [ZFA:0001381]
+is_a: UBERON:0002513 ! endochondral bone
+xref: AAO:0000958 ! hypohyal
+xref: ZFA:0001381 ! hypohyal bone
+
+[Term]
+id: UBERON:0004752
+name: palatoquadrate cartilage
+is_a: UBERON:0003933 ! cranial cartilage
+relationship: part_of UBERON:0001709 ! upper jaw
+relationship: part_of UBERON:0003108 ! suspensorium
+synonym: "dorsal mandibular cartilage" EXACT [ZFA:0001399]
+synonym: "pterygoquadrate" EXACT [ZFA:0001399]
+synonym: "quadrate cartilage" EXACT [ZFA:0001399]
+xref: AAO:0000524 ! pterygoquadrate
+xref: ZFA:0001399 ! palatoquadrate cartilage
+
+[Term]
+id: UBERON:0004753
+name: scapulocoracoid
+def: "The cartilage from which both the scapula and coracoid develop." [ZFA:0001455]
+is_a: UBERON:0002418 ! cartilage
+relationship: part_of UBERON:0001421 ! pectoral girdle
+synonym: "coraco-scapular cartilage" EXACT [ZFA:0001455]
+xref: AAO:0000781 ! scapulocoracoid
+xref: ZFA:0001455 ! scapulocoracoid
 
 [Typedef]
 id: adjacent_to
