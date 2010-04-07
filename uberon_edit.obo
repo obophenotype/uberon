@@ -580,7 +580,7 @@ synonym: "upper extremity digit" EXACT [OBOL:automatic]
 id: UBERON:0000029
 name: lymph node
 def: "Oval or bean shaped bodies (1 - 30 mm in diameter) located along the lymphatic system. Lymph nodes are garrisons of B, T, and other immune cells. Lymph nodes are found all through the body, and act as filters or traps for foreign particles. They contain white blood cells that use oxygen to process. Thus they are important in the proper functioning of the immune system[WP]." [GAID:947, Wikipedia:Lymph_node]
-comment: This class was created automatically from a combination of ontologies
+comment: do not include  FBbt:00001668 lymph gland
 subset: uberon_slim
 xref: BTO:0000784
 xref: EFO:0000872 ! lymph node
@@ -2056,6 +2056,7 @@ xref: FMA:18657 ! Tunica externa of theca folliculi
 is_a: UBERON:0000158 ! membranous layer
 relationship: part_of UBERON:0000155 ! theca cell layer
 relationship: surrounds UBERON:0000157 ! theca interna
+relationship: has_part GO:0005581 ! collagen
 xref: BTO:0002852 ! theca externa
 
 [Term]
@@ -2548,6 +2549,7 @@ xref: TAO:0001682 ! ligament
 xref: ZFA:0001675 ! ligament
 is_a: UBERON:0002384 ! connective tissue
 relationship: part_of UBERON:0002204 ! musculoskeletal system
+relationship: has_part GO:0005581 ! collagen
 xref: ncithesaurus:Ligament ! Ligament
 xref: EFO:0001966 ! ligament
 xref: OpenCyc:Mx4rvVjqpZwpEbGdrcN5Y29ycA ! ligament
@@ -3114,13 +3116,50 @@ def: "the sebaceous glands of the corona and neck of the glans penis." [MP:00027
 id: UBERON:0000360
 name: rectal gland
 alt_id: UBERON:BTO_0001157-FMA_15724
+is_obsolete: true
+consider: UBERON:0004757
+consider: UBERON:0004758
+consider: UBERON:0004759
+consider: UBERON:0004760
+
+[Term]
+id: UBERON:0004757
+name: rectal gland
+def: "An evagination of the terminal portion of the intestine of Elasmobranchii. Function formerly thought to be related to digestion or excretion, but now considered to secrete high concentrations of excess sodium chloride. Found also in the coelacanth Latimeria chalumnae[BTO]." [BTO:0001157]
+comment: does not include FMA:15724 Rectal gland // epithelial tissue gland - concentrates & secretes excess Na & Cl in sharks. large shark liver produces copious amounts of urea, making the shark hyperosmotic to seawater, & thus a shark acts like a fresh water fish, constantly gaining water. Excess salts are concentrated by the rectal gland and secreted
 xref: BTO:0001157
-xref: FMA:15724 ! Rectal gland
 is_a: UBERON:0002530 ! gland
+relationship: part_of UBERON:0001052 ! rectum
+relationship: capable_of GO:0055078 ! sodium ion homeostasis
+relationship: only_in_taxon NCBITaxon:7776 ! Gnathostomata
+
+[Term]
+id: UBERON:0004758
+name: salt gland
+def: "an organ for excreting excess salts. It is found in elasmobranchs, seabirds, and some reptiles. In sharks, salt glands  are found in the rectum, but in birds and reptiles, they are found in or on the skull, in the area of the eyes, nostrils  or mouth. In crocodiles, the salt is excreted through the tongue. Such glands work by active transport via sodium-potassium pump  that moves salt from the blood into the gland, where it can be excreted as a concentrated solution. Salt glands function to keep salt balance, and allow marine vertebrates to drink seawater[WP]." [Wikipedia:Salt_gland]
+xref: GAID:1235 ! salt gland
 intersection_of: UBERON:0002530 ! gland
-intersection_of: part_of UBERON:0001052 ! rectum
-synonym: "gland of rectum" EXACT [OBOL:automatic]
-synonym: "rectum gland" EXACT [OBOL:automatic]
+intersection_of: capable_of GO:0055078 ! sodium ion homeostasis
+
+[Term]
+id: UBERON:0004759
+name: salt gland of cranial region
+def: "A salt gland located in the cranium or cranial region." [OBOL:automatic]
+intersection_of: UBERON:0002530 ! gland
+intersection_of: capable_of GO:0055078 ! sodium ion homeostasis
+intersection_of: part_of UBERON:0003128 ! cranium
+
+[Term]
+id: UBERON:0004760
+name: gland of anal canal
+xref: FMA:15724 ! Rectal gland
+xref: FMA:15720 ! anal gland
+intersection_of: UBERON:0002530 ! gland
+intersection_of: part_of UBERON:0000159 ! anal canal
+synonym: "rectal gland" RELATED []
+synonym: "anal gland" RELATED []
+synonym: "gland of anus" RELATED []
+synonym: "gland of anal canal" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0000361
@@ -3980,7 +4019,8 @@ synonym: "trabecula arachnoideum" RELATED []
 xref: BTO:0002500
 xref: FMA:83979 ! Arachnoid trabecula
 is_a: UBERON:0000440 ! trabecula
-relationship: constitutional_part_of UBERON:0002362 ! arachnoid mater
+relationship: has_part GO:0005581 ! collagen
+relationship: part_of UBERON:0002362 ! arachnoid mater
 
 [Term]
 id: UBERON:0000440
@@ -3990,6 +4030,7 @@ alt_id: UBERON:BTO_0002501-FMA_85273
 xref: BTO:0002501
 xref: FMA:85273 ! Trabecula
 is_a: UBERON:0000064 ! organ part
+relationship: has_part GO:0005581 ! collagen
 xref: ZFA:0001321 ! neurocranial trabecula
 
 [Term]
@@ -4185,6 +4226,7 @@ xref: CARO:0000004 ! portion of organism substance
 xref: FBbt:00007019 ! portion of organism substance
 xref: HAO:0000004 ! portion of organism substance
 xref: ZFA:0001487 ! portion of organism substance
+xref: FMA:9669 ! Portion of body substance
 is_a: UBERON:0000465 ! material anatomical entity
 disjoint_from: UBERON:0000061 ! anatomical structure
 
@@ -4963,9 +5005,6 @@ xref: FBbt:00000021 ! abdominal segment
 xref: HAO:0000016 ! abdominal segment
 xref: SPD:0000055 ! abdominal segment
 is_a: UBERON:0000914 ! segment
-intersection_of: UBERON:0000914 ! segment
-intersection_of: part_of UBERON:0000916 ! abdomen
-relationship: part_of UBERON:0000916 ! abdomen
 synonym: "abdomen segment" EXACT [OBOL:automatic]
 synonym: "segment of abdomen" EXACT [OBOL:automatic]
 
@@ -8651,15 +8690,22 @@ xref: ZFA:0005154 ! synovial fluid
 xref: ncithesaurus:Synovial_Fluid ! Synovial Fluid
 xref: galen:SynovialFluid ! synovial fluid
 
+[Term]
+id: UBERON:0004756 ! dermal skeletal element
+def: "dermis-derived entity that is made of skeletal tissue." []
+name: dermal skeletal element
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: develops_from UBERON:0002067 ! dermis
+intersection_of: has_part UBERON:0004755 ! skeletal tissue
 
 [Term]
 id: UBERON:0000041
 name: dermal denticle
-def: "small outgrowths which cover the skin of many cartilaginous fish including sharks. They are similar in structure to teeth, and teeth may have evolved from denticle-like structures in primitive fish.[citation needed] The placoid scales in sharks are formed of dentine with dermal papillae located in the core. These scales develop from the dermal layer of the skin, which is in contrast to the epidermal development seen the in the elasmoid scales of tetrapods. The shape of denticle varies from species to species and can be used in identification. Studies have found that the denticles create tiny vortices that reduce drag to make swimming more efficient. Denticles also allow sharks to swim silently compared to other fish that generate considerable noise when they ply the water." [http://en.wikipedia.org/wiki/Dermal_denticle, Wikipedia:Dermal_denticle]
-comment: TODO check dentin def
+def: "small outgrowths which cover the skin of many cartilaginous fish including sharks. They are similar in structure to teeth, and teeth may have evolved from denticle-like structures in primitive fish.[citation needed] The placoid scales in sharks are formed of dentine with dermal papillae located in the core. These scales develop from the dermal layer of the skin, which is in contrast to the epidermal development seen the in the elasmoid scales of tetrapods. The shape of denticle varies from species to species and can be used in identification. Studies have found that the denticles create tiny vortices that reduce drag to make swimming more efficient. Denticles also allow sharks to swim silently compared to other fish that generate considerable noise when they ply the water." [Wikipedia:Dermal_denticle]
+comment: TODO check dentin def // Scales and teeth of sharks are examples of dermal skeletal elements that are still composed of the three ancient components-enamel, dentine, and bone.
 subset: uberon_slim
 synonym: "placoid scale" EXACT []
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004756 ! dermal skeletal element
 relationship: has_part UBERON:0001751 ! dentine
 
 [Term]
@@ -14555,7 +14601,6 @@ disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 relationship: part_of UBERON:0002204 ! musculoskeletal system
-relationship: has_part UBERON:0001474 ! bone
 
 [Term]
 id: UBERON:0003656 ! carpal/tarsal bone
@@ -14638,7 +14683,7 @@ xref: FMA:32821 ! Proximal epiphysis
 id: UBERON:0001439
 name: compact bone
 alt_id: UBERON:FMA_24018-MA_0001461
-def: "." [Wikipedia:Compact_bone]
+def: "one of the two types of osseous tissue that form bones. Compact/Cortical bone facilitates bone's main functions: to support the body, protect organs, provide levers for movement, and store and release chemical elements, mainly calcium. As its name implies, cortical bone forms the cortex, or outer shell, of most bones. Again, as its name implies, compact bone is much denser than cancellous bone, which is the other type of osseous tissue. Furthermore, it is harder, stronger and stiffer than cancellous bone. Cortical bone contributes about 80% of the weight of a human skeleton. The primary anatomical and functional unit of cortical bone is the osteon.." [Wikipedia:Compact_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "compact bone tissue" EXACT []
@@ -14648,7 +14693,7 @@ xref: FMA:24018 ! Compact bone
 xref: galen:CorticalBone
 xref: MA:0001461 ! compact bone
 is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0001474 ! bone
+relationship: part_of UBERON:0002482 ! lamellar bone
 xref: ncithesaurus:Cortical_Bone ! Cortical Bone
 
 [Term]
@@ -15352,8 +15397,8 @@ intersection_of: part_of UBERON:0000996 ! vagina
 id: UBERON:0001474
 name: bone
 alt_id: UBERON:FMA_30317-MA_0001459-MIAA_0000299-XAO_0000169-ZFA_0001514
-def: "The hard form of connective tissue that constitutes the majority of the skeleton. // Portion of tissue which is calcified connective tissue making up the structural elements of the skeletal system. Organ with cavitated organ parts, which primarily consists of compact (cortical) and cancellous bone, which surround bone marrow cavities; together with other bones, cartilages and joints, it constitutes the skeletal system. Examples: femur, sternum, maxilla, vertebra, talus[FMA]" [BTO:0000140, FMA:5018, Wikipedia:Bone, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The hard form of connective tissue that constitutes the majority of the skeleton // Organ with cavitated organ parts, which primarily consists of compact (cortical) and cancellous bone, which surround bone marrow cavities; together with other bones, cartilages and joints, it constitutes the skeletal system. Examples: femur, sternum, maxilla, vertebra, talus[FMA]" [BTO:0000140, FMA:5018, Wikipedia:Bone, ZFIN:curator]
+comment: H&W - a vascularized, supporting skeletal tissue, which also can form ectopically outside the skeleton. Bone consists of cells and a mineralized extracellular matrix that is permeated by canals (canaliculi) that contain osteocyte processes (Plate 2). Bone is deposited by bone-forming cells (osteoblasts), which, when they cease dividing, transform into osteocytes. The first bone matrix deposited is unmineralized and is known as osteoid (Plate 3). Subsequently, osteoid is impregnated with hydroxyapatite to form the mineralized tissue we know as bone, a tissue that is modeled, remodeled, and/or removed by mono- or multinucleated osteoclasts (and sometimes by osteocytes)
 subset: uberon_slim
 synonym: "bone organ" EXACT []
 xref: AAO:0000047 ! bone
@@ -15375,6 +15420,7 @@ xref: XAO:0000169 ! bone
 xref: ZFA:0001514 ! bone
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0001434 ! skeletal system
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 
 [Term]
 id: UBERON:0001475
@@ -15384,7 +15430,6 @@ comment: made obsolete as it incorrectly grouped classes
 is_obsolete: true
 consider: UBERON:0000211
 consider: UBERON:0002360
-def: "the flexible bands of fibrous tissue that connect the articular extremities of bones." [MP:0005504]
 
 [Term]
 id: UBERON:0001476
@@ -19287,6 +19332,7 @@ synonym: "epicranial plate" RELATED []
 synonym: "skeletal system of head" RELATED []
 xref: FMA:46565 ! Skull
 is_a: UBERON:0000032 ! cranial structure
+relationship: part_of UBERON:0004288 ! skeleton
 relationship: has_part UBERON:0001684 ! mandible
 relationship: has_part UBERON:0003128 ! cranium
 xref: ncithesaurus:Skull ! Skull
@@ -19318,6 +19364,7 @@ xref: NIF_GrossAnatomy:birnlex_1230 ! Head
 xref: OpenCyc:Mx4rvVlEyJwpEbGdrcN5Y29ycA
 xref: TAO:0000737 ! cranium
 xref: ZFA:0000737 ! cranium
+xref: XAO:0003075 ! cranium
 is_a: UBERON:0000032 ! cranial structure
 relationship: part_of UBERON:0000033 ! head
 xref: OpenCyc:Mx4rvVlEyJwpEbGdrcN5Y29ycA ! cranium
@@ -19335,7 +19382,10 @@ synonym: "brain pan" RELATED [http://www.thefreedictionary.com/braincase]
 xref: FMA:53672 ! Neurocranium
 xref: TAO:0001580 ! neurocranium
 xref: ZFA:0001580 ! neurocranium
+xref: MA:0000317 ! chondrocranium
+xref: XAO:0003170 ! neurocranium
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0003128 ! cranium
 
 [Term]
 id: UBERON:0004339
@@ -19373,22 +19423,22 @@ synonym: "subdivision of skeleton of face" EXACT [OBOL:automatic]
 id: UBERON:0002241
 name: chondrocranium
 alt_id: UBERON:FMA_76621-XAO_0003059-ZFA_0001424
-def: "The cartilaginous cranium of an embryo before ossification // A portion of the embryonic cranium forming the bones of the base of the skull and eventually undergoing ossification // Cranial skeletal elements composed of cartilage and cartilage replacement bones." [ISBN:0471209627, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "primitive cartilagionous skeletal structure of the fetal skull that grows to envelop the rapidly growing embyonic brain[WP]. The cartilaginous cranium of an embryo before ossification // A portion of the embryonic cranium forming the bones of the base of the skull and eventually undergoing ossification // Cranial skeletal elements composed of cartilage and cartilage replacement bones. In humans, the chondrocranium begins forming at 28 days from mesenchymal  condensations and is fully formed between week 7 and 9 of fetal development. While the majority of the chondrocranium is succeeded by the bony skull in most higher vertebrates, some components do persist into adulthood.[1]  In Cartilagious fishes and Agnathans, the chondrocranium persist throughout life.[2]  Embryologically, the chondrocranium represent the basal cranial structure, and lay the base for the formation of the endocranium  in higher vertebrates[WP]." [ISBN:0471209627, ZFIN:curator, Wikipedia:Chondrocranium]
+comment: TODO - check ZFA classification vs mammalian. is this just the cartiliginous predecessor?
 synonym: "cartilaginous skull" RELATED []
 synonym: "chondocranium" RELATED []
-synonym: "neurocranium" RELATED []
+synonym: "cartiligionous neurocranium" EXACT [Wikipedia:Chondrocranium]
 xref: AAO:0000094 ! chondrocranium
 xref: EHDAA:6031 ! chondrocranium
 xref: FMA:76621 ! Chondrocranium
 xref: HOG:0000288 ! chondrocranium
-xref: MA:0000317 ! chondrocranium
 xref: TAO:0001424 ! chondrocranium
 xref: XAO:0003059 ! chondrocranium
 xref: ZFA:0001424 ! chondrocranium
 is_a: UBERON:0000477 ! anatomical cluster
+relationship: develops_from UBERON:0003104 ! mesenchyme
+relationship: has_part UBERON:0002418 ! cartilage
 xref: ncithesaurus:Chondrocranium ! Chondrocranium
-xref: EFO:0000943 ! obsolete_craniofacial skeleton bone
 
 [Term]
 id: UBERON:0001705
@@ -20124,8 +20174,8 @@ xref: ncithesaurus:Lacrimal_Apparatus ! Lacrimal Apparatus
 id: UBERON:0001751
 name: dentine
 alt_id: UBERON:FMA_55628-MA_0002542-ZFA_0005143
-def: "Substance of tooth produced by odontoblasts; surrounds the pulp of the tooth and is subjacent to enamel and cement[FMA]. Mineralized collagen containing substance that forms the tooth structure[ZFA]. a calcified tissue of the body, and along with enamel, cementum, and pulp is one of the four major components of teeth[WP]." [Wikipedia:Dentin, ZFIN:curator]
-comment: Dentine is found in the fossil record as early as the late Cambrian, in fish, where it may have had a role in electrochemical sensing of the environment as well as assisting in defense[WP].
+def: "a tubular mineralized tissue[H&W]. In mammals - substance of tooth produced by odontoblasts; surrounds the pulp of the tooth and is subjacent to enamel and cement[FMA]. Mineralized collagen containing substance that forms the tooth structure[ZFA]. a calcified tissue of the body, and along with enamel, cementum, and pulp is one of the four major components of teeth[WP]." [Wikipedia:Dentin, ZFIN:curator]
+comment: Dentine is found in the fossil record as early as the late Cambrian, in fish, where it may have had a role in electrochemical sensing of the environment as well as assisting in defense[WP]. H&W describe a continuum atubular - meta/orthodentine - mesi/semidentine - cement and without cementoblasts
 subset: uberon_slim
 synonym: "dentin" EXACT []
 synonym: "predentin" NARROW [GO:0070468]
@@ -20136,7 +20186,10 @@ xref: MA:0002542 ! dentin
 xref: TAO:0005143 ! dentine
 xref: ZFA:0005143 ! dentine
 is_a: UBERON:0001973 ! substance of tooth
+is_a: UBERON:0004755 ! skeletal tissue
 relationship: develops_from UBERON:0000924 ! ectoderm
+relationship: develops_from CL:0000060 ! odontoblast
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: ncithesaurus:Dentin ! Dentin
 xref: BTO:0003453 ! dentin
 
@@ -20145,7 +20198,7 @@ id: UBERON:0001752
 name: enamel
 alt_id: UBERON:FMA_55629-MA_0002543-ZFA_0005142
 def: "A dentine-like hypermineralized substance that covers the tooth tip. Enamel's primary mineral is hydroxylapatite, which is a crystalline calcium phosphate. Unlike dentin and bone, enamel does not contain collagen. Instead, it has two unique classes of proteins called amelogenins and enamelins[WP]." [Wikipedia:Enamel, ZFIN:curator]
-comment: Tooth enamel is also found in the dermal denticles of sharks UBERON:0000041. For the most part, research has shown that formation in animals is almost identical to formation in humans. The enamel organ, including the dental papilla, and ameloblasts function similarly.[53] The variations of enamel that are present are infrequent but sometimes important. Differences exist, certainly, in the morphology, number, and types of teeth among animals.
+comment: Tooth enamel is also found in the dermal denticles of sharks UBERON:0000041. For the most part, research has shown that formation in animals is almost identical to formation in humans. The enamel organ, including the dental papilla, and ameloblasts function similarly.[53] The variations of enamel that are present are infrequent but sometimes important. Differences exist, certainly, in the morphology, number, and types of teeth among animals. H&W - highly mineralized, hard, prismatic, avascular outer layer of vertebrate teeth and some scales. Enamel is unique in being the only noncollagenous mineralized vertebrate skeletal tissue (Diekwisch, 2002). The enamel proteins amelogenin, enamelin, tuftelin, MMP-20, and EMSP-1 form a highly conserved family of matrix proteins (Satchell et al., 2002). Like dentine, enamel is both odontogenic and skeletogenic; enamel covers teeth and dermal skeletal tissues. Because of its very high mineral content, enamel is much more resistant to wear than dentine; some 96% of mammalian enamel is inorganic, and only 0.5% organic. // TODO - split enamel and enameloid
 subset: uberon_slim
 synonym: "enamel of tooth" EXACT []
 synonym: "enameloid" EXACT []
@@ -20155,6 +20208,10 @@ xref: MA:0002543 ! enamel
 xref: TAO:0005142 ! enameloid
 xref: ZFA:0005142 ! enameloid
 is_a: UBERON:0001973 ! substance of tooth
+is_a: UBERON:0004755 ! skeletal tissue
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
+relationship: develops_from CL:0000059 ! ameloblast
+relationship: develops_from UBERON:0003104 ! mesenchyme
 xref: ncithesaurus:Enamel ! Enamel
 xref: BTO:0001844 ! tooth enamel
 
@@ -20162,9 +20219,9 @@ xref: BTO:0001844 ! tooth enamel
 id: UBERON:0001753
 name: cementum
 alt_id: UBERON:FMA_55630-MA_0002541
-def: "Substance of tooth produced by cementoblasts; surrounds the dentine of the root of the tooth[FMA]. a specialized calcified substance covering the root of a tooth. Cementum is excreted by cells called cementoblasts within the root of the tooth and is thickest at the root apex. Its coloration is yellowish and it is softer than enamel and dentin due to being less mineralized[WP]." [Wikipedia:Cementum]
-comment: This class was created automatically from a combination of ontologies
-synonym: "Cement" EXACT []
+def: "A bone-like mineralized tissue secreted by cementoblasts on the surface of root dentine or, in some animals, crown enamel[Diekwisch 2001]. Substance of tooth produced by cementoblasts; surrounds the dentine of the root of the tooth[FMA]. a specialized calcified substance covering the root of a tooth. Cementum is excreted by cells called cementoblasts within the root of the tooth and is thickest at the root apex. Its coloration is yellowish and it is softer than enamel and dentin due to being less mineralized[WP]." [Wikipedia:Cementum]
+comment: Cementum, the supporting tissue that anchors mammalian and crocodylian teeth into their sockets, differs among species and can have features of dentine, of bone, and of calcified cartilage, as well as unique features. Cementum is deposited by cementoblasts onto existing dentine. As in bone and dentine, cementoblasts produce an organic matrix, the main constituent of which is collagen type I (Bosshardt, 2005), but cementum, dentine, and bone also share a number of important noncollagenous matrix components such as osteopontin, osteocalcin, bone sialoprotein, a2-HS- glycoprotein, dentine matrix protein, dentine sialoprotein, and den- tine phosphoprotein (McKee et al., 1996; Bosshardt, 2005). it has been argued that in all rodents and ruminants, cementum is a form of calcified cartilage[H&W]
+synonym: "cement" EXACT []
 synonym: "cement of tooth" EXACT []
 synonym: "cementum" EXACT []
 synonym: "cementum of tooth" EXACT []
@@ -24272,7 +24329,7 @@ id: UBERON:0001973
 name: substance of tooth
 alt_id: UBERON:FMA_63001-MA_0002540
 def: "Body substance in solid state produced by odontoblasts, amyloblasts or cementoblasts." []
-comment: This class was created automatically from a combination of ontologies
+comment: note the asserted dual parentage. This is deliberate, pending better definitions of the distinction between substance and tissue
 subset: uberon_slim
 synonym: "tooth substance" EXACT []
 xref: FMA:63001 ! Portion of substance of tooth
@@ -24750,6 +24807,8 @@ subset: uberon_slim
 xref: FMA:64783 ! Hyaline cartilage
 xref: MA:0000109 ! hyaline cartilage
 is_a: UBERON:0002418 ! cartilage
+relationship: has_part CL:0000138 ! chondrocyte
+relationship: has_part GO:0005581 ! collagen
 xref: ncithesaurus:Hyaline_Cartilage ! Hyaline Cartilage
 
 [Term]
@@ -24763,6 +24822,8 @@ xref: FMA:64784 ! Fibrocartilage
 xref: galen:Fibrocartilage
 xref: MA:0000108 ! fibrocartilage
 is_a: UBERON:0002418 ! cartilage
+relationship: has_part CL:0000138 ! chondrocyte
+relationship: has_part GO:0005581 ! collagen
 xref: ncithesaurus:Fibrocartilage ! Fibrocartilage
 
 [Term]
@@ -28709,10 +28770,12 @@ def: "Portion of connective tissue which surrounds cartilage of developing bone.
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cartilage connective tissue" RELATED []
+synonym: "perichondral region of cartilage" RELATED []
+synonym: "perichondral region of cartilage element" RELATED []
 xref: FMA:75446 ! Perichondrium
 xref: TAO:0001643 ! perichondrium
 xref: ZFA:0001634 ! perichondrium
-is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002384 ! connective tissue
 relationship: surrounds UBERON:0002418 ! cartilage
 
 [Term]
@@ -32345,8 +32408,8 @@ relationship: part_of UBERON:0002100 ! trunk
 id: UBERON:0002418
 name: cartilage
 alt_id: UBERON:MA_0000104-MIAA_0000189-XAO_0000170
-def: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA].  an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes (Plate 4) separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." [Wikipedia:Cartilage, GO:0051216, FMA:37377]
-comment: see also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage
+def: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA].  an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." [Wikipedia:Cartilage, GO:0051216, FMA:37377]
+comment: see also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage. // elements made from cartilage, cartilage-like, or chondroid tissues evolved in invertebrates[H&W]
 subset: uberon_slim
 xref: AAO:0000060 ! cartilage
 xref: BTO:0000206
@@ -32362,6 +32425,7 @@ xref: TAO:0001501 ! cartilage
 xref: XAO:0000170 ! cartilage
 xref: ZFA:0001501 ! cartilage
 is_a: UBERON:0002384 ! connective tissue
+is_a: UBERON:0004755 ! skeletal tissue
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 xref: FMA:37377 ! Cartilage tissue
 xref: EFO:0000949 ! cartilage
@@ -33308,21 +33372,34 @@ is_a: UBERON:0002308 ! nucleus of brain
 relationship: part_of UBERON:0001926 ! lateral geniculate body
 
 [Term]
+id: UBERON:0004755 ! skeletal tissue
+name: skeletal tissue
+synonym: "mineralized tissue" EXACT []
+is_a: UBERON:0000479 ! portion of tissue
+comment: Four classes of mineralized tissues are found in vertebrates: bone, cartilage, dentine, and enamel. We think of cartilage and bone as skeletal tissues and of enamel and dentine as dental tissues, but enamel and dentine arose evolutionarily together with bone as skeletal tissues in the dermal skeleton (exoskeleton) of early vertebrates. Scales and teeth of sharks are examples of dermal skeletal elements that are still composed of the three ancient components-enamel, dentine, and bone. Cartilage, on the other hand, provided the basis for the second vertebrate skeletal system, the endoskeleton (Smith and Hall, 1990; Hall, 1998a,b). some invertebrate skeletal tissues have surprisingly bone-like features. Examples include chondrocytes interconnected by cell processes in cephalopod cartilages (Cole and Hall, 2004a,b), and the calcium phosphate layer in the shells of brachiopods (Rodland et al., 2003). However, neither bone nor mineralized cartilage have been found in invertebrates
+
+[Term]
 id: UBERON:0002481
 name: bone tissue
 alt_id: UBERON:MA_0002780-FMA_224804
-def: "." [Wikipedia:Bone_tissue]
+def: "The major structural and supportive connective tissue of the body. Osseous tissue forms the rigid part of the bone organs that make up the skeletal system." [Wikipedia:Bone_tissue]
+synonym: "osseous tissue" EXACT []
+synonym: "calcium tissue" EXACT []
 subset: uberon_slim
 xref: FMA:224804 ! Bone tissue
 xref: galen:BoneTissue
 xref: MA:0002780 ! bone tissue
+is_a: UBERON:0004755 ! skeletal tissue
 is_a: UBERON:0002384 ! connective tissue
 relationship: part_of UBERON:0001474 ! bone
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: ncithesaurus:Bone_Tissue ! Bone Tissue
 
 [Term]
 id: UBERON:0002482
 name: lamellar bone
+def: "Bone tissue that has a regular parallel alignment of collagen into sheets (lamellae) and is mechanically strong." [Wikipedia:Bone#Woven_or_lamellar]
+comment: histological classification, lamellar vs woven. Note that only FMA has woven
 alt_id: UBERON:MA_0002781-FMA_224806
 xref: FMA:224806 ! Lamellar bone
 xref: galen:LamellarBone
@@ -33331,17 +33408,25 @@ is_a: UBERON:0002481 ! bone tissue
 
 [Term]
 id: UBERON:0002483
-name: trabecular bone
+name: trabecular bone tissue
 alt_id: UBERON:MA_0002782-FMA_24019
 def: "Cancellous bone, synonymous with trabecular bone or spongy bone, is one of the two types of osseous tissue that form bones. Compared to compact bone, which is the other type of osseous tissue, it has a higher surface area but is less dense, softer, weaker, and less stiff. It typically occupies the interior region of bones. Cancellous bone is highly vascular and frequently contains red bone marrow where hematopoiesis, which is the production of blood cells, occurs. The primary anatomical and functional unit of cancellous bone is the trabecula. Its Latin name is substantia spongiosa or substantia spongiosa ossium. The words cancellous and trabecular refer to the tiny, lattice-shaped that form the tissue. [WP,unvetted]." [Wikipedia:Trabecular_bone]
+comment: one of the two types of osseous tissue that form bones. Compared to compact bone, which is the other type of osseous tissue, it has a higher surface area but is less dense, softer, weaker, and less stiff. It typically occurs at the ends of long bones, proximal to joints and within the interior of vertebrae. Cancellous bone is highly vascular  and frequently contains red bone marrow where hematopoiesis, which is the production of blood cells, occurs. The primary anatomical and functional unit of cancellous bone is the trabecula.
 subset: uberon_slim
-synonym: "cancellous bone" RELATED [MA:0002782]
+synonym: "cancellous bone" EXACT [MA:0002782, FMA:24019]
+synonym: "cancellous bone tissue" EXACT []
 synonym: "spongy bone" EXACT []
-synonym: "trabecular bone tissue" EXACT []
+synonym: "spongy bone tissue" EXACT []
+synonym: "trabecular bone" EXACT []
+synonym: "substantia spongiosa" EXACT [Wikipedia:Trabecular_bone]
+synonym: "substantia spongiosa ossium" EXACT [Wikipedia:Trabecular_bone]
 xref: FMA:24019 ! Trabecular bone
 xref: MA:0002782 ! trabecular bone
-is_a: UBERON:0002481 ! bone tissue
 xref: BTO:0001700 ! cancellous bone
+is_a: UBERON:0002481 ! bone tissue
+relationship: part_of UBERON:0002482 ! lamellar bone
+disjoint_from: UBERON:0001439 ! compact bone
+
 
 [Term]
 id: UBERON:0002484
@@ -33751,24 +33836,26 @@ xref: GAID:369 ! corpus luteum
 id: UBERON:0002513
 name: endochondral bone
 alt_id: UBERON:MA_0002836-ZFA_0001591
-def: "Replacement bone that forms within cartilage[TAO]. Endochondral ossification is the formation of bone by the replacement of cartilage tissue with mineralized bone[GO]. cartilage is present during endochondral ossification. It is also an essential process during the rudimentary formation of long bones,  the growth of the length of long bones,  and the natural healing of bone fractures[WP]." [Wikipedia:Endochondral_bone]
+def: "Replacement bone tissue that forms within cartilage[TAO]. Endochondral ossification is the formation of bone by the replacement of cartilage tissue with mineralized bone[GO]. cartilage is present during endochondral ossification. It is also an essential process during the rudimentary formation of long bones,  the growth of the length of long bones,  and the natural healing of bone fractures[WP]." [Wikipedia:Endochondral_bone, GO:0001958]
 comment: we make the strong assertion that this is disjoint from IM bone. Some bones may be a mixture, in this case we would create a new mixed IM/EC bone class.
 subset: uberon_slim
 xref: MA:0002836 ! endochondral bone
 xref: ZFA:0001591 ! endochondral bone
-is_a: UBERON:0001474 ! bone
-is_a: UBERON:0002481 ! bone tissue
 xref: BTO:0002157 ! endochondral bone
-disjoint_from: UBERON:0002514
+is_a: UBERON:0002481 ! bone tissue
+relationship: output_of GO:0001958 ! endochondral ossification
+relationship: replaces UBERON:0002418 ! cartilage
+disjoint_from: UBERON:0002514 ! intramembranous bone
 
 [Term]
 id: UBERON:0002514
 name: intramembranous bone
-def: "Bone that forms directly within mesenchyme, and does not replace other tissues[TAO]. Intramembranous ossification is the formation of bone in which osteoblasts secrete a collagen-proteoglycan matrix that binds calcium salts and becomes calcified[GO]. Intramembranous ossification is the way flat bones and the shell of a turtle are formed[GO]. Unlike endochondral ossification, cartilage is not present during intramembranous ossification[WP]." [Wikipedia:Intramembranous_ossification]
+def: "Bone tissue that forms directly within mesenchyme, and does not replace other tissues[TAO]. Intramembranous ossification is the formation of bone in which osteoblasts secrete a collagen-proteoglycan matrix that binds calcium salts and becomes calcified[GO]. Intramembranous ossification is the way flat bones and the shell of a turtle are formed[GO]. Unlike endochondral ossification, cartilage is not present during intramembranous ossification[WP]." [Wikipedia:Intramembranous_ossification, GO:0001957]
 alt_id: UBERON:MA_0002837-ZFA_0001635
 xref: MA:0002837 ! intramembranous bone
 xref: ZFA:0001635 ! intramembranous bone
-is_a: UBERON:0001474 ! bone
+is_a: UBERON:0002481 ! bone tissue
+relationship: output_of GO:0001957 ! intramembranous ossification
 relationship: develops_from UBERON:0003104 ! mesenchyme
 
 [Term]
@@ -33792,7 +33879,7 @@ def: "cartilage that will provide a scaffold for mineralization of endochondral 
 synonym: "growth plate" RELATED []
 is_a: UBERON:0002418 ! cartilage
 relationship: surrounds UBERON:0002513 ! endochondral bone
-xref: GAID:191 ! growth plate
+comment: merge with epiphyseal plate?
 
 [Term]
 id: UBERON:0002516
@@ -33802,9 +33889,13 @@ def: "a hyaline cartilage plate in the metaphysis at each end of a long bone. Th
 subset: uberon_slim
 synonym: "epiphyseal cartilage" RELATED []
 synonym: "epiphyseal growth plate cartilage" EXACT []
+synonym: "epiphyseal growth plate" EXACT []
 synonym: "growth plate" RELATED [MA:0002839]
+synonym: "long bone epiphyseal plate" RELATED [MA:0002839]
 xref: FMA:75427 ! Epiphysial plate
 xref: MA:0002839 ! epiphyseal plate
+xref: BTO:0000412 ! epiphyseal growth plate
+xref: GAID:191 ! growth plate
 is_a: UBERON:0004129 ! growth plate cartilage
 is_a: UBERON:0001994 ! hyaline cartilage
 relationship: part_of UBERON:0001438 ! metaphysis
@@ -34001,7 +34092,7 @@ is_a: UBERON:0004357 ! limb/fin bud
 [Term]
 id: UBERON:0004357 ! limb/fin bud
 name: limb/fin bud
-relationship: develops_into UBERON:0000026 ! appendage
+relationship: develops_into UBERON:0004708 ! limb/fin
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0003102 ! surface structure
 
@@ -60768,6 +60859,14 @@ name: proximal_to
 [Typedef]
 id: distal_to
 name: distal_to
+
+[Typedef]
+id: output_of
+name: output_of
+
+[Typedef]
+id: replaces
+name: replaces
 
 [Typedef]
 id: never_in_taxon

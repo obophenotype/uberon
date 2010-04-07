@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 31:03:2010 16:16
+date: 07:04:2010 12:42
 subsetdef: uberon_slim "Uberon slim"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
@@ -506,7 +506,7 @@ intersection_of: part_of UBERON:0002102 ! forelimb
 id: UBERON:0000029
 name: lymph node
 def: "Oval or bean shaped bodies (1 - 30 mm in diameter) located along the lymphatic system. Lymph nodes are garrisons of B, T, and other immune cells. Lymph nodes are found all through the body, and act as filters or traps for foreign particles. They contain white blood cells that use oxygen to process. Thus they are important in the proper functioning of the immune system[WP]." [GAID:947, Wikipedia:Lymph_node]
-comment: This class was created automatically from a combination of ontologies
+comment: do not include  FBbt:00001668 lymph gland
 subset: uberon_slim
 xref: BTO:0000784
 xref: EFO:0000872
@@ -677,11 +677,11 @@ is_a: UBERON:0003103 ! compound organ
 [Term]
 id: UBERON:0000041
 name: dermal denticle
-def: "small outgrowths which cover the skin of many cartilaginous fish including sharks. They are similar in structure to teeth, and teeth may have evolved from denticle-like structures in primitive fish.[citation needed] The placoid scales in sharks are formed of dentine with dermal papillae located in the core. These scales develop from the dermal layer of the skin, which is in contrast to the epidermal development seen the in the elasmoid scales of tetrapods. The shape of denticle varies from species to species and can be used in identification. Studies have found that the denticles create tiny vortices that reduce drag to make swimming more efficient. Denticles also allow sharks to swim silently compared to other fish that generate considerable noise when they ply the water." [http://en.wikipedia.org/wiki/Dermal_denticle, Wikipedia:Dermal_denticle]
-comment: TODO check dentin def
+def: "small outgrowths which cover the skin of many cartilaginous fish including sharks. They are similar in structure to teeth, and teeth may have evolved from denticle-like structures in primitive fish.[citation needed] The placoid scales in sharks are formed of dentine with dermal papillae located in the core. These scales develop from the dermal layer of the skin, which is in contrast to the epidermal development seen the in the elasmoid scales of tetrapods. The shape of denticle varies from species to species and can be used in identification. Studies have found that the denticles create tiny vortices that reduce drag to make swimming more efficient. Denticles also allow sharks to swim silently compared to other fish that generate considerable noise when they ply the water." [Wikipedia:Dermal_denticle]
+comment: TODO check dentin def // Scales and teeth of sharks are examples of dermal skeletal elements that are still composed of the three ancient components-enamel, dentine, and bone.
 subset: uberon_slim
 synonym: "placoid scale" EXACT []
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004756 ! dermal skeletal element
 relationship: has_part UBERON:0001751 ! dentine
 
 [Term]
@@ -1157,8 +1157,10 @@ creation_date: 2009-06-18T09:00:04Z
 [Term]
 id: UBERON:0000074
 name: renal glomerulus
-def: "the capillary loops of the kidney that normally function as a filtration unit." [MP:0005325]
+def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]. the capillary loops of the kidney that normally function as a filtration unit[MP]." [MP:0005325, Wikipedia:Glomerulus]
+comment: ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries
 synonym: "glomerular tuft " RELATED []
+synonym: "glomerulus " EXACT []
 synonym: "renal corpuscle " RELATED []
 xref: BTO:0000530
 xref: FMA:15624
@@ -1268,7 +1270,7 @@ relationship: develops_from UBERON:0002120 ! pronephros
 [Term]
 id: UBERON:0000081
 name: metanephros
-def: "In mammals, the metanephros is the excretory organ of the fetus, which develops into the mature kidney and is formed from the rear portion of the nephrogenic cord[GO]. During the fifth week of gestation, the mesonephric duct develops an outpouching, the ureteric bud, near its attachment to the cloaca. This bud, also called the metanephrogenic diverticulum, grows posteriorly and towards the head of the embryo. The elongated stalk of the ureteric bud, the metanephric duct, later forms the ureter. As the cranial end of the bud extends into the intermediate mesoderm, it undergoes a series of branchings to form the collecting duct system of the kidney. It also forms the major and minor calyces and the renal pelvis." [GO:0001656, Wikipedia:Metanephros#Metanephros]
+def: "In mammals, the metanephros is the excretory organ of the fetus, which develops into the mature kidney and is formed from the rear portion of the nephrogenic cord. The metanephros is an endocrine and metabolic organ that filters the blood and excretes the end products of body metabolism in the form of urine[GO]. During the fifth week of gestation, the mesonephric duct develops an outpouching, the ureteric bud, near its attachment to the cloaca. This bud, also called the metanephrogenic diverticulum, grows posteriorly and towards the head of the embryo. The elongated stalk of the ureteric bud, the metanephric duct, later forms the ureter. As the cranial end of the bud extends into the intermediate mesoderm, it undergoes a series of branchings to form the collecting duct system of the kidney. It also forms the major and minor calyces and the renal pelvis." [GO:0001656, Wikipedia:Metanephros#Metanephros]
 xref: EHDAA:3089
 xref: EHDAA:5911
 xref: FMA:72172
@@ -1443,6 +1445,7 @@ creation_date: 2009-07-30T07:57:38Z
 id: UBERON:0000100
 name: blastopore
 def: "Structure around the opening into the archenteron during the embryonic stages of an organism. The distinction between protostomes and deuterostomes is based on the direction in which the mouth (stoma) develops in relation to the blastopore." [Wikipedia:Blastopore]
+xref: AAO:0000045
 xref: BTO:0001695
 xref: XAO:0000208
 is_a: UBERON:0002050 ! embryonic structure
@@ -1843,6 +1846,7 @@ xref: BTO:0002852
 xref: FMA:18657
 is_a: UBERON:0000158 ! membranous layer
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: has_part GO:0005581
 relationship: part_of UBERON:0000155 ! theca cell layer
 relationship: surrounds UBERON:0000157 ! theca interna
 
@@ -1896,6 +1900,7 @@ alt_id: UBERON:FBbt_00005785-FMA_15703-FMA_7199-MA_0000328-MA_0000330-MIAA_00000
 def: "Segment of the alimentary canal extending from the stomach to the anus and, in humans and other mammals, consists of two segments, the small intestine and the large intestine." [GOC:GO, Wikipedia:Intestine]
 subset: uberon_slim
 synonym: "bowel" EXACT []
+xref: AAO:0000246
 xref: BTO:0000648
 xref: EFO:0000834
 xref: FMA:7199
@@ -2131,6 +2136,7 @@ def: "Circulating body substance which consists of blood plasma and hemoglobin-c
 subset: uberon_slim
 synonym: "blood" EXACT []
 synonym: "portion of blood" EXACT []
+xref: AAO:0000046
 xref: BTO:0000089
 xref: EFO:0000296
 xref: EHDAA:418
@@ -2275,6 +2281,7 @@ xref: MA:0001466
 xref: TAO:0000486
 xref: ZFA:0000486
 is_a: UBERON:0002514 ! intramembranous bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0001703 ! neurocranium
 
 [Term]
@@ -2292,6 +2299,7 @@ xref: MA:0001469
 xref: TAO:0000514
 xref: ZFA:0000514
 is_a: UBERON:0002514 ! intramembranous bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0001703 ! neurocranium
 
 [Term]
@@ -2315,6 +2323,7 @@ xref: TAO:0001682
 xref: ZFA:0001675
 is_a: UBERON:0002384 ! connective tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: has_part GO:0005581
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 
 [Term]
@@ -2902,14 +2911,11 @@ is_a: UBERON:0002530 ! gland
 id: UBERON:0000360
 name: rectal gland
 alt_id: UBERON:BTO_0001157-FMA_15724
-synonym: "gland of rectum" EXACT [OBOL:automatic]
-synonym: "rectum gland" EXACT [OBOL:automatic]
-xref: BTO:0001157
-xref: FMA:15724
-is_a: UBERON:0002530 ! gland
-is_a: UBERON:0003408 ! implied link automatically realized ! gland of gut
-intersection_of: UBERON:0002530 ! gland
-intersection_of: part_of UBERON:0001052 ! rectum
+is_obsolete: true
+consider: UBERON:0004757
+consider: UBERON:0004758
+consider: UBERON:0004759
+consider: UBERON:0004760
 
 [Term]
 id: UBERON:0000361
@@ -3702,8 +3708,11 @@ def: "a small, often microscopic, tissue element in the form of a small beam, st
 synonym: "trabecula arachnoideum" RELATED []
 xref: BTO:0002500
 xref: FMA:83979
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000440 ! trabecula
-relationship: constitutional_part_of UBERON:0002362 ! arachnoid mater
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: has_part GO:0005581
+relationship: part_of UBERON:0002362 ! arachnoid mater
 
 [Term]
 id: UBERON:0000440
@@ -3714,6 +3723,7 @@ xref: BTO:0002501
 xref: FMA:85273
 xref: ZFA:0001321
 is_a: UBERON:0000064 ! organ part
+relationship: has_part GO:0005581
 
 [Term]
 id: UBERON:0000442
@@ -3911,6 +3921,7 @@ comment: This class was created automatically from a combination of ontologies
 xref: BILA:0000004
 xref: CARO:0000004
 xref: FBbt:00007019
+xref: FMA:9669
 xref: HAO:0000004
 xref: ZFA:0001487
 is_a: UBERON:0000465 ! material anatomical entity
@@ -4247,6 +4258,7 @@ def: "Anatomical structure, that consists of similar cells and intercellular mat
 comment: This class was created automatically from a combination of ontologies
 synonym: "tissue" RELATED []
 synonym: "tissue portion" EXACT []
+xref: AAO:0000607
 xref: BILA:0000043
 xref: CARO:0000043
 xref: FBbt:00007003
@@ -4680,9 +4692,6 @@ xref: FBbt:00000021
 xref: HAO:0000016
 xref: SPD:0000055
 is_a: UBERON:0000914 ! organismal segment
-intersection_of: UBERON:0000914 ! organismal segment
-intersection_of: part_of UBERON:0000916 ! abdomen
-relationship: part_of UBERON:0000916 ! abdomen
 
 [Term]
 id: UBERON:0000918
@@ -5201,6 +5210,7 @@ id: UBERON:0000946
 name: cardial valve
 alt_id: UBERON:FBbt_00003140-FMA_7110-MA_0000086-ZFA_0005065
 def: "Flap of tissue that prevents regurgitation of blood from the ventricles to the atria or from the pulmonary arteries or aorta to the ventricles." [Wikipedia:Cardiac_valve]
+comment: Rector et al: One might be tempted to define “heart valve” equivalently to “valve in the heart”, and “valve” as a “structure which functions as a valve”.  But this combination results in the “foramen ovale” being classified as a kind of “heart valve”, since it is undoubtedly located in the heart and functions as a valve
 subset: uberon_slim
 synonym: "cardiac valve" RELATED []
 synonym: "heart valve" EXACT []
@@ -6154,7 +6164,6 @@ xref: HOG:0000397
 xref: MA:0002420
 xref: ncithesaurus:Gonad
 xref: OpenCyc:Mx4rwQvdiZwpEbGdrcN5Y29ycA
-xref: synonym:primordium
 xref: TAO:0000413
 xref: WBbt:0005175
 xref: XAO:0003146
@@ -7327,9 +7336,8 @@ alt_id: UBERON:FBbt_00005386
 def: "Roundish subunit structure of a neuropil, often ensheathed by glial lamellae. Also, unit structure of the antennal lobe." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Glomerulus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "Glomerulus" EXACT []
+synonym: "glomerulus" BROAD []
 xref: FBbt:00005386
-xref: ncithesaurus:Glomerulus
 is_a: UBERON:0001021 ! nerve
 
 [Term]
@@ -7795,6 +7803,7 @@ subset: uberon_slim
 synonym: "neural spine" RELATED []
 synonym: "processus spinosus" EXACT []
 synonym: "vertebra spinous process" EXACT []
+xref: AAO:0000705
 xref: FMA:11948
 xref: MA:0001455
 xref: ZFA:0001336
@@ -7816,7 +7825,6 @@ synonym: "vertebra transverse process" EXACT []
 xref: FMA:11949
 xref: MA:0001456
 is_a: UBERON:0003109 ! parapophysis
-is_a: UBERON:0004247 ! implied link automatically realized ! back bone
 is_a: UBERON:0004267 ! implied link automatically realized ! back connective tissue
 intersection_of: UBERON:0003109 ! parapophysis
 intersection_of: part_of UBERON:0002412 ! vertebra
@@ -7847,6 +7855,7 @@ synonym: "cranial articular process of vertebra" EXACT []
 synonym: "prezygapophysis" RELATED []
 synonym: "processus articularis superior" EXACT []
 synonym: "vertebra cranial articular process" EXACT []
+xref: AAO:0000703
 xref: FMA:11953
 xref: MA:0001452
 is_a: UBERON:0000063 ! organ segment
@@ -7862,6 +7871,7 @@ synonym: "caudal articular process of vertebra" EXACT []
 synonym: "postzygapophysis" RELATED []
 synonym: "processus articularis inferior" EXACT []
 synonym: "vertebra caudal articular process" EXACT []
+xref: AAO:0000702
 xref: FMA:11954
 xref: MA:0001451
 is_a: UBERON:0000063 ! organ segment
@@ -10625,11 +10635,12 @@ relationship: part_of UBERON:0001229 ! renal corpuscle
 [Term]
 id: UBERON:0001231
 name: renal tubule
+alt_id: UBERON:0004210
 alt_id: UBERON:FMA_15627-ZFA_0001287
-def: "." [Wikipedia:Renal_tubule]
+def: "An epithelial tube that is part of the nephron, the functional part of the kidney." [GO:0072078, Wikipedia:Renal_tubule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "renal tubules" RELATED []
+synonym: "nephron tubule" EXACT [GO:0072078]
 synonym: "tubulus renalis" EXACT []
 xref: BTO:0000343
 xref: FMA:15627
@@ -10637,8 +10648,8 @@ xref: MA:0000377
 xref: ncithesaurus:Renal_Tubule
 xref: TAO:0001287
 xref: ZFA:0001287
-is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
 relationship: part_of UBERON:0001285 ! nephron
 
 [Term]
@@ -10660,6 +10671,8 @@ xref: GAID:434
 xref: MA:0000371
 xref: ZFA:0005294
 is_a: UBERON:0000058 ! duct
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0001285 ! nephron
 relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
@@ -14092,7 +14105,6 @@ disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 disjoint_from: UBERON:0004456 ! entire sense organ system
-relationship: has_part UBERON:0001474 ! bone
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 
 [Term]
@@ -14202,7 +14214,7 @@ relationship: part_of UBERON:0002428 ! limb bone
 id: UBERON:0001439
 name: compact bone
 alt_id: UBERON:FMA_24018-MA_0001461
-def: "." [Wikipedia:Compact_bone]
+def: "one of the two types of osseous tissue that form bones. Compact/Cortical bone facilitates bone's main functions: to support the body, protect organs, provide levers for movement, and store and release chemical elements, mainly calcium. As its name implies, cortical bone forms the cortex, or outer shell, of most bones. Again, as its name implies, compact bone is much denser than cancellous bone, which is the other type of osseous tissue. Furthermore, it is harder, stronger and stiffer than cancellous bone. Cortical bone contributes about 80% of the weight of a human skeleton. The primary anatomical and functional unit of cortical bone is the osteon.." [Wikipedia:Compact_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "compact bone tissue" EXACT []
@@ -14214,7 +14226,7 @@ xref: MA:0001461
 xref: ncithesaurus:Cortical_Bone
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0001474 ! bone
+relationship: part_of UBERON:0002482 ! lamellar bone
 
 [Term]
 id: UBERON:0001440
@@ -14995,8 +15007,8 @@ relationship: part_of UBERON:0004536 ! lymph vasculature
 id: UBERON:0001474
 name: bone
 alt_id: UBERON:FMA_30317-MA_0001459-MIAA_0000299-XAO_0000169-ZFA_0001514
-def: "The hard form of connective tissue that constitutes the majority of the skeleton. // Portion of tissue which is calcified connective tissue making up the structural elements of the skeletal system. Organ with cavitated organ parts, which primarily consists of compact (cortical) and cancellous bone, which surround bone marrow cavities; together with other bones, cartilages and joints, it constitutes the skeletal system. Examples: femur, sternum, maxilla, vertebra, talus[FMA]" [BTO:0000140, FMA:5018, Wikipedia:Bone, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The hard form of connective tissue that constitutes the majority of the skeleton // Organ with cavitated organ parts, which primarily consists of compact (cortical) and cancellous bone, which surround bone marrow cavities; together with other bones, cartilages and joints, it constitutes the skeletal system. Examples: femur, sternum, maxilla, vertebra, talus[FMA]" [BTO:0000140, FMA:5018, Wikipedia:Bone, ZFIN:curator]
+comment: H&W - a vascularized, supporting skeletal tissue, which also can form ectopically outside the skeleton. Bone consists of cells and a mineralized extracellular matrix that is permeated by canals (canaliculi) that contain osteocyte processes (Plate 2). Bone is deposited by bone-forming cells (osteoblasts), which, when they cease dividing, transform into osteocytes. The first bone matrix deposited is unmineralized and is known as osteoid (Plate 3). Subsequently, osteoid is impregnated with hydroxyapatite to form the mineralized tissue we know as bone, a tissue that is modeled, remodeled, and/or removed by mono- or multinucleated osteoclasts (and sometimes by osteocytes)
 subset: uberon_slim
 synonym: "bone organ" EXACT []
 xref: AAO:0000047
@@ -15018,13 +15030,13 @@ xref: XAO:0000169
 xref: ZFA:0001514
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0001434 ! skeletal system
 
 [Term]
 id: UBERON:0001475
 name: ligament
 alt_id: UBERON:FMA_30319-FMA_76821-MA_0000113-MIAA_0000113
-def: "the flexible bands of fibrous tissue that connect the articular extremities of bones." [MP:0005504]
 comment: made obsolete as it incorrectly grouped classes
 is_obsolete: true
 consider: UBERON:0000211
@@ -16588,7 +16600,7 @@ is_a: UBERON:0002377 ! muscle of neck
 id: UBERON:0001563
 name: longus capitis
 alt_id: UBERON:FMA_46308-MA_0002340
-def: "The longus capitis (rectus capitis anticus major), broad and thick above, narrow below, arises by four tendinous slips, from the anterior tubercles of the transverse processes of the third, fourth, fifth, and sixth cervical vertebræ, and ascends, converging toward its fellow of the opposite side, to be inserted into the inferior surface of the basilar part of the occipital bone. It is innervated by a branch of cervical plexus. [WP,unvetted]." [Wikipedia:Longus_capitis]
+def: "The longus capitis (rectus capitis anticus major), broad and thick above, narrow below, arises by four tendinous slips, from the anterior tubercles of the transverse processes of the third, fourth, fifth, and sixth cervical vertebrae, and ascends, converging toward its fellow of the opposite side, to be inserted into the inferior surface of the basilar part of the occipital bone. It is innervated by a branch of cervical plexus. [WP,unvetted]." [Wikipedia:Longus_capitis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:46308
@@ -18411,7 +18423,6 @@ xref: OpenCyc:Mx4rvuUPh5wpEbGdrcN5Y29ycA
 xref: TAO:0000323
 xref: ZFA:0000323
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
 is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001704 ! viscerocranium
@@ -18449,7 +18460,7 @@ xref: TAO:0000365
 xref: ZFA:0000365
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002514 ! intramembranous bone
-is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 relationship: part_of UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001704 ! viscerocranium
@@ -18532,7 +18543,6 @@ xref: GAID:197
 xref: HOG:0001325
 xref: MA:0001484
 xref: ncithesaurus:Hyoid_Bone
-xref: synonym:pre-cartilage_condensation
 is_a: UBERON:0001474 ! bone
 is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
 relationship: part_of UBERON:0001704 ! viscerocranium
@@ -18668,7 +18678,7 @@ xref: TAO:0000472
 xref: ZFA:0000472
 is_a: UBERON:0002513 ! endochondral bone
 is_a: UBERON:0002619 ! implied link automatically realized ! regional part of cerebral cortex
-is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0002021 ! occipital lobe
 
 [Term]
@@ -18688,7 +18698,7 @@ xref: TAO:0000661
 xref: ZFA:0000661
 is_a: UBERON:0002513 ! endochondral bone
 is_a: UBERON:0002619 ! implied link automatically realized ! regional part of cerebral cortex
-is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0002021 ! occipital lobe
 
 [Term]
@@ -18746,18 +18756,21 @@ relationship: part_of UBERON:0003128 ! cranium
 
 [Term]
 id: UBERON:0001698
-name: foramen ovale
+name: foramen ovale of skull
 alt_id: UBERON:FMA_53155-MA_0001873
-def: "." [Wikipedia:Foramen_ovale]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
+def: "one of the larger of the several holes at the base of the skull that transmit nerves through the skull. The foramen ovale is situated in the anterior part of the sphenoid bone, posteriolateral to the foramen rotundum.." [Wikipedia:Foramen_ovale_(skull)]
+synonym: "foramen ovale" NARROW [AAO:0000169, FMA:53155]
+synonym: "foramen ovale (skull)" EXACT [FMA:53155]
+synonym: "foramen ovale basis cranii" EXACT [galen:ForamenOvaleBasisCranii]
+xref: AAO:0000169
 xref: EHDAA:10627
+xref: EMAPA:18711
 xref: FMA:53155
-xref: galen:ForamenOvale
+xref: galen:ForamenOvaleBasisCranii
 xref: HOG:0001189
-xref: MA:0001873
 is_a: UBERON:0000464 ! anatomical space
-relationship: part_of UBERON:0002085 ! interatrial septum
+disjoint_from: UBERON:0004754 ! foramen ovale of heart
+relationship: part_of UBERON:0003129 ! skull
 
 [Term]
 id: UBERON:0001699
@@ -18840,9 +18853,12 @@ synonym: "brain box" EXACT []
 synonym: "brain case" RELATED [http://www.thefreedictionary.com/braincase]
 synonym: "brain pan" RELATED [http://www.thefreedictionary.com/braincase]
 xref: FMA:53672
+xref: MA:0000317
 xref: TAO:0001580
+xref: XAO:0003170
 xref: ZFA:0001580
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0003128 ! cranium
 
 [Term]
 id: UBERON:0001704
@@ -19722,8 +19738,8 @@ relationship: part_of UBERON:0000970 ! eye
 id: UBERON:0001751
 name: dentine
 alt_id: UBERON:FMA_55628-MA_0002542-ZFA_0005143
-def: "Substance of tooth produced by odontoblasts; surrounds the pulp of the tooth and is subjacent to enamel and cement[FMA]. Mineralized collagen containing substance that forms the tooth structure[ZFA]. a calcified tissue of the body, and along with enamel, cementum, and pulp is one of the four major components of teeth[WP]." [Wikipedia:Dentin, ZFIN:curator]
-comment: Dentine is found in the fossil record as early as the late Cambrian, in fish, where it may have had a role in electrochemical sensing of the environment as well as assisting in defense[WP].
+def: "a tubular mineralized tissue[H&W]. In mammals - substance of tooth produced by odontoblasts; surrounds the pulp of the tooth and is subjacent to enamel and cement[FMA]. Mineralized collagen containing substance that forms the tooth structure[ZFA]. a calcified tissue of the body, and along with enamel, cementum, and pulp is one of the four major components of teeth[WP]." [Wikipedia:Dentin, ZFIN:curator]
+comment: Dentine is found in the fossil record as early as the late Cambrian, in fish, where it may have had a role in electrochemical sensing of the environment as well as assisting in defense[WP]. H&W describe a continuum atubular - meta/orthodentine - mesi/semidentine - cement and without cementoblasts
 subset: uberon_slim
 synonym: "dentin" EXACT []
 synonym: "dentine of tooth" EXACT []
@@ -19736,14 +19752,18 @@ xref: ncithesaurus:Dentin
 xref: TAO:0005143
 xref: ZFA:0005143
 is_a: UBERON:0001973 ! substance of tooth
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004755 ! skeletal tissue
+relationship: develops_from CL:0000060
 relationship: develops_from UBERON:0000924 ! ectoderm
+relationship: only_in_taxon NCBITaxon:7742
 
 [Term]
 id: UBERON:0001752
 name: enamel
 alt_id: UBERON:FMA_55629-MA_0002543-ZFA_0005142
 def: "A dentine-like hypermineralized substance that covers the tooth tip. Enamel's primary mineral is hydroxylapatite, which is a crystalline calcium phosphate. Unlike dentin and bone, enamel does not contain collagen. Instead, it has two unique classes of proteins called amelogenins and enamelins[WP]." [Wikipedia:Enamel, ZFIN:curator]
-comment: Tooth enamel is also found in the dermal denticles of sharks UBERON:0000041. For the most part, research has shown that formation in animals is almost identical to formation in humans. The enamel organ, including the dental papilla, and ameloblasts function similarly.[53] The variations of enamel that are present are infrequent but sometimes important. Differences exist, certainly, in the morphology, number, and types of teeth among animals.
+comment: Tooth enamel is also found in the dermal denticles of sharks UBERON:0000041. For the most part, research has shown that formation in animals is almost identical to formation in humans. The enamel organ, including the dental papilla, and ameloblasts function similarly.[53] The variations of enamel that are present are infrequent but sometimes important. Differences exist, certainly, in the morphology, number, and types of teeth among animals. H&W - highly mineralized, hard, prismatic, avascular outer layer of vertebrate teeth and some scales. Enamel is unique in being the only noncollagenous mineralized vertebrate skeletal tissue (Diekwisch, 2002). The enamel proteins amelogenin, enamelin, tuftelin, MMP-20, and EMSP-1 form a highly conserved family of matrix proteins (Satchell et al., 2002). Like dentine, enamel is both odontogenic and skeletogenic; enamel covers teeth and dermal skeletal tissues. Because of its very high mineral content, enamel is much more resistant to wear than dentine; some 96% of mammalian enamel is inorganic, and only 0.5% organic. // TODO - split enamel and enameloid
 subset: uberon_slim
 synonym: "enamel of tooth" EXACT []
 synonym: "enameloid" EXACT []
@@ -19755,14 +19775,19 @@ xref: ncithesaurus:Enamel
 xref: TAO:0005142
 xref: ZFA:0005142
 is_a: UBERON:0001973 ! substance of tooth
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004755 ! skeletal tissue
+relationship: develops_from CL:0000059
+relationship: develops_from UBERON:0003104 ! mesenchyme
+relationship: only_in_taxon NCBITaxon:7742
 
 [Term]
 id: UBERON:0001753
 name: cementum
 alt_id: UBERON:FMA_55630-MA_0002541
-def: "Substance of tooth produced by cementoblasts; surrounds the dentine of the root of the tooth[FMA]. a specialized calcified substance covering the root of a tooth. Cementum is excreted by cells called cementoblasts within the root of the tooth and is thickest at the root apex. Its coloration is yellowish and it is softer than enamel and dentin due to being less mineralized[WP]." [Wikipedia:Cementum]
-comment: This class was created automatically from a combination of ontologies
-synonym: "Cement" EXACT []
+def: "A bone-like mineralized tissue secreted by cementoblasts on the surface of root dentine or, in some animals, crown enamel[Diekwisch 2001]. Substance of tooth produced by cementoblasts; surrounds the dentine of the root of the tooth[FMA]. a specialized calcified substance covering the root of a tooth. Cementum is excreted by cells called cementoblasts within the root of the tooth and is thickest at the root apex. Its coloration is yellowish and it is softer than enamel and dentin due to being less mineralized[WP]." [Wikipedia:Cementum]
+comment: Cementum, the supporting tissue that anchors mammalian and crocodylian teeth into their sockets, differs among species and can have features of dentine, of bone, and of calcified cartilage, as well as unique features. Cementum is deposited by cementoblasts onto existing dentine. As in bone and dentine, cementoblasts produce an organic matrix, the main constituent of which is collagen type I (Bosshardt, 2005), but cementum, dentine, and bone also share a number of important noncollagenous matrix components such as osteopontin, osteocalcin, bone sialoprotein, a2-HS- glycoprotein, dentine matrix protein, dentine sialoprotein, and den- tine phosphoprotein (McKee et al., 1996; Bosshardt, 2005). it has been argued that in all rodents and ruminants, cementum is a form of calcified cartilage[H&W]
+synonym: "cement" EXACT []
 synonym: "cement of tooth" EXACT []
 synonym: "cementum" EXACT []
 synonym: "cementum of tooth" EXACT []
@@ -19845,7 +19870,6 @@ xref: HOG:0000460
 xref: MA:0000259
 xref: ncithesaurus:Auricle
 xref: OpenCyc:Mx4rvs_VC5wpEbGdrcN5Y29ycA
-xref: synonym:auricle
 is_a: UBERON:0001444 ! subdivision of head
 relationship: part_of UBERON:0001691 ! external ear
 
@@ -22295,7 +22319,6 @@ xref: MA:0000183
 xref: MAT:0000421
 xref: MIAA:0000421
 xref: NIF_GrossAnatomy:birnlex_1115
-xref: synonym:future_cerebral_hemisphere
 xref: TAO:0000079
 xref: XAO:0000012
 xref: ZFA:0000079
@@ -23918,7 +23941,7 @@ id: UBERON:0001973
 name: substance of tooth
 alt_id: UBERON:FMA_63001-MA_0002540
 def: "Body substance in solid state produced by odontoblasts, amyloblasts or cementoblasts." []
-comment: This class was created automatically from a combination of ontologies
+comment: note the asserted dual parentage. This is deliberate, pending better definitions of the distinction between substance and tissue
 subset: uberon_slim
 synonym: "tooth substance" EXACT []
 xref: FMA:63001
@@ -24353,6 +24376,8 @@ xref: FMA:64783
 xref: MA:0000109
 xref: ncithesaurus:Hyaline_Cartilage
 is_a: UBERON:0002418 ! cartilage
+relationship: has_part CL:0000138
+relationship: has_part GO:0005581
 
 [Term]
 id: UBERON:0001995
@@ -24366,6 +24391,8 @@ xref: galen:Fibrocartilage
 xref: MA:0000108
 xref: ncithesaurus:Fibrocartilage
 is_a: UBERON:0002418 ! cartilage
+relationship: has_part CL:0000138
+relationship: has_part GO:0005581
 
 [Term]
 id: UBERON:0001996
@@ -24801,6 +24828,7 @@ xref: TAO:0001414
 xref: ZFA:0001414
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0002619 ! implied link automatically realized ! regional part of cerebral cortex
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: adjacent_to UBERON:0001871 ! temporal lobe
 relationship: adjacent_to UBERON:0001872 ! parietal lobe
 relationship: part_of UBERON:0001703 ! neurocranium
@@ -26487,6 +26515,7 @@ synonym: "nares" RELATED []
 synonym: "nares set" EXACT []
 synonym: "nostrils" EXACT []
 synonym: "pare of nostrils" EXACT []
+xref: AAO:0000024
 xref: FMA:72005
 xref: ncithesaurus:Nostril
 xref: OpenCyc:Mx4rvViCLpwpEbGdrcN5Y29ycA
@@ -28365,6 +28394,7 @@ name: tympanic ring
 alt_id: UBERON:FMA_75053-MA_0001225
 def: "the bony ring at the ear canal to which the tympanic membrane is attached." [MP:0000030]
 comment: This class was created automatically from a combination of ontologies
+xref: AAO:0000615
 xref: FMA:75053
 xref: MA:0001225
 is_a: UBERON:0000061 ! anatomical structure
@@ -28399,6 +28429,7 @@ xref: MA:0001465
 xref: ncithesaurus:Fontanelle
 xref: TAO:0001738
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: adjacent_to UBERON:0000969 ! suture
 relationship: part_of UBERON:0002241 ! chondrocranium
 
@@ -28410,10 +28441,12 @@ def: "Portion of connective tissue which surrounds cartilage of developing bone.
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cartilage connective tissue" RELATED []
+synonym: "perichondral region of cartilage" RELATED []
+synonym: "perichondral region of cartilage element" RELATED []
 xref: FMA:75446
 xref: TAO:0001643
 xref: ZFA:0001634
-is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002384 ! connective tissue
 relationship: surrounds UBERON:0002418 ! cartilage
 
 [Term]
@@ -28521,9 +28554,7 @@ xref: OpenCyc:Mx4rvVjNoZwpEbGdrcN5Y29ycA
 xref: TAO:0000538
 xref: ZFA:0000538
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0003459 ! implied link automatically realized ! chest bone
 is_a: UBERON:0003572 ! implied link automatically realized ! chest connective tissue
-is_a: UBERON:0004247 ! implied link automatically realized ! back bone
 is_a: UBERON:0004267 ! implied link automatically realized ! back connective tissue
 relationship: part_of UBERON:0001443 ! chest
 relationship: part_of UBERON:0002091 ! appendicular skeleton
@@ -28720,22 +28751,23 @@ relationship: spatially_disjoint_from UBERON:0000955 ! brain
 id: UBERON:0002241
 name: chondrocranium
 alt_id: UBERON:FMA_76621-XAO_0003059-ZFA_0001424
-def: "The cartilaginous cranium of an embryo before ossification // A portion of the embryonic cranium forming the bones of the base of the skull and eventually undergoing ossification // Cranial skeletal elements composed of cartilage and cartilage replacement bones." [ISBN:0471209627, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "primitive cartilagionous skeletal structure of the fetal skull that grows to envelop the rapidly growing embyonic brain[WP]. The cartilaginous cranium of an embryo before ossification // A portion of the embryonic cranium forming the bones of the base of the skull and eventually undergoing ossification // Cranial skeletal elements composed of cartilage and cartilage replacement bones. In humans, the chondrocranium begins forming at 28 days from mesenchymal  condensations and is fully formed between week 7 and 9 of fetal development. While the majority of the chondrocranium is succeeded by the bony skull in most higher vertebrates, some components do persist into adulthood.[1]  In Cartilagious fishes and Agnathans, the chondrocranium persist throughout life.[2]  Embryologically, the chondrocranium represent the basal cranial structure, and lay the base for the formation of the endocranium  in higher vertebrates[WP]." [ISBN:0471209627, Wikipedia:Chondrocranium, ZFIN:curator]
+comment: TODO - check ZFA classification vs mammalian. is this just the cartiliginous predecessor?
 synonym: "cartilaginous skull" RELATED []
+synonym: "cartiligionous neurocranium" EXACT [Wikipedia:Chondrocranium]
 synonym: "chondocranium" RELATED []
-synonym: "neurocranium" RELATED []
 xref: AAO:0000094
-xref: EFO:0000943
 xref: EHDAA:6031
 xref: FMA:76621
 xref: HOG:0000288
-xref: MA:0000317
 xref: ncithesaurus:Chondrocranium
 xref: TAO:0001424
 xref: XAO:0003059
 xref: ZFA:0001424
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003104 ! mesenchyme
+relationship: has_part UBERON:0002418 ! cartilage
 
 [Term]
 id: UBERON:0002242
@@ -29765,17 +29797,17 @@ relationship: part_of UBERON:0002349 ! myocardium
 
 [Term]
 id: UBERON:0002303
-name: juxtaglomerular complex
+name: juxtaglomerular apparatus
 alt_id: UBERON:FMA_83599-MA_0002546
-def: "." [Wikipedia:Juxtaglomerular_apparatus]
-comment: This class was created automatically from a combination of ontologies
+def: "An anatomical structure which consists of juxtaglomerular cells, extraglomerular mesangial cells and the macula densa. The juxtaglomerular apparatus lies adjacent to the glomerulus and regulates kidney function by maintaining the blood flow to the kidney and the filtration rate[GO]. a microscopic structure in the kidney, which regulates the function of each nephron. The juxtaglomerular apparatus is named for its proximity to the glomerulus: it is found between the vascular pole of the renal corpuscle and the returning distal convoluted tubule of the same nephron. This location is critical to its function in regulating renal blood flow and glomerular filtration rate. The three cellular components of the apparatus are the macula densa, extraglomerular mesangial cells, and juxtaglomerular cells (also known as granular cells)[WP]." [GO:0072206, Wikipedia:Juxtaglomerular_apparatus]
 subset: uberon_slim
-synonym: "juxtaglomerular apparatus" RELATED []
+synonym: "juxtaglomerular complex" EXACT []
 xref: FMA:83599
 xref: GAID:432
 xref: MA:0002546
 xref: ncithesaurus:Juxtaglomerular_Apparatus
 is_a: UBERON:0000477 ! anatomical cluster
+relationship: has_part CL:0000648
 relationship: part_of UBERON:0001225 ! cortex of kidney
 
 [Term]
@@ -30046,6 +30078,8 @@ xref: FMA:84139
 xref: MA:0002617
 xref: ncithesaurus:Mesangium
 is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0000074 ! renal glomerulus
 relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
@@ -30073,7 +30107,7 @@ xref: MA:0002602
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001229 ! renal corpuscle
-relationship: part_of UBERON:0002303 ! juxtaglomerular complex
+relationship: part_of UBERON:0002303 ! juxtaglomerular apparatus
 relationship: part_of UBERON:0002319 ! mesangium
 
 [Term]
@@ -30317,7 +30351,7 @@ xref: FMA:86333
 xref: MA:0002603
 xref: ncithesaurus:Macula_Densa
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002303 ! juxtaglomerular complex
+relationship: part_of UBERON:0002303 ! juxtaglomerular apparatus
 
 [Term]
 id: UBERON:0002336
@@ -30580,7 +30614,6 @@ xref: MA:0000314
 xref: ncithesaurus:Thoracic_Vertebra
 xref: OpenCyc:Mx4rvdZIBpwpEbGdrcN5Y29ycA
 is_a: UBERON:0002412 ! vertebra
-is_a: UBERON:0003827 ! implied link automatically realized ! thoracic segment bone
 is_a: UBERON:0003837 ! implied link automatically realized ! thoracic segment connective tissue
 intersection_of: UBERON:0002412 ! vertebra
 intersection_of: part_of UBERON:0000915 ! thorax
@@ -31702,6 +31735,7 @@ xref: TAO:0000270
 xref: ZFA:0000270
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 intersection_of: UBERON:0001474 ! bone
 intersection_of: adjacent_to UBERON:0002244 ! premaxilla
 intersection_of: part_of UBERON:0001709 ! upper jaw
@@ -31988,7 +32022,6 @@ xref: OpenCyc:Mx4rvt2Dh5wpEbGdrcN5Y29ycA
 xref: TAO:0001189
 xref: ZFA:0001189
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0004247 ! implied link automatically realized ! back bone
 is_a: UBERON:0004267 ! implied link automatically realized ! back connective tissue
 relationship: part_of UBERON:0001130 ! vertebral column
 
@@ -31999,6 +32032,7 @@ alt_id: UBERON:FMA_9915-MA_0000311-XAO_0003076
 def: "A vertebra immediately inferior to the skull[WP]." [Wikipedia:Cervical_vertebra]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "cervical vertebrae" EXACT PLURAL []
 xref: FMA:9915
 xref: GAID:235
 xref: galen:CervicalVertebra
@@ -32006,7 +32040,6 @@ xref: MA:0000311
 xref: ncithesaurus:Cervical_Vertebra
 xref: XAO:0003076
 is_a: UBERON:0002412 ! vertebra
-is_a: UBERON:0003458 ! implied link automatically realized ! neck bone
 is_a: UBERON:0003568 ! implied link automatically realized ! neck connective tissue
 relationship: part_of UBERON:0000974 ! neck
 
@@ -32093,8 +32126,8 @@ relationship: part_of UBERON:0002100 ! trunk
 id: UBERON:0002418
 name: cartilage
 alt_id: UBERON:MA_0000104-MIAA_0000189-XAO_0000170
-def: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA].  an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes (Plate 4) separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." [FMA:37377, GO:0051216, Wikipedia:Cartilage]
-comment: see also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage
+def: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA].  an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." [FMA:37377, GO:0051216, Wikipedia:Cartilage]
+comment: see also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage. // elements made from cartilage, cartilage-like, or chondroid tissues evolved in invertebrates[H&W]
 subset: uberon_slim
 xref: AAO:0000060
 xref: BTO:0000206
@@ -32113,6 +32146,7 @@ xref: XAO:0000170
 xref: ZFA:0001501
 is_a: UBERON:0002384 ! connective tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004755 ! skeletal tissue
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 
 [Term]
@@ -32248,7 +32282,6 @@ synonym: "visceral pericardium" EXACT []
 xref: FMA:84882
 xref: HOG:0000538
 xref: MA:0000484
-xref: synonym:epicardium
 is_a: UBERON:0002357 ! serous pericardium
 relationship: attached_to UBERON:0002349 ! myocardium
 
@@ -32452,6 +32485,7 @@ xref: FMA:236871
 xref: MA:0000914
 xref: NIF_GrossAnatomy:birnlex_1748
 is_a: UBERON:0002619 ! regional part of cerebral cortex
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002021 ! occipital lobe
 
 [Term]
@@ -33125,7 +33159,6 @@ xref: HOG:0001153
 xref: MA:0002773
 xref: ZFA:0000253
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0003457 ! implied link automatically realized ! head bone
 is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0001677 ! sphenoid bone
 
@@ -33162,20 +33195,26 @@ relationship: part_of UBERON:0001926 ! lateral geniculate body
 id: UBERON:0002481
 name: bone tissue
 alt_id: UBERON:MA_0002780-FMA_224804
-def: "." [Wikipedia:Bone_tissue]
+def: "The major structural and supportive connective tissue of the body. Osseous tissue forms the rigid part of the bone organs that make up the skeletal system." [Wikipedia:Bone_tissue]
 subset: uberon_slim
+synonym: "calcium tissue" EXACT []
+synonym: "osseous tissue" EXACT []
 xref: FMA:224804
 xref: galen:BoneTissue
 xref: MA:0002780
 xref: ncithesaurus:Bone_Tissue
 is_a: UBERON:0002384 ! connective tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004755 ! skeletal tissue
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0001474 ! bone
 
 [Term]
 id: UBERON:0002482
 name: lamellar bone
 alt_id: UBERON:MA_0002781-FMA_224806
+def: "Bone tissue that has a regular parallel alignment of collagen into sheets (lamellae) and is mechanically strong." [Wikipedia:Bone#Woven_or_lamellar]
+comment: histological classification, lamellar vs woven. Note that only FMA has woven
 xref: FMA:224806
 xref: galen:LamellarBone
 xref: MA:0002781
@@ -33183,17 +33222,24 @@ is_a: UBERON:0002481 ! bone tissue
 
 [Term]
 id: UBERON:0002483
-name: trabecular bone
+name: trabecular bone tissue
 alt_id: UBERON:MA_0002782-FMA_24019
 def: "Cancellous bone, synonymous with trabecular bone or spongy bone, is one of the two types of osseous tissue that form bones. Compared to compact bone, which is the other type of osseous tissue, it has a higher surface area but is less dense, softer, weaker, and less stiff. It typically occupies the interior region of bones. Cancellous bone is highly vascular and frequently contains red bone marrow where hematopoiesis, which is the production of blood cells, occurs. The primary anatomical and functional unit of cancellous bone is the trabecula. Its Latin name is substantia spongiosa or substantia spongiosa ossium. The words cancellous and trabecular refer to the tiny, lattice-shaped that form the tissue. [WP,unvetted]." [Wikipedia:Trabecular_bone]
+comment: one of the two types of osseous tissue that form bones. Compared to compact bone, which is the other type of osseous tissue, it has a higher surface area but is less dense, softer, weaker, and less stiff. It typically occurs at the ends of long bones, proximal to joints and within the interior of vertebrae. Cancellous bone is highly vascular  and frequently contains red bone marrow where hematopoiesis, which is the production of blood cells, occurs. The primary anatomical and functional unit of cancellous bone is the trabecula.
 subset: uberon_slim
-synonym: "cancellous bone" RELATED [MA:0002782]
+synonym: "cancellous bone" EXACT [FMA:24019, MA:0002782]
+synonym: "cancellous bone tissue" EXACT []
 synonym: "spongy bone" EXACT []
-synonym: "trabecular bone tissue" EXACT []
+synonym: "spongy bone tissue" EXACT []
+synonym: "substantia spongiosa" EXACT [Wikipedia:Trabecular_bone]
+synonym: "substantia spongiosa ossium" EXACT [Wikipedia:Trabecular_bone]
+synonym: "trabecular bone" EXACT []
 xref: BTO:0001700
 xref: FMA:24019
 xref: MA:0002782
 is_a: UBERON:0002481 ! bone tissue
+disjoint_from: UBERON:0001439 ! compact bone
+relationship: part_of UBERON:0002482 ! lamellar bone
 
 [Term]
 id: UBERON:0002484
@@ -33609,25 +33655,27 @@ relationship: part_of UBERON:0000992 ! ovary
 id: UBERON:0002513
 name: endochondral bone
 alt_id: UBERON:MA_0002836-ZFA_0001591
-def: "Replacement bone that forms within cartilage[TAO]. Endochondral ossification is the formation of bone by the replacement of cartilage tissue with mineralized bone[GO]. cartilage is present during endochondral ossification. It is also an essential process during the rudimentary formation of long bones,  the growth of the length of long bones,  and the natural healing of bone fractures[WP]." [Wikipedia:Endochondral_bone]
+def: "Replacement bone tissue that forms within cartilage[TAO]. Endochondral ossification is the formation of bone by the replacement of cartilage tissue with mineralized bone[GO]. cartilage is present during endochondral ossification. It is also an essential process during the rudimentary formation of long bones,  the growth of the length of long bones,  and the natural healing of bone fractures[WP]." [GO:0001958, Wikipedia:Endochondral_bone]
 comment: we make the strong assertion that this is disjoint from IM bone. Some bones may be a mixture, in this case we would create a new mixed IM/EC bone class.
 subset: uberon_slim
 xref: BTO:0002157
 xref: MA:0002836
 xref: ZFA:0001591
-is_a: UBERON:0001474 ! bone
 is_a: UBERON:0002481 ! bone tissue
 disjoint_from: UBERON:0002514 ! intramembranous bone
+relationship: output_of GO:0001958
+relationship: replaces UBERON:0002418 ! cartilage
 
 [Term]
 id: UBERON:0002514
 name: intramembranous bone
 alt_id: UBERON:MA_0002837-ZFA_0001635
-def: "Bone that forms directly within mesenchyme, and does not replace other tissues[TAO]. Intramembranous ossification is the formation of bone in which osteoblasts secrete a collagen-proteoglycan matrix that binds calcium salts and becomes calcified[GO]. Intramembranous ossification is the way flat bones and the shell of a turtle are formed[GO]. Unlike endochondral ossification, cartilage is not present during intramembranous ossification[WP]." [Wikipedia:Intramembranous_ossification]
+def: "Bone tissue that forms directly within mesenchyme, and does not replace other tissues[TAO]. Intramembranous ossification is the formation of bone in which osteoblasts secrete a collagen-proteoglycan matrix that binds calcium salts and becomes calcified[GO]. Intramembranous ossification is the way flat bones and the shell of a turtle are formed[GO]. Unlike endochondral ossification, cartilage is not present during intramembranous ossification[WP]." [GO:0001957, Wikipedia:Intramembranous_ossification]
 xref: MA:0002837
 xref: ZFA:0001635
-is_a: UBERON:0001474 ! bone
+is_a: UBERON:0002481 ! bone tissue
 relationship: develops_from UBERON:0003104 ! mesenchyme
+relationship: output_of GO:0001957
 
 [Term]
 id: UBERON:0002515
@@ -33651,9 +33699,13 @@ alt_id: UBERON:MA_0002839-FMA_75427
 def: "a hyaline cartilage plate in the metaphysis at each end of a long bone. The plate is found in children and adolescents; in adults, who have stopped growing, the plate is replaced by an epiphyseal line." [Wikipedia:Epiphyseal_plate]
 subset: uberon_slim
 synonym: "epiphyseal cartilage" RELATED []
+synonym: "epiphyseal growth plate" EXACT []
 synonym: "epiphyseal growth plate cartilage" EXACT []
 synonym: "growth plate" RELATED [MA:0002839]
+synonym: "long bone epiphyseal plate" RELATED [MA:0002839]
+xref: BTO:0000412
 xref: FMA:75427
+xref: GAID:191
 xref: MA:0002839
 is_a: UBERON:0001994 ! hyaline cartilage
 is_a: UBERON:0003587 ! implied link automatically realized ! limb connective tissue
@@ -39774,6 +39826,7 @@ xref: FMA:61904
 xref: NIF_GrossAnatomy:birnlex_740
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0002619 ! implied link automatically realized ! regional part of cerebral cortex
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002021 ! occipital lobe
 
 [Term]
@@ -39917,6 +39970,7 @@ xref: FMA:61901
 xref: NIF_GrossAnatomy:birnlex_758
 is_a: UBERON:0000200 ! gyrus
 is_a: UBERON:0002619 ! implied link automatically realized ! regional part of cerebral cortex
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002021 ! occipital lobe
 
 [Term]
@@ -41605,15 +41659,27 @@ relationship: part_of UBERON:0002390 ! hematopoietic system
 
 [Term]
 id: UBERON:0003062
-name: dorsal marginal zone
+name: primitive knot
 alt_id: UBERON:XAO_0000072-ZFA_0000071
-def: "." [Wikipedia:Regional_specification#Dorsal.2Fventral_axis_.26_organizer]
-comment: This class was created automatically from a combination of ontologies
+def: "organizer for gastrulation in vertebrates. The primitive knot starts as a regional knot of cells that forms on the blastodisc immediately anterior to where the outer layer of cells will begin to migrate inwards - an area known as the primitive streak. Posterior to the node is the primitive pit, where the cells of the epiblast  (the upper layer of embryonic cells) initially begin to invaginate. This invagination expands posteriorly into the primitive groove as the cells layers continue to move into the space between the embryonic cells and the yolk. This differentiates the embryo into the germ layers - endoderm, mesoderm, and ectoderm. The primitive knot migrates posteriorly as gastrulation proceeds, eventually being absorbed into the tail bud.[WP]." [Wikipedia:Primitive_knot, Wikipedia:Regional_specification#Dorsal.2Fventral_axis_.26_organizer]
+comment: TODO check XAO
 subset: uberon_slim
+synonym: "dorsal marginal zone" RELATED [XAO:0000072]
+synonym: "embryo organizer" EXACT [GAID:1312]
+synonym: "embryonic organizer" EXACT [GAID:1312]
+synonym: "Hensen node" EXACT SENSU [GAID:1312, Wikipedia:Primitive_knot]
+synonym: "Hensen's node" EXACT SENSU [GAID:1312, Wikipedia:Primitive_knot]
 synonym: "organizer" RELATED []
+synonym: "primitive node" EXACT [Wikipedia:Primitive_knot]
 synonym: "shield" EXACT []
-synonym: "Spemann Mangold organizer" RELATED []
-synonym: "Spemann's organizer" RELATED []
+synonym: "Spemann Mangold organizer" EXACT SENSU []
+synonym: "Spemann organizer" EXACT SENSU []
+synonym: "Spemann's organizer" EXACT SENSU []
+synonym: "Spemanns organizer" EXACT SENSU []
+xref: AAO:0000346
+xref: BILA:0000053
+xref: BTO:0003395
+xref: GAID:1312
 xref: TAO:0000071
 xref: XAO:0000072
 xref: ZFA:0000071
@@ -42574,6 +42640,7 @@ synonym: "cranial vault" RELATED [ZFA:0000189]
 xref: XAO:0003175
 xref: ZFA:0000189
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0002241 ! chondrocranium
 
@@ -42584,6 +42651,7 @@ alt_id: UBERON:ZFA_0000290-XAO_0003174
 xref: XAO:0003174
 xref: ZFA:0000290
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0002241 ! chondrocranium
 
@@ -42595,6 +42663,7 @@ synonym: "ethmoid region" EXACT [ZFA:0000351]
 xref: XAO:0003172
 xref: ZFA:0000351
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0002241 ! chondrocranium
 
@@ -42852,6 +42921,7 @@ xref: MIAA:0000340
 xref: NIF_GrossAnatomy:birnlex_1230
 xref: OpenCyc:Mx4rvVlEyJwpEbGdrcN5Y29ycA
 xref: TAO:0000737
+xref: XAO:0003075
 xref: ZFA:0000737
 is_a: UBERON:0000032 ! cranial structure
 relationship: part_of UBERON:0000033 ! head
@@ -42876,6 +42946,7 @@ xref: OpenCyc:Mx4rvVjOsZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000032 ! cranial structure
 relationship: has_part UBERON:0001684 ! mandible
 relationship: has_part UBERON:0003128 ! cranium
+relationship: part_of UBERON:0004288 ! skeleton
 
 [Term]
 id: UBERON:0003130
@@ -43108,7 +43179,6 @@ name: foramen
 alt_id: UBERON:FBbt_00004478-HAO_0000345
 xref: FBbt:00004478
 xref: HAO:0000345
-xref: synonym:ostium
 is_a: UBERON:0000464 ! anatomical space
 
 [Term]
@@ -43755,7 +43825,8 @@ is_a: UBERON:0003037 ! septum
 [Term]
 id: UBERON:0003220
 name: metanephric blastema
-def: "one of the two embryological structures that give rise to the kidney (the other is the ureteric bud). The metanephric blastema mostly develops into nephrons, but can also form parts of the collecting duct system.[WP]" [Wikipedia:Metanephric_blastema]
+def: "one of the two embryological structures that give rise to the kidney (the other is the ureteric bud). The metanephric blastema mostly develops into nephrons, but can also form parts of the collecting duct system.[WP]. Metanephric mesenchyme is the tissue made up of loosely connected mesenchymal cells in the metanephros[GO]" [GO:0072075, Wikipedia:Metanephric_blastema]
+comment: TODO - split?
 synonym: "metanephric mesenchyme" EXACT [Wikipedia:Metanephric_blastema]
 synonym: "metanephric mesoderm" EXACT [Wikipedia:Metanephric_blastema]
 xref: EHDAA:4041
@@ -48380,7 +48451,7 @@ xref: MA:0002254
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 intersection_of: UBERON:0001638 ! vein
-intersection_of: part_of UBERON:0002483 ! trabecular bone
+intersection_of: part_of UBERON:0002483 ! trabecular bone tissue
 
 [Term]
 id: UBERON:0003483
@@ -48638,6 +48709,7 @@ synonym: "blood vessel of inner layer of eyeball" EXACT [OBOL:automatic]
 synonym: "blood vessel of retina" EXACT [OBOL:automatic]
 synonym: "blood vessel of tunica interna of eyeball" EXACT [OBOL:automatic]
 synonym: "inner layer of eyeball blood vessel" EXACT [OBOL:automatic]
+synonym: "retinal blood vessel" EXACT [OBOL:automatic]
 synonym: "tunica interna of eyeball blood vessel" EXACT [OBOL:automatic]
 xref: MA:0001317
 is_a: UBERON:0001981 ! implied link automatically realized ! blood vessel
@@ -51622,12 +51694,12 @@ relationship: constitutional_part_of UBERON:0001485 ! knee joint
 id: UBERON:0003672
 name: dentition
 synonym: "dental plate" RELATED []
-synonym: "dentition" BROAD []
 synonym: "pharyngeal teeth" RELATED []
 synonym: "set of teeth" EXACT [FMA:75150]
 synonym: "teeth" EXACT [FMA:75150]
 synonym: "teeth" RELATED []
 synonym: "teeth set" EXACT [FMA:75150]
+xref: AAO:0000126
 xref: FMA:75150
 xref: GAID:1249
 xref: ncithesaurus:Dentition
@@ -51835,6 +51907,7 @@ name: sacrum
 def: "The sacrum is a large, triangular bone at the base of the spine and at the upper and back part of the pelvic cavity, where it is inserted like a wedge between the two hip bones. Its upper part connects with the last lumbar vertebra, and bottom part with the coccyx (tailbone). In children, it consists of usually five unfused vertebrae which begin to fuse between ages 16-18 and are usually completely fused into a single bone by age 26. It is curved upon itself and placed obliquely (that is, tilted forward). It is kyphotic — that is, concave facing forwards. The base projects forward as the sacral promontory internally, and articulates with the last lumbar vertebra to form the prominent sacrovertebral angle. The central part is curved outward towards the posterior, allowing greater room for the pelvic cavity. [WP,unvetted]." [Wikipedia:Sacrum]
 synonym: "sacral bone" EXACT [FMA:16202]
 synonym: "sacrum [sacral vertebrae I-V]" EXACT [FMA:16202]
+xref: AAO:0000552
 xref: FMA:16202
 xref: GAID:241
 xref: galen:Sacrum
@@ -52875,7 +52948,6 @@ xref: MA:0001453
 xref: OpenCyc:Mx4rwKYHvZwpEbGdrcN5Y29ycA
 xref: ZFA:0001066
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0004247 ! implied link automatically realized ! back bone
 is_a: UBERON:0004267 ! implied link automatically realized ! back connective tissue
 relationship: part_of UBERON:0002412 ! vertebra
 
@@ -54440,6 +54512,7 @@ name: baroreceptor
 def: "the sensory nerve endings in the wall of the atria of the heart, vena cava, aortic arch and carotid sinus that are sensitive to changes in blood pressure" [MP:0004118]
 xref: FMA:85601
 is_a: UBERON:0000061 ! anatomical structure
+relationship: capable_of GO:0003073
 
 [Term]
 id: UBERON:0004020
@@ -55443,11 +55516,10 @@ is_a: UBERON:0004125 ! myocardial compact layer
 id: UBERON:0004128
 name: optic vesicle
 def: "The optic vesicle is the evagination of neurectoderm that precedes formation of the optic cup[GO]. Portion of tissue that is comprised of neuroepitheium which has pinched off from the anterior neural keel and will form the optic cup[ZFA]." [GO:0003404, Wikipedia:Optic_vesicles]
+synonym: "evagination" RELATED []
 synonym: "optic vesicle" RELATED []
 xref: EMAPA:16540
 xref: HOG:0000165
-xref: ncithesaurus:Optic_Vesicle
-xref: synonym:evagination
 xref: XAO:0000228
 xref: ZFA:0000050
 is_a: UBERON:0000061 ! anatomical structure
@@ -55458,8 +55530,8 @@ relationship: develops_from UBERON:0003071 ! eye primordium
 id: UBERON:0004129
 name: growth plate cartilage
 def: "cartilage that will provide a scaffold for mineralization of endochondral bones as they elongate or grow." [GO:0003417]
+comment: merge with epiphyseal plate?
 synonym: "growth plate" RELATED []
-xref: GAID:191
 is_a: UBERON:0002418 ! cartilage
 relationship: surrounds UBERON:0002513 ! endochondral bone
 
@@ -55541,7 +55613,6 @@ comment: TODO - check plate vs rudiment
 synonym: "heart rudiment" RELATED []
 xref: EMAPA:16106
 xref: HOG:0000975
-xref: synonym:myocardial_plate
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0004291 ! heart rudiment
@@ -56034,10 +56105,15 @@ is_a: UBERON:0002530 ! gland
 id: UBERON:0004188
 name: glomerular epithelium
 def: "The glomerular epithelium is an epithelial tissue that covers the outer surfaces of the glomerulus" [GO:0072010]
+synonym: "epithelium of glomerulus" EXACT []
+synonym: "epithelium of kidney glomerulus" EXACT []
+synonym: "epithelium of renal glomerulus" EXACT []
+synonym: "kidney glomerular epithelium" EXACT [MA:0002847]
 xref: BTO:0001515
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0000074 ! renal glomerulus
+xref: MA:0002847
+is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000074 ! renal glomerulus
 
 [Term]
 id: UBERON:0004189
@@ -56046,7 +56122,7 @@ def: "The glomerular endothelium is an epithelial tissue that covers the interna
 synonym: "endothelium of renal glomerulus" EXACT [OBOL:automatic]
 synonym: "renal glomerulus endothelium" EXACT [OBOL:automatic]
 is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
-is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
+is_a: UBERON:0004188 ! implied link automatically realized ! glomerular epithelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0000074 ! renal glomerulus
 
@@ -56179,6 +56255,7 @@ name: cortical collecting duct
 def: " The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex" [GO:0072059]
 xref: EMAPA:28130
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
 
 [Term]
@@ -56187,6 +56264,7 @@ name: outer medullary collecting duct
 def: " The outer medullary collecting duct is the portion of the collecting duct that lies in the renal outer medulla" [GO:0072060]
 xref: EMAPA:28346
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
 
 [Term]
@@ -56195,6 +56273,7 @@ name: inner medullary collecting duct
 def: " The inner medullary collecting duct is the portion of the collecting duct that lies in the renal inner medulla" [GO:0072061]
 xref: EMAPA:28370
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
 
 [Term]
@@ -56232,14 +56311,6 @@ xref: EMAPA:27829
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000483 ! epithelium
-relationship: part_of UBERON:0001285 ! nephron
-
-[Term]
-id: UBERON:0004210
-name: nephron tubule
-def: "A nephron tubule is an epithelial tube that is part of the nephron, the functional part of the kidney" [GO:0072078]
-is_a: UBERON:0003914 ! epithelial tube
-is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
 relationship: part_of UBERON:0001285 ! nephron
 
 [Term]
@@ -58921,6 +58992,7 @@ def: "the upper domelike portion of the skull" [MP:0000076]
 comment: calvaria part_of neurocranium in FMA, but no definition. MP class now merged. FMA neurocranium probably corresponds to cranium
 xref: FMA:52800
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
@@ -59074,7 +59146,7 @@ id: UBERON:0004357
 name: limb/fin bud
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0003102 ! surface structure
-relationship: develops_into UBERON:0000026 ! appendage
+relationship: develops_into UBERON:0004708 ! limb/fin
 
 [Term]
 id: UBERON:0004358
@@ -61221,8 +61293,8 @@ synonym: "otic capsule" EXACT [ZFA:0001500]
 synonym: "periotic capsule" RELATED [MA:0000252]
 xref: MA:0000252
 xref: ZFA:0001500
-is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 is_a: UBERON:0003932 ! chondrocranium cartilage
+is_a: UBERON:0003933 ! implied link automatically realized ! cranial cartilage
 relationship: existence_ends_during UBERON:0000113 ! post-juvenile adult stage
 relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0001846 ! internal ear
@@ -62236,6 +62308,304 @@ xref: XAO:0000092
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0004734 ! gastrula
 
+[Term]
+id: UBERON:0004736
+name: metanephric glomerulus
+def: "glomerulus of the mature vertebrate kidney, or metanephros." [GO:0072224]
+synonym: "glomerulus of metanephros" EXACT []
+is_a: UBERON:0000074 ! implied link automatically realized ! renal glomerulus
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0004737
+name: metanephric collecting duct
+synonym: "collecting duct of metanephros" EXACT []
+is_a: UBERON:0001232 ! implied link automatically realized ! collecting duct of renal tubule
+intersection_of: UBERON:0001232 ! collecting duct of renal tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0004738
+name: metanephric juxtaglomerular apparatus
+def: "juxtaglomerular apparatus of the mature vertebrate kidney, or metanephros." [GO:0072206]
+synonym: "juxtaglomerular apparatus of metanephros" EXACT []
+is_a: UBERON:0002303 ! implied link automatically realized ! juxtaglomerular apparatus
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0002303 ! juxtaglomerular apparatus
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0004739
+name: pronephric glomerulus
+def: "glomerulus of the pronephros." [OBOL:automatic]
+synonym: "glomerulus of pronephros" EXACT []
+xref: ZFA:0001557
+is_a: UBERON:0000074 ! implied link automatically realized ! renal glomerulus
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: part_of UBERON:0002120 ! pronephros
+
+[Term]
+id: UBERON:0004740
+name: basibranchial
+def: "Median elements that are ossified within copulae and are not assigned to a specific branchial arch number. They articulate posterolaterally with the hypobranchials." [ZFA:0000170]
+synonym: "basibranchials" EXACT [ZFA:0000170]
+synonym: "copula I" RELATED [AAO:0000686]
+xref: AAO:0000686
+xref: ZFA:0000170
+is_a: UBERON:0002513 ! endochondral bone
+
+[Term]
+id: UBERON:0004741
+name: cleithrum
+def: "Transversely oriented bone connecting the occipital region of the skull dorsally and pectoral girdle ventrally; appears near the end of embryogenesis." [ZFA:0000184]
+synonym: "cleithra" EXACT [ZFA:0000184]
+xref: AAO:0000750
+xref: ZFA:0000184
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0003572 ! implied link automatically realized ! chest connective tissue
+is_a: UBERON:0003588 ! implied link automatically realized ! forelimb connective tissue
+relationship: part_of UBERON:0001421 ! pectoral girdle
+
+[Term]
+id: UBERON:0004742
+name: dentary
+def: "Dermal bone that forms the antero-lateral part of the lower jaw. It first appears around the anterior end of Meckel's cartilage (5.1 mm NL). In the adult, the dentary meets its counterpart anteriorly at the mandibular symphysis. The dentary abuts the retroarticular posteriorly, and it surround the anguloarticular. The dentary is connected to the maxilla by the maxillo-mandibular ligament. Dentary teeth are absent in cypriniforms, but are present in other ostariophysans." [ZFA:0000191]
+synonym: "dentale" RELATED [AAO:0000124]
+synonym: "dentary bone" EXACT [ZFA:0000191]
+synonym: "os dentale" RELATED [AAO:0000124]
+synonym: "sur-angulaire" RELATED [AAO:0000124]
+xref: AAO:0000124
+xref: ZFA:0000191
+is_a: UBERON:0002514 ! intramembranous bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
+relationship: part_of UBERON:0001710 ! lower jaw
+relationship: part_of UBERON:0003113 ! dermal bone cranium
+
+[Term]
+id: UBERON:0004743
+name: coracoid
+def: "Endochondral bone of the pectoral girdle that develops from the scapulocoracoid cartilage and occupies the ventral part of the pectoral girdle. The coracoid is a paired bone that articulates approximately dorsally with the cleithrum, scapula and mesocoracoid." [ZFA:0000332]
+synonym: "clavicula" RELATED [AAO:0000764]
+synonym: "clavicula posterior" RELATED [AAO:0000764]
+synonym: "clavicula vera" RELATED [AAO:0000764]
+synonym: "coracoideum" RELATED [AAO:0000764]
+synonym: "coracoidien" RELATED [AAO:0000764]
+synonym: "coracoids" EXACT [ZFA:0000332]
+synonym: "pars sternalis scapulae" RELATED [AAO:0000764]
+synonym: "scapulocoracoid" RELATED [ZFA:0000332]
+xref: AAO:0000764
+xref: ZFA:0000332
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0003572 ! implied link automatically realized ! chest connective tissue
+is_a: UBERON:0003588 ! implied link automatically realized ! forelimb connective tissue
+relationship: part_of UBERON:0001421 ! pectoral girdle
+
+[Term]
+id: UBERON:0004744
+name: anguloarticular
+def: "The anguloarticular is a compound bone that results of the fusion of the dermal angular and the cartilaginous articular and forms the posterior part of the lower jaw. The dermal part ossifies initially on the posterolateral surface of Meckel's cartilage near the articulation with the quadrate (5.5 mm NL). A posterior process forms, creating a synovial joint with the quadrate." [ZFA:0000467]
+synonym: "angulaire" RELATED [AAO:0000028]
+synonym: "angulare" RELATED [AAO:0000028]
+synonym: "articular" EXACT [ZFA:0000467]
+synonym: "dermarticulare" RELATED [AAO:0000028]
+synonym: "goniale" RELATED [AAO:0000028]
+synonym: "operculo angulaire" RELATED [AAO:0000028]
+xref: AAO:0000028
+xref: ZFA:0000467
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
+relationship: develops_from UBERON:0001086 ! articular cartilage
+relationship: part_of UBERON:0001710 ! lower jaw
+relationship: part_of UBERON:0003113 ! dermal bone cranium
+
+[Term]
+id: UBERON:0004745
+name: parasphenoid
+def: "Long, unpaired median dermal bone that runs almost the entire length of the cranium. Contacts the prevomer anteriorly, and the prootic and basioccipital posteriorly. Anteriorly the parasphenoid is a long, thin bone that widens abruptly at the point of contact with the prootic." [ZFA:0000561]
+synonym: "keilbein" RELATED [AAO:0000385]
+synonym: "os parasphenoidale" RELATED [AAO:0000385]
+synonym: "os sphenoideum" RELATED [AAO:0000385]
+synonym: "parabasale" RELATED [AAO:0000385]
+xref: AAO:0000385
+xref: ZFA:0000561
+is_a: UBERON:0002514 ! intramembranous bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
+relationship: part_of UBERON:0001697 ! orbit
+relationship: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0003111 ! sphenoid region
+relationship: part_of UBERON:0003112 ! olfactory region
+relationship: part_of UBERON:0003113 ! dermal bone cranium
+
+[Term]
+id: UBERON:0004746
+name: prootic
+def: "Paired cartilage bone that contacts the pterosphenoid anteriorly, the sphenotic and the pterotic dorsally, and the epiotic and basioccipital posteriorly. The parasphenoid covers the ventral region of each prootic, the upper edge of which contributes to the hyomandibular facet. Bear foramina that accommodate branches of the trigeminal and facial nerves." [ZFA:0000575]
+synonym: "prootics" EXACT [ZFA:0000575]
+xref: AAO:0000514
+xref: ZFA:0000575
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
+relationship: develops_from UBERON:0004637 ! otic capsule
+relationship: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0002241 ! chondrocranium
+relationship: part_of UBERON:0003110 ! otic region
+
+[Term]
+id: UBERON:0004747
+name: supraoccipital
+def: "Large shield-shaped unpaired median cartilage bone that contact the parietal anteriorly, and the exocciptial and epiotic laterally. Forms the posterodorsal most point of the cranium. The supraoccipital usually bears a crest that extends posterodorsally." [ZFA:0000595]
+xref: AAO:0000588
+xref: ZFA:0000595
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0002619 ! implied link automatically realized ! regional part of cerebral cortex
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
+relationship: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0002021 ! occipital lobe
+relationship: part_of UBERON:0002241 ! chondrocranium
+
+[Term]
+id: UBERON:0004748
+name: autopalatine
+def: "The cartilaginous autopalatine forms from the anterior palatoquadrate arch. The first sign of ossification is visible at the anterior tip where it articulates with the maxilla (7.6 mm). In adults there are three processes at the anterior portion of the palatine: a ventromedial process, which forms the socket of the small ball- and- socket joint with the preethmoid; a dorsomedial process, which is connected by a short ligament to the ethmoid; and a lateral process, which extends toward the first infraorbital. Possession of a dorsomedial process, which abuts the ethmoid, is a unique feature shared by Cypriniformes (Fink and Fink, 1981). The palatine has two components, the autopalatine (derived from pars autopalatine) and the dermal component having teeth, the dermopalatine Arratia & Schultze 1990. The element in cypriniforms is only the cartilage part, so that it is more correct to name it autopalatine and not as palatine in general that it implies a fusion of elements (as in perciforms)." [ZFA:0000620]
+synonym: "neopalatine" BROAD [AAO:0000372]
+synonym: "palatine" EXACT [ZFA:0000620]
+xref: AAO:0000372
+xref: ZFA:0000620
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
+relationship: part_of UBERON:0001709 ! upper jaw
+
+[Term]
+id: UBERON:0004749
+name: blastodisc
+def: "a small, circular, white spot (approximately 2-3 mm across) on the surface of the yellow yolk of an egg that has been laid. The nucleus of the egg is in the germinal disc." [Wikipedia:Germinal_disc]
+synonym: "germinal disc" EXACT [Wikipedia:Germinal_disc]
+xref: AAO:0000043
+xref: ZFA:0001175
+is_a: UBERON:0002050 ! embryonic structure
+relationship: start UBERON:0000106 ! zygote stage
+
+[Term]
+id: UBERON:0004750
+name: blastoderm
+def: "A layer of cells formed at one pole of macrolecithal eggs such as the yolky egg of birds. The yolk prevents the division from taking place through the egg, resulting in meroblastic cleavage during the many cleavage divisions. At the animal pole (containing less yolk than the vegetal pole), the zygote divides and subdivides, forming the blastoderm, which gradually spreads around the yolk and forms the embryo. The blastoderm is composed of two layers, the epiblast  and the hypoblast, which enclose the fluid-filled blastocoel cavity." [Wikipedia:Blastoderm]
+xref: AAO:0000042
+xref: ZFA:0001176
+is_a: UBERON:0002050 ! embryonic structure
+relationship: has_part UBERON:0000089 ! hypoblast
+relationship: has_part UBERON:0002532 ! epiblast
+
+[Term]
+id: UBERON:0004751
+name: hypohyal bone
+def: "Hypohyals are the most anterior of the bilaterally paired ventral hyoid arch elements. The two hypohyals in zebrafish ossify at the anterodorsal and anteroventral tips of the ceratohyal cartilages; no separate hypohyal cartilages are present." [ZFA:0001381]
+xref: AAO:0000958
+xref: ZFA:0001381
+is_a: UBERON:0002513 ! endochondral bone
+
+[Term]
+id: UBERON:0004752
+name: palatoquadrate cartilage
+synonym: "dorsal mandibular cartilage" EXACT [ZFA:0001399]
+synonym: "pterygoquadrate" EXACT [ZFA:0001399]
+synonym: "quadrate cartilage" EXACT [ZFA:0001399]
+xref: AAO:0000524
+xref: ZFA:0001399
+is_a: UBERON:0003933 ! cranial cartilage
+relationship: part_of UBERON:0001709 ! upper jaw
+relationship: part_of UBERON:0003108 ! suspensorium
+
+[Term]
+id: UBERON:0004753
+name: scapulocoracoid
+def: "The cartilage from which both the scapula and coracoid develop." [ZFA:0001455]
+synonym: "coraco-scapular cartilage" EXACT [ZFA:0001455]
+xref: AAO:0000781
+xref: ZFA:0001455
+is_a: UBERON:0002418 ! cartilage
+is_a: UBERON:0003572 ! implied link automatically realized ! chest connective tissue
+is_a: UBERON:0003588 ! implied link automatically realized ! forelimb connective tissue
+relationship: part_of UBERON:0001421 ! pectoral girdle
+
+[Term]
+id: UBERON:0004754
+name: foramen ovale of heart
+def: "In the fetal heart, the foramen ovale (also ostium secundum of Born or falx septi) allows blood to enter the left atrium from the right atrium. It is one of two fetal cardiac shunts, the other being the ductus arteriosus (which allows blood that still escapes to the right ventricle to bypass the pulmonary circulation). Another similar adaptation in the fetus is the ductus venosus. In most individuals, the foramen ovale (pronounced /fɒˈreɪmən oʊˈvɑːli/) closes at birth. It later forms the fossa ovalis[WP]." [Wikipedia:Foramen_ovale_(heart)]
+synonym: "Bottalo's foramen" EXACT [FMA:86043]
+synonym: "falx septi" EXACT [Wikipedia:Foramen_ovale_(heart)]
+synonym: "foramen ovale" NARROW [galen:ForamenOvale, MA:0001873]
+synonym: "foramen ovale cordis" EXACT [galen:ForamenOvaleCordis]
+synonym: "ostium secundum of Born" EXACT [Wikipedia:Foramen_ovale_(heart)]
+xref: FMA:86043
+xref: galen:ForamenOvale
+xref: galen:ForamenOvaleCordis
+xref: MA:0001873
+is_a: UBERON:0000464 ! anatomical space
+relationship: part_of UBERON:0002085 ! interatrial septum
+
+[Term]
+id: UBERON:0004755
+name: skeletal tissue
+comment: Four classes of mineralized tissues are found in vertebrates: bone, cartilage, dentine, and enamel. We think of cartilage and bone as skeletal tissues and of enamel and dentine as dental tissues, but enamel and dentine arose evolutionarily together with bone as skeletal tissues in the dermal skeleton (exoskeleton) of early vertebrates. Scales and teeth of sharks are examples of dermal skeletal elements that are still composed of the three ancient components-enamel, dentine, and bone. Cartilage, on the other hand, provided the basis for the second vertebrate skeletal system, the endoskeleton (Smith and Hall, 1990; Hall, 1998a,b). some invertebrate skeletal tissues have surprisingly bone-like features. Examples include chondrocytes interconnected by cell processes in cephalopod cartilages (Cole and Hall, 2004a,b), and the calcium phosphate layer in the shells of brachiopods (Rodland et al., 2003). However, neither bone nor mineralized cartilage have been found in invertebrates
+synonym: "mineralized tissue" EXACT []
+is_a: UBERON:0000479 ! portion of tissue
+
+[Term]
+id: UBERON:0004756
+name: dermal skeletal element
+def: "dermis-derived entity that is made of skeletal tissue." []
+is_a: UBERON:0000481 ! implied link automatically realized ! multi-tissue structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: develops_from UBERON:0002067 ! dermis
+intersection_of: has_part UBERON:0004755 ! skeletal tissue
+
+[Term]
+id: UBERON:0004757
+name: rectal gland
+def: "An evagination of the terminal portion of the intestine of Elasmobranchii. Function formerly thought to be related to digestion or excretion, but now considered to secrete high concentrations of excess sodium chloride. Found also in the coelacanth Latimeria chalumnae[BTO]." [BTO:0001157]
+comment: does not include FMA:15724 Rectal gland // epithelial tissue gland - concentrates & secretes excess Na & Cl in sharks. large shark liver produces copious amounts of urea, making the shark hyperosmotic to seawater, & thus a shark acts like a fresh water fish, constantly gaining water. Excess salts are concentrated by the rectal gland and secreted
+xref: BTO:0001157
+is_a: UBERON:0002530 ! gland
+is_a: UBERON:0003408 ! implied link automatically realized ! gland of gut
+is_a: UBERON:0004758 ! implied link automatically realized ! salt gland
+relationship: capable_of GO:0055078
+relationship: only_in_taxon NCBITaxon:7776
+relationship: part_of UBERON:0001052 ! rectum
+
+[Term]
+id: UBERON:0004758
+name: salt gland
+def: "an organ for excreting excess salts. It is found in elasmobranchs, seabirds, and some reptiles. In sharks, salt glands  are found in the rectum, but in birds and reptiles, they are found in or on the skull, in the area of the eyes, nostrils  or mouth. In crocodiles, the salt is excreted through the tongue. Such glands work by active transport via sodium-potassium pump  that moves salt from the blood into the gland, where it can be excreted as a concentrated solution. Salt glands function to keep salt balance, and allow marine vertebrates to drink seawater[WP]." [Wikipedia:Salt_gland]
+xref: GAID:1235
+is_a: UBERON:0002530 ! implied link automatically realized ! gland
+intersection_of: UBERON:0002530 ! gland
+intersection_of: capable_of GO:0055078
+
+[Term]
+id: UBERON:0004759
+name: salt gland of cranial region
+def: "A salt gland located in the cranium or cranial region." [OBOL:automatic]
+is_a: UBERON:0004758 ! implied link automatically realized ! salt gland
+intersection_of: UBERON:0002530 ! gland
+intersection_of: capable_of GO:0055078
+intersection_of: part_of UBERON:0003128 ! cranium
+
+[Term]
+id: UBERON:0004760
+name: gland of anal canal
+synonym: "anal gland" RELATED []
+synonym: "gland of anal canal" EXACT [OBOL:automatic]
+synonym: "gland of anus" RELATED []
+synonym: "rectal gland" RELATED []
+xref: FMA:15720
+xref: FMA:15724
+is_a: UBERON:0003408 ! implied link automatically realized ! gland of gut
+intersection_of: UBERON:0002530 ! gland
+intersection_of: part_of UBERON:0000159 ! anal canal
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -62479,6 +62849,10 @@ id: only_in_taxon
 name: only_in_taxon
 
 [Typedef]
+id: output_of
+name: output_of
+
+[Typedef]
 id: overlaps
 name: overlaps
 xref: ncithesaurus:Overlap
@@ -62518,6 +62892,10 @@ name: proximal_to
 [Typedef]
 id: regulates
 name: regulates
+
+[Typedef]
+id: replaces
+name: replaces
 
 [Typedef]
 id: secreted_by
