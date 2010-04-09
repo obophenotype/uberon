@@ -8948,7 +8948,7 @@ subset: uberon_slim
 synonym: "axillary node" EXACT []
 xref: FMA:12771 ! Axillary lymph node
 xref: MA:0000735 ! axillary lymph node
-is_a: UBERON:0000029 ! lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 relationship: part_of UBERON:0001467 ! shoulder
 xref: ncithesaurus:Axillary_Lymph_Node ! Axillary Lymph Node
 
@@ -16738,12 +16738,12 @@ xref: ncithesaurus:Medial_Plantar_Artery ! Medial Plantar Artery
 id: UBERON:0001542
 name: inguinal lymph node
 alt_id: UBERON:FMA_44226-MA_0000737
-def: "." [Wikipedia:Inguinal_lymph_node]
+def: "A lymph node in the inguinal region." [Wikipedia:Inguinal_lymph_node]
 comment: TODO - superficial/deep
 subset: uberon_slim
 xref: FMA:44226 ! Inguinal lymph node
 xref: MA:0000737 ! inguinal lymph node
-is_a: UBERON:0000029 ! lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 xref: ncithesaurus:Inguinal_Lymph_Node ! Inguinal Lymph Node
 
 [Term]
@@ -16755,7 +16755,7 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:44227 ! Popliteal lymph node
 xref: MA:0000738 ! popliteal lymph node
-is_a: UBERON:0000029 ! lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 xref: ncithesaurus:Popliteal_Lymph_Node ! Popliteal Lymph Node
 
 [Term]
@@ -32724,21 +32724,9 @@ subset: uberon_slim
 xref: FMA:61213 ! Lymph node of neck
 xref: MA:0000736 ! cervical lymph node
 is_a: UBERON:0000029 ! lymph node
-intersection_of: UBERON:0000029 ! lymph node
-intersection_of: part_of UBERON:0000002 ! cervix
+relationship: part_of UBERON:0000974 ! neck
 xref: ncithesaurus:Cervical_Lymph_Node ! Cervical Lymph Node
-synonym: "cervical canal lymph node" EXACT [OBOL:automatic]
-synonym: "cervical canal of uterus lymph node" EXACT [OBOL:automatic]
-synonym: "cervix lymph node" EXACT [OBOL:automatic]
-synonym: "cervix of uterus lymph node" EXACT [OBOL:automatic]
-synonym: "lymph node of cervical canal" EXACT [OBOL:automatic]
-synonym: "lymph node of cervical canal of uterus" EXACT [OBOL:automatic]
-synonym: "lymph node of cervix" EXACT [OBOL:automatic]
-synonym: "lymph node of cervix of uterus" EXACT [OBOL:automatic]
-synonym: "lymph node of neck of uterus" EXACT [OBOL:automatic]
-synonym: "lymph node of uterine cervix" EXACT [OBOL:automatic]
-synonym: "neck of uterus lymph node" EXACT [OBOL:automatic]
-synonym: "uterine cervix lymph node" EXACT [OBOL:automatic]
+synonym: "lymph node of neck" EXACT []
 
 [Term]
 id: UBERON:0002430
@@ -34081,7 +34069,7 @@ synonym: "submandibular node" EXACT []
 xref: BTO:0000769
 xref: FMA:61224 ! Submandibular lymph node
 xref: MA:0002843 ! submandibular lymph node
-is_a: UBERON:0000029 ! lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 
 [Term]
 id: UBERON:0002521
@@ -41871,7 +41859,15 @@ is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002541 ! germ ring
 xref: AAO:0000346 ! organizer
 
-
+[Term]
+id: UBERON:0004018
+name: primitive node
+def: "the regional thickening of cells at the rostral tip of the vertebrate primitive streak through which gastrulating cells migrate anteriorally to form tissues in the future head and neck; this region organizes the formation of the three embryonic layers and establishes the longitudinal axis and the polarity of the embryo" [MP:0004066]
+comment: TODO - merge with primitive knot
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0004341 ! primitive streak
+xref: EHDAA:549 ! primitive node
+xref: ncithesaurus:Primitive_Node ! Primitive Node
 
 [Term]
 id: UBERON:0003063
@@ -53324,11 +53320,10 @@ is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002097 ! skin of body
 
 [Term]
-id: UBERON:0003968
+id: UBERON:0003968 
 name: peripheral lymph node
 def: "the lymph nodes located outside the thoracic and abdominal cavities, such as the submandibular, prescapular, axillary, inguinal and popliteal lymph nodes" [MP:0008463]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000029 ! lymph node
+is_a: UBERON:0000029 ! lymph node
 
 [Term]
 id: UBERON:0003969
@@ -53750,16 +53745,6 @@ id: UBERON:0004017
 name: periocular mesenchyme
 def: "the mesenchymal cells that give rise to the corneal endothelium, corneal stroma, sclera, iris stroma, ciliary muscle, ciliary stroma, and trabecular meshwork of the eye" [MP:0004054]
 is_a: UBERON:0003104 ! mesenchyme
-
-[Term]
-id: UBERON:0004018
-name: primitive node
-def: "the regional thickening of cells at the rostral tip of the vertebrate primitive streak through which gastrulating cells migrate anteriorally to form tissues in the future head and neck; this region organizes the formation of the three embryonic layers and establishes the longitudinal axis and the polarity of the embryo" [MP:0004066]
-comment: TODO
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0004341 ! primitive streak
-xref: EHDAA:549 ! primitive node
-xref: ncithesaurus:Primitive_Node ! Primitive Node
 
 [Term]
 id: UBERON:0004019
@@ -60429,6 +60414,15 @@ synonym: "middle jugular nodes" RELATED [Wikipedia:Deep_cervical_lymph_nodes]
 synonym: "upper jugular nodes" RELATED [Wikipedia:Deep_cervical_lymph_nodes]
 xref: MA:0002885 ! deep cervical lymph node
 xref: Wikipedia:Deep_cervical_lymph_nodes ! deep cervical lymph nodes
+
+[Term]
+id: UBERON:0004870
+name: superficial cervical lymph nodes
+def: "A group of nodes lying along the external jugular vein; they drain the skin and superficial structures over the region of the sternocleidomastoid muscle and anterior cervical regions. Efferent vessels drain to the deep cervical lymph nodes. Lymph nodes can be further subdivided into anterior and lateral groupings." [ref:Stedmans, CL:tm]
+is_a: UBERON:0002429 ! cervical lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
+synonym: "prescapular lymph node" RELATED []
+xref: MA:0002885 ! deep cervical lymph node
 
 [Term]
 id: UBERON:0004723
