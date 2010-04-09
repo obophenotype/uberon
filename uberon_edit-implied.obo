@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 07:04:2010 20:03
+date: 08:04:2010 23:45
 subsetdef: uberon_slim "Uberon slim"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
@@ -555,6 +555,7 @@ xref: MA:0001858
 xref: ncithesaurus:Trachea_Lamina_Propria
 is_a: UBERON:0000030 ! lamina propria
 is_a: UBERON:0003571 ! implied link automatically realized ! trachea connective tissue
+is_a: UBERON:0004779 ! implied link automatically realized ! respiratory system lamina propria
 intersection_of: UBERON:0000030 ! lamina propria
 intersection_of: part_of UBERON:0001005 ! respiratory airway
 relationship: part_of UBERON:0001005 ! respiratory airway
@@ -564,6 +565,7 @@ id: UBERON:0000032
 name: cranial structure
 def: "skeletal element that is part of a cranium." [UBERON:automatic]
 subset: uberon_slim
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004765 ! implied link automatically realized ! skeletal element
 intersection_of: UBERON:0004765 ! skeletal element
 intersection_of: part_of UBERON:0003128 ! cranium
@@ -1172,9 +1174,12 @@ creation_date: 2009-06-18T09:26:37Z
 
 [Term]
 id: UBERON:0000075
-name: subdivision of skeleton
+name: subdivision of skeletal system
+synonym: "skeletal system part" RELATED []
 synonym: "skeleton part" RELATED []
+synonym: "subdivision of skeleton" RELATED []
 xref: FMA:23879
+xref: galen:ComplexSkeletalStructure
 is_a: UBERON:0000480 ! anatomical group
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001434 ! skeletal system
@@ -1642,6 +1647,7 @@ xref: BTO:0001653
 xref: MA:0001783
 is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002048 ! lung
 
@@ -2266,35 +2272,29 @@ creation_date: 2009-04-18T01:37:39Z
 id: UBERON:0000209
 name: tetrapod frontal bone
 alt_id: UBERON:FMA_9613-MA_0001469-ZFA_0000486
-def: "In humans: A bone resembling a cockleshell in two portions the squama frontalis, corresponding with the region of the forehead, and an orbital or horizontal portion, the pars orbitalis, which enters into the formation of the roofs of the orbital and nasal cavities. In teleost fish, where it is called the parietal bone: Paired dermal bone that covers the hind part of the cranium, overlapping the dorsal edge of the sphenotic, pterotic, epiotic and the anterior edge of the supraoccipital. The parietal are overlapped anteriorly by the frontal." [Wikipedia:Frontal_bone, ZFA:0000486]
+def: "In humans: A bone resembling a cockleshell in two portions the squama frontalis, corresponding with the region of the forehead, and an orbital or horizontal portion, the pars orbitalis, which enters into the formation of the roofs of the orbital and nasal cavities." [Wikipedia:Frontal_bone]
 comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
-synonym: "frontal bone" NARROW [FMA:52734]
-synonym: "parietal bone" NARROW [TAO:0000486]
-synonym: "post parietal" RELATED [ZFA:0000486]
-synonym: "teleost parietal bone" EXACT [TAO:0000486]
+synonym: "frontal bone" NARROW [FMA:52734, MA:0001466]
 xref: FMA:52734
 xref: GAID:226
 xref: MA:0001466
-xref: TAO:0000486
-xref: ZFA:0000486
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
+relationship: adjacent_to UBERON:0001697 ! orbit
 relationship: part_of UBERON:0001703 ! neurocranium
 
 [Term]
 id: UBERON:0000210
 name: tetrapod parietal bone
 alt_id: UBERON:FMA_52734-MA_0001466-ZFA_0000514
-def: "In humans: bone forming side and roof of cranium. Each bone is irregularly quadrilateral in form, and has two surfaces, four borders, and four angles. In teleost fish, where it is called the frontal bone: Large elongated paired dermal bones that roof the cranium and bear part of the supraorbital canal. The frontal bones cover the upper edge of the lateral ethmoid, orbitosphenoid and pterosphenoids and overlaps the parietal bone posteriorly." [Wikipedia:Parietal_bone, ZFA:0000514]
-comment: This class was created automatically from a combination of ontologies
+def: "In humans: bone forming side and roof of cranium. Each bone is irregularly quadrilateral in form, and has two surfaces, four borders, and four angles." [Wikipedia:Parietal_bone, ZFA:0000514]
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
 synonym: "frontal bone" NARROW [TAO:0000514]
 synonym: "parietal bone" NARROW [FMA:9613]
 synonym: "teleost frontal bone" NARROW [TAO:0000514]
 xref: FMA:9613
 xref: GAID:229
 xref: MA:0001469
-xref: TAO:0000514
-xref: ZFA:0000514
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
 relationship: part_of UBERON:0001703 ! neurocranium
@@ -2867,7 +2867,7 @@ xref: EMAPA:26957
 xref: EMAPA:26965
 xref: FMA:55031
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+is_a: UBERON:0004785 ! implied link automatically realized ! respiratory system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001042 ! pharynx
 
@@ -3167,7 +3167,7 @@ synonym: "windpipe organ mucosa" EXACT [OBOL:automatic]
 xref: BTO:0001390
 xref: FMA:7471
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+is_a: UBERON:0004785 ! implied link automatically realized ! respiratory system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001005 ! respiratory airway
 
@@ -3389,10 +3389,11 @@ id: UBERON:0000402
 name: nasal vestibule
 alt_id: UBERON:BTO_0001761-FMA_59644
 def: "Nasal Vestibule is the most anterior part of the nasal cavity. It's enclosed by the cartilages of nose and lined by the same epithelium of the skin. The other part of the nasal cavity, which is lined by the respiratory epithelium, is called nasal cavity proper. [WP,unvetted]." [Wikipedia:Nasal_vestibule]
-synonym: "Vestibular part of nasal cavity" EXACT [FMA:59644]
+synonym: "vestibular part of nasal cavity" EXACT [FMA:59644]
 xref: BTO:0001761
 xref: FMA:59644
 is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0001707 ! nasal cavity
 
 [Term]
 id: UBERON:0000403
@@ -3468,8 +3469,8 @@ synonym: "organ mucosa of bronchus" EXACT [OBOL:automatic]
 xref: BTO:0001846
 xref: FMA:62652
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004785 ! implied link automatically realized ! respiratory system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0002185 ! bronchus
 
@@ -5449,12 +5450,9 @@ id: UBERON:0000957
 name: lamina
 alt_id: UBERON:FBbt_00003708-FMA_67265
 def: "Any thin layer or plate. In the context of Drosophila refers to the first optic neuropil." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Lamina]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - merge with cell layer?
 subset: uberon_slim
-synonym: "La" RELATED []
-synonym: "lamin a" EXACT []
 xref: FBbt:00003708
-xref: FMA:67265
 is_a: UBERON:0000479 ! portion of tissue
 
 [Term]
@@ -5948,7 +5946,6 @@ alt_id: UBERON:FBbt_00004645-FMA_228659-FMA_7490-MA_0000319-MIAA_0000188-XAO_000
 def: "Heterogeneous cluster which consists of two or more adjacent bones or cartilages, parts of which are interconnected by organ parts that consist of various types of connective tissue. Together with other joints and bones, a joint constitutes the skeletal system. Examples: pubic symphysis, knee joint, temporomandibular joint. // The point of contact between elements of the skeleton. // Anatomical cluster which consists of two or more adjacent bones or cartilages, which may be interconnected by various types of tissue." [NLM:joint, Wikipedia:Joint, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "set of all joints" BROAD []
 xref: BTO:0001686
 xref: EFO:0000948
 xref: FBbt:00004645
@@ -5960,14 +5957,13 @@ xref: MA:0000319
 xref: MAT:0000188
 xref: MIAA:0000188
 xref: ncithesaurus:Joint
-xref: OpenCyc:Mx4r4wAZortWEdmAAAACs6hRjg
 xref: OpenCyc:Mx4rvVjjdpwpEbGdrcN5Y29ycA
 xref: TAO:0000367
 xref: XAO:0000171
 xref: ZFA:0001596
-is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0001434 ! skeletal system
+is_a: UBERON:0004765 ! skeletal element
+relationship: part_of UBERON:0004770 ! articular system
 
 [Term]
 id: UBERON:0000983
@@ -7716,7 +7712,7 @@ id: UBERON:0001071
 name: superficial cervical artery
 alt_id: UBERON:FMA_10665-MA_0002052
 def: "." [Wikipedia:Superficial_cervical_artery]
-comment: This class was created automatically from a combination of ontologies
+comment: The transverse cervical artery splits into two branches, a superficial one and a deep one[WP]
 subset: uberon_slim
 xref: FMA:10665
 xref: MA:0002052
@@ -8791,9 +8787,9 @@ xref: OpenCyc:Mx4rvVkFEpwpEbGdrcN5Y29ycA
 xref: TAO:0001559
 xref: XAO:0003074
 xref: ZFA:0001559
-is_a: UBERON:0000075 ! subdivision of skeleton
+is_a: UBERON:0000075 ! subdivision of skeletal system
 relationship: part_of UBERON:0001137 ! back
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 
 [Term]
 id: UBERON:0001131
@@ -9601,6 +9597,7 @@ xref: MA:0001555
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0001206 ! implied link automatically realized ! serosa of small intestine
 is_a: UBERON:0002095 ! mesentery
+is_a: UBERON:0004854 ! implied link automatically realized ! gastrointestinal system mesentery
 intersection_of: UBERON:0002095 ! mesentery
 intersection_of: part_of UBERON:0002108 ! small intestine
 relationship: part_of UBERON:0001178 ! visceral peritoneum
@@ -9650,7 +9647,6 @@ id: UBERON:0001174
 name: common bile duct
 alt_id: UBERON:FMA_14667-MA_0001631
 def: "a tube-like anatomic structure in the human gastrointestinal tract. It is formed by the union of the common hepatic duct and the cystic duct (from the gall bladder). It is later joined by the pancreatic duct to form the ampulla of Vater. There, the two ducts are surrounded by the muscular sphincter of Oddi." [Wikipedia:Common_bile_duct]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "ductus choledochus (biliaris)" EXACT []
 xref: EHDAA:3981
@@ -9670,7 +9666,7 @@ id: UBERON:0001175
 name: common hepatic duct
 alt_id: UBERON:FMA_14668-ZFA_0001100
 def: "A duct that carries bile from the liver to the small intestine. <a href='http://www.umm.edu/liver/biliary.htm.</a>" [Wikipedia:Common_hepatic_duct, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - MA distinguishes between bile duct, hepatic duct, common bile duct and common hepatic duct. in FMA hepatic duct and common hepatic duct are the same
 subset: uberon_slim
 synonym: "hepatic duct" EXACT []
 xref: EHDAA:3049
@@ -10076,8 +10072,8 @@ xref: MA:0002683
 xref: ncithesaurus:Gastric_Mucosa
 xref: OpenCyc:Mx8NhB4rvcD6KJwpEbGdrcN5Y29ycB4rvmKNOpwpEbGdrcN5Y29ycB4rvVj5FpwpEbGdrcN5Y29ycB4rvVjlqpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004786 ! implied link automatically realized ! gastrointestinal system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000945 ! stomach
 relationship: part_of UBERON:0001167 ! wall of stomach
@@ -10151,6 +10147,7 @@ xref: FMA:14914
 xref: MA:0001626
 is_a: UBERON:0000042 ! serous membrane
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004782 ! implied link automatically realized ! gastrointestinal system serosa
 intersection_of: UBERON:0000042 ! serous membrane
 intersection_of: part_of UBERON:0001167 ! wall of stomach
 relationship: part_of UBERON:0001167 ! wall of stomach
@@ -10786,6 +10783,7 @@ xref: ncithesaurus:Small_Intestinal_Lamina_Propria
 is_a: UBERON:0000030 ! lamina propria
 is_a: UBERON:0003567 ! implied link automatically realized ! abdomen connective tissue
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004780 ! implied link automatically realized ! gastrointestinal system lamina propria
 intersection_of: UBERON:0000030 ! lamina propria
 intersection_of: part_of UBERON:0002108 ! small intestine
 relationship: part_of UBERON:0001204 ! mucosa of small intestine
@@ -10873,9 +10871,9 @@ xref: FMA:15695
 xref: GAID:296
 xref: MA:0001537
 xref: ncithesaurus:Intestinal_Mucosa
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004786 ! implied link automatically realized ! gastrointestinal system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000160 ! intestine
 relationship: part_of UBERON:0001262 ! wall of intestine
@@ -10928,6 +10926,7 @@ xref: FMA:15701
 xref: MA:0001538
 is_a: UBERON:0000042 ! serous membrane
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004782 ! implied link automatically realized ! gastrointestinal system serosa
 intersection_of: UBERON:0000042 ! serous membrane
 intersection_of: part_of UBERON:0001262 ! wall of intestine
 relationship: part_of UBERON:0001262 ! wall of intestine
@@ -11780,6 +11779,7 @@ xref: FMA:17693
 xref: MA:0001669
 xref: ZFA:0001620
 is_a: UBERON:0004134 ! proximal tubule
+is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
 relationship: part_of UBERON:0001225 ! cortex of kidney
 relationship: part_of UBERON:0001231 ! renal tubule
 
@@ -11856,6 +11856,7 @@ xref: FMA:17717
 xref: MA:0001676
 xref: ncithesaurus:Ascending_Limb_of_the_Henle_s_Loop
 is_a: UBERON:0004135 ! distal tubule
+is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
 relationship: part_of UBERON:0001288 ! loop of Henle
 
 [Term]
@@ -11872,6 +11873,7 @@ xref: FMA:17721
 xref: MA:0001666
 xref: ncithesaurus:Distal_Convoluted_Tubule
 is_a: UBERON:0004135 ! distal tubule
+is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
 relationship: develops_from UBERON:0003220 ! metanephric blastema
 relationship: part_of UBERON:0001225 ! cortex of kidney
 relationship: part_of UBERON:0001231 ! renal tubule
@@ -14071,6 +14073,7 @@ alt_id: UBERON:FMA_23875-FMA_23881-MA_0000018-MIAA_0000032-XAO_0003060-ZFA_00004
 def: "Organ system subdivision which consists of the skeleton and the articular system." [AAO:0000566, Wikipedia:Skeleton]
 comment: The skeleton is the bony framework of the body in vertebrates (endoskeleton) or the hard outer envelope of insects (exoskeleton or dermoskeleton) GO:0001501
 subset: uberon_slim
+synonym: "set of all bones and joints" EXACT []
 synonym: "skeletal system" EXACT []
 synonym: "skeleton system" EXACT []
 xref: AAO:0000566
@@ -14182,13 +14185,13 @@ def: "Subdivision of long bone which forms its expanded proximal or distal artic
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "end of long bone" EXACT []
+synonym: "long bone epiphysis" EXACT []
 xref: AAO:0000742
 xref: BTO:0000413
 xref: FMA:24012
 xref: MA:0001362
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0001474 ! bone
 relationship: part_of UBERON:0002428 ! limb bone
 
 [Term]
@@ -14196,7 +14199,7 @@ id: UBERON:0001438
 name: metaphysis
 alt_id: UBERON:FMA_24014-MA_0001363
 def: "Subdivision of diaphysis which forms the proximal or distal end of diaphysis next to the epiphysis; together with diaphysis proper, it constitutes the diaphysis. Examples: proximal metaphysis of humerus, distal metaphysis of femur." [Wikipedia:Metaphysis]
-comment: This class was created automatically from a combination of ontologies
+comment: adjacent to or containing epiphyseal plate? Note in FMA the metaphysis is part of the diaphysis, but not in MA. In the diagram in WP, it appears to be adjacent, not part_of.
 subset: uberon_slim
 synonym: "diaphyseal end of long bone" EXACT []
 synonym: "long bone metaphysis" EXACT []
@@ -14205,7 +14208,7 @@ xref: MA:0001363
 xref: ncithesaurus:Metaphysis
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0002428 ! limb bone
+relationship: part_of UBERON:0004769 ! diaphysis
 
 [Term]
 id: UBERON:0001439
@@ -14221,8 +14224,7 @@ xref: FMA:24018
 xref: galen:CorticalBone
 xref: MA:0001461
 xref: ncithesaurus:Cortical_Bone
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0002481 ! bone tissue
 relationship: part_of UBERON:0002482 ! lamellar bone
 
 [Term]
@@ -14246,9 +14248,9 @@ synonym: "upper extremity subdivision of skeleton" EXACT [OBOL:automatic]
 synonym: "upper limb skeleton" EXACT []
 xref: FMA:24139
 xref: MA:0000612
-is_a: UBERON:0000075 ! subdivision of skeleton
+is_a: UBERON:0000075 ! subdivision of skeletal system
 is_a: UBERON:0004381 ! implied link automatically realized ! skeleton of limb
-intersection_of: UBERON:0000075 ! subdivision of skeleton
+intersection_of: UBERON:0000075 ! subdivision of skeletal system
 intersection_of: part_of UBERON:0002102 ! forelimb
 relationship: part_of UBERON:0002102 ! forelimb
 
@@ -14275,9 +14277,8 @@ xref: FMA:24140
 xref: GAID:198
 xref: MA:0000670
 xref: OpenCyc:Mx4rvZcKkZwpEbGdrcN5Y29ycA
-is_a: UBERON:0002091 ! implied link automatically realized ! appendicular skeleton
 is_a: UBERON:0004381 ! implied link automatically realized ! skeleton of limb
-intersection_of: UBERON:0000075 ! subdivision of skeleton
+intersection_of: UBERON:0000075 ! subdivision of skeletal system
 intersection_of: part_of UBERON:0002103 ! hindlimb
 relationship: has_part UBERON:0002428 ! limb bone
 relationship: part_of UBERON:0000978 ! leg
@@ -14323,7 +14324,7 @@ xref: FMA:24159
 xref: MA:0000619
 xref: OpenCyc:Mx4rvdHPJJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001440 ! skeleton of upper limb
-intersection_of: UBERON:0000075 ! subdivision of skeleton
+intersection_of: UBERON:0000075 ! subdivision of skeletal system
 intersection_of: part_of UBERON:0002398 ! hand
 relationship: part_of UBERON:0002398 ! hand
 
@@ -14411,7 +14412,7 @@ xref: MA:0000643
 xref: ncithesaurus:Foot_Bone
 xref: OpenCyc:Mx4rv5ridZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001441 ! implied link automatically realized ! skeleton of lower limb
-intersection_of: UBERON:0000075 ! subdivision of skeleton
+intersection_of: UBERON:0000075 ! subdivision of skeletal system
 intersection_of: part_of UBERON:0002387 ! foot
 relationship: part_of UBERON:0002387 ! foot
 
@@ -18429,7 +18430,7 @@ id: UBERON:0001680
 name: lacrimal bone
 alt_id: UBERON:FMA_52741-MA_0001486
 def: "the smallest and most fragile bone of the face, is situated at the front part of the medial wall of the orbit. It has two surfaces and four borders. In early lobe-finned fishes and ancestral tetrapods, the lacrimal bone is a relatively large and robust bone, running from the orbit to the nostrils. It forms part of the side of the face, between the nasal bones and the maxilla. In primitive forms, it is often accompanied by a much smaller septomaxilla  bone, lying immediately behind the nasal opening, but this is lost in most modern species. The lacrimal bone is often smaller in living vertebrates, and is no longer always directly associated with the nasal opening, although it retains its connection with the orbit. The bone is entirely absent in living amphibians, as well as some reptilian species." [Wikipedia:Lacrimal_bone]
-comment: Consider also ZFA:0000223 infraorbital 1 TODO CHECK seems dubious...
+comment: Consider also ZFA:0000223 infraorbital 1 TODO CHECK
 subset: uberon_slim
 synonym: "lacrymal bone" EXACT []
 xref: FMA:52741
@@ -18502,18 +18503,13 @@ relationship: part_of UBERON:0001704 ! viscerocranium
 id: UBERON:0001684
 name: mandible
 alt_id: UBERON:FMA_52748-MA_0001487
-def: "Bone of lower jaw[Obol]." [Wikipedia:Mandible]
-comment: 'mandible' also refers to either the upper or lower part of the beak in birds.
+def: "The bone that forms the lower jaw and holds the lower teeth in place[WP]." [Wikipedia:Mandible]
+comment: 'mandible' also refers to either the upper or lower part of the beak in birds. Note in ZFA mandible/lower jaw are the same class.
 subset: uberon_slim
-synonym: "bone of lower jaw" EXACT [OBOL:automatic]
-synonym: "bone of ventral mandibular arch" EXACT [OBOL:automatic]
-synonym: "bone organ of lower jaw" EXACT [OBOL:automatic]
-synonym: "bone organ of ventral mandibular arch" EXACT [OBOL:automatic]
-synonym: "lower jaw bone" EXACT []
-synonym: "lower jaw bone organ" EXACT [OBOL:automatic]
+synonym: "inferior maxillary bone" EXACT []
+synonym: "lower jaw bone" BROAD SENSU []
+synonym: "lower mandibula" NARROW SENSU [Wikipedia:Mandible]
 synonym: "mandibulla" EXACT []
-synonym: "ventral mandibular arch bone" EXACT [OBOL:automatic]
-synonym: "ventral mandibular arch bone organ" EXACT [OBOL:automatic]
 xref: BTO:0001748
 xref: EFO:0001965
 xref: EHDAA:8007
@@ -18523,9 +18519,7 @@ xref: galen:Mandible
 xref: MA:0001487
 xref: ncithesaurus:Mandible
 is_a: UBERON:0001474 ! bone
-is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
-intersection_of: UBERON:0001474 ! bone
-intersection_of: part_of UBERON:0001710 ! lower jaw
+is_a: UBERON:0004768 ! implied link automatically realized ! bone of lower jaw
 relationship: part_of UBERON:0001710 ! lower jaw
 
 [Term]
@@ -18748,7 +18742,9 @@ xref: ncithesaurus:Orbit
 xref: OpenCyc:Mx4rvW8EgZwpEbGdrcN5Y29ycA
 xref: XAO:0003171
 xref: ZFA:0001410
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001474 ! bone
+is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
+relationship: encloses UBERON:0000970 ! eye
 relationship: part_of UBERON:0001456 ! face
 relationship: part_of UBERON:0003128 ! cranium
 
@@ -18861,6 +18857,7 @@ is_a: UBERON:0000032 ! implied link automatically realized ! cranial structure
 is_a: UBERON:0004765 ! skeletal element
 relationship: encloses UBERON:0000955 ! brain
 relationship: part_of UBERON:0003128 ! cranium
+relationship: spatially_disjoint_from UBERON:0001704 ! viscerocranium
 
 [Term]
 id: UBERON:0001704
@@ -18871,7 +18868,7 @@ comment: Includes: * Inferior nasal concha * Lacrimal bone * Mandible * Maxilla 
 synonym: "facial skeleton" EXACT []
 synonym: "pharyngeal arch skeleton" RELATED [ZFA:0001216]
 synonym: "pharyngeal skeleton" RELATED [ZFA:0001216]
-synonym: "splanchnocranium" EXACT [Wikipedia:Viscerocranium]
+synonym: "splanchnocranium" EXACT [HOG:0000315, Wikipedia:Viscerocranium]
 xref: EHDAA:8361
 xref: FMA:53673
 xref: HOG:0000315
@@ -18881,8 +18878,9 @@ xref: ZFA:0001216
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004765 ! skeletal element
 relationship: develops_from UBERON:0002539 ! pharyngeal arch
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 relationship: part_of UBERON:0003129 ! skull
+relationship: spatially_disjoint_from UBERON:0001703 ! neurocranium
 
 [Term]
 id: UBERON:0001705
@@ -18971,8 +18969,8 @@ xref: ncithesaurus:Jaw
 xref: OpenCyc:Mx4rvVjjEZwpEbGdrcN5Y29ycA
 xref: TAO:0001227
 xref: ZFA:0001227
-is_a: UBERON:0002539 ! pharyngeal arch
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004765 ! skeletal element
 relationship: only_in_taxon NCBITaxon:7776
 relationship: part_of UBERON:0001704 ! viscerocranium
 
@@ -19286,6 +19284,7 @@ alt_id: UBERON:FMA_54816-MA_0001502
 def: "the cartilaginous joints of the skull; these include sphenoethmoidal synchondrosis, sphenooccipital synchondrosis, sphenopetrosal synchondrosis, petrooccipital synchondrosis, anterior intraoccipital synchondrosis and posterior intraoccipital synchondrosis." [http://www.medilexicon.com/medicaldictionary.php?t=87514]
 xref: FMA:54816
 xref: MA:0001502
+is_a: UBERON:0000032 ! implied link automatically realized ! cranial structure
 is_a: UBERON:0002215 ! synchondrosis
 intersection_of: UBERON:0002215 ! synchondrosis
 intersection_of: part_of UBERON:0003128 ! cranium
@@ -20214,6 +20213,7 @@ def: "vascular layer containing connective tissue, of the eye lying between the 
 subset: uberon_slim
 synonym: "choroid coat" EXACT [Wikipedia:Choroid]
 synonym: "choroidea" EXACT [Wikipedia:Choroid]
+synonym: "optic choroid" EXACT [ZFA:0005229]
 synonym: "posterior uvea" EXACT [Wikipedia:Uvea#Regions]
 xref: BTO:0001829
 xref: FMA:58298
@@ -20222,6 +20222,8 @@ xref: MA:0000263
 xref: ncithesaurus:Choroid
 xref: ZFA:0005229
 is_a: UBERON:0001768 ! vascular layer of eyeball
+relationship: adjacent_to UBERON:0000966 ! retina
+relationship: adjacent_to UBERON:0001773 ! sclera
 
 [Term]
 id: UBERON:0001777
@@ -20311,10 +20313,11 @@ id: UBERON:0001781
 name: layer of retina
 alt_id: UBERON:FMA_58617-MA_0001319-XAO_0000266
 def: "any of the layers that make up the retina." [MP:0003727]
-comment: GO: the outer nuclear layer (ONL), which contains photoreceptor nuclei; the inner nuclear layer (INL), which contains amacrine, bipolar and horizontal cells; and the retinal ganglion cell (RGC) layer. Between the inner and outer nuclear layers, the outer plexiform layer (OPL) contains connections between the photoreceptors and bipolar and horizontal cells. The inner plexiform layer (IPL) is positioned between the INL and the ganglion cell layer and contains the dendrites of RGCs and processes of bipolar and amacrine cells. Spanning all layers of the retina are the radially oriented Mueller glia.
+comment: GO: the outer nuclear layer (ONL), which contains photoreceptor nuclei; the inner nuclear layer (INL), which contains amacrine, bipolar and horizontal cells; and the retinal ganglion cell (RGC) layer. Between the inner and outer nuclear layers, the outer plexiform layer (OPL) contains connections between the photoreceptors and bipolar and horizontal cells. The inner plexiform layer (IPL) is positioned between the INL and the ganglion cell layer and contains the dendrites of RGCs and processes of bipolar and amacrine cells. Spanning all layers of the retina are the radially oriented Mueller glia. // TODO check meaning of MA:0001318 retina lamina
 synonym: "retina layer" EXACT []
 synonym: "retinal layer" EXACT []
 xref: FMA:58617
+xref: MA:0001318
 xref: MA:0001319
 xref: ncithesaurus:Retina_Layer
 xref: XAO:0000266
@@ -20943,8 +20946,8 @@ xref: FMA:59101
 xref: HOG:0001476
 xref: MA:0001296
 xref: ncithesaurus:Lacrimal_Gland
-is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
 is_a: UBERON:0002530 ! gland
+is_a: UBERON:0004859 ! implied link automatically realized ! eye gland
 relationship: part_of UBERON:0001750 ! lacrimal apparatus
 relationship: part_of UBERON:0002330 ! exocrine system
 
@@ -20962,9 +20965,9 @@ xref: FMA:59104
 xref: GAID:899
 xref: MA:0001249
 xref: ncithesaurus:Meibomian_Gland
-is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
 is_a: UBERON:0001821 ! sebaceous gland
-relationship: part_of UBERON:0001711 ! eyelid
+is_a: UBERON:0004859 ! implied link automatically realized ! eye gland
+relationship: part_of UBERON:0004772 ! eyelid tarsus
 
 [Term]
 id: UBERON:0001819
@@ -21033,13 +21036,18 @@ relationship: surrounds UBERON:0001697 ! orbit
 id: UBERON:0001823
 name: nasal cartilage
 alt_id: UBERON:FMA_59502-MA_0001883
-def: "." [Wikipedia:Nasal_cartilage]
+def: "One of the cartilage structures in the nose that provide form and support[WP]." [Wikipedia:Nasal_cartilage]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "cartilage of nose" EXACT []
 xref: FMA:59502
 xref: MA:0001883
 xref: ncithesaurus:Nasal_Cartilage
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002236 ! costal cartilage
+intersection_of: UBERON:0002418 ! cartilage
+intersection_of: part_of UBERON:0000004 ! olfactory apparatus
+relationship: encloses UBERON:0000402 ! nasal vestibule
 
 [Term]
 id: UBERON:0001824
@@ -21060,8 +21068,8 @@ xref: GAID:301
 xref: MA:0001766
 xref: ncithesaurus:Laryngeal_Mucosa
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004785 ! implied link automatically realized ! respiratory system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001737 ! larynx
 relationship: part_of UBERON:0001737 ! larynx
@@ -21121,8 +21129,8 @@ xref: MA:0001324
 xref: ncithesaurus:Nasal_Cavity_Epithelium
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004785 ! implied link automatically realized ! respiratory system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001707 ! nasal cavity
 relationship: part_of UBERON:0001707 ! nasal cavity
@@ -22466,7 +22474,7 @@ relationship: part_of UBERON:0001894 ! diencephalon
 id: UBERON:0001899
 name: epithalamus
 alt_id: UBERON:FMA_62009-MA_0000172-MIAA_0000422-ZFA_0000509
-def: "The epithalamus is the small dorsomedial area of the thalamus including the habenular nuclei and associated fiber bundles, the pineal body, and the epithelial roof of the third ventricle[GO]." [Wikipedia:Epithalamus]
+def: "The epithalamus is the small dorsomedial area of the thalamus including the habenular nuclei and associated fiber bundles, the pineal body, and the epithelial roof of the third ventricle[GO]. a dorsal posterior segment of the diencephalon  (a segment in the middle of the brain also containing the hypothalamus and the thalamus) which includes the habenula, the stria medullaris and the pineal body. Its function is the connection between the limbic system to other parts of the brain[WP] Some functions of its components include the secretion of melatonin  by the pineal gland. " [Wikipedia:Epithalamus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: BTO:0000175
@@ -22529,6 +22537,7 @@ xref: HOG:0001045
 xref: MA:0001862
 xref: ncithesaurus:Tracheal_Epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
+is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001005 ! respiratory airway
 relationship: part_of UBERON:0001005 ! respiratory airway
@@ -22731,7 +22740,7 @@ id: UBERON:0001911
 name: lactiferous gland
 alt_id: UBERON:FMA_62088-MA_0000145-MIAA_0000073-Mammary
 def: "Lobular organ which consist of a lactiferous duct tree and the set of lactiferous acini that are connected to duct tree. Examples: There are variable numbers of lactiferous duct trees." [Wikipedia:Mammary_gland]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - part_of such that applies to all mammals
 subset: uberon_slim
 synonym: "lobe of breast" EXACT []
 synonym: "lobe of mammary gland" EXACT []
@@ -22748,7 +22757,6 @@ xref: ncithesaurus:Mammary_Gland
 xref: OpenCyc:Mx4rvVjVq5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002530 ! gland
 relationship: only_in_taxon NCBITaxon:40674
-relationship: part_of UBERON:0000477 ! anatomical cluster
 
 [Term]
 id: UBERON:0001912
@@ -22833,6 +22841,7 @@ xref: FMA:62115
 xref: MA:0000705
 xref: ncithesaurus:Arteriole_Endothelium
 is_a: UBERON:0001986 ! endothelium
+is_a: UBERON:0004852 ! implied link automatically realized ! cardiovascular system endothelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0001980 ! arteriole
 relationship: part_of UBERON:0001980 ! arteriole
@@ -23537,10 +23546,9 @@ xref: MA:0001865
 xref: ncithesaurus:Nasopharynx_Epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0003351 ! implied link automatically realized ! epithelium of pharynx
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004814 ! implied link automatically realized ! upper respiratory tract epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001728 ! nasopharynx
-relationship: part_of UBERON:0001728 ! nasopharynx
 
 [Term]
 id: UBERON:0001952
@@ -23662,6 +23670,7 @@ xref: MA:0001837
 xref: ncithesaurus:Bronchus_Submucosa
 is_a: UBERON:0000009 ! submucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004777 ! implied link automatically realized ! respiratory system submucosa
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: part_of UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0002185 ! bronchus
@@ -23972,6 +23981,7 @@ is_a: UBERON:0000030 ! lamina propria
 is_a: UBERON:0003567 ! implied link automatically realized ! abdomen connective tissue
 is_a: UBERON:0003593 ! implied link automatically realized ! thoracic cavity connective tissue
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004780 ! implied link automatically realized ! gastrointestinal system lamina propria
 intersection_of: UBERON:0000030 ! lamina propria
 intersection_of: part_of UBERON:0001043 ! esophagus
 
@@ -23997,6 +24007,7 @@ xref: FMA:63057
 xref: MA:0001571
 is_a: UBERON:0000042 ! serous membrane
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004782 ! implied link automatically realized ! gastrointestinal system serosa
 intersection_of: UBERON:0000042 ! serous membrane
 intersection_of: part_of UBERON:0001043 ! esophagus
 relationship: part_of UBERON:0001096 ! wall of esophagus
@@ -24424,7 +24435,7 @@ xref: ZFA:0000554
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0003350 ! implied link automatically realized ! epithelium of mucosa
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004814 ! implied link automatically realized ! upper respiratory tract epithelium
 relationship: part_of UBERON:0001826 ! mucosa of nose
 
 [Term]
@@ -24988,6 +24999,7 @@ xref: FMA:67711
 xref: MA:0001632
 xref: ncithesaurus:Gallbladder_Epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
+is_a: UBERON:0004808 ! implied link automatically realized ! gastrointestinal system epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002110 ! gallbladder
 relationship: part_of UBERON:0002110 ! gallbladder
@@ -25038,7 +25050,7 @@ xref: FMA:67782
 xref: MA:0001839
 xref: ncithesaurus:Bronchial_Epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004815 ! implied link automatically realized ! lower respiratory tract epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0002185 ! bronchus
@@ -25224,6 +25236,7 @@ xref: MA:0000750
 xref: ncithesaurus:Lymphatic_Vessel_Endothelium
 xref: ZFA:0005258
 is_a: UBERON:0001986 ! endothelium
+is_a: UBERON:0004852 ! implied link automatically realized ! cardiovascular system endothelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0001473 ! lymphatic vessel
 relationship: part_of UBERON:0001473 ! lymphatic vessel
@@ -26068,14 +26081,13 @@ is_a: UBERON:0001638 ! vein
 
 [Term]
 id: UBERON:0002090
-name: axial skeleton
+name: postcranial axial skeleton
 alt_id: UBERON:FMA_71221-MA_0000308-MIAA_0000148-XAO_0003073-ZFA_0000317
-def: "*Subdivision of skeleton which consists of the bones of the vertebral column, the thoracic cage and the pelvis. // The post-cranial structural components forming the long axis of the vertebrate body; in Danio, consisting of the notochord, vertebrae, ribs, supraneurals, intermuscular bones, and unpaired median fins." [Wikipedia:Axial_skeleton, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The post-cranial subdivision of skeleton structural components forming the long axis of the vertebrate body; in Danio, consisting of the notochord, vertebrae, ribs, supraneurals, intermuscular bones, and unpaired median fins; in human consists of the bones of the vertebral column, the thoracic cage and the pelvis[ZFA+FMA]." [FMA:71221, https://sourceforge.net/tracker/?func=detail&aid=2983975&group_id=76834&atid=974957, https://sourceforge.net/tracker/?func=detail&atid=1205376&aid=2983977&group_id=76834, Wikipedia:Axial_skeleton, ZFIN:curator]
+comment: see sf items - split into axial and post-cranial axial?
 subset: uberon_slim
-synonym: "postcranial axia skelton" RELATED []
-synonym: "postcranial axial skeleton" EXACT []
-synonym: "vertebral column" RELATED []
+synonym: "axial skeleton" BROAD []
+synonym: "post-cranial axial skeleton" EXACT []
 xref: AAO:0000034
 xref: EHDAA:5049
 xref: FMA:71221
@@ -26087,17 +26099,17 @@ xref: ncithesaurus:Axial_Skeleton
 xref: TAO:0000317
 xref: XAO:0003073
 xref: ZFA:0000317
-is_a: UBERON:0000075 ! subdivision of skeleton
+is_a: UBERON:0000075 ! subdivision of skeletal system
 relationship: develops_from UBERON:0003089 ! sclerotome
 
 [Term]
 id: UBERON:0002091
 name: appendicular skeleton
 alt_id: UBERON:FMA_71222-MA_0000290-MIAA_0000278-ZFA_0000027
-def: "*Subdivision of skeleton which consists of the bones of the upper and lower limbs." [Wikipedia:Appendicular_skeleton]
+def: "Subdivision of skeleton which consists of the bones of the upper and lower limbs/appendages." [Wikipedia:Appendicular_skeleton]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "paired fin skeleton" EXACT []
+synonym: "paired fin skeleton" NARROW SENSU []
 xref: AAO:0000747
 xref: EFO:0000951
 xref: FMA:71222
@@ -26108,9 +26120,8 @@ xref: ncithesaurus:Appendicular_Skeleton
 xref: TAO:0000027
 xref: XAO:0003166
 xref: ZFA:0000027
-is_a: UBERON:0000075 ! subdivision of skeleton
-intersection_of: UBERON:0000075 ! subdivision of skeleton
-intersection_of: has_part UBERON:0002428 ! limb bone
+is_a: UBERON:0000075 ! subdivision of skeletal system
+relationship: has_part UBERON:0002428 ! limb bone
 
 [Term]
 id: UBERON:0002092
@@ -26119,9 +26130,7 @@ alt_id: UBERON:FMA_71236-MA_0000815
 def: "the fibrous membrane forming the outer of the three coverings that surrounds the brain within the cranial cavity; consists of two layers including the periosteal layer and the meningeal layer." [MP:0009025]
 comment: This class was created automatically from a combination of ontologies
 synonym: "brain dura mater" EXACT []
-synonym: "brain dura mater of neuraxis" EXACT [OBOL:automatic]
 synonym: "dura mater of brain" EXACT []
-synonym: "dura mater of neuraxis of brain" EXACT [OBOL:automatic]
 xref: FMA:71236
 xref: HOG:0000270
 xref: MA:0000815
@@ -27459,6 +27468,7 @@ xref: EFO:0000821
 xref: FMA:7280
 xref: GAID:550
 xref: galen:Endocardium
+xref: MA:0000076
 xref: MAT:0000455
 xref: ncithesaurus:Endocardium
 xref: OpenCyc:Mx4rsWA75K1cEduAAADggVaqvw
@@ -28119,6 +28129,7 @@ xref: FMA:7472
 xref: MA:0001860
 xref: ncithesaurus:Trachea_Submucosa
 is_a: UBERON:0000009 ! submucosa
+is_a: UBERON:0004777 ! implied link automatically realized ! respiratory system submucosa
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: part_of UBERON:0001005 ! respiratory airway
 relationship: part_of UBERON:0001005 ! respiratory airway
@@ -30399,6 +30410,7 @@ xref: MA:0001836
 xref: ncithesaurus:Bronchus_Lamina_Propria
 is_a: UBERON:0000030 ! lamina propria
 is_a: UBERON:0003592 ! implied link automatically realized ! bronchus connective tissue
+is_a: UBERON:0004779 ! implied link automatically realized ! respiratory system lamina propria
 intersection_of: UBERON:0000030 ! lamina propria
 intersection_of: part_of UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0002185 ! bronchus
@@ -31645,7 +31657,7 @@ id: UBERON:0002394
 name: bile duct
 alt_id: UBERON:FMA_9706-MA_0000354-XAO_0000134
 def: "Duct that carries bile from the liver to the small intestine." [Wikipedia:Bile_duct, ZFA:0001100]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - MA distinguishes between bile duct, hepatic duct and common hepatic duct. in FMA hepatic and common are the same.
 subset: uberon_slim
 synonym: "biliary duct" EXACT []
 synonym: "hepatic duct" RELATED []
@@ -32992,8 +33004,8 @@ xref: FMA:62996
 xref: MA:0002680
 xref: ncithesaurus:Esophageal_Mucosa
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004786 ! implied link automatically realized ! gastrointestinal system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001043 ! esophagus
 relationship: constitutional_part_of UBERON:0001096 ! wall of esophagus
@@ -33693,7 +33705,6 @@ xref: GAID:191
 xref: MA:0002839
 is_a: UBERON:0001994 ! hyaline cartilage
 is_a: UBERON:0003587 ! implied link automatically realized ! limb connective tissue
-is_a: UBERON:0004129 ! growth plate cartilage
 relationship: part_of UBERON:0001438 ! metaphysis
 
 [Term]
@@ -33708,6 +33719,7 @@ synonym: "cranial base" RELATED [MA:0002840]
 xref: FMA:52801
 xref: MA:0002840
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001703 ! neurocranium
 
 [Term]
@@ -34112,7 +34124,7 @@ xref: MAT:0000277
 xref: MIAA:0000277
 xref: TAO:0001123
 xref: ZFA:0001123
-is_a: UBERON:0002090 ! axial skeleton
+is_a: UBERON:0002090 ! postcranial axial skeleton
 
 [Term]
 id: UBERON:0002544
@@ -41444,10 +41456,13 @@ name: ventricular zone
 alt_id: UBERON:XAO_0000021-ZFA_0001083
 comment: This class was created automatically from a combination of ontologies
 xref: BTO:0003654
+xref: MA:0000817
 xref: TAO:0001083
 xref: XAO:0000021
 xref: ZFA:0001083
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+relationship: part_of UBERON:0000955 ! brain
 
 [Term]
 id: UBERON:0003054
@@ -42168,10 +42183,9 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0003089
 name: sclerotome
 alt_id: UBERON:XAO_0000397-ZFA_0001080
-def: "Ventral somitic compartment that is a precursor of the axial skeleton." [Wikipedia:Sclerotome, XB:curator]
+def: "Ventral somitic compartment that is a precursor of the axial skeleton[XAO]. Sclerotomes eventually differentiate into the vertebrae and most of the skull. The caudal (posterior) half of one sclerotome fuses with the rostral (anterior) half of the adjacent one to form each vertebra. From their initial location within the somite, the sclerotome cells migrate medially towards the notochord. These cells meet the sclerotome cells from the other side to form the vertebral body. From this vertebral body, sclerotome cells move dorsally and surround the developing spinal cord, forming the vertebral arch[WP]." [Wikipedia:Sclerotome, XB:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "sclerotomes" RELATED []
 xref: EHDAA:1193
 xref: EHDAA:1199
 xref: EHDAA:1205
@@ -42565,7 +42579,7 @@ xref: TAO:0000158
 xref: XAO:0003080
 xref: ZFA:0000158
 is_a: UBERON:0002513 ! endochondral bone
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 
 [Term]
 id: UBERON:0003107
@@ -42613,7 +42627,7 @@ xref: TAO:0001362
 xref: XAO:0003102
 xref: ZFA:0001362
 is_a: UBERON:0002513 ! endochondral bone
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 
 [Term]
 id: UBERON:0003110
@@ -42652,12 +42666,14 @@ relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0003113
-name: dermal bone cranium
+name: dermatocranium
 alt_id: UBERON:ZFA_0000863-XAO_0003169
-synonym: "dermatocranium" EXACT [ZFA:0000863]
+def: "Bony parts of the skull derived from ossifications in the dermis of the skin[FD]." [http://encyclopedia2.thefreedictionary.com/dermatocranium]
+synonym: "dermal bone cranium" EXACT [ZFA:0000863]
 xref: XAO:0003169
 xref: ZFA:0000863
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000032 ! implied link automatically realized ! cranial structure
+is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0003128 ! cranium
 
 [Term]
@@ -42879,6 +42895,7 @@ synonym: "invertebrate trachea" EXACT SENSU []
 xref: FBbt:00005043
 is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0001005 ! respiratory airway
+is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
 relationship: only_in_taxon NCBITaxon:6656
 
 [Term]
@@ -42894,6 +42911,7 @@ xref: BILA:0000115
 xref: BTO:0001295
 xref: EFO:0000831
 xref: EHDAA:6029
+xref: FMA:71325
 xref: HOG:0000334
 xref: MA:0000316
 xref: MAT:0000340
@@ -42903,6 +42921,7 @@ xref: OpenCyc:Mx4rvVlEyJwpEbGdrcN5Y29ycA
 xref: TAO:0000737
 xref: XAO:0003075
 xref: ZFA:0000737
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004765 ! skeletal element
 relationship: only_in_taxon NCBITaxon:89593
 relationship: part_of UBERON:0000033 ! head
@@ -44539,8 +44558,8 @@ synonym: "subdivision of skeleton of palatoquadrate arch" EXACT [OBOL:automatic]
 synonym: "subdivision of skeleton of upper jaw" EXACT [OBOL:automatic]
 synonym: "upper jaw subdivision of skeleton" EXACT [OBOL:automatic]
 xref: EHDAA:8041
-is_a: UBERON:0000075 ! implied link automatically realized ! subdivision of skeleton
-intersection_of: UBERON:0000075 ! subdivision of skeleton
+is_a: UBERON:0000075 ! implied link automatically realized ! subdivision of skeletal system
+intersection_of: UBERON:0000075 ! subdivision of skeletal system
 intersection_of: part_of UBERON:0001709 ! upper jaw
 
 [Term]
@@ -44551,8 +44570,8 @@ synonym: "subdivision of skeleton of lower jaw" EXACT [OBOL:automatic]
 synonym: "subdivision of skeleton of ventral mandibular arch" EXACT [OBOL:automatic]
 synonym: "ventral mandibular arch subdivision of skeleton" EXACT [OBOL:automatic]
 xref: EHDAA:8005
-is_a: UBERON:0000075 ! implied link automatically realized ! subdivision of skeleton
-intersection_of: UBERON:0000075 ! subdivision of skeleton
+is_a: UBERON:0000075 ! implied link automatically realized ! subdivision of skeletal system
+intersection_of: UBERON:0000075 ! subdivision of skeletal system
 intersection_of: part_of UBERON:0001710 ! lower jaw
 
 [Term]
@@ -44595,7 +44614,7 @@ xref: EHDAA:2999
 xref: HOG:0000358
 xref: MA:0001617
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
-is_a: UBERON:0002095 ! implied link automatically realized ! mesentery
+is_a: UBERON:0004854 ! implied link automatically realized ! gastrointestinal system mesentery
 intersection_of: UBERON:0002095 ! mesentery
 intersection_of: part_of UBERON:0000945 ! stomach
 
@@ -44622,7 +44641,7 @@ xref: HOG:0000415
 xref: MA:0001569
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0001975 ! implied link automatically realized ! serosa of esophagus
-is_a: UBERON:0002095 ! implied link automatically realized ! mesentery
+is_a: UBERON:0004854 ! implied link automatically realized ! gastrointestinal system mesentery
 intersection_of: UBERON:0002095 ! mesentery
 intersection_of: part_of UBERON:0001043 ! esophagus
 
@@ -44633,7 +44652,7 @@ synonym: "midgut mesentery" EXACT [OBOL:automatic]
 xref: EHDAA:3031
 xref: HOG:0000413
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
-is_a: UBERON:0002095 ! implied link automatically realized ! mesentery
+is_a: UBERON:0004854 ! implied link automatically realized ! gastrointestinal system mesentery
 intersection_of: UBERON:0002095 ! mesentery
 intersection_of: part_of UBERON:0001045 ! midgut
 
@@ -45506,8 +45525,8 @@ synonym: "organ mucosa of anal region" EXACT [OBOL:automatic]
 synonym: "organ mucosa of anatomical anal canal" EXACT [OBOL:automatic]
 xref: EMAPA:27531
 xref: FMA:74654
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004786 ! implied link automatically realized ! gastrointestinal system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000159 ! anal canal
 
@@ -45629,7 +45648,7 @@ synonym: "pharynx epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:16708
 xref: MA:0002725
 xref: ZFA:0001174
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001042 ! pharynx
 
@@ -45730,7 +45749,7 @@ synonym: "submandibular gland epithelial tissue" EXACT [OBOL:automatic]
 synonym: "submandibular gland epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:18813
 xref: HOG:0000989
-is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
+is_a: UBERON:0004809 ! implied link automatically realized ! salivary gland epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001736 ! submandibular gland
 
@@ -45746,7 +45765,7 @@ synonym: "parotid gland epithelial tissue" EXACT [OBOL:automatic]
 synonym: "parotid gland epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:18538
 xref: HOG:0001434
-is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
+is_a: UBERON:0004809 ! implied link automatically realized ! salivary gland epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001831 ! parotid gland
 
@@ -45766,7 +45785,7 @@ synonym: "sublingual gland epithelial tissue" EXACT [OBOL:automatic]
 synonym: "sublingual gland epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:18810
 xref: HOG:0001098
-is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
+is_a: UBERON:0004809 ! implied link automatically realized ! salivary gland epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001832 ! sublingual gland
 
@@ -47022,7 +47041,7 @@ synonym: "pharynx skeletal muscle" EXACT [OBOL:automatic]
 synonym: "pharynx skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of pharynx" EXACT [OBOL:automatic]
 xref: EMAPA:18963
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+is_a: UBERON:0004830 ! implied link automatically realized ! respiratory system skeletal muscle
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001042 ! pharynx
 
@@ -47085,6 +47104,7 @@ synonym: "thoracic diaphragm meso-epithelium" EXACT [OBOL:automatic]
 synonym: "thoracic diaphragm mesothelium" EXACT [OBOL:automatic]
 xref: EMAPA:18429
 is_a: UBERON:0001136 ! implied link automatically realized ! mesothelium
+is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
 intersection_of: UBERON:0001136 ! mesothelium
 intersection_of: part_of UBERON:0001103 ! diaphragm
 
@@ -47144,7 +47164,7 @@ name: mesentery of hindgut
 synonym: "hindgut mesentery" EXACT [OBOL:automatic]
 xref: EMAPA:16718
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
-is_a: UBERON:0002095 ! implied link automatically realized ! mesentery
+is_a: UBERON:0004854 ! implied link automatically realized ! gastrointestinal system mesentery
 intersection_of: UBERON:0002095 ! mesentery
 intersection_of: part_of UBERON:0001046 ! hindgut
 
@@ -47168,8 +47188,8 @@ synonym: "mesentery of large bowel" EXACT [OBOL:automatic]
 xref: EMAPA:18942
 xref: FMA:14645
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
-is_a: UBERON:0002095 ! implied link automatically realized ! mesentery
 is_a: UBERON:0003335 ! implied link automatically realized ! serosa of colon
+is_a: UBERON:0004854 ! implied link automatically realized ! gastrointestinal system mesentery
 intersection_of: UBERON:0002095 ! mesentery
 intersection_of: part_of UBERON:0001155 ! colon
 
@@ -47279,8 +47299,7 @@ id: UBERON:0003407
 name: cartilage of nasal septum
 synonym: "nasal septum cartilage" EXACT [OBOL:automatic]
 xref: EMAPA:25091
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-is_a: UBERON:0002418 ! implied link automatically realized ! cartilage
+is_a: UBERON:0001823 ! implied link automatically realized ! nasal cartilage
 intersection_of: UBERON:0002418 ! cartilage
 intersection_of: part_of UBERON:0001706 ! nasal septum
 
@@ -48457,8 +48476,8 @@ synonym: "sebaceous gland of camera-type eye" EXACT [OBOL:automatic]
 synonym: "sebaceous gland of vertebrate eye" EXACT [OBOL:automatic]
 synonym: "vertebrate eye sebaceous gland" EXACT [OBOL:automatic]
 xref: MA:0002452
-is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
 is_a: UBERON:0001821 ! implied link automatically realized ! sebaceous gland
+is_a: UBERON:0004859 ! implied link automatically realized ! eye gland
 intersection_of: UBERON:0001821 ! sebaceous gland
 intersection_of: part_of UBERON:0000019 ! camera-type eye
 
@@ -48689,10 +48708,11 @@ synonym: "inner layer of eyeball blood vessel" EXACT [OBOL:automatic]
 synonym: "retinal blood vessel" EXACT [OBOL:automatic]
 synonym: "tunica interna of eyeball blood vessel" EXACT [OBOL:automatic]
 xref: MA:0001317
-is_a: UBERON:0001981 ! implied link automatically realized ! blood vessel
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0000966 ! retina
+relationship: part_of UBERON:0004864 ! vasculature of retina
 
 [Term]
 id: UBERON:0003502
@@ -49110,6 +49130,7 @@ synonym: "respiratory system endothelium of lymphatic vessel" EXACT [OBOL:automa
 synonym: "respiratory system lymph vessel endothelium" EXACT [OBOL:automatic]
 xref: MA:0001825
 is_a: UBERON:0002042 ! implied link automatically realized ! endothelium of lymphatic vessel
+is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
 intersection_of: UBERON:0002042 ! endothelium of lymphatic vessel
 intersection_of: part_of UBERON:0001004 ! respiratory system
 
@@ -50654,8 +50675,8 @@ synonym: "vertebrate eye skin gland" EXACT [OBOL:automatic]
 synonym: "vertebrate eye skin glands" EXACT [OBOL:automatic]
 synonym: "vertebrate eye skin glands set" EXACT [OBOL:automatic]
 xref: MA:0002451
-is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
 is_a: UBERON:0002419 ! implied link automatically realized ! skin gland
+is_a: UBERON:0004859 ! implied link automatically realized ! eye gland
 intersection_of: UBERON:0002419 ! skin gland
 intersection_of: part_of UBERON:0000019 ! camera-type eye
 
@@ -51832,6 +51853,7 @@ synonym: "suture of cranium" EXACT [OBOL:automatic]
 xref: FMA:71385
 xref: GAID:211
 xref: MA:0001475
+is_a: UBERON:0000032 ! implied link automatically realized ! cranial structure
 is_a: UBERON:0000969 ! suture
 intersection_of: UBERON:0000969 ! suture
 intersection_of: part_of UBERON:0003128 ! cranium
@@ -51892,7 +51914,7 @@ xref: ncithesaurus:Sacral_Bone
 xref: OpenCyc:Mx4rvmBKnJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001130 ! vertebral column
 relationship: part_of UBERON:0001130 ! vertebral column
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 
 [Term]
 id: UBERON:0003691
@@ -52340,6 +52362,7 @@ xref: GAID:951
 xref: MA:0002794
 is_a: UBERON:0000344 ! mucosa
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004786 ! implied link automatically realized ! gastrointestinal system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000165 ! mouth
 
@@ -53663,8 +53686,8 @@ synonym: "lower gastrointestinal tract epithelium" EXACT [OBOL:automatic]
 xref: BTO:0000956
 xref: ncithesaurus:Gut_Epithelium
 xref: ZFA:0005123
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004808 ! implied link automatically realized ! gastrointestinal system epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001555 ! gut
 
@@ -55119,8 +55142,9 @@ relationship: part_of UBERON:0000979 ! tibia
 id: UBERON:0004099
 name: joint spaces of the elbow
 def: "Joint cavity shared by all the joints of the elbow. The elbow joint is a compound joint that actually comprises three separate joints: the joints connecting the upper and lower arm: 1) Articulatio humero-ulnaris and 2) Articulatio humero-radialis as well as the proximal joint connecting the forarm bones: 3) Articulatio radio-ulnaris proximalis. All three share a joint cavity which is highly sinuated/scalloped/coved. Joint spaces of the elbow summarizes the joint cavity shared by all three adjoining joints of the elbow joint." [HP:0003943]
-is_a: UBERON:0000464 ! anatomical space
-relationship: part_of UBERON:0001490 ! elbow joint
+is_a: UBERON:0000464 ! implied link automatically realized ! anatomical space
+intersection_of: UBERON:0000464 ! anatomical space
+intersection_of: part_of UBERON:0001490 ! elbow joint
 
 [Term]
 id: UBERON:0004100
@@ -55507,7 +55531,6 @@ relationship: develops_from UBERON:0003071 ! eye primordium
 id: UBERON:0004129
 name: growth plate cartilage
 def: "cartilage that will provide a scaffold for mineralization of endochondral bones as they elongate or grow." [GO:0003417]
-comment: merge with epiphyseal plate?
 synonym: "growth plate" RELATED []
 is_a: UBERON:0002418 ! cartilage
 relationship: surrounds UBERON:0002513 ! endochondral bone
@@ -56071,12 +56094,14 @@ relationship: part_of UBERON:0002264 ! olfactory bulb
 [Term]
 id: UBERON:0004187
 name: Harderian gland
-def: "The Harderian gland is an anterior orbital structure usually associated with the nictitating membrane, and produces and secretes a variety of substances to the eye, depending upon the species" [GO:0070384]
+def: "The Harderian gland is an anterior orbital structure usually associated with the nictitating membrane, and produces and secretes a variety of substances to the eye, depending upon the species[GO]. An accessory lacrimal gland on the inner side of the orbit in reptiles and birds but usually degenerate in mammals[BTO]." [GO:0070384]
 xref: BTO:0000557
 xref: EMAPA:19153
 xref: GAID:1219
 xref: MA:0001247
-is_a: UBERON:0002530 ! gland
+is_a: UBERON:0001821 ! sebaceous gland
+is_a: UBERON:0004859 ! implied link automatically realized ! eye gland
+relationship: part_of UBERON:0000970 ! eye
 
 [Term]
 id: UBERON:0004188
@@ -56297,8 +56322,8 @@ def: "The nephron epithelium is a tissue that covers the surface of a nephron" [
 synonym: "epithelial tissue of nephron" EXACT [OBOL:automatic]
 synonym: "epithelium of nephron" EXACT [OBOL:automatic]
 synonym: "nephron epithelial tissue" EXACT [OBOL:automatic]
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004819 ! implied link automatically realized ! kidney epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001285 ! nephron
 
@@ -58397,6 +58422,8 @@ xref: MAT:0000032
 xref: MIAA:0000032
 xref: OpenCyc:Mx4rvVi1rpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000480 ! anatomical group
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0001434 ! skeletal system
 
 [Term]
 id: UBERON:0004289
@@ -59317,33 +59344,41 @@ intersection_of: part_of UBERON:0002534 ! fin
 id: UBERON:0004377
 name: distal metaphysis
 xref: FMA:32824
-is_a: UBERON:0001438 ! metaphysis
+is_a: UBERON:0001438 ! implied link automatically realized ! metaphysis
+intersection_of: UBERON:0001438 ! metaphysis
+intersection_of: in_distal_side_of UBERON:0004769 ! diaphysis
 
 [Term]
 id: UBERON:0004378
 name: proximal metaphysis
 xref: FMA:32823
-is_a: UBERON:0001438 ! metaphysis
+is_a: UBERON:0001438 ! implied link automatically realized ! metaphysis
+intersection_of: UBERON:0001438 ! metaphysis
+intersection_of: in_proximal_side_of UBERON:0004769 ! diaphysis
 
 [Term]
 id: UBERON:0004379
 name: distal epiphysis
 xref: FMA:32822
-is_a: UBERON:0001437 ! epiphysis
+is_a: UBERON:0001437 ! implied link automatically realized ! epiphysis
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: adjacent_to UBERON:0004377 ! distal metaphysis
 
 [Term]
 id: UBERON:0004380
 name: proximal epiphysis
 xref: FMA:32821
-is_a: UBERON:0001437 ! epiphysis
+is_a: UBERON:0001437 ! implied link automatically realized ! epiphysis
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: adjacent_to UBERON:0004378 ! proximal metaphysis
 
 [Term]
 id: UBERON:0004381
 name: skeleton of limb
 synonym: "limb skeleton" EXACT []
 synonym: "set of bones of limb" EXACT []
-is_a: UBERON:0000075 ! implied link automatically realized ! subdivision of skeleton
-intersection_of: UBERON:0000075 ! subdivision of skeleton
+is_a: UBERON:0000075 ! implied link automatically realized ! subdivision of skeletal system
+intersection_of: UBERON:0000075 ! subdivision of skeletal system
 intersection_of: part_of UBERON:0002101 ! limb
 
 [Term]
@@ -59953,6 +59988,8 @@ relationship: part_of UBERON:0002398 ! hand
 [Term]
 id: UBERON:0004454
 name: tarsus
+def: "the cluster of bones  in the foot  between the tibia  and fibula  and the metatarsus. The bones of the tarsus do not belong to individual toes, whereas those of the metatarsus do. The joint between the tibia and fibula and the tarsus is referred to as the ankle joint[WP]." [Wikipedia:Tarsus_(skeleton)]
+xref: GAID:1223
 xref: MA:0000050
 xref: XAO:0003211
 is_a: UBERON:0001445 ! skeleton of foot
@@ -60304,6 +60341,7 @@ id: UBERON:0004495
 name: Skeletal muscle tissue of diaphragm
 xref: FMA:261898
 is_a: UBERON:0003898 ! implied link automatically realized ! skeletal muscle of trunk
+is_a: UBERON:0004830 ! implied link automatically realized ! respiratory system skeletal muscle
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001103 ! diaphragm
 
@@ -61282,7 +61320,7 @@ name: blood vessel endothelium
 xref: BTO:0000766
 xref: MA:0000709
 xref: ZFA:0005257
-is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
+is_a: UBERON:0004852 ! implied link automatically realized ! cardiovascular system endothelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0001981 ! blood vessel
 
@@ -61903,7 +61941,7 @@ intersection_of: part_of UBERON:0004087 ! vena cava
 id: UBERON:0004699
 name: outflow tract endothelium
 xref: MA:0000490
-is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
+is_a: UBERON:0004852 ! implied link automatically realized ! cardiovascular system endothelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0004145 ! outflow tract
 
@@ -61911,7 +61949,7 @@ intersection_of: part_of UBERON:0004145 ! outflow tract
 id: UBERON:0004700
 name: arterial system endothelium
 xref: MA:0000703
-is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
+is_a: UBERON:0004852 ! implied link automatically realized ! cardiovascular system endothelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0004572 ! arterial system
 
@@ -61919,7 +61957,7 @@ intersection_of: part_of UBERON:0004572 ! arterial system
 id: UBERON:0004701
 name: venous system endothelium
 xref: MA:0000714
-is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
+is_a: UBERON:0004852 ! implied link automatically realized ! cardiovascular system endothelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0004582 ! venous system
 
@@ -61928,6 +61966,7 @@ id: UBERON:0004702
 name: respiratory system blood vessel endothelium
 xref: MA:0001805
 is_a: UBERON:0004638 ! implied link automatically realized ! blood vessel endothelium
+is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
 intersection_of: UBERON:0004638 ! blood vessel endothelium
 intersection_of: part_of UBERON:0001004 ! respiratory system
 
@@ -62348,18 +62387,18 @@ relationship: part_of UBERON:0001421 ! pectoral girdle
 [Term]
 id: UBERON:0004742
 name: dentary
-def: "Dermal bone that forms the antero-lateral part of the lower jaw. It first appears around the anterior end of Meckel's cartilage (5.1 mm NL). In the adult, the dentary meets its counterpart anteriorly at the mandibular symphysis. The dentary abuts the retroarticular posteriorly, and it surround the anguloarticular. The dentary is connected to the maxilla by the maxillo-mandibular ligament. Dentary teeth are absent in cypriniforms, but are present in other ostariophysans." [ZFA:0000191]
+def: "Dermal bone that forms the antero-lateral part of the lower jaw. It first appears around the anterior end of Meckel's cartilage (5.1 mm NL). In the adult, the dentary meets its counterpart anteriorly at the mandibular symphysis. The dentary abuts the retroarticular posteriorly, and it surround the anguloarticular. The dentary is connected to the maxilla by the maxillo-mandibular ligament. Dentary teeth are absent in cypriniforms, but are present in other ostariophysans." [Wikipedia:Dentary#In_other_vertebrates, ZFA:0000191]
 synonym: "dentale" RELATED [AAO:0000124]
 synonym: "dentary bone" EXACT [ZFA:0000191]
 synonym: "os dentale" RELATED [AAO:0000124]
 synonym: "sur-angulaire" RELATED [AAO:0000124]
 xref: AAO:0000124
 xref: ZFA:0000191
-is_a: UBERON:0001684 ! implied link automatically realized ! mandible
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
+is_a: UBERON:0004768 ! implied link automatically realized ! bone of lower jaw
 relationship: part_of UBERON:0001710 ! lower jaw
-relationship: part_of UBERON:0003113 ! dermal bone cranium
+relationship: part_of UBERON:0003113 ! dermatocranium
 
 [Term]
 id: UBERON:0004743
@@ -62393,12 +62432,12 @@ synonym: "goniale" RELATED [AAO:0000028]
 synonym: "operculo angulaire" RELATED [AAO:0000028]
 xref: AAO:0000028
 xref: ZFA:0000467
-is_a: UBERON:0001684 ! implied link automatically realized ! mandible
 is_a: UBERON:0002513 ! endochondral bone
 is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
+is_a: UBERON:0004768 ! implied link automatically realized ! bone of lower jaw
 relationship: develops_from UBERON:0001086 ! articular cartilage
 relationship: part_of UBERON:0001710 ! lower jaw
-relationship: part_of UBERON:0003113 ! dermal bone cranium
+relationship: part_of UBERON:0003113 ! dermatocranium
 
 [Term]
 id: UBERON:0004745
@@ -62417,7 +62456,7 @@ relationship: part_of UBERON:0001697 ! orbit
 relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0003111 ! sphenoid region
 relationship: part_of UBERON:0003112 ! olfactory region
-relationship: part_of UBERON:0003113 ! dermal bone cranium
+relationship: part_of UBERON:0003113 ! dermatocranium
 
 [Term]
 id: UBERON:0004746
@@ -62570,6 +62609,7 @@ intersection_of: capable_of GO:0055078
 id: UBERON:0004759
 name: salt gland of cranial region
 def: "A salt gland located in the cranium or cranial region." [OBOL:automatic]
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004758 ! implied link automatically realized ! salt gland
 intersection_of: UBERON:0002530 ! gland
 intersection_of: capable_of GO:0055078
@@ -62652,6 +62692,7 @@ def: "Anatomical structure consisting of skeletal tissue. Encompasses whole bone
 comment: TODO - add more general class for other kinds of mineralized tissue
 subset: uberon_slim
 xref: galen:SkeletalStructure
+xref: TAO:0001890
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -62669,6 +62710,1243 @@ name: vomerine tooth
 xref: AAO:0000635
 xref: TAO:0001631
 is_a: UBERON:0001091 ! calcareous tooth
+
+[Term]
+id: UBERON:0004768
+name: bone of lower jaw
+def: "Any bone that is part of the lower jaw." [OBOL:automatic]
+comment: this is a grouping class which will group analagous structures such as the dentary and the mandible
+synonym: "bone of ventral mandibular arch" EXACT [OBOL:automatic]
+synonym: "bone organ of lower jaw" EXACT [OBOL:automatic]
+synonym: "bone organ of ventral mandibular arch" EXACT [OBOL:automatic]
+synonym: "lower jaw bone" EXACT []
+synonym: "lower jaw bone organ" EXACT [OBOL:automatic]
+synonym: "ventral mandibular arch bone" EXACT [OBOL:automatic]
+synonym: "ventral mandibular arch bone organ" EXACT [OBOL:automatic]
+is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
+intersection_of: UBERON:0001474 ! bone
+intersection_of: part_of UBERON:0001710 ! lower jaw
+
+[Term]
+id: UBERON:0004769
+name: diaphysis
+def: "Subdivision of long bone which forms the part of the bone between the two epiphyses; together with other the subdivisions of long bone, it constitutes the long bone. Examples: diaphysis of humerus, diaphysis of femur[FMA]. the main or mid section (shaft) of a long bone. It is made up of cortical bone and usually contains bone marrow and adipose tissue (fat)." [Wikipedia:Diaphysis]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "body of long bone" EXACT []
+synonym: "long bone diaphysis" EXACT []
+synonym: "shaft of long bone" EXACT []
+xref: FMA:24013
+xref: GAID:189
+xref: MA:0002803
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0002428 ! limb bone
+
+[Term]
+id: UBERON:0004770
+name: articular system
+synonym: "set of all joints" RELATED []
+synonym: "set of all joints of body" EXACT [FMA:23878]
+xref: FMA:23878
+is_a: UBERON:0000480 ! anatomical group
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0001434 ! skeletal system
+
+[Term]
+id: UBERON:0004771
+name: posterior nasal aperture
+def: "Opening/conduit between the nasal cavity and the nasopharynx[AAO]" [AAO:0000093, Wikipedia:Posterior_nasal_apertures]
+synonym: "choana" EXACT [Wikipedia:Choane]
+xref: AAO:0000093
+xref: FMA:53143
+xref: XAO:0000277
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+relationship: part_of UBERON:0001707 ! nasal cavity
+
+[Term]
+id: UBERON:0004772
+name: eyelid tarsus
+synonym: "tarsal plate" EXACT []
+synonym: "tarsal plate" EXACT [FMA:59086]
+synonym: "tarsal plate of eyelid" EXACT [FMA:59086]
+xref: FMA:59086
+xref: MA:0000270
+disjoint_from: UBERON:0004454 ! tarsus
+relationship: part_of UBERON:0001711 ! eyelid
+
+[Term]
+id: UBERON:0004773
+name: superior eyelid tarsus
+synonym: "superior tarsal plate" EXACT [FMA:59087]
+synonym: "superior tarsus of eyelid" EXACT []
+synonym: "tarsal plate of upper eyelid" EXACT [FMA:59087]
+synonym: "tarsus of upper eyelid" EXACT []
+xref: FMA:59087
+xref: MA:0001260
+is_a: UBERON:0004772 ! implied link automatically realized ! eyelid tarsus
+intersection_of: UBERON:0004772 ! eyelid tarsus
+intersection_of: part_of UBERON:0001712 ! upper eyelid
+
+[Term]
+id: UBERON:0004774
+name: inferior eyelid tarsus
+synonym: "inferior tarsal plate" EXACT [FMA:59088]
+synonym: "inferior tarsus of eyelid" EXACT []
+synonym: "tarsal plate of lower eyelid" EXACT [FMA:59088]
+synonym: "tarsus of lower eyelid" EXACT []
+xref: FMA:59088
+xref: MA:0001260
+is_a: UBERON:0004772 ! implied link automatically realized ! eyelid tarsus
+intersection_of: UBERON:0004772 ! eyelid tarsus
+intersection_of: part_of UBERON:0001713 ! lower eyelid
+
+[Term]
+id: UBERON:0004775
+name: outer renal medulla vasa recta
+synonym: "outer medulla of kidney vasa recta" EXACT [OBOL:automatic]
+synonym: "outer zone of medulla of kidney vasa recta" EXACT [OBOL:automatic]
+synonym: "outer zone of renal medulla vasa recta" EXACT [OBOL:automatic]
+synonym: "vasa recta of outer medulla of kidney" EXACT [OBOL:automatic]
+synonym: "vasa recta of outer renal medulla" EXACT [OBOL:automatic]
+synonym: "vasa recta of outer zone of medulla of kidney" EXACT [OBOL:automatic]
+synonym: "vasa recta of outer zone of renal medulla" EXACT [OBOL:automatic]
+xref: MA:0002597
+is_a: UBERON:0004726 ! implied link automatically realized ! vasa recta
+intersection_of: UBERON:0004726 ! vasa recta
+intersection_of: part_of UBERON:0001293 ! outer medulla of kidney
+
+[Term]
+id: UBERON:0004776
+name: inner renal medulla vasa recta
+synonym: "inner medulla of kidney vasa recta" EXACT [OBOL:automatic]
+synonym: "inner zone of medulla of kidney vasa recta" EXACT [OBOL:automatic]
+synonym: "inner zone of renal medulla vasa recta" EXACT [OBOL:automatic]
+synonym: "set of inner region of renal pyramids vasa recta" EXACT [OBOL:automatic]
+synonym: "vasa recta of inner medulla of kidney" EXACT [OBOL:automatic]
+synonym: "vasa recta of inner renal medulla" EXACT [OBOL:automatic]
+synonym: "vasa recta of inner zone of medulla of kidney" EXACT [OBOL:automatic]
+synonym: "vasa recta of inner zone of renal medulla" EXACT [OBOL:automatic]
+synonym: "vasa recta of set of inner region of renal pyramids" EXACT [OBOL:automatic]
+xref: MA:0002596
+is_a: UBERON:0004726 ! implied link automatically realized ! vasa recta
+intersection_of: UBERON:0004726 ! vasa recta
+intersection_of: part_of UBERON:0001294 ! inner medulla of kidney
+
+[Term]
+id: UBERON:0004777
+name: respiratory system submucosa
+synonym: "apparatus respiratorius submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "submucosa of respiratory system" EXACT [OBOL:automatic]
+xref: MA:0001822
+is_a: UBERON:0000009 ! implied link automatically realized ! submucosa
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0004778
+name: larynx submucosa
+synonym: "submucosa of larynx" EXACT [OBOL:automatic]
+xref: MA:0002728
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004777 ! implied link automatically realized ! respiratory system submucosa
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001737 ! larynx
+
+[Term]
+id: UBERON:0004779
+name: respiratory system lamina propria
+synonym: "apparatus respiratorius lamina propria" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius lamina propria mucosa" EXACT [OBOL:automatic]
+synonym: "lamina propria mucosa of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "lamina propria mucosa of respiratory system" EXACT [OBOL:automatic]
+synonym: "lamina propria of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "lamina propria of respiratory system" EXACT [OBOL:automatic]
+synonym: "respiratory system lamina propria mucosa" EXACT [OBOL:automatic]
+xref: MA:0001821
+is_a: UBERON:0000030 ! implied link automatically realized ! lamina propria
+is_a: UBERON:0003570 ! implied link automatically realized ! respiratory system connective tissue
+intersection_of: UBERON:0000030 ! lamina propria
+intersection_of: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0004780
+name: gastrointestinal system lamina propria
+synonym: "digestive system lamina propria" EXACT [OBOL:automatic]
+synonym: "digestive system lamina propria mucosa" EXACT [OBOL:automatic]
+synonym: "gastrointestinal system lamina propria mucosa" EXACT [OBOL:automatic]
+synonym: "lamina propria mucosa of digestive system" EXACT [OBOL:automatic]
+synonym: "lamina propria mucosa of gastrointestinal system" EXACT [OBOL:automatic]
+synonym: "lamina propria of digestive system" EXACT [OBOL:automatic]
+synonym: "lamina propria of gastrointestinal system" EXACT [OBOL:automatic]
+xref: MA:0001899
+is_a: UBERON:0000030 ! implied link automatically realized ! lamina propria
+intersection_of: UBERON:0000030 ! lamina propria
+intersection_of: part_of UBERON:0001007 ! digestive system
+
+[Term]
+id: UBERON:0004781
+name: gall bladder lamina propria
+synonym: "gall bladder lamina propria mucosa" EXACT [OBOL:automatic]
+synonym: "gallbladder lamina propria" EXACT [OBOL:automatic]
+synonym: "gallbladder lamina propria mucosa" EXACT [OBOL:automatic]
+synonym: "lamina propria mucosa of gall bladder" EXACT [OBOL:automatic]
+synonym: "lamina propria mucosa of gallbladder" EXACT [OBOL:automatic]
+synonym: "lamina propria of gall bladder" EXACT [OBOL:automatic]
+synonym: "lamina propria of gallbladder" EXACT [OBOL:automatic]
+xref: MA:0001633
+is_a: UBERON:0003567 ! implied link automatically realized ! abdomen connective tissue
+is_a: UBERON:0003586 ! implied link automatically realized ! trunk connective tissue
+is_a: UBERON:0004780 ! implied link automatically realized ! gastrointestinal system lamina propria
+intersection_of: UBERON:0000030 ! lamina propria
+intersection_of: part_of UBERON:0002110 ! gallbladder
+
+[Term]
+id: UBERON:0004782
+name: gastrointestinal system serosa
+synonym: "digestive system serosa" EXACT [OBOL:automatic]
+synonym: "digestive system serous membrane" EXACT [OBOL:automatic]
+synonym: "gastrointestinal system serous membrane" EXACT [OBOL:automatic]
+synonym: "serosa of digestive system" EXACT [OBOL:automatic]
+synonym: "serosa of gastrointestinal system" EXACT [OBOL:automatic]
+synonym: "serous membrane of digestive system" EXACT [OBOL:automatic]
+synonym: "serous membrane of gastrointestinal system" EXACT [OBOL:automatic]
+xref: MA:0001522
+is_a: UBERON:0000042 ! implied link automatically realized ! serous membrane
+intersection_of: UBERON:0000042 ! serous membrane
+intersection_of: part_of UBERON:0001007 ! digestive system
+
+[Term]
+id: UBERON:0004783
+name: gall bladder serosa
+synonym: "gall bladder serous membrane" EXACT [OBOL:automatic]
+synonym: "gallbladder serosa" EXACT [OBOL:automatic]
+synonym: "gallbladder serous membrane" EXACT [OBOL:automatic]
+synonym: "serosa of gall bladder" EXACT [OBOL:automatic]
+synonym: "serosa of gallbladder" EXACT [OBOL:automatic]
+synonym: "serous membrane of gall bladder" EXACT [OBOL:automatic]
+synonym: "serous membrane of gallbladder" EXACT [OBOL:automatic]
+xref: FMA:14659
+xref: MA:0001634
+is_a: UBERON:0004782 ! implied link automatically realized ! gastrointestinal system serosa
+intersection_of: UBERON:0000042 ! serous membrane
+intersection_of: part_of UBERON:0002110 ! gallbladder
+
+[Term]
+id: UBERON:0004784
+name: heart ventricle wall
+synonym: "anatomical wall of cardiac ventricle" EXACT [OBOL:automatic]
+synonym: "anatomical wall of heart ventricle" EXACT [OBOL:automatic]
+synonym: "anatomical wall of lower chamber of heart" EXACT [OBOL:automatic]
+synonym: "anatomical wall of ventricle of heart" EXACT [OBOL:automatic]
+synonym: "cardiac ventricle anatomical wall" EXACT [OBOL:automatic]
+synonym: "cardiac ventricle wall" EXACT [OBOL:automatic]
+synonym: "heart ventricle anatomical wall" EXACT [OBOL:automatic]
+synonym: "lower chamber of heart anatomical wall" EXACT [OBOL:automatic]
+synonym: "lower chamber of heart wall" EXACT [OBOL:automatic]
+synonym: "ventricle of heart anatomical wall" EXACT [OBOL:automatic]
+synonym: "ventricle of heart wall" EXACT [OBOL:automatic]
+synonym: "wall of cardiac ventricle" EXACT [OBOL:automatic]
+synonym: "wall of heart ventricle" EXACT [OBOL:automatic]
+synonym: "wall of lower chamber of heart" EXACT [OBOL:automatic]
+synonym: "wall of ventricle of heart" EXACT [OBOL:automatic]
+xref: MA:0002791
+is_a: UBERON:0000060 ! implied link automatically realized ! anatomical wall
+intersection_of: UBERON:0000060 ! anatomical wall
+intersection_of: part_of UBERON:0002082 ! cardiac ventricle
+
+[Term]
+id: UBERON:0004785
+name: respiratory system mucosa
+synonym: "apparatus respiratorius mucosa" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius mucosa of organ" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius mucous membrane" EXACT [OBOL:automatic]
+synonym: "mucosa of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of respiratory system" EXACT [OBOL:automatic]
+synonym: "mucosa of respiratory system" EXACT [OBOL:automatic]
+synonym: "mucous membrane of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucous membrane of respiratory system" EXACT [OBOL:automatic]
+synonym: "respiratory system mucosa of organ" EXACT [OBOL:automatic]
+synonym: "respiratory system mucous membrane" EXACT [OBOL:automatic]
+xref: MA:0001827
+is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0004786
+name: gastrointestinal system mucosa
+synonym: "digestive system mucosa" EXACT [OBOL:automatic]
+synonym: "digestive system mucosa of organ" EXACT [OBOL:automatic]
+synonym: "digestive system mucous membrane" EXACT [OBOL:automatic]
+synonym: "gastrointestinal system mucosa of organ" EXACT [OBOL:automatic]
+synonym: "gastrointestinal system mucous membrane" EXACT [OBOL:automatic]
+synonym: "mucosa of digestive system" EXACT [OBOL:automatic]
+synonym: "mucosa of gastrointestinal system" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of digestive system" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of gastrointestinal system" EXACT [OBOL:automatic]
+synonym: "mucous membrane of digestive system" EXACT [OBOL:automatic]
+synonym: "mucous membrane of gastrointestinal system" EXACT [OBOL:automatic]
+xref: MA:0001521
+is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001007 ! digestive system
+
+[Term]
+id: UBERON:0004787
+name: urethra urothelium
+synonym: "urethra Uroepithelium" EXACT [OBOL:automatic]
+synonym: "Uroepithelium of urethra" EXACT [OBOL:automatic]
+synonym: "urothelium of urethra" EXACT [OBOL:automatic]
+xref: MA:0001687
+is_a: UBERON:0000365 ! implied link automatically realized ! urothelium
+is_a: UBERON:0002325 ! implied link automatically realized ! epithelium of urethra
+intersection_of: UBERON:0000365 ! urothelium
+intersection_of: part_of UBERON:0000057 ! urethra
+
+[Term]
+id: UBERON:0004788
+name: kidney pelvis urothelium
+synonym: "kidney pelvis Uroepithelium" EXACT [OBOL:automatic]
+synonym: "pelvis of ureter Uroepithelium" EXACT [OBOL:automatic]
+synonym: "pelvis of ureter urothelium" EXACT [OBOL:automatic]
+synonym: "renal pelvis Uroepithelium" EXACT [OBOL:automatic]
+synonym: "renal pelvis urothelium" EXACT [OBOL:automatic]
+synonym: "Uroepithelium of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "Uroepithelium of pelvis of ureter" EXACT [OBOL:automatic]
+synonym: "Uroepithelium of renal pelvis" EXACT [OBOL:automatic]
+synonym: "urothelium of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "urothelium of pelvis of ureter" EXACT [OBOL:automatic]
+synonym: "urothelium of renal pelvis" EXACT [OBOL:automatic]
+xref: MA:0002632
+is_a: UBERON:0000365 ! implied link automatically realized ! urothelium
+is_a: UBERON:0004819 ! implied link automatically realized ! kidney epithelium
+intersection_of: UBERON:0000365 ! urothelium
+intersection_of: part_of UBERON:0001224 ! renal pelvis
+
+[Term]
+id: UBERON:0004789
+name: larynx mucous gland
+synonym: "mucous gland of larynx" EXACT [OBOL:automatic]
+xref: MA:0001767
+is_a: UBERON:0000171 ! implied link automatically realized ! respiration organ
+is_a: UBERON:0000414 ! implied link automatically realized ! mucous gland
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+intersection_of: UBERON:0000414 ! mucous gland
+intersection_of: part_of UBERON:0001737 ! larynx
+
+[Term]
+id: UBERON:0004790
+name: skin mucous gland
+synonym: "entire skin mucous gland" EXACT [OBOL:automatic]
+synonym: "mucous gland of entire skin" EXACT [OBOL:automatic]
+synonym: "mucous gland of skin of body" EXACT [OBOL:automatic]
+synonym: "skin of body mucous gland" EXACT [OBOL:automatic]
+xref: MA:0000148
+is_a: UBERON:0000414 ! implied link automatically realized ! mucous gland
+is_a: UBERON:0002419 ! implied link automatically realized ! skin gland
+intersection_of: UBERON:0000414 ! mucous gland
+intersection_of: part_of UBERON:0002097 ! skin of body
+
+[Term]
+id: UBERON:0004791
+name: thymus trabecula
+synonym: "thymus gland trabecula" EXACT [OBOL:automatic]
+synonym: "trabecula of thymus" EXACT [OBOL:automatic]
+synonym: "trabecula of thymus gland" EXACT [OBOL:automatic]
+xref: MA:0002674
+is_a: UBERON:0000440 ! implied link automatically realized ! trabecula
+intersection_of: UBERON:0000440 ! trabecula
+intersection_of: part_of UBERON:0002370 ! thymus
+
+[Term]
+id: UBERON:0004792
+name: endocrine pancreas secretion
+synonym: "pars endocrina pancreatis secretion" EXACT [OBOL:automatic]
+synonym: "secretion of endocrine pancreas" EXACT [OBOL:automatic]
+synonym: "secretion of pars endocrina pancreatis" EXACT [OBOL:automatic]
+xref: MA:0002517
+is_a: UBERON:0004795 ! implied link automatically realized ! pancreas secretion
+intersection_of: UBERON:0000456 ! secretion
+intersection_of: part_of UBERON:0000016 ! endocrine pancreas
+
+[Term]
+id: UBERON:0004793
+name: exocrine pancreas secretion
+synonym: "pars exocrina pancreatis secretion" EXACT [OBOL:automatic]
+synonym: "secretion of exocrine pancreas" EXACT [OBOL:automatic]
+synonym: "secretion of pars exocrina pancreatis" EXACT [OBOL:automatic]
+xref: MA:0002518
+is_a: UBERON:0004795 ! implied link automatically realized ! pancreas secretion
+intersection_of: UBERON:0000456 ! secretion
+intersection_of: part_of UBERON:0000017 ! exocrine pancreas
+
+[Term]
+id: UBERON:0004794
+name: esophagus secretion
+synonym: "gullet secretion" EXACT [OBOL:automatic]
+synonym: "oesophagus secretion" EXACT [OBOL:automatic]
+synonym: "secretion of esophagus" EXACT [OBOL:automatic]
+synonym: "secretion of gullet" EXACT [OBOL:automatic]
+synonym: "secretion of oesophagus" EXACT [OBOL:automatic]
+xref: MA:0002514
+is_a: UBERON:0000456 ! implied link automatically realized ! secretion
+intersection_of: UBERON:0000456 ! secretion
+intersection_of: part_of UBERON:0001043 ! esophagus
+
+[Term]
+id: UBERON:0004795
+name: pancreas secretion
+synonym: "secretion of pancreas" EXACT [OBOL:automatic]
+xref: MA:0002516
+is_a: UBERON:0000456 ! implied link automatically realized ! secretion
+intersection_of: UBERON:0000456 ! secretion
+intersection_of: part_of UBERON:0001264 ! pancreas
+
+[Term]
+id: UBERON:0004796
+name: prostate gland secretion
+synonym: "prostate secretion" EXACT [OBOL:automatic]
+synonym: "secretion of prostate" EXACT [OBOL:automatic]
+synonym: "secretion of prostate gland" EXACT [OBOL:automatic]
+xref: MA:0002525
+is_a: UBERON:0000456 ! implied link automatically realized ! secretion
+intersection_of: UBERON:0000456 ! secretion
+intersection_of: part_of UBERON:0002367 ! prostate
+
+[Term]
+id: UBERON:0004797
+name: blood vessel layer
+xref: MA:0002854
+is_a: UBERON:0000119 ! implied link automatically realized ! cell layer
+intersection_of: UBERON:0000119 ! cell layer
+intersection_of: OBO_REL:develops_into UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0004798
+name: respiratory system basal lamina
+synonym: "apparatus respiratorius basal lamina" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius basal lamina of connective tissue" EXACT [OBOL:automatic]
+synonym: "basal lamina of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "basal lamina of connective tissue of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "basal lamina of connective tissue of respiratory system" EXACT [OBOL:automatic]
+synonym: "basal lamina of respiratory system" EXACT [OBOL:automatic]
+synonym: "respiratory system basal lamina of connective tissue" EXACT [OBOL:automatic]
+xref: MA:0001816
+is_a: UBERON:0000482 ! implied link automatically realized ! basal lamina
+intersection_of: UBERON:0000482 ! basal lamina
+intersection_of: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0004799
+name: trachea basal lamina
+synonym: "basal lamina of connective tissue of respiratory airway" EXACT [OBOL:automatic]
+synonym: "basal lamina of respiratory airway" EXACT [OBOL:automatic]
+synonym: "respiratory airway basal lamina" EXACT [OBOL:automatic]
+synonym: "respiratory airway basal lamina of connective tissue" EXACT [OBOL:automatic]
+xref: MA:0001855
+is_a: UBERON:0004798 ! implied link automatically realized ! respiratory system basal lamina
+intersection_of: UBERON:0000482 ! basal lamina
+intersection_of: part_of UBERON:0001005 ! respiratory airway
+
+[Term]
+id: UBERON:0004800
+name: bronchus basal lamina
+synonym: "basal lamina of bronchi" EXACT [OBOL:automatic]
+synonym: "basal lamina of bronchial trunk" EXACT [OBOL:automatic]
+synonym: "basal lamina of bronchus" EXACT [OBOL:automatic]
+synonym: "basal lamina of connective tissue of bronchi" EXACT [OBOL:automatic]
+synonym: "basal lamina of connective tissue of bronchial trunk" EXACT [OBOL:automatic]
+synonym: "basal lamina of connective tissue of bronchus" EXACT [OBOL:automatic]
+synonym: "bronchi basal lamina" EXACT [OBOL:automatic]
+synonym: "bronchi basal lamina of connective tissue" EXACT [OBOL:automatic]
+synonym: "bronchial trunk basal lamina" EXACT [OBOL:automatic]
+synonym: "bronchial trunk basal lamina of connective tissue" EXACT [OBOL:automatic]
+synonym: "bronchus basal lamina of connective tissue" EXACT [OBOL:automatic]
+xref: MA:0001833
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004798 ! implied link automatically realized ! respiratory system basal lamina
+intersection_of: UBERON:0000482 ! basal lamina
+intersection_of: part_of UBERON:0002185 ! bronchus
+
+[Term]
+id: UBERON:0004801
+name: cervix epithelium
+synonym: "cervical canal epithelial tissue" EXACT [OBOL:automatic]
+synonym: "cervical canal epithelium" EXACT [OBOL:automatic]
+synonym: "cervical canal of uterus epithelial tissue" EXACT [OBOL:automatic]
+synonym: "cervical canal of uterus epithelium" EXACT [OBOL:automatic]
+synonym: "cervix epithelial tissue" EXACT [OBOL:automatic]
+synonym: "cervix of uterus epithelial tissue" EXACT [OBOL:automatic]
+synonym: "cervix of uterus epithelium" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of cervical canal" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of cervical canal of uterus" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of cervix" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of cervix of uterus" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of neck of uterus" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of uterine cervix" EXACT [OBOL:automatic]
+synonym: "epithelium of cervical canal" EXACT [OBOL:automatic]
+synonym: "epithelium of cervical canal of uterus" EXACT [OBOL:automatic]
+synonym: "epithelium of cervix" EXACT [OBOL:automatic]
+synonym: "epithelium of cervix of uterus" EXACT [OBOL:automatic]
+synonym: "epithelium of neck of uterus" EXACT [OBOL:automatic]
+synonym: "epithelium of uterine cervix" EXACT [OBOL:automatic]
+synonym: "neck of uterus epithelial tissue" EXACT [OBOL:automatic]
+synonym: "neck of uterus epithelium" EXACT [OBOL:automatic]
+synonym: "uterine cervix epithelial tissue" EXACT [OBOL:automatic]
+synonym: "uterine cervix epithelium" EXACT [OBOL:automatic]
+xref: MA:0001724
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000002 ! uterine cervix
+
+[Term]
+id: UBERON:0004802
+name: respiratory tract epithelium
+synonym: "epithelial tissue of respiratory tract" EXACT [OBOL:automatic]
+synonym: "epithelium of respiratory tract" EXACT [OBOL:automatic]
+synonym: "respiratory tract epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001480
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000065 ! respiratory tract
+
+[Term]
+id: UBERON:0004803
+name: penis epithelium
+synonym: "epithelial tissue of penis" EXACT [OBOL:automatic]
+synonym: "epithelium of penis" EXACT [OBOL:automatic]
+synonym: "penis epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001742
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000989 ! penis
+
+[Term]
+id: UBERON:0004804
+name: oviduct epithelium
+synonym: "epithelial tissue of oviduct" EXACT [OBOL:automatic]
+synonym: "epithelium of oviduct" EXACT [OBOL:automatic]
+synonym: "oviduct epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001718
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000993 ! oviduct
+
+[Term]
+id: UBERON:0004805
+name: seminal vesicle epithelium
+synonym: "epithelial tissue of seminal gland" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of seminal vesicle" EXACT [OBOL:automatic]
+synonym: "epithelium of seminal gland" EXACT [OBOL:automatic]
+synonym: "epithelium of seminal vesicle" EXACT [OBOL:automatic]
+synonym: "seminal gland epithelial tissue" EXACT [OBOL:automatic]
+synonym: "seminal gland epithelium" EXACT [OBOL:automatic]
+synonym: "seminal vesicle epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001745
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000998 ! seminal vesicle
+
+[Term]
+id: UBERON:0004806
+name: vas deferens epithelium
+synonym: "deferent duct epithelial tissue" EXACT [OBOL:automatic]
+synonym: "deferent duct epithelium" EXACT [OBOL:automatic]
+synonym: "ductus deferens epithelial tissue" EXACT [OBOL:automatic]
+synonym: "ductus deferens epithelium" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of deferent duct" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of ductus deferens" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of sperm duct" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of vas deferen" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of vas deferens" EXACT [OBOL:automatic]
+synonym: "epithelium of deferent duct" EXACT [OBOL:automatic]
+synonym: "epithelium of ductus deferens" EXACT [OBOL:automatic]
+synonym: "epithelium of sperm duct" EXACT [OBOL:automatic]
+synonym: "epithelium of vas deferen" EXACT [OBOL:automatic]
+synonym: "epithelium of vas deferens" EXACT [OBOL:automatic]
+synonym: "sperm duct epithelial tissue" EXACT [OBOL:automatic]
+synonym: "sperm duct epithelium" EXACT [OBOL:automatic]
+synonym: "vas deferen epithelial tissue" EXACT [OBOL:automatic]
+synonym: "vas deferen epithelium" EXACT [OBOL:automatic]
+synonym: "vas deferens epithelial tissue" EXACT [OBOL:automatic]
+xref: FMA:225317
+xref: MA:0001749
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001000 ! vas deferens
+
+[Term]
+id: UBERON:0004807
+name: respiratory system epithelium
+synonym: "apparatus respiratorius epithelial tissue" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius epithelium" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of respiratory system" EXACT [OBOL:automatic]
+synonym: "epithelium of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "epithelium of respiratory system" EXACT [OBOL:automatic]
+synonym: "respiratory system epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001823
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0004808
+name: gastrointestinal system epithelium
+synonym: "digestive system epithelial tissue" EXACT [OBOL:automatic]
+synonym: "digestive system epithelium" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of digestive system" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of gastrointestinal system" EXACT [OBOL:automatic]
+synonym: "epithelium of digestive system" EXACT [OBOL:automatic]
+synonym: "epithelium of gastrointestinal system" EXACT [OBOL:automatic]
+synonym: "gastrointestinal system epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001520
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001007 ! digestive system
+
+[Term]
+id: UBERON:0004809
+name: salivary gland epithelium
+synonym: "epithelial tissue of salivary gland" EXACT [OBOL:automatic]
+synonym: "epithelium of salivary gland" EXACT [OBOL:automatic]
+synonym: "salivary gland epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001587
+is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001044 ! salivary gland
+
+[Term]
+id: UBERON:0004810
+name: renal tubule epithelium
+synonym: "epithelial tissue of nephron tubule" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of renal tubule" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of tubulus renalis" EXACT [OBOL:automatic]
+synonym: "epithelium of nephron tubule" EXACT [OBOL:automatic]
+synonym: "epithelium of renal tubule" EXACT [OBOL:automatic]
+synonym: "epithelium of tubulus renalis" EXACT [OBOL:automatic]
+synonym: "nephron tubule epithelial tissue" EXACT [OBOL:automatic]
+synonym: "nephron tubule epithelium" EXACT [OBOL:automatic]
+synonym: "renal tubule epithelial tissue" EXACT [OBOL:automatic]
+synonym: "tubulus renalis epithelial tissue" EXACT [OBOL:automatic]
+synonym: "tubulus renalis epithelium" EXACT [OBOL:automatic]
+xref: MA:0001681
+is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001231 ! renal tubule
+
+[Term]
+id: UBERON:0004811
+name: endometrium epithelium
+synonym: "endometrium epithelial tissue" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of endometrium" EXACT [OBOL:automatic]
+synonym: "epithelium of endometrium" EXACT [OBOL:automatic]
+synonym: "epithelium of tunica mucosa (endometrium)" EXACT [OBOL:automatic]
+xref: MA:0002731
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001295 ! endometrium
+
+[Term]
+id: UBERON:0004812
+name: prepuce epithelium
+synonym: "epithelial tissue of foreskin" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of penile prepuce" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of prepuce" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of prepuce of penis" EXACT [OBOL:automatic]
+synonym: "epithelium of foreskin" EXACT [OBOL:automatic]
+synonym: "epithelium of penile prepuce" EXACT [OBOL:automatic]
+synonym: "epithelium of prepuce" EXACT [OBOL:automatic]
+synonym: "epithelium of prepuce of penis" EXACT [OBOL:automatic]
+synonym: "foreskin epithelial tissue" EXACT [OBOL:automatic]
+synonym: "foreskin epithelium" EXACT [OBOL:automatic]
+synonym: "penile prepuce epithelial tissue" EXACT [OBOL:automatic]
+synonym: "penile prepuce epithelium" EXACT [OBOL:automatic]
+synonym: "prepuce epithelial tissue" EXACT [OBOL:automatic]
+synonym: "prepuce of penis epithelial tissue" EXACT [OBOL:automatic]
+synonym: "prepuce of penis epithelium" EXACT [OBOL:automatic]
+xref: MA:0001753
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004803 ! implied link automatically realized ! penis epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001332 ! prepuce of penis
+
+[Term]
+id: UBERON:0004813
+name: seminiferous tubule epithelium
+synonym: "epithelial tissue of seminiferous tubule" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of seminiferous tubule of testis" EXACT [OBOL:automatic]
+synonym: "epithelium of seminiferous tubule" EXACT [OBOL:automatic]
+synonym: "epithelium of seminiferous tubule of testis" EXACT [OBOL:automatic]
+synonym: "seminiferous tubule epithelial tissue" EXACT [OBOL:automatic]
+xref: FMA:19885
+xref: MA:0001748
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001343 ! seminiferous tubule of testis
+
+[Term]
+id: UBERON:0004814
+name: upper respiratory tract epithelium
+synonym: "epithelial tissue of upper respiratory tract" EXACT [OBOL:automatic]
+synonym: "epithelium of upper respiratory tract" EXACT [OBOL:automatic]
+synonym: "upper respiratory tract epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001912
+is_a: UBERON:0004802 ! implied link automatically realized ! respiratory tract epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001557 ! upper respiratory tract
+
+[Term]
+id: UBERON:0004815
+name: lower respiratory tract epithelium
+synonym: "epithelial tissue of lower respiratory tract" EXACT [OBOL:automatic]
+synonym: "epithelium of lower respiratory tract" EXACT [OBOL:automatic]
+synonym: "lower respiratory tract epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001481
+is_a: UBERON:0004802 ! implied link automatically realized ! respiratory tract epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001558 ! lower respiratory tract
+
+[Term]
+id: UBERON:0004816
+name: larynx epithelium
+synonym: "epithelial tissue of larynx" EXACT [OBOL:automatic]
+synonym: "epithelium of larynx" EXACT [OBOL:automatic]
+synonym: "larynx epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001765
+is_a: UBERON:0004814 ! implied link automatically realized ! upper respiratory tract epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001737 ! larynx
+
+[Term]
+id: UBERON:0004817
+name: lacrimal gland epithelium
+synonym: "epithelial tissue of lacrimal gland" EXACT [OBOL:automatic]
+synonym: "epithelium of lacrimal gland" EXACT [OBOL:automatic]
+synonym: "lacrimal gland epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001297
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001817 ! lacrimal gland
+
+[Term]
+id: UBERON:0004818
+name: terminal bronchus epithelium
+synonym: "epithelial tissue of terminal bronchus" EXACT [OBOL:automatic]
+synonym: "epithelium of terminal bronchus" EXACT [OBOL:automatic]
+synonym: "terminal bronchus epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0001851
+is_a: UBERON:0002031 ! implied link automatically realized ! epithelium of bronchus
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0002041 ! terminal bronchus
+
+[Term]
+id: UBERON:0004819
+name: kidney epithelium
+synonym: "epithelial tissue of kidney" EXACT [OBOL:automatic]
+synonym: "epithelium of kidney" EXACT [OBOL:automatic]
+synonym: "kidney epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0002846
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0002113 ! kidney
+
+[Term]
+id: UBERON:0004820
+name: bile duct epithelium
+synonym: "bile duct epithelial tissue" EXACT [OBOL:automatic]
+synonym: "biliary duct epithelial tissue" EXACT [OBOL:automatic]
+synonym: "biliary duct epithelium" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of bile duct" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of biliary duct" EXACT [OBOL:automatic]
+synonym: "epithelium of bile duct" EXACT [OBOL:automatic]
+synonym: "epithelium of biliary duct" EXACT [OBOL:automatic]
+xref: MA:0001629
+is_a: UBERON:0004808 ! implied link automatically realized ! gastrointestinal system epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0002394 ! bile duct
+
+[Term]
+id: UBERON:0004821
+name: alveolus epithelium
+synonym: "alveolus epithelial tissue" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of alveolus" EXACT [OBOL:automatic]
+synonym: "epithelium of alveolus" EXACT [OBOL:automatic]
+xref: MA:0001771
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003215 ! alveolus
+
+[Term]
+id: UBERON:0004822
+name: extrahepatic bile duct epithelium
+synonym: "epithelial tissue of extrahepatic bile duct" EXACT [OBOL:automatic]
+synonym: "epithelium of extrahepatic bile duct" EXACT [OBOL:automatic]
+synonym: "extrahepatic bile duct epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0002661
+is_a: UBERON:0004820 ! implied link automatically realized ! bile duct epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003703 ! extrahepatic bile duct
+
+[Term]
+id: UBERON:0004823
+name: intrahepatic bile duct epithelium
+synonym: "epithelial tissue of intrahepatic bile duct" EXACT [OBOL:automatic]
+synonym: "epithelium of intrahepatic bile duct" EXACT [OBOL:automatic]
+synonym: "intrahepatic bile duct epithelial tissue" EXACT [OBOL:automatic]
+xref: MA:0002662
+is_a: UBERON:0004820 ! implied link automatically realized ! bile duct epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003704 ! intrahepatic bile duct
+
+[Term]
+id: UBERON:0004825
+name: dental lamina
+synonym: "calcareous tooth lamina" EXACT [OBOL:automatic]
+synonym: "dentine containing tooth lamina" EXACT [OBOL:automatic]
+synonym: "lamina of calcareous tooth" EXACT [OBOL:automatic]
+synonym: "lamina of dentine containing tooth" EXACT [OBOL:automatic]
+synonym: "lamina of tooth" EXACT [OBOL:automatic]
+synonym: "lamina of vertebrate tooth" EXACT [OBOL:automatic]
+synonym: "tooth lamina" EXACT [OBOL:automatic]
+synonym: "vertebrate tooth lamina" EXACT [OBOL:automatic]
+xref: MA:0001597
+is_a: UBERON:0000957 ! implied link automatically realized ! lamina
+intersection_of: UBERON:0000957 ! lamina
+intersection_of: part_of UBERON:0001091 ! calcareous tooth
+
+[Term]
+id: UBERON:0004827
+name: thyroid gland medulla
+synonym: "medulla of thyroid" EXACT [OBOL:automatic]
+synonym: "medulla of thyroid follicle" EXACT [OBOL:automatic]
+synonym: "medulla of thyroid gland" EXACT [OBOL:automatic]
+synonym: "medulla of thyroid gland follicle" EXACT [OBOL:automatic]
+synonym: "thyroid follicle medulla" EXACT [OBOL:automatic]
+synonym: "thyroid gland follicle medulla" EXACT [OBOL:automatic]
+synonym: "thyroid medulla" EXACT [OBOL:automatic]
+xref: MA:0000132
+is_a: UBERON:0000958 ! implied link automatically realized ! medulla
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+intersection_of: UBERON:0000958 ! medulla
+intersection_of: part_of UBERON:0002046 ! thyroid follicle
+
+[Term]
+id: UBERON:0004829
+name: urethra skeletal muscle
+synonym: "skeletal muscle of urethra" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of urethra" EXACT [OBOL:automatic]
+synonym: "urethra skeletal muscle tissue" EXACT [OBOL:automatic]
+xref: MA:0001690
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: part_of UBERON:0000057 ! urethra
+
+[Term]
+id: UBERON:0004830
+name: respiratory system skeletal muscle
+synonym: "respiratory system skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of respiratory system" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of respiratory system" EXACT [OBOL:automatic]
+xref: MA:0001829
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0004831
+name: esophagus skeletal muscle
+synonym: "esophagus skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "gullet skeletal muscle" EXACT [OBOL:automatic]
+synonym: "gullet skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "oesophagus skeletal muscle" EXACT [OBOL:automatic]
+synonym: "oesophagus skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of esophagus" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of gullet" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of oesophagus" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of esophagus" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of gullet" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of oesophagus" EXACT [OBOL:automatic]
+xref: MA:0001572
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: part_of UBERON:0001043 ! esophagus
+
+[Term]
+id: UBERON:0004832
+name: anal region skeletal muscle
+synonym: "anal part of perineum skeletal muscle" EXACT [OBOL:automatic]
+synonym: "anal part of perineum skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "anal region skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "anal triangle skeletal muscle" EXACT [OBOL:automatic]
+synonym: "anal triangle skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of anal part of perineum" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of anal region" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of anal triangle" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of anal part of perineum" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of anal region" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of anal triangle" EXACT [OBOL:automatic]
+xref: MA:0001530
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: part_of UBERON:0001353 ! anal region
+
+[Term]
+id: UBERON:0004833
+name: lip skeletal muscle
+synonym: "lip skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle of lip" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue of lip" EXACT [OBOL:automatic]
+xref: MA:0001578
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: part_of UBERON:0001833 ! lip
+
+[Term]
+id: UBERON:0004834
+name: hepatic duct smooth muscle
+synonym: "common hepatic duct involuntary muscle" EXACT [OBOL:automatic]
+synonym: "common hepatic duct non-striated muscle" EXACT [OBOL:automatic]
+synonym: "common hepatic duct smooth muscle" EXACT [OBOL:automatic]
+synonym: "common hepatic duct smooth muscle tissue" EXACT [OBOL:automatic]
+synonym: "hepatic duct involuntary muscle" EXACT [OBOL:automatic]
+synonym: "hepatic duct non-striated muscle" EXACT [OBOL:automatic]
+synonym: "hepatic duct smooth muscle tissue" EXACT [OBOL:automatic]
+synonym: "involuntary muscle of common hepatic duct" EXACT [OBOL:automatic]
+synonym: "involuntary muscle of hepatic duct" EXACT [OBOL:automatic]
+synonym: "non-striated muscle of common hepatic duct" EXACT [OBOL:automatic]
+synonym: "non-striated muscle of hepatic duct" EXACT [OBOL:automatic]
+synonym: "smooth muscle of common hepatic duct" EXACT [OBOL:automatic]
+synonym: "smooth muscle of hepatic duct" EXACT [OBOL:automatic]
+synonym: "smooth muscle tissue of common hepatic duct" EXACT [OBOL:automatic]
+synonym: "smooth muscle tissue of hepatic duct" EXACT [OBOL:automatic]
+xref: MA:0001640
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0004226 ! implied link automatically realized ! gastrointestinal system smooth muscle
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: part_of UBERON:0001175 ! common hepatic duct
+
+[Term]
+id: UBERON:0004835
+name: epididymis smooth muscle
+synonym: "epididymis involuntary muscle" EXACT [OBOL:automatic]
+synonym: "epididymis non-striated muscle" EXACT [OBOL:automatic]
+synonym: "epididymis smooth muscle tissue" EXACT [OBOL:automatic]
+synonym: "epididymus involuntary muscle" EXACT [OBOL:automatic]
+synonym: "epididymus non-striated muscle" EXACT [OBOL:automatic]
+synonym: "epididymus smooth muscle" EXACT [OBOL:automatic]
+synonym: "epididymus smooth muscle tissue" EXACT [OBOL:automatic]
+synonym: "involuntary muscle of epididymis" EXACT [OBOL:automatic]
+synonym: "involuntary muscle of epididymus" EXACT [OBOL:automatic]
+synonym: "non-striated muscle of epididymis" EXACT [OBOL:automatic]
+synonym: "non-striated muscle of epididymus" EXACT [OBOL:automatic]
+synonym: "smooth muscle of epididymis" EXACT [OBOL:automatic]
+synonym: "smooth muscle of epididymus" EXACT [OBOL:automatic]
+synonym: "smooth muscle tissue of epididymis" EXACT [OBOL:automatic]
+synonym: "smooth muscle tissue of epididymus" EXACT [OBOL:automatic]
+xref: MA:0001736
+is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: part_of UBERON:0001301 ! epididymis
+
+[Term]
+id: UBERON:0004836
+name: medial rectus extraocular muscle
+synonym: "extra-ocular muscle of medial rectus" EXACT [OBOL:automatic]
+synonym: "extra-ocular skeletal muscle of medial rectus" EXACT [OBOL:automatic]
+synonym: "extraocular muscle of medial rectus" EXACT [OBOL:automatic]
+synonym: "extrinsic muscle of eyeball of medial rectus" EXACT [OBOL:automatic]
+synonym: "medial rectus extra-ocular muscle" EXACT [OBOL:automatic]
+synonym: "medial rectus extra-ocular skeletal muscle" EXACT [OBOL:automatic]
+synonym: "medial rectus extrinsic muscle of eyeball" EXACT [OBOL:automatic]
+xref: MA:0001281
+is_a: UBERON:0001601 ! implied link automatically realized ! extra-ocular muscle
+intersection_of: UBERON:0001601 ! extra-ocular muscle
+intersection_of: part_of UBERON:0001602 ! medial rectus
+
+[Term]
+id: UBERON:0004837
+name: lateral rectus extraocular muscle
+synonym: "extra-ocular muscle of lateral rectus" EXACT [OBOL:automatic]
+synonym: "extra-ocular skeletal muscle of lateral rectus" EXACT [OBOL:automatic]
+synonym: "extraocular muscle of lateral rectus" EXACT [OBOL:automatic]
+synonym: "extrinsic muscle of eyeball of lateral rectus" EXACT [OBOL:automatic]
+synonym: "lateral rectus extra-ocular muscle" EXACT [OBOL:automatic]
+synonym: "lateral rectus extra-ocular skeletal muscle" EXACT [OBOL:automatic]
+synonym: "lateral rectus extrinsic muscle of eyeball" EXACT [OBOL:automatic]
+xref: MA:0001280
+is_a: UBERON:0001601 ! implied link automatically realized ! extra-ocular muscle
+intersection_of: UBERON:0001601 ! extra-ocular muscle
+intersection_of: part_of UBERON:0001603 ! lateral rectus
+
+[Term]
+id: UBERON:0004848
+name: respiratory system arterial endothelium
+synonym: "apparatus respiratorius arterial endothelium" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius artery endothelium" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius endothelium of artery" EXACT [OBOL:automatic]
+synonym: "arterial endothelium of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "arterial endothelium of respiratory system" EXACT [OBOL:automatic]
+synonym: "artery endothelium of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "artery endothelium of respiratory system" EXACT [OBOL:automatic]
+synonym: "endothelium of artery of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "endothelium of artery of respiratory system" EXACT [OBOL:automatic]
+synonym: "respiratory system artery endothelium" EXACT [OBOL:automatic]
+synonym: "respiratory system endothelium of artery" EXACT [OBOL:automatic]
+xref: MA:0001801
+is_a: UBERON:0001917 ! implied link automatically realized ! endothelium of artery
+is_a: UBERON:0004702 ! implied link automatically realized ! respiratory system blood vessel endothelium
+intersection_of: UBERON:0001917 ! endothelium of artery
+intersection_of: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0004849
+name: respiratory system venous endothelium
+synonym: "apparatus respiratorius endothelium of vein" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius vein endothelium" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius venous endothelium" EXACT [OBOL:automatic]
+synonym: "endothelium of vein of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "endothelium of vein of respiratory system" EXACT [OBOL:automatic]
+synonym: "respiratory system endothelium of vein" EXACT [OBOL:automatic]
+synonym: "respiratory system vein endothelium" EXACT [OBOL:automatic]
+synonym: "vein endothelium of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "vein endothelium of respiratory system" EXACT [OBOL:automatic]
+synonym: "venous endothelium of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "venous endothelium of respiratory system" EXACT [OBOL:automatic]
+xref: MA:0001811
+is_a: UBERON:0001919 ! implied link automatically realized ! endothelium of vein
+is_a: UBERON:0004702 ! implied link automatically realized ! respiratory system blood vessel endothelium
+intersection_of: UBERON:0001919 ! endothelium of vein
+intersection_of: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0004850
+name: lymph node endothelium
+synonym: "endothelium of lymph node" EXACT [OBOL:automatic]
+xref: MA:0000741
+is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0000029 ! lymph node
+
+[Term]
+id: UBERON:0004851
+name: aorta endothelium
+synonym: "adult aorta endothelium" EXACT [OBOL:automatic]
+synonym: "endothelium of adult aorta" EXACT [OBOL:automatic]
+synonym: "endothelium of aorta" EXACT [OBOL:automatic]
+synonym: "endothelium of trunk of aortic tree" EXACT [OBOL:automatic]
+synonym: "endothelium of trunk of systemic arterial tree" EXACT [OBOL:automatic]
+synonym: "trunk of aortic tree endothelium" EXACT [OBOL:automatic]
+synonym: "trunk of systemic arterial tree endothelium" EXACT [OBOL:automatic]
+xref: MA:0000701
+is_a: UBERON:0001917 ! implied link automatically realized ! endothelium of artery
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0000947 ! aorta
+
+[Term]
+id: UBERON:0004852
+name: cardiovascular system endothelium
+synonym: "circulatory system endothelium" EXACT [OBOL:automatic]
+synonym: "endothelium of circulatory system" EXACT [OBOL:automatic]
+xref: MA:0000717
+is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0001009 ! circulatory system
+
+[Term]
+id: UBERON:0004853
+name: nasal cavity olfactory epithelium
+synonym: "cavity of nose olfactory epithelium" EXACT [OBOL:automatic]
+synonym: "cavity of nose olfactory sensory epithelium" EXACT [OBOL:automatic]
+synonym: "cavity of nose sensory olfactory epithelium" EXACT [OBOL:automatic]
+synonym: "nasal cavity olfactory sensory epithelium" EXACT [OBOL:automatic]
+synonym: "nasal cavity sensory olfactory epithelium" EXACT [OBOL:automatic]
+synonym: "olfactory epithelium of cavity of nose" EXACT [OBOL:automatic]
+synonym: "olfactory epithelium of nasal cavity" EXACT [OBOL:automatic]
+synonym: "olfactory epithelium of olfactory pit" EXACT [OBOL:automatic]
+synonym: "olfactory pit olfactory epithelium" EXACT [OBOL:automatic]
+synonym: "olfactory pit olfactory sensory epithelium" EXACT [OBOL:automatic]
+synonym: "olfactory pit sensory olfactory epithelium" EXACT [OBOL:automatic]
+synonym: "olfactory sensory epithelium of cavity of nose" EXACT [OBOL:automatic]
+synonym: "olfactory sensory epithelium of nasal cavity" EXACT [OBOL:automatic]
+synonym: "olfactory sensory epithelium of olfactory pit" EXACT [OBOL:automatic]
+synonym: "sensory olfactory epithelium of cavity of nose" EXACT [OBOL:automatic]
+synonym: "sensory olfactory epithelium of nasal cavity" EXACT [OBOL:automatic]
+synonym: "sensory olfactory epithelium of olfactory pit" EXACT [OBOL:automatic]
+xref: MA:0001325
+is_a: UBERON:0001997 ! implied link automatically realized ! olfactory epithelium
+intersection_of: UBERON:0001997 ! olfactory epithelium
+intersection_of: part_of UBERON:0001707 ! nasal cavity
+
+[Term]
+id: UBERON:0004854
+name: gastrointestinal system mesentery
+synonym: "digestive system mesentery" EXACT [OBOL:automatic]
+synonym: "mesentery of digestive system" EXACT [OBOL:automatic]
+synonym: "mesentery of gastrointestinal system" EXACT [OBOL:automatic]
+xref: MA:0001900
+is_a: UBERON:0002095 ! implied link automatically realized ! mesentery
+is_a: UBERON:0004782 ! implied link automatically realized ! gastrointestinal system serosa
+intersection_of: UBERON:0002095 ! mesentery
+intersection_of: part_of UBERON:0001007 ! digestive system
+
+[Term]
+id: UBERON:0004857
+name: skeletal muscle connective tissue
+synonym: "connective tissue of skeletal muscle" EXACT [OBOL:automatic]
+synonym: "connective tissue of skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "portion of connective tissue of skeletal muscle" EXACT [OBOL:automatic]
+synonym: "portion of connective tissue of skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle portion of connective tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle textus connectivus" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue connective tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue portion of connective tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle tissue textus connectivus" EXACT [OBOL:automatic]
+synonym: "textus connectivus of skeletal muscle" EXACT [OBOL:automatic]
+synonym: "textus connectivus of skeletal muscle tissue" EXACT [OBOL:automatic]
+xref: MA:0002868
+is_a: UBERON:0002384 ! implied link automatically realized ! connective tissue
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0002384 ! connective tissue
+intersection_of: part_of UBERON:0001134 ! skeletal muscle tissue
+
+[Term]
+id: UBERON:0004858
+name: cellular cartilage
+xref: MA:0000105
+is_a: UBERON:0002418 ! cartilage
+
+[Term]
+id: UBERON:0004859
+name: eye gland
+synonym: "gland of eye" EXACT [OBOL:automatic]
+xref: MA:0000267
+is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
+is_a: UBERON:0002530 ! implied link automatically realized ! gland
+intersection_of: UBERON:0002530 ! gland
+intersection_of: part_of UBERON:0000970 ! eye
+
+[Term]
+id: UBERON:0004860
+name: brain ventricular zone
+synonym: "ventricular zone of brain" EXACT [OBOL:automatic]
+xref: MA:0000819
+is_a: UBERON:0003053 ! implied link automatically realized ! ventricular zone
+intersection_of: UBERON:0003053 ! ventricular zone
+intersection_of: part_of UBERON:0000955 ! brain
+
+[Term]
+id: UBERON:0004861
+name: right lung alveolus
+synonym: "alveolus of right lung" EXACT [OBOL:automatic]
+xref: MA:0001786
+is_a: UBERON:0002299 ! implied link automatically realized ! alveolus of lung
+intersection_of: UBERON:0003215 ! alveolus
+intersection_of: part_of UBERON:0002167 ! right lung
+
+[Term]
+id: UBERON:0004862
+name: left lung alveolus
+synonym: "alveolus of left lung" EXACT [OBOL:automatic]
+xref: MA:0001777
+is_a: UBERON:0002299 ! implied link automatically realized ! alveolus of lung
+intersection_of: UBERON:0003215 ! alveolus
+intersection_of: part_of UBERON:0002168 ! left lung
+
+[Term]
+id: UBERON:0004863
+name: thoracic sympathetic nerve trunk
+synonym: "nerve trunk of sympathetic nervous system of thorax" EXACT [OBOL:automatic]
+synonym: "nerve trunk of sympathetic part of autonomic division of nervous system of thorax" EXACT [OBOL:automatic]
+synonym: "sympathetic nerve trunk of thorax" EXACT [OBOL:automatic]
+synonym: "sympathetic nervous system nerve trunk of thorax" EXACT [OBOL:automatic]
+synonym: "thorax nerve trunk of sympathetic nervous system" EXACT [OBOL:automatic]
+synonym: "thorax nerve trunk of sympathetic part of autonomic division of nervous system" EXACT [OBOL:automatic]
+synonym: "thorax sympathetic nerve trunk" EXACT [OBOL:automatic]
+synonym: "thorax sympathetic nervous system nerve trunk" EXACT [OBOL:automatic]
+xref: MA:0001165
+is_a: UBERON:0004295 ! implied link automatically realized ! sympathetic nerve trunk
+intersection_of: UBERON:0004295 ! sympathetic nerve trunk
+intersection_of: part_of UBERON:0000915 ! thorax
+
+[Term]
+id: UBERON:0004864
+name: vasculature of retina
+synonym: "retina vasculature" EXACT [OBOL:automatic]
+synonym: "set of blood vessels of retina" EXACT [OBOL:automatic]
+synonym: "set of retinal blood vessels" EXACT [FMA:76552]
+xref: FMA:76552
+is_a: UBERON:0002203 ! implied link automatically realized ! vasculature of eye
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+intersection_of: UBERON:0002049 ! vasculature
+intersection_of: part_of UBERON:0000966 ! retina
+
+[Term]
+id: UBERON:0004865
+name: teleost parietal bone
+def: "Paired dermal bone that covers the hind part of the cranium, overlapping the dorsal edge of the sphenotic, pterotic, epiotic and the anterior edge of the supraoccipital. The parietal are overlapped anteriorly by the frontal." [ZFA:0000486]
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+synonym: "frontal bone" NARROW [FMA:52734]
+synonym: "parietal bone" NARROW [TAO:0000486]
+synonym: "post parietal" RELATED [ZFA:0000486]
+synonym: "teleost parietal" EXACT []
+xref: TAO:0000486
+xref: ZFA:0000486
+is_a: UBERON:0002514 ! intramembranous bone
+is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
+relationship: part_of UBERON:0001703 ! neurocranium
+
+[Term]
+id: UBERON:0004866
+name: teleost frontal bone
+def: "One of two large elongated paired dermal bones that roof the cranium and bear part of the supraorbital canal. The frontal bones cover the upper edge of the lateral ethmoid, orbitosphenoid and pterosphenoids and overlaps the parietal bone posteriorly." [ZFA:0000514]
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+synonym: "frontal bone" NARROW [TAO:0000514]
+synonym: "teleost frontal" EXACT [TAO:0000514]
+synonym: "teleost frontal bone" EXACT [TAO:0000514]
+xref: TAO:0000514
+xref: ZFA:0000514
+is_a: UBERON:0002514 ! intramembranous bone
+is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
+relationship: part_of UBERON:0001703 ! neurocranium
+
+[Term]
+id: UBERON:0004867
+name: orbital cavity
+xref: FMA:84961
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0001697 ! orbit
+
+[Term]
+id: UBERON:0004868
+name: tapetum lucidum
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000970 ! eye
+definition: "a layer of tissue in the eye of many vertebrate  animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors" [Wikipedia:Tapetum_lucidum]
+
+[Term]
+id: UBERON:0004869
+name: parietal organ
+synonym: "parietal eye" EXACT [Wikipedia:Parietal_eye]
+synonym: "third eye" RELATED [Wikipedia:Parietal_eye]
+is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002757 ! implied link automatically realized ! regional part of epithalamus
+relationship: part_of UBERON:0001899 ! epithalamus
+definition: "A part of the epithalamus present in some animal species. The eye may be photoreceptive and is usually associated with the pineal gland, regulating circadian rhythmicity and hormone production for thermoregulation. The parietal eye is a part of the epithalamus, which can be divided into two major parts; the epiphysis  (the pineal organ, or pineal gland if mostly endocrine) and the parietal organ (often called the parietal eye, or third eye if it is photoreceptive). It arises as an anterior evagination of the pineal organ or as a separate outgrowth of the roof of the diencephalon. In some species, it protrudes through the skull.[4]  The parietal eye uses a different biochemical method of detecting light than rod cells or cone cells in a normal vertebrate eye[WP]." [Wikipedia:Parietal_eye]
 
 [Typedef]
 id: adjacent_to
@@ -62887,16 +64165,27 @@ id: homologous_to
 name: homologous_to
 
 [Typedef]
+id: in_distal_side_of
+name: in_distal_side_of
+def: "X distal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the distal portion." [BSPO:PATO_mtg_2009]
+inverse_of_on_instance_level: BSPO:0000121
+
+[Typedef]
 id: in_left_side_of
 name: in_left_side_of
-def: "X left_side_of Y <=> if Y is subdivided into two left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
+def: "X left_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000120
 inverse_of_on_instance_level: BSPO:0000121
 
 [Typedef]
+id: in_proximal_side_of
+name: in_proximal_side_of
+def: "X proximal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the proximal portion." [BSPO:PATO_mtg_2009]
+
+[Typedef]
 id: in_right_side_of
 name: in_right_side_of
-def: "X right_side_of Y <=> if Y is subdivided into two left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
+def: "X right_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000121
 
 [Typedef]
@@ -62988,9 +64277,10 @@ def: "C site_of P iff exists species S such that P occurs_in C for all members o
 id: spatially_disjoint_from
 name: spatially_disjoint_from
 def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
+comment: TODO owldef
 synonym: "non_overlapping_with" EXACT []
 synonym: "shares_no_parts_with" EXACT []
-disjoint_over: part_of ! part_of
+is_type_level: true
 is_metadata_tag: true
 
 [Typedef]
