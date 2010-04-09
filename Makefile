@@ -447,6 +447,11 @@ uberon-xp-new-fma-u.pro:
 	blip -i fma_xp.obo -i fma_xp_uberon.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
 # use this:
+newxp-%-u-ontol_db.pro:
+	blip -r $* -i $*_xp_uberon.obo -i uberon_edit.obo -u query_anatomy findall "uberon_xp(Fact)" -select Fact -write_prolog > $@.tmp && sort -u $@.tmp > $@
+.PRECIOUS: newxp-%-ontol_db.pro
+
+# use this:
 newxp-%-ontol_db.pro:
 	blip -r $* -i $*_xp.obo -i uberon_edit.obo -u query_anatomy findall "uberon_xp(Fact)" -select Fact -write_prolog > $@.tmp && sort -u $@.tmp > $@
 .PRECIOUS: newxp-%-ontol_db.pro

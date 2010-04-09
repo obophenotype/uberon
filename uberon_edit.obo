@@ -633,17 +633,6 @@ synonym: "windpipe lamina propria mucosa" EXACT [OBOL:automatic]
 synonym: "windpipe lamina propria mucosae" EXACT [OBOL:automatic]
 
 [Term]
-id: UBERON:0000032
-name: cranial structure
-def: "Bony structure in the head of the animal. Encompasses structures consisting of bone or sclerite." [Wikipedia:Cranium]
-subset: uberon_slim
-synonym: "cranium" RELATED []
-synonym: "skull" RELATED []
-xref: HAO:0000234 ! cranium
-is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:0000033 ! head
-
-[Term]
 id: UBERON:0000033
 name: head
 alt_id: UBERON:FBbt_00000004-FBbt_00003007-FMA_46565-FMA_7154-FMA_87596-MA_0000023-MA_0000316-MIAA_0000017-MIAA_0000149-MIAA_0000294-MIAA_0000340-WBbt_0005739-XAO_0003024-ZFA_0000737-ZFA_0001114
@@ -651,7 +640,6 @@ def: "The head is the anterior-most division of the body [GO]. Subdivision of sk
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "adult head" EXACT []
-synonym: "chondrocranium" RELATED []
 synonym: "cranial skeleton" RELATED []
 synonym: "epicranial plate" RELATED []
 synonym: "head tissue" RELATED []
@@ -1363,16 +1351,6 @@ synonym: "glomerulus of pronephros" EXACT []
 intersection_of: UBERON:0000074 ! renal glomerulus
 intersection_of: part_of UBERON:0002120 ! pronephros
 xref: ZFA:0001557 ! pronephric glomerulus
-
-[Term]
-id: UBERON:0000075
-name: subdivision of skeleton
-synonym: "skeleton part" RELATED []
-xref: FMA:23879 ! Subdivision of skeleton (in vivo)
-is_a: UBERON:0000480 ! anatomical group
-relationship: part_of UBERON:0001434 ! skeletal system
-created_by: cjm
-creation_date: 2009-07-30T03:53:53Z
 
 [Term]
 id: UBERON:0000076
@@ -3729,16 +3707,6 @@ alt_id: UBERON:BTO_0001751-FMA_52828
 xref: BTO:0001751
 xref: FMA:52828 ! Ramus of mandible
 is_a: UBERON:0000064 ! organ part
-
-[Term]
-id: UBERON:0000402
-name: nasal vestibule
-alt_id: UBERON:BTO_0001761-FMA_59644
-synonym: "Vestibular part of nasal cavity" EXACT [FMA:59644]
-xref: BTO:0001761
-xref: FMA:59644 ! Nasal vestibule
-is_a: UBERON:0002553 ! anatomical cavity
-def: "Nasal Vestibule is the most anterior part of the nasal cavity. It's enclosed by the cartilages of nose and lined by the same epithelium of the skin. The other part of the nasal cavity, which is lined by the respiratory epithelium, is called nasal cavity proper. [WP,unvetted]." [Wikipedia:Nasal_vestibule]
 
 [Term]
 id: UBERON:0000403
@@ -6185,13 +6153,12 @@ xref: EFO:0001396 ! femur
 xref: OpenCyc:Mx4rvVjOJJwpEbGdrcN5Y29ycA ! femur
 
 [Term]
-id: UBERON:0000982
+id: UBERON:0000982 ! joint
 name: joint
 alt_id: UBERON:FBbt_00004645-FMA_228659-FMA_7490-MA_0000319-MIAA_0000188-XAO_0000171-ZFA_0001596
 def: "Heterogeneous cluster which consists of two or more adjacent bones or cartilages, parts of which are interconnected by organ parts that consist of various types of connective tissue. Together with other joints and bones, a joint constitutes the skeletal system. Examples: pubic symphysis, knee joint, temporomandibular joint. // The point of contact between elements of the skeleton. // Anatomical cluster which consists of two or more adjacent bones or cartilages, which may be interconnected by various types of tissue." [NLM:joint, Wikipedia:Joint, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "set of all joints" BROAD []
 xref: FBbt:00004645 ! joint
 xref: FMA:7490 ! Joint
 xref: GAID:102 ! joint
@@ -6204,12 +6171,11 @@ xref: OpenCyc:Mx4rvVjjdpwpEbGdrcN5Y29ycA
 xref: TAO:0000367 ! joint
 xref: XAO:0000171 ! joint
 xref: ZFA:0001596 ! joint
-is_a: UBERON:0000477 ! anatomical cluster
 xref: ncithesaurus:Joint ! Joint
 xref: BTO:0001686 ! joint
 xref: EFO:0000948 ! joint
-relationship: part_of UBERON:0001434 ! skeletal system
-xref: OpenCyc:Mx4r4wAZortWEdmAAAACs6hRjg ! joint
+is_a: UBERON:0004765 ! skeletal element
+relationship: part_of UBERON:0004770 ! articular system
 
 [Term]
 id: UBERON:0000983
@@ -8694,7 +8660,7 @@ xref: galen:SynovialFluid ! synovial fluid
 id: UBERON:0004756 ! dermal skeletal element
 def: "dermis-derived entity that is made of skeletal tissue." []
 name: dermal skeletal element
-intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: UBERON:0004765 ! skeletal element
 intersection_of: develops_from UBERON:0002067 ! dermis
 intersection_of: has_part UBERON:0004755 ! skeletal tissue
 
@@ -8728,6 +8694,13 @@ def: "an anatomical structure found in mollusks and used for feeding. It is a mi
 comment: The first bona fide radula dates to the Early Cambrian,[3] although trace fossils from the earlier Ediacaran have been suggested to have been made by the radula of the organism Kimberella.[WP]
 is_a: UBERON:0000061 ! anatomical structure
 xref: BTO:0001506 ! radula
+
+[Term]
+id: UBERON:0004767
+name: vomerine tooth
+xref: TAO:0001631 ! vomerine tooth
+xref: AAO:0000635 ! vomerine_teeth
+is_a: UBERON:0001091
 
 [Term]
 id: UBERON:0001091
@@ -9448,7 +9421,7 @@ xref: XAO:0003074 ! vertebral column
 xref: ZFA:0001559 ! vertebral column
 is_a: UBERON:0000075 ! subdivision of skeleton
 relationship: part_of UBERON:0001137 ! back
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 xref: ncithesaurus:Vertebral_Column ! Vertebral Column
 xref: EFO:0001369 ! vertebral column structure
 xref: galen:SpinalColumn ! spinal column
@@ -14544,6 +14517,28 @@ xref: ncithesaurus:Hamate_Bone ! Hamate Bone
 xref: OpenCyc:Mx4rwFTmuJwpEbGdrcN5Y29ycA ! hamate
 
 [Term]
+id: UBERON:0004770
+name: articular system
+synonym: "set of all joints" RELATED []
+synonym: "set of all joints of body" EXACT [FMA:23878]
+xref: FMA:23878 ! articular system
+is_a: UBERON:0000480 ! anatomical group
+relationship: part_of UBERON:0001434 ! skeletal system
+
+[Term]
+id: UBERON:0000075
+name: subdivision of skeletal system
+synonym: "skeleton part" RELATED []
+synonym: "skeletal system part" RELATED []
+synonym: "subdivision of skeleton" RELATED []
+xref: FMA:23879 ! Subdivision of skeleton (in vivo)
+xref: galen:ComplexSkeletalStructure
+is_a: UBERON:0000480 ! anatomical group
+relationship: part_of UBERON:0001434 ! skeletal system
+created_by: cjm
+creation_date: 2009-07-30T03:53:53Z
+
+[Term]
 id: UBERON:0004288
 name: skeleton
 def: "all the bones in the body. With the articular system, this comprises the skeletal system." [Wikipedia:Skeleton]
@@ -14559,9 +14554,10 @@ xref: FMA:23875 ! Skeleton
 xref: GAID:177 ! skeleton
 xref: MAT:0000032 ! skeleton
 xref: MIAA:0000032 ! skeleton
-is_a: UBERON:0000480 ! anatomical group
 xref: galen:Skeleton ! skeleton
 xref: OpenCyc:Mx4rvVi1rpwpEbGdrcN5Y29ycA ! skeleton
+is_a: UBERON:0000480 ! anatomical group
+relationship: part_of UBERON:0001434 ! skeletal system
 
 [Term]
 id: UBERON:0001434
@@ -14572,6 +14568,7 @@ comment: The skeleton is the bony framework of the body in vertebrates (endoskel
 subset: uberon_slim
 synonym: "skeletal system" EXACT []
 synonym: "skeleton system" EXACT []
+synonym: "set of all bones and joints" EXACT []
 xref: AAO:0000566 ! skeletal_system
 xref: FMA:23881 ! Skeletal system
 xref: HOG:0001254 ! skeletal system
@@ -14583,6 +14580,7 @@ xref: ZFA:0000434 ! skeletal system
 xref: ncithesaurus:Skeletal_System ! Skeletal System
 xref: BTO:0001486 ! skeletal system
 is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
 disjoint_from: UBERON:0001004 ! respiratory system
@@ -14600,7 +14598,6 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
-relationship: part_of UBERON:0002204 ! musculoskeletal system
 
 [Term]
 id: UBERON:0003656 ! carpal/tarsal bone
@@ -14625,6 +14622,21 @@ relationship: part_of UBERON:0004452 ! carpus
 xref: ncithesaurus:Carpal_Bone ! Carpal Bone
 
 [Term]
+id: UBERON:0004769 ! diaphysis
+name: diaphysis
+def: "Subdivision of long bone which forms the part of the bone between the two epiphyses; together with other the subdivisions of long bone, it constitutes the long bone. Examples: diaphysis of humerus, diaphysis of femur[FMA]. the main or mid section (shaft) of a long bone. It is made up of cortical bone and usually contains bone marrow and adipose tissue (fat)." [Wikipedia:Diaphysis]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "shaft of long bone" EXACT []
+synonym: "body of long bone" EXACT []
+synonym: "long bone diaphysis" EXACT []
+xref: GAID:189 ! diaphyse
+xref: MA:0002803 ! long bone diaphysis
+xref: FMA:24013 ! diaphysis
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0002428 ! limb bone
+
+[Term]
 id: UBERON:0001437
 name: epiphysis
 alt_id: UBERON:FMA_24012-ZFA_0000019
@@ -14632,51 +14644,55 @@ def: "Subdivision of long bone which forms its expanded proximal or distal artic
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "end of long bone" EXACT []
+synonym: "long bone epiphysis" EXACT []
 xref: AAO:0000742 ! epiphysis
 xref: BTO:0000413
 xref: MA:0001362 ! long bone epiphysis
 xref: FMA:24012 ! Epiphysis
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0002428 ! limb bone
-relationship: part_of UBERON:0001474 ! bone
 
 [Term]
 id: UBERON:0001438
 name: metaphysis
 alt_id: UBERON:FMA_24014-MA_0001363
 def: "Subdivision of diaphysis which forms the proximal or distal end of diaphysis next to the epiphysis; together with diaphysis proper, it constitutes the diaphysis. Examples: proximal metaphysis of humerus, distal metaphysis of femur." [Wikipedia:Metaphysis]
-comment: This class was created automatically from a combination of ontologies
+comment: adjacent to or containing epiphyseal plate? Note in FMA the metaphysis is part of the diaphysis, but not in MA. In the diagram in WP, it appears to be adjacent, not part_of.
 subset: uberon_slim
 synonym: "diaphyseal end of long bone" EXACT []
 synonym: "long bone metaphysis" EXACT []
 xref: FMA:24014 ! Metaphysis
 xref: MA:0001363 ! long bone metaphysis
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002428 ! limb bone
+relationship: part_of UBERON:0004769 ! diaphysis
 xref: ncithesaurus:Metaphysis ! Metaphysis
 
 [Term]
-id: UBERON:0004377
+id: UBERON:0004377 ! distal metaphysis
 name: distal metaphysis
-is_a: UBERON:0001438 ! metaphysis
+intersection_of: UBERON:0001438 ! metaphysis
+intersection_of: in_distal_side_of UBERON:0004769 ! diaphysis
 xref: FMA:32824 ! Distal metaphysis
 
 [Term]
-id: UBERON:0004378
+id: UBERON:0004378 ! proximal metaphysis
 name: proximal metaphysis
-is_a: UBERON:0001438 ! metaphysis
+intersection_of: UBERON:0001438 ! metaphysis
+intersection_of: in_proximal_side_of UBERON:0004769 ! diaphysis
 xref: FMA:32823 ! Proximal metaphysis
 
 [Term]
 id: UBERON:0004379
 name: distal epiphysis
-is_a: UBERON:0001437 ! epiphysis
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: adjacent_to UBERON:0004377 ! distal metaphysis
 xref: FMA:32822 ! Distal epiphysis
 
 [Term]
 id: UBERON:0004380
 name: proximal epiphysis
-is_a: UBERON:0001437 ! epiphysis
+intersection_of: UBERON:0001437 ! epiphysis
+intersection_of: adjacent_to UBERON:0004378 ! proximal metaphysis
 xref: FMA:32821 ! Proximal epiphysis
 
 [Term]
@@ -14692,7 +14708,7 @@ synonym: "substantia compacta (pars ossea)" EXACT []
 xref: FMA:24018 ! Compact bone
 xref: galen:CorticalBone
 xref: MA:0001461 ! compact bone
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002481 ! bone tissue
 relationship: part_of UBERON:0002482 ! lamellar bone
 xref: ncithesaurus:Cortical_Bone ! Cortical Bone
 
@@ -15418,7 +15434,7 @@ xref: OpenCyc:Mx4rvVkCG5wpEbGdrcN5Y29ycA
 xref: TAO:0001514 ! bone
 xref: XAO:0000169 ! bone
 xref: ZFA:0001514 ! bone
-is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0001434 ! skeletal system
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 
@@ -15736,6 +15752,13 @@ xref: ncithesaurus:Elbow_Joint ! Elbow Joint
 synonym: "cubital region joint" EXACT [OBOL:automatic]
 synonym: "joint of cubital region" EXACT [OBOL:automatic]
 synonym: "joint of elbow" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004099
+name: joint spaces of the elbow
+def: "Joint cavity shared by all the joints of the elbow. The elbow joint is a compound joint that actually comprises three separate joints: the joints connecting the upper and lower arm: 1) Articulatio humero-ulnaris and 2) Articulatio humero-radialis as well as the proximal joint connecting the forarm bones: 3) Articulatio radio-ulnaris proximalis. All three share a joint cavity which is highly sinuated/scalloped/coved. Joint spaces of the elbow summarizes the joint cavity shared by all three adjoining joints of the elbow joint." [HP:0003943]
+intersection_of: UBERON:0000464 ! anatomical space
+intersection_of: part_of UBERON:0001490 ! elbow joint
 
 [Term]
 id: UBERON:0001491
@@ -19319,20 +19342,33 @@ xref: ncithesaurus:Eyelash ! Eyelash
 xref: OpenCyc:Mx4rvVi41pwpEbGdrcN5Y29ycA ! eyelash
 
 [Term]
+id: UBERON:0004765 ! skeletal element
+name: skeletal element
+def: "Anatomical structure consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles." [UBERON:cjm]
+comment: TODO - add more general class for other kinds of mineralized tissue
+subset: uberon_slim
+xref: TAO:0001890 ! skeletal element
+xref: galen:SkeletalStructure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0000032
+name: cranial structure
+def: "skeletal element that is part of a cranium." [UBERON:automatic]
+subset: uberon_slim
+intersection_of: UBERON:0004765 ! skeletal element
+intersection_of: part_of UBERON:0003128 ! cranium
+
+[Term]
 id: UBERON:0003129
 name: skull
 def: "Anatomical structure that is part of the head consisting entirely of cranium and mandible." [Wikipedia:Skull]
-comment: The term cranium can be ambiguous, in that it can refer to the neurocranium, or the neurocranium and the Facial skeleton[WP]. In FMA the skull is divided into orbit, neurocranium (8 parts), viscerocranium (26 parts). Here we have a separate overlapping division into cranium and mandible. 
+comment: The term cranium can be ambiguous, in that it can refer to the neurocranium, or the neurocranium and the Facial skeleton[WP]. In FMA the skull is divided into orbit, neurocranium (8 parts), viscerocranium (26 parts). Here we have a separate overlapping division into cranium and mandible. // A skull that is missing a mandible is only a cranium; this is the source of a very commonly made error in terminology. Those animals having skulls are called craniates[WP].
 subset: uberon_slim
-synonym: "chondrocranium" RELATED []
-synonym: "cranial bone" RELATED []
 synonym: "cranial skeleton" RELATED []
-synonym: "craniofacial bone" RELATED []
-synonym: "epicranial plate" RELATED []
 synonym: "skeletal system of head" RELATED []
 xref: FMA:46565 ! Skull
-is_a: UBERON:0000032 ! cranial structure
-relationship: part_of UBERON:0004288 ! skeleton
+is_a: UBERON:0004765 ! skeletal element
 relationship: has_part UBERON:0001684 ! mandible
 relationship: has_part UBERON:0003128 ! cranium
 xref: ncithesaurus:Skull ! Skull
@@ -19346,10 +19382,7 @@ name: cranium
 def: "Upper portion of the skull that excludes the mandible (when present in the organism)." [Wikipedia:Cranium_(anatomy)]
 comment: The term cranium can be ambiguous, in that it can refer to the neurocranium, or the neurocranium and the Facial skeleton[WP].
 subset: uberon_slim
-synonym: "chondrocranium" RELATED []
-synonym: "cranial bone" RELATED []
 synonym: "cranial skeleton" RELATED []
-synonym: "craniofacial bone" RELATED []
 synonym: "epicranial plate" RELATED []
 synonym: "skeletal system of head" RELATED []
 xref: BILA:0000115
@@ -19365,45 +19398,58 @@ xref: OpenCyc:Mx4rvVlEyJwpEbGdrcN5Y29ycA
 xref: TAO:0000737 ! cranium
 xref: ZFA:0000737 ! cranium
 xref: XAO:0003075 ! cranium
-is_a: UBERON:0000032 ! cranial structure
-relationship: part_of UBERON:0000033 ! head
 xref: OpenCyc:Mx4rvVlEyJwpEbGdrcN5Y29ycA ! cranium
+is_a: UBERON:0004765 ! skeletal element
+relationship: part_of UBERON:0004288 ! skeleton
+relationship: part_of UBERON:0000033 ! head
+relationship: only_in_taxon NCBITaxon:89593 ! Craniata
+
+[Term]
+id: UBERON:0004766
+name: cranial bone
+def: "A bone that is part of a cranium." [UBERON:automatic]
+intersection_of: UBERON:0001474 ! bone
+intersection_of: part_of UBERON:0003128 ! cranium
+
+[Term]
+id: UBERON:0004339
+name: calvaria
+def: "the upper domelike portion of the skull[MP]. the upper part of the cranium and surrounds the cranial cavity containing the brain. It is formed from frontal, parietal, temporal and occipital bones." [MP:0000076, Wikipedia:Calvaria_(skull)]
+comment: calvaria part_of neurocranium in FMA, but no definition. MP class now merged. Gray's Anatomy's list includes the Ethmoid and Sphenoid bone in the Calvaria. Some books state that calvaria consists of just the frontal bone, parietal bone, temporal bone, and occipital bone.
+is_a: UBERON:0004765 ! skeletal element
+relationship: part_of UBERON:0003128 ! cranium
+xref: FMA:52800 ! calvaria
 
 [Term]
 id: UBERON:0001703
 name: neurocranium
 alt_id: UBERON:FMA_53672-ZFA_0001580
-def: "Portion of the cranium which encloses the brain. The neurocranium arises from neural crest cells (also responsible for the development of teeth, the adrenal medulla and the splanchnocranium) of the ectoderm and is termed the chondrocranium. There is also some contribution of ectomesenchyme. In Chondrichthyes and other cartilaginous vertebrates this portion of the cranium does not ossify; it is not replaced via endochondral ossification." [Wikipedia:Cranium]
-comment: It includes the following bones:    * Ethmoid bone    * Frontal bone    * Occipital bone    * Parietal bone    * Sphenoid bone    * Temporal bone. The term cranium can be ambiguous, in that it can refer to the neurocranium, or the neurocranium and the Facial skeleton[WP]
+def: "Portion of the cranium which encloses the brain. The neurocranium arises from neural crest cells (also responsible for the development of teeth, the adrenal medulla and the splanchnocranium) of the ectoderm. There is also some contribution of ectomesenchyme. In Chondrichthyes and other cartilaginous vertebrates this portion of the cranium does not ossify; it is not replaced via endochondral ossification." [Wikipedia:Cranium, ZFA:0001580]
+comment: It includes the following bones: Ethmoid bone, Frontal bone, Occipital bone, Parietal bone, Sphenoid bone, Temporal bone. The term cranium can be ambiguous, in that it can refer to the neurocranium, or the neurocranium and the Facial skeleton[WP] Note that MA uses the term chondrocranium, which is inconsistent with ZFA usage which is restricted to cartilage / endochondral. 
 subset: uberon_slim
+synonym: "chondrocranium" NARROW [MA:0000317]
 synonym: "brain box" EXACT []
-synonym: "brain case" RELATED [http://www.thefreedictionary.com/braincase]
+synonym: "brain case" EXACT [ZFA:0001580]
+synonym: "braincase" EXACT [ZFA:0001580]
 synonym: "brain pan" RELATED [http://www.thefreedictionary.com/braincase]
 xref: FMA:53672 ! Neurocranium
 xref: TAO:0001580 ! neurocranium
 xref: ZFA:0001580 ! neurocranium
 xref: MA:0000317 ! chondrocranium
 xref: XAO:0003170 ! neurocranium
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0003128 ! cranium
-
-[Term]
-id: UBERON:0004339
-name: calvaria
-def: "the upper domelike portion of the skull" [MP:0000076]
-comment: calvaria part_of neurocranium in FMA, but no definition. MP class now merged. FMA neurocranium probably corresponds to cranium
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0002241 ! chondrocranium
-xref: FMA:52800 ! calvaria
+relationship: encloses UBERON:0000955 ! brain
+relationship: spatially_disjoint_from UBERON:0001704 ! viscerocranium
 
 [Term]
 id: UBERON:0001704
 name: viscerocranium
 alt_id: UBERON:FMA_53673-MA_0000318
-def: "The part of skull that is derived from branchial arches. The facial bones are the bones of the anterior and lower human skull. The splanchnocranium is derived from the neural crest cells (also responsible for the development of the neurocranium or, teeth and adrenal medulla)or from scleratone found in the somite block of the mesoderm. As with the neurocranium, in Chondricthyes and other cartilaginous vertebrates, they are not replaced via endochondral ossification. In tetrapods, such as amphibians and reptiles, the columella connecting to the tympanum is derived from the splanchnocranium. in mammals, the splanchnocranium derives the bones of the inner ear, the malleus, the incus and stapes." [Wikipedia:Facial_skeleton]
+def: "The part of skull that is derived from branchial arches. The facial bones are the bones of the anterior and lower human skull. The splanchnocranium is derived from the neural crest cells (also responsible for the development of the neurocranium or, teeth and adrenal medulla)or from scleratone found in the somite block of the mesoderm. As with the neurocranium, in Chondricthyes and other cartilaginous vertebrates, they are not replaced via endochondral ossification. In tetrapods, such as amphibians and reptiles, the columella connecting to the tympanum is derived from the splanchnocranium. in mammals, the splanchnocranium derives the bones of the inner ear, the malleus, the incus and stapes[WP]. the part of the skull that comprises the facial bones[MP]." [Wikipedia:Facial_skeleton, MP:0005274]
 comment: Includes: * Inferior nasal concha * Lacrimal bone * Mandible * Maxilla * Nasal bone * Palatine bone * Vomer * Zygomatic bone. The hyoid is sometimes included, and sometimes excluded (FMA includes it)[WP]
 synonym: "facial skeleton" EXACT []
-synonym: "splanchnocranium" EXACT [Wikipedia:Viscerocranium]
+synonym: "splanchnocranium" EXACT [Wikipedia:Viscerocranium, HOG:0000315]
 synonym: "pharyngeal arch skeleton" RELATED [ZFA:0001216]
 synonym: "pharyngeal skeleton" RELATED [ZFA:0001216]
 xref: EHDAA:8361 ! viscerocranium
@@ -19412,33 +19458,48 @@ xref: HOG:0000315 ! viscerocranium
 xref: MA:0000318 ! viscerocranium
 xref: ZFA:0001216 ! splanchnocranium
 xref: XAO:0003176 ! splanchnocranium
-intersection_of: UBERON:0000075 ! subdivision of skeleton
-intersection_of: part_of UBERON:0001456 ! face
-relationship: part_of UBERON:0002090 ! axial skeleton
-def: "the part of the skull that comprises the facial bones." [MP:0005274]
-synonym: "face subdivision of skeleton" EXACT [OBOL:automatic]
-synonym: "subdivision of skeleton of face" EXACT [OBOL:automatic]
+is_a: UBERON:0004765 ! skeletal element
+relationship: part_of UBERON:0003129 ! skull
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
+relationship: develops_from UBERON:0002539 ! pharyngeal arch
+relationship: spatially_disjoint_from UBERON:0001703 ! neurocranium
 
 [Term]
 id: UBERON:0002241
 name: chondrocranium
 alt_id: UBERON:FMA_76621-XAO_0003059-ZFA_0001424
-def: "primitive cartilagionous skeletal structure of the fetal skull that grows to envelop the rapidly growing embyonic brain[WP]. The cartilaginous cranium of an embryo before ossification // A portion of the embryonic cranium forming the bones of the base of the skull and eventually undergoing ossification // Cranial skeletal elements composed of cartilage and cartilage replacement bones. In humans, the chondrocranium begins forming at 28 days from mesenchymal  condensations and is fully formed between week 7 and 9 of fetal development. While the majority of the chondrocranium is succeeded by the bony skull in most higher vertebrates, some components do persist into adulthood.[1]  In Cartilagious fishes and Agnathans, the chondrocranium persist throughout life.[2]  Embryologically, the chondrocranium represent the basal cranial structure, and lay the base for the formation of the endocranium  in higher vertebrates[WP]." [ISBN:0471209627, ZFIN:curator, Wikipedia:Chondrocranium]
-comment: TODO - check ZFA classification vs mammalian. is this just the cartiliginous predecessor?
+def: "Anatomical cluster that is part of the cranium and composed entirely of either cartilage, cartilage replacement bones or a mixture of both." [ZFA:0001424]
+xref: HOG:0000288 ! chondrocranium
+xref: TAO:0001424 ! chondrocranium
+xref: ZFA:0001424 ! chondrocranium
+is_a: UBERON:0004765 ! skeletal element
+relationship: develops_from UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0004761
+name: cartilaginous neurocranium
+def: "the primitive cartilagionous skeletal structure of the fetal skull that grows to envelop the rapidly growing embyonic brain. In humans, the chondrocranium begins forming at 28 days from mesenchymal  condensations and is fully formed between week 7 and 9 of fetal development. While the majority of the chondrocranium is succeeded by the bony skull in most higher vertebrates, some components do persist into adulthood.[1]  In Cartilagious fishes and Agnathans, the chondrocranium persist throughout life.[2]  Embryologically, the chondrocranium represent the basal cranial structure, and lay the base for the formation of the endocranium  in higher vertebrates[WP]." [Wikipedia:Chondrocranium]
+comment: note that in contrast to chondrocranium, this structure is entirely cartiliginous. In Chondricthyes this is the same as the neurocranium. 
+synonym: "chondocranium" RELATED [Wikipedia:Chondrocranium]
+synonym: "neurocranium" RELATED SENSU []
 synonym: "cartilaginous skull" RELATED []
-synonym: "chondocranium" RELATED []
-synonym: "cartiligionous neurocranium" EXACT [Wikipedia:Chondrocranium]
+synonym: "cartilaginous chondocranium" EXACT []
+synonym: "cartiligionous skeletal structure of skull" EXACT []
 xref: AAO:0000094 ! chondrocranium
 xref: EHDAA:6031 ! chondrocranium
 xref: FMA:76621 ! Chondrocranium
-xref: HOG:0000288 ! chondrocranium
-xref: TAO:0001424 ! chondrocranium
 xref: XAO:0003059 ! chondrocranium
-xref: ZFA:0001424 ! chondrocranium
-is_a: UBERON:0000477 ! anatomical cluster
+xref: ncithesaurus:Chondrocranium ! Chondrocranium
+is_a: UBERON:0004765 ! skeletal element
 relationship: develops_from UBERON:0003104 ! mesenchyme
 relationship: has_part UBERON:0002418 ! cartilage
-xref: ncithesaurus:Chondrocranium ! Chondrocranium
+
+[Term]
+id: UBERON:0004762
+name: endochondral neurocranium bone
+intersection_of: UBERON:0002513 ! endochondral bone
+intersection_of: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0001705
@@ -19479,32 +19540,6 @@ is_a: UBERON:0003037 ! septum
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 xref: ncithesaurus:Nasal_Septum ! Nasal Septum
 xref: OpenCyc:Mx4rv7e-k5wpEbGdrcN5Y29ycA ! nasal septum
-
-[Term]
-id: UBERON:0001707
-name: nasal cavity
-alt_id: UBERON:FMA_54378-MA_0000284-ZFA_0000130
-def: "an indentation of the olfactory placode, and ends when the pits hollows out to form the nasopharynx." [Wikipedia:Nasal_cavity]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "cavity of nose" EXACT []
-synonym: "nasal pit" RELATED []
-synonym: "olfactory cavity" RELATED []
-synonym: "olfactory pit" EXACT []
-xref: AAO:0000314 ! nasal_cavity
-xref: EHDAA:4772 ! olfactory pit
-xref: EHDAA:6801 ! nasal cavity
-xref: FMA:54378 ! Nasal cavity
-xref: GAID:350 ! nasal cavity
-xref: HOG:0000271 ! nasal cavity
-xref: MA:0000284 ! nasal cavity
-xref: TAO:0000130 ! olfactory pit
-xref: ZFA:0000130 ! olfactory pit
-is_a: UBERON:0002553 ! anatomical cavity
-relationship: part_of UBERON:0000004 ! olfactory apparatus
-relationship: part_of UBERON:0001557 ! upper respiratory tract
-xref: ncithesaurus:Nasal_Cavity ! Nasal Cavity
-xref: BTO:0002096 ! nasal cavity
 
 
 [Term]
@@ -19729,18 +19764,12 @@ xref: OpenCyc:Mx4rwEIoz5wpEbGdrcN5Y29ycA ! sphenoid sinus
 id: UBERON:0001725
 name: cranial synchondrosis
 alt_id: UBERON:FMA_54816-MA_0001502
-comment: This class was created automatically from a combination of ontologies
+def: "the cartilaginous joints of the skull; these include sphenoethmoidal synchondrosis, sphenooccipital synchondrosis, sphenopetrosal synchondrosis, petrooccipital synchondrosis, anterior intraoccipital synchondrosis and posterior intraoccipital synchondrosis." [http://www.medilexicon.com/medicaldictionary.php?t=87514]
 xref: FMA:54816 ! Cranial synchondrosis
 xref: MA:0001502 ! cranial synchondrosis
 is_a: UBERON:0002215 ! synchondrosis
 intersection_of: UBERON:0002215 ! synchondrosis
-intersection_of: part_of UBERON:0000032 ! cranial structure
-synonym: "cranial structure epiphysial cartilage" EXACT [OBOL:automatic]
-synonym: "cranial structure primary cartilaginous joint" EXACT [OBOL:automatic]
-synonym: "cranial structure synchondrosis" EXACT [OBOL:automatic]
-synonym: "epiphysial cartilage of cranial structure" EXACT [OBOL:automatic]
-synonym: "primary cartilaginous joint of cranial structure" EXACT [OBOL:automatic]
-synonym: "synchondrosis of cranial structure" EXACT [OBOL:automatic]
+intersection_of: part_of UBERON:0003128 ! cranium
 
 [Term]
 id: UBERON:0001726
@@ -21494,12 +21523,16 @@ relationship: surrounds UBERON:0001697 ! orbit
 id: UBERON:0001823
 name: nasal cartilage
 alt_id: UBERON:FMA_59502-MA_0001883
-def: "." [Wikipedia:Nasal_cartilage]
+def: "One of the cartilage structures in the nose that provide form and support[WP]." [Wikipedia:Nasal_cartilage]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "cartilage of nose" EXACT []
 xref: FMA:59502 ! Nasal cartilage
 xref: MA:0001883 ! nasal cartilage
 is_a: UBERON:0002236 ! costal cartilage
+intersection_of: UBERON:0002418 ! cartilage
+intersection_of: part_of UBERON:0000004 ! olfactory apparatus
+relationship: encloses UBERON:0000402 ! nasal vestibule
 xref: ncithesaurus:Nasal_Cartilage ! Nasal Cartilage
 
 [Term]
@@ -23932,7 +23965,6 @@ xref: EHDAA:7090 ! epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001728 ! nasopharynx
-relationship: part_of UBERON:0001728 ! nasopharynx
 xref: ncithesaurus:Nasopharynx_Epithelium ! Nasopharynx Epithelium
 synonym: "epithelial tissue of nasal part of pharynx" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of nasopharynx" EXACT [OBOL:automatic]
@@ -26465,14 +26497,13 @@ is_a: UBERON:0001638 ! vein
 
 [Term]
 id: UBERON:0002090
-name: axial skeleton
+name: postcranial axial skeleton
 alt_id: UBERON:FMA_71221-MA_0000308-MIAA_0000148-XAO_0003073-ZFA_0000317
-def: "*Subdivision of skeleton which consists of the bones of the vertebral column, the thoracic cage and the pelvis. // The post-cranial structural components forming the long axis of the vertebrate body; in Danio, consisting of the notochord, vertebrae, ribs, supraneurals, intermuscular bones, and unpaired median fins." [Wikipedia:Axial_skeleton, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The post-cranial subdivision of skeleton structural components forming the long axis of the vertebrate body; in Danio, consisting of the notochord, vertebrae, ribs, supraneurals, intermuscular bones, and unpaired median fins; in human consists of the bones of the vertebral column, the thoracic cage and the pelvis[ZFA+FMA]." [Wikipedia:Axial_skeleton, FMA:71221, ZFIN:curator, https://sourceforge.net/tracker/?func=detail&aid=2983975&group_id=76834&atid=974957, https://sourceforge.net/tracker/?func=detail&atid=1205376&aid=2983977&group_id=76834]
+comment: see sf items - split into axial and post-cranial axial?
 subset: uberon_slim
-synonym: "postcranial axia skelton" RELATED []
-synonym: "postcranial axial skeleton" EXACT []
-synonym: "vertebral column" RELATED []
+synonym: "axial skeleton" BROAD []
+synonym: "post-cranial axial skeleton" EXACT []
 xref: AAO:0000034 ! axial_skeleton
 xref: EHDAA:5049 ! axial skeleton
 xref: FMA:71221 ! Axial skeleton
@@ -26491,10 +26522,10 @@ xref: ncithesaurus:Axial_Skeleton ! Axial Skeleton
 id: UBERON:0002091
 name: appendicular skeleton
 alt_id: UBERON:FMA_71222-MA_0000290-MIAA_0000278-ZFA_0000027
-def: "*Subdivision of skeleton which consists of the bones of the upper and lower limbs." [Wikipedia:Appendicular_skeleton]
+def: "Subdivision of skeleton which consists of the bones of the upper and lower limbs/appendages." [Wikipedia:Appendicular_skeleton]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "paired fin skeleton" EXACT []
+synonym: "paired fin skeleton" NARROW SENSU []
 xref: AAO:0000747 ! appendicular_skeleton
 xref: FMA:71222 ! Appendicular skeleton
 xref: MA:0000290 ! appendicular skeleton
@@ -26504,8 +26535,7 @@ xref: TAO:0000027 ! paired fin skeleton
 xref: XAO:0003166 ! appendicular skeleton
 xref: ZFA:0000027 ! paired fin skeleton
 is_a: UBERON:0000075 ! subdivision of skeleton
-intersection_of: UBERON:0000075 ! subdivision of skeleton
-intersection_of: has_part UBERON:0002428 ! limb bone
+relationship: has_part UBERON:0002428 ! limb bone
 xref: ncithesaurus:Appendicular_Skeleton ! Appendicular Skeleton
 xref: EFO:0000951 ! paired fin skeleton
 
@@ -26524,8 +26554,6 @@ intersection_of: UBERON:0002363 ! dura mater
 intersection_of: part_of UBERON:0000955 ! brain
 xref: ncithesaurus:Cerebral_Dura_Mater ! Brain Dura Mater
 def: "the fibrous membrane forming the outer of the three coverings that surrounds the brain within the cranial cavity; consists of two layers including the periosteal layer and the meningeal layer." [MP:0009025]
-synonym: "brain dura mater of neuraxis" EXACT [OBOL:automatic]
-synonym: "dura mater of neuraxis of brain" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0002093
@@ -31969,32 +31997,54 @@ xref: ncithesaurus:Vomer ! Vomer
 xref: OpenCyc:Mx4rv6jKWZwpEbGdrcN5Y29ycA ! vomer
 
 [Term]
-id: UBERON:0001684
-name: mandible
-alt_id: UBERON:FMA_52748-MA_0001487
-def: "Bone of lower jaw[Obol]." [Wikipedia:Mandible]
-comment: 'mandible' also refers to either the upper or lower part of the beak in birds.
-subset: uberon_slim
-synonym: "lower jaw bone" EXACT []
-synonym: "mandibulla" EXACT []
-xref: EHDAA:8007 ! mandible
-xref: FMA:52748 ! Mandible
-xref: GAID:68 ! mandible
-xref: MA:0001487 ! mandible
-xref: ncithesaurus:Mandible
-is_a: UBERON:0001474 ! bone
+id: UBERON:0004768
+name: bone of lower jaw
+def: "Any bone that is part of the lower jaw." [OBOL:automatic]
+comment: this is a grouping class which will group analagous structures such as the dentary and the mandible
 intersection_of: UBERON:0001474 ! bone
 intersection_of: part_of UBERON:0001710 ! lower jaw
-relationship: part_of UBERON:0001710 ! lower jaw
-xref: BTO:0001748 ! mandible
-xref: EFO:0001965 ! mandible
-synonym: "bone of lower jaw" EXACT [OBOL:automatic]
+synonym: "lower jaw bone" EXACT []
 synonym: "bone of ventral mandibular arch" EXACT [OBOL:automatic]
 synonym: "bone organ of lower jaw" EXACT [OBOL:automatic]
 synonym: "bone organ of ventral mandibular arch" EXACT [OBOL:automatic]
 synonym: "lower jaw bone organ" EXACT [OBOL:automatic]
 synonym: "ventral mandibular arch bone" EXACT [OBOL:automatic]
 synonym: "ventral mandibular arch bone organ" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004742
+name: dentary
+def: "Dermal bone that forms the antero-lateral part of the lower jaw. It first appears around the anterior end of Meckel's cartilage (5.1 mm NL). In the adult, the dentary meets its counterpart anteriorly at the mandibular symphysis. The dentary abuts the retroarticular posteriorly, and it surround the anguloarticular. The dentary is connected to the maxilla by the maxillo-mandibular ligament. Dentary teeth are absent in cypriniforms, but are present in other ostariophysans." [ZFA:0000191, Wikipedia:Dentary#In_other_vertebrates]
+is_a: UBERON:0002514 ! intramembranous bone
+relationship: part_of UBERON:0003113 ! dermal bone cranium
+relationship: part_of UBERON:0001710 ! lower jaw
+synonym: "dentary bone" EXACT [ZFA:0000191]
+synonym: "dentale" RELATED [AAO:0000124]
+synonym: "os dentale" RELATED [AAO:0000124]
+synonym: "sur-angulaire" RELATED [AAO:0000124]
+xref: AAO:0000124 ! dentary
+xref: ZFA:0000191 ! dentary
+
+[Term]
+id: UBERON:0001684
+name: mandible
+alt_id: UBERON:FMA_52748-MA_0001487
+def: "The bone that forms the lower jaw and holds the lower teeth in place[WP]." [Wikipedia:Mandible]
+comment: 'mandible' also refers to either the upper or lower part of the beak in birds. Note in ZFA mandible/lower jaw are the same class.
+subset: uberon_slim
+synonym: "inferior maxillary bone" EXACT []
+synonym: "lower jaw bone" BROAD SENSU []
+synonym: "mandibulla" EXACT []
+synonym: "lower mandibula" NARROW SENSU [Wikipedia:Mandible]
+xref: EHDAA:8007 ! mandible
+xref: FMA:52748 ! Mandible
+xref: GAID:68 ! mandible
+xref: MA:0001487 ! mandible
+xref: ncithesaurus:Mandible
+is_a: UBERON:0001474 ! bone
+relationship: part_of UBERON:0001710 ! lower jaw
+xref: BTO:0001748 ! mandible
+xref: EFO:0001965 ! mandible
 xref: galen:Mandible ! mandible
 
 [Term]
@@ -33833,29 +33883,52 @@ xref: ncithesaurus:Corpus_Luteum ! Corpus Luteum
 xref: GAID:369 ! corpus luteum
 
 [Term]
-id: UBERON:0002513
+id: UBERON:0002513 ! endochondral bone
 name: endochondral bone
 alt_id: UBERON:MA_0002836-ZFA_0001591
-def: "Replacement bone tissue that forms within cartilage[TAO]. Endochondral ossification is the formation of bone by the replacement of cartilage tissue with mineralized bone[GO]. cartilage is present during endochondral ossification. It is also an essential process during the rudimentary formation of long bones,  the growth of the length of long bones,  and the natural healing of bone fractures[WP]." [Wikipedia:Endochondral_bone, GO:0001958]
+def: "Replacement bone that forms within cartilage[TAO]. Endochondral ossification is the formation of bone by the replacement of cartilage tissue with mineralized bone[GO]. cartilage is present during endochondral ossification. It is also an essential process during the rudimentary formation of long bones,  the growth of the length of long bones,  and the natural healing of bone fractures[WP]." [Wikipedia:Endochondral_bone, GO:0001958]
 comment: we make the strong assertion that this is disjoint from IM bone. Some bones may be a mixture, in this case we would create a new mixed IM/EC bone class.
 subset: uberon_slim
-xref: MA:0002836 ! endochondral bone
 xref: ZFA:0001591 ! endochondral bone
 xref: BTO:0002157 ! endochondral bone
-is_a: UBERON:0002481 ! bone tissue
-relationship: output_of GO:0001958 ! endochondral ossification
+intersection_of: UBERON:0001474 ! bone
+intersection_of: output_of GO:0001958 ! endochondral ossification
 relationship: replaces UBERON:0002418 ! cartilage
 disjoint_from: UBERON:0002514 ! intramembranous bone
 
 [Term]
-id: UBERON:0002514
+id: UBERON:0002514 ! intramembranous bone
 name: intramembranous bone
-def: "Bone tissue that forms directly within mesenchyme, and does not replace other tissues[TAO]. Intramembranous ossification is the formation of bone in which osteoblasts secrete a collagen-proteoglycan matrix that binds calcium salts and becomes calcified[GO]. Intramembranous ossification is the way flat bones and the shell of a turtle are formed[GO]. Unlike endochondral ossification, cartilage is not present during intramembranous ossification[WP]." [Wikipedia:Intramembranous_ossification, GO:0001957]
+def: "Bone tissue forms directly within mesenchyme, and does not replace other tissues[TAO]. Intramembranous ossification is the formation of bone in which osteoblasts secrete a collagen-proteoglycan matrix that binds calcium salts and becomes calcified[GO]. Intramembranous ossification is the way flat bones and the shell of a turtle are formed[GO]. Unlike endochondral ossification, cartilage is not present during intramembranous ossification[WP]." [Wikipedia:Intramembranous_ossification, GO:0001957]
 alt_id: UBERON:MA_0002837-ZFA_0001635
-xref: MA:0002837 ! intramembranous bone
 xref: ZFA:0001635 ! intramembranous bone
-is_a: UBERON:0002481 ! bone tissue
-relationship: output_of GO:0001957 ! intramembranous ossification
+intersection_of: UBERON:0001474 ! bone
+intersection_of: output_of GO:0001957 ! intramembranous ossification
+relationship: develops_from UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0004763
+name: endochondral bone tissue
+def: "Replacement bone tissue that forms within cartilage[TAO]. Endochondral ossification is the formation of bone by the replacement of cartilage tissue with mineralized bone[GO]. cartilage is present during endochondral ossification. It is also an essential process during the rudimentary formation of long bones,  the growth of the length of long bones,  and the natural healing of bone fractures[WP]." [Wikipedia:Endochondral_bone, GO:0001958]
+comment: note the distinction between endochondral bone and endochondral bone tissue. Some bones may be a mixture of both tissue types. The MA class most likely refers to a tissue type
+subset: uberon_slim
+synonym: "replacement bone" BROAD [ZFA:0001628]
+xref: MA:0002836 ! endochondral bone
+intersection_of: UBERON:0002481 ! bone tissue
+intersection_of: output_of GO:0001958 ! endochondral ossification
+relationship: replaces UBERON:0002418 ! cartilage
+relationship: part_of UBERON:0002513 ! endochondral bone
+disjoint_from: UBERON:0004764 ! intramembranous bone tissue
+
+[Term]
+id: UBERON:0004764
+name: intramembranous bone tissue
+def: "Bone tissue that forms directly within mesenchyme, and does not replace other tissues[TAO]. Intramembranous ossification is the formation of bone in which osteoblasts secrete a collagen-proteoglycan matrix that binds calcium salts and becomes calcified[GO]. Intramembranous ossification is the way flat bones and the shell of a turtle are formed[GO]. Unlike endochondral ossification, cartilage is not present during intramembranous ossification[WP]." [Wikipedia:Intramembranous_ossification, GO:0001957]
+comment: note the distinction between intramembranous bone and intramembranous bone tissue. Some bones may be a mixture of both tissue types. The MA class most likely refers to a tissue type.
+xref: MA:0002837 ! intramembranous bone
+intersection_of: UBERON:0002481 ! bone tissue
+intersection_of: output_of GO:0001957 ! intramembranous ossification
+relationship: part_of UBERON:0002514 ! intramembranous bone
 relationship: develops_from UBERON:0003104 ! mesenchyme
 
 [Term]
@@ -33879,7 +33952,6 @@ def: "cartilage that will provide a scaffold for mineralization of endochondral 
 synonym: "growth plate" RELATED []
 is_a: UBERON:0002418 ! cartilage
 relationship: surrounds UBERON:0002513 ! endochondral bone
-comment: merge with epiphyseal plate?
 
 [Term]
 id: UBERON:0002516
@@ -33896,7 +33968,6 @@ xref: FMA:75427 ! Epiphysial plate
 xref: MA:0002839 ! epiphyseal plate
 xref: BTO:0000412 ! epiphyseal growth plate
 xref: GAID:191 ! growth plate
-is_a: UBERON:0004129 ! growth plate cartilage
 is_a: UBERON:0001994 ! hyaline cartilage
 relationship: part_of UBERON:0001438 ! metaphysis
 
@@ -33912,7 +33983,6 @@ synonym: "cranial base" RELATED [MA:0002840]
 xref: FMA:52801 ! Basicranium
 xref: MA:0002840 ! basicranium
 is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000032 ! cranial structure
 relationship: part_of UBERON:0001703 ! neurocranium
 
 [Term]
@@ -34322,7 +34392,7 @@ xref: MAT:0000277 ! median fin skeleton
 xref: MIAA:0000277 ! median fin skeleton
 xref: TAO:0001123 ! axial fin skeleton
 xref: ZFA:0001123 ! axial fin skeleton
-is_a: UBERON:0002090 ! axial skeleton
+is_a: UBERON:0002090 ! postcranial axial skeleton
 xref: EFO:0000950 ! median fin skeleton
 
 [Term]
@@ -42147,10 +42217,9 @@ xref: ncithesaurus:Dermomyotome ! Dermomyotome
 id: UBERON:0003089
 name: sclerotome
 alt_id: UBERON:XAO_0000397-ZFA_0001080
-def: "Ventral somitic compartment that is a precursor of the axial skeleton." [Wikipedia:Sclerotome, XB:curator]
+def: "Ventral somitic compartment that is a precursor of the axial skeleton[XAO]. Sclerotomes eventually differentiate into the vertebrae and most of the skull. The caudal (posterior) half of one sclerotome fuses with the rostral (anterior) half of the adjacent one to form each vertebra. From their initial location within the somite, the sclerotome cells migrate medially towards the notochord. These cells meet the sclerotome cells from the other side to form the vertebral body. From this vertebral body, sclerotome cells move dorsally and surround the developing spinal cord, forming the vertebral arch[WP]." [Wikipedia:Sclerotome, XB:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "sclerotomes" RELATED []
 xref: EHDAA:1193 ! sclerotome
 xref: EHDAA:1199 ! sclerotome
 xref: EHDAA:1205 ! sclerotome
@@ -42534,7 +42603,7 @@ xref: TAO:0000158 ! urostyle
 xref: XAO:0003080 ! urostyle
 xref: ZFA:0000158 ! urostyle
 is_a: UBERON:0002513 ! endochondral bone
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 
 [Term]
 id: UBERON:0003107
@@ -42582,7 +42651,7 @@ xref: TAO:0001362 ! parapophysis
 xref: XAO:0003102 ! transverse process
 xref: ZFA:0001362 ! parapophysis
 is_a: UBERON:0002513 ! endochondral bone
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 
 [Term]
 id: UBERON:0003110
@@ -42618,13 +42687,14 @@ relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0003113
-name: dermal bone cranium
+name: dermatocranium
+def: "Bony parts of the skull derived from ossifications in the dermis of the skin[FD]." [http://encyclopedia2.thefreedictionary.com/dermatocranium]
 alt_id: UBERON:ZFA_0000863-XAO_0003169
-synonym: "dermatocranium" EXACT [ZFA:0000863]
+synonym: "dermal bone cranium" EXACT [ZFA:0000863]
 xref: XAO:0003169 ! dermatocranium
 xref: ZFA:0000863 ! dermatocranium
-is_a: UBERON:0000477 ! anatomical cluster
-relationship: part_of UBERON:0000032 ! cranial structure
+is_a: UBERON:0004765 ! skeletal element
+relationship: part_of UBERON:0003128 ! cranium
 
 [Term]
 id: UBERON:0001708
@@ -42643,14 +42713,14 @@ xref: GAID:214 ! jaw
 xref: galen:Jaw
 xref: MA:0001905 ! jaw
 xref: OpenCyc:Mx4rvVjjEZwpEbGdrcN5Y29ycA
-xref: TAO:0001227 ! mandibular arch
-xref: ZFA:0001227 ! mandibular arch skeleton
-is_a: UBERON:0002539 ! pharyngeal arch
-relationship: part_of UBERON:0001704 ! viscerocranium
-relationship: only_in_taxon NCBITaxon:7776 ! Gnathostomata
 xref: ncithesaurus:Jaw ! Jaw
 xref: BTO:0001749 ! jaw
 xref: OpenCyc:Mx4rvVjjEZwpEbGdrcN5Y29ycA ! jaw
+xref: TAO:0001227 ! mandibular arch
+xref: ZFA:0001227 ! mandibular arch skeleton
+is_a: UBERON:0004765 ! skeletal element
+relationship: part_of UBERON:0001704 ! viscerocranium
+relationship: only_in_taxon NCBITaxon:7776 ! Gnathostomata
 
 [Term]
 id: UBERON:0001709
@@ -51627,7 +51697,7 @@ xref: FMA:16202 ! Sacrum
 xref: GAID:241 ! sacrum
 is_a: UBERON:0001130 ! vertebral column
 relationship: part_of UBERON:0001130 ! vertebral column
-relationship: part_of UBERON:0002090 ! axial skeleton
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 xref: ncithesaurus:Sacral_Bone ! Sacral Bone
 xref: galen:Sacrum ! sacrum
 xref: OpenCyc:Mx4rvmBKnJwpEbGdrcN5Y29ycA ! sacrum
@@ -54202,13 +54272,6 @@ is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000979 ! tibia
 
 [Term]
-id: UBERON:0004099
-name: joint spaces of the elbow
-def: "Joint cavity shared by all the joints of the elbow. The elbow joint is a compound joint that actually comprises three separate joints: the joints connecting the upper and lower arm: 1) Articulatio humero-ulnaris and 2) Articulatio humero-radialis as well as the proximal joint connecting the forarm bones: 3) Articulatio radio-ulnaris proximalis. All three share a joint cavity which is highly sinuated/scalloped/coved. Joint spaces of the elbow summarizes the joint cavity shared by all three adjoining joints of the elbow joint." [HP:0003943]
-is_a: UBERON:0000464 ! anatomical space
-relationship: part_of UBERON:0001490 ! elbow joint
-
-[Term]
 id: UBERON:0004100
 name: renal collecting system
 def: "." [HP:0004742]
@@ -54314,12 +54377,6 @@ relationship: part_of UBERON:0000976 ! humerus
 intersection_of: UBERON:0001851 ! cortex
 intersection_of: part_of UBERON:0000976 ! humerus
 
-[Term]
-id: UBERON:0004110
-name: midnasal cavity
-def: "includes the cavity between the nares and the choanae." [HP:0010641]
-is_a: UBERON:0002553 ! anatomical cavity
-relationship: part_of UBERON:0001707 ! nasal cavity
 
 [Term]
 id: UBERON:0004112
@@ -60381,20 +60438,6 @@ xref: AAO:0000750 ! cleithrum
 xref: ZFA:0000184 ! cleithrum
 
 [Term]
-id: UBERON:0004742
-name: dentary
-def: "Dermal bone that forms the antero-lateral part of the lower jaw. It first appears around the anterior end of Meckel's cartilage (5.1 mm NL). In the adult, the dentary meets its counterpart anteriorly at the mandibular symphysis. The dentary abuts the retroarticular posteriorly, and it surround the anguloarticular. The dentary is connected to the maxilla by the maxillo-mandibular ligament. Dentary teeth are absent in cypriniforms, but are present in other ostariophysans." [ZFA:0000191]
-is_a: UBERON:0002514 ! intramembranous bone
-relationship: part_of UBERON:0003113 ! dermal bone cranium
-relationship: part_of UBERON:0001710 ! lower jaw
-synonym: "dentary bone" EXACT [ZFA:0000191]
-synonym: "dentale" RELATED [AAO:0000124]
-synonym: "os dentale" RELATED [AAO:0000124]
-synonym: "sur-angulaire" RELATED [AAO:0000124]
-xref: AAO:0000124 ! dentary
-xref: ZFA:0000191 ! dentary
-
-[Term]
 id: UBERON:0004743
 name: coracoid
 def: "Endochondral bone of the pectoral girdle that develops from the scapulocoracoid cartilage and occupies the ventral part of the pectoral girdle. The coracoid is a paired bone that articulates approximately dorsally with the cleithrum, scapula and mesocoracoid." [ZFA:0000332]
@@ -60530,6 +60573,62 @@ synonym: "coraco-scapular cartilage" EXACT [ZFA:0001455]
 xref: AAO:0000781 ! scapulocoracoid
 xref: ZFA:0001455 ! scapulocoracoid
 
+
+[Term]
+id: UBERON:0001707
+name: nasal cavity
+alt_id: UBERON:FMA_54378-MA_0000284-ZFA_0000130
+def: "an indentation of the olfactory placode, and ends when the pits hollows out to form the nasopharynx." [Wikipedia:Nasal_cavity]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "cavity of nose" EXACT []
+synonym: "nasal pit" RELATED []
+synonym: "olfactory cavity" RELATED []
+synonym: "olfactory pit" EXACT []
+xref: AAO:0000314 ! nasal_cavity
+xref: EHDAA:4772 ! olfactory pit
+xref: EHDAA:6801 ! nasal cavity
+xref: FMA:54378 ! Nasal cavity
+xref: GAID:350 ! nasal cavity
+xref: HOG:0000271 ! nasal cavity
+xref: MA:0000284 ! nasal cavity
+xref: TAO:0000130 ! olfactory pit
+xref: ZFA:0000130 ! olfactory pit
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0000004 ! olfactory apparatus
+relationship: part_of UBERON:0001557 ! upper respiratory tract
+xref: ncithesaurus:Nasal_Cavity ! Nasal Cavity
+xref: BTO:0002096 ! nasal cavity
+
+[Term]
+id: UBERON:0000402
+name: nasal vestibule
+alt_id: UBERON:BTO_0001761-FMA_59644
+synonym: "vestibular part of nasal cavity" EXACT [FMA:59644]
+xref: BTO:0001761
+xref: FMA:59644 ! Nasal vestibule
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0001707 ! nasal cavity
+def: "Nasal Vestibule is the most anterior part of the nasal cavity. It's enclosed by the cartilages of nose and lined by the same epithelium of the skin. The other part of the nasal cavity, which is lined by the respiratory epithelium, is called nasal cavity proper. [WP,unvetted]." [Wikipedia:Nasal_vestibule]
+
+[Term]
+id: UBERON:0004110
+name: midnasal cavity
+def: "includes the cavity between the nares and the choanae." [HP:0010641]
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0001707 ! nasal cavity
+
+[Term]
+id: UBERON:0004771
+name: posterior nasal aperture
+def: "Opening/conduit between the nasal cavity and the nasopharynx[AAO]" [AAO:0000093, Wikipedia:Posterior_nasal_apertures]
+synonym: "choana" EXACT [Wikipedia:Choane]
+xref: AAO:0000093 ! choana 
+xref: XAO:0000277 ! choana
+xref: FMA:53143 ! posterior nasal aperture
+is_a: UBERON:0004111 ! anatomical conduit
+relationship: part_of UBERON:0001707 ! nasal cavity
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -60599,9 +60698,11 @@ is_a: preceded_by ! preceded_by
 id: spatially_disjoint_from
 name: spatially_disjoint_from
 def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
+comment: TODO owldef
 synonym: "non_overlapping_with" EXACT []
 synonym: "shares_no_parts_with" EXACT []
-disjoint_over: part_of ! part_of
+!disjoint_over: part_of ! part_of
+is_type_level: true
 is_metadata_tag: true
 
 [Typedef]
@@ -60869,6 +60970,11 @@ id: replaces
 name: replaces
 
 [Typedef]
+id: encloses
+name: encloses
+def: "x encloses y iff the convex hull formed by x contains all or the majority of y." [UBERON:cjm]
+
+[Typedef]
 id: never_in_taxon
 name: never_in_taxon
 
@@ -60880,11 +60986,22 @@ name: only_in_taxon
 id: in_left_side_of
 xref: BSPO:0000120
 name: in_left_side_of
-def: "X left_side_of Y <=> if Y is subdivided into two left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
+def: "X left_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
 inverse_of_on_instance_level: BSPO:0000121 ! right_side_of
 
 [Typedef]
 id: in_right_side_of
 xref: BSPO:0000121
 name: in_right_side_of
-def: "X right_side_of Y <=> if Y is subdivided into two left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
+def: "X right_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
+
+[Typedef]
+id: in_distal_side_of
+name: in_distal_side_of
+def: "X distal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the distal portion." [BSPO:PATO_mtg_2009]
+inverse_of_on_instance_level: BSPO:0000121 ! proximal_side_of
+
+[Typedef]
+id: in_proximal_side_of
+name: in_proximal_side_of
+def: "X proximal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the proximal portion." [BSPO:PATO_mtg_2009]

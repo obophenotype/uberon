@@ -135,3 +135,42 @@ uberon_xref_count(S,Num) :-
 		  Num),
 	Num > 32.
 
+uberon_compare_sets_by_relT(X1,X2,Rel,Diff) :-
+	findall(C,parent_overT(Rel,C,X1),Set1),
+	findall(C,parent_overT(Rel,C,X2),Set2),
+	debug(uberon,'comparing: ~w -VS- ~w',[Set1,Set2]),
+	uberon_compare_sets(Set1,Set2,Diff).
+uberon_compare_sets_by_rel(X1,X2,Rel,Diff) :-
+	findall(C,parent(C,Rel,X1),Set1),
+	findall(C,parent(C,Rel,X2),Set2),
+	debug(uberon,'comparing: ~w -VS- ~w',[Set1,Set2]),
+	uberon_compare_sets(Set1,Set2,Diff).
+uberon_compare_sets_by_query(T1,Q1,T2,Q2,Diff) :-
+	findall(T1,Q1,Set1),
+	findall(T2,Q2,Set2),
+	uberon_compare_sets(Set1,Set2,Diff).
+
+uberon_compare_sets(Set1,Set2,Diff) :-
+	member(X1,Set1),
+	entity_xref(U,X1),
+	uberon_in_set(U,Set2,Diff).
+uberon_compare_sets(Set1,Set2,Diff) :-
+	member(X2,Set2),
+	entity_xref(U,X2),
+	uberon_in_set(U,Set1,Diff).
+
+uberon_in_set(U,Set2,match-U) :-
+	entity_xref(U,X2),
+	member(X2,Set2),
+	!.
+uberon_in_set(U,Set2,diff-U) :-
+	entity_xref(U,X2),
+	member(Random,Set2),
+	id_idspace(Random,S),
+	id_idspace(X2,S),
+	!.
+uberon_in_set(U,_,no_xref-U).
+
+	
+
+	
