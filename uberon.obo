@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 08:04:2010 23:45
+date: 09:04:2010 09:09
 subsetdef: uberon_slim "Uberon slim"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
@@ -8265,7 +8265,7 @@ synonym: "axillary node" EXACT []
 xref: FMA:12771
 xref: MA:0000735
 xref: ncithesaurus:Axillary_Lymph_Node
-is_a: UBERON:0000029 ! lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 relationship: part_of UBERON:0001467 ! shoulder
 
 [Term]
@@ -16403,13 +16403,13 @@ relationship: part_of UBERON:0001538 ! posterior tibial artery
 id: UBERON:0001542
 name: inguinal lymph node
 alt_id: UBERON:FMA_44226-MA_0000737
-def: "." [Wikipedia:Inguinal_lymph_node]
+def: "A lymph node in the inguinal region." [Wikipedia:Inguinal_lymph_node]
 comment: TODO - superficial/deep
 subset: uberon_slim
 xref: FMA:44226
 xref: MA:0000737
 xref: ncithesaurus:Inguinal_Lymph_Node
-is_a: UBERON:0000029 ! lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 
 [Term]
 id: UBERON:0001543
@@ -16421,7 +16421,7 @@ subset: uberon_slim
 xref: FMA:44227
 xref: MA:0000738
 xref: ncithesaurus:Popliteal_Lymph_Node
-is_a: UBERON:0000029 ! lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 
 [Term]
 id: UBERON:0001544
@@ -32541,26 +32541,12 @@ name: cervical lymph node
 alt_id: UBERON:MA_0000736-FMA_61213
 def: "Cervical lymph nodes are lymph nodes found in the neck. [WP,unvetted]." [Wikipedia:Cervical_lymph_node]
 subset: uberon_slim
-synonym: "cervical canal lymph node" EXACT [OBOL:automatic]
-synonym: "cervical canal of uterus lymph node" EXACT [OBOL:automatic]
-synonym: "cervix lymph node" EXACT [OBOL:automatic]
-synonym: "cervix of uterus lymph node" EXACT [OBOL:automatic]
-synonym: "lymph node of cervical canal" EXACT [OBOL:automatic]
-synonym: "lymph node of cervical canal of uterus" EXACT [OBOL:automatic]
-synonym: "lymph node of cervix" EXACT [OBOL:automatic]
-synonym: "lymph node of cervix of uterus" EXACT [OBOL:automatic]
-synonym: "lymph node of neck of uterus" EXACT [OBOL:automatic]
-synonym: "lymph node of uterine cervix" EXACT [OBOL:automatic]
-synonym: "neck of uterus lymph node" EXACT [OBOL:automatic]
-synonym: "uterine cervix lymph node" EXACT [OBOL:automatic]
+synonym: "lymph node of neck" EXACT []
 xref: FMA:61213
 xref: MA:0000736
 xref: ncithesaurus:Cervical_Lymph_Node
 is_a: UBERON:0000029 ! lymph node
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0000002
-intersection_of: UBERON:0000029 ! lymph node
-intersection_of: part_of UBERON:0000002 ! uterine cervix
+relationship: part_of UBERON:0000974 ! neck
 
 [Term]
 id: UBERON:0002430
@@ -33957,7 +33943,7 @@ synonym: "submandibular node" EXACT []
 xref: BTO:0000769
 xref: FMA:61224
 xref: MA:0002843
-is_a: UBERON:0000029 ! lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 
 [Term]
 id: UBERON:0002521
@@ -54773,8 +54759,7 @@ relationship: part_of UBERON:0002097 ! skin of body
 id: UBERON:0003968
 name: peripheral lymph node
 def: "the lymph nodes located outside the thoracic and abdominal cavities, such as the submandibular, prescapular, axillary, inguinal and popliteal lymph nodes" [MP:0008463]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000029 ! lymph node
+is_a: UBERON:0000029 ! lymph node
 
 [Term]
 id: UBERON:0003969
@@ -55208,7 +55193,7 @@ is_a: UBERON:0003104 ! mesenchyme
 id: UBERON:0004018
 name: primitive node
 def: "the regional thickening of cells at the rostral tip of the vertebrate primitive streak through which gastrulating cells migrate anteriorally to form tissues in the future head and neck; this region organizes the formation of the three embryonic layers and establishes the longitudinal axis and the polarity of the embryo" [MP:0004066]
-comment: TODO
+comment: TODO - merge with primitive knot
 xref: EHDAA:549
 xref: ncithesaurus:Primitive_Node
 is_a: UBERON:0000061 ! anatomical structure
@@ -65041,6 +65026,15 @@ is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0002757 ! implied link automatically realized ! regional part of epithalamus
 relationship: part_of UBERON:0001899 ! epithalamus
 definition: "A part of the epithalamus present in some animal species. The eye may be photoreceptive and is usually associated with the pineal gland, regulating circadian rhythmicity and hormone production for thermoregulation. The parietal eye is a part of the epithalamus, which can be divided into two major parts; the epiphysis  (the pineal organ, or pineal gland if mostly endocrine) and the parietal organ (often called the parietal eye, or third eye if it is photoreceptive). It arises as an anterior evagination of the pineal organ or as a separate outgrowth of the roof of the diencephalon. In some species, it protrudes through the skull.[4]  The parietal eye uses a different biochemical method of detecting light than rod cells or cone cells in a normal vertebrate eye[WP]." [Wikipedia:Parietal_eye]
+
+[Term]
+id: UBERON:0004870
+name: superficial cervical lymph nodes
+def: "A group of nodes lying along the external jugular vein; they drain the skin and superficial structures over the region of the sternocleidomastoid muscle and anterior cervical regions. Efferent vessels drain to the deep cervical lymph nodes. Lymph nodes can be further subdivided into anterior and lateral groupings." [CL:tm, ref:Stedmans]
+synonym: "prescapular lymph node" RELATED []
+xref: MA:0002885
+is_a: UBERON:0002429 ! cervical lymph node
+is_a: UBERON:0003968 ! peripheral lymph node
 
 [Typedef]
 id: adjacent_to
