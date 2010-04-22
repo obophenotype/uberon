@@ -62,11 +62,11 @@ fma_xp-obol.obo:
 fma_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
 
-mouse_anatomy_fixed.obo: ../gross_anatomy/animal_gross_anatomy/mouse/adult_mouse_anatomy.obo
+mouse_anatomy_fixed.obo: anatomy/gross_anatomy/animal_gross_anatomy/mouse/adult_mouse_anatomy.obo
 	perl -npe 'if (/(meta\S+ bone \w+ digit)/) {s/(hand|foot)//}' $< > $@
 
-adult_mouse_xp-obol.obo:
-	$(OBOL) -i ma_extra.obo -i adult_mouse_xp.obo -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd')" >& $@.tmp && mv $@.tmp $@
+mouse_anatomy_xp-obol.obo:
+	$(OBOL) -u obol_mouse_anatomy_xp -i ma_extra.obo -i mouse_anatomy_xp.obo -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd')" >& $@.tmp && mv $@.tmp $@
 
 adult_mouse_xp_uberon-obol.obo:
 	$(OBOL) -i ma_extra.obo -i adult_mouse_xp.obo -r uberon -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd')" >& $@.tmp && mv $@.tmp $@

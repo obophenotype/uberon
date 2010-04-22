@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 09:04:2010 09:09
+date: 21:04:2010 18:30
 subsetdef: uberon_slim "Uberon slim"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
@@ -1273,6 +1273,7 @@ relationship: develops_from UBERON:0002120 ! pronephros
 id: UBERON:0000081
 name: metanephros
 def: "In mammals, the metanephros is the excretory organ of the fetus, which develops into the mature kidney and is formed from the rear portion of the nephrogenic cord. The metanephros is an endocrine and metabolic organ that filters the blood and excretes the end products of body metabolism in the form of urine[GO]. During the fifth week of gestation, the mesonephric duct develops an outpouching, the ureteric bud, near its attachment to the cloaca. This bud, also called the metanephrogenic diverticulum, grows posteriorly and towards the head of the embryo. The elongated stalk of the ureteric bud, the metanephric duct, later forms the ureter. As the cranial end of the bud extends into the intermediate mesoderm, it undergoes a series of branchings to form the collecting duct system of the kidney. It also forms the major and minor calyces and the renal pelvis." [GO:0001656, Wikipedia:Metanephros#Metanephros]
+xref: BTO:0001543
 xref: EHDAA:3089
 xref: EHDAA:5911
 xref: FMA:72172
@@ -1308,8 +1309,9 @@ xref: BTO:0001646
 xref: EHDAA:3091
 xref: EHDAA:5917
 xref: HOG:0000541
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0003914 ! epithelial tube
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004819 ! implied link automatically realized ! kidney epithelium
 relationship: part_of UBERON:0003074 ! mesonephric duct
 
 [Term]
@@ -1926,6 +1928,7 @@ id: UBERON:0000161
 name: orifice
 def: "Anatomical conduit that connects two adjacent body spaces, surrounded by two or more subdivisions of two or more organs. Examples: right atrioventricular orifice, orifice of artery, hilum of kidney, porta hepatis." [FMA:3724]
 synonym: "anatomical orifice" EXACT [FMA:3724]
+synonym: "hilum" NARROW []
 xref: FMA:3724
 is_a: UBERON:0004111 ! anatomical conduit
 
@@ -1949,24 +1952,30 @@ is_a: UBERON:0000161 ! orifice
 [Term]
 id: UBERON:0000163
 name: embryonic cloaca
-def: "Structure in the development of the urinary and reproductive organs." [Wikipedia:Cloaca_(embryology)]
+def: "Structure in the development of the urinary and reproductive organs[WP]. endoderm-lined chamber into which the hidgut and allantois empty in early embryos[MP]." [MP:0010115, Wikipedia:Cloaca_(embryology)]
 comment: compare UBERON:0000162 cloaca
+synonym: "cloaca" RELATED SENSU []
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003064 ! intermediate mesoderm
-relationship: part_of UBERON:0000922 ! embryo
 
 [Term]
 id: UBERON:0000164
 name: urogenital sinus
-def: "part of the human body only present in the development of the urinary and reproductive organs. It is the ventral part of the cloaca, formed after the cloaca separates from the rectum. It eventually becomes, among other things, the bladder." [Wikipedia:Urogenital_sinus]
+def: "Part of the human body only present in the development of the urinary and reproductive organs. It is the ventral part of the cloaca, formed after the cloaca separates from the rectum. It eventually becomes, among other things, the bladder[WP]. ventral part of the cloaca remaining after septation of the rectum, which further develops into part of the bladder, part of the prostatic part of the male urethra and the urethra and vestibule in females[MP]." [Wikipedia:Urogenital_sinus]
+comment: Note that the term "urogenital sinus" may refer to the primitive urogenital sinus present as a transient developmental structure in most mammals or it may refer to a condition in which an unseptated cloaca persists in animals longer than normal[MP].
+synonym: "persistent cloaca" EXACT [Wikipedia:Urogenital_sinus]
+synonym: "primitive urogenital sinus" EXACT [MP:0010116]
+synonym: "UGS" EXACT [MP:0010116]
 xref: EHDAA:5029
 xref: EHDAA:5919
 xref: HOG:0000414
 xref: ncithesaurus:Urogenital_Sinus
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0000163 ! embryonic cloaca
 relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: part_of UBERON:0000163 ! embryonic cloaca
 
 [Term]
 id: UBERON:0000165
@@ -2070,7 +2079,6 @@ synonym: "respiratory system organ" EXACT [OBOL:automatic]
 is_a: UBERON:0000062 ! organ
 intersection_of: UBERON:0000062 ! organ
 intersection_of: part_of UBERON:0001004 ! respiratory system
-relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0000172
@@ -3197,13 +3205,14 @@ xref: BTO:0001458
 xref: FMA:59155
 xref: ncithesaurus:Apocrine_Sweat_Gland
 is_a: UBERON:0001820 ! sweat gland
-relationship: constitutional_part_of UBERON:0001003 ! epidermis
+relationship: part_of UBERON:0001003 ! epidermis
 
 [Term]
 id: UBERON:0000383
 name: musculature of body
 alt_id: UBERON:BTO_0001485-FMA_72954
 def: "The sum of all muscles in the body. There is only one set of muscles per organism" [GOC:cjm]
+comment: we place the MA term musculature here, rather than under uberon:musculature, as this seems more appropriate given the structure of MA
 synonym: "muscle system" EXACT []
 synonym: "muscle system of body" EXACT []
 synonym: "muscular system" EXACT [FMA:72954]
@@ -3213,6 +3222,7 @@ xref: BTO:0001485
 xref: EFO:0000801
 xref: FBbt:00005069
 xref: FMA:72954
+xref: MA:0002888
 xref: MAT:0000025
 xref: MIAA:0000025
 is_a: UBERON:0001015 ! musculature
@@ -3559,7 +3569,7 @@ xref: FMA:59154
 xref: GAID:945
 xref: ncithesaurus:Eccrine_Sweat_Gland
 is_a: UBERON:0001820 ! sweat gland
-relationship: constitutional_part_of UBERON:0001003 ! epidermis
+relationship: part_of UBERON:0001003 ! epidermis
 
 [Term]
 id: UBERON:0000424
@@ -3894,7 +3904,7 @@ xref: GAID:384
 xref: MA:0002936
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0003297 ! implied link automatically realized ! gland of integumental system
-relationship: systemic_part_of UBERON:0002416 ! integumental system
+relationship: part_of UBERON:0002416 ! integumental system
 
 [Term]
 id: UBERON:0000461
@@ -6415,36 +6425,37 @@ is_a: UBERON:0000058 ! duct
 id: UBERON:0001001
 name: chitin-based cuticle
 alt_id: UBERON:FBbt_00004970
-def: "The outer non-living layer of the integumentary system derived from the epidermis. The main structural component of arthropod cuticle is a polysaccharide, chitin, composed of N-acetylglucosamine units, together with proteins and lipids." [FB:gg, UBERON:cjm, Wikipedia:Exoskeleton]
-comment: This class was created automatically from a combination of ontologies
+def: "The outer non-living layer of the integumentary system derived from the epidermis[FBbt]. The main structural component of arthropod cuticle is a polysaccharide, chitin, composed of N-acetylglucosamine units, together with proteins and lipids[WP]." [FB:gg, UBERON:cjm]
+comment: TODO - split from exoskeleton?
 subset: uberon_slim
 synonym: "arthropod cuticle" RELATED []
+synonym: "cuticle" NARROW [FBbt:00004970]
 synonym: "exoskeleton" EXACT []
 synonym: "insect cuticle" RELATED []
 xref: EFO:0000944
 xref: FBbt:00004970
-xref: MAT:0000150
+xref: HAO:0000240
 xref: OpenCyc:Mx4rvVkBTJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001002 ! cuticle
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0001003 ! epidermis
 relationship: only_in_taxon NCBITaxon:6656
+relationship: part_of UBERON:0002416 ! integumental system
 
 [Term]
 id: UBERON:0001002
 name: cuticle
 alt_id: UBERON:FBbt_00004970-MIAA_0000150-WBbt_0005755
-def: "tough but flexible, non-mineral outer coverings of an organism, or parts of an organism, that provide protection. Cuticles are non-homologous, differing in their origin, structure and chemical composition. [Wikipedia]. The outer non-living layer of the integumentary system derived from the epidermis." [Wikipedia:Cuticle, Wikipedia:Eponychium]
-comment: TODO - check cuticle vs eponychium
+def: "tough but flexible, non-mineral outer coverings of an organism, or parts of an organism, that provide protection. Cuticles are non-homologous, differing in their origin, structure and chemical composition[WP]." [Wikipedia:Cuticle]
+comment: TODO - check cuticle vs exoskeleton. Note that GO has a very generic definition of cuticle
 subset: uberon_slim
 xref: BTO:0001600
 xref: FBbt:00004970
-xref: FMA:77859
-xref: HAO:0000240
 xref: MA:0002704
+xref: MAT:0000150
 xref: MIAA:0000150
 is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
-relationship: develops_from UBERON:0001003 ! epidermis
+is_a: UBERON:0003102 ! surface structure
 
 [Term]
 id: UBERON:0001003
@@ -6507,7 +6518,9 @@ xref: OpenCyc:Mx4rvVjzFJwpEbGdrcN5Y29ycA
 xref: TAO:0000272
 xref: XAO:0000117
 xref: ZFA:0000272
-is_a: UBERON:0000467 ! anatomical system
+is_a: UBERON:0000467 ! implied link automatically realized ! anatomical system
+intersection_of: UBERON:0000467 ! anatomical system
+intersection_of: capable_of GO:0007585
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
 disjoint_from: UBERON:0001007 ! digestive system
@@ -6727,8 +6740,8 @@ consider: UBERON:0003917
 id: UBERON:0001015
 name: musculature
 alt_id: UBERON:FBbt_00005069-FMA_30316-FMA_32558-MA_0000015-MIAA_0000025-WBbt_0005737-XAO_0000172-ZFA_0000548-ZFA_0005145
-def: "Anatomical system that allows the animal move, includes all muscles." [BTO:0000887, WB:rynl, Wikipedia:Muscular_system, ZFIN:curator]
-comment: In FMA this is classified as a set of organs. ZFA musculature system has subtypes, so it is classified here. WBbt muscular system has subtypes so it goes here
+def: "Anatomical system that allows the animal move, includes all muscles[WP]." [BTO:0000887, WB:rynl, Wikipedia:Muscular_system, ZFIN:curator]
+comment: In FMA this is classified as a set of organs. ZFA musculature system has subtypes, so it is classified here. WBbt muscular system has subtypes so it goes here. Note that we use the MA term set of skeletal muscles here as it seems most appropriate (not MA:musculature)
 subset: uberon_slim
 synonym: "muscle group" EXACT []
 synonym: "muscles" RELATED []
@@ -6736,10 +6749,11 @@ synonym: "muscles set" EXACT []
 synonym: "musculature" EXACT []
 synonym: "musculature system" RELATED []
 synonym: "set of muscles" EXACT [FMA:32558]
+synonym: "set of organs" EXACT []
 xref: BTO:0000887
 xref: EFO:0001949
 xref: FMA:32558
-xref: MA:0002888
+xref: MA:0000165
 xref: ncithesaurus:Muscle
 xref: OpenCyc:Mx4rvVjmr5wpEbGdrcN5Y29ycA
 xref: TAO:0000548
@@ -8187,7 +8201,7 @@ is_a: UBERON:0002413 ! cervical vertebra
 id: UBERON:0001094
 name: sacral vertebra
 alt_id: UBERON:FMA_12526-XAO_0003078
-def: "The sacrum is a large, triangular bone at the base of the spine and at the upper and back part of the pelvic cavity, where it is inserted like a wedge between the two hip bones. Its upper part connects with the last lumbar vertebra, and bottom part with the coccyx (tailbone). In children, it consists of usually five unfused vertebrae which begin to fuse between ages 16-18 and are usually completely fused into a single bone by age 26. It is curved upon itself and placed obliquely (that is, tilted forward). It is kyphotic — that is, concave facing forwards. The base projects forward as the sacral promontory internally, and articulates with the last lumbar vertebra to form the prominent sacrovertebral angle. The central part is curved outward towards the posterior, allowing greater room for the pelvic cavity. [WP,unvetted]." [Wikipedia:Sacral_vertebra]
+def: "A vertebra that is part of a sacrum." [OBOL:automatic]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "sacral segment" EXACT []
@@ -8198,18 +8212,21 @@ xref: MA:0000313
 xref: ncithesaurus:Sacral_Vertebra
 xref: OpenCyc:Mx4rv-ZsXpwpEbGdrcN5Y29ycA
 xref: XAO:0003078
-is_a: UBERON:0002412 ! vertebra
+is_a: UBERON:0002412 ! implied link automatically realized ! vertebra
+intersection_of: UBERON:0002412 ! vertebra
+intersection_of: part_of UBERON:0003690 ! sacrum
 
 [Term]
 id: UBERON:0001095
 name: coccygeal vertebra
 alt_id: UBERON:FMA_12527-XAO_0003079-ZFA_0000326
-def: "Vertebrae bearing a hemal arch and spine. The most posterior caudal vertebrae support the caudal fin and are referred to as preural vertebrae[ZFA]. " [Wikipedia:Caudal_vertebra, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: ". " [Wikipedia:Caudal_vertebra, ZFIN:curator]
+comment: TODO - split caudal vs coccygeal? FMA says these are exact, but MA has cocc as subtype of caudal. MP says caudal = coccyx or tail.
 subset: uberon_slim
 synonym: "caudal vertebra" EXACT []
-synonym: "caudal vertebrae" RELATED []
+synonym: "caudal vertebrae" EXACT PLURAL []
 synonym: "coccygeal segment" EXACT []
+synonym: "coccygeal vertebrae" EXACT PLURAL []
 xref: FMA:12527
 xref: galen:CoccygealVertebra
 xref: MA:0001420
@@ -8875,7 +8892,7 @@ relationship: part_of UBERON:0002349 ! myocardium
 id: UBERON:0001134
 name: skeletal muscle tissue
 alt_id: UBERON:FMA_14069-MA_0002439
-def: "Tissue which consists of skeletal muscle fibers surrounded by endomysium. Examples: Skeletal muscle tissue of biceps, Skeletal muscle tissue of diaphragm." [Wikipedia:Skeletal_muscle]
+def: "Tissue which consists of skeletal muscle fibers surrounded by endomysium. Examples: Skeletal muscle tissue of biceps, Skeletal muscle tissue of diaphragm[FMA]. Striated muscle tissue under control of the somatic nervous system. It is one of three major muscle types, the others being cardiac and smooth muscle. As its name suggests, most skeletal muscle is attached to bones by bundles of collagen fibers known as tendons. Skeletal muscle is made up of individual components known as muscle fibers. These fibers are formed from the fusion of developmental myoblasts. The myofibers are long, cylindrical, multinucleated  cells composed of actin and myosin myofibrils repeated as a sarcomere, the basic functional unit of the cell and responsible for skeletal muscle's striated appearance and forming the basic machinery necessary for muscle contraction. The term muscle refers to multiple bundles of muscle fibers held together by connective tissue[WP]." [Wikipedia:Skeletal_muscle]
 comment: TODO - add skeletal muscle organ? See GO:0060538 skeletal muscle organ development. Consider FBbt:00005073 - somatic muscle.
 subset: uberon_slim
 synonym: "skeletal muscle" EXACT []
@@ -11019,8 +11036,9 @@ synonym: "splenic hilum" EXACT []
 xref: FMA:15841
 xref: MA:0002670
 xref: ncithesaurus:Splenic_Hilum
-is_a: UBERON:0004460 ! hilum
-relationship: part_of UBERON:0002106 ! spleen
+is_a: UBERON:0004885 ! implied link automatically realized ! hilum
+intersection_of: UBERON:0004885 ! hilum
+intersection_of: part_of UBERON:0002106 ! spleen
 
 [Term]
 id: UBERON:0001249
@@ -11070,6 +11088,7 @@ synonym: "spleen marginal zone" EXACT []
 xref: FMA:15852
 xref: MA:0000755
 is_a: UBERON:0000061 ! anatomical structure
+disjoint_from: UBERON:0004879 ! marginal zone of embryo
 relationship: adjacent_to UBERON:0001250 ! red pulp of spleen
 relationship: adjacent_to UBERON:0001959 ! white pulp of spleen
 relationship: part_of UBERON:0002106 ! spleen
@@ -24389,8 +24408,8 @@ relationship: has_part GO:0005581
 id: UBERON:0001995
 name: fibrocartilage
 alt_id: UBERON:FMA_64784-MA_0000108
-def: "Cartilage (tissue) which consists of chondrocytes and collagen, the intercellular matrix of which is an amorphous gel without a well-defined perichondrium." [Wikipedia:Fibrocartilage]
-comment: This class was created automatically from a combination of ontologies
+def: "a mixture of white fibrous tissue and cartilaginous tissue in various proportions. It owes its flexibility and toughness to the former of these constituents, and its elasticity to the latter. It is the only type of cartilage that contains type I collagen  in addition to the normal type II[WP]. Cartilage (tissue) which consists of chondrocytes and collagen, the intercellular matrix of which is an amorphous gel without a well-defined perichondrium[FMA]." [Wikipedia:Fibrocartilage]
+comment: The white fibrocartilages admit of arrangement into four groups—interarticular, connecting, circumferential, and stratiform -- WP. TODO: add mineralized
 subset: uberon_slim
 xref: FMA:64784
 xref: galen:Fibrocartilage
@@ -24398,7 +24417,7 @@ xref: MA:0000108
 xref: ncithesaurus:Fibrocartilage
 is_a: UBERON:0002418 ! cartilage
 relationship: has_part CL:0000138
-relationship: has_part GO:0005581
+relationship: has_part GO:0005584
 
 [Term]
 id: UBERON:0001996
@@ -24934,7 +24953,7 @@ xref: BTO:0000435
 xref: FMA:67542
 xref: MA:0000807
 xref: ncithesaurus:Stratum_Spinosum
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000119 ! cell layer
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: adjacent_to UBERON:0002025 ! basal cell layer of epidermis
@@ -25719,7 +25738,7 @@ xref: BTO:0000361
 xref: FMA:70344
 xref: MA:0000805
 xref: ncithesaurus:Stratum_Granulosum
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000119 ! cell layer
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001003 ! epidermis
@@ -29697,6 +29716,7 @@ synonym: "lung alveolus" EXACT []
 synonym: "pulmonary alveolus" EXACT []
 xref: BTO:0000060
 xref: FMA:7318
+xref: GAID:349
 xref: HOG:0001445
 xref: MA:0000420
 is_a: UBERON:0003215 ! alveolus
@@ -30207,7 +30227,6 @@ alt_id: UBERON:FMA_85521-XAO_0000055-ZFA_0000135
 def: "A longitudinal flexible rod of cells that in the embryo forms the supporting axis of the body. It degenerates, beginning anteriorly, at NF stage 46. Its posterior portion is greatly reduced by NF stage 55 and the entire structure is gone by NF stage 65. // Rod-like principal supportive element of the embryo and larva, present in the midline just ventral to the neural tube, and differentiating during the segmentation period to form large vacuolated epithelial cells and a surrounding a sheath of fibrous and elastic layers. Layering of the sheath may differ in structure, thickness and development among groups; in cypriniforms there are actually three very thin layers to the sheath. A functional, well developed notochord is present throughout life in certain basal fish groups but not in cypriniforms. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [ISBN:0815318960, NLM:notochord, Wikipedia:Notochord, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "chordamesoderm" EXACT []
 synonym: "notocord" RELATED []
 xref: AAO:0000327
 xref: BTO:0001768
@@ -30431,10 +30450,9 @@ synonym: "secondary bronchus epithelium" EXACT [OBOL:automatic]
 xref: FMA:86624
 xref: MA:0001842
 is_a: UBERON:0000115 ! implied link automatically realized ! lung epithelium
-is_a: UBERON:0002031 ! epithelium of bronchus
+is_a: UBERON:0002031 ! implied link automatically realized ! epithelium of bronchus
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002183 ! lobar bronchus
-relationship: part_of UBERON:0002183 ! lobar bronchus
 
 [Term]
 id: UBERON:0002340
@@ -32081,8 +32099,11 @@ id: UBERON:0002416
 name: integumental system
 alt_id: UBERON:MA_0000014-FMA_72979
 def: "organ system that protects the body from damage, comprising the skin and its appendages (including hair, scales, and nails). The integumentary system has a variety of functions; it may serve to waterproof, cushion and protect the deeper tissues, excrete wastes, regulate temperature and is the location of receptors for pain, sensation, pressure and temperature. In humans the integumentary system additionally provides vitamin D synthesis[WP]." [Wikipedia:Integumentary_system]
+synonym: "integumentary system" EXACT [FMA:72979]
 xref: EFO:0000807
 xref: EHDAA:6520
+xref: EMAPA:17524
+xref: FBbt:00004969
 xref: FMA:72979
 xref: HOG:0000403
 xref: MA:0000014
@@ -41372,8 +41393,8 @@ intersection_of: part_of UBERON:0001898 ! hypothalamus
 id: UBERON:0003049
 name: collagen and cuticulin-based cuticle
 alt_id: UBERON:WBbt_0005755
-def: "A rigid external coating which is secreted by the hypodermis, seam and some transitional epithelial cells which covers the outer body, the major openings into the body cavity from the exterior, and two large sensory bristles, the male spicules. The cuticle of the spicules, the hook, and of some portions of the spicule channels is especially rigid and is probably sclerotized. Similar sclerotic features are occasionally noted in the ventral surface of the male tail fan. The main structural components of the nematode cuticle are proteins, highly cross-linked collagens and specialised insoluble proteins known as " [UBERON:cjm, WA:dh]
-comment: This class was created automatically from a combination of ontologies
+def: "A rigid external coating which is secreted by the hypodermis, seam and some transitional epithelial cells which covers the outer body, the major openings into the body cavity from the exterior, and two large sensory bristles, the male spicules. The cuticle of the spicules, the hook, and of some portions of the spicule channels is especially rigid and is probably sclerotized. Similar sclerotic features are occasionally noted in the ventral surface of the male tail fan[WBbt]. The main structural components of the nematode cuticle are proteins, highly cross-linked collagens and specialised insoluble proteins known as cuticlins, together with glycoproteins  and lipids[WP]." [UBERON:cjm, WA:dh]
+comment: Note that GO has a superclass protein-based cuticle development // taxonomic restriction may be too strict
 subset: uberon_slim
 synonym: "nematode cuticle" RELATED []
 xref: WBbt:0005755
@@ -41655,7 +41676,7 @@ synonym: "embryonic organizer" EXACT [GAID:1312]
 synonym: "Hensen node" EXACT SENSU [GAID:1312, Wikipedia:Primitive_knot]
 synonym: "Hensen's node" EXACT SENSU [GAID:1312, Wikipedia:Primitive_knot]
 synonym: "organizer" RELATED []
-synonym: "primitive node" EXACT [Wikipedia:Primitive_knot]
+synonym: "primitive node" RELATED [Wikipedia:Primitive_knot]
 synonym: "shield" EXACT []
 synonym: "Spemann Mangold organizer" EXACT SENSU []
 synonym: "Spemann organizer" EXACT SENSU []
@@ -41675,7 +41696,7 @@ relationship: part_of UBERON:0002541 ! germ ring
 id: UBERON:0003063
 name: prechordal plate
 alt_id: UBERON:XAO_0000079-ZFA_0000060
-def: "Axial hypoblast located anterior to the chorda mesoderm; the polster is its most anterior region. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [ZFIN:curator]
+def: "a thickening of the endoderm at the cranial end of the primitive streak formed by the involution of Spemann's organizer cells. The prechordal plate and the notochord induce the formation of the neural plate from the overlying ectodermal cells[GO]. Axial hypoblast located anterior to the chorda mesoderm; the polster is its most anterior region[ZFA]. Uniquely thickened portion of the endoderm  that is in contact with ectoderm immediately rostral to the cephalic tip of the notochord[WP]." [Wikipedia:Prechordal_plate, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "head mesenchyme" BROAD []
@@ -41687,7 +41708,8 @@ xref: XAO:0000079
 xref: ZFA:0000060
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0003068 ! axial mesoderm
+relationship: develops_from UBERON:0003068 ! axial mesoderm
+relationship: part_of UBERON:0004341 ! primitive streak
 
 [Term]
 id: UBERON:0003064
@@ -41762,9 +41784,10 @@ is_a: UBERON:0002050 ! embryonic structure
 id: UBERON:0003068
 name: axial mesoderm
 alt_id: UBERON:XAO_0000205-ZFA_0001204
-def: "The axial mesoderm includes the prechordal mesoderm and the chordamesoderm. It gives rise to the prechordal plate and to the notochord." []
+def: "The axial mesoderm includes the prechordal mesoderm and the chordamesoderm. It gives rise to the prechordal plate and to the notochord." [GO:0048318, Wikipedia:Chordamesoderm]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "chordamesoderm" RELATED [Wikipedia:Chordamesoderm]
 xref: HOG:0000107
 xref: TAO:0001204
 xref: XAO:0000205
@@ -41950,12 +41973,11 @@ relationship: part_of UBERON:0000010 ! peripheral nervous system
 id: UBERON:0003079
 name: floor plate
 alt_id: UBERON:XAO_0000306-ZFA_0000022
-def: "Organizing center consisting of a small group of cells located at the ventral midline of the neural tube that influences the development of the nervous system, governing the specification of neuronal cell types and directing axonal trajectories[]. a neural tube structure that separates the left and right components of the basal plate. Derived from the notochord during neurulation, it is a ventralizing structure, secreting and aiding in the development of the dorsal-ventral axis of the brainstem and spinal cord[WP]." [GO:0021508, PMID:15738958, Wikipedia:Floor_plate]
+def: "Organizing center consisting of a small group of cells located at the ventral midline of the neural tube that influences the development of the nervous system, governing the specification of neuronal cell types and directing axonal trajectories[XAO]. a structure integral to the developing nervous system of vertebrate organisms. Located on the ventral midline of the embryonic neural tube, the floor plate is a specialized glial structure that spans the anteroposterior axis from the midbrain to the tail regions. It has been shown that the floor plate is conserved among vertebrates with homologous structures in invertebrates such as the fruit fly Drosophila  and the nematode C. elegans. Functionally, the structure serves as an organizer to ventralize tissues in the embryo as well as to guide neuronal positioning and differentiation along the dorsoventral axis of the neural tube[WP]." [GO:0021508, PMID:15738958, Wikipedia:Floor_plate]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "flexural organ" RELATED []
 synonym: "floorplate" EXACT []
-synonym: "fp" RELATED []
 synonym: "spinal cord floor" RELATED []
 xref: BTO:0001720
 xref: EHDAA:1375
@@ -42021,9 +42043,9 @@ xref: EHDAA:910
 xref: TAO:0000022
 xref: XAO:0000306
 xref: ZFA:0000022
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002050 ! embryonic structure
-relationship: part_of UBERON:0001017 ! central nervous system
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001049 ! neural tube
 
 [Term]
 id: UBERON:0003080
@@ -42043,7 +42065,7 @@ relationship: part_of UBERON:0001049 ! neural tube
 id: UBERON:0003081
 name: lateral plate mesoderm
 alt_id: UBERON:XAO_0000311-ZFA_0000121
-def: "Lateral plate mesoderm is a type of mesoderm that is found at the periphery of the embryo. [WP,unvetted]." [Wikipedia:Lateral_plate_mesoderm]
+def: "Portion of the middle of the three primary germ layers of the embryo that resides on the periphery of the embryo, is continuous with the extra-embryonic mesoderm, splits into two layers enclosing the intra-embryonic coelom, and gives rise to body wall structures[MP]." [MP:0010117, Wikipedia:Lateral_plate_mesoderm]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "lateral mesoderm" EXACT []
@@ -42054,10 +42076,11 @@ xref: TAO:0000121
 xref: TAO:0001065
 xref: XAO:0000311
 xref: ZFA:0000121
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0000926 ! mesoderm
+relationship: surrounds UBERON:0003887 ! intraembryonic coelom
 
 [Term]
 id: UBERON:0003082
@@ -44966,7 +44989,7 @@ synonym: "midbrain floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:3698
 xref: ZFA:0001677
 is_a: UBERON:0002950 ! implied link automatically realized ! regional part of midbrain
-is_a: UBERON:0003079 ! implied link automatically realized ! floor plate
+is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
 intersection_of: UBERON:0003079 ! floor plate
 intersection_of: part_of UBERON:0001891 ! midbrain
 
@@ -44979,7 +45002,7 @@ synonym: "telencephalon floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:3498
 xref: ZFA:0000914
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
-is_a: UBERON:0003079 ! implied link automatically realized ! floor plate
+is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
 intersection_of: UBERON:0003079 ! floor plate
 intersection_of: part_of UBERON:0001893 ! telencephalon
 
@@ -45006,7 +45029,7 @@ xref: EHDAA:2651
 xref: EHDAA:3480
 xref: ZFA:0000871
 is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
-is_a: UBERON:0003079 ! implied link automatically realized ! floor plate
+is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
 intersection_of: UBERON:0003079 ! floor plate
 intersection_of: part_of UBERON:0001894 ! diencephalon
 
@@ -45022,7 +45045,7 @@ synonym: "metencephalon floor plate" EXACT [OBOL:automatic]
 synonym: "metencephalon floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:5500
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
-is_a: UBERON:0003079 ! implied link automatically realized ! floor plate
+is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
 intersection_of: UBERON:0003079 ! floor plate
 intersection_of: part_of UBERON:0001895 ! metencephalon
 
@@ -45046,7 +45069,7 @@ synonym: "metepencephalon floor plate" EXACT [OBOL:automatic]
 synonym: "metepencephalon floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:7590
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
-is_a: UBERON:0003079 ! implied link automatically realized ! floor plate
+is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
 intersection_of: UBERON:0003079 ! floor plate
 intersection_of: part_of UBERON:0001896 ! medulla oblongata
 
@@ -52359,6 +52382,8 @@ name: prostate bud
 def: "A region of the fetal urogenital sinus epithelium destined to become the prostate[GO]." [GO:0060513]
 synonym: "prostatic bud" EXACT []
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0004902 ! urogenital sinus epithelium
 
 [Term]
 id: UBERON:0003821
@@ -54700,6 +54725,7 @@ relationship: part_of UBERON:0001840 ! semicircular canal
 id: UBERON:0004044
 name: anterior visceral endoderm
 def: "the extraembryonic tissue that is responsible for the proper orientation of the anterior-posterior axis of the embryo and for appropriate patterning of adjacent embryonic tissue" [MP:0008533]
+comment: see also primitive streak
 xref: BTO:0003361
 is_a: UBERON:0000478 ! extraembryonic structure
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
@@ -54854,14 +54880,17 @@ relationship: part_of UBERON:0001049 ! neural tube
 id: UBERON:0004063
 name: spinal cord alar plate
 def: "the region of the mantle layer of the neural tube that lies dorsal to the sulcus limitans and contains primarily sensory neurons and interneurons involved in communication of sensory impulses; the alar plate develops into the dorsal horn in the grey matter of the spinal cord" [MP:0009692]
+comment: TODO - merge with UBERON:0003054 roof plate?
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
 
 [Term]
 id: UBERON:0004064
-name: spinal cord basal plate
-def: "the region of the mantle layer of the neural tube that lies ventral to the sulcus limitans and contains primarily motor neurons and interneurons" [MP:0009693]
+name: basal plate
+def: "the region of the mantle layer of the neural tube that lies ventral to the sulcus limitans and contains primarily motor neurons and interneurons. the region of the neural tube ventral to the sulcus limitans. It extends from the rostral mesencephalon  to the end of the spinal cord and contains primarily motor neurons, whereas neurons found in the alar plate are primarily associated with sensory functions. The cell types of the basal plate include lower motor neurons and four types of interneuron. Initially the left and right sides of the basal plate are continuous, but during neurulation they become separated by the floor plate, a derivative of the notochord[WP]." [MP:0009693, Wikipedia:Basal_plate_(neural_tube)]
+synonym: "basal plate of neural tube" EXACT [Wikipedia:Basal_plate_(neural_tube)]
+synonym: "spinal cord basal plate" EXACT [MP:0009693]
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
@@ -60040,12 +60069,6 @@ is_a: UBERON:0004457 ! cavity lining
 relationship: part_of UBERON:0002358 ! peritoneum
 
 [Term]
-id: UBERON:0004460
-name: hilum
-xref: FMA:57836
-is_a: UBERON:0000161 ! orifice
-
-[Term]
 id: UBERON:0004461
 name: Musculature of head
 xref: FMA:71287
@@ -61139,7 +61162,6 @@ synonym: "S1 vertebra" EXACT [FMA:13077]
 xref: FMA:13077
 xref: MA:0001434
 is_a: UBERON:0001094 ! sacral vertebra
-relationship: part_of UBERON:0003690 ! sacrum
 
 [Term]
 id: UBERON:0004623
@@ -61151,7 +61173,6 @@ synonym: "Second segment of sacrum" EXACT [FMA:13078]
 xref: FMA:13078
 xref: MA:0001435
 is_a: UBERON:0001094 ! sacral vertebra
-relationship: part_of UBERON:0003690 ! sacrum
 
 [Term]
 id: UBERON:0004624
@@ -61163,7 +61184,6 @@ synonym: "Third segment of sacrum" EXACT [FMA:13079]
 xref: FMA:13079
 xref: MA:0001436
 is_a: UBERON:0001094 ! sacral vertebra
-relationship: part_of UBERON:0003690 ! sacrum
 
 [Term]
 id: UBERON:0004625
@@ -61175,7 +61195,6 @@ synonym: "S4 vertebra" EXACT [FMA:13080]
 xref: FMA:13080
 xref: MA:0001437
 is_a: UBERON:0001094 ! sacral vertebra
-relationship: part_of UBERON:0003690 ! sacrum
 
 [Term]
 id: UBERON:0004626
@@ -63793,10 +63812,12 @@ intersection_of: part_of UBERON:0001007 ! digestive system
 [Term]
 id: UBERON:0004857
 name: skeletal muscle connective tissue
+comment: no corresponding term in FMA? Skeletal muscle endomysium would be a subtype
 synonym: "connective tissue of skeletal muscle" EXACT [OBOL:automatic]
 synonym: "connective tissue of skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of skeletal muscle" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of skeletal muscle tissue" EXACT [OBOL:automatic]
+synonym: "skeletal muscle endomysium" EXACT [FMA:86022]
 synonym: "skeletal muscle portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle textus connectivus" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue connective tissue" EXACT [OBOL:automatic]
@@ -63804,11 +63825,11 @@ synonym: "skeletal muscle tissue portion of connective tissue" EXACT [OBOL:autom
 synonym: "skeletal muscle tissue textus connectivus" EXACT [OBOL:automatic]
 synonym: "textus connectivus of skeletal muscle" EXACT [OBOL:automatic]
 synonym: "textus connectivus of skeletal muscle tissue" EXACT [OBOL:automatic]
+xref: FMA:86022
 xref: MA:0002868
 is_a: UBERON:0002384 ! implied link automatically realized ! connective tissue
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 intersection_of: UBERON:0002384 ! connective tissue
-intersection_of: part_of UBERON:0001134 ! skeletal muscle tissue
+intersection_of: surrounds UBERON:0001134 ! skeletal muscle tissue
 
 [Term]
 id: UBERON:0004858
@@ -63942,6 +63963,318 @@ synonym: "prescapular lymph node" RELATED []
 xref: MA:0002885
 is_a: UBERON:0002429 ! cervical lymph node
 is_a: UBERON:0003968 ! peripheral lymph node
+
+[Term]
+id: UBERON:0004871
+name: somatic layer of lateral plate mesoderm
+def: "Layer of lateral plate mesoderm that forms the future body wall[WP]." [Wikipedia:Lateral_plate_mesoderm#Division_into_layers]
+xref: XAO:0000271
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0003081 ! lateral plate mesoderm
+
+[Term]
+id: UBERON:0004872
+name: splanchnic layer of lateral plate mesoderm
+def: "Layer of lateral plate mesoderm that forms the circulatory system and future gut wall[WP]." [Wikipedia:Lateral_plate_mesoderm#Division_into_layers]
+synonym: "outer layer of lateral plate mesoderm" EXACT []
+xref: XAO:0000276
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0003081 ! lateral plate mesoderm
+
+[Term]
+id: UBERON:0004873
+name: splanchnopleure
+def: "a structure created during embryogenesis  when the lateral mesoderm splits into two layers. The inner (or splanchnic) layer adheres to the endoderm, and with it forms the splanchnopleure[WP]." [Wikipedia:Splanchnopleure]
+xref: EHDAA:383
+xref: EMAPA:16181
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: overlaps UBERON:0000925 ! endoderm
+relationship: part_of UBERON:0003081 ! lateral plate mesoderm
+
+[Term]
+id: UBERON:0004874
+name: somatopleure
+def: "a structure created during embryogenesis  when the lateral mesoderm splits into two layers. The outer (or somatic) layer becomes applied to the inner surface of the ectoderm, and with it forms the somatopleure.[WP]." [Wikipedia:Somatopleure]
+xref: EHDAA:381
+xref: EMAPA:16180
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: overlaps UBERON:0000924 ! ectoderm
+relationship: part_of UBERON:0003081 ! lateral plate mesoderm
+
+[Term]
+id: UBERON:0004875
+name: nephrogenic cord
+def: "a portion of the urogenital ridge which is the source of much of the urinary system[WP]." [Wikipedia:Nephrogenic_cord]
+xref: FMA:72168
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: part_of UBERON:0004876 ! urogenital ridge
+
+[Term]
+id: UBERON:0004876
+name: urogenital ridge
+def: "embryological  structure which give rise to a portion of the external genitalia[WP]." [Wikipedia:Urogenital_ridge]
+comment: Less commonly, urogenital fold refers to the fold in the mesonephros  which is the precursor of e.g. the suspensory ligament of the ovary. This is the case in older versions of Gray's anatomy[WP]
+xref: BTO:0001402
+xref: EMAPA:30888
+xref: EMAPA:30899
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_into UBERON:0004176 ! external reproductive organ
+
+[Term]
+id: UBERON:0004877
+name: visceral endoderm
+xref: BTO:0003487
+xref: EMAPA:16058
+is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+relationship: develops_from UBERON:0000925 ! endoderm
+
+[Term]
+id: UBERON:0004878
+name: distal visceral endoderm
+def: "precursors of the anterior visceral endoderm that arises at the distal tip of the embryo[MP]" [MP:0010126]
+is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+relationship: develops_from UBERON:0000925 ! endoderm
+
+[Term]
+id: UBERON:0004879
+name: marginal zone of embryo
+synonym: "marginal zone" BROAD []
+xref: XAO:0000068
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0004880
+name: chordamesoderm
+comment: note that WP treats this as synonym of axial mesoderm
+synonym: "axial chorda mesoderm" EXACT [ZFA:0000091]
+xref: ZFA:0000091
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0003068 ! axial mesoderm
+
+[Term]
+id: UBERON:0004881
+name: prechordal mesoderm
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0003068 ! axial mesoderm
+
+[Term]
+id: UBERON:0004882
+name: eponychium
+def: "Thickened layer of skin surrounding fingernails and toenails. Beneath the cuticle is a thin layer of a membrane known as the pterygium. The function is to protect the area between the nail and epidermis from exposure to harmful bacteria. The vascularization pattern is similar to that of perionychium." [Wikipedia:Eponychium]
+xref: FMA:77859
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001003 ! epidermis
+
+[Term]
+id: UBERON:0004883
+name: lung mesenchyme
+def: "the mass of tissue made up of mesenchymal cells in the lung." [LG:0012600]
+synonym: "lung-associated mesenchyme" EXACT []
+synonym: "mesenchyme of lung" EXACT [OBOL:automatic]
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0002048 ! lung
+
+[Term]
+id: UBERON:0004884
+name: lobar bronchus mesenchyme
+synonym: "mesenchyme of lobar bronchus" EXACT [OBOL:automatic]
+is_a: UBERON:0004883 ! implied link automatically realized ! lung mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0002183 ! lobar bronchus
+
+[Term]
+id: UBERON:0004885
+name: hilum
+alt_id: UBERON:0004460
+def: "An anatomical cavity, depression or pit where structures are attached." [Wikipedia:Hilum]
+synonym: "hilus" EXACT [Wikipedia:Hilum]
+xref: FMA:57836
+is_a: UBERON:0002553 ! anatomical cavity
+
+[Term]
+id: UBERON:0004886
+name: lung hilus
+def: "A depression on the surface of the lung where the bronchus, blood vessels and nerves enter." [GOC:lung_mtg, ISBN:0721662544 "Dorland's Illustrated Medical Dictionary"]
+synonym: "hilum of lung" EXACT []
+synonym: "hilus of lung" EXACT [OBOL:automatic]
+synonym: "lung hilum" EXACT [OBOL:automatic]
+synonym: "pulmonary hilum" EXACT [FMA:7330]
+synonym: "pulmonary hilus" EXACT [OBOL:automatic]
+xref: FMA:7330
+is_a: UBERON:0004885 ! implied link automatically realized ! hilum
+intersection_of: UBERON:0004885 ! hilum
+intersection_of: part_of UBERON:0002048 ! lung
+
+[Term]
+id: UBERON:0004887
+name: left lung hilus
+def: "A lung hilus that is part of the left lung." [OBOL:automatic]
+synonym: "hilum of left lung" EXACT []
+synonym: "hilus of left lung" EXACT [OBOL:automatic]
+synonym: "left lung hilum" EXACT [OBOL:automatic]
+synonym: "left pulmonary hilum" EXACT [FMA:9751]
+synonym: "left pulmonary hilus" EXACT [OBOL:automatic]
+xref: EHDAA:4965
+xref: EMAPA:17980
+xref: FMA:9751
+xref: MA:0001781
+is_a: UBERON:0004886 ! implied link automatically realized ! lung hilus
+intersection_of: UBERON:0004886 ! lung hilus
+intersection_of: part_of UBERON:0002168 ! left lung
+
+[Term]
+id: UBERON:0004888
+name: right lung hilus
+def: "A lung hilus that is part of the right lung." [OBOL:automatic]
+synonym: "hilum of right lung" EXACT []
+synonym: "hilus of right lung" EXACT [OBOL:automatic]
+synonym: "right lung hilum" EXACT [OBOL:automatic]
+synonym: "right pulmonary hilum" EXACT [FMA:7330]
+synonym: "right pulmonary hilus" EXACT [OBOL:automatic]
+xref: EHDAA:4995
+xref: EMAPA:17996
+xref: FMA:7456
+xref: MA:0001790
+is_a: UBERON:0004886 ! implied link automatically realized ! lung hilus
+intersection_of: UBERON:0004886 ! lung hilus
+intersection_of: part_of UBERON:0002167 ! right lung
+
+[Term]
+id: UBERON:0004889
+name: lobar bronchus vasculature
+def: "Vasculature that is composed of the tubule structures that carry blood or lymph in the lungs" [LG:0012616]
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0004890
+name: right lung accessory lobe
+def: "A specialized lobe of the right lung that extends to the left side of the organism" [LG:0012619]
+xref: MA:0000427
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0004891
+name: lobar bronchus bronchiole
+def: "A bronchiole of the lobar bronchus" [OBOL:automatic]
+is_a: UBERON:0000072 ! implied link automatically realized ! segment of respiratory tract
+is_a: UBERON:0002186 ! implied link automatically realized ! bronchiole
+intersection_of: UBERON:0002186 ! bronchiole
+intersection_of: part_of UBERON:0002183 ! lobar bronchus
+
+[Term]
+id: UBERON:0004892
+name: lobar bronchus alveolar system
+def: "The lobar bronchus alveolar system is where molecules of oxygen and carbon dioxide are passively exchanged, by diffusion, between the gaseous environment and the blood in the lobar bronchus" [LG:0012622]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+relationship: part_of UBERON:0002183 ! lobar bronchus
+
+[Term]
+id: UBERON:0004893
+name: interalveolar septum
+def: "A the thin septum that separates adjacent pulmonary alveoli, containing connective tissue constituents of the respiratory tissue and the capillary network of the blood supply of the lung." [LG:0012625]
+xref: MA:0000421
+is_a: UBERON:0003037 ! implied link automatically realized ! septum
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+intersection_of: UBERON:0003037 ! septum
+intersection_of: part_of UBERON:0002299 ! alveolus of lung
+
+[Term]
+id: UBERON:0004894
+name: alveolar wall
+def: "A wall that contains the alveoli" [LG:0012626]
+xref: MA:0002568
+is_a: UBERON:0000060 ! implied link automatically realized ! anatomical wall
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+intersection_of: UBERON:0000060 ! anatomical wall
+intersection_of: part_of UBERON:0002299 ! alveolus of lung
+
+[Term]
+id: UBERON:0004895
+name: alveolar smooth muscle
+def: "Alveolar smooth muscle is a type of non-striated muscle, found within the walls of the alveolus" [LG:0012628]
+xref: MA:0002759
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0004225 ! implied link automatically realized ! respiratory system smooth muscle
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: part_of UBERON:0002299 ! alveolus of lung
+
+[Term]
+id: UBERON:0004896
+name: right lung accessory lobe lobar bronchus
+def: "The right lung accessory lobe lobar bronchus is the major airway within the right lung accessory lobe that starts at the division of the bronchus on the right side and ends at the point of its own subdivision into tertiary or segmental bronchi" [LG:0012636]
+is_a: UBERON:0002183 ! implied link automatically realized ! lobar bronchus
+intersection_of: UBERON:0002183 ! lobar bronchus
+intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
+
+[Term]
+id: UBERON:0004897
+name: right lung accessory lobe lobar bronchus mesynchyme
+def: "The right lung accessory lobe lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung accessory lobe lobar bronchus" [LG:0012640]
+is_a: UBERON:0004901 ! implied link automatically realized ! right lung lobar bronchus mesynchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003404 ! lobar bronchus of right lung
+intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
+
+[Term]
+id: UBERON:0004898
+name: right lung caudal lobe lobar bronchus mesynchyme development
+def: "The right lung caudal lobe lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung caudal lobe lobar bronchus" [LG:0012646]
+is_a: UBERON:0004901 ! implied link automatically realized ! right lung lobar bronchus mesynchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0002171 ! lower lobe of right lung
+intersection_of: part_of UBERON:0003404 ! lobar bronchus of right lung
+
+[Term]
+id: UBERON:0004899
+name: right lung cranial lobe lobar bronchus mesynchyme
+def: "The right lung cranial lobe lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung cranial lobe lobar bronchus" [LG:0012659]
+is_a: UBERON:0004901 ! implied link automatically realized ! right lung lobar bronchus mesynchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0002170 ! upper lobe of right lung
+intersection_of: part_of UBERON:0003404 ! lobar bronchus of right lung
+
+[Term]
+id: UBERON:0004900
+name: right lung middle lobe lobar bronchus mesynchyme
+def: "The right lung middle lobe lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung middle lobe lobar bronchus" [LG:0012672]
+is_a: UBERON:0004901 ! implied link automatically realized ! right lung lobar bronchus mesynchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0002174 ! middle lobe of lung
+intersection_of: part_of UBERON:0003404 ! lobar bronchus of right lung
+
+[Term]
+id: UBERON:0004901
+name: right lung lobar bronchus mesynchyme
+def: "The right lung lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung lobar bronchus" [LG:0012681]
+is_a: UBERON:0004884 ! implied link automatically realized ! lobar bronchus mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0002167 ! right lung
+intersection_of: part_of UBERON:0002183 ! lobar bronchus
+
+[Term]
+id: UBERON:0004902
+name: urogenital sinus epithelium
+synonym: "epithelium of urogenital sinus" EXACT [OBOL:automatic]
+xref: EMAPA:30882
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000164 ! urogenital sinus
 
 [Typedef]
 id: adjacent_to
