@@ -9,6 +9,29 @@
 :- use_module(bio(graph)).
 :- use_module(library(porter_stem),[]).
 
+idspace_taxon('FBbt','NCBITaxon:7227').
+idspace_taxon('MA','NCBITaxon:10088').
+idspace_taxon('EMAP','NCBITaxon:10088').
+idspace_taxon('EMAPA','NCBITaxon:10088').
+idspace_taxon('FMA','NCBITaxon:9606').
+idspace_taxon('EHDAA','NCBITaxon:9606').
+idspace_taxon('ZFA','NCBITaxon:7955').
+idspace_taxon('TAO','NCBITaxon:32443').
+idspace_taxon('XAO','NCBITaxon:8353').
+idspace_taxon('AAO','NCBITaxon:8292').
+idspace_taxon('HAO','NCBITaxon:7399').
+
+class_taxon_invalid(U,X,T,Y,TY) :-
+	class(U),
+	entity_xref(U,X),
+	id_idspace(X,S),
+	idspace_taxon(S,T),
+	bf_parentRT(U,Y),
+	restriction(Y,only_in_taxon,TY),
+	debug(tax,'~w ~w check: ~w',[X,T,TY]),
+	\+ subclassRT(T,TY).
+
+
 t:-
         forall(restriction(C,broader,P),
                (   inf(C,P,Goal),

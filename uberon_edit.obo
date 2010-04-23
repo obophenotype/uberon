@@ -1,6 +1,8 @@
 format-version: 1.2
 date: 18:10:2009 19:55
 subsetdef: uberon_slim "Uberon slim"
+subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
+subsetdef: developmental_classification "developmental_classification"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
 default-namespace: uberon
@@ -1845,6 +1847,7 @@ name: lung epithelium
 is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002048 ! lung
+relationship: develops_from UBERON:0001041 ! foregut
 xref: MA:0001783 ! lung epithelium
 xref: BTO:0001653 ! lung epithelium
 def: "the epithelial layer of the lung." [MP:0006382]
@@ -4385,7 +4388,7 @@ id: UBERON:0000473
 alt_id: UBERON:0002117
 name: testis
 alt_id: UBERON:CARO_0000027-FBbt_00004927-FBbt_00004928-FBbt_00007004-FMA_45664-FMA_7210-MA_0000396-MA_0000411-MIAA_0000029-MIAA_0000132-WBbt_0006794-XAO_0000155-XAO_0000157-XAO_0003006-ZFA_0000242-ZFA_0000598
-def: "gonad of a male animal, produces sperm. // The organs of the male reproductive system. // Reproductive organ that produces and releases sperm. // MMale reproductive organ." [CARO:0000027, CARO:MAH, FB:FBrf0007735, FB:FBrf0034075, NLM:genitalia, WB:wjc, Wikipedia:Testis, XB:curator, ZFIN:curator]
+def: "gonad of a male animal, produces and releases sperm." [Wikipedia:Testis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "male" RELATED []
@@ -4446,7 +4449,7 @@ xref: galen:Testis ! testis
 id: UBERON:0000474
 name: female reproductive system
 alt_id: UBERON:CARO_0000028-FBbt_00004864-FBbt_00007011-FMA_45663-MA_0000381-MIAA_0000028-XAO_0000156-XAO_0003005-ZFA_0000303
-def: "The organs of the female reproductive system." [FB:FBrf0007735, FB:FBrf0034074, NLM:genitalia, Wikipedia:Female_genitalia]
+def: "The organs of the female reproductive system." [Wikipedia:Female_genitalia]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "female genital system" RELATED []
@@ -4473,6 +4476,21 @@ synonym: "female organism reproductive system" EXACT [OBOL:automatic]
 synonym: "genitalia of female organism" EXACT [OBOL:automatic]
 synonym: "reproductive system of female organism" EXACT [OBOL:automatic]
 xref: OpenCyc:Mx4rvVipTZwpEbGdrcN5Y29ycA ! female reproductive system
+
+[Term]
+id: UBERON:0003974
+name: cranial vagina
+def: "the upper third of the female reproductive canal located between the uterus and the vulva." [MP:0009077]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000996 ! vagina
+
+[Term]
+id: UBERON:0003975
+name: internal female genitalia
+def: "the internal feminine genital organs, including the ovaries, uterine tubes, uterus, uterine cervix, and vagina." [MP:0009209]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000474 ! female reproductive system
+xref: FMA:45654 ! Female internal genitalia
 
 [Term]
 id: UBERON:0000475
@@ -5023,21 +5041,18 @@ is_a: UBERON:0002050 ! embryonic structure
 id: UBERON:0000919
 name: lipid droplet
 alt_id: UBERON:FBbt_00000037-FMA_62962
-def: "Cell substance contained in lipid vacoule." []
-comment: In GO this is a cellular component; in FMA it is a acellular anatomical structure. These two parent classes are disjoint in CARO
-subset: uberon_slim
+is_obsolete: true
 xref: FBbt:00000037 ! lipid droplet
 xref: FMA:62962 ! Lipid droplet
-is_a: UBERON:0000476 ! acellular anatomical structure
-relationship: part_of UBERON:0000918 ! yolk
 xref: GO:0005811 ! lipid particle
+replaced_by: GO:0005811 ! lipid particle
 
 [Term]
 id: UBERON:0000920
 name: chorion (egg)
 alt_id: UBERON:FBbt_00000038-FMA_80224-ZFA_0000329
 alt_id: UBERON:FMA_18674-MA_0001715
-def: "A hard shell external to the vitelline membrane of the egg[FBbt]. The egg shell[ZFA]. A protective, noncellular membrane that surrounds the eggs of various animals including insects and fish [GO]." [FB:gg, GO:0042600, Wikipedia:Chorion_(egg)]
+def: "A protective, noncellular membrane that surrounds the eggs of various animals including insects and fish [GO]." [FB:gg, GO:0042600, Wikipedia:Chorion_(egg)]
 subset: uberon_slim
 synonym: "chorion" RELATED []
 xref: FBbt:00000038 ! chorion
@@ -5052,12 +5067,11 @@ id: UBERON:0000921
 name: pronucleus
 alt_id: UBERON:FBbt_00000048-FMA_84673
 def: "." [Wikipedia:Pronucleus]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
+is_obsolete: true
 xref: FBbt:00000048 ! pronucleus
 xref: FMA:84673 ! Pronucleus
-is_a: UBERON:0002050 ! embryonic structure
 xref: GO:0045120 ! pronucleus
+replaced_by: GO:0045120 ! pronucleus
 
 [Term]
 id: UBERON:0000923
@@ -5219,12 +5233,7 @@ xref: FBbt:00000154 ! embryonic segment
 xref: MAT:0000244 ! segment - embryonic
 xref: MIAA:0000244 ! segment - embryonic
 is_a: UBERON:0000914 ! segment
-intersection_of: UBERON:0000914 ! segment
-intersection_of: part_of UBERON:0000922 ! embryo
-synonym: "developmental tissue segment" EXACT [OBOL:automatic]
-synonym: "embryo segment" EXACT [OBOL:automatic]
-synonym: "segment of developmental tissue" EXACT [OBOL:automatic]
-synonym: "segment of embryo" EXACT [OBOL:automatic]
+relationship: part_of UBERON:0000922 ! embryo
 
 [Term]
 id: UBERON:0000929
@@ -5246,41 +5255,10 @@ relationship: part_of UBERON:0001005 ! trachea
 relationship: part_of UBERON:0001759 ! vagus nerve
 
 [Term]
-id: UBERON:0000930
-name: stomodeum
-alt_id: UBERON:FBbt_00000439-ZFA_0001290
-def: "Wikipedia: Depression between the brain and the pericardium in an embryo, and is the precursor of the mouth and the anterior lobe of the pituitary gland. The stomodeum is lined by ectoderm, and is separated from the anterior end of the fore-gut by the buccopharyngeal membrane. This membrane is devoid of mesoderm, being formed by the apposition of the stomodeal ectoderm with the fore-gut endoderm; at the end of the third week it disappears, and thus a communication is established between the mouth and the future pharynx.[WP]. The anterior part of the embryonic digestive system deriving from the stomodeal invagination of the ectoderm[FBbt]." [Wikipedia:Stomodeum]
-comment: TODO - check species-specificity
-subset: uberon_slim
-synonym: "stomatodeum" EXACT [Wikipedia:Stomodeum]
-xref: FBbt:00000439 ! stomodeum
-xref: ZFA:0001290 ! stomodeum
-is_a: UBERON:0000464 ! anatomical space
-relationship: part_of UBERON:0001555 ! gut
-xref: ncithesaurus:Stomodeum ! Stomodeum
-
-[Term]
-id: UBERON:0000931 ! proctodeum
-name: proctodeum
-alt_id: UBERON:FBbt_00000440-WBbt_0006795
-def: "Inward fold on the surface of the embryonic ectoderm that develops into part of the anal passage[ZFA]. A proctodeum is the back ectodermal part of an alimentary canal. It is created during embryogenesis by a folding of the outer body wall[WP]." [Wikipedia:Proctodeum]
-comment: removed WBbt:0006795
-subset: uberon_slim
-xref: FBbt:00000440 
-xref: HOG:0000139 ! proctodeum
-xref: XAO:0001019 ! proctodeum
-is_a: UBERON:0000061 ! anatomical structure
-relationship: develops_from UBERON:0000924 ! ectoderm
-xref: ncithesaurus:Proctodeum ! Proctodeum
-xref: ZFA:0000066 ! proctodeum
-xref: HOG:0000139 ! proctodeum
-xref: TAO:0000066 ! proctodeum
-
-[Term]
 id: UBERON:0000932
 name: ventral longitudinal muscle
 alt_id: UBERON:FBbt_00000482-WBbt_0005814
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check
 xref: FBbt:00000482 ! ventral longitudinal muscle
 xref: WBbt:0005814 ! ventral longitudinal muscle
 is_a: UBERON:0001630 ! muscle organ
@@ -5387,21 +5365,30 @@ is_a: UBERON:0000481 ! multi-tissue structure
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
-id: UBERON:0000941
+id: UBERON:0004904
 name: optic nerve
+xref: BTO:0000966
+xref: FBbt:00001956 ! optic nerve
+def: "A nerve that connects the eye to the brain and carries the impulses formed by the retina to the visual cortex of the brain[BTO]." [BTO:0000966]
+subset: grouping_class
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: continuous_with UBERON:0000966 ! retina
+relationship: part_of UBERON:0002104 ! visual system
+
+[Term]
+id: UBERON:0000941
+name: cranial nerve II
 alt_id: UBERON:FBbt_00001956-FMA_50863-MA_0001097-XAO_0000188-ZFA_0000435
-def: "Nerve trunk which is continuous with the retina and the optic chiasm. // Cranial nerve that runs to the eye. // Cranial nerve which is comprised of retinal ganglion cell axons running posterior medially towards the optic chiasm, at which some of the axons cross the midline and after which the structure is termed the optic tract. // transmits visual information from the retina to the brain." [ISBN:0471209627, Wikipedia:Optic_nerve, ZFIN:curator]
+def: "Cranial nerve which is comprised of retinal ganglion cell axons running posterior medially towards the optic chiasm, at which some of the axons cross the midline and after which the structure is termed the optic tract. Transmits visual information from the retina to the brain." [ISBN:0471209627, Wikipedia:Optic_nerve, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "CN-II" RELATED []
-synonym: "cranial nerve II" RELATED []
+synonym: "optic nerve" BROAD SENSU [FMA:50863]
 synonym: "optic" RELATED []
 synonym: "optic II nerve" EXACT []
 synonym: "Optic nerve [II]" EXACT []
 synonym: "second cranial nerve" EXACT []
-xref: BTO:0000966
 xref: EHDAA:6788 ! optic nerve
-xref: FBbt:00001956 ! optic nerve
 xref: FMA:50863 ! Optic nerve
 xref: GAID:831 ! optic nerve
 xref: HOG:0000543 ! optic nerve
@@ -5411,14 +5398,12 @@ xref: OpenCyc:Mx4rvVjLm5wpEbGdrcN5Y29ycA
 xref: TAO:0000435 ! cranial nerve II
 xref: XAO:0000188 ! cranial nerve II
 xref: ZFA:0000435 ! cranial nerve II
-is_a: UBERON:0001785 ! cranial nerve
-intersection_of: UBERON:0001021 ! nerve
-intersection_of: part_of UBERON:0000970 ! eye
-relationship: continuous_with UBERON:0000966 ! retina
-relationship: part_of UBERON:0000970 ! eye
+intersection_of: UBERON:0001785 ! cranial nerve
+intersection_of: continuous_with UBERON:0000966 ! retina
+intersection_of: continuous_with UBERON:0000959 ! optic chiasma
+relationship: part_of UBERON:0003098 ! optic stalk
+relationship: part_of UBERON:0002104 ! visual system
 xref: ncithesaurus:Optic_Nerve ! Optic Nerve
-synonym: "eye nerve" EXACT [OBOL:automatic]
-synonym: "nerve of eye" EXACT [OBOL:automatic]
 xref: OpenCyc:Mx4rvVjLm5wpEbGdrcN5Y29ycA ! optic nerve
 
 [Term]
@@ -5426,9 +5411,8 @@ id: UBERON:0000942
 name: frontal nerve
 alt_id: UBERON:FBbt_00002630-FMA_52638
 def: "The frontal nerve is the largest branch of the ophthalmic, and may be regarded, both from its size and direction, as the continuation of the nerve. It enters the orbit through the supraorbital foramen, and runs forward between the Levator palpebræ superioris and the periosteum. Midway between the apex and base of the orbit it divides into two branches, supratrochlear nerve and supraorbital nerve. [WP,unvetted]." [Wikipedia:Frontal_nerve]
-comment: This class was created automatically from a combination of ontologies
+comment: Exclude FBbt:00002630
 subset: uberon_slim
-xref: FBbt:00002630 ! frontal nerve
 xref: FMA:52638 ! Frontal nerve
 is_a: UBERON:0001021 ! nerve
 xref: ncithesaurus:Frontal_Nerve ! Frontal Nerve
@@ -5448,40 +5432,10 @@ is_a: UBERON:0002536 ! arthropod sensillum
 id: UBERON:0000944
 name: dorsal branch
 alt_id: UBERON:FBbt_00003051-FMA_76733
-comment: This class was created automatically from a combination of ontologies
+is_obsolete: true
 synonym: "dorsal vein" EXACT []
 xref: FBbt:00003051 ! dorsal branch
 xref: FMA:76733 ! Dorsal vein
-is_a: UBERON:0001005 ! trachea
-
-[Term]
-id: UBERON:0000945
-name: stomach
-alt_id: UBERON:FBbt_00003138-FMA_7148-MA_0000353-MIAA_0000051-XAO_0000128
-def: "The middle region of the alimentary canal, the epithelium of which is lined with peritrophic membrane (not chitinous intima as for the foregut and hindgut. // Organ with organ cavity which is continuous proximally with the esophagus and distally with the small intestine. Examples: There is only one stomach. // Internal organ that is the dilated portion of the alimentary tract situated between the esophagus and the beginning of the duodenum. It produces gastric juices involved in the breakdown of food." [FB:FBrf0007735, OMD:stomach, Wikipedia:Stomach]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "anterior intestine" RELATED []
-synonym: "mesenteron" RELATED []
-synonym: "stomach" RELATED []
-synonym: "ventriculus" EXACT []
-xref: AAO:0000579 ! stomach
-xref: BTO:0001307
-xref: EFO:0000837 ! stomach
-xref: EHDAA:2993 ! stomach
-xref: FMA:7148 ! Stomach
-xref: GAID:293 ! stomach
-xref: HOG:0000408 ! stomach
-xref: MA:0000353 ! stomach
-xref: MAT:0000051 ! stomach
-xref: MIAA:0000051 ! stomach
-xref: ncithesaurus:Stomach
-xref: OpenCyc:Mx4rvVjlqpwpEbGdrcN5Y29ycA
-xref: XAO:0000128 ! stomach
-is_a: UBERON:0000062 ! organ
-relationship: part_of UBERON:0001041 ! foregut
-xref: galen:Stomach ! stomach
-xref: OpenCyc:Mx4rvVjlqpwpEbGdrcN5Y29ycA ! stomach
 
 [Term]
 id: UBERON:0000946
@@ -5524,7 +5478,6 @@ synonym: "trunk of systemic arterial tree" EXACT []
 xref: BTO:0000135
 xref: EFO:0000265 ! aorta
 xref: EHDAA:402 ! dorsal aorta
-xref: FBbt:00003153 ! adult aorta
 xref: FMA:3734 ! Aorta
 xref: GAID:469 ! aorta
 xref: galen:Aorta
@@ -5552,7 +5505,6 @@ subset: uberon_slim
 synonym: "endocrine system" EXACT []
 synonym: "exocrine system" BROAD []
 synonym: "systema endocrinum" EXACT []
-xref: FBbt:00003214 ! adult endocrine system
 xref: FBbt:00005068 ! endocrine system
 xref: FMA:9668 ! Endocrine system
 xref: GAID:439 ! endocrine system
@@ -5610,7 +5562,7 @@ id: UBERON:0000952
 name: adductor muscle
 alt_id: UBERON:FBbt_00003317-FMA_74998
 def: "Muscle that causes adduction can be called an adductor muscle. For example in biology, the muscle or muscles in the interior of a bivalve mollusk which serve to close the valves are called adductor muscles, and the large foot to shell muscle in gastropods such as the abalone and limpet is also known as an adductor muscle." [Wikipedia:Adductor_muscle]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - add functional xp definition
 subset: uberon_slim
 synonym: "Adductor muscle of hip" NARROW []
 xref: FBbt:00003317 ! adductor muscle
@@ -5644,7 +5596,6 @@ xref: BILA:0000135
 xref: BTO:0000142
 xref: EHDAA:2641 ! brain
 xref: EHDAA:6485 ! brain
-xref: FBbt:00003624 ! adult brain
 xref: FBbt:00005095 ! brain
 xref: FMA:50801 ! Brain
 xref: GAID:571 ! brain
@@ -5676,7 +5627,6 @@ synonym: "cortex of cerebral hemisphere" EXACT []
 xref: BTO:0000233
 xref: EFO:0000328 ! cerebral cortex
 xref: EHDAA:5464 ! cerebral cortex
-xref: FBbt:00003625 ! adult brain cortex
 xref: FMA:61830 ! Cerebral cortex
 xref: GAID:629 ! cerebral cortex
 xref: HOG:0000722 ! cerebral cortex
@@ -5714,13 +5664,12 @@ xref: galen:Medulla ! medulla
 id: UBERON:0000959
 name: optic chiasma
 alt_id: UBERON:FBbt_00003921-FMA_62045-MA_0001098-ZFA_0000556
-def: "The projection of axons between the lamina and medulla (1st optric chiasma) or between the medulla and lobula (2nd optic chiasma). The linear order of axons along each horizontal row of retinotopic columns (see optic cartridges) is reversed by the chiasma. // Nerve trunk which is continuous with right and left optic nerves and right and left optic tracts. // Decussation of cranial nerve II axons whereby some cross the midline and some remain ipsilateral." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Optic_chiasma, ZFIN:curator]
+def: "Nerve trunk which is continuous with right and left optic nerves and right and left optic tracts. // Decussation of cranial nerve II axons whereby some cross the midline and some remain ipsilateral." [Wikipedia:Optic_chiasma, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "decussation of optic nerve fibers" EXACT []
 synonym: "optic chiasm" EXACT []
 xref: EHDAA:10227 ! optic chiasm
-xref: FBbt:00003921 ! optic chiasma
 xref: FMA:62045 ! Optic chiasm
 xref: GAID:832 ! optic chiasm
 xref: HOG:0000190 ! optic chiasm
@@ -5737,16 +5686,11 @@ id: UBERON:0000960
 name: pharyngeal nerve
 alt_id: UBERON:FBbt_00004021-FMA_77524-WBbt_0005441
 def: "The pharyngeal nerve (pterygopalatine nerve) is a small branch arising from the posterior part of the pterygopalatine ganglion. It passes through the pharyngeal canal with the pharyngeal branch of the maxillary artery, and is distributed to the mucous membrane of the nasal part of the pharynx, behind the auditory tube. [WP,unvetted]." [Wikipedia:Pharyngeal_nerve]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FBbt:00004021 ! pharyngeal nerve
 xref: FMA:77524 ! Pharyngeal nerve
 xref: WBbt:0005441 ! pharyngeal nerve
-is_a: UBERON:0001021 ! nerve
-intersection_of: UBERON:0001021 ! nerve
-intersection_of: part_of UBERON:0001042 ! pharynx
-synonym: "nerve of pharynx" EXACT [OBOL:automatic]
-synonym: "pharynx nerve" EXACT [OBOL:automatic]
+is_obsolete: true
 
 [Term]
 id: UBERON:0000961
@@ -5758,7 +5702,6 @@ subset: uberon_slim
 synonym: "thoracic paravertebral ganglion" EXACT []
 synonym: "thoracic splanchnic ganglion" EXACT []
 synonym: "thoracic sympathetic ganglion" EXACT []
-xref: FBbt:00004052 ! thoracico-abdominal ganglion
 xref: FMA:6471 ! Thoracic ganglion
 xref: HOG:0000515 ! thoracic ganglion
 xref: MA:0001159 ! thoracic ganglion
@@ -5807,7 +5750,6 @@ synonym: "tunica cornea" RELATED []
 xref: BTO:0000286
 xref: EFO:0000377 ! cornea
 xref: EHDAA:10199 ! cornea
-xref: FBbt:00004191 ! cornea
 xref: FMA:58238 ! Cornea
 xref: GAID:892 ! cornea
 xref: HOG:0000164 ! cornea
@@ -5819,6 +5761,7 @@ xref: XAO:0000180 ! cornea
 xref: ZFA:0000640 ! cornea
 is_a: UBERON:0003102 ! surface structure
 relationship: part_of UBERON:0000965 ! lens
+relationship: develops_from UBERON:0002342 ! neural crest
 xref: OpenCyc:Mx4rvViBa5wpEbGdrcN5Y29ycA ! cornea
 
 [Term]
@@ -5916,7 +5859,6 @@ alt_id: UBERON:FBbt_00004479-FMA_7493-MA_0001475
 def: "The meeting line of two primary body plates, as a rule forming a furrow-like impression. // Fibrous joint in which the articulating bones or cartilages of the skull are connected by sutural ligaments (scant amount of collagenous dense connective tissue). Examples: sagittal suture, frontal suture." [ISBN:3110148986, Wikipedia:Suture]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-xref: FBbt:00004479 ! suture
 xref: FMA:7493 ! Suture
 xref: HAO:0000982 ! suture
 is_a: UBERON:0002209 ! fibrous joint
@@ -5994,9 +5936,8 @@ id: UBERON:0000974
 name: neck
 alt_id: UBERON:FBbt_00004550-FMA_7155-MA_0000024-MIAA_0000297
 def: "Subdivision of body proper, which consists of a maximal set of diverse subclasses of organ and organ part spatially associated with the cervical vertebral coumn, it is partially surrounded by skin of neck. Examples: There is only one neck." [Wikipedia:Neck]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - generic definition
 subset: uberon_slim
-synonym: "neck (volume)" EXACT []
 xref: BTO:0000420
 xref: FBbt:00004550 ! neck
 xref: FMA:7155 ! Neck
@@ -6156,13 +6097,19 @@ xref: EFO:0001396 ! femur
 xref: OpenCyc:Mx4rvVjOJJwpEbGdrcN5Y29ycA ! femur
 
 [Term]
-id: UBERON:0000982 ! joint
+id: UBERON:0004905 ! joint
 name: joint
+def: "anatomical cluster that connects limbs or skeletal elements." []
+xref: FBbt:00004645 ! joint
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0000982
+name: skeletal joint
 alt_id: UBERON:FBbt_00004645-FMA_228659-FMA_7490-MA_0000319-MIAA_0000188-XAO_0000171-ZFA_0001596
 def: "Heterogeneous cluster which consists of two or more adjacent bones or cartilages, parts of which are interconnected by organ parts that consist of various types of connective tissue. Together with other joints and bones, a joint constitutes the skeletal system. Examples: pubic symphysis, knee joint, temporomandibular joint. // The point of contact between elements of the skeleton. // Anatomical cluster which consists of two or more adjacent bones or cartilages, which may be interconnected by various types of tissue." [NLM:joint, Wikipedia:Joint, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-xref: FBbt:00004645 ! joint
 xref: FMA:7490 ! Joint
 xref: GAID:102 ! joint
 xref: galen:Joint
@@ -6178,6 +6125,7 @@ xref: ncithesaurus:Joint ! Joint
 xref: BTO:0001686 ! joint
 xref: EFO:0000948 ! joint
 is_a: UBERON:0004765 ! skeletal element
+is_a: UBERON:0004905 ! joint
 relationship: part_of UBERON:0004770 ! articular system
 
 [Term]
@@ -6325,7 +6273,6 @@ comment: TODO: check fly
 subset: uberon_slim
 synonym: "pons of varolius" EXACT []
 xref: BTO:0001101
-xref: FBbt:00004840 ! pons
 xref: FMA:67943 ! Pons
 xref: GAID:578 ! pon
 xref: HOG:0001176 ! pons
@@ -6636,7 +6583,7 @@ xref: OpenCyc:Mx4rvVj1B5wpEbGdrcN5Y29ycA ! vagina
 id: UBERON:0000997
 name: vulva
 alt_id: UBERON:FBbt_00004926-FMA_20462-FMA_225311-MA_0000395-MIAA_0000169-WBbt_0006748
-def: "female genitalia." [Wikipedia:Vulva]
+def: "." [Wikipedia:Vulva]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "female pudendum" EXACT []
@@ -6757,7 +6704,6 @@ alt_id: UBERON:FBbt_00004970-MIAA_0000150-WBbt_0005755
 def: "tough but flexible, non-mineral outer coverings of an organism, or parts of an organism, that provide protection. Cuticles are non-homologous, differing in their origin, structure and chemical composition[WP]." [Wikipedia:Cuticle]
 comment: TODO - check cuticle vs exoskeleton. Note that GO has a very generic definition of cuticle
 subset: uberon_slim
-xref: FBbt:00004970 ! cuticle
 xref: MA:0002704 ! cuticle
 xref: MAT:0000150 ! exoskeleton
 xref: MIAA:0000150 ! exoskeleton
@@ -6787,7 +6733,6 @@ synonym: "skin" BROAD []
 xref: AAO:0000143 ! epidermis
 xref: BTO:0000404
 xref: FBbt:00004993 ! epidermis
-xref: FBbt:00005401 ! adult epidermis
 xref: FMA:70596 ! Epidermis
 xref: GAID:932 ! epidermis
 xref: HAO:0000298 ! epidermis
@@ -7379,7 +7324,7 @@ id: UBERON:0001022
 name: cell body
 alt_id: UBERON:FBbt_00005107-FMA_67301
 def: "The cell body of a neuron. // Cell component which consists of the plasma membrane and the cytoplasm surrounding the nucleus." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Cell_body]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - use GO
 subset: uberon_slim
 synonym: "cell soma" EXACT []
 synonym: "soma" RELATED []
@@ -7394,7 +7339,7 @@ id: UBERON:0001023
 name: dendrite
 alt_id: UBERON:FBbt_00005110-FMA_67314
 def: "The region of a neuron receiving inputs from other neurons, typically a slender neurite, often branched. In insect neurons, this is often not a clear designation and often presynaptic sites co-extend with postsynaptic ones. // Cell appendage of a neuron that consists of the dendrite proper and the dendritic spines." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Dendrite]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - use GO
 subset: uberon_slim
 xref: FBbt:00005110 ! dendrite
 xref: FMA:67314 ! Dendrite
@@ -7409,7 +7354,7 @@ id: UBERON:0001024
 name: neurite
 alt_id: UBERON:FBbt_00005113-FMA_61814
 def: "One of the processes or extensions of a neuron, axon or dendrite or cell body fiber. // Cell appendage of the neuron which includes the axon and the dendrite." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Neurite]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - use GO
 subset: uberon_slim
 xref: FBbt:00005113 ! neurite
 xref: FMA:61814 ! Neurite
@@ -7422,7 +7367,7 @@ id: UBERON:0001025
 name: synapse
 alt_id: UBERON:FBbt_00005114-FMA_67408
 def: "The structural contact that is the site of transmission between neurons, identified by a presynaptic ribbon and synaptic vesicles as the input element and one or (usually) more postsynaptic elements with various specializations (membrane densities, cisternae, etc.)." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Synapse]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - use GO
 subset: uberon_slim
 synonym: "synaptic junction" EXACT []
 xref: FBbt:00005114 ! synapse
@@ -7468,7 +7413,7 @@ id: UBERON:0001029
 name: neuromuscular junction
 alt_id: UBERON:FBbt_00005142-FMA_61803
 def: "." [Wikipedia:Neuromuscular_junction]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - use GO
 subset: uberon_slim
 synonym: "myoneural junction" EXACT []
 xref: FBbt:00005142 ! neuromuscular junction
@@ -7482,7 +7427,7 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0001030
 name: synaptic ribbon
 alt_id: UBERON:FBbt_00005143-FMA_67107
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - use GO
 synonym: "ribbon synapse" EXACT []
 xref: FBbt:00005143 ! synaptic ribbon
 xref: FMA:67107 ! Ribbon synapse
@@ -7494,7 +7439,7 @@ id: UBERON:0001031
 name: neurilemma
 alt_id: UBERON:FBbt_00005151-FMA_62976
 def: "Neural tissue which consists of Schwann cells." [Wikipedia:Neurilemma]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO
 subset: uberon_slim
 synonym: "neurolemma" EXACT []
 synonym: "sheath of Schwann" EXACT []
@@ -7675,85 +7620,6 @@ xref: ncithesaurus:Yolk_Sac ! Yolk Sac
 xref: BTO:0001471 ! yolk sac
 
 [Term]
-id: UBERON:0001041
-name: foregut
-alt_id: UBERON:FBbt_00005379-FMA_45616-MA_0001526-XAO_0000232
-def: "An anterior part of the alimentary canal derived from the ectoderm." [FB:gg, Wikipedia:Foregut]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: BILA:0000085
-xref: BTO:0000507
-xref: EHDAA:520 ! foregut
-xref: FBbt:00005379 ! foregut
-xref: FMA:45616 ! Foregut
-xref: HOG:0000285 ! foregut
-xref: MA:0001526 ! foregut
-xref: XAO:0000232 ! foregut
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0001555 ! gut
-xref: ncithesaurus:Foregut ! Foregut
-
-[Term]
-id: UBERON:0001042
-name: pharynx
-alt_id: UBERON:FBbt_00005380-FMA_46688-MA_0000432-MIAA_0000049-WBbt_0003681-ZFA_0000056
-def: "the feeding organ, a neuro-muscular pump in the head of the animal, used to ingest food, bacteria suspended in liquid, filter them out, grind them up and transport posteriorly into the instestine. // ZFA: Swollen region of the anterior foregut, posterior to the mouth and anterior to the liver; its walls form the jaws and gills. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [WB:rynl, Wikipedia:Pharynx, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "esophagus" RELATED []
-xref: BTO:0001049
-xref: EFO:0000836 ! pharynx
-xref: EHDAA:2947 ! pharynx
-xref: FBbt:00005380 ! pharynx
-xref: FMA:46688 ! Pharynx
-xref: GAID:155 ! pharynx
-xref: HOG:0000462 ! pharynx
-xref: MA:0000432 ! pharynx
-xref: MAT:0000049 ! pharynx
-xref: MIAA:0000049 ! pharynx
-xref: OpenCyc:Mx4rvViv7ZwpEbGdrcN5Y29ycA
-xref: TAO:0000056 ! pharynx
-xref: WBbt:0003681 ! pharynx
-xref: ZFA:0000056 ! pharynx
-is_a: UBERON:0000477 ! anatomical cluster
-relationship: continuous_with UBERON:0001043 ! esophagus
-relationship: part_of UBERON:0001004 ! respiratory system
-xref: ncithesaurus:Pharynx ! Pharynx
-xref: galen:Pharynx ! pharynx
-xref: OpenCyc:Mx4rvViv7ZwpEbGdrcN5Y29ycA ! pharynx
-
-[Term]
-id: UBERON:0001043
-name: esophagus
-alt_id: UBERON:FBbt_00005381-FMA_7131-MA_0000352-MIAA_0000048-XAO_0000127-ZFA_0000204
-def: "Organ with organ cavity which is continuous proximally with the pharynx and distally with the stomach. Examples: There is only one esophagus. // Tube that connects the pharynx to the stomach. At NF stage 57 it is a straight tube, round in cross section, and starting from the pharynx runs backward along the dorsal side of the abdominal cavity. Its lining consists of a columnar glandular epithelium with mucus secreting cells. It is thrown into longitudinal folds." [ISBN:0815318960, OMD:esophagus, Wikipedia:Esophagus]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "gullet" EXACT []
-synonym: "oesophagus" EXACT []
-xref: AAO:0000145 ! esophagus
-xref: BTO:0000959
-xref: EFO:0000835 ! oesophagus
-xref: EHDAA:2937 ! oesophagus
-xref: FBbt:00005381 ! esophagus
-xref: FMA:7131 ! Esophagus
-xref: GAID:291 ! esophagus
-xref: galen:Esophagus
-xref: HOG:0000450 ! oesophagus
-xref: MA:0000352 ! esophagus
-xref: MAT:0000048 ! oesophagus
-xref: MIAA:0000048 ! oesophagus
-xref: ncithesaurus:Esophagus
-xref: OpenCyc:Mx4rvVj9Q5wpEbGdrcN5Y29ycA
-xref: TAO:0000204 ! esophagus
-xref: XAO:0000127 ! esophagus
-xref: ZFA:0000204 ! esophagus
-is_a: UBERON:0000062 ! organ
-relationship: part_of UBERON:0001041 ! foregut
-relationship: part_of UBERON:0002224 ! thoracic cavity
-xref: OpenCyc:Mx4rvVj9Q5wpEbGdrcN5Y29ycA ! esophagus
-
-[Term]
 id: UBERON:0001044
 name: salivary gland
 alt_id: UBERON:FBbt_00005382-FMA_9597-MA_0000346-MIAA_0000079
@@ -7780,11 +7646,173 @@ xref: galen:SalivaryGland ! salivary gland
 xref: OpenCyc:Mx4rvVjl5ZwpEbGdrcN5Y29ycA ! salivary gland
 
 [Term]
+id: UBERON:0001042
+name: pharynx
+alt_id: UBERON:FBbt_00005380-FMA_46688-MA_0000432-MIAA_0000049-WBbt_0003681-ZFA_0000056
+def: "Region of alimentary canal between the cavity of the mouth and the esophagus[BTO].  funnel-shaped fibromuscular tube that conducts food to the ESOPHAGUS, and air to the LARYNYX and LUNGS. It is located posterior to the NASAL CAVITY;  ORAL CAVITY; and LARYNX, and extends from the SKULL BASE to the inferior border of the CRICOID CARTILAGE anteriorly and to the inferior border of the C6 vertebra posteriorly. It is divided into the NASOPHARYNX; OROPHARYNX; and HYPOPHARYNX (laryngopharynx)[MESH]. the feeding organ, a neuro-muscular pump in the head of the animal, used to ingest food, bacteria suspended in liquid, filter them out, grind them up and transport posteriorly into the instestine[WBbt]. Swollen region of the anterior foregut, posterior to the mouth and anterior to the liver; its walls form the jaws and gills[ZFA]." [WB:rynl, Wikipedia:Pharynx, ZFIN:curator]
+comment: Consider splitting (Worm pharynx is a pump. WBbt digestive tract is split into intestine and pharynx; fly pharanx is in foregut). Note that MA/FMA pharynx not part of digestive/alimentary system, we follow their lead here
+subset: uberon_slim
+xref: BTO:0001049
+xref: EFO:0000836 ! pharynx
+xref: EHDAA:2947 ! pharynx
+xref: FBbt:00005380 ! pharynx
+xref: FMA:46688 ! Pharynx
+xref: GAID:155 ! pharynx
+xref: HOG:0000462 ! pharynx
+xref: MA:0000432 ! pharynx
+xref: MAT:0000049 ! pharynx
+xref: MIAA:0000049 ! pharynx
+xref: OpenCyc:Mx4rvViv7ZwpEbGdrcN5Y29ycA
+xref: TAO:0000056 ! pharynx
+xref: WBbt:0003681 ! pharynx
+xref: ZFA:0000056 ! pharynx
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: continuous_with UBERON:0001043 ! esophagus
+relationship: part_of UBERON:0001004 ! respiratory system
+xref: ncithesaurus:Pharynx ! Pharynx
+xref: galen:Pharynx ! pharynx
+xref: OpenCyc:Mx4rvViv7ZwpEbGdrcN5Y29ycA ! pharynx
+
+[Term]
+id: UBERON:0001043
+name: esophagus
+alt_id: UBERON:FBbt_00005381-FMA_7131-MA_0000352-MIAA_0000048-XAO_0000127-ZFA_0000204
+def: "Tube that connects the pharynx to the stomach." [Wikipedia:Esophagus]
+comment: esophagus NOT part of gut in MA. part of gut in ZFA. part_of gut (via UGIT) in FMA.
+subset: uberon_slim
+synonym: "gullet" EXACT []
+synonym: "oesophagus" EXACT []
+xref: AAO:0000145 ! esophagus
+xref: BTO:0000959
+xref: EFO:0000835 ! oesophagus
+xref: EHDAA:2937 ! oesophagus
+xref: FBbt:00005381 ! esophagus
+xref: FMA:7131 ! Esophagus
+xref: GAID:291 ! esophagus
+xref: galen:Esophagus
+xref: HOG:0000450 ! oesophagus
+xref: MA:0000352 ! esophagus
+xref: MAT:0000048 ! oesophagus
+xref: MIAA:0000048 ! oesophagus
+xref: ncithesaurus:Esophagus
+xref: OpenCyc:Mx4rvVj9Q5wpEbGdrcN5Y29ycA
+xref: TAO:0000204 ! esophagus
+xref: XAO:0000127 ! esophagus
+xref: ZFA:0000204 ! esophagus
+is_a: UBERON:0000062 ! organ
+relationship: part_of UBERON:0001041 ! foregut
+relationship: part_of UBERON:0002224 ! thoracic cavity
+relationship: part_of UBERON:0001007 ! digestive system
+xref: OpenCyc:Mx4rvVj9Q5wpEbGdrcN5Y29ycA ! esophagus
+
+[Term]
+id: UBERON:0000945
+name: stomach
+alt_id: UBERON:FBbt_00003138-FMA_7148-MA_0000353-MIAA_0000051-XAO_0000128
+def: "Organ with organ cavity which is continuous proximally with the esophagus and distally with the small intestine. Examples: There is only one stomach. // Internal organ that is the dilated portion of the alimentary tract situated between the esophagus and the beginning of the duodenum. It produces gastric juices involved in the breakdown of food." [FB:FBrf0007735, OMD:stomach, Wikipedia:Stomach]
+comment: fly has adult midgut - TODO check
+subset: uberon_slim
+synonym: "anterior intestine" RELATED []
+synonym: "mesenteron" RELATED []
+synonym: "stomach" RELATED []
+synonym: "ventriculus" EXACT []
+xref: AAO:0000579 ! stomach
+xref: BTO:0001307
+xref: EFO:0000837 ! stomach
+xref: EHDAA:2993 ! stomach
+xref: FMA:7148 ! Stomach
+xref: GAID:293 ! stomach
+xref: HOG:0000408 ! stomach
+xref: MA:0000353 ! stomach
+xref: MAT:0000051 ! stomach
+xref: MIAA:0000051 ! stomach
+xref: ncithesaurus:Stomach
+xref: OpenCyc:Mx4rvVjlqpwpEbGdrcN5Y29ycA
+xref: XAO:0000128 ! stomach
+is_a: UBERON:0000062 ! organ
+relationship: part_of UBERON:0001041 ! foregut
+xref: galen:Stomach ! stomach
+xref: OpenCyc:Mx4rvVjlqpwpEbGdrcN5Y29ycA ! stomach
+
+[Term]
+id: UBERON:0001555
+name: gut
+alt_id: UBERON:FMA_45615-MA_0000917-ZFA_0000112
+def: "Tube extending from the mouth to the anus." [http://en.wikipedia.org/wiki/Talk:Human_astrointestinal_tract]
+comment: GO says gut is region of DT, from intestines to anus. ZFA treats as synonym for alimentary canal, and treats it as the sum of DT + organs (ZF has no term from stomach). GO says intestines to anus (excludes stomach and esophagus). MA appears to agree with GO (stomach and esophagus are not parts). FMA includes stomach and esophagus as parts of gut -- the FMA divides gut into lower and upper GI tract; it's not clear if this is exhaustive (small intestine is in neither), but lower GI tract may correspond better to the GO definition. 
+subset: uberon_slim
+synonym: "alimentary canal" EXACT []
+synonym: "digestive tract" EXACT []
+synonym: "gut tube" EXACT []
+xref: BILA:0000083 ! digestive tract
+xref: BTO:0000545 ! gut
+xref: EHDAA:518 ! gut
+xref: FBbt:00003125 ! alimentary canal
+xref: FMA:45615 ! Gut
+xref: HOG:0000309 ! gut
+xref: MA:0000917 ! gut
+xref: OpenCyc:Mx4rvVi0GpwpEbGdrcN5Y29ycA
+xref: TAO:0000112 ! gut
+xref: ZFA:0000112 ! gut
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001007 ! digestive system
+xref: OpenCyc:Mx4rvVi0GpwpEbGdrcN5Y29ycA ! digestive tract
+
+[Term]
+id: UBERON:0004907
+name: lower digestive tract
+def: "the region of the digestive tract extending from the beginning of the intestines to the anus[GO - gut definition]." [Wikipedia:Alimentary_canal#Upper_gastrointestinal_tract]
+comment: WP: small intestine, large intestine, anus. Anal canal not part of LGIT according to FMA, but anus is considered part of LGIT according to WP. Duodenum overlaps both U/L
+subset: uberon_slim
+synonym: "gut" BROAD [GO:0048565]
+synonym: "lower GI tract" EXACT []
+synonym: "lower gastrointestinal tract" EXACT []
+xref: FMA:49179 ! Lower gastrointestinal tract
+xref: ncithesaurus:Lower_Gastrointestinal_Tract ! Lower Gastrointestinal Tract
+xref: galen:LowerGastrointestinalTract ! lower gastrointestinal tract
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001555 ! gut
+
+[Term]
+id: UBERON:0004908
+name: upper digestive tract
+def: "the region of the digestive tract extending from the mouth cavity through pharynx esophagus stomach and duodenum." [Wikipedia:Alimentary_canal#Upper_gastrointestinal_tract]
+comment: WP: small intestine, large intestine, anus. Anal canal not part of LGIT according to FMA, but anus is considered part of LGIT according to WP. Duodenum overlaps both U/L
+subset: uberon_slim
+synonym: "lower gastrointestinal tract" EXACT []
+synonym: "lower GI tract" EXACT []
+xref: FMA:49177 ! upper gastrointestinal tract
+xref: ncithesaurus:Upper_Gastrointestinal_Tract 
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001555 ! gut
+
+[Term]
+id: UBERON:0001041
+name: foregut
+alt_id: UBERON:FBbt_00005379-FMA_45616-MA_0001526-XAO_0000232
+def: "An anterior part of the alimentary canal derived from the ectoderm." [Wikipedia:Foregut]
+comment: in FMA includes: pharynx, esophagus, stomach, proximal half of duedenum, liver, pancreas, gallbladder. But pharynx is not part of gut? also liver. Resolved by making part of digestive system
+subset: uberon_slim
+subset: developmental_classification
+xref: BILA:0000085
+xref: BTO:0000507
+xref: EHDAA:520 ! foregut
+xref: FBbt:00005379 ! foregut
+xref: FMA:45616 ! Foregut
+xref: HOG:0000285 ! foregut
+xref: MA:0001526 ! foregut
+xref: XAO:0000232 ! foregut
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001007 ! digestive system
+xref: ncithesaurus:Foregut ! Foregut
+
+[Term]
 id: UBERON:0001045
 name: midgut
 alt_id: UBERON:FBbt_00005383-FMA_45617-MA_0001564-XAO_0000103
-def: "In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine." [Wikipedia:Midgut]
+def: "The middle part of the alimentary canal from the stomach, or entrance of the bile duct, to, or including, the large intestine[GO]. In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine." [Wikipedia:Midgut, GO:0007494]
 subset: uberon_slim
+subset: developmental_classification
 xref: BILA:0000086
 xref: BTO:0000863
 xref: FMA:45617 ! Midgut
@@ -7801,9 +7829,10 @@ xref: EHDAA:983 ! midgut
 id: UBERON:0001046
 name: hindgut
 alt_id: UBERON:FBbt_00005384-FMA_45618-MA_0001527-XAO_0000104
-def: "A posterior part of the alimentary canal derived from the ectoderm." [FB:gg, Wikipedia:Hindgut]
+def: "A posterior part of the alimentary canal derived from the ectoderm." [Wikipedia:Hindgut]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+subset: developmental_classification
 xref: BILA:0000087
 xref: BTO:0000510
 xref: FBbt:00005384 ! hindgut
@@ -7815,6 +7844,57 @@ is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001555 ! gut
 xref: ncithesaurus:Hindgut ! Hindgut
 xref: EHDAA:975 ! hindgut
+
+[Term]
+id: UBERON:0004906
+name: ectodermal gut
+def: "A portion of the gut that is derived from ectoderm." [GO:0007439]
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0001555 ! gut
+intersection_of: develops_from UBERON:0000924 ! ectoderm
+
+[Term]
+id: UBERON:0004185
+name: endodermal gut
+def: "A portions of the gut that is derived from endoderm." [GO:0061031]
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0001555 ! gut
+intersection_of: develops_from UBERON:0000925 ! endoderm
+
+[Term]
+id: UBERON:0000930
+name: stomodeum
+alt_id: UBERON:FBbt_00000439-ZFA_0001290
+def: "Anterior part of the embryonic alimentary canal formed as an invagination of the ectoderm; the future mouth[ZFA]. Depression between the brain and the pericardium in an embryo, and is the precursor of the mouth and the anterior lobe of the pituitary gland. The stomodeum is lined by ectoderm, and is separated from the anterior end of the fore-gut by the buccopharyngeal membrane. This membrane is devoid of mesoderm, being formed by the apposition of the stomodeal ectoderm with the fore-gut endoderm; at the end of the third week it disappears, and thus a communication is established between the mouth and the future pharynx[WP]. The anterior part of the embryonic digestive system deriving from the stomodeal invagination of the ectoderm[FBbt]." [Wikipedia:Stomodeum]
+comment: TODO - check species-specificity
+subset: uberon_slim
+synonym: "stomatodeum" EXACT [Wikipedia:Stomodeum]
+synonym: "mouth primordium" EXACT [XAO:0000269]
+xref: FBbt:00000439 ! stomodeum
+xref: ZFA:0001290 ! stomodeum
+xref: EMAPA:16263 ! stomatodaeum 
+xref: XAO:0000269 ! mouth primordium
+is_a: UBERON:0000464 ! anatomical space
+relationship: part_of UBERON:0001555 ! gut
+relationship: adjacent_to UBERON:0000924 ! ectoderm
+xref: ncithesaurus:Stomodeum ! Stomodeum
+
+[Term]
+id: UBERON:0000931 ! proctodeum
+name: proctodeum
+alt_id: UBERON:FBbt_00000440-WBbt_0006795
+def: "Inward fold on the surface of the embryonic ectoderm that develops into part of the anal passage[ZFA]. A proctodeum is the back ectodermal part of an alimentary canal. It is created during embryogenesis by a folding of the outer body wall[WP]." [Wikipedia:Proctodeum]
+comment: removed WBbt:0006795 - junction between the alimentary and genital tracts in the male.
+subset: uberon_slim
+xref: FBbt:00000440 
+xref: HOG:0000139 ! proctodeum
+xref: XAO:0001019 ! proctodeum
+is_a: UBERON:0000061 ! anatomical structure
+relationship: develops_from UBERON:0000924 ! ectoderm
+xref: ncithesaurus:Proctodeum ! Proctodeum
+xref: ZFA:0000066 ! proctodeum
+xref: HOG:0000139 ! proctodeum
+xref: TAO:0000066 ! proctodeum
 
 [Term]
 id: UBERON:0001047
@@ -7835,6 +7915,7 @@ def: "Primordia are populations of contiguous cells that are morphologically dis
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "placode" RELATED []
+synonym: "bud" RELATED []
 xref: FBbt:00005495 ! primordium
 xref: FMA:86589 ! Primordium
 xref: MAT:0000482 ! primordium
@@ -7855,6 +7936,9 @@ synonym: "presumptive central nervous system" RELATED []
 xref: BTO:0001057
 xref: EHDAA:2869 ! neural tube
 xref: EHDAA:908 ! neural tube
+xref: EMAPA:16164 ! neural tube
+xref: EMAPA:16530 ! neural tube
+xref: EMAPA:16757 ! neural tube
 xref: HOG:0000307 ! neural tube
 xref: MAT:0000069 ! neural tube
 xref: MIAA:0000069 ! neural tube
@@ -16891,36 +16975,6 @@ synonym: "zone of skin of hip region" EXACT [OBOL:automatic]
 synonym: "zone of skin of regio coxae" EXACT [OBOL:automatic]
 
 [Term]
-id: UBERON:0001555
-name: gut
-alt_id: UBERON:FMA_45615-MA_0000917-ZFA_0000112
-def: "The alimentary or digestive tract, and associated organs. Extends from the beginning of the intestines to the anus" [Wikipedia:Gastrointestinal_tract, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "alimentary canal" RELATED []
-synonym: "digestive tract" EXACT []
-synonym: "excretory canal" RELATED []
-synonym: "excretory tract " RELATED []
-synonym: "gut tube" RELATED []
-synonym: "lower gastrointestinal tract" EXACT []
-xref: BILA:0000083
-xref: BTO:0000545
-xref: EHDAA:518 ! gut
-xref: FBbt:00003125 ! alimentary canal
-xref: FMA:45615 ! Gut
-xref: HOG:0000309 ! gut
-xref: MA:0000917 ! gut
-xref: OpenCyc:Mx4rvVi0GpwpEbGdrcN5Y29ycA
-xref: TAO:0000112 ! gut
-xref: ZFA:0000112 ! gut
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: develops_from UBERON:0000925 ! endoderm
-relationship: part_of UBERON:0001007 ! digestive system
-xref: ncithesaurus:Lower_Gastrointestinal_Tract ! Lower Gastrointestinal Tract
-xref: galen:LowerGastrointestinalTract ! lower gastrointestinal tract
-xref: OpenCyc:Mx4rvVi0GpwpEbGdrcN5Y29ycA ! digestive tract
-
-[Term]
 id: UBERON:0001556
 name: lower urinary tract
 alt_id: UBERON:FMA_45659-MA_0002636
@@ -19498,6 +19552,7 @@ is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0003128 ! cranium
 relationship: encloses UBERON:0000955 ! brain
 relationship: spatially_disjoint_from UBERON:0001704 ! viscerocranium
+relationship: develops_from UBERON:0002342 ! neural crest
 
 [Term]
 id: UBERON:0001704
@@ -19519,6 +19574,7 @@ is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0003129 ! skull
 relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 relationship: develops_from UBERON:0002539 ! pharyngeal arch
+relationship: develops_from UBERON:0002342 ! neural crest
 relationship: spatially_disjoint_from UBERON:0001703 ! neurocranium
 
 [Term]
@@ -20275,6 +20331,7 @@ is_a: UBERON:0001973 ! substance of tooth
 is_a: UBERON:0004755 ! skeletal tissue
 relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: develops_from CL:0000060 ! odontoblast
+relationship: develops_from UBERON:0002342 ! neural crest
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: ncithesaurus:Dentin ! Dentin
 xref: BTO:0003453 ! dentin
@@ -20298,6 +20355,7 @@ is_a: UBERON:0004755 ! skeletal tissue
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 relationship: develops_from CL:0000059 ! ameloblast
 relationship: develops_from UBERON:0003104 ! mesenchyme
+relationship: develops_from UBERON:0000924 ! ectoderm
 xref: ncithesaurus:Enamel ! Enamel
 xref: BTO:0001844 ! tooth enamel
 
@@ -22018,7 +22076,6 @@ subset: uberon_slim
 synonym: "ear" RELATED []
 synonym: "inner ear" EXACT []
 synonym: "labyrinth" RELATED []
-synonym: "otic capsule" RELATED []
 synonym: "otocyst" RELATED []
 xref: AAO:0000238 ! inner_ear
 xref: BTO:0000630
@@ -26711,6 +26768,7 @@ is_a: UBERON:0003037 ! septum
 intersection_of: UBERON:0003037 ! septum
 intersection_of: part_of UBERON:0000948 ! heart
 relationship: part_of UBERON:0000948 ! heart
+relationship: develops_from UBERON:0002342 ! neural crest
 xref: ncithesaurus:Heart_Septum ! Heart Septum
 
 [Term]
@@ -26740,8 +26798,9 @@ xref: galen:Trunk ! trunk
 xref: OpenCyc:Mx4rvVkJjpwpEbGdrcN5Y29ycA ! torso
 
 [Term]
-id: UBERON:0004708 ! limb/fin
+id: UBERON:0004708
 name: limb/fin
+synonym: "jointed paired lateral appendage" NARROW [UBERON:cjm]
 comment: this class is the union of the classes limb and fin. TODO - should limb subsume fin? GO treats these as siblings, yet the GO definition appears to apply to fins
 is_a: UBERON:0000026 ! appendage
 
@@ -30859,6 +30918,7 @@ xref: ncithesaurus:Neural_Crest ! Neural Crest
 xref: BTO:0001764 ! neural crest
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0002346 ! neural ectoderm
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 
 [Term]
 id: UBERON:0002345
@@ -34510,7 +34570,7 @@ is_a: UBERON:0000045 ! ganglion
 [Term]
 id: UBERON:0002546
 name: cranial placode
-def: "n area of thickening in the embryonic epithelial layer where some organ or structure later develops. The term usually refers to cranial placodes, peripheral nervous system structures associated with the special senses and cranial ganglia. Placodes also develop in the formation of other structures, such as teeth and feathers." [Wikipedia:Placode]
+def: "An area of thickening in the embryonic epithelial layer where some organ or structure later develops. The term usually refers to cranial placodes, peripheral nervous system structures associated with the special senses and cranial ganglia. Placodes also develop in the formation of other structures, such as teeth and feathers." [Wikipedia:Placode]
 alt_id: UBERON:MIAA_0000369-XAO_0000305
 comment: TODO - add subtypes. Consider more generic superclass, see also  FBbt:00005495 primordium 
 synonym: "cranial placodes" RELATED []
@@ -34564,9 +34624,7 @@ xref: BTO:0000707
 xref: FBbt:00001727 ! larva
 xref: HAO:0000459 ! larva
 xref: MIAA:0000400 ! larval stage
-is_a: UBERON:0000061 ! anatomical structure
-relationship: existence_starts_and_ends_during UBERON:0000069 ! larval stage
-intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0000468 ! multi-cellular organism
 intersection_of: existence_starts_and_ends_during UBERON:0000069 ! larval stage
 xref: OpenCyc:Mx4rwQCBvZwpEbGdrcN5Y29ycA ! larva
 
@@ -41626,7 +41684,6 @@ name: ear vesicle
 alt_id: UBERON:XAO_0000006-ZFA_0000051
 def: "Epithelial sac present beside the fifth rhombomere; forms the semicircular canals dorsally and the otolith organs ventrally, and houses the acoustico-vestibular sensory epithelia (maculae) of hair cells[ZFA]. epithelial sac of invaginated ectoderm formed from the otic placode that gives rise to the structures of the inner ear[MP]" [ZFIN:curator, MP:0009806, Wikipedia:Auditory_vesicle]
 comment: This class was created automatically from a combination of ontologies
-synonym: "otic capsule" RELATED []
 synonym: "otic vesicle" EXACT []
 synonym: "otocyst" RELATED []
 synonym: "auditory vesicle" RELATED [BTO:0002661]
@@ -42037,6 +42094,18 @@ xref: ZFA:0000138 ! otic placode
 is_a: UBERON:0003067 ! dorsolateral placode
 relationship: part_of UBERON:0001690 ! ear
 xref: ncithesaurus:Otic_Placodes ! Otic Placodes
+
+[Term]
+id: UBERON:0004637
+name: otic capsule
+is_a: UBERON:0003932 ! chondrocranium cartilage
+relationship: part_of UBERON:0001846 ! internal ear
+relationship: existence_ends_during UBERON:0000113 ! post-juvenile adult stage
+relationship: part_of UBERON:0001703 ! neurocranium
+synonym: "periotic capsule" RELATED [MA:0000252]
+synonym: "otic capsule" EXACT [ZFA:0001500]
+xref: ZFA:0001500 ! auditory capsule
+xref: MA:0000252 ! otic capsule
 
 [Term]
 id: UBERON:0003070
@@ -42907,6 +42976,7 @@ xref: XAO:0003169 ! dermatocranium
 xref: ZFA:0000863 ! dermatocranium
 is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0003128 ! cranium
+relationship: develops_from UBERON:0002342 ! neural crest
 
 [Term]
 id: UBERON:0001708
@@ -43116,9 +43186,10 @@ xref: EHDAA:7327 ! aortic arch
 xref: HOG:0000122 ! aortic arch
 xref: ZFA:0005004 ! aortic arch
 xref: ncithesaurus:Aortic_Arch ! Aortic Arch
-relationship: develops_into UBERON:0001637 ! artery
 is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_into UBERON:0001637 ! artery
 relationship: part_of UBERON:0002539 ! pharyngeal arch
+relationship: develops_from UBERON:0002342 ! neural crest
 
 [Term]
 id: UBERON:0003118
@@ -43380,8 +43451,8 @@ def: "Organism at the pupal stage. The pupal stage is a life stage of some insec
 alt_id: UBERON:FBbt_00002953-HAO_0000886
 xref: FBbt:00002953 ! pupa
 xref: HAO:0000886 ! pupa
-is_a: UBERON:0000468 ! multi-cellular organism
-relationship: existence_starts_and_ends_during UBERON:0000070 ! pupal stage
+intersection_of: UBERON:0000468 ! multi-cellular organism
+intersection_of: existence_starts_and_ends_during UBERON:0000070 ! pupal stage
 xref: BTO:0001143 ! pupa
 xref: EFO:0002684 ! pupa
 xref: OpenCyc:Mx4rwQCBr5wpEbGdrcN5Y29ycA ! pupa
@@ -43396,7 +43467,7 @@ is_a: UBERON:0000475 ! organism subdivision
 
 [Term]
 id: UBERON:0003145
-name: adult thorax
+name: adult arthropod thorax
 alt_id: UBERON:FBbt_00003018-HAO_0000090
 xref: FBbt:00003018 ! adult thorax
 xref: HAO:0000090 ! adult thorax
@@ -43404,7 +43475,7 @@ is_a: UBERON:0000915 ! thorax
 
 [Term]
 id: UBERON:0003146
-name: adult abdomen
+name: adult arthropod abdomen
 alt_id: UBERON:FBbt_00003023-HAO_0000088
 xref: FBbt:00003023 ! adult abdomen
 xref: HAO:0000088 ! adult abdomen
@@ -45855,6 +45926,7 @@ xref: EMAPA:16708 ! epithelium
 xref: ZFA:0001174 ! pharyngeal epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001042 ! pharynx
+relationship: develops_from UBERON:0001041 ! foregut
 synonym: "epithelial tissue of pharynx" EXACT [OBOL:automatic]
 synonym: "pharynx epithelial tissue" EXACT [OBOL:automatic]
 synonym: "pharynx epithelium" EXACT [OBOL:automatic]
@@ -52973,11 +53045,9 @@ xref: EFO:0002457 ! hippocampus CA4
 id: UBERON:0003894
 name: liver primordium
 def: "A primordium that is fated to develop into a liver." [GOC:obol]
-is_a: UBERON:0001048 ! primordium
-relationship: develops_into UBERON:0002107 ! liver
-relationship: part_of UBERON:0002423 ! hepatobiliary system
 intersection_of: UBERON:0001048 ! primordium
 intersection_of: develops_into UBERON:0002107 ! liver
+relationship: develops_from UBERON:0000925 ! endoderm
 synonym: "liver bud" EXACT [ZFA:0000124, XAO:0003266]
 xref: XAO:0003266 ! liver primordium
 xref: ZFA:0000124 ! liver primordium
@@ -53522,21 +53592,6 @@ def: "the conchae of the ethmoid bone which occupy the caudal part of the nasal 
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001679 ! ethmoid
 is_a: UBERON:0001762 ! nasal concha
-
-[Term]
-id: UBERON:0003974
-name: cranial vagina
-def: "the upper third of the female reproductive canal located between the uterus and the vulva" [MP:0009077]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000996 ! vagina
-
-[Term]
-id: UBERON:0003975
-name: internal female genitalia
-def: "the internal feminine genital organs, including the ovaries, uterine tubes, uterus, uterine cervix, and vagina" [MP:0009209]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000997 ! vulva
-xref: FMA:45654 ! Female internal genitalia
 
 [Term]
 id: UBERON:0003976
@@ -55064,8 +55119,9 @@ relationship: develops_from UBERON:0000924 ! ectoderm
 [Term]
 id: UBERON:0004164
 name: branchiomeric skeletal muscle
-def: " Branchiomeric muscles of mammals correspond to the gill musculature of fish" [GO:0014707]
+def: "Branchiomeric muscles of mammals correspond to the gill musculature of fish" [GO:0014707]
 is_a: UBERON:0001134 ! skeletal muscle tissue
+relationship: develops_from UBERON:0002342 ! neural crest
 
 [Term]
 id: UBERON:0004165
@@ -55306,14 +55362,6 @@ xref: FMA:45719 ! Prostatic stroma
 xref: ncithesaurus:Prostatic_Stroma ! Prostatic Stroma
 xref: MA:0002912 ! prostate gland stroma
 
-
-[Term]
-id: UBERON:0004185
-name: endodermal gut
-def: " The endodermal gut includes those portions of the gut that are derived from endoderm" [GO:0061031]
-is_a: UBERON:0000479 ! portion of tissue
-relationship: part_of UBERON:0001555 ! gut
-relationship: develops_from UBERON:0000925 ! endoderm
 
 [Term]
 id: UBERON:0004186
@@ -59859,18 +59907,6 @@ synonym: "T12 vertebra" EXACT [FMA:10081]
 synonym: "Twelfth dorsal vertebra" EXACT [FMA:10081]
 xref: FMA:10081 ! Twelfth thoracic vertebra
 xref: MA:0001449 ! thoracic vertebra 12
-
-[Term]
-id: UBERON:0004637
-name: otic capsule
-is_a: UBERON:0003932 ! chondrocranium cartilage
-relationship: part_of UBERON:0001846 ! internal ear
-relationship: existence_ends_during UBERON:0000113 ! post-juvenile adult stage
-relationship: part_of UBERON:0001703 ! neurocranium
-synonym: "periotic capsule" RELATED [MA:0000252]
-synonym: "otic capsule" EXACT [ZFA:0001500]
-xref: ZFA:0001500 ! auditory capsule
-xref: MA:0000252 ! otic capsule
 
 [Term]
 id: UBERON:0004638
