@@ -540,7 +540,6 @@ xref: MAT:0000023 ! appendage
 xref: OpenCyc:Mx4rvViC-JwpEbGdrcN5Y29ycA
 synonym: "limbs/digits/tail" RELATED [MP:0000001]
 is_a: UBERON:0000475 ! organism subdivision
-relationship: attached_to UBERON:0002100 ! trunk
 xref: ncithesaurus:Appendage ! Appendage
 xref: OpenCyc:Mx4rvViC-JwpEbGdrcN5Y29ycA ! appendage
 
@@ -940,7 +939,6 @@ subset: uberon_slim
 xref: BTO:0001409
 xref: EFO:0000930 ! ureter
 xref: EHDAA:9341 ! ureter
-xref: FBbt:00005793 ! ureter
 xref: FMA:9704 ! Ureter
 xref: GAID:438 ! ureter
 xref: HOG:0000605 ! ureter
@@ -950,7 +948,6 @@ xref: MIAA:0000120 ! ureter
 xref: ncithesaurus:Ureter
 xref: OpenCyc:Mx4rvhmm6JwpEbGdrcN5Y29ycA
 xref: WBbt:0005777 ! excretory duct
-xref: XAO:0000144 ! ureter
 is_a: UBERON:0000062 ! organ
 relationship: continuous_with UBERON:0001255 ! urinary bladder
 relationship: continuous_with UBERON:0002113 ! kidney
@@ -4977,7 +4974,7 @@ id: UBERON:0000916
 name: abdomen
 alt_id: UBERON:FBbt_00000020-FMA_9577-MA_0000029-MIAA_0000298
 def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity. In arthropods it is the most distal section of the body which lies behind the thorax or cephalothorax // Subdivision of trunk, which is demarcated from the thorax internally by the inferior surface of the sternocostal part of the diaphragm and externally by the costal margin, from the pelvis by the plane of the superior pelvic aperture and from the lower limbs by the inguinal folds; together with the thorax, pelvis, and perineum, it constitutes the trunk. Examples: There is only one abdomen." [FB:gg, ISBN:3110148986, Wikipedia:Abdomen]
-comment: Vertebrate specific
+comment: Vertebrate specific. TOD def
 subset: uberon_slim
 synonym: "adult abdomen" RELATED []
 synonym: "belly" RELATED []
@@ -5784,26 +5781,10 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cervical nerve tree" EXACT []
 synonym: "cervical spinal nerve" EXACT []
-xref: FBbt:00004053 ! cervical nerve
 xref: FMA:5859 ! Cervical nerve
 is_a: UBERON:0001780 ! spinal nerve
-intersection_of: UBERON:0001021 ! nerve
-intersection_of: part_of UBERON:0000002 ! cervix
 relationship: part_of UBERON:0000961 ! thoracic ganglion
 xref: ncithesaurus:Cervical_Nerve ! Cervical Nerve
-synonym: "cervical canal nerve" EXACT [OBOL:automatic]
-synonym: "cervical canal of uterus nerve" EXACT [OBOL:automatic]
-synonym: "cervix nerve" EXACT [OBOL:automatic]
-synonym: "cervix of uterus nerve" EXACT [OBOL:automatic]
-synonym: "neck of uterus nerve" EXACT [OBOL:automatic]
-synonym: "nerve of cervical canal" EXACT [OBOL:automatic]
-synonym: "nerve of cervical canal of uterus" EXACT [OBOL:automatic]
-synonym: "nerve of cervix" EXACT [OBOL:automatic]
-synonym: "nerve of cervix of uterus" EXACT [OBOL:automatic]
-synonym: "nerve of neck of uterus" EXACT [OBOL:automatic]
-synonym: "nerve of uterine cervix" EXACT [OBOL:automatic]
-synonym: "uterine cervix nerve" EXACT [OBOL:automatic]
-xref: OpenCyc:Mx4rwSJp_JwpEbGdrcN5Y29ycA ! cervical spinal nerve
 
 [Term]
 id: UBERON:0000963
@@ -5923,9 +5904,6 @@ xref: FBbt:00004461 ! adult abdominal sensillum
 xref: MAT:0000206 ! abdominal sensillum
 xref: MIAA:0000206 ! abdominal sensillum
 is_a: UBERON:0002536 ! arthropod sensillum
-intersection_of: UBERON:0002536 ! arthropod sensillum
-intersection_of: part_of UBERON:0000916 ! abdomen
-relationship: part_of UBERON:0000916 ! abdomen
 synonym: "abdomen arthropod sensillum" EXACT [OBOL:automatic]
 synonym: "abdomen sensillum" EXACT [OBOL:automatic]
 synonym: "arthropod sensillum of abdomen" EXACT [OBOL:automatic]
@@ -6311,7 +6289,6 @@ def: "In human anatomy, the axillary vein is a large blood vessel that conveys b
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "subcostal vein" RELATED []
-xref: FBbt:00004754 ! axillary vein
 xref: FMA:13329 ! Axillary vein
 xref: GAID:527 ! axillary vein
 xref: galen:AxillaryVein
@@ -6610,7 +6587,7 @@ xref: EFO:0000977 ! spermathecum
 id: UBERON:0000995
 name: uterus
 alt_id: UBERON:FBbt_00004924-FMA_17558-MA_0000389-MIAA_0000127-WBbt_0006760
-def: "Organ with organ cavity which is continuous proximally with the right and left uterine tubes and distally is connected to the vagina. Examples: There is only one uterus. // The organ in which the eggs are developed and protected until laid." [ISBN:0198611862, WB:rynl, Wikipedia:Uterus]
+def: "The organ in which the eggs are developed and protected until laid." [ISBN:0198611862, WB:rynl, Wikipedia:Uterus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "uterine horn" RELATED []
@@ -6627,7 +6604,6 @@ xref: OpenCyc:Mx4rvViojJwpEbGdrcN5Y29ycA
 xref: WBbt:0006760 ! uterus
 is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0000991 ! gonad
-relationship: part_of UBERON:0002355 ! pelvis
 xref: BTO:0001424 ! uterus
 xref: EFO:0000975 ! uterus
 xref: galen:Uterus ! uterus
@@ -6660,7 +6636,7 @@ xref: OpenCyc:Mx4rvVj1B5wpEbGdrcN5Y29ycA ! vagina
 id: UBERON:0000997
 name: vulva
 alt_id: UBERON:FBbt_00004926-FMA_20462-FMA_225311-MA_0000395-MIAA_0000169-WBbt_0006748
-def: "female genitalia" [WB:rynl, Wikipedia:Vulva]
+def: "female genitalia." [Wikipedia:Vulva]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "female pudendum" EXACT []
@@ -6668,10 +6644,8 @@ synonym: "puboperineal region" EXACT []
 synonym: "skin of female pudendum" EXACT []
 synonym: "skin of vulva" EXACT []
 xref: BTO:0001055
-xref: FBbt:00004926 ! vulva
 xref: FMA:20462 ! Vulva
 xref: GAID:383 ! vulva
-xref: HAO:0001087 ! vulva
 xref: HOG:0001458 ! vulva
 xref: MA:0000395 ! vulva
 xref: MAT:0000169 ! vulva
@@ -6680,7 +6654,7 @@ xref: ncithesaurus:Vulva
 xref: OpenCyc:Mx4rvgAWeJwpEbGdrcN5Y29ycA
 xref: WBbt:0006748 ! vulva
 is_a: UBERON:0000477 ! anatomical cluster
-relationship: part_of UBERON:0002355 ! pelvis
+relationship: part_of UBERON:0000474 ! female reproductive system
 xref: EFO:0000978 ! vulva
 xref: galen:Vulva ! vulva
 xref: OpenCyc:Mx4rvgAWeJwpEbGdrcN5Y29ycA ! vulva
@@ -6689,21 +6663,19 @@ xref: OpenCyc:Mx4rvgAWeJwpEbGdrcN5Y29ycA ! vulva
 id: UBERON:0000998
 name: seminal vesicle
 alt_id: UBERON:FBbt_00004958-FMA_19386-MA_0000410-MIAA_0000171-WBbt_0006870
-def: "part of male gonad that holds mature sperm, made of a total of 12 nuclei." [WB:Paper00000193, WB:rynl, Wikipedia:Seminal_vesicle]
+def: "Either of a pair of glandular pouches that lie one on either side of the male reproductive tract and in the human male secrete a sugar- and protein-containing fluid into the ejaculatory duct." [BTO:0001234, Wikipedia:Seminal_vesicle]
 comment: The mesonephros persists and form the permanent kidneys in fishes and amphibians, but in reptiles, birds, and mammals, it atrophies and for the most part disappears rapidly as the permanent kidney (metanephros) begins to develop during the sixth or seventh week. By the beginning of the fifth month only the ducts and a few of the tubules of the mesonephros remain.
 subset: uberon_slim
 synonym: "gon_male_sves" RELATED []
 synonym: "seminal gland" EXACT []
 synonym: "vas efferens" RELATED []
 xref: BTO:0001234
-xref: FBbt:00004958 ! seminal vesicle
 xref: FMA:19386 ! Seminal vesicle
 xref: GAID:394 ! seminal vesicle
 xref: HOG:0001379 ! seminal vesicle
 xref: MA:0000410 ! seminal vesicle
 xref: MAT:0000171 ! seminal vesicle
 xref: MIAA:0000171 ! seminal vesicle
-xref: WBbt:0006870 ! seminal vesicle
 is_a: UBERON:0002530 ! gland
 relationship: develops_from UBERON:0000080 ! mesonephros
 relationship: part_of UBERON:0002117 ! testicle
@@ -6923,9 +6895,10 @@ name: open tracheal system
 def: "A trachea composed of composed of spiracles, tracheae, and tracheoles [Wikipedia]. An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." [GO:0007424, Wikipedia:Invertebrate_trachea]
 comment: TODO: system vs organ part
 subset: uberon_slim
-synonym: "invertebrate trachea" EXACT SENSU []
+synonym: "invertebrate trachea" EXACT []
+synonym: "trachea" BROAD SENSU [FBbt:00005043]
 xref: FBbt:00005043 ! trachea
-is_a: UBERON:0000483 ! epithelium
+relationship: has_part UBERON:0003914 ! epithelial tube
 is_a: UBERON:0001005 ! trachea
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
@@ -7810,18 +7783,15 @@ xref: OpenCyc:Mx4rvVjl5ZwpEbGdrcN5Y29ycA ! salivary gland
 id: UBERON:0001045
 name: midgut
 alt_id: UBERON:FBbt_00005383-FMA_45617-MA_0001564-XAO_0000103
-def: "In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine. In the context of Drosophila refers to the part of the alimentary canal derived from the endoderm." [FB:gg, ISBN:3110148986, Wikipedia:Midgut]
-comment: This class was created automatically from a combination of ontologies
+def: "In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine." [Wikipedia:Midgut]
 subset: uberon_slim
 xref: BILA:0000086
 xref: BTO:0000863
-xref: FBbt:00003138 ! adult midgut
 xref: FMA:45617 ! Midgut
 xref: HOG:0000290 ! midgut
 xref: MA:0001564 ! midgut
 xref: XAO:0000103 ! midgut
 is_a: UBERON:0000481 ! multi-tissue structure
-is_a: UBERON:0002075 ! viscus
 relationship: part_of UBERON:0001555 ! gut
 xref: ncithesaurus:Midgut ! Midgut
 xref: EFO:0001950 ! midgut
@@ -8779,6 +8749,7 @@ name: tooth-like structure
 def: "hard bony, calcareous, or chitinous organ found in the mouth or pharynx of an animal and used in procuring or masticating food." []
 comment: see dermal denticle
 is_a: UBERON:0000061 ! anatomical structure
+xref: HAO:0001019 ! tooth
 
 [Term]
 id: UBERON:0003912
@@ -8817,7 +8788,6 @@ xref: EHDAA:8009 ! tooth
 xref: EHDAA:8045 ! tooth
 xref: FMA:12516 ! Tooth
 xref: GAID:1260 ! tooth
-xref: HAO:0001019 ! tooth
 xref: HOG:0000127 ! tooth
 xref: MA:0000348 ! tooth
 xref: MAT:0000041 ! tooth
@@ -16945,7 +16915,6 @@ xref: TAO:0000112 ! gut
 xref: ZFA:0000112 ! gut
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: develops_from UBERON:0000925 ! endoderm
-relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0001007 ! digestive system
 xref: ncithesaurus:Lower_Gastrointestinal_Tract ! Lower Gastrointestinal Tract
 xref: galen:LowerGastrointestinalTract ! lower gastrointestinal tract
@@ -28061,6 +28030,14 @@ xref: ncithesaurus:Alveolar_Duct ! Alveolar Duct
 xref: OpenCyc:Mx4rvXmfV5wpEbGdrcN5Y29ycA ! alveolar duct
 
 [Term]
+id: UBERON:0004903
+name: bronchoalveolar duct junction
+def: "A branch point connecting the respiratory bronchioles to the alveolar ducts[MP]." [MP:0004390]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002173 ! alveolar duct
+relationship: part_of UBERON:0002186 ! bronchiole
+
+[Term]
 id: UBERON:0002174
 name: middle lobe of lung
 alt_id: UBERON:FMA_7383-MA_0000430
@@ -30602,7 +30579,6 @@ xref: ZFA:0000155 ! somite
 is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0003059 ! presomitic mesoderm
 relationship: part_of UBERON:0000926 ! mesoderm
-relationship: part_of UBERON:0002100 ! trunk
 xref: ncithesaurus:Somite ! Somite
 xref: BTO:0001558 ! somite
 
@@ -31283,7 +31259,6 @@ xref: FMA:85006 ! Body cavity
 xref: galen:BodyCavity
 xref: MA:0002447 ! body cavity
 is_a: UBERON:0002553 ! anatomical cavity
-relationship: part_of UBERON:0002100 ! trunk
 xref: ncithesaurus:Cavity ! Body Cavity
 xref: BTO:0001707 ! coelom
 
@@ -31699,7 +31674,7 @@ xref: EFO:0001977 ! palatine tonsil
 id: UBERON:0002375
 name: cricoid cartilage
 alt_id: UBERON:FMA_9615-MA_0001762
-def: "The cricoid cartilage, or simply cricoid (from the Greek krikoeides meaning "ring-shaped"), is the only complete ring of cartilage around the trachea. [WP,unvetted]." [Wikipedia:Cricoid_cartilage]
+def: "The cricoid cartilage, or simply cricoid (from the Greek krikoeides meaning 'ring-shaped'), is the only complete ring of cartilage around the trachea. [WP,unvetted]." [Wikipedia:Cricoid_cartilage]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: AAO:0000675 ! cricoid_cartilage
@@ -32076,7 +32051,6 @@ xref: XAO:0000134 ! bile duct
 is_a: UBERON:0000058 ! duct
 intersection_of: UBERON:0000058 ! duct
 intersection_of: transports UBERON:0001970 ! bile
-relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0002294 ! biliary system
 xref: OpenCyc:Mx4rvdCds5wpEbGdrcN5Y29ycA ! bile duct
 
@@ -32178,7 +32152,6 @@ xref: AAO:0000285 ! maxilla
 xref: EHDAA:8043 ! maxilla
 xref: FMA:9711 ! Maxilla
 xref: GAID:220 ! maxilla
-xref: HAO:0000513 ! maxilla
 xref: HOG:0001021 ! maxilla
 xref: MA:0001491 ! maxilla
 xref: TAO:0000270 ! maxilla
@@ -43384,10 +43357,10 @@ is_a: UBERON:0000915 ! thorax
 [Term]
 id: UBERON:0003141
 name: larval abdomen
+is_obsolete: true
 alt_id: UBERON:FBbt_00001746-HAO_0000460
 xref: FBbt:00001746 ! larval abdomen
 xref: HAO:0000460 ! larval abdomen
-is_a: UBERON:0000916 ! abdomen
 
 [Term]
 id: UBERON:0003142
@@ -43435,7 +43408,7 @@ name: adult abdomen
 alt_id: UBERON:FBbt_00003023-HAO_0000088
 xref: FBbt:00003023 ! adult abdomen
 xref: HAO:0000088 ! adult abdomen
-is_a: UBERON:0000916 ! abdomen
+is_obsolete: true
 
 [Term]
 id: UBERON:0003147
