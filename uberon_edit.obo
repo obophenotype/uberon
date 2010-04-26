@@ -6056,6 +6056,7 @@ xref: GAID:204 ! tibia
 xref: MA:0001361 ! tibia
 is_a: UBERON:0002495 ! long bone
 relationship: part_of UBERON:0001441 ! skeleton of lower limb
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: ncithesaurus:Tibia ! Tibia
 xref: galen:Tibia ! tibia
 xref: OpenCyc:Mx4rvtq3-ZwpEbGdrcN5Y29ycA ! shinbone
@@ -6071,6 +6072,7 @@ xref: FMA:82513 ! Trochanter
 xref: MA:0002821 ! trochanter
 is_a: UBERON:0000475 ! organism subdivision
 relationship: part_of UBERON:0000978 ! leg
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: ncithesaurus:Trochanter ! Trochanter
 
 [Term]
@@ -6092,6 +6094,7 @@ xref: OpenCyc:Mx4rvVjOJJwpEbGdrcN5Y29ycA
 is_a: UBERON:0002495 ! long bone
 relationship: part_of UBERON:0000376 ! upper leg
 relationship: part_of UBERON:0001464 ! hip
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: ncithesaurus:Femur ! Femur
 xref: EFO:0001396 ! femur
 xref: OpenCyc:Mx4rvVjOJJwpEbGdrcN5Y29ycA ! femur
@@ -6185,9 +6188,10 @@ xref: galen:TarsalBone ! tarsal bone
 [Term]
 id: UBERON:0004454 ! tarsus
 name: tarsus
-def: "the cluster of bones  in the foot  between the tibia  and fibula  and the metatarsus. The bones of the tarsus do not belong to individual toes, whereas those of the metatarsus do. The joint between the tibia and fibula and the tarsus is referred to as the ankle joint[WP]." [Wikipedia:Tarsus_(skeleton)]
+def: "the cluster of bones  in the foot between the tibia  and fibula and the metatarsus. The bones of the tarsus do not belong to individual toes, whereas those of the metatarsus do. The joint between the tibia and fibula and the tarsus is referred to as the ankle joint[WP]." [Wikipedia:Tarsus_(skeleton)]
 is_a: UBERON:0001445 ! skeleton of foot
 relationship: part_of UBERON:0002387 ! foot
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: MA:0000050 ! tarsus
 xref: XAO:0003211 ! tarsus
 xref: GAID:1223 ! animal tarsus
@@ -6208,6 +6212,7 @@ xref: XAO:0003212 ! metatarsus
 xref: OpenCyc:Mx4rva_rBJwpEbGdrcN5Y29ycA
 is_a: UBERON:0002529 ! limb segment
 relationship: part_of UBERON:0002387 ! foot
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: OpenCyc:Mx4rva_rBJwpEbGdrcN5Y29ycA ! metatarsus
 
 [Term]
@@ -6242,7 +6247,6 @@ xref: GAID:527 ! axillary vein
 xref: galen:AxillaryVein
 xref: MA:0002084 ! axillary vein
 is_a: UBERON:0001638 ! vein
-relationship: part_of UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001467 ! shoulder
 xref: ncithesaurus:Axillary_Vein ! Axillary Vein
 xref: OpenCyc:Mx4rwLSHK5wpEbGdrcN5Y29ycA ! axillary vein
@@ -6413,8 +6417,8 @@ xref: OpenCyc:Mx4rwQvdiZwpEbGdrcN5Y29ycA ! gonad
 id: UBERON:0000992
 name: ovary
 alt_id: UBERON:FBbt_00004865-FMA_7209-MA_0000384-MIAA_0000125-XAO_0000258-ZFA_0000403
-def: "Reproductive organ that produces and releases eggs. // Female reproductive organ." [Wikipedia:Ovary, XB:curator, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "Ovum-producing female reproductive organ." [Wikipedia:Ovary]
+comment: Ovaries of some kind are found in the female reproductive system of many animals that employ sexual reproduction, including invertebrates. However, they develop in a very different way in most invertebrates than they do in vertebrates, and are not truly homologous. Many of the features found in human ovaries are common to all vertebrates, including the presence of follicular cells, tunica albuginea, and so on. However, many species produce a far greater number of eggs during their lifetime than do humans, so that, in fish and amphibians, there may be hundreds, or even millions of fertile eggs present in the ovary at any given time. In these species, fresh eggs may be developing from the germinal epithelium throughout life. Corpora lutea are found only in mammals, and in some elasmobranch fish; in other species, the remnants of the follicle are quickly resorbed by the ovary. In birds, reptiles, and monotremes, the egg is relatively large, filling the follicle, and distorting the shape of the ovary at maturity. Amphibians and reptiles have no ovarian medulla; the central part of the ovary is a hollow, lymph-filled space. The ovary of teleosts is also often hollow, but in this case, the eggs are shed into the cavity, which opens into the oviduct. Although most normal female vertebrates have two ovaries, this is not the case in all species. In birds and platypuses, the right ovary never matures, so that only the left is functional. In some elasmobranchs, the reverse is true, with only the right ovary fully developing. In the primitive jawless fish, and some teleosts, there is only one ovary, formed by the fusion of the paired organs in the embryo[WP].
 subset: uberon_slim
 synonym: "ovaries" RELATED []
 xref: AAO:0000371 ! ovary
@@ -6525,7 +6529,6 @@ xref: MIAA:0000168 ! spermathecum
 xref: WBbt:0005319 ! spermatheca
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000991 ! gonad
-relationship: part_of UBERON:0002537 ! hermaphrodite gonad
 xref: EFO:0000977 ! spermathecum
 
 [Term]
@@ -6953,7 +6956,6 @@ disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 xref: BTO:0003092 ! urinary system
 xref: MA:0000325 ! renal/urinary system
-
 
 [Term]
 id: UBERON:0001009 ! circulatory system
@@ -8040,6 +8042,7 @@ xref: MAT:0000123 ! Malpighian tubules
 xref: MIAA:0000123 ! Malpighian tubules
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001008 ! urinary system
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: UBERON:0001055
@@ -8133,6 +8136,39 @@ xref: MA:0000992 ! flocculus
 xref: NIF_GrossAnatomy:birnlex_1329 ! Flocculus
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
+
+[Term]
+id: UBERON:0004913
+name: hepatopancreatic ampulla
+def: "A dilation of the duodenal papilla that is the opening of the juncture of the common bile duct and the main pancreatic duct." [Wikipedia:Ampulla_of_Vater]
+synonym: "ampulla of Vater" EXACT []
+synonym: "Vater's ampulla" EXACT []
+synonym: "biliaropancreatic ampulla" EXACT []
+is_a: UBERON:0000058 ! duct
+relationship: part_of UBERON:0004914 ! duodenal papilla
+xref: GAID:283 ! vater's ampulla
+xref: FMA:15076 ! hepatopancreatic ampulla
+xref: ZFA:0005167 ! hepatopancreatic ampulla
+
+[Term]
+id: UBERON:0004914
+name: duodenal papilla
+def: "." [Wikipedia:Minor_duodenal_papilla, Wikipedia:Major_duodenal_papilla]
+synonym: "papilla of duodenum" EXACT []
+xref: FMA:15953 ! duodenal papilla
+xref: EMAPA:18662 ! duodenal papilla
+xref: EMAPA:18853 ! duodenal papilla
+
+[Term]
+id: UBERON:0004915
+name: sphincter of hepatopancreatic ampulla
+def: "muscular valve that controls the flow of digestive juices (bile and pancreatic juice) through the ampulla of Vater into the second part of the duodenum. Relaxed by the hormone Cholecystokinin (CCK) via vasoactive intestinal polypeptide (VIP).[WP]." [Wikipedia:Sphincter_of_Oddi]
+synonym: "sphincter of Oddi" EXACT []
+synonym: "Oddi's sphincter" EXACT []
+intersection_of: UBERON:0004590 ! sphincter muscle
+intersection_of: part_of UBERON:0004913 ! hepatopancreatic ampulla
+xref: GAID:285 ! oddi's sphincter
+xref: FMA:15077 ! sphincter of hepatopancreatic ampulla
 
 [Term]
 id: UBERON:0001064
@@ -10337,18 +10373,6 @@ relationship: part_of UBERON:0001171 ! portal lobule
 xref: ncithesaurus:Liver_Acinus ! Liver Acinus
 
 [Term]
-id: UBERON:0001173
-name: biliary tree
-alt_id: UBERON:FMA_14665-XAO_0000455
-def: "Hollow tree organ, the organ parts of which consists of the bile ducts. Examples: There is only one biliary tree." [Wikipedia:Biliary_tree]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: FMA:14665 ! Biliary tree
-xref: XAO:0000455 ! biliary tree
-is_a: UBERON:0000062 ! organ
-relationship: part_of UBERON:0002107 ! liver
-
-[Term]
 id: UBERON:0001174
 name: common bile duct
 alt_id: UBERON:FMA_14667-MA_0001631
@@ -10862,7 +10886,7 @@ synonym: "wall of ventriculus serous membrane" EXACT [OBOL:automatic]
 id: UBERON:0001202
 name: pyloric sphincter
 alt_id: UBERON:FMA_14916-XAO_0000457
-def: "The pylorus (from the Greek πυλωρός, "gate guard") is the region of the stomach that connects to the duodenum. It is divided in two parts: the pyloric antrum, which connects to the body of the stomach. the pyloric canal, which connects to the duodenum. The pyloric sphincter, or valve, is a strong ring of smooth muscle at the end of the pyloric canal and lets food pass from the stomach to the duodenum. It receives sympathetic innervation from celiac ganglion. [WP,unvetted]." [Wikipedia:Pyloric_sphincter]
+def: "The region of the stomach that connects to the duodenum. It is divided in two parts: the pyloric antrum, which connects to the body of the stomach. the pyloric canal, which connects to the duodenum. The pyloric sphincter, or valve, is a strong ring of smooth muscle at the end of the pyloric canal and lets food pass from the stomach to the duodenum. It receives sympathetic innervation from celiac ganglion. [WP,unvetted]." [Wikipedia:Pyloric_sphincter]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:14916 ! Pyloric sphincter
@@ -11611,6 +11635,28 @@ synonym: "wall of bowel serosa" EXACT [OBOL:automatic]
 synonym: "wall of bowel serous membrane" EXACT [OBOL:automatic]
 
 [Term]
+id: UBERON:0004916
+name: anal sphincter
+def: "A sphincter muscle in the anal part of the perineum." [OBOL:automatic]
+intersection_of: UBERON:0004590 ! sphincter muscle
+intersection_of: part_of UBERON:0001353 ! anal part of perineum
+
+[Term]
+id: UBERON:0001367
+name: external anal sphincter
+alt_id: UBERON:FMA_21930-MA_0001531
+def: "The Sphincter ani externus (external anal sphincter) is a flat plane of muscular fibers, elliptical in shape and intimately adherent to the integument surrounding the margin of the anus. [WP,unvetted]." [Wikipedia:External_anal_sphincter]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "external sphincter ani" EXACT []
+synonym: "sphincter ani externus" RELATED []
+xref: FMA:21930 ! External anal sphincter
+xref: MA:0001531 ! external anal sphincter
+is_a: UBERON:0004590 ! sphincter muscle
+relationship: part_of UBERON:0001353 ! anal part of perineum
+xref: ncithesaurus:External_Anal_Sphincter ! External Anal Sphincter
+
+[Term]
 id: UBERON:0001244
 name: internal anal sphincter
 alt_id: UBERON:FMA_15710-MA_0001534
@@ -12303,6 +12349,7 @@ is_a: UBERON:0000064 ! organ part
 intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: part_of UBERON:0002107 ! liver
 relationship: part_of UBERON:0002107 ! liver
+relationship: develops_from UBERON:0004912 ! biliary bud
 def: "the functional units of the liver including the lobules." [MP:0008986]
 
 [Term]
@@ -13168,6 +13215,43 @@ xref: EFO:0001664 ! foreskin
 xref: OpenCyc:Mx4rvVjlTZwpEbGdrcN5Y29ycA ! foreskin
 
 [Term]
+id: UBERON:0004917
+name: urethral sphincter
+def: "A sphincter muscle surrounding the urethra." [Wikipedia:Urethral_sphincter]
+synonym: "urethral sphincter muscle" EXACT []
+synonym: "sphincter muscle of urethra" EXACT []
+synonym: "sphincter of urethra" EXACT []
+intersection_of: UBERON:0004590 ! sphincter muscle
+intersection_of: part_of UBERON:0000057 ! urethra
+xref: MA:0002650 ! urethral sphincter
+
+[Term]
+id: UBERON:0004918
+name: internal urethral sphincter
+def: "a urethral sphincter muscle which constricts the internal urethral orifice. It is the junction of the urethra with the urinary bladder. The muscle is made of smooth muscle, so therefore it is under involuntary control. It is kept tonically contracted by the sympathetic nervous system and during micturition, is relaxed via the parasympathetic nervous system. This is the primary muscle for preventing the release of urine[WP]." [Wikipedia:Internal_sphincter_muscle_of_urethra]
+synonym: "internal urethral sphincter muscle" EXACT []
+synonym: "internal sphincter muscle of urethra" EXACT []
+synonym: "internal sphincter of urethra" EXACT []
+synonym: "preprostatic sphincter" EXACT [FMA:45769]
+synonym: "supracollicular sphincter" EXACT [FMA:45769]
+is_a: UBERON:0004590 ! sphincter muscle
+relationship: part_of UBERON:0000057 ! urethra
+xref: FMA:45769 ! preprostatic sphincter
+
+[Term]
+id: UBERON:0004919
+name: external urethral sphincter
+def: "." [Wikipedia:External_sphincter_muscle_of_male_urethra, Wikipedia:External_sphincter_muscle_of_female_urethra]
+comment: TODO male/female subclasses
+synonym: "external urethral sphincter muscle" EXACT []
+synonym: "external sphincter muscle of urethra" EXACT []
+synonym: "external sphincter of urethra" EXACT []
+is_a: UBERON:0004590 ! sphincter muscle
+relationship: part_of UBERON:0000057 ! urethra
+xref: FMA:85274 ! external urethral sphincter
+
+
+[Term]
 id: UBERON:0001333
 name: male urethra
 alt_id: UBERON:FMA_19668-MA_0002640
@@ -13730,24 +13814,6 @@ xref: GAID:268 ! sacroiliac joint
 xref: MA:0001506 ! sacroiliac joint
 is_a: UBERON:0002217 ! synovial joint
 xref: ncithesaurus:Sacroiliac_Joint ! Sacroiliac Joint
-
-
-
-[Term]
-id: UBERON:0001367
-name: external anal sphincter
-alt_id: UBERON:FMA_21930-MA_0001531
-def: "The Sphincter ani externus (external anal sphincter) is a flat plane of muscular fibers, elliptical in shape and intimately adherent to the integument surrounding the margin of the anus. [WP,unvetted]." [Wikipedia:External_anal_sphincter]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "external sphincter ani" EXACT []
-synonym: "sphincter ani externus" RELATED []
-xref: FMA:21930 ! External anal sphincter
-xref: MA:0001531 ! external anal sphincter
-is_a: UBERON:0004590 ! sphincter muscle
-is_a: UBERON:0002379 ! perineal muscle
-relationship: part_of UBERON:0001353 ! anal part of perineum
-xref: ncithesaurus:External_Anal_Sphincter ! External Anal Sphincter
 
 [Term]
 id: UBERON:0001368
@@ -14809,6 +14875,7 @@ disjoint_from: UBERON:0002423 ! hepatobiliary system
 [Term]
 id: UBERON:0003656 ! carpal/tarsal bone
 name: carpal/tarsal bone
+def: "The carpus  (wrist) and tarsus (ankle) of land vertebrates primitively had three rows of carpal or tarsal bones. Often some of these have become lost or fused in evolution. Three proximals. In the hand humans has all three. In the foot the middle proximal appears in 5-15% of people as an os trigonum. Centrale or os centrale, on the medial side. In humans and our closest relatives the African apes (chimpanzees and gorillas) it fuses to the scaphoid where it forms the articulation with the trapezoid bone; occasionally it stays separate. In Man's foot it is the navicular. Some early land vertebrates had more than one (up to three) os centrale per hand or foot. Distals, one per finger / toe at the base of each metacarpal or metatarsal. In mammals the 4th and 5th fuse. In the horse the 1st is lost[WP]." [Wikipedia:Carpus_and_tarsus_of_land_vertebrates]
 xref: MA:0000295 ! carpal/tarsal bone
 is_a: UBERON:0002428 ! limb bone
 
@@ -27140,6 +27207,7 @@ is_a: UBERON:0002075 ! viscus
 relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0002294 ! biliary system
 relationship: part_of UBERON:0002323 ! body cavity
+relationship: develops_from UBERON:0004912 ! biliary bud
 xref: OpenCyc:Mx4rvVkGr5wpEbGdrcN5Y29ycA ! gall bladder
 
 [Term]
@@ -30113,6 +30181,23 @@ xref: ncithesaurus:Costochondral_Joint ! Costochondral Joint
 xref: OpenCyc:Mx4rvfy27JwpEbGdrcN5Y29ycA ! chondrocostal synchondrosis
 
 [Term]
+id: UBERON:0001173
+name: biliary tree
+alt_id: UBERON:FMA_14665-XAO_0000455
+def: "Hollow tree organ, the organ parts of which consists of the bile ducts. Examples: There is only one biliary tree." [Wikipedia:Biliary_tract]
+synonym: "biliary tract" EXACT []
+subset: uberon_slim
+xref: FMA:14665 ! Biliary tree
+xref: XAO:0000455 ! biliary tree
+xref: GAID:279 ! biliary tract
+xref: MA:0001273 ! biliary tract
+xref: ncithesaurus:Biliary_Tract ! Biliary Tract
+is_a: UBERON:0000062 ! organ
+relationship: part_of UBERON:0002107 ! liver
+relationship: part_of UBERON:0002294 ! biliary system
+relationship: develops_from UBERON:0004912 ! biliary bud
+
+[Term]
 id: UBERON:0002294
 name: biliary system
 alt_id: UBERON:FMA_79646-MA_0001273
@@ -30120,10 +30205,7 @@ def: "Anatomical system that consists of the organs and ducts (bile ducts, gallb
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "biliary apparatus" EXACT []
-synonym: "biliary tract" EXACT []
 xref: FMA:79646 ! Biliary system
-xref: GAID:279 ! biliary tract
-xref: MA:0001273 ! biliary tract
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
@@ -30142,13 +30224,12 @@ disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 relationship: part_of UBERON:0002423 ! hepatobiliary system
-xref: ncithesaurus:Biliary_Tract ! Biliary Tract
 
 [Term]
 id: UBERON:0002295
 name: scala media
 alt_id: UBERON:FMA_79789-MA_0002458
-def: "Error creating thumbnail: Invalid Parameter - white This article needs additional citations for verification. The cochlear duct (or scala media) is an endolymph filled cavity inside the cochlea, located in between the scala tympani and the scala vestibuli, separated by the basilar membrane and Reissner's membrane (the vestibular membrane) respectively. Scala media houses the organ of Corti. [WP,unvetted]." [Wikipedia:Scala_media]
+def: "An endolymph filled cavity inside the cochlea, located in between the scala tympani and the scala vestibuli, separated by the basilar membrane and Reissner's membrane (the vestibular membrane) respectively. Scala media houses the organ of Corti. [WP,unvetted]." [Wikipedia:Scala_media]
 comment: This class was created automatically from a combination of ontologies. TODO: check w wikipedia, cochlear duct
 subset: uberon_slim
 synonym: "cochlear duct" RELATED []
@@ -32170,6 +32251,7 @@ is_a: UBERON:0000058 ! duct
 intersection_of: UBERON:0000058 ! duct
 intersection_of: transports UBERON:0001970 ! bile
 relationship: part_of UBERON:0002294 ! biliary system
+relationship: develops_from UBERON:0004912 ! biliary bud
 xref: OpenCyc:Mx4rvdCds5wpEbGdrcN5Y29ycA ! bile duct
 
 [Term]
@@ -34467,6 +34549,7 @@ xref: MAT:0000163 ! sensillum
 xref: MIAA:0000163 ! sensillum
 is_a: UBERON:0000020 ! sense organ
 relationship: part_of UBERON:0001016 ! nervous system
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 xref: EFO:0000939 ! sensillum
 
 [Term]
@@ -34484,6 +34567,7 @@ xref: MIAA:0000165 ! hermaphrodite gonad
 xref: WBbt:0005178 ! hermaphrodite gonad
 is_a: UBERON:0000991 ! gonad
 relationship: part_of UBERON:0000990 ! reproductive system
+relationship: part_of CARO:0000029 ! hermaphroditic organism 
 xref: EFO:0000971 ! hermaphrodite gonad
 
 [Term]
@@ -43297,6 +43381,7 @@ xref: FBbt:00004557 ! sternum
 xref: HAO:0000956 ! sternum
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000915 ! thorax
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: UBERON:0003131
@@ -43308,6 +43393,7 @@ xref: FBbt:00004642 ! tibia
 xref: HAO:0001017 ! tibia
 is_a: UBERON:0000475 ! organism subdivision
 relationship: part_of UBERON:0000978 ! leg
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 xref: ncithesaurus:Tibia ! Tibia
 
 [Term]
@@ -43319,6 +43405,7 @@ xref: FBbt:00005751 ! hypopharynx
 xref: HAO:0000409 ! hypopharynx
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001042 ! pharynx
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: UBERON:0003133
@@ -43458,6 +43545,7 @@ alt_id: UBERON:FBbt_00003018-HAO_0000090
 xref: FBbt:00003018 ! adult thorax
 xref: HAO:0000090 ! adult thorax
 is_a: UBERON:0000915 ! thorax
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: UBERON:0003146
@@ -43487,6 +43575,7 @@ synonym: "plate" RELATED [FBbt:00004475]
 xref: FBbt:00004475 ! sclerite
 xref: HAO:0000909 ! sclerite
 is_a: UBERON:0000479 ! portion of tissue
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: UBERON:0003149
@@ -51583,12 +51672,6 @@ is_a: UBERON:0001091 ! tooth
 xref: ncithesaurus:Molar_Tooth ! Molar Tooth
 
 [Term]
-id: UBERON:0003656
-name: carpal/tarsal bone
-xref: MA:0000295 ! carpal/tarsal bone
-is_a: UBERON:0002428 ! limb bone
-
-[Term]
 id: UBERON:0003658
 name: hip muscle
 xref: MA:0000657 ! hip muscle
@@ -53026,6 +53109,17 @@ xref: MA:0000953 ! hippocampus CA4 [subclass: "hippocampus region"]
 xref: FMA:75741 ! CA4 field
 xref: EFO:0002457 ! hippocampus CA4
 
+[Term]
+id: UBERON:0004912
+name: biliary bud
+def: "a precursor to a liver[WP]." [Wikipedia:Hepatic_diverticulum]
+synonym: "hepatic diverticulum" EXACT []
+synonym: "liver diverticulum" EXACT []
+is_a: UBERON:0003914 ! epithelial tube
+relationship: develops_from UBERON:0001041 ! foregut
+xref: XAO:0000101 ! liver diverticulum
+xref: EHDAA:1530 ! hepatic diverticulum 
+xref: EMAPA:16561 ! biliary bud 
 
 [Term]
 id: UBERON:0003894
@@ -59419,7 +59513,7 @@ id: UBERON:0004540
 name: proper plantar digital artery
 def: "The proper palmar digital arteries travel along the sides of the phalanges (along the contiguous sides of the index, middle, ring, and little fingers), each artery lying just below (dorsal to) its corresponding digital nerve." [Wikipedia:Proper_palmar_digital_arteries]
 comment: the MA term, even though plural, represents the singular, as it is an isa child of artery
-is_a: UBERON:0004553 ! hindlimb digital artery 
+is_a: UBERON:0004554 ! hindlimb digital artery
 synonym: "plantar digital artery proper" EXACT []
 xref: MA:0001968 ! proper plantar digital arteries
 xref: FMA:43971 ! plantar digital artery
@@ -59451,7 +59545,7 @@ intersection_of: UBERON:0004552 ! digital artery
 intersection_of: part_of UBERON:0002102 ! forelimb
 
 [Term]
-id: UBERON:0004553 ! hindlimb digital artery 
+id: UBERON:0004554 ! hindlimb digital artery 
 name: hindlimb digital artery 
 synonym: "plantar digital artery" EXACT []
 xref: MA:0001964 ! hindlimb digital arteries
@@ -59495,7 +59589,7 @@ xref: MA:0002120 ! forelimb digital veins
 xref: FMA:44517 ! Plantar digital vein
 
 [Term]
-id: UBERON:0004563 ! hindlimb digital vein 
+id: UBERON:0004564 ! hindlimb digital vein 
 name: hindlimb digital vein 
 synonym: "plantar digital vein" EXACT []
 intersection_of: UBERON:0004562 ! digital vein
