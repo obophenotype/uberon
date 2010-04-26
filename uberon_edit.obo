@@ -5079,12 +5079,11 @@ name: germ layer
 alt_id: UBERON:FBbt_00000110-FMA_69069
 alt_id: UBERON:XAO_0003011-ZFA_0001122
 def: "A layer of cells produced during the process of gastrulation during the early development of the animal embryo, which is distinct from other such layers of cells, as an early step of cell differentiation. The three types of germ layers are the endoderm, ectoderm, and mesoderm." [Wikipedia:Germ_layer]
-comment: TODO - check FMA class 
 subset: uberon_slim
 synonym: "embryonic germ layer" RELATED []
 synonym: "embryonic germ layers" RELATED []
-synonym: "embryonic tissue" EXACT []
-synonym: "germ layer" RELATED []
+synonym: "embryonic tissue" BROAD [FMA:69069]
+synonym: "germinal layer" EXACT [ncithesaurus:Germinal_Layer]
 synonym: "primary germ layer" EXACT []
 xref: AAO:0000480 ! primary_germ_layer
 xref: BILA:0000035
@@ -5096,6 +5095,7 @@ xref: HOG:0001223 ! primary germ layer
 xref: TAO:0001122 ! primary germ layer
 xref: XAO:0003011 ! primary germ layer
 xref: ZFA:0001122 ! primary germ layer
+xref: ncithesaurus:Germinal_Layer
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0001048 ! primordium
 relationship: develops_from UBERON:0002532 ! epiblast
@@ -6432,8 +6432,6 @@ xref: OpenCyc:Mx4rvVi9QJwpEbGdrcN5Y29ycA
 xref: TAO:0000403 ! ovary
 xref: XAO:0000258 ! ovary
 xref: ZFA:0000403 ! ovary
-is_a: UBERON:0000991 ! gonad
-relationship: part_of UBERON:0000474 ! female reproductive system
 intersection_of: UBERON:0000991 ! gonad
 intersection_of: part_of UBERON:0000474 ! female reproductive system
 synonym: "female reproductive system gonad" EXACT [OBOL:automatic]
@@ -12748,19 +12746,6 @@ intersection_of: part_of UBERON:0004531 ! left side of organism
 xref: ncithesaurus:Left_Fallopian_Tube ! Left Fallopian Tube
 
 [Term]
-id: UBERON:0001304
-name: germinal epithelium of ovary
-alt_id: UBERON:FMA_18629-MA_0001711
-comment: This class was created automatically from a combination of ontologies
-synonym: "epithelium superficiale (ovarium)" EXACT []
-synonym: "ovary germinal epithelium" EXACT []
-xref: FMA:18629 ! Germinal epithelium of ovary
-xref: HOG:0000630 ! ovary germinal epithelium
-xref: MA:0001711 ! ovary germinal epithelium
-is_a: UBERON:0000484 ! simple cuboidal epithelium
-relationship: part_of UBERON:0001307 ! capsule of ovary
-
-[Term]
 id: UBERON:0001305
 name: follicle of ovary
 alt_id: UBERON:FMA_18640-MA_0001707-ZFA_0001110
@@ -13330,7 +13315,6 @@ id: UBERON:0001343
 name: seminiferous tubule of testis
 alt_id: UBERON:FMA_19825-XAO_0003088
 def: "Seminiferous tubules are located in the testicles, and are the specific location of meiosis, and the subsequent creation of gametes, namely spermatozoa. The epithelium of the tubule consists of sustentacular or Sertoli cells, which are tall, columnar type cells that line the tubule. In between the Sertoli cells are spermatogenic cells, which differentiate through meiosis to sperm cells. There are two types: convoluted and straight. convuluted towards the lateral side and straight as the tubule comes medially to form ducts which will exit the testis. [WP,unvetted]." [Wikipedia:Seminiferous_tubule]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "seminiferous tubule" EXACT []
 xref: BTO:0001235
@@ -13346,10 +13330,86 @@ xref: ncithesaurus:Seminiferous_Tubule ! Seminiferous Tubule
 xref: EFO:0001404 ! seminiferous tubules
 
 [Term]
+id: UBERON:0004813
+name: seminiferous tubule epithelium
+def: "The epithelium lining the seminiferous tubules composed of primary male germ cells (spermatogonia) and supporting sertoli cells.  As spermatogenesis proceeds, the developing germ cells migrate toward the lumen. The adluminal compartment, the inner two thirds of the tubules, contains spermatocytes and the more advanced germ cells[GAID]." [Wikipedia:Germinal_epithelium_(male)]
+xref: MA:0001748 ! seminiferous tubule epithelium
+xref: FMA:19885 ! Epithelium of seminiferous tubule of testis
+xref: BTO:0001811 ! seminiferous epithelium
+xref: GAID:401 ! seminiferous epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001343 ! part_of seminiferous tubule of testis
+relationship: has_part CL:0000020 ! spermatogonium
+relationship: has_part CL:0000216 ! Sertoli cell 
+synonym: "epithelial tissue of seminiferous tubule" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of seminiferous tubule of testis" EXACT [OBOL:automatic]
+synonym: "epithelium of seminiferous tubule" EXACT [OBOL:automatic]
+synonym: "epithelium of seminiferous tubule of testis" EXACT [OBOL:automatic]
+synonym: "seminiferous tubule epithelial tissue" EXACT [OBOL:automatic]
+synonym: "seminiferous epithelium" EXACT [BTO:0001811]
+synonym: "male germinal epithelium" EXACT [Wikipedia:Germinal_epithelium_(male)]
+synonym: "germinal epithelium (male)" EXACT [Wikipedia:Germinal_epithelium_(male)]
+synonym: "wall of seminiferous tubule" EXACT [Wikipedia:Germinal_epithelium_(male)]
+
+[Term]
+id: UBERON:0001304
+name: germinal epithelium of ovary
+def: "layer of simple cuboidal cells covering surface of ovary[WP]." [Wikipedia:Germinal_epithelium_(female)]
+alt_id: UBERON:FMA_18629-MA_0001711
+synonym: "epithelium superficiale (ovarium)" EXACT []
+synonym: "ovary germinal epithelium" EXACT []
+synonym: "germinal epithelium (female)" EXACT [Wikipedia:Germinal_epithelium_(female)]
+synonym: "coelomic epithelium" EXACT [EMAPA:17384]
+xref: FMA:18629 ! Germinal epithelium of ovary
+xref: HOG:0000630 ! ovary germinal epithelium
+xref: MA:0001711 ! ovary germinal epithelium
+xref: EHDAA:8126 ! germinal epithelium [part_of: "ovary"]
+xref: EMAPA:17384 ! coelomic epithelium [SYNONYM: "germinal epithelium" ()]
+xref: EMAPA:27564 ! coelomic epithelium [SYNONYM: "germinal epithelium" ()]
+intersection_of: UBERON:0000484 ! simple cuboidal epithelium
+intersection_of: part_of UBERON:0001307 ! capsule of ovary
+
+[Term]
+id: UBERON:0004909
+name: epithelium of gonad
+def: "An epithelium surrounding a gonad." [OBOL:automatic]
+comment: Note that after reasoning this should subsume the more specific germinal epithelium classes. We include the fly structure here although it is not clear if the sheath is an epithelium or a multi-tissue structure that includes epithelium as parts
+synonym: "gonad epithelium" EXACT [OBOL:automatic]
+synonym: "gonadal epithelium" EXACT [OBOL:automatic]
+xref: FBbt:00004859 ! gonadal sheath
+xref: EHDAA:4032 ! germinal epithelium [part_of: "gonadal component"]
+xref: EHDAA:5931 ! germinal epithelium [part_of: "gonad primordium"]
+xref: ncithesaurus:Germinal_Epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000991 ! gonad
+
+[Term]
+id: UBERON:0004910
+name: epithelium of testis
+def: "An epithelium surrounding a testis." [OBOL:automatic]
+comment: Note that after reasoning this should subsume the more specific germinal epithelium classes. We include the fly structure here although it is not clear if the sheath is an epithelium or a multi-tissue structure that includes epithelium as parts
+synonym: "testis epithelium" EXACT [OBOL:automatic]
+synonym: "testis sheath" NARROW SENSU [FBbt:00004955]
+xref: FBbt:00004955 ! testis sheath
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000473 ! testis
+
+[Term]
+id: UBERON:0004911
+name: epithelium of ovary
+def: "An epithelium surrounding an ovary." [OBOL:automatic]
+comment: Note that after reasoning this should subsume the more specific germinal epithelium classes. We include the fly structure here although it is not clear if the sheath is an epithelium or a multi-tissue structure that includes epithelium as parts
+synonym: "ovary epithelium" EXACT [OBOL:automatic]
+synonym: "ovarian epithelium" EXACT [OBOL:automatic]
+synonym: "ovarian sheath" NARROW SENSU [FBbt:00004896]
+xref: FBbt:00004896 ! ovarian sheath
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000473 ! testis
+
+[Term]
 id: UBERON:0001344
 name: epithelium of vagina
 alt_id: UBERON:FMA_19978-MA_0001730
-comment: This class was created automatically from a combination of ontologies
 synonym: "vagina epithelium" EXACT []
 synonym: "vaginal epithelium" EXACT []
 xref: BTO:0000422
@@ -61336,19 +61396,6 @@ synonym: "penile prepuce epithelium" EXACT [OBOL:automatic]
 synonym: "prepuce epithelial tissue" EXACT [OBOL:automatic]
 synonym: "prepuce of penis epithelial tissue" EXACT [OBOL:automatic]
 synonym: "prepuce of penis epithelium" EXACT [OBOL:automatic]
-
-[Term]
-id: UBERON:0004813
-name: seminiferous tubule epithelium
-xref: MA:0001748 ! seminiferous tubule epithelium
-xref: FMA:19885 ! Epithelium of seminiferous tubule of testis
-intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0001343 ! part_of seminiferous tubule of testis
-synonym: "epithelial tissue of seminiferous tubule" EXACT [OBOL:automatic]
-synonym: "epithelial tissue of seminiferous tubule of testis" EXACT [OBOL:automatic]
-synonym: "epithelium of seminiferous tubule" EXACT [OBOL:automatic]
-synonym: "epithelium of seminiferous tubule of testis" EXACT [OBOL:automatic]
-synonym: "seminiferous tubule epithelial tissue" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0004814
