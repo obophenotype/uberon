@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 23:04:2010 16:36
+date: 26:04:2010 17:22
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -1682,7 +1682,7 @@ synonym: "primary lung bud" EXACT []
 xref: BTO:0001643
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-relationship: develops_from UBERON:0000925 ! endoderm
+relationship: develops_from UBERON:0003258 ! endoderm of foregut
 
 [Term]
 id: UBERON:0000119
@@ -3537,6 +3537,10 @@ id: UBERON:0000417
 name: primitive endoderm
 alt_id: UBERON:BTO_0002123-FMA_85520
 xref: BTO:0002123
+xref: EHDAA:44
+xref: EHDAA:79
+xref: EMAPA:16051
+xref: EMAPA:16063
 xref: FMA:85520
 is_a: UBERON:0000925 ! endoderm
 is_a: UBERON:0003256 ! implied link automatically realized ! endoderm of embryo
@@ -4785,12 +4789,11 @@ name: germ layer
 alt_id: UBERON:FBbt_00000110-FMA_69069
 alt_id: UBERON:XAO_0003011-ZFA_0001122
 def: "A layer of cells produced during the process of gastrulation during the early development of the animal embryo, which is distinct from other such layers of cells, as an early step of cell differentiation. The three types of germ layers are the endoderm, ectoderm, and mesoderm." [Wikipedia:Germ_layer]
-comment: TODO - check FMA class
 subset: uberon_slim
 synonym: "embryonic germ layer" RELATED []
 synonym: "embryonic germ layers" RELATED []
-synonym: "embryonic tissue" EXACT []
-synonym: "germ layer" RELATED []
+synonym: "embryonic tissue" BROAD [FMA:69069]
+synonym: "germinal layer" EXACT [ncithesaurus:Germinal_Layer]
 synonym: "primary germ layer" EXACT []
 xref: AAO:0000480
 xref: BILA:0000035
@@ -4800,6 +4803,7 @@ xref: FMA:69069
 xref: GAID:1303
 xref: HOG:0001223
 xref: ncithesaurus:Embryonic_Tissue
+xref: ncithesaurus:Germinal_Layer
 xref: TAO:0001122
 xref: XAO:0003011
 xref: ZFA:0001122
@@ -5864,6 +5868,7 @@ xref: ncithesaurus:Tibia
 xref: OpenCyc:Mx4rvtq3-ZwpEbGdrcN5Y29ycA
 is_a: UBERON:0002495 ! long bone
 is_a: UBERON:0003608 ! implied link automatically realized ! hindlimb long bone
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0001441 ! skeleton of lower limb
 
 [Term]
@@ -5877,6 +5882,7 @@ xref: FMA:82513
 xref: MA:0002821
 xref: ncithesaurus:Trochanter
 is_a: UBERON:0000475 ! organism subdivision
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0000978 ! leg
 
 [Term]
@@ -5901,6 +5907,7 @@ is_a: UBERON:0001272 ! implied link automatically realized ! hip bone
 is_a: UBERON:0002495 ! long bone
 is_a: UBERON:0003608 ! implied link automatically realized ! hindlimb long bone
 is_a: UBERON:0003826 ! implied link automatically realized ! upper leg bone
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0000376 ! upper leg
 relationship: part_of UBERON:0001464 ! hip
 
@@ -5945,6 +5952,7 @@ xref: MA:0000049
 xref: OpenCyc:Mx4rva_rBJwpEbGdrcN5Y29ycA
 xref: XAO:0003212
 is_a: UBERON:0002529 ! limb segment
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0002387 ! foot
 
 [Term]
@@ -5983,7 +5991,6 @@ xref: OpenCyc:Mx4rwLSHK5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003506 ! implied link automatically realized ! chest blood vessel
 is_a: UBERON:0003515 ! implied link automatically realized ! forelimb blood vessel
-relationship: part_of UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001467 ! shoulder
 
 [Term]
@@ -6136,8 +6143,8 @@ relationship: site_of GO:0007276
 id: UBERON:0000992
 name: ovary
 alt_id: UBERON:FBbt_00004865-FMA_7209-MA_0000384-MIAA_0000125-XAO_0000258-ZFA_0000403
-def: "Reproductive organ that produces and releases eggs. // Female reproductive organ." [Wikipedia:Ovary, XB:curator, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "Ovum-producing female reproductive organ." [Wikipedia:Ovary]
+comment: Ovaries of some kind are found in the female reproductive system of many animals that employ sexual reproduction, including invertebrates. However, they develop in a very different way in most invertebrates than they do in vertebrates, and are not truly homologous. Many of the features found in human ovaries are common to all vertebrates, including the presence of follicular cells, tunica albuginea, and so on. However, many species produce a far greater number of eggs during their lifetime than do humans, so that, in fish and amphibians, there may be hundreds, or even millions of fertile eggs present in the ovary at any given time. In these species, fresh eggs may be developing from the germinal epithelium throughout life. Corpora lutea are found only in mammals, and in some elasmobranch fish; in other species, the remnants of the follicle are quickly resorbed by the ovary. In birds, reptiles, and monotremes, the egg is relatively large, filling the follicle, and distorting the shape of the ovary at maturity. Amphibians and reptiles have no ovarian medulla; the central part of the ovary is a hollow, lymph-filled space. The ovary of teleosts is also often hollow, but in this case, the eggs are shed into the cavity, which opens into the oviduct. Although most normal female vertebrates have two ovaries, this is not the case in all species. In birds and platypuses, the right ovary never matures, so that only the left is functional. In some elasmobranchs, the reverse is true, with only the right ovary fully developing. In the primitive jawless fish, and some teleosts, there is only one ovary, formed by the fusion of the paired organs in the embryo[WP].
 subset: uberon_slim
 synonym: "female organism genitalia gonad" EXACT [OBOL:automatic]
 synonym: "female organism genitalia gonada" EXACT [OBOL:automatic]
@@ -6175,11 +6182,10 @@ xref: OpenCyc:Mx4rvVi9QJwpEbGdrcN5Y29ycA
 xref: TAO:0000403
 xref: XAO:0000258
 xref: ZFA:0000403
-is_a: UBERON:0000991 ! gonad
+is_a: UBERON:0000991 ! implied link automatically realized ! gonad
 is_a: UBERON:0003134 ! implied link automatically realized ! female reproductive organ
 intersection_of: UBERON:0000991 ! gonad
 intersection_of: part_of UBERON:0000474 ! female reproductive system
-relationship: part_of UBERON:0000474 ! female reproductive system
 
 [Term]
 id: UBERON:0000993
@@ -6219,7 +6225,6 @@ xref: WBbt:0005319
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000991 ! gonad
-relationship: part_of UBERON:0002537 ! hermaphrodite gonad
 
 [Term]
 id: UBERON:0000995
@@ -7425,6 +7430,7 @@ xref: GAID:1228
 xref: MAT:0000123
 xref: MIAA:0000123
 is_a: UBERON:0000481 ! multi-tissue structure
+relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0001008 ! urinary system
 
 [Term]
@@ -9580,14 +9586,19 @@ relationship: part_of UBERON:0001171 ! portal lobule
 id: UBERON:0001173
 name: biliary tree
 alt_id: UBERON:FMA_14665-XAO_0000455
-def: "Hollow tree organ, the organ parts of which consists of the bile ducts. Examples: There is only one biliary tree." [Wikipedia:Biliary_tree]
-comment: This class was created automatically from a combination of ontologies
+def: "Hollow tree organ, the organ parts of which consists of the bile ducts. Examples: There is only one biliary tree." [Wikipedia:Biliary_tract]
 subset: uberon_slim
+synonym: "biliary tract" EXACT []
 xref: FMA:14665
+xref: GAID:279
+xref: MA:0001273
+xref: ncithesaurus:Biliary_Tract
 xref: XAO:0000455
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+relationship: develops_from UBERON:0004912 ! biliary bud
 relationship: part_of UBERON:0002107 ! liver
+relationship: part_of UBERON:0002294 ! biliary system
 
 [Term]
 id: UBERON:0001174
@@ -10099,7 +10110,7 @@ relationship: part_of UBERON:0001167 ! wall of stomach
 id: UBERON:0001202
 name: pyloric sphincter
 alt_id: UBERON:FMA_14916-XAO_0000457
-def: "The pylorus (from the Greek πυλωρός, " [:unvetted, :WP]
+def: "The region of the stomach that connects to the duodenum. It is divided in two parts: the pyloric antrum, which connects to the body of the stomach. the pyloric canal, which connects to the duodenum. The pyloric sphincter, or valve, is a strong ring of smooth muscle at the end of the pyloric canal and lets food pass from the stomach to the duodenum. It receives sympathetic innervation from celiac ganglion. [WP,unvetted]." [Wikipedia:Pyloric_sphincter]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:14916
@@ -10878,8 +10889,8 @@ synonym: "circular muscle layer of anal canal" EXACT []
 xref: FMA:15710
 xref: MA:0001534
 xref: ncithesaurus:Internal_Anal_Sphincter
-is_a: UBERON:0004519 ! implied link automatically realized ! Muscle of anal triangle
 is_a: UBERON:0004590 ! sphincter muscle
+is_a: UBERON:0004916 ! implied link automatically realized ! anal sphincter
 relationship: part_of UBERON:0001353 ! anal region
 
 [Term]
@@ -11239,10 +11250,8 @@ xref: BTO:0000647
 xref: FMA:15949
 xref: MA:0002693
 is_a: UBERON:0000060 ! implied link automatically realized ! anatomical wall
-is_a: UBERON:0000477 ! anatomical cluster
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: part_of UBERON:0000160 ! intestine
-relationship: part_of UBERON:0000160 ! intestine
 
 [Term]
 id: UBERON:0001263
@@ -11584,6 +11593,7 @@ is_a: UBERON:0000353 ! implied link automatically realized ! parenchyma
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: part_of UBERON:0002107 ! liver
+relationship: develops_from UBERON:0004912 ! biliary bud
 relationship: part_of UBERON:0002107 ! liver
 
 [Term]
@@ -12007,14 +12017,20 @@ intersection_of: part_of UBERON:0004531 ! left side of organism
 id: UBERON:0001304
 name: germinal epithelium of ovary
 alt_id: UBERON:FMA_18629-MA_0001711
-comment: This class was created automatically from a combination of ontologies
+def: "layer of simple cuboidal cells covering surface of ovary[WP]." [Wikipedia:Germinal_epithelium_(female)]
+synonym: "coelomic epithelium" EXACT [EMAPA:17384]
 synonym: "epithelium superficiale (ovarium)" EXACT []
+synonym: "germinal epithelium (female)" EXACT [Wikipedia:Germinal_epithelium_(female)]
 synonym: "ovary germinal epithelium" EXACT []
+xref: EHDAA:8126
+xref: EMAPA:17384
+xref: EMAPA:27564
 xref: FMA:18629
 xref: HOG:0000630
 xref: MA:0001711
-is_a: UBERON:0000484 ! simple cuboidal epithelium
-relationship: part_of UBERON:0001307 ! capsule of ovary
+is_a: UBERON:0000484 ! implied link automatically realized ! simple cuboidal epithelium
+intersection_of: UBERON:0000484 ! simple cuboidal epithelium
+intersection_of: part_of UBERON:0001307 ! capsule of ovary
 
 [Term]
 id: UBERON:0001305
@@ -12594,7 +12610,6 @@ id: UBERON:0001343
 name: seminiferous tubule of testis
 alt_id: UBERON:FMA_19825-XAO_0003088
 def: "Seminiferous tubules are located in the testicles, and are the specific location of meiosis, and the subsequent creation of gametes, namely spermatozoa. The epithelium of the tubule consists of sustentacular or Sertoli cells, which are tall, columnar type cells that line the tubule. In between the Sertoli cells are spermatogenic cells, which differentiate through meiosis to sperm cells. There are two types: convoluted and straight. convuluted towards the lateral side and straight as the tubule comes medially to form ducts which will exit the testis. [WP,unvetted]." [Wikipedia:Seminiferous_tubule]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "seminiferous tubule" EXACT []
 xref: BTO:0001235
@@ -12614,7 +12629,6 @@ id: UBERON:0001344
 name: epithelium of vagina
 alt_id: UBERON:FMA_19978-MA_0001730
 def: "the epithelial layer of the vagina." [MP:0001140]
-comment: This class was created automatically from a combination of ontologies
 synonym: "epithelial tissue of vagina" EXACT [OBOL:automatic]
 synonym: "vagina epithelial tissue" EXACT [OBOL:automatic]
 synonym: "vagina epithelium" EXACT []
@@ -12983,9 +12997,8 @@ synonym: "sphincter ani externus" RELATED []
 xref: FMA:21930
 xref: MA:0001531
 xref: ncithesaurus:External_Anal_Sphincter
-is_a: UBERON:0002379 ! perineal muscle
-is_a: UBERON:0004519 ! implied link automatically realized ! Muscle of anal triangle
 is_a: UBERON:0004590 ! sphincter muscle
+is_a: UBERON:0004916 ! implied link automatically realized ! anal sphincter
 relationship: part_of UBERON:0001353 ! anal region
 
 [Term]
@@ -13603,7 +13616,7 @@ synonym: "common palmar digital arteries" EXACT []
 xref: FMA:22852
 xref: MA:0001957
 xref: ncithesaurus:Common_Palmar_Digital_Artery
-is_a: UBERON:0004553 ! hindlimb digital artery
+is_a: UBERON:0004553 ! forelimb digital artery
 
 [Term]
 id: UBERON:0001411
@@ -13630,7 +13643,7 @@ comment: Some sources distinguish between the "proper palmar digital veins", whi
 synonym: "proximal palmar digital vein" EXACT [Wikipedia:Palmar_digital_veins]
 xref: FMA:22923
 xref: MA:0002121
-is_a: UBERON:0004563 ! hindlimb digital vein
+is_a: UBERON:0004563 ! forelimb digital vein
 
 [Term]
 id: UBERON:0001413
@@ -16429,7 +16442,6 @@ xref: EHDAA:518
 xref: FBbt:00003125
 xref: FMA:45615
 xref: HOG:0000309
-xref: MA:0000917
 xref: OpenCyc:Mx4rvVi0GpwpEbGdrcN5Y29ycA
 xref: TAO:0000112
 xref: ZFA:0000112
@@ -22461,9 +22473,11 @@ xref: HOG:0001045
 xref: MA:0001862
 xref: ncithesaurus:Tracheal_Epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001005 ! respiratory airway
+relationship: develops_from UBERON:0003258 ! endoderm of foregut
 relationship: part_of UBERON:0001005 ! respiratory airway
 
 [Term]
@@ -26469,6 +26483,7 @@ xref: TAO:0000208
 xref: XAO:0000135
 xref: ZFA:0000208
 is_a: UBERON:0002075 ! viscus
+relationship: develops_from UBERON:0004912 ! biliary bud
 relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0002294 ! biliary system
 relationship: part_of UBERON:0002323 ! body cavity
@@ -27475,6 +27490,7 @@ id: UBERON:0002170
 name: upper lobe of right lung
 alt_id: UBERON:FMA_7333-MA_0000429
 comment: This class was created automatically from a combination of ontologies
+synonym: "right cranial lobe of lung" EXACT []
 synonym: "right lung cranial lobe" EXACT []
 synonym: "right lung superior lobe" RELATED []
 synonym: "right upper lobe" EXACT []
@@ -27493,6 +27509,7 @@ name: lower lobe of right lung
 alt_id: UBERON:FMA_7337-MA_0000428
 comment: This class was created automatically from a combination of ontologies
 synonym: "inferior lobe of right lung" EXACT []
+synonym: "right caudal lobe of lung" EXACT []
 synonym: "right lower lobe" EXACT []
 synonym: "right lower lobe of lung" EXACT []
 synonym: "right lung caudal lobe" EXACT []
@@ -29515,11 +29532,7 @@ def: "Anatomical system that consists of the organs and ducts (bile ducts, gallb
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "biliary apparatus" EXACT []
-synonym: "biliary tract" EXACT []
 xref: FMA:79646
-xref: GAID:279
-xref: MA:0001273
-xref: ncithesaurus:Biliary_Tract
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
@@ -29543,7 +29556,7 @@ relationship: part_of UBERON:0002423 ! hepatobiliary system
 id: UBERON:0002295
 name: scala media
 alt_id: UBERON:FMA_79789-MA_0002458
-def: "Error creating thumbnail: Invalid Parameter - white This article needs additional citations for verification. The cochlear duct (or scala media) is an endolymph filled cavity inside the cochlea, located in between the scala tympani and the scala vestibuli, separated by the basilar membrane and Reissner's membrane (the vestibular membrane) respectively. Scala media houses the organ of Corti. [WP,unvetted]." [Wikipedia:Scala_media]
+def: "An endolymph filled cavity inside the cochlea, located in between the scala tympani and the scala vestibuli, separated by the basilar membrane and Reissner's membrane (the vestibular membrane) respectively. Scala media houses the organ of Corti. [WP,unvetted]." [Wikipedia:Scala_media]
 comment: This class was created automatically from a combination of ontologies. TODO: check w wikipedia, cochlear duct
 subset: uberon_slim
 synonym: "cochlear duct" RELATED []
@@ -31590,6 +31603,7 @@ is_a: UBERON:0000058 ! duct
 is_a: UBERON:0003928 ! implied link automatically realized ! digestive system duct
 intersection_of: UBERON:0000058 ! duct
 intersection_of: transports UBERON:0001970 ! bile
+relationship: develops_from UBERON:0004912 ! biliary bud
 relationship: part_of UBERON:0002294 ! biliary system
 
 [Term]
@@ -33905,6 +33919,7 @@ xref: MAT:0000163
 xref: MIAA:0000163
 is_a: UBERON:0000020 ! sense organ
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -33922,6 +33937,7 @@ xref: MAT:0000165
 xref: MIAA:0000165
 xref: WBbt:0005178
 is_a: UBERON:0000991 ! gonad
+relationship: part_of CARO:0000029
 relationship: part_of UBERON:0000990 ! reproductive system
 
 [Term]
@@ -42361,85 +42377,13 @@ is_a: UBERON:0000062 ! organ
 id: UBERON:0003104
 name: mesenchyme
 alt_id: UBERON:XAO_0003046-ZFA_0000393
-def: "Portion of tissue consisting of loosely organized undifferentiated mesodermal cells that give rise to such structures as connective tissues, blood, lymphatics, bone, and cartilage. // A mesh-like cell arrangement, less compact than an epithelium. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [BTO:0001393, Wikipedia:Mesenchyme, ZFIN:curator]
+def: "Portion of tissue consisting of loosely organized undifferentiated mesodermal cells that give rise to such structures as connective tissues, blood, lymphatics, bone, and cartilage[XAO]. A mesh-like cell arrangement, less compact than an epithelium[ZFA]. The part of the embryonic mesoderm, consisting of loosely packed, unspecialized cells set in a gelatinous ground substance, from which connective tissue, bone, cartilage, and the circulatory and lymphatic systems develop[BTO]." [BTO:0001393, Wikipedia:Mesenchyme, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: BTO:0001393
-xref: EHDAA:1094
-xref: EHDAA:1677
-xref: EHDAA:1703
 xref: EHDAA:177
 xref: EHDAA:205
-xref: EHDAA:2362
-xref: EHDAA:2910
-xref: EHDAA:4170
-xref: EHDAA:4176
-xref: EHDAA:4184
-xref: EHDAA:4190
-xref: EHDAA:4200
-xref: EHDAA:4782
-xref: EHDAA:4788
-xref: EHDAA:4794
-xref: EHDAA:5012
-xref: EHDAA:5149
-xref: EHDAA:5157
-xref: EHDAA:5163
-xref: EHDAA:5169
-xref: EHDAA:5175
-xref: EHDAA:5200
-xref: EHDAA:5208
-xref: EHDAA:5873
-xref: EHDAA:5879
-xref: EHDAA:589
-xref: EHDAA:601
-xref: EHDAA:6102
-xref: EHDAA:6108
-xref: EHDAA:6118
-xref: EHDAA:6128
-xref: EHDAA:6138
-xref: EHDAA:6152
-xref: EHDAA:6158
-xref: EHDAA:6164
-xref: EHDAA:6170
-xref: EHDAA:6172
-xref: EHDAA:6182
-xref: EHDAA:6188
-xref: EHDAA:6194
-xref: EHDAA:6204
-xref: EHDAA:6216
-xref: EHDAA:6222
-xref: EHDAA:6232
-xref: EHDAA:6238
-xref: EHDAA:6248
-xref: EHDAA:625
-xref: EHDAA:6258
-xref: EHDAA:6268
-xref: EHDAA:6278
-xref: EHDAA:6288
-xref: EHDAA:6302
-xref: EHDAA:6308
-xref: EHDAA:6314
-xref: EHDAA:6320
-xref: EHDAA:6322
-xref: EHDAA:6528
-xref: EHDAA:6968
-xref: EHDAA:7858
-xref: EHDAA:7993
-xref: EHDAA:8003
-xref: EHDAA:8015
-xref: EHDAA:8021
-xref: EHDAA:8031
-xref: EHDAA:8039
-xref: EHDAA:8051
-xref: EHDAA:8057
-xref: EHDAA:8128
-xref: EHDAA:8150
-xref: EHDAA:8981
-xref: EHDAA:9045
-xref: EHDAA:9051
-xref: EHDAA:9250
-xref: EHDAA:9259
-xref: EHDAA:9287
+xref: EMAPA:16097
 xref: HOG:0000170
 xref: ncithesaurus:Mesenchyme
 xref: TAO:0000393
@@ -42867,6 +42811,7 @@ synonym: "sternum" BROAD []
 xref: FBbt:00004557
 xref: HAO:0000956
 is_a: UBERON:0000061 ! anatomical structure
+relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0000915 ! thorax
 
 [Term]
@@ -42879,6 +42824,7 @@ xref: FBbt:00004642
 xref: HAO:0001017
 xref: ncithesaurus:Tibia
 is_a: UBERON:0000475 ! organism subdivision
+relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0000978 ! leg
 
 [Term]
@@ -42889,6 +42835,7 @@ subset: uberon_slim
 xref: FBbt:00005751
 xref: HAO:0000409
 is_a: UBERON:0000477 ! anatomical cluster
+relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0001042 ! pharynx
 
 [Term]
@@ -43030,6 +42977,7 @@ alt_id: UBERON:FBbt_00003018-HAO_0000090
 xref: FBbt:00003018
 xref: HAO:0000090
 is_a: UBERON:0000915 ! thorax
+relationship: only_in_taxon NCBITaxon:6656
 
 [Term]
 id: UBERON:0003146
@@ -43059,6 +43007,7 @@ synonym: "plate" RELATED [FBbt:00004475]
 xref: FBbt:00004475
 xref: HAO:0000909
 is_a: UBERON:0000479 ! portion of tissue
+relationship: only_in_taxon NCBITaxon:6656
 
 [Term]
 id: UBERON:0003149
@@ -43773,6 +43722,7 @@ intersection_of: part_of UBERON:0003124 ! chorion
 [Term]
 id: UBERON:0003225
 name: primitive endoderm of inner cell mass
+comment: TODO - check
 synonym: "inner cell mass primitive endoderm" EXACT [OBOL:automatic]
 xref: EHDAA:44
 is_a: UBERON:0003226 ! implied link automatically realized ! primitive endoderm of embryo
@@ -43782,6 +43732,7 @@ intersection_of: part_of UBERON:0000087 ! inner cell mass
 [Term]
 id: UBERON:0003226
 name: primitive endoderm of embryo
+comment: TODO - check
 synonym: "developmental tissue primitive endoderm" EXACT [OBOL:automatic]
 synonym: "embryo primitive endoderm" EXACT [OBOL:automatic]
 synonym: "primitive endoderm of developmental tissue" EXACT [OBOL:automatic]
@@ -45751,8 +45702,7 @@ synonym: "epithelial tissue of uterine horn" EXACT [OBOL:automatic]
 synonym: "uterine horn epithelial tissue" EXACT [OBOL:automatic]
 synonym: "uterine horn epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:29030
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004909 ! implied link automatically realized ! epithelium of gonad
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002247 ! uterine horn
 
@@ -50548,11 +50498,10 @@ intersection_of: part_of UBERON:0001558 ! lower respiratory tract
 [Term]
 id: UBERON:0003604
 name: trachea cartilage
-synonym: "cartilage of cartilaginous trachea" EXACT [OBOL:automatic]
-synonym: "cartilage of vertebrate trachea" EXACT [OBOL:automatic]
+synonym: "cartilage of trachea" EXACT [OBOL:automatic]
 synonym: "cartilage of windpipe" EXACT [OBOL:automatic]
 synonym: "cartilaginous trachea cartilage" EXACT [OBOL:automatic]
-synonym: "vertebrate trachea cartilage" EXACT [OBOL:automatic]
+synonym: "tracheal cartilage" EXACT [FMA:7434]
 synonym: "windpipe cartilage" EXACT [OBOL:automatic]
 xref: FMA:7434
 xref: MA:0001857
@@ -51378,6 +51327,7 @@ is_a: UBERON:0001091 ! calcareous tooth
 [Term]
 id: UBERON:0003656
 name: carpal/tarsal bone
+def: "The carpus  (wrist) and tarsus (ankle) of land vertebrates primitively had three rows of carpal or tarsal bones. Often some of these have become lost or fused in evolution. Three proximals. In the hand humans has all three. In the foot the middle proximal appears in 5-15% of people as an os trigonum. Centrale or os centrale, on the medial side. In humans and our closest relatives the African apes (chimpanzees and gorillas) it fuses to the scaphoid where it forms the articulation with the trapezoid bone; occasionally it stays separate. In Man's foot it is the navicular. Some early land vertebrates had more than one (up to three) os centrale per hand or foot. Distals, one per finger / toe at the base of each metacarpal or metatarsal. In mammals the 4th and 5th fuse. In the horse the 1st is lost[WP]." [Wikipedia:Carpus_and_tarsus_of_land_vertebrates]
 xref: MA:0000295
 is_a: UBERON:0002428 ! limb bone
 
@@ -59897,11 +59847,12 @@ relationship: part_of UBERON:0002398 ! hand
 [Term]
 id: UBERON:0004454
 name: tarsus
-def: "the cluster of bones  in the foot  between the tibia  and fibula  and the metatarsus. The bones of the tarsus do not belong to individual toes, whereas those of the metatarsus do. The joint between the tibia and fibula and the tarsus is referred to as the ankle joint[WP]." [Wikipedia:Tarsus_(skeleton)]
+def: "the cluster of bones  in the foot between the tibia  and fibula and the metatarsus. The bones of the tarsus do not belong to individual toes, whereas those of the metatarsus do. The joint between the tibia and fibula and the tarsus is referred to as the ankle joint[WP]." [Wikipedia:Tarsus_(skeleton)]
 xref: GAID:1223
 xref: MA:0000050
 xref: XAO:0003211
 is_a: UBERON:0001445 ! skeleton of foot
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0002387 ! foot
 
 [Term]
@@ -60670,7 +60621,7 @@ comment: the MA term, even though plural, represents the singular, as it is an i
 synonym: "plantar digital artery proper" EXACT []
 xref: FMA:43971
 xref: MA:0001968
-is_a: UBERON:0004553 ! hindlimb digital artery
+is_a: UBERON:0004554 ! hindlimb digital artery
 
 [Term]
 id: UBERON:0004544
@@ -60679,7 +60630,7 @@ synonym: "Epididymis epithelium" EXACT [FMA:19153]
 xref: FMA:19153
 xref: MA:0002825
 is_a: UBERON:0000485 ! implied link automatically realized ! simple columnar epithelium
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004910 ! implied link automatically realized ! epithelium of testis
 intersection_of: UBERON:0000485 ! simple columnar epithelium
 intersection_of: part_of UBERON:0001301 ! epididymis
 
@@ -60767,16 +60718,22 @@ intersection_of: part_of UBERON:0002544 ! digit
 
 [Term]
 id: UBERON:0004553
-name: hindlimb digital artery
+name: forelimb digital artery
 synonym: "palmar digital artery" EXACT []
-synonym: "plantar digital artery" EXACT []
 xref: MA:0001953
-xref: MA:0001964
 is_a: UBERON:0003515 ! implied link automatically realized ! forelimb blood vessel
-is_a: UBERON:0003516 ! implied link automatically realized ! hindlimb blood vessel
 is_a: UBERON:0004552 ! implied link automatically realized ! digital artery
 intersection_of: UBERON:0004552 ! digital artery
 intersection_of: part_of UBERON:0002102 ! forelimb
+
+[Term]
+id: UBERON:0004554
+name: hindlimb digital artery
+synonym: "plantar digital artery" EXACT []
+xref: MA:0001964
+is_a: UBERON:0003516 ! implied link automatically realized ! hindlimb blood vessel
+is_a: UBERON:0004552 ! implied link automatically realized ! digital artery
+intersection_of: UBERON:0004552 ! digital artery
 intersection_of: part_of UBERON:0002103 ! hindlimb
 
 [Term]
@@ -60786,7 +60743,7 @@ alt_id: UBERON:FMA_22923-MA_0002121
 comment: Some sources distinguish between the "proper palmar digital veins", which are more distal, and the "common palmar digital veins", which are more proximal.
 synonym: "distal palmar digital vein" EXACT [Wikipedia:Palmar_digital_veins]
 xref: FMA:22926
-is_a: UBERON:0004563 ! hindlimb digital vein
+is_a: UBERON:0004563 ! forelimb digital vein
 
 [Term]
 id: UBERON:0004562
@@ -60796,16 +60753,22 @@ xref: MA:0002101
 
 [Term]
 id: UBERON:0004563
-name: hindlimb digital vein
+name: forelimb digital vein
 def: "The palmar digital veins (or volar digital veins) on each finger are connected to the dorsal digital veins by oblique intercapitular veins." [Wikipedia:Palmar_digital_veins]
 synonym: "palmar digital vein" EXACT []
-synonym: "plantar digital vein" EXACT []
 xref: FMA:44517
 xref: MA:0002120
-xref: MA:0002133
 is_a: UBERON:0004562 ! implied link automatically realized ! digital vein
 intersection_of: UBERON:0004562 ! digital vein
 intersection_of: part_of UBERON:0002102 ! forelimb
+
+[Term]
+id: UBERON:0004564
+name: hindlimb digital vein
+synonym: "plantar digital vein" EXACT []
+xref: MA:0002133
+is_a: UBERON:0004562 ! implied link automatically realized ! digital vein
+intersection_of: UBERON:0004562 ! digital vein
 intersection_of: part_of UBERON:0002103 ! hindlimb
 
 [Term]
@@ -63110,8 +63073,7 @@ synonym: "neck of uterus epithelium" EXACT [OBOL:automatic]
 synonym: "uterine cervix epithelial tissue" EXACT [OBOL:automatic]
 synonym: "uterine cervix epithelium" EXACT [OBOL:automatic]
 xref: MA:0001724
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004909 ! implied link automatically realized ! epithelium of gonad
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000002 ! uterine cervix
 
@@ -63262,8 +63224,7 @@ synonym: "epithelial tissue of endometrium" EXACT [OBOL:automatic]
 synonym: "epithelium of endometrium" EXACT [OBOL:automatic]
 synonym: "epithelium of tunica mucosa (endometrium)" EXACT [OBOL:automatic]
 xref: MA:0002731
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004909 ! implied link automatically realized ! epithelium of gonad
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001295 ! endometrium
 
@@ -63294,16 +63255,25 @@ intersection_of: part_of UBERON:0001332 ! prepuce of penis
 [Term]
 id: UBERON:0004813
 name: seminiferous tubule epithelium
+def: "The epithelium lining the seminiferous tubules composed of primary male germ cells (spermatogonia) and supporting sertoli cells.  As spermatogenesis proceeds, the developing germ cells migrate toward the lumen. The adluminal compartment, the inner two thirds of the tubules, contains spermatocytes and the more advanced germ cells[GAID]." [Wikipedia:Germinal_epithelium_(male)]
 synonym: "epithelial tissue of seminiferous tubule" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of seminiferous tubule of testis" EXACT [OBOL:automatic]
 synonym: "epithelium of seminiferous tubule" EXACT [OBOL:automatic]
 synonym: "epithelium of seminiferous tubule of testis" EXACT [OBOL:automatic]
+synonym: "germinal epithelium (male)" EXACT [Wikipedia:Germinal_epithelium_(male)]
+synonym: "male germinal epithelium" EXACT [Wikipedia:Germinal_epithelium_(male)]
+synonym: "seminiferous epithelium" EXACT [BTO:0001811]
 synonym: "seminiferous tubule epithelial tissue" EXACT [OBOL:automatic]
+synonym: "wall of seminiferous tubule" EXACT [Wikipedia:Germinal_epithelium_(male)]
+xref: BTO:0001811
 xref: FMA:19885
+xref: GAID:401
 xref: MA:0001748
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001343 ! seminiferous tubule of testis
+relationship: has_part CL:0000020
+relationship: has_part CL:0000216
 
 [Term]
 id: UBERON:0004814
@@ -63992,6 +63962,7 @@ is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/meso
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0002048 ! lung
+relationship: develops_from UBERON:0003081 ! lateral plate mesoderm
 
 [Term]
 id: UBERON:0004884
@@ -64068,8 +64039,11 @@ is_a: UBERON:0000061 ! anatomical structure
 id: UBERON:0004890
 name: right lung accessory lobe
 def: "A specialized lobe of the right lung that extends to the left side of the organism" [LG:0012619]
+comment: not in humans
+synonym: "right lung postcaval lobe" EXACT [MA:0000427]
 xref: MA:0000427
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000101 ! lobe of lung
+relationship: part_of UBERON:0002167 ! right lung
 
 [Term]
 id: UBERON:0004891
@@ -64122,7 +64096,7 @@ intersection_of: part_of UBERON:0002299 ! alveolus of lung
 id: UBERON:0004896
 name: right lung accessory lobe lobar bronchus
 def: "The right lung accessory lobe lobar bronchus is the major airway within the right lung accessory lobe that starts at the division of the bronchus on the right side and ends at the point of its own subdivision into tertiary or segmental bronchi" [LG:0012636]
-is_a: UBERON:0002183 ! implied link automatically realized ! lobar bronchus
+is_a: UBERON:0003404 ! implied link automatically realized ! lobar bronchus of right lung
 intersection_of: UBERON:0002183 ! lobar bronchus
 intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
 
@@ -64230,6 +64204,7 @@ synonym: "lower gastrointestinal tract" EXACT []
 synonym: "lower GI tract" EXACT []
 xref: FMA:49179
 xref: galen:LowerGastrointestinalTract
+xref: MA:0000917
 xref: ncithesaurus:Lower_Gastrointestinal_Tract
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001555 ! gut
@@ -64240,12 +64215,148 @@ name: upper digestive tract
 def: "the region of the digestive tract extending from the mouth cavity through pharynx esophagus stomach and duodenum." [Wikipedia:Alimentary_canal#Upper_gastrointestinal_tract]
 comment: WP: small intestine, large intestine, anus. Anal canal not part of LGIT according to FMA, but anus is considered part of LGIT according to WP. Duodenum overlaps both U/L
 subset: uberon_slim
-synonym: "lower gastrointestinal tract" EXACT []
-synonym: "lower GI tract" EXACT []
+synonym: "upper gastrointestinal tract" EXACT []
+synonym: "upper GI tract" EXACT []
 xref: FMA:49177
 xref: ncithesaurus:Upper_Gastrointestinal_Tract
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001555 ! gut
+
+[Term]
+id: UBERON:0004909
+name: epithelium of gonad
+def: "An epithelium surrounding a gonad." [OBOL:automatic]
+comment: Note that after reasoning this should subsume the more specific germinal epithelium classes. We include the fly structure here although it is not clear if the sheath is an epithelium or a multi-tissue structure that includes epithelium as parts
+synonym: "gonad epithelium" EXACT [OBOL:automatic]
+synonym: "gonadal epithelium" EXACT [OBOL:automatic]
+xref: EHDAA:4032
+xref: EHDAA:5931
+xref: FBbt:00004859
+xref: ncithesaurus:Germinal_Epithelium
+is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000991 ! gonad
+
+[Term]
+id: UBERON:0004910
+name: epithelium of testis
+def: "An epithelium surrounding a testis." [OBOL:automatic]
+comment: Note that after reasoning this should subsume the more specific germinal epithelium classes. We include the fly structure here although it is not clear if the sheath is an epithelium or a multi-tissue structure that includes epithelium as parts
+synonym: "testis epithelium" EXACT [OBOL:automatic]
+synonym: "testis sheath" NARROW SENSU [FBbt:00004955]
+xref: FBbt:00004955
+is_a: UBERON:0004909 ! implied link automatically realized ! epithelium of gonad
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000473 ! testis
+
+[Term]
+id: UBERON:0004911
+name: epithelium of ovary
+def: "An epithelium surrounding an ovary." [OBOL:automatic]
+comment: Note that after reasoning this should subsume the more specific germinal epithelium classes. We include the fly structure here although it is not clear if the sheath is an epithelium or a multi-tissue structure that includes epithelium as parts
+synonym: "ovarian epithelium" EXACT [OBOL:automatic]
+synonym: "ovarian sheath" NARROW SENSU [FBbt:00004896]
+synonym: "ovary epithelium" EXACT [OBOL:automatic]
+xref: FBbt:00004896
+is_a: UBERON:0004909 ! implied link automatically realized ! epithelium of gonad
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000992 ! ovary
+
+[Term]
+id: UBERON:0004912
+name: biliary bud
+def: "a precursor to a liver[WP]." [Wikipedia:Hepatic_diverticulum]
+synonym: "hepatic diverticulum" EXACT []
+synonym: "liver diverticulum" EXACT []
+xref: EHDAA:1530
+xref: EMAPA:16561
+xref: XAO:0000101
+is_a: UBERON:0003914 ! epithelial tube
+relationship: develops_from UBERON:0001041 ! foregut
+
+[Term]
+id: UBERON:0004913
+name: hepatopancreatic ampulla
+def: "A dilation of the duodenal papilla that is the opening of the juncture of the common bile duct and the main pancreatic duct." [Wikipedia:Ampulla_of_Vater]
+synonym: "ampulla of Vater" EXACT []
+synonym: "biliaropancreatic ampulla" EXACT []
+synonym: "Vater's ampulla" EXACT []
+xref: FMA:15076
+xref: GAID:283
+xref: ZFA:0005167
+is_a: UBERON:0000058 ! duct
+relationship: part_of UBERON:0004914 ! duodenal papilla
+
+[Term]
+id: UBERON:0004914
+name: duodenal papilla
+def: "." [Wikipedia:Major_duodenal_papilla, Wikipedia:Minor_duodenal_papilla]
+synonym: "papilla of duodenum" EXACT []
+xref: EMAPA:18662
+xref: EMAPA:18853
+xref: FMA:15953
+
+[Term]
+id: UBERON:0004915
+name: sphincter of hepatopancreatic ampulla
+def: "muscular valve that controls the flow of digestive juices (bile and pancreatic juice) through the ampulla of Vater into the second part of the duodenum. Relaxed by the hormone Cholecystokinin (CCK) via vasoactive intestinal polypeptide (VIP).[WP]." [Wikipedia:Sphincter_of_Oddi]
+synonym: "Oddi's sphincter" EXACT []
+synonym: "sphincter of Oddi" EXACT []
+xref: FMA:15077
+xref: GAID:285
+is_a: UBERON:0004590 ! implied link automatically realized ! sphincter muscle
+intersection_of: UBERON:0004590 ! sphincter muscle
+intersection_of: part_of UBERON:0004913 ! hepatopancreatic ampulla
+
+[Term]
+id: UBERON:0004916
+name: anal sphincter
+def: "A sphincter muscle in the anal part of the perineum." [OBOL:automatic]
+is_a: UBERON:0004519 ! implied link automatically realized ! Muscle of anal triangle
+is_a: UBERON:0004590 ! implied link automatically realized ! sphincter muscle
+intersection_of: UBERON:0004590 ! sphincter muscle
+intersection_of: part_of UBERON:0001353 ! anal region
+
+[Term]
+id: UBERON:0004917
+name: urethral sphincter
+def: "A sphincter muscle surrounding the urethra." [Wikipedia:Urethral_sphincter]
+synonym: "sphincter muscle of urethra" EXACT []
+synonym: "sphincter of urethra" EXACT []
+synonym: "urethral sphincter muscle" EXACT []
+xref: MA:0002650
+is_a: UBERON:0003829 ! implied link automatically realized ! urethra muscle
+is_a: UBERON:0004590 ! implied link automatically realized ! sphincter muscle
+intersection_of: UBERON:0004590 ! sphincter muscle
+intersection_of: part_of UBERON:0000057 ! urethra
+
+[Term]
+id: UBERON:0004918
+name: internal urethral sphincter
+def: "a urethral sphincter muscle which constricts the internal urethral orifice. It is the junction of the urethra with the urinary bladder. The muscle is made of smooth muscle, so therefore it is under involuntary control. It is kept tonically contracted by the sympathetic nervous system and during micturition, is relaxed via the parasympathetic nervous system. This is the primary muscle for preventing the release of urine[WP]." [Wikipedia:Internal_sphincter_muscle_of_urethra]
+synonym: "internal sphincter muscle of urethra" EXACT []
+synonym: "internal sphincter of urethra" EXACT []
+synonym: "internal urethral sphincter muscle" EXACT []
+synonym: "preprostatic sphincter" EXACT [FMA:45769]
+synonym: "supracollicular sphincter" EXACT [FMA:45769]
+xref: FMA:45769
+is_a: UBERON:0004590 ! sphincter muscle
+is_a: UBERON:0004917 ! implied link automatically realized ! urethral sphincter
+relationship: part_of UBERON:0000057 ! urethra
+
+[Term]
+id: UBERON:0004919
+name: external urethral sphincter
+def: "." [Wikipedia:External_sphincter_muscle_of_female_urethra, Wikipedia:External_sphincter_muscle_of_male_urethra]
+comment: TODO male/female subclasses
+synonym: "external sphincter muscle of urethra" EXACT []
+synonym: "external sphincter of urethra" EXACT []
+synonym: "external urethral sphincter muscle" EXACT []
+xref: FMA:85274
+is_a: UBERON:0004590 ! sphincter muscle
+is_a: UBERON:0004917 ! implied link automatically realized ! urethral sphincter
+relationship: part_of UBERON:0000057 ! urethra
 
 [Typedef]
 id: adjacent_to

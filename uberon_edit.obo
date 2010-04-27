@@ -1881,7 +1881,7 @@ name: lung bud
 def: "Structure derived from foregut that becomes a lung." [GO:0060431, Wikipedia:Lung_buds]
 synonym: "primary lung bud" EXACT []
 is_a: UBERON:0000062 ! organ
-relationship: develops_from UBERON:0000925 ! endoderm
+relationship: develops_from UBERON:0003258 ! endoderm of foregut
 xref: BTO:0001643 ! lung bud
 
 [Term]
@@ -3868,6 +3868,10 @@ name: primitive endoderm
 alt_id: UBERON:BTO_0002123-FMA_85520
 xref: BTO:0002123
 xref: FMA:85520 ! Primitive endoderm
+xref: EHDAA:44 ! primitive endoderm
+xref: EHDAA:79 ! primitive endoderm
+xref: EMAPA:16051 ! primitive endoderm
+xref: EMAPA:16063 ! primitive endoderm
 is_a: UBERON:0000925 ! endoderm
 
 [Term]
@@ -7779,8 +7783,8 @@ name: upper digestive tract
 def: "the region of the digestive tract extending from the mouth cavity through pharynx esophagus stomach and duodenum." [Wikipedia:Alimentary_canal#Upper_gastrointestinal_tract]
 comment: WP: small intestine, large intestine, anus. Anal canal not part of LGIT according to FMA, but anus is considered part of LGIT according to WP. Duodenum overlaps both U/L
 subset: uberon_slim
-synonym: "lower gastrointestinal tract" EXACT []
-synonym: "lower GI tract" EXACT []
+synonym: "upper gastrointestinal tract" EXACT []
+synonym: "upper GI tract" EXACT []
 xref: FMA:49177 ! upper gastrointestinal tract
 xref: ncithesaurus:Upper_Gastrointestinal_Tract 
 is_a: UBERON:0000481 ! multi-tissue structure
@@ -13488,7 +13492,7 @@ synonym: "ovarian epithelium" EXACT [OBOL:automatic]
 synonym: "ovarian sheath" NARROW SENSU [FBbt:00004896]
 xref: FBbt:00004896 ! ovarian sheath
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0000473 ! testis
+intersection_of: part_of UBERON:0000992 ! ovary
 
 [Term]
 id: UBERON:0001344
@@ -23238,6 +23242,7 @@ is_a: UBERON:0000485 ! simple columnar epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001005 ! trachea
 relationship: part_of UBERON:0001005 ! trachea
+relationship: develops_from UBERON:0003258 ! endoderm of foregut
 xref: ncithesaurus:Tracheal_Epithelium ! Tracheal Epithelium
 synonym: "epithelial tissue of trachea" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of windpipe" EXACT [OBOL:automatic]
@@ -28149,6 +28154,16 @@ xref: ncithesaurus:Alveolar_Sac ! Alveolar Sac
 xref: OpenCyc:Mx4rwCvh75wpEbGdrcN5Y29ycA ! alveolar sac
 
 [Term]
+id: UBERON:0004890
+name: right lung accessory lobe
+def: "A specialized lobe of the right lung that extends to the left side of the organism" [LG:0012619]
+comment: not in humans
+synonym: "right lung postcaval lobe" EXACT [MA:0000427]
+is_a: UBERON:0000101 ! lobe of lung
+relationship: part_of UBERON:0002167 ! right lung
+xref: MA:0000427 ! right lung accessory lobe
+
+[Term]
 id: UBERON:0002170
 name: upper lobe of right lung
 alt_id: UBERON:FMA_7333-MA_0000429
@@ -28156,6 +28171,7 @@ comment: This class was created automatically from a combination of ontologies
 synonym: "right lung cranial lobe" EXACT []
 synonym: "right lung superior lobe" RELATED []
 synonym: "right upper lobe" EXACT []
+synonym: "right cranial lobe of lung" EXACT []
 synonym: "right upper lobe of lung" EXACT []
 synonym: "superior lobe of right lung" EXACT []
 xref: FMA:7333 ! Upper lobe of right lung
@@ -28174,6 +28190,7 @@ synonym: "inferior lobe of right lung" EXACT []
 synonym: "right lower lobe" EXACT []
 synonym: "right lower lobe of lung" EXACT []
 synonym: "right lung caudal lobe" EXACT []
+synonym: "right caudal lobe of lung" EXACT []
 synonym: "right lung inferior lobe" RELATED []
 xref: FMA:7337 ! Lower lobe of right lung
 xref: HOG:0000857 ! right lung caudal lobe
@@ -44283,6 +44300,7 @@ synonym: "syncytiotrophoblast of chorion (vertebrates)" EXACT [OBOL:automatic]
 id: UBERON:0003225
 name: primitive endoderm of inner cell mass
 xref: EHDAA:44 ! primitive endoderm
+comment: TODO - check
 intersection_of: UBERON:0000417 ! primitive endoderm
 intersection_of: part_of UBERON:0000087 ! inner cell mass
 synonym: "inner cell mass primitive endoderm" EXACT [OBOL:automatic]
@@ -44291,6 +44309,7 @@ synonym: "inner cell mass primitive endoderm" EXACT [OBOL:automatic]
 id: UBERON:0003226
 name: primitive endoderm of embryo
 xref: EHDAA:79 ! primitive endoderm
+comment: TODO - check
 intersection_of: UBERON:0000417 ! primitive endoderm
 intersection_of: part_of UBERON:0000922 ! embryo
 synonym: "developmental tissue primitive endoderm" EXACT [OBOL:automatic]
@@ -50697,13 +50716,13 @@ xref: MA:0001857 ! trachea cartilage
 intersection_of: UBERON:0002418 ! cartilage
 intersection_of: part_of UBERON:0003126 ! vertebrate trachea
 xref: ncithesaurus:Trachea_Cartilage ! Trachea Cartilage
-synonym: "cartilage of cartilaginous trachea" EXACT [OBOL:automatic]
-synonym: "cartilage of vertebrate trachea" EXACT [OBOL:automatic]
+synonym: "tracheal cartilage" EXACT [FMA:7434]
 synonym: "cartilage of windpipe" EXACT [OBOL:automatic]
+synonym: "cartilage of trachea" EXACT [OBOL:automatic]
 synonym: "cartilaginous trachea cartilage" EXACT [OBOL:automatic]
-synonym: "vertebrate trachea cartilage" EXACT [OBOL:automatic]
 synonym: "windpipe cartilage" EXACT [OBOL:automatic]
 xref: FMA:7434 ! Tracheal cartilage
+xref: MA:0001857 ! trachea cartilage
 
 [Term]
 id: UBERON:0003605
@@ -52895,6 +52914,7 @@ name: lung mesenchyme
 def: "the mass of tissue made up of mesenchymal cells in the lung." [LG:0012600]
 intersection_of: UBERON:0003104
 intersection_of: part_of UBERON:0002048 ! lung
+relationship: develops_from UBERON:0003081 ! lateral plate mesoderm
 synonym: "lung-associated mesenchyme" EXACT []
 synonym: "mesenchyme of lung" EXACT [OBOL:automatic]
 
@@ -61986,13 +62006,6 @@ id: UBERON:0004889
 name: lobar bronchus vasculature
 def: "Vasculature that is composed of the tubule structures that carry blood or lymph in the lungs" [LG:0012616]
 is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: UBERON:0004890
-name: right lung accessory lobe
-def: "A specialized lobe of the right lung that extends to the left side of the organism" [LG:0012619]
-is_a: UBERON:0000061 ! anatomical structure
-xref: MA:0000427 ! right lung accessory lobe
 
 [Term]
 id: UBERON:0004891
