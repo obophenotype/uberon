@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 26:04:2010 17:22
+date: 29:04:2010 18:39
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -1913,7 +1913,7 @@ xref: WBbt:0005772
 xref: XAO:0000129
 xref: ZFA:0001338
 is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0001555 ! gut
+relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0000161
@@ -1990,7 +1990,7 @@ xref: XAO:0003029
 xref: ZFA:0000547
 is_a: UBERON:0000061 ! anatomical structure
 relationship: develops_from UBERON:0000930 ! stomodeum
-relationship: part_of UBERON:0001555 ! gut
+relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0000166
@@ -2620,8 +2620,8 @@ alt_id: UBERON:BTO_0000547-FMA_45653
 xref: BTO:0000547
 xref: FMA:45653
 is_a: UBERON:0000477 ! anatomical cluster
-relationship: constitutional_part_of UBERON:0001555 ! gut
-relationship: systemic_part_of UBERON:0001555 ! gut
+relationship: constitutional_part_of UBERON:0001555 ! digestive tract
+relationship: systemic_part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0000329
@@ -4333,7 +4333,7 @@ relationship: adjacent_to UBERON:0000483 ! epithelium
 id: UBERON:0000483
 name: epithelium
 alt_id: UBERON:CARO_0000066-FBbt_00007005-FMA_9639-XAO_0003045-ZFA_0001486
-def: "Portion of tissue, that consists of one or more layers of epithelial cells connected to each other by cell junctions and which is underlain by a basal lamina. Examples: simple squamous epithelium, glandular cuboidal epithelium, transitional epithelium, myoepithelium." [CARO:MAH, Wikipedia:Epithelium, ZFA:0001486, ZFIN:curator]
+def: "Portion of tissue, that consists of one or more layers of epithelial cells connected to each other by cell junctions and which is underlain by a basal lamina. Examples: simple squamous epithelium, glandular cuboidal epithelium, transitional epithelium, myoepithelium[CARO]." [CARO:MAH, Wikipedia:Epithelium]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "epithelial tissue" EXACT []
@@ -4980,7 +4980,7 @@ xref: XAO:0000269
 xref: ZFA:0001290
 is_a: UBERON:0000464 ! anatomical space
 relationship: adjacent_to UBERON:0000924 ! ectoderm
-relationship: part_of UBERON:0001555 ! gut
+relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0000931
@@ -7147,8 +7147,7 @@ xref: HOG:0000285
 xref: MA:0001526
 xref: ncithesaurus:Foregut
 xref: XAO:0000232
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0001007 ! digestive system
+is_a: UBERON:0004921 ! subdivision of digestive tract
 
 [Term]
 id: UBERON:0001042
@@ -7229,7 +7228,6 @@ xref: ncithesaurus:Salivary_Gland
 xref: OpenCyc:Mx4rvVjl5ZwpEbGdrcN5Y29ycA
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0003294 ! implied link automatically realized ! gland of foregut
-is_a: UBERON:0003408 ! implied link automatically realized ! gland of gut
 relationship: secretes UBERON:0001836
 intersection_of: UBERON:0002530 ! gland
 intersection_of: secretes UBERON:0001836 ! saliva
@@ -7252,8 +7250,7 @@ xref: HOG:0000290
 xref: MA:0001564
 xref: ncithesaurus:Midgut
 xref: XAO:0000103
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0001555 ! gut
+is_a: UBERON:0004921 ! subdivision of digestive tract
 
 [Term]
 id: UBERON:0001046
@@ -7272,8 +7269,7 @@ xref: HOG:0000459
 xref: MA:0001527
 xref: ncithesaurus:Hindgut
 xref: XAO:0000104
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0001555 ! gut
+is_a: UBERON:0004921 ! subdivision of digestive tract
 
 [Term]
 id: UBERON:0001047
@@ -10935,7 +10931,7 @@ is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived st
 relationship: develops_from UBERON:0000100 ! blastopore
 relationship: develops_from UBERON:0000931 ! proctodeum
 relationship: part_of UBERON:0001353 ! anal region
-relationship: part_of UBERON:0001555 ! gut
+relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0001246
@@ -11540,7 +11536,7 @@ xref: HOG:0001433
 xref: MA:0001610
 is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0003350 ! implied link automatically realized ! epithelium of mucosa
-is_a: UBERON:0004808 ! implied link automatically realized ! gastrointestinal system epithelium
+is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
 relationship: part_of UBERON:0000945
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000945 ! stomach
@@ -16514,14 +16510,15 @@ relationship: part_of UBERON:0001464 ! hip
 
 [Term]
 id: UBERON:0001555
-name: gut
+name: digestive tract
 alt_id: UBERON:FMA_45615-MA_0000917-ZFA_0000112
-def: "Tube extending from the mouth to the anus." [http://en.wikipedia.org/wiki/Talk\:Human_astrointestinal_tract]
+def: "Tube extending from the mouth to the anus." [http://en.wikipedia.org/wiki/Talk\:Human_astrointestinal_tract, http://sourceforge.net/tracker/?func=detail&atid=440764&aid=2991587&group_id=36855]
 comment: GO says gut is region of DT, from intestines to anus. ZFA treats as synonym for alimentary canal, and treats it as the sum of DT + organs (ZF has no term from stomach). GO says intestines to anus (excludes stomach and esophagus). MA appears to agree with GO (stomach and esophagus are not parts). FMA includes stomach and esophagus as parts of gut -- the FMA divides gut into lower and upper GI tract; it's not clear if this is exhaustive (small intestine is in neither), but lower GI tract may correspond better to the GO definition.
 subset: uberon_slim
 synonym: "alimentary canal" EXACT []
 synonym: "digestive tract" EXACT []
-synonym: "gut tube" EXACT []
+synonym: "gut" BROAD []
+synonym: "gut tube" RELATED []
 xref: BILA:0000083
 xref: BTO:0000545
 xref: EHDAA:518
@@ -21314,6 +21311,7 @@ xref: MA:0000919
 xref: OpenCyc:Mx4rvWPv7pwpEbGdrcN5Y29ycA
 xref: ZFA:0005226
 is_a: UBERON:0001833 ! lip
+relationship: develops_from UBERON:0004068 ! medial nasal prominence
 
 [Term]
 id: UBERON:0001835
@@ -23815,7 +23813,7 @@ xref: FMA:62820
 xref: MA:0000136
 xref: ncithesaurus:Gut_Associated_Lymphoid_Tissue
 is_a: UBERON:0001961 ! mucosa-associated lymphoid tissue
-relationship: part_of UBERON:0001555 ! gut
+relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0001963
@@ -24098,7 +24096,7 @@ xref: TAO:0001499
 xref: ZFA:0001499
 is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0000486 ! multilaminar epithelium
-is_a: UBERON:0004808 ! implied link automatically realized ! gastrointestinal system epithelium
+is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
 relationship: part_of UBERON:0001043
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001043 ! esophagus
@@ -31572,6 +31570,8 @@ synonym: "distal free limb segment of inferior member" EXACT [OBOL:automatic]
 synonym: "distal free limb segment of lower extremity" EXACT [OBOL:automatic]
 synonym: "hind limb autopod" EXACT [OBOL:automatic]
 synonym: "hind limb distal free limb segment" EXACT [OBOL:automatic]
+synonym: "hind paw" NARROW SENSU [EMAPA:17428, OBOL:automatic]
+synonym: "hind-paw" NARROW SENSU [EMAPA:17428]
 synonym: "hindlimb autopod" EXACT [OBOL:automatic]
 synonym: "hindlimb distal free limb segment" EXACT [OBOL:automatic]
 synonym: "inferior member autopod" EXACT [OBOL:automatic]
@@ -31580,6 +31580,7 @@ synonym: "lower extremity autopod" EXACT [OBOL:automatic]
 synonym: "lower extremity distal free limb segment" EXACT [OBOL:automatic]
 synonym: "terminal segment of free lower limb" EXACT []
 xref: BTO:0000476
+xref: EMAPA:17459
 xref: FMA:9664
 xref: GAID:40
 xref: galen:Foot
@@ -31864,9 +31865,12 @@ synonym: "brachial region distal free limb segment" EXACT [OBOL:automatic]
 synonym: "distal free limb segment of arm" EXACT [OBOL:automatic]
 synonym: "distal free limb segment of brachial region" EXACT [OBOL:automatic]
 synonym: "distal free limb segment of proximal segment of free upper limb" EXACT [OBOL:automatic]
+synonym: "fore paw" NARROW SENSU [EMAPA:17428, OBOL:automatic]
+synonym: "fore-paw" NARROW SENSU [EMAPA:17428]
 synonym: "proximal segment of free upper limb autopod" EXACT [OBOL:automatic]
 synonym: "proximal segment of free upper limb distal free limb segment" EXACT [OBOL:automatic]
 synonym: "terminal segment of free upper limb" EXACT []
+xref: EMAPA:17428
 xref: FMA:9712
 xref: GAID:56
 xref: galen:Hand
@@ -41608,9 +41612,13 @@ relationship: part_of UBERON:0000955 ! brain
 id: UBERON:0003053
 name: ventricular zone
 alt_id: UBERON:XAO_0000021-ZFA_0001083
+def: "There are two primary regions that are thought to give rise to neurons that make up the cerebellum. The first region is the ventricular zone (the roof of the fourth ventricle). This area produces Purkinje cells and deep cerebellar nuclear neurons." [BTO:0003654]
 comment: This class was created automatically from a combination of ontologies
+synonym: "brain ventricular zone" EXACT [MA:0000819]
+synonym: "ventricular zone of brain" EXACT []
+synonym: "VZ" EXACT []
 xref: BTO:0003654
-xref: MA:0000817
+xref: MA:0000819
 xref: TAO:0001083
 xref: XAO:0000021
 xref: ZFA:0001083
@@ -44495,8 +44503,7 @@ synonym: "chorion mesoderm" EXACT [OBOL:automatic]
 synonym: "mesoderm of chorion (vertebrates)" EXACT [OBOL:automatic]
 xref: EHDAA:154
 xref: HOG:0000620
-is_a: UBERON:0003263 ! implied link automatically realized ! mesoderm of embryo
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004920 ! implied link automatically realized ! mesoderm of gonad
 relationship: part_of UBERON:0003124
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0003124 ! chorion
@@ -44950,7 +44957,7 @@ name: gland of foregut
 synonym: "foregut gland" EXACT [OBOL:automatic]
 xref: EHDAA:950
 xref: HOG:0000650
-is_a: UBERON:0002530 ! implied link automatically realized ! gland
+is_a: UBERON:0003408 ! implied link automatically realized ! gland of gut
 relationship: part_of UBERON:0001041
 intersection_of: UBERON:0002530 ! gland
 intersection_of: part_of UBERON:0001041 ! foregut
@@ -47572,7 +47579,7 @@ xref: EMAPA:18815
 is_a: UBERON:0002530 ! implied link automatically realized ! gland
 relationship: part_of UBERON:0001555
 intersection_of: UBERON:0002530 ! gland
-intersection_of: part_of UBERON:0001555 ! gut
+intersection_of: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0003409
@@ -52859,6 +52866,7 @@ intersection_of: part_of UBERON:0000165 ! mouth
 id: UBERON:0003820
 name: prostate bud
 def: "A region of the fetal urogenital sinus epithelium destined to become the prostate[GO]." [GO:0060513]
+synonym: "prostate field" NARROW []
 synonym: "prostatic bud" EXACT []
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
@@ -54223,7 +54231,7 @@ xref: ZFA:0005123
 is_a: UBERON:0004808 ! implied link automatically realized ! gastrointestinal system epithelium
 relationship: part_of UBERON:0001555
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0001555 ! gut
+intersection_of: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0003930
@@ -55082,38 +55090,43 @@ relationship: part_of UBERON:0001049 ! neural tube
 
 [Term]
 id: UBERON:0004023
-name: embryonic subventricular zone
-def: "the transient proliferative population of neurons that expands exponentially during late prenatal development; it is a continuous germinal zone distinct from the ventricular zone that surrounds the brain ventricles" [MP:0004274]
+name: ganglionic eminence
+def: "the transient proliferative population of neurons that expands exponentially during late prenatal development; it is a continuous germinal zone distinct from the ventricular zone that surrounds the brain ventricles[MP]. The eminences are found in the ventral part of the telencephalon, where they form bulges in the ventricles. These bulges develop into the basal ganglia.[1]  They also contribute significantly in building up the GABAergic cortical cell population[WP]." [MP:0004274, Wikipedia:Ganglionic_eminence]
+synonym: "embryonic subventricular zone" EXACT []
 synonym: "embryonic/fetal subventricular zone" EXACT []
 synonym: "fetal subventricular zone" EXACT []
-synonym: "subventricular zone" RELATED []
-is_a: UBERON:0000061 ! anatomical structure
+synonym: "GE" BROAD []
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0004024
 name: medial ganglionic eminence
-def: "a distinct elevation of a transient proliferating cell mass of the fetal subventricular zone; this mass contributes most of its cells to the neocortex; however, hippocampal neurons, thalamus, septum and olfactory bulb neurons are also partly derived from the MGE" [MP:0004276]
-comment: TODO fetal subventricular zone
+def: "a distinct elevation of a transient proliferating cell mass of the fetal subventricular zone; this mass contributes most of its cells to the neocortex; however, hippocampal neurons, thalamus, septum and olfactory bulb neurons are also partly derived from the MGE." [MP:0004276]
+synonym: "MGE" BROAD []
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+relationship: part_of UBERON:0004023 ! ganglionic eminence
 
 [Term]
 id: UBERON:0004025
 name: lateral ganglionic eminence
 def: "a distinct elevation of a transient proliferating cell mass of the fetal subventricular zone; this mass contributes most of its cells to the striatum; however, neocortex, thalamus, septum and olfactory bulb neurons are also partly derived from the LGE" [MP:0004277]
 comment: TODO fetal subventricular zone
+synonym: "LGE" BROAD []
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-relationship: part_of UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0004023 ! ganglionic eminence
 
 [Term]
 id: UBERON:0004026
 name: caudal ganglionic eminence
 def: "the caudally located, distinct elevation of a transient proliferating cell mass of the fetal subventricular zone, located adjacent to the lateral ventricle" [MP:0004278]
+synonym: "CGE" BROAD []
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-relationship: part_of UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0004023 ! ganglionic eminence
 
 [Term]
 id: UBERON:0004027
@@ -55448,8 +55461,7 @@ is_a: UBERON:0002050 ! embryonic structure
 [Term]
 id: UBERON:0004068
 name: medial nasal prominence
-def: "the central area of the two limbs of a horseshoe-shaped mesenchymal swelling that lie medial to the olfactory placode or pit in the future nasal region of the embryo; it joins with the ipsilateral maxillary prominence in the formation of half of the upper jaw, and the nasal tip and philtrum of the upper lip develop from it" [MP:0009903]
-is_a: UBERON:0000061 ! anatomical structure
+def: "the central area of the two limbs of a horseshoe-shaped mesenchymal swelling that lie medial to the olfactory placode or pit in the future nasal region of the embryo; it joins with the ipsilateral maxillary prominence in the formation of half of the upper jaw, and the nasal tip and philtrum of the upper lip develop from it" [MP:0009903, Wikipedia:Medial_nasal_prominence]
 is_a: UBERON:0002050 ! embryonic structure
 
 [Term]
@@ -56379,12 +56391,12 @@ relationship: part_of UBERON:0002349 ! myocardium
 
 [Term]
 id: UBERON:0004163
-name: ectodermal midgut
-def: "portions of the gut that are derived from ectoderm." [GO:0007441]
+name: anterior ectodermal midgut
+def: "portions of the midgut that are derived from ectoderm." [GO:0007441]
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0000924 ! ectoderm
-relationship: part_of UBERON:0001555 ! gut
+relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0004164
@@ -56650,7 +56662,7 @@ relationship: develops_from UBERON:0000925
 relationship: part_of UBERON:0001555
 intersection_of: UBERON:0000481 ! multi-tissue structure
 intersection_of: develops_from UBERON:0000925 ! endoderm
-intersection_of: part_of UBERON:0001555 ! gut
+intersection_of: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0004186
@@ -56721,12 +56733,6 @@ def: "The glomus is the vascular component of the pronephros and filters waste f
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002120 ! pronephros
-
-[Term]
-id: UBERON:0004192
-name: glomerular visceral epithelial cell
-def: " A glomerular visceral epithelial cell is a specialized epithelial cell that contains feet that interdigitate with the feet of other glomerular epithelial cells" [GO:0072015]
-is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0004193
@@ -64796,12 +64802,8 @@ intersection_of: part_of UBERON:0000970 ! eye
 [Term]
 id: UBERON:0004860
 name: brain ventricular zone
-synonym: "ventricular zone of brain" EXACT [OBOL:automatic]
-xref: MA:0000819
-is_a: UBERON:0003053 ! implied link automatically realized ! ventricular zone
-relationship: part_of UBERON:0000955
-intersection_of: UBERON:0003053 ! ventricular zone
-intersection_of: part_of UBERON:0000955 ! brain
+is_obsolete: true
+consider: UBERON:0003053
 
 [Term]
 id: UBERON:0004861
@@ -65116,7 +65118,10 @@ intersection_of: part_of UBERON:0002167 ! right lung
 id: UBERON:0004889
 name: lobar bronchus vasculature
 def: "Vasculature that is composed of the tubule structures that carry blood or lymph in the lungs" [LG:0012616]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000102 ! implied link automatically realized ! lung vasculature
+relationship: part_of UBERON:0002183
+intersection_of: UBERON:0002049 ! vasculature
+intersection_of: part_of UBERON:0002183 ! lobar bronchus
 
 [Term]
 id: UBERON:0004890
@@ -65142,7 +65147,7 @@ intersection_of: part_of UBERON:0002183 ! lobar bronchus
 id: UBERON:0004892
 name: lobar bronchus alveolar system
 def: "The lobar bronchus alveolar system is where molecules of oxygen and carbon dioxide are passively exchanged, by diffusion, between the gaseous environment and the blood in the lobar bronchus" [LG:0012622]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000467 ! anatomical system
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: part_of UBERON:0002183 ! lobar bronchus
 
@@ -65293,7 +65298,7 @@ relationship: develops_from UBERON:0000924
 relationship: part_of UBERON:0001555
 intersection_of: UBERON:0000481 ! multi-tissue structure
 intersection_of: develops_from UBERON:0000924 ! ectoderm
-intersection_of: part_of UBERON:0001555 ! gut
+intersection_of: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0004907
@@ -65308,8 +65313,8 @@ xref: FMA:49179
 xref: galen:LowerGastrointestinalTract
 xref: MA:0000917
 xref: ncithesaurus:Lower_Gastrointestinal_Tract
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0001555 ! gut
+is_a: UBERON:0004921 ! subdivision of digestive tract
+relationship: develops_from UBERON:0001046 ! hindgut
 
 [Term]
 id: UBERON:0004908
@@ -65321,8 +65326,8 @@ synonym: "upper gastrointestinal tract" EXACT []
 synonym: "upper GI tract" EXACT []
 xref: FMA:49177
 xref: ncithesaurus:Upper_Gastrointestinal_Tract
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0001555 ! gut
+is_a: UBERON:0004921 ! subdivision of digestive tract
+relationship: develops_from UBERON:0001041 ! foregut
 
 [Term]
 id: UBERON:0004909
@@ -65465,6 +65470,39 @@ xref: FMA:85274
 is_a: UBERON:0004590 ! sphincter muscle
 is_a: UBERON:0004917 ! implied link automatically realized ! urethral sphincter
 relationship: part_of UBERON:0000057 ! urethra
+
+[Term]
+id: UBERON:0004920
+name: mesoderm of gonad
+synonym: "gonad mesoderm" EXACT [OBOL:automatic]
+synonym: "gonadal mesoderm" EXACT [OBOL:automatic]
+is_a: UBERON:0003263 ! implied link automatically realized ! mesoderm of embryo
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0000991
+intersection_of: UBERON:0000926 ! mesoderm
+intersection_of: part_of UBERON:0000991 ! gonad
+
+[Term]
+id: UBERON:0004921
+name: subdivision of digestive tract
+comment: intended to denote both embryonic and adult structures. TODO
+xref: FMA:71131
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001555 ! digestive tract
+
+[Term]
+id: UBERON:0004922
+name: subventricular zone
+def: "A paired brain structure situated throughout the lateral walls of the lateral ventricles. Along with the subgranular zone of dentate gyrus, subventricular zone serves as a source of neural stem cells in the process of adult neurogenesis. It harbors the largest population of proliferating cells in the adult brain of rodents, monkeys and humans. Neurons generated in SVZ travel to the olfactory bulb via the rostral migratory stream[BTO]. a paired brain  structure situated throughout the lateral walls of the lateral ventricles.[2]  It has been associated with having four distinct layers[3]  of variable thickness and cell density, as well as cellular composition[WP]." [Wikipedia:Subventricular_zone]
+synonym: "brain subventricular zone" EXACT [MA:0000817]
+synonym: "subventricular zone of brain" EXACT []
+synonym: "SVZ" EXACT []
+xref: BTO:0003090
+xref: MA:0000817
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+relationship: develops_from UBERON:0004023 ! ganglionic eminence
+relationship: part_of UBERON:0000955 ! brain
 
 [Typedef]
 id: adjacent_to
