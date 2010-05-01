@@ -117,19 +117,22 @@ uberon-%-misalign.txt: %.obo
 %-misalign.txt: %-imports.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
+uberon-qc: uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
-	blip -i -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
-uberon-dv.txt:
-	blip -u ontol_manifest_disjoint_from_preceded_by -r uberon -u query_obo findall disjoint_from_violation/3 -label > $@
-uberon-dv-%.txt:
-	blip -u ontol_manifest_disjoint_from_preceded_by -r uberon -r $* -u query_obo findall xref_disjoint_from_violation_nr/3 -label > $@
-uberon-jepd-dv-%.txt:
-	blip -r uberon -r $* -u query_obo findall jepd_xref_disjoint_violation_nr/3 -label > $@
-uberon-discv-%.txt:
-	blip -u ontol_manifest_disconnected_from_adjacent -r uberon -r $* -u query_obo findall xref_disjoint_over_violation/4 -label > $@
-uberon-discv.txt:
-	blip -u ontol_manifest_disconnected_from_adjacent -r uberon  -u query_obo findall disjoint_over_violation/4 -label > $@
+	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
+%-dv.txt: %.obo
+	blip -u ontol_manifest_disjoint_from_preceded_by -i $< -u query_obo findall disjoint_from_violation/3 -label > $@
+%-dv-%.txt: %.obo
+	blip -u ontol_manifest_disjoint_from_preceded_by -i $< -r $* -u query_obo findall xref_disjoint_from_violation_nr/3 -label > $@
+%-jepd-dv-%.txt: %.obo
+	blip -i $< -r $* -u query_obo findall jepd_xref_disjoint_violation_nr/3 -label > $@
+%-discv-%.txt: %.obo
+	blip -u ontol_manifest_disconnected_from_adjacent -i $< -r $* -u query_obo findall xref_disjoint_over_violation/4 -label > $@
+%-discv.txt: %.obo
+	blip -u ontol_manifest_disconnected_from_adjacent -i $<  -u query_obo findall disjoint_over_violation/4 -label > $@
+%-taxcheck.txt: %.obo
+	blip-findall -i adhoc_uberon.pro -i $< "class_taxon_invalid(U,X,T,Y,TY)" > $@
 
 # no stemming
 zfa-xao-aln.tbl:

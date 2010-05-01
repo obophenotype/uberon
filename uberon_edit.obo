@@ -160,16 +160,6 @@ relationship: part_of UBERON:0000949 ! endocrine system
 relationship: part_of UBERON:0001894 ! diencephalon
 
 [Term]
-id: UBERON:0000009
-name: submucosa
-def: "In the gastrointestinal tract, the submucosa is the layer of dense irregular connective tissue that supports the mucosa, as well as joins the mucosa to the bulk of underlying smooth muscle (fibers running circularly within layer of longitudinal muscle). [WP,unvetted]." [Wikipedia:Submucosa]
-subset: uberon_slim
-xref: FMA:85391 ! Submucosa
-is_a: UBERON:0000064 ! organ part
-xref: ncithesaurus:Submucosa ! Submucosa
-xref: BTO:0002107 ! submucosa
-
-[Term]
 id: UBERON:0000010
 name: peripheral nervous system
 def: "Nervous structures including ganglia outside of the central nervous system. Divided into somatic nervous system and autonomic nervous system" [FB:gg, OMD:peripheral+nervous+system, Wikipedia:Peripheral_nervous_system, ZFIN:curator]
@@ -597,27 +587,13 @@ relationship: part_of UBERON:0002465 ! lymphoid system
 xref: ncithesaurus:Lymph_Node ! Lymph Node
 xref: OpenCyc:Mx4rwLPqLpwpEbGdrcN5Y29ycA ! lymph node
 
-[Term]
-id: UBERON:0000030
-name: lamina propria
-def: "A thin layer of loose connective tissue which lies beneath the epithelium and together with the epithelium constitutes the mucosa[WP]. The lamina propria contains capillaries and a central lacteal (lymph vessel) in the small intestine, as well as lymphoid tissue. Lamina propria also contains glands with the ducts opening on to the mucosal epithelium, that secrete mucus and serous secretions." [Wikipedia:Lamina_propria]
-subset: uberon_slim
-synonym: "lamina propria mucosa" EXACT []
-synonym: "lamina propria mucosae" EXACT []
-is_a: UBERON:0002384 ! connective tissue
-relationship: adjacent_to UBERON:0000483 ! epithelium
-relationship: part_of UBERON:0000344 ! mucosa
-xref: ncithesaurus:Lamina_Propria ! Lamina Propria
-xref: BTO:0002330 ! lamina propria
 
 [Term]
 id: UBERON:0000031
 name: lamina propria of trachea
 synonym: "trachea lamina propria" EXACT []
 synonym: "tracheal lamina propria" EXACT []
-xref: FMA:62517 ! Lamina propria
 xref: MA:0001858 ! trachea lamina propria
-is_a: UBERON:0000030 ! lamina propria
 intersection_of: UBERON:0000030 ! lamina propria
 intersection_of: part_of UBERON:0001005 ! trachea
 relationship: part_of UBERON:0001005 ! trachea
@@ -738,8 +714,8 @@ is_a: UBERON:0003103 ! compound organ
 [Term]
 id: UBERON:0000042
 name: serous membrane
-def: "a smooth membrane consisting of a thin layer of cells which excrete serous fluid. Serous membranes line and enclose several body cavities, known as serous cavities, where they secrete a lubricating fluid which reduces friction from muscle movement. Serosa is not to be confused with adventitia, a connective tissue layer which binds together structures rather than reducing friction between them[WP]." [Wikipedia:Serosa, Wikipedia:Serous_membrane]
-comment: TODO - add generic membrane parent?
+def: "a smooth membrane consisting of a thin layer of cells which excrete serous fluid. Serous membranes line and enclose several body cavities, known as serous cavities, where they secrete a lubricating fluid which reduces friction from muscle movement. Serosa is not to be confused with adventitia, a connective tissue layer which binds together structures rather than reducing friction between them. Each serous membrane is composed of a secretory epithelial  layer and a connective tissue layer underneath. The epithelial layer, known as mesothelium, consists of a single layer of avascular  flat nucleated cells (cuboidal epithelium) which produce the lubricating serous fluid. This fluid has a consistency similar to thin mucus. These cells are bound tightly to the underlying connective tissue. The connective tissue layer provides the blood vessels and nerves for the overlying secretory cells, and also serves as the binding layer which allows the whole serous membrane to adhere to organs and other structures.[WP]." [Wikipedia:Serosa, Wikipedia:Serous_membrane]
+comment: TODO - add generic membrane parent? TODO - split into serosa and serous membrane?
 subset: uberon_slim
 synonym: "serosa" EXACT []
 is_a: UBERON:0004457 ! cavity lining
@@ -2964,6 +2940,12 @@ xref: OpenCyc:Mx4rwQtO_JwpEbGdrcN5Y29ycA ! throat
 def: "In anatomy, the throat is the anterior part of the neck, in front of the vertebral column. It consists of the pharynx and larynx. An important feature of the throat is the epiglottis, a flap which separates the esophagus from the trachea and prevents inhalation of food or drink. The throat contains various blood vessels, various pharyngeal muscles, the trachea (windpipe) and the esophagus. The hyoid bone and the clavicle are the only bones located in the throat of mammals. It is sometimes considered a synonym for fauces. [WP,unvetted]." [Wikipedia:Throat]
 
 [Term]
+id: UBERON:0004923
+name: organ component layer
+xref: FMA:82485 ! Organ component layer
+is_a: UBERON:0000064 ! organ part
+
+[Term]
 id: UBERON:0000344
 name: mucosa
 alt_id: UBERON:BTO_0000886-FMA_85355
@@ -2973,7 +2955,7 @@ synonym: "mucosa of organ" EXACT [FMA:85355]
 synonym: "mucous membrane" EXACT [FMA:85355]
 synonym: "organ mucosa" EXACT [FMA:85355]
 synonym: "region of mucosa" RELATED [FMA:85358]
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004923 ! organ component layer
 xref: BTO:0000886
 xref: FMA:85355 ! Mucosa
 xref: ncithesaurus:Mucosa ! Mucosa
@@ -2981,6 +2963,33 @@ xref: GAID:297 ! mucous membrane
 xref: FMA:85358 ! Region of mucosa
 xref: galen:Mucosa ! mucosa
 xref: OpenCyc:Mx4rvmKNOpwpEbGdrcN5Y29ycA ! mucous membrane
+
+[Term]
+id: UBERON:0000009
+name: submucosa
+def: "A layer of dense irregular connective tissue in the gastrointestinal tract that supports the mucosa, as well as joins the mucosa to the bulk of underlying smooth muscle (fibers running circularly within layer of longitudinal muscle). [WP,unvetted]." [Wikipedia:Submucosa]
+comment: see comments re FMA for mucosa
+subset: uberon_slim
+xref: FMA:85391 ! Submucosa
+xref: FMA:85392 ! Region of submucosa
+is_a: UBERON:0004923 ! organ component layer
+relationship: has_part UBERON:0002384 ! connective tissue
+xref: ncithesaurus:Submucosa ! Submucosa
+xref: BTO:0002107 ! submucosa
+
+[Term]
+id: UBERON:0000030
+name: lamina propria
+def: "A thin layer of loose connective tissue which lies beneath the epithelium and together with the epithelium constitutes the mucosa[WP]. The lamina propria contains capillaries and a central lacteal (lymph vessel) in the small intestine, as well as lymphoid tissue. Lamina propria also contains glands with the ducts opening on to the mucosal epithelium, that secrete mucus and serous secretions." [Wikipedia:Lamina_propria]
+subset: uberon_slim
+synonym: "lamina propria mucosa" EXACT []
+synonym: "lamina propria mucosae" EXACT []
+is_a: UBERON:0004923 ! organ component layer
+relationship: has_part UBERON:0002384 ! connective tissue
+relationship: adjacent_to UBERON:0000483 ! epithelium
+relationship: part_of UBERON:0000344 ! mucosa
+xref: ncithesaurus:Lamina_Propria ! Lamina Propria
+xref: BTO:0002330 ! lamina propria
 
 [Term]
 id: UBERON:0000345
@@ -6001,7 +6010,7 @@ id: UBERON:0000977
 name: pleura
 alt_id: UBERON:FBbt_00004591-FMA_9583-MA_0000433
 def: "The delicate serous membrane that lines each half of the thorax of mammals and is folded back over the surface of the lung of the same side[BTO]." [Wikipedia:Pleura]
-comment: This class was created automatically from a combination of ontologies
+comment: In mouse, is_a cavity lining. In FMA, is_a (viscous) serous membrane
 subset: uberon_slim
 synonym: "pleura" RELATED []
 synonym: "wall of pleural sac" EXACT []
@@ -10469,29 +10478,6 @@ union_of: UBERON:0004457 ! cavity lining
 union_of: UBERON:0002323 ! body cavity
 
 [Term]
-id: UBERON:0004459
-name: peritoneal cavity lining
-is_a: UBERON:0004457 ! cavity lining
-xref: MA:0000449 ! peritoneal cavity lining
-relationship: part_of UBERON:0002358 ! peritoneum
-
-[Term]
-id: UBERON:0001179
-name: peritoneal cavity
-alt_id: UBERON:FMA_14704-MA_0000054
-def: "Cavity of serous sac surrounded by the peritoneum." [Wikipedia:Peritoneal_cavity]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: FMA:14704 ! Peritoneal cavity
-xref: GAID:24 ! peritoneal cavity
-xref: HOG:0000852 ! peritoneal cavity
-xref: MA:0000054 ! peritoneal cavity
-is_a: UBERON:0002323 ! body cavity
-xref: ncithesaurus:Peritoneal_Cavity ! Peritoneal Cavity
-xref: BTO:0001782 ! peritoneal cavity
-relationship: surrounded_by UBERON:0002358 ! peritoneum
-
-[Term]
 id: UBERON:0001180
 name: superior recess of lesser sac
 alt_id: UBERON:FMA_14708-MA_0000447
@@ -14518,7 +14504,7 @@ intersection_of: part_of UBERON:0000974 ! neck
 relationship: part_of UBERON:0000974 ! neck
 xref: FMA:23022 ! Zone of skin of neck
 xref: ncithesaurus:Neck_Skin ! Neck Skin
-synonym: "neck (volume)  zone of skin" EXACT [OBOL:automatic]
+synonym: "neck (volume) zone of skin" EXACT [OBOL:automatic]
 synonym: "neck zone of skin" EXACT [OBOL:automatic]
 synonym: "zone of skin of neck" EXACT [OBOL:automatic]
 synonym: "zone of skin of neck (volume)" EXACT [OBOL:automatic]
@@ -23627,10 +23613,10 @@ xref: NIF_GrossAnatomy:birnlex_764 ! Paraventricular nucleus of thalamus
 is_a: UBERON:0001930 ! paraventricular nucleus of hypothalamus
 intersection_of: UBERON:0001930 ! paraventricular nucleus of hypothalamus
 intersection_of: part_of UBERON:0001897 ! thalamus
-synonym: "dorsal thalamus (anthoney)  filiform nucleus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  paraventricular hypothalamic nucleus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  paraventricular nucleus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  paraventricular nucleus of hypothalamus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) filiform nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) paraventricular hypothalamic nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) paraventricular nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) paraventricular nucleus of hypothalamus" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus filiform nucleus" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus paraventricular hypothalamic nucleus" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus paraventricular nucleus" EXACT [OBOL:automatic]
@@ -28992,7 +28978,7 @@ synonym: "macula of sacculus (labyrinthus vestibularis)" EXACT [OBOL:automatic]
 synonym: "membranous labyrinth saccule macula" EXACT [OBOL:automatic]
 synonym: "saccule macula" EXACT [OBOL:automatic]
 synonym: "saccule of membranous labyrinth macula" EXACT [OBOL:automatic]
-synonym: "sacculus (labyrinthus vestibularis)  macula" EXACT [OBOL:automatic]
+synonym: "sacculus (labyrinthus vestibularis) macula" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0002213
@@ -29029,7 +29015,7 @@ synonym: "macula of utriculus (labyrinthus vestibularis)" EXACT [OBOL:automatic]
 synonym: "membranous labyrinth utricle macula" EXACT [OBOL:automatic]
 synonym: "utricle macula" EXACT [OBOL:automatic]
 synonym: "utricle of membranous labyrinth macula" EXACT [OBOL:automatic]
-synonym: "utriculus (labyrinthus vestibularis)  macula" EXACT [OBOL:automatic]
+synonym: "utriculus (labyrinthus vestibularis) macula" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0002215
@@ -31493,11 +31479,27 @@ xref: ncithesaurus:Cavity ! Body Cavity
 xref: BTO:0001707 ! coelom
 
 [Term]
+id: UBERON:0001179
+name: peritoneal cavity
+alt_id: UBERON:FMA_14704-MA_0000054
+def: "Cavity of serous sac surrounded by the peritoneum." [Wikipedia:Peritoneal_cavity]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+xref: FMA:14704 ! Peritoneal cavity
+xref: GAID:24 ! peritoneal cavity
+xref: HOG:0000852 ! peritoneal cavity
+xref: MA:0000054 ! peritoneal cavity
+is_a: UBERON:0002323 ! body cavity
+xref: ncithesaurus:Peritoneal_Cavity ! Peritoneal Cavity
+xref: BTO:0001782 ! peritoneal cavity
+relationship: surrounded_by UBERON:0002358 ! peritoneum
+
+[Term]
 id: UBERON:0002358
 name: peritoneum
 alt_id: UBERON:FMA_9584-XAO_0000139-ZFA_0005120
-def: "A serous membrane that forms the lining of the abdominal cavity or the coelom — it covers most of the intra-abdominal (or coelomic) organs — in higher vertebrates and some invertebrates (annelids, for instance). It is composed of a layer of mesothelium supported by a thin layer of connective tissue. The peritoneum both supports the abdominal organs and serves as a conduit for their blood and lymph vessels and nerves[WP]." [Wikipedia:Peritoneum, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "A serous membrane that forms the lining of the abdominal cavity or the coelom — it covers most of the intra-abdominal (or coelomic) organs — in higher vertebrates and some invertebrates (annelids, for instance). It is composed of a layer of mesothelium supported by a thin layer of connective tissue. The peritoneum both supports the abdominal organs and serves as a conduit for their blood and lymph vessels and nerves[WP]. The smooth transparent serous membrane that lines the cavity of the abdomen of a mammal and is folded inward over the abdominal and pelvic viscera[BTO]. The endothelial lining of the ABDOMINAL CAVITY. The parietal peritoneum covers the inside of the ABDOMINAL WALL and the visceral peritoneum covers the bowel, the MESENTERY, and certain of the organs. The portion that covers the bowel becomes the serosal layer of the bowel wall[GAID]." [Wikipedia:Peritoneum, ZFIN:curator]
+comment: TODO - in ZFA is_a epithelium
 subset: uberon_slim
 xref: FMA:9584 ! Peritoneum
 xref: GAID:18 ! peritoneum
@@ -31507,7 +31509,6 @@ xref: XAO:0000139 ! peritoneum
 xref: ZFA:0005120 ! peritoneum
 xref: ncithesaurus:Peritoneum ! Peritoneum
 xref: BTO:0001472 ! peritoneum
-is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0000042 ! serous membrane
 relationship: part_of UBERON:0003684 ! abdominal cavity
 relationship: develops_from UBERON:0000926 ! mesoderm
@@ -31518,13 +31519,16 @@ xref: OpenCyc:Mx4rvjJ72ZwpEbGdrcN5Y29ycA ! peritoneum
 id: UBERON:0001366
 name: parietal peritoneum
 alt_id: UBERON:FMA_21451-ZFA_0005131
+alt_id: UBERON:0004459
 comment: fix coordinated with ZFA
 def: "The peritoneum that lines the walls of the peritoneal cavity." [Wikipedia:Parietal_peritoneum, ZFIN:curator]
 subset: uberon_slim
+synonym: "peritoneal cavity lining" EXACT [MA:0000449]
 xref: FMA:21451 ! Parietal peritoneum
 xref: HOG:0001527 ! parietal peritoneum
 xref: TAO:0005131 ! parietal peritoneum
 xref: ZFA:0005131 ! parietal peritoneum
+xref: MA:0000449 ! peritoneal cavity lining
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0002358 ! peritoneum
 relationship: bounds UBERON:0001179 ! peritoneal cavity
@@ -31550,7 +31554,7 @@ name: serosa of uterus
 alt_id: UBERON:FMA_17744-MA_0001729
 def: "Outer serosa layer of the uterus." [Wikipedia:Perimetrium]
 comment: TODO - check for parallel structure with peritoneum
-synonym: "perimetrium" RELATED [http://en.wikipedia.org/wiki/Perimetrium]
+synonym: "perimetrium" EXACT [http://en.wikipedia.org/wiki/Perimetrium]
 synonym: "serous coat of uterus" EXACT []
 synonym: "tunica serosa (perimetrium)" EXACT []
 synonym: "uterine serosa" EXACT []
@@ -31961,7 +31965,7 @@ relationship: part_of UBERON:0000974 ! neck
 xref: ncithesaurus:Neck_Muscle ! Neck Muscle
 synonym: "muscle organ of neck" EXACT [OBOL:automatic]
 synonym: "muscle organ of neck (volume)" EXACT [OBOL:automatic]
-synonym: "neck (volume)  muscle organ" EXACT [OBOL:automatic]
+synonym: "neck (volume) muscle organ" EXACT [OBOL:automatic]
 synonym: "neck muscle organ" EXACT [OBOL:automatic]
 
 [Term]
@@ -37623,9 +37627,9 @@ xref: NIF_GrossAnatomy:birnlex_1517 ! Regional part of thalamus
 is_a: UBERON:0002784 ! regional part of diencephalon
 intersection_of: UBERON:0002616 ! regional part of brain
 intersection_of: part_of UBERON:0001897 ! thalamus
-synonym: "dorsal thalamus (anthoney)  neuraxis segment" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  regional part of brain" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  segment of brain" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) neuraxis segment" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) regional part of brain" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) segment of brain" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus neuraxis segment" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus regional part of brain" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus segment of brain" EXACT [OBOL:automatic]
@@ -37653,10 +37657,10 @@ synonym: "brain anatomical structure of thalamus" EXACT [OBOL:automatic]
 synonym: "brain biological structure of dorsal thalamus" EXACT [OBOL:automatic]
 synonym: "brain biological structure of dorsal thalamus (anthoney)" EXACT [OBOL:automatic]
 synonym: "brain biological structure of thalamus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  anatomical structure of brain" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  biological structure of brain" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  brain anatomical structure" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  brain biological structure" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) anatomical structure of brain" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) biological structure of brain" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) brain anatomical structure" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) brain biological structure" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus anatomical structure of brain" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus biological structure of brain" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus brain anatomical structure" EXACT [OBOL:automatic]
@@ -40332,14 +40336,14 @@ synonym: "arcuate nucleus-2 of thalamus" EXACT [OBOL:automatic]
 synonym: "arcuate periventricular nucleus of dorsal thalamus" EXACT [OBOL:automatic]
 synonym: "arcuate periventricular nucleus of dorsal thalamus (anthoney)" EXACT [OBOL:automatic]
 synonym: "arcuate periventricular nucleus of thalamus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  arcuate hypothalamic nucleus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  arcuate nucleus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  arcuate nucleus of hypothalamus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  arcuate nucleus-2" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  arcuate periventricular nucleus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  infundibular hypothalamic nucleus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  infundibular nucleus" EXACT [OBOL:automatic]
-synonym: "dorsal thalamus (anthoney)  infundibular periventricular nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) arcuate hypothalamic nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) arcuate nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) arcuate nucleus of hypothalamus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) arcuate nucleus-2" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) arcuate periventricular nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) infundibular hypothalamic nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) infundibular nucleus" EXACT [OBOL:automatic]
+synonym: "dorsal thalamus (anthoney) infundibular periventricular nucleus" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus arcuate hypothalamic nucleus" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus arcuate nucleus" EXACT [OBOL:automatic]
 synonym: "dorsal thalamus arcuate nucleus of hypothalamus" EXACT [OBOL:automatic]
@@ -44336,7 +44340,7 @@ name: syncytiotrophoblast of chorion
 xref: EHDAA:156 ! syncytiotrophoblast
 intersection_of: UBERON:0000371 ! syncytiotrophoblast
 intersection_of: part_of UBERON:0003124 ! chorion
-synonym: "chorion (vertebrates)  syncytiotrophoblast" EXACT [OBOL:automatic]
+synonym: "chorion (vertebrates) syncytiotrophoblast" EXACT [OBOL:automatic]
 synonym: "chorion syncytiotrophoblast" EXACT [OBOL:automatic]
 synonym: "syncytiotrophoblast of chorion (vertebrates)" EXACT [OBOL:automatic]
 
@@ -44521,8 +44525,8 @@ synonym: "utricle epithelial tissue" EXACT [OBOL:automatic]
 synonym: "utricle epithelium" EXACT [OBOL:automatic]
 synonym: "utricle of membranous labyrinth epithelial tissue" EXACT [OBOL:automatic]
 synonym: "utricle of membranous labyrinth epithelium" EXACT [OBOL:automatic]
-synonym: "utriculus (labyrinthus vestibularis)  epithelial tissue" EXACT [OBOL:automatic]
-synonym: "utriculus (labyrinthus vestibularis)  epithelium" EXACT [OBOL:automatic]
+synonym: "utriculus (labyrinthus vestibularis) epithelial tissue" EXACT [OBOL:automatic]
+synonym: "utriculus (labyrinthus vestibularis) epithelium" EXACT [OBOL:automatic]
 xref: MA:0001204 ! utricle epithelium
 
 [Term]
@@ -44545,8 +44549,8 @@ synonym: "saccule epithelial tissue" EXACT [OBOL:automatic]
 synonym: "saccule epithelium" EXACT [OBOL:automatic]
 synonym: "saccule of membranous labyrinth epithelial tissue" EXACT [OBOL:automatic]
 synonym: "saccule of membranous labyrinth epithelium" EXACT [OBOL:automatic]
-synonym: "sacculus (labyrinthus vestibularis)  epithelial tissue" EXACT [OBOL:automatic]
-synonym: "sacculus (labyrinthus vestibularis)  epithelium" EXACT [OBOL:automatic]
+synonym: "sacculus (labyrinthus vestibularis) epithelial tissue" EXACT [OBOL:automatic]
+synonym: "sacculus (labyrinthus vestibularis) epithelium" EXACT [OBOL:automatic]
 xref: MA:0001202 ! saccule epithelium
 
 [Term]
@@ -44807,7 +44811,7 @@ name: mesoderm of chorion
 xref: EHDAA:154 ! mesoderm
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0003124 ! chorion
-synonym: "chorion (vertebrates)  mesoderm" EXACT [OBOL:automatic]
+synonym: "chorion (vertebrates) mesoderm" EXACT [OBOL:automatic]
 synonym: "chorion mesoderm" EXACT [OBOL:automatic]
 synonym: "mesoderm of chorion (vertebrates)" EXACT [OBOL:automatic]
 xref: HOG:0000620 ! chorion mesoderm
@@ -45650,7 +45654,7 @@ xref: HOG:0000747 ! pinna mesenchyme
 synonym: "auricle mesenchyme" EXACT [OBOL:automatic]
 synonym: "auricle of ear mesenchyme" EXACT [OBOL:automatic]
 synonym: "auricle of external ear mesenchyme" EXACT [OBOL:automatic]
-synonym: "auricula (auris externa)  mesenchyme" EXACT [OBOL:automatic]
+synonym: "auricula (auris externa) mesenchyme" EXACT [OBOL:automatic]
 synonym: "auricula mesenchyme" EXACT [OBOL:automatic]
 synonym: "mesenchyme of auricle" EXACT [OBOL:automatic]
 synonym: "mesenchyme of auricle of ear" EXACT [OBOL:automatic]
@@ -46322,7 +46326,7 @@ name: ectoderm of chorion
 xref: EMAPA:16113 ! ectoderm
 intersection_of: UBERON:0000924 ! ectoderm
 intersection_of: part_of UBERON:0003124 ! chorion
-synonym: "chorion (vertebrates)  ectoderm" EXACT [OBOL:automatic]
+synonym: "chorion (vertebrates) ectoderm" EXACT [OBOL:automatic]
 synonym: "chorion ectoderm" EXACT [OBOL:automatic]
 synonym: "ectoderm of chorion (vertebrates)" EXACT [OBOL:automatic]
 
@@ -47861,7 +47865,7 @@ name: mesenchyme of chorion
 xref: EMAPA:16266 ! mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0003124 ! chorion
-synonym: "chorion (vertebrates)  mesenchyme" EXACT [OBOL:automatic]
+synonym: "chorion (vertebrates) mesenchyme" EXACT [OBOL:automatic]
 synonym: "chorion mesenchyme" EXACT [OBOL:automatic]
 synonym: "mesenchyme of chorion (vertebrates)" EXACT [OBOL:automatic]
 
@@ -47930,7 +47934,7 @@ name: neck nerve
 xref: MA:0000588 ! neck nerve
 intersection_of: UBERON:0001021 ! nerve
 intersection_of: part_of UBERON:0000974 ! neck
-synonym: "neck (volume)  nerve" EXACT [OBOL:automatic]
+synonym: "neck (volume) nerve" EXACT [OBOL:automatic]
 synonym: "nerve of neck" EXACT [OBOL:automatic]
 synonym: "nerve of neck (volume)" EXACT [OBOL:automatic]
 
@@ -48400,8 +48404,8 @@ synonym: "bone of neck" EXACT [OBOL:automatic]
 synonym: "bone of neck (volume)" EXACT [OBOL:automatic]
 synonym: "bone organ of neck" EXACT [OBOL:automatic]
 synonym: "bone organ of neck (volume)" EXACT [OBOL:automatic]
-synonym: "neck (volume)  bone" EXACT [OBOL:automatic]
-synonym: "neck (volume)  bone organ" EXACT [OBOL:automatic]
+synonym: "neck (volume) bone" EXACT [OBOL:automatic]
+synonym: "neck (volume) bone organ" EXACT [OBOL:automatic]
 synonym: "neck bone organ" EXACT [OBOL:automatic]
 xref: OpenCyc:Mx4rvnpJSJwpEbGdrcN5Y29ycA ! neck bone
 
@@ -48974,7 +48978,7 @@ intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0000974 ! neck
 synonym: "blood vessel of neck" EXACT [OBOL:automatic]
 synonym: "blood vessel of neck (volume)" EXACT [OBOL:automatic]
-synonym: "neck (volume)  blood vessel" EXACT [OBOL:automatic]
+synonym: "neck (volume) blood vessel" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0003503
@@ -49900,9 +49904,9 @@ intersection_of: UBERON:0002384 ! connective tissue
 intersection_of: part_of UBERON:0000974 ! neck
 synonym: "connective tissue of neck" EXACT [OBOL:automatic]
 synonym: "connective tissue of neck (volume)" EXACT [OBOL:automatic]
-synonym: "neck (volume)  connective tissue" EXACT [OBOL:automatic]
-synonym: "neck (volume)  portion of connective tissue" EXACT [OBOL:automatic]
-synonym: "neck (volume)  textus connectivus" EXACT [OBOL:automatic]
+synonym: "neck (volume) connective tissue" EXACT [OBOL:automatic]
+synonym: "neck (volume) portion of connective tissue" EXACT [OBOL:automatic]
+synonym: "neck (volume) textus connectivus" EXACT [OBOL:automatic]
 synonym: "neck portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "neck textus connectivus" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of neck" EXACT [OBOL:automatic]
@@ -50750,7 +50754,7 @@ intersection_of: UBERON:0002418 ! cartilage
 intersection_of: part_of UBERON:0000974 ! neck
 synonym: "cartilage of neck" EXACT [OBOL:automatic]
 synonym: "cartilage of neck (volume)" EXACT [OBOL:automatic]
-synonym: "neck (volume)  cartilage" EXACT [OBOL:automatic]
+synonym: "neck (volume) cartilage" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0003603
@@ -60927,7 +60931,6 @@ name: blastodisc
 def: "a small, circular, white spot (approximately 2-3 mm across) on the surface of the yellow yolk of an egg that has been laid. The nucleus of the egg is in the germinal disc." [Wikipedia:Germinal_disc]
 synonym: "germinal disc" EXACT [Wikipedia:Germinal_disc]
 is_a: UBERON:0002050 ! embryonic structure
-relationship: start UBERON:0000106 ! zygote stage
 xref: AAO:0000043 ! blastodisc
 xref: ZFA:0001175 ! blastodisc
 
@@ -62125,6 +62128,1933 @@ def: "The right lung lobar bronchus mesenchyme is a type of tissue made up of lo
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0002183 ! lobar bronchus
 intersection_of: part_of UBERON:0002167 ! right lung
+
+
+[Term]
+id: UBERON:0004924
+name: submucosa of pharynx
+xref: FMA:75144 ! Submucosa of pharynx
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001042 ! part_of pharynx
+synonym: "pharynx submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004925
+name: submucosa of laryngopharynx
+xref: FMA:55072 ! Submucosa of laryngopharynx
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001051 ! part_of hypopharynx
+synonym: "hypopharynx submucosa" EXACT [OBOL:automatic]
+synonym: "laryngeal pharynx submucosa" EXACT [OBOL:automatic]
+synonym: "laryngopharynx submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of hypopharynx" EXACT [OBOL:automatic]
+synonym: "submucosa of laryngeal pharynx" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004926
+name: submucosa of cystic duct
+xref: FMA:18013 ! Submucosa of cystic duct
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001152 ! part_of cystic duct
+synonym: "cystic duct submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004927
+name: submucosa of cecum
+xref: FMA:14999 ! Submucosa of cecum
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001153 ! part_of cecum
+synonym: "caecum submucosa" EXACT [OBOL:automatic]
+synonym: "cecum submucosa" EXACT [OBOL:automatic]
+synonym: "intestinum crassum caecum submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of caecum" EXACT [OBOL:automatic]
+synonym: "submucosa of intestinum crassum caecum" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004928
+name: submucosa of appendix
+xref: FMA:14992 ! Submucosa of appendix
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001154 ! part_of appendix
+synonym: "appendix submucosa" EXACT [OBOL:automatic]
+synonym: "caecal appendix submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of caecal appendix" EXACT [OBOL:automatic]
+synonym: "submucosa of vermiform appendix" EXACT [OBOL:automatic]
+synonym: "submucosa of vermix" EXACT [OBOL:automatic]
+synonym: "vermiform appendix submucosa" EXACT [OBOL:automatic]
+synonym: "vermix submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004929
+name: submucosa of ascending colon
+xref: FMA:15006 ! Submucosa of ascending colon
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001156 ! part_of ascending colon
+synonym: "ascending colon submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004930
+name: submucosa of transverse colon
+xref: FMA:15013 ! Submucosa of transverse colon
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001157 ! part_of transverse colon
+synonym: "transverse colon submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004931
+name: submucosa of descending colon
+xref: FMA:15020 ! Submucosa of descending colon
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001158 ! part_of descending colon
+synonym: "descending colon submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004932
+name: submucosa of sigmoid colon
+xref: FMA:15027 ! Submucosa of sigmoid colon
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001159 ! part_of sigmoid colon
+synonym: "sigmoid colon submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004933
+name: submucosa of fundus of stomach
+xref: FMA:17058 ! Submucosa of fundus of stomach
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001160 ! part_of fundus of stomach
+synonym: "fundus gastricus (ventricularis) submucosa" EXACT [OBOL:automatic]
+synonym: "fundus of stomach submucosa" EXACT [OBOL:automatic]
+synonym: "stomach fundus submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of fundus gastricus (ventricularis)" EXACT [OBOL:automatic]
+synonym: "submucosa of stomach fundus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004934
+name: submucosa of body of stomach
+xref: FMA:17059 ! Submucosa of body of stomach
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001161 ! part_of body of stomach
+synonym: "body of stomach submucosa" EXACT [OBOL:automatic]
+synonym: "corpus gastricum (ventriculare) submucosa" EXACT [OBOL:automatic]
+synonym: "gastric body submucosa" EXACT [OBOL:automatic]
+synonym: "stomach body submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of corpus gastricum (ventriculare)" EXACT [OBOL:automatic]
+synonym: "submucosa of gastric body" EXACT [OBOL:automatic]
+synonym: "submucosa of stomach body" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004935
+name: submucosa of cardia of stomach
+xref: FMA:17457 ! Submucosa of cardia of stomach
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001162 ! part_of cardia of stomach
+synonym: "cardia of stomach submucosa" EXACT [OBOL:automatic]
+synonym: "cardial part of stomach submucosa" EXACT [OBOL:automatic]
+synonym: "gastric cardia submucosa" EXACT [OBOL:automatic]
+synonym: "pars cardiaca (gaster) submucosa" EXACT [OBOL:automatic]
+synonym: "stomach cardiac region submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of cardial part of stomach" EXACT [OBOL:automatic]
+synonym: "submucosa of gastric cardia" EXACT [OBOL:automatic]
+synonym: "submucosa of pars cardiaca (gaster)" EXACT [OBOL:automatic]
+synonym: "submucosa of stomach cardiac region" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004936
+name: submucosa of pyloric antrum
+xref: FMA:17060 ! Submucosa of pyloric antrum
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001165 ! part_of pyloric antrum
+synonym: "antrum of stomach submucosa" EXACT [OBOL:automatic]
+synonym: "pyloric antrum submucosa" EXACT [OBOL:automatic]
+synonym: "stomach pyloric antrum submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of antrum of stomach" EXACT [OBOL:automatic]
+synonym: "submucosa of stomach pyloric antrum" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004937
+name: submucosa of pylorus
+xref: FMA:17462 ! Submucosa of pylorus
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001166 ! part_of pylorus
+synonym: "pyloric part of stomach submucosa" EXACT [OBOL:automatic]
+synonym: "pylorus submucosa" EXACT [OBOL:automatic]
+synonym: "stomach pyloric region submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of pyloric part of stomach" EXACT [OBOL:automatic]
+synonym: "submucosa of stomach pyloric region" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004938
+name: submucosa of biliary tree
+xref: FMA:18009 ! Submucosa of biliary tree
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001173 ! part_of biliary tree
+synonym: "biliary tract submucosa" EXACT [OBOL:automatic]
+synonym: "biliary tree submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of biliary tract" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004939
+name: submucosa of common bile duct
+xref: FMA:18011 ! Submucosa of common bile duct
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001174 ! part_of common bile duct
+synonym: "common bile duct submucosa" EXACT [OBOL:automatic]
+synonym: "ductus choledochus (biliaris) submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of ductus choledochus (biliaris)" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004940
+name: submucosa of common hepatic duct
+xref: FMA:18014 ! Submucosa of common hepatic duct
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001175 ! part_of common hepatic duct
+synonym: "common hepatic duct submucosa" EXACT [OBOL:automatic]
+synonym: "hepatic duct submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of hepatic duct" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004941
+name: submucosa of right hepatic duct
+xref: FMA:18015 ! Submucosa of right hepatic duct
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001176 ! part_of right hepatic duct
+synonym: "right hepatic duct submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004942
+name: submucosa of left hepatic duct
+xref: FMA:18017 ! Submucosa of left hepatic duct
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001177 ! part_of left hepatic duct
+synonym: "left hepatic duct submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004943
+name: submucosa of urinary bladder
+xref: FMA:15929 ! Submucosa of urinary bladder
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001255 ! part_of urinary bladder
+synonym: "bladder submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of bladder" EXACT [OBOL:automatic]
+synonym: "urinary bladder submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004944
+name: submucosa of trigone of urinary bladder
+xref: FMA:17852 ! Submucosa of trigone of urinary bladder
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001257 ! part_of trigone of urinary bladder
+synonym: "Lieutaud ' s trigone submucosa" EXACT [OBOL:automatic]
+synonym: "deep trigone submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of Lieutaud ' s trigone" EXACT [OBOL:automatic]
+synonym: "submucosa of deep trigone" EXACT [OBOL:automatic]
+synonym: "submucosa of trigone of bladder" EXACT [OBOL:automatic]
+synonym: "submucosa of urinary bladder trigone" EXACT [OBOL:automatic]
+synonym: "submucosa of vesical trigone" EXACT [OBOL:automatic]
+synonym: "trigone of bladder submucosa" EXACT [OBOL:automatic]
+synonym: "trigone of urinary bladder submucosa" EXACT [OBOL:automatic]
+synonym: "urinary bladder trigone submucosa" EXACT [OBOL:automatic]
+synonym: "vesical trigone submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004945
+name: submucosa of neck of urinary bladder
+xref: FMA:17851 ! Submucosa of neck of urinary bladder
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0001258 ! part_of neck of urinary bladder
+synonym: "bladder neck submucosa" EXACT [OBOL:automatic]
+synonym: "neck of bladder submucosa" EXACT [OBOL:automatic]
+synonym: "neck of urinary bladder submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of bladder neck" EXACT [OBOL:automatic]
+synonym: "submucosa of neck of bladder" EXACT [OBOL:automatic]
+synonym: "submucosa of urinary bladder neck" EXACT [OBOL:automatic]
+synonym: "submucosa of vesical neck" EXACT [OBOL:automatic]
+synonym: "urinary bladder neck submucosa" EXACT [OBOL:automatic]
+synonym: "vesical neck submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004946
+name: submucosa of ileum
+xref: FMA:14957 ! Submucosa of ileum
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0002116 ! part_of ileum
+synonym: "ileum submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004947
+name: submucosa of right main bronchus
+xref: FMA:13139 ! Submucosa of right main bronchus
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0002177 ! part_of right main bronchus
+synonym: "right bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "right main bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "right principal bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of right bronchus" EXACT [OBOL:automatic]
+synonym: "submucosa of right principal bronchus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004948
+name: submucosa of left main bronchus
+xref: FMA:13140 ! Submucosa of left main bronchus
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0002178 ! part_of left main bronchus
+synonym: "left bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "left main bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "left principal bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of left bronchus" EXACT [OBOL:automatic]
+synonym: "submucosa of left principal bronchus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004949
+name: submucosa of main bronchus
+xref: FMA:13118 ! Submucosa of main bronchus
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0002182 ! part_of main bronchus
+synonym: "bronchus principalis submucosa" EXACT [OBOL:automatic]
+synonym: "main bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "primary bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "principal bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of bronchus principalis" EXACT [OBOL:automatic]
+synonym: "submucosa of primary bronchus" EXACT [OBOL:automatic]
+synonym: "submucosa of principal bronchus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004950
+name: submucosa of lobar bronchus
+xref: FMA:62669 ! Submucosa of lobar bronchus
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0002183 ! part_of lobar bronchus
+synonym: "lobar bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "secondary bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of secondary bronchus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004951
+name: submucosa of segmental bronchus
+xref: FMA:62670 ! Submucosa of segmental bronchus
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0002184 ! part_of segmental bronchus
+synonym: "segmental bronchus submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of tertiary bronchus" EXACT [OBOL:automatic]
+synonym: "tertiary bronchus submucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004952
+name: submucosa of bronchiole
+xref: FMA:62775 ! Submucosa of bronchiole
+intersection_of: UBERON:0000009 ! submucosa
+intersection_of: part_of UBERON:0002186 ! part_of bronchiole
+synonym: "bronchiole submucosa" EXACT [OBOL:automatic]
+synonym: "lobular bronchiole submucosa" EXACT [OBOL:automatic]
+synonym: "submucosa of lobular bronchiole" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004980
+name: mucosa of ureter
+xref: FMA:15894 ! Mucosa of ureter
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0000056 ! part_of ureter
+synonym: "mucosa of organ of ureter" EXACT [OBOL:automatic]
+synonym: "mucous membrane of ureter" EXACT [OBOL:automatic]
+synonym: "organ mucosa of ureter" EXACT [OBOL:automatic]
+synonym: "ureter mucosa" EXACT [OBOL:automatic]
+synonym: "ureter mucosa of organ" EXACT [OBOL:automatic]
+synonym: "ureter mucous membrane" EXACT [OBOL:automatic]
+synonym: "ureter organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004981
+name: mucosa of segment of colon
+xref: FMA:85388 ! Mucosa of segment of colon
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0000168 ! part_of segment of colon
+synonym: "mucosa of organ of segment of colon" EXACT [OBOL:automatic]
+synonym: "mucous membrane of segment of colon" EXACT [OBOL:automatic]
+synonym: "organ mucosa of segment of colon" EXACT [OBOL:automatic]
+synonym: "segment of colon mucosa" EXACT [OBOL:automatic]
+synonym: "segment of colon mucosa of organ" EXACT [OBOL:automatic]
+synonym: "segment of colon mucous membrane" EXACT [OBOL:automatic]
+synonym: "segment of colon organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004982
+name: mucosa of epiglottis
+xref: FMA:64015 ! Mucosa of epiglottis
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0000388 ! part_of epiglottis
+synonym: "epiglottis mucosa" EXACT [OBOL:automatic]
+synonym: "epiglottis mucosa of organ" EXACT [OBOL:automatic]
+synonym: "epiglottis mucous membrane" EXACT [OBOL:automatic]
+synonym: "epiglottis organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of epiglottis" EXACT [OBOL:automatic]
+synonym: "mucous membrane of epiglottis" EXACT [OBOL:automatic]
+synonym: "organ mucosa of epiglottis" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004983
+name: mucosa of vagina
+xref: FMA:19975 ! Mucosa of vagina
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0000996 ! part_of vagina
+synonym: "mucosa of organ of vagina" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vagina" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vagina" EXACT [OBOL:automatic]
+synonym: "vagina mucosa" EXACT [OBOL:automatic]
+synonym: "vagina mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vagina mucous membrane" EXACT [OBOL:automatic]
+synonym: "vagina organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004984
+name: mucosa of seminal vesicle
+xref: FMA:19405 ! Mucosa of seminal vesicle
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0000998 ! part_of seminal vesicle
+synonym: "mucosa of organ of seminal gland" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of seminal vesicle" EXACT [OBOL:automatic]
+synonym: "mucosa of seminal gland" EXACT [OBOL:automatic]
+synonym: "mucous membrane of seminal gland" EXACT [OBOL:automatic]
+synonym: "mucous membrane of seminal vesicle" EXACT [OBOL:automatic]
+synonym: "organ mucosa of seminal gland" EXACT [OBOL:automatic]
+synonym: "organ mucosa of seminal vesicle" EXACT [OBOL:automatic]
+synonym: "seminal gland mucosa" EXACT [OBOL:automatic]
+synonym: "seminal gland mucosa of organ" EXACT [OBOL:automatic]
+synonym: "seminal gland mucous membrane" EXACT [OBOL:automatic]
+synonym: "seminal gland organ mucosa" EXACT [OBOL:automatic]
+synonym: "seminal vesicle mucosa" EXACT [OBOL:automatic]
+synonym: "seminal vesicle mucosa of organ" EXACT [OBOL:automatic]
+synonym: "seminal vesicle mucous membrane" EXACT [OBOL:automatic]
+synonym: "seminal vesicle organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004985
+name: mucosa of ejaculatory duct
+xref: FMA:19373 ! Mucosa of ejaculatory duct
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0000999 ! part_of ejaculatory duct
+synonym: "ejaculatory duct mucosa" EXACT [OBOL:automatic]
+synonym: "ejaculatory duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "ejaculatory duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "ejaculatory duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of ejaculatory duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of ejaculatory duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of ejaculatory duct" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004986
+name: mucosa of deferent duct
+xref: FMA:19240 ! Mucosa of deferent duct
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001000 ! part_of vas deferens
+synonym: "deferent duct mucosa" EXACT [OBOL:automatic]
+synonym: "deferent duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "deferent duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "deferent duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "ductus deferens mucosa" EXACT [OBOL:automatic]
+synonym: "ductus deferens mucosa of organ" EXACT [OBOL:automatic]
+synonym: "ductus deferens mucous membrane" EXACT [OBOL:automatic]
+synonym: "ductus deferens organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of ductus deferens" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of deferent duct" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of ductus deferens" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of sperm duct" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of vas deferen" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of vas deferens" EXACT [OBOL:automatic]
+synonym: "mucosa of sperm duct" EXACT [OBOL:automatic]
+synonym: "mucosa of vas deferen" EXACT [OBOL:automatic]
+synonym: "mucosa of vas deferens" EXACT [OBOL:automatic]
+synonym: "mucous membrane of deferent duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of ductus deferens" EXACT [OBOL:automatic]
+synonym: "mucous membrane of sperm duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vas deferen" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vas deferens" EXACT [OBOL:automatic]
+synonym: "organ mucosa of deferent duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of ductus deferens" EXACT [OBOL:automatic]
+synonym: "organ mucosa of sperm duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vas deferen" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vas deferens" EXACT [OBOL:automatic]
+synonym: "sperm duct mucosa" EXACT [OBOL:automatic]
+synonym: "sperm duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "sperm duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "sperm duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "vas deferen mucosa" EXACT [OBOL:automatic]
+synonym: "vas deferen mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vas deferen mucous membrane" EXACT [OBOL:automatic]
+synonym: "vas deferen organ mucosa" EXACT [OBOL:automatic]
+synonym: "vas deferens mucosa" EXACT [OBOL:automatic]
+synonym: "vas deferens mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vas deferens mucous membrane" EXACT [OBOL:automatic]
+synonym: "vas deferens organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004987
+name: mucosa of laryngopharynx
+xref: FMA:55030 ! Mucosa of laryngopharynx
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001051 ! part_of hypopharynx
+synonym: "hypopharynx mucosa" EXACT [OBOL:automatic]
+synonym: "hypopharynx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "hypopharynx mucous membrane" EXACT [OBOL:automatic]
+synonym: "hypopharynx organ mucosa" EXACT [OBOL:automatic]
+synonym: "laryngeal pharynx mucosa" EXACT [OBOL:automatic]
+synonym: "laryngeal pharynx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "laryngeal pharynx mucous membrane" EXACT [OBOL:automatic]
+synonym: "laryngeal pharynx organ mucosa" EXACT [OBOL:automatic]
+synonym: "laryngopharynx mucosa" EXACT [OBOL:automatic]
+synonym: "laryngopharynx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "laryngopharynx mucous membrane" EXACT [OBOL:automatic]
+synonym: "laryngopharynx organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of hypopharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of laryngeal pharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of hypopharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of laryngeal pharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of laryngopharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of hypopharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of laryngeal pharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of laryngopharynx" EXACT [OBOL:automatic]
+synonym: "organ mucosa of hypopharynx" EXACT [OBOL:automatic]
+synonym: "organ mucosa of laryngeal pharynx" EXACT [OBOL:automatic]
+synonym: "organ mucosa of laryngopharynx" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004988
+name: mucosa of cystic duct
+xref: FMA:14690 ! Mucosa of cystic duct
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001152 ! part_of cystic duct
+synonym: "cystic duct mucosa" EXACT [OBOL:automatic]
+synonym: "cystic duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "cystic duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "cystic duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of cystic duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of cystic duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of cystic duct" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004989
+name: mucosa of appendix
+xref: FMA:14991 ! Mucosa of appendix
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001154 ! part_of appendix
+synonym: "appendix mucosa" EXACT [OBOL:automatic]
+synonym: "appendix mucosa of organ" EXACT [OBOL:automatic]
+synonym: "appendix mucous membrane" EXACT [OBOL:automatic]
+synonym: "appendix organ mucosa" EXACT [OBOL:automatic]
+synonym: "caecal appendix mucosa" EXACT [OBOL:automatic]
+synonym: "caecal appendix mucosa of organ" EXACT [OBOL:automatic]
+synonym: "caecal appendix mucous membrane" EXACT [OBOL:automatic]
+synonym: "caecal appendix organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of caecal appendix" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of appendix" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of caecal appendix" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of vermiform appendix" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of vermix" EXACT [OBOL:automatic]
+synonym: "mucosa of vermiform appendix" EXACT [OBOL:automatic]
+synonym: "mucosa of vermix" EXACT [OBOL:automatic]
+synonym: "mucous membrane of appendix" EXACT [OBOL:automatic]
+synonym: "mucous membrane of caecal appendix" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vermiform appendix" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vermix" EXACT [OBOL:automatic]
+synonym: "organ mucosa of appendix" EXACT [OBOL:automatic]
+synonym: "organ mucosa of caecal appendix" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vermiform appendix" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vermix" EXACT [OBOL:automatic]
+synonym: "vermiform appendix mucosa" EXACT [OBOL:automatic]
+synonym: "vermiform appendix mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vermiform appendix mucous membrane" EXACT [OBOL:automatic]
+synonym: "vermiform appendix organ mucosa" EXACT [OBOL:automatic]
+synonym: "vermix mucosa" EXACT [OBOL:automatic]
+synonym: "vermix mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vermix mucous membrane" EXACT [OBOL:automatic]
+synonym: "vermix organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004990
+name: mucosa of ascending colon
+xref: FMA:15005 ! Mucosa of ascending colon
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001156 ! part_of ascending colon
+synonym: "ascending colon mucosa" EXACT [OBOL:automatic]
+synonym: "ascending colon mucosa of organ" EXACT [OBOL:automatic]
+synonym: "ascending colon mucous membrane" EXACT [OBOL:automatic]
+synonym: "ascending colon organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of ascending colon" EXACT [OBOL:automatic]
+synonym: "mucous membrane of ascending colon" EXACT [OBOL:automatic]
+synonym: "organ mucosa of ascending colon" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004991
+name: mucosa of transverse colon
+xref: FMA:15012 ! Mucosa of transverse colon
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001157 ! part_of transverse colon
+synonym: "mucosa of organ of transverse colon" EXACT [OBOL:automatic]
+synonym: "mucous membrane of transverse colon" EXACT [OBOL:automatic]
+synonym: "organ mucosa of transverse colon" EXACT [OBOL:automatic]
+synonym: "transverse colon mucosa" EXACT [OBOL:automatic]
+synonym: "transverse colon mucosa of organ" EXACT [OBOL:automatic]
+synonym: "transverse colon mucous membrane" EXACT [OBOL:automatic]
+synonym: "transverse colon organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004992
+name: mucosa of descending colon
+xref: FMA:15019 ! Mucosa of descending colon
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001158 ! part_of descending colon
+synonym: "descending colon mucosa" EXACT [OBOL:automatic]
+synonym: "descending colon mucosa of organ" EXACT [OBOL:automatic]
+synonym: "descending colon mucous membrane" EXACT [OBOL:automatic]
+synonym: "descending colon organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of descending colon" EXACT [OBOL:automatic]
+synonym: "mucous membrane of descending colon" EXACT [OBOL:automatic]
+synonym: "organ mucosa of descending colon" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004993
+name: mucosa of sigmoid colon
+xref: FMA:15026 ! Mucosa of sigmoid colon
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001159 ! part_of sigmoid colon
+synonym: "mucosa of organ of sigmoid colon" EXACT [OBOL:automatic]
+synonym: "mucous membrane of sigmoid colon" EXACT [OBOL:automatic]
+synonym: "organ mucosa of sigmoid colon" EXACT [OBOL:automatic]
+synonym: "sigmoid colon mucosa" EXACT [OBOL:automatic]
+synonym: "sigmoid colon mucosa of organ" EXACT [OBOL:automatic]
+synonym: "sigmoid colon mucous membrane" EXACT [OBOL:automatic]
+synonym: "sigmoid colon organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004994
+name: mucosa of fundus of stomach
+xref: FMA:17053 ! Mucosa of fundus of stomach
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001160 ! part_of fundus of stomach
+synonym: "fundus gastricus (ventricularis) mucosa" EXACT [OBOL:automatic]
+synonym: "fundus gastricus (ventricularis) mucosa of organ" EXACT [OBOL:automatic]
+synonym: "fundus gastricus (ventricularis) mucous membrane" EXACT [OBOL:automatic]
+synonym: "fundus gastricus (ventricularis) organ mucosa" EXACT [OBOL:automatic]
+synonym: "fundus of stomach mucosa" EXACT [OBOL:automatic]
+synonym: "fundus of stomach mucosa of organ" EXACT [OBOL:automatic]
+synonym: "fundus of stomach mucous membrane" EXACT [OBOL:automatic]
+synonym: "fundus of stomach organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of fundus gastricus (ventricularis)" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of fundus gastricus (ventricularis)" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of fundus of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of stomach fundus" EXACT [OBOL:automatic]
+synonym: "mucosa of stomach fundus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of fundus gastricus (ventricularis)" EXACT [OBOL:automatic]
+synonym: "mucous membrane of fundus of stomach" EXACT [OBOL:automatic]
+synonym: "mucous membrane of stomach fundus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of fundus gastricus (ventricularis)" EXACT [OBOL:automatic]
+synonym: "organ mucosa of fundus of stomach" EXACT [OBOL:automatic]
+synonym: "organ mucosa of stomach fundus" EXACT [OBOL:automatic]
+synonym: "stomach fundus mucosa" EXACT [OBOL:automatic]
+synonym: "stomach fundus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "stomach fundus mucous membrane" EXACT [OBOL:automatic]
+synonym: "stomach fundus organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004995
+name: mucosa of body of stomach
+xref: FMA:17054 ! Mucosa of body of stomach
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001161 ! part_of body of stomach
+synonym: "body of stomach mucosa" EXACT [OBOL:automatic]
+synonym: "body of stomach mucosa of organ" EXACT [OBOL:automatic]
+synonym: "body of stomach mucous membrane" EXACT [OBOL:automatic]
+synonym: "body of stomach organ mucosa" EXACT [OBOL:automatic]
+synonym: "corpus gastricum (ventriculare) mucosa" EXACT [OBOL:automatic]
+synonym: "corpus gastricum (ventriculare) mucosa of organ" EXACT [OBOL:automatic]
+synonym: "corpus gastricum (ventriculare) mucous membrane" EXACT [OBOL:automatic]
+synonym: "corpus gastricum (ventriculare) organ mucosa" EXACT [OBOL:automatic]
+synonym: "gastric body mucosa" EXACT [OBOL:automatic]
+synonym: "gastric body mucosa of organ" EXACT [OBOL:automatic]
+synonym: "gastric body mucous membrane" EXACT [OBOL:automatic]
+synonym: "gastric body organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of corpus gastricum (ventriculare)" EXACT [OBOL:automatic]
+synonym: "mucosa of gastric body" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of body of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of corpus gastricum (ventriculare)" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of gastric body" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of stomach body" EXACT [OBOL:automatic]
+synonym: "mucosa of stomach body" EXACT [OBOL:automatic]
+synonym: "mucous membrane of body of stomach" EXACT [OBOL:automatic]
+synonym: "mucous membrane of corpus gastricum (ventriculare)" EXACT [OBOL:automatic]
+synonym: "mucous membrane of gastric body" EXACT [OBOL:automatic]
+synonym: "mucous membrane of stomach body" EXACT [OBOL:automatic]
+synonym: "organ mucosa of body of stomach" EXACT [OBOL:automatic]
+synonym: "organ mucosa of corpus gastricum (ventriculare)" EXACT [OBOL:automatic]
+synonym: "organ mucosa of gastric body" EXACT [OBOL:automatic]
+synonym: "organ mucosa of stomach body" EXACT [OBOL:automatic]
+synonym: "stomach body mucosa" EXACT [OBOL:automatic]
+synonym: "stomach body mucosa of organ" EXACT [OBOL:automatic]
+synonym: "stomach body mucous membrane" EXACT [OBOL:automatic]
+synonym: "stomach body organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004996
+name: mucosa of cardia of stomach
+xref: FMA:17456 ! Mucosa of cardia of stomach
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001162 ! part_of cardia of stomach
+synonym: "cardia of stomach mucosa" EXACT [OBOL:automatic]
+synonym: "cardia of stomach mucosa of organ" EXACT [OBOL:automatic]
+synonym: "cardia of stomach mucous membrane" EXACT [OBOL:automatic]
+synonym: "cardia of stomach organ mucosa" EXACT [OBOL:automatic]
+synonym: "cardial part of stomach mucosa" EXACT [OBOL:automatic]
+synonym: "cardial part of stomach mucosa of organ" EXACT [OBOL:automatic]
+synonym: "cardial part of stomach mucous membrane" EXACT [OBOL:automatic]
+synonym: "cardial part of stomach organ mucosa" EXACT [OBOL:automatic]
+synonym: "gastric cardia mucosa" EXACT [OBOL:automatic]
+synonym: "gastric cardia mucosa of organ" EXACT [OBOL:automatic]
+synonym: "gastric cardia mucous membrane" EXACT [OBOL:automatic]
+synonym: "gastric cardia organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of cardial part of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of gastric cardia" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of cardia of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of cardial part of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of gastric cardia" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of pars cardiaca (gaster)" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of stomach cardiac region" EXACT [OBOL:automatic]
+synonym: "mucosa of pars cardiaca (gaster)" EXACT [OBOL:automatic]
+synonym: "mucosa of stomach cardiac region" EXACT [OBOL:automatic]
+synonym: "mucous membrane of cardia of stomach" EXACT [OBOL:automatic]
+synonym: "mucous membrane of cardial part of stomach" EXACT [OBOL:automatic]
+synonym: "mucous membrane of gastric cardia" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pars cardiaca (gaster)" EXACT [OBOL:automatic]
+synonym: "mucous membrane of stomach cardiac region" EXACT [OBOL:automatic]
+synonym: "organ mucosa of cardia of stomach" EXACT [OBOL:automatic]
+synonym: "organ mucosa of cardial part of stomach" EXACT [OBOL:automatic]
+synonym: "organ mucosa of gastric cardia" EXACT [OBOL:automatic]
+synonym: "organ mucosa of pars cardiaca (gaster)" EXACT [OBOL:automatic]
+synonym: "organ mucosa of stomach cardiac region" EXACT [OBOL:automatic]
+synonym: "pars cardiaca (gaster) mucosa" EXACT [OBOL:automatic]
+synonym: "pars cardiaca (gaster) mucosa of organ" EXACT [OBOL:automatic]
+synonym: "pars cardiaca (gaster) mucous membrane" EXACT [OBOL:automatic]
+synonym: "pars cardiaca (gaster) organ mucosa" EXACT [OBOL:automatic]
+synonym: "stomach cardiac region mucosa" EXACT [OBOL:automatic]
+synonym: "stomach cardiac region mucosa of organ" EXACT [OBOL:automatic]
+synonym: "stomach cardiac region mucous membrane" EXACT [OBOL:automatic]
+synonym: "stomach cardiac region organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004997
+name: mucosa of pyloric antrum
+xref: FMA:17055 ! Mucosa of pyloric antrum
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001165 ! part_of pyloric antrum
+synonym: "antrum of stomach mucosa" EXACT [OBOL:automatic]
+synonym: "antrum of stomach mucosa of organ" EXACT [OBOL:automatic]
+synonym: "antrum of stomach mucous membrane" EXACT [OBOL:automatic]
+synonym: "antrum of stomach organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of antrum of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of antrum of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of pyloric antrum" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of stomach pyloric antrum" EXACT [OBOL:automatic]
+synonym: "mucosa of stomach pyloric antrum" EXACT [OBOL:automatic]
+synonym: "mucous membrane of antrum of stomach" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pyloric antrum" EXACT [OBOL:automatic]
+synonym: "mucous membrane of stomach pyloric antrum" EXACT [OBOL:automatic]
+synonym: "organ mucosa of antrum of stomach" EXACT [OBOL:automatic]
+synonym: "organ mucosa of pyloric antrum" EXACT [OBOL:automatic]
+synonym: "organ mucosa of stomach pyloric antrum" EXACT [OBOL:automatic]
+synonym: "pyloric antrum mucosa" EXACT [OBOL:automatic]
+synonym: "pyloric antrum mucosa of organ" EXACT [OBOL:automatic]
+synonym: "pyloric antrum mucous membrane" EXACT [OBOL:automatic]
+synonym: "pyloric antrum organ mucosa" EXACT [OBOL:automatic]
+synonym: "stomach pyloric antrum mucosa" EXACT [OBOL:automatic]
+synonym: "stomach pyloric antrum mucosa of organ" EXACT [OBOL:automatic]
+synonym: "stomach pyloric antrum mucous membrane" EXACT [OBOL:automatic]
+synonym: "stomach pyloric antrum organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004998
+name: mucosa of pylorus
+xref: FMA:17461 ! Mucosa of pylorus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001166 ! part_of pylorus
+synonym: "mucosa of organ of pyloric part of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of pylorus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of stomach pyloric region" EXACT [OBOL:automatic]
+synonym: "mucosa of pyloric part of stomach" EXACT [OBOL:automatic]
+synonym: "mucosa of stomach pyloric region" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pyloric part of stomach" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pylorus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of stomach pyloric region" EXACT [OBOL:automatic]
+synonym: "organ mucosa of pyloric part of stomach" EXACT [OBOL:automatic]
+synonym: "organ mucosa of pylorus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of stomach pyloric region" EXACT [OBOL:automatic]
+synonym: "pyloric part of stomach mucosa" EXACT [OBOL:automatic]
+synonym: "pyloric part of stomach mucosa of organ" EXACT [OBOL:automatic]
+synonym: "pyloric part of stomach mucous membrane" EXACT [OBOL:automatic]
+synonym: "pyloric part of stomach organ mucosa" EXACT [OBOL:automatic]
+synonym: "pylorus mucosa" EXACT [OBOL:automatic]
+synonym: "pylorus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "pylorus mucous membrane" EXACT [OBOL:automatic]
+synonym: "pylorus organ mucosa" EXACT [OBOL:automatic]
+synonym: "stomach pyloric region mucosa" EXACT [OBOL:automatic]
+synonym: "stomach pyloric region mucosa of organ" EXACT [OBOL:automatic]
+synonym: "stomach pyloric region mucous membrane" EXACT [OBOL:automatic]
+synonym: "stomach pyloric region organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0004999
+name: mucosa of biliary tree
+xref: FMA:14695 ! Mucosa of biliary tree
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001173 ! part_of biliary tree
+synonym: "biliary tract mucosa" EXACT [OBOL:automatic]
+synonym: "biliary tract mucosa of organ" EXACT [OBOL:automatic]
+synonym: "biliary tract mucous membrane" EXACT [OBOL:automatic]
+synonym: "biliary tract organ mucosa" EXACT [OBOL:automatic]
+synonym: "biliary tree mucosa" EXACT [OBOL:automatic]
+synonym: "biliary tree mucosa of organ" EXACT [OBOL:automatic]
+synonym: "biliary tree mucous membrane" EXACT [OBOL:automatic]
+synonym: "biliary tree organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of biliary tract" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of biliary tract" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of biliary tree" EXACT [OBOL:automatic]
+synonym: "mucous membrane of biliary tract" EXACT [OBOL:automatic]
+synonym: "mucous membrane of biliary tree" EXACT [OBOL:automatic]
+synonym: "organ mucosa of biliary tract" EXACT [OBOL:automatic]
+synonym: "organ mucosa of biliary tree" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005000
+name: mucosa of common bile duct
+xref: FMA:14688 ! Mucosa of common bile duct
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001174 ! part_of common bile duct
+synonym: "common bile duct mucosa" EXACT [OBOL:automatic]
+synonym: "common bile duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "common bile duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "common bile duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "ductus choledochus (biliaris) mucosa" EXACT [OBOL:automatic]
+synonym: "ductus choledochus (biliaris) mucosa of organ" EXACT [OBOL:automatic]
+synonym: "ductus choledochus (biliaris) mucous membrane" EXACT [OBOL:automatic]
+synonym: "ductus choledochus (biliaris) organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of ductus choledochus (biliaris)" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of common bile duct" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of ductus choledochus (biliaris)" EXACT [OBOL:automatic]
+synonym: "mucous membrane of common bile duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of ductus choledochus (biliaris)" EXACT [OBOL:automatic]
+synonym: "organ mucosa of common bile duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of ductus choledochus (biliaris)" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005001
+name: mucosa of common hepatic duct
+xref: FMA:14691 ! Mucosa of common hepatic duct
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001175 ! part_of common hepatic duct
+synonym: "common hepatic duct mucosa" EXACT [OBOL:automatic]
+synonym: "common hepatic duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "common hepatic duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "common hepatic duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "hepatic duct mucosa" EXACT [OBOL:automatic]
+synonym: "hepatic duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "hepatic duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "hepatic duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of hepatic duct" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of common hepatic duct" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of hepatic duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of common hepatic duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of hepatic duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of common hepatic duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of hepatic duct" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005002
+name: mucosa of right hepatic duct
+xref: FMA:14692 ! Mucosa of right hepatic duct
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001176 ! part_of right hepatic duct
+synonym: "mucosa of organ of right hepatic duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of right hepatic duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of right hepatic duct" EXACT [OBOL:automatic]
+synonym: "right hepatic duct mucosa" EXACT [OBOL:automatic]
+synonym: "right hepatic duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "right hepatic duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "right hepatic duct organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005003
+name: mucosa of left hepatic duct
+xref: FMA:14693 ! Mucosa of left hepatic duct
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001177 ! part_of left hepatic duct
+synonym: "left hepatic duct mucosa" EXACT [OBOL:automatic]
+synonym: "left hepatic duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "left hepatic duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "left hepatic duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of left hepatic duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of left hepatic duct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of left hepatic duct" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005004
+name: mucosa of right ureter
+xref: FMA:17806 ! Mucosa of right ureter
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001222 ! part_of right ureter
+synonym: "mucosa of organ of right ureter" EXACT [OBOL:automatic]
+synonym: "mucous membrane of right ureter" EXACT [OBOL:automatic]
+synonym: "organ mucosa of right ureter" EXACT [OBOL:automatic]
+synonym: "right ureter mucosa" EXACT [OBOL:automatic]
+synonym: "right ureter mucosa of organ" EXACT [OBOL:automatic]
+synonym: "right ureter mucous membrane" EXACT [OBOL:automatic]
+synonym: "right ureter organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005005
+name: mucosa of left ureter
+xref: FMA:17807 ! Mucosa of left ureter
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001223 ! part_of left ureter
+synonym: "left ureter mucosa" EXACT [OBOL:automatic]
+synonym: "left ureter mucosa of organ" EXACT [OBOL:automatic]
+synonym: "left ureter mucous membrane" EXACT [OBOL:automatic]
+synonym: "left ureter organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of left ureter" EXACT [OBOL:automatic]
+synonym: "mucous membrane of left ureter" EXACT [OBOL:automatic]
+synonym: "organ mucosa of left ureter" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005006
+name: mucosa of renal pelvis
+xref: FMA:17931 ! Mucosa of renal pelvis
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001224 ! part_of renal pelvis
+synonym: "kidney pelvis mucosa" EXACT [OBOL:automatic]
+synonym: "kidney pelvis mucosa of organ" EXACT [OBOL:automatic]
+synonym: "kidney pelvis mucous membrane" EXACT [OBOL:automatic]
+synonym: "kidney pelvis organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of pelvis of ureter" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of renal pelvis" EXACT [OBOL:automatic]
+synonym: "mucosa of pelvis of ureter" EXACT [OBOL:automatic]
+synonym: "mucous membrane of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pelvis of ureter" EXACT [OBOL:automatic]
+synonym: "mucous membrane of renal pelvis" EXACT [OBOL:automatic]
+synonym: "organ mucosa of kidney pelvis" EXACT [OBOL:automatic]
+synonym: "organ mucosa of pelvis of ureter" EXACT [OBOL:automatic]
+synonym: "organ mucosa of renal pelvis" EXACT [OBOL:automatic]
+synonym: "pelvis of ureter mucosa" EXACT [OBOL:automatic]
+synonym: "pelvis of ureter mucosa of organ" EXACT [OBOL:automatic]
+synonym: "pelvis of ureter mucous membrane" EXACT [OBOL:automatic]
+synonym: "pelvis of ureter organ mucosa" EXACT [OBOL:automatic]
+synonym: "renal pelvis mucosa" EXACT [OBOL:automatic]
+synonym: "renal pelvis mucosa of organ" EXACT [OBOL:automatic]
+synonym: "renal pelvis mucous membrane" EXACT [OBOL:automatic]
+synonym: "renal pelvis organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005007
+name: mucosa of major calyx
+xref: FMA:17934 ! Mucosa of major calyx
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001226 ! part_of major calyx
+synonym: "major calix mucosa" EXACT [OBOL:automatic]
+synonym: "major calix mucosa of organ" EXACT [OBOL:automatic]
+synonym: "major calix mucous membrane" EXACT [OBOL:automatic]
+synonym: "major calix organ mucosa" EXACT [OBOL:automatic]
+synonym: "major calyx mucosa" EXACT [OBOL:automatic]
+synonym: "major calyx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "major calyx mucous membrane" EXACT [OBOL:automatic]
+synonym: "major calyx organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of major calix" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of major calix" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of major calyx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of major calix" EXACT [OBOL:automatic]
+synonym: "mucous membrane of major calyx" EXACT [OBOL:automatic]
+synonym: "organ mucosa of major calix" EXACT [OBOL:automatic]
+synonym: "organ mucosa of major calyx" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005008
+name: mucosa of minor calyx
+xref: FMA:17937 ! Mucosa of minor calyx
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001227 ! part_of minor calyx
+synonym: "minor calix mucosa" EXACT [OBOL:automatic]
+synonym: "minor calix mucosa of organ" EXACT [OBOL:automatic]
+synonym: "minor calix mucous membrane" EXACT [OBOL:automatic]
+synonym: "minor calix organ mucosa" EXACT [OBOL:automatic]
+synonym: "minor calyx mucosa" EXACT [OBOL:automatic]
+synonym: "minor calyx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "minor calyx mucous membrane" EXACT [OBOL:automatic]
+synonym: "minor calyx organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of minor calix" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of minor calix" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of minor calyx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of minor calix" EXACT [OBOL:automatic]
+synonym: "mucous membrane of minor calyx" EXACT [OBOL:automatic]
+synonym: "organ mucosa of minor calix" EXACT [OBOL:automatic]
+synonym: "organ mucosa of minor calyx" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005009
+name: mucosa of trigone of urinary bladder
+xref: FMA:17847 ! Mucosa of trigone of urinary bladder
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001257 ! part_of trigone of urinary bladder
+synonym: "Lieutaud ' s trigone mucosa" EXACT [OBOL:automatic]
+synonym: "Lieutaud ' s trigone mucosa of organ" EXACT [OBOL:automatic]
+synonym: "Lieutaud ' s trigone mucous membrane" EXACT [OBOL:automatic]
+synonym: "Lieutaud ' s trigone organ mucosa" EXACT [OBOL:automatic]
+synonym: "deep trigone mucosa" EXACT [OBOL:automatic]
+synonym: "deep trigone mucosa of organ" EXACT [OBOL:automatic]
+synonym: "deep trigone mucous membrane" EXACT [OBOL:automatic]
+synonym: "deep trigone organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of Lieutaud ' s trigone" EXACT [OBOL:automatic]
+synonym: "mucosa of deep trigone" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of Lieutaud ' s trigone" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of deep trigone" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of trigone of bladder" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of trigone of urinary bladder" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of urinary bladder trigone" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of vesical trigone" EXACT [OBOL:automatic]
+synonym: "mucosa of trigone of bladder" EXACT [OBOL:automatic]
+synonym: "mucosa of urinary bladder trigone" EXACT [OBOL:automatic]
+synonym: "mucosa of vesical trigone" EXACT [OBOL:automatic]
+synonym: "mucous membrane of Lieutaud ' s trigone" EXACT [OBOL:automatic]
+synonym: "mucous membrane of deep trigone" EXACT [OBOL:automatic]
+synonym: "mucous membrane of trigone of bladder" EXACT [OBOL:automatic]
+synonym: "mucous membrane of trigone of urinary bladder" EXACT [OBOL:automatic]
+synonym: "mucous membrane of urinary bladder trigone" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vesical trigone" EXACT [OBOL:automatic]
+synonym: "organ mucosa of Lieutaud ' s trigone" EXACT [OBOL:automatic]
+synonym: "organ mucosa of deep trigone" EXACT [OBOL:automatic]
+synonym: "organ mucosa of trigone of bladder" EXACT [OBOL:automatic]
+synonym: "organ mucosa of trigone of urinary bladder" EXACT [OBOL:automatic]
+synonym: "organ mucosa of urinary bladder trigone" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vesical trigone" EXACT [OBOL:automatic]
+synonym: "trigone of bladder mucosa" EXACT [OBOL:automatic]
+synonym: "trigone of bladder mucosa of organ" EXACT [OBOL:automatic]
+synonym: "trigone of bladder mucous membrane" EXACT [OBOL:automatic]
+synonym: "trigone of bladder organ mucosa" EXACT [OBOL:automatic]
+synonym: "trigone of urinary bladder mucosa" EXACT [OBOL:automatic]
+synonym: "trigone of urinary bladder mucosa of organ" EXACT [OBOL:automatic]
+synonym: "trigone of urinary bladder mucous membrane" EXACT [OBOL:automatic]
+synonym: "trigone of urinary bladder organ mucosa" EXACT [OBOL:automatic]
+synonym: "urinary bladder trigone mucosa" EXACT [OBOL:automatic]
+synonym: "urinary bladder trigone mucosa of organ" EXACT [OBOL:automatic]
+synonym: "urinary bladder trigone mucous membrane" EXACT [OBOL:automatic]
+synonym: "urinary bladder trigone organ mucosa" EXACT [OBOL:automatic]
+synonym: "vesical trigone mucosa" EXACT [OBOL:automatic]
+synonym: "vesical trigone mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vesical trigone mucous membrane" EXACT [OBOL:automatic]
+synonym: "vesical trigone organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005010
+name: mucosa of neck of urinary bladder
+xref: FMA:17846 ! Mucosa of neck of urinary bladder
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001258 ! part_of neck of urinary bladder
+synonym: "bladder neck mucosa" EXACT [OBOL:automatic]
+synonym: "bladder neck mucosa of organ" EXACT [OBOL:automatic]
+synonym: "bladder neck mucous membrane" EXACT [OBOL:automatic]
+synonym: "bladder neck organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of bladder neck" EXACT [OBOL:automatic]
+synonym: "mucosa of neck of bladder" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of bladder neck" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of neck of bladder" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of neck of urinary bladder" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of urinary bladder neck" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of vesical neck" EXACT [OBOL:automatic]
+synonym: "mucosa of urinary bladder neck" EXACT [OBOL:automatic]
+synonym: "mucosa of vesical neck" EXACT [OBOL:automatic]
+synonym: "mucous membrane of bladder neck" EXACT [OBOL:automatic]
+synonym: "mucous membrane of neck of bladder" EXACT [OBOL:automatic]
+synonym: "mucous membrane of neck of urinary bladder" EXACT [OBOL:automatic]
+synonym: "mucous membrane of urinary bladder neck" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vesical neck" EXACT [OBOL:automatic]
+synonym: "neck of bladder mucosa" EXACT [OBOL:automatic]
+synonym: "neck of bladder mucosa of organ" EXACT [OBOL:automatic]
+synonym: "neck of bladder mucous membrane" EXACT [OBOL:automatic]
+synonym: "neck of bladder organ mucosa" EXACT [OBOL:automatic]
+synonym: "neck of urinary bladder mucosa" EXACT [OBOL:automatic]
+synonym: "neck of urinary bladder mucosa of organ" EXACT [OBOL:automatic]
+synonym: "neck of urinary bladder mucous membrane" EXACT [OBOL:automatic]
+synonym: "neck of urinary bladder organ mucosa" EXACT [OBOL:automatic]
+synonym: "organ mucosa of bladder neck" EXACT [OBOL:automatic]
+synonym: "organ mucosa of neck of bladder" EXACT [OBOL:automatic]
+synonym: "organ mucosa of neck of urinary bladder" EXACT [OBOL:automatic]
+synonym: "organ mucosa of urinary bladder neck" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vesical neck" EXACT [OBOL:automatic]
+synonym: "urinary bladder neck mucosa" EXACT [OBOL:automatic]
+synonym: "urinary bladder neck mucosa of organ" EXACT [OBOL:automatic]
+synonym: "urinary bladder neck mucous membrane" EXACT [OBOL:automatic]
+synonym: "urinary bladder neck organ mucosa" EXACT [OBOL:automatic]
+synonym: "vesical neck mucosa" EXACT [OBOL:automatic]
+synonym: "vesical neck mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vesical neck mucous membrane" EXACT [OBOL:automatic]
+synonym: "vesical neck organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005011
+name: mucosa of right uterine tube
+xref: FMA:18452 ! Mucosa of right uterine tube
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001302 ! part_of right uterine tube
+synonym: "mucosa of organ of right fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of right oviduct" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of right uterine tube" EXACT [OBOL:automatic]
+synonym: "mucosa of right fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucosa of right oviduct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of right fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of right oviduct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of right uterine tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of right fallopian tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of right oviduct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of right uterine tube" EXACT [OBOL:automatic]
+synonym: "right fallopian tube mucosa" EXACT [OBOL:automatic]
+synonym: "right fallopian tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "right fallopian tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "right fallopian tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "right oviduct mucosa" EXACT [OBOL:automatic]
+synonym: "right oviduct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "right oviduct mucous membrane" EXACT [OBOL:automatic]
+synonym: "right oviduct organ mucosa" EXACT [OBOL:automatic]
+synonym: "right uterine tube mucosa" EXACT [OBOL:automatic]
+synonym: "right uterine tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "right uterine tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "right uterine tube organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005012
+name: mucosa of left uterine tube
+xref: FMA:18453 ! Mucosa of left uterine tube
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001303 ! part_of left uterine tube
+synonym: "left fallopian tube mucosa" EXACT [OBOL:automatic]
+synonym: "left fallopian tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "left fallopian tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "left fallopian tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "left oviduct mucosa" EXACT [OBOL:automatic]
+synonym: "left oviduct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "left oviduct mucous membrane" EXACT [OBOL:automatic]
+synonym: "left oviduct organ mucosa" EXACT [OBOL:automatic]
+synonym: "left uterine tube mucosa" EXACT [OBOL:automatic]
+synonym: "left uterine tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "left uterine tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "left uterine tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of left fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucosa of left oviduct" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of left fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of left oviduct" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of left uterine tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of left fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of left oviduct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of left uterine tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of left fallopian tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of left oviduct" EXACT [OBOL:automatic]
+synonym: "organ mucosa of left uterine tube" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005013
+name: mucosa of male urethra
+xref: FMA:239937 ! Mucosa of male urethra
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001333 ! part_of male urethra
+synonym: "male urethra mucosa" EXACT [OBOL:automatic]
+synonym: "male urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "male urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "male urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of male urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of male urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of male urethra" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005014
+name: mucosa of female urethra
+xref: FMA:239940 ! Mucosa of female urethra
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001334 ! part_of female urethra
+synonym: "female urethra mucosa" EXACT [OBOL:automatic]
+synonym: "female urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "female urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "female urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of female urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of female urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of female urethra" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005015
+name: mucosa of prostatic urethra
+xref: FMA:77079 ! Mucosa of prostatic urethra
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001335 ! part_of prostatic urethra
+synonym: "mucosa of organ of prostatic part of urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of prostatic urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of prostatic part of urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of prostatic part of urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of prostatic urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of prostatic part of urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of prostatic urethra" EXACT [OBOL:automatic]
+synonym: "prostatic part of urethra mucosa" EXACT [OBOL:automatic]
+synonym: "prostatic part of urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "prostatic part of urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "prostatic part of urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "prostatic urethra mucosa" EXACT [OBOL:automatic]
+synonym: "prostatic urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "prostatic urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "prostatic urethra organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005016
+name: mucosa of intermediate urethra
+xref: FMA:77085 ! Mucosa of intermediate urethra
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001336 ! part_of membranous urethra
+synonym: "intermediate part of urethra mucosa" EXACT [OBOL:automatic]
+synonym: "intermediate part of urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "intermediate part of urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "intermediate part of urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "intermediate urethra mucosa" EXACT [OBOL:automatic]
+synonym: "intermediate urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "intermediate urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "intermediate urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "membranous part of urethra mucosa" EXACT [OBOL:automatic]
+synonym: "membranous part of urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "membranous part of urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "membranous part of urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "membranous urethra mucosa" EXACT [OBOL:automatic]
+synonym: "membranous urethra mucosa of organ" EXACT [OBOL:automatic]
+synonym: "membranous urethra mucous membrane" EXACT [OBOL:automatic]
+synonym: "membranous urethra organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of intermediate part of urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of membranous part of urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of membranous urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of intermediate part of urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of intermediate urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of membranous part of urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of membranous urethra" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of pars membranacea (urethrae)" EXACT [OBOL:automatic]
+synonym: "mucosa of pars membranacea (urethrae)" EXACT [OBOL:automatic]
+synonym: "mucous membrane of intermediate part of urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of intermediate urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of membranous part of urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of membranous urethra" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pars membranacea (urethrae)" EXACT [OBOL:automatic]
+synonym: "organ mucosa of intermediate part of urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of intermediate urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of membranous part of urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of membranous urethra" EXACT [OBOL:automatic]
+synonym: "organ mucosa of pars membranacea (urethrae)" EXACT [OBOL:automatic]
+synonym: "pars membranacea (urethrae) mucosa" EXACT [OBOL:automatic]
+synonym: "pars membranacea (urethrae) mucosa of organ" EXACT [OBOL:automatic]
+synonym: "pars membranacea (urethrae) mucous membrane" EXACT [OBOL:automatic]
+synonym: "pars membranacea (urethrae) organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005017
+name: mucosa of lacrimal sac
+xref: FMA:72061 ! Mucosa of lacrimal sac
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001351 ! part_of lacrimal sac
+synonym: "lacrimal sac mucosa" EXACT [OBOL:automatic]
+synonym: "lacrimal sac mucosa of organ" EXACT [OBOL:automatic]
+synonym: "lacrimal sac mucous membrane" EXACT [OBOL:automatic]
+synonym: "lacrimal sac organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of lacrimal sac" EXACT [OBOL:automatic]
+synonym: "mucous membrane of lacrimal sac" EXACT [OBOL:automatic]
+synonym: "organ mucosa of lacrimal sac" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005018
+name: mucosa of nasal septum
+xref: FMA:60113 ! Mucosa of nasal septum
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001706 ! part_of nasal septum
+synonym: "mucosa of organ of nasal septum" EXACT [OBOL:automatic]
+synonym: "mucous membrane of nasal septum" EXACT [OBOL:automatic]
+synonym: "nasal septum mucosa" EXACT [OBOL:automatic]
+synonym: "nasal septum mucosa of organ" EXACT [OBOL:automatic]
+synonym: "nasal septum mucous membrane" EXACT [OBOL:automatic]
+synonym: "nasal septum organ mucosa" EXACT [OBOL:automatic]
+synonym: "organ mucosa of nasal septum" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005019
+name: mucosa of palate
+xref: FMA:59765 ! Mucosa of palate
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001716 ! part_of palate
+synonym: "mucosa of oral roof" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of oral roof" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of palate" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of roof of mouth" EXACT [OBOL:automatic]
+synonym: "mucosa of roof of mouth" EXACT [OBOL:automatic]
+synonym: "mucous membrane of oral roof" EXACT [OBOL:automatic]
+synonym: "mucous membrane of palate" EXACT [OBOL:automatic]
+synonym: "mucous membrane of roof of mouth" EXACT [OBOL:automatic]
+synonym: "oral roof mucosa" EXACT [OBOL:automatic]
+synonym: "oral roof mucosa of organ" EXACT [OBOL:automatic]
+synonym: "oral roof mucous membrane" EXACT [OBOL:automatic]
+synonym: "oral roof organ mucosa" EXACT [OBOL:automatic]
+synonym: "organ mucosa of oral roof" EXACT [OBOL:automatic]
+synonym: "organ mucosa of palate" EXACT [OBOL:automatic]
+synonym: "organ mucosa of roof of mouth" EXACT [OBOL:automatic]
+synonym: "palate mucosa" EXACT [OBOL:automatic]
+synonym: "palate mucosa of organ" EXACT [OBOL:automatic]
+synonym: "palate mucous membrane" EXACT [OBOL:automatic]
+synonym: "palate organ mucosa" EXACT [OBOL:automatic]
+synonym: "roof of mouth mucosa" EXACT [OBOL:automatic]
+synonym: "roof of mouth mucosa of organ" EXACT [OBOL:automatic]
+synonym: "roof of mouth mucous membrane" EXACT [OBOL:automatic]
+synonym: "roof of mouth organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005020
+name: mucosa of tongue
+xref: FMA:54807 ! Mucosa of tongue
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001723 ! part_of tongue
+synonym: "mucosa of organ of tongue" EXACT [OBOL:automatic]
+synonym: "mucous membrane of tongue" EXACT [OBOL:automatic]
+synonym: "organ mucosa of tongue" EXACT [OBOL:automatic]
+synonym: "tongue mucosa" EXACT [OBOL:automatic]
+synonym: "tongue mucosa of organ" EXACT [OBOL:automatic]
+synonym: "tongue mucous membrane" EXACT [OBOL:automatic]
+synonym: "tongue organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005021
+name: mucosa of sphenoidal sinus
+xref: FMA:59775 ! Mucosa of sphenoidal sinus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001724 ! part_of sphenoidal sinus
+synonym: "mucosa of organ of sphenoid sinus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of sphenoidal sinus" EXACT [OBOL:automatic]
+synonym: "mucosa of sphenoid sinus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of sphenoid sinus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of sphenoidal sinus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of sphenoid sinus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of sphenoidal sinus" EXACT [OBOL:automatic]
+synonym: "sphenoid sinus mucosa" EXACT [OBOL:automatic]
+synonym: "sphenoid sinus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "sphenoid sinus mucous membrane" EXACT [OBOL:automatic]
+synonym: "sphenoid sinus organ mucosa" EXACT [OBOL:automatic]
+synonym: "sphenoidal sinus mucosa" EXACT [OBOL:automatic]
+synonym: "sphenoidal sinus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "sphenoidal sinus mucous membrane" EXACT [OBOL:automatic]
+synonym: "sphenoidal sinus organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005022
+name: mucosa of nasopharynx
+xref: FMA:54971 ! Mucosa of nasopharynx
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001728 ! part_of nasopharynx
+synonym: "mucosa of nasal part of pharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of nasal part of pharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of nasopharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of rhinopharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of rhinopharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of nasal part of pharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of nasopharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of rhinopharynx" EXACT [OBOL:automatic]
+synonym: "nasal part of pharynx mucosa" EXACT [OBOL:automatic]
+synonym: "nasal part of pharynx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "nasal part of pharynx mucous membrane" EXACT [OBOL:automatic]
+synonym: "nasal part of pharynx organ mucosa" EXACT [OBOL:automatic]
+synonym: "nasopharynx mucosa" EXACT [OBOL:automatic]
+synonym: "nasopharynx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "nasopharynx mucous membrane" EXACT [OBOL:automatic]
+synonym: "nasopharynx organ mucosa" EXACT [OBOL:automatic]
+synonym: "organ mucosa of nasal part of pharynx" EXACT [OBOL:automatic]
+synonym: "organ mucosa of nasopharynx" EXACT [OBOL:automatic]
+synonym: "organ mucosa of rhinopharynx" EXACT [OBOL:automatic]
+synonym: "rhinopharynx mucosa" EXACT [OBOL:automatic]
+synonym: "rhinopharynx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "rhinopharynx mucous membrane" EXACT [OBOL:automatic]
+synonym: "rhinopharynx organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005023
+name: mucosa of oropharynx
+xref: FMA:54933 ! Mucosa of oropharynx
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001729 ! part_of oropharynx
+synonym: "mucosa of oral part of pharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of oral part of pharynx" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of oropharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of oral part of pharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of oropharynx" EXACT [OBOL:automatic]
+synonym: "oral part of pharynx mucosa" EXACT [OBOL:automatic]
+synonym: "oral part of pharynx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "oral part of pharynx mucous membrane" EXACT [OBOL:automatic]
+synonym: "oral part of pharynx organ mucosa" EXACT [OBOL:automatic]
+synonym: "organ mucosa of oral part of pharynx" EXACT [OBOL:automatic]
+synonym: "organ mucosa of oropharynx" EXACT [OBOL:automatic]
+synonym: "oropharynx mucosa" EXACT [OBOL:automatic]
+synonym: "oropharynx mucosa of organ" EXACT [OBOL:automatic]
+synonym: "oropharynx mucous membrane" EXACT [OBOL:automatic]
+synonym: "oropharynx organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005024
+name: mucosa of soft palate
+xref: FMA:59784 ! Mucosa of soft palate
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001733 ! part_of soft palate
+synonym: "mucosa of organ of soft palate" EXACT [OBOL:automatic]
+synonym: "mucous membrane of soft palate" EXACT [OBOL:automatic]
+synonym: "organ mucosa of soft palate" EXACT [OBOL:automatic]
+synonym: "soft palate mucosa" EXACT [OBOL:automatic]
+synonym: "soft palate mucosa of organ" EXACT [OBOL:automatic]
+synonym: "soft palate mucous membrane" EXACT [OBOL:automatic]
+synonym: "soft palate organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005025
+name: mucosa of uvula
+xref: FMA:60030 ! Mucosa of uvula
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001734 ! part_of uvula
+synonym: "cerebellum lobule IX mucosa" EXACT [OBOL:automatic]
+synonym: "cerebellum lobule IX mucosa of organ" EXACT [OBOL:automatic]
+synonym: "cerebellum lobule IX mucous membrane" EXACT [OBOL:automatic]
+synonym: "cerebellum lobule IX organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of cerebellum lobule IX" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of cerebellum lobule IX" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of uvula" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of uvula of palate" EXACT [OBOL:automatic]
+synonym: "mucosa of uvula of palate" EXACT [OBOL:automatic]
+synonym: "mucous membrane of cerebellum lobule IX" EXACT [OBOL:automatic]
+synonym: "mucous membrane of uvula" EXACT [OBOL:automatic]
+synonym: "mucous membrane of uvula of palate" EXACT [OBOL:automatic]
+synonym: "organ mucosa of cerebellum lobule IX" EXACT [OBOL:automatic]
+synonym: "organ mucosa of uvula" EXACT [OBOL:automatic]
+synonym: "organ mucosa of uvula of palate" EXACT [OBOL:automatic]
+synonym: "uvula mucosa" EXACT [OBOL:automatic]
+synonym: "uvula mucosa of organ" EXACT [OBOL:automatic]
+synonym: "uvula mucous membrane" EXACT [OBOL:automatic]
+synonym: "uvula of palate mucosa" EXACT [OBOL:automatic]
+synonym: "uvula of palate mucosa of organ" EXACT [OBOL:automatic]
+synonym: "uvula of palate mucous membrane" EXACT [OBOL:automatic]
+synonym: "uvula of palate organ mucosa" EXACT [OBOL:automatic]
+synonym: "uvula organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005026
+name: mucosa of middle ear
+xref: FMA:59663 ! Mucosa of middle ear
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001756 ! part_of middle ear
+synonym: "middle ear mucosa" EXACT [OBOL:automatic]
+synonym: "middle ear mucosa of organ" EXACT [OBOL:automatic]
+synonym: "middle ear mucous membrane" EXACT [OBOL:automatic]
+synonym: "middle ear organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of middle ear" EXACT [OBOL:automatic]
+synonym: "mucous membrane of middle ear" EXACT [OBOL:automatic]
+synonym: "organ mucosa of middle ear" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005027
+name: mucosa of frontal sinus
+xref: FMA:59774 ! Mucosa of frontal sinus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001760 ! part_of frontal sinus
+synonym: "frontal sinus mucosa" EXACT [OBOL:automatic]
+synonym: "frontal sinus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "frontal sinus mucous membrane" EXACT [OBOL:automatic]
+synonym: "frontal sinus organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of frontal sinus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of frontal sinus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of frontal sinus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005028
+name: mucosa of maxillary sinus
+xref: FMA:59773 ! Mucosa of maxillary sinus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001764 ! part_of maxillary sinus
+synonym: "antrum of highmore mucosa" EXACT [OBOL:automatic]
+synonym: "antrum of highmore mucosa of organ" EXACT [OBOL:automatic]
+synonym: "antrum of highmore mucous membrane" EXACT [OBOL:automatic]
+synonym: "antrum of highmore organ mucosa" EXACT [OBOL:automatic]
+synonym: "maxillary sinus mucosa" EXACT [OBOL:automatic]
+synonym: "maxillary sinus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "maxillary sinus mucous membrane" EXACT [OBOL:automatic]
+synonym: "maxillary sinus organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of antrum of highmore" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of antrum of highmore" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of maxillary sinus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of antrum of highmore" EXACT [OBOL:automatic]
+synonym: "mucous membrane of maxillary sinus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of antrum of highmore" EXACT [OBOL:automatic]
+synonym: "organ mucosa of maxillary sinus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005029
+name: mucosa of lacrimal canaliculus
+xref: FMA:85366 ! Mucosa of lacrimal canaliculus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001770 ! part_of lacrimal canaliculus
+synonym: "lacrimal canaliculus mucosa" EXACT [OBOL:automatic]
+synonym: "lacrimal canaliculus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "lacrimal canaliculus mucous membrane" EXACT [OBOL:automatic]
+synonym: "lacrimal canaliculus organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of lacrimal canaliculus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of lacrimal canaliculus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of lacrimal canaliculus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005030
+name: mucosa of paranasal sinus
+xref: FMA:59772 ! Mucosa of paranasal sinus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001825 ! part_of paranasal sinus
+synonym: "mucosa of organ of paranasal sinus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of paranasal sinus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of paranasal sinus" EXACT [OBOL:automatic]
+synonym: "paranasal sinus mucosa" EXACT [OBOL:automatic]
+synonym: "paranasal sinus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "paranasal sinus mucous membrane" EXACT [OBOL:automatic]
+synonym: "paranasal sinus organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005031
+name: mucosa of upper lip
+xref: FMA:59832 ! Mucosa of upper lip
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001834 ! part_of upper lip
+synonym: "mucosa of organ of upper lip" EXACT [OBOL:automatic]
+synonym: "mucous membrane of upper lip" EXACT [OBOL:automatic]
+synonym: "organ mucosa of upper lip" EXACT [OBOL:automatic]
+synonym: "upper lip mucosa" EXACT [OBOL:automatic]
+synonym: "upper lip mucosa of organ" EXACT [OBOL:automatic]
+synonym: "upper lip mucous membrane" EXACT [OBOL:automatic]
+synonym: "upper lip organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005032
+name: mucosa of lower lip
+xref: FMA:59833 ! Mucosa of lower lip
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001835 ! part_of lower lip
+synonym: "lower lip mucosa" EXACT [OBOL:automatic]
+synonym: "lower lip mucosa of organ" EXACT [OBOL:automatic]
+synonym: "lower lip mucous membrane" EXACT [OBOL:automatic]
+synonym: "lower lip organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of lower lip" EXACT [OBOL:automatic]
+synonym: "mucous membrane of lower lip" EXACT [OBOL:automatic]
+synonym: "organ mucosa of lower lip" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005033
+name: mucosa of gallbladder
+xref: FMA:14662 ! Mucosa of gallbladder
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002110 ! part_of gallbladder
+synonym: "gall bladder mucosa" EXACT [OBOL:automatic]
+synonym: "gall bladder mucosa of organ" EXACT [OBOL:automatic]
+synonym: "gall bladder mucous membrane" EXACT [OBOL:automatic]
+synonym: "gall bladder organ mucosa" EXACT [OBOL:automatic]
+synonym: "gallbladder mucosa" EXACT [OBOL:automatic]
+synonym: "gallbladder mucosa of organ" EXACT [OBOL:automatic]
+synonym: "gallbladder mucous membrane" EXACT [OBOL:automatic]
+synonym: "gallbladder organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of gall bladder" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of gall bladder" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of gallbladder" EXACT [OBOL:automatic]
+synonym: "mucous membrane of gall bladder" EXACT [OBOL:automatic]
+synonym: "mucous membrane of gallbladder" EXACT [OBOL:automatic]
+synonym: "organ mucosa of gall bladder" EXACT [OBOL:automatic]
+synonym: "organ mucosa of gallbladder" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005034
+name: mucosa of right main bronchus
+xref: FMA:13137 ! Mucosa of right main bronchus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002177 ! part_of right main bronchus
+synonym: "mucosa of organ of right bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of right main bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of right principal bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of right bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of right principal bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of right bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of right main bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of right principal bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of right bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of right main bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of right principal bronchus" EXACT [OBOL:automatic]
+synonym: "right bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "right bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "right bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "right bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "right main bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "right main bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "right main bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "right main bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "right principal bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "right principal bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "right principal bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "right principal bronchus organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005035
+name: mucosa of left main bronchus
+xref: FMA:13138 ! Mucosa of left main bronchus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002178 ! part_of left main bronchus
+synonym: "left bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "left bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "left bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "left bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "left main bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "left main bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "left main bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "left main bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "left principal bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "left principal bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "left principal bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "left principal bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of left bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of left principal bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of left bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of left main bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of left principal bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of left bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of left main bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of left principal bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of left bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of left main bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of left principal bronchus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005036
+name: mucosa of main bronchus
+xref: FMA:13115 ! Mucosa of main bronchus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002182 ! part_of main bronchus
+synonym: "bronchus principalis mucosa" EXACT [OBOL:automatic]
+synonym: "bronchus principalis mucosa of organ" EXACT [OBOL:automatic]
+synonym: "bronchus principalis mucous membrane" EXACT [OBOL:automatic]
+synonym: "bronchus principalis organ mucosa" EXACT [OBOL:automatic]
+synonym: "main bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "main bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "main bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "main bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of bronchus principalis" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of bronchus principalis" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of main bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of primary bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of principal bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of primary bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of principal bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of bronchus principalis" EXACT [OBOL:automatic]
+synonym: "mucous membrane of main bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of primary bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of principal bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of bronchus principalis" EXACT [OBOL:automatic]
+synonym: "organ mucosa of main bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of primary bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of principal bronchus" EXACT [OBOL:automatic]
+synonym: "primary bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "primary bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "primary bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "primary bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "principal bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "principal bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "principal bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "principal bronchus organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005037
+name: mucosa of lobar bronchus
+xref: FMA:62668 ! Mucosa of lobar bronchus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002183 ! part_of lobar bronchus
+synonym: "lobar bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "lobar bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "lobar bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "lobar bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of lobar bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of secondary bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of secondary bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of lobar bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of secondary bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of lobar bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of secondary bronchus" EXACT [OBOL:automatic]
+synonym: "secondary bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "secondary bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "secondary bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "secondary bronchus organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005038
+name: mucosa of segmental bronchus
+xref: FMA:62666 ! Mucosa of segmental bronchus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002184 ! part_of segmental bronchus
+synonym: "mucosa of organ of segmental bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of tertiary bronchus" EXACT [OBOL:automatic]
+synonym: "mucosa of tertiary bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of segmental bronchus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of tertiary bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of segmental bronchus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of tertiary bronchus" EXACT [OBOL:automatic]
+synonym: "segmental bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "segmental bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "segmental bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "segmental bronchus organ mucosa" EXACT [OBOL:automatic]
+synonym: "tertiary bronchus mucosa" EXACT [OBOL:automatic]
+synonym: "tertiary bronchus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "tertiary bronchus mucous membrane" EXACT [OBOL:automatic]
+synonym: "tertiary bronchus organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005039
+name: mucosa of bronchiole
+xref: FMA:263230 ! Mucosa of lobular bronchiole
+xref: FMA:62774 ! Mucosa of bronchiole
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002186 ! part_of bronchiole
+synonym: "bronchiole mucosa" EXACT [OBOL:automatic]
+synonym: "bronchiole mucosa of organ" EXACT [OBOL:automatic]
+synonym: "bronchiole mucous membrane" EXACT [OBOL:automatic]
+synonym: "bronchiole organ mucosa" EXACT [OBOL:automatic]
+synonym: "lobular bronchiole mucosa" EXACT [OBOL:automatic]
+synonym: "lobular bronchiole mucosa of organ" EXACT [OBOL:automatic]
+synonym: "lobular bronchiole mucous membrane" EXACT [OBOL:automatic]
+synonym: "lobular bronchiole organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of lobular bronchiole" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of bronchiole" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of lobular bronchiole" EXACT [OBOL:automatic]
+synonym: "mucous membrane of bronchiole" EXACT [OBOL:automatic]
+synonym: "mucous membrane of lobular bronchiole" EXACT [OBOL:automatic]
+synonym: "organ mucosa of bronchiole" EXACT [OBOL:automatic]
+synonym: "organ mucosa of lobular bronchiole" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005040
+name: mucosa of terminal bronchiole
+xref: FMA:263232 ! Mucosa of terminal bronchiole
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002187 ! part_of terminal bronchiole
+synonym: "bronchiolus terminalis mucosa" EXACT [OBOL:automatic]
+synonym: "bronchiolus terminalis mucosa of organ" EXACT [OBOL:automatic]
+synonym: "bronchiolus terminalis mucous membrane" EXACT [OBOL:automatic]
+synonym: "bronchiolus terminalis organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of bronchiolus terminalis" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of bronchiolus terminalis" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of terminal bronchiole" EXACT [OBOL:automatic]
+synonym: "mucous membrane of bronchiolus terminalis" EXACT [OBOL:automatic]
+synonym: "mucous membrane of terminal bronchiole" EXACT [OBOL:automatic]
+synonym: "organ mucosa of bronchiolus terminalis" EXACT [OBOL:automatic]
+synonym: "organ mucosa of terminal bronchiole" EXACT [OBOL:automatic]
+synonym: "terminal bronchiole mucosa" EXACT [OBOL:automatic]
+synonym: "terminal bronchiole mucosa of organ" EXACT [OBOL:automatic]
+synonym: "terminal bronchiole mucous membrane" EXACT [OBOL:automatic]
+synonym: "terminal bronchiole organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005041
+name: mucosa of respiratory bronchiole
+xref: FMA:263238 ! Mucosa of respiratory bronchiole
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002188 ! part_of respiratory bronchiole
+synonym: "bronchiolus respiratorius mucosa" EXACT [OBOL:automatic]
+synonym: "bronchiolus respiratorius mucosa of organ" EXACT [OBOL:automatic]
+synonym: "bronchiolus respiratorius mucous membrane" EXACT [OBOL:automatic]
+synonym: "bronchiolus respiratorius organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of bronchiolus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of bronchiolus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of respiratory bronchiole" EXACT [OBOL:automatic]
+synonym: "mucous membrane of bronchiolus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucous membrane of respiratory bronchiole" EXACT [OBOL:automatic]
+synonym: "organ mucosa of bronchiolus respiratorius" EXACT [OBOL:automatic]
+synonym: "organ mucosa of respiratory bronchiole" EXACT [OBOL:automatic]
+synonym: "respiratory bronchiole mucosa" EXACT [OBOL:automatic]
+synonym: "respiratory bronchiole mucosa of organ" EXACT [OBOL:automatic]
+synonym: "respiratory bronchiole mucous membrane" EXACT [OBOL:automatic]
+synonym: "respiratory bronchiole organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005042
+name: mucosa of tympanic membrane
+xref: FMA:56844 ! Mucosa of tympanic membrane
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002364 ! part_of tympanic membrane
+synonym: "Rivinus ' membrane mucosa" EXACT [OBOL:automatic]
+synonym: "Rivinus ' membrane mucosa of organ" EXACT [OBOL:automatic]
+synonym: "Rivinus ' membrane mucous membrane" EXACT [OBOL:automatic]
+synonym: "Rivinus ' membrane organ mucosa" EXACT [OBOL:automatic]
+synonym: "ear drum mucosa" EXACT [OBOL:automatic]
+synonym: "ear drum mucosa of organ" EXACT [OBOL:automatic]
+synonym: "ear drum mucous membrane" EXACT [OBOL:automatic]
+synonym: "ear drum organ mucosa" EXACT [OBOL:automatic]
+synonym: "lateral wall of tympanic cavity mucosa" EXACT [OBOL:automatic]
+synonym: "lateral wall of tympanic cavity mucosa of organ" EXACT [OBOL:automatic]
+synonym: "lateral wall of tympanic cavity mucous membrane" EXACT [OBOL:automatic]
+synonym: "lateral wall of tympanic cavity organ mucosa" EXACT [OBOL:automatic]
+synonym: "membranous wall of tympanic cavity mucosa" EXACT [OBOL:automatic]
+synonym: "membranous wall of tympanic cavity mucosa of organ" EXACT [OBOL:automatic]
+synonym: "membranous wall of tympanic cavity mucous membrane" EXACT [OBOL:automatic]
+synonym: "membranous wall of tympanic cavity organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of Rivinus ' membrane" EXACT [OBOL:automatic]
+synonym: "mucosa of ear drum" EXACT [OBOL:automatic]
+synonym: "mucosa of lateral wall of tympanic cavity" EXACT [OBOL:automatic]
+synonym: "mucosa of membranous wall of tympanic cavity" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of Rivinus ' membrane" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of ear drum" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of lateral wall of tympanic cavity" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of membranous wall of tympanic cavity" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of tympanic membrane" EXACT [OBOL:automatic]
+synonym: "mucous membrane of Rivinus ' membrane" EXACT [OBOL:automatic]
+synonym: "mucous membrane of ear drum" EXACT [OBOL:automatic]
+synonym: "mucous membrane of lateral wall of tympanic cavity" EXACT [OBOL:automatic]
+synonym: "mucous membrane of membranous wall of tympanic cavity" EXACT [OBOL:automatic]
+synonym: "mucous membrane of tympanic membrane" EXACT [OBOL:automatic]
+synonym: "organ mucosa of Rivinus ' membrane" EXACT [OBOL:automatic]
+synonym: "organ mucosa of ear drum" EXACT [OBOL:automatic]
+synonym: "organ mucosa of lateral wall of tympanic cavity" EXACT [OBOL:automatic]
+synonym: "organ mucosa of membranous wall of tympanic cavity" EXACT [OBOL:automatic]
+synonym: "organ mucosa of tympanic membrane" EXACT [OBOL:automatic]
+synonym: "tympanic membrane mucosa" EXACT [OBOL:automatic]
+synonym: "tympanic membrane mucosa of organ" EXACT [OBOL:automatic]
+synonym: "tympanic membrane mucous membrane" EXACT [OBOL:automatic]
+synonym: "tympanic membrane organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005043
+name: mucosa of nasolacrimal duct
+xref: FMA:59664 ! Mucosa of nasolacrimal duct
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002392 ! part_of nasolacrimal duct
+synonym: "mucosa of organ of nasolacrimal duct" EXACT [OBOL:automatic]
+synonym: "mucous membrane of nasolacrimal duct" EXACT [OBOL:automatic]
+synonym: "nasolacrimal duct mucosa" EXACT [OBOL:automatic]
+synonym: "nasolacrimal duct mucosa of organ" EXACT [OBOL:automatic]
+synonym: "nasolacrimal duct mucous membrane" EXACT [OBOL:automatic]
+synonym: "nasolacrimal duct organ mucosa" EXACT [OBOL:automatic]
+synonym: "organ mucosa of nasolacrimal duct" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005044
+name: mucosa of pharyngotympanic tube
+xref: FMA:60109 ! Mucosa of pharyngotympanic tube
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002393 ! part_of pharyngotympanic tube
+synonym: "auditory tube mucosa" EXACT [OBOL:automatic]
+synonym: "auditory tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "auditory tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "auditory tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "internal auditory tube mucosa" EXACT [OBOL:automatic]
+synonym: "internal auditory tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "internal auditory tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "internal auditory tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of auditory tube" EXACT [OBOL:automatic]
+synonym: "mucosa of internal auditory tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of auditory tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of internal auditory tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of pharyngotympanic tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of auditory tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of internal auditory tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pharyngotympanic tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of auditory tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of internal auditory tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of pharyngotympanic tube" EXACT [OBOL:automatic]
+synonym: "pharyngotympanic tube mucosa" EXACT [OBOL:automatic]
+synonym: "pharyngotympanic tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "pharyngotympanic tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "pharyngotympanic tube organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005045
+name: mucosa of ethmoidal sinus
+xref: FMA:59776 ! Mucosa of ethmoidal sinus
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0002453 ! part_of ethmoid sinus
+synonym: "ethmoid sinus mucosa" EXACT [OBOL:automatic]
+synonym: "ethmoid sinus mucosa of organ" EXACT [OBOL:automatic]
+synonym: "ethmoid sinus mucous membrane" EXACT [OBOL:automatic]
+synonym: "ethmoid sinus organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of ethmoid sinus" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of ethmoid sinus" EXACT [OBOL:automatic]
+synonym: "mucous membrane of ethmoid sinus" EXACT [OBOL:automatic]
+synonym: "organ mucosa of ethmoid sinus" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005046
+name: mucosa of hard palate
+xref: FMA:59783 ! Mucosa of hard palate
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0003216 ! part_of hard palate
+synonym: "hard palate mucosa" EXACT [OBOL:automatic]
+synonym: "hard palate mucosa of organ" EXACT [OBOL:automatic]
+synonym: "hard palate mucous membrane" EXACT [OBOL:automatic]
+synonym: "hard palate organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of hard palate" EXACT [OBOL:automatic]
+synonym: "mucous membrane of hard palate" EXACT [OBOL:automatic]
+synonym: "organ mucosa of hard palate" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005047
+name: mucosa of vocal fold
+xref: FMA:64017 ! Mucosa of vocal fold
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0003706 ! part_of vocal cord
+synonym: "mucosa of organ of true vocal cord" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of vocal cord" EXACT [OBOL:automatic]
+synonym: "mucosa of true vocal cord" EXACT [OBOL:automatic]
+synonym: "mucosa of vocal cord" EXACT [OBOL:automatic]
+synonym: "mucous membrane of true vocal cord" EXACT [OBOL:automatic]
+synonym: "mucous membrane of vocal cord" EXACT [OBOL:automatic]
+synonym: "organ mucosa of true vocal cord" EXACT [OBOL:automatic]
+synonym: "organ mucosa of vocal cord" EXACT [OBOL:automatic]
+synonym: "true vocal cord mucosa" EXACT [OBOL:automatic]
+synonym: "true vocal cord mucosa of organ" EXACT [OBOL:automatic]
+synonym: "true vocal cord mucous membrane" EXACT [OBOL:automatic]
+synonym: "true vocal cord organ mucosa" EXACT [OBOL:automatic]
+synonym: "vocal cord mucosa" EXACT [OBOL:automatic]
+synonym: "vocal cord mucosa of organ" EXACT [OBOL:automatic]
+synonym: "vocal cord mucous membrane" EXACT [OBOL:automatic]
+synonym: "vocal cord organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005048
+name: mucosa of uterine tube
+xref: FMA:18319 ! Mucosa of uterine tube
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0003889 ! part_of fallopian tube
+synonym: "fallopian tube mucosa" EXACT [OBOL:automatic]
+synonym: "fallopian tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "fallopian tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "fallopian tube organ mucosa" EXACT [OBOL:automatic]
+synonym: "mucosa of fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of uterine tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of fallopian tube" EXACT [OBOL:automatic]
+synonym: "mucous membrane of uterine tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of fallopian tube" EXACT [OBOL:automatic]
+synonym: "organ mucosa of uterine tube" EXACT [OBOL:automatic]
+synonym: "uterine tube mucosa" EXACT [OBOL:automatic]
+synonym: "uterine tube mucosa of organ" EXACT [OBOL:automatic]
+synonym: "uterine tube mucous membrane" EXACT [OBOL:automatic]
+synonym: "uterine tube organ mucosa" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005049
+name: mucosa of infundibulum of uterine tube
+xref: FMA:18357 ! Mucosa of infundibulum of uterine tube
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0003984 ! part_of uterine tube infundibulum
+synonym: "mucosa of organ of uterine tube infundibulum" EXACT [OBOL:automatic]
+synonym: "mucosa of uterine tube infundibulum" EXACT [OBOL:automatic]
+synonym: "mucous membrane of uterine tube infundibulum" EXACT [OBOL:automatic]
+synonym: "organ mucosa of uterine tube infundibulum" EXACT [OBOL:automatic]
+synonym: "uterine tube infundibulum mucosa" EXACT [OBOL:automatic]
+synonym: "uterine tube infundibulum mucosa of organ" EXACT [OBOL:automatic]
+synonym: "uterine tube infundibulum mucous membrane" EXACT [OBOL:automatic]
+synonym: "uterine tube infundibulum organ mucosa" EXACT [OBOL:automatic]
 
 [Typedef]
 id: adjacent_to
