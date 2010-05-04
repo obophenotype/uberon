@@ -3677,6 +3677,7 @@ synonym: "Vallate papilla of tongue" EXACT []
 xref: BTO:0001705
 xref: FMA:54822 ! vallate papilla of tongue
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001723 ! tongue
 
 [Term]
 id: UBERON:0000397
@@ -3834,11 +3835,28 @@ xref: GAID:679 ! visual cortex
 [Term]
 id: UBERON:0000412
 name: dermal papilla
+def: "small, nipple-like extensions (or interdigitations) of the dermis into the epidermis. They can be observed at the surface of the skin in hands and feet as epidermal  or papillary ridges (colloquially known as fingerprints). The dermal papillae nourishes all hair follicles and bring food and oxygen to the lower layers of epidermal cells. The pattern of ridges they produce in hands and feet are inherited features that are developed before birth. They remain unaltered (except size) throughout life, and are therefore used for fingerprints. The dermal papillae are part of the uppermost layer of the dermis, the papillary dermis, and the ridges they form greatly increase the surface area between the dermis and epidermis. Because the dermis' main function is to support the epidermis, this greatly increases the exchange of oxygen, nutrients, and waste products between these two layers. Additionally, the increase in surface area prevent the dermal and epidermal layers from separating from each others by strengthening the junction between them. With age, the papillae tend to flatten and sometimes increase in numbers. Dermal papillae also play a pivotal role in hair formation, growth and, cycling" [Wikipedia:Dermal_papillae]
 alt_id: UBERON:BTO_0001858-FMA_70737
-synonym: "Follicular papilla" EXACT [FMA:70737]
+synonym: "dermal papillae" EXACT PLURAL []
+synonym: "follicular papilla" EXACT [FMA:70737]
 xref: BTO:0001858
 xref: FMA:70737 ! Dermal papilla
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001992 ! papillary layer of dermis
+
+[Term]
+id: UBERON:0001992
+name: papillary layer of dermis
+alt_id: UBERON:FMA_64776-MA_0000800
+def: "Dense irregular connective tissue of the skin that consists of fibroblasts, various connective tissue cell types, and collagen, predominantly type III." [Wikipedia:Papillary_dermis]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "dermis papillary layer" EXACT []
+synonym: "papillary dermis" EXACT []
+xref: FMA:64776 ! Papillary layer of dermis
+xref: MA:0000800 ! dermis papillary layer
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002067 ! dermis
 
 [Term]
 id: UBERON:0000414
@@ -4984,7 +5002,7 @@ is_a: UBERON:0000463 ! portion of organism substance
 id: UBERON:0000915
 name: thorax
 alt_id: UBERON:FBbt_00000015-FMA_9576-MA_0000022-MIAA_0000295
-def: "Organismal subdivision of body that lies between the head and the abdomen [Wikipedia]." [ISBN:3110148986, Wikipedia:Thorax]
+def: "Organismal subdivision of body that lies between the head and the abdomen [Wikipedia]." [Wikipedia:Thorax]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "upper body" RELATED []
@@ -5003,7 +5021,7 @@ xref: galen:Thorax ! thorax
 id: UBERON:0000916
 name: abdomen
 alt_id: UBERON:FBbt_00000020-FMA_9577-MA_0000029-MIAA_0000298
-def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity. In arthropods it is the most distal section of the body which lies behind the thorax or cephalothorax // Subdivision of trunk, which is demarcated from the thorax internally by the inferior surface of the sternocostal part of the diaphragm and externally by the costal margin, from the pelvis by the plane of the superior pelvic aperture and from the lower limbs by the inguinal folds; together with the thorax, pelvis, and perineum, it constitutes the trunk. Examples: There is only one abdomen." [FB:gg, ISBN:3110148986, Wikipedia:Abdomen]
+def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity. In arthropods it is the most distal section of the body which lies behind the thorax or cephalothorax // Subdivision of trunk, which is demarcated from the thorax internally by the inferior surface of the sternocostal part of the diaphragm and externally by the costal margin, from the pelvis by the plane of the superior pelvic aperture and from the lower limbs by the inguinal folds; together with the thorax, pelvis, and perineum, it constitutes the trunk. Examples: There is only one abdomen." [Wikipedia:Abdomen]
 comment: Vertebrate specific. TOD def
 subset: uberon_slim
 synonym: "adult abdomen" RELATED []
@@ -5023,12 +5041,11 @@ xref: OpenCyc:Mx4rvVjgyZwpEbGdrcN5Y29ycA ! abdomen
 [Term]
 id: UBERON:0000917
 name: abdominal segment
+is_obsolete: true
 alt_id: UBERON:FBbt_00000021-SPD_0000055
 xref: FBbt:00000021 ! abdominal segment
 xref: HAO:0000016 ! abdominal segment
 xref: SPD:0000055 ! abdominal segment
-is_a: UBERON:0000914 ! segment
-synonym: "abdomen segment" EXACT [OBOL:automatic]
 synonym: "segment of abdomen" EXACT [OBOL:automatic]
 
 [Term]
@@ -6720,7 +6737,6 @@ subset: uberon_slim
 xref: MA:0002704 ! cuticle
 xref: MAT:0000150 ! exoskeleton
 xref: MIAA:0000150 ! exoskeleton
-is_a: UBERON:0003102 ! surface structure
 is_a: UBERON:0000476 ! acellular anatomical structure
 xref: BTO:0001600 ! cuticle
 
@@ -8181,9 +8197,21 @@ id: UBERON:0004914
 name: duodenal papilla
 def: "." [Wikipedia:Minor_duodenal_papilla, Wikipedia:Major_duodenal_papilla]
 synonym: "papilla of duodenum" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002114 ! duodenum
 xref: FMA:15953 ! duodenal papilla
 xref: EMAPA:18662 ! duodenal papilla
 xref: EMAPA:18853 ! duodenal papilla
+
+[Term]
+id: UBERON:0005050
+name: liver papillary process
+synonym: "processus papillaris" EXACT [FMA:14506]
+synonym: "papillary process of caudate lobe of liver" EXACT [FMA:14506]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002107 ! liver
+xref: FMA:14506 ! Papillary process of caudate lobe of liver
+xref: MA:0001643 ! liver papillary process
 
 [Term]
 id: UBERON:0004915
@@ -11067,7 +11095,7 @@ def: "." [Wikipedia:Brunner's_gland]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Brunner's gland" EXACT []
-synonym: "gland of brunner" EXACT []
+synonym: "gland of Brunner" EXACT []
 xref: FMA:15060 ! Duodenal gland
 xref: GAID:314 ! brunner's gland
 xref: MA:0001551 ! brunner's gland
@@ -11717,17 +11745,19 @@ def: "the canals that carry bile in the liver between the intralobular ducts and
 id: UBERON:0001247
 name: falciform ligament
 alt_id: UBERON:FMA_15823-MA_0001622
-def: "." [Wikipedia:Falciform_ligament]
+def: "a ligament that attaches the liver to the anterior body wall. It is a broad and thin antero-posterior peritoneal fold, falciform (Latin "sickle-shaped") in shape, its base being directed downward and backward and its apex upward and backward. It is a remnant of the ventral mesentery of the fetus. It is situated in an antero-posterior plane but lies obliquely, so that one surface faces forward and is in contact with the peritoneum  behind the right rectus and the diaphragm, while the other is directed backward and is in contact with the left lobe of the liver. It is attached by its left margin to the under surface of the diaphragm and the posterior surface of the sheath of the right Rectus as low down as the umbilicus; by its right margin it extends from the notch on the anterior margin of the liver, as far back as the posterior surface. It is composed of two layers of peritoneum closely united together. Its base or free edge contains between its layers the round ligament and the paraumbilical veins[WP]." [Wikipedia:Falciform_ligament]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "falciform ligament of liver" EXACT []
 synonym: "ligamentum falciforme (hepatis)" EXACT []
 xref: EHDAA:4856 ! falciform ligament
+xref: EMAPA:18288 ! falciform ligament
+xref: EMAPA:18908 ! falciform ligament
 xref: FMA:15823 ! Falciform ligament
 xref: HOG:0000355 ! falciform ligament
 xref: MA:0001622 ! falciform ligament
 is_a: UBERON:0000211 ! ligament
-is_a: UBERON:0002095 ! mesentery
+relationship: develops_from UBERON:0002095 ! mesentery
 xref: ncithesaurus:Falciform_Ligament ! Falciform Ligament
 
 [Term]
@@ -19328,15 +19358,14 @@ xref: OpenCyc:Mx4rvVjL05wpEbGdrcN5Y29ycA ! ear
 
 [Term]
 id: UBERON:0002105
-name: auditory system
+name: vestibulo-auditory system
 alt_id: UBERON:FMA_7192-MA_0002443
 def: "A sensory system for the sense of hearing[WP]." [Wikipedia:Auditory_system]
-comment: general anatomical ter in FMA. See also FMA:7193 Vestibular system
+comment: Auditory system is general anatomical term in FMA
 subset: uberon_slim
 synonym: "auditory organ system" EXACT []
 synonym: "auditory system" RELATED []
 synonym: "auditory/vestibular system" RELATED []
-synonym: "vestibulo-auditory system" EXACT []
 synonym: "vestibuloauditory system" EXACT []
 synonym: "vestibuloauditory system" RELATED []
 xref: AAO:0000631 ! vestibuloauditory_system
@@ -19344,14 +19373,25 @@ xref: FMA:7192 ! Auditory system
 xref: FMA:78500 ! Vestibulo-auditory system
 xref: TAO:0001138 ! vestibuloauditory system
 xref: MA:0002443 ! auditory system
+xref: XAO:0003195 ! vestibuloauditory system
 xref: ZFA:0001138 ! vestibuloauditory system
-xref: OpenCyc:Mx4rvViwtJwpEbGdrcN5Y29ycA
+xref: ncithesaurus:Auditory_System ! Auditory System
+xref: OpenCyc:Mx4rvViwtJwpEbGdrcN5Y29ycA ! auditory system
 is_a: UBERON:0001032 ! sense organ system
 relationship: capable_of GO:0007605 ! sensory perception of sound
 intersection_of: UBERON:0001032 ! sense organ system
 intersection_of: capable_of GO:0007605 ! sensory perception of sound
-xref: ncithesaurus:Auditory_System ! Auditory System
-xref: OpenCyc:Mx4rvViwtJwpEbGdrcN5Y29ycA ! auditory system
+
+[Term]
+id: UBERON:0004681
+name: vestibular system
+def: "The vestibular system, which contributes to our balance and our sense of spatial orientation, is the sensory system that provides the dominant input about movement and equilibrioception. Together with the cochlea, a part of the auditory system, it constitutes the labyrinth of the inner ear, situated in the vestibulum in the inner ear. As our movements consist of rotations and translations, the vestibular system comprises two components: the semicircular canal system, which indicate rotational movements; and the otoliths, which indicate linear accelerations. The vestibular system sends signals primarily to the neural structures that control our eye movements, and to the muscles that keep us upright. The projections to the former provide the anatomical basis of the vestibulo-ocular reflex, which is required for clear vision; and the projections to the muscles that control our posture are necessary to keep us upright." [Wikipedia:Vestibular_system]
+synonym: "vestibular system" EXACT [NIF_GrossAnatomy:nlx_anat_090819]
+synonym: "vestibular organ system" EXACT [FMA:7193]
+is_a: UBERON:0001032 ! sense organ system
+xref: FMA:7193 ! vestibular system
+xref: NIF_GrossAnatomy:nlx_anat_090819 ! Vestibular system
+xref: BTO:0003381 ! vestibular system
 
 [Term]
 id: UBERON:0001691
@@ -20445,7 +20485,7 @@ id: UBERON:0001751
 name: dentine
 alt_id: UBERON:FMA_55628-MA_0002542-ZFA_0005143
 def: "a tubular mineralized tissue[H&W]. In mammals - substance of tooth produced by odontoblasts; surrounds the pulp of the tooth and is subjacent to enamel and cement[FMA]. Mineralized collagen containing substance that forms the tooth structure[ZFA]. a calcified tissue of the body, and along with enamel, cementum, and pulp is one of the four major components of teeth[WP]." [Wikipedia:Dentin, ZFIN:curator]
-comment: Dentine is found in the fossil record as early as the late Cambrian, in fish, where it may have had a role in electrochemical sensing of the environment as well as assisting in defense[WP]. H&W describe a continuum atubular - meta/orthodentine - mesi/semidentine - cement and without cementoblasts
+comment: Dentine is found in the fossil record as early as the late Cambrian, in fish, where it may have had a role in electrochemical sensing of the environment as well as assisting in defense[WP]. H&W describe a continuum atubular - meta/orthodentine - mesi/semidentine - cement and without cementoblasts. TODO - odontoid tissue
 subset: uberon_slim
 synonym: "dentin" EXACT []
 synonym: "predentin" NARROW [GO:0070468]
@@ -20455,7 +20495,6 @@ xref: GAID:1272 ! dentin
 xref: MA:0002542 ! dentin
 xref: TAO:0005143 ! dentine
 xref: ZFA:0005143 ! dentine
-is_a: UBERON:0001973 ! substance of tooth
 is_a: UBERON:0004755 ! skeletal tissue
 relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: develops_from CL:0000060 ! odontoblast
@@ -20668,13 +20707,24 @@ subset: uberon_slim
 synonym: "nasal concha of ethmoid bone" EXACT []
 synonym: "nasal turbinate" EXACT []
 synonym: "turbinate" EXACT []
+synonym: "concha" RELATED [EMAPA:25093]
+synonym: "turbinate bone" EXACT [EMAPA:25093]
 xref: FMA:57456 ! Nasal concha
 xref: GAID:224 ! turbinate
 xref: MA:0000286 ! nasal turbinate
+xref: EMAPA:25093 ! turbinate bone
 xref: OpenCyc:Mx4rv07bVJwpEbGdrcN5Y29ycA
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 xref: ncithesaurus:Nasal_Turbinate ! Nasal Turbinate
+
+[Term]
+id: UBERON:0003973
+name: ethmoturbinate
+def: "the conchae of the ethmoid bone which occupy the caudal part of the nasal fossae and form the lateral and superior portions of the turbinate bones in mammals" [MP:0008971]
+comment: TODO - merge with nasal concha?
+relationship: part_of UBERON:0001679 ! ethmoid
+is_a: UBERON:0001762 ! nasal concha
 
 [Term]
 id: UBERON:0001763
@@ -22064,7 +22114,7 @@ relationship: part_of UBERON:0001832 ! sublingual gland
 id: UBERON:0001839
 name: bony labyrinth
 alt_id: UBERON:FMA_60179-MA_0000238-XAO_0000193
-def: "For more uses of the word labyrinth, see Labyrinth (disambiguation) The labyrinth is a system of fluid passages in the inner ear, including both the cochlea, which is part of the auditory system, and the vestibular system, which provides the sense of balance. It is named by analogy with the mythical maze that imprisoned the Minotaur, because of its appearance. The bony labyrinth, or osseous labyrinth, is the network of passages with bony walls lined with periosteum. The bony labyrinth is lined with the membranous labyrinth. There is a layer of perilymph between them. The three parts of the bony labyrinth are the vestibule of the ear, the semicircular canals, and the cochlea. The vestibular system is the region of the inner ear where the semicircular canals converge, close to the cochlea (the hearing organ). The vestibular system works with the visual system to keep objects in focus when the head is moving. Joint and muscle receptors also are important in maintaining balance. The brain receives, interprets, and processes the information from these systems that control our balance. [WP,unvetted]." [Wikipedia:Bony_labyrinth]
+def: "A system of fluid passages in the inner ear, including both the cochlea, which is part of the auditory system, and the vestibular system, which provides the sense of balance. The bony labyrinth, or osseous labyrinth, is the network of passages with bony walls lined with periosteum. The bony labyrinth is lined with the membranous labyrinth. There is a layer of perilymph between them. The three parts of the bony labyrinth are the vestibule of the ear, the semicircular canals, and the cochlea. The vestibular system is the region of the inner ear where the semicircular canals converge, close to the cochlea (the hearing organ). The vestibular system works with the visual system to keep objects in focus when the head is moving. Joint and muscle receptors also are important in maintaining balance. The brain receives, interprets, and processes the information from these systems that control our balance. [WP,unvetted]." [Wikipedia:Bony_labyrinth]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "osseous labyrinth" EXACT []
@@ -24674,7 +24724,7 @@ id: UBERON:0001976
 name: epithelium of esophagus
 alt_id: UBERON:FMA_63063-MA_0001565-ZFA_0001499
 def: "Simple columnar epithelium that lines the esophagus. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-070426-1'>Chen et al, 2007.</a>" [ZFIN:curator]
-comment: Different kinds of epithelium in ZFA and FMA - DV with CARO
+comment: TODO - Different kinds of epithelium in ZFA and FMA - DV with CARO
 subset: uberon_slim
 synonym: "esophageal epithelium" EXACT []
 synonym: "esophagus epithelium" EXACT []
@@ -25047,20 +25097,6 @@ synonym: "ganglion of neck of uterus" EXACT [OBOL:automatic]
 synonym: "ganglion of uterine cervix" EXACT [OBOL:automatic]
 synonym: "neck of uterus ganglion" EXACT [OBOL:automatic]
 synonym: "uterine cervix ganglion" EXACT [OBOL:automatic]
-
-[Term]
-id: UBERON:0001992
-name: papillary layer of dermis
-alt_id: UBERON:FMA_64776-MA_0000800
-def: "Dense irregular connective tissue of the skin that consists of fibroblasts, various connective tissue cell types, and collagen, predominantly type III." [Wikipedia:Papillary_dermis]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "dermis papillary layer" EXACT []
-synonym: "papillary dermis" EXACT []
-xref: FMA:64776 ! Papillary layer of dermis
-xref: MA:0000800 ! dermis papillary layer
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0002067 ! dermis
 
 [Term]
 id: UBERON:0001993
@@ -34658,7 +34694,7 @@ id: UBERON:0002540
 name: lateral line system
 alt_id: UBERON:MIAA_0000249-XAO_0000095-ZFA_0000034
 def: "a line of neuroblasts along the sides of fish and amphibia that detect vibrations and pressure changes // Surface structure that has as it parts the sense organs that detect vibrations carried through water, develops during late tailbud stage, and persists in the adult bearing elaborate dorsal and ventral components. // A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)" [ISBN:0471209627, ISBN:0815318960, Wikipedia:Lateral_line_system, ZFIN:curator]
-comment: TODO - DV with CARO\nThis class was created automatically from a combination of ontologies
+comment: TODO - DV with CARO
 subset: uberon_slim
 synonym: "lateral line stitches" RELATED []
 synonym: "lateral-line organs" RELATED []
@@ -34671,7 +34707,6 @@ xref: TAO:0000034 ! lateral line system
 xref: XAO:0000095 ! lateral line system
 xref: ZFA:0000034 ! lateral line system
 is_a: UBERON:0001032 ! sense organ system
-is_a: UBERON:0003102 ! surface structure
 xref: EFO:0000941 ! lateral line system
 
 [Term]
@@ -43445,7 +43480,6 @@ synonym: "sternum" BROAD []
 xref: FBbt:00004557 ! sternum
 xref: HAO:0000956 ! sternum
 is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000915 ! thorax
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
@@ -43643,6 +43677,15 @@ is_a: UBERON:0000479 ! portion of tissue
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
+id: UBERON:0003192
+name: axillary sclerite
+alt_id: UBERON:FBbt_00004737-HAO_0000159
+comment: DV with CARO
+xref: FBbt:00004737 ! axillary sclerite
+xref: HAO:0000159 ! axillary sclerite
+is_a: UBERON:0003148 ! sclerite
+
+[Term]
 id: UBERON:0003149
 name: tergite
 alt_id: UBERON:FBbt_00004476-HAO_0001005
@@ -43651,7 +43694,6 @@ synonym: "abdominal tergite" EXACT [FBbt:00004476]
 xref: FBbt:00004476 ! tergite
 xref: HAO:0001005 ! tergite
 is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
 
 [Term]
 id: UBERON:0003150
@@ -43662,7 +43704,6 @@ synonym: "abdominal sternite" EXACT [FBbt:00004477]
 xref: FBbt:00004477 ! sternite
 xref: HAO:0000955 ! sternite
 is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
 
 [Term]
 id: UBERON:0003151
@@ -43759,7 +43800,6 @@ synonym: "ocelli" RELATED PLURAL []
 synonym: "ocellus" EXACT []
 xref: FBbt:00004505 ! ocellus
 xref: HAO:0000661 ! ocellus
-is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0000963 ! head sensillum
 xref: BTO:0001758 ! ocellus
 
@@ -43936,18 +43976,17 @@ is_a: UBERON:0000969 ! suture
 id: UBERON:0003182
 name: pleural suture
 alt_id: UBERON:FBbt_00004603-HAO_0000725
+is_obsolete: true
 xref: FBbt:00004603 ! pleural suture
 xref: HAO:0000725 ! pleural suture
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0000969 ! suture
 
 [Term]
 id: UBERON:0003183
 name: notopleural suture
 alt_id: UBERON:FBbt_00004604-HAO_0000649
+is_obsolete: true
 xref: FBbt:00004604 ! notopleural suture
 xref: HAO:0000649 ! notopleural suture
-is_a: UBERON:0000969 ! suture
 
 [Term]
 id: UBERON:0003184
@@ -43956,7 +43995,6 @@ alt_id: UBERON:FBbt_00004619-HAO_0000547
 synonym: "mesothoracic sternal apophysis" RELATED [FBbt:00004619]
 xref: FBbt:00004619 ! mesofurca
 xref: HAO:0000547 ! mesofurca
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000477 ! anatomical cluster
 
 [Term]
@@ -43966,7 +44004,6 @@ alt_id: UBERON:FBbt_00004638-HAO_0000592
 synonym: "metathoracic sternal apophysis" RELATED [FBbt:00004638]
 xref: FBbt:00004638 ! metafurca
 xref: HAO:0000592 ! metafurca
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000477 ! anatomical cluster
 
 [Term]
@@ -44005,7 +44042,6 @@ comment: DV with CARO
 xref: FBbt:00004658 ! unguitractor plate
 xref: HAO:0001043 ! unguitractor plate
 is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
 
 [Term]
 id: UBERON:0003190
@@ -44023,16 +44059,6 @@ xref: FBbt:00004730 ! tegula
 xref: HAO:0000993 ! tegula
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0000984 ! thoracic wing
-
-[Term]
-id: UBERON:0003192
-name: axillary sclerite
-alt_id: UBERON:FBbt_00004737-HAO_0000159
-comment: DV with CARO
-xref: FBbt:00004737 ! axillary sclerite
-xref: HAO:0000159 ! axillary sclerite
-is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
 
 [Term]
 id: UBERON:0003193
@@ -53742,14 +53768,6 @@ is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001987 ! placenta
 
 [Term]
-id: UBERON:0003973
-name: ethmoturbinate
-def: "the conchae of the ethmoid bone which occupy the caudal part of the nasal fossae and form the lateral and superior portions of the turbinate bones in mammals" [MP:0008971]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0001679 ! ethmoid
-is_a: UBERON:0001762 ! nasal concha
-
-[Term]
 id: UBERON:0003976
 name: saccule duct
 def: "the saccular portion of the utriculosaccular duct that normally extends from the sacculus to the endolymphatic duct" [MP:0009259]
@@ -59642,6 +59660,8 @@ id: UBERON:0004562 ! digital vein
 name: digital vein
 comment: check part_of - do we need term for digit + metacarpal/tarsal bones?
 xref: MA:0002101 ! digital vein
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0002470 ! autopod
 
 [Term]
 id: UBERON:0004563 ! forelimb digital vein
@@ -60468,15 +60488,6 @@ xref: NIF_GrossAnatomy:birnlex_739 ! Body of fornix
 def: "The columns (anterior pillars; fornicolumns) of the fornix arch downward in front of the interventricular foramen and behind the anterior commissure, and each descends through the gray substance in the lateral wall of the third ventricle to the base of the brain, where it ends in the corpus mammillare. [WP,unvetted]." [Wikipedia:Columns_of_fornix]
 
 [Term]
-id: UBERON:0004681
-name: vestibular system
-synonym: "vestibular system" EXACT [NIF_GrossAnatomy:nlx_anat_090819]
-synonym: "vestibular organ system" EXACT [FMA:7193]
-xref: FMA:7193 ! vestibular system
-xref: NIF_GrossAnatomy:nlx_anat_090819 ! Vestibular system
-xref: BTO:0003381 ! vestibular system
-
-[Term]
 id: UBERON:0004682
 name: corona radiata
 is_a: UBERON:0002316 ! white matter of neuraxis
@@ -60753,6 +60764,8 @@ synonym: "ampullary crest" RELATED [MA:0002771]
 xref: MA:0002771 ! crista ampullaris
 xref: Wikipedia:Crista_ampullaris ! crista ampullaris
 xref: FMA:77714 ! Ampullary crest of semicircular duct
+is_a: UBERON:0000020 ! sense organ
+relationship: part_of UBERON:0001840 ! semicircular canal
 
 [Term]
 id: UBERON:0004722
