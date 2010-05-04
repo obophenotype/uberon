@@ -5288,10 +5288,9 @@ id: UBERON:0000932
 name: ventral longitudinal muscle
 alt_id: UBERON:FBbt_00000482-WBbt_0005814
 comment: TODO - check
+is_obsolete: true
 xref: FBbt:00000482 ! ventral longitudinal muscle
 xref: WBbt:0005814 ! ventral longitudinal muscle
-is_a: UBERON:0001630 ! muscle organ
-relationship: part_of UBERON:0000990 ! reproductive system
 
 [Term]
 id: UBERON:0000933
@@ -5306,7 +5305,6 @@ xref: FBbt:00000487 ! pharyngeal muscle
 xref: FMA:46619 ! Muscle of pharynx
 xref: GAID:154 ! pharyngeal muscle
 xref: MA:0001797 ! pharynx muscle
-is_a: UBERON:0002377 ! muscle of neck
 intersection_of: UBERON:0001630 ! muscle organ
 intersection_of: part_of UBERON:0001042 ! pharynx
 relationship: part_of UBERON:0001042 ! pharynx
@@ -5450,12 +5448,9 @@ xref: ncithesaurus:Frontal_Nerve ! Frontal Nerve
 id: UBERON:0000943
 name: labial sensillum
 alt_id: UBERON:FBbt_00002721-WBbt_0005107
-def: "sensillum of inner or outer labial." [WB:rynl]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
+is_obsolete: true
 xref: FBbt:00002721 ! labial sensillum
 xref: WBbt:0005107 ! labial sensillum
-is_a: UBERON:0002536 ! arthropod sensillum
 
 [Term]
 id: UBERON:0000944
@@ -36025,12 +36020,13 @@ id: UBERON:0002611
 name: node of ranvier
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1152-FMA_67368
 def: "." [Wikipedia:Node_of_ranvier]
+is_obsolete: true
+comment: in GO
 subset: uberon_slim
 synonym: "ranvier node" EXACT [FMA:67368]
 synonym: "ranvier's node" EXACT [FMA:67368]
 xref: FMA:67368 ! Node of Ranvier
 xref: NIF_GrossAnatomy:birnlex_1152
-is_a: UBERON:0000061 ! anatomical structure
 xref: ncithesaurus:Node_of_Ranvier ! Node of Ranvier
 xref: GO:0033268 ! node of Ranvier
 xref: GAID:748 ! ranvier's node
@@ -40673,7 +40669,8 @@ subset: uberon_slim
 synonym: "microtubulus" EXACT [FMA:63849]
 xref: FMA:63849 ! Microtubule
 xref: NIF_GrossAnatomy:birnlex_788
-is_a: UBERON:0000470 ! cell part
+is_obolete: true
+comment: in GO
 xref: ncithesaurus:Microtubule ! Microtubule
 xref: GO:0005874 ! microtubule
 xref: GAID:742 ! microtubule
@@ -42208,7 +42205,7 @@ xref: GAID:1312 ! embryonic organizer
 xref: TAO:0000071 ! shield
 xref: XAO:0000072 ! dorsal marginal zone
 xref: ZFA:0000071 ! shield
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0002541 ! germ ring
 xref: AAO:0000346 ! organizer
 
@@ -42217,7 +42214,7 @@ id: UBERON:0004018
 name: primitive node
 def: "the regional thickening of cells at the rostral tip of the vertebrate primitive streak through which gastrulating cells migrate anteriorally to form tissues in the future head and neck; this region organizes the formation of the three embryonic layers and establishes the longitudinal axis and the polarity of the embryo" [MP:0004066]
 comment: TODO - merge with primitive knot
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0004341 ! primitive streak
 xref: EHDAA:549 ! primitive node
 xref: ncithesaurus:Primitive_Node ! Primitive Node
@@ -54482,18 +54479,21 @@ xref: FMA:45655 ! Male internal genitalia
 id: UBERON:0004055
 name: primitive pit
 def: "the small depression in the primitive streak that is caudal to the primitive node where the cells of the epiblast initially begin to invaginate during early embryogenesis" [MP:0009329]
-is_a: UBERON:0000061 ! anatomical structure
+comment: TODO - check
 xref: EHDAA:551 ! primitive pit
 xref: ncithesaurus:Primitive_Pit ! Primitive Pit
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0004341 ! primitive streak
 
 [Term]
 id: UBERON:0004056
 name: primitive groove
 def: "the shallow valley that extends along the length of the primitive streak" [MP:0009330]
+comment: TODO - check
 is_a: UBERON:0000061 ! anatomical structure
 xref: EHDAA:547 ! primitive groove
 xref: ncithesaurus:Primitive_Groove ! Primitive Groove
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0004341 ! primitive streak
 
 [Term]
@@ -58247,7 +58247,7 @@ name: primitive streak
 def: "the midline ridge of the embryonic epiblast that later develops into mesoderm and endoderm" [MP:0002231, Wikipedia:Primitive_streak]
 comment: TODO - check
 relationship: part_of UBERON:0002532 ! epiblast
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 xref: EMAPA:16072 ! primitive streak
 xref: ncithesaurus:Primitive_Streak ! Primitive Streak
 
@@ -58469,7 +58469,7 @@ def: "cartilage found in the mesenchyme of the second branchial arch in the embr
 synonym: "Reichert cartilage" EXACT []
 synonym: "hyaloid cartilage" EXACT [MP:0004916]
 synonym: "second pharyngeal arch cartilage" EXACT [MP:0004916]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002418 ! cartilage
 relationship: part_of UBERON:0003066 ! hyoid arch
 
 [Term]
