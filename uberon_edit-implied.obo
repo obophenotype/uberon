@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 30:04:2010 19:01
+date: 05:05:2010 14:50
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -452,6 +452,7 @@ relationship: homologous_to UBERON:0002102 ! forelimb
 id: UBERON:0000025
 name: tube
 def: "Epithelial and endothelial tubes transport gases, liquids and cells from one site to another and form the basic structure of many organs and tissues including lung and trachea, kidney, the mammary gland, the vascular system and the gastrointestinal and urinary-genital tracts. with tube shape and organization varying from the single-celled excretory organ in Caenorhabditis elegans to the branching trees of the mammalian kidney and insect tracheal system" [GO:0035295, PMID:12526790]
+synonym: "epithelial or endothelial tube" EXACT []
 xref: galen:Tube
 xref: ncithesaurus:Tube
 is_a: UBERON:0000061 ! anatomical structure
@@ -664,8 +665,7 @@ name: follicular antrum
 def: "Region of ovarian follicle filled with follicular fluid." [http://en.wikipedia.org/wiki/Follicular_antrum, Wikipedia:Follicular_antrum]
 subset: uberon_slim
 xref: FMA:18675
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0000464 ! anatomical space
 relationship: part_of UBERON:0001305 ! follicle of ovary
 
 [Term]
@@ -956,7 +956,7 @@ xref: MIAA:0000046
 xref: ncithesaurus:Large_Intestine
 xref: OpenCyc:Mx4rvVkF5pwpEbGdrcN5Y29ycA
 xref: XAO:0000131
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0000160 ! intestine
 
 [Term]
@@ -1337,7 +1337,7 @@ xref: FMA:18674
 xref: GAID:410
 xref: MA:0001715
 xref: ncithesaurus:Zona_Pellucida
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: surrounds CL:0000023
 
 [Term]
@@ -1918,7 +1918,7 @@ xref: TAO:0001338
 xref: WBbt:0005772
 xref: XAO:0000129
 xref: ZFA:0001338
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
@@ -1979,6 +1979,7 @@ relationship: part_of UBERON:0000163 ! embryonic cloaca
 id: UBERON:0000165
 name: mouth
 def: "First portion of the alimentary canal that receives food and begins digestion by mechanically breaking up the solid food particles into smaller pieces and mixing them with saliva. The oral mucosa is the mucous membrane epithelium lining the inside of the mouth." [Wikipedia:Mouth]
+comment: TODO - check fly mouthpart
 subset: uberon_slim
 synonym: "adult mouth" EXACT []
 xref: BTO:0001090
@@ -1994,7 +1995,7 @@ xref: OpenCyc:Mx4rvVidh5wpEbGdrcN5Y29ycA
 xref: TAO:0000547
 xref: XAO:0003029
 xref: ZFA:0000547
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001444 ! subdivision of head
 relationship: develops_from UBERON:0000930 ! stomodeum
 relationship: part_of UBERON:0001555 ! digestive tract
 
@@ -2215,8 +2216,9 @@ id: UBERON:0000203
 name: pallium
 def: "Roof of the telencephalon. In humans the cerebrum has three parts: the archipallium, the paleopallium and the neopallium. The developing telencephalon or forebrain is divided into pallium and subpallium. In amphibians, the cerebrum includes archipallium, paleopallium and some of the basal nuclei. Reptiles first developed a neopallium, which continued to develop in the brains of more recent species to become the neocortex of humans and Old World monkeys. In fish, the archipallium is the largest part of the cerebrum. Some researchers suggest the early archipallium gave rise to the human hippocampus." [GO:0021543, Wikipedia:Pallium_(neuroanatomy)]
 xref: ZFA:0007007
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 relationship: part_of UBERON:0001893 ! telencephalon
 created_by: cjm
 creation_date: 2009-04-18T12:03:09Z
@@ -2228,7 +2230,7 @@ def: "Base region of the telencephalon." [GO:0021544]
 synonym: "ventral telencephalon" EXACT [ZFA:0000304]
 xref: BTO:0003401
 xref: ZFA:0000304
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 relationship: part_of UBERON:0001893 ! telencephalon
 created_by: cjm
@@ -2353,9 +2355,13 @@ relationship: has_part UBERON:0000173 ! amniotic fluid
 id: UBERON:0000303
 name: adductor longus
 alt_id: UBERON:BTO_0000029-FMA_22441
+def: "The adductor longus muscle is a muscle of the human body. It is a part of the adductor group of the thigh, that as the name suggests adducts the thigh. The adductor longus muscle forms the medial wall of the femoral triangle[WP]." [Wikipedia:Adductor_longus]
+synonym: "adductor longus muscle" EXACT []
 xref: BTO:0000029
 xref: FMA:22441
-is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0000952 ! adductor muscle
+is_a: UBERON:0004252 ! implied link automatically realized ! upper leg muscle
+relationship: part_of UBERON:0000376 ! upper leg
 
 [Term]
 id: UBERON:0000304
@@ -2430,11 +2436,15 @@ relationship: part_of UBERON:0001443 ! chest
 
 [Term]
 id: UBERON:0000311
-name: extensor
+name: extensor muscle
 alt_id: UBERON:BTO_0000151-FMA_74561
+def: "A muscle that, upon contraction, tends to straighten a limb. The antagonist of a flexor muscle[BTO]. Any of the muscles that increase the angle between members of a limb, as by straightening the elbow or knee or bending the wrist or spine backward. The movement is usually directed backward, with the notable exception of the knee joint. In humans, certain muscles of the hand and foot are named for this function. In the hand these include the extensor carpi radialis brevis, extensor carpi radialis longus, and extensor carpi ulnaris, which run from the humerus (bone of the upper arm) along the back of the forearm to the metacarpal bones at the back of the hand[Britannica]" [http://www.britannica.com/EBchecked/topic/198909/extensor-muscle]
+synonym: "extensor" RELATED []
 xref: BTO:0000151
-xref: FMA:74561
-is_a: UBERON:0000061 ! anatomical structure
+xref: FMA:75000
+is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0003661 ! implied link automatically realized ! limb muscle
+relationship: part_of UBERON:0002101 ! limb
 
 [Term]
 id: UBERON:0000312
@@ -2581,11 +2591,12 @@ intersection_of: part_of UBERON:0002114 ! duodenum
 id: UBERON:0000322
 name: cerebral lobe
 alt_id: UBERON:BTO_0000445-FMA_77800
+comment: set/singular
 synonym: "Cerebral lobes" EXACT [FMA:77800]
 synonym: "Cerebral lobes set" EXACT [FMA:77800]
 xref: BTO:0000445
 xref: FMA:77800
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002619 ! regional part of cerebral cortex
 
 [Term]
 id: UBERON:0000323
@@ -2951,11 +2962,16 @@ intersection_of: part_of UBERON:0002113 ! kidney
 id: UBERON:0000363
 name: reticuloendothelial system
 alt_id: UBERON:BTO_0001174-FMA_84189
+def: "A part of the immune system that consists of the phagocytic cells located in reticular connective tissue. The cells are primarily monocytes and macrophages, and they accumulate in lymph nodes and the spleen. The Kupffer cells of the liver and tissue histiocytes  are also part of the RES. A lymphoma  of the reticuloendothelial system is called reticuloendotheliosis[WP]." [Wikipedia:Reticuloendothelial_system]
+synonym: "lymphoreticular system" EXACT [Wikipedia:Reticuloendothelial_system]
+synonym: "mononuclear phagocyte system" EXACT [FMA:84189]
+synonym: "RES" EXACT [Wikipedia:Reticuloendothelial_system]
 xref: BTO:0001174
 xref: FMA:84189
 xref: GAID:1004
 xref: ncithesaurus:Reticuloendothelial_System
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0002405 ! immune system
 
 [Term]
 id: UBERON:0000364
@@ -2980,43 +2996,61 @@ is_a: UBERON:0000483 ! epithelium
 
 [Term]
 id: UBERON:0000366
-name: flexor
+name: flexor muscle
 alt_id: UBERON:BTO_0001257-FMA_74559
+def: "A muscle that when contracted acts to bend a joint or limb in the body." [BTO:0001257]
+synonym: "flexor" RELATED []
 xref: BTO:0001257
 xref: FMA:74559
-is_a: UBERON:0000061 ! anatomical structure
+xref: FMA:74999
+xref: ZFA:0005271
+is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0003661 ! implied link automatically realized ! limb muscle
+relationship: part_of UBERON:0002101 ! limb
 
 [Term]
 id: UBERON:0000368
 name: adductor brevis
 alt_id: UBERON:BTO_0001288-FMA_22442
+def: "The adductor brevis is a muscle in the thigh situated immediately behind the pectineus and adductor longus. It is somewhat triangular in form, and arises by a narrow origin from the outer surfaces of the superior and inferior rami of the pubis, between the gracilis and obturator externus. Its fibers, passing backward, lateralward, and downward, are inserted, by an aponeurosis, into the line leading from the lesser trochanter to the linea aspera and into the upper part of the linea aspera, immediately behind the pectineus and upper part of the adductor longus.[WP]." [Wikipedia:Adductor_brevis_muscle]
+synonym: "adductor brevis muscle" EXACT []
 synonym: "Musculus adductos brevis" EXACT [FMA:22442]
 xref: BTO:0001288
 xref: FMA:22442
 xref: OpenCyc:Mx4rv13lfJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0004252 ! implied link automatically realized ! upper leg muscle
+relationship: part_of UBERON:0000376 ! upper leg
 
 [Term]
 id: UBERON:0000369
 name: corpus striatum
 alt_id: UBERON:BTO_0001311-FMA_77616
+def: "The corpus striatum (striated body) is a compound structure consisting of the caudate nucleus and the lentiform nucleus, which consists of the putamen and the globus pallidus[WP]." [Wikipedia:Corpus_striatum]
+comment: The term has been used in a few different ways:    * It is a pair of nuclear masses which form the basal ganglia, along with the subthalamic nucleus and the substantia nigra.    * It may also refer to both the basal ganglia and internal capsule collectively.[2]    * According to the 1917 version of Gray's Anatomy, it is the combination of the lentiform nucleus (also known as the lenticular nucleus) and the caudate nucleus    * According to BrainInfo it is a part of the basal ganglia comprising the globus pallidus and striatum
 xref: BTO:0001311
 xref: EFO:0000381
 xref: FMA:77616
 xref: GAID:667
 xref: HOG:0001175
 xref: ncithesaurus:Corpus_Striatum
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+relationship: part_of UBERON:0001893 ! telencephalon
 
 [Term]
 id: UBERON:0000370
 name: adductor magnus
 alt_id: UBERON:BTO_0001312-FMA_22443
+def: "The adductor magnus is a large triangular muscle, situated on the medial side of the thigh. The portion which arises from the ischiopubic ramus (a small part of the inferior ramus of the pubis, and the inferior ramus of the ischium) is called the " [:WP]
+synonym: "adductor magnus muscle" EXACT []
 xref: BTO:0001312
 xref: FMA:22443
 xref: galen:AdductorMagnus
 xref: OpenCyc:Mx4rvuSd6JwpEbGdrcN5Y29ycA
 is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0004252 ! implied link automatically realized ! upper leg muscle
+relationship: part_of UBERON:0000376 ! upper leg
 
 [Term]
 id: UBERON:0000371
@@ -3033,10 +3067,13 @@ is_a: UBERON:0002050 ! embryonic structure
 id: UBERON:0000372
 name: extensor digitorum brevis
 alt_id: UBERON:BTO_0001337-FMA_51140
+def: "a muscle  on the upper surface of the foot that helps extend digits 2 through 4." [Wikipedia:Extensor_digitorum_brevis_muscle]
+synonym: "extensor digitorum brevis muscle" EXACT []
 xref: BTO:0001337
 xref: FMA:51140
-is_a: UBERON:0001498 ! muscle of foot
-is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0000311 ! extensor muscle
+is_a: UBERON:0001498 ! implied link automatically realized ! muscle of foot
+relationship: part_of UBERON:0002387 ! foot
 
 [Term]
 id: UBERON:0000373
@@ -3046,14 +3083,6 @@ def: "On either side of the corpus collosum, the fibers radiate in the white sub
 comment: not to be confused with BTO:0001350 or GO:0048655-tapetal layer morphogenesis
 xref: FMA:77208
 is_a: UBERON:0002316 ! white matter of neuraxis
-
-[Term]
-id: UBERON:0000374
-name: thigh muscle
-alt_id: UBERON:BTO_0001367-FMA_22470
-xref: BTO:0001367
-xref: FMA:22470
-is_a: UBERON:0001630 ! muscle organ
 
 [Term]
 id: UBERON:0000375
@@ -3180,19 +3209,28 @@ intersection_of: part_of UBERON:0001005 ! respiratory airway
 id: UBERON:0000380
 name: tuber
 alt_id: UBERON:BTO_0001400-FMA_75430
+comment: undefined in FMA. BTO and MIAA refers to plant structure only
 xref: BTO:0001400
 xref: EFO:0001015
 xref: FMA:75430
 xref: OpenCyc:Mx4raeDj5Cw8QdiT7e8pb2JzAA
-is_a: UBERON:0000064 ! organ part
+is_obsolete: true
 
 [Term]
 id: UBERON:0000381
 name: detrusor
 alt_id: UBERON:BTO_0001453-FMA_68018
+def: "The outer largely longitudinally arranged musculature of the bladder wall[BTO]. The fibers of the detrusor muscle arise from the posterior surface of the body of the pubis in both sexes (musculi pubovesicales), and in the male from the adjacent part of the prostate  and its capsule. These fibers pass, in a more or less longitudinal manner, up the inferior surface of the bladder, over its apex, and then descend along its fundus to become attached to the prostate in the male, and to the front of the vagina in the female. At the sides of the bladder the fibers are arranged obliquely and intersect one another[WP]." [BTO:0001453, Wikipedia:Detrusor_urinae_muscle]
+synonym: "detrusor muscle" EXACT [BTO:0001453]
+synonym: "detrusor muscle of bladder" EXACT [EMAPA:28637]
+synonym: "detrusor urinae muscle" EXACT [Wikipedia:Detrusor_urinae_muscle]
+synonym: "muscularis propria of the urinary bladder" EXACT [Wikipedia:Detrusor_urinae_muscle]
 xref: BTO:0001453
+xref: EMAPA:28637
 xref: FMA:68018
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0001135 ! smooth muscle tissue
+is_a: UBERON:0004228 ! implied link automatically realized ! urinary bladder smooth muscle
+relationship: part_of UBERON:0001256 ! wall of urinary bladder
 
 [Term]
 id: UBERON:0000382
@@ -3321,7 +3359,7 @@ synonym: "Vallate papilla of tongue" EXACT []
 synonym: "Vallate papillae" EXACT []
 xref: BTO:0001705
 xref: FMA:54822
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001726 ! papilla of tongue
 
 [Term]
 id: UBERON:0000397
@@ -3497,10 +3535,15 @@ is_a: UBERON:0002619 ! regional part of cerebral cortex
 id: UBERON:0000412
 name: dermal papilla
 alt_id: UBERON:BTO_0001858-FMA_70737
-synonym: "Follicular papilla" EXACT [FMA:70737]
+def: "small, nipple-like extensions (or interdigitations) of the dermis into the epidermis. They can be observed at the surface of the skin in hands and feet as epidermal  or papillary ridges (colloquially known as fingerprints). The dermal papillae nourishes all hair follicles and bring food and oxygen to the lower layers of epidermal cells. The pattern of ridges they produce in hands and feet are inherited features that are developed before birth. They remain unaltered (except size) throughout life, and are therefore used for fingerprints. The dermal papillae are part of the uppermost layer of the dermis, the papillary dermis, and the ridges they form greatly increase the surface area between the dermis and epidermis. Because the dermis' main function is to support the epidermis, this greatly increases the exchange of oxygen, nutrients, and waste products between these two layers. Additionally, the increase in surface area prevent the dermal and epidermal layers from separating from each others by strengthening the junction between them. With age, the papillae tend to flatten and sometimes increase in numbers. Dermal papillae also play a pivotal role in hair formation, growth and, cycling" [Wikipedia:Dermal_papillae]
+synonym: "dermal papillae" EXACT PLURAL []
+synonym: "follicular papilla" EXACT [FMA:70737]
 xref: BTO:0001858
 xref: FMA:70737
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001992 ! papillary layer of dermis
 
 [Term]
 id: UBERON:0000414
@@ -3649,7 +3692,7 @@ synonym: "ventral medial nuclei of thalamus" EXACT [FMA:77795]
 xref: BTO:0002470
 xref: FMA:77795
 xref: GAID:666
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000064 ! organ part
 
 [Term]
 id: UBERON:0000432
@@ -3819,11 +3862,19 @@ is_a: UBERON:0000064 ! organ part
 
 [Term]
 id: UBERON:0000452
-name: gubernaculum testis
+name: gubernaculum
 alt_id: UBERON:BTO_0002813-FMA_20421
+def: "The paired Gabernacula are folds of peritoneum  that attach to the caudal end of the gonads (testes in males and ovaries in females)." [Wikipedia:Gubernaculum]
+comment: WP def is male/female, split term? EMAP is male-specific. vestigial adult in FMA. TODO
+synonym: "gubernaculum testis" EXACT []
 xref: BTO:0002813
+xref: EMAPA:19089
 xref: FMA:20421
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: attached_to UBERON:0000991 ! gonad
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: part_of UBERON:0002358 ! peritoneum
 
 [Term]
 id: UBERON:0000453
@@ -4577,8 +4628,8 @@ subset: uberon_slim
 synonym: "commissure of fornix" RELATED [Wikipedia:Commissure_of_fornix]
 xref: FMA:61970
 xref: MA:0002723
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0001020 ! commissure
 relationship: attached_to UBERON:0001954 ! hippocampus
 relationship: part_of UBERON:0002316 ! white matter of neuraxis
 
@@ -4656,7 +4707,7 @@ is_a: UBERON:0000475 ! organism subdivision
 id: UBERON:0000915
 name: thorax
 alt_id: UBERON:FBbt_00000015-FMA_9576-MA_0000022-MIAA_0000295
-def: "Organismal subdivision of body that lies between the head and the abdomen [Wikipedia]." [ISBN:3110148986, Wikipedia:Thorax]
+def: "Organismal subdivision of body that lies between the head and the abdomen [Wikipedia]." [Wikipedia:Thorax]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "upper body" RELATED []
@@ -4675,7 +4726,7 @@ is_a: UBERON:0000475 ! organism subdivision
 id: UBERON:0000916
 name: abdomen
 alt_id: UBERON:FBbt_00000020-FMA_9577-MA_0000029-MIAA_0000298
-def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity. In arthropods it is the most distal section of the body which lies behind the thorax or cephalothorax // Subdivision of trunk, which is demarcated from the thorax internally by the inferior surface of the sternocostal part of the diaphragm and externally by the costal margin, from the pelvis by the plane of the superior pelvic aperture and from the lower limbs by the inguinal folds; together with the thorax, pelvis, and perineum, it constitutes the trunk. Examples: There is only one abdomen." [FB:gg, ISBN:3110148986, Wikipedia:Abdomen]
+def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity. In arthropods it is the most distal section of the body which lies behind the thorax or cephalothorax // Subdivision of trunk, which is demarcated from the thorax internally by the inferior surface of the sternocostal part of the diaphragm and externally by the costal margin, from the pelvis by the plane of the superior pelvic aperture and from the lower limbs by the inguinal folds; together with the thorax, pelvis, and perineum, it constitutes the trunk. Examples: There is only one abdomen." [Wikipedia:Abdomen]
 comment: Vertebrate specific. TOD def
 subset: uberon_slim
 synonym: "adult abdomen" RELATED []
@@ -4695,12 +4746,11 @@ relationship: only_in_taxon NCBITaxon:7742
 id: UBERON:0000917
 name: abdominal segment
 alt_id: UBERON:FBbt_00000021-SPD_0000055
-synonym: "abdomen segment" EXACT [OBOL:automatic]
 synonym: "segment of abdomen" EXACT [OBOL:automatic]
 xref: FBbt:00000021
 xref: HAO:0000016
 xref: SPD:0000055
-is_a: UBERON:0000914 ! organismal segment
+is_obsolete: true
 
 [Term]
 id: UBERON:0000918
@@ -4996,8 +5046,7 @@ xref: ncithesaurus:Proctodeum
 xref: TAO:0000066
 xref: XAO:0001019
 xref: ZFA:0000066
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0003102 ! surface structure
 relationship: develops_from UBERON:0000924 ! ectoderm
 
 [Term]
@@ -5007,8 +5056,7 @@ alt_id: UBERON:FBbt_00000482-WBbt_0005814
 comment: TODO - check
 xref: FBbt:00000482
 xref: WBbt:0005814
-is_a: UBERON:0001630 ! muscle organ
-relationship: part_of UBERON:0000990 ! reproductive system
+is_obsolete: true
 
 [Term]
 id: UBERON:0000933
@@ -5026,7 +5074,6 @@ xref: FMA:46619
 xref: GAID:154
 xref: MA:0001797
 xref: ncithesaurus:Pharyngeal_Muscle
-is_a: UBERON:0002377 ! muscle of neck
 is_a: UBERON:0003831 ! implied link automatically realized ! respiratory system muscle
 intersection_of: UBERON:0001630 ! muscle organ
 intersection_of: part_of UBERON:0001042 ! pharynx
@@ -5162,12 +5209,9 @@ is_a: UBERON:0001021 ! nerve
 id: UBERON:0000943
 name: labial sensillum
 alt_id: UBERON:FBbt_00002721-WBbt_0005107
-def: "sensillum of inner or outer labial." [WB:rynl]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
 xref: FBbt:00002721
 xref: WBbt:0005107
-is_a: UBERON:0002536 ! arthropod sensillum
+is_obsolete: true
 
 [Term]
 id: UBERON:0000944
@@ -5356,12 +5400,14 @@ is_a: UBERON:0001630 ! muscle organ
 id: UBERON:0000952
 name: adductor muscle
 alt_id: UBERON:FBbt_00003317-FMA_74998
-def: "Muscle that causes adduction can be called an adductor muscle. For example in biology, the muscle or muscles in the interior of a bivalve mollusk which serve to close the valves are called adductor muscles, and the large foot to shell muscle in gastropods such as the abalone and limpet is also known as an adductor muscle." [Wikipedia:Adductor_muscle]
-comment: TODO - add functional xp definition
+def: "Muscle that causes adduction can be called an adductor muscle. For example in biology, the muscle or muscles in the interior of a bivalve mollusk which serve to close the valves are called adductor muscles, and the large foot to shell muscle in gastropods such as the abalone and limpet is also known as an adductor muscle[WP]. A muscle that brings a body part  closer to the sagittal plane of the body[ZFA, WikipediaLAdduction]." [Wikipedia:Adductor_muscle]
+comment: TODO - add functional xp definition. TODO - check MA.
 subset: uberon_slim
-synonym: "Adductor muscle of hip" NARROW []
+synonym: "adductor" RELATED []
+xref: BTO:0000030
 xref: FBbt:00003317
 xref: FMA:74998
+xref: MA:0002267
 xref: ZFA:0005268
 is_a: UBERON:0001630 ! muscle organ
 
@@ -6393,6 +6439,7 @@ xref: HAO:0000240
 xref: OpenCyc:Mx4rvVkBTJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001002 ! cuticle
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0001003 ! epidermis
 relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0002416 ! integumental system
@@ -6409,7 +6456,6 @@ xref: MA:0002704
 xref: MAT:0000150
 xref: MIAA:0000150
 is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0003102 ! surface structure
 
 [Term]
 id: UBERON:0001003
@@ -9142,8 +9188,7 @@ synonym: "area nuda hepatis" EXACT []
 synonym: "liver bare area" EXACT []
 xref: FMA:14480
 xref: MA:0000359
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0000466 ! immaterial anatomical entity
 relationship: part_of UBERON:0001114 ! right lobe of liver
 
 [Term]
@@ -10299,7 +10344,7 @@ def: "." [Wikipedia:Brunner's_gland]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Brunner's gland" EXACT []
-synonym: "gland of brunner" EXACT []
+synonym: "gland of Brunner" EXACT []
 xref: BTO:0002376
 xref: FMA:15060
 xref: GAID:314
@@ -10932,19 +10977,20 @@ relationship: part_of UBERON:0001279 ! portal triad
 id: UBERON:0001247
 name: falciform ligament
 alt_id: UBERON:FMA_15823-MA_0001622
-def: "." [Wikipedia:Falciform_ligament]
+def: "a ligament that attaches the liver to the anterior body wall. It is a broad and thin antero-posterior peritoneal fold, falciform (Latin " [:WP]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "falciform ligament of liver" EXACT []
 synonym: "ligamentum falciforme (hepatis)" EXACT []
 xref: EHDAA:4856
+xref: EMAPA:18288
+xref: EMAPA:18908
 xref: FMA:15823
 xref: HOG:0000355
 xref: MA:0001622
 xref: ncithesaurus:Falciform_Ligament
 is_a: UBERON:0000211 ! ligament
-is_a: UBERON:0002095 ! mesentery
-is_a: UBERON:0003567 ! implied link automatically realized ! abdomen connective tissue
+relationship: develops_from UBERON:0002095 ! mesentery
 
 [Term]
 id: UBERON:0001248
@@ -11009,7 +11055,7 @@ synonym: "marginal zone" BROAD [Wikipedia:Marginal_zone]
 synonym: "spleen marginal zone" EXACT []
 xref: FMA:15852
 xref: MA:0000755
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000466 ! immaterial anatomical entity
 disjoint_from: UBERON:0004879 ! marginal zone of embryo
 relationship: adjacent_to UBERON:0001250 ! red pulp of spleen
 relationship: adjacent_to UBERON:0001959 ! white pulp of spleen
@@ -13283,7 +13329,9 @@ xref: BTO:0000436
 xref: FMA:22534
 xref: MA:0002295
 xref: ncithesaurus:Extensor_Digitorum_Longus
-is_a: UBERON:0001383 ! muscle of leg
+is_a: UBERON:0000311 ! extensor muscle
+is_a: UBERON:0001383 ! implied link automatically realized ! muscle of leg
+relationship: part_of UBERON:0000978 ! leg
 
 [Term]
 id: UBERON:0001387
@@ -13367,7 +13415,9 @@ subset: uberon_slim
 xref: FMA:22593
 xref: MA:0002301
 xref: ncithesaurus:Flexor_Hallucis_Longus
-is_a: UBERON:0001383 ! muscle of leg
+is_a: UBERON:0000366 ! flexor muscle
+is_a: UBERON:0001383 ! implied link automatically realized ! muscle of leg
+relationship: part_of UBERON:0000978 ! leg
 
 [Term]
 id: UBERON:0001393
@@ -15939,8 +15989,8 @@ subset: uberon_slim
 xref: FMA:38459
 xref: MA:0002297
 xref: ncithesaurus:Flexor_Carpi_Radialis
-is_a: UBERON:0001630 ! muscle organ
-relationship: part_of UBERON:0000475 ! organism subdivision
+is_a: UBERON:0000366 ! flexor muscle
+relationship_of: part_of UBERON:0003822
 
 [Term]
 id: UBERON:0001522
@@ -15952,8 +16002,8 @@ subset: uberon_slim
 xref: FMA:38465
 xref: MA:0002298
 xref: ncithesaurus:Flexor_Carpi_Ulnaris
-is_a: UBERON:0001630 ! muscle organ
-relationship: part_of UBERON:0000475 ! organism subdivision
+is_a: UBERON:0000366 ! flexor muscle
+relationship_of: part_of UBERON:0003822
 
 [Term]
 id: UBERON:0001523
@@ -15966,7 +16016,8 @@ xref: BTO:0001246
 xref: FMA:38478
 xref: MA:0002300
 xref: ncithesaurus:Flexor_Digitorum_Profundus
-is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0000366 ! flexor muscle
+relationship_of: part_of UBERON:0003822
 
 [Term]
 id: UBERON:0001524
@@ -15978,8 +16029,9 @@ subset: uberon_slim
 xref: FMA:38494
 xref: MA:0002291
 xref: ncithesaurus:Extensor_Carpi_Radialis_Longus
-is_a: UBERON:0001630 ! muscle organ
-relationship: part_of UBERON:0000475 ! organism subdivision
+is_a: UBERON:0000311 ! extensor muscle
+is_a: UBERON:0001499 ! implied link automatically realized ! muscle of arm
+relationship: part_of UBERON:0001462 ! wrist
 
 [Term]
 id: UBERON:0001525
@@ -15991,8 +16043,9 @@ subset: uberon_slim
 xref: FMA:38497
 xref: MA:0002290
 xref: ncithesaurus:Extensor_Carpi_Radialis_Brevis
-is_a: UBERON:0001630 ! muscle organ
-relationship: part_of UBERON:0000475 ! organism subdivision
+is_a: UBERON:0000311 ! extensor muscle
+is_a: UBERON:0001499 ! implied link automatically realized ! muscle of arm
+relationship: part_of UBERON:0001462 ! wrist
 
 [Term]
 id: UBERON:0001526
@@ -16004,8 +16057,9 @@ subset: uberon_slim
 xref: FMA:38506
 xref: MA:0002292
 xref: ncithesaurus:Extensor_Carpi_Ulnaris
-is_a: UBERON:0001630 ! muscle organ
-relationship: part_of UBERON:0000475 ! organism subdivision
+is_a: UBERON:0000311 ! extensor muscle
+is_a: UBERON:0001499 ! implied link automatically realized ! muscle of arm
+relationship: part_of UBERON:0001462 ! wrist
 
 [Term]
 id: UBERON:0001527
@@ -18560,7 +18614,7 @@ xref: OpenCyc:Mx4rvVjL05wpEbGdrcN5Y29ycA
 xref: XAO:0000189
 is_a: UBERON:0000020 ! sense organ
 relationship: part_of UBERON:0000033 ! head
-relationship: part_of UBERON:0002105 ! auditory system
+relationship: part_of UBERON:0002105 ! vestibulo-auditory system
 
 [Term]
 id: UBERON:0001691
@@ -19669,7 +19723,7 @@ id: UBERON:0001751
 name: dentine
 alt_id: UBERON:FMA_55628-MA_0002542-ZFA_0005143
 def: "a tubular mineralized tissue[H&W]. In mammals - substance of tooth produced by odontoblasts; surrounds the pulp of the tooth and is subjacent to enamel and cement[FMA]. Mineralized collagen containing substance that forms the tooth structure[ZFA]. a calcified tissue of the body, and along with enamel, cementum, and pulp is one of the four major components of teeth[WP]." [Wikipedia:Dentin, ZFIN:curator]
-comment: Dentine is found in the fossil record as early as the late Cambrian, in fish, where it may have had a role in electrochemical sensing of the environment as well as assisting in defense[WP]. H&W describe a continuum atubular - meta/orthodentine - mesi/semidentine - cement and without cementoblasts
+comment: Dentine is found in the fossil record as early as the late Cambrian, in fish, where it may have had a role in electrochemical sensing of the environment as well as assisting in defense[WP]. H&W describe a continuum atubular - meta/orthodentine - mesi/semidentine - cement and without cementoblasts. TODO - odontoid tissue
 subset: uberon_slim
 synonym: "dentin" EXACT []
 synonym: "dentine of tooth" EXACT []
@@ -19681,7 +19735,6 @@ xref: MA:0002542
 xref: ncithesaurus:Dentin
 xref: TAO:0005143
 xref: ZFA:0005143
-is_a: UBERON:0001973 ! substance of tooth
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004755 ! skeletal tissue
 relationship: develops_from CL:0000060
@@ -19891,9 +19944,12 @@ alt_id: UBERON:FMA_57456-MA_0000286
 def: "In anatomy, a nasal concha (or turbinate) is a long, narrow and curled bone shelf (shaped like an elongated sea-shell) which protrudes into the breathing passage of the nose. Turbinate bone refers to any of the scrolled spongy bones of the nasal passages in vertebrates. In humans, the turbinates divide the nasal airway into three groove-like air passages –and are responsible for forcing inhaled air to flow in a steady, regular pattern around the largest possible surface of cilia and climate controlling tissue. [WP,unvetted]." [Wikipedia:Nasal_concha]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "concha" RELATED [EMAPA:25093]
 synonym: "nasal concha of ethmoid bone" EXACT []
 synonym: "nasal turbinate" EXACT []
 synonym: "turbinate" EXACT []
+synonym: "turbinate bone" EXACT [EMAPA:25093]
+xref: EMAPA:25093
 xref: FMA:57456
 xref: GAID:224
 xref: MA:0000286
@@ -21272,7 +21328,7 @@ relationship: part_of UBERON:0001832 ! sublingual gland
 id: UBERON:0001839
 name: bony labyrinth
 alt_id: UBERON:FMA_60179-MA_0000238-XAO_0000193
-def: "For more uses of the word labyrinth, see Labyrinth (disambiguation) The labyrinth is a system of fluid passages in the inner ear, including both the cochlea, which is part of the auditory system, and the vestibular system, which provides the sense of balance. It is named by analogy with the mythical maze that imprisoned the Minotaur, because of its appearance. The bony labyrinth, or osseous labyrinth, is the network of passages with bony walls lined with periosteum. The bony labyrinth is lined with the membranous labyrinth. There is a layer of perilymph between them. The three parts of the bony labyrinth are the vestibule of the ear, the semicircular canals, and the cochlea. The vestibular system is the region of the inner ear where the semicircular canals converge, close to the cochlea (the hearing organ). The vestibular system works with the visual system to keep objects in focus when the head is moving. Joint and muscle receptors also are important in maintaining balance. The brain receives, interprets, and processes the information from these systems that control our balance. [WP,unvetted]." [Wikipedia:Bony_labyrinth]
+def: "A system of fluid passages in the inner ear, including both the cochlea, which is part of the auditory system, and the vestibular system, which provides the sense of balance. The bony labyrinth, or osseous labyrinth, is the network of passages with bony walls lined with periosteum. The bony labyrinth is lined with the membranous labyrinth. There is a layer of perilymph between them. The three parts of the bony labyrinth are the vestibule of the ear, the semicircular canals, and the cochlea. The vestibular system is the region of the inner ear where the semicircular canals converge, close to the cochlea (the hearing organ). The vestibular system works with the visual system to keep objects in focus when the head is moving. Joint and muscle receptors also are important in maintaining balance. The brain receives, interprets, and processes the information from these systems that control our balance. [WP,unvetted]." [Wikipedia:Bony_labyrinth]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "osseous labyrinth" EXACT []
@@ -22651,7 +22707,7 @@ xref: FMA:62048
 xref: NIF_GrossAnatomy:birnlex_1609
 xref: TAO:0000359
 xref: ZFA:0000359
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0001020 ! commissure
 is_a: UBERON:0002757 ! implied link automatically realized ! regional part of epithalamus
 relationship: part_of UBERON:0001904 ! habenula
 
@@ -23950,7 +24006,7 @@ id: UBERON:0001976
 name: epithelium of esophagus
 alt_id: UBERON:FMA_63063-MA_0001565-ZFA_0001499
 def: "Simple columnar epithelium that lines the esophagus. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-070426-1'>Chen et al, 2007.</a>" [ZFIN:curator]
-comment: Different kinds of epithelium in ZFA and FMA - DV with CARO
+comment: TODO - Different kinds of epithelium in ZFA and FMA - DV with CARO
 subset: uberon_slim
 synonym: "epithelial tissue of esophagus" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of gullet" EXACT [OBOL:automatic]
@@ -24299,9 +24355,9 @@ synonym: "dermis reticular layer" EXACT []
 synonym: "reticular dermis" EXACT []
 xref: FMA:64778
 xref: MA:0000801
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
 relationship: part_of UBERON:0002067 ! dermis
 
 [Term]
@@ -25207,8 +25263,8 @@ xref: FMA:68464
 xref: MA:0001072
 xref: NIF_GrossAnatomy:birnlex_896
 is_a: UBERON:0002308 ! nucleus of brain
-is_a: UBERON:0002950 ! implied link automatically realized ! regional part of midbrain
-relationship: part_of UBERON:0001943 ! midbrain tegmentum
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+relationship: part_of UBERON:0000936 ! posterior commissure
 
 [Term]
 id: UBERON:0002045
@@ -26324,19 +26380,18 @@ xref: TAO:0001127
 xref: ZFA:0001127
 is_a: UBERON:0001032 ! sensory system
 relationship: capable_of GO:0007601
-relationship: spatially_disjoint_from UBERON:0002105 ! auditory system
+relationship: spatially_disjoint_from UBERON:0002105 ! vestibulo-auditory system
 
 [Term]
 id: UBERON:0002105
-name: auditory system
+name: vestibulo-auditory system
 alt_id: UBERON:FMA_7192-MA_0002443
 def: "A sensory system for the sense of hearing[WP]." [Wikipedia:Auditory_system]
-comment: general anatomical ter in FMA. See also FMA:7193 Vestibular system
+comment: Auditory system is general anatomical term in FMA
 subset: uberon_slim
 synonym: "auditory organ system" EXACT []
 synonym: "auditory system" RELATED []
 synonym: "auditory/vestibular system" RELATED []
-synonym: "vestibulo-auditory system" EXACT []
 synonym: "vestibuloauditory system" EXACT []
 synonym: "vestibuloauditory system" RELATED []
 xref: AAO:0000631
@@ -26346,6 +26401,7 @@ xref: MA:0002443
 xref: ncithesaurus:Auditory_System
 xref: OpenCyc:Mx4rvViwtJwpEbGdrcN5Y29ycA
 xref: TAO:0001138
+xref: XAO:0003195
 xref: ZFA:0001138
 is_a: UBERON:0001032 ! sensory system
 intersection_of: UBERON:0001032 ! sensory system
@@ -28138,8 +28194,8 @@ xref: GAID:247
 xref: OpenCyc:Mx4rvXOLAZwpEbGdrcN5Y29ycA
 xref: TAO:0001553
 xref: ZFA:0001601
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0000975 ! vertebrate sternum
 
 [Term]
@@ -28338,8 +28394,7 @@ comment: This class was created automatically from a combination of ontologies
 xref: AAO:0000615
 xref: FMA:75053
 xref: MA:0001225
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0000466 ! immaterial anatomical entity
 relationship: part_of UBERON:0001756 ! middle ear
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 
@@ -32641,7 +32696,7 @@ xref: MA:0001722
 xref: MAT:0000290
 xref: MIAA:0000290
 xref: ncithesaurus:Decidua
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000478 ! extraembryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001987 ! placenta
 
@@ -33992,7 +34047,7 @@ id: UBERON:0002540
 name: lateral line system
 alt_id: UBERON:MIAA_0000249-XAO_0000095-ZFA_0000034
 def: "a line of neuroblasts along the sides of fish and amphibia that detect vibrations and pressure changes // Surface structure that has as it parts the sense organs that detect vibrations carried through water, develops during late tailbud stage, and persists in the adult bearing elaborate dorsal and ventral components. // A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)" [ISBN:0471209627, ISBN:0815318960, Wikipedia:Lateral_line_system, ZFIN:curator]
-comment: TODO - DV with CARO\nThis class was created automatically from a combination of ontologies
+comment: TODO - DV with CARO
 subset: uberon_slim
 synonym: "lateral line stitches" RELATED []
 synonym: "lateral-line organs" RELATED []
@@ -34006,7 +34061,6 @@ xref: TAO:0000034
 xref: XAO:0000095
 xref: ZFA:0000034
 is_a: UBERON:0001032 ! sensory system
-is_a: UBERON:0003102 ! surface structure
 
 [Term]
 id: UBERON:0002541
@@ -34096,7 +34150,7 @@ xref: MAT:0000369
 xref: MIAA:0000369
 xref: XAO:0000305
 xref: ZFA:0001309
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0000924 ! ectoderm
 
 [Term]
@@ -35298,6 +35352,7 @@ id: UBERON:0002611
 name: node of ranvier
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1152-FMA_67368
 def: "." [Wikipedia:Node_of_ranvier]
+comment: in GO
 subset: uberon_slim
 synonym: "ranvier node" EXACT [FMA:67368]
 synonym: "ranvier's node" EXACT [FMA:67368]
@@ -35306,7 +35361,7 @@ xref: GAID:748
 xref: GO:0033268
 xref: ncithesaurus:Node_of_Ranvier
 xref: NIF_GrossAnatomy:birnlex_1152
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0002612
@@ -35841,8 +35896,7 @@ subset: uberon_slim
 synonym: "anterior horn of lateral ventricle" EXACT [FMA:74520]
 xref: FMA:74520
 xref: NIF_GrossAnatomy:birnlex_1279
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0002285 ! lateral ventricle
 
 [Term]
@@ -35895,8 +35949,7 @@ synonym: "central part of lateral ventricle" EXACT [FMA:83703]
 synonym: "lateral ventricular body" EXACT [FMA:83703]
 xref: FMA:83703
 xref: NIF_GrossAnatomy:birnlex_1287
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0002285 ! lateral ventricle
 
 [Term]
@@ -38391,8 +38444,7 @@ comment: NIF differs from FMA
 synonym: "fovea centralis clivus" EXACT [FMA:58674]
 xref: FMA:58674
 xref: NIF_GrossAnatomy:birnlex_2544
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000466 ! immaterial anatomical entity
 relationship: part_of UBERON:0001786 ! fovea centralis
 
 [Term]
@@ -40095,6 +40147,7 @@ id: UBERON:0002962
 name: microtubule
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_788-FMA_63849
 def: "." [Wikipedia:Microtubule]
+comment: in GO
 subset: uberon_slim
 synonym: "microtubulus" EXACT [FMA:63849]
 xref: FMA:63849
@@ -40102,7 +40155,7 @@ xref: GAID:742
 xref: GO:0005874
 xref: ncithesaurus:Microtubule
 xref: NIF_GrossAnatomy:birnlex_788
-is_a: UBERON:0000470 ! cell part
+is_obolete: true
 
 [Term]
 id: UBERON:0002963
@@ -41389,7 +41442,7 @@ xref: MA:0000819
 xref: TAO:0001083
 xref: XAO:0000021
 xref: ZFA:0001083
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
 relationship: part_of UBERON:0000955 ! brain
 
@@ -41491,7 +41544,7 @@ comment: This class was created automatically from a combination of ontologies
 synonym: "anterior neural plate" RELATED []
 xref: XAO:0000045
 xref: ZFA:0007016
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0003075 ! neural plate
 
@@ -41521,7 +41574,7 @@ xref: HOG:0000081
 xref: TAO:0000031
 xref: XAO:0000056
 xref: ZFA:0000031
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0000925 ! endoderm
 
 [Term]
@@ -41579,7 +41632,7 @@ xref: ncithesaurus:Blood_Island
 xref: TAO:0000094
 xref: XAO:0000067
 xref: ZFA:0000094
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003081 ! lateral plate mesoderm
 relationship: part_of UBERON:0002390 ! hematopoietic system
@@ -41610,7 +41663,7 @@ xref: GAID:1312
 xref: TAO:0000071
 xref: XAO:0000072
 xref: ZFA:0000071
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0002541 ! germ ring
 
 [Term]
@@ -41645,7 +41698,7 @@ xref: ncithesaurus:Intermediate_Mesoderm
 xref: TAO:0001206
 xref: XAO:0000085
 xref: ZFA:0001206
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: adjacent_to UBERON:0003077 ! paraxial mesoderm
 relationship: adjacent_to UBERON:0003081 ! lateral plate mesoderm
@@ -41665,7 +41718,7 @@ xref: HOG:0000088
 xref: TAO:0001289
 xref: XAO:0000086
 xref: ZFA:0001289
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000966 ! retina
 
@@ -42178,8 +42231,7 @@ xref: HOG:0000128
 xref: TAO:0000443
 xref: XAO:0000442
 xref: ZFA:0000443
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
 [Term]
@@ -42226,8 +42278,7 @@ xref: HOG:0000131
 xref: TAO:0000400
 xref: XAO:0000458
 xref: ZFA:0000400
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
 [Term]
@@ -42241,8 +42292,7 @@ xref: HOG:0000132
 xref: TAO:0000524
 xref: XAO:0000459
 xref: ZFA:0000524
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
 [Term]
@@ -42255,8 +42305,7 @@ subset: uberon_slim
 xref: TAO:0005112
 xref: XAO:0000462
 xref: ZFA:0005112
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
 [Term]
@@ -42270,8 +42319,7 @@ xref: HOG:0000133
 xref: TAO:0000344
 xref: XAO:0000463
 xref: ZFA:0000344
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
 [Term]
@@ -42418,7 +42466,7 @@ synonym: "ventral wall of dorsal aorta" EXACT []
 xref: TAO:0005028
 xref: XAO:0003051
 xref: ZFA:0005028
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0002390 ! hematopoietic system
@@ -42821,7 +42869,6 @@ xref: FBbt:00004557
 xref: HAO:0000956
 is_a: UBERON:0000061 ! anatomical structure
 relationship: only_in_taxon NCBITaxon:6656
-relationship: part_of UBERON:0000915 ! thorax
 
 [Term]
 id: UBERON:0003131
@@ -42900,43 +42947,46 @@ intersection_of: part_of UBERON:0003101 ! male organism
 id: UBERON:0003136
 name: tagma
 alt_id: UBERON:FBbt_00000002-HAO_0000988
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00000002
 xref: HAO:0000988
-is_a: UBERON:0000475 ! organism subdivision
+is_obsolete: true
 
 [Term]
 id: UBERON:0003137
 name: antennal segment
 alt_id: UBERON:FBbt_00000009-HAO_0000104
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00000009
 xref: HAO:0000104
-is_a: UBERON:0000914 ! organismal segment
+is_obsolete: true
 
 [Term]
 id: UBERON:0003138
 name: thoracic segment
 alt_id: UBERON:FBbt_00000016-HAO_0001013
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00000016
 xref: HAO:0001013
-is_a: UBERON:0000914 ! organismal segment
-relationship: part_of UBERON:0000915 ! thorax
+is_obsolete: true
 
 [Term]
 id: UBERON:0003139
 name: larval tagma
 alt_id: UBERON:FBbt_00001728-HAO_0000462
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00001728
 xref: HAO:0000462
-is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:0002548 ! larva
+is_obsolete: true
 
 [Term]
 id: UBERON:0003140
 name: larval thorax
 alt_id: UBERON:FBbt_00001741-HAO_0000463
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00001741
 xref: HAO:0000463
-is_a: UBERON:0000915 ! thorax
+is_obsolete: true
 
 [Term]
 id: UBERON:0003141
@@ -42975,18 +43025,19 @@ intersection_of: existence_starts_and_ends_during UBERON:0000070 ! pupal stage
 id: UBERON:0003144
 name: adult tagma
 alt_id: UBERON:FBbt_00003005-HAO_0000089
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00003005
 xref: HAO:0000089
-is_a: UBERON:0000475 ! organism subdivision
+is_obsolete: true
 
 [Term]
 id: UBERON:0003145
 name: adult arthropod thorax
 alt_id: UBERON:FBbt_00003018-HAO_0000090
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00003018
 xref: HAO:0000090
-is_a: UBERON:0000915 ! thorax
-relationship: only_in_taxon NCBITaxon:6656
+is_obsolete: true
 
 [Term]
 id: UBERON:0003146
@@ -43001,61 +43052,61 @@ id: UBERON:0003147
 name: peritreme
 alt_id: UBERON:FBbt_00003121-HAO_0000712
 def: "That part of the integument of an insect which surrounds the spiracles." [http://www.answers.com/topic/peritreme]
-comment: term also used for edge of the aperture of a univalve shell
+comment: term also used for edge of the aperture of a univalve shell\narthropod specific groupings belong in separate ontology
 synonym: "rim" RELATED [FBbt:00003121]
 xref: FBbt:00003121
 xref: HAO:0000712
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003148
 name: sclerite
 alt_id: UBERON:FBbt_00004475-HAO_0000909
 def: "hardened portions of arthropod exoskeletons." [Wikipedia:Sclerite]
+comment: arthropod specific groupings belong in separate ontology
 synonym: "plate" RELATED [FBbt:00004475]
 xref: FBbt:00004475
 xref: HAO:0000909
-is_a: UBERON:0000479 ! portion of tissue
-relationship: only_in_taxon NCBITaxon:6656
+is_obsolete: true
 
 [Term]
 id: UBERON:0003149
 name: tergite
 alt_id: UBERON:FBbt_00004476-HAO_0001005
-comment: DV with CARO
+comment: DV with CARO\narthropod specific groupings belong in separate ontology
 synonym: "abdominal tergite" EXACT [FBbt:00004476]
 xref: FBbt:00004476
 xref: HAO:0001005
-is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003150
 name: sternite
 alt_id: UBERON:FBbt_00004477-HAO_0000955
-comment: DV with CARO
+comment: DV with CARO\narthropod specific groupings belong in separate ontology
 synonym: "abdominal sternite" EXACT [FBbt:00004477]
 xref: FBbt:00004477
 xref: HAO:0000955
-is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003151
 name: foramen
 alt_id: UBERON:FBbt_00004478-HAO_0000345
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004478
 xref: HAO:0000345
-is_a: UBERON:0000464 ! anatomical space
+is_obsolete: true
 
 [Term]
 id: UBERON:0003152
 name: phragma
 alt_id: UBERON:FBbt_00004480-HAO_0000716
 def: "The lamella that serves as the site of attachment of the longitudinal flight muscle [HAO]." [HAO:0000716]
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004480
 xref: HAO:0000716
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003153
@@ -43070,10 +43121,11 @@ is_a: UBERON:0000477 ! anatomical cluster
 id: UBERON:0003154
 name: gena
 alt_id: UBERON:FBbt_00004491-HAO_0000371
+comment: arthropod specific groupings belong in separate ontology
 synonym: "cheek" RELATED [FBbt:00004491]
 xref: FBbt:00004491
 xref: HAO:0000371
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003155
@@ -43088,41 +43140,46 @@ is_a: UBERON:0000061 ! anatomical structure
 id: UBERON:0003156
 name: postocciput
 alt_id: UBERON:FBbt_00004494-HAO_0000790
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004494
 xref: HAO:0000790
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003157
 name: postgena
 alt_id: UBERON:FBbt_00004496-HAO_0000776
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004496
 xref: HAO:0000776
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003158
 name: tentorial pit
 alt_id: UBERON:FBbt_00004501-HAO_0000999
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004501
 xref: HAO:0000999
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003159
 name: anterior tentorial pit
 alt_id: UBERON:FBbt_00004502-HAO_0000126
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004502
 xref: HAO:0000126
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003160
 name: posterior tentorial pit
 alt_id: UBERON:FBbt_00004503-HAO_0000768
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004503
 xref: HAO:0000768
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003161
@@ -43136,7 +43193,6 @@ synonym: "ocellus" EXACT []
 xref: BTO:0001758
 xref: FBbt:00004505
 xref: HAO:0000661
-is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0000963 ! head sensillum
 
 [Term]
@@ -43161,152 +43217,167 @@ is_obsolete: true
 id: UBERON:0003164
 name: clypeus
 alt_id: UBERON:FBbt_00004521-HAO_0000212
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004521
 xref: HAO:0000212
-is_a: UBERON:0003148 ! sclerite
+is_obsolete: true
 
 [Term]
 id: UBERON:0003165
 name: cibarium
 alt_id: UBERON:FBbt_00004526-HAO_0000201
+comment: arthropod specific groupings belong in separate ontology
 synonym: "atrium" RELATED [FBbt:00004526]
 xref: FBbt:00004526
 xref: HAO:0000201
-is_a: UBERON:0000464 ! anatomical space
+is_obsolete: true
 
 [Term]
 id: UBERON:0003166
 name: prementum
 alt_id: UBERON:FBbt_00004534-HAO_0000804
+comment: arthropod specific groupings belong in separate ontology
 synonym: "theca" RELATED [FBbt:00004534]
 xref: FBbt:00004534
 xref: HAO:0000804
-is_a: UBERON:0000914 ! organismal segment
+is_obsolete: true
 
 [Term]
 id: UBERON:0003167
 name: lacinia
 alt_id: UBERON:FBbt_00004536-HAO_0000457
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004536
 xref: HAO:0000457
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003168
 name: mentum
 alt_id: UBERON:FBbt_00004544-HAO_0000534
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004544
 xref: HAO:0000534
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003169
 name: cervical sclerite
 alt_id: UBERON:FBbt_00004548-HAO_0000195
-comment: DV with CARO
+comment: DV with CARO\narthropod specific groupings belong in separate ontology
 xref: FBbt:00004548
 xref: HAO:0000195
-is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003170
 name: tergum
 alt_id: UBERON:FBbt_00004552-HAO_0001006
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004552
 xref: HAO:0001006
-is_a: UBERON:0000477 ! anatomical cluster
+is_obsolete: true
 
 [Term]
 id: UBERON:0003171
 name: episternum
 alt_id: UBERON:FBbt_00004554-HAO_0000303
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004554
 xref: HAO:0000303
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003172
 name: epimeron
 alt_id: UBERON:FBbt_00004556-HAO_0000299
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004556
 xref: HAO:0000299
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003173
 name: pronotum
 alt_id: UBERON:FBbt_00004561-HAO_0000853
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004561
 xref: HAO:0000853
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0000477 ! anatomical cluster
+is_obsolete: true
 
 [Term]
 id: UBERON:0003174
 name: furcasternum
 alt_id: UBERON:FBbt_00004570-HAO_0000367
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004570
 xref: HAO:0000367
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003175
 name: prescutum
 alt_id: UBERON:FBbt_00004582-HAO_0000815
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004582
 xref: HAO:0000815
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003176
 name: anterior notal wing process
 alt_id: UBERON:FBbt_00004585-HAO_0000120
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004585
 xref: HAO:0000120
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003177
 name: posterior notal wing process
 alt_id: UBERON:FBbt_00004586-HAO_0000758
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004586
 xref: HAO:0000758
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003178
 name: postnotum
 alt_id: UBERON:FBbt_00004588-HAO_0000786
+comment: arthropod specific groupings belong in separate ontology
 synonym: "postscutellum" RELATED [FBbt:00004588]
 xref: FBbt:00004588
 xref: HAO:0000786
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003179
 name: pleural wing process
 alt_id: UBERON:FBbt_00004595-HAO_0000726
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004595
 xref: HAO:0000726
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003180
 name: anepisternum
 alt_id: UBERON:FBbt_00004597-HAO_0000094
+comment: arthropod specific groupings belong in separate ontology
 synonym: "mesopleurite" RELATED [FBbt:00004597]
 xref: FBbt:00004597
 xref: HAO:0000094
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003181
 name: scutoscutellar suture
 alt_id: UBERON:FBbt_00004601-HAO_0000920
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004601
 xref: HAO:0000920
-is_a: UBERON:0000969 ! suture
+is_obsolete: true
 
 [Term]
 id: UBERON:0003182
@@ -43314,8 +43385,7 @@ name: pleural suture
 alt_id: UBERON:FBbt_00004603-HAO_0000725
 xref: FBbt:00004603
 xref: HAO:0000725
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0000969 ! suture
+is_obsolete: true
 
 [Term]
 id: UBERON:0003183
@@ -43323,67 +43393,63 @@ name: notopleural suture
 alt_id: UBERON:FBbt_00004604-HAO_0000649
 xref: FBbt:00004604
 xref: HAO:0000649
-is_a: UBERON:0000969 ! suture
+is_obsolete: true
 
 [Term]
 id: UBERON:0003184
 name: mesofurca
 alt_id: UBERON:FBbt_00004619-HAO_0000547
+comment: arthropod specific groupings belong in separate ontology
 synonym: "mesothoracic sternal apophysis" RELATED [FBbt:00004619]
 xref: FBbt:00004619
 xref: HAO:0000547
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0000477 ! anatomical cluster
+is_obsolete: true
 
 [Term]
 id: UBERON:0003185
 name: metafurca
 alt_id: UBERON:FBbt_00004638-HAO_0000592
+comment: arthropod specific groupings belong in separate ontology
 synonym: "metathoracic sternal apophysis" RELATED [FBbt:00004638]
 xref: FBbt:00004638
 xref: HAO:0000592
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0000477 ! anatomical cluster
+is_obsolete: true
 
 [Term]
 id: UBERON:0003186
 name: coxa
 alt_id: UBERON:FBbt_00004641-HAO_0000228
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004641
 xref: HAO:0000228
-is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0000914 ! organismal segment
-is_a: UBERON:0002529 ! implied link automatically realized ! limb segment
-relationship: part_of UBERON:0000978 ! leg
+is_obsolete: true
 
 [Term]
 id: UBERON:0003187
 name: pretarsus
 alt_id: UBERON:FBbt_00004653-HAO_0000820
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004653
 xref: HAO:0000820
-is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0000914 ! organismal segment
-is_a: UBERON:0002529 ! implied link automatically realized ! limb segment
-relationship: part_of UBERON:0000978 ! leg
+is_obsolete: true
 
 [Term]
 id: UBERON:0003188
 name: auxilia
 alt_id: UBERON:FBbt_00004654-HAO_0000153
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004654
 xref: HAO:0000153
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003189
 name: unguitractor plate
 alt_id: UBERON:FBbt_00004658-HAO_0001043
-comment: DV with CARO
+comment: DV with CARO\narthropod specific groupings belong in separate ontology
 xref: FBbt:00004658
 xref: HAO:0001043
-is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003190
@@ -43397,28 +43463,28 @@ is_obsolete: true
 id: UBERON:0003191
 name: tegula
 alt_id: UBERON:FBbt_00004730-HAO_0000993
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004730
 xref: HAO:0000993
-is_a: UBERON:0000479 ! portion of tissue
-relationship: part_of UBERON:0000984 ! thoracic wing
+is_obsolete: true
 
 [Term]
 id: UBERON:0003192
 name: axillary sclerite
 alt_id: UBERON:FBbt_00004737-HAO_0000159
-comment: DV with CARO
+comment: DV with CARO\narthropod specific groupings belong in separate ontology
 xref: FBbt:00004737
 xref: HAO:0000159
-is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003193
 name: axillary cord
 alt_id: UBERON:FBbt_00004744-HAO_0000157
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004744
 xref: HAO:0000157
-is_a: UBERON:0000476 ! acellular anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003194
@@ -43436,34 +43502,38 @@ intersection_of: part_of UBERON:0000023 ! wing
 id: UBERON:0003195
 name: crossvein
 alt_id: UBERON:FBbt_00004765-HAO_0000236
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004765
 xref: HAO:0000236
-is_a: UBERON:0000476 ! acellular anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003196
 name: wing cell
 alt_id: UBERON:FBbt_00004769-HAO_0001091
+comment: arthropod specific groupings belong in separate ontology
 synonym: "intervein" RELATED [FBbt:00004769]
 xref: FBbt:00004769
 xref: HAO:0001091
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003197
 name: costal cell
 alt_id: UBERON:FBbt_00004770-HAO_0000226
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004770
 xref: HAO:0000226
-is_a: UBERON:0000479 ! portion of tissue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003198
 name: aedeagus
 alt_id: UBERON:FBbt_00004850-HAO_0000091
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004850
 xref: HAO:0000091
-is_a: UBERON:0000472 ! simple organ
+is_obsolete: true
 
 [Term]
 id: UBERON:0003199
@@ -43505,45 +43575,48 @@ is_a: UBERON:0000476 ! acellular anatomical structure
 id: UBERON:0003203
 name: apodeme
 alt_id: UBERON:FBbt_00005091-HAO_0000142
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00005091
 xref: HAO:0000142
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003204
 name: epipharynx
 alt_id: UBERON:FBbt_00005750-HAO_0000301
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00005750
 xref: HAO:0000301
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0001041 ! foregut
+is_obsolete: true
 
 [Term]
 id: UBERON:0003205
 name: articulation
 alt_id: UBERON:FBbt_00005811-HAO_0000151
+comment: incorrect grouping
 xref: FBbt:00005811
 xref: HAO:0000151
 xref: ncithesaurus:Articulation
-is_a: UBERON:0000477 ! anatomical cluster
+is_obsolete: true
 
 [Term]
 id: UBERON:0003206
 name: apophysis
 alt_id: UBERON:FBbt_00005813-HAO_0000143
+comment: incorrect grouping
 xref: FBbt:00005813
 xref: FMA:75428
 xref: HAO:0000143
-is_a: UBERON:0000061 ! anatomical structure
+is_obsolete: true
 
 [Term]
 id: UBERON:0003207
 name: appendage segment
 alt_id: UBERON:FBbt_00007018-HAO_0000145
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00007018
 xref: HAO:0000145
-is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0000914 ! organismal segment
+is_obsolete: true
 
 [Term]
 id: UBERON:0003209
@@ -43653,7 +43726,7 @@ xref: MA:0002477
 xref: MAT:0000161
 xref: MIAA:0000161
 xref: ncithesaurus:Hard_Palate
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001716 ! palate
 
 [Term]
@@ -51640,7 +51713,7 @@ synonym: "sublingual region" RELATED [GAID:1283]
 xref: FMA:86592
 xref: GAID:1283
 xref: ncithesaurus:Floor_of_the_Mouth
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001444 ! subdivision of head
 relationship: part_of UBERON:0000165 ! mouth
 
 [Term]
@@ -53640,7 +53713,7 @@ intersection_of: part_of UBERON:0000152 ! pelvic fin
 id: UBERON:0003936
 name: postoptic commissure
 xref: ZFA:0000059
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001020 ! commissure
 is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
 relationship: part_of UBERON:0003931 ! diencephalic white matter
 
@@ -53678,9 +53751,10 @@ relationship: part_of UBERON:0001393 ! auditory cortex
 id: UBERON:0003941
 name: cerebellum anterior vermis
 def: "the anterior portion of the narrow middle zone between the two hemispheres of the cerebellum that is located anterior to the primary fissure" [MP:0000867]
+synonym: "vermis of anterior lobe of cerebellum" EXACT [FMA:72255]
 xref: FMA:72255
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002131 ! anterior lobe of cerebellum
 
 [Term]
@@ -53843,14 +53917,14 @@ relationship: part_of UBERON:0002516 ! epiphyseal plate
 [Term]
 id: UBERON:0003959
 name: rete testis
-def: "the network of canals at the termination of the straight tubules in the mediastinum testis" [MP:0006416, Wikipedia:Rete_testis]
+def: "the network of canals at the termination of the straight tubules in the mediastinum testis[MP]. Rete testis is an anastomosing  network of delicate tubules located in the hilum of the testicle  (mediastinum testis) that carries sperm  from the seminiferous tubules  to the vasa efferentia[WP]." [MP:0006416, Wikipedia:Rete_testis]
 xref: EMAPA:18332
 xref: FMA:19834
 xref: GAID:399
 xref: ncithesaurus:Rete_Testis
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0000473 ! testis
+relationship: part_of UBERON:0005051 ! mediastinum testis
 
 [Term]
 id: UBERON:0003960
@@ -53872,9 +53946,7 @@ id: UBERON:0003962
 name: pterygopalatine ganglion
 def: "the small parasympathetic ganglion that supplies nerve fibers to the lacrimal, nasal, palatine and pharyngeal glands" [MP:0008314, Wikipedia:Pterygopalatine_ganglion]
 xref: FMA:6965
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-relationship: part_of UBERON:0001808 ! parasympathetic ganglion
+is_a: UBERON:0001808 ! parasympathetic ganglion
 
 [Term]
 id: UBERON:0003963
@@ -53890,9 +53962,7 @@ id: UBERON:0003964
 name: prevertebral ganglion
 def: "the sympathetic ganglia located in front of the vertebral column and are associated with the major branches of the abdominal aorta; these include the celiac, aorticorenal, superior and inferior mesenteric ganglia" [MP:0008316]
 xref: FMA:5892
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-relationship: part_of UBERON:0001806 ! sympathetic ganglion
+is_a: UBERON:0001806 ! sympathetic ganglion
 
 [Term]
 id: UBERON:0003965
@@ -53967,7 +54037,7 @@ relationship: part_of UBERON:0001987 ! placenta
 id: UBERON:0003973
 name: ethmoturbinate
 def: "the conchae of the ethmoid bone which occupy the caudal part of the nasal fossae and form the lateral and superior portions of the turbinate bones in mammals" [MP:0008971]
-is_a: UBERON:0000061 ! anatomical structure
+comment: TODO - merge with nasal concha?
 is_a: UBERON:0001762 ! nasal concha
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001679 ! ethmoid
@@ -53984,10 +54054,14 @@ relationship: part_of UBERON:0000996 ! vagina
 id: UBERON:0003975
 name: internal female genitalia
 def: "the internal feminine genital organs, including the ovaries, uterine tubes, uterus, uterine cervix, and vagina." [MP:0009209]
+synonym: "female internal genitalia" EXACT [FMA:45654]
+synonym: "internal genitalia of female reproductive system" EXACT [OBOL:automatic]
 xref: FMA:45654
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0003134 ! implied link automatically realized ! female reproductive organ
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0000474 ! female reproductive system
+is_a: UBERON:0004175 ! implied link automatically realized ! internal reproductive organ
+intersection_of: UBERON:0004175 ! internal reproductive organ
+intersection_of: part_of UBERON:0000474 ! female reproductive system
 
 [Term]
 id: UBERON:0003976
@@ -54055,7 +54129,7 @@ id: UBERON:0003984
 name: uterine tube infundibulum
 def: "the funnel-like expansion of the abdominal extremity of the uterine tube" [MP:0009466, Wikipedia:Infundibulum_of_uterine_tube]
 xref: FMA:18307
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0003889 ! fallopian tube
 
@@ -54099,8 +54173,7 @@ id: UBERON:0003989
 name: medulla oblongata anterior median fissure
 def: "the longitudinal groove in the midline of the anterior aspect of the medulla oblongata" [MP:0009680]
 xref: FMA:83734
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
+is_a: UBERON:0000464 ! anatomical space
 relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
@@ -54144,8 +54217,7 @@ name: interventricular foramen
 def: "the paired channels that connect the lateral and third ventricles and allows cerebrospinal fluid produced in the lateral ventricles to flow into the third ventricles" [MP:0009804]
 xref: FMA:75351
 xref: ncithesaurus:Interventricular_Foramen
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
+is_a: UBERON:0000464 ! anatomical space
 relationship: part_of UBERON:0002286 ! third ventricle
 
 [Term]
@@ -54225,8 +54297,8 @@ id: UBERON:0004002
 name: cerebellum posterior lobe
 def: "the region of the cerebellum that is posterior to the primary fissure and anterior to the posteriolateral fissure" [MP:0009962]
 xref: FMA:72252
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002129 ! cerebellar cortex
 
 [Term]
@@ -54234,16 +54306,16 @@ id: UBERON:0004003
 name: cerebellum hemisphere lobule
 def: "the region of a cerebellar lobule that resides in either of the lateral sections of the cerebellum outside the vermis; in mammals, the vermis portion of the cerebellum has a foliation pattern along the AP axis that is distinct from the lateral cerebellar hemispheres" [MP:0009963]
 xref: FMA:83880
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
 
 [Term]
 id: UBERON:0004004
 name: cerebellum lobule
 def: "the ten gyri of the cerebellar cortex" [MP:0009964]
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002129 ! cerebellar cortex
 
 [Term]
@@ -54363,7 +54435,7 @@ def: "the regional thickening of cells at the rostral tip of the vertebrate prim
 comment: TODO - merge with primitive knot
 xref: EHDAA:549
 xref: ncithesaurus:Primitive_Node
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0004341 ! primitive streak
 
 [Term]
@@ -54371,7 +54443,7 @@ id: UBERON:0004019
 name: baroreceptor
 def: "the sensory nerve endings in the wall of the atria of the heart, vena cava, aortic arch and carotid sinus that are sensitive to changes in blood pressure" [MP:0004118]
 xref: FMA:85601
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000477 ! anatomical cluster
 relationship: capable_of GO:0003073
 
 [Term]
@@ -54464,7 +54536,7 @@ def: "the vascular structure encircling the anterior chamber of the eye, through
 synonym: "Schlemm's canal" EXACT []
 xref: FMA:51873
 xref: ncithesaurus:Canal_of_Schlemm
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:0003956 ! aqueous drainage system
 
 [Term]
@@ -54669,18 +54741,21 @@ is_a: UBERON:0000079 ! male reproductive system
 id: UBERON:0004055
 name: primitive pit
 def: "the small depression in the primitive streak that is caudal to the primitive node where the cells of the epiblast initially begin to invaginate during early embryogenesis" [MP:0009329]
+comment: TODO - check
 xref: EHDAA:551
 xref: ncithesaurus:Primitive_Pit
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0004341 ! primitive streak
 
 [Term]
 id: UBERON:0004056
 name: primitive groove
 def: "the shallow valley that extends along the length of the primitive streak" [MP:0009330]
+comment: TODO - check
 xref: EHDAA:547
 xref: ncithesaurus:Primitive_Groove
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0004341 ! primitive streak
 
 [Term]
@@ -55106,7 +55181,7 @@ relationship: part_of UBERON:0001707 ! nasal cavity
 id: UBERON:0004111
 name: anatomical conduit
 xref: FMA:242873
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000477 ! anatomical cluster
 
 [Term]
 id: UBERON:0004112
@@ -55391,7 +55466,7 @@ xref: EMAPA:16540
 xref: HOG:0000165
 xref: XAO:0000228
 xref: ZFA:0000050
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0003071 ! eye primordium
 
@@ -55540,7 +55615,7 @@ xref: EMAPA:16346
 xref: HOG:0000670
 xref: MA:0000100
 xref: ZFA:0000173
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0000948 ! heart
 
 [Term]
@@ -55548,9 +55623,7 @@ id: UBERON:0004146
 name: His-Purkinje system
 def: "The His-Purkinje system receives signals from the AV node and is composed of the fibers that regulate cardiac muscle contraction in the ventricles" [GO:0003164]
 xref: ZFA:0005071
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0002350 ! conducting system of heart
+is_a: UBERON:0002350 ! conducting system of heart
 
 [Term]
 id: UBERON:0004147
@@ -55603,7 +55676,7 @@ synonym: "chamber of heart" EXACT []
 synonym: "heart chamber" EXACT []
 xref: FMA:7095
 xref: OpenCyc:Mx4rmexpjPdAEduAAAAOpmP6tw
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000948 ! heart
 
 [Term]
@@ -56028,7 +56101,7 @@ def: " The ascending thin limb is a segment of a nephron tubule that is permeabl
 xref: EMAPA:28328
 xref: EMAPA:28361
 xref: FMA:17720
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -56047,6 +56120,7 @@ is_a: UBERON:0001285 ! nephron
 id: UBERON:0004196
 name: S1 portion of tubule
 def: "The S1 portion of the tubule is responsible for water reabsorption and is poorly permeable to chloride and urea" [GO:0072031]
+comment: TODO - check FMA - anatomical relation
 synonym: "S1" EXACT []
 synonym: "S1 portion of renal tubule" EXACT []
 xref: EMAPA:19356
@@ -56064,6 +56138,7 @@ relationship: part_of UBERON:0001287 ! proximal convoluted tubule
 id: UBERON:0004197
 name: S2 portion of tubule
 def: " The S2 portion of the tubule is involved in reabsorption of water and sodium chloride" [GO:0072032]
+comment: TODO - check FMA - anatomical relation
 synonym: "S2" EXACT []
 synonym: "S2 portion of renal tubule" EXACT []
 xref: EMAPA:19357
@@ -57240,10 +57315,13 @@ intersection_of: part_of UBERON:0003823 ! lower leg
 [Term]
 id: UBERON:0004252
 name: upper leg muscle
+alt_id: UBERON:0000374
+alt_id: UBERON:BTO_0001367-FMA_22470
 synonym: "hind limb stylopod muscle organ" EXACT [OBOL:automatic]
 synonym: "hindlimb stylopod muscle organ" EXACT [OBOL:automatic]
 synonym: "inferior member stylopod muscle organ" EXACT [OBOL:automatic]
 synonym: "lower extremity stylopod muscle organ" EXACT [OBOL:automatic]
+synonym: "muscle of thigh" EXACT [FMA:22470]
 synonym: "muscle organ of hind limb stylopod" EXACT [OBOL:automatic]
 synonym: "muscle organ of hindlimb stylopod" EXACT [OBOL:automatic]
 synonym: "muscle organ of inferior member stylopod" EXACT [OBOL:automatic]
@@ -57262,8 +57340,11 @@ synonym: "stylopod of hindlimb muscle organ" EXACT [OBOL:automatic]
 synonym: "stylopod of inferior member muscle organ" EXACT [OBOL:automatic]
 synonym: "stylopod of lower extremity muscle organ" EXACT [OBOL:automatic]
 synonym: "stylopod of lower limb muscle organ" EXACT [OBOL:automatic]
+synonym: "thigh muscle" EXACT [OBOL:automatic]
 synonym: "thigh muscle organ" EXACT [OBOL:automatic]
 synonym: "upper leg muscle organ" EXACT [OBOL:automatic]
+xref: BTO:0001367
+xref: FMA:22470
 xref: MA:0000684
 is_a: UBERON:0003663 ! implied link automatically realized ! hindlimb muscle
 intersection_of: UBERON:0001630 ! muscle organ
@@ -58880,7 +58961,7 @@ def: "the midline ridge of the embryonic epiblast that later develops into mesod
 comment: TODO - check
 xref: EMAPA:16072
 xref: ncithesaurus:Primitive_Streak
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0002532 ! epiblast
 
 [Term]
@@ -59049,8 +59130,7 @@ name: stylohyoid ligament
 def: "the fibrous cord that connects the tip of the styloid process of the temporal bone to the lesser horn of the hyoid bone" [MP:0009918]
 xref: FMA:72308
 xref: MA:0002957
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0000211 ! ligament
 relationship: part_of UBERON:0000211 ! ligament
 
 [Term]
@@ -59139,7 +59219,7 @@ def: "cartilage found in the mesenchyme of the second branchial arch in the embr
 synonym: "hyaloid cartilage" EXACT [MP:0004916]
 synonym: "Reichert cartilage" EXACT []
 synonym: "second pharyngeal arch cartilage" EXACT [MP:0004916]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002418 ! cartilage
 relationship: part_of UBERON:0003066 ! hyoid arch
 
 [Term]
@@ -59160,7 +59240,7 @@ synonym: "Reichert's membrane" RELATED [http://sourceforge.net/tracker/?func=det
 xref: FMA:58273
 xref: ncithesaurus:Bowman_s_Membrane
 xref: ZFA:0001684
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000476 ! acellular anatomical structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000964 ! cornea
 
@@ -60749,6 +60829,9 @@ id: UBERON:0004562
 name: digital vein
 comment: check part_of - do we need term for digit + metacarpal/tarsal bones?
 xref: MA:0002101
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003514 ! implied link automatically realized ! limb blood vessel
+relationship: part_of UBERON:0002470 ! autopod
 
 [Term]
 id: UBERON:0004563
@@ -60757,6 +60840,7 @@ def: "The palmar digital veins (or volar digital veins) on each finger are conne
 synonym: "palmar digital vein" EXACT []
 xref: FMA:44517
 xref: MA:0002120
+is_a: UBERON:0003515 ! implied link automatically realized ! forelimb blood vessel
 is_a: UBERON:0004562 ! implied link automatically realized ! digital vein
 intersection_of: UBERON:0004562 ! digital vein
 intersection_of: part_of UBERON:0002102 ! forelimb
@@ -60766,6 +60850,7 @@ id: UBERON:0004564
 name: hindlimb digital vein
 synonym: "plantar digital vein" EXACT []
 xref: MA:0002133
+is_a: UBERON:0003516 ! implied link automatically realized ! hindlimb blood vessel
 is_a: UBERON:0004562 ! implied link automatically realized ! digital vein
 intersection_of: UBERON:0004562 ! digital vein
 intersection_of: part_of UBERON:0002103 ! hindlimb
@@ -61641,11 +61726,13 @@ is_a: UBERON:0003544 ! implied link automatically realized ! brain white matter
 [Term]
 id: UBERON:0004681
 name: vestibular system
+def: "The vestibular system, which contributes to our balance and our sense of spatial orientation, is the sensory system that provides the dominant input about movement and equilibrioception. Together with the cochlea, a part of the auditory system, it constitutes the labyrinth of the inner ear, situated in the vestibulum in the inner ear. As our movements consist of rotations and translations, the vestibular system comprises two components: the semicircular canal system, which indicate rotational movements; and the otoliths, which indicate linear accelerations. The vestibular system sends signals primarily to the neural structures that control our eye movements, and to the muscles that keep us upright. The projections to the former provide the anatomical basis of the vestibulo-ocular reflex, which is required for clear vision; and the projections to the muscles that control our posture are necessary to keep us upright." [Wikipedia:Vestibular_system]
 synonym: "vestibular organ system" EXACT [FMA:7193]
 synonym: "vestibular system" EXACT [NIF_GrossAnatomy:nlx_anat_090819]
 xref: BTO:0003381
 xref: FMA:7193
 xref: NIF_GrossAnatomy:nlx_anat_090819
+is_a: UBERON:0001032 ! sensory system
 
 [Term]
 id: UBERON:0004682
@@ -62036,6 +62123,9 @@ synonym: "cristae ampullares" RELATED [Wikipedia:Crista_ampullaris]
 xref: FMA:77714
 xref: MA:0002771
 xref: Wikipedia:Crista_ampullaris
+is_a: UBERON:0000020 ! sense organ
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0001840 ! semicircular canal
 
 [Term]
 id: UBERON:0004722
@@ -63939,9 +64029,9 @@ id: UBERON:0004882
 name: eponychium
 def: "Thickened layer of skin surrounding fingernails and toenails. Beneath the cuticle is a thin layer of a membrane known as the pterygium. The function is to protect the area between the nail and epidermis from exposure to harmful bacteria. The vascularization pattern is similar to that of perionychium." [Wikipedia:Eponychium]
 xref: FMA:77859
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
 relationship: part_of UBERON:0001003 ! epidermis
 
 [Term]
@@ -64280,6 +64370,7 @@ xref: FMA:15076
 xref: GAID:283
 xref: ZFA:0005167
 is_a: UBERON:0000058 ! duct
+is_a: UBERON:0003928 ! implied link automatically realized ! digestive system duct
 relationship: part_of UBERON:0004914 ! duodenal papilla
 
 [Term]
@@ -64290,6 +64381,8 @@ synonym: "papilla of duodenum" EXACT []
 xref: EMAPA:18662
 xref: EMAPA:18853
 xref: FMA:15953
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002114 ! duodenum
 
 [Term]
 id: UBERON:0004915
@@ -66430,6 +66523,27 @@ xref: FMA:18357
 is_a: UBERON:0005048 ! implied link automatically realized ! mucosa of uterine tube
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0003984 ! uterine tube infundibulum
+
+[Term]
+id: UBERON:0005050
+name: liver papillary process
+synonym: "papillary process of caudate lobe of liver" EXACT [FMA:14506]
+synonym: "processus papillaris" EXACT [FMA:14506]
+xref: FMA:14506
+xref: MA:0001643
+is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+relationship: part_of UBERON:0002107 ! liver
+
+[Term]
+id: UBERON:0005051
+name: mediastinum testis
+def: "The mediastinum testis is a network of fibrous connective tissue that extends from the upper to near the lower extremity of the testis, and is wider above than below. From its front and sides numerous imperfect septa (trabeculæ) are given off, which radiate toward the surface of the organ, and are attached to the tunica albuginea. They divide the interior of the organ into a number of incomplete spaces, called lobules. These are somewhat cone-shaped, being broad at their bases at the surface of the gland, and becoming narrower as they converge to the mediastinum. The mediastinum supports the rete testis and blood vessels of the testis in their passage to and from the substance of the gland[WP]" [Wikipedia:Mediastinum_testis]
+xref: EMAPA:18331
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: has_part UBERON:0002384 ! connective tissue
+relationship: part_of UBERON:0000473 ! testis
 
 [Typedef]
 id: adjacent_to
