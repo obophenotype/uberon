@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 05:05:2010 14:50
+date: 08:05:2010 19:17
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -773,7 +773,7 @@ xref: MAT:0000343
 xref: MIAA:0000207
 xref: MIAA:0000343
 xref: ncithesaurus:Ganglion
-xref: NIF_GrossAnatomy:birnlex_2548
+xref: NIF_GrossAnatomy:nlx_anat_100302
 xref: TAO:0000190
 xref: WBbt:0005189
 xref: XAO:0000209
@@ -1716,6 +1716,7 @@ relationship: surrounds UBERON:0001019 ! fascicle
 id: UBERON:0000122
 name: nerve fiber bundle
 def: "multi-cell component structure consisting of a cluster of nerve fibers." [UBERON:cjm]
+comment: TODO - check FMA is general anatomical term
 synonym: "funiculus" EXACT []
 xref: FBbt:00005099
 xref: FMA:76738
@@ -1965,6 +1966,7 @@ xref: EHDAA:5919
 xref: HOG:0000414
 xref: ncithesaurus:Urogenital_Sinus
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0000163 ! embryonic cloaca
 relationship: develops_from UBERON:0003064 ! intermediate mesoderm
@@ -2069,15 +2071,14 @@ synonym: "organ of respiratory system" EXACT [OBOL:automatic]
 synonym: "respiratory organ" EXACT []
 synonym: "respiratory system organ" EXACT [OBOL:automatic]
 is_a: UBERON:0000062 ! organ
-relationship: part_of UBERON:0001004
-intersection_of: UBERON:0000062 ! organ
-intersection_of: part_of UBERON:0001004 ! respiratory system
+relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0000172
 name: vomit
 def: "Vomit is a bodily fluid consisting of the expulsed contents of the stomach of an organism disgorged through the mouth or nose." [ENVO:00000338]
 xref: ENVO:00000338
+xref: galen:Vomitus
 xref: OpenCyc:Mx4rvViQTJwpEbGdrcN5Y29ycA
 is_a: UBERON:0000463 ! portion of organism substance
 
@@ -3823,11 +3824,13 @@ name: septum of telencephalon
 alt_id: UBERON:BTO_0002705-FMA_61842
 def: "Subdivision of the telencephalon on the midline between the lateral ventricles which contains the septum pellucidum and the septal nuclei[FMA]." [FMA:61842]
 synonym: "septal area" EXACT [FMA:61842]
+synonym: "septum" BROAD [NIF_GrossAnatomy:birnlex_963]
 synonym: "septum (NN)" EXACT [FMA:61842]
 synonym: "telencephalon septum" EXACT [FMA:61842]
 xref: BTO:0002705
 xref: FMA:61842
 xref: MA:0000924
+xref: NIF_GrossAnatomy:birnlex_963
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 relationship: part_of UBERON:0001893 ! telencephalon
@@ -3862,22 +3865,6 @@ xref: EFO:0001384
 xref: FMA:224850
 xref: GAID:676
 is_a: UBERON:0000064 ! organ part
-
-[Term]
-id: UBERON:0000452
-name: gubernaculum
-alt_id: UBERON:BTO_0002813-FMA_20421
-def: "The paired Gabernacula are folds of peritoneum  that attach to the caudal end of the gonads (testes in males and ovaries in females)." [Wikipedia:Gubernaculum]
-comment: WP def is male/female, split term? EMAP is male-specific. vestigial adult in FMA. TODO
-synonym: "gubernaculum testis" EXACT []
-xref: BTO:0002813
-xref: EMAPA:19089
-xref: FMA:20421
-is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: attached_to UBERON:0000991 ! gonad
-relationship: develops_from UBERON:0003064 ! intermediate mesoderm
-relationship: part_of UBERON:0002358 ! peritoneum
 
 [Term]
 id: UBERON:0000453
@@ -4830,9 +4817,12 @@ xref: OGES:000022
 xref: OpenCyc:Mx4rwP1ceZwpEbGdrcN5Y29ycA
 xref: XAO:0000113
 xref: XAO:1000012
-is_a: UBERON:0000468 ! multi-cellular organism
-relationship: existence_ends_with UBERON:0000068 ! embryo stage
-relationship: existence_starts_with UBERON:0000068 ! embryo stage
+is_a: UBERON:0000468 ! implied link automatically realized ! multi-cellular organism
+relationship: existence_ends_with UBERON:0000068
+relationship: existence_starts_with UBERON:0000068
+intersection_of: UBERON:0000468 ! multi-cellular organism
+intersection_of: existence_ends_with UBERON:0000068 ! embryo stage
+intersection_of: existence_starts_with UBERON:0000068 ! embryo stage
 
 [Term]
 id: UBERON:0000923
@@ -4994,6 +4984,7 @@ xref: FBbt:00000154
 xref: MAT:0000244
 xref: MIAA:0000244
 is_a: UBERON:0000914 ! organismal segment
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0000922 ! embryo
 
 [Term]
@@ -5085,7 +5076,7 @@ id: UBERON:0000934
 name: ventral nerve cord
 alt_id: UBERON:FBbt_00001102-MIAA_0000339-WBbt_0005829
 def: "a large process bundle that runs along the vental mid-line extending from the ventral region of the nerve ring." [WB:Paper00000938, Wikipedia:Ventral_nerve_cord]
-comment: This class was created automatically from a combination of ontologies
+comment: The ventral nerve cords make up the nervous system of some phyla of the invertebrates, particularly within the nematodes, annelids  and the arthropods. It usually consists of cerebral  ganglia  anteriorly with the nerve cords running down the ventral ('belly', as opposed to back) plane of the organism. This characteristic is important in qualifying the difference compared to the chordates, which have a dorsal nerve cord. Ventral nerve cords from anterior to posterior (the thoracic and abdominal tagma in the arthropods) are made up of segmented ganglia that are connected by a tract of nerve fibers passing from one side to the other of the nerve cord called commissures. The complete system bears some likeness to a rope ladder. In some animals the bilateral ganglia are fused into a single large ganglion per segment. This characteristic is found mostly in the insects.
 subset: uberon_slim
 synonym: "ventral cord" RELATED []
 xref: BTO:0002328
@@ -5094,7 +5085,7 @@ xref: FBbt:00001102
 xref: MAT:0000339
 xref: MIAA:0000339
 xref: WBbt:0005829
-is_a: UBERON:0000045 ! ganglion
+is_a: UBERON:0005053 ! nerve cord
 
 [Term]
 id: UBERON:0000935
@@ -5144,6 +5135,7 @@ synonym: "proneural clusters" RELATED [ZFA:0000068]
 xref: FBbt:00001135
 xref: ZFA:0000068
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0003075 ! neural plate
 
@@ -5228,13 +5220,13 @@ is_obsolete: true
 id: UBERON:0000945
 name: stomach
 alt_id: UBERON:FBbt_00003138-FMA_7148-MA_0000353-MIAA_0000051-XAO_0000128
-def: "Organ with organ cavity which is continuous proximally with the esophagus and distally with the small intestine. Examples: There is only one stomach. // Internal organ that is the dilated portion of the alimentary tract situated between the esophagus and the beginning of the duodenum. It produces gastric juices involved in the breakdown of food." [FB:FBrf0007735, OMD:stomach, Wikipedia:Stomach]
-comment: fly has adult midgut - TODO check
+def: "Internal organ that is the dilated portion of the alimentary tract situated between the esophagus and the beginning of the duodenum. It produces gastric juices involved in the breakdown of food[XAO]. Organ with organ cavity which is continuous proximally with the esophagus and distally with the small intestine. Examples: There is only one stomach[FMA]." [FB:FBrf0007735, OMD:stomach, Wikipedia:Stomach]
+comment: fly has adult midgut - TODO check. Zebrafish is functionally stomach-less, but may retain ontogenic footprint.
 subset: uberon_slim
 synonym: "anterior intestine" RELATED []
 synonym: "mesenteron" RELATED []
 synonym: "stomach" RELATED []
-synonym: "ventriculus" EXACT []
+synonym: "ventriculus" RELATED []
 xref: AAO:0000579
 xref: BTO:0001307
 xref: EFO:0000837
@@ -5248,9 +5240,11 @@ xref: MAT:0000051
 xref: MIAA:0000051
 xref: ncithesaurus:Stomach
 xref: OpenCyc:Mx4rvVjlqpwpEbGdrcN5Y29ycA
+xref: TAO:0002121
 xref: XAO:0000128
 is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0001041 ! foregut
+relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0000946
@@ -6835,7 +6829,7 @@ id: UBERON:0001018
 name: axon tract
 alt_id: UBERON:FBbt_00005100-FMA_76739
 def: "A group of axons linking two or more neuropils and having a common origin, termination." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check FMA is general anatomical term
 synonym: "tract" EXACT []
 xref: FBbt:00005100
 xref: FMA:76739
@@ -6886,7 +6880,6 @@ xref: EHDAA:2851
 xref: EHDAA:3776
 xref: EHDAA:4657
 xref: FBbt:00005105
-xref: FMA:61284
 xref: FMA:65132
 xref: GAID:758
 xref: galen:Nerve
@@ -7411,8 +7404,8 @@ relationship: part_of UBERON:0001042 ! pharynx
 id: UBERON:0001052
 name: rectum
 alt_id: UBERON:FBbt_00005756-FMA_14544-MA_0000336-MIAA_0000050-WBbt_0005773-XAO_0000238
-def: "The terminal part of the intestine from the sigmoid flexure to the anus." [BTO:0001158, Wikipedia:Rectum]
-comment: This class was created automatically from a combination of ontologies
+def: "the final straight portion of the large intestine in some mammals, and the gut in others, terminating in the anus[WP]." [BTO:0001158, Wikipedia:Rectum]
+comment: In the lungfish, sharks and rays the rectum opens into the cloaca which also receives wastes (urine) from the kidneys and material from the reproductive organs. In bony fish the rectum reaches the outside environment through the anus, which is normally situated just in front the urinary and reproductive openings. However in some fish the digestive tract may be curled back on itself, and in the Electric Eel (Electrophorus electricus) the anus is situated in the fish's throat.
 subset: uberon_slim
 synonym: "rectal sac" RELATED []
 xref: BTO:0001158
@@ -7453,9 +7446,7 @@ id: UBERON:0001054
 name: malpighian tubule
 alt_id: UBERON:FBbt_00005786-MIAA_0000123
 def: "The most important structure of the insect's excretory organ, which may comprise cystiform or labyrinthine highly versatile tubules having their outlet into the inital section of the rectum[FBbt]. Any of a group of long blind vessels opening into the posterior part of the alimentary canal in most insects and some other arthropods and functioning primarily as excretory organs[BTO]." [ISBN:3110148986, Wikipedia:Malpighian_tubule]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "malpighian tubules" EXACT []
 xref: BTO:0000810
 xref: EFO:0000243
 xref: FBbt:00005786
@@ -7558,8 +7549,7 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: MA:0000992
 xref: NIF_GrossAnatomy:birnlex_1329
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+is_a: UBERON:0002749 ! regional part of cerebellar cortex
 relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
 
 [Term]
@@ -9486,27 +9476,35 @@ def: "Pyloric antrum (antrum, lesser cul-de-sac) is the initial portion of the p
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "antrum of stomach" EXACT []
-synonym: "gastric antrum" RELATED []
+synonym: "antrum of Willis" RELATED [BTO:0001732]
+synonym: "gastric antrum" RELATED [BTO:0001732]
 synonym: "stomach antrum" RELATED []
 synonym: "stomach pyloric antrum" EXACT []
 xref: BTO:0001732
 xref: EFO:0002555
+xref: EMAPA:17891
+xref: EMAPA:18919
 xref: FMA:14579
 xref: GAID:332
 xref: galen:PyloricAntrum
 xref: MA:0001624
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0000945 ! stomach
+relationship: part_of UBERON:0001166 ! pylorus
 
 [Term]
 id: UBERON:0001166
 name: pylorus
 alt_id: UBERON:FMA_14581-MA_0002560
-def: "The pylorus (from the Greek πυλωρός, 'gate guard') is the region of the stomach that connects to the duodenum. It is divided in two parts: the pyloric antrum, which connects to the body of the stomach. the pyloric canal, which connects to the duodenum. The pyloric sphincter, or valve, is a strong ring of smooth muscle at the end of the pyloric canal and lets food pass from the stomach to the duodenum. It receives sympathetic innervation from celiac ganglion. [WP,unvetted]." [Wikipedia:Pylorus]
+def: "The region of the stomach that connects to the duodenum. It is divided in two parts: the pyloric antrum, which connects to the body of the stomach. the pyloric canal, which connects to the duodenum. The pyloric sphincter, or valve, is a strong ring of smooth muscle at the end of the pyloric canal and lets food pass from the stomach to the duodenum. It receives sympathetic innervation from celiac ganglion. [WP,unvetted]." [Wikipedia:Pylorus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "pyloric part of stomach" EXACT []
+synonym: "pyloric region" EXACT []
 synonym: "stomach pyloric region" EXACT []
+xref: BTO:0001146
+xref: EHDAA:4860
+xref: EMAPA:17631
+xref: EMAPA:18915
 xref: FMA:14581
 xref: GAID:333
 xref: galen:Pylorus
@@ -10157,17 +10155,21 @@ relationship: part_of UBERON:0001167 ! wall of stomach
 id: UBERON:0001202
 name: pyloric sphincter
 alt_id: UBERON:FMA_14916-XAO_0000457
-def: "The region of the stomach that connects to the duodenum. It is divided in two parts: the pyloric antrum, which connects to the body of the stomach. the pyloric canal, which connects to the duodenum. The pyloric sphincter, or valve, is a strong ring of smooth muscle at the end of the pyloric canal and lets food pass from the stomach to the duodenum. It receives sympathetic innervation from celiac ganglion. [WP,unvetted]." [Wikipedia:Pyloric_sphincter]
+def: "Sphincter muscle that is part of the pyloric region of the stomach." [OBOL:automatic]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "pyloric valve" EXACT [[Wikipedia:Pylorus]
+xref: EMAPA:19251
 xref: FMA:14916
 xref: HOG:0001466
 xref: MA:0002952
 xref: ncithesaurus:Pyloric_Sphincter
 xref: OpenCyc:Mx4rvly2ZZwpEbGdrcN5Y29ycA
 xref: XAO:0000457
-is_a: UBERON:0004590 ! sphincter muscle
-relationship: part_of UBERON:0001166 ! pylorus
+is_a: UBERON:0004590 ! implied link automatically realized ! sphincter muscle
+relationship: part_of UBERON:0001166
+intersection_of: UBERON:0004590 ! sphincter muscle
+intersection_of: part_of UBERON:0001166 ! pylorus
 
 [Term]
 id: UBERON:0001203
@@ -11832,6 +11834,7 @@ xref: FMA:17705
 xref: MA:0001679
 xref: ncithesaurus:Descending_Limb_of_the_Henle_s_Loop
 is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001288 ! loop of Henle
 relationship: part_of UBERON:0003060 ! pronephric duct
@@ -18439,7 +18442,7 @@ relationship: develops_from UBERON:0003070 ! trigeminal placode
 id: UBERON:0001676
 name: occipital bone
 alt_id: UBERON:FMA_52735-MA_0001468
-def: ", a saucer-shaped membrane bone situated at the back and lower part of the cranium, is trapezoid in shape and curved on itself. It is pierced by a large oval aperture, the foramen magnum, through which the cranial cavity communicates with the vertebral canal." [Wikipedia:Occipital_bone]
+def: "A saucer-shaped membrane bone situated at the back and lower part of the cranium, is trapezoid in shape and curved on itself. It is pierced by a large oval aperture, the foramen magnum, through which the cranial cavity communicates with the vertebral canal." [Wikipedia:Occipital_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:52735
@@ -19215,6 +19218,7 @@ subset: uberon_slim
 synonym: "oral roof" EXACT []
 synonym: "roof of mouth" EXACT []
 xref: BTO:0001779
+xref: EMAPA:18948
 xref: FMA:54549
 xref: GAID:152
 xref: galen:Palate
@@ -19514,6 +19518,7 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "muscular palate" RELATED [Wikipedia:Soft_palate]
 synonym: "velum" RELATED [Wikipedia:Soft_palate]
+xref: EMAPA:18949
 xref: FMA:55021
 xref: GAID:1284
 xref: MA:0002412
@@ -21573,7 +21578,7 @@ is_a: UBERON:0000463 ! portion of organism substance
 id: UBERON:0001846
 name: internal ear
 alt_id: UBERON:FMA_60909-MA_0000237-MIAA_0000145-XAO_0000192-ZFA_0000217
-def: "Complex labyrinthine structure that comprises sensory endorgans specialized for vestibular, auditory, and acoustico-vestibular sensation. // The auditory (hearing) and vestibular (balance) organ of the fish, equivalent to the inner ear of amniotes. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/ear/ear.html'>ear</a> by T. Whitfield.)" [PMID:16217737, Wikipedia:Internal_ear, ZFIN:curator]
+def: "Complex labyrinthine structure that comprises sensory endorgans specialized for vestibular, auditory, and acoustico-vestibular sensation. // The auditory (hearing) and vestibular (balance) organ of the fish, equivalent to the inner ear of amniotes[ZFA]." [PMID:16217737, Wikipedia:Internal_ear, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "ear" RELATED []
@@ -23164,7 +23169,7 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0001928
 name: preoptic area
 alt_id: UBERON:FMA_62313-ZFA_0000470
-def: "Area of the forebrain anterior to the posterior tuberculum and the hypothalamus and ventral to the ventral thalamus. See Figure 7, Atlas of Early Zebrafish Brain Development." [Wikipedia:Preoptic_area, ZFIN:curator]
+def: "Area of the forebrain anterior to the posterior tuberculum and the hypothalamus and ventral to the ventral thalamus[ZFA]." [Wikipedia:Preoptic_area, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "area praeoptica" RELATED []
@@ -23593,6 +23598,7 @@ xref: FMA:62420
 xref: TAO:0001332
 xref: ZFA:0001332
 is_a: UBERON:0000073 ! regional part of nervous system
+relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
 id: UBERON:0001949
@@ -25519,12 +25525,8 @@ xref: TAO:0001105
 xref: XAO:0003042
 xref: ZFA:0001105
 is_a: UBERON:0000061 ! anatomical structure
-relationship: existence_ends_during UBERON:0000068
-relationship: existence_starts_during UBERON:0000068
 relationship: part_of UBERON:0000922
 intersection_of: UBERON:0000061 ! anatomical structure
-intersection_of: existence_ends_during UBERON:0000068 ! embryo stage
-intersection_of: existence_starts_during UBERON:0000068 ! embryo stage
 intersection_of: part_of UBERON:0000922 ! embryo
 
 [Term]
@@ -26306,7 +26308,12 @@ xref: HOG:0000386
 xref: MA:0000085
 xref: ncithesaurus:Interventricular_Septum
 xref: OpenCyc:Mx4rwA7lp5wpEbGdrcN5Y29ycA
-is_a: UBERON:0002099 ! cardiac septum
+is_a: UBERON:0002099 ! implied link automatically realized ! cardiac septum
+relationship: adjacent_to UBERON:0002080
+relationship: adjacent_to UBERON:0002084
+intersection_of: UBERON:0002099 ! cardiac septum
+intersection_of: adjacent_to UBERON:0002080 ! right ventricle
+intersection_of: adjacent_to UBERON:0002084 ! left ventricle
 
 [Term]
 id: UBERON:0002095
@@ -26781,7 +26788,7 @@ xref: MIAA:0000044
 xref: ncithesaurus:Duodenum
 xref: OpenCyc:Mx4rv4LJDpwpEbGdrcN5Y29ycA
 xref: XAO:0000236
-is_a: UBERON:0002108 ! small intestine
+is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: part_of UBERON:0002108 ! small intestine
 
 [Term]
@@ -26789,7 +26796,7 @@ id: UBERON:0002115
 name: jejunum
 alt_id: UBERON:FMA_7207-MA_0000340-MIAA_0000045
 def: "The jejunum is the middle section of the small intestine in most higher vertebrates, including mammals, reptiles, and birds. In fish, the divisions of the small intestine are not as clear and the terms middle intestine or mid-gut may be used instead of jejunum. [WP,unvetted]." [Wikipedia:Jejunum]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO consider  ZFA:0001323 mid intestine, see also small intestine
 subset: uberon_slim
 xref: BTO:0000657
 xref: EFO:0001333
@@ -26802,14 +26809,15 @@ xref: MAT:0000045
 xref: MIAA:0000045
 xref: ncithesaurus:Jejunum
 xref: OpenCyc:Mx4rwATkPJwpEbGdrcN5Y29ycA
-is_a: UBERON:0002108 ! small intestine
+is_a: UBERON:0004921 ! subdivision of digestive tract
+relationship: part_of UBERON:0002108 ! small intestine
 
 [Term]
 id: UBERON:0002116
 name: ileum
 alt_id: UBERON:FMA_7208-MA_0000339-MIAA_0000282-XAO_0000237
 def: "The ileum is the final section of the small intestine in most higher vertebrates, including mammals, reptiles, and birds. In fish, the divisions of the small intestine are not as clear and the terms posterior intestine or distal intestine may be used instead of ileum. [WP,unvetted]." [Wikipedia:Ileum]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO consider ZFA:0000706 posterior intestine, see also colon
 subset: uberon_slim
 xref: BTO:0000620
 xref: EFO:0001334
@@ -26823,7 +26831,7 @@ xref: MIAA:0000282
 xref: ncithesaurus:Ileum
 xref: OpenCyc:Mx4rvdcLHZwpEbGdrcN5Y29ycA
 xref: XAO:0000237
-is_a: UBERON:0002108 ! small intestine
+is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: part_of UBERON:0002108 ! small intestine
 
 [Term]
@@ -28764,7 +28772,6 @@ xref: FMA:75801
 xref: MA:0000287
 is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-is_a: UBERON:0000171 ! implied link automatically realized ! respiration organ
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: part_of UBERON:0001997 ! olfactory epithelium
@@ -28876,7 +28883,7 @@ id: UBERON:0002240
 name: spinal cord
 alt_id: UBERON:FMA_7647-MA_0000216-MIAA_0000183-XAO_0000020-ZFA_0000075
 def: "Organ component of neuraxis that has as its parts gray matter and white matter that surround the central canal. Examples: There is only one spinal cord. // Elongated, approximately cylindrical part of the central nervous system that lies in the vertebral canal and from which the spinal nerves emerge." [OMD:spinal+cord, Wikipedia:Spinal_cord]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO: add superclass to unify with VNC?
 subset: uberon_slim
 xref: BTO:0001279
 xref: EFO:0000110
@@ -31284,8 +31291,8 @@ relationship: part_of UBERON:0002405 ! immune system
 id: UBERON:0002371
 name: bone marrow
 alt_id: UBERON:FMA_9608-MA_0000134-MIAA_0000084-XAO_0000123-ZFA_0000669
-def: "flexible tissue found in the hollow interior of bones. In adults, marrow in large bones produces new blood cells[WP]. The zebrafish head kidney consists of fused bilateral lobes located in the anterior part of the kidney. It is analogous to the mammalian bone marrow and the primary site of definitive hematopoiesis. <a href='ZFIN_jump?record=ZDB-PUB-040923-1'>Davidson and Zon 2004.</a>" [Wikipedia:Bone_marrow, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "flexible tissue found in the hollow interior of bones. In adults, marrow in large bones produces new blood cells[WP]." [Wikipedia:Bone_marrow]
+comment: TODO - create superclass for bone marrow / head kidney. both are portions of tissue in the hematopoetic system
 subset: uberon_slim
 synonym: "anterior kidney" RELATED []
 synonym: "head kidney" BROAD []
@@ -31302,9 +31309,7 @@ xref: MAT:0000084
 xref: MIAA:0000084
 xref: ncithesaurus:Bone_Marrow
 xref: OpenCyc:Mx4rvVm-FpwpEbGdrcN5Y29ycA
-xref: TAO:0000669
 xref: XAO:0000123
-xref: ZFA:0000669
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001474 ! bone
@@ -40880,7 +40885,7 @@ def: "." [Wikipedia:Lemniscus]
 subset: uberon_slim
 xref: FMA:76742
 xref: NIF_GrossAnatomy:birnlex_881
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002616 ! regional part of brain
 
 [Term]
 id: UBERON:0003002
@@ -41350,10 +41355,11 @@ id: UBERON:0003037
 name: septum
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_963-FMA_86461
 def: "a wall, dividing a cavity or structure into smaller ones[WP]." [Wikipedia:Septum]
+comment: general anatomical term in FMA
 xref: FMA:86461
-xref: NIF_GrossAnatomy:birnlex_963
 xref: OpenCyc:Mx4rrqot_on_EdaAAAACs0uFOQ
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002553 ! anatomical cavity
 
 [Term]
 id: UBERON:0003038
@@ -41779,6 +41785,7 @@ synonym: "anterior neural plate" RELATED []
 xref: XAO:0000045
 xref: ZFA:0007016
 is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0003075 ! neural plate
 
@@ -41809,6 +41816,7 @@ xref: TAO:0000031
 xref: XAO:0000056
 xref: ZFA:0000031
 is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0000925 ! endoderm
 
 [Term]
@@ -41826,6 +41834,7 @@ xref: TAO:0000279
 xref: XAO:0000057
 xref: ZFA:0000279
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003077 ! paraxial mesoderm
 relationship: part_of UBERON:0003077 ! paraxial mesoderm
@@ -41842,6 +41851,7 @@ xref: TAO:0000150
 xref: XAO:0000063
 xref: ZFA:0000150
 is_a: UBERON:0000058 ! duct
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002120 ! pronephros
 
@@ -41915,6 +41925,7 @@ xref: TAO:0000060
 xref: XAO:0000079
 xref: ZFA:0000060
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003068 ! axial mesoderm
 relationship: part_of UBERON:0004341 ! primitive streak
@@ -42329,6 +42340,7 @@ xref: TAO:0001024
 xref: XAO:0000319
 xref: ZFA:0001024
 is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0002342 ! neural crest
 
 [Term]
@@ -42453,6 +42465,7 @@ xref: TAO:0001080
 xref: XAO:0000397
 xref: ZFA:0001080
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002329 ! somite
 
@@ -42604,6 +42617,7 @@ xref: TAO:0001194
 xref: XAO:0001001
 xref: ZFA:0001194
 is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0002342 ! neural crest
 
 [Term]
@@ -42703,6 +42717,7 @@ xref: TAO:0005028
 xref: XAO:0003051
 xref: ZFA:0005028
 is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0002390 ! hematopoietic system
@@ -43040,11 +43055,12 @@ relationship: part_of UBERON:0002224 ! thoracic cavity
 
 [Term]
 id: UBERON:0003127
-name: open tracheal system
+name: open tracheal system trachea
 def: "A trachea composed of composed of spiracles, tracheae, and tracheoles [Wikipedia]. An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." [GO:0007424, Wikipedia:Invertebrate_trachea]
 comment: TODO: system vs organ part
 subset: uberon_slim
 synonym: "invertebrate trachea" EXACT []
+synonym: "open tracheal system" EXACT []
 synonym: "trachea" BROAD SENSU [FBbt:00005043]
 xref: FBbt:00005043
 is_a: UBERON:0001005 ! respiratory airway
@@ -43959,6 +43975,7 @@ def: "anterior portion of the palate consisting of bone and mucous membranes[GO]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "hard palate" EXACT []
+xref: EMAPA:18952
 xref: FMA:55023
 xref: GAID:221
 xref: MA:0002477
@@ -44446,6 +44463,7 @@ synonym: "otic placode epithelium" EXACT [OBOL:automatic]
 xref: EHDAA:510
 xref: HOG:0000636
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0003069
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0003069 ! otic placode
@@ -44772,6 +44790,7 @@ synonym: "skeleton system of developmental tissue" EXACT [OBOL:automatic]
 synonym: "skeleton system of embryo" EXACT [OBOL:automatic]
 xref: EHDAA:5047
 is_a: UBERON:0001434 ! implied link automatically realized ! skeletal system
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0000922
 intersection_of: UBERON:0001434 ! skeletal system
 intersection_of: part_of UBERON:0000922 ! embryo
@@ -44896,6 +44915,7 @@ synonym: "developmental tissue limb" EXACT [OBOL:automatic]
 synonym: "embryo limb" EXACT [OBOL:automatic]
 synonym: "limb of developmental tissue" EXACT [OBOL:automatic]
 xref: EHDAA:1697
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0002101 ! implied link automatically realized ! limb
 relationship: part_of UBERON:0000922
 intersection_of: UBERON:0002101 ! limb
@@ -45043,7 +45063,6 @@ id: UBERON:0003295
 name: gland of pharynx
 synonym: "pharynx gland" EXACT [OBOL:automatic]
 xref: EHDAA:2967
-is_a: UBERON:0000171 ! implied link automatically realized ! respiration organ
 is_a: UBERON:0002530 ! implied link automatically realized ! gland
 relationship: part_of UBERON:0001042
 intersection_of: UBERON:0002530 ! gland
@@ -45196,6 +45215,7 @@ id: UBERON:0003304
 name: blood island of mesoderm
 synonym: "mesoderm blood island" EXACT [OBOL:automatic]
 xref: EHDAA:170
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0003061 ! implied link automatically realized ! blood island
 relationship: part_of UBERON:0000926
 intersection_of: UBERON:0003061 ! blood island
@@ -45365,6 +45385,7 @@ synonym: "developmental tissue mesenchyme" EXACT [OBOL:automatic]
 synonym: "embryo mesenchyme" EXACT [OBOL:automatic]
 synonym: "mesenchyme of developmental tissue" EXACT [OBOL:automatic]
 xref: EHDAA:177
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
 relationship: part_of UBERON:0000922
 intersection_of: UBERON:0003104 ! mesenchyme
@@ -45768,6 +45789,7 @@ name: urethra of urogenital sinus
 synonym: "urogenital sinus urethra" EXACT [OBOL:automatic]
 xref: EMAPA:30891
 is_a: UBERON:0000057 ! implied link automatically realized ! urethra
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000164
 intersection_of: UBERON:0000057 ! urethra
@@ -48484,6 +48506,7 @@ synonym: "arm bone organ" EXACT [OBOL:automatic]
 synonym: "bone of arm" EXACT [OBOL:automatic]
 synonym: "bone of brachial region" EXACT [OBOL:automatic]
 synonym: "bone of proximal segment of free upper limb" EXACT [OBOL:automatic]
+synonym: "bone of upper extremity" EXACT [GAID:178]
 synonym: "bone organ of arm" EXACT [OBOL:automatic]
 synonym: "bone organ of brachial region" EXACT [OBOL:automatic]
 synonym: "bone organ of proximal segment of free upper limb" EXACT [OBOL:automatic]
@@ -48491,6 +48514,7 @@ synonym: "brachial region bone" EXACT [OBOL:automatic]
 synonym: "brachial region bone organ" EXACT [OBOL:automatic]
 synonym: "proximal segment of free upper limb bone" EXACT [OBOL:automatic]
 synonym: "proximal segment of free upper limb bone organ" EXACT [OBOL:automatic]
+xref: GAID:178
 xref: MA:0000592
 xref: OpenCyc:Mx4rwKTXoJwpEbGdrcN5Y29ycA
 is_a: UBERON:0002428 ! implied link automatically realized ! limb bone
@@ -52367,6 +52391,7 @@ relationship: constitutional_part_of UBERON:0001485 ! knee joint
 id: UBERON:0003681
 name: masticatory muscle
 def: "any of the muscles responsible for the movement of the jaws during mastication, including the masseter, temporal, and medial and lateral pterygoid muscles." [MP:0004234]
+comment: TODO
 synonym: "masticatory muscles" EXACT [FMA:71437]
 synonym: "masticatory muscles set" EXACT [FMA:71437]
 xref: EFO:0001424
@@ -53102,7 +53127,6 @@ synonym: "muscle organ of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "muscle organ of respiratory system" EXACT [OBOL:automatic]
 synonym: "respiratory system muscle organ" EXACT [OBOL:automatic]
 xref: MA:0001828
-is_a: UBERON:0000171 ! implied link automatically realized ! respiration organ
 is_a: UBERON:0001630 ! implied link automatically realized ! muscle organ
 relationship: part_of UBERON:0001004
 intersection_of: UBERON:0001630 ! muscle organ
@@ -53389,6 +53413,7 @@ synonym: "midbrain of neural crest" EXACT [OBOL:automatic]
 xref: HOG:0000796
 xref: ZFA:0000935
 is_a: UBERON:0001891 ! implied link automatically realized ! midbrain
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0002342
 intersection_of: UBERON:0001891 ! midbrain
 intersection_of: part_of UBERON:0002342 ! neural crest
@@ -53400,6 +53425,7 @@ synonym: "telencephalon of neural crest" EXACT [OBOL:automatic]
 xref: HOG:0000799
 xref: ZFA:0000812
 is_a: UBERON:0001893 ! implied link automatically realized ! telencephalon
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0002342
 intersection_of: UBERON:0001893 ! telencephalon
 intersection_of: part_of UBERON:0002342 ! neural crest
@@ -53417,6 +53443,7 @@ synonym: "neural crest mature diencephalon" EXACT [OBOL:automatic]
 xref: HOG:0000798
 xref: ZFA:0000811
 is_a: UBERON:0001894 ! implied link automatically realized ! diencephalon
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0002342
 intersection_of: UBERON:0001894 ! diencephalon
 intersection_of: part_of UBERON:0002342 ! neural crest
@@ -53429,6 +53456,7 @@ xref: HOG:0001210
 xref: YMB:0007000
 xref: ZFA:0007063
 is_a: UBERON:0002028 ! implied link automatically realized ! hindbrain
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0002342
 intersection_of: UBERON:0002028 ! hindbrain
 intersection_of: part_of UBERON:0002342 ! neural crest
@@ -53438,6 +53466,7 @@ id: UBERON:0003853
 name: neural crest spinal cord
 synonym: "spinal cord of neural crest" EXACT [OBOL:automatic]
 xref: HOG:0001006
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0002240 ! implied link automatically realized ! spinal cord
 relationship: part_of UBERON:0002342
 intersection_of: UBERON:0002240 ! spinal cord
@@ -54316,6 +54345,7 @@ synonym: "AV canal endocardium" EXACT [OBOL:automatic]
 synonym: "endocardium of atrioventricular canal" EXACT [OBOL:automatic]
 synonym: "endocardium of AV canal" EXACT [OBOL:automatic]
 xref: ZFA:0001616
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0002165 ! implied link automatically realized ! endocardium
 relationship: part_of UBERON:0002087
 intersection_of: UBERON:0002165 ! endocardium
@@ -54503,6 +54533,8 @@ name: brain ventricle/choroid plexus
 def: "the brain ventricles or their associated choroid plexuses" [MP:0002200]
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+union_of: UBERON:0000483 ! epithelium
+union_of: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0000955 ! brain
 
 [Term]
@@ -55009,7 +55041,7 @@ relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
 [Term]
 id: UBERON:0004004
 name: cerebellum lobule
-def: "the ten gyri of the cerebellar cortex" [MP:0009964]
+def: "on of the the ten gyri of the cerebellar cortex" [MP:0009964]
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002129 ! cerebellar cortex
@@ -55018,31 +55050,30 @@ relationship: part_of UBERON:0002129 ! cerebellar cortex
 id: UBERON:0004005
 name: cerebellum lateral hemisphere
 def: "the most lateral paired regions of the cerebellum; the lateral zone receives input from the parietal cortex via pontocerebellar mossy fibers regarding the location and position of the body and integrates input signals with indications of muscle activity" [MP:0009965]
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
 
 [Term]
 id: UBERON:0004006
 name: cerebellum intermediate hemisphere
 def: "the paired regions of the cerebellar hemisphere that lie adjacent to the vermis and are between the vermis and lateral regions of the hemispheres; it receives input from the corticopontocerebellar fibers that originate from the motor cortex, and also receives sensory feedback from the muscles; these signals are integrated by this region, to coordinate muscle activity with motor inputs" [MP:0009966]
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
 
 [Term]
 id: UBERON:0004007
 name: cerebellum deep nucleus
 def: "the gray matter nuclei located in the center of the cerebellum, embedded in the white matter, which receive inhibitory (GABAergic) inputs from Purkinje cells in the cerebellar cortex and excitatory (glutamatergic) inputs from mossy fiber pathways; all output fibers of the cerebellum originate from the these nuclei" [MP:0009979]
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002946 ! implied link automatically realized ! regional part of cerebellum
+is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002037 ! cerebellum
 
 [Term]
 id: UBERON:0004008
 name: cerebellar plate
 def: "the embryonic pseudostratified epithelium of the fourth cerebellar ventricle that eventually forms the vermis and ventral neuroepithelium" [MP:0000856]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0002946 ! implied link automatically realized ! regional part of cerebellum
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -55050,8 +55081,7 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004009
 name: cerebellum posterior vermis
 def: "the posterior portion of the narrow middle zone between the two hemispheres of the cerebellum that is located posterior to the primary fissure" [MP:0000869]
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002946 ! implied link automatically realized ! regional part of cerebellum
+is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002037 ! cerebellum
 
 [Term]
@@ -55081,6 +55111,7 @@ id: UBERON:0004013
 name: egg cylinder
 def: "the transient cup-like structure of the epiblast that consists of a single layer of embryonic cells" [MP:0003085]
 is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0002532 ! epiblast
 
 [Term]
@@ -55114,6 +55145,7 @@ xref: EHDAA:1737
 xref: ncithesaurus:Dermatome
 xref: XAO:0000220
 is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0002329 ! somite
 relationship: part_of UBERON:0000926 ! mesoderm
@@ -55161,6 +55193,7 @@ id: UBERON:0004022
 name: embryonic neuroepithelium
 def: "the epithelial cell layer that lines the neural tube and develops into the nervous system and into the neural crest cells" [MP:0004261]
 is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
 
@@ -55183,6 +55216,7 @@ def: "a distinct elevation of a transient proliferating cell mass of the fetal s
 synonym: "MGE" BROAD []
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0004023 ! ganglionic eminence
 
 [Term]
@@ -55193,6 +55227,7 @@ comment: TODO fetal subventricular zone
 synonym: "LGE" BROAD []
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0004023 ! ganglionic eminence
 
 [Term]
@@ -55202,6 +55237,7 @@ def: "the caudally located, distinct elevation of a transient proliferating cell
 synonym: "CGE" BROAD []
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0004023 ! ganglionic eminence
 
 [Term]
@@ -55278,6 +55314,7 @@ id: UBERON:0004035
 name: subplate
 def: "the transient outer neural tube region that contains the first generated post-mitotic neurons that receive synaptic input from thalamic axons and in turn project axons to the developing cortical plate" [MP:0008440]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
 
@@ -55478,6 +55515,7 @@ id: UBERON:0004060
 name: neural tube ventricular layer
 def: "the layer of undifferentiated, proliferating cells that line the neural tube lumen" [MP:0009689]
 is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
 
@@ -55486,6 +55524,7 @@ id: UBERON:0004061
 name: neural tube mantle layer
 def: "the layer of glia and differentiating neurons that will form the gray matter of the spinal cord; this lies between the ventricular and marginal layers and includes the basal and alar plates" [MP:0009690]
 is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
 
@@ -55494,6 +55533,7 @@ id: UBERON:0004062
 name: neural tube marginal layer
 def: "the outermost layer of the neural tube that contains nerve fibers and will form the white matter" [MP:0009691]
 is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
 
@@ -55503,6 +55543,7 @@ name: spinal cord alar plate
 def: "the region of the mantle layer of the neural tube that lies dorsal to the sulcus limitans and contains primarily sensory neurons and interneurons involved in communication of sensory impulses; the alar plate develops into the dorsal horn in the grey matter of the spinal cord" [MP:0009692]
 comment: TODO - merge with UBERON:0003054 roof plate?
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
 
@@ -55513,6 +55554,7 @@ def: "the region of the mantle layer of the neural tube that lies ventral to the
 synonym: "basal plate of neural tube" EXACT [Wikipedia:Basal_plate_(neural_tube)]
 synonym: "spinal cord basal plate" EXACT [MP:0009693]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001049 ! neural tube
 
@@ -55714,7 +55756,7 @@ relationship: part_of UBERON:0001456 ! face
 [Term]
 id: UBERON:0004089
 name: midface
-def: "." [HP:0000309]
+def: "the middle of the face including the nose and its associated bony structures[MW]." [HP:0000309, http://www.merriam-webster.com/medical/midface]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001456 ! face
 
@@ -55722,8 +55764,12 @@ relationship: part_of UBERON:0001456 ! face
 id: UBERON:0004090
 name: periorbital region
 def: "." [HP:0000606]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000970 ! eye
+xref: FMA:59351
+xref: MA:0002875
+is_a: UBERON:0000479 ! portion of tissue
+relationship: has_part UBERON:0002515 ! periosteum
+relationship: part_of UBERON:0001456 ! face
+relationship: surrounds UBERON:0004867 ! orbital cavity
 
 [Term]
 id: UBERON:0004092
@@ -55751,8 +55797,14 @@ relationship: part_of UBERON:0002707 ! pyramidal tract
 [Term]
 id: UBERON:0004096
 name: odontoid process
-def: "." [HP:0003310]
+def: "The toothlike process on the upper surface of the axis, which articulates with the atlas above[GAID]." [GAID:238, HP:0003310]
+comment: TODO check AAO:0000721
+synonym: "axis dens" RELATED [FMA:24043]
+synonym: "dens" RELATED [EMAPA:26535]
+synonym: "dens of axis" RELATED [FMA:24043]
+synonym: "odontoid process of axis" RELATED [FMA:24043]
 xref: EMAPA:26535
+xref: FMA:24043
 xref: GAID:238
 xref: OpenCyc:Mx4rwIYGoJwpEbGdrcN5Y29ycA
 is_a: UBERON:0000061 ! anatomical structure
@@ -55763,7 +55815,7 @@ relationship: part_of UBERON:0001130 ! vertebral column
 id: UBERON:0004097
 name: renin-aldosterone axis
 def: "." [HP:0003350]
-is_a: UBERON:0000015 ! anatomical boundary
+is_obsolete: true
 
 [Term]
 id: UBERON:0004098
@@ -55785,7 +55837,8 @@ intersection_of: part_of UBERON:0001490 ! elbow joint
 [Term]
 id: UBERON:0004100
 name: renal collecting system
-def: "." [HP:0004742]
+def: "The collecting duct system of the kidney consists of a series of tubules and ducts that connect the nephrons to the ureter. It participates in electrolyte and fluid balance through reabsorption and excretion, processes regulated by the hormones aldosterone and antidiuretic hormone." [HP:0004742, Wikipedia:Collecting_duct_system]
+synonym: "collecting_duct_system" EXACT [Wikipedia:Collecting_duct_system]
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0002113 ! kidney
 
@@ -55858,12 +55911,11 @@ id: UBERON:0004109
 name: cortex of humerus
 def: "." [HP:0010629]
 synonym: "cortex of the humerus" EXACT []
-is_a: UBERON:0001851 ! cortex
+is_a: UBERON:0001851 ! implied link automatically realized ! cortex
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000976
 intersection_of: UBERON:0001851 ! cortex
 intersection_of: part_of UBERON:0000976 ! humerus
-relationship: part_of UBERON:0000976 ! humerus
 
 [Term]
 id: UBERON:0004110
@@ -56261,7 +56313,7 @@ comment: TODO - check plate vs rudiment
 synonym: "heart rudiment" RELATED []
 xref: EMAPA:16106
 xref: HOG:0000975
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0004291 ! heart rudiment
 
@@ -56295,16 +56347,16 @@ relationship: part_of UBERON:0004145 ! outflow tract
 id: UBERON:0004143
 name: membranous septum
 def: "The membranous septum is the upper part of ventricular septum." [GO:0003149]
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0002099 ! implied link automatically realized ! cardiac septum
+is_a: UBERON:0003037 ! septum
 relationship: part_of UBERON:0002094 ! interventricular septum
 
 [Term]
 id: UBERON:0004144
 name: muscular septum
 def: "The muscular septum is the lower part of the ventricular septum" [GO:0003150]
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0002099 ! implied link automatically realized ! cardiac septum
+is_a: UBERON:0003037 ! septum
 relationship: part_of UBERON:0002094 ! interventricular septum
 
 [Term]
@@ -56687,7 +56739,7 @@ id: UBERON:0004181
 name: mammary gland bud
 def: "Mammary gland buds form by an outpocketing of the mammary placodes and grow to invade the mammary fat, when they form the mammary cord" [GO:0060648]
 comment: TODO - mammary placode
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0001765 ! lactiferous duct
 
 [Term]
@@ -56695,7 +56747,7 @@ id: UBERON:0004182
 name: mammary gland cord
 def: "Mammary gland cords form when the mammary gland bud invades the mammary fat" [GO:0060652]
 comment: TODO - mammary placode
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0001765 ! lactiferous duct
 
 [Term]
@@ -56808,6 +56860,7 @@ id: UBERON:0004191
 name: glomus
 def: "The glomus is the vascular component of the pronephros and filters waste from the blood before it enters the pronephric tubules" [GO:0072013]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002120 ! pronephros
 
@@ -56941,6 +56994,7 @@ id: UBERON:0004206
 name: long descending thin limb bend
 def: " The long descending thin limb bend is a part of the descending thin limb of a long nephron that lies beyond the prebend segment" [GO:0072065]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
@@ -56949,6 +57003,7 @@ id: UBERON:0004207
 name: prebend segment
 def: "The prebend segment is a part of the descending thin limb that lies before the bend and exhibits robust sodium chloride reabsorption" [GO:0072066]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
@@ -59169,6 +59224,7 @@ xref: HOG:0000676
 xref: ncithesaurus:Dermomyotome
 xref: ZFA:0001513
 is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002329 ! somite
 
@@ -59821,10 +59877,22 @@ is_a: UBERON:0002050 ! embryonic structure
 [Term]
 id: UBERON:0004346
 name: gubernaculum
-def: "enitoinguinal ligaments that, in the male, connect the fetal testis to the developing scrotum, and, in the female, connect the ovaries to the uterus" [MP:0005149]
+alt_id: UBERON:0000452
+alt_id: UBERON:BTO_0002813-FMA_20421
+def: "enitoinguinal ligaments that, in the male, connect the fetal testis to the developing scrotum, and, in the female, connect the ovaries to the uterus[MP]. The paired Gabernacula are folds of peritoneum  that attach to the caudal end of the gonads (testes in males and ovaries in females)." [MP:0005149, Wikipedia:Gubernaculum]
+comment: WP def is male/female, split term? EMAP is male-specific. vestigial adult in FMA. TODO
+synonym: "gubernaculum testis" EXACT []
+xref: BTO:0002813
 xref: EMAPA:19089
+xref: FMA:20421
 is_a: UBERON:0000211 ! ligament
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+is_a: UBERON:0003567 ! implied link automatically realized ! abdomen connective tissue
+relationship: attached_to UBERON:0000991 ! gonad
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0000990 ! reproductive system
+relationship: part_of UBERON:0002358 ! peritoneum
 
 [Term]
 id: UBERON:0004347
@@ -60043,6 +60111,8 @@ def: "cartilage found in the mesenchyme of the second branchial arch in the embr
 synonym: "hyaloid cartilage" EXACT [MP:0004916]
 synonym: "Reichert cartilage" EXACT []
 synonym: "second pharyngeal arch cartilage" EXACT [MP:0004916]
+xref: EMAPA:17351
+xref: EMAPA:17622
 is_a: UBERON:0002418 ! cartilage
 relationship: part_of UBERON:0003066 ! hyoid arch
 
@@ -63241,6 +63311,7 @@ synonym: "neural tube segment" EXACT []
 synonym: "neuromere" EXACT []
 xref: TAO:0001328
 xref: ZFA:0001328
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
 relationship: part_of UBERON:0001049
 intersection_of: UBERON:0004732 ! segmental subdivision of nervous system
@@ -63328,6 +63399,7 @@ def: "glomerulus of the pronephros." [OBOL:automatic]
 synonym: "glomerulus of pronephros" EXACT []
 xref: ZFA:0001557
 is_a: UBERON:0000074 ! implied link automatically realized ! renal glomerulus
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 relationship: part_of UBERON:0002120
 intersection_of: UBERON:0000074 ! renal glomerulus
 intersection_of: part_of UBERON:0002120 ! pronephros
@@ -63929,6 +64001,7 @@ synonym: "wall of cardiac ventricle" EXACT [OBOL:automatic]
 synonym: "wall of heart ventricle" EXACT [OBOL:automatic]
 synonym: "wall of lower chamber of heart" EXACT [OBOL:automatic]
 synonym: "wall of ventricle of heart" EXACT [OBOL:automatic]
+xref: FMA:13884
 xref: MA:0002791
 is_a: UBERON:0000060 ! implied link automatically realized ! anatomical wall
 relationship: part_of UBERON:0002082
@@ -64014,7 +64087,6 @@ id: UBERON:0004789
 name: larynx mucous gland
 synonym: "mucous gland of larynx" EXACT [OBOL:automatic]
 xref: MA:0001767
-is_a: UBERON:0000171 ! implied link automatically realized ! respiration organ
 is_a: UBERON:0000414 ! implied link automatically realized ! mucous gland
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: part_of UBERON:0001737
@@ -65248,6 +65320,7 @@ intersection_of: part_of UBERON:0002299 ! alveolus of lung
 id: UBERON:0004894
 name: alveolar wall
 def: "A wall that contains the alveoli" [LG:0012626]
+xref: FMA:14117
 xref: MA:0002568
 is_a: UBERON:0000060 ! implied link automatically realized ! anatomical wall
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
@@ -65336,6 +65409,7 @@ name: urogenital sinus epithelium
 synonym: "epithelium of urogenital sinus" EXACT [OBOL:automatic]
 xref: EMAPA:30882
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000164
 intersection_of: UBERON:0000483 ! epithelium
@@ -65756,7 +65830,7 @@ synonym: "stomach pyloric antrum submucosa" EXACT [OBOL:automatic]
 synonym: "submucosa of antrum of stomach" EXACT [OBOL:automatic]
 synonym: "submucosa of stomach pyloric antrum" EXACT [OBOL:automatic]
 xref: FMA:17060
-is_a: UBERON:0001200 ! implied link automatically realized ! submucosa of stomach
+is_a: UBERON:0004937 ! implied link automatically realized ! submucosa of pylorus
 relationship: part_of UBERON:0001165
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: part_of UBERON:0001165 ! pyloric antrum
@@ -66429,7 +66503,7 @@ synonym: "stomach pyloric antrum mucosa of organ" EXACT [OBOL:automatic]
 synonym: "stomach pyloric antrum mucous membrane" EXACT [OBOL:automatic]
 synonym: "stomach pyloric antrum organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:17055
-is_a: UBERON:0001199 ! implied link automatically realized ! mucosa of stomach
+is_a: UBERON:0004998 ! implied link automatically realized ! mucosa of pylorus
 relationship: part_of UBERON:0001165
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001165 ! pyloric antrum
@@ -67754,6 +67828,35 @@ is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: has_part UBERON:0002384 ! connective tissue
 relationship: part_of UBERON:0000473 ! testis
+
+[Term]
+id: UBERON:0005052
+name: gizzard
+def: "The muscular enlargement of the alimentary canal that has usually thick muscular walls and a tough horny lining for grinding the food and when the crop is present follows it and the proventriculus." [BTO:0000520, Wikipedia:Gizzard]
+comment: BTO also includes: A thickened part of the alimentary canal in some animals (as an insect or an earthworm) that is similar in function to the crop of a bird. WP says
+synonym: "gastric mill" EXACT [Wikipedia:Gizzard]
+synonym: "gigerium" EXACT [Wikipedia:Gizzard]
+synonym: "ventriculus" RELATED [Wikipedia:Gizzard]
+xref: BTO:0000520
+xref: GAID:1238
+is_a: UBERON:0000062 ! organ
+relationship: part_of UBERON:0001555 ! digestive tract
+
+[Term]
+id: UBERON:0005053
+name: nerve cord
+def: "." [Wikipedia:Nerve_cord]
+xref: BILA:0000136
+xref: BTO:0001656
+is_a: UBERON:0000045 ! ganglion
+
+[Term]
+id: UBERON:0005054
+name: dorsal nerve cord
+def: "The dorsal tubular cord of nervous tissue above the notochord of a chordate that comprises or develops into the central nervous system[BTO]. The dorsal nerve cord is one of the embryonic features unique to chordates, along with a notochord, a post-anal tail and pharyngeal slits. The dorsal nerve cord is a hollow cord dorsal to the notochord.It is formed from a part of the ectoderm that rolls, forming the hollow tube, compared to other animal phyla, which have solid, ventral tubes. The dorsal nerve cord is later modified into the brain and spinal cord. Dorsal nerve cord is mainly found in phylum Vertebrata[WP]." [BTO:0002329, Wikipedia:Dorsal_nerve_cord]
+comment: TODO - check nematode dorsal nerve cord
+xref: BTO:0002329
+is_a: UBERON:0005053 ! nerve cord
 
 [Typedef]
 id: adjacent_to
