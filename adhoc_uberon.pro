@@ -9,11 +9,11 @@
 :- use_module(bio(graph)).
 :- use_module(library(porter_stem),[]).
 
+idspace_taxon('FMA','NCBITaxon:9606').
 idspace_taxon('FBbt','NCBITaxon:7227').
 idspace_taxon('MA','NCBITaxon:10088').
 idspace_taxon('EMAP','NCBITaxon:10088').
 idspace_taxon('EMAPA','NCBITaxon:10088').
-idspace_taxon('FMA','NCBITaxon:9606').
 idspace_taxon('EHDAA','NCBITaxon:9606').
 idspace_taxon('ZFA','NCBITaxon:7955').
 idspace_taxon('TAO','NCBITaxon:32443').
@@ -142,7 +142,30 @@ idspace_map('ZFA','ZFA/ZFS') :- !.
 idspace_map('ZFS','ZFA/ZFS') :- !.
 idspace_map('BILA','BILA/BILS') :- !.
 idspace_map('BILS','BILA/BILS') :- !.
+idspace_map('galen','GALEN') :- !.
 idspace_map(X,X).
+
+idspace_desc('ZFA/ZFS','Zebrafish').
+idspace_desc('BILA/BILS','Bilateria').
+idspace_desc('FMA','Adult human').
+idspace_desc('MA','Adult mouse').
+idspace_desc('EHDAA','Human (developmental)').
+idspace_desc('EMAPA','Mouse (abstract)').
+idspace_desc('EMAP','Mouse (developmental)').
+idspace_desc('BTO','plant and animal').
+idspace_desc('GAID','plant and animal').
+idspace_desc('NIF_GrossAnatomy','Mammalian brain').
+idspace_desc('ncithesaurus','Mouse and human').
+idspace_desc('HOG','homologous grouping (vertebrate)').
+idspace_desc('OpenCyc','general').
+idspace_desc('TAO','Teleost').
+idspace_desc('XAO','Xenopus').
+idspace_desc('FBbt','Drosophila').
+idspace_desc('WBbt','C elegans').
+idspace_desc('MIAA','general').
+idspace_desc('MAT','general').
+idspace_desc('EFO','General (experimental factors)').
+idspace_desc('GALEN','Medical, human').
 
 
 
@@ -151,12 +174,14 @@ uberon_xref_in(E,X,S) :-
 	id_idspace(X,S1),
 	idspace_map(S1,S).
 
-uberon_xref_count(S,Num) :-
+uberon_xref_count(S,SD,Num) :-
 	aggregate(count,
 		  X,
 		  E^uberon_xref_in(E,X,S),
 		  Num),
-	Num > 32.
+	Num > 32,
+	idspace_desc(S,SD).
+
 
 uberon_compare_sets_by_relT(X1,X2,Rel,Diff) :-
 	findall(C,parent_overT(Rel,C,X1),Set1),
@@ -194,6 +219,67 @@ uberon_in_set(U,Set2,diff-U) :-
 	!.
 uberon_in_set(U,_,no_xref-U).
 
-	
+uberon_sibpair(U,A,B) :-
+	entity_xref(U,A),
+	class(A),
+	entity_xref(U,B),
+	class(B),
+	A\=B,
+	id_idspace(A,AO),
+	id_idspace(B,BO),
+	AO\=BO.
+
+uberon_sibpair_all_textmatches(U,A,B,L) :-
+	uberon_sibpair(U,A,B),
+	findall(Tok,uberon_sibpair_textmatches(U,A,B,Tok),L).
+uberon_sibpair_textmatches(U,A,B,Tok) :-
+	uberon_sibpair(U,A,B), % no need to index...
+	entity_label_token_stemmed(A,_AN,Tok,true),
+	entity_label_token_stemmed(B,_BN,Tok,true).
 
 	
+		
+% for paper:
+aolist(['UBERON','FMA','MA','EMAP','ZFA','XAO','FBbt','WBbt']).
+
+
+% MUST MATCH
+aostat('Classes').
+aostat('Relationships').
+aostat('Relations').
+aostat('% Defined (text)').
+aostat('% Defined (computable)').
+
+aostat1('Classes',Num,Ont) :- aggregate(count,X,(class(X),id_idspace(X,Ont)),Num).
+aostat1('Relationships',Num,Ont) :- aggregate(count,X-Y,(parent(X,Y),id_idspace(X,Ont)),Num).
+aostat1('Relations',Num,Ont) :- aggregate(count,R,X^Y^(parent(X,R,Y),id_idspace(X,Ont)),Num).
+aostat1('% Defined (text)',Pct,Ont) :-
+	aggregate(count,D,X^(def(X,D),id_idspace(X,Ont)),Num),
+	pct_classes(Ont,Num,Pct).
+aostat1('% Defined (computable)',Pct,Ont) :- 
+	aggregate(count,X,G^(genus(X,G),id_idspace(X,Ont)),Num),
+	pct_classes(Ont,Num,Pct).
+
+
+pct_classes(Ont,Num,Pct) :-
+	aostat('Classes',Tot,Ont),
+	Pct is floor((Num/Tot)*100 + 0.5).
+
+aostat(S,V,O) :- aostat1(S,V,O),!.
+aostat(_,'-',_).
+
+aostatrow(['' | L]) :-
+	aolist(L).		% header
+aostatrow([S|L]) :-
+	aolist(Onts),
+	aostat(S),
+	findall(V,(member(Ont,Onts),
+		   aostat(S,V,Ont)),L).
+
+aostatrow_term(X) :-
+	aostatrow(L),
+	X=..L.
+	
+
+
+
