@@ -2845,9 +2845,9 @@ xref: MAT:0000226 ! embryo
 xref: MIAA:0000019 ! developmental tissue
 xref: XAO:0000113 ! embryo
 xref: XAO:1000012 ! embryonic stage
-is_a: UBERON:0000468 ! multi-cellular organism
-relationship: existence_ends_with UBERON:0000068 ! embryo stage
-relationship: existence_starts_with UBERON:0000068 ! embryo stage
+intersection_of: UBERON:0000468 ! multi-cellular organism
+intersection_of: existence_ends_with UBERON:0000068 ! embryo stage
+intersection_of: existence_starts_with UBERON:0000068 ! embryo stage
 xref: OGEM:000001 ! embryo
 xref: OGES:000022 ! embryo
 xref: EV:0300001 ! embryo
@@ -4281,21 +4281,6 @@ is_a: UBERON:0000064 ! organ part
 xref: EFO:0001384 ! prefrontal cortex
 xref: GAID:676 ! prefrontal cortex
 def: "The prefrontal cortex (PFC) is the anterior part of the frontal lobes of the brain, lying in front of the motor and premotor areas. This brain region has been implicated in planning complex cognitive behaviors, personality expression, decision making and moderating correct social behavior. The basic activity of this brain region is considered to be orchestration of thoughts and actions in accordance with internal goals. The most typical psychological term for functions carried out by the pre-frontal cortex area is executive function. Executive function relates to abilities to differentiate among conflicting thoughts, determine good and bad, better and best, same and different, future consequences of current activities, working toward a defined goal, prediction of outcomes, expectation based on actions, and social 'control' (the ability to suppress urges that, if not suppressed, could lead to socially-unacceptable outcomes). Many authors have indicated an integral link between a person's personality and the functions of the prefrontal cortex. [WP,unvetted]." [Wikipedia:Prefrontal_cortex, Wikipedia:Prefrontal_cortex]
-
-[Term]
-id: UBERON:0000452
-name: gubernaculum
-def: "The paired Gabernacula are folds of peritoneum  that attach to the caudal end of the gonads (testes in males and ovaries in females)." [Wikipedia:Gubernaculum]
-comment: WP def is male/female, split term? EMAP is male-specific. vestigial adult in FMA. TODO
-synonym: "gubernaculum testis" EXACT []
-alt_id: UBERON:BTO_0002813-FMA_20421
-xref: BTO:0002813
-xref: FMA:20421 ! Gubernaculum testis
-xref: EMAPA:19089 ! gubernaculum
-is_a: UBERON:0002050 ! embryonic structure
-relationship: part_of UBERON:0002358 ! peritoneum
-relationship: attached_to UBERON:0000991 ! gonad
-relationship: develops_from UBERON:0003064 ! intermediate mesoderm
 
 [Term]
 id: UBERON:0000453
@@ -7923,7 +7908,7 @@ subset: uberon_slim
 synonym: "anterior intestine" RELATED []
 synonym: "mesenteron" RELATED []
 synonym: "stomach" RELATED []
-synonym: "ventriculus" EXACT []
+synonym: "ventriculus" RELATED []
 xref: AAO:0000579 ! stomach
 xref: BTO:0001307
 xref: EFO:0000837 ! stomach
@@ -26202,8 +26187,6 @@ xref: XAO:0003042 ! embryonic structure
 xref: ZFA:0001105 ! embryonic structure
 is_a: UBERON:0000061 ! anatomical structure
 intersection_of: UBERON:0000061 ! anatomical structure
-intersection_of: existence_starts_during UBERON:0000068 ! embryo stage
-intersection_of: existence_ends_during UBERON:0000068 ! embryo stage
 intersection_of: part_of UBERON:0000922 ! embryo
 xref: ncithesaurus:Embryonic_Structure ! Embryonic Structure
 
@@ -27506,7 +27489,7 @@ def: "The muscular enlargement of the alimentary canal that has usually thick mu
 comment: BTO also includes: A thickened part of the alimentary canal in some animals (as an insect or an earthworm) that is similar in function to the crop of a bird. WP says
 is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0001555 ! digestive tract
-synonym: "ventriculus" EXACT [Wikipedia:Gizzard]
+synonym: "ventriculus" RELATED [Wikipedia:Gizzard]
 synonym: "gastric mill" EXACT [Wikipedia:Gizzard]
 synonym: "gigerium" EXACT [Wikipedia:Gizzard]
 xref: BTO:0000520
@@ -58418,11 +58401,21 @@ xref: BTO:0001840 ! trophectoderm
 
 [Term]
 id: UBERON:0004346
+alt_id: UBERON:0000452
+alt_id: UBERON:BTO_0002813-FMA_20421
 name: gubernaculum
-def: "enitoinguinal ligaments that, in the male, connect the fetal testis to the developing scrotum, and, in the female, connect the ovaries to the uterus" [MP:0005149]
+def: "enitoinguinal ligaments that, in the male, connect the fetal testis to the developing scrotum, and, in the female, connect the ovaries to the uterus[MP]. The paired Gabernacula are folds of peritoneum  that attach to the caudal end of the gonads (testes in males and ovaries in females)." [Wikipedia:Gubernaculum, MP:0005149]
+comment: WP def is male/female, split term? EMAP is male-specific. vestigial adult in FMA. TODO
+synonym: "gubernaculum testis" EXACT []
 is_a: UBERON:0000211 ! ligament
 relationship: part_of UBERON:0000990 ! reproductive system
+relationship: part_of UBERON:0002358 ! peritoneum
+relationship: part_of UBERON:0000922 ! embryo
+relationship: attached_to UBERON:0000991 ! gonad
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
 xref: EMAPA:19089 ! gubernaculum
+xref: BTO:0002813
+xref: FMA:20421 ! Gubernaculum testis
 
 [Term]
 id: UBERON:0004347
