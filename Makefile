@@ -567,11 +567,27 @@ fma-mireot.obo: fma_xp.obo
 	blip -i $< -r fma_simple ontol-subset -rel subclass -rel part_of -query "differentium(_,_,ID);genus(_,ID)" -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: fma-mireot.obo
 
+MAPARGS = -i exclude_cell.pro -u metadata_mappings -table_pred "ontol_db:bf_parentRT/2" -table_pred ontol_db:subclassT/2 -index "metadata_db:entity_label(1,1)"  "compare_mapping([bp,uberon],_,_,_,_,_,_,_)" -label | cut -f3-12 
+
 mappings-FMA-MA.cmp: mappings-FMA-MA.rdf
-	blip-findall -r uberon -r mouse_anatomy -r fma -i mappings-FMA-MA.rdf -u metadata_mappings -table_pred "ontol_db:bf_parentRT/2" -index "metadata_db:entity_label(1,1)" "compare_mapping(uberon,bp,_,_,_,_,_)" -label > $@
+	blip-findall -r uberon -r mouse_anatomy -r fma -i mappings-FMA-MA.rdf $(MAPARGS) > $@
+
+mappings-FMA-FBbt.cmp: mappings-FMA-MA.rdf
+	blip-findall -r uberon -r fly_anatomy -r fma -i mappings-FMA-FBbt.rdf $(MAPARGS) > $@
 
 mappings-ZFA-MA.cmp: mappings-ZFA-MA.rdf
-	blip-findall -r uberon -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA.rdf -u metadata_mappings -table_pred "ontol_db:bf_parentRT/2" -index "metadata_db:entity_label(1,1)" "compare_mapping(uberon,bp,_,_,_,_,_)" -label > $@
+	blip-findall -r uberon -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA.rdf $(MAPARGS) > $@
+
+mappings-%-mismatch.cmp: mappings-%.cmp
+	grep -v EXACT $< > $@
+
+mappings-%-overlap: mappings-%.cmp
+	grep EXACT $< | grep '^uberon' | cut -f3-5 | sort -u
+
+mappings-%-u-pos: mappings-%.cmp
+	grep -v EXACT $< | grep '^uberon' | cut -f3-5 | sort -u
+mappings-%-u-neg: mappings-%.cmp
+	grep -v EXACT $< | grep -v '^uberon' | cut -f4-5 | sort -u
 
 
 uberon2tax-ontol_db.pro:
