@@ -803,7 +803,7 @@ xref: MAT:0000207 ! invertebrate ganglion
 xref: MAT:0000343 ! ganglion
 xref: MIAA:0000207 ! invertebrate ganglion
 xref: MIAA:0000343 ! ganglion
-xref: NIF_GrossAnatomy:birnlex_2548 ! Ganglion part of peripheral nervous system
+xref: NIF_GrossAnatomy:nlx_anat_100302 ! Ganglion
 xref: TAO:0000190 ! ganglion
 xref: WBbt:0005189 ! ganglion
 xref: XAO:0000209 ! ganglion
@@ -1894,6 +1894,7 @@ xref: BTO:0003153 ! perineurium
 id: UBERON:0000122
 name: nerve fiber bundle
 def: "multi-cell component structure consisting of a cluster of nerve fibers." [UBERON:cjm]
+comment: TODO - check FMA is general anatomical term
 synonym: "funiculus" EXACT []
 xref: FBbt:00005099
 is_a: UBERON:0000477 ! anatomical cluster
@@ -5463,11 +5464,57 @@ synonym: "muscle organ of pharynx" EXACT [OBOL:automatic]
 synonym: "pharynx muscle organ" EXACT [OBOL:automatic]
 
 [Term]
+id: UBERON:0002240
+name: spinal cord
+alt_id: UBERON:FMA_7647-MA_0000216-MIAA_0000183-XAO_0000020-ZFA_0000075
+def: "Organ component of neuraxis that has as its parts gray matter and white matter that surround the central canal. Examples: There is only one spinal cord. // Elongated, approximately cylindrical part of the central nervous system that lies in the vertebral canal and from which the spinal nerves emerge." [OMD:spinal+cord, Wikipedia:Spinal_cord]
+comment: TODO: add superclass to unify with VNC?
+subset: uberon_slim
+xref: BTO:0001279
+xref: EFO:0000110 ! spinal cord
+xref: EHDAA:2863 ! spinal cord
+xref: FMA:7647 ! Spinal cord
+xref: GAID:695 ! spinal cord
+xref: HOG:0000601 ! spinal cord
+xref: MA:0000216 ! spinal cord
+xref: MAT:0000183 ! spinal cord
+xref: MIAA:0000183 ! spinal cord
+xref: NIF_GrossAnatomy:birnlex_1709 ! Spinal cord
+xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
+xref: TAO:0000075 ! spinal cord
+xref: XAO:0000020 ! spinal cord
+xref: ZFA:0000075 ! spinal cord
+is_a: UBERON:0000489 ! cavitated compound organ
+relationship: develops_from UBERON:0003076 ! posterior neural tube
+relationship: spatially_disjoint_from UBERON:0000955 ! brain
+relationship: part_of UBERON:0001017 ! central nervous system
+relationship: part_of UBERON:0001137 ! back
+xref: ncithesaurus:Spinal_Cord ! Spinal Cord
+xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA ! spinal cord
+
+[Term]
+id: UBERON:0005053 ! nerve cord
+def: "." [Wikipedia:Nerve_cord]
+name: nerve cord
+is_a: UBERON:0000045 ! ganglion
+xref: BILA:0000136 ! nerve cord
+xref: BTO:0001656 ! nerve cord
+
+[Term]
+id: UBERON:0005054
+name: dorsal nerve cord
+def: "The dorsal tubular cord of nervous tissue above the notochord of a chordate that comprises or develops into the central nervous system[BTO]. The dorsal nerve cord is one of the embryonic features unique to chordates, along with a notochord, a post-anal tail and pharyngeal slits. The dorsal nerve cord is a hollow cord dorsal to the notochord.It is formed from a part of the ectoderm that rolls, forming the hollow tube, compared to other animal phyla, which have solid, ventral tubes. The dorsal nerve cord is later modified into the brain and spinal cord. Dorsal nerve cord is mainly found in phylum Vertebrata[WP]." [BTO:0002329, Wikipedia:Dorsal_nerve_cord]
+comment: TODO - check nematode dorsal nerve cord
+is_a: UBERON:0005053 ! nerve cord
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
+xref: BTO:0002329 ! dorsal nerve cord
+
+[Term]
 id: UBERON:0000934
 name: ventral nerve cord
 alt_id: UBERON:FBbt_00001102-MIAA_0000339-WBbt_0005829
 def: "a large process bundle that runs along the vental mid-line extending from the ventral region of the nerve ring." [WB:Paper00000938, Wikipedia:Ventral_nerve_cord]
-comment: This class was created automatically from a combination of ontologies
+comment: The ventral nerve cords make up the nervous system of some phyla of the invertebrates, particularly within the nematodes, annelids  and the arthropods. It usually consists of cerebral  ganglia  anteriorly with the nerve cords running down the ventral ('belly', as opposed to back) plane of the organism. This characteristic is important in qualifying the difference compared to the chordates, which have a dorsal nerve cord. Ventral nerve cords from anterior to posterior (the thoracic and abdominal tagma in the arthropods) are made up of segmented ganglia that are connected by a tract of nerve fibers passing from one side to the other of the nerve cord called commissures. The complete system bears some likeness to a rope ladder. In some animals the bilateral ganglia are fused into a single large ganglion per segment. This characteristic is found mostly in the insects.
 subset: uberon_slim
 synonym: "ventral cord" RELATED []
 xref: EFO:0000896 ! ventral nerve cord
@@ -5475,8 +5522,9 @@ xref: FBbt:00001102 ! ventral nerve cord
 xref: MAT:0000339 ! ventral nerve cord
 xref: MIAA:0000339 ! ventral nerve cord
 xref: WBbt:0005829 ! ventral nerve cord
-is_a: UBERON:0000045 ! ganglion
 xref: BTO:0002328 ! ventral nerve cord
+is_a: UBERON:0005053 ! nerve cord
+relationship: never_in_taxon NCBITaxon:7742 ! Vertebrata
 
 [Term]
 id: UBERON:0000935
@@ -6997,15 +7045,16 @@ xref: OpenCyc:Mx4rvViOX5wpEbGdrcN5Y29ycA ! windpipe
 
 [Term]
 id: UBERON:0003127
-name: open tracheal system
+name: open tracheal system trachea
 def: "A trachea composed of composed of spiracles, tracheae, and tracheoles [Wikipedia]. An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." [GO:0007424, Wikipedia:Invertebrate_trachea]
 comment: TODO: system vs organ part
 subset: uberon_slim
+synonym: "open tracheal system" EXACT []
 synonym: "invertebrate trachea" EXACT []
 synonym: "trachea" BROAD SENSU [FBbt:00005043]
 xref: FBbt:00005043 ! trachea
 relationship: has_part UBERON:0003914 ! epithelial tube
-is_a: UBERON:0001005 ! trachea
+is_a: UBERON:0001005 ! respiratory airway
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
@@ -7413,7 +7462,7 @@ id: UBERON:0001018
 name: axon tract
 alt_id: UBERON:FBbt_00005100-FMA_76739
 def: "A group of axons linking two or more neuropils and having a common origin, termination." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check FMA is general anatomical term
 synonym: "tract" EXACT []
 xref: FBbt:00005100 ! axon tract
 xref: FMA:76739 ! Tract
@@ -29469,34 +29518,6 @@ xref: OpenCyc:Mx4rvaPCWZwpEbGdrcN5Y29ycA
 is_a: UBERON:0002238 ! false rib
 xref: OpenCyc:Mx4rvaPCWZwpEbGdrcN5Y29ycA ! floating rib
 
-[Term]
-id: UBERON:0002240
-name: spinal cord
-alt_id: UBERON:FMA_7647-MA_0000216-MIAA_0000183-XAO_0000020-ZFA_0000075
-def: "Organ component of neuraxis that has as its parts gray matter and white matter that surround the central canal. Examples: There is only one spinal cord. // Elongated, approximately cylindrical part of the central nervous system that lies in the vertebral canal and from which the spinal nerves emerge." [OMD:spinal+cord, Wikipedia:Spinal_cord]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: BTO:0001279
-xref: EFO:0000110 ! spinal cord
-xref: EHDAA:2863 ! spinal cord
-xref: FMA:7647 ! Spinal cord
-xref: GAID:695 ! spinal cord
-xref: HOG:0000601 ! spinal cord
-xref: MA:0000216 ! spinal cord
-xref: MAT:0000183 ! spinal cord
-xref: MIAA:0000183 ! spinal cord
-xref: NIF_GrossAnatomy:birnlex_1709 ! Spinal cord
-xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
-xref: TAO:0000075 ! spinal cord
-xref: XAO:0000020 ! spinal cord
-xref: ZFA:0000075 ! spinal cord
-is_a: UBERON:0000489 ! cavitated compound organ
-relationship: develops_from UBERON:0003076 ! posterior neural tube
-relationship: spatially_disjoint_from UBERON:0000955 ! brain
-relationship: part_of UBERON:0001017 ! central nervous system
-relationship: part_of UBERON:0001137 ! back
-xref: ncithesaurus:Spinal_Cord ! Spinal Cord
-xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA ! spinal cord
 
 [Term]
 id: UBERON:0002242
@@ -31948,8 +31969,8 @@ xref: OpenCyc:Mx4rvpIympwpEbGdrcN5Y29ycA ! thymus
 id: UBERON:0002371
 name: bone marrow
 alt_id: UBERON:FMA_9608-MA_0000134-MIAA_0000084-XAO_0000123-ZFA_0000669
-def: "flexible tissue found in the hollow interior of bones. In adults, marrow in large bones produces new blood cells[WP]. The zebrafish head kidney consists of fused bilateral lobes located in the anterior part of the kidney. It is analogous to the mammalian bone marrow and the primary site of definitive hematopoiesis. <a href='ZFIN_jump?record=ZDB-PUB-040923-1'>Davidson and Zon 2004.</a>" [Wikipedia:Bone_marrow, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "flexible tissue found in the hollow interior of bones. In adults, marrow in large bones produces new blood cells[WP]." [Wikipedia:Bone_marrow]
+comment: TODO - create superclass for bone marrow / head kidney. both are portions of tissue in the hematopoetic system
 subset: uberon_slim
 synonym: "anterior kidney" RELATED []
 synonym: "head kidney" BROAD []
@@ -31965,9 +31986,7 @@ xref: MA:0000134 ! bone marrow
 xref: MAT:0000084 ! bone marrow
 xref: MIAA:0000084 ! bone marrow
 xref: OpenCyc:Mx4rvVm-FpwpEbGdrcN5Y29ycA
-xref: TAO:0000669 ! head kidney
 xref: XAO:0000123 ! bone marrow
-xref: ZFA:0000669 ! head kidney
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0001474 ! bone
 relationship: part_of UBERON:0002390 ! hematopoietic system
@@ -48582,8 +48601,10 @@ synonym: "front of thorax bone organ" EXACT [OBOL:automatic]
 id: UBERON:0003460
 name: arm bone
 xref: MA:0000592 ! arm bone
+xref: GAID:178 ! bones of upper extremity
 intersection_of: UBERON:0001474 ! bone
 intersection_of: part_of UBERON:0001460 ! arm
+synonym: "bone of upper extremity" EXACT [GAID:178]
 synonym: "arm bone organ" EXACT [OBOL:automatic]
 synonym: "bone of arm" EXACT [OBOL:automatic]
 synonym: "bone of brachial region" EXACT [OBOL:automatic]
@@ -52179,6 +52200,7 @@ xref: GAID:145 ! masticatory muscle
 xref: EFO:0001424 ! masseter muscle
 is_a: UBERON:0001630 ! muscle organ
 def: "any of the muscles responsible for the movement of the jaws during mastication, including the masseter, temporal, and medial and lateral pterygoid muscles." [MP:0004234]
+comment: TODO
 
 [Term]
 id: UBERON:0003682
@@ -54871,7 +54893,8 @@ relationship: part_of UBERON:0000979 ! tibia
 [Term]
 id: UBERON:0004100
 name: renal collecting system
-def: "." [HP:0004742]
+def: "The collecting duct system of the kidney consists of a series of tubules and ducts that connect the nephrons to the ureter. It participates in electrolyte and fluid balance through reabsorption and excretion, processes regulated by the hormones aldosterone and antidiuretic hormone." [HP:0004742, Wikipedia:Collecting_duct_system]
+synonym: "collecting_duct_system" EXACT [Wikipedia:Collecting_duct_system]
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0002113 ! kidney
 
@@ -54969,8 +54992,6 @@ id: UBERON:0004109
 name: cortex of humerus
 def: "." [HP:0010629]
 synonym: "cortex of the humerus" EXACT []
-is_a: UBERON:0001851 ! cortex
-relationship: part_of UBERON:0000976 ! humerus
 intersection_of: UBERON:0001851 ! cortex
 intersection_of: part_of UBERON:0000976 ! humerus
 
@@ -58579,6 +58600,8 @@ def: "cartilage found in the mesenchyme of the second branchial arch in the embr
 synonym: "Reichert cartilage" EXACT []
 synonym: "hyaloid cartilage" EXACT [MP:0004916]
 synonym: "second pharyngeal arch cartilage" EXACT [MP:0004916]
+xref: EMAPA:17351 ! hyoid cartilage pre-cartilage condensation [SYNONYM: "Reichert's cartilage pre-cartilage condensation" ()]
+xref: EMAPA:17622 ! hyoid cartilage cartilage condensation [SYNONYM: "Reichert's cartilage cartilage condensation" ()]
 is_a: UBERON:0002418 ! cartilage
 relationship: part_of UBERON:0003066 ! hyoid arch
 
@@ -61317,6 +61340,7 @@ synonym: "serous membrane of gallbladder" EXACT [OBOL:automatic]
 id: UBERON:0004784
 name: heart ventricle wall
 xref: MA:0002791 ! heart ventricle wall
+xref: FMA:13884 ! Wall of ventricle
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: part_of UBERON:0002082 ! part_of cardiac ventricle
 synonym: "anatomical wall of cardiac ventricle" EXACT [OBOL:automatic]
