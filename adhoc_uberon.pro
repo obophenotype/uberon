@@ -232,6 +232,7 @@ uberon_sibpair(U,A,B) :-
 uberon_sibpair_all_textmatches(U,A,B,L) :-
 	uberon_sibpair(U,A,B),
 	findall(Tok,uberon_sibpair_textmatches(U,A,B,Tok),L).
+
 uberon_sibpair_textmatches(U,A,B,Tok) :-
 	uberon_sibpair(U,A,B), % no need to index...
 	entity_label_token_stemmed(A,_AN,Tok,true),
@@ -240,7 +241,7 @@ uberon_sibpair_textmatches(U,A,B,Tok) :-
 	
 		
 % for paper:
-aolist(['UBERON','FMA','MA','EMAP','ZFA','XAO','FBbt','WBbt']).
+aolist(['UBERON','FMA','MA','EMAP','ZFA','XAO','FBbt','WBbt','BTO']).
 
 
 % MUST MATCH
@@ -270,6 +271,9 @@ aostat(_,'-',_).
 
 aostatrow(['' | L]) :-
 	aolist(L).		% header
+aostatrow(['' | L2]) :-
+	aolist(L),
+	maplist(idspace_taxon,L,L2).
 aostatrow([S|L]) :-
 	aolist(Onts),
 	aostat(S),

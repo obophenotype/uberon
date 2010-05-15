@@ -589,6 +589,12 @@ mappings-%-u-pos: mappings-%.cmp
 mappings-%-u-neg: mappings-%.cmp
 	grep -v EXACT $< | grep -v '^uberon' | cut -f4-5 | sort -u
 
+# https://sourceforge.net/tracker/index.php?func=detail&aid=2998769&group_id=76834&atid=925065
+cell-to-uberon-via-ZFA.txt:
+	blip-findall -r cell -r uberon -r zebrafish_anatomy "subclassRT(C,'ZFA:0009000'),entity_xref(C,X),id_idspace(X,'CL'),restriction(C,part_of,A),entity_xref(U,A)" -select "cell_anat(C,X,A,U)" -label | sort -u > $@
+
+cell-to-uberon-via-FMA.txt:
+	blip-findall -r cell -r uberon -r fma_simple "subclassRT(C,'FMA:68646'),entity_xref(X,C),id_idspace(X,'CL'),restriction(C,part_of,A),entity_xref(U,A)" -select "cell_anat(C,X,A,U)" -label | sort -u > $@
 
 uberon2tax-ontol_db.pro:
 	blip-findall -r uberon -r gotax -r goxp/biological_process_xp_uber_anatomy "restriction(X,only_in_taxon,T),differentium(X,_,U),id_idspace(U,'UBERON'),entity_label(U,_)" -select "restriction(U,only_in_taxon,T)"  -write_prolog > $@
@@ -627,3 +633,6 @@ new.txt:
 # deepen 'anatomical structure'
 suggest-isa-%.txt:
 	blip-findall -r uberon -r $* "subclass(A,'UBERON:0000061'),entity_xref(A,AX),subclassT(AX,BX),entity_xref(B,BX),BX\='UBERON:0000061',\+((subclassT(AX,CX),subclassT(CX,BX),entity_xref(C,CX)))" -select A-B -label | perl -npe 's/-/ \! /g' > $@
+
+suggestions-HP-FMA.txt:
+	blip-findall -r human_phenotype -r uberon -r human_phenotype_xp  -r fma_simple "differentium(P,_,A),id_idspace(P,'HP'),id_idspace(A,'FMA'),\+entity_xref(_,A),\+((subclassRT(A,B),restriction(B,_,_)))" -select A-P -label | sort -u > $@

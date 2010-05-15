@@ -90,11 +90,12 @@ xref: OpenCyc:Mx4rvViCbJwpEbGdrcN5Y29ycA ! nose
 
 [Term]
 id: UBERON:0000005
-name: chemosensory sensory organ
+name: chemosensory organ
 def: "." [Wikipedia:Olfactory_system]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "olfactory system" EXACT []
+synonym: "chemosensory sensory organ" EXACT []
 xref: AAO:0000334 ! olfactory_system
 xref: BILA:0000144
 xref: FBbt:00005157 ! chemosensory sensory organ
@@ -1989,13 +1990,11 @@ relationship: homologous_to UBERON:0002103 ! hindlimb
 id: UBERON:0000153 ! anterior region of body
 name: anterior region of body
 is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:0002100 ! trunk
 
 [Term]
 id: UBERON:0000154 ! posterior region of body
 name: posterior region of body
 is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:0002100 ! trunk
 
 [Term]
 id: UBERON:0000155
@@ -7189,7 +7188,7 @@ xref: FBbt:00005057 ! circulatory system
 xref: XAO:0001010 ! circulatory system
 xref: OpenCyc:Mx4rvVjzG5wpEbGdrcN5Y29ycA ! circulatory system
 is_a: UBERON:0000467 ! anatomical system
-relationship: never_in_taxon NCBITaxon:6157 {evidence_xref="Wikpidia:Circulatory_system#Absence_of_circulatory_system"} ! Platyhelminthes 
+relationship: never_in_taxon NCBITaxon:6157 ! Platyhelminthes 
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
 disjoint_from: UBERON:0001004 ! respiratory system
@@ -15207,7 +15206,7 @@ id: UBERON:0001439
 name: compact bone
 alt_id: UBERON:FMA_24018-MA_0001461
 def: "one of the two types of osseous tissue that form bones. Compact/Cortical bone facilitates bone's main functions: to support the body, protect organs, provide levers for movement, and store and release chemical elements, mainly calcium. As its name implies, cortical bone forms the cortex, or outer shell, of most bones. Again, as its name implies, compact bone is much denser than cancellous bone, which is the other type of osseous tissue. Furthermore, it is harder, stronger and stiffer than cancellous bone. Cortical bone contributes about 80% of the weight of a human skeleton. The primary anatomical and functional unit of cortical bone is the osteon.." [Wikipedia:Compact_bone]
-comment: This class was created automatically from a combination of ontologies
+comment: MP distinguishes compact/cortical bone. in other AOs they are syns
 subset: uberon_slim
 synonym: "compact bone tissue" EXACT []
 synonym: "cortical bone" EXACT []
@@ -15223,7 +15222,7 @@ xref: ncithesaurus:Cortical_Bone ! Cortical Bone
 id: UBERON:0001440
 name: skeleton of upper limb
 alt_id: UBERON:FMA_24139-MA_0000612
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - split skeleton from single bone
 synonym: "bones of upper limb" EXACT []
 synonym: "forelimb bone" EXACT []
 synonym: "set of bones of upper limb" EXACT []
@@ -20371,6 +20370,7 @@ def: "The paired submandibular glands (submaxillary glands) are salivary glands 
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "submaxillary gland" RELATED []
+synonym: "submandibular salibary gland" RELATED []
 xref: BTO:0001316
 xref: FMA:55093 ! Submandibular gland
 xref: GAID:942 ! submandibular gland
@@ -26439,18 +26439,40 @@ relationship: part_of UBERON:0000948 ! heart
 xref: ncithesaurus:Sinus_Venosus ! Sinus Venosus
 
 [Term]
+id: UBERON:0004344 ! cardinal vein
+name: cardinal vein
+def: "any of the four veins in the developing vertebrate embryo which run along each side of the vertebral column" [MP:0004783]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0001638 ! vein
+xref: EHDAA:1310 ! cardinal vein
+xref: XAO:0000052 ! cardinal vein
+xref: EMAPA:16354 ! cardinal vein
+xref: ncithesaurus:Cardinal_Vein ! Cardinal Vein
+
+[Term]
 id: UBERON:0002064
 name: common cardinal vein
 alt_id: UBERON:FMA_70308-ZFA_0000186
 def: "Bilaterally paired longitudinal vein; the anterior cardinal returns blood from the head, and the posterior cardinal returns it from the trunk; these two vessels join together on each side as the common cardinal vein (duct of Cuvier; misnamed the vitelline vein) that leads across the yolk cell to the heart's sinus venosus. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Common_cardinal_vein, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO check synonym XAO-related, ZFA-exact
 subset: uberon_slim
 synonym: "duct of Cuvier" RELATED []
 xref: FMA:70308 ! Common cardinal vein
 xref: HOG:0000112 ! common cardinal vein
 xref: TAO:0000186 ! common cardinal vein
 xref: ZFA:0000186 ! common cardinal vein
-is_a: UBERON:0001638 ! vein
+xref: XAO:0000373 ! duct of Cuvier
+xref: EMAPA:16356 ! common
+xref: EHDAA:1314 ! common
+xref: EMAP:1352 ! TS15,common,cardinal vein
+xref: EMAP:1874 ! TS16,common,cardinal vein
+xref: EMAP:2464 ! TS17,common,cardinal vein
+xref: EMAP:3104 ! TS18,common,cardinal vein
+xref: EMAP:3715 ! TS19,common,cardinal vein
+xref: EMAP:4445 ! TS20,common,cardinal vein
+xref: EMAP:591 ! TS13,common,cardinal vein
+xref: EMAP:929 ! TS14,common,cardinal vein
+is_a: UBERON:0004344 ! cardinal vein
 relationship: part_of UBERON:0002201 ! vasculature of trunk
 xref: ncithesaurus:Common_Cardinal_Vein ! Common Cardinal Vein
 
@@ -26465,13 +26487,32 @@ synonym: "axial vein" RELATED []
 synonym: "caudal cardinal veins" RELATED []
 synonym: "PCV" RELATED []
 synonym: "posterior cardinal vein" EXACT []
+xref: EMAPA:16357 ! posterior
+xref: EHDAA:1316 ! posterior
 xref: FMA:70314 ! Postcardinal vein
 xref: HOG:0000111 ! posterior cardinal vein
 xref: TAO:0000477 ! posterior cardinal vein
 xref: ZFA:0000477 ! posterior cardinal vein
-is_a: UBERON:0001638 ! vein
+is_a: UBERON:0004344 ! cardinal vein
 relationship: part_of UBERON:0002201 ! vasculature of trunk
 xref: ncithesaurus:Posterior_Cardinal_Vein ! Posterior Cardinal Vein
+
+[Term]
+id: UBERON:0003087
+name: anterior cardinal vein
+alt_id: UBERON:XAO_0000383-ZFA_0000423
+comment: This class was created automatically from a combination of ontologies
+synonym: "ACV" RELATED []
+synonym: "rostral cardinal veins" RELATED []
+xref: EHDAA:1312 ! anterior
+xref: EMAPA:16355 ! anterior
+xref: HOG:0000113 ! anterior cardinal vein
+xref: TAO:0000423 ! anterior cardinal vein
+xref: XAO:0000383 ! anterior cardinal vein
+xref: ZFA:0000423 ! anterior cardinal vein
+is_a: UBERON:0001638 ! vein
+xref: ncithesaurus:Anterior_Cardinal_Vein ! Anterior Cardinal Vein
+def: "the two paired veins draining the cephalic part of the body." [MP:0004784]
 
 [Term]
 id: UBERON:0002066
@@ -32600,10 +32641,8 @@ xref: galen:Hand
 xref: MA:0000037 ! hand
 xref: OpenCyc:Mx4rvViGVZwpEbGdrcN5Y29ycA
 xref: EMAPA:17428
-is_a: UBERON:0002470 ! autopod
-relationship: part_of UBERON:0001460 ! arm
 intersection_of: UBERON:0002470 ! autopod
-intersection_of: part_of UBERON:0001460 ! arm
+intersection_of: part_of UBERON:0002102 ! forelimb
 xref: ncithesaurus:Hand ! Hand
 synonym: "fore-paw" NARROW SENSU [EMAPA:17428]
 synonym: "fore paw" NARROW SENSU [EMAPA:17428, OBOL:automatic]
@@ -42879,21 +42918,6 @@ xref: TAO:0000011 ! caudal artery
 xref: XAO:0000364 ! caudal artery
 xref: ZFA:0000011 ! caudal artery
 is_a: UBERON:0001637 ! artery
-
-[Term]
-id: UBERON:0003087
-name: anterior cardinal vein
-alt_id: UBERON:XAO_0000383-ZFA_0000423
-comment: This class was created automatically from a combination of ontologies
-synonym: "ACV" RELATED []
-synonym: "rostral cardinal veins" RELATED []
-xref: HOG:0000113 ! anterior cardinal vein
-xref: TAO:0000423 ! anterior cardinal vein
-xref: XAO:0000383 ! anterior cardinal vein
-xref: ZFA:0000423 ! anterior cardinal vein
-is_a: UBERON:0001638 ! vein
-xref: ncithesaurus:Anterior_Cardinal_Vein ! Anterior Cardinal Vein
-def: "the two paired veins draining the cephalic part of the body." [MP:0004784]
 
 [Term]
 id: UBERON:0003088
@@ -58495,15 +58519,6 @@ intersection_of: develops_into UBERON:0002470 ! autopod
 xref: ncithesaurus:Foot_Plate ! Foot Plate
 
 [Term]
-id: UBERON:0004344
-name: cardinal vein
-def: "any of the four veins in the developing vertebrate embryo which run along each side of the vertebral column" [MP:0004783]
-is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0001638 ! vein
-xref: EMAPA:16354 ! cardinal vein
-xref: ncithesaurus:Cardinal_Vein ! Cardinal Vein
-
-[Term]
 id: UBERON:0004345
 name: trophectoderm
 def: "outermost layer of cells in the blastodermic vesicle, which will develop into the trophoblast layer and then contact the endometrium and take part in establishing the embryo's means of nutrition" [MP:0005028]
@@ -61614,7 +61629,7 @@ id: UBERON:0004797
 name: blood vessel layer
 xref: MA:0002854 ! blood vessel layer
 intersection_of: UBERON:0000119 ! cell layer
-intersection_of: OBO_REL:develops_into UBERON:0001981 ! blood vessel
+intersection_of: develops_into UBERON:0001981 ! blood vessel
 
 [Term]
 id: UBERON:0004798
