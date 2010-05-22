@@ -29056,16 +29056,18 @@ intersection_of: part_of UBERON:0000970 ! eye
 synonym: "eye vascular network" EXACT [OBOL:automatic]
 synonym: "vascular network of eye" EXACT [OBOL:automatic]
 
-
 [Term]
 id: UBERON:0003071
+alt_id: UBERON:0005060
 name: eye primordium
 alt_id: UBERON:XAO_0000227-ZFA_0000570
-def: "Portion of tissue that is part of the anterior neural keel and will form the optic vesicle." [ZFA:0000570]
-comment: This class was created automatically from a combination of ontologies
+def: "Portion of tissue that is part of the anterior neural keel and will form the optic vesicle[ZFA]. A paired ectodermal placode that becomes invaginated to form the embryonic lens vesicles." [ZFA:0000570, GO:0046619]
+comment: TODO - check that GO's optic placode is the same as ZFA's eye primordium
 synonym: "eye anlage" RELATED []
 synonym: "eye field" RELATED []
 synonym: "optic primordium" EXACT []
+synonym: "optic placode" EXACT [GO:0046619]
+synonym: "eye placode" EXACT [OBOL:automatic]
 xref: TAO:0000570 ! optic primordium
 xref: XAO:0000227 ! eye primordium
 xref: ZFA:0000570 ! optic primordium
@@ -55818,20 +55820,21 @@ synonym: "blood vessel of placenta labyrinth" EXACT [OBOL:automatic]
 synonym: "labyrinthine layer of placenta blood vessel" EXACT [OBOL:automatic]
 synonym: "placenta labyrinth blood vessel" EXACT [OBOL:automatic]
 
-
 [Term]
 id: UBERON:0004184
 name: prostate gland stroma
+alt_id: UBERON:0005084
 def: "The prostate gland stroma is made up of the mesenchymal or fibroblast cells of the prostate gland" [GO:0060741]
+comment: TODO - check also FMA Stroma of glandular part of prostate
 intersection_of: UBERON:0003891 ! stroma
 intersection_of: part_of UBERON:0002367 ! prostate
 synonym: "prostate stroma" EXACT [OBOL:automatic]
 synonym: "stroma of prostate" EXACT [OBOL:automatic]
 synonym: "stroma of prostate gland" EXACT [OBOL:automatic]
+synonym: "stroma of glandular part of prostate" NARROW [FMA:74349, OBOL:automatic]
 xref: FMA:45719 ! Prostatic stroma
 xref: ncithesaurus:Prostatic_Stroma ! Prostatic Stroma
 xref: MA:0002912 ! prostate gland stroma
-
 
 [Term]
 id: UBERON:0004186
@@ -64403,13 +64406,6 @@ intersection_of: part_of UBERON:0002193 ! hemolymphoid system
 
 
 [Term]
-id: UBERON:0005060
-name: optic placode
-def: "paired ectodermal placodes that become invaginated to form the embryonic lens vesicles." [GO:0046619]
-intersection_of: UBERON:0001048 ! primordium
-intersection_of: develops_into UBERON:0000970 ! eye
-
-[Term]
 id: UBERON:0005061
 name: neural groove
 def: "A U-shaped structure formed when the edges of the neural plate thicken // The median dorsal longitudinal groove formed in the embryo by the neural plate after the appearance of the neural folds." [GOC:cjm, GO:0001842]
@@ -64583,15 +64579,6 @@ name: nipple sheath
 def: "a circular ingrowth of the epidermis around the region of the mammary sprout[GO]." [GO:0060659]
 is_a: UBERON:0001003 ! epidermis
 relationship: part_of UBERON:0002030 ! nipple
-
-[Term]
-id: UBERON:0005084
-name: prostate gland stroma
-def: "The prostate gland stroma is made up of the mesenchymal or fibroblast cells of the prostate gland[GO]." [GO:0060741]
-xref: FMA:74349 ! Stroma of glandular part of prostate
-xref: MA:0002912 ! prostate gland stroma
-intersection_of: UBERON:0003891 ! stroma
-intersection_of: part_of UBERON:0002367 ! prostate
 
 [Term]
 id: UBERON:0005085
@@ -64770,24 +64757,10 @@ intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
-id: UBERON:0005110
-name: metanephric nephron
-def: "A nephron is the functional unit of the kidney[GO]." [GO:0072210]
-intersection_of: UBERON:0001285 ! nephron
-intersection_of: part_of UBERON:0000081 ! metanephros
-
-[Term]
 id: UBERON:0005111
 name: metanephric pyramid
 def: "Metanephric pyramids are the conical masses that constitute the renal medulla in a metanephros; they contain the loops of Henle and the medullary collecting ducts[GO]." [GO:0072211]
 intersection_of: UBERON:0005098 ! kidney pyramid
-intersection_of: part_of UBERON:0000081 ! metanephros
-
-[Term]
-id: UBERON:0005112
-name: metanephric capsule
-def: "The metanephric capsule is the tough fibrous layer surrounding the metanephros, covered in a thick layer of perinephric adipose tissue. It provides some protection from trauma and damage[GO]." [GO:0072213]
-intersection_of: UBERON:0003893 ! capsule
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
@@ -64896,32 +64869,11 @@ intersection_of: UBERON:0001291 ! thick ascending limb of loop of Henle
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
-id: UBERON:0005128
-name: metanephric nephron tubule
-def: "A metanephric nephron tubule is an epithelial tube that is part of the metanephric nephron, the functional part of the metanephros[GO]." [GO:0072234]
-intersection_of: UBERON:0001231 ! renal tubule
-intersection_of: part_of UBERON:0000081 ! metanephros
-
-[Term]
-id: UBERON:0005129
-name: metanephric distal tubule
-def: "The metanephric distal tubule is a metanephric nephron tubule that begins at the metanephric macula densa and extends to the metanephric connecting tubule[GO]." [GO:0072235]
-intersection_of: UBERON:0004135 ! distal tubule
-intersection_of: part_of UBERON:0000081 ! metanephros
-
-[Term]
 id: UBERON:0005130
 name: metanephric loop of Henle
 def: "The metanephric loop of Henle is a metanephric nephron tubule that connects the proximal convoluted tubule to the distal convoluted tubule in the metanephros[GO]." [GO:0072236]
 relationship: part_of UBERON:0004136 ! intermediate tubule
 intersection_of: UBERON:0001288 ! loop of Henle
-intersection_of: part_of UBERON:0000081 ! metanephros
-
-[Term]
-id: UBERON:0005131
-name: metanephric proximal tubule
-def: "It has a brush border epithelial morphology[GO]." [GO:0072237]
-intersection_of: UBERON:0004134 ! proximal tubule
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
@@ -64933,6 +64885,7 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0005133
+alt_id: UBERON:0005143
 name: metanephric glomerulus vasculature
 def: "The metanephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the metanephric glomerulus[GO]." [GO:0072239]
 intersection_of: UBERON:0004190 ! glomerulus vasculature
@@ -64962,15 +64915,9 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0005137
+alt_id: UBERON:0005112
 name: metanephric capsule
-def: "It provides some protection from trauma and damage[GO]." [GO:0072265]
-intersection_of: UBERON:0003893 ! capsule
-intersection_of: part_of UBERON:0000081 ! metanephros
-
-[Term]
-id: UBERON:0005138
-name: metanephric capsule
-def: "It provides some protection from trauma and damage[GO]." [GO:0072266]
+def: "The metanephric capsule is the tough fibrous layer surrounding the metanephros, covered in a thick layer of perinephric adipose tissue. It provides some protection from trauma and damage[GO]." [GO:0072213]
 intersection_of: UBERON:0003893 ! capsule
 intersection_of: part_of UBERON:0000081 ! metanephros
 
@@ -64996,18 +64943,11 @@ intersection_of: UBERON:0005099 ! short descending thin limb
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
-id: UBERON:0005142
+id: UBERON:0005110
+alt_id: UBERON:0005142
 name: metanephric nephron
 def: "A metanephric nephron is the functional unit of the metanephros[GO]." [GO:0072273]
-relationship: part_of UBERON:0000081 ! metanephros
 intersection_of: UBERON:0001285 ! nephron
-intersection_of: part_of UBERON:0000081 ! metanephros
-
-[Term]
-id: UBERON:0005143
-name: metanephric glomerulus vasculature
-def: "The metanephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the metanephric glomerulus[GO]." [GO:0072276]
-intersection_of: UBERON:0004190 ! glomerulus vasculature
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
@@ -65026,6 +64966,8 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0005146
+alt_id: UBERON:0005128
+alt_id: UBERON:0005152
 name: metanephric nephron tubule
 def: "A metanephric nephron tubule is an epithelial tube that is part of the metanephric nephron, the functional part of the metanephros[GO]." [GO:0072282]
 intersection_of: UBERON:0001231 ! renal tubule
@@ -65053,24 +64995,19 @@ intersection_of: UBERON:0005097 ! connecting tubule
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
-id: UBERON:0005150
+id: UBERON:0005129
+alt_id: UBERON:0005150
 name: metanephric distal tubule
-def: "The metanephric distal tubule is a metanephric nephron tubule that begins at the macula densa and extends to the metanephric connecting tubule[GO]." [GO:0072287]
+def: "The metanephric distal tubule is a metanephric nephron tubule that begins at the metanephric macula densa and extends to the metanephric connecting tubule[GO]." [GO:0072235]
 intersection_of: UBERON:0004135 ! distal tubule
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0005151
+alt_id: UBERON:0005131
 name: metanephric proximal tubule
-def: "It has a brush border epithelial morphology[GO]." [GO:0072288]
+def: "The metanephric proximal tubule is a metanephric nephron tubule that connects Bowman's capsule to the descending thin limb of the loop of Henle in the metanephros. It has a brush border epithelial morphology[GO]." [GO:0072288]
 intersection_of: UBERON:0004134 ! proximal tubule
-intersection_of: part_of UBERON:0000081 ! metanephros
-
-[Term]
-id: UBERON:0005152
-name: metanephric nephron tubule
-def: "A metanephric nephron tubule is an epithelial tube that is part of a nephron in the metanephros[GO]." [GO:0072289]
-intersection_of: UBERON:0001231 ! renal tubule
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
