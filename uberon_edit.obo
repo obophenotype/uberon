@@ -1210,7 +1210,7 @@ xref: FMA:86140 ! Organ segment
 is_a: UBERON:0000064 ! organ part
 
 [Term]
-id: UBERON:0000914
+id: UBERON:0000914 ! organismal segment
 name: organismal segment
 alt_id: UBERON:FBbt_00000003-FMA_11367-MIAA_0000271
 def: "One of the repeated divisions of the whole organism." [FB:gg, Wikipedia:Segmentation_(biology)]
@@ -5297,7 +5297,7 @@ synonym: "embryonic germ layer" RELATED []
 synonym: "embryonic germ layers" RELATED []
 synonym: "embryonic tissue" BROAD [FMA:69069]
 synonym: "germinal layer" EXACT [ncithesaurus:Germinal_Layer]
-synonym: "primary germ layer" EXACT []
+synonym: "primary germ layer" EXACT [GO:0001704, ZFA:0001122]
 xref: AAO:0000480 ! primary_germ_layer
 xref: BILA:0000035
 xref: BTO:0000556
@@ -8214,7 +8214,8 @@ xref: MAT:0000069 ! neural tube
 xref: MIAA:0000069 ! neural tube
 xref: TAO:0001135 ! neural tube
 xref: ZFA:0001135 ! neural tube
-is_a: UBERON:0002346 ! neural ectoderm
+is_a: UBERON:0000025 ! tube
+is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0000483 ! epithelium
 relationship: develops_from UBERON:0002346 ! neural ectoderm
 xref: ncithesaurus:Neural_Tube ! Neural Tube
@@ -25160,6 +25161,7 @@ xref: MA:0000386 ! placenta
 xref: MAT:0000279 ! placenta
 xref: MIAA:0000279 ! placenta
 is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0000990 ! reproductive system
 relationship: only_in_taxon NCBITaxon:32525 ! Theria
 xref: ncithesaurus:Placenta ! Placenta
@@ -26231,6 +26233,7 @@ xref: ZFA:0005249 ! vasculature
 xref: MA:0002718 ! vascular system
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001009 ! circulatory system
+relationship: part_of UBERON:0000062 ! organ
 xref: BTO:0003718 ! vasculature
 
 [Term]
@@ -26682,7 +26685,7 @@ xref: HOG:0001268 ! hair follicle
 xref: MA:0000154 ! hair follicle
 xref: OpenCyc:Mx4rvVjOI5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000479 ! portion of tissue
-relationship: part_of UBERON:0002097 ! skin of body
+relationship: part_of UBERON:0001003 ! epidermis
 xref: ncithesaurus:Hair_Follicle ! Hair Follicle
 xref: EFO:0002464 ! hair follicle
 xref: OpenCyc:Mx4rvVjOI5wpEbGdrcN5Y29ycA ! hair follicle
@@ -31046,6 +31049,7 @@ xref: MIAA:0000068 ! somite
 xref: TAO:0000155 ! somite
 xref: XAO:0000058 ! somite
 xref: ZFA:0000155 ! somite
+is_a: UBERON:0000914 ! organismal segment
 is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0003059 ! presomitic mesoderm
 relationship: part_of UBERON:0000926 ! mesoderm
@@ -43692,6 +43696,7 @@ xref: ncithesaurus:Chorion ! Chorion
 id: UBERON:0003125
 name: vitelline membrane
 def: "a structure directly adjacent to the outer surface of the plasma membrane of an ovum. It is composed mostly of protein fibers, with protein receptors needed for sperm binding, binding to sperm plasma membrane receptors. The species-specificity between these receptors contributes to prevention of breeding between different species [Wikipedia]. A protective layer around the egg[FBbt]." [Wikipedia:Vitelline_membrane]
+comment: TODO - consider GO CC request. GO:0030704-vitelline membrane formation considered a subclass of CC organization
 synonym: "zona pellucida" RELATED []
 xref: FBbt:00000042 ! vitelline membrane
 xref: GAID:1318 ! vitelline membrane
@@ -55319,8 +55324,7 @@ is_a: UBERON:0001134 ! skeletal muscle tissue
 id: UBERON:0000948
 name: heart
 alt_id: UBERON:FBbt_00003154-FMA_7088-MA_0000072-MIAA_0000036-XAO_0000064-ZFA_0000114
-def: "A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood[GO]." [GO:0007507]
-comment: FISH: Primitive fish have a four-chambered heart; however, the chambers are arranged sequentially so that this primitive heart is quite unlike the four-chambered hearts of mammals and birds. The first chamber is the sinus venosus, which collects de-oxygenated blood, from the body, through the hepatic and cardinal veins. From here, blood flows into the atrium and then to the powerful muscular ventricle where the main pumping action takes place. The fourth and final chamber is the conus arteriosus which contains several valves and sends blood to the ventral aorta. The ventral aorta delivers blood to the gills where it is oxygenated and flows, through the dorsal aorta, into the rest of the body. (In tetrapods, the ventral aorta has divided in two; one half forms the ascending aorta, while the other forms the pulmonary artery. In the adult fish, the four chambers are not arranged in a straight row but, instead, form an S-shape with the latter two chambers lying above the former two. This relatively simpler pattern is found in cartilaginous fish and in the more primitive ray-finned fish. In teleosts, the conus arteriosus is very small and can more accurately be described as part of the aorta rather than of the heart proper. The conus arteriosus is not present in any amniotes  which presumably having been absorbed into the ventricles over the course of evolution. Similarly, while the sinus venosus is present as a vestigial structure in some reptiles and birds, it is otherwise absorbed into the right atrium and is no longer distinguishable.
+def: "A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood[GO]. Primitive fish have a four-chambered heart; however, the chambers are arranged sequentially so that this primitive heart is quite unlike the four-chambered hearts of mammals and birds. The first chamber is the sinus venosus, which collects de-oxygenated blood, from the body, through the hepatic and cardinal veins. From here, blood flows into the atrium and then to the powerful muscular ventricle where the main pumping action takes place. The fourth and final chamber is the conus arteriosus which contains several valves and sends blood to the ventral aorta. The ventral aorta delivers blood to the gills where it is oxygenated and flows, through the dorsal aorta, into the rest of the body. (In tetrapods, the ventral aorta has divided in two; one half forms the ascending aorta, while the other forms the pulmonary artery. In the adult fish, the four chambers are not arranged in a straight row but, instead, form an S-shape with the latter two chambers lying above the former two. This relatively simpler pattern is found in cartilaginous fish and in the more primitive ray-finned fish. In teleosts, the conus arteriosus is very small and can more accurately be described as part of the aorta rather than of the heart proper. The conus arteriosus is not present in any amniotes  which presumably having been absorbed into the ventricles over the course of evolution. Similarly, while the sinus venosus is present as a vestigial structure in some reptiles and birds, it is otherwise absorbed into the right atrium and is no longer distinguishable[WP]." [GO:0007507]
 subset: uberon_slim
 synonym: "heart" EXACT []
 xref: BILA:0000020
@@ -55339,7 +55343,7 @@ xref: OpenCyc:Mx4rvVjvDpwpEbGdrcN5Y29ycA
 xref: TAO:0000114 ! heart
 xref: XAO:0000064 ! heart
 xref: ZFA:0000114 ! heart
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0001009 ! circulatory system
 xref: ncithesaurus:Heart ! Heart
 
@@ -55969,13 +55973,6 @@ is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001285 ! nephron
 
 [Term]
-id: UBERON:0004200
-name: kidney pyramid
-def: "Kidney pyramids are the conical masses that make up the renal medulla; they contain the loops of Henle, the collecting ducts, and the renal arterioles" [GO:0072056]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0002113 ! kidney
-
-[Term]
 id: UBERON:0004201
 name: inner stripe
 def: "The inner stripe is a deep, centrally located portion of the renal outer medulla and is traversed by thick and thin portions of nephron tubules" [GO:0072057]
@@ -55993,8 +55990,9 @@ relationship: part_of UBERON:0001293 ! outer medulla of kidney
 id: UBERON:0004203
 name: cortical collecting duct
 def: " The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex" [GO:0072059]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
+intersection_of: UBERON:0000058 ! duct
+intersection_of: part_of UBERON:0001232 ! collecting duct of renal tubule
+intersection_of: part_of UBERON:0001225 ! cortex of kidney
 xref: EMAPA:28130 ! cortical collecting duct
 
 [Term]
@@ -64669,12 +64667,13 @@ def: "The connecting tubule is a tubular segment of the nephron; it connects the
 is_a: UBERON:0001231 ! renal tubule
 xref: MA:0002610 ! renal connecting tubule
 
+
 [Term]
-id: UBERON:0005098
+id: UBERON:0004200
+alt_id: UBERON:0005098
 name: kidney pyramid
-def: "Kidney pyramids are the conical masses that constitute the renal medulla in a multi-lobed mammalian kidney; they contain the loops of Henle and the medullary collecting ducts[GO]." [GO:0072056]
-comment: TODO partonomy
 synonym: "pyramid" EXACT []
+def: "Kidney pyramids are the conical masses that constitute the renal medulla in a multi-lobed mammalian kidney; they contain the loops of Henle and the medullary collecting ducts[GO]." [GO:0072056]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000362 ! renal medulla
 
@@ -64760,7 +64759,7 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 id: UBERON:0005111
 name: metanephric pyramid
 def: "Metanephric pyramids are the conical masses that constitute the renal medulla in a metanephros; they contain the loops of Henle and the medullary collecting ducts[GO]." [GO:0072211]
-intersection_of: UBERON:0005098 ! kidney pyramid
+intersection_of: UBERON:0004200 ! kidney pyramid
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]

@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 15:05:2010 15:17
+date: 22:05:2010 15:00
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -1201,6 +1201,7 @@ xref: EHDAA:7860
 xref: FMA:87656
 xref: ncithesaurus:Surface_Ectoderm
 is_a: UBERON:0000923 ! germ layer
+is_a: UBERON:0005085 ! implied link automatically realized ! ectodermal placode
 relationship: part_of UBERON:0000924 ! ectoderm
 
 [Term]
@@ -1302,9 +1303,11 @@ id: UBERON:0000083
 name: mesonephric tubule
 def: "Genital ridge that is next to the mesonephros." [Wikipedia:Mesonephric_tubules]
 xref: HOG:0000500
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0000080 ! mesonephros
+is_a: UBERON:0003914 ! implied link automatically realized ! epithelial tube
+is_a: UBERON:0005103 ! implied link automatically realized ! mesonephric epithelium
+relationship: part_of UBERON:0000080
+intersection_of: UBERON:0003914 ! epithelial tube
+intersection_of: part_of UBERON:0000080 ! mesonephros
 
 [Term]
 id: UBERON:0000084
@@ -1315,9 +1318,8 @@ xref: BTO:0001646
 xref: EHDAA:3091
 xref: EHDAA:5917
 xref: HOG:0000541
+is_a: UBERON:0000083 ! implied link automatically realized ! mesonephric tubule
 is_a: UBERON:0003914 ! epithelial tube
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004819 ! implied link automatically realized ! kidney epithelium
 relationship: part_of UBERON:0003074 ! mesonephric duct
 
 [Term]
@@ -4852,7 +4854,7 @@ synonym: "embryonic germ layer" RELATED []
 synonym: "embryonic germ layers" RELATED []
 synonym: "embryonic tissue" BROAD [FMA:69069]
 synonym: "germinal layer" EXACT [ncithesaurus:Germinal_Layer]
-synonym: "primary germ layer" EXACT []
+synonym: "primary germ layer" EXACT [GO:0001704, ZFA:0001122]
 xref: AAO:0000480
 xref: BILA:0000035
 xref: BTO:0000556
@@ -5321,8 +5323,7 @@ is_a: UBERON:0001637 ! artery
 id: UBERON:0000948
 name: heart
 alt_id: UBERON:FBbt_00003154-FMA_7088-MA_0000072-MIAA_0000036-XAO_0000064-ZFA_0000114
-def: "A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood[GO]." [GO:0007507]
-comment: FISH: Primitive fish have a four-chambered heart; however, the chambers are arranged sequentially so that this primitive heart is quite unlike the four-chambered hearts of mammals and birds. The first chamber is the sinus venosus, which collects de-oxygenated blood, from the body, through the hepatic and cardinal veins. From here, blood flows into the atrium and then to the powerful muscular ventricle where the main pumping action takes place. The fourth and final chamber is the conus arteriosus which contains several valves and sends blood to the ventral aorta. The ventral aorta delivers blood to the gills where it is oxygenated and flows, through the dorsal aorta, into the rest of the body. (In tetrapods, the ventral aorta has divided in two; one half forms the ascending aorta, while the other forms the pulmonary artery. In the adult fish, the four chambers are not arranged in a straight row but, instead, form an S-shape with the latter two chambers lying above the former two. This relatively simpler pattern is found in cartilaginous fish and in the more primitive ray-finned fish. In teleosts, the conus arteriosus is very small and can more accurately be described as part of the aorta rather than of the heart proper. The conus arteriosus is not present in any amniotes  which presumably having been absorbed into the ventricles over the course of evolution. Similarly, while the sinus venosus is present as a vestigial structure in some reptiles and birds, it is otherwise absorbed into the right atrium and is no longer distinguishable.
+def: "A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood[GO]. Primitive fish have a four-chambered heart; however, the chambers are arranged sequentially so that this primitive heart is quite unlike the four-chambered hearts of mammals and birds. The first chamber is the sinus venosus, which collects de-oxygenated blood, from the body, through the hepatic and cardinal veins. From here, blood flows into the atrium and then to the powerful muscular ventricle where the main pumping action takes place. The fourth and final chamber is the conus arteriosus which contains several valves and sends blood to the ventral aorta. The ventral aorta delivers blood to the gills where it is oxygenated and flows, through the dorsal aorta, into the rest of the body. (In tetrapods, the ventral aorta has divided in two; one half forms the ascending aorta, while the other forms the pulmonary artery. In the adult fish, the four chambers are not arranged in a straight row but, instead, form an S-shape with the latter two chambers lying above the former two. This relatively simpler pattern is found in cartilaginous fish and in the more primitive ray-finned fish. In teleosts, the conus arteriosus is very small and can more accurately be described as part of the aorta rather than of the heart proper. The conus arteriosus is not present in any amniotes  which presumably having been absorbed into the ventricles over the course of evolution. Similarly, while the sinus venosus is present as a vestigial structure in some reptiles and birds, it is otherwise absorbed into the right atrium and is no longer distinguishable[WP]." [GO:0007507]
 subset: uberon_slim
 synonym: "heart" EXACT []
 xref: BILA:0000020
@@ -5342,7 +5343,7 @@ xref: OpenCyc:Mx4rvVjvDpwpEbGdrcN5Y29ycA
 xref: TAO:0000114
 xref: XAO:0000064
 xref: ZFA:0000114
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0001009 ! circulatory system
 
 [Term]
@@ -6187,6 +6188,7 @@ xref: TAO:0000413
 xref: WBbt:0005175
 xref: XAO:0003146
 xref: ZFA:0000413
+is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0003133 ! reproductive organ
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000990 ! reproductive system
@@ -6217,7 +6219,8 @@ synonym: "gonada of female organism reproductive system" EXACT [OBOL:automatic]
 synonym: "gonada of female reproductive system" EXACT [OBOL:automatic]
 synonym: "gonada of genitalia of female organism" EXACT [OBOL:automatic]
 synonym: "gonada of reproductive system of female organism" EXACT [OBOL:automatic]
-synonym: "ovaries" RELATED []
+synonym: "ovaries" RELATED PLURAL []
+synonym: "ovum-producing ovary" EXACT SENSU [GO:0061039]
 synonym: "reproductive system of female organism gonad" EXACT [OBOL:automatic]
 synonym: "reproductive system of female organism gonada" EXACT [OBOL:automatic]
 xref: AAO:0000371
@@ -6284,7 +6287,7 @@ relationship: part_of UBERON:0000991 ! gonad
 id: UBERON:0000995
 name: uterus
 alt_id: UBERON:FBbt_00004924-FMA_17558-MA_0000389-MIAA_0000127-WBbt_0006760
-def: "The organ in which the eggs are developed and protected until laid." [ISBN:0198611862, WB:rynl, Wikipedia:Uterus]
+def: "An organ in which the eggs are developed and protected until laid." [ISBN:0198611862, Wikipedia:Uterus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "uterine horn" RELATED []
@@ -6303,6 +6306,7 @@ xref: ncithesaurus:Uterus
 xref: OpenCyc:Mx4rvViojJwpEbGdrcN5Y29ycA
 xref: WBbt:0006760
 is_a: UBERON:0000062 ! organ
+is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000991 ! gonad
 
@@ -7386,7 +7390,8 @@ xref: MIAA:0000069
 xref: ncithesaurus:Neural_Tube
 xref: TAO:0001135
 xref: ZFA:0001135
-is_a: UBERON:0002346 ! neural ectoderm
+is_a: UBERON:0000025 ! tube
+is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0000483 ! epithelium
 relationship: develops_from UBERON:0002346 ! neural ectoderm
@@ -9665,6 +9670,7 @@ xref: ncithesaurus:Biliary_Tract
 xref: XAO:0000455
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0005057 ! implied link automatically realized ! immune organ
 relationship: develops_from UBERON:0004912 ! biliary bud
 relationship: part_of UBERON:0002107 ! liver
 relationship: part_of UBERON:0002294 ! biliary system
@@ -9938,6 +9944,7 @@ xref: MA:0002012
 xref: ncithesaurus:Ovarian_Artery
 xref: OpenCyc:Mx4rwOa9PZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001637 ! artery
+is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000992
 intersection_of: UBERON:0001637 ! artery
@@ -10667,7 +10674,7 @@ name: renal tubule
 alt_id: UBERON:0004210
 alt_id: UBERON:FMA_15627-ZFA_0001287
 def: "An epithelial tube that is part of the nephron, the functional part of the kidney." [GO:0072078, Wikipedia:Renal_tubule]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check renal tubule vs nephron tubule - assume for now.
 subset: uberon_slim
 synonym: "nephron tubule" EXACT [GO:0072078]
 synonym: "tubulus renalis" EXACT []
@@ -11182,6 +11189,7 @@ xref: XAO:0000154
 is_a: UBERON:0000489 ! cavitated compound organ
 is_a: UBERON:0002075 ! viscus
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005057 ! implied link automatically realized ! immune organ
 relationship: develops_from UBERON:0000164 ! urogenital sinus
 relationship: part_of UBERON:0001556 ! lower urinary tract
 relationship: part_of UBERON:0002323 ! body cavity
@@ -11892,10 +11900,11 @@ comment: TODO: thick/thin check
 subset: uberon_slim
 synonym: "ascending limb" BROAD []
 synonym: "ascending limb of henle's loop" BROAD []
-synonym: "ascending thick limb" BROAD []
+synonym: "ascending thick limb" EXACT []
+synonym: "ascending thick limb of henle's loop" EXACT []
 synonym: "distal straight tubule" EXACT []
 synonym: "loop of henle ascending limb" BROAD []
-synonym: "thick ascending limb" BROAD []
+synonym: "thick ascending limb" EXACT []
 synonym: "Thick ascending limb of Henle's loop" EXACT []
 xref: EMAPA:28331
 xref: EMAPA:28396
@@ -17691,8 +17700,9 @@ xref: OpenCyc:Mx4rv2kf-5wpEbGdrcN5Y29ycA
 xref: TAO:0005145
 xref: XAO:0000172
 xref: ZFA:0005145
-is_a: UBERON:0000062 ! organ
+is_a: UBERON:0000062 ! implied link automatically realized ! organ
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005090 ! muscle structure
 relationship: has_part UBERON:0002385
 intersection_of: UBERON:0000062 ! organ
 intersection_of: has_part UBERON:0002385 ! muscle tissue
@@ -18576,6 +18586,7 @@ xref: ncithesaurus:Nasal_Bone
 xref: OpenCyc:Mx4rwGOTZJwpEbGdrcN5Y29ycA
 xref: TAO:0000365
 xref: ZFA:0000365
+is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
@@ -19599,9 +19610,9 @@ id: UBERON:0001736
 name: submandibular gland
 alt_id: UBERON:FMA_55093-MA_0001589
 def: "The paired submandibular glands (submaxillary glands) are salivary glands located beneath the floor of the mouth. In humans, they account for 70% of the salivary volume and weigh about 15 grams. [WP,unvetted]." [Wikipedia:Submandibular_gland]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO check SSG vs SG
 subset: uberon_slim
-synonym: "submandibular salibary gland" RELATED []
+synonym: "submandibular salivary gland" RELATED []
 synonym: "submaxillary gland" RELATED []
 xref: BTO:0001316
 xref: EFO:0001387
@@ -24416,6 +24427,7 @@ xref: MAT:0000279
 xref: MIAA:0000279
 xref: ncithesaurus:Placenta
 xref: OpenCyc:Mx4rvv4zZ5wpEbGdrcN5Y29ycA
+is_a: UBERON:0000062 ! organ
 is_a: UBERON:0000478 ! extraembryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000990 ! reproductive system
@@ -25547,6 +25559,7 @@ xref: FMA:69050
 xref: MA:0002718
 xref: ZFA:0005249
 is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of UBERON:0000062 ! organ
 relationship: part_of UBERON:0001009 ! circulatory system
 
 [Term]
@@ -25973,7 +25986,7 @@ xref: OpenCyc:Mx4rvVjOI5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
-relationship: part_of UBERON:0002097 ! skin of body
+relationship: part_of UBERON:0001003 ! epidermis
 
 [Term]
 id: UBERON:0002074
@@ -25992,13 +26005,16 @@ id: UBERON:0002075
 name: viscus
 alt_id: UBERON:FMA_7085-XAO_0003034
 def: "An organ that is located within the body cavity (or in its extension, in the scrotum); it consists of organ parts that are embryologically derived from endoderm, splanchnic mesoderm or intermediate mesoderm; together with other organs, the viscus constitutes the respiratory, gastrointestinal, urinary, reproductive and immune systems, or is the central organ of the cardiovascular system. Examples: heart, lung, esophagus, kidney, ovary, spleen. // An internal organ of the body; especially: one (as the heart, liver, or intestine) located in the great cavity of the trunk proper." [BTO:0001491, Wikipedia:Viscus]
-comment: This class was created automatically from a combination of ontologies
+comment: general anatomical term in FMA
 subset: uberon_slim
 synonym: "viscera" RELATED []
 xref: BTO:0001491
 xref: FMA:7085
 xref: XAO:0003034
-is_a: UBERON:0000062 ! organ
+is_a: UBERON:0000062 ! implied link automatically realized ! organ
+relationship: part_of UBERON:0002323
+intersection_of: UBERON:0000062 ! organ
+intersection_of: part_of UBERON:0002323 ! body cavity
 relationship: part_of UBERON:0002100 ! trunk
 
 [Term]
@@ -26634,6 +26650,7 @@ xref: XAO:0000328
 xref: ZFA:0000436
 is_a: UBERON:0002075 ! viscus
 is_a: UBERON:0004177 ! implied link automatically realized ! hemopoietic organ
+is_a: UBERON:0005057 ! implied link automatically realized ! immune organ
 relationship: develops_from UBERON:0001048 ! primordium
 relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0001007 ! digestive system
@@ -26665,6 +26682,7 @@ xref: XAO:0000133
 xref: ZFA:0000123
 is_a: UBERON:0002365 ! exocrine gland
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0005057 ! implied link automatically realized ! immune organ
 relationship: develops_from UBERON:0000925 ! endoderm
 relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0002405 ! immune system
@@ -26937,6 +26955,7 @@ xref: TAO:0000151
 xref: XAO:0002000
 xref: ZFA:0000151
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0002113 ! kidney
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003104 ! mesenchyme
@@ -27418,7 +27437,7 @@ alt_id: UBERON:FMA_72482-MA_0001027
 def: "visceromotor cranial nerve nucleus located in the pontine tegmentum." [Wikipedia:Superior_salivatory_nucleus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "superior salivary nucleus" EXACT []
+synonym: "superior salivary nucleus" EXACT [GO:0021753]
 xref: FMA:72482
 xref: MA:0001027
 xref: NIF_GrossAnatomy:birnlex_1131
@@ -30476,6 +30495,7 @@ xref: ncithesaurus:Somite
 xref: TAO:0000155
 xref: XAO:0000058
 xref: ZFA:0000155
+is_a: UBERON:0000914 ! organismal segment
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003059 ! presomitic mesoderm
@@ -30820,6 +30840,7 @@ xref: TAO:0001120
 xref: XAO:0000042
 xref: ZFA:0001120
 is_a: UBERON:0000923 ! germ layer
+is_a: UBERON:0005085 ! implied link automatically realized ! ectodermal placode
 relationship: part_of UBERON:0000924 ! ectoderm
 
 [Term]
@@ -31287,7 +31308,7 @@ relationship: develops_from UBERON:0003280 ! endothelium of main bronchus
 id: UBERON:0002368
 name: endocrine gland
 alt_id: UBERON:FMA_9602-MA_0002563
-def: "." [Wikipedia:Endocrine_gland]
+def: "Endocrine glands are glands of the endocrine system that secrete their products, hormones, directly into the blood rather than through a duct. The main endocrine glands include the pituitary gland, pancreas, ovaries, testes, thyroid gland, and adrenal glands. The hypothalamus  is a neuroendocrine organ. Other organs which are not so well known for their endocrine activity include the stomach, which produces such hormones as ghrelin[WP]." [Wikipedia:Endocrine_gland]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "ductless gland" EXACT []
@@ -31298,11 +31319,10 @@ xref: GAID:335
 xref: MA:0002563
 xref: ncithesaurus:Endocrine_Gland
 xref: OpenCyc:Mx4rvbkiRZwpEbGdrcN5Y29ycA
-is_a: UBERON:0002530 ! gland
+is_a: UBERON:0002530 ! implied link automatically realized ! gland
 relationship: part_of UBERON:0000949
 intersection_of: UBERON:0002530 ! gland
 intersection_of: part_of UBERON:0000949 ! endocrine system
-relationship: part_of UBERON:0000949 ! endocrine system
 
 [Term]
 id: UBERON:0002369
@@ -31353,6 +31373,7 @@ xref: XAO:0000163
 xref: ZFA:0001078
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0004177 ! implied link automatically realized ! hemopoietic organ
+is_a: UBERON:0005057 ! implied link automatically realized ! immune organ
 relationship: part_of UBERON:0002224 ! thoracic cavity
 relationship: part_of UBERON:0002390 ! hematopoietic system
 relationship: part_of UBERON:0002405 ! immune system
@@ -32701,12 +32722,13 @@ relationship: part_of UBERON:0001894 ! diencephalon
 id: UBERON:0002435
 name: striatum
 alt_id: UBERON:MA_0000891-FMA_77618
-def: "The striatum is a large cluster of dopaminergic nerve cells, consisting of the caudate nucleus and the putamen, that controls movement, balance, and walking[GO]." [Wikipedia:Striatum]
+def: "a region of the forebrain consisting of the caudate nucleus, putamen and fundus striati.[GO]." [Wikipedia:Striatum]
 subset: uberon_slim
 synonym: "corpus striatum" RELATED [MA:0000891]
 xref: EFO:0000109
 xref: FMA:77618
 xref: MA:0000891
+xref: NIF_GrossAnatomy:birnlex_1672
 xref: NIF_GrossAnatomy:nlx_anat_100312
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
@@ -32985,6 +33007,7 @@ synonym: "uterine glands set" EXACT []
 xref: FMA:71647
 xref: MA:0001726
 xref: ncithesaurus:Uterine_Gland
+is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
 relationship: part_of UBERON:0000995 ! uterus
@@ -33638,6 +33661,7 @@ subset: uberon_slim
 xref: FMA:18829
 xref: MA:0002799
 is_a: UBERON:0001637 ! artery
+is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000995
 intersection_of: UBERON:0001637 ! artery
@@ -39273,13 +39297,11 @@ name: inferior salivatory nucleus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_2645-FMA_72601
 def: "In the brain, the inferior salivatory nucleus is a cluster of neurons controlling the parasympathetic input to the parotid gland. It is one of the components of the glossopharyngeal nerve. [WP,unvetted]." [Wikipedia:Inferior_salivatory_nucleus]
 subset: uberon_slim
-synonym: "inferior salivary nucleus" EXACT []
+synonym: "inferior salivary nucleus" EXACT [GO:0021752]
 synonym: "inferior salivatary nucleus" EXACT []
 xref: FMA:72601
 xref: NIF_GrossAnatomy:birnlex_2645
 is_a: UBERON:0000126 ! implied link automatically realized ! cranial nerve nucleus
-is_a: UBERON:0002020 ! gray matter of neuraxis
-is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 is_a: UBERON:0004133 ! salivatory nucleus
 relationship: part_of UBERON:0001649 ! glossopharyngeal nerve
 
@@ -40727,13 +40749,13 @@ relationship: part_of UBERON:0001925 ! ventral lateral nucleus
 
 [Term]
 id: UBERON:0002979
-name: purkinje cell layer of cerebellar cortex
+name: Purkinje cell layer of cerebellar cortex
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_818-FMA_83896
 def: "The Purkinje cell layer lies just underneath the molecular layer of the cerebellar cortex. It contains the neuronal cell bodies of the Purkinje cells that are arranged side by side in a single layer. Candelabrum interneurons are vertically oriented between the Purkinje cells. Purkinje neurons are inhibitory and provide the output of the cerebellar cortex through axons that project into the white matter. Extensive dendritic trees from the Purkinje cells extend upward in a single plane into the molecular layer where they synapse with parallel fibers of granule cells." [GO:0021680]
-synonym: "cerebellar purkinje cell layer" EXACT [FMA:83896]
-synonym: "cerebellum purkinje cell layer" EXACT []
-synonym: "cerebellum purkinje layer" EXACT []
-synonym: "purkinje cell layer" EXACT [FMA:83896]
+synonym: "cerebellar Purkinje cell layer" EXACT [FMA:83896, GO:0021694]
+synonym: "cerebellum Purkinje cell layer" EXACT []
+synonym: "cerebellum Purkinje layer" EXACT []
+synonym: "Purkinje cell layer" EXACT [FMA:83896]
 xref: FMA:83896
 xref: MA:0000997
 xref: NIF_GrossAnatomy:birnlex_818
@@ -42149,11 +42171,14 @@ relationship: develops_from UBERON:0003067 ! dorsolateral placode
 [Term]
 id: UBERON:0003071
 name: eye primordium
+alt_id: UBERON:0005060
 alt_id: UBERON:XAO_0000227-ZFA_0000570
-def: "Portion of tissue that is part of the anterior neural keel and will form the optic vesicle." [ZFA:0000570]
-comment: This class was created automatically from a combination of ontologies
+def: "Portion of tissue that is part of the anterior neural keel and will form the optic vesicle[ZFA]. A paired ectodermal placode that becomes invaginated to form the embryonic lens vesicles." [GO:0046619, ZFA:0000570]
+comment: TODO - check that GO's optic placode is the same as ZFA's eye primordium
 synonym: "eye anlage" RELATED []
 synonym: "eye field" RELATED []
+synonym: "eye placode" EXACT [OBOL:automatic]
+synonym: "optic placode" EXACT [GO:0046619]
 synonym: "optic primordium" EXACT []
 xref: TAO:0000570
 xref: XAO:0000227
@@ -42193,7 +42218,7 @@ xref: ncithesaurus:Lens_Placodes
 xref: TAO:0000122
 xref: XAO:0000240
 xref: ZFA:0000122
-is_a: UBERON:0001048 ! implied link automatically realized ! primordium
+is_a: UBERON:0005085 ! implied link automatically realized ! ectodermal placode
 relationship: develops_into UBERON:0000965
 intersection_of: UBERON:0001048 ! primordium
 intersection_of: develops_into UBERON:0000965 ! lens
@@ -43125,6 +43150,7 @@ relationship: part_of UBERON:0000992 ! ovary
 id: UBERON:0003125
 name: vitelline membrane
 def: "a structure directly adjacent to the outer surface of the plasma membrane of an ovum. It is composed mostly of protein fibers, with protein receptors needed for sperm binding, binding to sperm plasma membrane receptors. The species-specificity between these receptors contributes to prevention of breeding between different species [Wikipedia]. A protective layer around the egg[FBbt]." [Wikipedia:Vitelline_membrane]
+comment: TODO - consider GO CC request. GO:0030704-vitelline membrane formation considered a subclass of CC organization
 synonym: "zona pellucida" RELATED []
 xref: BTO:0001450
 xref: FBbt:00000042
@@ -43200,7 +43226,7 @@ relationship: part_of UBERON:0004288 ! skeleton
 [Term]
 id: UBERON:0003129
 name: skull
-def: "Anatomical structure that is part of the head consisting entirely of cranium and mandible." [Wikipedia:Skull]
+def: "Anatomical structure that is part of the head consisting entirely of cranium and mandible." [http://sourceforge.net/tracker/?func=detail&aid=2962656&group_id=76834&atid=1205376, Wikipedia:Skull]
 comment: The term cranium can be ambiguous, in that it can refer to the neurocranium, or the neurocranium and the Facial skeleton[WP]. In FMA the skull is divided into orbit, neurocranium (8 parts), viscerocranium (26 parts). Here we have a separate overlapping division into cranium and mandible. // A skull that is missing a mandible is only a cranium; this is the source of a very commonly made error in terminology. Those animals having skulls are called craniates[WP].
 subset: uberon_slim
 synonym: "cranial skeleton" RELATED []
@@ -48031,6 +48057,7 @@ synonym: "fat pad of gonada" EXACT [OBOL:automatic]
 synonym: "gonad fat pad" EXACT [OBOL:automatic]
 synonym: "gonada fat pad" EXACT [OBOL:automatic]
 xref: MA:0002547
+is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0003916 ! implied link automatically realized ! fat pad
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000991
@@ -53490,6 +53517,7 @@ xref: EHDAA:8703
 xref: HOG:0001340
 xref: OpenCyc:Mx4rvlWYh5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
+is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000991
 intersection_of: UBERON:0001638 ! vein
@@ -54795,6 +54823,7 @@ relationship: part_of UBERON:0000013 ! sympathetic nervous system
 id: UBERON:0003966
 name: gonial bone
 def: "investing bone that lies on the surface of the malleus." [MP:0008380]
+is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
 is_a: UBERON:0001474 ! bone
 is_a: UBERON:0003457 ! implied link automatically realized ! head bone
 relationship: part_of UBERON:0001686 ! auditory ossicle
@@ -55805,6 +55834,7 @@ name: labia majora
 def: "The labia majora are two prominent longitudinal cutaneous folds which extend downward and backward from the mons pubis to the perineum and form the lateral boundaries of the cleft of venus, which contains the labia minora, interlabial sulci, clitoral hood, clitoral glans, frenulum clitoridis, the Hart's Line, and the vulval vestibule, which contains the external openings of the urethra and the vagina. Each labium majus has two surfaces, an outer, pigmented and covered with strong, crisp hairs; and an inner, smooth and beset with large sebaceous follicles. Between the two there is a considerable quantity of areolar tissue, fat, and a tissue resembling the dartos tunic of the scrotum, besides vessels, nerves, and glands. The Labia Majora are thicker in front, where they form by their meeting the anterior commisure of the labia majora. Posteriorly they are not really joined, but appear to become lost in the neighboring integument, ending close to — and nearly parallel with — each other. Together with the connecting skin between them, they form the posterior commisure of the labia majora or posterior boundary of the pudendum. The interval between the posterior commissure of the labia majora and the anus, from 2.5 to 3 cm. in length, constitutes the perineum. The labia majora correspond to the scrotum in the male. Between the labia majora and the inner thighs are the labiocrural folds. Between the labia majora and labia minora are the interlabial sulci. [WP,unvetted]." [Wikipedia:Labia_majora]
 synonym: "labium majora" EXACT []
 synonym: "labium majorum" EXACT []
+synonym: "labium majus" EXACT []
 xref: FMA:20367
 xref: galen:LabiaMajora
 xref: MA:0002844
@@ -56274,9 +56304,9 @@ relationship: part_of UBERON:0002349 ! myocardium
 
 [Term]
 id: UBERON:0004124
-name: trabecular layer
+name: myocardium trabecular layer
 def: "The layer of the myocardium composed of projections of contractile myocytes.   The trabecular layer is bounded internally by the endocardium.  In zebrafosh, unlike the trabeculations of higher vertebrates, both atrial and ventricular trabeculae have more strut-like character, and are more uniform without apparent regional differences." [ZFA:0005059]
-synonym: "myocardial trabecular layer" EXACT []
+synonym: "trabecular layer" EXACT []
 xref: MA:0002866
 xref: ZFA:0005059
 is_a: UBERON:0002385 ! implied link automatically realized ! muscle tissue
@@ -56292,10 +56322,10 @@ is_a: UBERON:0004123 ! myocardial layer
 id: UBERON:0004126
 name: trabecular layer of ventricle
 synonym: "trabecular cardiac ventricle muscle" EXACT [GO:0003222]
-xref: FMA:83641
-xref: FMA:83642
+synonym: "ventricular trabecular myocardium" EXACT [GO:0003222]
+xref: FMA:83511
 xref: ZFA:0005060
-is_a: UBERON:0004124 ! trabecular layer
+is_a: UBERON:0004124 ! myocardium trabecular layer
 
 [Term]
 id: UBERON:0004127
@@ -56358,6 +56388,7 @@ relationship: part_of UBERON:0002925 ! trigeminal nuclear complex
 id: UBERON:0004133
 name: salivatory nucleus
 def: "." [GO:0021751]
+synonym: "salivary nucleus" EXACT [GO:0021751]
 is_a: UBERON:0002308 ! nucleus of brain
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
 relationship: part_of UBERON:0000988 ! pons
@@ -56630,7 +56661,7 @@ relationship: develops_from UBERON:0002342 ! neural crest
 
 [Term]
 id: UBERON:0004165
-name: Ammon gyrus
+name: ammon gyrus
 alt_id: UBERON:0003940
 def: "The ammon gyrus, often subdivided into the CA1 and CA3 regions, is one of the two interlocking gyri of the hippocampus that is rich in large pyramidal neurons" [GO:0021541, MP:0000815]
 comment: TODO check - GO uses this as a separate term for hippocampus, but not in any other AO
@@ -56861,8 +56892,11 @@ intersection_of: part_of UBERON:0003946 ! placenta labyrinth
 [Term]
 id: UBERON:0004184
 name: prostate gland stroma
+alt_id: UBERON:0005084
 def: "The prostate gland stroma is made up of the mesenchymal or fibroblast cells of the prostate gland" [GO:0060741]
+comment: TODO - check also FMA Stroma of glandular part of prostate
 synonym: "prostate stroma" EXACT [OBOL:automatic]
+synonym: "stroma of glandular part of prostate" NARROW [FMA:74349, OBOL:automatic]
 synonym: "stroma of prostate" EXACT [OBOL:automatic]
 synonym: "stroma of prostate gland" EXACT [OBOL:automatic]
 xref: FMA:45719
@@ -57037,9 +57071,11 @@ relationship: part_of UBERON:0001285 ! nephron
 [Term]
 id: UBERON:0004200
 name: kidney pyramid
-def: "Kidney pyramids are the conical masses that make up the renal medulla; they contain the loops of Henle, the collecting ducts, and the renal arterioles" [GO:0072056]
+alt_id: UBERON:0005098
+def: "Kidney pyramids are the conical masses that constitute the renal medulla in a multi-lobed mammalian kidney; they contain the loops of Henle and the medullary collecting ducts[GO]." [GO:0072056]
+synonym: "pyramid" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0002113 ! kidney
+relationship: part_of UBERON:0000362 ! renal medulla
 
 [Term]
 id: UBERON:0004201
@@ -57060,9 +57096,13 @@ id: UBERON:0004203
 name: cortical collecting duct
 def: " The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex" [GO:0072059]
 xref: EMAPA:28130
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000058 ! implied link automatically realized ! duct
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
+relationship: part_of UBERON:0001225
+relationship: part_of UBERON:0001232
+intersection_of: UBERON:0000058 ! duct
+intersection_of: part_of UBERON:0001225 ! cortex of kidney
+intersection_of: part_of UBERON:0001232 ! collecting duct of renal tubule
 
 [Term]
 id: UBERON:0004204
@@ -63821,12 +63861,12 @@ relationship: part_of UBERON:0002514 ! intramembranous bone
 [Term]
 id: UBERON:0004765
 name: skeletal element
-def: "Anatomical structure consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles." [UBERON:cjm]
+def: "Organ consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles." [UBERON:cjm]
 comment: TODO - add more general class for other kinds of mineralized tissue
 subset: uberon_slim
 xref: galen:SkeletalStructure
 xref: TAO:0001890
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0004766
@@ -65285,6 +65325,8 @@ name: lung mesenchyme
 def: "the mass of tissue made up of mesenchymal cells in the lung." [LG:0012600]
 synonym: "lung-associated mesenchyme" EXACT []
 synonym: "mesenchyme of lung" EXACT [OBOL:automatic]
+xref: EMAPA:17654
+xref: EMAPA:17662
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
 relationship: part_of UBERON:0002048
@@ -67976,6 +68018,794 @@ is_a: UBERON:0004176 ! implied link automatically realized ! external reproducti
 relationship: part_of UBERON:0000474
 intersection_of: UBERON:0004176 ! external reproductive organ
 intersection_of: part_of UBERON:0000474 ! female reproductive system
+
+[Term]
+id: UBERON:0005057
+name: immune organ
+is_a: UBERON:0000062 ! implied link automatically realized ! organ
+relationship: part_of UBERON:0002405
+intersection_of: UBERON:0000062 ! organ
+intersection_of: part_of UBERON:0002405 ! immune system
+
+[Term]
+id: UBERON:0005058
+name: hemolymphoid system gland
+synonym: "hemopoietic or lymphoid gland" EXACT [GOC:cjm]
+synonym: "hemopoietic or lymphoid organ" BROAD [GO:0048534]
+xref: MA:0002962
+is_a: UBERON:0002530 ! implied link automatically realized ! gland
+relationship: part_of UBERON:0002193
+intersection_of: UBERON:0002530 ! gland
+intersection_of: part_of UBERON:0002193 ! hemolymphoid system
+
+[Term]
+id: UBERON:0005059
+name: Drosophila lymph gland
+def: "The lymph gland is one of the sites of hemocyte differentiation. It consists of three to six bilaterally paired lobes that are attached to the cardioblasts during larval stages, and it degenerates during pupal stages[GO]." [GO:0048542]
+synonym: "lymph gland" EXACT SENSU [FBbt:00001668]
+is_a: UBERON:0000062 ! organ
+disjoint_from: UBERON:0000029 ! lymph node
+relationship: part_of UBERON:0001009 ! circulatory system
+
+[Term]
+id: UBERON:0005061
+name: neural groove
+def: "A U-shaped structure formed when the edges of the neural plate thicken // The median dorsal longitudinal groove formed in the embryo by the neural plate after the appearance of the neural folds." [GO:0001842, GOC:cjm]
+xref: XAO:0000248
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0003075 ! neural plate
+
+[Term]
+id: UBERON:0005062
+name: neural fold
+def: "One of the two edges of the neural groove." [GO:0001842]
+xref: EMAPA:16090
+xref: EMAPA:16093
+xref: EMAPA:16142
+xref: EMAPA:16146
+xref: EMAPA:16151
+xref: EMAPA:16155
+xref: EMAPA:16159
+xref: EMAPA:16162
+xref: EMAPA:16288
+xref: EMAPA:16292
+xref: EMAPA:16295
+xref: EMAPA:16299
+xref: EMAPA:16303
+xref: EMAPA:16307
+xref: EMAPA:16528
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0003075 ! neural plate
+
+[Term]
+id: UBERON:0005063
+name: left ventricular compact myocardium
+def: "." [GO:0003224]
+is_a: UBERON:0004127 ! implied link automatically realized ! compact layer of ventricle
+relationship: part_of UBERON:0002084
+intersection_of: UBERON:0004127 ! compact layer of ventricle
+intersection_of: part_of UBERON:0002084 ! left ventricle
+
+[Term]
+id: UBERON:0005064
+name: left ventricular trabecular myocardium
+def: "." [GO:0003225]
+is_a: UBERON:0004126 ! implied link automatically realized ! trabecular layer of ventricle
+relationship: part_of UBERON:0002084
+intersection_of: UBERON:0004126 ! trabecular layer of ventricle
+intersection_of: part_of UBERON:0002084 ! left ventricle
+
+[Term]
+id: UBERON:0005065
+name: right ventricular compact myocardium
+def: "." [GO:0003226]
+is_a: UBERON:0004127 ! implied link automatically realized ! compact layer of ventricle
+relationship: part_of UBERON:0002080
+intersection_of: UBERON:0004127 ! compact layer of ventricle
+intersection_of: part_of UBERON:0002080 ! right ventricle
+
+[Term]
+id: UBERON:0005066
+name: right ventricular trabecular myocardium
+def: "." [GO:0003227]
+is_a: UBERON:0004126 ! implied link automatically realized ! trabecular layer of ventricle
+relationship: part_of UBERON:0002080
+intersection_of: UBERON:0004126 ! trabecular layer of ventricle
+intersection_of: part_of UBERON:0002080 ! right ventricle
+
+[Term]
+id: UBERON:0005067
+name: amphid sensory organ
+def: "Amphid sensory organs are the sensory organs of nematodes[GO]." [GO:0003386]
+synonym: "amphid sensillum" EXACT []
+xref: WBbt:0005391
+is_a: UBERON:0000020 ! sense organ
+
+[Term]
+id: UBERON:0005068
+name: neural rod
+def: "a solid rod of neurectoderm derived from the neural keel. The neural rod is roughly circular in cross section. Neural rod formation occurs during primary neurulation in teleosts[GO]. An intermediate stage in the development of the central nervous system present during the segmentation period; the neural rod is roughly cylindrical in shape, forms from the neural keel, and is not yet hollowed out into the neural tube[ZFIN]." [GO:0014024, ZFA:0000133]
+xref: ZFA:0000133
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: develops_from UBERON:0002346 ! neural ectoderm
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0005069
+name: neural fold hinge point
+def: "The median hinge point extends for the entire length of the neural tube, and the lateral hinge points do not form in the spinal cord region of the neural tube[GO]." [GO:0021504]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0005070
+name: anterior neuropore
+def: "The anterior neuropore appears before the process of neural tube closure is complete[GO]." [GO:0021506]
+xref: EMAPA:16523
+is_a: UBERON:0005077 ! neuropore
+
+[Term]
+id: UBERON:0005071
+name: posterior neuropore
+def: "The posterior neuropore appears before the process of neural tube closure is complete[GO]." [GO:0021507]
+xref: EMAPA:16526
+is_a: UBERON:0005077 ! neuropore
+
+[Term]
+id: UBERON:0005073
+name: preganglionic parasympathetic nervous system
+is_a: UBERON:0000011 ! parasympathetic nervous system
+
+[Term]
+id: UBERON:0005074
+name: postganglionic parasympathetic nervous system
+is_a: UBERON:0000011 ! parasympathetic nervous system
+relationship: develops_from UBERON:0005073 ! preganglionic parasympathetic nervous system
+
+[Term]
+id: UBERON:0005075
+name: forebrain-midbrain boundary
+xref: ZFA:0001367
+is_a: UBERON:0000015 ! implied link automatically realized ! anatomical boundary
+relationship: adjacent_to UBERON:0001890
+relationship: adjacent_to UBERON:0001891
+intersection_of: UBERON:0000015 ! anatomical boundary
+intersection_of: adjacent_to UBERON:0001890 ! forebrain
+intersection_of: adjacent_to UBERON:0001891 ! midbrain
+
+[Term]
+id: UBERON:0005076
+name: hindbrain-spinal cord boundary
+is_a: UBERON:0000015 ! implied link automatically realized ! anatomical boundary
+relationship: adjacent_to UBERON:0002028
+relationship: adjacent_to UBERON:0002240
+intersection_of: UBERON:0000015 ! anatomical boundary
+intersection_of: adjacent_to UBERON:0002028 ! hindbrain
+intersection_of: adjacent_to UBERON:0002240 ! spinal cord
+
+[Term]
+id: UBERON:0005077
+name: neuropore
+def: "Joined neural folds at either end of the neural tube.[GO]." [GO:0021995]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0005078
+name: lamina terminalis
+def: ".[GO]." [GO:0021996]
+xref: EMAPA:16649
+xref: EMAPA:16904
+xref: FMA:61975
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: develops_from UBERON:0005070 ! anterior neuropore
+
+[Term]
+id: UBERON:0005079
+name: eggshell
+def: "a product of the somatic follicle cell epithelium and a structure that supports the egg in a hostile environment, minimizing water loss whilst allowing gas exchanges essential for embryonic respiration[GO]." [GO:0030703]
+is_a: UBERON:0000476 ! acellular anatomical structure
+
+[Term]
+id: UBERON:0005080
+name: metanephric ureteric bud
+is_a: UBERON:0000084 ! implied link automatically realized ! ureteric bud
+is_a: UBERON:0005106 ! implied link automatically realized ! metanephric tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0000084 ! ureteric bud
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005081
+name: ureter ureteric bud
+def: "The ureter ureteric bud is the initial structure that forms the ureter[GO]." [GO:0035503]
+is_a: UBERON:0000084 ! ureteric bud
+relationship: develops_into UBERON:0000056
+intersection_of: UBERON:0000084 ! ureteric bud
+intersection_of: develops_into UBERON:0000056 ! ureter
+relationship: part_of UBERON:0000056 ! ureter
+
+[Term]
+id: UBERON:0005082
+name: tube lumen
+def: "A hole in a tube[GO]." [GO:0060609]
+is_a: UBERON:0000464 ! implied link automatically realized ! anatomical space
+relationship: surrounded_by UBERON:0000025
+intersection_of: UBERON:0000464 ! anatomical space
+intersection_of: surrounded_by UBERON:0000025 ! tube
+
+[Term]
+id: UBERON:0005083
+name: nipple sheath
+def: "a circular ingrowth of the epidermis around the region of the mammary sprout[GO]." [GO:0060659]
+is_a: UBERON:0001003 ! epidermis
+is_a: UBERON:0003244 ! implied link automatically realized ! epithelium of mammary gland
+relationship: part_of UBERON:0002030 ! nipple
+
+[Term]
+id: UBERON:0005085
+name: ectodermal placode
+def: "An ectodermal placode is a thickening of the ectoderm that is the primordium of many structures derived from the ectoderm[GO]." [GO:0060788]
+is_a: UBERON:0001048 ! implied link automatically realized ! primordium
+relationship: part_of UBERON:0000924
+intersection_of: UBERON:0001048 ! primordium
+intersection_of: part_of UBERON:0000924 ! ectoderm
+
+[Term]
+id: UBERON:0005086
+name: hair follicle placode
+def: "An hair follicle placode is a thickening of the ectoderm that will give rise to the hair follicle bud[GO]." [GO:0060789]
+is_a: UBERON:0001048 ! implied link automatically realized ! primordium
+relationship: develops_into UBERON:0002073
+intersection_of: UBERON:0001048 ! primordium
+intersection_of: develops_into UBERON:0002073 ! hair follicle
+
+[Term]
+id: UBERON:0005087
+name: tooth placode
+def: "An tooth placode is a thickening of the ectoderm that will give rise to the tooth bud[GO]." [GO:0060790]
+xref: ZFA:0001153
+is_a: UBERON:0001048 ! implied link automatically realized ! primordium
+relationship: develops_into UBERON:0001091
+intersection_of: UBERON:0001048 ! primordium
+intersection_of: develops_into UBERON:0001091 ! calcareous tooth
+
+[Term]
+id: UBERON:0005088
+name: sebaceous gland placode
+def: "A sebaceous gland placode is a thickening of the ectoderm that will give rise to the sebaceous gland bud[GO]." [GO:0060791]
+is_a: UBERON:0001048 ! implied link automatically realized ! primordium
+relationship: develops_into UBERON:0001821
+intersection_of: UBERON:0001048 ! primordium
+intersection_of: develops_into UBERON:0001821 ! sebaceous gland
+
+[Term]
+id: UBERON:0005089
+name: sweat gland placode
+def: "An sweat gland placode is a thickening of the ectoderm that will give rise to the sweat gland bud[GO]." [GO:0060793]
+is_a: UBERON:0001048 ! implied link automatically realized ! primordium
+relationship: develops_into UBERON:0001820
+intersection_of: UBERON:0001048 ! primordium
+intersection_of: develops_into UBERON:0001820 ! sweat gland
+
+[Term]
+id: UBERON:0005090
+name: muscle structure
+def: "Muscle structures are contractile cells, tissues or organs that are found in multicellular organisms[GO]." [GO:0061061]
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0005091
+name: left horn of sinus venosus
+xref: FMA:70321
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002063 ! sinus venosus
+
+[Term]
+id: UBERON:0005092
+name: right horn of sinus venosus
+xref: FMA:70318
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002063 ! sinus venosus
+
+[Term]
+id: UBERON:0005093
+name: cement gland
+def: "A simple mucus-secreting structure that is positioned at the front of the embryo, attaches the newly hatched embryo to a support before the hatchling can swim well or feed, and marks the anterior-most dorsal ectoderm[XAO]." [GO:0071570, XAO:0000033]
+xref: XAO:0000033
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0005094
+name: beak
+def: "The avian beak is an external anatomical structure, in the head region, that is adapted for feeding self and young, catching prey, probing, etc. It encompasses, but is not restricted to, the maxilla, mandible, maxillary ramaphotheca, mandibular ramaphotheca, nostril, nasal fossa, nasal bones, egg tooth and rictus[GO]." [GO:0071728]
+comment: TODO - add superclass
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000033 ! head
+
+[Term]
+id: UBERON:0005095
+name: kidney rudiment
+def: "A kidney is an organ that filters the blood and excretes the end products of body metabolism in the form of urine[GO]." [GO:0072003]
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+relationship: develops_into UBERON:0002113
+intersection_of: UBERON:0002050 ! embryonic structure
+intersection_of: develops_into UBERON:0002113 ! kidney
+
+[Term]
+id: UBERON:0005096
+name: descending thin limb
+def: "The descending thin limb is a part of the loop of Henle situated just after the proximal straight tubule (S3). It extends to the tip of the loop of Henle[GO]." [GO:0072022]
+xref: FMA:17719
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0001288 ! loop of Henle
+relationship: part_of UBERON:0004136 ! intermediate tubule
+
+[Term]
+id: UBERON:0005097
+name: connecting tubule
+def: "The connecting tubule is a tubular segment of the nephron; it connects the distal convoluted tubule to the collecting duct[GO]." [GO:0072027]
+xref: MA:0002610
+is_a: UBERON:0001231 ! renal tubule
+
+[Term]
+id: UBERON:0005099
+name: short descending thin limb
+def: "The short descending thin limb is the descending thin limb of a short nephron that has a squamous epithelial morphology[GO]." [GO:0072063]
+comment: TODO - epithelium types
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
+relationship: part_of UBERON:0001285 ! nephron
+
+[Term]
+id: UBERON:0005100
+name: long descending thin limb
+def: "The long descending limb starts in the inner stripe of the outer medulla and extends into the inner medulla[GO]." [GO:0072064]
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
+relationship: part_of UBERON:0001285 ! nephron
+
+[Term]
+id: UBERON:0005101
+name: early distal convoluted tubule
+def: "The early distal convoluted tubule contains DCT cells and is vasopressin-insensitive[GO]." [GO:0072067]
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
+relationship: part_of UBERON:0001292 ! distal convoluted tubule
+
+[Term]
+id: UBERON:0005102
+name: late distal convoluted tubule
+def: "The late distal convoluted tubule contains DCT cells and intercalated (IC) alpha and beta cells and is vasopressin-sensitive[GO]." [GO:0072068]
+comment: TODO - CL
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
+relationship: part_of UBERON:0001292 ! distal convoluted tubule
+
+[Term]
+id: UBERON:0005103
+name: mesonephric epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004819 ! implied link automatically realized ! kidney epithelium
+relationship: part_of UBERON:0000080
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005104
+name: anterior mesonephric tubule
+def: "The anterior mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]." [GO:0072165]
+is_a: UBERON:0000083 ! mesonephric tubule
+
+[Term]
+id: UBERON:0005105
+name: posterior mesonephric tubule
+def: "The posterior mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]." [GO:0072166]
+is_a: UBERON:0000083 ! mesonephric tubule
+
+[Term]
+id: UBERON:0005106
+name: metanephric tubule
+def: "A metanephric tubule is an epithelial tube that is part of the metanephros[GO]." [GO:0072173]
+is_a: UBERON:0003914 ! implied link automatically realized ! epithelial tube
+is_a: UBERON:0005108 ! implied link automatically realized ! metanephric epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0003914 ! epithelial tube
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005107
+name: metanephric cap
+def: "The metanephric cap is formed by the condensation of metanephric mesenchymal cells surrounding the ureteric bud tip[GO]." [GO:0072185]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0003220 ! metanephric blastema
+relationship: surrounds UBERON:0000084 ! ureteric bud
+
+[Term]
+id: UBERON:0005108
+name: metanephric epithelium
+def: "An epithelium is a tissue that covers the internal or external surfaces of an anatomical structure[GO]." [GO:0072207]
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004819 ! implied link automatically realized ! kidney epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005109
+name: metanephric smooth muscle tissue
+def: ".[GO]." [GO:0072208]
+is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005110
+name: metanephric nephron
+alt_id: UBERON:0005142
+def: "A metanephric nephron is the functional unit of the metanephros[GO]." [GO:0072273]
+is_a: UBERON:0001285 ! implied link automatically realized ! nephron
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001285 ! nephron
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005111
+name: metanephric pyramid
+def: "Metanephric pyramids are the conical masses that constitute the renal medulla in a metanephros; they contain the loops of Henle and the medullary collecting ducts[GO]." [GO:0072211]
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004200 ! implied link automatically realized ! kidney pyramid
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004200 ! kidney pyramid
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005113
+name: metanephric cortex
+def: "The metanephric cortex is the outer region of the metanephros[GO]." [GO:0072214]
+is_a: UBERON:0001225 ! implied link automatically realized ! cortex of kidney
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001851 ! cortex
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005114
+name: metanephric ascending thin limb
+def: "The metanephric ascending thin limb is a segment of a nephron tubule in the metanephros lying in the inner medulla that is permeable to ions but not to water and has a simple epithelium; active transepithelial solute transport is absent[GO]." [GO:0072218]
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004193 ! implied link automatically realized ! ascending thin limb
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004193 ! ascending thin limb
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005115
+name: metanephric cortical collecting duct
+def: "The metanephric cortical collecting duct is the portion of the metanephric collecting duct that resides in the renal cortex[GO]." [GO:0072219]
+is_a: UBERON:0004203 ! implied link automatically realized ! cortical collecting duct
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004203 ! cortical collecting duct
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005116
+name: metanephric descending thin limb
+def: "It extends to the tip of the metanephric loop of Henle[GO]." [GO:0072220]
+is_a: UBERON:0005096 ! implied link automatically realized ! descending thin limb
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0005096 ! descending thin limb
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005117
+name: metanephric distal convoluted tubule
+def: "The metanephric distal convoluted tubule is a portion of the metanephric nephron tubule that connects the metanephric loop of Henle to the collecting duct[GO]." [GO:0072221]
+is_a: UBERON:0001292 ! implied link automatically realized ! distal convoluted tubule
+is_a: UBERON:0005129 ! implied link automatically realized ! metanephric distal tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001292 ! distal convoluted tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005118
+name: metanephric early distal convoluted tubule
+def: "The metanephric early distal convoluted tubule contains metanephric DCT cells and is vasopressin-insensitive[GO]." [GO:0072222]
+is_a: UBERON:0005101 ! implied link automatically realized ! early distal convoluted tubule
+is_a: UBERON:0005134 ! implied link automatically realized ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0005101 ! early distal convoluted tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005119
+name: metanephric glomerular mesangium
+def: "The metanephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the metanephros, which helps to support the capillary loops in a renal glomerulus[GO]." [GO:0072223]
+is_a: UBERON:0002320 ! implied link automatically realized ! glomerular mesangium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0002320 ! glomerular mesangium
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005120
+name: metanephric late distal convoluted tubule
+def: "The metanephric late distal convoluted tubule contains metanephric DCT cells and intercalated (IC) alpha and beta cells and is vasopressin-sensitive[GO]." [GO:0072225]
+is_a: UBERON:0005102 ! implied link automatically realized ! late distal convoluted tubule
+is_a: UBERON:0005134 ! implied link automatically realized ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0005102 ! late distal convoluted tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005121
+name: metanephric long descending thin limb bend
+def: "The metanephric long descending thin limb bend is a part of the descending thin limb of a long nephron that lies beyond the prebend segment in the metanephros[GO]." [GO:0072226]
+is_a: UBERON:0004206 ! implied link automatically realized ! long descending thin limb bend
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004206 ! long descending thin limb bend
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005122
+name: metanephric macula densa
+def: "The metanephric macula densa is an area of specialized cells in the distal tubule of the metanephros that makes contact with the vascular pole of the glomerulus[GO]." [GO:0072227]
+is_a: UBERON:0002335 ! implied link automatically realized ! macula densa
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0002335 ! macula densa
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005123
+name: metanephric prebend segment
+def: "The metanephric prebend segment is a part of the metanephric descending thin limb that lies before the bend and exhibits permeabilities characteristic of the ascending limb, especially negligible water permeability[GO]." [GO:0072228]
+is_a: UBERON:0004207 ! implied link automatically realized ! prebend segment
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004207 ! prebend segment
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005124
+name: metanephric proximal convoluted tubule
+def: "The metanephric proximal convoluted tubule is the most proximal portion of the metanephric proximal tubule and extends from the metanephric glomerular capsule to the metanephric proximal straight tubule[GO]." [GO:0072229]
+is_a: UBERON:0001287 ! implied link automatically realized ! proximal convoluted tubule
+is_a: UBERON:0005151 ! implied link automatically realized ! metanephric proximal tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001287 ! proximal convoluted tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005125
+name: metanephric proximal straight tubule
+def: "The metanephric proximal straight tubule is the part of the metanephric descending limb that extends from the metanephric proximal convoluted tubule to the metanephric descending thin tubule[GO]." [GO:0072230]
+is_a: UBERON:0001290 ! implied link automatically realized ! proximal straight tubule
+is_a: UBERON:0005151 ! implied link automatically realized ! metanephric proximal tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001290 ! proximal straight tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005126
+name: metanephric S1
+def: "The S1 portion is the initial portion of the metanephric proximal convoluted tubule and is responsible for avid reabsorption of water and solutes[GO]." [GO:0072231]
+is_a: UBERON:0004196 ! implied link automatically realized ! S1 portion of tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004196 ! S1 portion of tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005127
+name: metanephric thick ascending limb
+def: "At the macula densa, the thick ascending limb connects to the distal convoluted tubule[GO]." [GO:0072233]
+is_a: UBERON:0001291 ! implied link automatically realized ! thick ascending limb of loop of Henle
+is_a: UBERON:0005129 ! implied link automatically realized ! metanephric distal tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001291 ! thick ascending limb of loop of Henle
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005129
+name: metanephric distal tubule
+alt_id: UBERON:0005150
+def: "The metanephric distal tubule is a metanephric nephron tubule that begins at the metanephric macula densa and extends to the metanephric connecting tubule[GO]." [GO:0072235]
+is_a: UBERON:0004135 ! implied link automatically realized ! distal tubule
+is_a: UBERON:0005146 ! implied link automatically realized ! metanephric nephron tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004135 ! distal tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005130
+name: metanephric loop of Henle
+def: "The metanephric loop of Henle is a metanephric nephron tubule that connects the proximal convoluted tubule to the distal convoluted tubule in the metanephros[GO]." [GO:0072236]
+is_a: UBERON:0001288 ! implied link automatically realized ! loop of Henle
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001288 ! loop of Henle
+intersection_of: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0004136 ! intermediate tubule
+
+[Term]
+id: UBERON:0005132
+name: metanephric long nephron
+def: "Long nephrons are associated with juxtamedullary glomeruli and extend into the inner medulla in the metanephros[GO]." [GO:0072238]
+is_a: UBERON:0004194 ! implied link automatically realized ! long nephron
+is_a: UBERON:0005110 ! implied link automatically realized ! metanephric nephron
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004194 ! long nephron
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005133
+name: metanephric glomerulus vasculature
+alt_id: UBERON:0005143
+def: "The metanephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the metanephric glomerulus[GO]." [GO:0072239]
+is_a: UBERON:0004190 ! implied link automatically realized ! glomerulus vasculature
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004190 ! glomerulus vasculature
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005134
+name: metanephric nephron epithelium
+def: "The metanephric nephron epithelium is a tissue that covers the surface of a nephron in the metanephros[GO]." [GO:0072243]
+is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
+is_a: UBERON:0005108 ! implied link automatically realized ! metanephric epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004211 ! nephron epithelium
+intersection_of: part_of UBERON:0000081 ! metanephros
+relationship: surrounds UBERON:0001285 ! nephron
+
+[Term]
+id: UBERON:0005135
+name: metanephric glomerular epithelium
+def: "A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains " [:GO]
+is_a: UBERON:0004188 ! implied link automatically realized ! glomerular epithelium
+is_a: UBERON:0005134 ! implied link automatically realized ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004188 ! glomerular epithelium
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005136
+name: metanephric glomerular endothelium
+def: "The metanephric glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus of the metanephros[GO]." [GO:0072264]
+is_a: UBERON:0004189 ! implied link automatically realized ! glomerular endothelium
+is_a: UBERON:0005135 ! implied link automatically realized ! metanephric glomerular epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004189 ! glomerular endothelium
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005137
+name: metanephric capsule
+alt_id: UBERON:0005112
+def: "The metanephric capsule is the tough fibrous layer surrounding the metanephros, covered in a thick layer of perinephric adipose tissue. It provides some protection from trauma and damage[GO]." [GO:0072213]
+is_a: UBERON:0003893 ! implied link automatically realized ! capsule
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0003893 ! capsule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005139
+name: metanephric long descending thin limb
+def: "The long descending limb starts in the inner stripe of the outer medulla and extends into the inner medulla[GO]." [GO:0072269]
+is_a: UBERON:0005100 ! implied link automatically realized ! long descending thin limb
+is_a: UBERON:0005134 ! implied link automatically realized ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0005100 ! long descending thin limb
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005140
+name: metanephric short nephron
+def: "Short nephrons are associated with mid-cortical and superficial glomeruli, are situated entirely in the outer medulla, and have no thin ascending limb[GO]." [GO:0072270]
+is_a: UBERON:0004195 ! implied link automatically realized ! short nephron
+is_a: UBERON:0005110 ! implied link automatically realized ! metanephric nephron
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004195 ! short nephron
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005141
+name: metanephric short descending thin limb
+def: "The metanephric short descending thin limb is the descending thin limb of a short nephron in the metanephros that has a squamous epithelial morphology[GO]." [GO:0072271]
+is_a: UBERON:0005099 ! implied link automatically realized ! short descending thin limb
+is_a: UBERON:0005134 ! implied link automatically realized ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0005099 ! short descending thin limb
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005144
+name: metanephric glomerular capillary
+def: "This process pertains to the initial formation of a structure from unspecified parts[GO]." [GO:0072277]
+is_a: UBERON:0004212 ! implied link automatically realized ! glomerular capillary
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004212 ! glomerular capillary
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005145
+name: metanephric comma-shaped body
+def: "The metanephric comma-shaped body is the precursor structure to the metanephric S-shaped body that contributes to the morphogenesis of a nephron in the metanephros[GO]." [GO:0072278]
+is_a: UBERON:0004198 ! implied link automatically realized ! comma-shaped body
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004198 ! comma-shaped body
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005146
+name: metanephric nephron tubule
+alt_id: UBERON:0005128
+alt_id: UBERON:0005152
+def: "A metanephric nephron tubule is an epithelial tube that is part of the metanephric nephron, the functional part of the metanephros[GO]." [GO:0072282]
+is_a: UBERON:0001231 ! implied link automatically realized ! renal tubule
+is_a: UBERON:0005106 ! implied link automatically realized ! metanephric tubule
+is_a: UBERON:0005134 ! implied link automatically realized ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0001231 ! renal tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005147
+name: metanephric renal vesicle
+def: "The renal vesicle is the primordial structure of the metanephric nephron epithelium, and is formed by the condensation of mesenchymal cells[GO]." [GO:0072283]
+is_a: UBERON:0004209 ! implied link automatically realized ! renal vesicle
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004209 ! renal vesicle
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005148
+name: metanephric S-shaped body
+def: "The metanephric S-shaped body is the successor of the metanephric comma-shaped body that contributes to the morphogenesis of a nephron in the metanephros[GO]." [GO:0072284]
+is_a: UBERON:0004199 ! implied link automatically realized ! S-shaped body
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004199 ! S-shaped body
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005149
+name: metanephric connecting tubule
+def: "The metanephric connecting tubule is a tubular segment of the metanephric nephron; it connects the distal convoluted tubule to the collecting duct in the metanephros[GO]." [GO:0072286]
+is_a: UBERON:0005097 ! implied link automatically realized ! connecting tubule
+is_a: UBERON:0005146 ! implied link automatically realized ! metanephric nephron tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0005097 ! connecting tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005151
+name: metanephric proximal tubule
+alt_id: UBERON:0005131
+def: "The metanephric proximal tubule is a metanephric nephron tubule that connects Bowman's capsule to the descending thin limb of the loop of Henle in the metanephros. It has a brush border epithelial morphology[GO]." [GO:0072288]
+is_a: UBERON:0004134 ! implied link automatically realized ! proximal tubule
+is_a: UBERON:0005146 ! implied link automatically realized ! metanephric nephron tubule
+relationship: part_of UBERON:0000081
+intersection_of: UBERON:0004134 ! proximal tubule
+intersection_of: part_of UBERON:0000081 ! metanephros
+
+[Term]
+id: UBERON:0005153
+name: epithelial bud
+def: "A bud is a protrusion that forms from an epithelial sheet by localized folding." [GO:0060572]
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0005154
+name: epithelial cord
+is_a: UBERON:0000483 ! epithelium
 
 [Typedef]
 id: adjacent_to
