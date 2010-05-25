@@ -285,5 +285,16 @@ aostatrow_term(X) :-
 	X=..L.
 	
 
-
-
+cdef_refs_u(cdef(_,L)) :-
+	member(_=X,L),
+	id_idspace(X,'UBERON'),
+	!.
+goxp_newlink(A,B) :-
+	class_cdef(A,AD),
+	cdef_refs_u(AD),
+	id_idspace(A,'GO'),
+	class_cdef(B,BD),
+	cdef_refs_u(BD),
+	id_idspace(B,'GO'),
+	\+ \+ subclassX(AD,BD),
+	\+ subclassRT(A,B).

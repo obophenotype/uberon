@@ -610,6 +610,9 @@ uberon2tax-ontol_db.pro:
 uberon-go-mismatch.txt:
 	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy "subclass(A,B),id_idspace(A,'GO'),class_cdef(A,AD),class_cdef(B,BD),BD=cdef(_,BDs),member(_=U,BDs),id_idspace(U,'UBERON'),class_cdef(B,BD),\+subclassX(A,BD)" -select A-B -label > $@
 
+uberon-go-inflinks.txt:
+	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy -i adhoc_uberon.pro "goxp_newlink(A,B)" -select A-B -label > $@
+
 dbpedia_all_AnatomicalStructure.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@
 

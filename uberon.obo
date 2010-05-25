@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 22:05:2010 15:00
+date: 24:05:2010 15:46
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -37,7 +37,7 @@ xref: MA:0000392
 xref: MAT:0000292
 xref: OpenCyc:Mx4rvVipEJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001560 ! neck of organ
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: continuous_with UBERON:0000996 ! vagina
 relationship: part_of UBERON:0000995 ! uterus
 
@@ -1301,7 +1301,7 @@ relationship: develops_from UBERON:0000084 ! ureteric bud
 [Term]
 id: UBERON:0000083
 name: mesonephric tubule
-def: "Genital ridge that is next to the mesonephros." [Wikipedia:Mesonephric_tubules]
+def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros." [Wikipedia:Mesonephric_tubules]
 xref: HOG:0000500
 is_a: UBERON:0003914 ! implied link automatically realized ! epithelial tube
 is_a: UBERON:0005103 ! implied link automatically realized ! mesonephric epithelium
@@ -1808,7 +1808,7 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0000151
 name: pectoral fin
 def: "The paired pectoral fins are located on each side, usually just behind the operculum, and are homologous to the forelimbs of tetrapods." [Wikipedia:Pectoral_fin#Fins]
-comment: check definition of limb such that is excludes fins
+comment: check definition of limb such that is excludes fins. Note the GO includes pectoral and pelvic fins as types of limbs
 xref: TAO:0001161
 xref: ZFA:0001161
 is_a: UBERON:0002534 ! fin
@@ -1819,6 +1819,7 @@ relationship: part_of UBERON:0000153 ! anterior region of body
 id: UBERON:0000152
 name: pelvic fin
 def: "The paired pelvic or ventral fins are located ventrally below the pectoral fins. They are homologous to the hindlimbs of tetrapods. The pelvic fin assists the fish in going up or down through the water, turning sharply, and stopping quickly." [Wikipedia:Pectoral_fin#Fins]
+comment: check definition of limb such that is excludes fins. Note the GO includes pectoral and pelvic fins as types of limbs
 xref: TAO:0001184
 xref: ZFA:0001184
 is_a: UBERON:0002534 ! fin
@@ -1847,7 +1848,7 @@ xref: FMA:18656
 xref: TAO:0001113
 xref: ZFA:0001113
 is_a: UBERON:0000119 ! cell layer
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001305 ! follicle of ovary
 
 [Term]
@@ -1857,7 +1858,7 @@ def: "The theca externa is the outer layers of the theca folliculi. It contains 
 xref: BTO:0002852
 xref: FMA:18657
 is_a: UBERON:0000158 ! membranous layer
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000155 ! theca cell layer
 relationship: surrounds UBERON:0000157 ! theca interna
 
@@ -1868,7 +1869,7 @@ def: "Theca interna cells express receptors for luteinizing hormone, which when 
 xref: BTO:0002851
 xref: FMA:18658
 is_a: UBERON:0000158 ! membranous layer
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000155 ! theca cell layer
 
 [Term]
@@ -2838,7 +2839,7 @@ xref: BTO:0000928
 xref: FMA:242000
 xref: GAID:615
 xref: OpenCyc:Mx4rwAeba5wpEbGdrcN5Y29ycA
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000467 ! anatomical system
 
 [Term]
 id: UBERON:0000351
@@ -3482,8 +3483,8 @@ synonym: "Intermediate ganglion" EXACT [FMA:6572]
 xref: BTO:0001835
 xref: FMA:6572
 is_a: UBERON:0000063 ! organ segment
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004732 ! implied link automatically realized ! segmental subdivision of nervous system
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001991 ! cervical ganglion
 
 [Term]
@@ -3674,11 +3675,12 @@ xref: FMA:66812
 xref: FMA:79643
 xref: MA:0001737
 xref: ncithesaurus:Prostatic_Epithelium
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0000485 ! simple columnar epithelium
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0002367
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0002367 ! prostate
+intersection_of: part_of UBERON:0002367 ! prostate gland
 
 [Term]
 id: UBERON:0000429
@@ -3939,7 +3941,7 @@ xref: BTO:0003083
 xref: FMA:17560
 is_a: UBERON:0000060 ! implied link automatically realized ! anatomical wall
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000995
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: part_of UBERON:0000995 ! uterus
@@ -5502,6 +5504,7 @@ xref: NIF_GrossAnatomy:birnlex_1494
 is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
+relationship: part_of UBERON:0001893 ! telencephalon
 
 [Term]
 id: UBERON:0000957
@@ -6015,23 +6018,24 @@ relationship: part_of UBERON:0002387 ! foot
 
 [Term]
 id: UBERON:0000984
-name: thoracic wing
+name: imaginal disc-derived wing
 alt_id: UBERON:FBbt_00004729-MIAA_0000202
 def: "A flight organ of the adult external thorax that is derived from a dorsal mesothoracic disc." [FB:gg]
 comment: TODO: review. hymenoptera thorax = fusion of thorax and mesosoma/metasoma
 subset: uberon_slim
 synonym: "adult mesothoracic wing" RELATED []
 synonym: "adult metathoracic wing" RELATED []
-synonym: "thorax wing" EXACT [OBOL:automatic]
-synonym: "wing of thorax" EXACT [OBOL:automatic]
+synonym: "thoracic wing" RELATED []
+synonym: "thorax wing" RELATED [OBOL:automatic]
+synonym: "wing" BROAD SENSU [FBbt:00004729]
+synonym: "wing of thorax" RELATED [OBOL:automatic]
 xref: FBbt:00004729
 xref: HAO:0001089
 is_a: UBERON:0000023 ! wing
-relationship: part_of UBERON:0000915
+relationship: develops_from UBERON:0000939
 intersection_of: UBERON:0000023 ! wing
-intersection_of: part_of UBERON:0000915 ! thorax
-relationship: develops_from UBERON:0000939 ! imaginal disc
-relationship: part_of UBERON:0000914 ! organismal segment
+intersection_of: develops_from UBERON:0000939 ! imaginal disc
+relationship: part_of UBERON:0000915 ! thorax
 
 [Term]
 id: UBERON:0000985
@@ -6113,7 +6117,7 @@ xref: MIAA:0000186
 xref: ncithesaurus:Penis
 xref: OpenCyc:Mx4rvVjkCZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000079 ! male reproductive system
 
 [Term]
@@ -6124,8 +6128,6 @@ def: "Anatomical system that has as its parts the organs concerned with reproduc
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "genital system" RELATED []
-synonym: "genital tract" NARROW []
-synonym: "genitalia" EXACT []
 xref: BILA:0000103
 xref: BTO:0000081
 xref: EFO:0000809
@@ -6190,7 +6192,7 @@ xref: XAO:0003146
 xref: ZFA:0000413
 is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0003133 ! reproductive organ
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000990 ! reproductive system
 relationship: part_of UBERON:0002323 ! body cavity
 
@@ -6279,8 +6281,9 @@ xref: FBbt:00004921
 xref: MAT:0000168
 xref: MIAA:0000168
 xref: WBbt:0005319
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0002075 ! implied link automatically realized ! viscus
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991 ! gonad
 
 [Term]
@@ -6307,7 +6310,7 @@ xref: OpenCyc:Mx4rvViojJwpEbGdrcN5Y29ycA
 xref: WBbt:0006760
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0002075 ! implied link automatically realized ! viscus
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991 ! gonad
 
 [Term]
@@ -6330,7 +6333,7 @@ xref: MIAA:0000128
 xref: ncithesaurus:Vagina
 xref: OpenCyc:Mx4rvVj1B5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000474 ! female reproductive system
 
 [Term]
@@ -6357,7 +6360,7 @@ xref: ncithesaurus:Vulva
 xref: OpenCyc:Mx4rvgAWeJwpEbGdrcN5Y29ycA
 xref: WBbt:0006748
 is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000474 ! female reproductive system
 
 [Term]
@@ -6401,7 +6404,7 @@ xref: MIAA:0000170
 xref: ncithesaurus:Ejaculatory_Duct
 xref: OpenCyc:Mx4rwOt7MJwpEbGdrcN5Y29ycA
 is_a: UBERON:0000058 ! duct
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000990 ! reproductive system
 
 [Term]
@@ -6821,6 +6824,7 @@ id: UBERON:0001017
 name: central nervous system
 alt_id: UBERON:FBbt_00005094-FMA_55675-MA_0000167-XAO_0000215-ZFA_0000012
 def: "The part of the nervous system which consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Organ with organ cavity which consists of gray matter and white matter[FMA]. The brain and spinal cord[ZFA]." [FB:gg, ISBN:3110148986, NLM:central+nervous+system, Wikipedia:Central_nervous_system, ZFIN:curator]
+comment: TODO - resolve is_a vs part_of NS in AOs (and GO)
 subset: uberon_slim
 synonym: "CNS" RELATED []
 synonym: "neuraxis" EXACT []
@@ -7484,7 +7488,7 @@ xref: FBbt:00005786
 xref: GAID:1228
 xref: MAT:0000123
 xref: MIAA:0000123
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0000025 ! tube
 relationship: part_of UBERON:0001008 ! urinary system
 
 [Term]
@@ -9945,7 +9949,7 @@ xref: ncithesaurus:Ovarian_Artery
 xref: OpenCyc:Mx4rwOa9PZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000992
 intersection_of: UBERON:0001637 ! artery
 intersection_of: part_of UBERON:0000992 ! ovary
@@ -10684,9 +10688,11 @@ xref: MA:0000377
 xref: ncithesaurus:Renal_Tubule
 xref: TAO:0001287
 xref: ZFA:0001287
-is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0003914 ! implied link automatically realized ! epithelial tube
 is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
-relationship: part_of UBERON:0001285 ! nephron
+relationship: part_of UBERON:0001285
+intersection_of: UBERON:0003914 ! epithelial tube
+intersection_of: part_of UBERON:0001285 ! nephron
 
 [Term]
 id: UBERON:0001232
@@ -11700,14 +11706,12 @@ xref: EHDAA:2201
 xref: FMA:17540
 xref: HOG:0000539
 xref: MA:0000366
-is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0000353 ! implied link automatically realized ! parenchyma
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: part_of UBERON:0002107
 intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: part_of UBERON:0002107 ! liver
 relationship: develops_from UBERON:0004912 ! biliary bud
-relationship: part_of UBERON:0002107 ! liver
 
 [Term]
 id: UBERON:0001281
@@ -11982,7 +11986,7 @@ xref: MAT:0000319
 xref: MIAA:0000319
 xref: ncithesaurus:Endometrium
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000995 ! uterus
 
 [Term]
@@ -12003,6 +12007,7 @@ xref: MA:0000391
 xref: MeSH:D009215
 xref: ncithesaurus:Myometrium
 is_a: UBERON:0001135 ! smooth muscle tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000995 ! uterus
 relationship: surrounded_by UBERON:0001297 ! serosa of uterus
 relationship: surrounds UBERON:0001295 ! endometrium
@@ -12024,7 +12029,7 @@ synonym: "visceral peritoneum of uterus" EXACT []
 xref: FMA:17744
 xref: MA:0001729
 is_a: UBERON:0000042 ! serous membrane
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000995
 intersection_of: UBERON:0000042 ! serous membrane
 intersection_of: part_of UBERON:0000995 ! uterus
@@ -12061,7 +12066,7 @@ xref: MA:0002726
 xref: ncithesaurus:Glans_Penis
 xref: OpenCyc:Mx4rvdCpE5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000989 ! penis
 
 [Term]
@@ -12099,7 +12104,7 @@ xref: MAT:0000130
 xref: MIAA:0000130
 xref: ncithesaurus:Epididymis
 is_a: UBERON:0000058 ! duct
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000473 ! testis
 
 [Term]
@@ -12173,7 +12178,7 @@ xref: ncithesaurus:Ovarian_Follicle
 xref: TAO:0001110
 xref: ZFA:0001110
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000992 ! ovary
 
 [Term]
@@ -12187,7 +12192,7 @@ synonym: "cumulus ovaricus" EXACT []
 xref: FMA:18659
 xref: MA:0002414
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001305 ! follicle of ovary
 
 [Term]
@@ -12367,7 +12372,7 @@ synonym: "vein of vagina" EXACT [OBOL:automatic]
 xref: FMA:18899
 xref: MA:0002251
 is_a: UBERON:0001638 ! vein
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000996
 intersection_of: UBERON:0001638 ! vein
 intersection_of: part_of UBERON:0000996 ! vagina
@@ -12511,8 +12516,9 @@ xref: FMA:19570
 xref: MA:0001738
 xref: ncithesaurus:Prostate_Gland_Lobe
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-relationship: part_of UBERON:0002367 ! prostate
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0002367 ! prostate gland
 
 [Term]
 id: UBERON:0001329
@@ -12558,6 +12564,7 @@ synonym: "zone of skin of penis" EXACT [OBOL:automatic]
 xref: FMA:19638
 xref: MA:0002727
 is_a: UBERON:0000014 ! zone of skin
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000989
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: part_of UBERON:0000989 ! penis
@@ -12581,8 +12588,8 @@ xref: MA:0000407
 xref: ncithesaurus:Prepuce
 xref: OpenCyc:Mx4rvVjlTZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001331 ! skin of penis
 
 [Term]
@@ -12698,7 +12705,7 @@ synonym: "dorsal penis artery" EXACT []
 xref: FMA:19795
 xref: MA:0001946
 is_a: UBERON:0001637 ! artery
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000989 ! penis
 
 [Term]
@@ -12727,6 +12734,7 @@ xref: FMA:19815
 xref: TAO:0000333
 xref: ZFA:0000333
 is_a: UBERON:0002095 ! mesentery
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000992 ! ovary
 relationship: part_of UBERON:0002095 ! mesentery
 
@@ -12762,7 +12770,7 @@ xref: FMA:19978
 xref: MA:0001730
 xref: ncithesaurus:Vaginal_Epithelium
 is_a: UBERON:0000486 ! multilaminar epithelium
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000996
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000996 ! vagina
@@ -12789,7 +12797,7 @@ synonym: "vaginal hymen" EXACT []
 xref: FMA:20005
 xref: MA:0002465
 is_a: UBERON:0000063 ! organ segment
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000996 ! vagina
 
 [Term]
@@ -15074,7 +15082,7 @@ synonym: "venous vaginal plexus" EXACT []
 xref: FMA:29713
 xref: MA:0002257
 is_a: UBERON:0001593 ! venous plexus
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000996
 intersection_of: UBERON:0001593 ! venous plexus
 intersection_of: part_of UBERON:0000996 ! vagina
@@ -20496,6 +20504,7 @@ xref: MA:0000279
 xref: ncithesaurus:Retinal_Pigment_Epithelium
 xref: TAO:0000144
 xref: ZFA:0000144
+is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0001781 ! layer of retina
 relationship: part_of UBERON:0003902 ! retinal neural layer
 
@@ -21516,7 +21525,7 @@ xref: ncithesaurus:Semicircular_Canal
 xref: TAO:0000431
 xref: XAO:0000198
 xref: ZFA:0000431
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000025 ! tube
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001839 ! bony labyrinth
 
@@ -22999,8 +23008,8 @@ synonym: "arteriole endothelium" EXACT []
 xref: FMA:62115
 xref: MA:0000705
 xref: ncithesaurus:Arteriole_Endothelium
+is_a: UBERON:0001917 ! implied link automatically realized ! endothelium of artery
 is_a: UBERON:0001986 ! endothelium
-is_a: UBERON:0004852 ! implied link automatically realized ! cardiovascular system endothelium
 relationship: part_of UBERON:0001980
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0001980 ! arteriole
@@ -23024,7 +23033,6 @@ is_a: UBERON:0004700 ! implied link automatically realized ! arterial system end
 relationship: part_of UBERON:0001637
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0001637 ! artery
-relationship: part_of UBERON:0001637 ! artery
 
 [Term]
 id: UBERON:0001918
@@ -23191,7 +23199,7 @@ xref: EFO:0001988
 xref: FMA:62209
 xref: MA:0000869
 xref: NIF_GrossAnatomy:birnlex_1662
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0000467 ! anatomical system
 is_a: UBERON:0002730 ! implied link automatically realized ! regional part of thalamus
 relationship: part_of UBERON:0001897 ! thalamus
 
@@ -24266,7 +24274,7 @@ relationship: part_of UBERON:0001009 ! circulatory system
 id: UBERON:0001980
 name: arteriole
 alt_id: UBERON:FMA_63182-MA_0000063
-def: "Subdivision of arterial tree (organ) which is directly continuous with capillary vessel." [Wikipedia:Arteriole]
+def: "the smallest division of the artery located between the muscular arteries and the capillaries[GO]. Subdivision of arterial tree (organ) which is directly continuous with capillary vessel[FMA]." [FMA:63182, GO:0014830, Wikipedia:Arteriole]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: BTO:0001997
@@ -24274,8 +24282,8 @@ xref: FMA:63182
 xref: MA:0000063
 xref: ncithesaurus:Arteriole
 xref: ZFA:0005255
-is_a: UBERON:0000063 ! organ segment
-relationship: part_of UBERON:0001009 ! circulatory system
+is_a: UBERON:0001981 ! blood vessel
+relationship: part_of UBERON:0001637 ! artery
 
 [Term]
 id: UBERON:0001981
@@ -24429,7 +24437,7 @@ xref: ncithesaurus:Placenta
 xref: OpenCyc:Mx4rvv4zZ5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0000478 ! extraembryonic structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000990 ! reproductive system
 
 [Term]
@@ -24511,7 +24519,7 @@ xref: BTO:0000113
 xref: FMA:6470
 xref: MA:0001153
 is_a: UBERON:0001807 ! paravertebral ganglion
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000002
 intersection_of: UBERON:0000045 ! ganglion
 intersection_of: part_of UBERON:0000002 ! uterine cervix
@@ -25757,8 +25765,8 @@ relationship: part_of UBERON:0000948 ! heart
 id: UBERON:0002062
 name: endocardial cushion
 alt_id: UBERON:FMA_70302-MA_0000078-ZFA_0001317
-def: "Swellings of tissue present between the endocardial and myocardial cell layers that will give rise to the interstitial cells of the cardiac valves." [Wikipedia:Endocardial_cushion, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The endocardial cushion is a specialized region of mesenchymal cells that will give rise to the heart septa and valves[GO]. Swellings of tissue present between the endocardial and myocardial cell layers that will give rise to the interstitial cells of the cardiac valves[ZFA]." [GO:0003197, Wikipedia:Endocardial_cushion, ZFIN:curator]
+comment: GO graph seems to suggest this is an endothelium. WP: The endocardial cushions are thought to arise from a subset of endothelial cells that undergo epithelial to mesenchymal transformation, a process whereby these cells break cell-to-cell contacts and migrate into the cardiac jelly (towards to interior of the heart tube).
 subset: uberon_slim
 synonym: "endocardial cushions" RELATED []
 xref: FMA:70302
@@ -27681,8 +27689,8 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0002165
 name: endocardium
 alt_id: UBERON:FMA_7280-XAO_0000066-ZFA_0001320
-def: "Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber. // Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The endocardium is an endothelium that is the innermost layer of tissue of the heart, and lines the heart chambers[GO]. Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber. // Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
+comment: GO says is_a endothelium. FMA says is_a tunica intima that has_part endothelium. punt by making has_part for now
 subset: uberon_slim
 xref: BTO:0000387
 xref: EFO:0000821
@@ -27699,6 +27707,7 @@ xref: ZFA:0001320
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003084 ! heart primordium
+relationship: has_part UBERON:0001986 ! endothelium
 relationship: part_of UBERON:0000948 ! heart
 
 [Term]
@@ -28057,8 +28066,8 @@ xref: MAT:0000133
 xref: MIAA:0000133
 xref: ncithesaurus:Bronchus
 xref: XAO:0000121
-is_a: UBERON:0000063 ! organ segment
-is_a: UBERON:0000072 ! implied link automatically realized ! segment of respiratory tract
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: part_of UBERON:0001558 ! lower respiratory tract
 relationship: part_of UBERON:0002224 ! thoracic cavity
 
@@ -29087,7 +29096,7 @@ xref: EFO:0000975
 xref: FMA:77053
 xref: MA:0000393
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000995 ! uterus
 
 [Term]
@@ -30624,7 +30633,7 @@ xref: FMA:86487
 xref: MA:0002734
 xref: ncithesaurus:Endometrial_Stroma
 is_a: UBERON:0003891 ! stroma
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001295 ! endometrium
 
 [Term]
@@ -31283,12 +31292,12 @@ relationship: part_of UBERON:0002330 ! exocrine system
 
 [Term]
 id: UBERON:0002367
-name: prostate
+name: prostate gland
 alt_id: UBERON:FMA_9600-MA_0000404-MIAA_0000078
-def: "Lobular organ the parenchyma of which has as its parts glandular acini which are continuous with the prostatic part of the urethra. Examples: There is only one prostate." [Wikipedia:Prostate]
+def: "The prostate gland is a partly muscular, partly glandular body that is situated near the base of the mammalian male urethra and secretes an alkaline viscid fluid which is a major constituent of the ejaculatory fluid." [GO:0030850, Wikipedia:Prostate]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "prostate gland" EXACT []
+synonym: "prostate" EXACT []
 xref: BTO:0001129
 xref: EFO:0000858
 xref: FMA:9600
@@ -31300,9 +31309,11 @@ xref: MAT:0000078
 xref: MIAA:0000078
 xref: ncithesaurus:Prostate_Gland
 xref: OpenCyc:Mx4rv6trqZwpEbGdrcN5Y29ycA
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0002530 ! gland
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
 relationship: develops_from UBERON:0003280 ! endothelium of main bronchus
+relationship: part_of UBERON:0000079 ! male reproductive system
 
 [Term]
 id: UBERON:0002368
@@ -32266,7 +32277,7 @@ xref: MA:0000382
 xref: ncithesaurus:Clitoris
 xref: OpenCyc:Mx4rvVjr6ZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000997 ! vulva
 
 [Term]
@@ -32992,7 +33003,7 @@ xref: MAT:0000290
 xref: MIAA:0000290
 xref: ncithesaurus:Decidua
 is_a: UBERON:0000478 ! extraembryonic structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001987 ! placenta
 
 [Term]
@@ -33546,11 +33557,12 @@ xref: FMA:19580
 xref: MA:0002785
 xref: ncithesaurus:Prostatic_Duct
 is_a: UBERON:0000058 ! duct
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0002367
 intersection_of: UBERON:0000058 ! duct
-intersection_of: part_of UBERON:0002367 ! prostate
-relationship: part_of UBERON:0002367 ! prostate
+intersection_of: part_of UBERON:0002367 ! prostate gland
+relationship: part_of UBERON:0002367 ! prostate gland
 
 [Term]
 id: UBERON:0002486
@@ -33662,7 +33674,7 @@ xref: FMA:18829
 xref: MA:0002799
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000995
 intersection_of: UBERON:0001637 ! artery
 intersection_of: part_of UBERON:0000995 ! uterus
@@ -33931,7 +33943,7 @@ xref: GAID:369
 xref: MA:0002834
 xref: ncithesaurus:Corpus_Luteum
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: develops_from UBERON:0001305 ! follicle of ovary
 relationship: part_of UBERON:0000949 ! endocrine system
 relationship: part_of UBERON:0000992 ! ovary
@@ -36493,10 +36505,9 @@ xref: FMA:72239
 xref: GAID:602
 xref: ncithesaurus:Vestibular_Nucleus
 xref: NIF_GrossAnatomy:birnlex_1337
-is_a: UBERON:0002020 ! gray matter of neuraxis
+is_a: UBERON:0000125 ! neural nucleus
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
-is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 relationship: part_of UBERON:0000988 ! pons
 relationship: part_of UBERON:0001896 ! medulla oblongata
 
@@ -41803,8 +41814,8 @@ xref: TAO:0001083
 xref: XAO:0000021
 xref: ZFA:0001083
 is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
-relationship: part_of UBERON:0000955 ! brain
+is_a: UBERON:0002780 ! implied link automatically realized ! regional part of forebrain
+relationship: part_of UBERON:0001890 ! forebrain
 
 [Term]
 id: UBERON:0003054
@@ -43142,7 +43153,7 @@ xref: GAID:1299
 xref: HOG:0000200
 xref: ncithesaurus:Chorion
 is_a: UBERON:0000478 ! extraembryonic structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: adjacent_to UBERON:0000922 ! embryo
 relationship: part_of UBERON:0000992 ! ovary
 
@@ -43186,10 +43197,9 @@ relationship: part_of UBERON:0002224 ! thoracic cavity
 id: UBERON:0003127
 name: open tracheal system trachea
 def: "A trachea composed of composed of spiracles, tracheae, and tracheoles [Wikipedia]. An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." [GO:0007424, Wikipedia:Invertebrate_trachea]
-comment: TODO: system vs organ part
+comment: TODO check if is_a epithelium
 subset: uberon_slim
 synonym: "invertebrate trachea" EXACT []
-synonym: "open tracheal system" EXACT []
 synonym: "trachea" BROAD SENSU [FBbt:00005043]
 xref: FBbt:00005043
 is_a: UBERON:0001005 ! respiratory airway
@@ -43278,7 +43288,9 @@ relationship: part_of UBERON:0001042 ! pharynx
 id: UBERON:0003133
 name: reproductive organ
 def: "An organ involved in reproduction" [UBERON:xp]
-synonym: "reproductive structure" EXACT []
+comment: GO uses genitalia for the singular organ
+synonym: "genital organ" EXACT []
+synonym: "genitalia" RELATED PLURAL []
 synonym: "reproductive system organ" EXACT []
 synonym: "sex organ" EXACT []
 xref: MA:0001752
@@ -43869,16 +43881,17 @@ is_obsolete: true
 
 [Term]
 id: UBERON:0003194
-name: wing vein
+name: imaginal disc-derived wing vein
 alt_id: UBERON:FBbt_00004751-HAO_0001095
-synonym: "vein of wing" EXACT [OBOL:automatic]
+synonym: "vein of imaginal disc-derived wing" EXACT [OBOL:automatic]
 xref: FBbt:00004751
 xref: HAO:0001095
 is_a: UBERON:0000476 ! acellular anatomical structure
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
-relationship: part_of UBERON:0000023
+is_a: UBERON:0003834 ! implied link automatically realized ! thoracic segment blood vessel
+relationship: part_of UBERON:0000984
 intersection_of: UBERON:0001638 ! vein
-intersection_of: part_of UBERON:0000023 ! wing
+intersection_of: part_of UBERON:0000984 ! imaginal disc-derived wing
 
 [Term]
 id: UBERON:0003195
@@ -44136,7 +44149,7 @@ id: UBERON:0003218
 name: ovary septum
 def: "Septum that divides the ovary, the basal portion of a carpel or group of fused carpels, that encloses the ovule(s)[GO]." [GO:0080126, Wikipedia:Septum]
 is_a: UBERON:0003037 ! septum
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000992 ! ovary
 
 [Term]
@@ -44183,7 +44196,7 @@ synonym: "chorion syncytiotrophoblast" EXACT [OBOL:automatic]
 synonym: "syncytiotrophoblast of chorion (vertebrates)" EXACT [OBOL:automatic]
 xref: EHDAA:156
 is_a: UBERON:0000371 ! implied link automatically realized ! syncytiotrophoblast
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0003124
 intersection_of: UBERON:0000371 ! syncytiotrophoblast
 intersection_of: part_of UBERON:0003124 ! chorion
@@ -46377,8 +46390,8 @@ synonym: "chorion (vertebrates) ectoderm" EXACT [OBOL:automatic]
 synonym: "chorion ectoderm" EXACT [OBOL:automatic]
 synonym: "ectoderm of chorion (vertebrates)" EXACT [OBOL:automatic]
 xref: EMAPA:16113
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004366 ! implied link automatically realized ! extraembryonic ectoderm
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0003124
 intersection_of: UBERON:0000924 ! ectoderm
 intersection_of: part_of UBERON:0003124 ! chorion
@@ -48057,9 +48070,8 @@ synonym: "fat pad of gonada" EXACT [OBOL:automatic]
 synonym: "gonad fat pad" EXACT [OBOL:automatic]
 synonym: "gonada fat pad" EXACT [OBOL:automatic]
 xref: MA:0002547
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0003916 ! implied link automatically realized ! fat pad
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991
 intersection_of: UBERON:0003916 ! fat pad
 intersection_of: part_of UBERON:0000991 ! gonad
@@ -48974,7 +48986,7 @@ name: vein of clitoris
 synonym: "clitoris vein" EXACT [OBOL:automatic]
 xref: MA:0002252
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0002411
 intersection_of: UBERON:0001638 ! vein
 intersection_of: part_of UBERON:0002411 ! clitoris
@@ -49214,6 +49226,7 @@ id: UBERON:0003495
 name: respiratory system arteriole
 xref: MA:0001803
 is_a: UBERON:0001980 ! implied link automatically realized ! arteriole
+is_a: UBERON:0003504 ! implied link automatically realized ! respiratory system blood vessel
 relationship: part_of UBERON:0001004
 intersection_of: UBERON:0001980 ! arteriole
 intersection_of: part_of UBERON:0001004 ! respiratory system
@@ -49388,9 +49401,11 @@ intersection_of: part_of UBERON:0001466 ! toe
 [Term]
 id: UBERON:0003509
 name: arterial blood vessel
-comment: only in MA - supertype of artery, arteriole, aorta
+def: "A blood vessel that carries blood from the heart to the body[tfd]." [http://www.thefreedictionary.com/arterial+blood+vessel]
+comment: only in MA - supertype of artery, arteriole, aorta.
 xref: MA:0000061
 is_a: UBERON:0001981 ! blood vessel
+relationship: part_of UBERON:0004572 ! arterial system
 
 [Term]
 id: UBERON:0003510
@@ -53518,7 +53533,7 @@ xref: HOG:0001340
 xref: OpenCyc:Mx4rvlWYh5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
 is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991
 intersection_of: UBERON:0001638 ! vein
 intersection_of: part_of UBERON:0000991 ! gonad
@@ -53609,6 +53624,7 @@ synonym: "mesenchyme of gonad" EXACT [OBOL:automatic]
 synonym: "mesenchyme of gonada" EXACT [OBOL:automatic]
 xref: HOG:0001090
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0000991 ! gonad
@@ -54268,10 +54284,11 @@ is_a: UBERON:0003913 ! tooth-like structure
 [Term]
 id: UBERON:0003913
 name: tooth-like structure
-def: "hard bony, calcareous, or chitinous organ found in the mouth or pharynx of an animal and used in procuring or masticating food." []
+def: "hard bony, calcareous, or chitinous organ found in the mouth or pharynx of an animal and used in procuring or masticating food." [GOC:cjm]
 comment: see dermal denticle
+synonym: "tooth-like organ" EXACT [GOC:cjm]
 xref: HAO:0001019
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000062 ! organ
 
 [Term]
 id: UBERON:0003914
@@ -54291,6 +54308,7 @@ is_a: UBERON:0003914 ! implied link automatically realized ! epithelial tube
 id: UBERON:0003916
 name: fat pad
 def: "an accumulation of adipose tissue." [GO:0060613]
+comment: FMA says isa organ
 synonym: "fat body" RELATED [FMA:58616]
 xref: AAO:0000157
 xref: BTO:0000442
@@ -54298,8 +54316,7 @@ xref: BTO:0000444
 xref: FMA:58616
 xref: MA:0002481
 xref: XAO:0003050
-is_a: UBERON:0000062 ! organ
-relationship: part_of UBERON:0001013 ! adipose tissue
+is_a: UBERON:0001013 ! adipose tissue
 
 [Term]
 id: UBERON:0003917
@@ -54569,7 +54586,7 @@ synonym: "gland of genitalia" EXACT [OBOL:automatic]
 synonym: "gland of reproductive system" EXACT [OBOL:automatic]
 synonym: "reproductive system gland" EXACT [OBOL:automatic]
 is_a: UBERON:0002530 ! gland
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000990
 intersection_of: UBERON:0002530 ! gland
 intersection_of: part_of UBERON:0000990 ! reproductive system
@@ -54644,7 +54661,7 @@ def: "the placental layers where embryonic blood vessels are surrounded by troph
 synonym: "labyrinthine layer" EXACT [GO:0060713]
 synonym: "labyrinthine layer of placenta" EXACT [GO:0060713]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001987 ! placenta
 
 [Term]
@@ -54770,7 +54787,7 @@ xref: FMA:19834
 xref: GAID:399
 xref: ncithesaurus:Rete_Testis
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0005051 ! mediastinum testis
 
 [Term]
@@ -54859,7 +54876,7 @@ synonym: "placenta vasculature" EXACT [OBOL:automatic]
 synonym: "vascular network of placenta" EXACT [OBOL:automatic]
 synonym: "vasculature of placenta" EXACT [OBOL:automatic]
 is_a: UBERON:0002049 ! vasculature
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001987
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: part_of UBERON:0001987 ! placenta
@@ -54878,7 +54895,7 @@ id: UBERON:0003972
 name: placenta junctional zone
 def: "Fetally derived placental region that separates the maternal uterine tissue from the placenta labyrinth" [MP:0008957]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001987 ! placenta
 
 [Term]
@@ -54895,7 +54912,7 @@ id: UBERON:0003974
 name: cranial vagina
 def: "the upper third of the female reproductive canal located between the uterus and the vulva." [MP:0009077]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000996 ! vagina
 
 [Term]
@@ -54906,8 +54923,8 @@ synonym: "female internal genitalia" EXACT [FMA:45654]
 synonym: "internal genitalia of female reproductive system" EXACT [OBOL:automatic]
 xref: FMA:45654
 is_a: UBERON:0003134 ! implied link automatically realized ! female reproductive organ
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004175 ! implied link automatically realized ! internal reproductive organ
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000474
 intersection_of: UBERON:0004175 ! internal reproductive organ
 intersection_of: part_of UBERON:0000474 ! female reproductive system
@@ -54970,7 +54987,7 @@ id: UBERON:0003983
 name: conus arteriosus
 def: "a conical pouch formed from the upper and left angle of the right ventricle in the chordate  heart, from which the pulmonary artery arises[WP]. the anteriosuperior, smooth-walled portion of the cavity of the right ventricle, beginning at the supraventricular crest and terminates in the pulmonary trunk[MP]." [MP:0009464, Wikipedia:Conus_arteriosus]
 synonym: "infundibulum" EXACT [Wikipedia:Conus_arteriosus]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004151 ! cardiac chamber
 relationship: part_of UBERON:0002080 ! right ventricle
 
 [Term]
@@ -55306,7 +55323,7 @@ id: UBERON:0004021
 name: spongiotrophoblast layer
 def: "the structure of the outer structural layer of the rodent placenta" [MP:0004255]
 is_a: UBERON:0000119 ! cell layer
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001987 ! placenta
 
 [Term]
@@ -55368,7 +55385,7 @@ def: "the portion of the chorion from which chorionic villi develop that establi
 xref: BTO:0002879
 xref: ncithesaurus:Chorionic_Plate
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0003124 ! chorion
 
 [Term]
@@ -55825,7 +55842,7 @@ xref: galen:Labia
 xref: MA:0002464
 xref: ncithesaurus:Labium
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000996 ! vagina
 
 [Term]
@@ -56618,9 +56635,8 @@ is_a: UBERON:0002085 ! interatrial septum
 id: UBERON:0004160
 name: proepicardium
 def: "An outpouching of the septum transversum" [GO:0003342]
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0003104 ! mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+relationship: part_of UBERON:0004161 ! septum transversum
 
 [Term]
 id: UBERON:0004161
@@ -56630,9 +56646,8 @@ xref: EHDAA:736
 xref: EMAPA:16318
 xref: HOG:0000019
 xref: ncithesaurus:Septum_Transversum
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0003104 ! mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+relationship: part_of UBERON:0002100 ! trunk
 
 [Term]
 id: UBERON:0004162
@@ -56821,8 +56836,9 @@ id: UBERON:0004179
 name: prostate glandular acinus
 def: "The glandular acini are the saclike structures of the gland" [GO:0060525]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-relationship: part_of UBERON:0002367 ! prostate
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0002367 ! prostate gland
 
 [Term]
 id: UBERON:0004180
@@ -56863,7 +56879,8 @@ id: UBERON:0004181
 name: mammary gland bud
 def: "Mammary gland buds form by an outpocketing of the mammary placodes and grow to invade the mammary fat, when they form the mammary cord" [GO:0060648]
 comment: TODO - mammary placode
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0003244 ! implied link automatically realized ! epithelium of mammary gland
+is_a: UBERON:0005153 ! epithelial bud
 relationship: part_of UBERON:0001765 ! lactiferous duct
 
 [Term]
@@ -56871,7 +56888,8 @@ id: UBERON:0004182
 name: mammary gland cord
 def: "Mammary gland cords form when the mammary gland bud invades the mammary fat" [GO:0060652]
 comment: TODO - mammary placode
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0003244 ! implied link automatically realized ! epithelium of mammary gland
+is_a: UBERON:0005154 ! epithelial cord
 relationship: part_of UBERON:0001765 ! lactiferous duct
 
 [Term]
@@ -56884,7 +56902,7 @@ synonym: "blood vessel of placenta labyrinth" EXACT [OBOL:automatic]
 synonym: "labyrinthine layer of placenta blood vessel" EXACT [OBOL:automatic]
 synonym: "placenta labyrinth blood vessel" EXACT [OBOL:automatic]
 is_a: UBERON:0001981 ! implied link automatically realized ! blood vessel
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0003946
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0003946 ! placenta labyrinth
@@ -56902,11 +56920,12 @@ synonym: "stroma of prostate gland" EXACT [OBOL:automatic]
 xref: FMA:45719
 xref: MA:0002912
 xref: ncithesaurus:Prostatic_Stroma
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0003891 ! implied link automatically realized ! stroma
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0002367
 intersection_of: UBERON:0003891 ! stroma
-intersection_of: part_of UBERON:0002367 ! prostate
+intersection_of: part_of UBERON:0002367 ! prostate gland
 
 [Term]
 id: UBERON:0004185
@@ -56986,6 +57005,7 @@ intersection_of: part_of UBERON:0000074 ! renal glomerulus
 id: UBERON:0004191
 name: glomus
 def: "The glomus is the vascular component of the pronephros and filters waste from the blood before it enters the pronephric tubules" [GO:0072013]
+comment: TODO - add is_a glomerulus
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
@@ -57439,6 +57459,7 @@ synonym: "vagina non-striated muscle" EXACT [OBOL:automatic]
 synonym: "vagina smooth muscle tissue" EXACT [OBOL:automatic]
 xref: MA:0001733
 is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000996
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0000996 ! vagina
@@ -57837,7 +57858,7 @@ intersection_of: part_of UBERON:0001911 ! lactiferous gland
 id: UBERON:0004236
 name: arteriole smooth muscle
 xref: MA:0000706
-is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0002111 ! implied link automatically realized ! smooth muscle of artery
 relationship: part_of UBERON:0001980
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0001980 ! arteriole
@@ -58019,9 +58040,10 @@ xref: FMA:74245
 xref: MA:0001741
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0002367
 intersection_of: UBERON:0001135 ! smooth muscle tissue
-intersection_of: part_of UBERON:0002367 ! prostate
+intersection_of: part_of UBERON:0002367 ! prostate gland
 
 [Term]
 id: UBERON:0004245
@@ -59366,7 +59388,7 @@ name: heart rudiment
 def: "a cone-like structure that is formed when myocardial progenitor cells of the heart field fuse at the midline. The heart rudiment is the first structure of the heart tube." [GO:0003142]
 synonym: "heart cone" EXACT []
 xref: ZFA:0000115
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0004140 ! heart field
 
@@ -60022,6 +60044,7 @@ xref: FMA:20421
 is_a: UBERON:0000211 ! ligament
 is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0003567 ! implied link automatically realized ! abdomen connective tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: attached_to UBERON:0000991 ! gonad
 relationship: develops_from UBERON:0003064 ! intermediate mesoderm
 relationship: part_of UBERON:0000922 ! embryo
@@ -60080,7 +60103,7 @@ id: UBERON:0004353
 name: female inguinal canal
 def: "." [MP:0008015]
 is_a: UBERON:0003702 ! implied link automatically realized ! inguinal canal
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000474
 intersection_of: UBERON:0003702 ! inguinal canal
 intersection_of: part_of UBERON:0000474 ! female reproductive system
@@ -60090,7 +60113,7 @@ id: UBERON:0004354
 name: male inguinal canal
 def: "." [MP:0008016]
 is_a: UBERON:0003702 ! implied link automatically realized ! inguinal canal
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000079
 intersection_of: UBERON:0003702 ! inguinal canal
 intersection_of: part_of UBERON:0000079 ! male reproductive system
@@ -60127,7 +60150,7 @@ name: caput
 def: "the head of the epididymis" [MP:0002660]
 synonym: "epidymis head" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001301 ! epididymis
 
 [Term]
@@ -60136,7 +60159,7 @@ name: corpus
 def: "the body of the epididymis" [MP:0002661]
 synonym: "epidymis body" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001301 ! epididymis
 
 [Term]
@@ -60145,7 +60168,7 @@ name: cauda
 def: "the tail of the epididymis" [MP:0002662]
 synonym: "epidymis tail" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001301 ! epididymis
 
 [Term]
@@ -61646,9 +61669,10 @@ name: Striated muscle tissue of prostate
 xref: FMA:45716
 is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0002036 ! implied link automatically realized ! striated muscle tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0002367
 intersection_of: UBERON:0002036 ! striated muscle tissue
-intersection_of: part_of UBERON:0002367 ! prostate
+intersection_of: part_of UBERON:0002367 ! prostate gland
 
 [Term]
 id: UBERON:0004521
@@ -61920,7 +61944,7 @@ name: decidua capsularis
 xref: FMA:86478
 xref: MA:0002906
 is_a: UBERON:0000478 ! extraembryonic structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0002450 ! decidua
 
 [Term]
@@ -62469,6 +62493,7 @@ def: "The afferent arterioles are a group of blood vessels that supply the nephr
 xref: MA:0002579
 xref: ZFA:0005307
 is_a: UBERON:0001980 ! arteriole
+is_a: UBERON:0003517 ! implied link automatically realized ! kidney blood vessel
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001229 ! renal corpuscle
 
@@ -62479,6 +62504,7 @@ def: "The efferent arterioles are blood vessels that are part of the urinary tra
 xref: MA:0002585
 xref: ZFA:0005308
 is_a: UBERON:0001980 ! arteriole
+is_a: UBERON:0003517 ! implied link automatically realized ! kidney blood vessel
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001229 ! renal corpuscle
 
@@ -63252,7 +63278,7 @@ xref: BTO:0002019
 xref: FMA:19618
 xref: Wikipedia:Corpus_cavernosum_penis
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000989 ! penis
 
 [Term]
@@ -64310,7 +64336,7 @@ xref: MA:0002525
 is_a: UBERON:0000456 ! implied link automatically realized ! secretion
 relationship: part_of UBERON:0002367
 intersection_of: UBERON:0000456 ! secretion
-intersection_of: part_of UBERON:0002367 ! prostate
+intersection_of: part_of UBERON:0002367 ! prostate gland
 
 [Term]
 id: UBERON:0004797
@@ -64424,7 +64450,7 @@ synonym: "epithelium of penis" EXACT [OBOL:automatic]
 synonym: "penis epithelial tissue" EXACT [OBOL:automatic]
 xref: MA:0001742
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000989
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000989 ! penis
@@ -64892,6 +64918,7 @@ synonym: "smooth muscle tissue of epididymis" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of epididymus" EXACT [OBOL:automatic]
 xref: MA:0001736
 is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001301
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0001301 ! epididymis
@@ -65632,7 +65659,7 @@ xref: EHDAA:5931
 xref: FBbt:00004859
 xref: ncithesaurus:Germinal_Epithelium
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000991 ! gonad
@@ -65771,7 +65798,7 @@ name: mesoderm of gonad
 synonym: "gonad mesoderm" EXACT [OBOL:automatic]
 synonym: "gonadal mesoderm" EXACT [OBOL:automatic]
 is_a: UBERON:0003263 ! implied link automatically realized ! mesoderm of embryo
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0000991 ! gonad
@@ -66244,7 +66271,7 @@ synonym: "vagina mucous membrane" EXACT [OBOL:automatic]
 synonym: "vagina organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:19975
 is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000996
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000996 ! vagina
@@ -66286,7 +66313,7 @@ synonym: "mucous membrane of ejaculatory duct" EXACT [OBOL:automatic]
 synonym: "organ mucosa of ejaculatory duct" EXACT [OBOL:automatic]
 xref: FMA:19373
 is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000999
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000999 ! ejaculatory duct
@@ -67960,7 +67987,7 @@ name: mediastinum testis
 def: "The mediastinum testis is a network of fibrous connective tissue that extends from the upper to near the lower extremity of the testis, and is wider above than below. From its front and sides numerous imperfect septa (trabeculæ) are given off, which radiate toward the surface of the organ, and are attached to the tunica albuginea. They divide the interior of the organ into a number of incomplete spaces, called lobules. These are somewhat cone-shaped, being broad at their bases at the surface of the gland, and becoming narrower as they converge to the mediastinum. The mediastinum supports the rete testis and blood vessels of the testis in their passage to and from the substance of the gland[WP]" [Wikipedia:Mediastinum_testis]
 xref: EMAPA:18331
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: has_part UBERON:0002384 ! connective tissue
 relationship: part_of UBERON:0000473 ! testis
 
@@ -68013,8 +68040,8 @@ synonym: "external genitalia of female reproductive system" EXACT [OBOL:automati
 synonym: "female external genitalia" EXACT [FMA:45649]
 xref: FMA:45649
 is_a: UBERON:0003134 ! implied link automatically realized ! female reproductive organ
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004176 ! implied link automatically realized ! external reproductive organ
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000474
 intersection_of: UBERON:0004176 ! external reproductive organ
 intersection_of: part_of UBERON:0000474 ! female reproductive system
@@ -68043,6 +68070,7 @@ id: UBERON:0005059
 name: Drosophila lymph gland
 def: "The lymph gland is one of the sites of hemocyte differentiation. It consists of three to six bilaterally paired lobes that are attached to the cardioblasts during larval stages, and it degenerates during pupal stages[GO]." [GO:0048542]
 synonym: "lymph gland" EXACT SENSU [FBbt:00001668]
+xref: FBbt:00001668
 is_a: UBERON:0000062 ! organ
 disjoint_from: UBERON:0000029 ! lymph node
 relationship: part_of UBERON:0001009 ! circulatory system
@@ -68077,6 +68105,7 @@ xref: EMAPA:16307
 xref: EMAPA:16528
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005157 ! epithelial fold
 relationship: part_of UBERON:0003075 ! neural plate
 
 [Term]
@@ -68805,7 +68834,49 @@ is_a: UBERON:0000483 ! epithelium
 [Term]
 id: UBERON:0005154
 name: epithelial cord
+comment: TODO - add superclass of developing structure
 is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0005155
+name: open tracheal system
+def: "An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." [GO:0007424]
+subset: uberon_slim
+synonym: "invertebrate tracheal system" EXACT []
+synonym: "open tracheal system" EXACT []
+synonym: "tracheal system" BROAD SENSU [FBbt:00005024]
+xref: FBbt:00005024
+is_a: UBERON:0000467 ! anatomical system
+is_a: UBERON:0001004 ! implied link automatically realized ! respiratory system
+
+[Term]
+id: UBERON:0005156
+name: reproductive structure
+def: "An anatomical structure that is part of the reproductive system." [GOC:cjm]
+synonym: "reproductive system structure" EXACT []
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0000990
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: part_of UBERON:0000990 ! reproductive system
+
+[Term]
+id: UBERON:0005157
+name: epithelial fold
+def: "An epithelial sheet bent on a linear axis." [GO:0060571]
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0005158
+name: parenchyma of central nervous system
+synonym: "central nervous system parenchyma" EXACT [OBOL:automatic]
+synonym: "CNS parenchyma" EXACT [OBOL:automatic]
+synonym: "parenchyma of central nervous system" EXACT []
+synonym: "parenchyma of CNS" EXACT [OBOL:automatic]
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0000353 ! implied link automatically realized ! parenchyma
+relationship: part_of UBERON:0001017
+intersection_of: UBERON:0000353 ! parenchyma
+intersection_of: part_of UBERON:0001017 ! central nervous system
 
 [Typedef]
 id: adjacent_to

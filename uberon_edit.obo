@@ -577,6 +577,7 @@ id: UBERON:0005059
 name: Drosophila lymph gland
 def: "The lymph gland is one of the sites of hemocyte differentiation. It consists of three to six bilaterally paired lobes that are attached to the cardioblasts during larval stages, and it degenerates during pupal stages[GO]." [GO:0048542]
 synonym: "lymph gland" EXACT SENSU [FBbt:00001668]
+xref: FBbt:00001668 ! lymph gland
 disjoint_from: UBERON:0000029
 is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0001009 ! circulatory system
@@ -1472,7 +1473,7 @@ relationship: develops_from UBERON:0000084 ! ureteric bud
 [Term]
 id: UBERON:0000083
 name: mesonephric tubule
-def: "Genital ridge that is next to the mesonephros." [Wikipedia:Mesonephric_tubules]
+def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros." [Wikipedia:Mesonephric_tubules]
 xref: HOG:0000500 ! mesonephric tubule
 intersection_of: UBERON:0003914 ! epithelial tube
 intersection_of: part_of UBERON:0000080 ! mesonephros
@@ -1978,7 +1979,7 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0000151
 name: pectoral fin
 def: "The paired pectoral fins are located on each side, usually just behind the operculum, and are homologous to the forelimbs of tetrapods." [Wikipedia:Pectoral_fin#Fins]
-comment: check definition of limb such that is excludes fins
+comment: check definition of limb such that is excludes fins. Note the GO includes pectoral and pelvic fins as types of limbs
 xref: TAO:0001161 ! pectoral fin
 xref: ZFA:0001161 ! pectoral fin
 is_a: UBERON:0002534 ! fin
@@ -1989,6 +1990,7 @@ relationship: homologous_to UBERON:0002102 ! forelimb
 id: UBERON:0000152
 name: pelvic fin
 def: "The paired pelvic or ventral fins are located ventrally below the pectoral fins. They are homologous to the hindlimbs of tetrapods. The pelvic fin assists the fish in going up or down through the water, turning sharply, and stopping quickly." [Wikipedia:Pectoral_fin#Fins]
+comment: check definition of limb such that is excludes fins. Note the GO includes pectoral and pelvic fins as types of limbs
 xref: TAO:0001184 ! pelvic fin
 xref: ZFA:0001184 ! pelvic fin
 is_a: UBERON:0002534 ! fin
@@ -3116,7 +3118,7 @@ def: "A set of midline structures surrounding the brainstem of the mammalian bra
 comment: obsoletion recommended. The current part_of children were chosen as the intersection of what is stated in wikipedia and in the FMA. NIF: We are including Limbic System because it is still used by neuroscientists and others, but as a data annotation term, it is very poor because it is not a clearly defined entity.
 xref: BTO:0000928
 xref: FMA:242000 ! Limbic system
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000467 ! anatomical system
 xref: GAID:615 ! limbic system
 xref: OpenCyc:Mx4rwAeba5wpEbGdrcN5Y29ycA ! limbic system
 
@@ -5877,6 +5879,7 @@ xref: MIAA:0000108 ! cerebral cortex
 xref: NIF_GrossAnatomy:birnlex_1494 ! Cerebral cortex
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
+relationship: part_of UBERON:0001893 ! telencephalon
 xref: ncithesaurus:Cortex ! Cerebral Cortex
 
 [Term]
@@ -6459,22 +6462,23 @@ xref: OpenCyc:Mx4rva_rBJwpEbGdrcN5Y29ycA ! metatarsus
 
 [Term]
 id: UBERON:0000984
-name: thoracic wing
+name: imaginal disc-derived wing
 alt_id: UBERON:FBbt_00004729-MIAA_0000202
 def: "A flight organ of the adult external thorax that is derived from a dorsal mesothoracic disc." [FB:gg]
 comment: TODO: review. hymenoptera thorax = fusion of thorax and mesosoma/metasoma
 subset: uberon_slim
 synonym: "adult mesothoracic wing" RELATED []
 synonym: "adult metathoracic wing" RELATED []
+synonym: "thoracic wing" RELATED []
+synonym: "wing" BROAD SENSU [FBbt:00004729]
 xref: FBbt:00004729 ! wing
 xref: HAO:0001089 ! wing
 is_a: UBERON:0000023 ! wing
 intersection_of: UBERON:0000023 ! wing
-intersection_of: part_of UBERON:0000915 ! thorax
-relationship: develops_from UBERON:0000939 ! imaginal disc
-relationship: part_of UBERON:0000914 ! segment
-synonym: "thorax wing" EXACT [OBOL:automatic]
-synonym: "wing of thorax" EXACT [OBOL:automatic]
+intersection_of: develops_from UBERON:0000939 ! imaginal disc
+relationship: part_of UBERON:0000915 ! thorax
+synonym: "thorax wing" RELATED [OBOL:automatic]
+synonym: "wing of thorax" RELATED [OBOL:automatic]
 
 [Term]
 id: UBERON:0000985
@@ -6582,8 +6586,6 @@ def: "Anatomical system that has as its parts the organs concerned with reproduc
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "genital system" RELATED []
-synonym: "genitalia" EXACT []
-synonym: "genital tract" NARROW []
 xref: BILA:0000103
 xref: BTO:0000081
 xref: EHDAA:5923 ! reproductive system
@@ -6770,7 +6772,7 @@ xref: FBbt:00004921 ! spermathecum
 xref: MAT:0000168 ! spermathecum
 xref: MIAA:0000168 ! spermathecum
 xref: WBbt:0005319 ! spermatheca
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0000991 ! gonad
 xref: EFO:0000977 ! spermathecum
 
@@ -7081,14 +7083,26 @@ xref: OpenCyc:Mx4rvViOX5wpEbGdrcN5Y29ycA ! windpipe
 id: UBERON:0003127
 name: open tracheal system trachea
 def: "A trachea composed of composed of spiracles, tracheae, and tracheoles [Wikipedia]. An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." [GO:0007424, Wikipedia:Invertebrate_trachea]
-comment: TODO: system vs organ part
+comment: TODO check if is_a epithelium
 subset: uberon_slim
-synonym: "open tracheal system" EXACT []
 synonym: "invertebrate trachea" EXACT []
 synonym: "trachea" BROAD SENSU [FBbt:00005043]
 xref: FBbt:00005043 ! trachea
-relationship: has_part UBERON:0003914 ! epithelial tube
 is_a: UBERON:0001005 ! respiratory airway
+relationship: has_part UBERON:0003914 ! epithelial tube
+relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
+
+[Term]
+id: UBERON:0005155 ! open tracheal system
+name: open tracheal system
+def: "An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." [GO:0007424]
+subset: uberon_slim
+synonym: "open tracheal system" EXACT []
+synonym: "invertebrate tracheal system" EXACT []
+synonym: "tracheal system" BROAD SENSU [FBbt:00005024]
+xref: FBbt:00005024 ! tracheal system
+is_a: UBERON:0000467 ! anatomical system
+relationship: capable_of GO:0007585 ! respiratory gaseous exchange
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
 [Term]
@@ -7391,9 +7405,9 @@ xref: BTO:0000444
 xref: FMA:58616 ! Fat body
 xref: MA:0002481 ! fat pad
 xref: XAO:0003050 ! fat body
-is_a: UBERON:0000062 ! organ
 synonym: "fat body" RELATED [FMA:58616]
-relationship: part_of UBERON:0001013 ! adipose tissue
+comment: FMA says isa organ
+is_a: UBERON:0001013 ! adipose tissue
 
 [Term]
 id: UBERON:0003917
@@ -7468,6 +7482,7 @@ id: UBERON:0001017
 name: central nervous system
 alt_id: UBERON:FBbt_00005094-FMA_55675-MA_0000167-XAO_0000215-ZFA_0000012
 def: "The part of the nervous system which consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Organ with organ cavity which consists of gray matter and white matter[FMA]. The brain and spinal cord[ZFA]." [FB:gg, ISBN:3110148986, NLM:central+nervous+system, Wikipedia:Central_nervous_system, ZFIN:curator]
+comment: TODO - resolve is_a vs part_of NS in AOs (and GO)
 subset: uberon_slim
 synonym: "CNS" RELATED []
 synonym: "neuraxis" EXACT []
@@ -8309,7 +8324,7 @@ xref: FBbt:00005786 ! Malpighian tubule
 xref: GAID:1228 ! malpighian tubule
 xref: MAT:0000123 ! Malpighian tubules
 xref: MIAA:0000123 ! Malpighian tubules
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0000025 ! tube
 relationship: part_of UBERON:0001008 ! urinary system
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
@@ -9146,9 +9161,10 @@ relationship: has_part UBERON:0001751 ! dentine
 [Term]
 id: UBERON:0003913
 name: tooth-like structure
-def: "hard bony, calcareous, or chitinous organ found in the mouth or pharynx of an animal and used in procuring or masticating food." []
+synonym: "tooth-like organ" EXACT [GOC:cjm]
+def: "hard bony, calcareous, or chitinous organ found in the mouth or pharynx of an animal and used in procuring or masticating food." [GOC:cjm]
 comment: see dermal denticle
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000062 ! organ
 xref: HAO:0001019 ! tooth
 
 [Term]
@@ -11618,8 +11634,8 @@ xref: FMA:15627 ! Renal tubule
 xref: MA:0000377 ! renal tubule
 xref: TAO:0001287 ! renal tubule
 xref: ZFA:0001287 ! renal tubule
-is_a: UBERON:0003914 ! epithelial tube
-relationship: part_of UBERON:0001285 ! nephron
+intersection_of: UBERON:0003914 ! epithelial tube
+intersection_of: part_of UBERON:0001285 ! nephron
 xref: ncithesaurus:Renal_Tubule ! Renal Tubule
 
 [Term]
@@ -12617,10 +12633,8 @@ xref: FMA:17540 ! Liver parenchyma
 xref: HOG:0000539 ! liver parenchyma
 xref: MA:0000366 ! liver parenchyma
 xref: EHDAA:2201 ! parenchyma
-is_a: UBERON:0000064 ! organ part
 intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: part_of UBERON:0002107 ! liver
-relationship: part_of UBERON:0002107 ! liver
 relationship: develops_from UBERON:0004912 ! biliary bud
 def: "the functional units of the liver including the lobules." [MP:0008986]
 
@@ -18569,11 +18583,13 @@ xref: ncithesaurus:Posterior_Cerebral_Artery ! Posterior Cerebral Artery
 xref: OpenCyc:Mx4rwO4qIJwpEbGdrcN5Y29ycA ! posterior cerebral artery
 
 [Term]
-id: UBERON:0003509
+id: UBERON:0003509 ! arterial blood vessel
 name: arterial blood vessel
+def: "A blood vessel that carries blood from the heart to the body[tfd]." [http://www.thefreedictionary.com/arterial+blood+vessel]
 xref: MA:0000061 ! arterial blood vessel
-comment: only in MA - supertype of artery, arteriole, aorta
+comment: only in MA - supertype of artery, arteriole, aorta. 
 is_a: UBERON:0001981 ! blood vessel
+relationship: part_of UBERON:0004572 ! arterial system
 
 [Term]
 id: UBERON:0001637
@@ -21339,6 +21355,7 @@ xref: HOG:0000536 ! pigmented retinal epithelium
 xref: MA:0000279 ! pigmented retinal epithelium
 xref: TAO:0000144 ! retinal pigmented epithelium
 xref: ZFA:0000144 ! retinal pigmented epithelium
+is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0001781 ! layer of retina
 relationship: part_of UBERON:0003902 ! retinal neural layer
 xref: ncithesaurus:Retinal_Pigment_Epithelium ! Retinal Pigment Epithelium
@@ -22310,7 +22327,7 @@ xref: MA:0000249 ! semicircular canal
 xref: TAO:0000431 ! semicircular canal
 xref: XAO:0000198 ! semicircular canal
 xref: ZFA:0000431 ! semicircular canal
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000025 ! tube
 relationship: part_of UBERON:0001839 ! bony labyrinth
 xref: ncithesaurus:Semicircular_Canal ! Semicircular Canal
 xref: BTO:0003383 ! semicircular canal
@@ -23755,7 +23772,6 @@ xref: XAO:0000357 ! arterial endothelium
 is_a: UBERON:0001986 ! endothelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0001637 ! artery
-relationship: part_of UBERON:0001637 ! artery
 xref: ncithesaurus:Artery_Endothelium ! Artery Endothelium
 
 [Term]
@@ -23920,7 +23936,7 @@ synonym: "lateral geniculate nucleus" EXACT []
 xref: FMA:62209 ! Lateral geniculate body
 xref: MA:0000869 ! lateral geniculate nucleus
 xref: NIF_GrossAnatomy:birnlex_1662 ! Lateral geniculate body
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001897 ! thalamus
 xref: EFO:0001988 ! lateral geniculate nucleus
 
@@ -24948,13 +24964,13 @@ xref: ZFA:0005315 ! venule
 id: UBERON:0001980
 name: arteriole
 alt_id: UBERON:FMA_63182-MA_0000063
-def: "Subdivision of arterial tree (organ) which is directly continuous with capillary vessel." [Wikipedia:Arteriole]
+def: "the smallest division of the artery located between the muscular arteries and the capillaries[GO]. Subdivision of arterial tree (organ) which is directly continuous with capillary vessel[FMA]." [Wikipedia:Arteriole, FMA:63182, GO:0014830]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:63182 ! Arteriole
 xref: MA:0000063 ! arteriole
-is_a: UBERON:0000063 ! organ segment
-relationship: part_of UBERON:0001009 ! circulatory system
+is_a: UBERON:0001981 ! blood vessel
+relationship: part_of UBERON:0001637 ! artery
 xref: ncithesaurus:Arteriole ! Arteriole
 xref: BTO:0001997 ! arteriole
 xref: ZFA:0005255 ! arteriole
@@ -26442,8 +26458,8 @@ xref: OpenCyc:Mx4rquH9YKgNEdudWQACs5b6Bw ! truncus arteriosus
 id: UBERON:0002062
 name: endocardial cushion
 alt_id: UBERON:FMA_70302-MA_0000078-ZFA_0001317
-def: "Swellings of tissue present between the endocardial and myocardial cell layers that will give rise to the interstitial cells of the cardiac valves." [Wikipedia:Endocardial_cushion, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The endocardial cushion is a specialized region of mesenchymal cells that will give rise to the heart septa and valves[GO]. Swellings of tissue present between the endocardial and myocardial cell layers that will give rise to the interstitial cells of the cardiac valves[ZFA]." [Wikipedia:Endocardial_cushion, ZFIN:curator, GO:0003197]
+comment: GO graph seems to suggest this is an endothelium. WP: The endocardial cushions are thought to arise from a subset of endothelial cells that undergo epithelial to mesenchymal transformation, a process whereby these cells break cell-to-cell contacts and migrate into the cardiac jelly (towards to interior of the heart tube).
 subset: uberon_slim
 synonym: "endocardial cushions" RELATED []
 xref: FMA:70302 ! Endocardial cushion
@@ -28313,8 +28329,8 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0002165
 name: endocardium
 alt_id: UBERON:FMA_7280-XAO_0000066-ZFA_0001320
-def: "Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber. // Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The endocardium is an endothelium that is the innermost layer of tissue of the heart, and lines the heart chambers[GO]. Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber. // Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
+comment: GO says is_a endothelium. FMA says is_a tunica intima that has_part endothelium. punt by making has_part for now
 subset: uberon_slim
 xref: BTO:0000387
 xref: EFO:0000821 ! endocardium
@@ -28330,6 +28346,7 @@ xref: MA:0000076 ! heart endocardium
 is_a: UBERON:0000479 ! portion of tissue
 relationship: develops_from UBERON:0003084 ! fused heart primordium
 relationship: part_of UBERON:0000948 ! heart
+relationship: has_part UBERON:0001986 ! endothelium
 xref: ncithesaurus:Endocardium ! Endocardium
 xref: OpenCyc:Mx4rsWA75K1cEduAAADggVaqvw ! endocardium
 
@@ -28745,7 +28762,7 @@ xref: MA:0000436 ! bronchus
 xref: MAT:0000133 ! bronchus
 xref: MIAA:0000133 ! bronchus
 xref: XAO:0000121 ! bronchus
-is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0001558 ! lower respiratory tract
 relationship: part_of UBERON:0002224 ! thoracic cavity
 xref: ncithesaurus:Bronchus ! Bronchus
@@ -32007,12 +32024,12 @@ relationship: part_of UBERON:0004902 ! urogenital sinus epithelium
 
 [Term]
 id: UBERON:0002367
-name: prostate
+name: prostate gland
 alt_id: UBERON:FMA_9600-MA_0000404-MIAA_0000078
-def: "Lobular organ the parenchyma of which has as its parts glandular acini which are continuous with the prostatic part of the urethra. Examples: There is only one prostate." [Wikipedia:Prostate]
+def: "The prostate gland is a partly muscular, partly glandular body that is situated near the base of the mammalian male urethra and secretes an alkaline viscid fluid which is a major constituent of the ejaculatory fluid." [Wikipedia:Prostate, GO:0030850]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "prostate gland" EXACT []
+synonym: "prostate" EXACT []
 xref: BTO:0001129
 xref: EFO:0000858 ! prostate
 xref: FMA:9600 ! Prostate
@@ -32025,6 +32042,7 @@ xref: ncithesaurus:Prostate_Gland
 xref: OpenCyc:Mx4rv6trqZwpEbGdrcN5Y29ycA
 is_a: UBERON:0002530 ! gland
 relationship: develops_from UBERON:0003280
+relationship: part_of UBERON:0000079 ! male reproductive system
 xref: galen:ProstateGland ! prostate gland
 xref: OpenCyc:Mx4rv6trqZwpEbGdrcN5Y29ycA ! prostate
 
@@ -37017,7 +37035,7 @@ synonym: "vestibular nucleus" EXACT [GO:0021750]
 synonym: "vestibular nuclei in medulla oblongata" EXACT [FMA:72239]
 xref: FMA:72239 ! Vestibular nuclear complex
 xref: NIF_GrossAnatomy:birnlex_1337 ! Vestibular nuclear complex
-is_a: UBERON:0002020 ! gray matter of neuraxis
+is_a: UBERON:0000125 ! neural nucleus
 relationship: part_of UBERON:0001896 ! medulla oblongata
 relationship: part_of UBERON:0000988 ! pons
 xref: GAID:602 ! vestibular nuclei
@@ -42216,7 +42234,7 @@ xref: MA:0000819 ! brain ventricular zone
 xref: BTO:0003654 ! ventricular zone
 synonym: "VZ" EXACT []
 is_a: UBERON:0000477 ! anatomical cluster
-relationship: part_of UBERON:0000955 ! brain
+relationship: part_of UBERON:0001890 ! forebrain
 
 [Term]
 id: UBERON:0004922
@@ -43745,14 +43763,24 @@ relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 id: UBERON:0003133
 name: reproductive organ
 def: "An organ involved in reproduction" [UBERON:xp]
+comment: GO uses genitalia for the singular organ
 synonym: "reproductive system organ" EXACT []
 synonym: "sex organ" EXACT []
-synonym: "reproductive structure" EXACT []
+synonym: "genital organ" EXACT []
+synonym: "genitalia" RELATED PLURAL []
 is_a: UBERON:0000062 ! organ
 intersection_of: UBERON:0000062 ! organ
 intersection_of: capable_of GO:0000003
 xref: MA:0001752 ! reproductive organ
 xref: OpenCyc:Mx4rwO39aJwpEbGdrcN5Y29ycA ! reproductive organ
+
+[Term]
+id: UBERON:0005156
+name: reproductive structure
+def: "An anatomical structure that is part of the reproductive system." [GOC:cjm]
+synonym: "reproductive system structure" EXACT []
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: part_of UBERON:0000990 ! reproductive system
 
 [Term]
 id: UBERON:0003134
@@ -44340,14 +44368,14 @@ comment: arthropod specific groupings belong in separate ontology
 
 [Term]
 id: UBERON:0003194
-name: wing vein
+name: imaginal disc-derived wing vein
 alt_id: UBERON:FBbt_00004751-HAO_0001095
 xref: FBbt:00004751 ! wing vein
 xref: HAO:0001095 ! wing vein
 is_a: UBERON:0000476 ! acellular anatomical structure
 intersection_of: UBERON:0001638 ! vein
-intersection_of: part_of UBERON:0000023 ! wing
-synonym: "vein of wing" EXACT [OBOL:automatic]
+intersection_of: part_of UBERON:0000984 ! imaginal disc-derived wing
+synonym: "vein of imaginal disc-derived wing" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0003195
@@ -55373,7 +55401,7 @@ id: UBERON:0004291
 name: heart rudiment
 def: "a cone-like structure that is formed when myocardial progenitor cells of the heart field fuse at the midline. The heart rudiment is the first structure of the heart tube." [GO:0003142]
 synonym: "heart cone" EXACT []
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000483 ! epithelium
 relationship: develops_from UBERON:0004140 ! heart field
 xref: ZFA:0000115 ! heart rudiment
 
@@ -55435,7 +55463,7 @@ id: UBERON:0003983
 name: conus arteriosus
 def: "a conical pouch formed from the upper and left angle of the right ventricle in the chordate  heart, from which the pulmonary artery arises[WP]. the anteriosuperior, smooth-walled portion of the cavity of the right ventricle, beginning at the supraventricular crest and terminates in the pulmonary trunk[MP]." [MP:0009464, Wikipedia:Conus_arteriosus]
 synonym: "infundibulum" EXACT [Wikipedia:Conus_arteriosus]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004151 ! cardiac chamber
 relationship: part_of UBERON:0002080 ! right ventricle
 
 [Term]
@@ -55570,15 +55598,15 @@ is_a:  UBERON:0002085 ! interatrial septum
 id: UBERON:0004160
 name: proepicardium
 def: "An outpouching of the septum transversum" [GO:0003342]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0003104 ! mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+relationship: part_of UBERON:0004161 ! septum transversum
 
 [Term]
 id: UBERON:0004161
 name: septum transversum
 def: "The septum transversum is a portion of the trunk mesenchyme" [GO:0003343, Wikipedia:Septum_transversum]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0003104 ! mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+relationship: part_of UBERON:0002100 ! trunk
 xref: EMAPA:16318 ! septum transversum
 xref: HOG:0000019 ! septum transversum
 xref: EHDAA:736 ! septum transversum
@@ -55801,7 +55829,7 @@ id: UBERON:0004181
 name: mammary gland bud
 def: "Mammary gland buds form by an outpocketing of the mammary placodes and grow to invade the mammary fat, when they form the mammary cord" [GO:0060648]
 comment: TODO - mammary placode
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005153 ! epithelial bud
 relationship: part_of UBERON:0001765 ! lactiferous duct
 
 [Term]
@@ -55809,7 +55837,7 @@ id: UBERON:0004182
 name: mammary gland cord
 def: "Mammary gland cords form when the mammary gland bud invades the mammary fat" [GO:0060652]
 comment: TODO - mammary placode
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005154 ! epithelial cord
 relationship: part_of UBERON:0001765 ! lactiferous duct
 
 [Term]
@@ -55896,6 +55924,7 @@ synonym: "vasculature of renal glomerulus" EXACT [OBOL:automatic]
 id: UBERON:0004191
 name: glomus
 def: "The glomus is the vascular component of the pronephros and filters waste from the blood before it enters the pronephric tubules" [GO:0072013]
+comment: TODO - add is_a glomerulus
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002120 ! pronephros
 
@@ -64416,6 +64445,7 @@ id: UBERON:0005062
 name: neural fold
 def: "One of the two edges of the neural groove." [GO:0001842]
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005157 ! epithelial fold
 relationship: part_of UBERON:0003075 ! neural plate
 xref: EMAPA:16090 ! neural fold
 xref: EMAPA:16142 ! neural fold
@@ -65010,15 +65040,32 @@ intersection_of: UBERON:0004134 ! proximal tubule
 intersection_of: part_of UBERON:0000081 ! metanephros
 
 [Term]
-id: UBERON:0005153
+id: UBERON:0005153 ! epithelial bud
 name: epithelial bud
 def: "A bud is a protrusion that forms from an epithelial sheet by localized folding." [GO:0060572]
 is_a: UBERON:0000483 ! epithelium
 
 [Term]
-id: UBERON:0005154
+id: UBERON:0005154 ! epithelial cord
 name: epithelial cord
+comment: TODO - add superclass of developing structure
 is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0005157 ! epithelial fold
+name: epithelial fold
+def: "An epithelial sheet bent on a linear axis." [GO:0060571]
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0005158
+name: parenchyma of central nervous system
+synonym: "central nervous system parenchyma" EXACT [OBOL:automatic]
+synonym: "CNS parenchyma" EXACT [OBOL:automatic]
+synonym: "parenchyma of CNS" EXACT [OBOL:automatic]
+synonym: "parenchyma of central nervous system" EXACT []
+intersection_of: UBERON:0000353 ! parenchyma
+intersection_of: part_of UBERON:0001017 ! central nervous system
 
 [Typedef]
 id: adjacent_to
