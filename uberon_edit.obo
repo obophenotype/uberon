@@ -5215,8 +5215,8 @@ xref: galen:Thorax ! thorax
 id: UBERON:0000916
 name: abdomen
 alt_id: UBERON:FBbt_00000020-FMA_9577-MA_0000029-MIAA_0000298
-def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity. In arthropods it is the most distal section of the body which lies behind the thorax or cephalothorax // Subdivision of trunk, which is demarcated from the thorax internally by the inferior surface of the sternocostal part of the diaphragm and externally by the costal margin, from the pelvis by the plane of the superior pelvic aperture and from the lower limbs by the inguinal folds; together with the thorax, pelvis, and perineum, it constitutes the trunk. Examples: There is only one abdomen." [Wikipedia:Abdomen]
-comment: Vertebrate specific. TOD def
+def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity." [Wikipedia:Abdomen]
+comment: Vertebrate specific. In arthropods 'abdomen' is the most distal section of the body which lies behind the thorax or cephalothorax. If need be we can introduce some grouping class
 subset: uberon_slim
 synonym: "adult abdomen" RELATED []
 synonym: "belly" RELATED []
@@ -5558,10 +5558,10 @@ xref: BTO:0002329 ! dorsal nerve cord
 id: UBERON:0000934
 name: ventral nerve cord
 alt_id: UBERON:FBbt_00001102-MIAA_0000339-WBbt_0005829
-def: "a large process bundle that runs along the vental mid-line extending from the ventral region of the nerve ring." [WB:Paper00000938, Wikipedia:Ventral_nerve_cord]
+def: "The pair of closely united ventral longitudinal nerves with their segmental ganglia that is characteristic of many elongate invertebrates (as earthworms)[BTO]. A large process bundle that runs along the vental mid-line extending from the ventral region of the nerve ring[WB]. The ventral cord is one of the distinguishing traits of the central nervous system of all arthropods (such as insects, crustaceans and arachnids) as well as many other invertebrates, such as the annelid worms[GO]." [WB:Paper00000938, Wikipedia:Ventral_nerve_cord, GO:0007419, BTO:0002328]
 comment: The ventral nerve cords make up the nervous system of some phyla of the invertebrates, particularly within the nematodes, annelids  and the arthropods. It usually consists of cerebral  ganglia  anteriorly with the nerve cords running down the ventral ('belly', as opposed to back) plane of the organism. This characteristic is important in qualifying the difference compared to the chordates, which have a dorsal nerve cord. Ventral nerve cords from anterior to posterior (the thoracic and abdominal tagma in the arthropods) are made up of segmented ganglia that are connected by a tract of nerve fibers passing from one side to the other of the nerve cord called commissures. The complete system bears some likeness to a rope ladder. In some animals the bilateral ganglia are fused into a single large ganglion per segment. This characteristic is found mostly in the insects.
 subset: uberon_slim
-synonym: "ventral cord" RELATED []
+synonym: "ventral cord" EXACT [GO:0007419]
 xref: EFO:0000896 ! ventral nerve cord
 xref: FBbt:00001102 ! ventral nerve cord
 xref: MAT:0000339 ! ventral nerve cord
@@ -6389,7 +6389,9 @@ relationship: part_of UBERON:0004770 ! articular system
 [Term]
 id: UBERON:0004772
 name: eyelid tarsus
+def: "The tarsi (tarsal plates) are two comparatively thick, elongated plates of dense connective tissue, about 2.5 cm. in length; one is found in each eyelid, and contributes to its form and support. They directly abut the lid margins." [Wikipedia:Tarsus_(eyelids)]
 synonym: "tarsal plate" EXACT []
+is_a: UBERON:0002384 ! connective tissue
 xref: MA:0000270 ! eyelid tarsus
 xref: FMA:59086 ! tarsal plate of eyelid
 synonym: "tarsal plate of eyelid" EXACT [FMA:59086]
@@ -7126,6 +7128,8 @@ def: "The mostly slit-like opening on the body surface through which air is take
 comment: This class was created automatically from a combination of ontologies. In elasmobranchs (sharks and rays), a spiracle is found behind each eye, and is often used to pump water through the gills while the animal is at rest (Fouts, 2003). A spiracle is also found in primitive bony fishes as the chirrups. TODO - check GO:0035277-spiracle morphogenesis, open tracheal system - taxon constraint in GO
 subset: uberon_slim
 synonym: "spiracular gland" RELATED []
+synonym: "open tracheal system spiracle" NARROW [GO:0035277]
+synonym: "spiracle of open tracheal system" NARROW [GO:0035277]
 xref: FBbt:00005054 ! spiracle
 xref: HAO:0000950 ! spiracle
 xref: MAT:0000208 ! spiracle
@@ -7138,7 +7142,7 @@ xref: EFO:0000936 ! spiracle
 id: UBERON:0001007
 name: digestive system
 alt_id: UBERON:FBbt_00005055-FMA_7152-MA_0000323-MIAA_0000018-WBbt_0005748-XAO_0000125-ZFA_0000339
-def: "The organ system involved in the absorption of nutrients. // Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." [FB:gg, NLM:alimentary+system, Wikipedia:Digestive_system]
+def: "The organ system involved in the absorption of nutrients. // Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." [FB:gg, NLM:alimentary+system, Wikipedia:Digestive_system,]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "alimentary system" RELATED []
@@ -8022,7 +8026,7 @@ id: UBERON:0001555
 name: digestive tract
 alt_id: UBERON:FMA_45615-MA_0000917-ZFA_0000112
 def: "Tube extending from the mouth to the anus." [http://en.wikipedia.org/wiki/Talk:Human_astrointestinal_tract, http://sourceforge.net/tracker/?func=detail&atid=440764&aid=2991587&group_id=36855]
-comment: GO says gut is region of DT, from intestines to anus. ZFA treats as synonym for alimentary canal, and treats it as the sum of DT + organs (ZF has no term from stomach). GO says intestines to anus (excludes stomach and esophagus). MA appears to agree with GO (stomach and esophagus are not parts). FMA includes stomach and esophagus as parts of gut -- the FMA divides gut into lower and upper GI tract; it's not clear if this is exhaustive (small intestine is in neither), but lower GI tract may correspond better to the GO definition. 
+comment: GO says gut is region of DT, from intestines to anus. ZFA treats as synonym for alimentary canal, and treats it as the sum of DT + organs (ZF has no term from stomach). GO says intestines to anus (excludes stomach and esophagus). MA appears to agree with GO (stomach and esophagus are not parts). FMA includes stomach and esophagus as parts of gut -- the FMA divides gut into lower and upper GI tract; it's not clear if this is exhaustive (small intestine is in neither), but lower GI tract may correspond better to the GO definition. NOTE: GO now changed, see sf id in def xref
 subset: uberon_slim
 synonym: "alimentary canal" EXACT []
 synonym: "digestive tract" EXACT []
@@ -8419,7 +8423,7 @@ xref: BILA:0000000
 xref: FBbt_root:00000000 ! anatomical entity
 xref: FMA:62955 ! Anatomical entity
 xref: HAO:0000000 ! anatomical entity
-xref: NIF_GrossAnatomy:birnlex_1002
+xref: NIF_GrossAnatomy:birnlex_6
 xref: TAO:0100000 ! teleost anatomical entity
 xref: ZFA:0100000 ! zebrafish anatomical entity
 xref: NIF_GrossAnatomy:birnlex_6 ! Anatomical entity
@@ -18508,6 +18512,7 @@ id: UBERON:0005090 ! muscle structure
 name: muscle structure
 def: "Muscle structures are contractile cells, tissues or organs that are found in multicellular organisms[GO]." [GO:0061061]
 is_a: UBERON:0000061 ! anatomical structure
+xref: FBbt:00005073 ! somatic muscle
 
 [Term]
 id: UBERON:0001630
@@ -18515,7 +18520,6 @@ name: muscle organ
 alt_id: UBERON:FMA_5022-MIAA_0000302-XAO_0000174
 def: "Organ consisting of a tissue made up of various elongated cells that are specialized to contract and thus to produce movement and mechanical work[GO]. Nonparenchymatous organ that primarily consists of skeletal muscle tissue aggregated into macroscopic fasciculi by connective tissue; together with other muscles, it constitutes the muscular system. Examples: biceps, diaphragm, masseter, right third external intercostal muscle, external oblique, levator ani, serratus anterior[FMA]." [GO:0007517]
 subset: uberon_slim
-synonym: "adult somatic muscle" RELATED []
 xref: BTO:0001103
 xref: FMA:5022 ! Muscle organ
 xref: GAID:131 ! muscle
@@ -26543,7 +26547,7 @@ xref: OpenCyc:Mx4rquH9YKgNEdudWQACs5b6Bw ! truncus arteriosus
 id: UBERON:0002062
 name: endocardial cushion
 alt_id: UBERON:FMA_70302-MA_0000078-ZFA_0001317
-def: "A specialized region of endothelial cells that have undergone epithelial-mesenchymal transition to become mesenchymal cells that will give rise to the heart septa and valves[GO]. Swellings of tissue present between the endocardial and myocardial cell layers that will give rise to the interstitial cells of the cardiac valves[ZFA]." [Wikipedia:Endocardial_cushion, ZFIN:curator, GO:0003197]
+def: "The endocardial cushion is a specialized region of mesenchymal cells that will give rise to the heart septa and valves[GO]. Swellings of tissue present between the endocardial and myocardial cell layers that will give rise to the interstitial cells of the cardiac valves[ZFA]." [Wikipedia:Endocardial_cushion, ZFIN:curator, GO:0003197]
 comment: GO graph seems to suggest this is an endothelium. WP: The endocardial cushions are thought to arise from a subset of endothelial cells that undergo epithelial to mesenchymal transformation, a process whereby these cells break cell-to-cell contacts and migrate into the cardiac jelly (towards to interior of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
 subset: uberon_slim
 synonym: "endocardial cushions" RELATED []
@@ -28416,8 +28420,8 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0002165
 name: endocardium
 alt_id: UBERON:FMA_7280-XAO_0000066-ZFA_0001320
-def: "The endocardium is an endothelium that is the innermost layer of tissue of the heart, and lines the heart chambers[GO]. Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber[FMA]. Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
-comment: GO says is_a endothelium. FMA says is_a tunica intima that has_part endothelium. punt by making has_part for now. Varsha believes FMA is correct
+def: "he endocardium is an anatomical structure comprised of an endothelium and an extracellular matrix that forms the innermost layer of tissue of the heart, and lines the heart chambers[GO]. Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber[FMA]. Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
+comment: fixed in GO to reflect FMA. See email to David/Varsha June 18 2010
 subset: uberon_slim
 xref: BTO:0000387
 xref: EFO:0000821 ! endocardium
@@ -31516,7 +31520,7 @@ id: UBERON:0002348
 name: epicardium
 alt_id: UBERON:FMA_9461-XAO_0000316-ZFA_0005057
 def: "Region of visceral serous pericardium which has as its part, the mesothelium, subepicardial layer of epicardium and the fibroelastic connective tissue that is attached to the myocardium and is continuous with the parietal serous pericardium[FMA]. External layer of the heart[ZFA]." [Wikipedia:Epicardium, ZFIN:curator]
-comment: TODO - check links with UBERON:0002425 visceral serous pericardium
+comment: TODO - check links with UBERON:0002425 visceral serous pericardium. develops from proepicardium
 subset: uberon_slim
 synonym: "heart epicardium" EXACT []
 synonym: "visceral serous pericardium of heart" EXACT []
@@ -31526,7 +31530,7 @@ xref: TAO:0005057 ! epicardium
 xref: XAO:0000316 ! epicardium
 xref: ZFA:0005057 ! epicardium
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0001048 ! primordium
+relationship: develops_from UBERON:0004160 ! proepicardium
 relationship: part_of UBERON:0000948 ! heart
 relationship: part_of UBERON:0002425 ! visceral serous pericardium
 xref: ncithesaurus:Epicardium ! Epicardium
@@ -40960,22 +40964,6 @@ synonym: "archipallium" EXACT [FMA:62424]
 xref: FMA:62424 ! Archicortex
 xref: NIF_GrossAnatomy:birnlex_787
 is_a: UBERON:0002619 ! region of cerebral cortex
-
-[Term]
-id: UBERON:0002962
-name: microtubule
-alt_id: UBERON:NIF_GrossAnatomy_birnlex_788-FMA_63849
-def: "." [Wikipedia:Microtubule]
-subset: uberon_slim
-synonym: "microtubulus" EXACT [FMA:63849]
-xref: FMA:63849 ! Microtubule
-xref: NIF_GrossAnatomy:birnlex_788
-is_obolete: true
-comment: in GO
-xref: ncithesaurus:Microtubule ! Microtubule
-xref: GO:0005874 ! microtubule
-xref: GAID:742 ! microtubule
-xref: NIF_Subcellular:sao1846835077 ! Microtubule
 
 [Term]
 id: UBERON:0002963
@@ -55694,9 +55682,9 @@ def: "." [GO:0003291]
 is_a:  UBERON:0002085 ! interatrial septum
 
 [Term]
-id: UBERON:0004160
+id: UBERON:0004160 ! proepicardium
 name: proepicardium
-def: "An outpouching of the septum transversum" [GO:0003342]
+def: "An outpouching of the septum transversum[GO]. An embryonic  group of progenitor cells that forms near the venous pole of the heart and gives rise to the epicardium[Wiktionary]" [GO:0003342, http://en.wiktionary.org/wiki/proepicardium]
 is_a: UBERON:0003104 ! mesenchyme
 relationship: part_of UBERON:0004161 ! septum transversum
 
@@ -61200,6 +61188,7 @@ name: cerebellar vermis
 def: "Part of the structure of animal brains, the cerebellar vermis is a narrow, wormlike structure between the hemispheres of the cerebellum." [Wikipedia:Cerebellar_vermis]
 relationship: part_of UBERON:0002129 ! cerebellar cortex
 synonym: "vermis" RELATED [Wikipedia:Cerebellar_vermis]
+is_a: UBERON:0002616 ! regional part of brain
 xref: MA:0000202 ! cerebellar vermis
 xref: FMA:76928 ! Vermis of cerebellum
 xref: Wikipedia:Cerebellar_vermis ! cerebellar vermis
@@ -61264,10 +61253,13 @@ relationship: part_of UBERON:0002894 ! olfactory cortex
 synonym: "primary olfactory cortex" RELATED [Wikipedia:Piriform_cortex]
 synonym: "pyriform cortex" RELATED [Wikipedia:Piriform_cortex]
 synonym: "pyriform lobe" RELATED [Wikipedia:Piriform_cortex]
-synonym: "piriform area" RELATED [MA:0000978]
+synonym: "piriform area" RELATED [MA:0000978, BTO:0002651]
 xref: MA:0000978 ! piriform cortex
 xref: Wikipedia:Piriform_cortex ! piriform cortex
 xref: NIF_GrossAnatomy:birnlex_2706 ! Primary olfactory cortex
+xref: BTO:0002651 ! piriform area 
+is_a: UBERON:0002616 ! regional part of brain
+relationship: part_of UBERON:0001893 ! telencephalon
 
 [Term]
 id: UBERON:0004726
@@ -65465,7 +65457,7 @@ xref: OBO_REL:precedes
 domain: UBERON:0000105 ! life cycle stage
 range: UBERON:0000105 ! life cycle stage
 is_transitive: true
-relationship: inverse_of preceded_by ! preceded_by
+inverse_of: preceded_by ! preceded_by
 
 [Typedef]
 id: secretes
