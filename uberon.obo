@@ -1,8 +1,9 @@
 format-version: 1.2
-date: 28:05:2010 08:58
+date: 27:06:2010 17:42
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
+synonymtypedef: DUBIOUS "dubious or contested synonym"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
 default-namespace: uberon
@@ -147,6 +148,7 @@ xref: EHDAA:2183
 xref: EHDAA:4477
 xref: FMA:13889
 xref: GAID:457
+xref: HOG:0000143
 xref: MA:0000176
 xref: MAT:0000077
 xref: MIAA:0000077
@@ -1530,6 +1532,7 @@ name: zygote stage
 def: "A stage at which the organism is a single cell produced by means of sexual reproduction." [Wikipedia:Zygote]
 synonym: "one cell stage" RELATED []
 xref: BILS:0000106
+xref: HOG:0000745
 xref: ZFS:0000001
 is_a: UBERON:0000067 ! implied link automatically realized ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
@@ -2286,6 +2289,7 @@ comment: The frontal bone in teleost fish is the homolog of the parietal bone in
 synonym: "frontal bone" NARROW [FMA:52734, MA:0001466]
 xref: FMA:52734
 xref: GAID:226
+xref: HOG:0001324
 xref: MA:0001466
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
@@ -2304,6 +2308,7 @@ synonym: "parietal bone" NARROW [FMA:9613]
 synonym: "teleost frontal bone" NARROW [TAO:0000514]
 xref: FMA:9613
 xref: GAID:229
+xref: HOG:0001324
 xref: MA:0001469
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
@@ -3359,6 +3364,7 @@ synonym: "vestibulocochlear VIII ganglion cochlear component" EXACT [MA:0001085]
 xref: BTO:0001688
 xref: FMA:53445
 xref: GAID:722
+xref: HOG:0001183
 xref: MA:0001085
 is_a: UBERON:0001714 ! ganglion of cranial nerve
 
@@ -4321,7 +4327,7 @@ name: portion of tissue
 alt_id: UBERON:CARO_0000043-FBbt_00007003-XAO_0003040-ZFA_0001477
 def: "Anatomical structure, that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships. // Anatomical structure, that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships. // Anatomical structure that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships. // Anatomical structure, that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships." [CARO:0000043, CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
-synonym: "tissue" RELATED []
+synonym: "tissue" EXACT []
 synonym: "tissue portion" EXACT []
 xref: AAO:0000607
 xref: BILA:0000043
@@ -4735,8 +4741,8 @@ is_a: UBERON:0000475 ! organism subdivision
 id: UBERON:0000916
 name: abdomen
 alt_id: UBERON:FBbt_00000020-FMA_9577-MA_0000029-MIAA_0000298
-def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity. In arthropods it is the most distal section of the body which lies behind the thorax or cephalothorax // Subdivision of trunk, which is demarcated from the thorax internally by the inferior surface of the sternocostal part of the diaphragm and externally by the costal margin, from the pelvis by the plane of the superior pelvic aperture and from the lower limbs by the inguinal folds; together with the thorax, pelvis, and perineum, it constitutes the trunk. Examples: There is only one abdomen." [Wikipedia:Abdomen]
-comment: Vertebrate specific. TOD def
+def: "In vertebrates such as mammals the abdomen (belly) constitutes the part of the body between the thorax (chest) and pelvis. The region enclosed by the abdomen is termed the abdominal cavity." [Wikipedia:Abdomen]
+comment: Vertebrate specific. In arthropods 'abdomen' is the most distal section of the body which lies behind the thorax or cephalothorax. If need be we can introduce some grouping class
 subset: uberon_slim
 synonym: "adult abdomen" RELATED []
 synonym: "belly" RELATED []
@@ -4944,6 +4950,7 @@ xref: EHDAA:623
 xref: FBbt:00000125
 xref: FMA:69071
 xref: GAID:1305
+xref: HOG:0000154
 xref: MAT:0000175
 xref: MIAA:0000175
 xref: ncithesaurus:Endoderm
@@ -4973,6 +4980,7 @@ xref: EHDAA:183
 xref: FBbt:00000126
 xref: FMA:69072
 xref: GAID:522
+xref: HOG:0000152
 xref: MAT:0000174
 xref: MIAA:0000174
 xref: ncithesaurus:Mesoderm
@@ -5096,10 +5104,10 @@ relationship: part_of UBERON:0001042 ! pharynx
 id: UBERON:0000934
 name: ventral nerve cord
 alt_id: UBERON:FBbt_00001102-MIAA_0000339-WBbt_0005829
-def: "a large process bundle that runs along the vental mid-line extending from the ventral region of the nerve ring." [WB:Paper00000938, Wikipedia:Ventral_nerve_cord]
+def: "The pair of closely united ventral longitudinal nerves with their segmental ganglia that is characteristic of many elongate invertebrates (as earthworms)[BTO]. A large process bundle that runs along the vental mid-line extending from the ventral region of the nerve ring[WB]. The ventral cord is one of the distinguishing traits of the central nervous system of all arthropods (such as insects, crustaceans and arachnids) as well as many other invertebrates, such as the annelid worms[GO]." [BTO:0002328, GO:0007419, WB:Paper00000938, Wikipedia:Ventral_nerve_cord]
 comment: The ventral nerve cords make up the nervous system of some phyla of the invertebrates, particularly within the nematodes, annelids  and the arthropods. It usually consists of cerebral  ganglia  anteriorly with the nerve cords running down the ventral ('belly', as opposed to back) plane of the organism. This characteristic is important in qualifying the difference compared to the chordates, which have a dorsal nerve cord. Ventral nerve cords from anterior to posterior (the thoracic and abdominal tagma in the arthropods) are made up of segmented ganglia that are connected by a tract of nerve fibers passing from one side to the other of the nerve cord called commissures. The complete system bears some likeness to a rope ladder. In some animals the bilateral ganglia are fused into a single large ganglion per segment. This characteristic is found mostly in the insects.
 subset: uberon_slim
-synonym: "ventral cord" RELATED []
+synonym: "ventral cord" EXACT [GO:0007419]
 xref: BTO:0002328
 xref: EFO:0000896
 xref: FBbt:00001102
@@ -6565,6 +6573,8 @@ alt_id: UBERON:FBbt_00005054-MIAA_0000208
 def: "The mostly slit-like opening on the body surface through which air is taken into the respiratory system." [ISBN:3110148986, Wikipedia:Spiracle]
 comment: This class was created automatically from a combination of ontologies. In elasmobranchs (sharks and rays), a spiracle is found behind each eye, and is often used to pump water through the gills while the animal is at rest (Fouts, 2003). A spiracle is also found in primitive bony fishes as the chirrups. TODO - check GO:0035277-spiracle morphogenesis, open tracheal system - taxon constraint in GO
 subset: uberon_slim
+synonym: "open tracheal system spiracle" NARROW [GO:0035277]
+synonym: "spiracle of open tracheal system" NARROW [GO:0035277]
 synonym: "spiracular gland" RELATED []
 xref: EFO:0000936
 xref: FBbt:00005054
@@ -6675,6 +6685,7 @@ def: "organ system that passes nutrients (such as amino acids and electrolytes),
 comment: the cardiovascular system and the lymphatic system are parts of the circulatory system
 subset: uberon_slim
 xref: FBbt:00005057
+xref: HOG:0001248
 xref: OpenCyc:Mx4rvVjzG5wpEbGdrcN5Y29ycA
 xref: XAO:0001010
 is_a: UBERON:0000467 ! anatomical system
@@ -7571,7 +7582,6 @@ xref: BILA:0000000
 xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
-xref: NIF_GrossAnatomy:birnlex_1002
 xref: NIF_GrossAnatomy:birnlex_6
 xref: TAO:0100000
 xref: ZFA:0100000
@@ -8773,6 +8783,7 @@ subset: uberon_slim
 synonym: "sternocleidomastoid muscle" EXACT []
 synonym: "sternomastoid" EXACT []
 xref: FMA:13407
+xref: HOG:0000853
 xref: MA:0002384
 xref: ncithesaurus:Sternocleidomastoid_Muscle
 xref: OpenCyc:Mx4rv2bMg5wpEbGdrcN5Y29ycA
@@ -9545,6 +9556,7 @@ xref: EMAPA:18915
 xref: FMA:14581
 xref: GAID:333
 xref: galen:Pylorus
+xref: HOG:0000420
 xref: MA:0002560
 xref: ncithesaurus:Pylorus
 is_a: UBERON:0000064 ! organ part
@@ -14344,6 +14356,7 @@ synonym: "superior member subdivision of skeleton" EXACT [OBOL:automatic]
 synonym: "upper extremity subdivision of skeleton" EXACT [OBOL:automatic]
 synonym: "upper limb skeleton" EXACT []
 xref: FMA:24139
+xref: HOG:0001256
 xref: MA:0000612
 is_a: UBERON:0000075 ! subdivision of skeletal system
 is_a: UBERON:0004381 ! implied link automatically realized ! skeleton of limb
@@ -15803,6 +15816,7 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: BTO:0003419
 xref: FMA:37670
+xref: HOG:0000861
 xref: MA:0002269
 is_a: UBERON:0001499 ! muscle of arm
 relationship: part_of UBERON:0000477 ! anatomical cluster
@@ -15819,6 +15833,7 @@ synonym: "thoracic aorta" RELATED [GAID:471]
 xref: EFO:0002526
 xref: FMA:3768
 xref: GAID:471
+xref: HOG:0001196
 xref: MA:0000475
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001515 ! thoracic aorta
@@ -15831,6 +15846,7 @@ def: "The triceps brachii muscle (Latin for 'three-headed' muscle of the arm, it
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:37688
+xref: HOG:0000851
 xref: MA:0002399
 is_a: UBERON:0001499 ! muscle of arm
 
@@ -16622,7 +16638,7 @@ id: UBERON:0001555
 name: digestive tract
 alt_id: UBERON:FMA_45615-MA_0000917-ZFA_0000112
 def: "Tube extending from the mouth to the anus." [http://en.wikipedia.org/wiki/Talk\:Human_astrointestinal_tract, http://sourceforge.net/tracker/?func=detail&atid=440764&aid=2991587&group_id=36855]
-comment: GO says gut is region of DT, from intestines to anus. ZFA treats as synonym for alimentary canal, and treats it as the sum of DT + organs (ZF has no term from stomach). GO says intestines to anus (excludes stomach and esophagus). MA appears to agree with GO (stomach and esophagus are not parts). FMA includes stomach and esophagus as parts of gut -- the FMA divides gut into lower and upper GI tract; it's not clear if this is exhaustive (small intestine is in neither), but lower GI tract may correspond better to the GO definition.
+comment: GO says gut is region of DT, from intestines to anus. ZFA treats as synonym for alimentary canal, and treats it as the sum of DT + organs (ZF has no term from stomach). GO says intestines to anus (excludes stomach and esophagus). MA appears to agree with GO (stomach and esophagus are not parts). FMA includes stomach and esophagus as parts of gut -- the FMA divides gut into lower and upper GI tract; it's not clear if this is exhaustive (small intestine is in neither), but lower GI tract may correspond better to the GO definition. NOTE: GO now changed, see sf id in def xref
 subset: uberon_slim
 synonym: "alimentary canal" EXACT []
 synonym: "digestive tract" EXACT []
@@ -17698,7 +17714,6 @@ name: muscle organ
 alt_id: UBERON:FMA_5022-MIAA_0000302-XAO_0000174
 def: "Organ consisting of a tissue made up of various elongated cells that are specialized to contract and thus to produce movement and mechanical work[GO]. Nonparenchymatous organ that primarily consists of skeletal muscle tissue aggregated into macroscopic fasciculi by connective tissue; together with other muscles, it constitutes the muscular system. Examples: biceps, diaphragm, masseter, right third external intercostal muscle, external oblique, levator ani, serratus anterior[FMA]." [GO:0007517]
 subset: uberon_slim
-synonym: "adult somatic muscle" RELATED []
 xref: BTO:0001103
 xref: FMA:5022
 xref: GAID:131
@@ -18479,6 +18494,7 @@ xref: BTO:0001231
 xref: EFO:0000903
 xref: FMA:52618
 xref: GAID:725
+xref: HOG:0000694
 xref: MAT:0000511
 xref: ncithesaurus:Trigeminal_Ganglion
 xref: TAO:0000295
@@ -18957,6 +18973,7 @@ synonym: "ganglion of glosspharyngeal nerve" EXACT []
 synonym: "gIX" RELATED []
 synonym: "petrosal ganglion" RELATED []
 xref: FMA:53471
+xref: HOG:0000702
 xref: TAO:0001301
 xref: ZFA:0001301
 is_a: UBERON:0001714 ! ganglion of cranial nerve
@@ -19040,6 +19057,7 @@ xref: EFO:0000956
 xref: FMA:54326
 xref: GAID:1320
 xref: galen:Nail
+xref: HOG:0001361
 xref: MA:0002703
 xref: MAT:0000158
 xref: MIAA:0000158
@@ -19917,7 +19935,6 @@ xref: MA:0002543
 xref: ncithesaurus:Enamel
 xref: TAO:0005142
 xref: ZFA:0005142
-is_a: UBERON:0001973 ! substance of tooth
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004755 ! skeletal tissue
@@ -20172,6 +20189,7 @@ relationship: part_of UBERON:0001911 ! lactiferous gland
 id: UBERON:0001766
 name: anterior chamber of eyeball
 alt_id: UBERON:FMA_58078-MA_0000262
+def: "the fluid-filled space inside the eye between the iris and the cornea's innermost surface, the endothelium.[1]  Aqueous humor is the fluid that fills the anterior chamber. Hyphema and glaucoma  are two main pathologies in this area. In hyphema, blood fills the anterior chamber. In glaucoma, blockage of the canal of Schlemm prevents the normal outflow of aqueous humor, resulting in accumulation of fluid, increased intraocular pressure, and eventually blindness." [Wikipedia:Anterior_chamber_of_eyeball]
 comment: This class was created automatically from a combination of ontologies
 synonym: "Anterior chamber" EXACT [HP:0000593]
 synonym: "anterior chamber of eye" EXACT []
@@ -20189,7 +20207,8 @@ relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 id: UBERON:0001767
 name: posterior chamber of eyeball
 alt_id: UBERON:FMA_58080-MA_0002460
-comment: This class was created automatically from a combination of ontologies
+def: "a narrow chink behind the peripheral part of the iris of the lens, and in front of the suspensory ligament of the lens and the ciliary processes the Posterior Chamber consists of small space directly posterior of the Iris but anterior to the lens." [Wikipedia:Posterior_chamber_of_eyeball]
+comment: The posterior chamber should not be confused with vitreous chamber.
 synonym: "camera posterior" EXACT []
 synonym: "eye posterior chamber" EXACT []
 synonym: "posterior chamber of eye" EXACT []
@@ -20203,7 +20222,7 @@ relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 id: UBERON:0001768
 name: vascular layer of eyeball
 alt_id: UBERON:FMA_58103-MA_0002480
-def: "pigmented middle of the three concentric layers that make up an eye." [Wikipedia:Uvea]
+def: "pigmented middle of the three concentric layers that make up an eye[WP]. The pigmented vascular coat of the eyeball, consisting of the CHOROID; CILIARY BODY; and IRIS, which are continuous with each other. (Cline et al., Dictionary of Visual Science, 4th ed)[GAID]." [Wikipedia:Uvea]
 subset: uberon_slim
 synonym: "tunica vasculosa of eyeball" EXACT []
 synonym: "uvea" EXACT []
@@ -20588,6 +20607,7 @@ synonym: "layer of rods and cones" RELATED []
 synonym: "retina photoreceptor layer" EXACT []
 synonym: "stratum segmentorum externorum et internorum (retina)" EXACT []
 xref: FMA:58680
+xref: HOG:0001165
 xref: MA:0001308
 xref: XAO:0003215
 xref: ZFA:0000143
@@ -20778,6 +20798,7 @@ synonym: "vitreous humour" RELATED []
 xref: BTO:0001451
 xref: ENVO:02000032
 xref: FMA:58822
+xref: HOG:0000795
 xref: MA:0001286
 xref: ncithesaurus:Vitreous_Humor
 xref: OpenCyc:Mx4rv7ZIfZwpEbGdrcN5Y29ycA
@@ -20834,6 +20855,7 @@ is_a: UBERON:0000045 ! ganglion
 id: UBERON:0001801
 name: anterior segment of eyeball
 alt_id: UBERON:FMA_58865-MA_0002484
+def: "The anterior segment is the front third of the eye that includes the structures in front of the vitreous humour: the cornea, iris, ciliary body, and lens. Within the anterior segment are two fluid-filled spaces: the anterior chamber between the posterior surface of the cornea (i.e. the corneal endothelium) and the iris; the posterior chamber between the iris and the front face of the vitreous. Aqueous humor fills these spaces within the anterior segment and provides nutrients to the surrounding structures." [Wikipedia:Anterior_segment_of_eyeball]
 comment: This class was created automatically from a combination of ontologies
 synonym: "anterior segment of eye" EXACT []
 synonym: "anterior segment of the eye" EXACT []
@@ -20848,6 +20870,7 @@ relationship: part_of UBERON:0000970 ! eye
 id: UBERON:0001802
 name: posterior segment of eyeball
 alt_id: UBERON:FMA_58868-MA_0002485
+def: "The posterior segment is the back two-thirds of the eye that includes the anterior hyaloid membrane and all structures behind it: the vitreous humor, retina, choroid, and optic nerve.  On the anterior side of the lens is the aqueous humour which is bounded on all sides by the lens, ciliary body, suspensory ligaments, and by the cornea. It lets light through without refraction, helps maintain the shape of the eye and suspends the delicate lens. In some animals, the retina contains a reflective layer (the tapetum lucidum) which increases the amount of light each photosensitive cell perceives, allowing the animal to see better under low light conditions." [Wikipedia:Posterior_segment_of_eyeball]
 comment: This class was created automatically from a combination of ontologies
 synonym: "eye posterior segment" EXACT []
 synonym: "posterior segment of eye" EXACT []
@@ -20887,7 +20910,7 @@ relationship: part_of UBERON:0000965 ! lens
 id: UBERON:0001804
 name: capsule of lens
 alt_id: UBERON:FMA_58881-MA_0001300
-def: "a smooth, transparent basement membrane that completely surrounds the lens. It is synthesized by the lens epithelium and its main components are Type IV collagen and sulfated glycosaminoglycans (GAGs)." [Wikipedia:Lens_capsule]
+def: "a smooth, transparent basement membrane that completely surrounds the lens. It is synthesized by the lens epithelium and its main components are Type IV collagen and sulfated glycosaminoglycans (GAGs)." [Wikipedia:Lens_(anatomy)#Lens_capsule, Wikipedia:Lens_capsule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "lens capsule" EXACT []
@@ -21074,6 +21097,7 @@ synonym: "lumbosacral plexus" EXACT []
 xref: EHDAA:4673
 xref: FMA:5907
 xref: GAID:849
+xref: HOG:0000926
 xref: MA:0001181
 xref: ncithesaurus:Lumbosacral_Plexus
 xref: OpenCyc:Mx4rvzYo75wpEbGdrcN5Y29ycA
@@ -21286,6 +21310,7 @@ xref: BTO:0000912
 xref: EHDAA:6803
 xref: FMA:59684
 xref: GAID:302
+xref: HOG:0000501
 xref: MA:0001324
 xref: ncithesaurus:Nasal_Cavity_Epithelium
 is_a: UBERON:0000064 ! organ part
@@ -21501,6 +21526,7 @@ subset: uberon_slim
 synonym: "osseous labyrinth" EXACT []
 synonym: "osseus labyrinth" RELATED []
 xref: FMA:60179
+xref: HOG:0001219
 xref: MA:0000238
 xref: ncithesaurus:Osseous_Labyrinth
 xref: XAO:0000193
@@ -24642,6 +24668,7 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Hyrtl's muscle" EXACT []
 xref: FMA:64918
+xref: HOG:0001005
 xref: MA:0002321
 is_a: UBERON:0000477 ! anatomical cluster
 
@@ -25766,7 +25793,7 @@ id: UBERON:0002062
 name: endocardial cushion
 alt_id: UBERON:FMA_70302-MA_0000078-ZFA_0001317
 def: "The endocardial cushion is a specialized region of mesenchymal cells that will give rise to the heart septa and valves[GO]. Swellings of tissue present between the endocardial and myocardial cell layers that will give rise to the interstitial cells of the cardiac valves[ZFA]." [GO:0003197, Wikipedia:Endocardial_cushion, ZFIN:curator]
-comment: GO graph seems to suggest this is an endothelium. WP: The endocardial cushions are thought to arise from a subset of endothelial cells that undergo epithelial to mesenchymal transformation, a process whereby these cells break cell-to-cell contacts and migrate into the cardiac jelly (towards to interior of the heart tube).
+comment: GO graph seems to suggest this is an endothelium. WP: The endocardial cushions are thought to arise from a subset of endothelial cells that undergo epithelial to mesenchymal transformation, a process whereby these cells break cell-to-cell contacts and migrate into the cardiac jelly (towards to interior of the heart tube). Latest (2010-06-01) new def suggested for GO, added above.
 subset: uberon_slim
 synonym: "endocardial cushions" RELATED []
 xref: FMA:70302
@@ -26737,6 +26764,7 @@ synonym: "nostrils" EXACT []
 synonym: "pare of nostrils" EXACT []
 xref: AAO:0000024
 xref: FMA:72005
+xref: HOG:0000544
 xref: ncithesaurus:Nostril
 xref: OpenCyc:Mx4rvViCLpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
@@ -27689,8 +27717,8 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0002165
 name: endocardium
 alt_id: UBERON:FMA_7280-XAO_0000066-ZFA_0001320
-def: "The endocardium is an endothelium that is the innermost layer of tissue of the heart, and lines the heart chambers[GO]. Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber. // Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
-comment: GO says is_a endothelium. FMA says is_a tunica intima that has_part endothelium. punt by making has_part for now
+def: "he endocardium is an anatomical structure comprised of an endothelium and an extracellular matrix that forms the innermost layer of tissue of the heart, and lines the heart chambers[GO]. Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber[FMA]. Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
+comment: fixed in GO to reflect FMA. See email to David/Varsha June 18 2010
 subset: uberon_slim
 xref: BTO:0000387
 xref: EFO:0000821
@@ -29347,6 +29375,7 @@ def: "Segment of neural tree organ which is continuous with a set of olfactory n
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "main olfactory bulb" RELATED []
+synonym: "olfactory lobe" EXACT []
 xref: BTO:0000961
 xref: EFO:0000108
 xref: FMA:77624
@@ -29657,6 +29686,7 @@ xref: EHDAA:3502
 xref: EHDAA:6576
 xref: FMA:78448
 xref: GAID:611
+xref: HOG:0000643
 xref: MA:0000192
 xref: ncithesaurus:Lateral_Ventricle
 xref: NIF_GrossAnatomy:birnlex_1263
@@ -29721,6 +29751,7 @@ synonym: "chorioid plexus of third ventricle" EXACT []
 synonym: "third ventricle chorioid plexus of cerebral hemisphere" EXACT [OBOL:automatic]
 synonym: "third ventricle choroid plexus" EXACT []
 xref: FMA:78462
+xref: HOG:0001374
 xref: MA:0000879
 xref: ZFA:0001444
 is_a: UBERON:0001886 ! choroid plexus
@@ -29761,6 +29792,7 @@ synonym: "chorioid plexus of fourth ventricle" EXACT []
 synonym: "fourth ventricle chorioid plexus of cerebral hemisphere" EXACT [OBOL:automatic]
 synonym: "fourth ventricle choroid plexus" EXACT []
 xref: FMA:78492
+xref: HOG:0001375
 xref: MA:0000983
 xref: ZFA:0001446
 is_a: UBERON:0001886 ! choroid plexus
@@ -30115,6 +30147,7 @@ synonym: "chorioid plexus of lateral ventricle" EXACT []
 synonym: "lateral ventricle chorioid plexus of cerebral hemisphere" EXACT [OBOL:automatic]
 synonym: "lateral ventricle choroid plexus" EXACT []
 xref: FMA:83711
+xref: HOG:0001376
 xref: MA:0000961
 xref: ZFA:0001447
 is_a: UBERON:0001886 ! choroid plexus
@@ -30317,8 +30350,8 @@ relationship: part_of UBERON:0002240 ! spinal cord
 id: UBERON:0002319
 name: mesangium
 alt_id: UBERON:FMA_84139-MA_0002617
-def: "inner layer of the glomerulus, within the basement membrane surrounding the glomerular capillaries." [Wikipedia:Mesangium]
-comment: WP considers this the same as glomerular mesangium
+def: "inner layer of the glomerulus, within the basement membrane surrounding the glomerular capillaries." [http://sourceforge.net/tracker/?group_id=76834&atid=974957, Wikipedia:Mesangium]
+comment: WP considers this the same as glomerular mesangium. In MA, glomerular and extraglomerular are distingsuished.
 subset: uberon_slim
 xref: BTO:0002494
 xref: FMA:84139
@@ -30353,6 +30386,7 @@ xref: FMA:84141
 xref: MA:0002602
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: adjacent_to UBERON:0000074 ! renal glomerulus
 relationship: part_of UBERON:0001229 ! renal corpuscle
 relationship: part_of UBERON:0002303 ! juxtaglomerular apparatus
 relationship: part_of UBERON:0002319 ! mesangium
@@ -30489,6 +30523,7 @@ alt_id: UBERON:FMA_85522-MIAA_0000068-XAO_0000058-ZFA_0000155
 def: "Portion of mesoderm distributed along the two sides of the neural tube and that will eventually become dermis (dermatome), skeletal muscle (myotome), and vertebrae (sclerotome)[WP]. In Zebrafish: Any of the approximately 45 bilaterally paired blocks of mesoderm cells, lying on either side of the notochord and neural tube, and forming sequentially starting at the head during development of the embryo. Together they give rise to the axial skeleton (from the sclerotome), associated musculature (from the myotome), and dermis (from the dermatome). // Undifferentiated mesodermal components of early trunk or tail segments or metameres, derived from paraxial mesoderm; forms myotomes, sclerotomes and perhaps dermatomes. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [OMD:somite, Wikipedia:Somite, XB:curator, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "mesodermal cluster" EXACT [GO:0001756]
 synonym: "somites" RELATED []
 synonym: "somitic mesoderm" RELATED []
 xref: BTO:0001558
@@ -30879,7 +30914,7 @@ id: UBERON:0002348
 name: epicardium
 alt_id: UBERON:FMA_9461-XAO_0000316-ZFA_0005057
 def: "Region of visceral serous pericardium which has as its part, the mesothelium, subepicardial layer of epicardium and the fibroelastic connective tissue that is attached to the myocardium and is continuous with the parietal serous pericardium[FMA]. External layer of the heart[ZFA]." [Wikipedia:Epicardium, ZFIN:curator]
-comment: TODO - check links with UBERON:0002425 visceral serous pericardium
+comment: TODO - check links with UBERON:0002425 visceral serous pericardium. develops from proepicardium
 subset: uberon_slim
 synonym: "heart epicardium" EXACT []
 synonym: "visceral serous pericardium of heart" EXACT []
@@ -30891,7 +30926,8 @@ xref: TAO:0005057
 xref: XAO:0000316
 xref: ZFA:0005057
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0001048 ! primordium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0004160 ! proepicardium
 relationship: part_of UBERON:0000948 ! heart
 relationship: part_of UBERON:0002425 ! visceral serous pericardium
 
@@ -38806,6 +38842,7 @@ def: "The vestibular nerve ganglion (also called Scarpa's ganglion) is the gangl
 subset: uberon_slim
 synonym: "scarpa's ganglion" EXACT [FMA:53435]
 xref: FMA:53435
+xref: HOG:0000682
 xref: MA:0001086
 xref: ncithesaurus:Vestibular_Ganglion
 xref: NIF_GrossAnatomy:birnlex_2549
@@ -38837,6 +38874,7 @@ synonym: "auditory ganglion" EXACT [ZFA:0000588]
 synonym: "gVIII" EXACT [ZFA:0000588]
 synonym: "sag" EXACT [ZFA:0000588]
 synonym: "statoacoustic ganglia" EXACT [ZFA:0000588]
+xref: HOG:0000696
 xref: NIF_GrossAnatomy:birnlex_2564
 xref: ZFA:0000588
 is_a: UBERON:0002420 ! basal ganglion
@@ -40500,22 +40538,6 @@ xref: NIF_GrossAnatomy:birnlex_787
 is_a: UBERON:0002619 ! regional part of cerebral cortex
 
 [Term]
-id: UBERON:0002962
-name: microtubule
-alt_id: UBERON:NIF_GrossAnatomy_birnlex_788-FMA_63849
-def: "." [Wikipedia:Microtubule]
-comment: in GO
-subset: uberon_slim
-synonym: "microtubulus" EXACT [FMA:63849]
-xref: FMA:63849
-xref: GAID:742
-xref: GO:0005874
-xref: ncithesaurus:Microtubule
-xref: NIF_GrossAnatomy:birnlex_788
-xref: NIF_Subcellular:sao1846835077
-is_obolete: true
-
-[Term]
 id: UBERON:0002963
 name: caudal pontine reticular nucleus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_792-FMA_72469
@@ -41768,6 +41790,7 @@ synonym: "otic vesicle" EXACT []
 synonym: "otocyst" RELATED []
 synonym: "OV" RELATED []
 xref: BTO:0002661
+xref: HOG:0001148
 xref: ncithesaurus:Otic_Vesicle
 xref: XAO:0000006
 xref: ZFA:0000051
@@ -41807,6 +41830,7 @@ synonym: "brain ventricular zone" EXACT [MA:0000819]
 synonym: "ventricular zone of brain" EXACT []
 synonym: "VZ" EXACT []
 xref: BTO:0003654
+xref: HOG:0001224
 xref: MA:0000819
 xref: TAO:0001083
 xref: XAO:0000021
@@ -41911,6 +41935,7 @@ alt_id: UBERON:XAO_0000045-ZFA_0007016
 def: "The portion of neural plate anterior to the mid-hindbrain junction." [XB:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "anterior neural plate" RELATED []
+xref: HOG:0001200
 xref: XAO:0000045
 xref: ZFA:0007016
 is_a: UBERON:0000479 ! portion of tissue
@@ -41925,6 +41950,7 @@ alt_id: UBERON:XAO_0000046-ZFA_0007017
 def: "The portion of neural plate posterior to the mid-hindbrain junction." [XB:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "posterior neural plate" RELATED []
+xref: HOG:0001201
 xref: XAO:0000046
 xref: ZFA:0007017
 is_a: UBERON:0002050 ! embryonic structure
@@ -41975,6 +42001,7 @@ alt_id: UBERON:XAO_0000063-ZFA_0000150
 def: "Duct of the embryonic kidney, present bilaterally ventral to the somites and leading to the cloacal chamber. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a> Wingert et al have suggested that the pronephric duct as described traditionally may consist of subregions which are analogous to portions of the tubule segment of mammalian and other fish nephrons. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-071029-9'>Wingert, 2007.</a>" [Wikipedia:Pronephric_duct, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+xref: HOG:0000082
 xref: ncithesaurus:Pronephric_Duct
 xref: TAO:0000150
 xref: XAO:0000063
@@ -42033,6 +42060,7 @@ xref: AAO:0000346
 xref: BILA:0000053
 xref: BTO:0003395
 xref: GAID:1312
+xref: HOG:0000598
 xref: TAO:0000071
 xref: XAO:0000072
 xref: ZFA:0000071
@@ -42111,6 +42139,7 @@ synonym: "second branchial arch" EXACT SENSU []
 synonym: "second pharyngeal arch" EXACT []
 synonym: "second visceral arch" EXACT SENSU []
 synonym: "visceral arch 2" EXACT SENSU []
+xref: HOG:0000297
 xref: ncithesaurus:Second_Pharyngeal_Arch
 xref: XAO:0000098
 xref: ZFA:0001611
@@ -42207,6 +42236,7 @@ alt_id: UBERON:XAO_0000228-ZFA_0001202
 def: "Multi-tissue structure that is comprised of neural and non-neural epithelial layers which will form the retina and retinal pigmented epithelium of the mature eye[ZFA]. double walled structured formed by expansion and invagination of the distal end of the optic vesicle that develops into the pigmented and sensory layers of the retina while the mouth of the optic cup eventually forms the pupil of the eye[MP]." [MP:0004269, ZFA:0001202]
 comment: This class was created automatically from a combination of ontologies
 synonym: "eye cup" RELATED []
+xref: HOG:0000167
 xref: ncithesaurus:Optic_Cup
 xref: ZFA:0001202
 is_a: UBERON:0000481 ! multi-tissue structure
@@ -42248,6 +42278,7 @@ synonym: "Wolffian duct" RELATED [Wikipedia:Wolffian_duct]
 xref: AAO:0000637
 xref: EMAPA:16577
 xref: GAID:1315
+xref: HOG:0000082
 xref: ncithesaurus:Mesonephric_Duct
 xref: TAO:0000546
 xref: XAO:0000242
@@ -42991,6 +43022,7 @@ synonym: "third branchial arch" EXACT SENSU []
 synonym: "third pharyngeal arch" EXACT []
 synonym: "third visceral arch" EXACT []
 synonym: "visceral arch 3" EXACT []
+xref: HOG:0000298
 xref: XAO:0000447
 xref: ZFA:0001606
 is_a: UBERON:0002539 ! pharyngeal arch
@@ -43010,6 +43042,7 @@ synonym: "gill arch 2" EXACT SENSU [ZFA:0001607]
 synonym: "second branchial arch" RELATED SENSU [ZFA:0001607]
 synonym: "second gill arch" EXACT SENSU [ZFA:0001607]
 synonym: "visceral arch 4" EXACT []
+xref: HOG:0000299
 xref: XAO:0000449
 xref: ZFA:0001607
 is_a: UBERON:0002539 ! pharyngeal arch
@@ -43024,6 +43057,7 @@ synonym: "fifth visceral arch" EXACT [XAO:0000451]
 synonym: "gill arch 3" EXACT [ZFA:0001608]
 synonym: "third branchial arch" RELATED SENSU [XAO:0000451]
 synonym: "visceral arch 5" EXACT [ZFA:0001608]
+xref: HOG:0001204
 xref: XAO:0000451
 xref: ZFA:0001608
 is_a: UBERON:0002539 ! pharyngeal arch
@@ -43041,6 +43075,7 @@ synonym: "gill arch 4" EXACT [ZFA:0001609]
 synonym: "sixth branchial arch" EXACT []
 synonym: "sixth visceral arch" RELATED [XAO:0000453]
 synonym: "visceral arch 6" EXACT [ZFA:0001609]
+xref: HOG:0001205
 xref: XAO:0000453
 xref: ZFA:0001609
 is_a: UBERON:0002539 ! pharyngeal arch
@@ -44572,6 +44607,7 @@ synonym: "zeugopod of proximal segment of free upper limb epithelial tissue" EXA
 synonym: "zeugopod of proximal segment of free upper limb epithelium" EXACT [OBOL:automatic]
 xref: EHDAA:4174
 xref: EHDAA:6220
+xref: HOG:0001096
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0000483 ! epithelium
@@ -44943,6 +44979,7 @@ synonym: "subdivision of skeleton of palatoquadrate arch" EXACT [OBOL:automatic]
 synonym: "subdivision of skeleton of upper jaw" EXACT [OBOL:automatic]
 synonym: "upper jaw subdivision of skeleton" EXACT [OBOL:automatic]
 xref: EHDAA:8041
+xref: HOG:0000429
 is_a: UBERON:0000075 ! implied link automatically realized ! subdivision of skeletal system
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001709
@@ -44957,6 +44994,7 @@ synonym: "subdivision of skeleton of lower jaw" EXACT [OBOL:automatic]
 synonym: "subdivision of skeleton of ventral mandibular arch" EXACT [OBOL:automatic]
 synonym: "ventral mandibular arch subdivision of skeleton" EXACT [OBOL:automatic]
 xref: EHDAA:8005
+xref: HOG:0000428
 is_a: UBERON:0000075 ! implied link automatically realized ! subdivision of skeletal system
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001710
@@ -45247,6 +45285,7 @@ synonym: "neural tube roofplate" EXACT [OBOL:automatic]
 synonym: "roofplate of neural tube" EXACT [OBOL:automatic]
 xref: EHDAA:2891
 xref: EHDAA:916
+xref: HOG:0000303
 xref: ZFA:0001436
 is_a: UBERON:0003054 ! implied link automatically realized ! roof plate
 relationship: part_of UBERON:0001049
@@ -45260,6 +45299,7 @@ synonym: "midbrain roof plate" EXACT [OBOL:automatic]
 synonym: "midbrain roofplate" EXACT [OBOL:automatic]
 synonym: "roofplate of midbrain" EXACT [OBOL:automatic]
 xref: EHDAA:3712
+xref: HOG:0000772
 xref: ZFA:0000355
 is_a: UBERON:0002950 ! implied link automatically realized ! regional part of midbrain
 is_a: UBERON:0003054 ! implied link automatically realized ! roof plate
@@ -45274,6 +45314,7 @@ synonym: "roofplate of telencephalon" EXACT [OBOL:automatic]
 synonym: "telencephalon roof plate" EXACT [OBOL:automatic]
 synonym: "telencephalon roofplate" EXACT [OBOL:automatic]
 xref: EHDAA:3512
+xref: HOG:0000774
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0003054 ! implied link automatically realized ! roof plate
 relationship: part_of UBERON:0001893
@@ -45301,6 +45342,7 @@ synonym: "roofplate of mature diencephalon" EXACT [OBOL:automatic]
 xref: EHDAA:1979
 xref: EHDAA:2657
 xref: EHDAA:3494
+xref: HOG:0000771
 xref: ZFA:0001358
 is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
 is_a: UBERON:0003054 ! implied link automatically realized ! roof plate
@@ -45319,6 +45361,7 @@ synonym: "roof plate of epencephalon-2" EXACT [OBOL:automatic]
 synonym: "roofplate of epencephalon-2" EXACT [OBOL:automatic]
 synonym: "roofplate of metencephalon" EXACT [OBOL:automatic]
 xref: EHDAA:5524
+xref: HOG:0000770
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
 is_a: UBERON:0003054 ! implied link automatically realized ! roof plate
 relationship: part_of UBERON:0001895
@@ -45344,6 +45387,7 @@ synonym: "roofplate of medulla oblongata" EXACT [OBOL:automatic]
 synonym: "roofplate of medulla oblonmgata" EXACT [OBOL:automatic]
 synonym: "roofplate of metepencephalon" EXACT [OBOL:automatic]
 xref: EHDAA:7614
+xref: HOG:0000776
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
 is_a: UBERON:0003054 ! implied link automatically realized ! roof plate
 relationship: part_of UBERON:0001896
@@ -45379,6 +45423,7 @@ synonym: "neural tube floor plate" EXACT [OBOL:automatic]
 synonym: "neural tube floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:2871
 xref: EHDAA:910
+xref: HOG:0000300
 xref: ZFA:0001434
 is_a: UBERON:0003079 ! implied link automatically realized ! floor plate
 relationship: part_of UBERON:0001049
@@ -45392,6 +45437,7 @@ synonym: "floorplate of midbrain" EXACT [OBOL:automatic]
 synonym: "midbrain floor plate" EXACT [OBOL:automatic]
 synonym: "midbrain floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:3698
+xref: HOG:0000780
 xref: ZFA:0001677
 is_a: UBERON:0002950 ! implied link automatically realized ! regional part of midbrain
 is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
@@ -45406,6 +45452,7 @@ synonym: "floorplate of telencephalon" EXACT [OBOL:automatic]
 synonym: "telencephalon floor plate" EXACT [OBOL:automatic]
 synonym: "telencephalon floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:3498
+xref: HOG:0000783
 xref: ZFA:0000914
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
@@ -45434,6 +45481,7 @@ synonym: "mature diencephalon floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:1975
 xref: EHDAA:2651
 xref: EHDAA:3480
+xref: HOG:0000782
 xref: ZFA:0000871
 is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
 is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
@@ -45452,6 +45500,7 @@ synonym: "floorplate of metencephalon" EXACT [OBOL:automatic]
 synonym: "metencephalon floor plate" EXACT [OBOL:automatic]
 synonym: "metencephalon floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:5500
+xref: HOG:0000784
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
 is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
 relationship: part_of UBERON:0001895
@@ -45477,6 +45526,7 @@ synonym: "medulla oblonmgata floorplate" EXACT [OBOL:automatic]
 synonym: "metepencephalon floor plate" EXACT [OBOL:automatic]
 synonym: "metepencephalon floorplate" EXACT [OBOL:automatic]
 xref: EHDAA:7590
+xref: HOG:0000786
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
 is_a: UBERON:0003306 ! implied link automatically realized ! floor plate of neural tube
 relationship: part_of UBERON:0001896
@@ -45756,6 +45806,7 @@ synonym: "zeugopod of brachial region mesenchyme" EXACT [OBOL:automatic]
 synonym: "zeugopod of proximal segment of free upper limb mesenchyme" EXACT [OBOL:automatic]
 xref: EHDAA:4176
 xref: EHDAA:6222
+xref: HOG:0000504
 is_a: UBERON:0003859 ! implied link automatically realized ! forelimb mesenchyme
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0003104 ! mesenchyme
@@ -46813,6 +46864,7 @@ synonym: "textus muscularis of myocardium of right atrium of heart" EXACT [OBOL:
 synonym: "textus muscularis of myocardium of right cardiac atrium" EXACT [OBOL:automatic]
 xref: EMAPA:17326
 xref: FMA:7282
+xref: HOG:0001227
 is_a: UBERON:0004490 ! implied link automatically realized ! Cardiac muscle tissue of atrium
 relationship: part_of UBERON:0002078
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
@@ -47042,6 +47094,7 @@ synonym: "textus muscularis of myocardium of left atrium of heart" EXACT [OBOL:a
 synonym: "textus muscularis of myocardium of left cardiac atrium" EXACT [OBOL:automatic]
 xref: EMAPA:17320
 xref: FMA:7285
+xref: HOG:0001225
 is_a: UBERON:0004490 ! implied link automatically realized ! Cardiac muscle tissue of atrium
 relationship: part_of UBERON:0002079
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
@@ -47228,6 +47281,7 @@ synonym: "textus muscularis of myocardium of right ventricle" EXACT [OBOL:automa
 synonym: "textus muscularis of myocardium of right ventricle of heart" EXACT [OBOL:automatic]
 xref: EMAPA:17342
 xref: FMA:83452
+xref: HOG:0001236
 is_a: UBERON:0004493 ! implied link automatically realized ! Cardiac muscle tissue of myocardium
 relationship: part_of UBERON:0002080
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
@@ -47414,6 +47468,7 @@ synonym: "textus muscularis of myocardium of left ventricle" EXACT [OBOL:automat
 synonym: "textus muscularis of myocardium of left ventricle of heart" EXACT [OBOL:automatic]
 xref: EMAPA:17339
 xref: FMA:83453
+xref: HOG:0001234
 is_a: UBERON:0004493 ! implied link automatically realized ! Cardiac muscle tissue of myocardium
 relationship: part_of UBERON:0002084
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
@@ -48732,6 +48787,7 @@ synonym: "inferior member bone" EXACT [OBOL:automatic]
 synonym: "inferior member bone organ" EXACT [OBOL:automatic]
 synonym: "lower extremity bone" EXACT [OBOL:automatic]
 synonym: "lower extremity bone organ" EXACT [OBOL:automatic]
+xref: HOG:0001255
 xref: MA:0000660
 is_a: UBERON:0002428 ! implied link automatically realized ! limb bone
 relationship: part_of UBERON:0002103
@@ -53002,6 +53058,7 @@ synonym: "vestibular root of acoustic nerve" EXACT [FMA:53401]
 synonym: "vestibular root of eighth cranial nerve" EXACT [FMA:53401]
 xref: FMA:53401
 xref: GAID:840
+xref: HOG:0000682
 xref: MA:0001086
 xref: ncithesaurus:Vestibular_Nerve
 xref: OpenCyc:Mx4rvxAWX5wpEbGdrcN5Y29ycA
@@ -54019,6 +54076,7 @@ name: Mullerian duct
 def: "paired ducts of the embryo that run down the lateral sides of the urogenital ridge and terminate at the mullerian eminence in the primitive urogenital sinus. In the female, they will develop to form the fallopian tubes, uterus, and the upper portion of the vagina; in the male, they are lost. These ducts are made of tissue of mesodermal origin[WP]." [Wikipedia:Mullerian_duct]
 synonym: "Müllerian_duct" EXACT []
 xref: GAID:1309
+xref: HOG:0001199
 xref: ncithesaurus:Mullerian_Duct
 xref: XAO:0000330
 is_a: UBERON:0002050 ! embryonic structure
@@ -54156,6 +54214,7 @@ def: "The layer of nerve cells in the retina[XAO]. The part of the retina that c
 synonym: "neural retina" EXACT [XAO:0003216, ZFA:0000046]
 synonym: "neuroretina" EXACT [ZFA:0000046]
 xref: BTO:0000929
+xref: HOG:0000535
 xref: ncithesaurus:Neural_Retina
 xref: XAO:0003216
 xref: ZFA:0000046
@@ -54203,6 +54262,7 @@ xref: EHDAA:780
 xref: EHDAA:788
 xref: EHDAA:800
 xref: EHDAA:808
+xref: HOG:0000936
 xref: ncithesaurus:Cardiac_Jelly
 xref: ZFA:0001318
 is_a: UBERON:0000479 ! portion of tissue
@@ -55719,6 +55779,7 @@ is_a: UBERON:0002050 ! embryonic structure
 id: UBERON:0004068
 name: medial nasal prominence
 def: "the central area of the two limbs of a horseshoe-shaped mesenchymal swelling that lie medial to the olfactory placode or pit in the future nasal region of the embryo; it joins with the ipsilateral maxillary prominence in the formation of half of the upper jaw, and the nasal tip and philtrum of the upper lip develop from it" [MP:0009903, Wikipedia:Medial_nasal_prominence]
+xref: HOG:0000804
 is_a: UBERON:0002050 ! embryonic structure
 
 [Term]
@@ -56297,6 +56358,7 @@ synonym: "urogenital system" EXACT []
 xref: BILA:0000122
 xref: BTO:0003091
 xref: GAID:362
+xref: HOG:0000286
 xref: ncithesaurus:Genitourinary_System
 xref: OpenCyc:Mx4rQRpVMgAKEdyHxgDggVfs8g
 xref: XAO:0000140
@@ -56631,7 +56693,7 @@ is_a: UBERON:0002085 ! interatrial septum
 [Term]
 id: UBERON:0004160
 name: proepicardium
-def: "An outpouching of the septum transversum" [GO:0003342]
+def: "An outpouching of the septum transversum[GO]. An embryonic  group of progenitor cells that forms near the venous pole of the heart and gives rise to the epicardium[Wiktionary]" [GO:0003342, http://en.wiktionary.org/wiki/proepicardium]
 is_a: UBERON:0003104 ! mesenchyme
 relationship: part_of UBERON:0004161 ! septum transversum
 
@@ -59404,6 +59466,7 @@ relationship: part_of UBERON:0000948 ! heart
 id: UBERON:0004293
 name: parasympathetic nerve
 synonym: "nerve of parasympathetic nervous system" EXACT [OBOL:automatic]
+xref: HOG:0000641
 xref: MA:0000224
 is_a: UBERON:0001021 ! implied link automatically realized ! nerve
 relationship: part_of UBERON:0000011
@@ -59974,6 +60037,7 @@ def: "Allantois (plural allantoides or allantoises) is a part of a developing an
 xref: BTO:0000474
 xref: EMAPA:16107
 xref: EMAPA:28547
+xref: HOG:0000738
 xref: ncithesaurus:Allantois
 is_a: UBERON:0000478 ! extraembryonic structure
 
@@ -60014,6 +60078,7 @@ name: cardinal vein
 def: "any of the four veins in the developing vertebrate embryo which run along each side of the vertebral column" [MP:0004783]
 xref: EHDAA:1310
 xref: EMAPA:16354
+xref: HOG:0001197
 xref: ncithesaurus:Cardinal_Vein
 xref: XAO:0000052
 is_a: UBERON:0001638 ! vein
@@ -60025,6 +60090,7 @@ name: trophectoderm
 def: "outermost layer of cells in the blastodermic vesicle, which will develop into the trophoblast layer and then contact the endometrium and take part in establishing the embryo's means of nutrition" [MP:0005028]
 xref: BTO:0001840
 xref: EMAPA:16046
+xref: HOG:0000979
 is_a: UBERON:0002050 ! embryonic structure
 
 [Term]
@@ -60065,6 +60131,7 @@ name: optic eminence
 def: "the embryonic structure that gives rise to the corneal ectoderm" [MP:0006305]
 xref: EMAPA:16322
 xref: EMAPA:17003
+xref: HOG:0001296
 is_a: UBERON:0000061 ! anatomical structure
 relationship: develops_into UBERON:0000964 ! cornea
 
@@ -60137,6 +60204,7 @@ relationship: part_of UBERON:0004347 ! limb bud
 [Term]
 id: UBERON:0004357
 name: limb/fin bud
+xref: HOG:0001258
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0003102 ! surface structure
 relationship: develops_into UBERON:0004708 ! limb/fin
@@ -60190,6 +60258,7 @@ synonym: "first pharyngeal arch" EXACT []
 synonym: "first visceral arch" EXACT SENSU []
 synonym: "pharyngeal arch 1" EXACT []
 synonym: "visceral arch 1" EXACT SENSU []
+xref: HOG:0000296
 xref: ncithesaurus:First_Pharyngeal_Arch
 xref: XAO:0000097
 xref: ZFA:0001612
@@ -60275,6 +60344,8 @@ id: UBERON:0004369
 name: Reichert's membrane
 def: "a thick multilayered basement membrane between the parietal endoderm cells and the trophoblast cells" [DOI:10.1007/BF00184752]
 is_a: UBERON:0002050 ! embryonic structure
+relationship: surrounded_by UBERON:0000088 ! trophoblast
+relationship: surrounded_by UBERON:0000925 ! endoderm
 
 [Term]
 id: UBERON:0004370
@@ -60284,7 +60355,7 @@ synonym: "Bowman's anterior elastic lamina" EXACT [FMA:58273]
 synonym: "Bowman's layer" EXACT [FMA:58273]
 synonym: "Bowman's membrane" EXACT [FMA:58273]
 synonym: "lamina limitans anterior (cornea)" EXACT [FMA:58273]
-synonym: "Reichert's membrane" RELATED [http://sourceforge.net/tracker/?func=detail&aid=2956371&group_id=76834&atid=974957]
+synonym: "Reichert's membrane" RELATED DUBIOUS [http://sourceforge.net/tracker/?func=detail&aid=2956371&group_id=76834&atid=974957]
 xref: FMA:58273
 xref: ncithesaurus:Bowman_s_Membrane
 xref: ZFA:0001684
@@ -61043,6 +61114,7 @@ relationship: part_of UBERON:0001130 ! vertebral column
 id: UBERON:0004452
 name: carpus
 def: "In tetrapods, the carpals is the sole cluster of the bones in the wrist between the radius and ulna and the metacarpus. The bones of the carpus do not belong to individual fingers (or toes in quadrupeds), whereas those of the metacarpus do. The corresponding part of the foot is the tarsus. The carpal bones allow the wrist to move and rotate vertically, horizontally and laterally. In human anatomy, the main role of the carpus is to facilitate effective positioning of the hand and powerful use of the extensors and flexors of the forearm, but the mobility of individual carpal bones increase the freedom of movements at the wrist. [WP,unvetted]." [Wikipedia:Carpus]
+xref: HOG:0001161
 xref: MA:0000040
 xref: XAO:0003207
 is_a: UBERON:0001442 ! skeleton of hand
@@ -61062,6 +61134,7 @@ id: UBERON:0004454
 name: tarsus
 def: "the cluster of bones  in the foot between the tibia  and fibula and the metatarsus. The bones of the tarsus do not belong to individual toes, whereas those of the metatarsus do. The joint between the tibia and fibula and the tarsus is referred to as the ankle joint[WP]." [Wikipedia:Tarsus_(skeleton)]
 xref: GAID:1223
+xref: HOG:0001160
 xref: MA:0000050
 xref: XAO:0003211
 is_a: UBERON:0001445 ! skeleton of foot
@@ -62071,12 +62144,14 @@ id: UBERON:0004571
 name: systemic arterial system
 synonym: "Systemic arterial circulatory system" EXACT [FMA:45623]
 xref: FMA:45623
+xref: HOG:0000273
 is_a: UBERON:0002049 ! vasculature
 relationship: part_of UBERON:0004572 ! arterial system
 
 [Term]
 id: UBERON:0004572
 name: arterial system
+xref: HOG:0000273
 xref: MA:0002719
 is_a: UBERON:0002049 ! vasculature
 
@@ -62085,6 +62160,7 @@ id: UBERON:0004573
 name: systemic artery
 synonym: "Systemic arterial subtree" EXACT [FMA:66464]
 xref: FMA:66464
+xref: HOG:0000273
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:0004571 ! systemic arterial system
 
@@ -62093,6 +62169,7 @@ id: UBERON:0004581
 name: systemic venous system
 synonym: "Systemic venous circulatory system" EXACT [FMA:45626]
 xref: FMA:45626
+xref: HOG:0000277
 is_a: UBERON:0002049 ! vasculature
 relationship: part_of UBERON:0004582 ! venous system
 
@@ -62100,6 +62177,7 @@ relationship: part_of UBERON:0004582 ! venous system
 id: UBERON:0004582
 name: venous system
 synonym: "vein system" EXACT []
+xref: HOG:0000277
 xref: MA:0002720
 is_a: UBERON:0002049 ! vasculature
 relationship: part_of UBERON:0004535 ! cardiovascular system
@@ -62463,6 +62541,7 @@ id: UBERON:0004637
 name: otic capsule
 synonym: "otic capsule" EXACT [ZFA:0001500]
 synonym: "periotic capsule" RELATED [MA:0000252]
+xref: HOG:0000854
 xref: MA:0000252
 xref: ZFA:0001500
 is_a: UBERON:0003932 ! chondrocranium cartilage
@@ -62782,6 +62861,7 @@ synonym: "Membranous interventricular septum" EXACT [FMA:7135]
 synonym: "Membranous portion of interventricular septum" EXACT [FMA:7135]
 synonym: "Pars membranacea (septi interventricularis)" EXACT [FMA:7135]
 xref: FMA:7135
+xref: HOG:0000927
 xref: MA:0002939
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
@@ -63008,6 +63088,7 @@ name: gastro-splenic ligament
 synonym: "gastrolienal ligament" EXACT [FMA:16517]
 synonym: "gastrosplenc ligament" EXACT [FMA:16517]
 xref: FMA:16517
+xref: HOG:0000354
 xref: MA:0001619
 is_a: UBERON:0000211 ! ligament
 
@@ -63349,6 +63430,8 @@ xref: FMA:76928
 xref: MA:0000202
 xref: NIF_GrossAnatomy:birnlex_1106
 xref: Wikipedia:Cerebellar_vermis
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 relationship: part_of UBERON:0002129 ! cerebellar cortex
 
 [Term]
@@ -63398,13 +63481,17 @@ is_a: UBERON:0000211 ! ligament
 id: UBERON:0004725
 name: piriform cortex
 def: "In anatomy of animals, the piriform cortex, or pyriform cortex is a region in the brain. The piriform cortex is part of the rhinencephalon situated in the telencephalon. The function of the piriform cortex relates to olfaction, which is the perception of smells. Sometimes called the olfactory cortex, olfactory lobe or paleopallium, piriform cortical regions are present in the brains of amphibians, reptiles and mammals. The piriform cortex is among three areas that emerge in the telencephalon of amphibians, situated caudally to a dorsal area, which is caudal to a hippocampal area. Farther along the phylogenic timeline, the telencephalic bulb of reptiles as viewed in a cross section of the transverse plane extends with the archipallial hippocampus folding toward the midline and down as the dorsal area begins to form a recognizable cortex. As mammalian cerebrums developed, volume of the dorsal cortex increased in slightly greater proportion, as compared proportionally with increased overall brain volume, until it enveloped the hippocampal regions. Recognized as neopallium or neocortex, enlarged dorsal areas envelop the paleopallial piriform cortex in humans and Old World monkeys. Among taxonomic groupings of mammals, the piriform cortex and the olfactory bulb become proportionally smaller in the brains of phylogenically younger species. The piriform cortex occupies a greater proportion of the overall brain and of the telencephalic brains of insectivores than in primates. The piriform cortex continues to occupy a consistent albeit small and declining proportion of the increasingly large telencephalon in the most recent primate species while the volume of the olfactory bulb becomes less in proportion. It is Brodmann area 27." [Wikipedia:Piriform_cortex]
-synonym: "piriform area" RELATED [MA:0000978]
+synonym: "piriform area" RELATED [BTO:0002651, MA:0000978]
 synonym: "primary olfactory cortex" RELATED [Wikipedia:Piriform_cortex]
 synonym: "pyriform cortex" RELATED [Wikipedia:Piriform_cortex]
 synonym: "pyriform lobe" RELATED [Wikipedia:Piriform_cortex]
+xref: BTO:0002651
 xref: MA:0000978
 xref: NIF_GrossAnatomy:birnlex_2706
 xref: Wikipedia:Piriform_cortex
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+relationship: part_of UBERON:0001893 ! telencephalon
 relationship: part_of UBERON:0002894 ! olfactory cortex
 
 [Term]
@@ -63527,6 +63614,7 @@ id: UBERON:0004736
 name: metanephric glomerulus
 def: "glomerulus of the mature vertebrate kidney, or metanephros." [GO:0072224]
 synonym: "glomerulus of metanephros" EXACT []
+xref: HOG:0001242
 is_a: UBERON:0000074 ! implied link automatically realized ! renal glomerulus
 relationship: part_of UBERON:0000081
 intersection_of: UBERON:0000074 ! renal glomerulus
@@ -63536,6 +63624,7 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 id: UBERON:0004737
 name: metanephric collecting duct
 synonym: "collecting duct of metanephros" EXACT []
+xref: HOG:0000983
 is_a: UBERON:0001232 ! implied link automatically realized ! collecting duct of renal tubule
 relationship: part_of UBERON:0000081
 intersection_of: UBERON:0001232 ! collecting duct of renal tubule
@@ -63557,6 +63646,7 @@ id: UBERON:0004739
 name: pronephric glomerulus
 def: "glomerulus of the pronephros." [OBOL:automatic]
 synonym: "glomerulus of pronephros" EXACT []
+xref: HOG:0001237
 xref: ZFA:0001557
 is_a: UBERON:0000074 ! implied link automatically realized ! renal glomerulus
 is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
@@ -63595,6 +63685,7 @@ synonym: "dentary bone" EXACT [ZFA:0000191]
 synonym: "os dentale" RELATED [AAO:0000124]
 synonym: "sur-angulaire" RELATED [AAO:0000124]
 xref: AAO:0000124
+xref: HOG:0001022
 xref: ZFA:0000191
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
@@ -63956,6 +64047,7 @@ def: "Opening/conduit between the nasal cavity and the nasopharynx[AAO]" [AAO:00
 synonym: "choana" EXACT [Wikipedia:Choane]
 xref: AAO:0000093
 xref: FMA:53143
+xref: HOG:0000545
 xref: XAO:0000277
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0004111 ! anatomical conduit
@@ -63965,11 +64057,14 @@ relationship: part_of UBERON:0001707 ! nasal cavity
 [Term]
 id: UBERON:0004772
 name: eyelid tarsus
+def: "The tarsi (tarsal plates) are two comparatively thick, elongated plates of dense connective tissue, about 2.5 cm. in length; one is found in each eyelid, and contributes to its form and support. They directly abut the lid margins." [Wikipedia:Tarsus_(eyelids)]
 synonym: "tarsal plate" EXACT []
 synonym: "tarsal plate" EXACT [FMA:59086]
 synonym: "tarsal plate of eyelid" EXACT [FMA:59086]
 xref: FMA:59086
 xref: MA:0000270
+is_a: UBERON:0002384 ! connective tissue
+is_a: UBERON:0003581 ! implied link automatically realized ! eyelid connective tissue
 disjoint_from: UBERON:0004454 ! tarsus
 relationship: part_of UBERON:0001711 ! eyelid
 
@@ -63996,6 +64091,7 @@ synonym: "tarsal plate of lower eyelid" EXACT [FMA:59088]
 synonym: "tarsus of lower eyelid" EXACT []
 xref: FMA:59088
 xref: MA:0001260
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004772 ! implied link automatically realized ! eyelid tarsus
 relationship: part_of UBERON:0001713
 intersection_of: UBERON:0004772 ! eyelid tarsus
@@ -64930,6 +65026,7 @@ synonym: "extrinsic muscle of eyeball of medial rectus" EXACT [OBOL:automatic]
 synonym: "medial rectus extra-ocular muscle" EXACT [OBOL:automatic]
 synonym: "medial rectus extra-ocular skeletal muscle" EXACT [OBOL:automatic]
 synonym: "medial rectus extrinsic muscle of eyeball" EXACT [OBOL:automatic]
+xref: HOG:0001127
 xref: MA:0001281
 is_a: UBERON:0001601 ! implied link automatically realized ! extra-ocular muscle
 relationship: part_of UBERON:0001602
@@ -64946,6 +65043,7 @@ synonym: "extrinsic muscle of eyeball of lateral rectus" EXACT [OBOL:automatic]
 synonym: "lateral rectus extra-ocular muscle" EXACT [OBOL:automatic]
 synonym: "lateral rectus extra-ocular skeletal muscle" EXACT [OBOL:automatic]
 synonym: "lateral rectus extrinsic muscle of eyeball" EXACT [OBOL:automatic]
+xref: HOG:0001129
 xref: MA:0001280
 is_a: UBERON:0001601 ! implied link automatically realized ! extra-ocular muscle
 relationship: part_of UBERON:0001603
@@ -65025,6 +65123,7 @@ id: UBERON:0004852
 name: cardiovascular system endothelium
 synonym: "circulatory system endothelium" EXACT [OBOL:automatic]
 synonym: "endothelium of circulatory system" EXACT [OBOL:automatic]
+xref: HOG:0001217
 xref: MA:0000717
 is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
 relationship: part_of UBERON:0001009
@@ -65255,6 +65354,7 @@ name: splanchnopleure
 def: "a structure created during embryogenesis  when the lateral mesoderm splits into two layers. The inner (or splanchnic) layer adheres to the endoderm, and with it forms the splanchnopleure[WP]." [Wikipedia:Splanchnopleure]
 xref: EHDAA:383
 xref: EMAPA:16181
+xref: HOG:0000558
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: overlaps UBERON:0000925 ! endoderm
@@ -65266,6 +65366,7 @@ name: somatopleure
 def: "a structure created during embryogenesis  when the lateral mesoderm splits into two layers. The outer (or somatic) layer becomes applied to the inner surface of the ectoderm, and with it forms the somatopleure.[WP]." [Wikipedia:Somatopleure]
 xref: EHDAA:381
 xref: EMAPA:16180
+xref: HOG:0000557
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: overlaps UBERON:0000924 ! ectoderm
@@ -65403,6 +65504,7 @@ synonym: "left pulmonary hilus" EXACT [OBOL:automatic]
 xref: EHDAA:4965
 xref: EMAPA:17980
 xref: FMA:9751
+xref: HOG:0000483
 xref: MA:0001781
 is_a: UBERON:0004886 ! implied link automatically realized ! lung hilus
 relationship: part_of UBERON:0002168
@@ -65421,6 +65523,7 @@ synonym: "right pulmonary hilus" EXACT [OBOL:automatic]
 xref: EHDAA:4995
 xref: EMAPA:17996
 xref: FMA:7456
+xref: HOG:0000482
 xref: MA:0001790
 is_a: UBERON:0004886 ! implied link automatically realized ! lung hilus
 relationship: part_of UBERON:0002167
@@ -65442,6 +65545,7 @@ name: right lung accessory lobe
 def: "A specialized lobe of the right lung that extends to the left side of the organism" [LG:0012619]
 comment: not in humans
 synonym: "right lung postcaval lobe" EXACT [MA:0000427]
+xref: HOG:0000831
 xref: MA:0000427
 is_a: UBERON:0000101 ! lobe of lung
 relationship: part_of UBERON:0002167 ! right lung
@@ -65502,6 +65606,7 @@ intersection_of: part_of UBERON:0002299 ! alveolus of lung
 id: UBERON:0004896
 name: right lung accessory lobe lobar bronchus
 def: "The right lung accessory lobe lobar bronchus is the major airway within the right lung accessory lobe that starts at the division of the bronchus on the right side and ends at the point of its own subdivision into tertiary or segmental bronchi" [LG:0012636]
+xref: HOG:0000239
 is_a: UBERON:0003404 ! implied link automatically realized ! lobar bronchus of right lung
 relationship: part_of UBERON:0004890
 intersection_of: UBERON:0002183 ! lobar bronchus
@@ -65696,6 +65801,7 @@ synonym: "hepatic diverticulum" EXACT []
 synonym: "liver diverticulum" EXACT []
 xref: EHDAA:1530
 xref: EMAPA:16561
+xref: HOG:0001351
 xref: XAO:0000101
 is_a: UBERON:0003914 ! epithelial tube
 relationship: develops_from UBERON:0001041 ! foregut
@@ -68172,6 +68278,7 @@ id: UBERON:0005070
 name: anterior neuropore
 def: "The anterior neuropore appears before the process of neural tube closure is complete[GO]." [GO:0021506]
 xref: EMAPA:16523
+xref: HOG:0000768
 is_a: UBERON:0005077 ! neuropore
 
 [Term]
@@ -68179,6 +68286,7 @@ id: UBERON:0005071
 name: posterior neuropore
 def: "The posterior neuropore appears before the process of neural tube closure is complete[GO]." [GO:0021507]
 xref: EMAPA:16526
+xref: HOG:0000769
 is_a: UBERON:0005077 ! neuropore
 
 [Term]
@@ -68324,12 +68432,14 @@ intersection_of: develops_into UBERON:0001820 ! sweat gland
 id: UBERON:0005090
 name: muscle structure
 def: "Muscle structures are contractile cells, tissues or organs that are found in multicellular organisms[GO]." [GO:0061061]
+xref: FBbt:00005073
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0005091
 name: left horn of sinus venosus
 xref: FMA:70321
+xref: HOG:0000488
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002063 ! sinus venosus
 
@@ -68337,6 +68447,7 @@ relationship: part_of UBERON:0002063 ! sinus venosus
 id: UBERON:0005092
 name: right horn of sinus venosus
 xref: FMA:70318
+xref: HOG:0000489
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002063 ! sinus venosus
 
@@ -68351,7 +68462,7 @@ is_a: UBERON:0002530 ! gland
 [Term]
 id: UBERON:0005094
 name: beak
-def: "The avian beak is an external anatomical structure, in the head region, that is adapted for feeding self and young, catching prey, probing, etc. It encompasses, but is not restricted to, the maxilla, mandible, maxillary ramaphotheca, mandibular ramaphotheca, nostril, nasal fossa, nasal bones, egg tooth and rictus[GO]." [GO:0071728]
+def: "The avian beak is an external anatomical structure, in the head region, that is adapted for feeding self and young, catching prey, probing, etc. It encompasses, but is not restricted to, the maxilla, mandible, maxillary ramaphotheca, mandibular ramaphotheca, nostril, nasal fossa, nasal bones, egg tooth and rictus[GO]. The beak, bill or rostrum is an external anatomical structure of birds which is used for eating and for grooming, manipulating objects, killing prey, probing for food, courtship and feeding young. The term beak is also used to refer to a similar mouthpart in some Ornithischian dinosaurs, monotremes, cephalopods, cetaceans, pufferfishes, turtles, Anuran tadpoles  and sirens[WP]." [GO:0071728, Wikipedia:Beak]
 comment: TODO - add superclass
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000033 ! head
@@ -68441,6 +68552,7 @@ is_a: UBERON:0000083 ! mesonephric tubule
 id: UBERON:0005106
 name: metanephric tubule
 def: "A metanephric tubule is an epithelial tube that is part of the metanephros[GO]." [GO:0072173]
+xref: HOG:0001526
 is_a: UBERON:0003914 ! implied link automatically realized ! epithelial tube
 is_a: UBERON:0005108 ! implied link automatically realized ! metanephric epithelium
 relationship: part_of UBERON:0000081
@@ -68480,6 +68592,7 @@ id: UBERON:0005110
 name: metanephric nephron
 alt_id: UBERON:0005142
 def: "A metanephric nephron is the functional unit of the metanephros[GO]." [GO:0072273]
+xref: HOG:0000719
 is_a: UBERON:0001285 ! implied link automatically realized ! nephron
 relationship: part_of UBERON:0000081
 intersection_of: UBERON:0001285 ! nephron
@@ -68874,6 +68987,16 @@ is_a: UBERON:0000353 ! implied link automatically realized ! parenchyma
 relationship: part_of UBERON:0001017
 intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: part_of UBERON:0001017 ! central nervous system
+
+[Term]
+id: UBERON:0005159
+name: pyramid of medulla
+def: "The anterior or ventral portion of the medulla oblongata is named the pyramid and lies between the anterior median fissure and the antero-lateral sulcus. Its upper end is slightly constricted, and between it and the pons the fibers of the abducent nerve emerge; a little below the pons it becomes enlarged and prominent, and finally tapers into the anterior funiculus of the medulla spinalis, with which, at first sight, it appears to be directly continuous[WP]." [Wikipedia:Pyramid_(brainstem)]
+synonym: "medullary pyramid" EXACT [FMA:75254]
+synonym: "pyramid of medulla oblongata" EXACT [Wikipedia:Pyramid_(brainstem)]
+xref: FMA:75254
+is_a: UBERON:0002678 ! regional part of medulla oblongata
+relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Typedef]
 id: adjacent_to
