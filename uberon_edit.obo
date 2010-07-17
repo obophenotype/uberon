@@ -67,7 +67,7 @@ xref: EHDAA2:0001225 ! naris
 id: UBERON:0000004
 name: olfactory apparatus
 def: "Surface structure that houses the nostrils, or nares, which admit and expel air for respiration in conjunction with the mouth. and behind the nose is the olfactory mucosa and the sinuses. Behind the nasal cavity, air next passes through the pharynx, shared with the digestive system, and then into the rest of the respiratory system. In humans, the nose is located centrally on the face; on most other mammals, it is on the upper tip of the snout. In cetaceans, the nose has been reduced to the nostrils, which have migrated to the top of the head, producing a more streamlined body shape and the ability to breathe while mostly submerged. Conversely, the elephant's nose has elaborated into a long, muscular, manipulative organ called the trunk. GO: The nose is the specialized structure of the face that serves as the organ of the sense of smell and as part of the respiratory system. Includes the nasi externus (external nose) and cavitas nasi (nasal cavity)." [Wikipedia:Nose]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - distinguish generic olfactory apparatus from nose. What happens if we have subtypes like epithelium - they become part of nervous system?
 subset: uberon_slim
 synonym: "nose" EXACT []
 synonym: "peripheral olfactory organ" EXACT []
@@ -5233,7 +5233,7 @@ xref: AEO:0000074 ! solid compound organ
 id: UBERON:0003891 ! stroma
 name: stroma
 def: "connective, non-functional supportive framework of a biological cell, tissue, or organ. Contrast with parenchyma." [Wikipedia:Stroma]
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0002384 ! connective tissue
 xref: FMA:81494 ! Stroma
 xref: ncithesaurus:Stroma_Connective_Tissue ! Stroma
 
@@ -32482,6 +32482,7 @@ xref: ncithesaurus:Arachnoiditis ! Arachnoiditis
 xref: BTO:0001636 ! arachnoid mater
 xref: OpenCyc:Mx4rve5HlJwpEbGdrcN5Y29ycA ! arachnoid mater
 xref: NIF_GrossAnatomy:nlx_anat_090208 ! Arachnoid membrane
+xref: HOG:0000230 ! brain arachnoid mater
 
 [Term]
 id: UBERON:0002363
@@ -66281,6 +66282,364 @@ name: kidney interstitium
 xref: MA:0002616
 intersection_of: UBERON:0005169 
 intersection_of: OBO_REL:part_of UBERON:0002113
+
+
+[Term]
+id: UBERON:0005216
+name: optic eminence surface ectoderm
+xref: HOG:0000520
+intersection_of: UBERON:0000076 
+intersection_of: OBO_REL:part_of UBERON:0004348
+
+[Term]
+id: UBERON:0005217
+name: midbrain subarachnoid space
+xref: HOG:0001304
+intersection_of: UBERON:0000315 
+intersection_of: OBO_REL:part_of UBERON:0001891
+
+[Term]
+id: UBERON:0005218
+name: diencephalon subarachnoid space
+xref: HOG:0001302
+intersection_of: UBERON:0000315 
+intersection_of: OBO_REL:part_of UBERON:0001894
+
+[Term]
+id: UBERON:0005219
+name: hindbrain subarachnoid space
+xref: HOG:0001303
+intersection_of: UBERON:0000315 
+intersection_of: OBO_REL:part_of UBERON:0002028
+
+[Term]
+id: UBERON:0005220
+name: pancreas head parenchyma
+xref: HOG:0000838
+intersection_of: UBERON:0000353 
+intersection_of: OBO_REL:part_of UBERON:0001069
+
+[Term]
+id: UBERON:0005221
+name: liver right lobe parenchyma
+xref: HOG:0000840
+intersection_of: UBERON:0000353 
+intersection_of: OBO_REL:part_of UBERON:0001114
+
+[Term]
+id: UBERON:0005222
+name: liver left lobe parenchyma
+xref: HOG:0000839
+intersection_of: UBERON:0000353 
+intersection_of: OBO_REL:part_of UBERON:0001115
+
+[Term]
+id: UBERON:0005223
+name: pancreas body parenchyma
+xref: HOG:0000837
+intersection_of: UBERON:0000353 
+intersection_of: OBO_REL:part_of UBERON:0001150
+
+[Term]
+id: UBERON:0005224
+name: pancreas tail parenchyma
+xref: HOG:0000469
+intersection_of: UBERON:0000353 
+intersection_of: OBO_REL:part_of UBERON:0001151
+
+[Term]
+id: UBERON:0005225
+name: upper leg epithelium
+xref: HOG:0001041
+intersection_of: UBERON:0000483 
+intersection_of: OBO_REL:part_of UBERON:0000376
+
+[Term]
+id: UBERON:0005226
+name: foot digit epithelium
+xref: HOG:0001031
+intersection_of: UBERON:0000483 
+intersection_of: OBO_REL:part_of UBERON:0001466
+
+[Term]
+id: UBERON:0005227
+name: hand digit epithelium
+xref: HOG:0001032
+intersection_of: UBERON:0000483 
+intersection_of: OBO_REL:part_of UBERON:0002389
+
+[Term]
+id: UBERON:0005228
+name: upper arm epithelium
+xref: HOG:0000990
+intersection_of: UBERON:0000483 
+intersection_of: OBO_REL:part_of UBERON:0003822
+
+[Term]
+id: UBERON:0005229
+name: lower leg epithelium
+xref: HOG:0001050
+intersection_of: UBERON:0000483 
+intersection_of: OBO_REL:part_of UBERON:0003823
+
+[Term]
+id: UBERON:0005230
+name: fundus epithelium
+xref: HOG:0000878
+intersection_of: UBERON:0000483 
+intersection_of: OBO_REL:part_of UBERON:0003951
+
+[Term]
+id: UBERON:0005231
+name: forelimb ectoderm
+xref: HOG:0001047
+intersection_of: UBERON:0000924 
+intersection_of: OBO_REL:part_of UBERON:0002102
+
+[Term]
+id: UBERON:0005232
+name: hindlimb ectoderm
+xref: HOG:0001048
+intersection_of: UBERON:0000924 
+intersection_of: OBO_REL:part_of UBERON:0002103
+
+[Term]
+id: UBERON:0005233
+name: medial-nasal process ectoderm
+xref: HOG:0000803
+intersection_of: UBERON:0000924 
+intersection_of: OBO_REL:part_of UBERON:0004068
+
+[Term]
+id: UBERON:0005234
+name: optic eminence ectoderm
+xref: HOG:0001105
+intersection_of: UBERON:0000924 
+intersection_of: OBO_REL:part_of UBERON:0004348
+
+[Term]
+id: UBERON:0005235
+name: thyroid endoderm
+xref: HOG:0001089
+intersection_of: UBERON:0000925 
+intersection_of: OBO_REL:part_of UBERON:0002046
+
+[Term]
+id: UBERON:0005236
+name: osseus labyrinth vestibule
+xref: HOG:0001220
+intersection_of: UBERON:0001349 
+intersection_of: OBO_REL:part_of UBERON:0001839
+
+[Term]
+id: UBERON:0005237
+name: supraoccipital bone
+xref: HOG:0001150
+intersection_of: UBERON:0001474 
+intersection_of: OBO_REL:part_of UBERON:0004747
+
+[Term]
+id: UBERON:0005238
+name: tensor tympani muscle
+xref: HOG:0000698
+intersection_of: UBERON:0001630 
+intersection_of: OBO_REL:part_of UBERON:0001600
+
+[Term]
+id: UBERON:0005239
+name: basal plate metencephalon
+xref: HOG:0000320
+intersection_of: UBERON:0001895 
+intersection_of: OBO_REL:part_of UBERON:0004064
+
+[Term]
+id: UBERON:0005240
+name: basal plate medulla oblongata
+xref: HOG:0000324
+intersection_of: UBERON:0001896 
+intersection_of: OBO_REL:part_of UBERON:0004064
+
+[Term]
+id: UBERON:0005241
+name: apical ectodermal ridge forelimb
+xref: HOG:0001064
+intersection_of: UBERON:0002102 
+intersection_of: OBO_REL:part_of UBERON:0004356
+
+[Term]
+id: UBERON:0005242
+name: apical ectodermal ridge hindlimb
+xref: HOG:0001066
+intersection_of: UBERON:0002103 
+intersection_of: OBO_REL:part_of UBERON:0004356
+
+[Term]
+id: UBERON:0005243
+name: interventricular septum endocardium
+xref: HOG:0000615
+intersection_of: UBERON:0002165 
+intersection_of: OBO_REL:part_of UBERON:0002094
+
+[Term]
+id: UBERON:0005244
+name: lobar bronchus of right lung cranial lobe
+xref: HOG:0000240
+intersection_of: UBERON:0002183 
+intersection_of: OBO_REL:part_of UBERON:0002170
+
+[Term]
+id: UBERON:0005245
+name: lobar bronchus of the right lung caudal lobe
+xref: HOG:0000250
+intersection_of: UBERON:0002183 
+intersection_of: OBO_REL:part_of UBERON:0002171
+
+[Term]
+id: UBERON:0005246
+name: roof plate spinal cord
+xref: HOG:0000777
+intersection_of: UBERON:0002240 
+intersection_of: OBO_REL:part_of UBERON:0003054
+
+[Term]
+id: UBERON:0005247
+name: floor plate spinal cord
+xref: HOG:0000787
+intersection_of: UBERON:0002240 
+intersection_of: OBO_REL:part_of UBERON:0003079
+
+[Term]
+id: UBERON:0005248
+name: bulbus cordis myocardium
+xref: HOG:0000609
+intersection_of: UBERON:0002349 
+intersection_of: OBO_REL:part_of UBERON:0004706
+
+[Term]
+id: UBERON:0005249
+name: metanephros pelvis
+xref: HOG:0000945
+intersection_of: UBERON:0002355 
+intersection_of: OBO_REL:part_of UBERON:0000081
+
+[Term]
+id: UBERON:0005250
+name: stomatodeum gland
+xref: HOG:0000658
+intersection_of: UBERON:0002530 
+intersection_of: OBO_REL:part_of UBERON:0000930
+
+[Term]
+id: UBERON:0005251
+name: yolk sac cavity
+xref: HOG:0000843
+intersection_of: UBERON:0002553 
+intersection_of: OBO_REL:part_of UBERON:0001040
+
+[Term]
+id: UBERON:0005252
+name: omental bursa cavity
+xref: HOG:0000827
+intersection_of: UBERON:0002553 
+intersection_of: OBO_REL:part_of UBERON:0001341
+
+[Term]
+id: UBERON:0005253
+name: head mesenchyme
+xref: HOG:0000332
+intersection_of: UBERON:0003104 
+intersection_of: OBO_REL:part_of UBERON:0000033
+
+[Term]
+id: UBERON:0005254
+name: upper leg mesenchyme
+xref: HOG:0000506
+intersection_of: UBERON:0003104 
+intersection_of: OBO_REL:part_of UBERON:0000376
+
+[Term]
+id: UBERON:0005255
+name: foot digit mesenchyme
+xref: HOG:0000463
+intersection_of: UBERON:0003104 
+intersection_of: OBO_REL:part_of UBERON:0001466
+
+[Term]
+id: UBERON:0005256
+name: trunk mesenchyme
+xref: HOG:0000281
+intersection_of: UBERON:0003104 
+intersection_of: OBO_REL:part_of UBERON:0002100
+
+[Term]
+id: UBERON:0005257
+name: hand digit mesenchyme
+xref: HOG:0001416
+intersection_of: UBERON:0003104 
+intersection_of: OBO_REL:part_of UBERON:0002389
+
+[Term]
+id: UBERON:0005258
+name: upper arm mesenchyme
+xref: HOG:0000505
+intersection_of: UBERON:0003104 
+intersection_of: OBO_REL:part_of UBERON:0003822
+
+[Term]
+id: UBERON:0005259
+name: lower leg mesenchyme
+xref: HOG:0000752
+intersection_of: UBERON:0003104 
+intersection_of: OBO_REL:part_of UBERON:0003823
+
+[Term]
+id: UBERON:0005260
+name: foot plate mesenchyme
+xref: HOG:0001055
+intersection_of: UBERON:0003104 
+intersection_of: OBO_REL:part_of UBERON:0004343
+
+[Term]
+id: UBERON:0005261
+name: atrium cardiac jelly
+xref: HOG:0000941
+intersection_of: UBERON:0003906 
+intersection_of: OBO_REL:part_of UBERON:0001050
+
+[Term]
+id: UBERON:0005262
+name: ventricle cardiac jelly
+xref: HOG:0000943
+intersection_of: UBERON:0003906 
+intersection_of: OBO_REL:part_of UBERON:0002300
+
+[Term]
+id: UBERON:0005263
+name: outflow tract cardiac jelly
+xref: HOG:0000940
+intersection_of: UBERON:0003906 
+intersection_of: OBO_REL:part_of UBERON:0004145
+
+[Term]
+id: UBERON:0005264
+name: midbrain neural fold
+xref: HOG:0000793
+intersection_of: UBERON:0005062 
+intersection_of: OBO_REL:part_of UBERON:0001891
+
+[Term]
+id: UBERON:0005265
+name: hindbrain neural fold
+xref: HOG:0001211
+intersection_of: UBERON:0005062 
+intersection_of: OBO_REL:part_of UBERON:0002028
+
+[Term]
+id: UBERON:0005266
+name: spinal cord neural fold
+xref: HOG:0000628
+intersection_of: UBERON:0005062 
+intersection_of: OBO_REL:part_of UBERON:0002240
 
 [Typedef]
 id: adjacent_to
