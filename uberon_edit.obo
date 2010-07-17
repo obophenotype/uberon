@@ -5304,6 +5304,15 @@ xref: ENVO:02000042
 xref: FMA:9673 ! Tissue fluid
 is_a: UBERON:0000463 ! portion of organism substance
 
+[term]
+id: UBERON:0005169
+name: interstitial tissue
+def: "connective tissue between the cellular elements of a structure." [http://medical-dictionary.thefreedictionary.com/tissue]
+comment: todo - make connective tissue
+synonym: "interstitium" EXACT []
+is_a: UBERON:0003891 ! stroma
+
+
 [Term]
 id: UBERON:0000915
 name: thorax
@@ -29441,6 +29450,13 @@ xref: EHDAA:9061 ! capsule
 xref: galen:Capsule ! capsule
 
 [Term]
+id: UBERON:0005170
+name: ovary stratum granulosum
+is_a: UBERON:0000158 ! membranous layer
+xref: MA:0001460 ! ovary stratum granulosum
+xref: FMA:18660 ! membrana granulosa of ovarian follicle 
+
+[Term]
 id: UBERON:0002195
 name: trabecula of lymph node
 def: "Membranous process coming from capsule of lymph node[WP]." [Wikipedia:Lymph_node_trabeculae]
@@ -42153,6 +42169,7 @@ synonym: "flocculonodular lobe" EXACT [FMA:72253]
 synonym: "posterior lobe-2 of cerebellum" EXACT [FMA:72253]
 xref: FMA:72253 ! Flocculonodular lobe of cerebellum
 xref: NIF_GrossAnatomy:birnlex_904 ! Flocculonodular lobe
+xref: MA:0002965 ! cerebellum flocculonodular lobe
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0002129 ! cerebellar cortex
 
@@ -55823,7 +55840,7 @@ synonym: "dens of axis" [FMA:24043]
 synonym: "axis dens" [FMA:24043]
 synonym: "odontoid process of axis" [FMA:24043]
 synonym: "dens" [EMAPA:26535]
-comment: TODO check AAO:0000721 ! odontoid_process -- Anterior process located between the atlantal cotyles that projects into the foramen magnum of the skull and bears facets that articulate with the lateral walls of the foramen
+comment: TODO - this needs to be defined more generically, other vetrebrae have odontoid processes. TODO check AAO:0000721 ! odontoid_process -- Anterior process located between the atlantal cotyles that projects into the foramen magnum of the skull and bears facets that articulate with the lateral walls of the foramen
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001130 ! vertebral column
 xref: EMAPA:26535 ! odontoid process
@@ -61256,6 +61273,7 @@ xref: MA:0000753 ! spleen capsule
 id: UBERON:0004670 ! ependyma
 name: ependyma
 def: "Ependymal epithelium lining the ventricular cavities and canals of the CNS is simple, columnar or cuboidal." [BTO:0000401]
+synonym: "brain ependyma" [MA:0000809]
 synonym: "ependymal epithelium" [BTO:0000401]
 synonym: "lamina epithelialis" [FMA:242791]
 synonym: "ependyma of neuraxis" [FMA:242791]
@@ -61264,6 +61282,7 @@ intersection_of: part_of UBERON:0004086 ! brain ventricle
 xref: BTO:0000401 ! ependymal epithelium
 xref: FMA:242791 ! ependyma of neuraxis
 xref: GAID:608 ! ependyma
+xref: MA:0000809 ! brain ependyma
 
 [Term]
 id: UBERON:0004642
@@ -65934,6 +65953,322 @@ def: "A fasciculated bundle of neuron projections (GO:0043005), largely or compl
 is_a: UBERON:0005162 ! multi-cell-component structure
 xref: CARO:0001001
 xref: FBbt:00005099 ! neuron projection bundle
+
+
+[Term]
+id: UBERON:0005171
+name: hepatic duct
+xref: MA:0000357
+intersection_of: UBERON:0000058 
+intersection_of: part_of UBERON:0002107
+
+[Term]
+id: UBERON:0005172
+name: abdomen organ
+xref: MA:0000522
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0000916
+
+[Term]
+id: UBERON:0005173
+name: abdominal segment organ
+xref: MA:0000529
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0000917
+
+[Term]
+id: UBERON:0005174
+name: back organ
+xref: MA:0001901
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0001137
+
+[Term]
+id: UBERON:0005175
+name: chest organ
+xref: MA:0000552
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0001443
+
+[Term]
+id: UBERON:0005176
+name: tooth enamel organ
+xref: MA:0001604
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0001752
+
+[Term]
+id: UBERON:0005177
+name: trunk organ
+xref: MA:0000516
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0002100
+
+[Term]
+id: UBERON:0005178
+name: thoracic cavity organ
+xref: MA:0000557
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0002224
+
+[Term]
+id: UBERON:0005179
+name: pelvis organ
+xref: MA:0000543
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0002355
+
+[Term]
+id: UBERON:0005180
+name: lymph organ
+xref: MA:0000747
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0002391
+
+[Term]
+id: UBERON:0005181
+name: thoracic segment organ
+xref: MA:0000563
+intersection_of: UBERON:0000062 
+intersection_of: part_of UBERON:0003138
+
+[Term]
+id: UBERON:0005182
+name: ovary theca externa
+xref: MA:0001713
+intersection_of: UBERON:0000156 
+intersection_of: part_of UBERON:0000992
+
+[Term]
+id: UBERON:0005183
+name: ovary theca interna
+xref: MA:0001714
+intersection_of: UBERON:0000157 
+intersection_of: part_of UBERON:0000992
+
+[Term]
+id: UBERON:0005184
+name: hair medulla
+xref: MA:0000158
+intersection_of: UBERON:0000958 
+intersection_of: part_of UBERON:0001037
+
+[Term]
+id: UBERON:0005185
+name: renal medulla collecting duct
+xref: MA:0002935
+intersection_of: UBERON:0001232 
+intersection_of: OBO_REL:part_of UBERON:0000362
+
+[Term]
+id: UBERON:0005186
+name: outer renal medulla collecting duct
+xref: MA:0002599
+intersection_of: UBERON:0001232 
+intersection_of: OBO_REL:part_of UBERON:0001293
+
+[Term]
+id: UBERON:0005187
+name: inner renal medulla collecting duct
+xref: MA:0002598
+intersection_of: UBERON:0001232 
+intersection_of: OBO_REL:part_of UBERON:0001294
+
+[Term]
+id: UBERON:0005188
+name: caput epididymis
+xref: MA:0002762
+intersection_of: UBERON:0001301 
+intersection_of: OBO_REL:part_of UBERON:0004358
+
+[Term]
+id: UBERON:0005189
+name: corpus epididymis
+xref: MA:0002764
+intersection_of: UBERON:0001301 
+intersection_of: OBO_REL:part_of UBERON:0004359
+
+[Term]
+id: UBERON:0005190
+name: cauda epididymis
+xref: MA:0002763
+intersection_of: UBERON:0001301 
+intersection_of: OBO_REL:part_of UBERON:0004360
+
+[Term]
+id: UBERON:0005191
+name: cervical artery
+xref: MA:0001936
+intersection_of: UBERON:0001637 
+intersection_of: part_of UBERON:0000002
+
+[Term]
+id: UBERON:0005192
+name: deferent duct artery
+xref: MA:0001940
+intersection_of: UBERON:0001637 
+intersection_of: OBO_REL:part_of UBERON:0001000
+
+[Term]
+id: UBERON:0005193
+name: ethmoidal artery
+xref: MA:0001949
+intersection_of: UBERON:0001637 
+intersection_of: part_of UBERON:0001679
+
+[Term]
+id: UBERON:0005194
+name: thoracic vein
+xref: MA:0002235
+intersection_of: UBERON:0001638 
+intersection_of: part_of UBERON:0000915
+
+[Term]
+id: UBERON:0005195
+name: deferent duct vein
+xref: MA:0002100
+intersection_of: UBERON:0001638 
+intersection_of: OBO_REL:part_of UBERON:0001000
+
+[Term]
+id: UBERON:0005196
+name: spleen germinal center
+xref: MA:0000764
+intersection_of: UBERON:0001745 
+intersection_of: part_of UBERON:0002106
+
+[Term]
+id: UBERON:0005197
+name: segmental spinal nerve
+xref: MA:0000234
+intersection_of: UBERON:0001780 
+intersection_of: part_of UBERON:0000914
+
+[Term]
+id: UBERON:0005198
+name: coat hair bulb
+xref: MA:0000161
+intersection_of: UBERON:0001896 
+intersection_of: part_of UBERON:0001037
+
+[Term]
+id: UBERON:0005199
+name: cervical mammary gland
+xref: MA:0000789
+intersection_of: UBERON:0001911 
+intersection_of: part_of UBERON:0000002
+
+[Term]
+id: UBERON:0005200
+name: thoracic mammary gland
+xref: MA:0000797
+intersection_of: UBERON:0001911 
+intersection_of: part_of UBERON:0000915
+
+[Term]
+id: UBERON:0005201
+name: cervical trunk
+xref: MA:0001937
+intersection_of: UBERON:0002100 
+intersection_of: part_of UBERON:0000002
+
+[Term]
+id: UBERON:0005202
+name: distal straight tubule macula densa
+xref: MA:0002604
+intersection_of: UBERON:0002335 
+intersection_of: OBO_REL:part_of UBERON:0005164
+
+[Term]
+id: UBERON:0005203
+name: trachea gland
+xref: MA:0002937
+intersection_of: UBERON:0002530 
+intersection_of: OBO_REL:part_of UBERON:0002202
+
+[Term]
+id: UBERON:0005204
+name: larynx submucosa gland
+xref: MA:0002729
+intersection_of: UBERON:0002530 
+intersection_of: part_of UBERON:0004778
+
+[Term]
+id: UBERON:0005205
+name: vagina stroma
+xref: MA:0002737
+intersection_of: UBERON:0003891 
+intersection_of: OBO_REL:part_of UBERON:0000996
+
+[Term]
+id: UBERON:0005206
+name: choroid plexus stroma
+xref: MA:0000825
+intersection_of: UBERON:0003891 
+intersection_of: OBO_REL:part_of UBERON:0001886
+
+[Term]
+id: UBERON:0005207
+name: tonsil capsule
+xref: MA:0000776
+intersection_of: UBERON:0003893 
+intersection_of: OBO_REL:part_of UBERON:0002372
+
+[Term]
+id: UBERON:0005208
+name: right atrium valve
+xref: MA:0001871
+intersection_of: UBERON:0003978 
+intersection_of: OBO_REL:part_of UBERON:0002078
+
+[Term]
+id: UBERON:0005209
+name: cervical vertebra 1 arcus anterior
+xref: MA:0002954
+intersection_of: UBERON:0003996 
+intersection_of: OBO_REL:part_of UBERON:0001092
+
+[Term]
+id: UBERON:0005210
+name: cervical vertebra 2 odontoid process
+xref: MA:0002872
+intersection_of: UBERON:0004096 
+intersection_of: OBO_REL:part_of UBERON:0001093
+
+[Term]
+id: UBERON:0005211
+name: renal medulla interstitium
+xref: MA:0002619
+intersection_of: UBERON:0005169 
+intersection_of: OBO_REL:part_of UBERON:0000362
+
+[Term]
+id: UBERON:0005212
+name: testis interstitial tissue
+xref: MA:0002713
+intersection_of: UBERON:0005169 
+intersection_of: OBO_REL:part_of UBERON:0000473
+
+[Term]
+id: UBERON:0005213
+name: outer renal medulla interstitium
+xref: MA:0002621
+intersection_of: UBERON:0005169 
+intersection_of: OBO_REL:part_of UBERON:0001293
+
+[Term]
+id: UBERON:0005214
+name: inner renal medulla interstitium
+xref: MA:0002620
+intersection_of: UBERON:0005169 
+intersection_of: OBO_REL:part_of UBERON:0001294
+
+[Term]
+id: UBERON:0005215
+name: kidney interstitium
+xref: MA:0002616
+intersection_of: UBERON:0005169 
+intersection_of: OBO_REL:part_of UBERON:0002113
 
 [Typedef]
 id: adjacent_to
