@@ -788,7 +788,7 @@ xref: AEO:0000091 ! tendon
 [Term]
 id: UBERON:0000044
 name: dorsal root ganglion
-def: " ganglion on the dorsal root of each spinal nerve that is one of a series of ganglia lodging cell bodies of sensory neurons[BTO]. Trunk ganglion which is located adjacent to the spine on a dorsal root and contains the cell bodies of afferent sensory nerves[..]. one on the posterior root of each spinal nerve, composed of unipolar nerve cell bodies of the sensory neurons of the nerve[FD]." [Wikipedia:Dorsal_root_ganglion]
+def: "ganglion on the dorsal root of each spinal nerve that is one of a series of ganglia lodging cell bodies of sensory neurons[BTO]. Trunk ganglion which is located adjacent to the spine on a dorsal root and contains the cell bodies of afferent sensory nerves[..]. one on the posterior root of each spinal nerve, composed of unipolar nerve cell bodies of the sensory neurons of the nerve[FD]." [Wikipedia:Dorsal_root_ganglion]
 comment: FMA treats dorsal root ganglion and spinal ganglion as equivalent labels. MA is the only ontology to introduce two classes here
 subset: uberon_slim
 synonym: "dorsal root ganglia" RELATED []
@@ -3600,6 +3600,7 @@ xref: ncithesaurus:Thigh ! Thigh
 xref: EFO:0001943 ! thigh
 synonym: "hind limb stylopod" EXACT [OBOL:automatic]
 synonym: "hindlimb stylopod" EXACT [OBOL:automatic]
+synonym: "hindlimb stylopodium" EXACT [OBOL:automatic]
 synonym: "inferior member stylopod" EXACT [OBOL:automatic]
 synonym: "lower extremity stylopod" EXACT [OBOL:automatic]
 synonym: "stylopod of hind limb" EXACT [OBOL:automatic]
@@ -3629,6 +3630,8 @@ xref: MA:0000035 ! upper arm
 xref: ncithesaurus:Forearm ! Forearm
 xref: BTO:0001447 ! forearm
 synonym: "arm stylopod" EXACT [OBOL:automatic]
+synonym: "forelimb stylopod" EXACT [OBOL:automatic]
+synonym: "forelimb stylopodium" EXACT [OBOL:automatic]
 synonym: "brachial region stylopod" EXACT [OBOL:automatic]
 synonym: "proximal segment of free upper limb stylopod" EXACT [OBOL:automatic]
 synonym: "stylopod of brachial region" EXACT [OBOL:automatic]
@@ -3648,6 +3651,7 @@ synonym: "antebrachial region" EXACT []
 synonym: "zeugopod of arm" EXACT []
 synonym: "zeugopod of forelimb" EXACT []
 synonym: "forelimb zeugopod" EXACT []
+synonym: "forelimb zeugopodium" EXACT []
 synonym: "intermediate segment of free upper limb" EXACT []
 synonym: "lower segment of arm" EXACT []
 synonym: "forearm" EXACT []
@@ -3693,6 +3697,7 @@ synonym: "hind limb middle limb segment" EXACT [OBOL:automatic]
 synonym: "hind limb zeugopod" EXACT [OBOL:automatic]
 synonym: "hindlimb middle limb segment" EXACT [OBOL:automatic]
 synonym: "hindlimb zeugopod" EXACT [OBOL:automatic]
+synonym: "hindlimb zeugopodium" EXACT [OBOL:automatic]
 synonym: "inferior member middle limb segment" EXACT [OBOL:automatic]
 synonym: "inferior member zeugopod" EXACT [OBOL:automatic]
 synonym: "lower extremity middle limb segment" EXACT [OBOL:automatic]
@@ -3719,6 +3724,7 @@ def: "Limb segment that is the proximal part of the limb (e.g. between shoulder 
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "proximal part of limb" BROAD []
+synonym: "stylopodium" EXACT []
 xref: EFO:0000879 ! stylopod
 xref: MA:0002717 ! stylopod
 xref: MAT:0000093 ! stylopod
@@ -3735,6 +3741,7 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "middle part of limb" BROAD []
 synonym: "middle limb segment" EXACT []
+synonym: "zeugopodium" EXACT []
 xref: EFO:0000878 ! zeugopod
 xref: MA:0002716 ! zeugopod
 xref: MAT:0000092 ! zeugopod
@@ -7377,6 +7384,7 @@ xref: FBbt:00005057 ! circulatory system
 xref: XAO:0001010 ! circulatory system
 xref: OpenCyc:Mx4rvVjzG5wpEbGdrcN5Y29ycA ! circulatory system
 is_a: UBERON:0000467 ! anatomical system
+relationship: has_part UBERON:0000948 ! heart
 relationship: never_in_taxon NCBITaxon:6157 ! Platyhelminthes 
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
@@ -7418,6 +7426,8 @@ xref: ZFA:0000010 ! cardiovascular system
 xref: ncithesaurus:Cardiovascular_System ! Cardiovascular System
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001009 ! circulatory system
+relationship: has_part UBERON:0001981 ! blood vessel
+relationship: has_part UBERON:0000948 ! heart
 xref: EHDAA2:0000216 ! cardiovascular system
 
 [Term]
@@ -9947,6 +9957,7 @@ alt_id: UBERON:FMA_13367-MA_0000131
 comment: This class was created automatically from a combination of ontologies
 synonym: "lobus (glandula thyroidea)" EXACT []
 synonym: "thyroid gland lobe" EXACT []
+synonym: "thyroid lobe" EXACT []
 xref: FMA:13367 ! Lobe of thyroid gland
 xref: MA:0000131 ! thyroid gland lobe
 is_a: UBERON:0000064 ! organ part
@@ -9961,6 +9972,7 @@ alt_id: UBERON:FMA_13368-MA_0000729
 comment: This class was created automatically from a combination of ontologies
 synonym: "lobus dexter (glandula thyroidea)" EXACT []
 synonym: "thyroid gland right lobe" EXACT []
+synonym: "right thyroid lobe" EXACT []
 xref: FMA:13368 ! Right lobe of thyroid gland
 xref: MA:0000729 ! thyroid gland right lobe
 is_a: UBERON:0001118 ! lobe of thyroid gland
@@ -9972,6 +9984,7 @@ alt_id: UBERON:FMA_13369-MA_0000728
 comment: This class was created automatically from a combination of ontologies
 synonym: "lobus sinister (glandula thyroidea)" EXACT []
 synonym: "thyroid gland left lobe" EXACT []
+synonym: "left thyroid lobe" EXACT []
 xref: FMA:13369 ! Left lobe of thyroid gland
 xref: MA:0000728 ! thyroid gland left lobe
 is_a: UBERON:0001118 ! lobe of thyroid gland
@@ -11893,7 +11906,7 @@ name: renal tubule
 alt_id: UBERON:FMA_15627-ZFA_0001287
 alt_id: UBERON:0004210
 def: "An epithelial tube that is part of the nephron, the functional part of the kidney." [GO:0072078, Wikipedia:Renal_tubule]
-comment: TODO - check renal tubule vs nephron tubule - assume for now.
+comment: TODO - check renal tubule vs nephron tubule - assume for now. Also FMA has 'region of renal tubule' - not clear what is a subclass and what is a part
 subset: uberon_slim
 synonym: "nephron tubule" EXACT [GO:0072078]
 synonym: "tubulus renalis" EXACT []
@@ -11910,7 +11923,7 @@ xref: ncithesaurus:Renal_Tubule ! Renal Tubule
 id: UBERON:0001232 ! collecting duct of renal tubule
 name: collecting duct of renal tubule
 alt_id: UBERON:FMA_15628-MA_0000371
-def: " The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient" [GO:0072044]
+def: "The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient" [GO:0072044]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "collecting duct" EXACT [GO:0072044]
@@ -11924,7 +11937,6 @@ xref: MA:0000371 ! kidney collecting duct
 xref: ZFA:0005294 ! collecting duct
 xref: EMAPA:28407 ! collecting duct
 is_a: UBERON:0000058 ! duct
-relationship: part_of UBERON:0002113 ! kidney
 relationship: part_of UBERON:0001285 ! nephron
 xref: BTO:0000761 ! collecting duct
 
@@ -13050,13 +13062,21 @@ xref: ZFA:0005283 ! renal capsular space
 xref: ZFA:0005312 ! pronephric capsular space
 
 [Term]
+id: UBERON:0005167
+name: papillary duct
+def: "The terminal portions of the medullary collecting ducts are the papillary ducts, which end at the renal papilla and empty into a minor calyx." [Encyclopedia:http://encyclopedia.thefreedictionary.com/]
+synonym: "duct of Bellini" RELATED []
+is_a: UBERON:0001232 ! collecting duct of renal tubule
+
+[Term]
 id: UBERON:0001287
 name: proximal convoluted tubule
 alt_id: UBERON:FMA_17693-MA_0001669-ZFA_0001620
-def: "Most anterior portion of the pronephric duct (or tubule as described by Wingert et al, 2007). <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-071029-9'>Wingert, 2007.</a>" [Wikipedia:Proximal_convoluted_tubule, ZFIN:curator]
+def: "The proximal tubule is the portion of the duct system of the nephron of the kidney which leads from Bowman's capsule to the loop of Henle[WP]. Most anterior portion of the pronephric duct (or tubule as described by Wingert et al, 2007)[ZFA]." [Wikipedia:Proximal_convoluted_tubule, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "first convoluted tubule" RELATED []
+synonym: "1st convoluted tubule" RELATED []
 synonym: "PCT" RELATED []
 synonym: "proximal convoluted renal tubule" EXACT []
 synonym: "tubulus contortus proximalis" EXACT []
@@ -13065,7 +13085,6 @@ xref: MA:0001669 ! proximal convoluted tubule
 xref: ZFA:0001620 ! proximal convoluted tubule
 is_a: UBERON:0004134 ! proximal tubule
 relationship: part_of UBERON:0001225 ! cortex of kidney
-relationship: part_of UBERON:0001231 ! renal tubule
 
 [Term]
 id: UBERON:0001288
@@ -13080,8 +13099,7 @@ xref: FMA:17698 ! Loop of Henle
 xref: GAID:437 ! loop of henle
 xref: HOG:0001270 ! loop of Henle
 xref: MA:0001675 ! loop of henle
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001231 ! renal tubule
+is_a: UBERON:0001231 ! renal tubule
 xref: ncithesaurus:Loop_of_Henle ! Henle's Loop
 
 [Term]
@@ -13089,16 +13107,93 @@ id: UBERON:0001289
 name: descending limb of loop of Henle
 alt_id: UBERON:FMA_17705-MA_0001679
 def: "Portion of the renal tubule constituting the first part of the loop of Henle[WP]." [Wikipedia:Descending_limb_of_loop_of_henle]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "Descending limb of Henle's loop" EXACT []
-synonym: "loop of henle descending limb" EXACT []
+synonym: "descending limb of Henle's loop" EXACT []
+synonym: "loop of Henle descending limb" EXACT []
+synonym: "descending limb" BROAD []
 xref: FMA:17705 ! Descending limb of loop of Henle
 xref: MA:0001679 ! loop of henle descending limb
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0001231 ! renal tubule
 relationship: part_of UBERON:0001288 ! loop of Henle
 relationship: part_of UBERON:0003060 ! pronephric duct
 xref: ncithesaurus:Descending_Limb_of_the_Henle_s_Loop ! Descending Limb of Henle's Loop
+
+[Term]
+id: UBERON:0005165
+name: descending thin limb of loop of Henle
+subset: uberon_slim
+synonym: "loop of Henle descending thin limb" EXACT []
+synonym: "descending thin limb" BROAD []
+synonym: "thin descending limb" BROAD []
+synonym: "pars descendens (tubulus attenuatus)" EXACT [FMA:17719]
+xref: MA:0002625 ! loop of henle thin descending limb
+xref: FMA:17719 ! descending thin limb 
+xref: EMAPA:28325 ! thin descending limb
+xref: EMAPA:28355 ! thin descending limb
+xref: EMAPA:29681 ! thin descending limb
+is_a: UBERON:0001231 ! renal tubule
+relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
+
+[Term]
+id: UBERON:0005166
+name: descending thick limb of loop of Henle
+subset: uberon_slim
+is_a: UBERON:0001231 ! renal tubule
+relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
+
+[Term]
+id: UBERON:0005164 ! ascending limb of loop of Henle
+name: ascending limb of loop of Henle
+def: "." [Wikipedia:Ascending_limb_of_loop_of_Henle]
+comment: TODO: thick/thin check. Also relationshop to distal tubule
+subset: uberon_slim
+synonym: "ascending limb" BROAD []
+synonym: "ascending limb of Henle's loop" EXACT []
+synonym: "distal straight tubule" EXACT []
+synonym: "loop of henle ascending limb" BROAD []
+synonym: "Thick ascending limb of Henle's loop" EXACT []
+xref: FMA:17717 ! Ascending limb of loop of Henle
+xref: MA:0001676 ! loop of henle ascending limb
+xref: EMAPA:28396 ! distal straight tubule
+is_a: UBERON:0004135 ! distal tubule
+relationship: part_of UBERON:0001288 ! loop of Henle
+xref: ncithesaurus:Ascending_Limb_of_the_Henle_s_Loop ! Ascending Limb of Henle's Loop
+
+[Term]
+id: UBERON:0001291
+name: thick ascending limb of loop of Henle
+alt_id: UBERON:FMA_17717-MA_0001676
+def: "a segment of the nephron in the kidney. It can be divided into two parts: that in the renal medulla, and that in the renal cortex[Wikipedia:Thick_ascending_limb_of_loop_of_Henle]." [Wikipedia:Thick_ascending_limb_of_loop_of_Henle]
+comment: TODO: thick/thin check. Also - does the loop of Henle overlap the distal convoluted tubule?
+subset: uberon_slim
+synonym: "thick ascending limb" EXACT []
+synonym: "ascending thick limb" EXACT []
+synonym: "distal straight tubule" EXACT []
+synonym: "straight portion of distal convoluted renal tubule" EXACT []
+synonym: "thick ascending limb of Henle's loop" EXACT []
+synonym: "loop of henle ascending limb thick segment" EXACT [MA:0001677]
+xref: FMA:17722 ! straight portion of distal convoluted tubule
+xref: EMAPA:28396 ! distal straight tubule
+xref: EMAPA:29671 ! distal straight tubule
+xref: MA:0001677 ! loop of henle ascending limb thick segment
+is_a: UBERON:0004135 ! distal tubule
+relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
+
+[Term]
+id: UBERON:0004193
+name: loop of Henle ascending limb thin segment
+def: "A sub-portion of the loop of Henle in the nephron of the kidney that is permeable to ions but not to water" [GO:0072021, Wikipedia:Thin_ascending_limb_of_loop_of_Henle]
+comment: check relationship to distal tubule
+is_a: UBERON:0001231 ! renal tubule
+relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
+synonym: "ascending thin limb" EXACT [FMA:17720]
+synonym: "thin ascending limb" EXACT [EMAPA:28328]
+synonym: "ascending limb thin segment of loop of Henle" EXACT []
+synonym: "thin ascending limb of loop of Henle" EXACT []
+xref: EMAPA:28328 ! thin ascending limb
+xref: EMAPA:28361 ! thin ascending limb
+xref: FMA:17720 ! Ascending thin limb
+xref: MA:0001678 ! loop of henle ascending limb thin segment
 
 [Term]
 id: UBERON:0004134 ! proximal tubule
@@ -13113,6 +13208,26 @@ relationship: continuous_with UBERON:0001230 ! glomerular capsule
 xref: BTO:0001498 ! renal proximal tubule
 
 [Term]
+id: UBERON:0001290
+name: proximal straight tubule
+alt_id: UBERON:FMA_17716-MA_0002614-ZFA_0001621
+def: "part of the descending limb of the renal tubule, extending from the proximal convoluted tubule to the thin tubule[BTO]. Portion of the pronephric duct (or tubule as described by Wingert et al, 2007) which is just posterior to the proximal convoluted tubule. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-071029-9'>Wingert, 2007.</a>" [Wikipedia:Proximal_straight_tubule, ZFIN:curator]
+comment: TODO - is S3 exactly coincident with PST? Check also relationship to DL
+subset: uberon_slim
+synonym: "pars recta" RELATED []
+synonym: "S3" EXACT [GO:0072020]
+synonym: "proximal tubule segment 3" RELATED []
+synonym: "thick descending limb of proximal tubule" EXACT []
+synonym: "tubulus rectus proximalis" EXACT []
+xref: FMA:17716 ! Proximal straight tubule
+xref: MA:0002614 ! proximal straight tubule
+xref: ZFA:0001621 ! proximal straight tubule
+xref: BTO:0000055 ! pars recta
+xref: 
+is_a: UBERON:0001231 ! renal tubule
+relationship: part_of UBERON:0004134 ! proximal tubule
+
+[Term]
 id: UBERON:0004135 ! distal tubule
 name: distal tubule
 def: "The distal tubule is a nephron tubule that consists of the convoluted and straight distal tubule segments" [GO:0072017]
@@ -13120,55 +13235,6 @@ synonym: "renal distal tubule"  EXACT []
 xref: MA:0002633 ! renal distal tubule
 is_a: UBERON:0001231 ! renal tubule
 xref: BTO:0000482 ! renal distal tubule
-
-[Term]
-id: UBERON:0004136
-name: intermediate tubule
-def: " The intermediate tubule is a nephron tubule that lies between the proximal and distal tubules" [GO:0072018]
-synonym: "renal intermediate tubule" EXACT []
-is_a: UBERON:0001231 ! renal tubule
-xref: FMA:17718 ! intermediate tubule 
-
-[Term]
-id: UBERON:0001290
-name: proximal straight tubule
-alt_id: UBERON:FMA_17716-MA_0002614-ZFA_0001621
-def: "Portion of the pronephric duct (or tubule as described by Wingert et al, 2007) which is just posterior to the proximal convoluted tubule. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-071029-9'>Wingert, 2007.</a>" [Wikipedia:Proximal_straight_tubule, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "pars recta" RELATED []
-synonym: "proximal tubule segment 3" RELATED []
-synonym: "thick descending limb of proximal tubule" EXACT []
-synonym: "tubulus rectus proximalis" EXACT []
-xref: FMA:17716 ! Proximal straight tubule
-xref: MA:0002614 ! proximal straight tubule
-xref: ZFA:0001621 ! proximal straight tubule
-is_a: UBERON:0004134 ! proximal tubule
-
-[Term]
-id: UBERON:0001291
-name: thick ascending limb of loop of Henle
-alt_id: UBERON:FMA_17717-MA_0001676
-def: "a segment of the nephron in the kidney. It can be divided into two parts: that in the renal medulla, and that in the renal cortex[Wikipedia:Thick_ascending_limb_of_loop_of_Henle]. sub-portion of the loop of Henle in the nephron of the kidney. As filtrate passes back up it, the concentration of the surrounding medulla decreases. The thin ascending limb is not permeable to water, but it is permeable to ions[Wikipedia:Thin_ascending_limb_of_loop_of_Henle]." [Wikipedia:Ascending_limb_of_loop_of_Henle]
-comment: TODO: thick/thin check
-subset: uberon_slim
-synonym: "thick ascending limb" EXACT []
-synonym: "ascending thick limb" EXACT []
-synonym: "ascending limb" BROAD []
-synonym: "ascending limb of henle's loop" BROAD []
-synonym: "ascending thick limb of henle's loop" EXACT []
-synonym: "distal straight tubule" EXACT []
-synonym: "loop of henle ascending limb" BROAD []
-synonym: "Thick ascending limb of Henle's loop" EXACT []
-xref: FMA:17717 ! Ascending limb of loop of Henle
-xref: MA:0001676 ! loop of henle ascending limb
-xref: EMAPA:28396 ! distal straight tubule
-xref: EMAPA:28331 ! premacula segment of distal straight tubule
-xref: EMAPA:29671 ! distal straight tubule
-xref: EMAPA:29683 ! premacula segment of distal straight tubule
-is_a: UBERON:0004135 ! distal tubule
-relationship: part_of UBERON:0001288 ! loop of Henle
-xref: ncithesaurus:Ascending_Limb_of_the_Henle_s_Loop ! Ascending Limb of Henle's Loop
 
 [Term]
 id: UBERON:0001292
@@ -13187,6 +13253,14 @@ relationship: develops_from UBERON:0003220 ! metanephric blastema
 relationship: part_of UBERON:0001225 ! cortex of kidney
 relationship: part_of UBERON:0001231 ! renal tubule
 xref: ncithesaurus:Distal_Convoluted_Tubule ! Distal Convoluted Tubule
+
+[Term]
+id: UBERON:0004136
+name: intermediate tubule
+def: "The intermediate tubule is a nephron tubule that lies between the proximal and distal tubules" [GO:0072018]
+synonym: "renal intermediate tubule" EXACT []
+is_a: UBERON:0001231 ! renal tubule
+xref: FMA:17718 ! intermediate tubule 
 
 [Term]
 id: UBERON:0001293
@@ -26420,6 +26494,7 @@ intersection_of: has_part CL:0000737 ! striated muscle cell
 xref: ncithesaurus:Striated_Muscle_Tissue ! Striated Muscle Tissue
 xref: galen:StriatedMuscle ! striated muscle
 xref: OpenCyc:Mx4rwAoze5wpEbGdrcN5Y29ycA ! striated muscle
+xref: AEO:0000140 ! striated musccle tissue
 
 [Term]
 id: UBERON:0002037
@@ -27977,6 +28052,7 @@ xref: TAO:0000529 ! kidney
 is_a: UBERON:0000489 ! cavitated compound organ
 relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0001008 ! urinary system
+relationship: spatially_disjoint_from UBERON:0000160 ! intestine
 xref: OpenCyc:Mx4rvVjlYpwpEbGdrcN5Y29ycA ! kidney
 
 [Term]
@@ -28778,6 +28854,7 @@ alt_id: UBERON:FMA_7280-XAO_0000066-ZFA_0001320
 def: "he endocardium is an anatomical structure comprised of an endothelium and an extracellular matrix that forms the innermost layer of tissue of the heart, and lines the heart chambers[GO]. Tunica intima which has as its parts the endothelium of endocardium and the fibroelastic connective tissue that surrounds the cavity of a cardiac chamber[FMA]. Layer that lines the lumen of the heart." [Wikipedia:Endocardium, ZFIN:curator]
 comment: fixed in GO to reflect FMA. See email to David/Varsha June 18 2010
 subset: uberon_slim
+synonym: "heart endocardium" EXACT []
 xref: BTO:0000387
 xref: EFO:0000821 ! endocardium
 xref: FMA:7280 ! Endocardium
@@ -30433,29 +30510,6 @@ is_a: UBERON:0002308 ! nucleus of brain
 xref: ncithesaurus:Lenticular_Nucleus ! Lenticular Nucleus
 xref: OpenCyc:Mx4rvvyH2ZwpEbGdrcN5Y29ycA ! lentiform nucleus
 
-[Term]
-id: UBERON:0002264
-name: olfactory bulb
-alt_id: UBERON:FMA_77624-MA_0000194-MIAA_0000116-ZFA_0000402
-def: "Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract." [Wikipedia:Olfactory_bulb]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "olfactory lobe" EXACT []
-synonym: "main olfactory bulb" RELATED []
-xref: BTO:0000961
-xref: FMA:77624 ! Olfactory bulb
-xref: GAID:633 ! olfactory bulb
-xref: HOG:0000033 ! olfactory bulb
-xref: MA:0000194 ! olfactory bulb
-xref: MIAA:0000116 ! olfactory lobe
-xref: NIF_GrossAnatomy:birnlex_1137 ! Olfactory bulb
-xref: TAO:0000402 ! olfactory bulb
-xref: ZFA:0000402 ! olfactory bulb
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0001893 ! telencephalon
-xref: ncithesaurus:Olfactory_Bulb ! Olfactory Bulb
-xref: EFO:0000108 ! olfactory lobe
-xref: EHDAA2:0001294 ! olfactory lobe
 
 [Term]
 id: UBERON:0002265
@@ -31106,6 +31160,15 @@ is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001950 ! neocortex
 
 [Term]
+id: UBERON:0005168
+name: interlobular vein
+def: "The venae stellatae join to form the interlobular veins, which pass inward between the rays, receive branches from the plexuses around the convoluted tubules, and, having arrived at the bases of the renal pyramids, join with the venae rectae" [Wikipedia:Interlobular_veins]
+is_a: UBERON:0001638 ! vein
+xref: EMAPA:28218 ! interlobular vein
+xref: MA:0002594 ! interlobular vein
+relationship: part_of UBERON:0001225 ! cortex of kidney
+
+[Term]
 id: UBERON:0002303
 name: juxtaglomerular apparatus
 alt_id: UBERON:FMA_83599-MA_0002546
@@ -31115,6 +31178,7 @@ synonym: "juxtaglomerular complex" EXACT []
 xref: FMA:83599 ! Juxtaglomerular complex
 xref: GAID:432 ! juxtaglomerular apparatus
 xref: MA:0002546 ! juxtaglomerular complex
+xref: EMAPA:30449 ! juxtaglomerular complex
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001225 ! cortex of kidney
 relationship: has_part CL:0000648 ! juxtaglomerular cell
@@ -32879,6 +32943,7 @@ synonym: "distal free limb segment of lower extremity" EXACT [OBOL:automatic]
 synonym: "hind limb autopod" EXACT [OBOL:automatic]
 synonym: "hind limb distal free limb segment" EXACT [OBOL:automatic]
 synonym: "hindlimb autopod" EXACT [OBOL:automatic]
+synonym: "hindlimb autopodium" EXACT [OBOL:automatic]
 synonym: "hindlimb distal free limb segment" EXACT [OBOL:automatic]
 synonym: "inferior member autopod" EXACT [OBOL:automatic]
 synonym: "inferior member distal free limb segment" EXACT [OBOL:automatic]
@@ -33168,6 +33233,8 @@ xref: ncithesaurus:Hand ! Hand
 synonym: "fore-paw" NARROW SENSU [EMAPA:17428]
 synonym: "fore paw" NARROW SENSU [EMAPA:17428, OBOL:automatic]
 synonym: "arm autopod" EXACT [OBOL:automatic]
+synonym: "forelimb autopod" EXACT [OBOL:automatic]
+synonym: "forelimb autopodium" EXACT [OBOL:automatic]
 synonym: "arm distal free limb segment" EXACT [OBOL:automatic]
 synonym: "autopod of arm" EXACT [OBOL:automatic]
 synonym: "autopod of brachial region" EXACT [OBOL:automatic]
@@ -34374,6 +34441,7 @@ def: "Terminal segment of free upper limb. The generic name for hand, paw, foot 
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "distal free limb segment" EXACT []
+synonym: "autopodium" EXACT []
 synonym: "paw" RELATED []
 synonym: "pod" RELATED []
 xref: EFO:0000877 ! autopod
@@ -40481,6 +40549,30 @@ xref: BTO:0001446 ! olfactory cortex
 xref: EHDAA2:0001289 ! olfactory cortex
 
 [Term]
+id: UBERON:0002264
+name: olfactory bulb
+alt_id: UBERON:FMA_77624-MA_0000194-MIAA_0000116-ZFA_0000402
+def: "Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract." [Wikipedia:Olfactory_bulb]
+comment: TODO - check lobe vs bulb
+subset: uberon_slim
+synonym: "olfactory lobe" EXACT []
+synonym: "main olfactory bulb" RELATED []
+xref: BTO:0000961
+xref: FMA:77624 ! Olfactory bulb
+xref: GAID:633 ! olfactory bulb
+xref: HOG:0000033 ! olfactory bulb
+xref: MA:0000194 ! olfactory bulb
+xref: MIAA:0000116 ! olfactory lobe
+xref: NIF_GrossAnatomy:birnlex_1137 ! Olfactory bulb
+xref: TAO:0000402 ! olfactory bulb
+xref: ZFA:0000402 ! olfactory bulb
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001893 ! telencephalon
+xref: ncithesaurus:Olfactory_Bulb ! Olfactory Bulb
+xref: EFO:0000108 ! olfactory lobe
+xref: EHDAA2:0001294 ! olfactory lobe
+
+[Term]
 id: UBERON:0002728
 name: entorhinal cortex
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1508-FMA_72356
@@ -43775,6 +43867,8 @@ alt_id: UBERON:XAO_0003046-ZFA_0000393
 def: "Portion of tissue consisting of loosely organized undifferentiated mesodermal cells that give rise to such structures as connective tissues, blood, lymphatics, bone, and cartilage[XAO]. A mesh-like cell arrangement, less compact than an epithelium[ZFA]. The part of the embryonic mesoderm, consisting of loosely packed, unspecialized cells set in a gelatinous ground substance, from which connective tissue, bone, cartilage, and the circulatory and lymphatic systems develop[BTO]." [BTO:0001393, Wikipedia:Mesenchyme, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "mesenchymal tissue" EXACT []
+synonym: "mesenchyme tissue" EXACT []
 xref: BTO:0001393
 xref: EMAPA:16097 ! mesenchyme
 xref: EHDAA:177 ! mesenchyme [part_of: "embryo"]
@@ -43787,6 +43881,7 @@ is_a: UBERON:0000479 ! portion of tissue
 relationship: develops_from UBERON:0000926 ! mesoderm
 xref: ncithesaurus:Mesenchyme ! Mesenchyme
 xref: EHDAA2:0001113 ! mesenchyme
+xref: AEO:0000145 ! mesenchymal tissue
 
 [Term]
 id: UBERON:0003105
@@ -45187,7 +45282,7 @@ xref: EHDAA:5915 ! metanephric mesenchyme
 [Term]
 id: UBERON:0003221
 name: phalanx
-def: "Long bones of fingers and toes[Obol]. In primates such as humans and monkeys, the thumb and big toe have two phalanges, while the other fingers and toes consist of three[WP]." [Wikipedia:Phalanx]
+def: "Long bones of fingers and toes[Obol]. In primates such as humans and monkeys, the thumb and big toe have two phalanges, while the other fingers and toes consist of three[WP]." [Wikipedia:Phalanx_bones]
 xref: MA:0000304 ! phalanx
 is_a: UBERON:0002495 ! long bone
 intersection_of: UBERON:0002495 ! long bone
@@ -56106,7 +56201,7 @@ xref: EHDAA2:0000215 ! cardiogenic plate
 [Term]
 id: UBERON:0004141
 name: embryonic heart tube
-def: " The embryonic heart tube is an epithelial tube that will give rise to the mature heart[GO]. Cavitated compound organ that will become the adult heart following looping morphogenesis and valve formation[ZFA]." [GO:0003143]
+def: "The embryonic heart tube is an epithelial tube that will give rise to the mature heart[GO]. Cavitated compound organ that will become the adult heart following looping morphogenesis and valve formation[ZFA]." [GO:0003143]
 synonym: "heart tube" EXACT []
 is_a: UBERON:0003914 ! epithelial tube
 relationship: develops_from UBERON:0004291 ! heart rudiment
@@ -56307,7 +56402,7 @@ xref: EHDAA2:0001829 ! septum transversum
 [Term]
 id: UBERON:0004162
 name: pulmonary myocardium
-def: " The pulmonary myocardium is the myocardial tissue present in the pulmonary vein" [GO:0003350]
+def: "The pulmonary myocardium is the myocardial tissue present in the pulmonary vein" [GO:0003350]
 is_a: UBERON:0002036 ! striated muscle tissue
 relationship: part_of UBERON:0002016 ! pulmonary vein
 relationship: part_of UBERON:0002349 ! myocardium
@@ -56339,7 +56434,7 @@ is_a: UBERON:0002275 ! reticular formation
 [Term]
 id: UBERON:0004167
 name: orbitofrontal cortex
-def: " The orbitofrontal cortex is a cerebral cortex region located in the frontal lobe" [GO:0021769]
+def: "The orbitofrontal cortex is a cerebral cortex region located in the frontal lobe" [GO:0021769]
 is_a: UBERON:0002619 ! region of cerebral cortex
 relationship: part_of UBERON:0000349 ! limbic system
 relationship: part_of UBERON:0001870 ! frontal lobe
@@ -56563,7 +56658,7 @@ xref: MA:0002912 ! prostate gland stroma
 [Term]
 id: UBERON:0004186
 name: olfactory bulb mitral cell layer
-def: " The mitral cell layer is composed of pyramidal neurons whose cell bodies are located between the granule cell layer and the plexiform layer" [GO:0061034]
+def: "The mitral cell layer is composed of pyramidal neurons whose cell bodies are located between the granule cell layer and the plexiform layer" [GO:0061034]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002264 ! olfactory bulb
 xref: MA:0000973 ! olfactory bulb mitral cell layer
@@ -56604,7 +56699,7 @@ synonym: "renal glomerulus endothelium" EXACT [OBOL:automatic]
 [Term]
 id: UBERON:0004190
 name: glomerulus vasculature
-def: " The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus" [GO:0072012]
+def: "The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus" [GO:0072012]
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: part_of UBERON:0000074 ! renal glomerulus
 synonym: "renal glomerulus vascular network" EXACT [OBOL:automatic]
@@ -56619,16 +56714,6 @@ def: "The glomus is the vascular component of the pronephros and filters waste f
 comment: TODO - add is_a glomerulus
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002120 ! pronephros
-
-[Term]
-id: UBERON:0004193
-name: ascending thin limb
-def: " The ascending thin limb is a segment of a nephron tubule that is permeable to ions but not to water" [GO:0072021]
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0000061 ! anatomical structure
-xref: EMAPA:28328 ! thin ascending limb
-xref: EMAPA:28361 ! thin ascending limb
-xref: FMA:17720 ! Ascending thin limb
 
 [Term]
 id: UBERON:0004194
@@ -56662,7 +56747,7 @@ xref: FMA:63522 ! S1
 [Term]
 id: UBERON:0004197
 name: S2 portion of tubule
-def: " The S2 portion of the tubule is involved in reabsorption of water and sodium chloride" [GO:0072032]
+def: "The S2 portion of the tubule is involved in reabsorption of water and sodium chloride" [GO:0072032]
 synonym: "S2" EXACT []
 synonym: "S2 portion of renal tubule" EXACT []
 comment: TODO - check FMA - anatomical relation
@@ -56679,7 +56764,7 @@ xref: FMA:63523 ! S2
 [Term]
 id: UBERON:0004198
 name: comma-shaped body
-def: " The comma-shaped body is the precursor structure to the S-shaped body that contributes to the morphogenesis of the nephron" [GO:0072049]
+def: "The comma-shaped body is the precursor structure to the S-shaped body that contributes to the morphogenesis of the nephron" [GO:0072049]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001285 ! nephron
 xref: EMAPA:27681 ! comma-shaped body
@@ -56688,7 +56773,7 @@ xref: EMAPA:27835 ! comma-shaped body
 [Term]
 id: UBERON:0004199
 name: S-shaped body
-def: " The S-shaped body is the successor of the comma-shaped body that contributes to the morphogenesis of the nephron" [GO:0072050]
+def: "The S-shaped body is the successor of the comma-shaped body that contributes to the morphogenesis of the nephron" [GO:0072050]
 comment: TODO
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001285 ! nephron
@@ -56710,7 +56795,7 @@ relationship: part_of UBERON:0001293 ! outer medulla of kidney
 [Term]
 id: UBERON:0004203
 name: cortical collecting duct
-def: " The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex" [GO:0072059]
+def: "The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex" [GO:0072059]
 intersection_of: UBERON:0000058 ! duct
 intersection_of: part_of UBERON:0001232 ! collecting duct of renal tubule
 intersection_of: part_of UBERON:0001225 ! cortex of kidney
@@ -56719,7 +56804,7 @@ xref: EMAPA:28130 ! cortical collecting duct
 [Term]
 id: UBERON:0004204
 name: outer medullary collecting duct
-def: " The outer medullary collecting duct is the portion of the collecting duct that lies in the renal outer medulla" [GO:0072060]
+def: "The outer medullary collecting duct is the portion of the collecting duct that lies in the renal outer medulla" [GO:0072060]
 is_a: UBERON:0000061 ! anatomical structure
 xref: EMAPA:28346 ! outer medullary collecting duct
 relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
@@ -56727,7 +56812,7 @@ relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
 [Term]
 id: UBERON:0004205
 name: inner medullary collecting duct
-def: " The inner medullary collecting duct is the portion of the collecting duct that lies in the renal inner medulla" [GO:0072061]
+def: "The inner medullary collecting duct is the portion of the collecting duct that lies in the renal inner medulla" [GO:0072061]
 is_a: UBERON:0000061 ! anatomical structure
 xref: EMAPA:28370 ! inner medullary collecting duct
 relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
@@ -56735,7 +56820,7 @@ relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
 [Term]
 id: UBERON:0004206
 name: long descending thin limb bend
-def: " The long descending thin limb bend is a part of the descending thin limb of a long nephron that lies beyond the prebend segment" [GO:0072065]
+def: "The long descending thin limb bend is a part of the descending thin limb of a long nephron that lies beyond the prebend segment" [GO:0072065]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
@@ -61886,16 +61971,19 @@ relationship: part_of UBERON:0001893 ! telencephalon
 [Term]
 id: UBERON:0004726
 name: vasa recta
-def: "For the intestinal structure, see Vasa recta (intestines) In the blood supply of the kidney, the vasa recta renis (or straight arteries of kidney, or straight arterioles of kidney) form a series of straight capillaries (recta is from the Latin for "straight") in the medulla. They lie parallel to the loop of Henle. These vessels branch off the efferent arterioles of juxtamedullary nephrons (those nephrons closest to the medulla), enter the medulla, and surround the loop of Henle." [Wikipedia:Vasa_recta]
+def: "In the blood supply of the kidney, the vasa recta renis (or straight arteries of kidney, or straight arterioles of kidney) form a series of straight capillaries (recta is from the Latin for "straight") in the medulla. They lie parallel to the loop of Henle. These vessels branch off the efferent arterioles of juxtamedullary nephrons (those nephrons closest to the medulla), enter the medulla, and surround the loop of Henle." [Wikipedia:Vasa_recta]
+comment: TODO - is this a vein or set of veins? the plural would presumably be rectae - FMA has the signular as exact synonym
 is_a: UBERON:0001140 ! renal vein
-synonym: "arteri%c3%a6 rect%c3%a6" RELATED [Wikipedia:Vasa_recta]
 synonym: "arteria recta" RELATED [Wikipedia:Vasa_recta]
 synonym: "arteriae rectae" RELATED [Wikipedia:Vasa_recta]
 synonym: "arteriolae recti" RELATED [Wikipedia:Vasa_recta]
 synonym: "vasa rectae" RELATED [Wikipedia:Vasa_recta]
+synonym: "vasa recta of kidney" EXACT [FMA:72006]
+synonym: "renal medullary capillary" EXACT [EMAPA:30043]
+synonym: "set of straight arterioles of kidney" EXACT [FMA:72006]
+xref: FMA:72006 ! set of straight arterioles of kidney
 xref: MA:0002595 ! vasa recta
-xref: Wikipedia:Vasa_recta ! vasa recta
-
+xref: EMAPA:30043 ! renal medullary capillary
 
 [Term]
 id: UBERON:0004740
@@ -65817,6 +65905,35 @@ synonym: "pyramid of medulla oblongata" EXACT [Wikipedia:Pyramid_(brainstem)]
 xref: FMA:75254
 is_a: UBERON:0002678 ! regional part of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+
+[Term]
+id: UBERON:0005160
+name: vestigial structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0005161
+name: pelvic spur
+is_a: UBERON:0005160 ! vestigial structure
+is_a: UBERON:0000026 ! appendage
+synonym: "anal spur" EXACT [Wikipedia:Anal_spur]
+def: "Pelvic spurs are the externally visible portion of the vestigial remnants of legs found on each side of the vent in primitive snakes, such as boas and pythons[1]. The remnants of a pelvis and femur, which have no connection with the spine, simply 'float' in the muscle mass[1]. The femur protrudes from the snake's body and is covered by a corneal spur, which resembles a claw[1]. Males' spurs are generally longer and more pointed than females', and are used for clasping and tickling during courtship  and mating[2], as well as combat with other males in some species" [Wikipedia:Pelvic_spur]
+
+[Term]
+id: UBERON:0005162
+name: multi-cell-component structure
+def: "A structure consisting of multiple cell components but which is not itself a cell and does not have (complete) cells as a part." [FBC:DOS]
+is_a: UBERON:0000061 ! anatomical structure
+xref: CARO:0001000
+xref: FBbt:00007060 ! multi-cell-component structure
+
+[Term]
+id: UBERON:0005163
+name: neuron projection bundle
+def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." [FBC:DOS]
+is_a: UBERON:0005162 ! multi-cell-component structure
+xref: CARO:0001001
+xref: FBbt:00005099 ! neuron projection bundle
 
 [Typedef]
 id: adjacent_to
