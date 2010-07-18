@@ -8,8 +8,12 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 %.obo-owlsafe: %.obo
 	perl -npe 's/\-\-/-\\\\-/g' $< > $@
 
-%.owl: %.obo-owlsafe
+%-ncbo.owl: %.obo-owlsafe
 	obo2owl -allowdangling -mapping ncbo -o file://`pwd`/$@ $<
+
+%.owl: %.obo
+	blip -i $< io-convert -to owl2 -u ontol_bridge_to_owl2_and_iao -o $@
+
 
 OBOL=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -u obol_anatomy_xp -r obol_av 
 
@@ -62,20 +66,26 @@ fma_xp-obol.obo:
 fma_xp_cell-obol.obo:
 	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp_cell -r fma_downcase obol-parse "class(C,cell),subclassT(ID,C),belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
 
+fma_xp_CL-obol.obo:
+	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp_cell -r fma_downcase obol-parse "class(C,cell),subclassT(ID,C),belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
+
 fma_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
 
 mouse_anatomy_fixed.obo: anatomy/gross_anatomy/animal_gross_anatomy/mouse/adult_mouse_anatomy.obo
 	perl -npe 'if (/(meta\S+ bone \w+ digit)/) {s/(hand|foot)//}' $< > $@
 
-mouse_anatomy_xp-obol.obo:
+mouse_anatomy_xp-obol.obo: mouse_anatomy_fixed.obo
 	$(OBOL) -u obol_mouse_anatomy_xp -i ma_extra.obo -i mouse_anatomy_xp.obo -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd')" >& $@.tmp && mv $@.tmp $@
 
-adult_mouse_xp_uberon-obol.obo:
-	$(OBOL) -i ma_extra.obo -i adult_mouse_xp.obo -r uberon -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd')" >& $@.tmp && mv $@.tmp $@
+mouse_anatomy_xp_uberon-obol.obo:
+	$(OBOL) -i ma_extra.obo -i mouse_anatomy_xp.obo -r uberon -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd'),\+((entity_xref(U,ID),id_idspace(U,'UBERON')))" >& $@.tmp && mv $@.tmp $@
 
 hog_xp-obol.obo:
 	$(OBOL) -r hog -r relationship obol-parse -xp_policy newonly "belongs(ID,anatomical_homology_ontology)" >& $@.tmp && mv $@.tmp $@
+
+hog_xp_uberon-obol.obo: hog_xp.obo
+	$(OBOL) -i $< -r hog -r uberon -r relationship obol-parse -xp_policy newonly "belongs(ID,anatomical_homology_ontology),\+((entity_xref(U,ID),id_idspace(U,'UBERON')))" >& $@.tmp && mv $@.tmp $@
 
 bila_xp-obol.obo:
 	$(OBOL) -r bila -r relationship obol-parse -xp_policy newonly "belongs(ID,bila)" >& $@.tmp && mv $@.tmp $@
@@ -254,6 +264,9 @@ uberon_edit-mireot-implied.obo: uberon_edit-mireot.obo
 
 uberon.obo: uberon_edit-implied.obo
 	obo-filter-external.pl --xp2rel $< | egrep -v '^(domain|range):' > $@
+
+uberon_edit_plus_%-implied.obo: uberon_edit.obo
+	obo2obo -allowdangling -o -saveimpliedlinks -allowdangling $@ $*.obo $<
 
 %-cycles: %.obo
 	blip-findall -i $< "subclass_cycle/2" -label
@@ -645,3 +658,13 @@ suggest-isa-%.txt:
 
 suggestions-HP-FMA.txt:
 	blip-findall -r human_phenotype -r uberon -r human_phenotype_xp  -r fma_simple "differentium(P,_,A),id_idspace(P,'HP'),id_idspace(A,'FMA'),\+entity_xref(_,A),\+((subclassRT(A,B),restriction(B,_,_)))" -select A-P -label | sort -u > $@
+
+# EMAP etc have implicit spatial disjointness
+%_sd-ontol_db.pro:
+	blip-findall -r $* "restriction(X,part_of,A),restriction(Y,part_of,A),X\=Y" -select "restriction(X,spatially_disjoint_from,Y)" -write_prolog > $@
+
+%_sd-check.txt: %_sd-ontol_db.pro
+	blip-findall -r implied/$* -index "ontol_db:restriction(1,0,1)" -i $< "restriction(X,spatially_disjoint_from,Y),restriction(A,part_of,X),restriction(A,part_of,Y)" -select "v(A,X,Y)" -label > $@
+
+hog-only.txt:
+	blip-findall -r hog -r uberon "class(H),id_idspace(H,'HOG'),\+entity_xref(_,H)" -select H -label > $@

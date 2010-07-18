@@ -452,8 +452,8 @@ xref: HOG:0001407 ! sensory organ
 xref: WBbt:0006929 ! sensillum
 is_a: UBERON:0000062 ! organ
 intersection_of: UBERON:0000062 ! organ
-intersection_of: part_of UBERON:0001032 ! sense organ system
-relationship: part_of UBERON:0001032 ! sense organ system
+intersection_of: systemic_part_of UBERON:0001032 ! sense organ system
+relationship: systemic_part_of UBERON:0001032 ! sense organ system
 xref: MA:0000017 ! sensory organ
 xref: FMA:75259 ! Set of sense organs
 synonym: "organ of sense organ system" EXACT [OBOL:automatic]
@@ -11829,7 +11829,7 @@ def: "Region of parenchyma of kidney representing the outer portion." [Wikipedia
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "kidney cortex" EXACT []
-synonym: "renal cortex" RELATED []
+synonym: "renal cortex" EXACT []
 xref: BTO:0001166
 xref: FMA:15581 ! Cortex of kidney
 xref: GAID:424 ! kidney cortex
@@ -13240,7 +13240,6 @@ xref: FMA:17716 ! Proximal straight tubule
 xref: MA:0002614 ! proximal straight tubule
 xref: ZFA:0001621 ! proximal straight tubule
 xref: BTO:0000055 ! pars recta
-xref: 
 is_a: UBERON:0001231 ! renal tubule
 relationship: part_of UBERON:0004134 ! proximal tubule
 
@@ -66641,6 +66640,34 @@ xref: HOG:0000628
 intersection_of: UBERON:0005062 
 intersection_of: OBO_REL:part_of UBERON:0002240
 
+[Term]
+id: UBERON:0005267
+name: renal cortex collecting duct
+xref: MA:0002600
+intersection_of: UBERON:0001232 
+intersection_of: OBO_REL:part_of UBERON:0001225
+
+[Term]
+id: UBERON:0005268
+name: renal cortex artery
+xref: MA:0002582
+intersection_of: UBERON:0001637 
+intersection_of: OBO_REL:part_of UBERON:0001225
+
+[Term]
+id: UBERON:0005269
+name: renal cortex vein
+xref: MA:0002592
+intersection_of: UBERON:0001638 
+intersection_of: OBO_REL:part_of UBERON:0001225
+
+[Term]
+id: UBERON:0005270
+name: renal cortex interstitium
+xref: MA:0002608
+intersection_of: UBERON:0005169 
+intersection_of: OBO_REL:part_of UBERON:0001225
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -66965,7 +66992,8 @@ range: UBERON:0001062 ! anatomical entity
 [Typedef]
 id: systemic_part_of
 name: systemic_part_of
-is_a: part_of ! part_of
+comment: we use this in a weaker sense than mereological part_of - e.g. sense organ may be a systemic part of the nervous system, but it does not follow that the epithelium of the nose is part of the nervous system. systemic parts must at least share parts in common
+is_a: overlaps
 
 [Typedef]
 id: transports

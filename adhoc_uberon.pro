@@ -182,6 +182,9 @@ uberon_xref_count(S,SD,Num) :-
 	Num > 32,
 	idspace_desc(S,SD).
 
+class_count_by_ont(Ont,Num) :-
+	aggregate(count,X,(class(X),id_idspace(X,Ont)),Num).
+
 
 uberon_compare_sets_by_relT(X1,X2,Rel,Diff) :-
 	findall(C,parent_overT(Rel,C,X1),Set1),
