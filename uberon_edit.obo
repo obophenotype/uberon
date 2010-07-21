@@ -7122,14 +7122,6 @@ is_a: UBERON:0000476 ! acellular anatomical structure
 xref: BTO:0001600 ! cuticle
 
 [Term]
-id: UBERON:0004882
-name: eponychium
-def: "Thickened layer of skin surrounding fingernails and toenails. Beneath the cuticle is a thin layer of a membrane known as the pterygium. The function is to protect the area between the nail and epidermis from exposure to harmful bacteria. The vascularization pattern is similar to that of perionychium." [Wikipedia:Eponychium]
-xref: FMA:77859 ! Eponychium
-is_a: UBERON:0004923 ! organ component layer
-relationship: part_of UBERON:0001003 ! epidermis
-
-[Term]
 id: UBERON:0001003
 name: epidermis
 alt_id: UBERON:FBbt_00004993-FBbt_00005401-FMA_70596-MA_0000153-MIAA_0000154-WBbt_0005733-XAO_0000028-ZFA_0000105
@@ -13082,6 +13074,8 @@ xref: ZFA:0005312 ! pronephric capsular space
 id: UBERON:0005167
 name: papillary duct
 def: "The terminal portions of the medullary collecting ducts are the papillary ducts, which end at the renal papilla and empty into a minor calyx." [Encyclopedia:http://encyclopedia.thefreedictionary.com/]
+xref: BTO:0004540 ! papillary duct
+xref: MA:0001646 ! papillary duct
 synonym: "duct of Bellini" RELATED []
 is_a: UBERON:0001232 ! collecting duct of renal tubule
 
@@ -20387,29 +20381,6 @@ intersection_of: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
-id: UBERON:0001705
-name: nail
-alt_id: UBERON:FMA_54326-MA_0002703-MIAA_0000158
-def: "a horn-like structure at the end of an animal's finger or toe." [Wikipedia:Nail_(anatomy)]
-comment: TODO: check claw vs nail
-subset: uberon_slim
-synonym: "claw" RELATED []
-synonym: "nail plate" EXACT []
-xref: FMA:54326 ! Nail
-xref: GAID:1320 ! nail
-xref: MA:0002703 ! nail
-xref: MAT:0000158 ! nail
-xref: MIAA:0000158 ! nail
-xref: XAO:0003103 ! claw
-xref: OpenCyc:Mx4rvVjJv5wpEbGdrcN5Y29ycA
-is_a: UBERON:0000026 ! appendage
-relationship: part_of UBERON:0002544 ! digit
-xref: ncithesaurus:Nail ! Nail
-xref: EFO:0000956 ! nail
-xref: galen:Nail ! nail
-xref: HOG:0001361 ! claw
-
-[Term]
 id: UBERON:0001706
 name: nasal septum
 alt_id: UBERON:FMA_54375-MA_0000285
@@ -22378,7 +22349,7 @@ relationship: part_of UBERON:0002410 ! autonomic nervous system
 id: UBERON:0001817
 name: lacrimal gland
 alt_id: UBERON:FMA_59101-MA_0001296
-def: "Lobular organ the parenchyma of which consists of glandular acini which communicate the lacrimal sac. Examples: There only two instances, right lacrimal and left lacrimal glands." [Wikipedia:Lacrimal_gland]
+def: "Lobular organ the parenchyma of which consists of glandular acini which communicate the lacrimal sac. Examples: There only two instances, right lacrimal and left lacrimal glands[FMA]. The lacrimal glands are paired almond-shaped glands, one for each eye, that secrete the aqueous layer of the tear film. They are situated in the upper, outer portion of each orbit. Inflammation of the lacrimal glands is called dacryoadenitis[WP]." [Wikipedia:Lacrimal_gland]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:59101 ! Lacrimal gland
@@ -30782,31 +30753,6 @@ xref: BTO:0001819 ! stria vascularis
 xref: EFO:0001644 ! stria vascularis
 
 [Term]
-id: UBERON:0002283
-name: nail matrix
-alt_id: UBERON:FMA_77856-MA_0002707
-def: "." [Wikipedia:Nail_matrix]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: FMA:77856 ! Nail matrix
-xref: MA:0002707 ! nail matrix
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001705 ! nail
-
-[Term]
-id: UBERON:0002284
-name: hyponychium
-alt_id: UBERON:FMA_77860-MA_0002705
-def: "." [Wikipedia:Hyponychium]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: FMA:77860 ! Hyponychium
-xref: MA:0002705 ! hyponychium
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001705 ! nail
-relationship: part_of UBERON:0002097 ! skin of body
-
-[Term]
 id: UBERON:0002285
 name: lateral ventricle
 alt_id: UBERON:FMA_78448-MA_0000192
@@ -33814,7 +33760,6 @@ name: arm skin
 alt_id: UBERON:MA_0000596-FMA_37721
 xref: FMA:37721 ! Skin of arm
 xref: MA:0000596 ! arm skin
-is_a: UBERON:0001419 ! skin of limb
 is_a: UBERON:0000014 ! zone of skin
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: part_of UBERON:0001460 ! arm
@@ -56748,6 +56693,7 @@ relationship: part_of UBERON:0002120 ! pronephros
 id: UBERON:0004194
 name: long nephron
 def: "Long nephrons are associated with juxtamedullary glomeruli and extend to the inner medulla" [GO:0072029]
+synonym: "juxtamedullary nephron" EXACT [GO:0072029, http://sourceforge.net/tracker/?func=detail&aid=3031362&group_id=36855&atid=440764]
 is_a: UBERON:0001285 ! nephron
 
 [Term]
@@ -58927,6 +58873,7 @@ synonym: "smooth muscle tissue of blood vessel of respiratory system" EXACT [OBO
 id: UBERON:0004300
 name: distal phalanx
 def: "Terminal phalanx located at the tip of the digits." [Wikipedia:Distal_phalanges]
+synonym: "terminal phalanx" EXACT []
 is_a: UBERON:0003221 ! phalanx
 xref: MA:0002914 ! distal phalanx
 
@@ -62002,7 +61949,7 @@ relationship: part_of UBERON:0001893 ! telencephalon
 [Term]
 id: UBERON:0004726
 name: vasa recta
-def: "In the blood supply of the kidney, the vasa recta renis (or straight arteries of kidney, or straight arterioles of kidney) form a series of straight capillaries (recta is from the Latin for "straight") in the medulla. They lie parallel to the loop of Henle. These vessels branch off the efferent arterioles of juxtamedullary nephrons (those nephrons closest to the medulla), enter the medulla, and surround the loop of Henle." [Wikipedia:Vasa_recta]
+def: "In the blood supply of the kidney, the vasa recta renis (or straight arteries of kidney, or straight arterioles of kidney) form a series of straight capillaries in the medulla. They lie parallel to the loop of Henle. These vessels branch off the efferent arterioles of juxtamedullary nephrons (those nephrons closest to the medulla), enter the medulla, and surround the loop of Henle." [Wikipedia:Vasa_recta]
 comment: TODO - is this a vein or set of veins? the plural would presumably be rectae - FMA has the signular as exact synonym
 is_a: UBERON:0001140 ! renal vein
 synonym: "arteria recta" RELATED [Wikipedia:Vasa_recta]
@@ -66667,6 +66614,135 @@ name: renal cortex interstitium
 xref: MA:0002608
 intersection_of: UBERON:0005169 
 intersection_of: OBO_REL:part_of UBERON:0001225
+
+[Term]
+id: UBERON:0005271
+name: juxtamedullary cortex
+xref: MA:0001648 ! juxtamedullary cortex
+xref: FMA:74288 ! inner cortex of kidney 
+synonym: "juxtamedullary cortex of kidney" EXACT [FMA:74288]
+synonym: "inner cortex of kidney" EXACT [FMA:74288]
+is_a: UBERON:0001225 ! cortex of kidney
+
+[Term]
+id: UBERON:0005272
+name: peritubular capillary
+def: "In the renal system, peritubular capillaries are tiny blood vessels that travel alongside nephrons allowing reabsorption and secretion between blood and the inner lumen of the nephron. Ions and minerals that need to be saved in the body are reabsorbed into the peritubular capillaries through active transport, secondary active transport, or transcytosis. The ions that need to be excreted as waste are secreted from the capillaries into the nephron to be sent towards the bladder and out of the body. The majority of exchange through the peritubular capillaries occurs because of chemical gradients, osmosis and Na+ pumps[WP]." [Wikipedia:Peritubular_capillaries] 
+xref: MA:0002588 ! peritubular capillary
+is_a: UBERON:0003527 ! kidney capillary
+
+[Term]
+id: UBERON:0001705
+name: nail
+alt_id: UBERON:FMA_54326-MA_0002703-MIAA_0000158
+def: "a horn-like keratin structure covering the dorsal aspect of the terminal phalanges of fingers and toes[WP]." [Wikipedia:Nail_(anatomy)]
+comment: TODO: check claw vs nail. A primate's  nail consists of the unguis alone; the subunguis has disappeared.
+subset: uberon_slim
+synonym: "claw" RELATED []
+synonym: "nail plate" EXACT [FMA:54326, Wikipedia:Nail_(anatomy)]
+xref: FMA:54326 ! Nail
+xref: GAID:1320 ! nail
+xref: MA:0002703 ! nail
+xref: MAT:0000158 ! nail
+xref: MIAA:0000158 ! nail
+xref: XAO:0003103 ! claw
+xref: OpenCyc:Mx4rvVjJv5wpEbGdrcN5Y29ycA
+is_a: UBERON:0000026 ! appendage
+relationship: part_of UBERON:0002544 ! digit
+xref: ncithesaurus:Nail ! Nail
+xref: EFO:0000956 ! nail
+xref: galen:Nail ! nail
+xref: HOG:0001361 ! claw
+
+[Term]
+id: UBERON:0002283
+name: nail matrix
+alt_id: UBERON:FMA_77856-MA_0002707
+def: "Portion of tissue (or germinal matrix) upon which the nail rests, the part of the nail bed that extends beneath the nail root and contains nerves, lymph and blood vessels. The matrix is responsible for the production of the cells that become the nail plate. The width and thickness of the nail plate is determined by the size, length, and thickness of the matrix, while the shape of the fingertip itself determines if the nail plate is flat, arched, or hooked. The matrix will continue to grow as long as it receives nutrition and remains in a healthy condition. As new nail plate cells are incubated, they emerge from the matrix round and white to push older nail plate cells forward; and in this way yet older cells become compressed, flat, and translucent, making the pink colour of the capillaries in the nail bed below visible[WP]." [UBERON:cjm]
+synonym: "onychostroma" EXACT [Wikipedia:Nail_(anatomy)#Parts_of_the_nail]
+synonym: "matrix unguis" EXACT [Wikipedia:Nail_(anatomy)#Parts_of_the_nail]
+synonym: "keratogenous membrane" EXACT [Wikipedia:Nail_(anatomy)#Parts_of_the_nail]
+subset: uberon_slim
+xref: FMA:77856 ! Nail matrix
+xref: MA:0002707 ! nail matrix
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0001705 ! nail
+
+[Term]
+id: UBERON:0002284
+name: hyponychium
+alt_id: UBERON:FMA_77860-MA_0002705
+def: "Epithelium located beneath the nail plate at the junction between the free edge and the skin of the fingertip. It forms a seal that protects the nail bed." [Wikipedia:Hyponychium]
+subset: uberon_slim
+xref: FMA:77860 ! Hyponychium
+xref: MA:0002705 ! hyponychium
+is_a: UBERON:0000483 ! epithelium
+relationship: adjacent_to UBERON:0001705 ! nail
+relationship: part_of UBERON:0002097 ! skin of body
+
+[Term]
+id: UBERON:0004882
+name: eponychium
+def: "Thickened layer of skin surrounding fingernails and toenails. Beneath the cuticle is a thin layer of a membrane known as the pterygium. The function is to protect the area between the nail and epidermis from exposure to harmful bacteria. The vascularization pattern is similar to that of perionychium. The eponychium is the end of the proximal fold that folds back upon itself to shed an epidermal layer of skin onto the newly formed nail plate. This layer of non-living, almost invisible skin is the cuticle that "rides out" on the surface of the nail plate. Together, the eponychium and the cuticle form a protective seal. The cuticle on the nail plate is dead cells and is often removed during manicure, but the eponychium is living cells and should not be touched.[6]  The perionyx is the projecting edge of the eponychium covering the proximal strip of the lunula[WP]." [Wikipedia:Eponychium]
+xref: FMA:77859 ! Eponychium
+is_a: UBERON:0004923 ! organ component layer
+relationship: part_of UBERON:0001003 ! epidermis
+
+[Term]
+id: UBERON:0005273
+name: nail bed
+def: "Region of skin beneath the nail plate[WP]." [UBERON:gvg]
+is_a: UBERON:0005275 ! dorsal skin of digit
+relationship: adjacent_to UBERON:0001705 ! nail
+xref: MA:0002706 ! nail bed
+
+[Term]
+id: UBERON:0005274
+name: proximal nail bed
+is_a: UBERON:0005275 ! dorsal skin of digit
+xref: MA:0002709 ! proximal nail bed
+
+[Term]
+id: UBERON:0005275 ! dorsal skin of digit
+synonym: "skin of dorsal part of digit" EXACT []
+synonym: "dorsal digit skin" EXACT []
+name: dorsal skin of digit
+is_a: UBERON:0000014 ! zone of skin
+relationship: part_of UBERON:0002544 ! digit
+
+[Term]
+id: UBERON:0005276
+name: dorsal skin of finger
+synonym: "skin of dorsal part of finger" EXACT [FMA:38320]
+synonym: "dorsal finger skin" EXACT []
+xref: FMA:60346 ! Subdivision of skin of dorsal part of finger
+xref: FMA:38320 ! skin of dorsal part of finger
+comment: this class is explicitly the union of the two FMA classes
+intersection_of: UBERON:0005275 ! dorsal skin of digit
+intersection_of: part_of UBERON:0002389 ! finger
+
+[Term]
+id: UBERON:0005277
+name: dorsal skin of toe
+synonym: "skin of dorsal part of toe" EXACT [FMA:37868]
+synonym: "dorsal toe skin" EXACT []
+xref: FMA:37868 ! skin of dorsal part of toe
+xref: FMA:60523 ! Subdivision of skin of dorsal part of toe
+comment: this class is explicitly the union of the two FMA classes
+intersection_of: UBERON:0005275 ! dorsal skin of digit
+intersection_of: part_of UBERON:0001466 ! toe
+
+[Term]
+id: UBERON:0005278
+name: nail bed of finger
+is_a: UBERON:0005276 ! dorsal skin of finger
+xref: FMA:60348 ! nail bed of finger
+
+[Term]
+id: UBERON:0005279
+name: nail bed of toe
+is_a: UBERON:0005277 ! dorsal skin of toe
+xref: FMA:60529 ! nail bed of toe
 
 [Typedef]
 id: adjacent_to
