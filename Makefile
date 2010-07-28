@@ -67,7 +67,7 @@ fma_xp_cell-obol.obo:
 	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp_cell -r fma_downcase obol-parse "class(C,cell),subclassT(ID,C),belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
 
 fma_xp_CL-obol.obo:
-	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp_cell -r fma_downcase obol-parse "class(C,cell),subclassT(ID,C),belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
+	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r cell -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp_cell -r fma_downcase obol-parse "class(C,cell),subclassT(ID,C),belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
 
 fma_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
@@ -668,3 +668,6 @@ suggestions-HP-FMA.txt:
 
 hog-only.txt:
 	blip-findall -r hog -r uberon "class(H),id_idspace(H,'HOG'),\+entity_xref(_,H)" -select H -label > $@
+
+hog-only-xref.txt:
+	blip-findall -i organ_association.txt -r hog -r uberon "class(X),id_idspace(X,'HOG'),\+entity_xref(U,X),\+parentT(X,'HOG:0001533'),entity_label(X,XN),organ_association(Y,YN,X,_,_,_)" -select "x(X,XN,Y,YN)" > $@

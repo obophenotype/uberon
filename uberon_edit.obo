@@ -10997,28 +10997,36 @@ xref: ncithesaurus:Common_Bile_Duct ! Common Bile Duct
 xref: EHDAA2:0000303 ! common bile duct
 
 [Term]
+id: UBERON:0005171
+name: hepatic duct
+def: "The hepatic duct is the duct that leads from the liver to the bile duct[GO]. A duct that carries bile from the liver to the small intestine[ZFA]." [GO:0061011]
+comment: TODO - MA distinguishes between bile duct, hepatic duct, common bile duct and common hepatic duct. in FMA hepatic duct and common hepatic duct are the same 
+is_a: UBERON:0002394 ! bile duct
+relationship: part_of UBERON:0002107 ! liver
+xref: MA:0000357 ! hepatic duct
+xref: EHDAA2:0000741 ! hepatic duct
+xref: EHDAA:3049 ! hepatic duct
+xref: HOG:0000219 ! hepatic duct
+xref: galen:HepaticDuct
+xref: TAO:0001100 ! hepatic duct
+xref: ZFA:0001100 ! hepatic duct
+xref: OpenCyc:Mx4rvWo8WJwpEbGdrcN5Y29ycA ! hepatic duct
+
+[Term]
 id: UBERON:0001175
 name: common hepatic duct
 alt_id: UBERON:FMA_14668-ZFA_0001100
-def: "A duct that carries bile from the liver to the small intestine. <a href='http://www.umm.edu/liver/biliary.htm.</a>" [Wikipedia:Common_hepatic_duct, ZFIN:curator]
-comment: TODO - MA distinguishes between bile duct, hepatic duct, common bile duct and common hepatic duct. in FMA hepatic duct and common hepatic duct are the same 
+def: "Predominantly extrahepatic bile duct which is formed by the junction of the right and left hepatic ducts, which are predominantly intrahepatic, and, in turn, joins the cystic duct to form the common bile duct[GAID]. The common hepatic duct is the duct formed by the convergence of the right hepatic duct (which drains bile from the right functional lobe of the liver) and the left hepatic duct (which drains bile from the left functional lobe of the liver). The common hepatic duct then joins the cystic duct coming from the gallbladder  to form the common bile duct[WP]." [Wikipedia:Common_hepatic_duct, ZFIN:curator]
+comment: TODO - MA distinguishes between bile duct, hepatic duct, common bile duct and common hepatic duct. in FMA hepatic duct and common hepatic duct are the same. Common is part of extra-hepatic part
 subset: uberon_slim
-synonym: "hepatic duct" EXACT []
-xref: EHDAA:3049 ! hepatic duct
+synonym: "hepatic duct" RELATED []
 xref: FMA:14668 ! Common hepatic duct
 xref: GAID:286 ! common hepatic duct
-xref: galen:HepaticDuct
-xref: HOG:0000219 ! hepatic duct
 xref: HOG:0000220 ! common hepatic duct
 xref: MA:0002660 ! common hepatic duct
-xref: OpenCyc:Mx4rvWo8WJwpEbGdrcN5Y29ycA
-xref: TAO:0001100 ! hepatic duct
-xref: ZFA:0001100 ! hepatic duct
 is_a: UBERON:0002394 ! bile duct
 relationship: part_of UBERON:0002107 ! liver
 xref: ncithesaurus:Common_Hepatic_Duct ! Common Hepatic Duct
-xref: OpenCyc:Mx4rvWo8WJwpEbGdrcN5Y29ycA ! hepatic duct
-xref: EHDAA2:0000741 ! hepatic duct
 
 [Term]
 id: UBERON:0001176
@@ -12443,8 +12451,6 @@ is_a: UBERON:0002075 ! viscus
 relationship: develops_from UBERON:0000164 ! urogenital sinus
 relationship: part_of UBERON:0001556 ! lower urinary tract
 relationship: part_of UBERON:0002323 ! body cavity
-relationship: part_of UBERON:0002355 ! pelvis
-relationship: part_of UBERON:0002405 ! immune system
 xref: galen:UrinaryBladder ! urinary bladder
 xref: OpenCyc:Mx4rvVjMmZwpEbGdrcN5Y29ycA ! urinary bladder
 xref: EHDAA2:0000174 ! bladder
@@ -26493,7 +26499,6 @@ subset: uberon_slim
 synonym: "epencephalon-1" EXACT []
 synonym: "hindbrain ventricle" RELATED []
 synonym: "rhombencephalic ventricle" RELATED []
-synonym: "rhombencephalic vesicle" RELATED []
 xref: BTO:0000232
 xref: EFO:0000327 ! cerebellum
 xref: FMA:67944 ! Cerebellum
@@ -26510,7 +26515,6 @@ is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001895 ! metencephalon
 xref: ncithesaurus:Cerebellum ! Cerebellum
 xref: OpenCyc:Mx4rvl1eipwpEbGdrcN5Y29ycA ! cerebellum
-xref: EHDAA2:0001629 ! rhombencephalic vesicle
 
 [Term]
 id: UBERON:0002038
@@ -32518,7 +32522,7 @@ id: UBERON:0002367
 name: prostate gland
 alt_id: UBERON:FMA_9600-MA_0000404-MIAA_0000078
 def: "The prostate gland is a partly muscular, partly glandular body that is situated near the base of the mammalian male urethra and secretes an alkaline viscid fluid which is a major constituent of the ejaculatory fluid." [Wikipedia:Prostate, GO:0030850]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - FMA treats the gland as part of the prostate - see also FMA:74119. 
 subset: uberon_slim
 synonym: "prostate" EXACT []
 xref: BTO:0001129
@@ -33590,6 +33594,8 @@ name: cartilage
 alt_id: UBERON:MA_0000104-MIAA_0000189-XAO_0000170
 def: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA].  an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." [Wikipedia:Cartilage, GO:0051216, FMA:37377]
 comment: see also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage. // elements made from cartilage, cartilage-like, or chondroid tissues evolved in invertebrates[H&W]
+synonym: "cartilage tissue" EXACT [FMA:37377]
+synonym: "cartilaginous tissue" EXACT []
 subset: uberon_slim
 xref: AAO:0000060 ! cartilage
 xref: BTO:0000206
@@ -42768,7 +42774,7 @@ union_of: UBERON:0000483 ! epithelium
 id: UBERON:0004086
 name: brain ventricle
 def: "one of the system of communicating cavities in the brain that are continuous with the central canal of the spinal cord, that like it are derived from the medullary canal of the embryo, that are lined with an epithelial ependyma, and that contain a serous fluid" []
-comment: check FMA. TODO: add cavities
+comment: check FMA. TODO: add cavities. Also consider adding mereological sum - eg ZFA:0001261
 syononym: "cerebral ventricle" EXACT [HP:0002118]
 xref: MA:0000818 ! brain ventricle
 xref: BTO:0001442 ! brain ventricle
@@ -65913,13 +65919,6 @@ is_a: UBERON:0005162 ! multi-cell-component structure
 xref: CARO:0001001
 xref: FBbt:00005099 ! neuron projection bundle
 
-
-[Term]
-id: UBERON:0005171
-name: hepatic duct
-xref: MA:0000357
-intersection_of: UBERON:0000058 
-intersection_of: part_of UBERON:0002107
 
 [Term]
 id: UBERON:0005172
