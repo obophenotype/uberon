@@ -72,21 +72,23 @@ while(<>) {
         $uid++;
         print "$_\n";
     }
+    elsif (/^namespace:/) {
+    }
     elsif (/^name:\s*(.*)/) {
         $name = $1;
         print "$_\n";
     }
-    elsif (/^is_a:\s*(\S+)/) {
-        if ($xrefh{$1}) {
-            print "is_a: $xrefh{$1} ! $nh{$xrefh{$1}}\n";
+    elsif (/^(relationship|intersection_of):\s*(\S+)\s+(\S+)/ && $3 !~ /\!/) {
+        if ($xrefh{$3}) {
+            print "$1: $2 $xrefh{$3} ! $nh{$xrefh{$3}}\n";
         }
         else {
-            print "! no mapping ($1) -- $_\n";
+            print "! no mapping ($3) -- $_\n";
         }
     }
-    elsif (/^relationship:\s*(\S+)\s+(\S+)/) {
+    elsif (/^(is_a|intersection_of):\s*(\S+)/) {
         if ($xrefh{$2}) {
-            print "relationship: $1 $xrefh{$2} ! $nh{$xrefh{$2}}\n";
+            print "$1: $xrefh{$2} ! $nh{$xrefh{$2}}\n";
         }
         else {
             print "! no mapping ($2) -- $_\n";

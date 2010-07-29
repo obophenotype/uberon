@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 28:07:2010 06:55
+date: 28:07:2010 11:53
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -22645,8 +22645,8 @@ relationship: part_of UBERON:0001954 ! hippocampus
 id: UBERON:0001886
 name: choroid plexus
 alt_id: UBERON:FMA_61934-MA_0000823-ZFA_0001443
-def: "A tuft of capillaries that project into the ventricles of the brain and secretes cerebral spinal fluid. The choroid plexus is covered by a cuboidal epithelium which maintains the integrity of the blood-brain barrier." [Wikipedia:Choroid_plexus, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "A tuft of capillaries that project into the ventricles of the brain and secretes cerebral spinal fluid. The choroid plexus is covered by a cuboidal epithelium which maintains the integrity of the blood-brain barrier[?]. Fringe of the tela choroidea of the brain ventricles[MP]. The choroid plexus is the area on the ventricles of the brain where cerebrospinal fluid (CSF) is produced by modified ependymal cells[WP]." [MP:0000820, Wikipedia:Choroid_plexus, ZFIN:curator]
+comment: TODO - check relationship to ventricle. Check subclass - ZFA says vasculature
 subset: uberon_slim
 synonym: "chorioid plexus of cerebral hemisphere" EXACT []
 xref: BTO:0000258
@@ -22658,7 +22658,9 @@ xref: MA:0000823
 xref: ncithesaurus:Choroid_Plexus
 xref: TAO:0001443
 xref: ZFA:0001443
-is_a: UBERON:0002553 ! anatomical cavity
+is_a: UBERON:0002049 ! vasculature
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0005284 ! implied link automatically realized ! brain vasculature
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 relationship: part_of UBERON:0004086 ! brain ventricle
 
@@ -30047,9 +30049,10 @@ relationship: part_of UBERON:0002097 ! skin of body
 id: UBERON:0002285
 name: lateral ventricle
 alt_id: UBERON:FMA_78448-MA_0000192
-def: "The two lateral ventricles are a cavity in each of the cerebral hemispheres derived from the cavity of the embryonic neural tube. They are separated from each other by the septum pellucidum, and each communicates with the third ventricle by the foramen of Monro, through which also the choroid plexuses of the lateral ventricles become continuous with that of the third ventricle[GO]." [Wikipedia:Lateral_ventricle]
-comment: This class was created automatically from a combination of ontologies
+def: "The two lateral ventricles are a cavity in each of the cerebral hemispheres derived from the cavity of the embryonic neural tube. They are separated from each other by the septum pellucidum, and each communicates with the third ventricle by the foramen of Monro, through which also the choroid plexuses of the lateral ventricles become continuous with that of the third ventricle[GO]. The lateral ventricles are part of the ventricular system of the brain. Classified as part of the telencephalon, they are the largest of the ventricles. The lateral ventricles connect to the central third ventricle through the interventricular foramina of Monro[WP]." [GO:0021670, Wikipedia:Lateral_ventricle]
+comment: Paired structure
 subset: uberon_slim
+synonym: "telencephalic ventricle" EXACT [HOG:0000643, ZFA:0000696]
 xref: BTO:0000879
 xref: EFO:0001961
 xref: EHDAA:3502
@@ -30063,16 +30066,15 @@ xref: NIF_GrossAnatomy:birnlex_1263
 xref: OpenCyc:Mx4rvYsFdZwpEbGdrcN5Y29ycA
 xref: ZFA:0000696
 is_a: UBERON:0004086 ! brain ventricle
-relationship: part_of UBERON:0000955 ! brain
 
 [Term]
 id: UBERON:0002286
 name: third ventricle
 alt_id: UBERON:FMA_78454-MA_0000182-ZFA_0000161
-def: "Fluid-filled brain cavity. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Third_ventricle, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "Part of the ventricular system of the brain, forming a single large cavity in the midline of the diencephalon;  it is continuous with the lateral ventricles through the interventricular foramen and the fourth ventricle through the cerebral aqueduct (Maryann Martone). A narrow cleft inferior to the corpus callosum, within the diencephalon, between the paired thalami. Its floor is formed by the HYPOTHALAMUS, its anterior wall by the lamina terminalis, and its roof by EPENDYMA. It communicates with the FOURTH VENTRICLE by the CEREBRAL AQUEDUCT, and with the LATERAL VENTRICLES by the interventricular foramina[GAID]." [GAID:614, NIF_GrossAnatomy:birnlex_714, Wikipedia:Third_ventricle]
+comment: Singular structure
 subset: uberon_slim
-synonym: "3rd ventricle" RELATED []
+synonym: "3rd ventricle" EXACT []
 synonym: "diencephalic ventricle" RELATED []
 synonym: "diencephalic vesicle" RELATED []
 xref: EHDAA2:0000084
@@ -30081,7 +30083,6 @@ xref: GAID:614
 xref: HOG:0000007
 xref: MA:0000182
 xref: ncithesaurus:Third_Ventricle_of_Brain
-xref: NIF_GrossAnatomy:birnlex_1658
 xref: NIF_GrossAnatomy:birnlex_714
 xref: OpenCyc:Mx4rvakhcJwpEbGdrcN5Y29ycA
 xref: TAO:0000161
@@ -30111,6 +30112,7 @@ xref: TAO:0000049
 xref: ZFA:0000049
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of UBERON:0001893 ! telencephalon
+relationship: part_of UBERON:0002286 ! third ventricle
 
 [Term]
 id: UBERON:0002288
@@ -30127,6 +30129,7 @@ xref: HOG:0001374
 xref: MA:0000879
 xref: ZFA:0001444
 is_a: UBERON:0001886 ! choroid plexus
+is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
 relationship: part_of UBERON:0002286
 intersection_of: UBERON:0001886 ! choroid plexus
 intersection_of: part_of UBERON:0002286 ! third ventricle
@@ -30142,7 +30145,9 @@ subset: uberon_slim
 synonym: "aqueduct (sylvius)" EXACT []
 synonym: "aqueduct of midbrain" EXACT []
 synonym: "aqueduct of sylvius" EXACT []
+synonym: "cerebral aquaduct" EXACT [ZFA:0000159]
 synonym: "cerebral aqueduct of sylvius" EXACT []
+synonym: "tectal ventricle" EXACT [ZFA:0000159]
 xref: EHDAA:3696
 xref: FMA:78467
 xref: GAID:583
@@ -30150,7 +30155,9 @@ xref: HOG:0000832
 xref: MA:0000208
 xref: ncithesaurus:Aqueduct_of_Sylvius
 xref: NIF_GrossAnatomy:birnlex_1261
-is_a: UBERON:0002553 ! anatomical cavity
+xref: ZFA:0000159
+is_a: UBERON:0002950 ! implied link automatically realized ! regional part of midbrain
+is_a: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0001891 ! midbrain
 
 [Term]
@@ -30168,6 +30175,7 @@ xref: HOG:0001375
 xref: MA:0000983
 xref: ZFA:0001446
 is_a: UBERON:0001886 ! choroid plexus
+is_a: UBERON:0002946 ! implied link automatically realized ! regional part of cerebellum
 relationship: part_of UBERON:0002422
 intersection_of: UBERON:0001886 ! choroid plexus
 intersection_of: part_of UBERON:0002422 ! fourth ventricle
@@ -30358,7 +30366,7 @@ id: UBERON:0002300
 name: ventricle
 alt_id: UBERON:FMA_82553-MA_0000818
 def: "A chamber of an organ with cavitated organ parts. Examples: right ventricle of heart, lateral ventricle of brain." [Wikipedia:Ventricle]
-comment: TODO - ventricle vs brain ventricle. see also cerebellum. FMA Ventricle is general anatomical term. EFO ventricle is part_of heart. See also chamber.
+comment: Note that this term is used in the general sense - there are specific subclasses for brain ventricle and heart ventricle. FMA Ventricle is general anatomical term. EFO ventricle is part_of heart. See also chamber.
 subset: uberon_slim
 xref: EHDAA:1912
 xref: EHDAA2:0002178
@@ -32926,7 +32934,7 @@ relationship: part_of UBERON:0001893 ! telencephalon
 id: UBERON:0002421
 name: hippocampal formation
 alt_id: UBERON:MA_0000189-FMA_74038
-def: "The hippocampus is a major component of the brains of humans and other mammals. It belongs to the limbic system and plays important roles in long-term memory and spatial navigation. Like the cerebral cortex, with which it is closely associated, it is a paired structure, with mirror-image halves in the left and right sides of the brain. In humans and other primates, the hippocampus is located inside the medial temporal lobe, beneath the cortical surface. Its curved shape reminded early anatomists of the horns of a ram (Cornu Ammonis), or a seahorse. The name was taken by the sixteenth century anatomist Julius Caesar Aranzi from the Greek word for seahorse . In Alzheimer's disease the hippocampus is one of the first regions of the brain to suffer damage; memory problems and disorientation appear among the first symptoms. Damage to the hippocampus can also result from oxygen starvation, encephalitis, or medial temporal lobe epilepsy. People with extensive hippocampal damage may experience amnesia—the inability to form or retain new memories. In rodents, the hippocampus has been studied extensively as part of the brain system responsible for spatial memory and navigation. Many neurons in the rat and mouse hippocampus respond as place cells: that is, they fire bursts of action potentials when the animal passes through a specific part of its environment. Hippocampal place cells interact extensively with head direction cells, whose activity acts as an inertial compass, and with grid cells in the neighboring entorhinal cortex. Because of its densely packed layers of neurons, the hippocampus has frequently been used as a model system for studying neurophysiology. The form of neural plasticity known as long-term potentiation (LTP) was first discovered to occur in the hippocampus and has often been studied in this structure. LTP is widely believed to be one of the main neural mechanisms by which memory is stored in the brain. [WP,unvetted]." [Wikipedia:Hippocampal_formation]
+comment: The term hippocampus is often used synonymously with hippocampal formation which consists of the hippocampus proper or Cornu Ammonis, the dentate gyrus and the subiculum[NIF]
 subset: uberon_slim
 synonym: "archipallium" RELATED [MA:0000189]
 synonym: "hippocampus (crosby)" EXACT []
@@ -42537,10 +42545,10 @@ xref: HOG:0000086
 xref: TAO:0000060
 xref: XAO:0000079
 xref: ZFA:0000060
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003068 ! axial mesoderm
+relationship: part_of UBERON:0000925 ! endoderm
 relationship: part_of UBERON:0004341 ! primitive streak
 
 [Term]
@@ -55342,9 +55350,10 @@ relationship: part_of UBERON:0001987 ! placenta
 id: UBERON:0003947
 name: brain ventricle/choroid plexus
 def: "the brain ventricles or their associated choroid plexuses" [MP:0002200]
+comment: TODO - check relationship between CP and BV. If this is part of then this class should be obsoleted
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
-union_of: UBERON:0000483 ! epithelium
+union_of: UBERON:0001886 ! choroid plexus
 union_of: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0000955 ! brain
 
@@ -57251,7 +57260,7 @@ is_a: UBERON:0000946 ! cardial valve
 id: UBERON:0004151
 name: cardiac chamber
 def: "A cardiac chamber surrounds an enclosed cavity within the heart" [GO:0003205]
-comment: generic enough to cover FBbt:00003156 heart chamber but this is a cavity. GO defines i as the cavity. TODO - move subclasses. Note this also includes sinus venosus
+comment: generic enough to cover FBbt:00003156 heart chamber but this is a cavity. GO defines it as the cavity. TODO - move subclasses. Note this also includes sinus venosus
 synonym: "chamber of heart" EXACT []
 synonym: "heart chamber" EXACT []
 xref: FMA:7095
@@ -57363,9 +57372,9 @@ id: UBERON:0004165
 name: ammon gyrus
 alt_id: UBERON:0003940
 def: "The ammon gyrus, often subdivided into the CA1 and CA3 regions, is one of the two interlocking gyri of the hippocampus that is rich in large pyramidal neurons" [GO:0021541, MP:0000815]
-comment: TODO check - GO uses this as a separate term for hippocampus, but not in any other AO
+comment: TODO check - GO uses this as a separate term for hippocampus, but not in any other AO. NIF implies this is the same as hippocampus proper
 synonym: "Ammon's horn" RELATED []
-synonym: "cornu ammonis" RELATED []
+synonym: "Cornu Ammonis" RELATED []
 is_a: UBERON:0000200 ! gyrus
 is_a: UBERON:0003876 ! implied link automatically realized ! hippocampal region
 relationship: part_of UBERON:0001954 ! hippocampus
@@ -70793,6 +70802,126 @@ id: UBERON:0005279
 name: nail bed of toe
 xref: FMA:60529
 is_a: UBERON:0005277 ! dorsal skin of toe
+
+[Term]
+id: UBERON:0005280
+name: head mesoderm
+comment: check FBbt:00000127
+xref: XAO:0000053
+is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003063 ! prechordal plate
+
+[Term]
+id: UBERON:0005281
+name: ventricular system
+synonym: "ventricular system of neuraxis" EXACT [FMA:242675]
+xref: FMA:242675
+xref: TAO:0001261
+xref: ZFA:0001261
+xref: ZFIN:ZDB-ANAT-050711-70
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0001017 ! central nervous system
+
+[Term]
+id: UBERON:0005282
+name: ventricular system of brain
+xref: FMA:242787
+relationship: constitutional_part_of UBERON:0000955 ! brain
+relationship: regional_part_of UBERON:0005281 ! ventricular system
+
+[Term]
+id: UBERON:0005283
+name: tela choroidea
+def: "Portion of tissue that is part of the primitive meninx which forms a fold, roofing a ventricle of the brain and supporting the choroid plexus." [ISBN:0030223695, ISBN:0683014617, ZFA:0000447]
+comment: TODO check relationship to choroid plexus - MP implies it is part of, as does WP. ZF def implies adjacency
+synonym: "tela chorioidea" RELATED [FMA:242849]
+xref: EHDAA:7567
+xref: EHDAA2:0000250
+xref: EMAPA:17548
+xref: FMA:242849
+xref: TAO:0000447
+xref: ZFA:0000447
+is_a: UBERON:0000479 ! portion of tissue
+relationship: overlaps UBERON:0001886 ! choroid plexus
+relationship: overlaps UBERON:0002360 ! meninx
+
+[Term]
+id: UBERON:0005284
+name: brain vasculature
+xref: TAO:0000099
+xref: ZFA:0000099
+is_a: UBERON:0002049 ! implied link automatically realized ! vasculature
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+relationship: part_of UBERON:0000955
+intersection_of: UBERON:0002049 ! vasculature
+intersection_of: part_of UBERON:0000955 ! brain
+
+[Term]
+id: UBERON:0005286
+name: tela choroidea of tectal ventricle
+def: "Tela choroidea that lines the tectal ventricle." [ZFIN:curator]
+synonym: "tela chorioidea tectal ventricle" EXACT [ZFA:0005157]
+synonym: "tela choroidea of cerebral aqueduct" EXACT [OBOL:automatic]
+synonym: "tela choroidea tectal ventricle" EXACT [ZFA:0005157]
+xref: ZFA:0005157
+is_a: UBERON:0002950 ! implied link automatically realized ! regional part of midbrain
+is_a: UBERON:0005283 ! tela choroidea
+relationship: part_of UBERON:0002289
+intersection_of: UBERON:0005283 ! tela choroidea
+intersection_of: part_of UBERON:0002289 ! cerebral aqueduct
+relationship: part_of UBERON:0002289 ! cerebral aqueduct
+
+[Term]
+id: UBERON:0005287
+name: tela choroidea of fourth ventricle
+def: "Tela chorioidea that lines the fourth ventricle." [ZFIN:curator]
+synonym: "tela chorioidea fourth ventricle" EXACT []
+synonym: "tela choroidea fourth ventricle" EXACT []
+synonym: "tela choroidea of fourth ventricle" EXACT []
+xref: FMA:78493
+xref: ZFA:0005158
+xref: ZFIN:ZDB-ANAT-090922-200
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0005283 ! tela choroidea
+relationship: part_of UBERON:0002422
+intersection_of: UBERON:0005283 ! tela choroidea
+intersection_of: part_of UBERON:0002422 ! fourth ventricle
+relationship: part_of UBERON:0002422 ! fourth ventricle
+
+[Term]
+id: UBERON:0005288
+name: tela choroidea of third ventricle
+def: "Tela chorioidea that lines the third ventricle." [ZFIN:curator]
+synonym: "tela chorioidea of third ventricle" EXACT []
+synonym: "tela choroidea third ventricle" EXACT []
+xref: FMA:78463
+xref: ZFA:0005159
+xref: ZFIN:ZDB-ANAT-090922-201
+is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
+is_a: UBERON:0005283 ! tela choroidea
+relationship: part_of UBERON:0002286
+intersection_of: UBERON:0005283 ! tela choroidea
+intersection_of: part_of UBERON:0002286 ! third ventricle
+relationship: part_of UBERON:0002286 ! third ventricle
+
+[Term]
+id: UBERON:0005289
+name: tela choroidea of telencephalic ventricle
+def: "Tela chorioidea that lines the telencephalic ventricle." [ZFIN:curator]
+synonym: "tela chorioidea of lateral ventricle" EXACT []
+synonym: "tela chorioidea of telencephalic ventricle" EXACT []
+synonym: "tela choroidea of lateral ventricle" EXACT []
+synonym: "tela choroidea telencephalic ventricle" EXACT []
+xref: FMA:83712
+xref: ZFA:0005160
+xref: ZFIN:ZDB-ANAT-090922-202
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0005283 ! tela choroidea
+relationship: part_of UBERON:0002285
+intersection_of: UBERON:0005283 ! tela choroidea
+intersection_of: part_of UBERON:0002285 ! lateral ventricle
 
 [Typedef]
 id: adjacent_to

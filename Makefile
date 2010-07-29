@@ -81,6 +81,9 @@ mouse_anatomy_xp-obol.obo: mouse_anatomy_fixed.obo
 mouse_anatomy_xp_uberon-obol.obo:
 	$(OBOL) -i ma_extra.obo -i mouse_anatomy_xp.obo -r uberon -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd'),\+((entity_xref(U,ID),id_idspace(U,'UBERON')))" >& $@.tmp && mv $@.tmp $@
 
+zebrafish_anatomy_xp_uberon-obol.obo:
+	$(OBOL) -i zfa_extra.obo -i zebrafish_anatomy_xp.obo -r uberon -r relationship -r zebrafish_anatomy obol-parse -xp_policy newonly "class(ID),id_idspace(ID,'ZFA'),\+((entity_xref(U,ID),id_idspace(U,'UBERON')))" >& $@.tmp && mv $@.tmp $@
+
 hog_xp-obol.obo:
 	$(OBOL) -r hog -r relationship obol-parse -xp_policy newonly "belongs(ID,anatomical_homology_ontology)" >& $@.tmp && mv $@.tmp $@
 
@@ -671,3 +674,7 @@ hog-only.txt:
 
 hog-only-xref.txt:
 	blip-findall -i organ_association.txt -r hog -r uberon "class(X),id_idspace(X,'HOG'),\+entity_xref(U,X),\+parentT(X,'HOG:0001533'),entity_label(X,XN),organ_association(Y,YN,X,_,_,_)" -select "x(X,XN,Y,YN)" > $@
+
+MULTIANAT_R=-r xenopus_anatomy -r mouse_anatomy -r gemina_anatomy -r amphibian_anatomy -r cell -r fly_anatomy -r zebrafish_anatomy -r fma_downcase -r brenda -r bila -r miaa -r nif_downcase -r emapa -r ehdaa -r ehdaa2 -r hog
+abduced-relations.txt:
+	blip-findall -r implied/uberon.obo $(MULTIANAT_R) "entity_xref(A3,A1),id_idspace(A3,'UBERON'),restriction(A1,R1,B1),entity_xref(B3,B1),id_idspace(B3,'UBERON'),entity_xref(A3,A2),A2\=A1,restriction(A2,R2,B2),entity_xref(B3,B2),\+restriction(A3,_,B3)" -select "r(A3,B3,A1,R1,B1,A2,R2,B2)" -label > $@
