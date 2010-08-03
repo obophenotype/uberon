@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 29:07:2010 13:18
+date: 02:08:2010 19:20
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -376,12 +376,18 @@ id: UBERON:0000019
 name: camera-type eye
 alt_id: UBERON:FMA_12513-MIAA_0000283-XAO_0000181
 def: "GO: The camera-type eye is an organ of sight that receives light through an aperture and focuses it through a lens, projecting it on a photoreceptor field. Organ with organ cavity which is connected to the optic nerve, allowing light to enter it and project onto a light-sensitive panel of cells, known as the retina, at the rear of the eye [FMA]." [FMA:12513, GO:0043010, Image:http\://genome.cshlp.org/content/14/8/1555/F1.large.jpg, Image:http\://www.pnas.org/content/94/6/2098/F1.large.jpg]
+comment: FMA distinguishes Eye (subdivision of face) from Eyeball (organ). Here we are referring to the organ but we also include Eye as being subsumed
 subset: uberon_slim
 synonym: "Orbital part of face" RELATED []
 synonym: "Orbital region" RELATED []
 synonym: "vertebrate eye" EXACT []
+xref: EHDAA:936
+xref: EHDAA2:0000484
 xref: FMA:12513
+xref: FMA:54448
 xref: MA:0000261
+xref: ncithesaurus:Eye
+xref: NIF_GrossAnatomy:birnlex_1169
 xref: OpenCyc:Mx8Ngx4rwKSh9pwpEbGdrcN5Y29ycB4rvVil5pwpEbGdrcN5Y29ycB4rvViTvpwpEbGdrcN5Y29ycA
 xref: TAO:0000107
 xref: XAO:0000179
@@ -1818,14 +1824,17 @@ synonym: "nucleus of cranial nerve" EXACT []
 xref: FMA:54501
 is_a: UBERON:0002308 ! nucleus of brain
 intersection_of: UBERON:0002308 ! nucleus of brain
-intersection_of: part_of UBERON:0001785 ! cranial nerve
+intersection_of: overlaps UBERON:0001785 ! cranial nerve
 
 [Term]
 id: UBERON:0000127
 name: facial nucleus
+comment: FMA has 3 subclasses - left, right and motor nucleus of facial nerve, but no defs. It's not clear how facial motor nucleus is distinct from facial motor nucleus.
 synonym: "facial nerve nucleus" EXACT []
+synonym: "facial VII nucleus" EXACT [MA:0001014]
 xref: FMA:54572
 xref: HOG:0001412
+xref: MA:0001014
 xref: ncithesaurus:Facial_Nerve_Nucleus
 is_a: UBERON:0000126 ! cranial nerve nucleus
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
@@ -3406,7 +3415,7 @@ is_a: UBERON:0001630 ! muscle organ
 id: UBERON:0000395
 name: cochlear ganglion
 alt_id: UBERON:BTO_0001688-FMA_53445
-def: "the group of nerve cell bodies that conveys auditory sensation from the organ of Corti to the hindbrain and resides on the cochlear part of the vestibulocochlear nerve (eighth cranial nerve)." [MP:0002855, Wikipedia:Spiral_ganglion]
+def: "group of nerve cells that serve the sense of hearing by sending a representation of sound from the cochlea to the brain. The cell bodies of the spiral ganglion neurons are found in the spiral structure of the cochlea[WP]. the group of nerve cell bodies that conveys auditory sensation from the organ of Corti to the hindbrain and resides on the cochlear part of the vestibulocochlear nerve (eighth cranial nerve)[MP]." [MP:0002855, Wikipedia:Spiral_ganglion]
 synonym: "Corti's ganglion" EXACT [FMA:53445]
 synonym: "Ganglion of Corti" EXACT [FMA:53445]
 synonym: "Spiral ganglion" EXACT [FMA:53445]
@@ -4378,26 +4387,23 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "extra-embryonic structure" EXACT []
 synonym: "extraembryonic component" RELATED []
-synonym: "extraembryonic tissue" EXACT []
+synonym: "extraembryonic tissue" RELATED []
 xref: AEO:0000042
 xref: BILA:0000042
-xref: BTO:0003360
 xref: CARO:0000042
-xref: EFO:0001406
 xref: EHDAA2:0000003
 xref: FBbt:00005835
 xref: FMA:85537
 xref: HAO:0000042
 xref: HOG:0000292
-xref: MAT:0000061
-xref: MIAA:0000061
 xref: ncithesaurus:Extraembryonic_Structure
 xref: TAO:0000020
 xref: ZFA:0000020
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000061 ! implied link automatically realized ! anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: adjacent_to UBERON:0002050 ! embryonic structure
+intersection_of: existence_starts_and_ends_during UBERON:0000068 ! embryo stage
 disjoint_from: UBERON:0002050 ! embryonic structure
-relationship: adjacent_to UBERON:0002050 ! embryonic structure
-relationship: existence_starts_and_ends_during UBERON:0000068 ! embryo stage
 
 [Term]
 id: UBERON:0000479
@@ -4979,6 +4985,7 @@ xref: XAO:0003011
 xref: ZFA:0001122
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0001048 ! primordium
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: develops_from UBERON:0002532 ! epiblast
 
 [Term]
@@ -5875,15 +5882,10 @@ synonym: "visual apparatus" RELATED []
 xref: BILA:0000017
 xref: BTO:0000439
 xref: EFO:0000827
-xref: EHDAA:936
-xref: EHDAA2:0000484
-xref: FMA:54448
 xref: GAID:69
 xref: HOG:0000275
 xref: MAT:0000140
 xref: MIAA:0000140
-xref: ncithesaurus:Eye
-xref: NIF_GrossAnatomy:birnlex_1169
 xref: OpenCyc:Mx4rvViTvpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000020 ! sense organ
 relationship: part_of UBERON:0002104 ! visual system
@@ -6210,10 +6212,10 @@ relationship: part_of UBERON:0000914 ! organismal segment
 id: UBERON:0000988
 name: pons
 alt_id: UBERON:FBbt_00004840-FMA_67943-MA_0000204-MIAA_0000115-ZFA_0001618
-def: "A bridge-like component of the male terminalia. // Organ component of neuraxis that has as its parts the pontine tegmentum and basal part of pons. Examples: There is only one pons." [FB:gg, Wikipedia:Pons]
-comment: TODO: check fly
+def: "Brainstrem structure that has as its parts the pontine tegmentum and basal part of pons. Examples: There is only one pons[FMA]." [FMA:67943, Wikipedia:Pons]
+comment: pons absent from zebrafish. note this is not the same as FBbt:00004840
 subset: uberon_slim
-synonym: "pons of varolius" EXACT []
+synonym: "pons of Varolius" EXACT []
 xref: BTO:0001101
 xref: EFO:0001394
 xref: FMA:67943
@@ -6223,8 +6225,8 @@ xref: MA:0000204
 xref: MAT:0000115
 xref: MIAA:0000115
 xref: NIF_GrossAnatomy:birnlex_733
-xref: ZFA:0001618
 is_a: UBERON:0002680 ! regional part of metencephalon
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0001895 ! metencephalon
 relationship: part_of UBERON:0002298 ! brainstem
 
@@ -7761,7 +7763,7 @@ xref: ZFA:0100000
 id: UBERON:0001063
 name: flocculus
 alt_id: UBERON:Flocculus-MA_0000992
-def: "." [Wikipedia:Flocculus]
+def: "a small lobe of the cerebellum at the posterior border of the middle cerebellar peduncle anterior to the biventer lobule[WP]." [Wikipedia:Flocculus_(cerebellar)]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: MA:0000992
@@ -12065,8 +12067,8 @@ xref: FMA:17705
 xref: MA:0001679
 xref: ncithesaurus:Descending_Limb_of_the_Henle_s_Loop
 is_a: UBERON:0001231 ! renal tubule
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0001288 ! loop of Henle
 relationship: part_of UBERON:0003060 ! pronephric duct
 
@@ -12087,8 +12089,8 @@ xref: FMA:17716
 xref: MA:0002614
 xref: ZFA:0001621
 is_a: UBERON:0001231 ! renal tubule
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 relationship: part_of UBERON:0004134 ! proximal tubule
 
@@ -18811,15 +18813,13 @@ relationship: part_of UBERON:0001704 ! viscerocranium
 id: UBERON:0001682
 name: palatine bone
 alt_id: UBERON:FMA_52746-MA_0001495
-def: "The palatine bone is a bone in many species of the animal kingdom, commonly termed the palatum (Latin palatum; unrelated to palatium 'palace', from which other senses of palatine derive). [WP,unvetted]." [Wikipedia:Palatine_bone]
-comment: This class was created automatically from a combination of ontologies
+def: "A bone situated at the back part of the nasal cavity between the maxilla and the pterygoid process of the sphenoid. It contributes to the walls of three cavities: the floor and lateral wall of the nasal cavity, the roof of the mouth, and the floor of the orbit; it enters into the formation of two fossæ, the pterygopalatine and pterygoid  fossæ; and one fissure, the inferior orbital fissure. he palatine bone somewhat resembles the letter L, and consists of a Horizontal plate of palatine bone and a Perpendicular plate of palatine bone and three outstanding processes—viz., the Pyramidal process of palatine bone, which is directed backward and lateralward from the junction of the two parts, and the Orbital process of palatine bone and Sphenoidal process of palatine bone, which surmount the vertical part, and are separated by a deep notch, the sphenopalatine notch. The human palatine articulates with six bones: the sphenoid, ethmoid, maxilla, inferior nasal concha, vomer and opposite palatine. In bony fish the palatine bone consists of the perpendicular plate only, lying on the inner edge of the maxilla[WP]." [Wikipedia:Palatine_bone]
 subset: uberon_slim
 xref: FMA:52746
 xref: MA:0001495
 xref: ncithesaurus:Palatine_Bone
-is_a: UBERON:0000062 ! organ
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0001474 ! bone
+is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
 relationship: part_of UBERON:0001704 ! viscerocranium
 
 [Term]
@@ -19476,15 +19476,13 @@ xref: ncithesaurus:Oculomotor_Nucleus
 xref: NIF_GrossAnatomy:birnlex_1240
 xref: TAO:0000553
 xref: ZFA:0000553
-is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-relationship: part_of UBERON:0001016 ! nervous system
+is_a: UBERON:0000126 ! cranial nerve nucleus
 
 [Term]
 id: UBERON:0001716
 name: palate
 alt_id: UBERON:FMA_54549-FMA_55023-MA_0002476-MA_0002477-MIAA_0000161
-def: "Partition that separates the nasal and oral cavities[GO]." [GO:0060021, Wikipedia:Palate]
+def: "Partition that separates the nasal and oral cavities[GO]. The palate is divided into two parts, the anterior bony hard palate, and the posterior fleshy soft palate or velum.The maxillary nerve branch of the trigeminal nerve (V) supplies sensory innervation to the palate[WP]." [GO:0060021, Wikipedia:Palate]
 comment: The soft palate is movable, consisting of muscle fibers sheathed in mucous membrane. It is responsible for closing off the nasal passages during the act of swallowing, and also for closing off the airway. During sneezing, it protects the nasal passage by diverting a portion of the excreted substance to the mouth.
 subset: uberon_slim
 synonym: "oral roof" EXACT []
@@ -19497,8 +19495,11 @@ xref: galen:Palate
 xref: MA:0002476
 xref: ncithesaurus:Palate
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: adjacent_to UBERON:0000167 ! oral cavity
 relationship: part_of UBERON:0000165 ! mouth
+relationship: part_of UBERON:0001707 ! nasal cavity
 
 [Term]
 id: UBERON:0001717
@@ -19799,24 +19800,27 @@ xref: MA:0002412
 xref: MAT:0000039
 xref: MIAA:0000039
 xref: ncithesaurus:Soft_Palate
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: part_of UBERON:0001716 ! palate
 
 [Term]
 id: UBERON:0001734
 name: uvula
 alt_id: UBERON:FMA_55022-MA_0001006
-def: "Conic projection from the posterior edge of the middle of the soft palate, composed of connective tissue containing a number of racemose glands, and some muscular fibers. The uvula, hanging from the end of the soft palate, is responsible for the sound of snoring. Touching the uvula or the end of the soft palate evokes a strong gag reflex in most people." [Wikipedia:Uvula]
-comment: This class was created automatically from a combination of ontologies
+def: "Conic projection from the posterior edge of the middle of the soft palate, composed of connective tissue containing a number of racemose glands, and some muscular fibers. The uvula, hanging from the end of the soft palate, is responsible for the sound of snoring. Touching the uvula or the end of the soft palate evokes a strong gag reflex in most people." [Wikipedia:Palatine_uvula]
 subset: uberon_slim
-synonym: "cerebellum lobule IX" EXACT []
+synonym: "palatine uvula" EXACT []
 synonym: "uvula of palate" EXACT []
 xref: EFO:0001386
 xref: FMA:55022
 xref: GAID:1285
-xref: MA:0001006
 xref: ncithesaurus:Uvula
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+relationship: part_of UBERON:0001733 ! soft palate
 
 [Term]
 id: UBERON:0001735
@@ -21490,13 +21494,15 @@ id: UBERON:0001825
 name: paranasal sinus
 alt_id: UBERON:FMA_59679-MA_0000431
 def: "Paranasal sinuses are air-filled spaces, communicating with the nasal cavity, within the bones of the skull and face. [WP,unvetted]." [Wikipedia:Paranasal_sinus]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "nasal sinus" RELATED [GAID:355]
+synonym: "sinus" BROAD []
 xref: FMA:59679
 xref: GAID:355
 xref: MA:0000431
 xref: ncithesaurus:Paranasal_Sinus
 is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0000033 ! head
 relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
@@ -22800,7 +22806,7 @@ id: UBERON:0001895
 name: metencephalon
 alt_id: UBERON:FMA_62003-MA_0000197
 def: "Rostral segment of the hindbrain that has as its parts the pons and the cerebellum." [Wikipedia:Metencephalon]
-comment: This class was created automatically from a combination of ontologies
+comment: the terms metencephalon and myelencephalon are only meaningful in mammals and birds - Neuroanatomy of the Zebrafish Brain
 subset: uberon_slim
 synonym: "epencephalon-2" EXACT []
 xref: BTO:0000673
@@ -22813,6 +22819,7 @@ xref: MA:0000197
 xref: NIF_GrossAnatomy:birnlex_965
 is_a: UBERON:0000063 ! organ segment
 is_a: UBERON:0004733 ! implied link automatically realized ! segmental subdivision of hindbrain
+relationship: only_in_taxon NCBITaxon:32524
 relationship: part_of UBERON:0002028 ! hindbrain
 
 [Term]
@@ -25451,6 +25458,7 @@ xref: ZFA:0000029
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
 is_a: UBERON:0004732 ! segmental subdivision of nervous system
 relationship: develops_from UBERON:0003076 ! posterior neural tube
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0000955 ! brain
 
 [Term]
@@ -25817,7 +25825,7 @@ xref: MA:0001022
 xref: NIF_GrossAnatomy:birnlex_1110
 is_a: UBERON:0002308 ! nucleus of brain
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
-relationship: part_of UBERON:0000988 ! pons
+relationship: part_of UBERON:0003023 ! pontine tegmentum
 
 [Term]
 id: UBERON:0002048
@@ -27452,12 +27460,12 @@ def: "The anterior lobe of cerebellum is the portion of the cerebellum responsib
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "anterior cerebellar lobe" EXACT []
+synonym: "anterior lobe of cerebellum" EXACT []
 synonym: "cerebellum anterior lobe" EXACT []
 xref: FMA:72251
 xref: MA:0000991
-is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
-relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
+xref: NIF_GrossAnatomy:birnlex_1118
+is_a: UBERON:0005293 ! cerebellum lobe
 
 [Term]
 id: UBERON:0002132
@@ -27632,7 +27640,7 @@ xref: FMA:72424
 xref: MA:0001071
 xref: NIF_GrossAnatomy:birnlex_822
 xref: ZFA:0000244
-is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0000126 ! cranial nerve nucleus
 is_a: UBERON:0002950 ! implied link automatically realized ! regional part of midbrain
 relationship: part_of UBERON:0001943 ! midbrain tegmentum
 
@@ -27741,10 +27749,11 @@ relationship: part_of UBERON:0002275 ! reticular formation
 id: UBERON:0002148
 name: locus ceruleus
 alt_id: UBERON:FMA_72478-MA_0001017-ZFA_0000539
-def: "The locus ceruleus is a dense cluster of neurons within the dorsorostral pons. This nucleus is the major location of neurons that release norepinephrine throughout the brain, and is responsible for physiological responses to stress and panic[GO]." [Wikipedia:Locus_ceruleus]
-comment: This class was created automatically from a combination of ontologies
+def: "The locus ceruleus is a dense cluster of neurons within the dorsorostral pons. This nucleus is the major location of neurons that release norepinephrine throughout the brain, and is responsible for physiological responses to stress and panic[GO]. Bluish region in the superior angle of the fourth ventricle floor, corresponding to melanin-like pigmented nerve cells which lie lateral to the ponto-mesencephalic central gray (griseum centrale). It is also known as nucleus pigmentosus pontis[GAID]." [GAID:577, GO:0021703, Wikipedia:Locus_ceruleus]
+comment: TODO - check ZFA/pons. also GO says part of dorsorostral pons
 subset: uberon_slim
 synonym: "caerulean nucleus" EXACT []
+synonym: "locus coeruleu" EXACT []
 synonym: "locus coeruleus" EXACT []
 synonym: "nucleus of locus caeruleus" EXACT []
 xref: BTO:0001408
@@ -27757,6 +27766,7 @@ xref: TAO:0000539
 xref: ZFA:0000539
 is_a: UBERON:0002308 ! nucleus of brain
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
+relationship: capable_of GO:0048243
 relationship: part_of UBERON:0000988 ! pons
 
 [Term]
@@ -27772,6 +27782,7 @@ xref: MA:0001027
 xref: NIF_GrossAnatomy:birnlex_1131
 is_a: UBERON:0000126 ! cranial nerve nucleus
 is_a: UBERON:0004133 ! salivatory nucleus
+relationship: part_of UBERON:0003023 ! pontine tegmentum
 
 [Term]
 id: UBERON:0002150
@@ -27794,6 +27805,8 @@ alt_id: UBERON:FMA_72512-MA_0001021
 def: "The pontine nuclei are a part of the pons which store the memory of intention during motor activity. Corticopontine fibres carry information from the primary motor cortex to the ipsilateral pontine nucleus in the ventral pons, and the pontocerebellar projection then carries that information to the contralateral cerebellum via the middle cerebellar peduncle. They therefore allow modification of actions in the light of their outcome, or error correction, and are hence important in learning motor skills. [WP,unvetted]." [Wikipedia:Pontine_nuclei]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "pontine nuclear complex" EXACT [NIF_GrossAnatomy:birnlex_1516]
+synonym: "pontine nuclear group" EXACT [FMA:72512]
 synonym: "pontine nuclei" EXACT []
 synonym: "pontine nucleus" EXACT []
 xref: BTO:0003396
@@ -30524,16 +30537,8 @@ relationship: part_of UBERON:0001954 ! hippocampus
 id: UBERON:0002311
 name: nodulus of cerebellum
 alt_id: UBERON:FMA_83882-MA_0001007
-comment: This class was created automatically from a combination of ontologies
-synonym: "cerebellum lobule x" EXACT []
-synonym: "neuraxis nodulus" EXACT []
-synonym: "nodulus" RELATED []
-xref: FMA:83882
-xref: MA:0001007
-xref: NIF_GrossAnatomy:birnlex_1165
-is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-relationship: part_of UBERON:0001016 ! nervous system
+is_obsolete: true
+replaced_by: UBERON:0004083
 
 [Term]
 id: UBERON:0002312
@@ -30832,6 +30837,7 @@ is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0002619 ! implied link automatically realized ! regional part of cerebral cortex
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: develops_from UBERON:0003068 ! axial mesoderm
 relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0002021 ! occipital lobe
@@ -33125,9 +33131,12 @@ relationship: part_of UBERON:0002198 ! neurohypophysis
 id: UBERON:0002435
 name: striatum
 alt_id: UBERON:MA_0000891-FMA_77618
-def: "a region of the forebrain consisting of the caudate nucleus, putamen and fundus striati.[GO]." [Wikipedia:Striatum]
+def: "A region of the forebrain consisting of the caudate nucleus, putamen and fundus striati.[GO]." [GOC:jl, Wikipedia:Striatum]
+comment: TODO - check striatum vs corpus striatum see http://en.wikipedia.org/wiki/Striatum#History. Check caudoputamen
 subset: uberon_slim
 synonym: "corpus striatum" RELATED [MA:0000891]
+synonym: "neostriatum" EXACT [GO:0021756, Wikipedia:Striatum]
+synonym: "striate nucleus" EXACT [GO:0021756, Wikipedia:Striatum]
 xref: EFO:0000109
 xref: FMA:77618
 xref: MA:0000891
@@ -34977,6 +34986,9 @@ synonym: "vestibulocerebellar fibers" EXACT [FMA:72508]
 xref: FMA:72508
 xref: NIF_GrossAnatomy:birnlex_1009
 is_a: UBERON:0002316 ! white matter of neuraxis
+is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
+is_a: UBERON:0003545 ! implied link automatically realized ! brainstem white matter
+relationship: part_of UBERON:0003023 ! pontine tegmentum
 
 [Term]
 id: UBERON:0002553
@@ -37123,21 +37135,25 @@ id: UBERON:0002682
 name: abducens nucleus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1366-FMA_54504
 def: "The abducens nucleus is the originating nucleus from which the abducens nerve emerges - a cranial nerve nucleus. This nucleus is located beneath the fourth ventricle in the caudal portion of the pons, medial to the sulcus limitans. The abducens nucleus along with the internal genu of the facial nerve make up the facial colliculus, a hump at the caudal end of the medial eminence on the dorsal aspect of the pons. [WP,unvetted]." [Wikipedia:Abducens_nucleus]
+comment: check ZFA/pons
 subset: uberon_slim
+synonym: "abducens motor nucleus" EXACT [ZFA:0000713]
 synonym: "abducens nerve nucleus" EXACT [FMA:54504]
+synonym: "abducens VI nucleus" EXACT [MA:0001010]
 synonym: "abducent nucleus" EXACT [FMA:54504]
 synonym: "nucleus of abducens nerve" EXACT [FMA:54504]
 synonym: "nucleus of abducens nerve (VI)" EXACT [FMA:54504]
 synonym: "sixth cranial nerve nucleus" EXACT [FMA:54504]
 xref: FMA:54504
+xref: MA:0001010
 xref: ncithesaurus:Abducens_Nucleus
 xref: NIF_GrossAnatomy:birnlex_1366
 xref: ZFA:0000713
-is_a: UBERON:0002020 ! gray matter of neuraxis
-is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0000126 ! cranial nerve nucleus
+is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
-is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 relationship: part_of UBERON:0000988 ! pons
+relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0002683
@@ -37708,9 +37724,7 @@ synonym: "fourth cranial nerve nucleus" EXACT [FMA:54518]
 synonym: "nucleus of trochlear nerve" EXACT [FMA:54518]
 xref: FMA:54518
 xref: NIF_GrossAnatomy:birnlex_1488
-is_a: UBERON:0000126 ! implied link automatically realized ! cranial nerve nucleus
-is_a: UBERON:0002020 ! gray matter of neuraxis
-is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0000126 ! cranial nerve nucleus
 relationship: part_of UBERON:0001644 ! trochlear nerve
 
 [Term]
@@ -38500,15 +38514,12 @@ relationship: part_of UBERON:0001897 ! thalamus
 id: UBERON:0002777
 name: neostriatum
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1672-FMA_77617
-def: "The striatum also known as striate body or striate nucleus is a subcortical (i.e. , inside, rather than on the outside) part of the telencephalon/cerebrum. It is the major input station of the basal ganglia system. The striatum is the caudate nucleus and the putamen. [WP,unvetted]." [Wikipedia:Neostriatum]
 subset: uberon_slim
 xref: BTO:0000418
 xref: FMA:77617
 xref: GAID:669
 xref: NIF_GrossAnatomy:birnlex_1672
-is_a: UBERON:0002020 ! gray matter of neuraxis
-relationship: has_part UBERON:0001873 ! caudate nucleus
-relationship: has_part UBERON:0001874 ! putamen
+is_obsolete: true
 
 [Term]
 id: UBERON:0002778
@@ -39195,9 +39206,12 @@ relationship: part_of UBERON:0001786 ! fovea centralis
 id: UBERON:0002824
 name: vestibular ganglion
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_2549-FMA_53435
-def: "The vestibular nerve ganglion (also called Scarpa's ganglion) is the ganglion of the vestibular nerve. It contains the cell bodies of the bipolar primary afferent neurons whose peripheral processes form synaptic contact with hair cells of the vestibular sensory end organs. It is named for Antonio Scarpa. [WP,unvetted]." [Wikipedia:Vestibular_ganglion]
+def: "The vestibular nerve ganglion (also called Scarpa's ganglion) is the ganglion of the vestibular nerve. It contains the cell bodies of the bipolar primary afferent neurons whose peripheral processes form synaptic contact with hair cells of the vestibular sensory end organs[WP,unvetted]." [Wikipedia:Vestibular_ganglion]
 subset: uberon_slim
-synonym: "scarpa's ganglion" EXACT [FMA:53435]
+synonym: "Scarpa's ganglion" EXACT [FMA:53435]
+synonym: "vestibulocochlear component" EXACT []
+synonym: "vestibulocochlear VIII ganglion vestibular component" EXACT [MA:0001086]
+xref: EMAPA:17573
 xref: FMA:53435
 xref: HOG:0000682
 xref: MA:0001086
@@ -39235,7 +39249,11 @@ synonym: "auditory ganglion" EXACT [ZFA:0000588]
 synonym: "gVIII" EXACT [ZFA:0000588]
 synonym: "sag" EXACT [ZFA:0000588]
 synonym: "statoacoustic ganglia" EXACT [ZFA:0000588]
+xref: EHDAA:5569
+xref: EHDAA:6653
+xref: EHDAA2:0002196
 xref: HOG:0000696
+xref: MA:0001084
 xref: NIF_GrossAnatomy:birnlex_2564
 xref: ZFA:0000588
 is_a: UBERON:0002420 ! basal ganglion
@@ -39680,8 +39698,7 @@ subset: uberon_slim
 synonym: "dorsal efferent nucleus of vagus" EXACT [FMA:54592]
 xref: FMA:54592
 xref: NIF_GrossAnatomy:birnlex_2642
-is_a: UBERON:0002020 ! gray matter of neuraxis
-is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0000126 ! cranial nerve nucleus
 
 [Term]
 id: UBERON:0002871
@@ -39694,8 +39711,7 @@ synonym: "nucleus of hypoglossal nerve" EXACT [FMA:54505]
 synonym: "twelfth cranial nerve nucleus" EXACT [FMA:54505]
 xref: FMA:54505
 xref: NIF_GrossAnatomy:birnlex_2644
-is_a: UBERON:0002020 ! gray matter of neuraxis
-is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0000126 ! cranial nerve nucleus
 
 [Term]
 id: UBERON:0002872
@@ -39707,7 +39723,6 @@ synonym: "inferior salivary nucleus" EXACT [GO:0021752]
 synonym: "inferior salivatary nucleus" EXACT []
 xref: FMA:72601
 xref: NIF_GrossAnatomy:birnlex_2645
-is_a: UBERON:0000126 ! implied link automatically realized ! cranial nerve nucleus
 is_a: UBERON:0004133 ! salivatory nucleus
 relationship: part_of UBERON:0001649 ! glossopharyngeal nerve
 
@@ -41547,6 +41562,7 @@ id: UBERON:0003011
 name: facial motor nucleus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_903-FMA_54582
 def: "The facial motor nucleus is a collection of neurons in the brainstem that belong to the facial nerve. These lower motor neurons innervate the muscles of facial expression and the stapedius. [WP,unvetted]." [Wikipedia:Facial_motor_nucleus]
+comment: see comments for facial nucleus. also check ZFA/pons
 subset: uberon_slim
 synonym: "branchiomotor nucleus of facial nerve" EXACT [FMA:54582]
 synonym: "facial motor nucleus" EXACT [FMA:54582]
@@ -41568,9 +41584,7 @@ synonym: "posterior lobe-2 of cerebellum" EXACT [FMA:72253]
 xref: FMA:72253
 xref: MA:0002965
 xref: NIF_GrossAnatomy:birnlex_904
-is_a: UBERON:0000477 ! anatomical cluster
-is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
-relationship: part_of UBERON:0002129 ! cerebellar cortex
+is_a: UBERON:0005293 ! cerebellum lobe
 
 [Term]
 id: UBERON:0003013
@@ -42153,6 +42167,7 @@ xref: XAO:0000006
 xref: ZFA:0000051
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: develops_into UBERON:0001846 ! internal ear
 intersection_of: part_of UBERON:0000924 ! ectoderm
@@ -42295,8 +42310,8 @@ xref: HOG:0001200
 xref: XAO:0000045
 xref: ZFA:0007016
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0003075 ! neural plate
 
 [Term]
@@ -42327,7 +42342,7 @@ xref: TAO:0000031
 xref: XAO:0000056
 xref: ZFA:0000031
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0000925 ! endoderm
 
 [Term]
@@ -42865,7 +42880,7 @@ xref: TAO:0001024
 xref: XAO:0000319
 xref: ZFA:0001024
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0002342 ! neural crest
 
 [Term]
@@ -43153,7 +43168,7 @@ xref: TAO:0001194
 xref: XAO:0001001
 xref: ZFA:0001194
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0002342 ! neural crest
 
 [Term]
@@ -43262,8 +43277,8 @@ xref: TAO:0005028
 xref: XAO:0003051
 xref: ZFA:0005028
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0002390 ! hematopoietic system
 relationship: part_of UBERON:0003081 ! lateral plate mesoderm
@@ -44540,7 +44555,9 @@ xref: MA:0002477
 xref: MAT:0000161
 xref: MIAA:0000161
 xref: ncithesaurus:Hard_Palate
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: part_of UBERON:0001716 ! palate
 
 [Term]
@@ -45022,7 +45039,7 @@ xref: EHDAA:510
 xref: EHDAA2:0001341
 xref: HOG:0000636
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0003069 ! otic placode
 
@@ -45775,8 +45792,8 @@ id: UBERON:0003304
 name: blood island of mesoderm
 synonym: "mesoderm blood island" EXACT [OBOL:automatic]
 xref: EHDAA:170
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0003061 ! implied link automatically realized ! blood island
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 intersection_of: UBERON:0003061 ! blood island
 intersection_of: part_of UBERON:0000926 ! mesoderm
 
@@ -45949,8 +45966,8 @@ synonym: "developmental tissue mesenchyme" EXACT [OBOL:automatic]
 synonym: "embryo mesenchyme" EXACT [OBOL:automatic]
 synonym: "mesenchyme of developmental tissue" EXACT [OBOL:automatic]
 xref: EHDAA:177
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0000922 ! embryo
 
@@ -46605,7 +46622,9 @@ synonym: "epithelial tissue of soft palate" EXACT [OBOL:automatic]
 synonym: "soft palate epithelial tissue" EXACT [OBOL:automatic]
 synonym: "soft palate epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:18950
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
+is_a: UBERON:0004814 ! implied link automatically realized ! upper respiratory tract epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001733 ! soft palate
 
@@ -46735,7 +46754,9 @@ synonym: "epithelial tissue of hard palate" EXACT [OBOL:automatic]
 synonym: "hard palate epithelial tissue" EXACT [OBOL:automatic]
 synonym: "hard palate epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:18953
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
+is_a: UBERON:0004814 ! implied link automatically realized ! upper respiratory tract epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0003216 ! hard palate
 
@@ -48291,6 +48312,8 @@ id: UBERON:0003417
 name: mesenchyme of soft palate
 synonym: "soft palate mesenchyme" EXACT [OBOL:automatic]
 xref: EMAPA:18951
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0000078 ! implied link automatically realized ! mixed ectoderm/mesoderm/endoderm-derived structure
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0001733 ! soft palate
@@ -48368,6 +48391,8 @@ id: UBERON:0003424
 name: mesenchyme of hard palate
 synonym: "hard palate mesenchyme" EXACT [OBOL:automatic]
 xref: EMAPA:18954
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0000078 ! implied link automatically realized ! mixed ectoderm/mesoderm/endoderm-derived structure
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0003216 ! hard palate
@@ -54631,8 +54656,8 @@ synonym: "AV canal endocardium" EXACT [OBOL:automatic]
 synonym: "endocardium of atrioventricular canal" EXACT [OBOL:automatic]
 synonym: "endocardium of AV canal" EXACT [OBOL:automatic]
 xref: ZFA:0001616
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0002165 ! implied link automatically realized ! endocardium
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 intersection_of: UBERON:0002165 ! endocardium
 intersection_of: part_of UBERON:0002087 ! atrioventricular canal
 
@@ -54754,8 +54779,10 @@ relationship: part_of UBERON:0001393 ! auditory cortex
 id: UBERON:0003941
 name: cerebellum anterior vermis
 def: "the anterior portion of the narrow middle zone between the two hemispheres of the cerebellum that is located anterior to the primary fissure" [MP:0000867]
+synonym: "anterior cerebellum vermis" EXACT [MA:0002969]
 synonym: "vermis of anterior lobe of cerebellum" EXACT [FMA:72255]
 xref: FMA:72255
+xref: MA:0002969
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002131 ! anterior lobe of cerebellum
@@ -55305,24 +55332,31 @@ relationship: part_of UBERON:0002264 ! olfactory bulb
 id: UBERON:0004002
 name: cerebellum posterior lobe
 def: "the region of the cerebellum that is posterior to the primary fissure and anterior to the posteriolateral fissure" [MP:0009962]
+synonym: "posterior lobe of cerebellum" EXACT []
 xref: FMA:72252
-is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
-is_a: UBERON:0002946 ! regional part of cerebellum
-relationship: part_of UBERON:0002129 ! cerebellar cortex
+xref: MA:0002964
+xref: NIF_GrossAnatomy:birnlex_911
+is_a: UBERON:0005293 ! cerebellum lobe
 
 [Term]
 id: UBERON:0004003
 name: cerebellum hemisphere lobule
 def: "the region of a cerebellar lobule that resides in either of the lateral sections of the cerebellum outside the vermis; in mammals, the vermis portion of the cerebellum has a foliation pattern along the AP axis that is distinct from the lateral cerebellar hemispheres" [MP:0009963]
+comment: TODO - define as a region overlapping
+synonym: "cerebellar hemisphere lobule" EXACT []
+synonym: "lobule of hemisphere of cerebellum" EXACT [FMA:83880]
 xref: FMA:83880
-is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
-is_a: UBERON:0002946 ! regional part of cerebellum
-relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
+xref: MA:0002967
+is_a: UBERON:0004004 ! implied link automatically realized ! cerebellum lobule
+intersection_of: UBERON:0004004 ! cerebellum lobule
+intersection_of: part_of UBERON:0002245 ! hemisphere of cerebellum
 
 [Term]
 id: UBERON:0004004
 name: cerebellum lobule
-def: "on of the the ten gyri of the cerebellar cortex" [MP:0009964]
+def: "one of the the ten gyri of the cerebellar cortex" [MP:0009964]
+xref: MA:0002966
+xref: NIF_GrossAnatomy:birnlex_1084
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002129 ! cerebellar cortex
@@ -55362,8 +55396,14 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004009
 name: cerebellum posterior vermis
 def: "the posterior portion of the narrow middle zone between the two hemispheres of the cerebellum that is located posterior to the primary fissure" [MP:0000869]
+synonym: "posterior cerebellum vermis" EXACT []
+synonym: "vermis of posterior lobe of cerebellum" EXACT []
+xref: FMA:72259
+xref: MA:0002970
+xref: NIF_GrossAnatomy:nlx_anat_20081240
+is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 is_a: UBERON:0002946 ! regional part of cerebellum
-relationship: part_of UBERON:0002037 ! cerebellum
+relationship: part_of UBERON:0004002 ! cerebellum posterior lobe
 
 [Term]
 id: UBERON:0004010
@@ -55392,7 +55432,7 @@ id: UBERON:0004013
 name: egg cylinder
 def: "the transient cup-like structure of the epiblast that consists of a single layer of embryonic cells" [MP:0003085]
 is_a: UBERON:0000119 ! cell layer
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0002532 ! epiblast
 
 [Term]
@@ -55401,6 +55441,7 @@ name: labia minora
 def: "The labia minora or nymphae are two longitudinal cutaneous folds on the human vulva. They are situated between the labia majora, and extend from the clitoris obliquely downward, laterally, and backward on either side of the vulval vestibule, ending between bottom of the vulval vestibule and the labia majora. In the virgin the posterior ends of the labia minora are usually joined across the middle line by a fold of skin, named the frenulum labiorum pudendi or fourchette. Labia minora may vary widely in size from woman to woman. On the front, each labium minus (nympha) divides into two portions: the upper division passes above the clitoris to meet the labium minus of the opposite side—which may not be equal in size—forming a fold which overhangs the glans clitoridis; this fold is named the preputium clitoridis. The lower division passes beneath the glans clitoridis and becomes united to its under surface, forming, with the labium minus of the opposite side—which also may not be equal in size—the frenulum clitoridis. On the opposed surfaces of the labia minora are numerous sebaceous follicles. [WP,unvetted]." [Wikipedia:Labia_minora]
 synonym: "labium minora" EXACT []
 synonym: "labium minorum" EXACT []
+synonym: "labium minus" EXACT [FMA:20374]
 xref: FMA:20374
 xref: galen:LabiaMinora
 xref: MA:0002845
@@ -55410,9 +55451,10 @@ is_a: UBERON:0004084 ! labium
 id: UBERON:0004015
 name: embryonic-extraembryonic boundary
 def: "the normal development /maintenance of the connection between the embryo proper and extraembryonic tissues" [MP:0003890]
-is_a: UBERON:0000015 ! anatomical boundary
-relationship: adjacent_to UBERON:0000478 ! extraembryonic structure
-relationship: adjacent_to UBERON:0002050 ! embryonic structure
+is_a: UBERON:0000015 ! implied link automatically realized ! anatomical boundary
+intersection_of: UBERON:0000015 ! anatomical boundary
+intersection_of: adjacent_to UBERON:0000478 ! extraembryonic structure
+intersection_of: adjacent_to UBERON:0002050 ! embryonic structure
 
 [Term]
 id: UBERON:0004016
@@ -55426,8 +55468,8 @@ xref: EHDAA:1737
 xref: ncithesaurus:Dermatome
 xref: XAO:0000220
 is_a: UBERON:0000479 ! portion of tissue
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: develops_from UBERON:0002329 ! somite
 relationship: part_of UBERON:0000926 ! mesoderm
 
@@ -55476,8 +55518,8 @@ name: embryonic neuroepithelium
 def: "the epithelial cell layer that lines the neural tube and develops into the nervous system and into the neural crest cells" [MP:0004261]
 synonym: "neurepithelium" BROAD [BTO:0000314]
 is_a: UBERON:0000483 ! epithelium
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0001049 ! neural tube
 
 [Term]
@@ -55802,8 +55844,8 @@ id: UBERON:0004060
 name: neural tube ventricular layer
 def: "the layer of undifferentiated, proliferating cells that line the neural tube lumen" [MP:0009689]
 is_a: UBERON:0000119 ! cell layer
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0001049 ! neural tube
 
 [Term]
@@ -55811,8 +55853,8 @@ id: UBERON:0004061
 name: neural tube mantle layer
 def: "the layer of glia and differentiating neurons that will form the gray matter of the spinal cord; this lies between the ventricular and marginal layers and includes the basal and alar plates" [MP:0009690]
 is_a: UBERON:0000119 ! cell layer
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0001049 ! neural tube
 
 [Term]
@@ -55820,8 +55862,8 @@ id: UBERON:0004062
 name: neural tube marginal layer
 def: "the outermost layer of the neural tube that contains nerve fibers and will form the white matter" [MP:0009691]
 is_a: UBERON:0000119 ! cell layer
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0001049 ! neural tube
 
 [Term]
@@ -55885,9 +55927,11 @@ is_a: UBERON:0002264 ! olfactory bulb
 id: UBERON:0004070
 name: cerebellum vermis lobule
 def: "the region of a cerebellar lobule that resides in the central section of the cerebellum between the two hemispheres; in humans, vermis lobule regions may be nearly continuous with the cerebellar hemisphere lobules dorsally but are separated by deeper longitudinal fissues in the ventral regions; in mammals, the vermis portion of the cerebellum has a foliation pattern along the AP axis that is distinct from the lateral cerebellar hemispheres" [MP:0009957]
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
-relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
+comment: TODO - define as a region overlapping
+xref: MA:0002968
+is_a: UBERON:0004004 ! implied link automatically realized ! cerebellum lobule
+intersection_of: UBERON:0004004 ! cerebellum lobule
+intersection_of: part_of UBERON:0004720 ! cerebellar vermis
 
 [Term]
 id: UBERON:0004071
@@ -55917,27 +55961,56 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004074
 name: cerebellum vermis lobule I
 def: "." [MP:0009988]
+comment: TODO FMA:61904  lingual gyrus FMA:71032  lingula gyrus (lg)
+synonym: "lingula" RELATED [MA:0000998]
+synonym: "lingula of anterior cerebellum vermis" EXACT []
+synonym: "lingula of cerebellum" EXACT []
+synonym: "lobule I of cerebellum vermis" EXACT []
+synonym: "neuraxis lingula" EXACT []
+xref: FMA:83884
+xref: MA:0000998
+xref: NIF_GrossAnatomy:birnlex_932
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
 [Term]
 id: UBERON:0004075
 name: cerebellum vermis lobule II
-def: "." [MP:0009989]
+def: "The central lobule is a small square lobule, situated in the anterior cerebellar notch. It overlaps the lingula, from which it is separated by the precentral fissure; laterally, it extends along the upper and anterior part of each hemisphere, where it forms a wing-like prolongation, the ala lobuli centralis[WP]." [MP:0009989, Wikipedia:Central_lobule]
+comment: central vs alar central? II and III?
+synonym: "central lobule" BROAD [MA:0001000]
+synonym: "central lobule of cerebellum" BROAD []
+synonym: "lobule II of cerebellum vermis" EXACT []
+xref: MA:0000999
+xref: NIF_GrossAnatomy:birnlex_920
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
+FMA: 72519
 
 [Term]
 id: UBERON:0004076
 name: cerebellum vermis lobule III
 def: "." [MP:0009990]
+comment: II or III?
+synonym: "central lobule" BROAD [MA:0001000]
+synonym: "central lobule of cerebellum" BROAD []
+synonym: "lobule III of cerebellum vermis" EXACT []
+xref: MA:0001000
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
 [Term]
 id: UBERON:0004077
 name: cerebellum vermis lobule IV
-def: "." [MP:0009991]
+def: "The culmen is the portion of the anterior vermis adjacent to the primary fissure of cerebellum. The culmen and the anterior parts of the quadrangular lobules form the lobus culminis[WP]." [MP:0009991, Wikipedia:Culmen_(cerebellum)]
+comment: IV or V?
+synonym: "culmen" BROAD []
+synonym: "culmen of cerebellum" BROAD []
+synonym: "lobule IV of cerebellum vermis" EXACT []
+synonym: "neuraxis culmen" BROAD [FMA:83886]
+xref: FMA:83886
+xref: MA:0001001
+xref: NIF_GrossAnatomy:birnlex_926
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -55945,6 +56018,15 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004078
 name: cerebellum vermis lobule IX
 def: "." [MP:0009992]
+synonym: "cerebellar posterior vermis lobule IX" EXACT [PMID:2022820]
+synonym: "lobule IX of cerebellar posterior vermis" EXACT [PMID:2022820]
+synonym: "lobule IX of cerebellum vermis" EXACT []
+synonym: "neuraxis uvula" EXACT [FMA:83883]
+synonym: "uvula" BROAD [MA:0001006]
+synonym: "uvula of cerebellum" EXACT [FMA:83883]
+synonym: "uvula of vermis of cerebellum" EXACT []
+xref: FMA:83883
+xref: MA:0001006
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -55952,6 +56034,12 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004079
 name: cerebellum vermis lobule V
 def: "." [MP:0009993]
+comment: IV or V?
+synonym: "culmen" BROAD []
+synonym: "culmen of cerebellum" BROAD []
+synonym: "lobule V of cerebellum vermis" EXACT []
+synonym: "neuraxis culmen" BROAD [FMA:83886]
+xref: MA:0001002
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -55959,13 +56047,27 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004080
 name: cerebellum vermis lobule VI
 def: "." [MP:0009994]
+synonym: "declive" BROAD [MA:0001003]
+synonym: "declive of cerebellum" EXACT []
+synonym: "declive of vermis of cerebellum" EXACT []
+synonym: "lobule VI of cerebellum vermis" EXACT []
+synonym: "neuraxis declive" EXACT [FMA:83887]
+xref: FMA:83887
+xref: MA:0001003
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
 [Term]
 id: UBERON:0004081
 name: cerebellum vermis lobule VII
-def: "." [MP:0009995]
+def: "The folium vermis is a short, narrow, concealed band at the posterior extremity of the vermis, consisting apparently of a single folium, but in reality marked on its upper and under surfaces by secondary fissures. Laterally, it expands in either hemisphere into a considerable lobule, the superior semilunar lobule (lobulus semilunaris superior; postero-superior lobules), which occupies the posterior third of the upper surface of the hemisphere, and is bounded below by the horizontal sulcus. The superior semilunar lobules and the folium vermis form the lobus semilunaris." [MP:0009995, Wikipedia:Folium_(vermis)]
+synonym: "folium" BROAD [MA:0001004]
+synonym: "folium of cerebellum" EXACT []
+synonym: "folium of vermis of cerebellum" EXACT []
+synonym: "lobule VII of cerebellum vermis" EXACT []
+synonym: "neuraxis folium" EXACT [FMA:83889]
+xref: FMA:83889
+xref: MA:0001004
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -55973,6 +56075,12 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004082
 name: cerebellum vermis lobule VIII
 def: "." [MP:0009996]
+synonym: "lobule VIII of cerebellum vermis" EXACT []
+synonym: "neuraxis pyramus" EXACT []
+synonym: "pyramus" BROAD [MA:0001005]
+synonym: "pyramus of cerebellum" EXACT []
+synonym: "pyramus of vermis of cerebellum" EXACT []
+xref: MA:0001005
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -55980,6 +56088,14 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004083
 name: cerebellum vermis lobule X
 def: "." [MP:0009997]
+synonym: "lobule X of cerebellum vermis" EXACT []
+synonym: "neuraxis nodulus" EXACT []
+synonym: "nodulus" BROAD [MA:0001007]
+synonym: "nodulus of cerebellum" EXACT []
+synonym: "nodulus of vermis of cerebellum" EXACT []
+xref: FMA:83882
+xref: MA:0001007
+xref: NIF_GrossAnatomy:birnlex_1165
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -59455,8 +59571,8 @@ xref: HOG:0000676
 xref: ncithesaurus:Dermomyotome
 xref: ZFA:0001513
 is_a: UBERON:0000483 ! epithelium
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0002329 ! somite
 
 [Term]
@@ -60096,9 +60212,9 @@ xref: BTO:0002813
 xref: EMAPA:19089
 xref: FMA:20421
 is_a: UBERON:0000211 ! ligament
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0003567 ! implied link automatically realized ! abdomen connective tissue
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: attached_to UBERON:0000991 ! gonad
 relationship: develops_from UBERON:0003064 ! intermediate mesoderm
 relationship: part_of UBERON:0000922 ! embryo
@@ -63252,13 +63368,15 @@ is_a: UBERON:0003517 ! kidney blood vessel
 id: UBERON:0004720
 name: cerebellar vermis
 def: "Part of the structure of animal brains, the cerebellar vermis is a narrow, wormlike structure between the hemispheres of the cerebellum." [Wikipedia:Cerebellar_vermis]
+synonym: "cerebellum vermis" EXACT [FMA:76928]
 synonym: "vermis" RELATED [Wikipedia:Cerebellar_vermis]
+synonym: "vermis of cerebellum" EXACT [FMA:76928]
 xref: FMA:76928
 xref: MA:0000202
-xref: NIF_GrossAnatomy:birnlex_1106
-xref: Wikipedia:Cerebellar_vermis
+xref: NIF_GrossAnatomy:birnlex_1175
 is_a: UBERON:0002616 ! regional part of brain
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+relationship: part_of UBERON:0002037 ! cerebellum
 relationship: part_of UBERON:0002129 ! cerebellar cortex
 
 [Term]
@@ -65422,8 +65540,8 @@ name: urogenital sinus epithelium
 synonym: "epithelium of urogenital sinus" EXACT [OBOL:automatic]
 xref: EMAPA:30882
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000164 ! urogenital sinus
 
@@ -67032,6 +67150,7 @@ synonym: "roof of mouth mucosa of organ" EXACT [OBOL:automatic]
 synonym: "roof of mouth mucous membrane" EXACT [OBOL:automatic]
 synonym: "roof of mouth organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:59765
+is_a: UBERON:0001826 ! implied link automatically realized ! mucosa of nose
 is_a: UBERON:0003729 ! implied link automatically realized ! mouth mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001716 ! palate
@@ -67172,7 +67291,7 @@ synonym: "uvula of palate mucous membrane" EXACT [OBOL:automatic]
 synonym: "uvula of palate organ mucosa" EXACT [OBOL:automatic]
 synonym: "uvula organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:60030
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+is_a: UBERON:0005024 ! implied link automatically realized ! mucosa of soft palate
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001734 ! uvula
 
@@ -67854,6 +67973,7 @@ xref: EMAPA:16528
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0005157 ! epithelial fold
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0003075 ! neural plate
 
 [Term]
@@ -68633,9 +68753,9 @@ comment: TODO: thick/thin check. Also relationshop to distal tubule
 subset: uberon_slim
 synonym: "ascending limb" BROAD []
 synonym: "ascending limb of Henle's loop" EXACT []
-synonym: "distal straight tubule" EXACT []
+synonym: "distal straight tubule" RELATED []
 synonym: "loop of henle ascending limb" BROAD []
-synonym: "Thick ascending limb of Henle's loop" EXACT []
+synonym: "thick ascending limb of Henle's loop" RELATED []
 xref: EMAPA:28396
 xref: FMA:17717
 xref: MA:0001676
@@ -68658,8 +68778,8 @@ xref: EMAPA:29681
 xref: FMA:17719
 xref: MA:0002625
 is_a: UBERON:0001231 ! renal tubule
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
 [Term]
@@ -68667,8 +68787,8 @@ id: UBERON:0005166
 name: descending thick limb of loop of Henle
 subset: uberon_slim
 is_a: UBERON:0001231 ! renal tubule
-is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
 [Term]
@@ -69716,6 +69836,61 @@ is_a: UBERON:0002791 ! implied link automatically realized ! regional part of te
 is_a: UBERON:0005283 ! tela choroidea
 intersection_of: UBERON:0005283 ! tela choroidea
 intersection_of: part_of UBERON:0002285 ! lateral ventricle
+
+[Term]
+id: UBERON:0005290
+name: myelencephalon
+def: "The posterior part of the developing vertebrate hindbrain or the corresponding part of the adult brain composed of the medulla oblongata and a portion of the fourth ventricle; as well as the glossopharyngeal nerve (CN IX), vagus nerve (CN X), accessory nerve (CN XI), hypoglossal nerve (CN XII), and a portion of the vestibulocochlear nerve (CN VIII).[BTO,WP]." [BTO:0000758, Wikipedia:Myelencephalon]
+comment: the terms metencephalon and myelencephalon are only meaningful in mammals and birds - Neuroanatomy of the Zebrafish Brain. Note that its not clear if this refers to the developing medulla oblongata - MA (adult) has two distinct classes
+subset: uberon_slim
+xref: BTO:0000758
+xref: EHDAA:5526
+xref: EHDAA2:0001207
+xref: EMAPA:17082
+xref: HOG:0000456
+xref: MA:0000205
+is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0004733 ! implied link automatically realized ! segmental subdivision of hindbrain
+relationship: only_in_taxon NCBITaxon:32524
+relationship: part_of UBERON:0002028 ! hindbrain
+
+[Term]
+id: UBERON:0005291
+name: embryonic tissue
+def: "A portion of tissue that is part of an embryo." [OBOL:automatic]
+synonym: "developing tissue" RELATED []
+synonym: "portion of embryonic tissue" EXACT [OBOL:automatic]
+is_a: UBERON:0000479 ! implied link automatically realized ! portion of tissue
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:0005292
+name: extraembryonic tissue
+def: "Portion of tissue that is contiguous with the embryo and is comprised of portions of tissue or cells that will not contribute to the embryo." [UBERON:cjm]
+synonym: "extra-embryonic tissue" EXACT []
+xref: BTO:0003360
+xref: EFO:0001406
+xref: MAT:0000061
+xref: MIAA:0000061
+is_a: UBERON:0000478 ! implied link automatically realized ! extraembryonic structure
+is_a: UBERON:0000479 ! implied link automatically realized ! portion of tissue
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: adjacent_to UBERON:0002050 ! embryonic structure
+intersection_of: existence_starts_and_ends_during UBERON:0000068 ! embryo stage
+
+[Term]
+id: UBERON:0005293
+name: cerebellum lobe
+synonym: "cerebellar lobe" EXACT [FMA:242392]
+synonym: "lobe of cerebellum" EXACT [FMA:242392]
+xref: FMA:242392
+xref: MA:0002963
+xref: NIF_GrossAnatomy:birnlex_1076
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+relationship: part_of UBERON:0002129 ! cerebellar cortex
 
 [Typedef]
 id: adjacent_to
