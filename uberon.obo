@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 28:07:2010 11:53
+date: 29:07:2010 13:18
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -62,6 +62,7 @@ xref: XAO:0003033
 xref: ZFA:0000550
 is_a: UBERON:0000464 ! anatomical space
 relationship: part_of UBERON:0002109 ! pair of nares
+racrelationship: part_of UBERON:0000033
 
 [Term]
 id: UBERON:0000004
@@ -1936,6 +1937,7 @@ xref: ncithesaurus:Anal_Canal
 xref: TAO:0000330
 xref: ZFA:0000330
 is_a: UBERON:0004111 ! anatomical conduit
+relationship: part_of UBERON:0000059 ! large intestine
 relationship: part_of UBERON:0001046 ! hindgut
 relationship: part_of UBERON:0001353 ! anal region
 
@@ -2409,7 +2411,7 @@ xref: BTO:0000029
 xref: FMA:22441
 is_a: UBERON:0000952 ! adductor muscle
 is_a: UBERON:0004252 ! implied link automatically realized ! upper leg muscle
-relationship: part_of UBERON:0000376 ! upper leg
+relationship: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0000304
@@ -3075,7 +3077,7 @@ xref: FMA:22442
 xref: OpenCyc:Mx4rv13lfJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001630 ! muscle organ
 is_a: UBERON:0004252 ! implied link automatically realized ! upper leg muscle
-relationship: part_of UBERON:0000376 ! upper leg
+relationship: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0000369
@@ -3105,7 +3107,7 @@ xref: galen:AdductorMagnus
 xref: OpenCyc:Mx4rvuSd6JwpEbGdrcN5Y29ycA
 is_a: UBERON:0001630 ! muscle organ
 is_a: UBERON:0004252 ! implied link automatically realized ! upper leg muscle
-relationship: part_of UBERON:0000376 ! upper leg
+relationship: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0000371
@@ -3166,7 +3168,7 @@ relationship: branch_of UBERON:0001645 ! trigeminal nerve
 
 [Term]
 id: UBERON:0000376
-name: upper leg
+name: hindlimb stylopod
 alt_id: UBERON:BTO_0001376-FMA_24967
 def: "In humans the thigh is the area between the pelvis and the knee. Anatomically, it is part of the lower limb. The single bone in the thigh is called the femur. This bone is very thick and strong (due to the high proportion of cortical bone), and forms a ball and socket joint at the hip, and a condylar joint at the knee. [WP,unvetted]." [Wikipedia:Thigh]
 synonym: "hind limb stylopod" EXACT [OBOL:automatic]
@@ -3181,6 +3183,7 @@ synonym: "stylopod of inferior member" EXACT [OBOL:automatic]
 synonym: "stylopod of lower extremity" EXACT [OBOL:automatic]
 synonym: "stylopod of lower limb" EXACT []
 synonym: "thigh" EXACT []
+synonym: "upper leg" EXACT [MA:0000052]
 xref: BTO:0001376
 xref: EFO:0001943
 xref: EHDAA:5171
@@ -3898,6 +3901,7 @@ xref: MA:0000924
 xref: NIF_GrossAnatomy:birnlex_963
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+relationship: part_of UBERON:0001869 ! cerebral hemisphere
 relationship: part_of UBERON:0001893 ! telencephalon
 
 [Term]
@@ -5438,8 +5442,8 @@ id: UBERON:0000948
 name: heart
 alt_id: UBERON:FBbt_00003154-FMA_7088-MA_0000072-MIAA_0000036-XAO_0000064-ZFA_0000114
 def: "A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood[GO]. Primitive fish have a four-chambered heart; however, the chambers are arranged sequentially so that this primitive heart is quite unlike the four-chambered hearts of mammals and birds. The first chamber is the sinus venosus, which collects de-oxygenated blood, from the body, through the hepatic and cardinal veins. From here, blood flows into the atrium and then to the powerful muscular ventricle where the main pumping action takes place. The fourth and final chamber is the conus arteriosus which contains several valves and sends blood to the ventral aorta. The ventral aorta delivers blood to the gills where it is oxygenated and flows, through the dorsal aorta, into the rest of the body. (In tetrapods, the ventral aorta has divided in two; one half forms the ascending aorta, while the other forms the pulmonary artery. In the adult fish, the four chambers are not arranged in a straight row but, instead, form an S-shape with the latter two chambers lying above the former two. This relatively simpler pattern is found in cartilaginous fish and in the more primitive ray-finned fish. In teleosts, the conus arteriosus is very small and can more accurately be described as part of the aorta rather than of the heart proper. The conus arteriosus is not present in any amniotes  which presumably having been absorbed into the ventricles over the course of evolution. Similarly, while the sinus venosus is present as a vestigial structure in some reptiles and birds, it is otherwise absorbed into the right atrium and is no longer distinguishable[WP]." [GO:0007507]
+comment: heart is part of circ system but not cv system because there are hearts without vasculature (e.g. drosophila). todo - make subclasses of heart for dorsal vessel vs cardiovascular heart
 subset: uberon_slim
-synonym: "heart" EXACT []
 xref: BILA:0000020
 xref: BTO:0000562
 xref: EFO:0000815
@@ -5594,6 +5598,7 @@ xref: ZFA:0000008
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000489 ! cavitated compound organ
 relationship: develops_from UBERON:0001049 ! neural tube
+relationship: part_of UBERON:0000033 ! head
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -6094,7 +6099,7 @@ is_a: UBERON:0001272 ! implied link automatically realized ! hip bone
 is_a: UBERON:0002495 ! long bone
 is_a: UBERON:0003608 ! implied link automatically realized ! hindlimb long bone
 is_a: UBERON:0003826 ! implied link automatically realized ! upper leg bone
-relationship: part_of UBERON:0000376 ! upper leg
+relationship: part_of UBERON:0000376 ! hindlimb stylopod
 relationship: part_of UBERON:0001464 ! hip
 
 [Term]
@@ -6178,6 +6183,7 @@ xref: OpenCyc:Mx4rwLSHK5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003506 ! implied link automatically realized ! chest blood vessel
 is_a: UBERON:0003515 ! implied link automatically realized ! forelimb blood vessel
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0005194 ! implied link automatically realized ! thoracic vein
 relationship: part_of UBERON:0001467 ! shoulder
 
@@ -6393,7 +6399,9 @@ xref: TAO:0000560
 xref: XAO:0003052
 xref: ZFA:0000560
 is_a: UBERON:0000058 ! duct
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: connects UBERON:0000992 ! ovary
+relationship: part_of UBERON:0000474 ! female reproductive system
 
 [Term]
 id: UBERON:0000994
@@ -6439,6 +6447,7 @@ xref: WBbt:0006760
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000474 ! female reproductive system
 relationship: part_of UBERON:0000991 ! gonad
 
 [Term]
@@ -6512,8 +6521,9 @@ xref: MIAA:0000171
 xref: ncithesaurus:Seminal_Vesicle
 xref: OpenCyc:Mx4rwTtRpJwpEbGdrcN5Y29ycA
 is_a: UBERON:0002530 ! gland
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
 relationship: develops_from UBERON:0000080 ! mesonephros
+relationship: part_of UBERON:0000079 ! male reproductive system
 
 [Term]
 id: UBERON:0000999
@@ -6562,6 +6572,8 @@ xref: OpenCyc:Mx4rvjv7bpwpEbGdrcN5Y29ycA
 xref: WBbt:0005337
 xref: ZFA:0001268
 is_a: UBERON:0000058 ! duct
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000079 ! male reproductive system
 
 [Term]
 id: UBERON:0001001
@@ -6632,6 +6644,7 @@ relationship: surrounds UBERON:0000468
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: surrounds UBERON:0000468 ! multi-cellular organism
 relationship: develops_from UBERON:0000924 ! ectoderm
+relationship: part_of UBERON:0002097 ! skin of body
 relationship: part_of UBERON:0002199 ! integument
 relationship: surrounds UBERON:0000468 ! multi-cellular organism
 
@@ -6992,8 +7005,8 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0001018
 name: axon tract
 alt_id: UBERON:FBbt_00005100-FMA_76739
-def: "A group of axons linking two or more neuropils and having a common origin, termination." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
-comment: TODO - check FMA is general anatomical term
+def: "A group of axons linking two or more neuropils and having a common origin, termination[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
+comment: TODO - check FMA is general anatomical term. TODO - invert specific?
 synonym: "tract" EXACT []
 xref: FBbt:00005100
 xref: FMA:76739
@@ -7004,8 +7017,8 @@ is_a: UBERON:0000122 ! nerve fiber bundle
 id: UBERON:0001019
 name: fascicle
 alt_id: UBERON:FBbt_00005101-FMA_76740
-def: "A slender bundle of axons linking one neuropil to another." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Fascicle]
-comment: This class was created automatically from a combination of ontologies
+def: "A slender bundle of axons linking one neuropil to another[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, Wikipedia:Fascicle]
+comment: TODO - invert specific?
 subset: uberon_slim
 synonym: "fasciculus" EXACT []
 synonym: "nerve fasciculus" EXACT [FMA:12235]
@@ -7768,6 +7781,7 @@ intersection_of: UBERON:0000058 ! duct
 intersection_of: part_of UBERON:0001264 ! pancreas
 relationship: continuous_with UBERON:0001174 ! common bile duct
 relationship: develops_from UBERON:0003922 ! pancreatic bud
+relationship: part_of UBERON:0000017 ! exocrine pancreas
 relationship: part_of UBERON:0001264 ! pancreas
 
 [Term]
@@ -7892,6 +7906,8 @@ xref: TAO:0005022
 xref: XAO:0000345
 xref: ZFA:0005022
 is_a: UBERON:0001637 ! artery
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: develops_from UBERON:0003118 ! aortic arch 1
 
 [Term]
 id: UBERON:0001071
@@ -7989,6 +8005,7 @@ xref: ZFA:0001336
 is_a: UBERON:0000063 ! organ segment
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002412 ! vertebra
+relationship: part_of UBERON:0003861 ! neural arch
 
 [Term]
 id: UBERON:0001077
@@ -8334,6 +8351,7 @@ is_a: UBERON:0003913 ! tooth-like structure
 relationship: develops_from UBERON:0001048 ! primordium
 relationship: has_part UBERON:0001751 ! dentine
 relationship: has_part UBERON:0001752 ! enamel
+relationship: part_of UBERON:0000165 ! mouth
 
 [Term]
 id: UBERON:0001092
@@ -8451,6 +8469,7 @@ xref: FMA:12771
 xref: MA:0000735
 xref: ncithesaurus:Axillary_Lymph_Node
 is_a: UBERON:0003968 ! peripheral lymph node
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001467 ! shoulder
 
 [Term]
@@ -10451,6 +10470,7 @@ relationship: part_of UBERON:0002108
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0002108 ! small intestine
 relationship: part_of UBERON:0001168 ! wall of small intestine
+relationship: part_of UBERON:0001242 ! intestinal mucosa
 
 [Term]
 id: UBERON:0001205
@@ -10496,6 +10516,7 @@ relationship: part_of UBERON:0002108
 intersection_of: UBERON:0000042 ! serous membrane
 intersection_of: part_of UBERON:0002108 ! small intestine
 relationship: part_of UBERON:0001168 ! wall of small intestine
+relationship: part_of UBERON:0001243 ! serosa of intestine
 
 [Term]
 id: UBERON:0001207
@@ -10518,6 +10539,7 @@ relationship: part_of UBERON:0000059
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000059 ! large intestine
 relationship: part_of UBERON:0001169 ! wall of large intestine
+relationship: part_of UBERON:0001242 ! intestinal mucosa
 
 [Term]
 id: UBERON:0001208
@@ -10553,6 +10575,7 @@ relationship: part_of UBERON:0000059
 intersection_of: UBERON:0000042 ! serous membrane
 intersection_of: part_of UBERON:0000059 ! large intestine
 relationship: part_of UBERON:0001169 ! wall of large intestine
+relationship: part_of UBERON:0001243 ! serosa of intestine
 
 [Term]
 id: UBERON:0001210
@@ -11005,6 +11028,7 @@ xref: FMA:15647
 xref: GAID:444
 xref: MA:0001137
 is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000949 ! endocrine system
 
 [Term]
 id: UBERON:0001238
@@ -11676,7 +11700,6 @@ xref: MA:0001335
 xref: ncithesaurus:Acetabulum
 xref: OpenCyc:Mx4rwJlP9ZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001271 ! pelvic girdle
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001486 ! hip joint
 
 [Term]
@@ -11715,6 +11738,8 @@ xref: XAO:0003064
 xref: ZFA:0000565
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0002529 ! limb segment
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0002091 ! appendicular skeleton
 relationship: part_of UBERON:0002103 ! hindlimb
 
 [Term]
@@ -11770,7 +11795,6 @@ xref: MA:0001336
 xref: ncithesaurus:Ilium
 xref: OpenCyc:Mx4rvhwFJ5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001271 ! pelvic girdle
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001272 ! hip bone
 
 [Term]
@@ -11801,7 +11825,6 @@ xref: FMA:16595
 xref: galen:Pubis
 xref: MA:0001338
 is_a: UBERON:0001271 ! pelvic girdle
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001272 ! hip bone
 
 [Term]
@@ -11945,6 +11968,7 @@ relationship: part_of UBERON:0002107
 intersection_of: UBERON:0003909 ! sinusoid
 intersection_of: part_of UBERON:0002107 ! liver
 relationship: part_of UBERON:0002107 ! liver
+relationship: part_of UBERON:0004647 ! liver lobule
 
 [Term]
 id: UBERON:0001282
@@ -11959,7 +11983,9 @@ synonym: "cholangiole" EXACT []
 xref: FMA:17545
 xref: MA:0002669
 is_a: UBERON:0002394 ! bile duct
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 relationship: part_of UBERON:0000477 ! anatomical cluster
+relationship: part_of UBERON:0004647 ! liver lobule
 
 [Term]
 id: UBERON:0001283
@@ -11975,6 +12001,7 @@ xref: ncithesaurus:Bile_Canaliculus
 xref: ZFA:0005163
 is_a: UBERON:0000464 ! anatomical space
 relationship: part_of UBERON:0001113 ! lobe of liver
+relationship: part_of UBERON:0004647 ! liver lobule
 
 [Term]
 id: UBERON:0001284
@@ -12093,7 +12120,9 @@ xref: FMA:17716
 xref: MA:0002614
 xref: ZFA:0001621
 is_a: UBERON:0001231 ! renal tubule
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
+relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 relationship: part_of UBERON:0004134 ! proximal tubule
 
 [Term]
@@ -12148,6 +12177,7 @@ xref: BTO:0001746
 xref: FMA:17733
 xref: MA:0001653
 is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0000362 ! renal medulla
 relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
@@ -12163,6 +12193,7 @@ xref: BTO:0001745
 xref: FMA:17734
 xref: MA:0001652
 is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0000362 ! renal medulla
 relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
@@ -12959,6 +12990,8 @@ xref: MAT:0000503
 xref: ncithesaurus:Seminiferous_Tubule
 xref: XAO:0003088
 is_a: UBERON:0000058 ! duct
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000473 ! testis
 
 [Term]
 id: UBERON:0001344
@@ -13077,6 +13110,8 @@ xref: MA:0000696
 xref: ncithesaurus:Coccyx
 xref: OpenCyc:Mx4rv1XqHJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001474 ! bone
+is_a: UBERON:0004247 ! implied link automatically realized ! back bone
+relationship: part_of UBERON:0001130 ! vertebral column
 relationship: part_of UBERON:0002415 ! tail
 
 [Term]
@@ -13750,6 +13785,7 @@ xref: MA:0002573
 xref: ncithesaurus:Axillary_Artery
 xref: OpenCyc:Mx4rwRh-vZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001009 ! circulatory system
 relationship: part_of UBERON:0001467 ! shoulder
 
@@ -13768,6 +13804,7 @@ xref: ncithesaurus:Acromial_Thoracic_Artery
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003506 ! implied link automatically realized ! chest blood vessel
 is_a: UBERON:0003515 ! implied link automatically realized ! forelimb blood vessel
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001467 ! shoulder
 
 [Term]
@@ -13784,6 +13821,7 @@ xref: ncithesaurus:Lateral_Thoracic_Artery
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003506 ! implied link automatically realized ! chest blood vessel
 is_a: UBERON:0003515 ! implied link automatically realized ! forelimb blood vessel
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001467 ! shoulder
 
 [Term]
@@ -14151,7 +14189,9 @@ xref: XAO:0003063
 xref: ZFA:0000407
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0002529 ! limb segment
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001443 ! chest
+relationship: part_of UBERON:0002091 ! appendicular skeleton
 relationship: part_of UBERON:0002102 ! forelimb
 
 [Term]
@@ -14984,6 +15024,7 @@ synonym: "zone of skin of lip" EXACT [OBOL:automatic]
 xref: FMA:24764
 xref: MA:0001579
 is_a: UBERON:0000014 ! zone of skin
+is_a: UBERON:0001084 ! implied link automatically realized ! skin of head
 relationship: part_of UBERON:0001833
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: part_of UBERON:0001833 ! lip
@@ -15115,6 +15156,7 @@ xref: MA:0000045
 xref: ncithesaurus:Hip
 xref: OpenCyc:Mx4rvVjhy5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002529 ! limb segment
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001271 ! pelvic girdle
 
 [Term]
@@ -15213,6 +15255,7 @@ xref: MA:0000038
 xref: ncithesaurus:Shoulder
 xref: OpenCyc:Mx4rvViCM5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002529 ! limb segment
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001421 ! pectoral girdle
 
 [Term]
@@ -16187,6 +16230,7 @@ xref: MA:0002571
 xref: ncithesaurus:Descending_Aorta
 xref: OpenCyc:Mx4rv4EE35wpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
+relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0001009 ! circulatory system
 
 [Term]
@@ -17458,7 +17502,9 @@ xref: EHDAA2:0001067
 xref: FMA:48996
 xref: HOG:0000823
 xref: MA:0002343
+is_a: UBERON:0001577 ! implied link automatically realized ! muscle of face
 is_a: UBERON:0002376 ! muscle of head
+relationship: part_of UBERON:0001567 ! cheek
 
 [Term]
 id: UBERON:0001598
@@ -19678,6 +19724,7 @@ xref: XAO:0000446
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0003212 ! implied link automatically realized ! gustatory organ
 relationship: develops_from UBERON:0002539 ! pharyngeal arch
+relationship: part_of UBERON:0000165 ! mouth
 relationship: part_of UBERON:0001033 ! gustatory system
 
 [Term]
@@ -19784,6 +19831,7 @@ xref: MAT:0000446
 xref: ncithesaurus:Oropharynx
 xref: OpenCyc:Mx4rwACoxpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of UBERON:0001007 ! digestive system
 relationship: part_of UBERON:0001042 ! pharynx
 
 [Term]
@@ -20228,6 +20276,7 @@ xref: MA:0001599
 xref: ncithesaurus:Dental_Pulp
 xref: ZFA:0005141
 is_a: UBERON:0002384 ! connective tissue
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0001091 ! calcareous tooth
 
 [Term]
@@ -20307,6 +20356,7 @@ xref: GAID:216
 xref: MA:0002467
 xref: ncithesaurus:Periodontium
 is_a: UBERON:0000211 ! ligament
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 relationship: part_of UBERON:0001091 ! calcareous tooth
 
 [Term]
@@ -20657,6 +20707,7 @@ xref: ZFA:0005229
 is_a: UBERON:0001768 ! vascular layer of eyeball
 relationship: adjacent_to UBERON:0000966 ! retina
 relationship: adjacent_to UBERON:0001773 ! sclera
+relationship: part_of UBERON:0001768 ! vascular layer of eyeball
 
 [Term]
 id: UBERON:0001777
@@ -20738,11 +20789,13 @@ xref: ncithesaurus:Spinal_Nerve
 xref: OpenCyc:Mx4rwK_iFJwpEbGdrcN5Y29ycA
 xref: XAO:0003101
 is_a: UBERON:0001021 ! nerve
+is_a: UBERON:0003377 ! implied link automatically realized ! nerve of peripheral nervous system
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004215 ! implied link automatically realized ! back nerve
 relationship: part_of UBERON:0001130
 intersection_of: UBERON:0001021 ! nerve
 intersection_of: part_of UBERON:0001130 ! vertebral column
+relationship: part_of UBERON:0000010 ! peripheral nervous system
 
 [Term]
 id: UBERON:0001781
@@ -20909,6 +20962,7 @@ xref: MA:0001315
 xref: XAO:0003219
 xref: ZFA:0001464
 is_a: UBERON:0001781 ! layer of retina
+relationship: part_of UBERON:0003902 ! retinal neural layer
 
 [Term]
 id: UBERON:0001790
@@ -21206,6 +21260,7 @@ xref: FMA:5889
 xref: MA:0000220
 xref: ncithesaurus:Autonomic_Ganglion
 is_a: UBERON:0000045 ! ganglion
+is_a: UBERON:0003338 ! implied link automatically realized ! ganglion of peripheral nervous system
 relationship: part_of UBERON:0002410
 intersection_of: UBERON:0000045 ! ganglion
 intersection_of: part_of UBERON:0002410 ! autonomic nervous system
@@ -21261,7 +21316,10 @@ xref: FMA:5894
 xref: MA:0002469
 xref: ncithesaurus:Parasympathetic_Ganglion
 xref: NIF_GrossAnatomy:nlx_anat_100303
-is_a: UBERON:0001805 ! autonomic ganglion
+is_a: UBERON:0001805 ! implied link automatically realized ! autonomic ganglion
+relationship: part_of UBERON:0000011
+intersection_of: UBERON:0001805 ! autonomic ganglion
+intersection_of: part_of UBERON:0000011 ! parasympathetic nervous system
 
 [Term]
 id: UBERON:0001809
@@ -21716,6 +21774,7 @@ xref: OpenCyc:Mx4rvVi4U5wpEbGdrcN5Y29ycA
 xref: TAO:0007006
 xref: ZFA:0007006
 is_a: UBERON:0003102 ! surface structure
+relationship: part_of UBERON:0000165 ! mouth
 relationship: surrounds UBERON:0000166 ! oral opening
 
 [Term]
@@ -22118,6 +22177,7 @@ is_a: UBERON:0000058 ! duct
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001844 ! cochlea
 relationship: part_of UBERON:0001849 ! membranous labyrinth
+relationship: part_of UBERON:0002499 ! cochlear labyrinth
 
 [Term]
 id: UBERON:0001856
@@ -22465,7 +22525,7 @@ relationship: part_of UBERON:0001894 ! diencephalon
 id: UBERON:0001876
 name: amygdala
 alt_id: UBERON:FMA_61841-MA_0000887-MIAA_0000289
-def: "Subdivision of basal ganglion of telencephalon which is an almond-shaped gray mass in the dorsomedial part of the temporal lobe [FMA]," [Wikipedia:Amygdala]
+def: "Subdivision of basal ganglion of telencephalon which is an almond-shaped gray mass in the dorsomedial part of the temporal lobe[FMA]" [Wikipedia:Amygdala]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "amygdaloid area" RELATED []
@@ -22529,12 +22589,14 @@ is_a: UBERON:0002308 ! nucleus of brain
 
 [Term]
 id: UBERON:0001880
-name: nucleus of stria terminalis
+name: bed nucleus of stria terminalis
 alt_id: UBERON:FMA_61884-MA_0000925
+def: "A brain structure in the forebrain wrapped around the stria terminalis. It's largest extent can be found around the crossing of the anterior commissure[INCF]." [INCF:Seattle_mtg_2010]
 comment: This class was created automatically from a combination of ontologies
-synonym: "bed nucleus of stria terminalis" EXACT []
+synonym: "BST" BROAD [INCF:Seattle_mtg_2010]
 synonym: "intercalate nucleus of stria terminalis" EXACT []
 synonym: "nuclei of stria terminalis" EXACT []
+synonym: "nucleus of stria terminalis" EXACT [FMA:61884]
 synonym: "stria terminalis nucleus" EXACT []
 xref: BTO:0002698
 xref: EFO:0001971
@@ -22542,6 +22604,9 @@ xref: FMA:61884
 xref: MA:0000925
 xref: NIF_GrossAnatomy:birnlex_724
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+relationship: part_of UBERON:0000446 ! septum of telencephalon
+relationship: surrounds UBERON:0003029 ! stria terminalis
 
 [Term]
 id: UBERON:0001881
@@ -22640,6 +22705,7 @@ xref: NIF_GrossAnatomy:birnlex_1178
 is_a: UBERON:0000200 ! gyrus
 is_a: UBERON:0003876 ! implied link automatically realized ! hippocampal region
 relationship: part_of UBERON:0001954 ! hippocampus
+relationship: part_of UBERON:0002421 ! hippocampal formation
 
 [Term]
 id: UBERON:0001886
@@ -24009,7 +24075,8 @@ subset: uberon_slim
 synonym: "cerebral cortex" RELATED []
 synonym: "cerebral neocortex" EXACT []
 synonym: "homogenetic cortex" EXACT []
-synonym: "isocortex (sensu lato)" EXACT []
+synonym: "isocortex" EXACT []
+synonym: "isocortex (sensu lato)" EXACT [FMA:62429]
 synonym: "neopallial cortex" EXACT []
 synonym: "neopallium" EXACT []
 xref: BTO:0000920
@@ -24068,6 +24135,7 @@ xref: MA:0001605
 xref: ncithesaurus:Oropharynx_Epithelium
 is_a: UBERON:0000486 ! multilaminar epithelium
 is_a: UBERON:0003351 ! implied link automatically realized ! epithelium of pharynx
+is_a: UBERON:0004808 ! implied link automatically realized ! gastrointestinal system epithelium
 relationship: part_of UBERON:0001729
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001729 ! oropharynx
@@ -24111,9 +24179,10 @@ xref: NIF_GrossAnatomy:birnlex_721
 xref: NIF_GrossAnatomy:birnlex_726
 xref: OpenCyc:Mx4rv3piFJwpEbGdrcN5Y29ycA
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 relationship: part_of UBERON:0000349 ! limbic system
-relationship: part_of UBERON:0000955 ! brain
+relationship: part_of UBERON:0001890 ! forebrain
+relationship: part_of UBERON:0002421 ! hippocampal formation
 
 [Term]
 id: UBERON:0001955
@@ -24488,6 +24557,7 @@ is_a: UBERON:0004780 ! implied link automatically realized ! gastrointestinal sy
 relationship: part_of UBERON:0001043
 intersection_of: UBERON:0000030 ! lamina propria
 intersection_of: part_of UBERON:0001043 ! esophagus
+relationship: part_of UBERON:0002469 ! esophagus mucosa
 
 [Term]
 id: UBERON:0001975
@@ -24544,11 +24614,13 @@ xref: TAO:0001499
 xref: ZFA:0001499
 is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0000486 ! multilaminar epithelium
+is_a: UBERON:0003350 ! implied link automatically realized ! epithelium of mucosa
 is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
 relationship: part_of UBERON:0001043
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001043 ! esophagus
 relationship: part_of UBERON:0001043 ! esophagus
+relationship: part_of UBERON:0002469 ! esophagus mucosa
 
 [Term]
 id: UBERON:0001977
@@ -24764,6 +24836,7 @@ xref: OpenCyc:Mx4rvv4zZ5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0000478 ! extraembryonic structure
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000474 ! female reproductive system
 relationship: part_of UBERON:0000990 ! reproductive system
 
 [Term]
@@ -25033,6 +25106,8 @@ xref: ncithesaurus:Peripheral_Nerve
 xref: NIF_GrossAnatomy:birnlex_1615
 xref: XAO:0000204
 is_a: UBERON:0001021 ! nerve
+is_a: UBERON:0003377 ! implied link automatically realized ! nerve of peripheral nervous system
+relationship: part_of UBERON:0000010 ! peripheral nervous system
 
 [Term]
 id: UBERON:0002004
@@ -25064,6 +25139,7 @@ xref: NIF_GrossAnatomy:birnlex_1166
 xref: TAO:0001155
 xref: ZFA:0001155
 is_a: UBERON:0002410 ! autonomic nervous system
+relationship: part_of UBERON:0002410 ! autonomic nervous system
 
 [Term]
 id: UBERON:0002006
@@ -25483,7 +25559,7 @@ is_a: UBERON:0003055 ! outermost layer of epidermis
 id: UBERON:0002028
 name: hindbrain
 alt_id: UBERON:FMA_67687-MA_0000195-MIAA_0000107-XAO_0000015-ZFA_0000029
-def: "Organ component of neuraxis that has as its parts the pons, cerebellum and medulla oblongata . Examples: There is only one hindbrain. // The most posterior of the three principal regions of the brain, forming the rhombencephalon and all or most of the metencephalon. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Hindbrain, ZFIN:curator]
+def: "The most posterior of the three principal regions of the brain. In mammals and birds the hindbrain is divided into a rostral metencephalon and a caudal myelencephalon. In zebrafish, with the exception of the cerebellum, the ventral remainder of the metencephalon can be separated only arbitrarily from the more caudal myelencephalic portion of the medulla oblongata (From: Neuroanatomy of the Zebrafish Brain)[ZFA]. Organ component of neuraxis that has as its parts the pons, cerebellum and medulla oblongata[FMA]." [Wikipedia:Hindbrain, ZFA:0000029, ZFIN:curator]
 subset: uberon_slim
 synonym: "rhombencephalon" RELATED []
 xref: BTO:0000672
@@ -25628,6 +25704,7 @@ xref: TAO:0000441
 xref: ZFA:0000441
 is_a: UBERON:0002308 ! nucleus of brain
 is_a: UBERON:0003048 ! implied link automatically realized ! regional part of hypothalamus
+relationship: part_of UBERON:0001928 ! preoptic area
 relationship: part_of UBERON:0002272 ! medial zone of hypothalamus
 
 [Term]
@@ -25800,8 +25877,9 @@ xref: FMA:68464
 xref: MA:0001072
 xref: NIF_GrossAnatomy:birnlex_896
 is_a: UBERON:0002308 ! nucleus of brain
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0002950 ! implied link automatically realized ! regional part of midbrain
 relationship: part_of UBERON:0000936 ! posterior commissure
+relationship: part_of UBERON:0001943 ! midbrain tegmentum
 
 [Term]
 id: UBERON:0002045
@@ -25816,6 +25894,8 @@ xref: MA:0001035
 xref: ncithesaurus:Cuneate_Nucleus
 xref: NIF_GrossAnatomy:birnlex_2640
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
+relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0002046
@@ -25912,6 +25992,7 @@ xref: ZFA:0005249
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0000062 ! organ
 relationship: part_of UBERON:0001009 ! circulatory system
+relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0002050
@@ -25954,10 +26035,12 @@ xref: MA:0001772
 xref: ncithesaurus:Bronchiole_Epithelium
 is_a: UBERON:0000115 ! implied link automatically realized ! lung epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
+is_a: UBERON:0003350 ! implied link automatically realized ! epithelium of mucosa
 relationship: part_of UBERON:0002186
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002186 ! bronchiole
 relationship: part_of UBERON:0002186 ! bronchiole
+relationship: part_of UBERON:0005039 ! mucosa of bronchiole
 
 [Term]
 id: UBERON:0002052
@@ -26119,8 +26202,10 @@ xref: MA:0000078
 xref: TAO:0001317
 xref: ZFA:0001317
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0000948 ! heart
+relationship: part_of UBERON:0002165 ! endocardium
 
 [Term]
 id: UBERON:0002063
@@ -26234,6 +26319,7 @@ is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0003104 ! mesenchyme
+relationship: part_of UBERON:0002097 ! skin of body
 relationship: part_of UBERON:0002199 ! integument
 
 [Term]
@@ -26590,6 +26676,7 @@ xref: ncithesaurus:Interatrial_Septum
 xref: OpenCyc:Mx4rpd49nLYEEduAAAACs2IKfQ
 xref: OpenCyc:Mx4rwGvku5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002099 ! cardiac septum
+relationship: part_of UBERON:0002081 ! cardiac atrium
 
 [Term]
 id: UBERON:0002086
@@ -26601,6 +26688,7 @@ xref: TAO:0000680
 xref: ZFA:0000680
 is_a: UBERON:0000946 ! cardial valve
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0002062 ! endocardial cushion
 relationship: part_of UBERON:0002063 ! sinus venosus
 relationship: part_of UBERON:0002081 ! cardiac atrium
@@ -27421,6 +27509,8 @@ xref: MA:0001052
 xref: ncithesaurus:Solitary_Nucleus
 xref: NIF_GrossAnatomy:birnlex_1429
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
+relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0002127
@@ -27548,6 +27638,7 @@ xref: OpenCyc:Mx4rfCfdorrpEduAAAACs6hRXg
 xref: TAO:0005064
 xref: ZFA:0005064
 is_a: UBERON:0000946 ! cardial valve
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: connects UBERON:0002081 ! cardiac atrium
 relationship: connects UBERON:0002082 ! cardiac ventricle
 relationship: develops_from UBERON:0002062 ! endocardial cushion
@@ -27594,9 +27685,10 @@ is_a: UBERON:0002133 ! atrioventricular valve
 id: UBERON:0002136
 name: hilus of dentate gyrus
 alt_id: UBERON:FMA_72358-MA_0000947
-comment: This class was created automatically from a combination of ontologies
+comment: Merge with CA4?
+synonym: "CA4" RELATED []
 synonym: "dentate gyrus hilus" EXACT []
-synonym: "field ca4 of hippocampal formation" EXACT []
+synonym: "field CA4 of hippocampal formation" EXACT []
 xref: FMA:72358
 xref: MA:0000947
 xref: NIF_GrossAnatomy:birnlex_1482
@@ -27857,6 +27949,7 @@ xref: NIF_GrossAnatomy:birnlex_1516
 is_a: UBERON:0002308 ! nucleus of brain
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
 relationship: part_of UBERON:0000988 ! pons
+relationship: part_of UBERON:0002567 ! basal part of pons
 
 [Term]
 id: UBERON:0002152
@@ -28008,6 +28101,8 @@ xref: FMA:72602
 xref: MA:0001038
 xref: NIF_GrossAnatomy:birnlex_2643
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
+relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0002162
@@ -28540,8 +28635,8 @@ xref: MA:0000960
 xref: ncithesaurus:Subiculum
 xref: NIF_GrossAnatomy:birnlex_1305
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-relationship: part_of UBERON:0001017 ! central nervous system
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+relationship: part_of UBERON:0002421 ! hippocampal formation
 
 [Term]
 id: UBERON:0002192
@@ -28654,8 +28749,9 @@ xref: HOG:0001179
 xref: MA:0000859
 xref: NIF_GrossAnatomy:birnlex_925
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
 relationship: part_of UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0002198 ! neurohypophysis
 
 [Term]
 id: UBERON:0002198
@@ -30065,7 +30161,9 @@ xref: ncithesaurus:Lateral_Ventricle
 xref: NIF_GrossAnatomy:birnlex_1263
 xref: OpenCyc:Mx4rvYsFdZwpEbGdrcN5Y29ycA
 xref: ZFA:0000696
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0004086 ! brain ventricle
+relationship: part_of UBERON:0001893 ! telencephalon
 
 [Term]
 id: UBERON:0002286
@@ -30202,6 +30300,7 @@ xref: ZFA:0000938
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: develops_from UBERON:0001049 ! neural tube
 relationship: has_part UBERON:0001359 ! cerebrospinal fluid
+relationship: part_of UBERON:0005281 ! ventricular system
 relationship: surrounded_by UBERON:0002240 ! spinal cord
 
 [Term]
@@ -30360,6 +30459,7 @@ relationship: part_of UBERON:0002048
 intersection_of: UBERON:0003215 ! alveolus
 intersection_of: part_of UBERON:0002048 ! lung
 relationship: part_of UBERON:0002048 ! lung
+relationship: part_of UBERON:0002169 ! alveolar sac
 
 [Term]
 id: UBERON:0002300
@@ -31042,7 +31142,6 @@ xref: MAT:0000286
 xref: MIAA:0000286
 xref: ncithesaurus:Corpus_Callosum
 xref: NIF_GrossAnatomy:birnlex_1087
-xref: NIF_GrossAnatomy:birnlex_1498
 xref: OpenCyc:Mx4rvbNzdZwpEbGdrcN5Y29ycA
 is_a: UBERON:0002473 ! intercerebral commissure
 
@@ -31660,6 +31759,7 @@ xref: ncithesaurus:Dura_Mater
 xref: NIF_GrossAnatomy:nlx_anat_090206
 xref: OpenCyc:Mx4rvvmzqZwpEbGdrcN5Y29ycA
 is_a: UBERON:0002360 ! meninx
+relationship: part_of UBERON:0002360 ! meninx
 
 [Term]
 id: UBERON:0002364
@@ -32664,6 +32764,7 @@ xref: ncithesaurus:Pericardium
 xref: OpenCyc:Mx4rvoCLgJwpEbGdrcN5Y29ycA
 xref: ZFA:0000054
 is_a: UBERON:0004457 ! cavity lining
+relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0002408
@@ -32716,6 +32817,7 @@ xref: NIF_GrossAnatomy:birnlex_1123
 xref: TAO:0001574
 xref: ZFA:0001574
 is_a: UBERON:0000073 ! regional part of nervous system
+relationship: part_of UBERON:0000010 ! peripheral nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -33202,6 +33304,7 @@ xref: ZFA:0001199
 is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
 relationship: part_of UBERON:0001894 ! diencephalon
+relationship: part_of UBERON:0002198 ! neurohypophysis
 
 [Term]
 id: UBERON:0002435
@@ -34241,6 +34344,8 @@ synonym: "tuberositas deltoidea (corpus humeri)" EXACT []
 xref: FMA:23418
 xref: MA:0002808
 is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0005055 ! implied link automatically realized ! zone of long bone
+relationship: part_of UBERON:0004652 ! humerus diaphysis
 
 [Term]
 id: UBERON:0002499
@@ -34869,7 +34974,9 @@ xref: NIF_GrossAnatomy:birnlex_976
 xref: TAO:0000034
 xref: XAO:0000095
 xref: ZFA:0000034
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0001032 ! sensory system
+relationship: part_of UBERON:0000010 ! peripheral nervous system
 
 [Term]
 id: UBERON:0002541
@@ -36719,6 +36826,7 @@ subset: uberon_slim
 synonym: "anterior horn of lateral ventricle" EXACT [FMA:74520]
 xref: FMA:74520
 xref: NIF_GrossAnatomy:birnlex_1279
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0002285 ! lateral ventricle
 
@@ -36772,6 +36880,7 @@ synonym: "central part of lateral ventricle" EXACT [FMA:83703]
 synonym: "lateral ventricular body" EXACT [FMA:83703]
 xref: FMA:83703
 xref: NIF_GrossAnatomy:birnlex_1287
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0002285 ! lateral ventricle
 
@@ -39081,6 +39190,7 @@ xref: FMA:72974
 xref: NIF_GrossAnatomy:birnlex_1728
 is_a: UBERON:0001872 ! parietal lobe
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
+relationship: part_of UBERON:0002812 ! left cerebral hemisphere
 relationship: spatially_disjoint_from UBERON:0002803 ! right parietal lobe
 
 [Term]
@@ -39091,6 +39201,7 @@ xref: FMA:72973
 xref: NIF_GrossAnatomy:birnlex_1729
 is_a: UBERON:0001872 ! parietal lobe
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
+relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002804
@@ -39099,6 +39210,7 @@ alt_id: UBERON:NIF_GrossAnatomy_birnlex_1780-FMA_72981
 xref: FMA:72981
 xref: NIF_GrossAnatomy:birnlex_1780
 is_a: UBERON:0002600 ! limbic lobe
+relationship: part_of UBERON:0002812 ! left cerebral hemisphere
 
 [Term]
 id: UBERON:0002805
@@ -39107,6 +39219,7 @@ alt_id: UBERON:NIF_GrossAnatomy_birnlex_1781-FMA_72980
 xref: FMA:72980
 xref: NIF_GrossAnatomy:birnlex_1781
 is_a: UBERON:0002600 ! limbic lobe
+relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002806
@@ -39116,6 +39229,7 @@ xref: FMA:72976
 xref: NIF_GrossAnatomy:birnlex_1782
 is_a: UBERON:0002021 ! occipital lobe
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
+relationship: part_of UBERON:0002812 ! left cerebral hemisphere
 relationship: spatially_disjoint_from UBERON:0002807 ! right occipital lobe
 
 [Term]
@@ -39127,6 +39241,7 @@ xref: NIF_GrossAnatomy:birnlex_1783
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rv9OFy5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002021 ! occipital lobe
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
+relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002808
@@ -39136,6 +39251,7 @@ xref: FMA:72972
 xref: NIF_GrossAnatomy:birnlex_1784
 xref: OpenCyc:Mx8Ngh4rvgIFoJwpEbGdrcN5Y29ycB4rwQLi-ZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001871 ! temporal lobe
+relationship: part_of UBERON:0002812 ! left cerebral hemisphere
 
 [Term]
 id: UBERON:0002809
@@ -39145,6 +39261,7 @@ xref: FMA:72971
 xref: NIF_GrossAnatomy:birnlex_1785
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rwQLi-ZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001871 ! temporal lobe
+relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002810
@@ -39154,6 +39271,7 @@ xref: FMA:72969
 xref: NIF_GrossAnatomy:birnlex_1786
 is_a: UBERON:0001870 ! frontal lobe
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
+relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002811
@@ -39163,6 +39281,7 @@ xref: FMA:72970
 xref: NIF_GrossAnatomy:birnlex_1787
 is_a: UBERON:0001870 ! frontal lobe
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
+relationship: part_of UBERON:0002812 ! left cerebral hemisphere
 relationship: spatially_disjoint_from UBERON:0002810 ! right frontal lobe
 
 [Term]
@@ -39313,6 +39432,8 @@ xref: FMA:77531
 xref: MA:0002778
 xref: NIF_GrossAnatomy:birnlex_2551
 is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+relationship: part_of UBERON:0002824 ! vestibular ganglion
 
 [Term]
 id: UBERON:0002826
@@ -39322,6 +39443,8 @@ xref: FMA:77532
 xref: MA:0002779
 xref: NIF_GrossAnatomy:birnlex_2552
 is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+relationship: part_of UBERON:0002824 ! vestibular ganglion
 
 [Term]
 id: UBERON:0002827
@@ -39913,6 +40036,8 @@ xref: FMA:74047
 xref: MA:0002923
 xref: NIF_GrossAnatomy:birnlex_2682
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+relationship: part_of UBERON:0001876 ! amygdala
 
 [Term]
 id: UBERON:0002884
@@ -40022,6 +40147,8 @@ xref: FMA:74046
 xref: MA:0002927
 xref: NIF_GrossAnatomy:birnlex_2701
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+relationship: part_of UBERON:0001876 ! amygdala
 
 [Term]
 id: UBERON:0002893
@@ -41898,6 +42025,7 @@ alt_id: UBERON:NIF_GrossAnatomy_birnlex_937-FMA_61974
 def: "The stria terminalis (terminal stria) is a structure in the brain consisting of a band of fibers running along the lateral margin of the ventricular surface of the thalamus. Serving as a major output pathway of the amygdala, the stria terminalis runs from its corticomedial division to the ventral medial nucleus of the hypothalamus. [WP,unvetted]." [Wikipedia:Stria_terminalis]
 subset: uberon_slim
 synonym: "semicircular stria" EXACT [FMA:61974]
+synonym: "terminal stria" EXACT [Wikipedia:Terminal_stria]
 xref: FMA:61974
 xref: NIF_GrossAnatomy:birnlex_937
 is_a: UBERON:0002316 ! white matter of neuraxis
@@ -43116,6 +43244,7 @@ xref: HOG:0000128
 xref: TAO:0000443
 xref: XAO:0000442
 xref: ZFA:0000443
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
@@ -43165,6 +43294,7 @@ xref: HOG:0000131
 xref: TAO:0000400
 xref: XAO:0000458
 xref: ZFA:0000400
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
@@ -43179,6 +43309,7 @@ xref: HOG:0000132
 xref: TAO:0000524
 xref: XAO:0000459
 xref: ZFA:0000524
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
@@ -43192,6 +43323,7 @@ subset: uberon_slim
 xref: TAO:0005112
 xref: XAO:0000462
 xref: ZFA:0005112
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
@@ -43206,6 +43338,7 @@ xref: HOG:0000133
 xref: TAO:0000344
 xref: XAO:0000463
 xref: ZFA:0000344
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
@@ -43405,6 +43538,8 @@ xref: TAO:0001205
 xref: XAO:0003085
 xref: ZFA:0001205
 is_a: UBERON:0002418 ! cartilage
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001710 ! lower jaw
 relationship: part_of UBERON:0004362 ! mandibular arch
 
 [Term]
@@ -43419,6 +43554,7 @@ xref: TAO:0000444
 xref: XAO:0003086
 xref: ZFA:0000444
 is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of UBERON:0003129 ! skull
 
 [Term]
 id: UBERON:0003109
@@ -44800,6 +44936,7 @@ xref: EHDAA:6180
 xref: EHDAA2:0000784
 xref: HOG:0000779
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001464
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001464 ! hip
@@ -44830,6 +44967,7 @@ xref: EHDAA:6230
 xref: EHDAA2:0001835
 xref: HOG:0000761
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001467
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001467 ! shoulder
@@ -45440,7 +45578,7 @@ xref: EHDAA2:0002065
 xref: HOG:0001390
 xref: MA:0001596
 xref: ncithesaurus:Tongue_Skeletal_Muscle_Tissue
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+is_a: UBERON:0003899 ! implied link automatically realized ! skeletal muscle of head
 relationship: part_of UBERON:0001723
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -46406,7 +46544,7 @@ synonym: "submucosa of anal region" EXACT [OBOL:automatic]
 synonym: "submucosa of anatomical anal canal" EXACT [OBOL:automatic]
 xref: EMAPA:27535
 xref: FMA:85399
-is_a: UBERON:0000009 ! implied link automatically realized ! submucosa
+is_a: UBERON:0001208 ! implied link automatically realized ! submucosa of large intestine
 relationship: part_of UBERON:0000159
 intersection_of: UBERON:0000009 ! submucosa
 intersection_of: part_of UBERON:0000159 ! anal canal
@@ -46598,7 +46736,7 @@ synonym: "organ mucosa of anal region" EXACT [OBOL:automatic]
 synonym: "organ mucosa of anatomical anal canal" EXACT [OBOL:automatic]
 xref: EMAPA:27531
 xref: FMA:74654
-is_a: UBERON:0004786 ! implied link automatically realized ! gastrointestinal system mucosa
+is_a: UBERON:0001207 ! implied link automatically realized ! mucosa of large intestine
 relationship: part_of UBERON:0000159
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000159 ! anal canal
@@ -46813,7 +46951,7 @@ xref: EMAPA:17881
 xref: EMAPA:18872
 xref: MA:0001592
 xref: ncithesaurus:Tongue_Epithelium
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
 relationship: part_of UBERON:0001723
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -48455,8 +48593,8 @@ id: UBERON:0003409
 name: gland of tongue
 synonym: "tongue gland" EXACT [OBOL:automatic]
 xref: EMAPA:25097
-is_a: UBERON:0002530 ! implied link automatically realized ! gland
 is_a: UBERON:0003212 ! implied link automatically realized ! gustatory organ
+is_a: UBERON:0003408 ! implied link automatically realized ! gland of gut
 relationship: part_of UBERON:0001723
 intersection_of: UBERON:0002530 ! gland
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -48806,6 +48944,7 @@ synonym: "nerve of shoulder" EXACT [OBOL:automatic]
 xref: MA:0000634
 is_a: UBERON:0003432 ! implied link automatically realized ! chest nerve
 is_a: UBERON:0003441 ! implied link automatically realized ! forelimb nerve
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001467
 intersection_of: UBERON:0001021 ! nerve
 intersection_of: part_of UBERON:0001467 ! shoulder
@@ -49497,6 +49636,7 @@ id: UBERON:0003470
 name: artery of upper lip
 xref: MA:0001917
 is_a: UBERON:0001637 ! implied link automatically realized ! artery
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001834
 intersection_of: UBERON:0001637 ! artery
@@ -49507,6 +49647,7 @@ id: UBERON:0003471
 name: artery of lower lip
 xref: MA:0001916
 is_a: UBERON:0001637 ! implied link automatically realized ! artery
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001835
 intersection_of: UBERON:0001637 ! artery
@@ -49580,6 +49721,7 @@ name: vein of upper lip
 synonym: "upper lip vein" EXACT [OBOL:automatic]
 xref: MA:0002255
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001834
 intersection_of: UBERON:0001638 ! vein
@@ -49591,6 +49733,7 @@ name: vein of lower lip
 synonym: "lower lip vein" EXACT [OBOL:automatic]
 xref: MA:0002253
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001835
 intersection_of: UBERON:0001638 ! vein
@@ -49904,8 +50047,8 @@ id: UBERON:0003499
 name: brain blood vessel
 synonym: "blood vessel of brain" EXACT [OBOL:automatic]
 xref: MA:0002769
-is_a: UBERON:0001981 ! implied link automatically realized ! blood vessel
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 relationship: part_of UBERON:0000955
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0000955 ! brain
@@ -51211,6 +51354,7 @@ synonym: "textus connectivus of hip region" EXACT [OBOL:automatic]
 synonym: "textus connectivus of regio coxae" EXACT [OBOL:automatic]
 xref: MA:0000656
 is_a: UBERON:0003589 ! implied link automatically realized ! hindlimb connective tissue
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001464
 intersection_of: UBERON:0002384 ! connective tissue
 intersection_of: part_of UBERON:0001464 ! hip
@@ -51284,6 +51428,7 @@ synonym: "textus connectivus of shoulder" EXACT [OBOL:automatic]
 xref: MA:0000632
 is_a: UBERON:0003572 ! implied link automatically realized ! chest connective tissue
 is_a: UBERON:0003588 ! implied link automatically realized ! forelimb connective tissue
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0001467
 intersection_of: UBERON:0002384 ! connective tissue
 intersection_of: part_of UBERON:0001467 ! shoulder
@@ -52244,6 +52389,7 @@ is_a: UBERON:0002522 ! implied link automatically realized ! tunica media
 relationship: part_of UBERON:0000947
 intersection_of: UBERON:0002522 ! tunica media
 intersection_of: part_of UBERON:0000947 ! aorta
+relationship: part_of UBERON:0004663 ! aorta wall
 
 [Term]
 id: UBERON:0003619
@@ -52262,6 +52408,7 @@ is_a: UBERON:0002523 ! implied link automatically realized ! tunica intima
 relationship: part_of UBERON:0000947
 intersection_of: UBERON:0002523 ! tunica intima
 intersection_of: part_of UBERON:0000947 ! aorta
+relationship: part_of UBERON:0004663 ! aorta wall
 
 [Term]
 id: UBERON:0003620
@@ -53574,6 +53721,7 @@ def: "the major nerves supplying sympathetic innervation to the abdomen, includi
 xref: FMA:5883
 xref: GAID:800
 is_a: UBERON:0001021 ! nerve
+is_a: UBERON:0003377 ! implied link automatically realized ! nerve of peripheral nervous system
 relationship: part_of UBERON:0000013 ! sympathetic nervous system
 
 [Term]
@@ -53772,10 +53920,9 @@ union_of: UBERON:0002374 ! metacarpal bone
 
 [Term]
 id: UBERON:0003822
-name: upper arm
+name: forelimb stylopod
 synonym: "arm stylopod" EXACT [OBOL:automatic]
 synonym: "brachial region stylopod" EXACT [OBOL:automatic]
-synonym: "forelimb stylopod" EXACT []
 synonym: "forelimb stylopod" EXACT [OBOL:automatic]
 synonym: "forelimb stylopodium" EXACT [OBOL:automatic]
 synonym: "Proximal segment of free upper limb" EXACT []
@@ -53784,6 +53931,7 @@ synonym: "stylopod of arm" EXACT []
 synonym: "stylopod of brachial region" EXACT [OBOL:automatic]
 synonym: "stylopod of forelimb" EXACT []
 synonym: "stylopod of proximal segment of free upper limb" EXACT [OBOL:automatic]
+synonym: "upper arm" EXACT [MA:0000035]
 xref: BTO:0001447
 xref: EHDAA:4186
 xref: EHDAA:6234
@@ -53863,7 +54011,7 @@ xref: MA:0000682
 is_a: UBERON:0003464 ! implied link automatically realized ! hindlimb bone
 relationship: part_of UBERON:0000376
 intersection_of: UBERON:0001474 ! bone
-intersection_of: part_of UBERON:0000376 ! upper leg
+intersection_of: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0003827
@@ -54116,7 +54264,7 @@ synonym: "vertebrate tooth epithelium" EXACT [OBOL:automatic]
 xref: HOG:0001443
 xref: ZFA:0005134
 xref: ZFA:0005135
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
 relationship: part_of UBERON:0001091
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001091 ! calcareous tooth
@@ -54566,6 +54714,7 @@ synonym: "subdivision of hippocampus" EXACT []
 xref: FMA:74041
 xref: MA:0002428
 is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 relationship: part_of UBERON:0001954
 intersection_of: UBERON:0002616 ! regional part of brain
 intersection_of: part_of UBERON:0001954 ! hippocampus
@@ -54576,6 +54725,7 @@ id: UBERON:0003881
 name: CA1 field of hippocampus
 synonym: "CA1" EXACT []
 synonym: "CA1 field" EXACT []
+synonym: "CA1 field of hippocampus" EXACT []
 synonym: "hippocampus CA1" EXACT []
 synonym: "region 1 of Ammon's horn" EXACT []
 xref: EFO:0002454
@@ -54589,6 +54739,7 @@ id: UBERON:0003882
 name: CA2 field of hippocampus
 synonym: "CA2" EXACT []
 synonym: "CA2 field" EXACT []
+synonym: "CA2 field of hippocampus" EXACT []
 synonym: "hippocampus CA2" EXACT []
 synonym: "region 2 of Ammon's horn" EXACT []
 xref: EFO:0002455
@@ -54602,6 +54753,7 @@ id: UBERON:0003883
 name: CA3 field of hippocampus
 synonym: "CA3" EXACT []
 synonym: "CA3 field" EXACT []
+synonym: "CA3 field of hippocampus" EXACT []
 synonym: "hippocampus CA3" EXACT []
 synonym: "region 3 of Ammon's horn" EXACT []
 xref: EFO:0002456
@@ -54613,6 +54765,7 @@ is_a: UBERON:0003876 ! hippocampal region
 [Term]
 id: UBERON:0003884
 name: CA4 field of hippocampus
+comment: merge into hilus?
 synonym: "CA4" EXACT []
 synonym: "CA4 field" EXACT []
 synonym: "hippocampus CA4" EXACT []
@@ -54682,10 +54835,10 @@ xref: galen:FallopianTube
 xref: MA:0000385
 xref: OpenCyc:Mx4rvViVeZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000993 ! oviduct
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: connects UBERON:0000995 ! uterus
 relationship: connects UBERON:0001179 ! peritoneal cavity
 relationship: develops_from UBERON:0003890 ! Mullerian duct
+relationship: part_of UBERON:0000474 ! female reproductive system
 relationship: part_of UBERON:0002355 ! pelvis
 
 [Term]
@@ -54815,6 +54968,7 @@ xref: TAO:0000349
 xref: XAO:0003229
 xref: ZFA:0000349
 is_a: UBERON:0003898 ! skeletal muscle of trunk
+relationship: part_of UBERON:0001774 ! muscle of trunk
 
 [Term]
 id: UBERON:0003901
@@ -55681,7 +55835,7 @@ name: uterine tube infundibulum
 def: "the funnel-like expansion of the abdominal extremity of the uterine tube" [MP:0009466, Wikipedia:Infundibulum_of_uterine_tube]
 xref: FMA:18307
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0003889 ! fallopian tube
 
 [Term]
@@ -56015,6 +56169,7 @@ relationship: part_of UBERON:0001987 ! placenta
 id: UBERON:0004022
 name: embryonic neuroepithelium
 def: "the epithelial cell layer that lines the neural tube and develops into the nervous system and into the neural crest cells" [MP:0004261]
+synonym: "neurepithelium" BROAD [BTO:0000314]
 is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
@@ -57244,6 +57399,7 @@ name: ventriculo bulbo valve
 def: "A heart valve located between the ventricle and bulbus arteriosus." [GO:0003173]
 xref: ZFA:0001375
 is_a: UBERON:0000946 ! cardial valve
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0002062 ! endocardial cushion
 
 [Term]
@@ -57372,7 +57528,7 @@ id: UBERON:0004165
 name: ammon gyrus
 alt_id: UBERON:0003940
 def: "The ammon gyrus, often subdivided into the CA1 and CA3 regions, is one of the two interlocking gyri of the hippocampus that is rich in large pyramidal neurons" [GO:0021541, MP:0000815]
-comment: TODO check - GO uses this as a separate term for hippocampus, but not in any other AO. NIF implies this is the same as hippocampus proper
+comment: TODO check - GO uses this as a separate term from hippocampus, but not in any other AO. NIF implies this is the same as hippocampus proper
 synonym: "Ammon's horn" RELATED []
 synonym: "Cornu Ammonis" RELATED []
 is_a: UBERON:0000200 ! gyrus
@@ -57944,7 +58100,7 @@ xref: MA:0000685
 is_a: UBERON:0003442 ! implied link automatically realized ! hindlimb nerve
 relationship: part_of UBERON:0000376
 intersection_of: UBERON:0001021 ! nerve
-intersection_of: part_of UBERON:0000376 ! upper leg
+intersection_of: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0004215
@@ -58018,7 +58174,7 @@ xref: MA:0000607
 is_a: UBERON:0003441 ! implied link automatically realized ! forelimb nerve
 relationship: part_of UBERON:0003822
 intersection_of: UBERON:0001021 ! nerve
-intersection_of: part_of UBERON:0003822 ! upper arm
+intersection_of: part_of UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0004218
@@ -58209,6 +58365,7 @@ synonym: "vas deferens non-striated muscle" EXACT [OBOL:automatic]
 synonym: "vas deferens smooth muscle tissue" EXACT [OBOL:automatic]
 xref: MA:0001750
 is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001000
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0001000 ! vas deferens
@@ -58759,6 +58916,7 @@ synonym: "smooth muscle of fallopian tube" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of fallopian tube" EXACT [OBOL:automatic]
 xref: MA:0001721
 is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0003889
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0003889 ! fallopian tube
@@ -58894,7 +59052,7 @@ xref: MA:0000604
 is_a: UBERON:0002428 ! implied link automatically realized ! limb bone
 relationship: part_of UBERON:0003822
 intersection_of: UBERON:0001474 ! bone
-intersection_of: part_of UBERON:0003822 ! upper arm
+intersection_of: part_of UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0004251
@@ -59017,7 +59175,7 @@ xref: MA:0000684
 is_a: UBERON:0003663 ! implied link automatically realized ! hindlimb muscle
 relationship: part_of UBERON:0000376
 intersection_of: UBERON:0001630 ! muscle organ
-intersection_of: part_of UBERON:0000376 ! upper leg
+intersection_of: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0004253
@@ -59095,7 +59253,7 @@ xref: MA:0000606
 is_a: UBERON:0003662 ! implied link automatically realized ! forelimb muscle
 relationship: part_of UBERON:0003822
 intersection_of: UBERON:0001630 ! muscle organ
-intersection_of: part_of UBERON:0003822 ! upper arm
+intersection_of: part_of UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0004256
@@ -59174,7 +59332,7 @@ xref: MA:0000681
 is_a: UBERON:0003516 ! implied link automatically realized ! hindlimb blood vessel
 relationship: part_of UBERON:0000376
 intersection_of: UBERON:0001981 ! blood vessel
-intersection_of: part_of UBERON:0000376 ! upper leg
+intersection_of: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0004258
@@ -59248,7 +59406,7 @@ xref: MA:0000603
 is_a: UBERON:0003515 ! implied link automatically realized ! forelimb blood vessel
 relationship: part_of UBERON:0003822
 intersection_of: UBERON:0001981 ! blood vessel
-intersection_of: part_of UBERON:0003822 ! upper arm
+intersection_of: part_of UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0004261
@@ -59327,7 +59485,7 @@ xref: MA:0000686
 is_a: UBERON:0003532 ! implied link automatically realized ! hindlimb skin
 relationship: part_of UBERON:0000376
 intersection_of: UBERON:0000014 ! zone of skin
-intersection_of: part_of UBERON:0000376 ! upper leg
+intersection_of: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0004263
@@ -59351,7 +59509,7 @@ xref: MA:0000608
 is_a: UBERON:0003531 ! implied link automatically realized ! forelimb skin
 relationship: part_of UBERON:0003822
 intersection_of: UBERON:0000014 ! zone of skin
-intersection_of: part_of UBERON:0003822 ! upper arm
+intersection_of: part_of UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0004264
@@ -59497,7 +59655,7 @@ xref: MA:0000683
 is_a: UBERON:0003589 ! implied link automatically realized ! hindlimb connective tissue
 relationship: part_of UBERON:0000376
 intersection_of: UBERON:0002384 ! connective tissue
-intersection_of: part_of UBERON:0000376 ! upper leg
+intersection_of: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0004267
@@ -59671,7 +59829,7 @@ xref: MA:0000605
 is_a: UBERON:0003588 ! implied link automatically realized ! forelimb connective tissue
 relationship: part_of UBERON:0003822
 intersection_of: UBERON:0002384 ! connective tissue
-intersection_of: part_of UBERON:0003822 ! upper arm
+intersection_of: part_of UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0004270
@@ -60114,7 +60272,7 @@ synonym: "nerve of parasympathetic nervous system" EXACT [OBOL:automatic]
 xref: EHDAA2:0001401
 xref: HOG:0000641
 xref: MA:0000224
-is_a: UBERON:0001021 ! implied link automatically realized ! nerve
+is_a: UBERON:0003377 ! implied link automatically realized ! nerve of peripheral nervous system
 relationship: part_of UBERON:0000011
 intersection_of: UBERON:0001021 ! nerve
 intersection_of: part_of UBERON:0000011 ! parasympathetic nervous system
@@ -60979,8 +61137,10 @@ xref: GAID:894
 xref: ncithesaurus:Descemet_s_Membrane
 xref: ZFA:0001686
 is_a: UBERON:0000476 ! acellular anatomical structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: adjacent_to UBERON:0001777 ! substantia propria of cornea
 relationship: adjacent_to UBERON:0001985 ! corneal endothelium
+relationship: part_of UBERON:0000964 ! cornea
 
 [Term]
 id: UBERON:0004368
@@ -61873,7 +62033,7 @@ xref: FMA:50208
 is_a: UBERON:0004482 ! implied link automatically realized ! Musculature of lower limb
 relationship: part_of UBERON:0000376
 intersection_of: UBERON:0001015 ! musculature
-intersection_of: part_of UBERON:0000376 ! upper leg
+intersection_of: part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0004464
@@ -61997,7 +62157,7 @@ intersection_of: part_of UBERON:0001467 ! shoulder
 id: UBERON:0004477
 name: Set of muscles of tongue
 xref: FMA:71289
-is_a: UBERON:0001015 ! implied link automatically realized ! musculature
+is_a: UBERON:0004461 ! implied link automatically realized ! Musculature of head
 relationship: part_of UBERON:0001723
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -62125,6 +62285,7 @@ intersection_of: part_of UBERON:0001050 ! atrium
 id: UBERON:0004491
 name: Cardiac muscle tissue of interatrial septum
 xref: FMA:84083
+is_a: UBERON:0004490 ! implied link automatically realized ! Cardiac muscle tissue of atrium
 is_a: UBERON:0004492 ! implied link automatically realized ! Cardiac muscle tissue of cardiac septum
 relationship: part_of UBERON:0002085
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
@@ -63282,6 +63443,7 @@ id: UBERON:0004643
 name: lateral ventricle ependyma
 xref: FMA:242825
 xref: MA:0000964
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0004670 ! implied link automatically realized ! ependyma
 relationship: part_of UBERON:0002285
 intersection_of: UBERON:0004670 ! ependyma
@@ -63505,6 +63667,7 @@ name: aorta tunica adventitia
 xref: FMA:14283
 xref: MA:0002902
 is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0004663 ! aorta wall
 
 [Term]
 id: UBERON:0004665
@@ -63515,6 +63678,7 @@ synonym: "Tunica muscularis (Vesicula seminalis)" EXACT [FMA:19404]
 xref: FMA:19404
 xref: MA:0002913
 is_a: UBERON:0002385 ! implied link automatically realized ! muscle tissue
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000998
 intersection_of: UBERON:0002385 ! muscle tissue
 intersection_of: part_of UBERON:0000998 ! seminal vesicle
@@ -63599,6 +63763,7 @@ synonym: "posterior horn lateral ventricle" EXACT [NIF_GrossAnatomy:birnlex_1297
 synonym: "posterior horn of lateral ventricle" EXACT [FMA:83700]
 xref: FMA:83700
 xref: NIF_GrossAnatomy:birnlex_1297
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0002285 ! lateral ventricle
 
@@ -64041,7 +64206,7 @@ xref: BTO:0003448
 xref: FMA:61844
 xref: Wikipedia:Septum_pellucidum
 is_a: UBERON:0000119 ! cell layer
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 relationship: part_of UBERON:0002285 ! lateral ventricle
 
 [Term]
@@ -65234,6 +65399,7 @@ synonym: "epithelium of oviduct" EXACT [OBOL:automatic]
 synonym: "oviduct epithelial tissue" EXACT [OBOL:automatic]
 xref: MA:0001718
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000993
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000993 ! oviduct
@@ -65250,7 +65416,7 @@ synonym: "seminal gland epithelium" EXACT [OBOL:automatic]
 synonym: "seminal vesicle epithelial tissue" EXACT [OBOL:automatic]
 xref: MA:0001745
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000998
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000998 ! seminal vesicle
@@ -65280,6 +65446,7 @@ synonym: "vas deferens epithelial tissue" EXACT [OBOL:automatic]
 xref: FMA:225317
 xref: MA:0001749
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001000
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001000 ! vas deferens
@@ -65403,7 +65570,7 @@ xref: BTO:0001811
 xref: FMA:19885
 xref: GAID:401
 xref: MA:0001748
-is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004910 ! implied link automatically realized ! epithelium of testis
 relationship: part_of UBERON:0001343
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001343 ! seminiferous tubule of testis
@@ -65638,7 +65805,7 @@ synonym: "lip skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle of lip" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of lip" EXACT [OBOL:automatic]
 xref: MA:0001578
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+is_a: UBERON:0003899 ! implied link automatically realized ! skeletal muscle of head
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001833
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
@@ -67089,7 +67256,7 @@ synonym: "seminal vesicle mucous membrane" EXACT [OBOL:automatic]
 synonym: "seminal vesicle organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:19405
 is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000998
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0000998 ! seminal vesicle
@@ -67155,6 +67322,7 @@ synonym: "vas deferens mucous membrane" EXACT [OBOL:automatic]
 synonym: "vas deferens organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:19240
 is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001000
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001000 ! vas deferens
@@ -68061,7 +68229,7 @@ synonym: "tongue mucosa of organ" EXACT [OBOL:automatic]
 synonym: "tongue mucous membrane" EXACT [OBOL:automatic]
 synonym: "tongue organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:54807
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+is_a: UBERON:0003729 ! implied link automatically realized ! mouth mucosa
 relationship: part_of UBERON:0001723
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -68143,6 +68311,7 @@ synonym: "oropharynx mucous membrane" EXACT [OBOL:automatic]
 synonym: "oropharynx organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:54933
 is_a: UBERON:0000355 ! implied link automatically realized ! pharyngeal mucosa
+is_a: UBERON:0004786 ! implied link automatically realized ! gastrointestinal system mucosa
 relationship: part_of UBERON:0001729
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001729 ! oropharynx
@@ -68294,7 +68463,7 @@ synonym: "upper lip mucosa of organ" EXACT [OBOL:automatic]
 synonym: "upper lip mucous membrane" EXACT [OBOL:automatic]
 synonym: "upper lip organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:59832
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+is_a: UBERON:0003729 ! implied link automatically realized ! mouth mucosa
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001834
 intersection_of: UBERON:0000344 ! mucosa
@@ -68311,7 +68480,7 @@ synonym: "mucosa of organ of lower lip" EXACT [OBOL:automatic]
 synonym: "mucous membrane of lower lip" EXACT [OBOL:automatic]
 synonym: "organ mucosa of lower lip" EXACT [OBOL:automatic]
 xref: FMA:59833
-is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
+is_a: UBERON:0003729 ! implied link automatically realized ! mouth mucosa
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001835
 intersection_of: UBERON:0000344 ! mucosa
@@ -68741,7 +68910,7 @@ synonym: "uterine tube mucous membrane" EXACT [OBOL:automatic]
 synonym: "uterine tube organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:18319
 is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0003889
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0003889 ! fallopian tube
@@ -70318,7 +70487,7 @@ xref: HOG:0001041
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 relationship: OBO_REL:part_of UBERON:0000376
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: OBO_REL:part_of UBERON:0000376 ! upper leg
+intersection_of: OBO_REL:part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0005226
@@ -70345,7 +70514,7 @@ xref: HOG:0000990
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 relationship: OBO_REL:part_of UBERON:0003822
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: OBO_REL:part_of UBERON:0003822 ! upper arm
+intersection_of: OBO_REL:part_of UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0005229
@@ -70579,7 +70748,7 @@ xref: HOG:0000506
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
 relationship: OBO_REL:part_of UBERON:0000376
 intersection_of: UBERON:0003104 ! mesenchyme
-intersection_of: OBO_REL:part_of UBERON:0000376 ! upper leg
+intersection_of: OBO_REL:part_of UBERON:0000376 ! hindlimb stylopod
 
 [Term]
 id: UBERON:0005255
@@ -70615,7 +70784,7 @@ xref: HOG:0000505
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
 relationship: OBO_REL:part_of UBERON:0003822
 intersection_of: UBERON:0003104 ! mesenchyme
-intersection_of: OBO_REL:part_of UBERON:0003822 ! upper arm
+intersection_of: OBO_REL:part_of UBERON:0003822 ! forelimb stylopod
 
 [Term]
 id: UBERON:0005259
@@ -70852,7 +71021,7 @@ id: UBERON:0005284
 name: brain vasculature
 xref: TAO:0000099
 xref: ZFA:0000099
-is_a: UBERON:0002049 ! implied link automatically realized ! vasculature
+is_a: UBERON:0002200 ! implied link automatically realized ! vasculature of head
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
 relationship: part_of UBERON:0000955
 intersection_of: UBERON:0002049 ! vasculature
@@ -70917,7 +71086,7 @@ synonym: "tela choroidea telencephalic ventricle" EXACT []
 xref: FMA:83712
 xref: ZFA:0005160
 xref: ZFIN:ZDB-ANAT-090922-202
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0005283 ! tela choroidea
 relationship: part_of UBERON:0002285
 intersection_of: UBERON:0005283 ! tela choroidea
