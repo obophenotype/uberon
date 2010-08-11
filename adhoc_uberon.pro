@@ -21,6 +21,7 @@ idspace_taxon('XAO','NCBITaxon:8353').
 idspace_taxon('AAO','NCBITaxon:8292').
 idspace_taxon('HAO','NCBITaxon:7399').
 
+%% class_taxon_invalid(UberonViolatingClass,ExtClass,Taxon,UberonClassWithTaxonRestriction,OnlyInThisTaxon)
 class_taxon_invalid(U,X,T,Y,TY) :-
 	class(U),
 	entity_xref(U,X),
@@ -30,6 +31,16 @@ class_taxon_invalid(U,X,T,Y,TY) :-
 	restriction(Y,only_in_taxon,TY),
 	debug(tax,'~w ~w check: ~w',[X,T,TY]),
 	\+ subclassRT(T,TY).
+
+class_taxon_invalid(U,X,T,Y,TY) :-
+	class(U),
+	entity_xref(U,X),
+	id_idspace(X,S),
+	idspace_taxon(S,T),
+	bf_parentRT(U,Y),
+	restriction(Y,never_in_taxon,TY),
+	debug(tax,'~w ~w check: ~w',[X,T,TY]),
+	subclassRT(T,TY).
 
 
 t:-

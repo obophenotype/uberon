@@ -1518,7 +1518,7 @@ relationship: develops_from UBERON:0000084 ! ureteric bud
 [Term]
 id: UBERON:0000083
 name: mesonephric tubule
-def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros." [Wikipedia:Mesonephric_tubules]
+def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros[WP]." [Wikipedia:Mesonephric_tubules]
 xref: HOG:0000500 ! mesonephric tubule
 intersection_of: UBERON:0003914 ! epithelial tube
 intersection_of: part_of UBERON:0000080 ! mesonephros
@@ -5790,20 +5790,20 @@ xref: BTO:0002169 ! anterior commissure
 id: UBERON:0000936
 name: posterior commissure
 alt_id: UBERON:FBbt_00001120-FMA_62072-MA_0002743-ZFA_0000320
-def: "Rounded band of white fibers crossing the middle line on the dorsal aspect of the upper end of the cerebral aqueduct. It is important in the bilateral pupillary light reflex." [Wikipedia:Posterior_commissure]
-comment: This class was created automatically from a combination of ontologies
+def: "Rounded band of white fibers crossing the middle line on the dorsal aspect of the upper end of the cerebral aqueduct. It is important in the bilateral pupillary light reflex. Its fibers acquire their medullary sheaths early, but their connections have not been definitely determined. Most of them have their origin in a nucleus, the nucleus of the posterior commissure (nucleus of Darkschewitsch), which lies in the central gray substance of the upper end of the cerebral aqueduct, in front of the nucleus of the oculomotor nerve. Some are probably derived from the posterior part of the thalamus and from the superior colliculus, whereas others are believed to be continued downward into the medial longitudinal fasciculus. The posterior commissure interconnects the pretectal nuclei, mediating the consensual pupillary light reflex[WP].Diencephalic tract which is located in the vicinity of the dorsal diencephalon and mesencephalon and connects the pretectal nuclei. From Neuroanatomy of the Zebrafish Brain[ZFA]." [Wikipedia:Posterior_commissure, ZFA:0000320]
+comment: disjoint from FBbt:00001120
 subset: uberon_slim
-synonym: "caudal commissure" EXACT []
-synonym: "epithalamic commissure" EXACT []
+synonym: "caudal commissure" EXACT [FMA:62072, ZFA:0000320]
+synonym: "epithalamic commissure" EXACT [FMA:62072]
 xref: FMA:62072 ! Posterior commissure
 xref: MA:0002743 ! posterior commissure
 xref: NIF_GrossAnatomy:birnlex_1026 ! Posterior commissure
 xref: TAO:0000320 ! caudal commissure
 xref: ZFA:0000320 ! caudal commissure
-is_a: UBERON:0001020 ! commissure
-relationship: part_of UBERON:0000934 ! ventral nerve cord
-relationship: part_of UBERON:0002298 ! brainstem
 xref: ncithesaurus:Posterior_Commissure ! Posterior Commissure
+is_a: UBERON:0001020 ! commissure
+relationship: part_of UBERON:0002298 ! brainstem
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 
 [Term]
 id: UBERON:0000937
@@ -6739,7 +6739,7 @@ id: UBERON:0000988
 name: pons
 alt_id: UBERON:FBbt_00004840-FMA_67943-MA_0000204-MIAA_0000115-ZFA_0001618
 def: "Brainstrem structure that has as its parts the pontine tegmentum and basal part of pons. Examples: There is only one pons[FMA]." [Wikipedia:Pons, FMA:67943]
-comment: pons absent from zebrafish. note this is not the same as FBbt:00004840
+comment: pons absent from zebrafish. note this is of course not the same as FBbt:00004840
 subset: uberon_slim
 synonym: "pons of Varolius" EXACT []
 xref: BTO:0001101
@@ -6754,6 +6754,7 @@ is_a: UBERON:0002680 ! regional part of metencephalon
 relationship: part_of UBERON:0001895 ! metencephalon
 relationship: part_of UBERON:0002298 ! brainstem
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
+relationship: never_in_taxon NCBITaxon:7955 ! Danio rerio
 xref: EFO:0001394 ! pons
 
 [Term]
@@ -8800,6 +8801,8 @@ name: neural arch
 def: "posterior part of a vertebra that consists of a pair of pedicles and a pair of laminae, and supports seven processes: four articular processes, two transverse processes one spinous process[WP]. ZFA: A neural arch encloses the neural canal and typically meets its partner to form a neural spine. The neural arch can be a replacement ossification of the basidorsal cartilage or can form directly in membrane bone." [Wikipedia:Vertebral_arch]
 synonym: "arch of vertebra" EXACT [FMA:11946]
 synonym: "vertebral arch" EXACT []
+synonym: "vertebra neural arch" EXACT [MA:0001453]
+xref: MA:0001453 ! vertebra neural arch
 xref: FMA:11946 ! vertebral arch
 xref: ZFA:0001066 ! neural arch
 is_a: UBERON:0002513 ! endochondral bone
@@ -13529,14 +13532,13 @@ xref: ncithesaurus:Left_Fallopian_Tube ! Left Fallopian Tube
 
 [Term]
 id: UBERON:0001305
-name: follicle of ovary
+name: ovarian follicle
 alt_id: UBERON:FMA_18640-MA_0001707-ZFA_0001110
-def: "Oocyte development of zebrafish has been divided into five stages based on morphological criteria and on physiological and biochemical events. Stage I follicles (less than 140 microns) are primary growth stage, stage II follicles (140-340 microns) are cortical alveolus stage, stage III (340-690 microns) are vitellogenesis, stage IV (690-730 microns) are oocyte maturation, and stage V follicles are matured egg.<a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-1020'>Selman et al, 1993.</a>" [Wikipedia:Ovarian_follicle, ZFIN:curator]
+def: "Ovarian follicles are the basic units of female reproductive biology, each of which is composed of roughly spherical aggregations of cells found in the ovary. They contain a single oocyte (aka ovum or egg). These structures are periodically initiated to grow and develop, culminating in ovulation  of usually a single competent oocyte in humans. These eggs/ova are only developed once every menstrual cycle (e.g. once a month in humans)[WP]." [Wikipedia:Ovarian_follicle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "egg follicle" RELATED []
-synonym: "follicle of ovary viewed macroscopically" EXACT []
-synonym: "ovarian follicle" EXACT []
+synonym: "follicle of ovary" EXACT []
 synonym: "ovary follicle" EXACT []
 xref: BTO:0000475
 xref: FMA:18640 ! Follicle of ovary
@@ -13548,6 +13550,7 @@ xref: TAO:0001110 ! ovarian follicle
 xref: ZFA:0001110 ! ovarian follicle
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000992 ! ovary
+relationship: develops_from UBERON:0005296 ! ovary sex cord
 xref: ncithesaurus:Ovarian_Follicle ! Ovarian Follicle
 
 [Term]
@@ -15276,11 +15279,11 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0001421
 name: pectoral girdle
 alt_id: UBERON:FMA_23217-MA_0000292-MIAA_0000181-XAO_0003063-ZFA_0000407
-def: "Subdivision of free upper limb, which is the proximal segment of an upper limb and links the free upper limb to the trunk; it is demarcated by the plane of the surface of the glenoid fossa from the free upper limb; together with the free upper limb, it constitutes the upper limb. Examples: There are only two instances, right and left pectoral girdles. // Arched skeletal structure that supports the forelimbs, the rudiments of which can be distinguished in mesenchyme at NF stage 51, and is complete by NF stage 60." [ISBN:0471209627, NLM:pectoral+girdle, Wikipedia:Pectoral_girdle]
+def: "set of bones which connects the upper limb to the axial skeleton on each side. It consists of the clavicle and scapula in humans and, in those species with three bones in the pectoral girdle, the coracoid. Some mammalian species (e.g. the dog and the horse) have only the scapula. In humans, the only joints between the shoulder girdle and axial skeleton are the sternoclavicular joints on each side. No joint exists between each scapula and the rib cage; instead the muscular connection between the two permits relatively great mobility of the shoulder girdle in relation to the pelvic girdle., n those species having only the scapula, no joint exists between the forelimb and the thorax, the only attachment being muscular[WP]." [Wikipedia:Pectoral_girdle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "girdle - pectoral" EXACT []
-synonym: "pectoral girdle bone" EXACT []
+synonym: "pectoral girdle bones" EXACT []
 synonym: "shoulder bones" RELATED []
 synonym: "shoulder girdle" RELATED []
 synonym: "upper limb girdle" EXACT []
@@ -20032,6 +20035,7 @@ xref: XAO:0000189 ! auditory apparatus
 is_a: UBERON:0000020 ! sense organ
 relationship: part_of UBERON:0000033 ! head
 relationship: part_of UBERON:0002105 ! auditory system
+relationship: capable_of GO:0050910 ! detection of mechanical stimulus involved in sensory perception of sound
 xref: OpenCyc:Mx4rvViXS5wpEbGdrcN5Y29ycA ! earring
 xref: OpenCyc:Mx4rvVjL05wpEbGdrcN5Y29ycA ! ear
 xref: EHDAA2:0000423 ! ear
@@ -21509,6 +21513,7 @@ id: UBERON:0001768
 name: vascular layer of eyeball
 alt_id: UBERON:FMA_58103-MA_0002480
 def: "pigmented middle of the three concentric layers that make up an eye[WP]. The pigmented vascular coat of the eyeball, consisting of the CHOROID; CILIARY BODY; and IRIS, which are continuous with each other. (Cline et al., Dictionary of Visual Science, 4th ed)[GAID]." [Wikipedia:Uvea]
+comment: TODO - check child terms, isa vs partof
 subset: uberon_slim
 synonym: "tunica vasculosa of eyeball" EXACT []
 synonym: "uvea" EXACT []
@@ -21516,7 +21521,7 @@ synonym: "uveal tract" EXACT []
 xref: FMA:58103 ! Vascular layer of eyeball
 xref: GAID:912 ! uvea
 xref: MA:0002480 ! uvea
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0002049 ! vasculature
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 xref: ncithesaurus:Uvea ! Uvea
 
@@ -21563,6 +21568,25 @@ relationship: develops_from UBERON:0003072 ! eye vesicle
 xref: ncithesaurus:Iris ! Iris
 
 [Term]
+id: UBERON:0001775
+name: ciliary body
+alt_id: UBERON:FMA_58295-MA_0000264-XAO_0000186-ZFA_0001203
+def: "circumferential tissue inside the eye composed of the ciliary muscle and ciliary processes." [Wikipedia:Ciliary_body]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "anterior uvea" RELATED []
+xref: BTO:0000260
+xref: FMA:58295 ! Ciliary body
+xref: GAID:916 ! ciliary body
+xref: HOG:0000102 ! ciliary body
+xref: MA:0000264 ! ciliary body
+xref: ncithesaurus:Ciliary_Body
+xref: TAO:0001203 ! ciliary body
+xref: XAO:0000186 ! ciliary body
+xref: ZFA:0001203 ! ciliary body
+is_a: UBERON:0001768 ! vascular layer of eyeball
+
+[Term]
 id: UBERON:0001770
 name: lacrimal canaliculus
 alt_id: UBERON:FMA_58245-MA_0001294
@@ -21574,6 +21598,15 @@ xref: MA:0001294 ! lacrimal canaliculus
 is_a: UBERON:0000063 ! organ segment
 relationship: part_of UBERON:0001850 ! lacrimal duct
 xref: ncithesaurus:Lacrimal_Canaliculus ! Lacrimal Canaliculus
+
+[Term]
+id: UBERON:0004868
+name: tapetum lucidum
+namespace: uberon
+definition: "a layer of tissue in the eye of many vertebrate  animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors" [Wikipedia:Tapetum_lucidum]
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000970 ! part_of eye
+relationship: adjacent_to UBERON:0000966 ! retina
 
 [Term]
 id: UBERON:0001771
@@ -21661,26 +21694,6 @@ synonym: "muscle organ of torso" EXACT [OBOL:automatic]
 synonym: "muscle organ of trunk" EXACT [OBOL:automatic]
 synonym: "torso muscle organ" EXACT [OBOL:automatic]
 synonym: "trunk muscle organ" EXACT [OBOL:automatic]
-
-[Term]
-id: UBERON:0001775
-name: ciliary body
-alt_id: UBERON:FMA_58295-MA_0000264-XAO_0000186-ZFA_0001203
-def: "circumferential tissue inside the eye composed of the ciliary muscle and ciliary processes." [Wikipedia:Ciliary_body]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "anterior uvea" RELATED []
-xref: BTO:0000260
-xref: FMA:58295 ! Ciliary body
-xref: GAID:916 ! ciliary body
-xref: HOG:0000102 ! ciliary body
-xref: MA:0000264 ! ciliary body
-xref: ncithesaurus:Ciliary_Body
-xref: TAO:0001203 ! ciliary body
-xref: XAO:0000186 ! ciliary body
-xref: ZFA:0001203 ! ciliary body
-is_a: UBERON:0001768 ! vascular layer of eyeball
-relationship: part_of UBERON:0001768 ! vascular layer of eyeball
 
 [Term]
 id: UBERON:0001777
@@ -27321,14 +27334,14 @@ id: UBERON:0002075
 name: viscus
 alt_id: UBERON:FMA_7085-XAO_0003034
 def: "An organ that is located within the body cavity (or in its extension, in the scrotum); it consists of organ parts that are embryologically derived from endoderm, splanchnic mesoderm or intermediate mesoderm; together with other organs, the viscus constitutes the respiratory, gastrointestinal, urinary, reproductive and immune systems, or is the central organ of the cardiovascular system. Examples: heart, lung, esophagus, kidney, ovary, spleen. // An internal organ of the body; especially: one (as the heart, liver, or intestine) located in the great cavity of the trunk proper." [BTO:0001491, Wikipedia:Viscus]
-comment: general anatomical term in FMA
+comment: general anatomical term in FMA. 
 subset: uberon_slim
 synonym: "viscera" RELATED []
 xref: FMA:7085 ! Viscus
 xref: XAO:0003034 ! viscus
 intersection_of: UBERON:0000062 ! organ
 intersection_of: part_of UBERON:0002323 ! body cavity
-relationship: part_of UBERON:0002100 ! trunk
+intersection_of: part_of UBERON:0002100 ! trunk
 xref: BTO:0001491 ! viscus
 
 [Term]
@@ -28934,7 +28947,6 @@ xref: NIF_GrossAnatomy:birnlex_750 ! Tectobulbar tract
 xref: TAO:0000446 ! tecto-bulbar tract
 xref: ZFA:0000446 ! tecto-bulbar tract
 is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
@@ -30684,14 +30696,17 @@ relationship: part_of UBERON:0001771 ! pupil
 id: UBERON:0002270
 name: hyaloid artery
 alt_id: UBERON:FMA_77670-ZFA_0005045
-def: "Artery that is internal to the eye. <a href='ZFIN_jump?record=ZDB-PUB-010205-5'>Isogai et al. 2001.</a>" [Wikipedia:Hyaloid_artery, ZFIN:curator]
+def: "The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus[WP]." [Wikipedia:Hyaloid_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:77670 ! Hyaloid artery
 xref: TAO:0005045 ! hyaloid artery
 xref: ZFA:0005045 ! hyaloid artery
+is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0001637 ! artery
+relationship: part_of UBERON:0003098 ! optic stalk
 xref: HOG:0001478 ! hyaloid artery
+xref: EMAPA:19242 ! hyaloid artery
 
 [Term]
 id: UBERON:0002271
@@ -43668,22 +43683,69 @@ xref: EHDAA2:0001847 ! somatopleure
 id: UBERON:0004875
 name: nephrogenic cord
 def: "a portion of the urogenital ridge which is the source of much of the urinary system[WP]." [Wikipedia:Nephrogenic_cord]
+comment: part_of or develops_from urogenital ridge?
 is_a: UBERON:0002050 ! embryonic structure
-relationship: part_of UBERON:0004876 ! urogenital ridge
-relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: develops_from UBERON:0004876 ! urogenital ridge
 xref: FMA:72168 ! nephrogenic cord
 
 [Term]
 id: UBERON:0004876
 name: urogenital ridge
-def: "embryological  structure which give rise to a portion of the external genitalia[WP]." [Wikipedia:Urogenital_ridge]
+def: "embryological  structure which give rise to a portion of the external genitalia[WP]." [Wikipedia:Urogenital_folds]
 comment: Less commonly, urogenital fold refers to the fold in the mesonephros  which is the precursor of e.g. the suspensory ligament of the ovary. This is the case in older versions of Gray's anatomy[WP]
+synonym: "urogenital fold" EXACT []
 xref: BTO:0001402 ! urogenital ridge
 xref: EMAPA:30888 ! urethral fold
 xref: EMAPA:30899 ! urethral fold
 is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_into UBERON:0004176 ! external reproductive organ
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
 
+[Term]
+id: UBERON:0005294 ! genital ridge
+name: genital ridge
+def: "The precursor to the gonads." [Wikipedia:Gonadal_ridge]
+synonym: "gonadal ridge" EXACT [Wikipedia:Gonadal_ridge]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: part_of UBERON:0004122 ! genitourinary system
+xref: XAO:0000018 ! genital ridge
+
+[Term]
+id: UBERON:0005295
+name: sex cord
+def: "Cordlike masses of epithelial tissue that invaginate from germinal epithelium of the gonad and give rise to seminiferous tubules and rete testes in the male, and primary ovarian follicles and rete ovarii in the female." [http://www.answers.com/topic/sex-cord, Wikipedia:Sex_cords]
+synonym: "primitive sex cord" RELATED []
+is_a: UBERON:0002050 ! embryonic structure
+xref: EHDAA2:0001523 ! primitive sex cords
+relationship: develops_from UBERON:0005294 ! genital ridge
+
+[Term]
+id: UBERON:0005296 ! ovary sex cord
+name: ovary sex cord
+def: "structures that develop from sex cords in the female. After further development they become the ovarian follicles." [Wikipedia:Cortical_cords]
+comment: TODO check secondary vs cortical vs ovary
+synonym: "ovary primitive sex cord" RELATED []
+synonym: "cortical sex cord" RELATED []
+synonym: "cortical cord" RELATED []
+synonym: "secondary cord" RELATED []
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0000992 ! ovary
+xref: EHDAA2:0001363 ! ovary primitive sex cords
+xref: EHDAA:8130 ! primitive sex cords [part_of: "ovary"]
+
+[Term]
+id: UBERON:0005297
+name: testis sex cord
+def: "The testis cords are precursors to the rete testis. They play several different roles in the development of the male genitals[WP]." [Wikipedia:Testis_cords]
+comment: check primary vs testis
+synonym: "testis primitive sex cord" RELATED []
+synonym: "primary sex cord" RELATED []
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0000473 ! testis
+xref: EHDAA2:0002011 ! testis primitive sex cords
+xref: EHDAA:8152 ! primitive sex cords [part_of: "testis"]
+xref: EMAPA:29098 ! primary sex cord [part_of: "testis"] 
 
 [Term]
 id: UBERON:0003082
@@ -53542,6 +53604,8 @@ def: "The inguinal canal is a passage in the anterior (toward the front of the b
 id: UBERON:0003703
 name: extrahepatic bile duct
 synonym: "extrahepatic biliary system" RELATED [GAID:281]
+synonym: "bile duct extrahepatic part" RELATED [MA:0002659]
+xref: MA:0002659 ! bile duct extrahepatic part
 xref: FMA:14678 ! Extrahepatic bile duct
 xref: GAID:281 ! extrahepatic bile duct
 is_a: UBERON:0002394 ! bile duct
@@ -53551,12 +53615,14 @@ def: "the passages external to the liver for the conveyance of bile." [MP:000949
 [Term]
 id: UBERON:0003704
 name: intrahepatic bile duct
+def: "the passages within the liver for the conveyance of bile." [MP:0009497]
+synonym: "bile duct intrahepatic part" EXACT [MA:0001630]
+xref:  MA:0001630 ! bile duct intrahepatic part
 xref: FMA:15766 ! Intrahepatic bile duct
 xref: GAID:287 ! intrahepatic bile duct
-is_a: UBERON:0002394 ! bile duct
 xref: ZFA:0005169 ! intrahepatic bile duct
 xref: ncithesaurus:Intrahepatic_Bile_Duct ! Intrahepatic Bile Duct
-def: "the passages within the liver for the conveyance of bile." [MP:0009497]
+is_a: UBERON:0002394 ! bile duct
 
 [Term]
 id: UBERON:0003705
@@ -55198,7 +55264,7 @@ is_a: UBERON:0004668 ! fourth ventricle aperture
 synonym: "arachnoid forament" RELATED [MA:0002947]
 synonym: "fourth ventricle median aperture" EXACT [MA:0002947]
 synonym: "median aperture of fourth ventricle" EXACT [FMA:75015]
-synonym: "median aperture" EXACT [MP:0009802]
+synonym: "median aperture" BROAD [MP:0009802]
 synonym: "foramen of Magendie" EXACT [FMA:75015]
 synonym: "foramen of Majendie" EXACT [FMA:75015]
 xref: FMA:75015 ! Median aperture of fourth ventricle
@@ -55209,7 +55275,7 @@ id: UBERON:0003992
 name: fourth ventricle lateral aperture
 def: "the two lateral openings of the fourth ventricle into the subarachnoid space at the cerebellopontine angle" [MP:0009803]
 is_a: UBERON:0004668 ! fourth ventricle aperture
-synonym: "lateral aperture" EXACT [MP:0009803]
+synonym: "lateral aperture" BROAD [MP:0009803]
 synonym: "lateral aperture of fourth ventricle" EXACT [FMA:78473]
 synonym: "foramen of Key-Retzius" EXACT [FMA:78473]
 synonym: "foramen of Retzius" EXACT [FMA:78473]
@@ -55306,7 +55372,11 @@ relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
 [Term]
 id: UBERON:0004007
 name: cerebellum deep nucleus
-def: "the gray matter nuclei located in the center of the cerebellum, embedded in the white matter, which receive inhibitory (GABAergic) inputs from Purkinje cells in the cerebellar cortex and excitatory (glutamatergic) inputs from mossy fiber pathways; all output fibers of the cerebellum originate from the these nuclei" [MP:0009979]
+def: "the gray matter nuclei located in the center of the cerebellum, embedded in the white matter, which receive inhibitory (GABAergic) inputs from Purkinje cells in the cerebellar cortex and excitatory (glutamatergic) inputs from mossy fiber pathways; all output fibers of the cerebellum originate from the these nuclei[MP]" [MP:0009979, Wikipedia:Deep_cerebellar_nuclei]
+comment: TODO - split nucleus from  nuclear complex/nuclei?
+xref: FMA:72249 ! cerebellar nuclear complex
+xref: MA:0000203 ! deep cerebellar nucleus 
+xref: NIF_GrossAnatomy:birnlex_1568 ! Deep cerebellar nuclear complex
 is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -55801,7 +55871,8 @@ relationship: part_of UBERON:0001016 ! nervous system
 [Term]
 id: UBERON:0004066
 name: frontonasal prominence
-def: "an unpaired facial process in the embryo formed from the tissues surrounding the forebrain vesicle that develops into the forehead and bridge of the nose/snout" [MP:0009901]
+def: "During embryonic development, two areas of thickened ectoderm, the olfactory areas, appear immediately under the fore-brain in the anterior wall of the stomodeum, one on either side of a region termed the frontonasal prominence (or process)[WP]. By the upgrowth of the surrounding parts these areas are converted into pits, the olfactory pits, which indent the frontonasal prominence and divide it into a medial and two lateral nasal processes[WP]. two areas of thickened ectoderm, the olfactory areas, appear immediately under the fore-brain in the anterior wall of the stomodeum, one on either side of a region termed the frontonasal prominence.  an unpaired facial process in the embryo formed from the tissues surrounding the forebrain vesicle that develops into the forehead and bridge of the nose/snout[MP]." [MP:0009901, Wikipedia:Frontonasal_prominence]
+comment: TODO - improve def
 is_a: UBERON:0002050 ! embryonic structure
 xref: ncithesaurus:Frontonasal_Prominence ! Frontonasal Prominence
 
@@ -59831,30 +59902,6 @@ relationship: part_of UBERON:0000924 ! ectoderm
 xref: ncithesaurus:Apical_Ectodermal_Ridge ! Apical Ectodermal Ridge
 
 [Term]
-id: UBERON:0004358
-name: caput
-def: "the head of the epididymis" [MP:0002660]
-synonym: "epidymis head" EXACT []
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0001301 ! epididymis
-
-[Term]
-id: UBERON:0004359
-name: corpus
-def: "the body of the epididymis" [MP:0002661]
-synonym: "epidymis body" EXACT []
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0001301 ! epididymis
-
-[Term]
-id: UBERON:0004360
-name: cauda
-def: "the tail of the epididymis" [MP:0002662]
-synonym: "epidymis tail" EXACT []
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0001301 ! epididymis
-
-[Term]
 id: UBERON:0004361
 name: stylohyoid ligament
 def: "the fibrous cord that connects the tip of the styloid process of the temporal bone to the lesser horn of the hyoid bone" [MP:0009918]
@@ -63524,6 +63571,7 @@ synonym: "thorax sympathetic nervous system nerve trunk" EXACT [OBOL:automatic]
 id: UBERON:0003501
 name: retina blood vessel
 xref: MA:0001317 ! retina blood vessel
+xref: GAID:509 ! retinal vessel
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0000966 ! retina
 relationship: part_of UBERON:0004864 ! vasculature of retina
@@ -63541,16 +63589,9 @@ xref: FMA:76552 ! Set of retinal blood vessels
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: part_of UBERON:0000966 ! retina
 synonym: "retina vasculature" EXACT [OBOL:automatic]
+synonym: "retinal vasculature" EXACT [OBOL:automatic]
 synonym: "set of retinal blood vessels" EXACT [FMA:76552]
 synonym: "set of blood vessels of retina" EXACT [OBOL:automatic]
-
-[Term]
-id: UBERON:0004868
-name: tapetum lucidum
-namespace: uberon
-definition: "a layer of tissue in the eye of many vertebrate  animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors" [Wikipedia:Tapetum_lucidum]
-is_a: UBERON:0000479 ! portion of tissue
-relationship: part_of UBERON:0000970 ! part_of eye
 
 [Term]
 id: UBERON:0004869
@@ -66400,25 +66441,74 @@ intersection_of: UBERON:0001232
 intersection_of: OBO_REL:part_of UBERON:0001294
 
 [Term]
+id: UBERON:0004358
+name: caput epididymis
+def: "the head of the epididymis" [MP:0002660]
+synonym: "caput" BROAD [MP:0002660]
+synonym: "epidymis head" EXACT [FMA:18259]
+synonym: "head of epidymis " EXACT []
+synonym: "caput epididymidis" RELATED [BTO:0000336]
+xref: MA:0002762 ! caput epididymis
+xref: BTO:0000336 ! caput epididymis
+xref: EMAPA:19291 ! caput epididymis
+xref: FMA:18259 ! head of epididymis
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001301 ! epididymis
+
+[Term]
 id: UBERON:0005188
 name: caput epididymis
-xref: MA:0002762
-intersection_of: UBERON:0001301 
-intersection_of: OBO_REL:part_of UBERON:0004358
+is_obsolete: true
+replaced_by: UBERON:0004358
+
+[Term]
+id: UBERON:0004359
+name: corpus epididymis
+def: "the body of the epididymis" [MP:0002661]
+synonym: "corpus" BROAD [MP:0002661]
+synonym: "epididymis body" EXACT [FMA:18260]
+synonym: "epididymal body" EXACT [FMA:18260]
+synonym: "epidymis body" EXACT []
+synonym: "body of epidymis " EXACT []
+synonym: "body of epididymis " EXACT [FMA:18260]
+synonym: "corpus epididymidis" RELATED [BTO:0000209]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001301 ! epididymis
+xref: MA:0002764 ! corpus epididymis
+xref: BTO:0000209 ! corpus epididymis
+xref: FMA:18260 ! body of epididymis
+xref: EMAPA:19293 ! corpus epididymis
 
 [Term]
 id: UBERON:0005189
 name: corpus epididymis
-xref: MA:0002764
-intersection_of: UBERON:0001301 
-intersection_of: OBO_REL:part_of UBERON:0004359
+is_obsolete: true
+replaced_by: UBERON:0004359
+
+[Term]
+id: UBERON:0004360
+name: cauda epididymis
+def: "the tail of the epididymis" [MP:0002662]
+synonym: "epidymis tail" EXACT []
+synonym: "corpus" BROAD [MP:0002662]
+synonym: "epididymis tail" EXACT [FMA:18261]
+synonym: "epididymal tail" EXACT [FMA:18261]
+synonym: "tail of epidymis " EXACT []
+synonym: "tail of epididymis " EXACT [FMA:18261]
+synonym: "cauda epididymidis" EXACT [BTO:0000210]
+synonym: "epididymal cauda" EXACT [BTO:0000210]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001301 ! epididymis
+xref: BTO:0000210 ! cauda epididymis
+xref: EMAPA:19292 ! cauda epididymis
+xref: FMA:18261 ! tail of epididymis
+xref: MA:0002763 ! cauda epididymis
 
 [Term]
 id: UBERON:0005190
 name: cauda epididymis
-xref: MA:0002763
-intersection_of: UBERON:0001301 
-intersection_of: OBO_REL:part_of UBERON:0004360
+is_obsolete: true
+replaced_by: UBERON:0004360
 
 [Term]
 id: UBERON:0005191
@@ -66549,6 +66639,7 @@ intersection_of: OBO_REL:part_of UBERON:0002078
 [Term]
 id: UBERON:0005209
 name: cervical vertebra 1 arcus anterior
+comment: TODO - merge? see email to GG
 xref: MA:0002954
 intersection_of: UBERON:0003996 
 intersection_of: OBO_REL:part_of UBERON:0001092

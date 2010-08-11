@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 02:08:2010 19:20
+date: 07:08:2010 12:17
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -642,7 +642,7 @@ synonym: "primary egg follicle" RELATED []
 synonym: "primary follicle of ovary" EXACT [FMA:18634]
 xref: FMA:18634
 xref: MA:0002907
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0000036
@@ -654,7 +654,7 @@ synonym: "secondary follicle of ovary" EXACT []
 xref: FMA:18637
 xref: MA:0002908
 xref: MA:0002909
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 relationship: develops_from UBERON:0000035 ! primary ovarian follicle
 
 [Term]
@@ -668,7 +668,7 @@ synonym: "Graafian follicle" EXACT []
 synonym: "tertiary egg follicle" RELATED []
 xref: FMA:18641
 xref: ncithesaurus:Graafian_Follicle
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 relationship: develops_from UBERON:0000036 ! secondary ovarian follicle
 
 [Term]
@@ -682,7 +682,7 @@ synonym: "liquor folliculi" EXACT []
 xref: FMA:18665
 xref: GAID:372
 is_a: UBERON:0000463 ! portion of organism substance
-relationship: part_of UBERON:0001305 ! follicle of ovary
+relationship: part_of UBERON:0001305 ! ovarian follicle
 relationship: surrounded_by UBERON:0000039 ! follicular antrum
 relationship: surrounds CL:0000025
 
@@ -693,7 +693,7 @@ def: "Region of ovarian follicle filled with follicular fluid." [http://en.wikip
 subset: uberon_slim
 xref: FMA:18675
 is_a: UBERON:0000464 ! anatomical space
-relationship: part_of UBERON:0001305 ! follicle of ovary
+relationship: part_of UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0000040
@@ -1336,7 +1336,7 @@ relationship: develops_from UBERON:0000084 ! ureteric bud
 [Term]
 id: UBERON:0000083
 name: mesonephric tubule
-def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros." [Wikipedia:Mesonephric_tubules]
+def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros[WP]." [Wikipedia:Mesonephric_tubules]
 xref: HOG:0000500
 is_a: UBERON:0003914 ! implied link automatically realized ! epithelial tube
 is_a: UBERON:0005103 ! implied link automatically realized ! mesonephric epithelium
@@ -1896,7 +1896,7 @@ xref: ZFA:0001113
 is_a: UBERON:0000119 ! cell layer
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: has_part CL:0000503
-relationship: part_of UBERON:0001305 ! follicle of ovary
+relationship: part_of UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0000156
@@ -6213,7 +6213,7 @@ id: UBERON:0000988
 name: pons
 alt_id: UBERON:FBbt_00004840-FMA_67943-MA_0000204-MIAA_0000115-ZFA_0001618
 def: "Brainstrem structure that has as its parts the pontine tegmentum and basal part of pons. Examples: There is only one pons[FMA]." [FMA:67943, Wikipedia:Pons]
-comment: pons absent from zebrafish. note this is not the same as FBbt:00004840
+comment: pons absent from zebrafish. note this is of course not the same as FBbt:00004840
 subset: uberon_slim
 synonym: "pons of Varolius" EXACT []
 xref: BTO:0001101
@@ -6226,6 +6226,7 @@ xref: MAT:0000115
 xref: MIAA:0000115
 xref: NIF_GrossAnatomy:birnlex_733
 is_a: UBERON:0002680 ! regional part of metencephalon
+relationship: never_in_taxon NCBITaxon:7955
 relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0001895 ! metencephalon
 relationship: part_of UBERON:0002298 ! brainstem
@@ -6329,7 +6330,6 @@ xref: TAO:0000413
 xref: WBbt:0005175
 xref: XAO:0003146
 xref: ZFA:0000413
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0003133 ! reproductive organ
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 intersection_of: UBERON:0003133 ! reproductive organ
@@ -6426,7 +6426,6 @@ xref: MAT:0000168
 xref: MIAA:0000168
 xref: WBbt:0005319
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991 ! gonad
 
@@ -6453,7 +6452,6 @@ xref: ncithesaurus:Uterus
 xref: OpenCyc:Mx4rvViojJwpEbGdrcN5Y29ycA
 xref: WBbt:0006760
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000474 ! female reproductive system
 relationship: part_of UBERON:0000991 ! gonad
@@ -10166,7 +10164,6 @@ xref: MA:0002012
 xref: ncithesaurus:Ovarian_Artery
 xref: OpenCyc:Mx4rwOa9PZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001637 ! artery
-is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 intersection_of: UBERON:0001637 ! artery
 intersection_of: part_of UBERON:0000992 ! ovary
@@ -12352,14 +12349,13 @@ intersection_of: part_of UBERON:0001307 ! capsule of ovary
 
 [Term]
 id: UBERON:0001305
-name: follicle of ovary
+name: ovarian follicle
 alt_id: UBERON:FMA_18640-MA_0001707-ZFA_0001110
-def: "Oocyte development of zebrafish has been divided into five stages based on morphological criteria and on physiological and biochemical events. Stage I follicles (less than 140 microns) are primary growth stage, stage II follicles (140-340 microns) are cortical alveolus stage, stage III (340-690 microns) are vitellogenesis, stage IV (690-730 microns) are oocyte maturation, and stage V follicles are matured egg.<a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-1020'>Selman et al, 1993.</a>" [Wikipedia:Ovarian_follicle, ZFIN:curator]
+def: "Ovarian follicles are the basic units of female reproductive biology, each of which is composed of roughly spherical aggregations of cells found in the ovary. They contain a single oocyte (aka ovum or egg). These structures are periodically initiated to grow and develop, culminating in ovulation  of usually a single competent oocyte in humans. These eggs/ova are only developed once every menstrual cycle (e.g. once a month in humans)[WP]." [Wikipedia:Ovarian_follicle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "egg follicle" RELATED []
-synonym: "follicle of ovary viewed macroscopically" EXACT []
-synonym: "ovarian follicle" EXACT []
+synonym: "follicle of ovary" EXACT []
 synonym: "ovary follicle" EXACT []
 xref: BTO:0000475
 xref: FMA:18640
@@ -12372,6 +12368,7 @@ xref: TAO:0001110
 xref: ZFA:0001110
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: develops_from UBERON:0005296 ! ovary sex cord
 relationship: part_of UBERON:0000992 ! ovary
 
 [Term]
@@ -12386,7 +12383,7 @@ xref: FMA:18659
 xref: MA:0002414
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
-relationship: part_of UBERON:0001305 ! follicle of ovary
+relationship: part_of UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0001307
@@ -13958,7 +13955,7 @@ id: UBERON:0001410
 name: common palmar digital artery
 alt_id: UBERON:FMA_22852-MA_0001957
 def: "Three common palmar digital arteries arise from the convexity of the superficial palmar arch and proceed distally on the second, third, and fourth lumbricales  muscles." [Wikipedia:Common_palmar_digital_artery]
-comment: the MA term, even though plural, represents the singular, as it is an isa child of artery\nThis class was created automatically from a combination of ontologies
+comment: the MA term, even though plural, represents the singular, as it is an isa child of artery
 subset: uberon_slim
 synonym: "common palmar digital arteries" EXACT []
 xref: FMA:22852
@@ -14122,11 +14119,11 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0001421
 name: pectoral girdle
 alt_id: UBERON:FMA_23217-MA_0000292-MIAA_0000181-XAO_0003063-ZFA_0000407
-def: "Subdivision of free upper limb, which is the proximal segment of an upper limb and links the free upper limb to the trunk; it is demarcated by the plane of the surface of the glenoid fossa from the free upper limb; together with the free upper limb, it constitutes the upper limb. Examples: There are only two instances, right and left pectoral girdles. // Arched skeletal structure that supports the forelimbs, the rudiments of which can be distinguished in mesenchyme at NF stage 51, and is complete by NF stage 60." [ISBN:0471209627, NLM:pectoral+girdle, Wikipedia:Pectoral_girdle]
+def: "set of bones which connects the upper limb to the axial skeleton on each side. It consists of the clavicle and scapula in humans and, in those species with three bones in the pectoral girdle, the coracoid. Some mammalian species (e.g. the dog and the horse) have only the scapula. In humans, the only joints between the shoulder girdle and axial skeleton are the sternoclavicular joints on each side. No joint exists between each scapula and the rib cage; instead the muscular connection between the two permits relatively great mobility of the shoulder girdle in relation to the pelvic girdle., n those species having only the scapula, no joint exists between the forelimb and the thorax, the only attachment being muscular[WP]." [Wikipedia:Pectoral_girdle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "girdle - pectoral" EXACT []
-synonym: "pectoral girdle bone" EXACT []
+synonym: "pectoral girdle bones" EXACT []
 synonym: "shoulder bones" RELATED []
 synonym: "shoulder girdle" RELATED []
 synonym: "upper limb girdle" EXACT []
@@ -17556,6 +17553,7 @@ synonym: "iris muscle organ" EXACT [OBOL:automatic]
 synonym: "muscle organ of iris" EXACT [OBOL:automatic]
 xref: FMA:49154
 xref: MA:0001287
+is_a: UBERON:0002376 ! implied link automatically realized ! muscle of head
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004277 ! implied link automatically realized ! eye muscle
 intersection_of: UBERON:0001630 ! muscle organ
@@ -20439,6 +20437,7 @@ id: UBERON:0001768
 name: vascular layer of eyeball
 alt_id: UBERON:FMA_58103-MA_0002480
 def: "pigmented middle of the three concentric layers that make up an eye[WP]. The pigmented vascular coat of the eyeball, consisting of the CHOROID; CILIARY BODY; and IRIS, which are continuous with each other. (Cline et al., Dictionary of Visual Science, 4th ed)[GAID]." [Wikipedia:Uvea]
+comment: TODO - check child terms, isa vs partof
 subset: uberon_slim
 synonym: "tunica vasculosa of eyeball" EXACT []
 synonym: "uvea" EXACT []
@@ -20447,7 +20446,8 @@ xref: FMA:58103
 xref: GAID:912
 xref: MA:0002480
 xref: ncithesaurus:Uvea
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0002049 ! vasculature
+is_a: UBERON:0002203 ! implied link automatically realized ! vasculature of eye
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 
 [Term]
@@ -20590,7 +20590,6 @@ xref: TAO:0001203
 xref: XAO:0000186
 xref: ZFA:0001203
 is_a: UBERON:0001768 ! vascular layer of eyeball
-relationship: part_of UBERON:0001768 ! vascular layer of eyeball
 
 [Term]
 id: UBERON:0001776
@@ -20662,6 +20661,7 @@ synonym: "iridial stroma" EXACT []
 synonym: "stroma of iris" EXACT []
 xref: FMA:58526
 xref: MA:0002777
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 is_a: UBERON:0003891 ! stroma
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001769 ! iris
@@ -26324,7 +26324,7 @@ id: UBERON:0002075
 name: viscus
 alt_id: UBERON:FMA_7085-XAO_0003034
 def: "An organ that is located within the body cavity (or in its extension, in the scrotum); it consists of organ parts that are embryologically derived from endoderm, splanchnic mesoderm or intermediate mesoderm; together with other organs, the viscus constitutes the respiratory, gastrointestinal, urinary, reproductive and immune systems, or is the central organ of the cardiovascular system. Examples: heart, lung, esophagus, kidney, ovary, spleen. // An internal organ of the body; especially: one (as the heart, liver, or intestine) located in the great cavity of the trunk proper." [BTO:0001491, Wikipedia:Viscus]
-comment: general anatomical term in FMA
+comment: general anatomical term in FMA.
 subset: uberon_slim
 synonym: "viscera" RELATED []
 xref: BTO:0001491
@@ -26332,8 +26332,8 @@ xref: FMA:7085
 xref: XAO:0003034
 is_a: UBERON:0005177 ! implied link automatically realized ! trunk organ
 intersection_of: UBERON:0000062 ! organ
+intersection_of: part_of UBERON:0002100 ! trunk
 intersection_of: part_of UBERON:0002323 ! body cavity
-relationship: part_of UBERON:0002100 ! trunk
 
 [Term]
 id: UBERON:0002076
@@ -27286,7 +27286,6 @@ xref: TAO:0000151
 xref: XAO:0002000
 xref: ZFA:0000151
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0002113 ! kidney
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003104 ! mesenchyme
@@ -28019,7 +28018,6 @@ xref: TAO:0000446
 xref: ZFA:0000446
 is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
-relationship: part_of UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
@@ -29790,14 +29788,19 @@ relationship: part_of UBERON:0001771 ! pupil
 id: UBERON:0002270
 name: hyaloid artery
 alt_id: UBERON:FMA_77670-ZFA_0005045
-def: "Artery that is internal to the eye. <a href='ZFIN_jump?record=ZDB-PUB-010205-5'>Isogai et al. 2001.</a>" [Wikipedia:Hyaloid_artery, ZFIN:curator]
+def: "The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus[WP]." [Wikipedia:Hyaloid_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+xref: EMAPA:19242
 xref: FMA:77670
 xref: HOG:0001478
 xref: TAO:0005045
 xref: ZFA:0005045
 is_a: UBERON:0001637 ! artery
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
+is_a: UBERON:0003499 ! implied link automatically realized ! brain blood vessel
+relationship: part_of UBERON:0003098 ! optic stalk
 
 [Term]
 id: UBERON:0002271
@@ -30995,7 +30998,6 @@ synonym: "stroma of endometrium" EXACT []
 xref: FMA:86487
 xref: MA:0002734
 xref: ncithesaurus:Endometrial_Stroma
-is_a: UBERON:0003586 ! implied link automatically realized ! trunk connective tissue
 is_a: UBERON:0003891 ! stroma
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001295 ! endometrium
@@ -33281,6 +33283,7 @@ synonym: "posterior uvea blood vessel" EXACT [OBOL:automatic]
 xref: FMA:76550
 xref: MA:0001237
 is_a: UBERON:0001981 ! blood vessel
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0001776 ! choroid
 relationship: part_of UBERON:0001776 ! choroid
@@ -33418,7 +33421,6 @@ synonym: "uterine glands set" EXACT []
 xref: FMA:71647
 xref: MA:0001726
 xref: ncithesaurus:Uterine_Gland
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
 relationship: part_of UBERON:0000995 ! uterus
@@ -34080,7 +34082,6 @@ subset: uberon_slim
 xref: FMA:18829
 xref: MA:0002799
 is_a: UBERON:0001637 ! artery
-is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 intersection_of: UBERON:0001637 ! artery
 intersection_of: part_of UBERON:0000995 ! uterus
@@ -34350,7 +34351,7 @@ xref: MA:0002834
 xref: ncithesaurus:Corpus_Luteum
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
-relationship: develops_from UBERON:0001305 ! follicle of ovary
+relationship: develops_from UBERON:0001305 ! ovarian follicle
 relationship: part_of UBERON:0000949 ! endocrine system
 relationship: part_of UBERON:0000992 ! ovary
 
@@ -43880,7 +43881,7 @@ id: UBERON:0003147
 name: peritreme
 alt_id: UBERON:FBbt_00003121-HAO_0000712
 def: "That part of the integument of an insect which surrounds the spiracles." [http://www.answers.com/topic/peritreme]
-comment: term also used for edge of the aperture of a univalve shell\narthropod specific groupings belong in separate ontology
+comment: term also used for edge of the aperture of a univalve shell
 synonym: "rim" RELATED [FBbt:00003121]
 xref: FBbt:00003121
 xref: HAO:0000712
@@ -43901,7 +43902,7 @@ is_obsolete: true
 id: UBERON:0003149
 name: tergite
 alt_id: UBERON:FBbt_00004476-HAO_0001005
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 synonym: "abdominal tergite" EXACT [FBbt:00004476]
 xref: FBbt:00004476
 xref: HAO:0001005
@@ -43911,7 +43912,7 @@ is_obsolete: true
 id: UBERON:0003150
 name: sternite
 alt_id: UBERON:FBbt_00004477-HAO_0000955
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 synonym: "abdominal sternite" EXACT [FBbt:00004477]
 xref: FBbt:00004477
 xref: HAO:0000955
@@ -44092,7 +44093,7 @@ is_obsolete: true
 id: UBERON:0003169
 name: cervical sclerite
 alt_id: UBERON:FBbt_00004548-HAO_0000195
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 xref: FBbt:00004548
 xref: HAO:0000195
 is_obsolete: true
@@ -44274,7 +44275,7 @@ is_obsolete: true
 id: UBERON:0003189
 name: unguitractor plate
 alt_id: UBERON:FBbt_00004658-HAO_0001043
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 xref: FBbt:00004658
 xref: HAO:0001043
 is_obsolete: true
@@ -44300,7 +44301,7 @@ is_obsolete: true
 id: UBERON:0003192
 name: axillary sclerite
 alt_id: UBERON:FBbt_00004737-HAO_0000159
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 xref: FBbt:00004737
 xref: HAO:0000159
 is_obsolete: true
@@ -49607,6 +49608,7 @@ synonym: "blood vessel of tunica interna of eyeball" EXACT [OBOL:automatic]
 synonym: "inner layer of eyeball blood vessel" EXACT [OBOL:automatic]
 synonym: "retinal blood vessel" EXACT [OBOL:automatic]
 synonym: "tunica interna of eyeball blood vessel" EXACT [OBOL:automatic]
+xref: GAID:509
 xref: MA:0001317
 is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
@@ -53711,7 +53713,6 @@ xref: EHDAA2:0000719
 xref: HOG:0001340
 xref: OpenCyc:Mx4rvlWYh5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
-is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 intersection_of: UBERON:0001638 ! vein
 intersection_of: part_of UBERON:0000991 ! gonad
@@ -55140,7 +55141,7 @@ relationship: part_of UBERON:0002129 ! cerebellar cortex
 id: UBERON:0003981
 name: primordial ovarian follicle
 def: "primordial follicles are indiscernible to the naked eye and develop to primary, secondary, and finally mature vesicular follicles" [MP:0009361]
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0003982
@@ -55148,7 +55149,7 @@ name: mature ovarian follicle
 def: "." [MP:0009364]
 xref: BTO:0000389
 xref: ZFA:0001264
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 relationship: develops_from UBERON:0003981 ! primordial ovarian follicle
 
 [Term]
@@ -55593,6 +55594,7 @@ synonym: "Schlemm's canal" EXACT []
 xref: FMA:51873
 xref: ncithesaurus:Canal_of_Schlemm
 is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 relationship: part_of UBERON:0003956 ! aqueous drainage system
 
 [Term]
@@ -55600,6 +55602,7 @@ id: UBERON:0004030
 name: aqueous vein
 def: "this vessel that receives aqueous humor from the sinus venosus sclerae (canal of Schlemm)" [MP:0005207]
 is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 relationship: part_of UBERON:0003956 ! aqueous drainage system
 
 [Term]
@@ -65138,6 +65141,7 @@ intersection_of: part_of UBERON:0000915 ! thorax
 id: UBERON:0004864
 name: vasculature of retina
 synonym: "retina vasculature" EXACT [OBOL:automatic]
+synonym: "retinal vasculature" EXACT [OBOL:automatic]
 synonym: "set of blood vessels of retina" EXACT [OBOL:automatic]
 synonym: "set of retinal blood vessels" EXACT [FMA:76552]
 xref: FMA:76552
@@ -65189,6 +65193,7 @@ relationship: part_of UBERON:0001697 ! orbit
 id: UBERON:0004868
 name: tapetum lucidum
 is_a: UBERON:0000479 ! portion of tissue
+relationship: adjacent_to UBERON:0000966 ! retina
 relationship: part_of UBERON:0000970 ! eye
 definition: "a layer of tissue in the eye of many vertebrate  animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors" [Wikipedia:Tapetum_lucidum]
 
@@ -65260,21 +65265,24 @@ relationship: part_of UBERON:0003081 ! lateral plate mesoderm
 id: UBERON:0004875
 name: nephrogenic cord
 def: "a portion of the urogenital ridge which is the source of much of the urinary system[WP]." [Wikipedia:Nephrogenic_cord]
+comment: part_of or develops_from urogenital ridge?
 xref: FMA:72168
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: develops_from UBERON:0003064 ! intermediate mesoderm
-relationship: part_of UBERON:0004876 ! urogenital ridge
+relationship: develops_from UBERON:0004876 ! urogenital ridge
 
 [Term]
 id: UBERON:0004876
 name: urogenital ridge
-def: "embryological  structure which give rise to a portion of the external genitalia[WP]." [Wikipedia:Urogenital_ridge]
+def: "embryological  structure which give rise to a portion of the external genitalia[WP]." [Wikipedia:Urogenital_folds]
 comment: Less commonly, urogenital fold refers to the fold in the mesonephros  which is the precursor of e.g. the suspensory ligament of the ovary. This is the case in older versions of Gray's anatomy[WP]
+synonym: "urogenital fold" EXACT []
 xref: BTO:0001402
 xref: EMAPA:30888
 xref: EMAPA:30899
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
 relationship: develops_into UBERON:0004176 ! external reproductive organ
 
 [Term]
@@ -69071,7 +69079,6 @@ id: UBERON:0005199
 name: cervical mammary gland
 xref: MA:0000789
 is_a: UBERON:0001911 ! implied link automatically realized ! lactiferous gland
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
 intersection_of: UBERON:0001911 ! lactiferous gland
 intersection_of: part_of UBERON:0000002 ! uterine cervix
@@ -69891,6 +69898,56 @@ xref: NIF_GrossAnatomy:birnlex_1076
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 relationship: part_of UBERON:0002129 ! cerebellar cortex
+
+[Term]
+id: UBERON:0005294
+name: genital ridge
+def: "The precursor to the gonads." [Wikipedia:Gonadal_ridge]
+synonym: "gonadal ridge" EXACT [Wikipedia:Gonadal_ridge]
+xref: XAO:0000018
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: part_of UBERON:0004122 ! genitourinary system
+
+[Term]
+id: UBERON:0005295
+name: sex cord
+def: "Cordlike masses of epithelial tissue that invaginate from germinal epithelium of the gonad and give rise to seminiferous tubules and rete testes in the male, and primary ovarian follicles and rete ovarii in the female." [http://www.answers.com/topic/sex-cord, Wikipedia:Sex_cords]
+synonym: "primitive sex cord" RELATED []
+xref: EHDAA2:0001523
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0005294 ! genital ridge
+
+[Term]
+id: UBERON:0005296
+name: ovary sex cord
+def: "structures that develop from sex cords in the female. After further development they become the ovarian follicles." [Wikipedia:Cortical_cords]
+comment: TODO check secondary vs cortical vs ovary
+synonym: "cortical cord" RELATED []
+synonym: "cortical sex cord" RELATED []
+synonym: "ovary primitive sex cord" RELATED []
+synonym: "secondary cord" RELATED []
+xref: EHDAA:8130
+xref: EHDAA2:0001363
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000992 ! ovary
+
+[Term]
+id: UBERON:0005297
+name: testis sex cord
+def: "The testis cords are precursors to the rete testis. They play several different roles in the development of the male genitals[WP]." [Wikipedia:Testis_cords]
+comment: check primary vs testis
+synonym: "primary sex cord" RELATED []
+synonym: "testis primitive sex cord" RELATED []
+xref: EHDAA:8152
+xref: EHDAA2:0002011
+xref: EMAPA:29098
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000473 ! testis
 
 [Typedef]
 id: adjacent_to

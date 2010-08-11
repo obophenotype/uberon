@@ -148,7 +148,7 @@ uberon-discv-%.txt: uberon.obo
 %-discv.txt: %.obo
 	blip -u ontol_manifest_disconnected_from_adjacent -i $<  -u query_obo findall disjoint_over_violation/4 -label > $@
 %-taxcheck.txt: %.obo
-	blip-findall -i adhoc_uberon.pro -i $< "class_taxon_invalid(U,X,T,Y,TY)" > $@
+	blip-findall -i ncbi_taxon_slim.obo -i $< -i adhoc_uberon.pro "class_taxon_invalid(U,X,T,Y,TY)" -label > $@
 
 # no stemming
 zfa-xao-aln.tbl:
@@ -630,11 +630,19 @@ uberon-go-inflinks.txt:
 	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy -i adhoc_uberon.pro "goxp_newlink(A,B)" -select A-B -label > $@
 
 dbpedia_all_AnatomicalStructure.pro:
-	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
+# this should be subsumed by AnatomicalStructure
+dbpedia_all_Embryology.pro:
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/Embryology> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+
+# everything as type AnatomicalStructure
 dbpedia_all.pro: dbpedia_all_AnatomicalStructure.pro
-	blip-findall -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
+	blip-findall -debug sparql -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
+dbpedia_all-after-%.pro: dbpedia_all_AnatomicalStructure.pro
+	blip-findall -debug sparql -i $< -u sparql_util "row(A),A@>'http://dbpedia.org/resource/$*',dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
 
+# everything with a def_xref to wikipedia
 dbpedia_rest.pro: dbpedia_all_AnatomicalStructure.pro
 	blip-findall -i adhoc_uberon.pro -r uberon -i $< -u sparql_util "def_xref(C,X),wpxref_url(X,_,A),\+row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
 
