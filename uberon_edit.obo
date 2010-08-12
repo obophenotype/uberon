@@ -2213,11 +2213,10 @@ xref: EHDAA2:0000256 ! cloaca
 
 [Term]
 id: UBERON:0000164
-name: urogenital sinus
+name: primitive urogenital sinus
 def: "Part of the human body only present in the development of the urinary and reproductive organs. It is the ventral part of the cloaca, formed after the cloaca separates from the rectum. It eventually becomes, among other things, the bladder[WP]. ventral part of the cloaca remaining after septation of the rectum, which further develops into part of the bladder, part of the prostatic part of the male urethra and the urethra and vestibule in females[MP]." [Wikipedia:Urogenital_sinus]
 comment: Note that the term "urogenital sinus" may refer to the primitive urogenital sinus present as a transient developmental structure in most mammals or it may refer to a condition in which an unseptated cloaca persists in animals longer than normal[MP].
-synonym: "persistent cloaca" EXACT [Wikipedia:Urogenital_sinus]
-synonym: "primitive urogenital sinus" EXACT [MP:0010116]
+synonym: "urogenital sinus" EXACT [MP:0010116]
 synonym: "UGS" EXACT [MP:0010116]
 xref: HOG:0000414 ! urogenital sinus
 is_a: UBERON:0000061 ! anatomical structure
@@ -21046,6 +21045,7 @@ xref: HOG:0000364 ! submandibular gland
 xref: MA:0001589 ! submandibular gland
 xref: ncithesaurus:Submandibular_Gland
 is_a: UBERON:0001829 ! major salivary gland
+is_a: UBERON:0003968 ! peripheral lymph node
 xref: EFO:0001387 ! submandibular gland
 
 [Term]
@@ -55414,10 +55414,15 @@ xref: FMA:56418 ! subarcuate fossa
 
 [Term]
 id: UBERON:0003996
+alt_id: UBERON:0005209
 name: arcus anterior
-def: "the arch that connects the lateral masses of the atlas anteriorly and articulates with the anterior articular facet of the dens of the axis" [MP:0009879]
-is_a: UBERON:0000061 ! anatomical structure
+def: "The anterior arch of the atlas forms about one-fifth of the ring of the atlas: its anterior surface is convex, and presents at its center the anterior tubercle for the attachment of the Longus colli muscles; posteriorly it is concave, and marked by a smooth, oval or circular facet (fovea dentis), for articulation with the odontoid process (dens) of the axis[WP]. The arch that connects the lateral masses of the atlas anteriorly and articulates with the anterior articular facet of the dens of the axis[MP]." [MP:0009879, Wikipedia:Anterior_arch_of_atlas]
+is_a: UBERON:0004530 ! bony projection
 relationship: part_of UBERON:0001092 ! atlas
+xref: MA:0002954 ! cervical vertebra 1 arcus anterior
+synonym: "cervical vertebra 1 arcus anterior" EXACT [MA:0002954]
+synonym: "anterior arch of atlas" EXACT [MA:0002954]
+synonym: "arcus anterior atlantis" EXACT [MA:0002954]
 
 [Term]
 id: UBERON:0003997
@@ -56360,18 +56365,23 @@ relationship: part_of UBERON:0002707 ! pyramidal tract
 
 [Term]
 id: UBERON:0004096
+alt_id: UBERON:0005210
 name: odontoid process
-def: "The toothlike process on the upper surface of the axis, which articulates with the atlas above[GAID]." [GAID:238, HP:0003310]
-synonym: "dens of axis" [FMA:24043]
-synonym: "axis dens" [FMA:24043]
-synonym: "odontoid process of axis" [FMA:24043]
-synonym: "dens" [EMAPA:26535]
-comment: TODO - this needs to be defined more generically, other vetrebrae have odontoid processes. TODO check AAO:0000721 ! odontoid_process -- Anterior process located between the atlantal cotyles that projects into the foramen magnum of the skull and bears facets that articulate with the lateral walls of the foramen
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0001130 ! vertebral column
+def: "The toothlike process on the upper surface of the axis, which articulates with the atlas above[GAID]." [GAID:238, HP:0003310, Wikipedia:Wikipedia:Dens_(anatomy)]
+synonym: "dens of axis" EXACT [FMA:24043]
+synonym: "axis dens" EXACT [FMA:24043]
+synonym: "odontoid process of axis" EXACT [FMA:24043]
+synonym: "odontoid" RELATED [Wikipedia:Wikipedia:Dens_(anatomy)]
+synonym: "dens" EXACT [EMAPA:26535]
+synonym: "cervical vertebra 2 odontoid process" EXACT [MA:0002872]
+synonym: "axis odontoid process" EXACT [MA:0002872]
+comment: TODO check AAO:0000721 odontoid_process -- Anterior process located between the atlantal cotyles that projects into the foramen magnum of the skull and bears facets that articulate with the lateral walls of the foramen
+is_a: UBERON:0004530 ! bony projection
+relationship: part_of UBERON:0001093 ! second cervical vertebra
 xref: EMAPA:26535 ! odontoid process
 xref: GAID:238 ! odontoid process
 xref: FMA:24043 ! dens of axis
+xref: MA:0002872 ! cervical vertebra 2 odontoid process
 xref: OpenCyc:Mx4rwIYGoJwpEbGdrcN5Y29ycA ! odontoid process
 
 [Term]
@@ -66706,21 +66716,6 @@ name: right atrium valve
 xref: MA:0001871
 intersection_of: UBERON:0003978 
 intersection_of: OBO_REL:part_of UBERON:0002078
-
-[Term]
-id: UBERON:0005209
-name: cervical vertebra 1 arcus anterior
-comment: TODO - merge? see email to GG
-xref: MA:0002954
-intersection_of: UBERON:0003996 
-intersection_of: OBO_REL:part_of UBERON:0001092
-
-[Term]
-id: UBERON:0005210
-name: cervical vertebra 2 odontoid process
-xref: MA:0002872
-intersection_of: UBERON:0004096 
-intersection_of: OBO_REL:part_of UBERON:0001093
 
 [Term]
 id: UBERON:0005211

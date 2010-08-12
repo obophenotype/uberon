@@ -312,3 +312,19 @@ goxp_newlink(A,B) :-
 	id_idspace(B,'GO'),
 	\+ \+ subclassX(AD,BD),
 	\+ subclassRT(A,B).
+
+sandwich(B,FB) :-
+        entity_xref(UA,A),
+        id_idspace(UA,'UBERON'),
+        parent(A,B),
+        id_idspace(A,'MA'),
+        \+entity_xref(_,B),
+        entity_xref(UA,FA),
+        id_idspace(FA,'FMA'),
+        parent(FA,FB),
+        entity_xref(_UB,FB),
+        parent(B,C),
+        %debug(sandwich,'A=~w - B=~w // ~w,~w',[A,B,FA,FB]),
+        entity_xref(UC,C),
+        parent(FB,FC),
+        entity_xref(UC,FC).

@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 02:08:2010 21:35
+date: 12:08:2010 13:36
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -634,12 +634,13 @@ is_a: UBERON:0000475 ! organism subdivision
 id: UBERON:0000035
 name: primary ovarian follicle
 synonym: "folliculus ovaricus primarius" EXACT []
+synonym: "ovary primary follicle" EXACT [MA:0002907]
 synonym: "preantral follicle of ovary" EXACT []
 synonym: "primary egg follicle" RELATED []
 synonym: "primary follicle of ovary" EXACT [FMA:18634]
 xref: FMA:18634
 xref: MA:0002907
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0000036
@@ -651,7 +652,7 @@ synonym: "secondary follicle of ovary" EXACT []
 xref: FMA:18637
 xref: MA:0002908
 xref: MA:0002909
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 relationship: develops_from UBERON:0000035 ! primary ovarian follicle
 
 [Term]
@@ -665,7 +666,7 @@ synonym: "Graafian follicle" EXACT []
 synonym: "tertiary egg follicle" RELATED []
 xref: FMA:18641
 xref: ncithesaurus:Graafian_Follicle
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 relationship: develops_from UBERON:0000036 ! secondary ovarian follicle
 
 [Term]
@@ -679,7 +680,7 @@ synonym: "liquor folliculi" EXACT []
 xref: FMA:18665
 xref: GAID:372
 is_a: UBERON:0000463 ! portion of organism substance
-relationship: part_of UBERON:0001305 ! follicle of ovary
+relationship: part_of UBERON:0001305 ! ovarian follicle
 relationship: surrounded_by UBERON:0000039 ! follicular antrum
 
 [Term]
@@ -689,7 +690,7 @@ def: "Region of ovarian follicle filled with follicular fluid." [http://en.wikip
 subset: uberon_slim
 xref: FMA:18675
 is_a: UBERON:0000464 ! anatomical space
-relationship: part_of UBERON:0001305 ! follicle of ovary
+relationship: part_of UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0000040
@@ -1337,7 +1338,7 @@ relationship: develops_from UBERON:0000084 ! ureteric bud
 [Term]
 id: UBERON:0000083
 name: mesonephric tubule
-def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros." [Wikipedia:Mesonephric_tubules]
+def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros[WP]." [Wikipedia:Mesonephric_tubules]
 xref: HOG:0000500
 is_a: UBERON:0003914 ! implied link automatically realized ! epithelial tube
 is_a: UBERON:0005103 ! implied link automatically realized ! mesonephric epithelium
@@ -1893,14 +1894,18 @@ xref: TAO:0001113
 xref: ZFA:0001113
 is_a: UBERON:0000119 ! cell layer
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
-relationship: part_of UBERON:0001305 ! follicle of ovary
+relationship: part_of UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0000156
 name: theca externa
-def: "The theca externa is the outer layers of the theca folliculi. It contains abundant collagen and is mainly supportive." [Wikipedia:Theca_externa#Theca_externa]
+alt_id: UBERON:0005182
+def: "The theca externa is the outer layers of the theca folliculi. It contains abundant collagen and is mainly supportive." [Wikipedia:Theca_externa]
+synonym: "ovary theca externa" EXACT [MA:0001713]
+synonym: "tunica externa of theca folliculi" EXACT [FMA:18657]
 xref: BTO:0002852
 xref: FMA:18657
+xref: MA:0001713
 is_a: UBERON:0000158 ! membranous layer
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000155 ! theca cell layer
@@ -1909,9 +1914,12 @@ relationship: surrounds UBERON:0000157 ! theca interna
 [Term]
 id: UBERON:0000157
 name: theca interna
+alt_id: UBERON:0005183
 def: "Theca interna cells express receptors for luteinizing hormone, which when activated will stimulate the production of androstenedione from cholesterol by the enzyme desmolase. Androstenedione ultimately gives the granulosa cells the precursor substrate for estrogen manufacturing." [Wikipedia:Theca_externa#Theca_interna]
+synonym: "ovary theca interna" EXACT [MA:0001714]
 xref: BTO:0002851
 xref: FMA:18658
+xref: MA:0001714
 is_a: UBERON:0000158 ! membranous layer
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000155 ! theca cell layer
@@ -2014,12 +2022,11 @@ relationship: develops_from UBERON:0003064 ! intermediate mesoderm
 
 [Term]
 id: UBERON:0000164
-name: urogenital sinus
+name: primitive urogenital sinus
 def: "Part of the human body only present in the development of the urinary and reproductive organs. It is the ventral part of the cloaca, formed after the cloaca separates from the rectum. It eventually becomes, among other things, the bladder[WP]. ventral part of the cloaca remaining after septation of the rectum, which further develops into part of the bladder, part of the prostatic part of the male urethra and the urethra and vestibule in females[MP]." [Wikipedia:Urogenital_sinus]
 comment: Note that the term "urogenital sinus" may refer to the primitive urogenital sinus present as a transient developmental structure in most mammals or it may refer to a condition in which an unseptated cloaca persists in animals longer than normal[MP].
-synonym: "persistent cloaca" EXACT [Wikipedia:Urogenital_sinus]
-synonym: "primitive urogenital sinus" EXACT [MP:0010116]
 synonym: "UGS" EXACT [MP:0010116]
+synonym: "urogenital sinus" EXACT [MP:0010116]
 xref: EHDAA:5029
 xref: EHDAA:5919
 xref: EHDAA2:0002142
@@ -2334,7 +2341,7 @@ id: UBERON:0000209
 name: tetrapod frontal bone
 alt_id: UBERON:FMA_9613-MA_0001469-ZFA_0000486
 def: "In humans: A bone resembling a cockleshell in two portions the squama frontalis, corresponding with the region of the forehead, and an orbital or horizontal portion, the pars orbitalis, which enters into the formation of the roofs of the orbital and nasal cavities." [Wikipedia:Frontal_bone]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+comment: The parietal bone in teleost fish is the homolog of the frontal bone in tetrapods
 synonym: "frontal bone" NARROW [FMA:52734, MA:0001466]
 xref: FMA:52734
 xref: GAID:226
@@ -2351,7 +2358,7 @@ id: UBERON:0000210
 name: tetrapod parietal bone
 alt_id: UBERON:FMA_52734-MA_0001466-ZFA_0000514
 def: "In humans: bone forming side and roof of cranium. Each bone is irregularly quadrilateral in form, and has two surfaces, four borders, and four angles." [Wikipedia:Parietal_bone, ZFA:0000514]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in tetrapods
 synonym: "frontal bone" NARROW [TAO:0000514]
 synonym: "parietal bone" NARROW [FMA:9613]
 synonym: "teleost frontal bone" NARROW [TAO:0000514]
@@ -2977,13 +2984,10 @@ relationship: has_part UBERON:0000087 ! inner cell mass
 id: UBERON:0000359
 name: preputial gland
 alt_id: UBERON:BTO_0001111-FMA_71652
-def: "the sebaceous glands of the corona and neck of the glans penis." [MP:0002717]
-synonym: "Preputial glands" EXACT [FMA:71652]
-synonym: "Preputial glands set" EXACT [FMA:71652]
-xref: BTO:0001111
+def: "An exocrine gland that are located in front of the genitals of some mammals (including mice) and produce pheromones[WP]." [Wikipedia:Preputial_gland]
 xref: FMA:71652
 xref: ncithesaurus:Prepucial_Gland_MMHCC
-is_a: UBERON:0002530 ! gland
+is_a: UBERON:0001821 ! sebaceous gland
 
 [Term]
 id: UBERON:0000360
@@ -5254,11 +5258,11 @@ is_a: UBERON:0002473 ! intercerebral commissure
 id: UBERON:0000936
 name: posterior commissure
 alt_id: UBERON:FBbt_00001120-FMA_62072-MA_0002743-ZFA_0000320
-def: "Rounded band of white fibers crossing the middle line on the dorsal aspect of the upper end of the cerebral aqueduct. It is important in the bilateral pupillary light reflex." [Wikipedia:Posterior_commissure]
-comment: This class was created automatically from a combination of ontologies
+def: "Rounded band of white fibers crossing the middle line on the dorsal aspect of the upper end of the cerebral aqueduct. It is important in the bilateral pupillary light reflex. Its fibers acquire their medullary sheaths early, but their connections have not been definitely determined. Most of them have their origin in a nucleus, the nucleus of the posterior commissure (nucleus of Darkschewitsch), which lies in the central gray substance of the upper end of the cerebral aqueduct, in front of the nucleus of the oculomotor nerve. Some are probably derived from the posterior part of the thalamus and from the superior colliculus, whereas others are believed to be continued downward into the medial longitudinal fasciculus. The posterior commissure interconnects the pretectal nuclei, mediating the consensual pupillary light reflex[WP].Diencephalic tract which is located in the vicinity of the dorsal diencephalon and mesencephalon and connects the pretectal nuclei. From Neuroanatomy of the Zebrafish Brain[ZFA]." [Wikipedia:Posterior_commissure, ZFA:0000320]
+comment: disjoint from FBbt:00001120
 subset: uberon_slim
-synonym: "caudal commissure" EXACT []
-synonym: "epithalamic commissure" EXACT []
+synonym: "caudal commissure" EXACT [FMA:62072, ZFA:0000320]
+synonym: "epithalamic commissure" EXACT [FMA:62072]
 xref: FMA:62072
 xref: MA:0002743
 xref: ncithesaurus:Posterior_Commissure
@@ -5267,7 +5271,6 @@ xref: TAO:0000320
 xref: ZFA:0000320
 is_a: UBERON:0001020 ! commissure
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
-relationship: part_of UBERON:0000934 ! ventral nerve cord
 relationship: part_of UBERON:0002298 ! brainstem
 
 [Term]
@@ -6326,7 +6329,6 @@ xref: TAO:0000413
 xref: WBbt:0005175
 xref: XAO:0003146
 xref: ZFA:0000413
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0003133 ! reproductive organ
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000990 ! reproductive system
@@ -6421,7 +6423,6 @@ xref: MAT:0000168
 xref: MIAA:0000168
 xref: WBbt:0005319
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991 ! gonad
 
@@ -6448,7 +6449,6 @@ xref: ncithesaurus:Uterus
 xref: OpenCyc:Mx4rvViojJwpEbGdrcN5Y29ycA
 xref: WBbt:0006760
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000474 ! female reproductive system
 relationship: part_of UBERON:0000991 ! gonad
@@ -7116,6 +7116,7 @@ subset: uberon_slim
 xref: FBbt:00005113
 xref: FMA:61814
 xref: GAID:751
+xref: GO:0043005
 xref: NIF_Subcellular:sao-867568886
 is_a: UBERON:0000470 ! cell part
 
@@ -10164,7 +10165,6 @@ xref: MA:0002012
 xref: ncithesaurus:Ovarian_Artery
 xref: OpenCyc:Mx4rwOa9PZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001637 ! artery
-is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000992
 intersection_of: UBERON:0001637 ! artery
@@ -10624,6 +10624,7 @@ xref: GAID:314
 xref: MA:0001551
 xref: ncithesaurus:Brunner_s_Gland
 is_a: UBERON:0000333 ! implied link automatically realized ! intestinal gland
+is_a: UBERON:0002365 ! implied link automatically realized ! exocrine gland
 is_a: UBERON:0002530 ! gland
 relationship: part_of UBERON:0001242 ! intestinal mucosa
 relationship: part_of UBERON:0002108 ! small intestine
@@ -11420,7 +11421,7 @@ xref: XAO:0000154
 is_a: UBERON:0000489 ! cavitated compound organ
 is_a: UBERON:0002075 ! viscus
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: develops_from UBERON:0000164 ! urogenital sinus
+relationship: develops_from UBERON:0000164 ! primitive urogenital sinus
 relationship: part_of UBERON:0001556 ! lower urinary tract
 relationship: part_of UBERON:0002323 ! body cavity
 
@@ -12390,14 +12391,13 @@ intersection_of: part_of UBERON:0001307 ! capsule of ovary
 
 [Term]
 id: UBERON:0001305
-name: follicle of ovary
+name: ovarian follicle
 alt_id: UBERON:FMA_18640-MA_0001707-ZFA_0001110
-def: "Oocyte development of zebrafish has been divided into five stages based on morphological criteria and on physiological and biochemical events. Stage I follicles (less than 140 microns) are primary growth stage, stage II follicles (140-340 microns) are cortical alveolus stage, stage III (340-690 microns) are vitellogenesis, stage IV (690-730 microns) are oocyte maturation, and stage V follicles are matured egg.<a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-1020'>Selman et al, 1993.</a>" [Wikipedia:Ovarian_follicle, ZFIN:curator]
+def: "Ovarian follicles are the basic units of female reproductive biology, each of which is composed of roughly spherical aggregations of cells found in the ovary. They contain a single oocyte (aka ovum or egg). These structures are periodically initiated to grow and develop, culminating in ovulation  of usually a single competent oocyte in humans. These eggs/ova are only developed once every menstrual cycle (e.g. once a month in humans)[WP]." [Wikipedia:Ovarian_follicle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "egg follicle" RELATED []
-synonym: "follicle of ovary viewed macroscopically" EXACT []
-synonym: "ovarian follicle" EXACT []
+synonym: "follicle of ovary" EXACT []
 synonym: "ovary follicle" EXACT []
 xref: BTO:0000475
 xref: FMA:18640
@@ -12410,6 +12410,7 @@ xref: TAO:0001110
 xref: ZFA:0001110
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: develops_from UBERON:0005296 ! ovary sex cord
 relationship: part_of UBERON:0000992 ! ovary
 
 [Term]
@@ -12424,7 +12425,7 @@ xref: FMA:18659
 xref: MA:0002414
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
-relationship: part_of UBERON:0001305 ! follicle of ovary
+relationship: part_of UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0001307
@@ -12800,26 +12801,29 @@ synonym: "penis zone of skin" EXACT [OBOL:automatic]
 synonym: "zone of skin of penis" EXACT [OBOL:automatic]
 xref: FMA:19638
 xref: MA:0002727
-is_a: UBERON:0000014 ! zone of skin
+is_a: UBERON:0000014 ! implied link automatically realized ! zone of skin
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000989
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: part_of UBERON:0000989 ! penis
 relationship: continuous_with UBERON:0001085 ! skin of trunk
-relationship: part_of UBERON:0000989 ! penis
 
 [Term]
 id: UBERON:0001332
 name: prepuce of penis
 alt_id: UBERON:FMA_19639-MA_0000407
 def: "In male human anatomy, the foreskin is a retractable double-layered fold of skin and mucous membrane that covers the glans penis and protects the urinary meatus when the penis is not erect. It is also described as the prepuce, a technically broader term that also includes the clitoral hood in women, to which the foreskin is embryonically homologous. [WP,unvetted]." [Wikipedia:Foreskin]
-comment: This class was created automatically from a combination of ontologies
+comment: Note FMA also has FMA:27648 skin of prepuce of penis - how is this different? MA uses the term prepuce for the male prepuce
 subset: uberon_slim
 synonym: "foreskin" EXACT []
 synonym: "penile prepuce" EXACT []
-synonym: "prepuce" EXACT []
+synonym: "prepuce" BROAD [MA:0000407, Wikipedia:Foreskin]
+synonym: "prepuce of male" EXACT [EMAPA:18989]
+synonym: "preputial skin" RELATED [FMA:27648]
+synonym: "skin of prepuce of penis" NARROW [FMA:27648]
 xref: BTO:0001113
 xref: EFO:0001664
+xref: EMAPA:18989
 xref: FMA:19639
 xref: MA:0000407
 xref: ncithesaurus:Prepuce
@@ -12839,8 +12843,10 @@ subset: uberon_slim
 xref: FMA:19668
 xref: MA:0002640
 xref: ncithesaurus:Male_Urethra
-is_a: UBERON:0000057 ! urethra
-relationship: part_of UBERON:0003101 ! male organism
+is_a: UBERON:0000057 ! implied link automatically realized ! urethra
+relationship: part_of UBERON:0003101
+intersection_of: UBERON:0000057 ! urethra
+intersection_of: part_of UBERON:0003101 ! male organism
 
 [Term]
 id: UBERON:0001334
@@ -12852,7 +12858,10 @@ subset: uberon_slim
 xref: FMA:19669
 xref: MA:0002637
 xref: ncithesaurus:Female_Urethra
-is_a: UBERON:0000057 ! urethra
+is_a: UBERON:0000057 ! implied link automatically realized ! urethra
+relationship: part_of UBERON:0003100
+intersection_of: UBERON:0000057 ! urethra
+intersection_of: part_of UBERON:0003100 ! female organism
 
 [Term]
 id: UBERON:0001335
@@ -12912,6 +12921,7 @@ synonym: "gland of urethra" EXACT [OBOL:automatic]
 synonym: "urethra gland" EXACT []
 xref: FMA:19683
 xref: MA:0001688
+is_a: UBERON:0002365 ! implied link automatically realized ! exocrine gland
 is_a: UBERON:0002530 ! gland
 relationship: part_of UBERON:0000057
 intersection_of: UBERON:0002530 ! gland
@@ -14002,7 +14012,7 @@ id: UBERON:0001410
 name: common palmar digital artery
 alt_id: UBERON:FMA_22852-MA_0001957
 def: "Three common palmar digital arteries arise from the convexity of the superficial palmar arch and proceed distally on the second, third, and fourth lumbricales  muscles." [Wikipedia:Common_palmar_digital_artery]
-comment: the MA term, even though plural, represents the singular, as it is an isa child of artery\nThis class was created automatically from a combination of ontologies
+comment: the MA term, even though plural, represents the singular, as it is an isa child of artery
 subset: uberon_slim
 synonym: "common palmar digital arteries" EXACT []
 xref: FMA:22852
@@ -14171,11 +14181,11 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0001421
 name: pectoral girdle
 alt_id: UBERON:FMA_23217-MA_0000292-MIAA_0000181-XAO_0003063-ZFA_0000407
-def: "Subdivision of free upper limb, which is the proximal segment of an upper limb and links the free upper limb to the trunk; it is demarcated by the plane of the surface of the glenoid fossa from the free upper limb; together with the free upper limb, it constitutes the upper limb. Examples: There are only two instances, right and left pectoral girdles. // Arched skeletal structure that supports the forelimbs, the rudiments of which can be distinguished in mesenchyme at NF stage 51, and is complete by NF stage 60." [ISBN:0471209627, NLM:pectoral+girdle, Wikipedia:Pectoral_girdle]
+def: "set of bones which connects the upper limb to the axial skeleton on each side. It consists of the clavicle and scapula in humans and, in those species with three bones in the pectoral girdle, the coracoid. Some mammalian species (e.g. the dog and the horse) have only the scapula. In humans, the only joints between the shoulder girdle and axial skeleton are the sternoclavicular joints on each side. No joint exists between each scapula and the rib cage; instead the muscular connection between the two permits relatively great mobility of the shoulder girdle in relation to the pelvic girdle., n those species having only the scapula, no joint exists between the forelimb and the thorax, the only attachment being muscular[WP]." [Wikipedia:Pectoral_girdle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "girdle - pectoral" EXACT []
-synonym: "pectoral girdle bone" EXACT []
+synonym: "pectoral girdle bones" EXACT []
 synonym: "shoulder bones" RELATED []
 synonym: "shoulder girdle" RELATED []
 synonym: "upper limb girdle" EXACT []
@@ -17644,6 +17654,7 @@ synonym: "iris muscle organ" EXACT [OBOL:automatic]
 synonym: "muscle organ of iris" EXACT [OBOL:automatic]
 xref: FMA:49154
 xref: MA:0001287
+is_a: UBERON:0002376 ! implied link automatically realized ! muscle of head
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004277 ! implied link automatically realized ! eye muscle
 relationship: part_of UBERON:0001769
@@ -19956,6 +19967,9 @@ xref: HOG:0000364
 xref: MA:0001589
 xref: ncithesaurus:Submandibular_Gland
 is_a: UBERON:0001829 ! major salivary gland
+is_a: UBERON:0003968 ! peripheral lymph node
+is_a: UBERON:0005057 ! implied link automatically realized ! immune organ
+is_a: UBERON:0005058 ! implied link automatically realized ! hemolymphoid system gland
 
 [Term]
 id: UBERON:0001737
@@ -20538,6 +20552,7 @@ id: UBERON:0001768
 name: vascular layer of eyeball
 alt_id: UBERON:FMA_58103-MA_0002480
 def: "pigmented middle of the three concentric layers that make up an eye[WP]. The pigmented vascular coat of the eyeball, consisting of the CHOROID; CILIARY BODY; and IRIS, which are continuous with each other. (Cline et al., Dictionary of Visual Science, 4th ed)[GAID]." [Wikipedia:Uvea]
+comment: TODO - check child terms, isa vs partof
 subset: uberon_slim
 synonym: "tunica vasculosa of eyeball" EXACT []
 synonym: "uvea" EXACT []
@@ -20546,7 +20561,8 @@ xref: FMA:58103
 xref: GAID:912
 xref: MA:0002480
 xref: ncithesaurus:Uvea
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0002049 ! vasculature
+is_a: UBERON:0002203 ! implied link automatically realized ! vasculature of eye
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 
 [Term]
@@ -20691,7 +20707,6 @@ xref: TAO:0001203
 xref: XAO:0000186
 xref: ZFA:0001203
 is_a: UBERON:0001768 ! vascular layer of eyeball
-relationship: part_of UBERON:0001768 ! vascular layer of eyeball
 
 [Term]
 id: UBERON:0001776
@@ -20764,6 +20779,7 @@ synonym: "iridial stroma" EXACT []
 synonym: "stroma of iris" EXACT []
 xref: FMA:58526
 xref: MA:0002777
+is_a: UBERON:0003566 ! implied link automatically realized ! head connective tissue
 is_a: UBERON:0003891 ! stroma
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001769 ! iris
@@ -21465,6 +21481,7 @@ xref: FMA:59101
 xref: HOG:0001476
 xref: MA:0001296
 xref: ncithesaurus:Lacrimal_Gland
+is_a: UBERON:0002365 ! implied link automatically realized ! exocrine gland
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0004859 ! implied link automatically realized ! eye gland
 relationship: part_of UBERON:0001750 ! lacrimal apparatus
@@ -21514,6 +21531,7 @@ xref: HOG:0001467
 xref: MA:0000150
 xref: ncithesaurus:Sweat_Gland
 xref: OpenCyc:Mx4rvVjx15wpEbGdrcN5Y29ycA
+is_a: UBERON:0002365 ! implied link automatically realized ! exocrine gland
 is_a: UBERON:0002419 ! implied link automatically realized ! skin gland
 is_a: UBERON:0002530 ! gland
 relationship: secretes UBERON:0001089
@@ -21535,6 +21553,7 @@ xref: GAID:900
 xref: HOG:0001468
 xref: MA:0002565
 xref: ncithesaurus:Sebaceous_Gland
+is_a: UBERON:0002365 ! implied link automatically realized ! exocrine gland
 is_a: UBERON:0002530 ! gland
 relationship: part_of UBERON:0002330 ! exocrine system
 
@@ -21710,6 +21729,7 @@ xref: galen:MajorSalivaryGland
 xref: MA:0002478
 xref: ncithesaurus:Major_Salivary_Gland
 is_a: UBERON:0001044 ! salivary gland
+is_a: UBERON:0002365 ! implied link automatically realized ! exocrine gland
 relationship: part_of UBERON:0002330 ! exocrine system
 
 [Term]
@@ -21724,6 +21744,7 @@ xref: galen:MinorSalivaryGland
 xref: MA:0002479
 xref: ncithesaurus:Minor_Salivary_Gland
 is_a: UBERON:0001044 ! salivary gland
+is_a: UBERON:0002365 ! implied link automatically realized ! exocrine gland
 relationship: part_of UBERON:0002330 ! exocrine system
 
 [Term]
@@ -25959,7 +25980,7 @@ relationship: part_of UBERON:0003023 ! pontine tegmentum
 id: UBERON:0002048
 name: lung
 alt_id: UBERON:FMA_68877-FMA_7195-MA_0000415-MIAA_0000135-XAO_0000119
-def: "Lobular organ the parenchyma of which consists of air-filled alveoli which communicate with the tracheobronchial tree. Examples: There are only two instances, right lung and left lung[FMA]. // Saccular thoracic organ that constitutes the basic respiratory organ[XAO]." [BTO:0000763, Wikipedia:Lung]
+def: "Respiration organ present in all air-breathing animals whose principal function is to transport oxygen from the atmosphere into the bloodstream, and to release carbon dioxide from the bloodstream into the atmosphere." [BTO:0000763, Wikipedia:Lung]
 comment: respiration organ in all air-breathing animals, including most tetrapods, a few fish and a few snails. In mammals  and the more complex life forms, the two lungs are located in the chest on either side of the heart. Their principal function is to transport oxygen from the atmosphere into the bloodstream, and to release carbon dioxide from the bloodstream into the atmosphere. This exchange of gases is accomplished in the mosaic of specialized cells that form millions of tiny, exceptionally thin-walled air sacs called alveoli. // Avian lungs do not have alveoli as mammalian lungs do, they have Faveolar lungs. They contain millions of tiny passages known as para-bronchi, connected at both ends by the dorsobronchi // Snakes and limbless lizards typically possess only the right lung as a major respiratory organ; the left lung is greatly reduced, or even absent. Amphisbaenians, however, have the opposite arrangement, with a major left lung, and a reduced or absent right lung [WP]
 subset: uberon_slim
 xref: AAO:0000275
@@ -26455,17 +26476,18 @@ id: UBERON:0002075
 name: viscus
 alt_id: UBERON:FMA_7085-XAO_0003034
 def: "An organ that is located within the body cavity (or in its extension, in the scrotum); it consists of organ parts that are embryologically derived from endoderm, splanchnic mesoderm or intermediate mesoderm; together with other organs, the viscus constitutes the respiratory, gastrointestinal, urinary, reproductive and immune systems, or is the central organ of the cardiovascular system. Examples: heart, lung, esophagus, kidney, ovary, spleen. // An internal organ of the body; especially: one (as the heart, liver, or intestine) located in the great cavity of the trunk proper." [BTO:0001491, Wikipedia:Viscus]
-comment: general anatomical term in FMA
+comment: general anatomical term in FMA.
 subset: uberon_slim
 synonym: "viscera" RELATED []
 xref: BTO:0001491
 xref: FMA:7085
 xref: XAO:0003034
 is_a: UBERON:0005177 ! implied link automatically realized ! trunk organ
+relationship: part_of UBERON:0002100
 relationship: part_of UBERON:0002323
 intersection_of: UBERON:0000062 ! organ
+intersection_of: part_of UBERON:0002100 ! trunk
 intersection_of: part_of UBERON:0002323 ! body cavity
-relationship: part_of UBERON:0002100 ! trunk
 
 [Term]
 id: UBERON:0002076
@@ -27428,7 +27450,6 @@ xref: TAO:0000151
 xref: XAO:0002000
 xref: ZFA:0000151
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0002113 ! kidney
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0003104 ! mesenchyme
@@ -28163,7 +28184,6 @@ xref: TAO:0000446
 xref: ZFA:0000446
 is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
-relationship: part_of UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
@@ -29944,14 +29964,19 @@ relationship: part_of UBERON:0001771 ! pupil
 id: UBERON:0002270
 name: hyaloid artery
 alt_id: UBERON:FMA_77670-ZFA_0005045
-def: "Artery that is internal to the eye. <a href='ZFIN_jump?record=ZDB-PUB-010205-5'>Isogai et al. 2001.</a>" [Wikipedia:Hyaloid_artery, ZFIN:curator]
+def: "The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus[WP]." [Wikipedia:Hyaloid_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+xref: EMAPA:19242
 xref: FMA:77670
 xref: HOG:0001478
 xref: TAO:0005045
 xref: ZFA:0005045
 is_a: UBERON:0001637 ! artery
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
+is_a: UBERON:0003499 ! implied link automatically realized ! brain blood vessel
+relationship: part_of UBERON:0003098 ! optic stalk
 
 [Term]
 id: UBERON:0002271
@@ -31159,7 +31184,6 @@ synonym: "stroma of endometrium" EXACT []
 xref: FMA:86487
 xref: MA:0002734
 xref: ncithesaurus:Endometrial_Stroma
-is_a: UBERON:0003586 ! implied link automatically realized ! trunk connective tissue
 is_a: UBERON:0003891 ! stroma
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001295 ! endometrium
@@ -31801,8 +31825,10 @@ xref: FMA:9596
 xref: GAID:34
 xref: MA:0002564
 xref: ncithesaurus:Exocrine_Gland
-is_a: UBERON:0002530 ! gland
-relationship: part_of UBERON:0002330 ! exocrine system
+is_a: UBERON:0002530 ! implied link automatically realized ! gland
+relationship: part_of UBERON:0002330
+intersection_of: UBERON:0002530 ! gland
+intersection_of: part_of UBERON:0002330 ! exocrine system
 
 [Term]
 id: UBERON:0002366
@@ -33464,6 +33490,7 @@ synonym: "posterior uvea blood vessel" EXACT [OBOL:automatic]
 xref: FMA:76550
 xref: MA:0001237
 is_a: UBERON:0001981 ! blood vessel
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 relationship: part_of UBERON:0001776
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0001776 ! choroid
@@ -33604,7 +33631,6 @@ synonym: "uterine glands set" EXACT []
 xref: FMA:71647
 xref: MA:0001726
 xref: ncithesaurus:Uterine_Gland
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
 relationship: part_of UBERON:0000995 ! uterus
@@ -34268,7 +34294,6 @@ subset: uberon_slim
 xref: FMA:18829
 xref: MA:0002799
 is_a: UBERON:0001637 ! artery
-is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000995
 intersection_of: UBERON:0001637 ! artery
@@ -34542,7 +34567,7 @@ xref: MA:0002834
 xref: ncithesaurus:Corpus_Luteum
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
-relationship: develops_from UBERON:0001305 ! follicle of ovary
+relationship: develops_from UBERON:0001305 ! ovarian follicle
 relationship: part_of UBERON:0000949 ! endocrine system
 relationship: part_of UBERON:0000992 ! ovary
 
@@ -44114,7 +44139,7 @@ id: UBERON:0003147
 name: peritreme
 alt_id: UBERON:FBbt_00003121-HAO_0000712
 def: "That part of the integument of an insect which surrounds the spiracles." [http://www.answers.com/topic/peritreme]
-comment: term also used for edge of the aperture of a univalve shell\narthropod specific groupings belong in separate ontology
+comment: term also used for edge of the aperture of a univalve shell
 synonym: "rim" RELATED [FBbt:00003121]
 xref: FBbt:00003121
 xref: HAO:0000712
@@ -44135,7 +44160,7 @@ is_obsolete: true
 id: UBERON:0003149
 name: tergite
 alt_id: UBERON:FBbt_00004476-HAO_0001005
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 synonym: "abdominal tergite" EXACT [FBbt:00004476]
 xref: FBbt:00004476
 xref: HAO:0001005
@@ -44145,7 +44170,7 @@ is_obsolete: true
 id: UBERON:0003150
 name: sternite
 alt_id: UBERON:FBbt_00004477-HAO_0000955
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 synonym: "abdominal sternite" EXACT [FBbt:00004477]
 xref: FBbt:00004477
 xref: HAO:0000955
@@ -44326,7 +44351,7 @@ is_obsolete: true
 id: UBERON:0003169
 name: cervical sclerite
 alt_id: UBERON:FBbt_00004548-HAO_0000195
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 xref: FBbt:00004548
 xref: HAO:0000195
 is_obsolete: true
@@ -44508,7 +44533,7 @@ is_obsolete: true
 id: UBERON:0003189
 name: unguitractor plate
 alt_id: UBERON:FBbt_00004658-HAO_0001043
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 xref: FBbt:00004658
 xref: HAO:0001043
 is_obsolete: true
@@ -44534,7 +44559,7 @@ is_obsolete: true
 id: UBERON:0003192
 name: axillary sclerite
 alt_id: UBERON:FBbt_00004737-HAO_0000159
-comment: DV with CARO\narthropod specific groupings belong in separate ontology
+comment: DV with CARO
 xref: FBbt:00004737
 xref: HAO:0000159
 is_obsolete: true
@@ -46707,7 +46732,7 @@ is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0000164
 intersection_of: UBERON:0000057 ! urethra
-intersection_of: part_of UBERON:0000164 ! urogenital sinus
+intersection_of: part_of UBERON:0000164 ! primitive urogenital sinus
 
 [Term]
 id: UBERON:0003341
@@ -50097,6 +50122,7 @@ synonym: "blood vessel of tunica interna of eyeball" EXACT [OBOL:automatic]
 synonym: "inner layer of eyeball blood vessel" EXACT [OBOL:automatic]
 synonym: "retinal blood vessel" EXACT [OBOL:automatic]
 synonym: "tunica interna of eyeball blood vessel" EXACT [OBOL:automatic]
+xref: GAID:509
 xref: MA:0001317
 is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
@@ -53602,9 +53628,11 @@ is_a: UBERON:0004111 ! anatomical conduit
 id: UBERON:0003703
 name: extrahepatic bile duct
 def: "the passages external to the liver for the conveyance of bile." [MP:0009498]
+synonym: "bile duct extrahepatic part" RELATED [MA:0002659]
 synonym: "extrahepatic biliary system" RELATED [GAID:281]
 xref: FMA:14678
 xref: GAID:281
+xref: MA:0002659
 xref: ncithesaurus:Extrahepatic_Bile_Duct
 is_a: UBERON:0002394 ! bile duct
 
@@ -53612,8 +53640,10 @@ is_a: UBERON:0002394 ! bile duct
 id: UBERON:0003704
 name: intrahepatic bile duct
 def: "the passages within the liver for the conveyance of bile." [MP:0009497]
+synonym: "bile duct intrahepatic part" EXACT [MA:0001630]
 xref: FMA:15766
 xref: GAID:287
+xref: MA:0001630
 xref: ncithesaurus:Intrahepatic_Bile_Duct
 xref: ZFA:0005169
 is_a: UBERON:0002394 ! bile duct
@@ -54372,7 +54402,6 @@ xref: EHDAA2:0000719
 xref: HOG:0001340
 xref: OpenCyc:Mx4rvlWYh5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001638 ! implied link automatically realized ! vein
-is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000991
 intersection_of: UBERON:0001638 ! vein
@@ -54553,6 +54582,7 @@ id: UBERON:0003861
 name: neural arch
 def: "posterior part of a vertebra that consists of a pair of pedicles and a pair of laminae, and supports seven processes: four articular processes, two transverse processes one spinous process[WP]. ZFA: A neural arch encloses the neural canal and typically meets its partner to form a neural spine. The neural arch can be a replacement ossification of the basidorsal cartilage or can form directly in membrane bone." [Wikipedia:Vertebral_arch]
 synonym: "arch of vertebra" EXACT [FMA:11946]
+synonym: "vertebra neural arch" EXACT [MA:0001453]
 synonym: "vertebral arch" EXACT []
 xref: BTO:0001763
 xref: FMA:11946
@@ -55443,7 +55473,9 @@ def: "any of the organized aggregations of cells that function as secretory or e
 synonym: "genitalia gland" EXACT [OBOL:automatic]
 synonym: "gland of genitalia" EXACT [OBOL:automatic]
 synonym: "gland of reproductive system" EXACT [OBOL:automatic]
+synonym: "reproductive gland" EXACT [MA:0001751]
 synonym: "reproductive system gland" EXACT [OBOL:automatic]
+xref: MA:0001751
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0000990
@@ -55627,7 +55659,11 @@ relationship: part_of UBERON:0001768 ! vascular layer of eyeball
 [Term]
 id: UBERON:0003957
 name: Bruch membrane
-def: "the transparent, nearly structureless inner layer of the choroid in contact with the pigmented layer of the retina" [MP:0005239]
+def: "the transparent, nearly structureless innermost layer of the choroid in contact with the pigmented layer of the retina" [MP:0005239, Wikipedia:Bruch's_membrane]
+synonym: "basal lamina of choroid" EXACT [FMA:58438]
+synonym: "Bruch's basal membrane" EXACT [FMA:58438]
+synonym: "lamina basilis" EXACT [FMA:58438]
+xref: FMA:58438
 xref: GAID:914
 is_a: UBERON:0000119 ! cell layer
 relationship: part_of UBERON:0001776 ! choroid
@@ -55834,15 +55870,17 @@ relationship: part_of UBERON:0002129 ! cerebellar cortex
 id: UBERON:0003981
 name: primordial ovarian follicle
 def: "primordial follicles are indiscernible to the naked eye and develop to primary, secondary, and finally mature vesicular follicles" [MP:0009361]
-is_a: UBERON:0001305 ! follicle of ovary
+xref: MA:0001710
+is_a: UBERON:0001305 ! ovarian follicle
 
 [Term]
 id: UBERON:0003982
 name: mature ovarian follicle
 def: "." [MP:0009364]
 xref: BTO:0000389
+xref: MA:0001709
 xref: ZFA:0001264
-is_a: UBERON:0001305 ! follicle of ovary
+is_a: UBERON:0001305 ! ovarian follicle
 relationship: develops_from UBERON:0003981 ! primordial ovarian follicle
 
 [Term]
@@ -55922,7 +55960,7 @@ synonym: "arachnoid forament" RELATED [MA:0002947]
 synonym: "foramen of Magendie" EXACT [FMA:75015]
 synonym: "foramen of Majendie" EXACT [FMA:75015]
 synonym: "fourth ventricle median aperture" EXACT [MA:0002947]
-synonym: "median aperture" EXACT [MP:0009802]
+synonym: "median aperture" BROAD [MP:0009802]
 synonym: "median aperture of fourth ventricle" EXACT [FMA:75015]
 xref: FMA:75015
 xref: MA:0002947
@@ -55935,7 +55973,7 @@ def: "the two lateral openings of the fourth ventricle into the subarachnoid spa
 synonym: "foramen of Key-Retzius" EXACT [FMA:78473]
 synonym: "foramen of Luschka" EXACT [FMA:78473]
 synonym: "foramen of Retzius" EXACT [FMA:78473]
-synonym: "lateral aperture" EXACT [MP:0009803]
+synonym: "lateral aperture" BROAD [MP:0009803]
 synonym: "lateral aperture of fourth ventricle" EXACT [FMA:78473]
 xref: FMA:78473
 xref: MA:0002946
@@ -55970,9 +56008,13 @@ relationship: part_of UBERON:0001678 ! temporal bone
 [Term]
 id: UBERON:0003996
 name: arcus anterior
-def: "the arch that connects the lateral masses of the atlas anteriorly and articulates with the anterior articular facet of the dens of the axis" [MP:0009879]
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+alt_id: UBERON:0005209
+def: "The anterior arch of the atlas forms about one-fifth of the ring of the atlas: its anterior surface is convex, and presents at its center the anterior tubercle for the attachment of the Longus colli muscles; posteriorly it is concave, and marked by a smooth, oval or circular facet (fovea dentis), for articulation with the odontoid process (dens) of the axis[WP]. The arch that connects the lateral masses of the atlas anteriorly and articulates with the anterior articular facet of the dens of the axis[MP]." [MP:0009879, Wikipedia:Anterior_arch_of_atlas]
+synonym: "anterior arch of atlas" EXACT [MA:0002954]
+synonym: "arcus anterior atlantis" EXACT [MA:0002954]
+synonym: "cervical vertebra 1 arcus anterior" EXACT [MA:0002954]
+xref: MA:0002954
+is_a: UBERON:0004530 ! bony projection
 relationship: part_of UBERON:0001092 ! atlas
 
 [Term]
@@ -56075,7 +56117,11 @@ relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
 [Term]
 id: UBERON:0004007
 name: cerebellum deep nucleus
-def: "the gray matter nuclei located in the center of the cerebellum, embedded in the white matter, which receive inhibitory (GABAergic) inputs from Purkinje cells in the cerebellar cortex and excitatory (glutamatergic) inputs from mossy fiber pathways; all output fibers of the cerebellum originate from the these nuclei" [MP:0009979]
+def: "the gray matter nuclei located in the center of the cerebellum, embedded in the white matter, which receive inhibitory (GABAergic) inputs from Purkinje cells in the cerebellar cortex and excitatory (glutamatergic) inputs from mossy fiber pathways; all output fibers of the cerebellum originate from the these nuclei[MP]" [MP:0009979, Wikipedia:Deep_cerebellar_nuclei]
+comment: TODO - split nucleus from  nuclear complex/nuclei?
+xref: FMA:72249
+xref: MA:0000203
+xref: NIF_GrossAnatomy:birnlex_1568
 is_a: UBERON:0002946 ! regional part of cerebellum
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -56289,6 +56335,7 @@ synonym: "Schlemm's canal" EXACT []
 xref: FMA:51873
 xref: ncithesaurus:Canal_of_Schlemm
 is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 relationship: part_of UBERON:0003956 ! aqueous drainage system
 
 [Term]
@@ -56296,6 +56343,7 @@ id: UBERON:0004030
 name: aqueous vein
 def: "this vessel that receives aqueous humor from the sinus venosus sclerae (canal of Schlemm)" [MP:0005207]
 is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
 relationship: part_of UBERON:0003956 ! aqueous drainage system
 
 [Term]
@@ -56592,7 +56640,8 @@ relationship: part_of UBERON:0001016 ! nervous system
 [Term]
 id: UBERON:0004066
 name: frontonasal prominence
-def: "an unpaired facial process in the embryo formed from the tissues surrounding the forebrain vesicle that develops into the forehead and bridge of the nose/snout" [MP:0009901]
+def: "During embryonic development, two areas of thickened ectoderm, the olfactory areas, appear immediately under the fore-brain in the anterior wall of the stomodeum, one on either side of a region termed the frontonasal prominence (or process)[WP]. By the upgrowth of the surrounding parts these areas are converted into pits, the olfactory pits, which indent the frontonasal prominence and divide it into a medial and two lateral nasal processes[WP]. two areas of thickened ectoderm, the olfactory areas, appear immediately under the fore-brain in the anterior wall of the stomodeum, one on either side of a region termed the frontonasal prominence.  an unpaired facial process in the embryo formed from the tissues surrounding the forebrain vesicle that develops into the forehead and bridge of the nose/snout[MP]." [MP:0009901, Wikipedia:Frontonasal_prominence]
+comment: TODO - improve def
 xref: ncithesaurus:Frontonasal_Prominence
 is_a: UBERON:0002050 ! embryonic structure
 
@@ -56898,19 +56947,23 @@ relationship: part_of UBERON:0002707 ! pyramidal tract
 [Term]
 id: UBERON:0004096
 name: odontoid process
-def: "The toothlike process on the upper surface of the axis, which articulates with the atlas above[GAID]." [GAID:238, HP:0003310]
-comment: TODO - this needs to be defined more generically, other vetrebrae have odontoid processes. TODO check AAO:0000721
-synonym: "axis dens" RELATED [FMA:24043]
-synonym: "dens" RELATED [EMAPA:26535]
-synonym: "dens of axis" RELATED [FMA:24043]
-synonym: "odontoid process of axis" RELATED [FMA:24043]
+alt_id: UBERON:0005210
+def: "The toothlike process on the upper surface of the axis, which articulates with the atlas above[GAID]." [GAID:238, HP:0003310, Wikipedia:Wikipedia\:Dens_(anatomy)]
+comment: TODO check AAO:0000721 odontoid_process -- Anterior process located between the atlantal cotyles that projects into the foramen magnum of the skull and bears facets that articulate with the lateral walls of the foramen
+synonym: "axis dens" EXACT [FMA:24043]
+synonym: "axis odontoid process" EXACT [MA:0002872]
+synonym: "cervical vertebra 2 odontoid process" EXACT [MA:0002872]
+synonym: "dens" EXACT [EMAPA:26535]
+synonym: "dens of axis" EXACT [FMA:24043]
+synonym: "odontoid" RELATED [Wikipedia:Wikipedia\:Dens_(anatomy)]
+synonym: "odontoid process of axis" EXACT [FMA:24043]
 xref: EMAPA:26535
 xref: FMA:24043
 xref: GAID:238
+xref: MA:0002872
 xref: OpenCyc:Mx4rwIYGoJwpEbGdrcN5Y29ycA
-is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0001130 ! vertebral column
+is_a: UBERON:0004530 ! bony projection
+relationship: part_of UBERON:0001093 ! second cervical vertebra
 
 [Term]
 id: UBERON:0004097
@@ -61141,27 +61194,55 @@ relationship: develops_into UBERON:0004708 ! limb/fin
 
 [Term]
 id: UBERON:0004358
-name: caput
+name: caput epididymis
 def: "the head of the epididymis" [MP:0002660]
-synonym: "epidymis head" EXACT []
+synonym: "caput" BROAD [MP:0002660]
+synonym: "caput epididymidis" RELATED [BTO:0000336]
+synonym: "epidymis head" EXACT [FMA:18259]
+synonym: "head of epidymis " EXACT []
+xref: BTO:0000336
+xref: EMAPA:19291
+xref: FMA:18259
+xref: MA:0002762
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001301 ! epididymis
 
 [Term]
 id: UBERON:0004359
-name: corpus
+name: corpus epididymis
 def: "the body of the epididymis" [MP:0002661]
+synonym: "body of epididymis " EXACT [FMA:18260]
+synonym: "body of epidymis " EXACT []
+synonym: "corpus" BROAD [MP:0002661]
+synonym: "corpus epididymidis" RELATED [BTO:0000209]
+synonym: "epididymal body" EXACT [FMA:18260]
+synonym: "epididymis body" EXACT [FMA:18260]
 synonym: "epidymis body" EXACT []
+xref: BTO:0000209
+xref: EMAPA:19293
+xref: FMA:18260
+xref: MA:0002764
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001301 ! epididymis
 
 [Term]
 id: UBERON:0004360
-name: cauda
+name: cauda epididymis
 def: "the tail of the epididymis" [MP:0002662]
+synonym: "cauda epididymidis" EXACT [BTO:0000210]
+synonym: "corpus" BROAD [MP:0002662]
+synonym: "epididymal cauda" EXACT [BTO:0000210]
+synonym: "epididymal tail" EXACT [FMA:18261]
+synonym: "epididymis tail" EXACT [FMA:18261]
 synonym: "epidymis tail" EXACT []
+synonym: "tail of epididymis " EXACT [FMA:18261]
+synonym: "tail of epidymis " EXACT []
+xref: BTO:0000210
+xref: EMAPA:19292
+xref: FMA:18261
+xref: MA:0002763
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001301 ! epididymis
@@ -61249,9 +61330,11 @@ def: "transparent homogeneous acellular layer found between the substantia propr
 synonym: "Descemet membrane" EXACT []
 synonym: "Descemet's posterior elastic lamina" EXACT [FMA:58309]
 synonym: "lamina limitans posterior" EXACT [FMA:58309]
+synonym: "posterior limiting lamina " EXACT [MA:0001246]
 synonym: "posterior limiting lamina of cornea " EXACT [FMA:58309]
 xref: FMA:58309
 xref: GAID:894
+xref: MA:0001246
 xref: ncithesaurus:Descemet_s_Membrane
 xref: ZFA:0001686
 is_a: UBERON:0000476 ! acellular anatomical structure
@@ -65650,22 +65733,25 @@ intersection_of: part_of UBERON:0001295 ! endometrium
 
 [Term]
 id: UBERON:0004812
-name: prepuce epithelium
+name: male prepuce epithelium
+comment: TODO - check prepuce vs male prepuce
 synonym: "epithelial tissue of foreskin" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of penile prepuce" EXACT [OBOL:automatic]
-synonym: "epithelial tissue of prepuce" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of prepuce" BROAD [OBOL:automatic]
 synonym: "epithelial tissue of prepuce of penis" EXACT [OBOL:automatic]
 synonym: "epithelium of foreskin" EXACT [OBOL:automatic]
 synonym: "epithelium of penile prepuce" EXACT [OBOL:automatic]
-synonym: "epithelium of prepuce" EXACT [OBOL:automatic]
+synonym: "epithelium of prepuce" BROAD [OBOL:automatic]
 synonym: "epithelium of prepuce of penis" EXACT [OBOL:automatic]
 synonym: "foreskin epithelial tissue" EXACT [OBOL:automatic]
 synonym: "foreskin epithelium" EXACT [OBOL:automatic]
 synonym: "penile prepuce epithelial tissue" EXACT [OBOL:automatic]
 synonym: "penile prepuce epithelium" EXACT [OBOL:automatic]
-synonym: "prepuce epithelial tissue" EXACT [OBOL:automatic]
+synonym: "prepuce epithelial tissue" BROAD [OBOL:automatic]
 synonym: "prepuce of penis epithelial tissue" EXACT [OBOL:automatic]
-synonym: "prepuce of penis epithelium" EXACT [OBOL:automatic]
+synonym: "prepuce of penis epithelium" BROAD [OBOL:automatic]
+xref: EMAPA:30638
+xref: EMAPA:30655
 xref: MA:0001753
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004803 ! implied link automatically realized ! penis epithelium
@@ -66221,6 +66307,7 @@ intersection_of: part_of UBERON:0000915 ! thorax
 id: UBERON:0004864
 name: vasculature of retina
 synonym: "retina vasculature" EXACT [OBOL:automatic]
+synonym: "retinal vasculature" EXACT [OBOL:automatic]
 synonym: "set of blood vessels of retina" EXACT [OBOL:automatic]
 synonym: "set of retinal blood vessels" EXACT [FMA:76552]
 xref: FMA:76552
@@ -66234,7 +66321,7 @@ intersection_of: part_of UBERON:0000966 ! retina
 id: UBERON:0004865
 name: teleost parietal bone
 def: "Paired dermal bone that covers the hind part of the cranium, overlapping the dorsal edge of the sphenotic, pterotic, epiotic and the anterior edge of the supraoccipital. The parietal are overlapped anteriorly by the frontal." [ZFA:0000486]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+comment: The parietal bone in teleost fish is the homolog of the frontal bone in tetrapods
 synonym: "frontal bone" NARROW [FMA:52734]
 synonym: "parietal bone" NARROW [TAO:0000486]
 synonym: "post parietal" RELATED [ZFA:0000486]
@@ -66251,7 +66338,7 @@ relationship: part_of UBERON:0001703 ! neurocranium
 id: UBERON:0004866
 name: teleost frontal bone
 def: "One of two large elongated paired dermal bones that roof the cranium and bear part of the supraorbital canal. The frontal bones cover the upper edge of the lateral ethmoid, orbitosphenoid and pterosphenoids and overlaps the parietal bone posteriorly." [ZFA:0000514]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in tetrapods
 synonym: "frontal bone" NARROW [TAO:0000514]
 synonym: "teleost frontal" EXACT [TAO:0000514]
 synonym: "teleost frontal bone" EXACT [TAO:0000514]
@@ -66273,6 +66360,7 @@ relationship: part_of UBERON:0001697 ! orbit
 id: UBERON:0004868
 name: tapetum lucidum
 is_a: UBERON:0000479 ! portion of tissue
+relationship: adjacent_to UBERON:0000966 ! retina
 relationship: part_of UBERON:0000970 ! eye
 definition: "a layer of tissue in the eye of many vertebrate  animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors" [Wikipedia:Tapetum_lucidum]
 
@@ -66344,21 +66432,24 @@ relationship: part_of UBERON:0003081 ! lateral plate mesoderm
 id: UBERON:0004875
 name: nephrogenic cord
 def: "a portion of the urogenital ridge which is the source of much of the urinary system[WP]." [Wikipedia:Nephrogenic_cord]
+comment: part_of or develops_from urogenital ridge?
 xref: FMA:72168
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: develops_from UBERON:0003064 ! intermediate mesoderm
-relationship: part_of UBERON:0004876 ! urogenital ridge
+relationship: develops_from UBERON:0004876 ! urogenital ridge
 
 [Term]
 id: UBERON:0004876
 name: urogenital ridge
-def: "embryological  structure which give rise to a portion of the external genitalia[WP]." [Wikipedia:Urogenital_ridge]
+def: "embryological  structure which give rise to a portion of the external genitalia[WP]." [Wikipedia:Urogenital_folds]
 comment: Less commonly, urogenital fold refers to the fold in the mesonephros  which is the precursor of e.g. the suspensory ligament of the ovary. This is the case in older versions of Gray's anatomy[WP]
+synonym: "urogenital fold" EXACT []
 xref: BTO:0001402
 xref: EMAPA:30888
 xref: EMAPA:30899
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
 relationship: develops_into UBERON:0004176 ! external reproductive organ
 
 [Term]
@@ -66649,7 +66740,7 @@ is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived st
 is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0000164
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0000164 ! urogenital sinus
+intersection_of: part_of UBERON:0000164 ! primitive urogenital sinus
 
 [Term]
 id: UBERON:0004903
@@ -70206,24 +70297,6 @@ intersection_of: UBERON:0000062 ! organ
 intersection_of: part_of UBERON:0003138 ! thoracic segment
 
 [Term]
-id: UBERON:0005182
-name: ovary theca externa
-xref: MA:0001713
-is_a: UBERON:0000156 ! implied link automatically realized ! theca externa
-relationship: part_of UBERON:0000992
-intersection_of: UBERON:0000156 ! theca externa
-intersection_of: part_of UBERON:0000992 ! ovary
-
-[Term]
-id: UBERON:0005183
-name: ovary theca interna
-xref: MA:0001714
-is_a: UBERON:0000157 ! implied link automatically realized ! theca interna
-relationship: part_of UBERON:0000992
-intersection_of: UBERON:0000157 ! theca interna
-intersection_of: part_of UBERON:0000992 ! ovary
-
-[Term]
 id: UBERON:0005184
 name: hair medulla
 xref: MA:0000158
@@ -70264,29 +70337,20 @@ intersection_of: OBO_REL:part_of UBERON:0001294 ! inner medulla of kidney
 [Term]
 id: UBERON:0005188
 name: caput epididymis
-xref: MA:0002762
-is_a: UBERON:0001301 ! implied link automatically realized ! epididymis
-relationship: OBO_REL:part_of UBERON:0004358
-intersection_of: UBERON:0001301 ! epididymis
-intersection_of: OBO_REL:part_of UBERON:0004358 ! caput
+is_obsolete: true
+replaced_by: UBERON:0004358
 
 [Term]
 id: UBERON:0005189
 name: corpus epididymis
-xref: MA:0002764
-is_a: UBERON:0001301 ! implied link automatically realized ! epididymis
-relationship: OBO_REL:part_of UBERON:0004359
-intersection_of: UBERON:0001301 ! epididymis
-intersection_of: OBO_REL:part_of UBERON:0004359 ! corpus
+is_obsolete: true
+replaced_by: UBERON:0004359
 
 [Term]
 id: UBERON:0005190
 name: cauda epididymis
-xref: MA:0002763
-is_a: UBERON:0001301 ! implied link automatically realized ! epididymis
-relationship: OBO_REL:part_of UBERON:0004360
-intersection_of: UBERON:0001301 ! epididymis
-intersection_of: OBO_REL:part_of UBERON:0004360 ! cauda
+is_obsolete: true
+replaced_by: UBERON:0004360
 
 [Term]
 id: UBERON:0005191
@@ -70369,7 +70433,6 @@ id: UBERON:0005199
 name: cervical mammary gland
 xref: MA:0000789
 is_a: UBERON:0001911 ! implied link automatically realized ! lactiferous gland
-is_a: UBERON:0002075 ! implied link automatically realized ! viscus
 is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
 relationship: part_of UBERON:0000002
 intersection_of: UBERON:0001911 ! lactiferous gland
@@ -70457,24 +70520,6 @@ is_a: UBERON:0003978 ! implied link automatically realized ! valve
 relationship: OBO_REL:part_of UBERON:0002078
 intersection_of: UBERON:0003978 ! valve
 intersection_of: OBO_REL:part_of UBERON:0002078 ! right atrium
-
-[Term]
-id: UBERON:0005209
-name: cervical vertebra 1 arcus anterior
-xref: MA:0002954
-is_a: UBERON:0003996 ! implied link automatically realized ! arcus anterior
-relationship: OBO_REL:part_of UBERON:0001092
-intersection_of: UBERON:0003996 ! arcus anterior
-intersection_of: OBO_REL:part_of UBERON:0001092 ! atlas
-
-[Term]
-id: UBERON:0005210
-name: cervical vertebra 2 odontoid process
-xref: MA:0002872
-is_a: UBERON:0004096 ! implied link automatically realized ! odontoid process
-relationship: OBO_REL:part_of UBERON:0001093
-intersection_of: UBERON:0004096 ! odontoid process
-intersection_of: OBO_REL:part_of UBERON:0001093 ! second cervical vertebra
 
 [Term]
 id: UBERON:0005211
@@ -71270,6 +71315,128 @@ xref: NIF_GrossAnatomy:birnlex_1076
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
 relationship: part_of UBERON:0002129 ! cerebellar cortex
+
+[Term]
+id: UBERON:0005294
+name: genital ridge
+def: "The precursor to the gonads." [Wikipedia:Gonadal_ridge]
+synonym: "gonadal ridge" EXACT [Wikipedia:Gonadal_ridge]
+xref: XAO:0000018
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: part_of UBERON:0004122 ! genitourinary system
+
+[Term]
+id: UBERON:0005295
+name: sex cord
+def: "Cordlike masses of epithelial tissue that invaginate from germinal epithelium of the gonad and give rise to seminiferous tubules and rete testes in the male, and primary ovarian follicles and rete ovarii in the female." [http://www.answers.com/topic/sex-cord, Wikipedia:Sex_cords]
+synonym: "primitive sex cord" RELATED []
+xref: EHDAA2:0001523
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0005294 ! genital ridge
+
+[Term]
+id: UBERON:0005296
+name: ovary sex cord
+def: "structures that develop from sex cords in the female. After further development they become the ovarian follicles." [Wikipedia:Cortical_cords]
+comment: TODO check secondary vs cortical vs ovary
+synonym: "cortical cord" RELATED []
+synonym: "cortical sex cord" RELATED []
+synonym: "ovary primitive sex cord" RELATED []
+synonym: "secondary cord" RELATED []
+xref: EHDAA:8130
+xref: EHDAA2:0001363
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000992 ! ovary
+
+[Term]
+id: UBERON:0005297
+name: testis sex cord
+def: "The testis cords are precursors to the rete testis. They play several different roles in the development of the male genitals[WP]." [Wikipedia:Testis_cords]
+comment: check primary vs testis
+synonym: "primary sex cord" RELATED []
+synonym: "testis primitive sex cord" RELATED []
+xref: EHDAA:8152
+xref: EHDAA2:0002011
+xref: EMAPA:29098
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000473 ! testis
+
+[Term]
+id: UBERON:0005298
+name: skin of clitoris
+synonym: "clitoris skin" EXACT []
+xref: FMA:20168
+is_a: UBERON:0000014 ! implied link automatically realized ! zone of skin
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0002411
+intersection_of: UBERON:0000014 ! zone of skin
+intersection_of: part_of UBERON:0002411 ! clitoris
+
+[Term]
+id: UBERON:0005299
+name: prepuce of clitoris
+def: "In female human anatomy, the clitoral hood, is a fold of skin that surrounds and protects the clitoral glans. It develops as part of the labia minora and is homologous with the foreskin (equally called prepuce) in male genitals." [Wikipedia:Clitoral_hood]
+comment: Note FMA has FMA:27886 skin of prepuce of clitoris- how is this different?
+synonym: "clitoral hood" EXACT [Wikipedia:Clitoral_hood]
+synonym: "clitoral prepuce" EXACT []
+synonym: "clitoris prepuce" EXACT []
+synonym: "prepuce of female" EXACT [EMAPA:30699]
+synonym: "prepuce of the clitoris" EXACT []
+synonym: "preputium clitoridis" EXACT [Wikipedia:Clitoral_hood]
+xref: EMAPA:30699
+xref: FMA:20169
+is_a: UBERON:0000475 ! organism subdivision
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0005298 ! skin of clitoris
+
+[Term]
+id: UBERON:0005300
+name: reproductive gland
+is_obsolete: true
+replaced_by: UBERON:0003937
+
+[Term]
+id: UBERON:0005301
+name: male preputial gland
+def: "One of the sebaceous glands of the corona and neck of the glans penis." [MP:0002717]
+synonym: "preputial gland" BROAD [BTO:0001111, EMAPA:30640]
+synonym: "preputial gland of male" EXACT []
+synonym: "preputial gland of penis" EXACT [FMA:19653]
+xref: BTO:0001111
+xref: EMAPA:30502
+xref: EMAPA:30640
+xref: EMAPA:30659
+xref: FMA:19653
+xref: MA:0000403
+is_a: UBERON:0000359 ! implied link automatically realized ! preputial gland
+is_a: UBERON:0003487 ! implied link automatically realized ! skin sebaceous gland
+is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
+relationship: part_of UBERON:0003101
+intersection_of: UBERON:0000359 ! preputial gland
+intersection_of: part_of UBERON:0003101 ! male organism
+relationship: part_of UBERON:0001332 ! prepuce of penis
+
+[Term]
+id: UBERON:0005302
+name: female preputial gland
+comment: TODO: check MA terms
+synonym: "clitoral gland" EXACT [MA:0001702]
+synonym: "preputial gland of female" EXACT [EMAPA:30499]
+xref: BTO:0003119
+xref: EMAPA:30499
+xref: EMAPA:30711
+xref: MA:0001702
+xref: MA:0001703
+is_a: UBERON:0000359 ! implied link automatically realized ! preputial gland
+relationship: part_of UBERON:0003100
+intersection_of: UBERON:0000359 ! preputial gland
+intersection_of: part_of UBERON:0003100 ! female organism
 
 [Typedef]
 id: adjacent_to
