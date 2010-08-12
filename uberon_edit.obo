@@ -2540,7 +2540,7 @@ id: UBERON:0000209
 name: tetrapod frontal bone
 alt_id: UBERON:FMA_9613-MA_0001469-ZFA_0000486
 def: "In humans: A bone resembling a cockleshell in two portions the squama frontalis, corresponding with the region of the forehead, and an orbital or horizontal portion, the pars orbitalis, which enters into the formation of the roofs of the orbital and nasal cavities." [Wikipedia:Frontal_bone]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in tetrapods
+comment: The parietal bone in teleost fish is the homolog of the frontal bone in tetrapods
 synonym: "frontal bone" NARROW [FMA:52734, MA:0001466]
 xref: FMA:52734 ! Frontal bone
 xref: GAID:226 ! frontal bone
@@ -2554,7 +2554,7 @@ xref: HOG:0001324 ! frontal bone
 id: UBERON:0004865
 name: teleost parietal bone
 def: "Paired dermal bone that covers the hind part of the cranium, overlapping the dorsal edge of the sphenotic, pterotic, epiotic and the anterior edge of the supraoccipital. The parietal are overlapped anteriorly by the frontal." [ZFA:0000486]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in tetrapods
+comment: The parietal bone in teleost fish is the homolog of the frontal bone in tetrapods
 synonym: "frontal bone" NARROW [FMA:52734]
 synonym: "parietal bone" NARROW [TAO:0000486]
 synonym: "post parietal" RELATED [ZFA:0000486]
@@ -3239,17 +3239,67 @@ xref: GAID:1153 ! blastocyst
 xref: GAID:1294 ! blastula
 xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg ! blastula
 
+
 [Term]
-id: UBERON:0000359
-name: preputial gland
-alt_id: UBERON:BTO_0001111-FMA_71652
-synonym: "Preputial glands" EXACT [FMA:71652]
-synonym: "Preputial glands set" EXACT [FMA:71652]
-xref: BTO:0001111
-xref: FMA:71652 ! Set of preputial glands
+id: UBERON:0003937 ! sex gland
+name: sex gland
+def: "any of the organized aggregations of cells that function as secretory or excretory organs and are associated with reproduction" [MP:0000653]
 is_a: UBERON:0002530 ! gland
+relationship: part_of UBERON:0000990 ! reproductive system
+intersection_of: UBERON:0002530 ! gland
+intersection_of: part_of UBERON:0000990 ! reproductive system
+xref: MA:0001751 ! reproductive gland
+synonym: "reproductive gland" EXACT [MA:0001751]
+synonym: "genitalia gland" EXACT [OBOL:automatic]
+synonym: "gland of genitalia" EXACT [OBOL:automatic]
+synonym: "gland of reproductive system" EXACT [OBOL:automatic]
+synonym: "reproductive system gland" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005300
+name: reproductive gland
+is_obsolete: true
+replaced_by: UBERON:0003937 ! sex gland
+
+[Term]
+id: UBERON:0000359 ! preputial gland
+alt_id: UBERON:BTO_0001111-FMA_71652
+name: preputial gland
+def: "An exocrine gland that are located in front of the genitals of some mammals (including mice) and produce pheromones[WP]." [Wikipedia:Preputial_gland]
+xref: FMA:71652 ! Set of preputial glands
+is_a: UBERON:0001821 ! sebaceous gland
 xref: ncithesaurus:Prepucial_Gland_MMHCC ! Preputial Gland
-def: "the sebaceous glands of the corona and neck of the glans penis." [MP:0002717]
+
+[Term]
+id: UBERON:0005301
+name: male preputial gland
+def: "One of the sebaceous glands of the corona and neck of the glans penis." [MP:0002717]
+synonym: "preputial gland" BROAD [BTO:0001111, EMAPA:30640]
+synonym: "preputial gland of male" EXACT []
+synonym: "preputial gland of penis" EXACT [FMA:19653]
+intersection_of: UBERON:0000359 ! preputial gland
+intersection_of: part_of UBERON:0003101 ! male organism
+relationship: part_of UBERON:0001332 ! prepuce of penis
+xref: EMAPA:30640 ! preputial gland
+xref: BTO:0001111 ! preputial gland
+xref: FMA:19653 ! Preputial gland of penis
+xref: MA:0000403 ! male preputial gland
+xref: EMAPA:30502 ! preputial gland of male 
+xref: EMAPA:30659 ! preputial gland of male
+
+[Term]
+id: UBERON:0005302
+name: female preputial gland
+intersection_of: UBERON:0000359 ! preputial gland
+intersection_of: part_of UBERON:0003100 ! female organism
+comment: TODO: check MA terms
+synonym: "clitoral gland" EXACT [MA:0001702]
+synonym: "preputial gland of female" EXACT [EMAPA:30499]
+xref: MA:0001703 ! female preputial gland
+xref: MA:0001702 ! clitoral gland
+xref: EMAPA:30499 ! preputial gland of female
+xref: EMAPA:30711 ! preputial gland of female
+xref: BTO:0003119 ! clitoral gland
 
 [Term]
 id: UBERON:0000360
@@ -13938,33 +13988,84 @@ synonym: "penile skin" EXACT []
 synonym: "penis skin" EXACT []
 xref: FMA:19638 ! Skin of penis
 xref: MA:0002727 ! penis skin
-is_a: UBERON:0000014 ! zone of skin
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: part_of UBERON:0000989 ! penis
 relationship: continuous_with UBERON:0001085 ! skin of trunk
-relationship: part_of UBERON:0000989 ! penis
 synonym: "penis zone of skin" EXACT [OBOL:automatic]
 synonym: "zone of skin of penis" EXACT [OBOL:automatic]
+
+[Term]
+id: UBERON:0005298 ! skin of clitoris
+name: skin of clitoris
+synonym: "clitoris skin" EXACT []
+intersection_of: UBERON:0000014 ! zone of skin
+intersection_of: part_of UBERON:0002411 ! clitoris
+xref: FMA:20168 ! Skin of clitoris
 
 [Term]
 id: UBERON:0001332
 name: prepuce of penis
 alt_id: UBERON:FMA_19639-MA_0000407
 def: "In male human anatomy, the foreskin is a retractable double-layered fold of skin and mucous membrane that covers the glans penis and protects the urinary meatus when the penis is not erect. It is also described as the prepuce, a technically broader term that also includes the clitoral hood in women, to which the foreskin is embryonically homologous. [WP,unvetted]." [Wikipedia:Foreskin]
-comment: This class was created automatically from a combination of ontologies
+comment: Note FMA also has FMA:27648 skin of prepuce of penis - how is this different? MA uses the term prepuce for the male prepuce
 subset: uberon_slim
 synonym: "foreskin" EXACT []
 synonym: "penile prepuce" EXACT []
-synonym: "prepuce" EXACT []
+synonym: "preputial skin" RELATED [FMA:27648]
+synonym: "skin of prepuce of penis" NARROW [FMA:27648]
+synonym: "prepuce of male" EXACT [EMAPA:18989]
+synonym: "prepuce" BROAD [Wikipedia:Foreskin, MA:0000407]
 xref: BTO:0001113
 xref: FMA:19639 ! Prepuce of penis
 xref: MA:0000407 ! prepuce
+xref: EMAPA:18989 ! prepuce of male
 xref: ncithesaurus:Prepuce
 xref: OpenCyc:Mx4rvVjlTZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000475 ! organism subdivision
 relationship: part_of UBERON:0001331 ! skin of penis
 xref: EFO:0001664 ! foreskin
 xref: OpenCyc:Mx4rvVjlTZwpEbGdrcN5Y29ycA ! foreskin
+
+[Term]
+id: UBERON:0005299
+name: prepuce of clitoris
+synonym: "preputium clitoridis" EXACT [Wikipedia:Clitoral_hood]
+synonym: "clitoris prepuce" EXACT []
+synonym: "prepuce of the clitoris" EXACT []
+synonym: "prepuce of female" EXACT [EMAPA:30699]
+synonym: "clitoral prepuce" EXACT []
+synonym: "clitoral hood" EXACT [Wikipedia:Clitoral_hood]
+def: "In female human anatomy, the clitoral hood, is a fold of skin that surrounds and protects the clitoral glans. It develops as part of the labia minora and is homologous with the foreskin (equally called prepuce) in male genitals." [Wikipedia:Clitoral_hood]
+comment: Note FMA has FMA:27886 skin of prepuce of clitoris- how is this different?
+is_a: UBERON:0000475 ! organism subdivision
+relationship: part_of UBERON:0005298 ! skin of clitoris
+xref: FMA:20169 ! Prepuce of clitoris
+xref: EMAPA:30699 ! prepuce of female
+
+[Term]
+id: UBERON:0004812
+name: male prepuce epithelium
+xref: MA:0001753 ! prepuce epithelium
+xref: EMAPA:30638 ! prepuce surface epithelium of male
+xref: EMAPA:30655 ! prepuce surface epithelium of male
+comment: TODO - check prepuce vs male prepuce
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001332 ! part_of prepuce of penis
+synonym: "epithelial tissue of foreskin" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of penile prepuce" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of prepuce" BROAD [OBOL:automatic]
+synonym: "epithelial tissue of prepuce of penis" EXACT [OBOL:automatic]
+synonym: "epithelium of foreskin" EXACT [OBOL:automatic]
+synonym: "epithelium of penile prepuce" EXACT [OBOL:automatic]
+synonym: "epithelium of prepuce" BROAD [OBOL:automatic]
+synonym: "epithelium of prepuce of penis" EXACT [OBOL:automatic]
+synonym: "foreskin epithelial tissue" EXACT [OBOL:automatic]
+synonym: "foreskin epithelium" EXACT [OBOL:automatic]
+synonym: "penile prepuce epithelial tissue" EXACT [OBOL:automatic]
+synonym: "penile prepuce epithelium" EXACT [OBOL:automatic]
+synonym: "prepuce epithelial tissue" BROAD [OBOL:automatic]
+synonym: "prepuce of penis epithelial tissue" EXACT [OBOL:automatic]
+synonym: "prepuce of penis epithelium" BROAD [OBOL:automatic]
 
 [Term]
 id: UBERON:0004917
@@ -14012,8 +14113,8 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:19668 ! Male urethra
 xref: MA:0002640 ! male urethra
-is_a: UBERON:0000057 ! urethra
-relationship: part_of UBERON:0003101 ! male organism
+intersection_of: UBERON:0000057 ! urethra
+intersection_of: part_of UBERON:0003101 ! male organism
 xref: ncithesaurus:Male_Urethra ! Male Urethra
 
 [Term]
@@ -14025,7 +14126,8 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:19669 ! Female urethra
 xref: MA:0002637 ! female urethra
-is_a: UBERON:0000057 ! urethra
+intersection_of: UBERON:0000057 ! urethra
+intersection_of: part_of UBERON:0003100 ! female organism
 xref: ncithesaurus:Female_Urethra ! Female Urethra
 
 [Term]
@@ -26808,7 +26910,7 @@ relationship: part_of UBERON:0003023 ! pontine tegmentum
 id: UBERON:0002048
 name: lung
 alt_id: UBERON:FMA_68877-FMA_7195-MA_0000415-MIAA_0000135-XAO_0000119
-def: "Lobular organ the parenchyma of which consists of air-filled alveoli which communicate with the tracheobronchial tree. Examples: There are only two instances, right lung and left lung[FMA]. // Saccular thoracic organ that constitutes the basic respiratory organ[XAO]." [BTO:0000763, Wikipedia:Lung]
+def: "Respiration organ present in all air-breathing animals whose principal function is to transport oxygen from the atmosphere into the bloodstream, and to release carbon dioxide from the bloodstream into the atmosphere." [BTO:0000763, Wikipedia:Lung]
 comment: respiration organ in all air-breathing animals, including most tetrapods, a few fish and a few snails. In mammals  and the more complex life forms, the two lungs are located in the chest on either side of the heart. Their principal function is to transport oxygen from the atmosphere into the bloodstream, and to release carbon dioxide from the bloodstream into the atmosphere. This exchange of gases is accomplished in the mosaic of specialized cells that form millions of tiny, exceptionally thin-walled air sacs called alveoli. // Avian lungs do not have alveoli as mammalian lungs do, they have Faveolar lungs. They contain millions of tiny passages known as para-bronchi, connected at both ends by the dorsobronchi // Snakes and limbless lizards typically possess only the right lung as a major respiratory organ; the left lung is greatly reduced, or even absent. Amphisbaenians, however, have the opposite arrangement, with a major left lung, and a reduced or absent right lung [WP]
 subset: uberon_slim
 xref: AAO:0000275 ! lungs
@@ -32603,8 +32705,8 @@ xref: BTO:0000765
 xref: FMA:9596 ! Exocrine gland
 xref: GAID:34 ! exocrine gland
 xref: MA:0002564 ! exocrine gland
-is_a: UBERON:0002530 ! gland
-relationship: part_of UBERON:0002330 ! exocrine system
+intersection_of: UBERON:0002530 ! gland
+intersection_of: part_of UBERON:0002330 ! exocrine system
 xref: ncithesaurus:Exocrine_Gland ! Exocrine Gland
 xref: EHDAA2:0003097 ! ducted gland
 xref: AEO:0000097 ! ducted gland
@@ -54865,19 +54967,6 @@ is_a: UBERON:0001020 ! commissure
 relationship: part_of UBERON:0003931 ! diencephalic white matter
 
 [Term]
-id: UBERON:0003937
-name: sex gland
-def: "any of the organized aggregations of cells that function as secretory or excretory organs and are associated with reproduction" [MP:0000653]
-is_a: UBERON:0002530 ! gland
-relationship: part_of UBERON:0000990 ! reproductive system
-intersection_of: UBERON:0002530 ! gland
-intersection_of: part_of UBERON:0000990 ! reproductive system
-synonym: "genitalia gland" EXACT [OBOL:automatic]
-synonym: "gland of genitalia" EXACT [OBOL:automatic]
-synonym: "gland of reproductive system" EXACT [OBOL:automatic]
-synonym: "reproductive system gland" EXACT [OBOL:automatic]
-
-[Term]
 id: UBERON:0003938
 name: sensory dissociation area
 def: "the area of the parietal lobe that integrates tactile and visual stimuli" [MP:0000796]
@@ -55017,10 +55106,14 @@ relationship: part_of UBERON:0001768 ! vascular layer of eyeball
 [Term]
 id: UBERON:0003957
 name: Bruch membrane
-def: "the transparent, nearly structureless inner layer of the choroid in contact with the pigmented layer of the retina" [MP:0005239]
+def: "the transparent, nearly structureless innermost layer of the choroid in contact with the pigmented layer of the retina" [MP:0005239, Wikipedia:Bruch's_membrane]
+synonym: "basal lamina of choroid" EXACT [FMA:58438]
+synonym: "lamina basilis" EXACT [FMA:58438]
+synonym: "Bruch's basal membrane" EXACT [FMA:58438]
 is_a: UBERON:0000119 ! cell layer
 relationship: part_of UBERON:0001776 ! choroid
 xref: GAID:914 ! bruch membrane
+xref: FMA:58438 ! Basal lamina of choroid
 
 [Term]
 id: UBERON:0003958
@@ -59961,8 +60054,10 @@ synonym: "Descemet membrane" EXACT []
 synonym: "Descemet's posterior elastic lamina" EXACT [FMA:58309]
 synonym: "posterior limiting lamina of cornea " EXACT [FMA:58309]
 synonym: "lamina limitans posterior" EXACT [FMA:58309]
+synonym: "posterior limiting lamina " EXACT [MA:0001246]
 xref: GAID:894 ! descemet's membrane
 xref: FMA:58309 ! posterior limiting lamina of cornea 
+xref: MA:0001246 ! posterior limiting lamina 
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: adjacent_to UBERON:0001985 ! corneal endothelium
 relationship: adjacent_to UBERON:0001777 ! substantia propria of cornea
@@ -63111,28 +63206,6 @@ synonym: "endometrium epithelial tissue" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of endometrium" EXACT [OBOL:automatic]
 synonym: "epithelium of endometrium" EXACT [OBOL:automatic]
 synonym: "epithelium of tunica mucosa (endometrium)" EXACT [OBOL:automatic]
-
-[Term]
-id: UBERON:0004812
-name: prepuce epithelium
-xref: MA:0001753 ! prepuce epithelium
-intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0001332 ! part_of prepuce of penis
-synonym: "epithelial tissue of foreskin" EXACT [OBOL:automatic]
-synonym: "epithelial tissue of penile prepuce" EXACT [OBOL:automatic]
-synonym: "epithelial tissue of prepuce" EXACT [OBOL:automatic]
-synonym: "epithelial tissue of prepuce of penis" EXACT [OBOL:automatic]
-synonym: "epithelium of foreskin" EXACT [OBOL:automatic]
-synonym: "epithelium of penile prepuce" EXACT [OBOL:automatic]
-synonym: "epithelium of prepuce" EXACT [OBOL:automatic]
-synonym: "epithelium of prepuce of penis" EXACT [OBOL:automatic]
-synonym: "foreskin epithelial tissue" EXACT [OBOL:automatic]
-synonym: "foreskin epithelium" EXACT [OBOL:automatic]
-synonym: "penile prepuce epithelial tissue" EXACT [OBOL:automatic]
-synonym: "penile prepuce epithelium" EXACT [OBOL:automatic]
-synonym: "prepuce epithelial tissue" EXACT [OBOL:automatic]
-synonym: "prepuce of penis epithelial tissue" EXACT [OBOL:automatic]
-synonym: "prepuce of penis epithelium" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0004814
