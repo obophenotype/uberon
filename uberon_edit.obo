@@ -691,6 +691,7 @@ synonym: "folliculus ovaricus primarius" EXACT []
 synonym: "preantral follicle of ovary" EXACT []
 synonym: "primary egg follicle" RELATED []
 synonym: "primary follicle of ovary" EXACT [FMA:18634]
+synonym: "ovary primary follicle" EXACT [MA:0002907]
 xref: FMA:18634 ! Primary follicle of ovary
 is_a: UBERON:0001305 ! follicle of ovary
 xref: MA:0002907 ! ovary primary follicle
@@ -2064,23 +2065,30 @@ relationship: part_of UBERON:0001305 ! follicle of ovary
 
 [Term]
 id: UBERON:0000156
+alt_id: UBERON:0005182
 name: theca externa
-def: "The theca externa is the outer layers of the theca folliculi. It contains abundant collagen and is mainly supportive." [Wikipedia:Theca_externa#Theca_externa]
+def: "The theca externa is the outer layers of the theca folliculi. It contains abundant collagen and is mainly supportive." [Wikipedia:Theca_externa]
+synonym: "ovary theca externa" EXACT [MA:0001713]
+synonym: "tunica externa of theca folliculi" EXACT [FMA:18657]
 xref: FMA:18657 ! Tunica externa of theca folliculi
+xref: BTO:0002852 ! theca externa
+xref: MA:0001713 ! ovary theca externa
 is_a: UBERON:0000158 ! membranous layer
 relationship: part_of UBERON:0000155 ! theca cell layer
 relationship: surrounds UBERON:0000157 ! theca interna
 relationship: has_part GO:0005581 ! collagen
-xref: BTO:0002852 ! theca externa
 
 [Term]
 id: UBERON:0000157
+alt_id: UBERON:0005183
 name: theca interna
 def: "Theca interna cells express receptors for luteinizing hormone, which when activated will stimulate the production of androstenedione from cholesterol by the enzyme desmolase. Androstenedione ultimately gives the granulosa cells the precursor substrate for estrogen manufacturing." [Wikipedia:Theca_externa#Theca_interna]
+synonym: "ovary theca interna" EXACT [MA:0001714]
 xref: FMA:18658 ! Tunica interna of theca folliculi
 is_a: UBERON:0000158 ! membranous layer
 relationship: part_of UBERON:0000155 ! theca cell layer
 xref: BTO:0002851 ! theca interna
+xref: MA:0001714 ! ovary theca interna
 
 [Term]
 id: UBERON:0000158
@@ -2532,7 +2540,7 @@ id: UBERON:0000209
 name: tetrapod frontal bone
 alt_id: UBERON:FMA_9613-MA_0001469-ZFA_0000486
 def: "In humans: A bone resembling a cockleshell in two portions the squama frontalis, corresponding with the region of the forehead, and an orbital or horizontal portion, the pars orbitalis, which enters into the formation of the roofs of the orbital and nasal cavities." [Wikipedia:Frontal_bone]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in tetrapods
 synonym: "frontal bone" NARROW [FMA:52734, MA:0001466]
 xref: FMA:52734 ! Frontal bone
 xref: GAID:226 ! frontal bone
@@ -2546,7 +2554,7 @@ xref: HOG:0001324 ! frontal bone
 id: UBERON:0004865
 name: teleost parietal bone
 def: "Paired dermal bone that covers the hind part of the cranium, overlapping the dorsal edge of the sphenotic, pterotic, epiotic and the anterior edge of the supraoccipital. The parietal are overlapped anteriorly by the frontal." [ZFA:0000486]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in tetrapods
 synonym: "frontal bone" NARROW [FMA:52734]
 synonym: "parietal bone" NARROW [TAO:0000486]
 synonym: "post parietal" RELATED [ZFA:0000486]
@@ -2562,7 +2570,7 @@ id: UBERON:0000210
 name: tetrapod parietal bone
 alt_id: UBERON:FMA_52734-MA_0001466-ZFA_0000514
 def: "In humans: bone forming side and roof of cranium. Each bone is irregularly quadrilateral in form, and has two surfaces, four borders, and four angles." [Wikipedia:Parietal_bone, ZFA:0000514]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in tetrapods
 synonym: "frontal bone" NARROW [TAO:0000514]
 synonym: "parietal bone" NARROW [FMA:9613]
 synonym: "teleost frontal bone" NARROW [TAO:0000514]
@@ -2577,7 +2585,7 @@ xref: HOG:0001324 ! frontal bone
 id: UBERON:0004866
 name: teleost frontal bone
 def: "One of two large elongated paired dermal bones that roof the cranium and bear part of the supraorbital canal. The frontal bones cover the upper edge of the lateral ethmoid, orbitosphenoid and pterosphenoids and overlaps the parietal bone posteriorly." [ZFA:0000514]
-comment: The frontal bone in teleost fish is the homolog of the parietal bone in vertebrates
+comment: The frontal bone in teleost fish is the homolog of the parietal bone in tetrapods
 synonym: "frontal bone" NARROW [TAO:0000514]
 synonym: "teleost frontal bone" EXACT [TAO:0000514]
 synonym: "teleost frontal" EXACT [TAO:0000514]
@@ -7861,6 +7869,7 @@ subset: uberon_slim
 xref: FBbt:00005113 ! neurite
 xref: FMA:61814 ! Neurite
 xref: GAID:751 ! neurite
+xref: GO:0043005 ! neurite
 is_a: UBERON:0000470 ! cell part
 relationship: part_of CL:0000540 ! neuron
 xref: NIF_Subcellular:sao-867568886 ! Neuron Process
@@ -55182,6 +55191,7 @@ id: UBERON:0003981
 name: primordial ovarian follicle
 def: "primordial follicles are indiscernible to the naked eye and develop to primary, secondary, and finally mature vesicular follicles" [MP:0009361]
 is_a: UBERON:0001305 ! follicle of ovary
+xref: MA:0001710 ! ovary primordial follicle
 
 [Term]
 id: UBERON:0003982
@@ -55191,6 +55201,7 @@ is_a: UBERON:0001305 ! follicle of ovary
 relationship: develops_from UBERON:0003981 ! primordial
 xref: ZFA:0001264 ! ovarian follicle stage IV
 xref: BTO:0000389 ! mature ovarian follicle
+xref: MA:0001709 ! ovary mature follicle
 
 [Term]
 id: UBERON:0003984
@@ -66398,19 +66409,6 @@ xref: MA:0000563
 intersection_of: UBERON:0000062 
 intersection_of: part_of UBERON:0003138
 
-[Term]
-id: UBERON:0005182
-name: ovary theca externa
-xref: MA:0001713
-intersection_of: UBERON:0000156 
-intersection_of: part_of UBERON:0000992
-
-[Term]
-id: UBERON:0005183
-name: ovary theca interna
-xref: MA:0001714
-intersection_of: UBERON:0000157 
-intersection_of: part_of UBERON:0000992
 
 [Term]
 id: UBERON:0005184
