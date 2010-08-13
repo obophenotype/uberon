@@ -373,6 +373,9 @@ uberon-go-defs.txt:
 %-syns.obo: %.obo
 	obol -debug obol -i $<  -u obol_anat_xpgen obol-generate-synonyms -query "id_idspace(ID,'UBERON'),genus(ID,_)" > $@.tmp && mv $@.tmp $@
 
+%-defs.obo: %.obo
+	obol -debug obol -r pato -i $<  -u obol_anat_xpgen obol-generate-textdefs -idspace UBERON > $@.tmp && mv $@.tmp $@
+
 
 uberon-mouse-missing-below-%.txt:
 	blip -i adult_mouse_xp.obo -r uberon -r mouse_anatomy -u ontol_db findall "parentT(X,'$*'),\+ entity_xref(_,X),(genus(X,G)->true;G='')" -select X-G -label > $@.tmp && sort -u $@.tmp > $@
@@ -682,6 +685,9 @@ hog-only.txt:
 
 hog-only-xref.txt:
 	blip-findall -i organ_association.txt -r hog -r uberon "class(X),id_idspace(X,'HOG'),\+entity_xref(U,X),\+parentT(X,'HOG:0001533'),entity_label(X,XN),organ_association(Y,YN,X,_,_,_)" -select "x(X,XN,Y,YN)" > $@
+
+xog_xref_new.txt:
+	blip-findall -r zebrafish_anatomy -r xenopus_anatomy -r mouse_anatomy -r fma_simple -i organ_association.txt -r hog -r uberon -i adhoc_uberon.pro hog_xref/3 -label > $@
 
 MULTIANAT_R=-r xenopus_anatomy -r mouse_anatomy -r gemina_anatomy -r amphibian_anatomy -r cell -r fly_anatomy -r zebrafish_anatomy -r fma_downcase -r brenda -r bila -r miaa -r nif_downcase -r emapa -r ehdaa -r ehdaa2 -r hog
 abduced-relations.txt:

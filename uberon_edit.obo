@@ -157,7 +157,7 @@ xref: MIAA:0000077 ! pituitary
 xref: ncithesaurus:Pituitary_Gland
 xref: OpenCyc:Mx4rv6NQYJwpEbGdrcN5Y29ycA
 xref: TAO:0000118 ! hypophysis
-xref: XAO:0000161
+xref: XAO:0000017 ! hypophysis
 xref: ZFA:0000118 ! hypophysis
 xref: BTO:0001073 ! hypophysis
 xref: OpenCyc:Mx4rv6NQYJwpEbGdrcN5Y29ycA ! pituitary gland
@@ -1465,6 +1465,13 @@ xref: FBbt:00004828 ! male genitalia
 xref: HAO:0000505 ! male genitalia
 xref: HOG:0000725 ! male reproductive system
 xref: OpenCyc:Mx4rvViCepwpEbGdrcN5Y29ycA
+xref: GAID:386 ! male genitalia
+xref: OpenCyc:Mx4rvViCepwpEbGdrcN5Y29ycA ! male reproductive system
+xref: EHDAA2:0001054 ! male reproductive system
+xref: MA:0000396 ! male reproductive system
+xref: ncithesaurus:Male_Reproductive_System ! Male Reproductive System
+xref: EFO:0000970 ! male reproductive system
+xref: XAO:0000155 ! male genitalia
 synonym: "male genitals" EXACT []
 synonym: "male genitalia" EXACT []
 is_a: UBERON:0000990 ! reproductive system
@@ -1472,18 +1479,12 @@ intersection_of: UBERON:0000990 ! reproductive system
 intersection_of: part_of UBERON:0003101 ! male organism
 disjoint_from: UBERON:0000474 ! female reproductive system
 relationship: part_of UBERON:0003101 ! male organism
-xref: MA:0000396 ! male reproductive system
-xref: ncithesaurus:Male_Reproductive_System ! Male Reproductive System
-xref: EFO:0000970 ! male reproductive system
 def: "the organs associated with producing offspring in the gender that produces spermatozoa." [MP:0001145]
 def: "the masculine organs of reproduction or generation, external or internal." [MP:0009198]
 synonym: "genitalia of male organism" EXACT [OBOL:automatic]
 synonym: "male organism genitalia" EXACT [OBOL:automatic]
 synonym: "male organism reproductive system" EXACT [OBOL:automatic]
 synonym: "reproductive system of male organism" EXACT [OBOL:automatic]
-xref: GAID:386 ! male genitalia
-xref: OpenCyc:Mx4rvViCepwpEbGdrcN5Y29ycA ! male reproductive system
-xref: EHDAA2:0001054 ! male reproductive system
 
 [Term]
 id: UBERON:0000080
@@ -1500,6 +1501,7 @@ xref: GAID:1308 ! mesonephros
 xref: EHDAA:1581 ! mesonephros
 xref: EHDAA:5903 ! mesonephros
 xref: EHDAA2:0001130 ! mesonephros
+xref: XAO:0000141 ! mesonephric kidney
 
 [Term]
 id: UBERON:0000081 ! metanephros
@@ -1526,7 +1528,9 @@ relationship: develops_from UBERON:0000084 ! ureteric bud
 id: UBERON:0000083
 name: mesonephric tubule
 def: "A mesonephric tubule is an epithelial tube that is part of the mesonephros[GO]. Genital ridge that is next to the mesonephros[WP]." [Wikipedia:Mesonephric_tubules]
+comment: TODO check
 xref: HOG:0000500 ! mesonephric tubule
+xref: XAO:0000148 ! mesonephric tubule
 intersection_of: UBERON:0003914 ! epithelial tube
 intersection_of: part_of UBERON:0000080 ! mesonephros
 
@@ -3127,6 +3131,7 @@ relationship: adjacent_to UBERON:0000483 ! epithelium
 relationship: part_of UBERON:0000344 ! mucosa
 xref: ncithesaurus:Lamina_Propria ! Lamina Propria
 xref: BTO:0002330 ! lamina propria
+xref: FMA:62517 ! Lamina propria
 
 [Term]
 id: UBERON:0000345
@@ -5596,6 +5601,7 @@ alt_id: UBERON:FBbt_00000111-FMA_69070-MIAA_0000173-XAO_0000001-ZFA_0000016
 def: "The outermost germ layer of the embryo. // Primary germ layer that is the outer of the embryo's three germ layers and gives rise to epidermis and neural tissue." [FB:gg, OMD:ectoderm, Wikipedia:Ectoderm]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "embryonic ectoderm" EXACT [HOG:0000153]
 xref: AAO:0000137 ! ectoderm
 xref: BILA:0000036
 xref: BTO:0000315
@@ -5626,6 +5632,7 @@ xref: MIAA:0000173 ! ectoderm
 xref: TAO:0000016 ! ectoderm
 xref: XAO:0000001 ! ectoderm
 xref: ZFA:0000016 ! ectoderm
+xref: HOG:0000153 ! embryonic ectoderm
 is_a: UBERON:0000923 ! germ layer
 xref: ncithesaurus:Ectoderm ! Ectoderm
 xref: EHDAA2:0000428 ! ectoderm
@@ -6018,6 +6025,7 @@ xref: EHDAA:402 ! dorsal aorta
 xref: FMA:3734 ! Aorta
 xref: GAID:469 ! aorta
 xref: galen:Aorta
+xref: HOG:0001523 ! aorta
 xref: HOG:0000264 ! dorsal aorta
 xref: MA:0000062 ! aorta
 xref: MA:0000476 ! dorsal aorta
@@ -18736,6 +18744,7 @@ is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0002046 ! thyroid follicle
 xref: ncithesaurus:Thyroid_Gland_Isthmus ! Thyroid Gland Isthmus
 xref: EHDAA2:0002031 ! thyroid isthmus
+xref: HOG:0000739 ! isthmus
 
 [Term]
 id: UBERON:0001610
@@ -22096,6 +22105,7 @@ xref: EHDAA2:0001465 ! pigmented retinal epithelium
 id: UBERON:0003902 ! retinal neural layer
 name: retinal neural layer
 def: "The layer of nerve cells in the retina[XAO]. The part of the retina that contains neurons and photoreceptor cells[GO]." [XAO:0003216, GO:0003407]
+comment: check MA
 synonym: "neural retina" EXACT [XAO:0003216, ZFA:0000046]
 synonym: "neuroretina" EXACT [ZFA:0000046]
 intersection_of: UBERON:0001781 ! layer of retina
@@ -22105,6 +22115,7 @@ xref: ZFA:0000046 ! retinal neural layer
 xref: BTO:0000929 ! neural retina
 xref: ncithesaurus:Neural_Retina ! Neural Retina
 xref: HOG:0000535 ! neural retinal epithelium
+xref: MA:000027 ! -neural retinal epithelium
 
 [Term]
 id: UBERON:0001787
@@ -24414,6 +24425,7 @@ xref: ncithesaurus:Mammary_Gland
 xref: OpenCyc:Mx4rvVjVq5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002530 ! gland
 relationship: only_in_taxon NCBITaxon:40674 ! Mammalia
+relationship: secretes UBERON:0001913 ! milk
 xref: OpenCyc:Mx4rvVjVq5wpEbGdrcN5Y29ycA ! mammary gland
 xref: EHDAA2:0001056 ! mammary gland
 
@@ -24437,7 +24449,7 @@ is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001911 ! lactiferous gland
 
 [Term]
-id: UBERON:0001913
+id: UBERON:0001913 ! milk
 name: milk
 alt_id: UBERON:FMA_62100-MA_0002552-MIAA_0000056
 def: "Secretion produced by the mammary gland." [Wikipedia:Breast_milk]
@@ -27435,6 +27447,7 @@ xref: BTO:0001509 ! umbilical vein
 xref: EFO:0001940 ! umbilical vein
 xref: OpenCyc:Mx4rdu17MmWaEd2AAABQjYGu0g ! umbilical vein
 xref: EHDAA2:0002107 ! umbilical vein
+xref: HOG:0000015 ! extraembryonic umbilical vein
 
 [Term]
 id: UBERON:0002067
@@ -31290,6 +31303,17 @@ xref: ncithesaurus:Central_Canal ! Central Canal of Spinal Cord
 relationship: part_of UBERON:0005281 ! ventricular system
 
 [Term]
+id: UBERON:0003842
+name: neural lumen
+xref: HOG:0001119 ! neural lumen
+comment: TODO - check
+intersection_of: UBERON:0000464
+intersection_of: surrounded_by CL:0000540
+xref: EHDAA:2889 ! neural lumen
+xref: EHDAA:914 ! neural lumen
+xref: XAO:0000252 ! neurocoel
+
+[Term]
 id: UBERON:0002292
 name: joint of head of rib
 alt_id: UBERON:FMA_7951-MA_0001510
@@ -33938,7 +33962,7 @@ xref: HOG:0000403 ! integumental system
 xref: MA:0000014 ! integumental system
 xref: MAT:0000033 ! integumental system
 xref: EMAPA:17524 ! integumental system
-xref: FBbt:00004969 ! integumentary system
+xref: XAO:0000176 ! dermal system
 synonym: "integumentary system" EXACT [FMA:72979]
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0000949 ! endocrine system
@@ -34054,6 +34078,7 @@ xref: GAID:610 ! fourth ventricle
 xref: OpenCyc:Mx4rv-7Q6pwpEbGdrcN5Y29ycA ! fourth ventricle
 xref: NIF_GrossAnatomy:birnlex_1256 ! Fourth ventricle
 xref: EHDAA2:0000100 ! 4th ventricle
+xref: XAO:0003099 ! fourth ventricle
 
 [Term]
 id: UBERON:0002423
@@ -35953,7 +35978,7 @@ id: UBERON:0002544
 name: digit
 alt_id: UBERON:MIAA_0000285-XAO_0003035-XAO_0003036
 def: "." [Wikipedia:Digit_(anatomy)]
-comment: This class was created automatically from a combination of ontologies
+comment: todo homology ZFA:0001588-pectoral fin distal radial
 subset: uberon_slim
 xref: EFO:0000881 ! digit
 xref: galen:Digit
@@ -41372,6 +41397,7 @@ id: UBERON:0002924
 name: terminal nerve
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_4044-ZFA_0001356
 def: "." [Wikipedia:Terminal_nerve]
+comment: see also FMA:76566 ! Set of nerve terminals
 subset: uberon_slim
 synonym: "nervus terminalis" EXACT [ZFA:0001356]
 xref: NIF_GrossAnatomy:birnlex_4044 ! Terminal nerve
@@ -43203,10 +43229,12 @@ xref: EHDAA2:0000892 ! isthmus
 [Term]
 id: UBERON:0005284
 name: brain vasculature
-xref: TAO:0000099
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: part_of UBERON:0000955 ! brain
+xref: TAO:0000099
 xref: ZFA:0000099 ! brain vasculature
+xref: FMA:242007 ! Vasculature of brain
+synonym: "vasculature of brain" EXACT [FMA:242007]
 def: "A vasculature that is part of a brain [Obol]." [OBOL:automatic]
 
 [Term]
@@ -43317,7 +43345,7 @@ union_of: UBERON:0001886 ! choroid plexus
 id: UBERON:0004086
 name: brain ventricle
 def: "one of the system of communicating cavities in the brain that are continuous with the central canal of the spinal cord, that like it are derived from the medullary canal of the embryo, that are lined with an epithelial ependyma, and that contain a serous fluid" []
-comment: check FMA. TODO: add cavities. Also consider adding mereological sum - eg ZFA:0001261
+comment: check FMA. TODO: add cavities.
 syononym: "cerebral ventricle" EXACT [HP:0002118]
 xref: MA:0000818 ! brain ventricle
 xref: BTO:0001442 ! brain ventricle
@@ -43328,6 +43356,27 @@ relationship: part_of UBERON:0000955 ! brain
 xref: OpenCyc:Mx4rvmTY65wpEbGdrcN5Y29ycA ! brain ventricle
 
 [Term]
+id: UBERON:0005281 ! ventricular system of central nervous system
+name: ventricular system of central nervous system
+xref: TAO:0001261
+xref: ZFIN:ZDB-ANAT-050711-70
+synonym: "ventricular system of neuraxis" EXACT [FMA:242675]
+synonym: "ventricular system" EXACT [ZFA:0001261]
+is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0001017 ! central nervous system
+xref: ZFA:0001261 ! ventricular system
+xref: FMA:242675 ! ventricular system of neuraxis
+
+[Term]
+id: UBERON:0005282
+name: ventricular system of brain
+is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0005281 ! ventricular system
+relationship: part_of UBERON:0000955 ! brain
+xref: FMA:242787 ! Ventricular system of brain
+xref: HOG:0000005 ! brain ventricular system
+
+[Term]
 id: UBERON:0002561
 name: neuraxis cavity
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1029-FMA_75007
@@ -43336,27 +43385,7 @@ synonym: "neuraxis cavity" EXACT [FMA:75007]
 xref: FMA:75007 ! Cavity of neuraxis
 xref: NIF_GrossAnatomy:birnlex_1029 ! Neuraxis cavity
 is_a: UBERON:0002558 ! organ cavity
-
-[Term]
-id: UBERON:0005281
-name: ventricular system
-xref: TAO:0001261
-xref: ZFIN:ZDB-ANAT-050711-70
-synonym: "ventricular system of neuraxis" EXACT [FMA:242675]
-is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001017 ! central nervous system
-! no mapping (ZFS:0000025) -- relationship: start ZFS:0000025 ! Segmentation:10-13 somites
-xref: ZFA:0001261 ! ventricular system
-xref: FMA:242675 ! ventricular system of neuraxis
-
-[Term]
-id: UBERON:0005282
-name: ventricular system of brain
-! no mapping (FMA:242789) -- is_a: FMA:242789  ! Region of ventricluar system of neuraxis
-relationship: constitutional_part_of UBERON:0000955 ! brain
-relationship: regional_part_of UBERON:0005281 ! ventricular system
-xref: FMA:242787 ! Ventricular system of brain
-
 
 [Term]
 id: UBERON:0003053
@@ -54940,15 +54969,6 @@ def: "A limb joint that is part of an autopod [Obol]." [OBOL:automatic]
 
 
 [Term]
-id: UBERON:0003842
-name: neural lumen
-xref: HOG:0001119
-intersection_of: UBERON:0000464
-intersection_of: surrounded_by CL:0000540
-xref: EHDAA:2889 ! neural lumen
-xref: EHDAA:914 ! neural lumen
-
-[Term]
 id: UBERON:0003843
 name: tooth epithelium
 xref: HOG:0001443
@@ -55832,7 +55852,9 @@ def: "The mediastinum testis is a network of fibrous connective tissue that exte
 is_a: UBERON:0002050 ! embryonic structure
 relationship: has_part UBERON:0002384 ! connective tissue
 relationship: part_of UBERON:0000473 ! testis
+relationship: overlaps UBERON:0003728 ! mediastinum
 xref: EMAPA:18331 ! mediastinum testis
+xref: FMA:19812 ! Mediastinum of testis
 
 [Term]
 id: UBERON:0003959
@@ -56123,6 +56145,7 @@ def: "The anterior arch of the atlas forms about one-fifth of the ring of the at
 is_a: UBERON:0004530 ! bony projection
 relationship: part_of UBERON:0001092 ! atlas
 xref: MA:0002954 ! cervical vertebra 1 arcus anterior
+xref: FMA:23976 ! Anterior arch of atlas
 synonym: "cervical vertebra 1 arcus anterior" EXACT [MA:0002954]
 synonym: "anterior arch of atlas" EXACT [MA:0002954]
 synonym: "arcus anterior atlantis" EXACT [MA:0002954]
@@ -57739,6 +57762,7 @@ synonym: "joint of leg" EXACT [OBOL:automatic]
 id: UBERON:0003657
 name: limb joint
 xref: MA:0000691 ! limb joint
+comment: see also FMA:71276 ! Set of joints of limb
 synonym: "joint of limb" EXACT []
 intersection_of: UBERON:0000982 ! joint
 intersection_of: part_of UBERON:0002101 ! limb
@@ -62278,6 +62302,7 @@ name: hindlimb digital vein
 synonym: "plantar digital vein" EXACT []
 intersection_of: UBERON:0004562 ! digital vein
 intersection_of: part_of UBERON:0002103 ! hindlimb
+comment: see FMA:70919 ! Set of plantar digital veins
 xref: MA:0002133 ! hindlimb digital veins
 def: "A digital vein that is part of a hindlimb [Obol]." [OBOL:automatic]
 
@@ -63669,8 +63694,9 @@ relationship: part_of UBERON:0001707 ! nasal cavity
 [Term]
 id: UBERON:0004771
 name: posterior nasal aperture
-def: "Opening/conduit between the nasal cavity and the nasopharynx[AAO]" [AAO:0000093, Wikipedia:Posterior_nasal_apertures]
-synonym: "choana" EXACT [Wikipedia:Choane]
+def: "Opening/conduit between the nasal cavity and the nasopharynx[AAO] The choanae are separated by the vomer[WP]." [AAO:0000093, Wikipedia:Posterior_nasal_apertures]
+comment: Fish don't have choanae, instead they have two pairs of external nostrils[WP] In addition to tetrapods, the lungfish has internal nostrils too.
+synonym: "choana" EXACT [XAO:0000277, Wikipedia:Choane]
 xref: AAO:0000093 ! choana 
 xref: XAO:0000277 ! choana
 xref: FMA:53143 ! posterior nasal aperture
@@ -64799,10 +64825,7 @@ intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
 [Term]
 id: UBERON:0004898
 name: right lung caudal lobe lobar bronchus mesynchyme development
-def: "The right lung caudal lobe lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung caudal lobe lobar bronchus" [LG:0012646]
-intersection_of: UBERON:0003104 ! mesenchyme
-intersection_of: part_of UBERON:0003404 ! lobar bronchus of right lung
-intersection_of: part_of UBERON:0002171 ! lower lobe of right lung
+is_obsolete: true
 
 [Term]
 id: UBERON:0004899
@@ -64827,7 +64850,6 @@ def: "The right lung lobar bronchus mesenchyme is a type of tissue made up of lo
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0002183 ! lobar bronchus
 intersection_of: part_of UBERON:0002167 ! right lung
-
 
 [Term]
 id: UBERON:0004924
@@ -67153,8 +67175,9 @@ xref: MA:0002610 ! renal connecting tubule
 id: UBERON:0004200
 alt_id: UBERON:0005098
 name: kidney pyramid
-synonym: "pyramid" EXACT []
+synonym: "pyramid" BROAD []
 def: "Kidney pyramids are the conical masses that constitute the renal medulla in a multi-lobed mammalian kidney; they contain the loops of Henle and the medullary collecting ducts[GO]." [GO:0072056]
+comment: not the same as FMA:50609 Pyramid (which is a volume / dimensional entity)
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000362 ! renal medulla
 
@@ -67795,6 +67818,7 @@ def: "A portion of secondary nodular lymphoid tissue that is part of a spleen [O
 id: UBERON:0005197
 name: segmental spinal nerve
 xref: MA:0000234
+xref: HOG:0000920 ! segmental spinal nerve
 intersection_of: UBERON:0001780 
 intersection_of: part_of UBERON:0000914
 def: "A spinal nerve that is part of a organismal segment [Obol]." [OBOL:automatic]
@@ -67972,6 +67996,7 @@ def: "A parenchyma that is part of a head of pancreas [Obol]." [OBOL:automatic]
 id: UBERON:0005221
 name: liver right lobe parenchyma
 xref: HOG:0000840
+xref: FMA:71657 ! Parenchyma of right lobe of liver
 intersection_of: UBERON:0000353 
 intersection_of: part_of UBERON:0001114
 def: "A parenchyma that is part of a right lobe of liver [Obol]." [OBOL:automatic]
@@ -68145,7 +68170,9 @@ def: "A hindlimb that is part of an apical ectodermal ridge [Obol]." [OBOL:autom
 [Term]
 id: UBERON:0005243
 name: interventricular septum endocardium
+synonym: "endocardium of interventricular septum" EXACT [FMA:83584]
 xref: HOG:0000615
+xref: FMA:83584 ! Endocardium of interventricular septum
 intersection_of: UBERON:0002165 
 intersection_of: part_of UBERON:0002094
 def: "An endocardium that is part of a interventricular septum [Obol]." [OBOL:automatic]
@@ -68170,6 +68197,7 @@ def: "A lobar bronchus that is part of a lower lobe of right lung [Obol]." [OBOL
 id: UBERON:0005246
 name: roof plate spinal cord
 xref: HOG:0000777
+xref: ZFA:0001177 ! roof plate spinal cord region
 intersection_of: UBERON:0002240 
 intersection_of: part_of UBERON:0003054
 def: "A spinal cord that is part of a roof plate [Obol]." [OBOL:automatic]
@@ -68178,6 +68206,7 @@ def: "A spinal cord that is part of a roof plate [Obol]." [OBOL:automatic]
 id: UBERON:0005247
 name: floor plate spinal cord
 xref: HOG:0000787
+xref: ZFA:0000890 ! floor plate spinal cord region
 intersection_of: UBERON:0002240 
 intersection_of: part_of UBERON:0003079
 def: "A spinal cord that is part of a floor plate [Obol]." [OBOL:automatic]
@@ -68209,7 +68238,9 @@ def: "A gland that is part of a stomodeum [Obol]." [OBOL:automatic]
 [Term]
 id: UBERON:0005251
 name: yolk sac cavity
+synonym: "cavity of yolk sac" EXACT [FMA:63942]
 xref: HOG:0000843
+xref: FMA:63942 ! Cavity of yolk sac
 intersection_of: UBERON:0002553 
 intersection_of: part_of UBERON:0001040
 def: "An anatomical cavity that is part of a yolk sac [Obol]." [OBOL:automatic]
@@ -68218,8 +68249,10 @@ def: "An anatomical cavity that is part of a yolk sac [Obol]." [OBOL:automatic]
 id: UBERON:0005252
 name: omental bursa cavity
 xref: HOG:0000827
+xref: FMA:9702 ! Cavity of lesser sac
 intersection_of: UBERON:0002553 
 intersection_of: part_of UBERON:0001341
+synonym: "cavity of lesser sac" EXACT [FMA:9702]
 def: "An anatomical cavity that is part of a lesser sac [Obol]." [OBOL:automatic]
 
 [Term]
@@ -68446,6 +68479,7 @@ def: "Region of skin beneath the nail plate[WP]." [UBERON:gvg]
 is_a: UBERON:0005275 ! dorsal skin of digit
 relationship: adjacent_to UBERON:0001705 ! nail
 xref: MA:0002706 ! nail bed
+xref: HOG:0001362 ! nail bed
 
 [Term]
 id: UBERON:0005274

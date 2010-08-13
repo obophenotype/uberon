@@ -328,3 +328,15 @@ sandwich(B,FB) :-
         entity_xref(UC,C),
         parent(FB,FC),
         entity_xref(UC,FC).
+
+organ_association_s(X,Y) :-
+        organ_association(X,_,Y,_,_,_).
+organ_association_s(X,Y) :-
+        organ_association(Y,_,X,_,_,_).
+
+hog_xref(U,X,Y) :-
+        organ_association_s(X,Y),
+        entity_xref(U,X),
+        \+entity_xref(U,Y),
+        \+entity_xref(_,Y).
+
