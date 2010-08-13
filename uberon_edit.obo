@@ -3267,6 +3267,7 @@ name: preputial gland
 def: "An exocrine gland that are located in front of the genitals of some mammals (including mice) and produce pheromones[WP]." [Wikipedia:Preputial_gland]
 xref: FMA:71652 ! Set of preputial glands
 is_a: UBERON:0001821 ! sebaceous gland
+relationship: secretes UBERON:0003670 ! smegma
 xref: ncithesaurus:Prepucial_Gland_MMHCC ! Preputial Gland
 
 [Term]
@@ -4326,16 +4327,6 @@ is_obsolete: true
 xref: ncithesaurus:Cytotrophoblastic_Cell ! Cytotrophoblastic Cell
 
 [Term]
-id: UBERON:0000429
-name: enteric plexus
-alt_id: UBERON:BTO_0002437-FMA_77597
-synonym: "Enteric nerve plexus" EXACT [FMA:77597]
-synonym: "Sympathetic enteric nerve plexus" EXACT [FMA:77597]
-xref: BTO:0002437
-xref: FMA:77597 ! Enteric plexus
-is_a: UBERON:0001816 ! autonomic nerve plexus
-
-[Term]
 id: UBERON:0000430
 name: ventral intermediate nucleus of thalamus
 alt_id: UBERON:BTO_0002469-FMA_84347
@@ -4531,7 +4522,6 @@ xref: BTO:0002979
 xref: FMA:9675 ! Secretion
 is_a: UBERON:0000463 ! portion of organism substance
 xref: galen:Secretion ! secretion
-xref: secretes ! secretes
 
 [Term]
 id: UBERON:0000457
@@ -9018,7 +9008,7 @@ xref: ncithesaurus:Pericardial_Cavity ! Pericardial Cavity
 xref: EHDAA2:0001434 ! pericardial cavity
 
 [Term]
-id: UBERON:0001075
+id: UBERON:0001075 ! body of vertebra
 name: body of vertebra
 alt_id: UBERON:FMA_11945-MA_0001457
 def: "The body is the largest part of a vertebra, and is more or less cylindrical in shape. Its upper and lower surfaces are flattened and rough, and give attachment to the intervertebral fibrocartilages, and each presents a rim around its circumference. In front, the body is convex from side to side and concave from above downward. Behind, it is flat from above downward and slightly concave from side to side. Its anterior surface presents a few small apertures, for the passage of nutrient vessels. On the posterior surface is a single large, irregular aperture, or occasionally more than one, for the exit of the basi-vertebral veins from the body of the vertebra. [WP,unvetted]." [Wikipedia:Body_of_vertebra]
@@ -13302,7 +13292,7 @@ relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 id: UBERON:0005164 ! ascending limb of loop of Henle
 name: ascending limb of loop of Henle
 def: "." [Wikipedia:Ascending_limb_of_loop_of_Henle]
-comment: TODO: thick/thin check. Also relationshop to distal tubule
+comment: TODO: thick/thin check. Also relationship to distal tubule. We need a home for MA:0002634-renal straight tubule
 subset: uberon_slim
 synonym: "ascending limb" BROAD []
 synonym: "ascending limb of Henle's loop" EXACT []
@@ -22457,14 +22447,14 @@ xref: ncithesaurus:Enteric_Ganglion ! Enteric Ganglion
 id: UBERON:0001810
 name: nerve plexus
 alt_id: UBERON:FMA_5901-MA_0002407
-def: "Anatomical junction where subdivisions of two or more neural trees interconnect with one another to form a network through which nerve fibers of the constituent nerve trees become regrouped; together with other nerve plexuses, nerves and ganglia, it constitutes the peripheral nervous system. Examples: cervical nerve plexus, brachial nerve plexus, sacral nerve plexus." [Wikipedia:Nerve_plexus]
-comment: This class was created automatically from a combination of ontologies
+def: "Anatomical junction where subdivisions of two or more neural trees interconnect with one another to form a network through which nerve fibers of the constituent nerve trees become regrouped; together with other nerve plexuses, nerves and ganglia, it constitutes the peripheral nervous system. Examples: cervical nerve plexus, brachial nerve plexus, sacral nerve plexus[FMA]." [Wikipedia:Nerve_plexus, FMA:5901]
+comment: in FMA this is a subtype of junction rather than tissue
 subset: uberon_slim
 xref: BTO:0000205
 xref: EHDAA:3780 ! nerve plexus
 xref: FMA:5901 ! Nerve plexus
 xref: MA:0002407 ! nerve plexus
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0003714 ! nerve tissue
 relationship: part_of UBERON:0001016 ! nervous system
 xref: ncithesaurus:Nerve_Plexus ! Nerve Plexus
 xref: EHDAA2:0003138 ! nerve plexus
@@ -22505,13 +22495,14 @@ xref: ncithesaurus:Palpebral_Conjunctiva ! Palpebral Conjunctiva
 id: UBERON:0001813
 name: somatic nerve plexus
 alt_id: UBERON:FMA_5903-MA_0000235
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check
 synonym: "plexus of spinal nerves" EXACT []
 synonym: "spinal nerve plexus" EXACT []
 xref: FMA:5903 ! Somatic nerve plexus
 xref: HOG:0000925 ! spinal nerve plexus
 xref: MA:0000235 ! spinal nerve plexus
-is_a: UBERON:0001810 ! nerve plexus
+intersection_of: UBERON:0001810 ! nerve plexus
+intersection_of: part_of UBERON:0000012 ! somatic nervous system
 xref: ncithesaurus:Spinal_Nerve_Plexus ! Spinal Nerve Plexus
 xref: EHDAA2:0001899 ! spinal nerve plexus
 
@@ -22520,7 +22511,7 @@ id: UBERON:0001814
 name: brachial nerve plexus
 alt_id: UBERON:FMA_5906-MA_0001180
 def: "The brachial plexus is an arrangement of nerve fibers, running from the spine, formed by the ventral rami of the lower cervical and upper thoracic nerve root, specifically from below the fifth cervical vertebra to above the first thoracic vertebra. It proceeds through the neck, the axilla (armpit region) and into the arm. [WP,unvetted]." [Wikipedia:Brachial_plexus]
-comment: This class was created automatically from a combination of ontologies
+comment: check superclass - nerve vs collection of fibers vs junction
 subset: uberon_slim
 synonym: "brachial plexus" EXACT []
 xref: EHDAA:3782 ! brachial plexus
@@ -22563,8 +22554,8 @@ synonym: "visceral nerve plexus" EXACT []
 synonym: "visceral plexus" EXACT []
 xref: FMA:5910 ! Autonomic nerve plexus
 xref: MA:0000221 ! autonomic nerve plexus
-is_a: UBERON:0001810 ! nerve plexus
-relationship: part_of UBERON:0002410 ! autonomic nervous system
+intersection_of: UBERON:0001810 ! nerve plexus
+intersection_of: part_of UBERON:0002410 ! autonomic nervous system
 
 [Term]
 id: UBERON:0001817
@@ -26209,7 +26200,7 @@ synonym: "pulmonary plexus" EXACT []
 xref: FMA:6629 ! Pulmonary nerve plexus
 xref: MA:0001143 ! pulmonary nerve plexus
 is_a: UBERON:0001816 ! autonomic nerve plexus
-relationship: part_of UBERON:0000477 ! anatomical cluster
+relationship: part_of UBERON:0003728 ! mediastinum
 
 [Term]
 id: UBERON:0002010
@@ -26225,6 +26216,7 @@ xref: FMA:6630 ! Celiac nerve plexus
 xref: GAID:796 ! celiac plexus
 xref: MA:0001139 ! celiac nerve plexus
 is_a: UBERON:0001816 ! autonomic nerve plexus
+relationship: part_of UBERON:0000916 ! abdomen
 
 [Term]
 id: UBERON:0002011
@@ -26262,34 +26254,48 @@ xref: OpenCyc:Mx4rvVjbIpwpEbGdrcN5Y29ycA ! pulmonary artery
 xref: EHDAA2:0001575 ! pulmonary artery
 
 [Term]
+id: UBERON:0005303 ! hypogastric nerve
+name: hypogastric nerve
+def: "the transition between the superior hypogastric plexus and the inferior hypogastric plexus." [Wikipedia:Hypogastric_nerve]
+comment: check plexus vs nerve. WP indicates it is a 'transition'
+synonym: "hypogastric nerve plexus" EXACT [MA:0001140]
+synonym: "hypogastric plexus" EXACT [EMAPA:18225]
+is_a: UBERON:0001816 ! autonomic nerve plexus
+xref: MA:0001140 ! hypogastric nerve plexus
+xref: EMAPA:18225 ! hypogastric plexus
+xref: FMA:77596 ! hypogastric nerve
+
+[Term]
 id: UBERON:0002013
 name: superior hypogastric nerve plexus
 alt_id: UBERON:FMA_6642-MA_0001142
 def: "The superior hypogastric plexus (in older texts, hypogastric plexus or presacral nerve) is a plexus of nerves situated on the vertebral bodies below the bifurcation of the aorta. [WP,unvetted]." [Wikipedia:Superior_hypogastric_plexus]
-comment: This class was created automatically from a combination of ontologies
+comment: Check relationship with generic hypogastric nerve/plexus
 subset: uberon_slim
 synonym: "presacral nerve" EXACT []
 synonym: "superior hypogastric plexus" EXACT []
+synonym: "hypogastric plexus" RELATED []
 xref: FMA:6642 ! Superior hypogastric nerve plexus
 xref: MA:0001142 ! superior hypogastric nerve plexus
 is_a: UBERON:0001816 ! autonomic nerve plexus
-relationship: part_of UBERON:0001816 ! autonomic nerve plexus
+relationship: adjacent_to UBERON:0001075 ! body of vertebra
+relationship: overlaps UBERON:0005303 ! hypogastric nerve
 
 [Term]
 id: UBERON:0002014
 name: inferior hypogastric nerve plexus
 alt_id: UBERON:FMA_6643-MA_0001141
 def: "The inferior hypogastric plexus (pelvic plexus in some texts) is a plexus of nerves that supplies the viscera of the pelvic cavity. The inferior hypogastric plexus is a paired structure, with each situated on the side of the rectum in the male, and at the sides of the rectum and vagina in the female. [WP,unvetted]." [Wikipedia:Inferior_hypogastric_plexus]
-comment: This class was created automatically from a combination of ontologies
+comment: Check relationship with generic hypogastric nerve/plexus
 subset: uberon_slim
 synonym: "inferior hypogastric plexus" EXACT []
 synonym: "pelvic nerve plexus" EXACT []
 synonym: "pelvic plexus" EXACT []
 xref: FMA:6643 ! Inferior hypogastric nerve plexus
 xref: MA:0001141 ! inferior hypogastric nerve plexus
-is_a: UBERON:0001816 ! autonomic nerve plexus
-relationship: part_of UBERON:0001816 ! autonomic nerve plexus
 xref: ncithesaurus:Inferior_Hypogastric_Nerve_Plexus ! Inferior Hypogastric Nerve Plexus
+is_a: UBERON:0001816 ! autonomic nerve plexus
+relationship: overlaps UBERON:0005303 ! hypogastric nerve
 
 [Term]
 id: UBERON:0002015
@@ -34154,13 +34160,28 @@ relationship: part_of UBERON:0001943 ! midbrain tegmentum
 xref: NIF_GrossAnatomy:birnlex_1421 ! Ventral tegmental nucleus
 
 [Term]
+id: UBERON:0000429 ! enteric plexus
+name: enteric plexus
+def: "A plexus of autonomic nerve fibers within the wall of the digestive tube, and made up of the submucosal, myenteric, and subserosal plexuses; it contains visceral afferent fibers, sympathetic postganglionic fibers, parasympathetic preganglionic and postganglionic fibers, and parasympathetic postganglionic cell bodies." [BTO:0002437]
+comment: TODO - add subserosal plexus?
+alt_id: UBERON:BTO_0002437-FMA_77597
+synonym: "plexus entericus" EXACT [BTO:0002437]
+synonym: "enteric nerve plexus" EXACT [FMA:77597]
+synonym: "sympathetic enteric nerve plexus" EXACT [FMA:77597]
+xref: BTO:0002437
+xref: FMA:77597 ! Enteric plexus
+is_a: UBERON:0001816 ! autonomic nerve plexus
+relationship: part_of UBERON:0002005 ! enteric nervous system
+
+[Term]
 id: UBERON:0002439
 name: myenteric nerve plexus
 alt_id: UBERON:MA_0001148-FMA_63252
-def: "." [Wikipedia:Auerbach's_plexus]
+def: "Part of the enteric nervous system, Auerbach's plexus (or myenteric plexus) exists between the longitudinal and circular layers of muscularis externa in the gastrointestinal tract and provides motor innervation to both layers and secretomotor innervation to the mucosa, having both parasympathetic and sympathetic input, whereas Meissner's plexus has only parasympathetic fibers. It arises from cells in the Nucleus ala cinerea, the parasympathetic nucleus of origin for the tenth cranial nerve, located in the medulla oblongata. The fibers are carried by both the anterior and posterior vagal nerves. It is found in the muscles of the esophagus, stomach, and intestine. The myenteric plexus is the major nerve supply to the gastrointestinal tract and control GI tract motility[WP]." [Wikipedia:Auerbach's_plexus]
+comment: check myenteric vs submucosal
 subset: uberon_slim
 synonym: "Auerbach's plexus" EXACT [FMA:63252]
-synonym: "Meissner's plexus" EXACT [FMA:63252]
+synonym: "Meissner's plexus" RELATED [FMA:63252]
 synonym: "myenteric plexus" EXACT []
 synonym: "Remak's plexus" EXACT [FMA:63252]
 synonym: "submucous nerve plexus" EXACT []
@@ -34168,11 +34189,26 @@ synonym: "submucous plexus" EXACT []
 xref: FMA:63252 ! Myenteric nerve plexus
 xref: MA:0001148 ! myenteric nerve plexus
 is_a: UBERON:0001816 ! autonomic nerve plexus
+relationship: part_of UBERON:0000429 ! enteric plexus
 xref: ncithesaurus:Submucous_Nerve_Plexus ! Submucous Nerve Plexus
 xref: BTO:0002436 ! myenteric plexus
 xref: GAID:798 ! myenteric plexus
-xref: GAID:801 ! submucous plexus
 xref: NIF_GrossAnatomy:nlx_anat_100306 ! Myenteric Plexus
+
+[Term]
+id: UBERON:0005304
+name: submucous nerve plexus
+def: "The nerves of the small intestines are derived from the plexuses of parasympathetic nerves around the superior mesenteric artery. From this source they run to the myenteric plexus of nerves and ganglia situated between the circular muscular fibers and the mucosal cells. From this a secondary plexus, the plexus of the submucosa (Meissner's plexus, Submucous plexus, submucosal plexus) is derived, and it is formed by branches that have perforated the circular muscular fibers. This plexus lies in the submucous coat of the intestine; it also contains ganglia from which nerve fibers pass to the muscularis mucosae and to the mucous membrane. The nerve bundles of the submucous plexus are finer than those of the myenteric plexus. Its function is to innervate cells in the epithelial layer and the smooth muscle of the[WP]." [Wikipedia:Meissner's_plexus]
+comment: check myenteric vs submucosal
+synonym: "Henle's plexus" RELATED []
+synonym: "meissner's plexus" RELATED []
+synonym: "Meissner's plexus" RELATED [MA:0001149]
+synonym: "submucosal nerve plexus" EXACT [FMA:21542, Wikipedia:Meissner%27s_plexus]
+xref: MA:0001149 ! submucous nerve plexus
+xref: FMA:21542 ! submucosal nerve plexus
+xref: GAID:801 ! submucous plexus
+is_a: UBERON:0001816 ! autonomic nerve plexus
+relationship: part_of UBERON:0000429 ! enteric plexus
 
 [Term]
 id: UBERON:0002440
@@ -35412,6 +35448,7 @@ synonym: "mediastinal node" EXACT []
 xref: FMA:12774 ! Mediastinal lymph node
 xref: MA:0002877 ! mediastinal lymph node
 is_a: UBERON:0000029 ! lymph node
+relationship: part_of UBERON:0003728 ! mediastinum
 xref: ncithesaurus:Mediastinal_Lymph_Node ! Mediastinal Lymph Node
 xref: EFO:0001670 ! mediastinal lymph node
 
@@ -37669,13 +37706,16 @@ id: UBERON:0002663
 name: septal nuclear complex
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1313-FMA_61845
 def: "The septal nuclei are structures in the middle anteroventral cerebrum that are composed of medium-size neurons grouped into medial, lateral, and posterior groups. The septal nuclei receive reciprocal connections from the olfactory bulb, hippocampus, amygdala, hypothalamus, midbrain, habenula, cingulate gyrus, and thalamus. The septal nuclei play a role in reward and reinforcement along with the nucleus accumbens. In the 1950s, Olds &amp; Milner showed that rats with electrodes implanted in this area will self-stimulate repeatedly in order to experience a euphoric feeling (i.e. press a bar to receive electrical current that will stimulate the neurons). [WP,unvetted]." [Wikipedia:Septal_nuclei]
+comment: TODO - nucleus vs nuclear complex
 subset: uberon_slim
 synonym: "parolfactory nuclei" EXACT [FMA:61845]
 synonym: "septal nuclei" EXACT [FMA:61845]
+synonym: "septal nucleus" EXACT [MA:0002978]
 xref: FMA:61845 ! Septal nuclear complex
 xref: NIF_GrossAnatomy:birnlex_1313 ! Septal nuclear complex
 is_a: UBERON:0002020 ! gray matter of neuraxis
 xref: GAID:637 ! septal nuclei
+xref: MA:0002978 ! septal nucleus
 
 [Term]
 id: UBERON:0002664
@@ -53371,8 +53411,9 @@ xref: ncithesaurus:Fascia_Lata ! Fascia Lata
 def: "The fascia lata is the deep fascia of the thigh. [WP,unvetted]." [Wikipedia:Fascia_lata]
 
 [Term]
-id: UBERON:0003670
+id: UBERON:0003670 ! smegma
 name: smegma
+def: "a combination of exfoliated (shed) epithelial cells, transudated skin oils, and moisture. It occurs in both female and male mammalian genitalia[WP]." [Wikipedia:Smegma]
 xref: FMA:19656 ! Smegma
 xref: GAID:1170 ! smegma
 is_a: UBERON:0000456 ! secretion
@@ -53838,15 +53879,15 @@ xref: OpenCyc:Mx4rwCt0eZwpEbGdrcN5Y29ycA ! splenic vein
 def: "In anatomy, the splenic vein (in the past called the lienal vein) is the blood vessel that drains blood from the spleen. It joins with the superior mesenteric vein, to form the hepatic portal vein and follows a course superior to the pancreas, alongside of the similarly named artery, the splenic artery. It collects branches from the stomach and pancreas and most notably from the large intestine, which is drained by the inferior mesenteric vein and joins with splenic vein shortly before it forms the portal vein. [WP,unvetted]." [Wikipedia:Splenic_vein]
 
 [Term]
-id: UBERON:0003714
+id: UBERON:0003714 ! nerve tissue
 name: nerve tissue
 synonym: "nerve tissue" EXACT [FMA:9642]
 synonym: "nervous tissue" EXACT [FMA:9642]
 synonym: "neural tissue" EXACT [FMA:9642]
 xref: FMA:9642 ! Portion of neural tissue
 xref: GAID:609 ! nerve tissue
-is_a: UBERON:0000479 ! portion of tissue
-relationship: part_of UBERON:0001016 ! nervous system
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0001016 ! nervous system
 xref: ncithesaurus:Nervous_Tissue ! Nerve Tissue
 xref: OpenCyc:Mx4rVmfYCsQ_QdeM_bFAeS8NRQ ! nerve tissue
 xref: EHDAA2:0003123 ! neural tissue
@@ -53978,6 +54019,7 @@ def: "The musculocutaneous nerve arises from the lateral cord of the brachial pl
 [Term]
 id: UBERON:0003725
 name: cervical plexus
+def: "The cervical plexus is a plexus of the ventral rami of the first four cervical spinal nerves which are located from C1 to C5 cervical segment in the neck. They are located laterally to the transverse processes between prevertebral muscles from the medial side and vertebral from lateral side. Here there is anastomosis with accessory nerve, hypoglossal nerve and sympathetic trunk. It is located in the neck, deep to sternocleidomastoid. Nerves formed from the cervical plexus innervate the back of the head, as well as some neck muscles. The branches of the cervical plexus emerge from the posterior triangle at the nerve point, a point which lies midway on the posterior border of the Sternocleidomastoid[WP]." [Wikipedia:Cervical_plexus]
 synonym: "cervical plexus" EXACT [FMA:5904]
 xref: FMA:5904 ! Cervical nerve plexus
 xref: GAID:847 ! cervical plexus
@@ -54009,8 +54051,9 @@ xref: ncithesaurus:Intercostal_Nerve ! Intercostal Nerve
 def: "The intercostal nerves are the anterior divisions (rami anteriores; ventral divisions) of the thoracic spinal nerves from T1 to T11. Each nerve is connected with the adjoining ganglion of the sympathetic trunk by a gray and a white ramus communicans. The intercostal nerves are distributed chiefly to the thoracic pleura and abdominal peritoneum and differ from the anterior divisions of the other spinal nerves in that each pursues an independent course without plexus formation. The first two nerves supply fibers to the upper limb in addition to their thoracic branches; the next four are limited in their distribution to the parietes of the thorax; the lower five supply the parietes of the thorax and abdomen. The 7th intercostal nerve terminates at the xyphoid process, at the lower end of the sternum. The 10th intercostal nerve terminates at the umbilicus. The twelfth thoracic is distributed to the abdominal wall and groin. [WP,unvetted]." [Wikipedia:Intercostal_nerves]
 
 [Term]
-id: UBERON:0003728
+id: UBERON:0003728 ! mediastinum
 name: mediastinum
+def: "The mediastinum is a non-delineated group of structures in the thorax, surrounded by loose connective tissue. It is the central compartment of the thoracic cavity. It contains the heart, the great vessels of the heart, esophagus, trachea, phrenic nerve, cardiac nerve, thoracic duct, thymus, and lymph nodes of the central chest. The mediastinum lies between the right and left pleura in and near the median sagittal  plane of the chest. It extends from the sternum in front to the vertebral column behind, and contains all the thoracic viscera except the lungs. It may be divided for purposes of description into two parts:an upper portion, above the upper level of the pericardium, which is named the superior mediastinum  with its superior limit at the superior thoracic opening and its inferior limit at the plane from the sternal angle to the disc of T4-T5 (Plane of Ludwig at Angle of Louis); and a lower portion, below the upper level of the pericardium. This lower portion is again subdivided into three parts, viz. that in front of the pericardium, the anterior mediastinum; that containing the pericardium and its contents, the middle mediastinum; and that behind the pericardium, the posterior mediastinum. It is surrounded by the chest wall anteriorly, the lungs laterally and the spine posteriorly. It is continuous with the loose connective tissue of the neck, and extends inferiorly onto the diaphragm." [Wikipedia:Mediastinum]
 synonym: "mediastinal part of chest" EXACT [FMA:9826]
 xref: FMA:9826 ! Mediastinum
 xref: GAID:94 ! mediastinum
@@ -54984,8 +55027,9 @@ relationship: part_of UBERON:0001393 ! auditory cortex
 id: UBERON:0003942
 name: somatic sensory system
 def: "the neural tissue involved in the transmission of sensory signals" [MP:0000959]
-is_a: UBERON:0001032 ! sense organ system
-relationship: part_of UBERON:0000012 ! somatic nervous system
+comment: TODO - check
+intersection_of: UBERON:0001032 ! sense organ system
+intersection_of: part_of UBERON:0000012 ! somatic nervous system
 
 [Term]
 id: UBERON:0003943
@@ -66505,21 +66549,21 @@ id: UBERON:0005185
 name: renal medulla collecting duct
 xref: MA:0002935
 intersection_of: UBERON:0001232 
-intersection_of: OBO_REL:part_of UBERON:0000362
+intersection_of: part_of UBERON:0000362
 
 [Term]
 id: UBERON:0005186
 name: outer renal medulla collecting duct
 xref: MA:0002599
 intersection_of: UBERON:0001232 
-intersection_of: OBO_REL:part_of UBERON:0001293
+intersection_of: part_of UBERON:0001293
 
 [Term]
 id: UBERON:0005187
 name: inner renal medulla collecting duct
 xref: MA:0002598
 intersection_of: UBERON:0001232 
-intersection_of: OBO_REL:part_of UBERON:0001294
+intersection_of: part_of UBERON:0001294
 
 [Term]
 id: UBERON:0004358
@@ -66603,7 +66647,7 @@ id: UBERON:0005192
 name: deferent duct artery
 xref: MA:0001940
 intersection_of: UBERON:0001637 
-intersection_of: OBO_REL:part_of UBERON:0001000
+intersection_of: part_of UBERON:0001000
 
 [Term]
 id: UBERON:0005193
@@ -66624,7 +66668,7 @@ id: UBERON:0005195
 name: deferent duct vein
 xref: MA:0002100
 intersection_of: UBERON:0001638 
-intersection_of: OBO_REL:part_of UBERON:0001000
+intersection_of: part_of UBERON:0001000
 
 [Term]
 id: UBERON:0005196
@@ -66673,14 +66717,14 @@ id: UBERON:0005202
 name: distal straight tubule macula densa
 xref: MA:0002604
 intersection_of: UBERON:0002335 
-intersection_of: OBO_REL:part_of UBERON:0005164
+intersection_of: part_of UBERON:0005164
 
 [Term]
 id: UBERON:0005203
 name: trachea gland
 xref: MA:0002937
 intersection_of: UBERON:0002530 
-intersection_of: OBO_REL:part_of UBERON:0002202
+intersection_of: part_of UBERON:0002202
 
 [Term]
 id: UBERON:0005204
@@ -66694,63 +66738,63 @@ id: UBERON:0005205
 name: vagina stroma
 xref: MA:0002737
 intersection_of: UBERON:0003891 
-intersection_of: OBO_REL:part_of UBERON:0000996
+intersection_of: part_of UBERON:0000996
 
 [Term]
 id: UBERON:0005206
 name: choroid plexus stroma
 xref: MA:0000825
 intersection_of: UBERON:0003891 
-intersection_of: OBO_REL:part_of UBERON:0001886
+intersection_of: part_of UBERON:0001886
 
 [Term]
 id: UBERON:0005207
 name: tonsil capsule
 xref: MA:0000776
 intersection_of: UBERON:0003893 
-intersection_of: OBO_REL:part_of UBERON:0002372
+intersection_of: part_of UBERON:0002372
 
 [Term]
 id: UBERON:0005208
 name: right atrium valve
 xref: MA:0001871
 intersection_of: UBERON:0003978 
-intersection_of: OBO_REL:part_of UBERON:0002078
+intersection_of: part_of UBERON:0002078
 
 [Term]
 id: UBERON:0005211
 name: renal medulla interstitium
 xref: MA:0002619
 intersection_of: UBERON:0005169 
-intersection_of: OBO_REL:part_of UBERON:0000362
+intersection_of: part_of UBERON:0000362
 
 [Term]
 id: UBERON:0005212
 name: testis interstitial tissue
 xref: MA:0002713
 intersection_of: UBERON:0005169 
-intersection_of: OBO_REL:part_of UBERON:0000473
+intersection_of: part_of UBERON:0000473
 
 [Term]
 id: UBERON:0005213
 name: outer renal medulla interstitium
 xref: MA:0002621
 intersection_of: UBERON:0005169 
-intersection_of: OBO_REL:part_of UBERON:0001293
+intersection_of: part_of UBERON:0001293
 
 [Term]
 id: UBERON:0005214
 name: inner renal medulla interstitium
 xref: MA:0002620
 intersection_of: UBERON:0005169 
-intersection_of: OBO_REL:part_of UBERON:0001294
+intersection_of: part_of UBERON:0001294
 
 [Term]
 id: UBERON:0005215
 name: kidney interstitium
 xref: MA:0002616
 intersection_of: UBERON:0005169 
-intersection_of: OBO_REL:part_of UBERON:0002113
+intersection_of: part_of UBERON:0002113
 
 
 [Term]
@@ -66758,385 +66802,383 @@ id: UBERON:0005216
 name: optic eminence surface ectoderm
 xref: HOG:0000520
 intersection_of: UBERON:0000076 
-intersection_of: OBO_REL:part_of UBERON:0004348
+intersection_of: part_of UBERON:0004348
 
 [Term]
 id: UBERON:0005217
 name: midbrain subarachnoid space
 xref: HOG:0001304
 intersection_of: UBERON:0000315 
-intersection_of: OBO_REL:part_of UBERON:0001891
+intersection_of: part_of UBERON:0001891
 
 [Term]
 id: UBERON:0005218
 name: diencephalon subarachnoid space
 xref: HOG:0001302
 intersection_of: UBERON:0000315 
-intersection_of: OBO_REL:part_of UBERON:0001894
+intersection_of: part_of UBERON:0001894
 
 [Term]
 id: UBERON:0005219
 name: hindbrain subarachnoid space
 xref: HOG:0001303
 intersection_of: UBERON:0000315 
-intersection_of: OBO_REL:part_of UBERON:0002028
+intersection_of: part_of UBERON:0002028
 
 [Term]
 id: UBERON:0005220
 name: pancreas head parenchyma
 xref: HOG:0000838
 intersection_of: UBERON:0000353 
-intersection_of: OBO_REL:part_of UBERON:0001069
+intersection_of: part_of UBERON:0001069
 
 [Term]
 id: UBERON:0005221
 name: liver right lobe parenchyma
 xref: HOG:0000840
 intersection_of: UBERON:0000353 
-intersection_of: OBO_REL:part_of UBERON:0001114
+intersection_of: part_of UBERON:0001114
 
 [Term]
 id: UBERON:0005222
 name: liver left lobe parenchyma
 xref: HOG:0000839
 intersection_of: UBERON:0000353 
-intersection_of: OBO_REL:part_of UBERON:0001115
+intersection_of: part_of UBERON:0001115
 
 [Term]
 id: UBERON:0005223
 name: pancreas body parenchyma
 xref: HOG:0000837
 intersection_of: UBERON:0000353 
-intersection_of: OBO_REL:part_of UBERON:0001150
+intersection_of: part_of UBERON:0001150
 
 [Term]
 id: UBERON:0005224
 name: pancreas tail parenchyma
 xref: HOG:0000469
 intersection_of: UBERON:0000353 
-intersection_of: OBO_REL:part_of UBERON:0001151
+intersection_of: part_of UBERON:0001151
 
 [Term]
 id: UBERON:0005225
 name: upper leg epithelium
 xref: HOG:0001041
 intersection_of: UBERON:0000483 
-intersection_of: OBO_REL:part_of UBERON:0000376
+intersection_of: part_of UBERON:0000376
 
 [Term]
 id: UBERON:0005226
 name: foot digit epithelium
 xref: HOG:0001031
 intersection_of: UBERON:0000483 
-intersection_of: OBO_REL:part_of UBERON:0001466
+intersection_of: part_of UBERON:0001466
 
 [Term]
 id: UBERON:0005227
 name: hand digit epithelium
 xref: HOG:0001032
 intersection_of: UBERON:0000483 
-intersection_of: OBO_REL:part_of UBERON:0002389
+intersection_of: part_of UBERON:0002389
 
 [Term]
 id: UBERON:0005228
 name: upper arm epithelium
 xref: HOG:0000990
 intersection_of: UBERON:0000483 
-intersection_of: OBO_REL:part_of UBERON:0003822
+intersection_of: part_of UBERON:0003822
 
 [Term]
 id: UBERON:0005229
 name: lower leg epithelium
 xref: HOG:0001050
 intersection_of: UBERON:0000483 
-intersection_of: OBO_REL:part_of UBERON:0003823
+intersection_of: part_of UBERON:0003823
 
 [Term]
 id: UBERON:0005230
 name: fundus epithelium
 xref: HOG:0000878
 intersection_of: UBERON:0000483 
-intersection_of: OBO_REL:part_of UBERON:0003951
+intersection_of: part_of UBERON:0003951
 
 [Term]
 id: UBERON:0005231
 name: forelimb ectoderm
 xref: HOG:0001047
 intersection_of: UBERON:0000924 
-intersection_of: OBO_REL:part_of UBERON:0002102
+intersection_of: part_of UBERON:0002102
 
 [Term]
 id: UBERON:0005232
 name: hindlimb ectoderm
 xref: HOG:0001048
 intersection_of: UBERON:0000924 
-intersection_of: OBO_REL:part_of UBERON:0002103
+intersection_of: part_of UBERON:0002103
 
 [Term]
 id: UBERON:0005233
 name: medial-nasal process ectoderm
 xref: HOG:0000803
 intersection_of: UBERON:0000924 
-intersection_of: OBO_REL:part_of UBERON:0004068
+intersection_of: part_of UBERON:0004068
 
 [Term]
 id: UBERON:0005234
 name: optic eminence ectoderm
 xref: HOG:0001105
 intersection_of: UBERON:0000924 
-intersection_of: OBO_REL:part_of UBERON:0004348
+intersection_of: part_of UBERON:0004348
 
 [Term]
 id: UBERON:0005235
 name: thyroid endoderm
 xref: HOG:0001089
 intersection_of: UBERON:0000925 
-intersection_of: OBO_REL:part_of UBERON:0002046
+intersection_of: part_of UBERON:0002046
 
 [Term]
 id: UBERON:0005236
 name: osseus labyrinth vestibule
 xref: HOG:0001220
 intersection_of: UBERON:0001349 
-intersection_of: OBO_REL:part_of UBERON:0001839
+intersection_of: part_of UBERON:0001839
 
 [Term]
 id: UBERON:0005237
 name: supraoccipital bone
 xref: HOG:0001150
 intersection_of: UBERON:0001474 
-intersection_of: OBO_REL:part_of UBERON:0004747
+intersection_of: part_of UBERON:0004747
 
 [Term]
 id: UBERON:0005238
 name: tensor tympani muscle
 xref: HOG:0000698
 intersection_of: UBERON:0001630 
-intersection_of: OBO_REL:part_of UBERON:0001600
+intersection_of: part_of UBERON:0001600
 
 [Term]
 id: UBERON:0005239
 name: basal plate metencephalon
 xref: HOG:0000320
 intersection_of: UBERON:0001895 
-intersection_of: OBO_REL:part_of UBERON:0004064
+intersection_of: part_of UBERON:0004064
 
 [Term]
 id: UBERON:0005240
 name: basal plate medulla oblongata
 xref: HOG:0000324
 intersection_of: UBERON:0001896 
-intersection_of: OBO_REL:part_of UBERON:0004064
+intersection_of: part_of UBERON:0004064
 
 [Term]
 id: UBERON:0005241
 name: apical ectodermal ridge forelimb
+is_obsolete: true
 xref: HOG:0001064
-intersection_of: UBERON:0002102 
-intersection_of: OBO_REL:part_of UBERON:0004356
 
 [Term]
 id: UBERON:0005242
 name: apical ectodermal ridge hindlimb
+is_obsolete: true
 xref: HOG:0001066
-intersection_of: UBERON:0002103 
-intersection_of: OBO_REL:part_of UBERON:0004356
 
 [Term]
 id: UBERON:0005243
 name: interventricular septum endocardium
 xref: HOG:0000615
 intersection_of: UBERON:0002165 
-intersection_of: OBO_REL:part_of UBERON:0002094
+intersection_of: part_of UBERON:0002094
 
 [Term]
 id: UBERON:0005244
 name: lobar bronchus of right lung cranial lobe
 xref: HOG:0000240
 intersection_of: UBERON:0002183 
-intersection_of: OBO_REL:part_of UBERON:0002170
+intersection_of: part_of UBERON:0002170
 
 [Term]
 id: UBERON:0005245
 name: lobar bronchus of the right lung caudal lobe
 xref: HOG:0000250
 intersection_of: UBERON:0002183 
-intersection_of: OBO_REL:part_of UBERON:0002171
+intersection_of: part_of UBERON:0002171
 
 [Term]
 id: UBERON:0005246
 name: roof plate spinal cord
 xref: HOG:0000777
 intersection_of: UBERON:0002240 
-intersection_of: OBO_REL:part_of UBERON:0003054
+intersection_of: part_of UBERON:0003054
 
 [Term]
 id: UBERON:0005247
 name: floor plate spinal cord
 xref: HOG:0000787
 intersection_of: UBERON:0002240 
-intersection_of: OBO_REL:part_of UBERON:0003079
+intersection_of: part_of UBERON:0003079
 
 [Term]
 id: UBERON:0005248
 name: bulbus cordis myocardium
 xref: HOG:0000609
 intersection_of: UBERON:0002349 
-intersection_of: OBO_REL:part_of UBERON:0004706
+intersection_of: part_of UBERON:0004706
 
 [Term]
 id: UBERON:0005249
 name: metanephros pelvis
 xref: HOG:0000945
 intersection_of: UBERON:0002355 
-intersection_of: OBO_REL:part_of UBERON:0000081
+intersection_of: part_of UBERON:0000081
 
 [Term]
 id: UBERON:0005250
 name: stomatodeum gland
 xref: HOG:0000658
 intersection_of: UBERON:0002530 
-intersection_of: OBO_REL:part_of UBERON:0000930
+intersection_of: part_of UBERON:0000930
 
 [Term]
 id: UBERON:0005251
 name: yolk sac cavity
 xref: HOG:0000843
 intersection_of: UBERON:0002553 
-intersection_of: OBO_REL:part_of UBERON:0001040
+intersection_of: part_of UBERON:0001040
 
 [Term]
 id: UBERON:0005252
 name: omental bursa cavity
 xref: HOG:0000827
 intersection_of: UBERON:0002553 
-intersection_of: OBO_REL:part_of UBERON:0001341
+intersection_of: part_of UBERON:0001341
 
 [Term]
 id: UBERON:0005253
 name: head mesenchyme
 xref: HOG:0000332
 intersection_of: UBERON:0003104 
-intersection_of: OBO_REL:part_of UBERON:0000033
+intersection_of: part_of UBERON:0000033
 
 [Term]
 id: UBERON:0005254
 name: upper leg mesenchyme
 xref: HOG:0000506
 intersection_of: UBERON:0003104 
-intersection_of: OBO_REL:part_of UBERON:0000376
+intersection_of: part_of UBERON:0000376
 
 [Term]
 id: UBERON:0005255
 name: foot digit mesenchyme
 xref: HOG:0000463
 intersection_of: UBERON:0003104 
-intersection_of: OBO_REL:part_of UBERON:0001466
+intersection_of: part_of UBERON:0001466
 
 [Term]
 id: UBERON:0005256
 name: trunk mesenchyme
 xref: HOG:0000281
 intersection_of: UBERON:0003104 
-intersection_of: OBO_REL:part_of UBERON:0002100
+intersection_of: part_of UBERON:0002100
 
 [Term]
 id: UBERON:0005257
 name: hand digit mesenchyme
 xref: HOG:0001416
 intersection_of: UBERON:0003104 
-intersection_of: OBO_REL:part_of UBERON:0002389
+intersection_of: part_of UBERON:0002389
 
 [Term]
 id: UBERON:0005258
 name: upper arm mesenchyme
 xref: HOG:0000505
 intersection_of: UBERON:0003104 
-intersection_of: OBO_REL:part_of UBERON:0003822
+intersection_of: part_of UBERON:0003822
 
 [Term]
 id: UBERON:0005259
 name: lower leg mesenchyme
 xref: HOG:0000752
 intersection_of: UBERON:0003104 
-intersection_of: OBO_REL:part_of UBERON:0003823
+intersection_of: part_of UBERON:0003823
 
 [Term]
 id: UBERON:0005260
 name: foot plate mesenchyme
 xref: HOG:0001055
 intersection_of: UBERON:0003104 
-intersection_of: OBO_REL:part_of UBERON:0004343
+intersection_of: part_of UBERON:0004343
 
 [Term]
 id: UBERON:0005261
 name: atrium cardiac jelly
 xref: HOG:0000941
 intersection_of: UBERON:0003906 
-intersection_of: OBO_REL:part_of UBERON:0001050
+intersection_of: part_of UBERON:0001050
 
 [Term]
 id: UBERON:0005262
 name: ventricle cardiac jelly
 xref: HOG:0000943
 intersection_of: UBERON:0003906 
-intersection_of: OBO_REL:part_of UBERON:0002300
+intersection_of: part_of UBERON:0002300
 
 [Term]
 id: UBERON:0005263
 name: outflow tract cardiac jelly
 xref: HOG:0000940
 intersection_of: UBERON:0003906 
-intersection_of: OBO_REL:part_of UBERON:0004145
+intersection_of: part_of UBERON:0004145
 
 [Term]
 id: UBERON:0005264
 name: midbrain neural fold
 xref: HOG:0000793
 intersection_of: UBERON:0005062 
-intersection_of: OBO_REL:part_of UBERON:0001891
+intersection_of: part_of UBERON:0001891
 
 [Term]
 id: UBERON:0005265
 name: hindbrain neural fold
 xref: HOG:0001211
 intersection_of: UBERON:0005062 
-intersection_of: OBO_REL:part_of UBERON:0002028
+intersection_of: part_of UBERON:0002028
 
 [Term]
 id: UBERON:0005266
 name: spinal cord neural fold
 xref: HOG:0000628
 intersection_of: UBERON:0005062 
-intersection_of: OBO_REL:part_of UBERON:0002240
+intersection_of: part_of UBERON:0002240
 
 [Term]
 id: UBERON:0005267
 name: renal cortex collecting duct
 xref: MA:0002600
 intersection_of: UBERON:0001232 
-intersection_of: OBO_REL:part_of UBERON:0001225
+intersection_of: part_of UBERON:0001225
 
 [Term]
 id: UBERON:0005268
 name: renal cortex artery
 xref: MA:0002582
 intersection_of: UBERON:0001637 
-intersection_of: OBO_REL:part_of UBERON:0001225
+intersection_of: part_of UBERON:0001225
 
 [Term]
 id: UBERON:0005269
 name: renal cortex vein
 xref: MA:0002592
 intersection_of: UBERON:0001638 
-intersection_of: OBO_REL:part_of UBERON:0001225
+intersection_of: part_of UBERON:0001225
 
 [Term]
 id: UBERON:0005270
 name: renal cortex interstitium
 xref: MA:0002608
 intersection_of: UBERON:0005169 
-intersection_of: OBO_REL:part_of UBERON:0001225
+intersection_of: part_of UBERON:0001225
 
 [Term]
 id: UBERON:0005271
@@ -67516,7 +67558,7 @@ expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://p
 
 [Typedef]
 id: part_of
-name: part of
+name: part_of
 xref: BFO:0000050
 is_reflexive: true
 is_transitive: true
