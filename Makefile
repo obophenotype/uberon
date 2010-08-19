@@ -14,6 +14,9 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 %.owl: %.obo
 	blip -i $< io-convert -to owl2 -u ontol_bridge_to_owl2_and_iao -o $@
 
+%.owl2: %.obo
+	obolib-obo2owl -o file://`pwd`/$@ $<
+
 
 OBOL=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -u obol_anatomy_xp -r obol_av 
 
