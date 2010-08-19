@@ -62,7 +62,7 @@ is_a: UBERON:0000464 ! anatomical space
 relationship: part_of UBERON:0002109 ! set of nares
 xref: galen:Naris ! naris
 xref: EHDAA2:0001225 ! naris
-racrelationship: part_of UBERON:0000033 ! head
+relationship: part_of UBERON:0000033 ! head
 
 [Term]
 id: UBERON:0000004
@@ -2694,7 +2694,7 @@ relationship: part_of UBERON:0000376 ! upper leg
 [Term]
 id: UBERON:0000370
 name: adductor magnus
-def: "The adductor magnus is a large triangular muscle, situated on the medial side of the thigh. The portion which arises from the ischiopubic ramus (a small part of the inferior ramus of the pubis, and the inferior ramus of the ischium) is called the "adductor magnesius portion", and the portion arising from the tuberosity of the ischium is called the "hamstring portion". The hamstring portion is not considered part of the hamstring group of muscles, but it is adjacent to it.[WP]." [Wikipedia:Adductor_magnus_muscle]
+def: "The adductor magnus is a large triangular muscle, situated on the medial side of the thigh. The portion which arises from the ischiopubic ramus (a small part of the inferior ramus of the pubis, and the inferior ramus of the ischium) is called the 'adductor magnesius portion', and the portion arising from the tuberosity of the ischium is called the 'hamstring portion'. The hamstring portion is not considered part of the hamstring group of muscles, but it is adjacent to it.[WP]." [Wikipedia:Adductor_magnus_muscle]
 alt_id: UBERON:BTO_0001312-FMA_22443
 synonym: "adductor magnus muscle" EXACT []
 xref: BTO:0001312
@@ -3091,7 +3091,7 @@ id: UBERON:0000344
 name: mucosa
 alt_id: UBERON:BTO_0000886-FMA_85355
 def: "A lining of mostly endodermal origin, covered in epithelium, which is involved in absorption and secretion. They line various body cavities that are exposed to the external environment and internal organs. It is at several places continuous with skin: at the nostrils, the lips, the ears, the genital area, and the anus. The sticky, thick fluid secreted by the mucous membranes and gland is termed mucus. The term mucous membrane refers to where they are found in the body and not every mucous membrane secretes mucus[WP]" [Wikipedia:Mucous_membrane]
-comment: TODO - check - mucosa vs region of mucosa. In FMA these are subtypes of Mucosa: Mucosa of {gallbladder, tongue, ...}. The following are subtypes of Region of mucosa: Mucosa of {zone of stomach, trachea, bronchus, dorsum of tongue...}. Depends on whether the covered area is an organ or organ component. Uberon does not regard organ vs organ component as crucial distinction and thus collapses these into a single class deliberately
+comment: TODO - check - mucosa vs region of mucosa. In FMA these are subtypes of Mucosa: Mucosa of \{gallbladder, tongue, ...\}. The following are subtypes of Region of mucosa: Mucosa of \{zone of stomach, trachea, bronchus, dorsum of tongue...\}. Depends on whether the covered area is an organ or organ component. Uberon does not regard organ vs organ component as crucial distinction and thus collapses these into a single class deliberately
 synonym: "mucosa of organ" EXACT [FMA:85355]
 synonym: "mucous membrane" EXACT [FMA:85355]
 synonym: "organ mucosa" EXACT [FMA:85355]
@@ -3487,9 +3487,6 @@ xref: BTO:0000418
 xref: FMA:77617 ! Neostriatum
 xref: NIF_GrossAnatomy:birnlex_1672 ! Striatum
 is_obsolete: true
-!is_a: UBERON:0002020 ! gray matter of neuraxis
-!relationship: has_part UBERON:0001873 ! caudate nucleus
-!relationship: has_part UBERON:0001874 ! putamen
 xref: GAID:669 ! neostriatum
 
 [Term]
@@ -3576,7 +3573,7 @@ subset: uberon_slim
 xref: FMA:38459 ! Flexor carpi radialis
 xref: MA:0002297 ! flexor carpi radialis
 is_a: UBERON:0000366 ! flexor muscle
-relationship_of: part_of UBERON:0003822 ! upper arm
+relationship: part_of UBERON:0003822 ! upper arm
 xref: ncithesaurus:Flexor_Carpi_Radialis ! Flexor Carpi Radialis
 
 [Term]
@@ -3589,7 +3586,7 @@ subset: uberon_slim
 xref: FMA:38465 ! Flexor carpi ulnaris
 xref: MA:0002298 ! flexor carpi ulnaris
 is_a: UBERON:0000366 ! flexor muscle
-relationship_of: part_of UBERON:0003822 ! upper arm
+relationship: part_of UBERON:0003822 ! upper arm
 xref: ncithesaurus:Flexor_Carpi_Ulnaris ! Flexor Carpi Ulnaris
 
 [Term]
@@ -3604,7 +3601,7 @@ xref: FMA:38478 ! Flexor digitorum profundus
 xref: MA:0002300 ! flexor digitorum profundus
 xref: ncithesaurus:Flexor_Digitorum_Profundus ! Flexor Digitorum Profundus
 is_a: UBERON:0000366 ! flexor muscle
-relationship_of: part_of UBERON:0003822 ! upper arm
+relationship: part_of UBERON:0003822 ! upper arm
 
 [Term]
 id: UBERON:0001392
@@ -5452,7 +5449,7 @@ xref: ENVO:02000042
 xref: FMA:9673 ! Tissue fluid
 is_a: UBERON:0000463 ! portion of organism substance
 
-[term]
+[Term]
 id: UBERON:0005169
 name: interstitial tissue
 def: "connective tissue between the cellular elements of a structure." [http://medical-dictionary.thefreedictionary.com/tissue]
@@ -8144,7 +8141,7 @@ consider: CL:0000210
 id: UBERON:0001035
 name: socket
 alt_id: UBERON:FBbt_00005172-FMA_7495-MA_0001499
-def: "Fibrous joint in which the periodontal ligament connects a tooth to the alveolar bone of the maxilla or mandible. Examples: Dento-alveolar joint of incisor tooth." [, Wikipedia:Gomphosis]
+def: "Fibrous joint in which the periodontal ligament connects a tooth to the alveolar bone of the maxilla or mandible. Examples: Dento-alveolar joint of incisor tooth." [Wikipedia:Gomphosis]
 comment: This class was created automatically from a combination of ontologies
 synonym: "dento-alveolar joint" EXACT []
 synonym: "dento-alveolar syndesmosis" EXACT []
@@ -9107,7 +9104,7 @@ synonym: "vertebra parapophysis" EXACT [OBOL:automatic]
 id: UBERON:0001078
 name: pedicle of vertebra
 alt_id: UBERON:FMA_11950-MA_0001458
-def: "The pedicles (from Latin pediculus, 'small foot') are two short, thick processes, which project backward, one on either side, from the upper part of the body, at the junction of its posterior and lateral surfaces. They connect the body of the spinal vertebra to the arch. [WP,unvetted]." [Wikipedia:Pedicle_of_vertebral_arch, Wikipedia:Pedicle_of_vertebral_arch]
+def: "The pedicles are two short, thick processes, which project backward, one on either side, from the upper part of the body, at the junction of its posterior and lateral surfaces. They connect the body of the spinal vertebra to the arch. [WP,unvetted]." [Wikipedia:Pedicle_of_vertebral_arch, Wikipedia:Pedicle_of_vertebral_arch]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "pedicle of vertebral arch" EXACT []
@@ -9774,7 +9771,7 @@ xref: ncithesaurus:Axillary_Lymph_Node ! Axillary Lymph Node
 id: UBERON:0001098
 name: incisor tooth
 alt_id: UBERON:FMA_12823-MA_0000349
-def: "Incisors (from Latin incidere, "to cut") are the first kind of tooth in heterodont mammals. They are located in the premaxilla above and mandible below. [WP,unvetted]." [Wikipedia:Incisor_tooth]
+def: "Incisors are the first kind of tooth in heterodont mammals. They are located in the premaxilla above and mandible below. [WP,unvetted]." [Wikipedia:Incisor_tooth]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "incisor" EXACT []
@@ -12485,7 +12482,7 @@ def: "the canals that carry bile in the liver between the intralobular ducts and
 id: UBERON:0001247
 name: falciform ligament
 alt_id: UBERON:FMA_15823-MA_0001622
-def: "a ligament that attaches the liver to the anterior body wall. It is a broad and thin antero-posterior peritoneal fold, falciform (Latin "sickle-shaped") in shape, its base being directed downward and backward and its apex upward and backward. It is a remnant of the ventral mesentery of the fetus. It is situated in an antero-posterior plane but lies obliquely, so that one surface faces forward and is in contact with the peritoneum  behind the right rectus and the diaphragm, while the other is directed backward and is in contact with the left lobe of the liver. It is attached by its left margin to the under surface of the diaphragm and the posterior surface of the sheath of the right Rectus as low down as the umbilicus; by its right margin it extends from the notch on the anterior margin of the liver, as far back as the posterior surface. It is composed of two layers of peritoneum closely united together. Its base or free edge contains between its layers the round ligament and the paraumbilical veins[WP]." [Wikipedia:Falciform_ligament]
+def: "a ligament that attaches the liver to the anterior body wall. It is a broad and thin antero-posterior peritoneal fold, falciform in shape, its base being directed downward and backward and its apex upward and backward. It is a remnant of the ventral mesentery of the fetus. It is situated in an antero-posterior plane but lies obliquely, so that one surface faces forward and is in contact with the peritoneum  behind the right rectus and the diaphragm, while the other is directed backward and is in contact with the left lobe of the liver. It is attached by its left margin to the under surface of the diaphragm and the posterior surface of the sheath of the right Rectus as low down as the umbilicus; by its right margin it extends from the notch on the anterior margin of the liver, as far back as the posterior surface. It is composed of two layers of peritoneum closely united together. Its base or free edge contains between its layers the round ligament and the paraumbilical veins[WP]." [Wikipedia:Falciform_ligament]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "falciform ligament of liver" EXACT []
@@ -14871,7 +14868,7 @@ xref: ncithesaurus:Tensor_Fasciae_Lata ! Tensor Fasciae Lata
 id: UBERON:0001377
 name: quadriceps femoris
 alt_id: UBERON:FMA_22428-MA_0002363
-def: ""Quads" redirects here. For other uses see Quad The quadriceps femoris (Latin for "four-headed of the femur"), also called simply the quadriceps, quadriceps extensor, quads, is a large muscle group that includes the four prevailing muscles on the front of the thigh. It is the great extensor muscle of the knee, forming a large fleshy mass which covers the front and sides of the femur. It is the strongest and leanest muscle in the human body. It is subdivided into four separate portions or 'heads', which have received distinctive names: Rectus femoris occupies the middle of the thigh, covering most of the other three quadriceps muscles. It originates on the ilium. It is named from its straight course. The other three lie deep to rectus femoris and originate from the body of the femur, which they cover from the trochanters to the condyles: Vastus lateralis is on the lateral side of the femur (i.e. on the outer side of the thigh). Vastus medialis is on the medial side of the femur (i.e. on the inner part thigh). Vastus intermedius lies between vastus lateralis and vastus medialis on the front of the femur (i.e. on the top or front of the thigh). All four parts of the quadriceps muscle attach to the patella (knee cap) via the quadriceps tendon. The quadriceps is also involved in Lombard's Paradox. The proper plural form of the adjective quadriceps is quadricipes, a form not in general use; instead, quadriceps is used in both singular and plural (i.e. , when referring to both legs). The form quadricep &#91;sic&#93;, though common even in professional contexts, is incorrect. The error may derive from a mistaken belief that quadriceps is a plural noun (rather than an adjective in the singular), since English typically forms its plurals with the addition of the letter s to the end of a word stem. [WP,unvetted]." [Wikipedia:Quadriceps_femoris]
+def: "The quadriceps femoris, also called simply the quadriceps, quadriceps extensor, quads, is a large muscle group that includes the four prevailing muscles on the front of the thigh. It is the great extensor muscle of the knee, forming a large fleshy mass which covers the front and sides of the femur. It is the strongest and leanest muscle in the human body. It is subdivided into four separate portions or 'heads', which have received distinctive names: Rectus femoris occupies the middle of the thigh, covering most of the other three quadriceps muscles. It originates on the ilium. It is named from its straight course. The other three lie deep to rectus femoris and originate from the body of the femur, which they cover from the trochanters to the condyles: Vastus lateralis is on the lateral side of the femur (i.e. on the outer side of the thigh). Vastus medialis is on the medial side of the femur (i.e. on the inner part thigh). Vastus intermedius lies between vastus lateralis and vastus medialis on the front of the femur (i.e. on the top or front of the thigh). All four parts of the quadriceps muscle attach to the patella (knee cap) via the quadriceps tendon. The quadriceps is also involved in Lombard's Paradox. The proper plural form of the adjective quadriceps is quadricipes, a form not in general use; instead, quadriceps is used in both singular and plural (i.e. , when referring to both legs). The form quadricep &#91;sic&#93;, though common even in professional contexts, is incorrect. The error may derive from a mistaken belief that quadriceps is a plural noun (rather than an adjective in the singular), since English typically forms its plurals with the addition of the letter s to the end of a word stem. [WP,unvetted]." [Wikipedia:Quadriceps_femoris]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "quadriceps" EXACT []
@@ -15562,7 +15559,7 @@ is_a: UBERON:0001473 ! lymphatic vessel
 id: UBERON:0001427
 name: scaphoid
 alt_id: UBERON:FMA_23709-MA_0002555
-def: "The scaphoid Bone is situated at the radial (radius bone) side of the carpus, or laterally between the hand and the forearm in standard medical posture (thumbs pointing outwards). The scaphoid bone is the largest bone of the proximal row of wrist bones, its long axis being from above downward, lateralward, and forward. It is approximately the size and shape of a medium sized cashew. The etymology of the Scaphoid bone is derived from the Greek skaphe which means "a boat," and the Greek eidos which means "form". The bone takes a semi-similar form of a boat. In reptiles, birds, and amphibians, this bone is instead commonly referred to as the radiale, because of its articulation with the radius. [WP,unvetted]." [Wikipedia:Scaphoid]
+def: "The scaphoid Bone is situated at the radial (radius bone) side of the carpus, or laterally between the hand and the forearm in standard medical posture (thumbs pointing outwards). The scaphoid bone is the largest bone of the proximal row of wrist bones, its long axis being from above downward, lateralward, and forward. It is approximately the size and shape of a medium sized cashew. The bone takes a semi-similar form of a boat. In reptiles, birds, and amphibians, this bone is instead commonly referred to as the radiale, because of its articulation with the radius. [WP,unvetted]." [Wikipedia:Scaphoid]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "navicular bone of hand" EXACT []
@@ -17576,7 +17573,7 @@ xref: ncithesaurus:Abductor_Pollicis_Longus ! Abductor Pollicis Longus
 id: UBERON:0001528
 name: radio-ulnar joint
 alt_id: UBERON:FMA_38863-MA_0000462
-def: "The forearm is the structure and distal region of the upper limb, between the elbow and the wrist.. The term forearm is used in anatomy to distinguish it from the arm which is often misused to describe the entire appendage of the upper limb and technically means only the region of the upper arm whereas the lower "arm" is called the forearm. It is homologous to the leg that lies between the knee and the ankle joints. [WP,unvetted]." [Wikipedia:Radio-ulnar_joint]
+def: "The forearm is the structure and distal region of the upper limb, between the elbow and the wrist.. The term forearm is used in anatomy to distinguish it from the arm which is often misused to describe the entire appendage of the upper limb and technically means only the region of the upper arm whereas the lower 'arm' is called the forearm. It is homologous to the leg that lies between the knee and the ankle joints. [WP,unvetted]." [Wikipedia:Radio-ulnar_joint]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "radioulnar joint" EXACT []
@@ -20158,7 +20155,7 @@ xref: HOG:0001325 ! hyoid bone
 id: UBERON:0001686
 name: auditory ossicle
 alt_id: UBERON:FMA_52750-MA_0000254-XAO_0000214
-def: "The ossicles (also called auditory ossicles) are the three smallest bones in the human body. They are contained within the middle ear space and serve to transmit sounds from the air to the fluid-filled labyrinth. The absence of the auditory ossicles would constitute a moderate-to-severe hearing loss. The term "ossicles" literally means "tiny bones" and commonly refers to the auditory ossicles, though the term may refer to any small bone throughout the body. [WP,unvetted]." [Wikipedia:Auditory_ossicle]
+def: "The ossicles (also called auditory ossicles) are the three smallest bones in the human body. They are contained within the middle ear space and serve to transmit sounds from the air to the fluid-filled labyrinth. The absence of the auditory ossicles would constitute a moderate-to-severe hearing loss. The term 'ossicles' literally means 'tiny bones' and commonly refers to the auditory ossicles, though the term may refer to any small bone throughout the body. [WP,unvetted]." [Wikipedia:Auditory_ossicle]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "auditory bone" EXACT []
@@ -20461,7 +20458,7 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 id: UBERON:0001700
 name: geniculate ganglion
 alt_id: UBERON:FMA_53414-MA_0001076-ZFA_0001291
-def: "The geniculate ganglion (from Latin genu, for 'knee') is an L-shaped collection of fibers and sensory neurons of the facial nerve located in the facial canal of the head. It receives fibers from the motor, sensory, and parasympathetic components of the facial nerve and sends fibers that will innervate the lacrimal glands, submandibular glands, sublingual glands, tongue, palate, pharynx, external auditory meatus, stapedius, posterior belly of the digastric muscle, stylohyoid muscle, and muscles of facial expression. Sensory and parasympathetic inputs are carried into the geniculate ganglion via the nervus intermedius. Motor fibers are carried via the facial nerve proper. The greater petrosal nerve, which carries sensory fibers as well as preganglionic parasympathetic fibers, emerges from the anterior aspect of the ganglion. The geniculate ganglion is one of several ganglia of the head and neck. Like the others, it is a bilaterally distributed structure, with each side of the face having a geniculate ganglion. [WP,unvetted]." [Wikipedia:Geniculate_ganglion, Wikipedia:Geniculate_ganglion]
+def: "The geniculate ganglion is an L-shaped collection of fibers and sensory neurons of the facial nerve located in the facial canal of the head. It receives fibers from the motor, sensory, and parasympathetic components of the facial nerve and sends fibers that will innervate the lacrimal glands, submandibular glands, sublingual glands, tongue, palate, pharynx, external auditory meatus, stapedius, posterior belly of the digastric muscle, stylohyoid muscle, and muscles of facial expression. Sensory and parasympathetic inputs are carried into the geniculate ganglion via the nervus intermedius. Motor fibers are carried via the facial nerve proper. The greater petrosal nerve, which carries sensory fibers as well as preganglionic parasympathetic fibers, emerges from the anterior aspect of the ganglion. The geniculate ganglion is one of several ganglia of the head and neck. Like the others, it is a bilaterally distributed structure, with each side of the face having a geniculate ganglion. [WP,unvetted]." [Wikipedia:Geniculate_ganglion, Wikipedia:Geniculate_ganglion]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "facial ganglion" EXACT []
@@ -21812,7 +21809,7 @@ xref: ncithesaurus:Lacrimal_Canaliculus ! Lacrimal Canaliculus
 id: UBERON:0004868
 name: tapetum lucidum
 namespace: uberon
-definition: "a layer of tissue in the eye of many vertebrate  animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors" [Wikipedia:Tapetum_lucidum]
+def: "a layer of tissue in the eye of many vertebrate  animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors" [Wikipedia:Tapetum_lucidum]
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0000970 ! part_of eye
 relationship: adjacent_to UBERON:0000966 ! retina
@@ -26438,7 +26435,7 @@ relationship: overlaps UBERON:0005303 ! hypogastric nerve
 id: UBERON:0002015
 name: fibrous capsule of kidney
 alt_id: UBERON:FMA_66610-MA_0000370
-def: "The renal capsule is a tough fibrous layer surrounding the kidney and covered in a thick layer of ' adipose tissue. It provides some protection from trauma and damage. The renal capsule relates to the other layers in the following order (moving from innermost to outermost): renal medulla renal cortex renal capsule perinephric fat (or "perirenal fat") renal fascia paranephric fat (or "pararenal fat") peritoneum (anteriorly), and transversalis fascia (posteriorly). [WP,unvetted]." [Wikipedia:Kidney_capsule]
+def: "The renal capsule is a tough fibrous layer surrounding the kidney and covered in a thick layer of ' adipose tissue. It provides some protection from trauma and damage. The renal capsule relates to the other layers in the following order (moving from innermost to outermost): renal medulla renal cortex renal capsule perinephric fat (or 'perirenal fat') renal fascia paranephric fat (or 'pararenal fat') peritoneum (anteriorly), and transversalis fascia (posteriorly). [WP,unvetted]." [Wikipedia:Kidney_capsule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "capsule of kidney" EXACT []
@@ -30105,7 +30102,7 @@ xref: ncithesaurus:Xiphoid_Process ! Xiphoid Process
 id: UBERON:0002208
 name: sternebra
 alt_id: UBERON:FMA_7489-MA_0001333
-def: "The sternum (from Greek στέρνον,sternon, "chest" or breastbone) is a long flat bone (or, in some models, set of three bones) shaped like a capital 'T' located in the center of the thorax (chest). It connects to the rib bones via cartilage, forming the anterior section of the rib cage with them, and thus helps to protect the lungs, heart and major blood vessels from physical trauma. The sternum is sometimes cut open to gain access to the thoracic contents when performing cardiothoracic surgery. [WP,unvetted]." [Wikipedia:Sternebra]
+def: "The sternum is a long flat bone (or, in some models, set of three bones) shaped like a capital 'T' located in the center of the thorax (chest). It connects to the rib bones via cartilage, forming the anterior section of the rib cage with them, and thus helps to protect the lungs, heart and major blood vessels from physical trauma. The sternum is sometimes cut open to gain access to the thoracic contents when performing cardiothoracic surgery. [WP,unvetted]." [Wikipedia:Sternebra]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:7489 ! Sternebra
@@ -33237,7 +33234,7 @@ xref: EHDAA2:0001424 ! pectoralis major
 id: UBERON:0002382
 name: rectus abdominis
 alt_id: UBERON:FMA_9628-MA_0002364
-def: "The rectus abdominis muscle is a paired muscle running vertically on each side of the anterior wall of the human abdomen (and in some other animals). There are two parallel muscles, separated by a midline band of connective tissue called the linea alba (white line). It extends from the pubic symphysis/pubic crest inferiorly to the xiphisternum/xiphoid process and lower costal cartilages (5–7) superiorly. It is contained in the Rectus sheath. The rectus is usually crossed by three fibrous bands licked by the tendinous inscriptions. While the "sixpack" is by far the most common configuration of the muscle bellies of the rectus, there exist rare anatomic variations which result in the appearance of eight ("eightpack"), ten, or—even rarer—asymmetrically arranged segments. All these variations are functionally equivalent. [WP,unvetted]." [Wikipedia:Rectus_abdominis]
+def: "The rectus abdominis muscle is a paired muscle running vertically on each side of the anterior wall of the human abdomen (and in some other animals). There are two parallel muscles, separated by a midline band of connective tissue called the linea alba (white line). It extends from the pubic symphysis/pubic crest inferiorly to the xiphisternum/xiphoid process and lower costal cartilages (5–7) superiorly. It is contained in the Rectus sheath. The rectus is usually crossed by three fibrous bands licked by the tendinous inscriptions. While the 'sixpack' is by far the most common configuration of the muscle bellies of the rectus, there exist rare anatomic variations which result in the appearance of eight ('eightpack'), ten, or—even rarer—asymmetrically arranged segments. All these variations are functionally equivalent. [WP,unvetted]." [Wikipedia:Rectus_abdominis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EHDAA:8252 ! rectus abdominis
@@ -34479,7 +34476,7 @@ xref: EHDAA2:0000979 ! lens fibres
 id: UBERON:0002445
 name: triquetral
 alt_id: UBERON:MA_0001347-FMA_23715
-def: "The triquetral bone (also called triquetrum bone, pyramidal bone, three-cornered bone, and triangular bone) is located in the wrist on the medial side of the proximal row of the carpus between the lunate and pisiform bones. It is on the ulnar side of the hand, but does not articulate with the ulna. It connects with the pisiform, hamate, and lunate bones. It is the 3rd most commonly fractured carpal bone. The triangular bone may be distinguished by its pyramidal shape, and by an oval isolated facet for articulation with the pisiform bone. It is situated at the upper and ulnar side of the carpus. To facilitate its palpation in an exam, the hand must be radially deviated so that the triquetrium moves out from under the ulnar styloid process. The triquetrum may be difficult to find, since it also lies under the pisiform. The etymology derives from the Latin triquetrus which means "three-cornered. " In reptiles and amphibians, the bone is instead referred to as the ulnare, since (at least in the most primitive fossils) it articulates with the ulna. [WP,unvetted]." [Wikipedia:Triquetral]
+def: "The triquetral bone (also called triquetrum bone, pyramidal bone, three-cornered bone, and triangular bone) is located in the wrist on the medial side of the proximal row of the carpus between the lunate and pisiform bones. It is on the ulnar side of the hand, but does not articulate with the ulna. It connects with the pisiform, hamate, and lunate bones. It is the 3rd most commonly fractured carpal bone. The triangular bone may be distinguished by its pyramidal shape, and by an oval isolated facet for articulation with the pisiform bone. It is situated at the upper and ulnar side of the carpus. To facilitate its palpation in an exam, the hand must be radially deviated so that the triquetrium moves out from under the ulnar styloid process. The triquetrum may be difficult to find, since it also lies under the pisiform. The etymology derives from the Latin triquetrus which means 'three-cornered'.  In reptiles and amphibians, the bone is instead referred to as the ulnare, since (at least in the most primitive fossils) it articulates with the ulna. [WP,unvetted]." [Wikipedia:Triquetral]
 subset: uberon_slim
 synonym: "cuneiform bone of hand" EXACT []
 synonym: "cuneiform of hand" RELATED [MA:0001347]
@@ -37622,7 +37619,7 @@ def: "A reticular formation that is part of a midbrain [Obol]." [OBOL:automatic]
 id: UBERON:0002640
 name: cuneocerebellar tract
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1238-FMA_72637
-def: "The posterior external arcuate fibers (dorsal external arcuate fibers) take origin in the gracile and cuneate nuclei; they pass to the inferior peduncle of the same side. It is uncertain whether fibers are continued directly from the gracile and cuneate fasciculi into the inferior peduncle. The term "cuneocerebellar tract" is sometimes used to collectively refer to the posterior external arcuate fibers. [WP,unvetted]." [Wikipedia:Cuneocerebellar_tract]
+def: "The posterior external arcuate fibers (dorsal external arcuate fibers) take origin in the gracile and cuneate nuclei; they pass to the inferior peduncle of the same side. It is uncertain whether fibers are continued directly from the gracile and cuneate fasciculi into the inferior peduncle. The term 'cuneocerebellar tract' is sometimes used to collectively refer to the posterior external arcuate fibers. [WP,unvetted]." [Wikipedia:Cuneocerebellar_tract]
 subset: uberon_slim
 xref: FMA:72637 ! Cuneocerebellar tract
 xref: NIF_GrossAnatomy:birnlex_1238 ! Cuneocerebellar tract
@@ -39071,7 +39068,7 @@ xref: GAID:663 ! mediodorsal thalamic nucleu
 id: UBERON:0002740
 name: posterior cingulate gyrus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1546-FMA_61924
-def: "The posterior cingulate cortex is the backmost part of the cingulate cortex, lying behind the anterior cingulate cortex. This is the upper part of the "limbic lobe". The cingulate cortex is made up of an area around the midline of the brain. Surrounding areas include the retrosplenial cortex and the precuneus. Cytoarchitectonically posterior cingulate cortex is associated with Brodmann areas 23 and 31. [WP,unvetted]." [Wikipedia:Posterior_cingulate_gyrus]
+def: "The posterior cingulate cortex is the backmost part of the cingulate cortex, lying behind the anterior cingulate cortex. This is the upper part of the 'limbic lobe'. The cingulate cortex is made up of an area around the midline of the brain. Surrounding areas include the retrosplenial cortex and the precuneus. Cytoarchitectonically posterior cingulate cortex is associated with Brodmann areas 23 and 31. [WP,unvetted]." [Wikipedia:Posterior_cingulate_gyrus]
 subset: uberon_slim
 xref: FMA:61924 ! Posterior cingulate gyrus
 xref: NIF_GrossAnatomy:birnlex_1546 ! Posterior cingulate gyrus
@@ -43346,7 +43343,7 @@ id: UBERON:0004086
 name: brain ventricle
 def: "one of the system of communicating cavities in the brain that are continuous with the central canal of the spinal cord, that like it are derived from the medullary canal of the embryo, that are lined with an epithelial ependyma, and that contain a serous fluid" []
 comment: check FMA. TODO: add cavities.
-syononym: "cerebral ventricle" EXACT [HP:0002118]
+synonym: "cerebral ventricle" EXACT [HP:0002118]
 xref: MA:0000818 ! brain ventricle
 xref: BTO:0001442 ! brain ventricle
 xref: FMA:78447 ! Region of ventricular system of brain
@@ -56894,7 +56891,7 @@ is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 xref: MA:0000999 ! cerebellum vermis lobule II [SYNONYM: "central lobule" (related)] [part_of: "anterior cerebellum vermis"] [subclass: "cerebellum vermis lobule"]
 xref: NIF_GrossAnatomy:birnlex_920 ! Central lobule [SYNONYM: "central lobule" (exact)] [subclass: "Lobular parts of the cerebellar cortex"]
-FMA:72519 ! central lobule [SYNONYM: "central lobule of cerebellum" (exact)] [SYNONYM: "central lobule of cerebellum [ii and iii]" (exact)] [regional_part_of: "vermis of anterior lobe of cerebellum"] [subclass: "lobule of hemisphere of cerebellum"]
+xref: FMA:72519 ! central lobule [SYNONYM: "central lobule of cerebellum" (exact)] [SYNONYM: "central lobule of cerebellum [ii and iii]" (exact)] [regional_part_of: "vermis of anterior lobe of cerebellum"] [subclass: "lobule of hemisphere of cerebellum"]
 synonym: "central lobule" BROAD [MA:0001000]
 synonym: "central lobule of cerebellum" BROAD []
 synonym: "lobule II of cerebellum vermis" EXACT []
@@ -63216,7 +63213,7 @@ def: "The costocervical trunk arises from the upper and back part of the subclav
 id: UBERON:0004689
 name: naso-frontal vein
 is_a: UBERON:0001638 ! vein
-synonyn: "nasofrontal vein" EXACT [FMA:51729]
+synonym: "nasofrontal vein" EXACT [FMA:51729]
 xref: FMA:51729 ! Nasofrontal vein
 xref: MA:0002182 ! naso-frontal vein
 
@@ -63237,8 +63234,6 @@ synonym: "bulbo-urethral gland secretion" EXACT [FMA:62968]
 xref: FMA:62968 ! secretion of bulbo-urethral gland
 xref: MA:0002524 ! bulbourethral gland secretion
 relationship: secreted_by UBERON:0002366 ! bulbo-urethral gland
-
-format-version: 1.2
 
 [Term]
 id: UBERON:0004692
@@ -63421,7 +63416,7 @@ relationship: part_of UBERON:0001840 ! semicircular canal
 [Term]
 id: UBERON:0004722
 name: deep cervical lymph nodes
-def: "The deep cervical lymph nodes are a group of cervical lymph nodes found near the internal jugular vein. They can be divided into upper and lower groups, or superior and inferior groups. Alternatively, they can be divided into deep anterior cervical lymph nodes and deep lateral cervical lymph nodes. They can also be divided into three groups: "superior deep jugular", "middle deep jugular", and 'inferior deep jugular'." [Wikipedia:Deep_cervical_lymph_nodes]
+def: "The deep cervical lymph nodes are a group of cervical lymph nodes found near the internal jugular vein. They can be divided into upper and lower groups, or superior and inferior groups. Alternatively, they can be divided into deep anterior cervical lymph nodes and deep lateral cervical lymph nodes. They can also be divided into three groups: superior deep jugular, middle deep jugular, and 'inferior deep jugular'." [Wikipedia:Deep_cervical_lymph_nodes]
 is_a: UBERON:0002429 ! cervical lymph node
 synonym: "lower jugular nodes" RELATED [Wikipedia:Deep_cervical_lymph_nodes]
 synonym: "middle jugular nodes" RELATED [Wikipedia:Deep_cervical_lymph_nodes]
@@ -64753,7 +64748,7 @@ def: "A vasculature that is part of a retina [Obol]." [OBOL:automatic]
 id: UBERON:0004869
 name: parietal organ
 namespace: uberon
-definition: "A part of the epithalamus present in some animal species. The eye may be photoreceptive and is usually associated with the pineal gland, regulating circadian rhythmicity and hormone production for thermoregulation. The parietal eye is a part of the epithalamus, which can be divided into two major parts; the epiphysis  (the pineal organ, or pineal gland if mostly endocrine) and the parietal organ (often called the parietal eye, or third eye if it is photoreceptive). It arises as an anterior evagination of the pineal organ or as a separate outgrowth of the roof of the diencephalon. In some species, it protrudes through the skull.[4]  The parietal eye uses a different biochemical method of detecting light than rod cells or cone cells in a normal vertebrate eye[WP]." [Wikipedia:Parietal_eye]
+def: "A part of the epithalamus present in some animal species. The eye may be photoreceptive and is usually associated with the pineal gland, regulating circadian rhythmicity and hormone production for thermoregulation. The parietal eye is a part of the epithalamus, which can be divided into two major parts; the epiphysis  (the pineal organ, or pineal gland if mostly endocrine) and the parietal organ (often called the parietal eye, or third eye if it is photoreceptive). It arises as an anterior evagination of the pineal organ or as a separate outgrowth of the roof of the diencephalon. In some species, it protrudes through the skull.[4]  The parietal eye uses a different biochemical method of detecting light than rod cells or cone cells in a normal vertebrate eye[WP]." [Wikipedia:Parietal_eye]
 synonym: "parietal eye" EXACT  [Wikipedia:Parietal_eye]
 synonym: "third eye" RELATED  [Wikipedia:Parietal_eye]
 is_a: UBERON:0000479 ! portion of tissue
@@ -67407,7 +67402,7 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 [Term]
 id: UBERON:0005135
 name: metanephric glomerular epithelium
-def: "A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains "feet" that interdigitate with the "feet" of other glomerular epithelial cells in the metanephros[GO]." [GO:0072244]
+def: "A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains 'feet' that interdigitate with the 'feet' of other glomerular epithelial cells in the metanephros[GO]." [GO:0072244]
 intersection_of: UBERON:0004188 ! glomerular epithelium
 intersection_of: part_of UBERON:0000081 ! metanephros
 
@@ -68467,7 +68462,7 @@ relationship: part_of UBERON:0002097 ! skin of body
 [Term]
 id: UBERON:0004882
 name: eponychium
-def: "Thickened layer of skin surrounding fingernails and toenails. Beneath the cuticle is a thin layer of a membrane known as the pterygium. The function is to protect the area between the nail and epidermis from exposure to harmful bacteria. The vascularization pattern is similar to that of perionychium. The eponychium is the end of the proximal fold that folds back upon itself to shed an epidermal layer of skin onto the newly formed nail plate. This layer of non-living, almost invisible skin is the cuticle that "rides out" on the surface of the nail plate. Together, the eponychium and the cuticle form a protective seal. The cuticle on the nail plate is dead cells and is often removed during manicure, but the eponychium is living cells and should not be touched.[6]  The perionyx is the projecting edge of the eponychium covering the proximal strip of the lunula[WP]." [Wikipedia:Eponychium]
+def: "Thickened layer of skin surrounding fingernails and toenails. Beneath the cuticle is a thin layer of a membrane known as the pterygium. The function is to protect the area between the nail and epidermis from exposure to harmful bacteria. The vascularization pattern is similar to that of perionychium. The eponychium is the end of the proximal fold that folds back upon itself to shed an epidermal layer of skin onto the newly formed nail plate. This layer of non-living, almost invisible skin is the cuticle that 'rides out' on the surface of the nail plate. Together, the eponychium and the cuticle form a protective seal. The cuticle on the nail plate is dead cells and is often removed during manicure, but the eponychium is living cells and should not be touched.[6]  The perionyx is the projecting edge of the eponychium covering the proximal strip of the lunula[WP]." [Wikipedia:Eponychium]
 xref: FMA:77859 ! Eponychium
 is_a: UBERON:0004923 ! organ component layer
 relationship: part_of UBERON:0001003 ! epidermis
@@ -68565,7 +68560,7 @@ namespace: CL
 def: "A relation between a material entity (such as a cell) and a process. This is a shortcut relation, translation rule for which is: capable_of P <-> bearer_of (some realized_by only P). Example: osteoclast capable of bone resorption." [GOC:cjm]
 comment: At the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
-is_type_level: true
+is_class_level: true
 
 [Typedef]
 id: bearer_of
@@ -68632,7 +68627,7 @@ comment: TODO owldef
 synonym: "non_overlapping_with" EXACT []
 synonym: "shares_no_parts_with" EXACT []
 !disjoint_over: part_of ! part_of
-is_type_level: true
+is_class_level: true
 is_metadata_tag: true
 
 [Typedef]
@@ -68817,7 +68812,7 @@ name: secretes
 [Typedef]
 id: separated_from_by
 name: separated_from_by
-formula: "(forall (x y z) (iff (separated_from_by x y z) (and (adjacent_to x z) (adjacent_to y z) (spatially_disjoint_from x y))))" CLIF []
+!formula: "(forall (x y z) (iff (separated_from_by x y z) (and (adjacent_to x z) (adjacent_to y z) (spatially_disjoint_from x y))))" CLIF []
 
 [Typedef]
 id: site_of
@@ -68914,7 +68909,7 @@ id: in_left_side_of
 xref: BSPO:0000120
 name: in_left_side_of
 def: "X left_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
-inverse_of_on_instance_level: BSPO:0000121 ! right_side_of
+inverse_of: BSPO:0000121 ! right_side_of
 
 [Typedef]
 id: in_right_side_of
@@ -68926,7 +68921,7 @@ def: "X right_side_of Y <=> if Y is subdivided into left and right portions, X i
 id: in_distal_side_of
 name: in_distal_side_of
 def: "X distal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the distal portion." [BSPO:PATO_mtg_2009]
-inverse_of_on_instance_level: BSPO:0000121 ! proximal_side_of
+inverse_of: BSPO:0000121 ! proximal_side_of
 
 [Typedef]
 id: in_proximal_side_of
