@@ -628,6 +628,13 @@ relationship: part_of UBERON:0002465 ! lymphoid system
 xref: ncithesaurus:Lymph_Node ! Lymph Node
 xref: OpenCyc:Mx4rwLPqLpwpEbGdrcN5Y29ycA ! lymph node
 
+[Term]
+id: UBERON:0005334 ! oral lamina propria
+name: oral lamina propria
+intersection_of: UBERON:0000030 ! lamina propria
+intersection_of: part_of UBERON:0003343 ! mucosa of oral region
+synonym: "lamina propria of oral mucosa" EXACT []
+xref: EMAPA:26947 ! oral lamina propria
 
 [Term]
 id: UBERON:0000031
@@ -649,7 +656,6 @@ synonym: "trachea lamina propria mucosae" EXACT [OBOL:automatic]
 synonym: "windpipe lamina propria" EXACT [OBOL:automatic]
 synonym: "windpipe lamina propria mucosa" EXACT [OBOL:automatic]
 synonym: "windpipe lamina propria mucosae" EXACT [OBOL:automatic]
-def: "A lamina propria that is part of a respiratory airway [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0000033
@@ -1973,17 +1979,6 @@ xref: BTO:0003153 ! perineurium
 xref: NIF_GrossAnatomy:nlx_anat_090205 ! Perineurium
 
 [Term]
-id: UBERON:0000122
-name: nerve fiber bundle
-def: "multi-cell component structure consisting of a cluster of nerve fibers." [UBERON:cjm]
-comment: TODO - check FMA is general anatomical term
-synonym: "funiculus" EXACT []
-xref: FBbt:00005099
-is_a: UBERON:0000477 ! anatomical cluster
-relationship: has_part UBERON:0001021 ! nerve
-xref: FMA:76738 ! Funiculus
-
-[Term]
 id: UBERON:0000123
 name: endodeurium
 def: "a layer of delicate connective tissue that encloses the myelin sheath of a nerve fiber within a funiculus." [Wikipedia:Endodeurium]
@@ -2245,7 +2240,7 @@ xref: EHDAA2:0002142 ! urogenital sinus
 id: UBERON:0000165
 name: mouth
 def: "First portion of the alimentary canal that receives food and begins digestion by mechanically breaking up the solid food particles into smaller pieces and mixing them with saliva. The oral mucosa is the mucous membrane epithelium lining the inside of the mouth." [Wikipedia:Mouth]
-comment: TODO - check fly mouthpart
+comment: TODO - check fly mouthpart. note in uberon we distinguish between the mouth and the oral opening. the mouth is part of the digestive tract. TODO - check isa parent subdivision of head - is it a subdivision of the head or digestive tract
 subset: uberon_slim
 synonym: "adult mouth" EXACT []
 xref: BTO:0001090
@@ -2474,6 +2469,7 @@ is_a: UBERON:0000120 ! blood brain barrier
 intersection_of: UBERON:0000120 ! blood brain barrier
 intersection_of: has_part CL:0000115 ! endothelial cell
 relationship: has_part CL:0000115 ! endothelial cell
+xref: NIF_Subcellular:nlx_subcell_100205
 created_by: cjm
 creation_date: 2009-04-10T08:15:44Z
 
@@ -2535,6 +2531,7 @@ def: "A chitinous extracellular secretion of the four underlying cone cells and 
 synonym: "compound eye corneal lens" EXACT [GO:0048058]
 synonym: "invertebrate lens" RELATED []
 xref: FBbt:00004199 ! lens
+xref: TADS:0000304 ! adult eye lens
 is_a: UBERON:0000476 ! acellular anatomical structure
 is_a: UBERON:0000965 ! lens
 created_by: cjm
@@ -3950,7 +3947,6 @@ synonym: "windpipe mucosa" EXACT [OBOL:automatic]
 synonym: "windpipe mucosa of organ" EXACT [OBOL:automatic]
 synonym: "windpipe mucous membrane" EXACT [OBOL:automatic]
 synonym: "windpipe organ mucosa" EXACT [OBOL:automatic]
-def: "A mucosa that is part of a respiratory airway [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0000380
@@ -3994,11 +3990,11 @@ name: labial gland
 alt_id: UBERON:BTO_0001548-FMA_71613
 synonym: "Labial glands" EXACT [FMA:71613]
 synonym: "Labial glands set" EXACT [FMA:71613]
-comment: unvetted
+comment: the label 'labial gland' refers to two distinct classes. From the BTO def: 1. One of the small tubular mucous and serous glands lying beneath the mucous membrane of the lips.n2. A salivary gland, or modification thereof, opening at the base of the labium in certain insects.
 xref: BTO:0001548
 xref: FMA:71613 ! Set of labial glands
 xref: HAO:0000449 ! labial gland
-is_a: UBERON:0002530 ! gland
+is_obsolete: true
 
 [Term]
 id: UBERON:0000387
@@ -5917,12 +5913,14 @@ id: UBERON:0004904
 name: optic nerve
 xref: BTO:0000966
 xref: FBbt:00001956 ! optic nerve
+xref: EHDAA2:0001314 ! optic nerve
+xref: TADS:0000232 ! adult optic nerve
 def: "A nerve that connects the eye to the brain and carries the impulses formed by the retina to the visual cortex of the brain[BTO]." [BTO:0000966]
 subset: grouping_class
+comment: obsolete?
 intersection_of: UBERON:0001021 ! nerve
 intersection_of: continuous_with UBERON:0000966 ! retina
 relationship: part_of UBERON:0002104 ! visual system
-xref: EHDAA2:0001314 ! optic nerve
 
 [Term]
 id: UBERON:0000941
@@ -5935,7 +5933,7 @@ synonym: "CN-II" RELATED []
 synonym: "optic nerve" BROAD SENSU [FMA:50863]
 synonym: "optic" RELATED []
 synonym: "optic II nerve" EXACT []
-synonym: "Optic nerve [II]" EXACT []
+synonym: "optic nerve [II]" EXACT []
 synonym: "second cranial nerve" EXACT []
 xref: EHDAA:6788 ! optic nerve
 xref: FMA:50863 ! Optic nerve
@@ -6121,8 +6119,8 @@ xref: WBbt:0005796 ! intestinal muscle
 id: UBERON:0000955
 name: brain
 alt_id: UBERON:FBbt_00003624-FBbt_00005095-FMA_50801-MA_0000168-MIAA_0000098-MIAA_0000341-WBbt_0005440-XAO_0000010-ZFA_0000008
-def: "The supra-esophageal ganglion of the central nervous system, composed of three primitive ganglia known as protocerebrum, deutocerebrum and tritocerebrum. In the context of Drosophila refers to the preoral ganglionic mass of the central nervous system containing the ventral ganglia. // Organ component of neuraxis that has as its parts gray matter and white matter that surround the cerebral ventricular system; Examples: There is only one brain. // Organ that is a component of the central nervous system and is responsible for the coordination and control of bodily activities and the interpretation of information from the senses. It appears when the neural tube segregates in forebrain, midbrain, and hindbrain at NF stage 22. The general pattern of the brain has been mainly established at NF stage 28. Yolky material is consumed and the fibre tracts and later the commissures develop. In general all of its parts are well developed at NF stage 53 and later development consists mainly of growth and some further cytological differentiation. In the period of metamorphosis only topographical changes take place." [FB:gg, ISBN:0815318960, ISBN:3110148986, OMD:brain, Wikipedia:Brain]
-comment: This class was created automatically from a combination of ontologies
+def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals.[1] Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [Wikipedia:Brain]
+comment: include synganglion?
 subset: uberon_slim
 synonym: "brain" EXACT []
 synonym: "central nervous system" RELATED []
@@ -7076,18 +7074,21 @@ xref: HOG:0001199 ! paramesonephric duct
 id: UBERON:0000994
 name: spermathecum
 alt_id: UBERON:FBbt_00004921-MIAA_0000168-WBbt_0005319
-def: "an accordion-like tube that contains sperm and is the site of oocyte fertilization." [WA:dh]
+def: "an organ of the female reproductive tract in insects, some molluscs, oligochaeta worms and certain other invertebrates and vertebrates.[1] Its purpose is to receive and store sperm from the male, and can sometimes be the site of fertilization when the oocytes are ready.[2]  Some species have multiple spermathecae, as seen in earthworms, where four pairs of spermathecae are present. One pair in 6,7,8 and 9 segments. They receive and store the spermatozoa of another earthworm during copulation.[3] They are lined with epithelium  and are variable in shape; some are thin, heavily coiled tubes, others are vague outpocketings from the main reproductive tract. It is one of the many variations in sexual reproduction[WP]. an accordion-like tube that contains sperm and is the site of oocyte fertilization." [WA:dh, Wikipedia:Spermatheca]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "seminal receptacle" RELATED []
-synonym: "spermatheca" RELATED []
+synonym: "spermatheca" RELATED PLURAL []
 xref: FBbt:00004921 ! spermathecum
 xref: MAT:0000168 ! spermathecum
 xref: MIAA:0000168 ! spermathecum
 xref: WBbt:0005319 ! spermatheca
+xref: EFO:0000977 ! spermathecum
+xref: BTO:0001273 ! spermatheca 
+xref: HAO:0000945 ! spermatheca
 is_a: UBERON:0000062 ! organ
 relationship: part_of UBERON:0000991 ! gonad
-xref: EFO:0000977 ! spermathecum
+relationship: part_of UBERON:0000474 ! female reproductive system
 
 [Term]
 id: UBERON:0000995
@@ -7400,6 +7401,8 @@ subset: uberon_slim
 synonym: "invertebrate trachea" EXACT []
 synonym: "trachea" BROAD SENSU [FBbt:00005043]
 xref: FBbt:00005043 ! trachea
+xref: SPD:0000434 ! trachea
+xref: TADS:0000315 ! adult trachea
 is_a: UBERON:0001005 ! respiratory airway
 relationship: has_part UBERON:0003914 ! epithelial tube
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
@@ -7414,6 +7417,8 @@ synonym: "open tracheal system" EXACT []
 synonym: "invertebrate tracheal system" EXACT []
 synonym: "tracheal system" BROAD SENSU [FBbt:00005024]
 xref: FBbt:00005024 ! tracheal system
+xref: SPD:0000427 ! tracheal system
+xref: TADS:0000043 ! adult respiratory system 
 is_a: UBERON:0000467 ! anatomical system
 relationship: capable_of GO:0007585 ! respiratory gaseous exchange
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
@@ -7425,6 +7430,7 @@ alt_id: UBERON:FBbt_00005054-MIAA_0000208
 def: "The mostly slit-like opening on the body surface through which air is taken into the respiratory system." [ISBN:3110148986, Wikipedia:Spiracle]
 comment: This class was created automatically from a combination of ontologies. In elasmobranchs (sharks and rays), a spiracle is found behind each eye, and is often used to pump water through the gills while the animal is at rest (Fouts, 2003). A spiracle is also found in primitive bony fishes as the chirrups. TODO - check GO:0035277-spiracle morphogenesis, open tracheal system - taxon constraint in GO
 subset: uberon_slim
+subset: grouping_class
 synonym: "spiracular gland" RELATED []
 synonym: "open tracheal system spiracle" NARROW [GO:0035277]
 synonym: "spiracle of open tracheal system" NARROW [GO:0035277]
@@ -7432,6 +7438,7 @@ xref: FBbt:00005054 ! spiracle
 xref: HAO:0000950 ! spiracle
 xref: MAT:0000208 ! spiracle
 xref: MIAA:0000208 ! spiracle
+xref: TGMA:0000578 ! spiracle
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001004 ! respiratory system
 xref: EFO:0000936 ! spiracle
@@ -7742,6 +7749,8 @@ synonym: "fat body" EXACT SENSU [FBbt:00005066]
 xref: FBbt:00005066 ! fat body
 xref: GAID:1213 ! fat body
 xref: MIAA:0000096 ! fat body
+xref: TADS:0000321 ! adult fat body
+xref: TGMA:0001856 ! fat body
 is_a: UBERON:0000062 ! organ
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
@@ -8218,7 +8227,8 @@ xref: EHDAA2:0002212 ! yolk sac
 id: UBERON:0001044
 name: salivary gland
 alt_id: UBERON:FBbt_00005382-FMA_9597-MA_0000346-MIAA_0000079
-def: "saliva-secreting exocrine glands of the oral cavity[GO]. Lobular organ the parenchyma of which consists of glandular acini which communicate the oral cavity. Examples: parotid gland, sublingual gland, lingual salivary gland[FMA]." [GO:0007431, Wikipedia:Salivary_gland]
+def: "saliva-secreting exocrine glands of the oral cavity[GO]. The salivary glands in mammals are exocrine glands, glands with ducts, that produce saliva. They also secrete amylase, an enzyme that breaks down starch into maltose. In other organisms such as insects, salivary glands are often used to produce biologically important proteins like silk or glues, and fly salivary glands contain polytene chromosomes that have been useful in genetic research[WP]." [GO:0007431, Wikipedia:Salivary_gland]
+comment: currently we define saliva and salivary glands very generally in functional terms but it may be more appropriate to split this class. From WP: In most vertebrates, saliva does not contain any enzymes, consisting of mucus and water only, and its primary function is to moisten food while eating. As a result, true salivary glands are rarely found in fish or aquatic tetrapods, although there are often individual mucus-secreting cells. Amphibians have a single salivary gland, the intermaxillary gland, located in the forward part of the palate. Reptiles and birds  normally have only very small glands on the lips, palate, and base of the mouth, although there are some birds with large glands, which produce a sticky saliva that helps in nest-building. The distinct parotid, submandibular, and sublingual glands are only developed in mammals.[3] The salivary glands of some species, however, are modified to produce enzymes; salivary amylase is found in many, but by no means all, bird and mammal species (including humans, as noted above). Furthermore, the venom glands of poisonous snakes, Gila monsters, and some shrews, are modified salivary glands
 subset: uberon_slim
 xref: BTO:0001203
 xref: EFO:0000859 ! salivary gland
@@ -8308,7 +8318,7 @@ id: UBERON:0000945
 name: stomach
 alt_id: UBERON:FBbt_00003138-FMA_7148-MA_0000353-MIAA_0000051-XAO_0000128
 def: "Internal organ that is the dilated portion of the alimentary tract situated between the esophagus and the beginning of the duodenum. It produces gastric juices involved in the breakdown of food[XAO]. Organ with organ cavity which is continuous proximally with the esophagus and distally with the small intestine. Examples: There is only one stomach[FMA]." [FB:FBrf0007735, OMD:stomach, Wikipedia:Stomach]
-comment: fly has adult midgut - TODO check. Zebrafish is functionally stomach-less, but may retain ontogenic footprint. 
+comment: fly has adult midgut - TODO check. Zebrafish is functionally stomach-less, but may retain ontogenic footprint. TADS:0000172 adult stomach. add functionally defined class?
 subset: uberon_slim
 synonym: "anterior intestine" RELATED []
 synonym: "mesenteron" RELATED []
@@ -8404,7 +8414,7 @@ id: UBERON:0001041
 name: foregut
 alt_id: UBERON:FBbt_00005379-FMA_45616-MA_0001526-XAO_0000232
 def: "An anterior part of the alimentary canal derived from the ectoderm." [Wikipedia:Foregut]
-comment: in FMA includes: pharynx, esophagus, stomach, proximal half of duedenum, liver, pancreas, gallbladder. But pharynx is not part of gut? also liver. Resolved by making part of digestive system
+comment: in FMA includes: pharynx, esophagus, stomach, proximal half of duedenum, liver, pancreas, gallbladder. But pharynx is not part of gut? also liver. Resolved by making part of digestive system. check invertebrates
 subset: uberon_slim
 subset: developmental_classification
 xref: BILA:0000085
@@ -8424,6 +8434,7 @@ id: UBERON:0001045
 name: midgut
 alt_id: UBERON:FBbt_00005383-FMA_45617-MA_0001564-XAO_0000103
 def: "The middle part of the alimentary canal from the stomach, or entrance of the bile duct, to, or including, the large intestine[GO]. In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine." [Wikipedia:Midgut, GO:0007494]
+comment: we seem to have defined this to exclude invertebrate classifications - todo - make consistent with foregut hindgut
 subset: uberon_slim
 subset: developmental_classification
 xref: BILA:0000086
@@ -12459,6 +12470,9 @@ xref: galen:Anus
 xref: MA:0000331 ! anus
 xref: OpenCyc:Mx4rvVjaEZwpEbGdrcN5Y29ycA
 xref: WBbt:0005364 ! anus
+xref: FBbt:00003148 ! adult anus
+xref: FBbt:00001893 ! larval anus
+xref: TADS:0000066 ! adult anus
 is_a: UBERON:0000161 ! orifice
 relationship: develops_from UBERON:0000931 ! proctodeum
 relationship: develops_from UBERON:0000100 ! blastopore
@@ -18167,7 +18181,7 @@ id: UBERON:0001569
 name: constrictor muscle of pharynx
 alt_id: UBERON:FMA_46620-MA_0002278
 def: "The superior pharyngeal constrictor muscle is a quadrilateral muscle, thinner and paler than the inferior pharyngeal constrictor muscle and middle pharyngeal constrictor muscle. [WP,unvetted]." [Wikipedia:Constrictor_muscle_of_pharynx]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - evaluate taxonomic specificity - functional definition?
 subset: uberon_slim
 synonym: "pharyngeal constrictor muscle" EXACT []
 xref: FMA:46620 ! Constrictor muscle of pharynx
@@ -22044,10 +22058,11 @@ xref: EHDAA2:0000323 ! cranial nerve
 id: UBERON:0001786
 name: fovea centralis
 alt_id: UBERON:FMA_58658-MA_0001307
-def: "." [Wikipedia:Fovea_centralis]
-comment: This class was created automatically from a combination of ontologies
+def: "a part of the eye, located in the center of the macula region of the retina. [1] [2] The fovea is responsible for sharp central vision (also called foveal vision). The fovea is surrounded by the parafovea belt, and the perifovea outer region:[2] the parafovea is the intermediate belt where the ganglion  cell layer is composed of more than five rows of cells; as well as the highest density of cones; the perifovea is the outermost region where the ganglion cell layer contains two to four rows of cells, and is where visual acuity is below the optimum. The perifovea contains an even more diminished density of cones, having 12 per 100 micrometres versus 50 per 100 micrometres in the most central fovea. This, in turn, is surrounded by a larger peripheral area that delivers highly compressed information of low resolution. Approximately 50% of the nerve fibers in the optic nerve  carry information from the fovea, while the other 50% carry information from the rest of the retina. The parafovea extends to a distance of 1¼ mm from the central fovea, and the perifovea is found 2¾ mm away from the fovea centralis[WP]." [Wikipedia:Fovea_centralis_in_macula]
+comment: As an anatomical term, there are several foveae around the body, including in the head of the femur.(WP)
 subset: uberon_slim
 synonym: "fovea" EXACT []
+synonym: "fovea centralis in macula" EXACT [Wikipedia:Fovea_centralis_in_macula]
 xref: FMA:58658 ! Fovea centralis
 xref: GAID:910 ! fovea centralis
 xref: MA:0001307 ! fovea
@@ -22055,6 +22070,7 @@ xref: NIF_GrossAnatomy:birnlex_2543 ! Fovea
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000053 ! macula lutea
 xref: ncithesaurus:Fovea_Centralis ! Fovea Centralis
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 
 [Term]
 id: UBERON:0001781
@@ -22919,6 +22935,7 @@ xref: galen:MajorSalivaryGland ! major salivary gland
 [Term]
 id: UBERON:0001830
 name: minor salivary gland
+def: "the smaller, largely mucus-secreting, exocrine glands of the oral cavity, consisting of the labial, buccal, molar, lingual, and palatine glands[MP]. There are over 600 minor salivary glands located throughout the oral cavity within the lamina propria of the oral mucosa. They are 1-2mm in diameter and unlike the other glands, they are not encapsulated by connective tissue only surrounded by it. The gland is usually a number of acini  connected in a tiny lobule. A minor salivary gland may have a common excretory duct with another gland, or may have its own excretory duct. Their secretion is mainly mucous in nature (except for Von Ebner's glands) and have many functions such as coating the oral cavity with saliva. Problems with dentures are usually associated with minor salivary glands[WP]." [Wikipedia:Salivary_gland#Minor_Salivary_Glands, MP:0003791]
 alt_id: UBERON:FMA_59789-MA_0002479
 comment: This class was created automatically from a combination of ontologies
 xref: FMA:59789 ! Minor salivary gland
@@ -22926,8 +22943,8 @@ xref: GAID:940 ! minor salivary gland
 xref: MA:0002479 ! minor salivary gland
 is_a: UBERON:0001044 ! salivary gland
 relationship: part_of UBERON:0002330 ! exocrine system
+relationship: part_of UBERON:0005334 ! oral lamina propria
 xref: ncithesaurus:Minor_Salivary_Gland ! Minor Salivary Gland
-def: "the smaller, largely mucus-secreting, exocrine glands of the oral cavity, consisting of the labial, buccal, molar, lingual, and palatine glands." [MP:0003791]
 xref: galen:MinorSalivaryGland ! minor salivary gland
 
 [Term]
@@ -23042,7 +23059,7 @@ id: UBERON:0001837
 name: duct of salivary gland
 alt_id: UBERON:FMA_59908-MA_0001586
 def: "." [Wikipedia:Salivary_duct]
-comment: This class was created automatically from a combination of ontologies
+comment: check taxonomy coverage - define functionally?
 subset: uberon_slim
 synonym: "salivary duct" EXACT []
 synonym: "salivary gland duct" EXACT []
@@ -24206,8 +24223,7 @@ xref: MA:0001862 ! trachea epithelium
 xref: EHDAA:5007 ! epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0001005 ! trachea
-relationship: part_of UBERON:0001005 ! trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 relationship: develops_from UBERON:0003258 ! endoderm of foregut
 xref: ncithesaurus:Tracheal_Epithelium ! Tracheal Epithelium
 synonym: "epithelial tissue of trachea" EXACT [OBOL:automatic]
@@ -24217,7 +24233,6 @@ synonym: "trachea epithelial tissue" EXACT [OBOL:automatic]
 synonym: "windpipe epithelial tissue" EXACT [OBOL:automatic]
 synonym: "windpipe epithelium" EXACT [OBOL:automatic]
 xref: EHDAA2:0002069 ! trachea epithelium
-def: "An epithelium that is part of a respiratory airway [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0001902
@@ -26399,6 +26414,7 @@ comment: check plexus vs nerve. WP indicates it is a 'transition'
 synonym: "hypogastric nerve plexus" EXACT [MA:0001140]
 synonym: "hypogastric plexus" EXACT [EMAPA:18225]
 is_a: UBERON:0001816 ! autonomic nerve plexus
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 xref: MA:0001140 ! hypogastric nerve plexus
 xref: EMAPA:18225 ! hypogastric plexus
 xref: FMA:77596 ! hypogastric nerve
@@ -29981,12 +29997,10 @@ xref: FMA:7472 ! Submucosa of trachea
 xref: MA:0001860 ! trachea submucosa
 is_a: UBERON:0000009 ! submucosa
 intersection_of: UBERON:0000009 ! submucosa
-intersection_of: part_of UBERON:0001005 ! trachea
-relationship: part_of UBERON:0001005 ! trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 xref: ncithesaurus:Trachea_Submucosa ! Trachea Submucosa
 synonym: "submucosa of windpipe" EXACT [OBOL:automatic]
 synonym: "windpipe submucosa" EXACT [OBOL:automatic]
-def: "A submucosa that is part of a respiratory airway [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0002203
@@ -45011,6 +45025,7 @@ comment: Homologies of leg segments between groups are difficult to prove and ar
 subset: uberon_slim
 xref: FBbt:00004642 ! tibia
 xref: HAO:0001017 ! tibia
+xref: TADS:0000281 ! adult tibia
 is_a: UBERON:0000475 ! organism subdivision
 relationship: part_of UBERON:0000978 ! leg
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
@@ -45704,6 +45719,7 @@ xref: HAO:0000706 ! pedicel
 [Term]
 id: UBERON:0003201
 name: exocuticle
+def: "The outer layer of the procuticle of certain crustaceans and arthropods, which contains cuticulin, chitin, and phenolic substances that are oxidized to produce the dark pigment of the cuticle;nThe hard and usually darkened layer of the cuticle lying between the endocuticle and epicuticle." [BTO:0001602]
 alt_id: UBERON:FBbt_00004973-HAO_0000311
 xref: FBbt:00004973 ! exocuticle
 xref: HAO:0000311 ! exocuticle
@@ -45713,6 +45729,7 @@ xref: BTO:0001602 ! exocuticle
 [Term]
 id: UBERON:0003202
 name: endocuticle
+def: "The inner layer of the procuticle in certain crustaceans and arthropods, which is almost entirely composed of protein and chitin." [BTO:0001603]
 alt_id: UBERON:FBbt_00004974-HAO_0000290
 xref: FBbt:00004974 ! endocuticle
 xref: HAO:0000290 ! endocuticle
@@ -46720,12 +46737,11 @@ id: UBERON:0003279
 name: endothelium of trachea
 xref: EHDAA:3082 ! endothelium
 intersection_of: UBERON:0001986 ! endothelium
-intersection_of: part_of UBERON:0001005 ! trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 synonym: "endothelium of windpipe" EXACT [OBOL:automatic]
 synonym: "trachea endothelium" EXACT [OBOL:automatic]
 synonym: "windpipe endothelium" EXACT [OBOL:automatic]
 xref: EHDAA2:0002068 ! trachea endothelium
-def: "An endothelium that is part of a respiratory airway [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0003280
@@ -49346,7 +49362,7 @@ xref: MA:0001863 ! trachea smooth muscle
 xref: EMAPA:19192 ! smooth muscle
 xref: FMA:262010 ! Smooth muscle of trachea
 intersection_of: UBERON:0001135 ! smooth muscle tissue
-intersection_of: part_of UBERON:0003126 ! vertebrate trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 xref: BTO:0001391 ! tracheal smooth muscle
 def: "A portion of smooth muscle tissue that is part of a trachea [Obol]." [OBOL:automatic]
 
@@ -50849,7 +50865,7 @@ id: UBERON:0003493
 name: trachea reticular lamina
 xref: MA:0001856 ! trachea reticular lamina
 intersection_of: UBERON:0001967 ! reticular lamina
-intersection_of: part_of UBERON:0003126 ! vertebrate trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 synonym: "fibroreticular lamina of cartilaginous trachea" EXACT [OBOL:automatic]
 synonym: "fibroreticular lamina of windpipe" EXACT [OBOL:automatic]
 synonym: "lamina fibroreticularis of cartilaginous trachea" EXACT [OBOL:automatic]
@@ -50991,9 +51007,8 @@ alt_id: UBERON:0003525
 name: trachea blood vessel
 xref: MA:0001852 ! trachea blood vessel
 intersection_of: UBERON:0001981 ! blood vessel
-intersection_of: part_of UBERON:0001005 ! trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 synonym: "blood vessel of trachea" EXACT [OBOL:automatic]
-def: "A blood vessel that is part of a respiratory airway [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0003506
@@ -52005,7 +52020,7 @@ id: UBERON:0003571
 name: trachea connective tissue
 xref: MA:0001853 ! trachea connective tissue
 intersection_of: UBERON:0002384 ! connective tissue
-intersection_of: part_of UBERON:0001005 ! trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 synonym: "connective tissue of trachea" EXACT [OBOL:automatic]
 synonym: "connective tissue of windpipe" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of trachea" EXACT [OBOL:automatic]
@@ -52017,7 +52032,6 @@ synonym: "trachea textus connectivus" EXACT [OBOL:automatic]
 synonym: "windpipe connective tissue" EXACT [OBOL:automatic]
 synonym: "windpipe portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "windpipe textus connectivus" EXACT [OBOL:automatic]
-def: "A portion of connective tissue that is part of a respiratory airway [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0003572
@@ -52856,7 +52870,7 @@ id: UBERON:0003604
 name: trachea cartilage
 xref: MA:0001857 ! trachea cartilage
 intersection_of: UBERON:0002418 ! cartilage
-intersection_of: part_of UBERON:0003126 ! vertebrate trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 xref: ncithesaurus:Trachea_Cartilage ! Trachea Cartilage
 synonym: "tracheal cartilage" EXACT [FMA:7434]
 synonym: "cartilage of windpipe" EXACT [OBOL:automatic]
@@ -53067,7 +53081,7 @@ id: UBERON:0003617
 name: trachea elastic tissue
 xref: MA:0001861 ! trachea elastic tissue
 intersection_of: UBERON:0002521 ! elastic tissue
-intersection_of: part_of UBERON:0003126 ! vertebrate trachea
+intersection_of: part_of UBERON:0003126 ! trachea
 synonym: "cartilaginous trachea elastic connective tissue" EXACT [OBOL:automatic]
 synonym: "cartilaginous trachea elastic tissue" EXACT [OBOL:automatic]
 synonym: "cartilaginous trachea textus connectivus elasticus" EXACT [OBOL:automatic]
@@ -57164,7 +57178,8 @@ def: "." [HP:0005607]
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001004 ! respiratory system
 relationship: has_part UBERON:0002185 ! bronchus
-relationship: has_part UBERON:0001005 ! trachea
+relationship: has_part UBERON:0003126 ! trachea
+ 
 
 [Term]
 id: UBERON:0004103
@@ -64058,9 +64073,6 @@ xref: MA:0001855 ! trachea basal lamina
 intersection_of: UBERON:0000482 ! basal lamina
 intersection_of: part_of UBERON:0001005 ! part_of respiratory airway
 synonym: "basal lamina of connective tissue of respiratory airway" EXACT [OBOL:automatic]
-synonym: "basal lamina of respiratory airway" EXACT [OBOL:automatic]
-synonym: "respiratory airway basal lamina" EXACT [OBOL:automatic]
-synonym: "respiratory airway basal lamina of connective tissue" EXACT [OBOL:automatic]
 def: "A basal lamina that is part of a respiratory airway [Obol]." [OBOL:automatic]
 
 [Term]
@@ -67604,13 +67616,19 @@ xref: CARO:0001000
 xref: FBbt:00007060 ! multi-cell-component structure
 
 [Term]
-id: UBERON:0005163
+id: UBERON:0000122
+alt_id: UBERON:0005163
 name: neuron projection bundle
-def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." [FBC:DOS]
-is_a: UBERON:0005162 ! multi-cell-component structure
+def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." [FBC:DOS, FBbt:00005099]
+comment: TODO - check FMA is general anatomical term
+synonym: "funiculus" EXACT []
+synonym: " nerve fiber bundle" EXACT [FBbt:00005099]
 xref: CARO:0001001
 xref: FBbt:00005099 ! neuron projection bundle
-
+xref: FBbt:00005099
+is_a: UBERON:0005162 ! multi-cell-component structure
+relationship: has_part UBERON:0001021 ! nerve
+xref: FMA:76738 ! Funiculus
 
 [Term]
 id: UBERON:0005172
