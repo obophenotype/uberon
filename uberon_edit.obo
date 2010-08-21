@@ -611,7 +611,7 @@ relationship: part_of UBERON:0001009 ! circulatory system
 [Term]
 id: UBERON:0000029
 name: lymph node
-def: "Oval or bean shaped bodies (1 - 30 mm in diameter) located along the lymphatic system. Lymph nodes are garrisons of B, T, and other immune cells. Lymph nodes are found all through the body, and act as filters or traps for foreign particles. They contain white blood cells that use oxygen to process. Thus they are important in the proper functioning of the immune system[WP]." [GAID:947, Wikipedia:Lymph_node]
+def: "Oval or bean shaped bodies (1 - 30 mm in diameter) located along the lymphatic system. Lymph nodes are garrisons of B, T, and other immune cells. Lymph nodes are found all through the body, and act as filters or traps for foreign particles. They contain white blood cells that use oxygen to process. Thus they are important in the proper functioning of the immune system. The lymph node is surrounded by a fibrous capsule, and inside the lymph node the fibrous capsule extends to form trabeculae. The substance of the lymph node is divided into the outer cortex and the inner medulla surrounded by the former all around except for at the hilum, where the medulla comes in direct contact with the surface. Thin reticular fibers, elastin and reticular fibers form a supporting meshwork called reticular network (RN) inside the node, within which the white blood cells  (WBCs), most prominently, lymphocytes are tightly packed as follicles in the cortex. Elsewhere, there are only occasional WBCs. The RN provides not just the structural support, but also provide surface for adhesion of the dendritic cells, macrophages and lymphocytes. It allows for exchange of material with blood through the high endothelial venules and provides the growth and regulatory factors necessary for activation and maturation of immune cells[WP]." [GAID:947, Wikipedia:Lymph_node]
 comment: do not include  FBbt:00001668 lymph gland
 subset: uberon_slim
 xref: BTO:0000784
@@ -4473,9 +4473,12 @@ def: "A testicular vein that is part of a left side of organism [Obol]." [OBOL:a
 id: UBERON:0000444
 name: lymphoid follicle
 alt_id: UBERON:BTO_0002684-FMA_55222
-synonym: "Lymphoid nodule" EXACT [FMA:55222]
+synonym: "lymphoid nodule" EXACT [FMA:55222]
+synonym: "nodular lymphoid tissue" EXACT [FMA:55222]
+synonym: "lymph node follicle" EXACT [MA:0000742]
 xref: BTO:0002684
 xref: FMA:55222 ! Nodular lymphoid tissue
+xref: MA:0000742 ! lymph node follicle
 is_a: UBERON:0001744 ! lymphoid tissue
 xref: ncithesaurus:Lymphoid_Follicle ! Lymphoid Follicle
 
@@ -6411,9 +6414,7 @@ id: UBERON:0000970
 name: eye
 alt_id: UBERON:FBbt_00004508-FMA_54448-MA_0000261-MIAA_0000140-XAO_0000179-ZFA_0000107
 def: "organ that detects light" [http://en.wikipedia.org/wiki/Eye, UBERON:cjm, Wikipedia:Eye]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "eyes" RELATED []
 synonym: "visual apparatus" RELATED []
 xref: BILA:0000017
 xref: BTO:0000439
@@ -10130,7 +10131,7 @@ synonym: "thyroid lobe" EXACT []
 xref: FMA:13367 ! Lobe of thyroid gland
 xref: MA:0000131 ! thyroid gland lobe
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002046 ! thyroid follicle
+relationship: part_of UBERON:0002046 ! thyroid gland
 xref: ncithesaurus:Thyroid_Gland_Lobe ! Thyroid Gland Lobe
 def: "The lobes of the thyroid gland are conical in shape, the apex of each being directed upward and lateralward as far as the junction of the middle with the lower third of the thyroid cartilage; the base looks downward, and is on a level with the fifth or sixth tracheal ring. Each lobe is about 5 cm. long; its greatest width is about 3 cm. , and its thickness about 2 cm. The lateral or superficial surface is convex, and covered by the skin, the superficial and deep fasciæ, the Sternocleidomastoideus, the superior belly of the Omohyoideus, the Sternohyoideus and Sternothyreoideus, and beneath the last muscle by the pretracheal layer of the deep fascia, which forms a capsule for the gland. The deep or medial surface is moulded over the underlying structures, viz. , the thyroid and cricoid cartilages, the trachea, the Constrictor pharyngis inferior and posterior part of the Cricothyreoideus, the esophagus (particularly on the left side of the neck), the superior and inferior thyroid arteries, and the recurrent nerves. The anterior border is thin, and inclines obliquely from above downward toward the middle line of the neck, while the posterior border is thick and overlaps the common carotid artery, and, as a rule, the parathyroids. [WP,unvetted]." [Wikipedia:Lobes_of_thyroid_gland]
 xref: HOG:0000732 ! thyroid lobe
@@ -18738,7 +18739,7 @@ synonym: "thyroid isthmus" EXACT []
 xref: FMA:49178 ! Isthmus of thyroid gland
 xref: MA:0000727 ! thyroid gland isthmus
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002046 ! thyroid follicle
+relationship: part_of UBERON:0002046 ! thyroid gland
 xref: ncithesaurus:Thyroid_Gland_Isthmus ! Thyroid Gland Isthmus
 xref: EHDAA2:0002031 ! thyroid isthmus
 xref: HOG:0000739 ! isthmus
@@ -21313,7 +21314,7 @@ synonym: "thyroid gland capsule" EXACT []
 xref: FMA:55513 ! Fibrous capsule of thyroid gland
 xref: MA:0002675 ! thyroid gland capsule
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002046 ! thyroid follicle
+relationship: part_of UBERON:0002046 ! thyroid gland
 xref: ncithesaurus:Thyroid_Gland_Capsule ! Thyroid Gland Capsule
 
 [Term]
@@ -21326,8 +21327,8 @@ xref: FMA:55515 ! Parenchyma of thyroid gland
 xref: MA:0000730 ! thyroid gland parenchyma
 is_a: UBERON:0000064 ! organ part
 intersection_of: UBERON:0000353 ! parenchyma
-intersection_of: part_of UBERON:0002046 ! thyroid follicle
-relationship: part_of UBERON:0002046 ! thyroid follicle
+intersection_of: part_of UBERON:0002046 ! thyroid gland
+relationship: part_of UBERON:0002046 ! thyroid gland
 synonym: "parenchyma of thyroid" EXACT [OBOL:automatic]
 synonym: "parenchyma of thyroid follicle" EXACT [OBOL:automatic]
 synonym: "parenchyma of thyroid gland follicle" EXACT [OBOL:automatic]
@@ -27000,38 +27001,45 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0002046
-name: thyroid follicle
+name: thyroid gland
 alt_id: UBERON:FMA_68805-FMA_9603-MA_0000129-MA_0000726-MIAA_0000081-XAO_0000162-ZFA_0001072
-def: "Lobular organ the parenchyma of which consists of ductless, glandular follicles filled with colloid. Examples: thyroid gland proper, accessory thyroid gland, lingual thyroid gland." [Wikipedia:Thyroid_follicle]
-comment: This class was created automatically from a combination of ontologies
+def: "A two-lobed endocrine gland found in all vertebrates, located in front of and on either side of the trachea in humans, and producing various hormones, such as triiodothyronine and calcitonin[BTO]. A highly vascular endocrine gland consisting of two lobes, one on either side of the trachea, joined by a narrow isthmus; it produces the thyroid hormones which are concerned in regulating the metabolic rate of the body[GAID]." [Wikipedia:Thyroid, GAID:465, BTO:0001379]
 subset: uberon_slim
 synonym: "thyroid" EXACT []
-synonym: "thyroid gland" EXACT []
-synonym: "thyroid gland follicle" EXACT []
-synonym: "thyroid primordium" BROAD []
-xref: BTO:0001379
+xref: BTO:0001379 ! thyroid gland
 xref: EFO:0000861 ! thyroid
 xref: EHDAA:2148 ! thyroid
 xref: EHDAA:2975 ! thyroid
-xref: FMA:68805 ! Thyroid follicle
 xref: FMA:9603 ! Thyroid gland
 xref: GAID:465 ! thyroid gland
 xref: HOG:0000418 ! thyroid
 xref: MA:0000129 ! thyroid gland
-xref: MA:0000726 ! thyroid gland follicle
 xref: MAT:0000081 ! thyroid
 xref: MIAA:0000081 ! thyroid
 xref: ncithesaurus:Thyroid_Gland
 xref: OpenCyc:Mx4rvVjLT5wpEbGdrcN5Y29ycA
-xref: TAO:0001072 ! thyroid follicle
 xref: XAO:0000162 ! thyroid
-xref: ZFA:0001072 ! thyroid follicle
 is_a: UBERON:0002530 ! gland
 relationship: develops_from UBERON:0003091 ! thyroid primordium
 relationship: part_of UBERON:0000949 ! endocrine system
+relationship: site_of GO:0006590 ! thyroid hormone generation
 xref: galen:ThyroidGland ! thyroid gland
 xref: OpenCyc:Mx4rvVjLT5wpEbGdrcN5Y29ycA ! thyroid
 xref: EHDAA2:0002028 ! thyroid
+
+[Term]
+id: UBERON:0005305
+name: thyroid follicle
+def: "Discrete, cystlike units of the thyroid gland that are lined with cuboidal epithelium and are filled with a colloid substance, about 30 to each lobule[BTO]." [BTO:0004708]
+subset: uberon_slim
+synonym: "thyroid gland follicle" EXACT []
+xref: BTO:0004708 ! thyroid follicle
+xref: FMA:68805 ! Thyroid follicle
+xref: MA:0000726 ! thyroid gland follicle
+xref: TAO:0001072 ! thyroid follicle
+xref: ZFA:0001072 ! thyroid follicle
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0002046 ! part_of thyroid follicle
 
 [Term]
 id: UBERON:0002047
@@ -44284,7 +44292,7 @@ is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002540 ! lateral line system
 
 [Term]
-id: UBERON:0003091
+id: UBERON:0003091 ! thyroid primordium
 name: thyroid primordium
 alt_id: UBERON:XAO_0000444-ZFA_0001081
 comment: This class was created automatically from a combination of ontologies
@@ -45909,6 +45917,18 @@ relationship: develops_from UBERON:0003074 ! wolffian duct
 xref: HOG:0000540 ! metanephric mesenchyme
 xref: EHDAA:4041 ! metanephric mesenchyme
 xref: EHDAA:5915 ! metanephric mesenchyme
+
+[Term]
+id: UBERON:0005306
+name: blastema
+def: "A blastema is a mass of cells capable of growth and regeneration into organs  or body parts. Historically blastema have been thought to be composed of undifferentiated pluripotent cells, but recent research indicates that in some organisms blastema may retain memory of tissue origin.[1] Blastemata are typically found in the early stages of an organism's development such as in embryos, and in the regeneration of tissues, organs and bone[WP]. A regenerating tissue composed of a proliferative mass of undifferentiated progenitor cells from which new differentiated structures arise[ZFA]." [ZFIN:ZDB-PUB-061108-12, ZFA:0001270, Wikipedia:Blastema]
+synonym: "regeneration blastema" EXACT [ZFIN:ZDB-PUB-061108-12]
+xref: TAO:0001270
+xref: ZFA:0001270 ! blastema
+xref: BTO:0001638 ! blastema 
+is_a: UBERON:0000479 ! portion of tissue
+relationship: has_part CL:0000354 ! blastemal cell
+relationship: capable_of GO:0040007 ! growth
 
 [Term]
 id: UBERON:0003221
@@ -55042,12 +55062,12 @@ id: UBERON:0003847
 name: thyroid artery
 xref: HOG:0001366
 intersection_of: UBERON:0001637
-intersection_of: part_of UBERON:0002046
+intersection_of: part_of UBERON:0002046 ! thyroid
 xref: MA:0002066 ! thyroid artery
 xref: ncithesaurus:Thyroid_Artery ! Thyroid Artery
 xref: EHDAA:7372 ! thyroid artery
 xref: EHDAA2:0002029 ! thyroid artery
-def: "An artery that is part of a thyroid follicle [Obol]." [OBOL:automatic]
+def: "An artery that is part of a thyroid [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0003848
@@ -56010,7 +56030,7 @@ id: UBERON:0003982
 name: mature ovarian follicle
 def: "." [MP:0009364]
 is_a: UBERON:0001305 ! follicle of ovary
-relationship: develops_from UBERON:0003981 ! primordial
+relationship: develops_from UBERON:0003981 ! primordial ovarian follice
 xref: ZFA:0001264 ! ovarian follicle stage IV
 xref: BTO:0000389 ! mature ovarian follicle
 xref: MA:0001709 ! ovary mature follicle
@@ -64381,7 +64401,7 @@ synonym: "medulla of thyroid gland follicle" EXACT [OBOL:automatic]
 synonym: "thyroid follicle medulla" EXACT [OBOL:automatic]
 synonym: "thyroid gland follicle medulla" EXACT [OBOL:automatic]
 synonym: "thyroid medulla" EXACT [OBOL:automatic]
-def: "A medulla that is part of a thyroid follicle [Obol]." [OBOL:automatic]
+def: "A medulla that is part of a thyroid [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004829
@@ -68104,7 +68124,7 @@ name: thyroid endoderm
 xref: HOG:0001089
 intersection_of: UBERON:0000925 
 intersection_of: part_of UBERON:0002046
-def: "An endoderm that is part of a thyroid follicle [Obol]." [OBOL:automatic]
+def: "An endoderm that is part of a thyroid gland [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0005236
