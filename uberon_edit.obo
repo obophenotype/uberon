@@ -540,7 +540,7 @@ xref: EHDAA2:0003114 ! epithelial tube
 xref: AEO:0000114 ! epithelial tube
 
 [Term]
-id: UBERON:0003915
+id: UBERON:0003915 ! endothelial tube
 name: endothelial tube
 is_a: UBERON:0000025 ! tube
 intersection_of: UBERON:0001986 ! endothelium
@@ -702,6 +702,8 @@ xref: MA:0002907 ! ovary primary follicle
 id: UBERON:0000036
 name: secondary ovarian follicle
 synonym: "antral follicle of ovary" EXACT []
+synonym: "antral ovarian follice" EXACT [GO:0001547]
+synonym: "antral follice" EXACT [GO:0001547]
 synonym: "folliculus ovaricus secondarius" EXACT []
 synonym: "secondary egg follicle" RELATED []
 synonym: "secondary follicle of ovary" EXACT []
@@ -5540,15 +5542,15 @@ xref: GO:0005811 ! lipid particle
 replaced_by: GO:0005811 ! lipid particle
 
 [Term]
-id: UBERON:0000920
-name: chorion (egg)
+id: UBERON:0000920 ! egg chorion
+name: egg chorion
 alt_id: UBERON:FBbt_00000038-FMA_80224-ZFA_0000329
 alt_id: UBERON:FMA_18674-MA_0001715
 def: "A protective, noncellular membrane that surrounds the eggs of various animals including insects and fish [GO]." [FB:gg, GO:0042600, Wikipedia:Chorion_(egg)]
 subset: uberon_slim
+synonym: "chorion (egg)" EXACT []
 synonym: "chorion" RELATED []
 xref: FBbt:00000038 ! chorion
-xref: GO:0042600
 xref: TAO:0000329 ! chorion
 xref: ZFA:0000329 ! chorion
 is_a: UBERON:0000476 ! acellular anatomical structure
@@ -64794,12 +64796,16 @@ is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0002183 ! lobar bronchus
 
 [Term]
-id: UBERON:0004893
+id: UBERON:0004893 ! interalveolar septum
 name: interalveolar septum
-def: "A the thin septum that separates adjacent pulmonary alveoli, containing connective tissue constituents of the respiratory tissue and the capillary network of the blood supply of the lung." [LG:0012625]
+def: "A the thin septum that separates adjacent pulmonary alveoli, containing connective tissue constituents of the respiratory tissue and the capillary network of the blood supply of the lung." [LG:0012625, Wikipedia:Alveolar_septum]
 intersection_of: UBERON:0003037 ! septum
 intersection_of: part_of UBERON:0002299 ! alveolus of lung
+synonym: "wall of pulmonary alveolus" EXACT [FMA:14117]
+synonym: "alveolar septum" EXACT [UBERON:cjm]
 xref: MA:0000421 ! interalveolar septum
+xref: BTO:0003149 ! interalveolar septum
+xref: FMA:14117 ! wall of pulmonary alveolus
 
 [Term]
 id: UBERON:0004894
@@ -67059,6 +67065,13 @@ def: "a product of the somatic follicle cell epithelium and a structure that sup
 is_a: UBERON:0000476 ! acellular anatomical structure
 
 [Term]
+id: UBERON:0005307
+name: chorion-containing eggshell
+def: "An eggshell that contains chorion. An example of this is found in Drosophila melanogaster." [GO:0007304]
+is_a: UBERON:0005079 ! eggshell
+relationship: has_part UBERON:0000920 ! egg chorion
+
+[Term]
 id: UBERON:0005080
 name: metanephric ureteric bud
 intersection_of: UBERON:0000084 ! ureteric bud
@@ -68549,6 +68562,193 @@ is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0003063 ! prechordal plate
 xref: XAO:0000053 ! head mesoderm
 comment: check FBbt:00000127
+
+[Term]
+id: UBERON:0005308
+name: nephrostome
+def: "The nephrostome is the opening of the pronephros into the body cavity[GO]." [GO:0039018]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002120 ! pronephros
+
+[Term]
+id: UBERON:0005309
+name: pronephric nephron
+def: "A pronephric nephron is the functional unit of the pronephros[GO]." [GO:0039019]
+intersection_of: UBERON:0001285 ! nephron
+intersection_of: part_of UBERON:0002120 ! pronephros
+xref: ZFA:0000151 ! pronephros
+
+[Term]
+id: UBERON:0005310
+name: pronephric nephron tubule
+def: "The pronephric nephron tubule is an epithelial tube that is part of the pronephric nephron and connects the filtration unit (glomerulus or glomus) of the pronephros to the pronephric duct[GO]." [GO:0039020]
+is_a: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0001231 ! renal tubule
+intersection_of: part_of UBERON:0002120 ! pronephros
+
+
+[Term]
+id: UBERON:0005311
+name: mammary placode
+def: "The mammary placode is a transient lens shaped structure that will give rise to the mammary bud proper[GO]." [GO:0060596]
+comment: TODO develops_from
+is_a: UBERON:0005085 ! ectodermal placode
+relationship: develops_into UBERON:0001911 ! lactiferous gland
+
+[Term]
+id: UBERON:0005312
+name: primary ureteric bud
+def: ".[GO]." [GO:0060682]
+is_a: UBERON:0000084 ! ureteric bud
+
+
+[Term]
+id: UBERON:0005313
+name: mammary duct terminal end bud
+def: ".[GO]." [GO:0060763]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001765 ! lactiferous duct
+
+[Term]
+id: UBERON:0005314
+name: alveolar primary septum
+def: "A primary alveolar septum is a specialized epithelium that surrounds the saccule as it forms[GO]." [GO:0061143]
+comment: TODO - check UBERON:0004893 interalveolar septum
+is_a: UBERON:0000115 ! lung epithelium
+relationship: surrounds UBERON:0000116 ! lung saccule
+
+[Term]
+id: UBERON:0005315
+name: alveolar secondary septum
+def: "A secondary alveolar septum is a specialized epithelium that subdivides the initial saccule[GO]." [GO:0061144]
+comment: TODO - check UBERON:0004893 interalveolar septum
+is_a: UBERON:0000115 ! lung epithelium
+relationship: part_of UBERON:0000116 ! lung saccule
+
+[Term]
+id: UBERON:0005316
+name: endocardial endothelium
+def: "The endocardium is an anatomical structure comprised of an endothelium and an extracellular matrix that forms the innermost layer of tissue of the heart, and lines the heart chambers[GO]." [GO:0061147]
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0002165 ! endocardium
+
+[Term]
+id: UBERON:0005317
+name: pulmonary artery endothelial tube
+def: "An pulmonary artery endothelium is an epithelium that lines the pulmonary artery[GO]." [GO:0061155]
+intersection_of: UBERON:0003915 ! endothelial tube
+intersection_of: part_of UBERON:0002012 ! pulmonary artery
+
+[Term]
+id: UBERON:0005318
+name: paramesonephric duct
+def: "These ducts are made of tissue of mesodermal origin[GO]." [GO:0061205]
+is_a: UBERON:0000058 ! duct
+relationship: develops_from UBERON:0000926 ! mesoderm
+xref: EMAPA:27665 ! paramesonephric duct
+
+[Term]
+id: UBERON:0005319
+name: mesonephric collecting duct
+def: "The collecting duct is the final common path through which urine flows before entering the ureter and then emptying into the bladder[GO]." [GO:0061211]
+intersection_of: UBERON:0001232 ! collecting duct of renal tubule
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005320
+name: mesonephric juxtaglomerular apparatus
+def: "The juxtaglomerular apparatus lies adjacent to the glomerulus and regulates kidney function by maintaining the blood flow to the kidney and the filtration rate[GO]." [GO:0061212]
+intersection_of: UBERON:0002303 ! juxtaglomerular apparatus
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005321
+name: mesonephric smooth muscle tissue
+def: ".[GO]." [GO:0061214]
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: part_of UBERON:0002113 ! kidney
+
+[Term]
+id: UBERON:0005322
+name: mesonephric nephron
+def: "A nephron is the functional unit of the kidney[GO]." [GO:0061215]
+intersection_of: UBERON:0001285 ! nephron
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005323
+name: mesonephric mesenchyme
+def: "Mesonephric mesenchyme is the tissue made up of loosely connected mesenchymal cells in the mesonephros[GO]." [GO:0061219]
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0000080 ! mesonephros
+xref: EMAPA:27585 ! mesonephric mesenchyme
+xref: EMAPA:27661 ! mesonephric mesenchyme
+
+[Term]
+id: UBERON:0005324
+name: mesonephric macula densa
+def: "The mesonephric macula densa is an area of specialized cells in the distal tubule of the mesonephros that makes contact with the vascular pole of the glomerulus[GO]." [GO:0061220]
+intersection_of: UBERON:0002335 ! macula densa
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005325
+name: mesonephric glomerulus
+def: "The mesonephric glomerulus is a capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the mature vertebrate kidney, or mesonephros[GO]." [GO:0061224]
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: part_of UBERON:0000080 ! mesonephros
+xref: EMAPA:30568 ! mesonephric glomerulus
+xref: EMAPA:30580 ! mesonephric glomerulus
+
+[Term]
+id: UBERON:0005326
+name: mesonephric glomerulus vasculature
+def: "The mesonephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the mesonephric glomerulus[GO]." [GO:0061231]
+intersection_of: UBERON:0004190 ! glomerulus vasculature
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005327
+name: mesonephric glomerular epithelium
+def: "A mesonephric glomerular visceral epithelial cell is a specialized epithelial cell that contains "feet" that interdigitate with the "feet" of other glomerular epithelial cells in the mesonephros[GO]." [GO:0061232]
+intersection_of: UBERON:0004188 ! glomerular epithelium
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005328
+name: mesonephric comma-shaped body
+def: "The mesonephric comma-shaped body is the precursor structure to the mesonephric S-shaped body that contributes to the morphogenesis of a nephron in the mesonephros[GO]." [GO:0061236]
+intersection_of: UBERON:0004198 ! comma-shaped body
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005329
+name: mesonephric nephron tubule
+def: "A mesonephric nephron tubule is an epithelial tube that is part of the mesonephric nephron, the functional part of the mesonephros[GO]." [GO:0061240]
+comment: TODO - check renal tubule vs nephron tubule - assume for now. Also FMA has 'region of renal tubule' - not clear what is a subclass and what is a part
+is_a: UBERON:0001231 ! renal tubule
+relationship: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005330
+name: mesonephric nephron epithelium
+def: "The mesonephric nephron epithelium is a tissue that covers the surface of a nephron in the mesonephros[GO]." [GO:0061241]
+intersection_of: UBERON:0004211 ! nephron epithelium
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005331
+name: mesonephric renal vesicle
+def: "The renal vesicle is the primordial structure of the mesonephric nephron epithelium, and is formed by the condensation of mesenchymal cells[GO]." [GO:0061243]
+intersection_of: UBERON:0004209 ! renal vesicle
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005332
+name: mesonephric S-shaped body
+def: "The mesonephric S-shaped body is the successor of the mesonephric comma-shaped body that contributes to the morphogenesis of a nephron in the mesonephros[GO]." [GO:0061244]
+intersection_of: UBERON:0004199 ! S-shaped body
+intersection_of: part_of UBERON:0000080 ! mesonephros
 
 [Typedef]
 id: adjacent_to
