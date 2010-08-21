@@ -24405,14 +24405,14 @@ xref: ncithesaurus:Medial_Forebrain_Bundle ! Medial Forebrain Bundle
 
 [Term]
 id: UBERON:0001911
-name: lactiferous gland
+name: mammary gland
 alt_id: UBERON:FMA_62088-MA_0000145-MIAA_0000073-Mammary
 def: "Lobular organ which consist of a lactiferous duct tree and the set of lactiferous acini that are connected to duct tree. Examples: There are variable numbers of lactiferous duct trees." [Wikipedia:Mammary_gland]
 comment: TODO - part_of such that applies to all mammals
 subset: uberon_slim
 synonym: "lobe of breast" EXACT []
 synonym: "lobe of mammary gland" EXACT []
-synonym: "mammary gland" EXACT []
+synonym: "lactiferous gland" EXACT [FMA:62088]
 xref: BTO:0000817
 xref: EFO:0000854 ! mammary gland
 xref: EHDAA:6524 ! mammary gland
@@ -24426,6 +24426,7 @@ xref: OpenCyc:Mx4rvVjVq5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002530 ! gland
 relationship: only_in_taxon NCBITaxon:40674 ! Mammalia
 relationship: secretes UBERON:0001913 ! milk
+relationship: develops_from UBERON:0005333 ! mammary bud
 xref: OpenCyc:Mx4rvVjVq5wpEbGdrcN5Y29ycA ! mammary gland
 xref: EHDAA2:0001056 ! mammary gland
 
@@ -68586,14 +68587,20 @@ is_a: UBERON:0000061 ! anatomical structure
 intersection_of: UBERON:0001231 ! renal tubule
 intersection_of: part_of UBERON:0002120 ! pronephros
 
+[Term]
+id: UBERON:0005333 ! mammary bud
+name: mammary bud
+def: "produced along the length of the embryonic mammary ridge these buds represent the future locations of the mammary glands. Invagination of ectoderm at each bud leads to the development of epithelial diverticula, later maturing as lactiferous ducts." [http://medical-dictionary.thefreedictionary.com/mammary+bud]
+is_a: UBERON:0005153 ! epithelial bud
+relationship: part_of UBERON:0000924 ! ectoderm
+relationship: develops_from UBERON:0005311 ! mammary placode
 
 [Term]
-id: UBERON:0005311
+id: UBERON:0005311 ! mammary placode
 name: mammary placode
 def: "The mammary placode is a transient lens shaped structure that will give rise to the mammary bud proper[GO]." [GO:0060596]
 comment: TODO develops_from
 is_a: UBERON:0005085 ! ectodermal placode
-relationship: develops_into UBERON:0001911 ! lactiferous gland
 
 [Term]
 id: UBERON:0005312

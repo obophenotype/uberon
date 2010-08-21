@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 19:08:2010 00:06
+date: 20:08:2010 18:39
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -535,7 +535,7 @@ intersection_of: part_of UBERON:0002102 ! forelimb
 [Term]
 id: UBERON:0000029
 name: lymph node
-def: "Oval or bean shaped bodies (1 - 30 mm in diameter) located along the lymphatic system. Lymph nodes are garrisons of B, T, and other immune cells. Lymph nodes are found all through the body, and act as filters or traps for foreign particles. They contain white blood cells that use oxygen to process. Thus they are important in the proper functioning of the immune system[WP]." [GAID:947, Wikipedia:Lymph_node]
+def: "Oval or bean shaped bodies (1 - 30 mm in diameter) located along the lymphatic system. Lymph nodes are garrisons of B, T, and other immune cells. Lymph nodes are found all through the body, and act as filters or traps for foreign particles. They contain white blood cells that use oxygen to process. Thus they are important in the proper functioning of the immune system. The lymph node is surrounded by a fibrous capsule, and inside the lymph node the fibrous capsule extends to form trabeculae. The substance of the lymph node is divided into the outer cortex and the inner medulla surrounded by the former all around except for at the hilum, where the medulla comes in direct contact with the surface. Thin reticular fibers, elastin and reticular fibers form a supporting meshwork called reticular network (RN) inside the node, within which the white blood cells  (WBCs), most prominently, lymphocytes are tightly packed as follicles in the cortex. Elsewhere, there are only occasional WBCs. The RN provides not just the structural support, but also provide surface for adhesion of the dendritic cells, macrophages and lymphocytes. It allows for exchange of material with blood through the high endothelial venules and provides the growth and regulatory factors necessary for activation and maturation of immune cells[WP]." [GAID:947, Wikipedia:Lymph_node]
 comment: do not include  FBbt:00001668 lymph gland
 subset: uberon_slim
 xref: BTO:0000784
@@ -650,7 +650,9 @@ is_a: UBERON:0001305 ! ovarian follicle
 [Term]
 id: UBERON:0000036
 name: secondary ovarian follicle
+synonym: "antral follice" EXACT [GO:0001547]
 synonym: "antral follicle of ovary" EXACT []
+synonym: "antral ovarian follice" EXACT [GO:0001547]
 synonym: "folliculus ovaricus secondarius" EXACT []
 synonym: "secondary egg follicle" RELATED []
 synonym: "secondary follicle of ovary" EXACT []
@@ -3912,9 +3914,12 @@ intersection_of: part_of UBERON:0004531 ! left side of organism
 id: UBERON:0000444
 name: lymphoid follicle
 alt_id: UBERON:BTO_0002684-FMA_55222
-synonym: "Lymphoid nodule" EXACT [FMA:55222]
+synonym: "lymph node follicle" EXACT [MA:0000742]
+synonym: "lymphoid nodule" EXACT [FMA:55222]
+synonym: "nodular lymphoid tissue" EXACT [FMA:55222]
 xref: BTO:0002684
 xref: FMA:55222
+xref: MA:0000742
 xref: ncithesaurus:Lymphoid_Follicle
 is_a: UBERON:0001744 ! lymphoid tissue
 
@@ -4936,15 +4941,15 @@ replaced_by: GO:0005811
 
 [Term]
 id: UBERON:0000920
-name: chorion (egg)
+name: egg chorion
 alt_id: UBERON:FBbt_00000038-FMA_80224-ZFA_0000329
 alt_id: UBERON:FMA_18674-MA_0001715
 def: "A protective, noncellular membrane that surrounds the eggs of various animals including insects and fish [GO]." [FB:gg, GO:0042600, Wikipedia:Chorion_(egg)]
 subset: uberon_slim
 synonym: "chorion" RELATED []
+synonym: "chorion (egg)" EXACT []
 xref: EHDAA2:0000245
 xref: FBbt:00000038
-xref: GO:0042600
 xref: TAO:0000329
 xref: ZFA:0000329
 is_a: UBERON:0000476 ! acellular anatomical structure
@@ -5911,9 +5916,7 @@ id: UBERON:0000970
 name: eye
 alt_id: UBERON:FBbt_00004508-FMA_54448-MA_0000261-MIAA_0000140-XAO_0000179-ZFA_0000107
 def: "organ that detects light" [http://en.wikipedia.org/wiki/Eye, UBERON:cjm, Wikipedia:Eye]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "eyes" RELATED []
 synonym: "visual apparatus" RELATED []
 xref: BILA:0000017
 xref: BTO:0000439
@@ -8856,7 +8859,7 @@ xref: HOG:0000732
 xref: MA:0000131
 xref: ncithesaurus:Thyroid_Gland_Lobe
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002046 ! thyroid follicle
+relationship: part_of UBERON:0002046 ! thyroid gland
 
 [Term]
 id: UBERON:0001119
@@ -12132,7 +12135,7 @@ xref: MA:0001679
 xref: ncithesaurus:Descending_Limb_of_the_Henle_s_Loop
 is_a: UBERON:0001231 ! renal tubule
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
-is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
+is_a: UBERON:0005310 ! implied link automatically realized ! pronephric nephron tubule
 relationship: part_of UBERON:0001288 ! loop of Henle
 relationship: part_of UBERON:0003060 ! pronephric duct
 
@@ -12154,7 +12157,7 @@ xref: MA:0002614
 xref: ZFA:0001621
 is_a: UBERON:0001231 ! renal tubule
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
-is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
+is_a: UBERON:0005310 ! implied link automatically realized ! pronephric nephron tubule
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 relationship: part_of UBERON:0004134 ! proximal tubule
 
@@ -17717,7 +17720,7 @@ xref: HOG:0000739
 xref: MA:0000727
 xref: ncithesaurus:Thyroid_Gland_Isthmus
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002046 ! thyroid follicle
+relationship: part_of UBERON:0002046 ! thyroid gland
 
 [Term]
 id: UBERON:0001610
@@ -20151,7 +20154,7 @@ xref: FMA:55513
 xref: MA:0002675
 xref: ncithesaurus:Thyroid_Gland_Capsule
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002046 ! thyroid follicle
+relationship: part_of UBERON:0002046 ! thyroid gland
 
 [Term]
 id: UBERON:0001747
@@ -20171,8 +20174,8 @@ xref: MA:0000730
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0000353 ! implied link automatically realized ! parenchyma
 intersection_of: UBERON:0000353 ! parenchyma
-intersection_of: part_of UBERON:0002046 ! thyroid follicle
-relationship: part_of UBERON:0002046 ! thyroid follicle
+intersection_of: part_of UBERON:0002046 ! thyroid gland
+relationship: part_of UBERON:0002046 ! thyroid gland
 
 [Term]
 id: UBERON:0001748
@@ -25935,38 +25938,31 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0002046
-name: thyroid follicle
+name: thyroid gland
 alt_id: UBERON:FMA_68805-FMA_9603-MA_0000129-MA_0000726-MIAA_0000081-XAO_0000162-ZFA_0001072
-def: "Lobular organ the parenchyma of which consists of ductless, glandular follicles filled with colloid. Examples: thyroid gland proper, accessory thyroid gland, lingual thyroid gland." [Wikipedia:Thyroid_follicle]
-comment: This class was created automatically from a combination of ontologies
+def: "A two-lobed endocrine gland found in all vertebrates, located in front of and on either side of the trachea in humans, and producing various hormones, such as triiodothyronine and calcitonin[BTO]. A highly vascular endocrine gland consisting of two lobes, one on either side of the trachea, joined by a narrow isthmus; it produces the thyroid hormones which are concerned in regulating the metabolic rate of the body[GAID]." [BTO:0001379, GAID:465, Wikipedia:Thyroid]
 subset: uberon_slim
 synonym: "thyroid" EXACT []
-synonym: "thyroid gland" EXACT []
-synonym: "thyroid gland follicle" EXACT []
-synonym: "thyroid primordium" BROAD []
 xref: BTO:0001379
 xref: EFO:0000861
 xref: EHDAA:2148
 xref: EHDAA:2975
 xref: EHDAA2:0002028
-xref: FMA:68805
 xref: FMA:9603
 xref: GAID:465
 xref: galen:ThyroidGland
 xref: HOG:0000418
 xref: MA:0000129
-xref: MA:0000726
 xref: MAT:0000081
 xref: MIAA:0000081
 xref: ncithesaurus:Thyroid_Gland
 xref: OpenCyc:Mx4rvVjLT5wpEbGdrcN5Y29ycA
-xref: TAO:0001072
 xref: XAO:0000162
-xref: ZFA:0001072
 is_a: UBERON:0002368 ! implied link automatically realized ! endocrine gland
 is_a: UBERON:0002530 ! gland
 relationship: develops_from UBERON:0003091 ! thyroid primordium
 relationship: part_of UBERON:0000949 ! endocrine system
+relationship: site_of GO:0006590
 
 [Term]
 id: UBERON:0002047
@@ -54361,7 +54357,7 @@ intersection_of: part_of UBERON:0002370 ! thymus
 [Term]
 id: UBERON:0003847
 name: thyroid artery
-def: "An artery that is part of a thyroid follicle [Obol]." [OBOL:automatic]
+def: "An artery that is part of a thyroid [Obol]." [OBOL:automatic]
 xref: EHDAA:7372
 xref: EHDAA2:0002029
 xref: HOG:0001366
@@ -54369,7 +54365,7 @@ xref: MA:0002066
 xref: ncithesaurus:Thyroid_Artery
 is_a: UBERON:0001637 ! implied link automatically realized ! artery
 intersection_of: UBERON:0001637 ! artery
-intersection_of: part_of UBERON:0002046 ! thyroid follicle
+intersection_of: part_of UBERON:0002046 ! thyroid gland
 
 [Term]
 id: UBERON:0003848
@@ -58587,7 +58583,7 @@ synonym: "smooth muscle tissue of pelvis of ureter" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of renal pelvis" EXACT [OBOL:automatic]
 xref: FMA:262022
 xref: MA:0002631
-is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0005321 ! implied link automatically realized ! mesonephric smooth muscle tissue
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0001224 ! renal pelvis
 
@@ -65881,7 +65877,7 @@ intersection_of: part_of UBERON:0001091 ! calcareous tooth
 [Term]
 id: UBERON:0004827
 name: thyroid gland medulla
-def: "A medulla that is part of a thyroid follicle [Obol]." [OBOL:automatic]
+def: "A medulla that is part of a thyroid [Obol]." [OBOL:automatic]
 synonym: "medulla of thyroid" EXACT [OBOL:automatic]
 synonym: "medulla of thyroid follicle" EXACT [OBOL:automatic]
 synonym: "medulla of thyroid gland" EXACT [OBOL:automatic]
@@ -65892,7 +65888,7 @@ synonym: "thyroid medulla" EXACT [OBOL:automatic]
 xref: MA:0000132
 is_a: UBERON:0000958 ! implied link automatically realized ! medulla
 intersection_of: UBERON:0000958 ! medulla
-intersection_of: part_of UBERON:0002046 ! thyroid follicle
+intersection_of: part_of UBERON:0002046 ! thyroid gland
 
 [Term]
 id: UBERON:0004829
@@ -66583,7 +66579,11 @@ relationship: part_of UBERON:0002183 ! lobar bronchus
 [Term]
 id: UBERON:0004893
 name: interalveolar septum
-def: "A the thin septum that separates adjacent pulmonary alveoli, containing connective tissue constituents of the respiratory tissue and the capillary network of the blood supply of the lung." [LG:0012625]
+def: "A the thin septum that separates adjacent pulmonary alveoli, containing connective tissue constituents of the respiratory tissue and the capillary network of the blood supply of the lung." [LG:0012625, Wikipedia:Alveolar_septum]
+synonym: "alveolar septum" EXACT [UBERON:cjm]
+synonym: "wall of pulmonary alveolus" EXACT [FMA:14117]
+xref: BTO:0003149
+xref: FMA:14117
 xref: MA:0000421
 is_a: UBERON:0003037 ! implied link automatically realized ! septum
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
@@ -69571,7 +69571,7 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 id: UBERON:0005109
 name: metanephric smooth muscle tissue
 def: ".[GO]." [GO:0072208]
-is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0005321 ! implied link automatically realized ! mesonephric smooth muscle tissue
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0000081 ! metanephros
 
@@ -70017,7 +70017,7 @@ xref: FMA:17719
 xref: MA:0002625
 is_a: UBERON:0001231 ! renal tubule
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
-is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
+is_a: UBERON:0005310 ! implied link automatically realized ! pronephric nephron tubule
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
 [Term]
@@ -70026,7 +70026,7 @@ name: descending thick limb of loop of Henle
 subset: uberon_slim
 is_a: UBERON:0001231 ! renal tubule
 is_a: UBERON:0004810 ! implied link automatically realized ! renal tubule epithelium
-is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
+is_a: UBERON:0005310 ! implied link automatically realized ! pronephric nephron tubule
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
 [Term]
@@ -70628,11 +70628,11 @@ intersection_of: part_of UBERON:0004348 ! optic eminence
 [Term]
 id: UBERON:0005235
 name: thyroid endoderm
-def: "An endoderm that is part of a thyroid follicle [Obol]." [OBOL:automatic]
+def: "An endoderm that is part of a thyroid gland [Obol]." [OBOL:automatic]
 xref: HOG:0001089
 is_a: UBERON:0003256 ! implied link automatically realized ! endoderm of embryo
 intersection_of: UBERON:0000925 ! endoderm
-intersection_of: part_of UBERON:0002046 ! thyroid follicle
+intersection_of: part_of UBERON:0002046 ! thyroid gland
 
 [Term]
 id: UBERON:0005236
@@ -71372,6 +71372,254 @@ xref: GAID:801
 xref: MA:0001149
 is_a: UBERON:0001816 ! autonomic nerve plexus
 relationship: part_of UBERON:0000429 ! enteric plexus
+
+[Term]
+id: UBERON:0005305
+name: thyroid follicle
+def: "Discrete, cystlike units of the thyroid gland that are lined with cuboidal epithelium and are filled with a colloid substance, about 30 to each lobule[BTO]." [BTO:0004708]
+subset: uberon_slim
+synonym: "thyroid gland follicle" EXACT []
+xref: BTO:0004708
+xref: FMA:68805
+xref: MA:0000726
+xref: TAO:0001072
+xref: ZFA:0001072
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0002046 ! thyroid gland
+
+[Term]
+id: UBERON:0005306
+name: blastema
+def: "A blastema is a mass of cells capable of growth and regeneration into organs  or body parts. Historically blastema have been thought to be composed of undifferentiated pluripotent cells, but recent research indicates that in some organisms blastema may retain memory of tissue origin.[1] Blastemata are typically found in the early stages of an organism's development such as in embryos, and in the regeneration of tissues, organs and bone[WP]. A regenerating tissue composed of a proliferative mass of undifferentiated progenitor cells from which new differentiated structures arise[ZFA]." [Wikipedia:Blastema, ZFA:0001270, ZFIN:ZDB-PUB-061108-12]
+synonym: "regeneration blastema" EXACT [ZFIN:ZDB-PUB-061108-12]
+xref: BTO:0001638
+xref: TAO:0001270
+xref: ZFA:0001270
+is_a: UBERON:0000479 ! portion of tissue
+relationship: capable_of GO:0040007
+relationship: has_part CL:0000354
+
+[Term]
+id: UBERON:0005307
+name: chorion-containing eggshell
+def: "An eggshell that contains chorion. An example of this is found in Drosophila melanogaster." [GO:0007304]
+is_a: UBERON:0005079 ! eggshell
+relationship: has_part UBERON:0000920 ! egg chorion
+
+[Term]
+id: UBERON:0005308
+name: nephrostome
+def: "The nephrostome is the opening of the pronephros into the body cavity[GO]." [GO:0039018]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0002120 ! pronephros
+
+[Term]
+id: UBERON:0005309
+name: pronephric nephron
+def: "A pronephric nephron is the functional unit of the pronephros[GO]." [GO:0039019]
+xref: ZFA:0000151
+is_a: UBERON:0001285 ! implied link automatically realized ! nephron
+is_a: UBERON:0002050 ! implied link automatically realized ! embryonic structure
+intersection_of: UBERON:0001285 ! nephron
+intersection_of: part_of UBERON:0002120 ! pronephros
+
+[Term]
+id: UBERON:0005310
+name: pronephric nephron tubule
+def: "The pronephric nephron tubule is an epithelial tube that is part of the pronephric nephron and connects the filtration unit (glomerulus or glomus) of the pronephros to the pronephric duct[GO]." [GO:0039020]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001231 ! implied link automatically realized ! renal tubule
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
+intersection_of: UBERON:0001231 ! renal tubule
+intersection_of: part_of UBERON:0002120 ! pronephros
+
+[Term]
+id: UBERON:0005311
+name: mammary placode
+def: "The mammary placode is a transient lens shaped structure that will give rise to the mammary bud proper[GO]." [GO:0060596]
+comment: TODO develops_from
+is_a: UBERON:0005085 ! ectodermal placode
+relationship: develops_into UBERON:0001911 ! lactiferous gland
+
+[Term]
+id: UBERON:0005312
+name: primary ureteric bud
+def: ".[GO]." [GO:0060682]
+is_a: UBERON:0000084 ! ureteric bud
+
+[Term]
+id: UBERON:0005313
+name: mammary duct terminal end bud
+def: ".[GO]." [GO:0060763]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001765 ! lactiferous duct
+
+[Term]
+id: UBERON:0005314
+name: alveolar primary septum
+def: "A primary alveolar septum is a specialized epithelium that surrounds the saccule as it forms[GO]." [GO:0061143]
+comment: TODO - check UBERON:0004893 interalveolar septum
+is_a: UBERON:0000115 ! lung epithelium
+relationship: surrounds UBERON:0000116 ! lung saccule
+
+[Term]
+id: UBERON:0005315
+name: alveolar secondary septum
+def: "A secondary alveolar septum is a specialized epithelium that subdivides the initial saccule[GO]." [GO:0061144]
+comment: TODO - check UBERON:0004893 interalveolar septum
+is_a: UBERON:0000115 ! lung epithelium
+relationship: part_of UBERON:0000116 ! lung saccule
+
+[Term]
+id: UBERON:0005316
+name: endocardial endothelium
+def: "The endocardium is an anatomical structure comprised of an endothelium and an extracellular matrix that forms the innermost layer of tissue of the heart, and lines the heart chambers[GO]." [GO:0061147]
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004852 ! implied link automatically realized ! cardiovascular system endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0002165 ! endocardium
+
+[Term]
+id: UBERON:0005317
+name: pulmonary artery endothelial tube
+def: "An pulmonary artery endothelium is an epithelium that lines the pulmonary artery[GO]." [GO:0061155]
+is_a: UBERON:0001917 ! implied link automatically realized ! endothelium of artery
+is_a: UBERON:0003915 ! implied link automatically realized ! endothelial tube
+intersection_of: UBERON:0003915 ! endothelial tube
+intersection_of: part_of UBERON:0002012 ! pulmonary artery
+
+[Term]
+id: UBERON:0005318
+name: paramesonephric duct
+def: "These ducts are made of tissue of mesodermal origin[GO]." [GO:0061205]
+xref: EMAPA:27665
+is_a: UBERON:0000058 ! duct
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0000926 ! mesoderm
+
+[Term]
+id: UBERON:0005319
+name: mesonephric collecting duct
+def: "The collecting duct is the final common path through which urine flows before entering the ureter and then emptying into the bladder[GO]." [GO:0061211]
+is_a: UBERON:0001232 ! implied link automatically realized ! collecting duct of renal tubule
+intersection_of: UBERON:0001232 ! collecting duct of renal tubule
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005320
+name: mesonephric juxtaglomerular apparatus
+def: "The juxtaglomerular apparatus lies adjacent to the glomerulus and regulates kidney function by maintaining the blood flow to the kidney and the filtration rate[GO]." [GO:0061212]
+is_a: UBERON:0002303 ! implied link automatically realized ! juxtaglomerular apparatus
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0002303 ! juxtaglomerular apparatus
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005321
+name: mesonephric smooth muscle tissue
+def: ".[GO]." [GO:0061214]
+is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+intersection_of: UBERON:0001135 ! smooth muscle tissue
+intersection_of: part_of UBERON:0002113 ! kidney
+
+[Term]
+id: UBERON:0005322
+name: mesonephric nephron
+def: "A nephron is the functional unit of the kidney[GO]." [GO:0061215]
+is_a: UBERON:0001285 ! implied link automatically realized ! nephron
+intersection_of: UBERON:0001285 ! nephron
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005323
+name: mesonephric mesenchyme
+def: "Mesonephric mesenchyme is the tissue made up of loosely connected mesenchymal cells in the mesonephros[GO]." [GO:0061219]
+xref: EMAPA:27585
+xref: EMAPA:27661
+is_a: UBERON:0003918 ! implied link automatically realized ! mesenchyme of kidney
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005324
+name: mesonephric macula densa
+def: "The mesonephric macula densa is an area of specialized cells in the distal tubule of the mesonephros that makes contact with the vascular pole of the glomerulus[GO]." [GO:0061220]
+is_a: UBERON:0002335 ! implied link automatically realized ! macula densa
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0002335 ! macula densa
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005325
+name: mesonephric glomerulus
+def: "The mesonephric glomerulus is a capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the mature vertebrate kidney, or mesonephros[GO]." [GO:0061224]
+xref: EMAPA:30568
+xref: EMAPA:30580
+is_a: UBERON:0000074 ! implied link automatically realized ! renal glomerulus
+intersection_of: UBERON:0000074 ! renal glomerulus
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005326
+name: mesonephric glomerulus vasculature
+def: "The mesonephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the mesonephric glomerulus[GO]." [GO:0061231]
+is_a: UBERON:0004190 ! implied link automatically realized ! glomerulus vasculature
+intersection_of: UBERON:0004190 ! glomerulus vasculature
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005327
+name: mesonephric glomerular epithelium
+def: "A mesonephric glomerular visceral epithelial cell is a specialized epithelial cell that contains " [:GO]
+is_a: UBERON:0004188 ! implied link automatically realized ! glomerular epithelium
+is_a: UBERON:0005330 ! implied link automatically realized ! mesonephric nephron epithelium
+intersection_of: UBERON:0004188 ! glomerular epithelium
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005328
+name: mesonephric comma-shaped body
+def: "The mesonephric comma-shaped body is the precursor structure to the mesonephric S-shaped body that contributes to the morphogenesis of a nephron in the mesonephros[GO]." [GO:0061236]
+is_a: UBERON:0004198 ! implied link automatically realized ! comma-shaped body
+intersection_of: UBERON:0004198 ! comma-shaped body
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005329
+name: mesonephric nephron tubule
+def: "A mesonephric nephron tubule is an epithelial tube that is part of the mesonephric nephron, the functional part of the mesonephros[GO]." [GO:0061240]
+comment: TODO - check renal tubule vs nephron tubule - assume for now. Also FMA has 'region of renal tubule' - not clear what is a subclass and what is a part
+is_a: UBERON:0000083 ! implied link automatically realized ! mesonephric tubule
+is_a: UBERON:0001231 ! renal tubule
+is_a: UBERON:0005330 ! implied link automatically realized ! mesonephric nephron epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005330
+name: mesonephric nephron epithelium
+def: "The mesonephric nephron epithelium is a tissue that covers the surface of a nephron in the mesonephros[GO]." [GO:0061241]
+is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
+is_a: UBERON:0005103 ! implied link automatically realized ! mesonephric epithelium
+intersection_of: UBERON:0004211 ! nephron epithelium
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005331
+name: mesonephric renal vesicle
+def: "The renal vesicle is the primordial structure of the mesonephric nephron epithelium, and is formed by the condensation of mesenchymal cells[GO]." [GO:0061243]
+is_a: UBERON:0004209 ! implied link automatically realized ! renal vesicle
+intersection_of: UBERON:0004209 ! renal vesicle
+intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005332
+name: mesonephric S-shaped body
+def: "The mesonephric S-shaped body is the successor of the mesonephric comma-shaped body that contributes to the morphogenesis of a nephron in the mesonephros[GO]." [GO:0061244]
+is_a: UBERON:0004199 ! implied link automatically realized ! S-shaped body
+intersection_of: UBERON:0004199 ! S-shaped body
+intersection_of: part_of UBERON:0000080 ! mesonephros
 
 [Typedef]
 id: adjacent_to
