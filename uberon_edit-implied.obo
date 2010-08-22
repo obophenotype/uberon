@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 20:08:2010 18:39
+date: 20:08:2010 19:13
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -20518,7 +20518,8 @@ xref: FMA:58006
 xref: MA:0000791
 xref: ncithesaurus:Lactiferous_Duct
 is_a: UBERON:0000058 ! duct
-relationship: part_of UBERON:0001911 ! lactiferous gland
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0001766
@@ -23326,14 +23327,14 @@ relationship: part_of UBERON:0000955 ! brain
 
 [Term]
 id: UBERON:0001911
-name: lactiferous gland
+name: mammary gland
 alt_id: UBERON:FMA_62088-MA_0000145-MIAA_0000073-Mammary
 def: "Lobular organ which consist of a lactiferous duct tree and the set of lactiferous acini that are connected to duct tree. Examples: There are variable numbers of lactiferous duct trees." [Wikipedia:Mammary_gland]
 comment: TODO - part_of such that applies to all mammals
 subset: uberon_slim
+synonym: "lactiferous gland" EXACT [FMA:62088]
 synonym: "lobe of breast" EXACT []
 synonym: "lobe of mammary gland" EXACT []
-synonym: "mammary gland" EXACT []
 xref: BTO:0000817
 xref: EFO:0000854
 xref: EHDAA:6524
@@ -23346,6 +23347,8 @@ xref: MIAA:0000073
 xref: ncithesaurus:Mammary_Gland
 xref: OpenCyc:Mx4rvVjVq5wpEbGdrcN5Y29ycA
 is_a: UBERON:0002530 ! gland
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: develops_from UBERON:0005333 ! mammary bud
 relationship: only_in_taxon NCBITaxon:40674
 relationship: secretes UBERON:0001913 ! milk
 
@@ -23366,7 +23369,8 @@ synonym: "mammary gland lobule" EXACT []
 xref: FMA:62090
 xref: MA:0000793
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001911 ! lactiferous gland
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0001913
@@ -25664,7 +25668,8 @@ xref: MA:0000796
 xref: ncithesaurus:Nipple
 xref: OpenCyc:Mx4rvVjKi5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:0001911 ! lactiferous gland
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0002031
@@ -25707,7 +25712,8 @@ xref: MA:0000788
 xref: ncithesaurus:Areola
 xref: OpenCyc:Mx4rvrcOL5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:0001911 ! lactiferous gland
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0002033
@@ -44770,9 +44776,10 @@ synonym: "mammary alveolus" EXACT []
 xref: FMA:73285
 xref: MA:0002760
 is_a: UBERON:0003215 ! alveolus
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0003215 ! alveolus
-intersection_of: part_of UBERON:0001911 ! lactiferous gland
-relationship: part_of UBERON:0001911 ! lactiferous gland
+intersection_of: part_of UBERON:0001911 ! mammary gland
+relationship: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0003215
@@ -45183,8 +45190,9 @@ xref: FMA:74445
 xref: HOG:0001088
 xref: MA:0000792
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0001911 ! lactiferous gland
+intersection_of: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0003246
@@ -46492,8 +46500,9 @@ xref: EHDAA:6528
 xref: EHDAA2:0001058
 xref: HOG:0001087
 is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0003104 ! mesenchyme
-intersection_of: part_of UBERON:0001911 ! lactiferous gland
+intersection_of: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0003327
@@ -49880,8 +49889,9 @@ synonym: "sebaceous gland of lobe of mammary gland" EXACT [OBOL:automatic]
 synonym: "sebaceous gland of mammary gland" EXACT [OBOL:automatic]
 xref: MA:0000794
 is_a: UBERON:0001821 ! implied link automatically realized ! sebaceous gland
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0001821 ! sebaceous gland
-intersection_of: part_of UBERON:0001911 ! lactiferous gland
+intersection_of: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0003487
@@ -49907,9 +49917,9 @@ synonym: "lobe of breast of abdomen" EXACT [OBOL:automatic]
 synonym: "lobe of mammary gland of abdomen" EXACT [OBOL:automatic]
 synonym: "mammary gland of abdomen" EXACT [OBOL:automatic]
 xref: MA:0000787
-is_a: UBERON:0001911 ! implied link automatically realized ! lactiferous gland
+is_a: UBERON:0001911 ! implied link automatically realized ! mammary gland
 is_a: UBERON:0005172 ! implied link automatically realized ! abdomen organ
-intersection_of: UBERON:0001911 ! lactiferous gland
+intersection_of: UBERON:0001911 ! mammary gland
 intersection_of: part_of UBERON:0000916 ! abdomen
 
 [Term]
@@ -51564,8 +51574,9 @@ synonym: "textus connectivus of mammary gland" EXACT [OBOL:automatic]
 xref: FMA:74479
 xref: MA:0002897
 is_a: UBERON:0002384 ! implied link automatically realized ! connective tissue
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0002384 ! connective tissue
-intersection_of: part_of UBERON:0001911 ! lactiferous gland
+intersection_of: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0003585
@@ -57866,8 +57877,9 @@ synonym: "mammary gland fat tissue" EXACT [OBOL:automatic]
 synonym: "mammary gland fatty tissue" EXACT [OBOL:automatic]
 xref: MA:0002911
 is_a: UBERON:0001013 ! implied link automatically realized ! adipose tissue
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0001013 ! adipose tissue
-intersection_of: part_of UBERON:0001911 ! lactiferous gland
+intersection_of: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0004181
@@ -58845,8 +58857,9 @@ synonym: "smooth muscle tissue of lobe of mammary gland" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of mammary gland" EXACT [OBOL:automatic]
 xref: MA:0000795
 is_a: UBERON:0001135 ! implied link automatically realized ! smooth muscle tissue
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0001135 ! smooth muscle tissue
-intersection_of: part_of UBERON:0001911 ! lactiferous gland
+intersection_of: part_of UBERON:0001911 ! mammary gland
 
 [Term]
 id: UBERON:0004236
@@ -70310,9 +70323,9 @@ id: UBERON:0005199
 name: cervical mammary gland
 def: "A lactiferous gland that is part of a uterine cervix [Obol]." [OBOL:automatic]
 xref: MA:0000789
-is_a: UBERON:0001911 ! implied link automatically realized ! lactiferous gland
+is_a: UBERON:0001911 ! implied link automatically realized ! mammary gland
 is_a: UBERON:0003937 ! implied link automatically realized ! sex gland
-intersection_of: UBERON:0001911 ! lactiferous gland
+intersection_of: UBERON:0001911 ! mammary gland
 intersection_of: part_of UBERON:0000002 ! uterine cervix
 
 [Term]
@@ -70320,8 +70333,8 @@ id: UBERON:0005200
 name: thoracic mammary gland
 def: "A lactiferous gland that is part of a thorax [Obol]." [OBOL:automatic]
 xref: MA:0000797
-is_a: UBERON:0001911 ! implied link automatically realized ! lactiferous gland
-intersection_of: UBERON:0001911 ! lactiferous gland
+is_a: UBERON:0001911 ! implied link automatically realized ! mammary gland
+intersection_of: UBERON:0001911 ! mammary gland
 intersection_of: part_of UBERON:0000915 ! thorax
 
 [Term]
@@ -71441,7 +71454,6 @@ name: mammary placode
 def: "The mammary placode is a transient lens shaped structure that will give rise to the mammary bud proper[GO]." [GO:0060596]
 comment: TODO develops_from
 is_a: UBERON:0005085 ! ectodermal placode
-relationship: develops_into UBERON:0001911 ! lactiferous gland
 
 [Term]
 id: UBERON:0005312
@@ -71454,6 +71466,7 @@ id: UBERON:0005313
 name: mammary duct terminal end bud
 def: ".[GO]." [GO:0060763]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001765 ! lactiferous duct
 
 [Term]
@@ -71620,6 +71633,16 @@ def: "The mesonephric S-shaped body is the successor of the mesonephric comma-sh
 is_a: UBERON:0004199 ! implied link automatically realized ! S-shaped body
 intersection_of: UBERON:0004199 ! S-shaped body
 intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005333
+name: mammary bud
+def: "produced along the length of the embryonic mammary ridge these buds represent the future locations of the mammary glands. Invagination of ectoderm at each bud leads to the development of epithelial diverticula, later maturing as lactiferous ducts." [http://medical-dictionary.thefreedictionary.com/mammary+bud]
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005153 ! epithelial bud
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
+relationship: develops_from UBERON:0005311 ! mammary placode
+relationship: part_of UBERON:0000924 ! ectoderm
 
 [Typedef]
 id: adjacent_to

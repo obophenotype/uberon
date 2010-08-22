@@ -44,9 +44,9 @@ uberon_xp_chebi-obol.obo: uberon_edit.obo
 %_xp.obo:
 	$(OBOL) -r $* obol-parse "belongs(ID,'$*')" >& $@.tmp && mv $@.tmp $@
 
-TICK=../gross_anatomy/animal_gross_anatomy/tick/tick_anatomy.obo
-tick_anatomy_deplural.obo:
-	$(HOME)/obol/bin/go-transform-chebi.pl -i $(TICK) > $@.tmp && mv $@.tmp $@
+TICK=animal_gross_anatomy/tick_anatomy.obo
+tick_anatomy_with_syns.obo:
+	perl -npe 'print "synonym: \"$$1\" EXACT []\n" if (/^name: adult (.*)/)' $(TICK) > $@.tmp && mv $@.tmp $@
 
 # ignore 'Adult' prefix...
 tick_anatomy_xp.obo: tick_anatomy_deplural.obo
@@ -695,3 +695,13 @@ xog_xref_new.txt:
 MULTIANAT_R=-r xenopus_anatomy -r mouse_anatomy -r gemina_anatomy -r amphibian_anatomy -r cell -r fly_anatomy -r zebrafish_anatomy -r fma_downcase -r brenda -r bila -r miaa -r nif_downcase -r emapa -r ehdaa -r ehdaa2 -r hog
 abduced-relations.txt:
 	blip-findall -r implied/uberon.obo $(MULTIANAT_R) "entity_xref(A3,A1),id_idspace(A3,'UBERON'),restriction(A1,R1,B1),entity_xref(B3,B1),id_idspace(B3,'UBERON'),entity_xref(A3,A2),A2\=A1,restriction(A2,R2,B2),entity_xref(B3,B2),\+restriction(A3,_,B3)" -select "r(A3,B3,A1,R1,B1,A2,R2,B2)" -label > $@
+
+uberon_class_taxon.txt:
+	blip-findall   -r implied/uberon.obo -r implied/ncbi_taxon_slim.obo -i adhoc_uberon.pro -goal index_lca_taxon class_covers_taxon/2 -label > $@
+
+uberon_class_taxon_min.txt: 
+	blip-findall   -r implied/uberon.obo -r implied/ncbi_taxon_slim.obo -i adhoc_uberon.pro -goal index_lca_taxon class_covers_taxon_min/2 -label > $@
+#	blip-findall -i $< -i ncbi_taxon_slim.obo "uberon_class_taxon(_,C,T),\+((uberon_class_taxon(_,C,T2),subclassT(T2,T)))" -select "class_taxon_min(C,T)" > $@
+
+%-count.txt: %.txt
+	count-occ-group.pl 3 $< > $@

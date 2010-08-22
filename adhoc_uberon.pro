@@ -4,6 +4,8 @@
 :- use_module(bio(metadata_db)).
 :- use_module(bio(metadata_nlp)).
 :- use_module(bio(ontol_reasoner)).
+:- use_module(bio(index_util)).
+:- use_module(bio(tabling)).
 :- use_module(bio(mode)).
 :- use_module(bio(dbmeta)).
 :- use_module(bio(graph)).
@@ -11,6 +13,7 @@
 
 idspace_taxon('FMA','NCBITaxon:9606').
 idspace_taxon('FBbt','NCBITaxon:7227').
+idspace_taxon('WBbt','NCBITaxon:6239').
 idspace_taxon('MA','NCBITaxon:10088').
 idspace_taxon('EMAP','NCBITaxon:10088').
 idspace_taxon('EMAPA','NCBITaxon:10088').
@@ -20,6 +23,71 @@ idspace_taxon('TAO','NCBITaxon:32443').
 idspace_taxon('XAO','NCBITaxon:8353').
 idspace_taxon('AAO','NCBITaxon:8292').
 idspace_taxon('HAO','NCBITaxon:7399').
+idspace_taxon('SPD','NCBITaxon:6893').
+idspace_taxon('TADS','NCBITaxon:6939').
+idspace_taxon('TGMA','NCBITaxon:44484').
+
+class_covers_taxon_summary(T,NumCs) :-
+        aggregate(count,C,class_covers_taxon(C,T),NumCs).
+
+lca(T1,T2,T) :-
+        subclass(T1,T),
+        subclass(T2,T),
+        \+ ((
+             subclass(T1,T3),
+             subclass(T2,T3),
+             T3\=T,
+             subclass(T3,T))).
+
+index_lca_taxon :-
+        materialize_index(lca_taxon_u(1)).
+
+lca_taxon(T) :-
+        idspace_taxon(_,T1),
+        idspace_taxon(_,T2),
+        lca(T1,T2,T).
+
+lca_taxon_u(T) :-
+        setof(T,lca_taxon(T),Ts),
+        member(T,Ts).
+
+
+class_covers_taxon(C,T) :-
+        class(C),
+        lca_taxon_u(T),
+        \+ \+ test_class_covers_taxon(C,T).
+
+class_covers_taxon_min(C,T) :-
+        class(C),
+        id_idspace(C,'UBERON'),
+        setof(T1,test_class_covers_taxon_direct(C,T1),T1s),
+        lca_taxon_u(T),
+        forall(member(T1,T1s),
+               subclass(T1,T)),
+        \+ ((lca_taxon_u(Tx),
+             subclass(Tx,T),
+             Tx\=T,
+             forall(member(T1,T1s),
+                    subclass(T1,Tx)))).
+
+class_not_covers_taxon(C,T) :-
+        class(C),
+        lca_taxon_u(T),
+        \+ test_class_covers_taxon(C,T).
+
+test_class_covers_taxon(C,T) :-
+        parent(C1,C),
+        entity_xref(C1,X),
+        id_idspace(X,S),
+        idspace_taxon(S,T1),
+        subclass(T1,T),
+        lca_taxon(T).
+
+test_class_covers_taxon_direct(C,T) :-
+        parent(C1,C),
+        entity_xref(C1,X),
+        id_idspace(X,S),
+        idspace_taxon(S,T).
 
 %% class_taxon_invalid(UberonViolatingClass,ExtClass,Taxon,UberonClassWithTaxonRestriction,OnlyInThisTaxon)
 class_taxon_invalid(U,X,T,Y,TY) :-
