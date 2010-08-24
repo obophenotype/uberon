@@ -14513,10 +14513,7 @@ def: "Anatomical cavity that connects an organ cavity, organ cavity subdivision 
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:20192 ! Vestibule
-xref: GAID:881 ! vestibule
-xref: XAO:0000199 ! vestibule
 is_a: UBERON:0002553 ! anatomical cavity
-relationship: part_of UBERON:0001839 ! bony labyrinth
 xref: ncithesaurus:Vestibule ! Vestibule
 
 [Term]
@@ -20279,6 +20276,7 @@ xref: XAO:0003195 ! vestibuloauditory system
 xref: ZFA:0001138 ! vestibuloauditory system
 xref: ncithesaurus:Auditory_System ! Auditory System
 xref: OpenCyc:Mx4rvViwtJwpEbGdrcN5Y29ycA ! auditory system
+xref: NIF_GrossAnatomy:nlx_anat_090817 ! Auditory system
 is_a: UBERON:0001032 ! sense organ system
 relationship: capable_of GO:0007605 ! sensory perception of sound
 intersection_of: UBERON:0001032 ! sense organ system
@@ -22185,7 +22183,7 @@ synonym: "external limiting membrane of retina" EXACT []
 synonym: "outer limiting membrane of retina" EXACT []
 synonym: "retina external limiting lamina" EXACT []
 synonym: "stratum limitans externum (retina)" EXACT []
-synonym: "retina outer limiting membrane" [MP:0010236]
+synonym: "retina outer limiting membrane" EXACT [MP:0010236]
 xref: FMA:58683 ! Outer limiting layer of retina
 xref: MA:0001309 ! retina external limiting lamina
 is_a: UBERON:0001781 ! layer of retina
@@ -23090,6 +23088,19 @@ is_a: UBERON:0001837 ! duct of salivary gland
 relationship: part_of UBERON:0001832 ! sublingual gland
 
 [Term]
+id: UBERON:0001862
+name: vestibular labyrinth
+alt_id: UBERON:FMA_61255-MA_0000245
+comment: This class was created automatically from a combination of ontologies
+synonym: "vestibular apparatus" RELATED []
+xref: FMA:61255 ! Vestibular labyrinth
+xref: MA:0000245 ! vestibular labyrinth
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0001849 ! membranous labyrinth
+xref: ncithesaurus:Vestibular_Labyrinth ! Vestibular Labyrinth
+xref: BTO:0001856 ! vestibular labyrinth
+
+[Term]
 id: UBERON:0001839
 name: bony labyrinth
 alt_id: UBERON:FMA_60179-MA_0000238-XAO_0000193
@@ -23106,6 +23117,18 @@ relationship: part_of UBERON:0001694 ! petrous part of temporal bone
 relationship: part_of UBERON:0001846 ! internal ear
 xref: ncithesaurus:Osseous_Labyrinth ! Osseous Labyrinth
 xref: HOG:0001219 ! osseus labyrinth
+
+[Term]
+id: UBERON:0005236
+name: osseus labyrinth vestibule
+xref: HOG:0001220
+comment: TODO - check
+intersection_of: UBERON:0001349 
+intersection_of: part_of UBERON:0001839
+xref: GAID:881 ! vestibule
+xref: XAO:0000199 ! vestibule
+relationship: part_of UBERON:0001839 ! bony labyrinth
+def: "A vestibule that is part of a bony labyrinth [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0001840
@@ -23460,19 +23483,6 @@ xref: FMA:61252 ! Ductus reuniens
 xref: MA:0000244 ! ductus reuniens
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001849 ! membranous labyrinth
-
-[Term]
-id: UBERON:0001862
-name: vestibular labyrinth
-alt_id: UBERON:FMA_61255-MA_0000245
-comment: This class was created automatically from a combination of ontologies
-synonym: "vestibular apparatus" RELATED []
-xref: FMA:61255 ! Vestibular labyrinth
-xref: MA:0000245 ! vestibular labyrinth
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001849 ! membranous labyrinth
-xref: ncithesaurus:Vestibular_Labyrinth ! Vestibular Labyrinth
-xref: BTO:0001856 ! vestibular labyrinth
 
 [Term]
 id: UBERON:0001863
@@ -42741,20 +42751,6 @@ xref: NIF_GrossAnatomy:birnlex_919 ! Subcallosal area
 is_a: UBERON:0002020 ! gray matter of neuraxis
 
 [Term]
-id: UBERON:0003021
-name: central lobule
-alt_id: UBERON:NIF_GrossAnatomy_birnlex_920-FMA_72519
-def: "The central lobule is a small square lobule, situated in the anterior cerebellar notch. It overlaps the lingula, from which it is separated by the precentral fissure; laterally, it extends along the upper and anterior part of each hemisphere, where it forms a wing-like prolongation, the ala lobuli centralis. [WP,unvetted]." [Wikipedia:Central_lobule]
-subset: uberon_slim
-synonym: "central lobule of cerebellum" EXACT [FMA:72519]
-synonym: "central lobule of cerebellum [II and III]" EXACT [FMA:72519]
-xref: FMA:72519 ! Central lobule
-xref: NIF_GrossAnatomy:birnlex_920 ! Central lobule
-is_a: UBERON:0000477 ! anatomical cluster
-xref: MA:0000999 ! cerebellum lobule II
-xref: MA:0001000 ! cerebellum lobule III
-
-[Term]
 id: UBERON:0003022
 name: lobe parts of cerebral cortex
 comment: check w.r.t regional part of cerebreal cortex
@@ -56965,6 +56961,20 @@ synonym: "lobule I of cerebellum vermis" EXACT []
 synonym: "lingula of anterior cerebellum vermis" EXACT []
 
 [Term]
+id: UBERON:0003021
+name: central lobule
+alt_id: UBERON:NIF_GrossAnatomy_birnlex_920-FMA_72519
+def: "The central lobule is a small square lobule, situated in the anterior cerebellar notch. It overlaps the lingula, from which it is separated by the precentral fissure; laterally, it extends along the upper and anterior part of each hemisphere, where it forms a wing-like prolongation, the ala lobuli centralis. [WP,unvetted]." [Wikipedia:Central_lobule]
+subset: uberon_slim
+synonym: "central lobule of cerebellum" EXACT [FMA:72519]
+synonym: "central lobule of cerebellum [II and III]" EXACT [FMA:72519]
+xref: FMA:72519 ! Central lobule
+xref: NIF_GrossAnatomy:birnlex_920 ! Central lobule
+is_a: UBERON:0000477 ! anatomical cluster
+xref: MA:0000999 ! cerebellum lobule II
+xref: MA:0001000 ! cerebellum lobule III
+
+[Term]
 id: UBERON:0004075
 name: cerebellum vermis lobule II
 def: "The central lobule is a small square lobule, situated in the anterior cerebellar notch. It overlaps the lingula, from which it is separated by the precentral fissure; laterally, it extends along the upper and anterior part of each hemisphere, where it forms a wing-like prolongation, the ala lobuli centralis[WP]." [MP:0009989, Wikipedia:Central_lobule]
@@ -56974,6 +56984,8 @@ relationship: part_of UBERON:0002037 ! cerebellum
 xref: MA:0000999 ! cerebellum vermis lobule II [SYNONYM: "central lobule" (related)] [part_of: "anterior cerebellum vermis"] [subclass: "cerebellum vermis lobule"]
 xref: NIF_GrossAnatomy:birnlex_920 ! Central lobule [SYNONYM: "central lobule" (exact)] [subclass: "Lobular parts of the cerebellar cortex"]
 xref: FMA:72519 ! central lobule [SYNONYM: "central lobule of cerebellum" (exact)] [SYNONYM: "central lobule of cerebellum [ii and iii]" (exact)] [regional_part_of: "vermis of anterior lobe of cerebellum"] [subclass: "lobule of hemisphere of cerebellum"]
+xref: NIF_GrossAnatomy:nlx_anat_20081225 ! Vermic Lobule II
+synonym:"vermic lobule II" EXACT [NIF_GrossAnatomy:nlx_anat_20081225]
 synonym: "central lobule" BROAD [MA:0001000]
 synonym: "central lobule of cerebellum" BROAD []
 synonym: "lobule II of cerebellum vermis" EXACT []
@@ -57016,10 +57028,12 @@ synonym: "uvula of cerebellum" EXACT [FMA:83883]
 synonym: "uvula of vermis of cerebellum" EXACT []
 synonym: "lobule IX of cerebellar posterior vermis" EXACT [PMID:2022820]
 synonym: "cerebellar posterior vermis lobule IX" EXACT [PMID:2022820]
+synonym: "vermic lobule IX" EXACT [NIF_GrossAnatomy:nlx_anat_20081234]
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 xref: MA:0001006 ! cerebellum vermis lobule IX [SYNONYM: "uvula" (related)] [subclass: "cerebellum vermis lobule"]
 xref: FMA:83883 ! uvula of vermis of cerebellum [SYNONYM: "neuraxis uvula" (exact)]  [regional_part_of: "vermis of posterior lobe of cerebellum"]
+xref: NIF_GrossAnatomy:nlx_anat_20081234 ! Vermic Lobule IX
 synonym: "lobule IX of cerebellum vermis" EXACT []
 
 [Term]
@@ -57030,6 +57044,8 @@ comment: IV or V?
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 xref: MA:0001002 ! cerebellum vermis lobule V [SYNONYM: "culmen" (related)] [part_of: "anterior cerebellum vermis"] [subclass: "cerebellum vermis lobule"]
+xref: NIF_GrossAnatomy:nlx_anat_20081227 ! Vermic Lobule IV
+synonym: "vermic lobule IV" EXACT [NIF_GrossAnatomy:nlx_anat_20081227]
 synonym: "lobule V of cerebellum vermis" EXACT []
 synonym: "culmen" BROAD []
 synonym: "culmen of cerebellum" BROAD []
@@ -57648,7 +57664,7 @@ xref: FMA:13225 ! Outflow part of ventricle
 is_a: UBERON:0004145 ! outflow tract
 relationship: part_of UBERON:0004151 ! cardiac chamber
 
-Term]
+[Term]
 id: UBERON:0005338
 name: outflow tract aortic component
 is_a: UBERON:0000481 ! multi-tissue structure
@@ -68236,14 +68252,6 @@ intersection_of: part_of UBERON:0002046
 def: "An endoderm that is part of a thyroid gland [Obol]." [OBOL:automatic]
 
 [Term]
-id: UBERON:0005236
-name: osseus labyrinth vestibule
-xref: HOG:0001220
-intersection_of: UBERON:0001349 
-intersection_of: part_of UBERON:0001839
-def: "A vestibule that is part of a bony labyrinth [Obol]." [OBOL:automatic]
-
-[Term]
 id: UBERON:0005237
 name: supraoccipital bone
 xref: HOG:0001150
@@ -68897,6 +68905,8 @@ name: cerebellum vermis lobule VIIa
 def: ".[MP]." [MP:0009998]
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0004081 ! cerebellum vermis lobule VII
+xref: NIF_GrossAnatomy:nlx_anat_20081231 ! Vermic Lobule VIIA
+synonym: "vermic lobule VIIA" EXACT [NIF_GrossAnatomy:nlx_anat_20081231]
 
 [Term]
 id: UBERON:0005346
@@ -68925,8 +68935,10 @@ name: paramedian lobule
 def: ".[MP]." [MP:0010004]
 is_a: UBERON:0004003 ! cerebellum hemisphere lobule
 xref: FMA:72523 ! gracile lobule
+xref: NIF_GrossAnatomy:nlx_anat_20081210 ! Hemispheric Lobule VIIBii
 synonym: "gracile lobule" EXACT [FMA:72523]
-synonym: "paramedian lobule [H VII B]" EXACT pFMA:72523]
+synonym: "paramedian lobule [H VII B]" EXACT [FMA:72523]
+synonym: "hemispheric lobule VIIBii" EXACT [NIF_GrossAnatomy:nlx_anat_20081210]
 
 [Term]
 id: UBERON:0005350
@@ -68934,6 +68946,8 @@ name: lobule simplex
 def: ".[MP]." [MP:0010005]
 is_a: UBERON:0004003 ! cerebellum hemisphere lobule
 xref: FMA:72522 ! simple lobule of cerebellum
+xref: NIF_GrossAnatomy:nlx_anat_20081206 ! Hemispheric Lobule VI
+synonym: "hemispheric lobule VI" EXACT [NIF_GrossAnatomy:nlx_anat_20081206]
 synonym: "simple lobule of cerebellum" EXACT [FMA:72522]
 synonym: "simple lobule" EXACT [MP:0010005]
 
@@ -68944,6 +68958,8 @@ def: ".[MP]." [MP:0010007]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
 xref: FMA:83885 ! paraflocculus of cerebellum 
+xref: NIF_GrossAnatomy:nlx_anat_20081212 ! Hemispheric Lobule IX
+synonym: "hemispheric lobule IX" EXACT [NIF_GrossAnatomy:nlx_anat_20081212]
 synonym: "paraflocculus of cerebellum " EXACT [FMA:83885]
 
 [Term]
