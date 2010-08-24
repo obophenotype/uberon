@@ -950,7 +950,7 @@ disjoint_from: UBERON:0000054 ! macula
 [Term]
 id: UBERON:0000054 ! macula
 name: macula
-def: "Patches of thickened, pseudostratified epithelium of the inner ear, consisting of regular arrays of sensory hair cells interspersed with supporting cells. Each patch has its own charcteristic shape and polarity pattern." [ZFIN:curator, Wikipedia:Macula]
+def: "Patches of thickened, pseudostratified epithelium of the inner ear, consisting of regular arrays of sensory hair cells interspersed with supporting cells. Each patch has its own charcteristic shape and polarity pattern." [ZFIN:curator, Macula_of_saccule]
 subset: uberon_slim
 synonym: "macula" EXACT []
 synonym: "maculae" EXACT PLURAL []
@@ -4481,14 +4481,6 @@ is_a: UBERON:0001744 ! lymphoid tissue
 xref: ncithesaurus:Lymphoid_Follicle ! Lymphoid Follicle
 
 [Term]
-id: UBERON:0000445
-name: habenular trigone
-alt_id: UBERON:BTO_0002700-FMA_74868
-xref: BTO:0002700
-xref: FMA:74868 ! Habenular trigone
-is_a: UBERON:0000477 ! anatomical cluster
-
-[Term]
 id: UBERON:0000449
 name: decidual cell
 alt_id: UBERON:BTO_0002770-FMA_86480
@@ -4815,7 +4807,7 @@ alt_id: UBERON:CARO_0000027-FBbt_00004927-FBbt_00004928-FBbt_00007004-FMA_45664-
 def: "gonad of a male animal, produces and releases sperm." [Wikipedia:Testis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "male" RELATED []
+synonym: "testes" RELATED PLURAL []
 xref: AAO:0000606 ! testis
 xref: BILA:0000124
 xref: BTO:0001363
@@ -5098,7 +5090,7 @@ id: UBERON:0000482
 name: basal lamina
 alt_id: UBERON:CARO_0000065-FMA_62918-ZFA_0001485
 def: "Acellular anatomical structure that consists of a thin sheet of fibrous proteins that underlie and support the cells of an epithelium. It separates the cells of an epithelium from any underlying tissue. // Acellular anatomical structure that consists of a thin sheet of fibrous proteins that underlie and support the cells of an epithelium. It separates the cells of an epithelium from any underlying tissue." [CARO:MAH, Wikipedia:Basal_lamina, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - use GO.
 subset: uberon_slim
 synonym: "basal lamina of connective tissue" EXACT []
 xref: BILA:0000065
@@ -6426,6 +6418,7 @@ xref: MIAA:0000140 ! eye
 xref: OpenCyc:Mx4rvViTvpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000020 ! sense organ
 relationship: part_of UBERON:0002104 ! visual system
+relationship: capable_of GO:0009584 ! detection of visible light
 xref: OpenCyc:Mx4rvViTvpwpEbGdrcN5Y29ycA ! eye
 
 [Term]
@@ -7873,8 +7866,10 @@ xref: ncithesaurus:Fascicle ! Fascicle
 id: UBERON:0001020
 name: commissure
 alt_id: UBERON:FBbt_00005103-FMA_76741
-def: "The transverse connection between two longitudinal parts, e.g. nerves, tracheae. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, ISBN:3110148986, Wikipedia:Commissure]
-comment: This class was created automatically from a combination of ontologies
+def: "White matter fiber bundle that crosses the midline of the brain or spinal cord[NIF]. The transverse connection between two longitudinal parts, e.g. nerves, tracheae. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, ISBN:3110148986, Wikipedia:Commissure]
+comment: *not* the same as FMA:76741 Commissure
+synonym: "intercerebral commissure" EXACT [MA:0002721]
+synonym: "brain commissure" NARROW []
 subset: uberon_slim
 xref: FBbt:00005103 ! commissure
 xref: FMA:83906 ! Commissure of neuraxis
@@ -7883,6 +7878,8 @@ is_a: UBERON:0001018 ! axon tract
 xref: ncithesaurus:Commissure ! Commissure
 xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw ! commissure
 xref: NIF_GrossAnatomy:nlx_anat_20090513 ! Commissure
+xref: TADS:0000201 ! adult synganglion commissure
+xref: MA:0002721 ! intercerebral commissure
 
 [Term]
 id: UBERON:0001021
@@ -8177,7 +8174,7 @@ synonym: "coat hair" EXACT []
 synonym: "coat/ hair" EXACT []
 synonym: "microchaeta" RELATED []
 synonym: "setulae" RELATED []
-synonym: "vibrissa" RELATED []
+synonym: "vibrissa" RELATED SENSU []
 synonym: "fur" RELATED []
 xref: FMA:53667 ! Hair
 xref: GAID:71 ! hair
@@ -12822,6 +12819,7 @@ name: pancreatic acinus
 alt_id: UBERON:FMA_16011-MA_0002417
 comment: This class was created automatically from a combination of ontologies
 synonym: "acinus pancreaticus" EXACT []
+synonym: "pancreatic acini" RELATED PLURAL []
 xref: FMA:16011 ! Pancreatic acinus
 xref: MA:0002417 ! pancreatic acinus
 is_a: UBERON:0000064 ! organ part
@@ -20218,7 +20216,7 @@ is_a: UBERON:0001686 ! auditory ossicle
 xref: ncithesaurus:Incus ! Incus
 
 [Term]
-id: UBERON:0001689
+id: UBERON:0001689 ! malleus
 name: malleus
 alt_id: UBERON:FMA_52753-MA_0001216
 def: "The malleus or hammer is a hammer-shaped small bone or ossicle of the middle ear which connects with the incus and is attached to the inner surface of the eardrum. The word is Latin for hammer. It transmits the sound vibrations from the eardrum to the incus. The malleus is unique to mammals, and evolved from a lower jaw bone in basal amniotes called the articular, which still forms part of the jaw joint in reptiles. Embryologically it is derived from the first pharyngeal arch along with the rest of the bones of mastication, such as the maxilla and mandible. [WP,unvetted]." [Wikipedia:Malleus]
@@ -22078,9 +22076,12 @@ relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata
 id: UBERON:0001781
 name: layer of retina
 alt_id: UBERON:FMA_58617-MA_0001319-XAO_0000266
+def: "any of the layers that make up the retina." [MP:0003727]
 comment: GO: the outer nuclear layer (ONL), which contains photoreceptor nuclei; the inner nuclear layer (INL), which contains amacrine, bipolar and horizontal cells; and the retinal ganglion cell (RGC) layer. Between the inner and outer nuclear layers, the outer plexiform layer (OPL) contains connections between the photoreceptors and bipolar and horizontal cells. The inner plexiform layer (IPL) is positioned between the INL and the ganglion cell layer and contains the dendrites of RGCs and processes of bipolar and amacrine cells. Spanning all layers of the retina are the radially oriented Mueller glia. // TODO check meaning of MA:0001318 retina lamina
 synonym: "retina layer" EXACT []
 synonym: "retinal layer" EXACT []
+synonym: "retinal neuronal layer" EXACT [MP:0006069]
+synonym: "retina neuronal layer" EXACT [MP:0006069]
 xref: FMA:58617 ! Layer of retina
 xref: MA:0001319 ! retina layer
 xref: MA:0001318 ! retina lamina
@@ -22088,7 +22089,6 @@ xref: XAO:0000266 ! retinal layer
 is_a: UBERON:0000119 ! cell layer
 relationship: part_of UBERON:0000966 ! retina
 xref: ncithesaurus:Retina_Layer ! Retina Layer
-def: "any of the layers that make up the retina." [MP:0003727]
 
 [Term]
 id: UBERON:0001782
@@ -22178,12 +22178,14 @@ xref: HOG:0001173 ! retina photoreceptor layer outer segment
 id: UBERON:0001788
 name: outer limiting layer of retina
 alt_id: UBERON:FMA_58683-MA_0001309
+def: "the row of jucntional complexes between the plasma membranes of rod segments and the Muller glia cells; this barrier separates the layer of inner and outer segments of the rods and cones from the outer nuclear layer and forms a blood-retina barrier[MP]." [MP:0010236]
 comment: This class was created automatically from a combination of ontologies
 synonym: "external limiting lamina of retina" EXACT []
 synonym: "external limiting membrane of retina" EXACT []
 synonym: "outer limiting membrane of retina" EXACT []
 synonym: "retina external limiting lamina" EXACT []
 synonym: "stratum limitans externum (retina)" EXACT []
+synonym: "retina outer limiting membrane" [MP:0010236]
 xref: FMA:58683 ! Outer limiting layer of retina
 xref: MA:0001309 ! retina external limiting lamina
 is_a: UBERON:0001781 ! layer of retina
@@ -22262,6 +22264,8 @@ synonym: "ganglionic cell layer of retina" EXACT []
 synonym: "retina ganglion cell layer" EXACT []
 synonym: "retinal ganglion cell layer" EXACT []
 synonym: "stratum ganglionicum (retina)" EXACT []
+synonym: "retinal ganglion layer" [MP:0008510]
+synonym: "retina ganglion layer" []
 xref: FMA:58687 ! Ganglionic layer of retina
 xref: MA:0001310 ! retina ganglion cell layer
 xref: ZFA:0000024 ! retinal ganglion cell layer
@@ -22292,12 +22296,14 @@ relationship: part_of UBERON:0003902 ! retinal neural layer
 [Term]
 id: UBERON:0001794
 name: inner limiting layer of retina
+def: "the row of fused Muller cell processes and astrocytes that separates the retinal nerve fiber layer from the vitreous[MP]." [MP:0010235]
 alt_id: UBERON:FMA_58689-MA_0001313
 comment: This class was created automatically from a combination of ontologies
 synonym: "inner limiting membrane of retina" EXACT []
 synonym: "internal limiting lamina of retina" EXACT []
 synonym: "internal limiting membrane of retina" EXACT []
 synonym: "retina internal limiting lamina" EXACT []
+synonym: "retina inner limiting membrane" EXACT [MP:0010235]
 xref: FMA:58689 ! Inner limiting layer of retina
 xref: MA:0001313 ! retina internal limiting lamina
 is_a: UBERON:0001781 ! layer of retina
@@ -24281,7 +24287,7 @@ relationship: part_of UBERON:0001900 ! subthalamus
 id: UBERON:0001904
 name: habenula
 alt_id: UBERON:FMA_62032-MA_0000830-ZFA_0000213
-def: "Habenula is an segment of the epithalamus that has as its parts the lateral and medial habenular nuclei and the habenular commissure. // The habenula relays impulses from limbic areas of the telencephalon to an unpaired midbrain nucleus, the interpeduncular nucleus." [Wikipedia:Habenula, ZFIN:curator]
+def: "Habenula is a segment of the epithalamus that has as its parts the lateral and medial habenular nuclei and the habenular commissure. // The habenula relays impulses from limbic areas of the telencephalon to an unpaired midbrain nucleus, the interpeduncular nucleus." [Wikipedia:Habenula, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "habenulae" RELATED []
@@ -24296,6 +24302,19 @@ xref: ZFA:0000213 ! habenula
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001899 ! epithalamus
 xref: BTO:0003684 ! habenula
+
+[Term]
+id: UBERON:0000445
+name: habenular trigone
+def: "The habenular trigone is a small depressed triangular area situated in front of the superior colliculus and on the lateral aspect of the posterior part of the taenia thalami. It contains a group of nerve cells termed the ganglion habenulC&. Fibers enter it from the stalk of the pineal body, and others, forming what is termed the habenular commissure, pass across the middle line to the corresponding ganglion of the opposite side. Most of its fibers are, however, directed downward and form a bundle, the fasciculus retroflexus of Meynert, which passes medial to the red nucleus, and, after decussating with the corresponding fasciculus of the opposite side, ends in the interpeduncular ganglion." [Wikipedia:Habenular_trigone]
+comment: superclass in BTO is thalamic nucleus, not present in most ontologies
+alt_id: UBERON:BTO_0002700-FMA_74868
+synonym: "trigone of habenulae" RELATED [BTO:0002700]
+xref: BTO:0002700
+xref: FMA:74868 ! Habenular trigone
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of UBERON:0001904 ! habenula
+relationship: part_of UBERON:0001894 ! diencephalon
 
 [Term]
 id: UBERON:0001905
@@ -27587,8 +27606,9 @@ id: UBERON:0002073
 name: hair follicle
 alt_id: UBERON:FMA_70660-MA_0000154
 def: "a tube-like opening in the epidermis where the hair shaft develops and into which the sebaceous glands open[GO]." [Wikipedia:Hair_follicle]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - add new class for MA:0002910 vibrissa follicle
 subset: uberon_slim
+synonym: "vibrissa follicle" RELATED [MP:0010234]
 xref: BTO:0000554
 xref: FMA:70660 ! Hair follicle
 xref: GAID:934 ! hair follicle
@@ -30848,7 +30868,7 @@ id: UBERON:0002259
 name: tectal plate
 alt_id: UBERON:FMA_77488-MA_0002567
 def: "In the brain, the corpora quadrigemina (Latin for 'quadruplet bodies') are the four colliculi—two inferior, two superior—located on the tectum the dorsal aspect of the midbrain. The corpora quadrigemina are reflex centers involving vision and hearing. [WP,unvetted]." [Wikipedia:Corpora_quadrigemina, Wikipedia:Corpora_quadrigemina]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - do we need a class 'colliculus' (MP:0009041 absent colliculi)
 subset: uberon_slim
 synonym: "corpora quadrigemina" EXACT []
 synonym: "quadrigeminal plate" EXACT []
@@ -31712,7 +31732,10 @@ xref: BTO:0003951 ! medial longitudinal fasciculus
 id: UBERON:0002310
 name: fimbria of hippocampus
 alt_id: UBERON:FMA_83866-MA_0000949
+def: "A prominent band of white matter along the medial edge of the hippocampus[WP]." [Wikipedia:Fimbria_of_hippocampus]
 comment: This class was created automatically from a combination of ontologies
+synonym: "hippocampus fimbria" EXACT []
+synonym: "hippocampal fimbria" EXACT [MP:0009324]
 synonym: "fimbria hippocampus" EXACT []
 synonym: "neuraxis fimbria" EXACT []
 xref: FMA:83866 ! Fimbria of hippocampus
@@ -43899,10 +43922,9 @@ xref: HOG:0001383 ! posterior neural tube
 xref: TAO:0007037 ! posterior neural tube
 xref: XAO:0000250 ! posterior neural tube
 xref: ZFA:0007037 ! posterior neural tube
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002050 ! embryonic structure
-relationship: develops_from UBERON:0003057 ! chordal neural plate
 relationship: part_of UBERON:0001049 ! neural tube
+relationship: develops_from UBERON:0003057 ! chordal neural plate
 
 [Term]
 id: UBERON:0003077
@@ -44146,6 +44168,7 @@ id: UBERON:0005297
 name: testis sex cord
 def: "The testis cords are precursors to the rete testis. They play several different roles in the development of the male genitals[WP]." [Wikipedia:Testis_cords]
 comment: check primary vs testis
+synonym: "testis cord" RELATED [MP:0006424]
 synonym: "testis primitive sex cord" RELATED []
 synonym: "primary sex cord" RELATED []
 is_a: UBERON:0002050 ! embryonic structure
@@ -54040,7 +54063,6 @@ def: "a small fluid-filled sac lined by synovial membrane with an inner capillar
 xref: FMA:9692 ! Synovial bursa
 xref: GAID:252 ! synovial bursa
 synonym: "bursa" EXACT [FMA:9692]
-comment: See  GO:0048540
 is_a: UBERON:0000062 ! organ
 xref: ncithesaurus:Synovial_Bursa ! Synovial Bursa
 xref: galen:Bursa ! bursa
@@ -54048,7 +54070,7 @@ xref: galen:Bursa ! bursa
 [Term]
 id: UBERON:0003903
 name: bursa of Fabricius
-def: "an epithelial and lymphoid organ that develops as a dorsal diverticulum of the proctadael region of the cloaca in birds. The luminal (interior) surface of the bursa is plicated with as many as 15 primary and 7 secondary plicae or folds. These plicae have hundreds of bursal follicles containing follicle-associated epithelial cells, lymphocytes, macrophages, and plasma cells. Lymphoid stem cells migrate from the fetal liver to the bursa during ontogeny. In the bursa, these stem cells acquire the characteristics of mature, immunocompetent B cells[WP]. The bursa is an organ found in birds involved in B cell differentiation[GO]." [Wikipedia:Bursa_of_Fabricius, GO:004854]
+def: "an epithelial and lymphoid organ that develops as a dorsal diverticulum of the proctadael region of the cloaca in birds. The luminal (interior) surface of the bursa is plicated with as many as 15 primary and 7 secondary plicae or folds. These plicae have hundreds of bursal follicles containing follicle-associated epithelial cells, lymphocytes, macrophages, and plasma cells. Lymphoid stem cells migrate from the fetal liver to the bursa during ontogeny. In the bursa, these stem cells acquire the characteristics of mature, immunocompetent B cells[WP]. The bursa is an organ found in birds involved in B cell differentiation[GO]." [Wikipedia:Bursa_of_Fabricius, GO:0048540]
 is_a: UBERON:0000062 ! organ
 relationship: site_of GO:0030183 ! B cell differentiation
 relationship: has_part UBERON:0003904 ! bursal plica
@@ -55772,6 +55794,7 @@ name: placenta labyrinth
 def: "the placental layers where embryonic blood vessels are surrounded by trophoblast cells and maternal blood" [MP:0001716]
 synonym: "labyrinthine layer" EXACT [GO:0060713]
 synonym: "labyrinthine layer of placenta" EXACT [GO:0060713]
+synonym: "placental labyrinth" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001987 ! placenta
 
@@ -55860,21 +55883,43 @@ is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001768 ! vascular layer of eyeball
 
 [Term]
-id: UBERON:0003957
-name: Bruch membrane
-def: "the transparent, nearly structureless innermost layer of the choroid in contact with the pigmented layer of the retina" [MP:0005239, Wikipedia:Bruch's_membrane]
+id: UBERON:0003957 ! Bruch's membrane
+name: Bruch's membrane
+def: "A transparent, nearly structureless innermost layer of the choroid in contact with the pigmented layer of the retina. Bruch's membrane consists of five layers (from inside to outside): 1. the basement membrane of the retinal pigment epithelium; 2. the inner collagenous zone; 3. a central band of elastic fibers; 4. the outer collagenous zone; 5. the basement membrane of the choriocapillaris. The retinal pigment epithelium transports metabolic waste from the photoreceptors across Bruch's membrane to the choroid." [MP:0005239, Wikipedia:Bruch's_membrane]
 synonym: "basal lamina of choroid" EXACT [FMA:58438]
 synonym: "lamina basilis" EXACT [FMA:58438]
 synonym: "Bruch's basal membrane" EXACT [FMA:58438]
+synonym: "Bruch membrane" EXACT [GAID:914]
+comment: TODO - check FMA
 is_a: UBERON:0000119 ! cell layer
 relationship: part_of UBERON:0001776 ! choroid
 xref: GAID:914 ! bruch membrane
 xref: FMA:58438 ! Basal lamina of choroid
 
 [Term]
+id: UBERON:0005335
+name: chorioallantoic membrane
+def: "The chorioallantoic membrane ( also called the chorioallantois or abbreviated to CAM ) is a vascular membrane found in eggs of some amniotes, such as birds and reptiles. It is formed by the fusion of the mesodermal layers of two developmental structures: the allantois and the chorion. Three different layers compose the chorioallantoic membrane; these are called the chorionic epithelium, the mesenchyme and the allantoic epithelium. Blood capillaries and sinuses are found between epithelial cells of the chorionic layer, allowing close contact (within 0.2 N<m) with air found in pores of the shell membrane of the egg. As a result, the chorioallantoic membrane allows exchange of gases, such as oxygen, to developing embryos. During embryonic development of birds, the chorioallantoic membrane also plays an essential role in bone formation by transporting calcium into the embryo from the eggshell. Chorioalloantoic membranes from developing chicken eggs are routinely used in biological and biomedical research to investigate development, angiogenesis, tumors, and to propagate and investigate viruses or helminths." [Wikipedia:Chorioallantoic_membrane]
+synonym: "chorioallantois" []
+is_a: UBERON:0000158 ! membranous layer
+relationship: develops_from UBERON:0003124 ! chorion
+relationship: develops_from UBERON:0004340 ! allantois
+
+[Term]
+id: UBERON:0005336
+name: capillary lamina of choroid
+def: "The capillary lamina of choroid or choriocapillaris is a layer of capillaries that is immediately adjacent to Bruch's membrane in the choroid." [Wikipedia:Capillary_lamina_of_choroid]
+synonym: "choriocapillaris" []
+synonym: "lamina choriocapillaris" []
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0003957 ! Bruch's membrane
+relationship: part_of UBERON:0001776 ! choroid
+relationship: has_part UBERON:0001982 ! capillary
+
+[Term]
 id: UBERON:0003958
 name: long bone epiphyseal ossification zone
-def: "the structure of the layer of the epiphyseal plate where new bone matrix is deposited" [MP:0006399]
+def: "The layer of the epiphyseal plate where new bone matrix is deposited" [MP:0006399]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002495 ! long bone
 relationship: part_of UBERON:0002516 ! epiphyseal plate
@@ -56651,7 +56696,7 @@ is_a: UBERON:0000079
 xref: FMA:45642 ! Male external genitalia
 
 [Term]
-id: UBERON:0004054
+id: UBERON:0004054 ! internal male genitalia
 name: internal male genitalia
 def: "the internal masculine genital organs, including the testes, epididymides, deferent ducts, seminal vesicles, prostate, ejaculatory ducts, and bulbourethral glands" [MP:0009205]
 is_a: UBERON:0000079
@@ -57008,12 +57053,14 @@ synonym: "declive of vermis of cerebellum" EXACT []
 id: UBERON:0004081
 name: cerebellum vermis lobule VII
 def: "The folium vermis is a short, narrow, concealed band at the posterior extremity of the vermis, consisting apparently of a single folium, but in reality marked on its upper and under surfaces by secondary fissures. Laterally, it expands in either hemisphere into a considerable lobule, the superior semilunar lobule (lobulus semilunaris superior; postero-superior lobules), which occupies the posterior third of the upper surface of the hemisphere, and is bounded below by the horizontal sulcus. The superior semilunar lobules and the folium vermis form the lobus semilunaris." [MP:0009995, Wikipedia:Folium_(vermis)]
+comment: check MA, MP, FMA, folium?
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 xref: MA:0001004 ! cerebellum vermis lobule VII [SYNONYM: "folium" (related)] [part_of: "posterior cerebellum vermis"] [subclass: "cerebellum vermis lobule"]
 xref: FMA:83889 ! folium of vermis of cerebellum [SYNONYM: "neuraxis folium" (exact)] [regional_part_of: "vermis of posterior lobe of cerebellum"] [subclass: "segment of cerebellum"]
 synonym: "lobule VII of cerebellum vermis" EXACT []
 synonym: "folium" BROAD [MA:0001004]
+synonym: "folium lobule" NARROW [MP:0009995]
 synonym: "neuraxis folium" EXACT [FMA:83889]
 synonym: "folium of cerebellum" EXACT []
 synonym: "folium of vermis of cerebellum" EXACT []
@@ -57590,6 +57637,34 @@ xref: HOG:0000670 ! outflow tract
 xref: EHDAA:464 ! outflow tract
 xref: EHDAA:798 ! outflow tract
 xref: EHDAA2:0001351 ! outflow tract
+
+[Term]
+id: UBERON:0005337
+name: outflow part of ventricle
+synonym: "outflow tract of ventricle" EXACT []
+synonym: "ventricular outflow tract" EXACT []
+synonym: "heart ventricle outflow tract" EXACT [MP:0010224]
+xref: FMA:13225 ! Outflow part of ventricle
+is_a: UBERON:0004145 ! outflow tract
+relationship: part_of UBERON:0004151 ! cardiac chamber
+
+Term]
+id: UBERON:0005338
+name: outflow tract aortic component
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0004145 ! outflow tract
+xref: MA:0000101 ! outflow tract aortic component
+xref: HOG:0001394 ! outflow tract aortic component
+xref: EHDAA2:0001353 ! outflow tract aortic component 
+
+[Term]
+id: UBERON:0005339
+name: outflow tract pulmonary component
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0004145 ! outflow tract
+xref: MA:0000102 ! outflow tract pulmonary component
+xref: EHDAA2:0001359 ! outflow tract pulmonary component
+xref: HOG:0001395 ! outflow tract pulmonary component 
 
 [Term]
 id: UBERON:0004146
@@ -60720,7 +60795,7 @@ synonym: "proximal phalanx of foot digit 5" EXACT [OBOL:automatic]
 def: "A proximal phalanx that is part of a foot digit 5 [Obol]." [OBOL:automatic]
 
 [Term]
-id: UBERON:0004340
+id: UBERON:0004340 ! allantois
 name: allantois
 def: "Allantois (plural allantoides or allantoises) is a part of a developing animal conceptus (which consists of all embryonic and extra-embryonic tissues). It helps the embryo exchange gases and handle liquid waste. The allantois, along with the amnion and chorion (other embryonic membranes), identify humans as amniotes, along with reptiles, dinosaurs, birds, and other mammals. Of the vertebrates, only Ichthyopsidas lack this structure. [WP,unvetted]." [MP:0001726, Wikipedia:Allantois]
 is_a: UBERON:0000478 ! extraembryonic structure
@@ -68776,6 +68851,134 @@ name: mesonephric S-shaped body
 def: "The mesonephric S-shaped body is the successor of the mesonephric comma-shaped body that contributes to the morphogenesis of a nephron in the mesonephros[GO]." [GO:0061244]
 intersection_of: UBERON:0004199 ! S-shaped body
 intersection_of: part_of UBERON:0000080 ! mesonephros
+
+
+[Term]
+id: UBERON:0005340
+name: dorsal telencephalic commissure
+def: "the fiber tracts that connect the dorsal region of the two cerebral hemispheres and span the longitudinal fissure, including the corpus callosum and hippocampal commissure[MP]." [MP:0008219]
+is_a: UBERON:0001020 ! commissure
+
+[Term]
+id: UBERON:0005341
+name: ventral commissure
+def: "the fiber tracts that connect the ventral region of the two cerebral hemispheres and span the longitudinal fissure, including the anterior and the habenular commissures[MP]." [MP:0008220]
+is_a: UBERON:0001020 ! commissure
+
+[Term]
+id: UBERON:0005342
+name: malleus head
+def: "rounded portion of the malleus that articulates with the body of the incus[MP]." [MP:0008379]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001689 ! malleus
+xref: FMA:52761 ! head of malleus
+
+[Term]
+id: UBERON:0005343
+name: cortical plate
+def: "the outer neural tube region in which post-mitotic neuroblasts migrate along radial glia to form the adult cortical layers[MP]." [MP:0008439]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0005344
+name: peritoneal vaginal process
+def: "The processus vaginalis (or vaginal process) is an embryonic developmental outpouching of the peritoneum. It is present from around the 12th week of gestation, and commences as a peritoneal outpouching[WP]. peritoneal diverticulum in the embryonic lower anterior abdominal wall that traverses the inguinal canal[MP]." [MP:0009218, Wikipedia:Processus_vaginalis]
+comment: TODO check
+synonym: "processus vaginalis peritonei" RELATED PLURAL [MP:0009218]
+synonym: "processus vaginalis peritoneus" EXACT [MP:0009218]
+synonym: "saccus vaginalis" EXACT [Wikipedia:Processus_vaginalis]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0002358 ! peritoneum
+
+[Term]
+id: UBERON:0005345
+name: cerebellum vermis lobule VIIa
+def: ".[MP]." [MP:0009998]
+is_a: UBERON:0004070 ! cerebellum vermis lobule
+relationship: part_of UBERON:0004081 ! cerebellum vermis lobule VII
+
+[Term]
+id: UBERON:0005346
+name: cerebellum vermis lobule VIIb
+def: ".[MP]." [MP:0009999]
+is_a: UBERON:0004070 ! cerebellum vermis lobule
+relationship: part_of UBERON:0004081 ! cerebellum vermis lobule VII
+
+[Term]
+id: UBERON:0005347
+name: copula pyramidis
+def: ".[MP]." [MP:0010000]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0004003 ! cerebellum hemisphere lobule
+
+[Term]
+id: UBERON:0005348
+name: ansiform lobule
+def: ".[MP]." [MP:0010001]
+is_a: UBERON:0004003 ! cerebellum hemisphere lobule
+xref: FMA:72257 ! ansiform lobule of cerebellum
+
+[Term]
+id: UBERON:0005349
+name: paramedian lobule
+def: ".[MP]." [MP:0010004]
+is_a: UBERON:0004003 ! cerebellum hemisphere lobule
+xref: FMA:72523 ! gracile lobule
+synonym: "gracile lobule" EXACT [FMA:72523]
+synonym: "paramedian lobule [H VII B]" EXACT pFMA:72523]
+
+[Term]
+id: UBERON:0005350
+name: lobule simplex
+def: ".[MP]." [MP:0010005]
+is_a: UBERON:0004003 ! cerebellum hemisphere lobule
+xref: FMA:72522 ! simple lobule of cerebellum
+synonym: "simple lobule of cerebellum" EXACT [FMA:72522]
+synonym: "simple lobule" EXACT [MP:0010005]
+
+[Term]
+id: UBERON:0005351
+name: paraflocculus
+def: ".[MP]." [MP:0010007]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
+xref: FMA:83885 ! paraflocculus of cerebellum 
+synonym: "paraflocculus of cerebellum " EXACT [FMA:83885]
+
+[Term]
+id: UBERON:0005352
+name: spermatic cord
+def: "the cord-like structure in males comprising the vas deferens and associated tissue that runs from the abdomen down to each testis[MP]. cord-like structure in males formed by the vas deferens and surrounding tissue that run from the abdomen down to each testicle[WP]." [MP:0010145, Wikipedia:Spermatic_cord]
+synonym: "funiculus spermaticus" []
+synonym: "spermatic chord" []
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0004054 ! internal male genitalia
+xref: FMA:19937 ! spermatic cord
+xref: GAID:395
+
+[Term]
+id: UBERON:0005353
+name: spleen perifollicular zone
+def: "the compartment located between the marginal zone and the red pulp harboring scattered B and T lymphocytes[MP]." [MP:0010245]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002106 ! spleen
+
+[Term]
+id: UBERON:0005354
+name: malleus processus brevis
+def: "the projection extending from the base of the manubrium of the malleus which contacts the upper part of the tympanic membrane where the tympanic cavity makes a deep pocket (epitympanic pocket) surrounding the cartilaginous nodule[MP]." [MP:0010324]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001689 ! malleus
+
+[Term]
+id: UBERON:0005355
+name: malleus neck
+def: "the narrow contracted section of the malleus located between the head and the manubrium[MP]." [MP:0010327,  Wikipedia:Neck_of_malleus]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001689 ! malleus
+xref: FMA:52762 ! neck of malleus
+
 
 [Typedef]
 id: adjacent_to
