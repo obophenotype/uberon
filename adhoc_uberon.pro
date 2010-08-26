@@ -216,6 +216,11 @@ dbpedia_canonical(InURL,CanonicalURL) :-
 dbpedia_canonical(InURL,InURL) :-
 	\+ \+ rdf(InURL,'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',_).
 
+uberon_thumbnail(C,Img) :-
+        class_page_canonical(C,_,X),
+        rdf(X,'http://dbpedia.org/ontology/thumbnail',Img).
+
+        
 
 idspace_map('TAO',_) :- fail,!.
 idspace_map('MIAA',_) :- fail,!.

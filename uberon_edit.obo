@@ -142,10 +142,10 @@ name: pituitary gland
 def: "The pituitary gland is an endocrine gland that secretes hormones that regulate many other glands [GO]. An endocrine gland located ventral to the diencephalon and derived from mixed neuroectodermal and non neuroectodermal origin [ZFIN]." [Wikipedia:Pituitary_gland, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "hypophysis" RELATED []
-synonym: "hypophysis cerebri" RELATED []
-synonym: "pituitary" EXACT []
-synonym: "pituitary body" EXACT []
+synonym: "hypophysis" RELATED [ZFA:0000118]
+synonym: "hypophysis cerebri" RELATED [MA:0000176]
+synonym: "pituitary" EXACT [BTO:0001073]
+synonym: "pituitary body" EXACT [BTO:0001073]
 xref: EFO:0000857 ! pituitary
 xref: EHDAA:2183 ! pituitary
 xref: EHDAA:4477 ! pituitary
@@ -30051,7 +30051,6 @@ id: UBERON:0002198
 name: neurohypophysis
 alt_id: UBERON:FMA_74636-ZFA_0001271
 def: "comprises the posterior lobe of the pituitary gland and is part of the endocrine system[WP]. part of the pituitary gland that secretes hormones involved in blood pressure regulation[GO]." [Wikipedia:Neurohypophysis]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "neurohypophysis" EXACT []
 synonym: "pituitary gland, posterior lobe" EXACT []
@@ -30065,6 +30064,7 @@ xref: TAO:0001271 ! neurohypophysis
 xref: ZFA:0001271 ! neurohypophysis
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0000007 ! pituitary gland
+relationship: capable_of GO:0008217 ! regulation of blood pressure
 xref: MA:0000178 ! neurohypophysis
 xref: FMA:74628 ! Neurohypophysis
 xref: EHDAA2:0001271 ! neurohypophysis
@@ -34500,7 +34500,7 @@ xref: EHDAA2:0001419 ! pars tuberalis
 id: UBERON:0002434
 name: pituitary stalk
 alt_id: UBERON:MA_0000858-ZFA_0001199
-def: "a funnel-shape cavity or organ." [Wikipedia:Infundibulum]
+def: "The pituitary stalk (also known as the infundibular stalk or simply the infundibulum) is the connection between the hypothalamus and the posterior pituitary. It carries axons from the magnocellular neurosecretory cells of the hypothalamus down to the posterior pituitary where they release their hormones into the blood. This connection is called the hypothalamohypophyseal tract, and is responsible for the release of oxytocin and antidiuretic hormone[WP]." [Wikipedia:Pituitary_stalk]
 subset: uberon_slim
 synonym: "hypophysial stalk" RELATED [ZFA:0001199]
 synonym: "infundibulum" RELATED [ZFA:0001199]

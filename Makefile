@@ -655,6 +655,8 @@ dbpedia_rest.pro: dbpedia_all_AnatomicalStructure.pro
 dbpedia_ontol.obo: dbpedia_all.pro
 	blip -i $< -u ontol_bridge_from_dbpedia io-convert -to obo > $@
 
+uberon-thumbnail-xrefs.obo: dbpedia_all.pro
+	blip-findall -r uberonp -i dbpedia_all.pro -i adhoc_uberon.pro uberon_thumbnail/2 -label | cut -f2,3 | tbl2obolinks.pl --rel xref > $@
 
 # then do obo-add-defs.pl defs.txt uberon_edit.obo
 defs.txt:
@@ -705,3 +707,4 @@ uberon_class_taxon_min.txt:
 
 %-count.txt: %.txt
 	count-occ-group.pl 3 $< > $@
+
