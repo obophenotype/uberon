@@ -511,7 +511,7 @@ uberon-xp-xref-xao.obo:
 #
 
 uberon-new-mp.obo:
-	blip -u query_anatomy -i uberon_edit.obo -r cell -r emap -r emapa -r mammalian_phenotype -r mammalian_phenotype_xp -r fma_downcase -r nif_downcase -r zebrafish_anatomy -r emapa -r mammalian_phenotype_xp_nif -r mouse_anatomy findall uberon_mpxp_write > $@
+	blip -u query_anatomy -i uberon_edit.obo -r cell -r emap -r emapa -r mammalian_phenotype -r mammalian_phenotype_xp -r mammalian_phenotype_xp_uberon -r fma_downcase -r nif_downcase -r zebrafish_anatomy -r emapa -r mammalian_phenotype_xp_nif -r mouse_anatomy findall uberon_mpxp_write > $@
 
 uberon-new-hp.obo:
 	blip -u query_anatomy -i uberon_edit.obo -r cell -r human_phenotype -r human_phenotype_xp -r nif_downcase -r zebrafish_anatomy -r mouse_anatomy -r emapa -goal "uberon_mpxp_write,halt" > $@

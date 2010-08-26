@@ -9,6 +9,8 @@
 :- use_module(bio(mode)).
 :- use_module(bio(dbmeta)).
 :- use_module(bio(graph)).
+:- use_module(bio(simmatrix)).
+:- use_module(bio(metadata_mappings)).
 :- use_module(library(porter_stem),[]).
 
 idspace_taxon('FMA','NCBITaxon:9606').
@@ -408,3 +410,124 @@ hog_xref(U,X,Y) :-
         \+entity_xref(U,Y),
         \+entity_xref(_,Y).
 
+% ----
+
+path_dist(ID,PID,Dist) :-
+	class(ID),
+	debug(path_dist,'path_dist(~w)',[ID]),
+	ids_ancestor_dists([0-ID],[],[],L),
+	member(Dist-PID,L).
+
+ids_ancestor_dists([Dist-ID|DIDs],DoneIDs,DistAncPairs,DistAncPairsFinal) :-
+        Dist2 is Dist+1,
+        % ord_memberchk/1?
+	setof(Dist2-XID,(parent(ID,XID),\+member(XID,DoneIDs)),Parents),
+	!,
+	ord_union(DistAncPairs,Parents,DistAncPairsNew),
+        ord_union(DIDs,Parents,NewDIDs),
+	ids_ancestor_dists(NewDIDs,[ID|DoneIDs],DistAncPairsNew,DistAncPairsFinal).
+ids_ancestor_dists([Dist-ID|DIDs],DoneIDs,DistAncPairs,DistAncPairsFinal) :-
+	!,
+	ids_ancestor_dists(DIDs,[Dist-ID|DoneIDs],DistAncPairs,DistAncPairsFinal).
+ids_ancestor_dists([],_,DistAncPairs,DistAncPairs).
+
+% ----------------------------------------
+% semantic similarity of mapping
+% ----------------------------------------
+
+% simJ using uberon.
+% only include classes that...
+
+:- dynamic user:simindex_prepared/0.
+
+simindex_prepare :-
+        user:simindex_prepared,
+        !.
+
+simindex_prepare :-
+        !,
+        assert(user:simindex_prepared),
+        debug(sim,'preparing UBERON index',[]),
+        table_pred(ontol_db:bf_parentRT/2),
+        table_pred(path_dist/2),
+        %generate_term_indexes(C,P,(member(C,Cs),bf_parentRT(C,P),id_idspace(P,'UBERON'))),
+        generate_term_indexes(C,P,class_uberon_anc(C,P)),
+        debug(sim,'DONE preparing UBERON index',[]).
+
+class_uberon_anc_dist(C,Dist) :-
+        class_uberon_anc_dist(C,_,Dist).
+
+class_uberon_anc_dist(C,P,Dist) :-
+        path_dist(C,P,Dist),
+        id_idspace(P,'UBERON').
+
+class_uberon_anc(C,P) :-
+        class(C),
+        \+ id_idspace(C,'UBERON'),
+        entity_label(C,_),
+        aggregate(min(Dist),class_uberon_anc_dist(C,Dist),MinDist),
+        class_uberon_anc_dist(C,P1,MinDist),
+        bf_parentRT(P1,P),
+        id_idspace(P,'UBERON').
+
+
+/*
+simindex_prepare :-
+        !,
+        assert(user:simindex_prepared),
+        debug(sim,'preparing UBERON index',[]),
+        table_pred(ontol_db:bf_parentRT/2),
+        table_pred(path_dist/3).
+        %materialize_index(path_dist(1,1,0)).
+  */
+
+/*
+class_pair_lcp_dist(A,B,Dist) :-
+        class_pair_lcp_dist(A,B,_,Dist).
+class_pair_lcp_dist(A,B,C,Dist) :-
+        path_dist(A,C,DA),
+        path_dist(B,C,DB),
+        Dist is (DA+DB)-2.
+*/
+
+uberon_class_pair_simj(A,B,S) :-
+        simindex_prepare,
+        feature_pair_simj(A,B,S).
+
+/*
+uberon_class_pair_simj(A,B,C,S) :-
+        simindex_prepare,
+        aggregate(min(Dist),class_pair_lcp_dist(A,B,Dist),S),
+        class_pair_lcp_dist(A,B,C,S),
+        debug(sim,'  dist(~w,~w) = ~w :: ~w',[A,B,C,S]).
+*/
+        
+/*
+uberon_class_pair_simj(A,B,S) :-
+        simindex_prepare,
+        setof(AP,bf_parentRT(A,AP),APs),
+        setof(BP,bf_parentRT(B,BP),BPs),
+        ord_intersection(APs,BPs,CPs),
+        debug(sim,'  lca(~w,~w) = ~w',[A,B,CPs]),
+        %debug(sim,'  lca(~w,~w) = ~w ::: ~w // ~w',[A,B,CPs,APs,BPs]),
+        aggregate(min(Dist),class_pair_lcp_dist(A,B,APs,BPs,CPs,Dist),S),
+        debug(sim,'  dist(~w,~w) = ~w',[A,B,S]).
+*/
+        
+
+mapping_semsim(M,S,T,Sim) :-
+	rdf_has(M,'http://protege.stanford.edu/mappings#source',Sx),
+	bpuri_id(Sx,S),
+	rdf_has(M,'http://protege.stanford.edu/mappings#target',Tx),
+	bpuri_id(Tx,T),
+        (   uberon_class_pair_simj(S,T,Sim)
+        ->  true
+        ;   Sim=0).
+
+
+bpuri_id(X,ID) :-
+	concat_atom(L,'/',X),
+	reverse(L,[IDx|_]),
+	mapid(IDx,ID).
+mapid(ID,ID) :- concat_atom([_,_],':',ID),!.
+mapid(N,ID) :- concat_atom(Toks,'_',N),concat_atom(Toks,' ',N2),entity_label(ID,N2),!.

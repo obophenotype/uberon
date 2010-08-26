@@ -3461,7 +3461,6 @@ xref: MA:0000891 ! striatum
 is_a: UBERON:0002020 ! gray matter of neuraxis
 relationship: part_of UBERON:0002420 ! basal ganglia
 xref: EFO:0000109 ! obsolete_CNS brain striatum MMHCC
-xref: NIF_GrossAnatomy:nlx_anat_100312 ! Caudoputamen
 xref: NIF_GrossAnatomy:birnlex_1672 ! Striatum
 
 [Term]
@@ -3491,11 +3490,36 @@ is_obsolete: true
 xref: GAID:669 ! neostriatum
 
 [Term]
+id: UBERON:0005382
+name: dorsal striatum
+def: "Those portions of the caudate nucleus and especially the putamen located generally superior to a plane representing the anterior commissure; also called the dorsal basal ganglia; may function in motor activities with cognitive origins." [BTO:0004701]
+comment: CHECK - neostriatum vs striatum. Check rodent
+is_a: UBERON:0002020 ! gray matter of neuraxis
+relationship: part_of UBERON:0002435 ! striatum
+xref: MA:0002971 ! dorsal striatum
+xref: BTO:0004701 ! dorsal striatum
+xref: FMA:77620 ! dorsal striatum
+synonym: "caudoputamen" RELATED [NIF_GrossAnatomy:nlx_anat_100312]
+
+[Term]
+id: UBERON:0005383
+name: caudate-putamen
+def: "Regional part of telencephalon in some species, e.g., rodent, equivalent to the dorsal striatum (caudate nucleus and putamen). Unlike the dorsal striatum of primates, for example, the caudoputamen is not split into separate nuclei by the fibers of the internal capsule. Rather, the internal capsule splits into fiber bundles which course through the structure." [NIF_GrossAnatomy:nlx_anat_100312]
+comment: CHECK - rodents
+synonym: "caudate putamen" EXACT []
+synonym: "caudoputamen" RELATED []
+relationship: part_of UBERON:0005382 ! dorsal striatum
+xref: MA:0000893 ! caudate-putamen
+xref: NIF_GrossAnatomy:nlx_anat_100312 ! caudoputamen
+xref: BTO:0000212 ! caudate putamen
+xref: EMAPA:19095 ! caudate-putamen
+
+[Term]
 id: UBERON:0001873
 name: caudate nucleus
 alt_id: UBERON:FMA_61833-MA_0000894
 def: "Nucleus of brain which is an elongated crescent-shaped mass lying parallel and adjacent to the lateral ventricle throughout its extent." [Wikipedia:Caudate_nucleus]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO check rodents
 subset: uberon_slim
 synonym: "caudatus" EXACT []
 xref: BTO:0000211
@@ -3516,7 +3540,7 @@ id: UBERON:0001874
 name: putamen
 alt_id: UBERON:FMA_61834-MA_0000895
 def: "Nucleus of brain which lies ventral to the caudate nucleus and internal capsule and medial to the external capsule. The putamen and caudate nucleus together form the dorsal striatum. It is also one of the structures that comprises the basal ganglia. Through various pathways, the putamen is connected to the substantia nigra and globus pallidus. The main function of the putamen is to regulate movements and influence various types of learning. It employs dopamine to perform its functions. The putamen also plays a role in degenerative neurological disorders, such as Parkinson's disease." [Wikipedia:Putamen]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO check rodents
 subset: uberon_slim
 synonym: "nucleus putamen" EXACT []
 xref: FMA:61834 ! Putamen
@@ -3528,6 +3552,7 @@ is_a: UBERON:0002308 ! nucleus of brain
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 relationship: part_of UBERON:0002435 ! striatum
 xref: ncithesaurus:Putamen ! Putamen
+
 
 [Term]
 id: UBERON:0000371
@@ -7868,25 +7893,6 @@ xref: FMA:12235 ! Nerve fasciculus
 xref: NIF_GrossAnatomy:birnlex_872 ! Fasciculus
 is_a: UBERON:0000122 ! nerve fiber bundle
 xref: ncithesaurus:Fascicle ! Fascicle
-
-[Term]
-id: UBERON:0001020
-name: commissure
-alt_id: UBERON:FBbt_00005103-FMA_76741
-def: "White matter fiber bundle that crosses the midline of the brain or spinal cord[NIF]. The transverse connection between two longitudinal parts, e.g. nerves, tracheae. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, ISBN:3110148986, Wikipedia:Commissure]
-comment: *not* the same as FMA:76741 Commissure
-synonym: "intercerebral commissure" EXACT [MA:0002721]
-synonym: "brain commissure" NARROW []
-subset: uberon_slim
-xref: FBbt:00005103 ! commissure
-xref: FMA:83906 ! Commissure of neuraxis
-xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
-is_a: UBERON:0001018 ! axon tract
-xref: ncithesaurus:Commissure ! Commissure
-xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw ! commissure
-xref: NIF_GrossAnatomy:nlx_anat_20090513 ! Commissure
-xref: TADS:0000201 ! adult synganglion commissure
-xref: MA:0002721 ! intercerebral commissure
 
 [Term]
 id: UBERON:0001021
@@ -31781,16 +31787,6 @@ xref: NIF_GrossAnatomy:birnlex_1211 ! Hippocampal molecular layer
 synonym: "hippocampal molecular layer" EXACT [NIF_GrossAnatomy:birnlex_1211]
 
 [Term]
-id: UBERON:0005369
-name: hippocampus pyramidal layer
-synonym: "hippocampus stratum pyramidale" RELATED []
-is_a: UBERON:0002305 ! layer of hippocampus
-xref: MA:0000956 ! hippocampus pyramidal layer
-xref: FMA:83895 ! Pyramidal layer of hippocampus
-xref: NIF_GrossAnatomy:birnlex_1444 ! Stratum pyramidale hippocampi
-synonym: "stratum pyramidale hippocampi" EXACT [NIF_GrossAnatomy:birnlex_1444]
-
-[Term]
 id: UBERON:0005370
 name: hippocampus stratum lacunosum
 is_a: UBERON:0002305 ! layer of hippocampus
@@ -31906,7 +31902,6 @@ xref: NIF_GrossAnatomy:birnlex_1502 ! Fimbria of hippocampus
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001954 ! hippocampus
 
-
 [Term]
 id: UBERON:0002312
 name: pyramis of vermis of cerebellum
@@ -31922,11 +31917,13 @@ relationship: part_of UBERON:0002037 ! cerebellum
 
 [Term]
 id: UBERON:0002313
+alt_id: UBERON:0005369
 name: pyramidal layer of hippocampus
 alt_id: UBERON:FMA_83895-MA_0000956
 comment: This class was created automatically from a combination of ontologies
 synonym: "hippocampus pyramidal layer" EXACT []
 synonym: "hippocampus stratum pyramidale" RELATED []
+synonym: "stratum pyramidale hippocampi" EXACT [NIF_GrossAnatomy:birnlex_1444]
 xref: FMA:83895 ! Pyramidal layer of hippocampus
 xref: MA:0000956 ! hippocampus pyramidal layer
 is_a: UBERON:0002305 ! layer of hippocampus
@@ -35086,10 +35083,28 @@ is_a: UBERON:0002529 ! limb segment
 xref: FMA:83015 ! Distal free limb segment
 
 [Term]
+id: UBERON:0001020
+name: commissure
+alt_id: UBERON:FBbt_00005103-FMA_76741
+def: "White matter fiber bundle that crosses the midline of the brain or spinal cord[NIF]. The transverse connection between two longitudinal parts, e.g. nerves, tracheae. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, ISBN:3110148986, Wikipedia:Commissure]
+comment: *not* the same as FMA:76741 Commissure
+subset: uberon_slim
+xref: FBbt:00005103 ! commissure
+xref: FMA:83906 ! Commissure of neuraxis
+xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
+is_a: UBERON:0001018 ! axon tract
+xref: ncithesaurus:Commissure ! Commissure
+xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw ! commissure
+xref: NIF_GrossAnatomy:nlx_anat_20090513 ! Commissure
+xref: TADS:0000201 ! adult synganglion commissure
+
+[Term]
 id: UBERON:0002473
 name: intercerebral commissure
 alt_id: UBERON:MA_0002721-FMA_67930
+def: "Class of unpaired telencephalic white matter structures consisting of fiber pathways which  project across the midsagittal plane and which serve to interconnect telencephalic structures lying within the contralateral cerebral hemisphere[FMA]." [FMA:67930]
 synonym: "interhemispheric commissure" RELATED [MA:0002721]
+synonym: "brain commissure" NARROW []
 xref: FMA:67930 ! Intercerebral commissure
 xref: MA:0002721 ! intercerebral commissure
 is_a: UBERON:0001020 ! commissure

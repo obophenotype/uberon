@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 20:08:2010 19:13
+date: 25:08:2010 18:26
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: uberon_slim "Uberon slim"
@@ -570,7 +570,6 @@ relationship: part_of UBERON:0000344 ! mucosa
 [Term]
 id: UBERON:0000031
 name: lamina propria of trachea
-def: "A lamina propria that is part of a respiratory airway [Obol]." [OBOL:automatic]
 synonym: "lamina propria mucosa of trachea" EXACT [OBOL:automatic]
 synonym: "lamina propria mucosa of windpipe" EXACT [OBOL:automatic]
 synonym: "lamina propria mucosae of trachea" EXACT [OBOL:automatic]
@@ -905,7 +904,7 @@ relationship: part_of UBERON:0000966 ! retina
 [Term]
 id: UBERON:0000054
 name: macula
-def: "Patches of thickened, pseudostratified epithelium of the inner ear, consisting of regular arrays of sensory hair cells interspersed with supporting cells. Each patch has its own charcteristic shape and polarity pattern." [Wikipedia:Macula, ZFIN:curator]
+def: "Patches of thickened, pseudostratified epithelium of the inner ear, consisting of regular arrays of sensory hair cells interspersed with supporting cells. Each patch has its own charcteristic shape and polarity pattern." [:Macula_of_saccule, ZFIN:curator]
 subset: uberon_slim
 synonym: "macula" EXACT []
 synonym: "maculae" EXACT PLURAL []
@@ -1779,13 +1778,16 @@ relationship: surrounds UBERON:0001019 ! fascicle
 
 [Term]
 id: UBERON:0000122
-name: nerve fiber bundle
-def: "multi-cell component structure consisting of a cluster of nerve fibers." [UBERON:cjm]
+name: neuron projection bundle
+alt_id: UBERON:0005163
+def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." [FBbt:00005099, FBC:DOS]
 comment: TODO - check FMA is general anatomical term
+synonym: " nerve fiber bundle" EXACT [FBbt:00005099]
 synonym: "funiculus" EXACT []
+xref: CARO:0001001
 xref: FBbt:00005099
 xref: FMA:76738
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0005162 ! multi-cell-component structure
 relationship: has_part UBERON:0001021 ! nerve
 
 [Term]
@@ -2058,7 +2060,7 @@ relationship: part_of UBERON:0000163 ! embryonic cloaca
 id: UBERON:0000165
 name: mouth
 def: "First portion of the alimentary canal that receives food and begins digestion by mechanically breaking up the solid food particles into smaller pieces and mixing them with saliva. The oral mucosa is the mucous membrane epithelium lining the inside of the mouth." [Wikipedia:Mouth]
-comment: TODO - check fly mouthpart
+comment: TODO - check fly mouthpart. note in uberon we distinguish between the mouth and the oral opening. the mouth is part of the digestive tract. TODO - check isa parent subdivision of head - is it a subdivision of the head or digestive tract
 subset: uberon_slim
 synonym: "adult mouth" EXACT []
 xref: BTO:0001090
@@ -2277,6 +2279,7 @@ is_a: UBERON:0000064 ! organ part
 id: UBERON:0000201
 name: endothelial blood brain barrier
 def: "A blood brain barrier that is composed of endothelial cells." [UBERON:cjm]
+xref: NIF_Subcellular:nlx_subcell_100205
 is_a: UBERON:0000120 ! blood brain barrier
 intersection_of: UBERON:0000120 ! blood brain barrier
 intersection_of: has_part CL:0000115
@@ -2345,6 +2348,7 @@ def: "A chitinous extracellular secretion of the four underlying cone cells and 
 synonym: "compound eye corneal lens" EXACT [GO:0048058]
 synonym: "invertebrate lens" RELATED []
 xref: FBbt:00004199
+xref: TADS:0000304
 is_a: UBERON:0000476 ! acellular anatomical structure
 is_a: UBERON:0000965 ! lens
 created_by: cjm
@@ -2907,9 +2911,11 @@ synonym: "Ophthalmic division of trigeminal nerve (V1)" EXACT [FMA:52621]
 synonym: "Ophthalmic division of trigeminal nerve (Va)" EXACT [FMA:52621]
 synonym: "Ophthalmic nerve [V1]" EXACT [FMA:52621]
 synonym: "Ophthalmic nerve [Va]" EXACT [FMA:52621]
+synonym: "trigeminal V nerve ophthalmic division" EXACT [MA:0001104]
 xref: BTO:0000926
 xref: FMA:52621
 xref: GAID:837
+xref: MA:0001104
 xref: ncithesaurus:Ophthalmic_Nerve
 xref: OpenCyc:Mx4rwEs_K5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
@@ -3194,9 +3200,11 @@ synonym: "Mandibular nerve [Vc]" EXACT [FMA:52996]
 synonym: "Nervus mandibularis [Vc; V3]" EXACT [FMA:52996]
 synonym: "Third division of fifth cranial nerve" EXACT [FMA:52996]
 synonym: "Third division of trigeminal nerve" EXACT [FMA:52996]
+synonym: "trigeminal V nerve mandibular division" EXACT [MA:0001101]
 xref: BTO:0001375
 xref: FMA:52996
 xref: GAID:834
+xref: MA:0001101
 xref: ncithesaurus:Inferior_Maxillary_Nerve
 xref: OpenCyc:Mx4rvcQKSpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
@@ -3253,9 +3261,11 @@ synonym: "Maxillary nerve [Vb]" EXACT [FMA:52724]
 synonym: "Nervus maxillaris (Vb; V2)" EXACT [FMA:52724]
 synonym: "Second division of fifth cranial nerve" EXACT [FMA:52724]
 synonym: "Second division of trigeminal nerve" EXACT [FMA:52724]
+synonym: "trigeminal V nerve maxillary division" EXACT [MA:0001103]
 xref: BTO:0001378
 xref: FMA:52724
 xref: GAID:836
+xref: MA:0001103
 xref: OpenCyc:Mx4rvWNU9JwpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
 is_a: UBERON:0001021 ! nerve
@@ -3278,7 +3288,6 @@ relationship: part_of UBERON:0001723 ! tongue
 id: UBERON:0000379
 name: tracheal mucosa
 alt_id: UBERON:BTO_0001390-FMA_7471
-def: "A mucosa that is part of a respiratory airway [Obol]." [OBOL:automatic]
 synonym: "mucosa of organ of trachea" EXACT [OBOL:automatic]
 synonym: "mucosa of organ of windpipe" EXACT [OBOL:automatic]
 synonym: "mucosa of trachea" EXACT [OBOL:automatic]
@@ -3366,13 +3375,13 @@ is_a: UBERON:0001015 ! musculature
 id: UBERON:0000385
 name: labial gland
 alt_id: UBERON:BTO_0001548-FMA_71613
-comment: unvetted
+comment: the label 'labial gland' refers to two distinct classes. From the BTO def: 1. One of the small tubular mucous and serous glands lying beneath the mucous membrane of the lips.n2. A salivary gland, or modification thereof, opening at the base of the labium in certain insects.
 synonym: "Labial glands" EXACT [FMA:71613]
 synonym: "Labial glands set" EXACT [FMA:71613]
 xref: BTO:0001548
 xref: FMA:71613
 xref: HAO:0000449
-is_a: UBERON:0002530 ! gland
+is_obsolete: true
 
 [Term]
 id: UBERON:0000387
@@ -3794,6 +3803,7 @@ xref: BTO:0002469
 xref: FMA:84347
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0000431
@@ -3822,6 +3832,7 @@ xref: BTO:0002477
 xref: FMA:76961
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0000434
@@ -3831,6 +3842,7 @@ xref: BTO:0002478
 xref: FMA:76962
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0000435
@@ -3927,9 +3939,15 @@ is_a: UBERON:0001744 ! lymphoid tissue
 id: UBERON:0000445
 name: habenular trigone
 alt_id: UBERON:BTO_0002700-FMA_74868
+def: "The habenular trigone is a small depressed triangular area situated in front of the superior colliculus and on the lateral aspect of the posterior part of the taenia thalami. It contains a group of nerve cells termed the ganglion habenulC&. Fibers enter it from the stalk of the pineal body, and others, forming what is termed the habenular commissure, pass across the middle line to the corresponding ganglion of the opposite side. Most of its fibers are, however, directed downward and form a bundle, the fasciculus retroflexus of Meynert, which passes medial to the red nucleus, and, after decussating with the corresponding fasciculus of the opposite side, ends in the interpeduncular ganglion." [Wikipedia:Habenular_trigone]
+comment: superclass in BTO is thalamic nucleus, not present in most ontologies
+synonym: "trigone of habenulae" RELATED [BTO:0002700]
 xref: BTO:0002700
 xref: FMA:74868
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0002757 ! implied link automatically realized ! regional part of epithalamus
+relationship: part_of UBERON:0001894 ! diencephalon
+relationship: part_of UBERON:0001904 ! habenula
 
 [Term]
 id: UBERON:0000446
@@ -4274,7 +4292,6 @@ synonym: "gonada of male organism genitalia" EXACT [OBOL:automatic]
 synonym: "gonada of male organism reproductive system" EXACT [OBOL:automatic]
 synonym: "gonada of male reproductive system" EXACT [OBOL:automatic]
 synonym: "gonada of reproductive system of male organism" EXACT [OBOL:automatic]
-synonym: "male" RELATED []
 synonym: "male genitalia gonad" EXACT [OBOL:automatic]
 synonym: "male genitalia gonada" EXACT [OBOL:automatic]
 synonym: "male genitals gonad" EXACT [OBOL:automatic]
@@ -4287,6 +4304,7 @@ synonym: "male reproductive system gonad" EXACT [OBOL:automatic]
 synonym: "male reproductive system gonada" EXACT [OBOL:automatic]
 synonym: "reproductive system of male organism gonad" EXACT [OBOL:automatic]
 synonym: "reproductive system of male organism gonada" EXACT [OBOL:automatic]
+synonym: "testes" RELATED PLURAL []
 xref: AAO:0000606
 xref: BILA:0000124
 xref: BTO:0001363
@@ -4502,7 +4520,7 @@ id: UBERON:0000482
 name: basal lamina
 alt_id: UBERON:CARO_0000065-FMA_62918-ZFA_0001485
 def: "Acellular anatomical structure that consists of a thin sheet of fibrous proteins that underlie and support the cells of an epithelium. It separates the cells of an epithelium from any underlying tissue. // Acellular anatomical structure that consists of a thin sheet of fibrous proteins that underlie and support the cells of an epithelium. It separates the cells of an epithelium from any underlying tissue." [CARO:MAH, Wikipedia:Basal_lamina, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - use GO.
 subset: uberon_slim
 synonym: "basal lamina of connective tissue" EXACT []
 xref: AEO:0000065
@@ -5344,7 +5362,7 @@ synonym: "CN-II" RELATED []
 synonym: "optic" RELATED []
 synonym: "optic II nerve" EXACT []
 synonym: "optic nerve" BROAD SENSU [FMA:50863]
-synonym: "Optic nerve [II]" EXACT []
+synonym: "optic nerve [II]" EXACT []
 synonym: "second cranial nerve" EXACT []
 xref: EHDAA:6788
 xref: EHDAA2:0001314
@@ -5401,7 +5419,7 @@ id: UBERON:0000945
 name: stomach
 alt_id: UBERON:FBbt_00003138-FMA_7148-MA_0000353-MIAA_0000051-XAO_0000128
 def: "Internal organ that is the dilated portion of the alimentary tract situated between the esophagus and the beginning of the duodenum. It produces gastric juices involved in the breakdown of food[XAO]. Organ with organ cavity which is continuous proximally with the esophagus and distally with the small intestine. Examples: There is only one stomach[FMA]." [FB:FBrf0007735, OMD:stomach, Wikipedia:Stomach]
-comment: fly has adult midgut - TODO check. Zebrafish is functionally stomach-less, but may retain ontogenic footprint.
+comment: fly has adult midgut - TODO check. Zebrafish is functionally stomach-less, but may retain ontogenic footprint. TADS:0000172 adult stomach. add functionally defined class?
 subset: uberon_slim
 synonym: "anterior intestine" RELATED []
 synonym: "mesenteron" RELATED []
@@ -5616,8 +5634,8 @@ is_obsolete: true
 id: UBERON:0000955
 name: brain
 alt_id: UBERON:FBbt_00003624-FBbt_00005095-FMA_50801-MA_0000168-MIAA_0000098-MIAA_0000341-WBbt_0005440-XAO_0000010-ZFA_0000008
-def: "The supra-esophageal ganglion of the central nervous system, composed of three primitive ganglia known as protocerebrum, deutocerebrum and tritocerebrum. In the context of Drosophila refers to the preoral ganglionic mass of the central nervous system containing the ventral ganglia. // Organ component of neuraxis that has as its parts gray matter and white matter that surround the cerebral ventricular system; Examples: There is only one brain. // Organ that is a component of the central nervous system and is responsible for the coordination and control of bodily activities and the interpretation of information from the senses. It appears when the neural tube segregates in forebrain, midbrain, and hindbrain at NF stage 22. The general pattern of the brain has been mainly established at NF stage 28. Yolky material is consumed and the fibre tracts and later the commissures develop. In general all of its parts are well developed at NF stage 53 and later development consists mainly of growth and some further cytological differentiation. In the period of metamorphosis only topographical changes take place." [FB:gg, ISBN:0815318960, ISBN:3110148986, OMD:brain, Wikipedia:Brain]
-comment: This class was created automatically from a combination of ontologies
+def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals.[1] Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [Wikipedia:Brain]
+comment: include synganglion?
 subset: uberon_slim
 synonym: "brain" EXACT []
 synonym: "central nervous system" RELATED []
@@ -5927,6 +5945,7 @@ xref: MAT:0000140
 xref: MIAA:0000140
 xref: OpenCyc:Mx4rvViTvpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000020 ! sense organ
+relationship: capable_of GO:0009584
 relationship: part_of UBERON:0002104 ! visual system
 
 [Term]
@@ -6454,18 +6473,21 @@ relationship: part_of UBERON:0000474 ! female reproductive system
 id: UBERON:0000994
 name: spermathecum
 alt_id: UBERON:FBbt_00004921-MIAA_0000168-WBbt_0005319
-def: "an accordion-like tube that contains sperm and is the site of oocyte fertilization." [WA:dh]
+def: "an organ of the female reproductive tract in insects, some molluscs, oligochaeta worms and certain other invertebrates and vertebrates.[1] Its purpose is to receive and store sperm from the male, and can sometimes be the site of fertilization when the oocytes are ready.[2]  Some species have multiple spermathecae, as seen in earthworms, where four pairs of spermathecae are present. One pair in 6,7,8 and 9 segments. They receive and store the spermatozoa of another earthworm during copulation.[3] They are lined with epithelium  and are variable in shape; some are thin, heavily coiled tubes, others are vague outpocketings from the main reproductive tract. It is one of the many variations in sexual reproduction[WP]. an accordion-like tube that contains sperm and is the site of oocyte fertilization." [WA:dh, Wikipedia:Spermatheca]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "seminal receptacle" RELATED []
-synonym: "spermatheca" RELATED []
+synonym: "spermatheca" RELATED PLURAL []
+xref: BTO:0001273
 xref: EFO:0000977
 xref: FBbt:00004921
+xref: HAO:0000945
 xref: MAT:0000168
 xref: MIAA:0000168
 xref: WBbt:0005319
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0000474 ! female reproductive system
 relationship: part_of UBERON:0000991 ! gonad
 
 [Term]
@@ -6755,6 +6777,7 @@ name: spiracle
 alt_id: UBERON:FBbt_00005054-MIAA_0000208
 def: "The mostly slit-like opening on the body surface through which air is taken into the respiratory system." [ISBN:3110148986, Wikipedia:Spiracle]
 comment: This class was created automatically from a combination of ontologies. In elasmobranchs (sharks and rays), a spiracle is found behind each eye, and is often used to pump water through the gills while the animal is at rest (Fouts, 2003). A spiracle is also found in primitive bony fishes as the chirrups. TODO - check GO:0035277-spiracle morphogenesis, open tracheal system - taxon constraint in GO
+subset: grouping_class
 subset: uberon_slim
 synonym: "open tracheal system spiracle" NARROW [GO:0035277]
 synonym: "spiracle of open tracheal system" NARROW [GO:0035277]
@@ -6764,6 +6787,7 @@ xref: FBbt:00005054
 xref: HAO:0000950
 xref: MAT:0000208
 xref: MIAA:0000208
+xref: TGMA:0000578
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001004 ! respiratory system
 
@@ -7061,7 +7085,7 @@ synonym: "tract" EXACT []
 xref: FBbt:00005100
 xref: FMA:76739
 xref: OpenCyc:Mx4ryTtpIYuaEduDlwACs6hPlA
-is_a: UBERON:0000122 ! nerve fiber bundle
+is_a: UBERON:0000122 ! neuron projection bundle
 
 [Term]
 id: UBERON:0001019
@@ -7076,20 +7100,21 @@ xref: FBbt:00005101
 xref: FMA:12235
 xref: ncithesaurus:Fascicle
 xref: NIF_GrossAnatomy:birnlex_872
-is_a: UBERON:0000122 ! nerve fiber bundle
+is_a: UBERON:0000122 ! neuron projection bundle
 
 [Term]
 id: UBERON:0001020
 name: commissure
 alt_id: UBERON:FBbt_00005103-FMA_76741
-def: "The transverse connection between two longitudinal parts, e.g. nerves, tracheae. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, ISBN:3110148986, Wikipedia:Commissure]
-comment: This class was created automatically from a combination of ontologies
+def: "White matter fiber bundle that crosses the midline of the brain or spinal cord[NIF]. The transverse connection between two longitudinal parts, e.g. nerves, tracheae. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, ISBN:3110148986, Wikipedia:Commissure]
+comment: *not* the same as FMA:76741 Commissure
 subset: uberon_slim
 xref: FBbt:00005103
 xref: FMA:83906
 xref: ncithesaurus:Commissure
 xref: NIF_GrossAnatomy:nlx_anat_20090513
 xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
+xref: TADS:0000201
 is_a: UBERON:0001018 ! axon tract
 
 [Term]
@@ -7364,7 +7389,7 @@ synonym: "coat/ hair" EXACT []
 synonym: "fur" RELATED []
 synonym: "microchaeta" RELATED []
 synonym: "setulae" RELATED []
-synonym: "vibrissa" RELATED []
+synonym: "vibrissa" RELATED SENSU []
 xref: BTO:0001501
 xref: EFO:0000958
 xref: FMA:53667
@@ -7416,7 +7441,7 @@ id: UBERON:0001041
 name: foregut
 alt_id: UBERON:FBbt_00005379-FMA_45616-MA_0001526-XAO_0000232
 def: "An anterior part of the alimentary canal derived from the ectoderm." [Wikipedia:Foregut]
-comment: in FMA includes: pharynx, esophagus, stomach, proximal half of duedenum, liver, pancreas, gallbladder. But pharynx is not part of gut? also liver. Resolved by making part of digestive system
+comment: in FMA includes: pharynx, esophagus, stomach, proximal half of duedenum, liver, pancreas, gallbladder. But pharynx is not part of gut? also liver. Resolved by making part of digestive system. check invertebrates
 subset: developmental_classification
 subset: uberon_slim
 xref: BILA:0000085
@@ -7496,7 +7521,8 @@ relationship: part_of UBERON:0002224 ! thoracic cavity
 id: UBERON:0001044
 name: salivary gland
 alt_id: UBERON:FBbt_00005382-FMA_9597-MA_0000346-MIAA_0000079
-def: "saliva-secreting exocrine glands of the oral cavity[GO]. Lobular organ the parenchyma of which consists of glandular acini which communicate the oral cavity. Examples: parotid gland, sublingual gland, lingual salivary gland[FMA]." [GO:0007431, Wikipedia:Salivary_gland]
+def: "saliva-secreting exocrine glands of the oral cavity[GO]. The salivary glands in mammals are exocrine glands, glands with ducts, that produce saliva. They also secrete amylase, an enzyme that breaks down starch into maltose. In other organisms such as insects, salivary glands are often used to produce biologically important proteins like silk or glues, and fly salivary glands contain polytene chromosomes that have been useful in genetic research[WP]." [GO:0007431, Wikipedia:Salivary_gland]
+comment: currently we define saliva and salivary glands very generally in functional terms but it may be more appropriate to split this class. From WP: In most vertebrates, saliva does not contain any enzymes, consisting of mucus and water only, and its primary function is to moisten food while eating. As a result, true salivary glands are rarely found in fish or aquatic tetrapods, although there are often individual mucus-secreting cells. Amphibians have a single salivary gland, the intermaxillary gland, located in the forward part of the palate. Reptiles and birds  normally have only very small glands on the lips, palate, and base of the mouth, although there are some birds with large glands, which produce a sticky saliva that helps in nest-building. The distinct parotid, submandibular, and sublingual glands are only developed in mammals.[3] The salivary glands of some species, however, are modified to produce enzymes; salivary amylase is found in many, but by no means all, bird and mammal species (including humans, as noted above). Furthermore, the venom glands of poisonous snakes, Gila monsters, and some shrews, are modified salivary glands
 subset: uberon_slim
 xref: BTO:0001203
 xref: EFO:0000859
@@ -7524,6 +7550,7 @@ id: UBERON:0001045
 name: midgut
 alt_id: UBERON:FBbt_00005383-FMA_45617-MA_0001564-XAO_0000103
 def: "The middle part of the alimentary canal from the stomach, or entrance of the bile duct, to, or including, the large intestine[GO]. In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine." [GO:0007494, Wikipedia:Midgut]
+comment: we seem to have defined this to exclude invertebrate classifications - todo - make consistent with foregut hindgut
 subset: developmental_classification
 subset: uberon_slim
 xref: BILA:0000086
@@ -7764,13 +7791,14 @@ xref: MIAA:0000336
 is_a: UBERON:0000045 ! ganglion
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
 is_a: UBERON:0003339 ! implied link automatically realized ! ganglion of central nervous system
+relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0000955 ! brain
 
 [Term]
 id: UBERON:0001059
 name: pars intercerebralis
 alt_id: UBERON:FBbt_00005802-MIAA_0000337
-def: "A medial cleft or depression dividing the left and right protocerebrum and containing numerous large and small somata of neurosecretory and neuromodulatory neurons." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
+def: "a neurosecretory center of the insect brain, located along the anterior midline[wiktionary]. A medial cleft or depression dividing the left and right protocerebrum and containing numerous large and small somata of neurosecretory and neuromodulatory neurons[FBbt]." [http://en.wiktionary.org/wiki/pars_intercerebralis, http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EFO:0000926
@@ -7779,6 +7807,7 @@ xref: MAT:0000337
 xref: MIAA:0000337
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -11271,12 +11300,15 @@ subset: uberon_slim
 synonym: "anal orifice" EXACT []
 synonym: "proctodeum" RELATED []
 xref: BTO:0001680
+xref: FBbt:00001893
+xref: FBbt:00003148
 xref: FMA:15711
 xref: GAID:312
 xref: galen:Anus
 xref: MA:0000331
 xref: ncithesaurus:Proctodeum
 xref: OpenCyc:Mx4rvVjaEZwpEbGdrcN5Y29ycA
+xref: TADS:0000066
 xref: WBbt:0005364
 is_a: UBERON:0000161 ! orifice
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
@@ -11634,6 +11666,7 @@ alt_id: UBERON:FMA_16011-MA_0002417
 def: "the secretory units of the exocrine pancreas, where fluid containing digestive enzymes is produced; consists of a group of secretory cells surrounding a luminal space that connects to the pancreatic duct." [MP:0009145]
 comment: This class was created automatically from a combination of ontologies
 synonym: "acinus pancreaticus" EXACT []
+synonym: "pancreatic acini" RELATED PLURAL []
 xref: FMA:16011
 xref: MA:0002417
 xref: ncithesaurus:Pancreatic_Acinus
@@ -13123,11 +13156,8 @@ def: "Anatomical cavity that connects an organ cavity, organ cavity subdivision 
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: FMA:20192
-xref: GAID:881
 xref: ncithesaurus:Vestibule
-xref: XAO:0000199
 is_a: UBERON:0002553 ! anatomical cavity
-relationship: part_of UBERON:0001839 ! bony labyrinth
 
 [Term]
 id: UBERON:0001350
@@ -17128,7 +17158,7 @@ id: UBERON:0001569
 name: constrictor muscle of pharynx
 alt_id: UBERON:FMA_46620-MA_0002278
 def: "The superior pharyngeal constrictor muscle is a quadrilateral muscle, thinner and paler than the inferior pharyngeal constrictor muscle and middle pharyngeal constrictor muscle. [WP,unvetted]." [Wikipedia:Constrictor_muscle_of_pharynx]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - evaluate taxonomic specificity - functional definition?
 subset: uberon_slim
 synonym: "pharyngeal constrictor muscle" EXACT []
 xref: FMA:46620
@@ -18414,6 +18444,7 @@ synonym: "vestibulocochlear nerve tree" EXACT []
 synonym: "vestibulocochlear VIII nerve" EXACT []
 synonym: "VIIIth cranial nerve" EXACT []
 xref: BTO:0003490
+xref: EHDAA2:0002194
 xref: FMA:50869
 xref: GAID:839
 xref: HOG:0000695
@@ -18789,17 +18820,21 @@ alt_id: UBERON:FMA_52618-XAO_0000427-XAO_0000428-ZFA_0000295
 def: "A prominent collection of touch-sensory neurons of the trigeminal or fifth cranial nerve, positioned beside the brain between the eye and the ear. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Trigeminal_ganglion, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "gasserian ganglia" RELATED []
+synonym: "gasserian ganglia" RELATED PLURAL []
 synonym: "gasserian ganglion" EXACT []
 synonym: "gV" RELATED []
 synonym: "semilunar ganglion" EXACT []
-synonym: "trigeminal ganglia" RELATED []
+synonym: "trigeminal ganglia" RELATED PLURAL []
+synonym: "trigeminal V ganglion" EXACT [MA:0001080]
 synonym: "trigeminus ganglion" RELATED []
 xref: BTO:0001231
 xref: EFO:0000903
+xref: EHDAA:2113
+xref: EHDAA2:0002085
 xref: FMA:52618
 xref: GAID:725
 xref: HOG:0000694
+xref: MA:0001080
 xref: MAT:0000511
 xref: ncithesaurus:Trigeminal_Ganglion
 xref: TAO:0000295
@@ -19279,9 +19314,11 @@ def: "the group of neuron cell bodies associated with the ninth cranial nerve." 
 comment: This class was created automatically from a combination of ontologies
 synonym: "ganglion of glosspharyngeal nerve" EXACT []
 synonym: "gIX" RELATED []
+synonym: "glossopharyngeal IX ganglion" EXACT [MA:0001077]
 synonym: "petrosal ganglion" RELATED []
 xref: FMA:53471
 xref: HOG:0000702
+xref: MA:0001077
 xref: TAO:0001301
 xref: ZFA:0001301
 is_a: UBERON:0001714 ! ganglion of cranial nerve
@@ -19581,11 +19618,13 @@ synonym: "motor nucleus III" RELATED []
 synonym: "nIII" RELATED []
 synonym: "nucleus of oculomotor nerve" EXACT []
 synonym: "nucleus of third cranial nerve" EXACT []
+synonym: "oculomotor III nucleus" EXACT [MA:0001073]
 synonym: "oculomotor nucleus" EXACT []
 synonym: "third cranial nerve nucleus" EXACT []
 xref: EFO:0002468
 xref: FMA:54510
 xref: HOG:0001389
+xref: MA:0001073
 xref: ncithesaurus:Oculomotor_Nucleus
 xref: NIF_GrossAnatomy:birnlex_1240
 xref: TAO:0000553
@@ -19678,11 +19717,13 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cochlear nucleus of acoustic nerve" EXACT []
 synonym: "cochlear nucleus of eighth cranial nerve" EXACT []
+synonym: "cochlear VIII nucleus" EXACT [MA:0001012]
 synonym: "nucleus of cochlear nerve" EXACT []
 synonym: "statoacoustic (VIII) nucleus" EXACT []
 synonym: "vestibulocochlear nucleus" RELATED []
 xref: FMA:54603
 xref: GAID:601
+xref: MA:0001012
 xref: ncithesaurus:Cochlear_Nucleus
 xref: ZFA:0001638
 is_a: UBERON:0002308 ! nucleus of brain
@@ -20830,7 +20871,9 @@ alt_id: UBERON:FMA_58617-MA_0001319-XAO_0000266
 def: "any of the layers that make up the retina." [MP:0003727]
 comment: GO: the outer nuclear layer (ONL), which contains photoreceptor nuclei; the inner nuclear layer (INL), which contains amacrine, bipolar and horizontal cells; and the retinal ganglion cell (RGC) layer. Between the inner and outer nuclear layers, the outer plexiform layer (OPL) contains connections between the photoreceptors and bipolar and horizontal cells. The inner plexiform layer (IPL) is positioned between the INL and the ganglion cell layer and contains the dendrites of RGCs and processes of bipolar and amacrine cells. Spanning all layers of the retina are the radially oriented Mueller glia. // TODO check meaning of MA:0001318 retina lamina
 synonym: "retina layer" EXACT []
+synonym: "retina neuronal layer" EXACT [MP:0006069]
 synonym: "retinal layer" EXACT []
+synonym: "retinal neuronal layer" EXACT [MP:0006069]
 xref: FMA:58617
 xref: MA:0001318
 xref: MA:0001319
@@ -20927,10 +20970,11 @@ relationship: continuous_with UBERON:0000955 ! brain
 id: UBERON:0001786
 name: fovea centralis
 alt_id: UBERON:FMA_58658-MA_0001307
-def: "." [Wikipedia:Fovea_centralis]
-comment: This class was created automatically from a combination of ontologies
+def: "a part of the eye, located in the center of the macula region of the retina. [1] [2] The fovea is responsible for sharp central vision (also called foveal vision). The fovea is surrounded by the parafovea belt, and the perifovea outer region:[2] the parafovea is the intermediate belt where the ganglion  cell layer is composed of more than five rows of cells; as well as the highest density of cones; the perifovea is the outermost region where the ganglion cell layer contains two to four rows of cells, and is where visual acuity is below the optimum. The perifovea contains an even more diminished density of cones, having 12 per 100 micrometres versus 50 per 100 micrometres in the most central fovea. This, in turn, is surrounded by a larger peripheral area that delivers highly compressed information of low resolution. Approximately 50% of the nerve fibers in the optic nerve  carry information from the fovea, while the other 50% carry information from the rest of the retina. The parafovea extends to a distance of 1¼ mm from the central fovea, and the perifovea is found 2¾ mm away from the fovea centralis[WP]." [Wikipedia:Fovea_centralis_in_macula]
+comment: As an anatomical term, there are several foveae around the body, including in the head of the femur.(WP)
 subset: uberon_slim
 synonym: "fovea" EXACT []
+synonym: "fovea centralis in macula" EXACT [Wikipedia:Fovea_centralis_in_macula]
 xref: FMA:58658
 xref: GAID:910
 xref: MA:0001307
@@ -20938,6 +20982,7 @@ xref: ncithesaurus:Fovea_Centralis
 xref: NIF_GrossAnatomy:birnlex_2543
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0000053 ! macula lutea
 
 [Term]
@@ -20963,11 +21008,13 @@ relationship: part_of UBERON:0003902 ! retinal neural layer
 id: UBERON:0001788
 name: outer limiting layer of retina
 alt_id: UBERON:FMA_58683-MA_0001309
+def: "the row of jucntional complexes between the plasma membranes of rod segments and the Muller glia cells; this barrier separates the layer of inner and outer segments of the rods and cones from the outer nuclear layer and forms a blood-retina barrier[MP]." [MP:0010236]
 comment: This class was created automatically from a combination of ontologies
 synonym: "external limiting lamina of retina" EXACT []
 synonym: "external limiting membrane of retina" EXACT []
 synonym: "outer limiting membrane of retina" EXACT []
 synonym: "retina external limiting lamina" EXACT []
+synonym: "retina outer limiting membrane" EXACT [MP:0010236]
 synonym: "stratum limitans externum (retina)" EXACT []
 xref: FMA:58683
 xref: MA:0001309
@@ -21044,7 +21091,9 @@ subset: uberon_slim
 synonym: "ganglion cell layer" EXACT []
 synonym: "ganglionic cell layer of retina" EXACT []
 synonym: "retina ganglion cell layer" EXACT []
+synonym: "retina ganglion layer" RELATED []
 synonym: "retinal ganglion cell layer" EXACT []
+synonym: "retinal ganglion layer" RELATED [MP:0008510]
 synonym: "RGC layer" EXACT []
 synonym: "stratum ganglionicum (retina)" EXACT []
 xref: BTO:0003398
@@ -21078,10 +21127,12 @@ relationship: part_of UBERON:0003902 ! retinal neural layer
 id: UBERON:0001794
 name: inner limiting layer of retina
 alt_id: UBERON:FMA_58689-MA_0001313
+def: "the row of fused Muller cell processes and astrocytes that separates the retinal nerve fiber layer from the vitreous[MP]." [MP:0010235]
 comment: This class was created automatically from a combination of ontologies
 synonym: "inner limiting membrane of retina" EXACT []
 synonym: "internal limiting lamina of retina" EXACT []
 synonym: "internal limiting membrane of retina" EXACT []
+synonym: "retina inner limiting membrane" EXACT [MP:0010235]
 synonym: "retina internal limiting lamina" EXACT []
 xref: FMA:58689
 xref: MA:0001313
@@ -21741,7 +21792,7 @@ relationship: part_of UBERON:0002330 ! exocrine system
 id: UBERON:0001830
 name: minor salivary gland
 alt_id: UBERON:FMA_59789-MA_0002479
-def: "the smaller, largely mucus-secreting, exocrine glands of the oral cavity, consisting of the labial, buccal, molar, lingual, and palatine glands." [MP:0003791]
+def: "the smaller, largely mucus-secreting, exocrine glands of the oral cavity, consisting of the labial, buccal, molar, lingual, and palatine glands[MP]. There are over 600 minor salivary glands located throughout the oral cavity within the lamina propria of the oral mucosa. They are 1-2mm in diameter and unlike the other glands, they are not encapsulated by connective tissue only surrounded by it. The gland is usually a number of acini  connected in a tiny lobule. A minor salivary gland may have a common excretory duct with another gland, or may have its own excretory duct. Their secretion is mainly mucous in nature (except for Von Ebner's glands) and have many functions such as coating the oral cavity with saliva. Problems with dentures are usually associated with minor salivary glands[WP]." [MP:0003791, Wikipedia:Salivary_gland#Minor_Salivary_Glands]
 comment: This class was created automatically from a combination of ontologies
 xref: FMA:59789
 xref: GAID:940
@@ -21750,7 +21801,9 @@ xref: MA:0002479
 xref: ncithesaurus:Minor_Salivary_Gland
 is_a: UBERON:0001044 ! salivary gland
 is_a: UBERON:0002365 ! implied link automatically realized ! exocrine gland
+is_a: UBERON:0003293 ! implied link automatically realized ! gland of oral region
 relationship: part_of UBERON:0002330 ! exocrine system
+relationship: part_of UBERON:0005334 ! oral lamina propria
 
 [Term]
 id: UBERON:0001831
@@ -21860,7 +21913,7 @@ id: UBERON:0001837
 name: duct of salivary gland
 alt_id: UBERON:FMA_59908-MA_0001586
 def: "." [Wikipedia:Salivary_duct]
-comment: This class was created automatically from a combination of ontologies
+comment: check taxonomy coverage - define functionally?
 subset: uberon_slim
 synonym: "salivary duct" EXACT []
 synonym: "salivary gland duct" EXACT []
@@ -22496,7 +22549,7 @@ id: UBERON:0001873
 name: caudate nucleus
 alt_id: UBERON:FMA_61833-MA_0000894
 def: "Nucleus of brain which is an elongated crescent-shaped mass lying parallel and adjacent to the lateral ventricle throughout its extent." [Wikipedia:Caudate_nucleus]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO check rodents
 subset: uberon_slim
 synonym: "caudatus" EXACT []
 xref: BTO:0000211
@@ -22518,7 +22571,7 @@ id: UBERON:0001874
 name: putamen
 alt_id: UBERON:FMA_61834-MA_0000895
 def: "Nucleus of brain which lies ventral to the caudate nucleus and internal capsule and medial to the external capsule. The putamen and caudate nucleus together form the dorsal striatum. It is also one of the structures that comprises the basal ganglia. Through various pathways, the putamen is connected to the substantia nigra and globus pallidus. The main function of the putamen is to regulate movements and influence various types of learning. It employs dopamine to perform its functions. The putamen also plays a role in degenerative neurological disorders, such as Parkinson's disease." [Wikipedia:Putamen]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO check rodents
 subset: uberon_slim
 synonym: "nucleus putamen" EXACT []
 xref: FMA:61834
@@ -23105,7 +23158,6 @@ id: UBERON:0001901
 name: epithelium of trachea
 alt_id: UBERON:0003227
 alt_id: UBERON:FMA_62015-MA_0001862
-def: "An epithelium that is part of a respiratory airway [Obol]." [OBOL:automatic]
 comment: This class was created automatically from a combination of ontologies
 synonym: "epithelial tissue of trachea" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of windpipe" EXACT [OBOL:automatic]
@@ -23123,12 +23175,10 @@ xref: HOG:0001045
 xref: MA:0001862
 xref: ncithesaurus:Tracheal_Epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
-is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-is_a: UBERON:0004807 ! implied link automatically realized ! respiratory system epithelium
+is_a: UBERON:0004815 ! implied link automatically realized ! lower respiratory tract epithelium
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0001005 ! respiratory airway
+intersection_of: part_of UBERON:0003126 ! trachea
 relationship: develops_from UBERON:0003258 ! endoderm of foregut
-relationship: part_of UBERON:0001005 ! respiratory airway
 
 [Term]
 id: UBERON:0001902
@@ -23176,11 +23226,11 @@ relationship: part_of UBERON:0001900 ! subthalamus
 id: UBERON:0001904
 name: habenula
 alt_id: UBERON:FMA_62032-MA_0000830-ZFA_0000213
-def: "Habenula is an segment of the epithalamus that has as its parts the lateral and medial habenular nuclei and the habenular commissure. // The habenula relays impulses from limbic areas of the telencephalon to an unpaired midbrain nucleus, the interpeduncular nucleus." [Wikipedia:Habenula, ZFIN:curator]
+def: "Habenula is a segment of the epithalamus that has as its parts the lateral and medial habenular nuclei and the habenular commissure. // The habenula relays impulses from limbic areas of the telencephalon to an unpaired midbrain nucleus, the interpeduncular nucleus." [Wikipedia:Habenula, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "habenulae" RELATED []
-synonym: "habenular nuclei" EXACT []
+synonym: "habenular nuclei" RELATED []
 synonym: "habenular nucleus" RELATED []
 xref: BTO:0003684
 xref: FMA:62032
@@ -26453,8 +26503,9 @@ id: UBERON:0002073
 name: hair follicle
 alt_id: UBERON:FMA_70660-MA_0000154
 def: "a tube-like opening in the epidermis where the hair shaft develops and into which the sebaceous glands open[GO]." [Wikipedia:Hair_follicle]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - add new class for MA:0002910 vibrissa follicle
 subset: uberon_slim
+synonym: "vibrissa follicle" RELATED [MP:0010234]
 xref: BTO:0000554
 xref: EFO:0002464
 xref: FMA:70660
@@ -27104,6 +27155,7 @@ xref: FMA:7192
 xref: FMA:78500
 xref: MA:0002443
 xref: ncithesaurus:Auditory_System
+xref: NIF_GrossAnatomy:nlx_anat_090817
 xref: OpenCyc:Mx4rvViwtJwpEbGdrcN5Y29ycA
 xref: TAO:0001138
 xref: XAO:0003195
@@ -28451,7 +28503,7 @@ xref: FMA:74000
 xref: TAO:0000533
 xref: ZFA:0000533
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-is_a: UBERON:0000122 ! nerve fiber bundle
+is_a: UBERON:0000122 ! neuron projection bundle
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -28467,7 +28519,7 @@ xref: FMA:74003
 xref: TAO:0000605
 xref: ZFA:0000605
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-is_a: UBERON:0000122 ! nerve fiber bundle
+is_a: UBERON:0000122 ! neuron projection bundle
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -28736,8 +28788,7 @@ relationship: part_of UBERON:0000029 ! lymph node
 id: UBERON:0002196
 name: adenohypophysis
 alt_id: UBERON:FMA_74627-MA_0000177-ZFA_0001282
-def: "The anterior lobe of the hypophysis (pituitary gland). This lobe contains cells that produce prolactin, growth hormone, thyroid-stimulating hormone, follicle-stimulating hormone and proopiomelanocortin. In contrast to mamalian vertebrates, the adenohypophysis remains in a subepithelial position and there exists no equivalent of Rathke's pouch in zebrafish. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-040202-1'>Herzog et al, 2004.</a>" [Wikipedia:Adenohypophysis, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "he glandular, anterior lobe of the pituitary gland. The anterior pituitary regulates several physiological processes including stress, growth, and reproduction[WP]. The anterior lobe of the hypophysis (pituitary gland). This lobe contains cells that produce prolactin, growth hormone, thyroid-stimulating hormone, follicle-stimulating hormone and proopiomelanocortin. In contrast to mamalian vertebrates, the adenohypophysis remains in a subepithelial position and there exists no equivalent of Rathke's pouch in zebrafish[ZFA]." [Wikipedia:Adenohypophysis, ZFIN:curator]
 subset: uberon_slim
 synonym: "anterior lobe (hypophysis)" EXACT []
 synonym: "anterior lobe of hypophysis" EXACT []
@@ -28747,6 +28798,9 @@ synonym: "anterior pituitary" EXACT []
 synonym: "pituitary gland, anterior lobe" EXACT []
 xref: BTO:0000040
 xref: EFO:0000230
+xref: EHDAA2:0001588
+xref: EMAPA:16574
+xref: EMAPA:16725
 xref: FMA:74627
 xref: HOG:0000141
 xref: MA:0000177
@@ -28755,6 +28809,7 @@ xref: TAO:0001282
 xref: ZFA:0001282
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
+relationship: develops_from UBERON:0005356 ! Rathke's pouch
 relationship: part_of UBERON:0000007 ! pituitary gland
 
 [Term]
@@ -28870,7 +28925,6 @@ intersection_of: part_of UBERON:0002100 ! trunk
 id: UBERON:0002202
 name: submucosa of trachea
 alt_id: UBERON:FMA_7472-MA_0001860
-def: "A submucosa that is part of a respiratory airway [Obol]." [OBOL:automatic]
 comment: This class was created automatically from a combination of ontologies
 synonym: "submucosa of windpipe" EXACT [OBOL:automatic]
 synonym: "trachea submucosa" EXACT []
@@ -28880,10 +28934,10 @@ xref: FMA:7472
 xref: MA:0001860
 xref: ncithesaurus:Trachea_Submucosa
 is_a: UBERON:0000009 ! submucosa
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 is_a: UBERON:0004777 ! implied link automatically realized ! respiratory system submucosa
 intersection_of: UBERON:0000009 ! submucosa
-intersection_of: part_of UBERON:0001005 ! respiratory airway
-relationship: part_of UBERON:0001005 ! respiratory airway
+intersection_of: part_of UBERON:0003126 ! trachea
 
 [Term]
 id: UBERON:0002203
@@ -29780,7 +29834,7 @@ xref: FMA:77461
 xref: TAO:0000501
 xref: ZFA:0000501
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
-is_a: UBERON:0000122 ! nerve fiber bundle
+is_a: UBERON:0000122 ! neuron projection bundle
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -29788,8 +29842,9 @@ id: UBERON:0002259
 name: tectal plate
 alt_id: UBERON:FMA_77488-MA_0002567
 def: "In the brain, the corpora quadrigemina (Latin for 'quadruplet bodies') are the four colliculi—two inferior, two superior—located on the tectum the dorsal aspect of the midbrain. The corpora quadrigemina are reflex centers involving vision and hearing. [WP,unvetted]." [Wikipedia:Corpora_quadrigemina]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - do we need a class 'colliculus' (MP:0009041 absent colliculi)?
 subset: uberon_slim
+synonym: "colliculi" EXACT [MP:0000899]
 synonym: "corpora quadrigemina" EXACT []
 synonym: "quadrigeminal plate" EXACT []
 xref: BTO:0001710
@@ -29863,19 +29918,17 @@ is_a: UBERON:0002308 ! nucleus of brain
 id: UBERON:0002264
 name: olfactory bulb
 alt_id: UBERON:FMA_77624-MA_0000194-MIAA_0000116-ZFA_0000402
-def: "Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract." [Wikipedia:Olfactory_bulb]
+def: "A bulbous anterior projection of the olfactory lobe that is the place of termination of the olfactory nerves and is especially well developed in lower vertebrates (as fishes)[BTO]. Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract." [Wikipedia:Olfactory_bulb]
 comment: TODO - check lobe vs bulb
 subset: uberon_slim
 synonym: "main olfactory bulb" RELATED []
-synonym: "olfactory lobe" EXACT []
+synonym: "olfactory lobe" RELATED [ZFA:0000402]
 xref: BTO:0000961
-xref: EFO:0000108
 xref: EHDAA2:0001294
 xref: FMA:77624
 xref: GAID:633
 xref: HOG:0000033
 xref: MA:0000194
-xref: MIAA:0000116
 xref: ncithesaurus:Olfactory_Bulb
 xref: NIF_GrossAnatomy:birnlex_1137
 xref: TAO:0000402
@@ -30613,13 +30666,14 @@ id: UBERON:0002305
 name: layer of hippocampus
 alt_id: UBERON:FMA_83679-MA_0002427
 def: "the layers of the laminar structure of the hippocampus." [MP:0000813]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check NIF xref
 synonym: "Ammon's horn cell layer" EXACT [OBOL:automatic]
 synonym: "Ammon's horn layer of cells" EXACT [OBOL:automatic]
 synonym: "cell layer of Ammon's horn" EXACT [OBOL:automatic]
 synonym: "cell layer of hippocampus" EXACT [OBOL:automatic]
 synonym: "cell layer of hippocampus major" EXACT [OBOL:automatic]
 synonym: "cell layer of hippocampus proper" EXACT [OBOL:automatic]
+synonym: "cytoarchitectural fields of hippocampal formation" EXACT [NIF_GrossAnatomy:birnlex_1192]
 synonym: "hippocampus cell layer" EXACT [OBOL:automatic]
 synonym: "hippocampus layer" EXACT []
 synonym: "hippocampus layer of cells" EXACT [OBOL:automatic]
@@ -30633,6 +30687,7 @@ synonym: "layer of cells of hippocampus major" EXACT [OBOL:automatic]
 synonym: "layer of cells of hippocampus proper" EXACT [OBOL:automatic]
 xref: FMA:83679
 xref: MA:0002427
+xref: NIF_GrossAnatomy:birnlex_1192
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0000119 ! implied link automatically realized ! cell layer
 is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
@@ -30682,8 +30737,10 @@ synonym: "brain nucleus" EXACT []
 xref: FMA:83840
 xref: MA:0000811
 xref: ncithesaurus:Brain_Nucleus
-is_a: UBERON:0000125 ! neural nucleus
-relationship: part_of UBERON:0002020 ! gray matter of neuraxis
+is_a: UBERON:0000125 ! implied link automatically realized ! neural nucleus
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+intersection_of: UBERON:0000125 ! neural nucleus
+intersection_of: part_of UBERON:0000955 ! brain
 
 [Term]
 id: UBERON:0002309
@@ -30704,8 +30761,11 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0002310
 name: fimbria of hippocampus
 alt_id: UBERON:FMA_83866-MA_0000949
+def: "A prominent band of white matter along the medial edge of the hippocampus[WP]." [Wikipedia:Fimbria_of_hippocampus]
 comment: This class was created automatically from a combination of ontologies
 synonym: "fimbria hippocampus" EXACT []
+synonym: "hippocampal fimbria" EXACT [MP:0009324]
+synonym: "hippocampus fimbria" EXACT []
 synonym: "neuraxis fimbria" EXACT []
 xref: FMA:83866
 xref: MA:0000949
@@ -30738,10 +30798,12 @@ relationship: part_of UBERON:0002037 ! cerebellum
 [Term]
 id: UBERON:0002313
 name: pyramidal layer of hippocampus
+alt_id: UBERON:0005369
 alt_id: UBERON:FMA_83895-MA_0000956
 comment: This class was created automatically from a combination of ontologies
 synonym: "hippocampus pyramidal layer" EXACT []
 synonym: "hippocampus stratum pyramidale" RELATED []
+synonym: "stratum pyramidale hippocampi" EXACT [NIF_GrossAnatomy:birnlex_1444]
 xref: FMA:83895
 xref: MA:0000956
 xref: NIF_GrossAnatomy:birnlex_1444
@@ -33337,7 +33399,6 @@ xref: EFO:0000109
 xref: FMA:77618
 xref: MA:0000891
 xref: NIF_GrossAnatomy:birnlex_1672
-xref: NIF_GrossAnatomy:nlx_anat_100312
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
@@ -33958,6 +34019,8 @@ relationship: part_of UBERON:0002101 ! limb
 id: UBERON:0002473
 name: intercerebral commissure
 alt_id: UBERON:MA_0002721-FMA_67930
+def: "Class of unpaired telencephalic white matter structures consisting of fiber pathways which  project across the midsagittal plane and which serve to interconnect telencephalic structures lying within the contralateral cerebral hemisphere[FMA]." [FMA:67930]
+synonym: "brain commissure" NARROW []
 synonym: "interhemispheric commissure" RELATED [MA:0002721]
 xref: FMA:67930
 xref: MA:0002721
@@ -36655,6 +36718,7 @@ xref: FMA:62181
 xref: NIF_GrossAnatomy:birnlex_1228
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002637
@@ -36677,6 +36741,7 @@ xref: FMA:62182
 xref: NIF_GrossAnatomy:birnlex_1233
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002639
@@ -36720,6 +36785,7 @@ xref: FMA:62180
 xref: NIF_GrossAnatomy:birnlex_1239
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002642
@@ -37131,6 +37197,7 @@ xref: GAID:602
 xref: ncithesaurus:Vestibular_Nucleus
 xref: NIF_GrossAnatomy:birnlex_1337
 is_a: UBERON:0000125 ! neural nucleus
+is_a: UBERON:0002308 ! implied link automatically realized ! nucleus of brain
 is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
 is_a: UBERON:0002680 ! implied link automatically realized ! regional part of metencephalon
 relationship: part_of UBERON:0000988 ! pons
@@ -37296,6 +37363,7 @@ xref: FMA:62141
 xref: NIF_GrossAnatomy:birnlex_1358
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002680
@@ -37349,6 +37417,7 @@ xref: FMA:62142
 xref: NIF_GrossAnatomy:birnlex_1365
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002682
@@ -37398,6 +37467,7 @@ xref: FMA:72585
 xref: NIF_GrossAnatomy:birnlex_1369
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002685
@@ -37411,6 +37481,7 @@ xref: FMA:62143
 xref: NIF_GrossAnatomy:birnlex_1372
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002686
@@ -37472,6 +37543,7 @@ xref: FMA:62314
 xref: NIF_GrossAnatomy:birnlex_1401
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002691
@@ -37553,6 +37625,7 @@ xref: FMA:72427
 xref: NIF_GrossAnatomy:birnlex_1430
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002697
@@ -37601,6 +37674,7 @@ xref: FMA:72428
 xref: NIF_GrossAnatomy:birnlex_1441
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002701
@@ -37611,6 +37685,7 @@ xref: FMA:72423
 xref: NIF_GrossAnatomy:birnlex_1445
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002702
@@ -37687,6 +37762,7 @@ xref: FMA:62350
 xref: NIF_GrossAnatomy:birnlex_1463
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002707
@@ -37713,6 +37789,7 @@ xref: FMA:62349
 xref: NIF_GrossAnatomy:birnlex_1466
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002709
@@ -37767,6 +37844,7 @@ xref: FMA:62348
 xref: NIF_GrossAnatomy:birnlex_1473
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002713
@@ -38300,6 +38378,7 @@ xref: FMA:62328
 xref: NIF_GrossAnatomy:birnlex_1564
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002747
@@ -38491,6 +38570,7 @@ xref: FMA:62216
 xref: NIF_GrossAnatomy:birnlex_1608
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 relationship: part_of UBERON:0001927 ! medial geniculate body
 
 [Term]
@@ -38507,6 +38587,7 @@ xref: FMA:62218
 xref: NIF_GrossAnatomy:birnlex_1612
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 relationship: part_of UBERON:0001927 ! medial geniculate body
 
 [Term]
@@ -39554,6 +39635,7 @@ xref: FMA:75732
 xref: NIF_GrossAnatomy:birnlex_2595
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002834
@@ -39849,6 +39931,7 @@ xref: FMA:72603
 xref: NIF_GrossAnatomy:birnlex_2634
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002865
@@ -39902,6 +39985,7 @@ xref: FMA:72595
 xref: NIF_GrossAnatomy:birnlex_2638
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002868
@@ -39913,6 +39997,7 @@ xref: FMA:54597
 xref: NIF_GrossAnatomy:birnlex_2639
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002869
@@ -39923,6 +40008,7 @@ xref: FMA:72598
 xref: NIF_GrossAnatomy:birnlex_2641
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002870
@@ -39942,9 +40028,12 @@ alt_id: UBERON:NIF_GrossAnatomy_birnlex_2644-FMA_54505
 def: "The hypoglossal nucleus is a cranial nerve nucleus, and it extends the length of the medulla, and being a motor nucleus, is close to the midline. In the open medulla, it is visible as what is known as the hypoglossal trigone, a raised area (medial to the vagal trigone) protruding slightly into the fourth ventricle. In the closed medulla, the gracile and cuneate nuclei lie posteriorly, which means the nucleus is not as close to the back of the medulla as in the open medulla. It is, however, still close to the midline. [WP,unvetted]." [Wikipedia:Hypoglossal_nucleus]
 subset: uberon_slim
 synonym: "hypoglossal nucleus" EXACT [FMA:54505]
+synonym: "hypoglossal XII nucleus" EXACT [MA:0001039]
 synonym: "nucleus of hypoglossal nerve" EXACT [FMA:54505]
 synonym: "twelfth cranial nerve nucleus" EXACT [FMA:54505]
 xref: FMA:54505
+xref: HOG:0001358
+xref: MA:0001039
 xref: NIF_GrossAnatomy:birnlex_2644
 is_a: UBERON:0000126 ! cranial nerve nucleus
 
@@ -39980,6 +40069,7 @@ xref: FMA:72604
 xref: NIF_GrossAnatomy:birnlex_2647
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002875
@@ -39989,6 +40079,7 @@ xref: FMA:72605
 xref: NIF_GrossAnatomy:birnlex_2648
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002876
@@ -40004,6 +40095,7 @@ xref: NIF_GrossAnatomy:birnlex_2651
 xref: NIF_GrossAnatomy:birnlex_2654
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002877
@@ -40013,6 +40105,7 @@ xref: FMA:77091
 xref: NIF_GrossAnatomy:birnlex_2653
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002879
@@ -40022,6 +40115,7 @@ xref: FMA:72600
 xref: NIF_GrossAnatomy:birnlex_2655
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002880
@@ -40033,6 +40127,7 @@ xref: FMA:72608
 xref: NIF_GrossAnatomy:birnlex_2656
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002881
@@ -40045,6 +40140,7 @@ xref: FMA:68574
 xref: NIF_GrossAnatomy:birnlex_2657
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002882
@@ -40054,6 +40150,7 @@ xref: FMA:74507
 xref: NIF_GrossAnatomy:birnlex_2658
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002883
@@ -40641,8 +40738,6 @@ id: UBERON:0002929
 name: dentate gyrus pyramidal layer
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_4129-MA_0000948
 xref: MA:0000948
-xref: NIF_GrossAnatomy:birnlex_4129
-is_a: UBERON:0000200 ! gyrus
 is_a: UBERON:0002304 ! layer of dentate gyrus
 
 [Term]
@@ -40693,6 +40788,7 @@ xref: FMA:72422
 xref: NIF_GrossAnatomy:birnlex_713
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002935
@@ -40754,6 +40850,7 @@ xref: FMA:62199
 xref: NIF_GrossAnatomy:birnlex_728
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002940
@@ -40790,6 +40887,7 @@ xref: FMA:62200
 xref: NIF_GrossAnatomy:birnlex_737
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002943
@@ -41082,10 +41180,10 @@ id: UBERON:0002956
 name: granular layer of cerebellar cortex
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_779-FMA_83140
 def: "The granular layer is the innermost layer of the cerebellar cortex. This layer contains densely packed small neurons, mostly granule cells. Some Golgi cells are found at the outer border. Granule neurons send parallel fibers to the upper molecular layer, where they synapse with Purkinje cell dendrites. Mossy fibers from the pontine nuclei in the white matter synapse with granule cell axons, Golgi cell axons and unipolar brush interneuron axons at cerebellar glomeruli in the granule cell layer." [GO:0021681]
-synonym: "cerebellar granular layer" EXACT []
+synonym: "cerebellar granular layer" EXACT [GO:0021681]
 synonym: "cerebellar granule cell layer" EXACT []
 synonym: "cerebellar granule layer" EXACT []
-synonym: "cerebellum granule cell layer" EXACT []
+synonym: "cerebellum granule cell layer" EXACT [MA:0000993]
 synonym: "cerebellum granule layer" EXACT []
 xref: FMA:83140
 xref: MA:0000993
@@ -41103,6 +41201,7 @@ xref: FMA:72426
 xref: NIF_GrossAnatomy:birnlex_780
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002958
@@ -41139,6 +41238,7 @@ xref: FMA:72425
 xref: NIF_GrossAnatomy:birnlex_786
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002961
@@ -41162,6 +41262,7 @@ xref: FMA:72469
 xref: NIF_GrossAnatomy:birnlex_792
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002964
@@ -41172,6 +41273,7 @@ xref: FMA:62442
 xref: NIF_GrossAnatomy:birnlex_793
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002965
@@ -41182,6 +41284,7 @@ xref: FMA:62164
 xref: NIF_GrossAnatomy:birnlex_794
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002966
@@ -41265,6 +41368,7 @@ xref: FMA:72470
 xref: NIF_GrossAnatomy:birnlex_799
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002969
@@ -41288,6 +41392,7 @@ xref: FMA:72420
 xref: NIF_GrossAnatomy:birnlex_803
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002971
@@ -41354,6 +41459,7 @@ xref: FMA:72421
 xref: NIF_GrossAnatomy:birnlex_813
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002976
@@ -41431,6 +41537,7 @@ xref: GAID:662
 xref: NIF_GrossAnatomy:birnlex_824
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002982
@@ -41440,6 +41547,7 @@ xref: FMA:62183
 xref: NIF_GrossAnatomy:birnlex_830
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002983
@@ -41478,6 +41586,7 @@ xref: FMA:62217
 xref: NIF_GrossAnatomy:birnlex_845
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 relationship: part_of UBERON:0001927 ! medial geniculate body
 
 [Term]
@@ -41552,6 +41661,7 @@ xref: FMA:72466
 xref: NIF_GrossAnatomy:birnlex_861
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002994
@@ -41601,6 +41711,7 @@ xref: FMA:72467
 xref: NIF_GrossAnatomy:birnlex_870
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0002998
@@ -41627,6 +41738,7 @@ xref: FMA:72468
 xref: NIF_GrossAnatomy:birnlex_875
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0003000
@@ -41692,6 +41804,7 @@ xref: FMA:72465
 xref: NIF_GrossAnatomy:birnlex_889
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0003005
@@ -42067,6 +42180,7 @@ xref: FMA:62221
 xref: NIF_GrossAnatomy:birnlex_939
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0003031
@@ -42095,6 +42209,7 @@ xref: FMA:62169
 xref: NIF_GrossAnatomy:birnlex_956
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0003035
@@ -42116,6 +42231,7 @@ xref: FMA:62170
 xref: NIF_GrossAnatomy:birnlex_961
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0003037
@@ -42182,6 +42298,7 @@ xref: GAID:585
 xref: NIF_GrossAnatomy:birnlex_973
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 
 [Term]
 id: UBERON:0003041
@@ -42940,7 +43057,6 @@ xref: HOG:0001383
 xref: TAO:0007037
 xref: XAO:0000250
 xref: ZFA:0007037
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0003057 ! chordal neural plate
@@ -43879,6 +43995,8 @@ synonym: "invertebrate trachea" EXACT []
 synonym: "trachea" BROAD SENSU [FBbt:00005043]
 xref: EHDAA2:0002066
 xref: FBbt:00005043
+xref: SPD:0000434
+xref: TADS:0000315
 is_a: UBERON:0001005 ! respiratory airway
 relationship: has_part UBERON:0003914 ! epithelial tube
 relationship: only_in_taxon NCBITaxon:6656
@@ -43953,6 +44071,7 @@ subset: uberon_slim
 xref: FBbt:00004642
 xref: HAO:0001017
 xref: ncithesaurus:Tibia
+xref: TADS:0000281
 is_a: UBERON:0000475 ! organism subdivision
 relationship: only_in_taxon NCBITaxon:6656
 relationship: part_of UBERON:0000978 ! leg
@@ -44634,6 +44753,7 @@ is_obsolete: true
 id: UBERON:0003201
 name: exocuticle
 alt_id: UBERON:FBbt_00004973-HAO_0000311
+def: "The outer layer of the procuticle of certain crustaceans and arthropods, which contains cuticulin, chitin, and phenolic substances that are oxidized to produce the dark pigment of the cuticle;nThe hard and usually darkened layer of the cuticle lying between the endocuticle and epicuticle." [BTO:0001602]
 xref: BTO:0001602
 xref: FBbt:00004973
 xref: HAO:0000311
@@ -44643,6 +44763,7 @@ is_a: UBERON:0000476 ! acellular anatomical structure
 id: UBERON:0003202
 name: endocuticle
 alt_id: UBERON:FBbt_00004974-HAO_0000290
+def: "The inner layer of the procuticle in certain crustaceans and arthropods, which is almost entirely composed of protein and chitin." [BTO:0001603]
 xref: BTO:0001603
 xref: FBbt:00004974
 xref: HAO:0000290
@@ -45694,7 +45815,6 @@ intersection_of: part_of UBERON:0001710 ! lower jaw
 [Term]
 id: UBERON:0003279
 name: endothelium of trachea
-def: "An endothelium that is part of a respiratory airway [Obol]." [OBOL:automatic]
 synonym: "endothelium of windpipe" EXACT [OBOL:automatic]
 synonym: "trachea endothelium" EXACT [OBOL:automatic]
 synonym: "windpipe endothelium" EXACT [OBOL:automatic]
@@ -45703,7 +45823,7 @@ xref: EHDAA2:0002068
 is_a: UBERON:0001901 ! implied link automatically realized ! epithelium of trachea
 is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
 intersection_of: UBERON:0001986 ! endothelium
-intersection_of: part_of UBERON:0001005 ! respiratory airway
+intersection_of: part_of UBERON:0003126 ! trachea
 
 [Term]
 id: UBERON:0003280
@@ -45819,10 +45939,10 @@ intersection_of: part_of UBERON:0001045 ! midgut
 
 [Term]
 id: UBERON:0003288
-name: meninges of midbrain
+name: meninx of midbrain
 def: "A meninx that is part of a midbrain [Obol]." [OBOL:automatic]
-synonym: "meninx of midbrain" EXACT [OBOL:automatic]
-synonym: "midbrain meninges" EXACT [OBOL:automatic]
+synonym: "meninges of midbrain" EXACT PLURAL [OBOL:automatic]
+synonym: "midbrain meninges" EXACT PLURAL [OBOL:automatic]
 synonym: "midbrain meninx" EXACT [OBOL:automatic]
 xref: EHDAA:3708
 xref: EHDAA2:0001174
@@ -45835,10 +45955,10 @@ intersection_of: part_of UBERON:0001891 ! midbrain
 
 [Term]
 id: UBERON:0003289
-name: meninges of telencephalon
+name: meninx of telencephalon
 def: "A meninx that is part of a telencephalon [Obol]." [OBOL:automatic]
-synonym: "meninx of telencephalon" EXACT [OBOL:automatic]
-synonym: "telencephalon meninges" EXACT [OBOL:automatic]
+synonym: "meninges of telencephalon" EXACT PLURAL [OBOL:automatic]
+synonym: "telencephalon meninges" EXACT PLURAL [OBOL:automatic]
 synonym: "telencephalon meninx" EXACT [OBOL:automatic]
 xref: EHDAA:5476
 xref: EHDAA2:0001990
@@ -45851,7 +45971,7 @@ intersection_of: part_of UBERON:0001893 ! telencephalon
 
 [Term]
 id: UBERON:0003290
-name: meninges of diencephalon
+name: meninx of diencephalon
 def: "A meninx that is part of a diencephalon [Obol]." [OBOL:automatic]
 synonym: "between brain meninges" EXACT [OBOL:automatic]
 synonym: "between brain meninx" EXACT [OBOL:automatic]
@@ -45862,10 +45982,10 @@ synonym: "interbrain meninx" EXACT [OBOL:automatic]
 synonym: "mature diencephalon meninges" EXACT [OBOL:automatic]
 synonym: "mature diencephalon meninx" EXACT [OBOL:automatic]
 synonym: "meninges of between brain" EXACT [OBOL:automatic]
+synonym: "meninges of diencephalon" EXACT [OBOL:automatic]
 synonym: "meninges of interbrain" EXACT [OBOL:automatic]
 synonym: "meninges of mature diencephalon" EXACT [OBOL:automatic]
 synonym: "meninx of between brain" EXACT [OBOL:automatic]
-synonym: "meninx of diencephalon" EXACT [OBOL:automatic]
 synonym: "meninx of interbrain" EXACT [OBOL:automatic]
 synonym: "meninx of mature diencephalon" EXACT [OBOL:automatic]
 xref: EHDAA:5458
@@ -45879,11 +45999,11 @@ intersection_of: part_of UBERON:0001894 ! diencephalon
 
 [Term]
 id: UBERON:0003291
-name: meninges of hindbrain
+name: meninx of hindbrain
 def: "A meninx that is part of a hindbrain [Obol]." [OBOL:automatic]
 synonym: "hindbrain meninges" EXACT [OBOL:automatic]
 synonym: "hindbrain meninx" EXACT [OBOL:automatic]
-synonym: "meninx of hindbrain" EXACT [OBOL:automatic]
+synonym: "meninges of hindbrain" EXACT [OBOL:automatic]
 xref: EHDAA:3688
 xref: EHDAA2:0000770
 xref: HOG:0000011
@@ -50155,12 +50275,13 @@ intersection_of: part_of UBERON:0001004 ! respiratory system
 id: UBERON:0003505
 name: trachea blood vessel
 alt_id: UBERON:0003525
-def: "A blood vessel that is part of a respiratory airway [Obol]." [OBOL:automatic]
 synonym: "blood vessel of trachea" EXACT [OBOL:automatic]
 xref: MA:0001852
 is_a: UBERON:0003504 ! implied link automatically realized ! respiratory system blood vessel
+is_a: UBERON:0003519 ! implied link automatically realized ! thoracic cavity blood vessel
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
 intersection_of: UBERON:0001981 ! blood vessel
-intersection_of: part_of UBERON:0001005 ! respiratory airway
+intersection_of: part_of UBERON:0003126 ! trachea
 
 [Term]
 id: UBERON:0003506
@@ -50904,7 +51025,7 @@ synonym: "pia mater of neuraxis of midbrain" EXACT [OBOL:automatic]
 xref: EHDAA2:0001175
 xref: HOG:0000467
 xref: MA:0001061
-is_a: UBERON:0003288 ! implied link automatically realized ! meninges of midbrain
+is_a: UBERON:0003288 ! implied link automatically realized ! meninx of midbrain
 is_a: UBERON:0003549 ! implied link automatically realized ! brain pia mater
 intersection_of: UBERON:0002361 ! pia mater
 intersection_of: part_of UBERON:0001891 ! midbrain
@@ -50919,7 +51040,7 @@ synonym: "telencephalon pia mater of neuraxis" EXACT [OBOL:automatic]
 xref: EHDAA2:0001992
 xref: HOG:0000476
 xref: MA:0000982
-is_a: UBERON:0003289 ! implied link automatically realized ! meninges of telencephalon
+is_a: UBERON:0003289 ! implied link automatically realized ! meninx of telencephalon
 is_a: UBERON:0003550 ! implied link automatically realized ! forebrain pia mater
 intersection_of: UBERON:0002361 ! pia mater
 intersection_of: part_of UBERON:0001893 ! telencephalon
@@ -50946,7 +51067,7 @@ synonym: "pia mater of neuraxis of mature diencephalon" EXACT [OBOL:automatic]
 xref: EHDAA2:0000400
 xref: HOG:0000475
 xref: MA:0000829
-is_a: UBERON:0003290 ! implied link automatically realized ! meninges of diencephalon
+is_a: UBERON:0003290 ! implied link automatically realized ! meninx of diencephalon
 is_a: UBERON:0003550 ! implied link automatically realized ! forebrain pia mater
 intersection_of: UBERON:0002361 ! pia mater
 intersection_of: part_of UBERON:0001894 ! diencephalon
@@ -50961,7 +51082,7 @@ synonym: "pia mater of neuraxis of hindbrain" EXACT [OBOL:automatic]
 xref: EHDAA2:0000772
 xref: HOG:0000466
 xref: MA:0000990
-is_a: UBERON:0003291 ! implied link automatically realized ! meninges of hindbrain
+is_a: UBERON:0003291 ! implied link automatically realized ! meninx of hindbrain
 is_a: UBERON:0003549 ! implied link automatically realized ! brain pia mater
 intersection_of: UBERON:0002361 ! pia mater
 intersection_of: part_of UBERON:0002028 ! hindbrain
@@ -51009,7 +51130,7 @@ synonym: "midbrain arachnoid mater of neuraxis" EXACT [OBOL:automatic]
 xref: HOG:0000233
 xref: MA:0001059
 is_a: UBERON:0002362 ! implied link automatically realized ! arachnoid mater
-is_a: UBERON:0003288 ! implied link automatically realized ! meninges of midbrain
+is_a: UBERON:0003288 ! implied link automatically realized ! meninx of midbrain
 intersection_of: UBERON:0002362 ! arachnoid mater
 intersection_of: part_of UBERON:0001891 ! midbrain
 
@@ -51042,7 +51163,7 @@ synonym: "mature diencephalon arachnoid mater" EXACT [OBOL:automatic]
 synonym: "mature diencephalon arachnoid mater of neuraxis" EXACT [OBOL:automatic]
 xref: HOG:0000231
 xref: MA:0000827
-is_a: UBERON:0003290 ! implied link automatically realized ! meninges of diencephalon
+is_a: UBERON:0003290 ! implied link automatically realized ! meninx of diencephalon
 is_a: UBERON:0003556 ! implied link automatically realized ! forebrain arachnoid mater
 intersection_of: UBERON:0002362 ! arachnoid mater
 intersection_of: part_of UBERON:0001894 ! diencephalon
@@ -51059,7 +51180,7 @@ synonym: "hindbrain arachnoid mater of neuraxis" EXACT [OBOL:automatic]
 xref: HOG:0000236
 xref: MA:0000988
 is_a: UBERON:0002362 ! implied link automatically realized ! arachnoid mater
-is_a: UBERON:0003291 ! implied link automatically realized ! meninges of hindbrain
+is_a: UBERON:0003291 ! implied link automatically realized ! meninx of hindbrain
 intersection_of: UBERON:0002362 ! arachnoid mater
 intersection_of: part_of UBERON:0002028 ! hindbrain
 
@@ -51102,7 +51223,7 @@ synonym: "midbrain dura mater of neuraxis" EXACT [OBOL:automatic]
 xref: HOG:0000410
 xref: MA:0001060
 is_a: UBERON:0002092 ! implied link automatically realized ! cranial dura mater
-is_a: UBERON:0003288 ! implied link automatically realized ! meninges of midbrain
+is_a: UBERON:0003288 ! implied link automatically realized ! meninx of midbrain
 intersection_of: UBERON:0002363 ! dura mater
 intersection_of: part_of UBERON:0001891 ! midbrain
 
@@ -51114,7 +51235,7 @@ synonym: "dura mater of neuraxis of telencephalon" EXACT [OBOL:automatic]
 synonym: "dura mater of telencephalon" EXACT [OBOL:automatic]
 synonym: "telencephalon dura mater of neuraxis" EXACT [OBOL:automatic]
 xref: MA:0000981
-is_a: UBERON:0003289 ! implied link automatically realized ! meninges of telencephalon
+is_a: UBERON:0003289 ! implied link automatically realized ! meninx of telencephalon
 is_a: UBERON:0003561 ! implied link automatically realized ! forebrain dura mater
 intersection_of: UBERON:0002363 ! dura mater
 intersection_of: part_of UBERON:0001893 ! telencephalon
@@ -51140,7 +51261,7 @@ synonym: "mature diencephalon dura mater" EXACT [OBOL:automatic]
 synonym: "mature diencephalon dura mater of neuraxis" EXACT [OBOL:automatic]
 xref: HOG:0000258
 xref: MA:0000828
-is_a: UBERON:0003290 ! implied link automatically realized ! meninges of diencephalon
+is_a: UBERON:0003290 ! implied link automatically realized ! meninx of diencephalon
 is_a: UBERON:0003561 ! implied link automatically realized ! forebrain dura mater
 intersection_of: UBERON:0002363 ! dura mater
 intersection_of: part_of UBERON:0001894 ! diencephalon
@@ -51155,7 +51276,7 @@ synonym: "hindbrain dura mater of neuraxis" EXACT [OBOL:automatic]
 xref: HOG:0000409
 xref: MA:0000989
 is_a: UBERON:0002092 ! implied link automatically realized ! cranial dura mater
-is_a: UBERON:0003291 ! implied link automatically realized ! meninges of hindbrain
+is_a: UBERON:0003291 ! implied link automatically realized ! meninx of hindbrain
 intersection_of: UBERON:0002363 ! dura mater
 intersection_of: part_of UBERON:0002028 ! hindbrain
 
@@ -51250,7 +51371,6 @@ intersection_of: part_of UBERON:0001004 ! respiratory system
 [Term]
 id: UBERON:0003571
 name: trachea connective tissue
-def: "A portion of connective tissue that is part of a respiratory airway [Obol]." [OBOL:automatic]
 synonym: "connective tissue of trachea" EXACT [OBOL:automatic]
 synonym: "connective tissue of windpipe" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of trachea" EXACT [OBOL:automatic]
@@ -51263,9 +51383,10 @@ synonym: "windpipe connective tissue" EXACT [OBOL:automatic]
 synonym: "windpipe portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "windpipe textus connectivus" EXACT [OBOL:automatic]
 xref: MA:0001853
-is_a: UBERON:0003570 ! implied link automatically realized ! respiratory system connective tissue
+is_a: UBERON:0003580 ! implied link automatically realized ! lower respiratory tract connective tissue
+is_a: UBERON:0003593 ! implied link automatically realized ! thoracic cavity connective tissue
 intersection_of: UBERON:0002384 ! connective tissue
-intersection_of: part_of UBERON:0001005 ! respiratory airway
+intersection_of: part_of UBERON:0003126 ! trachea
 
 [Term]
 id: UBERON:0003572
@@ -52156,7 +52277,6 @@ xref: FMA:7434
 xref: MA:0001857
 xref: ncithesaurus:Trachea_Cartilage
 is_a: UBERON:0003571 ! implied link automatically realized ! trachea connective tissue
-is_a: UBERON:0003593 ! implied link automatically realized ! thoracic cavity connective tissue
 is_a: UBERON:0003603 ! implied link automatically realized ! lower respiratory tract cartilage
 intersection_of: UBERON:0002418 ! cartilage
 intersection_of: part_of UBERON:0003126 ! trachea
@@ -52397,8 +52517,6 @@ synonym: "windpipe elastic tissue" EXACT [OBOL:automatic]
 synonym: "windpipe textus connectivus elasticus" EXACT [OBOL:automatic]
 xref: MA:0001861
 is_a: UBERON:0003571 ! implied link automatically realized ! trachea connective tissue
-is_a: UBERON:0003580 ! implied link automatically realized ! lower respiratory tract connective tissue
-is_a: UBERON:0003593 ! implied link automatically realized ! thoracic cavity connective tissue
 is_a: UBERON:0003611 ! implied link automatically realized ! respiratory system elastic tissue
 intersection_of: UBERON:0002521 ! elastic tissue
 intersection_of: part_of UBERON:0003126 ! trachea
@@ -53206,7 +53324,6 @@ intersection_of: part_of UBERON:0001710 ! lower jaw
 id: UBERON:0003668
 name: synovial bursa
 def: "a small fluid-filled sac lined by synovial membrane with an inner capillary layer of slimy fluid. It provides a cushion between bones and tendons and/or muscles around a joint. This helps to reduce friction between the bones and allows free movement. Bursae are filled with synovial fluid and are found around most major joints of the body." [Wikipedia:Synovial_bursa]
-comment: See  GO:0048540
 synonym: "bursa" EXACT [FMA:9692]
 xref: FMA:9692
 xref: GAID:252
@@ -53842,10 +53959,11 @@ synonym: "scarpa's ganglion" RELATED [GAID:840]
 synonym: "scarpas ganglion" RELATED [GAID:840]
 synonym: "vestibular root of acoustic nerve" EXACT [FMA:53401]
 synonym: "vestibular root of eighth cranial nerve" EXACT [FMA:53401]
+synonym: "vestibulocochlear VIII nerve vestibular component" EXACT [MA:0001111]
 xref: FMA:53401
 xref: GAID:840
-xref: HOG:0000682
-xref: MA:0001086
+xref: HOG:0001181
+xref: MA:0001111
 xref: ncithesaurus:Vestibular_Nerve
 xref: OpenCyc:Mx4rvxAWX5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001785 ! cranial nerve
@@ -55036,7 +55154,7 @@ intersection_of: has_part CL:0000540
 [Term]
 id: UBERON:0003903
 name: bursa of Fabricius
-def: "an epithelial and lymphoid organ that develops as a dorsal diverticulum of the proctadael region of the cloaca in birds. The luminal (interior) surface of the bursa is plicated with as many as 15 primary and 7 secondary plicae or folds. These plicae have hundreds of bursal follicles containing follicle-associated epithelial cells, lymphocytes, macrophages, and plasma cells. Lymphoid stem cells migrate from the fetal liver to the bursa during ontogeny. In the bursa, these stem cells acquire the characteristics of mature, immunocompetent B cells[WP]. The bursa is an organ found in birds involved in B cell differentiation[GO]." [GO:004854, Wikipedia:Bursa_of_Fabricius]
+def: "an epithelial and lymphoid organ that develops as a dorsal diverticulum of the proctadael region of the cloaca in birds. The luminal (interior) surface of the bursa is plicated with as many as 15 primary and 7 secondary plicae or folds. These plicae have hundreds of bursal follicles containing follicle-associated epithelial cells, lymphocytes, macrophages, and plasma cells. Lymphoid stem cells migrate from the fetal liver to the bursa during ontogeny. In the bursa, these stem cells acquire the characteristics of mature, immunocompetent B cells[WP]. The bursa is an organ found in birds involved in B cell differentiation[GO]." [GO:0048540, Wikipedia:Bursa_of_Fabricius]
 xref: BTO:0001699
 xref: GAID:1205
 is_a: UBERON:0000062 ! organ
@@ -55145,7 +55263,7 @@ xref: MA:0000824
 xref: ncithesaurus:Choroid_Plexus_Epithelium
 is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
-is_a: UBERON:0004670 ! implied link automatically realized ! ependyma
+is_a: UBERON:0005357 ! implied link automatically realized ! brain ependyma
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001886 ! choroid plexus
 relationship: part_of UBERON:0001886 ! choroid plexus
@@ -55210,6 +55328,8 @@ synonym: "fat body" EXACT SENSU [FBbt:00005066]
 xref: FBbt:00005066
 xref: GAID:1213
 xref: MIAA:0000096
+xref: TADS:0000321
+xref: TGMA:0001856
 is_a: UBERON:0000062 ! organ
 relationship: only_in_taxon NCBITaxon:6656
 
@@ -55551,6 +55671,7 @@ name: placenta labyrinth
 def: "the placental layers where embryonic blood vessels are surrounded by trophoblast cells and maternal blood" [MP:0001716]
 synonym: "labyrinthine layer" EXACT [GO:0060713]
 synonym: "labyrinthine layer of placenta" EXACT [GO:0060713]
+synonym: "placental labyrinth" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0001987 ! placenta
@@ -55655,9 +55776,11 @@ relationship: part_of UBERON:0001768 ! vascular layer of eyeball
 
 [Term]
 id: UBERON:0003957
-name: Bruch membrane
-def: "the transparent, nearly structureless innermost layer of the choroid in contact with the pigmented layer of the retina" [MP:0005239, Wikipedia:Bruch's_membrane]
+name: Bruch's membrane
+def: "A transparent, nearly structureless innermost layer of the choroid in contact with the pigmented layer of the retina. Bruch's membrane consists of five layers (from inside to outside): 1. the basement membrane of the retinal pigment epithelium; 2. the inner collagenous zone; 3. a central band of elastic fibers; 4. the outer collagenous zone; 5. the basement membrane of the choriocapillaris. The retinal pigment epithelium transports metabolic waste from the photoreceptors across Bruch's membrane to the choroid." [MP:0005239, Wikipedia:Bruch's_membrane]
+comment: TODO - check FMA
 synonym: "basal lamina of choroid" EXACT [FMA:58438]
+synonym: "Bruch membrane" EXACT [GAID:914]
 synonym: "Bruch's basal membrane" EXACT [FMA:58438]
 synonym: "lamina basilis" EXACT [FMA:58438]
 xref: FMA:58438
@@ -55668,7 +55791,7 @@ relationship: part_of UBERON:0001776 ! choroid
 [Term]
 id: UBERON:0003958
 name: long bone epiphyseal ossification zone
-def: "the structure of the layer of the epiphyseal plate where new bone matrix is deposited" [MP:0006399]
+def: "The layer of the epiphyseal plate where new bone matrix is deposited" [MP:0006399]
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002495 ! long bone
@@ -56721,9 +56844,11 @@ comment: central vs alar central? II and III?
 synonym: "central lobule" BROAD [MA:0001000]
 synonym: "central lobule of cerebellum" BROAD []
 synonym: "lobule II of cerebellum vermis" EXACT []
+synonym: "vermic lobule II" EXACT [NIF_GrossAnatomy:nlx_anat_20081225]
 xref: FMA:72519
 xref: MA:0000999
 xref: NIF_GrossAnatomy:birnlex_920
+xref: NIF_GrossAnatomy:nlx_anat_20081225
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -56765,8 +56890,10 @@ synonym: "neuraxis uvula" EXACT [FMA:83883]
 synonym: "uvula" BROAD [MA:0001006]
 synonym: "uvula of cerebellum" EXACT [FMA:83883]
 synonym: "uvula of vermis of cerebellum" EXACT []
+synonym: "vermic lobule IX" EXACT [NIF_GrossAnatomy:nlx_anat_20081234]
 xref: FMA:83883
 xref: MA:0001006
+xref: NIF_GrossAnatomy:nlx_anat_20081234
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -56779,7 +56906,9 @@ synonym: "culmen" BROAD []
 synonym: "culmen of cerebellum" BROAD []
 synonym: "lobule V of cerebellum vermis" EXACT []
 synonym: "neuraxis culmen" BROAD [FMA:83886]
+synonym: "vermic lobule IV" EXACT [NIF_GrossAnatomy:nlx_anat_20081227]
 xref: MA:0001002
+xref: NIF_GrossAnatomy:nlx_anat_20081227
 is_a: UBERON:0004070 ! cerebellum vermis lobule
 relationship: part_of UBERON:0002037 ! cerebellum
 
@@ -56801,7 +56930,9 @@ relationship: part_of UBERON:0002037 ! cerebellum
 id: UBERON:0004081
 name: cerebellum vermis lobule VII
 def: "The folium vermis is a short, narrow, concealed band at the posterior extremity of the vermis, consisting apparently of a single folium, but in reality marked on its upper and under surfaces by secondary fissures. Laterally, it expands in either hemisphere into a considerable lobule, the superior semilunar lobule (lobulus semilunaris superior; postero-superior lobules), which occupies the posterior third of the upper surface of the hemisphere, and is bounded below by the horizontal sulcus. The superior semilunar lobules and the folium vermis form the lobus semilunaris." [MP:0009995, Wikipedia:Folium_(vermis)]
+comment: check MA, MP, FMA, folium?
 synonym: "folium" BROAD [MA:0001004]
+synonym: "folium lobule" NARROW [MP:0009995]
 synonym: "folium of cerebellum" EXACT []
 synonym: "folium of vermis of cerebellum" EXACT []
 synonym: "lobule VII of cerebellum vermis" EXACT []
@@ -56874,8 +57005,8 @@ xref: FMA:78447
 xref: MA:0000818
 xref: ncithesaurus:Ventricle_Brain
 xref: OpenCyc:Mx4rvmTY65wpEbGdrcN5Y29ycA
-is_a: UBERON:0002300 ! ventricle
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0005358 ! ventricle of nervous system
 relationship: part_of UBERON:0000955 ! brain
 
 [Term]
@@ -57004,8 +57135,8 @@ id: UBERON:0004102
 name: tracheobronchial system
 def: "." [HP:0005607]
 is_a: UBERON:0000467 ! anatomical system
-relationship: has_part UBERON:0001005 ! respiratory airway
 relationship: has_part UBERON:0002185 ! bronchus
+relationship: has_part UBERON:0003126 ! trachea
 relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
@@ -57382,6 +57513,7 @@ id: UBERON:0004130
 name: cerebellar layer
 synonym: "cell layer of cerebellar cortex" EXACT []
 synonym: "layer of cerebellar cortex" EXACT []
+xref: FMA:83141
 xref: MA:0000201
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
@@ -57947,8 +58079,9 @@ id: UBERON:0004186
 name: olfactory bulb mitral cell layer
 def: "The mitral cell layer is composed of pyramidal neurons whose cell bodies are located between the granule cell layer and the plexiform layer" [GO:0061034]
 xref: MA:0000973
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000119 ! cell layer
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
 relationship: part_of UBERON:0002264 ! olfactory bulb
 
 [Term]
@@ -63588,11 +63721,12 @@ intersection_of: part_of UBERON:0002106 ! spleen
 id: UBERON:0004642
 name: third ventricle ependyma
 def: "An ependyma that is part of a third ventricle [Obol]." [OBOL:automatic]
-synonym: "3rd ventricle ependyma" RELATED [MA:0000882]
+synonym: "3rd ventricle ependyma" EXACT [MA:0000882]
+synonym: "ependyma of third ventricle" EXACT [MA:0000882]
 xref: FMA:242833
 xref: MA:0000882
 is_a: UBERON:0002784 ! implied link automatically realized ! regional part of diencephalon
-is_a: UBERON:0004670 ! implied link automatically realized ! ependyma
+is_a: UBERON:0005357 ! implied link automatically realized ! brain ependyma
 intersection_of: UBERON:0004670 ! ependyma
 intersection_of: part_of UBERON:0002286 ! third ventricle
 
@@ -63603,7 +63737,7 @@ def: "An ependyma that is part of a lateral ventricle [Obol]." [OBOL:automatic]
 xref: FMA:242825
 xref: MA:0000964
 is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
-is_a: UBERON:0004670 ! implied link automatically realized ! ependyma
+is_a: UBERON:0005357 ! implied link automatically realized ! brain ependyma
 intersection_of: UBERON:0004670 ! ependyma
 intersection_of: part_of UBERON:0002285 ! lateral ventricle
 
@@ -63614,7 +63748,7 @@ def: "An ependyma that is part of a fourth ventricle [Obol]." [OBOL:automatic]
 synonym: "4th ventricle ependyma" RELATED [MA:0000986]
 xref: FMA:242835
 xref: MA:0000986
-is_a: UBERON:0004670 ! implied link automatically realized ! ependyma
+is_a: UBERON:0005357 ! implied link automatically realized ! brain ependyma
 intersection_of: UBERON:0004670 ! ependyma
 intersection_of: part_of UBERON:0002422 ! fourth ventricle
 
@@ -63886,19 +64020,17 @@ intersection_of: part_of UBERON:0002422 ! fourth ventricle
 id: UBERON:0004670
 name: ependyma
 def: "Ependymal epithelium lining the ventricular cavities and canals of the CNS is simple, columnar or cuboidal." [BTO:0000401]
-synonym: "brain ependyma" RELATED [MA:0000809]
+comment: FMA has ependyma proper and ependyma, not defined
 synonym: "ependyma of neuraxis" RELATED [FMA:242791]
 synonym: "ependymal epithelium" RELATED [BTO:0000401]
 synonym: "lamina epithelialis" RELATED [FMA:242791]
 xref: BTO:0000401
 xref: FMA:242791
 xref: GAID:608
-xref: MA:0000809
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
-is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
 is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0004086 ! brain ventricle
+intersection_of: part_of UBERON:0005358 ! ventricle of nervous system
 
 [Term]
 id: UBERON:0004671
@@ -64363,9 +64495,6 @@ synonym: "septum lucidum" RELATED [BTO:0003448]
 xref: BTO:0003448
 xref: FMA:61844
 xref: Wikipedia:Septum_pellucidum
-is_a: UBERON:0000119 ! cell layer
-is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
-is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
 relationship: part_of UBERON:0002285 ! lateral ventricle
 
 [Term]
@@ -64514,16 +64643,20 @@ id: UBERON:0004727
 name: cochlear nerve
 def: "a nerve in the head that carries signals from the cochlea of the inner ear to the brain. It is part of the vestibulocochlear nerve, the 8th cranial nerve which is found in higher vertebrates; the other portion of the 8th cranial nerve is the vestibular nerve which carries spatial orientation information from the semicircular canals. The cochlear nerve is a sensory nerve, one which conducts to the brain information about the environment, in this case acoustic energy impinging on the tympanic membrane. The cochlear nerve arises from within the cochlea and extends to the brainstem, where its fibers make contact with the cochlear nucleus, the next stage of neural processing in the auditory system[WP]." [ISBN:Wikipedia\:Cochlear_nerve]
 subset: uberon_slim
-synonym: "auditory nerve" EXACT []
-synonym: "cochlear root of acoustic nerve" EXACT []
-synonym: "cochlear root of eighth cranial nerve" EXACT []
+synonym: "auditory nerve" EXACT [FMA:53431]
+synonym: "cochlear root of acoustic nerve" EXACT [FMA:53431]
+synonym: "cochlear root of eighth cranial nerve" EXACT [FMA:53431]
+synonym: "vestibulocochlear VIII nerve cochlear component" EXACT [MA:0001110]
 xref: BTO:0003490
+xref: EHDAA2:0002195
 xref: FMA:53431
 xref: GAID:723
+xref: HOG:0001182
+xref: MA:0001110
 xref: ncithesaurus:Cochlear_Nerve
 xref: OpenCyc:Mx4rwIhQfZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001785 ! cranial nerve
-relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
+relationship: branch_of UBERON:0001648 ! vestibulocochlear nerve
 
 [Term]
 id: UBERON:0004728
@@ -65471,9 +65604,6 @@ id: UBERON:0004799
 name: trachea basal lamina
 def: "A basal lamina that is part of a respiratory airway [Obol]." [OBOL:automatic]
 synonym: "basal lamina of connective tissue of respiratory airway" EXACT [OBOL:automatic]
-synonym: "basal lamina of respiratory airway" EXACT [OBOL:automatic]
-synonym: "respiratory airway basal lamina" EXACT [OBOL:automatic]
-synonym: "respiratory airway basal lamina of connective tissue" EXACT [OBOL:automatic]
 xref: MA:0001855
 is_a: UBERON:0004798 ! implied link automatically realized ! respiratory system basal lamina
 intersection_of: UBERON:0000482 ! basal lamina
@@ -66700,10 +66830,12 @@ relationship: part_of UBERON:0002186 ! bronchiole
 id: UBERON:0004904
 name: optic nerve
 def: "A nerve that connects the eye to the brain and carries the impulses formed by the retina to the visual cortex of the brain[BTO]." [BTO:0000966]
+comment: obsolete?
 subset: grouping_class
 xref: BTO:0000966
 xref: EHDAA2:0001314
 xref: FBbt:00001956
+xref: TADS:0000232
 is_a: UBERON:0001021 ! implied link automatically realized ! nerve
 intersection_of: UBERON:0001021 ! nerve
 intersection_of: continuous_with UBERON:0000966 ! retina
@@ -69924,6 +70056,8 @@ synonym: "invertebrate tracheal system" EXACT []
 synonym: "open tracheal system" EXACT []
 synonym: "tracheal system" BROAD SENSU [FBbt:00005024]
 xref: FBbt:00005024
+xref: SPD:0000427
+xref: TADS:0000043
 is_a: UBERON:0000467 ! anatomical system
 is_a: UBERON:0001004 ! implied link automatically realized ! respiratory system
 relationship: capable_of GO:0007585
@@ -69987,14 +70121,6 @@ def: "A structure consisting of multiple cell components but which is not itself
 xref: CARO:0001000
 xref: FBbt:00007060
 is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: UBERON:0005163
-name: neuron projection bundle
-def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." [FBC:DOS]
-xref: CARO:0001001
-xref: FBbt:00005099
-is_a: UBERON:0005162 ! multi-cell-component structure
 
 [Term]
 id: UBERON:0005164
@@ -70363,6 +70489,8 @@ name: trachea gland
 def: "A gland that is part of a submucosa of trachea [Obol]." [OBOL:automatic]
 xref: MA:0002937
 is_a: UBERON:0002530 ! implied link automatically realized ! gland
+is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
+is_a: UBERON:0005178 ! implied link automatically realized ! thoracic cavity organ
 intersection_of: UBERON:0002530 ! gland
 intersection_of: part_of UBERON:0002202 ! submucosa of trachea
 
@@ -70651,10 +70779,14 @@ intersection_of: part_of UBERON:0002046 ! thyroid gland
 id: UBERON:0005236
 name: osseus labyrinth vestibule
 def: "A vestibule that is part of a bony labyrinth [Obol]." [OBOL:automatic]
+comment: TODO - check
+xref: GAID:881
 xref: HOG:0001220
+xref: XAO:0000199
 is_a: UBERON:0001349 ! implied link automatically realized ! vestibule
 intersection_of: UBERON:0001349 ! vestibule
 intersection_of: part_of UBERON:0001839 ! bony labyrinth
+relationship: part_of UBERON:0001839 ! bony labyrinth
 
 [Term]
 id: UBERON:0005237
@@ -71069,6 +71201,7 @@ relationship: develops_from UBERON:0003063 ! prechordal plate
 [Term]
 id: UBERON:0005281
 name: ventricular system of central nervous system
+def: "a set of structures containing cerebrospinal fluid in the brain. It is continuous with the central canal of the spinal cord." [Wikipedia:Ventricular_system]
 synonym: "ventricular system" EXACT [ZFA:0001261]
 synonym: "ventricular system of neuraxis" EXACT [FMA:242675]
 xref: FMA:242675
@@ -71280,6 +71413,7 @@ name: testis sex cord
 def: "The testis cords are precursors to the rete testis. They play several different roles in the development of the male genitals[WP]." [Wikipedia:Testis_cords]
 comment: check primary vs testis
 synonym: "primary sex cord" RELATED []
+synonym: "testis cord" RELATED [MP:0006424]
 synonym: "testis primitive sex cord" RELATED []
 xref: EHDAA:8152
 xref: EHDAA2:0002011
@@ -71370,6 +71504,7 @@ xref: EMAPA:18225
 xref: FMA:77596
 xref: MA:0001140
 is_a: UBERON:0001816 ! autonomic nerve plexus
+relationship: only_in_taxon NCBITaxon:7742
 
 [Term]
 id: UBERON:0005304
@@ -71379,7 +71514,7 @@ comment: check myenteric vs submucosal
 synonym: "Henle's plexus" RELATED []
 synonym: "meissner's plexus" RELATED []
 synonym: "Meissner's plexus" RELATED [MA:0001149]
-synonym: "submucosal nerve plexus" EXACT [FMA:21542, Wikipedia:Meissner%27s_plexus]
+synonym: "submucosal nerve plexus" EXACT [FMA:21542, Wikipedia:Meissner's_plexus]
 xref: FMA:21542
 xref: GAID:801
 xref: MA:0001149
@@ -71585,7 +71720,7 @@ intersection_of: part_of UBERON:0000080 ! mesonephros
 [Term]
 id: UBERON:0005327
 name: mesonephric glomerular epithelium
-def: "A mesonephric glomerular visceral epithelial cell is a specialized epithelial cell that contains " [:GO]
+def: "A mesonephric glomerular visceral epithelial cell is a specialized epithelial cell that contains 'feet' that interdigitate with the 'feet' of other glomerular epithelial cells in the mesonephros[GO]." [GO:0061232]
 is_a: UBERON:0004188 ! implied link automatically realized ! glomerular epithelium
 is_a: UBERON:0005330 ! implied link automatically realized ! mesonephric nephron epithelium
 intersection_of: UBERON:0004188 ! glomerular epithelium
@@ -71644,6 +71779,463 @@ is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: develops_from UBERON:0005311 ! mammary placode
 relationship: part_of UBERON:0000924 ! ectoderm
 
+[Term]
+id: UBERON:0005334
+name: oral lamina propria
+synonym: "lamina propria of oral mucosa" EXACT []
+xref: EMAPA:26947
+is_a: UBERON:0004780 ! implied link automatically realized ! gastrointestinal system lamina propria
+intersection_of: UBERON:0000030 ! lamina propria
+intersection_of: part_of UBERON:0003343 ! mucosa of oral region
+
+[Term]
+id: UBERON:0005335
+name: chorioallantoic membrane
+def: "The chorioallantoic membrane ( also called the chorioallantois or abbreviated to CAM ) is a vascular membrane found in eggs of some amniotes, such as birds and reptiles. It is formed by the fusion of the mesodermal layers of two developmental structures: the allantois and the chorion. Three different layers compose the chorioallantoic membrane; these are called the chorionic epithelium, the mesenchyme and the allantoic epithelium. Blood capillaries and sinuses are found between epithelial cells of the chorionic layer, allowing close contact (within 0.2 N<m) with air found in pores of the shell membrane of the egg. As a result, the chorioallantoic membrane allows exchange of gases, such as oxygen, to developing embryos. During embryonic development of birds, the chorioallantoic membrane also plays an essential role in bone formation by transporting calcium into the embryo from the eggshell. Chorioalloantoic membranes from developing chicken eggs are routinely used in biological and biomedical research to investigate development, angiogenesis, tumors, and to propagate and investigate viruses or helminths." [Wikipedia:Chorioallantoic_membrane]
+synonym: "chorioallantois" RELATED []
+is_a: UBERON:0000158 ! membranous layer
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003124 ! chorion
+relationship: develops_from UBERON:0004340 ! allantois
+
+[Term]
+id: UBERON:0005336
+name: capillary lamina of choroid
+def: "The capillary lamina of choroid or choriocapillaris is a layer of capillaries that is immediately adjacent to Bruch's membrane in the choroid." [Wikipedia:Capillary_lamina_of_choroid]
+synonym: "choriocapillaris" RELATED []
+synonym: "lamina choriocapillaris" RELATED []
+is_a: UBERON:0000061 ! anatomical structure
+relationship: has_part UBERON:0001982 ! capillary
+relationship: part_of UBERON:0001776 ! choroid
+relationship: part_of UBERON:0003957 ! Bruch's membrane
+
+[Term]
+id: UBERON:0005337
+name: outflow part of ventricle
+synonym: "heart ventricle outflow tract" EXACT [MP:0010224]
+synonym: "outflow tract of ventricle" EXACT []
+synonym: "ventricular outflow tract" EXACT []
+xref: FMA:13225
+is_a: UBERON:0004145 ! outflow tract
+relationship: part_of UBERON:0004151 ! cardiac chamber
+
+[Term]
+id: UBERON:0005338
+name: outflow tract aortic component
+xref: EHDAA2:0001353
+xref: HOG:0001394
+xref: MA:0000101
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0004145 ! outflow tract
+
+[Term]
+id: UBERON:0005339
+name: outflow tract pulmonary component
+xref: EHDAA2:0001359
+xref: HOG:0001395
+xref: MA:0000102
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0004145 ! outflow tract
+
+[Term]
+id: UBERON:0005340
+name: dorsal telencephalic commissure
+def: "the fiber tracts that connect the dorsal region of the two cerebral hemispheres and span the longitudinal fissure, including the corpus callosum and hippocampal commissure[MP]." [MP:0008219]
+is_a: UBERON:0001020 ! commissure
+
+[Term]
+id: UBERON:0005341
+name: ventral commissure
+def: "the fiber tracts that connect the ventral region of the two cerebral hemispheres and span the longitudinal fissure, including the anterior and the habenular commissures[MP]." [MP:0008220]
+is_a: UBERON:0001020 ! commissure
+
+[Term]
+id: UBERON:0005342
+name: malleus head
+def: "rounded portion of the malleus that articulates with the body of the incus[MP]." [MP:0008379]
+xref: FMA:52761
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001689 ! malleus
+
+[Term]
+id: UBERON:0005343
+name: cortical plate
+def: "the outer neural tube region in which post-mitotic neuroblasts migrate along radial glia to form the adult cortical layers[MP]." [MP:0008439]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0005344
+name: peritoneal vaginal process
+def: "The processus vaginalis (or vaginal process) is an embryonic developmental outpouching of the peritoneum. It is present from around the 12th week of gestation, and commences as a peritoneal outpouching[WP]. peritoneal diverticulum in the embryonic lower anterior abdominal wall that traverses the inguinal canal[MP]." [MP:0009218, Wikipedia:Processus_vaginalis]
+comment: TODO check
+synonym: "processus vaginalis peritonei" RELATED PLURAL [MP:0009218]
+synonym: "processus vaginalis peritoneus" EXACT [MP:0009218]
+synonym: "saccus vaginalis" EXACT [Wikipedia:Processus_vaginalis]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0002358 ! peritoneum
+
+[Term]
+id: UBERON:0005345
+name: cerebellum vermis lobule VIIa
+def: ".[MP]." [MP:0009998]
+synonym: "vermic lobule VIIA" EXACT [NIF_GrossAnatomy:nlx_anat_20081231]
+xref: NIF_GrossAnatomy:nlx_anat_20081231
+is_a: UBERON:0004070 ! cerebellum vermis lobule
+relationship: part_of UBERON:0004081 ! cerebellum vermis lobule VII
+
+[Term]
+id: UBERON:0005346
+name: cerebellum vermis lobule VIIb
+def: ".[MP]." [MP:0009999]
+is_a: UBERON:0004070 ! cerebellum vermis lobule
+relationship: part_of UBERON:0004081 ! cerebellum vermis lobule VII
+
+[Term]
+id: UBERON:0005347
+name: copula pyramidis
+def: ".[MP]." [MP:0010000]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+relationship: part_of UBERON:0004003 ! cerebellum hemisphere lobule
+
+[Term]
+id: UBERON:0005348
+name: ansiform lobule
+def: ".[MP]." [MP:0010001]
+xref: FMA:72257
+is_a: UBERON:0004003 ! cerebellum hemisphere lobule
+
+[Term]
+id: UBERON:0005349
+name: paramedian lobule
+def: ".[MP]." [MP:0010004]
+synonym: "gracile lobule" EXACT [FMA:72523]
+synonym: "hemispheric lobule VIIBii" EXACT [NIF_GrossAnatomy:nlx_anat_20081210]
+synonym: "paramedian lobule [H VII B]" EXACT [FMA:72523]
+xref: FMA:72523
+xref: NIF_GrossAnatomy:nlx_anat_20081210
+is_a: UBERON:0004003 ! cerebellum hemisphere lobule
+
+[Term]
+id: UBERON:0005350
+name: lobule simplex
+def: ".[MP]." [MP:0010005]
+synonym: "hemispheric lobule VI" EXACT [NIF_GrossAnatomy:nlx_anat_20081206]
+synonym: "simple lobule" EXACT [MP:0010005]
+synonym: "simple lobule of cerebellum" EXACT [FMA:72522]
+xref: FMA:72522
+xref: NIF_GrossAnatomy:nlx_anat_20081206
+is_a: UBERON:0004003 ! cerebellum hemisphere lobule
+
+[Term]
+id: UBERON:0005351
+name: paraflocculus
+def: ".[MP]." [MP:0010007]
+synonym: "hemispheric lobule IX" EXACT [NIF_GrossAnatomy:nlx_anat_20081212]
+synonym: "paraflocculus of cerebellum " EXACT [FMA:83885]
+xref: FMA:83885
+xref: NIF_GrossAnatomy:nlx_anat_20081212
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002749 ! implied link automatically realized ! regional part of cerebellar cortex
+relationship: part_of UBERON:0002245 ! hemisphere of cerebellum
+
+[Term]
+id: UBERON:0005352
+name: spermatic cord
+def: "the cord-like structure in males comprising the vas deferens and associated tissue that runs from the abdomen down to each testis[MP]. cord-like structure in males formed by the vas deferens and surrounding tissue that run from the abdomen down to each testicle[WP]." [MP:0010145, Wikipedia:Spermatic_cord]
+synonym: "funiculus spermaticus" RELATED []
+synonym: "spermatic chord" RELATED []
+xref: FMA:19937
+xref: GAID:395
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: part_of UBERON:0004054 ! internal male genitalia
+
+[Term]
+id: UBERON:0005353
+name: spleen perifollicular zone
+def: "the compartment located between the marginal zone and the red pulp harboring scattered B and T lymphocytes[MP]." [MP:0010245]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002106 ! spleen
+
+[Term]
+id: UBERON:0005354
+name: malleus processus brevis
+def: "the projection extending from the base of the manubrium of the malleus which contacts the upper part of the tympanic membrane where the tympanic cavity makes a deep pocket (epitympanic pocket) surrounding the cartilaginous nodule[MP]." [MP:0010324]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001689 ! malleus
+
+[Term]
+id: UBERON:0005355
+name: malleus neck
+def: "the narrow contracted section of the malleus located between the head and the manubrium[MP]." [MP:0010327, Wikipedia:Neck_of_malleus]
+xref: FMA:52762
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001689 ! malleus
+
+[Term]
+id: UBERON:0005356
+name: Rathke's pouch
+def: "a pouch of ectoderm that grows out from the upper surface of the embryonic stomodeum and gives rise to the anterior and intermediate lobes of the pituitary gland[MP]. In embryogenesis, Rathke's pouch is a depression in the roof of the developing mouth in front of the buccopharyngeal membrane. It gives rise to the anterior pituitary (adenohypophysis), a part of the endocrine system[WP]." [MP:0003817, Wikipedia:Rathke's_pouch]
+synonym: "pouch of Rathke" EXACT []
+synonym: "Rathke pouch" EXACT []
+synonym: "Rathke's cleft" RELATED []
+synonym: "Rathke's cyst" RELATED []
+xref: EHDAA2:0001588
+xref: EMAPA:16574
+xref: EMAPA:16725
+xref: HOG:0000674
+xref: XAO:0000430
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0000930 ! stomodeum
+relationship: never_in_taxon NCBITaxon:7955
+
+[Term]
+id: UBERON:0005357
+name: brain ependyma
+xref: MA:0000809
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+is_a: UBERON:0004670 ! implied link automatically realized ! ependyma
+intersection_of: UBERON:0004670 ! ependyma
+intersection_of: part_of UBERON:0004086 ! brain ventricle
+
+[Term]
+id: UBERON:0005358
+name: ventricle of nervous system
+synonym: "Region of wall of ventricular system of neuraxis" EXACT [FMA:242770]
+xref: FMA:242770
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0002300 ! ventricle
+relationship: part_of UBERON:0001016 ! nervous system
+
+[Term]
+id: UBERON:0005359
+name: spinal cord ependyma
+synonym: "spinal cord ependymal layer" EXACT [MA:0001125]
+synonym: "spinal cord ventricular layer" RELATED []
+xref: FMA:242839
+xref: MA:0001125
+is_a: UBERON:0004670 ! implied link automatically realized ! ependyma
+intersection_of: UBERON:0004670 ! ependyma
+intersection_of: part_of UBERON:0002240 ! spinal cord
+relationship: part_of UBERON:0002291 ! central canal
+
+[Term]
+id: UBERON:0005360
+name: inferior glossopharyngeal IX ganglion
+synonym: "Inferior glossopharyngeal ganglion" EXACT [FMA:53475]
+xref: FMA:53475
+xref: MA:0001078
+is_a: UBERON:0001701 ! glossopharyngeal ganglion
+
+[Term]
+id: UBERON:0005361
+name: superior glossopharyngeal IX ganglion
+synonym: "superior glossopharyngeal ganglion" EXACT [FMA:53474]
+xref: FMA:53474
+xref: MA:0001079
+is_a: UBERON:0001701 ! glossopharyngeal ganglion
+
+[Term]
+id: UBERON:0005362
+name: vagus X ganglion
+synonym: "ganglion of vagus nerve" EXACT [FMA:53472]
+xref: FMA:53472
+xref: HOG:0000684
+xref: MA:0001081
+is_a: UBERON:0003213 ! cranial ganglion
+relationship: overlaps UBERON:0001759 ! vagus nerve
+
+[Term]
+id: UBERON:0005363
+name: inferior vagus X ganglion
+synonym: "inferior ganglion of vagus nerve" EXACT [FMA:6230]
+xref: FMA:6230
+xref: MA:0001082
+is_a: UBERON:0005362 ! vagus X ganglion
+
+[Term]
+id: UBERON:0005364
+name: superior vagus X ganglion
+synonym: "superior ganglion of vagus nerve" EXACT [FMA:6229]
+xref: FMA:6229
+xref: MA:0001083
+is_a: UBERON:0005362 ! vagus X ganglion
+
+[Term]
+id: UBERON:0005366
+name: olfactory lobe
+xref: BTO:0001362
+xref: EFO:0000108
+xref: EHDAA:5480
+xref: EHDAA2:0001294
+xref: EMAPA:17778
+xref: HOG:0000833
+xref: MA:0002413
+xref: MIAA:0000116
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+relationship: part_of UBERON:0001893 ! telencephalon
+
+[Term]
+id: UBERON:0005367
+name: hippocampus granule cell layer
+xref: MA:0000954
+is_a: UBERON:0002305 ! layer of hippocampus
+
+[Term]
+id: UBERON:0005368
+name: hippocampus molecular layer
+synonym: "hippocampal molecular layer" EXACT [NIF_GrossAnatomy:birnlex_1211]
+synonym: "hippocampus stratum moleculare" RELATED []
+xref: MA:0000955
+xref: NIF_GrossAnatomy:birnlex_1211
+is_a: UBERON:0002305 ! layer of hippocampus
+
+[Term]
+id: UBERON:0005370
+name: hippocampus stratum lacunosum
+synonym: "stratum lacunosum moleculare" EXACT [NIF_GrossAnatomy:birnlex_1359]
+xref: FMA:83149
+xref: MA:0000957
+xref: NIF_GrossAnatomy:birnlex_1359
+is_a: UBERON:0002305 ! layer of hippocampus
+
+[Term]
+id: UBERON:0005371
+name: hippocampus stratum oriens
+synonym: "oriens layer of hippocampus" EXACT [NIF_GrossAnatomy:birnlex_4113]
+synonym: "polymorphic layer of hippocampus" EXACT [NIF_GrossAnatomy:birnlex_4113]
+synonym: "stratum oriens" EXACT [NIF_GrossAnatomy:birnlex_4113]
+xref: FMA:83893
+xref: MA:0000958
+xref: NIF_GrossAnatomy:birnlex_4113
+is_a: UBERON:0002305 ! layer of hippocampus
+
+[Term]
+id: UBERON:0005372
+name: hippocampus stratum radiatum
+def: "The layer located immediately above the pyramidal cell layer in CA2 and CA1 and suprficial to the stratum lucidum in CA3.  Suprapyramidal region in which CA3 to CA3 associational connections and CA3 to CA1 Schaffer collateral connections are located." [NIF_GrossAnatomy:birnlex_1298]
+synonym: "stratum radiatum" EXACT [NIF_GrossAnatomy:birnlex_1298]
+xref: FMA:83894
+xref: MA:0000959
+xref: NIF_GrossAnatomy:birnlex_1298
+is_a: UBERON:0002305 ! layer of hippocampus
+
+[Term]
+id: UBERON:0005373
+name: spinal cord dorsal column
+xref: MA:0002749
+relationship: part_of UBERON:0002318 ! white matter of spinal cord
+
+[Term]
+id: UBERON:0005374
+name: spinal cord lateral column
+xref: MA:0002750
+relationship: part_of UBERON:0002318 ! white matter of spinal cord
+
+[Term]
+id: UBERON:0005375
+name: spinal cord ventral column
+xref: MA:0002751
+relationship: part_of UBERON:0002318 ! white matter of spinal cord
+
+[Term]
+id: UBERON:0005376
+name: olfactory bulb external plexiform layer
+def: "Cytoarchitectural part of the olfactory bulb, lying superior to the mitral cell layer and inferior to the glomerular layer. The EPL is mostly neuropil composed almost entirely of mitral and tulfted cell dendrites and granule cell dendrites and their synaptic inputs." [NIF_GrossAnatomy:nlx_anat_20090403]
+synonym: "external plexiform layer" BROAD [BTO:0001319]
+xref: BTO:0001319
+xref: MA:0000969
+xref: NIF_GrossAnatomy:nlx_anat_20090403
+is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
+relationship: part_of UBERON:0002264 ! olfactory bulb
+
+[Term]
+id: UBERON:0005377
+name: olfactory bulb glomerular layer
+def: "The glomerular layer is the most superficial layer, consisting of mitral cell dendritic arborizations (glomeruli), olfactory nerve fibers, and periglomerular cells. Periglomerular cells contact multiple mitral cell dendrites within the glomeruli and provide lateral inhibition of neighboring glomeruli while allowing excitation of a specific mitral cell dendritic tree. Each mitral cell is contacted by at least 1000 olfactory nerve fibers[BTO]. Portion of tissue which is located in between the primary olfactory fiber layer and the external cellular layer of the olfactory bulb[ZFA]." [BTO:0001317]
+synonym: "glomerular layer" BROAD [BTO:0001317, ZFA:0000357]
+xref: BTO:0001317
+xref: MA:0000970
+xref: ZFA:0000357
+is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
+relationship: part_of UBERON:0002264 ! olfactory bulb
+
+[Term]
+id: UBERON:0005378
+name: olfactory bulb granule cell layer
+def: "The granule cell layer contains multiple small round neurons that lack axons. Long dendritic processes of the neurons reach the more superficial layers and inhibit mitral cells and tufted cells. Small distal processes make contacts with the exiting mitral cell axons." [BTO:0001327]
+synonym: "granule cell layer" BROAD [BTO:0001327]
+xref: BTO:0001327
+xref: MA:0000971
+is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
+relationship: part_of UBERON:0002264 ! olfactory bulb
+
+[Term]
+id: UBERON:0005379
+name: olfactory bulb internal plexiform layer
+synonym: "internal plexiform layer" EXACT [BTO:0001320]
+xref: BTO:0001320
+xref: MA:0000972
+is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
+relationship: part_of UBERON:0002264 ! olfactory bulb
+
+[Term]
+id: UBERON:0005380
+name: olfactory bulb subependymal zone
+xref: MA:0000974
+is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
+relationship: part_of UBERON:0002264 ! olfactory bulb
+
+[Term]
+id: UBERON:0005381
+name: dentate gyrus granule cell layer
+xref: FMA:83146
+xref: MA:0000946
+xref: NIF_GrossAnatomy:birnlex_4129
+is_a: UBERON:0002304 ! layer of dentate gyrus
+
+[Term]
+id: UBERON:0005382
+name: dorsal striatum
+def: "Those portions of the caudate nucleus and especially the putamen located generally superior to a plane representing the anterior commissure; also called the dorsal basal ganglia; may function in motor activities with cognitive origins." [BTO:0004701]
+comment: CHECK - neostriatum vs striatum. Check rodent
+synonym: "caudoputamen" RELATED [NIF_GrossAnatomy:nlx_anat_100312]
+xref: BTO:0004701
+xref: FMA:77620
+xref: MA:0002971
+is_a: UBERON:0002020 ! gray matter of neuraxis
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
+is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
+relationship: part_of UBERON:0002435 ! striatum
+
+[Term]
+id: UBERON:0005383
+name: caudate-putamen
+def: "Regional part of telencephalon in some species, e.g., rodent, equivalent to the dorsal striatum (caudate nucleus and putamen). Unlike the dorsal striatum of primates, for example, the caudoputamen is not split into separate nuclei by the fibers of the internal capsule. Rather, the internal capsule splits into fiber bundles which course through the structure." [NIF_GrossAnatomy:nlx_anat_100312]
+comment: CHECK - rodents
+synonym: "caudate putamen" EXACT []
+synonym: "caudoputamen" RELATED []
+xref: BTO:0000212
+xref: EMAPA:19095
+xref: MA:0000893
+xref: NIF_GrossAnatomy:nlx_anat_100312
+relationship: part_of UBERON:0005382 ! dorsal striatum
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -71676,6 +72268,8 @@ range: UBERON:0001062 ! anatomical entity
 [Typedef]
 id: branch_of
 name: branch_of
+comment: we need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve
+is_a: part_of ! part_of
 
 [Typedef]
 id: capable_of
