@@ -3,6 +3,7 @@ date: 18:10:2009 19:55
 subsetdef: uberon_slim "Uberon slim"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: developmental_classification "developmental_classification"
+subsetdef: functional_classification "functional_classification"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: DUBIOUS "dubious or contested synonym"
 synonymtypedef: SENSU "taxonomic disambiguation"
@@ -99,6 +100,7 @@ name: chemosensory organ
 def: "." [Wikipedia:Olfactory_system]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+subset: functional_classification
 synonym: "olfactory system" EXACT []
 synonym: "chemosensory sensory organ" EXACT []
 xref: AAO:0000334 ! olfactory_system
@@ -195,6 +197,7 @@ xref: XAO:0000178 ! peripheral nervous system
 xref: ZFA:0000142 ! peripheral nervous system
 is_a: UBERON:0000073 ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
+relationship: spatially_disjoint_from UBERON:0001017 ! central nervous system
 xref: ncithesaurus:Peripheral_Nervous_System ! Peripheral Nervous System
 xref: EHDAA2:0001445 ! peripheral nervous system
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nervous_system_diagram.png/200px-Nervous_system_diagram.png
@@ -2378,7 +2381,7 @@ def: "Organ that functions in gaseous exchange between an organism and its envir
 synonym: "breathing organ" EXACT []
 synonym: "gas exchange organ" RELATED []
 synonym: "respiratory organ" EXACT []
-is_a: UBERON:0000062 ! organ
+subset: functional_classification
 intersection_of: UBERON:0000062 ! organ
 intersection_of: capable_of GO:0007585 ! respiratory gaseous exchange
 relationship: part_of UBERON:0001004 ! respiratory system
@@ -2569,27 +2572,6 @@ created_by: cjm
 creation_date: 2009-04-18T01:18:17Z
 
 [Term]
-id: UBERON:0000207
-name: acellular lens
-def: "A chitinous extracellular secretion of the four underlying cone cells and the pigment cells." [GO:0048058]
-synonym: "compound eye corneal lens" EXACT [GO:0048058]
-synonym: "invertebrate lens" RELATED []
-xref: FBbt:00004199 ! lens
-xref: TADS:0000304 ! adult eye lens
-is_a: UBERON:0000476 ! acellular anatomical structure
-is_a: UBERON:0000965 ! lens
-created_by: cjm
-creation_date: 2009-04-18T01:35:32Z
-
-[Term]
-id: UBERON:0000208
-name: cellular lens
-synonym: "vertebrate lens" RELATED []
-is_a: UBERON:0000965 ! lens
-created_by: cjm
-creation_date: 2009-04-18T01:37:39Z
-
-[Term]
 id: UBERON:0000209
 name: tetrapod frontal bone
 alt_id: UBERON:FMA_9613-MA_0001469-ZFA_0000486
@@ -2705,6 +2687,7 @@ alt_id: UBERON:FBbt_00003317-FMA_74998
 def: "Muscle that causes adduction can be called an adductor muscle. For example in biology, the muscle or muscles in the interior of a bivalve mollusk which serve to close the valves are called adductor muscles, and the large foot to shell muscle in gastropods such as the abalone and limpet is also known as an adductor muscle[WP]. A muscle that brings a body part  closer to the sagittal plane of the body[ZFA, WikipediaLAdduction]." [Wikipedia:Adductor_muscle]
 comment: TODO - add functional xp definition. TODO - check MA.
 subset: uberon_slim
+subset: functional_classification
 synonym: "adductor" RELATED []
 is_a: UBERON:0001630 ! muscle organ
 xref: FBbt:00003317 ! adductor muscle
@@ -2834,7 +2817,7 @@ relationship: part_of UBERON:0001443 ! chest
 xref: ncithesaurus:Breast ! Breast
 xref: GAID:33 ! breast
 xref: OpenCyc:Mx4rvVjV7ZwpEbGdrcN5Y29ycA ! breast
-def: "The breast is the upper ventral region of an animal’s torso, particularly that of mammals, including human beings. The breasts of a female primate’s body contain the mammary glands, which secrete milk used to feed infants. Both men and women develop breasts from the same embryological tissues. However, at puberty female sex hormones, mainly estrogens, promote breast development, which does not happen with men. As a result women's breasts become more prominent than men's. [WP,unvetted]." [Wikipedia:Breast]
+def: "The breast is the upper ventral region of an animal's torso, particularly that of mammals, including human beings. The breasts of a female primate’s body contain the mammary glands, which secrete milk used to feed infants. Both men and women develop breasts from the same embryological tissues. However, at puberty female sex hormones, mainly estrogens, promote breast development, which does not happen with men. As a result women's breasts become more prominent than men's. [WP,unvetted]." [Wikipedia:Breast]
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Closeup_of_female_breast.jpg/200px-Closeup_of_female_breast.jpg
 
 
@@ -3340,6 +3323,22 @@ is_obsolete: true
 replaced_by: UBERON:0003937 ! sex gland
 
 [Term]
+id: UBERON:0005398
+name: female reproductive gland
+intersection_of: UBERON:0003937 ! sex gland
+intersection_of: part_of UBERON:0000474 ! female reproductive system
+xref: BTO:0000254 ! female reproductive gland
+xref: MA:0000383 ! female reproductive gland
+
+[Term]
+id: UBERON:0005399
+name: male reproductive gland
+intersection_of: UBERON:0003937 ! sex gland
+intersection_of: part_of UBERON:0000079 ! male reproductive system
+xref: MA:0000399 ! male reproductive gland
+xref: BTO:0000080 ! male reproductive gland
+
+[Term]
 id: UBERON:0000359 ! preputial gland
 alt_id: UBERON:BTO_0001111-FMA_71652
 name: preputial gland
@@ -3407,6 +3406,7 @@ id: UBERON:0004758
 name: salt gland
 def: "an organ for excreting excess salts. It is found in elasmobranchs, seabirds, and some reptiles. In sharks, salt glands  are found in the rectum, but in birds and reptiles, they are found in or on the skull, in the area of the eyes, nostrils  or mouth. In crocodiles, the salt is excreted through the tongue. Such glands work by active transport via sodium-potassium pump  that moves salt from the blood into the gland, where it can be excreted as a concentrated solution. Salt glands function to keep salt balance, and allow marine vertebrates to drink seawater[WP]." [Wikipedia:Salt_gland]
 xref: GAID:1235 ! salt gland
+subset: functional_classification
 intersection_of: UBERON:0002530 ! gland
 intersection_of: capable_of GO:0055078 ! sodium ion homeostasis
 
@@ -3569,7 +3569,7 @@ synonym: "caudoputamen" RELATED [NIF_GrossAnatomy:nlx_anat_100312]
 id: UBERON:0005383
 name: caudate-putamen
 def: "Regional part of telencephalon in some species, e.g., rodent, equivalent to the dorsal striatum (caudate nucleus and putamen). Unlike the dorsal striatum of primates, for example, the caudoputamen is not split into separate nuclei by the fibers of the internal capsule. Rather, the internal capsule splits into fiber bundles which course through the structure." [NIF_GrossAnatomy:nlx_anat_100312]
-comment: CHECK - rodents
+comment: CHECK - rodents. The caudate nucleus and putamen are separated by a clear white matter bundle in most species but not in rodents (MM)
 synonym: "caudate putamen" EXACT []
 synonym: "caudoputamen" RELATED []
 relationship: part_of UBERON:0005382 ! dorsal striatum
@@ -3583,7 +3583,7 @@ id: UBERON:0001873
 name: caudate nucleus
 alt_id: UBERON:FMA_61833-MA_0000894
 def: "Nucleus of brain which is an elongated crescent-shaped mass lying parallel and adjacent to the lateral ventricle throughout its extent." [Wikipedia:Caudate_nucleus]
-comment: TODO check rodents
+comment: CHECK - rodents. The caudate nucleus and putamen are separated by a clear white matter bundle in most species but not in rodents (MM)
 subset: uberon_slim
 synonym: "caudatus" EXACT []
 xref: BTO:0000211
@@ -3605,7 +3605,7 @@ id: UBERON:0001874
 name: putamen
 alt_id: UBERON:FMA_61834-MA_0000895
 def: "Nucleus of brain which lies ventral to the caudate nucleus and internal capsule and medial to the external capsule. The putamen and caudate nucleus together form the dorsal striatum. It is also one of the structures that comprises the basal ganglia. Through various pathways, the putamen is connected to the substantia nigra and globus pallidus. The main function of the putamen is to regulate movements and influence various types of learning. It employs dopamine to perform its functions. The putamen also plays a role in degenerative neurological disorders, such as Parkinson's disease." [Wikipedia:Putamen]
-comment: TODO check rodents
+comment: CHECK - rodents. The caudate nucleus and putamen are separated by a clear white matter bundle in most species but not in rodents (MM)
 subset: uberon_slim
 synonym: "nucleus putamen" EXACT []
 xref: FMA:61834 ! Putamen
@@ -5542,7 +5542,7 @@ relationship: has_part UBERON:0002391 ! lymph
 xref: GAID:1187 ! chyle
 
 [Term]
-id: UBERON:0000912
+id: UBERON:0000912 ! mucus
 name: mucus
 alt_id: UBERON:ENVO_02000040-FMA_66938
 def: "Mucus is a bodily fluid consisting of a slippery secretion of the lining of the mucous membranes in the body. It is a viscous colloid containing antiseptic enzymes (such as lysozyme) and immunoglobulins. Mucus is produced by goblet cells in the mucous membranes that cover the surfaces of the membranes. It is made up of mucins and inorganic salts suspended in water." [Wikipedia:Mucus]
@@ -5573,7 +5573,6 @@ def: "connective tissue between the cellular elements of a structure." [http://m
 comment: todo - make connective tissue
 synonym: "interstitium" EXACT []
 is_a: UBERON:0003891 ! stroma
-
 
 [Term]
 id: UBERON:0000915
@@ -5665,6 +5664,7 @@ synonym: "chorion" RELATED []
 xref: FBbt:00000038 ! chorion
 xref: TAO:0000329 ! chorion
 xref: ZFA:0000329 ! chorion
+xref: FMA:80224 ! Chorion
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: surrounds UBERON:0003125 ! vitelline membrane
 xref: EHDAA2:0000245 ! chorion
@@ -6433,13 +6433,22 @@ xref: EHDAA2:0000316 ! cornea
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Schematic_diagram_of_the_human_eye_en.svg/200px-Schematic_diagram_of_the_human_eye_en.svg.png
 
 [Term]
+id: UBERON:0005389 ! transparent eye structure
+name: transparent eye structure
+comment: transparent structure that is part of a visual sense organ, the function of which is to direct or focus light onto a photoreceptor array
+synonym: "lens" NARROW []
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0000970 ! eye
+
+[Term]
 id: UBERON:0000965
 name: lens
 alt_id: UBERON:FBbt_00004199-FMA_58241-MA_0000275-MIAA_0000141-XAO_0000008-ZFA_0000035
 def: "Transparent part of eye that helps to refract light to be focused on the retina." [Wikipedia:Lens_(anatomy)]
-comment: This class was created automatically from a combination of ontologies
+comment: This class excludes compound eye corneal lenses. The naming may be too vertebrate-centric, in which case it could be renamed to camera-eye
 subset: uberon_slim
 synonym: "eye lens" EXACT []
+synonym: "camera-type eye lens" EXACT [GO:0002088]
 xref: BTO:0000723
 xref: EHDAA:9057 ! lens
 xref: FMA:58241 ! Lens
@@ -6450,7 +6459,7 @@ xref: MIAA:0000141 ! lens
 xref: TAO:0000035 ! lens
 xref: XAO:0000008 ! lens
 xref: ZFA:0000035 ! lens
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0005389 ! transparent eye structure
 relationship: develops_from UBERON:0003073 ! lens placode
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 xref: ncithesaurus:Crystalline_Lens ! Lens
@@ -6458,18 +6467,46 @@ xref: OpenCyc:Mx4rvVj0fZwpEbGdrcN5Y29ycA ! lens
 xref: EHDAA2:0000975 ! lens
 
 [Term]
+id: UBERON:0000207
+name: compound eye corneal lens
+def: "A chitinous extracellular secretion of the four underlying cone cells and the pigment cells." [GO:0048058]
+synonym: "acellular lens" RELATED []
+xref: FBbt:00004199 ! lens
+xref: TADS:0000304 ! adult eye lens
+is_a: UBERON:0000476 ! acellular anatomical structure
+is_a: UBERON:0005389 ! transparent eye structure
+relationship: part_of UBERON:0000018 ! compound eye
+created_by: cjm
+creation_date: 2009-04-18T01:35:32Z
+
+[Term]
+id: UBERON:0000208
+name: cellular lens
+is_obsolete: true
+created_by: cjm
+creation_date: 2009-04-18T01:37:39Z
+
+[Term]
+id: UBERON:0005388 ! photoreceptor array
+name: photoreceptor array
+synonym: "light-sensitive tissue" EXACT []
+def: "An array of photoreceptors and any supporting cells found in an eye." [UBERON:cjm]
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000970 ! eye
+xref: FBbt:00004200 ! retina
+
+[Term]
 id: UBERON:0000966
 name: retina
 alt_id: UBERON:FBbt_00004200-FMA_58301-MA_0000276-MIAA_0000142-XAO_0000009-ZFA_0000152
-def: "The retina is the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates. // The array of photoreceptors & the cells that support them in a compound eye. // Layer of wall of eyeball which is continuous with optic nerve. // Sensory membrane that lines the posterior chamber of the eye and functions as the immediate instrument of vision by receiving the image formed by the lens and converting it into chemical and nervous signals which reach the brain by way of the optic nerve. // The portion of the eye developing from the optic primordium and including the neural retina and the retinal pigment layer. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [FB:ds, NLM:retina, Wikipedia:Retina, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "The retina is the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates.  // Sensory membrane that lines the posterior chamber of the eye and functions as the immediate instrument of vision by receiving the image formed by the lens and converting it into chemical and nervous signals which reach the brain by way of the optic nerve. // The portion of the eye developing from the optic primordium and including the neural retina and the retinal pigment layer. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [FB:ds, NLM:retina, Wikipedia:Retina, ZFIN:curator]
+comment: Currently this class encompasses only verteberate AOs but could in theory also include cephalopod - we may want to make a more specific class for vertebrate retina. note that this class excludes ommatidial retinas, as the retina must be part of an eyeball. Us the parent class photoreceptor array / light-sensitive tissue for arthropods
 subset: uberon_slim
 synonym: "inner layer of eyeball" EXACT []
 synonym: "tunica interna of eyeball" EXACT []
 xref: BTO:0001175
 xref: EFO:0000832 ! retina
 xref: EHDAA:4757 ! retina
-xref: FBbt:00004200 ! retina
 xref: FMA:58301 ! Retina
 xref: GAID:755 ! retina
 xref: HOG:0000229 ! retina
@@ -6483,9 +6520,10 @@ xref: OpenCyc:Mx4rvViTfpwpEbGdrcN5Y29ycA
 xref: TAO:0000152 ! retina
 xref: XAO:0000009 ! retina
 xref: ZFA:0000152 ! retina
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0005388 ! photoreceptor array
 relationship: develops_from UBERON:0003072 ! eye vesicle
 relationship: part_of UBERON:0001802 ! posterior segment of eyeball
+relationship: never_in_taxon NCBITaxon:6656 ! Arthropoda
 xref: OpenCyc:Mx4rvViTfpwpEbGdrcN5Y29ycA ! retina
 xref: EHDAA2:0001627 ! retina
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Human_eye_cross-sectional_view_grayscale.png/200px-Human_eye_cross-sectional_view_grayscale.png
@@ -6571,7 +6609,6 @@ xref: HAO:0000666 ! ommatidium
 xref: MAT:0000143 ! omatidium
 xref: MIAA:0000143 ! omatidium
 is_a: UBERON:0002536 ! arthropod sensillum
-relationship: has_part UBERON:0000965 ! lens
 relationship: part_of UBERON:0000018 ! compound eye
 xref: BTO:0001922 ! ommatidium
 
@@ -6695,6 +6732,7 @@ alt_id: UBERON:FBbt_00004640-FMA_24979-MA_0000047-MIAA_0000095
 def: "A leg is a limb on which an animal walks and stands (GO:0035110)." [GO:0035110, Wikipedia:Leg]
 comment: Functional grouping, currently encompasses vertebrate and insect legs
 subset: uberon_slim
+subset: functional_classification
 synonym: "Intermediate segment of free lower limb" NARROW []
 xref: BTO:0000721
 xref: EHDAA:5151 ! leg
@@ -6840,7 +6878,7 @@ def: "An eyelid tarsus that is part of a upper eyelid [Obol]." [OBOL:automatic]
 id: UBERON:0004774
 name: inferior eyelid tarsus
 xref: FMA:59088 ! tarsal plate of lower eyelid
-xref: MA:0001260 ! superior eyelid tarsus
+xref: MA:0001257 ! inferior eyelid tarsus
 synonym: "tarsus of lower eyelid" EXACT []
 synonym: "tarsal plate of lower eyelid" EXACT [FMA:59088]
 synonym: "inferior tarsal plate" EXACT [FMA:59088]
@@ -7033,6 +7071,7 @@ def: "Anatomical system that has as its parts the organs concerned with reproduc
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "genital system" RELATED []
+subset: functional_classification
 xref: BILA:0000103
 xref: BTO:0000081
 xref: EHDAA:5923 ! reproductive system
@@ -7267,11 +7306,10 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Female_anatomy.pn
 id: UBERON:0000996
 name: vagina
 alt_id: UBERON:FBbt_00004925-FMA_19949-MA_0000394-MIAA_0000128
-def: "Organ with organ cavity which connects the cervical canal of uterus to the vestibule of vagina. Examples: There is only one vagina." [Wikipedia:Vagina]
+def: "a fibromuscular tubular tract leading from the uterus to the exterior of the body in female placental mammals and marsupials, or to the cloaca in female birds, monotremes, and some reptiles[WP]. Organ with organ cavity which connects the cervical canal of uterus to the vestibule of vagina. Examples: There is only one vagina.[FMA]" [Wikipedia:Vagina, FMA:19949]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: BTO:0000243
-xref: FBbt:00004925 ! vagina
 xref: FMA:19949 ! Vagina
 xref: GAID:381 ! vagina
 xref: HOG:0001138 ! vagina
@@ -7467,6 +7505,7 @@ alt_id: UBERON:FBbt_00005024-FMA_7158-MA_0000327-MIAA_0000030-XAO_0000117-ZFA_00
 def: "Functional system which consists of structures involved in respiration. // Anatomical system that has as its parts the organs involved in breathing in respiration (breathing)." [FB:FBrf0064787, OMD:respiratory+apparatus, Wikipedia:Respiratory_system]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+subset: functional_classification
 synonym: "apparatus respiratorius" EXACT []
 synonym: "respiratory system" EXACT []
 xref: AAO:0000541 ! respiratory_system
@@ -7595,54 +7634,6 @@ xref: TGMA:0000578 ! spiracle
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001004 ! respiratory system
 xref: EFO:0000936 ! spiracle
-
-[Term]
-id: UBERON:0001007
-name: digestive system
-alt_id: UBERON:FBbt_00005055-FMA_7152-MA_0000323-MIAA_0000018-WBbt_0005748-XAO_0000125-ZFA_0000339
-def: "The organ system involved in the absorption of nutrients. // Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." [FB:gg, NLM:alimentary+system, Wikipedia:Digestive_system,]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "alimentary system" RELATED []
-synonym: "alimentary tract" RELATED []
-synonym: "gastrointestinal system" EXACT []
-synonym: "gut" RELATED []
-xref: AAO:0000129 ! digestive_system
-xref: BILA:0000082
-xref: EHDAA:514 ! alimentary system
-xref: FBbt:00005055 ! digestive system
-xref: FMA:7152 ! Alimentary system
-xref: GAID:278 ! digestive system
-xref: GAID:294 ! gastrointestinal system
-xref: galen:DigestiveSystem
-xref: HOG:0000412 ! alimentary system
-xref: MA:0000323 ! gastrointestinal system
-xref: MAT:0000018 ! digestive system
-xref: MIAA:0000018 ! digestive system
-xref: ncithesaurus:Gastrointestinal_System
-xref: TAO:0000339 ! digestive system
-xref: WBbt:0005748 ! alimentary system
-xref: XAO:0000125 ! alimentary system
-xref: ZFA:0000339 ! digestive system
-is_a: UBERON:0000467 ! anatomical system
-disjoint_from: UBERON:0000949 ! endocrine system
-disjoint_from: UBERON:0000990 ! reproductive system
-disjoint_from: UBERON:0001004 ! respiratory system
-disjoint_from: UBERON:0001008 ! urinary system
-disjoint_from: UBERON:0001009 ! circulatory system
-disjoint_from: UBERON:0001016 ! nervous system
-disjoint_from: UBERON:0004456 ! entire sense organ system
-disjoint_from: UBERON:0001033 ! gustatory system
-disjoint_from: UBERON:0001434 ! skeletal system
-disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002294 ! biliary system
-disjoint_from: UBERON:0002330 ! exocrine system
-disjoint_from: UBERON:0002390 ! hematopoietic system
-disjoint_from: UBERON:0002405 ! immune system
-disjoint_from: UBERON:0002416 ! integumental system
-disjoint_from: UBERON:0002423 ! hepatobiliary system
-xref: EFO:0000793 ! digestive system component
-xref: EHDAA2:0000110 ! alimentary system
 
 [Term]
 id: UBERON:0001008
@@ -7885,10 +7876,9 @@ xref: AEO:000020 ! fat tissue
 [Term]
 id: UBERON:0003916
 name: fat pad
-def: "an accumulation of adipose tissue." [GO:0060613]
+def: "an accumulation of adipose tissue[GO]. An accumulation of adipose tissue (fat cells) enclosed in fibrous tissue[BTO]." [GO:0060613, BTO:0000444]
 xref: AAO:0000157 ! fat_bodies
-xref: BTO:0000442
-xref: BTO:0000444
+xref: BTO:0000444 ! fat pad
 xref: FMA:58616 ! Fat body
 xref: MA:0002481 ! fat pad
 xref: XAO:0003050 ! fat body
@@ -7906,6 +7896,7 @@ xref: GAID:1213 ! fat body
 xref: MIAA:0000096 ! fat body
 xref: TADS:0000321 ! adult fat body
 xref: TGMA:0001856 ! fat body
+xref: BTO:0000442 ! fat body
 is_a: UBERON:0000062 ! organ
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
 
@@ -8375,6 +8366,7 @@ alt_id: UBERON:FBbt_00005382-FMA_9597-MA_0000346-MIAA_0000079
 def: "saliva-secreting exocrine glands of the oral cavity[GO]. The salivary glands in mammals are exocrine glands, glands with ducts, that produce saliva. They also secrete amylase, an enzyme that breaks down starch into maltose. In other organisms such as insects, salivary glands are often used to produce biologically important proteins like silk or glues, and fly salivary glands contain polytene chromosomes that have been useful in genetic research[WP]." [GO:0007431, Wikipedia:Salivary_gland]
 comment: currently we define saliva and salivary glands very generally in functional terms but it may be more appropriate to split this class. From WP: In most vertebrates, saliva does not contain any enzymes, consisting of mucus and water only, and its primary function is to moisten food while eating. As a result, true salivary glands are rarely found in fish or aquatic tetrapods, although there are often individual mucus-secreting cells. Amphibians have a single salivary gland, the intermaxillary gland, located in the forward part of the palate. Reptiles and birds  normally have only very small glands on the lips, palate, and base of the mouth, although there are some birds with large glands, which produce a sticky saliva that helps in nest-building. The distinct parotid, submandibular, and sublingual glands are only developed in mammals.[3] The salivary glands of some species, however, are modified to produce enzymes; salivary amylase is found in many, but by no means all, bird and mammal species (including humans, as noted above). Furthermore, the venom glands of poisonous snakes, Gila monsters, and some shrews, are modified salivary glands
 subset: uberon_slim
+subset: functional_classification
 xref: BTO:0001203
 xref: EFO:0000859 ! salivary gland
 xref: EHDAA:7987 ! salivary gland
@@ -8431,7 +8423,7 @@ id: UBERON:0001043
 name: esophagus
 alt_id: UBERON:FBbt_00005381-FMA_7131-MA_0000352-MIAA_0000048-XAO_0000127-ZFA_0000204
 def: "Tube that connects the pharynx to the stomach." [Wikipedia:Esophagus]
-comment: esophagus NOT part of gut in MA. part of gut in ZFA. part_of gut (via UGIT) in FMA.
+comment: esophagus NOT part of gut in MA. part of gut in ZFA. part_of gut (via UGIT) in FMA. TODO split
 subset: uberon_slim
 synonym: "gullet" EXACT []
 synonym: "oesophagus" EXACT []
@@ -8501,7 +8493,6 @@ def: "Tube extending from the mouth to the anus." [http://en.wikipedia.org/wiki/
 comment: GO says gut is region of DT, from intestines to anus. ZFA treats as synonym for alimentary canal, and treats it as the sum of DT + organs (ZF has no term from stomach). GO says intestines to anus (excludes stomach and esophagus). MA appears to agree with GO (stomach and esophagus are not parts). FMA includes stomach and esophagus as parts of gut -- the FMA divides gut into lower and upper GI tract; it's not clear if this is exhaustive (small intestine is in neither), but lower GI tract may correspond better to the GO definition. NOTE: GO now changed, see sf id in def xref
 subset: uberon_slim
 synonym: "alimentary canal" EXACT []
-synonym: "digestive tract" EXACT []
 synonym: "gut tube" RELATED []
 synonym: "gut" BROAD []
 xref: BILA:0000083 ! digestive tract
@@ -8560,8 +8551,8 @@ relationship: develops_from UBERON:0001041 ! foregut
 id: UBERON:0001041
 name: foregut
 alt_id: UBERON:FBbt_00005379-FMA_45616-MA_0001526-XAO_0000232
-def: "An anterior part of the alimentary canal derived from the ectoderm." [Wikipedia:Foregut]
-comment: in FMA includes: pharynx, esophagus, stomach, proximal half of duedenum, liver, pancreas, gallbladder. But pharynx is not part of gut? also liver. Resolved by making part of digestive system. check invertebrates
+def: "Anterior subdivision of a digestive tract[CJM]. An anterior part of the alimentary canal derived from the ectoderm[WP]." [Wikipedia:Foregut]
+comment: Note we define this generically to include invertebrates, but the class may be split in future. Note in FMA this class has no children - because its a dev classification?
 subset: uberon_slim
 subset: developmental_classification
 xref: BILA:0000085
@@ -8581,8 +8572,8 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gray27.png/200px-
 id: UBERON:0001045
 name: midgut
 alt_id: UBERON:FBbt_00005383-FMA_45617-MA_0001564-XAO_0000103
-def: "The middle part of the alimentary canal from the stomach, or entrance of the bile duct, to, or including, the large intestine[GO]. In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine." [Wikipedia:Midgut, GO:0007494]
-comment: we seem to have defined this to exclude invertebrate classifications - todo - make consistent with foregut hindgut
+def: "Middle subdivision of a digestive tract[CJM]. In vertebrates: The middle part of the alimentary canal from the stomach, or entrance of the bile duct, to, or including, the large intestine[GO]. In humans: originates from the foregut at the opening of the bile duct into the duodenum and continues through the small intestine and much of the large intestine until the transition to the hindgut about two-thirds of the way through the transverse colon. That part of the alimentary canal which lies between the gizzard and the hind intestine." [Wikipedia:Midgut, GO:0007494]
+comment: Note we define this generically to include invertebrates, but the class may be split in future.
 subset: uberon_slim
 subset: developmental_classification
 xref: BILA:0000086
@@ -8594,6 +8585,7 @@ xref: XAO:0000103 ! midgut
 xref: ncithesaurus:Midgut ! Midgut
 xref: EFO:0001950 ! midgut
 xref: EHDAA:983 ! midgut
+xref: FBbt:00005383 ! midgut
 is_a: UBERON:0004921 ! subdivision of digestive tract
 xref: EHDAA2:0001185 ! midgut
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Illu_small_intestine.jpg/200px-Illu_small_intestine.jpg
@@ -8602,8 +8594,8 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Illu_small_intest
 id: UBERON:0001046
 name: hindgut
 alt_id: UBERON:FBbt_00005384-FMA_45618-MA_0001527-XAO_0000104
-def: "A posterior part of the alimentary canal derived from the ectoderm." [Wikipedia:Hindgut]
-comment: This class was created automatically from a combination of ontologies
+def: "Posterior subdivision of a digestive tract[CJM]." [Wikipedia:Hindgut]
+comment: Note we define this generically to include invertebrates, but the class may be split in future.
 subset: uberon_slim
 subset: developmental_classification
 xref: BILA:0000087
@@ -8745,6 +8737,7 @@ id: UBERON:0001050
 name: atrium
 alt_id: UBERON:FBbt_00005615-FMA_85574-ZFA_0000471
 def: "Anatomical chamber. Examples: right atrium of heart, atrium of middle nasal meatus, atrium of tympanic cavity, atrium of alveolus." []
+comment: GAT in FMA
 subset: uberon_slim
 xref: BTO:0000903
 xref: EFO:0000277 ! atrium
@@ -9127,30 +9120,6 @@ is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001264 ! pancreas
 xref: EHDAA2:0001374 ! pancreas head
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Illu_pancreas_duodenum.jpg/200px-Illu_pancreas_duodenum.jpg
-
-[Term]
-id: UBERON:0001070
-name: external carotid artery
-alt_id: UBERON:FMA_10635-MA_0001929-XAO_0000345-ZFA_0005022
-def: "The opercular artery arises from the hyoid stump on the first aortic arch, then follows the lateral margin of the operculum (gill covering) ventrally to reconnect into the proximal part of the first aortic arch. <a href='ZFIN_jump?record=ZDB-PUB-010205-5'>Isogai et al. 2001.</a>" [Wikipedia:External_carotid_artery, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "opercular artery" EXACT []
-synonym: "ORA" RELATED []
-xref: FMA:10635 ! External carotid artery
-xref: GAID:480 ! external carotid artery
-xref: HOG:0000265 ! external carotid artery
-xref: MA:0001929 ! external carotid artery
-xref: TAO:0005022 ! opercular artery
-xref: XAO:0000345 ! external carotid artery
-xref: ZFA:0005022 ! opercular artery
-is_a: UBERON:0001637 ! artery
-xref: ncithesaurus:External_Carotid_Artery ! External Carotid Artery
-xref: EFO:0001953 ! external carotid artery
-xref: OpenCyc:Mx4rwVJkPZwpEbGdrcN5Y29ycA ! external carotid artery
-xref: EHDAA2:0000461 ! external carotid artery
-relationship: develops_from UBERON:0003118 ! aortic arch 1
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/13/External_carotid_a.gif/200px-External_carotid_a.gif
 
 [Term]
 id: UBERON:0001071
@@ -9897,18 +9866,18 @@ xref: OpenCyc:Mx4rv-ZsXpwpEbGdrcN5Y29ycA ! sacral vertebra
 
 [Term]
 id: UBERON:0001095
-name: coccygeal vertebra
+name: caudal vertebra
 alt_id: UBERON:FMA_12527-XAO_0003079-ZFA_0000326
-def: ". " [Wikipedia:Caudal_vertebra, ZFIN:curator]
-comment: TODO - split caudal vs coccygeal? FMA says these are exact, but MA has cocc as subtype of caudal. MP says caudal = coccyx or tail.
+def: "bones in the tails of mammals. In zebrafish: Vertebra bearing a hemal arch and spine. The most posterior caudal vertebrae support the caudal fin and are referred to as preural vertebrae." [Wikipedia:Caudal_vertebra, ZFIN:curator]
+comment: TODO - split caudal vs coccygeal? FMA says these are exact, but MA has cocc as subtype of caudal (only 1 isa child). MP says caudal = coccyx or tail.
 subset: uberon_slim
-synonym: "caudal vertebra" EXACT []
+synonym: "coccygeal vertebra" EXACT [FMA:12527]
 synonym: "caudal vertebrae" EXACT PLURAL []
 synonym: "coccygeal vertebrae" EXACT PLURAL []
 synonym: "coccygeal segment" EXACT []
 xref: FMA:12527 ! Coccygeal vertebra
 xref: galen:CoccygealVertebra
-xref: MA:0001420 ! coccygeal vertebra
+xref: MA:0000310 ! caudal vertebra
 xref: OpenCyc:Mx4rv9IEzZwpEbGdrcN5Y29ycA
 xref: TAO:0000326 ! caudal vertebra
 xref: XAO:0003079 ! caudal vertebra
@@ -9916,6 +9885,28 @@ xref: ZFA:0000326 ! caudal vertebra
 is_a: UBERON:0002412 ! vertebra
 xref: ncithesaurus:Coccygeal_Vertebra ! Coccygeal Vertebra
 xref: OpenCyc:Mx4rv9IEzZwpEbGdrcN5Y29ycA ! coccygeal vertebra
+
+[Term]
+id: UBERON:0001350
+name: coccyx
+alt_id: UBERON:FMA_20229-MA_0000696
+def: "In humans: The coccyx, commonly referred to as the tailbone, is the final segment of the human vertebral column. Comprising three to five separate or fused vertebrae (the coccygeal vertebrae) below the sacrum, it is attached to the sacrum by a fibrocartilaginous joint, the sacrococcygeal symphysis, which permits limited movement between the sacrum and the coccyx. The term coccyx comes originally from the Greek language and means 'cuckoo', referring to the curved shape of a cuckoo's beak when viewed from the side. [WP,unvetted]." [Wikipedia:Coccyx, Wikipedia:Coccyx]
+comment: In MA the subclass hierarchy is cocc V is_a caud V is_a tail bone
+subset: uberon_slim
+synonym: "Coccyx [coccygeal vertebrae I-IV]" EXACT []
+synonym: "tail bone" EXACT []
+synonym: "tailbone" EXACT []
+xref: AAO:0000731 ! coccyx
+xref: FMA:20229 ! Coccyx
+xref: GAID:239 ! coccyx
+xref: galen:Coccyx
+xref: MA:0000696 ! tail bone
+xref: OpenCyc:Mx4rv1XqHJwpEbGdrcN5Y29ycA
+is_a: UBERON:0001474 ! bone
+relationship: part_of UBERON:0001130 ! vertebral column
+xref: ncithesaurus:Coccyx ! Coccyx
+xref: OpenCyc:Mx4rv1XqHJwpEbGdrcN5Y29ycA ! tail bone
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Gray100.png/200px-Gray100.png
 
 [Term]
 id: UBERON:0001096
@@ -14746,11 +14737,13 @@ intersection_of: part_of UBERON:0000992 ! ovary
 id: UBERON:0001344
 name: epithelium of vagina
 alt_id: UBERON:FMA_19978-MA_0001730
+comment: FMA: nonkeratinizing stratified squamous epithelium; BTO: Vaginal epithelium is stratified squamous epithelium having a thickness of 15-200 microns; MA has single subclass 
 synonym: "vagina epithelium" EXACT []
 synonym: "vaginal epithelium" EXACT []
 xref: BTO:0000422
 xref: FMA:19978 ! Epithelium of vagina
 xref: MA:0001730 ! vagina epithelium
+xref: EMAPA:30991 ! epithelium of vagina
 is_a: UBERON:0000486 ! multilaminar epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0000996 ! vagina
@@ -14834,29 +14827,6 @@ subset: uberon_slim
 xref: FMA:20192 ! Vestibule
 is_a: UBERON:0002553 ! anatomical cavity
 xref: ncithesaurus:Vestibule ! Vestibule
-
-[Term]
-id: UBERON:0001350
-name: coccyx
-alt_id: UBERON:FMA_20229-MA_0000696
-def: "The coccyx, commonly referred to as the tailbone, is the final segment of the human vertebral column. Comprising three to five separate or fused vertebrae (the coccygeal vertebrae) below the sacrum, it is attached to the sacrum by a fibrocartilaginous joint, the sacrococcygeal symphysis, which permits limited movement between the sacrum and the coccyx. The term coccyx comes originally from the Greek language and means 'cuckoo', referring to the curved shape of a cuckoo's beak when viewed from the side. [WP,unvetted]." [Wikipedia:Coccyx, Wikipedia:Coccyx]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "Coccyx [coccygeal vertebrae I-IV]" EXACT []
-synonym: "tail bone" EXACT []
-synonym: "tailbone" EXACT []
-xref: AAO:0000731 ! coccyx
-xref: FMA:20229 ! Coccyx
-xref: GAID:239 ! coccyx
-xref: galen:Coccyx
-xref: MA:0000696 ! tail bone
-xref: OpenCyc:Mx4rv1XqHJwpEbGdrcN5Y29ycA
-is_a: UBERON:0001474 ! bone
-relationship: part_of UBERON:0002415 ! tail
-xref: ncithesaurus:Coccyx ! Coccyx
-xref: OpenCyc:Mx4rv1XqHJwpEbGdrcN5Y29ycA ! tail bone
-relationship: part_of UBERON:0001130 ! vertebral column
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Gray100.png/200px-Gray100.png
 
 [Term]
 id: UBERON:0001351
@@ -18031,34 +18001,42 @@ xref: OpenCyc:Mx4rv9mMTpwpEbGdrcN5Y29ycA ! brachiocephalic artery
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Gray506.svg/200px-Gray506.svg.png
 
 [Term]
-id: UBERON:0001530
-name: common carotid artery
-alt_id: UBERON:FMA_3939-ZFA_0000097
-def: "Artery originating at the junction of the first two aortic arches and supplying the anterior brain. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Common_carotid_artery, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "carotid artery" EXACT []
-synonym: "trunk of common carotid tree" EXACT []
+id: UBERON:0005396 ! carotid artery
+name: carotid artery
+def: "Either of the two principal arteries on both sides of the neck that supply blood to the head and neck; each divides into two branches, the internal carotid artery and the external carotid artery." [Wikipedia:Carotid_artery]
+comment: TODO check child terms for isa vs partof
+is_a: UBERON:0001637 ! artery
+xref: MA:0001925 ! carotid artery
 xref: BTO:0000168
 xref: EFO:0000818 ! carotid artery
 xref: EHDAA:6385 ! carotid artery
-xref: EHDAA:7331 ! common carotid artery
-xref: FMA:3939 ! Common carotid artery
 xref: GAID:478 ! carotid artery
-xref: GAID:479 ! common carotid artery
-xref: galen:CarotidArtery
-xref: HOG:0000266 ! carotid artery
-xref: HOG:0000272 ! common carotid artery
-xref: MA:0001926 ! common carotid artery
 xref: MAT:0000501 ! carotid artery
 xref: OpenCyc:Mx4rvg7rcJwpEbGdrcN5Y29ycA
 xref: TAO:0000097 ! carotid artery
 xref: ZFA:0000097 ! carotid artery
-is_a: UBERON:0001637 ! artery
 xref: ncithesaurus:Carotid_Artery ! Carotid Artery
 xref: OpenCyc:Mx4rvg7rcJwpEbGdrcN5Y29ycA ! carotid artery
+xref: HOG:0000266 ! carotid artery
+xref: galen:CarotidArtery
+
+[Term]
+id: UBERON:0001530
+name: common carotid artery
+alt_id: UBERON:FMA_3939-ZFA_0000097
+def: "Artery originating at the junction of the first two aortic arches and supplying the anterior brain. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Common_carotid_artery, ZFIN:curator]
+comment: FMA says exact synonym with carotid
+subset: uberon_slim
+synonym: "carotid artery" BROAD [FMA:3939]
+synonym: "trunk of common carotid tree" EXACT []
+xref: EHDAA:7331 ! common carotid artery
+xref: FMA:3939 ! Common carotid artery
+xref: GAID:479 ! common carotid artery
+xref: HOG:0000272 ! common carotid artery
+xref: MA:0001926 ! common carotid artery
 xref: EHDAA2:0000306 ! common carotid artery
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Gray506.svg/200px-Gray506.svg.png
+is_a: UBERON:0005396 ! carotid artery
 
 [Term]
 id: UBERON:0001531
@@ -18095,13 +18073,37 @@ xref: OpenCyc:Mx4rvYx8KZwpEbGdrcN5Y29ycA
 xref: TAO:0005081 ! internal carotid artery
 xref: XAO:0000366 ! internal carotid artery
 xref: ZFA:0005081 ! internal carotid artery
-is_a: UBERON:0001637 ! artery
+is_a: UBERON:0005396 ! carotid artery
 relationship: part_of UBERON:0001530 ! common carotid artery
 xref: ncithesaurus:Internal_Carotid_Artery ! Internal Carotid Artery
 xref: EFO:0001952 ! internal carotid artery
 xref: OpenCyc:Mx4rvYx8KZwpEbGdrcN5Y29ycA ! internal carotid artery
 xref: EHDAA2:0000873 ! internal carotid artery
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Gray513.png/200px-Gray513.png
+
+[Term]
+id: UBERON:0001070
+name: external carotid artery
+alt_id: UBERON:FMA_10635-MA_0001929-XAO_0000345-ZFA_0005022
+def: "The opercular artery arises from the hyoid stump on the first aortic arch, then follows the lateral margin of the operculum (gill covering) ventrally to reconnect into the proximal part of the first aortic arch. <a href='ZFIN_jump?record=ZDB-PUB-010205-5'>Isogai et al. 2001.</a>" [Wikipedia:External_carotid_artery, ZFIN:curator]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "opercular artery" EXACT []
+synonym: "ORA" RELATED []
+xref: FMA:10635 ! External carotid artery
+xref: GAID:480 ! external carotid artery
+xref: HOG:0000265 ! external carotid artery
+xref: MA:0001929 ! external carotid artery
+xref: TAO:0005022 ! opercular artery
+xref: XAO:0000345 ! external carotid artery
+xref: ZFA:0005022 ! opercular artery
+is_a: UBERON:0005396 ! carotid artery
+xref: ncithesaurus:External_Carotid_Artery ! External Carotid Artery
+xref: EFO:0001953 ! external carotid artery
+xref: OpenCyc:Mx4rwVJkPZwpEbGdrcN5Y29ycA ! external carotid artery
+xref: EHDAA2:0000461 ! external carotid artery
+relationship: develops_from UBERON:0003118 ! aortic arch 1
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/13/External_carotid_a.gif/200px-External_carotid_a.gif
 
 [Term]
 id: UBERON:0001533
@@ -19987,6 +19989,8 @@ xref: NIF_GrossAnatomy:birnlex_1654 ! Trochlear nerve
 xref: TAO:0000600 ! cranial nerve IV
 xref: XAO:0003091 ! cranial nerve IV
 xref: ZFA:0000600 ! cranial nerve IV
+xref: EMAPA:18218 ! trochlear IV
+xref: EHDAA2:0002090 ! trochlear IV
 is_a: UBERON:0001785 ! cranial nerve
 xref: ncithesaurus:Trochlear_Nerve ! Trochlear Nerve
 xref: OpenCyc:Mx4rvyeBQ5wpEbGdrcN5Y29ycA ! fourth cranial nerve
@@ -20828,6 +20832,7 @@ alt_id: UBERON:FMA_7192-MA_0002443
 def: "A sensory system for the sense of hearing[WP]." [Wikipedia:Auditory_system]
 comment: Auditory system is general anatomical term in FMA
 subset: uberon_slim
+subset: functional_classification
 synonym: "auditory organ system" EXACT []
 synonym: "auditory system" RELATED []
 synonym: "auditory/vestibular system" RELATED []
@@ -21522,6 +21527,7 @@ xref: MAT:0000040 ! tongue
 xref: MIAA:0000040 ! tongue
 xref: OpenCyc:Mx4rvVjmJ5wpEbGdrcN5Y29ycA_53KXLq9EdqAAAACs6hnmQ
 xref: XAO:0000446 ! tongue
+xref: ZFA:0005333 ! tongue
 is_a: UBERON:0000062 ! organ
 relationship: develops_from UBERON:0002539 ! pharyngeal arch
 relationship: part_of UBERON:0001033 ! gustatory system
@@ -23531,52 +23537,6 @@ xref: ncithesaurus:Paranasal_Sinus ! Paranasal Sinus
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Nnh_front.svg/200px-Nnh_front.svg.png
 
 [Term]
-id: UBERON:0001826
-name: mucosa of nose
-alt_id: UBERON:FMA_59684-MA_0001324
-comment: This class was created automatically from a combination of ontologies
-synonym: "mucous membrane of nose" EXACT []
-synonym: "nasal cavity epithelium" EXACT []
-synonym: "nasal mucosa" RELATED []
-xref: BTO:0000912
-xref: FMA:59684 ! Mucosa of nose
-xref: GAID:302 ! nasal mucosa
-xref: MA:0001324 ! nasal cavity epithelium
-xref: EHDAA:6803 ! epithelium
-is_a: UBERON:0000064 ! organ part
-intersection_of: UBERON:0000344 ! mucosa
-intersection_of: part_of UBERON:0001707 ! nasal cavity
-relationship: part_of UBERON:0001707 ! nasal cavity
-xref: ncithesaurus:Nasal_Cavity_Epithelium ! Nasal Cavity Epithelium
-def: "the mucous membrane that lines the nasal cavity." [MP:0002238]
-synonym: "cavity of nose mucosa" EXACT [OBOL:automatic]
-synonym: "cavity of nose mucosa of organ" EXACT [OBOL:automatic]
-synonym: "cavity of nose mucous membrane" EXACT [OBOL:automatic]
-synonym: "cavity of nose organ mucosa" EXACT [OBOL:automatic]
-synonym: "mucosa of cavity of nose" EXACT [OBOL:automatic]
-synonym: "mucosa of nasal cavity" EXACT [OBOL:automatic]
-synonym: "mucosa of olfactory pit" EXACT [OBOL:automatic]
-synonym: "mucosa of organ of cavity of nose" EXACT [OBOL:automatic]
-synonym: "mucosa of organ of nasal cavity" EXACT [OBOL:automatic]
-synonym: "mucosa of organ of olfactory pit" EXACT [OBOL:automatic]
-synonym: "mucous membrane of cavity of nose" EXACT [OBOL:automatic]
-synonym: "mucous membrane of nasal cavity" EXACT [OBOL:automatic]
-synonym: "mucous membrane of olfactory pit" EXACT [OBOL:automatic]
-synonym: "nasal cavity mucosa" EXACT [OBOL:automatic]
-synonym: "nasal cavity mucosa of organ" EXACT [OBOL:automatic]
-synonym: "nasal cavity mucous membrane" EXACT [OBOL:automatic]
-synonym: "nasal cavity organ mucosa" EXACT [OBOL:automatic]
-synonym: "olfactory pit mucosa" EXACT [OBOL:automatic]
-synonym: "olfactory pit mucosa of organ" EXACT [OBOL:automatic]
-synonym: "olfactory pit mucous membrane" EXACT [OBOL:automatic]
-synonym: "olfactory pit organ mucosa" EXACT [OBOL:automatic]
-synonym: "organ mucosa of cavity of nose" EXACT [OBOL:automatic]
-synonym: "organ mucosa of nasal cavity" EXACT [OBOL:automatic]
-synonym: "organ mucosa of olfactory pit" EXACT [OBOL:automatic]
-xref: HOG:0000501 ! nasal epithelium
-xref: EHDAA2:0001227 ! nasal cavity epithelium
-
-[Term]
 id: UBERON:0001827
 name: tear
 alt_id: UBERON:FMA_59756-MA_0002508
@@ -23736,6 +23696,18 @@ xref: OpenCyc:Mx4rv842UpwpEbGdrcN5Y29ycA ! lower lip
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Mouth.jpg/200px-Mouth.jpg
 
 [Term]
+id: UBERON:0005402
+name: philtrum
+is_a: UBERON:0003102 ! surface structure
+relationship: part_of UBERON:0001834 ! upper lip
+xref: FMA:59819 ! Philtrum
+xref: MA:0001577 ! lip philtrum
+xref: EHDAA2:0001462 ! philtrum
+xref: EHDAA:9280 ! philtrum
+xref: EMAPA:17926 ! philtrum
+synonym: "lip philtrum" EXACT [MA:0001577]
+
+[Term]
 id: UBERON:0001836
 name: saliva
 alt_id: UBERON:FMA_59862-MA_0002507
@@ -23822,6 +23794,7 @@ intersection_of: UBERON:0001349
 intersection_of: part_of UBERON:0001839
 xref: GAID:881 ! vestibule
 xref: XAO:0000199 ! vestibule
+xref: MA:0001185 ! osseus labyrinth vestibule
 relationship: part_of UBERON:0001839 ! bony labyrinth
 def: "A vestibule that is part of a bony labyrinth [Obol]." [OBOL:automatic]
 
@@ -23954,7 +23927,7 @@ xref: ncithesaurus:Perilymph ! Perilymph
 id: UBERON:0001846
 name: internal ear
 alt_id: UBERON:FMA_60909-MA_0000237-MIAA_0000145-XAO_0000192-ZFA_0000217
-def: "Complex labyrinthine structure that comprises sensory endorgans specialized for vestibular, auditory, and acoustico-vestibular sensation. // The auditory (hearing) and vestibular (balance) organ of the fish, equivalent to the inner ear of amniotes[ZFA]." [PMID:16217737, Wikipedia:Internal_ear, ZFIN:curator]
+def: "Complex labyrinthine structure that comprises sensory endorgans specialized for vestibular, auditory, and acoustico-vestibular sensation." [PMID:16217737, Wikipedia:Internal_ear, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "ear" RELATED []
@@ -24848,7 +24821,7 @@ id: UBERON:0004703
 name: dorsal thalamus
 comment: MA and ZFA think there is a distinct dorsal thalamus, but FMA says its an exact synonym. TODO. http://www.ncbi.nlm.nih.gov/pubmed/8167659
 synonym: "dorsal thalamus" RELATED [FMA:62007]
-synonym: "thalamus, pars dorsalis" EXACT [ZFA:0000653 ]
+synonym: "thalamus, pars dorsalis" EXACT [ZFA:0000653]
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001897 ! thalamus
 xref: ZFA:0000653 ! dorsal thalamus
@@ -26947,30 +26920,6 @@ xref: ncithesaurus:Elastic_Cartilage ! Elastic Cartilage
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Gray904.png/200px-Gray904.png
 
 [Term]
-id: UBERON:0001997
-name: olfactory epithelium
-alt_id: UBERON:FMA_64803-ZFA_0000554
-def: "Nasal epithelium wherein ciliated olfactory receptor neurons, supporting cells, and basal cells are located." [Wikipedia:Olfactory_epithelium, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "nasal epithelium" RELATED []
-synonym: "nasal sensory epithelium" RELATED []
-synonym: "olfactory sensory epithelium" EXACT []
-synonym: "sensory olfactory epithelium" EXACT []
-xref: BTO:0000108
-xref: FMA:64803 ! Olfactory epithelium
-xref: HOG:0000985 ! olfactory epithelium
-xref: MAT:0000445 ! olfactory epithelium
-xref: NIF_GrossAnatomy:birnlex_2703 ! Olfactory epithelium
-xref: TAO:0000554 ! olfactory epithelium
-xref: ZFA:0000554 ! olfactory epithelium
-is_a: UBERON:0000485 ! simple columnar epithelium
-relationship: part_of UBERON:0001826 ! mucosa of nose
-xref: ncithesaurus:Olfactory_Epithelium ! Olfactory Epithelium
-xref: EFO:0001972 ! olfactory epithelium
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Gray857.png/200px-Gray857.png
-
-[Term]
 id: UBERON:0001998
 name: sternocostal joint
 def: "arthrodial joints, with the exception of the first, in which the cartilage is directly united with the sternum, and which is, therefore, a synarthrodial articulation." [Wikipedia:Sternocostal_joints]
@@ -27796,8 +27745,8 @@ def: "An endothelium that is part of a lymphatic vessel [Obol]." [OBOL:automatic
 id: UBERON:0002043
 name: dorsal raphe nucleus
 alt_id: UBERON:FMA_68462-ZFA_0000366
-def: "The dorsal raphe nucleus is a part of the raphe nucleus and consists of rostral and caudal subdivisions. The rostral aspect of the dorsal raphe is further divided into interfascicular, ventral, ventrolateral and dorsal subnuclei. The projections of the dorsal raphe have been found to vary topographically, and thus the subnuclei differ in their projections. An increased number of cells in the lateral aspects of the dorsal raphe is characteristic of humans and other primates. [WP,unvetted]." [Wikipedia:Dorsal_raphe_nucleus]
-comment: This class was created automatically from a combination of ontologies
+def: "A large raphe nucleus extending from the anterior part of the pons through the mesencephalon; its neurons are serotoninergic[NIF]. The dorsal raphe nucleus is a part of the raphe nucleus and consists of rostral and caudal subdivisions. The rostral aspect of the dorsal raphe is further divided into interfascicular, ventral, ventrolateral and dorsal subnuclei. The projections of the dorsal raphe have been found to vary topographically, and thus the subnuclei differ in their projections. An increased number of cells in the lateral aspects of the dorsal raphe is characteristic of humans and other primates. [WP,unvetted]." [Wikipedia:Dorsal_raphe_nucleus, NIF_GrossAnatomy:birnlex_982]
+comment: TODO check dorsal vs inferior. ZF has no pons.
 subset: uberon_slim
 synonym: "cell group b7" EXACT []
 synonym: "dorsal nucleus of the raphe" EXACT []
@@ -27808,6 +27757,7 @@ xref: FMA:68462 ! Dorsal raphe nucleus
 xref: NIF_GrossAnatomy:birnlex_982 ! Dorsal raphe nucleus
 xref: TAO:0000366 ! inferior raphe nucleus
 xref: ZFA:0000366 ! inferior raphe nucleus
+xref: MA:0002980 ! dorsal raphe nucleus
 is_a: UBERON:0002308 ! nucleus of brain
 relationship: part_of UBERON:0001943 ! midbrain tegmentum
 xref: BTO:0002434 ! dorsal raphe nucleus
@@ -30683,25 +30633,38 @@ relationship: part_of UBERON:0002421 ! hippocampal formation
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Hippocampus_%28brain%29.jpg/200px-Hippocampus_%28brain%29.jpg
 
 [Term]
+id: UBERON:0005412 ! optic fissure
+name: optic fissure
+def: "Groove that is in the ventral optic cup and through which blood vessels pass to the enclosed mesenchyme[ZFA]." [ZFA:0001284]
+synonym: "choroid fissure" RELATED  [ZFA:0001284]
+synonym: "optic fissures" EXACT PLURAL  [ZFA:0001284]
+xref: TAO:0001284
+is_a: UBERON:0000464 ! anatomical space
+relationship: part_of UBERON:0000966 ! retina
+relationship: part_of UBERON:0003072 ! optic cup
+xref: ZFA:0001284 ! optic fissure
+xref: MA:0001305 ! choroid fissure
+xref: XAO:0000474 ! choroid fissure
+xref: ZFA:0001284 ! optic fissure
+xref: EHDAA:4759 ! choroid fissure
+xref: EHDAA2:0000249 ! choroid fissure
+
+[Term]
 id: UBERON:0002192
 name: choroidal fissure
 alt_id: UBERON:FMA_74512-MA_0001305-XAO_0000474-ZFA_0001075
-def: "A break in the continuity of the optic cup where the two sides of the cup meet." [ISBN:0815318960]
-comment: This class was created automatically from a combination of ontologies
+def: "The narrow cleft along the medial wall of the lateral ventricle along the margins of which the choroid plexus is attached; it lies between the upper surface of the thalamus and lateral edge of the fornix in the central part of the ventricle and between the terminal stria and fimbria hippocampi in the inferior horn[ZFA]." [ISBN:0815318960, ZFA:0001075, Wikipedia:Choroid_fissure]
+comment: check ZFA:0001284 ! optic fissure 
 subset: uberon_slim
 synonym: "chorioid fissure" EXACT []
-synonym: "choroid fissure" EXACT []
-xref: EHDAA:4759 ! choroid fissure
+synonym: "choroid fissure" EXACT [MA:0001305]
 xref: FMA:74512 ! Choroidal fissure
-xref: HOG:0000655 ! choroid fissure
-xref: MA:0001305 ! choroid fissure
 xref: TAO:0001075 ! choroid fissure
-xref: XAO:0000474 ! choroid fissure
-xref: ZFA:0001075 ! choroid fissure
-is_a: UBERON:0000464 ! anatomical space
-relationship: part_of UBERON:0000966 ! retina
+xref: ZFA:0001075 ! choroidal fissure
 xref: ncithesaurus:Choroidal_Fissure ! Choroidal Fissure
-xref: EHDAA2:0000249 ! choroid fissure
+is_a: UBERON:0000464 ! anatomical space
+relationship: part_of: UBERON:0005358 ! ventricle of nervous system
+disjoint_from: UBERON:0005412 ! optic fissure
 
 [Term]
 id: UBERON:0002194
@@ -31427,8 +31390,9 @@ xref: ncithesaurus:Rib_Shaft ! Rib Shaft
 id: UBERON:0002232
 name: olfactory gland
 alt_id: UBERON:FMA_75801-MA_0000287
-comment: This class was created automatically from a combination of ontologies
-synonym: "olfactory gland of bowman" RELATED []
+def: "Bowman's glands (aka olfactory glands, glands of Bowman) are situated in the olfactory mucosa, beneath the olfactory epithelium, in the lamina propria, a connective tissue also containing fibroblasts, blood vessels, and bundles of fine axons from the olfactory neurons. The structure of the Bowman's glands consists of an acinus in the lamina propria and a secretory duct going out through the olfactory epithelium. Electron microscopy studies show that Bowman's glands contain cells with large secretory vesicles.[2] Bowman's glands might secrete proteins such as Lysozyme, amylase and IgA similarly to serous glands. The exact composition of the secretions from Bowman's glands is unclear, but there is evidence that Bowman's glands do not produce odorant binding protein[WP]." [Wikipedia:Olfactory_glands]
+synonym: "olfactory gland of Bowman" EXACT []
+synonym: "Bowman's gland" RELATED []
 xref: FMA:75801 ! Olfactory gland
 xref: MA:0000287 ! olfactory gland
 is_a: UBERON:0002530 ! gland
@@ -31922,6 +31886,7 @@ id: UBERON:0002268
 name: olfactory organ
 alt_id: UBERON:FMA_77659-XAO_0000273
 comment: note - fma general anatomical term. xao has no subtypes (but Johnstons organ develops from this)
+subset: functional_classification
 xref: FMA:77659 ! Olfactory organ
 xref: HOG:0000287 ! olfactory organ
 xref: XAO:0000273 ! olfactory organ
@@ -32529,12 +32494,115 @@ id: UBERON:0002301
 name: layer of neocortex
 alt_id: UBERON:FMA_83138-MA_0000186
 comment: This class was created automatically from a combination of ontologies
-synonym: "cerebral cortex layer" RELATED []
+synonym: "cerebral cortex layer" RELATED [MA:0000186]
 synonym: "neocortex layer" EXACT []
 xref: FMA:83138 ! Layer of neocortex
 xref: MA:0000186 ! neocortex layer
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001950 ! neocortex
+! orphan: FMA:75667 ! Occipital stripe of internal granular layer of neocortex [SYNONYM: "Band of Gennari" (exact)] [SYNONYM: "Gennari band" (exact)] [SYNONYM: "Line of Gennari" (exact)] [SYNONYM: "Occipital stripe of internal granular layer of isocortex" (exact)] [SYNONYM: "Stria of Gennari" (exact)] [SYNONYM: "Vicq d'Azyr's stria" (exact)]
+
+[Term]
+id: UBERON:0005390
+name: cortical layer I
+def: "The most superficial layer of the neocortex characterized by a paucity of cell bodies." [NIF_GrossAnatomy:nlx_anat_090807]
+synonym: "molecular layer" RELATED []
+synonym: "plexiform layer" RELATED []
+is_a: UBERON:0002301 ! layer of neocortex
+xref: MA:0000897 ! cortical layer I
+xref: FMA:83900 ! Molecular layer of neocortex
+xref: NIF_GrossAnatomy:nlx_anat_090807 ! Neocortex layer 1 
+synonym: "molecular layer of neocortex" EXACT [FMA:83900]
+synonym: "Neocortex layer I" EXACT  [NIF_GrossAnatomy:nlx_anat_090807]
+synonym: "layer 1 of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090807]
+synonym: "layer I of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090807]
+synonym: "molecular layer of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090807]
+synonym: "neocortex layer 1" EXACT  [NIF_GrossAnatomy:nlx_anat_090807]
+synonym: "neocortex molecular layer" EXACT  [NIF_GrossAnatomy:nlx_anat_090807]
+synonym: "neocortex plexiform layer" EXACT  [NIF_GrossAnatomy:nlx_anat_090807]
+synonym: "plexiform layer of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090807]
+
+[Term]
+id: UBERON:0005391
+name: cortical layer II
+def: "Layer of neocortex lying just deep to molecular layer characterized by numerous small cell bodies." [NIF_GrossAnatomy:nlx_anat_090808]
+synonym: "external granule cell layer of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090808]
+synonym: "layer II of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090808]
+synonym: "neocortex layer 2" EXACT  [NIF_GrossAnatomy:nlx_anat_090808]
+synonym: "neocortex layer II" EXACT  [NIF_GrossAnatomy:nlx_anat_090808]
+synonym: "external granular layer" RELATED []
+is_a: UBERON:0002301 ! layer of neocortex
+xref: MA:0000898 ! cortical layer II
+xref: FMA:77804 ! External granular layer of neocortex
+synonym: "external granular layer of neocortex" EXACT [FMA:77804]
+
+[Term]
+id: UBERON:0005392
+name: cortical layer III
+def: "Layer of neocortex lying deep to the external granule cell layer defined cytoarchitecturally by numerous small pyramidal neurons." [NIF_GrossAnatomy:nlx_anat_090809]
+synonym: "external pyramidal cell layer of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090809]
+synonym: "layer 3 of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090809]
+synonym: "layer III of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090809]
+synonym: "neocortex external pyramidal cell layer" EXACT  [NIF_GrossAnatomy:nlx_anat_090809]
+synonym: "neocortex layer 3" EXACT  [NIF_GrossAnatomy:nlx_anat_090809]
+synonym: "neocortex layer III" EXACT  [NIF_GrossAnatomy:nlx_anat_090809]
+synonym: "pyramidal layer" RELATED []
+is_a: UBERON:0002301 ! layer of neocortex
+xref: MA:0000899 ! cortical layer III
+xref: FMA:77810 ! External pyramidal layer of neocortex
+
+[Term]
+id: UBERON:0005393
+name: cortical layer IV
+def: "Layer of neocortex lying deep to the external pyramidal cell layer defined cytoarchitecturally by the presence of numerous small cells" [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "internal granule cell layer of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "layer 4 of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "layer IV of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "neocortex internal granule cell layer" EXACT  [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "neocortex layer 4" EXACT  [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "neocortex layer IV" EXACT  [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "neocortical internal granule cell layer" EXACT  [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "neocortical layer IV" EXACT  [NIF_GrossAnatomy:nlx_anat_090810]
+synonym: "internal granular layer" RELATED []
+is_a: UBERON:0002301 ! layer of neocortex
+xref: MA:0000900 ! cortical layer IV
+xref: FMA:77811 ! Internal granular layer of neocortex
+synonym: "internal granular layer of neocortex" EXACT [FMA:77811]
+
+[Term]
+id: UBERON:0005394
+name: cortical layer V
+def: "Layer of neocortex lying deep to the internal granule cell layer (layer 4) defined cytoarchitecturally by the predominance of large pyramidal cell bodies" [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "internal pyramidal cell layer of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "layer 5 of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "layer V of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "neocortex internal pyramidal cell layer" EXACT  [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "neocortex layer 5" EXACT  [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "neocortex layer V" EXACT  [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "neocortical layer 5" EXACT  [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "neocortical layer V" EXACT  [NIF_GrossAnatomy:nlx_anat_090811]
+synonym: "ganglionic layer" RELATED []
+is_a: UBERON:0002301 ! layer of neocortex
+xref: MA:0000901 ! cortical layer V
+xref: FMA:77812 ! Internal pyramidal layer of neocortex
+
+[Term]
+id: UBERON:0005395
+name: cortical layer VI
+def: "Innermost layer of neocortex lying deep to the internal pyramidal cell layer defined cytoarchitecturally by cells of varying size." [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "layer VI of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "multiform layer of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "neocortex layer 6" EXACT  [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "neocortex layer VI" EXACT  [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "neocortex multiform layer" EXACT  [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "neocortical layer 6" EXACT  [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "neocortical layer VI" EXACT  [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "pleiomorphic layer of neocortex" EXACT  [NIF_GrossAnatomy:nlx_anat_090812]
+synonym: "multiform layer" RELATED []
+is_a: UBERON:0002301 ! layer of neocortex
+xref: MA:0000902 ! cortical layer VI
+xref: FMA:77805 ! Multiform layer of neocortex
+synonym: "multiform layer of neocortex" EXACT [FMA:77805]
 
 [Term]
 id: UBERON:0005168
@@ -32651,13 +32719,17 @@ synonym: "stratum radiatum" EXACT [NIF_GrossAnatomy:birnlex_1298]
 id: UBERON:0002306
 name: nasal mucus
 alt_id: UBERON:FMA_83688-MA_0002535
-def: "." [Wikipedia:Nasal_mucus]
-comment: This class was created automatically from a combination of ontologies
+def: "In the respiratory system mucus aids in the protection of the lungs by trapping foreign particles that enter it, particularly through the nose, during normal breathing. Phlegm is a specialized term for mucus that is restricted to the respiratory tract, while the term mucus more globally describes secretions of the nasal passages as well." [Wikipedia:Nasal_mucus#Respiratory_system]
+comment: TODO - split nasal vs respiratory tract?
 subset: uberon_slim
 xref: FMA:83688 ! Nasal mucus
 xref: MA:0002535 ! nasal mucus
-is_a: UBERON:0000463 ! portion of organism substance
+xref: BTO:0003603 ! respiratory mucus
+synonym: "respiratory mucus" EXACT [BTO:0003603]
+is_a: UBERON:0000912 ! mucus
 xref: ncithesaurus:Nasal_Mucus ! Nasal Mucus
+relationship: secreted_by UBERON:0004785 ! respiratory system mucosa
+
 
 [Term]
 id: UBERON:0002307
@@ -32684,11 +32756,11 @@ name: neural nucleus
 def: "Anatomical structure consisting of a discrete aggregate of neuronal soma[GO]." [GO:0048857, GO_REF:0000021, Wikipedia:Nucleus_(neuroanatomy)]
 synonym: "nucleus" BROAD []
 synonym: "nucleus of neuraxis" RELATED []
-is_a: UBERON:0000064 ! organ part
 xref: FMA:83686 ! Nucleus of neuraxis
+comment: do not include NIF_Subcellular:sao1702920020 Nucleus
+is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001016 ! nervous system
 relationship: has_part GO:0043025 ! neuronal cell body
-xref: NIF_Subcellular:sao1702920020 ! Nucleus
 
 [Term]
 id: UBERON:0002308
@@ -32780,6 +32852,7 @@ is_a: UBERON:0002950 ! regional part of midbrain
 relationship: part_of UBERON:0001891 ! midbrain
 xref: GO:0043676 ! tectum
 xref: HOG:0001388 ! tectum
+xref: ZFA:0000445 ! optic tectum
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gray685.png/200px-Gray685.png
 
 [Term]
@@ -33917,8 +33990,18 @@ xref: ncithesaurus:Arachnoiditis ! Arachnoiditis
 xref: BTO:0001636 ! arachnoid mater
 xref: OpenCyc:Mx4rve5HlJwpEbGdrcN5Y29ycA ! arachnoid mater
 xref: NIF_GrossAnatomy:nlx_anat_090208 ! Arachnoid membrane
-xref: HOG:0000230 ! brain arachnoid mater
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Gray767.png/200px-Gray767.png
+
+[Term]
+id: UBERON:0005397
+name: brain arachnoid mater
+intersection_of: UBERON:0002362 ! arachnoid mater
+intersection_of: part_of UBERON:0000955 ! brain
+relationship: part_of UBERON:0003547 ! brain meninx
+xref: MA:0000814 ! brain arachnoid matter
+xref: HOG:0000230 ! brain arachnoid mater
+xref: FMA:83981 ! cranial arachnoid mater
+synonym: "cranial arachnoid mater" EXACT [FMA:83981]
 
 [Term]
 id: UBERON:0002363
@@ -33946,6 +34029,7 @@ def: "The tympanic membrane (also tympanum, myrinx or eardrum), is a thin membra
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "ear drum" EXACT []
+synonym: "eardrum" EXACT []
 synonym: "lateral wall of tympanic cavity" EXACT []
 synonym: "membranous wall of tympanic cavity" EXACT []
 synonym: "Rivinus' membrane" EXACT []
@@ -35197,6 +35281,65 @@ xref: XAO:0003099 ! fourth ventricle
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Gray734.png/200px-Gray734.png
 
 [Term]
+id: UBERON:0005409
+name: gastrointestinal system
+synonym: "alimentary system" RELATED  [MA:0000323]
+synonym: "alimentary tract" RELATED  [MA:0000323]
+comment: note that many anatomy ontologies consider this synonymous with digestive system. here we follow MA in dividing gastrointestinal system into digestive and hepatobiliary. may also be confusion re GI tract. TODO resolve.
+is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0001007 ! digestive system
+xref: MA:0000323 ! gastrointestinal system
+xref: EHDAA2:0000110 ! alimentary system
+xref: EHDAA:514 ! alimentary system
+xref: HOG:0000412 ! alimentary system
+xref: ncithesaurus:Gastrointestinal_System
+xref: WBbt:0005748 ! alimentary system
+xref: XAO:0000125 ! alimentary system
+xref: TADS:0000170 ! adult alimentary system
+
+[Term]
+id: UBERON:0001007
+name: digestive system
+alt_id: UBERON:FBbt_00005055-FMA_7152-MA_0000323-MIAA_0000018-WBbt_0005748-XAO_0000125-ZFA_0000339
+def: "The organ system involved in the absorption of nutrients. // Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." [FB:gg, NLM:alimentary+system, Wikipedia:Digestive_system,]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "alimentary system" RELATED []
+synonym: "alimentary tract" RELATED []
+synonym: "gastrointestinal system" RELATED []
+synonym: "gut" RELATED []
+xref: AAO:0000129 ! digestive_system
+xref: BILA:0000082
+xref: FBbt:00005055 ! digestive system
+xref: FMA:7152 ! Alimentary system
+xref: GAID:278 ! digestive system
+xref: GAID:294 ! gastrointestinal system
+xref: galen:DigestiveSystem
+xref: MA:0002431 ! digestive system
+xref: MAT:0000018 ! digestive system
+xref: MIAA:0000018 ! digestive system
+xref: TAO:0000339 ! digestive system
+xref: ZFA:0000339 ! digestive system
+is_a: UBERON:0000467 ! anatomical system
+disjoint_from: UBERON:0000949 ! endocrine system
+disjoint_from: UBERON:0000990 ! reproductive system
+disjoint_from: UBERON:0001004 ! respiratory system
+disjoint_from: UBERON:0001008 ! urinary system
+disjoint_from: UBERON:0001009 ! circulatory system
+disjoint_from: UBERON:0001016 ! nervous system
+disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:0001033 ! gustatory system
+disjoint_from: UBERON:0001434 ! skeletal system
+disjoint_from: UBERON:0002204 ! musculoskeletal system
+disjoint_from: UBERON:0002294 ! biliary system
+disjoint_from: UBERON:0002330 ! exocrine system
+disjoint_from: UBERON:0002390 ! hematopoietic system
+disjoint_from: UBERON:0002405 ! immune system
+disjoint_from: UBERON:0002416 ! integumental system
+disjoint_from: UBERON:0002423 ! hepatobiliary system
+xref: EFO:0000793 ! digestive system component
+
+[Term]
 id: UBERON:0002423
 name: hepatobiliary system
 alt_id: UBERON:MA_0000324-MIAA_0000024-XAO_0000132-ZFA_0000036
@@ -35216,6 +35359,7 @@ xref: TAO:0000036 ! liver and biliary system
 xref: XAO:0000132 ! liver and biliary system
 xref: ZFA:0000036 ! liver and biliary system
 is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0001007 ! digestive system
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
 disjoint_from: UBERON:0001004 ! respiratory system
@@ -35232,7 +35376,6 @@ disjoint_from: UBERON:0002330 ! exocrine system
 disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
-relationship: part_of UBERON:0001007 ! digestive system
 xref: ncithesaurus:Hepatobiliary_System ! Hepatobiliary System
 xref: EHDAA2:0000998 ! liver and biliary system
 
@@ -35434,6 +35577,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Brodmann_areas_17
 id: UBERON:0002437
 name: cerebral white matter
 alt_id: UBERON:MA_0000945-FMA_241998
+def: "White matter is one of the two main solid components of the central nervous system. It is composed of myelinated nerve cell processes, or axons, which connect various grey matter areas (the locations of nerve cell bodies) of the brain to each other and carry nerve impulses between neurons. Cerebral and spinal white matter do not contain dendrites, which can only be found in grey matter along with neural cell bodies and shorter axons (Christine Fennema-Notestine)." [NIF_GrossAnatomy:birnlex_711]
 xref: BTO:0000236
 xref: FMA:241998 ! Cerebral white matter
 xref: MA:0000945 ! cerebral white matter
@@ -35441,6 +35585,14 @@ is_a: UBERON:0002316 ! white matter of neuraxis
 relationship: part_of UBERON:0001893 ! telencephalon
 xref: ncithesaurus:Cerebral_White_Matter ! Cerebral White Matter
 xref: NIF_GrossAnatomy:birnlex_711 ! Cerebral white matter
+
+[Term]
+id: UBERON:0005401
+name: cerebral grey matter
+is_a: UBERON:0003528 ! brain grey matter
+relationship: part_of UBERON:0001893 ! telencephalon
+xref: MA:0000944 ! cerebral grey matter
+xref: BTO:0000823 ! cerebral gray matter
 
 [Term]
 id: UBERON:0002438
@@ -38194,12 +38346,14 @@ comment: note massive inconsistencies between GO, MA, wikipedia
 subset: uberon_slim
 synonym: "trigeminal nuclei" EXACT PLURAL [FMA:71248]
 synonym: "trigeminal nucleus" EXACT [FMA:71248]
+synonym: "trigeminal V nucleus" EXACT [MA:0001028]
 xref: FMA:71248 ! Trigeminal nuclear complex
 xref: NIF_GrossAnatomy:birnlex_4096 ! Trigeminal nuclear complex
 is_a: UBERON:0002020 ! gray matter of neuraxis
 relationship: part_of UBERON:0001645 ! trigeminal nerve
 xref: GAID:604 ! trigeminal nuclei
 xref: BTO:0001074 ! trigeminal nucleus
+xref: MA:0001028 ! trigeminal V nucleus
 xref: ncithesaurus:Trigeminal_Nucleus ! Trigeminal Nucleus
 
 [Term]
@@ -38212,6 +38366,7 @@ synonym: "sensory trigeminal nucleus" EXACT [ZFA:0000433]
 synonym: "sensory trigeminal V nucleus" EXACT []
 xref: ZFA:0000433 ! sensory trigeminal nucleus 
 xref: MA:0001030 ! trigeminal V sensory nucleus
+xref: FMA:54533 ! principal sensory nucleus of trigeminal nerve 
 is_a: UBERON:0000126 ! cranial nerve nucleus
 relationship: part_of UBERON:0002925 ! trigeminal nuclear complex
 relationship: part_of UBERON:0001896 ! medulla oblongata
@@ -38379,11 +38534,12 @@ is_a: UBERON:0000477 ! anatomical cluster
 id: UBERON:0002606 ! neuropil
 name: neuropil
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1142-FMA_261269
-def: "A dense intricate feltwork of interwoven fine glial processes, fibrils, synaptic terminals, axons, and dendrites interspersed among the nerve cells in the gray matter of the central nervous system (MSH). A region between neuronal cell bodies in the gray matter of the brain and spinal cord (i.e. the central nervous system). It consists of a dense tangle of axon terminals, dendrites and glial cell processes. It is where synaptic connections are formed between branches of axons and dendrites." [Wikipedia:Neuropil]
-comment: check re portion of neural tissue
+def: "A dense intricate feltwork of interwoven fine glial processes, fibrils, synaptic terminals, axons, and dendrites interspersed among the nerve cells of the central nervous system (MSH)[NIF]." [Wikipedia:Neuropil, NIF_Subcellular:sao205380252]
+comment: check re portion of neural tissue.
 subset: uberon_slim
 xref: FMA:261269 ! Neuropil
 xref: NIF_GrossAnatomy:birnlex_1142
+xref: FBbt:00005139 ! neuropil
 is_a: UBERON:0000477 ! anatomical cluster
 xref: ncithesaurus:Neuropil ! Neuropil
 xref: GAID:740 ! neuropil
@@ -38730,10 +38886,12 @@ synonym: "motor nucleus of cranial nerve v" EXACT []
 synonym: "motor nucleus of trigeminal nerve" EXACT [FMA:54562]
 synonym: "trigeminal motor nucleus" EXACT [ZFA:0001365]
 synonym: "motor nucleus V" EXACT [ZFA:0001365]
+synonym: "trigeminal V motor nucleus" EXACT [MA:0001029]
 xref: FMA:54562 ! Trigeminal motor nucleus
 xref: NIF_GrossAnatomy:birnlex_1222 ! Motor nucleus of trigeminal nerve
 xref: ZFA:0001365 ! trigeminal motor nucleus
 xref: MA:0001029 ! trigeminal V motor nucleus
+xref: HOG:0001355 ! trigeminal V motor nucleus
 relationship: part_of UBERON:0000988 ! pons
 is_a: UBERON:0002020 ! gray matter of neuraxis
 is_a: UBERON:0002308 ! nucleus of brain
@@ -40033,8 +40191,12 @@ def: "The nucleus of the trochlear nerve is located in the midbrain, at the leve
 subset: uberon_slim
 synonym: "fourth cranial nerve nucleus" EXACT [FMA:54518]
 synonym: "nucleus of trochlear nerve" EXACT [FMA:54518]
+synonym: "trochlear IV nucleus" EXACT [MA:0001075]
+synonym: "trochlear motor nucleus" EXACT [ZFA:0000450]
 xref: FMA:54518 ! Trochlear nucleus
 xref: NIF_GrossAnatomy:birnlex_1488 ! Trochlear nucleus
+xref: ZFA:0000450 ! trochlear motor nucleus
+xref: MA:0001075 ! trochlear IV nucleus
 is_a: UBERON:0000126 ! cranial nerve nucleus
 relationship: part_of UBERON:0001644 ! trochlear nerve
 xref: http://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Drn.png/200px-Drn.png
@@ -42237,7 +42399,7 @@ xref: EHDAA2:0001289 ! olfactory cortex
 id: UBERON:0002264
 name: olfactory bulb
 alt_id: UBERON:FMA_77624-MA_0000194-MIAA_0000116-ZFA_0000402
-def: "A bulbous anterior projection of the olfactory lobe that is the place of termination of the olfactory nerves and is especially well developed in lower vertebrates (as fishes)[BTO]. Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract." [Wikipedia:Olfactory_bulb]
+def: "A bulbous anterior projection of the olfactory lobe that is the place of termination of the olfactory nerves and is especially well developed in lower vertebrates (as fishes)[BTO]. Segment of neural tree organ which is continuous with a set of olfactory nerves and an olfactory tract. In most vertebrates, the olfactory bulb is the most rostral (forward) part of the brain. In humans, however, the olfactory bulb is on the inferior (bottom) side of the brain. The olfactory bulb is supported and protected by the cribriform plate which in mammals, separates it from the olfactory epithelium, and which is perforated by olfactory nerve axons. The bulb is divided into two distinct structures, the main olfactory bulb, and the accessory olfactory bulb[WP]." [Wikipedia:Olfactory_bulb]
 comment: TODO - check lobe vs bulb
 subset: uberon_slim
 synonym: "olfactory lobe" RELATED [ZFA:0000402]
@@ -42252,6 +42414,7 @@ xref: TAO:0000402 ! olfactory bulb
 xref: ZFA:0000402 ! olfactory bulb
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001893 ! telencephalon
+relationship: capable_of GO:0007608 ! sensory perception of smell
 xref: ncithesaurus:Olfactory_Bulb ! Olfactory Bulb
 xref: EHDAA2:0001294 ! olfactory lobe
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/1543%2CVesalius%27OlfactoryBulbs.jpg/200px-1543%2CVesalius%27OlfactoryBulbs.jpg
@@ -42259,6 +42422,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/1543%2CVesalius%2
 [Term]
 id: UBERON:0005366
 name: olfactory lobe
+def: "An anterior projection of each cerebral hemisphere that is continuous anteriorly with the olfactory nerve[BTO]. A term applied to the olfactory apparatus on the lower surface of the frontal lobe of the brain. It consists of the olfactory bulb, tract, and trigone[BTO]." [BTO:0001362]
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001893 ! telencephalon
 xref: MA:0002413 ! olfactory lobe
@@ -42271,6 +42435,15 @@ xref: HOG:0000833 ! olfactory lobe [broader: "telencephalon"]
 xref: MA:0002413 ! olfactory lobe [part_of: "telencephalon"]
 xref: MIAA:0000116 ! olfactory lobe [SYNONYM: "olfactory bulb" (related)] [broader: "forebrain"]
 
+[Term]
+id: UBERON:0005387
+name: olfactory glomerulus
+def: "One of the small globular masses of dense neuropil in the olfactory bulb, containing the first synapse in the olfactory pathway[BTO]. a spherical structure located in the olfactory bulb of the brain where the synapses form between the olfactory nerve terminals and dendrites of mitral, periglomerular and tufted cells. Each glomerulus is surrounded by periglomerular neurons and glial cells which gives it an oval shape.[1][2]  All glomeruli are located near the surface of the olfactory bulb. In mammals, glomeruli typically range between 50-120 µm in diameter and number between 1800 and 2400 depending on the species.[1][2]  Each glomerulus is composed of two compartments, the olfactory nerve zone and the non-olfactory nerve zone. The olfactory nerve zone is composed of preterminals and terminals of the olfactory nerve and is where the olfactory receptor cells make synapses on their targets.[2]  The non-olfactory nerve zone is composed of the dendritic processes of intrinsic neurons and is where dendrodendritic interactions between intrinsic neurons occur.[2] It is the first site for synaptic processing of odor information coming from the nose. It is made up of a globular tangle of axons from the olfactory receptor neurons in the olfactory epithelium, and dendrites from the mitral cell as well as from juxtaglomerular cells that include tufted cells, periglomerular cells, short axon cells, and astrocytes[WP]." [Dorlands_Medical_Dictionary:MerckMedicus, Wikipedia:Glomerulus_(olfaction)]
+comment: subcellular component, realm of GO
+is_a: UBERON:0002606 ! neuropil
+relationship: part_of UBERON:0002264 ! olfactory bulb
+xref: BTO:0003653 ! olfactory glomerulus
+xref: NIF_Subcellular:nlx_subcell_20090503 ! Olfactory glomerulus 
 
 [Term]
 id: UBERON:0002728
@@ -44509,8 +44682,7 @@ id: UBERON:0003051
 alt_id: UBERON:0004373
 name: ear vesicle
 alt_id: UBERON:XAO_0000006-ZFA_0000051
-def: "Epithelial sac present beside the fifth rhombomere; forms the semicircular canals dorsally and the otolith organs ventrally, and houses the acoustico-vestibular sensory epithelia (maculae) of hair cells[ZFA]. epithelial sac of invaginated ectoderm formed from the otic placode that gives rise to the structures of the inner ear[MP]" [ZFIN:curator, MP:0009806, Wikipedia:Auditory_vesicle]
-comment: This class was created automatically from a combination of ontologies
+def: "The saccular invagination of ectoderm from which the vertebrate inner ear develops[BTO]. Epithelial sac present beside the fifth rhombomere; forms the semicircular canals dorsally and the otolith organs ventrally, and houses the acoustico-vestibular sensory epithelia (maculae) of hair cells[ZFA]. epithelial sac of invaginated ectoderm formed from the otic placode that gives rise to the structures of the inner ear[MP]" [ZFIN:curator, MP:0009806, Wikipedia:Auditory_vesicle, BTO:0002661]
 synonym: "otic vesicle" EXACT []
 synonym: "otocyst" RELATED []
 synonym: "auditory vesicle" RELATED [BTO:0002661]
@@ -44527,6 +44699,59 @@ xref: ncithesaurus:Otic_Vesicle ! Otic Vesicle
 xref: HOG:0001148 ! otic vesicle
 xref: EHDAA2:0001342 ! otocyst
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Gray40.png/200px-Gray40.png
+
+[Term]
+id: UBERON:0003069
+name: otic placode
+alt_id: UBERON:XAO_0000223-ZFA_0000138
+def: "Invagination of thickened epithelium near the hindbrain that gives rise to a spherically shaped ear vesicle. // Primordium of the ear epithelium before it hollows into the otic vesicle, present beside the hindbrain rudiment in the midsegmentation period. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a> (Also see Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/ear/ear.html'>ear</a> by T. Whitfield.)" [PMID:16217737, ZFIN:curator]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "auditory placode" RELATED []
+synonym: "otic capsule" RELATED []
+synonym: "otic cup" EXACT [http://medical-dictionary.thefreedictionary.com/otic+cup]
+synonym: "otocyst" RELATED []
+xref: EHDAA:506 ! otic placode
+xref: HOG:0000235 ! otic placode
+xref: TAO:0000138 ! otic placode
+xref: XAO:0000223 ! otic placode
+xref: ZFA:0000138 ! otic placode
+is_a: UBERON:0003067 ! dorsolateral placode
+relationship: part_of UBERON:0001690 ! ear
+xref: ncithesaurus:Otic_Placodes ! Otic Placodes
+xref: EHDAA2:0001333 ! otic capsule
+
+[Term]
+id: UBERON:0004637 ! otic capsule
+name: otic capsule
+def: "The cartilage capsule surrounding the inner ear mechanism; in elasmobranchs, it remains cartilaginous in the adult; in the embryos of higher vertebrates, it is cartilaginous at first but later becomes bony (at approximately 23 weeks in humans)[Biology-Online]. Bilaterally paired cartilage encasing the semicircular canals of the inner ear[ZFA]." [http://medical-dictionary.thefreedictionary.com/otic+capsule, ZFA:0001500, http://www.biology-online.org/dictionary/Otic_capsule]
+comment: otic capsule goes to CS20 in EHDAA2, and until adult in ZFA
+is_a: UBERON:0004765 ! skeletal element
+relationship: part_of UBERON:0001846 ! internal ear
+relationship: part_of UBERON:0001703 ! neurocranium
+synonym: "periotic capsule" RELATED [MA:0000252]
+synonym: "otic capsule" EXACT [ZFA:0001500]
+xref: HOG:0000854 ! otic capsule
+xref: EHDAA2:0001333 ! otic capsule
+xref: EMAPA:17596 ! otic capsule
+
+[Term]
+id: UBERON:0005410 ! cartilaginous otic capsule
+name: cartilaginous otic capsule
+comment: in elasmobranchs, the otic capsule remains cartilaginous in the adult; in the embryos of higher vertebrates, it is cartilaginous at first but later becomes bony (at approximately 23 weeks in humans)
+is_a: UBERON:0003932 ! chondrocranium cartilage
+is_a: UBERON:0004637 ! otic capsule
+xref: ZFA:0001500 ! auditory capsule
+
+[Term]
+id: UBERON:0005411
+name: bony otic capsule
+comment: in elasmobranchs, the otic capsule remains cartilaginous in the adult; in the embryos of higher vertebrates, it is cartilaginous at first but later becomes bony (at approximately 23 weeks in humans)
+is_a: UBERON:0002481 ! bone tissue
+is_a: UBERON:0004637 ! otic capsule
+xref: MA:0000252 ! otic capsule
+relationship: develops_from UBERON:0005410 ! cartilaginous otic capsule
+
 
 [Term]
 id: UBERON:0003052
@@ -45090,40 +45315,6 @@ id: UBERON:0004881
 name: prechordal mesoderm
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0003068 ! axial mesoderm
-
-[Term]
-id: UBERON:0003069
-name: otic placode
-alt_id: UBERON:XAO_0000223-ZFA_0000138
-def: "Invagination of thickened epithelium near the hindbrain that gives rise to a spherically shaped ear vesicle. // Primordium of the ear epithelium before it hollows into the otic vesicle, present beside the hindbrain rudiment in the midsegmentation period. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a> (Also see Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/ear/ear.html'>ear</a> by T. Whitfield.)" [PMID:16217737, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "auditory placode" RELATED []
-synonym: "otic capsule" RELATED []
-synonym: "otocyst" RELATED []
-xref: EHDAA:506 ! otic placode
-xref: HOG:0000235 ! otic placode
-xref: TAO:0000138 ! otic placode
-xref: XAO:0000223 ! otic placode
-xref: ZFA:0000138 ! otic placode
-is_a: UBERON:0003067 ! dorsolateral placode
-relationship: part_of UBERON:0001690 ! ear
-xref: ncithesaurus:Otic_Placodes ! Otic Placodes
-xref: EHDAA2:0001333 ! otic capsule
-
-[Term]
-id: UBERON:0004637
-name: otic capsule
-is_a: UBERON:0003932 ! chondrocranium cartilage
-relationship: part_of UBERON:0001846 ! internal ear
-relationship: existence_ends_during UBERON:0000113 ! post-juvenile adult stage
-relationship: part_of UBERON:0001703 ! neurocranium
-synonym: "periotic capsule" RELATED [MA:0000252]
-synonym: "otic capsule" EXACT [ZFA:0001500]
-xref: ZFA:0001500 ! auditory capsule
-xref: MA:0000252 ! otic capsule
-xref: HOG:0000854 ! otic capsule
-xref: EHDAA2:0001333 ! otic capsule
 
 [Term]
 id: UBERON:0003070
@@ -46378,6 +46569,7 @@ id: UBERON:0003133
 name: reproductive organ
 def: "An organ involved in reproduction" [UBERON:xp]
 comment: GO uses genitalia for the singular organ
+subset: functional_classification
 synonym: "reproductive system organ" EXACT []
 synonym: "sex organ" EXACT []
 synonym: "genital organ" EXACT []
@@ -46987,10 +47179,7 @@ alt_id: UBERON:FBbt_00004751-HAO_0001095
 xref: FBbt:00004751 ! wing vein
 xref: HAO:0001095 ! wing vein
 is_a: UBERON:0000476 ! acellular anatomical structure
-intersection_of: UBERON:0001638 ! vein
-intersection_of: part_of UBERON:0000984 ! imaginal disc-derived wing
-synonym: "vein of imaginal disc-derived wing" EXACT [OBOL:automatic]
-def: "A vein that is part of a imaginal disc-derived wing [Obol]." [OBOL:automatic]
+relationship: part_of UBERON:0000984 ! imaginal disc-derived wing
 
 [Term]
 id: UBERON:0003195
@@ -53121,6 +53310,13 @@ synonym: "forebrain arachnoid mater of neuraxis" EXACT [OBOL:automatic]
 def: "An arachnoid mater that is part of a forebrain [Obol]." [OBOL:automatic]
 
 [Term]
+id: UBERON:0005400
+name: telencephalon arachnoid mater
+intersection_of: UBERON:0002362 ! arachnoid mater
+intersection_of: part_of UBERON:0001893 ! telencephalon
+xref: MA:0000980 ! telencephalon arachnoid matter
+
+[Term]
 id: UBERON:0003557
 name: midbrain arachnoid mater
 xref: MA:0001059 ! midbrain arachnoid mater
@@ -57588,13 +57784,6 @@ def: "." [MP:0009935]
 is_a: UBERON:0001818 ! tarsal gland
 
 [Term]
-id: UBERON:0004001
-name: olfactory bulb layer
-def: "." [MP:0009946]
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0002264 ! olfactory bulb
-
-[Term]
 id: UBERON:0004005
 name: cerebellum lateral hemisphere
 def: "the most lateral paired regions of the cerebellum; the lateral zone receives input from the parietal cortex via pontocerebellar mossy fibers regarding the location and position of the body and integrates input signals with indications of muscle activity" [MP:0009965]
@@ -59399,18 +59588,29 @@ xref: ncithesaurus:Prostatic_Stroma ! Prostatic Stroma
 xref: MA:0002912 ! prostate gland stroma
 
 [Term]
+id: UBERON:0004001 ! olfactory bulb layer
+name: olfactory bulb layer
+def: "." [MP:0009946]
+comment: TODO - check isa parentage
+is_a: UBERON:0000119 ! cell layer
+relationship: part_of UBERON:0002264 ! olfactory bulb
+xref: NIF_GrossAnatomy:nlx_anat_20090402 ! Cytoarchitectural part of olfactory bulb 
+
+[Term]
 id: UBERON:0004186
 name: olfactory bulb mitral cell layer
 def: "The mitral cell layer is composed of pyramidal neurons whose cell bodies are located between the granule cell layer and the plexiform layer" [GO:0061034]
-is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0004001 ! olfactory bulb layer
 relationship: part_of UBERON:0002264 ! olfactory bulb
 xref: MA:0000973 ! olfactory bulb mitral cell layer
+xref: NIF_GrossAnatomy:nlx_anat_100201 ! Mitral cell body layer
+synonym: "mitral cell body layer" EXACT [NIF_GrossAnatomy:nlx_anat_100201]
 
 [Term]
 id: UBERON:0005376
 name: olfactory bulb external plexiform layer
 def: "Cytoarchitectural part of the olfactory bulb, lying superior to the mitral cell layer and inferior to the glomerular layer. The EPL is mostly neuropil composed almost entirely of mitral and tulfted cell dendrites and granule cell dendrites and their synaptic inputs." [NIF_GrossAnatomy:nlx_anat_20090403]
-is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0004001 ! olfactory bulb layer
 relationship: part_of UBERON:0002264 ! olfactory bulb
 xref: MA:0000969 ! olfactory bulb external plexiform layer
 xref: NIF_GrossAnatomy:nlx_anat_20090403 ! External plexiform layer
@@ -59421,7 +59621,7 @@ synonym: "external plexiform layer" BROAD [BTO:0001319]
 id: UBERON:0005377
 name: olfactory bulb glomerular layer
 def: "The glomerular layer is the most superficial layer, consisting of mitral cell dendritic arborizations (glomeruli), olfactory nerve fibers, and periglomerular cells. Periglomerular cells contact multiple mitral cell dendrites within the glomeruli and provide lateral inhibition of neighboring glomeruli while allowing excitation of a specific mitral cell dendritic tree. Each mitral cell is contacted by at least 1000 olfactory nerve fibers[BTO]. Portion of tissue which is located in between the primary olfactory fiber layer and the external cellular layer of the olfactory bulb[ZFA]." [BTO:0001317]
-is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0004001 ! olfactory bulb layer
 relationship: part_of UBERON:0002264 ! olfactory bulb
 xref: MA:0000970 ! olfactory bulb glomerular layer
 xref: BTO:0001317 ! glomerular layer 
@@ -59432,7 +59632,7 @@ synonym: "glomerular layer" BROAD [BTO:0001317, ZFA:0000357]
 id: UBERON:0005378
 name: olfactory bulb granule cell layer
 def: "The granule cell layer contains multiple small round neurons that lack axons. Long dendritic processes of the neurons reach the more superficial layers and inhibit mitral cells and tufted cells. Small distal processes make contacts with the exiting mitral cell axons." [BTO:0001327]
-is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0004001 ! olfactory bulb layer
 relationship: part_of UBERON:0002264 ! olfactory bulb
 xref: MA:0000971 ! olfactory bulb granule cell layer
 xref: BTO:0001327 ! granule cell layer 
@@ -59441,7 +59641,7 @@ synonym: "granule cell layer" BROAD [BTO:0001327]
 [Term]
 id: UBERON:0005379
 name: olfactory bulb internal plexiform layer
-is_a: UBERON:0000119 ! cell layer
+is_a: UBERON:0004001 ! olfactory bulb layer
 relationship: part_of UBERON:0002264 ! olfactory bulb
 xref: MA:0000972 ! olfactory bulb internal plexiform layer
 xref: BTO:0001320 ! internal plexiform layer [part_of: "olfactory bulb"]
@@ -59510,7 +59710,7 @@ relationship: part_of UBERON:0002120 ! pronephros
 id: UBERON:0004194
 name: long nephron
 def: "Long nephrons are associated with juxtamedullary glomeruli and extend to the inner medulla" [GO:0072029]
-synonym: "juxtamedullary nephron" EXACT [GO:0072029, http://sourceforge.net/tracker/?func=detail&aid=3031362&group_id=36855&atid=440764]
+synonym: "juxtamedullary nephron" RELATED [GO:0072029, http://sourceforge.net/tracker/?func=detail&aid=3031362&group_id=36855&atid=440764]
 is_a: UBERON:0001285 ! nephron
 
 [Term]
@@ -65200,12 +65400,11 @@ synonym: "coraco-scapular cartilage" EXACT [ZFA:0001455]
 xref: AAO:0000781 ! scapulocoracoid
 xref: ZFA:0001455 ! scapulocoracoid
 
-
 [Term]
 id: UBERON:0001707
 name: nasal cavity
 alt_id: UBERON:FMA_54378-MA_0000284-ZFA_0000130
-def: "an indentation of the olfactory placode, and ends when the pits hollows out to form the nasopharynx." [Wikipedia:Nasal_cavity]
+def: "a large fluid filled space above and behind the nose in the middle of the face[WP]. an indentation of the olfactory placode, and ends when the pits hollows out to form the nasopharynx." [Wikipedia:Nasal_cavity]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cavity of nose" EXACT []
@@ -65228,6 +65427,133 @@ xref: ncithesaurus:Nasal_Cavity ! Nasal Cavity
 xref: BTO:0002096 ! nasal cavity
 xref: EHDAA2:0001226 ! nasal cavity
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Illu01_head_neck.jpg/200px-Illu01_head_neck.jpg
+
+[Term]
+id: UBERON:0005384
+name: nasal cavity epithelium
+synonym: "nasal mucosa" RELATED []
+synonym: "nasal epithelium" EXACT [FMA:63140]
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001707 ! nasal cavity
+xref: MA:0001324 ! nasal cavity epithelium
+xref: EHDAA:6803 ! epithelium
+xref: HOG:0000501 ! nasal epithelium
+xref: EHDAA2:0001227 ! nasal cavity epithelium
+xref: FMA:63140 ! nasal epithelium
+xref: ncithesaurus:Nasal_Cavity_Epithelium ! Nasal Cavity Epithelium
+
+[Term]
+id: UBERON:0005386
+name: olfactory mucosa
+is_a: UBERON:0005384 ! nasal cavity epithelium
+def: "That portion of the nasal mucosa containing the sensory endings for olfaction; the organ of smell[GAID]. The olfactory mucosa is located in the upper region of the nasal cavity and is made up of the olfactory epithelium and the underlying lamina propria, connective tissue containing fibroblasts, blood vessels, Bowman's glands and bundles of fine axons from the olfactory neurons. The mucus protects the olfactory epithelium and allows odors to dissolve so that they can be detected by olfactory receptor neurons. Electron microscopy studies show that Bowman's glands contain cells with large secretory vesicles. The exact composition of the secretions from Bowman's glands is unclear, but there is evidence that Bowman's glands do not produce odorant binding protein[WP]." [Wikipedia:Olfactory_mucosa, GAID:303]
+comment: note uberon uses the term 'mucosa' as 'portion of mucosa', thus the relationship is subclass, not part_of
+is_a: UBERON:0001826 ! nasal cavity mucosa
+xref: FMA:77199 ! olfactory zone of nasal mucosa
+xref: GAID:303 ! olfactory mucosa 
+
+[Term]
+id: UBERON:0001826 ! nasal cavity mucosa
+name: nasal cavity mucosa
+alt_id: UBERON:FMA_59684-MA_0001324
+def: "the mucous membrane that lines the nasal cavity[MP]." [MP:0002238]
+comment: TODO - check lining vs part of. split olfactory and nasal mucosa?
+synonym: "mucous membrane of nose" EXACT [FMA:59684]
+synonym: "nasal mucosa" RELATED []
+synonym: "mucosa of nose" EXACT [FMA:59684]
+xref: BTO:0000912 ! nasal mucosa
+xref: FMA:59684 ! Mucosa of nose
+xref: GAID:302 ! nasal mucosa
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001707 ! nasal cavity
+
+[Term]
+id: UBERON:0001997
+name: olfactory epithelium
+alt_id: UBERON:FMA_64803-ZFA_0000554
+alt_id: UBERON:0004853
+def: "Nasal epithelium wherein ciliated olfactory receptor neurons, supporting cells, and basal cells are located." [Wikipedia:Olfactory_epithelium, ZFIN:curator]
+comment: TODO - check ZFA part of parentage. Add term for mucosa? FMA:77199 ! olfactory zone of nasal mucosa
+subset: uberon_slim
+synonym: "nasal epithelium" RELATED []
+synonym: "nasal sensory epithelium" RELATED []
+synonym: "olfactory sensory epithelium" EXACT []
+synonym: "sensory olfactory epithelium" EXACT []
+synonym: "nasal cavity olfactory epithelium" EXACT [MA:0001325]
+synonym: "olfactory mucosa" RELATED [GAID:303]
+xref: BTO:0000108
+xref: FMA:64803 ! Olfactory epithelium
+xref: HOG:0000985 ! olfactory epithelium
+xref: MAT:0000445 ! olfactory epithelium
+xref: NIF_GrossAnatomy:birnlex_2703 ! Olfactory epithelium
+xref: TAO:0000554 ! olfactory epithelium
+xref: ZFA:0000554 ! olfactory epithelium
+is_a: UBERON:0000485 ! simple columnar epithelium
+relationship: part_of UBERON:0001826 ! mucosa of nose
+xref: ncithesaurus:Olfactory_Epithelium ! Olfactory Epithelium
+xref: EFO:0001972 ! olfactory epithelium
+xref: MA:0001325 ! nasal cavity olfactory epithelium
+xref: EHDAA2:0001228 ! nasal cavity olfactory epithelium
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Gray857.png/200px-Gray857.png
+
+[Term]
+id: UBERON:0005385
+name: nasal cavity respiratory epithelium
+comment: todo place BTO:0003603 ! respiratory mucus [REL: "respiratory mucosa"]
+is_a: UBERON:0005384 ! nasal cavity epithelium
+xref: MA:0001326 ! nasal cavity respiratory epithelium
+xref: EHDAA2:0001230 ! nasal cavity respiratory epithelium
+
+[Term]
+id: UBERON:0004807
+name: respiratory system epithelium
+xref: MA:0001823 ! respiratory system epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001004 ! part_of respiratory system
+synonym: "apparatus respiratorius epithelial tissue" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius epithelium" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "epithelial tissue of respiratory system" EXACT [OBOL:automatic]
+synonym: "epithelium of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "epithelium of respiratory system" EXACT [OBOL:automatic]
+synonym: "respiratory system epithelial tissue" EXACT [OBOL:automatic]
+def: "An epithelium that is part of a respiratory system [Obol]." [OBOL:automatic]
+
+[Term]
+id: UBERON:0004802
+name: respiratory tract epithelium
+xref: MA:0001480 ! respiratory tract epithelium
+xref: BTO:0000419 ! respiratory epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0000065 ! part_of respiratory tract
+synonym: "respiratory epithelium" RELATED [BTO:0000419]
+synonym: "epithelial tissue of respiratory tract" EXACT [OBOL:automatic]
+synonym: "epithelium of respiratory tract" EXACT [OBOL:automatic]
+synonym: "respiratory tract epithelial tissue" EXACT [OBOL:automatic]
+def: "An epithelium that is part of a respiratory tract [Obol]." [OBOL:automatic]
+
+[Term]
+id: UBERON:0004785
+name: respiratory system mucosa
+xref: MA:0001827 ! respiratory system mucosa
+intersection_of: UBERON:0000344 ! mucosa
+intersection_of: part_of UBERON:0001004 ! part_of respiratory system
+comment: TODO - split respiratory tract mucosa from respiratory system mucosa
+xref: BTO:0000973 ! respiratory mucosa
+xref: GAID:304 ! respiratory mucosa 
+synonym: "respiratory mucosa" RELATED [BTO:0000973]
+synonym: "apparatus respiratorius mucosa" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius mucosa of organ" EXACT [OBOL:automatic]
+synonym: "apparatus respiratorius mucous membrane" EXACT [OBOL:automatic]
+synonym: "mucosa of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucosa of organ of respiratory system" EXACT [OBOL:automatic]
+synonym: "mucosa of respiratory system" EXACT [OBOL:automatic]
+synonym: "mucous membrane of apparatus respiratorius" EXACT [OBOL:automatic]
+synonym: "mucous membrane of respiratory system" EXACT [OBOL:automatic]
+synonym: "respiratory system mucosa of organ" EXACT [OBOL:automatic]
+synonym: "respiratory system mucous membrane" EXACT [OBOL:automatic]
+def: "A mucosa that is part of a respiratory system [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0000402
@@ -65262,7 +65588,7 @@ relationship: part_of UBERON:0001707 ! nasal cavity
 xref: HOG:0000545 ! choana
 xref: EHDAA2:0000242 ! choana
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gray855.png/200px-Gray855.png
-
+xref: MA:0001322 ! primary choana
 
 [Term]
 id: UBERON:0004775
@@ -65415,25 +65741,6 @@ synonym: "wall of heart ventricle" EXACT [OBOL:automatic]
 synonym: "wall of lower chamber of heart" EXACT [OBOL:automatic]
 synonym: "wall of ventricle of heart" EXACT [OBOL:automatic]
 def: "An anatomical wall that is part of a cardiac ventricle [Obol]." [OBOL:automatic]
-
-[Term]
-id: UBERON:0004785
-name: respiratory system mucosa
-xref: MA:0001827 ! respiratory system mucosa
-intersection_of: UBERON:0000344 ! mucosa
-intersection_of: part_of UBERON:0001004 ! part_of respiratory system
-synonym: "apparatus respiratorius mucosa" EXACT [OBOL:automatic]
-synonym: "apparatus respiratorius mucosa of organ" EXACT [OBOL:automatic]
-synonym: "apparatus respiratorius mucous membrane" EXACT [OBOL:automatic]
-synonym: "mucosa of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "mucosa of organ of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "mucosa of organ of respiratory system" EXACT [OBOL:automatic]
-synonym: "mucosa of respiratory system" EXACT [OBOL:automatic]
-synonym: "mucous membrane of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "mucous membrane of respiratory system" EXACT [OBOL:automatic]
-synonym: "respiratory system mucosa of organ" EXACT [OBOL:automatic]
-synonym: "respiratory system mucous membrane" EXACT [OBOL:automatic]
-def: "A mucosa that is part of a respiratory system [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004786
@@ -65653,17 +65960,6 @@ synonym: "uterine cervix epithelium" EXACT [OBOL:automatic]
 def: "An epithelium that is part of a uterine cervix [Obol]." [OBOL:automatic]
 
 [Term]
-id: UBERON:0004802
-name: respiratory tract epithelium
-xref: MA:0001480 ! respiratory tract epithelium
-intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0000065 ! part_of respiratory tract
-synonym: "epithelial tissue of respiratory tract" EXACT [OBOL:automatic]
-synonym: "epithelium of respiratory tract" EXACT [OBOL:automatic]
-synonym: "respiratory tract epithelial tissue" EXACT [OBOL:automatic]
-def: "An epithelium that is part of a respiratory tract [Obol]." [OBOL:automatic]
-
-[Term]
 id: UBERON:0004803
 name: penis epithelium
 xref: MA:0001742 ! penis epithelium
@@ -65727,21 +66023,6 @@ synonym: "vas deferen epithelial tissue" EXACT [OBOL:automatic]
 synonym: "vas deferen epithelium" EXACT [OBOL:automatic]
 synonym: "vas deferens epithelial tissue" EXACT [OBOL:automatic]
 def: "An epithelium that is part of a vas deferens [Obol]." [OBOL:automatic]
-
-[Term]
-id: UBERON:0004807
-name: respiratory system epithelium
-xref: MA:0001823 ! respiratory system epithelium
-intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0001004 ! part_of respiratory system
-synonym: "apparatus respiratorius epithelial tissue" EXACT [OBOL:automatic]
-synonym: "apparatus respiratorius epithelium" EXACT [OBOL:automatic]
-synonym: "epithelial tissue of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "epithelial tissue of respiratory system" EXACT [OBOL:automatic]
-synonym: "epithelium of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "epithelium of respiratory system" EXACT [OBOL:automatic]
-synonym: "respiratory system epithelial tissue" EXACT [OBOL:automatic]
-def: "An epithelium that is part of a respiratory system [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004808
@@ -66168,32 +66449,6 @@ synonym: "circulatory system endothelium" EXACT [OBOL:automatic]
 synonym: "endothelium of circulatory system" EXACT [OBOL:automatic]
 xref: HOG:0001217 ! vascular endothelium
 def: "An endothelium that is part of a circulatory system [Obol]." [OBOL:automatic]
-
-[Term]
-id: UBERON:0004853
-name: nasal cavity olfactory epithelium
-xref: MA:0001325 ! nasal cavity olfactory epithelium
-intersection_of: UBERON:0001997 ! olfactory epithelium
-intersection_of: part_of UBERON:0001707 ! part_of nasal cavity
-synonym: "cavity of nose olfactory epithelium" EXACT [OBOL:automatic]
-synonym: "cavity of nose olfactory sensory epithelium" EXACT [OBOL:automatic]
-synonym: "cavity of nose sensory olfactory epithelium" EXACT [OBOL:automatic]
-synonym: "nasal cavity olfactory sensory epithelium" EXACT [OBOL:automatic]
-synonym: "nasal cavity sensory olfactory epithelium" EXACT [OBOL:automatic]
-synonym: "olfactory epithelium of cavity of nose" EXACT [OBOL:automatic]
-synonym: "olfactory epithelium of nasal cavity" EXACT [OBOL:automatic]
-synonym: "olfactory epithelium of olfactory pit" EXACT [OBOL:automatic]
-synonym: "olfactory pit olfactory epithelium" EXACT [OBOL:automatic]
-synonym: "olfactory pit olfactory sensory epithelium" EXACT [OBOL:automatic]
-synonym: "olfactory pit sensory olfactory epithelium" EXACT [OBOL:automatic]
-synonym: "olfactory sensory epithelium of cavity of nose" EXACT [OBOL:automatic]
-synonym: "olfactory sensory epithelium of nasal cavity" EXACT [OBOL:automatic]
-synonym: "olfactory sensory epithelium of olfactory pit" EXACT [OBOL:automatic]
-synonym: "sensory olfactory epithelium of cavity of nose" EXACT [OBOL:automatic]
-synonym: "sensory olfactory epithelium of nasal cavity" EXACT [OBOL:automatic]
-synonym: "sensory olfactory epithelium of olfactory pit" EXACT [OBOL:automatic]
-xref: EHDAA2:0001228 ! nasal cavity olfactory epithelium
-def: "An olfactory epithelium that is part of a nasal cavity [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004854
@@ -70433,6 +70688,69 @@ relationship: part_of UBERON:0001689 ! malleus
 xref: FMA:52762 ! neck of malleus
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Gray916.png/200px-Gray916.png
 
+[Term]
+id: UBERON:0005403
+alt_id: UBERON:MA_0002972-FMA_77614
+name: ventral striatum
+is_a: UBERON:0002020 ! gray matter of neuraxis
+relationship: part_of UBERON:0002435 ! striatum
+xref: FMA:77614 ! Ventral striatum
+xref: MA:0002972 ! ventral striatum
+
+[Term]
+id: UBERON:0005404
+alt_id: UBERON:MA_0002973-FMA_52948
+name: frontonasal suture
+is_a: UBERON:0003685 ! cranial suture
+synonym: "Frontonasal suture of skull" EXACT [FMA:52948]
+xref: FMA:52948 ! Frontonasal suture
+xref: MA:0002973 ! frontonasal suture
+
+[Term]
+id: UBERON:0005405
+alt_id: UBERON:MA_0002974-FMA_20503
+name: pararenal fat
+is_a: UBERON:0001013 ! adipose tissue
+synonym: "paranephric fat" RELATED [MA:0002974]
+synonym: "pararenal fascia" RELATED [MA:0002974]
+synonym: "pararenal fat body" RELATED [MA:0002974]
+synonym: "Pararenal fascia" EXACT [FMA:20503]
+xref: FMA:20503 ! Pararenal fat
+xref: MA:0002974 ! pararenal fat
+
+[Term]
+id: UBERON:0005406
+alt_id: UBERON:MA_0002975-FMA_20502
+name: perirenal fat
+is_a: UBERON:0001013 ! adipose tissue
+synonym: "adipose capsule of kidney" RELATED [MA:0002975]
+synonym: "fatty capsule of kidney" RELATED [MA:0002975]
+synonym: "perinephric fat" RELATED [MA:0002975]
+synonym: "periphrenic fascia" RELATED [MA:0002975]
+synonym: "perirenal fascia" RELATED [MA:0002975]
+synonym: "perirenal fat capsule" RELATED [MA:0002975]
+synonym: "Perirenal fascia" EXACT [FMA:20502]
+xref: FMA:20502 ! Perirenal fat
+xref: MA:0002975 ! perirenal fat
+
+[Term]
+id: UBERON:0005407
+alt_id: UBERON:MA_0002982-FMA_77591
+name: sublingual ganglion
+is_a: UBERON:0001808 ! parasympathetic ganglion
+xref: FMA:77591 ! Sublingual ganglion
+xref: MA:0002982 ! sublingual ganglion
+
+[Term]
+id: UBERON:0005408
+name: circumventricular organ
+def: "Brain region located around or in relation to the ventricular system that is highly vascularized and distinguished by the lack of a blood brain barrier." [NIF_GrossAnatomy:nlx_anat_20090312]
+is_a: UBERON:0002616 ! regional part of brain
+relationship: part_of UBERON:0000955 ! brain
+synonym: "CVO" EXACT [NIF_GrossAnatomy:nlx_anat_20090312]
+synonym: "circumventricular organ" EXACT [NIF_GrossAnatomy:nlx_anat_20090312]
+xref: MA:0002942 ! circumventricular organ
+xref: NIF_GrossAnatomy:nlx_anat_20090312 ! Circumventricular organ
 
 [Typedef]
 id: adjacent_to
@@ -70527,7 +70845,7 @@ is_a: preceded_by ! preceded_by
 id: spatially_disjoint_from
 name: spatially_disjoint_from
 def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
-comment: TODO owldef
+expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 synonym: "non_overlapping_with" EXACT []
 synonym: "shares_no_parts_with" EXACT []
 !disjoint_over: part_of ! part_of
