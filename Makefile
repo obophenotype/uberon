@@ -401,6 +401,9 @@ newterms-fma-gemina.obo:
 newterms-fma-nif.obo: 
 	obol -u onto_grep onto-3-way-align -r fma_downcase -r nif_downcase -i uberon_CL.obo -r uberon -ont1 birnlex_anatomy -ont2 fma -ont3 uberon > $@
 
+newterms-mouse-nif.obo: 
+	obol -u onto_grep onto-3-way-align -r mouse_anatomy -r nif_downcase -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
+
 newterms-mouse-birnlex.obo: birnlex_anatomy_s.obo
 	obol -u onto_grep onto-3-way-align -i $< -r mouse_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
 
@@ -698,6 +701,80 @@ MULTIANAT_R=-r xenopus_anatomy -r mouse_anatomy -r gemina_anatomy -r amphibian_a
 abduced-relations.txt:
 	blip-findall -r implied/uberon.obo $(MULTIANAT_R) "entity_xref(A3,A1),id_idspace(A3,'UBERON'),restriction(A1,R1,B1),entity_xref(B3,B1),id_idspace(B3,'UBERON'),entity_xref(A3,A2),A2\=A1,restriction(A2,R2,B2),entity_xref(B3,B2),\+restriction(A3,_,B3)" -select "r(A3,B3,A1,R1,B1,A2,R2,B2)" -label > $@
 
+# ----------------------------------------
+# Phenotypes
+# ----------------------------------------
+fly_gene_phen_anat.txt:
+	blip-findall -i flymine_gene_phenotype.txt -i adhoc_uberon.pro -r fly_anatomy  fly_gene_phen_anat/4 > $@.tmp && sort -u $@.tmp > $@
+
+fly_gene_phen_uber.txt:
+	blip-findall -debug index -i flymine_gene_phenotype.txt -i adhoc_uberon.pro -r fly_anatomy -r uberonp_with_isa -goal table_fly_gene_phen_uber fly_gene_phen_uber/4 > $@.tmp && sort -u $@.tmp > $@
+
+# phenotype_annotation.omim downloaded from human-phenotype-ontology.org
+human_gene_phen_anat.txt:
+	blip-findall -debug index -r omim2gene -r fma -r human_phenotype_xp  -index "metadata_db:entity_xref(1,1)" -r gene/9606 -i phenotype_annotation.txt -i adhoc_uberon.pro human_ensgene_anat/4 > $@.tmp && sort -u $@.tmp > $@
+
+
+HMD_HGNC_Accession.rpt:
+	wget ftp://ftp.informatics.jax.org/pub/reports/HMD_HGNC_Accession.rpt
+
+mouse_gene_phen.txt:
+	blip-findall -debug index -r gene/10090 -r mammalian_phenotype  -index "metadata_db:entity_xref(1,1)"  -i MGI_PhenoGenoMP.pro -i adhoc_uberon.pro mouse_gene_phen/4 > $@.tmp && sort -u $@.tmp > $@
+
+mouse_gene_phen_anat.txt:
+	blip-findall -debug index -r gene/10090 -r mouse_anatomy -r mammalian_phenotype_xp  -index "metadata_db:entity_xref(1,1)"  -i MGI_PhenoGenoMP.pro -i adhoc_uberon.pro mouse_gene_anat/4 > $@.tmp && sort -u $@.tmp > $@
+
+zfin_gene_phen_anat.txt:
+	cat zfin_gene_anatomy.txt | perl -npe 's/ZFIN://' > $@
+
+fly_human_gene_attr.pro: fly_gene_attr.pro human_gene_attr.pro
+	cat fly_gene_attr.pro human_gene_attr.pro > $@
+
+mouse_human_gene_attr.pro: mouse_gene_attr.pro human_gene_attr.pro
+	cat mouse_gene_attr.pro human_gene_attr.pro > $@
+
+mouse_zfin_gene_attr.pro: mouse_gene_attr.pro zfin_gene_attr.pro
+	cat mouse_gene_attr.pro zfin_gene_attr.pro > $@
+
+%_gene_attr.pro: %_gene_phen_anat.txt
+	cut -f2,4 $< | tbl2p -p gene_attr > $@
+
+zfin_mouse_orthos.txt:
+	wget http://zfin.org/data_transfer/Downloads/mouse_orthos.txt
+
+mappings-FMA-MA-201009-concardance.txt:
+	blip-findall -debug phenolog -debug index -goal index_gene_attr -r fma_simple -r mouse_anatomy -i mouse_human_gene_attr.pro -i HMD_HGNC_Accession.pro -i adhoc_uberon.pro -r gene/9606 -i mappings-FMA-MA-201009.rdf mapping_pheno_concordance/6 -label > $@
+
+mappings-ZFA-MA-201009-concardance.txt:
+	blip-findall -debug phenolog -debug index -goal index_gene_attr -r zebrafish_anatomy -r mouse_anatomy -i mouse_zfin_gene_attr.pro -i mouse_orthos.pro -i adhoc_uberon.pro -i mappings-ZFA-MA-201009.rdf mapping_pheno_concordance/6 -label > $@
+
+mappings-FMA-FBbt-201009-concardance.txt:
+	blip-findall -debug phenolog -debug index -goal index_gene_attr -r fma_simple -r fly_anatomy -i fly_human_gene_attr.pro -i flymine_fly_human_homologs.txt  -i adhoc_uberon.pro -i mappings-FMA-FBbt-201009.rdf mapping_pheno_concordance/6 -label > $@
+
+# ----------------------------------------
+# Concordance (not strictly uberon-only)
+# ----------------------------------------
+
+human_gene_go.txt:
+	 blip-findall -debug index -index "metadata_db:entity_label_or_synonym(1,1)" -r go_assoc_local/goa_human -i adhoc_uberon.pro -r gene/9606 -r go human_ensgene_go/4 > $@.tmp && sort -u $@.tmp > $@
+mouse_gene_go.txt:
+	 blip-findall -debug index -index "metadata_db:entity_label_or_synonym(1,1)" -r go_assoc_local/mgi -i adhoc_uberon.pro -r go mouse_gene_go/4 > $@.tmp && sort -u $@.tmp > $@
+
+%_inst.obo: %.txt
+	cut -f2-10 $< | tbl2instances.pl > $@
+
+mouse_go_phen_conc.txt: mouse_gene_go_inst.obo mouse_gene_phen_inst.obo
+	 blip-findall -debug phenolog -debug simmatrix -i mouse_gene_go_inst.obo -i mouse_gene_phen_inst.obo -r go -r mammalian_phenotype -u ontol_concordance "ontol_concordance_below('MP:0000001','GO:0023033')" > $@
+
+#mouse_go_phen_conc3.txt: mouse_gene_go_inst.obo mouse_gene_phen_inst.obo
+#	blip-findall -debug index -index "ontol_db:inst_ofRT(1,0,1)" -table_pred ontol_db:parentT/3 -i mouse_gene_go_inst.obo -i mouse_gene_phen_inst.obo -r go -r mammalian_phenotype -u ontol_concordance "ontol_concordance_below('GO:0023052','MP:0000001')" > $@
+# blip-findall  -i mouse_go_phen_conc3.txt -f pro -r go -r mammalian_phenotype "aggregate(min(P,X-C),ontol_concordance(X,Y,C,P),min(MinP,MinX-_))" -select "best(Y,MinX,MinP)" -label 
+
+
+# ----------------------------------------
+# Methods (for paper)
+# ----------------------------------------
+
 uberon_class_taxon.txt:
 	blip-findall   -r implied/uberon.obo -r implied/ncbi_taxon_slim.obo -i adhoc_uberon.pro -goal index_lca_taxon class_covers_taxon/2 -label > $@
 
@@ -708,3 +785,22 @@ uberon_class_taxon_min.txt:
 %-count.txt: %.txt
 	count-occ-group.pl 3 $< > $@
 
+missing-from-%.txt:
+	blip-findall -r uberonp -r $* "class(X),\+id_idspace(X,'UBERON'),\+((entity_xref(U,X),id_idspace(U,'UBERON')))" -select X -label > $@
+
+mappings-ZFA-MA-201009-best.txt:
+	blip-findall -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA-201009.rdf -goal table_path_dist -r uberonp_with_isa -i adhoc_uberon.pro uberon_closest_match/6 -label > $@.tmp && sort -u $@.tmp > $@
+mappings-FMA-MA-201009-best.txt:
+	blip-findall -r mouse_anatomy -r fma -i mappings-FMA-MA-201009.rdf -goal table_path_dist -r uberonp_with_isa -i adhoc_uberon.pro uberon_closest_match/6 -label > $@.tmp && sort -u $@.tmp > $@
+mappings-FMA-FBbt-201009-best.txt:
+	blip-findall -r fly_anatomy -r fma -i mappings-FMA-FBbt-201009.rdf -goal table_path_dist -r uberonp_with_isa -i adhoc_uberon.pro uberon_closest_match/6 -label > $@.tmp && sort -u $@.tmp > $@
+
+mappings-FMA-FBbt-201009-lca.txt:
+	blip-findall -r fly_anatomy -r fma -i mappings-FMA-FBbt-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "mapping_lca(M,S,T,A,D)" -label > $@.tmp && sort -u $@.tmp > $@
+mappings-FMA-MA-201009-lca.txt:
+	blip-findall -r mouse_anatomy -r fma -i mappings-FMA-MA-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "mapping_lca(M,S,T,A,D)" -label > $@.tmp && sort -u $@.tmp > $@
+mappings-ZFA-MA-201009-lca.txt:
+	blip-findall -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "mapping_lca(M,S,T,A,D)" -label > $@.tmp && sort -u $@.tmp > $@
+
+inv-mappings-FMA-MA-201009-lca.txt:
+	blip-findall -r mouse_anatomy -r fma -i mappings-FMA-MA-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "inv_mapping_lca(M,S,T,'FMA','MA')" -label > $@.tmp && sort -u $@.tmp > $@

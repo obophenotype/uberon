@@ -94,6 +94,12 @@ while(<>) {
             print "! no mapping ($2) -- $_\n";
         }
     }
+    elsif (/^(synonym:.*)\[\]\s*$/) {
+        print "$1 [$xref]\n";
+    }
+    elsif (/^(def:\s+\".*\")\s+\[\]\s*$/) {
+        print "$1 [$xref]\n";
+    }
     elsif (/^\s*$/) {
         print "xref: $xref ! $name\n\n";
     }

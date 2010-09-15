@@ -1,6 +1,7 @@
 
 :- use_module(bio(bioprolog_util)).
 :- use_module(bio(ontol_db)).
+:- use_module(bio(curation_db)).
 :- use_module(bio(metadata_db)).
 :- use_module(bio(metadata_nlp)).
 :- use_module(bio(ontol_reasoner)).
@@ -10,7 +11,10 @@
 :- use_module(bio(dbmeta)).
 :- use_module(bio(graph)).
 :- use_module(bio(simmatrix)).
+:- use_module(bio(io)).
 :- use_module(bio(metadata_mappings)).
+:- use_module(bio(stats_distributions)).
+:- use_module(bio(pairwise_concordance)).
 :- use_module(library(porter_stem),[]).
 
 idspace_taxon('FMA','NCBITaxon:9606').
@@ -29,9 +33,17 @@ idspace_taxon('SPD','NCBITaxon:6893').
 idspace_taxon('TADS','NCBITaxon:6939').
 idspace_taxon('TGMA','NCBITaxon:44484').
 
+
+
+% ----------------------------------------
+% METHODS (for paper)
+% ----------------------------------------
+
+%% class_covers_taxon_summary(?Taxon,?NumOfCs)
 class_covers_taxon_summary(T,NumCs) :-
         aggregate(count,C,class_covers_taxon(C,T),NumCs).
 
+% pre-reasoned
 lca(T1,T2,T) :-
         subclass(T1,T),
         subclass(T2,T),
@@ -41,24 +53,31 @@ lca(T1,T2,T) :-
              T3\=T,
              subclass(T3,T))).
 
+% we only care about these
 index_lca_taxon :-
         materialize_index(lca_taxon_u(1)).
 
+% we only care about taxa that are LCSs of used taxa
 lca_taxon(T) :-
         idspace_taxon(_,T1),
         idspace_taxon(_,T2),
         lca(T1,T2,T).
 
+% uniqify
 lca_taxon_u(T) :-
         setof(T,lca_taxon(T),Ts),
         member(T,Ts).
 
-
+% true if an anatomy class covers a taxon - i.e. is applicable for that taxon
 class_covers_taxon(C,T) :-
         class(C),
         lca_taxon_u(T),
         \+ \+ test_class_covers_taxon(C,T).
 
+% classes are applicable to a taxon and all ancestors of that taxon.
+% thus every class covers 'Eukaryota'.
+% this finds the minimal ancestor - ie the most specific taxon for which
+% this class is applicable
 class_covers_taxon_min(C,T) :-
         class(C),
         id_idspace(C,'UBERON'),
@@ -77,6 +96,7 @@ class_not_covers_taxon(C,T) :-
         lca_taxon_u(T),
         \+ test_class_covers_taxon(C,T).
 
+% internal - used in the above
 test_class_covers_taxon(C,T) :-
         parent(C1,C),
         entity_xref(C1,X),
@@ -90,6 +110,10 @@ test_class_covers_taxon_direct(C,T) :-
         entity_xref(C1,X),
         id_idspace(X,S),
         idspace_taxon(S,T).
+
+% ----------------------------------------
+% REASONING
+% ----------------------------------------
 
 %% class_taxon_invalid(UberonViolatingClass,ExtClass,Taxon,UberonClassWithTaxonRestriction,OnlyInThisTaxon)
 class_taxon_invalid(U,X,T,Y,TY) :-
@@ -415,8 +439,11 @@ hog_xref(U,X,Y) :-
         \+entity_xref(U,Y),
         \+entity_xref(_,Y).
 
-% ----
+% ----------------------------------------
+% graph traversal
+% ----------------------------------------
 
+path_dist(ID,ID,0).
 path_dist(ID,PID,Dist) :-
 	class(ID),
 	debug(path_dist,'path_dist(~w)',[ID]),
@@ -424,9 +451,13 @@ path_dist(ID,PID,Dist) :-
 	member(Dist-PID,L).
 
 ids_ancestor_dists([Dist-ID|DIDs],DoneIDs,DistAncPairs,DistAncPairsFinal) :-
-        Dist2 is Dist+1,
         % ord_memberchk/1?
-	setof(Dist2-XID,(parent(ID,XID),\+member(XID,DoneIDs)),Parents),
+	setof(Dist2-XID,
+              Delta^(   parent_dist(ID,XID,Delta),
+                        \+member(XID,DoneIDs),
+                        Dist2 is Dist+Delta
+              ),
+              Parents),
 	!,
 	ord_union(DistAncPairs,Parents,DistAncPairsNew),
         ord_union(DIDs,Parents,NewDIDs),
@@ -435,6 +466,24 @@ ids_ancestor_dists([Dist-ID|DIDs],DoneIDs,DistAncPairs,DistAncPairsFinal) :-
 	!,
 	ids_ancestor_dists(DIDs,[Dist-ID|DoneIDs],DistAncPairs,DistAncPairsFinal).
 ids_ancestor_dists([],_,DistAncPairs,DistAncPairs).
+
+table_path_dist :-
+        table_pred(quick_ca/4),
+        table_pred(ontol_db:subclassT/2),
+        table_pred(ontol_db:bf_parentRT/2),
+        table_pred(table_path_dist/3).
+
+parent_dist(ID,PID,D) :- parent(ID,R,PID),rel_dist(R,D).
+
+rel_dist(subclass,1) :- !.
+rel_dist(part_of,2) :- !.
+rel_dist(regional_part_of,2) :- !.
+rel_dist(systemic_part_of,2) :- !.
+rel_dist(constitutional_part_of,2) :- !.
+rel_dist(develops_from,3) :- !.
+rel_dist(_,4) :- !.
+
+
 
 % ----------------------------------------
 % semantic similarity of mapping
@@ -474,6 +523,13 @@ class_uberon_anc(C,P) :-
         class_uberon_anc_dist(C,P1,MinDist),
         bf_parentRT(P1,P),
         id_idspace(P,'UBERON').
+
+class_mra_uberon(C,P) :-
+        class(C),
+        \+ id_idspace(C,'UBERON'),
+        entity_label(C,_),
+        aggregate(min(Dist),class_uberon_anc_dist(C,Dist),MinDist),
+        class_uberon_anc_dist(C,P,MinDist).
 
 
 /*
@@ -518,21 +574,384 @@ uberon_class_pair_simj(A,B,S) :-
         aggregate(min(Dist),class_pair_lcp_dist(A,B,APs,BPs,CPs,Dist),S),
         debug(sim,'  dist(~w,~w) = ~w',[A,B,S]).
 */
-        
 
-mapping_semsim(M,S,T,Sim) :-
+/*
+quick_ca(S,T,A) :-
+        bf_parentRT(S,A),
+        bf_parentRT(T,A).
+quick_lca(S,T,A) :-
+        quick_ca(S,T,A),
+        \+ ((quick_ca(S,T,B),
+             B\=A,
+             bf_parentRT(B,A))).
+*/
+
+quick_ca(S,T,A,D) :-
+        path_dist(S,A,D1),
+        path_dist(T,A,D2),
+        D is D1+D2.
+quick_lca(S,T,A,D) :-
+        quick_ca(S,T,A,D),
+        \+ ((quick_ca(S,T,B,D2),
+             B\=A,
+             D2 < D)).
+
+ext_mapping(M,S,T) :-
 	rdf_has(M,'http://protege.stanford.edu/mappings#source',Sx),
 	bpuri_id(Sx,S),
 	rdf_has(M,'http://protege.stanford.edu/mappings#target',Tx),
 	bpuri_id(Tx,T),
+        \+ exclude(S),
+        \+ exclude(T).
+
+mapping_semsim(M,S,T,Sim) :-
+        ext_mapping(M,S,T),
         (   uberon_class_pair_simj(S,T,Sim)
         ->  true
         ;   Sim=0).
 
+/*
+mapping_lca(M,S,T,A) :-
+        ext_mapping(M,S,T),
+        quick_lca(S,T,A).
+*/
 
+mapping_lca(M,S,T,A,D) :-
+        ext_mapping(M,S,T),
+        directly_subsumed_in_ub(S),
+        directly_subsumed_in_ub(T),
+        quick_lca(S,T,A,D).
+
+inv_mapping_lca(M,S,T,SX,TX) :-
+        ub_mapping(M,S,T,SX,TX),
+        \+ ext_mapping(M,S,T).
+
+ext_mapping_not_in_uberon(M,S,T) :-
+        ext_mapping(M,S,T),
+        \+ ((directly_subsumed_in_ub(S),
+             directly_subsumed_in_ub(T))).
+
+uberon_closest_match(M,S,T,Type,A,D) :-
+        ext_mapping(M,S,T),
+        uberon_closest_match_det(S,T,Type,A,D).
+
+uberon_closest_match_det(S,T,exact,U,0) :-
+        entity_xref(U,S),
+        entity_xref(U,T),
+        !.
+uberon_closest_match_det(S,_,subject_obsolete,'',inf) :-
+        entity_obsolete(S,_),
+        !.
+uberon_closest_match_det(_,T,target_obsolete,'',inf) :-
+        entity_obsolete(T,_),
+        !.
+uberon_closest_match_det(S,T,diagonal_match_for_subject,Tx,D) :-
+        entity_xref(U,S),
+        entity_xref(U,Tx),
+        path_dist(T,Tx,D),
+        !.
+uberon_closest_match_det(S,T,diagonal_match_for_target,Sx,D) :-
+        entity_xref(U,T),
+        entity_xref(U,Sx),
+        path_dist(S,Sx,D),
+        !.
+uberon_closest_match_det(S,T,match_for_subject_in_alt_hierarchy,Tx,inf) :-
+        entity_xref(U,S),
+        entity_xref(U,Tx),
+        id_idspace(T,OntT),
+        id_idspace(Tx,OntT),
+        !.
+uberon_closest_match_det(S,T,match_for_target_in_alt_hierarchy,Sx,inf) :-
+        entity_xref(U,T),
+        entity_xref(U,Sx),
+        id_idspace(S,OntS),
+        id_idspace(Sx,OntS),
+        !.
+uberon_closest_match_det(S,T,lca_of_direct_subsumers,A,D) :-
+        entity_xref(U1,S),
+        entity_xref(U2,T),
+        !,
+        quick_lca(U1,U2,A,D).
+uberon_closest_match_det(S,T,lca_indirect,A,D) :-
+        quick_lca(S,T,A,D),
+        !.
+uberon_closest_match_det(_,_,none,-,-).
+
+
+
+
+
+
+ub_mapping(M,S,T,SX,TX) :-
+        entity_xref(M,S),
+        id_idspace(S,SX),
+        entity_xref(M,T),
+        id_idspace(T,TX).
+
+directly_subsumed_in_ub(X,U) :-
+        entity_xref(U,X).
+
+
+
+/*
+mapping_accuracy(M,S,T,Sim) :-
+        mapping_lca(M,S,T,A),
+        \+ exclude(S),
+        \+ exclude(T),
+        id_idspace(S,SX),
+        id_idspace(T,TX),
+        SX\=TX,
+        (   uberon_class_pair_simj(S,T,Sim)
+        ->  true
+        ;   Sim=0).
+*/
+
+exclude(S) :-
+        id_idspace(S,'FBbt'),
+        bf_parentRT(S,'FBbt:00007002'). % cell
+exclude(S) :-
+        id_idspace(S,'FBbt'),
+        bf_parentRT(S,'FBbt:00007012'). % cell component
+exclude(S) :-
+        id_idspace(S,'FMA'),
+        bf_parentRT(S,'FMA:68646').
+exclude(S) :-
+        id_idspace(S,'FMA'),
+        bf_parentRT(S,'FMA:61764'). % cardinal cell part
+exclude(S) :-
+        id_idspace(S,'ZFA'),
+        bf_parentRT(S,'ZFA:0009000').
+
+
+% taken from mapping_metadata.pro
+% REMEMBER - labels used for FMA
+% also changed btwn mar and sept
 bpuri_id(X,ID) :-
 	concat_atom(L,'/',X),
 	reverse(L,[IDx|_]),
 	mapid(IDx,ID).
+bpuri_id(X,ID) :-
+	concat_atom([_,N],'#',X),
+	mapid(N,ID).
 mapid(ID,ID) :- concat_atom([_,_],':',ID),!.
 mapid(N,ID) :- concat_atom(Toks,'_',N),concat_atom(Toks,' ',N2),entity_label(ID,N2),!.
+
+
+        
+% ----------------------------------------
+% Phenologs
+% ----------------------------------------
+
+% ----------------------------------------
+% Fly phenotype
+% ----------------------------------------
+fly_gene_phen_anat(G,GN,A,AN) :-
+        fly_gene_phen_anat(G,GN,A),
+        entity_label(A,AN).
+
+fly_gene_phen_anat(G,GN,A) :-
+        flymine_gene_phenotype(G,GN,_Al,_,_,_,A,_,_,_),
+        A\=''.
+fly_gene_phen_anat(G,GN,A) :-
+        flymine_gene_phenotype(G,GN,_Al,_,_,Desc,'',_,_,_),
+        entity_label(A,Desc).
+fly_gene_phen_anat(G,GN,A) :-
+        flymine_gene_phenotype(G,GN,_Al,_,_,Desc,'',_,_,_),
+        concat_atom([X,Y],' & ',Desc),
+        (   entity_label(A,X)
+        ;   entity_label(A,Y)).
+
+fly_gene_phen_uber(G,GN,U,UN) :-
+        fly_gene_phen_anat(G,GN,A),
+        class_mra_uberon(A,U),
+        entity_label(U,UN).
+
+table_fly_gene_phen_uber :-
+        materialize_index(fly_gene_phen_anat(1,0,1)),
+        table_pred(class_mra_uberon/2).
+
+omim_phen(D,P) :-
+        phenotype_annotation(_,MIM,_,_,P,_,_,_,_,_,_,_,_,_),
+        atom_concat('MIM:',MIM,D).
+
+human_ncbigene_phen(G,P) :-
+        omim_phen(MIM,P),
+        entity_xref(G,MIM).
+human_ncbigene_phen(G,P) :-
+        omim_phen(MIM,P),
+        disorder2ncbigene(MIM,G).
+
+human_ensgene_phen(G,GN,P) :-
+        human_ncbigene_phen(NcbiG,P),
+        entity_xref(NcbiG,EnsGFull),
+        concat_atom(['Ensembl:',G],EnsGFull),
+        entity_label(NcbiG,GN).
+
+human_ensgene_anat(G,GN,A,AN) :-
+        human_ensgene_phen(G,GN,P),
+        differentium(P,_,A),
+        id_idspace(A,'FMA'),
+        entity_label(A,AN).
+
+mouse_gene_phen(G,P) :-
+        mgi_phenogenomp(_,_,_,P,_,G).
+mouse_gene_phen(G,GN,P,PN) :-
+        mouse_gene_phen(G,P),
+        entity_label(G,GN),
+        entity_label(P,PN).
+
+mouse_gene_anat(G,GN,A,AN) :-
+        mouse_gene_phen(G,P),
+        differentium(P,_,A),
+        id_idspace(A,'MA'),
+        entity_label(A,AN),
+        %atom_concat('MGI:',G,GID),
+        %(   entity_xref(NcbiG,GID)
+        %;   NcbiG=GID),
+        entity_label(G,GN).
+
+% GO
+
+annot(G,P) :- curation_statement(_,G,_,P).
+
+human_ensgene_go(G,GN,GO,GON) :-
+        solutions(UP-GO,annot(UP,GO),L),
+        member(UP-GO,L),
+        entity_label(UP,GN),
+        entity_label_or_synonym(NcbiG,GN),
+        entity_xref(NcbiG,EnsGFull),
+        concat_atom(['Ensembl:',G],EnsGFull),
+        entity_label(NcbiG,GN),
+        entity_label(GO,GON).
+
+human_ensgene_go_via_orthol(G,_GN,GO) :-
+        hom(G,G2),
+        atom_concat('MGI:',G2,G3),
+        curation_statement(_,G3,_,GO).
+
+mouse_gene_go(G,GN,GO,GON) :-
+        solutions(UP-GO,annot(UP,GO),L),
+        member(UP-GO,L),
+        entity_label(UP,GN),
+        atom_concat('MGI:',G,UP),
+        entity_label(GO,GON).
+        
+
+/*
+load_gene_attr(fly) :-
+        load_biofile(tbl2p(gene_attr),'fly_gene_phen_anat.txt').
+load_gene_attr(human) :-
+        load_biofile(tbl2p(gene_attr),'human_gene_phen_anat.txt').
+*/
+
+
+gene_attrT(G,A) :-
+        gene_attr(G,A1),
+        bf_parentRT(A1,A).
+
+:- multifile user:gene_attr/2.
+%gene_attr(G,A) :-
+%        human_gene_phen_anat(_,G,_,A,_).
+%gene_attr(G,A) :-
+%        fly_gene_phen_anat(_,G,_,A,_).
+
+index_gene_attr :-
+        table_pred(ontol_db:bf_parentRT/2),
+        materialize_index(gene_attr(1,1)),
+        materialize_index(gene_attrT(1,1)),
+        materialize_index(hom(1,1)).
+
+:- multifile user:flymine_fly_human_homologs/10.
+:- multifile user:mgi_human_homolog/7.
+:- multifile user:mouse_orthos/8.
+
+hom(G1,G2) :-
+        flymine_fly_human_homologs(G1,_,_,G2,_,_,_,_,_,_).
+hom(G1,G2) :-
+        mgi_human_homolog(G1,_,_,_,_,_,G2x),
+        atom_concat('NCBI_Gene:',G2x,G2y),
+        entity_xref(G2y,G2z),
+        atom_concat('Ensembl:',G2,G2z).
+hom(G1,G2) :-
+        mouse_orthos(G2,_,_,_,_,G1,_,_).
+
+hom_with_attr(G1,G2) :-
+        setof(G,A^gene_attr(G,A),Gs),
+        member(G1,Gs),
+        hom(G1,G2),
+        \+ \+ ((gene_attr(G2,_))).
+
+pheno_concordance(A,B,Prob) :-
+        debug(phenolog,'finding pairs',[]),
+        setof(G1-G2,hom_with_attr(G1,G2),Pairs),
+        pheno_concordance(A,B,Pairs,Prob).
+
+mapping_pheno_concordance(A,B,Prob,S1,S2,SC) :-
+        debug(phenolog,'finding pairs',[]),
+        setof(G1-G2,hom_with_attr(G1,G2),Pairs),
+        debug(phenolog,'mappings',[]),
+        setof(A-B,M^ext_mapping(M,A,B),ABs),
+        member(A-B,ABs),
+        pheno_concordance(B,A,Pairs,Prob,S1,S2,SC). % hack! order-dependent
+
+
+pheno_concordance(A,B,Pairs,Prob,S1,S2,SC) :-
+        debug(phenolog,'finding set1 ~w',[A]),
+        setof(G,gene_attrT(G,A),GSet1),
+        debug(phenolog,'finding set2 ~w',[B]),
+        setof(G,gene_attrT(G,B),GSet2),
+        debug(phenolog,'calculating',[]),
+        pairwise_concordance(GSet1,GSet2,Pairs,Prob,S1,S2,SC),
+        !.
+pheno_concordance(_,_,_,no_data,[],[],[]).
+
+
+
+        
+
+
+
+
+
+
+% ----------------------------------------
+% GO annots
+% ----------------------------------------
+
+part_of_or_subclass_of(X,X).
+part_of_or_subclass_of(X,Y) :- parentT(X,R,Y),
+        (   R=subclass
+        ;   R=part_of).
+
+go_to_uberon(BP,U) :-
+        bf_parentRT(BP,BP2),
+        differentium(BP2,_,U),
+        id_idspace(U,'UBERON').
+
+uberon_gene_inf(U,G,E) :-
+        curation_statement(S,G,_,BP),
+        go_to_uberon(BP,U),
+        curation_evidence_code(S,E).
+
+uberon_gene_nr(U,G,E) :-
+        uberon_gene_inf(U,G,E),
+        \+ ((uberon_gene_inf(U2,G,E),
+             U2\=U,
+             part_of_or_subclass_of(U2,U))).
+
+table_gene(Goal):-
+        Goal,
+        ensure_loaded(bio(curation_db)),
+        table_pred(ontol_db:bf_parentRT/2),
+        table_pred(ontol_db:parentT/3),
+        table_pred(ontol_db:go_to_uberon/2),
+        materialize_index(uberon_gene_inf(1,1,1)).
+%table_pred(uberon_gene_inf/3).
+
+load_fly_ga :-
+        load_bioresource(go),
+        load_bioresource(goxp(biological_process_xp_uber_anatomy)),
+        load_bioresource(uberonp_with_isa),
+        load_bioresource(fly_anatomy),
+        load_bioresource(goxp(biological_process_xp_fly_anatomy)),
+        load_bioresource(go_assoc_local(fb)).

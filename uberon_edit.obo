@@ -2359,7 +2359,7 @@ def: "An organ segment that is part of a colon [Obol]." [OBOL:automatic]
 
 
 [Term]
-id: UBERON:0000170
+id: UBERON:0000170 ! pair of lungs
 name: pair of lungs
 synonym: "lungs" EXACT []
 synonym: "lungs pair" EXACT []
@@ -4896,27 +4896,6 @@ xref: ZFA:0001492 ! simple organ
 is_a: UBERON:0000481 ! multi-tissue structure
 xref: EHDAA2:0003190 ! simple organ
 xref: AEO:0000190 ! simple organ
-
-[Term]
-id: UBERON:0004533
-name: left testicle
-xref: FMA:7212 ! Left testis
-xref: MA:0001746 ! left testis
-intersection_of: UBERON:0000473 ! testis
-intersection_of: part_of UBERON:0004531 ! left side of organism
-xref: ncithesaurus:Left_Testis ! Left Testis
-def: "A testis that is part of a left side of organism [Obol]." [OBOL:automatic]
-
-[Term]
-id: UBERON:0004534
-name: right testicle
-xref: FMA:7211 ! Right testis
-xref: MA:0001747 ! right testis
-xref: OpenCyc:Mx4rvVjM25wpEbGdrcN5Y29ycA
-intersection_of: UBERON:0000473 ! testis
-intersection_of: part_of UBERON:0004532 ! right side of organism
-xref: ncithesaurus:Right_Testis ! Right Testis
-def: "A testis that is part of a right side of organism [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0000473
@@ -10344,7 +10323,8 @@ synonym: "thyroid gland right lobe" EXACT []
 synonym: "right thyroid lobe" EXACT []
 xref: FMA:13368 ! Right lobe of thyroid gland
 xref: MA:0000729 ! thyroid gland right lobe
-is_a: UBERON:0001118 ! lobe of thyroid gland
+intersection_of: UBERON:0001118 ! lobe of thyroid gland
+intersection_of: in_right_side_of UBERON:0002046 ! thyroid gland
 xref: HOG:0000733 ! right thyroid lobe
 
 [Term]
@@ -10357,7 +10337,8 @@ synonym: "thyroid gland left lobe" EXACT []
 synonym: "left thyroid lobe" EXACT []
 xref: FMA:13369 ! Left lobe of thyroid gland
 xref: MA:0000728 ! thyroid gland left lobe
-is_a: UBERON:0001118 ! lobe of thyroid gland
+intersection_of: UBERON:0001118 ! lobe of thyroid gland
+intersection_of: in_left_side_of UBERON:0002046 ! thyroid gland
 xref: HOG:0000734 ! left thyroid lobe
 
 [Term]
@@ -11617,16 +11598,25 @@ intersection_of: part_of UBERON:0002117 ! testicle
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Gray531.png/200px-Gray531.png
 
 [Term]
-id: UBERON:0001188
-name: right testicular artery
-alt_id: UBERON:FMA_14759-MA_0002042
-comment: This class was created automatically from a combination of ontologies
-synonym: "right spermatic artery" EXACT []
-synonym: "trunk of right testicular arterial tree" EXACT []
-xref: FMA:14759 ! Right testicular artery
-xref: MA:0002042 ! right spermatic artery
-is_a: UBERON:0001187 ! testicular artery
-xref: ncithesaurus:Right_Spermatic_Artery ! Right Spermatic Artery
+id: UBERON:0004533 ! left testicle
+name: left testicle
+xref: FMA:7212 ! Left testis
+xref: MA:0001746 ! left testis
+intersection_of: UBERON:0000473 ! testis
+intersection_of: part_of UBERON:0004531 ! left side of organism
+xref: ncithesaurus:Left_Testis ! Left Testis
+def: "A testis that is part of a left side of organism [Obol]." [OBOL:automatic]
+
+[Term]
+id: UBERON:0004534 ! right testicle
+name: right testicle
+xref: FMA:7211 ! Right testis
+xref: MA:0001747 ! right testis
+xref: OpenCyc:Mx4rvVjM25wpEbGdrcN5Y29ycA
+intersection_of: UBERON:0000473 ! testis
+intersection_of: part_of UBERON:0004532 ! right side of organism
+xref: ncithesaurus:Right_Testis ! Right Testis
+def: "A testis that is part of a right side of organism [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0001189
@@ -11637,8 +11627,22 @@ synonym: "left spermatic artery" EXACT []
 synonym: "trunk of left testicular arterial tree" EXACT []
 xref: FMA:14760 ! Left testicular artery
 xref: MA:0002041 ! left spermatic artery
-is_a: UBERON:0001187 ! testicular artery
+intersection_of: UBERON:0001187 ! testicular artery
+intersection_of: part_of UBERON:0004533 ! left testicle
 xref: ncithesaurus:Left_Spermatic_Artery ! Left Spermatic Artery
+
+[Term]
+id: UBERON:0001188
+name: right testicular artery
+alt_id: UBERON:FMA_14759-MA_0002042
+comment: This class was created automatically from a combination of ontologies
+synonym: "right spermatic artery" EXACT []
+synonym: "trunk of right testicular arterial tree" EXACT []
+xref: FMA:14759 ! Right testicular artery
+xref: MA:0002042 ! right spermatic artery
+intersection_of: UBERON:0001187 ! testicular artery
+intersection_of: part_of UBERON:0004534 ! right testicle
+xref: ncithesaurus:Right_Spermatic_Artery ! Right Spermatic Artery
 
 [Term]
 id: UBERON:0001190
@@ -11651,8 +11655,7 @@ synonym: "ovarian arterial tree" EXACT []
 xref: FMA:14761 ! Ovarian artery
 xref: MA:0002012 ! ovarian artery
 is_a: UBERON:0001637 ! artery
-intersection_of: UBERON:0001637 ! artery
-intersection_of: part_of UBERON:0000992 ! ovary
+relationship: overlaps UBERON:0000992 ! ovary
 xref: ncithesaurus:Ovarian_Artery ! Ovarian Artery
 xref: OpenCyc:Mx4rwOa9PZwpEbGdrcN5Y29ycA ! ovarian artery
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Gray1170.png/200px-Gray1170.png
@@ -21773,7 +21776,6 @@ xref: HOG:0000364 ! submandibular gland
 xref: MA:0001589 ! submandibular gland
 xref: ncithesaurus:Submandibular_Gland
 is_a: UBERON:0001829 ! major salivary gland
-is_a: UBERON:0003968 ! peripheral lymph node
 xref: EFO:0001387 ! submandibular gland
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Illu_quiz_hn_02.jpg/200px-Illu_quiz_hn_02.jpg
 
@@ -24287,13 +24289,34 @@ xref: OpenCyc:Mx4rvigx5ZwpEbGdrcN5Y29ycA ! cerebral hemisphere
 xref: NIF_GrossAnatomy:birnlex_1042 ! Cerebrum
 
 [Term]
+id: UBERON:0002812
+name: left cerebral hemisphere
+alt_id: UBERON:NIF_GrossAnatomy_birnlex_1795-FMA_61819
+xref: FMA:61819 ! Left cerebral hemisphere
+xref: NIF_GrossAnatomy:birnlex_1795 ! Left cerebral hemisphere
+intersection_of: UBERON:0001869 ! cerebral hemisphere
+intersection_of: in_left_side_of UBERON:0000955 ! brain
+xref: ncithesaurus:Left_Cerebral_Hemisphere ! Left Cerebral Hemisphere
+
+[Term]
+id: UBERON:0002813
+name: right cerebral hemisphere
+alt_id: UBERON:NIF_GrossAnatomy_birnlex_1797-FMA_67292
+xref: FMA:67292 ! Right cerebral hemisphere
+xref: NIF_GrossAnatomy:birnlex_1797 ! Right cerebral hemisphere
+intersection_of: UBERON:0001869 ! cerebral hemisphere
+intersection_of: in_right_side_of UBERON:0000955 ! brain
+xref: ncithesaurus:Right_Cerebral_Hemisphere ! Right Cerebral Hemisphere
+xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvigx5ZwpEbGdrcN5Y29ycA ! right cerebral hemisphere
+
+[Term]
 id: UBERON:0001870
-name: frontal lobe
+name: frontal cortex
 alt_id: UBERON:FMA_61824-MA_0000905
 def: "Frontal lobe is the anterior-most of five lobes of the cerebral hemisphere. It is bounded by the central sulcus on its posterior border and by the longitudinal cerebral fissure on its medial border." [Wikipedia:Frontal_lobe]
-comment: This class was created automatically from a combination of ontologies
+comment: Many species don't have lobes but they do have frontal cortex.  Lobe isn't a really well defined term though [MM]
 subset: uberon_slim
-synonym: "frontal cortex" EXACT []
+synonym: "frontal lobe" EXACT [FMA:61824]
 synonym: "frontal region" EXACT []
 xref: BTO:0000484
 xref: EFO:0000913 ! frontal lobe
@@ -30134,7 +30157,8 @@ xref: EHDAA:4969 ! right lung
 xref: FMA:7309 ! Right lung
 xref: HOG:0000301 ! right lung
 xref: MA:0000426 ! right lung
-is_a: UBERON:0002048 ! lung
+intersection_of: UBERON:0002048 ! lung
+intersection_of: in_right_side_of UBERON:0000170 ! pair of lungs
 xref: ncithesaurus:Right_Lung ! Right Lung
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvVjKy5wpEbGdrcN5Y29ycA ! right lung
 xref: EHDAA2:0001730 ! right lung
@@ -30151,7 +30175,8 @@ xref: EHDAA:4947 ! left lung
 xref: FMA:7310 ! Left lung
 xref: HOG:0000618 ! left lung
 xref: MA:0000425 ! left lung
-is_a: UBERON:0002048 ! lung
+intersection_of: UBERON:0002048 ! lung
+intersection_of: in_left_side_of UBERON:0000170 ! pair of lungs
 xref: ncithesaurus:Left_Lung ! Left Lung
 xref: OpenCyc:Mx8Ngh4rvgIFoJwpEbGdrcN5Y29ycB4rvVjKy5wpEbGdrcN5Y29ycA ! left lung
 xref: EHDAA2:0000943 ! left lung
@@ -30180,7 +30205,7 @@ def: "A specialized lobe of the right lung that extends to the left side of the 
 comment: not in humans
 synonym: "right lung postcaval lobe" EXACT [MA:0000427]
 is_a: UBERON:0000101 ! lobe of lung
-relationship: part_of UBERON:0002167 ! right lung
+is_a: part_of UBERON:0002167 ! right lung
 xref: MA:0000427 ! right lung accessory lobe
 xref: HOG:0000831 ! right lung accessory lobe
 xref: EHDAA2:0001731 ! right lung accessory lobe
@@ -38976,18 +39001,6 @@ relationship: part_of UBERON:0001943 ! midbrain tegmentum
 def: "A reticular formation that is part of a midbrain [Obol]." [OBOL:automatic]
 
 [Term]
-id: UBERON:0002640
-name: cuneocerebellar tract
-alt_id: UBERON:NIF_GrossAnatomy_birnlex_1238-FMA_72637
-def: "The posterior external arcuate fibers (dorsal external arcuate fibers) take origin in the gracile and cuneate nuclei; they pass to the inferior peduncle of the same side. It is uncertain whether fibers are continued directly from the gracile and cuneate fasciculi into the inferior peduncle. The term 'cuneocerebellar tract' is sometimes used to collectively refer to the posterior external arcuate fibers. [WP,unvetted]." [Wikipedia:Cuneocerebellar_tract]
-subset: uberon_slim
-xref: FMA:72637 ! Cuneocerebellar tract
-xref: NIF_GrossAnatomy:birnlex_1238 ! Cuneocerebellar tract
-is_a: UBERON:0002316 ! white matter of neuraxis
-relationship: part_of UBERON:0001896 ! medulla oblongata
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Gray699.png/200px-Gray699.png
-
-[Term]
 id: UBERON:0002641
 name: oral pulvinar nucleus
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1239-FMA_62180
@@ -40617,6 +40630,28 @@ relationship: part_of UBERON:0001896 ! medulla oblongata
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Gray695.png/200px-Gray695.png
 
 [Term]
+id: UBERON:0005413 ! spinocerebellar tract
+name: spinocerebellar tract
+def: "The spinocerebellar tract is a set of axonal fibers originating in the spinal cord and terminating in the ipsilateral cerebellum. This tract conveys information to the cerebellum about limb and joint position." [Wikipedia:Spinocerebellar_tract]
+is_a: UBERON:0002316 ! white matter of neuraxis
+xref: GAID:733 ! spinocerebellar tract
+
+[Term]
+id: UBERON:0002987
+name: anterior spinocerebellar tract
+alt_id: UBERON:NIF_GrossAnatomy_birnlex_848-FMA_72642
+def: "The ventral spinocerebellar tract conveys proprioceptive information from the body to the cerebellum. It is part of the somatosensory system and runs in parallel with the dorsal spinocerebellar tract. Both these tracts involve two neurons and end up on the same side of the body. The ventral tract (under L2/L3) gets its proprioceptive/fine touch/vibration information from a first order neuron, with its cell body in a dorsal ganglion. The axon runs via the fila radicularia to the dorsal horn of the grey matter. There it makes a synapse with the dendrites of two neurons: they send their axons bilaterally to the ventral border of the lateral funiculi. The ventral spinocerebellar tract then enters the cerebellum via the superior cerebellar peduncle. This is in contrast with the dorsal spinocerebellar tract (C8 - L2/L3), which only has 1 unilateral axon that has its cell body in the Clarke's nuclei (only at the level of C8 - L2/L3). The fibers of the ventral spinocerebellar tract then eventually enter the cerebellum via the superior cerebellar peduncle. This is one of the few afferent tracts through the superior cerebellar peduncle. Originates from ventral horn at lumbosacral spinal levels. Axons first cross midline in the spinal cord and run in the ventral border of the lateral funiculi. These axons ascend up to the pons where they join the superior cerebellar peduncle to enter the cerebellum. Once in the deep white matter of the cerebellum, the axons recross the midline, give off collaterals to the globose and emboliform nuclei, and terminate in the cortex of the anterior lobe and vermis of the posterior lobe. [WP,unvetted]." [Wikipedia:Anterior_spinocerebellar_tract]
+subset: uberon_slim
+synonym: "gowers' tract" EXACT [FMA:72642]
+synonym: "ventral spinocerebellar tract" EXACT [FMA:72642]
+xref: FMA:72642 ! Anterior spinocerebellar tract
+xref: NIF_GrossAnatomy:birnlex_848 ! Anterior spinocerebellar tract
+is_a: UBERON:0002316 ! white matter of neuraxis
+relationship: part_of UBERON:0001896 ! medulla oblongata
+relationship: part_of UBERON:0005413 ! spinocerebellar tract
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Medulla_spinalis_-_tracts_-_English.svg/200px-Medulla_spinalis_-_tracts_-_English.svg.png
+
+[Term]
 id: UBERON:0002753
 name: posterior spinocerebellar tract
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1585-FMA_72641
@@ -40627,7 +40662,20 @@ synonym: "flechsig's tract" EXACT [FMA:72641]
 xref: FMA:72641 ! Posterior spinocerebellar tract
 xref: NIF_GrossAnatomy:birnlex_1585 ! Posterior spinocerebellar tract
 is_a: UBERON:0002316 ! white matter of neuraxis
+relationship: part_of UBERON:0005413 ! spinocerebellar tract
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Medulla_spinalis_-_tracts_-_English.svg/200px-Medulla_spinalis_-_tracts_-_English.svg.png
+
+[Term]
+id: UBERON:0002640
+name: cuneocerebellar tract
+alt_id: UBERON:NIF_GrossAnatomy_birnlex_1238-FMA_72637
+def: "The posterior external arcuate fibers (dorsal external arcuate fibers) take origin in the gracile and cuneate nuclei; they pass to the inferior peduncle of the same side. It is uncertain whether fibers are continued directly from the gracile and cuneate fasciculi into the inferior peduncle. The term 'cuneocerebellar tract' is sometimes used to collectively refer to the posterior external arcuate fibers. [WP,unvetted]." [Wikipedia:Cuneocerebellar_tract]
+subset: uberon_slim
+xref: FMA:72637 ! Cuneocerebellar tract
+xref: NIF_GrossAnatomy:birnlex_1238 ! Cuneocerebellar tract
+is_a: UBERON:0002316 ! white matter of neuraxis
+relationship: part_of UBERON:0001896 ! medulla oblongata
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Gray699.png/200px-Gray699.png
 
 [Term]
 id: UBERON:0002754
@@ -41404,10 +41452,10 @@ name: left parietal lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1728-FMA_72974
 xref: FMA:72974 ! Left parietal lobe
 xref: NIF_GrossAnatomy:birnlex_1728 ! Left parietal lobe
-is_a: UBERON:0001872 ! parietal lobe
+intersection_of: UBERON:0001872 ! parietal lobe
+intersection_of: part_of UBERON:0002812 ! left cerebral hemisphere
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
 relationship: spatially_disjoint_from UBERON:0002803 ! right parietal lobe
-relationship: part_of UBERON:0002812 ! left cerebral hemisphere
 
 [Term]
 id: UBERON:0002803
@@ -41415,9 +41463,9 @@ name: right parietal lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1729-FMA_72973
 xref: FMA:72973 ! Right parietal lobe
 xref: NIF_GrossAnatomy:birnlex_1729 ! Right parietal lobe
-is_a: UBERON:0001872 ! parietal lobe
+intersection_of: UBERON:0001872 ! parietal lobe
+intersection_of: part_of UBERON:0002813 ! right cerebral hemisphere
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
-relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002804
@@ -41425,8 +41473,8 @@ name: left limbic lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1780-FMA_72981
 xref: FMA:72981 ! Left limbic lobe
 xref: NIF_GrossAnatomy:birnlex_1780 ! Left limbic lobe
-is_a: UBERON:0002600 ! limbic lobe
-relationship: part_of UBERON:0002812 ! left cerebral hemisphere
+intersection_of: UBERON:0002600 ! limbic lobe
+intersection_of: part_of UBERON:0002812 ! left cerebral hemisphere
 
 [Term]
 id: UBERON:0002805
@@ -41434,8 +41482,8 @@ name: right limbic lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1781-FMA_72980
 xref: FMA:72980 ! Right limbic lobe
 xref: NIF_GrossAnatomy:birnlex_1781 ! Right limbic lobe
-is_a: UBERON:0002600 ! limbic lobe
-relationship: part_of UBERON:0002813 ! right cerebral hemisphere
+intersection_of: UBERON:0002600 ! limbic lobe
+intersection_of: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002806
@@ -41443,10 +41491,10 @@ name: left occipital lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1782-FMA_72976
 xref: FMA:72976 ! Left occipital lobe
 xref: NIF_GrossAnatomy:birnlex_1782 ! Left occipital lobe
-is_a: UBERON:0002021 ! occipital lobe
+intersection_of: UBERON:0002021 ! occipital lobe
+intersection_of: part_of UBERON:0002812 ! left cerebral hemisphere
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
 relationship: spatially_disjoint_from UBERON:0002807 ! right occipital lobe
-relationship: part_of UBERON:0002812 ! left cerebral hemisphere
 
 [Term]
 id: UBERON:0002807
@@ -41454,10 +41502,10 @@ name: right occipital lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1783-FMA_72975
 xref: FMA:72975 ! Right occipital lobe
 xref: NIF_GrossAnatomy:birnlex_1783 ! Right occipital lobe
-is_a: UBERON:0002021 ! occipital lobe
+intersection_of: UBERON:0002021 ! occipital lobe
+intersection_of: part_of UBERON:0002813 ! right cerebral hemisphere
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rv9OFy5wpEbGdrcN5Y29ycA ! right occipital lobe
-relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002808
@@ -41465,9 +41513,9 @@ name: left temporal lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1784-FMA_72972
 xref: FMA:72972 ! Left temporal lobe
 xref: NIF_GrossAnatomy:birnlex_1784 ! Left temporal lobe
-is_a: UBERON:0001871 ! temporal lobe
+intersection_of: UBERON:0001871 ! temporal lobe
+intersection_of: part_of UBERON:0002812 ! left cerebral hemisphere
 xref: OpenCyc:Mx8Ngh4rvgIFoJwpEbGdrcN5Y29ycB4rwQLi-ZwpEbGdrcN5Y29ycA ! left temporal lobes
-relationship: part_of UBERON:0002812 ! left cerebral hemisphere
 
 [Term]
 id: UBERON:0002809
@@ -41475,9 +41523,9 @@ name: right temporal lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1785-FMA_72971
 xref: FMA:72971 ! Right temporal lobe
 xref: NIF_GrossAnatomy:birnlex_1785 ! Right temporal lobe
-is_a: UBERON:0001871 ! temporal lobe
+intersection_of: UBERON:0001871 ! temporal lobe
+intersection_of: part_of UBERON:0002813 ! right cerebral hemisphere
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rwQLi-ZwpEbGdrcN5Y29ycA ! right temporal lobe
-relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002810
@@ -41485,9 +41533,9 @@ name: right frontal lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1786-FMA_72969
 xref: FMA:72969 ! Right frontal lobe
 xref: NIF_GrossAnatomy:birnlex_1786 ! Right frontal lobe
-is_a: UBERON:0001870 ! frontal lobe
+intersection_of: UBERON:0001870 ! frontal lobe
+intersection_of: part_of UBERON:0002813 ! right cerebral hemisphere
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
-relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002811
@@ -41495,29 +41543,10 @@ name: left frontal lobe
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1787-FMA_72970
 xref: FMA:72970 ! Left frontal lobe
 xref: NIF_GrossAnatomy:birnlex_1787 ! Left frontal lobe
-is_a: UBERON:0001870 ! frontal lobe
+intersection_of: UBERON:0001870 ! frontal lobe
+intersection_of: part_of UBERON:0002812 ! left cerebral hemisphere
 relationship: adjacent_to UBERON:0002921 ! longitudinal fissure
 relationship: spatially_disjoint_from UBERON:0002810 ! right frontal lobe
-relationship: part_of UBERON:0002812 ! left cerebral hemisphere
-
-[Term]
-id: UBERON:0002812
-name: left cerebral hemisphere
-alt_id: UBERON:NIF_GrossAnatomy_birnlex_1795-FMA_61819
-xref: FMA:61819 ! Left cerebral hemisphere
-xref: NIF_GrossAnatomy:birnlex_1795 ! Left cerebral hemisphere
-is_a: UBERON:0001869 ! cerebral hemisphere
-xref: ncithesaurus:Left_Cerebral_Hemisphere ! Left Cerebral Hemisphere
-
-[Term]
-id: UBERON:0002813
-name: right cerebral hemisphere
-alt_id: UBERON:NIF_GrossAnatomy_birnlex_1797-FMA_67292
-xref: FMA:67292 ! Right cerebral hemisphere
-xref: NIF_GrossAnatomy:birnlex_1797 ! Right cerebral hemisphere
-is_a: UBERON:0001869 ! cerebral hemisphere
-xref: ncithesaurus:Right_Cerebral_Hemisphere ! Right Cerebral Hemisphere
-xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvigx5ZwpEbGdrcN5Y29ycA ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0002814
@@ -43767,20 +43796,6 @@ is_a: UBERON:0003000 ! intermediate filament
 xref: ncithesaurus:Neurofilament ! Neurofilament
 xref: GO:0005883 ! neurofilament
 xref: NIF_Subcellular:sao1316272517 ! Neurofilament
-
-[Term]
-id: UBERON:0002987
-name: anterior spinocerebellar tract
-alt_id: UBERON:NIF_GrossAnatomy_birnlex_848-FMA_72642
-def: "The ventral spinocerebellar tract conveys proprioceptive information from the body to the cerebellum. It is part of the somatosensory system and runs in parallel with the dorsal spinocerebellar tract. Both these tracts involve two neurons and end up on the same side of the body. The ventral tract (under L2/L3) gets its proprioceptive/fine touch/vibration information from a first order neuron, with its cell body in a dorsal ganglion. The axon runs via the fila radicularia to the dorsal horn of the grey matter. There it makes a synapse with the dendrites of two neurons: they send their axons bilaterally to the ventral border of the lateral funiculi. The ventral spinocerebellar tract then enters the cerebellum via the superior cerebellar peduncle. This is in contrast with the dorsal spinocerebellar tract (C8 - L2/L3), which only has 1 unilateral axon that has its cell body in the Clarke's nuclei (only at the level of C8 - L2/L3). The fibers of the ventral spinocerebellar tract then eventually enter the cerebellum via the superior cerebellar peduncle. This is one of the few afferent tracts through the superior cerebellar peduncle. Originates from ventral horn at lumbosacral spinal levels. Axons first cross midline in the spinal cord and run in the ventral border of the lateral funiculi. These axons ascend up to the pons where they join the superior cerebellar peduncle to enter the cerebellum. Once in the deep white matter of the cerebellum, the axons recross the midline, give off collaterals to the globose and emboliform nuclei, and terminate in the cortex of the anterior lobe and vermis of the posterior lobe. [WP,unvetted]." [Wikipedia:Anterior_spinocerebellar_tract]
-subset: uberon_slim
-synonym: "gowers' tract" EXACT [FMA:72642]
-synonym: "ventral spinocerebellar tract" EXACT [FMA:72642]
-xref: FMA:72642 ! Anterior spinocerebellar tract
-xref: NIF_GrossAnatomy:birnlex_848 ! Anterior spinocerebellar tract
-is_a: UBERON:0002316 ! white matter of neuraxis
-relationship: part_of UBERON:0001896 ! medulla oblongata
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Medulla_spinalis_-_tracts_-_English.svg/200px-Medulla_spinalis_-_tracts_-_English.svg.png
 
 [Term]
 id: UBERON:0002990
@@ -68938,7 +68953,7 @@ intersection_of: develops_into UBERON:0001820 ! sweat gland
 id: UBERON:0005091
 name: left horn of sinus venosus
 is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0002063 ! sinus venosus
+relationship: in_left_side_of UBERON:0002063 ! sinus venosus
 xref: FMA:70321 ! Left horn of sinus venosus
 xref: HOG:0000488 ! sinus venosus left horn
 xref: EHDAA2:0001840 ! sinus venosus left horn
@@ -68947,7 +68962,7 @@ xref: EHDAA2:0001840 ! sinus venosus left horn
 id: UBERON:0005092
 name: right horn of sinus venosus
 is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0002063 ! sinus venosus
+relationship: in_right_side_of UBERON:0002063 ! sinus venosus
 xref: FMA:70318 ! Right horn of sinus venosus
 xref: HOG:0000489 ! sinus venosus right horn
 xref: EHDAA2:0001841 ! sinus venosus right horn
@@ -71128,6 +71143,7 @@ name: never_in_taxon
 
 [Typedef]
 id: in_left_side_of
+is_a: part_of
 xref: BSPO:0000120
 name: in_left_side_of
 def: "X left_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
@@ -71135,6 +71151,7 @@ inverse_of: BSPO:0000121 ! right_side_of
 
 [Typedef]
 id: in_right_side_of
+is_a: part_of
 xref: BSPO:0000121
 name: in_right_side_of
 def: "X right_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]

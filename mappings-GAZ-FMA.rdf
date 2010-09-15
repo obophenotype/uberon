@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+
+     <!DOCTYPE rdf:RDF [
+         <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#' >
+         <!ENTITY a 'http://protege.stanford.edu/system#' >
+         <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#' >
+         <!ENTITY mappings 'http://protege.stanford.edu/mappings#' >
+         <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#' >
+     ]>
+
+
+     <rdf:RDF xmlns="http://bioontology.org/mappings/mappings.rdf#"
+          xml:base="http://bioontology.org/mappings/mappings.rdf"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+          xmlns:mappings="http://protege.stanford.edu/mappings#"
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+         <rdf:Property rdf:about="&mappings;author">
+             <rdfs:domain rdf:resource="&mappings;Mapping_Metadata"/>
+             <rdfs:range rdf:resource="&xsd;string"/>
+             <rdfs:label rdf:datatype="&xsd;string">author</rdfs:label>
+         </rdf:Property>
+         <rdf:Property rdf:about="&mappings;comment">
+             <rdfs:domain rdf:resource="&mappings;Mapping_Metadata"/>
+             <rdfs:range rdf:resource="&xsd;string"/>
+              <rdfs:label rdf:datatype="&xsd;string">comment</rdfs:label>
+         </rdf:Property>
+         <rdf:Property rdf:about="&mappings;confidence">
+             <rdfs:domain rdf:resource="&mappings;Mapping_Metadata"/>
+             <rdfs:range rdf:resource="&xsd;string"/>
+             <rdfs:label rdf:datatype="&xsd;string">confidence</rdfs:label>
+         </rdf:Property>
+         <rdf:Property rdf:about="&mappings;date">
+             <rdfs:domain rdf:resource="&mappings;Mapping_Metadata"/>
+             <rdfs:range rdf:resource="&xsd;date"/>
+             <rdfs:label rdf:datatype="&xsd;string">date</rdfs:label>
+         </rdf:Property>
+         <rdfs:Class rdf:about="&mappings;Mapping_Metadata">
+             <rdfs:label rdf:datatype="&xsd;string"
+                 >Mapping_Metadata</rdfs:label>
+         </rdfs:Class>
+         <rdf:Property rdf:about="&mappings;mapping_metadata">
+             <rdfs:domain rdf:resource="&mappings;One_to_one_mapping"/>
+             <rdfs:range rdf:resource="&mappings;Mapping_Metadata"/>
+              <rdfs:label rdf:datatype="&xsd;string"
+                 >mapping_metadata</rdfs:label>
+         </rdf:Property>
+         <rdf:Property rdf:about="&mappings;mapping_source">
+             <rdfs:domain rdf:resource="&mappings;Mapping_Metadata"/>
+             <rdfs:range rdf:resource="&xsd;string"/>
+              <rdfs:label rdf:datatype="&xsd;string">authority</rdfs:label>
+         </rdf:Property>
+         <rdfs:Class rdf:about="&mappings;One_to_one_mapping">
+             <rdfs:label rdf:datatype="&xsd;string"
+                 >One_to_one_mapping</rdfs:label>
+         </rdfs:Class>
+         <rdf:Property rdf:about="&mappings;relation">
+             <rdfs:domain rdf:resource="&mappings;One_to_one_mapping"/>
+             <rdfs:range rdf:resource="&xsd;string"/>
+              <rdfs:label rdf:datatype="&xsd;string">relation</rdfs:label>
+         </rdf:Property>
+         <rdf:Property rdf:about="&mappings;source">
+             <rdfs:domain rdf:resource="&mappings;One_to_one_mapping"/>
+             <rdfs:range rdf:resource="&xsd;string"/>
+             <rdfs:label rdf:datatype="&xsd;string">source</rdfs:label>
+         </rdf:Property>
+         <rdf:Property rdf:about="&mappings;target">
+             <rdfs:domain rdf:resource="&mappings;One_to_one_mapping"/>
+             <rdfs:range rdf:resource="&xsd;string"/>
+             <rdfs:label rdf:datatype="&xsd;string">target</rdfs:label>
+         </rdf:Property><mappings:One_to_one_mapping rdf:ID="1">
+             <mappings:mapping_metadata rdf:resource="#2"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00131647'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Brodmann_area_27'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="2">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="3">
+             <mappings:mapping_metadata rdf:resource="#4"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00010380'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Synovial_bursa'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="4">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="5">
+             <mappings:mapping_metadata rdf:resource="#6"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00168983'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Central_canal_of_spinal_cord'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="6">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="7">
+             <mappings:mapping_metadata rdf:resource="#8"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00002897'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Colon'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="8">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="9">
+             <mappings:mapping_metadata rdf:resource="#10"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00069822'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Posterior_part_of_leg'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="10">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="11">
+             <mappings:mapping_metadata rdf:resource="#12"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00011607'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Microtubule-associated_protein'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="12">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="13">
+             <mappings:mapping_metadata rdf:resource="#14"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00147632'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Point'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="14">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="15">
+             <mappings:mapping_metadata rdf:resource="#16"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00159552'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Crest'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="16">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="17">
+             <mappings:mapping_metadata rdf:resource="#18"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00155656'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Spindle'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="18">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="19">
+             <mappings:mapping_metadata rdf:resource="#20"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00145704'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Stroma'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="20">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="21">
+             <mappings:mapping_metadata rdf:resource="#22"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:22224568'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Superior'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="22">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="23">
+             <mappings:mapping_metadata rdf:resource="#24"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:22225078'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Superior'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="24">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="25">
+             <mappings:mapping_metadata rdf:resource="#26"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00009991'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Temple'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="26">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata><mappings:One_to_one_mapping rdf:ID="27">
+             <mappings:mapping_metadata rdf:resource="#28"/>
+             <mappings:relation rdf:datatype="&xsd;string">lexical similarity</mappings:relation>
+             <mappings:source rdf:resource='http://bioportal.bioontology.org/1397/GAZ:00044739'/>
+             <mappings:target rdf:resource='http://bioportal.bioontology.org/1053/http://sig.biostr.washington.edu/fma3.0#Trunk'/>
+         </mappings:One_to_one_mapping>
+         <mappings:Mapping_Metadata rdf:ID="28">
+             <mappings:author rdf:datatype="&xsd;string">amirg</mappings:author>
+             <mappings:mapping_source rdf:datatype="&xsd;string"><a href="http://www.bioontology.org/wiki/index.php/LOOM">LOOM</a></mappings:mapping_source>
+             <mappings:comment rdf:datatype="&xsd;string"></mappings:comment>
+             <mappings:date rdf:datatype="&xsd;date">Mon May 17 16:24:34 -0700 2010</mappings:date>
+         </mappings:Mapping_Metadata></rdf:RDF>
