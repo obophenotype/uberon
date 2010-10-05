@@ -77,7 +77,8 @@ class_covers_taxon(C,T) :-
 % classes are applicable to a taxon and all ancestors of that taxon.
 % thus every class covers 'Eukaryota'.
 % this finds the minimal ancestor - ie the most specific taxon for which
-% this class is applicable
+% this class is applicable.
+% (assumes reasoner)
 class_covers_taxon_min(C,T) :-
         class(C),
         id_idspace(C,'UBERON'),
@@ -96,15 +97,23 @@ class_not_covers_taxon(C,T) :-
         lca_taxon_u(T),
         \+ test_class_covers_taxon(C,T).
 
-% internal - used in the above
+% internal - used in the above.
+% true if C has some descendant that
+% maps to a species-specific anat class X
+% that is covered by T
 test_class_covers_taxon(C,T) :-
-        parent(C1,C),
+        parent(C1,C),           % (assumes reasoner)
         entity_xref(C1,X),
         id_idspace(X,S),
         idspace_taxon(S,T1),
         subclass(T1,T),
         lca_taxon(T).
 
+test_class_covers_taxon(C,T) :-
+        parent(C1,C),           % (assumes reasoner)
+        parent(C1,only_in_taxon,T1), % ensure class-level?
+        subclass(T1,T).
+        
 test_class_covers_taxon_direct(C,T) :-
         parent(C1,C),
         entity_xref(C1,X),

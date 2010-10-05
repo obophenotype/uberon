@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 15:09:2010 16:08
+date: 05:10:2010 12:07
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -808,8 +808,8 @@ relationship: part_of UBERON:0002261 ! dorsal root
 id: UBERON:0000045
 name: ganglion
 alt_id: UBERON:FBbt_00005137-FMA_5884-FMA_5888-MA_0000232-MA_0002406-MIAA_0000162-MIAA_0000207-MIAA_0000343-WBbt_0005189-XAO_0000209-XAO_0000210-ZFA_0000190-ZFA_0000200
-def: "Any of a number of aggregations of neurons, glial cells and their processes, surrounded by a glial cell and connective tissue sheath (plural: ganglia). // Subdivision of neural tree (organ) which primarily consists of cell bodies of neurons located outside the neuraxis (brain and spinal cord); together with a nucleus and its associated nerve, it constitutes a neural tree (organ). Examples: spinal ganglion, trigeminal ganglion, superior cervical ganglion, celiac ganglion, inferior hypogastric (pelvic) ganglion. // a cluster of nerve cells and associated glial cells (nuclear location) // Portion of tissue that contains cell bodies of neurons and is located outside the central nervous system. // Structures containing a collection of nerve cell bodies. (Source: BioGlossary, www.Biology-Text.com) //" [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, NLM:ganglion, WB:rynl, Wikipedia:Ganglion, ZFIN:curator]
-comment: TODO - check vert vs invert
+def: "A biological tissue mass, most commonly a mass of nerve cell bodies." [Wikipedia:Ganglion]
+comment: TODO - check vert vs invert. Other species: Any of a number of aggregations of neurons, glial cells and their processes, surrounded by a glial cell and connective tissue sheath (plural: ganglia). // Subdivision of neural tree (organ) which primarily consists of cell bodies of neurons located outside the neuraxis (brain and spinal cord); together with a nucleus and its associated nerve, it constitutes a neural tree (organ). Examples: spinal ganglion, trigeminal ganglion, superior cervical ganglion, celiac ganglion, inferior hypogastric (pelvic) ganglion. // a cluster of nerve cells and associated glial cells (nuclear location) // Portion of tissue that contains cell bodies of neurons and is located outside the central nervous system. // Structures containing a collection of nerve cell bodies. (Source: BioGlossary, www.Biology-Text.com). TODO: add epithelial capsule to definition? Always true?
 subset: uberon_slim
 synonym: "ganglia" RELATED []
 xref: AEO:0000135
@@ -1848,7 +1848,7 @@ relationship: surrounds UBERON:0002003 ! peripheral nerve
 id: UBERON:0000125
 name: neural nucleus
 def: "Anatomical structure consisting of a discrete aggregate of neuronal soma[GO]." [GO:0048857, GO_REF:0000021, Wikipedia:Nucleus_(neuroanatomy)]
-comment: do not include NIF_Subcellular:sao1702920020 Nucleus
+comment: do not include NIF_Subcellular:sao1702920020 Nucleus. Proposed CUMBO def from MM: A subcortical part of the nervous system consisting of a relatively compact group of cells that is distinguishable histologically that share a commonality of cytoarchitecture, chemoarchitecturel and connectivity. (comments:  I put in "subcortical" because I don't think we consider either the cerebellar cortex or cerebral cortex to be nuclei.  Some people distinguish between a nucleus and a laminar structure (see Wikipedia definition).  However, there are structures identified as nuclei that are laminar, e.g., lateral geniculate nucleus, although they are not laminated in all species.  Also, I put in "relatively compact" and "distiguishable by histology" because we have groups of cells, e.g., cholinergic cell groups, doparminergic cell groups that are related on the 3 criteria but which we don't tend to consider nuclei because they don't occupy an easily defined territory.  But all is open to debate.
 synonym: "nucleus" BROAD []
 synonym: "nucleus of neuraxis" RELATED []
 xref: FMA:83686
@@ -7161,7 +7161,7 @@ id: UBERON:0001017
 name: central nervous system
 alt_id: UBERON:FBbt_00005094-FMA_55675-MA_0000167-XAO_0000215-ZFA_0000012
 def: "The part of the nervous system which consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Organ with organ cavity which consists of gray matter and white matter[FMA]. The brain and spinal cord[ZFA]." [FB:gg, ISBN:3110148986, NLM:central+nervous+system, Wikipedia:Central_nervous_system, ZFIN:curator]
-comment: TODO - resolve is_a vs part_of NS in AOs (and GO)
+comment: TODO - resolve is_a vs part_of NS in AOs (and GO). TODO: specify inclusion or non-inclusion of retina in neuraxis
 subset: uberon_slim
 synonym: "CNS" RELATED []
 synonym: "neuraxis" EXACT []
@@ -18047,7 +18047,7 @@ id: UBERON:0001601
 name: extra-ocular muscle
 alt_id: UBERON:FMA_49033-MA_0000271
 def: "Skeletal muscle derived from cranial mesoderm and controls eye movements." [GO:0002074, Wikipedia:Extra-ocular_muscle, Wikipedia:Muscles_of_the_orbit]
-comment: How many of these? TODO - MA and FMA vary here, and WP self-contradicts
+comment: How many of these? TODO - MA and FMA vary here, and WP self-contradicts. TODO - develops from cranial mesoderm
 subset: uberon_slim
 synonym: "extra-ocular skeletal muscle" EXACT []
 synonym: "extraocular muscle" EXACT []
@@ -27728,7 +27728,7 @@ id: UBERON:0002101
 name: limb
 alt_id: UBERON:FMA_7182-MA_0000007-MIAA_0000090-XAO_0003027
 def: "A jointed or prehensible appendage used for locomotion or manipulation. Examples: human arm, human leg, octopus tentacle, insect limb[Wikipedia]. A limb is an appendage of an animal used for locomotion or grasping. For example a leg, arm or some types of fin[GO]." [GO:0035108, Wikipedia:Limb_(anatomy)]
-comment: This class was created automatically from a combination of ontologies
+comment: We follow GO in defining this class functionally. However, we would like to exclude fins
 subset: uberon_slim
 synonym: "extremity" RELATED []
 xref: AEO:0000172
@@ -31532,7 +31532,7 @@ id: UBERON:0002308
 name: nucleus of brain
 alt_id: UBERON:FMA_83840-MA_0000811
 def: "Nucleus of neuraxis which is located within the brain. Example: pontobulbar nucleus, globose nucleus[FMA]. brain structure consisting of a relatively compact cluster of neurons. It is one of the two most common forms of nerve cell organization, the other being layered structures such as the cerebral cortex or cerebellar cortex. In anatomical sections, a nucleus shows up as a region of gray matter, often bordered by white matter. The vertebrate brain contains hundreds of distinguishable nuclei, varying widely in shape and size. A nucleus may itself have a complex internal structure, with multiple types of neurons arranged in clumps (subnuclei) or layers.[Wikipedia]" [FMA:83840, Wikipedia:Nucleus_(neuroanatomy)]
-comment: This class was created automatically from a combination of ontologies
+comment: We considered merging with 'neural nucleus'
 synonym: "brain nucleus" EXACT []
 xref: FMA:83840
 xref: MA:0000811
@@ -33950,6 +33950,7 @@ intersection_of: part_of UBERON:0002097 ! skin of body
 id: UBERON:0002420
 name: basal ganglion
 def: "one of a group of nuclei in the brains of vertebrates, situated at the base of the forebrain and strongly connected with the cerebral cortex, thalamus and other areas.ganglion in the head. The main components of the basal ganglia are the striatum, pallidum, substantia nigra, and subthalamic nucleus[WP]. Subcortical masses of gray matter in the forebrain and midbrain that are richly interconnected and so viewed as a functional system. The nuclei usually included are the caudate nucleus (caudoputamen in rodents), putamen, globus pallidus, substantia nigra (pars compacta and pars reticulata) and the subthalamic nucleus. Some also include the nucleus accumbens and ventral pallidum[NIF]." [Wikipedia:Basal_ganglia]
+comment: TODO: is a basal ganglion really a ganglion? See definition of ganglion. Not a subclass of ganglion in FMA.
 subset: uberon_slim
 synonym: "basal ganglia" RELATED PLURAL []
 synonym: "basal ganglion of telencephalon" EXACT []
@@ -58922,7 +58923,8 @@ relationship: part_of UBERON:0001555 ! digestive tract
 [Term]
 id: UBERON:0004164
 name: branchiomeric skeletal muscle
-def: "Branchiomeric muscles of mammals correspond to the gill musculature of fish" [GO:0014707]
+def: "The branchiomeric muscle is derived from cranial mesoderm and controls facial expression, pharyngeal and laryngeal function, operating the jaw. Branchiomeric muscles of mammals correspond to the gill musculature of fish[GO]." [GO:0014707]
+comment: TODO - develops from cranial mesoderm. TODO - gill musculature
 is_a: UBERON:0001134 ! skeletal muscle tissue
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0002342 ! neural crest
@@ -62322,11 +62324,13 @@ relationship: part_of UBERON:0002358 ! peritoneum
 [Term]
 id: UBERON:0004347
 name: limb bud
-def: "the mesenchymal outgrowth on the lateral trunk of the embryo that develops into the limbs" [MP:0005650]
+def: "the mesenchymal outgrowth on the lateral trunk of the embryo that develops into the limbs[MP]. the limb bud is a structure formed by the developing limb, derived from lateral plate mesodermTemplate:1. It is intimately related with the apical ectodermal ridge, which secretes factors (fibroblast growth factors for example) inducing the initial differentiation of the limb bud. In turn, the mesodermal tissue of the limb bud secretes factors sustaining the development of the Apical Ectodermal Ridge. 1: Developmental Biology, 8th ed[WP]." [MP:0005650, Wikipedia:Limb_bud]
 synonym: "limb buds" EXACT PLURAL []
 synonym: "limb primordium" RELATED []
 xref: BTO:0001640
+xref: GAID:1307
 xref: ncithesaurus:Limb_Bud
+xref: XAO:0003161
 is_a: UBERON:0004357 ! limb/fin bud
 relationship: develops_into UBERON:0002101 ! limb
 
@@ -62394,7 +62398,7 @@ relationship: part_of CL:0000653
 [Term]
 id: UBERON:0004356
 name: apical ectodermal ridge
-def: "multilayered ectodermal region at the tip of a limb bud necessary for the proper development of the underlying mesenchyme" [MP:0001676]
+def: "multilayered ectodermal region at the distal tip of a limb bud necessary for the proper development of the underlying mesenchyme[MP]. Along with the zone of polarizing activity, it is a crucial organizing region during limb development[WP]." [MP:0001676, Wikipedia:Apical_ectodermal_ridge]
 synonym: "AER" RELATED [MP:0001676]
 xref: ncithesaurus:Apical_Ectodermal_Ridge
 xref: ZFA:0001702
@@ -62573,6 +62577,7 @@ xref: EMAPA:17351
 xref: EMAPA:17622
 is_a: UBERON:0002418 ! cartilage
 relationship: part_of UBERON:0003066 ! hyoid arch
+relationship: part_of UBERON:0003104 ! mesenchyme
 
 [Term]
 id: UBERON:0004369
@@ -65566,12 +65571,15 @@ id: UBERON:0004708
 name: limb/fin
 comment: this class is the union of the classes limb and fin. TODO - should limb subsume fin? GO treats these as siblings, yet the GO definition appears to apply to fins
 synonym: "jointed paired lateral appendage" NARROW [UBERON:cjm]
+synonym: "limb or fin" EXACT [UBERON:cjm]
 is_a: UBERON:0000026 ! appendage
 
 [Term]
 id: UBERON:0004709
 name: limb/fin of posterior region of body
 def: "A limb/fin that is part of a posterior region of body [Obol]." [OBOL:automatic]
+comment: TODO - as defined, this includes ALL paired fins in the posterior region
+synonym: "hindlimb/pelvic fin" EXACT [UBERON:cjm]
 is_a: UBERON:0004708 ! implied link automatically realized ! limb/fin
 intersection_of: UBERON:0004708 ! limb/fin
 intersection_of: part_of UBERON:0000154 ! posterior region of body
@@ -65580,6 +65588,8 @@ intersection_of: part_of UBERON:0000154 ! posterior region of body
 id: UBERON:0004710
 name: limb/fin of anterior region of body
 def: "A limb/fin that is part of an anterior region of body [Obol]." [OBOL:automatic]
+comment: TODO - as defined, this includes ALL paired fins in the anterior region
+synonym: "forelimb/pectoral fin" EXACT [UBERON:cjm]
 is_a: UBERON:0004708 ! implied link automatically realized ! limb/fin
 intersection_of: UBERON:0004708 ! limb/fin
 intersection_of: part_of UBERON:0000153 ! anterior region of body
@@ -73750,6 +73760,119 @@ def: "The spinocerebellar tract is a set of axonal fibers originating in the spi
 xref: GAID:733
 is_a: UBERON:0002316 ! white matter of neuraxis
 
+[Term]
+id: UBERON:0005414
+name: zone of polarizing activity
+def: "an area of mesenchyme that contains signals which instruct the developing limb or fin bud to form along the anterior/posterior axis[WP,cjm]." [Wikipedia:Zone_of_polarizing_activity]
+comment: WP definition generalized to cover limb/fin
+synonym: "ZPA" EXACT [ZFA:0001451]
+xref: ZFA:0001451
+xref: ZFA:0001452
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0003313 ! implied link automatically realized ! mesenchyme of embryo
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0004357 ! limb/fin bud
+
+[Term]
+id: UBERON:0005415
+name: zone of polarizing activity of anterior limb/fin
+xref: ZFA:0001451
+is_a: UBERON:0005414 ! implied link automatically realized ! zone of polarizing activity
+intersection_of: UBERON:0005414 ! zone of polarizing activity
+intersection_of: part_of UBERON:0000153 ! anterior region of body
+
+[Term]
+id: UBERON:0005416
+name: zone of polarizing activity of posterior limb/fin
+xref: ZFA:0001452
+is_a: UBERON:0005414 ! implied link automatically realized ! zone of polarizing activity
+intersection_of: UBERON:0005414 ! zone of polarizing activity
+intersection_of: part_of UBERON:0000154 ! posterior region of body
+
+[Term]
+id: UBERON:0005417
+name: forelimb bud
+def: "A limb bud that develops into a forelimb." [OBOL:automatic]
+synonym: "limb bud - forelimb" EXACT [MIAA:0000065]
+synonym: "upper limb bud" EXACT [EHDAA2:0003198]
+xref: EHDAA:1699
+xref: EHDAA2:0003198
+xref: EMAPA:16406
+xref: MIAA:0000065
+xref: XAO:0003065
+is_a: UBERON:0004347 ! implied link automatically realized ! limb bud
+is_a: UBERON:0005419 ! implied link automatically realized ! forelimb/pectoral fin bud
+intersection_of: UBERON:0004347 ! limb bud
+intersection_of: develops_into UBERON:0002102 ! forelimb
+relationship: part_of UBERON:0000153 ! anterior region of body
+
+[Term]
+id: UBERON:0005418
+name: hindlimb bud
+def: "A limb bud that develops into a hindlimb." [OBOL:automatic]
+synonym: "hind limb bud" EXACT [XAO:0003066]
+xref: EHDAA:2358
+xref: EHDAA2:0003197
+xref: EMAPA:16779
+xref: MIAA:0000256
+xref: XAO:0003066
+is_a: UBERON:0004347 ! implied link automatically realized ! limb bud
+is_a: UBERON:0005420 ! implied link automatically realized ! hindlimb/pelvic fin bud
+intersection_of: UBERON:0004347 ! limb bud
+intersection_of: develops_into UBERON:0002103 ! hindlimb
+intersection_of: part_of UBERON:0000154 ! posterior region of body
+
+[Term]
+id: UBERON:0005419
+name: forelimb/pectoral fin bud
+def: "A limb bud that develops into a forelimb or pectoral fin." [OBOL:automatic]
+comment: at this time we have no need to name a more specific 'pectoral fin bud' class, but we may in future
+xref: HOG:0001259
+xref: ZFA:0000141
+is_a: UBERON:0004357 ! implied link automatically realized ! limb/fin bud
+intersection_of: UBERON:0004357 ! limb/fin bud
+intersection_of: develops_into UBERON:0004710 ! limb/fin of anterior region of body
+relationship: part_of UBERON:0000153 ! anterior region of body
+
+[Term]
+id: UBERON:0005420
+name: hindlimb/pelvic fin bud
+def: "A limb bud that develops into a hindlimb or pelvic fin." [OBOL:automatic]
+comment: at this time we have no need to name a more specific 'pelvic fin bud' class, but we may in future
+xref: HOG:0001260
+xref: ZFA:0000141
+is_a: UBERON:0004357 ! implied link automatically realized ! limb/fin bud
+intersection_of: UBERON:0004357 ! limb/fin bud
+intersection_of: develops_into UBERON:0004709 ! limb/fin of posterior region of body
+intersection_of: part_of UBERON:0000154 ! posterior region of body
+
+[Term]
+id: UBERON:0005421
+name: anterior limb/fin apical ectodermal ridge
+synonym: "AER forelimb" RELATED [HOG:0001064]
+synonym: "apical ectodermal ridge forelimb" NARROW [HOG:0001064]
+synonym: "apical ectodermal ridge pectoral fin bud" NARROW [ZFA:0000085]
+synonym: "upper limb bud apical ectodermal ridge" NARROW [EHDAA2:0000138]
+xref: EHDAA2:0000138
+xref: HOG:0001064
+xref: ZFA:0000085
+is_a: UBERON:0004356 ! implied link automatically realized ! apical ectodermal ridge
+intersection_of: UBERON:0004356 ! apical ectodermal ridge
+intersection_of: part_of UBERON:0005419 ! forelimb/pectoral fin bud
+
+[Term]
+id: UBERON:0005422
+name: posterior limb/fin apical ectodermal ridge
+synonym: "AER hindlimb" RELATED [HOG:0001066]
+synonym: "apical ectodermal ridge hindlimb" NARROW [HOG:0001066]
+synonym: "lower lmb bud apical ectodermal ridge" NARROW [EHDAA2:0003194]
+xref: EHDAA2:0003194
+xref: HOG:0001066
+xref: ZFA:0001385
+is_a: UBERON:0004356 ! implied link automatically realized ! apical ectodermal ridge
+intersection_of: UBERON:0004356 ! apical ectodermal ridge
+intersection_of: part_of UBERON:0005420 ! hindlimb/pelvic fin bud
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -74018,10 +74141,12 @@ creation_date: 2009-07-30T10:22:21Z
 [Typedef]
 id: never_in_taxon
 name: never_in_taxon
+is_class_level: true
 
 [Typedef]
 id: only_in_taxon
 name: only_in_taxon
+is_class_level: true
 
 [Typedef]
 id: output_of
