@@ -9,6 +9,7 @@ synonymtypedef: DUBIOUS "dubious or contested synonym"
 synonymtypedef: SENSU "taxonomic disambiguation"
 default-namespace: uberon
 treat-xrefs-as-equivalent: CARO
+ontology: uberon_edit.owl
 
 [Term]
 id: UBERON:0000000
@@ -398,7 +399,7 @@ def: "pancreatic bud that gives rise to the accessory pancreatic duct." [Wikiped
 synonym: "dorsal pancreatic anlage" RELATED []
 synonym: "posterior pancreatic anlage" RELATED []
 synonym: "posterior pancreatic bud" RELATED []
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0003922 ! pancreatic bud
 xref: ZFA:0001370 ! posterior pancreatic bud
 xref: XAO:0000467 ! dorsal pancreatic bud 
 xref: HOG:0001428 ! dorsal pancreatic bud
@@ -411,7 +412,7 @@ def: "pancreatic bud that gives rise to the major pancreatic duct." [Wikipedia:P
 synonym: "ventral pancreatic anlage" RELATED []
 synonym: "anterior pancreatic anlage" RELATED []
 synonym: "anterior pancreatic bud" RELATED []
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0003922 ! pancreatic bud
 xref: ZFA:0001369 ! anterior pancreatic bud
 xref: XAO:0001103 ! ventral pancreatic bud
 xref: HOG:0001429 ! ventral pancreatic bud
@@ -1343,7 +1344,7 @@ created_by: Melissa Haendel
 creation_date: 2009-06-18T09:00:04Z
 
 [Term]
-id: UBERON:0001892
+id: UBERON:0001892 ! rhombomere
 name: rhombomere
 alt_id: UBERON:FMA_61998-MIAA_0000272-ZFA_0001064
 def: "A segment of the developing hindbrain[ZFA]. In the vertebrate embryo, a rhombomere  is a transiently divided segment of the developing neural tube, within the hindbrain region (a neuromere) in the area that will eventually become the rhombencephalon. The rhombomeres appear as a series of slightly constricted swellings in the neural tube, caudal to the cephalic flexure. In human embryonic development, the rhombomeres are present by day 29[WP]." [Wikipedia:Rhombomere, ZFIN:curator]
@@ -1721,9 +1722,24 @@ id: UBERON:0000095
 name: cardiac neural crest
 def: "portion of neural crest that develops from the dorsal neural tube. It overlaps the vagal neural crest and migrates to populate the pharyngeal arches 3, 4 and 6 (producing structures in the head) and to the heart, forming connective tissue that separates the great vessels of the heart. [Wikipedia]" [Wikipedia:Cardiac_neural_crest]
 is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0002342 ! neural crest
+relationship: overlaps UBERON:0005428 ! vagal neural crest
 created_by: cjm
 creation_date: 2009-07-30T07:57:38Z
 xref: ZFA:0001648 ! cardiac neural crest
+
+[Term]
+id: UBERON:0005428 ! vagal neural crest
+name: vagal neural crest
+def: "Vagal neural crest is adjacent to the first seven somites gives rise to both ganglionic and ectomesenchymal derivatives[ZFA]." [ZFIN:curator]
+synonym: "post-otic neural crest" EXACT  [ZFA:0000818]
+xref: EHDAA2:0002156 ! vagal neural crest
+xref: EHDAA:669 ! vagal neural crest
+xref: HOG:0001208 ! vagal neural crest 
+xref: TAO:0000818
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0002342 ! neural crest
+xref: ZFA:0000818 ! vagal neural crest
 
 [Term]
 id: UBERON:0004735 ! archenteron
@@ -3472,11 +3488,23 @@ def: "The renal medulla is the innermost part of the kidney. The renal medulla i
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Illu_kidney.jpg/200px-Illu_kidney.jpg
 
 [Term]
-id: UBERON:0002449
-name: renal pyramid
+id: UBERON:0004200
+name: kidney pyramid
+alt_id: UBERON:0005098
+alt_id: UBERON:0002449
 alt_id: UBERON:MA_0001654-FMA_258870
-def: "Renal pyramids (or malpighian pyramids) are cone-shaped tissues of the kidney. The renal medulla is made up of 8 to 18 of these conical subdivisions. The broad base of each pyramid faces the renal cortex, and its apex, or papilla, points internally. The pyramids appear striped because they are formed by straight parallel segments of nephrons. [WP,unvetted]." [Wikipedia:Renal_pyramid]
-subset: uberon_slim
+synonym: "pyramid" BROAD [GO:0072056]
+synonym: "renal pyramid" EXACT [Wikipedia:Renal_pyramids]
+synonym: "malpighian pyramid" EXACT [Wikipedia:Renal_pyramids]
+synonym: "medullary pyramid" EXACT []
+synonym: "pyramid of medulla" EXACT [FMA:75254]
+synonym: "pyramis renalis" RELATED [BTO:0003926]
+def: "Kidney pyramids are the conical masses that constitute the renal medulla in a multi-lobed mammalian kidney; they contain the loops of Henle and the medullary collecting ducts[GO]. One of a number of pyramidal masses seen on longitudinal section of the kidney; collectively, they constitute the renal medulla, and contain part of the secreting tubules and the collecting tubules[BTO]. Renal pyramids (or malpighian pyramids) are cone-shaped tissues of the kidney. The renal medulla is made up of 8 to 18 of these conical subdivisions. The broad base of each pyramid faces the renal cortex, and its apex, or papilla, points internally. The pyramids appear striped because they are formed by straight parallel segments of nephrons. [WP,unvetted]." [GO:0072056, Wikipedia:Renal_pyramids, BTO:0003926]
+comment: not the same as FMA:50609 Pyramid (which is a volume / dimensional entity)
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000362 ! renal medulla
+xref: FMA:75254 ! Pyramid of medulla
+xref: BTO:0003926 ! renal pyramid
 xref: FMA:258870 ! Renal pyramid
 xref: MA:0001654 ! renal pyramid
 is_a: UBERON:0000061 ! anatomical structure
@@ -6004,7 +6032,6 @@ synonym: "proneural clusters" RELATED [ZFA:0000068]
 xref: FBbt:00001135 ! proneural cluster
 xref: ZFA:0000068 ! proneural cluster
 is_a: UBERON:0000477 ! anatomical cluster
-relationship: part_of UBERON:0003075 ! neural plate
 
 [Term]
 id: UBERON:0000939
@@ -6418,10 +6445,21 @@ xref: XAO:0000180 ! cornea
 xref: ZFA:0000640 ! cornea
 is_a: UBERON:0003102 ! surface structure
 relationship: part_of UBERON:0000965 ! lens
-relationship: develops_from UBERON:0002342 ! neural crest
+relationship: develops_from UBERON:0005427 ! corneal primordium
+relationship: induced_by UBERON:0005426 ! lens vesicle
 xref: OpenCyc:Mx4rvViBa5wpEbGdrcN5Y29ycA ! cornea
 xref: EHDAA2:0000316 ! cornea
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Schematic_diagram_of_the_human_eye_en.svg/200px-Schematic_diagram_of_the_human_eye_en.svg.png
+
+[Term]
+id: UBERON:0005427 ! corneal primordium
+name: corneal primordium
+def: "Portion of tissue that is part of the eye and gives rise to the mature, fully layered cornea." [ZFIN:ZDB-PUB-061010-3]
+xref: ZFIN:ZDB-ANAT-090922-155
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000019 ! camera-type eye
+relationship: develops_from UBERON:0002342 ! neural crest
+xref: ZFA:0001688 ! corneal primordium
 
 [Term]
 id: UBERON:0005389 ! transparent eye structure
@@ -6453,6 +6491,7 @@ xref: ZFA:0000035 ! lens
 is_a: UBERON:0005389 ! transparent eye structure
 relationship: develops_from UBERON:0003073 ! lens placode
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
+relationship: induced_by UBERON:0003902 ! retinal neural layer
 xref: ncithesaurus:Crystalline_Lens ! Lens
 xref: OpenCyc:Mx4rvVj0fZwpEbGdrcN5Y29ycA ! lens
 xref: EHDAA2:0000975 ! lens
@@ -9139,7 +9178,7 @@ def: "The superior and inferior vena cava are collectively called the venae cava
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Heart_numlabels.png/200px-Heart_numlabels.png
 
 [Term]
-id: UBERON:0001072
+id: UBERON:0001072 ! inferior vena cava
 name: inferior vena cava
 alt_id: UBERON:FMA_10951-MA_0000480-XAO_0000388
 def: "Trunk of systemic vein which is formed by the union of the right common iliac vein and the left common iliac vein and terminates in the right atrium." [Wikipedia:Inferior_vena_cava]
@@ -10024,6 +10063,7 @@ def: "The external jugular vein receives the greater part of the blood from the 
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "external jugular venous tree" EXACT []
+synonym: "external jugular" EXACT [EHDAA2:0000468]
 xref: FMA:13110 ! External jugular vein
 xref: galen:ExternalJugularVein
 xref: MA:0002156 ! external jugular vein
@@ -10031,6 +10071,8 @@ is_a: UBERON:0004711 ! jugular vein
 xref: ncithesaurus:External_Jugular_Vein ! External Jugular Vein
 xref: OpenCyc:Mx4rvrm0c5wpEbGdrcN5Y29ycA ! external jugular vein
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Gray557.png/200px-Gray557.png
+xref: XAO:0000379 ! external jugular
+xref: EHDAA2:0000468 ! external jugular
 
 [Term]
 id: UBERON:0001586
@@ -10040,6 +10082,7 @@ def: "The two internal jugular veins collect the blood from the brain, the super
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "internal jugular venous tree" EXACT []
+synonym: "internal jugular" EXACT [EHDAA2:0000877]
 xref: EHDAA:5407 ! internal jugular vein
 xref: FMA:4724 ! Internal jugular vein
 xref: galen:InternalJugularVein
@@ -10049,6 +10092,8 @@ xref: ncithesaurus:Internal_Jugular_Vein ! Internal Jugular Vein
 xref: OpenCyc:Mx4rvqdb95wpEbGdrcN5Y29ycA ! internal jugular vein
 xref: EHDAA2:0000878 ! internal jugular vein
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Gray562.png/200px-Gray562.png
+xref: XAO:0000382 ! internal jugular
+xref: EHDAA2:0000877 ! internal jugular
 
 [Term]
 id: UBERON:0001102
@@ -22777,15 +22822,15 @@ xref: ncithesaurus:Retina_Layer ! Retina Layer
 id: UBERON:0001782
 name: pigmented layer of retina
 alt_id: UBERON:FMA_58627-MA_0000279-ZFA_0000144
-def: "A monolayer of pigmented epithelium covering the neural retina; develops from the outer of the two layers of the optic cup. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Retinal_pigment_epithelium, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "A monolayer of pigmented epithelium covering the neural retina; develops from the outer of the two layers of the optic cup[ZFA]. the pigmented cell layer just outside the neurosensory retina that nourishes retinal visual cells, and is firmly attached to the underlying choroid and overlying retinal visual cells[WP]." [Wikipedia:Retinal_pigment_epithelium, ZFIN:curator]
 subset: uberon_slim
 synonym: "outer pigmented layer of retina" EXACT []
 synonym: "pigment epithelium of retina" EXACT []
 synonym: "pigmented epithelium" RELATED []
+synonym: "pigmented retina" RELATED []
 synonym: "pigmented retinal epithelium" EXACT []
 synonym: "PRE" RELATED []
-synonym: "retinal pigment epithelium" EXACT []
+synonym: "retinal pigment epithelium" EXACT [Wikipedia:Retinal_pigment_epithelium]
 synonym: "retinal pigmented epithelium" EXACT []
 synonym: "RPE" RELATED []
 synonym: "stratum pigmentosum (retina)" EXACT []
@@ -22797,8 +22842,9 @@ xref: MA:0000279 ! pigmented retinal epithelium
 xref: TAO:0000144 ! retinal pigmented epithelium
 xref: ZFA:0000144 ! retinal pigmented epithelium
 is_a: UBERON:0000483 ! epithelium
-is_a: UBERON:0001781 ! layer of retina
-relationship: part_of UBERON:0003902 ! retinal neural layer
+intersection_of: UBERON:0001781 ! layer of retina
+intersection_of: develops_from UBERON:0005424 ! presumptive retinal pigmented epithelium
+relationship: adjacent_to UBERON:0003902 ! retinal neural layer
 xref: ncithesaurus:Retinal_Pigment_Epithelium ! Retinal Pigment Epithelium
 xref: EHDAA2:0001465 ! pigmented retinal epithelium
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Gray881.png/200px-Gray881.png
@@ -22808,16 +22854,22 @@ id: UBERON:0003902 ! retinal neural layer
 name: retinal neural layer
 def: "The layer of nerve cells in the retina[XAO]. The part of the retina that contains neurons and photoreceptor cells[GO]." [XAO:0003216, GO:0003407]
 comment: check MA
+synonym: "neural layer of retina" EXACT [FMA:58628]
 synonym: "neural retina" EXACT [XAO:0003216, ZFA:0000046]
 synonym: "neuroretina" EXACT [ZFA:0000046]
+synonym: "neural retinal epithelium" RELATED [MA:000027]
 intersection_of: UBERON:0001781 ! layer of retina
-intersection_of: has_part CL:0000540 ! neuron
+intersection_of: develops_from  UBERON:0005425 ! presumptive neural retina
+relationship: has_part CL:0000540 ! neuron
+relationship: induced_by UBERON:0005426 ! lens vesicle
 xref: XAO:0003216 ! retinal neural layer
 xref: ZFA:0000046 ! retinal neural layer
 xref: BTO:0000929 ! neural retina
 xref: ncithesaurus:Neural_Retina ! Neural Retina
 xref: HOG:0000535 ! neural retinal epithelium
-xref: MA:000027 ! -neural retinal epithelium
+xref: MA:000027 ! neural retinal epithelium
+xref: FMA:58628 ! neural layer of retina
+xref: EHDAA2:0001253 ! neural retinal epithelium
 
 [Term]
 id: UBERON:0001787
@@ -27935,12 +27987,26 @@ relationship: part_of UBERON:0004535 ! cardiovascular system
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Circulatory_System_en.svg/200px-Circulatory_System_en.svg.png
 
 [Term]
-id: UBERON:0002050
+id: UBERON:0005423 ! developing anatomical structure
+name: developing anatomical structure
+synonym: "developmental tissue" RELATED [MIAA:0000019]
+synonym: "developmental structure" RELATED []
+synonym: "developing structure" RELATED []
+is_a: UBERON:0000465 ! material anatomical entity
+relationship: capable_of GO:0032502 ! developmental process
+xref: FBbt:00007006 ! developing anatomical structure
+xref: MIAA:0000019 ! developmental tissue
+xref: EHDAA2:0003125 ! developing anatomical structure
+
+[Term]
+id: UBERON:0002050 ! embryonic structure
 name: embryonic structure
 alt_id: UBERON:FMA_69067-XAO_0003042-ZFA_0001105
 def: "An anatomical structure that exists only before the organism is fully formed. // Anatomical structure that is part of the embryo and is comprised of portions of tissue or cells." [BTO:0000174, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "developing structure" RELATED []
+synonym: "embryonic anatomical structure" EXACT [EHDAA2:0003169]
+synonym: "developing embryonic structure" EXACT [FBbt:00004208]
 xref: AAO:0000138 ! embryonic_structure
 xref: BILA:0000034
 xref: BTO:0000174
@@ -27950,11 +28016,12 @@ xref: GAID:407 ! embryonic structure
 xref: TAO:0001105 ! embryonic structure
 xref: XAO:0003042 ! embryonic structure
 xref: ZFA:0001105 ! embryonic structure
-is_a: UBERON:0000061 ! anatomical structure
-intersection_of: UBERON:0000061 ! anatomical structure
-intersection_of: part_of UBERON:0000922 ! embryo
-xref: ncithesaurus:Embryonic_Structure ! Embryonic Structure
+xref: FBbt:00004208 ! developing embryonic structure
 xref: EHDAA2:0003169 ! embryonic anatomical structure
+is_a: UBERON:0000061 ! anatomical structure
+xref: ncithesaurus:Embryonic_Structure ! Embryonic Structure
+intersection_of: UBERON:0005423 ! developing anatomical structure
+intersection_of: part_of UBERON:0000922 ! embryo
 
 [Term]
 id: UBERON:0005291
@@ -27964,6 +28031,7 @@ synonym: "developing tissue" RELATED []
 synonym: "portion of embryonic tissue" EXACT [OBOL:automatic]
 intersection_of: UBERON:0000479 ! portion of tissue
 intersection_of: part_of UBERON:0000922 ! embryo
+relationship: part_of UBERON:0002050 ! embryonic structure
 
 [Term]
 id: UBERON:0002051
@@ -30222,7 +30290,7 @@ def: "A specialized lobe of the right lung that extends to the left side of the 
 comment: not in humans
 synonym: "right lung postcaval lobe" EXACT [MA:0000427]
 is_a: UBERON:0000101 ! lobe of lung
-is_a: part_of UBERON:0002167 ! right lung
+relationship: part_of UBERON:0002167 ! right lung
 xref: MA:0000427 ! right lung accessory lobe
 xref: HOG:0000831 ! right lung accessory lobe
 xref: EHDAA2:0001731 ! right lung accessory lobe
@@ -30677,13 +30745,14 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Hippocampus_%28br
 [Term]
 id: UBERON:0005412 ! optic fissure
 name: optic fissure
-def: "Groove that is in the ventral optic cup and through which blood vessels pass to the enclosed mesenchyme[ZFA]." [ZFA:0001284]
-synonym: "choroid fissure" RELATED  [ZFA:0001284]
+def: "Groove that is in the ventral optic cup and through which blood vessels pass to the enclosed mesenchyme[ZFA]. a ventral fissure in the developing optic cup through which blood vessels pass to the enclosed mesenchyme[Free online medical dictionary]. In the embryo, the temporary gap in the ventral margin of the developing optic cup[mondofacto]." [ZFA:0001284, https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3083162&group_id=36855, http://medical-dictionary.thefreedictionary.com/optic+fissure, http://www.mondofacto.com/facts/dictionary?optic+fissure, Wikipedia:Choroid_fissure]
+comment: As the eye starts to develop, a gap opens on the underside of each eye bud. This gap provides a way for the developing eye to be nourished. This gap, called the optic fissure, has to close before the eye is fully developed. Coloboma is the incomplete closer of the optic fissure
+synonym: "choroid fissure" RELATED  [ZFA:0001284, XAO:0000474, MA:0001305]
 synonym: "optic fissures" EXACT PLURAL  [ZFA:0001284]
-xref: TAO:0001284
 is_a: UBERON:0000464 ! anatomical space
 relationship: part_of UBERON:0000966 ! retina
 relationship: part_of UBERON:0003072 ! optic cup
+xref: TAO:0001284
 xref: ZFA:0001284 ! optic fissure
 xref: MA:0001305 ! choroid fissure
 xref: XAO:0000474 ! choroid fissure
@@ -30695,11 +30764,10 @@ xref: EHDAA2:0000249 ! choroid fissure
 id: UBERON:0002192
 name: choroidal fissure
 alt_id: UBERON:FMA_74512-MA_0001305-XAO_0000474-ZFA_0001075
-def: "The narrow cleft along the medial wall of the lateral ventricle along the margins of which the choroid plexus is attached; it lies between the upper surface of the thalamus and lateral edge of the fornix in the central part of the ventricle and between the terminal stria and fimbria hippocampi in the inferior horn[ZFA]." [ISBN:0815318960, ZFA:0001075, Wikipedia:Choroid_fissure]
-comment: check ZFA:0001284 ! optic fissure 
-subset: uberon_slim
-synonym: "chorioid fissure" EXACT []
-synonym: "choroid fissure" EXACT [MA:0001305]
+def: "The narrow cleft along the medial wall of the lateral ventricle along the margins of which the choroid plexus is attached; it lies between the upper surface of the thalamus and lateral edge of the fornix in the central part of the ventricle and between the terminal stria and fimbria hippocampi in the inferior horn[ZFA]." [ISBN:0815318960, ZFA:0001075]
+comment: not to be confused with optic fissure. the choroidal fissure is a subarachnoid space
+synonym: "chorioid fissure" RELATED [FMA:74512]
+synonym: "choroid fissure" RELATED [FMA:74512, TAO:0001075]
 xref: FMA:74512 ! Choroidal fissure
 xref: TAO:0001075 ! choroid fissure
 xref: ZFA:0001075 ! choroidal fissure
@@ -30968,9 +31036,23 @@ relationship: part_of UBERON:0003075 ! neural plate
 relationship: develops_from UBERON:0003056 ! pre-chordal neural plate
 
 [Term]
+id: UBERON:0005426 ! lens vesicle
+name: lens vesicle
+def: "Portion of tissue that gives rise to the lens." [ZFIN:curator]
+xref: ZFIN:ZDB-ANAT-090226-2
+is_a: UBERON:0000479 ! portion of tissue
+relationship: develops_from UBERON:0003073 ! lens placode
+xref: ZFA:0001679 ! lens vesicle
+xref: HOG:0001163 ! lens vesicle
+xref: EMAPA:17163 ! lens vesicle
+xref: EHDAA:4737 ! lens vesicle
+xref: EHDAA2:0000983 ! lens vesicle
+
+[Term]
 id: UBERON:0004128
 name: optic vesicle
 def: "The optic vesicle is the evagination of neurectoderm that precedes formation of the optic cup[GO]. Portion of tissue that is comprised of neuroepitheium which has pinched off from the anterior neural keel and will form the optic cup[ZFA]." [GO:0003404, Wikipedia:Optic_vesicles]
+comment: Genes: Six3, Pax6, Rx1 are expressed together in the tip of the neural plate [ISBN:9780878932504]
 xref: XAO:0000228 ! eye vesicle
 xref: ZFA:0000050 ! optic vesicle
 xref: EMAPA:16540 ! optic vesicle
@@ -30978,6 +31060,7 @@ synonym: "optic vesicle" RELATED []
 synonym: "evagination" RELATED []
 is_a: UBERON:0000479 ! portion of tissue
 relationship: develops_from UBERON:0003071 ! eye primordium
+relationship: induced_by UBERON:0004880 ! chordamesoderm
 xref: HOG:0000165 ! optic vesicle
 xref: EHDAA2:0001320 ! optic vesicle
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Gray863.png/200px-Gray863.png
@@ -30993,9 +31076,38 @@ xref: ZFA:0001202 ! optic cup
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: develops_from UBERON:0004128 ! optic vesicle
 relationship: develops_into UBERON:0000970 ! eye
+relationship: induced_by UBERON:0003073 ! lens placode
 xref: ncithesaurus:Optic_Cup ! Optic Cup
 xref: HOG:0000167 ! optic cup
 xref: EHDAA2:0001303 ! optic cup
+
+[Term]
+id: UBERON:0005424 ! presumptive retinal pigmented epithelium
+name: presumptive retinal pigmented epithelium
+def: "Portion of tissue that is the outer layer of the optic cup and will become the retinal pigmented epithelium." [ZFIN:curator]
+synonym: "outer layer optic cup" EXACT  [ZFA:0000064]
+synonym: "optic cup outer layer" EXACT [EHDAA2:0001306]
+synonym: "presumptive pigmented epithelia" EXACT PLURAL  [ZFA:0000064]
+xref: TAO:0000064
+xref: ZFA:0000064 ! presumptive retinal pigmented epithelium
+xref: EHDAA2:0001306 ! optic cup outer layer
+xref: HOG:0000492 ! optic cup outer layer
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0003072 ! optic cup
+
+[Term]
+id: UBERON:0005425 ! presumptive neural retina
+name: presumptive neural retina
+def: "Portion of tissue that is the inner layer of the optic cup and will become the neural retina." [ZFIN:curator]
+synonym: "inner layer optic cup" EXACT  [ZFA:0001071]
+synonym: "presumptive retinas" EXACT PLURAL  [ZFA:0001071]
+synonym: "optic cup inner layer" EXACT [EHDAA2:0001304]
+xref: EHDAA2:0001304 ! optic cup inner layer
+xref: HOG:0000490 ! optic cup inner layer
+xref: TAO:0001071
+xref: ZFA:0001071 ! presumptive neural retina
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0003072 ! optic cup
 
 [Term]
 id: UBERON:0002205
@@ -32443,7 +32555,7 @@ xref: EHDAA2:0000262 ! cochlear duct
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Gray928.png/200px-Gray928.png
 
 [Term]
-id: UBERON:0002296
+id: UBERON:0002296 ! dorsal mesentery
 name: dorsal mesentery
 alt_id: UBERON:FMA_79795-ZFA_0005130
 def: "The mesentery that originates from the dorsal side of the peritoneal cavity." [Wikipedia:Dorsal_mesentery, ZFIN:curator]
@@ -33137,7 +33249,7 @@ xref: XAO:0000055 ! notochord
 xref: ZFA:0000135 ! notochord
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0002050 ! embryonic structure
-relationship: develops_from UBERON:0003068 ! axial mesoderm
+relationship: develops_from UBERON:0004880 ! chordamesoderm
 relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0002021 ! occipital lobe
 relationship: part_of UBERON:0002543 ! median fin skeleton
@@ -37511,7 +37623,7 @@ alt_id: UBERON:MIAA_0000369-XAO_0000305
 comment: TODO - add subtypes. Consider more generic superclass, see also  FBbt:00005495 primordium 
 synonym: "cranial placodes" RELATED []
 synonym: "neurogenic placode" RELATED []
-synonym: "placode" RELATED [Wikipedia:Placode]
+synonym: "placode" BROAD [Wikipedia:Placode]
 xref: MAT:0000369 ! cranial placode
 xref: MIAA:0000369 ! cranial placode
 xref: XAO:0000305 ! cranial placode
@@ -44807,7 +44919,7 @@ is_a: UBERON:0001002 ! cuticle
 relationship: only_in_taxon NCBITaxon:6231 ! Nematoda
 
 [Term]
-id: UBERON:0003050
+id: UBERON:0003050 ! olfactory placode
 name: olfactory placode
 alt_id: UBERON:XAO_0000005-ZFA_0000048
 def: "A thick plate of cells derived from the neural ectoderm in the head region of the embryo that develops into the olfactory region of the nasal cavity." [NLM:olfactory+placode, Wikipedia:Olfactory_placode]
@@ -45449,10 +45561,13 @@ relationship: part_of UBERON:0000926 ! mesoderm
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
 
 [Term]
-id: UBERON:0004880
+id: UBERON:0004880 ! chordamesoderm
 name: chordamesoderm
+def: "The central region of trunk mesoderm. This tissue forms the notochord" [UBERON:cjm]
 comment: note that WP treats this as synonym of axial mesoderm
 synonym: "axial chorda mesoderm" EXACT [ZFA:0000091]
+synonym: "presumptive notochord" EXACT [ZFA:0000091]
+synonym: "chorda mesoderm" EXACT []
 xref: ZFA:0000091 ! axial chorda mesoderm
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0003068 ! axial mesoderm
@@ -45480,8 +45595,8 @@ relationship: develops_from UBERON:0003067 ! dorsolateral placode
 id: UBERON:0003073
 name: lens placode
 alt_id: UBERON:XAO_0000240-ZFA_0000122
-def: "Ectodermal primordium of the lens of the eye. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Lens_placode, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "A thickened portion of ectoderm which serves as the precursor to the lens. SOX2 and Pou2f1 are involved in its development[WP]." [Wikipedia:Lens_placode, ZFIN:curator]
+comment: refers to vertebrate lens
 subset: uberon_slim
 xref: EHDAA:2908 ! lens placode
 xref: HOG:0000166 ! lens placode
@@ -45491,6 +45606,7 @@ xref: ZFA:0000122 ! lens placode
 intersection_of: UBERON:0001048 ! primordium
 intersection_of: develops_into UBERON:0000965 ! lens
 relationship: part_of UBERON:0000076 ! external ectoderm
+relationship: induced_by UBERON:0004128 ! optic vesicle
 xref: ncithesaurus:Lens_Placodes ! Lens Placodes
 xref: EHDAA2:0000982 ! lens placode
 
@@ -59924,6 +60040,12 @@ name: inner stripe
 def: "The inner stripe is a deep, centrally located portion of the renal outer medulla and is traversed by thick and thin portions of nephron tubules" [GO:0072057]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001293 ! outer medulla of kidney
+xref: FMA:76663 ! Inner stripe of medulla of kidney
+xref: EMAPA:29675 ! inner stripe of outer medulla
+xref: MA:0002626 ! outer medulla inner stripe
+synonym: "outer medulla inner stripe" EXACT [MA:0002626]
+synonym: "inner stripe of outer medulla" EXACT [EMAPA:29675]
+synonym: "inner stripe of medulla of kidney" EXACT [FMA:76663]
 
 [Term]
 id: UBERON:0004202
@@ -59931,6 +60053,12 @@ name: outer stripe
 def: "The outer stripe is the region of the kidney that lies distal to the line of termination of the straight renal tubules" [GO:0072058]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001293 ! outer medulla of kidney
+xref: FMA:76662 ! Outer stripe of medulla of kidney
+xref: EMAPA:29663 ! outer stripe of outer medulla
+xref: MA:0002629 ! outer medulla outer stripe
+synonym: "outer medulla outer stripe" EXACT [MA:0002629]
+synonym: "outer stripe of outer medulla" EXACT [EMAPA:29663]
+synonym: "outer stripe of medulla of kidney" EXACT [FMA:76662]
 
 [Term]
 id: UBERON:0004203
@@ -65617,6 +65745,7 @@ xref: TAO:0000554 ! olfactory epithelium
 xref: ZFA:0000554 ! olfactory epithelium
 is_a: UBERON:0000485 ! simple columnar epithelium
 relationship: part_of UBERON:0001826 ! mucosa of nose
+relationship: develops_from UBERON:0003050 ! olfactory placode
 xref: ncithesaurus:Olfactory_Epithelium ! Olfactory Epithelium
 xref: EFO:0001972 ! olfactory epithelium
 xref: MA:0001325 ! nasal cavity olfactory epithelium
@@ -69116,18 +69245,12 @@ id: UBERON:0005097
 name: connecting tubule
 def: "The connecting tubule is a tubular segment of the nephron; it connects the distal convoluted tubule to the collecting duct[GO]." [GO:0072027]
 is_a: UBERON:0001231 ! renal tubule
+synonym: "renal connecting tubule" EXACT [MA:0002610]
 xref: MA:0002610 ! renal connecting tubule
-
-
-[Term]
-id: UBERON:0004200
-alt_id: UBERON:0005098
-name: kidney pyramid
-synonym: "pyramid" BROAD []
-def: "Kidney pyramids are the conical masses that constitute the renal medulla in a multi-lobed mammalian kidney; they contain the loops of Henle and the medullary collecting ducts[GO]." [GO:0072056]
-comment: not the same as FMA:50609 Pyramid (which is a volume / dimensional entity)
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of UBERON:0000362 ! renal medulla
+xref: EMAPA:27758 ! renal connecting tubule
+xref: EMAPA:27790 ! renal connecting tubule
+xref: EMAPA:27865 ! renal connecting tubule
+xref: EMAPA:28011 ! renal connecting tubule
 
 [Term]
 id: UBERON:0005099
@@ -70879,6 +71002,1381 @@ synonym: "circumventricular organ" EXACT [NIF_GrossAnatomy:nlx_anat_20090312]
 xref: MA:0002942 ! circumventricular organ
 xref: NIF_GrossAnatomy:nlx_anat_20090312 ! Circumventricular organ
 
+[Term]
+id: UBERON:0005429
+name: accessory pancreatic duct
+def: "Most people have just one pancreatic duct. However, some have an additional accessory pancreatic duct also called the Duct of Santorini, which connects straight to the duodenum at the minor duodenal papilla. Both these ducts connect to the second part (the vertical one) of the duodenum. However, the Duct of Santorini, which bypasses the Ampulla of Vater, is non-functional whereas the Duct of Wirsung is functional and carries the digestive enzymes released by the pancreas. It is named for Giovanni Domenico Santorini." [Wikipedia:Accessory_pancreatic_duct]
+synonym: "accessory pancreatic duct of santorini" RELATED [Wikipedia:Accessory_pancreatic_duct]
+synonym: "duct of santorini" RELATED [Wikipedia:Accessory_pancreatic_duct]
+synonym: "pancreatic duct of santorini" RELATED [Wikipedia:Accessory_pancreatic_duct]
+is_a: UBERON:0001064 ! pancreatic duct
+relationship: part_of UBERON:0001069 ! head of pancreas
+synonym: "duct of Santorini" EXACT [FMA:14534]
+synonym: "santorini's duct" EXACT [FMA:14534]
+xref: FMA:14534 ! Accessory pancreatic duct
+xref: EHDAA2:0000105 ! accessory pancreatic duct
+
+[Term]
+id: UBERON:0005430
+name: ansa cervicalis
+def: "The ansa cervicalis (or ansa hypoglossi in older literature) is a loop of nerves that are part of the cervical plexus. It lies superficial to the internal jugular vein in the carotid sheath. Branches from the ansa cervicalis innervate three of the four infrahyoid muscles, including the sternohyoid muscle, the sternothyroid muscle, and the omohyoid muscle." [Wikipedia:Ansa_cervicalis]
+synonym: "ansa hypoglossi" RELATED [Wikipedia:Ansa_cervicalis]
+is_a: UBERON:0001147 ! trunk of peripheral nerve
+xref: FMA:55142 ! Ansa cervicalis
+xref: EHDAA2:0000124 ! ansa cervicalis
+
+[Term]
+id: UBERON:0005431
+name: anterior spinal artery
+def: "In human anatomy, the anterior spinal artery is the blood vessel that supplies the anterior portion of the spinal cord. It arises from branches of the vertebral arteries and is supplied by the anterior segmental medullary arteries, including the artery of Adamkiewicz, and courses along the anterior aspect of the spinal cord." [Wikipedia:Anterior_spinal_artery]
+synonym: "anterior spinal arteries" RELATED [Wikipedia:Anterior_spinal_artery]
+synonym: "arteria spinalis anterior" RELATED [Wikipedia:Anterior_spinal_artery]
+synonym: "ventral artery of the spinal cord" RELATED [Wikipedia:Anterior_spinal_artery]
+is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0004571 ! systemic arterial system
+relationship: branch_of UBERON:0001535 ! vertebral artery
+synonym: "Anterior medial spinal artery" EXACT [FMA:50531]
+synonym: "Ventral spinal artery" EXACT [FMA:50531]
+xref: FMA:50531 ! Anterior spinal artery
+xref: EHDAA2:0000131 ! anterior spinal artery
+
+[Term]
+id: UBERON:0005432
+name: aortic sac
+def: "the merged ventral aortae of the embryo which supplies blood to the aortic arches[TMD]." [http://medical-dictionary.thefreedictionary.com/aortic+sac]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0004145 ! outflow tract
+xref: FMA:71008 ! Aortic sac
+xref: EHDAA2:0000133 ! aortic sac
+
+[Term]
+id: UBERON:0005433
+name: autonomic peripheral nervous system
+is_a: UBERON:0000073 ! regional part of nervous system
+relationship: part_of UBERON:0002410 ! autonomic nervous system
+comment: TODO - check ANS, PNS
+synonym: "autonomic division of peripheral nervous system" EXACT [FMA:65553]
+synonym: "autonomic part of peripheral nervous system" EXACT [FMA:65553]
+synonym: "peripheral autonomic nervous system" EXACT [FMA:65553]
+xref: FMA:65553 ! Peripheral part of autonomic nervous system
+xref: EHDAA2:0000158 ! autonomic peripheral nervous system
+
+[Term]
+id: UBERON:0005434
+name: cervical region
+is_a: UBERON:0000475 ! organism subdivision
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
+synonym: "Cervical region" EXACT [FMA:24219]
+synonym: "Neck subdivision" EXACT [FMA:24219]
+synonym: "Region of neck" EXACT [FMA:24219]
+xref: FMA:24219 ! Subdivision of neck
+xref: EHDAA2:0000238 ! cervical region
+
+[Term]
+id: UBERON:0005435
+name: cisterna chyli
+def: "The cisterna chyli (or cysterna chyli, and etymologically more correct, receptaculum chyli) is a dilated sac at the lower end of the thoracic duct into which lymph from the intestinal trunk and two lumbar lymphatic trunks flow." [Wikipedia:Cisterna_chyli]
+synonym: "chyle cistern" RELATED [Wikipedia:Cisterna_chyli]
+synonym: "cysterna chyli" RELATED [Wikipedia:Cisterna_chyli]
+is_a: UBERON:0000063 ! organ segment
+relationship: part_of UBERON:0002465 ! lymphoid system
+relationship: part_of UBERON:0001631 ! thoracic duct
+synonym: "Atypical confluence of lymph trunks" EXACT [FMA:5835]
+synonym: "Chyle cistern" EXACT [FMA:5835]
+synonym: "Cistern of Pecquet" EXACT [FMA:5835]
+xref: FMA:5835 ! Cisterna chyli
+xref: EHDAA2:0000253 ! cisterna chyli
+
+[Term]
+id: UBERON:0005436
+name: common hepatic artery
+def: "In anatomy, the common hepatic artery is a short blood vessel that supplies oxygenated blood to the liver, pylorus (a part of the stomach), duodenum (a part of the small intestine) and pancreas. It arises from the celiac artery and has the following branches:" [Wikipedia:Common_hepatic_artery]
+synonym: "common hepatic" RELATED [Wikipedia:Common_hepatic_artery]
+is_a: UBERON:0004573 ! systemic artery
+relationship: branch_of UBERON:0001640 ! celiac artery
+xref: FMA:14771 ! Common hepatic artery
+xref: EHDAA2:0000308 ! common hepatic artery
+
+[Term]
+id: UBERON:0005437
+name: conus medullaris
+def: "The conus medullaris is the terminal end of the spinal cord. It occurs near lumbar vertebral levels 1 (L1) and 2 (L2). After the spinal cord tapers out, the spinal nerves continue as dangling nerve roots called cauda equina. This terminal nerve root tail is referred to as the filum terminale. The upper end of the conus medullaris is usually not well defined." [Wikipedia:Conus_medullaris]
+synonym: "medullary cone" EXACT []
+synonym: "termination of the spinal cord" RELATED []
+is_a: UBERON:0001948 ! regional part of spinal cord
+relationship: part_of UBERON:0002240 ! spinal cord
+xref: FMA:74897 ! Conus medullaris
+xref: EHDAA2:0000315 ! conus medullaris
+
+[Term]
+id: UBERON:0005438
+name: coronary sinus
+def: "The coronary sinus is a collection of veins joined together to form a large vessel that collects blood from the myocardium of the heart. It is present in humans and other animals. The coronary sinus opens into the right atrium, between the inferior vena cava and the auriculo-ventricular opening. It returns the blood from the substance of the heart, and is protected by a semicircular fold of the lining membrane of the auricle, the coronary valve. (valve of Thebesius). The sinus, before entering the auricle, is considerably dilated - nearly to the size of the end of the little finger. Its wall is partly muscular, and at its junction with the great coronary vein is somewhat constricted and furnished with a valve consisting of two unequal segments. - Gray 462" [Wikipedia:Coronary_sinus]
+synonym: "sinus coronarius" EXACT []
+is_a: UBERON:0003920 ! venous blood vessel
+relationship: part_of UBERON:0004581 ! systemic venous system
+relationship: part_of UBERON:0000948 ! heart
+xref: FMA:4706 ! Coronary sinus
+xref: EHDAA2:0000320 ! coronary sinus
+
+[Term]
+id: UBERON:0005439
+name: definitive endoderm
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0000925 ! endoderm
+synonym: "Embryonic endoderm" EXACT [FMA:85519]
+xref: FMA:85519 ! Definitive endoderm
+xref: EHDAA2:0000337 ! definitive endoderm
+
+[Term]
+id: UBERON:0005440
+name: ductus arteriosus
+def: "In the developing fetus, the ductus arteriosus (DA), also called the ductus Botalli or ductus Layton in the United Kingdom, is a shunt connecting the pulmonary artery to the aortic arch. It allows most of the blood from the right ventricle to bypass the fetus' fluid-filled lungs, protecting the lungs from being overworked and allowing the left ventricle to strengthen. There are two other fetal shunts, the ductus venosus and the foramen ovale." [Wikipedia:Ductus_arteriosus]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0004571 ! systemic arterial system
+relationship: part_of UBERON:0004145 ! outflow tract
+xref: FMA:79871 ! Ductus arteriosus
+xref: EHDAA2:0000420 ! ductus arteriosus
+
+[Term]
+id: UBERON:0005441
+name: external intercostal muscle
+def: "The Intercostales externi (External intercostals) are eleven in number on either side. They extend from the tubercles of the ribs behind, to the cartilages of the ribs in front, where they end in thin membranes, the anterior intercostal membranes, which are continued forward to the sternum. Each arises from the lower border of a rib, and is inserted into the upper border of the rib below. In the two lower spaces they extend to the ends of the cartilages, and in the upper two or three spaces they do not quite reach the ends of the ribs. They are thicker than the Intercostales interni, and their fibers are directed obliquely downward and laterally on the back of the thorax, and downward, forward, and medially on the front (the example is often used of sticking one's hands in their pocket and noting the direction of the fingers pointing downward and medially)." [Wikipedia:External_intercostal_muscles]
+synonym: "external intercostal muscle" RELATED [Wikipedia:External_intercostal_muscles]
+synonym: "external intercostals" RELATED [Wikipedia:External_intercostal_muscles]
+synonym: "intercostales externi" RELATED [Wikipedia:External_intercostal_muscles]
+synonym: "intercostales externi muscle" RELATED [Wikipedia:External_intercostal_muscles]
+synonym: "intercostales externi muscles" RELATED [Wikipedia:External_intercostal_muscles]
+synonym: "intercostalis externus" RELATED [Wikipedia:External_intercostal_muscles]
+synonym: "intercostals external" RELATED [Wikipedia:External_intercostal_muscles]
+synonym: "intercostals external muscle" RELATED [Wikipedia:External_intercostal_muscles]
+synonym: "musculi intercostales externi" RELATED [Wikipedia:External_intercostal_muscles]
+is_a: UBERON:0001111 ! intercostal muscle
+xref: FMA:9756 ! External intercostal muscle
+xref: EHDAA2:0000465 ! external intercostal muscle
+
+[Term]
+id: UBERON:0005442
+name: external oblique
+def: "The external oblique muscle (of the abdomen) (also external abdominal oblique muscle) is the largest and the most superficial (outermost) of the three flat muscles of the lateral anterior abdomen." [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "external abdominal oblique" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "external abdominal oblique muscle" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "external oblique" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "external oblique abdominal muscles" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "external oblique abdominis" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "external oblique abdominis muscle" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "external oblique muscle" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "oblique strength" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "obliquus abdominis externus" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "obliquus externus" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "obliquus externus abdominis" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+synonym: "obliquus externus abdominis muscle" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
+is_a: UBERON:0002461 ! anterior abdominal wall muscle
+synonym: "external abdominal oblique muscle" EXACT [FMA:13335]
+xref: FMA:13335 ! External oblique
+xref: EHDAA2:0000469 ! external oblique
+
+[Term]
+id: UBERON:0005443
+name: filum terminale
+def: "The filum terminale (\"terminal thread\"), is a delicate strand of fibrous tissue, about 20 cm. in length, proceeding downward from the apex of the conus medullaris. It gives longitudinal support to the spinal cord and consists of two parts: The upper part, or filum terminale internum, is about 15 cm. long and reaches as far as the lower border of the second sacral vertebra. It is continuous above with the pia mater and contained within a tubular sheath of the dura mater. In addition, it is surrounded by the nerves forming the cauda equina, from which it can be easily recognized by its bluish-white color. The lower part, or filum terminale externum, closely adheres to the dura mater. It extends downward from the apex of the tubular sheath and is attached to the back of the first segment of the coccyx in a structure sometimes referred to as the coccygeal ligament. The most inferior of the spinal nerves, the coccygeal nerve leaves the spinal cord at the level of the conus medullaris, superior to the filum terminale. However, adhering to the outer surface of the filum terminale are a few strands of nerve fibers which probably represent rudimentary second and third coccygeal nerves. Furthermore, the central canal of the spinal cord extends 5 to 6 cm. beyond the conus medullaris, downward into the filum terminale." [Wikipedia:Filum_terminale]
+synonym: "coccygeal ligament" RELATED []
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0002240 ! spinal cord
+synonym: "Filum terminale segment of pia mater" EXACT [FMA:83977]
+synonym: "Terminal filum" EXACT [FMA:83977]
+xref: FMA:83977 ! Filum terminale
+xref: EHDAA2:0000510 ! filum terminale
+
+[Term]
+id: UBERON:0005444
+name: first polar body
+is_obsolete: true
+comment: belongs in CL
+synonym: "polocytus primarius" EXACT [FMA:18650]
+xref: FMA:18650 ! First polar body
+xref: EHDAA2:0000541 ! first polar body
+
+[Term]
+id: UBERON:0005445
+name: foot region
+is_a: UBERON:0002529 ! limb segment
+relationship: part_of UBERON:0002103 ! hindlimb
+synonym: "foot region" EXACT [FMA:24993]
+synonym: "foot subdivision" EXACT [FMA:24993]
+synonym: "subdivision of foot" EXACT [FMA:24993]
+xref: FMA:24993 ! Segment of foot
+xref: EHDAA2:0000546 ! foot region
+
+[Term]
+id: UBERON:0005446
+name: foramen rotundum
+def: "The foramen rotundum is a circular hole in the sphenoid bone that connects the middle cranial fossa and the pterygopalatine fossa." [Wikipedia:Foramen_rotundum]
+synonym: "foramen rotundum of the skull" RELATED [Wikipedia:Foramen_rotundum]
+is_a: UBERON:0000464 ! anatomical space
+relationship: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0002241 ! chondrocranium
+relationship: part_of UBERON:0001677 ! sphenoid bone
+xref: FMA:53154 ! Foramen rotundum
+xref: EHDAA2:0000552 ! foramen rotundum
+
+[Term]
+id: UBERON:0005447
+name: bladder fundus
+def: "The fundus of gallbladder is the portion of the gallbladder which lies the farthest from the cystic duct. It is covered with peritoneum. A traditional cholecystectomy is most commonly performed from the infundibulum to the fundus. It's at the same level as the transpyloric plane." [Wikipedia:Fundus_of_gallbladder]
+synonym: "fundus of the gallbladder" RELATED [Wikipedia:Fundus_of_gallbladder]
+synonym: "gallbladder fundus" RELATED [Wikipedia:Fundus_of_gallbladder]
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0001255 ! urinary bladder
+synonym: "base of urinary bladder" EXACT [FMA:15908]
+synonym: "fundus of bladder" EXACT [FMA:15908]
+synonym: "urinary bladder fundus" EXACT [FMA:15908]
+xref: FMA:15908 ! Fundus of urinary bladder
+xref: EHDAA2:0000582 ! bladder fundus
+
+[Term]
+id: UBERON:0005448
+name: greater omentum
+def: "The greater omentum (also the great omentum, omentum majus, gastrocolic omentum, epiploön, or, especially in animals, caul) is a large fold of peritoneum that hangs down from the stomach, and extends from the stomach to the posterior abdominal wall after associating with the transverse colon." [Wikipedia:Greater_omentum]
+synonym: "caul" RELATED [Wikipedia:Greater_omentum]
+synonym: "epiploic" RELATED [Wikipedia:Greater_omentum]
+synonym: "epiplooen" RELATED [Wikipedia:Greater_omentum]
+synonym: "epiploon" RELATED [Wikipedia:Greater_omentum]
+synonym: "gastrocolic omentum" RELATED [Wikipedia:Greater_omentum]
+synonym: "great omentum" RELATED [Wikipedia:Greater_omentum]
+synonym: "omentectomy" RELATED [Wikipedia:Greater_omentum]
+synonym: "omentum majus" RELATED [Wikipedia:Greater_omentum]
+is_a: UBERON:0003688 ! omentum
+relationship: develops_from UBERON:0002296 ! dorsal mesentery
+relationship: attaches_to UBERON:0001164 ! greater curvature of stomach
+relationship: part_of UBERON:0001178 ! visceral peritoneum
+xref: FMA:9580 ! Greater omentum
+xref: EHDAA2:0000720 ! greater omentum
+
+[Term]
+id: UBERON:0005449 ! greater sac
+name: greater sac
+def: "the cavity in the abdomen that is inside the peritoneum but outside of the lesser sac. [WP,unvetted]." [Wikipedia:Greater_sac]
+is_a: UBERON:0000063 ! organ segment
+relationship: part_of UBERON:0001179 ! peritoneal cavity
+xref: FMA:19799 ! Greater sac
+xref: EHDAA2:0000722 ! greater sac
+synonym: "peritoneum of the peritoneal cavity proper" RELATED [Wikipedia:Greater_sac]
+synonym: "general cavity of the abdomen" RELATED [Wikipedia:Greater_sac]
+
+[Term]
+id: UBERON:0005450
+name: greater sac cavity
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0005449 ! greater sac
+synonym: "cavum peritonei" EXACT [FMA:9691]
+synonym: "greater peritoneal cavity" EXACT [FMA:9691]
+xref: FMA:9691 ! Cavity of greater sac
+xref: EHDAA2:0000724 ! greater sac cavity
+
+[Term]
+id: UBERON:0005451
+name: hand region
+is_a: UBERON:0002529 ! limb segment
+relationship: part_of UBERON:0002102 ! forelimb
+synonym: "hand region" EXACT [FMA:24945]
+synonym: "hand subdivision" EXACT [FMA:24945]
+synonym: "subdivision of hand" EXACT [FMA:24945]
+xref: FMA:24945 ! Segment of hand
+xref: EHDAA2:0000728 ! hand region
+
+[Term]
+id: UBERON:0005452
+name: hepatic plate
+def: "Composed of hepatocytes, usually only one cell thick. The spaces between hepatic plates are occupied by sinusoids." [ISBN:0387949542]
+is_a: UBERON:0004923 ! organ component layer
+relationship: part_of UBERON:0004647 ! liver lobule
+relationship: part_of UBERON:0001172 ! hepatic acinus
+synonym: "hepatic cord" EXACT [FMA:14655]
+synonym: "lamina hepatica" EXACT [FMA:14655]
+synonym: "liver cell plate" EXACT [FMA:14655]
+xref: FMA:14655 ! Hepatic lamina
+xref: EHDAA2:0000744 ! hepatic plate
+
+[Term]
+id: UBERON:0005453
+name: inferior mesenteric ganglion
+def: "a ganglion located near where the inferior mesenteric artery branches from the abdominal aorta[WP]." [Wikipedia:Inferior_mesenteric_ganglion]
+is_a: UBERON:0003964 ! prevertebral ganglion
+xref: FMA:77590 ! Inferior mesenteric ganglion
+xref: EHDAA2:0000818 ! inferior mesenteric ganglion
+
+[Term]
+id: UBERON:0005454
+name: internal oblique
+def: "The internal oblique muscle (of the abdomen) is the intermediate muscle of the abdomen, lying just underneath the external oblique and just above (superficial to) the transverse abdominal muscle." [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "abdominal internal oblique" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "internal abdominal oblique" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "internal abdominal oblique muscle" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "internal oblique abdominal" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "internal oblique abdominis" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "internal oblique abdominis muscle" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "internal oblique muscle" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "musculus obliquus internus abdominis" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "obliqui internus" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "obliquus internus" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "obliquus internus abdominis" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "obliquus internus abdominis muscle" RELATED [Wikipedia:Abdominal_internal_oblique_muscle]
+synonym: "obliquus internus abdominis muscle" EXACT [FMA:13891]
+is_a: UBERON:0002461 ! anterior abdominal wall muscle
+xref: FMA:13891 ! Internal oblique
+xref: EHDAA2:0000879 ! internal oblique
+
+[Term]
+id: UBERON:0005455
+name: interventricular groove
+is_a: UBERON:0004111 ! anatomical conduit
+relationship: part_of UBERON:0002082 ! cardiac ventricle
+relationship: part_of UBERON:0002300 ! ventricle
+synonym: "interventricular sulcus" EXACT [FMA:7223]
+xref: FMA:7223 ! Interventricular sulcus
+xref: EHDAA2:0000884 ! interventricular groove
+xref: HOG:0000790 ! interventricular groove
+xref: EHDAA:1918 ! interventricular groove
+xref: EMAPA:17336 ! interventricular groove
+
+[Term]
+id: UBERON:0005489
+name: anterior interventricular sulcus
+def: "The ventricles of the heart are separated by two grooves, one of which, the anterior longitudinal sulcus (or anterior interventricular sulcus), is situated on the sternocostal surface of the heart, close to its left margin. The other groove separating the ventricles is the posterior interventricular sulcus." [Wikipedia:Anterior_interventricular_sulcus]
+synonym: "anterior interventricular groove" RELATED [Wikipedia:Anterior_interventricular_sulcus]
+synonym: "anterior longitudinal sulcus" RELATED [Wikipedia:Anterior_interventricular_sulcus]
+synonym: "anterior interventricular groove" EXACT  [FMA:7177]
+is_a: UBERON:0005455 ! interventricular groove
+xref: FMA:7177 ! Anterior interventricular sulcus
+
+[Term]
+id: UBERON:0005490
+name: posterior interventricular sulcus
+def: "The ventricles are separated by two grooves, one of which, the anterior longitudinal sulcus, is situated on the sternocostal surface of the heart, close to its left margin, the other posterior longitudinal sulcus (posterior interventricular sulcus, inferior interventricular groove), on the diaphragmatic surface near the right margin. In it run the posterior interventricular artery and middle cardiac vein." [Wikipedia:Posterior_interventricular_sulcus]
+synonym: "posterior interventricular groove" RELATED [Wikipedia:Posterior_interventricular_sulcus]
+synonym: "posterior longitudinal sulci" RELATED [Wikipedia:Posterior_interventricular_sulcus]
+synonym: "posterior longitudinal sulcus" RELATED [Wikipedia:Posterior_interventricular_sulcus]
+synonym: "diaphragmatic interventricular groove" EXACT  [FMA:7178]
+synonym: "inferior interventricular groove" EXACT  [FMA:7178]
+synonym: "posterior interventricular groove" EXACT  [FMA:7178]
+is_a: UBERON:0005455 ! interventricular groove
+xref: FMA:7178 ! Posterior interventricular sulcus
+
+[Term]
+id: UBERON:0005456
+name: jugular foramen
+def: "The jugular foramen is a large aperture in the base of the skull. It is located behind the carotid canal and is formed in front by the petrous portion of the temporal, and behind by the occipital; it is generally larger on the right than on the left side" [Wikipedia:Jugular_foramen]
+synonym: "foramen jugulare" RELATED [Wikipedia:Jugular_foramen]
+is_a: UBERON:0000464 ! anatomical space
+relationship: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0002241 ! chondrocranium
+synonym: "Posterior lacerate foramen" EXACT [FMA:56432]
+xref: FMA:56432 ! Jugular foramen
+xref: EHDAA2:0000893 ! jugular foramen
+
+[Term]
+id: UBERON:0005483 ! thymus lobe
+name: thymus lobe
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0002046 ! thyroid gland
+xref: FMA:71193 ! Lobe of thymus
+xref: EHDAA2:0002021 ! thymus lobe
+
+[Term]
+id: UBERON:0005457
+name: left thymus lobe
+intersection_of: UBERON:0005483 ! thymus lobe
+intersection_of: in_left_side_of UBERON:0002370 ! thymus
+synonym: "left thymic lobe" EXACT [FMA:71195]
+xref: FMA:71195 ! Left lobe of thymus
+xref: EHDAA2:0000964 ! left thymus lobe
+
+[Term]
+id: UBERON:0005469
+name: right thymus lobe
+intersection_of: UBERON:0005483 ! thymus lobe
+intersection_of: in_right_side_of UBERON:0002370 ! thymus
+synonym: "right thymic lobe" EXACT [FMA:71194]
+xref: FMA:71194 ! Right lobe of thymus
+xref: EHDAA2:0001758 ! right thymus lobe
+
+[Term]
+id: UBERON:0005458
+name: left umbilical artery
+intersection_of: UBERON:0001310 ! umbilical artery
+intersection_of: part_of UBERON:0004531 ! left side of organism
+xref: FMA:18822 ! Left umbilical artery
+xref: EHDAA2:0000966 ! left umbilical artery
+
+[Term]
+id: UBERON:0005470
+name: right umbilical artery
+intersection_of: UBERON:0001310 ! umbilical artery
+intersection_of: part_of UBERON:0004532 ! right side of organism
+xref: FMA:18821 ! Right umbilical artery
+xref: EHDAA2:0001760 ! right umbilical artery
+
+[Term]
+id: UBERON:0005459
+name: left umbilical vein
+intersection_of: UBERON:0002066 ! umbilical vein
+intersection_of: part_of UBERON:0004531 ! left side of organism
+xref: FMA:70320 ! Left umbilical vein
+xref: EHDAA2:0000967 ! left umbilical vein
+
+[Term]
+id: UBERON:0005471
+name: right umbilical vein
+intersection_of: UBERON:0002066 ! umbilical vein
+intersection_of: part_of UBERON:0004532 ! right side of organism
+xref: FMA:70319 ! Right umbilical vein
+xref: EHDAA2:0001761 ! right umbilical vein
+
+[Term]
+id: UBERON:0005487 ! vitelline vein
+name: vitelline vein
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0004581 ! systemic venous system
+xref: FMA:70305 ! Vitelline vein
+xref: EHDAA2:0002209 ! vitelline vein
+
+[Term]
+id: UBERON:0005460
+name: left vitelline vein
+intersection_of: UBERON:0005487 ! vitelline vein
+intersection_of: part_of UBERON:0004531 ! left side of organism
+xref: FMA:70307 ! Left vitelline vein
+xref: EHDAA2:0000971 ! left vitelline vein
+
+[Term]
+id: UBERON:0005472
+name: right vitelline vein
+intersection_of: UBERON:0005487 ! vitelline vein
+intersection_of: part_of UBERON:0004532 ! right side of organism
+xref: FMA:70306 ! Right vitelline vein
+xref: EHDAA2:0001766 ! right vitelline vein
+
+[Term]
+id: UBERON:0005461
+name: levator scapulae
+is_a: UBERON:0001482 ! muscle of shoulder
+xref: FMA:32519 ! Levator scapulae
+xref: EHDAA2:0000992 ! levator scapulae
+def: "The levator scapulae is situated at the back and side of the neck." [Wikipedia:Levator_scapulae_muscle]
+synonym: "levator scapul%c3%a6" RELATED [Wikipedia:Levator_scapulae_muscle]
+synonym: "levator scapula" RELATED [Wikipedia:Levator_scapulae_muscle]
+synonym: "levator scapulae muscle" RELATED [Wikipedia:Levator_scapulae_muscle]
+
+[Term]
+id: UBERON:0005462
+name: lumbar region
+is_a: UBERON:0000475 ! organism subdivision
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
+relationship: part_of UBERON:0002417 ! abdominal segment of trunk
+synonym: "Abdominal back" EXACT [FMA:61681]
+synonym: "Dorsum of abdomen" EXACT [FMA:61681]
+synonym: "Lumbar part of back" EXACT [FMA:61681]
+synonym: "Lumbar region" EXACT [FMA:61681]
+synonym: "Posterior part of abdomen" EXACT [FMA:61681]
+xref: FMA:61681 ! Back of abdomen
+xref: EHDAA2:0001037 ! lumbar region
+
+[Term]
+id: UBERON:0005463
+name: marginal sinus
+def: "The subcapsular sinus (lymph path, lymph sinus, marginal sinus) is a region within the lymph node immediately deep to the capsule that contains relatively sparse lymphocytes. It thus allows lymph to flow freely through it. The lymph node contains lymphoid tissue, i.e. , a meshwork or fibers called reticulum with white blood cells enmeshed in it. The regions where there are few cells within the meshwork are known lymph sinus. It is lined by reticular cells, fibroblasts and fixed macrophages. Thus, subcapsular (sub=below) sinus lies immediately deep to the capsule of the lymph node and immediately above the cortex. It is continuous with the similar lymph sinuses that flank the trabeculae (the extensions of capsule within the substance of the lymph node). The subcapsular sinus is of clinical importance as it is the most likely location where the earliest manifestations of a metastatic carcinoma in a lymph node would be found." [Wikipedia:Subcapsular_sinus]
+synonym: "lymph path" RELATED [Wikipedia:Subcapsular_sinus]
+synonym: "lymph sinus" RELATED [Wikipedia:Subcapsular_sinus]
+is_a: UBERON:0001638 ! vein
+xref: FMA:50766 ! Marginal sinus
+xref: EHDAA2:0001064 ! marginal sinus
+
+[Term]
+id: UBERON:0005464
+name: median sacral artery
+def: "The median sacral artery (or middle sacral artery) is a small vessel, which arises from the back of the aorta, a little above its bifurcation. It descends in the middle line in front of the fourth and fifth lumbar vertebræ, the sacrum and coccyx, and ends in the glomus coccygeum (coccygeal gland). From it, minute branches are said to pass to the posterior surface of the rectum. On the last lumbar vertebra it anastomoses with the lumbar branch of the iliolumbar artery; in front of the sacrum it anastomoses with the lateral sacral arteries, and sends offsets into the anterior sacral foramina. It is crossed by the left common iliac vein, and is accompanied by a pair of venæ comitantes; these unite to form a single vessel, which opens into the left common iliac vein." [Wikipedia:Median_sacral_artery]
+synonym: "coccygeal branches" RELATED [Wikipedia:Median_sacral_artery]
+synonym: "middle sacral" RELATED [Wikipedia:Median_sacral_artery]
+synonym: "middle sacral artery" RELATED [Wikipedia:Median_sacral_artery]
+is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0001637 ! artery
+relationship: part_of UBERON:0004571 ! systemic arterial system
+relationship: part_of UBERON:0004572 ! arterial system
+relationship: part_of UBERON:0004573 ! systemic artery
+synonym: "Middle sacral artery" EXACT [FMA:14757]
+xref: FMA:14757 ! Median sacral artery
+xref: EHDAA2:0001087 ! median sacral artery
+
+[Term]
+id: UBERON:0005465
+name: obturator nerve
+def: "The obturator nerve arises from the ventral divisions of the second, third, and fourth lumbar nerves; the branch from the third is the largest, while that from the second is often very small." [Wikipedia:Obturator_nerve]
+is_a: UBERON:0001021 ! nerve
+relationship: part_of UBERON:0001815 ! lumbosacral nerve plexus
+xref: FMA:16487 ! Obturator nerve
+xref: EHDAA2:0001282 ! obturator nerve
+
+[Term]
+id: UBERON:0005466
+name: paravertebral ganglia
+def: "Along the length of the sympathetic trunk are ganglia known as ganglia of sympathetic trunk or paravertebral ganglia. The ganglia are distinguished as cervical, thoracic, lumbar, and sacral and, except in the neck, they closely correspond in number to the vertebrae." [Wikipedia:Paravertebral_ganglia]
+synonym: "ganglia of sympathetic trunk" RELATED [Wikipedia:Paravertebral_ganglia]
+synonym: "paravertebral ganglion" RELATED [Wikipedia:Paravertebral_ganglia]
+synonym: "sympathetic chain ganglia" RELATED [Wikipedia:Paravertebral_ganglia]
+is_a: UBERON:0001806 ! sympathetic ganglion
+synonym: "Paravertebral ganglia" EXACT [FMA:80128]
+synonym: "Paravertebral ganglia set" EXACT [FMA:80128]
+xref: FMA:80128 ! Set of paravertebral ganglia
+xref: EHDAA2:0001403 ! paravertebral ganglia
+
+[Term]
+id: UBERON:0005467
+name: platysma
+def: "The platysma is a superficial muscle that overlaps the sternocleidomastoid. It is a broad sheet arising from the fascia covering the upper parts of the pectoralis major and deltoid; its fibers cross the clavicle, and proceed obliquely upward and medially along the side of the neck. The anterior fibers interlace, below and behind the symphysis menti, with the fibers of the muscle of the opposite side; the posterior fibers cross the mandible, some being inserted into the bone below the oblique line, others into the skin and subcutaneous tissue of the lower part of the face. Many of these fibers blend with the muscles about the angle and lower part of the mouth. Sometimes fibers can be traced to the zygomaticus, or to the margin of the orbicularis oculi. Beneath the platysma, the external jugular vein descends from the angle of the mandible to the clavicle." [Wikipedia:Platysma_muscle]
+synonym: "platysma muscle" RELATED []
+is_a: UBERON:0002377 ! muscle of neck
+xref: FMA:45738 ! Platysma
+xref: EHDAA2:0001474 ! platysma
+
+[Term]
+id: UBERON:0005473
+name: sacral region
+is_a: UBERON:0000475 ! organism subdivision
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
+relationship: regional_part_of UBERON:0002355 ! pelvis
+synonym: "back of pelvis" EXACT [FMA:24228]
+synonym: "pelvic back" EXACT [FMA:24228]
+synonym: "sacral part of pelvis" EXACT [FMA:24228]
+synonym: "posterior part of pelvis" EXACT [FMA:24228]
+xref: FMA:24228 ! Posterior part of pelvis
+xref: EHDAA2:0001772 ! sacral region
+
+[Term]
+id: UBERON:0005474
+name: second polar body
+is_obsolete: true
+comment: belongs in CL
+synonym: "Polocytus secundarius" EXACT [FMA:18651]
+xref: FMA:18651 ! Second polar body
+xref: EHDAA2:0001820 ! second polar body
+
+[Term]
+id: UBERON:0005475
+name: sigmoid sinus
+def: "The sigmoid sinuses, within a human head, are 2 areas beneath the brain, which allow blood veins to span the area, from the center of the head downward. They drain from the transverse sinuses (under the back of the brain) to the internal jugular vein. Each sigmoid sinus begins beneath the temporal bone and follows a tortuous course to the jugular foramen, at which point the sinus becomes continuous with the internal jugular vein." [Wikipedia:Sigmoid_sinus]
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0000033 ! head
+xref: FMA:50782 ! Sigmoid sinus
+xref: EHDAA2:0001838 ! sigmoid sinus
+
+[Term]
+id: UBERON:0005476
+name: spinal nerve trunk
+intersection_of: UBERON:0002464 ! nerve trunk
+intersection_of: part_of UBERON:0001780 ! spinal nerve
+synonym: "spinal nerve (trunk)" EXACT [FMA:5929]
+synonym: "spinal neural trunk" EXACT [FMA:5929]
+xref: FMA:5929 ! Trunk of spinal nerve
+xref: EHDAA2:0001900 ! spinal nerve trunk
+
+[Term]
+id: UBERON:0005477
+name: stomach fundus epithelium
+intersection_of: UBERON:0000485 ! simple columnar epithelium
+intersection_of: part_of UBERON:0001160 ! fundus of stomach
+relationship: part_of UBERON:0004994 ! mucosa of fundus of stomach
+synonym: "gastric epithelium of fundus" EXACT [FMA:17277]
+synonym: "gastric fundus epithelium" EXACT [FMA:17277]
+xref: FMA:17277 ! Epithelium of fundus of stomach
+xref: EHDAA2:0001921 ! stomach fundus epithelium
+
+[Term]
+id: UBERON:0005478
+name: sulcus limitans
+def: "In the floor of the fourth ventricle, the sulcus limitans separates the cranial nerve motor nuclei (medial) from the sensory nuclei (lateral). In the superior part of the rhomboid fossa, it corresponds with the lateral limit of the fossa and presents a bluish-gray area, the locus ceruleus (which owes its color to an underlying patch of deeply pigmented nerve cells, termed the substantia ferruginea). It is seen as slight depressions separating the basal and alar plates." [Wikipedia:Sulcus_limitans]
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0002422 ! fourth ventricle
+xref: FMA:78496 ! Sulcus limitans
+xref: EHDAA2:0001944 ! sulcus limitans
+
+[Term]
+id: UBERON:0005488 ! superior mesenteric plexus
+name: superior mesenteric plexus
+def: "The superior mesenteric plexus is a continuation of the lower part of the celiac plexus, receiving a branch from the junction of the right vagus nerve with the plexus. It surrounds the superior mesenteric artery, accompanies it into the mesentery, and divides into a number of secondary plexuses, which are distributed to all the parts supplied by the artery, viz. , pancreatic branches to the pancreas; intestinal branches to the small intestine; and ileocolic, right colic, and middle colic branches, which supply the corresponding parts of the great intestine. The nerves composing this plexus are white in color and firm in texture; in the upper part of the plexus close to the origin of the superior mesenteric artery is the superior mesenteric ganglion." [Wikipedia:Superior_mesenteric_plexus]
+xref: FMA:6639 ! superior mesenteric nerve plexus
+synonym: "superior mesenteric nerve plexus" EXACT [FMA:6639]
+is_a: UBERON:0001816 ! autonomic nerve plexus
+
+[Term]
+id: UBERON:0005479
+name: superior mesenteric ganglion
+def: "In the upper part of the superior mesenteric plexus close to the origin of the superior mesenteric artery is a ganglion, the superior mesenteric ganglion. The superior mesenteric ganglion is the synapsing point for one of the pre- and post-synaptic nerves of the sympathetic division of the autonomous nervous system. This nerve goes on to innervate part of the large intestine." [Wikipedia:Superior_mesenteric_ganglion]
+synonym: "ganglion mesentericum superius" RELATED [Wikipedia:Superior_mesenteric_ganglion]
+synonym: "superior mesenteric ganglia" RELATED [Wikipedia:Superior_mesenteric_ganglion]
+is_a: UBERON:0003964 ! prevertebral ganglion
+relationship: part_of UBERON:0005488 ! superior mesenteric plexus
+xref: FMA:77589 ! Superior mesenteric ganglion
+xref: EHDAA2:0001950 ! superior mesenteric ganglion
+
+[Term]
+id: UBERON:0005480
+name: superior orbital fissure
+def: "The superior orbital fissure is a foramen in the skull, although strictly it is more of a cleft, lying between the lesser and greater wings of the sphenoid bone." [Wikipedia:Superior_orbital_fissure]
+comment: TODO add generic foramen class
+synonym: "fissura orbitalis superior" RELATED [Wikipedia:Superior_orbital_fissure]
+synonym: "sphenoidal fissure" RELATED [Wikipedia:Superior_orbital_fissure]
+is_a: UBERON:0000464 ! anatomical space
+relationship: part_of UBERON:0003129 ! skull
+xref: FMA:54799 ! Superior orbital fissure
+xref: EHDAA2:0001952 ! superior orbital fissure
+
+[Term]
+id: UBERON:0005481
+name: tentorial sinus
+def: "The straight sinus (also known by the alternate anatomical term tentorial sinus), within the human head, is an area beneath the brain, which allows blood veins to span the area, from the center of the head towards the back. It drains from the inferior sagittal sinus (from the center of the brain) to the transverse sinuses (at the back of the head), then to the sigmoid sinuses below the brain. See diagram (at right): labeled in the brain as \"\" . The straight sinus (tentorial sinus) is situated along the junction of the falx cerebri and the tentorium cerebelli. It forms from the confluence of the inferior sagittal sinus and great cerebral vein (great vein of Galen). In cross-section it is triangular, contains a few transverse bands across its interior, and increases in size as it proceeds backward. It receives the superior cerebellar veins. The terminal part of the straight sinus drains into the confluence of the sinuses." [Wikipedia:Straight_sinus]
+is_a: UBERON:0001638 ! vein
+xref: FMA:50769 ! Straight sinus
+xref: EHDAA2:0002003 ! tentorial sinus
+synonym: "rectus sinus" RELATED [Wikipedia:Straight_sinus]
+synonym: "straight sinus vein" RELATED [Wikipedia:Straight_sinus]
+synonym: "straight sinus" RELATED [Wikipedia:Straight_sinus]
+
+[Term]
+id: UBERON:0005482
+name: thoracic region
+is_a: UBERON:0000475 ! organism subdivision
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
+synonym: "Thoracic region" EXACT [FMA:20358]
+synonym: "Thoracic subdivision" EXACT [FMA:20358]
+xref: FMA:20358 ! Subdivision of thorax
+xref: EHDAA2:0002013 ! thoracic region
+
+[Term]
+id: UBERON:0005484
+name: tricuspid valve leaflet
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0002134 ! tricuspid valve
+synonym: "tricuspid valve leaflet" EXACT [FMA:7237]
+synonym: "tricuspid valvular leaflet" EXACT [FMA:7237]
+synonym: "leaflet of tricuspid valve" EXACT [FMA:7237]
+xref: FMA:7237 ! Leaflet of tricuspid valve
+xref: EHDAA2:0002082 ! tricuspid valve leaflets
+
+[Term]
+id: UBERON:0005485
+name: valve of inferior vena cava
+is_a: UBERON:0000946 ! cardial valve
+relationship: part_of UBERON:0001072 ! inferior vena cava
+synonym: "eustachean valve" EXACT [FMA:9240]
+synonym: "eustachian valve" EXACT [FMA:9240]
+synonym: "inferior vena cava valve" EXACT [FMA:9240]
+xref: FMA:9240 ! Valve of inferior vena cava
+xref: EHDAA2:0002166 ! valve of inferior vena cava
+
+[Term]
+id: UBERON:0005486
+name: venous dural sinus
+def: "The dural venous sinuses (also called dural sinuses, cerebral sinuses, or cranial sinuses) are venous channels found between layers of dura mater in the brain.[1] They receive blood from internal and external veins of the brain, receive cerebrospinal fluid (CSF) from the subarachnoid space, and ultimately empty into the internal jugular vein." [Wikipedia:Dural_venous_sinuses]
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0000955 ! brain
+synonym: "cranial dural venous sinus" EXACT [FMA:50762]
+synonym: "dural sinus" EXACT [FMA:50762]
+xref: FMA:50762 ! Dural venous sinus
+xref: EHDAA2:0002169 ! venous dural sinus
+
+[Term]
+id: UBERON:0005491
+name: glossopharyngeal neural crest
+def: "Cranial neural crest which gives rise to the glossopharyngeal ganglion." [ZFA:0007066]
+is_a: UBERON:0003099 ! cranial neural crest
+xref: ZFA:0007066 ! glossopharyngeal neural crest
+xref: EHDAA2:0000714 ! glossopharyngeal neural crest
+
+[Term]
+id: UBERON:0005492
+name: hyaloid vessels
+is_a: UBERON:0001981 ! blood vessel
+relationship: part_of UBERON:0002203 ! vasculature of eye
+synonym: "hyaloid vasculature" RELATED [ZFA:0005046]
+synonym: "hyaloid vessels" EXACT [ZFA:0005046]
+xref: ZFA:0005046 ! hyaloid vessel
+xref: EHDAA2:0000791 ! hyaloid vessels
+
+[Term]
+id: UBERON:0005493
+name: hyoid muscle
+is_a: UBERON:0002376 ! muscle of head
+relationship: part_of UBERON:0003066 ! hyoid arch
+synonym: "hyoid muscles" EXACT [ZFA:0000521]
+xref: ZFA:0000521 ! hyoid muscle
+xref: EHDAA2:0000794 ! hyoid muscle
+
+[Term]
+id: UBERON:0005494
+name: intermediate mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+xref: ZFA:0000990 ! intermediate mesenchyme
+xref: EHDAA2:0000871 ! intermediate mesenchyme
+
+[Term]
+id: UBERON:0005495
+name: midbrain lateral wall
+is_a: UBERON:0000060 ! anatomical wall
+relationship: part_of UBERON:0001891 ! midbrain
+xref: ZFA:0000906 ! lateral wall midbrain
+xref: EHDAA2:0001171 ! midbrain lateral wall
+
+[Term]
+id: UBERON:0005496
+name: neural tube lateral wall
+is_a: UBERON:0000060 ! anatomical wall
+relationship: part_of UBERON:0001049 ! neural tube
+xref: ZFA:0001435 ! lateral wall neural tube
+xref: EHDAA2:0001257 ! neural tube lateral wall
+
+[Term]
+id: UBERON:0005497
+name: non-neural ectoderm
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000924 ! ectoderm
+synonym: "ventral ectoderm" EXACT [ZFA:0001178]
+xref: ZFA:0001178 ! non neural ectoderm
+xref: EHDAA2:0001273 ! non-neural ectoderm
+
+[Term]
+id: UBERON:0005498
+name: primitive heart tube
+def: "Multi-tissue structure that arises from the heart rudiment and will become the heart tube." [ZFA:0000149]
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0000948 ! heart
+relationship: develops_from UBERON:0004291 ! heart rudiment
+xref: ZFA:0000149 ! primitive heart tube
+xref: EHDAA2:0001512 ! primitive heart tube
+
+[Term]
+id: UBERON:0005499
+name: rhombomere 1
+def: "Hindbrain segment or neuromere 1." [ZFA:0001031]
+is_a: UBERON:0001892 ! rhombomere
+synonym: "r1" EXACT [ZFA:0001031]
+xref: ZFA:0001031 ! rhombomere 1
+xref: EHDAA2:0001637 ! rhombomere 1
+
+[Term]
+id: UBERON:0005500 ! rhombomere floor plate
+name: rhombomere floor plate
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001892 ! rhombomere
+
+[Term]
+id: UBERON:0005501 ! rhombomere lateral wall
+name: rhombomere lateral wall
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001892 ! rhombomere
+
+[Term]
+id: UBERON:0005502 ! rhombomere roof plate
+name: rhombomere roof plate
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0001892 ! rhombomere
+
+[Term]
+id: UBERON:0005507
+name: rhombomere 3
+def: "Hindbrain segment or neuromere." [ZFA:0000948]
+is_a: UBERON:0001892 ! rhombomere
+synonym: "r3" EXACT [ZFA:0000948]
+xref: ZFA:0000948 ! rhombomere 3
+xref: EHDAA2:0001657 ! rhombomere 3
+
+[Term]
+id: UBERON:0005511
+name: rhombomere 4
+def: "Hindbrain segment or neuromere." [ZFA:0001032]
+is_a: UBERON:0001892 ! rhombomere
+synonym: "r4" EXACT [ZFA:0001032]
+xref: ZFA:0001032 ! rhombomere 4
+xref: EHDAA2:0001667 ! rhombomere 4
+
+[Term]
+id: UBERON:0005515
+name: rhombomere 5
+def: "Hindbrain segment or neuromere." [ZFA:0000823]
+is_a: UBERON:0001892 ! rhombomere
+synonym: "r5" EXACT [ZFA:0000823]
+xref: ZFA:0000823 ! rhombomere 5
+xref: EHDAA2:0001677 ! rhombomere 5
+
+[Term]
+id: UBERON:0005519
+name: rhombomere 6
+def: "Hindbrain segment or neuromere." [ZFA:0000069]
+is_a: UBERON:0001892 ! rhombomere
+synonym: "r6" EXACT [ZFA:0000069]
+xref: ZFA:0000069 ! rhombomere 6
+xref: EHDAA2:0001687 ! rhombomere 6
+
+[Term]
+id: UBERON:0005523
+name: rhombomere 7
+def: "Hindbrain segment or neuromere." [ZFA:0000949]
+is_a: UBERON:0001892 ! rhombomere
+synonym: "r7" EXACT [ZFA:0000949]
+xref: ZFA:0000949 ! rhombomere 7
+xref: EHDAA2:0001697 ! rhombomere 7
+
+[Term]
+id: UBERON:0005527
+name: rhombomere 8
+def: "Hindbrain segment or neuromere." [ZFA:0000153]
+is_a: UBERON:0001892 ! rhombomere
+synonym: "r8" EXACT [ZFA:0000153]
+xref: ZFA:0000153 ! rhombomere 8
+xref: EHDAA2:0001707 ! rhombomere 8
+
+
+[Term]
+id: UBERON:0005561
+name: telencephalon lateral wall
+relationship: part_of UBERON:0001893 ! telencephalon
+xref: ZFA:0000785 ! lateral wall telencephalon
+xref: EHDAA2:0001985 ! telencephalon lateral wall
+
+[Term]
+id: UBERON:0005562
+name: thymus primordium
+def: "A small outgrowth of the pharyngeal epithelium that is the site of lymphocyte cell production." [ZFA:0001077]
+is_a: UBERON:0000483 ! epithelium
+relationship: part_of UBERON:0003295 ! gland of pharynx
+relationship: develops_from UBERON:0005428 ! vagal neural crest
+relationship: part_of UBERON:0002405 ! immune system
+synonym: "thymic rudiment" EXACT [ZFA:0001077]
+xref: ZFA:0001077 ! thymus primordium
+xref: EHDAA2:0002023 ! thymus primordium
+
+[Term]
+id: UBERON:0005563
+name: trigeminal neural crest
+def: "Cranial neural crest which gives rise to the trigeminal ganglion." [ZFA:0000080]
+is_a: UBERON:0003099 ! cranial neural crest
+xref: ZFA:0000080 ! trigeminal neural crest
+xref: EHDAA2:0002083 ! trigeminal neural crest
+
+[Term]
+id: UBERON:0005564 ! gonad primordium
+name: gonad primordium
+def: "Portion of tissue that gives rise to the immature gonad." [ZFA:0001262]
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000990 ! reproductive system
+relationship: develops_into UBERON:0000991 ! gonad
+synonym: "gonadal primordium" EXACT [ZFA:0001262]
+synonym: "undifferentiated gonad" EXACT [ZFA:0001262]
+xref: ZFA:0001262 ! gonad primordium
+xref: EHDAA2:0002148 ! gonad primordium
+
+[Term]
+id: UBERON:0005591
+name: diencephalon lateral wall
+is_a: UBERON:0000060 ! anatomical wall
+relationship: part_of UBERON:0001894 ! diencephalon
+xref: ZFA:0000780 ! lateral wall diencephalon
+xref: EHDAA2:0000396 ! diencephalon lateral wall
+
+[Term]
+id: UBERON:0005565
+name: facio-acoustic neural crest
+def: "Cranial neural crest that gives rise to the facio-acoustic ganglion." [ZFA:0000762]
+is_a: UBERON:0003099 ! cranial neural crest
+synonym: "facio acoustic neural crest" EXACT [ZFA:0000762]
+xref: ZFA:0000762 ! facio-acoustic neural crest
+xref: EHDAA2:0000492 ! facio-acoustic neural crest
+
+[Term]
+id: UBERON:0005566
+name: rhombomere 1 floor plate
+is_a: UBERON:0005500 ! rhombomere floor plate
+relationship: part_of UBERON:0005499 ! rhombomere 1
+synonym: "floor plate r1" EXACT [ZFA:0000882]
+xref: ZFA:0000882 ! floor plate rhombomere 1
+xref: EHDAA2:0001640 ! rhombomere 1 floor plate
+
+[Term]
+id: UBERON:0005567
+name: rhombomere 1 lateral wall
+is_a: UBERON:0005501 ! rhombomere lateral wall
+relationship: part_of UBERON:0005499 ! rhombomere 1
+xref: ZFA:0000781 ! lateral wall rhombomere 1
+xref: EHDAA2:0001641 ! rhombomere 1 lateral wall
+
+[Term]
+id: UBERON:0005568
+name: rhombomere 1 roof plate
+is_a: UBERON:0005502 ! rhombomere roof plate
+relationship: part_of UBERON:0005499 ! rhombomere 1
+xref: ZFA:0001033 ! roof plate rhombomere 1
+xref: EHDAA2:0001645 ! rhombomere 1 roof plate
+
+[Term]
+id: UBERON:0005569 ! rhombomere 2
+name: rhombomere 2
+def: "Hindbrain segment or neuromere." [ZFA:0000822]
+is_a: UBERON:0001892 ! rhombomere
+synonym: "r2" EXACT [ZFA:0000822]
+xref: ZFA:0000822 ! rhombomere 2
+xref: EHDAA2:0001647 ! rhombomere 2
+
+[Term]
+id: UBERON:0005570
+name: rhombomere 2 floor plate
+is_a: UBERON:0005500 ! rhombomere floor plate
+relationship: part_of UBERON:0005569 ! rhombomere 2
+synonym: "floor plate r2" EXACT [ZFA:0000763]
+synonym: "floorplate r2" EXACT [ZFA:0000763]
+xref: ZFA:0000763 ! floor plate rhombomere 2
+xref: EHDAA2:0001650 ! rhombomere 2 floor plate
+
+[Term]
+id: UBERON:0005571
+name: rhombomere 2 lateral wall
+is_a: UBERON:0005501 ! rhombomere lateral wall
+relationship: part_of UBERON:0005569 ! rhombomere 2
+xref: ZFA:0000907 ! lateral wall rhombomere 2
+xref: EHDAA2:0001651 ! rhombomere 2 lateral wall
+
+[Term]
+id: UBERON:0005572
+name: rhombomere 2 roof plate
+is_a: UBERON:0005502 ! rhombomere roof plate
+relationship: part_of UBERON:0005569 ! rhombomere 2
+xref: ZFA:0000824 ! roof plate rhombomere 2
+xref: EHDAA2:0001655 ! rhombomere 2 roof plate
+
+[Term]
+id: UBERON:0005573
+name: rhombomere 3 floor plate
+is_a: UBERON:0005500 ! rhombomere floor plate
+relationship: part_of UBERON:0005507 ! rhombomere 3
+synonym: "floor plate r3" EXACT [ZFA:0000888]
+synonym: "floorplate r3" EXACT [ZFA:0000888]
+xref: ZFA:0000888 ! floor plate rhombomere 3
+xref: EHDAA2:0001660 ! rhombomere 3 floor plate
+
+[Term]
+id: UBERON:0005574
+name: rhombomere 3 lateral wall
+is_a: UBERON:0005501 ! rhombomere lateral wall
+relationship: part_of UBERON:0005507 ! rhombomere 3
+xref: ZFA:0000994 ! lateral wall rhombomere 3
+xref: EHDAA2:0001661 ! rhombomere 3 lateral wall
+
+[Term]
+id: UBERON:0005575
+name: rhombomere 3 roof plate
+is_a: UBERON:0005502 ! rhombomere roof plate
+relationship: part_of UBERON:0005507 ! rhombomere 3
+xref: ZFA:0000950 ! roof plate rhombomere 3
+xref: EHDAA2:0001665 ! rhombomere 3 roof plate
+
+[Term]
+id: UBERON:0005576
+name: rhombomere 4 floor plate
+is_a: UBERON:0005500 ! rhombomere floor plate
+relationship: part_of UBERON:0005511 ! rhombomere 4
+synonym: "floor plate r4" EXACT [ZFA:0000893]
+synonym: "floorplate r4" EXACT [ZFA:0000893]
+xref: ZFA:0000893 ! floor plate rhombomere 4
+xref: EHDAA2:0001670 ! rhombomere 4 floor plate
+
+[Term]
+id: UBERON:0005577
+name: rhombomere 4 lateral wall
+is_a: UBERON:0005501 ! rhombomere lateral wall
+relationship: part_of UBERON:0005511 ! rhombomere 4
+xref: ZFA:0000782 ! lateral wall rhombomere 4
+xref: EHDAA2:0001671 ! rhombomere 4 lateral wall
+
+[Term]
+id: UBERON:0005578
+name: rhombomere 4 roof plate
+is_a: UBERON:0005502 ! rhombomere roof plate
+relationship: part_of UBERON:0005511 ! rhombomere 4
+xref: ZFA:0001034 ! roof plate rhombomere 4
+xref: EHDAA2:0001675 ! rhombomere 4 roof plate
+
+[Term]
+id: UBERON:0005579
+name: rhombomere 5 floor plate
+is_a: UBERON:0005500 ! rhombomere floor plate
+relationship: part_of UBERON:0005515 ! rhombomere 5
+synonym: "floor plate r5" EXACT [ZFA:0000764]
+synonym: "floorplate r5" EXACT [ZFA:0000764]
+xref: ZFA:0000764 ! floor plate rhombomere 5
+xref: EHDAA2:0001680 ! rhombomere 5 floor plate
+
+[Term]
+id: UBERON:0005580
+name: rhombomere 5 lateral wall
+is_a: UBERON:0005501 ! rhombomere lateral wall
+relationship: part_of UBERON:0005515 ! rhombomere 5
+xref: ZFA:0000908 ! lateral wall rhombomere 5
+xref: EHDAA2:0001681 ! rhombomere 5 lateral wall
+
+[Term]
+id: UBERON:0005581
+name: rhombomere 5 roof plate
+is_a: UBERON:0005502 ! rhombomere roof plate
+relationship: part_of UBERON:0005515 ! rhombomere 5
+xref: ZFA:0000828 ! roof plate rhombomere 5
+xref: EHDAA2:0001685 ! rhombomere 5 roof plate
+
+[Term]
+id: UBERON:0005582
+name: rhombomere 6 floor plate
+is_a: UBERON:0005500 ! rhombomere floor plate
+relationship: part_of UBERON:0005519 ! rhombomere 6
+synonym: "floor plate r6" EXACT [ZFA:0000889]
+synonym: "floorplate r6" EXACT [ZFA:0000889]
+xref: ZFA:0000889 ! floor plate rhombomere 6
+xref: EHDAA2:0001690 ! rhombomere 6 floor plate
+
+[Term]
+id: UBERON:0005583
+name: rhombomere 6 lateral wall
+is_a: UBERON:0005501 ! rhombomere lateral wall
+relationship: part_of UBERON:0005519 ! rhombomere 6
+xref: ZFA:0000995 ! lateral wall rhombomere 6
+xref: EHDAA2:0001691 ! rhombomere 6 lateral wall
+
+[Term]
+id: UBERON:0005584
+name: rhombomere 6 roof plate
+is_a: UBERON:0005502 ! rhombomere roof plate
+relationship: part_of UBERON:0005519 ! rhombomere 6
+xref: ZFA:0000825 ! roof plate rhombomere 6
+xref: EHDAA2:0001695 ! rhombomere 6 roof plate
+
+[Term]
+id: UBERON:0005585
+name: rhombomere 7 floor plate
+is_a: UBERON:0005500 ! rhombomere floor plate
+relationship: part_of UBERON:0005523 ! rhombomere 7
+synonym: "floor plate r7" EXACT [ZFA:0000904]
+synonym: "floorplate r7" EXACT [ZFA:0000904]
+xref: ZFA:0000904 ! floor plate rhombomere 7
+xref: EHDAA2:0001700 ! rhombomere 7 floor plate
+
+[Term]
+id: UBERON:0005586
+name: rhombomere 7 lateral wall
+is_a: UBERON:0005501 ! rhombomere lateral wall
+relationship: part_of UBERON:0005523 ! rhombomere 7
+xref: ZFA:0000783 ! lateral wall rhombomere 7
+xref: EHDAA2:0001701 ! rhombomere 7 lateral wall
+
+[Term]
+id: UBERON:0005587
+name: rhombomere 7 roof plate
+is_a: UBERON:0005502 ! rhombomere roof plate
+relationship: part_of UBERON:0005523 ! rhombomere 7
+xref: ZFA:0000951 ! roof plate rhombomere 7
+xref: EHDAA2:0001705 ! rhombomere 7 roof plate
+
+[Term]
+id: UBERON:0005588
+name: rhombomere 8 floor plate
+is_a: UBERON:0005500 ! rhombomere floor plate
+relationship: part_of UBERON:0005527 ! rhombomere 8
+synonym: "floor plate r8" EXACT [ZFA:0000765]
+synonym: "floorplate r8" EXACT [ZFA:0000765]
+xref: ZFA:0000765 ! floor plate rhombomere 8
+xref: EHDAA2:0001709 ! rhombomere 8 floor plate
+
+[Term]
+id: UBERON:0005589
+name: rhombomere 8 lateral wall
+is_a: UBERON:0005501 ! rhombomere lateral wall
+relationship: part_of UBERON:0005527 ! rhombomere 8
+xref: ZFA:0000909 ! lateral wall rhombomere 8
+xref: EHDAA2:0001710 ! rhombomere 8 lateral wall
+
+[Term]
+id: UBERON:0005590
+name: rhombomere 8 roof plate
+is_a: UBERON:0005502 ! rhombomere roof plate
+relationship: part_of UBERON:0005527 ! rhombomere 8
+xref: ZFA:0001035 ! roof plate rhombomere 8
+xref: EHDAA2:0001714 ! rhombomere 8 roof plate
+
+
+[Term]
+id: UBERON:0005594
+name: head somite
+def: "Any of the transient, degenerating occipital somites." [XAO:0000313]
+is_a: UBERON:0002329 ! somite
+synonym: "cranial somite" RELATED [XAO:0000313]
+synonym: "occipital somite" RELATED [XAO:0000313]
+xref: XAO:0000313 ! head somite
+xref: EHDAA2:0000737 ! head somite
+
+[Term]
+id: UBERON:0005597
+name: lung primordium
+def: "A pair of lateral diverticula just over the liver rudiment representing the primordia of the lungs, formed by the floor of the foregut just anterior to the liver diverticulum." [XAO:0001002]
+is_a: UBERON:0001048 ! primordium
+relationship: develops_from UBERON:0001041 ! foregut
+relationship: part_of UBERON:0001004 ! respiratory system
+synonym: "lateral diverticula" RELATED [XAO:0001002]
+xref: XAO:0001002 ! lung primordium
+xref: EHDAA2:0001041 ! lung primordium
+
+[Term]
+id: UBERON:0005598
+name: trunk somite
+is_a: UBERON:0002329 ! somite
+relationship: part_of UBERON:0002100 ! trunk
+xref: XAO:0000314 ! trunk somite
+xref: EHDAA2:0001848 ! trunk somite
+
+[Term]
+id: UBERON:0005599
+name: common dorsal aorta
+is_a: UBERON:0000947 ! aorta
+xref: MA:0000477 ! common dorsal aorta
+xref: EHDAA2:0000307 ! common dorsal aorta
+
+[Term]
+id: UBERON:0005600
+name: crus commune
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001856 ! semicircular duct
+synonym: "crus commune" RELATED [MA:0001210]
+xref: MA:0001210 ! crus commune
+xref: EHDAA2:0000330 ! crus commune
+
+[Term]
+id: UBERON:0005601
+name: dorsal mesocardium
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0003282 ! mesentery of heart
+xref: MA:0000482 ! dorsal mesocardium
+xref: EHDAA2:0000413 ! dorsal mesocardium
+
+[Term]
+id: UBERON:0005602
+name: dorsal mesogastrium
+def: "The portion of mesentery attached to the greater curvature of the stomach is named the dorsal mesentery (or dorsal mesogastrium, when referring to the portion at the stomach), and the part which suspends the colon is termed the mesocolon. The dorsal mesogastrium develops into the greater omentum." [Wikipedia:Dorsal_mesentery]
+synonym: "dorsal mesentery" RELATED [Wikipedia:Dorsal_mesentery]
+is_a: UBERON:0003281 ! mesentery of stomach
+xref: MA:0001618 ! dorsal mesogastrium
+xref: EHDAA2:0000416 ! dorsal mesogastrium
+
+[Term]
+id: UBERON:0005603
+name: dorsal pancreatic duct
+is_a: UBERON:0001064 ! pancreatic duct
+xref: MA:0000125 ! dorsal pancreatic duct
+xref: EHDAA2:0000417 ! dorsal pancreatic duct
+
+[Term]
+id: UBERON:0005604
+name: hepatic duct extrahepatic part
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0005171 ! hepatic duct
+relationship: part_of UBERON:0003703 ! extrahepatic bile duct
+xref: MA:0001636 ! hepatic duct extrahepatic part
+xref: EHDAA2:0000742 ! hepatic duct extrahepatic part
+
+[Term]
+id: UBERON:0005605
+name: hepatic duct intrahepatic part
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0005171 ! hepatic duct
+relationship: part_of UBERON:0003704 ! intrahepatic bile duct
+xref: MA:0001637 ! hepatic duct intrahepatic part
+xref: EHDAA2:0000743 ! hepatic duct intrahepatic part
+
+[Term]
+id: UBERON:0005606
+name: hyaloid cavity
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0000019 ! camera-type eye
+xref: MA:0000272 ! hyaloid cavity
+xref: EHDAA2:0000789 ! hyaloid cavity
+
+[Term]
+id: UBERON:0005607
+name: hyaloid vascular plexus
+is_a: UBERON:0001810 ! nerve plexus
+xref: MA:0001283 ! hyaloid vascular plexus
+xref: EHDAA2:0000790 ! hyaloid vascular plexus
+
+[Term]
+id: UBERON:0005608
+name: hyoid artery
+is_a: UBERON:0001637 ! artery
+xref: MA:0001969 ! hyoid artery
+xref: EHDAA2:0000792 ! hyoid artery
+
+[Term]
+id: UBERON:0005609
+name: iliac artery
+def: "One of several anatomical structures located in the pelvis: Common iliac artery, External iliac artery, Internal iliac artery" [Wikipedia:Iliac_artery]
+is_a: UBERON:0001637 ! artery
+relationship: part_of UBERON:0002355 ! pelvis
+xref: MA:0001971 ! iliac artery
+xref: EHDAA2:0000807 ! iliac artery
+disjoint_from: UBERON:0005628 ! ileal artery
+
+[Term]
+id: UBERON:0005628 ! ileal artery
+name: ileal artery
+def: "The ileal arteries feed oxygenated blood into the ileum, a portion of the small intestine in mammals, reptiles, and birds. They are branches of the superior mesenteric artery." [Wikipedia:Ileal_arteries]
+is_a: UBERON:0001637 ! artery
+relationship: branch_of UBERON:0001182 ! superior mesenteric artery
+relationship: part_of UBERON:0001182 ! superior mesenteric artery
+synonym: "ileal branch of superior mesenteric artery" EXACT  [FMA:14809]
+xref: FMA:14809 ! Ileal artery
+
+[Term]
+id: UBERON:0005610
+name: iliac vein
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0002355 ! pelvis
+xref: MA:0002142 ! iliac vein
+xref: EHDAA2:0000811 ! iliac vein
+
+[Term]
+id: UBERON:0005611
+name: inner canthus
+comment: TODO - add outer
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001711 ! eyelid
+synonym: "medial canthus" RELATED [MA:0001262]
+xref: MA:0001262 ! inner canthus
+xref: EHDAA2:0000829 ! inner canthus
+
+[Term]
+id: UBERON:0005612
+name: intercostal artery
+def: "One of a group of arteries that supply the area between the ribs ("costae"), called the intercostal space." [Wikiepdia:Intercostal_arteries]
+comment: TODO - add children
+is_a: UBERON:0001637 ! artery
+xref: MA:0001981 ! intercostal artery
+xref: EHDAA2:0000840 ! intercostal artery
+
+[Term]
+id: UBERON:0005613
+name: left dorsal aorta
+comment: TODO - check
+is_a: UBERON:0000947 ! aorta
+xref: MA:0000478 ! left dorsal aorta
+xref: EHDAA2:0000936 ! left dorsal aorta
+
+[Term]
+id: UBERON:0005614
+name: lens anterior epithelium
+is_a: UBERON:0001803 ! epithelium of lens
+xref: MA:0001302 ! lens anterior epithelium
+xref: EHDAA2:0000976 ! lens anterior epithelium
+
+[Term]
+id: UBERON:0005615
+name: lens equatorial epithelium
+is_a: UBERON:0001803 ! epithelium of lens
+xref: MA:0001303 ! lens equatorial epithelium
+xref: EHDAA2:0000978 ! lens equatorial epithelium
+
+[Term]
+id: UBERON:0005616
+name: mesenteric artery
+is_a: UBERON:0001637 ! artery
+xref: MA:0002003 ! mesenteric artery
+xref: EHDAA2:0001123 ! mesenteric artery
+
+[Term]
+id: UBERON:0005617
+name: mesenteric vein
+is_a: UBERON:0001638 ! vein
+xref: MA:0002177 ! mesenteric vein
+xref: EHDAA2:0001125 ! mesenteric vein
+
+[Term]
+id: UBERON:0005619
+name: palatal shelf
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001709 ! upper jaw
+relationship: part_of UBERON:0001716 ! palate
+xref: MA:0001581 ! palatal shelf
+xref: EHDAA2:0001364 ! palatal shelf
+
+[Term]
+id: UBERON:0005620
+name: primary palate
+def: "By the fusion of the maxillary and nasal processes in the roof of the stomodeum the primitive palate (or primary palate[1]) is formed, and the olfactory pits extend backward above it. It consists of the maxillary process and medial nasal process." [Wikipedia:Primitive_palate]
+is_a: UBERON:0001716 ! palate
+relationship: part_of UBERON:0002244 ! premaxilla
+synonym: "primitive palate" [Wikipedia:Primitive_palate]
+xref: MA:0001583 ! primary palate
+xref: EHDAA2:0001499 ! primary palate
+
+[Term]
+id: UBERON:0005621
+name: rhomboid
+def: "A rhombus-shaped muscle associated with the scapula and chiefly responsible for its retraction. There are two rhomboid muscles." [Wikipedia:Rhomboid_muscles]
+comment: TODO - add child terms
+is_a: UBERON:0001630 ! muscle organ
+xref: MA:0002367 ! rhomboid
+xref: EHDAA2:0001635 ! rhomboid
+
+[Term]
+id: UBERON:0005622
+name: right dorsal aorta
+is_a: UBERON:0000947 ! aorta
+xref: MA:0000479 ! right dorsal aorta
+xref: EHDAA2:0001720 ! right dorsal aorta
+
+[Term]
+id: UBERON:0005623
+name: semi-lunar valves
+is_a: UBERON:0000946 ! cardial valve
+synonym: "semilunar valve" EXACT [MA:0002790]
+xref: MA:0002790 ! semilunar valve
+xref: EHDAA2:0001823 ! semi-lunar valves
+
+[Term]
+id: UBERON:0005624
+name: suprarenal artery
+is_a: UBERON:0001637 ! artery
+synonym: "adrenal artery" RELATED [MA:0001914]
+xref: MA:0001914 ! suprarenal artery
+xref: EHDAA2:0001965 ! suprarenal artery
+
+[Term]
+id: UBERON:0005625
+name: tubotympanic recess
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001756 ! middle ear
+xref: MA:0001218 ! tubotympanic recess
+xref: EHDAA2:0002095 ! tubotympanic recess
+
+[Term]
+id: UBERON:0005626
+name: ventral mesogastrium
+def: "Ventral mesentery is the part of the peritoneum closest to the navel." [Wikipedia:Ventral_mesentery]
+is_a: UBERON:0003281 ! mesentery of stomach
+synonym: "ventral mesentery" RELATED [Wikipedia:Ventral_mesentery]
+xref: MA:0001621 ! ventral mesogastrium
+xref: EHDAA2:0002176 ! ventral mesogastrium
+
+[Term]
+id: UBERON:0005627
+name: ventral pancreatic duct
+is_a: UBERON:0001064 ! pancreatic duct
+xref: MA:0000126 ! ventral pancreatic duct
+xref: EHDAA2:0002177 ! ventral pancreatic duct
+xref: HOG:0000256 ! ventral pancreatic duct
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -71280,3 +72778,9 @@ inverse_of: BSPO:0000121 ! proximal_side_of
 id: in_proximal_side_of
 name: in_proximal_side_of
 def: "X proximal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the proximal portion." [BSPO:PATO_mtg_2009]
+
+[Typedef]
+id: induced_by
+name: induced_by
+def: "t1 induced_by t2 if there is a process of organ induction (GO:0001759) with t1 and t2 as interacting participants. t2 causes t1 to change its fate from a precursor tissue type T to T', where T' develops_from T." [GO:0001759]
+comment: sources for induced_by relationships in Uberon: Developmental Biology, Gilbert, 8th edition, figure 6.5(F)
