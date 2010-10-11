@@ -2785,7 +2785,7 @@ xref: BTO:0000065
 xref: FMA:80223 ! Amnion
 xref: HOG:0000721 ! amnion
 xref: ncithesaurus:Amnion
-is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0005631 ! extraembryonic membrane
 relationship: surrounds UBERON:0000922 ! embryo
 relationship: only_in_taxon NCBITaxon:32524 ! Amniota
 xref: GAID:1298 ! amnion
@@ -2979,7 +2979,7 @@ alt_id: UBERON:BTO_0000449-FMA_63919
 comment: TODO - check fetus/embryo. WP: An embryo is a multicellular diploid eukaryote in its earliest stage of development, from the time of first cell division until birth, hatching, or germination. In humans, it is called an embryo until about eight weeks after fertilization (i.e. ten weeks LMP), and from then it is instead called a fetus.
 xref: BTO:0000449
 xref: FMA:63919 ! Fetus
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0000922 ! embryo
 xref: OGES:000023 ! fetus
 xref: EV:0300011 ! fetus
 xref: ncithesaurus:Fetus ! Fetus
@@ -3488,7 +3488,7 @@ def: "The renal medulla is the innermost part of the kidney. The renal medulla i
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Illu_kidney.jpg/200px-Illu_kidney.jpg
 
 [Term]
-id: UBERON:0004200
+id: UBERON:0004200 ! kidney pyramid
 name: kidney pyramid
 alt_id: UBERON:0005098
 alt_id: UBERON:0002449
@@ -3496,7 +3496,7 @@ alt_id: UBERON:MA_0001654-FMA_258870
 synonym: "pyramid" BROAD [GO:0072056]
 synonym: "renal pyramid" EXACT [Wikipedia:Renal_pyramids]
 synonym: "malpighian pyramid" EXACT [Wikipedia:Renal_pyramids]
-synonym: "medullary pyramid" EXACT []
+synonym: "medullary pyramid" RELATED []
 synonym: "pyramid of medulla" EXACT [FMA:75254]
 synonym: "pyramis renalis" RELATED [BTO:0003926]
 def: "Kidney pyramids are the conical masses that constitute the renal medulla in a multi-lobed mammalian kidney; they contain the loops of Henle and the medullary collecting ducts[GO]. One of a number of pyramidal masses seen on longitudinal section of the kidney; collectively, they constitute the renal medulla, and contain part of the secreting tubules and the collecting tubules[BTO]. Renal pyramids (or malpighian pyramids) are cone-shaped tissues of the kidney. The renal medulla is made up of 8 to 18 of these conical subdivisions. The broad base of each pyramid faces the renal cortex, and its apex, or papilla, points internally. The pyramids appear striped because they are formed by straight parallel segments of nephrons. [WP,unvetted]." [GO:0072056, Wikipedia:Renal_pyramids, BTO:0003926]
@@ -4443,18 +4443,6 @@ xref: BTO:0002082
 xref: FMA:83803 ! Subdural space
 is_a: UBERON:0000464 ! anatomical space
 xref: GAID:692 ! subdural space
-
-[Term]
-id: UBERON:0000417
-name: primitive endoderm
-alt_id: UBERON:BTO_0002123-FMA_85520
-xref: BTO:0002123
-xref: FMA:85520 ! Primitive endoderm
-xref: EHDAA:44 ! primitive endoderm
-xref: EHDAA:79 ! primitive endoderm
-xref: EMAPA:16051 ! primitive endoderm
-xref: EMAPA:16063 ! primitive endoderm
-is_a: UBERON:0000925 ! endoderm
 
 [Term]
 id: UBERON:0000418
@@ -5814,6 +5802,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Gray10.png/200px-
 
 [Term]
 id: UBERON:0000926
+alt_id: UBERON:0003263
 name: mesoderm
 alt_id: UBERON:FBbt_00000126-FMA_69072-MIAA_0000174-XAO_0000050-ZFA_0000041
 def: "The middle germ layer of the embryo, between the endoderm and ectoderm. // Primary germ layer that is the middle of the embryo's three germ layers." [FB:gg, OMD:mesoderm, Wikipedia:Mesoderm]
@@ -8383,7 +8372,7 @@ xref: EHDAA:164 ! yolk sac
 xref: FMA:87180 ! Yolk sac
 xref: GAID:1301 ! yolk sac
 xref: HOG:0000830 ! yolk sac
-is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0005631 ! extraembryonic membrane
 xref: ncithesaurus:Yolk_Sac ! Yolk Sac
 xref: BTO:0001471 ! yolk sac
 xref: EHDAA2:0002212 ! yolk sac
@@ -12430,17 +12419,19 @@ name: renal tubule
 alt_id: UBERON:FMA_15627-ZFA_0001287
 alt_id: UBERON:0004210
 def: "An epithelial tube that is part of the nephron, the functional part of the kidney." [GO:0072078, Wikipedia:Renal_tubule]
-comment: TODO - check renal tubule vs nephron tubule - assume for now. Also FMA has 'region of renal tubule' - not clear what is a subclass and what is a part
 subset: uberon_slim
 synonym: "nephron tubule" EXACT [GO:0072078]
 synonym: "tubulus renalis" EXACT []
+synonym: "kidney tubule" EXACT [GAID:433]
 xref: BTO:0000343
+xref: GAID:433 ! kidney tubule
 xref: FMA:15627 ! Renal tubule
 xref: MA:0000377 ! renal tubule
 xref: TAO:0001287 ! renal tubule
 xref: ZFA:0001287 ! renal tubule
 intersection_of: UBERON:0003914 ! epithelial tube
 intersection_of: part_of UBERON:0001285 ! nephron
+relationship: develops_from UBERON:0003220 ! metanephric blastema
 xref: ncithesaurus:Renal_Tubule ! Renal Tubule
 
 [Term]
@@ -19026,7 +19017,6 @@ id: UBERON:0005629 ! vascular plexus
 name: vascular plexus
 def: "In a vascular plexus, the contents of the vessels mix. A plexus allows blood to flow via multiple routes. If one branch of the plexus is obstructed, the blood may flow via the open branches." [Wikipedia:Plexus#Circulatory_system]
 xref: FMA:5900 ! Vascular plexus
-synonym: "vascular network" EXACT []
 is_a: UBERON:0002049 ! vasculature
 relationship: part_of UBERON:0001009 ! circulatory system
 relationship: has_part UBERON:0001981 ! blood vessel
@@ -19290,7 +19280,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Gray878.png/200px
 
 
 [Term]
-id: UBERON:0001609
+id: UBERON:0001609 ! isthmus of thyroid gland
 name: isthmus of thyroid gland
 alt_id: UBERON:FMA_49178-MA_0000727
 def: "The thyroid isthmus connects together the lower thirds of the lobes; it measures about 1.25 cm. in breadth, and the same in depth, and usually covers the second and third rings of the trachea. Its situation and size present, however, many variations. In the middle line of the neck it is covered by the skin and fascia, and close to the middle line, on either side, by the Sternothyreoideus. Across its upper border runs an anastomotic branch uniting the two superior thyroid arteries; at its lower border are the inferior thyroid veins. [WP,unvetted]." [Wikipedia:Thyroid_isthmus]
@@ -19299,6 +19289,7 @@ subset: uberon_slim
 synonym: "isthmus glandulae thyroideae" EXACT []
 synonym: "thyroid gland isthmus" EXACT []
 synonym: "thyroid isthmus" EXACT []
+synonym: "isthmus" BROAD [HOG:0000739]
 xref: FMA:49178 ! Isthmus of thyroid gland
 xref: MA:0000727 ! thyroid gland isthmus
 is_a: UBERON:0000064 ! organ part
@@ -19306,6 +19297,9 @@ relationship: part_of UBERON:0002046 ! thyroid gland
 xref: ncithesaurus:Thyroid_Gland_Isthmus ! Thyroid Gland Isthmus
 xref: EHDAA2:0002031 ! thyroid isthmus
 xref: HOG:0000739 ! isthmus
+xref: EHDAA:5777 ! isthmus
+xref: EMAPA:18195 ! isthmus
+xref: EMAPA:18829 ! isthmus
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Gray1174.png/200px-Gray1174.png
 
 [Term]
@@ -21758,6 +21752,25 @@ relationship: part_of UBERON:0001042 ! pharynx
 xref: BTO:0002097 ! pharyngeal cavity
 
 [Term]
+id: UBERON:0002372
+name: tonsil
+alt_id: UBERON:FMA_9609-MA_0000143
+def: "Portion of lymphoid tissue on either side of the throat." [Wikipedia:Tonsil]
+comment: Most commonly, the term "tonsils" refers to the palatine tonsils that can be seen in the back of the throat.
+subset: uberon_slim
+xref: BTO:0001387
+xref: FMA:9609 ! Tonsil
+xref: GAID:341 ! tonsil
+xref: HOG:0001139 ! tonsil
+xref: MA:0000143 ! tonsil
+xref: OpenCyc:Mx4rvVivrZwpEbGdrcN5Y29ycA
+is_a: UBERON:0001744 ! lymphoid tissue
+relationship: part_of UBERON:0001735 ! tonsillar ring
+xref: ncithesaurus:Tonsil ! Tonsil
+xref: EFO:0001401 ! tonsil
+xref: OpenCyc:Mx4rvVivrZwpEbGdrcN5Y29ycA ! tonsil
+
+[Term]
 id: UBERON:0001732
 name: pharyngeal tonsil
 alt_id: UBERON:FMA_54970-MA_0000774
@@ -21772,13 +21785,28 @@ xref: FMA:54970 ! Pharyngeal tonsil
 xref: GAID:1288 ! adenoid
 xref: MA:0000774 ! nasopharyngeal tonsil
 is_a: UBERON:0002372 ! tonsil
-intersection_of: UBERON:0002372 ! tonsil
-intersection_of: part_of UBERON:0001042 ! pharynx
+relationship: part_of UBERON:0001728 ! nasopharynx
 xref: ncithesaurus:Pharyngeal_Tonsil ! Pharyngeal Tonsil
 xref: EFO:0001401 ! tonsil
-synonym: "pharynx tonsil" EXACT [OBOL:automatic]
-synonym: "tonsil of pharynx" EXACT [OBOL:automatic]
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Gray994-adenoid.png/200px-Gray994-adenoid.png
+
+[Term]
+id: UBERON:0001735
+name: tonsillar ring
+alt_id: UBERON:FMA_55070-MA_0000752
+def: "lymphoid tissue ring located in the pharynx and to the back of the oral cavity. The ring consists of (from superior to inferior): Pharyngeal tonsil (also known as 'adenoids' when infected) Tubal tonsil (where Eustachian tube opens in the nasopharynx) Palatine tonsils (commonly called "the tonsils" in the vernacular, less commonly termed "faucial tonsils") Lingual tonsils Some animals, but not humans, have one or two additional tonsils: Soft palate tonsil Paraepiglottic tonsil[WP]." [Wikipedia:Waldeyer's_ring]
+comment: see also FMA:79771 naso-pharyngeal lymphoid tissue
+subset: uberon_slim
+synonym: "oropharyngeal lymphoid tissue" EXACT []
+synonym: "pharyngeal lymphatic ring" EXACT []
+synonym: "pharyngeal lymphoid ring" EXACT []
+synonym: "Waldeyer's ring" EXACT []
+synonym: "Waldeyer's tonsillar ring" EXACT []
+xref: FMA:55070 ! Tonsillar ring
+xref: MA:0000752 ! oropharyngeal lymphoid tissue
+is_a: UBERON:0001961 ! mucosa-associated lymphoid tissue
+relationship: part_of UBERON:0001042 ! pharynx
+xref: ncithesaurus:Waldeyers_Tonsillar_Ring ! Waldeyer's Tonsillar Ring
 
 [Term]
 id: UBERON:0001733
@@ -21815,24 +21843,6 @@ is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001733 ! soft palate
 xref: EFO:0001386 ! uvula
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Tonsils_diagram.jpg/200px-Tonsils_diagram.jpg
-
-[Term]
-id: UBERON:0001735
-name: tonsillar ring
-alt_id: UBERON:FMA_55070-MA_0000752
-def: "lymphoid tissue ring located in the pharynx and to the back of the oral cavity." [Wikipedia:Waldeyer's_ring]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "oropharyngeal lymphoid tissue" EXACT []
-synonym: "pharyngeal lymphatic ring" EXACT []
-synonym: "pharyngeal lymphoid ring" EXACT []
-synonym: "Waldeyer's ring" EXACT []
-synonym: "Waldeyer's tonsillar ring" EXACT []
-xref: FMA:55070 ! Tonsillar ring
-xref: MA:0000752 ! oropharyngeal lymphoid tissue
-is_a: UBERON:0001961 ! mucosa-associated lymphoid tissue
-relationship: part_of UBERON:0001042 ! pharynx
-xref: ncithesaurus:Waldeyers_Tonsillar_Ring ! Waldeyer's Tonsillar Ring
 
 [Term]
 id: UBERON:0001736
@@ -28256,6 +28266,8 @@ xref: HOG:0000932 ! endocardial cushion
 xref: MA:0000078 ! endocardial cushion
 xref: TAO:0001317 ! endocardial cushion
 xref: ZFA:0001317 ! endocardial cushion
+xref: EHDAA2:0000434 ! endocardial cushion tissue
+synonym: "endocardial cushion tissue" EXACT [EHDAA2:0000434]
 is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0000948 ! heart
@@ -28414,7 +28426,7 @@ id: UBERON:0002068
 name: urachus
 alt_id: UBERON:FMA_70343-MA_0001701
 def: "The urachus is an embryological canal connecting the urinary bladder of the fetus with the allantois, a structure that contributes to the formation of the umbilical cord. The lumen (inside) of the urachus is normally obliterated during embryonic development, transforming the urachus into a solid cord, a functionless remnant. The urachus lies in the space of Retzius, between the transversalis fascia anteriorly and the peritoneum posteriorly. [WP,unvetted]." [Wikipedia:Urachus]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO check. Wikipedia and DBPedia disagree - is this a remnant of the allantois?
 subset: uberon_slim
 xref: EHDAA:7016 ! urachus
 xref: EHDAA:9332 ! urachus
@@ -29499,6 +29511,47 @@ xref: ncithesaurus:Left_Ovary ! Left Ovary
 def: "An ovary that is part of a left side of organism [Obol]." [OBOL:automatic]
 
 [Term]
+id: UBERON:0005722
+name: nephrotome
+def: "The nephrotome is a section of the mesoderm. It gives rise to the pronephros and eventually to the rest of the kidney. A nephrotome is an obsolete term used to describe rounded mesodermal portions of the forming pronephros. In old texts the pronephros is described as forming through the fusion of multiple nephrotomes. Modern visualization methods such as scanning electron microscopy, in situ hybridization and confocal microscopy, combined with the simple approach of peeling off the epidermis to see the forming kidney, have shown that this is not the case. Nephric mesenchyme separates from the intermediate mesoderm as a single elongated primordia. As this primordia begins to undergo epithelialization the anterior portions of the pronephros form rounded protrusions, which then later become the dorsal branches of the pronephros that link to nephrostomes (distinct from nephrotomes). These rounded bumps are probably the structures observed in histological sections that are referred to as nephrotomes. Nephrostomes are thin ciliated funnels that link pronephric nephrons to the ceolom, and are not related to nephrotomes." [Wikipedia:Nephrotome]
+synonym: "nephromere" RELATED [Wikipedia:Nephrotome]
+synonym: "intermediate cell mass" RELATED  [BTO:0003673]
+is_obsolete: true
+xref: BTO:0003673 ! nephrotome
+
+[Term]
+id: UBERON:0003220
+name: metanephric blastema
+def: "one of the two embryological structures that give rise to the kidney (the other is the ureteric bud). The metanephric blastema mostly develops into nephrons, but can also form parts of the collecting duct system.[WP]. Metanephric mesenchyme is the tissue made up of loosely connected mesenchymal cells in the metanephros[GO]" [GO:0072075, Wikipedia:Metanephric_blastema]
+comment: (TODO - split?) Genes: The positional specification of the metanephrogenic mesenchyme is negatively regulated by Foxc1 and Foxc2. Next the permanent kidney forming metanephrogenic mesenchyme is specified by Hox11 genes. The competence to respond to ureteric bud inducers is regulated by WT1. GDNF secretion restricted to posterior region by Robo2 and Sprouty1. The receptors for GDNF are synthesized in the nephric ducts and later in ureteric buds [ISBN:9780878932504 "Developmental Biology"]
+synonym: "metanephric mesenchyme" EXACT [Wikipedia:Metanephric_blastema]
+synonym: "metanephric mesoderm" EXACT [Wikipedia:Metanephric_blastema]
+synonym: "metanephrogenic mesenchyme" EXACT [EHDAA:5021]
+synonym: "metanephros associated mesenchyme" EXACT [EHDAA2:0001139]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003074 ! wolffian duct
+xref: HOG:0000540 ! metanephric mesenchyme
+xref: EHDAA:4041 ! metanephric mesenchyme
+xref: EHDAA:5915 ! metanephric mesenchyme
+xref: EMAPA:17208 ! metanephric mesenchyme
+xref: EMAPA:17375 ! metanephric mesenchyme
+xref: EMAPA:29990 ! metanephric mesenchyme
+xref: EHDAA2:0001139 ! metanephros associated mesenchyme
+xref: EHDAA:5021 ! metanephrogenic mesenchyme
+
+[Term]
+id: UBERON:0005721 ! pronephric mesoderm
+name: pronephric mesoderm
+comment: the intermediate mesoderm of the chick embryo acquires its ability to form kidneys through its interactions with the paraxial mesoderm  [ISBN:9780878932504 "Developmental Biology", PMID:10720431 "Signals from trunk paraxial mesoderm induce pronephros formation in chick intermediate mesoderm"]. These interactions induce the expression of TFs including Lim1, Pax2 and Pax6 that cause the intermediate mesoderm to form the kidney
+xref: TAO:0000067
+xref: HOG:0001239 ! pronephric mesoderm
+xref: XAO:0000264 ! pronephric mesenchyme
+synonym: "pronephric mesenchyme" RELATED [XAO:0000264]
+is_a: UBERON:0000926 ! mesoderm
+relationship: part_of UBERON:0003064 ! intermediate mesoderm
+xref: ZFA:0000067 ! pronephric mesoderm
+
+[Term]
 id: UBERON:0002120
 name: pronephros
 alt_id: UBERON:FMA_72170-MIAA_0000117-XAO_0002000-ZFA_0000151
@@ -29518,7 +29571,7 @@ xref: XAO:0002000 ! pronephric kidney
 xref: ZFA:0000151 ! pronephros
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0002113 ! kidney
-relationship: develops_from UBERON:0003104 ! mesenchyme
+relationship: develops_from UBERON:0005721 ! pronephric mesoderm
 relationship: part_of UBERON:0002323 ! body cavity
 xref: ncithesaurus:Pronephros ! Pronephros
 xref: BTO:0001541 ! pronephros
@@ -31069,7 +31122,7 @@ xref: EHDAA2:0000983 ! lens vesicle
 id: UBERON:0004128
 name: optic vesicle
 def: "The optic vesicle is the evagination of neurectoderm that precedes formation of the optic cup[GO]. Portion of tissue that is comprised of neuroepitheium which has pinched off from the anterior neural keel and will form the optic cup[ZFA]." [GO:0003404, Wikipedia:Optic_vesicles]
-comment: Genes: Six3, Pax6, Rx1 are expressed together in the tip of the neural plate [ISBN:9780878932504]
+comment: Genes: Six3, Pax6, Rx1 are expressed together in the tip of the neural plate [ISBN:9780878932504 "Developmental Biology"]
 xref: XAO:0000228 ! eye vesicle
 xref: ZFA:0000050 ! optic vesicle
 xref: EMAPA:16540 ! optic vesicle
@@ -32075,7 +32128,7 @@ def: "Fetal membrane that crosses the pupil." [UBERON:cjm]
 comment: This class was created automatically from a combination of ontologies
 xref: FMA:77663 ! Pupillary membrane
 xref: MA:0001293 ! pupillary membrane
-is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005630 ! fetal membrane
 relationship: part_of UBERON:0001771 ! pupil
 
 [Term]
@@ -32143,16 +32196,40 @@ relationship: part_of UBERON:0002273 ! lateral zone of hypothalamus
 id: UBERON:0002275
 name: reticular formation
 alt_id: UBERON:FMA_77719-ZFA_0000421
-def: "A region extending from the PONS & MEDULLA OBLONGATA through the MESENCEPHALON, characterized by a diversity of neurons of various sizes and shapes, arranged in different aggregations and enmeshed in a complicated fiber network." [Wikipedia:Reticular_formation]
-comment: This class was created automatically from a combination of ontologies
+comment: note that this class denotes the generic structure, and not a specific one such as medullary or pontine reticular formation
 subset: uberon_slim
 xref: FMA:77719 ! Reticular formation
-xref: GAID:588 ! reticular formation
+is_a: UBERON:0000073 ! regional part of nervous system
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Gray701.png/200px-Gray701.png
+
+[Term]
+id: UBERON:0002559
+name: medullary reticular formation
+def: "The reticular formation is a brain nucleus located in the medulla oblongata" [GO:0021723]
+alt_id: UBERON:NIF_GrossAnatomy_birnlex_1020-FMA_72241
+synonym: "bulbar reticular formation" EXACT [FMA:72241]
+synonym: "reticular formation of medulla" EXACT [FMA:72241]
+synonym: "rhombencephalic reticular formation" EXACT [GO:0021723]
+synonym: "medullary reticular nucleus" EXACT [MA:0001049]
+synonym: "reticular formation" BROAD [ZFA:0000421]
+xref: FMA:72241 ! Medullary reticular formation
+xref: NIF_GrossAnatomy:birnlex_1020 ! Medullary reticular formation
+xref: MA:0001049 ! medullary reticular nucleus
 xref: TAO:0000421 ! reticular formation
 xref: ZFA:0000421 ! reticular formation
-is_a: UBERON:0000064 ! organ part
+xref: GAID:588 ! reticular formation
+is_a: UBERON:0002275 ! reticular formation
+intersection_of: UBERON:0002275 ! reticular formation
+intersection_of: part_of UBERON:0001896 ! medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Gray701.png/200px-Gray701.png
+synonym: "bulb reticular formation" EXACT [OBOL:automatic]
+synonym: "medulla oblongata reticular formation" EXACT [OBOL:automatic]
+synonym: "medulla oblonmgata reticular formation" EXACT [OBOL:automatic]
+synonym: "metepencephalon reticular formation" EXACT [OBOL:automatic]
+synonym: "reticular formation of bulb" EXACT [OBOL:automatic]
+synonym: "reticular formation of medulla oblongata" EXACT [OBOL:automatic]
+synonym: "reticular formation of medulla oblonmgata" EXACT [OBOL:automatic]
+synonym: "reticular formation of metepencephalon" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0002276
@@ -32272,6 +32349,7 @@ def: "The two lateral ventricles are a cavity in each of the cerebral hemisphere
 comment: Paired structure
 subset: uberon_slim
 synonym: "telencephalic ventricle" EXACT [ZFA:0000696, HOG:0000643]
+synonym: "telencephalon lateral ventricle" EXACT [EHDAA2:0001984]
 xref: BTO:0000879
 xref: EHDAA:3502 ! lateral ventricle
 xref: EHDAA:6576 ! lateral ventricles
@@ -32281,13 +32359,20 @@ xref: MA:0000192 ! lateral ventricle
 xref: NIF_GrossAnatomy:birnlex_1263 ! Lateral ventricle
 xref: OpenCyc:Mx4rvYsFdZwpEbGdrcN5Y29ycA
 xref: ZFA:0000696 ! telencephalic ventricle
+xref: EHDAA2:0001984 ! telencephalon lateral ventricle
 is_a: UBERON:0004086 ! brain ventricle
+relationship: part_of UBERON:0001893 ! telencephalon
 xref: ncithesaurus:Lateral_Ventricle ! Lateral Ventricle
 xref: EFO:0001961 ! lateral ventricle
 xref: OpenCyc:Mx4rvYsFdZwpEbGdrcN5Y29ycA ! lateral ventricle
 xref: HOG:0000643 ! telencephalic ventricle
-relationship: part_of UBERON:0001893 ! telencephalon
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Gray734.png/200px-Gray734.png
+
+[Term]
+id: UBERON:0005683
+name: telencephalon lateral ventricle
+is_obsolete: true
+xref: EHDAA2:0001984 ! telencephalon lateral ventricle
 
 [Term]
 id: UBERON:0002286
@@ -32360,6 +32445,7 @@ def: "A choroid plexus that is part of a third ventricle [Obol]." [OBOL:automati
 
 [Term]
 id: UBERON:0002289
+alt_id: UBERON:0005684
 name: cerebral aqueduct
 alt_id: UBERON:FMA_78467-MA_0000208
 def: "The mesencephalic duct, also known as the aqueductus mesencephali, aqueduct of Sylvius or the cerebral aqueduct, contains cerebrospinal fluid (CSF), is within the mesencephalon (or midbrain) and connects the third ventricle in the diencephalon to the fourth ventricle, which is between the pons and cerebellum. [WP,unvetted]." [Wikipedia:Cerebral_aqueduct]
@@ -32371,6 +32457,7 @@ synonym: "aqueduct of sylvius" EXACT []
 synonym: "cerebral aqueduct of sylvius" EXACT []
 synonym: "cerebral aquaduct" EXACT [ZFA:0000159]
 synonym: "tectal ventricle" EXACT [ZFA:0000159]
+synonym: "midbrain cerebral aqueduct" EXACT [EHDAA2:0001163]
 xref: EHDAA:3696 ! cerebral aqueduct
 xref: FMA:78467 ! Cerebral aqueduct
 xref: GAID:583 ! cerebral aqueduct
@@ -32378,6 +32465,7 @@ xref: HOG:0000832 ! cerebral aqueduct
 xref: MA:0000208 ! cerebral aqueduct
 xref: NIF_GrossAnatomy:birnlex_1261 ! Cerebral aqueduct
 xref: ZFA:0000159 ! tectal ventricle 
+xref: EHDAA2:0001163 ! midbrain cerebral aqueduct
 is_a: UBERON:0004086 ! brain ventricle
 relationship: part_of UBERON:0001891 ! midbrain
 xref: ncithesaurus:Aqueduct_of_Sylvius ! Aqueduct of Sylvius
@@ -32977,6 +33065,19 @@ xref: NIF_GrossAnatomy:birnlex_1502 ! Fimbria of hippocampus
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001954 ! hippocampus
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Gray749.png/200px-Gray749.png
+
+[Term]
+id: UBERON:0005159
+name: pyramid of medulla oblongata
+def: "The anterior or ventral portion of the medulla oblongata is named the pyramid and lies between the anterior median fissure and the antero-lateral sulcus. Its upper end is slightly constricted, and between it and the pons the fibers of the abducent nerve emerge; a little below the pons it becomes enlarged and prominent, and finally tapers into the anterior funiculus of the medulla spinalis, with which, at first sight, it appears to be directly continuous[WP]." [Wikipedia:Pyramid_(brainstem)] 
+synonym: "lobule VIII of Larsell" EXACT [FMA:75254]
+synonym: "medullary pyramid" EXACT [FMA:75254]
+synonym: "pyramid of medulla oblongata" EXACT [Wikipedia:Pyramid_(brainstem)]
+xref: FMA:75254 ! pyramid of medulla
+synonym: "pyramid of medulla" EXACT [FMA:75254]
+is_a: UBERON:0002678 ! regional part of medulla oblongata
+relationship: part_of UBERON:0001896 ! medulla oblongata
+disjoint_from: UBERON:0004200 ! kidney pyramid
 
 [Term]
 id: UBERON:0002312
@@ -33700,7 +33801,7 @@ id: UBERON:0001133
 name: cardiac muscle tissue
 alt_id: UBERON:FMA_14068-MA_0002441
 def: "Muscle composed of cardiac muscle cells that is part of the heart[ZFA]. involuntary striated muscle found in the walls of the heart, specifically the myocardium[Wikipedia]. Tissue which consists of cardiac myocytes surrounded by cardiac endomysium. Examples: Cardiac muscle tissue proper, conducting tissue of heart[FMA]." [FMA:14068]
-comment: check relationship with myocardium
+comment: check relationship with myocardium. part_of in MA - but we also have a more specific class 'cardiac muscle tissue of myocardium'
 subset: uberon_slim
 synonym: "cardiac muscle" EXACT []
 xref: BTO:0000199
@@ -33710,10 +33811,6 @@ xref: galen:CardiacMuscleTissue
 xref: MA:0002441 ! cardiac muscle tissue
 xref: ZFA:0005280 ! cardiac muscle
 is_a: UBERON:0002036 ! striated muscle tissue
-intersection_of: UBERON:0002385 ! muscle tissue
-intersection_of: part_of UBERON:0002349 ! myocardium
-intersection_of: has_part CL:0000746 ! cardiac muscle cell
-relationship: part_of UBERON:0002349 ! myocardium
 synonym: "cardiac muscle muscle tissue" EXACT [OBOL:automatic]
 synonym: "cardiac muscle textus muscularis" EXACT [OBOL:automatic]
 synonym: "heart muscle muscle tissue" EXACT [OBOL:automatic]
@@ -34389,25 +34486,6 @@ relationship: part_of UBERON:0001474 ! bone
 relationship: part_of UBERON:0002390 ! hematopoietic system
 xref: ncithesaurus:Bone_Marrow ! Bone Marrow
 xref: OpenCyc:Mx4rvVm-FpwpEbGdrcN5Y29ycA ! bone marrow
-
-[Term]
-id: UBERON:0002372
-name: tonsil
-alt_id: UBERON:FMA_9609-MA_0000143
-def: "Portion of lymphoid tissue on either side of the throat." [Wikipedia:Tonsil]
-comment: Most commonly, the term "tonsils" refers to the palatine tonsils that can be seen in the back of the throat.
-subset: uberon_slim
-xref: BTO:0001387
-xref: FMA:9609 ! Tonsil
-xref: GAID:341 ! tonsil
-xref: HOG:0001139 ! tonsil
-xref: MA:0000143 ! tonsil
-xref: OpenCyc:Mx4rvVivrZwpEbGdrcN5Y29ycA
-is_a: UBERON:0001744 ! lymphoid tissue
-relationship: part_of UBERON:0001735 ! tonsillar ring
-xref: ncithesaurus:Tonsil ! Tonsil
-xref: EFO:0001401 ! tonsil
-xref: OpenCyc:Mx4rvVivrZwpEbGdrcN5Y29ycA ! tonsil
 
 [Term]
 id: UBERON:0002373
@@ -37889,30 +37967,6 @@ xref: FMA:12237 ! Organ cavity
 xref: NIF_GrossAnatomy:birnlex_1019 ! Organ cavity
 is_a: UBERON:0002553 ! anatomical cavity
 
-[Term]
-id: UBERON:0002559
-name: medullary reticular formation
-def: "The reticular formation is a brain nucleus located in the medulla oblongata" [GO:0021723]
-alt_id: UBERON:NIF_GrossAnatomy_birnlex_1020-FMA_72241
-synonym: "bulbar reticular formation" EXACT [FMA:72241]
-synonym: "reticular formation of medulla" EXACT [FMA:72241]
-synonym: "rhombencephalic reticular formation" EXACT [GO:0021723]
-synonym: "medullary reticular nucleus" EXACT [MA:0001049]
-xref: FMA:72241 ! Medullary reticular formation
-xref: NIF_GrossAnatomy:birnlex_1020 ! Medullary reticular formation
-xref: MA:0001049 ! medullary reticular nucleus
-is_a: UBERON:0002275 ! reticular formation
-intersection_of: UBERON:0002275 ! reticular formation
-intersection_of: part_of UBERON:0001896 ! medulla oblongata
-relationship: part_of UBERON:0001896 ! medulla oblongata
-synonym: "bulb reticular formation" EXACT [OBOL:automatic]
-synonym: "medulla oblongata reticular formation" EXACT [OBOL:automatic]
-synonym: "medulla oblonmgata reticular formation" EXACT [OBOL:automatic]
-synonym: "metepencephalon reticular formation" EXACT [OBOL:automatic]
-synonym: "reticular formation of bulb" EXACT [OBOL:automatic]
-synonym: "reticular formation of medulla oblongata" EXACT [OBOL:automatic]
-synonym: "reticular formation of medulla oblonmgata" EXACT [OBOL:automatic]
-synonym: "reticular formation of metepencephalon" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0002560
@@ -45043,9 +45097,10 @@ xref: HOG:0000649 ! midbrain-hindbrain boundary
 xref: TAO:0000042 ! midbrain hindbrain boundary
 xref: XAO:0000016 ! midbrain-hindbrain boundary
 xref: ZFA:0000042 ! midbrain hindbrain boundary
+xref: EHDAA2:0000757 ! hindbrain isthmus
 is_a: UBERON:0000015 ! anatomical boundary
 relationship: part_of UBERON:0000955 ! brain
-xref: EHDAA2:0000892 ! isthmus
+disjoint_from: UBERON:0001609 ! isthmus of thyroid gland
 
 [Term]
 id: UBERON:0005284
@@ -45262,12 +45317,11 @@ id: UBERON:0003054
 name: roof plate
 alt_id: UBERON:XAO_0000022-ZFA_0007058
 def: "Organizing center located at the dorsal midline of the neural tube that influences the development of the nervous system, controlling the specification and differentiation of dorsal neuronal cell types[XAO]. a single row of glia at the dorsal midline of the developing neural tube. This region provides inductive signals for the specification of neuronal cell types and of the specification of neural crest cells. The cells comprising the roof plate are the precursors to radial glial cells[GO]. The thin layer of the embryonic neural tube that connects the lateral plates dorsally." [GO:0021509, http://medical-dictionary.thefreedictionary.com/roof+plate, PMID:15378040, Wikipedia:Roof_plate, XAO:0000022]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - Note that although this is classically defined as being located on the neural tube, in many AOs the roof plate continues post-embryonically after the neural tube has ceased to exist. Consider 'roof plate of neural tube'. 
 subset: uberon_slim
 synonym: "alar lamina" RELATED [Wikipedia:Alar_lamina]
 synonym: "alar plate" RELATED [Wikipedia:Alar_plate]
 synonym: "roofplate" EXACT []
-synonym: "spinal cord roof" RELATED [XAO:0000022]
 xref: EHDAA:1336 ! roof plate
 xref: EHDAA:1350 ! roof plate
 xref: EHDAA:1358 ! roof plate
@@ -45322,10 +45376,20 @@ xref: EHDAA:874 ! roof plate
 xref: EHDAA:884 ! roof plate
 xref: EHDAA:894 ! roof plate
 xref: EHDAA:916 ! roof plate
-xref: XAO:0000022 ! roof plate
 xref: ZFA:0007058 ! roof plate
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0001017 ! central nervous system
+
+[Term]
+id: UBERON:0005724
+name: roof plate spinal cord region
+xref: TAO:0001177
+xref: XAO:0000022 ! roof plate
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0003054 ! roof plate
+intersection_of: part_of UBERON:0002240 ! spinal cord
+! no mapping (ZFS:0000029) -- relationship: start ZFS:0000029 ! Pharyngula:Prim-5
+xref: ZFA:0001177 ! roof plate spinal cord region
 
 [Term]
 id: UBERON:0004063
@@ -45722,11 +45786,10 @@ id: UBERON:0003079
 name: floor plate
 alt_id: UBERON:XAO_0000306-ZFA_0000022
 def: "Organizing center consisting of a small group of cells located at the ventral midline of the neural tube that influences the development of the nervous system, governing the specification of neuronal cell types and directing axonal trajectories[XAO]. a structure integral to the developing nervous system of vertebrate organisms. Located on the ventral midline of the embryonic neural tube, the floor plate is a specialized glial structure that spans the anteroposterior axis from the midbrain to the tail regions. It has been shown that the floor plate is conserved among vertebrates with homologous structures in invertebrates such as the fruit fly Drosophila  and the nematode C. elegans. Functionally, the structure serves as an organizer to ventralize tissues in the embryo as well as to guide neuronal positioning and differentiation along the dorsoventral axis of the neural tube[WP]." [GO:0021508, PMID:15738958, Wikipedia:Floor_plate]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - Note that although this is classically defined as being located on the neural tube, in many AOs the floor plate continues post-embryonically after the neural tube has ceased to exist. Consider 'floor plate of neural tube'. 
 subset: uberon_slim
 synonym: "flexural organ" RELATED []
 synonym: "floorplate" EXACT []
-synonym: "spinal cord floor" RELATED []
 xref: EHDAA:1375 ! floor plate
 xref: EHDAA:1385 ! floor plate
 xref: EHDAA:1395 ! floor plate
@@ -45788,13 +45851,42 @@ xref: EHDAA:878 ! floor plate
 xref: EHDAA:888 ! floor plate
 xref: EHDAA:910 ! floor plate
 xref: TAO:0000022 ! floor plate
-xref: XAO:0000306 ! floor plate
 xref: ZFA:0000022 ! floor plate
 is_a: UBERON:0002050 ! embryonic structure
-relationship: part_of UBERON:0001049 ! neural tube
+relationship: part_of UBERON:0001016 ! nervous system
 xref: BTO:0001720 ! floor plate
 xref: EHDAA2:0000545 ! floor plate
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Gray642.png/200px-Gray642.png
+
+[Term]
+id: UBERON:0005723
+name: floor plate spinal cord region
+synonym: "floorplate spinal cord" EXACT  [ZFA:0000890]
+xref: TAO:0000890
+xref: XAO:0000306 ! floor plate
+xref: HOG:0000787 ! floor plate spinal cord 
+xref: EMAPA:17578 ! floor plate
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0003079 ! floor plate
+intersection_of: part_of UBERON:0002240 ! spinal cord
+relationship: develops_from UBERON:0003306 ! floor plate of neural tube
+xref: ZFA:0000890 ! floor plate spinal cord region
+
+[Term]
+id: UBERON:0003306
+name: floor plate of neural tube
+xref: EHDAA:2871 ! floor plate
+xref: EHDAA:910 ! floor plate
+xref: ZFA:0001434 ! floor plate neural tube
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0003079 ! floor plate
+intersection_of: part_of  UBERON:0001049 ! neural tube
+synonym: "floorplate of neural tube" EXACT [OBOL:automatic]
+synonym: "neural tube floor plate" EXACT [OBOL:automatic]
+synonym: "neural tube floorplate" EXACT [OBOL:automatic]
+xref: HOG:0000300 ! floor plate neural tube
+xref: EHDAA2:0001256 ! neural tube floor plate
+def: "A floor plate that is part of a neural tube [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0003080
@@ -45885,7 +45977,7 @@ xref: FMA:72168 ! nephrogenic cord
 [Term]
 id: UBERON:0004876
 name: urogenital ridge
-def: "embryological  structure which give rise to a portion of the external genitalia[WP]." [Wikipedia:Urogenital_folds]
+def: "An embryological  structure which give rise to a portion of the external genitalia. It differentiates into two structures: gonadal ridge -- medial -- primarily reproductive system; nephrogenic cord -- lateral -- primarily urinary system. In the female, the urogenital folds become the labia minora. In contrast, the labia majora are formed by the labioscrotal folds; In the male, they form the spongy urethra and a portion of the shaft of the penis, not including the glans.[WP]." [Wikipedia:Urogenital_folds]
 comment: Less commonly, urogenital fold refers to the fold in the mesonephros  which is the precursor of e.g. the suspensory ligament of the ovary. This is the case in older versions of Gray's anatomy[WP]
 synonym: "urogenital fold" EXACT []
 xref: BTO:0001402 ! urogenital ridge
@@ -46794,7 +46886,7 @@ xref: EHDAA:150 ! chorion
 xref: FMA:80224 ! Chorion
 xref: GAID:1299 ! chorion
 xref: HOG:0000200 ! chorion
-is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0005631 ! extraembryonic membrane
 relationship: adjacent_to UBERON:0000922 ! embryo
 relationship: part_of UBERON:0000992 ! ovary
 xref: ncithesaurus:Chorion ! Chorion
@@ -47735,19 +47827,6 @@ def: "Septum that divides the internal chambers (camerae) of the shell of a ceph
 is_a: UBERON:0003037 ! septum
 
 [Term]
-id: UBERON:0003220
-name: metanephric blastema
-def: "one of the two embryological structures that give rise to the kidney (the other is the ureteric bud). The metanephric blastema mostly develops into nephrons, but can also form parts of the collecting duct system.[WP]. Metanephric mesenchyme is the tissue made up of loosely connected mesenchymal cells in the metanephros[GO]" [GO:0072075, Wikipedia:Metanephric_blastema]
-comment: TODO - split?
-synonym: "metanephric mesenchyme" EXACT [Wikipedia:Metanephric_blastema]
-synonym: "metanephric mesoderm" EXACT [Wikipedia:Metanephric_blastema]
-is_a: UBERON:0002050 ! embryonic structure
-relationship: develops_from UBERON:0003074 ! wolffian duct
-xref: HOG:0000540 ! metanephric mesenchyme
-xref: EHDAA:4041 ! metanephric mesenchyme
-xref: EHDAA:5915 ! metanephric mesenchyme
-
-[Term]
 id: UBERON:0005306
 name: blastema
 def: "A blastema is a mass of cells capable of growth and regeneration into organs  or body parts. Historically blastema have been thought to be composed of undifferentiated pluripotent cells, but recent research indicates that in some organisms blastema may retain memory of tissue origin.[1] Blastemata are typically found in the early stages of an organism's development such as in embryos, and in the regeneration of tissues, organs and bone[WP]. A regenerating tissue composed of a proliferative mass of undifferentiated progenitor cells from which new differentiated structures arise[ZFA]." [ZFIN:ZDB-PUB-061108-12, ZFA:0001270, Wikipedia:Blastema]
@@ -47787,6 +47866,19 @@ xref: EHDAA2:0001973 ! chorion syncytiotrophoblast
 def: "A syncytiotrophoblast that is part of a chorion [Obol]." [OBOL:automatic]
 
 [Term]
+id: UBERON:0000417
+alt_id: UBERON:0003226
+name: primitive endoderm
+alt_id: UBERON:BTO_0002123-FMA_85520
+xref: BTO:0002123
+xref: FMA:85520 ! Primitive endoderm
+xref: EHDAA:44 ! primitive endoderm
+xref: EHDAA:79 ! primitive endoderm
+xref: EMAPA:16051 ! primitive endoderm
+xref: EMAPA:16063 ! primitive endoderm
+is_a: UBERON:0000925 ! endoderm
+
+[Term]
 id: UBERON:0003225
 name: primitive endoderm of inner cell mass
 xref: EHDAA:44 ! primitive endoderm
@@ -47795,19 +47887,6 @@ intersection_of: UBERON:0000417 ! primitive endoderm
 intersection_of: part_of UBERON:0000087 ! inner cell mass
 synonym: "inner cell mass primitive endoderm" EXACT [OBOL:automatic]
 def: "A primitive endoderm that is part of a inner cell mass [Obol]." [OBOL:automatic]
-
-[Term]
-id: UBERON:0003226
-name: primitive endoderm of embryo
-xref: EHDAA:79 ! primitive endoderm
-comment: TODO - check
-intersection_of: UBERON:0000417 ! primitive endoderm
-intersection_of: part_of UBERON:0000922 ! embryo
-synonym: "developmental tissue primitive endoderm" EXACT [OBOL:automatic]
-synonym: "embryo primitive endoderm" EXACT [OBOL:automatic]
-synonym: "primitive endoderm of developmental tissue" EXACT [OBOL:automatic]
-def: "A primitive endoderm that is part of a embryo [Obol]." [OBOL:automatic]
-
 
 [Term]
 id: UBERON:0003229
@@ -48186,15 +48265,16 @@ synonym: "otic placode epithelium" EXACT [OBOL:automatic]
 xref: EHDAA2:0001341 ! otic placode epithelium
 def: "An epithelium that is part of a otic placode [Obol]." [OBOL:automatic]
 
-
 [Term]
 id: UBERON:0003254
 name: ectoderm of amnion
 xref: EHDAA:138 ! ectoderm
+comment: TODO - check
 intersection_of: UBERON:0000924 ! ectoderm
 intersection_of: part_of UBERON:0000305 ! amnion
 synonym: "amnion ectoderm" EXACT [OBOL:automatic]
 xref: HOG:0000621 ! amnion ectoderm
+xref: EHDAA2:0000117 ! amnion ectoderm
 xref: EHDAA2:0000117 ! amnion ectoderm
 def: "An ectoderm that is part of an amnion [Obol]." [OBOL:automatic]
 
@@ -48202,8 +48282,7 @@ def: "An ectoderm that is part of an amnion [Obol]." [OBOL:automatic]
 id: UBERON:0003255
 name: ectoderm of embryo
 xref: EHDAA:132 ! ectoderm
-intersection_of: UBERON:0000924 ! ectoderm
-intersection_of: part_of UBERON:0000922 ! embryo
+is_obsolete: true
 synonym: "developmental tissue ectoderm" EXACT [OBOL:automatic]
 synonym: "ectoderm of developmental tissue" EXACT [OBOL:automatic]
 synonym: "embryo ectoderm" EXACT [OBOL:automatic]
@@ -48213,8 +48292,7 @@ def: "An ectoderm that is part of a embryo [Obol]." [OBOL:automatic]
 id: UBERON:0003256
 name: endoderm of embryo
 xref: EHDAA:94 ! endoderm
-intersection_of: UBERON:0000925 ! endoderm
-intersection_of: part_of UBERON:0000922 ! embryo
+is_obsolete: true
 synonym: "developmental tissue endoderm" EXACT [OBOL:automatic]
 synonym: "embryo endoderm" EXACT [OBOL:automatic]
 synonym: "endoderm of developmental tissue" EXACT [OBOL:automatic]
@@ -48224,6 +48302,7 @@ def: "An endoderm that is part of a embryo [Obol]." [OBOL:automatic]
 id: UBERON:0003257
 name: endoderm of yolk sac
 xref: EHDAA:166 ! endoderm
+comment: TODO - check
 intersection_of: UBERON:0000925 ! endoderm
 intersection_of: part_of UBERON:0001040 ! yolk sac
 synonym: "yolk sac endoderm" EXACT [OBOL:automatic]
@@ -48235,6 +48314,7 @@ def: "An endoderm that is part of a yolk sac [Obol]." [OBOL:automatic]
 id: UBERON:0003258
 name: endoderm of foregut
 xref: EHDAA:524 ! endoderm
+comment: TODO - check
 intersection_of: UBERON:0000925 ! endoderm
 intersection_of: part_of UBERON:0001041 ! foregut
 synonym: "foregut endoderm" EXACT [OBOL:automatic]
@@ -48245,6 +48325,7 @@ def: "An endoderm that is part of a foregut [Obol]." [OBOL:automatic]
 id: UBERON:0003259
 name: endoderm of midgut
 xref: EHDAA:987 ! endoderm
+comment: TODO - check
 intersection_of: UBERON:0000925 ! endoderm
 intersection_of: part_of UBERON:0001045 ! midgut
 synonym: "midgut endoderm" EXACT [OBOL:automatic]
@@ -48256,6 +48337,7 @@ def: "An endoderm that is part of a midgut [Obol]." [OBOL:automatic]
 id: UBERON:0003260
 name: endoderm of hindgut
 xref: EHDAA:979 ! endoderm
+comment: TODO - check
 intersection_of: UBERON:0000925 ! endoderm
 intersection_of: part_of UBERON:0001046 ! hindgut
 synonym: "hindgut endoderm" EXACT [OBOL:automatic]
@@ -48266,6 +48348,7 @@ def: "An endoderm that is part of a hindgut [Obol]." [OBOL:automatic]
 id: UBERON:0003261
 name: endoderm of thyroid primordium
 xref: EHDAA:956 ! endoderm
+comment: TODO - check
 intersection_of: UBERON:0000925 ! endoderm
 intersection_of: part_of UBERON:0003091 ! thyroid primordium
 synonym: "thyroid primordium endoderm" EXACT [OBOL:automatic]
@@ -48276,6 +48359,7 @@ def: "An endoderm that is part of a thyroid primordium [Obol]." [OBOL:automatic]
 id: UBERON:0003262
 name: mesoderm of amnion
 xref: EHDAA:140 ! mesoderm
+comment: TODO - check
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0000305 ! amnion
 synonym: "amnion mesoderm" EXACT [OBOL:automatic]
@@ -48284,20 +48368,10 @@ xref: EHDAA2:0000118 ! amnion mesoderm
 def: "A mesoderm that is part of an amnion [Obol]." [OBOL:automatic]
 
 [Term]
-id: UBERON:0003263
-name: mesoderm of embryo
-xref: EHDAA:183 ! mesoderm
-intersection_of: UBERON:0000926 ! mesoderm
-intersection_of: part_of UBERON:0000922 ! embryo
-synonym: "developmental tissue mesoderm" EXACT [OBOL:automatic]
-synonym: "embryo mesoderm" EXACT [OBOL:automatic]
-synonym: "mesoderm of developmental tissue" EXACT [OBOL:automatic]
-def: "A mesoderm that is part of a embryo [Obol]." [OBOL:automatic]
-
-[Term]
 id: UBERON:0003264
 name: mesoderm of yolk sac
 xref: EHDAA:168 ! mesoderm
+comment: TODO - check
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0001040 ! yolk sac
 synonym: "yolk sac mesoderm" EXACT [OBOL:automatic]
@@ -48308,6 +48382,7 @@ def: "A mesoderm that is part of a yolk sac [Obol]." [OBOL:automatic]
 id: UBERON:0003265
 name: mesoderm of chorion
 xref: EHDAA:154 ! mesoderm
+comment: TODO - check
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0003124 ! chorion
 synonym: "chorion (vertebrates) mesoderm" EXACT [OBOL:automatic]
@@ -48320,8 +48395,7 @@ def: "A mesoderm that is part of a chorion [Obol]." [OBOL:automatic]
 [Term]
 id: UBERON:0004920
 name: mesoderm of gonad
-intersection_of: UBERON:0000926 ! mesoderm
-intersection_of: part_of UBERON:0000991 ! gonad
+is_obsolete: true
 synonym: "gonad mesoderm" EXACT [OBOL:automatic]
 synonym: "gonadal mesoderm" EXACT [OBOL:automatic]
 def: "A mesoderm that is part of a gonad [Obol]." [OBOL:automatic]
@@ -48824,7 +48898,8 @@ name: roof plate of neural tube
 xref: EHDAA:2891 ! roof plate
 xref: EHDAA:916 ! roof plate
 xref: ZFA:0001436 ! roof plate neural tube
-intersection_of: UBERON:0003054 ! roof plate
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0003054 ! roof plate
 intersection_of: part_of UBERON:0001049 ! neural tube
 synonym: "neural tube roof plate" EXACT [OBOL:automatic]
 synonym: "neural tube roofplate" EXACT [OBOL:automatic]
@@ -48838,7 +48913,8 @@ id: UBERON:0003299
 name: roof plate of midbrain
 xref: EHDAA:3712 ! roof plate
 xref: ZFA:0000355 ! roof plate midbrain
-intersection_of: UBERON:0003054 ! roof plate
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0003054 ! roof plate
 intersection_of: part_of UBERON:0001891 ! midbrain
 synonym: "midbrain roof plate" EXACT [OBOL:automatic]
 synonym: "midbrain roofplate" EXACT [OBOL:automatic]
@@ -48852,7 +48928,8 @@ xref: EHDAA2:0001111 ! mesencephalon roof plate
 id: UBERON:0003300
 name: roof plate of telencephalon
 xref: EHDAA:3512 ! roof plate
-intersection_of: UBERON:0003054 ! roof plate
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0003054 ! roof plate
 intersection_of: part_of UBERON:0001893 ! telencephalon
 synonym: "roofplate of telencephalon" EXACT [OBOL:automatic]
 synonym: "telencephalon roof plate" EXACT [OBOL:automatic]
@@ -48868,7 +48945,8 @@ xref: EHDAA:1979 ! roof plate
 xref: EHDAA:2657 ! roof plate
 xref: EHDAA:3494 ! roof plate
 xref: ZFA:0001358 ! roof plate diencephalon
-intersection_of: UBERON:0003054 ! roof plate
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0003054 ! roof plate
 intersection_of: part_of UBERON:0001894 ! diencephalon
 synonym: "between brain roof plate" EXACT [OBOL:automatic]
 synonym: "between brain roofplate" EXACT [OBOL:automatic]
@@ -48893,7 +48971,8 @@ def: "A roof plate that is part of a diencephalon [Obol]." [OBOL:automatic]
 id: UBERON:0003302
 name: roof plate of metencephalon
 xref: EHDAA:5524 ! roof plate
-intersection_of: UBERON:0003054 ! roof plate
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0003054 ! roof plate
 intersection_of: part_of UBERON:0001895 ! metencephalon
 synonym: "epencephalon-2 roof plate" EXACT [OBOL:automatic]
 synonym: "epencephalon-2 roofplate" EXACT [OBOL:automatic]
@@ -48910,7 +48989,8 @@ def: "A roof plate that is part of a metencephalon [Obol]." [OBOL:automatic]
 id: UBERON:0003303
 name: roof plate of medulla oblongata
 xref: EHDAA:7614 ! roof plate
-intersection_of: UBERON:0003054 ! roof plate
+intersection_of: UBERON:0000479 ! portion of tissue
+intersection_of: part_of UBERON:0003054 ! roof plate
 intersection_of: part_of UBERON:0001896 ! medulla oblongata
 synonym: "bulb roof plate" EXACT [OBOL:automatic]
 synonym: "bulb roofplate" EXACT [OBOL:automatic]
@@ -48950,27 +49030,13 @@ synonym: "mesenchyme blood island" EXACT [OBOL:automatic]
 def: "A blood island that is part of a mesenchyme [Obol]." [OBOL:automatic]
 
 [Term]
-id: UBERON:0003306
-name: floor plate of neural tube
-xref: EHDAA:2871 ! floor plate
-xref: EHDAA:910 ! floor plate
-xref: ZFA:0001434 ! floor plate neural tube
-intersection_of: UBERON:0003079 ! floor plate
-intersection_of: part_of UBERON:0001049 ! neural tube
-synonym: "floorplate of neural tube" EXACT [OBOL:automatic]
-synonym: "neural tube floor plate" EXACT [OBOL:automatic]
-synonym: "neural tube floorplate" EXACT [OBOL:automatic]
-xref: HOG:0000300 ! floor plate neural tube
-xref: EHDAA2:0001256 ! neural tube floor plate
-def: "A floor plate that is part of a neural tube [Obol]." [OBOL:automatic]
-
-[Term]
 id: UBERON:0003307
 name: floor plate of midbrain
 xref: EHDAA:3698 ! floor plate
 xref: ZFA:0001677 ! floor plate midbrain
-intersection_of: UBERON:0003079 ! floor plate
-intersection_of: part_of UBERON:0001891 ! midbrain
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0003079 ! floor plate
+intersection_of: part_of  UBERON:0001891 ! midbrain
 synonym: "floorplate of midbrain" EXACT [OBOL:automatic]
 synonym: "midbrain floor plate" EXACT [OBOL:automatic]
 synonym: "midbrain floorplate" EXACT [OBOL:automatic]
@@ -48984,8 +49050,9 @@ id: UBERON:0003308
 name: floor plate of telencephalon
 xref: EHDAA:3498 ! floor plate
 xref: ZFA:0000914 ! floor plate telencephalon
-intersection_of: UBERON:0003079 ! floor plate
-intersection_of: part_of UBERON:0001893 ! telencephalon
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0003079 ! floor plate
+intersection_of: part_of  UBERON:0001893 ! telencephalon
 synonym: "floorplate of telencephalon" EXACT [OBOL:automatic]
 synonym: "telencephalon floor plate" EXACT [OBOL:automatic]
 synonym: "telencephalon floorplate" EXACT [OBOL:automatic]
@@ -49000,8 +49067,9 @@ xref: EHDAA:1975 ! floor plate
 xref: EHDAA:2651 ! floor plate
 xref: EHDAA:3480 ! floor plate
 xref: ZFA:0000871 ! floor plate diencephalon
-intersection_of: UBERON:0003079 ! floor plate
-intersection_of: part_of UBERON:0001894 ! diencephalon
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0003079 ! floor plate
+intersection_of: part_of  UBERON:0001894 ! diencephalon
 synonym: "between brain floor plate" EXACT [OBOL:automatic]
 synonym: "between brain floorplate" EXACT [OBOL:automatic]
 synonym: "diencephalon floor plate" EXACT [OBOL:automatic]
@@ -49025,8 +49093,9 @@ def: "A floor plate that is part of a diencephalon [Obol]." [OBOL:automatic]
 id: UBERON:0003310
 name: floor plate of metencephalon
 xref: EHDAA:5500 ! floor plate
-intersection_of: UBERON:0003079 ! floor plate
-intersection_of: part_of UBERON:0001895 ! metencephalon
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0003079 ! floor plate
+intersection_of: part_of  UBERON:0001895 ! metencephalon
 synonym: "epencephalon-2 floor plate" EXACT [OBOL:automatic]
 synonym: "epencephalon-2 floorplate" EXACT [OBOL:automatic]
 synonym: "floor plate of epencephalon-2" EXACT [OBOL:automatic]
@@ -49042,7 +49111,8 @@ def: "A floor plate that is part of a metencephalon [Obol]." [OBOL:automatic]
 id: UBERON:0003311
 name: floor plate of medulla oblongata
 xref: EHDAA:7590 ! floor plate
-intersection_of: UBERON:0003079 ! floor plate
+intersection_of: UBERON:0000481 ! multi-tissue structure
+intersection_of: part_of UBERON:0003079 ! floor plate
 intersection_of: part_of UBERON:0001896 ! medulla oblongata
 synonym: "bulb floor plate" EXACT [OBOL:automatic]
 synonym: "bulb floorplate" EXACT [OBOL:automatic]
@@ -49645,6 +49715,7 @@ def: "A mucosa that is part of a rectum [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0000317
+alt_id: UBERON:0004981
 name: colonic mucosa
 alt_id: UBERON:0003347
 alt_id: UBERON:BTO_0000271-FMA_14984
@@ -49653,6 +49724,7 @@ synonym: "colon mucosa" EXACT [FMA:14984]
 synonym: "colonic mucous membrane" EXACT [FMA:14984]
 xref: BTO:0000271
 xref: FMA:14984 ! Mucosa of colon
+xref: FMA:85388 ! Mucosa of segment of colon
 xref: EMAPA:27375 ! mucosa
 is_a: UBERON:0000064 ! organ part
 intersection_of: UBERON:0000344 ! mucosa
@@ -49672,7 +49744,6 @@ synonym: "mucous membrane of large bowel" EXACT [OBOL:automatic]
 synonym: "organ mucosa of colon" EXACT [OBOL:automatic]
 synonym: "organ mucosa of large bowel" EXACT [OBOL:automatic]
 def: "A mucosa that is part of a colon [Obol]." [OBOL:automatic]
-
 
 [Term]
 id: UBERON:0003350
@@ -57702,14 +57773,28 @@ xref: GAID:914 ! bruch membrane
 xref: FMA:58438 ! Basal lamina of choroid
 
 [Term]
+id: UBERON:0005630 ! fetal membrane
+name: fetal membrane
+def: "Any membrane that functions for the protection or nourishment of respiration or excretion of a developing fetus." [Real_Dictionary.com:http://www.realdictionary.com/f/dir/fetalmembrane.asp]
+is_a: UBERON:0000158 ! membranous layer
+xref: BTO:0000473 ! fetal membrane
+
+[Term]
+id: UBERON:0005631 ! extraembryonic membrane
+name: extraembryonic membrane
+is_a: UBERON:0005630 ! fetal membrane
+is_a: UBERON:0000478 ! extraembryonic structure
+
+[Term]
 id: UBERON:0005335
 name: chorioallantoic membrane
 def: "The chorioallantoic membrane ( also called the chorioallantois or abbreviated to CAM ) is a vascular membrane found in eggs of some amniotes, such as birds and reptiles. It is formed by the fusion of the mesodermal layers of two developmental structures: the allantois and the chorion. Three different layers compose the chorioallantoic membrane; these are called the chorionic epithelium, the mesenchyme and the allantoic epithelium. Blood capillaries and sinuses are found between epithelial cells of the chorionic layer, allowing close contact (within 0.2 N<m) with air found in pores of the shell membrane of the egg. As a result, the chorioallantoic membrane allows exchange of gases, such as oxygen, to developing embryos. During embryonic development of birds, the chorioallantoic membrane also plays an essential role in bone formation by transporting calcium into the embryo from the eggshell. Chorioalloantoic membranes from developing chicken eggs are routinely used in biological and biomedical research to investigate development, angiogenesis, tumors, and to propagate and investigate viruses or helminths." [Wikipedia:Chorioallantoic_membrane]
-synonym: "chorioallantois" []
-is_a: UBERON:0000158 ! membranous layer
+synonym: "chorioallantois" EXACT []
+is_a: UBERON:0005631 ! extraembryonic membrane
 relationship: develops_from UBERON:0003124 ! chorion
 relationship: develops_from UBERON:0004340 ! allantois
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Smallpox_CAM.png/200px-Smallpox_CAM.png
+xref: BTO:0000251 ! chorioallantois
 
 [Term]
 id: UBERON:0005336
@@ -58979,11 +59064,14 @@ xref: OpenCyc:Mx4rvVjpf5wpEbGdrcN5Y29ycA ! fingertip
 
 [Term]
 id: UBERON:0003662
+alt_id: UBERON:0005634
 name: forelimb muscle
 xref: MA:0000615 ! forelimb muscle
 xref: FMA:37370 ! muscle of arm
 xref: BTO:0000479 ! forelimb muscle
 xref: AAO:0000204 ! forelimb_muscles
+xref: EHDAA2:0000141 ! arm muscle system
+synonym: "arm muscle system" EXACT [EHDAA2:0000141]
 synonym: "musculature of arm" RELATED PLURAL []
 synonym: "musculature of the arm" RELATED PLURAL []
 intersection_of: UBERON:0001630 ! muscle organ
@@ -63547,7 +63635,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Metacarpals_numbe
 
 [Term]
 id: UBERON:0004461
-name: Musculature of head
+name: musculature of head
 xref: FMA:71287 ! Musculature of head
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0000033 ! part_of head
@@ -63555,7 +63643,7 @@ def: "A musculature that is part of a head [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004462
-name: Musculature of body wall
+name: musculature of body wall
 xref: FMA:86931 ! Musculature of body wall
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0000309 ! body wall
@@ -63563,7 +63651,7 @@ def: "A musculature that is part of a body wall [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004463
-name: Musculature of thigh
+name: musculature of thigh
 xref: FMA:50208 ! Musculature of thigh
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0000376 ! part_of upper leg
@@ -63571,7 +63659,7 @@ def: "A musculature that is part of a hindlimb stylopod [Obol]." [OBOL:automatic
 
 [Term]
 id: UBERON:0004464
-name: Musculature of thorax
+name: musculature of thorax
 xref: FMA:71293 ! Musculature of thorax
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0000915 ! part_of thorax
@@ -63579,7 +63667,7 @@ def: "A musculature that is part of a thorax [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004465
-name: Musculature of neck
+name: musculature of neck
 xref: FMA:71290 ! Musculature of neck
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0000974 ! part_of neck
@@ -63587,15 +63675,17 @@ def: "A musculature that is part of a neck [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004466
-name: Musculature of leg
+alt_id: UBERON:0005632
+name: musculature of leg
 xref: FMA:50211 ! Musculature of leg
+xref: EHDAA2:0000973 ! leg muscle system
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0000978 ! part_of leg
 def: "A musculature that is part of a leg [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004467
-name: Musculature of pharynx
+name: musculature of pharynx
 xref: FMA:264609 ! Musculature of pharynx
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001042 ! pharynx
@@ -63603,7 +63693,7 @@ def: "A musculature that is part of a pharynx [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004468
-name: Set of muscles of vertebral column
+name: set of muscles of vertebral column
 xref: FMA:33061 ! Set of muscles of vertebral column
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001130 ! part_of vertebral column
@@ -63611,7 +63701,7 @@ def: "A musculature that is part of a vertebral column [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004469
-name: Musculature of back
+name: musculature of back
 xref: FMA:71291 ! Musculature of back
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001137 ! part_of back
@@ -63619,15 +63709,19 @@ def: "A musculature that is part of a back [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004470
-name: Musculature of pelvic girdle
+alt_id: UBERON:0005633
+name: musculature of pelvic girdle
 xref: FMA:50205 ! Musculature of pelvic girdle
+xref: EHDAA2:0001429 ! pelvic girdle muscle system
+synonym: "pelvic girdle muscle system" EXACT [EHDAA2:0001429]
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001271 ! part_of pelvic girdle
 def: "A musculature that is part of a pelvic girdle [Obol]." [OBOL:automatic]
 
+
 [Term]
 id: UBERON:0004471
-name: Musculature of pectoral girdle
+name: musculature of pectoral girdle
 xref: FMA:33519 ! Musculature of pectoral girdle
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001421 ! part_of pectoral girdle
@@ -63635,7 +63729,7 @@ def: "A musculature that is part of a pectoral girdle [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004472
-name: Musculature of chest
+name: musculature of chest
 xref: FMA:74779 ! Musculature of chest
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001443 ! part_of chest
@@ -63643,7 +63737,7 @@ def: "A musculature that is part of a chest [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004473
-name: Musculature of face
+name: musculature of face
 xref: FMA:71288 ! Musculature of face
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001456 ! part_of face
@@ -63651,7 +63745,7 @@ def: "A musculature that is part of a face [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004474
-name: Musculature of arm
+name: musculature of arm
 xref: FMA:50202 ! Musculature of arm
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001460 ! part_of arm
@@ -63659,7 +63753,7 @@ def: "A musculature that is part of an arm [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004475
-name: Musculature of hip
+name: musculature of hip
 xref: FMA:50227 ! Musculature of hip
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001464 ! part_of hip
@@ -63667,7 +63761,7 @@ def: "A musculature that is part of a hip [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004476
-name: Musculature of shoulder
+name: musculature of shoulder
 xref: FMA:50220 ! Musculature of shoulder
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001467 ! part_of shoulder
@@ -63683,7 +63777,7 @@ def: "A musculature that is part of a tongue [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004478
-name: Musculature of larynx
+name: musculature of larynx
 xref: FMA:264611 ! Musculature of larynx
 xref: FMA:46616 ! Set of laryngeal muscles
 intersection_of: UBERON:0001015 ! musculature
@@ -63693,7 +63787,7 @@ def: "A musculature that is part of a larynx [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004479
-name: Musculature of trunk
+name: musculature of trunk
 xref: FMA:50187 ! Musculature of trunk
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0002100 ! part_of trunk
@@ -63701,15 +63795,18 @@ def: "A musculature that is part of a trunk [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004480
-name: Musculature of limb
+alt_id: UBERON:0005635
+name: musculature of limb
 xref: FMA:50188 ! Musculature of limb
+xref: EHDAA2:0000995 ! limb muscle system
+synonym: "limb muscle system" EXACT [EHDAA2:0000995]
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0002101 ! part_of limb
 def: "A musculature that is part of a limb [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004481
-name: Musculature of upper limb
+name: musculature of upper limb
 xref: FMA:71296 ! Musculature of upper limb
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0002102 ! part_of forelimb
@@ -63717,7 +63814,7 @@ def: "A musculature that is part of a forelimb [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004482
-name: Musculature of lower limb
+name: musculature of lower limb
 xref: FMA:71297 ! Musculature of lower limb
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0002103 ! part_of hindlimb
@@ -63749,7 +63846,7 @@ def: "A musculature that is part of a pelvis [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004486
-name: Musculature of perineum
+name: musculature of perineum
 xref: FMA:71295 ! Musculature of perineum
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0002356 ! perineum
@@ -63757,7 +63854,7 @@ def: "A musculature that is part of a perineum [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004487
-name: Musculature of forearm
+name: musculature of forearm
 xref: FMA:39089 ! Musculature of forearm
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0002386 ! part_of lower arm
@@ -63765,7 +63862,7 @@ def: "A musculature that is part of a lower arm [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004488
-name: Musculature of foot
+name: musculature of foot
 xref: FMA:50214 ! Musculature of foot
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0002387 ! part_of foot
@@ -63773,7 +63870,7 @@ def: "A musculature that is part of a foot [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004489
-name: Musculature of hand
+name: musculature of hand
 xref: FMA:42368 ! Musculature of hand
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0002398 ! part_of hand
@@ -67317,21 +67414,6 @@ synonym: "ureter organ mucosa" EXACT [OBOL:automatic]
 def: "A mucosa that is part of a ureter [Obol]." [OBOL:automatic]
 
 [Term]
-id: UBERON:0004981
-name: mucosa of segment of colon
-xref: FMA:85388 ! Mucosa of segment of colon
-intersection_of: UBERON:0000344 ! mucosa
-intersection_of: part_of UBERON:0000168 ! part_of segment of colon
-synonym: "mucosa of organ of segment of colon" EXACT [OBOL:automatic]
-synonym: "mucous membrane of segment of colon" EXACT [OBOL:automatic]
-synonym: "organ mucosa of segment of colon" EXACT [OBOL:automatic]
-synonym: "segment of colon mucosa" EXACT [OBOL:automatic]
-synonym: "segment of colon mucosa of organ" EXACT [OBOL:automatic]
-synonym: "segment of colon mucous membrane" EXACT [OBOL:automatic]
-synonym: "segment of colon organ mucosa" EXACT [OBOL:automatic]
-def: "A mucosa that is part of a segment of colon [Obol]." [OBOL:automatic]
-
-[Term]
 id: UBERON:0004982
 name: mucosa of epiglottis
 xref: FMA:64015 ! Mucosa of epiglottis
@@ -69165,9 +69247,8 @@ def: "A ureteric bud that is part of a metanephros [Obol]." [OBOL:automatic]
 [Term]
 id: UBERON:0005081
 name: ureter ureteric bud
-def: "The ureter ureteric bud is the initial structure that forms the ureter[GO]." [GO:0035503]
+def: "The portion of the ureteric bud that contributes to the morphogenesis of the ureter. The ureter ureteric bud is the initial structure that forms the ureter[GO]." [GO:0035503]
 is_a: UBERON:0000084 ! ureteric bud
-relationship: part_of UBERON:0000056 ! ureter
 intersection_of: UBERON:0000084 ! ureteric bud
 intersection_of: develops_into UBERON:0000056 ! ureter
 
@@ -69648,16 +69729,6 @@ synonym: "parenchyma of central nervous system" EXACT []
 intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: part_of UBERON:0001017 ! central nervous system
 def: "A parenchyma that is part of a central nervous system [Obol]." [OBOL:automatic]
-
-[Term]
-id: UBERON:0005159
-name: pyramid of medulla
-def: "The anterior or ventral portion of the medulla oblongata is named the pyramid and lies between the anterior median fissure and the antero-lateral sulcus. Its upper end is slightly constricted, and between it and the pons the fibers of the abducent nerve emerge; a little below the pons it becomes enlarged and prominent, and finally tapers into the anterior funiculus of the medulla spinalis, with which, at first sight, it appears to be directly continuous[WP]." [Wikipedia:Pyramid_(brainstem)] 
-synonym: "medullary pyramid" EXACT [FMA:75254]
-synonym: "pyramid of medulla oblongata" EXACT [Wikipedia:Pyramid_(brainstem)]
-xref: FMA:75254
-is_a: UBERON:0002678 ! regional part of medulla oblongata
-relationship: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0005160
@@ -71627,7 +71698,8 @@ xref: EHDAA2:0001921 ! stomach fundus epithelium
 [Term]
 id: UBERON:0005478
 name: sulcus limitans
-def: "In the floor of the fourth ventricle, the sulcus limitans separates the cranial nerve motor nuclei (medial) from the sensory nuclei (lateral). In the superior part of the rhomboid fossa, it corresponds with the lateral limit of the fossa and presents a bluish-gray area, the locus ceruleus (which owes its color to an underlying patch of deeply pigmented nerve cells, termed the substantia ferruginea). It is seen as slight depressions separating the basal and alar plates." [Wikipedia:Sulcus_limitans]
+def: "In the floor of the fourth ventricle, the sulcus limitans separates the cranial nerve motor nuclei (medial) from the sensory nuclei (lateral). In the superior part of the rhomboid fossa, it corresponds with the lateral limit of the fossa and presents a bluish-gray area, the locus ceruleus (which owes its color to an underlying patch of deeply pigmented nerve cells, termed the substantia ferruginea). It is seen as slight depressions separating the basal and alar plates[WP]. a longitudinal groove in the neural tube wall of the embryo; stretches from the mesencephalon caudad[TMD]." [Wikipedia:Sulcus_limitans, http://medical-dictionary.thefreedictionary.com/Sulcus+limitans]
+comment: TODO consider splitting - separate class for neural tube sulcus limitans
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of UBERON:0002422 ! fourth ventricle
 xref: FMA:78496 ! Sulcus limitans
@@ -72402,6 +72474,589 @@ is_a: UBERON:0001064 ! pancreatic duct
 xref: MA:0000126 ! ventral pancreatic duct
 xref: EHDAA2:0002177 ! ventral pancreatic duct
 xref: HOG:0000256 ! ventral pancreatic duct
+
+
+[Term]
+id: UBERON:0005636
+name: caecum epithelium
+xref: EHDAA2:0000209 ! caecum epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001153 ! cecum
+
+[Term]
+id: UBERON:0005637
+name: pyloric region epithelium
+xref: EHDAA2:0001582 ! pyloric region epithelium
+xref: EHDAA2:0001927 ! stomach pyloric region epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001166 ! pylorus
+
+[Term]
+id: UBERON:0005638
+name: anterior chamber epithelium
+xref: EHDAA2:0000130 ! anterior chamber epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0001766 ! anterior chamber of eyeball
+
+[Term]
+id: UBERON:0005639
+name: right lung cranial lobe epithelium
+xref: EHDAA2:0001751 ! right lung cranial lobe epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0002170 ! upper lobe of right lung
+
+[Term]
+id: UBERON:0005640
+name: right lung caudal lobe epithelium
+xref: EHDAA2:0001743 ! right lung caudal lobe epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0002171 ! lower lobe of right lung
+
+[Term]
+id: UBERON:0005641
+name: otocyst epithelium
+xref: EHDAA2:0001344 ! otocyst epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003051 ! ear vesicle
+
+[Term]
+id: UBERON:0005642
+name: ultimobranchial body epithelium
+xref: EHDAA2:0002105 ! ultimobranchial body epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003092 ! ultimobranchial body
+
+[Term]
+id: UBERON:0005643
+name: foregut duodenum epithelium
+xref: EHDAA2:0000563 ! foregut duodenum epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003286 ! duodenum of foregut
+
+[Term]
+id: UBERON:0005644
+name: midgut duodenum epithelium
+xref: EHDAA2:0001192 ! midgut duodenum epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003287 ! duodenum of midgut
+
+[Term]
+id: UBERON:0005645
+name: finger 2 epithelium
+xref: EHDAA2:0000518 ! finger 2 epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003622 ! hand digit 2
+
+[Term]
+id: UBERON:0005646
+name: finger 3 epithelium
+xref: EHDAA2:0000524 ! finger 3 epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003623 ! hand digit 3
+
+[Term]
+id: UBERON:0005647
+name: finger 4 epithelium
+xref: EHDAA2:0000530 ! finger 4 epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003624 ! hand digit 4
+
+[Term]
+id: UBERON:0005648
+name: finger 5 epithelium
+xref: EHDAA2:0000536 ! finger 5 epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003625 ! hand digit 5
+
+[Term]
+id: UBERON:0005649
+name: toe 2 epithelium
+xref: EHDAA2:0002043 ! toe 2 epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003632 ! foot digit 2
+
+[Term]
+id: UBERON:0005650
+name: toe 3 epithelium
+xref: EHDAA2:0002048 ! toe 3 epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003633 ! foot digit 3
+
+[Term]
+id: UBERON:0005651
+name: toe 4 epithelium
+xref: EHDAA2:0002053 ! toe 4 epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003634 ! foot digit 4
+
+[Term]
+id: UBERON:0005652
+name: toe 5 epithelium
+xref: EHDAA2:0002058 ! toe 5 epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003635 ! foot digit 5
+
+[Term]
+id: UBERON:0005653
+name: upper jaw molar epithelium
+xref: EHDAA2:0002126 ! upper jaw molar epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003666 ! upper jaw molar
+
+[Term]
+id: UBERON:0005654
+name: lower jaw molar epithelium
+xref: EHDAA2:0001026 ! lower jaw molar epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0003667 ! lower jaw molar
+
+[Term]
+id: UBERON:0005655
+name: right lung accessory lobe epithelium
+xref: EHDAA2:0001735 ! right lung accessory lobe epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
+
+[Term]
+id: UBERON:0005656
+name: lens vesicle epithelium
+xref: EHDAA2:0000987 ! lens vesicle epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0005426 ! lens vesicle
+
+[Term]
+id: UBERON:0005657
+name: crus commune epithelium
+xref: EHDAA2:0000332 ! crus commune epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0005600 ! crus commune
+
+[Term]
+id: UBERON:0005658
+name: palatal shelf epithelium
+xref: EHDAA2:0001365 ! palatal shelf epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0005619 ! palatal shelf
+
+[Term]
+id: UBERON:0005659
+name: primary palate epithelium
+xref: EHDAA2:0001500 ! primary palate epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0005620 ! primary palate
+
+[Term]
+id: UBERON:0005660
+name: 2nd arch ectoderm
+xref: EHDAA2:0000064 ! 2nd arch ectoderm
+intersection_of: UBERON:0000924 ! ectoderm
+intersection_of: part_of UBERON:0003066 ! hyoid arch
+
+[Term]
+id: UBERON:0005661
+name: 3rd arch ectoderm
+xref: EHDAA2:0000079 ! 3rd arch ectoderm
+intersection_of: UBERON:0000924 ! ectoderm
+intersection_of: part_of UBERON:0003114 ! pharyngeal arch 3
+
+[Term]
+id: UBERON:0005662
+name: 4th arch ectoderm
+xref: EHDAA2:0000094 ! 4th arch ectoderm
+intersection_of: UBERON:0000924 ! ectoderm
+intersection_of: part_of UBERON:0003115 ! pharyngeal arch 4
+
+[Term]
+id: UBERON:0005663
+name: upper limb bud ectoderm
+xref: EHDAA2:0002134 ! upper limb bud ectoderm
+intersection_of: UBERON:0000924 ! ectoderm
+intersection_of: part_of UBERON:0005417 ! forelimb bud
+
+[Term]
+id: UBERON:0005664
+name: 2nd arch endoderm
+xref: EHDAA2:0000065 ! 2nd arch endoderm
+intersection_of: UBERON:0000925 ! endoderm
+intersection_of: part_of UBERON:0003066 ! hyoid arch
+
+[Term]
+id: UBERON:0005665
+name: 3rd arch endoderm
+xref: EHDAA2:0000080 ! 3rd arch endoderm
+intersection_of: UBERON:0000925 ! endoderm
+intersection_of: part_of UBERON:0003114 ! pharyngeal arch 3
+
+[Term]
+id: UBERON:0005666
+name: 4th arch endoderm
+xref: EHDAA2:0000095 ! 4th arch endoderm
+intersection_of: UBERON:0000925 ! endoderm
+intersection_of: part_of UBERON:0003115 ! pharyngeal arch 4
+
+[Term]
+id: UBERON:0005667
+name: connecting stalk mesoderm
+xref: EHDAA2:0000314 ! connecting stalk mesoderm
+intersection_of: UBERON:0000926 ! mesoderm
+intersection_of: part_of UBERON:0002331 ! umbilical cord
+
+[Term]
+id: UBERON:0005668
+name: ulna nerve
+xref: EHDAA2:0002099 ! ulna nerve
+intersection_of: UBERON:0001021 ! nerve
+intersection_of: part_of UBERON:0001424 ! ulna
+
+[Term]
+id: UBERON:0005669
+name: peritoneal cavity mesothelium
+xref: EHDAA2:0001447 ! peritoneal cavity mesothelium
+intersection_of: UBERON:0001136 ! mesothelium
+intersection_of: part_of UBERON:0001179 ! peritoneal cavity
+
+[Term]
+id: UBERON:0005670
+name: greater omentum mesothelium
+xref: EHDAA2:0000721 ! greater omentum mesothelium
+intersection_of: UBERON:0001136 ! mesothelium
+intersection_of: part_of UBERON:0005448 ! greater omentum
+
+[Term]
+id: UBERON:0005671
+name: greater sac mesothelium
+xref: EHDAA2:0000725 ! greater sac mesothelium
+intersection_of: UBERON:0001136 ! mesothelium
+intersection_of: part_of UBERON:0005449 ! greater sac
+
+[Term]
+id: UBERON:0005672
+name: right lung endothelium
+xref: EHDAA2:0001755 ! right lung endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0002167 ! right lung
+
+[Term]
+id: UBERON:0005673
+name: left lung endothelium
+xref: EHDAA2:0000961 ! left lung endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0002168 ! left lung
+
+[Term]
+id: UBERON:0005674
+name: right lung cranial lobe endothelium
+xref: EHDAA2:0001750 ! right lung cranial lobe endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0002170 ! upper lobe of right lung
+
+[Term]
+id: UBERON:0005675
+name: right lung caudal lobe endothelium
+xref: EHDAA2:0001742 ! right lung caudal lobe endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0002171 ! lower lobe of right lung
+
+[Term]
+id: UBERON:0005676
+name: right lung accessory lobe endothelium
+xref: EHDAA2:0001734 ! right lung accessory lobe endothelium
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
+
+[Term]
+id: UBERON:0005677
+name: caecum mesentery
+xref: EHDAA2:0000210 ! caecum mesentery
+intersection_of: UBERON:0002095 ! mesentery
+intersection_of: part_of UBERON:0001153 ! cecum
+
+[Term]
+id: UBERON:0005678
+name: right lung cranial lobe segmental bronchus
+xref: EHDAA2:0001754 ! right lung cranial lobe segmental bronchus
+intersection_of: UBERON:0002184 ! segmental bronchus
+intersection_of: part_of UBERON:0002170 ! upper lobe of right lung
+
+[Term]
+id: UBERON:0005679
+name: right lung caudal lobe segmental bronchus
+xref: EHDAA2:0001746 ! right lung caudal lobe segmental bronchus
+intersection_of: UBERON:0002184 ! segmental bronchus
+intersection_of: part_of UBERON:0002171 ! lower lobe of right lung
+
+[Term]
+id: UBERON:0005680
+name: right lung accessory lobe segmental bronchus
+xref: EHDAA2:0001738 ! right lung accessory lobe segmental bronchus
+intersection_of: UBERON:0002184 ! segmental bronchus
+intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
+
+[Term]
+id: UBERON:0005681
+name: right lung cranial lobe bronchiole
+xref: EHDAA2:0001749 ! right lung cranial lobe bronchiole
+intersection_of: UBERON:0002186 ! bronchiole
+intersection_of: part_of UBERON:0002170 ! upper lobe of right lung
+
+[Term]
+id: UBERON:0005682
+name: right lung accessory lobe bronchiole
+xref: EHDAA2:0001733 ! right lung accessory lobe bronchiole
+intersection_of: UBERON:0002186 ! bronchiole
+intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
+
+[Term]
+id: UBERON:0005685
+name: midgut dorsal mesentery
+xref: EHDAA2:0001187 ! midgut dorsal mesentery
+intersection_of: UBERON:0002296 ! dorsal mesentery
+intersection_of: part_of UBERON:0001045 ! midgut
+
+[Term]
+id: UBERON:0005686
+name: caecum dorsal mesentery
+xref: EHDAA2:0000208 ! caecum dorsal mesentery
+intersection_of: UBERON:0002296 ! dorsal mesentery
+intersection_of: part_of UBERON:0001153 ! cecum
+
+[Term]
+id: UBERON:0005687
+name: orbitosphenoid cartilage
+xref: EHDAA2:0001329 ! orbitosphenoid cartilage
+intersection_of: UBERON:0002418 ! cartilage
+intersection_of: part_of UBERON:0002478 ! orbitosphenoid
+
+[Term]
+id: UBERON:0005688
+name: lens vesicle cavity
+xref: EHDAA2:0000986 ! lens vesicle cavity
+intersection_of: UBERON:0002553 ! anatomical cavity
+intersection_of: part_of UBERON:0005426 ! lens vesicle
+
+[Term]
+id: UBERON:0005689
+name: 2nd arch mesenchyme
+xref: EHDAA2:0000066 ! 2nd arch mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003066 ! hyoid arch
+
+[Term]
+id: UBERON:0005690
+name: 3rd arch mesenchyme
+xref: EHDAA2:0000081 ! 3rd arch mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003114 ! pharyngeal arch 3
+
+[Term]
+id: UBERON:0005691
+name: 4th arch mesenchyme
+xref: EHDAA2:0000096 ! 4th arch mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003115 ! pharyngeal arch 4
+
+[Term]
+id: UBERON:0005692
+name: finger 2 mesenchyme
+xref: EHDAA2:0000519 ! finger 2 mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003622 ! hand digit 2
+
+[Term]
+id: UBERON:0005693
+name: finger 3 mesenchyme
+xref: EHDAA2:0000525 ! finger 3 mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003623 ! hand digit 3
+
+[Term]
+id: UBERON:0005694
+name: finger 4 mesenchyme
+xref: EHDAA2:0000531 ! finger 4 mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003624 ! hand digit 4
+
+[Term]
+id: UBERON:0005695
+name: finger 5 mesenchyme
+xref: EHDAA2:0000537 ! finger 5 mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003625 ! hand digit 5
+
+[Term]
+id: UBERON:0005696
+name: toe 2 mesenchyme
+xref: EHDAA2:0002044 ! toe 2 mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003632 ! foot digit 2
+
+[Term]
+id: UBERON:0005697
+name: toe 3 mesenchyme
+xref: EHDAA2:0002049 ! toe 3 mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003633 ! foot digit 3
+
+[Term]
+id: UBERON:0005698
+name: toe 4 mesenchyme
+xref: EHDAA2:0002054 ! toe 4 mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003634 ! foot digit 4
+
+[Term]
+id: UBERON:0005699
+name: toe 5 mesenchyme
+xref: EHDAA2:0002059 ! toe 5 mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003635 ! foot digit 5
+
+[Term]
+id: UBERON:0005700
+name: upper jaw molar mesenchyme
+xref: EHDAA2:0002127 ! upper jaw molar mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003666 ! upper jaw molar
+
+[Term]
+id: UBERON:0005701
+name: lower jaw molar mesenchyme
+xref: EHDAA2:0001027 ! lower jaw molar mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0003667 ! lower jaw molar
+
+[Term]
+id: UBERON:0005702
+name: optic eminence mesenchyme
+xref: EHDAA2:0001310 ! optic eminence mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0004348 ! optic eminence
+
+[Term]
+id: UBERON:0005703
+name: upper limb bud mesenchyme
+xref: EHDAA2:0002135 ! upper limb bud mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0005417 ! forelimb bud
+
+[Term]
+id: UBERON:0005704
+name: palatal shelf mesenchyme
+xref: EHDAA2:0001366 ! palatal shelf mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0005619 ! palatal shelf
+
+[Term]
+id: UBERON:0005705
+name: primary palate mesenchyme
+xref: EHDAA2:0001501 ! primary palate mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0005620 ! primary palate
+
+[Term]
+id: UBERON:0005706
+name: central nervous system cranial ganglion
+xref: EHDAA2:0000226 ! central nervous system cranial ganglion
+intersection_of: UBERON:0003213 ! cranial ganglion
+intersection_of: part_of UBERON:0001017 ! central nervous system
+
+[Term]
+id: UBERON:0005707
+name: upper jaw incisor mesenchyme
+xref: EHDAA2:0002123 ! upper jaw incisor mesenchyme
+intersection_of: UBERON:0003317 ! mesenchyme of incisor
+intersection_of: part_of UBERON:0001709 ! upper jaw
+
+[Term]
+id: UBERON:0005708
+name: lower jaw incisor mesenchyme
+xref: EHDAA2:0001023 ! lower jaw incisor mesenchyme
+intersection_of: UBERON:0003317 ! mesenchyme of incisor
+intersection_of: part_of UBERON:0001710 ! lower jaw
+
+[Term]
+id: UBERON:0005709
+name: upper jaw incisor epithelium
+xref: EHDAA2:0002122 ! upper jaw incisor epithelium
+intersection_of: UBERON:0003355 ! epithelium of incisor
+intersection_of: part_of UBERON:0001709 ! upper jaw
+
+[Term]
+id: UBERON:0005710
+name: lower jaw incisor epithelium
+xref: EHDAA2:0001022 ! lower jaw incisor epithelium
+intersection_of: UBERON:0003355 ! epithelium of incisor
+intersection_of: part_of UBERON:0001710 ! lower jaw
+
+[Term]
+id: UBERON:0005711
+name: foregut duodenum mesentery
+xref: EHDAA2:0000564 ! foregut duodenum mesentery
+intersection_of: UBERON:0003397 ! mesentery of duodenum
+intersection_of: part_of UBERON:0001041 ! foregut
+
+[Term]
+id: UBERON:0005712
+name: midgut duodenum mesentery
+xref: EHDAA2:0001193 ! midgut duodenum mesentery
+intersection_of: UBERON:0003397 ! mesentery of duodenum
+intersection_of: part_of UBERON:0001045 ! midgut
+
+[Term]
+id: UBERON:0005713
+name: neural tube neural lumen
+xref: EHDAA2:0001269 ! neural tube neural lumen
+intersection_of: UBERON:0003842 ! neural lumen
+intersection_of: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0005714
+name: lens vesicle capsule
+xref: EHDAA2:0000985 ! lens vesicle capsule
+intersection_of: UBERON:0003893 ! capsule
+intersection_of: surrounds UBERON:0005426 ! lens vesicle
+
+[Term]
+id: UBERON:0005715
+name: 2nd arch branchial pouch
+xref: EHDAA2:0000060 ! 2nd arch branchial pouch
+intersection_of: UBERON:0004117 ! pharyngeal pouch
+intersection_of: part_of UBERON:0003066 ! hyoid arch
+
+[Term]
+id: UBERON:0005716
+name: 3rd arch branchial pouch
+xref: EHDAA2:0000076 ! 3rd arch branchial pouch
+intersection_of: UBERON:0004117 ! pharyngeal pouch
+intersection_of: part_of UBERON:0003114 ! pharyngeal arch 3
+
+[Term]
+id: UBERON:0005717
+name: 4th arch branchial pouch
+xref: EHDAA2:0000090 ! 4th arch branchial pouch
+intersection_of: UBERON:0004117 ! pharyngeal pouch
+intersection_of: part_of UBERON:0003115 ! pharyngeal arch 4
+
+[Term]
+id: UBERON:0005718
+name: 1st arch branchial pouch
+xref: EHDAA2:0000013 ! 1st arch branchial pouch
+intersection_of: UBERON:0004117 ! pharyngeal pouch
+intersection_of: part_of UBERON:0004362 ! mandibular arch
+
+[Term]
+id: UBERON:0005719
+name: footplate apical ectodermal ridge
+xref: EHDAA2:0000547 ! footplate apical ectodermal ridge
+intersection_of: UBERON:0004356 ! apical ectodermal ridge
+intersection_of: part_of UBERON:0002496 ! stapes base
+
+[Term]
+id: UBERON:0005720
+name: hindbrain venous system
+xref: EHDAA2:0000776 ! hindbrain venous system
+intersection_of: UBERON:0004582 ! venous system
+intersection_of: part_of UBERON:0002028 ! hindbrain
 
 [Typedef]
 id: adjacent_to
