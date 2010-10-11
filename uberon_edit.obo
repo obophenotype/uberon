@@ -10717,6 +10717,14 @@ xref: ncithesaurus:Back ! Back
 xref: EFO:0001405 ! back
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/432px-Gray-back.PNG/200px-432px-Gray-back.PNG
 
+
+[Term]
+id: UBERON:0005617 ! mesenteric vein
+name: mesenteric vein
+is_a: UBERON:0002017 ! portal vein
+xref: MA:0002177 ! mesenteric vein
+xref: EHDAA2:0001125 ! mesenteric vein
+
 [Term]
 id: UBERON:0001138
 name: superior mesenteric vein
@@ -10724,11 +10732,11 @@ alt_id: UBERON:FMA_14332-MA_0002179
 def: "In anatomy, the superior mesenteric vein (SMV) is a blood vessel that drains blood from the small intestine. At its termination behind the neck of the pancreas, the SMV combines with the splenic vein to form the hepatic portal vein. The SMV lies to the right of the similarly named artery, the superior mesenteric artery, which originates from the abdominal aorta. [WP,unvetted]." [Wikipedia:Superior_mesenteric_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+is_a: UBERON:0005617 ! mesenteric vein
 xref: EHDAA:5414 ! superior mesenteric vein
 xref: FMA:14332 ! Superior mesenteric vein
 xref: HOG:0000552 ! superior mesenteric vein
 xref: MA:0002179 ! superior mesenteric vein
-is_a: UBERON:0002017 ! portal vein
 xref: ncithesaurus:Superior_Mesenteric_Vein ! Superior Mesenteric Vein
 xref: BTO:0002783 ! superior mesenteric vein
 xref: OpenCyc:Mx4rwFjmM5wpEbGdrcN5Y29ycA ! superior mesenteric vein
@@ -12181,7 +12189,7 @@ xref: FMA:15391 ! Inferior mesenteric vein
 xref: HOG:0001118 ! inferior mesenteric vein
 xref: MA:0002178 ! inferior mesenteric vein
 xref: OpenCyc:Mx4rvcV53ZwpEbGdrcN5Y29ycA
-is_a: UBERON:0002017 ! portal vein
+is_a: UBERON:0005617 ! mesenteric vein
 xref: ncithesaurus:Inferior_Mesenteric_Vein ! Inferior Mesenteric Vein
 xref: BTO:0002782 ! inferior mesenteric vein
 xref: OpenCyc:Mx4rvcV53ZwpEbGdrcN5Y29ycA ! inferior mesenteric vein
@@ -19014,7 +19022,17 @@ is_a: UBERON:0001638 ! vein
 xref: ncithesaurus:Bronchial_Vein ! Bronchial Vein
 
 [Term]
-id: UBERON:0001593
+id: UBERON:0005629 ! vascular plexus
+name: vascular plexus
+def: "In a vascular plexus, the contents of the vessels mix. A plexus allows blood to flow via multiple routes. If one branch of the plexus is obstructed, the blood may flow via the open branches." [Wikipedia:Plexus#Circulatory_system]
+xref: FMA:5900 ! Vascular plexus
+synonym: "vascular network" EXACT []
+is_a: UBERON:0002049 ! vasculature
+relationship: part_of UBERON:0001009 ! circulatory system
+relationship: has_part UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0001593 ! venous plexus
 name: venous plexus
 alt_id: UBERON:FMA_4767-MA_0000069
 def: "a congregation of multiple veins." [Wikipedia:Venous_plexus]
@@ -19023,7 +19041,7 @@ subset: uberon_slim
 synonym: "venous network" EXACT []
 xref: FMA:4767 ! Venous plexus
 xref: MA:0000069 ! venous plexus
-is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0005629 ! vascular plexus
 relationship: has_part UBERON:0001638 ! vein
 relationship: part_of UBERON:0001009 ! circulatory system
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Gray585.png/200px-Gray585.png
@@ -19947,8 +19965,7 @@ xref: MA:0002132 ! hepatic portal vein
 xref: TAO:0005090 ! hepatic portal vein
 xref: ZFA:0005090 ! hepatic portal vein
 is_a: UBERON:0002017 ! portal vein
-intersection_of: UBERON:0002017 ! portal vein
-intersection_of: part_of UBERON:0002107 ! liver
+relationship: part_of UBERON:0002107 ! liver
 synonym: "liver portal vein" EXACT [OBOL:automatic]
 synonym: "portal vein of liver" EXACT [OBOL:automatic]
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Gray591.png/200px-Gray591.png
@@ -24746,7 +24763,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/54/EmbryonicBrain.sv
 id: UBERON:0001891
 name: midbrain
 alt_id: UBERON:FMA_61993-MA_0000207-MIAA_0000106-XAO_0000014-ZFA_0000128
-def: "Organ component of neuraxis that has as its parts the tectum, cerebral peduncle, midbrain tegmentum and cerebral aqueduct. Examples: There is only one midbrain. [FMA]// The brain region between the forebrain anteriorly and the hindbrain posteriorly, including the tectum dorsally and the midbrain tegmentum ventrally. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Midbrain, ZFIN:curator]
+def: "Organ component of neuraxis that has as its parts the tectum, cerebral peduncle, midbrain tegmentum and cerebral aqueduct. Examples: There is only one midbrain. [FMA]. The brain region between the forebrain anteriorly and the hindbrain posteriorly, including the tectum dorsally and the midbrain tegmentum ventrally[ZFA]. The midbrain is the middle division of the three primary divisions of the developing chordate brain or the corresponding part of the adult brain (in vertebrates, includes a ventral part containing the cerebral peduncles and a dorsal tectum containing the corpora quadrigemina and that surrounds the aqueduct of Sylvius connecting the third and fourth ventricles)[GO]." [Wikipedia:Midbrain, ZFIN:curator, GO:0030901]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "mesencephalon" RELATED []
@@ -24762,11 +24779,12 @@ xref: NIF_GrossAnatomy:birnlex_1667 ! Midbrain
 xref: TAO:0000128 ! midbrain
 xref: XAO:0000014 ! midbrain
 xref: ZFA:0000128 ! midbrain
+xref: EHDAA2:0001104 ! mesencephalon
+xref: EHDAA2:0001162 ! midbrain
 is_a: UBERON:0002616 ! regional part of brain
 relationship: develops_from UBERON:0003080 ! anterior neural tube
 relationship: part_of UBERON:0002298 ! brainstem
 xref: OpenCyc:Mx4rvsBUqpwpEbGdrcN5Y29ycA ! midbrain
-xref: EHDAA2:0001104 ! mesencephalon
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Human_brain_inferior_view_description.JPG/200px-Human_brain_inferior_view_description.JPG
 
 [Term]
@@ -27337,7 +27355,6 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Alveoli_diagram.p
 id: UBERON:0002017
 name: portal vein
 alt_id: UBERON:FMA_66645-MA_0002198-XAO_0000392
-def: "The hepatic portal vein (often simply portal vein) is a vein in the abdominal cavity that drains blood from the gastrointestinal tract and spleen. It is usually formed by the confluence of the superior mesenteric and splenic veins, and also receives blood from the inferior mesenteric, gastric, and cystic veins. The hepatic portal vein is a major component of the hepatic portal system, one of the main portal venous systems in the body. Conditions involving the hepatic portal vein cause considerable illness and death. An important example of such a condition is elevated blood pressure in the hepatic portal vein. This condition, called portal hypertension, is a major complication of cirrhosis worldwide. [WP,unvetted]." [Wikipedia:Portal_vein]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "portal venous tree organ part" EXACT []
@@ -45128,7 +45145,7 @@ xref: GAID:607 ! choroid plexus
 xref: MA:0000823 ! choroid plexus
 xref: TAO:0001443 ! choroid plexus
 xref: ZFA:0001443 ! choroid plexus
-is_a: UBERON:0002049 ! vasculature
+is_a: UBERON:0005629 ! vascular plexus
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 relationship: part_of UBERON:0004086 ! brain ventricle
 xref: ncithesaurus:Choroid_Plexus ! Choroid Plexus
@@ -46534,11 +46551,13 @@ synonym: "visceral arch 1" EXACT SENSU []
 synonym: "first visceral arch" EXACT SENSU []
 synonym: "first branchial arch" EXACT SENSU []
 synonym: "first branchial arch" EXACT SENSU []
+synonym: "1st arch" RELATED [EHDAA2:0000006]
 xref: ZFA:0001612 ! pharyngeal arch 1
 xref: XAO:0000097 ! mandibular arch
 xref: ncithesaurus:First_Pharyngeal_Arch ! First Pharyngeal Arch
 xref: HOG:0000296 ! first pharyngeal arch
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Gray48.png/200px-Gray48.png
+xref: EHDAA2:0000006 ! 1st arch
 
 [Term]
 id: UBERON:0003066
@@ -46564,6 +46583,8 @@ is_a: UBERON:0002539 ! pharyngeal arch
 xref: ncithesaurus:Second_Pharyngeal_Arch ! Second Pharyngeal Arch
 xref: HOG:0000297 ! second pharyngeal arch
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Gray41.png/200px-Gray41.png
+xref: EHDAA2:0000050 ! 2nd arch
+synonym: "2nd arch" RELATED [EHDAA2:0000050]
 
 [Term]
 id: UBERON:0003114
@@ -46583,6 +46604,8 @@ is_a: UBERON:0002539 ! pharyngeal arch
 xref: ZFA:0001606 ! pharyngeal arch 3
 xref: XAO:0000447 ! branchial arch 1
 xref: HOG:0000298 ! third pharyngeal arch
+xref: EHDAA2:0000069 ! 3rd arch
+synonym: "3rd arch" RELATED [EHDAA2:0000069]
 
 [Term]
 id: UBERON:0003115
@@ -46603,6 +46626,8 @@ is_a: UBERON:0002539 ! pharyngeal arch
 xref: ZFA:0001607 ! pharyngeal arch 4
 xref: XAO:0000449 ! branchial arch 2
 xref: HOG:0000299 ! fourth pharyngeal arch
+xref: EHDAA2:0000086 ! 4th arch
+synonym: "4th arch" RELATED [EHDAA2:0000086]
 
 [Term]
 id: UBERON:0003116
@@ -72207,7 +72232,7 @@ xref: EHDAA2:0000789 ! hyaloid cavity
 [Term]
 id: UBERON:0005607
 name: hyaloid vascular plexus
-is_a: UBERON:0001810 ! nerve plexus
+is_a: UBERON:0005629 ! vascular plexus
 xref: MA:0001283 ! hyaloid vascular plexus
 xref: EHDAA2:0000790 ! hyaloid vascular plexus
 
@@ -72293,13 +72318,6 @@ name: mesenteric artery
 is_a: UBERON:0001637 ! artery
 xref: MA:0002003 ! mesenteric artery
 xref: EHDAA2:0001123 ! mesenteric artery
-
-[Term]
-id: UBERON:0005617
-name: mesenteric vein
-is_a: UBERON:0001638 ! vein
-xref: MA:0002177 ! mesenteric vein
-xref: EHDAA2:0001125 ! mesenteric vein
 
 [Term]
 id: UBERON:0005619

@@ -18,7 +18,8 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 	obolib-obo2owl -o file://`pwd`/$@ $<
 
 
-OBOL=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -u obol_anatomy_xp -r obol_av 
+OBOLX=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -r obol_av 
+OBOL=$(OBOLX)  -u obol_anatomy_xp 
 
 po_anatomy_xp.obo:
 	$(OBOL) -u obol_anatomy_xp_sensu -r plant_anatomy obol-parse -parse_rule anatomical_continuant "belongs(ID,plant_structure)" >& $@.tmp && mv $@.tmp $@
@@ -74,6 +75,12 @@ fma_xp_CL-obol.obo:
 
 fma_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
+
+ehdaa2_xp_uberon-obol.obo:
+	$(OBOLX)  -u obol_ehdaa_xp -r uberon -r ehdaa2 obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
+
+emapa_xp_uberon-obol.obo:
+	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_ehdaa_xp -r uberon -r emapa obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
 
 mouse_anatomy_fixed.obo: anatomy/gross_anatomy/animal_gross_anatomy/mouse/adult_mouse_anatomy.obo
 	perl -npe 'if (/(meta\S+ bone \w+ digit)/) {s/(hand|foot)//}' $< > $@
@@ -423,7 +430,16 @@ newterms-zebrafish-birnlex.obo: birnlex_anatomy_s.obo
 	obol -u onto_grep onto-3-way-align -i $< -r zebrafish_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
 
 newterms-zebrafish-fma.obo: fma_s.obo
-	obol -u onto_grep onto-3-way-align -i $< -r zebrafish_anatomy -r uberon -ont1 fma -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -i $< -r zebrafish_anatomy -r uberon -ont1 fma -ont2 zebrafish_anatomy -ont3 uberon > $@
+
+newterms-zebrafish-ehdaa2.obo:
+	obol -u onto_grep onto-3-way-align -r ehdaa2 -r zebrafish_anatomy -r uberon -ont1 abstract_anatomy -ont2 zebrafish_anatomy -ont3 uberon > $@
+
+newterms-mouse-ehdaa2.obo:
+	obol -u onto_grep onto-3-way-align -r ehdaa2 -r mouse_anatomy -r uberon -ont1 abstract_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
+
+newterms-xenopus-ehdaa2.obo:
+	obol -u onto_grep onto-3-way-align -r ehdaa2 -r xenopus_anatomy -r uberon -ont1 abstract_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
 
 newterms-zebrafish-fly.obo:
 	obol -u onto_grep onto-3-way-align -r fly_anatomy -r zebrafish_anatomy -r uberon -ont1 fly_anatomy.ontology -ont2 zebrafish_anatomy -ont3 uberon > $@
@@ -436,6 +452,9 @@ newterms-zebrafish-ehdaa.obo:
 
 newterms-fma-ehdaa.obo:
 	obol -u onto_grep onto-3-way-align -r ehdaa -r fma -r uberon -ont1 human-dev-anat-abstract -ont2 fma -ont3 uberon > $@
+
+newterms-fma-ehdaa2.obo:
+	obol -u onto_grep onto-3-way-align -r ehdaa2 -r fma -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
 
 newterms-emapa-ehdaa.obo:
 	obol -u onto_grep onto-3-way-align -r ehdaa -r emapa -r uberon -ont1 human-dev-anat-abstract -ont2 abstract_anatomy -ont3 uberon > $@
@@ -498,6 +517,9 @@ newxp-%-ontol_db.obo: newxp-%-ontol_db.pro
 # --
 uberon-xp-xref-ma.obo:
 	blip -i mouse_anatomy_xp.obo -i mouse_anatomy_xp_uberon.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
+
+uberon-xp-xref-ehdaa2.obo:
+	blip -i ehdaa2_xp_uberon.obo  -r ehdaa2 -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
 
 uberon-xp-xref-fma.obo:
 	blip -i fma_xp.obo -i fma_xp_uberon.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
