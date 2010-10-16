@@ -86,37 +86,67 @@ xref: MIAA:0000139 ! nose
 xref: OpenCyc:Mx4rvViCbJwpEbGdrcN5Y29ycA
 xref: TAO:0000047 ! peripheral olfactory organ
 xref: ZFA:0000047 ! peripheral olfactory organ
-is_a: UBERON:0000005 ! chemosensory sensory organ
+is_a: UBERON:0002268 ! olfactory organ
 relationship: develops_from UBERON:0003050 ! olfactory placode
-relationship: capable_of GO:0007608
+relationship: capable_of GO:0007608 ! sensory perception of smell
 xref: ncithesaurus:Nose ! Nose
 xref: galen:Nose ! nose
 xref: OpenCyc:Mx4rvViCbJwpEbGdrcN5Y29ycA ! nose
 xref: EHDAA2:0001274 ! nose
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Head_olfactory_nerve.jpg/200px-Head_olfactory_nerve.jpg
 
 [Term]
 id: UBERON:0000005
 name: chemosensory organ
-def: "." [Wikipedia:Olfactory_system]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 subset: functional_classification
-synonym: "olfactory system" EXACT []
-synonym: "chemosensory sensory organ" EXACT []
-xref: AAO:0000334 ! olfactory_system
-xref: BILA:0000144
+synonym: "chemosensory sensory organ" EXACT [FBbt:00005157]
 xref: FBbt:00005157 ! chemosensory sensory organ
+intersection_of: UBERON:0000020 ! sense organ
+intersection_of: capable_of GO:0007606 ! sensory perception of chemical stimulus
+relationship: part_of UBERON:0005726 ! chemosensory system
+relationship: part_of UBERON:0001016 ! nervous system
+
+[Term]
+id: UBERON:0002268 ! olfactory organ
+name: olfactory organ
+alt_id: UBERON:FMA_77659-XAO_0000273
+comment: note - fma general anatomical term. xao has no subtypes (but Johnstons organ develops from this)
+subset: functional_classification
+xref: FMA:77659 ! Olfactory organ
+xref: HOG:0000287 ! olfactory organ
+xref: XAO:0000273 ! olfactory organ
+xref: BTO:0001772 ! olfactory organ
+intersection_of: UBERON:0000020 ! sense organ
+intersection_of: capable_of GO:0007608 ! sensory perception of smell
+relationship: develops_from UBERON:0003050 ! olfactory placode
+relationship: part_of UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0005725 ! olfactory system              
+
+[Term]
+id: UBERON:0005725 ! olfactory system
+name: olfactory system
+def: "The olfactory system is the sensory system used for olfaction, or the sense of smell. Most mammals and reptiles have two distinct parts to their olfactory system: a main olfactory system and an accessory olfactory system. The main olfactory system detects volatile, airborne substances, while the accessory olfactory system senses fluid-phase stimuli. Behavioral evidence indicates that most often, the stimuli detected by the accessory olfactory system are pheromones. The olfactory system is often spoken of along with the gustatory system as the chemosensory senses because both transduce chemical signals into perception[WP]." [Wikipedia:Olfactory_system]
+common: In mammals, the main olfactory system detects odorants that are inhaled through the nose, where they contact the main olfactory epithelium, which contains various olfactory receptors. These olfactory receptors are membrane proteins of bipolar olfactory receptor neurons in the olfactory epithelium. Rather than binding specific ligands  like most receptors, olfactory receptors display affinity for a range of odor molecules. Olfactory neurons transduce receptor activation into electrical signals in neurons. The signals travel along the olfactory nerve, which belongs to the peripheral nervous system. This nerve terminates in the olfactory bulb, which belongs to the central nervous system. The complex set of olfactory receptors on different olfactory neurons can distinguish a new odor from the background environmental odors and determine the concentration of the odor.
+xref: ZFA:0001149 ! olfactory system
+xref: AAO:0000334 ! olfactory_system
+xref: BILA:0000144 ! olfactory system
 xref: FMA:7190 ! Olfactory system
 xref: MA:0002445 ! olfactory system
 xref: TAO:0001149 ! olfactory system
 xref: XAO:0000201 ! olfactory apparatus
 xref: ZFA:0001149 ! olfactory system
-intersection_of: UBERON:0000020 ! sense organ
-intersection_of: capable_of GO:0007606 ! sensory perception of chemical stimulus
 xref: EFO:0001973 ! olfactory system
 xref: OpenCyc:Mx4rvViw75wpEbGdrcN5Y29ycA ! olfactory system
 xref: NIF_GrossAnatomy:nlx_anat_090806 ! Olfactory system
+intersection_of: UBERON:0001032 ! sensory system
+intersection_of: capable_of GO:0007608 ! sensory perception of smell
+
+[Term]
+id: UBERON:0005726 ! chemosensory system
+name: chemosensory system
+xref: BILA:0000139 ! chemosensory system
+intersection_of: UBERON:0001032 ! sensory system
+intersection_of: capable_of GO:0007606 ! sensory perception of chemical stimulus
 
 [Term]
 id: UBERON:0000006
@@ -9405,6 +9435,7 @@ xref: MA:0002866 ! myocardium trabecular layer
 [Term]
 id: UBERON:0004125
 name: myocardial compact layer
+def: " outer dense layer of the myocardium uniting the epicardium and myocardium[MP]." [MP:0004056]
 xref: MA:0002865 ! myocardium compact layer
 is_a: UBERON:0004123 ! myocardium layer
 
@@ -29527,6 +29558,7 @@ synonym: "metanephric mesoderm" EXACT [Wikipedia:Metanephric_blastema]
 synonym: "metanephrogenic mesenchyme" EXACT [EHDAA:5021]
 synonym: "metanephros associated mesenchyme" EXACT [EHDAA2:0001139]
 is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0003104 ! mesenchyme
 relationship: develops_from UBERON:0003074 ! wolffian duct
 xref: HOG:0000540 ! metanephric mesenchyme
 xref: EHDAA:4041 ! metanephric mesenchyme
@@ -32102,21 +32134,6 @@ xref: MA:0001016 ! laterodorsal tegmental nucleus
 is_a: UBERON:0002308 ! nucleus of brain
 relationship: part_of UBERON:0000988 ! pons
 xref: BTO:0004016 ! laterodorsal tegmental nucleus
-
-[Term]
-id: UBERON:0002268
-name: olfactory organ
-alt_id: UBERON:FMA_77659-XAO_0000273
-comment: note - fma general anatomical term. xao has no subtypes (but Johnstons organ develops from this)
-subset: functional_classification
-xref: FMA:77659 ! Olfactory organ
-xref: HOG:0000287 ! olfactory organ
-xref: XAO:0000273 ! olfactory organ
-intersection_of: UBERON:0000020 ! sense organ
-intersection_of: capable_of GO:0007608
-relationship: develops_from UBERON:0003050 ! olfactory placode
-relationship: part_of UBERON:0001016 ! nervous system
-xref: BTO:0001772 ! olfactory organ
 
 [Term]
 id: UBERON:0002269
@@ -46706,6 +46723,7 @@ comment: in XAO, called branchial arch 2 and df VP4
 synonym: "4th pharyngeal arch" EXACT []
 synonym: "fourth pharyngeal arch" EXACT []
 synonym: "4th branchial arch" EXACT SENSU []
+synonym: "fourth branchial arch" EXACT SENSU []
 synonym: "4th visceral arch" EXACT []
 synonym: "visceral arch 4" EXACT []
 synonym: "second branchial arch" RELATED SENSU [ZFA:0001607]
@@ -46741,6 +46759,7 @@ name: pharyngeal arch 6
 def: "contributes to the development of the sternocleidomastoid and trapezius muscles" [MP:0006347]
 alt_id: UBERON:ZFA_0001609-XAO_0000453
 synonym: "sixth branchial arch" EXACT []
+synonym: "6th branchial arch" EXACT []
 synonym: "branchial arch 6" EXACT []
 synonym: "branchial arch 4" RELATED SENSU [ZFA:0001609]
 synonym: "fourth branchial arch" RELATED SENSU []

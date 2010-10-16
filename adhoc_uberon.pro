@@ -493,29 +493,170 @@ rel_dist(develops_from,3) :- !.
 rel_dist(_,4) :- !.
 
 
-
 % ----------------------------------------
-% semantic similarity of mapping
+% scoring of mappings
 % ----------------------------------------
 
-% simJ using uberon.
-% only include classes that...
+mapping_prep :-
+        %materialize_index(nr_feat(1,1)),
+        materialize_index(metadata_db:entity_xref(1,1)),
+        table_pred(wrong_classification/5),
+        table_pred(ontol_db:parentT/3),
+        table_pred(cx/5),
+        table_pred(ancx/4).
 
-:- dynamic user:simindex_prepared/0.
+parentTwrap(X,R,A) :- parentT(X,R1,A1),R1=R,A1=A. % hack for memoization purposes
 
-simindex_prepare :-
-        user:simindex_prepared,
+parentTwrap(X,A) :- parentTwrap(X,R,A),okrel(R).
+
+% make sure we use fma_simple
+okrel(subclass).
+okrel(part_of).
+okrel(systemic_part_of).
+okrel(regional_part_of).
+okrel(constitutional_part_of).
+okrel(develops_from).
+
+nr_feat(X,S) :-
+        nr_feat(X,S,_).
+
+nr_feat(X,S,U) :-
+        class(X),
+        id_idspace(X,S),
+        entity_xref(U,X),
+        id_idspace(U,'UBERON').
+
+ancx(X,R,A,S) :-
+        nr_feat(X,S),
+        parentTwrap(X,R,A).
+
+cx(C1,C2,R1,R2,A) :-
+        ancx(C1,R1,A,_),
+        okrel(R1),
+        ancx(C2,R2,A,_),
+        okrel(R2).
+lcx(C1,C2,R1,R2,A) :-
+        cx(C1,C2,R1,R2,A),
+        debug(foo,'candindate: ~w ~w ~w',[R1,R2,A]),
+        \+ ((cx(C1,C2,_,_,Az),
+             parentTwrap(Az,Rz,A),
+             okrel(Rz))).
+
+
+%% ancx_excl(X,R1/R2,A,S,C)
+% true if X is an ancestor of A
+% via R1 or R2, and X is not already under C.
+% also exclude X if X *would* be placed under C
+% by uberon??
+ancx_excl(X,R1/R2,A,S,C) :-
+        ancx(X,R,A,S),
+        X\=C,
+        (   R=R1
+        ;   R=R2),
+        \+ ((parentTwrap(X,R2,C),
+             okrel(R2))).
+
+/*
+ancx_excl(X,R1/R2,A,S,C) :-
+        ancx(X,R,A,S),
+        X\=C,
+        (   R=R1
+        ;   R=R2),
+        \+ ((parentTwrap(X,R2,C),
+             okrel(R2))),
+        parentTwrap(X,Z),
+        id_idspace(Z,'UBERON'),
+        parentTwrap(Z,A),
+        parentTwrap(C,A).
+*/
+
+wrong_classification(A,R1/R2,X,C,S) :-
+        % candidate uberon class, which is directly attached
+        % to the candidate wrongly classified AO class
+        nr_feat(X,S,U),
+        
+        % exclude reflexive case
+        X\=C,
+        
+        % candidate uberon class must be classified under A
+        parentTwrap(U,R,A),
+        (   R=R1
+        ;   R=R2),
+        
+        % exclude correctly classified 
+        \+ parentTwrap(X,C),
+
+        % exclude correctly classified,
+        % with additional inference.
+        % consider (epithelium,epithelium,epithelium)
+        % there may be a child epithelium-of-x that
+        % is not classified under epithelum in AO.
+        % we correct for these omissions here
+        \+ ((parentTwrap(U,UP),
+             entity_xref(UP,C))).
+
+wrong_classification_nr(A,R1/R2,X,C,S) :-
+        wrong_classification(A,R1/R2,X,C,S),
+        \+ ((wrong_classification(A,R1/R2,X2,C,S),
+             parentTwrap(X,X2))).
+
+
+
+
+match_bestanc_score(C1,C2,A,R1,R2,NumS1,NumS2,AllS1,AllS2,MaxSc) :-
+        match_bestanc_score(C1,C2,anc(A,R1,R2,NumS1,NumS2,AllS1,AllS2),MaxSc).
+
+match_bestanc_score(C1,C2,A,MaxSc) :-
+        aggregate(max(Sc,A),C1-C2,match_anc_score_details(C1,C2,A,Sc),max(MaxSc,A)).
+
+match_anc_score_details(C1,C2,anc(A,R1,R2,NumS1,NumS2,AllS1,AllS2),Sc) :-
+        match_anc_score_details(C1,C2,A,R1,R2,AllS1,AllS2,NumS1,NumS2,Sc).
+
+match_anc_score_details(C1,C2,A,R1,R2,Sc) :-
+        match_anc_score_details(C1,C2,A,R1,R2,_,_,_,_,Sc).
+
+match_anc_score_details(C1,C2,A,R1,R2,AllS1,AllS2,NumS1,NumS2,Sc) :-
+        call_unique(class_pair_idspace_pair(C1,C2,S1,S2)),
+        call_unique(lcx(C1,C2,R1,R2,A)),
+        debug(foo,'LCX: ~w ~w ~w',[R1,R2,A]),
+        solutions(X,wrong_classification_nr(A,R1/R2,X,C1,S1),AllS1),
+        solutions(X,wrong_classification_nr(A,R1/R2,X,C2,S2),AllS2),
+        %solutions(X,ancx_excl(X,R1/R2,A,S1,C1),AllS1),
+        %solutions(X,ancx_excl(X,R1/R2,A,S2,C2),AllS2),
+        length(AllS1,NumS1),
+        length(AllS2,NumS2),
+        Sc is 1 / (1 + NumS1 + NumS2).
+
+class_pair_idspace_pair(C1,C2,S1,S2) :-
+        class(C1),
+        id_idspace(C1,S1),
+        class(C2),
+        id_idspace(C2,S2).
+
+mapping_anc_score(M,C1,C2,A,R1,R2,Num1,Num2,Sc) :-
+        ext_mapping(M,C1,C2),
+        debug(foo,'mapping: ~w-~w',[C1,C2]),
+        match_bestanc_score(C1,C2,A,R1,R2,Num1,Num2,_,_,Sc).
+
+mapping_classification(M,C1,C2,Categ,A,R1,R2,Num1,Num2,Sc) :-
+        ext_mapping(M,C1,C2),
+        debug(mappings,'testing: ~w ~w ~w',[M,C1,C2]),
+        class_pair_classification(C1,C2,Categ,A,R1,R2,Num1,Num2,Sc).
+
+class_pair_classification(C1,C2,agreement,U,subclass,subclass,0,0,1) :-
+        entity_xref(U,C1),
+        entity_xref(U,C2),
+        debug(mappings,'   EXACT ~w',[U]),
         !.
+class_pair_classification(C1,C2,suboptimal,A,R1,R2,Num1,Num2,Sc) :-
+        match_bestanc_score(C1,C2,A,R1,R2,Num1,Num2,_,_,Sc),
+        debug(mappings,'   SCORE ~w',[Sc]).
 
-simindex_prepare :-
-        !,
-        assert(user:simindex_prepared),
-        debug(sim,'preparing UBERON index',[]),
-        table_pred(ontol_db:bf_parentRT/2),
-        table_pred(path_dist/2),
-        %generate_term_indexes(C,P,(member(C,Cs),bf_parentRT(C,P),id_idspace(P,'UBERON'))),
-        generate_term_indexes(C,P,class_uberon_anc(C,P)),
-        debug(sim,'DONE preparing UBERON index',[]).
+
+
+
+% ----------------------------------------
+% older stuff below..
 
 class_uberon_anc_dist(C,Dist) :-
         class_uberon_anc_dist(C,_,Dist).
@@ -524,6 +665,9 @@ class_uberon_anc_dist(C,P,Dist) :-
         path_dist(C,P,Dist),
         id_idspace(P,'UBERON').
 
+%% class_uberon_anc(C,P)
+% C : ssAO
+% P : uberon ancestor
 class_uberon_anc(C,P) :-
         class(C),
         \+ id_idspace(C,'UBERON'),
@@ -539,61 +683,6 @@ class_mra_uberon(C,P) :-
         entity_label(C,_),
         aggregate(min(Dist),class_uberon_anc_dist(C,Dist),MinDist),
         class_uberon_anc_dist(C,P,MinDist).
-
-
-/*
-simindex_prepare :-
-        !,
-        assert(user:simindex_prepared),
-        debug(sim,'preparing UBERON index',[]),
-        table_pred(ontol_db:bf_parentRT/2),
-        table_pred(path_dist/3).
-        %materialize_index(path_dist(1,1,0)).
-  */
-
-/*
-class_pair_lcp_dist(A,B,Dist) :-
-        class_pair_lcp_dist(A,B,_,Dist).
-class_pair_lcp_dist(A,B,C,Dist) :-
-        path_dist(A,C,DA),
-        path_dist(B,C,DB),
-        Dist is (DA+DB)-2.
-*/
-
-uberon_class_pair_simj(A,B,S) :-
-        simindex_prepare,
-        feature_pair_simj(A,B,S).
-
-/*
-uberon_class_pair_simj(A,B,C,S) :-
-        simindex_prepare,
-        aggregate(min(Dist),class_pair_lcp_dist(A,B,Dist),S),
-        class_pair_lcp_dist(A,B,C,S),
-        debug(sim,'  dist(~w,~w) = ~w :: ~w',[A,B,C,S]).
-*/
-        
-/*
-uberon_class_pair_simj(A,B,S) :-
-        simindex_prepare,
-        setof(AP,bf_parentRT(A,AP),APs),
-        setof(BP,bf_parentRT(B,BP),BPs),
-        ord_intersection(APs,BPs,CPs),
-        debug(sim,'  lca(~w,~w) = ~w',[A,B,CPs]),
-        %debug(sim,'  lca(~w,~w) = ~w ::: ~w // ~w',[A,B,CPs,APs,BPs]),
-        aggregate(min(Dist),class_pair_lcp_dist(A,B,APs,BPs,CPs,Dist),S),
-        debug(sim,'  dist(~w,~w) = ~w',[A,B,S]).
-*/
-
-/*
-quick_ca(S,T,A) :-
-        bf_parentRT(S,A),
-        bf_parentRT(T,A).
-quick_lca(S,T,A) :-
-        quick_ca(S,T,A),
-        \+ ((quick_ca(S,T,B),
-             B\=A,
-             bf_parentRT(B,A))).
-*/
 
 quick_ca(S,T,A,D) :-
         path_dist(S,A,D1),
@@ -717,20 +806,24 @@ mapping_accuracy(M,S,T,Sim) :-
 
 exclude(S) :-
         id_idspace(S,'FBbt'),
-        bf_parentRT(S,'FBbt:00007002'). % cell
+        isa_or_partof(S,'FBbt:00007002'). % cell
 exclude(S) :-
         id_idspace(S,'FBbt'),
-        bf_parentRT(S,'FBbt:00007012'). % cell component
+        isa_or_partof(S,'FBbt:00007012'). % cell component
 exclude(S) :-
         id_idspace(S,'FMA'),
-        bf_parentRT(S,'FMA:68646').
+        isa_or_partof(S,'FMA:68646').
 exclude(S) :-
         id_idspace(S,'FMA'),
-        bf_parentRT(S,'FMA:61764'). % cardinal cell part
+        isa_or_partof(S,'FMA:61764'). % cardinal cell part
 exclude(S) :-
         id_idspace(S,'ZFA'),
-        bf_parentRT(S,'ZFA:0009000').
+        isa_or_partof(S,'ZFA:0009000').
 
+isa_or_partof(X,A) :-
+        parentT(X,R,A),
+        (   R=subclass
+        ;   R=part_of).
 
 % taken from mapping_metadata.pro
 % REMEMBER - labels used for FMA

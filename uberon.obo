@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 11:10:2010 09:24
+date: 15:10:2010 11:10
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -5216,6 +5216,7 @@ is_a: UBERON:0000923 ! germ layer
 [Term]
 id: UBERON:0000926
 name: mesoderm
+alt_id: UBERON:0003263
 alt_id: UBERON:FBbt_00000126-FMA_69072-MIAA_0000174-XAO_0000050-ZFA_0000041
 def: "The middle germ layer of the embryo, between the endoderm and ectoderm. // Primary germ layer that is the middle of the embryo's three germ layers." [FB:gg, OMD:mesoderm, Wikipedia:Mesoderm]
 comment: This class was created automatically from a combination of ontologies
@@ -5244,7 +5245,6 @@ xref: TAO:0000041
 xref: XAO:0000050
 xref: ZFA:0000041
 is_a: UBERON:0000923 ! germ layer
-is_a: UBERON:0003263 ! implied link automatically realized ! mesoderm of embryo
 
 [Term]
 id: UBERON:0000927
@@ -44987,6 +44987,7 @@ synonym: "4th branchial arch" EXACT SENSU []
 synonym: "4th pharyngeal arch" EXACT []
 synonym: "4th visceral arch" EXACT []
 synonym: "branchial arch 2" RELATED SENSU [ZFA:0001607]
+synonym: "fourth branchial arch" EXACT SENSU []
 synonym: "fourth pharyngeal arch" EXACT []
 synonym: "gill arch 2" EXACT SENSU [ZFA:0001607]
 synonym: "second branchial arch" RELATED SENSU [ZFA:0001607]
@@ -45019,6 +45020,7 @@ name: pharyngeal arch 6
 alt_id: UBERON:0004349
 alt_id: UBERON:ZFA_0001609-XAO_0000453
 def: "contributes to the development of the sternocleidomastoid and trapezius muscles" [MP:0006347]
+synonym: "6th branchial arch" EXACT []
 synonym: "branchial arch 4" RELATED SENSU [ZFA:0001609]
 synonym: "branchial arch 6" EXACT []
 synonym: "fourth branchial arch" RELATED SENSU []
@@ -46755,23 +46757,10 @@ synonym: "amnion mesoderm" EXACT [OBOL:automatic]
 xref: EHDAA:140
 xref: EHDAA2:0000118
 xref: HOG:0000622
+is_a: UBERON:0000926 ! implied link automatically realized ! mesoderm
 relationship: part_of UBERON:0000305
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0000305 ! amnion
-
-[Term]
-id: UBERON:0003263
-name: mesoderm of embryo
-def: "A mesoderm that is part of a embryo [Obol]." [OBOL:automatic]
-comment: TODO - check
-synonym: "developmental tissue mesoderm" EXACT [OBOL:automatic]
-synonym: "embryo mesoderm" EXACT [OBOL:automatic]
-synonym: "mesoderm of developmental tissue" EXACT [OBOL:automatic]
-xref: EHDAA:183
-is_a: UBERON:0000926 ! implied link automatically realized ! mesoderm
-relationship: part_of UBERON:0000922
-intersection_of: UBERON:0000926 ! mesoderm
-intersection_of: part_of UBERON:0000922 ! embryo
 
 [Term]
 id: UBERON:0003264
@@ -46781,6 +46770,7 @@ comment: TODO - check
 synonym: "yolk sac mesoderm" EXACT [OBOL:automatic]
 xref: EHDAA:168
 xref: HOG:0000617
+is_a: UBERON:0000926 ! implied link automatically realized ! mesoderm
 relationship: part_of UBERON:0001040
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0001040 ! yolk sac
@@ -46796,6 +46786,7 @@ synonym: "mesoderm of chorion (vertebrates)" EXACT [OBOL:automatic]
 xref: EHDAA:154
 xref: EHDAA2:0000247
 xref: HOG:0000620
+is_a: UBERON:0000926 ! implied link automatically realized ! mesoderm
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
 relationship: part_of UBERON:0003124
 intersection_of: UBERON:0000926 ! mesoderm
@@ -59200,6 +59191,7 @@ is_a: UBERON:0004123 ! myocardial layer
 [Term]
 id: UBERON:0004125
 name: myocardial compact layer
+def: " outer dense layer of the myocardium uniting the epicardium and myocardium[MP]." [MP:0004056]
 xref: MA:0002865
 is_a: UBERON:0004123 ! myocardial layer
 
@@ -59991,12 +59983,10 @@ comment: not the same as FMA:50609 Pyramid (which is a volume / dimensional enti
 synonym: "malpighian pyramid" EXACT [Wikipedia:Renal_pyramids]
 synonym: "medullary pyramid" RELATED []
 synonym: "pyramid" BROAD [GO:0072056]
-synonym: "pyramid of medulla" EXACT [FMA:75254]
 synonym: "pyramis renalis" RELATED [BTO:0003926]
 synonym: "renal pyramid" EXACT [Wikipedia:Renal_pyramids]
 xref: BTO:0003926
 xref: FMA:258870
-xref: FMA:75254
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Kidney_PioM.png/200px-Kidney_PioM.png
 xref: MA:0001654
 xref: ncithesaurus:Renal_Pyramid
@@ -77022,6 +77012,7 @@ intersection_of: part_of UBERON:0003115 ! pharyngeal arch 4
 id: UBERON:0005667
 name: connecting stalk mesoderm
 xref: EHDAA2:0000314
+is_a: UBERON:0000926 ! implied link automatically realized ! mesoderm
 relationship: part_of UBERON:0002331
 intersection_of: UBERON:0000926 ! mesoderm
 intersection_of: part_of UBERON:0002331 ! umbilical cord
