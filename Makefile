@@ -660,6 +660,17 @@ uberon-go-mismatch.txt:
 uberon-go-inflinks.txt:
 	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy -i adhoc_uberon.pro "goxp_newlink(A,B)" -select A-B -label > $@
 
+# ----------------------------------------
+# TEXT MINING
+# ----------------------------------------
+
+%-matches.tbl: %.txt
+	 blip-findall  -debug index -index "metadata_db:entity_label_token_list_stemmed(1,0,0,0)" -u metadata_nlp -i $< -r cell -r uberon "$*(X),label_full_parse(X,true,S)" -select "m(X,S)" -label > $@
+
+# ----------------------------------------
+# DBPEDIA
+# ----------------------------------------
+
 dbpedia_all_AnatomicalStructure.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
@@ -837,3 +848,4 @@ mappings-ZFA-MA-201009-lca.txt:
 
 inv-mappings-FMA-MA-201009-lca.txt:
 	blip-findall -r mouse_anatomy -r fma -i mappings-FMA-MA-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "inv_mapping_lca(M,S,T,'FMA','MA')" -label > $@.tmp && sort -u $@.tmp > $@
+
