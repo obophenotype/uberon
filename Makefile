@@ -823,13 +823,13 @@ missing-from-%.txt:
 
 # use this one:
 mappings-ZFA-MA-%-scores.txt: mappings-ZFA-MA-%.rdf
-	blip-findall -debug index -r mouse_anatomy -r zebrafish_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_anc_score/7 -label > $@.tmp && sort -u $@.tmp > $@
+	blip-findall -debug index -r mouse_anatomy -r zebrafish_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_classification/10 -label > $@.tmp && sort -u $@.tmp > $@
 
 mappings-FMA-MA-%-scores.txt: mappings-FMA-MA-%.rdf
 	blip-findall -debug mappings -debug index -r fma_simple -r mouse_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_classification/10 -label > $@.tmp && sort -u $@.tmp > $@
 
 mappings-FMA-FBbt-%-scores.txt: mappings-FMA-FBbt-%.rdf
-	blip-findall -debug index -r fma_simple -r fly_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_anc_score/7 -label > $@.tmp && sort -u $@.tmp > $@
+	blip-findall -debug index -r fma_simple -r fly_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_classification/10 -label > $@.tmp && sort -u $@.tmp > $@
 
 
 mappings-ZFA-MA-201009-best.txt:

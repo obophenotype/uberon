@@ -6279,8 +6279,6 @@ alt_id: UBERON:FBbt_00003624-FBbt_00005095-FMA_50801-MA_0000168-MIAA_0000098-MIA
 def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals.[1] Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [Wikipedia:Brain]
 comment: include synganglion?
 subset: uberon_slim
-synonym: "brain" EXACT []
-synonym: "central nervous system" RELATED []
 synonym: "synganglion" RELATED []
 xref: BILA:0000135
 xref: BTO:0000142
@@ -22267,6 +22265,7 @@ synonym: "auricle of ear" EXACT []
 synonym: "auricle of external ear" EXACT []
 synonym: "auricula (auris externa)" EXACT []
 synonym: "pinna of ear" EXACT []
+synonym: "pinnae" PLURAL []
 xref: FMA:56580 ! Pinna
 xref: galen:Auricle
 xref: HOG:0000460 ! pinna
@@ -26898,7 +26897,7 @@ id: UBERON:0001987
 name: placenta
 alt_id: UBERON:FMA_63934-MA_0000386-MIAA_0000279
 def: "organ of metabolic interchange between fetus and mother, partly of embryonic origin and partly of maternal origin[GO]." [Wikipedia:Placenta]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check taxon restriction - WP says: also found in some snakes and lizards with varying levels of development up to mammalian levels. Pough et al. 1992. Herpetology: Third Edition. Pearson Prentice Hall:Pearson Education, Inc., 2002.
 subset: uberon_slim
 xref: BTO:0001078
 xref: FMA:63934 ! Placenta
@@ -31123,6 +31122,7 @@ def: "Portion of tissue that is part of the anterior neural keel and will form t
 comment: TODO - check that GO's optic placode is the same as ZFA's eye primordium
 synonym: "eye anlage" RELATED []
 synonym: "eye field" RELATED []
+synonym: "optic field" RELATED []
 synonym: "optic primordium" EXACT []
 synonym: "optic placode" EXACT [GO:0046619]
 synonym: "eye placode" EXACT [OBOL:automatic]
@@ -33392,34 +33392,6 @@ xref: EHDAA2:0001277 ! notochord
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
 
 [Term]
-id: UBERON:0002329
-name: somite
-alt_id: UBERON:FMA_85522-MIAA_0000068-XAO_0000058-ZFA_0000155
-def: "Portion of mesoderm distributed along the two sides of the neural tube and that will eventually become dermis (dermatome), skeletal muscle (myotome), and vertebrae (sclerotome)[WP]. In Zebrafish: Any of the approximately 45 bilaterally paired blocks of mesoderm cells, lying on either side of the notochord and neural tube, and forming sequentially starting at the head during development of the embryo. Together they give rise to the axial skeleton (from the sclerotome), associated musculature (from the myotome), and dermis (from the dermatome). // Undifferentiated mesodermal components of early trunk or tail segments or metameres, derived from paraxial mesoderm; forms myotomes, sclerotomes and perhaps dermatomes. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [OMD:somite, Wikipedia:Somite, XB:curator, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "somites" RELATED []
-synonym: "mesodermal cluster" EXACT [GO:0001756]
-synonym: "somitic mesoderm" RELATED []
-xref: EHDAA:366 ! somite
-xref: EHDAA:699 ! somite
-xref: FMA:85522 ! Somite
-xref: GAID:1306 ! somite
-xref: HOG:0000191 ! somite
-xref: MAT:0000068 ! somite
-xref: MIAA:0000068 ! somite
-xref: TAO:0000155 ! somite
-xref: XAO:0000058 ! somite
-xref: ZFA:0000155 ! somite
-is_a: UBERON:0000914 ! organismal segment
-is_a: UBERON:0002050 ! embryonic structure
-relationship: develops_from UBERON:0003059 ! presomitic mesoderm
-relationship: part_of UBERON:0000926 ! mesoderm
-xref: ncithesaurus:Somite ! Somite
-xref: BTO:0001558 ! somite
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
-
-[Term]
 id: UBERON:0002330
 name: exocrine system
 alt_id: UBERON:FMA_85539-MA_0002411
@@ -33451,10 +33423,11 @@ xref: ncithesaurus:Exocrine_System ! Exocrine System
 id: UBERON:0002331
 name: umbilical cord
 alt_id: UBERON:FMA_85541-MIAA_0000280
-def: "." [Wikipedia:Umbilical_cord]
+def: "The connecting cord from the developing embryo or fetus to the placenta. During prenatal development, the umbilical cord comes from the same zygote as the fetus and (in humans) normally contains two arteries (the umbilical arteries) and one vein (the umbilical vein), buried within Wharton's jelly. The umbilical vein supplies the fetus with oxygenated, nutrient-rich blood from the placenta. Conversely, the umbilical arteries return the deoxygenated, nutrient-depleted blood[WP]." [Wikipedia:Umbilical_cord]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "connecting stalk" RELATED []
+synonym: "birth cord" RELATED [Wikipedia:Umbilical_cord]
 xref: FMA:85541 ! Umbilical cord
 xref: GAID:517 ! umbilical cord
 xref: MAT:0000280 ! umbilical cord
@@ -37316,6 +37289,46 @@ xref: EHDAA2:0003096 ! gland
 xref: AEO:0000096 ! gland
 
 [Term]
+id: UBERON:0005729
+name: forelimb/pectoral fin field
+intersection_of: UBERON:0005732 ! limb/fin field
+intersection_of: UBERON:0005419 ! forelimb/pectoral fin bud
+synonym: "pectoral fin field" NARROW SENSU [ZFA:0001453]
+xref: TAO:0001453
+xref: ZFA:0001453 ! pectoral fin field
+
+[Term]
+id: UBERON:0005730
+name: hindlimb/pelvic fin field
+intersection_of: UBERON:0005732 ! limb/fin field
+intersection_of: develops_into UBERON:0005420 ! hindlimb/pelvic fin bud
+synonym: "pelvic fin field" NARROW SENSU [ZFA:0001454]
+xref: TAO:0001454
+xref: ZFA:0001454 ! pelvic fin field
+
+
+[Term]
+id: UBERON:0005731 ! fin field
+name: fin field
+intersection_of: UBERON:0005732 ! limb/fin field
+intersection_of: develops_into UBERON:0002531 ! fin bud
+xref: ZFA:0001453 ! pectoral fin field
+xref: ZFA:0001454 ! pelvic fin field
+
+[Term]
+id: UBERON:0005732 ! limb/fin field
+name: limb/fin field
+intersection_of: UBERON:0001048 ! primordium
+intersection_of: develops_into UBERON:0004357 ! limb/fin bud
+
+[Term]
+id: UBERON:0005733 ! limb field
+name: limb field
+comment: the central portion of the limb field gives rise to the limb proper. mesenchyme cells proliferate from from the somatic layer of limb field lateral plate mesoderm (limb skeletal precursors) and from the somites (limb muscle precursors) . these mesenchymal cells accumulate under the ectedermal tissue to make a limb bud.
+intersection_of: UBERON:0005732 ! limb/fin field
+intersection_of: develops_into UBERON:0004347 ! limb bud
+
+[Term]
 id: UBERON:0004357 ! limb/fin bud
 name: limb/fin bud
 relationship: develops_into UBERON:0004708 ! limb/fin
@@ -37337,11 +37350,12 @@ is_a: UBERON:0004357 ! limb/fin bud
 [Term]
 id: UBERON:0004347
 name: limb bud
-def: "the mesenchymal outgrowth on the lateral trunk of the embryo that develops into the limbs[MP]. the limb bud is a structure formed by the developing limb, derived from lateral plate mesodermTemplate:1. It is intimately related with the apical ectodermal ridge, which secretes factors (fibroblast growth factors for example) inducing the initial differentiation of the limb bud. In turn, the mesodermal tissue of the limb bud secretes factors sustaining the development of the Apical Ectodermal Ridge. 1: Developmental Biology, 8th ed[WP]." [MP:0005650, Wikipedia:Limb_bud]
+def: "the mesenchymal outgrowth on the lateral trunk of the embryo that develops into the limbs[MP]. the limb bud is a structure formed by the developing limb, derived from lateral plate mesoderm. It is intimately related with the apical ectodermal ridge, which secretes factors (fibroblast growth factors for example) inducing the initial differentiation of the limb bud. In turn, the mesodermal tissue of the limb bud secretes factors sustaining the development of the Apical Ectodermal Ridge. 1: Developmental Biology, 8th ed[WP]." [MP:0005650, Wikipedia:Limb_bud]
 synonym: "limb buds" EXACT PLURAL []
-synonym: "limb primordium" RELATED []
+comment: induced_by Fgf10, capable of initiating limb forming interactions between endoderm and mesoderm
 is_a: UBERON:0004357 ! limb/fin bud
 relationship: develops_into UBERON:0002101 ! limb
+relationship: induced_by UBERON:0003081 ! lateral plate mesoderm
 xref: ncithesaurus:Limb_Bud ! Limb Bud
 xref: BTO:0001640 ! limb bud
 xref: GAID:1307 ! limb bud 
@@ -37351,6 +37365,7 @@ xref: XAO:0003161  ! limb bud
 id: UBERON:0005417
 name: forelimb bud
 def: "A limb bud that develops into a forelimb." [OBOL:automatic]
+comment: Genes: Tbx5 specifies forelimbs. Wnt2b restricts Fgf10 in chick.
 synonym: "upper limb bud" EXACT [EHDAA2:0003198]
 synonym: "limb bud - forelimb" EXACT [MIAA:0000065]
 xref: XAO:0003065 ! forelimb bud
@@ -37367,6 +37382,7 @@ relationship: part_of UBERON:0000153 ! anterior region of body
 id: UBERON:0005418
 name: hindlimb bud
 def: "A limb bud that develops into a hindlimb." [OBOL:automatic]
+comment: Genes: Tbx4 specifies hindlimbs. Wnt8c restricts Fgf10 in chick.
 synonym: "hind limb bud" EXACT [XAO:0003066]
 xref: XAO:0003066 ! hind limb bud
 xref: EHDAA2:0003197 ! lower limb bud
@@ -37403,11 +37419,16 @@ intersection_of: part_of UBERON:0000154 ! posterior region of body
 id: UBERON:0004356 ! apical ectodermal ridge
 name: apical ectodermal ridge
 def: "multilayered ectodermal region at the distal tip of a limb bud necessary for the proper development of the underlying mesenchyme[MP]. Along with the zone of polarizing activity, it is a crucial organizing region during limb development[WP]." [MP:0001676, Wikipedia:Apical_ectodermal_ridge]
+comment: Functions: maintaining mesenchyme in plastic proliferating state; maintaining expression of A-P axis genes; interacting with D-V proteins. Genes: AER induced by Fgf10 in mesenchyme. AER secretes Fgf8, which stimulates mitosis in the mesenchyme causing Fgf10 production - positive feedback loop
 xref: ZFA:0001702 ! apical ectodermal ridge
 synonym: "AER" RELATED [MP:0001676]
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0004347 ! limb bud
 relationship: part_of UBERON:0000924 ! ectoderm
+relationship: induced_by UBERON:0003104 ! mesenchyme
+relationship: capable_of GO:0010464 ! regulation of mesenchymal cell proliferation
+relationship: capable_of GO:0061037 ! negative regulation of cartilage development
+relationship: secretes PRO:000007499 ! fibroblast growth factor 8
 xref: ncithesaurus:Apical_Ectodermal_Ridge ! Apical Ectodermal Ridge
 
 [Term]
@@ -45473,6 +45494,43 @@ is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0000925 ! endoderm
 
 [Term]
+id: UBERON:0005727
+name: somitomere
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003077 ! paraxial mesoderm
+def: "a segment of paraxial mesoderm[TFD]. In the developing vertebrate embryo, the somitomeres are loose masses of paraxial mesoderm derived cells that form along each side of the neural tube towards the end of the third gestational week. The approximately 50 pairs of somitomeres begin developing in the cranial (head) region, continuing in a caudal (tail) direction until the end of week four[WP]." [http://medical-dictionary.thefreedictionary.com/somitomere, Wikipedia:Somitomere]
+xref: FMA:85523 ! somitomere
+synonym: "somatomere" RELATED [Wikipedia:Somitomere]
+
+[Term]
+id: UBERON:0002329
+name: somite
+alt_id: UBERON:FMA_85522-MIAA_0000068-XAO_0000058-ZFA_0000155
+def: "A segmental mass of mesoderm in the vertebrate embryo, occurring in pairs along the notochord and developing into muscles and vertebrae[BTO]. Portion of mesoderm distributed along the two sides of the neural tube and that will eventually become dermis (dermatome), skeletal muscle (myotome), and vertebrae (sclerotome)[WP]. In Zebrafish: Any of the approximately 45 bilaterally paired blocks of mesoderm cells, lying on either side of the notochord and neural tube, and forming sequentially starting at the head during development of the embryo. Together they give rise to the axial skeleton (from the sclerotome), associated musculature (from the myotome), and dermis (from the dermatome). // Undifferentiated mesodermal components of early trunk or tail segments or metameres, derived from paraxial mesoderm; forms myotomes, sclerotomes and perhaps dermatomes. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [OMD:somite, Wikipedia:Somite, XB:curator, ZFIN:curator, BTO:0001558]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "somites" RELATED []
+synonym: "mesodermal cluster" EXACT [GO:0001756]
+synonym: "somitic mesoderm" RELATED []
+xref: EHDAA:366 ! somite
+xref: EHDAA:699 ! somite
+xref: FMA:85522 ! Somite
+xref: GAID:1306 ! somite
+xref: HOG:0000191 ! somite
+xref: MAT:0000068 ! somite
+xref: MIAA:0000068 ! somite
+xref: TAO:0000155 ! somite
+xref: XAO:0000058 ! somite
+xref: ZFA:0000155 ! somite
+is_a: UBERON:0000914 ! organismal segment
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003059 ! presomitic mesoderm
+relationship: part_of UBERON:0000926 ! mesoderm
+xref: ncithesaurus:Somite ! Somite
+xref: BTO:0001558 ! somite
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
+
+[Term]
 id: UBERON:0003059
 name: presomitic mesoderm
 alt_id: UBERON:XAO_0000057-ZFA_0000279
@@ -45572,46 +45630,6 @@ xref: EHDAA:549 ! primitive node
 xref: ncithesaurus:Primitive_Node ! Primitive Node
 
 [Term]
-id: UBERON:0003063
-name: prechordal plate
-alt_id: UBERON:XAO_0000079-ZFA_0000060
-def: "a thickening of the endoderm at the cranial end of the primitive streak formed by the involution of Spemann's organizer cells. The prechordal plate and the notochord induce the formation of the neural plate from the overlying ectodermal cells[GO]. Axial hypoblast located anterior to the chorda mesoderm; the polster is its most anterior region[ZFA]. Uniquely thickened portion of the endoderm  that is in contact with ectoderm immediately rostral to the cephalic tip of the notochord[WP]." [ZFIN:curator, Wikipedia:Prechordal_plate]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "head mesenchyme" BROAD []
-synonym: "head mesoderm" BROAD []
-xref: EHDAA:181 ! prechordal plate
-xref: HOG:0000086 ! prechordal plate
-xref: TAO:0000060 ! prechordal plate
-xref: XAO:0000079 ! prechordal plate
-xref: ZFA:0000060 ! prechordal plate
-is_a: UBERON:0002050 ! embryonic structure
-relationship: develops_from UBERON:0003068 ! axial mesoderm
-relationship: part_of UBERON:0004341 ! primitive streak
-relationship: part_of UBERON:0000925 ! endoderm
-xref: EHDAA2:0000732 ! head mesenchyme
-
-[Term]
-id: UBERON:0003064
-name: intermediate mesoderm
-alt_id: UBERON:XAO_0000085-ZFA_0001206
-def: "The intermediate mesoderm is located between the lateral mesoderm and the paraxial mesoderm. It develops into the kidney and gonads." [GOC:curators, Wikipedia:Intermediate_mesoderm]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "IM" RELATED []
-xref: HOG:0000087 ! intermediate mesoderm
-xref: TAO:0001206 ! intermediate mesoderm
-xref: XAO:0000085 ! intermediate mesoderm
-xref: ZFA:0001206 ! intermediate mesoderm
-is_a: UBERON:0002050 ! embryonic structure
-relationship: adjacent_to UBERON:0003077 ! paraxial mesoderm
-relationship: adjacent_to UBERON:0003081 ! lateral plate mesoderm
-relationship: develops_from UBERON:0000926 ! mesoderm
-relationship: part_of UBERON:0000926 ! mesoderm
-xref: ncithesaurus:Intermediate_Mesoderm ! Intermediate Mesoderm
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
-
-[Term]
 id: UBERON:0003065
 name: ciliary marginal zone
 alt_id: UBERON:XAO_0000086-ZFA_0001289
@@ -45667,6 +45685,46 @@ synonym: "chorda mesoderm" EXACT []
 xref: ZFA:0000091 ! axial chorda mesoderm
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0003068 ! axial mesoderm
+
+[Term]
+id: UBERON:0003064
+name: intermediate mesoderm
+alt_id: UBERON:XAO_0000085-ZFA_0001206
+def: "The intermediate mesoderm is located between the lateral mesoderm and the paraxial mesoderm. It develops into the kidney and gonads." [GOC:curators, Wikipedia:Intermediate_mesoderm]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "IM" RELATED []
+xref: HOG:0000087 ! intermediate mesoderm
+xref: TAO:0001206 ! intermediate mesoderm
+xref: XAO:0000085 ! intermediate mesoderm
+xref: ZFA:0001206 ! intermediate mesoderm
+is_a: UBERON:0002050 ! embryonic structure
+relationship: adjacent_to UBERON:0003077 ! paraxial mesoderm
+relationship: adjacent_to UBERON:0003081 ! lateral plate mesoderm
+relationship: develops_from UBERON:0000926 ! mesoderm
+relationship: part_of UBERON:0000926 ! mesoderm
+xref: ncithesaurus:Intermediate_Mesoderm ! Intermediate Mesoderm
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
+
+[Term]
+id: UBERON:0003063
+name: prechordal plate
+alt_id: UBERON:XAO_0000079-ZFA_0000060
+def: "a thickening of the endoderm at the cranial end of the primitive streak formed by the involution of Spemann's organizer cells. The prechordal plate and the notochord induce the formation of the neural plate from the overlying ectodermal cells[GO]. Axial hypoblast located anterior to the chorda mesoderm; the polster is its most anterior region[ZFA]. Uniquely thickened portion of the endoderm  that is in contact with ectoderm immediately rostral to the cephalic tip of the notochord[WP]." [ZFIN:curator, Wikipedia:Prechordal_plate]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "head mesenchyme" BROAD []
+synonym: "head mesoderm" BROAD []
+xref: EHDAA:181 ! prechordal plate
+xref: HOG:0000086 ! prechordal plate
+xref: TAO:0000060 ! prechordal plate
+xref: XAO:0000079 ! prechordal plate
+xref: ZFA:0000060 ! prechordal plate
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003068 ! axial mesoderm
+relationship: part_of UBERON:0004341 ! primitive streak
+relationship: part_of UBERON:0000925 ! endoderm
+xref: EHDAA2:0000732 ! head mesenchyme
 
 [Term]
 id: UBERON:0004881
@@ -45773,6 +45831,7 @@ def: "Area of mesoderm at either side of the midline embryonic notochord that, o
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "paraxial mesenchyme" RELATED []
+synonym: "somitic mesoderm" EXACT [ISBN:9780878932504 "Developmental Biology"]
 xref: HOG:0000114 ! paraxial mesoderm
 xref: TAO:0000255 ! paraxial mesoderm
 xref: XAO:0000259 ! paraxial mesoderm
@@ -45938,6 +45997,15 @@ xref: ncithesaurus:Lateral_Mesoderm ! Lateral Mesoderm
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
 
 [Term]
+id: UBERON:0005728
+name: extraembryonic mesoderm
+synonym: "extra-embryonic mesoderm" EXACT []
+is_a: UBERON:0000478 ! extraembryonic structure
+relationship: develops_from UBERON:0003081 ! lateral plate mesoderm
+xref: EHDAA2:0000474 ! extraembryonic mesoderm
+xref: HOG:0000616 ! extraembryonic mesoderm
+
+[Term]
 id: UBERON:0004871
 name: somatic layer of lateral plate mesoderm
 def: "Layer of lateral plate mesoderm that forms the future body wall[WP]." [Wikipedia:Lateral_plate_mesoderm#Division_into_layers]
@@ -46069,7 +46137,7 @@ xref: TAO:0001056 ! myotome
 xref: XAO:0000315 ! myotome
 xref: ZFA:0001056 ! myotome
 is_a: UBERON:0000479 ! portion of tissue
-relationship: develops_from UBERON:0002329 ! somite
+relationship: part_of UBERON:0002329 ! somite
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Gray65.png/200px-Gray65.png
 
 [Term]
@@ -57442,7 +57510,7 @@ synonym: "skeletal muscle tissue of head" EXACT [OBOL:automatic]
 id: UBERON:0003900
 name: epaxial muscle
 def: "trunk muscle that lies dorsal to the septum." [Wikipedia:Epaxial_and_Hypaxial_muscles]
-is_a: UBERON:0003898
+is_a: UBERON:0003898 ! skeletal muscle of trunk
 xref: AAO:0000142 ! epaxial_muscles
 xref: XAO:0003229 ! epaxial muscle
 xref: ZFA:0000349 ! epaxialis
@@ -59432,9 +59500,9 @@ xref: XAO:0000282 ! visceral pouch
 [Term]
 id: UBERON:0004138
 name: somitomeric trunk muscle
-def: "muscle is derived from somitomeric mesoderm. An example of this is found in Mus musculus." [GO:0002075]
-comment: TODO - FMA:85523 ! Somitomere
-is_a: UBERON:0001134 ! skeletal muscle tissue
+def: " The somitomeric trunk muscle is derived from somitomeric mesoderm. The muscle begins its development with the differentiation of the muscle cells and ends with the mature muscle. An example of this process is found in Mus musculus.[GO]." [GO:0002075]
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: develops_from UBERON:0002329 ! somite
 
 [Term]
 id: UBERON:0000948
