@@ -665,7 +665,7 @@ uberon-go-inflinks.txt:
 # ----------------------------------------
 
 %-matches.tbl: %.txt
-	 blip-findall  -debug index -index "metadata_db:entity_label_token_list_stemmed(1,0,0,0)" -u metadata_nlp -i $< -r cell -r uberon "$*(X),label_full_parse(X,true,S)" -select "m(X,S)" -label > $@
+	 blip-findall  -debug index -index "metadata_nlp:entity_label_token_list_stemmed(1,0,0,0)" -u metadata_nlp -i $< -r cell -r uberon "$*(X),label_full_parse(X,true,S)" -select "m(X,S)" -label > $@
 
 # ----------------------------------------
 # DBPEDIA

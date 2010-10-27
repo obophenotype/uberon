@@ -8005,21 +8005,32 @@ xref: EHDAA2:0001246 ! nervous system
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nervous_system_diagram.png/200px-Nervous_system_diagram.png
 
 [Term]
-id: UBERON:0001017
+id: UBERON:0005743 ! neuraxis
+name: neuraxis
+def: "Organ with organ cavity which consists of gray matter and white matter. Examples: There is only one neuraxis[FMA]." [FMA:55675]
+synonym: "central nervous system" BROAD [FMA:55675]
+synonym: "cerebrospinal axis" EXACT  [FMA:55675]
+is_a: UBERON:0000073 ! regional part of nervous system
+relationship: part_of UBERON:0001017 ! central nervous system
+relationship: has_part UBERON:0000955 ! brain
+relationship: has_part UBERON:0002240 ! spinal cord
+xref: FMA:55675 ! neuraxis
+
+[Term]
+id: UBERON:0001017 ! central nervous system
 name: central nervous system
 alt_id: UBERON:FBbt_00005094-FMA_55675-MA_0000167-XAO_0000215-ZFA_0000012
-def: "The part of the nervous system which consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Organ with organ cavity which consists of gray matter and white matter[FMA]. The brain and spinal cord[ZFA]." [FB:gg, ISBN:3110148986, NLM:central+nervous+system, Wikipedia:Central_nervous_system, ZFIN:curator]
-comment: TODO - resolve is_a vs part_of NS in AOs (and GO). TODO: specify inclusion or non-inclusion of retina in neuraxis
+def: "The part of the nervous system which in vertebrates consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Neuraxis plus retina[INCF]." [FB:gg, ISBN:3110148986, NLM:central+nervous+system, Wikipedia:Central_nervous_system, ZFIN:curator]
+comment: ZFA retina NOT part_of CNS. XAO excludes retina in text def, retina part_of CNS. MA retina NOT part_of CNS. NIF_GA retina NOT part_of CNS. Fly also excludes it. EFO also excludes it.
 subset: uberon_slim
-synonym: "CNS" RELATED []
-synonym: "neuraxis" EXACT []
+synonym: "CNS" EXACT []
+synonym: "neuraxis" NARROW []
 xref: AAO:0000090 ! central_nervous_system
 xref: BILA:0000080
 xref: BTO:0000227
 xref: EFO:0000908 ! central nervous system
 xref: EHDAA:828 ! central nervous system
 xref: FBbt:00005094 ! central nervous system
-xref: FMA:55675 ! Neuraxis
 xref: GAID:570 ! central nervous system
 xref: HOG:0000293 ! central nervous system
 xref: MA:0000167 ! central nervous system
@@ -9861,7 +9872,8 @@ def: "." [Wikipedia:Atlas_(anatomy)]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Atlas (CI)" EXACT []
-synonym: "c1 vertebra" EXACT []
+synonym: "C1 vertebra" EXACT []
+synonym: "C1" BROAD []
 synonym: "cervical vertebra 1" EXACT []
 synonym: "first cervical vertebra" EXACT []
 xref: AAO:0000709 ! atlas
@@ -9880,7 +9892,8 @@ def: "second cervical vertebra (C2) of the spine." [Wikipedia:Axis_(anatomy)]
 comment: note: not the same as ZFA term 'axis'
 subset: uberon_slim
 synonym: "C2 vertebra" EXACT []
-synonym: "Axis (CII)" EXACT []
+synonym: "C2" BROAD []
+synonym: "axis (CII)" EXACT []
 synonym: "cervical vertebra 2" EXACT [MA:0001422]
 xref: MA:0001422 ! cervical vertebra 2
 xref: EHDAA:10608 ! axis
@@ -12922,19 +12935,6 @@ relationship: adjacent_to UBERON:0001250
 relationship: adjacent_to UBERON:0001959
 relationship: disjoint_from UBERON:0004879 ! marginal zone
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Gray1191.png/200px-Gray1191.png
-
-[Term]
-id: UBERON:0001252
-name: adventitia of ureter
-alt_id: UBERON:FMA_15892-MA_0002652
-comment: This class was created automatically from a combination of ontologies
-synonym: "external adventitia of ureter" EXACT []
-synonym: "ureter adventitia" EXACT []
-synonym: "ureteral adventitia" EXACT []
-xref: FMA:15892 ! Adventitia of ureter
-xref: MA:0002652 ! ureter adventitia
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001008 ! urinary system
 
 [Term]
 id: UBERON:0001253
@@ -22473,7 +22473,7 @@ name: anterior chamber of eyeball
 def: "the fluid-filled space inside the eye between the iris and the cornea's innermost surface, the endothelium.[1]  Aqueous humor is the fluid that fills the anterior chamber. Hyphema and glaucoma  are two main pathologies in this area. In hyphema, blood fills the anterior chamber. In glaucoma, blockage of the canal of Schlemm prevents the normal outflow of aqueous humor, resulting in accumulation of fluid, increased intraocular pressure, and eventually blindness." [Wikipedia:Anterior_chamber_of_eyeball]
 alt_id: UBERON:FMA_58078-MA_0000262
 comment: This class was created automatically from a combination of ontologies
-synonym: "Anterior chamber" EXACT [HP:0000593]
+synonym: "anterior chamber" EXACT [HP:0000593, MP:0010709]
 synonym: "anterior chamber of eye" EXACT []
 synonym: "camera anterior" EXACT []
 synonym: "eye anterior chamber" EXACT []
@@ -23208,6 +23208,17 @@ xref: MA:0002461 ! vitreous chamber
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001802 ! posterior segment of eyeball
 xref: ncithesaurus:Vitreous_Chamber ! Vitreous Chamber
+
+[Term]
+id: UBERON:0005746
+name: primary vitreous humour
+def: "embryonic fibrovascular mesodermal tissue located between the optic cup and lens vesicle that normally regresses during the development of the vitreous body[MP]" [MP:0010711]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0000926 ! mesoderm
+relationship: part_of UBERON:0005606 ! hyaloid cavity
+synonym: "primary vitreous" EXACT [MP:0010711]
+xref: EHDAA2:0001502 ! primary vitreous humour
+xref: EHDAA:5707 ! primary vitreous humour
 
 [Term]
 id: UBERON:0001800
@@ -24832,6 +24843,7 @@ alt_id: UBERON:FMA_6200-FMA_62000-MA_0000183-MIAA_0000421-XAO_0000012-ZFA_000007
 def: "Organ component of neuraxis that has as its parts the cerebral cortex, cerebral white matter, basal ganglia, septum and fornix, as well as subcortical gray and white matter structures. There is only one telencephalon. // The anterior and dorsal forebrain neuromere, includes the olfactory bulb. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [Wikipedia:Telencephalon, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "endbrain" EXACT [Swanson:2004]
 synonym: "cerebrum" RELATED []
 synonym: "telencephalic vesicle" RELATED []
 synonym: "telencephalon" EXACT []
@@ -24859,7 +24871,7 @@ def: "Organ component of neuraxis that has as its parts the epithalamus, thalamu
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "between brain" EXACT []
-synonym: "interbrain" EXACT []
+synonym: "interbrain" EXACT [Swanson:2004]
 synonym: "mature diencephalon" EXACT []
 xref: BTO:0000342
 xref: EFO:0000911 ! diencephalon
@@ -37168,7 +37180,48 @@ is_a: UBERON:0002384 ! connective tissue
 xref: GAID:926 ! elastic tissue
 
 [Term]
-id: UBERON:0002522
+id: UBERON:0005742 ! adventitia
+name: adventitia
+def: "An outermost connective tissue covering of an organ, vessel, or other structure[WP]." [Wikipedia:Adventitia]
+xref: FMA:45635 ! Adventitia
+synonym: "tunica externa" EXACT [FMA:45635]
+synonym: "tunica advetitia" EXACT [Wikipedia:Adventitia]
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0001252
+name: adventitia of ureter
+alt_id: UBERON:FMA_15892-MA_0002652
+comment: This class was created automatically from a combination of ontologies
+synonym: "external adventitia of ureter" EXACT []
+synonym: "ureter adventitia" EXACT []
+synonym: "ureteral adventitia" EXACT []
+xref: FMA:15892 ! Adventitia of ureter
+xref: MA:0002652 ! ureter adventitia
+xref: EMAPA:28114 ! adventitia of ureter
+intersection_of: UBERON:0005742 ! adventitia
+intersection_of: part_of UBERON:0000056 ! ureter
+
+[Term]
+id: UBERON:0005741
+name: adventitia of uterus
+xref: EMAPA:29925 ! adventitia
+intersection_of: UBERON:0005742 ! adventitia
+intersection_of: part_of UBERON:0000995 ! uterus
+
+[Term]
+id: UBERON:0005734 ! tunica externa of vessel
+name: tunica externa of vessel
+def: "The tunica externa, also known as the tunica adventitia, is the outermost layer of a blood vessel, surrounding the tunica media. It is mainly composed of collagen. The collagen serves to anchor the blood vessel to nearby organs, giving it stability." [Wikipedia:Tunica_externa_%28vessels%29]
+comment: TODO - note terminological problems. WP says tunica external layer of blood vessel. FMA says tunica externa = adventitia, and is FMA adventitia covers other kinds of vessels. Here we opt for a lengthier name that attempts to disambiguate. There is no precise FMA equivalent, as FMA has tunica externa of arteries, veins, genital ducts etc as siblings
+synonym: "adventitia externa" EXACT [Wikipedia:Tunica_externa_%28vessels%29]
+synonym: "external coat" RELATED [Wikipedia:Tunica_externa_%28vessels%29]
+synonym: "tunica adventitia of vessel" EXACT [Wikipedia:Tunica_externa_%28vessels%29]
+is_a: UBERON:0005742 ! adventitia
+relationship: UBERON:0000055 ! vessel
+
+[Term]
+id: UBERON:0002522 ! tunica media
 name: tunica media
 alt_id: UBERON:MA_0002855-FMA_55590
 def: "The tunica media (or just media) (middle coat) is the middle layer of an artery or vein. [WP,unvetted]." [Wikipedia:Tunica_media]
@@ -37176,12 +37229,14 @@ subset: uberon_slim
 xref: FMA:55590 ! Tunica media
 xref: MA:0002855 ! tunica media
 is_a: UBERON:0000064 ! organ part
+relationship: UBERON:0000055 ! vessel
+relationship: surrounded_by UBERON:0005734 ! tunica externa
 xref: ncithesaurus:Tunica_Media ! Tunica Media
 xref: GAID:170 ! tunica media
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Illu_artery.jpg/200px-Illu_artery.jpg
 
 [Term]
-id: UBERON:0002523
+id: UBERON:0002523 ! tunica intima
 name: tunica intima
 alt_id: UBERON:MA_0002861-FMA_55589
 def: "The tunica intima (or just intima) is the innermost layer of an artery or vein. It is made up of one layer of endothelial cells and is supported by an internal elastic lamina. The endothelial cells are in direct contact with the blood flow. The inner coat (tunica intima) can be separated from the middle by a little maceration, or it may be stripped off in small pieces; but, on account of its friability, it cannot be separated as a complete membrane. It is a fine, transparent, colorless structure which is highly elastic, and, after death, is commonly corrugated into longitudinal wrinkles. The inner coat consists of: A layer of pavement endothelium, the cells of which are polygonal, oval, or fusiform, and have very distinct round or oval nuclei. This endothelium is brought into view most distinctly by staining with silver nitrate. A subendothelial layer, consisting of delicate connective tissue with branched cells lying in the interspaces of the tissue; in arteries of less than 2 mm. in diameter the subendothelial layer consists of a single stratum of stellate cells, and the connective tissue is only largely developed in vessels of a considerable size. An elastic or fenestrated layer, which consists of a membrane containing a net-work of elastic fibers, having principally a longitudinal direction, and in which, under the microscope, small elongated apertures or perforations may be seen, giving it a fenestrated appearance. It was therefore called by Henle the fenestrated membrane. This membrane forms the chief thickness of the inner coat, and can be separated into several layers, some of which present the appearance of a network of longitudinal elastic fibers, and others a more membranous character, marked by pale lines having a longitudinal direction. In minute arteries the fenestrated membrane is a very thin layer; but in the larger arteries, and especially in the aorta, it has a very considerable thickness. [WP,unvetted]." [Wikipedia:Tunica_intima]
@@ -37189,9 +37244,41 @@ subset: uberon_slim
 xref: FMA:55589 ! Tunica intima
 xref: MA:0002861 ! tunica intima
 is_a: UBERON:0000064 ! organ part
+relationship: UBERON:0001981 ! blood vessel
+relationship: surrounded_by UBERON:0002522 ! tunica media
 xref: ncithesaurus:Tunica_Intima ! Tunica Intima
 xref: GAID:523 ! tunica intima
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Illu_artery.jpg/200px-Illu_artery.jpg
+
+[Term]
+id: UBERON:0005737
+name: swim bladder tunica externa
+def: "Multi-tissue structure that is the external layer of the swim bladder that is covered by the peritoneum, and made of elastic fibres and ichthyocol (short needles of collagen)." [http:www.briancoad.com/Dictionary/T.htm, ZFA:0001700]
+comment: the primary reason this term is manifest in uberon to disambiguate from a structure with the same/similar name
+xref: TAO:0002245
+synonym: "tunica externa" RELATED SENSU [ZFA:0001700]
+is_a: UBERON:0000481 ! multi-tissue structure
+xref: ZFA:0001700 ! tunica externa
+disjoint_from: UBERON:0005734 ! tunica externa
+
+[Term]
+id: UBERON:0005738
+name: swim bladder tunica interna
+def: "Multi-tissue structure that is the internal layer of the swim bladder and is comprised of thin endoderm and a smooth muscle layer called the muscularis mucosa with longitudinal and circular fibres with some collagen." [http:www.briancoad.com/Dictionary/T.htm]
+comment: the primary reason this term is manifest in uberon to disambiguate from a structure with the same/similar name
+xref: TAO:0002246
+is_a: UBERON:0000481 ! multi-tissue structure
+xref: ZFA:0001701 ! tunica interna
+disjoint_from: UBERON:0002523 ! tunica intima
+
+[Term]
+id: UBERON:0005740
+name: tunica intima of artery
+synonym: "tunica interna (intima)(arteriae)" EXACT  [FMA:14272]
+relationship: part_of UBERON:0000415 ! artery wall
+intersection_of: UBERON:0002523 ! tunica intima
+intersection_of: part_of UBERON:0001637 ! artery
+xref: FMA:14272 ! Tunica intima of artery
 
 [Term]
 id: UBERON:0002524
@@ -37292,7 +37379,7 @@ xref: AEO:0000096 ! gland
 id: UBERON:0005729
 name: forelimb/pectoral fin field
 intersection_of: UBERON:0005732 ! limb/fin field
-intersection_of: UBERON:0005419 ! forelimb/pectoral fin bud
+intersection_of: develops_into UBERON:0005419 ! forelimb/pectoral fin bud
 synonym: "pectoral fin field" NARROW SENSU [ZFA:0001453]
 xref: TAO:0001453
 xref: ZFA:0001453 ! pectoral fin field
@@ -52223,7 +52310,7 @@ def: "A portion of cardiac muscle tissue that is part of a trabecula carnea [Obo
 id: UBERON:0001211
 name: Peyer's patch
 alt_id: UBERON:FMA_15054-MA_0000137
-def: "aggregations of lymphoid tissue that are usually found in the lowest portion of the small intestine ileum in humans; as such, they differentiate the ileum from the duodenum and jejunum.nodular lymphoid structures on the serosal surface of the small intestine." [Wikipedia:Peyer's_patch]
+def: "aggregations of lymphoid tissue that are usually found in the lowest portion of the small intestine ileum in humans; as such, they differentiate the ileum from the duodenum and jejunum // nodular lymphoid structures on the serosal surface of the small intestine." [Wikipedia:Peyer's_patch]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: GAID:950 ! peyer's patch
@@ -56510,7 +56597,7 @@ is_a: UBERON:0001981 ! blood vessel
 xref: ncithesaurus:Vasa_Vasorum ! Vasa Vasorum
 
 [Term]
-id: UBERON:0003711
+id: UBERON:0003711 ! brachiocephalic vein
 name: brachiocephalic vein
 synonym: "brachiocephalic venous tree" EXACT [FMA:4723]
 synonym: "innominate vein" RELATED [GAID:529]
@@ -71870,10 +71957,14 @@ name: venous dural sinus
 def: "The dural venous sinuses (also called dural sinuses, cerebral sinuses, or cranial sinuses) are venous channels found between layers of dura mater in the brain.[1] They receive blood from internal and external veins of the brain, receive cerebrospinal fluid (CSF) from the subarachnoid space, and ultimately empty into the internal jugular vein." [Wikipedia:Dural_venous_sinuses]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:0000955 ! brain
+relationship: part_of UBERON:0003711 ! brachiocephalic vein
 synonym: "cranial dural venous sinus" EXACT [FMA:50762]
+synonym: "venous dural sinus" EXACT [EHDAA2:0002169]
 synonym: "dural sinus" EXACT [FMA:50762]
+synonym: "venous dural" EXACT [EHDAA:6491]
 xref: FMA:50762 ! Dural venous sinus
 xref: EHDAA2:0002169 ! venous dural sinus
+xref: EHDAA:6491 ! venous dural
 
 [Term]
 id: UBERON:0005491
@@ -73142,6 +73233,23 @@ name: hindbrain venous system
 xref: EHDAA2:0000776 ! hindbrain venous system
 intersection_of: UBERON:0004582 ! venous system
 intersection_of: part_of UBERON:0002028 ! hindbrain
+
+[Term]
+id: UBERON:0005744
+name: cranial conduit
+xref: FMA:53165 ! cranial conduit
+comment: in FMA this is a conduit space, not a conduit
+intersection_of: UBERON:0004111 ! anatomical conduit
+intersection_of: part_of UBERON:0003128 ! cranium
+
+[Term]
+id: UBERON:0005745
+name: optic canal
+is_a: UBERON:0005744 ! cranial conduit
+def: "The short canal through the orbitosphenoid bone at the apex of the orbit that gives passage to the optic nerve and the opthalmic artery[MP]. The optic foramen is the opening to the optic canal. The superior surface of the sphenoid bone is bounded behind by a ridge, which forms the anterior border of a narrow, transverse groove, the chiasmatic groove (optic groove), above and behind which lies the optic chiasma; the groove ends on either side in the optic foramen, which transmits the optic nerve and ophthalmic artery (with accompanying sympathetic nerve fibres) into the orbital cavity. The left and right optic canals are 25mm apart posteriorly and 30mm apart anteriorly. They are funnel-shaped (narrowest anteriorly)." [Wikipedia:Optic_canal, ISBN:0-683-40008-8 "Stedman's Medical Dictionary, 27th edition", MP:0010704]
+synonym: "canalis opticus" RELATED [Wikipedia:Optic_canal]
+synonym: "optic foramen" RELATED [Wikipedia:Optic_canal]
+xref: FMA:54774 ! optic canal
 
 [Typedef]
 id: adjacent_to
