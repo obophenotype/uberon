@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 15:10:2010 11:10
+date: 03:11:2010 21:56
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -82,7 +82,6 @@ xref: EHDAA2:0001274
 xref: FMA:46472
 xref: GAID:77
 xref: galen:Nose
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Head_olfactory_nerve.jpg/200px-Head_olfactory_nerve.jpg
 xref: MA:0000281
 xref: MAT:0000139
 xref: MIAA:0000139
@@ -90,34 +89,23 @@ xref: ncithesaurus:Nose
 xref: OpenCyc:Mx4rvViCbJwpEbGdrcN5Y29ycA
 xref: TAO:0000047
 xref: ZFA:0000047
-is_a: UBERON:0000005 ! chemosensory organ
-is_a: UBERON:0002268 ! implied link automatically realized ! olfactory organ
+is_a: UBERON:0002268 ! olfactory organ
 relationship: capable_of GO:0007608
 relationship: develops_from UBERON:0003050 ! olfactory placode
 
 [Term]
 id: UBERON:0000005
 name: chemosensory organ
-def: "." [Wikipedia:Olfactory_system]
-comment: This class was created automatically from a combination of ontologies
 subset: functional_classification
 subset: uberon_slim
-synonym: "chemosensory sensory organ" EXACT []
-synonym: "olfactory system" EXACT []
-xref: AAO:0000334
-xref: BILA:0000144
-xref: EFO:0001973
+synonym: "chemosensory sensory organ" EXACT [FBbt:00005157]
 xref: FBbt:00005157
-xref: FMA:7190
-xref: MA:0002445
-xref: NIF_GrossAnatomy:nlx_anat_090806
-xref: OpenCyc:Mx4rvViw75wpEbGdrcN5Y29ycA
-xref: TAO:0001149
-xref: XAO:0000201
-xref: ZFA:0001149
 is_a: UBERON:0000020 ! implied link automatically realized ! sense organ
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 intersection_of: UBERON:0000020 ! sense organ
 intersection_of: capable_of GO:0007606
+relationship: part_of UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0005726 ! chemosensory system
 
 [Term]
 id: UBERON:0000006
@@ -5725,8 +5713,6 @@ alt_id: UBERON:FBbt_00003624-FBbt_00005095-FMA_50801-MA_0000168-MIAA_0000098-MIA
 def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals.[1] Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [Wikipedia:Brain]
 comment: include synganglion?
 subset: uberon_slim
-synonym: "brain" EXACT []
-synonym: "central nervous system" RELATED []
 synonym: "synganglion" RELATED []
 xref: BILA:0000135
 xref: BTO:0000142
@@ -7163,11 +7149,11 @@ relationship: only_in_taxon NCBITaxon:33208
 id: UBERON:0001017
 name: central nervous system
 alt_id: UBERON:FBbt_00005094-FMA_55675-MA_0000167-XAO_0000215-ZFA_0000012
-def: "The part of the nervous system which consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Organ with organ cavity which consists of gray matter and white matter[FMA]. The brain and spinal cord[ZFA]." [FB:gg, ISBN:3110148986, NLM:central+nervous+system, Wikipedia:Central_nervous_system, ZFIN:curator]
-comment: TODO - resolve is_a vs part_of NS in AOs (and GO). TODO: specify inclusion or non-inclusion of retina in neuraxis
+def: "The part of the nervous system which in vertebrates consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Neuraxis plus retina[INCF]." [FB:gg, ISBN:3110148986, NLM:central+nervous+system, Wikipedia:Central_nervous_system, ZFIN:curator]
+comment: ZFA retina NOT part_of CNS. XAO excludes retina in text def, retina part_of CNS. MA retina NOT part_of CNS. NIF_GA retina NOT part_of CNS. Fly also excludes it. EFO also excludes it.
 subset: uberon_slim
-synonym: "CNS" RELATED []
-synonym: "neuraxis" EXACT []
+synonym: "CNS" EXACT []
+synonym: "neuraxis" NARROW []
 xref: AAO:0000090
 xref: BILA:0000080
 xref: BTO:0000227
@@ -7175,7 +7161,6 @@ xref: EFO:0000908
 xref: EHDAA:828
 xref: EHDAA2:0000225
 xref: FBbt:00005094
-xref: FMA:55675
 xref: GAID:570
 xref: HOG:0000293
 xref: MA:0000167
@@ -8580,7 +8565,8 @@ def: "." [Wikipedia:Atlas_(anatomy)]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Atlas (CI)" EXACT []
-synonym: "c1 vertebra" EXACT []
+synonym: "C1" BROAD []
+synonym: "C1 vertebra" EXACT []
 synonym: "cervical vertebra 1" EXACT []
 synonym: "first cervical vertebra" EXACT []
 xref: AAO:0000709
@@ -8598,7 +8584,8 @@ alt_id: UBERON:FMA_12520-MA_0001422-ZFA_0000092
 def: "second cervical vertebra (C2) of the spine." [Wikipedia:Axis_(anatomy)]
 comment: note: not the same as ZFA term 'axis'
 subset: uberon_slim
-synonym: "Axis (CII)" EXACT []
+synonym: "axis (CII)" EXACT []
+synonym: "C2" BROAD []
 synonym: "C2 vertebra" EXACT []
 synonym: "cervical vertebra 2" EXACT [MA:0001422]
 xref: EHDAA:10608
@@ -9378,6 +9365,7 @@ xref: OpenCyc:Mx4rv2kf-5wpEbGdrcN5Y29ycA
 xref: XAO:0000174
 xref: ZFA:0005277
 is_a: UBERON:0002036 ! striated muscle tissue
+is_a: UBERON:0004138 ! implied link automatically realized ! somitomeric trunk muscle
 relationship: develops_from UBERON:0003082 ! myotome
 
 [Term]
@@ -10887,7 +10875,7 @@ relationship: part_of UBERON:0001240 ! muscularis mucosae of intestine
 id: UBERON:0001211
 name: Peyer's patch
 alt_id: UBERON:FMA_15054-MA_0000137
-def: "aggregations of lymphoid tissue that are usually found in the lowest portion of the small intestine ileum in humans; as such, they differentiate the ileum from the duodenum and jejunum.nodular lymphoid structures on the serosal surface of the small intestine." [Wikipedia:Peyer's_patch]
+def: "aggregations of lymphoid tissue that are usually found in the lowest portion of the small intestine ileum in humans; as such, they differentiate the ileum from the duodenum and jejunum // nodular lymphoid structures on the serosal surface of the small intestine." [Wikipedia:Peyer's_patch]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EFO:0001381
@@ -11664,10 +11652,12 @@ comment: This class was created automatically from a combination of ontologies
 synonym: "external adventitia of ureter" EXACT []
 synonym: "ureter adventitia" EXACT []
 synonym: "ureteral adventitia" EXACT []
+xref: EMAPA:28114
 xref: FMA:15892
 xref: MA:0002652
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001008 ! urinary system
+is_a: UBERON:0005742 ! implied link automatically realized ! adventitia
+intersection_of: UBERON:0005742 ! adventitia
+intersection_of: part_of UBERON:0000056 ! ureter
 
 [Term]
 id: UBERON:0001253
@@ -19458,6 +19448,7 @@ xref: ncithesaurus:Nasal_Bone
 xref: OpenCyc:Mx4rwGOTZJwpEbGdrcN5Y29ycA
 xref: TAO:0000365
 xref: ZFA:0000365
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
 relationship: part_of UBERON:0000004 ! olfactory apparatus
@@ -19951,8 +19942,8 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Gray854.png/200px
 xref: MA:0000285
 xref: ncithesaurus:Nasal_Septum
 xref: OpenCyc:Mx4rv7e-k5wpEbGdrcN5Y29ycA
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003037 ! septum
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
 [Term]
@@ -20178,8 +20169,8 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Illu01_head_neck.
 xref: MA:0002476
 xref: ncithesaurus:Palate
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: adjacent_to UBERON:0000167 ! oral cavity
 relationship: part_of UBERON:0000165 ! mouth
 relationship: part_of UBERON:0001707 ! nasal cavity
@@ -20362,6 +20353,7 @@ xref: FMA:54819
 xref: MA:0001593
 xref: NIF_GrossAnatomy:birnlex_4102
 is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001723 ! tongue
 
 [Term]
@@ -20513,9 +20505,9 @@ xref: FMA:55022
 xref: GAID:1285
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Tonsils_diagram.jpg/200px-Tonsils_diagram.jpg
 xref: ncithesaurus:Uvula
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001733 ! soft palate
 
 [Term]
@@ -20940,6 +20932,7 @@ synonym: "auricle of external ear" EXACT []
 synonym: "auricula" EXACT [Wikipedia:Auricula]
 synonym: "auricula (auris externa)" EXACT []
 synonym: "pinna of ear" EXACT []
+synonym: "pinnae" RELATED PLURAL []
 xref: EHDAA2:0001467
 xref: FMA:56580
 xref: galen:Auricle
@@ -21117,7 +21110,7 @@ name: anterior chamber of eyeball
 alt_id: UBERON:FMA_58078-MA_0000262
 def: "the fluid-filled space inside the eye between the iris and the cornea's innermost surface, the endothelium.[1]  Aqueous humor is the fluid that fills the anterior chamber. Hyphema and glaucoma  are two main pathologies in this area. In hyphema, blood fills the anterior chamber. In glaucoma, blockage of the canal of Schlemm prevents the normal outflow of aqueous humor, resulting in accumulation of fluid, increased intraocular pressure, and eventually blindness." [Wikipedia:Anterior_chamber_of_eyeball]
 comment: This class was created automatically from a combination of ontologies
-synonym: "Anterior chamber" EXACT [HP:0000593]
+synonym: "anterior chamber" EXACT [HP:0000593, MP:0010709]
 synonym: "anterior chamber of eye" EXACT []
 synonym: "camera anterior" EXACT []
 synonym: "eye anterior chamber" EXACT []
@@ -22294,8 +22287,8 @@ synonym: "nasal mucosa" RELATED []
 xref: BTO:0000912
 xref: FMA:59684
 xref: GAID:302
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004785 ! implied link automatically realized ! respiratory system mucosa
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001707 ! nasal cavity
@@ -22840,7 +22833,7 @@ xref: MA:0000243
 xref: ncithesaurus:Cochlear_Duct
 xref: NIF_GrossAnatomy:birnlex_2562
 is_a: UBERON:0000058 ! duct
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005744 ! implied link automatically realized ! cranial conduit
 relationship: part_of UBERON:0001844 ! cochlea
 relationship: part_of UBERON:0001849 ! membranous labyrinth
 relationship: part_of UBERON:0002499 ! cochlear labyrinth
@@ -22855,7 +22848,7 @@ xref: HOG:0000238
 xref: MA:0000251
 xref: ncithesaurus:Semicircular_Duct
 is_a: UBERON:0000058 ! duct
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005744 ! implied link automatically realized ! cranial conduit
 relationship: part_of UBERON:0001840 ! semicircular canal
 relationship: part_of UBERON:0001862 ! vestibular labyrinth
 
@@ -23540,6 +23533,7 @@ def: "Organ component of neuraxis that has as its parts the cerebral cortex, cer
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cerebrum" RELATED []
+synonym: "endbrain" EXACT [Swanson:2004]
 synonym: "telencephalic vesicle" RELATED []
 synonym: "telencephalon" EXACT []
 xref: BTO:0000239
@@ -23567,7 +23561,7 @@ def: "Organ component of neuraxis that has as its parts the epithalamus, thalamu
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "between brain" EXACT []
-synonym: "interbrain" EXACT []
+synonym: "interbrain" EXACT [Swanson:2004]
 synonym: "mature diencephalon" EXACT []
 xref: BTO:0000342
 xref: EFO:0000911
@@ -25533,7 +25527,7 @@ id: UBERON:0001987
 name: placenta
 alt_id: UBERON:FMA_63934-MA_0000386-MIAA_0000279
 def: "organ of metabolic interchange between fetus and mother, partly of embryonic origin and partly of maternal origin[GO]." [Wikipedia:Placenta]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check taxon restriction - WP says: also found in some snakes and lizards with varying levels of development up to mammalian levels. Pough et al. 1992. Herpetology: Third Edition. Pearson Prentice Hall:Pearson Education, Inc., 2002.
 subset: uberon_slim
 xref: BTO:0001078
 xref: EFO:0001407
@@ -27977,6 +27971,7 @@ xref: FMA:72005
 xref: HOG:0000544
 xref: ncithesaurus:Nostril
 xref: OpenCyc:Mx4rvViCLpwpEbGdrcN5Y29ycA
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003102 ! surface structure
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
@@ -29513,7 +29508,7 @@ relationship: part_of UBERON:0000029 ! lymph node
 id: UBERON:0002196
 name: adenohypophysis
 alt_id: UBERON:FMA_74627-MA_0000177-ZFA_0001282
-def: "he glandular, anterior lobe of the pituitary gland. The anterior pituitary regulates several physiological processes including stress, growth, and reproduction[WP]. The anterior lobe of the hypophysis (pituitary gland). This lobe contains cells that produce prolactin, growth hormone, thyroid-stimulating hormone, follicle-stimulating hormone and proopiomelanocortin. In contrast to mamalian vertebrates, the adenohypophysis remains in a subepithelial position and there exists no equivalent of Rathke's pouch in zebrafish[ZFA]." [Wikipedia:Adenohypophysis, ZFIN:curator]
+def: "The glandular, anterior lobe of the pituitary gland. The anterior pituitary regulates several physiological processes including stress, growth, and reproduction[WP]. The anterior lobe of the hypophysis (pituitary gland). This lobe contains cells that produce prolactin, growth hormone, thyroid-stimulating hormone, follicle-stimulating hormone and proopiomelanocortin. In contrast to mamalian vertebrates, the adenohypophysis remains in a subepithelial position and there exists no equivalent of Rathke's pouch in zebrafish[ZFA]." [Wikipedia:Adenohypophysis, ZFIN:curator]
 subset: uberon_slim
 synonym: "anterior lobe (hypophysis)" EXACT []
 synonym: "anterior lobe of hypophysis" EXACT []
@@ -29536,6 +29531,7 @@ xref: ZFA:0001282
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: develops_from UBERON:0005356 ! Rathke's pouch
+relationship: has_part CL:0002312
 relationship: part_of UBERON:0000007 ! pituitary gland
 
 [Term]
@@ -30169,9 +30165,9 @@ synonym: "olfactory gland of Bowman" EXACT []
 xref: BTO:0001697
 xref: FMA:75801
 xref: MA:0000287
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002530 ! gland
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001997 ! olfactory epithelium
 
 [Term]
@@ -30761,6 +30757,7 @@ intersection_of: UBERON:0000020 ! sense organ
 intersection_of: capable_of GO:0007608
 relationship: develops_from UBERON:0003050 ! olfactory placode
 relationship: part_of UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0005725 ! olfactory system
 
 [Term]
 id: UBERON:0002269
@@ -31876,7 +31873,7 @@ relationship: part_of UBERON:0002543 ! median fin skeleton
 id: UBERON:0002329
 name: somite
 alt_id: UBERON:FMA_85522-MIAA_0000068-XAO_0000058-ZFA_0000155
-def: "Portion of mesoderm distributed along the two sides of the neural tube and that will eventually become dermis (dermatome), skeletal muscle (myotome), and vertebrae (sclerotome)[WP]. In Zebrafish: Any of the approximately 45 bilaterally paired blocks of mesoderm cells, lying on either side of the notochord and neural tube, and forming sequentially starting at the head during development of the embryo. Together they give rise to the axial skeleton (from the sclerotome), associated musculature (from the myotome), and dermis (from the dermatome). // Undifferentiated mesodermal components of early trunk or tail segments or metameres, derived from paraxial mesoderm; forms myotomes, sclerotomes and perhaps dermatomes. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [OMD:somite, Wikipedia:Somite, XB:curator, ZFIN:curator]
+def: "A segmental mass of mesoderm in the vertebrate embryo, occurring in pairs along the notochord and developing into muscles and vertebrae[BTO]. Portion of mesoderm distributed along the two sides of the neural tube and that will eventually become dermis (dermatome), skeletal muscle (myotome), and vertebrae (sclerotome)[WP]. In Zebrafish: Any of the approximately 45 bilaterally paired blocks of mesoderm cells, lying on either side of the notochord and neural tube, and forming sequentially starting at the head during development of the embryo. Together they give rise to the axial skeleton (from the sclerotome), associated musculature (from the myotome), and dermis (from the dermatome). // Undifferentiated mesodermal components of early trunk or tail segments or metameres, derived from paraxial mesoderm; forms myotomes, sclerotomes and perhaps dermatomes. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [BTO:0001558, OMD:somite, Wikipedia:Somite, XB:curator, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "mesodermal cluster" EXACT [GO:0001756]
@@ -31933,9 +31930,10 @@ disjoint_from: UBERON:0004456 ! entire sense organ system
 id: UBERON:0002331
 name: umbilical cord
 alt_id: UBERON:FMA_85541-MIAA_0000280
-def: "." [Wikipedia:Umbilical_cord]
+def: "The connecting cord from the developing embryo or fetus to the placenta. During prenatal development, the umbilical cord comes from the same zygote as the fetus and (in humans) normally contains two arteries (the umbilical arteries) and one vein (the umbilical vein), buried within Wharton's jelly. The umbilical vein supplies the fetus with oxygenated, nutrient-rich blood from the placenta. Conversely, the umbilical arteries return the deoxygenated, nutrient-depleted blood[WP]." [Wikipedia:Umbilical_cord]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "birth cord" RELATED [Wikipedia:Umbilical_cord]
 synonym: "connecting stalk" RELATED []
 xref: BTO:0001415
 xref: EFO:0001415
@@ -35613,6 +35611,8 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Illu_artery.jpg/2
 xref: MA:0002855
 xref: ncithesaurus:Tunica_Media
 is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0000055 ! vessel
+relationship: surrounded_by UBERON:0005734 ! tunica externa of vessel
 
 [Term]
 id: UBERON:0002523
@@ -35626,6 +35626,8 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Illu_artery.jpg/2
 xref: MA:0002861
 xref: ncithesaurus:Tunica_Intima
 is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0001981 ! blood vessel
+relationship: surrounded_by UBERON:0002522 ! tunica media
 
 [Term]
 id: UBERON:0002524
@@ -43438,6 +43440,7 @@ xref: HOG:0000186
 xref: TAO:0000048
 xref: XAO:0000005
 xref: ZFA:0000048
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0000005 ! chemosensory organ
 
@@ -43885,6 +43888,7 @@ comment: TODO - check that GO's optic placode is the same as ZFA's eye primordiu
 synonym: "eye anlage" RELATED []
 synonym: "eye field" RELATED []
 synonym: "eye placode" EXACT [OBOL:automatic]
+synonym: "optic field" RELATED []
 synonym: "optic placode" EXACT [GO:0046619]
 synonym: "optic primordium" EXACT []
 xref: TAO:0000570
@@ -44004,6 +44008,7 @@ def: "Area of mesoderm at either side of the midline embryonic notochord that, o
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "paraxial mesenchyme" RELATED []
+synonym: "somitic mesoderm" EXACT [ISBN:9780878932504 "Developmental Biology"]
 xref: HOG:0000114
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
 xref: ncithesaurus:Paraxial_Mesoderm
@@ -44164,7 +44169,8 @@ xref: XAO:0000315
 xref: ZFA:0001056
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: develops_from UBERON:0002329 ! somite
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
+relationship: part_of UBERON:0002329 ! somite
 
 [Term]
 id: UBERON:0003083
@@ -45194,7 +45200,7 @@ id: UBERON:0003147
 name: peritreme
 alt_id: UBERON:FBbt_00003121-HAO_0000712
 def: "That part of the integument of an insect which surrounds the spiracles." [http://www.answers.com/topic/peritreme]
-comment: term also used for edge of the aperture of a univalve shell
+comment: arthropod specific groupings belong in separate ontology. term also used for edge of the aperture of a univalve shell
 synonym: "rim" RELATED [FBbt:00003121]
 xref: FBbt:00003121
 xref: HAO:0000712
@@ -45215,7 +45221,7 @@ is_obsolete: true
 id: UBERON:0003149
 name: tergite
 alt_id: UBERON:FBbt_00004476-HAO_0001005
-comment: DV with CARO
+comment: arthropod specific groupings belong in separate ontology
 synonym: "abdominal tergite" EXACT [FBbt:00004476]
 xref: FBbt:00004476
 xref: HAO:0001005
@@ -45225,7 +45231,7 @@ is_obsolete: true
 id: UBERON:0003150
 name: sternite
 alt_id: UBERON:FBbt_00004477-HAO_0000955
-comment: DV with CARO
+comment: arthropod specific groupings belong in separate ontology
 synonym: "abdominal sternite" EXACT [FBbt:00004477]
 xref: FBbt:00004477
 xref: HAO:0000955
@@ -45328,7 +45334,6 @@ id: UBERON:0003161
 name: dorsal ocellus
 alt_id: UBERON:FBbt_00004505-HAO_0000661
 def: "A simple visual organ of insects[GO]. Two ocelli appear on the vertical and one on the frontal plate[FBbt]. The multi-tissue structure that is located on the top of the head, composed of the corneal lens, pigment cell, rhabdoms and synaptic plexus[HAO]. Two evolutionary distinct ocellus types exist [2]: dorsal ocelli (or simply 'ocelli'), found in most insects, and lateral ocelli (or stemmata), which are found in the larvae of some insect orders. They are structurally and functionally very different. Simple eyes of other animals, e.g. cnidarians may also be referred to as 'ocelli', but again the structure and anatomy of these eyes is quite distinct from those of the dorsal ocelli of insects[Wikipedia]." [FBbt:00004505, GO:0008056, HAO:0000661, Wikipedia:Ocellus#Ocelli]
-comment: DV with CARO
 synonym: "dorsal ocelli" RELATED PLURAL []
 synonym: "ocelli" RELATED PLURAL []
 synonym: "ocellus" EXACT []
@@ -45406,7 +45411,7 @@ is_obsolete: true
 id: UBERON:0003169
 name: cervical sclerite
 alt_id: UBERON:FBbt_00004548-HAO_0000195
-comment: DV with CARO
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004548
 xref: HAO:0000195
 is_obsolete: true
@@ -45588,7 +45593,7 @@ is_obsolete: true
 id: UBERON:0003189
 name: unguitractor plate
 alt_id: UBERON:FBbt_00004658-HAO_0001043
-comment: DV with CARO
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004658
 xref: HAO:0001043
 is_obsolete: true
@@ -45614,7 +45619,7 @@ is_obsolete: true
 id: UBERON:0003192
 name: axillary sclerite
 alt_id: UBERON:FBbt_00004737-HAO_0000159
-comment: DV with CARO
+comment: arthropod specific groupings belong in separate ontology
 xref: FBbt:00004737
 xref: HAO:0000159
 is_obsolete: true
@@ -45870,9 +45875,9 @@ xref: MA:0002477
 xref: MAT:0000161
 xref: MIAA:0000161
 xref: ncithesaurus:Hard_Palate
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001716 ! palate
 
 [Term]
@@ -45925,7 +45930,8 @@ xref: EMAPA:17375
 xref: EMAPA:29990
 xref: HOG:0000540
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0003313 ! implied link automatically realized ! mesenchyme of embryo
 relationship: develops_from UBERON:0003074 ! mesonephric duct
 
 [Term]
@@ -46590,7 +46596,6 @@ synonym: "eye skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of eye" EXACT [OBOL:automatic]
 xref: EHDAA:2923
 xref: EHDAA2:0000486
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0000970 ! eye
 
@@ -46603,7 +46608,6 @@ synonym: "leg skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of leg" EXACT [OBOL:automatic]
 xref: EHDAA:8291
 xref: EHDAA2:0000974
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0000978 ! leg
 
@@ -46624,7 +46628,6 @@ synonym: "skeletal muscle tissue of pelvic girdle" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of pelvic girdle bone" EXACT [OBOL:automatic]
 xref: EHDAA:8326
 xref: EHDAA2:0001430
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001271 ! pelvic girdle
 
@@ -46645,7 +46648,6 @@ synonym: "skeletal muscle tissue of brachial region" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of proximal segment of free upper limb" EXACT [OBOL:automatic]
 xref: EHDAA:8277
 xref: EHDAA2:0000142
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001460 ! arm
 
@@ -46661,6 +46663,7 @@ xref: EHDAA2:0002065
 xref: HOG:0001390
 xref: MA:0001596
 xref: ncithesaurus:Tongue_Skeletal_Muscle_Tissue
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
 is_a: UBERON:0003899 ! implied link automatically realized ! skeletal muscle of head
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -48046,6 +48049,7 @@ xref: EMAPA:17881
 xref: EMAPA:18872
 xref: MA:0001592
 xref: ncithesaurus:Tongue_Epithelium
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
 is_a: UBERON:0003929 ! implied link automatically realized ! gut epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -49402,7 +49406,6 @@ synonym: "mesenchyme skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of mesenchyme" EXACT [OBOL:automatic]
 xref: EMAPA:19066
 xref: EMAPA:19071
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0003104 ! mesenchyme
 
@@ -49787,6 +49790,7 @@ def: "A mesenchyme that is part of a tongue [Obol]." [OBOL:automatic]
 synonym: "tongue mesenchyme" EXACT [OBOL:automatic]
 xref: EMAPA:17882
 xref: EMAPA:18878
+is_a: UBERON:0003714 ! implied link automatically realized ! nerve tissue
 is_a: UBERON:0005253 ! implied link automatically realized ! head mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -53493,7 +53497,7 @@ synonym: "tunica intima of dorsal aorta" EXACT [OBOL:automatic]
 synonym: "tunica intima of trunk of aortic tree" EXACT [OBOL:automatic]
 xref: FMA:74419
 xref: MA:0002904
-is_a: UBERON:0002523 ! implied link automatically realized ! tunica intima
+is_a: UBERON:0005740 ! implied link automatically realized ! tunica intima of artery
 intersection_of: UBERON:0002523 ! tunica intima
 intersection_of: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0004663 ! aorta wall
@@ -56024,6 +56028,7 @@ synonym: "hypaxial muscle" EXACT [ZFA:0001085]
 xref: XAO:0003228
 xref: ZFA:0001085
 is_a: UBERON:0001134 ! skeletal muscle tissue
+is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 relationship: part_of UBERON:0003082 ! myotome
 
 [Term]
@@ -58120,7 +58125,7 @@ id: UBERON:0004101
 name: nasolabial region
 def: "." [HP:0005289]
 is_a: UBERON:0000061 ! anatomical structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
 [Term]
@@ -58575,9 +58580,10 @@ is_a: UBERON:0001231 ! renal tubule
 [Term]
 id: UBERON:0004138
 name: somitomeric trunk muscle
-def: "muscle is derived from somitomeric mesoderm. An example of this is found in Mus musculus." [GO:0002075]
-comment: TODO - FMA:85523
-is_a: UBERON:0001134 ! skeletal muscle tissue
+def: " The somitomeric trunk muscle is derived from somitomeric mesoderm. The muscle begins its development with the differentiation of the muscle cells and ends with the mature muscle. An example of this process is found in Mus musculus.[GO]." [GO:0002075]
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
+intersection_of: UBERON:0001134 ! skeletal muscle tissue
+intersection_of: develops_from UBERON:0002329 ! somite
 
 [Term]
 id: UBERON:0004139
@@ -62228,15 +62234,16 @@ relationship: part_of UBERON:0002358 ! peritoneum
 [Term]
 id: UBERON:0004347
 name: limb bud
-def: "the mesenchymal outgrowth on the lateral trunk of the embryo that develops into the limbs[MP]. the limb bud is a structure formed by the developing limb, derived from lateral plate mesodermTemplate:1. It is intimately related with the apical ectodermal ridge, which secretes factors (fibroblast growth factors for example) inducing the initial differentiation of the limb bud. In turn, the mesodermal tissue of the limb bud secretes factors sustaining the development of the Apical Ectodermal Ridge. 1: Developmental Biology, 8th ed[WP]." [MP:0005650, Wikipedia:Limb_bud]
+def: "the mesenchymal outgrowth on the lateral trunk of the embryo that develops into the limbs[MP]. the limb bud is a structure formed by the developing limb, derived from lateral plate mesoderm. It is intimately related with the apical ectodermal ridge, which secretes factors (fibroblast growth factors for example) inducing the initial differentiation of the limb bud. In turn, the mesodermal tissue of the limb bud secretes factors sustaining the development of the Apical Ectodermal Ridge. 1: Developmental Biology, 8th ed[WP]." [MP:0005650, Wikipedia:Limb_bud]
+comment: induced_by Fgf10, capable of initiating limb forming interactions between endoderm and mesoderm
 synonym: "limb buds" EXACT PLURAL []
-synonym: "limb primordium" RELATED []
 xref: BTO:0001640
 xref: GAID:1307
 xref: ncithesaurus:Limb_Bud
 xref: XAO:0003161
 is_a: UBERON:0004357 ! limb/fin bud
 relationship: develops_into UBERON:0002101 ! limb
+relationship: induced_by UBERON:0003081 ! lateral plate mesoderm
 
 [Term]
 id: UBERON:0004348
@@ -62305,13 +62312,18 @@ relationship: part_of CL:0000653
 id: UBERON:0004356
 name: apical ectodermal ridge
 def: "multilayered ectodermal region at the distal tip of a limb bud necessary for the proper development of the underlying mesenchyme[MP]. Along with the zone of polarizing activity, it is a crucial organizing region during limb development[WP]." [MP:0001676, Wikipedia:Apical_ectodermal_ridge]
+comment: Functions: maintaining mesenchyme in plastic proliferating state; maintaining expression of A-P axis genes; interacting with D-V proteins. Genes: AER induced by Fgf10 in mesenchyme. AER secretes Fgf8, which stimulates mitosis in the mesenchyme causing Fgf10 production - positive feedback loop
 synonym: "AER" RELATED [MP:0001676]
 xref: ncithesaurus:Apical_Ectodermal_Ridge
 xref: ZFA:0001702
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: capable_of GO:0010464
+relationship: capable_of GO:0061037
+relationship: induced_by UBERON:0003104 ! mesenchyme
 relationship: part_of UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0004347 ! limb bud
+relationship: secretes PRO:000007499
 
 [Term]
 id: UBERON:0004357
@@ -63493,6 +63505,7 @@ id: UBERON:0004477
 name: Set of muscles of tongue
 def: "A musculature that is part of a tongue [Obol]." [OBOL:automatic]
 xref: FMA:71289
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004461 ! implied link automatically realized ! musculature of head
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0001723 ! tongue
@@ -63692,7 +63705,6 @@ id: UBERON:0004498
 name: Skeletal muscle tissue of quadriceps femoris
 def: "A portion of skeletal muscle tissue that is part of a quadriceps femoris [Obol]." [OBOL:automatic]
 xref: FMA:261998
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001377 ! quadriceps femoris
 
@@ -63737,7 +63749,6 @@ id: UBERON:0004503
 name: Skeletal muscle tissue of digastric
 def: "A portion of skeletal muscle tissue that is part of a digastric [Obol]." [OBOL:automatic]
 xref: FMA:261872
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001562 ! digastric
 
@@ -63746,7 +63757,6 @@ id: UBERON:0004504
 name: Skeletal muscle tissue of mylohyoid
 def: "A portion of skeletal muscle tissue that is part of a mylohyoid [Obol]." [OBOL:automatic]
 xref: FMA:261878
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001564 ! mylohyoid
 
@@ -63802,7 +63812,6 @@ id: UBERON:0004510
 name: Skeletal muscle tissue of pectoralis major
 def: "A portion of skeletal muscle tissue that is part of a pectoralis major [Obol]." [OBOL:automatic]
 xref: FMA:261968
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0002381 ! pectoralis major
 
@@ -66270,9 +66279,9 @@ xref: HOG:0000545
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gray855.png/200px-Gray855.png
 xref: MA:0001322
 xref: XAO:0000277
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0004111 ! anatomical conduit
 is_a: UBERON:0004119 ! implied link automatically realized ! endoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001707 ! nasal cavity
 
 [Term]
@@ -67124,7 +67133,6 @@ synonym: "skeletal muscle of urethra" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of urethra" EXACT [OBOL:automatic]
 synonym: "urethra skeletal muscle tissue" EXACT [OBOL:automatic]
 xref: MA:0001690
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0000057 ! urethra
 
@@ -67138,7 +67146,6 @@ synonym: "skeletal muscle of respiratory system" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of respiratory system" EXACT [OBOL:automatic]
 xref: MA:0001829
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001004 ! respiratory system
 
@@ -67158,7 +67165,6 @@ synonym: "skeletal muscle tissue of esophagus" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of gullet" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of oesophagus" EXACT [OBOL:automatic]
 xref: MA:0001572
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001043 ! esophagus
 
@@ -67178,7 +67184,6 @@ synonym: "skeletal muscle tissue of anal part of perineum" EXACT [OBOL:automatic
 synonym: "skeletal muscle tissue of anal region" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of anal triangle" EXACT [OBOL:automatic]
 xref: MA:0001530
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001353 ! anal region
 
@@ -69506,8 +69511,8 @@ synonym: "nasal septum mucous membrane" EXACT [OBOL:automatic]
 synonym: "nasal septum organ mucosa" EXACT [OBOL:automatic]
 synonym: "organ mucosa of nasal septum" EXACT [OBOL:automatic]
 xref: FMA:60113
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000344 ! implied link automatically realized ! mucosa
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001706 ! nasal septum
 
@@ -69557,6 +69562,7 @@ synonym: "tongue mucous membrane" EXACT [OBOL:automatic]
 synonym: "tongue organ mucosa" EXACT [OBOL:automatic]
 xref: FMA:54807
 is_a: UBERON:0003729 ! implied link automatically realized ! mouth mucosa
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001723 ! tongue
 
@@ -73678,6 +73684,7 @@ intersection_of: part_of UBERON:0000154 ! posterior region of body
 id: UBERON:0005417
 name: forelimb bud
 def: "A limb bud that develops into a forelimb." [OBOL:automatic]
+comment: Genes: Tbx5 specifies forelimbs. Wnt2b restricts Fgf10 in chick.
 synonym: "limb bud - forelimb" EXACT [MIAA:0000065]
 synonym: "upper limb bud" EXACT [EHDAA2:0003198]
 xref: EHDAA:1699
@@ -73695,6 +73702,7 @@ relationship: part_of UBERON:0000153 ! anterior region of body
 id: UBERON:0005418
 name: hindlimb bud
 def: "A limb bud that develops into a hindlimb." [OBOL:automatic]
+comment: Genes: Tbx4 specifies hindlimbs. Wnt8c restricts Fgf10 in chick.
 synonym: "hind limb bud" EXACT [XAO:0003066]
 xref: EHDAA:2358
 xref: EHDAA2:0003197
@@ -74501,11 +74509,15 @@ name: venous dural sinus
 def: "The dural venous sinuses (also called dural sinuses, cerebral sinuses, or cranial sinuses) are venous channels found between layers of dura mater in the brain.[1] They receive blood from internal and external veins of the brain, receive cerebrospinal fluid (CSF) from the subarachnoid space, and ultimately empty into the internal jugular vein." [Wikipedia:Dural_venous_sinuses]
 synonym: "cranial dural venous sinus" EXACT [FMA:50762]
 synonym: "dural sinus" EXACT [FMA:50762]
+synonym: "venous dural" EXACT [EHDAA:6491]
+synonym: "venous dural sinus" EXACT [EHDAA2:0002169]
+xref: EHDAA:6491
 xref: EHDAA2:0002169
 xref: FMA:50762
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003499 ! implied link automatically realized ! brain blood vessel
 relationship: part_of UBERON:0000955 ! brain
+relationship: part_of UBERON:0003711 ! brachiocephalic vein
 
 [Term]
 id: UBERON:0005487
@@ -75176,6 +75188,7 @@ name: palatal shelf
 xref: EHDAA2:0001364
 xref: MA:0001581
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0000078 ! implied link automatically realized ! mixed ectoderm/mesoderm/endoderm-derived structure
 relationship: part_of UBERON:0001709 ! upper jaw
 relationship: part_of UBERON:0001716 ! palate
@@ -76037,6 +76050,199 @@ is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 intersection_of: UBERON:0000479 ! portion of tissue
 intersection_of: part_of UBERON:0002240 ! spinal cord
 intersection_of: part_of UBERON:0003054 ! roof plate
+
+[Term]
+id: UBERON:0005725
+name: olfactory system
+def: "The olfactory system is the sensory system used for olfaction, or the sense of smell. Most mammals and reptiles have two distinct parts to their olfactory system: a main olfactory system and an accessory olfactory system. The main olfactory system detects volatile, airborne substances, while the accessory olfactory system senses fluid-phase stimuli. Behavioral evidence indicates that most often, the stimuli detected by the accessory olfactory system are pheromones. The olfactory system is often spoken of along with the gustatory system as the chemosensory senses because both transduce chemical signals into perception[WP]." [Wikipedia:Olfactory_system]
+xref: AAO:0000334
+xref: BILA:0000144
+xref: EFO:0001973
+xref: FMA:7190
+xref: MA:0002445
+xref: NIF_GrossAnatomy:nlx_anat_090806
+xref: OpenCyc:Mx4rvViw75wpEbGdrcN5Y29ycA
+xref: TAO:0001149
+xref: XAO:0000201
+xref: ZFA:0001149
+is_a: UBERON:0001032 ! implied link automatically realized ! sensory system
+intersection_of: UBERON:0001032 ! sensory system
+intersection_of: capable_of GO:0007608
+common: In mammals, the main olfactory system detects odorants that are inhaled through the nose, where they contact the main olfactory epithelium, which contains various olfactory receptors. These olfactory receptors are membrane proteins of bipolar olfactory receptor neurons in the olfactory epithelium. Rather than binding specific ligands  like most receptors, olfactory receptors display affinity for a range of odor molecules. Olfactory neurons transduce receptor activation into electrical signals in neurons. The signals travel along the olfactory nerve, which belongs to the peripheral nervous system. This nerve terminates in the olfactory bulb, which belongs to the central nervous system. The complex set of olfactory receptors on different olfactory neurons can distinguish a new odor from the background environmental odors and determine the concentration of the odor.
+
+[Term]
+id: UBERON:0005726
+name: chemosensory system
+xref: BILA:0000139
+is_a: UBERON:0001032 ! implied link automatically realized ! sensory system
+intersection_of: UBERON:0001032 ! sensory system
+intersection_of: capable_of GO:0007606
+
+[Term]
+id: UBERON:0005727
+name: somitomere
+def: "a segment of paraxial mesoderm[TFD]. In the developing vertebrate embryo, the somitomeres are loose masses of paraxial mesoderm derived cells that form along each side of the neural tube towards the end of the third gestational week. The approximately 50 pairs of somitomeres begin developing in the cranial (head) region, continuing in a caudal (tail) direction until the end of week four[WP]." [http://medical-dictionary.thefreedictionary.com/somitomere, Wikipedia:Somitomere]
+synonym: "somatomere" RELATED [Wikipedia:Somitomere]
+xref: FMA:85523
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003077 ! paraxial mesoderm
+
+[Term]
+id: UBERON:0005728
+name: extraembryonic mesoderm
+synonym: "extra-embryonic mesoderm" EXACT []
+xref: EHDAA2:0000474
+xref: HOG:0000616
+is_a: UBERON:0000478 ! extraembryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0003081 ! lateral plate mesoderm
+
+[Term]
+id: UBERON:0005729
+name: forelimb/pectoral fin field
+synonym: "pectoral fin field" NARROW SENSU [ZFA:0001453]
+xref: TAO:0001453
+xref: ZFA:0001453
+is_a: UBERON:0005732 ! implied link automatically realized ! limb/fin field
+intersection_of: UBERON:0005732 ! limb/fin field
+intersection_of: develops_into UBERON:0005419 ! forelimb/pectoral fin bud
+
+[Term]
+id: UBERON:0005730
+name: hindlimb/pelvic fin field
+synonym: "pelvic fin field" NARROW SENSU [ZFA:0001454]
+xref: TAO:0001454
+xref: ZFA:0001454
+is_a: UBERON:0005732 ! implied link automatically realized ! limb/fin field
+intersection_of: UBERON:0005732 ! limb/fin field
+intersection_of: develops_into UBERON:0005420 ! hindlimb/pelvic fin bud
+
+[Term]
+id: UBERON:0005731
+name: fin field
+xref: ZFA:0001453
+xref: ZFA:0001454
+is_a: UBERON:0005732 ! implied link automatically realized ! limb/fin field
+intersection_of: UBERON:0005732 ! limb/fin field
+intersection_of: develops_into UBERON:0002531 ! fin bud
+
+[Term]
+id: UBERON:0005732
+name: limb/fin field
+is_a: UBERON:0001048 ! implied link automatically realized ! primordium
+intersection_of: UBERON:0001048 ! primordium
+intersection_of: develops_into UBERON:0004357 ! limb/fin bud
+
+[Term]
+id: UBERON:0005733
+name: limb field
+comment: the central portion of the limb field gives rise to the limb proper. mesenchyme cells proliferate from from the somatic layer of limb field lateral plate mesoderm (limb skeletal precursors) and from the somites (limb muscle precursors) . these mesenchymal cells accumulate under the ectedermal tissue to make a limb bud.
+is_a: UBERON:0005732 ! implied link automatically realized ! limb/fin field
+intersection_of: UBERON:0005732 ! limb/fin field
+intersection_of: develops_into UBERON:0004347 ! limb bud
+
+[Term]
+id: UBERON:0005734
+name: tunica externa of vessel
+def: "The tunica externa, also known as the tunica adventitia, is the outermost layer of a blood vessel, surrounding the tunica media. It is mainly composed of collagen. The collagen serves to anchor the blood vessel to nearby organs, giving it stability." [Wikipedia:Tunica_externa_%28vessels%29]
+comment: TODO - note terminological problems. WP says tunica external layer of blood vessel. FMA says tunica externa = adventitia, and is FMA adventitia covers other kinds of vessels. Here we opt for a lengthier name that attempts to disambiguate. There is no precise FMA equivalent, as FMA has tunica externa of arteries, veins, genital ducts etc as siblings
+synonym: "adventitia externa" EXACT [Wikipedia:Tunica_externa_%28vessels%29]
+synonym: "external coat" RELATED [Wikipedia:Tunica_externa_%28vessels%29]
+synonym: "tunica adventitia of vessel" EXACT [Wikipedia:Tunica_externa_%28vessels%29]
+is_a: UBERON:0005742 ! adventitia
+relationship: part_of UBERON:0000055 ! vessel
+
+[Term]
+id: UBERON:0005737
+name: swim bladder tunica externa
+def: "Multi-tissue structure that is the external layer of the swim bladder that is covered by the peritoneum, and made of elastic fibres and ichthyocol (short needles of collagen)." [http:www.briancoad.com/Dictionary/T.htm, ZFA:0001700]
+comment: the primary reason this term is manifest in uberon to disambiguate from a structure with the same/similar name
+synonym: "tunica externa" RELATED SENSU [ZFA:0001700]
+xref: TAO:0002245
+xref: ZFA:0001700
+is_a: UBERON:0000481 ! multi-tissue structure
+disjoint_from: UBERON:0005734 ! tunica externa of vessel
+
+[Term]
+id: UBERON:0005738
+name: swim bladder tunica interna
+def: "Multi-tissue structure that is the internal layer of the swim bladder and is comprised of thin endoderm and a smooth muscle layer called the muscularis mucosa with longitudinal and circular fibres with some collagen." [http:www.briancoad.com/Dictionary/T.htm]
+comment: the primary reason this term is manifest in uberon to disambiguate from a structure with the same/similar name
+xref: TAO:0002246
+xref: ZFA:0001701
+is_a: UBERON:0000481 ! multi-tissue structure
+disjoint_from: UBERON:0002523 ! tunica intima
+
+[Term]
+id: UBERON:0005740
+name: tunica intima of artery
+synonym: "tunica interna (intima)(arteriae)" EXACT [FMA:14272]
+xref: FMA:14272
+is_a: UBERON:0002523 ! implied link automatically realized ! tunica intima
+intersection_of: UBERON:0002523 ! tunica intima
+intersection_of: part_of UBERON:0001637 ! artery
+relationship: part_of UBERON:0000415 ! artery wall
+
+[Term]
+id: UBERON:0005741
+name: adventitia of uterus
+xref: EMAPA:29925
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+is_a: UBERON:0005742 ! implied link automatically realized ! adventitia
+intersection_of: UBERON:0005742 ! adventitia
+intersection_of: part_of UBERON:0000995 ! uterus
+
+[Term]
+id: UBERON:0005742
+name: adventitia
+def: "An outermost connective tissue covering of an organ, vessel, or other structure[WP]." [Wikipedia:Adventitia]
+synonym: "tunica advetitia" EXACT [Wikipedia:Adventitia]
+synonym: "tunica externa" EXACT [FMA:45635]
+xref: FMA:45635
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0005743
+name: neuraxis
+def: "Organ with organ cavity which consists of gray matter and white matter. Examples: There is only one neuraxis[FMA]." [FMA:55675]
+synonym: "central nervous system" BROAD [FMA:55675]
+synonym: "cerebrospinal axis" EXACT [FMA:55675]
+xref: FMA:55675
+is_a: UBERON:0000073 ! regional part of nervous system
+relationship: has_part UBERON:0000955 ! brain
+relationship: has_part UBERON:0002240 ! spinal cord
+relationship: part_of UBERON:0001017 ! central nervous system
+
+[Term]
+id: UBERON:0005744
+name: cranial conduit
+comment: in FMA this is a conduit space, not a conduit
+xref: FMA:53165
+is_a: UBERON:0004111 ! implied link automatically realized ! anatomical conduit
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+intersection_of: UBERON:0004111 ! anatomical conduit
+intersection_of: part_of UBERON:0003128 ! cranium
+
+[Term]
+id: UBERON:0005745
+name: optic canal
+def: "The short canal through the orbitosphenoid bone at the apex of the orbit that gives passage to the optic nerve and the opthalmic artery[MP]. The optic foramen is the opening to the optic canal. The superior surface of the sphenoid bone is bounded behind by a ridge, which forms the anterior border of a narrow, transverse groove, the chiasmatic groove (optic groove), above and behind which lies the optic chiasma; the groove ends on either side in the optic foramen, which transmits the optic nerve and ophthalmic artery (with accompanying sympathetic nerve fibres) into the orbital cavity. The left and right optic canals are 25mm apart posteriorly and 30mm apart anteriorly. They are funnel-shaped (narrowest anteriorly)." [ISBN:0-683-40008-8 "Stedman's Medical Dictionary, 27th edition", MP:0010704, Wikipedia:Optic_canal]
+synonym: "canalis opticus" RELATED [Wikipedia:Optic_canal]
+synonym: "optic foramen" RELATED [Wikipedia:Optic_canal]
+xref: FMA:54774
+is_a: UBERON:0005744 ! cranial conduit
+
+[Term]
+id: UBERON:0005746
+name: primary vitreous humour
+def: "embryonic fibrovascular mesodermal tissue located between the optic cup and lens vesicle that normally regresses during the development of the vitreous body[MP]" [MP:0010711]
+synonym: "primary vitreous" EXACT [MP:0010711]
+xref: EHDAA:5707
+xref: EHDAA2:0001502
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0000926 ! mesoderm
+relationship: part_of UBERON:0005606 ! hyaloid cavity
 
 [Typedef]
 id: adjacent_to

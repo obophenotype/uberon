@@ -1425,8 +1425,8 @@ name: renal glomerulus
 synonym: "glomerulus" BROAD []
 synonym: "glomerular tuft" RELATED []
 synonym: "renal corpuscle" RELATED []
-def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]. the capillary loops of the kidney that normally function as a filtration unit[MP]." [MP:0005325, Wikipedia:Glomerulus]
-comment: ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries
+def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]." [MP:0005325, Wikipedia:Glomerulus]
+comment: ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries. TODO - split glomerulus and glomerular tuft?
 xref: FMA:15624 ! Glomerulus
 xref: MA:0001657 ! glomerulus
 xref: XAO:0000146 ! glomerulus
@@ -1434,9 +1434,19 @@ xref: ZFA:0001288 ! renal glomerulus
 xref: BTO:0000530 ! renal glomerulus
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001230 ! glomerular capsule
+relationship: develops_from UBERON:0005749 ! glomerular tuft
 created_by: Melissa Haendel
 creation_date: 2009-06-18T09:26:37Z
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gray1130.svg/200px-Gray1130.svg.png
+
+[Term]
+id: UBERON:0005749 ! glomerular tuft
+name: glomerular tuft
+def: "the capillary loops of the kidney that normally function as a filtration unit[MP]. ...Soon afterwards, endothelial cells invade to make a capillary knot-like outgrowth, the glomerular tuft, which goes on to form the glomerulus[GudMap]." [MP:0005325, Wikipedia:Glomerulus, http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+synonym: "glomerulus"  [EMAPA:28239]
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0001230 ! glomerular capsule
+xref: EMAPA:28239 ! glomerular tuft
 
 [Term]
 id: UBERON:0004736
@@ -12446,7 +12456,7 @@ alt_id: UBERON:FMA_15626-MA_0001660
 def: "The Bowman's capsule is a cup-like sac at the beginning of the tubular component of a nephron in the mammalian kidney. A glomerulus is enclosed in the sac. Fluids from blood in the glomerulus are collected in the Bowman's capsule and further processed along the nephron to form urine. This process is known as ultrafiltration. [WP,unvetted]." [Wikipedia:Glomerular_capsule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "Bowman's capsule" EXACT []
+synonym: "Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
 xref: FMA:15626 ! Glomerular capsule
 xref: MA:0001660 ! glomerular capsule
 is_a: UBERON:0000064 ! organ part
@@ -22265,7 +22275,7 @@ synonym: "auricle of ear" EXACT []
 synonym: "auricle of external ear" EXACT []
 synonym: "auricula (auris externa)" EXACT []
 synonym: "pinna of ear" EXACT []
-synonym: "pinnae" PLURAL []
+synonym: "pinnae" RELATED PLURAL []
 xref: FMA:56580 ! Pinna
 xref: galen:Auricle
 xref: HOG:0000460 ! pinna
@@ -30960,7 +30970,7 @@ synonym: "Rathke's cyst" RELATED []
 id: UBERON:0002196
 name: adenohypophysis
 alt_id: UBERON:FMA_74627-MA_0000177-ZFA_0001282
-def: "he glandular, anterior lobe of the pituitary gland. The anterior pituitary regulates several physiological processes including stress, growth, and reproduction[WP]. The anterior lobe of the hypophysis (pituitary gland). This lobe contains cells that produce prolactin, growth hormone, thyroid-stimulating hormone, follicle-stimulating hormone and proopiomelanocortin. In contrast to mamalian vertebrates, the adenohypophysis remains in a subepithelial position and there exists no equivalent of Rathke's pouch in zebrafish[ZFA]." [Wikipedia:Adenohypophysis, ZFIN:curator]
+def: "The glandular, anterior lobe of the pituitary gland. The anterior pituitary regulates several physiological processes including stress, growth, and reproduction[WP]. The anterior lobe of the hypophysis (pituitary gland). This lobe contains cells that produce prolactin, growth hormone, thyroid-stimulating hormone, follicle-stimulating hormone and proopiomelanocortin. In contrast to mamalian vertebrates, the adenohypophysis remains in a subepithelial position and there exists no equivalent of Rathke's pouch in zebrafish[ZFA]." [Wikipedia:Adenohypophysis, ZFIN:curator]
 subset: uberon_slim
 synonym: "anterior lobe (hypophysis)" EXACT []
 synonym: "anterior lobe of hypophysis" EXACT []
@@ -30982,6 +30992,7 @@ xref: EMAPA:16725 ! Rathke's pouch
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000007 ! pituitary gland
 relationship: develops_from UBERON:0005356 ! Rathke's pouch
+relationship: has_part CL:0002312 ! somatotroph
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Gray1181.png/200px-Gray1181.png
 
 [Term]
@@ -37218,7 +37229,7 @@ synonym: "adventitia externa" EXACT [Wikipedia:Tunica_externa_%28vessels%29]
 synonym: "external coat" RELATED [Wikipedia:Tunica_externa_%28vessels%29]
 synonym: "tunica adventitia of vessel" EXACT [Wikipedia:Tunica_externa_%28vessels%29]
 is_a: UBERON:0005742 ! adventitia
-relationship: UBERON:0000055 ! vessel
+relationship: part_of UBERON:0000055 ! vessel
 
 [Term]
 id: UBERON:0002522 ! tunica media
@@ -37229,7 +37240,7 @@ subset: uberon_slim
 xref: FMA:55590 ! Tunica media
 xref: MA:0002855 ! tunica media
 is_a: UBERON:0000064 ! organ part
-relationship: UBERON:0000055 ! vessel
+relationship: part_of UBERON:0000055 ! vessel
 relationship: surrounded_by UBERON:0005734 ! tunica externa
 xref: ncithesaurus:Tunica_Media ! Tunica Media
 xref: GAID:170 ! tunica media
@@ -37244,7 +37255,7 @@ subset: uberon_slim
 xref: FMA:55589 ! Tunica intima
 xref: MA:0002861 ! tunica intima
 is_a: UBERON:0000064 ! organ part
-relationship: UBERON:0001981 ! blood vessel
+relationship: part_of UBERON:0001981 ! blood vessel
 relationship: surrounded_by UBERON:0002522 ! tunica media
 xref: ncithesaurus:Tunica_Intima ! Tunica Intima
 xref: GAID:523 ! tunica intima
@@ -47283,13 +47294,12 @@ is_obsolete: true
 id: UBERON:0003147
 name: peritreme
 def: "That part of the integument of an insect which surrounds the spiracles." [http://www.answers.com/topic/peritreme]
-comment: term also used for edge of the aperture of a univalve shell
 alt_id: UBERON:FBbt_00003121-HAO_0000712
 synonym: "rim" RELATED [FBbt:00003121]
 xref: FBbt:00003121 ! peritreme
 xref: HAO:0000712 ! peritreme
 is_obsolete: true
-comment: arthropod specific groupings belong in separate ontology
+comment: arthropod specific groupings belong in separate ontology. term also used for edge of the aperture of a univalve shell
 
 [Term]
 id: UBERON:0003148 ! sclerite
@@ -47306,7 +47316,6 @@ comment: arthropod specific groupings belong in separate ontology
 id: UBERON:0003192
 name: axillary sclerite
 alt_id: UBERON:FBbt_00004737-HAO_0000159
-comment: DV with CARO
 xref: FBbt:00004737 ! axillary sclerite
 xref: HAO:0000159 ! axillary sclerite
 is_obsolete: true
@@ -47316,7 +47325,6 @@ comment: arthropod specific groupings belong in separate ontology
 id: UBERON:0003149
 name: tergite
 alt_id: UBERON:FBbt_00004476-HAO_0001005
-comment: DV with CARO
 synonym: "abdominal tergite" EXACT [FBbt:00004476]
 xref: FBbt:00004476 ! tergite
 xref: HAO:0001005 ! tergite
@@ -47327,7 +47335,6 @@ comment: arthropod specific groupings belong in separate ontology
 id: UBERON:0003150
 name: sternite
 alt_id: UBERON:FBbt_00004477-HAO_0000955
-comment: DV with CARO
 synonym: "abdominal sternite" EXACT [FBbt:00004477]
 xref: FBbt:00004477 ! sternite
 xref: HAO:0000955 ! sternite
@@ -47431,7 +47438,6 @@ id: UBERON:0003161
 name: dorsal ocellus
 alt_id: UBERON:FBbt_00004505-HAO_0000661
 def: "A simple visual organ of insects[GO]. Two ocelli appear on the vertical and one on the frontal plate[FBbt]. The multi-tissue structure that is located on the top of the head, composed of the corneal lens, pigment cell, rhabdoms and synaptic plexus[HAO]. Two evolutionary distinct ocellus types exist [2]: dorsal ocelli (or simply 'ocelli'), found in most insects, and lateral ocelli (or stemmata), which are found in the larvae of some insect orders. They are structurally and functionally very different. Simple eyes of other animals, e.g. cnidarians may also be referred to as 'ocelli', but again the structure and anatomy of these eyes is quite distinct from those of the dorsal ocelli of insects[Wikipedia]." [FBbt:00004505, GO:0008056, HAO:0000661, Wikipedia:Ocellus#Ocelli]
-comment: DV with CARO
 synonym: "dorsal ocelli" RELATED PLURAL []
 synonym: "ocelli" RELATED PLURAL []
 synonym: "ocellus" EXACT []
@@ -47509,7 +47515,6 @@ comment: arthropod specific groupings belong in separate ontology
 id: UBERON:0003169
 name: cervical sclerite
 alt_id: UBERON:FBbt_00004548-HAO_0000195
-comment: DV with CARO
 xref: FBbt:00004548 ! cervical sclerite
 xref: HAO:0000195 ! cervical sclerite
 is_obsolete: true
@@ -47692,7 +47697,6 @@ comment: arthropod specific groupings belong in separate ontology
 id: UBERON:0003189
 name: unguitractor plate
 alt_id: UBERON:FBbt_00004658-HAO_0001043
-comment: DV with CARO
 xref: FBbt:00004658 ! unguitractor plate
 xref: HAO:0001043 ! unguitractor plate
 is_obsolete: true
@@ -49457,14 +49461,6 @@ xref: HOG:0001070 ! knee mesenchyme
 synonym: "knee mesenchyme" EXACT [OBOL:automatic]
 xref: EHDAA2:0000898 ! knee mesenchyme
 def: "A mesenchyme that is part of a knee [Obol]." [OBOL:automatic]
-
-[Term]
-id: UBERON:0003918
-name: mesenchyme of kidney
-synonym: "kidney mesenchyme" EXACT []
-intersection_of: UBERON:0003104 ! mesenchyme
-intersection_of: part_of UBERON:0002113 ! kidney
-def: "A mesenchyme that is part of a kidney [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0003919
@@ -60320,8 +60316,12 @@ id: UBERON:0004199
 name: S-shaped body
 def: "The S-shaped body is the successor of the comma-shaped body that contributes to the morphogenesis of the nephron" [GO:0072050]
 comment: TODO
+synonym: "stage II nephron" EXACT [http://www.gudmap.org/Organ_Summaries/Metanephros/Renal_vesicle.html]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001285 ! nephron
+relationship: develops_from UBERON:0004198
+xref: EMAPA:27756 ! s-shaped body
+xref: EMAPA:27853 ! s-shaped body
 
 [Term]
 id: UBERON:0004201
@@ -60389,9 +60389,18 @@ is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
 [Term]
+id: UBERON:0003918
+name: mesenchyme of kidney
+synonym: "kidney mesenchyme" EXACT []
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: part_of UBERON:0002113 ! kidney
+def: "A mesenchyme that is part of a kidney [Obol]." [OBOL:automatic]
+
+[Term]
 id: UBERON:0004208
 name: nephrogenic mesenchyme
 def: "Nephrogenic mesenchyme is the tissue made up of loosely connected mesenchymal cells in the nephron" [GO:0072076]
+comment: The detailed events associated with the differentiation of the nephrogenic mesenchyme are somewhat complex. It has been suggested that each terminal branch of the ureteric bud stimulates the associated cap mesenchyme tissue to form a renal vesicle (the most primitive stage of nephron development: a stage I nephron). This then elongates, becomes a comma-shaped and then an S-shaped body (stage II nephron), and makes contact with and fuses with the distal component of the ureteric bud. The latter then forms the collecting duct. One fold of the S-shaped body gives rise to Bowman’s capsule (also termed the glomerular capsule). Soon afterwards, endothelial cells invade to make a capillary knot-like outgrowth, the glomerular tuft, which goes on to form the glomerulus. The inner epithelial layer of the Bowman’s capsule (also called the visceral epithelium, or podocyte layer because it consists of podocytes) is closely apposed to the endothelial glomerulus. Together, the Bowman’s capsule and the glomerulus comprise the definitive renal corpuscle. The rest of the nephron elongates to form components of the proximal tubule, the loop of Henle and the distal tubule. The distal pole of the developing nephron connects to the ureteric bud that induced it at an early stage of nephron/ collecting duct development, before differentiation of the proximal tubule, the loop of Henle and the distal tubule are complete. This connection allows the excretory products produced by the kidney to be removed and subsequently transferred, via the ureter, into the bladder where they are stored until it is appropriate to empty the bladder. [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0001285 ! nephron
 synonym: "mesenchyme of nephron" EXACT [OBOL:automatic]
@@ -60401,9 +60410,11 @@ synonym: "nephron mesenchyme" EXACT [OBOL:automatic]
 id: UBERON:0004209
 name: renal vesicle
 def: "The renal vesicle is the primordial structure of the nephron epithelium, and is formed by the condensation of mesenchymal cells" [GO:0072077]
+synonym: "stage I nephron" EXACT [http://www.gudmap.org/Organ_Summaries/Metanephros/Renal_vesicle.html]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000483 ! epithelium
 relationship: part_of UBERON:0001285 ! nephron
+relationship: induced_by UBERON:0000084 ! ureteric bud
 xref: EMAPA:27678 ! renal vesicle
 xref: EMAPA:27829 ! renal vesicle
 
