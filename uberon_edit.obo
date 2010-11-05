@@ -126,7 +126,7 @@ relationship: part_of UBERON:0005725 ! olfactory system
 id: UBERON:0005725 ! olfactory system
 name: olfactory system
 def: "The olfactory system is the sensory system used for olfaction, or the sense of smell. Most mammals and reptiles have two distinct parts to their olfactory system: a main olfactory system and an accessory olfactory system. The main olfactory system detects volatile, airborne substances, while the accessory olfactory system senses fluid-phase stimuli. Behavioral evidence indicates that most often, the stimuli detected by the accessory olfactory system are pheromones. The olfactory system is often spoken of along with the gustatory system as the chemosensory senses because both transduce chemical signals into perception[WP]." [Wikipedia:Olfactory_system]
-common: In mammals, the main olfactory system detects odorants that are inhaled through the nose, where they contact the main olfactory epithelium, which contains various olfactory receptors. These olfactory receptors are membrane proteins of bipolar olfactory receptor neurons in the olfactory epithelium. Rather than binding specific ligands  like most receptors, olfactory receptors display affinity for a range of odor molecules. Olfactory neurons transduce receptor activation into electrical signals in neurons. The signals travel along the olfactory nerve, which belongs to the peripheral nervous system. This nerve terminates in the olfactory bulb, which belongs to the central nervous system. The complex set of olfactory receptors on different olfactory neurons can distinguish a new odor from the background environmental odors and determine the concentration of the odor.
+comment: In mammals, the main olfactory system detects odorants that are inhaled through the nose, where they contact the main olfactory epithelium, which contains various olfactory receptors. These olfactory receptors are membrane proteins of bipolar olfactory receptor neurons in the olfactory epithelium. Rather than binding specific ligands  like most receptors, olfactory receptors display affinity for a range of odor molecules. Olfactory neurons transduce receptor activation into electrical signals in neurons. The signals travel along the olfactory nerve, which belongs to the peripheral nervous system. This nerve terminates in the olfactory bulb, which belongs to the central nervous system. The complex set of olfactory receptors on different olfactory neurons can distinguish a new odor from the background environmental odors and determine the concentration of the odor.
 xref: ZFA:0001149 ! olfactory system
 xref: AAO:0000334 ! olfactory_system
 xref: BILA:0000144 ! olfactory system
@@ -12526,13 +12526,12 @@ synonym: "outer layer of glomerular capsule" EXACT  [FMA:74272]
 id: UBERON:0005751
 name: visceral layer of glomerular capsule
 def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]." [BTO:0001515]
-comment: the BFO class 'glomerular epithelium' is the visceral layer. But GO uses 'glomerular epithelium' as the mereological sum of P+V layers
+comment: TODO - check - the BTO class 'glomerular epithelium' is the visceral layer. But GO uses 'glomerular epithelium' as the mereological sum of P+V layers
 is_a: UBERON:0000483 ! epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
 relationship: adjacent_to UBERON:0001286 ! Bowman's space
 relationship: has_part CL:0000653 ! podocyte
 xref: FMA:74273 ! visceral layer of glomerular capsule
-comment: TODO - check
 synonym: "visceral epithelium of Bowman's capsule" EXACT  [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
 synonym: "inner epithelial layer of Bowman's capsule" EXACT  [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
 synonym: "podocyte layer of Bowman's capsule" EXACT  [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
@@ -12575,8 +12574,7 @@ xref: EMAPA:28263 ! urinary space of renal corpuscle
 [Term]
 id: UBERON:0005777
 name: glomerular basement membrane
-def: "The glomerular basement membrane is the basal laminal portion of the glomerulus which performs the actual filtration through the filtration slits between the podocytes, separating the blood on the inside from the filtrate on the 
-outside. It is a fusion of the endothelial cell and podocyte basal laminas." [Wikipedia:Glomerular_basement_membrane]
+def: "The glomerular basement membrane is the basal laminal portion of the glomerulus which performs the actual filtration through the filtration slits between the podocytes, separating the blood on the inside from the filtrate on the outside. It is a fusion of the endothelial cell and podocyte basal laminas." [Wikipedia:Glomerular_basement_membrane]
 intersection_of: UBERON:0005769 ! basement membrane
 intersection_of: part_of UBERON:0000074 ! renal glomerulus
 relationship: part_of UBERON:0001229 ! renal corpuscle
@@ -21973,7 +21971,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Gray994-adenoid.p
 id: UBERON:0001735
 name: tonsillar ring
 alt_id: UBERON:FMA_55070-MA_0000752
-def: "lymphoid tissue ring located in the pharynx and to the back of the oral cavity. The ring consists of (from superior to inferior): Pharyngeal tonsil (also known as 'adenoids' when infected) Tubal tonsil (where Eustachian tube opens in the nasopharynx) Palatine tonsils (commonly called "the tonsils" in the vernacular, less commonly termed "faucial tonsils") Lingual tonsils Some animals, but not humans, have one or two additional tonsils: Soft palate tonsil Paraepiglottic tonsil[WP]." [Wikipedia:Waldeyer's_ring]
+def: "lymphoid tissue ring located in the pharynx and to the back of the oral cavity. The ring consists of (from superior to inferior): Pharyngeal tonsil (also known as 'adenoids' when infected) Tubal tonsil (where Eustachian tube opens in the nasopharynx) Palatine tonsils (commonly called 'the tonsils' in the vernacular, less commonly termed 'faucial tonsils') Lingual tonsils Some animals, but not humans, have one or two additional tonsils: Soft palate tonsil Paraepiglottic tonsil[WP]." [Wikipedia:Waldeyer's_ring]
 comment: see also FMA:79771 naso-pharyngeal lymphoid tissue
 subset: uberon_slim
 synonym: "oropharyngeal lymphoid tissue" EXACT []
@@ -59747,9 +59745,10 @@ xref: XAO:0000282 ! visceral pouch
 [Term]
 id: UBERON:0004138
 name: somitomeric trunk muscle
-def: " The somitomeric trunk muscle is derived from somitomeric mesoderm. The muscle begins its development with the differentiation of the muscle cells and ends with the mature muscle. An example of this process is found in Mus musculus.[GO]." [GO:0002075]
-intersection_of: UBERON:0001134 ! skeletal muscle tissue
-intersection_of: develops_from UBERON:0002329 ! somite
+def: "The somitomeric trunk muscle is derived from somitomeric mesoderm. The muscle begins its development with the differentiation of the muscle cells and ends with the mature muscle. An example of this process is found in Mus musculus.[GO]." [GO:0002075]
+comment: TODO - find N+S conditions. SMT & develops_from somite is not specific enough (all SMT develops_from somite)
+is_a: UBERON:0001134 ! skeletal muscle tissue
+relationship: develops_from UBERON:0002329 ! somite
 
 [Term]
 id: UBERON:0000948
@@ -72709,7 +72708,7 @@ xref: EHDAA2:0000829 ! inner canthus
 [Term]
 id: UBERON:0005612
 name: intercostal artery
-def: "One of a group of arteries that supply the area between the ribs ("costae"), called the intercostal space." [Wikiepdia:Intercostal_arteries]
+def: "One of a group of arteries that supply the area between the ribs ('costae'), called the intercostal space." [Wikiepdia:Intercostal_arteries]
 comment: TODO - add children
 is_a: UBERON:0001637 ! artery
 xref: MA:0001981 ! intercostal artery
