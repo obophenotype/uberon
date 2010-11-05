@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 03:11:2010 21:56
+date: 04:11:2010 18:59
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -1205,20 +1205,23 @@ creation_date: 2009-06-18T09:00:04Z
 [Term]
 id: UBERON:0000074
 name: renal glomerulus
-def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]. the capillary loops of the kidney that normally function as a filtration unit[MP]." [MP:0005325, Wikipedia:Glomerulus]
-comment: ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries
+def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]." [MP:0005325, Wikipedia:Glomerulus]
+comment: ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries. TODO - split glomerulus and glomerular tuft? DONE. GUDMAP: 'Together, the Bowman’s capsule and the glomerulus comprise the definitive renal corpuscle.' - here the glomerulus is part of the capsule?
 synonym: "glomerular tuft" RELATED []
 synonym: "glomerulus" BROAD []
 synonym: "renal corpuscle" RELATED []
 xref: BTO:0000530
 xref: FMA:15624
+xref: http://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gray1130.svg/200px-Gray1130.svg.png
 xref: MA:0001657
 xref: XAO:0000146
 xref: ZFA:0001288
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: part_of UBERON:0001230 ! glomerular capsule
+relationship: develops_from UBERON:0005749 ! glomerular tuft
+relationship: part_of UBERON:0001229 ! renal corpuscle
+relationship: surrounded_by UBERON:0001230 ! glomerular capsule
 created_by: Melissa Haendel
 creation_date: 2009-06-18T09:26:37Z
 
@@ -1318,6 +1321,9 @@ relationship: part_of UBERON:0003101 ! male organism
 id: UBERON:0000080
 name: mesonephros
 def: "In mammals, the mesonephros is the second of the three embryonic kidneys to be established and exists only transiently. In lower vertebrates such as fish and amphibia, the mesonephros will form the mature kidney[GO]. One of three excretory organs that develop in vertebrates. It serves as the main excretory organ of aquatic vertebrates and as a temporary kidney in higher vertebrates. composed of the mesonephric duct (also called the Wolffian duct), mesonephric tubules, and associated capillary tufts. A single tubule and its associated capillary tuft is called a mesonephric excretory unit; these units are similar in structure and function to nephrons of the adult kidney. The mesonephros is derived from intermediate mesoderm in the vertebrate embryo." [GO:0001823, Wikipedia:Mesonephros]
+comment: By contrast to the pronephros, the histological features of the mesonephros, with its primitive glomeruli, suggest that it probably functions as a primitive kidney, and is involved in the production of much of the amniotic fluid. Within the two mesonephroi, one located on either side of the dorsal mesentery of the hindgut, a substantial number (in the region of about 40 or more) of cranio-caudally segmented mesonephric tubules are formed. It has, however, been suggested that only the most rostrally located 4-6 pairs of mesonephric tubules drain into the mesonephric portion of the nephric duct. This is now seen to extend along the length of the mesonephroi, being located towards their lateral sides. The mesonephros is also retained over a considerably longer period than the pronephros, but gradually undergoes regression in a cranio-caudal direction. While the rostral part displays clear evidence of regression its more caudal part appears to display evidence of functional activity. Within the medial part of the mesonephros, vesicles are formed, although no glomeruli are formed there in this species. It is, however, difficult to believe that the relatively enormous mesonephroi do not have an excretory role in the mouse, only serving as a base for gonadal differentiation. In the human embryo, the medial part of the mesonephric tubules enlarges, become invaginated by capillaries, and form glomeruli. These then take on an excretory role. In the mouse, the mesonephric ducts appear to be patent throughout their length[GUDMAP]
+synonym: "mesonephroi" EXACT PLURAL [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+synonym: "opisthonephros" RELATED [HOG:0000038, XAO:0000141]
 xref: EFO:0000928
 xref: EHDAA:1581
 xref: EHDAA:5903
@@ -1337,6 +1343,7 @@ relationship: develops_from UBERON:0002120 ! pronephros
 id: UBERON:0000081
 name: metanephros
 def: "In mammals, the metanephros is the excretory organ of the fetus, which develops into the mature kidney and is formed from the rear portion of the nephrogenic cord. The metanephros is an endocrine and metabolic organ that filters the blood and excretes the end products of body metabolism in the form of urine[GO]. During the fifth week of gestation, the mesonephric duct develops an outpouching, the ureteric bud, near its attachment to the cloaca. This bud, also called the metanephrogenic diverticulum, grows posteriorly and towards the head of the embryo. The elongated stalk of the ureteric bud, the metanephric duct, later forms the ureter. As the cranial end of the bud extends into the intermediate mesoderm, it undergoes a series of branchings to form the collecting duct system of the kidney. It also forms the major and minor calyces and the renal pelvis." [GO:0001656, Wikipedia:Metanephros#Metanephros]
+comment: TODO check developmental relationships
 xref: BTO:0001543
 xref: EHDAA:3089
 xref: EHDAA:5911
@@ -1347,6 +1354,7 @@ xref: ncithesaurus:Metanephros
 is_a: UBERON:0002113 ! kidney
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0000080 ! mesonephros
+relationship: develops_from UBERON:0005753 ! caudal part of nephrogenic cord
 
 [Term]
 id: UBERON:0000082
@@ -6933,6 +6941,7 @@ def: "Anatomical system that has as its parts the organs concerned with the prod
 comment: In various sources such as Encyclopedia Britannica, the excretory and urinary systems are indeed the same system (see wikipedia talk page)
 subset: uberon_slim
 synonym: "excretory system" EXACT []
+synonym: "renal or urinary system" RELATED [EHDAA:5901]
 synonym: "renal system" EXACT []
 synonym: "renal/urinary system" RELATED []
 synonym: "systema urinaria" EXACT []
@@ -6942,6 +6951,7 @@ xref: BILA:0000015
 xref: BTO:0003092
 xref: EFO:0000803
 xref: EHDAA2:0001601
+xref: EMAPA:17366
 xref: FBbt:00005056
 xref: FMA:7159
 xref: GAID:391
@@ -9358,7 +9368,6 @@ xref: OpenCyc:Mx4rv2kf-5wpEbGdrcN5Y29ycA
 xref: XAO:0000174
 xref: ZFA:0005277
 is_a: UBERON:0002036 ! striated muscle tissue
-is_a: UBERON:0004138 ! implied link automatically realized ! somitomeric trunk muscle
 relationship: develops_from UBERON:0003082 ! myotome
 
 [Term]
@@ -11163,7 +11172,7 @@ id: UBERON:0001229
 name: renal corpuscle
 alt_id: UBERON:FMA_15625-MA_0000376
 def: "In the kidney, a renal corpuscle is the initial blood-filtering component of a nephron. It consists of two structures: a glomerulus and a Bowman's capsule. The glomerulus is a small tuft of capillaries containing two cell types. Endothelial cells, which have large fenestrae, are not covered by diaphragms. Mesangial cells are modified smooth muscle cells that lie between the capillaries and the glomerulus. They regulate blood flow by their contractile activity and secrete extracellular matrix, prostaglandins, and cytokines. Mesangial cells also have phagocytic activity, removing proteins and other molecules trapped in the glomerular basement membrane or filtration barrier. The Bowman's capsule has an outer parietal layer composed of simple squamous epithelium. The visceral layer, composed of modified simple squamous epithelium, is lined by podocytes. Podocytes have foot processes, pedicels, that wrap around glomerular capillaries. These pedicels interdigitate with pedicels of adjacent podocytes forming filtration slits. The renal corpuscle filtration barrier is composed of: the fenestrated endothelium of glomerular capillaries, the fused basal lamina of endothelial cells and podocytes, and the filtration slits of the podocytes. This barrier permits passage of water, ions, and small molecules from the bloodstream into Bowman's space (the space between the visceral and parietal layers). Large and/or negatively charged proteins are prevented from passing into Bowman's space, thus retaining these proteins in the circulation. The basal lamina is composed of 3 layers: lamina rara externa, lamina densa, and lamina rara interna. The lamina rara externa is adjacent to the podocyte processes. The lamina densa is the central layer consisting of type IV collagen and laminin. This layer acts as a selective macromolecular filter, preventing the passage of large protein molecules into Bowman's space. The lamina rara intena is adjacent to endothelial cells. This layer contains heparan sulfate, a negatively charged glycosaminoglycan that contributes to the electrostatic barrier of the glomerular filter. There are two poles in the renal corpuscle, a vascular pole, and a urinary pole. The vascular pole is where the afferent and efferent arterioles communicate with the glomerulus. The urinary pole is where the corpuscle opens into the lumen of the proximal convoluted tubule. Fluid from blood in the glomerulus is collected in the Bowman's capsule to form 'glomerular filtrate', which is then further processed along the nephron to form urine. [WP,unvetted]." [Wikipedia:Renal_corpuscle]
-comment: This class was created automatically from a combination of ontologies
+comment: Together, the Bowmans capsule and the glomerulus comprise the definitive renal corpuscle.  http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron
 subset: uberon_slim
 synonym: "corpusculum renale" EXACT []
 synonym: "cortical renal corpuscle" RELATED []
@@ -11188,7 +11197,7 @@ alt_id: UBERON:FMA_15626-MA_0001660
 def: "The Bowman's capsule is a cup-like sac at the beginning of the tubular component of a nephron in the mammalian kidney. A glomerulus is enclosed in the sac. Fluids from blood in the glomerulus are collected in the Bowman's capsule and further processed along the nephron to form urine. This process is known as ultrafiltration. [WP,unvetted]." [Wikipedia:Glomerular_capsule]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "Bowman's capsule" EXACT []
+synonym: "Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
 xref: FMA:15626
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gray1130.svg/200px-Gray1130.svg.png
 xref: MA:0001660
@@ -12378,13 +12387,17 @@ relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0001286
-name: bowman's space
+name: Bowman's space
 alt_id: UBERON:FMA_17676-MA_0001664
-def: "." [Wikipedia:Bowman's_space]
-comment: This class was created automatically from a combination of ontologies
+def: "a narrow chalice-shaped cavity between the glomerular and capsular epithelium of the glomerular capsule of the kidney[TFD]. Between the visceral and parietal layers, into which the filtrate enters after passing through the podocytes' filtration slits[WP]." [http://medical-dictionary.thefreedictionary.com/bowman's+space, Wikipedia:Bowman's_space]
+comment: TODO - fix ZFA
 subset: uberon_slim
-synonym: "Bowman's space" EXACT []
+synonym: "bowman's space" EXACT []
+synonym: "capsular space" EXACT [http://medical-dictionary.thefreedictionary.com/bowman's+space]
 synonym: "urinary space" EXACT []
+synonym: "urinary space of renal corpuscle" EXACT [EMAPA:28263]
+xref: EMAPA:27985
+xref: EMAPA:28263
 xref: FMA:17676
 xref: MA:0001664
 xref: ncithesaurus:Urinary_Space
@@ -12398,7 +12411,7 @@ id: UBERON:0001287
 name: proximal convoluted tubule
 alt_id: UBERON:FMA_17693-MA_0001669-ZFA_0001620
 def: "The proximal tubule is the portion of the duct system of the nephron of the kidney which leads from Bowman's capsule to the loop of Henle[WP]. Most anterior portion of the pronephric duct (or tubule as described by Wingert et al, 2007)[ZFA]." [Wikipedia:Proximal_convoluted_tubule, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - cleanly define difference between proximal tubule and proximal convoluted tubule
 subset: uberon_slim
 synonym: "1st convoluted tubule" RELATED []
 synonym: "first convoluted tubule" RELATED []
@@ -20613,7 +20626,7 @@ relationship: part_of UBERON:0001733 ! soft palate
 id: UBERON:0001735
 name: tonsillar ring
 alt_id: UBERON:FMA_55070-MA_0000752
-def: "lymphoid tissue ring located in the pharynx and to the back of the oral cavity. The ring consists of (from superior to inferior): Pharyngeal tonsil (also known as 'adenoids' when infected) Tubal tonsil (where Eustachian tube opens in the nasopharynx) Palatine tonsils (commonly called " [:WP]
+def: "lymphoid tissue ring located in the pharynx and to the back of the oral cavity. The ring consists of (from superior to inferior): Pharyngeal tonsil (also known as 'adenoids' when infected) Tubal tonsil (where Eustachian tube opens in the nasopharynx) Palatine tonsils (commonly called 'the tonsils' in the vernacular, less commonly termed 'faucial tonsils') Lingual tonsils Some animals, but not humans, have one or two additional tonsils: Soft palate tonsil Paraepiglottic tonsil[WP]." [Wikipedia:Waldeyer's_ring]
 comment: see also FMA:79771 naso-pharyngeal lymphoid tissue
 subset: uberon_slim
 synonym: "oropharyngeal lymphoid tissue" EXACT []
@@ -28329,7 +28342,7 @@ id: UBERON:0002120
 name: pronephros
 alt_id: UBERON:FMA_72170-MIAA_0000117-XAO_0002000-ZFA_0000151
 def: "In mammals, the pronephros is the first of the three embryonic kidneys to be established and exists only transiently. In lower vertebrates such as fish and amphibia, the pronephros is the fully functional embryonic kidney and is indispensible for larval life[GO]. // The first kidney in all vertebrates - it is transitional and disappears soon after it has formed. // Organ that serves as a transient kidney, providing osmoregulation during early developmental stages and then degenerating during metamorphosis. // The embryonic kidney, present at the level of the third somite, is composed of two glomeruli fused at the midline, two pronephric tubules, and paired bilateral pronephric ducts that modify the composition of the blood filtrate before delivering it to the cloaca for excretion.<a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [GO:0048793, Wikipedia:Pronephros, XB:curator, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check developmental relationships
 subset: uberon_slim
 synonym: "embryonic kidney" RELATED []
 synonym: "pronephric kidney" EXACT []
@@ -28349,6 +28362,7 @@ is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0002113 ! kidney
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: develops_from UBERON:0005721 ! pronephric mesoderm
+relationship: develops_from UBERON:0005754 ! rostral part of nephrogenic cord
 relationship: part_of UBERON:0002323 ! body cavity
 
 [Term]
@@ -44007,6 +44021,7 @@ def: "The intermediate mesoderm is located between the lateral mesoderm and the 
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "IM" RELATED []
+synonym: "intermediate plate mesoderm" RELATED [UBERON:cjm]
 xref: HOG:0000087
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
 xref: ncithesaurus:Intermediate_Mesoderm
@@ -44191,15 +44206,16 @@ relationship: part_of UBERON:0000076 ! external ectoderm
 id: UBERON:0003074
 name: mesonephric duct
 alt_id: UBERON:XAO_0000242-ZFA_0000546
-def: "Paired organ that connects the primitive kidney Wolffian body (or mesonephros) to the cloaca and serves as the anlage for certain male reproductive organs. the Wolffian duct is what remains of the pronephric duct after the atrophy of the pronephros. -- wikipedia" [Wikipedia:Mesonephric_duct, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "Paired organ that connects the primitive kidney Wolffian body (or mesonephros) to the cloaca and serves as the anlage for certain male reproductive organs. the Wolffian duct is what remains of the pronephric duct after the atrophy of the pronephros[WP]. In Zebrafish: Duct of the adult kidney (mesonephros), present bilaterally ventral to the somites and leading to the cloacal chamber[ZFA]." [Wikipedia:Mesonephric_duct, ZFIN:curator]
+comment: TODO - mesonephric portion of the nephric duct
 subset: uberon_slim
-synonym: "archinephric duct" RELATED [Wikipedia:Wolffian_duct]
+synonym: "archinephric duct" RELATED [HOG:0000082, Wikipedia:Wolffian_duct]
 synonym: "Leydig's duct" RELATED [Wikipedia:Wolffian_duct]
-synonym: "nephric duct" RELATED []
+synonym: "nephric duct" RELATED [EHDAA2:0001243]
 synonym: "renal duct" RELATED []
 synonym: "Wolffian duct" RELATED [Wikipedia:Wolffian_duct]
 xref: AAO:0000637
+xref: EHDAA:1590
 xref: EHDAA2:0001243
 xref: EMAPA:16577
 xref: GAID:1315
@@ -46880,6 +46896,7 @@ synonym: "eye skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of eye" EXACT [OBOL:automatic]
 xref: EHDAA:2923
 xref: EHDAA2:0000486
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0000970
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0000970 ! eye
@@ -46893,6 +46910,7 @@ synonym: "leg skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of leg" EXACT [OBOL:automatic]
 xref: EHDAA:8291
 xref: EHDAA2:0000974
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0000978 ! leg
@@ -46914,6 +46932,7 @@ synonym: "skeletal muscle tissue of pelvic girdle" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of pelvic girdle bone" EXACT [OBOL:automatic]
 xref: EHDAA:8326
 xref: EHDAA2:0001430
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0001271
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001271 ! pelvic girdle
@@ -46935,6 +46954,7 @@ synonym: "skeletal muscle tissue of brachial region" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of proximal segment of free upper limb" EXACT [OBOL:automatic]
 xref: EHDAA:8277
 xref: EHDAA2:0000142
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0001460
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001460 ! arm
@@ -49807,6 +49827,7 @@ synonym: "mesenchyme skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of mesenchyme" EXACT [OBOL:automatic]
 xref: EMAPA:19066
 xref: EMAPA:19071
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0003104
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0003104 ! mesenchyme
@@ -56682,7 +56703,7 @@ relationship: part_of UBERON:0002355 ! pelvis
 [Term]
 id: UBERON:0003890
 name: Mullerian duct
-def: "paired ducts of the embryo that run down the lateral sides of the urogenital ridge and terminate at the mullerian eminence in the primitive urogenital sinus. In the female, they will develop to form the fallopian tubes, uterus, and the upper portion of the vagina; in the male, they are lost. These ducts are made of tissue of mesodermal origin[WP]." [Wikipedia:Mullerian_duct]
+def: "paired ducts of the embryo that run down the lateral sides of the urogenital ridge and terminate at the mullerian eminence in the primitive urogenital sinus. In the female, they will develop to form the fallopian tubes, uterus, and the upper portion of the vagina; in the male, they are lost. These ducts are made of tissue of mesodermal origin[WP]. develops either by lengthwise splitting of the archinephric duct (in chondrichthyans and some amphibians) or by a elongated invagination of the coelomic epithelium (other vertebrates) In males, the oviducts regress. The cranial end of the oviduct maintains an opening into the coelom (which primitively may have been the anteriormost coelomic funnels connecting the nephrocoel with the coelom). This opening is the ostium tubae[USM]." [http://www.usm.maine.edu/bio/courses/bio205/bio205_26_sex.html, Wikipedia:Mullerian_duct]
 synonym: "Müllerian_duct" EXACT []
 xref: GAID:1309
 xref: HOG:0001199
@@ -59162,6 +59183,7 @@ synonym: "GU tract" RELATED []
 synonym: "urogenital system" EXACT []
 xref: BILA:0000122
 xref: BTO:0003091
+xref: EMAPA:16367
 xref: GAID:362
 xref: HOG:0000286
 xref: ncithesaurus:Genitourinary_System
@@ -59313,11 +59335,10 @@ is_a: UBERON:0001231 ! renal tubule
 [Term]
 id: UBERON:0004138
 name: somitomeric trunk muscle
-def: " The somitomeric trunk muscle is derived from somitomeric mesoderm. The muscle begins its development with the differentiation of the muscle cells and ends with the mature muscle. An example of this process is found in Mus musculus.[GO]." [GO:0002075]
-is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
-relationship: develops_from UBERON:0002329
-intersection_of: UBERON:0001134 ! skeletal muscle tissue
-intersection_of: develops_from UBERON:0002329 ! somite
+def: "The somitomeric trunk muscle is derived from somitomeric mesoderm. The muscle begins its development with the differentiation of the muscle cells and ends with the mature muscle. An example of this process is found in Mus musculus.[GO]." [GO:0002075]
+comment: TODO - find N+S conditions. SMT & develops_from somite is not specific enough (all SMT develops_from somite)
+is_a: UBERON:0001134 ! skeletal muscle tissue
+relationship: develops_from UBERON:0002329 ! somite
 
 [Term]
 id: UBERON:0004139
@@ -59847,7 +59868,8 @@ relationship: part_of UBERON:0000970 ! eye
 [Term]
 id: UBERON:0004188
 name: glomerular epithelium
-def: "The glomerular epithelium is an epithelial tissue that covers the outer surfaces of the glomerulus" [GO:0072010]
+def: "The glomerular epithelium is an epithelial tissue that covers the outer surfaces of the glomerulus. The glomerular epithelium consists of both parietal and visceral epithelium. Metanephric glomerular parietal epithelial cells are specialized epithelial cells that form tight junctions as a barrier to protein transport. A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains 'feet' that interdigitate with the 'feet' of other glomerular epithelial cells in the metanephros." [GO:0072010]
+comment: TODO - check - GO says outer, BTO says inner. Make this a superclass
 synonym: "epithelium of glomerulus" EXACT []
 synonym: "epithelium of kidney glomerulus" EXACT []
 synonym: "epithelium of renal glomerulus" EXACT []
@@ -59855,9 +59877,9 @@ synonym: "kidney glomerular epithelium" EXACT [MA:0002847]
 xref: BTO:0001515
 xref: MA:0002847
 is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
-relationship: part_of UBERON:0000074
+relationship: part_of UBERON:0001230
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0000074 ! renal glomerulus
+intersection_of: part_of UBERON:0001230 ! glomerular capsule
 
 [Term]
 id: UBERON:0004189
@@ -59866,7 +59888,7 @@ def: "The glomerular endothelium is an epithelial tissue that covers the interna
 synonym: "endothelium of renal glomerulus" EXACT [OBOL:automatic]
 synonym: "renal glomerulus endothelium" EXACT [OBOL:automatic]
 is_a: UBERON:0001986 ! implied link automatically realized ! endothelium
-is_a: UBERON:0004188 ! implied link automatically realized ! glomerular epithelium
+is_a: UBERON:0004211 ! implied link automatically realized ! nephron epithelium
 relationship: part_of UBERON:0000074
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0000074 ! renal glomerulus
@@ -59968,6 +59990,7 @@ xref: EMAPA:27681
 xref: EMAPA:27835
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0004209 ! renal vesicle
 relationship: part_of UBERON:0001285 ! nephron
 
 [Term]
@@ -59975,8 +59998,12 @@ id: UBERON:0004199
 name: S-shaped body
 def: "The S-shaped body is the successor of the comma-shaped body that contributes to the morphogenesis of the nephron" [GO:0072050]
 comment: TODO
+synonym: "stage II nephron" EXACT [http://www.gudmap.org/Organ_Summaries/Metanephros/Renal_vesicle.html]
+xref: EMAPA:27756
+xref: EMAPA:27853
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0004198 ! comma-shaped body
 relationship: part_of UBERON:0001285 ! nephron
 
 [Term]
@@ -60077,6 +60104,7 @@ relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 id: UBERON:0004208
 name: nephrogenic mesenchyme
 def: "Nephrogenic mesenchyme is the tissue made up of loosely connected mesenchymal cells in the nephron" [GO:0072076]
+comment: The detailed events associated with the differentiation of the nephrogenic mesenchyme are somewhat complex. It has been suggested that each terminal branch of the ureteric bud stimulates the associated cap mesenchyme tissue to form a renal vesicle (the most primitive stage of nephron development: a stage I nephron). This then elongates, becomes a comma-shaped and then an S-shaped body (stage II nephron), and makes contact with and fuses with the distal component of the ureteric bud. The latter then forms the collecting duct. One fold of the S-shaped body gives rise to Bowman’s capsule (also termed the glomerular capsule). Soon afterwards, endothelial cells invade to make a capillary knot-like outgrowth, the glomerular tuft, which goes on to form the glomerulus. The inner epithelial layer of the Bowman’s capsule (also called the visceral epithelium, or podocyte layer because it consists of podocytes) is closely apposed to the endothelial glomerulus. Together, the Bowman’s capsule and the glomerulus comprise the definitive renal corpuscle. The rest of the nephron elongates to form components of the proximal tubule, the loop of Henle and the distal tubule. The distal pole of the developing nephron connects to the ureteric bud that induced it at an early stage of nephron/ collecting duct development, before differentiation of the proximal tubule, the loop of Henle and the distal tubule are complete. This connection allows the excretory products produced by the kidney to be removed and subsequently transferred, via the ureter, into the bladder where they are stored until it is appropriate to empty the bladder. [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
 synonym: "mesenchyme of nephron" EXACT [OBOL:automatic]
 synonym: "nephron mesenchyme" EXACT [OBOL:automatic]
 is_a: UBERON:0003918 ! implied link automatically realized ! mesenchyme of kidney
@@ -60088,10 +60116,14 @@ intersection_of: part_of UBERON:0001285 ! nephron
 id: UBERON:0004209
 name: renal vesicle
 def: "The renal vesicle is the primordial structure of the nephron epithelium, and is formed by the condensation of mesenchymal cells" [GO:0072077]
+comment: TODO - make a more specific develops_from relationship - see UBERON:0005107
+synonym: "stage I nephron" EXACT [http://www.gudmap.org/Organ_Summaries/Metanephros/Renal_vesicle.html]
 xref: EMAPA:27678
 xref: EMAPA:27829
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: develops_from UBERON:0004208 ! nephrogenic mesenchyme
+relationship: induced_by UBERON:0000084 ! ureteric bud
 relationship: part_of UBERON:0000483 ! epithelium
 relationship: part_of UBERON:0001285 ! nephron
 
@@ -64671,6 +64703,7 @@ id: UBERON:0004498
 name: Skeletal muscle tissue of quadriceps femoris
 def: "A portion of skeletal muscle tissue that is part of a quadriceps femoris [Obol]." [OBOL:automatic]
 xref: FMA:261998
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0001377
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001377 ! quadriceps femoris
@@ -64720,6 +64753,7 @@ id: UBERON:0004503
 name: Skeletal muscle tissue of digastric
 def: "A portion of skeletal muscle tissue that is part of a digastric [Obol]." [OBOL:automatic]
 xref: FMA:261872
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0001562
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001562 ! digastric
@@ -64729,6 +64763,7 @@ id: UBERON:0004504
 name: Skeletal muscle tissue of mylohyoid
 def: "A portion of skeletal muscle tissue that is part of a mylohyoid [Obol]." [OBOL:automatic]
 xref: FMA:261878
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0001564
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001564 ! mylohyoid
@@ -64790,6 +64825,7 @@ id: UBERON:0004510
 name: Skeletal muscle tissue of pectoralis major
 def: "A portion of skeletal muscle tissue that is part of a pectoralis major [Obol]." [OBOL:automatic]
 xref: FMA:261968
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0002381
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0002381 ! pectoralis major
@@ -68219,6 +68255,7 @@ synonym: "skeletal muscle of urethra" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of urethra" EXACT [OBOL:automatic]
 synonym: "urethra skeletal muscle tissue" EXACT [OBOL:automatic]
 xref: MA:0001690
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0000057
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0000057 ! urethra
@@ -68233,6 +68270,7 @@ synonym: "skeletal muscle of respiratory system" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of respiratory system" EXACT [OBOL:automatic]
 xref: MA:0001829
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0001004
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001004 ! respiratory system
@@ -68253,6 +68291,7 @@ synonym: "skeletal muscle tissue of esophagus" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of gullet" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of oesophagus" EXACT [OBOL:automatic]
 xref: MA:0001572
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0001043
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001043 ! esophagus
@@ -68273,6 +68312,7 @@ synonym: "skeletal muscle tissue of anal part of perineum" EXACT [OBOL:automatic
 synonym: "skeletal muscle tissue of anal region" EXACT [OBOL:automatic]
 synonym: "skeletal muscle tissue of anal triangle" EXACT [OBOL:automatic]
 xref: MA:0001530
+is_a: UBERON:0001134 ! implied link automatically realized ! skeletal muscle tissue
 relationship: part_of UBERON:0001353
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001353 ! anal region
@@ -68706,7 +68746,7 @@ relationship: develops_from UBERON:0004876 ! urogenital ridge
 id: UBERON:0004876
 name: urogenital ridge
 def: "An embryological  structure which give rise to a portion of the external genitalia. It differentiates into two structures: gonadal ridge -- medial -- primarily reproductive system; nephrogenic cord -- lateral -- primarily urinary system. In the female, the urogenital folds become the labia minora. In contrast, the labia majora are formed by the labioscrotal folds; In the male, they form the spongy urethra and a portion of the shaft of the penis, not including the glans.[WP]." [Wikipedia:Urogenital_folds]
-comment: Less commonly, urogenital fold refers to the fold in the mesonephros  which is the precursor of e.g. the suspensory ligament of the ovary. This is the case in older versions of Gray's anatomy[WP]
+comment: Less commonly, urogenital fold refers to the fold in the mesonephros which is the precursor of e.g. the suspensory ligament of the ovary. This is the case in older versions of Gray's anatomy[WP]
 synonym: "urogenital fold" EXACT []
 xref: BTO:0001402
 xref: EMAPA:30888
@@ -72006,7 +72046,10 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 [Term]
 id: UBERON:0005107
 name: metanephric cap
-def: "The metanephric cap is formed by the condensation of metanephric mesenchymal cells surrounding the ureteric bud tip[GO]." [GO:0072185]
+def: "The metanephric cap is formed by the condensation of metanephric mesenchymal cells surrounding the ureteric bud tip[GO]. Mesenchyme closely apposed to the tips of the buds is called cap mesenchyme; it will later go on to form nephrons etc[GUDMAP]." [GO:0072185, http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+comment: TODO - check EMAPA
+synonym: "cap mesenchyme" EXACT [EMAPA:27621]
+xref: EMAPA:27621
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0003220 ! metanephric blastema
@@ -72264,7 +72307,7 @@ id: UBERON:0005136
 name: metanephric glomerular endothelium
 def: "The metanephric glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus of the metanephros[GO]." [GO:0072264]
 is_a: UBERON:0004189 ! implied link automatically realized ! glomerular endothelium
-is_a: UBERON:0005135 ! implied link automatically realized ! metanephric glomerular epithelium
+is_a: UBERON:0005134 ! implied link automatically realized ! metanephric nephron epithelium
 relationship: part_of UBERON:0000081
 intersection_of: UBERON:0004189 ! glomerular endothelium
 intersection_of: part_of UBERON:0000081 ! metanephros
@@ -73814,12 +73857,13 @@ relationship: part_of UBERON:0002129 ! cerebellar cortex
 id: UBERON:0005294
 name: genital ridge
 def: "The precursor to the gonads." [Wikipedia:Gonadal_ridge]
+comment: TODO - check developmental relationships. merge with urogenital ridge?
 synonym: "gonadal ridge" EXACT [Wikipedia:Gonadal_ridge]
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gray1106.png/200px-Gray1106.png
 xref: XAO:0000018
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: develops_from UBERON:0004876 ! urogenital ridge
 relationship: part_of UBERON:0004122 ! genitourinary system
 
 [Term]
@@ -76572,7 +76616,7 @@ relationship: part_of UBERON:0001711 ! eyelid
 [Term]
 id: UBERON:0005612
 name: intercostal artery
-def: "One of a group of arteries that supply the area between the ribs (" [Wikiepdia:Intercostal_arteries]
+def: "One of a group of arteries that supply the area between the ribs ('costae'), called the intercostal space." [Wikiepdia:Intercostal_arteries]
 comment: TODO - add children
 xref: EHDAA2:0000840
 xref: MA:0001981
@@ -77574,6 +77618,7 @@ intersection_of: part_of UBERON:0003054 ! roof plate
 id: UBERON:0005725
 name: olfactory system
 def: "The olfactory system is the sensory system used for olfaction, or the sense of smell. Most mammals and reptiles have two distinct parts to their olfactory system: a main olfactory system and an accessory olfactory system. The main olfactory system detects volatile, airborne substances, while the accessory olfactory system senses fluid-phase stimuli. Behavioral evidence indicates that most often, the stimuli detected by the accessory olfactory system are pheromones. The olfactory system is often spoken of along with the gustatory system as the chemosensory senses because both transduce chemical signals into perception[WP]." [Wikipedia:Olfactory_system]
+comment: In mammals, the main olfactory system detects odorants that are inhaled through the nose, where they contact the main olfactory epithelium, which contains various olfactory receptors. These olfactory receptors are membrane proteins of bipolar olfactory receptor neurons in the olfactory epithelium. Rather than binding specific ligands  like most receptors, olfactory receptors display affinity for a range of odor molecules. Olfactory neurons transduce receptor activation into electrical signals in neurons. The signals travel along the olfactory nerve, which belongs to the peripheral nervous system. This nerve terminates in the olfactory bulb, which belongs to the central nervous system. The complex set of olfactory receptors on different olfactory neurons can distinguish a new odor from the background environmental odors and determine the concentration of the odor.
 xref: AAO:0000334
 xref: BILA:0000144
 xref: EFO:0001973
@@ -77585,7 +77630,6 @@ xref: TAO:0001149
 xref: XAO:0000201
 xref: ZFA:0001149
 is_a: UBERON:0001032 ! implied link automatically realized ! sensory system
-common: In mammals, the main olfactory system detects odorants that are inhaled through the nose, where they contact the main olfactory epithelium, which contains various olfactory receptors. These olfactory receptors are membrane proteins of bipolar olfactory receptor neurons in the olfactory epithelium. Rather than binding specific ligands  like most receptors, olfactory receptors display affinity for a range of odor molecules. Olfactory neurons transduce receptor activation into electrical signals in neurons. The signals travel along the olfactory nerve, which belongs to the peripheral nervous system. This nerve terminates in the olfactory bulb, which belongs to the central nervous system. The complex set of olfactory receptors on different olfactory neurons can distinguish a new odor from the background environmental odors and determine the concentration of the odor.
 
 [Term]
 id: UBERON:0005726
@@ -77766,6 +77810,164 @@ xref: EHDAA2:0001502
 is_a: UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0005606 ! hyaloid cavity
+
+[Term]
+id: UBERON:0005749
+name: glomerular tuft
+def: "the capillary loops of the kidney that normally function as a filtration unit[MP]. ...Soon afterwards, endothelial cells invade to make a capillary knot-like outgrowth, the glomerular tuft, which goes on to form the glomerulus[GudMap]." [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron, MP:0005325, Wikipedia:Glomerulus]
+synonym: "glomerulus" RELATED [EMAPA:28239]
+xref: EMAPA:28239
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0001230 ! glomerular capsule
+
+[Term]
+id: UBERON:0005750
+name: glomerular parietal epithelium
+def: "A single layer of simple squamous epithelium in the glomerular capsule. Does not function in filtration." [UBERON:cjm]
+comment: TODO - check this. BTO has podocytes under here
+synonym: "capsular epithelium" EXACT [BTO:0002296]
+synonym: "outer layer of glomerular capsule" EXACT [FMA:74272]
+synonym: "parietal layer of glomerular capsule" EXACT [FMA:74272]
+xref: BTO:0002296
+xref: FMA:74272
+xref: MA:0002605
+is_a: UBERON:0000487 ! simple squamous epithelium
+is_a: UBERON:0004188 ! glomerular epithelium
+relationship: adjacent_to UBERON:0001286 ! Bowman's space
+relationship: part_of UBERON:0001230 ! glomerular capsule
+
+[Term]
+id: UBERON:0005751
+name: visceral layer of glomerular capsule
+def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]." [BTO:0001515]
+comment: TODO - check - the BTO class 'glomerular epithelium' is the visceral layer. But GO uses 'glomerular epithelium' as the mereological sum of P+V layers
+synonym: "inner epithelial layer of Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+synonym: "podocyte layer of Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+synonym: "visceral epithelium of Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+xref: FMA:74273
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004188 ! implied link automatically realized ! glomerular epithelium
+relationship: adjacent_to UBERON:0001286 ! Bowman's space
+relationship: part_of UBERON:0001230 ! glomerular capsule
+
+[Term]
+id: UBERON:0005753
+name: caudal part of nephrogenic cord
+def: "the metanephros develops from the most caudal part of the nephrogenic cord that is itself derived from the intermediate plate mesoderm." [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+synonym: "caudal portion of nephrogenic cord" EXACT [OBOL:automatic]
+synonym: "caudal region of nephrogenic cord" EXACT [OBOL:automatic]
+synonym: "rear part of nephrogenic cord" EXACT [OBOL:automatic]
+synonym: "rear portion of nephrogenic cord" EXACT [Wikipedia:Metanephros#Metanephros]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0004875 ! nephrogenic cord
+
+[Term]
+id: UBERON:0005754
+name: rostral part of nephrogenic cord
+def: "The initial renal anlage that develops from the most rostral part of the nephrogenic cord is termed the pronephros." [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0004875 ! nephrogenic cord
+
+[Term]
+id: UBERON:0005760
+name: urorectal septum
+def: "The entodermal cloaca is divided into a dorsal and a ventral part by means of a partition, the urorectal septum, which grows downward from the ridge separating the allantoic from the cloacal opening of the intestine and ultimately fuses with the cloacal membrane and divides it into an anal and a urogenital part. The dorsal part of the cloaca forms the rectum, and the anterior part of the urogenital sinus and bladder." [Wikipedia:Urorectal_septum]
+synonym: "cloacal septum" RELATED [HOG:0000018]
+xref: EHDAA:5921
+xref: EHDAA2:0002152
+xref: EMAPA:17212
+xref: EMAPA:17380
+xref: HOG:0000018
+xref: Wikipedia:Urorectal_septum
+is_a: UBERON:0003037 ! septum
+relationship: part_of UBERON:0001008 ! urinary system
+
+[Term]
+id: UBERON:0005764
+name: acellular membrane
+xref: FMA:63871
+is_a: UBERON:0000476 ! acellular anatomical structure
+
+[Term]
+id: UBERON:0005769
+name: basement membrane
+comment: we include this even though it is redundant with GO because we have subclasses that are appropriate for an ontology of gross anatomy
+synonym: "basal lamina" RELATED [GAID:915]
+synonym: "basement lamina" RELATED [GAID:915]
+synonym: "Basement membrane of connective tissue" EXACT [FMA:63872]
+xref: FMA:63872
+xref: GAID:915
+xref: GO:0005604
+is_a: UBERON:0005764 ! acellular membrane
+relationship: constitutional_part_of UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0005777
+name: glomerular basement membrane
+def: "The glomerular basement membrane is the basal laminal portion of the glomerulus which performs the actual filtration through the filtration slits between the podocytes, separating the blood on the inside from the filtrate on the outside. It is a fusion of the endothelial cell and podocyte basal laminas." [Wikipedia:Glomerular_basement_membrane]
+xref: EMAPA:28251
+xref: EMAPA:30965
+xref: FMA:74274
+xref: ZFA:0005285
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005769 ! implied link automatically realized ! basement membrane
+relationship: part_of UBERON:0000074
+intersection_of: UBERON:0005769 ! basement membrane
+intersection_of: part_of UBERON:0000074 ! renal glomerulus
+relationship: part_of UBERON:0001229 ! renal corpuscle
+
+[Term]
+id: UBERON:0005787
+name: lamina densa
+def: "Middle layer of the glomerular basement membrane." [ZFIN:curator]
+synonym: "lamina densa of glomerular basement membrane" EXACT [FMA:74276]
+synonym: "middle layer of glomerular basement membrane" EXACT [FMA:74276]
+xref: FMA:74276
+xref: ZFA:0005286
+is_a: UBERON:0000476 ! implied link automatically realized ! acellular anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: adjacent_to UBERON:0005788
+relationship: adjacent_to UBERON:0005789
+relationship: part_of UBERON:0005777
+intersection_of: UBERON:0000476 ! acellular anatomical structure
+intersection_of: adjacent_to UBERON:0005788 ! lamina rara interna
+intersection_of: adjacent_to UBERON:0005789 ! lamina rara externa
+intersection_of: part_of UBERON:0005777 ! glomerular basement membrane
+
+[Term]
+id: UBERON:0005788
+name: lamina rara interna
+def: "Layer of the glomerular basement membrane adjacent to the glomerular capillary." [ZFIN:curator]
+synonym: "internal layer of glomerular basement membrane" EXACT [FMA:74277]
+synonym: "lamina interna of glomerular basement membrane" EXACT [FMA:74277]
+xref: FMA:74277
+xref: ZFA:0005287
+is_a: UBERON:0000476 ! implied link automatically realized ! acellular anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: adjacent_to UBERON:0001230
+relationship: part_of UBERON:0005777
+intersection_of: UBERON:0000476 ! acellular anatomical structure
+intersection_of: adjacent_to UBERON:0001230 ! glomerular capsule
+intersection_of: part_of UBERON:0005777 ! glomerular basement membrane
+
+[Term]
+id: UBERON:0005789
+name: lamina rara externa
+def: "Layer of the glomerular basement membrane adjacent to the podocytes and capsular space." [ZFIN:curator]
+synonym: "external layer of glomerular basement membrane" EXACT [FMA:74275]
+synonym: "lamina externa of glomerular basement membrane" EXACT [FMA:74275]
+xref: FMA:74275
+xref: ZFA:0005288
+is_a: UBERON:0000476 ! implied link automatically realized ! acellular anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: adjacent_to UBERON:0001286
+relationship: part_of UBERON:0005777
+intersection_of: UBERON:0000476 ! acellular anatomical structure
+intersection_of: adjacent_to UBERON:0001286 ! Bowman's space
+intersection_of: part_of UBERON:0005777 ! glomerular basement membrane
 
 [Typedef]
 id: adjacent_to
