@@ -821,7 +821,18 @@ uberon_class_taxon_min.txt:
 missing-from-%.txt:
 	blip-findall -r uberonp -r $* "class(X),\+id_idspace(X,'UBERON'),\+((entity_xref(U,X),id_idspace(U,'UBERON')))" -select X -label > $@
 
-# use this one:
+# USE THIS:
+mappings-ZFA-MA-201009-LCS.txt:
+	blip-findall -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA-201009.rdf -r uberonp_with_isa -i adhoc_uberon.pro -i eval_mappings.pro "mapping_class_pair_lcspath_score/9" -label > $@.tmp && sort -u $@.tmp > $@
+
+mappings-FMA-MA-201009-LCS.txt:
+	blip-findall -r fma_simple -r mouse_anatomy -i mappings-FMA-MA-201009.rdf -r uberonp_with_isa -i adhoc_uberon.pro -i eval_mappings.pro -i uberonp_FMA_MA_inferred_parent_via.pro "mapping_class_pair_lcspath_score/9" -label > $@.tmp && sort -u $@.tmp > $@
+
+uberonp_FMA_MA_inferred_parent_via.pro:
+	 blip-findall -debug index -debug em -r fma_simple -r mouse_anatomy -i mappings-FMA-MA-201009.rdf -r uberonp_with_isa -i adhoc_uberon.pro -i eval_mappings.pro  -u ontol_db -u metadata_db "inferred_parent_via/3" -write_prolog > $@
+
+# IGNORE ALL BELOW---
+
 mappings-ZFA-MA-%-scores.txt: mappings-ZFA-MA-%.rdf
 	blip-findall -debug index -r mouse_anatomy -r zebrafish_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_classification/10 -label > $@.tmp && sort -u $@.tmp > $@
 
@@ -848,4 +859,5 @@ mappings-ZFA-MA-201009-lca.txt:
 
 inv-mappings-FMA-MA-201009-lca.txt:
 	blip-findall -r mouse_anatomy -r fma -i mappings-FMA-MA-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "inv_mapping_lca(M,S,T,'FMA','MA')" -label > $@.tmp && sort -u $@.tmp > $@
+
 

@@ -9,7 +9,7 @@ synonymtypedef: DUBIOUS "dubious or contested synonym"
 synonymtypedef: SENSU "taxonomic disambiguation"
 default-namespace: uberon
 treat-xrefs-as-equivalent: CARO
-ontology: uberon_edit.owl
+ontology: uberon_edit
 
 [Term]
 id: UBERON:0000000
@@ -1585,6 +1585,8 @@ xref: EHDAA2:0001130 ! mesonephros
 xref: XAO:0000141 ! mesonephric kidney
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Gray986.png/200px-Gray986.png
 synonym: "opisthonephros" RELATED [XAO:0000141, HOG:0000038]
+synonym: "opistonephros" RELATED [http://www.usm.maine.edu/bio/courses/bio205/bio205_26_sex.html]
+synonym: "opisto nephros" RELATED []
 
 [Term]
 id: UBERON:0000081 ! metanephros
@@ -1688,7 +1690,7 @@ name: basement membrane
 comment: we include this even though it is redundant with GO because we have subclasses that are appropriate for an ontology of gross anatomy
 synonym: "Basement membrane of connective tissue" EXACT [FMA:63872]
 is_a: UBERON:0005764 ! acellular membrane
-relationship: constitutional_part_of UBERON:0000483 ! epithelium
+relationship: part_of UBERON:0000483 ! epithelium
 xref: FMA:63872 ! Basement membrane
 xref: GAID:915 ! basement membrane 
 xref: GO:0005604 ! basement membrane
@@ -2939,7 +2941,7 @@ synonym: "Inner cambial layer of periosteum" EXACT [FMA:234358]
 xref: BTO:0000170
 xref: FMA:234358 ! Cambial layer of periosteum
 is_a: UBERON:0000064 ! organ part
-relationship: constitutional_part_of UBERON:0002515 ! periosteum
+relationship: part_of UBERON:0002515 ! periosteum
 xref: EFO:0001016 ! cambium
 
 [Term]
@@ -3121,7 +3123,7 @@ alt_id: UBERON:BTO_0000547-FMA_45653
 xref: BTO:0000547
 xref: FMA:45653 ! Wall of gut
 is_a: UBERON:0000477 ! anatomical cluster
-relationship: constitutional_part_of UBERON:0001555 ! digestive tract
+relationship: part_of UBERON:0001555 ! digestive tract
 relationship: systemic_part_of UBERON:0001555 ! digestive tract
 
 [Term]
@@ -4638,7 +4640,7 @@ alt_id: UBERON:BTO_0002498-FMA_231559
 xref: BTO:0002498
 xref: FMA:231559 ! Arachnoid barrier layer
 is_a: UBERON:0000064 ! organ part
-relationship: constitutional_part_of UBERON:0002362 ! arachnoid mater
+relationship: part_of UBERON:0002362 ! arachnoid mater
 
 [Term]
 id: UBERON:0000438
@@ -6228,25 +6230,49 @@ synonym: "trunk of aortic tree" EXACT []
 synonym: "trunk of systemic arterial tree" EXACT []
 xref: BTO:0000135
 xref: EFO:0000265 ! aorta
-xref: EHDAA:402 ! dorsal aorta
 xref: FMA:3734 ! Aorta
 xref: GAID:469 ! aorta
 xref: galen:Aorta
 xref: HOG:0001523 ! aorta
-xref: HOG:0000264 ! dorsal aorta
 xref: MA:0000062 ! aorta
-xref: MA:0000476 ! dorsal aorta
 xref: MAT:0000035 ! aorta
 xref: MIAA:0000035 ! aorta
 xref: OpenCyc:Mx4rvVjvTpwpEbGdrcN5Y29ycA
-xref: TAO:0000014 ! dorsal aorta
 xref: XAO:0003010 ! aorta
-xref: ZFA:0000014 ! dorsal aorta
 is_a: UBERON:0001637 ! artery
 xref: ncithesaurus:Aorta ! Aorta
 xref: OpenCyc:Mx4rvVjvTpwpEbGdrcN5Y29ycA ! aorta
+
+[Term]
+id: UBERON:0005805
+name: dorsal aorta
+def: "Each primitive aorta receives anteriorly a veinbthe vitelline veinbfrom the yolk-sac, and is prolonged backward on the lateral aspect of the notochord under the name of the dorsal aorta. The dorsal aortae give branches to the yolk-sac, and are continued backward through the body-stalk as the umbilical arteries to the villi of the chorion. The two dorsal aortae combine to become the descending aorta in later development." [Wikipedia:Dorsal_aorta]
+synonym: "dorsal aort%c3%a6" RELATED [Wikipedia:Dorsal_aorta]
+synonym: "dorsal aorta root" RELATED  [HOG:0000264]
+synonym: "dorsal aortic root" RELATED  [HOG:0000264]
+is_a: UBERON:0000947 ! aorta
+relationship: develops_from UBERON:0003064 ! intermediate mesoderm
+relationship: develops_from UBERON:0001917 ! endothelium of artery
+relationship: part_of UBERON:0002201 ! vasculature of trunk
+xref: HOG:0000264 ! dorsal aorta
+xref: ZFA:0000014 ! dorsal aorta
+xref: HOG:0000264 ! dorsal aorta
+xref: MA:0000476 ! dorsal aorta
+xref: EHDAA:402 ! dorsal aorta
 xref: EHDAA2:0000410 ! dorsal aorta
 
+[Term]
+id: UBERON:0003085
+name: ventral aorta
+alt_id: UBERON:XAO_0000338-ZFA_0000604
+def: "Outflow artery from the heart to the aortic arches. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [ZFIN:curator]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+xref: HOG:0000121 ! ventral aorta
+xref: TAO:0000604 ! ventral aorta
+xref: XAO:0000338 ! ventral aorta
+xref: ZFA:0000604 ! ventral aorta
+is_a: UBERON:0000947 ! aorta
 
 [Term]
 id: UBERON:0000949
@@ -7396,7 +7422,39 @@ xref: EFO:0000975 ! uterus
 xref: galen:Uterus ! uterus
 xref: OpenCyc:Mx4rvViojJwpEbGdrcN5Y29ycA ! uterus
 relationship: part_of UBERON:0000474 ! female reproductive system
+relationship: develops_from UBERON:0005795 ! embryonic uterus
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Female_anatomy.png/200px-Female_anatomy.png
+
+[Term]
+id: UBERON:0005795 ! embryonic uterus
+name: embryonic uterus
+xref: FMA:72173 ! fetal uterus
+is_a: UBERON:0002050 ! embryonic structure
+synonym: "fetal uterus" EXACT [FMA:72173]
+
+[Term]
+id: UBERON:0005796
+name: duplex uterus
+def: "the duplex uterus is doubled, and is found in monotremes, marsupials, elephants and rodents" [http://www.shsu.edu/~bio_mlt/Chap14.html]
+is_a: UBERON:0000995 ! uterus
+
+[Term]
+id: UBERON:0005797
+name: bipartite uterus
+def: "the bipartite uterus is y-shaped externally and divided internally (ungulates, carnivores)" [http://www.shsu.edu/~bio_mlt/Chap14.html]
+is_a: UBERON:0000995 ! uterus
+
+[Term]
+id: UBERON:0005798
+name: bicornate uterus
+def: "the bicornate uterus is y-shaped but has no internal partition (some ungulates, whales)" [http://www.shsu.edu/~bio_mlt/Chap14.html]
+is_a: UBERON:0000995 ! uterus
+
+[Term]
+id: UBERON:0005799
+name: simplex uterus
+def: "the simplex uterus has only one uterine chamber (primates)" [http://www.shsu.edu/~bio_mlt/Chap14.html]
+is_a: UBERON:0000995 ! uterus
 
 [Term]
 id: UBERON:0000996
@@ -8774,6 +8832,7 @@ xref: FBbt:00000440
 xref: HOG:0000139 ! proctodeum
 xref: XAO:0001019 ! proctodeum
 is_a: UBERON:0003102 ! surface structure
+is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0000924 ! ectoderm
 xref: ncithesaurus:Proctodeum ! Proctodeum
 xref: ZFA:0000066 ! proctodeum
@@ -9157,23 +9216,6 @@ xref: OpenCyc:Mx4rv11AcpwpEbGdrcN5Y29ycA ! intervertebral disk
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Gray301.png/200px-Gray301.png
 
 [Term]
-id: UBERON:0003861
-name: neural arch
-def: "posterior part of a vertebra that consists of a pair of pedicles and a pair of laminae, and supports seven processes: four articular processes, two transverse processes one spinous process[WP]. ZFA: A neural arch encloses the neural canal and typically meets its partner to form a neural spine. The neural arch can be a replacement ossification of the basidorsal cartilage or can form directly in membrane bone." [Wikipedia:Vertebral_arch]
-synonym: "arch of vertebra" EXACT [FMA:11946]
-synonym: "vertebral arch" EXACT []
-synonym: "vertebra neural arch" EXACT [MA:0001453]
-xref: MA:0001453 ! vertebra neural arch
-xref: FMA:11946 ! vertebral arch
-xref: ZFA:0001066 ! neural arch
-is_a: UBERON:0002513 ! endochondral bone
-relationship: part_of UBERON:0002412 ! vertebra
-xref: BTO:0001763 ! neural arch
-xref: OpenCyc:Mx4rwKYHvZwpEbGdrcN5Y29ycA ! vertebral arch
-xref: MA:0001453 ! vertebra arch
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gray82.png/200px-Gray82.png
-
-[Term]
 id: UBERON:0001067
 name: vertebral arch joint
 alt_id: UBERON:FMA_10447-MA_0001513
@@ -9190,7 +9232,7 @@ xref: GAID:275 ! zygapophyseal joint
 xref: MA:0001513 ! joint of vertebral arch
 is_a: UBERON:0002217 ! synovial joint
 relationship: adjacent_to UBERON:0002412 ! vertebra
-relationship: part_of UBERON:0003861
+relationship: part_of UBERON:0003861 ! neural arch
 xref: ncithesaurus:Facet_Joint ! Facet Joint
 xref: OpenCyc:Mx4rvorHEpwpEbGdrcN5Y29ycA ! vertebral arch joint
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Gray90.png/200px-Gray90.png
@@ -9346,25 +9388,6 @@ relationship: part_of UBERON:0003861 ! neural arch
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Processusspinosusvertebrae.png/200px-Processusspinosusvertebrae.png
 
 [Term]
-id: UBERON:0001077
-name: transverse process of vertebra
-alt_id: UBERON:FMA_11949-MA_0001456
-def: "The transverse or costal processes of a vertebra, two in number, project one at either side from the point where the lamina joins the pedicle, between the superior and inferior articular processes. They serve for the attachment of muscles and ligaments. [WP,unvetted]." [Wikipedia:Processus_transversus]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "processus transversus" EXACT []
-synonym: "vertebra transverse process" EXACT []
-xref: FMA:11949 ! Transverse process of vertebra
-xref: MA:0001456 ! vertebra transverse process
-is_a: UBERON:0003109 ! transverse process
-intersection_of: UBERON:0003109 ! transverse process
-intersection_of: part_of UBERON:0002412 ! vertebra
-relationship: part_of UBERON:0002412 ! vertebra
-synonym: "parapophysis of vertebra" EXACT [OBOL:automatic]
-synonym: "vertebra parapophysis" EXACT [OBOL:automatic]
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Processustransversusvertebrae.PNG/200px-Processustransversusvertebrae.PNG
-
-[Term]
 id: UBERON:0001078
 name: pedicle of vertebra
 alt_id: UBERON:FMA_11950-MA_0001458
@@ -9503,7 +9526,7 @@ is_a: UBERON:0004123 ! myocardium layer
 
 [Term]
 id: UBERON:0004493
-name: Cardiac muscle tissue of myocardium
+name: cardiac muscle tissue of myocardium
 xref: FMA:261726 ! Cardiac muscle tissue of myocardium
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
 intersection_of: part_of UBERON:0002349 ! myocardium
@@ -9916,6 +9939,113 @@ xref: ncithesaurus:Dentition ! Dentition
 xref: OpenCyc:Mx4rvVi65JwpEbGdrcN5Y29ycA ! set of teeth
 xref: AAO:0000126 ! dentition
 
+
+[Term]
+id: UBERON:0001077 ! transverse process of vertebra
+name: transverse process of vertebra
+alt_id: UBERON:FMA_11949-MA_0001456
+def: "The transverse or costal processes of a vertebra, two in number, project one at either side from the point where the lamina joins the pedicle, between the superior and inferior articular processes. They serve for the attachment of muscles and ligaments. [WP,unvetted]." [Wikipedia:Processus_transversus]
+subset: uberon_slim
+synonym: "transverse process" EXACT []
+synonym: "processus transversus" EXACT []
+synonym: "vertebra transverse process" EXACT []
+xref: FMA:11949 ! Transverse process of vertebra
+xref: MA:0001456 ! vertebra transverse process
+is_a: UBERON:0004530 ! bony projection
+relationship: part_of UBERON:0002412 ! vertebra
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Processustransversusvertebrae.PNG/200px-Processustransversusvertebrae.PNG
+
+[Term]
+id: UBERON:0003109
+name: parapophysis
+alt_id: UBERON:XAO_0003102-ZFA_0001362
+def: "Endochondral bone that forms from a lateral outgrowth of the basiventral arcualia and connects the rib with the vertebral centrum[TAO]. A lateral or ventrolateral projections of vertebrae to which ribs are attached in Danio rerio. ZFA: They can arise through replacement ossification of a basiventral or form directly in bone. They are separated from the centrum in basal teleosts, e.g., Leptolepis coryphaenoides, Megalops and Elops." [ZFIN:curator]
+comment: TODO - check
+subset: uberon_slim
+synonym: "lateral process of basiventral" RELATED []
+xref: AAO:0000698 ! transverse_process
+xref: AAO:0000708 ! parapophysis
+xref: TAO:0001362 ! parapophysis
+xref: XAO:0003102 ! transverse process
+xref: ZFA:0001362 ! parapophysis
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0001077 ! transverse process of vertebra
+relationship: part_of UBERON:0002090 ! postcranial axial skeleton
+
+[Term]
+id: UBERON:0005813 ! tubercle
+name: tubercle
+def: "a round nodule, small eminence, or warty outgrowth found on bones, skin, or within the lungs in tuberculosis. They are also found on the leading edge of Humpback Whale's flippers, improving fluid flow over the flipper's surface[WP]." [Wikipedia:Tubercle_(anatomy)]
+is_a: UBERON:0004529 ! anatomical projection
+xref: FMA:75429 ! tubercle
+
+[Term]
+id: UBERON:0005815
+name: anterior tubercle of transverse process of cervical vertebra
+synonym: "anterior costal tubercle of transverse process of cervical vertebra" EXACT  [FMA:24126]
+synonym: "anterior tubercle of cervical vertebra" EXACT  [FMA:24126]
+is_a: UBERON:0005813 ! tubercle
+xref: FMA:24126 ! anterior tubercle of transverse process of cervical vertebra
+
+[Term]
+id: UBERON:0005816
+name: posterior tubercle of transverse process of cervical vertebra
+synonym: "posterior costal tubercle of transverse process of cervical vertebra" EXACT  [FMA:24128]
+synonym: "posterior tubercle of cervical vertebra" EXACT  [FMA:24128]
+is_a: UBERON:0005813 ! tubercle
+xref: FMA:24128 ! posterior tubercle of transverse process of cervical vertebra
+
+[Term]
+id: UBERON:0005810
+name: cervical vertebra 1 anterior tubercle
+synonym: "cervical vertebra 1 ventral tubercle" EXACT [MA:0002871]
+synonym: "atlas ventral tubercle" EXACT [MA:0002871]
+synonym: "ventral tubercle of atlas" EXACT [MP:0010731]
+synonym: "anterior tubercle of atlas" EXACT [FMA:23991]
+synonym: "tubercle of anterior arch of atlas" EXACT [FMA:23991]
+comment: TODO - check: anterior vs ventral; arch vs transverse process
+is_a: UBERON:0005813 ! tubercle
+relationship: part_of  UBERON:0005814 ! arch of atlas
+xref: MA:0002871 ! cervical vertebra 1 ventral tubercle
+xref: FMA:23991 ! anterior tubercle of atlas
+
+[Term]
+id: UBERON:0003861
+name: vertebral arch
+def: "posterior part of a vertebra that consists of a pair of pedicles and a pair of laminae, and supports seven processes: four articular processes, two transverse processes one spinous process[WP]. ZFA: A neural arch encloses the neural canal and typically meets its partner to form a neural spine. The neural arch can be a replacement ossification of the basidorsal cartilage or can form directly in membrane bone." [Wikipedia:Vertebral_arch]
+synonym: "arch of vertebra" EXACT [FMA:11946]
+synonym: "neural arch" EXACT []
+synonym: "vertebra neural arch" EXACT [MA:0001453]
+xref: MA:0001453 ! vertebra neural arch
+xref: FMA:11946 ! vertebral arch
+xref: ZFA:0001066 ! neural arch
+is_a: UBERON:0002513 ! endochondral bone
+relationship: part_of UBERON:0002412 ! vertebra
+xref: BTO:0001763 ! neural arch
+xref: OpenCyc:Mx4rwKYHvZwpEbGdrcN5Y29ycA ! vertebral arch
+xref: MA:0001453 ! vertebra arch
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gray82.png/200px-Gray82.png
+
+[Term]
+id: UBERON:0005814 ! arch of atlas
+name: arch of atlas
+def: "." [Wikipedia:Arch_of_the_atlas]
+synonym: "atlas arch" EXACT  [FMA:23975]
+is_a: UBERON:0003861 ! neural arch
+xref: FMA:23975 ! arch of atlas
+
+[Term]
+id: UBERON:0003996
+alt_id: UBERON:0005209
+name: arcus anterior
+def: "The anterior arch of the atlas forms about one-fifth of the ring of the atlas: its anterior surface is convex, and presents at its center the anterior tubercle for the attachment of the Longus colli muscles; posteriorly it is concave, and marked by a smooth, oval or circular facet (fovea dentis), for articulation with the odontoid process (dens) of the axis[WP]. The arch that connects the lateral masses of the atlas anteriorly and articulates with the anterior articular facet of the dens of the axis[MP]." [MP:0009879, Wikipedia:Anterior_arch_of_atlas]
+is_a: UBERON:0004530 ! bony projection
+relationship: part_of UBERON:0001092 ! atlas
+xref: MA:0002954 ! cervical vertebra 1 arcus anterior
+xref: FMA:23976 ! Anterior arch of atlas
+synonym: "cervical vertebra 1 arcus anterior" EXACT [MA:0002954]
+synonym: "anterior arch of atlas" EXACT [MA:0002954]
+synonym: "arcus anterior atlantis" EXACT [MA:0002954]
 
 [Term]
 id: UBERON:0001092
@@ -13775,24 +13905,6 @@ relationship: part_of UBERON:0002189 ! outer cortex of kidney
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Illu_kidney2.jpg/200px-Illu_kidney2.jpg
 
 [Term]
-id: UBERON:0001285
-name: nephron
-alt_id: UBERON:FMA_17640-MA_0000375-XAO_0000145
-def: "The basic functional unit of the kidney. its chief function is to regulate the concentration of water and soluble substances like sodium salts by filtering the blood, reabsorbing what is needed and excreting the rest as urine. A nephron eliminates wastes from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH. Its functions are vital to life and are regulated by the endocrine system by hormones such as antidiuretic hormone, aldosterone, and parathyroid hormone.[WP]" [PMID:9268568, Wikipedia:Nephron]
-subset: uberon_slim
-xref: BTO:0000924
-xref: FMA:17640 ! Nephron
-xref: GAID:428 ! nephron
-xref: MA:0000375 ! nephron
-xref: XAO:0000145
-is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0003220 ! metanephric blastema
-relationship: part_of UBERON:0002113 ! kidney
-xref: ncithesaurus:Nephron ! Nephron
-xref: ZFA:0005282 ! nephron
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Gray1128.png/200px-Gray1128.png
-
-[Term]
 id: UBERON:0005167
 name: papillary duct
 def: "The terminal portions of the medullary collecting ducts are the papillary ducts, which end at the renal papilla and empty into a minor calyx." [Encyclopedia:http://encyclopedia.thefreedictionary.com/]
@@ -16491,6 +16603,9 @@ comment: MP distinguishes compact/cortical bone. in other AOs they are syns
 subset: uberon_slim
 synonym: "compact bone tissue" EXACT []
 synonym: "cortical bone" EXACT []
+synonym: "cortical region of bone" EXACT []
+synonym: "cortical bone tissue" EXACT []
+synonym: "bony cortex" EXACT [HP:0002753]
 synonym: "substantia compacta (pars ossea)" EXACT []
 xref: FMA:24018 ! Compact bone
 xref: galen:CorticalBone
@@ -16572,7 +16687,7 @@ xref: EHDAA2:0002226 ! lower limb skeleton
 id: UBERON:0001442
 name: skeleton of hand
 alt_id: UBERON:FMA_24159-MA_0000619
-comment: This class was created automatically from a combination of ontologies
+comment: TODO: check skeleton vs part of skeleton
 synonym: "bones of hand" EXACT []
 synonym: "hand bone" EXACT []
 synonym: "hand skeleton" EXACT []
@@ -17687,7 +17802,7 @@ subset: uberon_slim
 synonym: "pars ascendens aortae" EXACT []
 xref: FMA:3736 ! Ascending aorta
 xref: MA:0002570 ! ascending aorta
-is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0005800 ! segment of aorta
 relationship: part_of UBERON:0001515 ! thoracic aorta
 xref: ncithesaurus:Ascending_Aorta ! Ascending Aorta
 xref: EHDAA:9828 ! ascending aorta
@@ -18035,6 +18150,13 @@ synonym: "zone of skin of lower extremity distal free limb segment" EXACT [OBOL:
 def: "A zone of skin that is part of a foot [Obol]." [OBOL:automatic]
 
 [Term]
+id: UBERON:0005800 ! segment of aorta
+name: segment of aorta
+synonym: "aortic segment" EXACT  [FMA:13087]
+is_a: UBERON:0000063 ! organ segment
+xref: FMA:13087 ! segment of aorta
+
+[Term]
 id: UBERON:0001514
 name: descending aorta
 alt_id: UBERON:FMA_3784-MA_0002571
@@ -18045,7 +18167,7 @@ synonym: "pars descendens aortae" EXACT []
 xref: FMA:3784 ! Descending aorta
 xref: MA:0002571 ! descending aorta
 xref: OpenCyc:Mx4rv4EE35wpEbGdrcN5Y29ycA
-is_a: UBERON:0000063 ! organ segment
+is_a: UBERON:0005800 ! segment of aorta
 relationship: part_of UBERON:0001009 ! circulatory system
 xref: ncithesaurus:Descending_Aorta ! Descending Aorta
 xref: OpenCyc:Mx4rv4EE35wpEbGdrcN5Y29ycA ! descending aorta
@@ -18065,13 +18187,12 @@ xref: GAID:471 ! thoracic aorta
 xref: MA:0002569 ! thoracic aorta
 xref: OpenCyc:Mx4rveb9TpwpEbGdrcN5Y29ycA
 is_a: UBERON:0000947 ! aorta
-intersection_of: UBERON:0000947 ! aorta
+intersection_of: UBERON:0005800 ! segment of aorta
 intersection_of: part_of UBERON:0000915 ! thorax
 xref: ncithesaurus:Thoracic_Aorta ! Thoracic Aorta
 xref: EFO:0002525 ! thoracic aorta
 synonym: "adult aorta of thorax" EXACT [OBOL:automatic]
 synonym: "aorta of thorax" EXACT [OBOL:automatic]
-synonym: "dorsal aorta of thorax" EXACT [OBOL:automatic]
 synonym: "thorax adult aorta" EXACT [OBOL:automatic]
 synonym: "thorax aorta" EXACT [OBOL:automatic]
 synonym: "thorax dorsal aorta" EXACT [OBOL:automatic]
@@ -23554,7 +23675,7 @@ xref: BTO:0000205
 xref: EHDAA:3780 ! nerve plexus
 xref: FMA:5901 ! Nerve plexus
 xref: MA:0002407 ! nerve plexus
-is_a: UBERON:0003714 ! nerve tissue
+is_a: UBERON:0003714 ! neural tissue
 relationship: part_of UBERON:0001016 ! nervous system
 xref: ncithesaurus:Nerve_Plexus ! Nerve Plexus
 xref: EHDAA2:0003138 ! nerve plexus
@@ -25121,6 +25242,16 @@ xref: ncithesaurus:Medulla_Oblongata ! Medulla Oblongata
 xref: OpenCyc:Mx4rwCqnXJwpEbGdrcN5Y29ycA ! medulla oblongata
 xref: EHDAA2:0001088 ! medulla oblongata
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Illu_pituitary_pineal_glands.jpg/200px-Illu_pituitary_pineal_glands.jpg
+
+[Term]
+id: UBERON:0005807
+name: rostral ventrolateral medulla
+def: "Control of blood pressure is crucially dependent on the integrity of a small region of the brainstem called the ventrolateral medulla. Within this part of the brain are the cells that control the heart, blood vessels, swallowing, breathing and many other functions of the body that are not noticed at a conscious level; such unconscious activities are known as 'Autonomic'. One of these regions is the Rostral Ventrolateral Medulla (RVLM) is also known as the pressor area of the medulla (medulla pressor). It receives inhibitory GABAergic input from the caudal ventrolateral medulla (CVLM). The RVLM is the primary regulator of the sympathetic nervous system, sending excitatory fibers (catecholaminergic) to the sympathetic preganglionic neurons in the spinal cord, via reticulospinal tract[WP]." [Wikipedia:Rostral_ventrolateral_medulla]
+synonym: "RVLM" EXACT []
+synonym: "medulla pressor" EXACT [Wikipedia:Rostral_ventrolateral_medulla]
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: part_of UBERON:0001896 ! medulla oblongata
+xref: BTO:0002778 ! rostral ventrolateral medulla
 
 [Term]
 id: UBERON:0004703
@@ -26936,6 +27067,7 @@ is_a: UBERON:0000055 ! vessel
 disjoint_from: UBERON:0001473 ! lymphatic vessel
 relationship: has_part UBERON:0000178 ! blood
 relationship: part_of UBERON:0004537 ! blood vasculature
+relationship: develops_from UBERON:0004872 ! splanchnic layer of lateral plate mesoderm
 xref: OpenCyc:Mx4rvVjxlpwpEbGdrcN5Y29ycA ! blood vessel
 xref: NIF_GrossAnatomy:nlx_anat_090901 ! Blood vessel
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Circulatory_System_en.svg/200px-Circulatory_System_en.svg.png
@@ -29702,6 +29834,24 @@ xref: ncithesaurus:Left_Ovary ! Left Ovary
 def: "An ovary that is part of a left side of organism [Obol]." [OBOL:automatic]
 
 [Term]
+id: UBERON:0001285
+name: nephron
+alt_id: UBERON:FMA_17640-MA_0000375-XAO_0000145
+def: "The basic functional unit of the kidney. its chief function is to regulate the concentration of water and soluble substances like sodium salts by filtering the blood, reabsorbing what is needed and excreting the rest as urine. A nephron eliminates wastes from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH. Its functions are vital to life and are regulated by the endocrine system by hormones such as antidiuretic hormone, aldosterone, and parathyroid hormone.[WP]" [PMID:9268568, Wikipedia:Nephron]
+subset: uberon_slim
+xref: BTO:0000924
+xref: FMA:17640 ! Nephron
+xref: GAID:428 ! nephron
+xref: MA:0000375 ! nephron
+xref: XAO:0000145
+is_a: UBERON:0000064 ! organ part
+relationship: develops_from UBERON:0003220 ! metanephric blastema
+relationship: part_of UBERON:0002113 ! kidney
+xref: ncithesaurus:Nephron ! Nephron
+xref: ZFA:0005282 ! nephron
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Gray1128.png/200px-Gray1128.png
+
+[Term]
 id: UBERON:0005722
 name: nephrotome
 def: "The nephrotome is a section of the mesoderm. It gives rise to the pronephros and eventually to the rest of the kidney. A nephrotome is an obsolete term used to describe rounded mesodermal portions of the forming pronephros. In old texts the pronephros is described as forming through the fusion of multiple nephrotomes. Modern visualization methods such as scanning electron microscopy, in situ hybridization and confocal microscopy, combined with the simple approach of peeling off the epidermis to see the forming kidney, have shown that this is not the case. Nephric mesenchyme separates from the intermediate mesoderm as a single elongated primordia. As this primordia begins to undergo epithelialization the anterior portions of the pronephros form rounded protrusions, which then later become the dorsal branches of the pronephros that link to nephrostomes (distinct from nephrotomes). These rounded bumps are probably the structures observed in histological sections that are referred to as nephrotomes. Nephrostomes are thin ciliated funnels that link pronephric nephrons to the ceolom, and are not related to nephrotomes." [Wikipedia:Nephrotome]
@@ -29744,23 +29894,18 @@ relationship: part_of UBERON:0003064 ! intermediate mesoderm
 xref: ZFA:0000067 ! pronephric mesoderm
 
 [Term]
-id: UBERON:0002120
+id: UBERON:0002120 ! pronephros
 name: pronephros
 alt_id: UBERON:FMA_72170-MIAA_0000117-XAO_0002000-ZFA_0000151
 def: "In mammals, the pronephros is the first of the three embryonic kidneys to be established and exists only transiently. In lower vertebrates such as fish and amphibia, the pronephros is the fully functional embryonic kidney and is indispensible for larval life[GO]. // The first kidney in all vertebrates - it is transitional and disappears soon after it has formed. // Organ that serves as a transient kidney, providing osmoregulation during early developmental stages and then degenerating during metamorphosis. // The embryonic kidney, present at the level of the third somite, is composed of two glomeruli fused at the midline, two pronephric tubules, and paired bilateral pronephric ducts that modify the composition of the blood filtrate before delivering it to the cloaca for excretion.<a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [GO:0048793, Wikipedia:Pronephros, XB:curator, ZFIN:curator]
-comment: TODO - check developmental relationships
+comment: TODO - check developmental relationships.
 subset: uberon_slim
-synonym: "embryonic kidney" RELATED []
-synonym: "pronephric kidney" EXACT []
 xref: EFO:0000927 ! pronephros
 xref: EHDAA:1017 ! pronephros
 xref: FMA:72170 ! Pronephros
 xref: HOG:0000037 ! pronephros
 xref: MAT:0000117 ! pronephros
 xref: MIAA:0000117 ! pronephros
-xref: TAO:0000151 ! pronephros
-xref: XAO:0002000 ! pronephric kidney
-xref: ZFA:0000151 ! pronephros
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0002113 ! kidney
 relationship: develops_from UBERON:0005721 ! pronephric mesoderm
@@ -29769,6 +29914,19 @@ relationship: part_of UBERON:0002323 ! body cavity
 xref: ncithesaurus:Pronephros ! Pronephros
 xref: BTO:0001541 ! pronephros
 xref: EHDAA2:0001570 ! pronephros
+
+[Term]
+id: UBERON:0005794
+name: pronephric kidney
+def: "Organ that serves as a transient kidney, providing osmoregulation during early developmental stages and then degenerating during metamorphosis." [XAO:0002000]
+subset: uberon_slim
+synonym: "pronephros" RELATED  [XAO:0002000]
+xref: TAO:0000151 ! pronephros
+xref: XAO:0002000 ! pronephric kidney
+xref: ZFA:0000151 ! pronephros
+comment: Once the more complex mesonephros forms the pronephros undergoes apoptosis in amphibians. In fishes the nephron degenerates but the organ remains and becomes a component of the immune system[Wikipedia:Pronephros].
+is_a: UBERON:0002120 ! pronephros
+relationship: capable_of GO:0030104 ! water homeostasis
 
 [Term]
 id: UBERON:0002122
@@ -31835,19 +31993,18 @@ is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of UBERON:0001855 ! cochlear duct of membranous labyrinth
 xref: ncithesaurus:Tectorial_Membrane ! Tectorial Membrane
 
-
 [Term]
 id: UBERON:0002235
 name: tubercle of rib
 alt_id: UBERON:FMA_7583-MA_0001417
-def: "." [Wikipedia:Tubercle_of_rib]
+def: "The tubercle of a rib is an eminence on the posterior surface, at the junction of the neck and body of the rib, and nearer the lower than the upper border. It consists of an articular and a non-articular portion. The articular portion, the lower and more medial of the two, presents a small, oval surface for articulation with the end of the transverse process of the lower of the two vertebrae to which the head is connected. The non-articular portion is a rough elevation, and affords attachment to the ligament of the tubercle. The tubercle is much more prominent in the upper than in the lower ribs[WP]." [Wikipedia:Tubercle_(rib)]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "rib tubercle" EXACT []
 xref: FMA:7583 ! Tubercle of rib
 xref: MA:0001417 ! rib tubercle
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002231 ! body of rib
+intersection_of: UBERON:0005813 ! tubercle
+intersection_of: part_of UBERON:0002231 ! body of rib
 xref: ncithesaurus:Rib_Tubercle ! Rib Tubercle
 
 [Term]
@@ -33888,29 +34045,6 @@ xref: ncithesaurus:Neuroectoderm ! Neuroectoderm
 xref: EHDAA2:0001248 ! neural ectoderm
 
 [Term]
-id: UBERON:0002347
-name: thoracic vertebra
-alt_id: UBERON:FMA_9139-MA_0000314
-def: "The 12 thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae. They are intermediate in size between those of the cervical and lumbar regions; they increase in size as one proceeds down the spine, the upper vertebrae being much smaller than those in the lower part of the region. They are distinguished by the presence of facets on the sides of the bodies for articulation with the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. [WP,unvetted]." [Wikipedia:Thoracic_vertebra]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "dorsal vertebra" EXACT []
-synonym: "vertebra thoracica" EXACT []
-xref: FMA:9139 ! Thoracic vertebra
-xref: GAID:244 ! thoracic vertebrae
-xref: MA:0000314 ! thoracic vertebra
-xref: OpenCyc:Mx4rvdZIBpwpEbGdrcN5Y29ycA
-is_a: UBERON:0002412 ! vertebra
-intersection_of: UBERON:0002412 ! vertebra
-intersection_of: part_of UBERON:0000915 ! thorax
-relationship: part_of UBERON:0000915 ! thorax
-xref: ncithesaurus:Thoracic_Vertebra ! Thoracic Vertebra
-synonym: "thorax vertebra" EXACT [OBOL:automatic]
-synonym: "vertebra of thorax" EXACT [OBOL:automatic]
-xref: OpenCyc:Mx4rvdZIBpwpEbGdrcN5Y29ycA ! dorsal vertebra
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Gray90.png/200px-Gray90.png
-
-[Term]
 id: UBERON:0002348
 name: epicardium
 alt_id: UBERON:FMA_9461-XAO_0000316-ZFA_0005057
@@ -35497,7 +35631,7 @@ name: cervical vertebra
 alt_id: UBERON:FMA_9915-MA_0000311-XAO_0003076
 def: "A vertebra immediately inferior to the skull[WP]." [Wikipedia:Cervical_vertebra]
 synonym: "cervical vertebrae" EXACT PLURAL []
-comment: This class was created automatically from a combination of ontologies
+comment: In some species, some parts of the skull may be composed of vertebra-like elements, e.g. the occipital bone in humans is composed of four vertebra-like segments. In many vertebrate species, cervical vertebrae are variable in number; however, almost all mammals have seven (including those with very short necks relative to body size, such as elephants or whales, and those with very long necks, such as giraffes). The few exceptions include the manatee and the sloths, of which the two-toed sloth has six cervical vertebrae and the three-toed sloth has up to nine cervical vertebrae. In many species, though not in mammals, the cervical vertebrae bear ribs. In many other groups, such as lizards and saurischian dinosaurs, the cervical ribs are large; in birds they are small and completely fused to the vertebrae. The transverse processes of mammals are homologous to the cervical ribs of other amniotes. Thoracic vertebrae in all species are defined as those vertebrae which also carry a pair of ribs, and lie caudal to the cervical vertebrae. n humans, cervical vertebrae are the smallest of the true vertebrae, and can be readily distinguished from those of the thoracic or lumbar regions by the presence of a foramen (hole) in each transverse process, through which passes the vertebral artery.
 subset: uberon_slim
 xref: FMA:9915 ! Cervical vertebra
 xref: GAID:235 ! cervical vertebrae
@@ -35509,6 +35643,29 @@ relationship: part_of UBERON:0000974 ! neck
 xref: ncithesaurus:Cervical_Vertebra ! Cervical Vertebra
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Illu_vertebral_column.jpg/200px-Illu_vertebral_column.jpg
 
+
+[Term]
+id: UBERON:0002347
+name: thoracic vertebra
+alt_id: UBERON:FMA_9139-MA_0000314
+def: "In humans, the 12 thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae. They are intermediate in size between those of the cervical and lumbar regions; they increase in size as one proceeds down the spine, the upper vertebrae being much smaller than those in the lower part of the region. They are distinguished by the presence of facets on the sides of the bodies for articulation with the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. [WP,unvetted]." [Wikipedia:Thoracic_vertebra]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+synonym: "dorsal vertebra" EXACT []
+synonym: "vertebra thoracica" EXACT []
+xref: FMA:9139 ! Thoracic vertebra
+xref: GAID:244 ! thoracic vertebrae
+xref: MA:0000314 ! thoracic vertebra
+xref: OpenCyc:Mx4rvdZIBpwpEbGdrcN5Y29ycA
+is_a: UBERON:0002412 ! vertebra
+intersection_of: UBERON:0002412 ! vertebra
+intersection_of: part_of UBERON:0000915 ! thorax
+relationship: part_of UBERON:0000915 ! thorax
+xref: ncithesaurus:Thoracic_Vertebra ! Thoracic Vertebra
+synonym: "thorax vertebra" EXACT [OBOL:automatic]
+synonym: "vertebra of thorax" EXACT [OBOL:automatic]
+xref: OpenCyc:Mx4rvdZIBpwpEbGdrcN5Y29ycA ! dorsal vertebra
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Gray90.png/200px-Gray90.png
 [Term]
 id: UBERON:0002414
 name: lumbar vertebra
@@ -36167,7 +36324,7 @@ synonym: "ulnar carpal bone" RELATED [MA:0001347]
 xref: FMA:23715 ! Triquetral
 xref: MA:0001347 ! triquetral
 is_a: UBERON:0001480 ! proximal carpal bone
-relationship: constitutional_part_of UBERON:0001462 ! wrist
+relationship: part_of UBERON:0001462 ! wrist
 xref: ncithesaurus:Triangular_Bone ! Triangular Bone
 xref: galen:Triquetral ! triquetral
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Carpus.png/200px-Carpus.png
@@ -36503,7 +36660,7 @@ xref: EMAPA:26991 ! mucosa
 is_a: UBERON:0000064 ! organ part
 intersection_of: UBERON:0000344 ! mucosa
 intersection_of: part_of UBERON:0001043 ! esophagus
-relationship: constitutional_part_of UBERON:0001096 ! wall of esophagus
+relationship: part_of UBERON:0001096 ! wall of esophagus
 relationship: part_of UBERON:0001096 ! wall of esophagus
 xref: ncithesaurus:Esophageal_Mucosa ! Esophageal Mucosa
 xref: BTO:0002859 ! esophageal mucosa
@@ -37782,7 +37939,7 @@ xref: TAO:0000108 ! fin
 xref: XAO:0000002 ! fin
 xref: ZFA:0000108 ! fin
 is_a: UBERON:0003102 ! surface structure
-is_a: UBERON:0000026 ! appendage
+is_a: UBERON:0004708 ! limb/fin
 relationship: develops_from UBERON:0002531 ! fin bud
 xref: OpenCyc:Mx4rvVjcBZwpEbGdrcN5Y29ycA ! fin
 
@@ -45990,12 +46147,14 @@ relationship: induced_by UBERON:0004128 ! optic vesicle
 xref: ncithesaurus:Lens_Placodes ! Lens Placodes
 xref: EHDAA2:0000982 ! lens placode
 
+
 [Term]
 id: UBERON:0003060
 name: pronephric duct
 alt_id: UBERON:XAO_0000063-ZFA_0000150
 def: "Duct of the embryonic kidney, present bilaterally ventral to the somites and leading to the cloacal chamber. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a> Wingert et al have suggested that the pronephric duct as described traditionally may consist of subregions which are analogous to portions of the tubule segment of mammalian and other fish nephrons. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-071029-9'>Wingert, 2007.</a>" [Wikipedia:Pronephric_duct, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
+synonym: "archinephric duct" RELATED [HOG:0000082]
 subset: uberon_slim
 xref: TAO:0000150 ! pronephric duct
 xref: XAO:0000063 ! pronephric duct
@@ -46256,7 +46415,7 @@ relationship: part_of UBERON:0003081 ! lateral plate mesoderm
 xref: XAO:0000271 ! somatic layer of lateral plate mesoderm
 
 [Term]
-id: UBERON:0004872
+id: UBERON:0004872 ! splanchnic layer of lateral plate mesoderm
 name: splanchnic layer of lateral plate mesoderm
 def: "Layer of lateral plate mesoderm that forms the circulatory system and future gut wall[WP]." [Wikipedia:Lateral_plate_mesoderm#Division_into_layers]
 is_a: UBERON:0002050 ! embryonic structure
@@ -46289,6 +46448,19 @@ xref: EMAPA:16180 ! somatopleure
 xref: HOG:0000557 ! somatopleure
 xref: EHDAA2:0001847 ! somatopleure
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Gray16.png/200px-Gray16.png
+
+[Term]
+id: UBERON:0005792
+name: nephric ridge
+def: "Nephric tubules (nephrons) form embryonically along the nephric ridge. The ridge comprises three regions; anterior, middle and posterior. The functional kidney uses nephrons from only one or two regions of the ridge. A pronephric kidney uses only the nephrons from the anterior region of the ridge. A mesonephric kidney uses only the middle region, a metanephric kidney uses only the posterior region and an opisthonephric kidney uses the middle and posterior regions. " [http://cwx.prenhall.com/bookbind/pubbooks/martini10/chapter27/custom2/deluxe-content.html]
+comment: TODO - check ridge vs cord vs nephrogenic cord vs blastema
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0004122 ! genitourinary system
+relationship: part_of UBERON:0001008 ! urinary system
+xref: EMAPA:16368 ! nephric cord
+xref: HOG:0001240 ! nephric cord
+xref: EHDAA2:0001242 ! nephric cord
+synonym: "nephric cord" RELATED  [HOG:0001240]
 
 [Term]
 id: UBERON:0004875 ! nephrogenic cord
@@ -46415,19 +46587,6 @@ xref: XAO:0000319 ! trunk neural crest
 xref: ZFA:0001024 ! trunk neural crest
 is_a: UBERON:0000479 ! portion of tissue
 relationship: part_of UBERON:0002342 ! neural crest
-
-[Term]
-id: UBERON:0003085
-name: ventral aorta
-alt_id: UBERON:XAO_0000338-ZFA_0000604
-def: "Outflow artery from the heart to the aortic arches. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: HOG:0000121 ! ventral aorta
-xref: TAO:0000604 ! ventral aorta
-xref: XAO:0000338 ! ventral aorta
-xref: ZFA:0000604 ! ventral aorta
-is_a: UBERON:0000947 ! aorta
 
 [Term]
 id: UBERON:0003086
@@ -46838,24 +46997,6 @@ is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0003129 ! skull
 
 [Term]
-id: UBERON:0003109
-name: parapophysis
-alt_id: UBERON:XAO_0003102-ZFA_0001362
-def: "Parapophyses are lateral or ventrolateral projections of vertebrae to which ribs are attached in Danio rerio. Parapophyses can arise through replacement ossification of a basiventral or form directly in bone. They are separated from the centrum in basal teleosts, e.g., Leptolepis coryphaenoides, Megalops and Elops." [Wikipedia:Transverse_process, ZFIN:curator]
-comment: TODO - check
-subset: uberon_slim
-synonym: "lateral process of basiventral" RELATED []
-synonym: "transverse process" EXACT []
-xref: AAO:0000698 ! transverse_process
-xref: AAO:0000708 ! parapophysis
-xref: TAO:0001362 ! parapophysis
-xref: XAO:0003102 ! transverse process
-xref: ZFA:0001362 ! parapophysis
-is_a: UBERON:0002513 ! endochondral bone
-relationship: part_of UBERON:0002090 ! postcranial axial skeleton
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Processustransversusvertebrae.PNG/200px-Processustransversusvertebrae.PNG
-
-[Term]
 id: UBERON:0003110
 name: otic region
 alt_id: UBERON:ZFA_0000189-XAO_0003175
@@ -47113,8 +47254,9 @@ xref: MA:0000475 ! arch of aorta
 xref: FMA:3768 ! arch of aorta
 xref: GAID:471 ! thoracic aorta
 xref: EFO:0002526 ! aortic arch
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0005800 ! segment of aorta
 relationship: part_of UBERON:0001515 ! thoracic aorta
+relationship: develops_from UBERON:0003121 ! aortic arch 4
 xref: HOG:0001196 ! arch of aorta
 xref: EHDAA2:0000132 ! aortic arch
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Gray506.svg/200px-Gray506.svg.png
@@ -47138,6 +47280,16 @@ relationship: part_of UBERON:0002539 ! pharyngeal arch
 relationship: develops_from UBERON:0002342 ! neural crest
 xref: EHDAA2:0000132 ! aortic arch
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Gray473.png/200px-Gray473.png
+
+[Term]
+id: UBERON:0004342
+name: branchial arch artery
+def: "the vessels formed within the six (five in mammals) pairs of branchial arches in embryogenesis; in the adult, some of these vessels give rise to the great vessels" [MP:0002672]
+comment: HOG has this as homologous to the aortic arch
+intersection_of: UBERON:0001637 ! artery
+intersection_of: part_of UBERON:0002539 ! pharyngeal arch
+xref: EMAPA:16684 ! branchial arch artery
+xref: EHDAA2:0000186 ! branchial arch artery
 
 [Term]
 id: UBERON:0003118
@@ -47183,7 +47335,7 @@ intersection_of: UBERON:0004363 ! aortic arch
 intersection_of: part_of UBERON:0003114 ! pharyngeal arch 3
 
 [Term]
-id: UBERON:0003121
+id: UBERON:0003121 ! aortic arch 4
 name: aortic arch 4
 def: "The fourth right arch forms the right subclavian as far as the origin of its internal mammary branch; while the fourth left arch constitutes the arch of the aorta between the origin of the left carotid artery and the termination of the ductus arteriosus[WP]." [Wikipedia:Aortic_arches#Arch_4] 
 alt_id: UBERON:ZFA_0005008-XAO_0000355
@@ -56324,7 +56476,7 @@ name: anterior cruciate ligament
 xref: FMA:44614 ! Anterior cruciate ligament
 xref: GAID:122 ! anterior cruciate ligament
 is_a: UBERON:0000211 ! ligament
-relationship: constitutional_part_of UBERON:0001485 ! knee joint
+relationship: part_of UBERON:0001485 ! knee joint
 xref: ncithesaurus:Anterior_Cruciate_Ligament ! Anterior Cruciate Ligament
 xref: galen:AnteriorCruciateLigament ! anterior cruciate ligament
 xref: OpenCyc:Mx4r77KC8RuaEd2f4ADggVfexA ! anterior cruciate ligament
@@ -56366,7 +56518,7 @@ synonym: "ligamentum patella" EXACT [FMA:44581]
 xref: FMA:44581 ! Patellar ligament
 xref: GAID:128 ! patellar ligament
 is_a: UBERON:0000211 ! ligament
-relationship: constitutional_part_of UBERON:0001485 ! knee joint
+relationship: part_of UBERON:0001485 ! knee joint
 xref: ncithesaurus:Patellar_Ligament ! Patellar Ligament
 xref: galen:LigamentumPatellae ! ligamentum patellae
 
@@ -56409,7 +56561,7 @@ name: posterior cruciate ligament
 xref: FMA:44617 ! Posterior cruciate ligament
 xref: GAID:129 ! posterior cruciate ligament
 is_a: UBERON:0000211 ! ligament
-relationship: constitutional_part_of UBERON:0001485 ! knee joint
+relationship: part_of UBERON:0001485 ! knee joint
 xref: ncithesaurus:Posterior_Cruciate_Ligament ! Posterior Cruciate Ligament
 xref: galen:PosteriorCruciateLigament ! posterior cruciate ligament
 
@@ -56444,7 +56596,7 @@ synonym: "rotator cuff" EXACT [FMA:37018]
 xref: FMA:37018 ! Tendinous cuff
 xref: GAID:160 ! rotator cuff
 is_a: UBERON:0000477 ! anatomical cluster
-relationship: constitutional_part_of UBERON:0001467 ! shoulder
+relationship: part_of UBERON:0001467 ! shoulder
 xref: ncithesaurus:Rotator_Cuff ! Rotator Cuff
 
 [Term]
@@ -56538,7 +56690,7 @@ name: acromioclavicular joint
 xref: FMA:25898 ! Acromioclavicular joint
 xref: GAID:249 ! acromioclavicular joint
 is_a: UBERON:0000982 ! joint
-relationship: constitutional_part_of UBERON:0001467 ! shoulder
+relationship: part_of UBERON:0001467 ! shoulder
 xref: ncithesaurus:Acromioclavicular_Joint ! Acromioclavicular Joint
 xref: OpenCyc:Mx4rwHhmSJwpEbGdrcN5Y29ycA ! acromioclavicular joint
 def: "The acromioclavicular joint, or AC joint, is a joint at the top of the shoulder. It is the junction between the acromion (part of the scapula that forms the highest point of the shoulder) and the clavicle. [WP,unvetted]." [Wikipedia:Acromioclavicular_joint]
@@ -56638,7 +56790,7 @@ name: temporomandibular joint
 xref: FMA:54832 ! Temporomandibular joint
 xref: GAID:272 ! temporomandibular joint
 is_a: UBERON:0000982 ! joint
-relationship: constitutional_part_of UBERON:0000165 ! mouth
+relationship: part_of UBERON:0000165 ! mouth
 xref: MA:0002899 ! temporomandibular joint
 xref: BTO:0003674 ! temporomandibular joint
 
@@ -56792,11 +56944,13 @@ def: "In anatomy, the splenic vein (in the past called the lienal vein) is the b
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Gray1189.png/200px-Gray1189.png
 
 [Term]
-id: UBERON:0003714 ! nerve tissue
-name: nerve tissue
+id: UBERON:0003714 ! neural tissue
+name: neural tissue
+def: "Portion of tissue which consists of neurons, neuroglia and vasculature. Examples: Neural tissue of brain, neural tissue of peripheral ganglion, neural tissue of nerve[FMA]." [FMA:9642] 
+comment: FMA definition includes vasculature
 synonym: "nerve tissue" EXACT [FMA:9642]
 synonym: "nervous tissue" EXACT [FMA:9642]
-synonym: "neural tissue" EXACT [FMA:9642]
+synonym: "portion of neural tissue" EXACT [FMA:9642]
 xref: FMA:9642 ! Portion of neural tissue
 xref: GAID:609 ! nerve tissue
 intersection_of: UBERON:0000479 ! portion of tissue
@@ -56805,7 +56959,6 @@ xref: ncithesaurus:Nervous_Tissue ! Nerve Tissue
 xref: OpenCyc:Mx4rVmfYCsQ_QdeM_bFAeS8NRQ ! nerve tissue
 xref: EHDAA2:0003123 ! neural tissue
 xref: AEO:0000123 ! neural tissue
-def: "A portion of portion of tissue that is part of a nervous system [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0003715
@@ -58445,19 +58598,6 @@ relationship: part_of UBERON:0001678 ! temporal bone
 xref: FMA:56418 ! subarcuate fossa
 
 [Term]
-id: UBERON:0003996
-alt_id: UBERON:0005209
-name: arcus anterior
-def: "The anterior arch of the atlas forms about one-fifth of the ring of the atlas: its anterior surface is convex, and presents at its center the anterior tubercle for the attachment of the Longus colli muscles; posteriorly it is concave, and marked by a smooth, oval or circular facet (fovea dentis), for articulation with the odontoid process (dens) of the axis[WP]. The arch that connects the lateral masses of the atlas anteriorly and articulates with the anterior articular facet of the dens of the axis[MP]." [MP:0009879, Wikipedia:Anterior_arch_of_atlas]
-is_a: UBERON:0004530 ! bony projection
-relationship: part_of UBERON:0001092 ! atlas
-xref: MA:0002954 ! cervical vertebra 1 arcus anterior
-xref: FMA:23976 ! Anterior arch of atlas
-synonym: "cervical vertebra 1 arcus anterior" EXACT [MA:0002954]
-synonym: "anterior arch of atlas" EXACT [MA:0002954]
-synonym: "arcus anterior atlantis" EXACT [MA:0002954]
-
-[Term]
 id: UBERON:0003997
 name: hyoid bone greater horn
 def: "the larger and more lateral of the paired processes on either side of the hyoid bone" [MP:0009913]
@@ -59560,13 +59700,30 @@ relationship: part_of UBERON:0001677 ! sphenoid bone
 xref: ncithesaurus:Clivus ! Clivus
 
 [Term]
+id: UBERON:0005808 ! bone tissue of long bone
+name: bone tissue of long bone
+intersection_of: UBERON:0002481 ! bone tissue
+intersection_of: part_of UBERON:0002495 ! long bone
+xref: FMA:83117 ! bone tissue of long bone
+
+[Term]
 id: UBERON:0004109
 name: cortex of humerus
 def: "." [HP:0010629]
 synonym: "cortex of the humerus" EXACT []
-intersection_of: UBERON:0001851 ! cortex
+intersection_of: UBERON:0001439 ! compact bone
 intersection_of: part_of UBERON:0000976 ! humerus
+xref: FMA:31542 ! compact bone of humerus
+synonym: "compact bone of humerus" EXACT [FMA:31542]
+synonym: "humerus compact bone" EXACT []
+synonym: "humerus cortical bone" EXACT []
 
+[Term]
+id: UBERON:0005809
+name: cortex of hand bone
+def: "." [HP:0005926]
+intersection_of: UBERON:0001439 ! compact bone
+intersection_of: part_of UBERON:0001442 ! skeleton of hand
 
 [Term]
 id: UBERON:0004112
@@ -63156,15 +63313,6 @@ xref: EHDAA2:0001525 ! primitive streak
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Gray13.png/200px-Gray13.png
 
 [Term]
-id: UBERON:0004342
-name: branchial arch artery
-def: "the vessels formed within the six (five in mammals) pairs of branchial arches in embryogenesis; in the adult, some of these vessels give rise to the great vessels" [MP:0002672]
-intersection_of: UBERON:0001637 ! artery
-intersection_of: part_of UBERON:0002539 ! pharyngeal arch
-xref: EMAPA:16684 ! branchial arch artery
-xref: EHDAA2:0000186 ! branchial arch artery
-
-[Term]
 id: UBERON:0004343
 name: foot plate
 synonym: "autopod plate" EXACT []
@@ -64215,7 +64363,7 @@ def: "A musculature that is part of a hand [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004490
-name: Cardiac muscle tissue of atrium
+name: cardiac muscle tissue of atrium
 xref: FMA:7283 ! Cardiac muscle tissue of atrium
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
 intersection_of: part_of UBERON:0001050 ! atrium
@@ -64223,7 +64371,7 @@ def: "A portion of cardiac muscle tissue that is part of an atrium [Obol]." [OBO
 
 [Term]
 id: UBERON:0004491
-name: Cardiac muscle tissue of interatrial septum
+name: cardiac muscle tissue of interatrial septum
 xref: FMA:84083 ! Cardiac muscle tissue of interatrial septum
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
 intersection_of: part_of UBERON:0002085 ! part_of interatrial septum
@@ -64231,7 +64379,7 @@ def: "A portion of cardiac muscle tissue that is part of a interatrial septum [O
 
 [Term]
 id: UBERON:0004492
-name: Cardiac muscle tissue of cardiac septum
+name: cardiac muscle tissue of cardiac septum
 xref: FMA:226279 ! Cardiac muscle tissue of cardiac septum
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
 intersection_of: part_of UBERON:0002099 ! part_of cardiac septum
@@ -64239,7 +64387,7 @@ def: "A portion of cardiac muscle tissue that is part of a cardiac septum [Obol]
 
 [Term]
 id: UBERON:0004494
-name: Cardiac muscle tissue of papillary muscle
+name: cardiac muscle tissue of papillary muscle
 xref: FMA:84425 ! Cardiac muscle tissue of papillary muscle
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
 intersection_of: part_of UBERON:0002494 ! part_of papillary muscle
@@ -64247,7 +64395,7 @@ def: "A portion of cardiac muscle tissue that is part of a papillary muscle [Obo
 
 [Term]
 id: UBERON:0004495
-name: Skeletal muscle tissue of diaphragm
+name: skeletal muscle tissue of diaphragm
 xref: FMA:261898 ! Skeletal muscle tissue of diaphragm
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001103 ! diaphragm
@@ -64255,7 +64403,7 @@ def: "A portion of skeletal muscle tissue that is part of a diaphragm [Obol]." [
 
 [Term]
 id: UBERON:0004496
-name: Skeletal muscle tissue of iliacus
+name: skeletal muscle tissue of iliacus
 xref: FMA:261992 ! Skeletal muscle tissue of iliacus
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001369 ! iliacus
@@ -64263,7 +64411,7 @@ def: "A portion of skeletal muscle tissue that is part of a iliacus [Obol]." [OB
 
 [Term]
 id: UBERON:0004497
-name: Skeletal muscle tissue of gluteus maximus
+name: skeletal muscle tissue of gluteus maximus
 xref: FMA:261980 ! Skeletal muscle tissue of gluteus maximus
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001370 ! gluteus maximus
@@ -64271,7 +64419,7 @@ def: "A portion of skeletal muscle tissue that is part of a gluteus maximus [Obo
 
 [Term]
 id: UBERON:0004498
-name: Skeletal muscle tissue of quadriceps femoris
+name: skeletal muscle tissue of quadriceps femoris
 xref: FMA:261998 ! Skeletal muscle tissue of quadriceps femoris
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001377 ! quadriceps femoris
@@ -64279,7 +64427,7 @@ def: "A portion of skeletal muscle tissue that is part of a quadriceps femoris [
 
 [Term]
 id: UBERON:0004499
-name: Skeletal muscle tissue of tibialis anterior
+name: skeletal muscle tissue of tibialis anterior
 xref: FMA:262004 ! Skeletal muscle tissue of tibialis anterior
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001385 ! tibialis anterior
@@ -64287,7 +64435,7 @@ def: "A portion of skeletal muscle tissue that is part of a tibialis anterior [O
 
 [Term]
 id: UBERON:0004500
-name: Skeletal muscle tissue of deltoid
+name: skeletal muscle tissue of deltoid
 xref: FMA:261732 ! Skeletal muscle tissue of deltoid
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001476 ! deltoid
@@ -64295,7 +64443,7 @@ def: "A portion of skeletal muscle tissue that is part of a deltoid [Obol]." [OB
 
 [Term]
 id: UBERON:0004501
-name: Skeletal muscle tissue of teres major
+name: skeletal muscle tissue of teres major
 xref: FMA:261962 ! Skeletal muscle tissue of teres major
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001478 ! teres major
@@ -64303,7 +64451,7 @@ def: "A portion of skeletal muscle tissue that is part of a teres major [Obol]."
 
 [Term]
 id: UBERON:0004502
-name: Skeletal muscle tissue of biceps brachii
+name: skeletal muscle tissue of biceps brachii
 xref: FMA:261974 ! Skeletal muscle tissue of biceps brachii
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001507 ! biceps brachii
@@ -64311,7 +64459,7 @@ def: "A portion of skeletal muscle tissue that is part of a biceps brachii [Obol
 
 [Term]
 id: UBERON:0004503
-name: Skeletal muscle tissue of digastric
+name: skeletal muscle tissue of digastric
 xref: FMA:261872 ! Skeletal muscle tissue of digastric
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001562 ! digastric
@@ -64319,7 +64467,7 @@ def: "A portion of skeletal muscle tissue that is part of a digastric [Obol]." [
 
 [Term]
 id: UBERON:0004504
-name: Skeletal muscle tissue of mylohyoid
+name: skeletal muscle tissue of mylohyoid
 xref: FMA:261878 ! Skeletal muscle tissue of mylohyoid
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001564 ! mylohyoid
@@ -64327,7 +64475,7 @@ def: "A portion of skeletal muscle tissue that is part of a mylohyoid [Obol]." [
 
 [Term]
 id: UBERON:0004505
-name: Skeletal muscle tissue of orbicularis oculi
+name: skeletal muscle tissue of orbicularis oculi
 xref: FMA:261812 ! Skeletal muscle tissue of orbicularis oculi
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001578 ! orbicularis oculi
@@ -64335,7 +64483,7 @@ def: "A portion of skeletal muscle tissue that is part of a orbicularis oculi [O
 
 [Term]
 id: UBERON:0004506
-name: Skeletal muscle tissue of masseter
+name: skeletal muscle tissue of masseter
 xref: FMA:261824 ! Skeletal muscle tissue of masseter
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001597 ! masseter
@@ -64343,7 +64491,7 @@ def: "A portion of skeletal muscle tissue that is part of a masseter [Obol]." [O
 
 [Term]
 id: UBERON:0004507
-name: Skeletal muscle tissue of temporalis
+name: skeletal muscle tissue of temporalis
 xref: FMA:261740 ! Skeletal muscle tissue of temporalis
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001598 ! temporalis
@@ -64351,7 +64499,7 @@ def: "A portion of skeletal muscle tissue that is part of a temporalis [Obol]." 
 
 [Term]
 id: UBERON:0004508
-name: Skeletal muscle tissue of levator palpebrae superioris
+name: skeletal muscle tissue of levator palpebrae superioris
 xref: FMA:261782 ! Skeletal muscle tissue of levator palpebrae superioris
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0001604 ! levator palpebrae superioris
@@ -64359,7 +64507,7 @@ def: "A portion of skeletal muscle tissue that is part of a levator palpebrae su
 
 [Term]
 id: UBERON:0004509
-name: Skeletal muscle tissue of trapezius
+name: skeletal muscle tissue of trapezius
 xref: FMA:261938 ! Skeletal muscle tissue of trapezius
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0002380 ! trapezius
@@ -64367,7 +64515,7 @@ def: "A portion of skeletal muscle tissue that is part of a trapezius [Obol]." [
 
 [Term]
 id: UBERON:0004510
-name: Skeletal muscle tissue of pectoralis major
+name: skeletal muscle tissue of pectoralis major
 xref: FMA:261968 ! Skeletal muscle tissue of pectoralis major
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0002381 ! pectoralis major
@@ -64375,7 +64523,7 @@ def: "A portion of skeletal muscle tissue that is part of a pectoralis major [Ob
 
 [Term]
 id: UBERON:0004511
-name: Skeletal muscle tissue of rectus abdominis
+name: skeletal muscle tissue of rectus abdominis
 xref: FMA:261924 ! Skeletal muscle tissue of rectus abdominis
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0002382 ! rectus abdominis
@@ -64383,7 +64531,7 @@ def: "A portion of skeletal muscle tissue that is part of a rectus abdominis [Ob
 
 [Term]
 id: UBERON:0004512
-name: Skeletal muscle tissue of supraspinatus
+name: skeletal muscle tissue of supraspinatus
 xref: FMA:261956 ! Skeletal muscle tissue of supraspinatus
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0002383 ! supraspinatus
@@ -64391,7 +64539,7 @@ def: "A portion of skeletal muscle tissue that is part of a supraspinatus [Obol]
 
 [Term]
 id: UBERON:0004513
-name: Skeletal muscle tissue of internal intercostal muscle
+name: skeletal muscle tissue of internal intercostal muscle
 xref: FMA:261888 ! Skeletal muscle tissue of internal intercostal muscle
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0002403 ! internal intercostal muscle
@@ -64399,7 +64547,7 @@ def: "A portion of skeletal muscle tissue that is part of a internal intercostal
 
 [Term]
 id: UBERON:0004514
-name: Skeletal muscle tissue of transversus thoracis
+name: skeletal muscle tissue of transversus thoracis
 xref: FMA:261892 ! Skeletal muscle tissue of transversus thoracis
 intersection_of: UBERON:0001134 ! skeletal muscle tissue
 intersection_of: part_of UBERON:0002404 ! transversus thoracis
@@ -64407,7 +64555,7 @@ def: "A portion of skeletal muscle tissue that is part of a transversus thoracis
 
 [Term]
 id: UBERON:0004515
-name: Smooth muscle tissue of bronchiole
+name: smooth muscle tissue of bronchiole
 xref: FMA:261045 ! Smooth muscle tissue of bronchiole
 xref: FMA:261081 ! Smooth muscle tissue of lobular bronchiole
 intersection_of: UBERON:0001135 ! smooth muscle tissue
@@ -64416,7 +64564,7 @@ def: "A portion of smooth muscle tissue that is part of a bronchiole [Obol]." [O
 
 [Term]
 id: UBERON:0004516
-name: Smooth muscle tissue of terminal bronchiole
+name: smooth muscle tissue of terminal bronchiole
 xref: FMA:261051 ! Smooth muscle tissue of terminal bronchiole
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0002187 ! terminal bronchiole
@@ -64424,7 +64572,7 @@ def: "A portion of smooth muscle tissue that is part of a terminal bronchiole [O
 
 [Term]
 id: UBERON:0004517
-name: Smooth muscle tissue of respiratory bronchiole
+name: smooth muscle tissue of respiratory bronchiole
 xref: FMA:261055 ! Smooth muscle tissue of respiratory bronchiole
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: part_of UBERON:0002188 ! respiratory bronchiole
@@ -64432,7 +64580,7 @@ def: "A portion of smooth muscle tissue that is part of a respiratory bronchiole
 
 [Term]
 id: UBERON:0004518
-name: Muscle of vertebral column
+name: muscle of vertebral column
 xref: FMA:22594 ! Muscle of vertebral column
 intersection_of: UBERON:0001630 ! muscle organ
 intersection_of: part_of UBERON:0001130 ! vertebral column
@@ -64440,7 +64588,7 @@ def: "A muscle organ that is part of a vertebral column [Obol]." [OBOL:automatic
 
 [Term]
 id: UBERON:0004519
-name: Muscle of anal triangle
+name: muscle of anal triangle
 xref: FMA:77304 ! Muscle of anal triangle
 intersection_of: UBERON:0001630 ! muscle organ
 intersection_of: part_of UBERON:0001353 ! anal region
@@ -64448,7 +64596,7 @@ def: "A muscle organ that is part of an anal region [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004520
-name: Striated muscle tissue of prostate
+name: striated muscle tissue of prostate
 xref: FMA:45716 ! Striated muscle tissue of prostate
 intersection_of: UBERON:0002036 ! striated muscle tissue
 intersection_of: part_of UBERON:0002367 ! part_of prostate
@@ -64456,7 +64604,7 @@ def: "A portion of striated muscle tissue that is part of a prostate gland [Obol
 
 [Term]
 id: UBERON:0004521
-name: Vasculature of muscle organ
+name: vasculature of muscle organ
 xref: FMA:87123 ! Vasculature of muscle organ
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: part_of UBERON:0001630 ! part_of muscle organ
@@ -64464,7 +64612,7 @@ def: "A vasculature that is part of a muscle organ [Obol]." [OBOL:automatic]
 
 [Term]
 id: UBERON:0004522
-name: Vasculature of musculoskeletal system
+name: vasculature of musculoskeletal system
 xref: FMA:239607 ! Vasculature of musculoskeletal system
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: part_of UBERON:0002204 ! part_of musculoskeletal system
@@ -64472,7 +64620,7 @@ def: "A vasculature that is part of a musculoskeletal system [Obol]." [OBOL:auto
 
 [Term]
 id: UBERON:0004523
-name: Papillary muscle of right ventricle
+name: papillary muscle of right ventricle
 xref: FMA:7259 ! Papillary muscle of right ventricle
 intersection_of: UBERON:0002494 ! papillary muscle
 intersection_of: part_of UBERON:0002080 ! part_of right ventricle
@@ -64480,7 +64628,7 @@ def: "A papillary muscle that is part of a right ventricle [Obol]." [OBOL:automa
 
 [Term]
 id: UBERON:0004524
-name: Papillary muscle of left ventricle
+name: papillary muscle of left ventricle
 xref: FMA:9352 ! Papillary muscle of left ventricle
 intersection_of: UBERON:0002494 ! papillary muscle
 intersection_of: part_of UBERON:0002084 ! part_of left ventricle
@@ -64488,7 +64636,7 @@ def: "A papillary muscle that is part of a left ventricle [Obol]." [OBOL:automat
 
 [Term]
 id: UBERON:0004525
-name: Cardiac muscle tissue of trabecula carnea of right ventricle
+name: cardiac muscle tissue of trabecula carnea of right ventricle
 xref: FMA:84429 ! Cardiac muscle tissue of trabecula carnea of right ventricle
 intersection_of: UBERON:0003452 ! trabecula carnea cardiac muscle tissue
 intersection_of: part_of UBERON:0002080 ! part_of right ventricle
@@ -64496,7 +64644,7 @@ def: "A portion of trabecula carnea cardiac muscle tissue that is part of a righ
 
 [Term]
 id: UBERON:0004526
-name: Cardiac muscle tissue of trabecula carnea of left ventricle
+name: cardiac muscle tissue of trabecula carnea of left ventricle
 xref: FMA:84430 ! Cardiac muscle tissue of trabecula carnea of left ventricle
 intersection_of: UBERON:0003452 ! trabecula carnea cardiac muscle tissue
 intersection_of: part_of UBERON:0002084 ! part_of left ventricle
@@ -64782,8 +64930,17 @@ xref: HOG:0000273 ! arterial system
 xref: EHDAA2:0000143 ! arterial system
 
 [Term]
+id: UBERON:0005806
+name: portal venous system
+def: "In the circulatory system of animals, a portal venous system occurs when a capillary bed drains into another capillary bed through veins, without first going through the heart. Both capillary beds and the blood vessels that connect them are considered part of the portal venous system. They are relatively uncommon as the majority of capillary beds drain into veins which then drain into the heart, not into another capillary bed. Portal venous systems are considered venous because the blood vessels that join the two capillary beds are either veins or venules. Examples of such systems include the hepatic portal system and the hypophyseal portal system. Unqualified, "portal venous system" often refers to the hepatic portal system. For this reason, 'portal vein' most commonly refers to the hepatic portal vein[WP]." [Wikipedia:Portal_venous_system]
+is_a: UBERON:0002049 ! vasculature
+relationship: part_of UBERON:0004535 ! cardiovascular system
+xref: FMA:45628 ! portal venous system
+
+[Term]
 id: UBERON:0004581
 name: systemic venous system
+def: "Subdivision of cardiovascular system which has as its parts the right side of heart, the superior vena cava and the inferior vena cava[FMA] In human anatomy, the systemic venous system refers to veins that drain into the right atrium without passing through two vascular beds (i.e. they originate from a set of capillaries and do not pass through a second set of capillaries before reaching the right side of the heart). The term systemic venous system is often used to differentiate veins from veins that drain the pulmonary system (the pulmonary venous system) and veins that drain the digestive tract (the portal venous system). Large veins that are considered part of the systemic venous system are the: Superior vena cava; Inferior vena cava[WP]." [FMA:45626, Wikipedia:Systemic_venous_system]
 is_a: UBERON:0002049 ! vasculature
 relationship: part_of UBERON:0004582 ! venous system
 synonym: "Systemic venous circulatory system" EXACT [FMA:45626]
@@ -65268,7 +65425,7 @@ id: UBERON:0004645
 name: urinary bladder urothelium
 is_a: UBERON:0000483 ! epithelium
 relationship: part_of UBERON:0001259 ! mucosa of urinary bladder
-relationship: constitutional_part_of UBERON:0001259 ! mucosa of urinary bladder
+relationship: part_of UBERON:0001259 ! mucosa of urinary bladder
 synonym: "transitional epithelium" RELATED [MA:0001693]
 synonym: "Bladder transitional cell epithelium" EXACT [FMA:15936]
 synonym: "Urinary bladder transitional epithelium" EXACT [FMA:15936]
@@ -65431,6 +65588,7 @@ xref: MA:0002820 ! mandible temporal crest
 id: UBERON:0004662
 name: vertebra lamina
 is_a: UBERON:0000063 ! organ segment
+relationship: part_of UBERON:0003861 ! neural arch
 relationship: part_of UBERON:0002412 ! vertebra
 synonym: "vertebral lamina" RELATED [MA:0002876]
 synonym: "Lamina of vertebral arch" EXACT [FMA:11951]
@@ -73420,6 +73578,35 @@ synonym: "canalis opticus" RELATED [Wikipedia:Optic_canal]
 synonym: "optic foramen" RELATED [Wikipedia:Optic_canal]
 xref: FMA:54774 ! optic canal
 
+[Term]
+id: UBERON:0005817 ! neuraxis flexure
+name: neuraxis flexure
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0001017 ! central nervous system
+
+[Term]
+id: UBERON:0005818
+name: cephalic flexure
+def: "the first flexure, or bend, of the embryonic brain; it appears in the region of the mid-brain. In human embryos it generally occurs at the end of the 3rd week/beginning of 4th. By means of it the fore-brain is bent in a ventral direction around the anterior end of the notochord and fore-gut, with the result that the floor of the fore-brain comes to lie almost parallel with that of the hind-brain. This flexure causes the mid-brain to become, for a time, the most prominent part of the brain, since its dorsal surface corresponds with the convexity of the curve. As a consequence, the cardiac plate, which was previously anterior to the forebrain, approximates its adult location in what will become the thoracic region[WP]. Ventral bend in the brain occurring caudal to the adenohypophyseal placode[ZFA]." [ZFIN:curator, Wikipedia:Cephalic_flexure]
+comment: TODO - check
+synonym: "ventral flexure" EXACT  [ZFA:0001640]
+synonym: "midbrain flexure" EXACT []
+is_a: UBERON:0005817 ! neuraxis flexure
+relationship: part_of UBERON:0000955 ! brain
+xref: ZFA:0001640 ! cephalic flexure
+
+[Term]
+id: UBERON:0005819
+name: cervical flexure
+def: "ventrally concave flexure of the embryonic brain occurring at the junction of hindbrain and spinal cord[MP]. In humans develops by the 5th week of gestation[WP]." [MP:0000913]
+is_a: UBERON:0005817 ! neuraxis flexure
+
+[Term]
+id: UBERON:0005820
+name: pontine flexure
+def: "a bend in the axis of the embryological central nervous system (the neuraxis). This flexure marks the junction between the metencephalon and the myelencephalon. The division of the rhombencephalon (the early hindbrain) into the metencephalon and the myelencephalon occurs at the 7th week of development. In the mature brain, the metencephalon forms the pons and cerebellum, whilst the myelencephalon forms the medulla oblongata[WP]." [Wikipedia:Pontine_Flexure]
+is_a: UBERON:0005817 ! neuraxis flexure
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -73474,10 +73661,6 @@ is_a: finishes ! finishes
 is_a: starts ! starts
 intersection_of: finishes ! finishes
 intersection_of: starts ! starts
-
-[Typedef]
-id: constitutional_part_of
-name: constitutional_part_of
 
 [Typedef]
 id: continuous_with

@@ -6,7 +6,7 @@ my $negate = 0;
 my $replace = 0;
 my $check = 0;
 my $expand_relations = 0;
-while ($ARGV[0] =~ /^\-/) {
+while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-h' || $opt eq '--help') {
         print usage();
@@ -71,6 +71,9 @@ while(<>) {
         $_ = sprintf("id: UBERON:%07d",$uid);
         $uid++;
         print "$_\n";
+        if ($xrefh{$xref}) {
+            print "! ALREADY HAVE THIS IN UBERON\n";
+        }
     }
     elsif (/^namespace:/) {
     }
