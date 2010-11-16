@@ -17,6 +17,8 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 %.owl2: %.obo
 	obolib-obo2owl -o file://`pwd`/$@ $<
 
+%-orphans: %.obo
+	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" -
 
 OBOLX=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -r obol_av 
 OBOL=$(OBOLX)  -u obol_anatomy_xp 
@@ -476,6 +478,9 @@ newterms-ncit-fma.obo:
 
 newterms-ncit-emapa.obo:
 	obol -u onto_grep onto-3-way-align -r emapa -r ncit -r uberon -ont1 emapa -ont2 'ncithesaurus:' -ont3 uberon > $@
+
+newterms-ehdaa2-emapa.obo:
+	obol -u onto_grep onto-3-way-align -r emapa -r ehdaa2 -r uberon -ont1 abstract_anatomy -ont2 abstract_anatomy -ont3 uberon > $@
 
 newterms-ncit-xao.obo:
 	obol -u onto_grep onto-3-way-align -r xenopus_anatomy -r ncit -r uberon -ont1 xenopus_anatomy -ont2 'ncithesaurus:' -ont3 uberon > $@

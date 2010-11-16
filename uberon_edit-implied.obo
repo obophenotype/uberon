@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 13:11:2010 18:21
+date: 15:11:2010 17:40
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -1819,8 +1819,8 @@ name: neuron projection bundle
 alt_id: UBERON:0005163
 def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." [FBbt:00005099, FBC:DOS]
 comment: TODO - check FMA is general anatomical term
-synonym: " nerve fiber bundle" EXACT [FBbt:00005099]
 synonym: "funiculus" EXACT []
+synonym: "nerve fiber bundle" EXACT [FBbt:00005099]
 xref: CARO:0001001
 xref: FBbt:00005099
 xref: FMA:76738
@@ -5660,7 +5660,7 @@ alt_id: UBERON:FBbt_00003277-FMA_43882-MA_0002311
 def: "The most superficial muscle on the medial side of the thigh. It is thin and flattened, broad above, narrow and tapering below. It arises by a thin aponeurosis from the anterior margins of the lower half of the symphysis pubis and the upper half of the pubic arch." [Wikipedia:Gracilis]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "gracilis muscle" EXACT []
+synonym: "gracilis muscle" EXACT [BTO:0000536]
 xref: BTO:0000536
 xref: FMA:43882
 xref: galen:Gracilis
@@ -20290,7 +20290,7 @@ is_a: UBERON:0002308 ! nucleus of brain
 id: UBERON:0001722
 name: medial vestibular nucleus
 alt_id: UBERON:FMA_54611-MA_0001048
-def: "The medial vestibular nucleus is one of the vestibular nuclei. It is located in the medulla oblongata. Lateral vestibulo-spinal tract (lateral vestibular nucleus “Deiters”)- via ventrolateral medulla and spinal cord to ventral funiculus �(lumbo-sacral segments). �Ipsilaterally for posture Medial vestibulo-spinal tract (medial, lateral, inferior, vestibular nuclei), bilateral projection via descending medial longitudinal fasciculus to cervical segments. DESCENDING MLF�Bilaterally for head/neck/eye movements [WP,unvetted]." [Wikipedia:Medial_vestibular_nucleus]
+def: "The medial vestibular nucleus is one of the vestibular nuclei. It is located in the medulla oblongata. Lateral vestibulo-spinal tract (lateral vestibular nucleus “Deiters”)- via ventrolateral medulla and spinal cord to ventral funiculus (lumbo-sacral segments). Ipsilaterally for posture Medial vestibulo-spinal tract (medial, lateral, inferior, vestibular nuclei), bilateral projection via descending medial longitudinal fasciculus to cervical segments. DESCENDING MLF. Bilaterally for head/neck/eye movements [WP,unvetted]." [Wikipedia:Medial_vestibular_nucleus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "chief vestibular nucleus" EXACT []
@@ -21428,10 +21428,8 @@ xref: OpenCyc:Mx4rwK_iFJwpEbGdrcN5Y29ycA
 xref: XAO:0003101
 is_a: UBERON:0001021 ! nerve
 is_a: UBERON:0003377 ! implied link automatically realized ! nerve of peripheral nervous system
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004215 ! implied link automatically realized ! back nerve
 intersection_of: UBERON:0001021 ! nerve
-intersection_of: part_of UBERON:0001130 ! vertebral column
+intersection_of: continuous_with UBERON:0002240 ! spinal cord
 relationship: part_of UBERON:0000010 ! peripheral nervous system
 
 [Term]
@@ -24754,16 +24752,11 @@ relationship: part_of UBERON:0001943 ! midbrain tegmentum
 id: UBERON:0001948
 name: regional part of spinal cord
 alt_id: UBERON:FMA_62420-ZFA_0001332
-def: "." [Wikipedia:Spinal_cord_segment]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check ZFA
 subset: uberon_slim
-synonym: "Segment of spinal cord" EXACT []
-synonym: "spinal cord segment" RELATED []
-synonym: "spinal neuromere" EXACT []
+synonym: "spinal neuromere" RELATED []
 synonym: "spinal neuromeres" RELATED []
-xref: FMA:62420
 xref: NIF_GrossAnatomy:birnlex_1496
-xref: TAO:0001332
 xref: ZFA:0001332
 is_a: UBERON:0000073 ! regional part of nervous system
 relationship: part_of UBERON:0002240 ! spinal cord
@@ -29244,6 +29237,7 @@ alt_id: UBERON:FMA_74003-ZFA_0000605
 def: "The most lateral of the bundles of the anterior nerve roots is generally taken as a dividing line that separates the antero-lateral region into two parts, viz. , an anterior funiculus, between the anterior median fissure and the most lateral of the anterior nerve roots; and a lateral funiculus, between the exit of these roots and the postero-lateral sulcus. [WP,unvetted]." [Wikipedia:Ventral_funiculus]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "anterior funiculus" EXACT []
 synonym: "anterior funiculus of spinal cord" EXACT []
 synonym: "ventral funiculus of spinal cord" EXACT []
 xref: FMA:74003
@@ -30551,7 +30545,7 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0002256
 name: dorsal horn of spinal cord
 alt_id: UBERON:FMA_77405-MA_0001119
-def: "the pronounced, dorsolaterally oriented ridge of grey matter in each lateral half of the spinal cord." [GO:0021516, MP:0006282, Wikipedia:Posterior_horn_of_spinal_cord]
+def: "the pronounced, dorsolaterally oriented ridge of grey matter in each lateral half of the spinal cord[MP]. the dorsal (more towards the back) grey matter of the spinal cord. It receives several types of sensory information from the body, including light touch, proprioception, and vibration. This information is sent from receptors of the skin, bones, and joints through sensory neurons whose cell bodies lie in the dorsal root ganglion[WP]. The dorsal region of the mature spinal cord contains neurons that process and relay sensory input[GO]." [GO:0021516, MP:0006282, Wikipedia:Posterior_horn_of_spinal_cord]
 comment: This class was created automatically from a combination of ontologies
 synonym: "dorsal grey column of spinal cord" EXACT []
 synonym: "dorsal region of mature spinal cord" EXACT []
@@ -30593,9 +30587,9 @@ id: UBERON:0002258
 name: dorsal funiculus
 alt_id: UBERON:FMA_77461-ZFA_0000501
 def: "The portion of the medulla spinalis which lies between the posterolateral sulcus and the posterior median sulcus is named the posterior funiculus. This area includes the dorsal columns (also called the posterior columns) which contains the fasciculus gracilis and, higher in the body, the fasciculus cuneatus, which are separated by a partition of glial cells. Histologically, these two fasciculi are on other sides of the dorsal intermediate sulcus. [WP,unvetted]." [Wikipedia:Dorsal_funiculus]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "dorsal funiculus of spinal cord" EXACT []
+synonym: "posterior funiculus" EXACT []
 synonym: "posterior funiculus of spinal cord" EXACT []
 xref: FMA:77461
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Medulla_spinalis_-_Section_-_English.svg/200px-Medulla_spinalis_-_Section_-_English.svg.png
@@ -37673,11 +37667,13 @@ is_a: UBERON:0003528 ! implied link automatically realized ! brain grey matter
 id: UBERON:0002642
 name: cuneate fasciculus of medulla
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1242-FMA_72623
+comment: TODO - change definition to be the *whole* of the CF in the MO
 xref: FMA:72623
 xref: NIF_GrossAnatomy:birnlex_1242
-is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
-relationship: part_of UBERON:0001896 ! medulla oblongata
+is_a: UBERON:0005832 ! implied link automatically realized ! cuneate fasciculus
+intersection_of: UBERON:0005832 ! cuneate fasciculus
+intersection_of: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0002643
@@ -37729,8 +37725,9 @@ synonym: "medulla posterior longitudinal fasciculus" EXACT [OBOL:automatic]
 synonym: "posterior longitudinal fasciculus of medulla" EXACT [OBOL:automatic]
 xref: FMA:72617
 xref: NIF_GrossAnatomy:birnlex_1257
+is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
 is_a: UBERON:0003045 ! dorsal longitudinal fasciculus
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005838 ! implied link automatically realized ! fasciculus of brain
 intersection_of: UBERON:0003045 ! dorsal longitudinal fasciculus
 intersection_of: part_of UBERON:0000958 ! medulla
 relationship: part_of UBERON:0001896 ! medulla oblongata
@@ -37808,6 +37805,8 @@ alt_id: UBERON:NIF_GrossAnatomy_birnlex_1280-FMA_74875
 xref: FMA:74875
 xref: NIF_GrossAnatomy:birnlex_1280
 is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001894 ! diencephalon
 
 [Term]
 id: UBERON:0002653
@@ -37822,10 +37821,9 @@ synonym: "medulla segment of gracile fasciculus" EXACT [FMA:72624]
 synonym: "tract of gall" EXACT []
 xref: FMA:72624
 xref: NIF_GrossAnatomy:birnlex_1282
-is_a: UBERON:0002316 ! white matter of neuraxis
-is_a: UBERON:0002678 ! implied link automatically realized ! regional part of medulla oblongata
-is_a: UBERON:0003545 ! implied link automatically realized ! brainstem white matter
-relationship: part_of UBERON:0001896 ! medulla oblongata
+is_a: UBERON:0005821 ! implied link automatically realized ! gracile fasciculus
+intersection_of: UBERON:0005821 ! gracile fasciculus
+intersection_of: part_of UBERON:0001896 ! medulla oblongata
 
 [Term]
 id: UBERON:0002654
@@ -38958,12 +38956,13 @@ is_a: UBERON:0002316 ! white matter of neuraxis
 id: UBERON:0002726
 name: cervical spinal cord
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1499-FMA_71166
+synonym: "cervical segment of spinal cord" EXACT [FMA:71166]
 synonym: "cervical segments of spinal cord [1-8]" EXACT [FMA:71166]
 synonym: "cervical spinal cord" EXACT [FMA:71166]
 xref: FMA:71166
 xref: ncithesaurus:Cervical_Spinal_Cord
 xref: NIF_GrossAnatomy:birnlex_1499
-is_a: UBERON:0001948 ! regional part of spinal cord
+is_a: UBERON:0005844 ! spinal cord segment
 
 [Term]
 id: UBERON:0002727
@@ -40062,12 +40061,13 @@ name: lumbar spinal cord
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_1704-FMA_71168
 def: "." [Wikipedia:Lumbar_spinal_cord]
 subset: uberon_slim
+synonym: "lumbar segment of spinal cord" EXACT [FMA:71168]
 synonym: "lumbar segments of spinal cord [1-5]" EXACT [FMA:71168]
 synonym: "lumbar spinal cord" EXACT [FMA:71168]
 xref: FMA:71168
 xref: ncithesaurus:Lumbar_Spinal_Cord
 xref: NIF_GrossAnatomy:birnlex_1704
-is_a: UBERON:0001948 ! regional part of spinal cord
+is_a: UBERON:0005844 ! spinal cord segment
 
 [Term]
 id: UBERON:0002793
@@ -40092,7 +40092,7 @@ synonym: "posterior longitudinal fasciculus of pons of varolius" EXACT [OBOL:aut
 xref: FMA:72492
 xref: NIF_GrossAnatomy:birnlex_1707
 is_a: UBERON:0003045 ! dorsal longitudinal fasciculus
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005838 ! implied link automatically realized ! fasciculus of brain
 intersection_of: UBERON:0003045 ! dorsal longitudinal fasciculus
 intersection_of: part_of UBERON:0000988 ! pons
 
@@ -42763,7 +42763,7 @@ synonym: "posterior longitudinal fasciculus of midbrain" EXACT [OBOL:automatic]
 xref: FMA:72453
 xref: NIF_GrossAnatomy:birnlex_893
 is_a: UBERON:0003045 ! dorsal longitudinal fasciculus
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005838 ! implied link automatically realized ! fasciculus of brain
 intersection_of: UBERON:0003045 ! dorsal longitudinal fasciculus
 intersection_of: part_of UBERON:0001891 ! midbrain
 relationship: part_of UBERON:0001943 ! midbrain tegmentum
@@ -42822,6 +42822,7 @@ is_a: UBERON:0002316 ! white matter of neuraxis
 is_a: UBERON:0003045 ! dorsal longitudinal fasciculus
 is_a: UBERON:0003048 ! implied link automatically realized ! regional part of hypothalamus
 is_a: UBERON:0003931 ! implied link automatically realized ! diencephalic white matter
+is_a: UBERON:0005838 ! implied link automatically realized ! fasciculus of brain
 intersection_of: UBERON:0003045 ! dorsal longitudinal fasciculus
 intersection_of: part_of UBERON:0001898 ! hypothalamus
 relationship: part_of UBERON:0002430 ! lateral hypothalamic area
@@ -43198,22 +43199,15 @@ name: thoracic spinal cord
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_966-FMA_71167
 def: "The thoracic nerves are the spinal nerves emerging from the thoracic vertebrae. [WP,unvetted]." [Wikipedia:Thoracic_spinal_cord]
 subset: uberon_slim
-synonym: "regional part of spinal cord of thorax" EXACT [OBOL:automatic]
-synonym: "Segment of spinal cord of thorax" EXACT [OBOL:automatic]
-synonym: "spinal neuromere of thorax" EXACT [OBOL:automatic]
 synonym: "thoracic region of spinal cord" EXACT [FMA:71167]
+synonym: "thoracic segment of spinal cord" EXACT [FMA:71167]
 synonym: "thoracic segments of spinal cord [1-12]" EXACT [FMA:71167]
 synonym: "thoracic spinal cord" EXACT [FMA:71167]
-synonym: "thorax regional part of spinal cord" EXACT [OBOL:automatic]
-synonym: "thorax Segment of spinal cord" EXACT [OBOL:automatic]
-synonym: "thorax spinal neuromere" EXACT [OBOL:automatic]
 xref: FMA:71167
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Gray820.png/200px-Gray820.png
 xref: ncithesaurus:Thoracic_Spinal_Cord
 xref: NIF_GrossAnatomy:birnlex_966
-is_a: UBERON:0001948 ! regional part of spinal cord
-intersection_of: UBERON:0001948 ! regional part of spinal cord
-intersection_of: part_of UBERON:0000915 ! thorax
+is_a: UBERON:0005844 ! spinal cord segment
 
 [Term]
 id: UBERON:0003039
@@ -58887,23 +58881,11 @@ relationship: part_of UBERON:0000349 ! limbic system
 relationship: part_of UBERON:0001870 ! frontal cortex
 
 [Term]
-id: UBERON:0004168
-name: gracilis tract
-def: "a group of axons that are from neurons involved in proprioception from the lower trunk and lower limb." [GO:0021958]
-is_a: UBERON:0001018 ! axon tract
-
-[Term]
-id: UBERON:0004169
-name: cuneatus tract
-def: "a group of axons that are from neurons involved in proprioception from the upper trunk and upper limb" [GO:0021959]
-is_a: UBERON:0001018 ! axon tract
-
-[Term]
 id: UBERON:0004170
 name: spinal cord ventral commissure
 def: "." [GO:0021965]
 is_a: UBERON:0001020 ! commissure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005835 ! implied link automatically realized ! cuneate fasciculus of spinal cord
 relationship: part_of UBERON:0002240 ! spinal cord
 
 [Term]
@@ -65625,6 +65607,8 @@ xref: BTO:0003448
 xref: FMA:61844
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Gray732.png/200px-Gray732.png
 xref: Wikipedia:Septum_pellucidum
+is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0002285 ! lateral ventricle
 
 [Term]
@@ -73246,20 +73230,33 @@ is_a: UBERON:0002305 ! layer of hippocampus
 [Term]
 id: UBERON:0005373
 name: spinal cord dorsal column
+def: "area of white matter in the dorsomedial side of the spinal cord. It is made up of the fasciculus gracilis and fasciculus cuneatus and itself is part of the dorsal funiculus. It is part of an ascending pathway that is important for well-localized fine touch and conscious proprioception called the posterior column-medial lemniscus pathway[WP]. The dorsal portion of the gray substance of the spinal cord, in transverse section seen as a horn[TFD]. The dorsal column is a part of the spinal cord which is responsible for transporting sensory input from the body to the cerebral cortex. This part of the spinal cord is key in perceiving fine touch, such as that used to distinguish textures, along with vibration. The dorsal column also contributes to the body's system of proprioception, used to orient the body in space and to coordinate muscle movements, given information about the body's position." [Wikipedia:Posterior_column]
+synonym: "dorsal column" EXACT []
+synonym: "posterior column" EXACT [Wikipedia:Posterior_column]
+synonym: "spinal cord posterior column" EXACT []
 xref: MA:0002749
-relationship: part_of UBERON:0002318 ! white matter of spinal cord
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002258 ! dorsal funiculus
 
 [Term]
 id: UBERON:0005374
 name: spinal cord lateral column
+comment: TODO - check relationship between column and funiculus. Also check white vs grey matter. See ventral column. Note also ZFA term 'lateral column' is part of reticular formation
+synonym: "lateral column" RELATED []
 xref: MA:0002750
-relationship: part_of UBERON:0002318 ! white matter of spinal cord
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002179 ! lateral funiculus
 
 [Term]
 id: UBERON:0005375
 name: spinal cord ventral column
+comment: in MA, this is a subclass of white matter, but in WP/Gray's, the anterior column is a synonym of the grey matter section. is this the same as funiculus. See lateral column.
+synonym: "anterior column" EXACT []
+synonym: "spinal cord anterior column" EXACT []
+synonym: "ventral column" EXACT []
 xref: MA:0002751
-relationship: part_of UBERON:0002318 ! white matter of spinal cord
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002180 ! ventral funiculus
 
 [Term]
 id: UBERON:0005376
@@ -73342,6 +73339,8 @@ xref: BTO:0000212
 xref: EMAPA:19095
 xref: MA:0000893
 xref: NIF_GrossAnatomy:nlx_anat_100312
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0002791 ! implied link automatically realized ! regional part of telencephalon
 relationship: part_of UBERON:0005382 ! dorsal striatum
 
 [Term]
@@ -74463,7 +74462,6 @@ synonym: "spinal neural trunk" EXACT [FMA:5929]
 xref: EHDAA2:0001900
 xref: FMA:5929
 is_a: UBERON:0002464 ! implied link automatically realized ! nerve trunk
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 intersection_of: UBERON:0002464 ! nerve trunk
 intersection_of: part_of UBERON:0001780 ! spinal nerve
 
@@ -74786,6 +74784,8 @@ id: UBERON:0005561
 name: telencephalon lateral wall
 xref: EHDAA2:0001985
 xref: ZFA:0000785
+is_a: UBERON:0000060 ! anatomical wall
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001893 ! telencephalon
 
 [Term]
@@ -76652,6 +76652,224 @@ id: UBERON:0005820
 name: pontine flexure
 def: "a bend in the axis of the embryological central nervous system (the neuraxis). This flexure marks the junction between the metencephalon and the myelencephalon. The division of the rhombencephalon (the early hindbrain) into the metencephalon and the myelencephalon occurs at the 7th week of development. In the mature brain, the metencephalon forms the pons and cerebellum, whilst the myelencephalon forms the medulla oblongata[WP]." [Wikipedia:Pontine_Flexure]
 is_a: UBERON:0005817 ! neuraxis flexure
+
+[Term]
+id: UBERON:0005821
+name: gracile fasciculus
+alt_id: UBERON:0004168
+def: "a group of axons that are from neurons involved in proprioception from the lower trunk and lower limb[GO]. The fasciculus gracilis (tract of Goll) is a bundle of axon fibres in the dorsomedial spinal cord that carries information about fine touch, vibrations, and conscious proprioception from the lower part of the body to the brain stem. It is part of the posterior column of the spinal cord, which also contains the fasciculus cuneatus, which carries the same information from the upper part of the body. This tract and its continuation in the brain stem is often referred to as the posterior column-medial lemniscus pathway. The fasciculus gracilis is wedge-shaped on transverse section and lies next the posterior median septum, its base being at the surface of the medulla spinalis, and its apex directed toward the posterior gray commissure. It increases in size from below upward, and consists of long thin fibers that are derived from the posterior nerve roots, and ascend as far as the medulla oblongata, where they end in the nucleus gracilis. The tract of Goll was named after Swiss neuroanatomist Friedrich Goll[WP]." [GO:0021958, Wikipedia:Gracile_fasciculus]
+synonym: "fasciculus gracilis" EXACT [FMA:258416]
+synonym: "gracile column" RELATED [Wikipedia:Gracile_fasciculus]
+synonym: "gracile fascicle" EXACT [FMA:258416]
+synonym: "gracile tract" RELATED [Wikipedia:Gracile_fasciculus]
+synonym: "gracilis tract" EXACT [GO:0021958]
+synonym: "tract of Goll" EXACT [GO:0021958]
+xref: FMA:258416
+is_a: UBERON:0001018 ! axon tract
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0002316 ! white matter of neuraxis
+
+[Term]
+id: UBERON:0005826
+name: gracile fasciculus of spinal cord
+synonym: "gracile fascicle of spinal cord" EXACT [FMA:73938]
+synonym: "spinal cord segment of fasciculus gracilis" EXACT [FMA:73938]
+synonym: "spinal cord segment of gracile fasciculus" EXACT [FMA:73938]
+xref: FMA:73938
+is_a: UBERON:0005821 ! implied link automatically realized ! gracile fasciculus
+is_a: UBERON:0005835 ! implied link automatically realized ! cuneate fasciculus of spinal cord
+intersection_of: UBERON:0005821 ! gracile fasciculus
+intersection_of: part_of UBERON:0002240 ! spinal cord
+relationship: part_of UBERON:0005373 ! spinal cord dorsal column
+
+[Term]
+id: UBERON:0005832
+name: cuneate fasciculus
+alt_id: UBERON:0004169
+comment: we assign the synonym 'Burdachs tract' to the subclass
+synonym: "cuneate column" RELATED [Wikipedia:Cuneate_fasciculus]
+synonym: "cuneate tract" RELATED [Wikipedia:Cuneate_fasciculus]
+synonym: "cuneatus tract" EXACT [GO:0021959]
+synonym: "fasciculus cuneatus" RELATED [Wikipedia:Cuneate_fasciculus]
+synonym: "fasciculus cuneus" RELATED [Wikipedia:Cuneate_fasciculus]
+xref: Wikipedia:Cuneate_fasciculus
+is_a: UBERON:0001018 ! axon tract
+
+[Term]
+id: UBERON:0005835
+name: cuneate fasciculus of spinal cord
+def: "The fasciculus cuneatus (tract of Burdach, named for Karl Friedrich Burdach) is a bundle of nerves in the spinal cord which primarily transmits information from the arms. It is part of the posterior column-medial lemniscus pathway." [GO:0021959, Wikipedia:Cuneate_fasciculus]
+comment: TODO - change definition to be the *whole* of the CF in the SC
+synonym: "burdach's tract" EXACT [FMA:73941]
+synonym: "cuneate fascicle of spinal cord" EXACT [FMA:73941]
+synonym: "cuneate fasciculus" BROAD [FMA:73941]
+synonym: "tract of Burdach" EXACT [GO:0021959]
+xref: FMA:73941
+is_a: UBERON:0001018 ! implied link automatically realized ! axon tract
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+intersection_of: UBERON:0001018 ! axon tract
+intersection_of: part_of UBERON:0002240 ! spinal cord
+relationship: part_of UBERON:0005373 ! spinal cord dorsal column
+
+[Term]
+id: UBERON:0005837
+name: fasciculus of spinal cord
+synonym: "spinal cord fasciculus" EXACT [FMA:75799]
+xref: FMA:75799
+is_a: UBERON:0001019 ! implied link automatically realized ! fascicle
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+intersection_of: UBERON:0001019 ! fascicle
+intersection_of: part_of UBERON:0002240 ! spinal cord
+
+[Term]
+id: UBERON:0005838
+name: fasciculus of brain
+synonym: "brain fasciculus" EXACT [FMA:83844]
+xref: FMA:83844
+is_a: UBERON:0001019 ! implied link automatically realized ! fascicle
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+intersection_of: UBERON:0001019 ! fascicle
+intersection_of: part_of UBERON:0000955 ! brain
+
+[Term]
+id: UBERON:0005839
+name: thoracic spinal cord dorsal column
+synonym: "dorsal funiculus of thoracic segment of spinal cord" EXACT [FMA:258178]
+synonym: "dorsal white column of thoracic segment of spinal cord" EXACT [FMA:258178]
+synonym: "thoracic segment of dorsal funiculus of spinal cord" EXACT [FMA:258178]
+synonym: "thoracic spinal cord posterior column" EXACT [NIF_GrossAnatomy:birnlex_1442]
+xref: FMA:258178
+xref: NIF_GrossAnatomy:birnlex_1442
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0003038 ! thoracic spinal cord
+relationship: part_of UBERON:0005373 ! spinal cord dorsal column
+
+[Term]
+id: UBERON:0005840
+name: sacral spinal cord dorsal column
+synonym: "sacral spinal cord posterior column" EXACT [NIF_GrossAnatomy:birnlex_1514]
+synonym: "sacral subsegment of dorsal funiculus of spinal cord" EXACT [FMA:258198]
+xref: FMA:258198
+xref: NIF_GrossAnatomy:birnlex_1514
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0005373 ! spinal cord dorsal column
+
+[Term]
+id: UBERON:0005841
+name: cervical spinal cord dorsal column
+synonym: "cervical segment of dorsal funiculus of spinal cord" EXACT [FMA:258176]
+synonym: "cervical spinal cord posterior column" EXACT [NIF_GrossAnatomy:birnlex_736]
+synonym: "dorsal funiculus of cervical segment of spinal cord" EXACT [FMA:258176]
+synonym: "dorsal white column of cervical segment of spinal cord" EXACT [FMA:258176]
+xref: FMA:258176
+xref: NIF_GrossAnatomy:birnlex_736
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002726 ! cervical spinal cord
+relationship: part_of UBERON:0005373 ! spinal cord dorsal column
+
+[Term]
+id: UBERON:0005842
+name: lumbar spinal cord dorsal column
+synonym: "dorsal funiculus of lumbar segment of spinal cord" EXACT [FMA:258180]
+synonym: "dorsal white column of lumbar segment of spinal cord" EXACT [FMA:258180]
+synonym: "lumbar segment of dorsal funiculus of spinal cord" EXACT [FMA:258180]
+synonym: "lumbar segment of gracile fasciculus of spinal cord" EXACT [FMA:258180]
+synonym: "lumbar spinal cord posterior column" EXACT [NIF_GrossAnatomy:birnlex_834]
+xref: FMA:258180
+xref: NIF_GrossAnatomy:birnlex_834
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002792 ! lumbar spinal cord
+relationship: part_of UBERON:0005373 ! spinal cord dorsal column
+
+[Term]
+id: UBERON:0005843
+name: sacral spinal cord
+synonym: "sacral segment of spinal cord" EXACT [FMA:256623]
+xref: FMA:256623
+xref: NIF_GrossAnatomy:birnlex_1275
+is_a: UBERON:0005844 ! spinal cord segment
+
+[Term]
+id: UBERON:0005844
+name: spinal cord segment
+comment: here we use segment to refer to cervical, lumbar etc rather than each of the 31 segments of the human spine
+synonym: "axial part of spinal cord" EXACT [NIF_GrossAnatomy:birnlex_2665]
+synonym: "axial regional part of spinal cord" EXACT [NIF_GrossAnatomy:birnlex_2665]
+xref: FMA:62420
+xref: NIF_GrossAnatomy:birnlex_2665
+is_a: UBERON:0001948 ! regional part of spinal cord
+
+[Term]
+id: UBERON:0005845
+name: coccygeal segment of spinal cord
+synonym: "coccygeal segments of spinal cord [1-3]" EXACT [FMA:256635]
+xref: FMA:256635
+is_a: UBERON:0005844 ! spinal cord segment
+
+[Term]
+id: UBERON:0005847
+name: thoracic spinal cord lateral column
+xref: NIF_GrossAnatomy:birnlex_1439
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0003038 ! thoracic spinal cord
+relationship: part_of UBERON:0005374 ! spinal cord lateral column
+
+[Term]
+id: UBERON:0005848
+name: sacral spinal cord lateral column
+xref: NIF_GrossAnatomy:birnlex_1587
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0005374 ! spinal cord lateral column
+relationship: part_of UBERON:0005843 ! sacral spinal cord
+
+[Term]
+id: UBERON:0005849
+name: cervical spinal cord lateral column
+xref: NIF_GrossAnatomy:birnlex_729
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002726 ! cervical spinal cord
+relationship: part_of UBERON:0005374 ! spinal cord lateral column
+
+[Term]
+id: UBERON:0005850
+name: lumbar spinal cord lateral column
+xref: NIF_GrossAnatomy:birnlex_828
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002792 ! lumbar spinal cord
+relationship: part_of UBERON:0005374 ! spinal cord lateral column
+
+[Term]
+id: UBERON:0005852
+name: thoracic spinal cord ventral column
+xref: NIF_GrossAnatomy:birnlex_1448
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0003038 ! thoracic spinal cord
+relationship: part_of UBERON:0005375 ! spinal cord ventral column
+
+[Term]
+id: UBERON:0005853
+name: sacral spinal cord ventral column
+xref: NIF_GrossAnatomy:birnlex_1520
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0005375 ! spinal cord ventral column
+relationship: part_of UBERON:0005843 ! sacral spinal cord
+
+[Term]
+id: UBERON:0005854
+name: cervical spinal cord ventral column
+synonym: "cervical spinal cord anterior column" EXACT [NIF_GrossAnatomy:birnlex_1660]
+xref: NIF_GrossAnatomy:birnlex_1660
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002726 ! cervical spinal cord
+relationship: part_of UBERON:0005375 ! spinal cord ventral column
+
+[Term]
+id: UBERON:0005855
+name: lumbar spinal cord ventral column
+xref: NIF_GrossAnatomy:birnlex_840
+is_a: UBERON:0002318 ! white matter of spinal cord
+relationship: part_of UBERON:0002792 ! lumbar spinal cord
+relationship: part_of UBERON:0005375 ! spinal cord ventral column
 
 [Typedef]
 id: adjacent_to
