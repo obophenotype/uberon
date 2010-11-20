@@ -18,7 +18,10 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 	obolib-obo2owl -o file://`pwd`/$@ $<
 
 %-orphans: %.obo
-	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" -
+	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep -r Term - > $@
+
+%-xp-check: %.obo
+	obo-check-xps.pl $< >& $@
 
 OBOLX=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -r obol_av 
 OBOL=$(OBOLX)  -u obol_anatomy_xp 
@@ -78,8 +81,8 @@ fma_xp_CL-obol.obo:
 fma_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
 
-ehdaa2_xp_uberon-obol.obo:
-	$(OBOLX)  -u obol_ehdaa_xp -r uberon -r ehdaa2 obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
+ehdaa2_xp_uberon-obol.obo: ehdaa2_xp_uberon.obo
+	$(OBOLX) -i $< -u obol_ehdaa_xp -r uberon -r ehdaa2 obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
 
 emapa_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_ehdaa_xp -r uberon -r emapa obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
@@ -145,7 +148,8 @@ uberon-%-misalign.txt: %.obo
 %-misalign.txt: %-imports.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
-uberon-qc: uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
+#uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
+uberon-qc: uberon-orphans uberon-synclash uberon-xp-check uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-discv.txt 
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
@@ -284,7 +288,7 @@ uberon_edit_plus_%-implied.obo: uberon_edit.obo
 	obo2obo -allowdangling -o -saveimpliedlinks -allowdangling $@ $*.obo $<
 
 %-cycles: %.obo
-	blip-findall -i $< "subclass_cycle/2" -label
+	blip-findall -i $< "subclass_cycle/2" -label > $@
 
 %-synclash: %.obo
 	blip-findall -r goxp/biological_process_xp_uber_anatomy	 -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@

@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 15:11:2010 17:40
+date: 19:11:2010 12:50
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -509,28 +509,6 @@ synonym: "hindlimb digit" RELATED []
 xref: AAO:0000888
 xref: XAO:0003035
 is_a: UBERON:0002544 ! digit
-
-[Term]
-id: UBERON:0000028
-name: fore digit
-def: "A digit of the forelimb." [UBERON:xp]
-comment: This class was created automatically from a combination of ontologies
-synonym: "anteriormost limb digit" EXACT [OBOL:automatic]
-synonym: "digit of anteriormost limb" EXACT [OBOL:automatic]
-synonym: "digit of fore limb" EXACT [OBOL:automatic]
-synonym: "digit of forelimb" EXACT [OBOL:automatic]
-synonym: "digit of superior member" EXACT [OBOL:automatic]
-synonym: "digit of upper extremity" EXACT [OBOL:automatic]
-synonym: "fore digit" EXACT []
-synonym: "fore limb digit" EXACT [OBOL:automatic]
-synonym: "forelimb digit" RELATED []
-synonym: "superior member digit" EXACT [OBOL:automatic]
-synonym: "upper extremity digit" EXACT [OBOL:automatic]
-xref: AAO:0000857
-xref: XAO:0003036
-is_a: UBERON:0002544 ! digit
-intersection_of: UBERON:0002544 ! digit
-intersection_of: part_of UBERON:0002102 ! forelimb
 
 [Term]
 id: UBERON:0000029
@@ -1477,9 +1455,12 @@ id: UBERON:0000090
 name: blastocele
 def: "fluid-filled central region of a blastocyst. A blastocoele forms during embryogenesis when a zygote (a fertilized ovum) divides into many cells through mitosis." [Wikipedia:Blastocele]
 synonym: "blastocoele" EXACT []
+synonym: "blastocoelic cavity" EXACT [EHDAA2:0000175]
 synonym: "blastocyst cavity" RELATED []
 synonym: "cleavage cavity" EXACT []
 synonym: "segmentation cavity" EXACT []
+xref: EHDAA2:0000175
+xref: EMAPA:16044
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Blastocyst.gif/200px-Blastocyst.gif
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: surrounded_by UBERON:0002532 ! epiblast
@@ -5451,11 +5432,13 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "CN-II" RELATED []
 synonym: "optic" RELATED []
+synonym: "optic II" EXACT [EHDAA2:0001313]
 synonym: "optic II nerve" EXACT []
 synonym: "optic nerve" BROAD SENSU [FMA:50863]
 synonym: "optic nerve [II]" EXACT []
 synonym: "second cranial nerve" EXACT []
 xref: EHDAA:6788
+xref: EHDAA2:0001313
 xref: EHDAA2:0001314
 xref: FMA:50863
 xref: GAID:831
@@ -6417,6 +6400,7 @@ xref: ncithesaurus:Penis
 xref: OpenCyc:Mx4rvVjkCZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: develops_from UBERON:0005876 ! genital tubercle
 relationship: part_of UBERON:0000079 ! male reproductive system
 
 [Term]
@@ -13492,12 +13476,11 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "auditory canal" EXACT []
 synonym: "ear canal" EXACT [Wikipedia:Ear_canal]
+synonym: "external acoustic tube" EXACT [FMA:61734]
 synonym: "external auditory canal" EXACT []
 synonym: "external auditory meatus" RELATED []
-synonym: "lumen of external acoustic tube" EXACT []
 xref: EHDAA:8975
 xref: EHDAA2:0000460
-xref: FMA:20290
 xref: FMA:61734
 xref: GAID:864
 xref: galen:ExternalAuditoryMeatus
@@ -13508,6 +13491,7 @@ xref: OpenCyc:Mx4rvli-nZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000464 ! anatomical space
 relationship: connects UBERON:0001691 ! external ear
 relationship: connects UBERON:0001756 ! middle ear
+relationship: develops_from UBERON:0005872 ! 1st arch branchial groove
 
 [Term]
 id: UBERON:0001353
@@ -14890,54 +14874,28 @@ relationship: part_of UBERON:0004452 ! carpus
 id: UBERON:0001436
 name: phalanx of finger
 alt_id: UBERON:FMA_23914-MA_0000306
-def: "a phalanx that is part of a finger[Obol]." [Obol:obol]
+def: "A phalanx that is part of a forelimb[Obol]." [Obol:obol]
 comment: This class was created automatically from a combination of ontologies
-synonym: "digit long bone of digit of hand" EXACT [OBOL:automatic]
-synonym: "digit long bone of digit of terminal segment of free upper limb" EXACT [OBOL:automatic]
-synonym: "digit long bone of digitus manus" EXACT [OBOL:automatic]
-synonym: "digit long bone of finger" EXACT [OBOL:automatic]
-synonym: "digit long bone of hand digit" EXACT [OBOL:automatic]
-synonym: "digit long bone of terminal segment of free upper limb digit" EXACT [OBOL:automatic]
-synonym: "digit of hand digit long bone" EXACT [OBOL:automatic]
-synonym: "digit of hand long bone of digit" EXACT [OBOL:automatic]
-synonym: "digit of hand phalanx" EXACT [OBOL:automatic]
-synonym: "digit of terminal segment of free upper limb digit long bone" EXACT [OBOL:automatic]
-synonym: "digit of terminal segment of free upper limb long bone of digit" EXACT [OBOL:automatic]
-synonym: "digit of terminal segment of free upper limb phalanx" EXACT [OBOL:automatic]
-synonym: "digitus manus digit long bone" EXACT [OBOL:automatic]
-synonym: "digitus manus long bone of digit" EXACT [OBOL:automatic]
 synonym: "digitus manus phalanx" EXACT [OBOL:automatic]
-synonym: "finger digit long bone" EXACT [OBOL:automatic]
-synonym: "finger long bone of digit" EXACT [OBOL:automatic]
 synonym: "finger phalanx" EXACT [OBOL:automatic]
-synonym: "hand digit digit long bone" EXACT [OBOL:automatic]
-synonym: "hand digit long bone of digit" EXACT [OBOL:automatic]
 synonym: "hand digit phalanx" EXACT [OBOL:automatic]
 synonym: "hand phalanx" EXACT []
-synonym: "long bone of digit of digit of hand" EXACT [OBOL:automatic]
-synonym: "long bone of digit of digit of terminal segment of free upper limb" EXACT [OBOL:automatic]
-synonym: "long bone of digit of digitus manus" EXACT [OBOL:automatic]
-synonym: "long bone of digit of finger" EXACT [OBOL:automatic]
-synonym: "long bone of digit of hand digit" EXACT [OBOL:automatic]
-synonym: "long bone of digit of terminal segment of free upper limb digit" EXACT [OBOL:automatic]
+synonym: "hand phalanx" EXACT [MA:0000306]
+synonym: "phalanges of fore digit" RELATED PLURAL [AAO:0000947]
 synonym: "phalanx of digit of hand" EXACT [OBOL:automatic]
-synonym: "phalanx of digit of terminal segment of free upper limb" EXACT [OBOL:automatic]
 synonym: "phalanx of digitus manus" EXACT [OBOL:automatic]
+synonym: "phalanx of fore digit" EXACT []
 synonym: "phalanx of hand" EXACT []
 synonym: "phalanx of hand digit" EXACT [OBOL:automatic]
-synonym: "phalanx of terminal segment of free upper limb digit" EXACT [OBOL:automatic]
-synonym: "terminal segment of free upper limb digit digit long bone" EXACT [OBOL:automatic]
-synonym: "terminal segment of free upper limb digit long bone of digit" EXACT [OBOL:automatic]
-synonym: "terminal segment of free upper limb digit phalanx" EXACT [OBOL:automatic]
+xref: AAO:0000947
 xref: FMA:23914
 xref: MA:0000306
 xref: ncithesaurus:Hand_Phalanx
-is_a: UBERON:0003221 ! phalanx
+is_a: UBERON:0003221 ! implied link automatically realized ! phalanx
 is_a: UBERON:0003607 ! implied link automatically realized ! forelimb long bone
 is_a: UBERON:0004249 ! implied link automatically realized ! hand digit bone
 intersection_of: UBERON:0003221 ! phalanx
 intersection_of: part_of UBERON:0002389 ! finger
-relationship: part_of UBERON:0002389 ! finger
 
 [Term]
 id: UBERON:0001437
@@ -15000,6 +14958,7 @@ synonym: "anteriormost limb subdivision of skeleton" EXACT [OBOL:automatic]
 synonym: "bones of upper limb" EXACT []
 synonym: "fore limb subdivision of skeleton" EXACT [OBOL:automatic]
 synonym: "forelimb bone" EXACT []
+synonym: "forelimb skeleton" EXACT [HOG:0001256]
 synonym: "forelimb subdivision of skeleton" EXACT [OBOL:automatic]
 synonym: "set of bones of upper limb" EXACT []
 synonym: "subdivision of skeleton of anteriormost limb" EXACT [OBOL:automatic]
@@ -15231,8 +15190,10 @@ id: UBERON:0001448
 name: metatarsal bone
 alt_id: UBERON:FMA_24492-MA_0000303
 def: "The metatarsus or metatarsal bones are a group of five long bones in the foot located between the tarsal bones of the hind- and mid-foot and the phalanges of the toes. Lacking individual names, the metatarsal bones are numbered from the medial side (side of big toe): the first, second, third, fourth, and fifth metatarsal. The metatarsals are analogous to the metacarpal bones of the hand. [WP,unvetted]." [Wikipedia:Metatarsal_bone]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "hind metapodium" EXACT [AAO:0000221, http://en.wiktionary.org/wiki/metapodial]
+synonym: "metatarsal" EXACT []
+xref: AAO:0000221
 xref: BTO:0002347
 xref: FMA:24492
 xref: GAID:193
@@ -15247,50 +15208,26 @@ relationship: part_of UBERON:0000983 ! metatarsus
 [Term]
 id: UBERON:0001449
 name: phalanx of toe
+alt_id: UBERON:0004272
 alt_id: UBERON:FMA_24493-MA_0000305
-def: "A phalanx that is part of a toe [Obol]." [OBOL:automatic]
-comment: This class was created automatically from a combination of ontologies
-synonym: "digit long bone of digit of foot" EXACT [OBOL:automatic]
-synonym: "digit long bone of digit of terminal segment of free lower limb" EXACT [OBOL:automatic]
-synonym: "digit long bone of digitus pedis" EXACT [OBOL:automatic]
-synonym: "digit long bone of foot digit" EXACT [OBOL:automatic]
-synonym: "digit long bone of terminal segment of free lower limb digit" EXACT [OBOL:automatic]
-synonym: "digit long bone of toe" EXACT [OBOL:automatic]
-synonym: "digit of foot digit long bone" EXACT [OBOL:automatic]
-synonym: "digit of foot long bone of digit" EXACT [OBOL:automatic]
-synonym: "digit of foot phalanx" EXACT [OBOL:automatic]
-synonym: "digit of terminal segment of free lower limb digit long bone" EXACT [OBOL:automatic]
-synonym: "digit of terminal segment of free lower limb long bone of digit" EXACT [OBOL:automatic]
-synonym: "digit of terminal segment of free lower limb phalanx" EXACT [OBOL:automatic]
-synonym: "digitus pedis digit long bone" EXACT [OBOL:automatic]
-synonym: "digitus pedis long bone of digit" EXACT [OBOL:automatic]
+def: "A phalanx that is part of a hindlimb[Obol]." [OBOL:automatic]
 synonym: "digitus pedis phalanx" EXACT [OBOL:automatic]
-synonym: "foot digit digit long bone" EXACT [OBOL:automatic]
-synonym: "foot digit long bone of digit" EXACT [OBOL:automatic]
 synonym: "foot digit phalanx" EXACT [OBOL:automatic]
-synonym: "long bone of digit of digit of foot" EXACT [OBOL:automatic]
-synonym: "long bone of digit of digit of terminal segment of free lower limb" EXACT [OBOL:automatic]
-synonym: "long bone of digit of digitus pedis" EXACT [OBOL:automatic]
-synonym: "long bone of digit of foot digit" EXACT [OBOL:automatic]
-synonym: "long bone of digit of terminal segment of free lower limb digit" EXACT [OBOL:automatic]
-synonym: "long bone of digit of toe" EXACT [OBOL:automatic]
+synonym: "foot phalanx" EXACT [MA:0000305]
+synonym: "phalanges of hind digit" RELATED PLURAL [AAO:0000930]
 synonym: "phalanx of digit of foot" EXACT [OBOL:automatic]
-synonym: "phalanx of digit of terminal segment of free lower limb" EXACT [OBOL:automatic]
 synonym: "phalanx of digitus pedis" EXACT [OBOL:automatic]
 synonym: "phalanx of foot digit" EXACT [OBOL:automatic]
-synonym: "phalanx of terminal segment of free lower limb digit" EXACT [OBOL:automatic]
-synonym: "terminal segment of free lower limb digit digit long bone" EXACT [OBOL:automatic]
-synonym: "terminal segment of free lower limb digit long bone of digit" EXACT [OBOL:automatic]
-synonym: "terminal segment of free lower limb digit phalanx" EXACT [OBOL:automatic]
-synonym: "toe digit long bone" EXACT [OBOL:automatic]
-synonym: "toe long bone of digit" EXACT [OBOL:automatic]
+synonym: "phalanx of hind digit" EXACT []
 synonym: "toe phalanx" EXACT [OBOL:automatic]
+xref: AAO:0000930
 xref: FMA:24493
-is_a: UBERON:0003221 ! phalanx
+xref: MA:0000305
+is_a: UBERON:0003221 ! implied link automatically realized ! phalanx
+is_a: UBERON:0003608 ! implied link automatically realized ! hindlimb long bone
 is_a: UBERON:0004248 ! implied link automatically realized ! foot digit bone
-is_a: UBERON:0004272 ! implied link automatically realized ! foot phalanx
 intersection_of: UBERON:0003221 ! phalanx
-intersection_of: part_of UBERON:0001466 ! toe
+intersection_of: part_of UBERON:0002387 ! foot
 relationship: part_of UBERON:0001466 ! toe
 
 [Term]
@@ -15551,8 +15488,10 @@ alt_id: UBERON:FMA_24938-MA_0000454
 def: "1st (lateral-most) digit of the hand in mouse and human[Wikipedia]." [Wikipedia:Thumb]
 comment: This class represents all instances of the first digit of the hand in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
 subset: uberon_slim
+synonym: "digitus primus" EXACT []
 synonym: "first digit of hand" EXACT []
-synonym: "Pollex; Digitus primus [I]" EXACT []
+synonym: "pollex" EXACT []
+synonym: "pollex; digitus primus [I]" EXACT []
 synonym: "thumb" EXACT []
 xref: FMA:24938
 xref: GAID:58
@@ -15614,7 +15553,7 @@ relationship: part_of UBERON:0002103 ! hindlimb
 id: UBERON:0001466
 name: toe
 alt_id: UBERON:FMA_25046-MA_0000048
-def: "A digit that is part_of a foot[Obol]." [Wikipedia:Toe]
+def: "A digit that is part_of a hindlimb[Obol]." [Wikipedia:Toe]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "autopod of hind limb digit" EXACT [OBOL:automatic]
@@ -15647,6 +15586,7 @@ synonym: "distal free limb segment of lower extremity digit" EXACT [OBOL:automat
 synonym: "foot digit" EXACT []
 synonym: "hind limb autopod digit" EXACT [OBOL:automatic]
 synonym: "hind limb distal free limb segment digit" EXACT [OBOL:automatic]
+synonym: "hind_digit" EXACT [AAO:0000888]
 synonym: "hindlimb autopod digit" EXACT [OBOL:automatic]
 synonym: "hindlimb distal free limb segment digit" EXACT [OBOL:automatic]
 synonym: "inferior member autopod digit" EXACT [OBOL:automatic]
@@ -15654,6 +15594,7 @@ synonym: "inferior member distal free limb segment digit" EXACT [OBOL:automatic]
 synonym: "lower extremity autopod digit" EXACT [OBOL:automatic]
 synonym: "lower extremity distal free limb segment digit" EXACT [OBOL:automatic]
 synonym: "terminal segment of free lower limb digit" EXACT [OBOL:automatic]
+xref: AAO:0000888
 xref: BTO:0002348
 xref: FMA:25046
 xref: GAID:44
@@ -15903,7 +15844,7 @@ is_a: UBERON:0001482 ! muscle of shoulder
 id: UBERON:0001479
 name: sesamoid bone
 alt_id: UBERON:FMA_32672-MA_0001375
-def: "." [Wikipedia:Sesamoid_bone]
+def: "a bone embedded within a tendon. Sesamoids are found in locations where a tendon passes over a joint, such as the hand, knee, and foot. Functionally, they act to protect the tendon and to increase its mechanical effect. The presence of the sesamoid bone holds the tendon slightly farther away from the center of the joint and thus increases its moment arm. Sesamoid bones also prevent the tendon from flattening into the joint as tension increases and therefore also maintain a more consistent moment arm through a variety of possible tendon loads. This differs from menisci, which are made of cartilage and rather act to disperse the weight of the body on joints and reduce friction during movement." [Wikipedia:Sesamoid_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: AEO:0000086
@@ -17725,9 +17666,11 @@ subset: uberon_slim
 synonym: "CN-I" RELATED []
 synonym: "cranial nerve I" RELATED []
 synonym: "first cranial nerve" EXACT []
+synonym: "olfactory I" EXACT [EHDAA2:0001293]
 synonym: "olfactory i nerve" EXACT []
 synonym: "Olfactory nerve [I]" EXACT []
 xref: BTO:0003648
+xref: EHDAA2:0001293
 xref: FMA:46787
 xref: GAID:830
 xref: HOG:0000703
@@ -18776,10 +18719,12 @@ subset: uberon_slim
 synonym: "CN-III" RELATED []
 synonym: "cranial nerve III" RELATED []
 synonym: "occulomotor" RELATED []
+synonym: "oculomotor III" EXACT [EHDAA2:0001284]
 synonym: "oculomotor III nerve" EXACT []
 synonym: "Oculomotor nerve [III]" EXACT []
 synonym: "oculomotor nerve tree" EXACT []
 synonym: "third cranial nerve" EXACT []
+xref: EHDAA2:0001284
 xref: FMA:50864
 xref: GAID:829
 xref: HOG:0000692
@@ -18836,9 +18781,11 @@ synonym: "cranial nerve V" RELATED []
 synonym: "fifth cranial nerve" EXACT []
 synonym: "Trigeminal nerve [V]" EXACT []
 synonym: "trigeminal nerve tree" EXACT []
+synonym: "trigeminal V" EXACT [EHDAA2:0002084]
 synonym: "trigeminal v nerve" EXACT []
 xref: BTO:0001072
 xref: EFO:0001402
+xref: EHDAA2:0002084
 xref: FMA:50866
 xref: GAID:726
 xref: HOG:0000704
@@ -18895,9 +18842,11 @@ synonym: "cranial nerve VII" RELATED []
 synonym: "face nerve" EXACT [OBOL:automatic]
 synonym: "Facial nerve [VII]" EXACT []
 synonym: "facial nerve tree" EXACT []
+synonym: "facial VII" EXACT [EHDAA2:0000489]
 synonym: "facial VII nerve" EXACT []
 synonym: "nerve of face" EXACT [OBOL:automatic]
 synonym: "seventh cranial nerve" EXACT []
+xref: EHDAA2:0000489
 xref: FMA:50868
 xref: GAID:719
 xref: HOG:0000706
@@ -18959,10 +18908,12 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "CN-IX" RELATED []
 synonym: "cranial nerve IX" RELATED []
+synonym: "glossopharyngeal IX" EXACT [EHDAA2:0000709]
 synonym: "glossopharyngeal IX nerve" EXACT []
 synonym: "Glossopharyngeal nerve [IX]" EXACT []
 synonym: "glossopharyngeal nerve tree" EXACT []
 synonym: "ninth cranial nerve" EXACT []
+xref: EHDAA2:0000709
 xref: FMA:50870
 xref: GAID:827
 xref: HOG:0000701
@@ -18986,9 +18937,11 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "Hypoglossal nerve [XII]" EXACT []
 synonym: "hypoglossal nerve tree" EXACT []
+synonym: "hypoglossal XII" EXACT [EHDAA2:0000798]
 synonym: "hypoglossal XII nerve" EXACT []
 synonym: "twelfth cranial nerve" EXACT []
 xref: BTO:0003386
+xref: EHDAA2:0000798
 xref: FMA:50871
 xref: GAID:828
 xref: HOG:0000693
@@ -19534,6 +19487,7 @@ xref: MA:0001487
 xref: ncithesaurus:Mandible
 is_a: UBERON:0001474 ! bone
 is_a: UBERON:0004768 ! implied link automatically realized ! bone of lower jaw
+relationship: develops_from UBERON:0005867 ! mandibular prominence
 relationship: part_of UBERON:0001710 ! lower jaw
 
 [Term]
@@ -19844,6 +19798,7 @@ synonym: "ganglion of glosspharyngeal nerve" EXACT []
 synonym: "gIX" RELATED []
 synonym: "glossopharyngeal IX ganglion" EXACT [MA:0001077]
 synonym: "petrosal ganglion" RELATED []
+xref: EHDAA2:0000710
 xref: FMA:53471
 xref: HOG:0000702
 xref: MA:0001077
@@ -19962,6 +19917,7 @@ xref: ncithesaurus:Nasal_Septum
 xref: OpenCyc:Mx4rv7e-k5wpEbGdrcN5Y29ycA
 is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0003037 ! septum
+relationship: develops_from UBERON:0004068 ! medial nasal prominence
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
 [Term]
@@ -19969,12 +19925,11 @@ id: UBERON:0001707
 name: nasal cavity
 alt_id: UBERON:FMA_54378-MA_0000284-ZFA_0000130
 def: "a large fluid filled space above and behind the nose in the middle of the face[WP]. an indentation of the olfactory placode, and ends when the pits hollows out to form the nasopharynx." [Wikipedia:Nasal_cavity]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cavity of nose" EXACT []
 synonym: "nasal pit" RELATED []
 synonym: "olfactory cavity" RELATED []
-synonym: "olfactory pit" EXACT []
+synonym: "olfactory pit" RELATED []
 xref: AAO:0000314
 xref: BTO:0002096
 xref: EHDAA:4772
@@ -19989,6 +19944,7 @@ xref: ncithesaurus:Nasal_Cavity
 xref: TAO:0000130
 xref: ZFA:0000130
 is_a: UBERON:0002553 ! anatomical cavity
+relationship: develops_from UBERON:0005870 ! olfactory pit
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 relationship: part_of UBERON:0001557 ! upper respiratory tract
 
@@ -22453,6 +22409,7 @@ xref: OpenCyc:Mx4rvWPv7pwpEbGdrcN5Y29ycA
 xref: ZFA:0005226
 is_a: UBERON:0001833 ! lip
 relationship: develops_from UBERON:0004068 ! medial nasal prominence
+relationship: develops_from UBERON:0005868 ! maxillary prominence
 
 [Term]
 id: UBERON:0001835
@@ -22467,6 +22424,7 @@ xref: MA:0000921
 xref: OpenCyc:Mx4rv842UpwpEbGdrcN5Y29ycA
 xref: ZFA:0005225
 is_a: UBERON:0001833 ! lip
+relationship: develops_from UBERON:0005867 ! mandibular prominence
 
 [Term]
 id: UBERON:0001836
@@ -26125,11 +26083,13 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "accessory nerve" EXACT []
 synonym: "Accessory nerve [XI]" EXACT []
+synonym: "accessory XI" EXACT [EHDAA2:0000106]
 synonym: "accessory XI nerve" EXACT []
 synonym: "cervical accessory nerve" EXACT []
 synonym: "spinal accessory nerve tree" EXACT []
 synonym: "spinal part of accessory nerve" EXACT []
 synonym: "Willis' nerve" EXACT []
+xref: EHDAA2:0000106
 xref: FMA:6720
 xref: GAID:825
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Gray791.png/200px-Gray791.png
@@ -29466,7 +29426,7 @@ xref: TAO:0001075
 xref: ZFA:0001075
 is_a: UBERON:0000464 ! anatomical space
 disjoint_from: UBERON:0005412 ! optic fissure
-relationship: part_of: UBERON:0005358 ! ventricle of nervous system
+relationship: part_of UBERON:0005358 ! ventricle of nervous system
 
 [Term]
 id: UBERON:0002193
@@ -30129,10 +30089,20 @@ name: interparietal bone
 alt_id: UBERON:FMA_75748-MA_0001467
 def: "the bone of the cranium that lies above and anterior to the occipital bone in some mammals." [MP:0000077]
 comment: This class was created automatically from a combination of ontologies
+synonym: "inter-parietal bone" EXACT [EMAPA:19017]
+synonym: "interparietal" EXACT [EHDAA:9530]
+synonym: "post-parietal bone" RELATED [HOG:0001327]
+synonym: "postparietal" RELATED [HOG:0001327]
+synonym: "postparietal bone" RELATED [HOG:0001327]
+xref: EHDAA:9530
+xref: EMAPA:19017
 xref: FMA:75748
 xref: HOG:0001327
 xref: MA:0001467
 is_a: UBERON:0001474 ! bone
+is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
+relationship: homologous_to ZFA:0000486
+relationship: part_of UBERON:0003128 ! cranium
 
 [Term]
 id: UBERON:0002230
@@ -32891,9 +32861,10 @@ id: UBERON:0002374
 name: metacarpal bone
 alt_id: UBERON:FMA_9612-MA_0000302
 def: "The metacarpus is the intermediate part of the hand skeleton that is located between the phalanges (bones of the fingers) distally and the carpus which forms the connection to the forearm. The metacarpus consists of metacarpal bones. The metacarpals form a transverse arch to which the rigid row of distal carpal bones are fixed. The peripheral metacarpals (those of the thumb and little finger) form the sides of the cup of the palmar gutter and as they are brought together they deepen this concavity. The index metacarpal is the most firmly fixed, while the thumb metacarpal articulates with the trapezium and acts independently from the others. The middle metacarpals are tightly united to the carpus by intrinsic interlocking bone elements at their bases. The ring metacarpal forms a transitional element of the semi-independent last metacarpal. [WP,unvetted]." [Wikipedia:Metacarpal_bone]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "fore metapodium" EXACT [AAO:0000946, http://en.wiktionary.org/wiki/metapodial]
 synonym: "metacarpal" EXACT []
+xref: AAO:0000946
 xref: FMA:9612
 xref: galen:Metacarpal
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Metacarpals_numbered-en.svg/200px-Metacarpals_numbered-en.svg.png
@@ -33226,6 +33197,7 @@ relationship: part_of UBERON:0002103 ! hindlimb
 [Term]
 id: UBERON:0002389
 name: finger
+alt_id: UBERON:0000028
 alt_id: UBERON:FMA_9666-MA_0000041
 def: "Subdivision of the hand demarcated from the hand proper by the skin crease in line with the distal edge of finger webs. Examples: thumb, right middle finger, left little finger [FMA]. A digit found on the hands of humans and other primates used for manipulation and sensation [Wikipedia]." [Wikipedia:Finger]
 comment: This class was created automatically from a combination of ontologies
@@ -33255,10 +33227,12 @@ synonym: "digitus manus" EXACT []
 synonym: "distal free limb segment of arm digit" EXACT [OBOL:automatic]
 synonym: "distal free limb segment of brachial region digit" EXACT [OBOL:automatic]
 synonym: "distal free limb segment of proximal segment of free upper limb digit" EXACT [OBOL:automatic]
+synonym: "fore digit" EXACT [AAO:0000857, XAO:0003036]
 synonym: "hand digit" EXACT []
 synonym: "proximal segment of free upper limb autopod digit" EXACT [OBOL:automatic]
 synonym: "proximal segment of free upper limb distal free limb segment digit" EXACT [OBOL:automatic]
 synonym: "terminal segment of free upper limb digit" EXACT [OBOL:automatic]
+xref: AAO:0000857
 xref: FMA:9666
 xref: GAID:57
 xref: galen:Finger
@@ -33266,9 +33240,11 @@ xref: MA:0000041
 xref: ncithesaurus:Finger
 xref: NIF_GrossAnatomy:nlx_anat_20090602
 xref: OpenCyc:Mx4rvVi_f5wpEbGdrcN5Y29ycA
-is_a: UBERON:0000028 ! fore digit
+xref: XAO:0003036
+is_a: UBERON:0000028
+is_a: UBERON:0002544 ! implied link automatically realized ! digit
 intersection_of: UBERON:0002544 ! digit
-intersection_of: part_of UBERON:0002398 ! hand
+intersection_of: part_of UBERON:0002102 ! forelimb
 relationship: part_of UBERON:0002398 ! hand
 
 [Term]
@@ -33752,6 +33728,7 @@ xref: ncithesaurus:Clitoris
 xref: OpenCyc:Mx4rvVjr6ZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000475 ! organism subdivision
 is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: develops_from UBERON:0005876 ! genital tubercle
 relationship: part_of UBERON:0000997 ! vulva
 
 [Term]
@@ -35987,8 +35964,8 @@ is_a: UBERON:0002090 ! postcranial axial skeleton
 id: UBERON:0002544
 name: digit
 alt_id: UBERON:MIAA_0000285-XAO_0003035-XAO_0003036
-def: "." [Wikipedia:Digit_(anatomy)]
-comment: todo homology ZFA:0001588-pectoral fin distal radial
+def: "one of several most distal parts of a limb, such as fingers or toes, present in many vertebrates[WP]." [Wikipedia:Digit_(anatomy)]
+comment: todo homology ZFA:0001588-pectoral fin distal radial. Note: This term is a GAT in FMA. Note: we elect to place a strict taxon constraint on this class - this is controversial, and may be weakened later on - see [Wikipedia:Digit_(anatomy)#Evolution].
 subset: uberon_slim
 xref: EFO:0000881
 xref: FMA:85518
@@ -35999,7 +35976,8 @@ xref: MAT:0000285
 xref: MIAA:0000285
 xref: ncithesaurus:Digit
 xref: OpenCyc:Mx4rvzLD_ZwpEbGdrcN5Y29ycA
-is_a: UBERON:0000475 ! organism subdivision
+is_a: UBERON:0005881 ! distal limb segment
+relationship: only_in_taxon NCBITaxon:32523
 
 [Term]
 id: UBERON:0002545
@@ -43452,9 +43430,9 @@ xref: HOG:0000186
 xref: TAO:0000048
 xref: XAO:0000005
 xref: ZFA:0000048
-is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
 is_a: UBERON:0002050 ! embryonic structure
-relationship: part_of UBERON:0000005 ! chemosensory organ
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: develops_from UBERON:0002346 ! neural ectoderm
 
 [Term]
 id: UBERON:0003051
@@ -45960,6 +45938,7 @@ xref: MA:0000304
 xref: ncithesaurus:Phalanx
 xref: OpenCyc:Mx4rvolPZpwpEbGdrcN5Y29ycA
 is_a: UBERON:0002495 ! long bone
+is_a: UBERON:0003606 ! implied link automatically realized ! limb long bone
 intersection_of: UBERON:0002495 ! long bone
 intersection_of: part_of UBERON:0002544 ! digit
 relationship: part_of UBERON:0002544 ! digit
@@ -50624,6 +50603,7 @@ synonym: "bone organ of lower extremity" EXACT [OBOL:automatic]
 synonym: "hind limb bone" EXACT [OBOL:automatic]
 synonym: "hind limb bone organ" EXACT [OBOL:automatic]
 synonym: "hindlimb bone organ" EXACT [OBOL:automatic]
+synonym: "hindlimb skeleton" EXACT [HOG:0001255]
 synonym: "inferior member bone" EXACT [OBOL:automatic]
 synonym: "inferior member bone organ" EXACT [OBOL:automatic]
 synonym: "lower extremity bone" EXACT [OBOL:automatic]
@@ -55071,6 +55051,7 @@ id: UBERON:0003821
 name: metacarpal/metatarsal bone
 synonym: "metacarpal or metatarsal bone" EXACT []
 synonym: "metacarpal/metatarsal" EXACT []
+synonym: "metapodium" EXACT [http://en.wiktionary.org/wiki/metapodial, UBERON:cjm]
 xref: MA:0000301
 is_a: UBERON:0001474 ! bone
 union_of: UBERON:0001448 ! metatarsal bone
@@ -57794,6 +57775,7 @@ is_a: UBERON:0002050 ! embryonic structure
 id: UBERON:0004068
 name: medial nasal prominence
 def: "the central area of the two limbs of a horseshoe-shaped mesenchymal swelling that lie medial to the olfactory placode or pit in the future nasal region of the embryo; it joins with the ipsilateral maxillary prominence in the formation of half of the upper jaw, and the nasal tip and philtrum of the upper lip develop from it" [MP:0009903, Wikipedia:Medial_nasal_prominence]
+xref: EMAPA:16808
 xref: HOG:0000804
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gray45.png/200px-Gray45.png
 is_a: UBERON:0002050 ! embryonic structure
@@ -61301,124 +61283,6 @@ intersection_of: UBERON:0002407 ! pericardium
 intersection_of: part_of UBERON:0004145 ! outflow tract
 
 [Term]
-id: UBERON:0004272
-name: foot phalanx
-def: "A phalanx that is part of a foot [Obol]." [OBOL:automatic]
-synonym: "autopod of hind limb digit long bone" EXACT [OBOL:automatic]
-synonym: "autopod of hind limb long bone of digit" EXACT [OBOL:automatic]
-synonym: "autopod of hind limb phalanx" EXACT [OBOL:automatic]
-synonym: "autopod of hindlimb digit long bone" EXACT [OBOL:automatic]
-synonym: "autopod of hindlimb long bone of digit" EXACT [OBOL:automatic]
-synonym: "autopod of hindlimb phalanx" EXACT [OBOL:automatic]
-synonym: "autopod of inferior member digit long bone" EXACT [OBOL:automatic]
-synonym: "autopod of inferior member long bone of digit" EXACT [OBOL:automatic]
-synonym: "autopod of inferior member phalanx" EXACT [OBOL:automatic]
-synonym: "autopod of lower extremity digit long bone" EXACT [OBOL:automatic]
-synonym: "autopod of lower extremity long bone of digit" EXACT [OBOL:automatic]
-synonym: "autopod of lower extremity phalanx" EXACT [OBOL:automatic]
-synonym: "digit long bone of autopod of hind limb" EXACT [OBOL:automatic]
-synonym: "digit long bone of autopod of hindlimb" EXACT [OBOL:automatic]
-synonym: "digit long bone of autopod of inferior member" EXACT [OBOL:automatic]
-synonym: "digit long bone of autopod of lower extremity" EXACT [OBOL:automatic]
-synonym: "digit long bone of distal free limb segment of hind limb" EXACT [OBOL:automatic]
-synonym: "digit long bone of distal free limb segment of hindlimb" EXACT [OBOL:automatic]
-synonym: "digit long bone of distal free limb segment of inferior member" EXACT [OBOL:automatic]
-synonym: "digit long bone of distal free limb segment of lower extremity" EXACT [OBOL:automatic]
-synonym: "digit long bone of foot" EXACT [OBOL:automatic]
-synonym: "digit long bone of hind limb autopod" EXACT [OBOL:automatic]
-synonym: "digit long bone of hind limb distal free limb segment" EXACT [OBOL:automatic]
-synonym: "digit long bone of hindlimb autopod" EXACT [OBOL:automatic]
-synonym: "digit long bone of hindlimb distal free limb segment" EXACT [OBOL:automatic]
-synonym: "digit long bone of inferior member autopod" EXACT [OBOL:automatic]
-synonym: "digit long bone of inferior member distal free limb segment" EXACT [OBOL:automatic]
-synonym: "digit long bone of lower extremity autopod" EXACT [OBOL:automatic]
-synonym: "digit long bone of lower extremity distal free limb segment" EXACT [OBOL:automatic]
-synonym: "digit long bone of terminal segment of free lower limb" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of hind limb digit long bone" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of hind limb long bone of digit" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of hind limb phalanx" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of hindlimb digit long bone" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of hindlimb long bone of digit" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of hindlimb phalanx" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of inferior member digit long bone" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of inferior member long bone of digit" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of inferior member phalanx" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of lower extremity digit long bone" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of lower extremity long bone of digit" EXACT [OBOL:automatic]
-synonym: "distal free limb segment of lower extremity phalanx" EXACT [OBOL:automatic]
-synonym: "foot digit long bone" EXACT [OBOL:automatic]
-synonym: "foot long bone of digit" EXACT [OBOL:automatic]
-synonym: "hind limb autopod digit long bone" EXACT [OBOL:automatic]
-synonym: "hind limb autopod long bone of digit" EXACT [OBOL:automatic]
-synonym: "hind limb autopod phalanx" EXACT [OBOL:automatic]
-synonym: "hind limb distal free limb segment digit long bone" EXACT [OBOL:automatic]
-synonym: "hind limb distal free limb segment long bone of digit" EXACT [OBOL:automatic]
-synonym: "hind limb distal free limb segment phalanx" EXACT [OBOL:automatic]
-synonym: "hindlimb autopod digit long bone" EXACT [OBOL:automatic]
-synonym: "hindlimb autopod long bone of digit" EXACT [OBOL:automatic]
-synonym: "hindlimb autopod phalanx" EXACT [OBOL:automatic]
-synonym: "hindlimb distal free limb segment digit long bone" EXACT [OBOL:automatic]
-synonym: "hindlimb distal free limb segment long bone of digit" EXACT [OBOL:automatic]
-synonym: "hindlimb distal free limb segment phalanx" EXACT [OBOL:automatic]
-synonym: "inferior member autopod digit long bone" EXACT [OBOL:automatic]
-synonym: "inferior member autopod long bone of digit" EXACT [OBOL:automatic]
-synonym: "inferior member autopod phalanx" EXACT [OBOL:automatic]
-synonym: "inferior member distal free limb segment digit long bone" EXACT [OBOL:automatic]
-synonym: "inferior member distal free limb segment long bone of digit" EXACT [OBOL:automatic]
-synonym: "inferior member distal free limb segment phalanx" EXACT [OBOL:automatic]
-synonym: "long bone of digit of autopod of hind limb" EXACT [OBOL:automatic]
-synonym: "long bone of digit of autopod of hindlimb" EXACT [OBOL:automatic]
-synonym: "long bone of digit of autopod of inferior member" EXACT [OBOL:automatic]
-synonym: "long bone of digit of autopod of lower extremity" EXACT [OBOL:automatic]
-synonym: "long bone of digit of distal free limb segment of hind limb" EXACT [OBOL:automatic]
-synonym: "long bone of digit of distal free limb segment of hindlimb" EXACT [OBOL:automatic]
-synonym: "long bone of digit of distal free limb segment of inferior member" EXACT [OBOL:automatic]
-synonym: "long bone of digit of distal free limb segment of lower extremity" EXACT [OBOL:automatic]
-synonym: "long bone of digit of foot" EXACT [OBOL:automatic]
-synonym: "long bone of digit of hind limb autopod" EXACT [OBOL:automatic]
-synonym: "long bone of digit of hind limb distal free limb segment" EXACT [OBOL:automatic]
-synonym: "long bone of digit of hindlimb autopod" EXACT [OBOL:automatic]
-synonym: "long bone of digit of hindlimb distal free limb segment" EXACT [OBOL:automatic]
-synonym: "long bone of digit of inferior member autopod" EXACT [OBOL:automatic]
-synonym: "long bone of digit of inferior member distal free limb segment" EXACT [OBOL:automatic]
-synonym: "long bone of digit of lower extremity autopod" EXACT [OBOL:automatic]
-synonym: "long bone of digit of lower extremity distal free limb segment" EXACT [OBOL:automatic]
-synonym: "long bone of digit of terminal segment of free lower limb" EXACT [OBOL:automatic]
-synonym: "lower extremity autopod digit long bone" EXACT [OBOL:automatic]
-synonym: "lower extremity autopod long bone of digit" EXACT [OBOL:automatic]
-synonym: "lower extremity autopod phalanx" EXACT [OBOL:automatic]
-synonym: "lower extremity distal free limb segment digit long bone" EXACT [OBOL:automatic]
-synonym: "lower extremity distal free limb segment long bone of digit" EXACT [OBOL:automatic]
-synonym: "lower extremity distal free limb segment phalanx" EXACT [OBOL:automatic]
-synonym: "phalanx of autopod of hind limb" EXACT [OBOL:automatic]
-synonym: "phalanx of autopod of hindlimb" EXACT [OBOL:automatic]
-synonym: "phalanx of autopod of inferior member" EXACT [OBOL:automatic]
-synonym: "phalanx of autopod of lower extremity" EXACT [OBOL:automatic]
-synonym: "phalanx of distal free limb segment of hind limb" EXACT [OBOL:automatic]
-synonym: "phalanx of distal free limb segment of hindlimb" EXACT [OBOL:automatic]
-synonym: "phalanx of distal free limb segment of inferior member" EXACT [OBOL:automatic]
-synonym: "phalanx of distal free limb segment of lower extremity" EXACT [OBOL:automatic]
-synonym: "phalanx of foot" EXACT [OBOL:automatic]
-synonym: "phalanx of hind limb autopod" EXACT [OBOL:automatic]
-synonym: "phalanx of hind limb distal free limb segment" EXACT [OBOL:automatic]
-synonym: "phalanx of hindlimb autopod" EXACT [OBOL:automatic]
-synonym: "phalanx of hindlimb distal free limb segment" EXACT [OBOL:automatic]
-synonym: "phalanx of inferior member autopod" EXACT [OBOL:automatic]
-synonym: "phalanx of inferior member distal free limb segment" EXACT [OBOL:automatic]
-synonym: "phalanx of lower extremity autopod" EXACT [OBOL:automatic]
-synonym: "phalanx of lower extremity distal free limb segment" EXACT [OBOL:automatic]
-synonym: "phalanx of terminal segment of free lower limb" EXACT [OBOL:automatic]
-synonym: "terminal segment of free lower limb digit long bone" EXACT [OBOL:automatic]
-synonym: "terminal segment of free lower limb long bone of digit" EXACT [OBOL:automatic]
-synonym: "terminal segment of free lower limb phalanx" EXACT [OBOL:automatic]
-xref: MA:0000305
-xref: ncithesaurus:Foot_Phalanx
-is_a: UBERON:0003221 ! implied link automatically realized ! phalanx
-is_a: UBERON:0003608 ! implied link automatically realized ! hindlimb long bone
-intersection_of: UBERON:0003221 ! phalanx
-intersection_of: part_of UBERON:0002387 ! foot
-
-[Term]
 id: UBERON:0004273
 name: cartilaginous joint suture
 def: "A cranial suture that is part of a cartilaginous joint [Obol]." [OBOL:automatic]
@@ -62359,6 +62223,7 @@ relationship: secretes PRO:000007499
 [Term]
 id: UBERON:0004357
 name: limb/fin bud
+comment: Genes: In limb buds of chick and mouse, Shh expression is activated as soon as there is a morphological bud, whereas in S. canicula fin buds, consistent with reported data in other cartilaginous fishes, Shh is transcribed late in fin development[PMID:17187056]
 xref: HOG:0001258
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0003102 ! surface structure
@@ -64273,6 +64138,7 @@ def: "An artery that is part of a digit [Obol]." [OBOL:automatic]
 comment: check part_of - do we need term for digit + metacarpal/tarsal bones?
 xref: MA:0001941
 is_a: UBERON:0001637 ! implied link automatically realized ! artery
+is_a: UBERON:0003514 ! implied link automatically realized ! limb blood vessel
 intersection_of: UBERON:0001637 ! artery
 intersection_of: part_of UBERON:0002544 ! digit
 
@@ -66251,6 +66117,7 @@ is_a: UBERON:0000062 ! organ
 id: UBERON:0004766
 name: cranial bone
 def: "A bone that is part of a cranium." [UBERON:automatic]
+synonym: "cranium bone" EXACT [UBERON:automatic]
 is_a: UBERON:0000032 ! implied link automatically realized ! cranial structure
 is_a: UBERON:0003457 ! implied link automatically realized ! head bone
 intersection_of: UBERON:0001474 ! bone
@@ -72013,7 +71880,6 @@ intersection_of: part_of UBERON:0000081 ! metanephros
 [Term]
 id: UBERON:0005250
 name: stomatodeum gland
-def: "A gland that is part of a stomodeum [Obol]." [OBOL:automatic]
 xref: HOG:0000658
 is_a: UBERON:0003408 ! implied link automatically realized ! gland of gut
 intersection_of: UBERON:0002530 ! gland
@@ -72244,6 +72110,7 @@ name: dorsal skin of digit
 synonym: "dorsal digit skin" EXACT []
 synonym: "skin of dorsal part of digit" EXACT []
 is_a: UBERON:0000014 ! zone of skin
+is_a: UBERON:0001419 ! implied link automatically realized ! skin of limb
 relationship: part_of UBERON:0002544 ! digit
 
 [Term]
@@ -74433,7 +74300,7 @@ xref: FMA:24228
 is_a: UBERON:0000475 ! organism subdivision
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 relationship: part_of UBERON:0002090 ! postcranial axial skeleton
-relationship: regional_part_of UBERON:0002355 ! pelvis
+relationship: part_of UBERON:0002355 ! pelvis
 
 [Term]
 id: UBERON:0005474
@@ -76871,6 +76738,160 @@ is_a: UBERON:0002318 ! white matter of spinal cord
 relationship: part_of UBERON:0002792 ! lumbar spinal cord
 relationship: part_of UBERON:0005375 ! spinal cord ventral column
 
+[Term]
+id: UBERON:0005856
+name: mesenchymal condensation
+synonym: "mesenchyme condensation" EXACT [EMAPA:25351]
+xref: EHDAA2:0003148
+xref: EMAPA:25351
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0005863
+name: cartilagenous condensation
+synonym: "cartilage condensation" EXACT [EMAPA:25353]
+xref: EHDAA2:0003147
+xref: EMAPA:25353
+is_a: UBERON:0005856 ! mesenchymal condensation
+
+[Term]
+id: UBERON:0005865
+name: pre-muscle condensation
+xref: EHDAA2:0003149
+is_a: UBERON:0005856 ! mesenchymal condensation
+
+[Term]
+id: UBERON:0005866
+name: pre-cartilage condensation
+xref: EHDAA2:0003150
+is_a: UBERON:0005856 ! mesenchymal condensation
+
+[Term]
+id: UBERON:0005867
+name: mandibular prominence
+def: "The mandibular prominence is an embryological structure which gives rise to the lower portion of the face. The mandible and lower lip derive from it. It is innervated by the mandibular nerve." [Wikipedia:Mandibular_prominence]
+synonym: "mandibular process" RELATED [Wikipedia:Mandibular_prominence]
+xref: EHDAA:5871
+xref: EHDAA2:0001061
+xref: EMAPA:17355
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0004362 ! mandibular arch
+relationship: part_of UBERON:0000166 ! oral opening
+
+[Term]
+id: UBERON:0005868
+name: maxillary prominence
+def: "Continuous with the dorsal end of the mandibular arch, and growing forward from its cephalic border, is a triangular process, the maxillary process (or maxillary prominence), the ventral extremity of which is separated from the mandibular arch by a '>' shaped notch. The maxillary process forms the lateral wall and floor of the orbit, and in it are ossified the zygomatic bone and the greater part of the maxilla; it meets with the lateral nasal process, from which, however, it is separated for a time by a groove, the naso-optic furrow, that extends from the furrow encircling the eyeball to the olfactory pit. The maxillary processes ultimately fuse with the lateral nasal and globular processes, and form the lateral parts of the upper lip and the posterior boundaries of the nares. It is innervated by the maxillary nerve." [Wikipedia:Maxillary_prominence]
+synonym: "maxillary process" EXACT [EHDAA2:0001070]
+xref: EHDAA:5877
+xref: EHDAA2:0001070
+xref: EMAPA:17359
+is_a: UBERON:0002050 ! embryonic structure
+disjoint_from: UBERON:0005869 ! maxillary process of inferior nasal concha
+relationship: develops_from UBERON:0004362 ! mandibular arch
+relationship: part_of UBERON:0000166 ! oral opening
+
+[Term]
+id: UBERON:0005869
+name: maxillary process of inferior nasal concha
+def: "From the lower border of the inferior nasal concha, a thin lamina, the maxillary process, curves downward and lateralward; it articulates with the maxilla and forms a part of the medial wall of the maxillary sinus." [Wikipedia:Maxillary_process_of_inferior_nasal_concha]
+synonym: "maxillary process of inferior concha" EXACT [FMA:54741]
+synonym: "maxillary process of inferior nasal turbinate" EXACT [FMA:54741]
+synonym: "maxillary process of inferior turbinate" EXACT [FMA:54741]
+synonym: "processus maxillaris (concha nasalis inferior)" EXACT [FMA:54741]
+xref: FMA:54741
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004529 ! anatomical projection
+relationship: part_of UBERON:0001762 ! nasal concha
+
+[Term]
+id: UBERON:0005870
+name: olfactory pit
+def: "By the upgrowth of the surrounding parts the olfactory areas are converted into pits, the olfactory pits, which indent the fronto-nasal process and divide it into a medial and two lateral nasal processes[WP]. an indentation of the olfactory placode which ends when the pits hollows out to form the nasopharynx" [GO:0060166, Wikipedia:Olfactory_pit]
+comment: we represent the relationship as develops from, though in fact the pit is formed as an indentation in the placode
+xref: EHDAA:4772
+xref: EHDAA2:0001295
+xref: EMAPA:16800
+is_a: UBERON:0000073 ! implied link automatically realized ! regional part of nervous system
+is_a: UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003050 ! olfactory placode
+relationship: part_of UBERON:0002109 ! pair of nares
+
+[Term]
+id: UBERON:0005871
+name: palatine process of maxilla
+def: "The palatine process of the maxilla (palatal process), thick and strong, is horizontal and projects medialward from the nasal surface of the bone. It forms a considerable part of the floor of the nose and the roof of the mouth and is much thicker in front than behind. Its inferior surface is concave, rough and uneven, and forms, with the palatine process of the opposite bone, the anterior three-fourths of the hard palate. It is perforated by numerous foramina for the passage of the nutrient vessels; is channelled at the back part of its lateral border by a groove, sometimes a canal, for the transmission of the descending palatine vessels and the anterior palatine nerve from the spheno-palatine ganglion; and presents little depressions for the lodgement of the palatine glands. When the two maxillae are articulated, a funnel-shaped opening, the incisive foramen, is seen in the middle line, immediately behind the incisor teeth. In this opening the orifices of two lateral canals are visible; they are named the incisive canals or foramina of Stenson; through each of them passes the terminal branch of the descending palatine artery and the nasopalatine nerve. Occasionally two additional canals are present in the middle line; they are termed the foramina of Scarpa, and when present transmit the nasopalatine nerves, the left passing through the anterior, and the right through the posterior canal. On the under surface of the palatine process, a delicate linear suture, well seen in young skulls, may sometimes be noticed extending lateralward and forward on either side from the incisive foramen to the interval between the lateral incisor and the canine tooth. The small part in front of this suture constitutes the premaxilla (os incisivum), which in most vertebrates forms an independent bone; it includes the whole thickness of the alveolus, the corresponding part of the floor of the nose and the anterior nasal spine, and contains the sockets of the incisor teeth. The upper surface of the palatine process is concave from side to side, smooth, and forms the greater part of the floor of the nasal cavity. It presents, close to its medial margin, the upper orifice of the incisive canal. The lateral border of the process is incorporated with the rest of the bone. The medial border is thicker in front than behind, and is raised above into a ridge, the nasal crest, which, with the corresponding ridge of the opposite bone, forms a groove for the reception of the vomer. The front part of this ridge rises to a considerable height, and is named the incisor crest; it is prolonged forward into a sharp process, which forms, together with a similar process of the opposite bone, the anterior nasal spine. The posterior border is serrated for articulation with the horizontal part of the palatine bone." [Wikipedia:Palatine_process_of_maxilla]
+synonym: "palatal process" EXACT [Wikipedia:Palatine_process_of_maxilla]
+synonym: "palatine process" EXACT [Wikipedia:Palatine_process_of_maxilla]
+synonym: "processus palatinus (maxilla)" EXACT [FMA:52896]
+xref: FMA:52896
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004529 ! anatomical projection
+relationship: part_of UBERON:0002397 ! maxilla
+
+[Term]
+id: UBERON:0005872
+name: 1st arch branchial groove
+xref: EHDAA2:0000008
+is_a: UBERON:0005879 ! branchial groove
+relationship: part_of UBERON:0004362 ! mandibular arch
+
+[Term]
+id: UBERON:0005873
+name: 2nd arch branchial groove
+xref: EHDAA2:0000054
+is_a: UBERON:0005879 ! branchial groove
+relationship: part_of UBERON:0003066 ! hyoid arch
+
+[Term]
+id: UBERON:0005874
+name: 3rd arch branchial groove
+xref: EHDAA2:0000071
+is_a: UBERON:0005879 ! branchial groove
+relationship: part_of UBERON:0003114 ! pharyngeal arch 3
+
+[Term]
+id: UBERON:0005875
+name: 4th arch branchial groove
+xref: EHDAA2:0000088
+is_a: UBERON:0005879 ! branchial groove
+relationship: part_of UBERON:0003115 ! pharyngeal arch 4
+
+[Term]
+id: UBERON:0005876
+name: genital tubercle
+def: "A genital tubercle is a body of tissue present in the development of the urinary and reproductive organs. It forms in the ventral, caudal region of mammalian embryos of both sexes, and eventually develops into a phallus. In the human fetus the genital tubercle develops around week 4 of gestation, and by week 9 becomes recognizably either a clitoris or penis. This should not be confused with the sinus tubercle which is a proliferation of endoderm induced by paramesonephic ducts. Even after the phallus is developed, the term genital tubercle remains, but only as the terminal end of it[2], which develops into either the glans penis or the glans clitoridis. The genital tubercle is sensitive to dihydrotestosterone and rich in 5-alpha-reductase, so that the amount of fetal testosterone present after the second month is a major determinant of phallus size at birth.[WP]." [Wikipedia:Genital_tubercle]
+xref: EHDAA2:0000705
+xref: EMAPA:17382
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005156 ! implied link automatically realized ! reproductive structure
+relationship: develops_from UBERON:0004874 ! somatopleure
+relationship: part_of UBERON:0000990 ! reproductive system
+
+[Term]
+id: UBERON:0005879
+name: branchial groove
+def: "the counterpart of the branchial pouch on the ectodermal side. The first pharyngeal groove produces the external auditory meatus.[2] The rest (2, 3, and 4) are overlapped by the growing 2nd pharyngeal arch, and form the floor of the depression termed the cervical sinus, which opens ventrally, and finally obliterated[WP]." [Wikipedia:Pharyngeal_groove]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: adjacent_to UBERON:0002539 ! pharyngeal arch
+
+[Term]
+id: UBERON:0005880
+name: prepollex
+def: "a rudimentary additional digit on the preaxial side of the thumb of certain amphibians and mammals[dictionary.com]. A prepollex does not contain phalanges nor does it articulate with a metacarpal. It articulates with elements of the carpal (wrist) skeleton[AAO:DB]. Two or more elements located ventral and medial to the metacarpal of digit II(I). The proximal prepollex is small and round whereas distal prepollex 1 is usually large and wedge-shaped. When more elements are present, they are smaller than previous elements." [AAO:0000852, AAO:Fabrezi_and_Alberch_1996, AAO:Maglia_et_al_2007]
+comment: not homologous to digit 1 of tetrapods. TODO: add articulation relations
+synonym: "cartilago pre-pollicis" RELATED [AAO:0000852]
+synonym: "pseudothumb" RELATED [doi:10.1098/rsbl.2009.1038]
+xref: AAO:0000852
+is_a: UBERON:0005881 ! distal limb segment
+
+[Term]
+id: UBERON:0005881
+name: distal limb segment
+synonym: "limb outgrowth" RELATED []
+is_a: UBERON:0002529 ! limb segment
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -76886,7 +76907,7 @@ creation_date: 2009-07-31T02:15:46Z
 [Typedef]
 id: attached_to
 name: attached_to
-xref: :attaches_to
+xref: FMA:85882
 
 [Typedef]
 id: bearer_of
@@ -76938,6 +76959,7 @@ name: connects
 [Typedef]
 id: continuous_with
 name: continuous_with
+xref: FMA:85972
 
 [Typedef]
 id: develops_from
