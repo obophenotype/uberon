@@ -302,51 +302,6 @@ xref: BTO:0001832 ! sympathetic nervous system
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Gray838.png/200px-Gray838.png
 
 [Term]
-id: UBERON:0002097
-name: skin of body
-alt_id: UBERON:FMA_7163-MA_0000151-MIAA_0000284-XAO_0000023
-def: "Nonparenchymatous organ that consists of the dermis and epidermis. Subdivisions of the skin surround various body parts; as a whole, the skin constitutes the external layer of the body. Examples: There is only one skin. // Surface structure that consists of the external membranous integument of the animal." [OMD:skin, Wikipedia:Skin]
-comment: Note that FMA uses skin for the entire organ. XAO seems consistent. MA seems to use it analagously to zone of skin
-subset: uberon_slim
-synonym: "entire skin" EXACT []
-synonym: "skin" RELATED []
-synonym: "integument" RELATED []
-xref: galen:Skin ! skin
-xref: BTO:0001253
-xref: FMA:7163 ! Skin
-xref: OpenCyc:Mx4rvVjX3ZwpEbGdrcN5Y29ycA
-xref: XAO:0000023 ! skin
-is_a: UBERON:0003102 ! surface structure
-relationship: part_of UBERON:0002199 ! integument
-xref: ncithesaurus:Skin ! Skin
-xref: EFO:0000962 ! skin
-xref: EHDAA2:0001844 ! skin
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Skin.svg/200px-Skin.svg.png
-
-[Term]
-id: UBERON:0000014
-name: zone of skin
-def: "A sub-region of the skin. Note the distinct between the entire skin of the body, of which there is only 1 in an organism, and zones of skin, of which there can be many. Examples: skin of knee" [GOC:cjm, Wikipedia:Skin]
-comment: we assume that mouse, HOG and GAID all mean zone of skin when they say skin. We also choose skin as an exact synonym, as it is more intuitive
-synonym: "skin" EXACT [MA:0000151]
-synonym: "portion of skin" EXACT []
-synonym: "skin zone" EXACT []
-synonym: "skin region" EXACT []
-synonym: "region of skin" EXACT []
-is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002097 ! skin of body
-xref: FMA:86166 ! Zone of skin
-xref: EHDAA:6530 ! skin
-xref: MA:0000151 ! skin
-xref: GAID:933 ! skin
-xref: HOG:0000860 ! skin
-xref: MAT:0000284 ! skin
-xref: MIAA:0000284 ! skin
-xref: OpenCyc:Mx4rvVjX3ZwpEbGdrcN5Y29ycA ! skin
-xref: EHDAA2:0001844 ! skin
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Skin.svg/200px-Skin.svg.png
-
-[Term]
 id: UBERON:0000015
 name: anatomical boundary
 def: "Non-material anatomical entity of one dimension, which forms a boundary of an anatomical surface or is a modulation of an anatomical surface." [CARO:MAH]
@@ -27320,6 +27275,7 @@ name: hyaline cartilage
 alt_id: UBERON:FMA_64783-MA_0000109
 def: "Cartilage (tissue) which consists of chondrocytes and collagen, the intercellular matrix of which is an amorphous gel with a perichondrium." [Wikipedia:Hyaline_cartilage]
 comment: This class was created automatically from a combination of ontologies
+synonym: "hyaline cartilage tissue" EXACT []
 subset: uberon_slim
 xref: FMA:64783 ! Hyaline cartilage
 xref: MA:0000109 ! hyaline cartilage
@@ -31316,11 +31272,56 @@ xref: EHDAA2:0001271 ! neurohypophysis
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Pituitary_gland_representation.PNG/200px-Pituitary_gland_representation.PNG
 
 [Term]
+id: UBERON:0000014
+name: zone of skin
+def: "A sub-region of the skin. Note the distinct between the entire skin of the body, of which there is only 1 in an organism, and zones of skin, of which there can be many. Examples: skin of knee" [GOC:cjm, Wikipedia:Skin]
+comment: we assume that mouse, HOG and GAID all mean zone of skin when they say skin. We also choose skin as an exact synonym, as it is more intuitive
+synonym: "skin" EXACT [MA:0000151]
+synonym: "portion of skin" EXACT []
+synonym: "skin zone" EXACT []
+synonym: "skin region" EXACT []
+synonym: "region of skin" EXACT []
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0002097 ! skin of body
+xref: FMA:86166 ! Zone of skin
+xref: EHDAA:6530 ! skin
+xref: MA:0000151 ! skin
+xref: GAID:933 ! skin
+xref: HOG:0000860 ! skin
+xref: MAT:0000284 ! skin
+xref: MIAA:0000284 ! skin
+xref: OpenCyc:Mx4rvVjX3ZwpEbGdrcN5Y29ycA ! skin
+xref: EHDAA2:0001844 ! skin
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Skin.svg/200px-Skin.svg.png
+
+[Term]
+id: UBERON:0002097
+name: skin of body
+alt_id: UBERON:FMA_7163-MA_0000151-MIAA_0000284-XAO_0000023
+def: "Nonparenchymatous organ that consists of the dermis and epidermis. Subdivisions of the skin surround various body parts; as a whole, the skin constitutes the external layer of the body. Examples: There is only one skin. // Surface structure that consists of the external membranous integument of the animal." [OMD:skin, Wikipedia:Skin]
+comment: Note that FMA uses 'skin' for the entire organ. XAO seems consistent. MA seems to use it analagously to zone of skin
+subset: uberon_slim
+synonym: "entire skin" EXACT []
+synonym: "skin" RELATED []
+synonym: "integument" RELATED []
+xref: galen:Skin ! skin
+xref: BTO:0001253
+xref: FMA:7163 ! Skin
+xref: OpenCyc:Mx4rvVjX3ZwpEbGdrcN5Y29ycA
+xref: XAO:0000023 ! skin
+is_a: UBERON:0003102 ! surface structure
+relationship: part_of UBERON:0002199 ! integument
+xref: ncithesaurus:Skin ! Skin
+xref: EFO:0000962 ! skin
+xref: EHDAA2:0001844 ! skin
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Skin.svg/200px-Skin.svg.png
+
+[Term]
 id: UBERON:0002199
 name: integument
 alt_id: UBERON:FMA_74657-ZFA_0000368
 def: "The outer protective barrier that separates the animal from its environment[ZFA]." [Wikipedia:Integument, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+comment: in FMA intergument = skin+superficial fascia(hypodermis)
 subset: uberon_slim
 synonym: "skin" RELATED []
 xref: AAO:0000239 ! integument
@@ -31333,6 +31334,41 @@ xref: ZFA:0000368 ! integument
 is_a: UBERON:0003102 ! surface structure
 relationship: part_of UBERON:0002416 ! integumental system
 xref: EHDAA2:0001844 ! skin
+
+[Term]
+id: UBERON:0002416
+name: integumental system
+alt_id: UBERON:MA_0000014-FMA_72979
+def: "organ system that protects the body from damage, comprising the skin and its appendages (including hair, scales, and nails). The integumentary system has a variety of functions; it may serve to waterproof, cushion and protect the deeper tissues, excrete wastes, regulate temperature and is the location of receptors for pain, sensation, pressure and temperature. In humans the integumentary system additionally provides vitamin D synthesis[WP]." [Wikipedia:Integumentary_system]
+comment: in FMA, integumentary system = integument + certain glands
+xref: EFO:0000807 ! integumental system
+xref: EHDAA:6520 ! integumental system
+xref: FMA:72979 ! Integumentary system
+xref: HOG:0000403 ! integumental system
+xref: MA:0000014 ! integumental system
+xref: MAT:0000033 ! integumental system
+xref: EMAPA:17524 ! integumental system
+xref: XAO:0000176 ! dermal system
+synonym: "integumentary system" EXACT [FMA:72979]
+is_a: UBERON:0000467 ! anatomical system
+disjoint_from: UBERON:0000949 ! endocrine system
+disjoint_from: UBERON:0000990 ! reproductive system
+disjoint_from: UBERON:0001004 ! respiratory system
+disjoint_from: UBERON:0001007 ! digestive system
+disjoint_from: UBERON:0001008 ! urinary system
+disjoint_from: UBERON:0001009 ! circulatory system
+disjoint_from: UBERON:0001016 ! nervous system
+disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:0001033 ! gustatory system
+disjoint_from: UBERON:0001434 ! skeletal system
+disjoint_from: UBERON:0002204 ! musculoskeletal system
+disjoint_from: UBERON:0002294 ! biliary system
+disjoint_from: UBERON:0002330 ! exocrine system
+disjoint_from: UBERON:0002390 ! hematopoietic system
+disjoint_from: UBERON:0002405 ! immune system
+disjoint_from: UBERON:0002423 ! hepatobiliary system
+relationship: develops_from UBERON:0000926 ! mesoderm
+xref: EHDAA2:0000836 ! integumental system
 
 [Term]
 id: UBERON:0002200
@@ -35931,40 +35967,6 @@ is_a: UBERON:0000475 ! organism subdivision
 xref: EFO:0000963 ! tail
 xref: EHDAA2:0003109 ! tail
 xref: AEO:0000109 ! tail
-
-[Term]
-id: UBERON:0002416
-name: integumental system
-alt_id: UBERON:MA_0000014-FMA_72979
-def: "organ system that protects the body from damage, comprising the skin and its appendages (including hair, scales, and nails). The integumentary system has a variety of functions; it may serve to waterproof, cushion and protect the deeper tissues, excrete wastes, regulate temperature and is the location of receptors for pain, sensation, pressure and temperature. In humans the integumentary system additionally provides vitamin D synthesis[WP]." [Wikipedia:Integumentary_system]
-xref: EFO:0000807 ! integumental system
-xref: EHDAA:6520 ! integumental system
-xref: FMA:72979 ! Integumentary system
-xref: HOG:0000403 ! integumental system
-xref: MA:0000014 ! integumental system
-xref: MAT:0000033 ! integumental system
-xref: EMAPA:17524 ! integumental system
-xref: XAO:0000176 ! dermal system
-synonym: "integumentary system" EXACT [FMA:72979]
-is_a: UBERON:0000467 ! anatomical system
-disjoint_from: UBERON:0000949 ! endocrine system
-disjoint_from: UBERON:0000990 ! reproductive system
-disjoint_from: UBERON:0001004 ! respiratory system
-disjoint_from: UBERON:0001007 ! digestive system
-disjoint_from: UBERON:0001008 ! urinary system
-disjoint_from: UBERON:0001009 ! circulatory system
-disjoint_from: UBERON:0001016 ! nervous system
-disjoint_from: UBERON:0004456 ! entire sense organ system
-disjoint_from: UBERON:0001033 ! gustatory system
-disjoint_from: UBERON:0001434 ! skeletal system
-disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002294 ! biliary system
-disjoint_from: UBERON:0002330 ! exocrine system
-disjoint_from: UBERON:0002390 ! hematopoietic system
-disjoint_from: UBERON:0002405 ! immune system
-disjoint_from: UBERON:0002423 ! hepatobiliary system
-relationship: develops_from UBERON:0000926 ! mesoderm
-xref: EHDAA2:0000836 ! integumental system
 
 [Term]
 id: UBERON:0002417
