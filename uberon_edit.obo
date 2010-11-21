@@ -138,6 +138,7 @@ xref: ZFA:0001149 ! olfactory system
 xref: EFO:0001973 ! olfactory system
 xref: OpenCyc:Mx4rvViw75wpEbGdrcN5Y29ycA ! olfactory system
 xref: NIF_GrossAnatomy:nlx_anat_090806 ! Olfactory system
+xref: XAO:0003196 ! olfactory system
 intersection_of: UBERON:0001032 ! sensory system
 intersection_of: capable_of GO:0007608 ! sensory perception of smell
 
@@ -566,6 +567,8 @@ xref: ncithesaurus:Appendage ! Appendage
 xref: OpenCyc:Mx4rvViC-JwpEbGdrcN5Y29ycA ! appendage
 xref: EHDAA2:0003193 ! appendage
 xref: AEO:0000193 ! appendage
+xref: MIAA:0000023 ! appendage
+xref: FBbt:00007000 ! appendage
 
 [Term]
 id: UBERON:0000027
@@ -2217,7 +2220,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Gray408.png/200px
 [Term]
 id: UBERON:0000159
 name: anal canal
-def: "Organ with organ cavity which is continuous proximally with the rectum and distally terminates with the anus. Examples: There is only one anal canal. // A chain of very large cuboidal cells forming a wide central lumen in which food arrives from the posterior pharynx, is digested, and from which waste products proceed to the rectum. Intestinal rings form in groups of two and four cells surrounding the common lumen; thus the epithelium is only one cell deep at any point, with neighboring cells firmly secured to their neighbors by apical adherens junctions. These cells have very large nuclei and many large vacuoles, yolk granules, and other inclusions; the latter increase in number and electron density as the animal ages. // a feature of the male tail, caudal to the proctodeum, where the vas deferens and the intestine open out jointly near the tail tip to discharge their contents." [WA:dh, Wikipedia:Anal_canal]
+def: "The terminal part of the large intestine, continuous proximally with the rectum and distally terminates with the anus." [Wikipedia:Anal_canal]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "adult alimentary canal" RELATED []
@@ -3033,6 +3036,15 @@ xref: ncithesaurus:Embryo ! Embryo
 xref: EFO:0001367 ! embryo
 xref: OpenCyc:Mx4rwP1ceZwpEbGdrcN5Y29ycA ! embryo
 xref: EHDAA2:0000002 ! embryo
+xref: ZFA:0000103 ! embryo
+
+[Term]
+id: UBERON:0005889
+name: zygote cortex
+is_a: UBERON:0000470 ! cell part
+relationship: part_of  CL:0000365 ! zygote
+xref: XAO:0000216 ! cortex
+synonym: "cortex" RELATED [XAO:0000216]
 
 [Term]
 id: UBERON:0000325
@@ -4327,12 +4339,16 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Double_cowlick.jp
 
 [Term]
 id: UBERON:0000407
-name: sympathetic chain
+name: sympathetic trunk
+def: "One of a a paired bundle of nerve fibers that run from the base of the skull to the coccyx." [Wikipedia:Sympathetic_trunk]
 alt_id: UBERON:BTO_0001834-FMA_6258
+synonym: "sympathetic chain" EXACT [FMA:6258]
+synonym: "gangliated cord" EXACT [Wikipedia:Sympathetic_trunk]
+synonym: "sympathetic ganglionic chain" EXACT [Wikipedia:Sympathetic_trunk]
 xref: BTO:0001834
 xref: FMA:6258 ! Sympathetic trunk
 is_a: UBERON:0000062 ! organ
-relationship: systemic_part_of UBERON:0000013 ! sympathetic nervous system
+relationship: part_of UBERON:0000013 ! sympathetic nervous system
 
 [Term]
 id: UBERON:0000408
@@ -6199,6 +6215,7 @@ xref: HOG:0000264 ! dorsal aorta
 xref: MA:0000476 ! dorsal aorta
 xref: EHDAA:402 ! dorsal aorta
 xref: EHDAA2:0000410 ! dorsal aorta
+xref: XAO:0000051 ! dorsal aorta
 
 [Term]
 id: UBERON:0003085
@@ -6785,28 +6802,42 @@ xref: BTO:0001791 ! pleura
 xref: EFO:0001980 ! pleura
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Gray965.png/200px-Gray965.png
 
+Term]
+id: UBERON:0005894 ! locomotive weight-bearing appendage
+name: locomotive weight-bearing appendage
+def: "A leg is a limb on which an animal walks and stands (GO:0035110)." [GO:0035110, Wikipedia:Leg]
+synonym: "leg" RELATED []
+comment: Functional grouping, currently encompasses vertebrate and insect legs
+subset: functional_classification
+
+[Term]
+id: UBERON:0005895 ! insect leg
+name: insect leg
+def: "The walking appendages of each segment of the ventral adult external thorax." [FBbt:00004640]
+is_a: UBERON:0005894 ! locomotive weight-bearing appendage
+xref: FBbt:00004640 ! leg
+xref: MAT:0000095 ! limb sensu invertebrata
+xref: MIAA:0000095 ! limb sensu invertebrata
+
 [Term]
 id: UBERON:0000978 ! leg
 name: leg
+def: "The portion of the hindlimb that consists of the stylopod and zeugopod." [Wikipedia:Leg#Limb]
 alt_id: UBERON:FBbt_00004640-FMA_24979-MA_0000047-MIAA_0000095
-def: "A leg is a limb on which an animal walks and stands (GO:0035110)." [GO:0035110, Wikipedia:Leg]
-comment: Functional grouping, currently encompasses vertebrate and insect legs
+comment: In tetrapod anatomy, leg is used to refer to the entire limb. In human medicine its precise definition refers[2][3][4] only to the segment between the knee and the ankle[Wikipedia:Leg#Limb]. Here we opt for the second usage, as excluding the autopods - this is consistent with existing AOs, consistent with 'arm', and leaves 'limb' open to mean the mereological sum of stylopod, zeugopod and autopod
 subset: uberon_slim
-subset: functional_classification
-synonym: "Intermediate segment of free lower limb" NARROW []
+synonym: "intermediate segment of free lower limb" EXACT [FMA:24979]
+synonym: "tetrapod leg" EXACT []
 xref: BTO:0000721
 xref: EHDAA:5151 ! leg
 xref: EHDAA:6176 ! leg
 xref: EHDAA:8289 ! leg
-xref: FBbt:00004640 ! leg
 xref: FMA:24979 ! Leg
 xref: GAID:49 ! leg
 xref: galen:Leg
 xref: HAO:0000494 ! leg
 xref: HOG:0000345 ! leg
 xref: MA:0000047 ! leg
-xref: MAT:0000095 ! limb sensu invertebrata
-xref: MIAA:0000095 ! limb sensu invertebrata
 xref: OpenCyc:Mx4rvViYzZwpEbGdrcN5Y29ycA
 is_a: UBERON:0002101 ! limb
 xref: ncithesaurus:Leg ! Leg
@@ -7786,7 +7817,6 @@ def: "organ system that passes nutrients (such as amino acids and electrolytes),
 comment: the cardiovascular system and the lymphatic system are parts of the circulatory system
 subset: uberon_slim
 xref: FBbt:00005057 ! circulatory system
-xref: XAO:0001010 ! circulatory system
 xref: OpenCyc:Mx4rvVjzG5wpEbGdrcN5Y29ycA ! circulatory system
 is_a: UBERON:0000467 ! anatomical system
 relationship: has_part UBERON:0000948 ! heart
@@ -7829,6 +7859,7 @@ xref: OpenCyc:Mx4rvVjzG5wpEbGdrcN5Y29ycA
 xref: TAO:0000010 ! cardiovascular system
 xref: XAO:0000100 ! cardiovascular system
 xref: ZFA:0000010 ! cardiovascular system
+xref: XAO:0001010 ! circulatory system
 xref: ncithesaurus:Cardiovascular_System ! Cardiovascular System
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001009 ! circulatory system
@@ -7859,6 +7890,7 @@ xref: MAT:0000197 ! lymphatic system
 xref: MIAA:0000197 ! lymphatic system
 xref: TAO:0000385 ! lymphatic system
 xref: ZFA:0000385 ! lymphatic system
+xref: XAO:0003199 ! lymphatic system
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0002405 ! immune system
 relationship: part_of UBERON:0002193 ! hemolymphoid system
@@ -8352,6 +8384,7 @@ xref: MIAA:0000031 ! sensory system
 xref: TAO:0000282 ! sensory system
 xref: ZFA:0000282 ! sensory system
 xref: FBbt:00005827 ! embryonic sensory system
+xref: XAO:0003194 ! sensory system
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0004456 ! entire sense organ system
 relationship: overlaps UBERON:0001016 ! nervous system
@@ -8375,6 +8408,7 @@ xref: MAT:0000275 ! taste system
 xref: MIAA:0000275 ! taste system
 xref: TAO:0001101 ! gustatory system
 xref: ZFA:0001101 ! gustatory system
+xxref: XAO:0003197 ! gustatory system
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
@@ -8533,6 +8567,7 @@ xref: OpenCyc:Mx4rvViv7ZwpEbGdrcN5Y29ycA
 xref: TAO:0000056 ! pharynx
 xref: WBbt:0003681 ! pharynx
 xref: ZFA:0000056 ! pharynx
+xref: XAO:0003227 ! pharynx
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: continuous_with UBERON:0001043 ! esophagus
 relationship: part_of UBERON:0001004 ! respiratory system
@@ -8789,6 +8824,7 @@ xref: HOG:0000139 ! proctodeum
 xref: XAO:0001019 ! proctodeum
 is_a: UBERON:0003102 ! surface structure
 is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0001353 ! anal region
 relationship: develops_from UBERON:0000924 ! ectoderm
 xref: ncithesaurus:Proctodeum ! Proctodeum
 xref: ZFA:0000066 ! proctodeum
@@ -8848,10 +8884,11 @@ xref: MAT:0000069 ! neural tube
 xref: MIAA:0000069 ! neural tube
 xref: TAO:0001135 ! neural tube
 xref: ZFA:0001135 ! neural tube
+xref: XAO:0003204 ! neural tube
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0002050 ! embryonic structure
-relationship: develops_from UBERON:0000483 ! epithelium
 relationship: develops_from UBERON:0002346 ! neural ectoderm
+relationship: develops_into UBERON:0001017 ! central nervous system
 xref: ncithesaurus:Neural_Tube ! Neural Tube
 xref: EHDAA2:0001255 ! neural tube
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gray19_with_color.png/200px-Gray19_with_color.png
@@ -14921,6 +14958,15 @@ relationship: part_of UBERON:0002095 ! mesentery
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gray1111.png/200px-Gray1111.png
 
 [Term]
+id: UBERON:0005891 ! coelomic epithelium
+name: coelomic epithelium
+def: "The epithelial lining of the coelom." [XAO:0000329, Wikipedia:Coelomic_epithelium]
+is_a: UBERON:0000483 ! epithelium
+relationship: develops_from UBERON:0004871 ! somatic layer of lateral plate mesoderm
+relationship: develops_from UBERON:0004872 ! splanchnic layer of lateral plate mesoderm
+xref: XAO:0000329 ! coelomic epithelium
+
+[Term]
 id: UBERON:0001343
 name: seminiferous tubule of testis
 alt_id: UBERON:FMA_19825-XAO_0003088
@@ -14949,6 +14995,7 @@ xref: MA:0001748 ! seminiferous tubule epithelium
 xref: FMA:19885 ! Epithelium of seminiferous tubule of testis
 xref: BTO:0001811 ! seminiferous epithelium
 xref: GAID:401 ! seminiferous epithelium
+xref: HOG:0000631 ! testis germinal epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001343 ! part_of seminiferous tubule of testis
 relationship: has_part CL:0000020 ! spermatogonium
@@ -14962,16 +15009,18 @@ synonym: "seminiferous epithelium" EXACT [BTO:0001811]
 synonym: "male germinal epithelium" EXACT [Wikipedia:Germinal_epithelium_(male)]
 synonym: "germinal epithelium (male)" EXACT [Wikipedia:Germinal_epithelium_(male)]
 synonym: "wall of seminiferous tubule" EXACT [Wikipedia:Germinal_epithelium_(male)]
+synonym: "testis germinal epithelium" EXACT [HOG:0000631]
 
 [Term]
 id: UBERON:0001304
 name: germinal epithelium of ovary
-def: "layer of simple cuboidal cells covering surface of ovary[WP]." [Wikipedia:Germinal_epithelium_(female)]
+def: "layer of simple cuboidal cells covering surface of ovary[WP]." [Wikipedia:Germinal_epithelium_(female),  PMID:16923182, http://en.wikipedia.org/wiki/Talk:Germinal_epithelium_%28female%29]
 alt_id: UBERON:FMA_18629-MA_0001711
+comment: Controversial - see article. Requires expert input
 synonym: "epithelium superficiale (ovarium)" EXACT []
 synonym: "ovary germinal epithelium" EXACT []
 synonym: "germinal epithelium (female)" EXACT [Wikipedia:Germinal_epithelium_(female)]
-synonym: "coelomic epithelium" EXACT [EMAPA:17384]
+synonym: "female coelomic epithelium" RELATED [EMAPA:17384]
 xref: FMA:18629 ! Germinal epithelium of ovary
 xref: HOG:0000630 ! ovary germinal epithelium
 xref: MA:0001711 ! ovary germinal epithelium
@@ -14981,6 +15030,19 @@ xref: EMAPA:27564 ! coelomic epithelium [SYNONYM: "germinal epithelium" ()]
 intersection_of: UBERON:0000484 ! simple cuboidal epithelium
 intersection_of: part_of UBERON:0001307 ! capsule of ovary
 xref: EHDAA2:0001361 ! ovary germinal epithelium
+
+[Term]
+id: UBERON:0005890
+name: gonad germinal epithelium
+is_a: UBERON:0000483 ! epithelium
+relationship: part_of UBERON:0000991 ! gonad
+relationship: part_of UBERON:0005891 ! coelomic epithelium
+xref: HOG:0000629 ! gonad germinal epithelium
+synonym: "germinal epithelium" EXACT [EHDAA2:0000706]
+synonym: "coelomic epithelium" RELATED [EMAPA:17384]
+xref: EHDAA2:0000706 ! germinal epithelium
+xref: EMAPA:17384 ! coelomic epithelium
+
 
 [Term]
 id: UBERON:0004909
@@ -16562,8 +16624,10 @@ synonym: "forelimb bone" EXACT []
 synonym: "set of bones of upper limb" EXACT []
 synonym: "upper limb skeleton" EXACT []
 synonym: "forelimb skeleton" EXACT [HOG:0001256]
+synonym: "fore limb skeleton" EXACT []
 xref: FMA:24139 ! Skeleton of upper limb
 xref: MA:0000612 ! forelimb bone
+xref: XAO:0003061 ! forelimb skeleton
 is_a: UBERON:0000075 ! subdivision of skeleton
 intersection_of: UBERON:0000075 ! subdivision of skeleton
 intersection_of: part_of UBERON:0002102 ! forelimb
@@ -16596,16 +16660,12 @@ def: "A subdivision of skeletal system that is part of a limb [Obol]." [OBOL:aut
 id: UBERON:0001441
 name: skeleton of lower limb
 alt_id: UBERON:FMA_24140-MA_0000670
-def: "." [Wikipedia:Leg_bone]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "bones of lower limb" EXACT []
-synonym: "leg bone" EXACT []
 synonym: "lower limb skeleton" EXACT []
 synonym: "set of bones of lower limb" EXACT []
 xref: FMA:24140 ! Skeleton of lower limb
-xref: GAID:198 ! leg bone
-xref: MA:0000670 ! leg bone
 xref: OpenCyc:Mx4rvZcKkZwpEbGdrcN5Y29ycA
 intersection_of: UBERON:0000075 ! subdivision of skeleton
 intersection_of: part_of UBERON:0002103 ! hindlimb
@@ -16619,8 +16679,12 @@ synonym: "subdivision of skeleton of hind limb" EXACT [OBOL:automatic]
 synonym: "subdivision of skeleton of hindlimb" EXACT [OBOL:automatic]
 synonym: "subdivision of skeleton of inferior member" EXACT [OBOL:automatic]
 synonym: "subdivision of skeleton of lower extremity" EXACT [OBOL:automatic]
+synonym: "hind limb skeleton" EXACT [XAO:0003062]
+synonym: "hindlimb skeleton" EXACT [HOG:0001255]
 xref: OpenCyc:Mx4rvZcKkZwpEbGdrcN5Y29ycA ! leg bone
 xref: EHDAA2:0002226 ! lower limb skeleton
+xref: HOG:0001255 ! hindlimb skeleton
+xref: XAO:0003062 ! hind limb skeleton
 
 [Term]
 id: UBERON:0001442
@@ -16632,7 +16696,6 @@ synonym: "hand bone" EXACT []
 synonym: "hand skeleton" EXACT []
 synonym: "set of bones of hand" EXACT []
 xref: FMA:24159 ! Skeleton of hand
-xref: MA:0000619 ! hand bone
 xref: OpenCyc:Mx4rvdHPJJwpEbGdrcN5Y29ycA
 is_a: UBERON:0001440 ! skeleton of upper limb
 intersection_of: UBERON:0000075 ! subdivision of skeleton
@@ -16668,6 +16731,13 @@ synonym: "subdivision of skeleton of proximal segment of free upper limb autopod
 synonym: "subdivision of skeleton of proximal segment of free upper limb distal free limb segment" EXACT [OBOL:automatic]
 xref: OpenCyc:Mx4rvdHPJJwpEbGdrcN5Y29ycA ! hand bone
 def: "A subdivision of skeletal system that is part of a hand [Obol]." [OBOL:automatic]
+
+[Term]
+id: UBERON:0005897
+name: hand bone
+intersection_of: UBERON:0001474 ! bone
+intersection_of: part_of UBERON:0002398 ! hand
+xref: MA:0000619 ! hand bone
 
 [Term]
 id: UBERON:0001443
@@ -16709,12 +16779,9 @@ id: UBERON:0001445
 name: skeleton of foot
 alt_id: UBERON:FMA_24222-MA_0000643
 comment: This class was created automatically from a combination of ontologies
-synonym: "foot bone" EXACT []
 synonym: "foot skeleton" EXACT []
 synonym: "set of bones of foot" EXACT []
 xref: FMA:24222 ! Skeleton of foot
-xref: GAID:192 ! foot bone
-xref: MA:0000643 ! foot bone
 intersection_of: UBERON:0000075 ! subdivision of skeleton
 intersection_of: part_of UBERON:0002387 ! foot
 relationship: part_of UBERON:0002387 ! foot
@@ -16757,6 +16824,14 @@ synonym: "subdivision of skeleton of lower extremity autopod" EXACT [OBOL:automa
 synonym: "subdivision of skeleton of lower extremity distal free limb segment" EXACT [OBOL:automatic]
 xref: OpenCyc:Mx4rv5ridZwpEbGdrcN5Y29ycA ! foot bone
 def: "A subdivision of skeletal system that is part of a foot [Obol]." [OBOL:automatic]
+
+[Term]
+id: UBERON:0005899
+name: foot bone
+intersection_of: UBERON:0001474 ! bone
+intersection_of: part_of UBERON:0002387 ! foot
+xref: MA:0000643 ! foot bone
+xref: GAID:192 ! foot bone
 
 [Term]
 id: UBERON:0001446
@@ -23133,6 +23208,7 @@ synonym: "retinal pigment epithelium" EXACT [Wikipedia:Retinal_pigment_epitheliu
 synonym: "retinal pigmented epithelium" EXACT []
 synonym: "RPE" RELATED []
 synonym: "stratum pigmentosum (retina)" EXACT []
+synonym: "retinal pigmented epithelium" EXACT [ZFA:0000144]
 xref: BTO:0001177
 xref: EHDAA:4765 ! pigmented retinal epithelium
 xref: FMA:58627 ! Pigmented layer of retina
@@ -23140,6 +23216,7 @@ xref: HOG:0000536 ! pigmented retinal epithelium
 xref: MA:0000279 ! pigmented retinal epithelium
 xref: TAO:0000144 ! retinal pigmented epithelium
 xref: ZFA:0000144 ! retinal pigmented epithelium
+xref: XAO:0003217 ! retinal pigmented epithelium
 is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0001781 ! layer of retina
 intersection_of: develops_from UBERON:0005424 ! presumptive retinal pigmented epithelium
@@ -23215,15 +23292,18 @@ id: UBERON:0001788
 name: outer limiting layer of retina
 alt_id: UBERON:FMA_58683-MA_0001309
 def: "the row of jucntional complexes between the plasma membranes of rod segments and the Muller glia cells; this barrier separates the layer of inner and outer segments of the rods and cones from the outer nuclear layer and forms a blood-retina barrier[MP]." [MP:0010236]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check fish/frog
 synonym: "external limiting lamina of retina" EXACT []
 synonym: "external limiting membrane of retina" EXACT []
 synonym: "outer limiting membrane of retina" EXACT []
 synonym: "retina external limiting lamina" EXACT []
 synonym: "stratum limitans externum (retina)" EXACT []
 synonym: "retina outer limiting membrane" EXACT [MP:0010236]
+synonym: "outer limiting membrane" EXACT [XAO:0003224]
 xref: FMA:58683 ! Outer limiting layer of retina
 xref: MA:0001309 ! retina external limiting lamina
+xref: XAO:0003224 ! outer limiting membrane
+xref: ZFA:0001331
 is_a: UBERON:0001781 ! layer of retina
 
 [Term]
@@ -23331,18 +23411,31 @@ relationship: has_part UBERON:0001021 ! nerve
 relationship: part_of UBERON:0003902 ! retinal neural layer
 
 [Term]
+id: UBERON:0005888
+name: optic fiber layer
+def: "Fiber layer adjacent the retinal ganglion cell layer which is comprised of their axons as they traverse to the optic nerve." [ZFA:0001619]
+comment: TODO - check
+is_a: UBERON:0001781 ! layer of retina
+relationship: part_of UBERON:0003902 ! retinal neural layer
+xref: ZFA:0001619
+xref: XAO:0003220 ! optic fiber layer
+
+[Term]
 id: UBERON:0001794
 name: inner limiting layer of retina
 def: "the row of fused Muller cell processes and astrocytes that separates the retinal nerve fiber layer from the vitreous[MP]." [MP:0010235]
 alt_id: UBERON:FMA_58689-MA_0001313
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check frog/fish
 synonym: "inner limiting membrane of retina" EXACT []
 synonym: "internal limiting lamina of retina" EXACT []
 synonym: "internal limiting membrane of retina" EXACT []
 synonym: "retina internal limiting lamina" EXACT []
 synonym: "retina inner limiting membrane" EXACT [MP:0010235]
+synonym: "inner limiting membrane" EXACT [XAO:0003222]
 xref: FMA:58689 ! Inner limiting layer of retina
 xref: MA:0001313 ! retina internal limiting lamina
+xref: ZFA:0001029
+xref: XAO:0003222 ! inner limiting membrane
 is_a: UBERON:0001781 ! layer of retina
 
 [Term]
@@ -26245,6 +26338,28 @@ relationship: part_of UBERON:0001891 ! midbrain
 relationship: part_of UBERON:0001894 ! diencephalon
 
 [Term]
+id: UBERON:0002314
+name: midbrain tectum
+alt_id: UBERON:FMA_83902-MA_0000211
+def: "The tectum is a region of the brain, specifically the dorsal part of the mesencephalon (midbrain). This is contrasted with the tegmentum, which refers to the region ventral to the ventricular system. It is derived in embryonic development from the alar plate of the neural tube. [WP,unvetted]." [Wikipedia:Midbrain_tectum]
+comment: TODO - check zebrafish optic tectum
+subset: uberon_slim
+synonym: "neuraxis tectum" EXACT []
+synonym: "tectum" EXACT []
+synonym: "optic tectum" RELATED [ZFA:0000445]
+xref: EFO:0000920 ! tectum
+xref: FMA:83902 ! Midbrain tectum
+xref: MA:0000211 ! tectum
+xref: MAT:0000451 ! tectum
+xref: NIF_GrossAnatomy:birnlex_1032 ! Midbrain tectum
+is_a: UBERON:0002950 ! regional part of midbrain
+relationship: part_of UBERON:0001891 ! midbrain
+xref: GO:0043676 ! tectum
+xref: HOG:0001388 ! tectum
+xref: ZFA:0000445 ! optic tectum
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gray685.png/200px-Gray685.png
+
+[Term]
 id: UBERON:0001945
 name: superior colliculus
 alt_id: UBERON:FMA_62403-MA_0001068-ZFA_0000445
@@ -27737,11 +27852,8 @@ id: UBERON:0002021
 name: occipital lobe
 alt_id: UBERON:FMA_67325-MA_0000913-ZFA_0001414
 def: "Occipital lobe is the one of five lobes of the cerebral hemisphere which occupies the posterior-most portion of the hemisphere. Anteriorly, it shares an arbitrary border with the parietal lobe and temporal lobe. Medially, it is bounded by the longitudinal cerebral fissure." [Wikipedia:Occipital_lobe]
-comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "basicranial region" RELATED []
 synonym: "occipital cortex" EXACT []
-synonym: "occipital region" EXACT []
 xref: BTO:0000293
 xref: EFO:0000915 ! occipital lobe
 xref: FMA:67325 ! Occipital lobe
@@ -27751,16 +27863,23 @@ xref: MAT:0000507 ! occipital lobe
 xref: ncithesaurus:Occipital_Lobe
 xref: NIF_GrossAnatomy:birnlex_1136 ! Occipital lobe
 xref: OpenCyc:Mx4rv9OFy5wpEbGdrcN5Y29ycA
-xref: TAO:0001414 ! occipital region
-xref: ZFA:0001414 ! occipital region
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: adjacent_to UBERON:0001871 ! temporal lobe
 relationship: adjacent_to UBERON:0001872 ! parietal lobe
-relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0001950 ! neocortex
-relationship: part_of UBERON:0002241 ! chondrocranium
 xref: OpenCyc:Mx4rv9OFy5wpEbGdrcN5Y29ycA ! occipital lobe
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Gray727_occipital_lobe.png/200px-Gray727_occipital_lobe.png
+
+[Term]
+id: UBERON:0005902
+name: occipital region
+def: "Anatomical cluster that is located in the posterior region of the cranium and forms the margin of the foramen magnum and occipital condyles." [TAO:0001414]
+comment: TODO - check
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of UBERON:0003128 ! cranium
+xref: XAO:0003173 ! occipital region
+xref: TAO:0001414 ! occipital region
+xref: ZFA:0001414 ! occipital region
 
 [Term]
 id: UBERON:0002022
@@ -28633,6 +28752,7 @@ xref: FMA:70314 ! Postcardinal vein
 xref: HOG:0000111 ! posterior cardinal vein
 xref: TAO:0000477 ! posterior cardinal vein
 xref: ZFA:0000477 ! posterior cardinal vein
+xref: XAO:0000241 ! posterior cardinal vein
 is_a: UBERON:0004344 ! cardinal vein
 relationship: part_of UBERON:0002201 ! vasculature of trunk
 xref: ncithesaurus:Posterior_Cardinal_Vein ! Posterior Cardinal Vein
@@ -28979,6 +29099,7 @@ xref: MA:0000091 ! heart ventricle
 xref: OpenCyc:Mx4rvVjj1pwpEbGdrcN5Y29ycA
 xref: TAO:0000009 ! cardiac ventricle
 xref: ZFA:0000009 ! cardiac ventricle
+xref: XAO:0003193 ! cardiac ventricle
 is_a: UBERON:0002300 ! ventricle
 is_a: UBERON:0004151 ! cardiac chamber
 intersection_of: UBERON:0002300 ! ventricle
@@ -29325,13 +29446,22 @@ intersection_of: part_of UBERON:0000153 ! anterior region of body
 def: "A limb/fin that is part of an anterior region of body [Obol]." [OBOL:automatic]
 
 [Term]
-id: UBERON:0002101
+id: UBERON:0005896 ! jointed/prehensile appendage
+name: jointed/prehensile appendage
+def: "A jointed or prehensible appendage used for locomotion or manipulation. Examples: human arm, human leg, octopus tentacle, insect limb[Wikipedia]. A limb is an appendage of an animal used for locomotion or grasping. For example a leg, arm or some types of fin[GO]." [GO:0035108, Wikipedia:Limb_(anatomy)]
+xref: AEO:0000172 ! limb
+xref: BTO:0001492 ! limb
+synonym: "limb" RELATED [BTO:0001492]
+synonym: "extremity" RELATED []
+is_a: UBERON:0000026 ! appendage
+
+[Term]
+id: UBERON:0002101 ! limb
 name: limb
 alt_id: UBERON:FMA_7182-MA_0000007-MIAA_0000090-XAO_0003027
-def: "A jointed or prehensible appendage used for locomotion or manipulation. Examples: human arm, human leg, octopus tentacle, insect limb[Wikipedia]. A limb is an appendage of an animal used for locomotion or grasping. For example a leg, arm or some types of fin[GO]." [GO:0035108, Wikipedia:Limb_(anatomy)]
-comment: We follow GO in defining this class functionally. However, we would like to exclude fins
 subset: uberon_slim
-synonym: "extremity" RELATED []
+synonym: "limb sensu vertebrata" EXACT [MAT:0000090]
+synonym: "tetrapod limb" EXACT []
 xref: EHDAA:1697 ! limb
 xref: EHDAA:8273 ! limb
 xref: FMA:7182 ! Limb
@@ -29344,11 +29474,9 @@ xref: MIAA:0000090 ! limb sensu vertebrata
 xref: XAO:0003027 ! limb
 is_a: UBERON:0004708 ! limb/fin
 xref: ncithesaurus:Limb ! Limb
-xref: BTO:0001492 ! limb
 xref: EFO:0000876 ! vertebrate limb
 xref: OpenCyc:Mx4rvn1uSZwpEbGdrcN5Y29ycA ! limb
 xref: EHDAA2:0003172 ! limb
-xref: AEO:0000172 ! limb
 
 [Term]
 id: UBERON:0001460
@@ -29455,6 +29583,7 @@ xref: MA:0002444 ! visual system
 xref: OpenCyc:Mx4rvViCtpwpEbGdrcN5Y29ycA
 xref: TAO:0001127 ! visual system
 xref: ZFA:0001127 ! visual system
+xref: XAO:0003198 ! visual system
 is_a: UBERON:0001032 ! sense organ system
 relationship: spatially_disjoint_from UBERON:0002105 ! auditory system
 relationship: capable_of GO:0007601 ! visual perception
@@ -29491,39 +29620,6 @@ xref: ncithesaurus:Spleen ! Spleen
 xref: galen:Spleen ! spleen
 xref: OpenCyc:Mx4rvVjgw5wpEbGdrcN5Y29ycA ! spleen
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Illu_spleen.jpg/200px-Illu_spleen.jpg
-
-[Term]
-id: UBERON:0002107
-name: liver
-alt_id: UBERON:FMA_7197-MA_0000358-MIAA_0000097-XAO_0000133-ZFA_0000123
-def: "An exocrine gland which secretes bile and functions in metabolism of protein and carbohydrate and fat, synthesizes substances involved in the clotting of the blood, synthesizes vitamin A, detoxifies poisonous substances, stores glycogen, and breaks down worn-out erythrocytes[GO]." [BTO:0000759, Wikipedia:Liver]
-comment: Only ZFA considers this part_of immune system
-subset: uberon_slim
-xref: BTO:0000759
-xref: EFO:0000887 ! liver
-xref: EHDAA:2197 ! liver
-xref: FMA:7197 ! Liver
-xref: GAID:288 ! liver
-xref: HOG:0000257 ! liver
-xref: MA:0000358 ! liver
-xref: MAT:0000097 ! liver
-xref: MIAA:0000097 ! liver
-xref: ncithesaurus:Liver
-xref: OpenCyc:Mx4rvVimppwpEbGdrcN5Y29ycA
-xref: TAO:0000123 ! liver
-xref: XAO:0000133 ! liver
-xref: ZFA:0000123 ! liver
-is_a: UBERON:0002365 ! exocrine gland
-relationship: develops_from UBERON:0000925 ! endoderm
-relationship: has_part CL:0000182 ! hepatocyte
-relationship: part_of UBERON:0000916 ! abdomen
-relationship: part_of UBERON:0002405 ! immune system
-relationship: part_of UBERON:0002423 ! hepatobiliary system
-relationship: site_of GO:0002384 ! hepatic immune response
-xref: galen:Liver ! liver
-xref: OpenCyc:Mx4rvVimppwpEbGdrcN5Y29ycA ! liver
-xref: EHDAA2:0000997 ! liver
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Leber_Schaf.jpg/200px-Leber_Schaf.jpg
 
 [Term]
 id: UBERON:0002108
@@ -29706,6 +29802,7 @@ xref: MIAA:0000044 ! duodenum
 xref: ncithesaurus:Duodenum
 xref: OpenCyc:Mx4rv4LJDpwpEbGdrcN5Y29ycA
 xref: XAO:0000236 ! duodenum
+xref: ZFA:0000348 ! duodenum
 is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: part_of UBERON:0002108 ! small intestine
 xref: OpenCyc:Mx4rv4LJDpwpEbGdrcN5Y29ycA ! duodenum
@@ -33735,27 +33832,6 @@ is_a: UBERON:0002305 ! layer of hippocampus
 xref: NIF_GrossAnatomy:birnlex_1444 ! Stratum pyramidale hippocampi
 
 [Term]
-id: UBERON:0002314
-name: midbrain tectum
-alt_id: UBERON:FMA_83902-MA_0000211
-def: "The tectum is a region of the brain, specifically the dorsal part of the mesencephalon (midbrain). This is contrasted with the tegmentum, which refers to the region ventral to the ventricular system. It is derived in embryonic development from the alar plate of the neural tube. [WP,unvetted]." [Wikipedia:Midbrain_tectum]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-synonym: "neuraxis tectum" EXACT []
-synonym: "tectum" EXACT []
-xref: EFO:0000920 ! tectum
-xref: FMA:83902 ! Midbrain tectum
-xref: MA:0000211 ! tectum
-xref: MAT:0000451 ! tectum
-xref: NIF_GrossAnatomy:birnlex_1032 ! Midbrain tectum
-is_a: UBERON:0002950 ! regional part of midbrain
-relationship: part_of UBERON:0001891 ! midbrain
-xref: GO:0043676 ! tectum
-xref: HOG:0001388 ! tectum
-xref: ZFA:0000445 ! optic tectum
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Gray685.png/200px-Gray685.png
-
-[Term]
 id: UBERON:0002315
 name: gray matter of spinal cord
 alt_id: UBERON:FMA_83926-MA_0000002
@@ -33943,10 +34019,10 @@ is_a: UBERON:0001147 ! trunk of peripheral nerve
 id: UBERON:0002328
 name: notochord
 alt_id: UBERON:FMA_85521-XAO_0000055-ZFA_0000135
-def: "A longitudinal flexible rod of cells that in the embryo forms the supporting axis of the body. It degenerates, beginning anteriorly, at NF stage 46. Its posterior portion is greatly reduced by NF stage 55 and the entire structure is gone by NF stage 65. // Rod-like principal supportive element of the embryo and larva, present in the midline just ventral to the neural tube, and differentiating during the segmentation period to form large vacuolated epithelial cells and a surrounding a sheath of fibrous and elastic layers. Layering of the sheath may differ in structure, thickness and development among groups; in cypriniforms there are actually three very thin layers to the sheath. A functional, well developed notochord is present throughout life in certain basal fish groups but not in cypriniforms. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>" [ISBN:0815318960, NLM:notochord, Wikipedia:Notochord, ZFIN:curator]
-comment: This class was created automatically from a combination of ontologies
+def: "a flexible, rod-shaped body found in embryos of all chordates. It is composed of cells derived from the mesoderm and defines the primitive axis of the embryo. In some chordates, it persists throughout life as the main axial support of the body, while in most vertebrates it becomes the vertebral body of the vertebral column. The notochord is found ventral to the neural tube. The notochord is composed primarily of a core of glycoproteins, encased in a sheath of collagen fibers wound into two opposing helices. The angle between these fibers determines whether increased pressure in the core will result in shortening and thickening versus lengthening and thinning[WP]." [ISBN:0815318960, NLM:notochord, Wikipedia:Notochord, ZFIN:curator]
+comment: Some organisms retain a post-embryonic notochord
 subset: uberon_slim
-synonym: "notocord" RELATED []
+synonym: "embryonic notocord" EXACT []
 xref: AAO:0000327 ! notochord
 xref: EHDAA:1241 ! notochord
 xref: EHDAA:6021 ! notochord
@@ -33960,9 +34036,6 @@ xref: ZFA:0000135 ! notochord
 is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0004880 ! chordamesoderm
-relationship: part_of UBERON:0000922 ! embryo
-relationship: part_of UBERON:0002021 ! occipital lobe
-relationship: part_of UBERON:0002543 ! median fin skeleton
 xref: ncithesaurus:Notochord ! Notochord
 xref: BTO:0001768 ! notochord
 xref: EHDAA2:0001277 ! notochord
@@ -36068,28 +36141,11 @@ xref: XAO:0003099 ! fourth ventricle
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Gray734.png/200px-Gray734.png
 
 [Term]
-id: UBERON:0005409
-name: gastrointestinal system
-synonym: "alimentary system" RELATED  [MA:0000323]
-synonym: "alimentary tract" RELATED  [MA:0000323]
-comment: note that many anatomy ontologies consider this synonymous with digestive system. here we follow MA in dividing gastrointestinal system into digestive and hepatobiliary. may also be confusion re GI tract. TODO resolve.
-is_a: UBERON:0000467 ! anatomical system
-relationship: part_of UBERON:0001007 ! digestive system
-xref: MA:0000323 ! gastrointestinal system
-xref: EHDAA2:0000110 ! alimentary system
-xref: EHDAA:514 ! alimentary system
-xref: HOG:0000412 ! alimentary system
-xref: ncithesaurus:Gastrointestinal_System
-xref: WBbt:0005748 ! alimentary system
-xref: XAO:0000125 ! alimentary system
-xref: TADS:0000170 ! adult alimentary system
-
-[Term]
 id: UBERON:0001007
 name: digestive system
 alt_id: UBERON:FBbt_00005055-FMA_7152-MA_0000323-MIAA_0000018-WBbt_0005748-XAO_0000125-ZFA_0000339
 def: "The organ system involved in the absorption of nutrients. // Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." [FB:gg, NLM:alimentary+system, Wikipedia:Digestive_system,]
-comment: This class was created automatically from a combination of ontologies
+comment: note that many anatomy ontologies consider this synonymous with digestive system. here we follow MA in dividing digestive system into gastrointestinal and hepatobiliary. hepatobiliary includes the liver and biliary tract. species-specific AO classes are categorized according to whether liver is included. For example, XAO includes live as part of XAO:0000125 alimentary system, so we assume this class is the more generic class
 subset: uberon_slim
 synonym: "alimentary system" RELATED []
 synonym: "alimentary tract" RELATED []
@@ -36107,6 +36163,9 @@ xref: MAT:0000018 ! digestive system
 xref: MIAA:0000018 ! digestive system
 xref: TAO:0000339 ! digestive system
 xref: ZFA:0000339 ! digestive system
+xref: WBbt:0005748 ! alimentary system
+xref: XAO:0000125 ! alimentary system
+xref: TADS:0000170 ! adult alimentary system
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0000949 ! endocrine system
 disjoint_from: UBERON:0000990 ! reproductive system
@@ -36125,6 +36184,20 @@ disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 xref: EFO:0000793 ! digestive system component
+
+[Term]
+id: UBERON:0005409
+name: gastrointestinal system
+comment: note that many anatomy ontologies consider this synonymous with digestive system. here we follow MA in dividing digestive system into gastrointestinal and hepatobiliary. hepatobiliary includes the liver and biliary tract. species-specific AO classes are categorized according to whether liver is included. For example, XAO includes live as part of XAO:0000125 alimentary system, so we assume this class is the more generic class. 
+synonym: "alimentary system" RELATED  [MA:0000323]
+synonym: "alimentary tract" RELATED  [MA:0000323]
+is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0001007 ! digestive system
+xref: MA:0000323 ! gastrointestinal system
+xref: EHDAA2:0000110 ! alimentary system
+xref: EHDAA:514 ! alimentary system
+xref: HOG:0000412 ! alimentary system
+xref: ncithesaurus:Gastrointestinal_System
 
 [Term]
 id: UBERON:0002423
@@ -36167,6 +36240,39 @@ xref: ncithesaurus:Hepatobiliary_System ! Hepatobiliary System
 xref: EHDAA2:0000998 ! liver and biliary system
 
 [Term]
+id: UBERON:0002107
+name: liver
+alt_id: UBERON:FMA_7197-MA_0000358-MIAA_0000097-XAO_0000133-ZFA_0000123
+def: "An exocrine gland which secretes bile and functions in metabolism of protein and carbohydrate and fat, synthesizes substances involved in the clotting of the blood, synthesizes vitamin A, detoxifies poisonous substances, stores glycogen, and breaks down worn-out erythrocytes[GO]." [BTO:0000759, Wikipedia:Liver]
+comment: Only ZFA considers this part_of immune system
+subset: uberon_slim
+xref: BTO:0000759
+xref: EFO:0000887 ! liver
+xref: EHDAA:2197 ! liver
+xref: FMA:7197 ! Liver
+xref: GAID:288 ! liver
+xref: HOG:0000257 ! liver
+xref: MA:0000358 ! liver
+xref: MAT:0000097 ! liver
+xref: MIAA:0000097 ! liver
+xref: ncithesaurus:Liver
+xref: OpenCyc:Mx4rvVimppwpEbGdrcN5Y29ycA
+xref: TAO:0000123 ! liver
+xref: XAO:0000133 ! liver
+xref: ZFA:0000123 ! liver
+is_a: UBERON:0002365 ! exocrine gland
+relationship: develops_from UBERON:0000925 ! endoderm
+relationship: has_part CL:0000182 ! hepatocyte
+relationship: part_of UBERON:0000916 ! abdomen
+relationship: part_of UBERON:0002405 ! immune system
+relationship: part_of UBERON:0002423 ! hepatobiliary system
+relationship: site_of GO:0002384 ! hepatic immune response
+xref: galen:Liver ! liver
+xref: OpenCyc:Mx4rvVimppwpEbGdrcN5Y29ycA ! liver
+xref: EHDAA2:0000997 ! liver
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Leber_Schaf.jpg/200px-Leber_Schaf.jpg
+
+[Term]
 id: UBERON:0002424
 name: oral epithelium
 alt_id: UBERON:MA_0000344-ZFA_0000816
@@ -36178,6 +36284,7 @@ is_a: UBERON:0000483 ! epithelium
 relationship: part_of UBERON:0000166 ! oral opening
 xref: BTO:0001775 ! oral epithelium
 xref: EHDAA2:0001325 ! oral epithelium
+xref: XAO:0003201 ! oral epithelium
 
 [Term]
 id: UBERON:0002426
@@ -38260,7 +38367,7 @@ subset: uberon_slim
 synonym: "pharyngeal arches" EXACT PLURAL []
 synonym: "visceral arch" RELATED []
 synonym: "gill arch" NARROW []
-synonym: "branchial arch" EXACT [MP:0002884]
+synonym: "branchial arch" EXACT [MP:0002884, XAO:0000099]
 xref: HOG:0000155 ! pharyngeal arch
 xref: MAT:0000242 ! pharyngeal arch
 xref: MIAA:0000242 ! pharyngeal arch
@@ -38271,6 +38378,7 @@ is_a: UBERON:0000481 ! multi-tissue structure
 xref: ncithesaurus:Pharyngeal_Arch ! Pharyngeal Arch
 xref: EFO:0000959 ! pharyngeal arch
 xref: BTO:0001785 ! branchial arch
+xref: XAO:0000099 ! branchial arch
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Gray41.png/200px-Gray41.png
 
 [Term]
@@ -43353,13 +43461,14 @@ xref: TAO:0000402 ! olfactory bulb
 xref: ZFA:0000402 ! olfactory bulb
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001893 ! telencephalon
+relationship: part_of UBERON:0005366 ! olfactory lobe
 relationship: capable_of GO:0007608 ! sensory perception of smell
 xref: ncithesaurus:Olfactory_Bulb ! Olfactory Bulb
 xref: EHDAA2:0001294 ! olfactory lobe
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/1543%2CVesalius%27OlfactoryBulbs.jpg/200px-1543%2CVesalius%27OlfactoryBulbs.jpg
 
 [Term]
-id: UBERON:0005366
+id: UBERON:0005366 ! olfactory lobe
 name: olfactory lobe
 def: "An anterior projection of each cerebral hemisphere that is continuous anteriorly with the olfactory nerve[BTO]. A term applied to the olfactory apparatus on the lower surface of the frontal lobe of the brain. It consists of the olfactory bulb, tract, and trigone[BTO]." [BTO:0001362]
 is_a: UBERON:0000481 ! multi-tissue structure
@@ -45984,14 +46093,54 @@ is_obsolete: true
 consider: UBERON:0003053 ! ventricular zone
 
 [Term]
+id: UBERON:0004061 ! neural tube mantle layer
+name: neural tube mantle layer
+def: "the layer of glia and differentiating neurons that will form the gray matter of the spinal cord; this lies between the ventricular and marginal layers and includes the basal and alar plates" [MP:0009690]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0000119 ! cell layer
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0004060
+name: neural tube ventricular layer
+def: "the layer of undifferentiated, proliferating cells that line the neural tube lumen" [MP:0009689]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0000119 ! cell layer
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0004062
+name: neural tube marginal layer
+def: "the outermost layer of the neural tube that contains nerve fibers and will form the white matter" [MP:0009691]
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0000119 ! cell layer
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
+id: UBERON:0005883
+name: neural tube lateral wall mantle layer
+is_a: UBERON:0004061 ! neural tube mantle layer
+relationship: part_of UBERON:0005496 ! neural tube lateral wall
+xref: EHDAA2:0001261 ! neural tube lateral wall mantle layer
+
+[Term]
+id: UBERON:0005882
+name: alar plate
+def: "the mantle layer of the neural tube that lies dorsal to the sulcus limitans and contains primarily sensory neurons and interneurons involved in communication of sensory impulses; the alar plate develops into the dorsal horn in the grey matter of the spinal cord." [MP:0009692, Wikipedia:Alar_plate]
+synonym: "alar lamina" RELATED [Wikipedia:Alar_lamina]
+synonym: "spinal cord alar column" EXACT  [MP:0009692]
+synonym: "spinal cord alar lamina" EXACT  [MP:0009692]
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0001049 ! neural tube
+
+[Term]
 id: UBERON:0003054
 name: roof plate
 alt_id: UBERON:XAO_0000022-ZFA_0007058
-def: "Organizing center located at the dorsal midline of the neural tube that influences the development of the nervous system, controlling the specification and differentiation of dorsal neuronal cell types[XAO]. a single row of glia at the dorsal midline of the developing neural tube. This region provides inductive signals for the specification of neuronal cell types and of the specification of neural crest cells. The cells comprising the roof plate are the precursors to radial glial cells[GO]. The thin layer of the embryonic neural tube that connects the lateral plates dorsally." [GO:0021509, http://medical-dictionary.thefreedictionary.com/roof+plate, PMID:15378040, Wikipedia:Roof_plate, XAO:0000022]
-comment: TODO - Note that although this is classically defined as being located on the neural tube, in many AOs the roof plate continues post-embryonically after the neural tube has ceased to exist. Consider 'roof plate of neural tube'. 
+def: " a single row of glia at the dorsal midline of the developing neural tube. This region provides inductive signals for the specification of neuronal cell types and of the specification of neural crest cells. The cells comprising the roof plate are the precursors to radial glial cells." [GO:0021509, PMID:15378040]
+comment: TODO - Note that although this is classically defined as being located on the neural tube, in many AOs the roof plate continues post-embryonically after the neural tube has ceased to exist. Consider 'roof plate of neural tube'. TODO - alar plate vs roof plate
 subset: uberon_slim
-synonym: "alar lamina" RELATED [Wikipedia:Alar_lamina]
-synonym: "alar plate" RELATED [Wikipedia:Alar_plate]
+synonym: "alar plate" RELATED [Wikipedia:Roof_plate]
 synonym: "roofplate" EXACT []
 xref: EHDAA:1336 ! roof plate
 xref: EHDAA:1350 ! roof plate
@@ -46049,7 +46198,7 @@ xref: EHDAA:894 ! roof plate
 xref: EHDAA:916 ! roof plate
 xref: ZFA:0007058 ! roof plate
 is_a: UBERON:0002050 ! embryonic structure
-relationship: part_of UBERON:0001017 ! central nervous system
+relationship: part_of UBERON:0001049 ! neural tube
 
 [Term]
 id: UBERON:0005724
@@ -46059,7 +46208,6 @@ xref: XAO:0000022 ! roof plate
 intersection_of: UBERON:0000479 ! portion of tissue
 intersection_of: part_of UBERON:0003054 ! roof plate
 intersection_of: part_of UBERON:0002240 ! spinal cord
-! no mapping (ZFS:0000029) -- relationship: start ZFS:0000029 ! Pharyngula:Prim-5
 xref: ZFA:0001177 ! roof plate spinal cord region
 
 [Term]
@@ -47518,6 +47666,23 @@ is_a: UBERON:0002539 ! pharyngeal arch
 xref: HOG:0001205 ! sixth pharyngeal arch
 
 [Term]
+id: UBERON:0005884
+name: hyoid arch skeleton
+xref: ZFA:0001276
+intersection_of: UBERON:0000075 ! subdivision of skeleton
+intersection_of: part_of UBERON:0003066 ! hyoid arch
+xref: XAO:0003177 ! hyoid arch skeleton
+
+[Term]
+id: UBERON:0005886
+name: branchial arch skeleton
+xref: ZFA:0000095
+intersection_of: UBERON:0000075 ! subdivision of skeleton
+intersection_of: part_of UBERON:0002539 ! pharyngeal arch
+xref: XAO:0003180 ! branchial arch skeleton
+
+
+[Term]
 id: UBERON:0001508
 name: arch of aorta
 alt_id: UBERON:FMA_3768-MA_0000475-MIAA_0000059
@@ -47703,9 +47868,8 @@ xref: FBbt:00004642 ! tibia
 xref: HAO:0001017 ! tibia
 xref: TADS:0000281 ! adult tibia
 is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:0000978 ! leg
+relationship: part_of UBERON:0005895 ! insect leg
 relationship: only_in_taxon NCBITaxon:6656 ! Arthropoda
-xref: ncithesaurus:Tibia ! Tibia
 
 [Term]
 id: UBERON:0003132
@@ -50568,8 +50732,10 @@ relationship: develops_from UBERON:0001041 ! foregut
 synonym: "epithelial tissue of pharynx" EXACT [OBOL:automatic]
 synonym: "pharynx epithelial tissue" EXACT [OBOL:automatic]
 synonym: "pharynx epithelium" EXACT [OBOL:automatic]
+synonym: "pharyngeal epithelium" EXACT [OBOL:automatic]
 xref: MA:0002725 ! pharynx epithelium
 xref: EHDAA2:0001460 ! pharynx epithelium
+xref: XAO:0003202 ! pharyngeal epithelium
 def: "An epithelium that is part of a pharynx [Obol]." [OBOL:automatic]
 
 [Term]
@@ -53106,6 +53272,7 @@ def: "A bone that is part of a trunk [Obol]." [OBOL:automatic]
 id: UBERON:0003464
 name: hindlimb bone
 xref: MA:0000660 ! hindlimb bone
+xref: GAID:198 ! leg bone
 intersection_of: UBERON:0001474 ! bone
 intersection_of: part_of UBERON:0002103 ! hindlimb
 synonym: "bone of hind limb" EXACT [OBOL:automatic]
@@ -53123,9 +53290,14 @@ synonym: "inferior member bone" EXACT [OBOL:automatic]
 synonym: "inferior member bone organ" EXACT [OBOL:automatic]
 synonym: "lower extremity bone" EXACT [OBOL:automatic]
 synonym: "lower extremity bone organ" EXACT [OBOL:automatic]
-synonym: "hindlimb skeleton" EXACT [HOG:0001255]
-xref: HOG:0001255 ! hindlimb skeleton
 def: "A bone that is part of a hindlimb [Obol]." [OBOL:automatic]
+
+[Term]
+id: UBERON:0005893
+name: leg bone
+is_a: UBERON:0003464 ! hindlimb bone
+relationship: part_of UBERON:0000978 ! leg
+xref: MA:0000670 ! leg bone
 
 [Term]
 id: UBERON:0003465
@@ -57653,6 +57825,8 @@ intersection_of: UBERON:0000483
 intersection_of: part_of UBERON:0001091
 xref: ZFA:0005135 ! primary dental epithelium
 xref: ZFA:0005134 ! dental epithelium
+xref: XAO:0003203 ! dental epithelium
+synonym: "dental epithelium" EXACT [ZFA:0005134]
 synonym: "calcareous tooth epithelial tissue" EXACT [OBOL:automatic]
 synonym: "calcareous tooth epithelium" EXACT [OBOL:automatic]
 synonym: "dentine containing tooth epithelial tissue" EXACT [OBOL:automatic]
@@ -58259,6 +58433,7 @@ def: "A duct that is part of a digestive system [Obol]." [OBOL:automatic]
 id: UBERON:0003929
 name: gut epithelium
 xref: ZFA:0005123
+xref: XAO:0003200 ! gut epithelium
 intersection_of: UBERON:0000483 
 intersection_of: part_of UBERON:0001555
 synonym: "digestive tract epithelial tissue" EXACT [OBOL:automatic]
@@ -59373,25 +59548,14 @@ def: "the subclasses of motor neurons which project their axons to axial muscles
 is_a: UBERON:0003990
 
 [Term]
-id: UBERON:0004060
-name: neural tube ventricular layer
-def: "the layer of undifferentiated, proliferating cells that line the neural tube lumen" [MP:0009689]
-is_a: UBERON:0000119 ! cell layer
-relationship: part_of UBERON:0001049 ! neural tube
-
-[Term]
-id: UBERON:0004061
-name: neural tube mantle layer
-def: "the layer of glia and differentiating neurons that will form the gray matter of the spinal cord; this lies between the ventricular and marginal layers and includes the basal and alar plates" [MP:0009690]
-is_a: UBERON:0000119 ! cell layer
-relationship: part_of UBERON:0001049 ! neural tube
-
-[Term]
-id: UBERON:0004062
-name: neural tube marginal layer
-def: "the outermost layer of the neural tube that contains nerve fibers and will form the white matter" [MP:0009691]
-is_a: UBERON:0000119 ! cell layer
-relationship: part_of UBERON:0001049 ! neural tube
+id: UBERON:0005478
+name: sulcus limitans
+def: "In the floor of the fourth ventricle, the sulcus limitans separates the cranial nerve motor nuclei (medial) from the sensory nuclei (lateral). In the superior part of the rhomboid fossa, it corresponds with the lateral limit of the fossa and presents a bluish-gray area, the locus ceruleus (which owes its color to an underlying patch of deeply pigmented nerve cells, termed the substantia ferruginea). It is seen as slight depressions separating the basal and alar plates[WP]. a longitudinal groove in the neural tube wall of the embryo; stretches from the mesencephalon caudad[TMD]." [Wikipedia:Sulcus_limitans, http://medical-dictionary.thefreedictionary.com/Sulcus+limitans]
+comment: TODO consider splitting - separate class for neural tube sulcus limitans
+is_a: UBERON:0002553 ! anatomical cavity
+relationship: part_of UBERON:0002422 ! fourth ventricle
+xref: FMA:78496 ! Sulcus limitans
+xref: EHDAA2:0001944 ! sulcus limitans
 
 [Term]
 id: UBERON:0004064
@@ -66526,6 +66690,8 @@ relationship: develops_from UBERON:0003050 ! olfactory placode
 xref: EHDAA2:0001295 ! olfactory pit
 xref: EHDAA:4772 ! olfactory pit
 xref: EMAPA:16800 ! olfactory pit
+xref: XAO:0000275 ! nasal pit
+synonym: "nasal pit" EXACT [XAO:0000275]
 
 [Term]
 id: UBERON:0005384
@@ -71543,8 +71709,19 @@ intersection_of: part_of UBERON:0002113 ! kidney
 id: UBERON:0005322
 name: mesonephric nephron
 def: "A nephron is the functional unit of the kidney[GO]." [GO:0061215]
+xref: XAO:0000292 ! mesonephric nephron
 intersection_of: UBERON:0001285 ! nephron
 intersection_of: part_of UBERON:0000080 ! mesonephros
+
+[Term]
+id: UBERON:0005892
+name: mesonephric early distal tubule
+def: "The mesonephric equivalent of the ascending limb, or straight distal segment, of metanephric nephrons." [XB:curator]
+synonym: "mesonephric ascending limb" RELATED  [XAO:0000333]
+synonym: "mesonephric straight distal segment" RELATED  [XAO:0000333]
+relationship: develops_from UBERON:0005322 ! mesonephric nephron
+relationship: part_of UBERON:0000083 ! mesonephric tubule
+xref: XAO:0000333 ! mesonephric early distal tubule
 
 [Term]
 id: UBERON:0005323
@@ -72413,16 +72590,6 @@ xref: FMA:17277 ! Epithelium of fundus of stomach
 xref: EHDAA2:0001921 ! stomach fundus epithelium
 
 [Term]
-id: UBERON:0005478
-name: sulcus limitans
-def: "In the floor of the fourth ventricle, the sulcus limitans separates the cranial nerve motor nuclei (medial) from the sensory nuclei (lateral). In the superior part of the rhomboid fossa, it corresponds with the lateral limit of the fossa and presents a bluish-gray area, the locus ceruleus (which owes its color to an underlying patch of deeply pigmented nerve cells, termed the substantia ferruginea). It is seen as slight depressions separating the basal and alar plates[WP]. a longitudinal groove in the neural tube wall of the embryo; stretches from the mesencephalon caudad[TMD]." [Wikipedia:Sulcus_limitans, http://medical-dictionary.thefreedictionary.com/Sulcus+limitans]
-comment: TODO consider splitting - separate class for neural tube sulcus limitans
-is_a: UBERON:0002553 ! anatomical cavity
-relationship: part_of UBERON:0002422 ! fourth ventricle
-xref: FMA:78496 ! Sulcus limitans
-xref: EHDAA2:0001944 ! sulcus limitans
-
-[Term]
 id: UBERON:0005488 ! superior mesenteric plexus
 name: superior mesenteric plexus
 def: "The superior mesenteric plexus is a continuation of the lower part of the celiac plexus, receiving a branch from the junction of the right vagus nerve with the plexus. It surrounds the superior mesenteric artery, accompanies it into the mesentery, and divides into a number of secondary plexuses, which are distributed to all the parts supplied by the artery, viz. , pancreatic branches to the pancreas; intestinal branches to the small intestine; and ileocolic, right colic, and middle colic branches, which supply the corresponding parts of the great intestine. The nerves composing this plexus are white in color and firm in texture; in the upper part of the plexus close to the origin of the superior mesenteric artery is the superior mesenteric ganglion." [Wikipedia:Superior_mesenteric_plexus]
@@ -72556,10 +72723,16 @@ xref: EHDAA2:0001171 ! midbrain lateral wall
 [Term]
 id: UBERON:0005496
 name: neural tube lateral wall
+def: "Portion of tissue on the side of the lumen of the neural tube." [ZFA:0001435]
 is_a: UBERON:0000060 ! anatomical wall
 relationship: part_of UBERON:0001049 ! neural tube
 xref: ZFA:0001435 ! lateral wall neural tube
 xref: EHDAA2:0001257 ! neural tube lateral wall
+xref: EHDAA:2873 ! lateral wall [part_of: "neural tube"]
+xref: EHDAA:912 ! lateral wall [part_of: "neural tube"]
+xref: EMAPA:16166 ! lateral wall [ends_at: "TS13 (E8-9.25)"] [part_of: "neural tube"] [starts_at: "TS12 (E7.5-8.75)"]
+xref: EMAPA:16532 ! lateral wall [ends_at: "TS19 (E11-12.25)"] [part_of: "neural tube"] [starts_at: "TS14 (E8.5-9.75)"]
+xref: HOG:0000513 ! lateral wall spinal cord [broader: "neural tube"]
 
 [Term]
 id: UBERON:0005497
