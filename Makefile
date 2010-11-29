@@ -18,10 +18,10 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 	obolib-obo2owl -o file://`pwd`/$@ $<
 
 %-orphans: %.obo
-	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep -r Term - > $@
+	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@
 
 %-xp-check: %.obo
-	obo-check-xps.pl $< >& $@
+	obo-check-xps.pl $< >& $@ || echo "problems"
 
 OBOLX=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -r obol_av 
 OBOL=$(OBOLX)  -u obol_anatomy_xp 
@@ -149,7 +149,7 @@ uberon-%-misalign.txt: %.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon-orphans uberon-synclash uberon-xp-check uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-discv.txt 
+uberon-qc: uberon-orphans uberon-synclash uberon.owl2 uberon-xp-check uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-discv.txt 
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
@@ -830,43 +830,49 @@ uberon_class_taxon_min.txt:
 missing-from-%.txt:
 	blip-findall -r uberonp -r $* "class(X),\+id_idspace(X,'UBERON'),\+((entity_xref(U,X),id_idspace(U,'UBERON')))" -select X -label > $@
 
-# USE THIS:
-mappings-ZFA-MA-201009-LCS.txt:
-	blip-findall -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA-201009.rdf -r uberonp_with_isa -i adhoc_uberon.pro -i eval_mappings.pro "mapping_class_pair_lcspath_score/9" -label > $@.tmp && sort -u $@.tmp > $@
 
-mappings-FMA-MA-201009-LCS.txt:
-	blip-findall -r fma_simple -r mouse_anatomy -i mappings-FMA-MA-201009.rdf -r uberonp_with_isa -i adhoc_uberon.pro -i eval_mappings.pro -i uberonp_FMA_MA_inferred_parent_via.pro "mapping_class_pair_lcspath_score/9" -label > $@.tmp && sort -u $@.tmp > $@
+# ----------------------------------------
+# NEW NEW MAPPINGS
+# ----------------------------------------
 
-uberonp_FMA_MA_inferred_parent_via.pro:
-	 blip-findall -debug index -debug em -r fma_simple -r mouse_anatomy -i mappings-FMA-MA-201009.rdf -r uberonp_with_isa -i adhoc_uberon.pro -i eval_mappings.pro  -u ontol_db -u metadata_db "inferred_parent_via/3" -write_prolog > $@
+MONTS = MA TADS HAO TGMA ZFA WBbt XAO FBbt AAO FMA EHDAA2
 
-# IGNORE ALL BELOW---
+all_simple_closure: $(patsubst %,simple_closure-%-ontol_db.pro,$(MONTS) uberonp)
 
-mappings-ZFA-MA-%-scores.txt: mappings-ZFA-MA-%.rdf
-	blip-findall -debug index -r mouse_anatomy -r zebrafish_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_classification/10 -label > $@.tmp && sort -u $@.tmp > $@
+simple_closure-%-ontol_db.pro:
+	blip-findall -r $* -i eval_mappings.pro "parentRT(X,R,Y),\+omit_class(Y),(R=subclass;R=part_of)" -select "parentRT(X,R,Y)" -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
 
-mappings-FMA-MA-%-scores.txt: mappings-FMA-MA-%.rdf
-	blip-findall -debug mappings -debug index -r fma_simple -r mouse_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_classification/10 -label > $@.tmp && sort -u $@.tmp > $@
+all_uberon_simple_closure: $(patsubst %,uberon_simple_closure-%-ontol_db.pro,$(MONTS))
 
-mappings-FMA-FBbt-%-scores.txt: mappings-FMA-FBbt-%.rdf
-	blip-findall -debug index -r fma_simple -r fly_anatomy -i $< -goal mapping_prep -r uberonp_with_isa -i adhoc_uberon.pro mapping_classification/10 -label > $@.tmp && sort -u $@.tmp > $@
+# simple concatenation
+uberon_combined_simple_closure-%-ontol_db.pro: simple_closure-%-ontol_db.pro simple_closure-uberonp-ontol_db.pro
+	cat $< simple_closure-uberonp-ontol_db.pro > $@
+.PRECIOUS: uberon_combined_simple_closure-%-ontol_db.pro
 
+# relational join
 
-mappings-ZFA-MA-201009-best.txt:
-	blip-findall -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA-201009.rdf -goal table_path_dist -r uberonp_with_isa -i adhoc_uberon.pro uberon_closest_match/6 -label > $@.tmp && sort -u $@.tmp > $@
-mappings-FMA-MA-201009-best.txt:
-	blip-findall -r mouse_anatomy -r fma -i mappings-FMA-MA-201009.rdf -goal table_path_dist -r uberonp_with_isa -i adhoc_uberon.pro uberon_closest_match/6 -label > $@.tmp && sort -u $@.tmp > $@
-mappings-FMA-FBbt-201009-best.txt:
-	blip-findall -r fly_anatomy -r fma -i mappings-FMA-FBbt-201009.rdf -goal table_path_dist -r uberonp_with_isa -i adhoc_uberon.pro uberon_closest_match/6 -label > $@.tmp && sort -u $@.tmp > $@
+uberon_simple_closure-%-ontol_db.pro: uberon_combined_simple_closure-%-ontol_db.pro
+	blip-findall -i $< -r uberonp -debug index -index "ontol_db:parentRT(1,0,1)" "entity_xref(U,X),id_idspace(U,'UBERON'),parentRT(C,R1,X),parentRT(U,R2,P),combine_relation_pair(R1,R2,R)" -select "parentRT(C,R,P)" -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
 
-mappings-FMA-FBbt-201009-lca.txt:
-	blip-findall -r fly_anatomy -r fma -i mappings-FMA-FBbt-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "mapping_lca(M,S,T,A,D)" -label > $@.tmp && sort -u $@.tmp > $@
-mappings-FMA-MA-201009-lca.txt:
-	blip-findall -r mouse_anatomy -r fma -i mappings-FMA-MA-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "mapping_lca(M,S,T,A,D)" -label > $@.tmp && sort -u $@.tmp > $@
-mappings-ZFA-MA-201009-lca.txt:
-	blip-findall -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "mapping_lca(M,S,T,A,D)" -label > $@.tmp && sort -u $@.tmp > $@
+# don't index for FMA, takes too long...; experiment: just U classes
+#uberon_simple_closure-FMA-ontol_db.pro: simple_closure-uberonp-ontol_db.pro
+#	blip-findall  -i $< -r uberonp "entity_xref(U,X),id_idspace(X,'FMA'),id_idspace(U,'UBERON'),parentRT(U,R,P)" -select "parentRT(X,R,P)" -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
 
-inv-mappings-FMA-MA-201009-lca.txt:
-	blip-findall -r mouse_anatomy -r fma -i mappings-FMA-MA-201009.rdf -goal table_path_dist -table_pred ontol_db:bf_parentRT/2 -r uberonp_with_isa -i adhoc_uberon.pro "inv_mapping_lca(M,S,T,'FMA','MA')" -label > $@.tmp && sort -u $@.tmp > $@
+get_all_mappings: bp_anat_onts.txt
+	./get_all_mappings.pl bp_anat_onts.txt
 
+all_mappings_txt: $(patsubst %,bp_mappings-%.txt,$(MONTS))
+all_mappings_pro: $(patsubst %,bp_mappings-%.pro,$(MONTS))
 
+bp_mappings-%.txt: bp_mappings-%.xml
+	./bp_map2tbl.pl $< > $@
+
+bp_mappings-%.pro: bp_mappings-%.txt
+	tbl2p -p bp_mapping $< > $@
+
+uxrefs-ontol_db.pro: uberon.obo
+	blip-findall -r uberonp entity_xref/2 > $@
+
+eval_all_src: all_uberon_simple_closure
+eval_all:
+	./run-all-eval.pl $(MONTS)
