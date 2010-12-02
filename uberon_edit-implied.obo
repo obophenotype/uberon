@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 01:12:2010 16:23
+date: 01:12:2010 23:55
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -3727,6 +3727,7 @@ alt_id: UBERON:BTO_0001858-FMA_70737
 def: "small, nipple-like extensions (or interdigitations) of the dermis into the epidermis. They can be observed at the surface of the skin in hands and feet as epidermal  or papillary ridges (colloquially known as fingerprints). The dermal papillae nourishes all hair follicles and bring food and oxygen to the lower layers of epidermal cells. The pattern of ridges they produce in hands and feet are inherited features that are developed before birth. They remain unaltered (except size) throughout life, and are therefore used for fingerprints. The dermal papillae are part of the uppermost layer of the dermis, the papillary dermis, and the ridges they form greatly increase the surface area between the dermis and epidermis. Because the dermis' main function is to support the epidermis, this greatly increases the exchange of oxygen, nutrients, and waste products between these two layers. Additionally, the increase in surface area prevent the dermal and epidermal layers from separating from each others by strengthening the junction between them. With age, the papillae tend to flatten and sometimes increase in numbers. Dermal papillae also play a pivotal role in hair formation, growth and, cycling" [Wikipedia:Dermal_papillae]
 synonym: "dermal papillae" EXACT PLURAL []
 synonym: "follicular papilla" EXACT [FMA:70737]
+synonym: "hair follicle dermal papilla" RELATED [MP:0010687]
 xref: BTO:0001858
 xref: FMA:70737
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Skin.jpg/200px-Skin.jpg
@@ -5422,7 +5423,7 @@ xref: NIF_GrossAnatomy:birnlex_1026
 xref: TAO:0000320
 xref: ZFA:0000320
 is_a: UBERON:0001020 ! commissure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005970 ! implied link automatically realized ! brain commissure
 relationship: only_in_taxon NCBITaxon:7742
 relationship: part_of UBERON:0002298 ! brainstem
 
@@ -19418,7 +19419,7 @@ def: "a bone in the skull  that separates the nasal cavity from the brain. As su
 comment: Note the WP states the Neurocranium contains the ethmoid bone, both MA and FMA place the ethmoid as part of the viscerocranium. FMA also has it in neurocranium (via basicranium). Ideally we would have non-overlapping divisions of the skull, but for now we follow FMA
 subset: uberon_slim
 synonym: "ethmoid bone" EXACT []
-synonym: "ethmoidal bone" EXACT []
+synonym: "ethmoidal bone" EXACT [MP:0000101]
 xref: FMA:52740
 xref: GAID:212
 xref: HOG:0001317
@@ -23992,7 +23993,8 @@ xref: NIF_GrossAnatomy:birnlex_1609
 xref: TAO:0000359
 xref: ZFA:0000359
 is_a: UBERON:0001020 ! commissure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0002757 ! implied link automatically realized ! regional part of epithalamus
+is_a: UBERON:0005970 ! implied link automatically realized ! brain commissure
 relationship: part_of UBERON:0001904 ! habenula
 
 [Term]
@@ -26455,6 +26457,10 @@ alt_id: UBERON:FMA_67821-MA_0000778
 def: "tiny muscle fiber attached to each hair follicle, which contract to make the hairs stand on end, causing goose bumps. They exist in most mammals including humans." [http://en.wikipedia.org/wiki/Arrector_pili, Wikipedia:Arrector_pili]
 subset: uberon_slim
 synonym: "arrector pili" EXACT [FMA:67821, MA:0000778]
+synonym: "arrector pili muscle" EXACT [EMAPA:26779, MP:0010679]
+xref: EMAPA:26771
+xref: EMAPA:26775
+xref: EMAPA:26779
 xref: FMA:67821
 xref: MA:0000778
 is_a: UBERON:0001135 ! smooth muscle tissue
@@ -27475,8 +27481,10 @@ xref: MA:0000084
 xref: ncithesaurus:Interatrial_Septum
 xref: OpenCyc:Mx4rpd49nLYEEduAAAACs2IKfQ
 xref: OpenCyc:Mx4rwGvku5wpEbGdrcN5Y29ycA
-is_a: UBERON:0002099 ! cardiac septum
-relationship: part_of UBERON:0002081 ! cardiac atrium
+is_a: UBERON:0002099 ! implied link automatically realized ! cardiac septum
+intersection_of: UBERON:0002099 ! cardiac septum
+intersection_of: adjacent_to UBERON:0002078 ! right atrium
+intersection_of: adjacent_to UBERON:0002079 ! left atrium
 
 [Term]
 id: UBERON:0002086
@@ -28994,8 +29002,8 @@ xref: OpenCyc:Mx4rsWA75K1cEduAAADggVaqvw
 xref: TAO:0001320
 xref: XAO:0000066
 xref: ZFA:0001320
-is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0005983 ! heart layer
 relationship: develops_from UBERON:0003084 ! heart primordium
 relationship: has_part UBERON:0001986 ! endothelium
 relationship: part_of UBERON:0000948 ! heart
@@ -32394,7 +32402,7 @@ xref: OpenCyc:Mx4ro36AFrCvEduAAAAOpmP6tw
 xref: TAO:0001319
 xref: XAO:0000065
 xref: ZFA:0001319
-is_a: UBERON:0004923 ! organ component layer
+is_a: UBERON:0005983 ! heart layer
 relationship: part_of UBERON:0000948 ! heart
 
 [Term]
@@ -34925,7 +34933,7 @@ synonym: "interhemispheric commissure" RELATED [MA:0002721]
 xref: FMA:67930
 xref: MA:0002721
 is_a: UBERON:0001020 ! commissure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005970 ! implied link automatically realized ! brain commissure
 relationship: part_of UBERON:0001893 ! telencephalon
 relationship: part_of UBERON:0002316 ! white matter of neuraxis
 
@@ -35512,6 +35520,7 @@ id: UBERON:0002511
 name: trabecula carnea
 alt_id: UBERON:MA_0002831-FMA_7269
 def: "The trabeculae carneae (columnae carneae, or fleshy beams), are rounded or irregular muscular columns which project from the inner surface of the right and left ventricles of the heart.[1] They should not be confused with the pectinate muscles, which are present in the right[1] and left atria only. They are of three kinds: * some are attached along their entire length on one side and merely form prominent ridges,* others are fixed at their extremities but free in the middle, * while a third set, the papillary muscles are continuous by their bases with the wall of the ventricle, while their apices give origin to the chordæ tendineæ which pass to be attached to the segments of both the mitral valve and the tricuspid valve. The purpose of the trabeculae carneae is most likely to prevent suction that would occur with a flat surfaced membrane and thus impair the heart's ability to pump efficiently. The trabeculae carneae also serve a similar function to papillary muscles in that their contraction pulls on the chordae tendineae, preventing inversion of the mitral (bicuspid) and tricuspid valves, that is, their bulging towards the atrial chambers, which would lead to subsequent leakage of the blood into the atria. So by the action of papillary muscles on the atrioventricular valves, backflow of the blood from the ventricles into the atria is prevented[WP]." [Wikipedia:Trabeculae_carneae]
+comment: TODO - check - add link to ventricle?
 synonym: "cardiac trabecula" RELATED [GO:0060347]
 synonym: "heart trabecula" RELATED [GO:0060347]
 synonym: "trabecula of heart" RELATED []
@@ -36906,7 +36915,7 @@ synonym: "superior colliculus commissure" EXACT [FMA:72418]
 xref: FMA:72418
 xref: NIF_GrossAnatomy:birnlex_1073
 is_a: UBERON:0001020 ! commissure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005970 ! implied link automatically realized ! brain commissure
 intersection_of: UBERON:0001020 ! commissure
 intersection_of: part_of UBERON:0001945 ! superior colliculus
 relationship: part_of UBERON:0001945 ! superior colliculus
@@ -43176,7 +43185,7 @@ synonym: "posterior corpus quadrigeminum commissure" EXACT [OBOL:automatic]
 xref: FMA:71115
 xref: NIF_GrossAnatomy:birnlex_935
 is_a: UBERON:0001020 ! commissure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005970 ! implied link automatically realized ! brain commissure
 intersection_of: UBERON:0001020 ! commissure
 intersection_of: part_of UBERON:0001946 ! inferior colliculus
 relationship: part_of UBERON:0001946 ! inferior colliculus
@@ -51248,6 +51257,7 @@ def: "A blood vessel that is part of a heart [Obol]." [OBOL:automatic]
 synonym: "blood vessel of heart" EXACT [OBOL:automatic]
 xref: MA:0002483
 is_a: UBERON:0001981 ! implied link automatically realized ! blood vessel
+is_a: UBERON:0005985 ! implied link automatically realized ! coronary vessel
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0000948 ! heart
 
@@ -56599,7 +56609,6 @@ synonym: "endocardium of atrioventricular canal" EXACT [OBOL:automatic]
 synonym: "endocardium of AV canal" EXACT [OBOL:automatic]
 xref: ZFA:0001616
 is_a: UBERON:0002165 ! implied link automatically realized ! endocardium
-is_a: UBERON:0005291 ! implied link automatically realized ! embryonic tissue
 intersection_of: UBERON:0002165 ! endocardium
 intersection_of: part_of UBERON:0002087 ! atrioventricular canal
 
@@ -56689,7 +56698,7 @@ id: UBERON:0003936
 name: postoptic commissure
 xref: ZFA:0000059
 is_a: UBERON:0001020 ! commissure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0005970 ! implied link automatically realized ! brain commissure
 relationship: part_of UBERON:0003931 ! diencephalic white matter
 
 [Term]
@@ -63678,7 +63687,6 @@ id: UBERON:0004491
 name: cardiac muscle tissue of interatrial septum
 def: "A portion of cardiac muscle tissue that is part of a interatrial septum [Obol]." [OBOL:automatic]
 xref: FMA:84083
-is_a: UBERON:0004490 ! implied link automatically realized ! cardiac muscle tissue of atrium
 is_a: UBERON:0004492 ! implied link automatically realized ! cardiac muscle tissue of cardiac septum
 intersection_of: UBERON:0001133 ! cardiac muscle tissue
 intersection_of: part_of UBERON:0002085 ! interatrial septum
@@ -72516,7 +72524,7 @@ name: testis sex cord
 def: "The testis cords are precursors to the rete testis. They play several different roles in the development of the male genitals[WP]." [Wikipedia:Testis_cords]
 comment: check primary vs testis
 synonym: "primary sex cord" RELATED []
-synonym: "testis cord" RELATED [MP:0006424]
+synonym: "testis cord" EXACT [MP:0006424]
 synonym: "testis primitive sex cord" RELATED []
 xref: EHDAA:8152
 xref: EHDAA2:0002011
@@ -74056,10 +74064,12 @@ relationship: part_of UBERON:0000925 ! endoderm
 [Term]
 id: UBERON:0005440
 name: ductus arteriosus
-def: "In the developing fetus, the ductus arteriosus (DA), also called the ductus Botalli or ductus Layton in the United Kingdom, is a shunt connecting the pulmonary artery to the aortic arch. It allows most of the blood from the right ventricle to bypass the fetus' fluid-filled lungs, protecting the lungs from being overworked and allowing the left ventricle to strengthen. There are two other fetal shunts, the ductus venosus and the foramen ovale." [Wikipedia:Ductus_arteriosus]
+def: "In the developing fetus, the ductus arteriosus (DA), also called the ductus Botalli or ductus Layton in the United Kingdom, is a shunt connecting the pulmonary artery to the aortic arch. It allows most of the blood from the right ventricle to bypass the fetus' fluid-filled lungs, protecting the lungs from being overworked and allowing the left ventricle to strengthen. There are two other fetal shunts, the ductus venosus and the foramen ovale[MP]. the fetal vessel that connects the left pulmonary artery with the descending aorta; the ductus arteriosus normally regresses into a fibrous cord, the ligamentum arteriousum after birth[MP]" [MP:0010564, Wikipedia:Ductus_arteriosus]
+synonym: "fetal ductus arteriosus" RELATED [MP:0010564]
 xref: EHDAA2:0000420
 xref: FMA:79871
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000055 ! vessel
+is_a: UBERON:0005985 ! implied link automatically realized ! coronary vessel
 relationship: part_of UBERON:0004145 ! outflow tract
 relationship: part_of UBERON:0004571 ! systemic arterial system
 
@@ -77142,8 +77152,8 @@ def: "The mesonephric equivalent of the ascending limb, or straight distal segme
 synonym: "mesonephric ascending limb" RELATED [XAO:0000333]
 synonym: "mesonephric straight distal segment" RELATED [XAO:0000333]
 xref: XAO:0000333
+is_a: UBERON:0000083 ! mesonephric tubule
 relationship: develops_from UBERON:0005322 ! mesonephric nephron
-relationship: part_of UBERON:0000083 ! mesonephric tubule
 
 [Term]
 id: UBERON:0005893
@@ -77159,6 +77169,7 @@ def: "A leg is a limb on which an animal walks and stands (GO:0035110)." [GO:003
 comment: Functional grouping, currently encompasses vertebrate and insect legs
 subset: functional_classification
 synonym: "leg" RELATED []
+is_a: UBERON:0000026 ! appendage
 
 [Term]
 id: UBERON:0005895
@@ -77405,18 +77416,22 @@ id: UBERON:0005933
 name: hair root sheath
 xref: EMAPA:18772
 xref: MA:0000162
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0005932 ! bulb of hair follicle
 
 [Term]
 id: UBERON:0005941
 name: hair inner root sheath
-def: "The cells of the inner root sheath are interlocked with those of the cuticle of the hair, firmly anchoring the hair in the follicle. The inner root sheath must grow at the same rate as the hair, or faster as it molds and guides the shaft in its passage outward." [Keratin.com:http\://www.keratin.com/]
+def: "The cells of the inner root sheath are interlocked with those of the cuticle of the hair, firmly anchoring the hair in the follicle. The inner root sheath must grow at the same rate as the hair, or faster as it molds and guides the shaft in its passage outward[BTO]. the multilayered tube composed of terminally differentiated hair follicle keratinocytes that is surrounded by the outer root sheath; the layers of the inner root sheath include the companion layer, Henle's layer, Huxley's layer and the inner root sheath cuticle[MP]." [Keratin.com:http\://www.keratin.com/, MP:0010685]
+synonym: "hair follicle inner root sheath" EXACT [MP:0010685]
 synonym: "inner root sheath" RELATED [BTO:0003971]
 synonym: "inner root sheath of hair follicle" EXACT [FMA:70935]
 xref: BTO:0003971
 xref: FMA:70935
 xref: MA:0000779
-relationship: part_of UBERON:0005933 ! hair root sheath
+is_a: UBERON:0005933 ! hair root sheath
 
 [Term]
 id: UBERON:0005942
@@ -77429,12 +77444,15 @@ synonym: "outer root sheath of hair follicle" EXACT [FMA:70943]
 xref: BTO:0003969
 xref: FMA:70943
 xref: MA:0000780
-relationship: part_of UBERON:0005933 ! hair root sheath
+is_a: UBERON:0005933 ! hair root sheath
 
 [Term]
 id: UBERON:0005943
 name: hair root sheath matrix
 xref: MA:0000781
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0005933 ! hair root sheath
 
 [Term]
@@ -77569,6 +77587,361 @@ xref: GAID:897
 is_a: UBERON:0000479 ! portion of tissue
 relationship: has_part CL:0002367
 relationship: part_of UBERON:0000970 ! eye
+
+[Term]
+id: UBERON:0005970
+name: brain commissure
+is_a: UBERON:0001020 ! implied link automatically realized ! commissure
+is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
+intersection_of: UBERON:0001020 ! commissure
+intersection_of: part_of UBERON:0000955 ! brain
+
+[Term]
+id: UBERON:0005971
+name: amniotic fold
+def: "the folded edge of the amnion where it rises over and finally encloses the embryo[TFD]." [http://medical-dictionary.thefreedictionary.com/amniotic+fold]
+xref: EMAPA:16076
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0005972
+name: tunnel of Corti
+def: "A triangular, fluid-filled space normally found between the inner and outer rows of supporting pillar cells in the organ of Corti." [MP:0003151]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0002227 ! spiral organ of cochlea
+
+[Term]
+id: UBERON:0005973
+name: blood-inner ear barrier
+def: "the function of the group of barriers and transport systems which regulate the transport of various substances from blood to inner ear tissue and maintain the microhomeostasis and functional integrity of the inner ear; the endothelial cells of the inner ear blood capillaries, linked to each other by tight junctions, represent the main component of the blood-inner ear barrier" [MP:0004999]
+is_a: UBERON:0001981 ! blood vessel
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
+relationship: part_of UBERON:0001846 ! internal ear
+
+[Term]
+id: UBERON:0005974
+name: posterior cerebellomedullary cistern
+def: "A space between the cerebellum and the dorsal surface of the medulla." [MP:0009036]
+xref: FMA:83721
+is_a: UBERON:0004049 ! cerebellomedullary cistern
+
+[Term]
+id: UBERON:0005975
+name: hair follicle bulge
+def: "the area located in the bottom of the permanent portion of a resting (telogen) hair follicle where the cells of the external root sheath of the hair follicle are contiguous with the basal layer of the epidermis; this portion of the follicle is involved in the generation of a new hair at the onset of the hair growth cycle (anagen) and contains the hair follicle stem cells" [MP:0009759]
+xref: BTO:0004904
+xref: FMA:70735
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0002073 ! hair follicle
+
+[Term]
+id: UBERON:0005976
+name: ansiform lobule crus I
+def: "." [MP:0010002]
+comment: TODO - check
+synonym: "crus II of the ansiform lobule (HVII)" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
+synonym: "hemispheric lobule viibi" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
+synonym: "inferior semilunar lobule" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
+synonym: "lobulus ansiform crus II" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
+synonym: "lobulus semilunaris inferior" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
+synonym: "superior semilunar lobule " EXACT [FMA:72524]
+xref: FMA:72524
+xref: NIF_GrossAnatomy:nlx_anat_20081209
+is_a: UBERON:0005348 ! ansiform lobule
+
+[Term]
+id: UBERON:0005977
+name: ansiform lobule crus II
+def: "." [MP:0010003]
+comment: TODO - check
+synonym: "crus I of the ansiform lobule (HVII)" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
+synonym: "hemispheric lobule viia" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
+synonym: "inferior semilunar lobule" EXACT [FMA:72525]
+synonym: "lobulus ansiform crus I" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
+synonym: "lobulus semilunaris superior" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
+synonym: "superior semilunar lobule" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
+xref: FMA:72525
+xref: NIF_GrossAnatomy:nlx_anat_20081208
+is_a: UBERON:0005348 ! ansiform lobule
+
+[Term]
+id: UBERON:0005978
+name: olfactory bulb outer nerve layer
+def: "the outermost layer of the olfactory bulb; consists primarily of olfactory afferent axons and ensheathing glia" [MP:0010057]
+is_a: UBERON:0004001 ! olfactory bulb layer
+relationship: part_of UBERON:0002264 ! olfactory bulb
+
+[Term]
+id: UBERON:0005979
+name: crista terminalis
+def: "the vertical crest of the interior wall of the right atrium that lies to the right of the sinus of the vena cava and separates this from the remainder of the right atrium" [MP:0010495]
+xref: FMA:9236
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002078 ! right atrium
+
+[Term]
+id: UBERON:0005980
+name: pectinate muscle
+def: "the prominent ridges of atrial myocardium located on the inner surface of most of the right atrium and both the right and left auricular regions" [MP:0010496]
+xref: FMA:12226
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002302 ! myocardium of atrium
+
+[Term]
+id: UBERON:0005981
+name: vena cava sinus
+def: "the portion of the cavity of the right atrium of the heart that receives the blood from the vena cavae and is separated from the rest of the atrium by the crista terminalis" [MP:0010497]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002078 ! right atrium
+
+[Term]
+id: UBERON:0005982
+name: Bachmann's bundle
+def: "the impulse conduction tract that originates in the sinoatrial node and transmits signal to the left atrium" [MP:0010517]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000948 ! heart
+
+[Term]
+id: UBERON:0005983
+name: heart layer
+def: "the laminar structure of the heart" [MP:0010545]
+is_a: UBERON:0004923 ! organ component layer
+relationship: part_of UBERON:0000948 ! heart
+
+[Term]
+id: UBERON:0005984
+name: subendocardium layer
+def: "the layer of loose fibrous tissue located between the endocardium and myocardium which contains the nerves and the impulse-conducting system (Purkinje fibers) of the heart" [MP:0010546]
+is_a: UBERON:0005983 ! heart layer
+
+[Term]
+id: UBERON:0005985
+name: coronary vessel
+def: "any of the arteries or veins that supply blood to the heart or return blood from the heart muscles to the circulation" [MP:0010551]
+comment: TODO - change relation from part_of
+is_a: UBERON:0000055 ! implied link automatically realized ! vessel
+intersection_of: UBERON:0000055 ! vessel
+intersection_of: part_of UBERON:0000948 ! heart
+
+[Term]
+id: UBERON:0005986
+name: left posterior bundle
+def: "the left branch of the atrioventricular bundle that separates at the bundle of His, descends the septal wall of the left ventricle and connects to the terminal Purkinje fiber" [MP:0010566]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: in_left_side_of UBERON:0002353 ! atrioventricular bundle
+
+[Term]
+id: UBERON:0005987
+name: right bundle
+def: "the right branch of the atrioventricular bundle that separates just below the bundle of His, descends the septal wall of the right ventricle and connects to the terminal Purkinje fibers" [MP:0010567]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: in_right_side_of UBERON:0002353 ! atrioventricular bundle
+
+[Term]
+id: UBERON:0005988
+name: atrium myocardial trabecula
+def: "the supporting bundles of muscular fibers lining the walls of the atria" [MP:0010581]
+synonym: "atrial trabecula" EXACT []
+synonym: "trabecula of atrium" EXACT []
+is_a: UBERON:0000440 ! trabecula
+relationship: part_of UBERON:0002302 ! myocardium of atrium
+
+[Term]
+id: UBERON:0005989
+name: atrioventricular septum
+def: "the wall of the heart that separates the right atrium and left ventricle; and is located just above the septal cusp of the tricuspid valve" [MP:0010592]
+xref: FMA:7136
+is_a: UBERON:0002099 ! implied link automatically realized ! cardiac septum
+intersection_of: UBERON:0002099 ! cardiac septum
+intersection_of: adjacent_to UBERON:0002078 ! right atrium
+intersection_of: adjacent_to UBERON:0002084 ! left ventricle
+
+[Term]
+id: UBERON:0005990
+name: aortic valve cusp
+def: "the three fibrous triangular components and associated flap of the aortic valve" [MP:0010595]
+synonym: "cusp of aortic valve" EXACT [FMA:7251]
+xref: FMA:7251
+is_a: UBERON:0006009 ! cusp of cardiac valve
+relationship: part_of UBERON:0002137 ! aortic valve
+
+[Term]
+id: UBERON:0005991
+name: aortic valve anulus
+def: "the fibrous ring of the aortic valve that attaches the cusps of aortic valve to the wall of left ventricle, and which consists of portions of the fibrous scallops of the posterior, right anterior and left anterior cusps" [MP:0010598]
+xref: FMA:9502
+is_a: UBERON:0006008 ! fibrous ring of heart
+relationship: part_of UBERON:0002137 ! aortic valve
+
+[Term]
+id: UBERON:0005992
+name: pulmonary valve cusp
+def: "the three fibrous triangular components and associated flap of the pulmonary valve" [MP:0010602]
+xref: FMA:7248
+is_a: UBERON:0006009 ! cusp of cardiac valve
+relationship: part_of UBERON:0002146 ! pulmonary valve
+
+[Term]
+id: UBERON:0005993
+name: pulmonary valve anulus
+def: "the fibrous ring of the pulmonary valve that attaches the cusps of pulmonary valve to the wall of right ventricle, and which consists of portions of the fibrous scallops of the anterior, right posterior and left posterior cusps" [MP:0010606]
+xref: FMA:9503
+is_a: UBERON:0006008 ! fibrous ring of heart
+relationship: part_of UBERON:0002146 ! pulmonary valve
+
+[Term]
+id: UBERON:0005994
+name: chordae tendineae
+def: "the tendinous strands that connect the papillary muscles on the wall of the ventricles to the leaflets of the atrioventricular valves; the chordae tendineae serve to prevent the AV valves from prolapsing back into the atria" [MP:0010608, Wikipedia:Chordae_tendineae]
+xref: GAID:564
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0002133 ! atrioventricular valve
+
+[Term]
+id: UBERON:0005995
+name: mitral valve anulus
+def: "the fibrous ring of the mitral valve that attaches the cusps of mitral valve to the heart, and which consists of portions of the fibrous scallops of the anterior and posterior cusps" [MP:0010613]
+xref: FMA:9498
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0006008 ! fibrous ring of heart
+relationship: part_of UBERON:0002135 ! mitral valve
+
+[Term]
+id: UBERON:0005996
+name: mitral valve cusp
+def: "the two fibrous components and associated flaps of the mitral valve" [MP:0010614]
+comment: TODO - add generic parent
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0006009 ! cusp of cardiac valve
+relationship: part_of UBERON:0002135 ! mitral valve
+
+[Term]
+id: UBERON:0005997
+name: tricuspid valve anulus
+def: "the fibrous ring of the tricuspid valve that attaches the cusps of tricuspid valve to the heart, and which consists of portions of the fibrous scallops of the anterior cusp (infundibular cusp), the posterior cusp (marginal cusp), and the septal cusp (medial cusp)" [MP:0010621]
+xref: FMA:9500
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0006008 ! fibrous ring of heart
+relationship: part_of UBERON:0002134 ! tricuspid valve
+
+[Term]
+id: UBERON:0005998
+name: tricuspid valve cusp
+def: "the three fibrous triangular components and associated flaps of the tricuspid valve" [MP:0010622]
+comment: TODO - check
+synonym: "septal leaflet of tricuspid valve" EXACT [FMA:7240]
+xref: FMA:7240
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0006009 ! cusp of cardiac valve
+relationship: part_of UBERON:0002134 ! tricuspid valve
+
+[Term]
+id: UBERON:0005999
+name: aorticopulmonary septum
+def: "the spiral septum that separates the truncus arteriosus into a ventral pulmonary trunk and the dorsal aorta" [MP:0010650]
+is_a: UBERON:0002099 ! implied link automatically realized ! cardiac septum
+intersection_of: UBERON:0002099 ! cardiac septum
+intersection_of: adjacent_to UBERON:0002333 ! pulmonary trunk
+intersection_of: adjacent_to UBERON:0005805 ! dorsal aorta
+
+[Term]
+id: UBERON:0006001
+name: intersomitic artery
+def: "the small branching sprouts of the dorsal aorta that grow across the medial surface of the somite, turn right angles to grow over that surface and then fuse with other sprouts and form the vertebral arteries adjacent to the neural tube; the intersomitic arteries supply the body wall and persist in the adult as the posterior intercostal, subcostal and the lumbar arteries" [MP:0010662]
+is_a: UBERON:0001637 ! artery
+is_a: UBERON:0003513 ! implied link automatically realized ! trunk blood vessel
+relationship: part_of UBERON:0005805 ! dorsal aorta
+
+[Term]
+id: UBERON:0006002
+name: vitelline artery
+def: "the paired arteries that carry blood to the yolk sac from the dorsal aorta; the vitelline arteries give rise to the celiac artery, superior mesenteric artery, and inferior mesenteric artery in the adult" [MP:0010664]
+xref: EMAPA:16207
+is_a: UBERON:0001637 ! implied link automatically realized ! artery
+intersection_of: UBERON:0001637 ! artery
+intersection_of: continuous_with UBERON:0001040 ! yolk sac
+intersection_of: continuous_with UBERON:0005805 ! dorsal aorta
+
+[Term]
+id: UBERON:0006003
+name: skin adnexa
+def: "the tissue or structures associated with or embedded in the skin such as hair and hair follicles, sweat glands, sebaceous glands and claws or nails" [MP:0010678]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0002416 ! integumental system
+
+[Term]
+id: UBERON:0006004
+name: hair follicle matrix region
+def: "the bulb region adjacent to the dermal papilla that contains rapidly proliferating matrix cells that give rise to the various cell lineages of the hair shaft and inner root sheath" [MP:0010686]
+synonym: "germinal matrix of hair bulb" EXACT [FMA:70772]
+synonym: "lower part of bulb of hair follicle" EXACT [FMA:70772]
+synonym: "lower zone of bulb of hair follicle" EXACT [FMA:70772]
+xref: FMA:70772
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0005932 ! bulb of hair follicle
+
+[Term]
+id: UBERON:0006005
+name: hair follicle isthmus
+def: "the middle part of the hair follicle that extends from the sebaceous duct to the bulge" [MP:0010694]
+xref: FMA:70723
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0002073 ! hair follicle
+
+[Term]
+id: UBERON:0006006
+name: metoptic pilar
+def: "posterior border of the optic nerve foramen." [MP:0010705]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+relationship: part_of UBERON:0005745 ! optic canal
+
+[Term]
+id: UBERON:0006007
+name: pre-Botzinger complex
+def: "the group of interneurons within the medulla oblongata's ventral respiratory group that are important for the generation of ventilatory (inspiratory) rhythmogenesis" [MP:0010745]
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0000011 ! parasympathetic nervous system
+relationship: part_of UBERON:0001896 ! medulla oblongata
+
+[Term]
+id: UBERON:0006008
+name: fibrous ring of heart
+def: "The right and left fibrous rings of heart (anulus fibrosus cordis) surround the atrioventricular and arterial orifices, and are stronger upon the left than on the right side of the heart. The right fibrous ring is known as the anulus fibrosus dexter cordis, and the left is known as the anulus fibrosus sinister cordis. The atrioventricular rings serve for the attachment of the muscular fibers of the atria and ventricles, and for the attachment of the bicuspid and tricuspid valves. The left atrioventricular ring is closely connected, by its right margin, with the aortic arterial ring; between these and the right atrioventricular ring is a triangular mass of fibrous tissue, the trigonum fibrosum, which represents the os cordis seen in the heart of some of the larger animals, as the ox and elephant. Lastly, there is the tendinous band, already referred to, the posterior surface of the conus arteriosus. The fibrous rings surrounding the arterial orifices serve for the attachment of the great vessels and semilunar valves, they are known as The aortic annulus. Each ring receives, by its ventricular margin, the attachment of some of the muscular fibers of the ventricles; its opposite margin presents three deep semicircular notches, to which the middle coat of the artery is firmly fixed. The attachment of the artery to its fibrous ring is strengthened by the external coat and serous membrane externally, and by the endocardium internally. From the margins of the semicircular notches the fibrous structure of the ring is continued into the segments of the valves. The middle coat of the artery in this situation is thin, and the vessel is dilated to form the sinuses of the aorta and pulmonary artery." [Wikipedia:Fibrous_rings_of_heart]
+synonym: "annulus fibrosus cordis" RELATED [Wikipedia:Fibrous_rings_of_heart]
+synonym: "anulus fibrosus cordis" RELATED [Wikipedia:Fibrous_rings_of_heart]
+synonym: "anulus fibrosus of heart" EXACT [FMA:9497]
+synonym: "aortic annulus" RELATED [Wikipedia:Fibrous_rings_of_heart]
+synonym: "fibrous ring of heart" RELATED [Wikipedia:Fibrous_rings_of_heart]
+xref: FMA:9497
+is_a: UBERON:0002384 ! connective tissue
+relationship: part_of UBERON:0000948 ! heart
+
+[Term]
+id: UBERON:0006009
+name: cusp of cardiac valve
+def: "Organ component which has as its parts the cusp proper, lunule and nodule of semilunar valvule[FMA]. The cusps of the heart valves serve to seal the heart valves when closed. There are three cusps for each valve except for the mitral valve, which has only two (hence its alternate name, \"bicuspid valve\"). \"Nodules\" are located at the tip of the valve, to form a tighter seal[WP]." [FMA:7232, Wikipedia:Cusps_of_heart_valves]
+synonym: "cardiac valve cusp" EXACT [FMA:7232]
+synonym: "cardiac valvular cusp" EXACT [FMA:7232]
+synonym: "cardiac valvule" EXACT [FMA:7232]
+synonym: "cardial valve cusp" EXACT []
+synonym: "semilunar valvule" EXACT [FMA:7232]
+xref: FMA:7232
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000946 ! cardial valve
 
 [Typedef]
 id: adjacent_to
