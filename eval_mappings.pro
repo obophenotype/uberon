@@ -46,6 +46,10 @@ no_mapping(X1,X2,S1,S2) :-
         id_idspace(U,'UBERON'),
         entity_xref(U,X2),
         id_idspace(X2,S2),
+        % ensure none of the classes are obsolete:
+        class(U),
+        class(X1),
+        class(X2),
         \+ external_mapping(_,X1,X2).
 
 /*

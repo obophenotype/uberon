@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 28:11:2010 18:20
+date: 01:12:2010 16:23
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -6582,7 +6582,7 @@ relationship: part_of UBERON:0000474 ! female reproductive system
 id: UBERON:0000994
 name: spermathecum
 alt_id: UBERON:FBbt_00004921-MIAA_0000168-WBbt_0005319
-def: "an organ of the female reproductive tract in insects, some molluscs, oligochaeta worms and certain other invertebrates and vertebrates.[1] Its purpose is to receive and store sperm from the male, and can sometimes be the site of fertilization when the oocytes are ready.[2]  Some species have multiple spermathecae, as seen in earthworms, where four pairs of spermathecae are present. One pair in 6,7,8 and 9 segments. They receive and store the spermatozoa of another earthworm during copulation.[3] They are lined with epithelium  and are variable in shape; some are thin, heavily coiled tubes, others are vague outpocketings from the main reproductive tract. It is one of the many variations in sexual reproduction[WP]. an accordion-like tube that contains sperm and is the site of oocyte fertilization." [WA:dh, Wikipedia:Spermatheca]
+def: "an organ of the female reproductive tract in insects, some molluscs, oligochaeta worms and certain other invertebrates and vertebrates.[1] Its purpose is to receive and store sperm from the male, and can sometimes be the site of fertilization when the oocytes are ready.[2]  Some species have multiple spermathecae, as seen in earthworms, where four pairs of spermathecae are present. One pair in 6,7,8 and 9 segments. They receive and store the spermatozoa of another earthworm during copulation.[3] They are lined with epithelium  and are variable in shape; some are thin, heavily coiled tubes, others are vague outpocketings from the main reproductive tract. It is one of the many variations in sexual reproduction[WP]. an accordion-like tube that contains sperm and is the site of oocyte fertilization." [Wikipedia:Spermatheca]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "seminal receptacle" RELATED []
@@ -7061,7 +7061,6 @@ xref: BTO:0001487
 xref: EFO:0000234
 xref: EFO:0000790
 xref: EHDAA2:0003120
-xref: FBbt:00005065
 xref: FMA:20110
 xref: GAID:920
 xref: galen:FattyTissue
@@ -8417,7 +8416,7 @@ xref: HOG:0000604
 xref: MA:0000082
 xref: TAO:0005061
 xref: ZFA:0005061
-is_a: UBERON:0002349 ! myocardium
+is_a: UBERON:0002349 ! implied link automatically realized ! myocardium
 relationship: part_of UBERON:0002082
 intersection_of: UBERON:0002349 ! myocardium
 intersection_of: part_of UBERON:0002082 ! cardiac ventricle
@@ -8574,6 +8573,7 @@ xref: TAO:0000694
 xref: XAO:0000431
 xref: ZFA:0000694
 is_a: UBERON:0003913 ! tooth-like structure
+is_a: UBERON:0005176 ! implied link automatically realized ! tooth enamel organ
 relationship: develops_from UBERON:0001048 ! primordium
 relationship: has_part UBERON:0001751 ! dentine
 relationship: has_part UBERON:0001752 ! enamel
@@ -8609,6 +8609,7 @@ subset: uberon_slim
 synonym: "axis (CII)" EXACT []
 synonym: "C2" BROAD []
 synonym: "C2 vertebra" EXACT []
+synonym: "cervical axis" EXACT [MP:0004608]
 synonym: "cervical vertebra 2" EXACT [MA:0001422]
 xref: EHDAA:10608
 xref: FMA:12520
@@ -19095,7 +19096,7 @@ id: UBERON:0001651
 name: right pulmonary artery
 alt_id: UBERON:FMA_50872-MA_0002500
 def: "The pulmonary arteries carry blood from heart to the lungs. They are the only arteries (other than umbilical arteries in the fetus) that carry deoxygenated blood. In the human heart, the pulmonary trunk (pulmonary artery or main pulmonary artery) begins at the base of the right ventricle. It is short and wide - approximately 5 cm (2 inches) in length and 3 cm (1.2 inches) in diameter. It then branches into two pulmonary arteries (left and right), which deliver deoxygenated blood to the corresponding lung. [WP,unvetted]." [Wikipedia:Right_pulmonary_artery]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - add class 'pulmonary artery tree organ'
 subset: uberon_slim
 synonym: "right main pulmonary artery" EXACT []
 synonym: "right pulmonary arterial tree" EXACT []
@@ -19111,7 +19112,7 @@ id: UBERON:0001652
 name: left pulmonary artery
 alt_id: UBERON:FMA_50873-MA_0002032
 def: "The pulmonary arteries carry blood from heart to the lungs. They are the only arteries (other than umbilical arteries in the fetus) that carry deoxygenated blood. In the human heart, the pulmonary trunk (pulmonary artery or main pulmonary artery) begins at the base of the right ventricle. It is short and wide - approximately 5 cm (2 inches) in length and 3 cm (1.2 inches) in diameter. It then branches into two pulmonary arteries (left and right), which deliver deoxygenated blood to the corresponding lung. [WP,unvetted]." [Wikipedia:Left_pulmonary_artery]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - add class 'pulmonary artery tree organ'
 subset: uberon_slim
 synonym: "left main pulmonary artery" EXACT []
 synonym: "left pulmonary arterial tree" EXACT []
@@ -19464,18 +19465,20 @@ xref: MA:0001468
 xref: ncithesaurus:Occipital_Bone
 xref: OpenCyc:Mx4rwQtsiZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001474 ! bone
-is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
-relationship: part_of UBERON:0003128 ! cranium
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
+relationship: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0001677
 name: sphenoid bone
 alt_id: UBERON:FMA_52736-MA_0001472
 def: "an unpaired bone  situated at the base of the skull in front of the temporal bone and basilar part of the occipital bone. The sphenoid bone is one of the seven bones that articulate to form the orbit. Its shape somewhat resembles that of a butterfly  or bat with its wings extended." [Wikipedia:Sphenoid_bone]
-comment: This class was created automatically from a combination of ontologies
+comment: part of viscerocranium in FMA, part of chondrocranium in MA
 subset: uberon_slim
 synonym: "sphenoid" EXACT []
 synonym: "sphenoidal bone" EXACT []
+xref: EMAPA:18340
 xref: FMA:52736
 xref: GAID:230
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Illu_cranial_bones2.jpg/200px-Illu_cranial_bones2.jpg
@@ -19483,15 +19486,15 @@ xref: MA:0001472
 xref: ncithesaurus:Sphenoid_Bone
 xref: OpenCyc:Mx4rwAU9XpwpEbGdrcN5Y29ycA
 is_a: UBERON:0001474 ! bone
-is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
-relationship: part_of UBERON:0003128 ! cranium
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
+relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0001678
 name: temporal bone
 alt_id: UBERON:FMA_52737-MA_0001476
 def: "The temporal bones are situated at the sides and base of the skull, and lateral to the temporal lobes of the cerebrum." [Wikipedia:Temporal_bone]
-comment: The temporal bone consists of four parts:    * Squama temporalis    * Mastoid portion    * Petrous portion (Petrosal ridge)    * Tympanic part
+comment: The temporal bone consists of four parts:    * Squama temporalis    * Mastoid portion    * Petrous portion (Petrosal ridge)    * Tympanic part. Note the Temporal bone is not explicitly categorized to a part of the cranium in FMA.
 subset: uberon_slim
 xref: EHDAA:6035
 xref: FMA:52737
@@ -19502,31 +19505,29 @@ xref: MA:0001476
 xref: ncithesaurus:Temporal_Bone
 xref: OpenCyc:Mx4rvbkAk5wpEbGdrcN5Y29ycA
 is_a: UBERON:0001474 ! bone
-is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
-relationship: part_of UBERON:0003128 ! cranium
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
+relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0001679
 name: ethmoid
 alt_id: UBERON:FMA_52740-MA_0001483-ZFA_0000323
-def: "a bone in the skull  that separates the nasal cavity from the brain. As such, it is located at the roof of the nose, between the two orbits. The cubical bone is lightweight due to a spongy  construction. The ethmoid bone is one of the bones that makes up the orbit of the eye[WP]. Median unpaired cartilage bone that ossifies as a perichondral lamellae ensheathing the nasal septum anterodorsally and laterally (Harrington, 1955). In adult D. rerio, the center of the mesethmoid remains cartilaginous (Cubbage & Mabee, 1996). The mesethmoid meets the supraethmoid dorsally, the lateral ethmoids posterolaterally, and the vomer and parasphenoid ventrally in synostoses. Anterolaterally the mesthmoid meets the preethmoids in synchondroses[ZFA]." [Wikipedia:Ethmoid, ZFIN:curator]
-comment: TODO - check mesethmoid
+def: "a bone in the skull  that separates the nasal cavity from the brain. As such, it is located at the roof of the nose, between the two orbits. The cubical bone is lightweight due to a spongy  construction. The ethmoid bone is one of the bones that makes up the orbit of the eye[WP]" [Wikipedia:Ethmoid]
+comment: Note the WP states the Neurocranium contains the ethmoid bone, both MA and FMA place the ethmoid as part of the viscerocranium. FMA also has it in neurocranium (via basicranium). Ideally we would have non-overlapping divisions of the skull, but for now we follow FMA
 subset: uberon_slim
 synonym: "ethmoid bone" EXACT []
 synonym: "ethmoidal bone" EXACT []
-synonym: "mesethmoid bone" EXACT []
 xref: FMA:52740
 xref: GAID:212
 xref: HOG:0001317
 xref: MA:0001483
 xref: ncithesaurus:Ethmoid_Bone
 xref: OpenCyc:Mx4rvuUPh5wpEbGdrcN5Y29ycA
-xref: TAO:0000323
-xref: ZFA:0000323
 is_a: UBERON:0002513 ! endochondral bone
 is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
-relationship: part_of UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
 relationship: part_of UBERON:0001704 ! viscerocranium
+relationship: part_of UBERON:0002517 ! basicranium
 
 [Term]
 id: UBERON:0001680
@@ -19564,7 +19565,6 @@ is_a: UBERON:0000073 ! implied link automatically realized ! regional part of ne
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
 relationship: part_of UBERON:0000004 ! olfactory apparatus
-relationship: part_of UBERON:0000477 ! anatomical cluster
 relationship: part_of UBERON:0001704 ! viscerocranium
 
 [Term]
@@ -19586,23 +19586,23 @@ id: UBERON:0001683
 name: zygomatic bone
 alt_id: UBERON:FMA_52747-MA_0001497
 def: "The zygomatic bone (cheekbone, malar bone) is a paired bone of the human skull. It articulates with the maxilla, the temporal bone, the sphenoid bone and the frontal bone. The zygomatic is homologous to the jugal bone of other tetrapods. It is situated at the upper and lateral part of the face and forms the prominence of the cheek, part of the lateral wall and floor of the orbit, and parts of the temporal and infratemporal fossae [Fig. 1]. It presents a malar and a temporal surface; four processes, the frontosphenoidal, orbital, maxillary, and temporal; and four borders. The term zygomatic derives from the Greek zygoma meaning 'yoke'. The zygomatic bone is occasionally referred to as the zygoma, but this term may also refer to the zygomatic arch or the zygomatic process. [WP,unvetted]." [Wikipedia:Zygomatic_bone]
-comment: This class was created automatically from a combination of ontologies
+comment: HOG says is homologous to infraorbital 3, which is a dermal bone in dermatocranium. part of viscerocranium, chondrocranium in MA.
 subset: uberon_slim
-synonym: "bone of cheek" EXACT [OBOL:automatic]
-synonym: "bone organ of cheek" EXACT [OBOL:automatic]
 synonym: "cheek bone" EXACT []
-synonym: "cheek bone organ" EXACT [OBOL:automatic]
+synonym: "jugal bone" RELATED [GAID:225, Wikipedia:Zygomatic_bone]
 synonym: "orbital bone" EXACT []
+synonym: "zygoma" RELATED [GAID:225]
 xref: FMA:52747
+xref: GAID:225
 xref: HOG:0001638
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Gray164.png/200px-Gray164.png
 xref: MA:0001497
 is_a: UBERON:0001474 ! bone
 is_a: UBERON:0003462 ! implied link automatically realized ! viscerocranium bone
-relationship: part_of UBERON:0001567
-intersection_of: UBERON:0001474 ! bone
-intersection_of: part_of UBERON:0001567 ! cheek
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
+relationship: part_of UBERON:0001567 ! cheek
 relationship: part_of UBERON:0001704 ! viscerocranium
+relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0001684
@@ -19786,8 +19786,10 @@ xref: MA:0001462
 xref: TAO:0000472
 xref: ZFA:0000472
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0004762 ! implied link automatically realized ! endochondral neurocranium bone
-relationship: part_of UBERON:0004747 ! supraoccipital
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
+relationship: part_of UBERON:0001676 ! occipital bone
+relationship: part_of UBERON:0002241 ! chondrocranium
+relationship: part_of UBERON:0002517 ! basicranium
 
 [Term]
 id: UBERON:0001693
@@ -19806,8 +19808,9 @@ xref: MA:0001464
 xref: TAO:0000661
 xref: ZFA:0000661
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0004762 ! implied link automatically realized ! endochondral neurocranium bone
-relationship: part_of UBERON:0004747 ! supraoccipital
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
+relationship: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0001694
@@ -19828,6 +19831,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Gray137.png/200px
 xref: MA:0001477
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001678 ! temporal bone
 
 [Term]
@@ -19968,16 +19972,14 @@ id: UBERON:0001703
 name: neurocranium
 alt_id: UBERON:FMA_53672-ZFA_0001580
 def: "Portion of the cranium which encloses the brain. The neurocranium arises from neural crest cells (also responsible for the development of teeth, the adrenal medulla and the splanchnocranium) of the ectoderm. There is also some contribution of ectomesenchyme. In Chondrichthyes and other cartilaginous vertebrates this portion of the cranium does not ossify; it is not replaced via endochondral ossification." [Wikipedia:Cranium, ZFA:0001580]
-comment: It includes the following bones: Ethmoid bone, Frontal bone, Occipital bone, Parietal bone, Sphenoid bone, Temporal bone. The term cranium can be ambiguous, in that it can refer to the neurocranium, or the neurocranium and the Facial skeleton[WP] Note that MA uses the term chondrocranium, which is inconsistent with ZFA usage which is restricted to cartilage / endochondral.
+comment: It includes the following bones: Ethmoid bone, Frontal bone, Occipital bone, Parietal bone, Sphenoid bone, Temporal bone. The term cranium can be ambiguous, in that it can refer to the neurocranium, or the neurocranium and the Facial skeleton[WP] It seems MA uses 'neurocranium' as a synonym for chondrocranium
 subset: uberon_slim
 synonym: "brain box" EXACT []
 synonym: "brain case" EXACT [ZFA:0001580]
 synonym: "brain pan" RELATED [http://www.thefreedictionary.com/braincase]
 synonym: "braincase" EXACT [ZFA:0001580]
-synonym: "chondrocranium" NARROW INCONSISTENT [MA:0000317]
 xref: EHDAA2:0000243
 xref: FMA:53672
-xref: MA:0000317
 xref: TAO:0001580
 xref: XAO:0003170
 xref: ZFA:0001580
@@ -19994,7 +19996,7 @@ id: UBERON:0001704
 name: viscerocranium
 alt_id: UBERON:FMA_53673-MA_0000318
 def: "The part of skull that is derived from branchial arches. The facial bones are the bones of the anterior and lower human skull. The splanchnocranium is derived from the neural crest cells (also responsible for the development of the neurocranium or, teeth and adrenal medulla)or from scleratone found in the somite block of the mesoderm. As with the neurocranium, in Chondricthyes and other cartilaginous vertebrates, they are not replaced via endochondral ossification. In tetrapods, such as amphibians and reptiles, the columella connecting to the tympanum is derived from the splanchnocranium. in mammals, the splanchnocranium derives the bones of the inner ear, the malleus, the incus and stapes[WP]. the part of the skull that comprises the facial bones[MP]." [MP:0005274, Wikipedia:Facial_skeleton]
-comment: Includes: * Inferior nasal concha * Lacrimal bone * Mandible * Maxilla * Nasal bone * Palatine bone * Vomer * Zygomatic bone. The hyoid is sometimes included, and sometimes excluded (FMA includes it)[WP]
+comment: Includes: * Inferior nasal concha * Lacrimal bone * Mandible * Maxilla * Nasal bone * Palatine bone * Vomer * Zygomatic bone. The hyoid is sometimes included, and sometimes excluded (FMA includes it)[WP] See also notes for ethmoid bone.
 synonym: "facial skeleton" EXACT []
 synonym: "pharyngeal arch skeleton" RELATED [ZFA:0001216]
 synonym: "pharyngeal skeleton" RELATED [ZFA:0001216]
@@ -20014,7 +20016,6 @@ relationship: develops_from UBERON:0002342 ! neural crest
 relationship: develops_from UBERON:0002539 ! pharyngeal arch
 relationship: part_of UBERON:0002090 ! postcranial axial skeleton
 relationship: part_of UBERON:0003129 ! skull
-relationship: spatially_disjoint_from UBERON:0001703 ! neurocranium
 
 [Term]
 id: UBERON:0001705
@@ -22650,6 +22651,7 @@ xref: ncithesaurus:Osseous_Labyrinth
 xref: XAO:0000193
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001694 ! petrous part of temporal bone
 relationship: part_of UBERON:0001846 ! internal ear
 
@@ -22672,6 +22674,7 @@ xref: XAO:0000198
 xref: ZFA:0000431
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001839 ! bony labyrinth
 
 [Term]
@@ -22765,6 +22768,7 @@ xref: XAO:0000197
 xref: ZFA:0000374
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001839 ! bony labyrinth
 
 [Term]
@@ -22969,6 +22973,7 @@ xref: MA:0000243
 xref: ncithesaurus:Cochlear_Duct
 xref: NIF_GrossAnatomy:birnlex_2562
 is_a: UBERON:0000058 ! duct
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0005744 ! implied link automatically realized ! cranial conduit
 relationship: part_of UBERON:0001844 ! cochlea
 relationship: part_of UBERON:0001849 ! membranous labyrinth
@@ -22984,6 +22989,7 @@ xref: HOG:0000238
 xref: MA:0000251
 xref: ncithesaurus:Semicircular_Duct
 is_a: UBERON:0000058 ! duct
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0005744 ! implied link automatically realized ! cranial conduit
 relationship: part_of UBERON:0001840 ! semicircular canal
 relationship: part_of UBERON:0001862 ! vestibular labyrinth
@@ -23077,6 +23083,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Gray923.png/200px
 xref: MA:0001206
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001844 ! cochlea
 relationship: part_of UBERON:0002278 ! perilymphatic space
 
@@ -23093,6 +23100,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Gray921.png/200px
 xref: MA:0001205
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001844 ! cochlea
 relationship: part_of UBERON:0002278 ! perilymphatic space
 
@@ -25265,6 +25273,7 @@ xref: FMA:62924
 xref: MA:0001194
 is_a: UBERON:0000476 ! acellular anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0000476 ! acellular anatomical structure
 relationship: part_of UBERON:0002227 ! spiral organ of cochlea
 
@@ -27668,25 +27677,24 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0002090
 name: postcranial axial skeleton
 alt_id: UBERON:FMA_71221-MA_0000308-MIAA_0000148-XAO_0003073-ZFA_0000317
-def: "The post-cranial subdivision of skeleton structural components forming the long axis of the vertebrate body; in Danio, consisting of the notochord, vertebrae, ribs, supraneurals, intermuscular bones, and unpaired median fins; in human consists of the bones of the vertebral column, the thoracic cage and the pelvis[ZFA+FMA]." [FMA:71221, https://sourceforge.net/tracker/?func=detail&aid=2983975&group_id=76834&atid=974957, https://sourceforge.net/tracker/?func=detail&atid=1205376&aid=2983977&group_id=76834, Wikipedia:Axial_skeleton, ZFIN:curator]
-comment: see sf items - split into axial and post-cranial axial?
+def: "The post-cranial subdivision of skeleton structural components forming the long axis of the vertebrate body; in Danio, consisting of the notochord, vertebrae, ribs, supraneurals, intermuscular bones, and unpaired median fins; in human consists of the bones of the vertebral column, the thoracic cage and the pelvis[ZFA+FMA]." [https://sourceforge.net/tracker/?func=detail&aid=2983975&group_id=76834&atid=974957, https://sourceforge.net/tracker/?func=detail&atid=1205376&aid=2983977&group_id=76834, ZFA:0000317]
+comment: previous some AOs had used the term 'axial skeleton' to include the skull. This is being resolved (see tracker items above)
 subset: uberon_slim
-synonym: "axial skeleton" BROAD []
+synonym: "axial skeleton" BROAD [MA:0000308]
 synonym: "post-cranial axial skeleton" EXACT []
 xref: AAO:0000034
 xref: EHDAA:5049
 xref: EHDAA2:0000161
-xref: FMA:71221
 xref: HOG:0000317
 xref: MA:0000308
 xref: MAT:0000148
 xref: MIAA:0000148
-xref: ncithesaurus:Axial_Skeleton
 xref: TAO:0000317
 xref: XAO:0003073
 xref: ZFA:0000317
 is_a: UBERON:0000075 ! subdivision of skeletal system
 relationship: develops_from UBERON:0003089 ! sclerotome
+relationship: part_of UBERON:0005944 ! axial skeleton
 
 [Term]
 id: UBERON:0002091
@@ -27917,7 +27925,7 @@ id: UBERON:0002102
 name: forelimb
 alt_id: UBERON:FMA_7183-MA_0000025-MIAA_0000394-XAO_0003030
 def: "anterior-most limb on a body. Note distinction between arm and forelimb. hand is part of forelimb, but not part of arm" [BTO:0001729, ISBN:0471209627, Wikipedia:Forelimb]
-comment: This class was created automatically from a combination of ontologies
+comment: TODO - check free upper limb vs upper limb in FMA. Both MA and FMA consider shoulder (and shoulder bones) part of upper limb.
 subset: uberon_slim
 synonym: "anteriormost limb" EXACT []
 synonym: "fore limb" EXACT []
@@ -28609,6 +28617,8 @@ xref: MA:0000090
 xref: ncithesaurus:Tricuspid_Valve
 xref: OpenCyc:Mx4rvuWAAJwpEbGdrcN5Y29ycA
 is_a: UBERON:0002133 ! atrioventricular valve
+is_a: UBERON:0005208 ! implied link automatically realized ! right atrium valve
+relationship: part_of UBERON:0005965 ! outflow part of right atrium
 
 [Term]
 id: UBERON:0002135
@@ -28663,6 +28673,7 @@ xref: MA:0000087
 xref: ncithesaurus:Aortic_Valve
 xref: OpenCyc:Mx4rv5914JwpEbGdrcN5Y29ycA
 is_a: UBERON:0000946 ! cardial valve
+relationship: part_of UBERON:0005956 ! outflow part of left ventricle
 
 [Term]
 id: UBERON:0002138
@@ -30155,6 +30166,7 @@ xref: ncithesaurus:Fontanelle
 xref: TAO:0001738
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: adjacent_to UBERON:0000969 ! suture
 relationship: part_of UBERON:0002241 ! chondrocranium
 
@@ -30238,6 +30250,7 @@ xref: ncithesaurus:Basilar_Membrane
 xref: NIF_GrossAnatomy:birnlex_2521
 is_a: UBERON:0000476 ! acellular anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001855 ! cochlear duct of membranous labyrinth
 
 [Term]
@@ -30261,6 +30274,7 @@ xref: ncithesaurus:Organ_of_Corti
 xref: NIF_GrossAnatomy:birnlex_2526
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001855 ! cochlear duct of membranous labyrinth
 
 [Term]
@@ -30371,6 +30385,7 @@ xref: ncithesaurus:Tectorial_Membrane
 xref: NIF_GrossAnatomy:birnlex_2531
 is_a: UBERON:0000476 ! acellular anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001855 ! cochlear duct of membranous labyrinth
 
 [Term]
@@ -30499,14 +30514,19 @@ relationship: spatially_disjoint_from UBERON:0000955 ! brain
 id: UBERON:0002241
 name: chondrocranium
 alt_id: UBERON:FMA_76621-XAO_0003059-ZFA_0001424
-def: "Anatomical cluster that is part of the cranium and composed entirely of either cartilage, cartilage replacement bones or a mixture of both." [ZFA:0001424]
+def: "Anatomical cluster that is part of the cranium and composed entirely of either cartilage, cartilage replacement bones or a mixture of both[ZFA]. that part of the neurocranium formed by endochondral ossification and comprising the bones of the base of the skull[TFD]." [http://medical-dictionary.thefreedictionary.com/chondrocranium, ZFA:0001424]
+comment: note the definition here specifically mentions cartilage or cartilage replacement bones. we make chondrocranium part_of neurocranium
+synonym: "neurocranium" RELATED INCONSISTENT [MA:0000317]
 xref: EHDAA2:0000243
 xref: HOG:0000288
+xref: MA:0000317
 xref: TAO:0001424
 xref: ZFA:0001424
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0000032 ! implied link automatically realized ! cranial structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004765 ! skeletal element
 relationship: develops_from UBERON:0003104 ! mesenchyme
+relationship: part_of UBERON:0001703 ! neurocranium
 
 [Term]
 id: UBERON:0002242
@@ -31049,6 +31069,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Gray930.png/200px
 xref: MA:0001191
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001855 ! cochlear duct of membranous labyrinth
 
 [Term]
@@ -31124,6 +31145,7 @@ xref: FMA:77829
 xref: MA:0001200
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001855 ! cochlear duct of membranous labyrinth
 
 [Term]
@@ -31144,6 +31166,7 @@ xref: MA:0001198
 xref: NIF_GrossAnatomy:birnlex_2525
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001855 ! cochlear duct of membranous labyrinth
 
 [Term]
@@ -31428,6 +31451,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Gray928.png/200px
 xref: MA:0002458
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001844 ! cochlea
 
 [Term]
@@ -31591,8 +31615,6 @@ is_a: UBERON:0002349 ! myocardium
 relationship: part_of UBERON:0002081
 intersection_of: UBERON:0002349 ! myocardium
 intersection_of: part_of UBERON:0002081 ! cardiac atrium
-relationship: part_of UBERON:0002081 ! cardiac atrium
-relationship: part_of UBERON:0002349 ! myocardium
 
 [Term]
 id: UBERON:0002303
@@ -32162,6 +32184,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Alveoli_diagram.p
 xref: MA:0002033
 xref: OpenCyc:Mx4rv-6d0ZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000063 ! organ segment
+relationship: continuous_with UBERON:0002080 ! right ventricle
 relationship: part_of UBERON:0001009 ! circulatory system
 
 [Term]
@@ -32480,7 +32503,7 @@ id: UBERON:0002348
 name: epicardium
 alt_id: UBERON:FMA_9461-XAO_0000316-ZFA_0005057
 def: "Region of visceral serous pericardium which has as its part, the mesothelium, subepicardial layer of epicardium and the fibroelastic connective tissue that is attached to the myocardium and is continuous with the parietal serous pericardium[FMA]. External layer of the heart[ZFA]." [Wikipedia:Epicardium, ZFIN:curator]
-comment: TODO - check links with UBERON:0002425 visceral serous pericardium. develops from proepicardium
+comment: TODO - check links with UBERON:0002425 visceral serous pericardium. develops from proepicardium. WP:Epicardium -- When considered as a part of the pericardium, it is the inner layer, or visceral pericardium, continuous with the serous layer.
 subset: uberon_slim
 synonym: "heart epicardium" EXACT []
 synonym: "visceral serous pericardium of heart" EXACT []
@@ -35182,7 +35205,7 @@ xref: HOG:0001153
 xref: MA:0002773
 xref: ZFA:0000253
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
 relationship: part_of UBERON:0001677 ! sphenoid bone
 
 [Term]
@@ -35513,6 +35536,7 @@ xref: MA:0002809
 xref: ncithesaurus:Cochlear_Labyrinth
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001844 ! cochlea
 relationship: part_of UBERON:0001849 ! membranous labyrinth
 
@@ -35531,6 +35555,9 @@ xref: MA:0002810
 xref: ncithesaurus:Zygomatic_Arch
 xref: OpenCyc:Mx4rvih1YZwpEbGdrcN5Y29ycA
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0002501
@@ -35677,8 +35704,13 @@ is_a: UBERON:0002221 ! fontanelle
 id: UBERON:0002511
 name: trabecula carnea
 alt_id: UBERON:MA_0002831-FMA_7269
-synonym: "heart trabecula" RELATED []
+def: "The trabeculae carneae (columnae carneae, or fleshy beams), are rounded or irregular muscular columns which project from the inner surface of the right and left ventricles of the heart.[1] They should not be confused with the pectinate muscles, which are present in the right[1] and left atria only. They are of three kinds: * some are attached along their entire length on one side and merely form prominent ridges,* others are fixed at their extremities but free in the middle, * while a third set, the papillary muscles are continuous by their bases with the wall of the ventricle, while their apices give origin to the chordæ tendineæ which pass to be attached to the segments of both the mitral valve and the tricuspid valve. The purpose of the trabeculae carneae is most likely to prevent suction that would occur with a flat surfaced membrane and thus impair the heart's ability to pump efficiently. The trabeculae carneae also serve a similar function to papillary muscles in that their contraction pulls on the chordae tendineae, preventing inversion of the mitral (bicuspid) and tricuspid valves, that is, their bulging towards the atrial chambers, which would lead to subsequent leakage of the blood into the atria. So by the action of papillary muscles on the atrioventricular valves, backflow of the blood from the ventricles into the atria is prevented[WP]." [Wikipedia:Trabeculae_carneae]
+synonym: "cardiac trabecula" RELATED [GO:0060347]
+synonym: "heart trabecula" RELATED [GO:0060347]
 synonym: "trabecula of heart" RELATED []
+synonym: "ventricle trabecula carnea" EXACT [MA:0002831]
+synonym: "ventricular trabecula" RELATED [MA:0002831]
+xref: EMAPA:18626
 xref: FMA:7269
 xref: MA:0002831
 is_a: UBERON:0000440 ! trabecula
@@ -35767,7 +35799,6 @@ id: UBERON:0002517
 name: basicranium
 alt_id: UBERON:MA_0002840-FMA_52801
 def: "The base of skull is the most inferior  area of the skull, composed of the endocranium  and lower parts of the skull roof." [Wikipedia:Base_of_skull]
-comment: # Ethmoid bone # Sphenoid bone # Occipital bone # Frontal bone # Parietal bone # Temporal bone
 subset: uberon_slim
 synonym: "base of skull" EXACT []
 synonym: "cranial base" RELATED [MA:0002840]
@@ -43175,15 +43206,23 @@ is_a: UBERON:0000477 ! anatomical cluster
 
 [Term]
 id: UBERON:0003014
-name: tuberal part of hypophysis
+name: infundibulum of hypophysis
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_912-FMA_74635
 synonym: "infundibular stem of neurohypophysis" EXACT [FMA:74635]
+synonym: "infundibulum" EXACT [MA:0000858, ZFA:0001199]
 synonym: "infundibulum of pituitary gland" EXACT [FMA:74635]
 synonym: "infundibulum of posterior lobe of pituitary gland" EXACT [FMA:74635]
 synonym: "neurohypophysis infundibulum" EXACT [FMA:74635]
 synonym: "tuberal part of hypophysis" EXACT [FMA:74635]
+xref: BTO:0000768
+xref: EHDAA:7538
+xref: EHDAA2:0000828
+xref: EMAPA:17520
 xref: FMA:74635
+xref: HOG:0000245
+xref: MA:0000858
 xref: NIF_GrossAnatomy:birnlex_912
+xref: ZFA:0001199
 is_a: UBERON:0000064 ! organ part
 
 [Term]
@@ -43916,7 +43955,7 @@ relationship: part_of UBERON:0003075 ! neural plate
 id: UBERON:0003058
 name: hypochord
 alt_id: UBERON:XAO_0000056-ZFA_0000031
-def: "Transient structure that lies immediately ventral to the notochord in the embryo, likely required for the formation of the dorsal aorta. A slight depression marks the future hypochord at NF stage 20 and its segregation from the dorsal endoderm begins at NF stage 24. It progresses from anterior to posterior and is complete by NF stage 28. At NF stage 32 it is present as a dorso-laterally flattened ribbon of yolk-laden cells. It degenerates by apoptosis and by NF stage 43 is no longer detectable as a distinct structure. // A transient rod-like structure which is endodermally derived and located immediately ventral to the notochord. The hypochord is thought to play a role in positioning the dorsal aorta. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-000621-3'>Eriksson and Lofberg, 2000.</a>" [ISBN:0815318960, PMID:10648245, ZFIN:curator]
+def: "A transient rod-like structure which is endodermally derived and located immediately ventral to the notochord. The hypochord is thought to play a role in positioning the dorsal aorta[ZFA]." [ISBN:0815318960, PMID:10648245, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "subnotochordal rod" RELATED []
@@ -45302,7 +45341,7 @@ is_a: UBERON:0004765 ! skeletal element
 relationship: has_part UBERON:0001684 ! mandible
 relationship: has_part UBERON:0003128 ! cranium
 relationship: part_of UBERON:0000033 ! head
-relationship: part_of UBERON:0004288 ! skeleton
+relationship: part_of UBERON:0005944 ! axial skeleton
 
 [Term]
 id: UBERON:0003130
@@ -46434,6 +46473,7 @@ xref: EHDAA2:0001961
 xref: HOG:0001039
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001841
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001841 ! anterior semicircular canal
@@ -46450,6 +46490,7 @@ xref: EHDAA2:0001491
 xref: HOG:0000758
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001842
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001842 ! posterior semicircular canal
@@ -46466,6 +46507,7 @@ xref: EHDAA2:0000922
 xref: HOG:0000480
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001843
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001843 ! lateral semicircular canal
@@ -46546,6 +46588,7 @@ xref: EHDAA2:0000264
 xref: HOG:0000640
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001855
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0001855 ! cochlear duct of membranous labyrinth
@@ -51156,14 +51199,18 @@ intersection_of: part_of UBERON:0002103 ! hindlimb
 [Term]
 id: UBERON:0003465
 name: chondrocranium bone
+alt_id: UBERON:0004762
 def: "A bone that is part of a chondrocranium [Obol]." [OBOL:automatic]
 comment: ZFA class made obsolete
 synonym: "bone of chondrocranium" EXACT [OBOL:automatic]
 synonym: "bone organ of chondrocranium" EXACT [OBOL:automatic]
 synonym: "chondrocranium bone organ" EXACT [OBOL:automatic]
+synonym: "endochondral neurocranium bone" EXACT [OBOL:automatic, UBERON:cjm]
 xref: MA:0001478
 xref: ZFA:0001544
-is_a: UBERON:0001474 ! implied link automatically realized ! bone
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
 relationship: part_of UBERON:0002241
 intersection_of: UBERON:0001474 ! bone
 intersection_of: part_of UBERON:0002241 ! chondrocranium
@@ -51626,7 +51673,7 @@ synonym: "reticular lamina of bronchi" EXACT [OBOL:automatic]
 synonym: "reticular lamina of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "reticular lamina of bronchus" EXACT [OBOL:automatic]
 xref: MA:0001834
-is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0000078 ! implied link automatically realized ! mixed ectoderm/mesoderm/endoderm-derived structure
 is_a: UBERON:0003490 ! implied link automatically realized ! respiratory system reticular lamina
 relationship: part_of UBERON:0002185
 intersection_of: UBERON:0001967 ! reticular lamina
@@ -51646,7 +51693,7 @@ synonym: "windpipe fibroreticular lamina" EXACT [OBOL:automatic]
 synonym: "windpipe lamina fibroreticularis" EXACT [OBOL:automatic]
 synonym: "windpipe reticular lamina" EXACT [OBOL:automatic]
 xref: MA:0001856
-is_a: UBERON:0000077 ! implied link automatically realized ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0000078 ! implied link automatically realized ! mixed ectoderm/mesoderm/endoderm-derived structure
 is_a: UBERON:0003490 ! implied link automatically realized ! respiratory system reticular lamina
 relationship: part_of UBERON:0003126
 intersection_of: UBERON:0001967 ! reticular lamina
@@ -57209,6 +57256,7 @@ synonym: "macula of lagena" EXACT [OBOL:automatic]
 xref: ZFA:0000116
 is_a: UBERON:0000054 ! implied link automatically realized ! macula
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001844
 intersection_of: UBERON:0000054 ! macula
 intersection_of: part_of UBERON:0001844 ! cochlea
@@ -57305,7 +57353,8 @@ name: chondrocranium cartilage
 def: "A cartilage that is part of a chondrocranium [Obol]." [OBOL:automatic]
 synonym: "cartilage of chondrocranium" EXACT [OBOL:automatic]
 xref: ZFA:0001461
-is_a: UBERON:0002418 ! implied link automatically realized ! cartilage
+is_a: UBERON:0003933 ! implied link automatically realized ! cranial cartilage
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0002241
 intersection_of: UBERON:0002418 ! cartilage
 intersection_of: part_of UBERON:0002241 ! chondrocranium
@@ -57591,6 +57640,7 @@ relationship: part_of UBERON:0005051 ! mediastinum testis
 id: UBERON:0003960
 name: styloid process
 def: "slender needle-like pointed projection that runs downward and slightly forward from the base of the inferior surface of the petrous portion of the temporal bone where it joins the tympanic portion; it gives attachment to the styloglossus, stylohyoid, and stylopharyngeus muscles and the stylohyoid and stylomandibular ligaments" [MP:0008023]
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004530 ! bony projection
 relationship: part_of UBERON:0001678 ! temporal bone
 
@@ -57793,7 +57843,7 @@ relationship: develops_from UBERON:0003981 ! primordial ovarian follicle
 id: UBERON:0003983
 name: conus arteriosus
 def: "a conical pouch formed from the upper and left angle of the right ventricle in the chordate  heart, from which the pulmonary artery arises[WP]. the anteriosuperior, smooth-walled portion of the cavity of the right ventricle, beginning at the supraventricular crest and terminates in the pulmonary trunk[MP]." [MP:0009464, Wikipedia:Conus_arteriosus]
-synonym: "infundibulum" EXACT [Wikipedia:Conus_arteriosus]
+synonym: "infundibulum" BROAD [Wikipedia:Conus_arteriosus]
 xref: EHDAA2:0000828
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gray492.png/200px-Gray492.png
 is_a: UBERON:0004151 ! cardiac chamber
@@ -58359,6 +58409,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Vestibular_system
 xref: MA:0002770
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001840 ! semicircular canal
 
 [Term]
@@ -58991,6 +59042,7 @@ def: "smooth sloping surface on the upper posterior part of the body of the sphe
 xref: ncithesaurus:Clivus
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001677 ! sphenoid bone
 
 [Term]
@@ -59283,7 +59335,8 @@ relationship: part_of UBERON:0002349 ! myocardium
 id: UBERON:0004124
 name: myocardium trabecular layer
 def: "The layer of the myocardium composed of projections of contractile myocytes. The trabecular layer is bounded internally by the endocardium.  In zebrafish, unlike the trabeculations of higher vertebrates, both atrial and ventricular trabeculae have more strut-like character, and are more uniform without apparent regional differences[ZFA]." [ZFA:0005059]
-synonym: "trabecular layer" EXACT []
+synonym: "myocardial trabecular layer" EXACT []
+synonym: "trabecular layer" EXACT [ZFA:0005059]
 xref: MA:0002866
 xref: ZFA:0005059
 is_a: UBERON:0002385 ! implied link automatically realized ! muscle tissue
@@ -59303,16 +59356,25 @@ synonym: "trabecular cardiac ventricle muscle" EXACT [GO:0003222]
 synonym: "ventricular trabecular myocardium" EXACT [GO:0003222]
 xref: FMA:83511
 xref: ZFA:0005060
-is_a: UBERON:0004124 ! myocardium trabecular layer
+is_a: UBERON:0004124 ! implied link automatically realized ! myocardium trabecular layer
+relationship: part_of UBERON:0002082
+intersection_of: UBERON:0004124 ! myocardium trabecular layer
+intersection_of: part_of UBERON:0002082 ! cardiac ventricle
 
 [Term]
 id: UBERON:0004127
 name: compact layer of ventricle
 def: "The outer layer the ventricular myocardium, muscle fibers are arranged in a compact form and involved the entire ventricle." [ZFA:0005062]
 synonym: "compact cardiac ventricle muscle" EXACT []
+synonym: "ventricle myocardium compact zone" EXACT [MP:0010556]
 synonym: "ventricular compact myocardium" EXACT []
+synonym: "ventricular myocardial compact layer" EXACT [MP:0010556]
+synonym: "ventricular myocardial compact zone" EXACT [MP:0010556]
 xref: ZFA:0005062
-is_a: UBERON:0004125 ! myocardial compact layer
+is_a: UBERON:0004125 ! implied link automatically realized ! myocardial compact layer
+relationship: part_of UBERON:0002082
+intersection_of: UBERON:0004125 ! myocardial compact layer
+intersection_of: part_of UBERON:0002082 ! cardiac ventricle
 
 [Term]
 id: UBERON:0004128
@@ -59450,8 +59512,10 @@ relationship: develops_into UBERON:0000948 ! heart
 id: UBERON:0004142
 name: outflow tract septum
 def: "The outflow tract septum is a partition in the outflow tract" [GO:0003148]
-is_a: UBERON:0002099 ! cardiac septum
-relationship: part_of UBERON:0004145 ! outflow tract
+is_a: UBERON:0002099 ! implied link automatically realized ! cardiac septum
+relationship: part_of UBERON:0004145
+intersection_of: UBERON:0002099 ! cardiac septum
+intersection_of: part_of UBERON:0004145 ! outflow tract
 
 [Term]
 id: UBERON:0004143
@@ -59483,7 +59547,7 @@ xref: EMAPA:16346
 xref: HOG:0000670
 xref: MA:0000100
 xref: ZFA:0000173
-is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004111 ! anatomical conduit
 relationship: part_of UBERON:0000948 ! heart
 
 [Term]
@@ -65866,6 +65930,7 @@ synonym: "pterygoid process of sphenoid bone" RELATED [MA:0002774]
 synonym: "pterygoid process of sphenoid bone" EXACT [FMA:54682]
 xref: FMA:54682
 xref: MA:0002774
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004529 ! anatomical projection
 is_a: UBERON:0004530 ! implied link automatically realized ! bony projection
 relationship: part_of UBERON:0001677 ! sphenoid bone
@@ -65930,6 +65995,7 @@ synonym: "temporal zygomatic process" EXACT [FMA:52886]
 xref: FMA:52886
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Gray137.png/200px-Gray137.png
 xref: MA:0002811
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 is_a: UBERON:0004529 ! anatomical projection
 is_a: UBERON:0004530 ! implied link automatically realized ! bony projection
 relationship: part_of UBERON:0001678 ! temporal bone
@@ -66677,6 +66743,7 @@ xref: MA:0002771
 xref: Wikipedia:Crista_ampullaris
 is_a: UBERON:0000020 ! sense organ
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001840 ! semicircular canal
 
 [Term]
@@ -66989,8 +67056,6 @@ xref: AAO:0000385
 xref: ZFA:0000561
 is_a: UBERON:0002514 ! intramembranous bone
 is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
-is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
 relationship: part_of UBERON:0001697 ! orbit
 relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0003111 ! sphenoid region
@@ -67005,7 +67070,7 @@ synonym: "prootics" EXACT [ZFA:0000575]
 xref: AAO:0000514
 xref: ZFA:0000575
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0004762 ! implied link automatically realized ! endochondral neurocranium bone
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
 relationship: develops_from UBERON:0004637 ! otic capsule
 relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0002241 ! chondrocranium
@@ -67022,7 +67087,7 @@ xref: HOG:0001150
 xref: MA:0001474
 xref: ZFA:0000595
 is_a: UBERON:0002513 ! endochondral bone
-is_a: UBERON:0004762 ! implied link automatically realized ! endochondral neurocranium bone
+is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
 relationship: part_of UBERON:0001703 ! neurocranium
 relationship: part_of UBERON:0002241 ! chondrocranium
 
@@ -67187,19 +67252,6 @@ is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived st
 is_a: UBERON:0004765 ! skeletal element
 relationship: develops_from UBERON:0003104 ! mesenchyme
 relationship: has_part UBERON:0002418 ! cartilage
-
-[Term]
-id: UBERON:0004762
-name: endochondral neurocranium bone
-def: "An endochondral bone that is part of a neurocranium [Obol]." [OBOL:automatic]
-is_a: UBERON:0002513 ! implied link automatically realized ! endochondral bone
-is_a: UBERON:0003465 ! implied link automatically realized ! chondrocranium bone
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
-is_a: UBERON:0004766 ! implied link automatically realized ! cranial bone
-relationship: part_of UBERON:0001703
-intersection_of: UBERON:0002513 ! endochondral bone
-intersection_of: part_of UBERON:0001703 ! neurocranium
-relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
 id: UBERON:0004763
@@ -72624,14 +72676,13 @@ intersection_of: part_of UBERON:0001443 ! chest
 [Term]
 id: UBERON:0005176
 name: tooth enamel organ
-def: "An organ that is part of a enamel [Obol]." [OBOL:automatic]
+comment: TODO - check why this is part_of in MA
+synonym: "enamel organ" EXACT [MP:0010747]
 xref: MA:0001604
 is_a: UBERON:0000062 ! implied link automatically realized ! organ
-is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
-is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
-relationship: part_of UBERON:0001752
+relationship: has_part UBERON:0001752
 intersection_of: UBERON:0000062 ! organ
-intersection_of: part_of UBERON:0001752 ! enamel
+intersection_of: has_part UBERON:0001752 ! enamel
 
 [Term]
 id: UBERON:0005177
@@ -74077,12 +74128,12 @@ intersection_of: part_of UBERON:0002165 ! endocardium
 
 [Term]
 id: UBERON:0005317
-name: pulmonary artery endothelial tube
+name: pulmonary artery endothelium
 def: "An pulmonary artery endothelium is an epithelium that lines the pulmonary artery[GO]." [GO:0061155]
+synonym: "pulmonary artery endothelial tube" EXACT [GO:0061155]
 is_a: UBERON:0001917 ! implied link automatically realized ! endothelium of artery
-is_a: UBERON:0003915 ! implied link automatically realized ! endothelial tube
 relationship: part_of UBERON:0002012
-intersection_of: UBERON:0003915 ! endothelial tube
+intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0002012 ! pulmonary artery
 
 [Term]
@@ -74277,13 +74328,16 @@ relationship: part_of UBERON:0003957 ! Bruch's membrane
 
 [Term]
 id: UBERON:0005337
-name: outflow part of ventricle
+name: outflow tract of ventricle
+def: "A ventricular outflow tract is a portion of either the left ventricle or right ventricle of the heart through which blood passes in order to enter the great arteries. The right ventricular outflow tract (RVOT) is an infundibular extension of the ventricular cavity which connects to the pulmonary artery. The left ventricular outflow tract (LVOT), which connects to the aorta, is nearly indistinguishable from the rest of the ventricle[WP]." [Wikipedia:Ventricular_outflow_tract]
 synonym: "heart ventricle outflow tract" EXACT [MP:0010224]
-synonym: "outflow tract of ventricle" EXACT []
-synonym: "ventricular outflow tract" EXACT []
+synonym: "outflow part of ventricle" EXACT []
+synonym: "ventricular outflow tract" EXACT [Wikipedia:Ventricular_outflow_tract]
 xref: FMA:13225
-is_a: UBERON:0004145 ! outflow tract
-relationship: part_of UBERON:0004151 ! cardiac chamber
+is_a: UBERON:0004145 ! implied link automatically realized ! outflow tract
+relationship: part_of UBERON:0002082
+intersection_of: UBERON:0004145 ! outflow tract
+intersection_of: part_of UBERON:0002082 ! cardiac ventricle
 
 [Term]
 id: UBERON:0005338
@@ -74291,8 +74345,11 @@ name: outflow tract aortic component
 xref: EHDAA2:0001353
 xref: HOG:0001394
 xref: MA:0000101
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0004145 ! outflow tract
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004145 ! implied link automatically realized ! outflow tract
+relationship: part_of UBERON:0000947
+intersection_of: UBERON:0004145 ! outflow tract
+intersection_of: part_of UBERON:0000947 ! aorta
 
 [Term]
 id: UBERON:0005339
@@ -74300,8 +74357,7 @@ name: outflow tract pulmonary component
 xref: EHDAA2:0001359
 xref: HOG:0001395
 xref: MA:0000102
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:0004145 ! outflow tract
+is_a: UBERON:0004145 ! outflow tract
 
 [Term]
 id: UBERON:0005340
@@ -75050,7 +75106,6 @@ name: cartilaginous otic capsule
 comment: in elasmobranchs, the otic capsule remains cartilaginous in the adult; in the embryos of higher vertebrates, it is cartilaginous at first but later becomes bony (at approximately 23 weeks in humans)
 xref: ZFA:0001500
 is_a: UBERON:0003932 ! chondrocranium cartilage
-is_a: UBERON:0003933 ! implied link automatically realized ! cranial cartilage
 is_a: UBERON:0004637 ! otic capsule
 
 [Term]
@@ -76509,6 +76564,7 @@ xref: EHDAA2:0000330
 xref: MA:0001210
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0001856 ! semicircular duct
 
 [Term]
@@ -76967,6 +77023,7 @@ name: crus commune epithelium
 xref: EHDAA2:0000332
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
 relationship: part_of UBERON:0005600
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0005600 ! crus commune
@@ -77238,7 +77295,7 @@ intersection_of: part_of UBERON:0001153 ! cecum
 id: UBERON:0005687
 name: orbitosphenoid cartilage
 xref: EHDAA2:0001329
-is_a: UBERON:0003933 ! implied link automatically realized ! cranial cartilage
+is_a: UBERON:0003932 ! implied link automatically realized ! chondrocranium cartilage
 relationship: part_of UBERON:0002478
 intersection_of: UBERON:0002418 ! cartilage
 intersection_of: part_of UBERON:0002478 ! orbitosphenoid
@@ -78824,6 +78881,7 @@ synonym: "inferior turbinate" EXACT [FMA:54736]
 synonym: "inferior turbinated" RELATED [Wikipedia:Inferior_nasal_concha]
 xref: FMA:54736
 is_a: UBERON:0001762 ! nasal concha
+relationship: part_of UBERON:0001704 ! viscerocranium
 
 [Term]
 id: UBERON:0005925
@@ -78921,6 +78979,143 @@ id: UBERON:0005943
 name: hair root sheath matrix
 xref: MA:0000781
 relationship: part_of UBERON:0005933 ! hair root sheath
+
+[Term]
+id: UBERON:0005944
+name: axial skeleton
+def: "Subdivision of skeleton which consists of skull, set of all vertebrae, set of all ribs and sternum. Examples: There is only one axial skeleton." [FMA:71221, Wikipedia:Axial_skeleton]
+subset: uberon_slim
+xref: FMA:71221
+xref: ncithesaurus:Axial_Skeleton
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0005945
+name: neurocranial trabecula
+synonym: "neurocranial trabeculae" EXACT PLURAL [ZFA:0001321]
+synonym: "trabecula" BROAD SENSU [ZFA:0001321]
+synonym: "trabecular cartilage" BROAD [ZFA:0001321]
+xref: ZFA:0001321
+is_a: UBERON:0000440 ! trabecula
+is_a: UBERON:0003932 ! chondrocranium cartilage
+relationship: part_of UBERON:0001703 ! neurocranium
+relationship: part_of UBERON:0003112 ! olfactory region
+
+[Term]
+id: UBERON:0005946
+name: outflow tract of atrium
+synonym: "outflow part of atrium" EXACT [FMA:14141]
+xref: FMA:14141
+is_a: UBERON:0004145 ! implied link automatically realized ! outflow tract
+relationship: part_of UBERON:0002081
+intersection_of: UBERON:0004145 ! outflow tract
+intersection_of: part_of UBERON:0002081 ! cardiac atrium
+relationship: continuous_with UBERON:0002082 ! cardiac ventricle
+
+[Term]
+id: UBERON:0005953
+name: outflow part of right ventricle
+def: "Outflow part of ventricle which is continuous with the pulmonary trunk[FNA]. The right ventricular outflow tract (RVOT) is an infundibular extension of the ventricular cavity which connects to the pulmonary artery[WP]." [FMA:7216]
+synonym: "conus arteriosus (infundibulum)" EXACT [FMA:7216]
+synonym: "infundibulum of right ventricle" EXACT [FMA:7216]
+synonym: "outflow tract of right ventricle" EXACT [FMA:7216]
+synonym: "pulmonary conus" EXACT [FMA:7216]
+synonym: "RVOT" EXACT []
+xref: FMA:7216
+is_a: UBERON:0005337 ! implied link automatically realized ! outflow tract of ventricle
+relationship: part_of UBERON:0002080
+intersection_of: UBERON:0005337 ! outflow tract of ventricle
+intersection_of: part_of UBERON:0002080 ! right ventricle
+relationship: continuous_with UBERON:0002333 ! pulmonary trunk
+
+[Term]
+id: UBERON:0005956
+name: outflow part of left ventricle
+def: "Outflow part of ventricle which is continuous with the aorta[FMA]. The left ventricular outflow tract (LVOT), which connects to the aorta, is nearly indistinguishable from the rest of the ventricle[WP]." [FMA:9473]
+synonym: "aortic vestibule" EXACT [FMA:9473]
+synonym: "left ventricular outflow" EXACT [FMA:9473]
+synonym: "LVOT" EXACT []
+synonym: "outflow tract of left ventricle" EXACT [FMA:9473]
+xref: FMA:9473
+is_a: UBERON:0005337 ! implied link automatically realized ! outflow tract of ventricle
+relationship: part_of UBERON:0002084
+intersection_of: UBERON:0005337 ! outflow tract of ventricle
+intersection_of: part_of UBERON:0002084 ! left ventricle
+
+[Term]
+id: UBERON:0005965
+name: outflow part of right atrium
+def: "Outflow part of atrium which consists of wall and cavity of the outflow part of right atrium and the tricuspid valve." [FMA:9550]
+synonym: "main part of right atrium" EXACT [FMA:9550]
+synonym: "outflow tract of right atrium" EXACT [FMA:9550]
+xref: FMA:9550
+is_a: UBERON:0005946 ! implied link automatically realized ! outflow tract of atrium
+relationship: part_of UBERON:0002078
+intersection_of: UBERON:0005946 ! outflow tract of atrium
+intersection_of: part_of UBERON:0002078 ! right atrium
+
+[Term]
+id: UBERON:0005966
+name: outflow part of left atrium
+synonym: "main part of left atrium" EXACT [FMA:9551]
+synonym: "outflow tract of left atrium" EXACT [FMA:9551]
+xref: FMA:9551
+is_a: UBERON:0005946 ! implied link automatically realized ! outflow tract of atrium
+relationship: part_of UBERON:0002079
+intersection_of: UBERON:0005946 ! outflow tract of atrium
+intersection_of: part_of UBERON:0002079 ! left atrium
+
+[Term]
+id: UBERON:0005967
+name: conotruncal ridge
+def: "One of of the pair of spiral mesenchymal swellings in the primordial ventricular outflow tract, that eventually fuse to form the conotruncal septum, dividing the subvalvular outflow tract and contributing to the membranous interventricular septum[MP]" [MP:0010585, PMID:8823298]
+synonym: "aortico-pulmonary spiral ridges" EXACT [MP:0010585]
+synonym: "bulbar ridge" EXACT [MP:0010585]
+synonym: "conotruncal cushion" EXACT [MP:0010585]
+synonym: "endocardial ridge" EXACT [MP:0010585]
+synonym: "outflow tract cushion" EXACT [MP:0010585]
+synonym: "outflow tract endocardial cushion" EXACT [MP:0010585]
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0003313 ! implied link automatically realized ! mesenchyme of embryo
+relationship: part_of UBERON:0004706 ! bulbus cordis
+relationship: part_of UBERON:0005337 ! outflow tract of ventricle
+
+[Term]
+id: UBERON:0005968
+name: infundibulum of hair follicle
+synonym: "dermal piliary canal" EXACT [FMA:70722]
+synonym: "hair follicle infundibulum" EXACT [FMA:70722]
+xref: FMA:70722
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+disjoint_from: UBERON:0003014 ! infundibulum of hypophysis
+relationship: part_of UBERON:0002073 ! hair follicle
+
+[Term]
+id: UBERON:0005969
+name: reticulum trabeculare
+def: "The trabecular meshwork is an area of tissue in the eye located around the base of the cornea, near the ciliary body, and is responsible for draining the aqueous humor from the eye via the anterior chamber (the chamber on the front of the eye covered by the cornea). The tissue is spongy and lined by trabeculocytes; it allows fluid to drain into a set of tubes called Schlemm's canal flowing into the blood system." [Wikipedia:Trabecular_meshwork]
+synonym: "cribiform ligament" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "Hueck's ligament" RELATED [BTO:0001605]
+synonym: "iridis" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "ligamentum peactin-tum iridis" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "ligamentum pectinatum" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "ligamentum pectinatum anguli iridocornealis" RELATED [BTO:0001605]
+synonym: "ligamentum pectinatum iridis" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "pectinate ligament" RELATED [BTO:0001605]
+synonym: "pectinate ligament of iris" RELATED [BTO:0001605]
+synonym: "scleral trabeculae" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "scleral trabecular" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "scleral trabecule" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "scribiform ligament" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "trabecular mesh" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "trabecular meshwork" RELATED [BTO:0001605]
+synonym: "trabecular meshwork of the eye" RELATED [Wikipedia:Trabecular_meshwork]
+xref: BTO:0001605
+xref: GAID:897
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000970 ! eye
 
 [Typedef]
 id: adjacent_to
