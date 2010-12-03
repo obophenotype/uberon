@@ -7789,7 +7789,6 @@ relationship: part_of UBERON:0000474 ! female reproductive system
 xref: EFO:0000978 ! vulva
 xref: galen:Vulva ! vulva
 xref: OpenCyc:Mx4rvgAWeJwpEbGdrcN5Y29ycA ! vulva
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Human_vulva.jpg/200px-Human_vulva.jpg
 
 [Term]
 id: UBERON:0005904
@@ -33402,23 +33401,6 @@ is_a: UBERON:0005630 ! fetal membrane
 relationship: part_of UBERON:0001771 ! pupil
 
 [Term]
-id: UBERON:0002270
-name: hyaloid artery
-alt_id: UBERON:FMA_77670-ZFA_0005045
-def: "The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus[WP]." [Wikipedia:Hyaloid_artery]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: FMA:77670 ! Hyaloid artery
-xref: TAO:0005045 ! hyaloid artery
-xref: ZFA:0005045 ! hyaloid artery
-is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0001637 ! artery
-relationship: part_of UBERON:0003098 ! optic stalk
-xref: HOG:0001478 ! hyaloid artery
-xref: EMAPA:19242 ! hyaloid artery
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Schematic_diagram_of_the_human_eye_en.svg/200px-Schematic_diagram_of_the_human_eye_en.svg.png
-
-[Term]
 id: UBERON:0002271
 name: periventricular zone of hypothalamus
 alt_id: UBERON:FMA_77682-MA_0000846
@@ -35869,6 +35851,7 @@ xref: galen:Foot
 xref: MA:0000044 ! foot
 xref: OpenCyc:Mx4rvVi-k5wpEbGdrcN5Y29ycA
 xref: EMAPA:17459 ! hind-paw
+xref: EHDAA2:0000546 ! foot region
 is_a: UBERON:0002470 ! autopod
 relationship: part_of UBERON:0002103 ! hindlimb
 intersection_of: UBERON:0002470 ! autopod
@@ -36185,6 +36168,7 @@ xref: galen:Hand
 xref: MA:0000037 ! hand
 xref: OpenCyc:Mx4rvViGVZwpEbGdrcN5Y29ycA
 xref: EMAPA:17428
+xref: EHDAA2:0000728 ! hand region
 intersection_of: UBERON:0002470 ! autopod
 intersection_of: part_of UBERON:0002102 ! forelimb
 xref: ncithesaurus:Hand ! Hand
@@ -56502,6 +56486,36 @@ is_a: UBERON:0005881 ! distal limb segment
 xref: AAO:0000852 ! prepollex
 
 [Term]
+id: UBERON:0006048
+name: digit 1
+is_a: UBERON:0002544 ! digit
+comment: comment: This class represents all instances of the 1st digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+
+[Term]
+id: UBERON:0006049
+name: digit 2
+is_a: UBERON:0002544 ! digit
+comment: comment: This class represents all instances of the 2nd digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+
+[Term]
+id: UBERON:0006050
+name: digit 3
+is_a: UBERON:0002544 ! digit
+comment: comment: This class represents all instances of the 3rd digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+
+[Term]
+id: UBERON:0006051
+name: digit 4
+is_a: UBERON:0002544 ! digit
+comment: comment: This class represents all instances of the 4th digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+
+[Term]
+id: UBERON:0006052
+name: digit 5
+is_a: UBERON:0002544 ! digit
+comment: comment: This class represents all instances of the 5th digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+
+[Term]
 id: UBERON:0001463
 name: hand digit 1
 alt_id: UBERON:FMA_24938-MA_0000454
@@ -56518,6 +56532,7 @@ xref: GAID:58 ! thumb
 xref: MA:0000454 ! hand digit 1
 xref: OpenCyc:Mx4rvVjVbpwpEbGdrcN5Y29ycA
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006048
 xref: ncithesaurus:Hand_Digit_1 ! Hand Digit 1
 xref: OpenCyc:Mx4rvVjVbpwpEbGdrcN5Y29ycA ! thumb
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Thumb-up.jpg/200px-Thumb-up.jpg
@@ -56534,6 +56549,7 @@ synonym: "second finger" EXACT []
 xref: FMA:24946 ! Index finger
 xref: MA:0000455 ! hand digit 2
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006049
 xref: ncithesaurus:Hand_Digit_2 ! Hand Digit 2
 xref: EHDAA2:0000517 ! finger 2
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Index_finger.JPG/200px-Index_finger.JPG
@@ -56550,6 +56566,7 @@ synonym: "third finger" EXACT []
 xref: FMA:24947 ! Middle finger
 xref: MA:0000456 ! hand digit 3
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006050
 xref: ncithesaurus:Hand_Digit_3 ! Hand Digit 3
 xref: EHDAA2:0000523 ! finger 3
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Middle_finger.jpg/200px-Middle_finger.jpg
@@ -56566,6 +56583,7 @@ synonym: "ring finger" NARROW []
 xref: FMA:24948 ! Ring finger
 xref: MA:0000457 ! hand digit 4
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006051
 xref: ncithesaurus:Hand_Digit_4 ! Hand Digit 4
 xref: EHDAA2:0000529 ! finger 4
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Ring_finger.JPG/200px-Ring_finger.JPG
@@ -56582,9 +56600,11 @@ synonym: "little finger" NARROW []
 xref: FMA:24949 ! Little finger
 xref: MA:0000458 ! hand digit 5
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006052
 xref: ncithesaurus:Hand_Digit_5 ! Hand Digit 5
 xref: EHDAA2:0000535 ! finger 5
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pink.jpg/200px-Pink.jpg
+
 
 [Term]
 id: UBERON:0003631
@@ -56596,6 +56616,7 @@ xref: FMA:25047 ! Big toe
 xref: MA:0000465 ! foot digit 1
 xref: EMAPA:17460 ! digit 1
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006048
 xref: ncithesaurus:Foot_Digit_1 ! Foot Digit 1
 xref: GAID:45 ! hallux
 xref: BTO:0002349 ! hallux
@@ -56608,6 +56629,7 @@ synonym: "2nd toe" EXACT []
 xref: FMA:25048 ! Second toe
 xref: MA:0000466 ! foot digit 2
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006049
 xref: ncithesaurus:Foot_Digit_2 ! Foot Digit 2
 xref: EHDAA2:0002042 ! toe 2
 
@@ -56619,6 +56641,7 @@ synonym: "3rd toe" EXACT []
 xref: FMA:25051 ! Third toe
 xref: MA:0000467 ! foot digit 3
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006050
 xref: ncithesaurus:Foot_Digit_3 ! Foot Digit 3
 xref: EHDAA2:0002047 ! toe 3
 
@@ -56630,6 +56653,7 @@ synonym: "4th toe" EXACT []
 xref: FMA:25052 ! Fourth toe
 xref: MA:0000468 ! foot digit 4
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006051
 xref: ncithesaurus:Foot_Digit_4 ! Foot Digit 4
 xref: EHDAA2:0002052 ! toe 4
 
@@ -56642,6 +56666,7 @@ synonym: "little toe" NARROW []
 xref: FMA:25053 ! Little toe
 xref: MA:0000469 ! foot digit 5
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006052
 xref: ncithesaurus:Foot_Digit_5 ! Foot Digit 5
 xref: EHDAA2:0002057 ! toe 5
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gray291.png/200px-Gray291.png
@@ -64478,6 +64503,7 @@ xref: FMA:32825 ! Epiphysis of humerus
 intersection_of: UBERON:0001437 ! epiphysis
 intersection_of: part_of UBERON:0000976 ! humerus
 def: "An epiphysis that is part of a humerus [Obol]." [OBOL:automatic]
+synonym: "humeral epiphysis" EXACT [OBOL:automatic]
 
 [Term]
 id: UBERON:0004383
@@ -66524,9 +66550,9 @@ id: UBERON:0004652
 name: humerus diaphysis
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000976 ! humerus
-synonym: "Body of humerus" EXACT [FMA:13305]
-synonym: "Humeral diaphysis" EXACT [FMA:13305]
-synonym: "Shaft of humerus" EXACT [FMA:13305]
+synonym: "body of humerus" EXACT [FMA:13305]
+synonym: "humeral diaphysis" EXACT [FMA:13305]
+synonym: "shaft of humerus" EXACT [FMA:13305]
 xref: FMA:13305 ! Diaphysis of humerus
 xref: MA:0002807 ! humerus diaphysis
 
@@ -72653,12 +72679,11 @@ xref: EHDAA2:0000541 ! first polar body
 id: UBERON:0005445
 name: foot region
 is_a: UBERON:0002529 ! limb segment
-relationship: part_of UBERON:0002103 ! hindlimb
-synonym: "foot region" EXACT [FMA:24993]
+relationship: part_of UBERON:0002387 ! foot
+synonym: "foot region" BROAD [FMA:24993]
 synonym: "foot subdivision" EXACT [FMA:24993]
 synonym: "subdivision of foot" EXACT [FMA:24993]
 xref: FMA:24993 ! Segment of foot
-xref: EHDAA2:0000546 ! foot region
 
 [Term]
 id: UBERON:0005446
@@ -72731,11 +72756,10 @@ id: UBERON:0005451
 name: hand region
 is_a: UBERON:0002529 ! limb segment
 relationship: part_of UBERON:0002102 ! forelimb
-synonym: "hand region" EXACT [FMA:24945]
+synonym: "hand region" BROAD [FMA:24945]
 synonym: "hand subdivision" EXACT [FMA:24945]
 synonym: "subdivision of hand" EXACT [FMA:24945]
 xref: FMA:24945 ! Segment of hand
-xref: EHDAA2:0000728 ! hand region
 
 [Term]
 id: UBERON:0005452
@@ -73143,16 +73167,6 @@ def: "Cranial neural crest which gives rise to the glossopharyngeal ganglion." [
 is_a: UBERON:0003099 ! cranial neural crest
 xref: ZFA:0007066 ! glossopharyngeal neural crest
 xref: EHDAA2:0000714 ! glossopharyngeal neural crest
-
-[Term]
-id: UBERON:0005492
-name: hyaloid vessels
-is_a: UBERON:0001981 ! blood vessel
-relationship: part_of UBERON:0002203 ! vasculature of eye
-synonym: "hyaloid vasculature" RELATED [ZFA:0005046]
-synonym: "hyaloid vessels" EXACT [ZFA:0005046]
-xref: ZFA:0005046 ! hyaloid vessel
-xref: EHDAA2:0000791 ! hyaloid vessels
 
 [Term]
 id: UBERON:0005493
@@ -73655,17 +73669,67 @@ xref: MA:0001637 ! hepatic duct intrahepatic part
 xref: EHDAA2:0000743 ! hepatic duct intrahepatic part
 
 [Term]
-id: UBERON:0005606
+id: UBERON:0005606 ! hyaloid cavity
 name: hyaloid cavity
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of UBERON:0000019 ! camera-type eye
+relationship: part_of UBERON:0002203 ! vasculature of eye
 xref: MA:0000272 ! hyaloid cavity
 xref: EHDAA2:0000789 ! hyaloid cavity
+
+[Term]
+id: UBERON:0005492 ! hyaloid vessel
+name: hyaloid vessel
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0001981 ! blood vessel
+synonym: "hyaloid vasculature" RELATED [ZFA:0005046]
+xref: ZFA:0005046 ! hyaloid vessel
+xref: EHDAA2:0000791 ! hyaloid vessels
+
+[Term]
+id: UBERON:0006011
+name: hyaloid vein
+def: "Vein internal to the eye." [ZFIN:ZDB-PUB-010205-5]
+synonym: "hyaloid veins" EXACT PLURAL  [ZFA:0005047]
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0005492 ! hyaloid vessel
+xref: ZFA:0005047 ! hyaloid vein
+
+[Term]
+id: UBERON:0002270
+name: hyaloid artery
+alt_id: UBERON:FMA_77670-ZFA_0005045
+def: "The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus. During the tenth week of development in humans (time varies depending on species), the lens grows independent of a blood supply and the hyaloid artery usually regresses. Its proximal portion remains as the central artery of the retina. Regression of the hyaloid artery leaves a clear central zone through the vitreous called the hyaloid canal or Cloquet's canal. Cloquet's canal is named after the man who first described it, French physician Jules Germain Cloquet (1790b1883). Occasionally the artery may not fully regress, resulting in the condition persistent hyaloid artery. More commonly, small remnants of the artery may remain. Free remnants can sometimes be seen as \"floaters\". An anterior remnant of the hyaloid artery can be seen in some people as Mittendorf's dot, a small pinpoint-like scar on the posterior surface of the lens. A posterior remnant may be seen where the artery left the optic disc, and is known as Bergmeister's papilla." [Wikipedia:Hyaloid_artery]
+comment: This class was created automatically from a combination of ontologies
+subset: uberon_slim
+xref: FMA:77670 ! Hyaloid artery
+xref: TAO:0005045 ! hyaloid artery
+xref: ZFA:0005045 ! hyaloid artery
+is_a: UBERON:0001637 ! artery
+is_a: UBERON:0005492 ! hyaloid vessel
+relationship: part_of UBERON:0003098 ! optic stalk
+relationship: part_of UBERON:0006010 ! hyaloid canal
+xref: HOG:0001478 ! hyaloid artery
+xref: EMAPA:19242 ! hyaloid artery
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Schematic_diagram_of_the_human_eye_en.svg/200px-Schematic_diagram_of_the_human_eye_en.svg.png
+
+[Term]
+id: UBERON:0006010 ! hyaloid canal
+name: hyaloid canal
+def: "Hyaloid canal is a small transparent canal running through the vitreous body from the optical nerve disc to the lens; in foetus it contains a prolongation of the central artery of the retina, the hyaloid artery. Other names: Cloquet's canal, Stilling's canal. The function of the canal is to provide an adjustable reservoir of mobile liquid which may be easily and rapidly displaced backwards in positive accommodation, forwards in negative accommodation[WP]. a passage running from in front of the optic disk to the lens of the eye; in the fetus, it transmits the hyaloid artery[TFD]." [Wikipedia:Hyaloid_canal, http://medical-dictionary.thefreedictionary.com/Hyaloid+canal]
+synonym: "canal of cloquet" EXACT  [FMA:58837]
+synonym: "cloquet's canal" EXACT  [FMA:58837]
+synonym: "stilling's canal" EXACT  [FMA:58837]
+comment: is_a FMA:67388 portion of vitreous humor
+relationship: part_of UBERON:0001798 ! vitreous body
+xref: FMA:58837 ! hyaloid canal
 
 [Term]
 id: UBERON:0005607
 name: hyaloid vascular plexus
 is_a: UBERON:0005629 ! vascular plexus
+relationship: part_of UBERON:0005606 ! hyaloid cavity
+synonym: "hyaloid vascular system" RELATED []
 xref: MA:0001283 ! hyaloid vascular plexus
 xref: EHDAA2:0000790 ! hyaloid vascular plexus
 
@@ -73673,6 +73737,7 @@ xref: EHDAA2:0000790 ! hyaloid vascular plexus
 id: UBERON:0005608
 name: hyoid artery
 is_a: UBERON:0001637 ! artery
+relationship: part_of UBERON:0001685 ! hyoid bone
 xref: MA:0001969 ! hyoid artery
 xref: EHDAA2:0000792 ! hyoid artery
 
@@ -74503,7 +74568,6 @@ def: "." [MP:0010002]
 comment: TODO - check
 is_a: UBERON:0005348 ! ansiform lobule
 synonym: "crus II of the ansiform lobule (HVII)" EXACT  [NIF_GrossAnatomy:nlx_anat_20081209]
-synonym: "inferior semilunar lobule" EXACT  [NIF_GrossAnatomy:nlx_anat_20081209]
 synonym: "lobulus ansiform crus II" EXACT  [NIF_GrossAnatomy:nlx_anat_20081209]
 synonym: "lobulus semilunaris inferior" EXACT  [NIF_GrossAnatomy:nlx_anat_20081209]
 synonym: "hemispheric lobule viibi" EXACT  [NIF_GrossAnatomy:nlx_anat_20081209]
@@ -74520,7 +74584,6 @@ is_a: UBERON:0005348 ! ansiform lobule
 synonym: "crus I of the ansiform lobule (HVII)" EXACT  [NIF_GrossAnatomy:nlx_anat_20081208]
 synonym: "lobulus ansiform crus I" EXACT  [NIF_GrossAnatomy:nlx_anat_20081208]
 synonym: "lobulus semilunaris superior" EXACT  [NIF_GrossAnatomy:nlx_anat_20081208]
-synonym: "superior semilunar lobule" EXACT  [NIF_GrossAnatomy:nlx_anat_20081208]
 synonym: "hemispheric lobule viia" EXACT  [NIF_GrossAnatomy:nlx_anat_20081208]
 synonym: "inferior semilunar lobule" EXACT [FMA:72525]
 xref: NIF_GrossAnatomy:nlx_anat_20081208 ! Hemispheric Lobule VIIA
@@ -74782,6 +74845,166 @@ synonym: "anulus fibrosus of heart" EXACT  [FMA:9497]
 is_a: UBERON:0002384 ! connective tissue
 relationship: part_of UBERON:0000948 ! heart
 xref: FMA:9497 ! fibrous ring of heart
+
+[Term]
+id: UBERON:0006012 ! interdigital region
+name: interdigital region
+is_a: UBERON:0000061 ! anatomical structure
+relationship: adjacent_to UBERON:0002544 {cardinality="2"} ! digit
+relationship: part_of UBERON:0002470 ! autopod
+synonym: "interdigit region" EXACT []
+synonym: "interdigit" RELATED []
+
+[Term]
+id: UBERON:0006013
+name: hand interdigital region
+intersection_of: UBERON:0006012 ! interdigital region
+intersection_of: part_of UBERON:0002398 ! hand
+relationship: adjacent_to UBERON:0002389 {cardinality="2"} ! finger
+synonym: "hand interdigit region" EXACT [MA:0000627]
+xref: MA:0000627 ! hand interdigit region
+xref: HOG:0000991 ! hand interdigital region
+
+[Term]
+id: UBERON:0006014
+name: foot interdigital region
+intersection_of: UBERON:0006012 ! interdigital region
+intersection_of: part_of UBERON:0002387 ! foot
+relationship: adjacent_to UBERON:0001466 {cardinality="2"} ! toe
+synonym: "foot interdigit region" EXACT [MA:0000651]
+xref: MA:0000651 ! foot interdigit region
+xref: HOG:0000992 ! foot interdigital region
+
+[Term]
+id: UBERON:0006015
+name: webbed interdigital region
+def: "Interdigital webbing is the presence of membranes of skin between the digits. Normally in mammals, webbing is present in the embryo but resorbed later in development, but in various mammal species it occasionally persists in adulthood.[1] In humans, it can be found in those suffering from LEOPARD syndrome and from Aarskog-Scott syndrome. Webbing between the digits of the hindfoot is also present in several mammals that spend part of their time in the water.[3] Webbing accommodates movement in the water[WP]." [Wikipedia:Interdigital_webbing]
+is_a: UBERON:0006012 ! interdigital region
+synonym: "interdigital webbing" EXACT []
+
+[Term]
+id: UBERON:0006016
+name: interdigital region between digits 1 and 2
+is_a: UBERON:0006012 ! interdigital region
+relationship: part_of UBERON:0002470 ! autopod
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to UBERON:0006048  ! digit 1
+intersection_of: adjacent_to UBERON:0006049  ! digit 2
+
+[Term]
+id: UBERON:0006019
+name: interdigital region between digits 2 and 3
+is_a: UBERON:0006012 ! interdigital region
+relationship: part_of UBERON:0002470 ! autopod
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to UBERON:0006049  ! digit 2
+intersection_of: adjacent_to UBERON:0006050  ! digit 3
+
+[Term]
+id: UBERON:0006022
+name: interdigital region between digits 3 and 4
+is_a: UBERON:0006012 ! interdigital region
+relationship: part_of UBERON:0002470 ! autopod
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to UBERON:0006050  ! digit 3
+intersection_of: adjacent_to UBERON:0006051  ! digit 4
+
+[Term]
+id: UBERON:0006025
+name: interdigital region between digits 4 and 5
+is_a: UBERON:0006012 ! interdigital region
+relationship: part_of UBERON:0002470 ! autopod
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to UBERON:0006051  ! digit 4
+intersection_of: adjacent_to UBERON:0006052  ! digit 5
+
+[Term]
+id: UBERON:0006026
+name: interdigital region between fingers 1 and 2
+relationship: part_of UBERON:0002398 ! hand
+xref: EHDAA2:0000844 ! interdigital region between fingers 1 and 2
+xref: EHDAA:6298 ! interdigital region between digits 1 and 2
+xref: EMAPA:17445 ! interdigital region between digits 1 and 2
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to MA:0000454  ! hand digit 1
+intersection_of: adjacent_to MA:0000455  ! hand digit 2
+
+[Term]
+id: UBERON:0006029
+name: interdigital region between fingers 2 and 3
+relationship: part_of UBERON:0002398 ! hand
+xref: EHDAA2:0000847 ! interdigital region between fingers 2 and 3
+xref: EHDAA:6304 ! interdigital region between digits 2 and 3
+xref: EMAPA:17448 ! interdigital region between digits 2 and 3
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to MA:0000455  ! hand digit 2
+intersection_of: adjacent_to MA:0000456  ! hand digit 3
+
+[Term]
+id: UBERON:0006032
+name: interdigital region between fingers 3 and 4
+relationship: part_of UBERON:0002398 ! hand
+xref: EHDAA2:0000850 ! interdigital region between fingers 3 and 4
+xref: EHDAA:6310 ! interdigital region between digits 3 and 4
+xref: EMAPA:17451 ! interdigital region between digits 3 and 4
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to MA:0000456  ! hand digit 3
+intersection_of: adjacent_to MA:0000457  ! hand digit 4
+
+[Term]
+id: UBERON:0006035
+name: interdigital region between fingers 4 and 5
+relationship: part_of UBERON:0002398 ! hand
+xref: EHDAA2:0000853 ! interdigital region between fingers 4 and 5
+xref: EHDAA:6316 ! interdigital region between digits 4 and 5
+xref: EMAPA:17454 ! interdigital region between digits 4 and 5
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to MA:0000457  ! hand digit 4
+intersection_of: adjacent_to MA:0000458  ! hand digit 5
+
+[Term]
+id: UBERON:0006038
+name: interdigital region between toes 1 and 2
+relationship: part_of UBERON:0002387 ! foot
+xref: EHDAA2:0000856 ! interdigital region between toes 1 and 2
+xref: EHDAA:6148 ! interdigital region between digits 1 and 2
+xref: EMAPA:17476 ! interdigital region between digits 1 and 2
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to MA:0000465  ! foot digit 1
+intersection_of: adjacent_to MA:0000466  ! foot digit 2
+
+[Term]
+id: UBERON:0006041
+name: interdigital region between toes 2 and 3
+relationship: part_of UBERON:0002387 ! foot
+xref: EHDAA2:0000859 ! interdigital region between toes 2 and 3
+xref: EHDAA:6154 ! interdigital region between digits 2 and 3
+xref: EMAPA:17479 ! interdigital region between digits 2 and 3
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to MA:0000466  ! foot digit 2
+intersection_of: adjacent_to MA:0000467  ! foot digit 3
+
+[Term]
+id: UBERON:0006044
+name: interdigital region between toes 3 and 4
+relationship: part_of UBERON:0002387 ! foot
+xref: EHDAA2:0000862 ! interdigital region between toes 3 and 4
+xref: EHDAA:6160 ! interdigital region between digits 3 and 4
+xref: EMAPA:17482 ! interdigital region between digits 3 and 4
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to MA:0000467  ! foot digit 3
+intersection_of: adjacent_to MA:0000468  ! foot digit 4
+
+[Term]
+id: UBERON:0006047
+name: interdigital region between toes 4 and 5
+relationship: part_of UBERON:0002387 ! foot
+xref: EHDAA2:0000865 ! interdigital region between toes 4 and 5
+xref: EHDAA:6166 ! interdigital region between digits 4 and 5
+xref: EMAPA:17485 ! interdigital region between digits 4 and 5
+intersection_of: UBERON:0006012  ! interdigital region
+intersection_of: adjacent_to MA:0000468  ! foot digit 4
+intersection_of: adjacent_to MA:0000469  ! foot digit 5
 
 [Typedef]
 id: adjacent_to
