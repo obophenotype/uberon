@@ -149,7 +149,7 @@ uberon-%-misalign.txt: %.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon-orphans uberon-synclash uberon.owl2 uberon-xp-check uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-discv.txt 
+uberon-qc: uberon-orphans uberon-synclash uberon.owl2 uberon-with-isa.obo uberon-xp-check uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-discv.txt 
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@

@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 01:12:2010 23:55
+date: 07:12:2010 08:53
 subsetdef: developmental_classification "developmental_classification"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
@@ -950,7 +950,6 @@ xref: MAT:0000121
 xref: MIAA:0000121
 xref: ncithesaurus:Urethra
 xref: OpenCyc:Mx4rvVjkypwpEbGdrcN5Y29ycA
-xref: WBbt:0005777
 xref: XAO:0000153
 is_a: UBERON:0000062 ! organ
 relationship: continuous_with UBERON:0001255 ! urinary bladder
@@ -2589,7 +2588,6 @@ xref: FMA:33923
 is_a: UBERON:0002384 ! connective tissue
 is_a: UBERON:0002418 ! implied link automatically realized ! cartilage
 is_a: UBERON:0003569 ! implied link automatically realized ! leg connective tissue
-is_a: UBERON:0003589 ! implied link automatically realized ! hindlimb connective tissue
 relationship: part_of UBERON:0000979
 intersection_of: UBERON:0002418 ! cartilage
 intersection_of: part_of UBERON:0000979 ! tibia
@@ -6026,17 +6024,11 @@ is_a: UBERON:0002536 ! arthropod sensillum
 
 [Term]
 id: UBERON:0000969
-name: suture
+name: joint connecting hardened body parts
 alt_id: UBERON:FBbt_00004479-FMA_7493-MA_0001475
-def: "The meeting line of two primary body plates, as a rule forming a furrow-like impression. // Fibrous joint in which the articulating bones or cartilages of the skull are connected by sutural ligaments (scant amount of collagenous dense connective tissue). Examples: sagittal suture, frontal suture." [ISBN:3110148986, Wikipedia:Suture]
-comment: This class was created automatically from a combination of ontologies
-subset: uberon_slim
-xref: FMA:7493
-xref: galen:Suturing
 xref: HAO:0000982
-xref: OpenCyc:Mx4rfB47MKo7EduQrwACs5b6Bw
 xref: OpenCyc:Mx4rwP1TTZwpEbGdrcN5Y29ycA
-is_a: UBERON:0002209 ! fibrous joint
+is_a: UBERON:0004905 ! joint
 
 [Term]
 id: UBERON:0000970
@@ -6190,10 +6182,9 @@ relationship: part_of UBERON:0002402 ! pleural cavity
 id: UBERON:0000978
 name: leg
 alt_id: UBERON:FBbt_00004640-FMA_24979-MA_0000047-MIAA_0000095
-def: "The portion of the hindlimb that consists of the stylopod and zeugopod." [Wikipedia:Leg#Limb]
-comment: In tetrapod anatomy, leg is used to refer to the entire limb. In human medicine its precise definition refers[2][3][4] only to the segment between the knee and the ankle[Wikipedia:Leg#Limb]. Here we opt for the second usage, as excluding the autopods - this is consistent with existing AOs, consistent with 'arm', and leaves 'limb' open to mean the mereological sum of stylopod, zeugopod and autopod
+def: "The portion of the hindlimb that contains both the stylopod and zeugopod." [Wikipedia:Leg#Limb]
+comment: The term leg can mean: [1] an appendage on which an animal walks [2] the entire hindlimb of a tetrapod [3] the segment of a human leg between knee and ankle (cf FMA) [4] the region of a hindlimb include the stylopod and zeugopod, but excluding the autopod. We define this class as [4], and thus 'leg' is compltely analagous to 'arm'. For [1], see the class 'locomotive weight-bearing appendage'. For [2] we use 'hindlimb'. For [3] we use the less open to misinterpretation 'hindlimb zeugopod'.
 subset: uberon_slim
-synonym: "intermediate segment of free lower limb" EXACT [FMA:24979]
 synonym: "tetrapod leg" EXACT []
 xref: BTO:0000721
 xref: EFO:0001411
@@ -6201,15 +6192,14 @@ xref: EHDAA:5151
 xref: EHDAA:6176
 xref: EHDAA:8289
 xref: EHDAA2:0000972
-xref: FMA:24979
 xref: GAID:49
-xref: galen:Leg
 xref: HAO:0000494
 xref: HOG:0000345
 xref: MA:0000047
-xref: ncithesaurus:Leg
 xref: OpenCyc:Mx4rvViYzZwpEbGdrcN5Y29ycA
-is_a: UBERON:0002101 ! limb
+is_a: UBERON:0006058 ! multi-limb segment region
+relationship: adjacent_to UBERON:0002387 ! foot
+relationship: part_of UBERON:0002103 ! hindlimb
 
 [Term]
 id: UBERON:0000979
@@ -6280,8 +6270,11 @@ alt_id: UBERON:FBbt_00004645-FMA_228659-FMA_7490-MA_0000319-MIAA_0000188-XAO_000
 def: "Heterogeneous cluster which consists of two or more adjacent bones or cartilages, parts of which are interconnected by organ parts that consist of various types of connective tissue. Together with other joints and bones, a joint constitutes the skeletal system. Examples: pubic symphysis, knee joint, temporomandibular joint. // The point of contact between elements of the skeleton. // Anatomical cluster which consists of two or more adjacent bones or cartilages, which may be interconnected by various types of tissue." [NLM:joint, Wikipedia:Joint, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
+synonym: "joint" BROAD [FMA:7490]
+xref: AEO:0000182
 xref: BTO:0001686
 xref: EFO:0000948
+xref: EHDAA2:0003182
 xref: FMA:7490
 xref: GAID:102
 xref: galen:Joint
@@ -6669,7 +6662,6 @@ xref: FMA:20462
 xref: GAID:383
 xref: galen:Vulva
 xref: HOG:0001458
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Human_vulva.jpg/200px-Human_vulva.jpg
 xref: MA:0000395
 xref: MAT:0000169
 xref: MIAA:0000169
@@ -14076,7 +14068,7 @@ synonym: "muscle organ of leg" EXACT [OBOL:automatic]
 xref: BTO:0000722
 xref: FMA:22471
 xref: MA:0000672
-is_a: UBERON:0003661 ! implied link automatically realized ! limb muscle
+is_a: UBERON:0003663 ! implied link automatically realized ! hindlimb muscle
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0001630 ! muscle organ
 intersection_of: part_of UBERON:0000978 ! leg
@@ -14718,7 +14710,7 @@ xref: MA:0001357
 xref: ncithesaurus:Radius
 xref: OpenCyc:Mx4rwUsDcZwpEbGdrcN5Y29ycA
 is_a: UBERON:0001440 ! skeleton of upper limb
-relationship: part_of UBERON:0002386 ! lower arm
+relationship: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0001424
@@ -14739,7 +14731,7 @@ is_a: UBERON:0002495 ! long bone
 is_a: UBERON:0003466 ! implied link automatically realized ! lower arm bone
 is_a: UBERON:0003607 ! implied link automatically realized ! forelimb long bone
 relationship: part_of UBERON:0001440 ! skeleton of upper limb
-relationship: part_of UBERON:0002386 ! lower arm
+relationship: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0001425
@@ -15005,6 +14997,7 @@ def: "Subdivision of long bone which forms its expanded proximal or distal artic
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "end of long bone" EXACT []
+synonym: "epiphyses" EXACT PLURAL []
 synonym: "long bone epiphysis" EXACT []
 xref: AAO:0000742
 xref: BTO:0000413
@@ -15022,6 +15015,7 @@ comment: adjacent to or containing epiphyseal plate? Note in FMA the metaphysis 
 subset: uberon_slim
 synonym: "diaphyseal end of long bone" EXACT []
 synonym: "long bone metaphysis" EXACT []
+synonym: "metaphyses" EXACT PLURAL []
 xref: FMA:24014
 xref: MA:0001363
 xref: ncithesaurus:Metaphysis
@@ -15528,26 +15522,22 @@ relationship: part_of UBERON:0001757 ! pinna
 id: UBERON:0001460
 name: arm
 alt_id: UBERON:FMA_24890-MA_0000033
-def: "In humans, the arms are the two upper limbs of the body from the shoulder to the hand[GO]. Note distinction between arm and forelimb. hand is part of forelimb, but not part of arm." [Wikipedia:Arm]
-comment: TODO -- resolve ambiguity -- In anatomy, an arm is one of the upper limbs of an animal. The term arm can also be used for analogous structures, such as one of the paired upper limbs of a four-legged animal, or the arms of cephalopods. In the lexicon of human anatomy, the term arm refers specifically to the segment between the shoulder and the elbow. The segment between the elbow and wrist is the forearm. However, in colloquial speech the term arm often refers to the entire upper limb from shoulder to wrist.
+def: "In humans, the arms are the two upper limbs of the body from the shoulder to the hand[GO]." [Wikipedia:Arm]
+comment: This class refers to the combination of the stylopod and zeugopod of a forelimb. Sometimes (cf FMA), 'arm' denotes the stylopod only; sometimes (cf MA), 'arm' denotes the part of the forelimb covering both (i.e. shoulder to hand). Also note distinction between arm and forelimb: hand is part of forelimb, but not part of arm.
 subset: uberon_slim
-synonym: "brachial region" EXACT []
-synonym: "proximal segment of free upper limb" EXACT []
 xref: BTO:0001435
 xref: EFO:0001410
 xref: EHDAA:4164
 xref: EHDAA:6210
 xref: EHDAA:8275
 xref: EHDAA2:0000140
-xref: FMA:24890
 xref: GAID:52
-xref: galen:Arm
 xref: HOG:0000339
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Upperarm.jpg/200px-Upperarm.jpg
 xref: MA:0000033
-xref: ncithesaurus:Arm
 xref: OpenCyc:Mx4rvVjp5ZwpEbGdrcN5Y29ycA
-is_a: UBERON:0002529 ! limb segment
+is_a: UBERON:0006058 ! multi-limb segment region
+relationship: adjacent_to UBERON:0002398 ! hand
 relationship: part_of UBERON:0002102 ! forelimb
 
 [Term]
@@ -15608,6 +15598,7 @@ xref: MA:0000454
 xref: ncithesaurus:Hand_Digit_1
 xref: OpenCyc:Mx4rvVjVbpwpEbGdrcN5Y29ycA
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006048 ! digit 1
 
 [Term]
 id: UBERON:0001464
@@ -16657,6 +16648,7 @@ xref: FMA:37828
 xref: MA:0000674
 xref: ncithesaurus:Leg_Skin
 is_a: UBERON:0001419 ! skin of limb
+is_a: UBERON:0003532 ! implied link automatically realized ! hindlimb skin
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: part_of UBERON:0000978 ! leg
@@ -20455,8 +20447,8 @@ alt_id: UBERON:FMA_54816-MA_0001502
 def: "the cartilaginous joints of the skull; these include sphenoethmoidal synchondrosis, sphenooccipital synchondrosis, sphenopetrosal synchondrosis, petrooccipital synchondrosis, anterior intraoccipital synchondrosis and posterior intraoccipital synchondrosis." [http://www.medilexicon.com/medicaldictionary.php?t=87514]
 xref: FMA:54816
 xref: MA:0001502
-is_a: UBERON:0000032 ! implied link automatically realized ! cranial structure
 is_a: UBERON:0002215 ! synchondrosis
+is_a: UBERON:0003685 ! implied link automatically realized ! cranial suture
 relationship: part_of UBERON:0003128
 intersection_of: UBERON:0002215 ! synchondrosis
 intersection_of: part_of UBERON:0003128 ! cranium
@@ -27772,7 +27764,8 @@ alt_id: UBERON:FMA_7133-MA_0000085
 def: "Cardiac septum which separates the right ventricle from the left ventricle." [Wikipedia:Interventricular_septum]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "ventricular septum" EXACT []
+synonym: "heart ventricular septum" EXACT [MA:0000085]
+synonym: "ventricular septum" RELATED [MA:0000085]
 xref: BTO:0002483
 xref: EFO:0001956
 xref: EHDAA:2603
@@ -27867,7 +27860,8 @@ alt_id: UBERON:FMA_7180-MA_0000083
 def: "Septum of organ which has as its parts the membranous and muscular parts that separates the right side of the heart from the left side of the heart." [Wikipedia:Heart_septum]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
-synonym: "Cardiac septa" EXACT PLURAL []
+synonym: "cardiac septa" EXACT PLURAL []
+synonym: "heart septa" EXACT PLURAL []
 synonym: "heart septum" EXACT []
 synonym: "septum of heart" EXACT []
 xref: FMA:7180
@@ -30177,7 +30171,7 @@ xref: TAO:0001738
 is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
 is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
-relationship: adjacent_to UBERON:0000969 ! suture
+relationship: adjacent_to UBERON:0003685 ! cranial suture
 relationship: part_of UBERON:0002241 ! chondrocranium
 
 [Term]
@@ -30992,7 +30986,7 @@ relationship: part_of UBERON:0001771 ! pupil
 id: UBERON:0002270
 name: hyaloid artery
 alt_id: UBERON:FMA_77670-ZFA_0005045
-def: "The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus[WP]." [Wikipedia:Hyaloid_artery]
+def: "The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus. During the tenth week of development in humans (time varies depending on species), the lens grows independent of a blood supply and the hyaloid artery usually regresses. Its proximal portion remains as the central artery of the retina. Regression of the hyaloid artery leaves a clear central zone through the vitreous called the hyaloid canal or Cloquet's canal. Cloquet's canal is named after the man who first described it, French physician Jules Germain Cloquet (1790b1883). Occasionally the artery may not fully regress, resulting in the condition persistent hyaloid artery. More commonly, small remnants of the artery may remain. Free remnants can sometimes be seen as \"floaters\". An anterior remnant of the hyaloid artery can be seen in some people as Mittendorf's dot, a small pinpoint-like scar on the posterior surface of the lens. A posterior remnant may be seen where the artery left the optic disc, and is known as Bergmeister's papilla." [Wikipedia:Hyaloid_artery]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: EMAPA:19242
@@ -31002,9 +30996,10 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Schematic_diagram
 xref: TAO:0005045
 xref: ZFA:0005045
 is_a: UBERON:0001637 ! artery
-is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0003499 ! implied link automatically realized ! brain blood vessel
+is_a: UBERON:0005492 ! hyaloid vessel
 relationship: part_of UBERON:0003098 ! optic stalk
+relationship: part_of UBERON:0006010 ! hyaloid canal
 
 [Term]
 id: UBERON:0002271
@@ -32868,6 +32863,7 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "dura mater of neuraxis" EXACT []
 xref: BTO:0001637
+xref: EMAPA:17776
 xref: FMA:9592
 xref: GAID:691
 xref: MA:0001115
@@ -33353,7 +33349,7 @@ relationship: part_of UBERON:0001015 ! musculature
 
 [Term]
 id: UBERON:0002386
-name: lower arm
+name: forelimb zeugopod
 alt_id: UBERON:FMA_9663-MA_0000034
 def: "distal region of the upper limb, between the elbow and the wrist." [Wikipedia:Forearm]
 subset: uberon_slim
@@ -33363,9 +33359,9 @@ synonym: "arm zeugopod" EXACT [OBOL:automatic]
 synonym: "brachial region middle limb segment" EXACT [OBOL:automatic]
 synonym: "brachial region zeugopod" EXACT [OBOL:automatic]
 synonym: "forearm" EXACT []
-synonym: "forelimb zeugopod" EXACT []
 synonym: "forelimb zeugopodium" EXACT []
 synonym: "intermediate segment of free upper limb" EXACT []
+synonym: "lower arm" EXACT []
 synonym: "lower segment of arm" EXACT []
 synonym: "middle limb segment of arm" EXACT [OBOL:automatic]
 synonym: "middle limb segment of brachial region" EXACT [OBOL:automatic]
@@ -33388,11 +33384,10 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Forearm_labeled.p
 xref: MA:0000034
 xref: ncithesaurus:Forearm
 xref: OpenCyc:Mx4rvVjnmpwpEbGdrcN5Y29ycA
-is_a: UBERON:0002471 ! zeugopod
+is_a: UBERON:0002471 ! implied link automatically realized ! zeugopod
 relationship: part_of UBERON:0002102
 intersection_of: UBERON:0002471 ! zeugopod
 intersection_of: part_of UBERON:0002102 ! forelimb
-relationship: part_of UBERON:0002102 ! forelimb
 
 [Term]
 id: UBERON:0002387
@@ -33422,6 +33417,7 @@ synonym: "lower extremity autopod" EXACT [OBOL:automatic]
 synonym: "lower extremity distal free limb segment" EXACT [OBOL:automatic]
 synonym: "terminal segment of free lower limb" EXACT []
 xref: BTO:0000476
+xref: EHDAA2:0000546
 xref: EMAPA:17459
 xref: FMA:9664
 xref: GAID:40
@@ -33728,6 +33724,7 @@ synonym: "forelimb autopodium" EXACT [OBOL:automatic]
 synonym: "proximal segment of free upper limb autopod" EXACT [OBOL:automatic]
 synonym: "proximal segment of free upper limb distal free limb segment" EXACT [OBOL:automatic]
 synonym: "terminal segment of free upper limb" EXACT []
+xref: EHDAA2:0000728
 xref: EMAPA:17428
 xref: FMA:9712
 xref: GAID:56
@@ -35392,7 +35389,7 @@ xref: FMA:52928
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Gray188-Coronal_suture.png/200px-Gray188-Coronal_suture.png
 xref: MA:0002795
 xref: OpenCyc:Mx4rv2eGHZwpEbGdrcN5Y29ycA
-is_a: UBERON:0000969 ! suture
+is_a: UBERON:0003685 ! cranial suture
 relationship: systemic_part_of UBERON:0001703 ! neurocranium
 
 [Term]
@@ -35407,7 +35404,7 @@ synonym: "sutura frontalis" EXACT []
 xref: FMA:52989
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gray134.png/200px-Gray134.png
 xref: MA:0002796
-is_a: UBERON:0000969 ! suture
+is_a: UBERON:0003685 ! cranial suture
 
 [Term]
 id: UBERON:0002491
@@ -35419,7 +35416,7 @@ synonym: "lambdoid suture of skull" EXACT []
 synonym: "lambdoidal suture" RELATED [MA:0002797]
 xref: FMA:52933
 xref: MA:0002797
-is_a: UBERON:0000969 ! suture
+is_a: UBERON:0003685 ! cranial suture
 relationship: systemic_part_of UBERON:0001703 ! neurocranium
 
 [Term]
@@ -35432,7 +35429,7 @@ synonym: "sagittal suture of skull" EXACT []
 xref: FMA:52929
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Kort-lang-skalle.gif/200px-Kort-lang-skalle.gif
 xref: MA:0002798
-is_a: UBERON:0000969 ! suture
+is_a: UBERON:0003685 ! cranial suture
 relationship: systemic_part_of UBERON:0001703 ! neurocranium
 
 [Term]
@@ -43514,6 +43511,7 @@ name: septum
 alt_id: UBERON:NIF_GrossAnatomy_birnlex_963-FMA_86461
 def: "a wall, dividing a cavity or structure into smaller ones[WP]." [Wikipedia:Septum]
 comment: general anatomical term in FMA
+synonym: "septa" EXACT PLURAL []
 xref: FMA:86461
 xref: OpenCyc:Mx4rrqot_on_EdaAAAACs0uFOQ
 is_a: UBERON:0000061 ! anatomical structure
@@ -45628,12 +45626,15 @@ is_obsolete: true
 
 [Term]
 id: UBERON:0003155
-name: occiput
+name: arthropod occiput
 alt_id: UBERON:FBbt_00004492-HAO_0000658
+comment: arthropod specific groupings belong in separate ontology, but this is retained for disambiguation purposes
+synonym: "occiput" RELATED SENSU [FBbt:00004492]
 xref: FBbt:00004492
-xref: galen:Occiput
 xref: HAO:0000658
-is_a: UBERON:0000061 ! anatomical structure
+xref: TGMA:0000041
+is_a: UBERON:0006056 ! posterior surface of head
+disjoint_from: UBERON:0006054 ! surface of occiput
 
 [Term]
 id: UBERON:0003156
@@ -46175,7 +46176,6 @@ xref: MA:0000214
 xref: MAT:0000200
 xref: MIAA:0000200
 xref: TAO:0000013
-xref: WBbt:0005135
 xref: XAO:0000027
 xref: ZFA:0000013
 is_a: UBERON:0000045 ! ganglion
@@ -46293,6 +46293,7 @@ name: phalanx
 def: "Long bones of fingers and toes[Obol]. In primates such as humans and monkeys, the thumb and big toe have two phalanges, while the other fingers and toes consist of three[WP]." [Wikipedia:Phalanx_bones]
 synonym: "digit long bone" EXACT [OBOL:automatic]
 synonym: "long bone of digit" EXACT [OBOL:automatic]
+synonym: "phalanges" EXACT PLURAL []
 xref: galen:Phalanx
 xref: MA:0000304
 xref: ncithesaurus:Phalanx
@@ -46723,7 +46724,7 @@ xref: HOG:0001096
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0003248
@@ -48081,7 +48082,7 @@ xref: HOG:0000504
 is_a: UBERON:0003859 ! implied link automatically realized ! forelimb mesenchyme
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0003104 ! mesenchyme
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0003328
@@ -48718,7 +48719,7 @@ name: ectoderm of leg
 def: "An ectoderm that is part of a leg [Obol]." [OBOL:automatic]
 synonym: "leg ectoderm" EXACT [OBOL:automatic]
 xref: EMAPA:17254
-is_a: UBERON:0000924 ! implied link automatically realized ! ectoderm
+is_a: UBERON:0005232 ! implied link automatically realized ! hindlimb ectoderm
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0000924 ! ectoderm
 intersection_of: part_of UBERON:0000978 ! leg
@@ -50155,7 +50156,7 @@ xref: MA:0000602
 is_a: UBERON:0003531 ! implied link automatically realized ! forelimb skin
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0000014 ! zone of skin
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0003404
@@ -50266,7 +50267,7 @@ name: mesenchyme of leg
 def: "A mesenchyme that is part of a leg [Obol]." [OBOL:automatic]
 synonym: "leg mesenchyme" EXACT [OBOL:automatic]
 xref: EMAPA:17255
-is_a: UBERON:0003104 ! implied link automatically realized ! mesenchyme
+is_a: UBERON:0003860 ! implied link automatically realized ! hindlimb mesenchyme
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: part_of UBERON:0000978 ! leg
@@ -50532,7 +50533,7 @@ name: leg nerve
 def: "A nerve that is part of a leg [Obol]." [OBOL:automatic]
 synonym: "nerve of leg" EXACT [OBOL:automatic]
 xref: MA:0000673
-is_a: UBERON:0003440 ! implied link automatically realized ! limb nerve
+is_a: UBERON:0003442 ! implied link automatically realized ! hindlimb nerve
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0001021 ! nerve
 intersection_of: part_of UBERON:0000978 ! leg
@@ -51297,7 +51298,7 @@ xref: MA:0000598
 is_a: UBERON:0002428 ! implied link automatically realized ! limb bone
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0001474 ! bone
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0003467
@@ -51308,6 +51309,7 @@ synonym: "m. gastrocnemius sesamoid bone" EXACT [OBOL:automatic]
 synonym: "sesamoid bone of m. gastrocnemius" EXACT [OBOL:automatic]
 xref: MA:0001378
 is_a: UBERON:0001479 ! implied link automatically realized ! sesamoid bone
+is_a: UBERON:0003464 ! implied link automatically realized ! hindlimb bone
 relationship: part_of UBERON:0001388
 intersection_of: UBERON:0001479 ! sesamoid bone
 intersection_of: part_of UBERON:0001388 ! gastrocnemius
@@ -51834,7 +51836,7 @@ name: leg blood vessel
 def: "A blood vessel that is part of a leg [Obol]." [OBOL:automatic]
 synonym: "blood vessel of leg" EXACT [OBOL:automatic]
 xref: MA:0000669
-is_a: UBERON:0003514 ! implied link automatically realized ! limb blood vessel
+is_a: UBERON:0003516 ! implied link automatically realized ! hindlimb blood vessel
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: part_of UBERON:0000978 ! leg
@@ -52987,7 +52989,7 @@ synonym: "leg textus connectivus" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of leg" EXACT [OBOL:automatic]
 synonym: "textus connectivus of leg" EXACT [OBOL:automatic]
 xref: MA:0000671
-is_a: UBERON:0003587 ! implied link automatically realized ! limb connective tissue
+is_a: UBERON:0003589 ! implied link automatically realized ! hindlimb connective tissue
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0002384 ! connective tissue
 intersection_of: part_of UBERON:0000978 ! leg
@@ -54300,6 +54302,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Index_finger.JPG/
 xref: MA:0000455
 xref: ncithesaurus:Hand_Digit_2
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006049 ! digit 2
 
 [Term]
 id: UBERON:0003623
@@ -54316,6 +54319,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Middle_finger.jpg
 xref: MA:0000456
 xref: ncithesaurus:Hand_Digit_3
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006050 ! digit 3
 
 [Term]
 id: UBERON:0003624
@@ -54332,6 +54336,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Ring_finger.JPG/2
 xref: MA:0000457
 xref: ncithesaurus:Hand_Digit_4
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006051 ! digit 4
 
 [Term]
 id: UBERON:0003625
@@ -54348,6 +54353,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pink.jpg/200px-Pi
 xref: MA:0000458
 xref: ncithesaurus:Hand_Digit_5
 is_a: UBERON:0002389 ! finger
+is_a: UBERON:0006052 ! digit 5
 
 [Term]
 id: UBERON:0003631
@@ -54362,6 +54368,7 @@ xref: GAID:45
 xref: MA:0000465
 xref: ncithesaurus:Foot_Digit_1
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006048 ! digit 1
 
 [Term]
 id: UBERON:0003632
@@ -54373,6 +54380,7 @@ xref: FMA:25048
 xref: MA:0000466
 xref: ncithesaurus:Foot_Digit_2
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006049 ! digit 2
 
 [Term]
 id: UBERON:0003633
@@ -54384,6 +54392,7 @@ xref: FMA:25051
 xref: MA:0000467
 xref: ncithesaurus:Foot_Digit_3
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006050 ! digit 3
 
 [Term]
 id: UBERON:0003634
@@ -54395,6 +54404,7 @@ xref: FMA:25052
 xref: MA:0000468
 xref: ncithesaurus:Foot_Digit_4
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006051 ! digit 4
 
 [Term]
 id: UBERON:0003635
@@ -54408,6 +54418,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gray291.png/200px
 xref: MA:0000469
 xref: ncithesaurus:Foot_Digit_5
 is_a: UBERON:0001466 ! toe
+is_a: UBERON:0006052 ! digit 5
 
 [Term]
 id: UBERON:0003636
@@ -55257,19 +55268,20 @@ relationship: part_of UBERON:0000916 ! abdomen
 [Term]
 id: UBERON:0003685
 name: cranial suture
-def: "A suture that is part of a cranium [Obol]." [OBOL:automatic]
+def: "The meeting line of two primary body plates, as a rule forming a furrow-like impression. // Fibrous joint in which the articulating bones or cartilages of the skull are connected by sutural ligaments (scant amount of collagenous dense connective tissue). Examples: sagittal suture, frontal suture." [ISBN:3110148986, Wikipedia:Suture]
 comment: cannot find singular in FMA, using Set class
-synonym: "cranial sutures" EXACT [FMA:71385]
-synonym: "cranial sutures set" EXACT [FMA:71385]
+subset: uberon_slim
 synonym: "cranium suture" EXACT [OBOL:automatic]
+synonym: "suture" EXACT [FMA:71385]
 synonym: "suture of cranium" EXACT [OBOL:automatic]
-xref: FMA:71385
+xref: FMA:7493
 xref: GAID:211
 xref: MA:0001475
 is_a: UBERON:0000032 ! implied link automatically realized ! cranial structure
-is_a: UBERON:0000969 ! suture
+is_a: UBERON:0000969 ! joint connecting hardened body parts
+is_a: UBERON:0002209 ! implied link automatically realized ! fibrous joint
 relationship: part_of UBERON:0003128
-intersection_of: UBERON:0000969 ! suture
+intersection_of: UBERON:0002209 ! fibrous joint
 intersection_of: part_of UBERON:0003128 ! cranium
 
 [Term]
@@ -55447,6 +55459,15 @@ is_a: UBERON:0002216 ! symphysis
 [Term]
 id: UBERON:0003700
 name: temporomandibular joint
+def: "A joint of the jaw. There are two TMJs, one on either side, working in unison. The name is derived from the two bones which form the joint: the upper temporal bone which is part of the cranium (skull), and the lower jaw bone called the mandible. The unique feature of the TMJs is the articular disc. The disc is composed of fibrocartilagenous tissue (like the firm and flexible elastic cartilage of the ear) which is positioned between the two bones that form the joint. The TMJs are one of the only synovial joints in the human body with an articular disc, another being the sternoclavicular joint. The disc divides each joint into two. The lower joint compartment formed by the mandible and the articular disc is involved in rotational movement -- this is the initial movement of the jaw when the mouth opens. The upper joint compartment formed by the articular disk and the temporal bone is involved in translational movement -- this is the secondary gliding motion of the jaw as it is opened widely. The part of the mandible which mates to the under-surface of the disc is the condyle and the part of the temporal bone which mates to the upper surface of the disk is the glenoid (or mandibular) fossa[WP]." [Wikipedia:Temporomandibular_joint]
+synonym: "articulatio temporomandibularis" RELATED [Wikipedia:Temporomandibular_joint]
+synonym: "tempero-mandibular joint" RELATED [Wikipedia:Temporomandibular_joint]
+synonym: "temperomandibular joint" EXACT [HP:0010754]
+synonym: "temporalmandibular joint" RELATED [Wikipedia:Temporomandibular_joint]
+synonym: "temporomandibular" RELATED [Wikipedia:Temporomandibular_joint]
+synonym: "temporomandibular articulation" RELATED [Wikipedia:Temporomandibular_joint]
+synonym: "temporomandibular joint" RELATED [Wikipedia:Temporomandibular_joint]
+synonym: "TMJ" EXACT [BTO:0003674, Wikipedia:Temporomandibular_joint]
 xref: BTO:0003674
 xref: FMA:54832
 xref: GAID:272
@@ -55846,60 +55867,57 @@ union_of: UBERON:0002374 ! metacarpal bone
 id: UBERON:0003822
 name: forelimb stylopod
 def: "A stylopod that is part of a forelimb [Obol]." [OBOL:automatic]
-synonym: "arm stylopod" EXACT [OBOL:automatic]
-synonym: "brachial region stylopod" EXACT [OBOL:automatic]
-synonym: "forelimb stylopod" EXACT [OBOL:automatic]
+comment: WP states: anatomical usage, the term arm refers specifically to the segment between the shoulder and the elbow, while the segment between the elbow and wrist is the forearm. However, in common, literary, and historical usage, arm refers to the entire upper limb from shoulder to wrist. FMA uses the term Arm for this class, so we place it here.
+synonym: "arm" RELATED INCONSISTENT [FMA:24890]
+synonym: "brachial region" EXACT []
 synonym: "forelimb stylopodium" EXACT [OBOL:automatic]
 synonym: "Proximal segment of free upper limb" EXACT []
-synonym: "proximal segment of free upper limb stylopod" EXACT [OBOL:automatic]
+synonym: "proximal segment of free upper limb" EXACT []
 synonym: "stylopod of arm" EXACT []
-synonym: "stylopod of brachial region" EXACT [OBOL:automatic]
 synonym: "stylopod of forelimb" EXACT []
-synonym: "stylopod of proximal segment of free upper limb" EXACT [OBOL:automatic]
 synonym: "upper arm" EXACT [MA:0000035]
-xref: BTO:0001447
 xref: EHDAA:4186
 xref: EHDAA:6234
 xref: EHDAA2:0002112
+xref: FMA:24890
+xref: galen:Arm
 xref: HOG:0000343
 xref: MA:0000035
-xref: ncithesaurus:Forearm
+xref: ncithesaurus:Arm
 xref: OpenCyc:Mx4rvVj0Z5wpEbGdrcN5Y29ycA
-is_a: UBERON:0002472 ! stylopod
+is_a: UBERON:0002472 ! implied link automatically realized ! stylopod
 relationship: part_of UBERON:0002102
 intersection_of: UBERON:0002472 ! stylopod
 intersection_of: part_of UBERON:0002102 ! forelimb
-relationship: part_of UBERON:0002102 ! forelimb
 
 [Term]
 id: UBERON:0003823
-name: lower leg
+name: hindlimb zeugopod
 def: "A zeugopod that is part of a hindlimb [Obol]." [OBOL:automatic]
+comment: note that FMA:24979 denotes the middle segment (zeugopod), its placement here is correct
 synonym: "calf" NARROW []
 synonym: "hind limb middle limb segment" EXACT [OBOL:automatic]
 synonym: "hind limb zeugopod" EXACT [OBOL:automatic]
 synonym: "hindlimb middle limb segment" EXACT [OBOL:automatic]
 synonym: "hindlimb zeugopod" EXACT [OBOL:automatic]
 synonym: "hindlimb zeugopodium" EXACT [OBOL:automatic]
-synonym: "inferior member middle limb segment" EXACT [OBOL:automatic]
-synonym: "inferior member zeugopod" EXACT [OBOL:automatic]
+synonym: "intermediate segment of free lower limb" EXACT [FMA:24979]
 synonym: "lower extremity middle limb segment" EXACT [OBOL:automatic]
 synonym: "lower extremity zeugopod" EXACT [OBOL:automatic]
+synonym: "lower leg" EXACT []
 synonym: "middle limb segment of hind limb" EXACT [OBOL:automatic]
 synonym: "middle limb segment of hindlimb" EXACT [OBOL:automatic]
-synonym: "middle limb segment of inferior member" EXACT [OBOL:automatic]
-synonym: "middle limb segment of lower extremity" EXACT [OBOL:automatic]
 synonym: "zeugopod of hind limb" EXACT [OBOL:automatic]
 synonym: "zeugopod of hindlimb" EXACT [OBOL:automatic]
-synonym: "zeugopod of inferior member" EXACT [OBOL:automatic]
-synonym: "zeugopod of leg" EXACT []
-synonym: "zeugopod of lower extremity" EXACT [OBOL:automatic]
 xref: EHDAA:5165
 xref: EHDAA:6190
 xref: EHDAA2:0001030
+xref: FMA:24979
 xref: FMA:24984
+xref: galen:Leg
 xref: HOG:0000348
 xref: MA:0000051
+xref: ncithesaurus:Leg
 xref: OpenCyc:Mx4rvczZBpwpEbGdrcN5Y29ycA
 is_a: UBERON:0002471 ! zeugopod
 relationship: part_of UBERON:0002103
@@ -59785,7 +59803,7 @@ id: UBERON:0004174
 name: leg joint
 def: "Joint in the leg. For example the knee, which separates the leg tibia and femur" [GO:0035111]
 synonym: "joint of leg" EXACT [OBOL:automatic]
-is_a: UBERON:0003657 ! implied link automatically realized ! limb joint
+is_a: UBERON:0003840 ! implied link automatically realized ! hindlimb joint
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0000982 ! skeletal joint
 intersection_of: part_of UBERON:0000978 ! leg
@@ -60379,7 +60397,7 @@ xref: MA:0000601
 is_a: UBERON:0003441 ! implied link automatically realized ! forelimb nerve
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0001021 ! nerve
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0004217
@@ -60451,7 +60469,7 @@ xref: MA:0000679
 is_a: UBERON:0003442 ! implied link automatically realized ! hindlimb nerve
 relationship: part_of UBERON:0003823
 intersection_of: UBERON:0001021 ! nerve
-intersection_of: part_of UBERON:0003823 ! lower leg
+intersection_of: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
 id: UBERON:0004219
@@ -61400,7 +61418,7 @@ xref: MA:0000676
 is_a: UBERON:0003464 ! implied link automatically realized ! hindlimb bone
 relationship: part_of UBERON:0003823
 intersection_of: UBERON:0001474 ! bone
-intersection_of: part_of UBERON:0003823 ! lower leg
+intersection_of: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
 id: UBERON:0004252
@@ -61495,7 +61513,7 @@ xref: MA:0000600
 is_a: UBERON:0003662 ! implied link automatically realized ! forelimb muscle
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0001630 ! muscle organ
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0004255
@@ -61569,7 +61587,7 @@ xref: MA:0000678
 is_a: UBERON:0003663 ! implied link automatically realized ! hindlimb muscle
 relationship: part_of UBERON:0003823
 intersection_of: UBERON:0001630 ! muscle organ
-intersection_of: part_of UBERON:0003823 ! lower leg
+intersection_of: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
 id: UBERON:0004257
@@ -61654,7 +61672,7 @@ xref: MA:0000597
 is_a: UBERON:0003515 ! implied link automatically realized ! forelimb blood vessel
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0001981 ! blood vessel
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0004260
@@ -61726,7 +61744,7 @@ xref: MA:0000675
 is_a: UBERON:0003516 ! implied link automatically realized ! hindlimb blood vessel
 relationship: part_of UBERON:0003823
 intersection_of: UBERON:0001981 ! blood vessel
-intersection_of: part_of UBERON:0003823 ! lower leg
+intersection_of: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
 id: UBERON:0004262
@@ -61832,7 +61850,7 @@ xref: MA:0000680
 is_a: UBERON:0003532 ! implied link automatically realized ! hindlimb skin
 relationship: part_of UBERON:0003823
 intersection_of: UBERON:0000014 ! zone of skin
-intersection_of: part_of UBERON:0003823 ! lower leg
+intersection_of: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
 id: UBERON:0004265
@@ -62054,7 +62072,7 @@ xref: MA:0000599
 is_a: UBERON:0003588 ! implied link automatically realized ! forelimb connective tissue
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0002384 ! connective tissue
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0004269
@@ -62234,7 +62252,7 @@ xref: MA:0000677
 is_a: UBERON:0003589 ! implied link automatically realized ! hindlimb connective tissue
 relationship: part_of UBERON:0003823
 intersection_of: UBERON:0002384 ! connective tissue
-intersection_of: part_of UBERON:0003823 ! lower leg
+intersection_of: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
 id: UBERON:0004271
@@ -63530,6 +63548,7 @@ intersection_of: part_of UBERON:0002101 ! limb
 id: UBERON:0004382
 name: epiphysis of humerus
 def: "An epiphysis that is part of a humerus [Obol]." [OBOL:automatic]
+synonym: "humeral epiphysis" EXACT [OBOL:automatic]
 xref: FMA:32825
 is_a: UBERON:0001437 ! implied link automatically realized ! epiphysis
 relationship: part_of UBERON:0000976
@@ -64388,7 +64407,7 @@ alt_id: UBERON:0005632
 def: "A musculature that is part of a leg [Obol]." [OBOL:automatic]
 xref: EHDAA2:0000973
 xref: FMA:50211
-is_a: UBERON:0004480 ! implied link automatically realized ! musculature of limb
+is_a: UBERON:0004482 ! implied link automatically realized ! musculature of lower limb
 relationship: part_of UBERON:0000978
 intersection_of: UBERON:0001015 ! musculature
 intersection_of: part_of UBERON:0000978 ! leg
@@ -64611,7 +64630,7 @@ xref: FMA:39089
 is_a: UBERON:0004481 ! implied link automatically realized ! musculature of upper limb
 relationship: part_of UBERON:0002386
 intersection_of: UBERON:0001015 ! musculature
-intersection_of: part_of UBERON:0002386 ! lower arm
+intersection_of: part_of UBERON:0002386 ! forelimb zeugopod
 
 [Term]
 id: UBERON:0004488
@@ -65970,9 +65989,9 @@ relationship: part_of UBERON:0001124 ! scapula
 [Term]
 id: UBERON:0004652
 name: humerus diaphysis
-synonym: "Body of humerus" EXACT [FMA:13305]
-synonym: "Humeral diaphysis" EXACT [FMA:13305]
-synonym: "Shaft of humerus" EXACT [FMA:13305]
+synonym: "body of humerus" EXACT [FMA:13305]
+synonym: "humeral diaphysis" EXACT [FMA:13305]
+synonym: "shaft of humerus" EXACT [FMA:13305]
 xref: FMA:13305
 xref: MA:0002807
 is_a: UBERON:0000064 ! organ part
@@ -66563,7 +66582,6 @@ relationship: part_of UBERON:0001474 ! bone
 id: UBERON:0004706
 name: bulbus cordis
 def: "The bulbus cordis lies ventral to the primitive ventricle after the developing heart assumes its S-shaped form. Together, the bulbus cordis and the primitive ventricle give rise to the ventricle of the formed heart. The adjacent walls of the bulbus cordis and ventricle approximate, fuse, and finally disappear, and the bulbus cordis now communicates freely with the right ventricle, while the junction of the bulbus with the truncus arteriosus is brought directly ventral to and applied to the atrial canal. By the upgrowth of the ventricular septum the bulbus cordis is in great measure separated from the left ventricle, but remains an integral part of the right ventricle, of which it forms the infundibulum[WP]." [Wikipedia:Bulbus_cordis]
-synonym: "conotruncus" EXACT [Wikipedia:Bulbus_cordis]
 xref: EHDAA:438
 xref: EHDAA:768
 xref: EHDAA2:0000196
@@ -69111,8 +69129,6 @@ relationship: part_of UBERON:0002104 ! visual system
 id: UBERON:0004905
 name: joint
 def: "anatomical cluster that connects limbs or skeletal elements." []
-xref: AEO:0000182
-xref: EHDAA2:0003182
 xref: FBbt:00004645
 is_a: UBERON:0000477 ! anatomical cluster
 
@@ -73188,7 +73204,7 @@ xref: HOG:0001050
 is_a: UBERON:0000483 ! implied link automatically realized ! epithelium
 relationship: part_of UBERON:0003823
 intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0003823 ! lower leg
+intersection_of: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
 id: UBERON:0005230
@@ -73487,7 +73503,7 @@ xref: HOG:0000752
 is_a: UBERON:0003860 ! implied link automatically realized ! hindlimb mesenchyme
 relationship: part_of UBERON:0003823
 intersection_of: UBERON:0003104 ! mesenchyme
-intersection_of: part_of UBERON:0003823 ! lower leg
+intersection_of: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
 id: UBERON:0005260
@@ -74530,6 +74546,8 @@ relationship: develops_from UBERON:0000930 ! stomodeum
 [Term]
 id: UBERON:0005357
 name: brain ependyma
+comment: in FMA this is treated as part of the ependyma, but here we treat ependyma as a portion
+xref: FMA:242837
 xref: MA:0000809
 is_a: UBERON:0002616 ! implied link automatically realized ! regional part of brain
 is_a: UBERON:0004670 ! implied link automatically realized ! ependyma
@@ -74549,6 +74567,7 @@ relationship: part_of UBERON:0001016 ! nervous system
 [Term]
 id: UBERON:0005359
 name: spinal cord ependyma
+comment: in FMA this is treated as part of the ependyma, but here we treat ependyma as a portion
 synonym: "spinal cord ependymal layer" EXACT [MA:0001125]
 synonym: "spinal cord ventricular layer" RELATED []
 xref: FMA:242839
@@ -75564,13 +75583,12 @@ is_obsolete: true
 [Term]
 id: UBERON:0005445
 name: foot region
-synonym: "foot region" EXACT [FMA:24993]
+synonym: "foot region" BROAD [FMA:24993]
 synonym: "foot subdivision" EXACT [FMA:24993]
 synonym: "subdivision of foot" EXACT [FMA:24993]
-xref: EHDAA2:0000546
 xref: FMA:24993
 is_a: UBERON:0002529 ! limb segment
-relationship: part_of UBERON:0002103 ! hindlimb
+relationship: part_of UBERON:0002387 ! foot
 
 [Term]
 id: UBERON:0005446
@@ -75642,10 +75660,9 @@ relationship: part_of UBERON:0005449 ! greater sac
 [Term]
 id: UBERON:0005451
 name: hand region
-synonym: "hand region" EXACT [FMA:24945]
+synonym: "hand region" BROAD [FMA:24945]
 synonym: "hand subdivision" EXACT [FMA:24945]
 synonym: "subdivision of hand" EXACT [FMA:24945]
-xref: EHDAA2:0000728
 xref: FMA:24945
 is_a: UBERON:0002529 ! limb segment
 relationship: part_of UBERON:0002102 ! forelimb
@@ -76098,14 +76115,12 @@ is_a: UBERON:0003099 ! cranial neural crest
 
 [Term]
 id: UBERON:0005492
-name: hyaloid vessels
+name: hyaloid vessel
 synonym: "hyaloid vasculature" RELATED [ZFA:0005046]
-synonym: "hyaloid vessels" EXACT [ZFA:0005046]
 xref: EHDAA2:0000791
 xref: ZFA:0005046
 is_a: UBERON:0001981 ! blood vessel
-is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
-relationship: part_of UBERON:0002203 ! vasculature of eye
+is_a: UBERON:0002050 ! embryonic structure
 
 [Term]
 id: UBERON:0005493
@@ -76631,13 +76646,17 @@ xref: EHDAA2:0000789
 xref: MA:0000272
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: part_of UBERON:0000019 ! camera-type eye
+relationship: part_of UBERON:0002203 ! vasculature of eye
 
 [Term]
 id: UBERON:0005607
 name: hyaloid vascular plexus
+synonym: "hyaloid vascular system" RELATED []
 xref: EHDAA2:0000790
 xref: MA:0001283
+is_a: UBERON:0002200 ! implied link automatically realized ! vasculature of head
 is_a: UBERON:0005629 ! vascular plexus
+relationship: part_of UBERON:0005606 ! hyaloid cavity
 
 [Term]
 id: UBERON:0005608
@@ -76645,6 +76664,9 @@ name: hyoid artery
 xref: EHDAA2:0000792
 xref: MA:0001969
 is_a: UBERON:0001637 ! artery
+is_a: UBERON:0003496 ! implied link automatically realized ! head blood vessel
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0001685 ! hyoid bone
 
 [Term]
 id: UBERON:0005609
@@ -79195,7 +79217,6 @@ def: "." [MP:0010002]
 comment: TODO - check
 synonym: "crus II of the ansiform lobule (HVII)" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
 synonym: "hemispheric lobule viibi" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
-synonym: "inferior semilunar lobule" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
 synonym: "lobulus ansiform crus II" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
 synonym: "lobulus semilunaris inferior" EXACT [NIF_GrossAnatomy:nlx_anat_20081209]
 synonym: "superior semilunar lobule " EXACT [FMA:72524]
@@ -79213,7 +79234,6 @@ synonym: "hemispheric lobule viia" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
 synonym: "inferior semilunar lobule" EXACT [FMA:72525]
 synonym: "lobulus ansiform crus I" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
 synonym: "lobulus semilunaris superior" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
-synonym: "superior semilunar lobule" EXACT [NIF_GrossAnatomy:nlx_anat_20081208]
 xref: FMA:72525
 xref: NIF_GrossAnatomy:nlx_anat_20081208
 is_a: UBERON:0005348 ! ansiform lobule
@@ -79245,6 +79265,10 @@ relationship: part_of UBERON:0002302 ! myocardium of atrium
 id: UBERON:0005981
 name: vena cava sinus
 def: "the portion of the cavity of the right atrium of the heart that receives the blood from the vena cavae and is separated from the rest of the atrium by the crista terminalis" [MP:0010497]
+synonym: "cavity of inflow part of right atrium" EXACT [FMA:13246]
+synonym: "posterior right atrial cavity" EXACT [FMA:13246]
+synonym: "sinus venarum cavarum" EXACT [FMA:13246]
+xref: FMA:13246
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002078 ! right atrium
 
@@ -79252,6 +79276,7 @@ relationship: part_of UBERON:0002078 ! right atrium
 id: UBERON:0005982
 name: Bachmann's bundle
 def: "the impulse conduction tract that originates in the sinoatrial node and transmits signal to the left atrium" [MP:0010517]
+synonym: "anterior interatrial band" EXACT [UBERON:gg]
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000948 ! heart
 
@@ -79499,6 +79524,263 @@ synonym: "semilunar valvule" EXACT [FMA:7232]
 xref: FMA:7232
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0000946 ! cardial valve
+
+[Term]
+id: UBERON:0006010
+name: hyaloid canal
+def: "Hyaloid canal is a small transparent canal running through the vitreous body from the optical nerve disc to the lens; in foetus it contains a prolongation of the central artery of the retina, the hyaloid artery. Other names: Cloquet's canal, Stilling's canal. The function of the canal is to provide an adjustable reservoir of mobile liquid which may be easily and rapidly displaced backwards in positive accommodation, forwards in negative accommodation[WP]. a passage running from in front of the optic disk to the lens of the eye; in the fetus, it transmits the hyaloid artery[TFD]." [http://medical-dictionary.thefreedictionary.com/Hyaloid+canal, Wikipedia:Hyaloid_canal]
+comment: in FMA, this is_a FMA:67388 portion of vitreous humor
+synonym: "canal of cloquet" EXACT [FMA:58837]
+synonym: "cloquet's canal" EXACT [FMA:58837]
+synonym: "stilling's canal" EXACT [FMA:58837]
+xref: FMA:58837
+is_a: UBERON:0004111 ! anatomical conduit
+relationship: part_of UBERON:0001798 ! vitreous body
+
+[Term]
+id: UBERON:0006011
+name: hyaloid vein
+def: "Vein internal to the eye." [ZFIN:ZDB-PUB-010205-5]
+synonym: "hyaloid veins" EXACT PLURAL [ZFA:0005047]
+xref: ZFA:0005047
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0005492 ! hyaloid vessel
+
+[Term]
+id: UBERON:0006012
+name: interdigital region
+synonym: "interdigit" RELATED []
+synonym: "interdigit region" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+relationship: adjacent_to UBERON:0002544 {cardinality="2"} ! digit
+relationship: part_of UBERON:0002470 ! autopod
+
+[Term]
+id: UBERON:0006013
+name: hand interdigital region
+synonym: "hand interdigit region" EXACT [MA:0000627]
+xref: HOG:0000991
+xref: MA:0000627
+is_a: UBERON:0006012 ! implied link automatically realized ! interdigital region
+relationship: part_of UBERON:0002398
+intersection_of: UBERON:0006012 ! interdigital region
+intersection_of: part_of UBERON:0002398 ! hand
+relationship: adjacent_to UBERON:0002389 {cardinality="2"} ! finger
+
+[Term]
+id: UBERON:0006014
+name: foot interdigital region
+synonym: "foot interdigit region" EXACT [MA:0000651]
+xref: HOG:0000992
+xref: MA:0000651
+is_a: UBERON:0006012 ! implied link automatically realized ! interdigital region
+relationship: part_of UBERON:0002387
+intersection_of: UBERON:0006012 ! interdigital region
+intersection_of: part_of UBERON:0002387 ! foot
+relationship: adjacent_to UBERON:0001466 {cardinality="2"} ! toe
+
+[Term]
+id: UBERON:0006015
+name: webbed interdigital region
+def: "Interdigital webbing is the presence of membranes of skin between the digits. Normally in mammals, webbing is present in the embryo but resorbed later in development, but in various mammal species it occasionally persists in adulthood.[1] In humans, it can be found in those suffering from LEOPARD syndrome and from Aarskog-Scott syndrome. Webbing between the digits of the hindfoot is also present in several mammals that spend part of their time in the water.[3] Webbing accommodates movement in the water[WP]." [Wikipedia:Interdigital_webbing]
+synonym: "interdigital webbing" EXACT []
+is_a: UBERON:0006012 ! interdigital region
+
+[Term]
+id: UBERON:0006016
+name: interdigital region between digits 1 and 2
+is_a: UBERON:0006012 ! interdigital region
+relationship: adjacent_to UBERON:0006048
+relationship: adjacent_to UBERON:0006049
+intersection_of: UBERON:0006012 ! interdigital region
+intersection_of: adjacent_to UBERON:0006048 ! digit 1
+intersection_of: adjacent_to UBERON:0006049 ! digit 2
+relationship: part_of UBERON:0002470 ! autopod
+
+[Term]
+id: UBERON:0006019
+name: interdigital region between digits 2 and 3
+is_a: UBERON:0006012 ! interdigital region
+relationship: adjacent_to UBERON:0006049
+relationship: adjacent_to UBERON:0006050
+intersection_of: UBERON:0006012 ! interdigital region
+intersection_of: adjacent_to UBERON:0006049 ! digit 2
+intersection_of: adjacent_to UBERON:0006050 ! digit 3
+relationship: part_of UBERON:0002470 ! autopod
+
+[Term]
+id: UBERON:0006022
+name: interdigital region between digits 3 and 4
+is_a: UBERON:0006012 ! interdigital region
+relationship: adjacent_to UBERON:0006050
+relationship: adjacent_to UBERON:0006051
+intersection_of: UBERON:0006012 ! interdigital region
+intersection_of: adjacent_to UBERON:0006050 ! digit 3
+intersection_of: adjacent_to UBERON:0006051 ! digit 4
+relationship: part_of UBERON:0002470 ! autopod
+
+[Term]
+id: UBERON:0006025
+name: interdigital region between digits 4 and 5
+is_a: UBERON:0006012 ! interdigital region
+relationship: adjacent_to UBERON:0006051
+relationship: adjacent_to UBERON:0006052
+intersection_of: UBERON:0006012 ! interdigital region
+intersection_of: adjacent_to UBERON:0006051 ! digit 4
+intersection_of: adjacent_to UBERON:0006052 ! digit 5
+relationship: part_of UBERON:0002470 ! autopod
+
+[Term]
+id: UBERON:0006026
+name: interdigital region between fingers 1 and 2
+xref: EHDAA:6298
+xref: EHDAA2:0000844
+xref: EMAPA:17445
+is_a: UBERON:0006013 ! implied link automatically realized ! hand interdigital region
+relationship: part_of UBERON:0002398 ! hand
+
+[Term]
+id: UBERON:0006029
+name: interdigital region between fingers 2 and 3
+xref: EHDAA:6304
+xref: EHDAA2:0000847
+xref: EMAPA:17448
+is_a: UBERON:0006013 ! implied link automatically realized ! hand interdigital region
+relationship: part_of UBERON:0002398 ! hand
+
+[Term]
+id: UBERON:0006032
+name: interdigital region between fingers 3 and 4
+xref: EHDAA:6310
+xref: EHDAA2:0000850
+xref: EMAPA:17451
+is_a: UBERON:0006013 ! implied link automatically realized ! hand interdigital region
+relationship: part_of UBERON:0002398 ! hand
+
+[Term]
+id: UBERON:0006035
+name: interdigital region between fingers 4 and 5
+xref: EHDAA:6316
+xref: EHDAA2:0000853
+xref: EMAPA:17454
+is_a: UBERON:0006013 ! implied link automatically realized ! hand interdigital region
+relationship: part_of UBERON:0002398 ! hand
+
+[Term]
+id: UBERON:0006038
+name: interdigital region between toes 1 and 2
+xref: EHDAA:6148
+xref: EHDAA2:0000856
+xref: EMAPA:17476
+is_a: UBERON:0006014 ! implied link automatically realized ! foot interdigital region
+relationship: part_of UBERON:0002387 ! foot
+
+[Term]
+id: UBERON:0006041
+name: interdigital region between toes 2 and 3
+xref: EHDAA:6154
+xref: EHDAA2:0000859
+xref: EMAPA:17479
+is_a: UBERON:0006014 ! implied link automatically realized ! foot interdigital region
+relationship: part_of UBERON:0002387 ! foot
+
+[Term]
+id: UBERON:0006044
+name: interdigital region between toes 3 and 4
+xref: EHDAA:6160
+xref: EHDAA2:0000862
+xref: EMAPA:17482
+is_a: UBERON:0006014 ! implied link automatically realized ! foot interdigital region
+relationship: part_of UBERON:0002387 ! foot
+
+[Term]
+id: UBERON:0006047
+name: interdigital region between toes 4 and 5
+xref: EHDAA:6166
+xref: EHDAA2:0000865
+xref: EMAPA:17485
+is_a: UBERON:0006014 ! implied link automatically realized ! foot interdigital region
+relationship: part_of UBERON:0002387 ! foot
+
+[Term]
+id: UBERON:0006048
+name: digit 1
+comment: comment: This class represents all instances of the 1st digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+is_a: UBERON:0002544 ! digit
+
+[Term]
+id: UBERON:0006049
+name: digit 2
+comment: comment: This class represents all instances of the 2nd digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+is_a: UBERON:0002544 ! digit
+
+[Term]
+id: UBERON:0006050
+name: digit 3
+comment: comment: This class represents all instances of the 3rd digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+is_a: UBERON:0002544 ! digit
+
+[Term]
+id: UBERON:0006051
+name: digit 4
+comment: comment: This class represents all instances of the 4th digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+is_a: UBERON:0002544 ! digit
+
+[Term]
+id: UBERON:0006052
+name: digit 5
+comment: comment: This class represents all instances of the 5th digit of the in human and mouse, and all homologues of this digit in other vertebrates. See http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2553264/
+is_a: UBERON:0002544 ! digit
+
+[Term]
+id: UBERON:0006054
+name: surface of occiput
+def: "The occiput is the anatomical term for the posterior (back) portion of the head." [Wikipedia:Occiput]
+synonym: "occiput" RELATED [FMA:46479]
+synonym: "occiput surface" EXACT [FMA:46479]
+synonym: "regio occipitalis (capitis)" EXACT [FMA:46479]
+xref: FMA:46479
+is_a: UBERON:0006056 ! posterior surface of head
+
+[Term]
+id: UBERON:0006056
+name: posterior surface of head
+is_a: UBERON:0000015 ! anatomical boundary
+relationship: part_of UBERON:0000033 ! head
+
+[Term]
+id: UBERON:0006057
+name: multi-segment region
+is_a: UBERON:0000061 ! anatomical structure
+relationship: has_part UBERON:0000914 ! organismal segment
+
+[Term]
+id: UBERON:0006058
+name: multi-limb segment region
+is_a: UBERON:0006057 ! multi-segment region
+relationship: has_part UBERON:0002529 ! limb segment
+
+[Term]
+id: UBERON:0006059
+name: falx cerebri
+def: "The falx cerebri, also known as the cerebral falx, so named from its sickle-like form, is a strong, arched fold of dura mater which descends vertically in the longitudinal fissure between the cerebral hemispheres. It is narrow in front, where it is attached to the crista galli of the ethmoid; and broad behind, where it is connected with the upper surface of the tentorium cerebelli. Its upper margin is convex, and attached to the inner surface of the skull in the middle line, as far back as the internal occipital protuberance; it contains the superior sagittal sinus. Its lower margin is free and concave, and contains the inferior sagittal sinus. The falx cerebri is known to calcify with age." [Wikipedia:Falx_cerebri]
+synonym: "cerebral falx" EXACT [FMA:83967]
+xref: EMAPA:18551
+xref: FMA:83967
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004120 ! implied link automatically realized ! mesoderm-derived structure
+is_a: UBERON:0004121 ! implied link automatically realized ! ectoderm-derived structure
+relationship: part_of UBERON:0002363 ! dura mater
+
+[Term]
+id: UBERON:0006060
+name: conotruncus
+def: "The distal portion of Bulbus cordis that forms an outflow channel and gives rise to the proximal conus cordis." [UBERON:gg]
+synonym: "rostral half of bulbus cordis" RELATED [EMAPA:16221]
+xref: EMAPA:16221
+xref: EMAPA:16338
+is_a: UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0004706 ! bulbus cordis
 
 [Typedef]
 id: adjacent_to
