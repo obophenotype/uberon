@@ -4783,33 +4783,6 @@ relationship: part_of UBERON:0001703 ! neurocranium
 xref: ZFA:0001321 ! neurocranial trabecula
 
 [Term]
-id: UBERON:0005969
-name: reticulum trabeculare
-def: "The trabecular meshwork is an area of tissue in the eye located around the base of the cornea, near the ciliary body, and is responsible for draining the aqueous humor from the eye via the anterior chamber (the chamber on the front of the eye covered by the cornea). The tissue is spongy and lined by trabeculocytes; it allows fluid to drain into a set of tubes called Schlemm's canal flowing into the blood system." [Wikipedia:Trabecular_meshwork]
-synonym: "Hueck's ligament" RELATED  [BTO:0001605]
-synonym: "ligamentum pectinatum anguli iridocornealis" RELATED  [BTO:0001605]
-synonym: "pectinate ligament" RELATED  [BTO:0001605]
-synonym: "pectinate ligament of iris" RELATED  [BTO:0001605]
-synonym: "trabecular meshwork" RELATED  [BTO:0001605]
-synonym: "cribiform ligament" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "iridis" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "ligamentum peactin-tum iridis" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "ligamentum pectinatum" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "ligamentum pectinatum iridis" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "scleral trabeculae" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "scleral trabecular" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "scleral trabecule" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "scribiform ligament" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "trabecular mesh" RELATED [Wikipedia:Trabecular_meshwork]
-synonym: "trabecular meshwork of the eye" RELATED [Wikipedia:Trabecular_meshwork]
-is_a: UBERON:0000479 ! portion of tissue
-relationship: part_of UBERON:0000970 ! eye
-relationship: has_part CL:0002367 ! trabecular meshwork cell
-xref: BTO:0001605 ! reticulum trabeculare
-xref: GAID:897 ! trabecular meshwork
-
-
-[Term]
 id: UBERON:0000442
 name: right testicular vein
 alt_id: UBERON:BTO_0002679-FMA_14341
@@ -5802,6 +5775,7 @@ def: "connective tissue between the cellular elements of a structure." [http://m
 comment: todo - make connective tissue
 synonym: "interstitium" EXACT []
 is_a: UBERON:0003891 ! stroma
+xref: FMA:86301 ! Interstitium
 
 [Term]
 id: UBERON:0000915
@@ -23567,6 +23541,18 @@ synonym: "bone organ zone" EXACT  [FMA:10483]
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001474 ! bone
 xref: FMA:10483 ! zone of bone organ
+
+[Term]
+id: UBERON:0006203
+name: conchal part of pinna
+synonym: "concha" BROAD  [FMA:61006]
+synonym: "concha of auricle" EXACT  [FMA:61006]
+synonym: "concha of pinna" EXACT  [FMA:61006]
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0001757 ! pinna
+xref: FMA:61006 ! conchal part of pinna
+disjoint_from: UBERON:0001762 ! nasal concha
+
 
 [Term]
 id: UBERON:0001762 ! nasal concha
@@ -60543,6 +60529,7 @@ is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0003957 ! Bruch's membrane
 relationship: part_of UBERON:0001776 ! choroid
 relationship: has_part UBERON:0001982 ! capillary
+xref: FMA:58437 ! Capillary lamina of choroid
 
 [Term]
 id: UBERON:0003958
@@ -61132,14 +61119,67 @@ xref: BTO:0002879 ! chorionic plate
 xref: ncithesaurus:Chorionic_Plate ! Chorionic Plate
 
 [Term]
-id: UBERON:0004028
-name: trabecular meshwork
-def: "the pore-like structure surrounding the entire circumference of the anterior chamber through which aqueous humor circulates" [MP:0005203]
-is_a: UBERON:0000061 ! anatomical structure
+id: UBERON:0006204
+name: inguinal ligament
+def: "a band running from the pubic tubercle to the anterior superior iliac spine. Its anatomy is very important for operating on hernia patients. It forms the base of the inguinal canal through which an indirect inguinal hernia may develop. The inguinal ligament runs from the anterior superior iliac spine of the ilium to the pubic tubercle of the pubic bone. It is formed by the external abdominal oblique aponeurosis and is continuous with the fascia lata of the thigh." [Wikipedia:Inguinal_ligament]
+synonym: "fallopian ligament" EXACT DUBIOUS  [FMA:19855, Wikipedia:Inguinal_ligament]
+synonym: "Poupart's ligament" EXACT DUBIOUS [FMA:19855, Wikipedia:Inguinal_ligament]
+synonym: "Vesalius' ligament" EXACT  [FMA:19855]
+is_a: UBERON:0000211 ! ligament
+relationship: part_of UBERON:0005442 ! external oblique
+xref: FMA:19855 ! inguinal ligament
+
+[Term]
+id: UBERON:0006205
+name: pectineal ligament
+synonym: "cooper's ligament (groin)" EXACT  [FMA:20188]
+synonym: "ligamentum pectineale" EXACT  [FMA:20188]
+comment: we include a disjointness axiom to avoid confusion that may arise from the synonyms 'ligamentum pectineale' and 'ligamentum pectinum'
+is_a: UBERON:0000064 ! organ part
+relationship: part_of UBERON:0006204 ! inguinal ligament
+xref: FMA:20188 ! pectineal ligament
+disjoint_from: UBERON:0005969 ! reticulum trabeculare
+
+
+[Term]
+id: UBERON:0005969 ! reticulum trabeculare
+name: reticulum trabeculare
+alt_id: UBERON:0004028
+def: "The trabecular meshwork is an area of tissue in the eye located around the base of the cornea, near the ciliary body, and is responsible for draining the aqueous humor from the eye via the anterior chamber (the chamber on the front of the eye covered by the cornea). The tissue is spongy and lined by trabeculocytes; it allows fluid to drain into a set of tubes called Schlemm's canal flowing into the blood system[WP]. A porelike structure surrounding the entire circumference of the anterior chamber through which aqueous humor circulates to the canal of Schlemm.[GAID] the pore-like structure surrounding the entire circumference of the anterior chamber through which aqueous humor circulates[MP]." [Wikipedia:Trabecular_meshwork, MP:0005203]
+comment: TODO check syns - ligaments
+synonym: "Hueck's ligament" RELATED  [BTO:0001605]
+synonym: "ligamentum pectinatum anguli iridocornealis" RELATED  [BTO:0001605]
+synonym: "pectinate ligament" RELATED  [BTO:0001605]
+synonym: "pectinate ligament of iris" RELATED  [BTO:0001605]
+synonym: "trabecular meshwork" RELATED  [BTO:0001605]
+synonym: "cribiform ligament" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "iridis" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "ligamentum peactin-tum iridis" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "ligamentum pectinatum" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "ligamentum pectinatum iridis" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "scleral trabeculae" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "scleral trabecular" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "scleral trabecule" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "scribiform ligament" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "trabecular mesh" RELATED [Wikipedia:Trabecular_meshwork]
+synonym: "trabecular meshwork of the eye" EXACT [Wikipedia:Trabecular_meshwork]
+is_a: UBERON:0000479 ! portion of tissue
+relationship: part_of UBERON:0000970 ! eye
+relationship: has_part CL:0002367 ! trabecular meshwork cell
 relationship: surrounds UBERON:0001766 ! anterior chamber
 relationship: part_of UBERON:0003956 ! aqueous drainage system
+xref: BTO:0001605 ! reticulum trabeculare
 xref: GAID:897 ! trabecular meshwork
 xref: ncithesaurus:Trabecular_Meshwork ! Trabecular Meshwork
+
+[Term]
+id: UBERON:0006206
+name: iridocorneal angle
+def: "acute angle occurring between the iris and the cornea at the periphery of the anterior chamber of the eye[MP]." [MP:0004221]
+synonym: "anterior chamber angle" EXACT  [FMA:58577]
+is_a: UBERON:0000015 ! anatomical boundary
+relationship: part_of UBERON:0003956 ! aqueous drainage system
+xref: FMA:58577 ! iridocorneal angle
 
 [Term]
 id: UBERON:0004029
@@ -73476,6 +73516,7 @@ synonym: "parenchyma of right lobe of liver" EXACT [FMA:71657]
 id: UBERON:0005222
 name: liver left lobe parenchyma
 xref: HOG:0000839
+xref: FMA:71658 ! Parenchyma of left lobe of liver
 intersection_of: UBERON:0000353 
 intersection_of: part_of UBERON:0001115
 def: "A parenchyma that is part of a left lobe of liver [Obol]." [OBOL:automatic]
@@ -74564,7 +74605,7 @@ xref: FMA:9756 ! External intercostal muscle
 xref: EHDAA2:0000465 ! external intercostal muscle
 
 [Term]
-id: UBERON:0005442
+id: UBERON:0005442 ! external oblique
 name: external oblique
 def: "The external oblique muscle (of the abdomen) (also external abdominal oblique muscle) is the largest and the most superficial (outermost) of the three flat muscles of the lateral anterior abdomen." [Wikipedia:Abdominal_external_oblique_muscle]
 synonym: "external abdominal oblique" RELATED [Wikipedia:Abdominal_external_oblique_muscle]
@@ -76725,6 +76766,7 @@ def: "the tendinous strands that connect the papillary muscles on the wall of th
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0002133 ! atrioventricular valve
 xref: GAID:564 ! chordae tendineae
+xref: FMA:12225 ! Chorda tendinea
 
 [Term]
 id: UBERON:0005995
