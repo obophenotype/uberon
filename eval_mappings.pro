@@ -36,9 +36,14 @@ external_mapping(M,X1,X2) :-
 
 class_pair_lcspath(X1,X2,A,PathA) :-
         class_pair_cspath(X1,X2,A,PathA),
+        debug(em,'  testing for nr ~w ~w',[A,PathA]),
         \+ ((class_pair_cspath(X1,X2,B,PathB),
              B-PathB\=A-PathA,
-             expr_subsumed_by(PathB-B,PathA-A))).
+             debug(em,'    testing for sub ~w ~w',[B,PathB]),
+             expr_subsumed_by(PathB-B,PathA-A))),
+        debug(em,'  lcs = ~w ~w',[A,PathA]).
+
+
 
 no_mapping(X1,X2,S1,S2) :-
         entity_xref(U,X1),
@@ -81,6 +86,7 @@ no_mapping(X1,X2,S1,S2,U1,U2,U) :-
 */
 
 mapping_class_pair_lcspath_score(M,X1,X2,S1,S2,A,PathA,MaxScore,Score1,Score2,SampleFPSet1,SampleFPSet2) :-
+      debug(em,'  find mappings',[]),
         setof(X1-X2,M^(external_mapping(M,X1,X2),
                        id_idspace(X1,S1),
                        id_idspace(X2,S2)),
@@ -88,16 +94,24 @@ mapping_class_pair_lcspath_score(M,X1,X2,S1,S2,A,PathA,MaxScore,Score1,Score2,Sa
         member(X1-X2,Pairs),
         \+ cellular(X1),
         \+ cellular(X2),
-        %debug(em,'~w vs ~w',[X1,X2]),
-        aggregate(max(Score,ST),class_pair_lcspath_score(X1,X2,Score,ST),max(MaxScore,MaxST)),
-        debug(em,'  maxST=~w',[MaxST]),
-        MaxST=m(A,PathA,Score1,Score2,SampleFPSet1,SampleFPSet2),
+        debug(em,'~w vs ~w',[X1,X2]),
+        (   aggregate(max(Score,ST),class_pair_lcspath_score(X1,X2,Score,ST),max(MaxScore,MaxST))
+        ->  debug(em,'  maxST=~w',[MaxST]),
+            MaxST=m(A,PathA,Score1,Score2,SampleFPSet1,SampleFPSet2)
+        ;   A=thing,
+            PathA=subclass,
+            MaxScore=0,
+            Score1=0,
+            Score2=0,
+            SampleFPSet1=[],
+            SampleFPSet2=[]),
         external_mapping(M,X1,X2).
 
 class_pair_lcspath_score(X1,X2,1,m(U,subclass,1,1,[],[])) :-
         entity_xref(U,X1),
         id_idspace(U,'UBERON'),
         entity_xref(U,X2),
+        debug(em,'  DIRECT MATCH: ~w vs ~w',[X1,X2]),
         !.
 
 % note still not perfect; e.g. FMA:18613 ! Ovarian cortex in in set classified by CNS;
@@ -106,6 +120,7 @@ class_pair_lcspath_score(X1,X2,1,m(U,subclass,1,1,[],[])) :-
 % in QSet because of an intermediate link, but this is not recapitulated in FMA query OR in query
 % for uberon-Neuraxis, because uberon-Neuraxis is more specific
 class_pair_lcspath_score(X1,X2,Score,m(A,PathA,Score1,Score2,SampleFPSet1,SampleFPSet2)) :-
+        debug(em,'  calc match for: ~w vs ~w',[X1,X2]),
         id_idspace(X1,S1),
         id_idspace(X2,S2),
         class_pair_lcspath(X1,X2,A,PathA),
@@ -216,7 +231,7 @@ take_sample([H|T],N,[H|S]) :-
 % true if XB is more specific than XA
 % part_of-X < subclass-X
 expr_subsumed_by(RB-B,RA-A) :-
-        parentT(B,RZ,A),
+        parentRT(B,RZ,A),
         rel_sub(RB,RZ,RA).
 
 rel_sub(_,_,mixed) :- !.

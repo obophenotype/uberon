@@ -51,6 +51,7 @@ while (<F>) {
         if ($id =~ /UBERON:(\d+)/ && $1 >= $uid) {
             $uid = $1+1;
         }
+        $xrefh{$id} = $id; # make xref reflexive
     }
     elsif (/^name:\s*(.*)/) {
         $nh{$id} = $1;
@@ -58,6 +59,9 @@ while (<F>) {
     elsif (/^xref:\s*(\S+)/) {
         $xrefh{$1} = $id;
         #print STDERR "$1 ==> $xrefh{$1}\n";
+    }
+    elsif (/^def:.*(Wikipedia:[\w\(\)\-]+)/) {
+        $xrefh{$1} = $id;
     }
 }
 close(F);
@@ -104,7 +108,9 @@ while(<>) {
         print "$1 [$xref]\n";
     }
     elsif (/^\s*$/) {
-        print "xref: $xref ! $name\n\n";
+        print "xref: $xref ! $name\n"
+            unless $xref =~ /^UBERON:/;
+        print "\n";
     }
     else {
         print "$_\n";
