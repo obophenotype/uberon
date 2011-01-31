@@ -1,3 +1,5 @@
+synonymtypedef: PLURAL "plural term"
+synonymtypedef: SENSU "taxonomic disambiguation"
 ontology: ceph
 
 [Term]
@@ -256,7 +258,8 @@ is_a: UBERON:0000061 ! anatomical structure
 [Term]
 id: CEPH:0000054
 name: carpal locking-apparatus
-def: "(= proximal locking-apparatus) - The region at the base of the tentacular club which has small suckers and knobs. The carpal suckers and knobs of one tentacle can adhere to their counterparts on the opposite tentacle which, thereby, holds the clubs together at their bases." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+synonym: "proximal locking-apparatus" EXACT []
+def: "The region at the base of the tentacular club which has small suckers and knobs. The carpal suckers and knobs of one tentacle can adhere to their counterparts on the opposite tentacle which, thereby, holds the clubs together at their bases." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -490,7 +493,8 @@ is_a: UBERON:0000061 ! anatomical structure
 [Term]
 id: CEPH:0000098
 name: end organ
-def: "(of hectocotylus) - The tip of the hectocotylus in incirrate octopods consisting of a calamus and ligula presumably for manipulating the spermatophore during copulation." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+synonym: "end organ of hectocotylus" EXACT []
+def: "The tip of the hectocotylus in incirrate octopods consisting of a calamus and ligula presumably for manipulating the spermatophore during copulation." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -500,21 +504,9 @@ def: "The pigmentation that is contained in epithelial cells which are unable to
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000101
-name: esophagus
-def: "The portion of the digestive tract between the buccal mass and the stomach. Often a portion of the esophagus is expanded to form a crop for food storage." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
 id: CEPH:0000102
 name: eye pore
 def: "Small pore just anterior to the cornea in some decapodiforms. The pore is the remnant of the large eye opening of oegopsids and connects fluid between the lens and the cornea with the exterior environment." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000103
-name: eye
-def: "Eyes are the primary sensory organs of cephalopods and are usually large and positioned within the head. However some species have small eyes and some have eyes on stalks. " [http://tolweb.org/accessory/Cephalopod_Eye?acc_id=2008]
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -1480,17 +1472,19 @@ name: leucophore
 def: "Reflective cells in the skin of some cephalopods containing numerous refractive granules on stalks that together produce a scattered reflection of ambient light." [http://tolweb.org/notes/?note_id=2646]
 is_a: UBERON:0000061 ! anatomical structure
 
+[Term]
+id: GO:0008150
+name: biological_process
+def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." [GOC:go_curators, GOC:isa_complete]
 
 [Term]
 id: UBERON:0000000
 name: processual entity
-namespace: uberon
 def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." [span:ProcessualEntity]
 
 [Term]
 id: UBERON:0000010
 name: peripheral nervous system
-namespace: uberon
 def: "Nervous structures including ganglia outside of the central nervous system. Divided into somatic nervous system and autonomic nervous system" [FB:gg, OMD:peripheral+nervous+system, Wikipedia:Peripheral_nervous_system, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "PNS" RELATED []
@@ -1500,7 +1494,6 @@ relationship: part_of UBERON:0001016 ! nervous system
 [Term]
 id: UBERON:0000020
 name: sense organ
-namespace: uberon
 def: "An organ that is part of a sense organ system." [Wikipedia:Sense_organ]
 comment: This class was created automatically from a combination of ontologies
 synonym: "Sinnesorgan" RELATED [BTO:0000202]
@@ -1515,12 +1508,11 @@ synonym: "sensory organ system organ" EXACT [OBOL:automatic]
 synonym: "sensory system organ" EXACT [OBOL:automatic]
 is_a: UBERON:0000062  ! organ
 intersection_of: UBERON:0000062  ! organ
-intersection_of: systemic_part_of UBERON:0001032 ! sensory system
+intersection_of: part_of UBERON:0001032 ! sensory system
 
 [Term]
 id: UBERON:0000025
 name: tube
-namespace: uberon
 def: "Epithelial and endothelial tubes transport gases, liquids and cells from one site to another and form the basic structure of many organs and tissues including lung and trachea, kidney, the mammary gland, the vascular system and the gastrointestinal and urinary-genital tracts. with tube shape and organization varying from the single-celled excretory organ in Caenorhabditis elegans to the branching trees of the mammalian kidney and insect tracheal system" [GO:0035295, PMID:12526790]
 synonym: "epithelial or endothelial tube" EXACT []
 is_a: UBERON:0000061  ! anatomical structure
@@ -1528,7 +1520,6 @@ is_a: UBERON:0000061  ! anatomical structure
 [Term]
 id: UBERON:0000026
 name: appendage
-namespace: uberon
 def: "Organ or organ part that is attached to the body of an organism. For example a limb[GO, modified]. An appendage is an external body part, or natural prolongation, that protrudes from an organism's body, such as a vertebrate's limbs[BILA]." [BILA:0000018, GO:0048736, Wikipedia:Appendage]
 comment: GO includes tree trunks, but excludes  antennae. We modify trunk to body in our definition. Note this is currently a subtype of organism subdivision - which would exclude feathers
 synonym: "limbs/digits/tail" RELATED [MP:0000001]
@@ -1537,7 +1528,6 @@ is_a: UBERON:0000475  ! organism subdivision
 [Term]
 id: UBERON:0000033
 name: head
-namespace: uberon
 def: "The head is the anterior-most division of the body [GO]. Subdivision of skeletal system which consists of the skeleton of the head and its joints. // Cardinal body part, which consists of a maximal set of diverse subclasses of organ and organ part spatially associated with the skull, it is partially surrounded by skin of head. Examples: There is only one head. // anterior-most body region containing the pharynx. // Organism subdivision that is the part of the body consisting of the cranial and pharyngeal regions. // Skeletal system which is part of the skull, including the splanchnocranium, chondrocranium, and dermatocranium. // Organism subdivision which is the part of the body which consists of the cranial and pharygeal regions." [WB:rynl, Wikipedia:Head, ZFA:0001114, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "adult head" EXACT []
@@ -1550,7 +1540,6 @@ is_a: UBERON:0000475  ! organism subdivision
 [Term]
 id: UBERON:0000045
 name: ganglion
-namespace: uberon
 def: "A biological tissue mass, most commonly a mass of nerve cell bodies." [Wikipedia:Ganglion]
 comment: TODO - check vert vs invert. Other species: Any of a number of aggregations of neurons, glial cells and their processes, surrounded by a glial cell and connective tissue sheath (plural: ganglia). // Subdivision of neural tree (organ) which primarily consists of cell bodies of neurons located outside the neuraxis (brain and spinal cord); together with a nucleus and its associated nerve, it constitutes a neural tree (organ). Examples: spinal ganglion, trigeminal ganglion, superior cervical ganglion, celiac ganglion, inferior hypogastric (pelvic) ganglion. // a cluster of nerve cells and associated glial cells (nuclear location) // Portion of tissue that contains cell bodies of neurons and is located outside the central nervous system. // Structures containing a collection of nerve cell bodies. (Source: BioGlossary, www.Biology-Text.com). TODO: add epithelial capsule to definition? Always true?
 synonym: "ganglia" RELATED []
@@ -1562,31 +1551,26 @@ relationship: part_of UBERON:0001016 ! nervous system
 [Term]
 id: UBERON:0000055
 name: vessel
-namespace: uberon
 def: "A tubular structure that contains, conveys body fluid, suchas blood or lymph." [UBERON:cjm]
 is_a: UBERON:0004111  ! anatomical conduit
 
 [Term]
 id: UBERON:0000058
 name: duct
-namespace: uberon
 def: "A tube shaped portion of tissue lined with epithelial cells that collects secretions and routes them to their destination[ZFA]." [Wikipedia:Duct_(anatomy), ZFA:0005171]
 is_a: UBERON:0004111  ! anatomical conduit
 
 [Term]
 id: UBERON:0000059
 name: large intestine
-namespace: uberon
 def: "The large intestine consists of the cecum and colon[WP]. Organ with organ cavity which is continuous proximally with the small intestine and distally with the anal canal. Examples: There is only large intestine [FMA]." [Wikipedia:Large_intestine_(anatomy)]
 synonym: "intestinum crassum" RELATED [BTO:0000706]
 is_a: UBERON:0000062  ! organ
-is_a: UBERON:0004119  ! endoderm-derived structure
 relationship: part_of UBERON:0000160 ! intestine
 
 [Term]
 id: UBERON:0000061
 name: anatomical structure
-namespace: uberon
 def: "Material anatomical entity that has inherent 3D shape and is generated by coordinated expression of the organism's own genome." [CARO:0000003]
 comment: This class was created automatically from a combination of ontologies
 synonym: "biological structure" EXACT []
@@ -1595,7 +1579,6 @@ is_a: UBERON:0000465  ! material anatomical entity
 [Term]
 id: UBERON:0000062
 name: organ
-namespace: uberon
 def: "Anatomical structure that performs a specific function or group of functions [WP]. Organs are commonly observed as visibly distinct structures, but may also exist as loosely associated clusters of cells that work together to perform a specific function or functions[GO]." [Wikipedia:Organ_(anatomy)]
 comment: More specific definition from CARO -- Anatomical structure that has as its parts two or more multi-tissue structures of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona fide boundaries from other distinct anatomical structures of different types.
 is_a: UBERON:0000061  ! anatomical structure
@@ -1604,7 +1587,6 @@ relationship: part_of UBERON:0000467 ! anatomical system
 [Term]
 id: UBERON:0000063
 name: organ segment
-namespace: uberon
 def: "Organ region with one or more fixed or anchored fiat boundaries. Examples: artery, trunk of nerve, cervical part of esophagus, pelvic part of vagina, horn of thyroid cartilage, anterior segment of eyeball[FMA]." [FMA:86140]
 synonym: "organ region with fixed fiat boundary" EXACT [FMA:86140]
 synonym: "segment of organ" EXACT [FMA:86140]
@@ -1613,7 +1595,6 @@ is_a: UBERON:0000064  ! organ part
 [Term]
 id: UBERON:0000064
 name: organ part
-namespace: uberon
 def: "anatomical structure which has as its direct parts two or more types of tissue and is continuous with one or more anatomical structures likewise constituted by two or more portions of tissues distinct from those of their complement. Examples: osteon, cortical bone, neck of femur, bronchopulmonary segment, left lobe of liver, anterior right side of heart, interventricular branch of left coronary artery, right atrium, mitral valve, head of pancreas[FMA]." [FMA:82472]
 synonym: "cardinal organ part" EXACT []
 is_a: UBERON:0000061  ! anatomical structure
@@ -1622,7 +1603,6 @@ relationship: part_of UBERON:0000062 ! organ
 [Term]
 id: UBERON:0000066
 name: fully formed stage
-namespace: uberon
 def: "The stage of development at which the animal is fully formed, including immaturity and maturity. Includes both juvenile stage, and adult stage. " [UBERON:cjm]
 synonym: "adult stage" BROAD []
 synonym: "fully formed animal stage" EXACT []
@@ -1632,19 +1612,15 @@ is_a: UBERON:0000092  ! post-embryonic stage
 [Term]
 id: UBERON:0000073
 name: regional part of nervous system
-namespace: uberon
 def: "An anatomical structure that is part of a nervous system [Obol]." [OBOL:automatic]
 comment: grouping class
 synonym: "part of nervous system" EXACT [NIF_GrossAnatomy:birnlex_1157]
-is_a: UBERON:0004121  ! ectoderm-derived structure
-relationship: part_of UBERON:0001016 ! nervous system
 intersection_of: UBERON:0000061  ! anatomical structure
 intersection_of: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0000079
 name: male reproductive system
-namespace: uberon
 def: "the masculine organs of reproduction or generation, external or internal." [MP:0001145, MP:0009198]
 synonym: "genitalia of male organism" EXACT [OBOL:automatic]
 synonym: "male genital organ" RELATED [BTO:0000082]
@@ -1664,7 +1640,6 @@ intersection_of: part_of UBERON:0003101 ! male organism
 [Term]
 id: UBERON:0000092
 name: post-embryonic stage
-namespace: uberon
 def: "stage succeeding embryo, including mature structure" [UBERON:cjm]
 synonym: "postembryonic" RELATED []
 synonym: "postembryonic stage" EXACT []
@@ -1674,7 +1649,6 @@ relationship: part_of UBERON:0000104 ! life cycle
 [Term]
 id: UBERON:0000104
 name: life cycle
-namespace: uberon
 def: "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism." [UBERON:cjm]
 synonym: "life" EXACT []
 synonym: "lifespan" EXACT []
@@ -1683,7 +1657,6 @@ is_a: UBERON:0000105  ! life cycle stage
 [Term]
 id: UBERON:0000105
 name: life cycle stage
-namespace: uberon
 def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:cjm]
 synonym: "developmental stage" EXACT []
 synonym: "stage" NARROW []
@@ -1692,7 +1665,6 @@ is_a: UBERON:0000000  ! processual entity
 [Term]
 id: UBERON:0000112
 name: juvenile stage
-namespace: uberon
 def: "The stage of being a sexually immature adult animal." [XAO:1000010]
 is_a: UBERON:0000105  ! life cycle stage
 relationship: part_of UBERON:0000066 ! fully formed stage
@@ -1700,7 +1672,6 @@ relationship: part_of UBERON:0000066 ! fully formed stage
 [Term]
 id: UBERON:0000113
 name: post-juvenile adult stage
-namespace: uberon
 def: "The stage of being a sexually mature adult animal." [UBERON:cjm]
 synonym: "adult stage" BROAD []
 is_a: UBERON:0000105  ! life cycle stage
@@ -1709,26 +1680,22 @@ relationship: part_of UBERON:0000066 ! fully formed stage
 [Term]
 id: UBERON:0000122
 name: neuron projection bundle
-namespace: uberon
 def: "A fasciculated bundle of neuron projections (GO:0043005), largely or completely lacking synapses." [FBC:DOS, FBbt:00005099]
 synonym: "funiculus" EXACT []
 synonym: "nerve fiber bundle" EXACT [FBbt:00005099]
 synonym: "neural fiber bundle" EXACT []
-is_a: UBERON:0000073  ! regional part of nervous system
 is_a: UBERON:0005162  ! multi-cell-component structure
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0000158
 name: membranous layer
-namespace: uberon
 synonym: "membranous organ component" EXACT [FMA:82500]
 is_a: UBERON:0004923  ! organ component layer
 
 [Term]
 id: UBERON:0000160
 name: intestine
-namespace: uberon
 def: "Segment of the alimentary canal extending from the stomach to the anus and, in humans and other mammals, consists of two segments, the small intestine and the large intestine." [GOC:GO, Wikipedia:Intestine]
 comment: MA also has a class  MA:0001524 bowel, not clear how this is different
 synonym: "bowel" EXACT []
@@ -1739,7 +1706,6 @@ relationship: part_of UBERON:0005409 ! gastrointestinal system
 [Term]
 id: UBERON:0000161
 name: orifice
-namespace: uberon
 def: "Anatomical conduit that connects two adjacent body spaces, surrounded by two or more subdivisions of two or more organs. Examples: right atrioventricular orifice, orifice of artery, hilum of kidney, porta hepatis." [FMA:3724]
 synonym: "anatomical orifice" EXACT [FMA:3724]
 synonym: "anatomical ostium" EXACT [FMA:3724]
@@ -1749,7 +1715,6 @@ is_a: UBERON:0004111  ! anatomical conduit
 [Term]
 id: UBERON:0000165
 name: mouth
-namespace: uberon
 def: "First portion of the alimentary canal that receives food and begins digestion by mechanically breaking up the solid food particles into smaller pieces and mixing them with saliva. The oral mucosa is the mucous membrane epithelium lining the inside of the mouth." [Wikipedia:Mouth]
 comment: TODO - check fly mouthpart. note in uberon we distinguish between the mouth and the oral opening. the mouth is part of the digestive tract. TODO - check isa parent subdivision of head - is it a subdivision of the head or digestive tract
 synonym: "adult mouth" EXACT []
@@ -1761,13 +1726,11 @@ synonym: "rima oris" RELATED [BTO:0001090]
 synonym: "vestibule of mouth" RELATED [BTO:0001090]
 synonym: "vestibulum oris" RELATED [BTO:0001090]
 is_a: UBERON:0001444  ! subdivision of head
-is_a: UBERON:0004119  ! endoderm-derived structure
 relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0000166
 name: oral opening
-namespace: uberon
 def: "The opening of the head through which food passes into the body." [NLM:mouth]
 synonym: "adult mouth" RELATED []
 synonym: "mouth" RELATED []
@@ -1778,14 +1741,12 @@ synonym: "oral region" EXACT []
 synonym: "orofacial cavity" RELATED []
 synonym: "subdivision of mouth" EXACT []
 is_a: UBERON:0000161  ! orifice
-is_a: UBERON:0004119  ! endoderm-derived structure
 relationship: part_of UBERON:0000165 ! mouth
 relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0000167
 name: oral cavity
-namespace: uberon
 synonym: "buccal cavity" EXACT [FMA:20292]
 synonym: "cavity of mouth" EXACT []
 is_a: UBERON:0002553  ! anatomical cavity
@@ -1794,10 +1755,8 @@ relationship: part_of UBERON:0000165 ! mouth
 [Term]
 id: UBERON:0000168
 name: segment of colon
-namespace: uberon
 def: "An organ segment that is part of a colon [Obol]." [OBOL:automatic]
 is_a: UBERON:0000063  ! organ segment
-is_a: UBERON:0004119  ! endoderm-derived structure
 relationship: part_of UBERON:0001155 ! colon
 intersection_of: UBERON:0000063  ! organ segment
 intersection_of: part_of UBERON:0001155 ! colon
@@ -1805,7 +1764,6 @@ intersection_of: part_of UBERON:0001155 ! colon
 [Term]
 id: UBERON:0000309
 name: body wall
-namespace: uberon
 def: "the external portion of an animal body comprised of ectoderm and mesoderm layers that encloses the body cavity." [MP:0003385]
 synonym: "Koerperwand" RELATED [BTO:0000139]
 synonym: "Trunk wall" EXACT [FMA:10427]
@@ -1817,7 +1775,6 @@ relationship: part_of UBERON:0002100 ! trunk
 [Term]
 id: UBERON:0000383
 name: musculature of body
-namespace: uberon
 def: "The sum of all muscles in the body. There is only one set of muscles per organism" [GOC:cjm]
 comment: we place the MA term musculature here, rather than under uberon:musculature, as this seems more appropriate given the structure of MA
 synonym: "Muskelsystem" RELATED [BTO:0001485]
@@ -1831,7 +1788,6 @@ is_a: UBERON:0001015  ! musculature
 [Term]
 id: UBERON:0000463
 name: portion of organism substance
-namespace: uberon
 def: "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body." [CARO:MAH]
 comment: this class was originally declared disjoint with anatomical structure, but there are some classes such as 'dentin' that are both tissues and substances
 synonym: "body fluid or substance" EXACT [MA:0002450]
@@ -1844,7 +1800,6 @@ relationship: part_of UBERON:0000468 ! multi-cellular organism
 [Term]
 id: UBERON:0000464
 name: anatomical space
-namespace: uberon
 def: "Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures. // Non-material physical anatomical entity of three dimensions, which is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more body substances or anatomical structures. Examples: celom, thoracic cavity, lesser sac of peritoneum, cavity of right atrium, lumen of aorta, mediastinum, anterior compartment of forearm, intervertebral foramen. // Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures." [CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0000466  ! immaterial anatomical entity
@@ -1852,7 +1807,6 @@ is_a: UBERON:0000466  ! immaterial anatomical entity
 [Term]
 id: UBERON:0000465
 name: material anatomical entity
-namespace: uberon
 def: "Anatomical entity that has mass." [CARO:MAH]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0001062  ! anatomical entity
@@ -1860,7 +1814,6 @@ is_a: UBERON:0001062  ! anatomical entity
 [Term]
 id: UBERON:0000466
 name: immaterial anatomical entity
-namespace: uberon
 def: "Anatomical entity that has no mass." [CARO:MAH]
 comment: This class was created automatically from a combination of ontologies
 synonym: "immaterial physical anatomical entity" EXACT [FMA:67112]
@@ -1869,7 +1822,6 @@ is_a: UBERON:0001062  ! anatomical entity
 [Term]
 id: UBERON:0000467
 name: anatomical system
-namespace: uberon
 def: "Anatomical group that is has as its parts distinct anatomical structures interconnected by anatomical structures at a lower level of granularity[CARO]. A group of organs that work together to perform a certain task [Wikipedia]." [CARO:0000011, CARO:MAH, Wikipedia:Organ_system, ZFIN:curator]
 synonym: "organ system" EXACT []
 synonym: "system" BROAD [GO:0048731]
@@ -1879,7 +1831,6 @@ relationship: part_of UBERON:0000468 ! multi-cellular organism
 [Term]
 id: UBERON:0000468
 name: multi-cellular organism
-namespace: uberon
 def: "Anatomical structure that is an individual member of a species and consists of more than one cell." [CARO:0000012, CARO:MAH, Wikipedia:Multi-cellular_organism]
 comment: TODO - split body and mc organism? body continues after death stage
 synonym: "Koerper" RELATED [BTO:0001489]
@@ -1894,7 +1845,6 @@ is_a: UBERON:0000061  ! anatomical structure
 [Term]
 id: UBERON:0000474
 name: female reproductive system
-namespace: uberon
 def: "The organs of the female reproductive system." [Wikipedia:Female_genitalia]
 comment: This class was created automatically from a combination of ontologies
 synonym: "female genital system" RELATED []
@@ -1914,7 +1864,6 @@ intersection_of: part_of UBERON:0003100 ! female organism
 [Term]
 id: UBERON:0000475
 name: organism subdivision
-namespace: uberon
 def: "Anatomical structure which is a primary subdivision of whole organism. The mereological sum of these is the whole organism." [CARO:0000032, CARO:MAH, Wikipedia:Body_part, ZFIN:curator]
 synonym: "anatomic region" EXACT []
 synonym: "anatomical site" RELATED []
@@ -1927,7 +1876,6 @@ relationship: part_of UBERON:0000468 ! multi-cellular organism
 [Term]
 id: UBERON:0000476
 name: acellular anatomical structure
-namespace: uberon
 def: "Anatomical structure that consists of cell parts and cell substances and together does not constitute a cell or a tissue." [CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0000061  ! anatomical structure
@@ -1935,7 +1883,6 @@ is_a: UBERON:0000061  ! anatomical structure
 [Term]
 id: UBERON:0000477
 name: anatomical cluster
-namespace: uberon
 def: "Anatomical group that has its parts adjacent to one another. // Anatomical structure, which has as its parts a heterogeneous collection of organs, organ parts, cells or body part subdivisions that are adjacent to, or continuous with one another; does not constitute an organ, organ system or organ system subdivision, or body part or body part subdivision. Examples: joint, adnexa of uterus, root of lung, renal pedicle, back. // Anatomical group that has its parts adjacent to one another." [CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0000480  ! anatomical group
@@ -1943,21 +1890,16 @@ is_a: UBERON:0000480  ! anatomical group
 [Term]
 id: UBERON:0000478
 name: extraembryonic structure
-namespace: uberon
 def: "Anatomical structure that is contiguous with the embryo and is comprised of portions of tissue or cells that will not contribute to the embryo." [CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "extra-embryonic structure" EXACT []
 synonym: "extraembryonic component" RELATED []
 synonym: "extraembryonic tissue" RELATED []
 is_a: UBERON:0000061  ! anatomical structure
-intersection_of: UBERON:0000061  ! anatomical structure
-intersection_of: adjacent_to UBERON:0002050 ! embryonic structure
-intersection_of: existence_starts_and_ends_during UBERON:0000068 ! embryo stage
 
 [Term]
 id: UBERON:0000479
 name: portion of tissue
-namespace: uberon
 def: "Anatomical structure, that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships. // Anatomical structure, that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships. // Anatomical structure that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships. // Anatomical structure, that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships." [CARO:0000043, CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "tissue" EXACT []
@@ -1967,7 +1909,6 @@ is_a: UBERON:0000061  ! anatomical structure
 [Term]
 id: UBERON:0000480
 name: anatomical group
-namespace: uberon
 def: "Anatomical structure consisting of at least two non-overlapping organs, multi-tissue aggregates or portion of tissues or cells of different types that does not constitute an organism, organ, multi-tissue aggregate, or portion of tissue. // Anatomical structure consisting of at least two non-overlapping organs, multi-tissue aggregates or portion of tissues or cells of different types that does not constitute an organism, organ, multi-tissue aggregate, or portion of tissue. // Anatomical structure consisting of at least two non-overlapping organs, multi-tissue aggregates or portion of tissues or cells of different types that does not constitute an organism, organ, multi-tissue aggregate, or portion of tissue." [CARO:0000054, CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0000061  ! anatomical structure
@@ -1975,7 +1916,6 @@ is_a: UBERON:0000061  ! anatomical structure
 [Term]
 id: UBERON:0000481
 name: multi-tissue structure
-namespace: uberon
 def: "Anatomical structure that has as its parts two or more portions of tissue of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona-fide boundaries from other distinct structural units of different types. // Anatomical structure that has as its parts two or more portions of tissue of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona-fide boundaries from other distinct structural units of different types. // Anatomical structure that has as its parts two or more portions of tissue of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona-fide boundaries from other distinct structural units of different types. // Anatomical structure that has as its parts two or more portions of tissue of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona-fide boundaries from other distinct structural units of different types." [CARO:0000055, CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0000061  ! anatomical structure
@@ -1983,17 +1923,14 @@ is_a: UBERON:0000061  ! anatomical structure
 [Term]
 id: UBERON:0000489
 name: cavitated compound organ
-namespace: uberon
 def: "Compound organ that contains one or more macroscopic anatomical spaces. // Compound organ that contains one or more macroscopic anatomical spaces." [CARO:MAH, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0003103  ! compound organ
-intersection_of: UBERON:0003103  ! compound organ
-intersection_of: has_part UBERON:0002553 ! anatomical cavity
+is_a: UBERON:0003103  ! compound organ
 
 [Term]
 id: UBERON:0000915
 name: thorax
-namespace: uberon
 def: "Organismal subdivision of body that lies between the head and the abdomen [Wikipedia]." [Wikipedia:Thorax]
 comment: This class was created automatically from a combination of ontologies
 synonym: "thoracic segment of trunk" EXACT [MA:0000022]
@@ -2003,7 +1940,6 @@ is_a: UBERON:0000475  ! organism subdivision
 [Term]
 id: UBERON:0000920
 name: egg chorion
-namespace: uberon
 def: "A protective, noncellular membrane that surrounds the eggs of various animals including insects and fish [GO]." [FB:gg, GO:0042600, Wikipedia:Chorion_(egg)]
 synonym: "chorion" RELATED []
 synonym: "chorion (egg)" EXACT []
@@ -2013,7 +1949,6 @@ is_a: UBERON:0000478  ! extraembryonic structure
 [Term]
 id: UBERON:0000945
 name: stomach
-namespace: uberon
 def: "Internal organ that is the dilated portion of the alimentary tract situated between the esophagus and the beginning of the duodenum. It produces gastric juices involved in the breakdown of food[XAO]. Organ with organ cavity which is continuous proximally with the esophagus and distally with the small intestine. Examples: There is only one stomach[FMA]." [FB:FBrf0007735, OMD:stomach, Wikipedia:Stomach]
 comment: fly has adult midgut - TODO check. Zebrafish is functionally stomach-less, but may retain ontogenic footprint. TADS:0000172 adult stomach. add functionally defined class?
 synonym: "anterior intestine" RELATED []
@@ -2022,7 +1957,6 @@ synonym: "mesenteron" RELATED []
 synonym: "stomach" RELATED []
 synonym: "ventriculus" RELATED []
 is_a: UBERON:0000062  ! organ
-is_a: UBERON:0004119  ! endoderm-derived structure
 relationship: part_of UBERON:0001041 ! foregut
 relationship: part_of UBERON:0001555 ! digestive tract
 relationship: part_of UBERON:0005409 ! gastrointestinal system
@@ -2030,7 +1964,6 @@ relationship: part_of UBERON:0005409 ! gastrointestinal system
 [Term]
 id: UBERON:0000955
 name: brain
-namespace: uberon
 def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals.[1] Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [Wikipedia:Brain]
 comment: include synganglion?
 synonym: "brain structure" RELATED [ZFA:0000008]
@@ -2044,7 +1977,6 @@ relationship: part_of UBERON:0001017 ! central nervous system
 [Term]
 id: UBERON:0000970
 name: eye
-namespace: uberon
 def: "organ that detects light" [UBERON:cjm, Wikipedia:Eye, http://en.wikipedia.org/wiki/Eye]
 synonym: "visual apparatus" RELATED []
 is_a: UBERON:0000020  ! sense organ
@@ -2053,7 +1985,6 @@ relationship: part_of UBERON:0002104 ! visual system
 [Term]
 id: UBERON:0000989
 name: penis
-namespace: uberon
 def: "The penis (plural penises, penes) is an external sexual organ of certain biologically male organisms, in both vertebrates and invertebrates. The penis is a reproductive organ, technically an intromittent organ, and for placental mammals, additionally serves as the external organ of urination. The penis is generally found on mammals and reptiles. [WP,unvetted]." [Wikipedia:Penis]
 comment: This class was created automatically from a combination of ontologies
 synonym: "phallus" RELATED []
@@ -2064,7 +1995,6 @@ relationship: part_of UBERON:0000079 ! male reproductive system
 [Term]
 id: UBERON:0000990
 name: reproductive system
-namespace: uberon
 def: "Anatomical system that has as its parts the organs concerned with reproduction." [Wikipedia:Reproductive_system]
 comment: This class was created automatically from a combination of ontologies
 synonym: "Geschlechtsorgan" RELATED [BTO:0000081]
@@ -2078,7 +2008,6 @@ is_a: UBERON:0005156  ! reproductive structure
 [Term]
 id: UBERON:0000991
 name: gonad
-namespace: uberon
 def: "organ that makes gametes [Wikipedia]. The organs of the reproductive system in which the germ cells reside. // General anatomical term which refers to ovary or testis. // organ producing either sperm or ova. // Reproductive organ that produces and releases eggs (ovary) or sperm (testis). // The part of the reproductive system that produces and releases eggs (ovary) or sperm (testis)." [FB:gg, ISBN:0140512888, Wikipedia:Gonad, ZFA:0000413, ZFIN:curator]
 comment: FMA xref is a 'general anatomical term'
 synonym: "gonada" EXACT []
@@ -2090,7 +2019,6 @@ relationship: part_of UBERON:0002323 ! body cavity
 [Term]
 id: UBERON:0000992
 name: ovary
-namespace: uberon
 def: "Ovum-producing female reproductive organ." [Wikipedia:Ovary]
 comment: Ovaries of some kind are found in the female reproductive system of many animals that employ sexual reproduction, including invertebrates. However, they develop in a very different way in most invertebrates than they do in vertebrates, and are not truly homologous. Many of the features found in human ovaries are common to all vertebrates, including the presence of follicular cells, tunica albuginea, and so on. However, many species produce a far greater number of eggs during their lifetime than do humans, so that, in fish and amphibians, there may be hundreds, or even millions of fertile eggs present in the ovary at any given time. In these species, fresh eggs may be developing from the germinal epithelium throughout life. Corpora lutea are found only in mammals, and in some elasmobranch fish; in other species, the remnants of the follicle are quickly resorbed by the ovary. In birds, reptiles, and monotremes, the egg is relatively large, filling the follicle, and distorting the shape of the ovary at maturity. Amphibians and reptiles have no ovarian medulla; the central part of the ovary is a hollow, lymph-filled space. The ovary of teleosts is also often hollow, but in this case, the eggs are shed into the cavity, which opens into the oviduct. Although most normal female vertebrates have two ovaries, this is not the case in all species. In birds and platypuses, the right ovary never matures, so that only the left is functional. In some elasmobranchs, the reverse is true, with only the right ovary fully developing. In the primitive jawless fish, and some teleosts, there is only one ovary, formed by the fusion of the paired organs in the embryo[WP].
 synonym: "female organism genitalia gonad" EXACT [OBOL:automatic]
@@ -2124,7 +2052,6 @@ intersection_of: part_of UBERON:0000474 ! female reproductive system
 [Term]
 id: UBERON:0000993
 name: oviduct
-namespace: uberon
 def: "passage from the ovaries to the outside of the body[Wikipedia:Oviduct]." [Wikipedia:Oviduct]
 comment: note that the more specific class fallopian tube is included, which has mammal-specific relationships
 synonym: "salpinx" RELATED [BTO:0000980]
@@ -2137,7 +2064,6 @@ relationship: part_of UBERON:0000474 ! female reproductive system
 [Term]
 id: UBERON:0000994
 name: spermathecum
-namespace: uberon
 def: "an organ of the female reproductive tract in insects, some molluscs, oligochaeta worms and certain other invertebrates and vertebrates.[1] Its purpose is to receive and store sperm from the male, and can sometimes be the site of fertilization when the oocytes are ready.[2]  Some species have multiple spermathecae, as seen in earthworms, where four pairs of spermathecae are present. One pair in 6,7,8 and 9 segments. They receive and store the spermatozoa of another earthworm during copulation.[3] They are lined with epithelium  and are variable in shape; some are thin, heavily coiled tubes, others are vague outpocketings from the main reproductive tract. It is one of the many variations in sexual reproduction[WP]. an accordion-like tube that contains sperm and is the site of oocyte fertilization." [Wikipedia:Spermatheca]
 comment: This class was created automatically from a combination of ontologies
 synonym: "receptaculum seminis" RELATED [BTO:0001273]
@@ -2151,7 +2077,6 @@ relationship: part_of UBERON:0000991 ! gonad
 [Term]
 id: UBERON:0001004
 name: respiratory system
-namespace: uberon
 def: "Functional system which consists of structures involved in respiration.." [Wikipedia:Respiratory_system]
 comment: This class was created automatically from a combination of ontologies
 synonym: "Atmungssystem" RELATED [BTO:0000203]
@@ -2163,7 +2088,6 @@ is_a: UBERON:0000467  ! anatomical system
 [Term]
 id: UBERON:0001007
 name: digestive system
-namespace: uberon
 def: "The organ system involved in the absorption of nutrients. // Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." [FB:gg, NLM:alimentary+system, Wikipedia:Digestive_system]
 comment: note that many anatomy ontologies consider gastrointestinal system synonymous with digestive system. here we follow MA in dividing digestive system into gastrointestinal and hepatobiliary. hepatobiliary includes the liver and biliary tract. species-specific AO classes are categorized according to whether liver is included. For example, XAO includes liver as part of XAO:0000125 alimentary system, so we assume this class is the more generic class
 synonym: "alimentary system" RELATED []
@@ -2175,7 +2099,6 @@ is_a: UBERON:0000467  ! anatomical system
 [Term]
 id: UBERON:0001009
 name: circulatory system
-namespace: uberon
 def: "organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP]." [Wikipedia:Circulatory_system]
 comment: the cardiovascular system and the lymphatic system are parts of the circulatory system
 is_a: UBERON:0000467  ! anatomical system
@@ -2183,7 +2106,6 @@ is_a: UBERON:0000467  ! anatomical system
 [Term]
 id: UBERON:0001015
 name: musculature
-namespace: uberon
 def: "Anatomical system that allows the animal move, includes all muscles[WP]." [BTO:0000887, WB:rynl, Wikipedia:Muscular_system, ZFIN:curator]
 comment: In FMA this is classified as a set of organs. ZFA musculature system has subtypes, so it is classified here. WBbt muscular system has subtypes so it goes here. Note that we use the MA term set of skeletal muscles here as it seems most appropriate (not MA:musculature)
 synonym: "muscle group" EXACT []
@@ -2195,38 +2117,32 @@ synonym: "set of muscles" EXACT [FMA:32558]
 synonym: "set of organs" EXACT []
 synonym: "set of skeletal muscles" EXACT [MA:0000165]
 is_a: UBERON:0000467  ! anatomical system
-is_a: UBERON:0004120  ! mesoderm-derived structure
 relationship: part_of UBERON:0000383 ! musculature of body
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 
 [Term]
 id: UBERON:0001016
 name: nervous system
-namespace: uberon
 def: "a network of specialized cells that communicate information about an organism's surroundings and itself[Wikipedia]." [ISBN:0-14-051288-8, ISBN:3110148986, NLM:nervous+system, WB:rynl, Wikipedia:Nervous_system, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "Nervensystem" RELATED [BTO:0001484]
 synonym: "nerve net" NARROW [Wikipedia:Nerve_net]
-is_a: UBERON:0000073  ! regional part of nervous system
 is_a: UBERON:0000467  ! anatomical system
 
 [Term]
 id: UBERON:0001017
 name: central nervous system
-namespace: uberon
 def: "The part of the nervous system which in vertebrates consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Neuraxis plus retina[INCF]." [FB:gg, ISBN:3110148986, NLM:central+nervous+system, Wikipedia:Central_nervous_system, ZFIN:curator]
 comment: ZFA retina NOT part_of CNS. XAO excludes retina in text def, retina part_of CNS. MA retina NOT part_of CNS. NIF_GA retina NOT part_of CNS. Fly also excludes it. EFO also excludes it. GO also excludes it.
 synonym: "CNS" EXACT []
 synonym: "cerebrospinal axis" EXACT [FMA:55675]
 synonym: "neuraxis" EXACT [FMA:55675]
-is_a: UBERON:0000073  ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 relationship: part_of UBERON:0005743 ! central nervous system plus retina
 
 [Term]
 id: UBERON:0001021
 name: nerve
-namespace: uberon
 def: "an enclosed, cable-like bundle of peripheral axons [wikipedia]. A portion of tissue which is a fasiculated group of axons[ZFA]. Segment of neural tree organ which has as its parts a nerve trunk and its branches; together with other nerves of the same tree it constitutes a neural tree. Examples: chorda tympani, digastric branch of facial nerve, greater petrosal nerve, posterior cutaneous branch of posterior ramus of cervical nerve, superior lateral cutaneous nerve of arm[FMA]." [FMA:65132, Wikipedia:Nerve, ZFA:0007009, ZFIN:curator]
 comment: check nerve vs peripheral nerve vs tract
 synonym: "neural subtree" RELATED [FMA:65132]
@@ -2237,7 +2153,6 @@ relationship: part_of UBERON:0000010 ! peripheral nervous system
 [Term]
 id: UBERON:0001027
 name: sensory nerve
-namespace: uberon
 def: "General anatomical term applied to nerves in which somatic afferent nerve fibers predominate[FMA]. nerves that receive sensory stimuli made up of nerve fibers, called sensory fibers (mechanoreceptor fibers sense body movement and pressure placed against the body, and nociceptor fibers sense tissue injury)[WP]." [Wikipedia:Sensory_nerve]
 comment: This class was created automatically from a combination of ontologies
 synonym: "afferent nerve" RELATED []
@@ -2247,7 +2162,6 @@ is_a: UBERON:0001021  ! nerve
 [Term]
 id: UBERON:0001032
 name: sensory system
-namespace: uberon
 def: "Anatomical system that overlaps the nervous system and is responsible for receiving and processing sensory information." [Wikipedia:Sensory_system]
 comment: note the distinct between entire sensory system and individual system. this reconciles is_a and part_of distinctions between ssAOs
 synonym: "sense organs" EXACT [FMA:75259]
@@ -2260,7 +2174,6 @@ relationship: part_of UBERON:0004456 ! entire sense organ system
 [Term]
 id: UBERON:0001041
 name: foregut
-namespace: uberon
 def: "Anterior subdivision of a digestive tract[CJM]. An anterior part of the alimentary canal derived from the ectoderm[WP]." [Wikipedia:Foregut]
 comment: Note we define this generically to include invertebrates, but the class may be split in future. Note in FMA this class has no children - because its a dev classification?
 is_a: UBERON:0004921  ! subdivision of digestive tract
@@ -2268,7 +2181,6 @@ is_a: UBERON:0004921  ! subdivision of digestive tract
 [Term]
 id: UBERON:0001043
 name: esophagus
-namespace: uberon
 def: "Tube that connects the pharynx to the stomach." [Wikipedia:Esophagus]
 comment: esophagus NOT part of gut in MA. part of gut in ZFA. part_of gut (via UGIT) in FMA. Consider splitting.
 synonym: "gullet" EXACT []
@@ -2283,7 +2195,6 @@ relationship: part_of UBERON:0002224 ! thoracic cavity
 [Term]
 id: UBERON:0001044
 name: salivary gland
-namespace: uberon
 def: "saliva-secreting exocrine glands of the oral cavity[GO]. The salivary glands in mammals are exocrine glands, glands with ducts, that produce saliva. They also secrete amylase, an enzyme that breaks down starch into maltose. In other organisms such as insects, salivary glands are often used to produce biologically important proteins like silk or glues, and fly salivary glands contain polytene chromosomes that have been useful in genetic research[WP]." [GO:0007431, Wikipedia:Salivary_gland]
 comment: currently we define saliva and salivary glands very generally in functional terms but it may be more appropriate to split this class. From WP: In most vertebrates, saliva does not contain any enzymes, consisting of mucus and water only, and its primary function is to moisten food while eating. As a result, true salivary glands are rarely found in fish or aquatic tetrapods, although there are often individual mucus-secreting cells. Amphibians have a single salivary gland, the intermaxillary gland, located in the forward part of the palate. Reptiles and birds  normally have only very small glands on the lips, palate, and base of the mouth, although there are some birds with large glands, which produce a sticky saliva that helps in nest-building. The distinct parotid, submandibular, and sublingual glands are only developed in mammals.[3] The salivary glands of some species, however, are modified to produce enzymes; salivary amylase is found in many, but by no means all, bird and mammal species (including humans, as noted above). Furthermore, the venom glands of poisonous snakes, Gila monsters, and some shrews, are modified salivary glands
 is_a: UBERON:0002530  ! gland
@@ -2292,19 +2203,15 @@ is_a: UBERON:0003294  ! gland of foregut
 relationship: part_of UBERON:0000166 ! oral opening
 relationship: part_of UBERON:0000167 ! oral cavity
 relationship: part_of UBERON:0001041 ! foregut
-intersection_of: UBERON:0002530  ! gland
-intersection_of: secretes UBERON:0001836 ! saliva
 
 [Term]
 id: UBERON:0001062
 name: anatomical entity
-namespace: uberon
 def: "Biological entity, which constitutes the structural organization of a biological organism, or is an attribute of that organization. Examples: cell, heart, head, peritoneal cavity, apex of lung, anatomical term, sagittal plane." [CARO:MAH]
 
 [Term]
 id: UBERON:0001153
 name: cecum
-namespace: uberon
 def: "Pouch, connecting the ileum with the ascending colon of the large intestine. It is separated from the ileum by the ileocecal valve, and is the beginning of the large intestine. It is also separated from the colon by the cecocolic junction." [Wikipedia:Cecum]
 comment: The cecum is present in mammals and squid,[1] and two ceca are present in most birds (and some reptiles). Most herbivores have a relatively large cecum , hosting a large number of bacteria, which aid in the enzymatic breakdown of plant materials such as cellulose. Exclusive carnivores, whose diets contain little or no plant material, have a reduced cecum; often partially or wholly replaced by the vermiform appendix. It is in the large intestine which is near the small intestine.
 synonym: "blind intestine" RELATED [BTO:0000166]
@@ -2314,13 +2221,11 @@ synonym: "intestinum caecum" RELATED [BTO:0000166]
 synonym: "intestinum crassum caecum" EXACT []
 synonym: "intestinum crassum cecum" RELATED [BTO:0000166]
 is_a: UBERON:0000063  ! organ segment
-is_a: UBERON:0004119  ! endoderm-derived structure
 relationship: part_of UBERON:0001156 ! ascending colon
 
 [Term]
 id: UBERON:0001155
 name: colon
-namespace: uberon
 def: "Last portion of the digestive system in most vertebrates; it extracts water and salt from solid wastes before they are eliminated from the body[WP] In mammals, the colon consists of four sections: the ascending colon, the transverse colon, the descending colon, and the sigmoid colon[WP]. In zebrafish, the posterior intestine has short longitudinally arranged epithelial folds which are similar to the colon of higher vertebrates. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-050120-6'>Wallace et al, 2005.</a>" [Wikipedia:Colon_(anatomy), ZFIN:curator]
 comment: TODO: abstract this such that it legitemately covers all vertebrates
 synonym: "hindgut" RELATED []
@@ -2334,7 +2239,6 @@ relationship: part_of UBERON:0000059 ! large intestine
 [Term]
 id: UBERON:0001156
 name: ascending colon
-namespace: uberon
 def: "Organ part which is continuous with the cecum proximally and the transverse colon distally." [Wikipedia:Ascending_colon]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0000168  ! segment of colon
@@ -2343,7 +2247,6 @@ is_a: UBERON:0001155  ! colon
 [Term]
 id: UBERON:0001444
 name: subdivision of head
-namespace: uberon
 comment: This class was created automatically from a combination of ontologies
 synonym: "head region" EXACT []
 synonym: "head subdivision" EXACT []
@@ -2354,7 +2257,6 @@ relationship: part_of UBERON:0000033 ! head
 [Term]
 id: UBERON:0001555
 name: digestive tract
-namespace: uberon
 def: "Tube extending from the mouth to the anus." [http://en.wikipedia.org/wiki/Talk:Human_gastrointestinal_tract, http://sourceforge.net/tracker/?func=detail&amp;atid=440764&amp;aid=2991587&amp;group_id=36855]
 comment: GO says gut is region of DT, from intestines to anus. ZFA treats as synonym for alimentary canal, and treats it as the sum of DT + organs (ZF has no term from stomach). GO says intestines to anus (excludes stomach and esophagus). MA appears to agree with GO (stomach and esophagus are not parts). FMA includes stomach and esophagus as parts of gut -- the FMA divides gut into lower and upper GI tract; it's not clear if this is exhaustive (small intestine is in neither), but lower GI tract may correspond better to the GO definition. NOTE: GO now changed, see sf id in def xref. Note that FMA also has a term 'gastrointestinal tract', but this includes the liver
 synonym: "alimentary canal" EXACT []
@@ -2362,29 +2264,24 @@ synonym: "enteric tract" EXACT [ZFA:0000112]
 synonym: "gut" BROAD []
 synonym: "gut tube" RELATED []
 is_a: UBERON:0000481  ! multi-tissue structure
-is_a: UBERON:0004185  ! endodermal gut
 relationship: part_of UBERON:0001007 ! digestive system
 
 [Term]
 id: UBERON:0001630
 name: muscle organ
-namespace: uberon
 def: "Organ consisting of a tissue made up of various elongated cells that are specialized to contract and thus to produce movement and mechanical work[GO]. Nonparenchymatous organ that primarily consists of skeletal muscle tissue aggregated into macroscopic fasciculi by connective tissue; together with other muscles, it constitutes the muscular system. Examples: biceps, diaphragm, masseter, right third external intercostal muscle, external oblique, levator ani, serratus anterior[FMA]." [GO:0007517]
 synonym: "muscle" EXACT [ZFA:0005145]
 synonym: "skeletal muscle system" RELATED [BTO:0001103]
 synonym: "somatic muscle" RELATED [BTO:0001103]
 is_a: UBERON:0000062  ! organ
-is_a: UBERON:0004120  ! mesoderm-derived structure
 is_a: UBERON:0005090  ! muscle structure
 relationship: part_of UBERON:0000383 ! musculature of body
 relationship: part_of UBERON:0001015 ! musculature
 intersection_of: UBERON:0000062  ! organ
-intersection_of: has_part UBERON:0002385 ! muscle tissue
 
 [Term]
 id: UBERON:0001638
 name: vein
-namespace: uberon
 def: "Subdivision of venous tree (organ) which consists of branching sets of tubes (venous trunks) that form a tree; together with other venous trees (organ part), it constitutes a venous tree (organ). Examples: subclavian venous tree, jugular tree, extrahepatic portal tree, common iliac venous tree. // Any of the tubular branching vessels that carry blood from the capillaries toward the heart." [NLM:vein, Wikipedia:Vein]
 comment: TODO - check with MA - vein vs venous blood vessel
 synonym: "venous subtree" BROAD []
@@ -2395,7 +2292,6 @@ is_a: UBERON:0003920  ! venous blood vessel
 [Term]
 id: UBERON:0001690
 name: ear
-namespace: uberon
 def: "Sense organ in vertebrates that is specialized for the detection of sound, and the maintenance of balance. Includes the outer ear and middle ear, which collect and transmit sound waves; and the inner ear, which contains the organs of balance and (except in fish) hearing. Also includes the pinna, the visible part of the outer ear, present in some mammals." [GO:0042471, Wikipedia:Ear]
 comment: This class was created automatically from a combination of ontologies
 synonym: "auditory apparatus" RELATED []
@@ -2407,7 +2303,6 @@ relationship: part_of UBERON:0002105 ! vestibulo-auditory system
 [Term]
 id: UBERON:0001846
 name: internal ear
-namespace: uberon
 def: "Complex labyrinthine structure that comprises sensory endorgans specialized for vestibular, auditory, and acoustico-vestibular sensation." [PMID:16217737, Wikipedia:Internal_ear, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "auris interna" RELATED [BTO:0000630]
@@ -2420,7 +2315,6 @@ relationship: part_of UBERON:0001690 ! ear
 [Term]
 id: UBERON:0001849
 name: membranous labyrinth
-namespace: uberon
 def: "Organ with organ cavity which consists of the vestibular labyrinth and the cochlear labyrinth. Examples: There are only two membranous labyrinths, the right and the left." [Wikipedia:Membranous_labyrinth]
 comment: inner ear has parts membranous and osseuous/bony labyrinth. it's not clear where the edinburgh terms 'labyrinth' belong, we place them here for now
 is_a: UBERON:0000062  ! organ
@@ -2429,7 +2323,6 @@ relationship: part_of UBERON:0001846 ! internal ear
 [Term]
 id: UBERON:0001862
 name: vestibular labyrinth
-namespace: uberon
 def: "The part of the membranous labyrinth that includes the utricle and saccule lodged within the vestibule and the semicircular ducts lodged eccentrically in the corresponding canals." [BTO:0001856]
 synonym: "labyrinthus vestibularis" RELATED [BTO:0001856]
 synonym: "vestibular apparatus" RELATED []
@@ -2439,19 +2332,16 @@ relationship: part_of UBERON:0001849 ! membranous labyrinth
 [Term]
 id: UBERON:0001981
 name: blood vessel
-namespace: uberon
 def: "A vessel through which blood circulates in the body." [BTO:0001102, Wikipedia:Blood_vessel]
 comment: note that FMA:63183 Blood vessel is categorized as 'general anatomical term'. Suggestion to map to region of vascular tree from Terry H at JAX
 synonym: "region of vascular tree organ" EXACT [FMA:50722]
 synonym: "vascular tree organ region" EXACT [FMA:50722]
 is_a: UBERON:0000055  ! vessel
-is_a: UBERON:0004120  ! mesoderm-derived structure
 relationship: part_of UBERON:0004537 ! blood vasculature
 
 [Term]
 id: UBERON:0002049
 name: vasculature
-namespace: uberon
 def: "an interconnected tubular multi-tissue structure contains fluid that is actively transported around the organism[ZFA]. Anatomical system that has as its parts the blood and lymph vessels." [Wikipedia:Vasculature, XB:curator]
 comment: check XAO
 synonym: "vascular network" EXACT []
@@ -2464,20 +2354,17 @@ relationship: part_of UBERON:0004535 ! cardiovascular system
 [Term]
 id: UBERON:0002097
 name: skin of body
-namespace: uberon
 def: "Nonparenchymatous organ that consists of the dermis and epidermis. Subdivisions of the skin surround various body parts; as a whole, the skin constitutes the external layer of the body. Examples: There is only one skin. // Surface structure that consists of the external membranous integument of the animal." [OMD:skin, Wikipedia:Skin]
 comment: Note that FMA uses 'skin' for the entire organ. XAO seems consistent. MA seems to use it analagously to zone of skin
 synonym: "entire skin" EXACT []
 synonym: "integument" RELATED []
 synonym: "skin" RELATED []
 is_a: UBERON:0003102  ! surface structure
-is_a: UBERON:0004120  ! mesoderm-derived structure
 relationship: part_of UBERON:0002199 ! integument
 
 [Term]
 id: UBERON:0002100
 name: trunk
-namespace: uberon
 def: "Subdivision of body proper, which consists of a maximal set of diverse subclasses of organ and organ part spatially associated with the ribcage, thoracic and lumbar vertebral column, sacrum and coccyx, it is partially surrounded by skin of trunk. Examples: There is only one trunk. // Organism subdivision that is the part of the body posterior to the head and anterior to the tail. // Organism subdivision which is the part of the body posterior to the head and anterior to the tail." [Wikipedia:Torso, ZFA:0001115, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "Rumpf" RELATED [BTO:0001493]
@@ -2487,7 +2374,6 @@ is_a: UBERON:0000475  ! organism subdivision
 [Term]
 id: UBERON:0002104
 name: visual system
-namespace: uberon
 def: "." [Wikipedia:Visual_system]
 comment: This class was created automatically from a combination of ontologies
 synonym: "visual organ system" EXACT []
@@ -2496,7 +2382,6 @@ is_a: UBERON:0001032  ! sensory system
 [Term]
 id: UBERON:0002105
 name: vestibulo-auditory system
-namespace: uberon
 def: "A sensory system for the sense of hearing[WP]." [Wikipedia:Auditory_system]
 comment: Auditory system is general anatomical term in FMA
 synonym: "auditory organ system" EXACT []
@@ -2508,7 +2393,6 @@ is_a: UBERON:0001032  ! sensory system
 [Term]
 id: UBERON:0002199
 name: integument
-namespace: uberon
 def: "The outer protective barrier that separates the animal from its environment[ZFA]." [Wikipedia:Integument, ZFIN:curator]
 comment: in FMA intergument = skin+superficial fascia(hypodermis)
 synonym: "Hautsystem" RELATED [BTO:0000634]
@@ -2518,22 +2402,18 @@ synonym: "skin" RELATED []
 synonym: "tegument" RELATED [BTO:0000634]
 synonym: "the integument" EXACT [FMA:74657]
 is_a: UBERON:0003102  ! surface structure
-is_a: UBERON:0004120  ! mesoderm-derived structure
 relationship: part_of UBERON:0002416 ! integumental system
 
 [Term]
 id: UBERON:0002204
 name: musculoskeletal system
-namespace: uberon
 def: "Anatomical system that provides locomotion and physical support to the organism." [Wikipedia:Musculoskeletal_system, XB:curator]
 synonym: "musculo-skeletal system" EXACT []
 is_a: UBERON:0000467  ! anatomical system
-is_a: UBERON:0004120  ! mesoderm-derived structure
 
 [Term]
 id: UBERON:0002224
 name: thoracic cavity
-namespace: uberon
 def: "Body cavity subdivision which is enclosed by the thoracic wall and the diaphragm. Examples: There is only one thoracic cavity." [Wikipedia:Thoracic_cavity]
 comment: This class was created automatically from a combination of ontologies
 synonym: "cavity of chest" EXACT []
@@ -2547,20 +2427,17 @@ relationship: part_of UBERON:0000915 ! thorax
 [Term]
 id: UBERON:0002268
 name: olfactory organ
-namespace: uberon
 comment: note - fma general anatomical term. xao has no subtypes (but Johnstons organ develops from this)
 synonym: "olfactory neuroepithelium" RELATED [BTO:0001772]
 synonym: "organ olfactus" RELATED [BTO:0001772]
 synonym: "organum olfactorium" RELATED [BTO:0001772]
 is_a: UBERON:0000020  ! sense organ
-is_a: UBERON:0000073  ! regional part of nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 relationship: part_of UBERON:0005725 ! olfactory system
 
 [Term]
 id: UBERON:0002323
 name: body cavity
-namespace: uberon
 def: "fluid-filled space between epidermis and outer lining of gut cavity." [Wikipedia:Body_cavity]
 comment: This class was created automatically from a combination of ontologies
 synonym: "celom" RELATED [BTO:0001707]
@@ -2570,12 +2447,10 @@ synonym: "coelomic cavity" EXACT []
 synonym: "space of body compartment" EXACT [FMA:85006]
 synonym: "ventral body cavity" NARROW []
 is_a: UBERON:0002553  ! anatomical cavity
-is_a: UBERON:0004458  ! body cavity or lining
 
 [Term]
 id: UBERON:0002384
 name: connective tissue
-namespace: uberon
 def: "Tissue which consists of fibroblasts, osteocytes or chondrocytes and intercellular matrix produced by these cells. Examples: bone (tissue), dense regular elastic tissue, areolar tissue, neuroglia, adipose tissue. // Anatomical entity consisting of tissue that is rich in extracellular matrix (collagen, proteoglycan, etc.) and binds together and is the support of the various structures of the body." [BTO:0000421, OMD:connective+tissue, Wikipedia:Connective_tissue]
 comment: This class was created automatically from a combination of ontologies
 synonym: "Bindegewebe" RELATED [BTO:0000421]
@@ -2587,30 +2462,25 @@ is_a: UBERON:0000479  ! portion of tissue
 [Term]
 id: UBERON:0002416
 name: integumental system
-namespace: uberon
 def: "organ system that protects the body from damage, comprising the skin and its appendages (including hair, scales, and nails). The integumentary system has a variety of functions; it may serve to waterproof, cushion and protect the deeper tissues, excrete wastes, regulate temperature and is the location of receptors for pain, sensation, pressure and temperature. In humans the integumentary system additionally provides vitamin D synthesis[WP]." [Wikipedia:Integumentary_system]
 comment: in FMA, integumentary system = integument + certain glands
 synonym: "integumentary system" EXACT [FMA:72979]
 is_a: UBERON:0000467  ! anatomical system
-is_a: UBERON:0004120  ! mesoderm-derived structure
 
 [Term]
 id: UBERON:0002418
 name: cartilage
-namespace: uberon
 def: "A portion of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate[GO]. Regular connective tissue, which consists of chondrocytes and related cells, the intercellular matrix of which is chondrified. Examples: hyaline cartilage, fibrocartilage, elastic cartilage[FMA].  an avascular supporting and articular skeletal tissue. It also functions as the primary endoskeletal support in vertebrate embryos. Cartilage is deposited by and is composed of chondroblasts and chondrocytes separated by an extracellular matrix, which may or may not mineralize depending on cartilage type, age, or taxon[Hall and Witten]." [FMA:37377, GO:0051216, Wikipedia:Cartilage]
 comment: see also FMA:71500 Set of cartilages, FMA:55107 Cartilage organ, FMA:12264 Articular cartilage. // elements made from cartilage, cartilage-like, or chondroid tissues evolved in invertebrates[H&W]
 synonym: "cartilage tissue" EXACT [FMA:37377]
 synonym: "cartilaginous tissue" EXACT []
 is_a: UBERON:0002384  ! connective tissue
-is_a: UBERON:0004120  ! mesoderm-derived structure
 is_a: UBERON:0004755  ! skeletal tissue
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 
 [Term]
 id: UBERON:0002530
 name: gland
-namespace: uberon
 def: "A gland is an organ in an animal's body that synthesizes a substance for release such as hormones or breast milk, often into the bloodstream (endocrine gland) or into cavities inside the body or its outer surface (exocrine gland). A gland is an organ specialised for secretion[GO]." [Wikipedia:Gland]
 comment: none of the major model vertebrate ontologies have a class called gland. Is this class superfluous? Also GO says secretion by tissue.
 synonym: "Druese" RELATED [BTO:0000522]
@@ -2620,7 +2490,6 @@ is_a: UBERON:0000062  ! organ
 [Term]
 id: UBERON:0002553
 name: anatomical cavity
-namespace: uberon
 def: "Anatomical space which contains portions of one or more body substances and is bounded by the internal surface of one maximally connected anatomical structure. Examples: cranial cavity, pharyngeal recess space, nasal cavity, tooth socket, cavity of serous sac, lumen of stomach, lumen of artery, fornix of vagina." [FMA:67552]
 synonym: "cavity" EXACT []
 is_a: UBERON:0000464  ! anatomical space
@@ -2628,7 +2497,6 @@ is_a: UBERON:0000464  ! anatomical space
 [Term]
 id: UBERON:0002616
 name: regional part of brain
-namespace: uberon
 def: "An anatomical structure that is part of a brain [Obol]." [OBOL:automatic]
 synonym: "anatomical structure of brain" EXACT [OBOL:automatic]
 synonym: "biological structure of brain" EXACT [OBOL:automatic]
@@ -2636,7 +2504,6 @@ synonym: "brain anatomical structure" EXACT [OBOL:automatic]
 synonym: "brain biological structure" EXACT [OBOL:automatic]
 synonym: "neuraxis segment" EXACT [FMA:55676]
 synonym: "segment of brain" EXACT [NIF_GrossAnatomy:birnlex_1167]
-is_a: UBERON:0000073  ! regional part of nervous system
 relationship: part_of UBERON:0000955 ! brain
 intersection_of: UBERON:0000061  ! anatomical structure
 intersection_of: part_of UBERON:0000955 ! brain
@@ -2644,7 +2511,6 @@ intersection_of: part_of UBERON:0000955 ! brain
 [Term]
 id: UBERON:0003100
 name: female organism
-namespace: uberon
 def: "Gonochoristic organism that can produce female gametes. // Gonochoristic organism that can produce female gametes." [CARO:0000028, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "female human body" EXACT [FMA:67812]
@@ -2653,7 +2519,6 @@ is_a: UBERON:0000468  ! multi-cellular organism
 [Term]
 id: UBERON:0003101
 name: male organism
-namespace: uberon
 def: "Gonochoristic organism that can produce male gametes. // Gonochoristic organism that can produce male gametes." [CARO:0000027, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "male human body" EXACT [FMA:67811]
@@ -2662,16 +2527,13 @@ is_a: UBERON:0000468  ! multi-cellular organism
 [Term]
 id: UBERON:0003102
 name: surface structure
-namespace: uberon
 def: "Organism subdivision that is the collection of anatomical structures on the body surface[ZFA]." [Wikipedia:Surface_structure, ZFA:0000292, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 is_a: UBERON:0000475  ! organism subdivision
-is_a: UBERON:0004121  ! ectoderm-derived structure
 
 [Term]
 id: UBERON:0003103
 name: compound organ
-namespace: uberon
 def: "Anatomical structure that has as its parts two or more multi-tissue structures of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona fide boundaries from other distinct anatomical structures of different types. // Anatomical structure that has as its parts two or more multi-tissue structures of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona fide boundaries from other distinct anatomical structures of different types." [CARO:0000024, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 synonym: "organ" RELATED []
@@ -2680,7 +2542,6 @@ is_a: UBERON:0000062  ! organ
 [Term]
 id: UBERON:0003124
 name: chorion
-namespace: uberon
 def: "Anatomical structure that is contiguous with the embryo and is comprised of portions of tissue or cells that will not contribute to the embryo [ZFA]. The outer membrane of the two membranes enclosing the embryo in reptiles, birds, and mammals. In placental mammals it contributes to the development of the placenta[BTO]. Wikipedia: The chorion is one of the membranes that exists during pregnancy between the developing fetus and mother. It is formed by extraembryonic mesoderm and the two layers of trophoblast and surrounds the embryo and other membranes. The chorionic villi emerge from the chorion, invade the endometrium, and allow transfer of nutrients from maternal blood to fetal blood." [ZFA:0000020]
 synonym: "chorion (vertebrates)" EXACT []
 is_a: UBERON:0005156  ! reproductive structure
@@ -2690,7 +2551,6 @@ relationship: part_of UBERON:0000992 ! ovary
 [Term]
 id: UBERON:0003133
 name: reproductive organ
-namespace: uberon
 def: "An organ involved in reproduction" [UBERON:xp]
 comment: GO uses genitalia for the singular organ
 synonym: "genital organ" EXACT []
@@ -2702,7 +2562,6 @@ is_a: UBERON:0000062  ! organ
 [Term]
 id: UBERON:0003134
 name: female reproductive organ
-namespace: uberon
 def: "A female organ involved in reproduction" [UBERON:xp]
 synonym: "female organism reproductive organ" EXACT [OBOL:automatic]
 synonym: "female organism reproductive structure" EXACT [OBOL:automatic]
@@ -2724,7 +2583,6 @@ intersection_of: part_of UBERON:0003100 ! female organism
 [Term]
 id: UBERON:0003135
 name: male reproductive organ
-namespace: uberon
 def: "A male organ involved in reproduction" [UBERON:xp]
 synonym: "male organism reproductive organ" EXACT [OBOL:automatic]
 synonym: "male organism reproductive structure" EXACT [OBOL:automatic]
@@ -2746,7 +2604,6 @@ intersection_of: part_of UBERON:0003101 ! male organism
 [Term]
 id: UBERON:0003293
 name: gland of oral region
-namespace: uberon
 def: "A gland that is part of a oral opening [Obol]." [OBOL:automatic]
 synonym: "gland of oral opening" EXACT [OBOL:automatic]
 synonym: "gland of oral part of face" EXACT [OBOL:automatic]
@@ -2763,7 +2620,6 @@ intersection_of: part_of UBERON:0000166 ! oral opening
 [Term]
 id: UBERON:0003294
 name: gland of foregut
-namespace: uberon
 def: "A gland that is part of a foregut [Obol]." [OBOL:automatic]
 synonym: "foregut gland" EXACT [OBOL:automatic]
 is_a: UBERON:0003408  ! gland of gut
@@ -2774,7 +2630,6 @@ intersection_of: part_of UBERON:0001041 ! foregut
 [Term]
 id: UBERON:0003408
 name: gland of gut
-namespace: uberon
 def: "A gland that is part of a digestive tract [Obol]." [OBOL:automatic]
 synonym: "digestive tract gland" EXACT [OBOL:automatic]
 synonym: "gland of digestive tract" EXACT [OBOL:automatic]
@@ -2782,7 +2637,6 @@ synonym: "gland of lower gastrointestinal tract" EXACT [OBOL:automatic]
 synonym: "gut gland" EXACT [OBOL:automatic]
 synonym: "lower gastrointestinal tract gland" EXACT [OBOL:automatic]
 is_a: UBERON:0002530  ! gland
-is_a: UBERON:0004119  ! endoderm-derived structure
 relationship: part_of UBERON:0001555 ! digestive tract
 intersection_of: UBERON:0002530  ! gland
 intersection_of: part_of UBERON:0001555 ! digestive tract
@@ -2790,13 +2644,11 @@ intersection_of: part_of UBERON:0001555 ! digestive tract
 [Term]
 id: UBERON:0003714
 name: neural tissue
-namespace: uberon
 def: "Portion of tissue which consists of neurons, neuroglia and vasculature. Examples: Neural tissue of brain, neural tissue of peripheral ganglion, neural tissue of nerve[FMA]." [FMA:9642]
 comment: FMA definition includes vasculature
 synonym: "nerve tissue" EXACT [FMA:9642]
 synonym: "nervous tissue" EXACT [FMA:9642]
 synonym: "portion of neural tissue" EXACT [FMA:9642]
-is_a: UBERON:0000073  ! regional part of nervous system
 is_a: UBERON:0000479  ! portion of tissue
 relationship: part_of UBERON:0001016 ! nervous system
 intersection_of: UBERON:0000479  ! portion of tissue
@@ -2805,7 +2657,6 @@ intersection_of: part_of UBERON:0001016 ! nervous system
 [Term]
 id: UBERON:0003920
 name: venous blood vessel
-namespace: uberon
 synonym: "segment of venous tree organ" EXACT [FMA:86188]
 synonym: "venous tree organ segment" EXACT [FMA:86188]
 is_a: UBERON:0001981  ! blood vessel
@@ -2814,61 +2665,16 @@ relationship: part_of UBERON:0004582 ! venous system
 [Term]
 id: UBERON:0003978
 name: valve
-namespace: uberon
 is_a: UBERON:0000061  ! anatomical structure
 
 [Term]
 id: UBERON:0004111
 name: anatomical conduit
-namespace: uberon
 is_a: UBERON:0000477  ! anatomical cluster
-
-[Term]
-id: UBERON:0004119
-name: endoderm-derived structure
-namespace: uberon
-def: "An anatomical structure that develops (entirely or partially) from the endoderm." [UBERON:cjm]
-comment: Grouping term for query purposes
-is_a: UBERON:0000061  ! anatomical structure
-intersection_of: UBERON:0000061  ! anatomical structure
-intersection_of: develops_from UBERON:0000925 ! endoderm
-
-[Term]
-id: UBERON:0004120
-name: mesoderm-derived structure
-namespace: uberon
-def: "An anatomical structure that develops (entirely or partially) from the mesoderm." [UBERON:cjm]
-comment: Grouping term for query purposes
-is_a: UBERON:0000061  ! anatomical structure
-intersection_of: UBERON:0000061  ! anatomical structure
-intersection_of: develops_from UBERON:0000926 ! mesoderm
-
-[Term]
-id: UBERON:0004121
-name: ectoderm-derived structure
-namespace: uberon
-def: "An anatomical structure that develops (entirely or partially) from the ectoderm." [UBERON:cjm]
-comment: Grouping term for query purposes
-is_a: UBERON:0000061  ! anatomical structure
-intersection_of: UBERON:0000061  ! anatomical structure
-intersection_of: develops_from UBERON:0000924 ! ectoderm
-
-[Term]
-id: UBERON:0004185
-name: endodermal gut
-namespace: uberon
-def: "A portions of the gut that is derived from endoderm." [GO:0061031]
-is_a: UBERON:0000481  ! multi-tissue structure
-is_a: UBERON:0004119  ! endoderm-derived structure
-relationship: part_of UBERON:0001555 ! digestive tract
-intersection_of: UBERON:0000481  ! multi-tissue structure
-intersection_of: develops_from UBERON:0000925 ! endoderm
-intersection_of: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0004289
 name: radula
-namespace: uberon
 def: "an anatomical structure found in mollusks and used for feeding. It is a minutely toothed, chitinous ribbon. It is typically used for scraping or cutting food before the food enters the esophagus. The radula is unique to the molluscs, and is found in all classes of mollusks except for the bivalves." [Wikipedia:Radula]
 comment: The first bona fide radula dates to the Early Cambrian,[3] although trace fossils from the earlier Ediacaran have been suggested to have been made by the radula of the organism Kimberella.[WP]
 is_a: UBERON:0000061  ! anatomical structure
@@ -2876,24 +2682,14 @@ is_a: UBERON:0000061  ! anatomical structure
 [Term]
 id: UBERON:0004456
 name: entire sense organ system
-namespace: uberon
 def: "Sum of all sensory systems in an organism." []
 comment: note the distinct between entire sensory system and individual system. this reconciles is_a and part_of distinctions between ssAOs
 synonym: "sense organ system" EXACT [FMA:78499]
 is_a: UBERON:0000467  ! anatomical system
 
 [Term]
-id: UBERON:0004458
-name: body cavity or lining
-namespace: uberon
-is_a: UBERON:0001062  ! anatomical entity
-union_of: UBERON:0002323  ! body cavity
-union_of: UBERON:0004457  ! cavity lining
-
-[Term]
 id: UBERON:0004529
 name: anatomical projection
-namespace: uberon
 def: "a projection or outgrowth of tissue from a larger body or organ." [Wikipedia:Process_(anatomy)]
 synonym: "anatomical process" BROAD []
 synonym: "organ process" NARROW []
@@ -2905,7 +2701,6 @@ is_a: UBERON:0000063  ! organ segment
 [Term]
 id: UBERON:0004535
 name: cardiovascular system
-namespace: uberon
 def: "Anatomical system that has as its parts the heart and blood vessels." [BTO:0000088]
 synonym: "CV system" RELATED [BTO:0000088]
 synonym: "Herz und Gefaesssystem" RELATED [BTO:0000088]
@@ -2915,19 +2710,16 @@ relationship: part_of UBERON:0001009 ! circulatory system
 [Term]
 id: UBERON:0004537
 name: blood vasculature
-namespace: uberon
 def: "a vascular network consisting of blood vessels" [UBERON:cjm]
 synonym: "blood vascular network" EXACT []
 synonym: "set of blood vessels" EXACT []
 is_a: UBERON:0002049  ! vasculature
 relationship: part_of UBERON:0004535 ! cardiovascular system
-intersection_of: UBERON:0002049  ! vasculature
-intersection_of: has_part UBERON:0000178 ! blood
+is_a: UBERON:0002049  ! vasculature
 
 [Term]
 id: UBERON:0004582
 name: venous system
-namespace: uberon
 synonym: "vein system" EXACT []
 is_a: UBERON:0002049  ! vasculature
 relationship: part_of UBERON:0004535 ! cardiovascular system
@@ -2935,7 +2727,6 @@ relationship: part_of UBERON:0004535 ! cardiovascular system
 [Term]
 id: UBERON:0004755
 name: skeletal tissue
-namespace: uberon
 comment: Four classes of mineralized tissues are found in vertebrates: bone, cartilage, dentine, and enamel. We think of cartilage and bone as skeletal tissues and of enamel and dentine as dental tissues, but enamel and dentine arose evolutionarily together with bone as skeletal tissues in the dermal skeleton (exoskeleton) of early vertebrates. Scales and teeth of sharks are examples of dermal skeletal elements that are still composed of the three ancient components-enamel, dentine, and bone. Cartilage, on the other hand, provided the basis for the second vertebrate skeletal system, the endoskeleton (Smith and Hall, 1990; Hall, 1998a,b). some invertebrate skeletal tissues have surprisingly bone-like features. Examples include chondrocytes interconnected by cell processes in cephalopod cartilages (Cole and Hall, 2004a,b), and the calcium phosphate layer in the shells of brachiopods (Rodland et al., 2003). However, neither bone nor mineralized cartilage have been found in invertebrates
 synonym: "mineralized tissue" EXACT []
 is_a: UBERON:0000479  ! portion of tissue
@@ -2943,34 +2734,28 @@ is_a: UBERON:0000479  ! portion of tissue
 [Term]
 id: UBERON:0004921
 name: subdivision of digestive tract
-namespace: uberon
 comment: intended to denote both embryonic and adult structures. Note the FMA grouping here is not quite correct. we include pharynx, esophagus here, we may want an additional term for major subdivisions (fore/mid/hind vs upper/lower)
 synonym: "alimentary system subdivision" EXACT [FMA:71131]
 synonym: "subdivision of alimentary system" EXACT [FMA:71131]
 is_a: UBERON:0000481  ! multi-tissue structure
-is_a: UBERON:0004185  ! endodermal gut
 relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: UBERON:0004923
 name: organ component layer
-namespace: uberon
 is_a: UBERON:0000064  ! organ part
 
 [Term]
 id: UBERON:0005090
 name: muscle structure
-namespace: uberon
 def: "Muscle structures are contractile cells, tissues or organs that are found in multicellular organisms[GO]." [GO:0061061]
 is_a: UBERON:0000061  ! anatomical structure
 
 [Term]
 id: UBERON:0005156
 name: reproductive structure
-namespace: uberon
 def: "An anatomical structure that is part of the reproductive system." [GOC:cjm]
 synonym: "reproductive system structure" EXACT []
-is_a: UBERON:0004120  ! mesoderm-derived structure
 relationship: part_of UBERON:0000990 ! reproductive system
 intersection_of: UBERON:0000061  ! anatomical structure
 intersection_of: part_of UBERON:0000990 ! reproductive system
@@ -2978,14 +2763,12 @@ intersection_of: part_of UBERON:0000990 ! reproductive system
 [Term]
 id: UBERON:0005162
 name: multi-cell-component structure
-namespace: uberon
 def: "A structure consisting of multiple cell components but which is not itself a cell and does not have (complete) cells as a part." [FBC:DOS]
 is_a: UBERON:0000061  ! anatomical structure
 
 [Term]
 id: UBERON:0005178
 name: thoracic cavity organ
-namespace: uberon
 def: "An organ that is part of a thoracic cavity [Obol]." [OBOL:automatic]
 is_a: UBERON:0000062  ! organ
 relationship: part_of UBERON:0002224 ! thoracic cavity
@@ -2995,7 +2778,6 @@ intersection_of: part_of UBERON:0002224 ! thoracic cavity
 [Term]
 id: UBERON:0005409
 name: gastrointestinal system
-namespace: uberon
 comment: note that many anatomy ontologies consider this synonymous with digestive system. here we follow MA in dividing digestive system into gastrointestinal and hepatobiliary. hepatobiliary includes the liver and biliary tract. species-specific AO classes are categorized according to whether liver is included. For example, XAO includes liver as part of XAO:0000125 alimentary system, so we assume this class is the more generic class.
 synonym: "GI tract" RELATED [GAID:294]
 synonym: "alimentary system" RELATED [MA:0000323]
@@ -3003,28 +2785,25 @@ synonym: "alimentary tract" RELATED [MA:0000323]
 synonym: "gastro-intestinal system" RELATED [FMA:71132]
 synonym: "gastrointestinal (GI) tract" RELATED [GAID:294]
 synonym: "gastrointestinal system" RELATED [FMA:71132]
-synonym: "gastrointestinal tract" RELATED INCONSISTENT [FMA:71132]
+synonym: "gastrointestinal tract" RELATED [FMA:71132]
 is_a: UBERON:0000467  ! anatomical system
 relationship: part_of UBERON:0001007 ! digestive system
 
 [Term]
 id: UBERON:0005630
 name: fetal membrane
-namespace: uberon
 def: "Any membrane that functions for the protection or nourishment of respiration or excretion of a developing fetus." [Real_Dictionary.com:http://www.realdictionary.com/f/dir/fetalmembrane.asp]
 is_a: UBERON:0000158  ! membranous layer
 
 [Term]
 id: UBERON:0005631
 name: extraembryonic membrane
-namespace: uberon
 is_a: UBERON:0000478  ! extraembryonic structure
 is_a: UBERON:0005630  ! fetal membrane
 
 [Term]
 id: UBERON:0005725
 name: olfactory system
-namespace: uberon
 def: "The olfactory system is the sensory system used for olfaction, or the sense of smell. Most mammals and reptiles have two distinct parts to their olfactory system: a main olfactory system and an accessory olfactory system. The main olfactory system detects volatile, airborne substances, while the accessory olfactory system senses fluid-phase stimuli. Behavioral evidence indicates that most often, the stimuli detected by the accessory olfactory system are pheromones. The olfactory system is often spoken of along with the gustatory system as the chemosensory senses because both transduce chemical signals into perception[WP]." [Wikipedia:Olfactory_system]
 comment: In mammals, the main olfactory system detects odorants that are inhaled through the nose, where they contact the main olfactory epithelium, which contains various olfactory receptors. These olfactory receptors are membrane proteins of bipolar olfactory receptor neurons in the olfactory epithelium. Rather than binding specific ligands  like most receptors, olfactory receptors display affinity for a range of odor molecules. Olfactory neurons transduce receptor activation into electrical signals in neurons. The signals travel along the olfactory nerve, which belongs to the peripheral nervous system. This nerve terminates in the olfactory bulb, which belongs to the central nervous system. The complex set of olfactory receptors on different olfactory neurons can distinguish a new odor from the background environmental odors and determine the concentration of the odor.
 is_a: UBERON:0001032  ! sensory system
@@ -3032,7 +2811,6 @@ is_a: UBERON:0001032  ! sensory system
 [Term]
 id: UBERON:0005743
 name: central nervous system plus retina
-namespace: uberon
 def: "Neuraxis plus retina[INCF]." [UBERON:cjm]
 comment: this class was added to account for some definitions of the CNS that includes retina. Most existing AOs use CNS to exclude the retina. See comments for CNS.
 is_a: UBERON:0000073  ! regional part of nervous system
@@ -3040,14 +2818,12 @@ is_a: UBERON:0000073  ! regional part of nervous system
 [Term]
 id: UBERON:0005813
 name: tubercle
-namespace: uberon
 def: "a round nodule, small eminence, or warty outgrowth found on bones, skin, or within the lungs in tuberculosis. They are also found on the leading edge of Humpback Whale's flippers, improving fluid flow over the flipper's surface[WP]." [Wikipedia:Tubercle_(anatomy)]
 is_a: UBERON:0004529  ! anatomical projection
 
 [Term]
 id: UBERON:0006575
 name: mantle
-namespace: uberon
 def: "A fold or lobe or pair of lobes of the body wall of a mollusk or brachiopod that in shell-bearing forms lines the shell and bears shell-secreting glands." [BTO:0000825, Wipikedia:Mantle_(mollusc)]
 synonym: "mantle tissue" RELATED [BTO:0000825]
 synonym: "pallium" RELATED [Wipikedia:Mantle_(mollusc)]
@@ -3056,14 +2832,12 @@ is_a: UBERON:0000309  ! body wall
 [Term]
 id: UBERON:0006583
 name: statocyst
-namespace: uberon
 def: "Acellular mineralized structure located in the statocyst (balance organ) of some aquatic invertebrates[WP]." [Wikipedia:Statocyst]
 is_a: UBERON:0000062  ! organ
 
 [Term]
 id: UBERON:0006611
 name: exoskeleton
-namespace: uberon
 def: "Exoskeleton or shell, including those of mollusks, turtles, insects and crustaceans." [Wikipedia:Exoskeleton]
 synonym: "shell" RELATED [BTO:0004659]
 is_a: UBERON:0002199  ! integument
@@ -3071,7 +2845,6 @@ is_a: UBERON:0002199  ! integument
 [Term]
 id: UBERON:0006612
 name: shell
-namespace: uberon
 is_a: UBERON:0006611  ! exoskeleton
 
 [Typedef]
@@ -3082,4 +2855,8 @@ def: "Away from or opposite the mouth." [http://tolweb.org/accessory/Cephalopoda
 [Typedef]
 id: part_of
 name: part to
+
+[Typedef]
+id: develops_from
+name: develops from
 
