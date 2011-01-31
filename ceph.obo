@@ -1,5 +1,6 @@
 format-version: 1.2
-date: 30:01:2011 20:09
+date: 30:01:2011 20:25
+saved-by: cjm
 auto-generated-by: OBO-Edit 2.1-beta9
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
@@ -7,10 +8,25 @@ default-namespace: file:/Users/cjm/cvs/uberon/ceph.obo
 ontology: ceph
 
 [Term]
+id: CEPH:0000000
+name: eyelid
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000104 ! eyelid sinus
+created_by: cjm
+creation_date: 2011-01-30T08:15:10Z
+
+[Term]
 id: CEPH:0000001
 name: abdominal septum
 def: "See mantle septum. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: CEPH:0000002
+name: cephalopod eye
+is_a: UBERON:0000970 ! eye
+created_by: cjm
+creation_date: 2011-01-30T08:21:37Z
 
 [Term]
 id: CEPH:0000004
@@ -77,13 +93,13 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000016
 name: arm formula
 def: "The relative sizes of arms arranged according to their length. The largest arm is indicated first and the shortest last. An example arm formula is IV&gt;III=II&gt;I. Here arm IV is the largest, followed by arm III which is the same size as arm II and both are larger than arm I." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000015 ! arm
 
 [Term]
 id: CEPH:0000017
 name: arm IV
 def: "In some squids arms IV are much longer and broader than the other arms.        " [http://tolweb.org/accessory/Cephalopod_Arms_IV\:_Size?acc_id=2017]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000015 ! arm
 
 [Term]
 id: CEPH:0000018
@@ -119,7 +135,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000024
 name: beak step
 def: "A ridge on the lower beak where the rostral edge merges onto the lateral wall. In most beaks the merger is smooth. This is a characteristic feature of the Onychoteuthidae." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000023 ! beak
 
 [Term]
 id: CEPH:0000028
@@ -137,7 +153,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000030
 name: brachial lobe of the brain
 def: ". - The anterior-most part of the brain located ventral to the esophagus. The large axial nerve cords that run down the centers of the arms connect to this lobe. The proper name is &quot;anterior subesophageal mass.&quot; In octopods this lobe is fused with the rest of the subesophageal mass while in decapodiforms and <strong>Vampyroteuthis</strong> it is separate from the remaining brain." [http://tolweb.org/accessory/Cephalopod_Brain_Terminology?acc_id=1944]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000035 ! brain
 
 [Term]
 id: CEPH:0000031
@@ -203,7 +219,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000041
 name: buccal sucker
 def: "Small but normal suckers that are present on the oral surface of the buccal supports of some decapodiforms (bathyteuthid families, some loliginids and some sepiids)." [http://tolweb.org/accessory/Cephalopod_Brachial_and_Buccal_Crowns?acc_id=1957]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000248 ! sucker
 
 [Term]
 id: CEPH:0000044
@@ -354,7 +370,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000069
 name: photophore color filter
 def: "Structures that alter the color of bioluminescent light." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000198 ! photophore
 
 [Term]
 id: CEPH:0000072
@@ -523,43 +539,43 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000105
 name: fin angle
 def: "The angle between the longitudinal axis of the mantle and the posterior border of one fin." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000106
 name: fin attachment
 def: "A fin attaches to the shell, the mantle, the opposite fin or some combination of these. " [http://tolweb.org/accessory/Cephalopod_Fin_Attachment?acc_id=1974]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000107
 name: fin cartilage
 def: "Cartilage associated with the fins of all fin-bearing cephalopods. " [http://tolweb.org/accessory/Cephalopoda_Fin_Cartilage?acc_id=1969]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000108
 name: fin length
 def: "This measurement varies in different major taxa.       " [http://tolweb.org/accessory/Cephalopod_Fin_Length?acc_id=2055]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000109
 name: fin lobe
 def: "The portion of a fin that extends anteriorly from the fin's anterior point of attachment or posteriorly from the fin's posterior point of attachment. This is often called the &quot;free&quot; lobe." [http://tolweb.org/accessory/Composite_Squid?acc_id=1936]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000110
 name: fin position
 def: "Fins are located anterior to the termination of the muscular mantle (subterminal position) or mostly posterior to it (terminal position) or somewhere inbetween. " [http://tolweb.org/accessory/Cephalopod_Fin_Position?acc_id=2041]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000111
 name: fin shape
 def: "Fins are classified, somewhat arbitrarily, by their shape as Sagittate, Rhomboid, Circular/Elliptical, Lanceolate, Ear-shaped, Ribbed, Lobate or skirt-like. " [http://tolweb.org/accessory/Decapodiform_Fin_Shapes?acc_id=2029]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000112
@@ -577,7 +593,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000115
 name: free fin lobe
 def: "The portion of a fin that extends anteriorly from the fin's anterior point of attachment or posteriorly from the fin's posterior point of attachment." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000116
@@ -590,31 +606,31 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000117
 name: funnel groove
 def: "Depression on the posteroventral surface of the head in which the funnel lies. Most distinct in some squids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000116 ! funnel
 
 [Term]
 id: CEPH:0000118
 name: funnel locking-apparatus
 def: "The funnel component (generally cartilagenous) of a locking mechanism between the funnel and mantle. This lock, depending on its form, can either limit all movement between the funnel and mantle or allow just anterior-posterior slipping. See Mantle locking-apparatus." [http://tolweb.org/accessory/Cephalopod_Funnel_Locking-Apparatus?acc_id=1973]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000116 ! funnel
 
 [Term]
 id: CEPH:0000119
 name: funnel organ
 def: "The glandular structures on the internal dorsal and ventral surfaces of the funnel." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000116 ! funnel
 
 [Term]
 id: CEPH:0000120
 name: funnel retractor muscle
 def: "Large muscles that attach to the corners of the funnel and run posteriorly to attach to the sides of the shell sac (generally near the base of the gills) or, in a some species, insert on the mantle wall." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000116 ! funnel
 
 [Term]
 id: CEPH:0000121
 name: funnel valve
 def: "Semicircular muscular flap extending from and continuous with the posterodorsal funnel wall. The funnel valve apparently acts as a one-way valve to prevent inspiration of water through the funnel when mantle expansion draws in water to pass over the gills for respiration. A funnel valve in absent in octopods and some squids.        " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000116 ! funnel
 
 [Term]
 id: CEPH:0000122
@@ -771,7 +787,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000150
 name: photophore lens
 def: "Structure in a photophore that can focus or disperse bioluminescent light." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000198 ! photophore
 
 [Term]
 id: CEPH:0000151
@@ -1011,13 +1027,13 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000199
 name: photophore location
 def: "Photophores are found in nearly any location in some squid. However, certain locations are the most common. " [http://tolweb.org/accessory/Cephalopod_Photophore_Locations?acc_id=1981]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000198 ! photophore
 
 [Term]
 id: CEPH:0000200
 name: photosensitive vesicle
 def: "Non-image forming light-receptive organs located inside the cephalic cartilage in squid and on the stellate ganglion in octopods. They perform a variety of function." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000243 ! stellate ganglion
 
 [Term]
 id: CEPH:0000204
@@ -1077,7 +1093,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000214
 name: radula
 def: "A toothed ribbon that lies in the buccal mass and that aids in movement of food into the esophagus." [http://tolweb.org/accessory/Cephalopod_Radula?acc_id=2035]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004289 ! radula
 
 [Term]
 id: CEPH:0000215
@@ -1210,7 +1226,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000240
 name: stalk of tentacle
 def: "Region of the tentacle proximal to the club." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000256 ! tentacle
 
 [Term]
 id: CEPH:0000241
@@ -1228,7 +1244,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000243
 name: stellate ganglion
 def: "Major ganglion of the peripherial nervous system of neocoleoid cephalopods that controls nerves to the mantle muscles." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000045 ! ganglion
 
 [Term]
 id: CEPH:0000244
@@ -1264,19 +1280,19 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000249
 name: sucker series
 def: "The longitudinal rows of suckers on the arms or tentacles of decapodiforms. Series (= longitudinal rows) contrasts with rows (= transverse rows) in describing sucker arrangement. In octopodiforms, sucker &quot;series&quot; is generally synonymous with &quot;rows&quot;, the &quot;longitudinal&quot; component of the term is implied. Suckers can form distinct, regular series or indistinct, irregular series. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000248 ! sucker
 
 [Term]
 id: CEPH:0000250
 name: sucker stalk
 def: "The structure between the sucker and the arm. In octopods it is a cyclindrical structure about the same width as the sucker and in decapodiforms it is constricted into a conical pillar." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000248 ! sucker
 
 [Term]
 id: CEPH:0000251
 name: sucker teeth
 def: "Teeth on the inner horny sucker rings of some decapodiforms." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000248 ! sucker
 
 [Term]
 id: CEPH:0000252
@@ -1354,7 +1370,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000264
 name: terminal pad
 def: "(tentacular club)</a> - A circlet or disc of small suckers at the tip of the tentacular club. The pad of one club can adhere to the pad of the other club which holds the clubs together at their tips." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000256 ! tentacle
 
 [Term]
 id: CEPH:0000265
@@ -1456,7 +1472,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000281
 name: web nodule
 def: "Muscular rods embedded in the web of some cirrate octopods." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000280 ! web
 
 [Term]
 id: CEPH:0000282
@@ -2859,5 +2875,5 @@ name: develops from
 
 [Typedef]
 id: part_of
-name: part to
+name: part of
 
