@@ -130,7 +130,7 @@ class_taxon_invalid(U,X,T,Y,TY) :-
 	entity_xref(U,X),
 	id_idspace(X,S),
 	idspace_taxon(S,T),
-	bf_parentRT(U,Y),
+	parentRT(U,Y),
 	restriction(Y,only_in_taxon,TY),
 	debug(tax,'~w ~w check: ~w',[X,T,TY]),
 	\+ subclassRT(T,TY).
@@ -140,7 +140,7 @@ class_taxon_invalid(U,X,T,Y,TY) :-
 	entity_xref(U,X),
 	id_idspace(X,S),
 	idspace_taxon(S,T),
-	bf_parentRT(U,Y),
+	parentRT(U,Y),
 	restriction(Y,never_in_taxon,TY),
 	debug(tax,'~w ~w check: ~w',[X,T,TY]),
 	subclassRT(T,TY).

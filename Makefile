@@ -149,7 +149,7 @@ uberon-%-misalign.txt: %.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon-orphans uberon-synclash uberon.owl2 uberon-with-isa.obo uberon-xp-check uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-discv.txt 
+uberon-qc: uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-cycles  uberon-dv.txt uberon-discv.txt 
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
@@ -263,8 +263,9 @@ uber_alles.obo: uber_links_obo.obo uber_obo.obo
 	blip -i $*.obo -u ontol_manifest_has_subclass_from_xref io-convert -to obo -o $@
 .PRECIOUS: %-with-isa.obo
 
+# for now we use a simplified set of relations, as this is geared towards analysis
 uberon-with-isa-for-%.obo: uberon.obo
-	blip -i $< -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('$*')" io-convert -to obo -o $@
+	blip-ddb -i $< -u ontol_manifest_has_subclass_from_selected_xref -u ontol_management -goal "set_selected_idspaces('$*'),delete_relation_usage_except([develops_from,part_of,continuous_with,capable_of])" io-convert -to obo -o $@
 .PRECIOUS: %-with-isa.obo
 
 uberon-isa-to-%.obo: uberon.obo
@@ -376,8 +377,9 @@ abstract-%-diff.pro:
 abstract-%.obo: abstract-%-diff.pro
 	blip-ddb -r $* -goalfile $< io-convert -to obo -o $@
 
+# DEPRECATED
 fma_s.obo: 
-	blip -u ontol_manifest_synonym_from_fma.pro -r fma2 io-convert -to obo -o $@.tmp && ./downcase-obo.pl $@.tmp > $@
+	blip -u ontol_manifest_synonym_from_fma -r fma2 io-convert -to obo -o $@.tmp && ./downcase-obo.pl $@.tmp > $@
 
 birnlex_anatomy_s.obo: nif_anatomy.obo
 	blip -u ontol_manifest_synonym_from_birnlex_anatomy.pro -i $< io-convert -to obo -o $@
@@ -435,6 +437,9 @@ newterms-mouse-birnlex.obo: birnlex_anatomy_s.obo
 newterms-xenopus-zebrafish.obo:
 	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r xenopus_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
 
+newterms-aao-fma.obo:
+	obol -u onto_grep onto-3-way-align  -r amphibian_anatomy -r fma -r uberon -ont1 fma -ont2 amphibanat -ont3 uberon -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' > $@
+
 newterms-aao-zebrafish.obo:
 	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r amphibian_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 amphibanat -ont3 uberon > $@
 
@@ -450,8 +455,8 @@ newterms-xenopus-mouse.obo:
 newterms-zebrafish-birnlex.obo: birnlex_anatomy_s.obo
 	obol -u onto_grep onto-3-way-align -i $< -r zebrafish_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
 
-newterms-zebrafish-fma.obo: fma_s.obo
-	obol -u onto_grep onto-3-way-align -i $< -r zebrafish_anatomy -r uberon -ont1 fma -ont2 zebrafish_anatomy -ont3 uberon > $@
+newterms-zebrafish-fma.obo:
+	obol -u onto_grep onto-3-way-align -r fma -r zebrafish_anatomy -r uberon -ont1 fma -ont2 zebrafish_anatomy -ont3 uberon -exclude ZFA:0009000 -exclude FMA:68646 > $@
 
 newterms-zebrafish-ehdaa2.obo:
 	obol -u onto_grep onto-3-way-align -r ehdaa2 -r zebrafish_anatomy -r uberon -ont1 abstract_anatomy -ont2 zebrafish_anatomy -ont3 uberon > $@
@@ -919,13 +924,20 @@ mappings/bp_mappings-%.txt: mappings/bp_mappings-%.rdf
 mappings/bp_mappings-%.pro: mappings/bp_mappings-%.txt
 	tbl2p -p bp_mapping $< > $@
 
+mappings/summary.html:
+	./make-mappings-table2.pl > $@
+
 uxrefs-ontol_db.pro: uberon.obo
 	blip-findall -r uberonp entity_xref/2 > $@
 
 clear_eval_all:
-	rm uberon_simple_closure-*-*-ontol_db.pro
+	rm uberon_simple_closure-*-ontol_db.pro
+#	rm uberon_simple_closure-*-*-ontol_db.pro
 
-eval_all: all_uberon_simple_closure
-	./run-all-eval.pl $(MONTS)
+#eval_all: all_uberon_simple_closure
+
+eval_all:
+	./run-all-eval2.pl $(MONTS)
+#	./run-all-eval.pl $(MONTS)
 
 re_eval_all: clear_eval_all eval_all

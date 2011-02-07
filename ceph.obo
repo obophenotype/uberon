@@ -1,29 +1,31 @@
 format-version: 1.2
-date: 30:01:2011 20:25
+date: 30:01:2011 20:31
 saved-by: cjm
 auto-generated-by: OBO-Edit 2.1-beta9
+synonymtypedef: octopoda "term used in octopoda"
+synonymtypedef: squid "term used in squid"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
 default-namespace: file:/Users/cjm/cvs/uberon/ceph.obo
 ontology: ceph
 
 [Term]
-id: CEPH:0000000
-name: eyelid
-is_a: UBERON:0000061 ! anatomical structure
-relationship: part_of CEPH:0000104 ! eyelid sinus
+id: CEPH:0000300 ! cephalopod trait
+name: cephalopod trait
 created_by: cjm
 creation_date: 2011-01-30T08:15:10Z
 
 [Term]
-id: CEPH:0000001
-name: abdominal septum
-def: "See mantle septum. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+id: CEPH:0000000 ! eyelid
+name: eyelid
 is_a: UBERON:0000061 ! anatomical structure
+created_by: cjm
+creation_date: 2011-01-30T08:15:10Z
 
 [Term]
-id: CEPH:0000002
+id: CEPH:0000002 ! cephalopod eye
 name: cephalopod eye
+comment: todo - reconcile with camera-type eye in uberon
 is_a: UBERON:0000970 ! eye
 created_by: cjm
 creation_date: 2011-01-30T08:21:37Z
@@ -32,13 +34,14 @@ creation_date: 2011-01-30T08:21:37Z
 id: CEPH:0000004
 name: accessory gland complex
 def: "The glandular complex in cirrates that forms sperm packets and is a counterpart of the spermatophore-forming complex of other cephalopods. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002530 ! gland
 
 [Term]
-id: CEPH:0000005
+id: CEPH:0000005 ! acetabulum
 name: acetabulum
-def: "See sucker." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+def: "A sucker of the sepia or cuttlefish and related animals." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000248 ! sucker
 
 [Term]
 id: CEPH:0000006
@@ -47,29 +50,19 @@ def: "A female that has mature eggs (these are frequently stored in the oviducts
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000007
-name: afferent nerve
-def: "Nerve carrying impulses toward the brain or specific ganglia." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000008
-name: afferent vein
-def: "Vein carrying blood toward an organ." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
 id: CEPH:0000009
 name: anal flap
-def: "A small flaps on the lateral side of the anus." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+def: "A small flap on the lateral side of the anus." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 synonym: "anal valve" EXACT []
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0003978 ! valve
+relationship: part_of UBERON:0001245 ! anus
 
 [Term]
 id: CEPH:0000011
 name: anterior salivary gland
 def: "Glands on or in the buccal mass that aid in preliminary digestion." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001044 ! salivary gland
+relationship: part_of CEPH:0000039 ! buccal mass
 
 [Term]
 id: CEPH:0000012
@@ -82,21 +75,23 @@ id: CEPH:0000014
 name: areolar spot
 def: "Circular spots, generally light colored but often with complex pigmentation and of unknown function that occur in lines along the aboral surfaces of some arms and portions of the head in some opisthoteuthid cirrates." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0003102 ! surface structure
 
 [Term]
 id: CEPH:0000015
 name: arm
 def: "One of the circumoral appendages of cephalopods. In decapodiforms each member of the fourth pair of arms is modified to form a tentacle." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000026 ! appendage
 
 [Term]
 id: CEPH:0000016
 name: arm formula
 def: "The relative sizes of arms arranged according to their length. The largest arm is indicated first and the shortest last. An example arm formula is IV&gt;III=II&gt;I. Here arm IV is the largest, followed by arm III which is the same size as arm II and both are larger than arm I." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-relationship: part_of CEPH:0000015 ! arm
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of CEPH:0000015 ! arm
 
 [Term]
-id: CEPH:0000017
+id: CEPH:0000017 ! arm IV
 name: arm IV
 def: "In some squids arms IV are much longer and broader than the other arms.        " [http://tolweb.org/accessory/Cephalopod_Arms_IV\:_Size?acc_id=2017]
 is_a: CEPH:0000015 ! arm
@@ -144,28 +139,57 @@ def: "A large opening at the base of each gill lamella and between the primary a
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000029
+id: CEPH:0000029 ! brachial crown
 name: brachial crown
 def: "The combination of arms and tentacles that surround the mouth." [http://tolweb.org/accessory/Cephalopod_Brachial_and_Buccal_Crowns?acc_id=1957]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: surrounds UBERON:0000166 ! oral opening
+
+[Term]
+id: CEPH:0000296 ! subesophageal mass of brain
+name: subesophageal mass of brain
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of CEPH:0000035 ! brain
 
 [Term]
 id: CEPH:0000030
-name: brachial lobe of the brain
-def: ". - The anterior-most part of the brain located ventral to the esophagus. The large axial nerve cords that run down the centers of the arms connect to this lobe. The proper name is &quot;anterior subesophageal mass.&quot; In octopods this lobe is fused with the rest of the subesophageal mass while in decapodiforms and <strong>Vampyroteuthis</strong> it is separate from the remaining brain." [http://tolweb.org/accessory/Cephalopod_Brain_Terminology?acc_id=1944]
-relationship: part_of CEPH:0000035 ! brain
+name: brachial lobe of brain
+synonym: "anterior subesophageal mass" EXACT []
+synonym: "anterior subesophageal mass of brain" EXACT []
+def: "The anterior-most part of the brain located ventral to the esophagus. The large axial nerve cords that run down the centers of the arms connect to this lobe. In octopods this lobe is fused with the rest of the subesophageal mass while in decapodiforms and <strong>Vampyroteuthis</strong> it is separate from the remaining brain." [http://tolweb.org/accessory/Cephalopod_Brain_Terminology?acc_id=1944]
+is_a: CEPH:0000293 ! lobe of brain
+relationship: ventral_to UBERON:0001043 ! esophagus
+relationship: part_of CEPH:0000296 ! subesophageal mass of brain
+
+[Term]
+id: CEPH:0000301
+name: basal lobe of brain
+def: "Higher motor centers, located (for example) in the basal lobe (b.l.) control complex behaviors that involve the animal's whole body." []
+is_a: CEPH:0000293 ! lobe of brain
+
+[Term]
+id: CEPH:0000297
+name: middle subesophageal mass of brain
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of CEPH:0000296 ! subesophageal mass of brain
+
+[Term]
+id: CEPH:0000298
+name: posterior subesophageal mass of brain
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of CEPH:0000296 ! subesophageal mass of brain
 
 [Term]
 id: CEPH:0000031
 name: branchial gland
 def: "Elongate gland adjacent to and paralleling the gill where the gill attaches to the mantle wall." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002530 ! gland
 
 [Term]
 id: CEPH:0000032
 name: branchial heart
 def: "A pulsating gland at the base of the gill and through which the afferent blood to the gills flows. It contributes to the blood flow through the gill but also is the site of hemocyanin (the blood respiratory pigment) synthesis. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002530 ! gland
 
 [Term]
 id: CEPH:0000033
@@ -178,6 +202,7 @@ id: CEPH:0000034
 name: brachial pillar
 def: "A very narrow and elongate anterior region of the head between the eyes and the base of the brachial crown. A branchial pillar is especially well developed in many young cranchiid squid." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: adjacent_to CEPH:0000029 ! brachial crown
 
 [Term]
 id: CEPH:0000035
@@ -195,25 +220,29 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000037
 name: buccal connective
 def: "Muscular membrane that runs from the buccal support to the base of the adjacent arm. The position of the connective on the fourth arms was recognized in the early 20th century as an important character in interpreting phylogenetic relationships among decapodiforms." [http://tolweb.org/accessory/Cephalopod_Brachial_and_Buccal_Crowns?acc_id=1957]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000158 ! membranous layer
 
 [Term]
 id: CEPH:0000038
 name: buccal crown
 def: "Umbrella-like structure that surrounds the mouth and is surrounded by the brachial crown. It consists of buccal supports and the buccal membrane. The buccal crown is present in most decapodiforms but absent from all octopodiforms." [http://tolweb.org/accessory/Cephalopod_Brachial_and_Buccal_Crowns?acc_id=1957]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: surrounds UBERON:0000166 ! oral opening
+relationship: surrounded_by CEPH:0000029 ! brachial crown
 
 [Term]
-id: CEPH:0000039
+id: CEPH:0000039 ! buccal mass
 name: buccal mass
+synonym: "buccal system" RELATED []
 def: "Muscular bulb at the beginning of the digestive system that contains the mouth, beaks, radula and various glands." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001007 ! digestive system
 
 [Term]
 id: CEPH:0000040
 name: buccal membrane
 def: "The muscular membrane that connects the buccal supports and together with the supports, forms the buccal crown. The pigmentation of the buccal membrane often differs from that of the adjacent oral surfaces of the arms." [http://tolweb.org/accessory/Cephalopod_Brachial_and_Buccal_Crowns?acc_id=1957]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000158 ! membranous layer
 
 [Term]
 id: CEPH:0000041
@@ -226,15 +255,17 @@ id: CEPH:0000044
 name: bursa copulatrix
 def: "A spermatophore receptacle found in some sepiolids and consisting of folded glandular epithelium of the lining of the mantle cavity just anterior to the oviduct opening." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0006580 ! mantle cavity
 
 [Term]
 id: CEPH:0000045
 name: caecal sac
 def: "The sac-like, thin-walled posterior portion of the caecum that lacks the internal, ciliated leaflets characteristic of the anterior portion of the caecum." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000046 ! caecum
 
 [Term]
-id: CEPH:0000046
+id: CEPH:0000046 ! caecum
 name: caecum
 def: "Region of the digestive tract of all cephalopods between the stomach and intestine. It is the primary site of food absorption." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
 is_a: UBERON:0000061 ! anatomical structure
@@ -250,6 +281,7 @@ id: CEPH:0000048
 name: calamus
 def: "The conical papilla of the end-organ of the hectocotylus in many incirrate octopods. It is located at the distal termination of the sperm groove and usually lies adjacent to the last arm sucker." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: adjacent_to CEPH:0000248 ! sucker
 
 [Term]
 id: CEPH:0000050
@@ -261,13 +293,15 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000051
 name: carpal sucker
 def: "Suckers in the locking apparatus at the base of the club." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000248 ! sucker
+relationship: part_of CEPH:0000054 ! carpal locking apparatus
 
 [Term]
 id: CEPH:0000052
 name: carpal knob
 def: "Knobs in the locking apparatus at the base of the club." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000054 ! carpal locking apparatus
 
 [Term]
 id: CEPH:0000053
@@ -276,34 +310,32 @@ def: "The &quot;wrist&quot; of the club." [http://tolweb.org/accessory/Cephalopo
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000054
-name: carpal locking-apparatus
+id: CEPH:0000054 ! carpal locking apparatus
+name: carpal locking apparatus
 def: "The region at the base of the tentacular club which has small suckers and knobs. The carpal suckers and knobs of one tentacle can adhere to their counterparts on the opposite tentacle which, thereby, holds the clubs together at their bases." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 synonym: "proximal locking-apparatus" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000291 ! tentacular club
+
 
 [Term]
 id: CEPH:0000055
 name: cartilaginous tubercle
 def: "Rigid cartilagenous spines, with one or several cusps, in the skin of certain squids and octopods." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000270 ! cephalopod tubercule
+is_a: UBERON:0002418 ! cartilage
 
 [Term]
 id: CEPH:0000056
 name: cephalic cartilage
 def: "Cartilage surrounding the posterior part of the brain of cephalopods and generally encompasing the statocysts. Anteriorly the cartilage thins into facia making a well-defined limit difficult to establish. The cartilage has a large central foramen through which the esophagus passes and minor foramina for nerves and blood vessels." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002418 ! cartilage
+relationship: surrounds UBERON:0001043 ! esophagus
 
 [Term]
 id: CEPH:0000057
 name: cephalic vein
 def: "Large vein that drains the head and lies on the ventral surface of the visceral sac, along side or dorsal to the intestine. The cephalic vein terminates by dividing into the two vena cavae, each of which passes through the &quot;kidney&quot; (nephridium), the branchial heart and into the gill." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000058
-name: chemotactile
-def: "Refers to chemical and touch sensitivity." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -313,50 +345,38 @@ def: "A mucopolysaccharide that is the major component of the cuticle (exoskelet
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000060
-name: chorion
-def: "A tough secreted membrane that surrounds the egg." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
 id: CEPH:0000061
 name: chromatophore
 def: "A pigment cell. In cephalopods the chromatophore is part of an organ composed of numerous cells including many slender muscle cells. Under nervous control, the muscles rapidly expand and flatten the pigment cell which spreads the pigment over a relatively broad area." [http://tolweb.org/accessory/Cephalopod_Chromatophore?acc_id=2038]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CL:0000147 ! pigment cell
 
 [Term]
 id: CEPH:0000062
 name: circularis muscle
 def: "A circular muscle found in the suckers of most sepioids and loliginids that surrounds the sucker at the base of the horny ring." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001630 ! muscle organ
 
 [Term]
 id: CEPH:0000063
 name: cirrate male reproductive system
 def: "The male reproductive tract of cirrates does not make typical spermatophores. As a result, the tract differs greatly from that of other coleoid cephalopods. " [http://tolweb.org/accessory/Cirrate_Male_Reproductive_Tract?acc_id=1486]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000079 ! male reproductive system
 
 [Term]
 id: CEPH:0000064
 name: cirrate octopod measurements
 def: "Measurements used in describing cirrates differ somewhat from other cephalopods. " [http://tolweb.org/accessory/Cirrate_Measurements_and_Indices?acc_id=1487]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000065
-name: cirrate shell terminology
-def: "The cirrate shell differs greatly from all other cephalopod shells and has its own set of terms to describe it. " [http://tolweb.org/accessory/Cirrate_Shell_Terminology?acc_id=1488]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
 
 [Term]
 id: CEPH:0000066
 name: cirri
 def: "Muscular, conical structures that arise from the sides of the arms of some octopodiforms. Cirri are homologous with trabeculae of decapodiforms." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001630 ! muscle organ
 
 [Term]
-id: CEPH:0000067
-name: coelom
+id: CEPH:0000067 ! cephalopod coelom
+name: cephalopod coelom
 def: "An internal body cavity of mesodermal orgin that is lined by an epithelium. Cephalopods have two coeloms, the visceropericardial coelom and the nephridial coelom." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
@@ -364,7 +384,9 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000068
 name: collar
 def: "Muscular structure extending from the nuchal cartilage to the funnel that forms a one-way valve that lets water enter the mantle cavity but closes as the mantle contracts thereby forcing exhalent water out through the funnel." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0003978 ! valve
+is_a: UBERON:0001630 ! muscle organ
+relationship: part_of UBERON:0006580 ! mantle cavity
 
 [Term]
 id: CEPH:0000069
@@ -374,21 +396,25 @@ relationship: part_of CEPH:0000198 ! photophore
 
 [Term]
 id: CEPH:0000072
-name: primary conus
+name: conus
 def: "The cup or cone-shaped posterior end of the gladius of some cephalopods. It is not formed by the infolding of the vanes." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000124 ! gladius
 
 [Term]
 id: CEPH:0000073
 name: conus field
 def: "Lateral portions of the gladius that are continuous posteriorly with the primary conus or its remnant and laterally with the edges of the vanes." [http://tolweb.org/accessory/Cephalopod_Gladius_Terminology?acc_id=1955]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: continuous_with CEPH:0000072 ! conus
+relationship: part_of CEPH:0000124 ! gladius
 
 [Term]
 id: CEPH:0000074
 name: cornea
 def: "Smooth, thin, turgid, transparent skin without muscles that covers the eyes to protect the eye lenses of incirrate octopods and some decapodiforms." [http://tolweb.org/accessory/Cephalopod_Cornea?acc_id=2057]
+comment: todo - reconcile with metazoan def in uberon
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000002 ! cephalopod eye
 
 [Term]
 id: CEPH:0000075
@@ -407,6 +433,7 @@ id: CEPH:0000078
 name: crop
 def: "Expansion (i.e. a broading or a side pocket) of the esophagus for storing food. Present in <strong>Nautilus</strong> and most octopodiforms." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: continuous_with UBERON:0001043 ! esophagus
 
 [Term]
 id: CEPH:0000079
@@ -419,6 +446,7 @@ id: CEPH:0000080
 name: cupped coil
 def: "The peculiar posterior end of the histioteuthis gladius that is rolled into a coil." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000124 ! gladius
 
 [Term]
 id: CEPH:0000081
@@ -437,6 +465,7 @@ id: CEPH:0000083
 name: dactylus
 def: "The narrow, distal portion of the tentacular club of most decapodiforms. In squids the dactylus is usually characterized by the ventral expansion of the club and the absence of a dorsal protective membrane." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000291 ! tentacular club
 
 [Term]
 id: CEPH:0000084
@@ -457,34 +486,51 @@ def: "Vertical animal migration during twilight. Many mesopelagic animals migrat
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000087
+id: CEPH:0000087 ! digestive gland
 name: digestive gland
 def: "Primary organ in cephalopods that secretes digestive enzymes. It is also important in absorption and excretion." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002530 ! gland
+relationship: part_of UBERON:0001555 ! digestive tract
 
 [Term]
 id: CEPH:0000088
 name: digestive gland duct appendages (digda)
 def: "Outpockets of the ducts leading from the digestive gland that are covered with glandular epithelium." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: continuous_with CEPH:0000087 ! digestive gland
 
 [Term]
 id: CEPH:0000090
 name: distal oviduct
-def: "The &quot;distal oviduct&quot; is an extension of the oviducal gland in octopods that often has the same general appearance as the oviduct proximal to the oviducal gland." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+def: "An extension of the oviducal gland in octopods that often has the same general appearance as the oviduct proximal to the oviducal gland." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: UBERON:0000993 ! oviduct
+relationship: continuous_with CEPH:0000193 ! oviducal gland
+
+[Term]
+id: CEPH:0000286 ! primary oviduct
+name: primary oviduct
+def: "Female gonoduct. The oviduct conducts eggs from the visceropericardial coelom, that holds the ovary, to the exterior and is often used to store eggs. In some argonautoid octopods eggs are fertilized and undergo either partial (Argonauta ) or complete (Ocythoe) embryonic development within the oviduct." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: UBERON:0000993 ! oviduct
+relationship: continuous_with CEPH:0000278 ! visceropericardial coelom
+
+[Term]
+id: CEPH:0000287
+name: cephalopod ovary
+is_a: UBERON:0000992 ! ovary
+relationship: part_of CEPH:0000278 ! visceropericardial coelom
 
 [Term]
 id: CEPH:0000091
-name: doratopsis
+name: doratopsis stage
 def: "Peculiar paralarval stage of the Chiroteuthidae. The paralarva is very slender and can reach a large size." [http://tolweb.org/accessory/Chiroteuthid_Doratopsis_Stage?acc_id=656]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000194 ! paralarval stage
 
 [Term]
 id: CEPH:0000093
 name: dorsal mantle cavity
 def: "Dorsal portion of the mantle cavity that completely surrounds the viscera in octopods. In decapodiforms and <strong>Vampyroteuthis</strong> the viscera are fused to the mantle and shell dorsally and the mantle cavity lies lateral and ventral to the viscera. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0006580 ! mantle cavity
 
 [Term]
 id: CEPH:0000094
@@ -528,18 +574,22 @@ id: CEPH:0000102
 name: eye pore
 def: "Small pore just anterior to the cornea in some decapodiforms. The pore is the remnant of the large eye opening of oegopsids and connects fluid between the lens and the cornea with the exterior environment." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: adjacent_to CEPH:0000002 ! cephalopod eye
 
 [Term]
 id: CEPH:0000104
 name: eyelid sinus
+synonym: "optic sinus" EXACT []
 def: "Indentation, often complex, of the anterior margin of the eyelid. " [http://tolweb.org/accessory/Cephalopod_Eyelid_Sinus?acc_id=1994]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000000 ! eyelid
 
 [Term]
 id: CEPH:0000105
 name: fin angle
 def: "The angle between the longitudinal axis of the mantle and the posterior border of one fin." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-relationship: part_of CEPH:0000112 ! fin
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000106
@@ -551,13 +601,15 @@ relationship: part_of CEPH:0000112 ! fin
 id: CEPH:0000107
 name: fin cartilage
 def: "Cartilage associated with the fins of all fin-bearing cephalopods. " [http://tolweb.org/accessory/Cephalopoda_Fin_Cartilage?acc_id=1969]
+is_a: UBERON:0002418 ! cartilage
 relationship: part_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000108
 name: fin length
 def: "This measurement varies in different major taxa.       " [http://tolweb.org/accessory/Cephalopod_Fin_Length?acc_id=2055]
-relationship: part_of CEPH:0000112 ! fin
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000109
@@ -569,25 +621,29 @@ relationship: part_of CEPH:0000112 ! fin
 id: CEPH:0000110
 name: fin position
 def: "Fins are located anterior to the termination of the muscular mantle (subterminal position) or mostly posterior to it (terminal position) or somewhere inbetween. " [http://tolweb.org/accessory/Cephalopod_Fin_Position?acc_id=2041]
-relationship: part_of CEPH:0000112 ! fin
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000111
 name: fin shape
 def: "Fins are classified, somewhat arbitrarily, by their shape as Sagittate, Rhomboid, Circular/Elliptical, Lanceolate, Ear-shaped, Ribbed, Lobate or skirt-like. " [http://tolweb.org/accessory/Decapodiform_Fin_Shapes?acc_id=2029]
-relationship: part_of CEPH:0000112 ! fin
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000112
 name: fin
 def: "The pair of muscular &quot;wings&quot; used in swimming and located along the dorsolateral surface of the mantle, usually in its posterior half ." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0003102 ! surface structure
+relationship: capable_of GO:0040011  ! locomotion
 
 [Term]
 id: CEPH:0000114
 name: foveola
-def: "Transverse membranous fold of skin that forms a pocket in the funnel grove of ommastrephid squids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+def: "Transverse membranous fold of skin that forms a pocket in the funnel groove of ommastrephid squids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000117 ! funnel groove
 
 [Term]
 id: CEPH:0000115
@@ -600,18 +656,22 @@ id: CEPH:0000116
 name: funnel
 def: "The ventral, muscular tube through which water is expelled from the mantle cavity. The funnel is thought to have evolved from the molluscan foot." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 synonym: "siphon" EXACT []
-is_a: UBERON:0000061 ! anatomical structure
+id: UBERON:0000025 ! tube
+relationship: has_part UBERON:0001630 ! muscle organ
+relationship: continuous_with UBERON:0006580 ! mantle cavity
 
 [Term]
-id: CEPH:0000117
+id: CEPH:0000117 ! funnel groove
 name: funnel groove
 def: "Depression on the posteroventral surface of the head in which the funnel lies. Most distinct in some squids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: UBERON:0003102 ! surface structure
 relationship: part_of CEPH:0000116 ! funnel
 
 [Term]
 id: CEPH:0000118
 name: funnel locking-apparatus
 def: "The funnel component (generally cartilagenous) of a locking mechanism between the funnel and mantle. This lock, depending on its form, can either limit all movement between the funnel and mantle or allow just anterior-posterior slipping. See Mantle locking-apparatus." [http://tolweb.org/accessory/Cephalopod_Funnel_Locking-Apparatus?acc_id=1973]
+is_a: UBERON:0002418 ! cartilage
 relationship: part_of CEPH:0000116 ! funnel
 
 [Term]
@@ -624,13 +684,15 @@ relationship: part_of CEPH:0000116 ! funnel
 id: CEPH:0000120
 name: funnel retractor muscle
 def: "Large muscles that attach to the corners of the funnel and run posteriorly to attach to the sides of the shell sac (generally near the base of the gills) or, in a some species, insert on the mantle wall." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: UBERON:0001630 ! muscle organ
 relationship: part_of CEPH:0000116 ! funnel
 
 [Term]
 id: CEPH:0000121
 name: funnel valve
 def: "Semicircular muscular flap extending from and continuous with the posterodorsal funnel wall. The funnel valve apparently acts as a one-way valve to prevent inspiration of water through the funnel when mantle expansion draws in water to pass over the gills for respiration. A funnel valve in absent in octopods and some squids.        " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-relationship: part_of CEPH:0000116 ! funnel
+intersection_of: UBERON:0003978 ! valve
+intersection_of: part_of CEPH:0000116 ! funnel
 
 [Term]
 id: CEPH:0000122
@@ -645,9 +707,11 @@ def: "(=primary lamella) - Complex gill leaflet that extends perpendicular to th
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000124
+id: CEPH:0000124 ! gladius
 name: gladius
 def: "The chitinous remnant of the shell in many decapodiforms and <strong>Vampyroteuthis</strong>. It is generally feather-shaped and lies in the dorsal mid-line of the body along the full length of the mantle. The gladius lies within the shell sac which secretes it." [http://tolweb.org/accessory/Cephalopod_Gladius_Terminology?acc_id=1955]
+comment: The gladius, found in many decapodiforms and Vampyroteuthis, is an internal remnant of the originally external shell of cephalopods. Other cephalopods have other types of shell remnants. The gladius lies within a sac, the shell sac, which secretes it and to which various muscles attach. The gladius has a variety of shapes and thicknesses, is composed mostly of chitin and is located in the dorsal midline and generally extends the full length of the mantle. Conus field - The lateral portion of the gladius that is continuous posteriorly with the primary conus or its remnant and laterally with the edges of the vanes. The conus field is differentiated from the vanes by longitudinal lines and marked changes in the orientation of the growth lines. A conus field is generally lacking if the gladius lacks a primary conus. 
+xref: http://tolweb.org/tree/ToLimages/Gladius.jpg
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -697,6 +761,7 @@ id: CEPH:0000134
 name: hook
 def: "Horny structure that looks like a single claw and is derived from the inner sucker ring in some decapodiforms. Hooks may be found on the arms and/or tentacular clubs of squid. The relative advantage of hooks vs toothed rings is uncertain." [http://tolweb.org/accessory/Cephalopod_Hooks?acc_id=1983]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000256 ! tentacle
 
 [Term]
 id: CEPH:0000135
@@ -715,67 +780,71 @@ id: CEPH:0000137
 name: inferior frontal lobe system
 def: "A system of lobes in octopod brains: the paired posterior buccal, lateral inferior frontal and subfrontal lobes, and the single median inferior frontal lobe. They form a functional unit concerned with the chemotactile information from the arms and its use." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000035 ! brain
+
+[Term]
+id: CEPH:0000302
+name: superior frontal lobe system
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000035 ! brain
+
+[Term]
+id: CEPH:0000303
+name: vertical frontal lobe system
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000035 ! brain
+
+[Term]
+id: CEPH:0000293 ! lobe of brain
+name: lobe of brain
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000035 ! brain
+
+[Term]
+id: CEPH:0000294 ! lobe of nervous system
+name: lobe of nervous system
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: CEPH:0000138
 name: infundibilum
-def: "See sucker." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+def: "The siphon of Cephalopoda" [http://thinkexist.com/dictionary/meaning/infundibulum/]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000248 ! sucker
 
 [Term]
 id: CEPH:0000139
 name: ink sac
 def: "Organ composed of a gland that secretes ink, a sac that stores ink and a duct that connects it to the rectum. The ink sac generally appears black from the outside although it may be covered by silvery tissue in some species." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002530 ! gland
+relationship: secretes CEPH:0000285 ! ink
 
 [Term]
-id: CEPH:0000140
-name: integument
-def: "Skin." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000141
-name: intertidal
-def: ". - The region of the shoreline between high3st and lowest tides." [http://tolweb.org/accessory/Cephalopod_Ocean_Habitats?acc_id=1998]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000142
-name: invertebrate
-def: "An animal without a backbone. Refers to the wide variety of groups that lie outside of the vertebrates such as jellyfish, spiders, octopods and worms. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000143
-name: juvenile
-def: "Life history stage between the paralarval and subadult stages" [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+id: CEPH:0000285 ! ink
+name: ink
+is_a: UBERON:0000463 ! portion of organism substance
 
 [Term]
 id: CEPH:0000144
 name: jet propulsion
-def: "This is the typical method of fast swimming in cephalopods.        " [http://tolweb.org/accessory/Cephalopod_Jet_Propulsion?acc_id=2060]
-is_a: UBERON:0000061 ! anatomical structure
+def: "This is the typical method of fast swimming in cephalopods. During jet propulsion, water is taken into the mantle cavity by expansion of the mantle. Water enters laterally at the sides of the head, passes over the collar, over the gills and leaves through the funnel when the mantle contracts. Mantle contraction causes water pressure in the mantle cavity to increase and forces the collar against the mantle wall. The collar, therefore, acts as a one-way valve to prevents water from leaving by the same route that it entered. The ventral wall of the funnel presses against the mantle during mantle contraction and seals that opening as well. Water, therefore, is forced through the funnel and out the funnel orifice. The force provided by the water leaving the funnel can be directed by movements of the funnel. Typically the water leaves the funnel anteriorly causing the cephalopod to jet backward (e.g. when escaping a predator) or the funnel is directed posteriorly causing the water to leave posteriorly and the animal to jet anteriorly (e.g. when pouncing on a prey). Some species are able to glide via this method." [http://tolweb.org/accessory/Cephalopod_Jet_Propulsion?acc_id=2060, Wikipedia:Ommastrephidae]
+is_a: GO:0040011  ! locomotion
 
 [Term]
 id: CEPH:0000145
 name: keel
-def: "A muscular vane that extends dorsally from the aboral surface of the tentacular club of many species.         " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-synonym: "club" EXACT []
-is_a: UBERON:0000061 ! anatomical structure
+def: "A muscular vane that extends dorsally from the aboral surface of the tentacular club of many species." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+synonym: "club" RELATED []
+is_a: CEPH:0000271 ! vane
+relationship: part_of CEPH:0000291 ! tentacular club
 
 [Term]
 id: CEPH:0000147
 name: lateral funnel adductor muscle
 def: "Muscles that support the lateral attachment of the funnel to the head. " [http://tolweb.org/accessory/Cephalopod_Lateral_Funnel_Adductor?acc_id=1963]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000952 ! adductor muscle
 
-[Term]
-id: CEPH:0000148
-name: lateral membranes of arms IV
-def: "See Tentacular sheath." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: CEPH:0000149
@@ -788,12 +857,6 @@ id: CEPH:0000150
 name: photophore lens
 def: "Structure in a photophore that can focus or disperse bioluminescent light." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 relationship: part_of CEPH:0000198 ! photophore
-
-[Term]
-id: CEPH:0000151
-name: light organ
-def: "See &quot;photophore.&quot;" [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: CEPH:0000152
@@ -811,7 +874,9 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000154
 name: lip
 def: "Two concentric muscular, glandular rings of skin that surround the mouth and beaks." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001630 ! muscle organ
+relationship: surrounds UBERON:0000166 ! oral opening
+relationship: part_of UBERON:0002199 ! integument
 
 [Term]
 id: CEPH:0000155
@@ -823,18 +888,6 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000156
 name: locking-apparatus of tentacular stalk
 def: "Continuation of the carpal locking apparatus down the oral face of the tentacular stalk. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000157
-name: mantle
-def: "A fold of the body wall that covers the visceral region and encloses a space between the viscera and the mantle called the mantle cavity. In coleoid cephalopods the mantle generally contains strong muscles that can expell water from the mantle cavity to provide thrust for locomotion (= jet propulsion)." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000158
-name: mantle cavity
-def: "Space enclosed by the mantle. In cephalopods the mantle cavity contains the visceral sac, gills, anus, openings of the gonoducts, nephridial pores and various muscles and septa." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -851,8 +904,9 @@ is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: CEPH:0000161
-name: mantle
-def: "(= abdominal) <strong>septum</strong> - A anteroposterior septum that connects the mantle wall with the visceral sac along the midline in the ventral mantle cavity. The ventral mantle artery runs along the anterior end of this septum. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+name: mantle septum
+synonym: "abdominal septum" EXACT []
+def: "A anteroposterior septum that connects the mantle wall with the visceral sac along the midline in the ventral mantle cavity. The ventral mantle artery runs along the anterior end of this septum. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -860,10 +914,11 @@ id: CEPH:0000162
 name: manus
 def: "The proximal, broad portion of the tentacular club. In squids the manus is generally equally expanded on both lateral margins and often includes enlarged suckers." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000291 ! tentacular club
 
 [Term]
 id: CEPH:0000163
-name: mature
+name: mature stage
 def: "In cephalopods this term refers to sexual maturity which is determined for females by the presence of ova (mature eggs) free in the coelom or oviducts, and for males by the presence of spermatophores in Needham's sac." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
@@ -889,19 +944,21 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000172
 name: nephridial coelom
 def: "The cavity of the renal sac. It connects with the exterior via the renal pore and with the visceropericardial coelom via a pair of slender ducts from the latter." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000067 ! cephalopod coelom
 
 [Term]
 id: CEPH:0000175
 name: nidamental gland
 def: "Large glandular structures found in decapodiforms and <strong>Nautilus</strong> that lie in and open directly into the mantle cavity. The glands are composed of numerous lamellae that are involved in secretion of egg cases or the jelly of egg masses." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002530 ! gland
+relationship: continuous_with UBERON:0006580 ! mantle cavity
 
 [Term]
 id: CEPH:0000176
 name: nuchal cartilage
 def: "See nuchal locking-apparatus." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002418 ! cartilage
 
 [Term]
 id: CEPH:0000177
@@ -938,6 +995,7 @@ id: CEPH:0000182
 name: occipital fold
 def: "Fixed folds of the head integument that adjoin the nuchal crest posteriorly and are perpendicular to it. The function of the folds is uncertain." [http://tolweb.org/accessory/Cephalopod_Occipital_Region_Terminology?acc_id=1970]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0002199 ! integument
 
 [Term]
 id: CEPH:0000183
@@ -958,56 +1016,44 @@ def: "The progressively descent into a deeper-water habitat as a cephalopod grow
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000187
+id: CEPH:0000187 ! optic lobes of brain
 name: optic lobes of brain
 def: "Large lobes of the brain associated with the eyes. In octopods and some squids the optic lobes may be separated from the rest of the brain by an optic stalk of varying length. In <strong>Octopus</strong> the optic lobes contain 92 million cells compared with only 42 million in the main central mass of the brain (J. Young, 1963)." [http://tolweb.org/accessory/Cephalopod_Brain_Terminology?acc_id=1944]
-is_a: UBERON:0000061 ! anatomical structure
+comment: editor note: check if this is part of the brain
+is_a: CEPH:0000294 ! lobe of nervous system
 
 [Term]
-id: CEPH:0000188
+id: CEPH:0000292
 name: optic nerve bundle
+synonym: "optic stalk" RELATED []
 def: "Large nerve bundles that run from the optic lobe to the eye." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: continuous_with CEPH:0000187 ! optic lobes of brain
+relationship: continuous_with UBERON:0000970 ! eye
 
 [Term]
-id: CEPH:0000189
-name: optic sinus
-def: "See &quot;Eyelid sinus.&quot;" [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000190
-name: oral
-def: "Toward or on the side of the mouth." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000191
+id: CEPH:0000191 ! outer statocyst capsule
 name: outer statocyst capsule
 def: "Capsule in octopodiforms that is embedded in the cephalic cartilage and contains the statocyst capsule." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000056 ! cephalic cartilage
 
 [Term]
-id: CEPH:0000192
-name: oviduct
-def: "Female gonoduct. The oviduct conducts eggs from the visceropericardial coelom, that holds the ovary, to the exterior and is often used to store eggs. In some argonautoid octopods eggs are fertilized and undergo either partial (<strong>Argonauta</strong> ) or complete (<strong>Ocythoe</strong>) embryonic development within the oviduct." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000193
+id: CEPH:0000193 ! oviducal gland
 name: oviducal gland
 def: "Gland surrounding the end of the primary oviduct and responsible for secreting some of the external coatings over spawned eggs or, in incirrates, the cement at the base of the chorion stalk . In octopods it also acts as a spermatheca, and is located around the apparent middle of the oviduct. However, the &quot;distal oviduct&quot; is actually an extension of the oviducal gland. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0002530 ! gland
+relationship: surrounds CEPH:0000286 ! primary oviduct
 
 [Term]
-id: CEPH:0000194
-name: paralarva
+id: CEPH:0000194 ! paralarval stage
+name: paralarval stage
 def: "First free-living, cephalopod life-history stage that is found in the near-surface plankton and that differs in both morphology and vertical distribution from older juveniles." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000105 ! life cycle stage
 
 [Term]
 id: CEPH:0000196
 name: penis
+synonym: "terminal organ" EXACT octopoda []
 def: "The long, muscular end of the male gonoduct that assists in transfering spermatophores to the female. Apparently, in species with a hectocotylus, the penis transfers spermatophores to the hectocotylus which in turn transfers them to the female. In species without a hectocotylus, the penis is often greatly elongate, capable of extending beyond the mantle cavity and can, apparently, transfer spermatophores directly to the female." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
@@ -1018,52 +1064,77 @@ def: "Cells in photophores that produce bioluminsecence." [http://tolweb.org/acc
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000198
+id: CEPH:0000198 ! photophore
 name: photophore
+synonym: "light organ" EXACT []
 def: "Organ that produces bioluminescence or &quot;living light.&quot; Photophores are often complex with various color filters, reflectors, light guides, lenses and chromatophores surrounding the site of light production, the photogenic region. The name of specific photophores often reflects their position on the animal. For example, the branchial photophore is at the base of the gill, the anal photophore lies at the side of the anus." [http://tolweb.org/accessory/Cephalopod_Photophore_Terminology?acc_id=2015]
-is_a: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0000062 ! organ
+intersection_of: capable_of GO:0008218 ! bioluminescence
+
+[Term]
+id: CEPH:0000290
+name: brachial photophore
+def: "photophore at base of gill" [http://tolweb.org/accessory/Cephalopod_Photophore_Terminology?acc_id=2015]
+is_a: CEPH:0000198 ! photophore
+
+[Term]
+id: CEPH:0000290
+name: anal photophore
+def: "photophore at side of anus" [http://tolweb.org/accessory/Cephalopod_Photophore_Terminology?acc_id=2015]
+is_a: CEPH:0000198 ! photophore
 
 [Term]
 id: CEPH:0000199
 name: photophore location
 def: "Photophores are found in nearly any location in some squid. However, certain locations are the most common. " [http://tolweb.org/accessory/Cephalopod_Photophore_Locations?acc_id=1981]
-relationship: part_of CEPH:0000198 ! photophore
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of CEPH:0000198 ! photophore
 
 [Term]
-id: CEPH:0000200
+id: CEPH:0000200 ! photosensitive vesicle
 name: photosensitive vesicle
 def: "Non-image forming light-receptive organs located inside the cephalic cartilage in squid and on the stellate ganglion in octopods. They perform a variety of function." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-relationship: part_of CEPH:0000243 ! stellate ganglion
+is_a: UBERON:0000062 ! organ
+relationship: capable_of GO:0009584 ! detection of visible light
 
 [Term]
-id: CEPH:0000204
-name: posterior buccal lobe
-def: "(= inferior frontal lobe in squid) - A fused pair of lobes that are the anterior-most lobes of the supraesophageal mass of the brain of decapodiforms but is incorporated into the anterior portion of the supraesophageal mass behind the superior buccal lobes in most octopodiforms. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+id: CEPH:0000288
+name: photosensitive vesicle of cephalic cartilage
+comment: squid
+intersection_of: CEPH:0000200 ! photosensitive vesicle
+intersection_of: part_of CEPH:0000056 ! cephalic cartilage
+
+[Term]
+id: CEPH:0000289
+name: photosensitive vesicle of stellate ganglion
+comment: octopod
+intersection_of: CEPH:0000200 ! photosensitive vesicle
+intersection_of: part_of CEPH:0000243 ! stellate ganglion
 
 [Term]
 id: CEPH:0000205
 name: posterior lip gland
 def: "Large glands surrounding the buccal mass just posterior to the lips. They are especially well-developed in stauroteuthid cirrates." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: surrounds CEPH:0000039 ! buccal mass
 
 [Term]
 id: CEPH:0000206
 name: posterior salivary gland
 def: "Glands generally located just posterior to the head whose secretion travels via a duct into the buccal mass." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0001044 ! salivary gland
 
 [Term]
 id: CEPH:0000207
 name: primary conus
-def: "See conus. " [http://tolweb.org/accessory/Cephalopod_Gladius_Terminology?acc_id=1955]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000072 ! conus
 
 [Term]
 id: CEPH:0000208
 name: protective membrane
 def: "Membranes, generally supported by trabeculae, that form lateral borders along the oral surfaces of the arms and tentacular clubs in decapodiforms." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000291 ! tentacular club
 
 [Term]
 id: CEPH:0000210
@@ -1091,28 +1162,34 @@ is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: CEPH:0000214
-name: radula
+name: cephalopod radula
 def: "A toothed ribbon that lies in the buccal mass and that aids in movement of food into the esophagus." [http://tolweb.org/accessory/Cephalopod_Radula?acc_id=2035]
 is_a: UBERON:0004289 ! radula
+relationship: part_of CEPH:0000039 ! buccal mass
 
 [Term]
 id: CEPH:0000215
 name: renal appendage
+synonym: "nephridium" RELATED []
+synonym: "kidney" RELATED []
 def: "Structures that form the nephridium (=kidney). The renal appendages are outpocketings of the veins within the renal sac (primarily the venae cavae) that are covered with renal epithelium. The The renal sac communicates with the mantle cavity via the nephridial pore." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000216
+id: CEPH:0000216 ! rhachis
 name: rhachis
+synonym: "median field" RELATED []
 def: "Central axis of the gladius, often thickened, that typically extends the full length of the gladius and sometimes called the median field." [http://tolweb.org/accessory/Cephalopod_Gladius_Terminology?acc_id=1955]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000124 ! gladius
 
 [Term]
 id: CEPH:0000217
 name: rostrum
 def: "Portion of the gladius that extends posteriorly or posterodorsally from the conus. A distnct rostrum is found only in the Onychoteuthidae, Ancistrocheiridae, Lampadioteuthinae and Vampyroteuthidae. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-synonym: "gladius" EXACT []
+synonym: "gladius" RELATED []
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000124 ! gladius
 
 [Term]
 id: CEPH:0000218
@@ -1142,13 +1219,14 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000222
 name: secondary conus
 def: "A conical region at the posterior end of the gladius that is formed by an inrolling and fusion of the vanes. The ventral line of fusion is usually apparent. The secondary conus may be rather short or over half the gladius length." [http://tolweb.org/accessory/Cephalopod_Gladius_Terminology?acc_id=1955]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000072 ! conus
+relationship: part_of CEPH:0000124 ! gladius
 
 [Term]
 id: CEPH:0000223
 name: secondary eyelid
 def: "An eyelid that covers the ventral part of the cornea. " [http://tolweb.org/accessory/Cephalopod_Secondary_Eyelid?acc_id=1976]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000000 ! eyelid
 
 [Term]
 id: CEPH:0000224
@@ -1191,12 +1269,13 @@ id: CEPH:0000230
 name: side pocket
 def: "Pockets formed by small membranous folds of integument lateral to the foveola in the funnel groove in ommastrephid and thysanoteuthid squids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000117 ! funnel groove
 
 [Term]
 id: CEPH:0000232
 name: siphuncle
 def: "The tube-like extension of the body wall, coelom and an external covering tube that penetrates the phragmocone and regulates gas exchange into the phragmocone chambers." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+id: UBERON:0000025 ! tube
 
 [Term]
 id: CEPH:0000234
@@ -1227,18 +1306,19 @@ id: CEPH:0000240
 name: stalk of tentacle
 def: "Region of the tentacle proximal to the club." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
 relationship: part_of CEPH:0000256 ! tentacle
+relationship: proximal_to CEPH:0000291 ! tentacular club
 
 [Term]
 id: CEPH:0000241
 name: stalked eye
-def: "See: Eye position and size." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000970 ! eye
 
 [Term]
 id: CEPH:0000242
-name: statocyst
+name: cephalopod statocyst
 def: "A sense-organ that detects gravity, angular accelerations and low-frequency sound. The statocyst is embedded within the cephalic cartlage and contains the statolith." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0006583 ! statocyst
+relationship: part_of CEPH:0000191 ! outer statocyst capsule
 
 [Term]
 id: CEPH:0000243
@@ -1250,7 +1330,8 @@ is_a: UBERON:0000045 ! ganglion
 id: CEPH:0000244
 name: stomach
 def: "A muscular organ of the digestive system where primary digestion occurs. The stomach is generally lined with cuticular ridges to aid in grinding food, and is supplied with digestive enzymes from the digestive gland. The stomach may be greatly expandable in size and serve as a storage area until food can be fully processed." [http://tolweb.org/accessory/Cephalopod_Digestive_System?acc_id=1993]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000062 ! organ
+relationship: part_of UBERON:0001007 ! digestive system
 
 [Term]
 id: CEPH:0000245
@@ -1260,33 +1341,29 @@ is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: CEPH:0000246
-name: subadult
+name: subadult stage
 def: "Stage at which all of the characters that typically define the species are present. The subadult stage follows the Juvenile Stage and precedes the Adult Stage. A subadult stage is defined in cephalopods since the adult phase is frequently abbreviated." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000105 ! life cycle stage
 
 [Term]
-id: CEPH:0000247
-name: subequal
-def: "Nearly equal. Generally refers to the length of the arms when these appear to be approximately the same length. Arm lengths cannot be measured very accurately due to variation in their states of contraction." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000248
+id: CEPH:0000248 ! sucker
 name: sucker
 def: "Muscular suction-cup on the arms and tentacles and occasionally on the buccal supports. The sucker consists of a cup-shaped portion, the acetabulum, and a flat, distal ring, the infundibulum, that contacts the substrate. Suckers of decapodiforms contain horny rings that often bear teeth or sometimes form hooks." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000249 ! sucker series
 
 [Term]
-id: CEPH:0000249
+id: CEPH:0000249 ! sucker series
 name: sucker series
 def: "The longitudinal rows of suckers on the arms or tentacles of decapodiforms. Series (= longitudinal rows) contrasts with rows (= transverse rows) in describing sucker arrangement. In octopodiforms, sucker &quot;series&quot; is generally synonymous with &quot;rows&quot;, the &quot;longitudinal&quot; component of the term is implied. Suckers can form distinct, regular series or indistinct, irregular series. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-relationship: part_of CEPH:0000248 ! sucker
+relationship: part_of UBERON:0000026 ! appendage
 
 [Term]
 id: CEPH:0000250
 name: sucker stalk
 def: "The structure between the sucker and the arm. In octopods it is a cyclindrical structure about the same width as the sucker and in decapodiforms it is constricted into a conical pillar." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-relationship: part_of CEPH:0000248 ! sucker
+relationship: continuous_with CEPH:0000248 ! sucker
+relationship: continuous_with UBERON:0000026 ! appendage
 
 [Term]
 id: CEPH:0000251
@@ -1295,10 +1372,30 @@ def: "Teeth on the inner horny sucker rings of some decapodiforms." [http://tolw
 relationship: part_of CEPH:0000248 ! sucker
 
 [Term]
+id: CEPH:0000299 ! supraesophageal mass of brain
+name: supraesophageal mass of brain
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: part_of CEPH:0000035 ! brain
+
+[Term]
+id: CEPH:0000295 ! buccal lobe
+name: buccal lobe
+is_a: CEPH:0000293 ! lobe of brain
+relationship: part_of CEPH:0000299 ! supraesophageal mass of brain
+
+[Term]
+id: CEPH:0000204
+name: posterior buccal lobe
+synonym: "inferior frontal lobe" EXACT squid []
+def: "A fused pair of lobes that are the anterior-most lobes of the supraesophageal mass of the brain of decapodiforms but is incorporated into the anterior portion of the supraesophageal mass behind the superior buccal lobes in most octopodiforms. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: CEPH:0000295 ! buccal lobe
+
+[Term]
 id: CEPH:0000252
 name: superior buccal lobes
 def: "Lobes of the central nervous system that sit atop the esophagus where the latter enters the buccal mass in decapodiforms but are the anterior-most lobes of the supraesophageal mass of the brain of octopodiforms." [http://tolweb.org/accessory/Cephalopod_Brain_Terminology?acc_id=1944]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000295 ! buccal lobe
+relationship: continuous_with UBERON:0001043 ! esophagus
 
 [Term]
 id: CEPH:0000253
@@ -1311,6 +1408,7 @@ id: CEPH:0000254
 name: suprabrachial commissure
 def: "Nerve commissure that passes dorsal to the esophagus in most octopodiforms and connects the right and left anterior subesophageal masses of the brain." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: dorsal_to UBERON:0001043 ! esophagus
 
 [Term]
 id: CEPH:0000255
@@ -1322,7 +1420,19 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000256
 name: tentacle
 def: "Modified 4th pair of appendages in decapodiforms that are capable of considerable extension and contraction. Although the tentacles are derived evolutionarily from the 4th pair of arms, the term, &quot;arms IV&quot; is reserved for the subsequent arm pair, the ventral arms, which are evolutionarily the 5th pair of arms. Each tentacle consist of a proximal stalk usually devoid of suckers, and a distal club armed with suckers and occasionally hooks." [http://tolweb.org/accessory/Composite_Squid?acc_id=1936]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000026 ! appendage
+
+[Term]
+id: CEPH:0000264
+name: terminal pad
+synonym: "terminal pad of tentacular club" EXACT []
+def: "A circlet or disc of small suckers at the tip of the tentacular club. The pad of one club can adhere to the pad of the other club which holds the clubs together at their tips." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+relationship: part_of CEPH:0000256 ! tentacle
+
+[Term]
+id: CEPH:0000291 ! tentacular club
+name: tentacular club
+relationship: part_of CEPH:0000256 ! tentacle
 
 [Term]
 id: CEPH:0000257
@@ -1343,46 +1453,25 @@ def: "A pocket that surrounds the base of each tentacle and provides some room f
 relationship: part_of CEPH:0000256 ! tentacle
 
 [Term]
-id: CEPH:0000260
-name: tentacle terminology
-def: "." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
-relationship: part_of CEPH:0000256 ! tentacle
-
-[Term]
 id: CEPH:0000261
 name: tentacle thickness
 def: "." [http://tolweb.org/accessory/Cephalopod_Tentacle_Thickness?acc_id=2016]
-relationship: part_of CEPH:0000256 ! tentacle
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of CEPH:0000256 ! tentacle
 
 [Term]
-id: CEPH:0000262
-name: tentacular sheath
-def: "This is an alternative term for the lateral keel of arm IV. The keels of arms IV are offset laterally and often enlarged to fully or partially conceal, protect or encase the adjacent tentacles. The latter function is most fully developed in the chiroteuthids and mastigoteuthids." [http://tolweb.org/accessory/Cephalopod_Brachial_and_Buccal_Crowns?acc_id=1957]
-relationship: part_of CEPH:0000256 ! tentacle
+id: CEPH:0000148
+name: lateral membrane of arm IV
+def: "The keels of arms IV are offset laterally and often enlarged to fully or partially conceal, protect or encase the adjacent tentacles. The latter function is most fully developed in the chiroteuthids and mastigoteuthids." [http://tolweb.org/accessory/Cephalopod_Brachial_and_Buccal_Crowns?acc_id=1957]
+synonym: "tentacular sheath" EXACT [http://tolweb.org/accessory/Cephalopod_Brachial_and_Buccal_Crowns?acc_id=1957]
+is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000017 ! arm IV
 
 [Term]
 id: CEPH:0000263
 name: terminal fin
 def: "Fins that extend to the posterior end of the body." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000264
-name: terminal pad
-def: "(tentacular club)</a> - A circlet or disc of small suckers at the tip of the tentacular club. The pad of one club can adhere to the pad of the other club which holds the clubs together at their tips." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-relationship: part_of CEPH:0000256 ! tentacle
-
-[Term]
-id: CEPH:0000265
-name: terminal fin
-def: "Fins with more than 50% of their length posterior to the muscular mantle. These fins, therefore, are at the &quot;terminal&quot; or posterior end of the body and are generally suported by an elongate secondary conus of the gladius." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000266
-name: terminal organ
-def: "A term often used for the penis in the Octopoda." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000267
@@ -1404,27 +1493,25 @@ is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: CEPH:0000270
-name: tubercule
+name: cephalopod tubercule
 def: "Structures with one or more cusps just beneath the surface epithelium. Tubercules may be cartilagenous, fibrous or of other structure and may be confined to the integument or extend deeper.        " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0005813 ! tubercle
 
 [Term]
-id: CEPH:0000271
-name: vanes
-def: "(= wings; lateral fields)</a> - Broad, lateral portions of the gladius that arise from the rachis." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+id: CEPH:0000271 ! vane
+name: vane
+synonym: "wing" EXACT []
+synonym: "lateral field" EXACT []
+def: "Broad, lateral portions of the gladius that arise from the rhachis." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
-id: CEPH:0000272
-name: ventral
-def: "Toward the lower surface of the animal (i.e., the side on which the funnel is located)." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000124 ! gladius
+relationship: adjacent_to CEPH:0000216 ! rhachis
 
 [Term]
 id: CEPH:0000273
 name: ventral eyelid
 def: "An eyelid that can cover much of the cornea from a ventral position in many sepioids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000000 ! eyelid
 
 [Term]
 id: CEPH:0000274
@@ -1436,25 +1523,27 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000275
 name: vesicular tissue
 def: "Tissues found in some decapodiforms that contain numberous vesicles filled with water that usually contains ammonium chloride. The vesicles may be concentrated in certain structures (e.g., the ventral arms) or scattered throughout the animal. The light solution in the vesicles provide buoyant lift." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000479 ! portion of tissue
 
 [Term]
 id: CEPH:0000276
 name: visceral nucleus
 def: "A concentration of digestive organs that sometimes includes reproductive organs as well. In cranchiid squids the visceral nucleus is especially distinct: the small, spindle-shaped digestive gland contains the ink sac and is adjacent to the stomach and caecum and associated structures (eg, digestive gland duct appendages, renal appendages). In most cephalopods the concentration of these structures is not so extensive but whenever a concentration exists, a visceral nucleus is present." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: adjacent_to CEPH:0000046 ! caecum
 
 [Term]
 id: CEPH:0000277
 name: visceral sac
+synonym: "visceral dome" EXACT []
 def: "The body posterior to the head surrounded by the mantle. The body wall in this region that incases the viscera is usually rather thin-walled, hence the name &quot;visceral sac.&quot; The visceral sac is also called the &quot;visceral dome.&quot;" [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000278
+id: CEPH:0000278 ! visceropericardial coelom
 name: visceropericardial coelom
 def: "The largest coelom in cephalopods except in the Octopoda where it is greatly reduced. Geneally it encloses the gonad, and partially the stomach, caecum and ventricle among other structures. Eggs and sperm are released into the coelom and picked up by the gonoducts. The visceropercardial coelom also communicates with the other cephalopod coelom, the nephridial coelom, and the mantle cavity via a pair of ducts that open at the base of the nephridial papillae." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000067 ! cephalopod coelom
 
 [Term]
 id: CEPH:0000279
@@ -1466,7 +1555,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000280
 name: web
 def: "Muscular membrane that extends between the arms of many octopodiforms but is reduced or absent in most decapodiforms." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000158 ! membranous layer
 
 [Term]
 id: CEPH:0000281
@@ -1498,6 +1587,25 @@ name: biological_process
 def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." [GOC:go_curators, GOC:isa_complete]
 
 [Term]
+id: GO:0008218 ! bioluminescence
+name: bioluminescence
+def: "The production of light by certain enzyme-catalyzed reactions in cells." [ISBN:0198506732]
+xref: Wikipedia:Bioluminescence
+is_a: GO:0008150  ! biological_process
+
+[Term]
+id: GO:0040011
+name: locomotion
+def: "Self-propelled movement of a cell or organism from one location to another." [GOC:dgh]
+is_a: GO:0008150  ! biological_process
+
+[Term]
+id: GO:0060361
+name: flight
+def: "Self-propelled movement of an organism from one location to another through the air, usually by means of active wing movement." [GOC:dph]
+is_a: GO:0040011  ! locomotion
+
+[Term]
 id: UBERON:0000000
 name: processual entity
 def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." [span:ProcessualEntity]
@@ -1525,20 +1633,19 @@ synonym: "sensor" RELATED []
 synonym: "sensory organ" EXACT []
 synonym: "sensory organ system organ" EXACT [OBOL:automatic]
 synonym: "sensory system organ" EXACT [OBOL:automatic]
-synonym: "Sinnesorgan" RELATED [BTO:0000202]
-is_a: UBERON:0000062 ! organ
-intersection_of: UBERON:0000062 ! organ
+synonym: "Sinnesorgan" RELATED [BTO:0000202]i
+ntersection_of: UBERON:0000062 ! organ
 intersection_of: part_of UBERON:0001032 ! sensory system
 
 [Term]
-id: UBERON:0000025
+id: UBERON:0000025 ! tube
 name: tube
 def: "Epithelial and endothelial tubes transport gases, liquids and cells from one site to another and form the basic structure of many organs and tissues including lung and trachea, kidney, the mammary gland, the vascular system and the gastrointestinal and urinary-genital tracts. with tube shape and organization varying from the single-celled excretory organ in Caenorhabditis elegans to the branching trees of the mammalian kidney and insect tracheal system" [GO:0035295, PMID:12526790]
 synonym: "epithelial or endothelial tube" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: UBERON:0000026
+id: UBERON:0000026 ! appendage
 name: appendage
 def: "Organ or organ part that is attached to the body of an organism. For example a limb[GO, modified]. An appendage is an external body part, or natural prolongation, that protrudes from an organism's body, such as a vertebrate's limbs[BILA]." [BILA:0000018, GO:0048736, Wikipedia:Appendage]
 comment: GO includes tree trunks, but excludes  antennae. We modify trunk to body in our definition. Note this is currently a subtype of organism subdivision - which would exclude feathers
@@ -1564,7 +1671,6 @@ def: "A biological tissue mass, most commonly a mass of nerve cell bodies." [Wik
 comment: TODO - check vert vs invert. Other species: Any of a number of aggregations of neurons, glial cells and their processes, surrounded by a glial cell and connective tissue sheath (plural: ganglia). // Subdivision of neural tree (organ) which primarily consists of cell bodies of neurons located outside the neuraxis (brain and spinal cord); together with a nucleus and its associated nerve, it constitutes a neural tree (organ). Examples: spinal ganglion, trigeminal ganglion, superior cervical ganglion, celiac ganglion, inferior hypogastric (pelvic) ganglion. // a cluster of nerve cells and associated glial cells (nuclear location) // Portion of tissue that contains cell bodies of neurons and is located outside the central nervous system. // Structures containing a collection of nerve cell bodies. (Source: BioGlossary, www.Biology-Text.com). TODO: add epithelial capsule to definition? Always true?
 synonym: "ganglia" RELATED []
 synonym: "neural ganglion" RELATED [BTO:0000497]
-is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0003714 ! neural tissue
 relationship: part_of UBERON:0001016 ! nervous system
 
@@ -1724,6 +1830,18 @@ relationship: part_of UBERON:0001555 ! digestive tract
 relationship: part_of UBERON:0005409 ! gastrointestinal system
 
 [Term]
+id: UBERON:0001245 ! anus
+name: anus
+namespace: uberon
+alt_id: UBERON:FMA_15711-MA_0000331-ZFA_0000066
+def: "Orifice at the opposite end of an animal's digestive tract from the mouth. Its function is to expel feces, unwanted semi-solid matter produced during digestion, which, depending on the type of animal, may be one or more of: matter which the animal cannot digest, such as bones; food material after all the nutrients have been extracted, for example cellulose or lignin; ingested matter which would be toxic if it remained in the digestive tract; and dead or excess gut bacteria and other endosymbionts." [Wikipedia:Anus, ZFIN:curator]
+comment: This class was created automatically from a combination of ontologies
+synonym: "anal orifice" EXACT []
+synonym: "proctodeum" RELATED []
+is_a: UBERON:0000161  ! orifice
+relationship: part_of UBERON:0001555 ! digestive tract
+
+[Term]
 id: UBERON:0000161
 name: orifice
 def: "Anatomical conduit that connects two adjacent body spaces, surrounded by two or more subdivisions of two or more organs. Examples: right atrioventricular orifice, orifice of artery, hilum of kidney, porta hepatis." [FMA:3724]
@@ -1733,7 +1851,7 @@ synonym: "hilum" NARROW []
 is_a: UBERON:0004111 ! anatomical conduit
 
 [Term]
-id: UBERON:0000165
+id: UBERON:0000165 ! mouth
 name: mouth
 def: "First portion of the alimentary canal that receives food and begins digestion by mechanically breaking up the solid food particles into smaller pieces and mixing them with saliva. The oral mucosa is the mucous membrane epithelium lining the inside of the mouth." [Wikipedia:Mouth]
 comment: TODO - check fly mouthpart. note in uberon we distinguish between the mouth and the oral opening. the mouth is part of the digestive tract. TODO - check isa parent subdivision of head - is it a subdivision of the head or digestive tract
@@ -2036,7 +2154,7 @@ relationship: part_of UBERON:0000990 ! reproductive system
 relationship: part_of UBERON:0002323 ! body cavity
 
 [Term]
-id: UBERON:0000992
+id: UBERON:0000992 ! ovary
 name: ovary
 def: "Ovum-producing female reproductive organ." [Wikipedia:Ovary]
 comment: Ovaries of some kind are found in the female reproductive system of many animals that employ sexual reproduction, including invertebrates. However, they develop in a very different way in most invertebrates than they do in vertebrates, and are not truly homologous. Many of the features found in human ovaries are common to all vertebrates, including the presence of follicular cells, tunica albuginea, and so on. However, many species produce a far greater number of eggs during their lifetime than do humans, so that, in fish and amphibians, there may be hundreds, or even millions of fertile eggs present in the ovary at any given time. In these species, fresh eggs may be developing from the germinal epithelium throughout life. Corpora lutea are found only in mammals, and in some elasmobranch fish; in other species, the remnants of the follicle are quickly resorbed by the ovary. In birds, reptiles, and monotremes, the egg is relatively large, filling the follicle, and distorting the shape of the ovary at maturity. Amphibians and reptiles have no ovarian medulla; the central part of the ovary is a hollow, lymph-filled space. The ovary of teleosts is also often hollow, but in this case, the eggs are shed into the cavity, which opens into the oviduct. Although most normal female vertebrates have two ovaries, this is not the case in all species. In birds and platypuses, the right ovary never matures, so that only the left is functional. In some elasmobranchs, the reverse is true, with only the right ovary fully developing. In the primitive jawless fish, and some teleosts, there is only one ovary, formed by the fusion of the paired organs in the embryo[WP].
@@ -2069,7 +2187,7 @@ intersection_of: part_of UBERON:0000474 ! female reproductive system
 relationship: part_of UBERON:0000474 ! female reproductive system
 
 [Term]
-id: UBERON:0000993
+id: UBERON:0000993 ! oviduct
 name: oviduct
 def: "passage from the ovaries to the outside of the body[Wikipedia:Oviduct]." [Wikipedia:Oviduct]
 comment: note that the more specific class fallopian tube is included, which has mammal-specific relationships
@@ -2165,7 +2283,6 @@ name: nerve
 def: "an enclosed, cable-like bundle of peripheral axons [wikipedia]. A portion of tissue which is a fasiculated group of axons[ZFA]. Segment of neural tree organ which has as its parts a nerve trunk and its branches; together with other nerves of the same tree it constitutes a neural tree. Examples: chorda tympani, digastric branch of facial nerve, greater petrosal nerve, posterior cutaneous branch of posterior ramus of cervical nerve, superior lateral cutaneous nerve of arm[FMA]." [FMA:65132, Wikipedia:Nerve, ZFA:0007009, ZFIN:curator]
 comment: check nerve vs peripheral nerve vs tract
 synonym: "neural subtree" RELATED [FMA:65132]
-is_a: UBERON:0000479 ! portion of tissue
 is_a: UBERON:0003714 ! neural tissue
 relationship: part_of UBERON:0000010 ! peripheral nervous system
 
@@ -2198,7 +2315,7 @@ comment: Note we define this generically to include invertebrates, but the class
 is_a: UBERON:0004921 ! subdivision of digestive tract
 
 [Term]
-id: UBERON:0001043
+id: UBERON:0001043 ! esophagus
 name: esophagus
 def: "Tube that connects the pharynx to the stomach." [Wikipedia:Esophagus]
 comment: esophagus NOT part of gut in MA. part of gut in ZFA. part_of gut (via UGIT) in FMA. Consider splitting.
@@ -2212,16 +2329,12 @@ relationship: part_of UBERON:0001041 ! foregut
 relationship: part_of UBERON:0002224 ! thoracic cavity
 
 [Term]
-id: UBERON:0001044
+id: UBERON:0001044 ! salivary gland
 name: salivary gland
 def: "saliva-secreting exocrine glands of the oral cavity[GO]. The salivary glands in mammals are exocrine glands, glands with ducts, that produce saliva. They also secrete amylase, an enzyme that breaks down starch into maltose. In other organisms such as insects, salivary glands are often used to produce biologically important proteins like silk or glues, and fly salivary glands contain polytene chromosomes that have been useful in genetic research[WP]." [GO:0007431, Wikipedia:Salivary_gland]
 comment: currently we define saliva and salivary glands very generally in functional terms but it may be more appropriate to split this class. From WP: In most vertebrates, saliva does not contain any enzymes, consisting of mucus and water only, and its primary function is to moisten food while eating. As a result, true salivary glands are rarely found in fish or aquatic tetrapods, although there are often individual mucus-secreting cells. Amphibians have a single salivary gland, the intermaxillary gland, located in the forward part of the palate. Reptiles and birds  normally have only very small glands on the lips, palate, and base of the mouth, although there are some birds with large glands, which produce a sticky saliva that helps in nest-building. The distinct parotid, submandibular, and sublingual glands are only developed in mammals.[3] The salivary glands of some species, however, are modified to produce enzymes; salivary amylase is found in many, but by no means all, bird and mammal species (including humans, as noted above). Furthermore, the venom glands of poisonous snakes, Gila monsters, and some shrews, are modified salivary glands
 is_a: UBERON:0002530 ! gland
-is_a: UBERON:0003293 ! gland of oral region
-is_a: UBERON:0003294 ! gland of foregut
-relationship: part_of UBERON:0000166 ! oral opening
 relationship: part_of UBERON:0000167 ! oral cavity
-relationship: part_of UBERON:0001041 ! foregut
 
 [Term]
 id: UBERON:0001062
@@ -2682,7 +2795,7 @@ is_a: UBERON:0001981 ! blood vessel
 relationship: part_of UBERON:0004582 ! venous system
 
 [Term]
-id: UBERON:0003978
+id: UBERON:0003978 ! valve
 name: valve
 is_a: UBERON:0000061 ! anatomical structure
 
@@ -2847,7 +2960,7 @@ synonym: "pallium" RELATED [Wipikedia:Mantle_(mollusc)]
 is_a: UBERON:0000309 ! body wall
 
 [Term]
-id: UBERON:0006583
+id: UBERON:0006583 ! statocyst
 name: statocyst
 def: "Acellular mineralized structure located in the statocyst (balance organ) of some aquatic invertebrates[WP]." [Wikipedia:Statocyst]
 is_a: UBERON:0000062 ! organ
@@ -2864,6 +2977,56 @@ id: UBERON:0006612
 name: shell
 is_a: UBERON:0006611 ! exoskeleton
 
+[Term]
+id: UBERON:0006580 ! mantle cavity
+name: mantle cavity
+def: "Space enclosed by the mantle. In cephalopods the mantle cavity contains the visceral sac, gills, anus, openings of the gonoducts, nephridial pores and various muscles and septa." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+intersection_of: UBERON:0002553 ! anatomical cavity
+intersection_of: part_of UBERON:0006575 ! mantle
+
+[Term]
+id: UBERON:0006581
+name: mantle muscle
+intersection_of: UBERON:0001630 ! muscle organ
+intersection_of: part_of UBERON:0006575 ! mantle
+
+[Term]
+id: UBERON:0006799
+name: glandular epithelium
+def: "Epithelium composed of secretory cells." [Online_Medical_Dictionary:http://cancerweb.ncl.ac.uk/]
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0000952 ! adductor muscle
+name: adductor muscle
+def: "Muscle that causes adduction can be called an adductor muscle. For example in biology, the muscle or muscles in the interior of a bivalve mollusk which serve to close the valves are called adductor muscles, and the large foot to shell muscle in gastropods such as the abalone and limpet is also known as an adductor muscle[WP]. A muscle that brings a body part  closer to the sagittal plane of the body[ZFA, WikipediaLAdduction]." [Wikipedia:Adductor_muscle]
+synonym: "adductor" RELATED []
+is_a: UBERON:0001630 ! muscle organ
+
+[Term]
+id: CL:0000000
+name: cell
+namespace: cell
+def: "Anatomical structure that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." [CARO:mah]
+xref: FMA:68646
+
+[Term]
+id: CL:0000147 ! pigment cell
+name: pigment cell
+namespace: cell
+def: "A pigment cell is a cell that contains pigment granules." [GOC:tfm]
+synonym: "chromatocyte" EXACT []
+synonym: "chromatophore" EXACT []
+is_a: CL:0000325  ! stuff accumulating cell
+
+[Term]
+id: CL:0000325
+name: stuff accumulating cell
+namespace: cell
+def: "A cell that is specialised to accumulate a particular substance(s)." [FB:ma]
+is_a: CL:0000000  ! cell
+
 [Typedef]
 id: aboral_to
 name: aboral to
@@ -2876,4 +3039,12 @@ name: develops from
 [Typedef]
 id: part_of
 name: part of
+
+[Typedef]
+id: has_part
+name: has part
+
+[Typedef]
+id: trait_of
+name: trait of
 
