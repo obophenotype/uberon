@@ -256,6 +256,10 @@ uber_links_obo.obo: uber_links.pro
 uber_alles.obo: uber_links_obo.obo uber_obo.obo	
 	obo2obo -o $@ uber_links_obo.obo uber_obo.obo part_of.obo
 
+# ----------------------------------------
+# BUILDS
+# ----------------------------------------
+
 %-xf.obo: %.obo
 	egrep -v '^xref: (OpenCyc|http)' $< > $@
 
@@ -272,7 +276,8 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 %-mireot.obo: %.obo
-	blip -table_pred ontol_db:bf_parentRT/2 -i $< -r fma_simple -r mouse_anatomy -r zebrafish_anatomy -r fly_anatomy -r xenopus_anatomy ontol-query -query "entity_xref(_,X),bf_parentRT(X,ID),entity_label(ID,_)" -to obo > $@.tmp && mv $@.tmp $@
+	blip -i $< -r go -r cell -r chebi_slim -r taxslim ontol-query -mireot UBERON -to obo > $@
+#	blip -table_pred ontol_db:bf_parentRT/2 -i $< -r fma_simple -r mouse_anatomy -r zebrafish_anatomy -r fly_anatomy -r xenopus_anatomy ontol-query -query "entity_xref(_,X),bf_parentRT(X,ID),entity_label(ID,_)" -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: fma-mireot.obo
 
 
@@ -292,7 +297,9 @@ uberon_edit-mireot-implied.obo: uberon_edit-mireot.obo
 	obo2obo -o -saveimpliedlinks $@ $<
 
 uberon.obo: uberon_edit-implied.obo
-	obo-filter-external.pl --xp2rel $< | egrep -v '^(domain|range):' > $@
+	obo-filter-external.pl --xp2rel $< | egrep -v '^(domain|range):' > $@.tmp && obo-add-data-version.pl $@.tmp > $@
+
+
 
 uberon_edit_plus_%-implied.obo: uberon_edit.obo
 	obo2obo -allowdangling -o -saveimpliedlinks -allowdangling $@ $*.obo $<
@@ -384,12 +391,20 @@ fma_s.obo:
 birnlex_anatomy_s.obo: nif_anatomy.obo
 	blip -u ontol_manifest_synonym_from_birnlex_anatomy.pro -i $< io-convert -to obo -o $@
 
+mesh_anatomy.obo: mesh.obo
+	blip -table_pred ontol_db:subclassT/2 ontol-query -i $< -query "subclassT(ID,'MESH:A')" -to obo > $@
+
 uberon-grep-go.pro: 
 	obol -r obol_av -debug obol -u onto_grep -i uberon_edit.obo -r go onto-grep  -optimize -query "belongs(ID,biological_process)" > $@.tmp && mv $@.tmp $@
+
+align-uberon-strict-%.obo:
+	obol -goal "consult('ignore_word_adult.pro')" -u onto_grep -r $* -i uberon_edit.obo onto-exact-align -ont2 uberon -exclude_xref_strict -exclude_xref  -disp 'format(obo)' > $@.tmp && mv $@.tmp $@
+.PRECIOUS: align-uberon-%.obo
 
 align-uberon-%.obo:
 	obol -goal "consult('ignore_word_adult.pro')" -u onto_grep -r $* -i uberon_edit.obo onto-exact-align -ont2 uberon -exclude_xref_strict -exclude_xref -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' -disp 'format(obo)' > $@.tmp && mv $@.tmp $@
 .PRECIOUS: align-uberon-%.obo
+
 
 syns-uberon-%.obo:
 	blip -r $* -r uberon -i fetchsyns.pro -goal write_syns,halt > $@
