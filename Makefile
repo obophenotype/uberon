@@ -84,6 +84,9 @@ fma_xp_uberon-obol.obo:
 ehdaa2_xp_uberon-obol.obo: ehdaa2_xp_uberon.obo
 	$(OBOLX) -i $< -u obol_ehdaa_xp -r uberon -r ehdaa2 obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
 
+emapaa.obo:
+	blip-ddb -debug index  -r emapa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
+
 emapa_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_ehdaa_xp -r uberon -r emapa obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
 
