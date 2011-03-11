@@ -87,6 +87,9 @@ ehdaa2_xp_uberon-obol.obo: ehdaa2_xp_uberon.obo
 emapaa.obo:
 	blip-ddb -debug index  -r emapa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
 
+ehdaaa.obo:
+	blip-ddb -debug index  -r ehdaa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
+
 emapa_xp_uberon-obol.obo:
 	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_ehdaa_xp -r uberon -r emapa obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
 
@@ -329,6 +332,14 @@ uberon-dv2.txt: uberon.obo
 %-dv.txt: %.obo
 	blip  -i $< -u query_obo findall disjointness_violationNR/3 > $@.tmp && sort -u $@.tmp > $@
 
+CARO_ONTS=PO FBbt HAO TAO ZFA XAO TADS TGMA SPD
+all-caro-dv: $(patsubst %,caro-dv-%.txt,$(CARO_ONTS))
+all-caro-usage: $(patsubst %,caro-usage-%.txt,$(CARO_ONTS))
+caro-dv-%.txt:
+	blip-findall -consult carocheck.pro -r caro -r $* dv/3 -label -use_tabs > $@
+caro-usage-%.txt:
+	blip-findall -consult carocheck.pro -r caro -r $* usage/2 -label -use_tabs > $@
+
 %-to-caro.obo:
 	 obo-promote-dbxref-to-relationship.pl --minimal --idspace CARO --relation is_a $*.obo > $@.tmp && mv $@.tmp $@
 
@@ -504,7 +515,7 @@ newterms-fma-ehdaa2.obo:
 	obol -debug index -u onto_grep onto-3-way-align -r ehdaa2 -r fma -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
 
 newterms-fma-emapa.obo:
-	obol -u onto_grep onto-3-way-align -r emapa -r fma -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r emapaa -r fma -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
 
 newterms-emapa-ehdaa2.obo:
 	obol -u onto_grep onto-3-way-align -r ehdaa2 -r emapa -r uberon -i ehdaa2_xp_uberon.obo -ont1 'http://www.xspan.org/obo.owl#' -ont2 abstract_anatomy -ont3 uberon > $@
@@ -942,8 +953,11 @@ mappings/bp_mappings-%.txt: mappings/bp_mappings-%.rdf
 mappings/bp_mappings-%.pro: mappings/bp_mappings-%.txt
 	tbl2p -p bp_mapping $< > $@
 
-mappings/summary.html:
+mappings/summary-Full.html:
 	./make-mappings-table2.pl > $@
+
+mappings/summary-PR.html:
+	./make-mappings-table3.pl > $@
 
 uxrefs-ontol_db.pro: uberon.obo
 	blip-findall -r uberonp entity_xref/2 > $@
