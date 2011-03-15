@@ -18,7 +18,7 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 	obolib-obo2owl -o file://`pwd`/$@ $<
 
 %-orphans: %.obo
-	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@
+	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@.tmp && obo-skip-header.pl $@.tmp > $@
 
 %-xp-check: %.obo
 	obo-check-xps.pl $< >& $@ || echo "problems"
@@ -155,7 +155,7 @@ uberon-%-misalign.txt: %.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-cycles  uberon-dv.txt uberon-discv.txt 
+uberon-qc: uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo   uberon-dv.txt uberon-discv.txt uberon-simple.obo
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
@@ -172,7 +172,9 @@ uberon-discv-%.txt: uberon-with-isa.obo
 %-discv.txt: %.obo
 	blip -table_pred ontol_db:parentRT/3 -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $<  -u query_obo findall disjoint_over_violation/4 -label > $@
 %-taxcheck.txt: %.obo
-	blip-findall -i ncbi_taxon_slim.obo -i $< -i adhoc_uberon.pro "class_taxon_invalid(U,X,T,Y,TY)" -label > $@
+	blip-findall -table_pred parentRT/2 -i ncbi_taxon_slim.obo -i $< -i adhoc_uberon.pro "class_taxon_invalid(U,X,T,Y,TY)" -label > $@
+%-obscheck.txt: %.obo
+	((obo-map-ids.pl --use-consider --use-replaced_by $< $<) > /dev/null) >& $@
 
 # no stemming
 zfa-xao-aln.tbl:
@@ -286,6 +288,8 @@ uberon-isa-to-%.obo: uberon.obo
 #	blip -table_pred ontol_db:bf_parentRT/2 -i $< -r fma_simple -r mouse_anatomy -r zebrafish_anatomy -r fly_anatomy -r xenopus_anatomy ontol-query -query "entity_xref(_,X),bf_parentRT(X,ID),entity_label(ID,_)" -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: fma-mireot.obo
 
+%-simple.obo: %.obo
+	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))'  > $@
 
 %-bridge.obo: %-with-isa.obo
 	obo-filter-tags.pl -t id -t is_a $< | obo-grep.pl --neg -r 'id: UBERON' - | obo-grep.pl -r Term -  > $@
@@ -329,8 +333,8 @@ uberon-nonobvious-matches.txt:
 uberon-dv2.txt: uberon.obo
 	 blip -import_all -i uberon-imports-full.obo -u query_anatomy findall xref_disjoint_violation/5 > $@.tmp && sort -u $@.tmp > $@
 
-%-dv.txt: %.obo
-	blip  -i $< -u query_obo findall disjointness_violationNR/3 > $@.tmp && sort -u $@.tmp > $@
+#%-dv.txt: %.obo
+#	blip  -i $< -u query_obo findall disjointness_violationNR/3 > $@.tmp && sort -u $@.tmp > $@
 
 CARO_ONTS=PO FBbt HAO TAO ZFA XAO TADS TGMA SPD
 all-caro-dv: $(patsubst %,caro-dv-%.txt,$(CARO_ONTS))
