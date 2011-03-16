@@ -17,6 +17,9 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 %.owl: %.obo
 	obolib-obo2owl -o file://`pwd`/$@ $<
 
+%.owlcheck: %.obo
+	obolib-obo2owl --allow-dangling -o file://`pwd`/$@ $<
+
 %-orphans: %.obo
 	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@.tmp && obo-skip-header.pl $@.tmp > $@
 
@@ -155,7 +158,7 @@ uberon-%-misalign.txt: %.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo   uberon-dv.txt uberon-discv.txt uberon-simple.obo
+uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo   uberon-dv.txt uberon-discv.txt uberon-simple.obo
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
@@ -687,6 +690,18 @@ organ_association.txt:
 fma-mireot.obo: fma_xp.obo
 	blip -i $< -r fma_simple ontol-subset -rel subclass -rel part_of -query "differentium(_,_,ID);genus(_,ID)" -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: fma-mireot.obo
+
+# -- CROSS-SPECIES MAPPINGS
+
+MAP_ONTS = ZFA MA EHDAA EHDAA2 EMAPA FBbt XAO AAO FMA
+all-uberon-map: $(patsubst %,uberon-map-from-%.tbl,$(MAP_ONTS))
+
+uberon-map-from-FMA.tbl:
+	 blip -r cell  -r uberonp -r fma3 -consult make_mapping_table.pro findall "bestmatch('FMA',_,_,_,_,_)" -label -use_tabs -no_pred > $@
+uberon-map-from-%.tbl:
+	 blip -r cell  -r uberonp -r $* -consult make_mapping_table.pro findall "bestmatch('$*',_,_,_,_,_)" -label -use_tabs -no_pred > $@
+
+# --
 
 MAPARGS = -i exclude_cell.pro -u metadata_mappings -table_pred "ontol_db:bf_parentRT/2" -table_pred ontol_db:subclassT/2 -index "metadata_db:entity_label(1,1)"  "compare_mapping([bp,uberon],_,_,_,_,_,_,_)" -label | cut -f3-12 
 
