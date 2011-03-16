@@ -696,9 +696,9 @@ fma-mireot.obo: fma_xp.obo
 MAP_ONTS = ZFA MA EHDAA EHDAA2 EMAPA FBbt XAO AAO FMA
 all-uberon-map: $(patsubst %,uberon-map-from-%.tbl,$(MAP_ONTS))
 
-uberon-map-from-FMA.tbl:
+uberon-map-from-FMA.tbl: uberon.obo
 	 blip -r cell  -r uberonp -r fma3 -consult make_mapping_table.pro findall "bestmatch('FMA',_,_,_,_,_)" -label -use_tabs -no_pred > $@
-uberon-map-from-%.tbl:
+uberon-map-from-%.tbl: uberon.obo
 	 blip -r cell  -r uberonp -r $* -consult make_mapping_table.pro findall "bestmatch('$*',_,_,_,_,_)" -label -use_tabs -no_pred > $@
 
 # --
