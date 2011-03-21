@@ -280,7 +280,7 @@ uber_alles.obo: uber_links_obo.obo uber_obo.obo
 
 # for now we use a simplified set of relations, as this is geared towards analysis
 uberon-with-isa-for-%.obo: uberon.obo
-	blip-ddb -i $< -u ontol_manifest_has_subclass_from_selected_xref -u ontol_management -goal "set_selected_idspaces('$*'),delete_relation_usage_except([develops_from,part_of,continuous_with,capable_of])" io-convert -to obo -o $@
+	blip-ddb -i $< -u ontol_manifest_has_subclass_from_selected_xref -u ontol_management -goal "set_selected_idspaces('$*'),retractall(ontol_db:disjoint_from(_,_)),delete_relation_usage_except([develops_from,part_of,continuous_with,capable_of])" io-convert -to obo -o $@
 .PRECIOUS: %-with-isa.obo
 
 uberon-isa-to-%.obo: uberon.obo
