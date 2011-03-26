@@ -113,12 +113,71 @@ test_class_covers_taxon(C,T) :-
         parent(C1,C),           % (assumes reasoner)
         parent(C1,only_in_taxon,T1), % ensure class-level?
         subclass(T1,T).
-        
+
 test_class_covers_taxon_direct(C,T) :-
         parent(C1,C),
         entity_xref(C1,X),
         id_idspace(X,S),
         idspace_taxon(S,T).
+
+class_taxon_leaf(C,T) :- entity_xref(C,X),id_idspace(X,S),idspace_taxon(S,T).
+
+%% class_origin_taxon(C,T)
+%
+% estimate origin of class C based on existing ssAO assignments
+class_origin_taxon(C,T) :-
+        class(C),
+        id_idspace(C,'UBERON'),
+        \+ entity_partition(C,upper_level),
+        debug(tax,'finding taxon LCA for: ~w',[C]),
+        setof(D,parentRT(D,C),Ds),
+        debug(tax,'   refs: ~w',[Ds]),
+        setof(T2,D^(member(D,Ds),class_taxon_leaf(D,T2)),T2s),
+        debug(tax,'   leaf taxa: ~w',[T2s]),
+        subclass_lca(T2s,T).
+class_origin_taxon(C,'NCBITaxon:33208') :-
+        entity_partition(C,upper_level).
+        
+class_in_taxon_slim(C,T,IsConfident) :-
+        call_unique(class(C)),
+        id_idspace(C,'UBERON'),
+        class_in_taxon_slim_2(C,T,IsConfident).
+
+class_in_taxon_slim_2(C,T,IsConfident) :-
+        \+ class_not_in_taxon_slim(C,T),
+        (   class_origin_taxon(C,T2),
+            subclassRT(T,T2)
+        ->  IsConfident=true
+        ;   parentRT(C,C2), % special case - if there is an EXACT only_in_taxon match
+            restriction(C2,only_in_taxon,T) % e.g. only_in_taxon for Aves and arcopallium
+        ->  IsConfident=true
+        ;   IsConfident=false),
+        !.
+class_in_taxon_slim_2(C,T,true) :-
+
+class_in_taxon_slim(C,T) :-
+        call_unique(class(C)),
+        id_idspace(C,'UBERON'),
+        \+ class_not_in_taxon_slim(C,T).
+
+class_not_in_taxon_slim(C,T) :-
+        parentRT(C,C2),
+        restriction(C2,never_in_taxon,T2),
+        subclassRT(T,T2).
+class_not_in_taxon_slim(C,T) :-
+        parentRT(C,C2),
+        restriction(C2,only_in_taxon,T2),
+        \+ subclassRT(T,T2).
+
+load_taxslim :-
+        load_bioresource(uberon),
+        load_bioresource(uberonp),
+        load_bioresource(taxslim).
+
+ix_taxslim :-
+        materialize_index_to_file(ontol_db:parentT(1,0,1),'utax.pro'),
+        table_pred(ontol_db:subclassT/2).
+        
 
 % ----------------------------------------
 % REASONING
@@ -144,6 +203,7 @@ class_taxon_invalid(U,X,T,Y,TY) :-
 	restriction(Y,never_in_taxon,TY),
 	debug(tax,'~w ~w check: ~w',[X,T,TY]),
 	subclassRT(T,TY).
+
 
 
 t:-
