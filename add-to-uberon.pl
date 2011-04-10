@@ -68,6 +68,7 @@ close(F);
 
 my $xref;
 my $name;
+my $src;
 while(<>) {
     chomp;
     if (/^id:\s*(\S+)/) {
@@ -78,6 +79,7 @@ while(<>) {
         if ($xrefh{$xref}) {
             print "! ALREADY HAVE THIS IN UBERON\n";
         }
+        ($src) = $xref =~/(\S+):/;
     }
     elsif (/^namespace:/) {
     }
@@ -86,8 +88,9 @@ while(<>) {
         print "$_\n";
     }
     elsif (/^(relationship|intersection_of):\s*(\S+)\s+(\S+)/ && $3 !~ /\!/) {
+        next if $2 eq 'end';
         if ($xrefh{$3}) {
-            print "$1: $2 $xrefh{$3} ! $nh{$xrefh{$3}}\n";
+            print "$1: $2 $xrefh{$3} {source=\"$src\"} ! $nh{$xrefh{$3}}\n";
         }
         else {
             print "! no mapping ($3) -- $_\n";
@@ -95,7 +98,7 @@ while(<>) {
     }
     elsif (/^(is_a|intersection_of):\s*(\S+)/) {
         if ($xrefh{$2}) {
-            print "$1: $xrefh{$2} ! $nh{$xrefh{$2}}\n";
+            print "$1: $xrefh{$2} {source=\"$src\"} ! $nh{$xrefh{$2}}\n";
         }
         else {
             print "! no mapping ($2) -- $_\n";

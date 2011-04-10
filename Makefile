@@ -287,7 +287,7 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 %-mireot.obo: %.obo
-	blip -i $< -r go -r cell -r chebi_slim -r taxslim ontol-query -mireot UBERON -to obo > $@
+	blip -i $< -r go -r cell -r chebi_slim -r taxslim ontol-query -mireot UBERON -query "class(ID),id_idspace(ID,'UBERON')" -to obo > $@
 #	blip -table_pred ontol_db:bf_parentRT/2 -i $< -r fma_simple -r mouse_anatomy -r zebrafish_anatomy -r fly_anatomy -r xenopus_anatomy ontol-query -query "entity_xref(_,X),bf_parentRT(X,ID),entity_label(ID,_)" -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: fma-mireot.obo
 
@@ -998,3 +998,7 @@ eval_all:
 #	./run-all-eval.pl $(MONTS)
 
 re_eval_all: clear_eval_all eval_all
+
+all_templates: template-8782.txt
+template-%.txt:
+	blip-findall -consult adhoc_uberon.pro -goal "load_taxslim,ix_taxslim" "class_in_taxon_slim(C,'NCBITaxon:$*',IsConf)" -label -use_tabs -no_pred > $@

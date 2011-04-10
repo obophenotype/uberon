@@ -129,6 +129,7 @@ class_origin_taxon(C,T) :-
         class(C),
         id_idspace(C,'UBERON'),
         \+ entity_partition(C,upper_level),
+        \+ entity_partition(C,grouping_class),
         debug(tax,'finding taxon LCA for: ~w',[C]),
         setof(D,parentRT(D,C),Ds),
         debug(tax,'   refs: ~w',[Ds]),
