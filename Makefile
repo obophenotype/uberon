@@ -973,7 +973,7 @@ all_mappings_pro: $(patsubst %,bp_mappings-%.pro,$(MONTS))
 #	./bp_map2tbl.pl $< > $@
 
 mappings/bp_mappings-%.txt: mappings/bp_mappings-%.rdf
-	blip-findall -i $< -goal "consult(maprdf2tbl),load_onts('$*')" mapping/10 -no_pred > $@
+	blip-findall -i $< -consult maprdf2tbl -goal "load_onts('$*')" mapping/10 -no_pred > $@
 
 mappings/bp_mappings-%.pro: mappings/bp_mappings-%.txt
 	tbl2p -p bp_mapping $< > $@
@@ -996,6 +996,11 @@ clear_eval_all:
 eval_all:
 	./run-all-eval2.pl $(MONTS)
 #	./run-all-eval.pl $(MONTS)
+
+eval_all_plus_summary: eval_all mappings/summary-Full.html mappings/summary-PR.html
+
+cp-dbx:
+	cp mappings/*txt dbx/data/ && cp mappings/summary* dbx/
 
 re_eval_all: clear_eval_all eval_all
 
