@@ -304,7 +304,7 @@ uberon-isa-to-%.obo: uberon.obo
 	obo2obo -o $@ $< $*_obo.obo part_of.obo
 
 uberon_edit-implied.obo: uberon_edit.obo
-	obo2obo -allowdangling -o -saveimpliedlinks -allowdangling $@ $<
+	obo2obo -allowdangling -o -saveimpliedlinks  -allowdangling $@ $<
 
 uberon_edit-mireot-implied.obo: uberon_edit-mireot.obo
 	obo2obo -o -saveimpliedlinks $@ $<
