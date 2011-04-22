@@ -713,7 +713,18 @@ class_pair_classification(C1,C2,suboptimal,A,R1,R2,Num1,Num2,Sc) :-
         match_bestanc_score(C1,C2,A,R1,R2,Num1,Num2,_,_,Sc),
         debug(mappings,'   SCORE ~w',[Sc]).
 
+aba_to_ma(X,Y) :-
+        entity_xref(U,X),
+        id_idspace(X,'ABA'),
+        entity_xref(U,Y),
+        id_idspace(Y,'MA').
 
+ma_aba_dv(D,Y1,Y2) :-
+        disjoint_from(X1,X2),
+        aba_to_ma(X1,Y1),
+        aba_to_ma(X2,Y2),
+        parentRT(D,part_of,Y1),
+        parentRT(D,part_of,Y2).
 
 
 % ----------------------------------------

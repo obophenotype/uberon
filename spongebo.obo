@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 22:04:2011 07:39
+date: 22:04:2011 08:48
 saved-by: cjm
 auto-generated-by: OBO-Edit 2.1-beta12
 default-namespace: file:/Users/cjm/cvs/uberon/spongebo.obo
@@ -25,6 +25,13 @@ name: material anatomical entity
 namespace: caro
 def: "Anatomical entity that has mass." [CARO:MAH]
 is_a: CARO:0000000 ! anatomical entity
+
+[Term]
+id: CARO:0000012
+name: multi-cellular organism
+namespace: caro
+def: "Anatomical structure that is an individual member of a species and consists of more than one cell." [CARO:MAH]
+is_a: CARO:0000003 ! anatomical structure
 
 [Term]
 id: CARO:0000013
@@ -62,7 +69,7 @@ id: SPONGEBO:0000001
 name: sponge
 namespace: caro
 def: "Sponge bodies consist of jelly-like mesohyl sandwiched between two thin layers of cells. While all animals have unspecialized cells that can transform into specialized cells, sponges are unique in having some specialized cells that can transform into other types, often migrating between the main cell layers and the mesohyl in the process. Sponges do not have nervous, digestive or circulatory systems. Instead, most rely on maintaining a constant water flow through their bodies to obtain food and oxygen and to remove wastes, and the shapes of their bodies are adapted to maximize the efficiency of the water flow. All are sessile aquatic animals and, although there are freshwater species, the great majority are marine (salt water) species, ranging from tidal zones to depths exceeding 8,800 metres (5.5 mi)" [Wikipedia:Sponge]
-is_a: CARO:0000003 ! anatomical structure
+is_a: CARO:0000012 ! multi-cellular organism
 created_by: cjm
 creation_date: 2011-04-22T06:42:26Z
 
@@ -71,6 +78,7 @@ id: SPONGEBO:0000002
 name: mesohyl
 namespace: caro
 def: "gelatinous matrix within a sponge. It fills the space between the external pinacoderm and the internal choanoderm. The mesohyl resembles a type of connective tissue and contains several amoeboid cells such as amebocytes, as well as fibrils and skeletal elements. For hundreds of years, it has been largely accepted that sponges lack true tissue, but it is currently debated as to whether mesohyl and pinacoderm layers are in fact tissues.\n\nThe mesohyl is composed of the following main elements: collagen, fibronectin-like molecules, galectin, and a minor component, dermatopontin. These polypeptides form the extracellular matrix which provides the platform for specific cell adhesion as well as for signal transduction and cellular growth." [Wikipedia:Mesohyl]
+comment: check placement under acellular. Barnes says amoeboid cells
 synonym: "mesenchyme" RELATED []
 is_a: CARO:0000040 ! acellular anatomical structure
 created_by: cjm
@@ -80,7 +88,7 @@ creation_date: 2011-04-22T06:42:59Z
 id: SPONGEBO:0000003
 name: choanocyte
 namespace: caro
-def: "A cell that lines the interior of Asconoid, syconoid and leuconoid body type sponges that contain a central flagellum surrounded by a collar of microvilli which are connected by a thin membrane. It is the closest family member to the free-living ancestor called choanoflagellate. The flagellae beat regularly, creating a water flow across the microvilli which can then filter nutrients and other food from the water taken from the collar of the sponge. Food particles are then phagocytosed by the cell. Choanocytes are found dotting the surface of the spongocoel in asconoid sponges and the radial canals in syconoid sponges, but they comprise entirely the chambers in leuconoid sponges. By cooperatively moving their flagella, choanocytes generate a flow of water through the sponges pores, into the spongocoel, and out through the osculum. This improves both respiratory and digestive functions for the sponge, pulling in oxygen and nutrients and allowing a rapid expulsion of carbon dioxide and other waste products. Although all cells in a sponge are capable of living on their own, choanocytes carry out most of the sponge's ingestion, passing digested materials to the amoebocytes for delivery to other cells." [Wikipedia:Choanocyte]
+def: "A cell that lines the interior of Asconoid, syconoid and leuconoid body type sponges that contain a central flagellum surrounded by a collar of microvilli which are connected by a thin membrane. The choanocyte is ovoid, with one end adjacent to the mesohyl (in some species). It is the closest family member to the free-living ancestor called choanoflagellate. The flagellae beat regularly, creating a water flow across the microvilli which can then filter nutrients and other food from the water taken from the collar of the sponge. Food particles are then phagocytosed by the cell. Choanocytes are found dotting the surface of the spongocoel in asconoid sponges and the radial canals in syconoid sponges, but they comprise entirely the chambers in leuconoid sponges. By cooperatively moving their flagella, choanocytes generate a flow of water through the sponges pores, into the spongocoel, and out through the osculum. This improves both respiratory and digestive functions for the sponge, pulling in oxygen and nutrients and allowing a rapid expulsion of carbon dioxide and other waste products. Although all cells in a sponge are capable of living on their own, choanocytes carry out most of the sponge's ingestion, passing digested materials to the amoebocytes for delivery to other cells." [ISBN:0030229073 "Invertebrate Zoology, Barnes", Wikipedia:Choanocyte]
 comment: They bear more than a passing resemblance to Choanoflagellates, and demonstrate key steps in the evolution of animals. Scientist Nicole King helped to establish the distinction.[1] DNA sequencing indicates that multicellular choanoflagellates and poriferans are sister groups, both descended from the same eukaryotic clade. One can see modern choanoflagellates living in small colonies, illustrating the evolution of sponges by analogy. More complex animals, notably the cnidarians, possess cells whose structures are clearly derived from choanocytes, demonstrating their historical ties to phylum porifera.
 synonym: "collar cell" RELATED []
 is_a: SPONGEBO:0000000 ! sponge cell
@@ -107,9 +115,9 @@ creation_date: 2011-04-22T06:52:10Z
 
 [Term]
 id: SPONGEBO:0000006
-name: collencyte
+name: collenocyte
 namespace: caro
-def: "a collagen-producing cell." []
+def: "a collagen-producing cell, anchored by long cytoplasmic strands." []
 is_a: SPONGEBO:0000000 ! sponge cell
 created_by: cjm
 creation_date: 2011-04-22T06:52:22Z
@@ -178,9 +186,10 @@ creation_date: 2011-04-22T06:55:40Z
 id: SPONGEBO:0000014
 name: myocyte
 namespace: caro
-def: "conduct signals and cause parts of the animal to contract." []
+def: "conduct signals and cause parts of the animal to contract. They are assumed to regulate the flow of water by increasing or decreasing the diameter of these openings to the aquiferous system." []
 synonym: "muscle cell" RELATED []
 is_a: SPONGEBO:0000000 ! sponge cell
+relationship: part_of SPONGEBO:0000002 ! mesohyl
 created_by: cjm
 creation_date: 2011-04-22T06:56:33Z
 
@@ -198,7 +207,7 @@ creation_date: 2011-04-22T06:57:32Z
 id: SPONGEBO:0000016
 name: archaeocyte
 namespace: caro
-def: "amoeba-like cells that are totipotent. They also have important roles in feeding and in clearing debris that block the ostia." []
+def: "amoeba-like large cells with large nuclei that are totipotent. They also have important roles in feeding and in clearing debris that block the ostia." [ISBN:0030229073 "Invertebrate Zoology, Barnes"]
 synonym: "amoebocyte" RELATED []
 is_a: SPONGEBO:0000000 ! sponge cell
 created_by: cjm
@@ -209,6 +218,7 @@ id: SPONGEBO:0000017
 name: spicule
 namespace: caro
 def: "A structural element that provides structural support and deter predators. Large spicules, visible to the naked eye are referred to as megascleres, while smaller, microscopic ones are termed microscleres. The meshing of many spicules serves as the sponge’s skeleton. Spicules are formed by sclerocytes, which are derived from archaeocytes. The sclerocyte begins with an organic filament, and adds silica to it. Spicules are generally elongated at a rate of 1-10 μm per hour. Once the spicule reaches a certain length it protrudes from the sclerocyte cell body, but remains within the cell’s membrane. On occasion, sclerocytes may begin a second spicule while the first is still in progress." [Wikipedia:Sponge_spicule]
+comment: located primarily in the mesohyl, but some project through the pinacoderm (Barnes).
 is_a: CARO:0000040 ! acellular anatomical structure
 relationship: part_of SPONGEBO:0000002 ! mesohyl
 created_by: cjm
@@ -267,22 +277,28 @@ name: pinacocyte
 namespace: caro
 def: "flat cells found on the outermost layer of sponges. They can expand and contract to slightly alter the size of the sponge, and can also produce collagen." [Wikipedia:Pinacocyte]
 is_a: SPONGEBO:0000000 ! sponge cell
+relationship: part_of SPONGEBO:0000043 ! pinacoderm
 created_by: cjm
 creation_date: 2011-04-22T07:11:56Z
 
 [Term]
 id: SPONGEBO:0000024
-name: body structure
+name: prosopyle
+namespace: caro
+def: "a pore through which water is drawn from the outside into one of the saclike chambers formed by the evagination of the body wall." []
+is_a: SPONGEBO:0000035 ! pore
+relationship: continuous_with SPONGEBO:0000025 ! choanocyte-line cavity
 created_by: cjm
-creation_date: 2011-04-22T07:13:05Z
+creation_date: 2011-04-22T08:35:40Z
 
 [Term]
 id: SPONGEBO:0000025
-name: asconoid
-def: "Asconoid is one of three possible body plans for sponges, which form the phylum Porifera in kingdom Animalia and subkingdom Parazoa which means that they do not have a definite body shape. The asconoid body plan is characterized by a stalk-like spongocoel surrounded by a single layer of choanocytes. These choanocytes are cells that have flagella, and the flagella beat to push water through the spongocoel, creating a current. At somewhat regular intervals along the lining of the spongocoel are openings called ostia (singular, ostium). These protrude through the outer layer of the sponge (somewhat like an epidermis, but not entirely like it, since this terminology implies germ layers, which sponges do not have). Finally, at the top of the sponge is the osculum, which is the final exit for water circulating through the sponge. This single layer of choanocytes limits the size of asconoids, with the largest having a diameter of only 1 mm. This is due to the surface area : mass ratio which would not allow an asconoid sponge of larger size sufficient nutrition." [Wikipedia:Asconoid]
-is_a: SPONGEBO:0000024 ! body structure
+name: choanocyte-line cavity
+namespace: caro
+def: "either the choanocyte-lined radial canal in syconoid, or the choanocyte-lined filter chamber in leuconoid." []
+is_a: SPONGEBO:0000019 ! immaterial anatomical entity
 created_by: cjm
-creation_date: 2011-04-22T07:13:25Z
+creation_date: 2011-04-22T08:36:55Z
 
 [Term]
 id: SPONGEBO:0000026
@@ -373,7 +389,9 @@ creation_date: 2011-04-22T07:29:00Z
 id: SPONGEBO:0000038
 name: dermal pore
 namespace: caro
+comment: In syconoid sponge, water passes through dermal pores to the incurrent canal and through the prosopyle to the choanocyte-lined radial canal.
 is_a: SPONGEBO:0000035 ! pore
+relationship: continuous_with SPONGEBO:0000040 ! incurrent canal
 created_by: cjm
 creation_date: 2011-04-22T07:31:20Z
 
@@ -390,6 +408,7 @@ id: SPONGEBO:0000040
 name: incurrent canal
 namespace: caro
 is_a: SPONGEBO:0000039 ! canal
+relationship: continuous_with SPONGEBO:0000024 ! prosopyle
 created_by: cjm
 creation_date: 2011-04-22T07:31:56Z
 
@@ -423,10 +442,30 @@ creation_date: 2011-04-22T07:33:24Z
 id: SPONGEBO:0000044
 name: porocyte
 namespace: caro
-def: "cell that forms pores." []
+def: "cell that forms pores. In an asconoid sponge, water enters the sponge through the porocytes, passes directly to the choanocyte-lined spongocoel, and then out of the sponge through the osculum." []
 is_a: SPONGEBO:0000000 ! sponge cell
+relationship: develops_from SPONGEBO:0000023 ! pinacocyte
+relationship: part_of SPONGEBO:0000043 ! pinacoderm
 created_by: cjm
 creation_date: 2011-04-22T07:38:18Z
+
+[Term]
+id: SPONGEBO:0000045
+name: spicule ray
+namespace: caro
+is_a: CARO:0000040 ! acellular anatomical structure
+relationship: part_of SPONGEBO:0000017 ! spicule
+created_by: cjm
+creation_date: 2011-04-22T08:23:20Z
+
+[Term]
+id: SPONGEBO:0000046
+name: apopyle
+namespace: caro
+def: "a pore in each of the saclike chambers formed by the evagination of the body wall, through which water passes into the excurrent canals." [http:dictionary.reference.com/browse/apopyle]
+is_a: SPONGEBO:0000035 ! pore
+created_by: cjm
+creation_date: 2011-04-22T08:45:54Z
 
 [Typedef]
 id: continuous_with
