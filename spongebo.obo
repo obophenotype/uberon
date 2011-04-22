@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 22:04:2011 07:35
+date: 22:04:2011 07:39
 saved-by: cjm
 auto-generated-by: OBO-Edit 2.1-beta12
 default-namespace: file:/Users/cjm/cvs/uberon/spongebo.obo
@@ -220,7 +220,7 @@ name: osculum
 namespace: caro
 def: "an excretory structure in the living sponge, a large opening to the outside through which the current of water exits after passing through the spongocoel. Wastes diffuse into the water and the water exits through the osculum at a velocity of nearly 8.4 cm/second, carrying away with it the sponge's wastes. The size of the osculum is regulated by the myocyte. Its size, in turn, determines the amount of water flowing through the sponge." [Wikipedia:Osculum]
 is_a: SPONGEBO:0000019 ! immaterial anatomical entity
-relationship: continuous_with SPONGEBO:0000037 ! atrium
+relationship: continuous_with SPONGEBO:0000020 ! spongeocoel
 created_by: cjm
 creation_date: 2011-04-22T07:03:32Z
 
@@ -236,7 +236,9 @@ creation_date: 2011-04-22T07:04:50Z
 id: SPONGEBO:0000020
 name: spongeocoel
 namespace: caro
+alt_id: SPONGEBO:0000037
 def: "large, central cavity of sponges. Water enters the spongocoel through hundreds of tiny pores (Ostia) and exits through the larger opening (osculum). Depending on the body plan of the sponge (which can be asconoid, syconoid, or leuconoid), the spongocoel could be a simple interior space of the sponge or a complexly branched inner structure. Regardless of body plan or class, the spongocoel is lined with choanocytes, which have flagella that push water through the spongocoel, creating a current." []
+synonym: "atrium" EXACT []
 is_a: SPONGEBO:0000019 ! immaterial anatomical entity
 created_by: cjm
 creation_date: 2011-04-22T07:05:15Z
@@ -245,7 +247,9 @@ creation_date: 2011-04-22T07:05:15Z
 id: SPONGEBO:0000021
 name: ostium
 namespace: caro
-is_a: SPONGEBO:0000019 ! immaterial anatomical entity
+alt_id: SPONGEBO:0000036
+synonym: "incurrent pore" EXACT []
+is_a: SPONGEBO:0000035 ! pore
 created_by: cjm
 creation_date: 2011-04-22T07:07:50Z
 
@@ -366,22 +370,6 @@ created_by: cjm
 creation_date: 2011-04-22T07:29:00Z
 
 [Term]
-id: SPONGEBO:0000036
-name: incurrent pore
-namespace: caro
-is_a: SPONGEBO:0000035 ! pore
-created_by: cjm
-creation_date: 2011-04-22T07:29:08Z
-
-[Term]
-id: SPONGEBO:0000037
-name: atrium
-namespace: caro
-is_a: SPONGEBO:0000019 ! immaterial anatomical entity
-created_by: cjm
-creation_date: 2011-04-22T07:29:38Z
-
-[Term]
 id: SPONGEBO:0000038
 name: dermal pore
 namespace: caro
@@ -425,10 +413,20 @@ creation_date: 2011-04-22T07:32:43Z
 id: SPONGEBO:0000043
 name: pinacoderm
 namespace: caro
+def: "The pinacoderm is the outer most layer of cells (pinacocytes) in the phylum Porifera (sponges), similar to the epidermis in other organisms. The pinacocytes are on the external surface of the sponge body and characterized as an epithelial layer of flattened cells." [Wikipedia:Pinacoderm]
 comment: todo - check
 is_a: SPONGEBO:0000004 ! epitheloid monolayer of cells
 created_by: cjm
 creation_date: 2011-04-22T07:33:24Z
+
+[Term]
+id: SPONGEBO:0000044
+name: porocyte
+namespace: caro
+def: "cell that forms pores." []
+is_a: SPONGEBO:0000000 ! sponge cell
+created_by: cjm
+creation_date: 2011-04-22T07:38:18Z
 
 [Typedef]
 id: continuous_with
