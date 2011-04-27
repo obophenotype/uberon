@@ -656,7 +656,7 @@ id: CEPH:0000116
 name: funnel
 def: "The ventral, muscular tube through which water is expelled from the mantle cavity. The funnel is thought to have evolved from the molluscan foot." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 synonym: "siphon" EXACT []
-id: UBERON:0000025 ! tube
+is_a: UBERON:0000025 ! tube
 relationship: has_part UBERON:0001630 ! muscle organ
 relationship: continuous_with UBERON:0006580 ! mantle cavity
 
@@ -1275,7 +1275,7 @@ relationship: part_of CEPH:0000117 ! funnel groove
 id: CEPH:0000232
 name: siphuncle
 def: "The tube-like extension of the body wall, coelom and an external covering tube that penetrates the phragmocone and regulates gas exchange into the phragmocone chambers." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-id: UBERON:0000025 ! tube
+is_a: UBERON:0000025 ! tube
 
 [Term]
 id: CEPH:0000234
@@ -1633,8 +1633,8 @@ synonym: "sensor" RELATED []
 synonym: "sensory organ" EXACT []
 synonym: "sensory organ system organ" EXACT [OBOL:automatic]
 synonym: "sensory system organ" EXACT [OBOL:automatic]
-synonym: "Sinnesorgan" RELATED [BTO:0000202]i
-ntersection_of: UBERON:0000062 ! organ
+synonym: "Sinnesorgan" RELATED [BTO:0000202]
+intersection_of: UBERON:0000062 ! organ
 intersection_of: part_of UBERON:0001032 ! sensory system
 
 [Term]
