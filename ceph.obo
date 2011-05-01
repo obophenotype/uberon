@@ -2407,7 +2407,6 @@ synonym: "skeletal muscle system" RELATED [BTO:0001103]
 synonym: "somatic muscle" RELATED [BTO:0001103]
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0005090 ! muscle structure
-intersection_of: UBERON:0000062 ! organ
 relationship: part_of UBERON:0000383 ! musculature of body
 relationship: part_of UBERON:0001015 ! musculature
 
@@ -3039,10 +3038,15 @@ name: develops from
 [Typedef]
 id: part_of
 name: part of
+is_transitive: true
+xref: BFO:0000050
 
 [Typedef]
 id: has_part
 name: has part
+is_transitive: true
+inverse_of: part_of
+xref: BFO:0000051
 
 [Typedef]
 id: trait_of

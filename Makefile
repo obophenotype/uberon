@@ -291,7 +291,7 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 %-mireot.obo: %.obo
-	blip -i $< -r go -r cell -r chebi_slim -r taxslim ontol-query -showobsoletes -mireot UBERON -query "class_or_obsolete_class(ID),id_idspace(ID,'UBERON')" -to obo > $@
+	blip -i $< -r go -r cell -r chebi_slim -r taxslim ontol-query -showobsoletes -mireot UBERON -to obo > $@
 #	blip -table_pred ontol_db:bf_parentRT/2 -i $< -r fma_simple -r mouse_anatomy -r zebrafish_anatomy -r fly_anatomy -r xenopus_anatomy ontol-query -query "entity_xref(_,X),bf_parentRT(X,ID),entity_label(ID,_)" -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: fma-mireot.obo
 
@@ -503,6 +503,9 @@ newterms-zebrafish-fma.obo:
 
 newterms-zebrafish-ehdaa2.obo:
 	obol -u onto_grep onto-3-way-align -r ehdaa2 -r zebrafish_anatomy -r uberon -ont1 abstract_anatomy -ont2 zebrafish_anatomy -ont3 uberon > $@
+
+newterms-zebrafish-emapa.obo:
+	obol -u onto_grep onto-3-way-align -r emapaa -r zebrafish_anatomy -r uberon -ont1 abstract_anatomy -ont2 zebrafish_anatomy -ont3 uberon > $@
 
 newterms-mouse-emapa.obo:
 	obol -u onto_grep onto-3-way-align -r emapa -r mouse_anatomy -r uberon -ont1 abstract_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
