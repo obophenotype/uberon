@@ -1014,3 +1014,8 @@ re_eval_all: clear_eval_all eval_all
 all_templates: template-8782.txt
 template-%.txt:
 	blip-findall -consult adhoc_uberon.pro -goal "load_taxslim,ix_taxslim" "class_in_taxon_slim(C,'NCBITaxon:$*',IsConf)" -label -use_tabs -no_pred > $@
+
+# ----------------------------------------
+# RELEASE
+# ----------------------------------------
+RELDIR=$(HOME)/cvs/obo-svn/ontologies/UBERON
