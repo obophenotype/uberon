@@ -96,7 +96,7 @@ while(<>) {
             print "! no mapping ($3) -- $_\n";
         }
     }
-    elsif (/^(is_a|intersection_of):\s*(\S+)/) {
+    elsif (/^(disjoint_from|is_a|intersection_of):\s*(\S+)/) {
         if ($xrefh{$2}) {
             print "$1: $xrefh{$2} {source=\"$src\"} ! $nh{$xrefh{$2}}\n";
         }

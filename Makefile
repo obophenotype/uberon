@@ -290,10 +290,26 @@ uberon-with-isa-for-%.obo: uberon.obo
 uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
-%-mireot.obo: %.obo
-	blip -i $< -r quality -r go -r cell -r chebi_slim -r taxslim ontol-query -showobsoletes -mireot UBERON -to obo > $@
+# modules
+all-mods: mod-PRO.owl
+
+mod-CL.obo:
+	blip ontol-query -r cell -query "class(ID),id_idspace(ID,'CL')" -to obo > $@.tmp && mv $@.tmp $@
+mod-CL.owl: mod-CL.obo
+	obolib-obo2owl $< --allow-dangling -o $@ 
+
+#mod1-CL.obo:
+#	blip ontol-query -i uberon_edit.obo -r cell -query "(parent(X,Y);parent(Y,X)),id_idspace(X,'CL'),id_idspace(Y,'UBERON'),parentRT(X,ID)" -to obo > $@.tmp && mv $@.tmp $@
+mod1-%.obo: %.obo
+	blip ontol-query -i $< -i uberon_edit.obo -r cell -query "idspace_mireot('UBERON',ID,'$*');idspace_mireot('CL',ID,'$*')" -to obo > $@.tmp && mv $@.tmp $@
+
+mod-%.obo: mod1-%.obo
+	blip-ddb -i $< -goal remove_dangling_facts io-convert -to obo -o $@
+
+%-extmod.obo: %.obo
+	blip -i $< -r pato -r go -r cell -r chebi_slim -r protein -r taxslim ontol-query -showobsoletes -mireot UBERON -to obo > $*-extmod1.obo && blip-ddb -i $*-extmod1.obo -goal remove_dangling_facts io-convert -to obo -o $@
 #	blip -table_pred ontol_db:bf_parentRT/2 -i $< -r fma_simple -r mouse_anatomy -r zebrafish_anatomy -r fly_anatomy -r xenopus_anatomy ontol-query -query "entity_xref(_,X),bf_parentRT(X,ID),entity_label(ID,_)" -to obo > $@.tmp && mv $@.tmp $@
-.PRECIOUS: fma-mireot.obo
+.PRECIOUS: %-extmod.obo
 
 %-simple.obo: %.obo
 	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))'  > $@
@@ -1019,3 +1035,4 @@ template-%.txt:
 # RELEASE
 # ----------------------------------------
 RELDIR=$(HOME)/cvs/obo-svn/ontologies/UBERON
+
