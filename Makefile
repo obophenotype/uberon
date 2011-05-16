@@ -158,13 +158,17 @@ uberon-%-misalign.txt: %.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-discv.txt uberon-simple.obo uberon-simple-allcycles
-	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles
+uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles
+	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple-allcycles
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
 %-dv.txt: %.obo
 	blip -u ontol_manifest_disjoint_from_preceded_by -i $< -u query_obo findall disjoint_from_violation/3 -label > $@
+%-dvall.txt: %.obo
+	blip-findall -debug index -i $< -r fma_simple -r ZFA -r MA -r FBbt -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  "disjoint_from_violation_nr(X,Y,C),subclass(C,D),\+id_idspace(D,'UBERON')" -select "disjoint_from_violation_nr(X,Y,C,D)" -label > $@
+%-dvall-strict.txt: %.obo
+	blip-findall -debug index -i $< -i uberon_disjoint_from_strict.obo -r fma_simple -r ZFA -r MA -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  "disjoint_from_violation_nr(X,Y,C),subclass(C,D),\+id_idspace(D,'UBERON')" -select "disjoint_from_violation_nr(X,Y,C,D)" -label > $@
 uberon-dv-%.txt: uberon.obo
 	blip -u ontol_manifest_disjoint_from_preceded_by -r uberon -r $* -u query_obo findall xref_disjoint_from_violation_nr/3 -label > $@
 uberon-jepd-dv-%.txt: uberon.obo
@@ -290,12 +294,18 @@ uberon-with-isa-for-%.obo: uberon.obo
 uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
+uberon-with-extmod.owl: uberon_edit.obo
+	owltools $< ncbi_taxon_slim.obo GO.obo CHEBI.obo cell.edit.obo PATO.obo PRO.obo --mcat -o file://`pwd`/$@
+
+mod/bridges:
+	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
+
 # modules
 all-mods: mod-PRO.owl
 
 mod-CL.obo:
 	blip ontol-query -r cell -query "class(ID),id_idspace(ID,'CL')" -to obo > $@.tmp && mv $@.tmp $@
-mod-CL.owl: mod-CL.obo
+mod-CL.owl: mod-CL.obo	
 	obolib-obo2owl $< --allow-dangling -o $@ 
 
 #mod1-CL.obo:
@@ -1035,4 +1045,7 @@ template-%.txt:
 # RELEASE
 # ----------------------------------------
 RELDIR=$(HOME)/cvs/obo-svn/ontologies/UBERON
-
+release:
+	cp uberon.{obo,owl} $(RELDIR) ;\
+	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
+	echo done

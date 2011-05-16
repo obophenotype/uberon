@@ -1,0 +1,1151 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon-bridge-to-tgma.owl#"
+     xml:base="http://purl.obolibrary.org/obo/uberon-bridge-to-tgma.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon-bridge-to-tgma.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_id"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_xref"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <obo:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</obo:IAO_xref>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</obo:IAO_id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_44484 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000000">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001011"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000000</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000002">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000033"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000002</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000007">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000972"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000007</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000024 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000024">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000018"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000970"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000024</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000041 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000041">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003155"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000041</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000088 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000088">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001019"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000088</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000090">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003132"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000090</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000102 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000102">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000167"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000102</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000131 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000131">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000165"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000166"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000131</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000135 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000135">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000930"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000135</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000136 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000136">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000915"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000136</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000164 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000164">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005895"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000164</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000196 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000196">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000984"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000196</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000540 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000540">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0002536"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000540</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000560 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000560">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000994"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000560</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000578 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000578">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001006"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000578</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000591 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000591">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003133"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000591</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000634 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000634">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000079"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000634</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000635 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000635">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000474"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000635</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000681 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000681">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000920"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000681</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0000729 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0000729">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000047"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0000729</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001014 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001014">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001041"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001014</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001016 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001016">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000045"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001016</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001020">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001046"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001020</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001022 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001022">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000159"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001022</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001036 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001036">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001045"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001036</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001038 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001038">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001054"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001038</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001247 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001247">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000171"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001247</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001279 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001279">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001245"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001279</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001373 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001373">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001023"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001373</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001819 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001819">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001555"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001819</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001822 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001822">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001822</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001823 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001823">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000061"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001823</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001824 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001824">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000463"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001824</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001825 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001825">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000464"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001825</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001826 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001826">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001826</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001827 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001827">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000466"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001827</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001828 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001828">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006800"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001828</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001831 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001831">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000467"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001831</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001832 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001832">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001832</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001834 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001834">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000470"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001834</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001835 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001835">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000471"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001835</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001836 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001836">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000472"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001836</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001837 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001837">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003103"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001837</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001838 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001838">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003101"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001838</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001839 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001839">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003100"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001839</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001840 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001840">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000475"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001840</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001841 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001841">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000476"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001841</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001842 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001842">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000477"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001842</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001843 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001843">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000478"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001843</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001844 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001844">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000479"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001844</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001846 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001846">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000480"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001846</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001847 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001847">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000481"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001847</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001850 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001850">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000482"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001850</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001856 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001856">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003917"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001856</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001857 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001857">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000489"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001857</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TGMA_0001859 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TGMA_0001859">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000491"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_44484"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGMA:0001859</obo:IAO_id>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.0.1502) http://owlapi.sourceforge.net -->
+
