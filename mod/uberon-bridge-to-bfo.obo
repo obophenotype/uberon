@@ -1,0 +1,50 @@
+ontology: uberon-bridge-to-bfo
+
+[Term]
+id: UBERON:0000000
+name: processual entity
+is_a: BFO:0000015
+
+[Term]
+id: UBERON:0001062
+name: anatomical entity
+is_a: BFO:0000004
+
+[Term]
+id: GO:0008150
+name: biological_process
+is_a: BFO:0000007
+
+[Term]
+id: BFO:0000001
+name: entity
+
+[Term]
+id: BFO:0000002
+name: continuant
+def: "An entity  that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001  ! entity
+
+[Term]
+id: BFO:0000003
+name: occurrent
+def: "An entity  that has temporal parts and that happens, unfolds or develops through time. Sometimes also called perdurants." []
+is_a: BFO:0000001  ! entity
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant  that is a bearer of quality  and realizable entity  entities, in which other entities inhere and which itself cannot inhere in anything." []
+is_a: BFO:0000002  ! continuant
+
+[Term]
+id: BFO:0000015
+name: processual entity
+def: "An occurrent  that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." []
+is_a: BFO:0000003  ! occurrent
+
+[Term]
+id: BFO:0000007
+name: process
+def: "A processual entity  that is a maximally connected spatiotemporal whole and has bona fide beginnings and endings corresponding to real discontinuities." []
+is_a: BFO:0000015  ! processual entity
