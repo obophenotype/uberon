@@ -166,7 +166,7 @@ uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-
 %-dv.txt: %.obo
 	blip -u ontol_manifest_disjoint_from_preceded_by -i $< -u query_obo findall disjoint_from_violation/3 -label > $@
 %-dvall.txt: %.obo
-	blip-findall -debug index -i $< -r fma_simple -r ZFA -r MA -r FBbt -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  "disjoint_from_violation_nr(X,Y,C),subclass(C,D),\+id_idspace(D,'UBERON')" -select "disjoint_from_violation_nr(X,Y,C,D)" -label > $@
+	blip-findall -debug index -i $< -r fma_simple -r ZFA -r MA -r HAO -r FBbt -r ehdaa2 -r emapa -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  "disjoint_from_violation_nr(X,Y,C),subclass(C,D),\+id_idspace(D,'UBERON')" -select "disjoint_from_violation_nr(X,Y,C,D)" -label > $@
 %-dvall-strict.txt: %.obo
 	blip-findall -debug index -i $< -i uberon_disjoint_from_strict.obo -r fma_simple -r ZFA -r MA -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  "disjoint_from_violation_nr(X,Y,C),subclass(C,D),\+id_idspace(D,'UBERON')" -select "disjoint_from_violation_nr(X,Y,C,D)" -label > $@
 uberon-dv-%.txt: uberon.obo
