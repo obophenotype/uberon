@@ -1047,5 +1047,7 @@ template-%.txt:
 RELDIR=$(HOME)/cvs/obo-svn/ontologies/UBERON
 release:
 	cp uberon.{obo,owl} $(RELDIR) ;\
+	cp uberon-with-extmod.{obo,owl} $(RELDIR)/mod ;\
 	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
+	cp uberon-simple.{obo,owl} $(RELDIR)/subsets ;\
 	echo done
