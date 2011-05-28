@@ -179,6 +179,8 @@ uberon-discv-%.txt: uberon-with-isa.obo
 	blip -u ontol_manifest_disconnected_from_adjacent -i uberon-with-isa.obo -r $* -u query_obo findall xref_disjoint_over_violation/4 -label > $@
 %-discv.txt: %.obo
 	blip -table_pred ontol_db:parentRT/3 -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $<  -u query_obo findall disjoint_over_violation/4 -label > $@
+%-discvall.txt: %.obo
+	blip -table_pred ontol_db:parentRT/3  -r fma_simple -r ZFA -r MA -r HAO -r FBbt -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $< -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  -u query_obo findall disjoint_over_violation/4 -label > $@
 %-taxcheck.txt: %.obo
 	blip-findall -table_pred parentRT/2 -i ncbi_taxon_slim.obo -i $< -i adhoc_uberon.pro "class_taxon_invalid(U,X,T,Y,TY)" -label > $@
 %-obscheck.txt: %.obo
@@ -1045,9 +1047,11 @@ template-%.txt:
 # RELEASE
 # ----------------------------------------
 RELDIR=$(HOME)/cvs/obo-svn/ontologies/UBERON
-release:
+release: mod/bridges
 	cp uberon.{obo,owl} $(RELDIR) ;\
 	cp uberon-with-extmod.{obo,owl} $(RELDIR)/mod ;\
 	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
 	cp uberon-simple.{obo,owl} $(RELDIR)/subsets ;\
-	echo done
+	echo done ;\
+	cd $(RELDIR) && svn commit -m ''
+
