@@ -154,7 +154,7 @@ class_in_taxon_slim_2(C,T,IsConfident) :-
         ->  IsConfident=true
         ;   IsConfident=false),
         !.
-class_in_taxon_slim_2(C,T,true) :-
+%class_in_taxon_slim_2(C,T,true) :-
 
 class_in_taxon_slim(C,T) :-
         call_unique(class(C)),
@@ -508,6 +508,11 @@ hog_xref(U,X,Y) :-
         entity_xref(U,X),
         \+entity_xref(U,Y),
         \+entity_xref(_,Y).
+
+% ----------------------------------------
+% tributaries
+% ----------------------------------------
+% blip-findall -debug foo -r uberonp -r fma_downcase "class(A,N),atom_concat('tributary of ',M,N),class(B,M),entity_xref(U,B),subclassRT(C,A),entity_xref(V,C)" -select V-U -label
 
 % ----------------------------------------
 % graph traversal
