@@ -482,22 +482,22 @@ uberon-mouse-missing-below-%.txt:
 	blip -i adult_mouse_xp.obo -r uberon -r mouse_anatomy -u ontol_db findall "parentT(X,'$*'),\+ entity_xref(_,X),(genus(X,G)->true;G='')" -select X-G -label > $@.tmp && sort -u $@.tmp > $@
 
 newterms-fma-mouse.obo:
-	obol -debug index -u onto_grep onto-3-way-align -disp 'allow(_)' -r mouse_anatomy -r fma2 -r uberon -ont1 adult_mouse_anatomy.gxd -ont2 fma -ont3 uberon > $@
+	obol -debug index -u onto_grep onto-3-way-align -disp 'allow(_)' -r mouse_anatomy -r fma2 -i fma3-latin.obo -r uberon -ont1 adult_mouse_anatomy.gxd -ont2 fma -ont3 uberon > $@
 
 newterms-mouse-wpanat.obo:
 	obol -u onto_grep onto-3-way-align -r wpanat -r mouse_anatomy -r uberon -ont1 wikipedia -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
 
 newterms-fma-envo.obo:
-	obol -u onto_grep onto-3-way-align -r envo -r fma -r uberon -ont1 ENVO -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r envo -r fma  -i fma3-latin.obo -r uberon -ont1 ENVO -ont2 fma -ont3 uberon > $@
 
 newterms-fma-cyc.obo:
 	obol -u onto_grep onto-3-way-align -r envo -i opencyc2.obo -r uberon -ont1 http://sw.opencyc.org/concept/ -ont2 fma -ont3 uberon > $@
 
 newterms-fma-gemina.obo:
-	obol -u onto_grep onto-3-way-align -r fma_downcase -r gemina_anatomy -r uberon -ont1 gemina_anatomy -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r fma_downcase  -i fma3-latin.obo -r gemina_anatomy -r uberon -ont1 gemina_anatomy -ont2 fma -ont3 uberon > $@
 
 newterms-fma-nif.obo: 
-	obol -u onto_grep onto-3-way-align -r fma_downcase -r nif_downcase -i uberon_CL.obo -r uberonp -ont1 birnlex_anatomy -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r fma_downcase  -i fma3-latin.obo -r nif_downcase -i uberon_CL.obo -r uberonp -ont1 birnlex_anatomy -ont2 fma -ont3 uberon > $@
 
 newterms-mouse-nif.obo: 
 	obol -debug index -u onto_grep onto-3-way-align -r mouse_anatomy -r nif_downcase -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
@@ -509,7 +509,7 @@ newterms-xenopus-zebrafish.obo:
 	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r xenopus_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
 
 newterms-aao-fma.obo:
-	obol -u onto_grep onto-3-way-align  -r amphibian_anatomy -r fma -r uberon -ont1 fma -ont2 amphibanat -ont3 uberon -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' > $@
+	obol -u onto_grep onto-3-way-align  -r amphibian_anatomy -r fma  -i fma3-latin.obo -r uberon -ont1 fma -ont2 amphibanat -ont3 uberon -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' > $@
 
 newterms-aao-zebrafish.obo:
 	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r amphibian_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 amphibanat -ont3 uberon > $@
@@ -527,7 +527,7 @@ newterms-zebrafish-birnlex.obo: birnlex_anatomy_s.obo
 	obol -u onto_grep onto-3-way-align -i $< -r zebrafish_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
 
 newterms-zebrafish-fma.obo:
-	obol -u onto_grep onto-3-way-align -r fma -r zebrafish_anatomy -r uberon -ont1 fma -ont2 zebrafish_anatomy -ont3 uberon -exclude ZFA:0009000 -exclude FMA:68646 > $@
+	obol -u onto_grep onto-3-way-align -r fma  -i fma3-latin.obo -r zebrafish_anatomy -r uberon -ont1 fma -ont2 zebrafish_anatomy -ont3 uberon -exclude ZFA:0009000 -exclude FMA:68646 > $@
 
 newterms-zebrafish-ehdaa2.obo:
 	obol -u onto_grep onto-3-way-align -r ehdaa2 -r zebrafish_anatomy -r uberon -ont1 abstract_anatomy -ont2 zebrafish_anatomy -ont3 uberon > $@
@@ -554,13 +554,13 @@ newterms-zebrafish-ehdaa.obo:
 	obol -u onto_grep onto-3-way-align -r ehdaa -r zebrafish_anatomy -r uberon -ont1 human-dev-anat-abstract -ont2 zebrafish_anatomy -ont3 uberon > $@
 
 newterms-fma-ehdaa.obo:
-	obol -u onto_grep onto-3-way-align -r ehdaa -r fma -r uberon -ont1 human-dev-anat-abstract -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r ehdaa -r fma  -i fma3-latin.obo -r uberon -ont1 human-dev-anat-abstract -ont2 fma -ont3 uberon > $@
 
 newterms-fma-ehdaa2.obo:
-	obol -debug index -u onto_grep onto-3-way-align -r ehdaa2 -r fma -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
+	obol -debug index -u onto_grep onto-3-way-align -r ehdaa2 -r fma  -i fma3-latin.obo -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
 
 newterms-fma-emapa.obo:
-	obol -u onto_grep onto-3-way-align -r emapaa -r fma -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r emapaa -r fma  -i fma3-latin.obo -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
 
 newterms-emapa-ehdaa2.obo:
 	obol -u onto_grep onto-3-way-align -r ehdaa2 -r emapa -r uberon -i ehdaa2_xp_uberon.obo -ont1 'http://www.xspan.org/obo.owl#' -ont2 abstract_anatomy -ont3 uberon > $@
@@ -572,7 +572,7 @@ newterms-spider-fly.obo:
 	obol -u onto_grep onto-3-way-align -r fly_anatomy -r obo/spider_anatomy -r uberon -ont1 fly_anatomy.ontology -ont2 spider_anatomy -ont3 uberon > $@
 
 newterms-brenda-fma.obo:
-	obol -u onto_grep onto-3-way-align -r fma_downcase -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 fma -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r fma3  -i fma3-latin.obo -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 fma -ont3 uberon > $@
 
 newterms-brenda-ma.obo:
 	obol -u onto_grep onto-3-way-align -r mouse_anatomy -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 fma -ont3 uberon > $@
@@ -581,7 +581,7 @@ newterms-brenda-wpanat.obo:
 	obol -u onto_grep onto-3-way-align -r wpanat -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 wikipedia -ont3 uberon > $@
 
 newterms-ncit-fma.obo:
-	obol -u onto_grep onto-3-way-align -r fma -r ncit -r uberon -ont1 fma -ont2 'ncithesaurus:' -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -r fma  -i fma3-latin.obo -r ncit -r uberon -ont1 fma -ont2 'ncithesaurus:' -ont3 uberon > $@
 
 newterms-ncit-emapa.obo:
 	obol -u onto_grep onto-3-way-align -r emapa -r ncit -r uberon -ont1 emapa -ont2 'ncithesaurus:' -ont3 uberon > $@
