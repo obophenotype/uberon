@@ -71,6 +71,7 @@ my $name;
 my $src;
 while(<>) {
     chomp;
+    s/relationship: (constitutional|regional|systemic)_part/relationship: part/;
     if (/^id:\s*(\S+)/) {
         $xref = $1;
         $_ = sprintf("id: UBERON:%07d",$uid);
