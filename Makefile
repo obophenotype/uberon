@@ -487,6 +487,9 @@ newterms-fma-mouse.obo:
 newterms-mouse-wpanat.obo:
 	obol -u onto_grep onto-3-way-align -r wpanat -r mouse_anatomy -r uberon -ont1 wikipedia -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
 
+newterms-fma-wpanat.obo:
+	obol -u onto_grep onto-3-way-align -r wpanat -r fma3  -i fma3-latin.obo -r uberon -ont1 dbpedia -ont2 fma -ont3 uberon > $@
+
 newterms-fma-envo.obo:
 	obol -u onto_grep onto-3-way-align -r envo -r fma  -i fma3-latin.obo -r uberon -ont1 ENVO -ont2 fma -ont3 uberon > $@
 
@@ -805,8 +808,14 @@ dbpedia_all_AnatomicalStructure.pro:
 dbpedia_all_Embryology.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/Embryology> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
+dbpedia_all_Animal_anatomy.pro:
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Animal_anatomy> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+
+dbpedia_subjects.pro:
+	sort -u dbpedia_all_*.pro > $@
+
 # everything as type AnatomicalStructure
-dbpedia_all.pro: dbpedia_all_AnatomicalStructure.pro
+dbpedia_all.pro: dbpedia_subjects.pro
 	blip-findall -debug sparql -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
 dbpedia_all-after-%.pro: dbpedia_all_AnatomicalStructure.pro
 	blip-findall -debug sparql -i $< -u sparql_util "row(A),A@>'http://dbpedia.org/resource/$*',dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
