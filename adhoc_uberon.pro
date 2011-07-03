@@ -162,11 +162,13 @@ class_in_taxon_slim(C,T) :-
         \+ class_not_in_taxon_slim(C,T).
 
 class_not_in_taxon_slim(C,T) :-
-        parentRT(C,C2),
+        %parentRT(C,C2),
+        inferred_parent_via(C,C2,_),
         restriction(C2,never_in_taxon,T2),
         subclassRT(T,T2).
 class_not_in_taxon_slim(C,T) :-
-        parentRT(C,C2),
+        %parentRT(C,C2),
+        inferred_parent_via(C,C2,_),
         restriction(C2,only_in_taxon,T2),
         \+ subclassRT(T,T2).
 

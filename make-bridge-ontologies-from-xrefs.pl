@@ -6,6 +6,7 @@ my %fhmap = ();
 my %tmap = ();
 my $id;
 my $n;
+my $n_xrefs = 0;
 my $stype;
 
 my @fns = ();
@@ -41,6 +42,7 @@ while (<>) {
             my $s = $1;
             my $fh = $fhmap{$s};
             if ($fh) {
+                $n_xrefs++;
                 my ($t,$rel,$filler) = @{$tmap{$s}};
                 print $fh "[Term]\n";
                 print $fh "id: $x ! $cmt\n";
@@ -62,6 +64,8 @@ while (<>) {
         }
     }
 }
+print STDERR "n_xrefs: $n_xrefs\n";
+
 
 foreach my $s (keys %fhmap) {
     my $fh = $fhmap{$s};
@@ -80,6 +84,9 @@ foreach my $ont (@fns) {
         system("rm $ont.obo");
     }
 }
+
+print STDERR "n_xrefs: $n_xrefs\n";
+
 exit 0;
 
 sub mk_bridge {

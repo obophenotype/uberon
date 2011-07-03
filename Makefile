@@ -23,6 +23,7 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 %-orphans: %.obo
 	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@.tmp && obo-skip-header.pl $@.tmp > $@
 
+
 %-xp-check: %.obo
 	obo-check-xps.pl $< >& $@ || echo "problems"
 
@@ -158,8 +159,8 @@ uberon-%-misalign.txt: %.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles
-	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple-allcycles
+uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans
+	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
@@ -1053,14 +1054,32 @@ template-%.txt:
 	blip-findall -consult adhoc_uberon.pro -goal "load_taxslim,ix_taxslim" "class_in_taxon_slim(C,'NCBITaxon:$*',IsConf)" -label -use_tabs -no_pred > $@
 
 # ----------------------------------------
+# TAXON MODULES
+# ----------------------------------------
+# amniote = 32524
+uberon-taxmods: uberon-taxmod-amniote.owl
+uberon-taxmod-amniote.ids: 
+	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i uberon.obo -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
+
+# EXP:
+uberon-taxmod-amniote2.ids: 
+	blip-findall -debug index -table_pred ontol_db:subclassRT/2 -i uberon_edit.obo -i uberon.obo -consult adhoc_uberon.pro -goal "materialize_index(ontol_db:inferred_parent_via(1,0,0)),load_bioresource(taxslim)" "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
+
+uberon-taxmod-%.obo: uberon-taxmod-%.ids
+	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
+#	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
+.PRECIOUS: uberon-taxmod-%.obo
+
+# ----------------------------------------
 # RELEASE
 # ----------------------------------------
 RELDIR=$(HOME)/cvs/obo-svn/ontologies/UBERON
-release: mod/bridges
+release: mod/bridges uberon-taxmods
 	cp uberon.{obo,owl} $(RELDIR) ;\
 	cp uberon-with-extmod.{obo,owl} $(RELDIR)/mod ;\
+	cp uberon-taxmod-*.{obo,owl} $(RELDIR)/mod ;\
 	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
-	cp uberon-simple.{obo,owl} $(RELDIR)/subsets ;\
+	cp uberon-simple*.{obo,owl} $(RELDIR)/subsets ;\
 	echo done ;\
 	cd $(RELDIR) && svn commit -m ''
 
