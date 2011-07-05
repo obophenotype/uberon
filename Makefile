@@ -8,14 +8,8 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 %.obo-owlsafe: %.obo
 	perl -npe 's/\-\-/-\\\\-/g' $< > $@
 
-%-ncbo.owl: %.obo-owlsafe
-	obo2owl -allowdangling -mapping ncbo -o file://`pwd`/$@ $<
-
-%.owl2: %.obo
-	blip -i $< io-convert -to owl2 -u ontol_bridge_to_owl2_and_iao -o $@
-
 %.owl: %.obo
-	obolib-obo2owl -o file://`pwd`/$@ $<
+	obolib-obo2owl --to RDF -o file://`pwd`/$@ $<
 
 %.owlcheck: %.obo
 	obolib-obo2owl --allow-dangling -o file://`pwd`/$@ $<
@@ -309,7 +303,7 @@ all-mods: mod-PRO.owl
 mod-CL.obo:
 	blip ontol-query -r cell -query "class(ID),id_idspace(ID,'CL')" -to obo > $@.tmp && mv $@.tmp $@
 mod-CL.owl: mod-CL.obo	
-	obolib-obo2owl $< --allow-dangling -o $@ 
+	obolib-obo2owl --to RDF $< --allow-dangling -o $@ 
 
 #mod1-CL.obo:
 #	blip ontol-query -i uberon_edit.obo -r cell -query "(parent(X,Y);parent(Y,X)),id_idspace(X,'CL'),id_idspace(Y,'UBERON'),parentRT(X,ID)" -to obo > $@.tmp && mv $@.tmp $@
