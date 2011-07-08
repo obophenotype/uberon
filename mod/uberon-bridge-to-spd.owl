@@ -14,6 +14,9 @@
         <Class IRI="http://purl.obolibrary.org/obo/NCBITaxon_6893"/>
     </Declaration>
     <Declaration>
+        <Class IRI="http://purl.obolibrary.org/obo/SPD_0000016"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://purl.obolibrary.org/obo/SPD_0000055"/>
     </Declaration>
     <Declaration>
@@ -31,6 +34,16 @@
     <Declaration>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_xref"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://purl.obolibrary.org/obo/SPD_0000016"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.obolibrary.org/obo/UBERON_0000033"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <Class IRI="http://purl.obolibrary.org/obo/NCBITaxon_6893"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="http://purl.obolibrary.org/obo/SPD_0000055"/>
         <ObjectIntersectionOf>
@@ -73,6 +86,11 @@
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_xref"/>
         <IRI>http://purl.obolibrary.org/obo/BFO_0000050</IRI>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_id"/>
+        <IRI>http://purl.obolibrary.org/obo/SPD_0000016</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SPD:0000016</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_id"/>
