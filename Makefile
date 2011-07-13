@@ -510,7 +510,7 @@ newterms-aao-fma.obo:
 	obol -u onto_grep onto-3-way-align  -r amphibian_anatomy -r fma  -i fma3-latin.obo -r uberon -ont1 fma -ont2 amphibanat -ont3 uberon -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' > $@
 
 newterms-aao-zebrafish.obo:
-	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r amphibian_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 amphibanat -ont3 uberon > $@
+	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r amphibian_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 amphibian_anatomy -ont3 uberon > $@
 
 newterms-aao-xenopus.obo:
 	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r amphibian_anatomy -r xenopus_anatomy -r uberon -ont1 xenopus_anatomy -ont2 amphibanat -ont3 uberon > $@
