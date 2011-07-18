@@ -11,8 +11,11 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 %.owl: %.obo
 	obolib-obo2owl --to RDF -o file://`pwd`/$@ $<
 
+%-rt.obo: %.owl
+	obolib-owl2obo -o $@ $<
+
 %.owlcheck: %.obo
-	obolib-obo2owl --allow-dangling -o file://`pwd`/$@ $<
+	obolib-obo2owl --allow-dangling -o $@ $< && obolib-owl2obo -o $@-rt.obo $@
 
 %-orphans: %.obo
 	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@.tmp && obo-skip-header.pl $@.tmp > $@

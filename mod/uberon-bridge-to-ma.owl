@@ -5,7 +5,8 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon-bridge-to-ma.owl"/>
     
 
@@ -18,8 +19,9 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_id"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_xref"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_shorthand"/>
     
 
 
@@ -38,7 +40,8 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</obo:IAO_xref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
+        <obo:IAO_shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</obo:IAO_shorthand>
         <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</obo:IAO_id>
     </owl:ObjectProperty>
     
