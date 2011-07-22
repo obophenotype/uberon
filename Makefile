@@ -8,6 +8,9 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 %.obo-owlsafe: %.obo
 	perl -npe 's/\-\-/-\\\\-/g' $< > $@
 
+uberon_edit.owl: uberon_edit.obo
+	obolib-obo2owl --allow-dangling -o $@ $< 
+
 %.owl: %.obo
 	obolib-obo2owl --to RDF -o file://`pwd`/$@ $<
 
@@ -296,6 +299,9 @@ uberon-isa-to-%.obo: uberon.obo
 
 uberon-with-extmod.owl: uberon_edit.obo
 	owltools $< ncbi_taxon_slim.obo GO.obo CHEBI.obo cell.edit.obo PATO.obo PRO.obo --mcat -o file://`pwd`/$@
+.PRECIOUS: uberon-with-extmod.owl
+uberon-with-extmod.obo: uberon-with-extmod.owl
+	obolib-owl2obo -o $@ $<
 
 mod/bridges:
 	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
@@ -316,10 +322,10 @@ mod1-%.obo: %.obo
 mod-%.obo: mod1-%.obo
 	blip-ddb -i $< -goal remove_dangling_facts io-convert -to obo -o $@
 
-%-extmod.obo: %.obo
-	blip -i $< -r pato -r go -r cell -r chebi_slim -r protein -r taxslim ontol-query -showobsoletes -mireot UBERON -to obo > $*-extmod1.obo && blip-ddb -i $*-extmod1.obo -goal remove_dangling_facts io-convert -to obo -o $@
+#%-extmod.obo: %.obo
+#	blip -i $< -r pato -r go -r cell -r chebi_slim -r protein -r taxslim ontol-query -showobsoletes -mireot UBERON -to obo > $*-extmod1.obo && blip-ddb -i $*-extmod1.obo -goal remove_dangling_facts io-convert -to obo -o $@
 #	blip -table_pred ontol_db:bf_parentRT/2 -i $< -r fma_simple -r mouse_anatomy -r zebrafish_anatomy -r fly_anatomy -r xenopus_anatomy ontol-query -query "entity_xref(_,X),bf_parentRT(X,ID),entity_label(ID,_)" -to obo > $@.tmp && mv $@.tmp $@
-.PRECIOUS: %-extmod.obo
+#.PRECIOUS: %-extmod.obo
 
 %-simple.obo: %.obo
 	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))'  > $@
