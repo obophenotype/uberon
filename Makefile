@@ -27,6 +27,9 @@ uberon_edit.owl: uberon_edit.obo
 %-xp-check: %.obo
 	obo-check-xps.pl $< >& $@ || echo "problems"
 
+%-relstats: %.obo
+	blip-findall -r uberon  "aggregate(count,X-T,parent(X,R,T),Num)" -select "R-Num" -no_pred | | sort -nk2 > $@
+
 OBOLX=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -r obol_av 
 OBOL=$(OBOLX)  -u obol_anatomy_xp 
 
@@ -297,8 +300,9 @@ uberon-with-isa-for-%.obo: uberon.obo
 uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
+# note: use cell.obo for now; TODO: need to take care of duplicate defs in MIREOTs...
 uberon-with-extmod.owl: uberon_edit.obo
-	owltools $< ncbi_taxon_slim.obo GO.obo CHEBI.obo cell.edit.obo PATO.obo PRO.obo --mcat -o file://`pwd`/$@
+	owltools $< ncbi_taxon_slim.obo GO.obo CHEBI.obo cell.obo PATO.obo PRO.obo --mcat -o file://`pwd`/$@
 .PRECIOUS: uberon-with-extmod.owl
 uberon-with-extmod.obo: uberon-with-extmod.owl
 	obolib-owl2obo -o $@ $<
