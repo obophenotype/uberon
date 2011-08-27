@@ -10,6 +10,7 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 
 uberon_edit.owl: uberon_edit.obo
 	obolib-obo2owl --allow-dangling -o $@ $< 
+.PRECIOUS: uberon_edit.owl
 
 %.owl: %.obo
 	obolib-obo2owl --to RDF -o file://`pwd`/$@ $<
@@ -301,10 +302,10 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 # note: use cell.obo for now; TODO: need to take care of duplicate defs in MIREOTs...
-uberon-with-extmod.owl: uberon_edit.obo
+merged.owl: uberon_edit.obo
 	owltools $< ncbi_taxon_slim.obo GO.obo CHEBI.obo cell.obo PATO.obo PRO.obo --mcat -o file://`pwd`/$@
-.PRECIOUS: uberon-with-extmod.owl
-uberon-with-extmod.obo: uberon-with-extmod.owl
+.PRECIOUS: uberon-merged.owl
+merged.obo: uberon-merged.owl
 	obolib-owl2obo -o $@ $<
 
 mod/bridges:
@@ -331,14 +332,16 @@ mod-%.obo: mod1-%.obo
 #	blip -table_pred ontol_db:bf_parentRT/2 -i $< -r fma_simple -r mouse_anatomy -r zebrafish_anatomy -r fly_anatomy -r xenopus_anatomy ontol-query -query "entity_xref(_,X),bf_parentRT(X,ID),entity_label(ID,_)" -to obo > $@.tmp && mv $@.tmp $@
 #.PRECIOUS: %-extmod.obo
 
+# TODO: use Oort
 %-simple.obo: %.obo
 	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))'  > $@
 
-%-bridge.obo: %-with-isa.obo
-	obo-filter-tags.pl -t id -t is_a $< | obo-grep.pl --neg -r 'id: UBERON' - | obo-grep.pl -r Term -  > $@
+# TODO: use Oort
+#%-bridge.obo: %-with-isa.obo
+#	obo-filter-tags.pl -t id -t is_a $< | obo-grep.pl --neg -r 'id: UBERON' - | obo-grep.pl -r Term -  > $@
 
-%-merged.obo: %.obo %-mireot.obo %-bridge.obo
-	obo2obo -o $@ $< $*-mireot.obo $*-bridge.obo 
+#%-merged.obo: %.obo %-mireot.obo %-bridge.obo
+#	obo2obo -o $@ $< $*-mireot.obo $*-bridge.obo 
 
 %_all.obo: %_links_obo.obo
 	obo2obo -o $@ $< $*_obo.obo part_of.obo
@@ -346,8 +349,8 @@ mod-%.obo: mod1-%.obo
 uberon_edit-implied.obo: uberon_edit.obo
 	obo2obo -allowdangling -o -saveimpliedlinks  -allowdangling $@ $<
 
-uberon_edit-mireot-implied.obo: uberon_edit-mireot.obo
-	obo2obo -o -saveimpliedlinks $@ $<
+#uberon_edit-mireot-implied.obo: uberon_edit-mireot.obo
+#	obo2obo -o -saveimpliedlinks $@ $<
 
 uberon.obo: uberon_edit-implied.obo
 	obo-filter-external.pl --xp2rel $< | egrep -v '^(domain|range):' > $@.tmp && obo-add-data-version.pl $@.tmp > $@
@@ -393,12 +396,11 @@ caro-usage-%.txt:
 %-to-caro.obo:
 	 obo-promote-dbxref-to-relationship.pl --minimal --idspace CARO --relation is_a $*.obo > $@.tmp && mv $@.tmp $@
 
+# OBO-Format Hacking
 %-cmt.obo: %.obo
 	obo-add-comments.pl -t xref -t intersection_of uberon_edit.obo animal_gross_anatomy/*/*.obo ../cell_type/cell.obo ../caro/caro.obo MIAA.obo animal_gross_anatomy/*/*/*.obo ~/cvs/fma-conversion/fma2/fma2.obo gemina_anatomy.obo birnlex_anatomy.obo NIF-GrossAnatomy.obo hao.obo HOG.obo efo_anat.obo $< > $@
 
-uberon_ext.pro:
-	blip -debug anatomy -r zebrafish_anatomy -r xenopus_anatomy -r uberon -u query_anatomy -i zfa-xao-aln.tbl findall extend_ontology/0 > $@
-
+# Induction of links from sources
 links-uberon-fma.txt:
 	blip -debug anatomy -r fma_simple  -r uberonp -u query_obo -table_pred parent_by_xref/4 findall "parent_by_xref_nr(uberon,_,_,_)" -label > $@.tmp && cut -f3-8 $@.tmp | sort -u > $@
 
@@ -469,18 +471,15 @@ align-uberon-%.obo:
 	obol -goal "consult('ignore_word_adult.pro')" -u onto_grep -r $* -i uberon_edit.obo onto-exact-align -ont2 uberon -exclude_xref_strict -exclude_xref -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' -disp 'format(obo)' > $@.tmp && mv $@.tmp $@
 .PRECIOUS: align-uberon-%.obo
 
-
+# get synonyms from sources
 syns-uberon-%.obo:
 	blip -r $* -r uberon -i fetchsyns.pro -goal write_syns,halt > $@
 
-merge-uberon-%.obo: align-uberon-%.obo
-	obo-merge-tags.pl -t xref  uberon_edit.obo $< > $@
+#uberon-go-defs.txt:
+#	blip -r go $(GO_XP_ARGS) -u ontol_db findall "belongs(X,uberon),differentium(Y,_,X),def(Y,D),belongs(Y,biological_process),(\+ def(X,_) ; def(X,'.'))" -select "td(X,Y,D)" -label > $@.tmp && sort -u $@.tmp > $@
 
-uberon-go-defs.txt:
-	blip -r go $(GO_XP_ARGS) -u ontol_db findall "belongs(X,uberon),differentium(Y,_,X),def(Y,D),belongs(Y,biological_process),(\+ def(X,_) ; def(X,'.'))" -select "td(X,Y,D)" -label > $@.tmp && sort -u $@.tmp > $@
-
-%-syns.obo: %.obo
-	obol -debug obol -i $<  -u obol_anat_xpgen obol-generate-synonyms -query "id_idspace(ID,'UBERON'),genus(ID,_)" > $@.tmp && mv $@.tmp $@
+#%-syns.obo: %.obo
+#	obol -debug obol -i $<  -u obol_anat_xpgen obol-generate-synonyms -query "id_idspace(ID,'UBERON'),genus(ID,_)" > $@.tmp && mv $@.tmp $@
 
 %-defs.obo: %.obo
 	obol -debug obol -r pato -i $<  -u obol_anat_xpgen obol-generate-textdefs -idspace UBERON > $@.tmp && mv $@.tmp $@
@@ -561,14 +560,8 @@ newterms-zebrafish-fly.obo:
 newterms-hao-fly.obo:
 	obol -u onto_grep onto-3-way-align -r fly_anatomy -r hao -r uberon -ont1 fly_anatomy.ontology -ont2 HAO -ont3 uberon > $@
 
-newterms-zebrafish-ehdaa.obo:
-	obol -u onto_grep onto-3-way-align -r ehdaa -r zebrafish_anatomy -r uberon -ont1 human-dev-anat-abstract -ont2 zebrafish_anatomy -ont3 uberon > $@
-
-newterms-fma-ehdaa.obo:
-	obol -u onto_grep onto-3-way-align -r ehdaa -r fma  -i fma3-latin.obo -r uberon -ont1 human-dev-anat-abstract -ont2 fma -ont3 uberon > $@
-
 newterms-fma-ehdaa2.obo:
-	obol -debug index -u onto_grep onto-3-way-align -r ehdaa2 -r fma  -i fma3-latin.obo -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
+	obol -debug index -u onto_grep onto-3-way-align -r ehdaa2 -r fma  -i fma3-latin.obo -r uberonp -ont1 'http://www.xspan.org/obo.owl#' -ont2 fma -ont3 uberon > $@
 
 newterms-fma-emapa.obo:
 	obol -u onto_grep onto-3-way-align -r emapaa -r fma  -i fma3-latin.obo -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
@@ -1082,8 +1075,10 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 # ----------------------------------------
 RELDIR=$(HOME)/cvs/obo-svn/ontologies/UBERON
 release: mod/bridges uberon-taxmods
+	cp uberon_edit.owl $(RELDIR)/core.owl ;\
+	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl} $(RELDIR) ;\
-	cp uberon-with-extmod.{obo,owl} $(RELDIR)/mod ;\
+	cp merged.{obo,owl} $(RELDIR)/mod ;\
 	cp uberon-taxmod-*.{obo,owl} $(RELDIR)/mod ;\
 	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
 	cp uberon-simple*.{obo,owl} $(RELDIR)/subsets ;\
