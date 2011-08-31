@@ -9,11 +9,15 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 	perl -npe 's/\-\-/-\\\\-/g' $< > $@
 
 uberon_edit.owl: uberon_edit.obo
-	obolib-obo2owl --allow-dangling -o $@ $< 
+	obolib-obo2owl -x -xm GCI --allow-dangling -o $@ $< 
 .PRECIOUS: uberon_edit.owl
+
+oort:
+	ontology-release-runner -outdir stagedir -reasoner hermit --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 
 %.owl: %.obo
 	obolib-obo2owl --to RDF -o file://`pwd`/$@ $<
+
 
 %-rt.obo: %.owl
 	obolib-owl2obo -o $@ $<
@@ -163,7 +167,7 @@ uberon-%-misalign.txt: %.obo
 	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans
+uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans merged.obo
 	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
@@ -302,11 +306,26 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 # note: use cell.obo for now; TODO: need to take care of duplicate defs in MIREOTs...
-merged.owl: uberon_edit.obo
-	owltools $< ncbi_taxon_slim.obo GO.obo CHEBI.obo cell.obo PATO.obo PRO.obo --mcat -o file://`pwd`/$@
-.PRECIOUS: uberon-merged.owl
-merged.obo: uberon-merged.owl
+merged.owl: uberon_edit.obo cl-core.obo
+	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
+.PRECIOUS: merged.owl
+merged.obo: merged.owl
 	obolib-owl2obo -o $@ $<
+
+cl-core.obo: cell.edit.obo
+	obo-grep.pl -r 'id: CL:' $< > $@
+pr-core.obo: PRO.obo
+	obo-grep.pl --neg -r 'id: GO:' $< > $@
+
+composite-vertebrate.obo: merged.obo
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO  -goal rewrite_all io-convert -to obo > $@
+.PRECIOUS: composite-vertebrate.obo
+composite-metazoan.obo: merged.obo
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt  -goal rewrite_all io-convert -to obo > $@
+.PRECIOUS: composite-metazoan.obo
+
+composite-%.owl: compsite-%.obo
+	obolib-owl2obo --allow-dangling -o $@ $<
 
 mod/bridges:
 	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
@@ -1078,10 +1097,12 @@ release: mod/bridges uberon-taxmods
 	cp uberon_edit.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl} $(RELDIR) ;\
-	cp merged.{obo,owl} $(RELDIR)/mod ;\
+	cp merged.{obo,owl} $(RELDIR)/ ;\
 	cp uberon-taxmod-*.{obo,owl} $(RELDIR)/mod ;\
 	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
-	cp uberon-simple*.{obo,owl} $(RELDIR)/subsets ;\
+	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
+	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
+#	cp uberon-simple*.{obo,owl} $(RELDIR)/subsets ;\
 	echo done ;\
 	cd $(RELDIR) && svn commit -m ''
 
