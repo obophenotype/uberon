@@ -13,10 +13,10 @@ uberon_edit.owl: uberon_edit.obo
 .PRECIOUS: uberon_edit.owl
 
 oort:
-	ontology-release-runner -outdir stagedir -reasoner hermit --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
+	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 
 %.owl: %.obo
-	obolib-obo2owl --to RDF -o file://`pwd`/$@ $<
+	obolib-obo2owl --to RDF -o $@ $<
 
 
 %-rt.obo: %.owl
@@ -248,8 +248,8 @@ ma-to-fma.obo: ma-to-fma-m.pro
 %-implied.obo: %-imports.obo %.obo
 	obo2obo -o -saveimpliedlinks $@ $<
 
-%-show-implied: %-implied.obo
-	obo-grep.pl -r 'is_a.*implied' $<
+#%-show-implied: %-implied.obo
+#	obo-grep.pl -r 'is_a.*implied' $<
 
 UBER_ANATS = -r caro -r worm_anatomy -r mouse_anatomy -r fly_anatomy -r zebrafish_anatomy -r fma -r cell -r miaa -r xenopus_anatomy
 HOMOLS = -i fly-to-worm-homology.obo -i ma-to-fma.obo -i fly-to-fma-homology.obo -i zfa-to-fma-homology.obo -i xao-to-fma-homology.obo
@@ -306,26 +306,37 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 # note: use cell.obo for now; TODO: need to take care of duplicate defs in MIREOTs...
-merged.owl: uberon_edit.obo cl-core.obo
+merged.owl: uberon_edit-implied.obo cl-core.obo
 	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
 	obolib-owl2obo -o $@ $<
+.PRECIOUS: merged.obo
 
 cl-core.obo: cell.edit.obo
 	obo-grep.pl -r 'id: CL:' $< > $@
 pr-core.obo: PRO.obo
 	obo-grep.pl --neg -r 'id: GO:' $< > $@
 
+# TODO: ensure treat-xrefs in merged
+composite-xenopus.obo: merged.obo
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r XAO -goal "rewrite_all('uberon/composite-xenopus')" io-convert -to obo > $@
+.PRECIOUS: mammal-xenopus.obo
+
+composite-mammal.obo: merged.obo
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r MA -r EHDAA2 -goal rewrite_all io-convert -to obo > $@
+.PRECIOUS: mammal-mammal.obo
+
 composite-vertebrate.obo: merged.obo
 	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO  -goal rewrite_all io-convert -to obo > $@
 .PRECIOUS: composite-vertebrate.obo
+
 composite-metazoan.obo: merged.obo
 	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt  -goal rewrite_all io-convert -to obo > $@
 .PRECIOUS: composite-metazoan.obo
 
-composite-%.owl: compsite-%.obo
-	obolib-owl2obo --allow-dangling -o $@ $<
+composite-vertebrate.owl: composite-vertebrate.obo
+	obolib-obo2owl --allow-dangling -o $@ $<
 
 mod/bridges:
 	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
@@ -1100,6 +1111,7 @@ release: mod/bridges uberon-taxmods
 	cp merged.{obo,owl} $(RELDIR)/ ;\
 	cp uberon-taxmod-*.{obo,owl} $(RELDIR)/mod ;\
 	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
+	cp composite-vertebrate.{obo,owl} $(RELDIR) ;\
 	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
 	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
 #	cp uberon-simple*.{obo,owl} $(RELDIR)/subsets ;\
