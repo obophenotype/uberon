@@ -318,6 +318,8 @@ cl-core.obo: cell.edit.obo
 pr-core.obo: PRO.obo
 	obo-grep.pl --neg -r 'id: GO:' $< > $@
 
+composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
+
 # TODO: ensure treat-xrefs in merged
 composite-xenopus.obo: merged.obo
 	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r XAO -goal "rewrite_all('uberon/composite-xenopus')" io-convert -to obo > $@
@@ -335,6 +337,10 @@ composite-metazoan.obo: merged.obo
 	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt  -goal rewrite_all io-convert -to obo > $@
 .PRECIOUS: composite-metazoan.obo
 
+composite-mammal.owl: composite-mammal.obo
+	obolib-obo2owl --allow-dangling -o $@ $<
+composite-metazoan.owl: composite-metazoan.obo
+	obolib-obo2owl --allow-dangling -o $@ $<
 composite-vertebrate.owl: composite-vertebrate.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
 
