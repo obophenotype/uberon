@@ -5,19 +5,19 @@ PO_OBO=$(HOME)/cvs/Poc/ontology/OBO_format/po_anatomy.obo
 
 all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_xp.obo worm_anatomy_xp.obo dictyostelium_anatomy_xp.obo xenopus_anatomy_xp.obo fungal_anatomy-cellular_component-aln.txt
 
-%.obo-owlsafe: %.obo
-	perl -npe 's/\-\-/-\\\\-/g' $< > $@
-
+# ----------------------------------------
+# General release management
+# ----------------------------------------
 uberon_edit.owl: uberon_edit.obo
 	obolib-obo2owl -x -xm GCI --allow-dangling -o $@ $< 
 .PRECIOUS: uberon_edit.owl
 
+# NEW
 oort:
 	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 
 %.owl: %.obo
 	obolib-obo2owl --to RDF -o $@ $<
-
 
 %-rt.obo: %.owl
 	obolib-owl2obo -o $@ $<
@@ -28,143 +28,14 @@ oort:
 %-orphans: %.obo
 	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@.tmp && obo-skip-header.pl $@.tmp > $@
 
-
 %-xp-check: %.obo
 	obo-check-xps.pl $< >& $@ || echo "problems"
 
 %-relstats: %.obo
 	blip-findall -r uberon  "aggregate(count,X-T,parent(X,R,T),Num)" -select "R-Num" -no_pred | | sort -nk2 > $@
 
-OBOLX=obol -r ubo -r relationship -r ro_proposed -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3 -table_pred user:continuant/3 -table_pred ontol_db:subclassT/2 -table_pred user:cell/3 -table_pred user:cell5/3 -table_pred user:spatial/3 -r obol_av 
-OBOL=$(OBOLX)  -u obol_anatomy_xp 
 
-po_anatomy_xp.obo:
-	$(OBOL) -u obol_anatomy_xp_sensu -r plant_anatomy obol-parse -parse_rule anatomical_continuant "belongs(ID,plant_structure)" >& $@.tmp && mv $@.tmp $@
 
-fly_anatomy_xp.obo:
-	$(OBOL) -r fly_anatomy obol-parse "belongs(ID,'fly_anatomy.ontology')" >& $@.tmp && mv $@.tmp $@
-
-zebrafish_anatomy_xp-obol.obo:
-	$(OBOL) -i zfa_extra.obo -u obol_zfa_xp -u hook_hier -r zebrafish_anatomy -i zebrafish_anatomy_xp.obo obol-parse  -minscore 1 -xp_policy newonly "belongs(ID,zebrafish_anatomy)" >& $@.tmp && mv $@.tmp $@
-#	$(OBOL) -i zfa_extra.obo -u obol_zfa_xp -u hook_hier -r zebrafish_anatomy obol-parse  -minscore 2 -xp_policy newonly "belongs(ID,zebrafish_anatomy)" >& $@.tmp && mv $@.tmp $@
-#	$(OBOL) -u obol_zfa_xp -u hook_hier -r zebrafish_anatomy -i zebrafish_anatomy_xp.obo obol-parse -xp_policy newonly "belongs(ID,zebrafish_anatomy)" >& $@.tmp && mv $@.tmp $@
-
-xenopus_anatomy_xp-obol.obo:
-	$(OBOL) -i zfa_extra.obo -u hook_hier -r xenopus_anatomy -i xenopus_anatomy_xp.obo  obol-parse  -minscore 1 -xp_policy newonly "belongs(ID,xenopus_anatomy)" >& $@.tmp && mv $@.tmp $@
-#	$(OBOL) -r xenopus_anatomy obol-parse "belongs(ID,xenopus_anatomy)" >& $@.tmp && mv $@.tmp $@
-
-uberon_xp.obo: uberon_edit.obo
-	$(OBOL) -i $< -u obol_nif_anatomy_xp obol-parse -xp_policy newonly "belongs(ID,uberon)" >& $@.tmp && mv $@.tmp $@
-
-uberon_xp_chebi-obol.obo: uberon_edit.obo
-	$(OBOL) -r xchebi -i $< -u obol_nif_anatomy_xp -u obol_cell_xp_secretion obol-parse -xp_policy newonly "belongs(ID,uberon)" >& $@.tmp && mv $@.tmp $@
-
-%_xp.obo:
-	$(OBOL) -r $* obol-parse "belongs(ID,'$*')" >& $@.tmp && mv $@.tmp $@
-
-TICK=animal_gross_anatomy/tick_anatomy.obo
-tick_anatomy_with_syns.obo:
-	perl -npe 'print "synonym: \"$$1\" EXACT []\n" if (/^name: adult (.*)/)' $(TICK) > $@.tmp && mv $@.tmp $@
-
-# ignore 'Adult' prefix...
-tick_anatomy_xp.obo: tick_anatomy_deplural.obo
-	$(OBOL) -u ontol_manifest_synonym_from_tick_anatomy -r cell -i tick_anatomy_deplural.obo obol-parse "belongs(ID,tick_anatomy)" >& $@.tmp && mv $@.tmp $@
-
-dictyostelium_anatomy_xp.obo:
-	$(OBOL) -u obol_dicty_anatomy_xp -r dicty_anatomy obol-parse "belongs(ID,'Dictyostelium_discoideum_anatomy')" >& $@.tmp && mv $@.tmp $@
-
-# worm...
-%_anatomy_xp.obo:
-#	$(OBOL) -r $*_anatomy -r $*_development -r go obol-parse -parse_rule anatomical_continuant "belongs(ID,'$*_anatomy')" >& $@.tmp && mv $@.tmp $@
-	$(OBOL) -r $*_anatomy  -r go obol-parse -parse_rule anatomical_continuant "belongs(ID,'$*_anatomy')" >& $@.tmp && mv $@.tmp $@
-
-efo_anat.obo:
-	blip -r efo ontol-subset -query "subclassRT(ID,'EFO:0000635')" -to obo > $@.tmp && mv $@.tmp $@
-
-fma_xp-obol.obo:
-	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
-
-fma_xp_cell-obol.obo:
-	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp_cell -r fma_downcase obol-parse "class(C,cell),subclassT(ID,C),belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
-
-fma_xp_CL-obol.obo:
-	obol -table_pred ontol_db:subclassT/2 -i fma_xp.obo -r cell -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp_cell -r fma_downcase obol-parse "class(C,cell),subclassT(ID,C),belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
-
-fma_xp_uberon-obol.obo:
-	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_fma_xp -r fma_downcase obol-parse "belongs(ID,fma)" >& $@.tmp && mv $@.tmp $@
-
-ehdaa2_xp_uberon-obol.obo: ehdaa2_xp_uberon.obo
-	$(OBOLX) -i $< -u obol_ehdaa_xp -r uberon -r ehdaa2 obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
-
-emapaa.obo:
-	blip-ddb -debug index  -r emapa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
-
-ehdaaa.obo:
-	blip-ddb -debug index  -r ehdaa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
-
-emapa_xp_uberon-obol.obo:
-	obol -r relationship -table_pred user:anatomical_continuant/3 -table_pred user:anatomical_continuant5/3 -u obol_ehdaa_xp -r uberon -r emapa obol-parse "belongs(ID,abstract_anatomy)" >& $@.tmp && mv $@.tmp $@
-
-mouse_anatomy_fixed.obo: anatomy/gross_anatomy/animal_gross_anatomy/mouse/adult_mouse_anatomy.obo
-	perl -npe 'if (/(meta\S+ bone \w+ digit)/) {s/(hand|foot)//}' $< > $@
-
-mouse_anatomy_xp-obol.obo: mouse_anatomy_fixed.obo
-	$(OBOL) -u obol_mouse_anatomy_xp -i ma_extra.obo -i mouse_anatomy_xp.obo -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd')" >& $@.tmp && mv $@.tmp $@
-
-mouse_anatomy_xp_uberon-obol.obo:
-	$(OBOL) -i ma_extra.obo -i mouse_anatomy_xp.obo -r uberon -r relationship -i mouse_anatomy_fixed.obo obol-parse -xp_policy newonly "belongs(ID,'adult_mouse_anatomy.gxd'),\+((entity_xref(U,ID),id_idspace(U,'UBERON')))" >& $@.tmp && mv $@.tmp $@
-
-zebrafish_anatomy_xp_uberon-obol.obo:
-	$(OBOL) -i zfa_extra.obo -i zebrafish_anatomy_xp.obo -r uberon -r relationship -r zebrafish_anatomy obol-parse -xp_policy newonly "class(ID),id_idspace(ID,'ZFA'),\+((entity_xref(U,ID),id_idspace(U,'UBERON')))" >& $@.tmp && mv $@.tmp $@
-
-hog_xp-obol.obo:
-	$(OBOL) -r hog -r relationship obol-parse -xp_policy newonly "belongs(ID,anatomical_homology_ontology)" >& $@.tmp && mv $@.tmp $@
-
-hog_xp_uberon-obol.obo: hog_xp.obo
-	$(OBOL) -i $< -r hog -r uberon -r relationship obol-parse -xp_policy newonly "belongs(ID,anatomical_homology_ontology),\+((entity_xref(U,ID),id_idspace(U,'UBERON')))" >& $@.tmp && mv $@.tmp $@
-
-bila_xp-obol.obo:
-	$(OBOL) -r bila -r relationship obol-parse -xp_policy newonly "belongs(ID,bila)" >& $@.tmp && mv $@.tmp $@
-
-cell_xp-obol.obo:
-	$(OBOL) -i ../cell_type/cell_xp.obo -u obol_cell_xp_go -u obol_cell_xp_quality -u obol_cell_xp_secretion -r xchebi -r go -r uberon -r pato -r cell -r ro_proposed obol-parse "belongs(ID,cell)" >& $@.tmp && mv $@.tmp $@
-#	$(OBOL) -i ../cell_type/cell_xp.obo -u obol_cell_xp_go -u obol_cell_xp_quality -u obol_cell_xp_secretion -r xchebi -r protein -r go -r uberon -r pato -r cell -r ro_proposed obol-parse -new_only "belongs(ID,cell)" >& $@.tmp && mv $@.tmp $@
-
-# -- CL mappings --
-
-zebrafish_anatomy_xp_cell.obo:
-	obo-promote-dbxref-to-intersection.pl --idspace CL -d OBO_REL:part_of NCBITaxon:7955 $(ZFA_OBO) | obo-grep.pl -r intersection_of: - | obo-filter-tags.pl -t id -t intersection_of - > $@.tmp && mv $@.tmp $@
-
-# use: NCBITaxon:33090 Viridiplantae
-plant_anatomy_xp_cell.obo:
-	obo-promote-dbxref-to-intersection.pl --idspace CL -d OBO_REL:part_of NCBITaxon:33090 $(PO_OBO) | obo-grep.pl -r intersection_of: - | obo-filter-tags.pl -t id -t intersection_of - > $@.tmp && mv $@.tmp $@
-
-# use: NCBITaxon:7227 Dmel
-fly_anatomy_xp_cell.obo:
-	obo-promote-dbxref-to-intersection.pl --idspace CL -d OBO_REL:part_of NCBITaxon:7227 $(FLY_OBO) | obo-grep.pl -r intersection_of: - | obo-filter-tags.pl -t id -t intersection_of - > $@.tmp && mv $@.tmp $@
-
-# -- Alignemnts --
-
-%-cellular_component-aln.txt:
-	obol ontol-align -r $* -r go -shownames -stem $* cellular_component > $@.tmp && mv $@.tmp $@
-
-fly_anatomy-cell-aln.tbl:
-	obol ontol-align -r fly_anatomy -r cell -shownames -stem fly_anatomy.ontology cell > $@.tmp && mv $@.tmp $@
-
-plant_anatomy-cell-aln.tbl:
-	obol ontol-align -r plant_anatomy -r cell -shownames -stem plant_structure cell > $@.tmp && mv $@.tmp $@
-
-zebrafish_anatomy-teleost_anatomy-aln.tbl:
-	obol ontol-align -r zebrafish_anatomy -r teleost_anatomy -shownames -stem zebrafish_anatomy teleost_anatomy > $@.tmp && mv $@.tmp $@
-
-zfa-fma-aln.tbl:
-	obol ontol-align -r zebrafish_anatomy -r fma_downcase -shownames -stem zebrafish_anatomy fma > $@.tmp && mv $@.tmp $@
-
-uberon-%-misalign.txt: %.obo
-	blip  -r uberon -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
-
-%-misalign.txt: %-imports.obo
-	blip  -import_all -i $< -u tabling -table_pred user:xp_align/6 -u query_obo findall "xp_align_nr(A,R,B,XA,XR,XB)" -label > $@.tmp && sort -u $@.tmp > $@
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
 uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans merged.obo
@@ -198,31 +69,23 @@ uberon-discv-%.txt: uberon-with-isa.obo
 dv-aba.txt:
 	blip-findall -r uberonp -r aba "disjoint_from(X1,X2),id_idspace(X1,'ABA'),entity_xref(U1,X1),entity_xref(U2,X2),parentRT(D,part_of,U1),parentRT(D,part_of,U2)" -select "d(D,U1,U2)" -label > $@
 
-# no stemming
-zfa-xao-aln.tbl:
-	obol ontol-align -r zebrafish_anatomy -r xenopus_anatomy -shownames zebrafish_anatomy xenopus_anatomy > $@.tmp && mv $@.tmp $@
+# ----------------------------------------
+# Ontology subsetting and rewriting
+# ----------------------------------------
 
-xao-fma-aln.tbl:
-	obol ontol-align -r xenopus_anatomy -r fma_downcase -shownames -stem xenopus_anatomy fma > $@.tmp && mv $@.tmp $@
+efo_anat.obo:
+	blip -r efo ontol-subset -query "subclassRT(ID,'EFO:0000635')" -to obo > $@.tmp && mv $@.tmp $@
 
-fly-fma-aln.tbl:
-	obol ontol-align -r fly_anatomy -r fma_downcase -shownames -stem fly_anatomy.ontology fma > $@.tmp && mv $@.tmp $@
+emapaa.obo:
+	blip-ddb -debug index  -r emapa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
 
-fly-worm-aln.tbl:
-	obol ontol-align -r fly_anatomy -r worm_anatomy -shownames -stem fly_anatomy.ontology worm_anatomy > $@.tmp && mv $@.tmp $@
+ehdaaa.obo:
+	blip-ddb -debug index  -r ehdaa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
 
-ant-chebi-aln.tbl:
-	obol ontol-align -r ant -r chebi -shownames -stem ant chebi_ontology > $@.tmp && mv $@.tmp $@
-
-%-cell-aln.tbl:
-	obol ontol-align -r $* -r cell -shownames -stem $* cell > $@.tmp && mv $@.tmp $@
 
 sao.obo:
 	blip -r sao -u ontol_manifest_metadata_from_sao io-convert -to obo -o $@
 
-cc-sao-aln.tbl:
-#	obol ontol-align -u ontol_manifest_metadata_from_sao -r sao -r obo/cellular_component -shownames -stem cellular_component 'http://ccdb.ucsd.edu/SAO/1.2#' > $@.tmp && mv $@.tmp $@
-	obol ontol-align -u ontol_manifest_downcase_synonym_from_name -u ontol_manifest_metadata_from_sao -r sao -r obo/cellular_component -shownames -stem > $@.tmp && mv $@.tmp $@
 
 ma-to-fma-name.txt: mappings_MAandFMA.txt
 	./parse-mappings.pl $< > $@.tmp && mv $@.tmp $@
