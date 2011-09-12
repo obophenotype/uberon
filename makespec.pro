@@ -8,6 +8,8 @@ anatomy('TAO').
 anatomy('XAO').
 anatomy('MA').
 anatomy('FMA').
+anatomy(emapaa).
+anatomy(ehdaa2).
 anatomy(snomed_anatomy).
 anatomy(nif_anatomy).
 anatomy(ncit).
