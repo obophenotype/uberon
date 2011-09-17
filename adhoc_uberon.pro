@@ -188,6 +188,10 @@ ix_taxslim :-
 
 %% class_taxon_invalid(UberonViolatingClass,ExtClass,Taxon,UberonClassWithTaxonRestriction,OnlyInThisTaxon)
 class_taxon_invalid(U,X,T,Y,TY) :-
+        class(U),
+        \+ \+ class_taxon_invalid_1(U,X,T,Y,TY).
+
+class_taxon_invalid_1(U,X,T,Y,TY) :-
 	class(U),
 	entity_xref(U,X),
 	id_idspace(X,S),
@@ -197,7 +201,7 @@ class_taxon_invalid(U,X,T,Y,TY) :-
 	debug(tax,'~w ~w check: ~w',[X,T,TY]),
 	\+ subclassRT(T,TY).
 
-class_taxon_invalid(U,X,T,Y,TY) :-
+class_taxon_invalid_1(U,X,T,Y,TY) :-
 	class(U),
 	entity_xref(U,X),
 	id_idspace(X,S),

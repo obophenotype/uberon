@@ -12,9 +12,14 @@ uberon_edit.owl: uberon_edit.obo
 	obolib-obo2owl -x -xm GCI --allow-dangling -o $@ $< 
 .PRECIOUS: uberon_edit.owl
 
+clear-r:
+	(test -f r/staging/.lock && rm r/staging/.lock) || echo
 # NEW
-oort:
-	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
+oort: clear-r
+	ontology-release-runner --outdir r/ --reasoner hermit --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo ncbi_taxon_slim.obo
+#	ontology-release-runner --outdir r/ --enforceEL --reasoner jcel --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo
+#	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
+# TODO - expand macros
 
 %.owl: %.obo
 	obolib-obo2owl --to RDF -o $@ $<
@@ -34,33 +39,36 @@ oort:
 %-relstats: %.obo
 	blip-findall -r uberon  "aggregate(count,X-T,parent(X,R,T),Num)" -select "R-Num" -no_pred | | sort -nk2 > $@
 
-
+%-el.owl: %.owl
+	makeElWithoutReasoning.sh -i `pwd`/$< -o `pwd`/$@
 
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans merged.obo
-	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-dvall.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans
+uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt
+	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
 %-dv.txt: %.obo
 	blip -u ontol_manifest_disjoint_from_preceded_by -i $< -u query_obo findall disjoint_from_violation/3 -label > $@
-%-dvall.txt: %.obo
-	blip-findall -debug index -i $< -r fma_simple -r ZFA -r MA -r HAO -r FBbt -r ehdaa2 -r emapa -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  "disjoint_from_violation_nr(X,Y,C),subclass(C,D),\+id_idspace(D,'UBERON')" -select "disjoint_from_violation_nr(X,Y,C,D)" -label > $@
+#%-dvall.txt: %.obo
+#	blip-findall -debug index -i $< -r fma_simple -r ZFA -r MA -r HAO -r FBbt -r ehdaa2 -r emapa -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  "disjoint_from_violation_nr(X,Y,C),subclass(C,D),\+id_idspace(D,'UBERON')" -select "disjoint_from_violation_nr(X,Y,C,D)" -label > $@
 %-dvall-strict.txt: %.obo
 	blip-findall -debug index -i $< -i uberon_disjoint_from_strict.obo -r fma_simple -r ZFA -r MA -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  "disjoint_from_violation_nr(X,Y,C),subclass(C,D),\+id_idspace(D,'UBERON')" -select "disjoint_from_violation_nr(X,Y,C,D)" -label > $@
 uberon-dv-%.txt: uberon.obo
 	blip -u ontol_manifest_disjoint_from_preceded_by -r uberon -r $* -u query_obo findall xref_disjoint_from_violation_nr/3 -label > $@
 uberon-jepd-dv-%.txt: uberon.obo
 	blip -r uberon -r $* -u query_obo findall jepd_xref_disjoint_violation_nr/3 -label > $@
-uberon-discv-FMA-MA-ZFA.txt: uberon-with-isa.obo
-	blip -u ontol_manifest_disconnected_from_adjacent -i uberon-with-isa.obo -r ZFA -r MA -r FMA -u query_obo findall xref_disjoint_over_violation/4 -label > $@
+#uberon-discv-FMA-MA-ZFA.txt: uberon-with-isa.obo
+#	blip -u ontol_manifest_disconnected_from_adjacent -i uberon-with-isa.obo -r ZFA -r MA -r FMA -u query_obo findall xref_disjoint_over_violation/4 -label > $@
 uberon-discv-%.txt: uberon-with-isa.obo
 	blip -u ontol_manifest_disconnected_from_adjacent -i uberon-with-isa.obo -r $* -u query_obo findall xref_disjoint_over_violation/4 -label > $@
 %-discv.txt: %.obo
-	blip -table_pred ontol_db:parentRT/3 -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $<  -u query_obo findall disjoint_over_violation/4 -label > $@
-%-discvall.txt: %.obo
-	blip -table_pred ontol_db:parentRT/3  -r fma_simple -r ZFA -r MA -r HAO -r FBbt -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $< -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  -u query_obo findall disjoint_over_violation/4 -label > $@
+	blip -table_pred ontol_db:parentRT/3 -i spatially_disjoint_from.obo -i $<  -u query_obo findall disjoint_over_violation/4 -label > $@
+#	blip -table_pred ontol_db:parentRT/3 -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $<  -u query_obo findall disjoint_over_violation/4 -label > $@
+
+#%-discvall.txt: %.obo
+#	blip -table_pred ontol_db:parentRT/3  -r fma_simple -r ZFA -r MA -r HAO -r FBbt -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $< -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  -u query_obo findall disjoint_over_violation/4 -label > $@
 %-taxcheck.txt: %.obo
 	blip-findall -table_pred parentRT/2 -i ncbi_taxon_slim.obo -i $< -i adhoc_uberon.pro "class_taxon_invalid(U,X,T,Y,TY)" -label > $@
 %-obscheck.txt: %.obo
@@ -176,10 +184,11 @@ merged.obo: merged.owl
 	obolib-owl2obo -o $@ $<
 .PRECIOUS: merged.obo
 
+# core: the full ontology, excluding external classes, but including references to these
 cl-core.obo: cell.edit.obo
-	obo-grep.pl -r 'id: CL:' $< > $@
+	obo-grep.pl -r 'id: CL:' $< | grep -v ^disjoint > $@
 pr-core.obo: PRO.obo
-	obo-grep.pl --neg -r 'id: GO:' $< > $@
+	obo-grep.pl  -r 'id: PR:' $< > $@
 
 composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 
@@ -197,7 +206,7 @@ composite-vertebrate.obo: merged.obo
 .PRECIOUS: composite-vertebrate.obo
 
 composite-metazoan.obo: merged.obo
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt  -goal rewrite_all io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt   -goal rewrite_all io-convert -to obo > $@
 .PRECIOUS: composite-metazoan.obo
 
 composite-mammal.owl: composite-mammal.obo

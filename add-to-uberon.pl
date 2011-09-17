@@ -6,6 +6,7 @@ my $negate = 0;
 my $replace = 0;
 my $check = 0;
 my $expand_relations = 0;
+my $no_src;
 while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-h' || $opt eq '--help') {
@@ -23,6 +24,9 @@ while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     }
     if ($opt eq '-c' || $opt eq '--check') {
         $check = 1;
+    }
+    if ($opt eq '-n' || $opt eq '--no-src') {
+        $no_src = 1;
     }
     if ($opt eq '-t' || $opt eq '--tag') {
         $tag_h{shift @ARGV} = 1;
@@ -69,6 +73,7 @@ close(F);
 my $xref;
 my $name;
 my $src;
+my $srcqual = '';
 while(<>) {
     chomp;
     s/relationship: (constitutional|regional|systemic)_part/relationship: part/;
@@ -81,6 +86,9 @@ while(<>) {
             print "! ALREADY HAVE THIS IN UBERON\n";
         }
         ($src) = $xref =~/(\S+):/;
+        if ($src && !$no_src) {
+            $srcqual = "{source=\"$src\"} ";
+        }
     }
     elsif (/^namespace:/) {
     }
@@ -91,7 +99,7 @@ while(<>) {
     elsif (/^(relationship|intersection_of):\s*(\S+)\s+(\S+)/ && $3 !~ /\!/) {
         next if $2 eq 'end';
         if ($xrefh{$3}) {
-            print "$1: $2 $xrefh{$3} {source=\"$src\"} ! $nh{$xrefh{$3}}\n";
+            print "$1: $2 $xrefh{$3} $srcqual! $nh{$xrefh{$3}}\n";
         }
         else {
             print "! no mapping ($3) -- $_\n";
@@ -99,7 +107,7 @@ while(<>) {
     }
     elsif (/^(disjoint_from|is_a|intersection_of):\s*(\S+)/) {
         if ($xrefh{$2}) {
-            print "$1: $xrefh{$2} {source=\"$src\"} ! $nh{$xrefh{$2}}\n";
+            print "$1: $xrefh{$2} $srcqual! $nh{$xrefh{$2}}\n";
         }
         else {
             print "! no mapping ($2) -- $_\n";

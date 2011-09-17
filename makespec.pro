@@ -8,6 +8,7 @@ anatomy('TAO').
 anatomy('XAO').
 anatomy('MA').
 anatomy('FMA').
+anatomy('WBbt').
 anatomy(emapaa).
 anatomy(ehdaa2).
 anatomy(snomed_anatomy).
@@ -16,6 +17,8 @@ anatomy(ncit).
 
 allow_dangling(ceph).
 allow_dangling(uberon_edit).
+allow_dangling(merged).
+allow_dangling('composite-metazoan').
 
 outfmt(obo).
 outfmt(owl).
@@ -38,21 +41,41 @@ all <-- Deps,
 % all formats from obo
 'all-%' <-- ['%.owl', '%.owx'].
 
-% obo2owl WITH dangling
-'$Base.$Fmt' <-- ['$Base.obo'],
-       {allow_dangling(Base),suffix_fmt(Fmt,FmtName)},
-       'obolib-obo2owl --to $FmtName --allow-dangling $< -o $@ >& $@.err'.
+% ----------------------------------------
+% FETCHING DATA
+% ----------------------------------------
 
-% obo2owl NO dangling
-'$Base.$Fmt' <-- ['$Base.obo'],
-       {\+ allow_dangling(Base),suffix_fmt(Fmt,FmtName)},
-       'obolib-obo2owl --to $FmtName $< -o $@ >& $@.err'.
 
-'$Base.metadata' <-- ['$Base.owl'],
-       'owltools file://`pwd`/$<  --show-metadata > $@'.
 
-'$Base.closure' <-- ['$Base.owl'],
-       'owltools file://`pwd`/$<  --save-closure -c $@'.
+% ----------------------------------------
+% REASONING
+% ----------------------------------------
+
+'$Ont-el.owl' <-- ['$Ont.owl'],
+   'makeElWithoutReasoning.sh -i `pwd`/$< -o `pwd`/$@'.
+
+% make a merged ontology with data plus queries
+'kb-$Ont-plus-$Dataset.owl' <-- ['$Ont.owl'],
+  'owltools  $< kb/$Dataset.owl  --merge-support-ontologies  -o file://`pwd`/$@'.
+
+% closed-world via owltools
+'owlqueries/results-cw-$Ont-qf-$QF.out' <-- ['owlqueries/$QF.mos','$Ont.owl'],
+  'owltools  $Ont.owl kb/expr_summary.owl --merge-support-ontologies --query-ontology $< --query-cw > $@'.
+
+% ELK requires functional syntax
+'owlqueries/results-elk-$Ont-qf-$QF.out' <-- ['owlqueries/$QF.mos','$Ont.owl'],
+  'owltools  $Ont.owl kb/expr_t.owl $<  --merge-support-ontologies  -o -f functional file://`pwd`/q.owlfs && java -jar elk.jar -i q.owlfs -c -o $@'.
+
+% CB requires functional syntax
+'owlqueries/results-cb-$Ont-qf-$QF.out' <-- ['owlqueries/$QF.mos','$Ont.owl'],
+  'owltools  $Ont.owl kb/expr_t.owl $<  --merge-support-ontologies  -o -f functional file://`pwd`/q.owlfs && ./cb  q.owlfs -c -o $@'.
+
+% Other reasoners - assume EL
+'owlqueries/results-$R-$Ont-qf-$QF.out' <-- ['owlqueries/$QF.mos', 'kb-$Ont.owl'],
+  'owltools kb-$Ont.owl --query-ontology  $< --reasoner $R --run-reasoner > $@'.
+%'owlqueries/results-$R-$Ont-qf-$QF-vs-$Dataset.out' <-- ['owlqueries/$QF.mos','$Ont-el.owl'],
+%  'owltools  $Ont-el.owl kb/$Dataset.owl --merge-support-ontologies --query-ontology -m $< --reasoner $R --run-reasoner > $@'.
+
 
 % ----------------------------------------
 % ALIGNMENT
@@ -84,20 +107,35 @@ suffix_fmt(mos,manchester).
 suffix_fmt(owx,owlxml).
 suffix_fmt(owl,'RDFXML').
 
-% GENERIC
+% ----------------------------------------
+% UTIL
+% ----------------------------------------
 
 '$Dir/' <-- [],
   'mkdir -p $Dir'.
 
-/*
-['$Dir'] <-- [],
-   {is_dir(Dir)},
-   'mkdir $Dir && echo hi'.
+% ----------------------------------------
+% CONVERSION
+% ----------------------------------------
 
-is_dir(foodir).
-is_dir(bardir).
-*/
+% obo2owl WITH dangling
+'$Base.$Fmt' <-- ['$Base.obo'],
+       {allow_dangling(Base),suffix_fmt(Fmt,FmtName)},
+       'obolib-obo2owl --to $FmtName --allow-dangling $< -o $@ >& $@.err'.
 
+% obo2owl NO dangling
+'$Base.$Fmt' <-- ['$Base.obo'],
+       {\+ allow_dangling(Base),suffix_fmt(Fmt,FmtName)},
+       'obolib-obo2owl --to $FmtName $< -o $@ >& $@.err'.
 
+'$Base.metadata' <-- ['$Base.owl'],
+       'owltools file://`pwd`/$<  --show-metadata > $@'.
 
+'$Base.closure' <-- ['$Base.owl'],
+       'owltools file://`pwd`/$<  --save-closure -c $@'.
 
+'$Base.cvtermpath' <-- ['$Base.owl'],
+       'owltools file://`pwd`/$<  --save-closure-for-chado $@'.
+
+'$Base.owlfs' <-- ['$Base.owl'],
+       'owltools file://`pwd`/$<  -o -f functional file://`pwd`/$@'.
