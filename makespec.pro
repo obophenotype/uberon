@@ -1,7 +1,7 @@
 ont(ceph).
 ont(spongebo).
 
-anatomy(uberonp).
+anatomy(uberon).
 anatomy('CL').
 anatomy('ZFA').
 anatomy('TAO').
@@ -9,6 +9,7 @@ anatomy('XAO').
 anatomy('MA').
 anatomy('FMA').
 anatomy('WBbt').
+anatomy('FBbt').
 anatomy(emapaa).
 anatomy(ehdaa2).
 anatomy(snomed_anatomy).
@@ -100,7 +101,13 @@ align_all <-- Deps,
 'align/align-$A-$B-new.tbl' <-- ['align/align-$A-$B.pro'],
        'blip-findall -r $A -r $B -i uberon_edit.obo -r cell -i $< -consult align/util/align_util.pro "new_match(A,B)" -use_tabs -label -no_pred > $@'.
 
-'align/all-align-$A-$B' <-- ['align/align-$A-$B-new.tbl'].
+'align/align-$A-$B-fix.tbl' <-- ['align/align-$A-$B.pro'],
+       'blip-findall -r $A -r $B -i uberon_edit.obo -r cell -i $< -consult align/util/align_util.pro "needs_action(A,B,C,D)" -use_tabs -label -no_pred | sort -u > $@'.
+
+'align/align-$A-$B-new.obo' <-- ['align/align-$A-$B-new.tbl', 'align/align-$A-$B-fix.tbl'],
+       'tbl2obolinks.pl --rel xref $< > $@'.
+
+'align/all-align-$A-$B' <-- ['align/align-$A-$B-new.obo'].
 
 
 suffix_fmt(mos,manchester).

@@ -16,7 +16,7 @@ clear-r:
 	(test -f r/staging/.lock && rm r/staging/.lock) || echo
 # NEW
 oort: clear-r
-	ontology-release-runner --outdir r/ --reasoner hermit --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo ncbi_taxon_slim.obo
+	ontology-release-runner --outdir r/ --prefix http://purl.obolibrary.org/obo/UBERON_ --reasoner hermit --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo ncbi_taxon_slim.obo
 #	ontology-release-runner --outdir r/ --enforceEL --reasoner jcel --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo
 #	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 # TODO - expand macros
@@ -44,7 +44,7 @@ oort: clear-r
 
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt
+uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans merged-cycles composites composite-metazoan-dv.txt
 	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
@@ -177,12 +177,13 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 # note: use cell.obo for now; TODO: need to take care of duplicate defs in MIREOTs...
-merged.owl: uberon_edit-implied.obo cl-core.obo
+merged.owl: uberon_edit-implied.obo cl-core.obo ncbi_taxon_slim.obo
 	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
 	obolib-owl2obo -o $@ $<
 .PRECIOUS: merged.obo
+
 
 # core: the full ontology, excluding external classes, but including references to these
 cl-core.obo: cell.edit.obo
@@ -190,7 +191,8 @@ cl-core.obo: cell.edit.obo
 pr-core.obo: PRO.obo
 	obo-grep.pl  -r 'id: PR:' $< > $@
 
-composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
+#composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
+composites: composite-metazoan.owl composite-vertebrate.owl
 
 # TODO: ensure treat-xrefs in merged
 composite-xenopus.obo: merged.obo
@@ -198,16 +200,20 @@ composite-xenopus.obo: merged.obo
 .PRECIOUS: mammal-xenopus.obo
 
 composite-mammal.obo: merged.obo
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r MA -r EHDAA2 -goal rewrite_all io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r MA -r EHDAA2 -goal "rewrite_all('uberon/composite-mammal')" io-convert -to obo > $@
 .PRECIOUS: mammal-mammal.obo
 
 composite-vertebrate.obo: merged.obo
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO  -goal rewrite_all io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@
 .PRECIOUS: composite-vertebrate.obo
 
 composite-metazoan.obo: merged.obo
-	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt   -goal rewrite_all io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
 .PRECIOUS: composite-metazoan.obo
+
+# closures of individual ontologies, but not connections between them
+multi_closure-ontol_db.pro: merged.obo
+	owltools $< http://purl.obolibrary.org/obo/ma.owl http://purl.obolibrary.org/obo/ehdaa2.owl http://purl.obolibrary.org/obo/xao.owl http://purl.obolibrary.org/obo/zfa.owl http://purl.obolibrary.org/obo/fbbt.owl cl-core.obo -o $@.tmp && cut -f1,2,4 $@tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
 
 composite-mammal.owl: composite-mammal.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
@@ -216,8 +222,6 @@ composite-metazoan.owl: composite-metazoan.obo
 composite-vertebrate.owl: composite-vertebrate.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
 
-mod/bridges:
-	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
 
 # modules
 all-mods: mod-PRO.owl
@@ -981,7 +985,10 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 # ----------------------------------------
 # RELEASE
 # ----------------------------------------
-RELDIR=$(HOME)/cvs/obo-svn/ontologies/UBERON
+mod/bridges:
+	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
+
+RELDIR=trunk
 release: mod/bridges uberon-taxmods
 	cp uberon_edit.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
@@ -989,10 +996,9 @@ release: mod/bridges uberon-taxmods
 	cp merged.{obo,owl} $(RELDIR)/ ;\
 	cp uberon-taxmod-*.{obo,owl} $(RELDIR)/mod ;\
 	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
-	cp composite-vertebrate.{obo,owl} $(RELDIR) ;\
+	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
 	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
-#	cp uberon-simple*.{obo,owl} $(RELDIR)/subsets ;\
 	echo done ;\
-	cd $(RELDIR) && svn commit -m ''
+#	cd $(RELDIR) && svn commit -m ''
 
