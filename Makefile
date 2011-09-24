@@ -77,6 +77,10 @@ uberon-discv-%.txt: uberon-with-isa.obo
 dv-aba.txt:
 	blip-findall -r uberonp -r aba "disjoint_from(X1,X2),id_idspace(X1,'ABA'),entity_xref(U1,X1),entity_xref(U2,X2),parentRT(D,part_of,U1),parentRT(D,part_of,U2)" -select "d(D,U1,U2)" -label > $@
 
+# structural inference - e.g. metanephric nephrons
+uberon-structinf.txt:
+	blip-findall -table_pred "ontol_db:parentT/2"  -r uberonp "class_cdef(Y,cdef(A,[part_of=B])),parentT(X,part_of,A),\+parentRT(X,Y),parentT(X,part_of,B)" -select "x(X,Y,A,B)" -no_pred -label -use_tabs > $@
+
 # ----------------------------------------
 # Ontology subsetting and rewriting
 # ----------------------------------------
@@ -213,7 +217,7 @@ composite-metazoan.obo: merged.obo
 
 # closures of individual ontologies, but not connections between them
 multi_closure-ontol_db.pro: merged.obo
-	owltools $< http://purl.obolibrary.org/obo/ma.owl http://purl.obolibrary.org/obo/ehdaa2.owl http://purl.obolibrary.org/obo/xao.owl http://purl.obolibrary.org/obo/zfa.owl http://purl.obolibrary.org/obo/fbbt.owl cl-core.obo -o $@.tmp && cut -f1,2,4 $@tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
+	owltools $< http://purl.obolibrary.org/obo/ma.owl http://purl.obolibrary.org/obo/ehdaa2.owl http://purl.obolibrary.org/obo/xao.owl http://purl.obolibrary.org/obo/zfa.owl http://purl.obolibrary.org/obo/fbbt.owl http://purl.obolibrary.org/obo/wbbt.owl cl-core.obo --save-closure-for-chado $@.tmp && cut -f1,2,4 $@tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
 
 composite-mammal.owl: composite-mammal.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
@@ -397,132 +401,10 @@ syns-uberon-%.obo:
 	obol -debug obol -r pato -i $<  -u obol_anat_xpgen obol-generate-textdefs -idspace UBERON > $@.tmp && mv $@.tmp $@
 
 
-uberon-mouse-missing-below-%.txt:
-	blip -i adult_mouse_xp.obo -r uberon -r mouse_anatomy -u ontol_db findall "parentT(X,'$*'),\+ entity_xref(_,X),(genus(X,G)->true;G='')" -select X-G -label > $@.tmp && sort -u $@.tmp > $@
-
-newterms-fma-mouse.obo:
-	obol -debug index -u onto_grep onto-3-way-align -disp 'allow(_)' -r mouse_anatomy -r fma2 -i fma3-latin.obo -r uberon -ont1 adult_mouse_anatomy.gxd -ont2 fma -ont3 uberon > $@
-
-newterms-mouse-wpanat.obo:
-	obol -u onto_grep onto-3-way-align -r wpanat -r mouse_anatomy -r uberon -ont1 wikipedia -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
-
-newterms-fma-wpanat.obo:
-	obol -u onto_grep onto-3-way-align -r wpanat -r fma3  -i fma3-latin.obo -r uberon -ont1 dbpedia -ont2 fma -ont3 uberon > $@
-
-newterms-fma-envo.obo:
-	obol -u onto_grep onto-3-way-align -r envo -r fma  -i fma3-latin.obo -r uberon -ont1 ENVO -ont2 fma -ont3 uberon > $@
-
-newterms-fma-cyc.obo:
-	obol -u onto_grep onto-3-way-align -r envo -i opencyc2.obo -r uberon -ont1 http://sw.opencyc.org/concept/ -ont2 fma -ont3 uberon > $@
-
-newterms-fma-gemina.obo:
-	obol -u onto_grep onto-3-way-align -r fma_downcase  -i fma3-latin.obo -r gemina_anatomy -r uberon -ont1 gemina_anatomy -ont2 fma -ont3 uberon > $@
-
-newterms-fma-nif.obo: 
-	obol -u onto_grep onto-3-way-align -r fma_downcase  -i fma3-latin.obo -r nif_downcase -i uberon_CL.obo -r uberonp -ont1 birnlex_anatomy -ont2 fma -ont3 uberon > $@
-
-newterms-mouse-nif.obo: 
-	obol -debug index -u onto_grep onto-3-way-align -r mouse_anatomy -r nif_downcase -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
-
-newterms-mouse-birnlex.obo: birnlex_anatomy_s.obo
-	obol -u onto_grep onto-3-way-align -i $< -r mouse_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
-
-newterms-xenopus-zebrafish.obo:
-	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r xenopus_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
-
-newterms-aao-fma.obo:
-	obol -u onto_grep onto-3-way-align  -r amphibian_anatomy -r fma  -i fma3-latin.obo -r uberon -ont1 fma -ont2 amphibanat -ont3 uberon -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' > $@
-
-newterms-aao-zebrafish.obo:
-	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r amphibian_anatomy -r zebrafish_anatomy -r uberon -ont1 zebrafish_anatomy -ont2 amphibian_anatomy -ont3 uberon > $@
-
-newterms-aao-xenopus.obo:
-	obol -u onto_grep onto-3-way-align -i uberon_CL.obo -r amphibian_anatomy -r xenopus_anatomy -r uberon -ont1 xenopus_anatomy -ont2 amphibanat -ont3 uberon > $@
-
-newterms-zebrafish-mouse.obo:
-	obol -u onto_grep onto-3-way-align -r mouse_anatomy -r zebrafish_anatomy -r uberon -ont1 adult_mouse_anatomy.gxd -ont2 zebrafish_anatomy -ont3 uberon > $@
-
-newterms-xenopus-mouse.obo:
-	obol -u onto_grep onto-3-way-align -r mouse_anatomy -r xenopus_anatomy -r uberon -ont1 adult_mouse_anatomy.gxd -ont2 xenopus_anatomy -ont3 uberon > $@
-
-newterms-zebrafish-birnlex.obo: birnlex_anatomy_s.obo
-	obol -u onto_grep onto-3-way-align -i $< -r zebrafish_anatomy -r uberon -ont1 birnlex_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
-
-newterms-zebrafish-fma.obo:
-	obol -u onto_grep onto-3-way-align -r fma  -i fma3-latin.obo -r zebrafish_anatomy -r uberon -ont1 fma -ont2 zebrafish_anatomy -ont3 uberon -exclude ZFA:0009000 -exclude FMA:68646 > $@
-
-newterms-zebrafish-ehdaa2.obo:
-	obol -u onto_grep onto-3-way-align -r ehdaa2 -r zebrafish_anatomy -r uberon -ont1 abstract_anatomy -ont2 zebrafish_anatomy -ont3 uberon > $@
-
-newterms-zebrafish-emapa.obo:
-	obol -u onto_grep onto-3-way-align -r emapaa -r zebrafish_anatomy -r uberon -ont1 abstract_anatomy -ont2 zebrafish_anatomy -ont3 uberon > $@
-
-newterms-mouse-emapa.obo:
-	obol -u onto_grep onto-3-way-align -r emapa -r mouse_anatomy -r uberon -ont1 abstract_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
-
-newterms-mouse-ehdaa2.obo:
-	obol -u onto_grep onto-3-way-align -r ehdaa2 -r mouse_anatomy -r uberon -ont1 abstract_anatomy -ont2 adult_mouse_anatomy.gxd -ont3 uberon > $@
-
-newterms-xenopus-ehdaa2.obo:
-	obol -u onto_grep onto-3-way-align -r ehdaa2 -r xenopus_anatomy -r uberon -ont1 abstract_anatomy -ont2 xenopus_anatomy -ont3 uberon > $@
-
-newterms-zebrafish-fly.obo:
-	obol -u onto_grep onto-3-way-align -r fly_anatomy -r zebrafish_anatomy -r uberon -ont1 fly_anatomy.ontology -ont2 zebrafish_anatomy -ont3 uberon > $@
-
-newterms-hao-fly.obo:
-	obol -u onto_grep onto-3-way-align -r fly_anatomy -r hao -r uberon -ont1 fly_anatomy.ontology -ont2 HAO -ont3 uberon > $@
-
-newterms-fma-ehdaa2.obo:
-	obol -debug index -u onto_grep onto-3-way-align -r ehdaa2 -r fma  -i fma3-latin.obo -r uberonp -ont1 'http://www.xspan.org/obo.owl#' -ont2 fma -ont3 uberon > $@
-
-newterms-fma-emapa.obo:
-	obol -u onto_grep onto-3-way-align -r emapaa -r fma  -i fma3-latin.obo -r uberonp -ont1 abstract_anatomy -ont2 fma -ont3 uberon > $@
-
-newterms-emapa-ehdaa2.obo:
-	obol -u onto_grep onto-3-way-align -r ehdaa2 -r emapa -r uberon -i ehdaa2_xp_uberon.obo -ont1 'http://www.xspan.org/obo.owl#' -ont2 abstract_anatomy -ont3 uberon > $@
-
-newterms-mosquito-fly.obo:
-	obol -u onto_grep onto-3-way-align -r fly_anatomy -r mosquito_anatomy -r uberon -ont1 fly_anatomy.ontology -ont2 default_namespace -ont3 uberon > $@
-
-newterms-spider-fly.obo:
-	obol -u onto_grep onto-3-way-align -r fly_anatomy -r obo/spider_anatomy -r uberon -ont1 fly_anatomy.ontology -ont2 spider_anatomy -ont3 uberon > $@
-
-newterms-brenda-fma.obo:
-	obol -u onto_grep onto-3-way-align -r fma3  -i fma3-latin.obo -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 fma -ont3 uberon > $@
-
-newterms-brenda-ma.obo:
-	obol -u onto_grep onto-3-way-align -r mouse_anatomy -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 fma -ont3 uberon > $@
-
-newterms-brenda-wpanat.obo:
-	obol -u onto_grep onto-3-way-align -r wpanat -r obo/brenda -r uberon -ont1 BrendaTissueOBO -ont2 wikipedia -ont3 uberon > $@
-
-newterms-ncit-fma.obo:
-	obol -u onto_grep onto-3-way-align -r fma  -i fma3-latin.obo -r ncit -r uberon -ont1 fma -ont2 'ncithesaurus:' -ont3 uberon > $@
-
-newterms-ncit-emapa.obo:
-	obol -u onto_grep onto-3-way-align -r emapa -r ncit -r uberon -ont1 emapa -ont2 'ncithesaurus:' -ont3 uberon > $@
-
-newterms-ehdaa2-emapa.obo:
-	obol -u onto_grep onto-3-way-align -r emapa -r ehdaa2 -r uberon -ont1 abstract_anatomy -ont2 abstract_anatomy -ont3 uberon > $@
-
-newterms-ncit-xao.obo:
-	obol -u onto_grep onto-3-way-align -r xenopus_anatomy -r ncit -r uberon -ont1 xenopus_anatomy -ont2 'ncithesaurus:' -ont3 uberon > $@
-
 # --
 # creation of classes based on xps in external ontologies
 # --
 
-uberon-xp-new-ma.pro:
-	blip -i mouse_anatomy_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
-
-uberon-xp-new-ma-u.pro:
-	blip -i mouse_anatomy_xp.obo -i mouse_anatomy_xp_uberon.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
-
-uberon-xp-new-fma.pro:
-	blip -i fma_xp.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
-
-uberon-xp-new-fma-u.pro:
-	blip -i fma_xp.obo -i fma_xp_uberon.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
 
 # use this:
 newxp-%-u-ontol_db.pro:
@@ -537,29 +419,6 @@ newxp-%-ontol_db.pro:
 newxp-%-ontol_db.obo: newxp-%-ontol_db.pro
 	blip -i $< -f ontol_db:pro io-convert -to obo -o $@
 
-#uberon-xp-new-ma.pro:
-#	blip -i mouse_anatomy_xp.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp(Fact)"  -select Fact -write_prolog  > $@
-
-# --
-# alignment of classes based on xps in external ontologies and in uberon
-# --
-uberon-xp-xref-ma.obo:
-	blip -i mouse_anatomy_xp.obo -i mouse_anatomy_xp_uberon.obo -r mouse_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
-
-uberon-xp-xref-ehdaa2.obo:
-	blip -i ehdaa2_xp_uberon.obo  -r ehdaa2 -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
-
-uberon-xp-xref-fma.obo:
-	blip -i fma_xp.obo -i fma_xp_uberon.obo -r fma -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
-
-uberon-xp-xref-zfa.obo:
-	blip -i zebrafish_anatomy_xp.obo -r zebrafish_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
-
-uberon-xp-xref-hog.obo:
-	blip -i hog_xp.obo -r hog -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
-
-uberon-xp-xref-xao.obo:
-	blip -i xenopus_anatomy_xp.obo -r xenopus_anatomy -r uberon -u query_anatomy -u ontol_db findall "uberon_xp_align_write/0"  > $@
 
 #
 
@@ -577,6 +436,10 @@ uberon-defs-from-mp.obo:
 
 %.xrefcount: %.obo
 	blip -i $< -u ontol_db findall -label '(class(C),setof_count(X,class_xref(C,X),Num))' -select 'C-Num' | sort -k3 -n > $@
+
+# ----------------------------------------
+# wikipedia
+# ----------------------------------------
 
 %-wikipedia.xrefs: %.obo
 	(blip -i $< -u web_fetch_wikipedia -u query_anatomy findall class_wikipage/2 > $@) >& $@.err
@@ -697,8 +560,11 @@ uberon2tax-ontol_db.pro:
 %-gd-mismatch.txt: %.obo
 	blip-findall -r fma -i $< "genus(X,G),\+subclassRT(X,G),subclass(X,Y)" -select "mm(X,G,Y)" -label
 
-uberon-go-mismatch.txt:
-	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy "subclass(A,B),id_idspace(A,'GO'),class_cdef(A,AD),class_cdef(B,BD),BD=cdef(_,BDs),member(_=U,BDs),id_idspace(U,'UBERON'),class_cdef(B,BD),\+subclassX(A,BD)" -select A-B -label > $@
+uberon-go-xpdiff.txt:
+	blip-findall -consult util/go_xp_check.pro -goal load xpdiff/9 -label > $@
+
+#uberon-go-mismatch.txt:
+#	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy "subclass(A,B),id_idspace(A,'GO'),class_cdef(A,AD),class_cdef(B,BD),BD=cdef(_,BDs),member(_=U,BDs),id_idspace(U,'UBERON'),class_cdef(B,BD),\+subclassX(A,BD)" -select A-B -label > $@
 
 uberon-go-inflinks.txt:
 	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy -i adhoc_uberon.pro "goxp_newlink(A,B)" -select A-B -label > $@
