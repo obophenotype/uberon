@@ -122,6 +122,7 @@ test_class_covers_taxon_direct(C,T) :-
 
 class_taxon_leaf(C,T) :- entity_xref(C,X),id_idspace(X,S),idspace_taxon(S,T).
 
+/*
 %% class_origin_taxon(C,T)
 %
 % estimate origin of class C based on existing ssAO assignments
@@ -155,6 +156,17 @@ class_in_taxon_slim_2(C,T,IsConfident) :-
         ;   IsConfident=false),
         !.
 %class_in_taxon_slim_2(C,T,true) :-
+*/
+
+taxrel(never_in_taxon).
+taxrel(only_in_taxon).
+
+class_to_taxon(C,TR,T2) :-
+        parentRT(C,_,C2),
+        %inferred_parent_via(C,C2,_),
+        restriction(C2,TR,T2),
+        taxrel(TR).
+
 
 class_in_taxon_slim(C,T) :-
         call_unique(class(C)),
@@ -162,15 +174,18 @@ class_in_taxon_slim(C,T) :-
         \+ class_not_in_taxon_slim(C,T).
 
 class_not_in_taxon_slim(C,T) :-
-        %parentRT(C,C2),
-        inferred_parent_via(C,C2,_),
-        restriction(C2,never_in_taxon,T2),
+        class_to_taxon(C,never_in_taxon,T2),
+        %parentRT(C,_,C2),
+        %inferred_parent_via(C,C2,_),
+        %restriction(C2,never_in_taxon,T2),
         subclassRT(T,T2).
 class_not_in_taxon_slim(C,T) :-
-        %parentRT(C,C2),
-        inferred_parent_via(C,C2,_),
-        restriction(C2,only_in_taxon,T2),
-        \+ subclassRT(T,T2).
+        class_to_taxon(C,only_in_taxon,T2),
+        %parentRT(C,_,C2),
+        %inferred_parent_via(C,C2,_),
+        %restriction(C2,only_in_taxon,T2),
+        \+ subclassRT(T,T2),
+        \+ subclassT(T2,T).
 
 load_taxslim :-
         load_bioresource(uberon),

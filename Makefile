@@ -9,7 +9,8 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_x
 # General release management
 # ----------------------------------------
 uberon_edit.owl: uberon_edit.obo
-	obolib-obo2owl -x -xm GCI --allow-dangling -o $@ $< 
+#	obolib-obo2owl -x -xm GCI --allow-dangling -o $@ $< 
+	obolib-obo2owl  --allow-dangling -o $@ $< 
 .PRECIOUS: uberon_edit.owl
 
 clear-r:
@@ -44,8 +45,8 @@ oort: clear-r
 
 
 #uberon-qc: uberon-orphans uberon-synclash uberon-cycles uberon-taxcheck.txt uberon-dv.txt uberon-dv-caro.txt uberon-jepd-dv-caro.txt uberon-dv-mouse_anatomy.txt uberon-dv-fma.txt uberon-with-isa-mireot-disjv.txt 
-uberon-qc: uberon_edit.owlcheck uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans merged-cycles composites composite-metazoan-dv.txt
-	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt
+uberon-qc: uberon_edit.owl uberon.obo uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon.owl uberon-with-isa.obo uberon-dv.txt uberon-discv.txt uberon-simple.obo uberon-simple.owl uberon-simple-allcycles uberon-simple-orphans merged-cycles composites composite-metazoan-dv.txt all_taxmods
+	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
 	blip -i $< -u query_anatomy "uberon_dv(X,Y,XD,YD)" -label > $@
@@ -80,6 +81,16 @@ dv-aba.txt:
 # structural inference - e.g. metanephric nephrons
 uberon-structinf.txt:
 	blip-findall -table_pred "ontol_db:parentT/2"  -r uberonp "class_cdef(Y,cdef(A,[part_of=B])),parentT(X,part_of,A),\+parentRT(X,Y),parentT(X,part_of,B)" -select "x(X,Y,A,B)" -no_pred -label -use_tabs > $@
+
+# ----------------------------------------
+# Closure
+# ----------------------------------------
+
+%_closure-ontol_db.pro: %.obo
+	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
+
+multi_closure-ontol_db.pro: merged.obo
+	owltools $< http://purl.obolibrary.org/obo/ma.owl http://purl.obolibrary.org/obo/ehdaa2.owl http://purl.obolibrary.org/obo/xao.owl http://purl.obolibrary.org/obo/zfa.owl http://purl.obolibrary.org/obo/fbbt.owl http://purl.obolibrary.org/obo/wbbt.owl cl-core.obo --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
 
 # ----------------------------------------
 # Ontology subsetting and rewriting
@@ -216,8 +227,6 @@ composite-metazoan.obo: merged.obo
 .PRECIOUS: composite-metazoan.obo
 
 # closures of individual ontologies, but not connections between them
-multi_closure-ontol_db.pro: merged.obo
-	owltools $< http://purl.obolibrary.org/obo/ma.owl http://purl.obolibrary.org/obo/ehdaa2.owl http://purl.obolibrary.org/obo/xao.owl http://purl.obolibrary.org/obo/zfa.owl http://purl.obolibrary.org/obo/fbbt.owl http://purl.obolibrary.org/obo/wbbt.owl cl-core.obo --save-closure-for-chado $@.tmp && cut -f1,2,4 $@tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
 
 composite-mammal.owl: composite-mammal.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
@@ -835,13 +844,36 @@ template-%.txt:
 # TAXON MODULES
 # ----------------------------------------
 # amniote = 32524
-uberon-taxmods: uberon-taxmod-amniote.owl
-uberon-taxmod-amniote.ids: 
-	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i uberon.obo -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
+all_taxmods: uberon-taxmod-amniote.owl uberon-taxmod-aves.owl
+
+#uberon-taxmod-amniote.ids: uberon.obo
+#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
+
+#merged_anc-ontol_db.pro: merged_closure-ontol_db.pro
+#	blip-findall -i $< parentRT/2 -write_prolog > $@.tmp && sort -u $@.tmp > $@
+
+TAXFILTER = owltools uberon.obo uberon_edit.obo ncbi_taxon_slim.obo --merge-support-ontologies --make-taxon-set -s UBERON
+uberon-taxmod-tetrapod.ids: merged_closure-ontol_db.pro
+	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32523')" -select X > $@
+uberon-taxmod-amniote.ids: uberon.obo
+	$(TAXFILTER) NCBITaxon:32524 > $@.tmp && grep ^UBERON $@.tmp > $@
+#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
+uberon-taxmod-mammal.ids: merged_closure-ontol_db.pro
+	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:40674')" -select X > $@
+uberon-taxmod-sauropsid.ids: merged_closure-ontol_db.pro
+	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
+uberon-taxmod-aves.ids: uberon.obo
+	$(TAXFILTER) NCBITaxon:8782 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-echinoderm.ids: uberon.obo
+	$(TAXFILTER) NCBITaxon:7586 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
+	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
+
+.PRECIOUS: uberon-taxmod-%.ids
 
 # EXP:
-uberon-taxmod-amniote2.ids: 
-	blip-findall -debug index -table_pred ontol_db:subclassRT/2 -i uberon_edit.obo -i uberon.obo -consult adhoc_uberon.pro -goal "materialize_index(ontol_db:inferred_parent_via(1,0,0)),load_bioresource(taxslim)" "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
+#uberon-taxmod-amniote2.ids: 
+#	blip-findall -debug index -table_pred ontol_db:subclassRT/2 -i uberon_edit.obo -i uberon.obo -consult adhoc_uberon.pro -goal "materialize_index(ontol_db:inferred_parent_via(1,0,0)),load_bioresource(taxslim)" "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
 
 uberon-taxmod-%.obo: uberon-taxmod-%.ids
 	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
@@ -855,13 +887,16 @@ mod/bridges:
 	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
 
 RELDIR=trunk
-release: mod/bridges uberon-taxmods
+release: mod/bridges all_taxmods
 	cp uberon_edit.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl} $(RELDIR) ;\
 	cp merged.{obo,owl} $(RELDIR)/ ;\
-	cp uberon-taxmod-*.{obo,owl} $(RELDIR)/mod ;\
-	cp mod/*.{obo,owl} $(RELDIR)/mod ;\
+	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
+	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
+	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
+	cp uberon-taxmod-aves.owl $(RELDIR)/subsets/aves-basic.owl ;\
+	cp mod/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
 	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
