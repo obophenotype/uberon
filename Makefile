@@ -440,6 +440,9 @@ uberon-new-hp.obo:
 uberon-new-go.obo:
 	blip -u query_anatomy -i uberon_edit.obo -r cell -r go -r goxp/biological_process_xp_uber_anatomy -r nif_downcase -r zebrafish_anatomy -r mouse_anatomy -r emapa -r goxp/biological_process_xp_fly_anatomy -r goxp/biological_process_xp_plant_anatomy -r goxp/biological_process_xp_zebrafish_anatomy -goal "uberon_goxp_write,halt" > $@
 
+cl-new-go.obo:
+	blip -u query_anatomy -i uberon_edit.obo -r cell -r go -r goxp/biological_process_xp_uber_anatomy -r goxp/biological_process_xp_cell  -r zebrafish_anatomy -r mouse_anatomy -r emapa -r goxp/biological_process_xp_fly_anatomy -r goxp/biological_process_xp_plant_anatomy -r goxp/biological_process_xp_zebrafish_anatomy -goal "cl_goxp_write,halt" > $@
+
 uberon-defs-from-mp.obo:
 	blip -u query_anatomy -i uberon_edit.obo -r mammalian_phenotype  -goal "uberon_mpxp_write_defs,halt" > $@
 
@@ -870,6 +873,9 @@ uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
 	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
 
 .PRECIOUS: uberon-taxmod-%.ids
+
+relation_table.txt:
+	blip-findall -r uberon -consult util/relation_report.pro "row(R)" -select R > relation_table.txt
 
 # EXP:
 #uberon-taxmod-amniote2.ids: 
