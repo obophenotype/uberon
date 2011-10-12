@@ -10,6 +10,7 @@ anatomy('MA').
 anatomy('FMA').
 anatomy('WBbt').
 anatomy('FBbt').
+anatomy(amniote).
 anatomy(emapaa).
 anatomy(ehdaa2).
 anatomy(snomed_anatomy).
@@ -76,6 +77,10 @@ all <-- Deps,
   'owltools kb-$Ont.owl --query-ontology  $< --reasoner $R --run-reasoner > $@'.
 %'owlqueries/results-$R-$Ont-qf-$QF-vs-$Dataset.out' <-- ['owlqueries/$QF.mos','$Ont-el.owl'],
 %  'owltools  $Ont-el.owl kb/$Dataset.owl --merge-support-ontologies --query-ontology -m $< --reasoner $R --run-reasoner > $@'.
+
+% ----------------------------------------
+% TAXMOD
+% ----------------------------------------
 
 
 % ----------------------------------------
