@@ -16,6 +16,8 @@ anatomy(ehdaa2).
 anatomy(snomed_anatomy).
 anatomy(nif_anatomy).
 anatomy(ncit).
+anatomy('ANISEED').
+anatomy(geisha).
 
 allow_dangling(ceph).
 allow_dangling(uberon_edit).
