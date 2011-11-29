@@ -23,6 +23,7 @@ allow_dangling(ceph).
 allow_dangling(uberon_edit).
 allow_dangling(merged).
 allow_dangling('composite-metazoan').
+not_allow_dangling(uberon).
 
 outfmt(obo).
 outfmt(owl).
@@ -67,8 +68,8 @@ all <-- Deps,
   'owltools  $Ont.owl kb/expr_summary.owl --merge-support-ontologies --query-ontology $< --query-cw > $@'.
 
 % ELK requires functional syntax
-'owlqueries/results-elk-$Ont-qf-$QF.out' <-- ['owlqueries/$QF.mos','$Ont.owl'],
-  'owltools  $Ont.owl kb/expr_t.owl $<  --merge-support-ontologies  -o -f functional file://`pwd`/q.owlfs && java -jar elk.jar -i q.owlfs -c -o $@'.
+%'owlqueries/results-elk-$Ont-qf-$QF.out' <-- ['owlqueries/$QF.mos','$Ont.owl'],
+%  'owltools  $Ont.owl kb/expr_t.owl $<  --merge-support-ontologies  -o -f functional file://`pwd`/q.owlfs && java -jar elk.jar -i q.owlfs -c -o $@'.
 
 % CB requires functional syntax
 'owlqueries/results-cb-$Ont-qf-$QF.out' <-- ['owlqueries/$QF.mos','$Ont.owl'],
@@ -139,7 +140,7 @@ suffix_fmt(owl,'RDFXML').
 
 % obo2owl NO dangling
 '$Base.$Fmt' <-- ['$Base.obo'],
-       {\+ allow_dangling(Base),suffix_fmt(Fmt,FmtName)},
+       {not_allow_dangling(Base),suffix_fmt(Fmt,FmtName)},
        'obolib-obo2owl --to $FmtName $< -o $@ >& $@.err'.
 
 '$Base.metadata' <-- ['$Base.owl'],

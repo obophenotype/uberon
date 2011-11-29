@@ -91,8 +91,8 @@ uberon-discv-%.txt: uberon-with-isa.obo
 #%-discvall.txt: %.obo
 #	blip -table_pred ontol_db:parentRT/3  -r fma_simple -r ZFA -r MA -r HAO -r FBbt -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $< -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  -u query_obo findall disjoint_over_violation/4 -label > $@
 # TODO - need closure for taxslim too
-%-taxcheck.txt: %.obo  %_closure-ontol_db.pro
-	blip-findall  -i $*_closure-ontol_db.pro -i ncbi_taxon_slim.obo -i $< -i adhoc_uberon.pro "class_taxon_invalid(U,X,T,Y,TY)" -label > $@
+%-taxcheck.txt: %.obo  %_closure-ontol_db.pro ncbi_taxon_slim_closure-ontol_db.pro
+	blip-findall  -i $*_closure-ontol_db.pro -i ncbi_taxon_slim_closure-ontol_db.pro -i $< -i adhoc_uberon.pro "class_taxon_invalid(U,X,T,Y,TY)" -label > $@
 %-obscheck.txt: %.obo
 	((obo-map-ids.pl --use-consider --use-replaced_by $< $<) > /dev/null) >& $@
 
