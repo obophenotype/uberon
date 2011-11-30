@@ -99,7 +99,7 @@ align_all <-- Deps,
 
 'align/align-$A-$B.tbl' <-- ['align/stamp'],
        {anatomy(A),anatomy(B)},
-       'blip-findall -r $A -r $B -u metadata_nlp -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S),class(X),class(Y)" -select "m(X,Y,S)" -use_tabs -label -no_pred > $@'.
+       'blip-findall -r obol_av -r $A -r $B -u metadata_nlp -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S),class(X),class(Y)" -select "m(X,Y,S)" -use_tabs -label -no_pred > $@'.
 
 'align/stamp' <-- [], 'touch $@'.
 
