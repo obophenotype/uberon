@@ -695,7 +695,6 @@ fly_gene_phen_uber.txt:
 human_gene_phen_anat.txt:
 	blip-findall -debug index -r omim2gene -r fma -r human_phenotype_xp  -index "metadata_db:entity_xref(1,1)" -r gene/9606 -i phenotype_annotation.txt -i adhoc_uberon.pro human_ensgene_anat/4 > $@.tmp && sort -u $@.tmp > $@
 
-
 HMD_HGNC_Accession.rpt:
 	wget ftp://ftp.informatics.jax.org/pub/reports/HMD_HGNC_Accession.rpt
 
@@ -868,7 +867,7 @@ template-%.txt:
 # TAXON MODULES
 # ----------------------------------------
 # amniote = 32524
-all_taxmods: uberon-taxmod-amniote.owl uberon-taxmod-aves.owl
+all_taxmods: uberon-taxmod-amniote.owl uberon-taxmod-aves.owl uberon-taxmod-euarchontoglires.owl
 
 #uberon-taxmod-amniote.ids: uberon.obo
 #	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
@@ -878,12 +877,15 @@ all_taxmods: uberon-taxmod-amniote.owl uberon-taxmod-aves.owl
 
 TAXFILTER = owltools uberon.obo uberon_edit.obo ncbi_taxon_slim.obo --merge-support-ontologies --make-taxon-set -s UBERON
 uberon-taxmod-tetrapod.ids: merged_closure-ontol_db.pro
-	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32523')" -select X > $@
+	$(TAXFILTER) NCBITaxon:32523 > $@.tmp && grep ^UBERON $@.tmp > $@
+#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32523')" -select X > $@.tmp && mv $@.tmp $@
 uberon-taxmod-amniote.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:32524 > $@.tmp && grep ^UBERON $@.tmp > $@
 #	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
 uberon-taxmod-mammal.ids: merged_closure-ontol_db.pro
-	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:40674')" -select X > $@
+	$(TAXFILTER) NCBITaxon:40674 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-euarchontoglires.ids: merged_closure-ontol_db.pro
+	$(TAXFILTER) NCBITaxon:314146 > $@.tmp && grep ^UBERON $@.tmp > $@
 uberon-taxmod-sauropsid.ids: merged_closure-ontol_db.pro
 	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
 uberon-taxmod-aves.ids: uberon.obo
@@ -923,6 +925,8 @@ release: mod/bridges all_taxmods
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
 	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
 	cp uberon-taxmod-aves.owl $(RELDIR)/subsets/aves-basic.owl ;\
+	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
+	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
 	cp mod/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp uberon-simple.obo $(RELDIR)/basic.obo ;\

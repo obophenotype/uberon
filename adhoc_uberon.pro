@@ -448,7 +448,8 @@ uberon_sibpair_textmatches(U,A,B,Tok) :-
 	
 		
 % for paper:
-aolist(['UBERON','FMA','MA','EMAP','ZFA','XAO','FBbt','WBbt','BTO']).
+%aolist(['CL','FMA','MA','EMAPA','EHDAA2','ZFA','TAO','AAO','XAO','FBbt','WBbt','BTO','PO']).
+aolist(['UBERON','FMA','MA','EMAPA','EHDAA2','ZFA','TAO','AAO','XAO','FBbt','WBbt','BTO','PO','MESH','EFO', ncithesaurus,'NIF_GrossAnatomy']).
 
 
 % MUST MATCH
@@ -462,7 +463,7 @@ aostat1('Classes',Num,Ont) :- aggregate(count,X,(class(X),id_idspace(X,Ont)),Num
 aostat1('Relationships',Num,Ont) :- aggregate(count,X-Y,(parent(X,Y),id_idspace(X,Ont)),Num).
 aostat1('Relations',Num,Ont) :- aggregate(count,R,X^Y^(parent(X,R,Y),id_idspace(X,Ont)),Num).
 aostat1('% Defined (text)',Pct,Ont) :-
-	aggregate(count,D,X^(def(X,D),id_idspace(X,Ont)),Num),
+	aggregate(count,D,X^(class(X),def(X,D),id_idspace(X,Ont)),Num),
 	pct_classes(Ont,Num,Pct).
 aostat1('% Defined (computable)',Pct,Ont) :- 
 	aggregate(count,X,G^(genus(X,G),id_idspace(X,Ont)),Num),
