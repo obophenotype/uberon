@@ -3,7 +3,7 @@ ZFA_OBO=../gross_anatomy/animal_gross_anatomy/fish/zebrafish_anatomy.obo
 FLY_OBO=fly2.obo
 PO_OBO=$(HOME)/cvs/Poc/ontology/OBO_format/po_anatomy.obo
 
-all: adult_mouse_xp.obo po_anatomy_xp.obo fly_anatomy_xp.obo zebrafish_anatomy_xp.obo worm_anatomy_xp.obo dictyostelium_anatomy_xp.obo xenopus_anatomy_xp.obo fungal_anatomy-cellular_component-aln.txt
+all: adult_mouse_xp.obo po_anatomy_xp.obo zebrafish_anatomy_xp.obo worm_anatomy_xp.obo dictyostelium_anatomy_xp.obo xenopus_anatomy_xp.obo fungal_anatomy-cellular_component-aln.txt
 
 # ----------------------------------------
 # General release management
@@ -280,7 +280,7 @@ mod-%.obo: mod1-%.obo
 
 # TODO: use Oort
 %-simple.obo: %.obo
-	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))'  > $@
+	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))' | obo-grep.pl --neg -r Typedef - > $@.tmp && cat $@.tmp uberon-simple-rel.obo > $@
 
 # TODO: use Oort
 #%-bridge.obo: %-with-isa.obo
