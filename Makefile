@@ -2,6 +2,7 @@ ZFA_OBO=../gross_anatomy/animal_gross_anatomy/fish/zebrafish_anatomy.obo
 #FLY_OBO=../gross_anatomy/animal_gross_anatomy/fly/fly_anatomy.obo 
 FLY_OBO=fly2.obo
 PO_OBO=$(HOME)/cvs/Poc/ontology/OBO_format/po_anatomy.obo
+OBO=http://purl.obolibrary.org/obo
 
 all: adult_mouse_xp.obo po_anatomy_xp.obo zebrafish_anatomy_xp.obo worm_anatomy_xp.obo dictyostelium_anatomy_xp.obo xenopus_anatomy_xp.obo fungal_anatomy-cellular_component-aln.txt
 
@@ -17,7 +18,7 @@ clear-r:
 	(test -f r/staging/.lock && rm r/staging/.lock) || echo
 # NEW
 oort: clear-r
-	ontology-release-runner --outdir r/ --prefix http://purl.obolibrary.org/obo/UBERON_ --reasoner hermit --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo ncbi_taxon_slim.obo
+	ontology-release-runner --outdir r/ --prefix $(OBO)/UBERON_ --reasoner elk --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo PATO.obo ncbi_taxon_slim.obo
 #	ontology-release-runner --outdir r/ --enforceEL --reasoner jcel --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo
 #	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 # TODO - expand macros
