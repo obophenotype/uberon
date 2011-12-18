@@ -87,6 +87,7 @@ while(<>) {
         }
         ($src) = $xref =~/(\S+):/;
         if ($src && !$no_src) {
+            $src =~ s/^NEW_//;
             $srcqual = "{source=\"$src\"} ";
         }
     }
