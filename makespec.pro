@@ -7,6 +7,7 @@ anatomy('ZFA').
 anatomy('TAO').
 anatomy('XAO').
 anatomy('MA').
+anatomy('ABA').
 anatomy('FMA').
 anatomy('WBbt').
 anatomy('FBbt').
@@ -15,7 +16,7 @@ anatomy(emapaa).
 anatomy(ehdaa2).
 anatomy(snomed_anatomy).
 anatomy(nif_anatomy).
-anatomy(ncit).
+anatomy('NCITA').
 anatomy('ANISEED').
 anatomy(geisha).
 
