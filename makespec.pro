@@ -7,7 +7,7 @@ anatomy('ZFA').
 anatomy('TAO').
 anatomy('XAO').
 anatomy('MA').
-anatomy('ABA').
+anatomy('aba').
 anatomy('FMA').
 anatomy('WBbt').
 anatomy('FBbt').
