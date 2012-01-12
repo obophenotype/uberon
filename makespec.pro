@@ -98,9 +98,16 @@ align_all <-- Deps,
                anatomy_pair(A,B),
                Deps)}.
 
+nlp_hook(A,B,metadata_nlp_parent_dist2_hook) :-
+        L=[A,B],
+       \+ ((member(snomed_anatomy,L),
+            member('FMA',L))),
+       !.
+nlp_hook(A,B,metadata_nlp) :- true.
+            
 'align/align-$A-$B.tbl' <-- ['align/stamp'],
-       {anatomy(A),anatomy(B)},
-       'blip-findall -r obol_av -r $A -r $B -u metadata_nlp -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S),class(X),class(Y)" -select "m(X,Y,S)" -use_tabs -label -no_pred > $@'.
+       {anatomy(A),anatomy(B),nlp_hook(A,B,Hook)},
+       'blip-findall -r obol_av -r $A -r $B -u metadata_nlp -u $Hook -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S),class(X),class(Y)" -select "m(X,Y,S)" -use_tabs -label -no_pred > $@'.
 
 'align/stamp' <-- [], 'touch $@'.
 
