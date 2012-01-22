@@ -7,6 +7,7 @@ my $replace = 0;
 my $check = 0;
 my $expand_relations = 0;
 my $no_src;
+my $preserve_def_xref = 0;
 while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-h' || $opt eq '--help') {
@@ -118,6 +119,9 @@ while(<>) {
         print "$1 [$xref]\n";
     }
     elsif (/^(def:\s+\".*\")\s+\[\]\s*$/) {
+        print "$1 [$xref]\n";
+    }
+    elsif (/^(def:\s+\".*\")\s+\[.*\]\s*$/ && !$preserve_def_xref) {
         print "$1 [$xref]\n";
     }
     elsif (/^\s*$/) {

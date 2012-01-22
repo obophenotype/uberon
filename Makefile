@@ -14,14 +14,27 @@ uberon_edit.owl: uberon_edit.obo
 	obolib-obo2owl  --allow-dangling -o $@ $< 
 .PRECIOUS: uberon_edit.owl
 
+# ----------------------------------------
+# Make merged ontology using Oort
+# ----------------------------------------
+# build the merged file from the edit file
+#  no expansion at this point
+# replace files with IRIs when we have catalog capabilities in OORT
+#uberon-merged.owl: uberon_edit.obo pr-core.obo
+#	ontology-release-runner --outdir . --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --simple --no-subsets --re-mireot --allow-overwrite uberon_edit.obo -b cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo $(OBO)/ncbitaxon/subsets/taxslim.owl
+
+
+
 clear-r:
 	(test -f r/staging/.lock && rm r/staging/.lock) || echo
 # NEW
+
 oort: clear-r
-	ontology-release-runner --outdir r/ --prefix $(OBO)/UBERON_ --reasoner hermit --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo PATO.obo ncbi_taxon_slim.obo
+	ontology-release-runner --outdir r/ --prefix $(OBO)/UBERON_ --reasoner hermit --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 #	ontology-release-runner --outdir r/ --enforceEL --reasoner jcel --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo
 #	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 # TODO - expand macros
+
 
 %.owl: %.obo
 	obolib-obo2owl --to RDF -o $@ $<
@@ -299,6 +312,7 @@ uberon_edit-implied.obo: uberon_edit.obo
 #uberon_edit-mireot-implied.obo: uberon_edit-mireot.obo
 #	obo2obo -o -saveimpliedlinks $@ $<
 
+# TODO: use by Oort
 uberon.obo: uberon_edit-implied.obo
 	obo-filter-external.pl --xp2rel $< | egrep -v '^(domain|range):' > $@.tmp && obo-add-data-version.pl $@.tmp > $@
 
@@ -876,14 +890,13 @@ all_taxmods: uberon-taxmod-amniote.owl uberon-taxmod-aves.owl uberon-taxmod-euar
 #merged_anc-ontol_db.pro: merged_closure-ontol_db.pro
 #	blip-findall -i $< parentRT/2 -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
-TAXFILTER = owltools uberon.obo uberon_edit.obo ncbi_taxon_slim.obo --merge-support-ontologies --make-taxon-set -s UBERON
-uberon-taxmod-tetrapod.ids: merged_closure-ontol_db.pro
+#TAXFILTER = owltools uberon.obo uberon_edit.obo ncbi_taxon_slim.obo --merge-support-ontologies --make-taxon-set -s UBERON
+TAXFILTER = owltools merged.owl --merge-support-ontologies --make-taxon-set -s UBERON
+uberon-taxmod-tetrapod.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:32523 > $@.tmp && grep ^UBERON $@.tmp > $@
-#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32523')" -select X > $@.tmp && mv $@.tmp $@
 uberon-taxmod-amniote.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:32524 > $@.tmp && grep ^UBERON $@.tmp > $@
-#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
-uberon-taxmod-mammal.ids: merged_closure-ontol_db.pro
+uberon-taxmod-mammal.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:40674 > $@.tmp && grep ^UBERON $@.tmp > $@
 uberon-taxmod-euarchontoglires.ids: merged_closure-ontol_db.pro
 	$(TAXFILTER) NCBITaxon:314146 > $@.tmp && grep ^UBERON $@.tmp > $@

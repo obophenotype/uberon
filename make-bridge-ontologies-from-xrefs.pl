@@ -46,6 +46,8 @@ while (<>) {
                 my ($t,$rel,$filler) = @{$tmap{$s}};
                 print $fh "[Term]\n";
                 print $fh "id: $x ! $cmt\n";
+                my $unique_label = mk_unique_label($s,$n);
+                print $fh "property_value: IAO:0000589 \"$unique_label\" xsd:string\n";
                 if ($t eq 'equivalent') {
                     print $fh "equivalent_to: $id ! $n\n";
                 }
@@ -89,6 +91,23 @@ print STDERR "n_xrefs: $n_xrefs\n";
 
 exit 0;
 
+sub mk_unique_label {
+    my ($s,$n) = @_;
+    $s =~ s/^AAO$/amphibian/;
+    $s =~ s/^FBbt$/drosophila/;
+    $s =~ s/^FMA$/post-embryonic human/; 
+    $s =~ s/^HAO$/hymenoptera/; 
+    $s =~ s/^MA$/post-embryonic mouse/; 
+    $s =~ s/^SPD$/spider/; 
+    $s =~ s/^TAO$/teleost/; 
+    $s =~ s/^WBbt$/worm/;
+    $s =~ s/^XAO$/xenopus/; 
+    $s =~ s/^ZFA$/zebrafish/; 
+    $s =~ s/^EHDAA2$/embryonic human/; 
+    $s =~ s/^EMAPA$/embryonic mouse/; 
+    return "$n ($s)";
+}
+
 sub mk_bridge {
     my ($t,$s,@args) = @_;
     my $ont = lc("$base-bridge-to-$s");
@@ -96,7 +115,7 @@ sub mk_bridge {
     push(@fns,$ont);
     print STDERR "Writing to: $fn\n";
     my $fh = FileHandle->new(">$fn") || die $fn;
-    print $fh "ontology: $ont\n\n";
+    print $fh "ontology: uberon/bridge/$ont\n\n";
     $fhmap{$s} = $fh;
     $tmap{$s} = [$t,@args];
 }
