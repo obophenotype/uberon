@@ -3410,6 +3410,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010162 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010162"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/XAO_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0000001">
@@ -12790,6 +12796,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004053</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">skeleton (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004057 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004057">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010162"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004057</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tail tip (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
