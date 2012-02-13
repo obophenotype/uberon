@@ -53,7 +53,7 @@ while (<F>) {
     }
     if (/^id:\s+(\S+)/) {
         $id = $1;
-        if ($id =~ /UBERON:(\d+)/ && $1 >= $uid) {
+        if ($id =~ /UBERON:(\d+)/ && $1 >= $uid && $1 < 1000000) {
             $uid = $1+1;
         }
         $xrefh{$id} = $id; # make xref reflexive
