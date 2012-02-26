@@ -5468,6 +5468,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010193 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010193"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ZFA_0000005 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000005">
@@ -6765,7 +6771,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000097</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carotid artery (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carotid artery segment (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11112,6 +11118,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000575</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prootic (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0000577 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000577">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010193"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000577</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">renal portal vein (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
