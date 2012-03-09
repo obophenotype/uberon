@@ -475,7 +475,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000035</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lens (teleost)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lens of camera-type eye (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -4939,7 +4939,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0001120</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neural ectoderm (teleost)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neurectoderm (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -6404,6 +6404,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/TAO_0001469 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0001469">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010202"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0001469</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral line (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/TAO_0001477 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0001477">
@@ -7520,26 +7540,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005004</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aortic arch 1 (teleost)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/TAO_0005022 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0005022">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001070"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005022</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external carotid artery (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9091,12 +9091,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001062 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001070 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001070"/>
     
 
 
@@ -11137,6 +11131,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0010193 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010193"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010202 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010202"/>
 </rdf:RDF>
 
 

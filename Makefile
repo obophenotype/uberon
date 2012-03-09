@@ -57,6 +57,10 @@ oort: clear-r
 %-el.owl: %.owl
 	makeElWithoutReasoning.sh -i `pwd`/$< -o `pwd`/$@
 
+CHEBI.obo: $(HOME)/cvs/obo/ontology/chemical/chebi.obo
+	perl -ne 'print unless /^relationship/' $< | grep -v ^xref > $@
+
+
 QC_FILES = uberon_edit.owl\
     uberon.obo\
     uberon_edit-obscheck.txt\

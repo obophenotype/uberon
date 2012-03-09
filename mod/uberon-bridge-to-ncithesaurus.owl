@@ -11829,6 +11829,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010163 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010163"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ncithesaurus_Acetabulum -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ncithesaurus_Acetabulum">
@@ -13985,6 +13991,26 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">camera-type eye (ncithesaurus)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Eye</oboInOwl:id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ncithesaurus_Eyebrow -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ncithesaurus_Eyebrow">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010163"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eyebrow (ncithesaurus)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Eyebrow</oboInOwl:id>
     </owl:Class>
     
 
@@ -16288,7 +16314,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Neuroectoderm</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neural ectoderm (ncithesaurus)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neurectoderm (ncithesaurus)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -25267,7 +25293,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lens (ncithesaurus)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lens of camera-type eye (ncithesaurus)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Crystalline_Lens</oboInOwl:id>
     </owl:Class>
     

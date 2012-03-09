@@ -106,14 +106,14 @@ property_value: IAO:0000589 "ventral pancreatic bud (embryonic human)" xsd:strin
 is_a: UBERON:0003924 ! ventral pancreatic bud
 
 [Term]
-id: EHDAA2:0000484 ! eye
-property_value: IAO:0000589 "camera-type eye (embryonic human)" xsd:string
-is_a: UBERON:0000019 ! camera-type eye
-
-[Term]
 id: EHDAA2:0001824 ! sensory organ
 property_value: IAO:0000589 "sense organ (embryonic human)" xsd:string
 is_a: UBERON:0000020 ! sense organ
+
+[Term]
+id: EHDAA2:0000484 ! eye
+property_value: IAO:0000589 "camera-type eye (embryonic human)" xsd:string
+is_a: UBERON:0000019 ! camera-type eye
 
 [Term]
 id: EHDAA2:0003193 ! appendage
@@ -169,11 +169,6 @@ is_a: UBERON:0000061 ! anatomical structure
 id: EHDAA2:0001606 ! respiratory tract
 property_value: IAO:0000589 "respiratory tract (embryonic human)" xsd:string
 is_a: UBERON:0000065 ! respiratory tract
-
-[Term]
-id: EHDAA2:0001968 ! surface ectoderm
-property_value: IAO:0000589 "external ectoderm (embryonic human)" xsd:string
-is_a: UBERON:0000076 ! external ectoderm
 
 [Term]
 id: EHDAA2:0001054 ! male reproductive system
@@ -516,11 +511,6 @@ property_value: IAO:0000589 "atypical epithelium (embryonic human)" xsd:string
 is_a: UBERON:0000488 ! atypical epithelium
 
 [Term]
-id: EHDAA2:0004654 ! neuroepithelium
-property_value: IAO:0000589 "sensory epithelium (embryonic human)" xsd:string
-is_a: UBERON:0006934 ! sensory epithelium
-
-[Term]
 id: EHDAA2:0003072 ! cavitated compound organ
 property_value: IAO:0000589 "cavitated compound organ (embryonic human)" xsd:string
 is_a: UBERON:0000489 ! cavitated compound organ
@@ -836,9 +826,19 @@ property_value: IAO:0000589 "oral cavity (embryonic human)" xsd:string
 is_a: UBERON:0000167 ! oral cavity
 
 [Term]
+id: EHDAA2:0004654 ! neuroepithelium
+property_value: IAO:0000589 "embryonic neuroepithelium (embryonic human)" xsd:string
+is_a: UBERON:0004022 ! embryonic neuroepithelium
+
+[Term]
+id: EHDAA2:0001968 ! surface ectoderm
+property_value: IAO:0000589 "external ectoderm (embryonic human)" xsd:string
+is_a: UBERON:0000076 ! external ectoderm
+
+[Term]
 id: EHDAA2:0001248 ! neural ectoderm
-property_value: IAO:0000589 "neural ectoderm (embryonic human)" xsd:string
-is_a: UBERON:0002346 ! neural ectoderm
+property_value: IAO:0000589 "neurectoderm (embryonic human)" xsd:string
+is_a: UBERON:0002346 ! neurectoderm
 
 [Term]
 id: EHDAA2:0001249 ! neural fold
@@ -1791,6 +1791,36 @@ property_value: IAO:0000589 "larynx (embryonic human)" xsd:string
 is_a: UBERON:0001737 ! larynx
 
 [Term]
+id: EHDAA2:0000904 ! laryngeal cartilage system
+property_value: IAO:0000589 "laryngeal apparatus (embryonic human)" xsd:string
+is_a: UBERON:0010212 ! laryngeal apparatus
+
+[Term]
+id: EHDAA2:0004085 ! laryngeal associated mesenchyme
+property_value: IAO:0000589 "laryngeal associated mesenchyme (embryonic human)" xsd:string
+is_a: UBERON:0010221 ! laryngeal associated mesenchyme
+
+[Term]
+id: EHDAA2:0000327 ! cricoid pre-cartilage condensation
+property_value: IAO:0000589 "cricoid pre-cartilage condensation (embryonic human)" xsd:string
+is_a: UBERON:0010214 ! cricoid pre-cartilage condensation
+
+[Term]
+id: EHDAA2:0000146 ! arytenoid swellings
+property_value: IAO:0000589 "arytenoid swellings (embryonic human)" xsd:string
+is_a: UBERON:0010215 ! arytenoid swellings
+
+[Term]
+id: EHDAA2:0000144 ! arytenoid pre-cartilage condensation
+property_value: IAO:0000589 "arytenoid pre-cartilage condensation (embryonic human)" xsd:string
+is_a: UBERON:0010220 ! arytenoid pre-cartilage condensation
+
+[Term]
+id: EHDAA2:0004088 ! thyroid pre-cartilage condensation
+property_value: IAO:0000589 "thyroid pre-cartilage condensation (embryonic human)" xsd:string
+is_a: UBERON:0010219 ! thyroid pre-cartilage condensation
+
+[Term]
 id: EHDAA2:0002030 ! thyroid cartilage
 property_value: IAO:0000589 "thyroid cartilage (embryonic human)" xsd:string
 is_a: UBERON:0001738 ! thyroid cartilage
@@ -2062,8 +2092,8 @@ is_a: UBERON:0004703 ! dorsal thalamus
 
 [Term]
 id: EHDAA2:0004469 ! thalamic complex
-property_value: IAO:0000589 "thalamus (embryonic human)" xsd:string
-is_a: UBERON:0001897 ! thalamus
+property_value: IAO:0000589 "thalamic complex (embryonic human)" xsd:string
+is_a: UBERON:0010225 ! thalamic complex
 
 [Term]
 id: EHDAA2:0000802 ! hypothalamus
@@ -2291,7 +2321,7 @@ property_value: IAO:0000589 "heart right ventricle (embryonic human)" xsd:string
 is_a: UBERON:0002080 ! heart right ventricle
 
 [Term]
-id: EHDAA2:0002178 ! ventricle
+id: EHDAA2:0004164 ! ventricular region
 property_value: IAO:0000589 "cardiac ventricle (embryonic human)" xsd:string
 is_a: UBERON:0002082 ! cardiac ventricle
 
@@ -2694,11 +2724,6 @@ is_a: UBERON:0005626 ! ventral mesogastrium
 id: EHDAA2:0001922 ! stomach mesentery
 property_value: IAO:0000589 "mesentery of stomach (embryonic human)" xsd:string
 is_a: UBERON:0003281 ! mesentery of stomach
-
-[Term]
-id: EHDAA2:0002178 ! ventricle
-property_value: IAO:0000589 "ventricle (embryonic human)" xsd:string
-is_a: UBERON:0002300 ! ventricle
 
 [Term]
 id: EHDAA2:0004449 ! lateral ventricle choroid plexus
@@ -4271,12 +4296,12 @@ property_value: IAO:0000589 "coronary vein (embryonic human)" xsd:string
 is_a: UBERON:0004148 ! coronary vein
 
 [Term]
-id: EHDAA2:0001825 ! septum primum
+id: EHDAA2:0001825 ! interatrial septum primum
 property_value: IAO:0000589 "septum primum (embryonic human)" xsd:string
 is_a: UBERON:0004154 ! septum primum
 
 [Term]
-id: EHDAA2:0001827 ! septum secundum
+id: EHDAA2:0001827 ! interatrial septum secundum
 property_value: IAO:0000589 "septum secundum (embryonic human)" xsd:string
 is_a: UBERON:0004155 ! septum secundum
 
