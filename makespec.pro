@@ -123,7 +123,12 @@ nlp_hook(A,B,metadata_nlp) :- true.
 'align/align-$A-$B-new.obo' <-- ['align/align-$A-$B-new.tbl', 'align/align-$A-$B-fix.tbl'],
        'tbl2obolinks.pl --rel xref $< > $@'.
 
-'align/all-align-$A-$B' <-- ['align/align-$A-$B-new.obo'].
+'align/all-align-$A-$B' <-- ['align/align-$A-$B-new.obo', 'align/unmatched-anc-$A.tbl'].
+
+'align/unmatched-anc-%.tbl' <-- [],
+       'blip-findall  -r uberonp -r $* "entity_xref(U,X),id_idspace(U,\'UBERON\'),class(X),parentT(X,Y),\\+entity_xref(_,Y)" -select Y -label | sort -u > $@'.
+
+
 
 
 suffix_fmt(mos,manchester).
