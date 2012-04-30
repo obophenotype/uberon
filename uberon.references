@@ -1,0 +1,60 @@
+!version: $Revision: 1.64 $
+!date: $Date: 2012/03/22 14:44:14 $
+!
+! Uberon Reference Collection
+!
+! The GO reference collection is a set of abstracts that can be cited
+! in the GO ontologies (e.g. as dbxrefs for term definitions) and
+! annotation files (in the Reference column).
+!
+! The collection houses two main kinds of references; one type are
+! descriptions of methods that groups use for ISS, IEA, and ND
+! evidence codes; the other type are abstract-style descriptions of
+! "GO content" meetings at which substantial changes in the ontologies
+! are discussed and made.
+!
+! data fields for this file:
+!
+!  go_ref_id: [mandatory; cardinality 1; GO_REF:nnnnnnn]
+!  alt_id: [not mandatory; cardinality 0,1,>1; GO_REF:nnnnnnn]
+!  title: [mandatory; cardinality 1; free text]
+!  authors: [mandatory; cardinality 1; free text??
+!            or cardinality 1,>1 and one entry per author?]
+!  year: [mandatory, cardinality 1]
+!  external_accession: [not mandatory; cardinality 0,1,>1; DB:id]
+!  citation: [not mandatory; cardinality 0,1; use for published refs]
+!  abstract: [mandatory; cardinality 1; free text]
+!  comment: [not mandatory; cardinality 1; free text]
+!  is_obsolete: [not mandatory; cardinality 0,1; 'true';
+!            if tag is not present, assume that the ref is not obsolete
+!            denotes a reference no longer used by the contributing database]
+!
+!  If a database maintains its own internal reference collection, and
+!  has a record that is equivalent to a GO_REF entry, the database's
+!  internal ID should be included as an external_accession for the
+!  corresponding GO_REF.
+!
+!This data is available as a web page at
+!http://www.geneontology.org/cgi-bin/references.cgi
+!
+
+go_ref_id: UBERONREF:0000001
+title: The representation of epithelium morphotopology in ontologies
+authors: Chris Mungall, Jonathan Bard, David Hill, David Osumi-Sutherland, Melissa Haendel
+year: 2011
+abstract: 
+url: https://docs.google.com/document/d/1MnUgispgGfNQoezYzWzzGTnkAnI0gzRnJIwdip6MMtw/edit
+
+go_ref_id: UBERONREF:0000002
+title: Phenotype RCN Neural Crest Meeting
+authors: 
+year: 2012
+abstract: The neural crest workshop consists of a combination of domain experts with a variety of expertise (comparative neural crest anatomy, craniofacial, placodal, ENS/PNS, cell typing, etc) and ontologists. The outcome will be a much improved representation of neural crest amongst a number of ontologies including (but not limited to!) the Gene Ontology (GO), Uberon, the vertebrate musculosketal ontology (VAO), mouse anatomy (MA), the cell ontology, human developmental (EHDAA2/FMA), and the Teleost Anatomy Ontology (TAO). The hope is that the participants will form a new community around this work and author a paper together.
+url: http://wiki.phenotypercn.org/wg/phenotypercn/index.php?title=Neural_Crest_Workshop
+
+go_ref_id: UBERONREF:0000003
+title: Representation of organism subdivisions and skeletal elements
+authors: VAO editors and Uberon editors
+year: 2012
+abstract: 
+url: https://docs.google.com/document/d/16JZOuH9sh_a8uIXA4cqg0Q1H6MV5yCj3-rhuKsZoV_U/edit
