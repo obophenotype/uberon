@@ -78,12 +78,6 @@ is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0003102 ! surface structure
 
 [Term]
-id: CEPH:0000015
-name: arm
-def: "One of the circumoral appendages of cephalopods. In decapodiforms each member of the fourth pair of arms is modified to form a tentacle." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000026 ! appendage
-
-[Term]
 id: CEPH:0000016
 name: arm formula
 def: "The relative sizes of arms arranged according to their length. The largest arm is indicated first and the shortest last. An example arm formula is IV&gt;III=II&gt;I. Here arm IV is the largest, followed by arm III which is the same size as arm II and both are larger than arm I." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
@@ -93,8 +87,18 @@ relationship: trait_of CEPH:0000015 ! arm
 [Term]
 id: CEPH:0000017 ! arm IV
 name: arm IV
-def: "In some squids arms IV are much longer and broader than the other arms.        " [http://tolweb.org/accessory/Cephalopod_Arms_IV\:_Size?acc_id=2017]
+def: "In some squids arms IV are much longer and broader than the other arms." [http://tolweb.org/accessory/Cephalopod_Arms_IV\:_Size?acc_id=2017]
 is_a: CEPH:0000015 ! arm
+
+[Term]
+id: CEPH:0000130 ! hectocotylus
+name: hectocotylus
+def: "The modified arm in males used for transferring spermatophores to the female. In incirrates the hectocotylus is one member of arm pair III while in decapodiforms frequently one or both members of arm pair IV are modified. Many species of coleoid cephalopods lack a hectocotylus." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587, Wikipedia:Hectocotylus]
+comment: Taxon notes: Among Decapodiformes (ten-limbed cephalopods), generally either one or both of arms IV are hectocotylized; in incirrate octopuses it is one of arm pair III.[1] Many coleoids lack hectocotyli altogether.[1] The shape of the tip of the hectocotylus has been much used in octopod systematics. In many species it is considerably elaborated. However, in the males of some species, such as the Seven-arm Octopus (Haliphron atlanticus), the hectocotylus develops in an inconspicuous sac in front of the right eye that gives the male the appearance of having only seven arms
+is_a: CEPH:0000015 ! arm
+is_a: UBERON:0008811 {source="Wikipedia"} ! intromittent organ
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Hectocotylized_arm_of_a_squid.jpg/189px-Hectocotylized_arm_of_a_squid.jpg
+
 
 [Term]
 id: CEPH:0000018
@@ -281,6 +285,7 @@ id: CEPH:0000048
 name: calamus
 def: "The conical papilla of the end-organ of the hectocotylus in many incirrate octopods. It is located at the distal termination of the sperm groove and usually lies adjacent to the last arm sucker." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000098 ! end organ
 relationship: adjacent_to CEPH:0000248 ! sucker
 
 [Term]
@@ -556,11 +561,12 @@ def: "Portion of the spermatophore involved in the eversion of the sperm mass." 
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000098
+id: CEPH:0000098 ! end organ
 name: end organ
 def: "The tip of the hectocotylus in incirrate octopods consisting of a calamus and ligula presumably for manipulating the spermatophore during copulation." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 synonym: "end organ of hectocotylus" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000130 ! hectocotylus
 
 [Term]
 id: CEPH:0000100
@@ -732,12 +738,6 @@ def: "." [http://tolweb.org/accessory/Cephalopod_Dorsal_Head-Mantle_Fusion?acc_i
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: CEPH:0000130
-name: hectocotylus
-def: "The modified arm in males used for transferring spermatophores to the female. In incirrates the hectocotylus is one member of arm pair III while in decapodiforms frequently one or both members of arm pair IV are modified. Many species of coleoid cephalopods lack a hectocotylus." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
 id: CEPH:0000131
 name: heterodont radula
 def: "Radula with more than one cusp on the rhachidian tooth and, usually, the first lateral tooth." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
@@ -868,6 +868,7 @@ id: CEPH:0000153
 name: ligula
 def: "The portion of the sucker-free end-organ of the hectocotylus of many incirrate octopods that is generally elongate and longitudinally grooved. The ligula in octopodids is often spatulate in shape with transverse ridges. Spermatophores transferred along the sperm groove of the hectocotylus presumably enter the ligula which assists in their transfer to the female. Details of the use of the ligula are unknown." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000130 ! hectocotylus
 
 [Term]
 id: CEPH:0000154
@@ -1054,7 +1055,7 @@ id: CEPH:0000196
 name: penis
 synonym: "terminal organ" EXACT octopoda []
 def: "The long, muscular end of the male gonoduct that assists in transfering spermatophores to the female. Apparently, in species with a hectocotylus, the penis transfers spermatophores to the hectocotylus which in turn transfers them to the female. In species without a hectocotylus, the penis is often greatly elongate, capable of extending beyond the mantle cavity and can, apparently, transfer spermatophores directly to the female." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0008811 {source="Wikipedia"} ! intromittent organ
 
 [Term]
 id: CEPH:0000197
@@ -1418,7 +1419,15 @@ is_a: UBERON:0000061 ! anatomical structure
 [Term]
 id: CEPH:0000256
 name: tentacle
-def: "Modified 4th pair of appendages in decapodiforms that are capable of considerable extension and contraction. Although the tentacles are derived evolutionarily from the 4th pair of arms, the term, &quot;arms IV&quot; is reserved for the subsequent arm pair, the ventral arms, which are evolutionarily the 5th pair of arms. Each tentacle consist of a proximal stalk usually devoid of suckers, and a distal club armed with suckers and occasionally hooks." [http://tolweb.org/accessory/Composite_Squid?acc_id=1936]
+def: "Modified 4th pair of appendages in decapodiforms that are capable of considerable extension and contraction. Although the tentacles are derived evolutionarily from the 4th pair of arms, the term, &quot;arms IV&quot; is reserved for the subsequent arm pair, the ventral arms, which are evolutionarily the 5th pair of arms. Each tentacle consist of a proximal stalk usually devoid of suckers, and a distal club armed with suckers and occasionally hooks." [http://tolweb.org/accessory/Composite_Squid?acc_id=1936, Wikipedia:Cephalopod_limb]
+synonym: "limb" RELATED [Wikipedia:Cephalopod_limb]
+synonym: "arm" RELATED [Wikipedia:Cephalopod_limb]
+is_a: UBERON:0000026 ! appendage
+
+[Term]
+id: CEPH:0000015
+name: arm
+def: "One of the circumoral appendages of cephalopods. In decapodiforms each member of the fourth pair of arms is modified to form a tentacle." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000026 ! appendage
 
 [Term]
@@ -3003,6 +3012,13 @@ name: adductor muscle
 def: "Muscle that causes adduction can be called an adductor muscle. For example in biology, the muscle or muscles in the interior of a bivalve mollusk which serve to close the valves are called adductor muscles, and the large foot to shell muscle in gastropods such as the abalone and limpet is also known as an adductor muscle[WP]. A muscle that brings a body part  closer to the sagittal plane of the body[ZFA, WikipediaLAdduction]." [Wikipedia:Adductor_muscle]
 synonym: "adductor" RELATED []
 is_a: UBERON:0001630 ! muscle organ
+
+[Term]
+id: UBERON:0008811 ! intromittent organ
+name: intromittent organ
+def: "an external organ of a male organism that is specialized to deliver sperm during copulation. Intromittent organs are found most often in terrestrial species, as most aquatic species fertilize their eggs externally, although there are exceptions[WP]." [Wikipedia:Intromittent_organ]
+is_a: UBERON:0000062 ! organ
+subset: organ_slim
 
 [Term]
 id: CL:0000000

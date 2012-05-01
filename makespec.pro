@@ -19,6 +19,7 @@ anatomy(nif_anatomy).
 anatomy('NCITA').
 anatomy('ANISEED').
 anatomy(geisha).
+anatomy(vao).
 
 allow_dangling(ceph).
 allow_dangling(uberon_edit).
@@ -167,3 +168,15 @@ suffix_fmt(owl,'RDFXML').
 
 '$Base.owlfs' <-- ['$Base.owl'],
        'owltools file://`pwd`/$<  -o -f functional file://`pwd`/$@'.
+
+% ----------------------------------------
+% CHECKING
+% ----------------------------------------
+
+% ad-hoc BFO/CARO check
+'bfo-check-FMA.txt' <-- [],
+  'blip-findall -table_pred ontol_db:subclassT/2 -r fma3 "(R=part_of;R=constitutional_part_of;R=regional_part_of;R=systemic_part_of),(parent(DX,R,DY),Dir=dir1;parent(DY,R,DX),Dir=dir2),subclassT(DX,\'FMA:67112\'),subclassT(DY,\'FMA:67165\')" -select "x(Dir,DX,R,DY)" -label -no_pred > $@'.
+
+'bfo-check-$Ont.txt' <-- [],
+  'blip-findall -table_pred ontol_db:subclassT/2 -r $Ont "(R=part_of;entity_label(R,part_of)),(parent(DX,R,DY),Dir=dir1;parent(DY,R,DX),Dir=dir2),subclassT(DX,X),entity_xref(X,\'CARO:0000007\'),subclassT(DY,Y),entity_xref(Y,\'CARO:0000006\')" -select DX-DY -label -no_pred > $@'.
+

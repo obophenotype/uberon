@@ -1,4 +1,8 @@
 
+This guide is for uberon core editors.
+
+Contributing editors see README-contributing-editors.txt
+
 = Editors file =
 
 The editors file is currently uberon_edit.obo.

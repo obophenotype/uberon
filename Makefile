@@ -24,10 +24,12 @@ uberon_edit.owl: uberon_edit.obo
 #	ontology-release-runner --outdir . --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --simple --no-subsets --re-mireot --allow-overwrite uberon_edit.obo -b cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo $(OBO)/ncbitaxon/subsets/taxslim.owl
 
 
-
 clear-r:
 	(test -f r/staging/.lock && rm r/staging/.lock) || echo
 # NEW
+
+oort-min: clear-r
+	ontology-release-runner --no-subsets --skip-format owx --outdir r/ --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --asserted --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 
 oort: clear-r
 	ontology-release-runner --outdir r/ --prefix $(OBO)/UBERON_ --reasoner hermit --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
@@ -457,7 +459,7 @@ syns-uberon-%.obo:
 
 # use this:
 newxp-%-u-ontol_db.pro:
-	blip -r $* -i $*_xp_uberon.obo -i uberon_edit.obo -u query_anatomy findall "uberon_xp(Fact)" -select Fact -write_prolog > $@.tmp && sort -u $@.tmp > $@
+	blip -r $*  -i uberon_edit.obo -u query_anatomy findall "uberon_xp(Fact)" -select Fact -write_prolog > $@.tmp && sort -u $@.tmp > $@
 .PRECIOUS: newxp-%-ontol_db.pro
 
 # use this:
@@ -472,7 +474,7 @@ newxp-%-ontol_db.obo: newxp-%-ontol_db.pro
 #
 
 uberon-new-mp.obo:
-	blip -u query_anatomy -i uberon_edit.obo -r cell -r emap -r emapa -r mammalian_phenotype -r mammalian_phenotype_xp -r mammalian_phenotype_xp_uberon -r fma_downcase -r nif_downcase -r zebrafish_anatomy -r emapa -r mammalian_phenotype_xp_nif -r mouse_anatomy findall uberon_mpxp_write > $@
+	blip -u query_anatomy -i uberon_edit.obo -r cell -r emap -r emapa -r mammalian_phenotype -r mammalian_phenotype_xp  -r fma_downcase -r nif_downcase -r zebrafish_anatomy -r emapa -r mouse_anatomy findall uberon_mpxp_write > $@
 
 uberon-new-hp.obo:
 	blip -u query_anatomy -i uberon_edit.obo -r cell -r human_phenotype -r human_phenotype_xp -r nif_downcase -r zebrafish_anatomy -r mouse_anatomy -r emapa -goal "uberon_mpxp_write,halt" > $@
@@ -526,14 +528,6 @@ EMAPAx-1.obo: EMAPA.obo
 EMAPAx-2.obo: EMAPAx-1.obo
 	obo-sed.pl -r intersection_of 's/\nname: .*//'  $< | obo-sed.pl -r 'namespace: emapax' 's/id: EMAPA:(.*)/id: EMAPA:$$1\nname: $$1/' > $@
 
-
-%.obd:
-	obd-create-db.pl -d $* $*-norel-imports.obo && touch $@
-.PRECIOUS: %.obd
-
-%.obdr: %.obd
-	obd-reasoner.pl -d $* && touch $@
-.PRECIOUS: %.obdr
 
 %-inf.txt: %.obdr
 	./mk-obd-inf.sh $* $(IDSPACE)  > $@

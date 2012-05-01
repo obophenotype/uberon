@@ -75,16 +75,22 @@ my $xref;
 my $name;
 my $src;
 my $srcqual = '';
+my $in_header = 1;
 while(<>) {
     chomp;
     s/relationship: (constitutional|regional|systemic)_part/relationship: part/;
+
+    if (/^\[/) {
+        $in_header = 0;
+    }
+
     if (/^id:\s*(\S+)/) {
         $xref = $1;
         $_ = sprintf("id: UBERON:%07d",$uid);
         $uid++;
         print "$_\n";
         if ($xrefh{$xref}) {
-            print "! ALREADY HAVE THIS IN UBERON\n";
+            print "! ALREADY HAVE THIS: id: $xrefh{$xref} ! $nh{$xrefh{$xref}}\n";
         }
         ($src) = $xref =~/(\S+):/;
         if ($src && !$no_src) {
@@ -130,7 +136,7 @@ while(<>) {
         print "\n";
     }
     else {
-        print "$_\n";
+        print "$_\n" unless $in_header;
     }
 }
 exit 0;
