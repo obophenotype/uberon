@@ -10,8 +10,8 @@ all: adult_mouse_xp.obo po_anatomy_xp.obo zebrafish_anatomy_xp.obo worm_anatomy_
 # General release management
 # ----------------------------------------
 uberon_edit.owl: uberon_edit.obo
-#	obolib-obo2owl -x -xm GCI --allow-dangling -o $@ $< 
-	obolib-obo2owl  --allow-dangling -o $@ $< 
+	obolib-obo2owl -x -xm INPLACE --allow-dangling -o $@ $< 
+#	obolib-obo2owl  --allow-dangling -o $@ $< 
 .PRECIOUS: uberon_edit.owl
 
 # ----------------------------------------
@@ -32,7 +32,7 @@ oort-min: clear-r
 	ontology-release-runner --no-subsets --skip-format owx --outdir r/ --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --asserted --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 
 oort: clear-r
-	ontology-release-runner --outdir r/ --prefix $(OBO)/UBERON_ --reasoner hermit --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
+	ontology-release-runner --expand-macros-inplace --outdir r/ --prefix $(OBO)/UBERON_ --reasoner elk --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 #	ontology-release-runner --outdir r/ --enforceEL --reasoner jcel --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo
 #	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 # TODO - expand macros
@@ -140,12 +140,15 @@ multi_closure-ontol_db.pro: merged.obo
 efo_anat.obo:
 	blip -r efo ontol-subset -query "subclassRT(ID,'EFO:0000635')" -to obo > $@.tmp && mv $@.tmp $@
 
+# note that this is now partly hand-edited
 emapaa.obo:
 	blip-ddb -debug index  -r emapa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
 
-ehdaaa.obo:
-	blip-ddb -debug index  -r ehdaa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
+emapaa-inferred.obo: emapaa.obo
+	owltools $< uberon.owl mod/uberon-bridge-to-emapa.owl --merge-support-ontologies --run-reasoner -r elk --assert-implied -o -f obo $@
 
+emapaa-remainder.obo: emapaa-inferred.obo
+	obo-grep.pl -r 'id: (EMAPA|part_of)' $< > $@
 
 sao.obo:
 	blip -r sao -u ontol_manifest_metadata_from_sao io-convert -to obo -o $@
@@ -928,7 +931,7 @@ mod/bridges:
 	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
 
 RELDIR=trunk
-release: mod/bridges all_taxmods
+release:
 	cp uberon_edit.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl} $(RELDIR) ;\
