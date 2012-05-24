@@ -72,11 +72,31 @@ print STDERR "n_xrefs: $n_xrefs\n";
 foreach my $s (keys %fhmap) {
     my $fh = $fhmap{$s};
     if ($tmap{$s}->[0] eq 'gd') {
+        my ($t,$rel,$filler) = @{$tmap{$s}};
+        # hidden GCI
+        print $fh "[Term]\n";
+        print $fh "id: $s:ENTITY\n";
+        print $fh "name: $s entity\n";
+        print $fh "intersection_of: UBERON:0001062 ! anatomical entity\n";
+        print $fh "intersection_of: $rel $filler\n";
+        print $fh "relationship: only_in_taxon $filler\n\n";
         print $fh "[Typedef]\n";
         print $fh "id: part_of\n";
         print $fh "xref: BFO:0000050\n";
         print $fh "is_transitive: true\n\n";
+        print $fh "[Typedef]\n";
+        print $fh "id: only_in_taxon\n";
+        print $fh "xref: RO:0002160\n\n";
     }
+
+    my $prefix = "http://purl.obolibrary.org/obo/".lc($s);
+    print $fh "[Typedef]\n";
+    print $fh "id: $prefix#part_of\n";
+    print $fh "equivalent_to: BFO:0000050\n\n";
+    print $fh "[Typedef]\n";
+    print $fh "id: $prefix#develops_from\n";
+    print $fh "equivalent_to: RO:0002225\n\n";
+
     $fh->close;
 }
 foreach my $ont (@fns) {

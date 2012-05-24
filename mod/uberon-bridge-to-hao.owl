@@ -3,6 +3,7 @@
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-hao.owl"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:hao="http://purl.obolibrary.org/obo/hao#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -26,6 +27,7 @@
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shorthand</rdfs:label>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
     
 
@@ -59,6 +61,41 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/hao#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002160</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/hao#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/hao#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/hao#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/hao#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/hao#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/hao#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/hao#part_of</oboInOwl:id>
     </owl:ObjectProperty>
     
 
@@ -270,26 +307,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000014</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell part (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000016 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000016">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000917"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000016</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abdominal segment (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -510,6 +527,46 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000043</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tissue (hymenoptera)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HAO_0000045 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000045">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010895"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000045</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequential hermaphroditic organism (hymenoptera)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HAO_0000046 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000046">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010899"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000046</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">synchronous hermaphroditic organism (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -774,73 +831,12 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000088 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000088">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003146"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000088</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adult arthropod abdomen (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000089 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000089">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003144"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000089</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adult tagma (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000090 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000090">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003145"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000090</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adult arthropod thorax (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000091 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000091">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003198"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0008811"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -850,28 +846,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000091</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aedeagus (hymenoptera)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intromittent organ (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000094 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000094">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003180"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000094</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anepisternum (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -896,106 +871,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000104 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000104">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003137"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000104</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">antennal segment (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000120 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000120">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003176"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000120</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior notal wing process (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000126 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000126">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003159"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000126</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior tentorial pit (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000142 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000142">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003203"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000142</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">apodeme (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000143 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000143">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003206"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000143</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">apophysis (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000144 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000144">
@@ -1012,166 +887,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000144</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appendage (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000145 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000145">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003207"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000145</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appendage segment (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000151 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000151">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003205"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000151</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articulation (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000153 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000153">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003188"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000153</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">auxilia (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000157 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000157">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003193"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000157</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">axillary cord (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000159 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000159">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003192"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000159</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">axillary sclerite (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000195 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000195">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003169"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000195</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cervical sclerite (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000201 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000201">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003165"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000201</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cibarium (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000212 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000212">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003164"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000212</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clypeus (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1216,66 +931,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000226 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000226">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003197"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000226</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">costal cell (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000228 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000228">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003186"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000228</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coxa (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000236 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000236">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003195"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000236</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crossvein (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000240 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000240">
@@ -1316,26 +971,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000288 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000288">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003190"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000288</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">empodium (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000290 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000290">
@@ -1372,66 +1007,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000298</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">outer epithelial layer (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000299 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000299">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003172"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000299</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epimeron (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000301 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000301">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003204"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000301</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epipharynx (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000303 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000303">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003171"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000303</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">episternum (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1492,66 +1067,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000324</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female reproductive system (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000345 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000345">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003151"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000345</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foramen (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000367 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000367">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003174"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000367</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">furcasternum (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000371 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000371">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003154"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000371</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gena (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1696,26 +1211,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000449 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000449">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000385"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000449</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">labial gland (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000456 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000456">
@@ -1736,26 +1231,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000457 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000457">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003167"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000457</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lacinia (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000459 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000459">
@@ -1772,66 +1247,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000459</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">larva (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000460 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000460">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003141"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000460</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">larval abdomen (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000462 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000462">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003139"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000462</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">larval tagma (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000463 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000463">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003140"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000463</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">larval thorax (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1892,106 +1307,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000526</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">median ocellus (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000534 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000534">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003168"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000534</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mentum (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000547 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000547">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003184"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000547</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesofurca (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000592 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000592">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003185"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000592</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metafurca (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000639 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000639">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003163"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000639</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mouthpart (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000649 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000649">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003183"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000649</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">notopleural suture (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2076,226 +1391,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000706 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000706">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003200"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000706</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pedicel (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000712 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000712">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003147"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000712</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peritreme (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000716 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000716">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003152"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000716</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phragma (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000725 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000725">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003182"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000725</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pleural suture (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000726 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000726">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003179"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000726</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pleural wing process (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000758 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000758">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003177"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000758</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior notal wing process (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000768 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000768">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003160"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000768</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior tentorial pit (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000776 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000776">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003157"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000776</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postgena (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000786 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000786">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003178"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000786</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postnotum (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000790 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000790">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003156"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000790</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postocciput (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000804 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000804">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003166"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000804</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prementum (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000812 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000812">
@@ -2316,46 +1411,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000815 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000815">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003175"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000815</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prescutum (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000820 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000820">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003187"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000820</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pretarsus (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000822 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000822">
@@ -2372,26 +1427,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000822</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical projection (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000853 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000853">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003173"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000853</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pronotum (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2452,46 +1487,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000907</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scale (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000909 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000909">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003148"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000909</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sclerite (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000920 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000920">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003181"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000920</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scutoscutellar suture (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2576,46 +1571,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000950 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000950">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001006"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000950</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spiracle (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000955 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000955">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003150"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000955</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sternite (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0000956 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000956">
@@ -2636,126 +1591,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0000982 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000982">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000969"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000982</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">joint connecting hardened body parts (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000988 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000988">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003136"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000988</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tagma (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000993 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000993">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003191"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000993</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tegula (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0000999 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0000999">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003158"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0000999</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tentorial pit (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0001005 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0001005">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003149"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0001005</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tergite (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0001006 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0001006">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003170"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0001006</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tergum (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0001007 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0001007">
@@ -2772,26 +1607,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0001007</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testis (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/HAO_0001013 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0001013">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003138"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0001013</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thoracic segment (hymenoptera)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2836,26 +1651,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0001043 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0001043">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003189"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0001043</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unguitractor plate (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0001089 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0001089">
@@ -2876,26 +1671,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/HAO_0001091 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0001091">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003196"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0001091</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wing cell (hymenoptera)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/HAO_0001095 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_0001095">
@@ -2912,6 +1687,32 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:0001095</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">imaginal disc-derived wing vein (hymenoptera)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HAO_ENTITY -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HAO_ENTITY">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO entity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7399"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HAO:ENTITY</oboInOwl:id>
     </owl:Class>
     
 
@@ -2961,12 +1762,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000167 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000167"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000385 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000385"/>
     
 
 
@@ -3144,18 +1939,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000917 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000917"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000969 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000969"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0000971 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000971"/>
@@ -3195,12 +1978,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001001"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001006 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001006"/>
     
 
 
@@ -3288,42 +2065,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003136 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003136"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003137 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003137"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003138 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003138"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003139 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003139"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003140 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003140"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003141 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003141"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0003142 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003142"/>
@@ -3336,105 +2077,15 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003144 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003144"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003145 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003145"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003146 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003146"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003147 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003147"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003148 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003148"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003149 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003149"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003150 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003150"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003151 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003151"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003152 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003152"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0003153 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003153"/>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003154 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003154"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0003155 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003155"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003156 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003156"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003157 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003157"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003158 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003158"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003159 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003159"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003160 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003160"/>
     
 
 
@@ -3450,231 +2101,15 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003163 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003163"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003164 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003164"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003165 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003165"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003166 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003166"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003167 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003167"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003168 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003168"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003169 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003169"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003170 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003170"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003171 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003171"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003172 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003172"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003173 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003173"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003174 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003174"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003175 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003175"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003176 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003176"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003177 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003177"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003178 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003178"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003179 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003179"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003180 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003180"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003181 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003181"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003182 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003182"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003183 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003183"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003184 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003184"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003185 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003185"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003186 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003186"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003187 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003187"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003188 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003188"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003189 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003189"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003190 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003190"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003191 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003191"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003192 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003192"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003193 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003193"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0003194 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003194"/>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003195 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003195"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003196 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003196"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003197 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003197"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003198 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003198"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0003199 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003199"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003200 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003200"/>
     
 
 
@@ -3687,36 +2122,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0003202 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003202"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003203 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003203"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003204 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003204"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003205 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003205"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003206 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003206"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003207 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003207"/>
     
 
 
@@ -3771,6 +2176,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0008811 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0008811"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010895 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010895"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010899 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010899"/>
 </rdf:RDF>
 
 

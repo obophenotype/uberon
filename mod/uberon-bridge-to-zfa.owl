@@ -6,7 +6,8 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:zfa="http://purl.obolibrary.org/obo/zfa#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa.owl"/>
     
 
@@ -26,6 +27,7 @@
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shorthand</rdfs:label>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
     
 
@@ -59,6 +61,41 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/zfa#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002160</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/zfa#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zfa#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/zfa#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/zfa#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/zfa#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/zfa#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/zfa#part_of</oboInOwl:id>
     </owl:ObjectProperty>
     
 
@@ -434,12 +471,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000918 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000918"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0000920 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000920"/>
@@ -503,12 +534,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000936 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000936"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000937 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000937"/>
     
 
 
@@ -740,12 +765,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001086 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001086"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001090 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001090"/>
@@ -947,12 +966,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001359 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001359"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001364 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001364"/>
     
 
 
@@ -1277,12 +1290,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001754 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001754"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001755 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001755"/>
     
 
 
@@ -2537,18 +2544,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0002541 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002541"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0002542 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002542"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0002543 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002543"/>
     
 
 
@@ -4514,12 +4509,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0006336 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006336"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0006337 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006337"/>
@@ -4712,12 +4701,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0006849 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006849"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0006856 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006856"/>
@@ -4787,12 +4770,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0006984 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006984"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0007006 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007006"/>
     
 
 
@@ -5627,6 +5604,30 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0010713 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010713"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010904 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010904"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010931 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010931"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0011002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011002"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0011004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011004"/>
     
 
 
@@ -6580,26 +6581,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ZFA_0000068 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000068">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000937"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000068</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proneural cluster (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/ZFA_0000069 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000069">
@@ -6780,26 +6761,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ZFA_0000084 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000084">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000918"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000084</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yolk (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/ZFA_0000085 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000085">
@@ -6856,26 +6817,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000091</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chordamesoderm (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ZFA_0000093 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000093">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0007006"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000093</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blastomere (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -8742,26 +8683,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ZFA_0000271 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000271">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001364"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000271</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circumpennate (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/ZFA_0000272 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000272">
@@ -8808,7 +8729,6 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0002542"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0007380"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -8819,7 +8739,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000277</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dermal scale (zebrafish)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scale (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9602,6 +9521,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000368</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integument (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0000369 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000369">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010931"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000369</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intermandibularis (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -10401,7 +10340,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000467</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular/anguloarticular (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11312,7 +11251,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006849"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010904"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
@@ -11321,7 +11260,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000583</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scapula (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pectoral fin scapula (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -13846,26 +13785,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ZFA_0001093 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001093">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006336"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001093</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unspecified (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/ZFA_0001094 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001094">
@@ -14262,26 +14181,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001122</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">germ layer (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ZFA_0001123 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001123">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0002543"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001123</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">median fin skeleton (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -17446,6 +17345,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ZFA_0001460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001460">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0011004"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001460</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharyngeal arch cartilage (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ZFA_0001461 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001461">
@@ -18022,26 +17941,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001509</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scleral cartilage (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ZFA_0001511 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001511">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001755"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001511</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stylohyal (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -19032,7 +18931,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001086"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0011002"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
@@ -19041,7 +18940,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001644</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular cartilage (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular cartilage condensation (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -24124,6 +24023,32 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0100000</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_ENTITY -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_ENTITY">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA entity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:ENTITY</oboInOwl:id>
     </owl:Class>
 </rdf:RDF>
 

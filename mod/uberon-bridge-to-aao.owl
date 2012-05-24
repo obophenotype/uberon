@@ -6,7 +6,8 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:aao="http://purl.obolibrary.org/obo/aao#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-aao.owl"/>
     
 
@@ -26,6 +27,7 @@
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shorthand</rdfs:label>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
     
 
@@ -59,6 +61,41 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/aao#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002160</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/aao#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/aao#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/aao#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/aao#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/aao#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/aao#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/aao#part_of</oboInOwl:id>
     </owl:ObjectProperty>
     
 
@@ -134,6 +171,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0000025 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000025">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010426"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000025</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oropharyngeal choana (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0000027 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000027">
@@ -169,7 +226,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000028</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular (amphibian)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular/anguloarticular (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -374,6 +431,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0000058 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000058">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001841"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000058</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior semicircular canal (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0000060 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000060">
@@ -390,6 +467,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000060</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cartilage tissue (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0000081 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000081">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003665"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000081</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tail muscle (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -430,6 +527,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000090</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">central nervous system (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0000091 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000091">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004465"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000091</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">musculature of neck (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1234,6 +1351,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0000218 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000218">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010890"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000218</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pelvic complex muscle (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0000219 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000219">
@@ -1734,6 +1871,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0000303 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000303">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010892"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000303</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesethmoid (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0000304 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000304">
@@ -2154,6 +2311,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0000420 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000420">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001842"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000420</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior semicircular canal (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0000422 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000422">
@@ -2250,6 +2427,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000429</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peripheral nervous system (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0000460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000460">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010750"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000460</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prefrontal bone (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2634,6 +2831,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0000559 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000559">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001706"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000559</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nasal septum (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0000566 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000566">
@@ -2650,26 +2867,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000566</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">skeletal system (amphibian)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/AAO_0000571 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000571">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006809"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000571</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">supporting connective tissue (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -3793,7 +3990,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000751</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrapod scapula (amphibian)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pectoral limb scapula (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -4034,6 +4231,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000790</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scaphoid (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0000795 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000795">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001066"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000795</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intervertebral disk (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -4718,6 +4935,86 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0000914 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000914">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010721"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000914</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distal tarsal bone (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0000918 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000918">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001452"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000918</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distal tarsal bone 1 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0000919 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000919">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001453"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000919</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distal tarsal bone 2 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0000920 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000920">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001454"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000920</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distal tarsal bone 3 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0000924 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000924">
@@ -4864,7 +5161,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001433"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010737"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
@@ -4873,7 +5170,27 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000932</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distal carpal bone 4 (amphibian)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distal tarsal bone 4 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0000933 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0000933">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010738"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000933</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distal tarsal bone 5 (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -5106,7 +5423,6 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001349"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005236"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -5117,7 +5433,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0000984</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">osseus labyrinth vestibule (amphibian)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vestibule (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -5458,6 +5773,46 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010035</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hermaphroditic organism (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010037 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010037">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010895"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010037</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequential hermaphroditic organism (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010046 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010046">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010899"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010046</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">synchronous hermaphroditic organism (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -6744,6 +7099,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0010238 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010238">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010880"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010238</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gular fold (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0010244 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010244">
@@ -7020,6 +7395,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010258</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reproductive system (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010262 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010262">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010853"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010262</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">capitulum of humerus (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -8896,7 +9291,6 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001251"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004879"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -8907,7 +9301,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010448</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">marginal zone of embryo (amphibian)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">marginal zone of spleen (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -10656,6 +11049,206 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0010639 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010639">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001463"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010639</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hand digit 1 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010640 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010640">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003622"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010640</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hand digit 2 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010641 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010641">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003623"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010641</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hand digit 3 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010642 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010642">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003624"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010642</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hand digit 4 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010643 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010643">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003625"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010643</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hand digit 5 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010644 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010644">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003631"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010644</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foot digit 1 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010645 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010645">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003632"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010645</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foot digit 2 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010646 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010646">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003633"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010646</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foot digit 3 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010647 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010647">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010931"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010647</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intermandibularis (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010649 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010649">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010930"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010649</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interhyoideus (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0010655 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010655">
@@ -10672,6 +11265,46 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010655</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">geniohyoid (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010656 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010656">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003634"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010656</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foot digit 4 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010658 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010658">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003635"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010658</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foot digit 5 (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -10752,6 +11385,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010686</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">girdle skeleton (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010687 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010687">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010891"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010687</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pectoral complex muscle (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11156,6 +11809,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0010835 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010835">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010910"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010835</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opisthotic (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0010839 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010839">
@@ -11172,6 +11845,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010839</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">portion of organism substance (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_0010841 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0010841">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0010841</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -12122,7 +12815,6 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005280"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006904"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -12133,7 +12825,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0011051</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head mesenchyme from mesoderm (amphibian)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head mesoderm (amphibian)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -13240,6 +13931,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/AAO_0011109 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0011109">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001853"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0011109</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">utricle of membranous labyrinth (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/AAO_0011110 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_0011110">
@@ -13436,6 +14147,32 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:0011119</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharyngeal pouch 6 (amphibian)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/AAO_ENTITY -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/AAO_ENTITY">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO entity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8292"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AAO:ENTITY</oboInOwl:id>
     </owl:Class>
     
 
@@ -14058,6 +14795,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001062 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001066 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001066"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0001070 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001070"/>
@@ -14202,12 +14951,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001251 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001251"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001255 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001255"/>
@@ -14259,12 +15002,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001343 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001343"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001349 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001349"/>
     
 
 
@@ -14391,6 +15128,30 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001451 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001451"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001452 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001452"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001453 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001453"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001454 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001454"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001463 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001463"/>
     
 
 
@@ -14829,6 +15590,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001840 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001840"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001841 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001841"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001842 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001842"/>
     
 
 
@@ -16020,6 +16793,60 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003622 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003622"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003623 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003623"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003624 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003624"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003625 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003625"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003631 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003631"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003632 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003632"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003633 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003633"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003634 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003634"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003635 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003635"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0003645 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003645"/>
@@ -16089,6 +16916,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0003663 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003663"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003665 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003665"/>
     
 
 
@@ -16305,6 +17138,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0004450 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004450"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004465 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004465"/>
     
 
 
@@ -16527,12 +17366,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005236 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005236"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005280 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005280"/>
     
 
 
@@ -16974,12 +17807,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0006809 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006809"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0006810 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006810"/>
@@ -17394,6 +18221,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010426 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010426"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0010544 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010544"/>
@@ -17424,9 +18257,93 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010721 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010721"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010737 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010737"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010738 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010738"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0010739 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010739"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010750 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010750"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010853 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010853"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010880 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010880"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010890 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010890"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010891 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010891"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010892 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010892"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010895 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010895"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010899 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010899"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010910 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010910"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010930 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010930"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010931 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010931"/>
 </rdf:RDF>
 
 

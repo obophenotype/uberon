@@ -41,19 +41,9 @@ property_value: IAO:0000589 "anatomical structure (BILA)" xsd:string
 equivalent_to: UBERON:0000061 ! anatomical structure
 
 [Term]
-id: BILA:0000053 ! 
-property_value: IAO:0000589 "organ (BILA)" xsd:string
-equivalent_to: UBERON:0000062 ! organ
-
-[Term]
 id: BILA:0000061 ! neurula embryo
 property_value: IAO:0000589 "neurula (BILA)" xsd:string
 equivalent_to: UBERON:0004455 ! neurula
-
-[Term]
-id: BILA:0000052 ! blastomere
-property_value: IAO:0000589 "blastomere (BILA)" xsd:string
-equivalent_to: UBERON:0007006 ! blastomere
 
 [Term]
 id: BILA:0000058 ! cleaving embryo
@@ -351,11 +341,6 @@ property_value: IAO:0000589 "musculature of body (BILA)" xsd:string
 equivalent_to: UBERON:0000383 ! musculature of body
 
 [Term]
-id: BILA:0000115 ! 
-property_value: IAO:0000589 "cranium (BILA)" xsd:string
-equivalent_to: UBERON:0003128 ! cranium
-
-[Term]
 id: BILA:0000034 ! 
 property_value: IAO:0000589 "embryonic structure (BILA)" xsd:string
 equivalent_to: UBERON:0002050 ! embryonic structure
@@ -379,6 +364,16 @@ equivalent_to: UBERON:0002415 ! tail
 id: BILA:0000029 ! hermaphroditic organism
 property_value: IAO:0000589 "hermaphroditic organism (BILA)" xsd:string
 equivalent_to: UBERON:0007197 ! hermaphroditic organism
+
+[Term]
+id: BILA:0000045 ! sequential hermaphroditic organism
+property_value: IAO:0000589 "sequential hermaphroditic organism (BILA)" xsd:string
+equivalent_to: UBERON:0010895 ! sequential hermaphroditic organism
+
+[Term]
+id: BILA:0000046 ! synchronous hermaphroditic organism
+property_value: IAO:0000589 "synchronous hermaphroditic organism (BILA)" xsd:string
+equivalent_to: UBERON:0010899 ! synchronous hermaphroditic organism
 
 [Term]
 id: BILA:0000047 ! somatic mesoderm
@@ -464,4 +459,12 @@ equivalent_to: UBERON:0007036 ! photosensory system
 id: BILA:0000142 ! mechanosensory system
 property_value: IAO:0000589 "mechanosensory system (BILA)" xsd:string
 equivalent_to: UBERON:0007037 ! mechanosensory system
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/bila#part_of
+equivalent_to: BFO:0000050
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/bila#develops_from
+equivalent_to: RO:0002225
 

@@ -127,6 +127,18 @@ intersection_of: UBERON:0007197 ! hermaphroditic organism
 intersection_of: part_of NCBITaxon:6939
 
 [Term]
+id: TADS:0000608 ! sequential hermaphroditic organism
+property_value: IAO:0000589 "sequential hermaphroditic organism (TADS)" xsd:string
+intersection_of: UBERON:0010895 ! sequential hermaphroditic organism
+intersection_of: part_of NCBITaxon:6939
+
+[Term]
+id: TADS:0000609 ! synchronous hermaphroditic organism
+property_value: IAO:0000589 "synchronous hermaphroditic organism (TADS)" xsd:string
+intersection_of: UBERON:0010899 ! synchronous hermaphroditic organism
+intersection_of: part_of NCBITaxon:6939
+
+[Term]
 id: TADS:0000598 ! compound organ
 property_value: IAO:0000589 "compound organ (TADS)" xsd:string
 intersection_of: UBERON:0003103 ! compound organ
@@ -144,8 +156,27 @@ property_value: IAO:0000589 "circulatory organ (TADS)" xsd:string
 intersection_of: UBERON:0007100 ! circulatory organ
 intersection_of: part_of NCBITaxon:6939
 
+[Term]
+id: TADS:ENTITY
+name: TADS entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:6939
+relationship: only_in_taxon NCBITaxon:6939
+
 [Typedef]
 id: part_of
 xref: BFO:0000050
 is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/tads#part_of
+equivalent_to: BFO:0000050
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/tads#develops_from
+equivalent_to: RO:0002225
 

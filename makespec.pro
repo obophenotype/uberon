@@ -180,3 +180,35 @@ suffix_fmt(owl,'RDFXML').
 'bfo-check-$Ont.txt' <-- [],
   'blip-findall -table_pred ontol_db:subclassT/2 -r $Ont "(R=part_of;entity_label(R,part_of)),(parent(DX,R,DY),Dir=dir1;parent(DY,R,DX),Dir=dir2),subclassT(DX,X),entity_xref(X,\'CARO:0000007\'),subclassT(DY,Y),entity_xref(Y,\'CARO:0000006\')" -select DX-DY -label -no_pred > $@'.
 
+% ----------------------------------------
+% IHOG
+% ----------------------------------------
+
+all_ihog <-- Deps,
+    {findall(t(['align/ihog-',Ont,'-',Q,'.obo']),
+             (   ont_ihog(Ont,_,Q),\+ogroup(Ont)),
+             Deps)}.
+
+ogroup(mdev).
+
+ont_ihog(O,S,S) :- ont_ihog(O,S).
+
+ont_ihog(ehdaa2,S,Q) :- ont_ihog(mdev,S,Q).
+ont_ihog(emapaa,S,Q) :- ont_ihog(mdev,S,Q).
+
+ont_ihog(mdev,somite,myotome).
+ont_ihog(mdev,somite,sclerotome).
+ont_ihog(mdev,somite,dermomyotome).
+ont_ihog(mdev,somite,dermatome).
+
+ont_ihog(mdev,somite).
+ont_ihog('ZFA',somite).
+ont_ihog('ZFA',vertebra).
+%ont_ihog(mdev,vertebra).
+
+'align/ihog-$Ont-$Q.obo' <-- [],
+  {ont_ihog(Ont,S,Q)},
+  'util/ihog-q $Ont $Q $S | grep -v ^format > $@.tmp && mv $@.tmp $@'.
+
+%  'blip ontol-query -r $Ont -n \'$Q %\' | obo-filter-tags.pl -t id | ./util/parse-ihog.pl $S | obo-grep.pl -r property_ - > $@'.
+

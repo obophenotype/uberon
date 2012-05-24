@@ -3,6 +3,7 @@
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-emapa.owl"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:emapa="http://purl.obolibrary.org/obo/emapa#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -32,6 +33,49 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/emapa#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/emapa#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/emapa#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/emapa#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/emapa#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/emapa#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/emapa#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/emapa#part_of</oboInOwl:id>
+    </owl:ObjectProperty>
     
 
 
@@ -182,6 +226,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000417"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16051</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primitive endoderm (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16052 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16052">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0008945"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16052</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extraembryonic endoderm (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -404,6 +458,26 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003888"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16081</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extraembryonic coelom (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16083 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16083">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16083</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesoderm (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16084 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16084">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004340"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16084</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allantois (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -947,7 +1021,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16171">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009617"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16171</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head paraxial mesenchyme (embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head paraxial mesoderm (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1130,6 +1204,26 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004572"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16201</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arterial system (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16202 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16202">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003118"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16202</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aortic arch 1 (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16203 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16203">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003119"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16203</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aortic arch 2 (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1500,6 +1594,36 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003305"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16268</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blood island of mesenchyme (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16269 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16269">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005253"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16269</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head mesenchyme (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16270 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16270">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006904"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16270</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head mesenchyme from mesoderm (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16271 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16271">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007213"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16271</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesenchyme derived from head neural crest (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -3050,6 +3174,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16565 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16565">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004912"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16565</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biliary bud (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_16569 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16569">
@@ -3990,6 +4124,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16758 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16758">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010025"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16758</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal part of pharyngeal pouch 3 (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16759 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16759">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010026"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16759</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral part of pharyngeal pouch 3 (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_16760 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16760">
@@ -4136,6 +4290,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005418"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16779</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hindlimb bud (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_16783 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16783">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004060"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16783</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neural tube ventricular layer (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -5656,6 +5820,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17067 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17067">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003923"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17067</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal pancreatic bud (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_17068 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17068">
@@ -6440,6 +6614,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17204 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17204">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005564"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17204</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gonad primordium (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_17207 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17207">
@@ -6642,6 +6826,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17256 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17256">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003924"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17256</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral pancreatic bud (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_17257 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17257">
@@ -6666,10 +6860,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17263">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001785"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003266"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17263</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cranial nerve (embryonic mouse)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nerve of central nervous system (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -7041,10 +7233,8 @@
     <!-- http://purl.obolibrary.org/obo/EMAPA_17318 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17318">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003378"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009780"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17318</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardiac muscle of auricular region (embryonic mouse)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardiac muscle tissue of left auricle (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -7073,10 +7263,8 @@
     <!-- http://purl.obolibrary.org/obo/EMAPA_17324 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17324">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003378"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009779"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17324</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardiac muscle of auricular region (embryonic mouse)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardiac muscle tissue of right auricle (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -7402,6 +7590,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17369 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17369">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000080"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17369</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesonephros (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_17373 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17373">
@@ -7510,6 +7708,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003855"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17385</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gonad mesenchyme (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17387 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17387">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010220"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17387</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arytenoid pre-cartilage condensation (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9080,6 +9288,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17623 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17623">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006924"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17623</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stomach glandular epithelium (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_17631 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17631">
@@ -9340,6 +9558,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17677 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17677">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010744"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17677</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sacral vertebra pre-cartilage condensation (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_17678 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17678">
@@ -9466,6 +9694,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006224"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17710</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elbow joint primordium (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17711 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17711">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010848"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17711</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radius-ulna cartilage condensation (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9700,6 +9938,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17736 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17736">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010801"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17736</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calcaneum pre-cartilage condensation (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_17739 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17739">
@@ -9746,6 +9994,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006219"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17749</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deltoid pre-muscle mass (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17750 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17750">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010993"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17750</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subscapularis pre-muscle mass (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11262,6 +11520,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_17977 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17977">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001740"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:17977</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arytenoid cartilage (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_17980 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_17980">
@@ -11408,6 +11676,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002414"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18007</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lumbar vertebra (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18009">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010745"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18009</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sacral vertebra cartilage condensation (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11568,6 +11846,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007831"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18025</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">skeleton of pectoral girdle (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18026">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010844"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18026</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clavicle pre-cartilage condensation (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11936,6 +12224,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18143 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18143">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010842"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18143</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calcaneum cartilage condensation (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_18148 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18148">
@@ -11952,6 +12250,26 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001510"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18151</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">skin of knee (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18154 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18154">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010851"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18154</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fibula cartilaginous condensation (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18155 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18155">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010849"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18155</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tibia cartilaginous condensation (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -12166,6 +12484,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001630"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18187</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">muscle organ (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18189 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18189">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010934"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18189</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">panniculus carnosus (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -13048,12 +13376,32 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18339 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18339">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010752"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18339</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exoccipital cartilage condensation (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_18340 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18340">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001677"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18340</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sphenoid bone (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18342 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18342">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010843"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18342</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clavicle cartilaginous condensation (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -14925,7 +15273,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18722">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001124"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18722</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrapod scapula (embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pectoral limb scapula (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -16176,6 +16524,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18966 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18966">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006329"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18966</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superior pharyngeal constrictor (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_18967 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18967">
@@ -16282,6 +16640,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006946"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18993</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efferent duct (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_18996 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_18996">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000989"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:18996</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">penis (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -16522,9 +16890,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19031">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002408"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004869"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19031</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parietal organ (embryonic mouse)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parietal serous pericardium (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -17038,10 +17404,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19112">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003645"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004453"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19112</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpal bone of digit 1 (embryonic mouse)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpus region (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -17060,10 +17424,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19114">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003646"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004453"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19114</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpal bone of digit 2 (embryonic mouse)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpus region (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -17082,10 +17444,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19116">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003647"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004453"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19116</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpal bone of digit 3 (embryonic mouse)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpus region (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -17104,10 +17464,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19118">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003648"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004453"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19118</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpal bone of digit 4 (embryonic mouse)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpus region (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -17126,10 +17484,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19120">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003649"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004453"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19120</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpal bone of digit 5 (embryonic mouse)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metacarpus region (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -17147,9 +17503,9 @@
     <!-- http://purl.obolibrary.org/obo/EMAPA_19122 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19122">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009880"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004452"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19122</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carpal skeleton (embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carpal region (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -17257,9 +17613,9 @@
     <!-- http://purl.obolibrary.org/obo/EMAPA_19133 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19133">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009879"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004454"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19133</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tarsal skeleton (embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tarsal region (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -18882,6 +19238,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_19588 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19588">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004622"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19588</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sacral vertebra 1 (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_19589 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19589">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004623"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:19589</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sacral vertebra 2 (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_19590 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_19590">
@@ -19018,8 +19394,10 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_25056">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001435"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009880"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:25056</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carpal bone (embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carpal skeleton (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -19177,9 +19555,9 @@
     <!-- http://purl.obolibrary.org/obo/EMAPA_25072 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_25072">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001447"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009879"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:25072</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tarsal bone (embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tarsal skeleton (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -20476,6 +20854,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_26720 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_26720">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010419"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:26720</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vibrissa follicle (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_26771 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_26771">
@@ -21408,6 +21796,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_28061 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_28061">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005185"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:28061</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">renal medulla collecting duct (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_28075 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_28075">
@@ -21534,6 +21932,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004640"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:28233</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efferent arteriole (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_28236 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_28236">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001229"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:28236</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">renal corpuscle (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -21710,6 +22118,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_28337 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_28337">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005213"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:28337</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">outer renal medulla interstitium (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_28346 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_28346">
@@ -21746,6 +22164,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004193"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:28361</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loop of Henle ascending limb thin segment (embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EMAPA_28364 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_28364">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005214"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:28364</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inner renal medulla interstitium (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -23314,6 +23742,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000926 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000926"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0000930 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000930"/>
@@ -24010,6 +24444,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001229 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001229"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0001230 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001230"/>
@@ -24403,12 +24843,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001446 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001446"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001447 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001447"/>
     
 
 
@@ -27214,12 +27648,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003266 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003266"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0003267 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003267"/>
@@ -27775,12 +28203,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0003374 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003374"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003378 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003378"/>
     
 
 
@@ -28546,6 +28968,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003923 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003923"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003924 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003924"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0003943 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003943"/>
@@ -28954,9 +29388,15 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004453 -->
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004452 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004453"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004452"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004454 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004454"/>
     
 
 
@@ -29059,6 +29499,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0004621 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004621"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004622 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004622"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004623 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004623"/>
     
 
 
@@ -29314,12 +29766,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004869 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004869"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0004873 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004873"/>
@@ -29500,6 +29946,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0005185 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005185"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0005197 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005197"/>
@@ -29527,6 +29979,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005212 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005212"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0005213 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005213"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0005214 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005214"/>
     
 
 
@@ -30133,6 +30597,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005563 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005563"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0005564 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005564"/>
     
 
 
@@ -31546,6 +32016,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0006329 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006329"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0006332 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006332"/>
@@ -32203,6 +32679,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0006912 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006912"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0006924 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006924"/>
     
 
 
@@ -32926,6 +33408,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0008945 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0008945"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0009133 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009133"/>
@@ -33412,6 +33900,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010025 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010025"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010026"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0010042 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010042"/>
@@ -33484,6 +33984,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010220 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010220"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0010254 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010254"/>
@@ -33547,6 +34053,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0010373 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010373"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010419 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010419"/>
     
 
 
@@ -33841,6 +34353,78 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0010714 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010714"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010744 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010744"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010745 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010745"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010752 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010752"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010801 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010801"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010842 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010842"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010843 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010843"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010844 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010844"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010848 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010848"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010849 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010849"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010851 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010851"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010934 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010934"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010993 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010993"/>
 </rdf:RDF>
 
 

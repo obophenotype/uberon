@@ -3,6 +3,7 @@
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-caro.owl"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:caro="http://purl.obolibrary.org/obo/caro#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -32,6 +33,49 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/caro#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/caro#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/caro#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/caro#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/caro#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/caro#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/caro#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/caro#part_of</oboInOwl:id>
+    </owl:ObjectProperty>
     
 
 
@@ -272,6 +316,26 @@
         <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000479"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:0000043</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tissue (CARO)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000045 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000045">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010895"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:0000045</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequential hermaphroditic organism (CARO)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000046 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000046">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010899"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:0000046</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">synchronous hermaphroditic organism (CARO)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -651,6 +715,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0007197 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007197"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010895 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010895"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010899 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010899"/>
 </rdf:RDF>
 
 

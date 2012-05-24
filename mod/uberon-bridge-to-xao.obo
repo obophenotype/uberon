@@ -301,12 +301,6 @@ intersection_of: UBERON:0000113 ! post-juvenile adult stage
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
-id: XAO:0003016 ! blastomere
-property_value: IAO:0000589 "blastomere (xenopus)" xsd:string
-intersection_of: UBERON:0007006 ! blastomere
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
 id: XAO:0000238 ! rectum
 property_value: IAO:0000589 "rectum (xenopus)" xsd:string
 intersection_of: UBERON:0001052 ! rectum
@@ -508,12 +502,6 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:0003164 ! solid compound organ
 property_value: IAO:0000589 "solid compound organ (xenopus)" xsd:string
 intersection_of: UBERON:0000491 ! solid compound organ
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
-id: XAO:0000281 ! vegetal yolk mass
-property_value: IAO:0000589 "yolk (xenopus)" xsd:string
-intersection_of: UBERON:0000918 ! yolk
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
@@ -1387,6 +1375,12 @@ intersection_of: UBERON:0001675 ! trigeminal ganglion
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
+id: XAO:0003173 ! occipital region
+property_value: IAO:0000589 "occipital region (xenopus)" xsd:string
+intersection_of: UBERON:0005902 ! occipital region
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
 id: XAO:0003171 ! orbital region
 property_value: IAO:0000589 "orbit (xenopus)" xsd:string
 intersection_of: UBERON:0001697 ! orbit
@@ -1828,12 +1822,6 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:0004214 ! cranial nerve XI
 property_value: IAO:0000589 "spinal accessory nerve (xenopus)" xsd:string
 intersection_of: UBERON:0002019 ! spinal accessory nerve
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
-id: XAO:0003173 ! occipital region
-property_value: IAO:0000589 "occipital region (xenopus)" xsd:string
-intersection_of: UBERON:0005902 ! occipital region
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
@@ -2560,12 +2548,6 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:0000079 ! prechordal plate
 property_value: IAO:0000589 "prechordal plate (xenopus)" xsd:string
 intersection_of: UBERON:0003063 ! prechordal plate
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
-id: XAO:0000053 ! head mesoderm
-property_value: IAO:0000589 "head mesoderm (xenopus)" xsd:string
-intersection_of: UBERON:0005280 ! head mesoderm
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
@@ -3391,12 +3373,6 @@ intersection_of: UBERON:0006334 ! posterior lateral line
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
-id: XAO:0003003 ! unspecified
-property_value: IAO:0000589 "unspecified (xenopus)" xsd:string
-intersection_of: UBERON:0006336 ! unspecified
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
 id: XAO:0004132 ! presumptive ectoderm
 property_value: IAO:0000589 "presumptive ectoderm (xenopus)" xsd:string
 intersection_of: UBERON:0006601 ! presumptive ectoderm
@@ -3438,8 +3414,27 @@ property_value: IAO:0000589 "regenerating anatomical structure (xenopus)" xsd:st
 intersection_of: UBERON:0007567 ! regenerating anatomical structure
 intersection_of: part_of NCBITaxon:8353
 
+[Term]
+id: XAO:ENTITY
+name: XAO entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:8353
+relationship: only_in_taxon NCBITaxon:8353
+
 [Typedef]
 id: part_of
 xref: BFO:0000050
 is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/xao#part_of
+equivalent_to: BFO:0000050
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/xao#develops_from
+equivalent_to: RO:0002225
 

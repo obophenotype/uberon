@@ -97,33 +97,9 @@ intersection_of: UBERON:0000482 ! basal lamina
 intersection_of: part_of NCBITaxon:6237
 
 [Term]
-id: WBbt:0005814 ! ventral longitudinal muscle
-property_value: IAO:0000589 "ventral longitudinal muscle (worm)" xsd:string
-intersection_of: UBERON:0000932 ! ventral longitudinal muscle
-intersection_of: part_of NCBITaxon:6237
-
-[Term]
 id: WBbt:0005829 ! ventral nerve cord
 property_value: IAO:0000589 "ventral nerve cord (worm)" xsd:string
 intersection_of: UBERON:0000934 ! ventral nerve cord
-intersection_of: part_of NCBITaxon:6237
-
-[Term]
-id: WBbt:0005107 ! labial sensillum
-property_value: IAO:0000589 "labial sensillum (worm)" xsd:string
-intersection_of: UBERON:0000943 ! labial sensillum
-intersection_of: part_of NCBITaxon:6237
-
-[Term]
-id: WBbt:0005796 ! intestinal muscle
-property_value: IAO:0000589 "intestine muscle (worm)" xsd:string
-intersection_of: UBERON:0000954 ! intestine muscle
-intersection_of: part_of NCBITaxon:6237
-
-[Term]
-id: WBbt:0005441 ! pharyngeal nerve
-property_value: IAO:0000589 "pharyngeal nerve (worm)" xsd:string
-intersection_of: UBERON:0000960 ! pharyngeal nerve
 intersection_of: part_of NCBITaxon:6237
 
 [Term]
@@ -247,12 +223,6 @@ intersection_of: UBERON:0002537 ! hermaphrodite gonad
 intersection_of: part_of NCBITaxon:6237
 
 [Term]
-id: WBbt:0005332 ! body ganglion
-property_value: IAO:0000589 "body ganglion (worm)" xsd:string
-intersection_of: UBERON:0002545 ! body ganglion
-intersection_of: part_of NCBITaxon:6237
-
-[Term]
 id: WBbt:0005755 ! cuticle
 property_value: IAO:0000589 "collagen and cuticulin-based cuticle (worm)" xsd:string
 intersection_of: UBERON:0003049 ! collagen and cuticulin-based cuticle
@@ -283,12 +253,6 @@ intersection_of: UBERON:0004221 ! intestine smooth muscle
 intersection_of: part_of NCBITaxon:6237
 
 [Term]
-id: WBbt:0005813 ! body wall musculature
-property_value: IAO:0000589 "musculature of body wall (worm)" xsd:string
-intersection_of: UBERON:0004462 ! musculature of body wall
-intersection_of: part_of NCBITaxon:6237
-
-[Term]
 id: WBbt:0005391 ! amphid sensillum
 property_value: IAO:0000589 "amphid sensory organ (worm)" xsd:string
 intersection_of: UBERON:0005067 ! amphid sensory organ
@@ -306,8 +270,27 @@ property_value: IAO:0000589 "gonad primordium (worm)" xsd:string
 intersection_of: UBERON:0005564 ! gonad primordium
 intersection_of: part_of NCBITaxon:6237
 
+[Term]
+id: WBbt:ENTITY
+name: WBbt entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:6237
+relationship: only_in_taxon NCBITaxon:6237
+
 [Typedef]
 id: part_of
 xref: BFO:0000050
 is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/wbbt#part_of
+equivalent_to: BFO:0000050
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/wbbt#develops_from
+equivalent_to: RO:0002225
 

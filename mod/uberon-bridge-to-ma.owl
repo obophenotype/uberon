@@ -3,6 +3,7 @@
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ma.owl"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ma="http://purl.obolibrary.org/obo/ma#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -26,6 +27,7 @@
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shorthand</rdfs:label>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
     
 
@@ -59,6 +61,41 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ma#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002160</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ma#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ma#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ma#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ma#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ma#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ma#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ma#part_of</oboInOwl:id>
     </owl:ObjectProperty>
     
 
@@ -9560,7 +9597,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001086"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010996"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
@@ -9569,7 +9606,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0000487</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular cartilage (post-embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular cartilage of joint (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11054,26 +11091,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MA_0000581 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0000581">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001559"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0000581</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head of organ (post-embryonic mouse)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MA_0000582 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0000582">
@@ -11720,7 +11737,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003662"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010891"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
@@ -11729,7 +11746,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0000615</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forelimb muscle (post-embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pectoral complex muscle (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -12680,7 +12697,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003663"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010890"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
@@ -12689,7 +12706,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0000663</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hindlimb muscle (post-embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pelvic complex muscle (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -14180,7 +14197,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000444"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010748"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
@@ -14189,7 +14206,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0000742</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphoid follicle (post-embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymph node follicle (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -14220,7 +14237,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001745"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010753"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
@@ -14229,7 +14246,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0000744</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary nodular lymphoid tissue (post-embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymph node secondary follicle (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -14270,26 +14287,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0000746</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trabecula of lymph node (post-embryonic mouse)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MA_0000747 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0000747">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005180"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0000747</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymph organ (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -24951,7 +24948,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0001330</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrapod scapula (post-embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pectoral limb scapula (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -26492,6 +26489,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0001407</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rib 7 (post-embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MA_0001408 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0001408">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010757"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0001408</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rib 8 (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -36000,26 +36017,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MA_0001937 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0001937">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005201"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0001937</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cervical trunk (post-embryonic mouse)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MA_0001938 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0001938">
@@ -36436,26 +36433,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0001959</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proper palmar digital artery (post-embryonic mouse)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MA_0001960 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0001960">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0009656"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0001960</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frontal artery (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -41080,6 +41057,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/MA_0002276 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0002276">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010948"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0002276</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cleidooccipital muscle (post-embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/MA_0002277 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0002277">
@@ -41176,6 +41173,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0002282</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coracobrachialis (post-embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MA_0002283 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0002283">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010932"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0002283</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crico-arytenoid muscle (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -42916,6 +42933,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0002384</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sternocleidomastoid (post-embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MA_0002385 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0002385">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010949"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0002385</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sternooccipital muscle (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -49482,26 +49519,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MA_0002741 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0002741">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003545"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0002741</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brainstem white matter (post-embryonic mouse)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MA_0002742 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_0002742">
@@ -53997,7 +54014,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0002990</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymph node follicular mantle (post-embryonic mouse)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymph node follicular corona (post-embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -54258,6 +54275,32 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:0003008</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perichondrium (post-embryonic mouse)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MA_ENTITY -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MA_ENTITY">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA entity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:ENTITY</oboInOwl:id>
     </owl:Class>
     
 
@@ -54631,12 +54674,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000443 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000443"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000444 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000444"/>
     
 
 
@@ -55225,12 +55262,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001085 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001085"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001086 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001086"/>
     
 
 
@@ -57928,12 +57959,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001559 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001559"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001561 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001561"/>
@@ -58993,12 +59018,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001744 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001744"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001745 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001745"/>
     
 
 
@@ -64342,12 +64361,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003545 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003545"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0003546 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003546"/>
@@ -64987,18 +65000,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0003661 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003661"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003662 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003662"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003663 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003663"/>
     
 
 
@@ -67576,12 +67577,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005180 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005180"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0005181 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005181"/>
@@ -67663,12 +67658,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005200 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005200"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005201 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005201"/>
     
 
 
@@ -70006,12 +69995,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0009656 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009656"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0009657 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009657"/>
@@ -70417,6 +70400,60 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0010742 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010742"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010748 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010748"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010753 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010753"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010757 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010757"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010890 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010890"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010891 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010891"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010932 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010932"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010948 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010948"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010949 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010949"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010996 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010996"/>
     
 
 

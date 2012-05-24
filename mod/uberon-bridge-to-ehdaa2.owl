@@ -3,6 +3,7 @@
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ehdaa2.owl"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ehdaa2="http://purl.obolibrary.org/obo/ehdaa2#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -32,6 +33,49 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ehdaa2#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ehdaa2#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ehdaa2#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ehdaa2#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ehdaa2#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ehdaa2#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ehdaa2#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ehdaa2#part_of</oboInOwl:id>
+    </owl:ObjectProperty>
     
 
 
@@ -650,9 +694,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000132">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001508"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004363"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000132</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aortic arch (embryonic human)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arch of aorta (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
@@ -1210,16 +1252,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000226 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000226">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005706"/>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000226</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">central nervous system cranial ganglion (embryonic human)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0000227 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000227">
@@ -1374,6 +1406,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000254 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000254">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010905"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000254</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clavicle bone primordium (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0000255 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000255">
@@ -1476,6 +1518,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000277 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000277">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011006"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000277</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endocardium of left auricle (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0000290 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000290">
@@ -1492,6 +1544,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006631"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000291</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">right atrium auricular region (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000292 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000292">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011007"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000292</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endocardium of right auricle (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2068,6 +2130,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000455 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000455">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010961"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000455</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">erector spinae pre-muscle mass (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0000456 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000456">
@@ -2084,6 +2156,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006228"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000457</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exoccipital pre-cartilage condensation (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000459 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000459">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010962"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000459</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extensor pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2148,6 +2230,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000467 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000467">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010974"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000467</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external intercostal pre-muscle mass (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0000468 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000468">
@@ -2164,6 +2256,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005442"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000469</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external oblique (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000470 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000470">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010975"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000470</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external oblique pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2334,6 +2436,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006234"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000508</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">femur pre-cartilage condensation (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000509 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000509">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010852"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000509</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fibula pre-cartilage condensation (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2648,12 +2760,12 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000541 -->
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000543 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000541">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005444"/>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000541</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">first polar body (embryonic human)</obo:IAO_0000589>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000543">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010977"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000543</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flexor pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -3278,6 +3390,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000715 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000715">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002000"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000715</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gluteal muscle (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0000716 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000716">
@@ -3415,7 +3537,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000736">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009617"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000736</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head paraxial mesenchyme (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head paraxial mesoderm (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -3954,6 +4076,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000843 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000843">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010970"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000843</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intercostal pre-muscle mass (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0000844 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000844">
@@ -4160,6 +4292,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002403"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000875</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">internal intercostal muscle (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000876 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000876">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010981"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000876</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">internal intercostal pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -4454,6 +4596,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000933 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000933">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010982"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000933</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">latissimus dorsi pre-muscle mass (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0000935 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000935">
@@ -4700,6 +4852,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005461"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000992</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">levator scapulae (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0000993 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0000993">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010983"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000993</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">levator scapulae pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -5434,16 +5596,6 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003849"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001101</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesencephalic neural crest (embryonic human)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001103 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001103">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009131"/>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001103</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">midbrain vesicle (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -6960,6 +7112,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001423 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001423">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010984"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001423</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pectoral pre-muscle mass (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0001424 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001424">
@@ -7610,6 +7772,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001586 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001586">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010846"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001586</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radius pre-cartilage condensation (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0001587 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001587">
@@ -7736,6 +7908,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005621"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001635</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rhomboid (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001636 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001636">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010985"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001636</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rhomboid pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -8370,6 +8552,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001773 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001773">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010745"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001773</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sacral vertebra cartilage condensation (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001774 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001774">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010744"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001774</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sacral vertebra pre-cartilage condensation (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0001775 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001775">
@@ -8416,16 +8618,6 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001322"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001779</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sciatic nerve (embryonic human)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001820 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001820">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005474"/>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001820</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">second polar body (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -8516,6 +8708,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001125"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001832</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">serratus anterior (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001833 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001833">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010986"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001833</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">serratus anterior pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -8776,6 +8978,16 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001907 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001907">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010751"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001907</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">squamous part of temporal bone primordium (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0001908 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001908">
@@ -8789,9 +9001,9 @@
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0001909 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001909">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001599"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010929"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001909</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stapedius (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stapedius pre-muscle condensation (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -8812,6 +9024,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006295"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001912</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sternebral bone pre-cartilage condensation (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001913 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001913">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010987"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001913</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sterno-mastoid pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9250,10 +9472,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001984">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002285"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005683"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001984</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral ventricle (embryonic human)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">telencephalon lateral ventricle (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9313,9 +9533,11 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001600"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005238"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010935"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002002</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tensor tympani (embryonic human)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tensor tympani muscle (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tensor tympani pre-muscle condensation (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9336,6 +9558,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001478"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002004</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teres major muscle (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0002005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010988"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002005</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teres major pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9466,6 +9698,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003091"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002033</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thyroid primordium (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0002036 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002036">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010850"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002036</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tibia pre-cartilage condensation (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9800,6 +10042,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0002075 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002075">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010990"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002075</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transversospinales muscle (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0002076 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002076">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010989"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002076</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transverospinalis pre-muscle mass (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0002077 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002077">
@@ -9816,6 +10078,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001221"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002078</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transversus abdominis (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0002079 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002079">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010955"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002079</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trapezius pre-muscle mass (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9935,7 +10207,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002094">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002094</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trunk paraxial mesenchyme (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trunk paraxial mesoderm (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9986,6 +10258,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001494"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002099</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ulnar nerve (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0002100 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0002100">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010847"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0002100</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ulna pre-cartilage condensation (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11480,16 +11762,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/EHDAA2_0003173 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0003173">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007540"/>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0003173</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">surface sense organ (embryonic human)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0003177 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0003177">
@@ -11758,6 +12030,16 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004290"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0003259</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dermomyotome (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0003425 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0003425">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010963"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0003425</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trunk and cervical myotome group (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -12492,6 +12774,26 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002082"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0004164</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardiac ventricle (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0004168 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0004168">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009779"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0004168</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardiac muscle tissue of right auricle (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0004169 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0004169">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009780"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0004169</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardiac muscle tissue of left auricle (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -14882,12 +15184,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001599 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001599"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001600 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001600"/>
@@ -15497,6 +15793,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001999 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001999"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002000"/>
     
 
 
@@ -18236,12 +18538,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005444 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005444"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0005446 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005446"/>
@@ -18353,12 +18649,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005472 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005472"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005474 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005474"/>
     
 
 
@@ -19052,12 +19342,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005683 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005683"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0005687 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005687"/>
@@ -19157,12 +19441,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005705 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005705"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005706 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005706"/>
     
 
 
@@ -20240,12 +20518,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0007540 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007540"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0007567 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007567"/>
@@ -20399,12 +20671,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0009129 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009129"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0009131 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009131"/>
     
 
 
@@ -20981,6 +21247,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0009772 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009772"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0009779 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009779"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0009780 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009780"/>
     
 
 
@@ -21713,6 +21991,186 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0010743 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010743"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010744 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010744"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010745 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010745"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010751 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010751"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010846 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010846"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010847 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010847"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010850 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010850"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010852 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010852"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010905 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010905"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010929 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010929"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010935 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010935"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010955 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010955"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010961 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010961"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010962 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010962"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010963 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010963"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010970 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010970"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010974 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010974"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010975 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010975"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010977 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010977"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010981 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010981"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010982 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010982"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010983 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010983"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010984 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010984"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010985 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010985"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010986 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010986"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010987 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010987"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010988 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010988"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010989 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010989"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010990 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010990"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0011006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011006"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0011007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011007"/>
 </rdf:RDF>
 
 

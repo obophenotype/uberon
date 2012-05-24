@@ -6,7 +6,8 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:bila="http://purl.obolibrary.org/obo/bila#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-bila.owl"/>
     
 
@@ -32,6 +33,49 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/bila#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/bila#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/bila#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/bila#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/bila#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/bila#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/bila#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/bila#part_of</oboInOwl:id>
+    </owl:ObjectProperty>
     
 
 
@@ -396,6 +440,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BILA_0000045 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BILA_0000045">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010895"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BILA:0000045</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequential hermaphroditic organism (BILA)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BILA_0000046 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BILA_0000046">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010899"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BILA:0000046</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">synchronous hermaphroditic organism (BILA)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BILA_0000047 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BILA_0000047">
@@ -416,23 +480,11 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BILA_0000052 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BILA_0000052">
-        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007006"/>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BILA:0000052</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blastomere (BILA)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BILA_0000053 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BILA_0000053">
-        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
         <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003062"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BILA:0000053</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organ (BILA)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primitive knot (BILA)</obo:IAO_0000589>
     </owl:Class>
     
@@ -762,9 +814,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BILA_0000115">
         <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003128"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BILA:0000115</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cranium (BILA)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head (BILA)</obo:IAO_0000589>
     </owl:Class>
     
@@ -981,12 +1031,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000061 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000061"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000062 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000062"/>
     
 
 
@@ -1350,12 +1394,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003128 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003128"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0004122 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004122"/>
@@ -1446,12 +1484,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0007006 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007006"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0007010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007010"/>
@@ -1515,6 +1547,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0007197 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007197"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010895 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010895"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010899 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010899"/>
 </rdf:RDF>
 
 

@@ -5,6 +5,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:nif_grossanatomy="http://purl.obolibrary.org/obo/nif_grossanatomy#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:NIF_GrossAnatomy="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#">
@@ -33,6 +34,49 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/nif_grossanatomy#part_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
+        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/nif_grossanatomy#develops_from"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/nif_grossanatomy#develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/nif_grossanatomy#develops_from">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/nif_grossanatomy#develops_from</oboInOwl:id>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/nif_grossanatomy#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/nif_grossanatomy#part_of">
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/nif_grossanatomy#part_of</oboInOwl:id>
+    </owl:ObjectProperty>
     
 
 
@@ -2549,14 +2593,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0002611 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002611">
-        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_1152"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0002612 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002612">
@@ -3866,14 +3902,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002776">
         <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_1669"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0002777 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002777">
-        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_1672"/>
     </owl:Class>
     
 
@@ -6780,14 +6808,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0006105 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006105">
-        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_2522"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0006106 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006106">
@@ -8591,15 +8611,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_1151">
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIF_GrossAnatomy:birnlex_1151</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cochlear nuclear complex (NIF_GrossAnatomy)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_1152 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_1152">
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIF_GrossAnatomy:birnlex_1152</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">node of ranvier (NIF_GrossAnatomy)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11533,7 +11544,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_1672">
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIF_GrossAnatomy:birnlex_1672</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neostriatum (NIF_GrossAnatomy)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">striatum (NIF_GrossAnatomy)</obo:IAO_0000589>
     </owl:Class>
     
@@ -12327,15 +12337,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_2521">
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIF_GrossAnatomy:birnlex_2521</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basilar membrane of cochlea (NIF_GrossAnatomy)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_2522 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_birnlex_2522">
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIF_GrossAnatomy:birnlex_2522</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basis modioli (NIF_GrossAnatomy)</obo:IAO_0000589>
     </owl:Class>
     
 

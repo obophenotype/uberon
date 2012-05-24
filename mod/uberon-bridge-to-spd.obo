@@ -19,12 +19,6 @@ intersection_of: UBERON:0000463 ! portion of organism substance
 intersection_of: part_of NCBITaxon:6893
 
 [Term]
-id: SPD:0000055 ! abdominal segment
-property_value: IAO:0000589 "abdominal segment (spider)" xsd:string
-intersection_of: UBERON:0000917 ! abdominal segment
-intersection_of: part_of NCBITaxon:6893
-
-[Term]
 id: SPD:0000434 ! trachea
 property_value: IAO:0000589 "open tracheal system trachea (spider)" xsd:string
 intersection_of: UBERON:0003127 ! open tracheal system trachea
@@ -48,8 +42,27 @@ property_value: IAO:0000589 "mating plug (spider)" xsd:string
 intersection_of: UBERON:0010148 ! mating plug
 intersection_of: part_of NCBITaxon:6893
 
+[Term]
+id: SPD:ENTITY
+name: SPD entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:6893
+relationship: only_in_taxon NCBITaxon:6893
+
 [Typedef]
 id: part_of
 xref: BFO:0000050
 is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/spd#part_of
+equivalent_to: BFO:0000050
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/spd#develops_from
+equivalent_to: RO:0002225
 
