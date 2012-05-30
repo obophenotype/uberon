@@ -1,5 +1,6 @@
 OBO=http://purl.obolibrary.org/obo
 CATALOG=catalog-v001.xml
+PA = phenoscape-vocab/phenoscape-anatomy.obo
 
 all: uberon-qc
 
@@ -50,7 +51,6 @@ uberon.obo: uberon_edit-implied.obo
 #uberon-merged.owl: uberon_edit.obo pr-core.obo
 #	ontology-release-runner --outdir . --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --simple --no-subsets --re-mireot --allow-overwrite uberon_edit.obo -b cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo $(OBO)/ncbitaxon/subsets/taxslim.owl
 
-
 clear-r:
 	(test -f r/staging/.lock && rm r/staging/.lock) || echo
 # NEW
@@ -74,7 +74,6 @@ oort: uberon_edit-noimports.obo clear-r
 #	ontology-release-runner --outdir r/ --enforceEL --reasoner jcel --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo
 #	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 # TODO - expand macros
-
 
 %.owl: %.obo
 	obolib-obo2owl -o $@ $<
@@ -104,26 +103,25 @@ CHEBI.obo: $(HOME)/cvs/obo/ontology/chemical/chebi.obo
 
 
 QC_FILES = uberon_edit.owl\
+    uberon_edit-xp-check\
+    uberon_edit-obscheck.txt\
     uberon.obo\
     uberon-obscheck.txt\
     uberon-orphans\
+    uberon-synclash\
     mod/bridges\
     new-taxcheck.txt\
-    uberon_edit-obscheck.txt\
     uberon_edit-cycles\
-    uberon_edit-xp-check\
-    uberon_edit-taxcheck.txt\
     uberon-cycles\
-    uberon-synclash\
     uberon.owl\
     uberon-with-isa.obo\
-    uberon-dv.txt\
-    uberon-discv.txt\
     uberon-simple.obo\
     uberon-simple.owl\
     uberon-simple-allcycles\
     uberon-simple-orphans\
     merged-cycles\
+    uberon-dv.txt\
+    uberon-discv.txt\
     composites\
     composite-metazoan-dv.txt\
     all_taxmods
@@ -170,8 +168,28 @@ uberon-structinf.txt:
 # Domain Modules
 # ----------------------------------------
 
-musculoskeletal.owl: uberon.owl
-	owltools $< --reasoner-query -r elk -d -c http://purl.obolibrary.org/obo/uberon/$@ "BFO_0000050 some UBERON_0002204" -o file://`pwd`/$@
+SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory 
+
+all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
+
+subsets/musculoskeletal.obo: uberon.owl
+	owltools $< --reasoner-query -r elk -d -c http://purl.obolibrary.org/obo/uberon/$@ "BFO_0000050 some UBERON_0002204" -o -f obo file://`pwd`/$@
+subsets/musculoskeletal-minimal.obo: $(PA)
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/excretory-minimal.obo: uberon.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/reproductive-minimal.obo: merged.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/digestive-minimal.obo: merged.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/nervous-minimal.obo: uberon.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/sensory-minimal.obo: uberon.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/immune-minimal.obo: merged.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/circulatory-minimal.obo: uberon.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
 
 # ----------------------------------------
 # Closure
@@ -274,13 +292,15 @@ merged.obo: merged.owl
 .PRECIOUS: merged.obo
 
 # core: the full ontology, excluding external classes, but including references to these
-cl-core.obo: cell.edit.obo
-	obo-grep.pl -r 'id: CL:' $< | grep -v ^disjoint > $@
+cl-core.obo: cl.obo
+	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - > $@
 pr-core.obo: PRO.obo
 	obo-grep.pl  -r 'id: PR:' $< > $@
 
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 composites: composite-metazoan.owl composite-vertebrate.owl
+
+METCACHE= metazon_glommed_closure-ontol_db.pro
 
 # TODO: ensure treat-xrefs in merged
 composite-xenopus.obo: merged.obo
@@ -291,13 +311,16 @@ composite-mammal.obo: merged.obo
 	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r MA -r EHDAA2 -goal "rewrite_all('uberon/composite-mammal')" io-convert -to obo > $@
 .PRECIOUS: mammal-mammal.obo
 
-composite-vertebrate.obo: merged.obo
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@
+composite-vertebrate.obo: merged.obo  $(METCACHE)
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@
 .PRECIOUS: composite-vertebrate.obo
 
-composite-metazoan.obo: merged.obo
-	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
+composite-metazoan.obo: merged.obo $(METCACHE)
+	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
 .PRECIOUS: composite-metazoan.obo
+
+metazon_glommed.obo: merged.obo
+	blip io-convert -debug index -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt -to obo | egrep -v '^(synonym|def|subset|xref|namespace|comment):' > $@.tmp && mv $@.tmp $@
 
 # closures of individual ontologies, but not connections between them
 
@@ -639,6 +662,9 @@ dbpedia_all_Embryology.pro:
 dbpedia_all_Animal_anatomy.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Animal_anatomy> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
+dbpedia_all_Bone.pro:
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type dbpedia-owl:Bone }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+
 dbpedia_subjects.pro:
 	sort -u dbpedia_all_*.pro > $@
 
@@ -659,13 +685,40 @@ uberon-thumbnail-xrefs.obo: dbpedia_all.pro
 	blip-findall -r uberonp -i dbpedia_all.pro -i adhoc_uberon.pro uberon_thumbnail/2 -label | cut -f2,3 | tbl2obolinks.pl --rel xref > $@
 
 # MUSCLES
-dbpedia-muscles: dbpedia-muscle-origin-x.obo dbpedia-muscle-insertion-x.obo dbpedia-muscle-nerve-x.obo  dbpedia-muscle-action-x.obo dbpedia-muscle-antagonist-x.obo
+dbpedia-muscles: dbpedia-muscle-origin-x.obo dbpedia-muscle-insertion-x.obo dbpedia-muscle-nerve-x.obo  dbpedia-muscle-action-x.obo dbpedia-muscle-antagonist-x.obo dbpedia-muscle-agonist-x.obo
 dbpedia-muscle-%.pro:
 	blip ontol-sparql-remote "SELECT * WHERE { ?x dbpprop:$* ?y. ?x rdf:type dbpedia-owl:Muscle}" -write_prolog > $@.tmp && mv $@.tmp $@
 .PRECIOUS: dbpedia-muscle-%.pro
 
 dbpedia-muscle-%-x.obo: dbpedia-muscle-%.pro
-	blip-findall -consult util/dbpedia_to_link.pro -r uberon -i $< "wfact($*)" > $@.tmp && mv $@.tmp $@
+	blip-findall -debug match -consult util/dbpedia_to_link.pro -r uberon -i $< "wfact($*)" > $@.tmp && mv $@.tmp $@
+
+dbpedia-t-muscle-%.pro: dbpedia-muscle-%.pro
+	blip-findall -i $< "row(A,B)" -select "row(A,'$*',B)" -write_prolog > $@
+
+dbpedia-ALL-muscle.pro: dbpedia-t-muscle-origin.pro dbpedia-t-muscle-insertion.pro dbpedia-t-muscle-nerve.pro  dbpedia-t-muscle-action.pro dbpedia-t-muscle-antagonist.pro 
+	cat dbpedia-t-muscle-*.pro > $@
+
+dbpedia-muscle-nlp.obo: dbpedia-ALL-muscle.pro
+	blip-findall -debug match -consult util/dbpedia_to_link.pro -r uberon -u annotator -i $< "initialize_annotator,wfact_nlp" > $@.tmp && mv $@.tmp $@
+
+
+dbpredia-props: dbpedia-prop-articulations-x.obo
+
+dbpedia-prop-%.pro:
+	blip ontol-sparql-remote "SELECT * WHERE { ?x dbpprop:$* ?y}" -write_prolog > $@.tmp && mv $@.tmp $@
+.PRECIOUS: dbpedia-prop-%.pro
+
+dbpedia-prop-%-x.obo: dbpedia-prop-%.pro
+	blip-findall -debug match -consult util/dbpedia_to_link.pro -r uberon -i $< "wfact($*)" > $@.tmp && mv $@.tmp $@
+
+dbpedia-latin.pro:
+	blip ontol-sparql-remote "SELECT * WHERE { ?x dbpprop:latin ?y. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
+
+dbpedia-redirects.pro:
+	blip ontol-sparql-remote "SELECT * WHERE { ?y dbpedia-owl:wikiPageRedirects ?x. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
+dbpedia-disambig.pro:
+	blip ontol-sparql-remote "SELECT * WHERE { ?y dbpedia-owl:wikiPageDisambiguates ?x. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
 
 
 # then do obo-add-defs.pl defs.txt uberon_edit.obo
@@ -938,21 +991,35 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 # PHENOSCAPE
 # ----------------------------------------
 
+
 xref-tao-new.obo: uberon_edit.obo
 	blip-findall -i $<  -r ZFA -r TAO -consult util/tao_checker.pro "ix,zut_new(U,T)"  -select U-T -no_pred -label -use_tabs | tbl2obolinks.pl -r xref - > $@
 
 # then run: obo-merge-tags.pl -t xref uberon_edit.obo xref-tao-new.obo 
 
+PA_INFO = 'This ontology is an aggregate of Uberon and leaf nodes from various ontologies'
+AAO = aao-fixed.obo
+VSAO = vertebrate_skeletal_anatomy.obo fake.obo
+TAO = tao-fixed.obo
+MSAOS = $(TAO) $(AAO) $(VSAO)
+
 fake.obo:
 	echo 'default-namespace: obo' > $@
+aao-fixed.obo: AAO_v2_edit.obo
+	grep -v ^develops_from $< > $@
+
 tao-fixed.obo: teleost_anatomy.obo
-	perl -npe 's/OBO_REL:part_of/part_of/' $< > $@
-psc-merged.obo: tao-fixed.obo fake.obo
-	obo2obo -o $@ $< AAO_v2_edit.obo vertebrate_anatomy_edit.obo fake.obo
+	perl -npe 's/OBO_REL://' $< > $@
+psc-merged.obo: $(TAO) fake.obo
+	obo2obo -o $@ $(MSAOS)  fake.obo
 psc-merged-u.obo: psc-merged.obo uberon_edit.obo
-	obo-map-ids.pl --use-xref-inverse uberon_edit.obo $< > $@
-phenoscape-anatomy.obo: psc-merged-u.obo
-	obo-simple-merge.pl $< merged.obo > $@
+	obo-map-ids.pl --use-xref-inverse uberon_edit.obo $< | perl -npe 's/OBO_REL://' > $@
+merged-dates.txt: $(MSAOS)
+	(perl -ne 'print "aggregates VSAO from $$1\n" if /^date: (\S+)/' $(VSAO) && \
+	 perl -ne 'print "aggregates AAO from $$1\n" if /^date: (\S+)/' $(AAO) && \
+	 perl -ne 'print "aggregates TAO from $$1\n" if /^date: (\S+)/' $(TAO)) > $@
+phenoscape-vocab/phenoscape-anatomy.obo: psc-merged-u.obo merged-dates.txt
+	obo-simple-merge.pl $< merged.obo | obo-add-remark.pl -r $(PA_INFO) merged-dates.txt - > $@ && perl -pi -ne 's@^ontology: uberon.*@ontology: uberon/phenoscape-anatomy@;s@^default-namespace: uberon.*@default-namespace: uberon/phenoscape-anatomy@;' $@
 #psc-merged-u-min.obo: psc-merged-u.obo
 #	obo-subtract.pl $< merged.obo
 #phenoscape-anatomy.obo: psc-merged-u-min.obo
