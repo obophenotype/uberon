@@ -100,7 +100,8 @@ foreach my $s (keys %fhmap) {
     $fh->close;
 }
 foreach my $ont (@fns) {
-    my $cmd = "obolib-obo2owl --allow-dangling $ont.obo -o $ont.owl";
+    #my $cmd = "obolib-obo2owl --allow-dangling $ont.obo -o $ont.owl";
+    my $cmd = "owltools $ont.obo -o file://`pwd`/$ont.owl";
     if (system($cmd)) {
         print STDERR "REMOVING: $ont.obo\n";
         system("rm $ont.obo");
