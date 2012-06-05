@@ -62,7 +62,7 @@ uberon_edit-plus-tax-equivs.owl: uberon_edit.owl
 new-taxcheck.txt: uberon_edit-plus-tax-equivs.owl
 	owltools --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@
 new-taxcheck-%.txt: uberon_edit.owl
-	owltools --catalog-xml $(CATALOG) $< mod/uberon-bridge-to-$*.owl --merge-support-ontologies --translate-disjoint-to-equivalent --run-reasoner -r elk -u > $@
+	owltools --catalog-xml $(CATALOG) $< mod/uberon-bridge-to-$*.owl $*.owl --merge-support-ontologies --translate-disjoint-to-equivalent --run-reasoner -r elk -u > $@
 #oort-taxcheck: uberon_edit-plus-tax-equivs.owl clear-r 
 #	ontology-release-runner --catalog-xml $(CATALOG) --no-subsets --skip-format owx --outdir r/ --reasoner elk  --allow-overwrite $<
 
@@ -127,7 +127,7 @@ QC_FILES = uberon_edit.owl\
     all_taxmods
 
 uberon-qc: $(QC_FILES)
-	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon_edit-taxcheck.txt uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
+	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 
 # e.g. uberon-with-isa-mireot-disjv.txt
 %-disjv.txt: %.obo
