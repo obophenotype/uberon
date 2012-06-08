@@ -1568,8 +1568,8 @@ intersection_of: part_of NCBITaxon:8292
 
 [Term]
 id: AAO:0010655 ! geniohyoideus
-property_value: IAO:0000589 "geniohyoid (amphibian)" xsd:string
-intersection_of: UBERON:0001565 ! geniohyoid
+property_value: IAO:0000589 "jaw depressor muscle (amphibian)" xsd:string
+intersection_of: UBERON:0011151 ! jaw depressor muscle
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -1801,12 +1801,6 @@ intersection_of: UBERON:0005902 ! occipital region
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
-id: AAO:0000588 ! supraoccipital
-property_value: IAO:0000589 "supraoccipital (amphibian)" xsd:string
-intersection_of: UBERON:0004747 ! supraoccipital
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
 id: AAO:0000039 ! basioccipital
 property_value: IAO:0000589 "basioccipital bone (amphibian)" xsd:string
 intersection_of: UBERON:0001692 ! basioccipital bone
@@ -1903,27 +1897,15 @@ intersection_of: UBERON:0001698 ! foramen ovale of skull
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
-id: AAO:0000109 ! cranial skeleton
-property_value: IAO:0000589 "skull (amphibian)" xsd:string
-intersection_of: UBERON:0003129 ! skull
+id: AAO:0000109 ! cranium
+property_value: IAO:0000589 "cranial skeletal system (amphibian)" xsd:string
+intersection_of: UBERON:0010323 ! cranial skeletal system
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
 id: AAO:0010185 ! skull
-property_value: IAO:0000589 "skull (amphibian)" xsd:string
-intersection_of: UBERON:0003129 ! skull
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0000094 ! chondrocranium
-property_value: IAO:0000589 "cartilaginous neurocranium (amphibian)" xsd:string
-intersection_of: UBERON:0004761 ! cartilaginous neurocranium
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0010153 ! neurocranium
-property_value: IAO:0000589 "cartilaginous neurocranium (amphibian)" xsd:string
-intersection_of: UBERON:0004761 ! cartilaginous neurocranium
+property_value: IAO:0000589 "cranial skeletal system (amphibian)" xsd:string
+intersection_of: UBERON:0010323 ! cranial skeletal system
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -1939,9 +1921,27 @@ intersection_of: UBERON:0002241 ! chondrocranium
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
+id: AAO:0000094 ! chondrocranium * cartilage
+property_value: IAO:0000589 "cartilaginous neurocranium (amphibian)" xsd:string
+intersection_of: UBERON:0004761 ! cartilaginous neurocranium
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0010153 ! neurocranium
+property_value: IAO:0000589 "cartilaginous neurocranium (amphibian)" xsd:string
+intersection_of: UBERON:0004761 ! cartilaginous neurocranium
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
 id: AAO:0010157 ! splanchnocranium
-property_value: IAO:0000589 "viscerocranium (amphibian)" xsd:string
-intersection_of: UBERON:0001704 ! viscerocranium
+property_value: IAO:0000589 "splanchnocranium (amphibian)" xsd:string
+intersection_of: UBERON:0008895 ! splanchnocranium
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0010154 ! dermatocranium
+property_value: IAO:0000589 "dermatocranium (amphibian)" xsd:string
+intersection_of: UBERON:0003113 ! dermatocranium
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -2002,6 +2002,12 @@ intersection_of: part_of NCBITaxon:8292
 id: AAO:0000674 ! arytenoid_cartilage
 property_value: IAO:0000589 "arytenoid cartilage (amphibian)" xsd:string
 intersection_of: UBERON:0001740 ! arytenoid cartilage
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0000690 ! wrisbergi cartilage
+property_value: IAO:0000589 "cuneiform cartilage (amphibian)" xsd:string
+intersection_of: UBERON:0011157 ! cuneiform cartilage
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -2638,12 +2644,6 @@ intersection_of: part_of NCBITaxon:8292
 id: AAO:0011039 ! optic vesicle
 property_value: IAO:0000589 "optic vesicle (amphibian)" xsd:string
 intersection_of: UBERON:0004128 ! optic vesicle
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0000680 ! manubrium
-property_value: IAO:0000589 "manubrium of sternum (amphibian)" xsd:string
-intersection_of: UBERON:0002205 ! manubrium of sternum
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -3313,12 +3313,6 @@ intersection_of: UBERON:0003112 ! olfactory region
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
-id: AAO:0010154 ! dermatocranium
-property_value: IAO:0000589 "dermatocranium (amphibian)" xsd:string
-intersection_of: UBERON:0003113 ! dermatocranium
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
 id: AAO:0000988 ! jaws
 property_value: IAO:0000589 "jaw (amphibian)" xsd:string
 intersection_of: UBERON:0001708 ! jaw
@@ -3367,15 +3361,51 @@ intersection_of: UBERON:0004742 ! dentary
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
+id: AAO:0000277 ! mandibular symphysis
+property_value: IAO:0000589 "mandibular symphysis (amphibian)" xsd:string
+intersection_of: UBERON:0006606 ! mandibular symphysis
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0000622 ! upper jaw skeleton
+property_value: IAO:0000589 "skeleton of upper jaw (amphibian)" xsd:string
+intersection_of: UBERON:0003277 ! skeleton of upper jaw
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0000274 ! lower jaw skeleton
+property_value: IAO:0000589 "skeleton of lower jaw (amphibian)" xsd:string
+intersection_of: UBERON:0003278 ! skeleton of lower jaw
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
 id: AAO:0010364 ! mandibular arch
-property_value: IAO:0000589 "mandibular arch (amphibian)" xsd:string
-intersection_of: UBERON:0004362 ! mandibular arch
+property_value: IAO:0000589 "pharyngeal arch 1 (amphibian)" xsd:string
+intersection_of: UBERON:0004362 ! pharyngeal arch 1
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
 id: AAO:0010363 ! hyoid arch
-property_value: IAO:0000589 "hyoid arch (amphibian)" xsd:string
-intersection_of: UBERON:0003066 ! hyoid arch
+property_value: IAO:0000589 "pharyngeal arch 2 (amphibian)" xsd:string
+intersection_of: UBERON:0003066 ! pharyngeal arch 2
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0010370 ! hyoid arch skeleton
+property_value: IAO:0000589 "hyoid arch skeleton (amphibian)" xsd:string
+intersection_of: UBERON:0005884 ! hyoid arch skeleton
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0010371 ! dorsal hyoid arch skeleton
+property_value: IAO:0000589 "dorsal hyoid arch skeleton (amphibian)" xsd:string
+intersection_of: UBERON:0011152 ! dorsal hyoid arch skeleton
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0010372 ! ventral hyoid arch skeleton
+property_value: IAO:0000589 "ventral hyoid arch skeleton (amphibian)" xsd:string
+intersection_of: UBERON:0011153 ! ventral hyoid arch skeleton
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -3400,12 +3430,6 @@ intersection_of: part_of NCBITaxon:8292
 id: AAO:0010368 ! branchial arch 4
 property_value: IAO:0000589 "pharyngeal arch 6 (amphibian)" xsd:string
 intersection_of: UBERON:0003117 ! pharyngeal arch 6
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0010370 ! hyoid arch skeleton
-property_value: IAO:0000589 "hyoid arch skeleton (amphibian)" xsd:string
-intersection_of: UBERON:0005884 ! hyoid arch skeleton
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -3466,18 +3490,6 @@ intersection_of: part_of NCBITaxon:8292
 id: AAO:0010332 ! vitelline membrane
 property_value: IAO:0000589 "vitelline membrane (amphibian)" xsd:string
 intersection_of: UBERON:0003125 ! vitelline membrane
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0000622 ! upper jaw skeleton
-property_value: IAO:0000589 "skeleton of upper jaw (amphibian)" xsd:string
-intersection_of: UBERON:0003277 ! skeleton of upper jaw
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0000274 ! lower jaw skeleton
-property_value: IAO:0000589 "skeleton of lower jaw (amphibian)" xsd:string
-intersection_of: UBERON:0003278 ! skeleton of lower jaw
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -4207,21 +4219,9 @@ intersection_of: UBERON:0006604 ! lamina orbitonasalis
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
-id: AAO:0000602 ! tectum synoticum
-property_value: IAO:0000589 "tectum synoticum (amphibian)" xsd:string
-intersection_of: UBERON:0006605 ! tectum synoticum
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
 id: AAO:0010129 ! tectum synoticum
 property_value: IAO:0000589 "tectum synoticum (amphibian)" xsd:string
 intersection_of: UBERON:0006605 ! tectum synoticum
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0000277 ! mandibular symphysis
-property_value: IAO:0000589 "mandibular symphysis (amphibian)" xsd:string
-intersection_of: UBERON:0006606 ! mandibular symphysis
 intersection_of: part_of NCBITaxon:8292
 
 [Term]

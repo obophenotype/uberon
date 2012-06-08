@@ -1226,8 +1226,8 @@ intersection_of: part_of NCBITaxon:8353
 
 [Term]
 id: XAO:0004127 ! geniohyoideus
-property_value: IAO:0000589 "geniohyoid (xenopus)" xsd:string
-intersection_of: UBERON:0001565 ! geniohyoid
+property_value: IAO:0000589 "jaw depressor muscle (xenopus)" xsd:string
+intersection_of: UBERON:0011151 ! jaw depressor muscle
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
@@ -1441,21 +1441,9 @@ intersection_of: UBERON:0004765 ! skeletal element
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
-id: XAO:0004013 ! cartilaginous element
-property_value: IAO:0000589 "cartilaginous element (xenopus)" xsd:string
-intersection_of: UBERON:0007844 ! cartilaginous element
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
 id: XAO:0003075 ! cranium
-property_value: IAO:0000589 "cranium (xenopus)" xsd:string
-intersection_of: UBERON:0003128 ! cranium
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
-id: XAO:0003059 ! chondrocranium
-property_value: IAO:0000589 "cartilaginous neurocranium (xenopus)" xsd:string
-intersection_of: UBERON:0004761 ! cartilaginous neurocranium
+property_value: IAO:0000589 "cranial skeletal system (xenopus)" xsd:string
+intersection_of: UBERON:0010323 ! cranial skeletal system
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
@@ -1465,9 +1453,21 @@ intersection_of: UBERON:0001703 ! neurocranium
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
+id: XAO:0003059 ! chondrocranium
+property_value: IAO:0000589 "cartilaginous neurocranium (xenopus)" xsd:string
+intersection_of: UBERON:0004761 ! cartilaginous neurocranium
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
 id: XAO:0003176 ! splanchnocranium
-property_value: IAO:0000589 "viscerocranium (xenopus)" xsd:string
-intersection_of: UBERON:0001704 ! viscerocranium
+property_value: IAO:0000589 "splanchnocranium (xenopus)" xsd:string
+intersection_of: UBERON:0008895 ! splanchnocranium
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
+id: XAO:0003169 ! dermatocranium
+property_value: IAO:0000589 "dermatocranium (xenopus)" xsd:string
+intersection_of: UBERON:0003113 ! dermatocranium
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
@@ -2251,7 +2251,13 @@ intersection_of: UBERON:0007812 ! post-anal tail
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
-id: XAO:0000170 ! cartilage
+id: XAO:0004013 ! cartilaginous element
+property_value: IAO:0000589 "cartilaginous element (xenopus)" xsd:string
+intersection_of: UBERON:0007844 ! cartilaginous element
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
+id: XAO:0000170 ! cartilage tissue
 property_value: IAO:0000589 "cartilage tissue (xenopus)" xsd:string
 intersection_of: UBERON:0002418 ! cartilage tissue
 intersection_of: part_of NCBITaxon:8353
@@ -2767,12 +2773,6 @@ intersection_of: UBERON:0003112 ! olfactory region
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
-id: XAO:0003169 ! dermatocranium
-property_value: IAO:0000589 "dermatocranium (xenopus)" xsd:string
-intersection_of: UBERON:0003113 ! dermatocranium
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
 id: XAO:0003087 ! upper jaw
 property_value: IAO:0000589 "upper jaw (xenopus)" xsd:string
 intersection_of: UBERON:0001709 ! upper jaw
@@ -2798,14 +2798,32 @@ intersection_of: part_of NCBITaxon:8353
 
 [Term]
 id: XAO:0000097 ! mandibular arch
-property_value: IAO:0000589 "mandibular arch (xenopus)" xsd:string
-intersection_of: UBERON:0004362 ! mandibular arch
+property_value: IAO:0000589 "pharyngeal arch 1 (xenopus)" xsd:string
+intersection_of: UBERON:0004362 ! pharyngeal arch 1
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
 id: XAO:0000098 ! hyoid arch
-property_value: IAO:0000589 "hyoid arch (xenopus)" xsd:string
-intersection_of: UBERON:0003066 ! hyoid arch
+property_value: IAO:0000589 "pharyngeal arch 2 (xenopus)" xsd:string
+intersection_of: UBERON:0003066 ! pharyngeal arch 2
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
+id: XAO:0003177 ! hyoid arch skeleton
+property_value: IAO:0000589 "hyoid arch skeleton (xenopus)" xsd:string
+intersection_of: UBERON:0005884 ! hyoid arch skeleton
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
+id: XAO:0003178 ! dorsal hyoid arch skeleton
+property_value: IAO:0000589 "dorsal hyoid arch skeleton (xenopus)" xsd:string
+intersection_of: UBERON:0011152 ! dorsal hyoid arch skeleton
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
+id: XAO:0003179 ! ventral hyoid arch skeleton
+property_value: IAO:0000589 "ventral hyoid arch skeleton (xenopus)" xsd:string
+intersection_of: UBERON:0011153 ! ventral hyoid arch skeleton
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
@@ -2830,12 +2848,6 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:0000453 ! branchial arch 4
 property_value: IAO:0000589 "pharyngeal arch 6 (xenopus)" xsd:string
 intersection_of: UBERON:0003117 ! pharyngeal arch 6
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
-id: XAO:0003177 ! hyoid arch skeleton
-property_value: IAO:0000589 "hyoid arch skeleton (xenopus)" xsd:string
-intersection_of: UBERON:0005884 ! hyoid arch skeleton
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
@@ -3331,6 +3343,18 @@ intersection_of: UBERON:0005616 ! mesenteric artery
 intersection_of: part_of NCBITaxon:8353
 
 [Term]
+id: XAO:0000024 ! mandibular crest
+property_value: IAO:0000589 "mandibular neural crest (xenopus)" xsd:string
+intersection_of: UBERON:0007098 ! mandibular neural crest
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
+id: XAO:0000025 ! hyoid crest
+property_value: IAO:0000589 "hyoid neural crest (xenopus)" xsd:string
+intersection_of: UBERON:0007099 ! hyoid neural crest
+intersection_of: part_of NCBITaxon:8353
+
+[Term]
 id: XAO:0000252 ! neurocoel
 property_value: IAO:0000589 "neural tube lumen (xenopus)" xsd:string
 intersection_of: UBERON:0003842 ! neural tube lumen
@@ -3388,18 +3412,6 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:0000108 ! chordoneural hinge
 property_value: IAO:0000589 "chordo neural hinge (xenopus)" xsd:string
 intersection_of: UBERON:0007097 ! chordo neural hinge
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
-id: XAO:0000024 ! mandibular crest
-property_value: IAO:0000589 "mandibular neural crest (xenopus)" xsd:string
-intersection_of: UBERON:0007098 ! mandibular neural crest
-intersection_of: part_of NCBITaxon:8353
-
-[Term]
-id: XAO:0000025 ! hyoid crest
-property_value: IAO:0000589 "hyoid neural crest (xenopus)" xsd:string
-intersection_of: UBERON:0007099 ! hyoid neural crest
 intersection_of: part_of NCBITaxon:8353
 
 [Term]

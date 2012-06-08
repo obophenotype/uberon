@@ -3361,16 +3361,6 @@ property_value: IAO:0000589 "articular capsule (ncithesaurus)" xsd:string
 is_a: UBERON:0001484 ! articular capsule
 
 [Term]
-id: ncithesaurus:Knee_Joint ! Knee Joint
-property_value: IAO:0000589 "knee joint (ncithesaurus)" xsd:string
-is_a: UBERON:0001485 ! knee joint
-
-[Term]
-id: ncithesaurus:Stifle_Joint ! stifle joint
-property_value: IAO:0000589 "stifle joint (ncithesaurus)" xsd:string
-is_a: UBERON:0011123 ! stifle joint
-
-[Term]
 id: ncithesaurus:Patella ! Patella
 property_value: IAO:0000589 "patella (ncithesaurus)" xsd:string
 is_a: UBERON:0002446 ! patella
@@ -4286,24 +4276,24 @@ property_value: IAO:0000589 "skull (ncithesaurus)" xsd:string
 is_a: UBERON:0003129 ! skull
 
 [Term]
-id: ncithesaurus:Skullcap ! skullcap
-property_value: IAO:0000589 "calvarium (ncithesaurus)" xsd:string
-is_a: UBERON:0004339 ! calvarium
-
-[Term]
 id: ncithesaurus:Skeletal_System_Part ! Skeletal System Part
 property_value: IAO:0000589 "subdivision of skeletal system (ncithesaurus)" xsd:string
 is_a: UBERON:0000075 ! subdivision of skeletal system
 
 [Term]
-id: ncithesaurus:Chondrocranium ! Chondrocranium
-property_value: IAO:0000589 "cartilaginous neurocranium (ncithesaurus)" xsd:string
-is_a: UBERON:0004761 ! cartilaginous neurocranium
+id: ncithesaurus:Skullcap ! skullcap
+property_value: IAO:0000589 "calvarium (ncithesaurus)" xsd:string
+is_a: UBERON:0004339 ! calvarium
 
 [Term]
 id: ncithesaurus:Base_of_the_Skull ! Base of the Skull
 property_value: IAO:0000589 "basicranium (ncithesaurus)" xsd:string
 is_a: UBERON:0002517 ! basicranium
+
+[Term]
+id: ncithesaurus:Chondrocranium ! Chondrocranium * embryonic
+property_value: IAO:0000589 "cartilaginous neurocranium (ncithesaurus)" xsd:string
+is_a: UBERON:0004761 ! cartilaginous neurocranium
 
 [Term]
 id: ncithesaurus:Nasal_Septum ! Nasal Septum
@@ -6311,6 +6301,21 @@ property_value: IAO:0000589 "xiphoid process (ncithesaurus)" xsd:string
 is_a: UBERON:0002207 ! xiphoid process
 
 [Term]
+id: ncithesaurus:Knee_Joint ! Knee Joint
+property_value: IAO:0000589 "knee joint (ncithesaurus)" xsd:string
+is_a: UBERON:0001485 ! knee joint
+
+[Term]
+id: ncithesaurus:Stifle_Joint ! stifle joint
+property_value: IAO:0000589 "stifle joint (ncithesaurus)" xsd:string
+is_a: UBERON:0011123 ! stifle joint
+
+[Term]
+id: ncithesaurus:Patellar_Ligament ! Patellar Ligament
+property_value: IAO:0000589 "patellar ligament (ncithesaurus)" xsd:string
+is_a: UBERON:0003676 ! patellar ligament
+
+[Term]
 id: ncithesaurus:Nerve_Root ! Nerve Root
 property_value: IAO:0000589 "nerve root (ncithesaurus)" xsd:string
 is_a: UBERON:0002211 ! nerve root
@@ -6519,6 +6524,11 @@ is_a: UBERON:0002289 ! cerebral aqueduct
 id: ncithesaurus:Cerebral_Aqueduct ! Cerebral Aqueduct
 property_value: IAO:0000589 "cerebral aqueduct (ncithesaurus)" xsd:string
 is_a: UBERON:0002289 ! cerebral aqueduct
+
+[Term]
+id: ncithesaurus:Fissure_of_Sylvius ! Fissure of Sylvius
+property_value: IAO:0000589 "lateral sulcus (ncithesaurus)" xsd:string
+is_a: UBERON:0002721 ! lateral sulcus
 
 [Term]
 id: ncithesaurus:Choroid_Plexus_of_the_Fourth_Ventricle ! Choroid Plexus of the Fourth Ventricle
@@ -7431,11 +7441,6 @@ property_value: IAO:0000589 "collateral sulcus (ncithesaurus)" xsd:string
 is_a: UBERON:0002716 ! collateral sulcus
 
 [Term]
-id: ncithesaurus:Fissure_of_Sylvius ! Fissure of Sylvius
-property_value: IAO:0000589 "lateral sulcus (ncithesaurus)" xsd:string
-is_a: UBERON:0002721 ! lateral sulcus
-
-[Term]
 id: ncithesaurus:Superior_Temporal_Sulcus ! Superior Temporal Sulcus
 property_value: IAO:0000589 "superior temporal sulcus (ncithesaurus)" xsd:string
 is_a: UBERON:0002734 ! superior temporal sulcus
@@ -7792,13 +7797,13 @@ is_a: UBERON:0001684 ! mandible
 
 [Term]
 id: ncithesaurus:First_Pharyngeal_Arch ! First Pharyngeal Arch
-property_value: IAO:0000589 "mandibular arch (ncithesaurus)" xsd:string
-is_a: UBERON:0004362 ! mandibular arch
+property_value: IAO:0000589 "pharyngeal arch 1 (ncithesaurus)" xsd:string
+is_a: UBERON:0004362 ! pharyngeal arch 1
 
 [Term]
 id: ncithesaurus:Second_Pharyngeal_Arch ! Second Pharyngeal Arch
-property_value: IAO:0000589 "hyoid arch (ncithesaurus)" xsd:string
-is_a: UBERON:0003066 ! hyoid arch
+property_value: IAO:0000589 "pharyngeal arch 2 (ncithesaurus)" xsd:string
+is_a: UBERON:0003066 ! pharyngeal arch 2
 
 [Term]
 id: ncithesaurus:Aortic_Arch ! Aortic Arch
@@ -7977,8 +7982,8 @@ is_a: UBERON:0008962 ! forelimb bone
 
 [Term]
 id: ncithesaurus:Facial_Bone ! Facial Bone
-property_value: IAO:0000589 "viscerocranium bone (ncithesaurus)" xsd:string
-is_a: UBERON:0003462 ! viscerocranium bone
+property_value: IAO:0000589 "facial bone (ncithesaurus)" xsd:string
+is_a: UBERON:0003462 ! facial bone
 
 [Term]
 id: ncithesaurus:Bone_of_the_Lower_Extremity ! Bone of the Lower Extremity
@@ -8351,11 +8356,6 @@ property_value: IAO:0000589 "tooth crown (ncithesaurus)" xsd:string
 is_a: UBERON:0003675 ! tooth crown
 
 [Term]
-id: ncithesaurus:Patellar_Ligament ! Patellar Ligament
-property_value: IAO:0000589 "patellar ligament (ncithesaurus)" xsd:string
-is_a: UBERON:0003676 ! patellar ligament
-
-[Term]
 id: ncithesaurus:Floor_of_the_Mouth ! Floor of Mouth
 property_value: IAO:0000589 "mouth floor (ncithesaurus)" xsd:string
 is_a: UBERON:0003679 ! mouth floor
@@ -8431,9 +8431,14 @@ property_value: IAO:0000589 "temporomandibular joint (ncithesaurus)" xsd:string
 is_a: UBERON:0003700 ! temporomandibular joint
 
 [Term]
+id: ncithesaurus:Cricoesophageal_Tendon ! cricoesophageal tendon
+property_value: IAO:0000589 "crico-esophageal tendon (ncithesaurus)" xsd:string
+is_a: UBERON:0011165 ! crico-esophageal tendon
+
+[Term]
 id: ncithesaurus:Achilles_Tendon ! Achilles Tendon
-property_value: IAO:0000589 "achilles tendon (ncithesaurus)" xsd:string
-is_a: UBERON:0003701 ! achilles tendon
+property_value: IAO:0000589 "calcaneal tendon (ncithesaurus)" xsd:string
+is_a: UBERON:0003701 ! calcaneal tendon
 
 [Term]
 id: ncithesaurus:Inguinal_Canal ! inguinal canal
@@ -8664,6 +8669,11 @@ is_a: UBERON:0005974 ! posterior cerebellomedullary cistern
 id: ncithesaurus:Quadrigeminal_Cistern ! Quadrigeminal Cistern
 property_value: IAO:0000589 "quadrigeminal cistern (ncithesaurus)" xsd:string
 is_a: UBERON:0004052 ! quadrigeminal cistern
+
+[Term]
+id: ncithesaurus:Sylvian_Cistern ! sylvian cistern
+property_value: IAO:0000589 "sylvian cistern (ncithesaurus)" xsd:string
+is_a: UBERON:0011155 ! sylvian cistern
 
 [Term]
 id: ncithesaurus:Primitive_Pit ! Primitive Pit
