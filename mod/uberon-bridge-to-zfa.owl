@@ -5679,6 +5679,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0011170 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011170"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_1000010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_1000010"/>
@@ -11548,7 +11554,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000621</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quadrate (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quadrate bone (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -22969,6 +22975,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005461</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perilymphatic channel (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0005484 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0005484">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0011170"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005484</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quadrate-articular joint (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
