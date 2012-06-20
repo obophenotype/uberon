@@ -19,7 +19,7 @@ anatomy(nif_anatomy).
 anatomy('NCITA').
 anatomy('ANISEED').
 anatomy(geisha).
-anatomy(vao).
+anatomy(vsao).
 
 allow_dangling(ceph).
 allow_dangling(uberon_edit).
