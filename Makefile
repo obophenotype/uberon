@@ -101,6 +101,8 @@ oort: uberon_edit-noimports.obo clear-r
 CHEBI.obo: $(HOME)/cvs/obo/ontology/chemical/chebi.obo
 	perl -ne 'print unless /^relationship/' $< | grep -v ^xref > $@
 
+depictions.owl: uberon_edit.obo
+	./util/mk-image-ont.pl $< > $@
 
 QC_FILES = uberon_edit.owl\
     uberon_edit-xp-check\
@@ -715,11 +717,16 @@ dbpedia-prop-%-x.obo: dbpedia-prop-%.pro
 dbpedia-latin.pro:
 	blip ontol-sparql-remote "SELECT * WHERE { ?x dbpprop:latin ?y. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
 
+dbpedia-depiction.pro:
+	blip ontol-sparql-remote "SELECT * WHERE { ?x foaf:depiction ?y. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
+
 dbpedia-redirects.pro:
 	blip ontol-sparql-remote "SELECT * WHERE { ?y dbpedia-owl:wikiPageRedirects ?x. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
 dbpedia-disambig.pro:
 	blip ontol-sparql-remote "SELECT * WHERE { ?y dbpedia-owl:wikiPageDisambiguates ?x. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
 
+dbpedia-list-AS.txt:
+	blip -debug sparql ontol-sparql-remote "SELECT * WHERE { ?x rdf:type dbpedia-owl:AnatomicalStructure}" > $@.tmp && mv $@.tmp $@
 
 # then do obo-add-defs.pl defs.txt uberon_edit.obo
 defs.txt:
@@ -1001,19 +1008,24 @@ PA_INFO = 'This ontology is an aggregate of Uberon and leaf nodes from various o
 AAO = aao-fixed.obo
 VSAO = vertebrate_skeletal_anatomy.obo fake.obo
 TAO = tao-fixed.obo
+TAO_SRC = phenoscape-vocab/teleost_anatomy_VAO_edit.obo
 MSAOS = $(TAO) $(AAO) $(VSAO)
+
 
 fake.obo:
 	echo 'default-namespace: obo' > $@
-aao-fixed.obo: AAO_v2_edit.obo
-	grep -v ^develops_from $< > $@
+#aao-fixed.obo: AAO_v2_edit.obo
+aao-fixed.obo: phenoscape-vocab/AAO_cjm.obo
+	obo-map-ids.pl --use-xref --regex-filter 'CL:' $< | grep -v ^develops_from > $@
 
-tao-fixed.obo: teleost_anatomy.obo
-	perl -npe 's/OBO_REL://' $< > $@
+tao-fixed.obo: $(TAO_SRC)
+	obo-map-ids.pl --ignore-tag alt_id --use-xref --regex-filter 'CL:' $< $< | perl -npe 's/OBO_REL://' | obo-grep.pl -r 'id: TAO' - > $@
 psc-merged.obo: $(TAO) fake.obo
 	obo2obo -o $@ $(MSAOS)  fake.obo
-psc-merged-u.obo: psc-merged.obo uberon_edit.obo
+psc-merged-u1.obo: psc-merged.obo uberon_edit.obo
 	obo-map-ids.pl --use-xref-inverse uberon_edit.obo $< | perl -npe 's/OBO_REL://' > $@
+psc-merged-u.obo: psc-merged-u1.obo
+	obo-map-ids.pl --use-xref --regex-filter 'CL'  $< $< > $@
 merged-dates.txt: $(MSAOS)
 	(perl -ne 'print "aggregates VSAO from $$1\n" if /^date: (\S+)/' $(VSAO) && \
 	 perl -ne 'print "aggregates AAO from $$1\n" if /^date: (\S+)/' $(AAO) && \
@@ -1024,8 +1036,9 @@ phenoscape-vocab/phenoscape-anatomy.obo: psc-merged-u.obo merged-dates.txt
 #	obo-subtract.pl $< merged.obo
 #phenoscape-anatomy.obo: psc-merged-u-min.obo
 
+# copy this manually to phenoscape-vocab/edit/ (but only before the switch!)
 phenoscape-ext.owl: phenoscape-vocab/phenoscape-anatomy.obo
-	obo-grep.pl --neg -r 'id: (UBERON|CL)' $< | ./util/pa-to-uberon-ids.pl > $@.obo && owltools $@.obo --add-imports-declarations $(OBO)/uberon/merged.owl -o -f functional file://`pwd`/$@.tmp && egrep -v '^Declaration.*UBERON_0' $$@.tmp > $@
+	obo-grep.pl --neg -r 'id: (UBERON|CL)' $< | ./util/pa-to-uberon-ids.pl > $@.obo && owltools $@.obo --add-imports-declarations $(OBO)/uberon/merged.owl -o -f functional file://`pwd`/$@.tmp && egrep -v '^Declaration.*UBERON_0' $@.tmp > $@
 
 # ----------------------------------------
 # RELEASE
