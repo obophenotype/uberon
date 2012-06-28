@@ -818,6 +818,12 @@ mappings-FMA-FBbt-201009-concardance.txt:
 	blip-findall -debug phenolog -debug index -goal index_gene_attr -r fma_simple -r fly_anatomy -i fly_human_gene_attr.pro -i flymine_fly_human_homologs.txt  -i adhoc_uberon.pro -i mappings-FMA-FBbt-201009.rdf mapping_pheno_concordance/6 -label > $@
 
 # ----------------------------------------
+# BTO
+# ----------------------------------------
+bto-anat.obo:
+	blip ontol-query -r brenda -index "ontol_db:parentT(1,-,1)" -query "parentT(ID,'BTO:0000042'),\+((class(X,N),atom_concat(_,'cell line',N),parentT(ID,X)))" -to obo  > $@
+
+# ----------------------------------------
 # Concordance (not strictly uberon-only)
 # ----------------------------------------
 

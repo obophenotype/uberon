@@ -10,6 +10,8 @@ while (<>) {
     if (m@^xref: http://upload.wikimedia.org/wikipedia/commons/(\S+)@) {	 
         my $x = $1;
         if ($x =~ /,/) {
+            # TODO
+            
             next;
         }
         print "Class: :$id\n";
