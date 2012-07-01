@@ -3153,6 +3153,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003681 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003681"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0003687 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003687"/>
@@ -8469,6 +8475,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000231</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral recess of third vetricle (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0000236 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000236">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003681"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000236</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">masticatory muscle (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
