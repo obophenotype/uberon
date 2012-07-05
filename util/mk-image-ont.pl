@@ -7,7 +7,7 @@ while (<>) {
         $id = $1;
         $id =~ s/:/_/;
     }
-    if (m@^xref: http://upload.wikimedia.org/wikipedia/commons/(\S+)@) {	 
+    elsif (m@^xref: http://upload.wikimedia.org/wikipedia/commons/(\S+)@) {	 
         my $x = $1;
         if ($x =~ /,/) {
             # TODO
@@ -16,6 +16,12 @@ while (<>) {
         }
         print "Class: :$id\n";
         print "Individual: wc:$x\n";
+        print "  Types: foaf:depicts some :$id\n\n";
+    }
+    elsif (m@^xref: (http://purl.obolibrary.org/obo/uberon/images/\S+\.jpg)@) {	 
+        my $x = $1;
+        print "Class: :$id\n";
+        print "Individual: <$x>\n";
         print "  Types: foaf:depicts some :$id\n\n";
     }
 }
