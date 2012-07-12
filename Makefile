@@ -42,6 +42,9 @@ uberon_edit-implied.obo: uberon_edit-ndd.owl
 uberon.obo: uberon_edit-implied.obo
 	obo-filter-external.pl --idspace UBERON --xp2rel $< | egrep -v '^(domain|range):' > $@.tmp && obo-add-data-version.pl $@.tmp > $@
 
+%.obo-OE-check: %.obo
+	obo2obo -o $@ $<
+
 # ----------------------------------------
 # Make merged ontology using Oort
 # ----------------------------------------
@@ -108,6 +111,7 @@ QC_FILES = uberon_edit.owl\
     uberon_edit-xp-check\
     uberon_edit-obscheck.txt\
     uberon.obo\
+    uberon.obo-OE-check\
     uberon-obscheck.txt\
     uberon-orphans\
     uberon-synclash\
@@ -286,7 +290,9 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 # note: use cell.obo for now; TODO: need to take care of duplicate defs in MIREOTs...
-merged.owl: uberon_edit-implied.obo cl-core.obo ncbi_taxon_slim.obo
+#merged.owl: uberon_edit-implied.obo cl-core.obo ncbi_taxon_slim.obo
+#	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
+merged.owl: uberon_edit-ndd.owl cl-core.obo ncbi_taxon_slim.obo
 	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
@@ -295,9 +301,9 @@ merged.obo: merged.owl
 
 # core: the full ontology, excluding external classes, but including references to these
 cl-core.obo: cl.obo
-	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - > $@
+	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat part_of.obo has_part.obo capable_of.obo)  > $@
 pr-core.obo: PRO.obo
-	obo-grep.pl  -r 'id: PR:' $< > $@
+	(obo-grep.pl  -r 'id: PR:' $< && cat part_of.obo has_part.obo) > $@
 
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 composites: composite-metazoan.owl composite-vertebrate.owl
@@ -350,6 +356,7 @@ composite-vertebrate.owl: composite-vertebrate.obo
 	obo2obo -o $@ $< $*_obo.obo part_of.obo
 
 
+# @Deprecated
 uberon_edit_plus_%-implied.obo: uberon_edit.obo
 	obo2obo -allowdangling -o -saveimpliedlinks -allowdangling $@ $*.obo $<
 
@@ -1029,9 +1036,10 @@ tao-fixed.obo: $(TAO_SRC)
 psc-merged.obo: $(TAO) fake.obo
 	obo2obo -o $@ $(MSAOS)  fake.obo
 psc-merged-u1.obo: psc-merged.obo uberon_edit.obo
-	obo-map-ids.pl --use-xref-inverse uberon_edit.obo $< | perl -npe 's/OBO_REL://' > $@
+	obo-map-ids.pl --ignore-tag alt_id --use-xref-inverse uberon_edit.obo $< | perl -npe 's/OBO_REL://' > $@
+# map to CL IDs. 
 psc-merged-u.obo: psc-merged-u1.obo
-	obo-map-ids.pl --use-xref --regex-filter 'CL'  $< $< > $@
+	obo-map-ids.pl --ignore-tag alt_id --use-xref --regex-filter 'CL'  $< $< > $@
 merged-dates.txt: $(MSAOS)
 	(perl -ne 'print "aggregates VSAO from $$1\n" if /^date: (\S+)/' $(VSAO) && \
 	 perl -ne 'print "aggregates AAO from $$1\n" if /^date: (\S+)/' $(AAO) && \
