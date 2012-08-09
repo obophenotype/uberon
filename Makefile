@@ -292,6 +292,7 @@ uberon-isa-to-%.obo: uberon.obo
 # note: use cell.obo for now; TODO: need to take care of duplicate defs in MIREOTs...
 #merged.owl: uberon_edit-implied.obo cl-core.obo ncbi_taxon_slim.obo
 #	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
+# NOTE!!! currently merged is not pre-reasoned...
 merged.owl: uberon_edit-ndd.owl cl-core.obo ncbi_taxon_slim.obo
 	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
 .PRECIOUS: merged.owl
