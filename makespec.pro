@@ -6,6 +6,7 @@ anatomy('CL').
 anatomy('ZFA').
 anatomy('TAO').
 anatomy('XAO').
+anatomy('AAO').
 anatomy('MA').
 anatomy('aba').
 anatomy('FMA').
