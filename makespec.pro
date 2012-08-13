@@ -21,6 +21,7 @@ anatomy('NCITA').
 anatomy('ANISEED').
 anatomy(geisha).
 anatomy(vsao).
+anatomy(vhog).
 
 allow_dangling(ceph).
 allow_dangling(uberon_edit).
