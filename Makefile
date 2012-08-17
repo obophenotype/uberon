@@ -1053,7 +1053,7 @@ phenoscape-vocab/phenoscape-anatomy.obo: psc-merged-u.obo merged-dates.txt
 
 # copy this manually to phenoscape-vocab/edit/ (but only before the switch!)
 phenoscape-ext.owl: phenoscape-vocab/phenoscape-anatomy.obo
-	obo-grep.pl --neg -r 'id: (UBERON|CL)' $< | ./util/pa-to-uberon-ids.pl > $@.obo && owltools $@.obo --add-imports-declarations $(OBO)/uberon/merged.owl -o -f functional file://`pwd`/$@.tmp && egrep -v '^Declaration.*UBERON_0' $@.tmp > $@
+	obo-grep.pl --neg -r 'id: (UBERON|CL)' $< | ./util/pa-to-uberon-ids.pl | obo-sed.pl -r 'is_obsolete:.*true' 's/name: /name: obsolete /' - > $@.obo && owltools $@.obo --add-imports-declarations $(OBO)/uberon/merged.owl -o -f functional file://`pwd`/$@.tmp && egrep -v '^Declaration.*UBERON_0' $@.tmp > $@
 
 # ----------------------------------------
 # RELEASE
