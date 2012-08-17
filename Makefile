@@ -1032,7 +1032,9 @@ fake.obo:
 aao-fixed.obo: phenoscape-vocab/AAO_cjm.obo
 	obo-map-ids.pl --use-xref --regex-filter 'CL:' $< | grep -v ^develops_from > $@
 
-tao-fixed.obo: $(TAO_SRC)
+tao-isaM.obo: $(TAO_SRC)
+	obo-merge-tags.pl -t is_a $< phenoscape-vocab/tao-scratchdir/tao-isa-from-zfa.obo > $@
+tao-fixed.obo: tao-isaM.obo
 	obo-map-ids.pl --ignore-tag alt_id --use-xref --regex-filter 'CL:' $< $< | perl -npe 's/OBO_REL://' | obo-grep.pl -r 'id: TAO' - > $@
 psc-merged.obo: $(TAO) fake.obo
 	obo2obo -o $@ $(MSAOS)  fake.obo
@@ -1053,7 +1055,7 @@ phenoscape-vocab/phenoscape-anatomy.obo: psc-merged-u.obo merged-dates.txt
 
 # copy this manually to phenoscape-vocab/edit/ (but only before the switch!)
 phenoscape-ext.owl: phenoscape-vocab/phenoscape-anatomy.obo
-	obo-grep.pl --neg -r 'id: (UBERON|CL)' $< | ./util/pa-to-uberon-ids.pl | obo-sed.pl -r 'is_obsolete:.*true' 's/name: /name: obsolete /' - > $@.obo && owltools $@.obo --add-imports-declarations $(OBO)/uberon/merged.owl -o -f functional file://`pwd`/$@.tmp && egrep -v '^Declaration.*UBERON_0' $@.tmp > $@
+	obo-grep.pl --neg -r 'id: (UBERON|CL)' $< | ./util/pa-to-uberon-ids.pl | obo-grep.pl -r 'id: UBERON' - | obo-sed.pl -r 'is_obsolete:.*true' 's/name: /name: obsolete /' - > $@.obo && owltools $@.obo --add-imports-declarations $(OBO)/uberon/merged.owl -o -f functional file://`pwd`/$@.tmp && egrep -v '^Declaration.*UBERON_0' $@.tmp > $@
 
 # ----------------------------------------
 # RELEASE
