@@ -6,8 +6,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
-     xmlns:zfa="http://purl.obolibrary.org/obo/zfa#">
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa.owl"/>
     
 
@@ -59,8 +58,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
         <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/zfa#part_of"/>
     </owl:ObjectProperty>
     
@@ -70,8 +69,8 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002160</oboInOwl:hasDbXref>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:id>
     </owl:ObjectProperty>
     
 
@@ -5805,6 +5804,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0011778 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011778"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_1000010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_1000010"/>
@@ -7350,7 +7355,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000117</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hypoblast (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hypoblast (generic) (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -9915,6 +9920,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000386</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macula (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0000387 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000387">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0011778"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000387</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">motor nucleus of vagal nerve (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -15333,7 +15358,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meckel&#39;s cartilage (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meckel&apos;s cartilage (zebrafish)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001205</oboInOwl:id>
     </owl:Class>
     
@@ -19873,7 +19898,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Descemet&#39;s membrane (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Descemet&apos;s membrane (zebrafish)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001686</oboInOwl:id>
     </owl:Class>
     
@@ -22553,7 +22578,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bowman&#39;s space (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bowman&apos;s space (zebrafish)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005283</oboInOwl:id>
     </owl:Class>
     
@@ -23013,7 +23038,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bowman&#39;s space (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bowman&apos;s space (zebrafish)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005312</oboInOwl:id>
     </owl:Class>
     
@@ -23593,7 +23618,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bruch&#39;s membrane (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bruch&apos;s membrane (zebrafish)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005562</oboInOwl:id>
     </owl:Class>
     
@@ -24301,26 +24326,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ZFA_0007007 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0007007">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000203"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0007007</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pallium (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/ZFA_0007009 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0007009">
@@ -24808,5 +24813,5 @@
 
 
 
-<!-- Generated by the OWL API (version 0.2.0-SNAPSHOT) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 0.2.1-SNAPSHOT) http://owlapi.sourceforge.net -->
 
