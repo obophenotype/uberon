@@ -9,34 +9,34 @@ all: uberon-qc
 # ----------------------------------------
 IMPORTS= $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 
-uberon_edit-NI.owl: uberon_edit.obo
-	obolib-obo2owl -x -xm INPLACE --allow-dangling -o $@ $< 
-uberon_edit.owl: uberon_edit-NI.owl
+# edit owl file has
+# * macros
+# * imports to ncbitax
+uberon_edit.owl: uberon_edit-XM.owl
 	owltools $< --add-imports-declarations $(IMPORTS) // -o -f functional file://`pwd`/$@
 .PRECIOUS: uberon_edit.owl
+uberon_edit-XM.owl: uberon_edit.obo
+	obolib-obo2owl -x -xm INPLACE --allow-dangling -o $@ $< 
 
-uberon_edit-ndd.obo: uberon_edit.obo
-	./util/remove-dangling-disjoint.pl $< > $@
-uberon_edit-ndd.owl: uberon_edit-ndd.obo
-	owltools $< -o -f functional file://`pwd`/$@
+external-disjoints.owl: external-disjoints.obo
+	obolib-obo2owl --allow-dangling -o $@ $<
+
+#uberon_edit-ndd.obo: uberon_edit.obo
+#	./util/remove-dangling-disjoint.pl $< > $@
+#uberon_edit-ndd.owl: uberon_edit-ndd.obo
+#	owltools $< -o -f functional file://`pwd`/$@
 #	owltools $< --add-imports-declarations $(IMPORTS) // -o -f functional file://`pwd`/$@
 
-%-noimports.obo: %.obo
-	grep -v ^import: $< > $@
+#%-noimports.obo: %.obo
+#	grep -v ^import: $< > $@
 
 # REPLACEME
 #  step 1 - use noimports
 #  step 2 - with imports, --add-support-from-imports
 # todo: fix chemosensory organ problem...
 # todo: fix relation IDs
-uberon_edit-implied.obo: uberon_edit-ndd.owl
+uberon_edit-implied.obo: uberon_edit.obo
 	ontology-release-runner --catalog-xml $(CATALOG) --add-support-from-imports  --no-subsets --skip-format owx --outdir r/  --reasoner elk --asserted --allow-overwrite $< && cp r/uberon.obo $@
-##OLD:
-##uberon_edit-implied.obo: uberon_edit-noimports.obo
-##	obo2obo -allowdangling -o -saveimpliedlinks  -allowdangling $@ $<
-
-#uberon_edit-mireot-implied.obo: uberon_edit-mireot.obo
-#	obo2obo -o -saveimpliedlinks $@ $<
 
 # TODO: use by Oort
 uberon.obo: uberon_edit-implied.obo
@@ -54,13 +54,12 @@ uberon.obo: uberon_edit-implied.obo
 #uberon-merged.owl: uberon_edit.obo pr-core.obo
 #	ontology-release-runner --outdir . --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --simple --no-subsets --re-mireot --allow-overwrite uberon_edit.obo -b cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo $(OBO)/ncbitaxon/subsets/taxslim.owl
 
-clear-r:
-	(test -f r/staging/.lock && rm r/staging/.lock) || echo
-# NEW
+#clear-r:
+#	(test -f r/staging/.lock && rm r/staging/.lock) || echo
 
 # taxon checks (TODO: SWITCH TO THIS)
-uberon_edit-plus-tax-equivs.owl: uberon_edit.owl
-	owltools --catalog-xml $(CATALOG) $< mod/uberon-bridge-to-*.owl --merge-support-ontologies  --translate-disjoint-to-equivalent -o -f functional file://`pwd`/$@
+uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.obo
+	owltools --catalog-xml $(CATALOG) $< external-disjoints.obo mod/uberon-bridge-to-*.owl --merge-support-ontologies  --translate-disjoint-to-equivalent -o -f functional file://`pwd`/$@
 .PRECIOUS: uberon_edit-plus-tax-equivs.owl
 new-taxcheck.txt: uberon_edit-plus-tax-equivs.owl
 	owltools --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@
@@ -69,11 +68,11 @@ new-taxcheck-%.txt: uberon_edit.owl
 #oort-taxcheck: uberon_edit-plus-tax-equivs.owl clear-r 
 #	ontology-release-runner --catalog-xml $(CATALOG) --no-subsets --skip-format owx --outdir r/ --reasoner elk  --allow-overwrite $<
 
-oort-min: uberon_edit-noimports.obo clear-r 
-	ontology-release-runner --catalog-xml $(CATALOG) --no-subsets --skip-format owx --outdir r/ --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --asserted --expand-xrefs --re-mireot --allow-overwrite $< $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
+#oort-min: uberon_edit-noimports.obo clear-r 
+#	ontology-release-runner --catalog-xml $(CATALOG) --no-subsets --skip-format owx --outdir r/ --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --asserted --expand-xrefs --re-mireot --allow-overwrite $< $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 
-oort: uberon_edit-noimports.obo clear-r 
-	ontology-release-runner --catalog-xml $(CATALOG) --expand-macros-inplace --outdir r/ --prefix $(OBO)/UBERON_ --reasoner elk --asserted --simple --expand-xrefs --re-mireot --allow-overwrite $< $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
+#oort: uberon_edit.obo clear-r 
+#	ontology-release-runner --catalog-xml $(CATALOG) --expand-macros-inplace --outdir r/ --prefix $(OBO)/UBERON_ --reasoner elk --asserted --simple --expand-xrefs --re-mireot --allow-overwrite $< $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 #	ontology-release-runner --outdir r/ --enforceEL --reasoner jcel --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo
 #	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
 # TODO - expand macros
@@ -81,17 +80,15 @@ oort: uberon_edit-noimports.obo clear-r
 %.owl: %.obo
 	obolib-obo2owl -o $@ $<
 
-# roundtrip
-%-rt.obo: %.owl
-	obolib-owl2obo -o $@ $<
-
-%.owlcheck: %.obo
-	obolib-obo2owl --allow-dangling -o $@ $< && obolib-owl2obo -o $@-rt.obo $@
+#%.owlcheck: %.obo
+#	obolib-obo2owl --allow-dangling -o $@ $< && obolib-owl2obo -o $@-rt.obo $@
 
 # check for dangling classes
+# TODO: add to Oort
 %-orphans: %.obo
 	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@.tmp && obo-skip-header.pl $@.tmp > $@
 
+# TODO: add to Oort
 %-xp-check: %.obo
 	obo-check-xps.pl $< >& $@ || echo "problems"
 
@@ -101,9 +98,11 @@ oort: uberon_edit-noimports.obo clear-r
 %-el.owl: %.owl
 	makeElWithoutReasoning.sh -i `pwd`/$< -o `pwd`/$@
 
+# simplified CHEBI - we only want to follow SubClassOf in closure
 CHEBI.obo: $(HOME)/cvs/obo/ontology/chemical/chebi.obo
 	perl -ne 'print unless /^relationship/' $< | grep -v ^xref > $@
 
+# See: http://douroucouli.wordpress.com/2012/07/03/45/
 depictions.owl: uberon_edit.obo
 	./util/mk-image-ont.pl $< > $@
 
@@ -115,6 +114,7 @@ QC_FILES = uberon_edit.owl\
     uberon-obscheck.txt\
     uberon-orphans\
     uberon-synclash\
+    external-disjoints.owl\
     mod/bridges\
     new-taxcheck.txt\
     uberon_edit-cycles\
@@ -293,7 +293,7 @@ uberon-isa-to-%.obo: uberon.obo
 #merged.owl: uberon_edit-implied.obo cl-core.obo ncbi_taxon_slim.obo
 #	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
 # NOTE!!! currently merged is not pre-reasoned...
-merged.owl: uberon_edit-ndd.owl cl-core.obo ncbi_taxon_slim.obo
+merged.owl: uberon_edit.obo cl-core.obo ncbi_taxon_slim.obo
 	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
@@ -1079,6 +1079,7 @@ release:
 	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
 	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
 	cp mod/*.{obo,owl} $(RELDIR)/bridge/ ;\
+	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
 	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
