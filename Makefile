@@ -132,7 +132,7 @@ QC_FILES = uberon_edit.owl\
     composite-metazoan-dv.txt\
     all_taxmods
 
-uberon-qc: $(QC_FILES)
+uberon-qc: $(QC_FILES) all_systems
 	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 
 # e.g. uberon-with-isa-mireot-disjv.txt
@@ -229,44 +229,9 @@ emapaa-remainder.obo: emapaa-inferred.obo
 sao.obo:
 	blip -r sao -u ontol_manifest_metadata_from_sao io-convert -to obo -o $@
 
-
-
 .PRECIOUS: %obo
 
-UBER_ANATS = -r caro -r worm_anatomy -r mouse_anatomy -r fly_anatomy -r zebrafish_anatomy -r fma -r cell -r miaa -r xenopus_anatomy
-HOMOLS = -i fly-to-worm-homology.obo -i ma-to-fma.obo -i fly-to-fma-homology.obo -i zfa-to-fma-homology.obo -i xao-to-fma-homology.obo
 
-xrefcheck:
-	blip $(HOMOLS) $(UBER_ANATS) -u query_anatomy findall non_isom_xref/3 > $@.tmp && sort -u $@.tmp > $@
-
-uber.pro:
-	blip -debug anatomy $(UBER_ANATS) $(HOMOLS) -u query_anatomy findall write_all_group_facts/0 > $@.tmp && mv $@.tmp $@
-.PRECIOUS: uber.pro
-
-gau.pro:
-	blip -debug anatomy $(UBER_ANATS) $(HOMOLS) -u query_anatomy findall build_ontology/0 > $@.tmp && mv $@.tmp $@
-
-anu-%.pro:
-	blip -u query_anatomy findall 'write_pair($*)' > $@.tmp && mv $@.tmp $@
-
-nonisom:
-	blip $(UBER_ANATS) -i fly-to-worm-homology.obo -i ma-to-fma.obo -i fly-to-fma-homology.obo -i zfa-to-fma-homology.obo -u query_anatomy findall nonisom_hset/2 > $@.tmp && mv $@.tmp $@
-
-%_obo.obo: %.pro
-	blip -i $< -f ontol_db:pro io-convert -to obo -o $@
-.PRECIOUS: %_obo.obo
-
-
-%_links.pro: %_obo.obo
-	blip -debug query -table_pred ontol_db:subclassT/2 -u query_anatomy -i $< $(UBER_ANATS) findall write_all_link_facts > $@.tmp && mv $@.tmp $@
-.PRECIOUS: uber_links.pro
-
-uber_links_obo.obo: uber_links.pro
-	blip -i $< -f ontol_db:pro io-convert -to obo -o $@
-.PRECIOUS: uber_links_obo.obo
-
-uber_alles.obo: uber_links_obo.obo uber_obo.obo	
-	obo2obo -o $@ uber_links_obo.obo uber_obo.obo part_of.obo
 
 # ----------------------------------------
 # BUILDS
@@ -276,7 +241,7 @@ uber_alles.obo: uber_links_obo.obo uber_obo.obo
 %-xf.obo: %.obo
 	egrep -v '^xref: (OpenCyc|http)' $< > $@
 
-# still used?
+# used for (obsolete) disjointness checks
 %-with-isa.obo: %-xf.obo
 	blip -i $*.obo -u ontol_manifest_has_subclass_from_xref io-convert -to obo -o $@
 .PRECIOUS: %-with-isa.obo
