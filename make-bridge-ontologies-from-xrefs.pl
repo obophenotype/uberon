@@ -20,6 +20,9 @@ while (<>) {
     elsif (/^treat-xrefs-as-has-subclass:\s*(\S+)/) {
         mk_bridge('has-subclass',$1);
     }
+    #elsif (/^treat-xrefs-as-is_a:\s*(\S+)/) {
+    #    mk_bridge('is_a',$1);
+    #}
     elsif (/^treat-xrefs-as-reverse-genus-differentia:\s*(\S+)\s+(\S+)\s+(\S+)/) {
         mk_bridge('gd',$1,$2,$3);
     }

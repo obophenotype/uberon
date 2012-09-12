@@ -242,6 +242,7 @@ sao.obo:
 	egrep -v '^xref: (OpenCyc|http)' $< > $@
 
 # used for (obsolete) disjointness checks
+
 %-with-isa.obo: %-xf.obo
 	blip -i $*.obo -u ontol_manifest_has_subclass_from_xref io-convert -to obo -o $@
 .PRECIOUS: %-with-isa.obo
@@ -1032,8 +1033,11 @@ aao.obo:
 # ----------------------------------------
 # RELEASE
 # ----------------------------------------
-mod/bridges:
+mod/bridges: mod/uberon-bridge-to-vhog.owl
 	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
+
+mod/uberon-bridge-to-vhog.owl: uberon_edit.obo
+	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
 
 RELDIR=trunk
 release:
