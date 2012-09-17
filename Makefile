@@ -125,6 +125,7 @@ QC_FILES = uberon_edit.owl\
     uberon-simple.owl\
     uberon-simple-allcycles\
     uberon-simple-orphans\
+    merged.obo-OE-check\
     merged-cycles\
     uberon-dv.txt\
     uberon-discv.txt\
