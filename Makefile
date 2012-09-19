@@ -133,7 +133,7 @@ QC_FILES = uberon_edit.owl\
     composite-metazoan-dv.txt\
     all_taxmods
 
-uberon-qc: $(QC_FILES) all_systems
+uberon-qc: $(QC_FILES)
 	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 
 # e.g. uberon-with-isa-mireot-disjv.txt
@@ -256,12 +256,19 @@ uberon-with-isa-for-%.obo: uberon.obo
 uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
+uberon-cl.owl: uberon_edit.obo cl-core.obo
+	owltools $< cl-core.obo --merge-support-ontologies   -o file://`pwd`/$@
+
 # note: use cell.obo for now; TODO: need to take care of duplicate defs in MIREOTs...
 #merged.owl: uberon_edit-implied.obo cl-core.obo ncbi_taxon_slim.obo
 #	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
 # NOTE!!! currently merged is not pre-reasoned...
-merged.owl: uberon_edit.obo cl-core.obo ncbi_taxon_slim.obo
-	owltools $< cl-core.obo --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
+merged-nc.owl: uberon-cl.owl ncbi_taxon_slim.obo
+	owltools $< --merge-support-ontologies ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --mcat --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_ -n 'http://purl.obolibrary.org/obo/uberon/merged.owl' -o file://`pwd`/$@
+#	ontology-release-runner $< --repair-cardinalities ncbi_taxon_slim.obo GO.obo CHEBI.obo  PATO.obo pr-core.obo --prefix http://purl.obolibrary.org/obo/UBERON_ --prefix http://purl.obolibrary.org/obo/CL_  --no-subsets --skip-format owx --outdir r-merged/  --reasoner elk --asserted --allow-overwrite
+merged.owl: merged-nc.owl
+	owltools $< --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
+
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
 	obolib-owl2obo -o $@.tmp $< && ./util/fix-synsubsetdef.pl $@.tmp > $@
