@@ -14,7 +14,7 @@ Workflow:
   make uberon-qc
   git commit -m 'type message here'
   git push
-  # check Jenkins
+  # check Jenkins - http://build.berkeleybop.org/job/build-uberon/
 
 Releases:
 
