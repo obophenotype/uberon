@@ -208,29 +208,6 @@ subsets/circulatory-minimal.obo: uberon.owl
 multi_closure-ontol_db.pro: merged.obo
 	owltools $< http://purl.obolibrary.org/obo/ma.owl http://purl.obolibrary.org/obo/ehdaa2.owl http://purl.obolibrary.org/obo/xao.owl http://purl.obolibrary.org/obo/zfa.owl http://purl.obolibrary.org/obo/fbbt.owl http://purl.obolibrary.org/obo/wbbt.owl cl-core.obo --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
 
-# ----------------------------------------
-# Ontology subsetting and rewriting
-# ----------------------------------------
-
-efo_anat.obo:
-	blip -r efo ontol-subset -query "subclassRT(ID,'EFO:0000635')" -to obo > $@.tmp && mv $@.tmp $@
-
-# note that this is now partly hand-edited
-emapaa.obo:
-	blip-ddb -debug index  -r emapa -consult fix_emapa.pro -goal ix,rewrite io-convert -to obo -o $@
-
-emapaa-inferred.obo: emapaa.obo
-	owltools $< uberon.owl mod/uberon-bridge-to-emapa.owl --merge-support-ontologies --run-reasoner -r elk --assert-implied -o -f obo $@
-
-emapaa-remainder.obo: emapaa-inferred.obo
-	obo-grep.pl -r 'id: (EMAPA|part_of)' $< > $@
-
-# -----
-
-sao.obo:
-	blip -r sao -u ontol_manifest_metadata_from_sao io-convert -to obo -o $@
-
-.PRECIOUS: %obo
 
 
 
@@ -244,6 +221,7 @@ sao.obo:
 
 # used for (obsolete) disjointness checks
 
+# historic
 %-with-isa.obo: %-xf.obo
 	blip -i $*.obo -u ontol_manifest_has_subclass_from_xref io-convert -to obo -o $@
 .PRECIOUS: %-with-isa.obo
@@ -283,7 +261,7 @@ pr-core.obo: PRO.obo
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 composites: composite-metazoan.owl composite-vertebrate.owl
 
-METCACHE= metazon_glommed_closure-ontol_db.pro
+METCACHE= metazoan_glommed_closure-ontol_db.pro
 
 # TODO: ensure treat-xrefs in merged
 composite-xenopus.obo: merged.obo
@@ -302,10 +280,14 @@ composite-metazoan.obo: merged.obo $(METCACHE)
 	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
 .PRECIOUS: composite-metazoan.obo
 
-metazon_glommed.obo: merged.obo
+metazoan_glommed.obo: merged.obo
 	blip io-convert -debug index -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt -to obo | egrep -v '^(synonym|def|subset|xref|namespace|comment):' > $@.tmp && mv $@.tmp $@
 
 # closures of individual ontologies, but not connections between them
+
+# ----------------------------------------
+# COMPOSITES
+# ----------------------------------------
 
 composite-mammal.owl: composite-mammal.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
@@ -335,6 +317,7 @@ composite-vertebrate.owl: composite-vertebrate.obo
 uberon_edit_plus_%-implied.obo: uberon_edit.obo
 	obo2obo -allowdangling -o -saveimpliedlinks -allowdangling $@ $*.obo $<
 
+# NOTE: we should be able to replace these with oort now
 %-cycles: %.obo
 #	owltools --no-debug $< --list-cycles -f > $@
 	blip-findall -i $< "subclass_cycle/2" -label > $@
@@ -346,22 +329,10 @@ uberon_edit_plus_%-implied.obo: uberon_edit.obo
 %-synclash: %.obo
 	blip-findall -r goxp/biological_process_xp_uber_anatomy	 -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
 
-%-xpmatches: %.obo
-	blip-findall -u query_obo -i $< "differentium(A,R,X),differentium(B,R,X),A\=B,class_cdef(A,D),class_cdef(B,D),class_refcount(A,AC),class_refcount(B,BC)" -select "x(A,B,AC,BC)" -label
+#%-xpmatches: %.obo
+#	blip-findall -u query_obo -i $< "differentium(A,R,X),differentium(B,R,X),A\=B,class_cdef(A,D),class_cdef(B,D),class_refcount(A,AC),class_refcount(B,BC)" -select "x(A,B,AC,BC)" -label
 
-# these should be all false positives from string matching
-uberon-anat-matches.txt:
-	blip-findall -i uberon-with-isa-mireot.obo -index "metadata_db:entity_label(1,1)" "same_label_as(A,B),\+id_idspace(A,'UBERON'),\+id_idspace(B,'UBERON'),\+((entity_xref(U,A),entity_xref(U,B)))" -select A-B -label > $@
-
-uberon-nonobvious-matches.txt:
-	blip-findall -r fma_downcase -i uberon-with-isa-mireot.obo -index "metadata_db:entity_label(1,1)" "entity_xref(U,A),entity_xref(U,B),A@<B,entity_label(A,_),entity_label(B,_),\+((entity_label_or_synonym(A,N),entity_label_or_synonym(B,N))),id_idspace(U,'UBERON'),id_idspace(A,AX),id_idspace(B,BX),BX\=AX" -select A-B -label > $@
-
-uberon-dv2.txt: uberon.obo
-	 blip -import_all -i uberon-imports-full.obo -u query_anatomy findall xref_disjoint_violation/5 > $@.tmp && sort -u $@.tmp > $@
-
-#%-dv.txt: %.obo
-#	blip  -i $< -u query_obo findall disjointness_violationNR/3 > $@.tmp && sort -u $@.tmp > $@
-
+# NOTE: all this should be doable in Elk now
 CARO_ONTS=PO FBbt HAO TAO ZFA XAO TADS TGMA SPD
 all-caro-dv: $(patsubst %,caro-dv-%.txt,$(CARO_ONTS))
 all-caro-usage: $(patsubst %,caro-usage-%.txt,$(CARO_ONTS))
@@ -377,48 +348,6 @@ caro-usage-%.txt:
 %-cmt.obo: %.obo
 	obo-add-comments.pl -t xref -t intersection_of uberon_edit.obo animal_gross_anatomy/*/*.obo ../cell_type/cell.obo ../caro/caro.obo MIAA.obo animal_gross_anatomy/*/*/*.obo ~/cvs/fma-conversion/fma2/fma2.obo gemina_anatomy.obo birnlex_anatomy.obo NIF-GrossAnatomy.obo hao.obo HOG.obo efo_anat.obo $< > $@
 
-# Induction of links from sources
-links-uberon-fma.txt:
-	blip -debug anatomy -r fma_simple  -r uberonp -u query_obo -table_pred parent_by_xref/4 findall "parent_by_xref_nr(uberon,_,_,_)" -label > $@.tmp && cut -f3-8 $@.tmp | sort -u > $@
-
-links-uberon-%.txt:
-	blip -debug anatomy -r $*  -r uberonp -u query_obo -table_pred parent_by_xref/4 findall "parent_by_xref_nr_g(uberon,_,_,_,_)" -label > $@.tmp && cut -f3-8 $@.tmp | sort -u > $@
-
-subclass-uberon-fma-birnlex.pro:
-	blip -i uberon_edit.obo -r fma2 -i birnlex_anatomy.obo -u query_obo  findall -write_prolog -select "ontol_db:subclass(A,B)" "subclass_by_xref_confirmed(uberon,A,B)" > $@.tmp && cut -f3-5 $@.tmp | sort -u > $@
-
-subclass-uberon-fma-cell.pro:
-	blip -i uberon_edit.obo -r fma2 -r cell -u query_obo  findall -write_prolog -select "ontol_db:subclass(A,B)" "subclass_by_xref_confirmed(uberon,A,B)" > $@.tmp && cut -f3-5 $@.tmp | sort -u > $@
-
-subclass-uberon-zebrafish-cell.pro:
-	blip -i uberon_edit.obo -r zebrafish_anatomy -r cell -u query_obo  findall -write_prolog -select "ontol_db:subclass(A,B)" "subclass_by_xref_confirmed(uberon,A,B)" > $@.tmp && cut -f3-5 $@.tmp | sort -u > $@
-
-subclass-uberon-fma-zebrafish.pro:
-	blip -i uberon_edit.obo -r fma2 -r zebrafish_anatomy -u query_obo  findall -write_prolog -select "ontol_db:subclass(A,B)" "subclass_by_xref_confirmed(uberon,A,B)" > $@.tmp && cut -f3-5 $@.tmp | sort -u > $@
-
-subclass-uberon-xenopus-zebrafish.pro:
-	blip -i uberon_edit.obo -r xenopus_anatomy -r zebrafish_anatomy -u query_obo  findall -write_prolog -select "ontol_db:subclass(A,B)" "subclass_by_xref_confirmed(uberon,A,B)" > $@.tmp && cut -f3-5 $@.tmp | sort -u > $@
-
-subclass-uberon-%.obo: subclass-uberon-%.pro 
-	blip -i $< io-convert -to obo -o $@
-
-subclass-uberon-%-merged.obo: subclass-uberon-%.obo
-	obo-merge-tags.pl -t is_a uberon_edit.obo $< > $@
-
-# re-routes is_a links
-# supersedes the above?
-move-uberon-%-diff.pro: uberon_edit.obo
-	blip -i uberon_edit.obo -r $* -u query_obo findall 'xrefmove(C,P,P2)' -select "(retract(ontol_db:subclass(C,P)),assert(ontol_db:subclass(C,P2)))" -write_prolog  > $@
-move-uberon-%.obo: move-uberon-%-diff.pro
-	blip-ddb -i uberon_edit.obo -goalfile $< io-convert -to obo -o $@
-
-add-df-uberon-%-diff.pro: uberon_edit.obo
-	blip -r implied/uberon_edit.obo -r $* -u query_obo findall 'xrefaddR(develops_from,C,P)' -select "assert(ontol_db:restriction(C,develops_from,P))" -write_prolog  > $@
-add-df-uberon-%.obo: add-df-uberon-%-diff.pro
-	blip-ddb -i uberon_edit.obo -goalfile $< io-convert -to obo -o $@
-
-birnlex_anatomy.obo:
-	blip -u ontol_manifest_metadata_from_birnlex -r birnlex_anatomy io-convert -to obo -o $@
 
 abstract-%-diff.pro: 
 	blip -r $* -u query_anatomy findall 'fix_ehdaa(C,N,N2)' -select "(retract(metadata_db:entity_label(C,N)),assert(metadata_db:entity_label(C,N2)))" -write_prolog  > $@
@@ -427,58 +356,7 @@ abstract-%-diff.pro:
 abstract-%.obo: abstract-%-diff.pro
 	blip-ddb -r $* -goalfile $< io-convert -to obo -o $@
 
-# DEPRECATED
-fma_s.obo: 
-	blip -u ontol_manifest_synonym_from_fma -r fma2 io-convert -to obo -o $@.tmp && ./downcase-obo.pl $@.tmp > $@
 
-birnlex_anatomy_s.obo: nif_anatomy.obo
-	blip -u ontol_manifest_synonym_from_birnlex_anatomy.pro -i $< io-convert -to obo -o $@
-
-mesh_anatomy.obo: mesh.obo
-	blip -table_pred ontol_db:subclassT/2 ontol-query -i $< -query "subclassT(ID,'MESH:A')" -to obo > $@
-
-uberon-grep-go.pro: 
-	obol -r obol_av -debug obol -u onto_grep -i uberon_edit.obo -r go onto-grep  -optimize -query "belongs(ID,biological_process)" > $@.tmp && mv $@.tmp $@
-
-align-uberon-strict-%.obo:
-	obol -goal "consult('ignore_word_adult.pro')" -u onto_grep -r $* -i uberon_edit.obo onto-exact-align -ont2 uberon -exclude_xref_strict -exclude_xref  -disp 'format(obo)' > $@.tmp && mv $@.tmp $@
-.PRECIOUS: align-uberon-%.obo
-
-align-uberon-%.obo:
-	obol -goal "consult('ignore_word_adult.pro')" -u onto_grep -r $* -i uberon_edit.obo onto-exact-align -ont2 uberon -exclude_xref_strict -exclude_xref -disp 'allow(related)' -disp 'allow(narrow)' -disp 'allow(broad)' -disp 'format(obo)' > $@.tmp && mv $@.tmp $@
-.PRECIOUS: align-uberon-%.obo
-
-# get synonyms from sources
-syns-uberon-%.obo:
-	blip -r $* -r uberon -i fetchsyns.pro -goal write_syns,halt > $@
-
-#uberon-go-defs.txt:
-#	blip -r go $(GO_XP_ARGS) -u ontol_db findall "belongs(X,uberon),differentium(Y,_,X),def(Y,D),belongs(Y,biological_process),(\+ def(X,_) ; def(X,'.'))" -select "td(X,Y,D)" -label > $@.tmp && sort -u $@.tmp > $@
-
-#%-syns.obo: %.obo
-#	obol -debug obol -i $<  -u obol_anat_xpgen obol-generate-synonyms -query "id_idspace(ID,'UBERON'),genus(ID,_)" > $@.tmp && mv $@.tmp $@
-
-%-defs.obo: %.obo
-	obol -debug obol -r pato -i $<  -u obol_anat_xpgen obol-generate-textdefs -idspace UBERON > $@.tmp && mv $@.tmp $@
-
-
-# --
-# creation of classes based on xps in external ontologies
-# --
-
-
-# use this:
-newxp-%-u-ontol_db.pro:
-	blip -r $*  -i uberon_edit.obo -u query_anatomy findall "uberon_xp(Fact)" -select Fact -write_prolog > $@.tmp && sort -u $@.tmp > $@
-.PRECIOUS: newxp-%-ontol_db.pro
-
-# use this:
-newxp-%-ontol_db.pro:
-	blip -r $* -i $*_xp.obo -i uberon_edit.obo -u query_anatomy findall "uberon_xp(Fact)" -select Fact -write_prolog > $@.tmp && sort -u $@.tmp > $@
-.PRECIOUS: newxp-%-ontol_db.pro
-
-newxp-%-ontol_db.obo: newxp-%-ontol_db.pro
-	blip -i $< -f ontol_db:pro io-convert -to obo -o $@
 
 
 #
@@ -523,107 +401,11 @@ nif_subcellular.obo:
 nif_cell.obo:
 	blip -i http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Cell.owl -f thea2_owl -import_all io-convert -to obo -u ontol_manifest_metadata_from_nif_via_thea -o $@.tmp && ./nif-downcase-obo.pl $@.tmp > $@
 
-nif_anatomy_xp.obo: nif_anatomy.obo
-	obol  -i $< -table_pred user:gross_anatomical/3 -table_pred user:gross_anatomical5/3  -table_pred classdef_parser:any_kind_of/3  -table_pred ontol_db:subclassT/2 -u obol_nif_anatomy_xp -r obol_av  obol-parse -parse_rule anatomical_continuant "belongs(ID,birnlex_anatomy)" >& $@.tmp && mv $@.tmp $@
-
-nif_subcellular_xp.obo: nif_subcellular.obo
-	obol  -i $< -i nif_cell.obo -table_pred user:gross_anatomical/3 -table_pred user:anatomical_continuant5/3  -table_pred classdef_parser:any_kind_of/3  -table_pred ontol_db:subclassT/2 -u obol_nif_subcellular_xp -r obol_av  obol-parse -parse_rule anatomical_continuant "class(ID),id_idspace(ID,'NIF_Subcellular')" >& $@.tmp && mv $@.tmp $@
-
-
-EMAPAx-1.obo: EMAPA.obo
-	blip -u emapa -i $< io-convert -to obo -o $@
-.PRECIOUS: EMAPAx-1.obo
-
-
-EMAPAx-2.obo: EMAPAx-1.obo
-	obo-sed.pl -r intersection_of 's/\nname: .*//'  $< | obo-sed.pl -r 'namespace: emapax' 's/id: EMAPA:(.*)/id: EMAPA:$$1\nname: $$1/' > $@
-
-
-%-inf.txt: %.obdr
-	./mk-obd-inf.sh $* $(IDSPACE)  > $@
-.PRECIOUS: %-inf.txt
-%-inf.pro: %-inf.txt
-	tbl2p -p inf $< > $@
-.PRECIOUS: %-inf.pro
-
-%xp-truepos.txt: %xp-inf.pro
-	blip -i $< -i $*.obo -u ontol_db findall "(inf(X,Y),subclassT(X,Y))" -select "recap(X,Y)" -label > $@.tmp && sort -u $@.tmp > $@
-%xp-falseneg.txt: %xp-inf.pro
-	blip -i $< -i $*.obo -i $*_xp.obo -u ontol_db findall "(genus(X,_),subclass(X,Y),genus(Y,_),\+inf(X,Y))" -select "problem(X,Y)" -label > $@.tmp && sort -u $@.tmp > $@
-%xp-novel.txt: %xp-inf.pro
-	blip -i $< -i $*.obo -u ontol_db findall "(inf(X,Y),\+subclassT(X,Y),\+inf(Y,X),\+((inf(X,Z),inf(Z,Y))))" -select "novel(X,Y)" -label > $@.tmp && sort -u $@.tmp > $@
-%xp-novel-filtered.txt: %xp-novel.txt
-	perl -ne 'print unless /\d\n/' $< > $@
-%xp-equiv.txt: %xp-inf.pro
-	blip -i $< -i $*.obo -u ontol_db findall "(inf(X,Y),X@<Y,inf(Y,X))" -select "equiv(X,Y)" -label > $@.tmp && sort -u $@.tmp > $@
 
 organ_association.txt:
 	wget http://bgee.unil.ch/download/organ_association.txt
 
-fma-mireot.obo: fma_xp.obo
-	blip -i $< -r fma_simple ontol-subset -rel subclass -rel part_of -query "differentium(_,_,ID);genus(_,ID)" -to obo > $@.tmp && mv $@.tmp $@
-.PRECIOUS: fma-mireot.obo
 
-# -- CROSS-SPECIES MAPPINGS
-
-MAP_ONTS = ZFA MA EHDAA EHDAA2 EMAPA FBbt XAO AAO FMA NIF_GrossAnatomy
-all-uberon-map: $(patsubst %,uberon-map-from-%.tbl,$(MAP_ONTS))
-
-uberon-map-from-FMA.tbl: uberon.obo
-	 blip -r cell  -r uberonp -r fma3 -consult make_mapping_table.pro findall "bestmatch('FMA',_,_,_,_,_)" -label -use_tabs -no_pred > $@
-uberon-map-from-%.tbl: uberon.obo
-	 blip -r cell  -r uberonp -r $* -consult make_mapping_table.pro findall "bestmatch('$*',_,_,_,_,_)" -label -use_tabs -no_pred > $@
-
-uberon-cl-from-%.tbl: uberon.obo
-	blip -r cell  -r uberonp -r $* -consult make_mapping_table.pro findall cl_anat_uniq/2 -label -use_tabs -no_pred > $@
-
-# --
-
-MAPARGS = -i exclude_cell.pro -u metadata_mappings -table_pred "ontol_db:bf_parentRT/2" -table_pred ontol_db:subclassT/2 -index "metadata_db:entity_label(1,1)"  "compare_mapping([bp,uberon],_,_,_,_,_,_,_)" -label | cut -f3-12 
-
-mappings-FMA-MA.cmp: mappings-FMA-MA.rdf
-	blip-findall -r uberon -r mouse_anatomy -r fma -i mappings-FMA-MA.rdf $(MAPARGS) > $@
-
-mappings-FMA-FBbt.cmp: mappings-FMA-MA.rdf
-	blip-findall -r uberon -r fly_anatomy -r fma -i mappings-FMA-FBbt.rdf $(MAPARGS) > $@
-
-mappings-ZFA-MA.cmp: mappings-ZFA-MA.rdf
-	blip-findall -r uberon -r mouse_anatomy -r zebrafish_anatomy -i mappings-ZFA-MA.rdf $(MAPARGS) > $@
-
-mappings-%-mismatch.cmp: mappings-%.cmp
-	grep -v EXACT $< > $@
-
-mappings-%-overlap: mappings-%.cmp
-	grep EXACT $< | grep '^uberon' | cut -f3-5 | sort -u
-
-mappings-%-u-pos: mappings-%.cmp
-	grep -v EXACT $< | grep '^uberon' | cut -f3-5 | sort -u
-mappings-%-u-neg: mappings-%.cmp
-	grep -v EXACT $< | grep -v '^uberon' | cut -f4-5 | sort -u
-
-# https://sourceforge.net/tracker/index.php?func=detail&aid=2998769&group_id=76834&atid=925065
-cell-to-uberon-via-ZFA.txt:
-	blip-findall -r cell -r uberon -r zebrafish_anatomy "subclassRT(C,'ZFA:0009000'),entity_xref(C,X),id_idspace(X,'CL'),restriction(C,part_of,A),entity_xref(U,A)" -select "cell_anat(C,X,A,U)" -label | sort -u > $@
-
-cell-to-uberon-via-FMA.txt:
-	blip-findall -r cell -r uberon -r fma_simple "subclassRT(C,'FMA:68646'),entity_xref(X,C),id_idspace(X,'CL'),restriction(C,part_of,A),entity_xref(U,A)" -select "cell_anat(C,X,A,U)" -label | sort -u > $@
-
-uberon2tax-ontol_db.pro:
-	blip-findall -r uberon -r gotax -r goxp/biological_process_xp_uber_anatomy "restriction(X,only_in_taxon,T),differentium(X,_,U),id_idspace(U,'UBERON'),entity_label(U,_)" -select "restriction(U,only_in_taxon,T)"  -write_prolog > $@
-
-# e.g. fma_xp-obol-gd-mismatch.txt
-#      some of these will due to single inheritance dogma in FMA. e.g Bile duct
-%-gd-mismatch.txt: %.obo
-	blip-findall -r fma -i $< "genus(X,G),\+subclassRT(X,G),subclass(X,Y)" -select "mm(X,G,Y)" -label
-
-uberon-go-xpdiff.txt:
-	blip-findall -consult util/go_xp_check.pro -goal load xpdiff/9 -label > $@
-
-#uberon-go-mismatch.txt:
-#	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy "subclass(A,B),id_idspace(A,'GO'),class_cdef(A,AD),class_cdef(B,BD),BD=cdef(_,BDs),member(_=U,BDs),id_idspace(U,'UBERON'),class_cdef(B,BD),\+subclassX(A,BD)" -select A-B -label > $@
-
-uberon-go-inflinks.txt:
-	blip-findall  -r go -r uberonp -r goxp/biological_process_xp_uber_anatomy -i adhoc_uberon.pro "goxp_newlink(A,B)" -select A-B -label > $@
 
 # ----------------------------------------
 # TEXT MINING
@@ -723,81 +505,6 @@ df.txt:
 new.txt:
 	blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "dbpedia_new(C)" -select C > $@
 
-# deepen 'anatomical structure'
-suggest-isa-%.txt:
-	blip-findall -r uberon -r $* "subclass(A,'UBERON:0000061'),entity_xref(A,AX),subclassT(AX,BX),entity_xref(B,BX),BX\='UBERON:0000061',\+((subclassT(AX,CX),subclassT(CX,BX),entity_xref(C,CX)))" -select A-B -label | perl -npe 's/-/ \! /g' > $@
-
-suggestions-HP-FMA.txt:
-	blip-findall -r human_phenotype -r uberon -r human_phenotype_xp  -r fma_simple "differentium(P,_,A),id_idspace(P,'HP'),id_idspace(A,'FMA'),\+entity_xref(_,A),\+((subclassRT(A,B),restriction(B,_,_)))" -select A-P -label | sort -u > $@
-
-# EMAP etc have implicit spatial disjointness
-%_sd-ontol_db.pro:
-	blip-findall -r $* "restriction(X,part_of,A),restriction(Y,part_of,A),X\=Y" -select "restriction(X,spatially_disjoint_from,Y)" -write_prolog > $@
-
-%_sd-check.txt: %_sd-ontol_db.pro
-	blip-findall -r implied/$* -index "ontol_db:restriction(1,0,1)" -i $< "restriction(X,spatially_disjoint_from,Y),restriction(A,part_of,X),restriction(A,part_of,Y)" -select "v(A,X,Y)" -label > $@
-
-hog-only.txt:
-	blip-findall -r hog -r uberon "class(H),id_idspace(H,'HOG'),\+entity_xref(_,H)" -select H -label > $@
-
-hog-only-xref.txt:
-	blip-findall -i organ_association.txt -r hog -r uberon "class(X),id_idspace(X,'HOG'),\+entity_xref(U,X),\+parentT(X,'HOG:0001533'),entity_label(X,XN),organ_association(Y,YN,X,_,_,_)" -select "x(X,XN,Y,YN)" > $@
-
-xog_xref_new.txt:
-	blip-findall -r zebrafish_anatomy -r xenopus_anatomy -r mouse_anatomy -r fma_simple -i organ_association.txt -r hog -r uberon -i adhoc_uberon.pro hog_xref/3 -label > $@
-
-MULTIANAT_R=-r xenopus_anatomy -r mouse_anatomy -r gemina_anatomy -r amphibian_anatomy -r cell -r fly_anatomy -r zebrafish_anatomy -r fma_downcase -r brenda -r bila -r miaa -r nif_downcase -r emapa -r ehdaa -r ehdaa2 -r hog
-abduced-relations.txt:
-	blip-findall -r implied/uberon.obo $(MULTIANAT_R) "entity_xref(A3,A1),id_idspace(A3,'UBERON'),restriction(A1,R1,B1),entity_xref(B3,B1),id_idspace(B3,'UBERON'),entity_xref(A3,A2),A2\=A1,restriction(A2,R2,B2),entity_xref(B3,B2),\+restriction(A3,_,B3)" -select "r(A3,B3,A1,R1,B1,A2,R2,B2)" -label > $@
-
-# ----------------------------------------
-# Phenotypes
-# ----------------------------------------
-fly_gene_phen_anat.txt:
-	blip-findall -i flymine_gene_phenotype.txt -i adhoc_uberon.pro -r fly_anatomy  fly_gene_phen_anat/4 > $@.tmp && sort -u $@.tmp > $@
-
-fly_gene_phen_uber.txt:
-	blip-findall -debug index -i flymine_gene_phenotype.txt -i adhoc_uberon.pro -r fly_anatomy -r uberonp_with_isa -goal table_fly_gene_phen_uber fly_gene_phen_uber/4 > $@.tmp && sort -u $@.tmp > $@
-
-# phenotype_annotation.omim downloaded from human-phenotype-ontology.org
-human_gene_phen_anat.txt:
-	blip-findall -debug index -r omim2gene -r fma -r human_phenotype_xp  -index "metadata_db:entity_xref(1,1)" -r gene/9606 -i phenotype_annotation.txt -i adhoc_uberon.pro human_ensgene_anat/4 > $@.tmp && sort -u $@.tmp > $@
-
-HMD_HGNC_Accession.rpt:
-	wget ftp://ftp.informatics.jax.org/pub/reports/HMD_HGNC_Accession.rpt
-
-mouse_gene_phen.txt:
-	blip-findall -debug index -r gene/10090 -r mammalian_phenotype  -index "metadata_db:entity_xref(1,1)"  -i MGI_PhenoGenoMP.pro -i adhoc_uberon.pro mouse_gene_phen/4 > $@.tmp && sort -u $@.tmp > $@
-
-mouse_gene_phen_anat.txt:
-	blip-findall -debug index -r gene/10090 -r mouse_anatomy -r mammalian_phenotype_xp  -index "metadata_db:entity_xref(1,1)"  -i MGI_PhenoGenoMP.pro -i adhoc_uberon.pro mouse_gene_anat/4 > $@.tmp && sort -u $@.tmp > $@
-
-zfin_gene_phen_anat.txt:
-	cat zfin_gene_anatomy.txt | perl -npe 's/ZFIN://' > $@
-
-fly_human_gene_attr.pro: fly_gene_attr.pro human_gene_attr.pro
-	cat fly_gene_attr.pro human_gene_attr.pro > $@
-
-mouse_human_gene_attr.pro: mouse_gene_attr.pro human_gene_attr.pro
-	cat mouse_gene_attr.pro human_gene_attr.pro > $@
-
-mouse_zfin_gene_attr.pro: mouse_gene_attr.pro zfin_gene_attr.pro
-	cat mouse_gene_attr.pro zfin_gene_attr.pro > $@
-
-%_gene_attr.pro: %_gene_phen_anat.txt
-	cut -f2,4 $< | tbl2p -p gene_attr > $@
-
-zfin_mouse_orthos.txt:
-	wget http://zfin.org/data_transfer/Downloads/mouse_orthos.txt
-
-mappings-FMA-MA-201009-concardance.txt:
-	blip-findall -debug phenolog -debug index -goal index_gene_attr -r fma_simple -r mouse_anatomy -i mouse_human_gene_attr.pro -i HMD_HGNC_Accession.pro -i adhoc_uberon.pro -r gene/9606 -i mappings-FMA-MA-201009.rdf mapping_pheno_concordance/6 -label > $@
-
-mappings-ZFA-MA-201009-concardance.txt:
-	blip-findall -debug phenolog -debug index -goal index_gene_attr -r zebrafish_anatomy -r mouse_anatomy -i mouse_zfin_gene_attr.pro -i mouse_orthos.pro -i adhoc_uberon.pro -i mappings-ZFA-MA-201009.rdf mapping_pheno_concordance/6 -label > $@
-
-mappings-FMA-FBbt-201009-concardance.txt:
-	blip-findall -debug phenolog -debug index -goal index_gene_attr -r fma_simple -r fly_anatomy -i fly_human_gene_attr.pro -i flymine_fly_human_homologs.txt  -i adhoc_uberon.pro -i mappings-FMA-FBbt-201009.rdf mapping_pheno_concordance/6 -label > $@
 
 # ----------------------------------------
 # BTO
@@ -805,137 +512,7 @@ mappings-FMA-FBbt-201009-concardance.txt:
 bto-anat.obo:
 	blip ontol-query -r brenda -index "ontol_db:parentT(1,-,1)" -query "parentT(ID,'BTO:0000042'),\+((class(X,N),atom_concat(_,'cell line',N),parentT(ID,X)))" -to obo  > $@
 
-# ----------------------------------------
-# Concordance (not strictly uberon-only)
-# ----------------------------------------
 
-human_gene_go.txt:
-	 blip-findall -debug index -index "metadata_db:entity_label_or_synonym(1,1)" -r go_assoc_local/goa_human -i adhoc_uberon.pro -r gene/9606 -r go human_ensgene_go/4 > $@.tmp && sort -u $@.tmp > $@
-mouse_gene_go.txt:
-	 blip-findall -debug index -index "metadata_db:entity_label_or_synonym(1,1)" -r go_assoc_local/mgi -i adhoc_uberon.pro -r go mouse_gene_go/4 > $@.tmp && sort -u $@.tmp > $@
-
-%_inst.obo: %.txt
-	cut -f2-10 $< | tbl2instances.pl > $@
-
-mouse_go_phen_conc.txt: mouse_gene_go_inst.obo mouse_gene_phen_inst.obo
-	 blip-findall -debug phenolog -debug simmatrix -i mouse_gene_go_inst.obo -i mouse_gene_phen_inst.obo -r go -r mammalian_phenotype -u ontol_concordance "ontol_concordance_below('MP:0000001','GO:0023033')" > $@
-
-#mouse_go_phen_conc3.txt: mouse_gene_go_inst.obo mouse_gene_phen_inst.obo
-#	blip-findall -debug index -index "ontol_db:inst_ofRT(1,0,1)" -table_pred ontol_db:parentT/3 -i mouse_gene_go_inst.obo -i mouse_gene_phen_inst.obo -r go -r mammalian_phenotype -u ontol_concordance "ontol_concordance_below('GO:0023052','MP:0000001')" > $@
-# blip-findall  -i mouse_go_phen_conc3.txt -f pro -r go -r mammalian_phenotype "aggregate(min(P,X-C),ontol_concordance(X,Y,C,P),min(MinP,MinX-_))" -select "best(Y,MinX,MinP)" -label 
-
-
-# ----------------------------------------
-# Methods (for paper)
-# ----------------------------------------
-
-uberon_class_taxon.txt:
-	blip-findall   -r implied/uberon.obo -r implied/ncbi_taxon_slim.obo -i adhoc_uberon.pro -goal index_lca_taxon class_covers_taxon/2 -label > $@
-
-uberon_class_taxon_min.txt: 
-	blip-findall   -r implied/uberon.obo -r implied/ncbi_taxon_slim.obo -i adhoc_uberon.pro -goal index_lca_taxon class_covers_taxon_min/2 -label > $@
-#	blip-findall -i $< -i ncbi_taxon_slim.obo "uberon_class_taxon(_,C,T),\+((uberon_class_taxon(_,C,T2),subclassT(T2,T)))" -select "class_taxon_min(C,T)" > $@
-
-%-count.txt: %.txt
-	count-occ-group.pl 3 $< > $@
-
-missing-from-%.txt:
-	blip-findall -r uberonp -r $* "class(X),\+id_idspace(X,'UBERON'),\+((entity_xref(U,X),id_idspace(U,'UBERON')))" -select X -label > $@
-
-
-# ----------------------------------------
-# NEW NEW MAPPINGS
-# ----------------------------------------
-
-MONTS = MA TADS HAO TGMA ZFA WBbt XAO FBbt AAO FMA EHDAA2 NIF_GrossAnatomy
-
-
-# simple: INTRA-ontology closure
-simple_closure-%-ontol_db.pro:
-	blip-findall -r $* -i eval_mappings.pro "parentRT(X,R,Y),\+omit_class(Y),(R=subclass;R=part_of)" -select "parentRT(X,R,Y)" -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
-
-all_simple_closure: $(patsubst %,simple_closure-%-ontol_db.pro,$(MONTS) uberonp)
-
-
-# simple concatenation between intra-ontology and intra-uberon (still no ssAO -> uberon)
-uberon_combined_simple_closure-%-ontol_db.pro: simple_closure-%-ontol_db.pro simple_closure-uberonp-ontol_db.pro
-	cat $< simple_closure-uberonp-ontol_db.pro > $@
-.PRECIOUS: uberon_combined_simple_closure-%-ontol_db.pro
-
-# INTER-ontology
-# take results for intra-ssAO and intra-I and do relational join.
-# slow for U+FMA; indexing takes long time; so we do this from scratch. ignore non-mapped FMA classes
-partonomy-FMA-ontol_db.pro:
-	blip-findall  -r fma_simple "class(X),(Ax=subclass(X,_);Ax=restriction(X,part_of,Y)),Ax" -select Ax -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
-partonomy-UBERON-ontol_db.pro:
-	blip-findall  -r uberonp_with_isa "class(X),(Ax=subclass(X,_);Ax=restriction(X,part_of,Y)),Ax" -select Ax -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
-partonomy-%-ontol_db.pro:
-	blip-findall  -r $* "class(X),(Ax=subclass(X,_);Ax=restriction(X,part_of,Y)),Ax" -select Ax -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
-
-uberon_simple_closure-FMA-ontol_db.pro: partonomy-FMA-ontol_db.pro partonomy-UBERON-ontol_db.pro
-	blip-findall -i part_of.obo -i $< -i partonomy-UBERON-ontol_db.pro "setof(X,Y^parent(X,Y),Xs),member(X,Xs),id_idspace(X,'FMA'),parentRT(X,R,Y),id_idspace(Y,'UBERON')" -select "parentRT(X,R,Y)" -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
-
-uberon_simple_closure-%-ontol_db.pro: uberon_combined_simple_closure-%-ontol_db.pro
-	blip-findall -i $< -r uberonp -debug index -index "ontol_db:parentRT(1,0,1)" "entity_xref(U,X),id_idspace(U,'UBERON'),parentRT(C,R1,X),parentRT(U,R2,P),combine_relation_pair(R1,R2,R)" -select "parentRT(C,R,P)" -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
-
-all_uberon_simple_closure: $(patsubst %,uberon_simple_closure-%-ontol_db.pro,$(MONTS))
-
-# don't index for FMA, takes too long...; experiment: just U classes
-#uberon_simple_closure-FMA-ontol_db.pro: simple_closure-uberonp-ontol_db.pro
-#	blip-findall  -i $< -r uberonp "entity_xref(U,X),id_idspace(X,'FMA'),id_idspace(U,'UBERON'),parentRT(U,R,P)" -select "parentRT(X,R,P)" -write_prolog > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
-
-# this downloads bp_mappings-*.txt
-get_all_mappings: bp_anat_onts.txt
-	./get_all_mappings.pl bp_anat_onts.txt
-
-get_all_mappings_rdf: bp_anat_onts.txt
-	./get_all_mappings_rdf.pl bp_anat_onts.txt
-
-all_mappings_txt: $(patsubst %,bp_mappings-%.txt,$(MONTS))
-all_mappings_pro: $(patsubst %,bp_mappings-%.pro,$(MONTS))
-
-#bp_mappings-NIF_GrossAnatomy.txt: bp_mappings-NIF_GrossAnatomy.rdf
-#	 blip-findall -r fma -r nif_downcase -i $< -u metadata_mappings mapping/10 | cut -f2-12 > $@
-
-# this is not ideal, as there are mappings that dont use ids (e.g. Extensor_retinaculum_of_wrist)
-#bp_mappings-%.txt: bp_mappings-%.xml
-#	./bp_map2tbl.pl $< > $@
-
-mappings/bp_mappings-%.txt: mappings/bp_mappings-%.rdf
-	blip-findall -i $< -consult maprdf2tbl -goal "load_onts('$*')" mapping/10 -no_pred > $@
-
-mappings/bp_mappings-%.pro: mappings/bp_mappings-%.txt
-	tbl2p -p bp_mapping $< > $@
-
-mappings/summary-Full.html:
-	./make-mappings-table2.pl > $@
-
-mappings/summary-PR.html:
-	./make-mappings-table3.pl > $@
-
-uxrefs-ontol_db.pro: uberon.obo
-	blip-findall -r uberonp entity_xref/2 > $@
-
-clear_eval_all:
-	rm uberon_simple_closure-*-ontol_db.pro
-#	rm uberon_simple_closure-*-*-ontol_db.pro
-
-#eval_all: all_uberon_simple_closure
-
-eval_all:
-	./run-all-eval2.pl $(MONTS)
-#	./run-all-eval.pl $(MONTS)
-
-eval_all_plus_summary: eval_all mappings/summary-Full.html mappings/summary-PR.html
-
-cp-dbx:
-	cp mappings/*txt dbx/data/ && cp mappings/summary* dbx/
-
-re_eval_all: clear_eval_all eval_all
-
-all_templates: template-8782.txt
-template-%.txt:
-	blip-findall -consult adhoc_uberon.pro -goal "load_taxslim,ix_taxslim" "class_in_taxon_slim(C,'NCBITaxon:$*',IsConf)" -label -use_tabs -no_pred > $@
 
 # ----------------------------------------
 # TAXON MODULES
@@ -943,11 +520,6 @@ template-%.txt:
 # amniote = 32524
 all_taxmods: uberon-taxmod-amniote.owl uberon-taxmod-aves.owl uberon-taxmod-euarchontoglires.owl
 
-#uberon-taxmod-amniote.ids: uberon.obo
-#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
-
-#merged_anc-ontol_db.pro: merged_closure-ontol_db.pro
-#	blip-findall -i $< parentRT/2 -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
 #TAXFILTER = owltools uberon.obo uberon_edit.obo ncbi_taxon_slim.obo --merge-support-ontologies --make-taxon-set -s UBERON
 TAXFILTER = owltools merged.owl --merge-support-ontologies --make-taxon-set -s UBERON
@@ -982,10 +554,45 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
 .PRECIOUS: uberon-taxmod-%.obo
 
+
+
+# ----------------------------------------
+# RELEASE
+# ----------------------------------------
+# even tho the repo lives in github, release is via svn...
+mod/bridges: mod/uberon-bridge-to-vhog.owl
+	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
+
+mod/uberon-bridge-to-vhog.owl: uberon_edit.obo
+	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
+
+RELDIR=trunk
+release:
+	cp uberon_edit.owl $(RELDIR)/core.owl ;\
+	cp uberon_edit.obo $(RELDIR)/core.obo ;\
+	cp uberon.{obo,owl} $(RELDIR) ;\
+	cp merged.{obo,owl} $(RELDIR)/ ;\
+	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
+	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
+	cp mod/*.{obo,owl} $(RELDIR)/bridge/ ;\
+	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
+	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
+	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
+	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
+	cp uberon-taxmod-aves.owl $(RELDIR)/subsets/aves-basic.owl ;\
+	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
+	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
+	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
+	echo done ;\
+#	cd $(RELDIR) && svn commit -m ''
+
+
+
+
 # ----------------------------------------
 # PHENOSCAPE
 # ----------------------------------------
-
+# NOTE: this is now no longer required
 
 xref-tao-new.obo: uberon_edit.obo
 	blip-findall -i $<  -r ZFA -r TAO -consult util/tao_checker.pro "ix,zut_new(U,T)"  -select U-T -no_pred -label -use_tabs | tbl2obolinks.pl -r xref - > $@
@@ -1036,34 +643,3 @@ phenoscape-ext.owl: phenoscape-vocab/phenoscape-anatomy.obo
 # ----------------------------------------
 aao.obo:
 	wget http://purl.obolibrary.org/obo/aao.obo
-
-
-# ----------------------------------------
-# RELEASE
-# ----------------------------------------
-mod/bridges: mod/uberon-bridge-to-vhog.owl
-	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
-
-mod/uberon-bridge-to-vhog.owl: uberon_edit.obo
-	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
-
-RELDIR=trunk
-release:
-	cp uberon_edit.owl $(RELDIR)/core.owl ;\
-	cp uberon_edit.obo $(RELDIR)/core.obo ;\
-	cp uberon.{obo,owl} $(RELDIR) ;\
-	cp merged.{obo,owl} $(RELDIR)/ ;\
-	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
-	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
-	cp mod/*.{obo,owl} $(RELDIR)/bridge/ ;\
-	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
-	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
-	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
-	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
-	cp uberon-taxmod-aves.owl $(RELDIR)/subsets/aves-basic.owl ;\
-	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
-	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
-	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
-	echo done ;\
-#	cd $(RELDIR) && svn commit -m ''
-
