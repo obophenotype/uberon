@@ -7,8 +7,7 @@ Authors:
  * Wasila Dahdul
 
 
-Status-----
-
+Preamble:
 Early draft to demonstrate markdown embedded in ontology.
 
 Template
