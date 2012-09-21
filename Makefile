@@ -59,12 +59,18 @@ uberon.obo: uberon_edit-implied.obo
 
 # taxon checks (TODO: SWITCH TO THIS)
 uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.obo
-	owltools --catalog-xml $(CATALOG) $< external-disjoints.obo mod/uberon-bridge-to-*.owl --merge-support-ontologies  --translate-disjoint-to-equivalent -o -f functional file://`pwd`/$@
+	owltools --catalog-xml $(CATALOG) $< external-disjoints.obo mod/uberon-bridge-to-*.owl --merge-support-ontologies -o -f functional file://`pwd`/$@
 .PRECIOUS: uberon_edit-plus-tax-equivs.owl
 new-taxcheck.txt: uberon_edit-plus-tax-equivs.owl
 	owltools --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@
 new-taxcheck-%.txt: uberon_edit.owl
 	owltools --catalog-xml $(CATALOG) $< mod/uberon-bridge-to-$*.owl $*.owl --merge-support-ontologies --translate-disjoint-to-equivalent --run-reasoner -r elk -u > $@
+
+quick-bridge-check-%.txt: uberon_edit.obo mod/bridges 
+	owltools $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+bridge-check-%.txt: uberon_edit.obo mod/bridges 
+	owltools $< $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+
 #oort-taxcheck: uberon_edit-plus-tax-equivs.owl clear-r 
 #	ontology-release-runner --catalog-xml $(CATALOG) --no-subsets --skip-format owx --outdir r/ --reasoner elk  --allow-overwrite $<
 
