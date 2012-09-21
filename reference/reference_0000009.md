@@ -12,8 +12,8 @@ Not all classes need be materialized in the ontology.
 
 Where classes are materialized, the following axioms should be created:
 
- * 'X cartilage condensation' SubClassOf  develops_from 'X pre-cartilage condensation'
- * 'X bone' SubClassOf 'X cartilage condensation'
+ * 'X cartilage condensation' SubClassOf  develops_from some 'X pre-cartilage condensation'
+ * 'X bone' SubClassOf develops_from some 'X cartilage condensation'
 
 The ontology should contain the axiom:
 
@@ -30,4 +30,4 @@ Open questions:
  * Should there be a 4th subclass for elements whose end-state is cartilage; these are past the condensation stage
  * Is develops_from appropriate? Depends how definition relations to cells
  * Should classes for ossification centers be materialized? If so, how does this relate to the above
- * Mixed endochondral/membrane bones"^^xsd:string,
+ * Mixed endochondral/membrane bones"^^xsd:string
