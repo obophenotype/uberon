@@ -1,3 +1,12 @@
+Representing individual endochondral elements
+=============================================
+
+Authors:
+ * Chris Mungall
+ * Melissa Haendel
+ * Wasila Dahdul
+
+
 Preamble:
 Early draft to demonstrate markdown embedded in ontology.
 
@@ -30,4 +39,4 @@ Open questions:
  * Should there be a 4th subclass for elements whose end-state is cartilage; these are past the condensation stage
  * Is develops_from appropriate? Depends how definition relations to cells
  * Should classes for ossification centers be materialized? If so, how does this relate to the above
- * Mixed endochondral/membrane bones"^^xsd:string
+ * Mixed endochondral/membrane bones"
