@@ -1,0 +1,197 @@
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: obo: <http://purl.obolibrary.org/obo/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: url: <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: body: <http://purl.org/dc/elements/1.1/description>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: year: <http://purl.org/dc/elements/1.1/date>
+Prefix: title: <http://purl.org/dc/elements/1.1/title>
+Prefix: creator: <http://purl.org/dc/elements/1.1/creator>
+Prefix: minipub: <http://purl.org/dc/elements/1.1/resource>
+Prefix: abstract: <http://purl.org/dc/elements/1.1/abstract>
+
+
+
+Ontology: <http://purl.obolibrary.org/obo/uberon/references.owl>
+
+
+AnnotationProperty: dc:creator
+
+    
+AnnotationProperty: rdfs:seeAlso
+
+    
+AnnotationProperty: dc:abstract
+
+    
+AnnotationProperty: dc:date
+
+    
+AnnotationProperty: rdfs:label
+
+    
+AnnotationProperty: dc:description
+
+    
+AnnotationProperty: dc:title
+
+    
+Datatype: xsd:anyURI
+
+    
+Datatype: xsd:int
+
+    
+Datatype: xsd:string
+
+    
+Class: dc:resource
+
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/reference_0000009>
+
+    Annotations: 
+        dc:creator "Chris Mungall"^^xsd:string,
+        rdfs:label "Representing individual endochondral elements"^^xsd:string,
+        dc:date "2012"^^xsd:int,
+        dc:title "Representing individual endochondral elements"^^xsd:string,
+        dc:creator "Melissa Haendel"^^xsd:string,
+        dc:description "
+Classes representing individual endochondral elements should *typically* conform to the following hierarchy:
+
+ * X element
+  * X bone
+  * X cartilage
+  * X pre-cartilage condensation
+
+Not all classes need be materialized in the ontology.
+
+Where classes are materialized, the following axioms should be created:
+
+ * 'X cartilage condensation' SubClassOf  develops_from 'X pre-cartilage condensation'
+ * 'X bone' SubClassOf 'X cartilage condensation'
+
+The ontology should contain the axiom:
+
+ * 'endochondral bone' EquivalentTo bone and develops_from some 'cartilage condensation'
+
+This means that there is no need for assertion under endochondral bone
+
+Exceptions:
+
+ * There need not be a 1:1 correspondence between a bone and it's cartilage precursor
+
+Open questions:
+
+ * Should there be a 4th subclass for elements whose end-state is cartilage; these are past the condensation stage
+ * Is develops_from appropriate? Depends how definition relations to cells
+ * Should classes for ossification centers be materialized? If so, how does this relate to the above
+ * Mixed endochondral/membrane bones"^^xsd:string,
+        dc:abstract "TODO"^^xsd:string,
+        dc:creator "Wasila Dahdul"^^xsd:string
+    
+    Types: 
+        dc:resource
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/reference_0000007>
+
+    Annotations: 
+        dc:date "2011"^^xsd:int,
+        dc:creator "John Lundberg and Wasila Dahdul (Phenoscape)"^^xsd:string,
+        dc:title "Vertebrate cranial terms"^^xsd:string,
+        rdfs:seeAlso "https://docs.google.com/spreadsheet/ccc?key=0Aj8NJdyb-leqdDM0R3hTVTRHRExDVjRCSkZEbDc5N1E#gid=0"^^xsd:anyURI,
+        rdfs:label "Vertebrate cranial terms"^^xsd:string
+    
+    Types: 
+        dc:resource
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/reference_0000008>
+
+    Annotations: 
+        dc:title "Obo-anatomy call, 2012-08-17"^^xsd:string,
+        rdfs:seeAlso "http://wiki.phenotypercn.org/wiki/August_2012_Notes"^^xsd:anyURI,
+        dc:date "2012"^^xsd:int,
+        dc:creator "(Add participants here)"^^xsd:string,
+        rdfs:label "Obo-anatomy call, 2012-08-17"^^xsd:string,
+        dc:abstract "Decisions reached about axial skeleton: bless a 3 level division into cranial, axial and appendicular. here \"axial skeleton\" refers to what we have been calling \"post-cranial axial skeleton\" in uberon (and MA). We can still retain what we had been calling \"axial skeleton\" as a grouping class, but it can be renamed something like \"axial skeleton plus cranial skeleton\""^^xsd:string
+    
+    Types: 
+        dc:resource
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/reference_0000006>
+
+    Annotations: 
+        rdfs:seeAlso "https://docs.google.com/document/d/1r9kNPpFYGdu0SpJDLyFAVQczBlG0wAZCBMd18gG3Ot8/edit#"^^xsd:anyURI,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Uberon editors"^^xsd:string,
+        dc:title "Ontology schema for representing the cephalic region and postcranial axial skeletal system"^^xsd:string,
+        rdfs:label "Ontology schema for representing the cephalic region and postcranial axial skeletal system"^^xsd:string
+    
+    Types: 
+        dc:resource
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/reference_0000003>
+
+    Annotations: 
+        rdfs:label "Appendages and appendicular skeleton"^^xsd:string,
+        dc:title "Appendages and appendicular skeleton"^^xsd:string,
+        rdfs:seeAlso "https://docs.google.com/document/d/16JZOuH9sh_a8uIXA4cqg0Q1H6MV5yCj3-rhuKsZoV_U/edit"^^xsd:anyURI,
+        dc:creator "VAO editors"^^xsd:string,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Uberon editors"^^xsd:string,
+        dc:creator "other AO editors"^^xsd:string
+    
+    Types: 
+        dc:resource
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/reference_0000004>
+
+    Annotations: 
+        dc:date "2012"^^xsd:int,
+        rdfs:seeAlso "https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit"^^xsd:anyURI,
+        dc:title "Mereotopology Axioms in Anatomy Ontologies"^^xsd:string,
+        rdfs:label "Mereotopology Axioms in Anatomy Ontologies"^^xsd:string,
+        dc:creator "Uberon editors"^^xsd:string
+    
+    Types: 
+        dc:resource
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/reference_0000001>
+
+    Annotations: 
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "The representation of epithelium morphotopology in ontologies"^^xsd:string,
+        dc:creator "David Osumi-Sutherland"^^xsd:string,
+        dc:date "2011"^^xsd:int,
+        dc:creator "Melissa Haendel"^^xsd:string,
+        dc:creator "Jonathan Bard"^^xsd:string,
+        rdfs:label "The representation of epithelium morphotopology in ontologies"^^xsd:string,
+        rdfs:seeAlso "https://docs.google.com/document/d/1MnUgispgGfNQoezYzWzzGTnkAnI0gzRnJIwdip6MMtw/edit"^^xsd:anyURI,
+        dc:creator "David Hill"^^xsd:string
+    
+    Types: 
+        dc:resource
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/reference_0000002>
+
+    Annotations: 
+        rdfs:seeAlso "http://wiki.phenotypercn.org/wg/phenotypercn/index.php?title=Neural_Crest_Workshop"^^xsd:anyURI,
+        dc:abstract "The neural crest workshop consists of a combination of domain experts with a variety of expertise (comparative neural crest anatomy, craniofacial, placodal, ENS/PNS, cell typing, etc) and ontologists. The outcome will be a much improved representation of neural crest amongst a number of ontologies including (but not limited to!) the Gene Ontology (GO), Uberon, the vertebrate musculosketal ontology (VAO), mouse anatomy (MA), the cell ontology, human developmental (EHDAA2/FMA), and the Teleost Anatomy Ontology (TAO). The hope is that the participants will form a new community around this work and author a paper together."^^xsd:string,
+        dc:title "Phenotype RCN Neural Crest Meeting"^^xsd:string,
+        dc:date "2012"^^xsd:int,
+        rdfs:label "Phenotype RCN Neural Crest Meeting"^^xsd:string
+    
+    Types: 
+        dc:resource
+    
+    
