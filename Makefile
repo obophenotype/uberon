@@ -567,7 +567,7 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 # ----------------------------------------
 # even tho the repo lives in github, release is via svn...
 mod/bridges: mod/uberon-bridge-to-vhog.owl
-	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo
+	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-core.obo
 
 mod/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
@@ -649,3 +649,11 @@ phenoscape-ext.owl: phenoscape-vocab/phenoscape-anatomy.obo
 # ----------------------------------------
 aao.obo:
 	wget http://purl.obolibrary.org/obo/aao.obo
+
+fbbt.obo:
+	wget http://purl.obolibrary.org/obo/fbbt.obo
+
+# See: http://code.google.com/p/caro2/issues/detail?id=10
+mod/fbbt-nd.obo: fbbt.obo
+	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && obo2obo $@.tmp -o $@
+

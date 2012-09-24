@@ -12,6 +12,13 @@ my $stype;
 my @fns = ();
 my $base = 'uberon';
 
+while ($ARGV[0] =~ /^\-/) {
+    my $opt = shift @ARGV;
+    if ($opt eq '-b' || $opt eq '--base') {
+        $base = shift @ARGV;
+    }
+}
+
 while (<>) {
     chomp;
     if (/^treat-xrefs-as-equivalent:\s*(\S+)/) {
@@ -74,7 +81,7 @@ print STDERR "n_xrefs: $n_xrefs\n";
 
 foreach my $s (keys %fhmap) {
     my $fh = $fhmap{$s};
-    if ($tmap{$s}->[0] eq 'gd') {
+    if ($tmap{$s}->[0] eq 'gd' && $base eq 'uberon') {
         my ($t,$rel,$filler) = @{$tmap{$s}};
         # hidden GCI
         print $fh "[Term]\n";
