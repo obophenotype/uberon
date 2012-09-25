@@ -1,5 +1,9 @@
 format-version: 1.2
 ontology: uberon/external-disjoints
+property_value: dc-title "Uberon external disjoints" xsd:string
+property_value: dc-description "This ontology contains disjointness axioms between Uberon classes and classes from external ontologies (mostly anatomy ontologies). Use of this ontology can help prevent accidental associations between classes which may on the surface seem similar or equivalent (for example, based on the term) but are in fact completely distinct. This ontology can be used on combination with an OWL reasoner." xsd:string
+property_value: dc-creator "Chris Mungall" xsd:string
+property_value: foaf-homepage "http://uberon.org" xsd:anyURI
 idspace: NIF_GrossAnatomy http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#
 
 [Term]
@@ -543,3 +547,27 @@ disjoint_from: FBbt:00003277 ! salivary pump muscle 13
 [Term]
 id: UBERON:0000964 ! cornea
 disjoint_from: FBbt:00004191 ! cornea
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/homepage
+
+[Typedef]
+id: dc-title
+name: title
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/title
+
+[Typedef]
+id: dc-creator
+name: creator
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/creator
+
+[Typedef]
+id: dc-description
+name: description
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/description

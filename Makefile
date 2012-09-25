@@ -1,16 +1,18 @@
 OBO=http://purl.obolibrary.org/obo
 CATALOG=catalog-v001.xml
-PA = phenoscape-vocab/phenoscape-anatomy.obo
+MAIN_AO_LIST = fma ma emapa ehdaa2 zfa xao fbbt wbbt
 
 all: uberon-qc
 
 # ----------------------------------------
 # General release management
 # ----------------------------------------
+# note some aspects of this are quite complex.
+# - edit file contains dangling references
 IMPORTS= $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 
 # edit owl file has
-# * macros
+# * expanded macros
 # * imports to ncbitax
 uberon_edit.owl: uberon_edit-XM.owl
 	owltools $< --add-imports-declarations $(IMPORTS) // -o -f functional file://`pwd`/$@
@@ -21,14 +23,6 @@ uberon_edit-XM.owl: uberon_edit.obo
 external-disjoints.owl: external-disjoints.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
 
-#uberon_edit-ndd.obo: uberon_edit.obo
-#	./util/remove-dangling-disjoint.pl $< > $@
-#uberon_edit-ndd.owl: uberon_edit-ndd.obo
-#	owltools $< -o -f functional file://`pwd`/$@
-#	owltools $< --add-imports-declarations $(IMPORTS) // -o -f functional file://`pwd`/$@
-
-#%-noimports.obo: %.obo
-#	grep -v ^import: $< > $@
 
 # REPLACEME
 #  step 1 - use noimports
@@ -42,6 +36,8 @@ uberon_edit-implied.obo: uberon_edit.obo
 uberon.obo: uberon_edit-implied.obo
 	obo-filter-external.pl --idspace UBERON --xp2rel $< | egrep -v '^(domain|range):' > $@.tmp && obo-add-data-version.pl $@.tmp > $@
 
+# check OE can parse:
+# for validation purposes only
 %.obo-OE-check: %.obo
 	obo2obo -o $@ $<
 
@@ -57,31 +53,37 @@ uberon.obo: uberon_edit-implied.obo
 #clear-r:
 #	(test -f r/staging/.lock && rm r/staging/.lock) || echo
 
-# taxon checks (TODO: SWITCH TO THIS)
-uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.obo
-	owltools --catalog-xml $(CATALOG) $< external-disjoints.obo mod/uberon-bridge-to-*.owl --merge-support-ontologies -o -f functional file://`pwd`/$@
+# ----------------------------------------
+# Taxonomy and external AO validation
+# ----------------------------------------
+
+# first generate a merged ontology consisting of
+#  * core uberon
+#  * external-disjoints.owl
+#  * species anatomy bridge axioms
+# This can be used to reveal both internal inconsistencies within uberon, and the improper linking of a species AO class to an uberon class with a taxon constraint
+uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.owl
+	owltools --catalog-xml $(CATALOG) $< external-disjoints.owl mod/uberon-bridge-to-*.owl --merge-support-ontologies -o -f functional file://`pwd`/$@
 .PRECIOUS: uberon_edit-plus-tax-equivs.owl
-new-taxcheck.txt: uberon_edit-plus-tax-equivs.owl
+
+# see above
+taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 	owltools --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@
-new-taxcheck-%.txt: uberon_edit.owl
-	owltools --catalog-xml $(CATALOG) $< mod/uberon-bridge-to-$*.owl $*.owl --merge-support-ontologies --translate-disjoint-to-equivalent --run-reasoner -r elk -u > $@
 
-quick-bridge-check-%.txt: uberon_edit.obo mod/bridges 
-	owltools $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-bridge-check-%.txt: uberon_edit.obo mod/bridges 
-	owltools $< $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+# BRIDGE CHECKS.
+# these can be used to validate on a per-bridge file basis. There are two flavours:
+# * quick tests ignore the axioms in the external ontology
+# * full tests use these axioms
+# note at this time we don't expect all full bridge tests to pass. This is because the disjointness axioms are
+# very strong and even seemingly minor variations in representation across ontologies can lead to unsatisfiable classes
+quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(MAIN_AO_LIST))
+bridge-checks: $(patsubst %,bridge-check-%.txt,$(MAIN_AO_LIST))
 
-#oort-taxcheck: uberon_edit-plus-tax-equivs.owl clear-r 
-#	ontology-release-runner --catalog-xml $(CATALOG) --no-subsets --skip-format owx --outdir r/ --reasoner elk  --allow-overwrite $<
-
-#oort-min: uberon_edit-noimports.obo clear-r 
-#	ontology-release-runner --catalog-xml $(CATALOG) --no-subsets --skip-format owx --outdir r/ --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --reasoner elk --asserted --expand-xrefs --re-mireot --allow-overwrite $< $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
-
-#oort: uberon_edit.obo clear-r 
-#	ontology-release-runner --catalog-xml $(CATALOG) --expand-macros-inplace --outdir r/ --prefix $(OBO)/UBERON_ --reasoner elk --asserted --simple --expand-xrefs --re-mireot --allow-overwrite $< $(OBO)/cl.owl pr-core.obo $(OBO)/go.owl CHEBI.obo $(OBO)/pato.owl $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
-#	ontology-release-runner --outdir r/ --enforceEL --reasoner jcel --asserted --simple --expand-xrefs --re-mireot --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo GO.obo CHEBI.obo PATO.obo
-#	ontology-release-runner -outdir stagedir -reasoner jcel --asserted --simple --expand-xrefs --re-mireot --expand-macros --allow-overwrite uberon_edit.obo cl-core.obo pr-core.obo 
-# TODO - expand macros
+# A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
+quick-bridge-check-%.txt: uberon_edit-plus.owl mod/bridges external-disjoints.owl
+	owltools --catalog-xml $(CATALOG) $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+bridge-check-%.txt: uberon_edit.obo mod/bridges external-disjoints.owl
+	owltools --catalog-xml $(CATALOG) $< $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@ || grep UNSAT $@.tmp > $@
 
 %.owl: %.obo
 	obolib-obo2owl -o $@ $<
@@ -122,7 +124,7 @@ QC_FILES = uberon_edit.owl\
     uberon-synclash\
     external-disjoints.owl\
     mod/bridges\
-    new-taxcheck.txt\
+    taxon-constraint-check.txt\
     uberon_edit-cycles\
     uberon-cycles\
     uberon.owl\
@@ -165,8 +167,6 @@ uberon-discv-%.txt: uberon-with-isa.obo
 #%-discvall.txt: %.obo
 #	blip -table_pred ontol_db:parentRT/3  -r fma_simple -r ZFA -r MA -r HAO -r FBbt -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $< -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  -u query_obo findall disjoint_over_violation/4 -label > $@
 # TODO - need closure for taxslim too
-%-taxcheck.txt: %.obo  %_closure-ontol_db.pro ncbi_taxon_slim_closure-ontol_db.pro
-	blip-findall  -i $*_closure-ontol_db.pro -i ncbi_taxon_slim_closure-ontol_db.pro -i $< -i adhoc_uberon.pro "class_taxon_invalid(U,X,T,Y,TY)" -label > $@
 %-obscheck.txt: %.obo
 	((obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) >& $@
 
@@ -178,30 +178,31 @@ uberon-structinf.txt:
 	blip-findall -table_pred "ontol_db:parentT/2"  -r uberonp "class_cdef(Y,cdef(A,[part_of=B])),parentT(X,part_of,A),\+parentRT(X,Y),parentT(X,part_of,B)" -select "x(X,Y,A,B)" -no_pred -label -use_tabs > $@
 
 # ----------------------------------------
-# Domain Modules
+# System-specific subsets
 # ----------------------------------------
+#PA = phenoscape-vocab/phenoscape-anatomy.obo
 
 SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory 
 
 all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
 
-subsets/musculoskeletal.obo: uberon.owl
+subsets/musculoskeletal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d -c http://purl.obolibrary.org/obo/uberon/$@ "BFO_0000050 some UBERON_0002204" -o -f obo file://`pwd`/$@
-subsets/musculoskeletal-minimal.obo: $(PA)
+subsets/musculoskeletal-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
-subsets/excretory-minimal.obo: uberon.owl
+subsets/excretory-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
 subsets/reproductive-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
 subsets/digestive-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
-subsets/nervous-minimal.obo: uberon.owl
+subsets/nervous-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
-subsets/sensory-minimal.obo: uberon.owl
+subsets/sensory-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
 subsets/immune-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
-subsets/circulatory-minimal.obo: uberon.owl
+subsets/circulatory-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results http://purl.obolibrary.org/obo/uberon/$@ -o -f obo $@ >& $@.LOG
 
 # ----------------------------------------
@@ -263,6 +264,9 @@ cl-core.obo: cl.obo
 	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat part_of.obo has_part.obo capable_of.obo)  > $@
 pr-core.obo: PRO.obo
 	(obo-grep.pl  -r 'id: PR:' $< && cat part_of.obo has_part.obo) > $@
+
+cl-core.owl: cl-core.obo
+	obolib-obo2owl --allow-dangling $< -o $@
 
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 composites: composite-metazoan.owl composite-vertebrate.owl
@@ -526,8 +530,6 @@ bto-anat.obo:
 # amniote = 32524
 all_taxmods: uberon-taxmod-amniote.owl uberon-taxmod-aves.owl uberon-taxmod-euarchontoglires.owl
 
-
-#TAXFILTER = owltools uberon.obo uberon_edit.obo ncbi_taxon_slim.obo --merge-support-ontologies --make-taxon-set -s UBERON
 TAXFILTER = owltools merged.owl --merge-support-ontologies --make-taxon-set -s UBERON
 uberon-taxmod-tetrapod.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:32523 > $@.tmp && grep ^UBERON $@.tmp > $@
@@ -547,13 +549,6 @@ uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
 	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
 
 .PRECIOUS: uberon-taxmod-%.ids
-
-relation_table.txt:
-	blip-findall -r uberon -consult util/relation_report.pro "row(R)" -select R > relation_table.txt
-
-# EXP:
-#uberon-taxmod-amniote2.ids: 
-#	blip-findall -debug index -table_pred ontol_db:subclassRT/2 -i uberon_edit.obo -i uberon.obo -consult adhoc_uberon.pro -goal "materialize_index(ontol_db:inferred_parent_via(1,0,0)),load_bioresource(taxslim)" "class_in_taxon_slim(X,'NCBITaxon:32524')" -select X > $@
 
 uberon-taxmod-%.obo: uberon-taxmod-%.ids
 	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
@@ -643,6 +638,10 @@ phenoscape-vocab/phenoscape-anatomy.obo: psc-merged-u.obo merged-dates.txt
 # copy this manually to phenoscape-vocab/edit/ (but only before the switch!)
 phenoscape-ext.owl: phenoscape-vocab/phenoscape-anatomy.obo
 	obo-grep.pl --neg -r 'id: (UBERON|CL)' $< | ./util/pa-to-uberon-ids.pl | obo-grep.pl -r 'id: UBERON' - | obo-sed.pl -r 'is_obsolete:.*true' 's/name: /name: obsolete /' - > $@.obo && owltools $@.obo --add-imports-declarations $(OBO)/uberon/merged.owl -o -f functional file://`pwd`/$@.tmp && egrep -v '^Declaration.*UBERON_0' $@.tmp > $@
+
+# DOCS
+relation_table.txt:
+	blip-findall -r uberon -consult util/relation_report.pro "row(R)" -select R > relation_table.txt
 
 # ----------------------------------------
 # RELEASE
