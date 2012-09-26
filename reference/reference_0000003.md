@@ -1,11 +1,11 @@
 Appendages and appendicular skeleton
 ====================================
 
-Authors:
+Authors and contributors:
 
- * other AO editors
- * Uberon editors
- * VAO editors
+ * other AO editors (author)
+ * Uberon editors (author)
+ * VAO editors (author)
 
 Date: 2012
 

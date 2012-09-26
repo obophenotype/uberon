@@ -1,9 +1,9 @@
 Vertebrate cranial terms
 ========================
 
-Authors:
+Authors and contributors:
 
- * John Lundberg and Wasila Dahdul (Phenoscape)
+ * John Lundberg and Wasila Dahdul (Phenoscape) (author)
 
 Date: 2011
 

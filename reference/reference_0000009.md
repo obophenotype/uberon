@@ -1,11 +1,11 @@
 Representing individual endochondral elements
 =============================================
 
-Authors:
+Authors and contributors:
 
- * Wasila Dahdul
- * Chris Mungall
- * Melissa Haendel
+ * Wasila Dahdul (author)
+ * Chris Mungall (author)
+ * Melissa Haendel (author)
 
 Date: 2012
 

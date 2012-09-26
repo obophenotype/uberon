@@ -1,13 +1,13 @@
 The representation of epithelium morphotopology in ontologies
 =============================================================
 
-Authors:
+Authors and contributors:
 
- * David Hill
- * Melissa Haendel
- * Chris Mungall
- * David Osumi-Sutherland
- * Jonathan Bard
+ * David Hill (author)
+ * Melissa Haendel (author)
+ * Chris Mungall (author)
+ * David Osumi-Sutherland (author)
+ * Jonathan Bard (author)
 
 Date: 2011
 

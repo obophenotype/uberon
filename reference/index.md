@@ -9,3 +9,4 @@ References
  * 0000007 [Vertebrate cranial terms](http://purl.obolibrary.org/obo/uberon/references/reference_0000007.md)
  * 0000008 [Obo-anatomy call, 2012-08-17](http://purl.obolibrary.org/obo/uberon/references/reference_0000008.md)
  * 0000009 [Representing individual endochondral elements](http://purl.obolibrary.org/obo/uberon/references/reference_0000009.md)
+ * 0000010 [Modeling extraembryonic membranes](http://purl.obolibrary.org/obo/uberon/references/reference_0000010.md)

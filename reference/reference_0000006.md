@@ -1,9 +1,9 @@
 Ontology schema for representing the cephalic region and postcranial axial skeletal system
 ==========================================================================================
 
-Authors:
+Authors and contributors:
 
- * Uberon editors
+ * Uberon editors (author)
 
 Date: 2012
 

@@ -1,7 +1,7 @@
 Phenotype RCN Neural Crest Meeting
 ==================================
 
-Authors:
+Authors and contributors:
 
 
 Date: 2012

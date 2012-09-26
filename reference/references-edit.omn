@@ -9,10 +9,10 @@ Prefix: body: <http://purl.org/dc/elements/1.1/description>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Prefix: year: <http://purl.org/dc/elements/1.1/date>
 Prefix: title: <http://purl.org/dc/elements/1.1/title>
+Prefix: source: <http://purl.org/dc/elements/1.1/source>
 Prefix: creator: <http://purl.org/dc/elements/1.1/creator>
 Prefix: minipub: <http://purl.org/dc/elements/1.1/resource>
 Prefix: abstract: <http://purl.org/dc/elements/1.1/abstract>
-
 
 
 Ontology: <http://purl.obolibrary.org/obo/uberon/references.owl>
@@ -25,6 +25,9 @@ AnnotationProperty: rdfs:seeAlso
 
     
 AnnotationProperty: dc:abstract
+
+
+AnnotationProperty: dc:source
 
     
 AnnotationProperty: dc:date
@@ -108,18 +111,90 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000010>
 
     Annotations: 
         dc:creator "Chris Mungall"^^xsd:string,
-        dc:creator "Melissa Haendel"^^xsd:string,
-        rdfs:label ""^^xsd:string,
+        dc:source "Kardong"^^xsd:string,
         dc:date "2012"^^xsd:int,
-        dc:title ""^^xsd:string,
-        dc:abstract "TODO"^^xsd:string,
+        dc:title "Modeling extraembryonic membranes"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
         dc:description "
 
+Table 5.4 from Kardong:
+
+    | Group      | `Amnion`      | Chorion       | Allantois | Yolk Sac | Respiratory membrane |
+    |------------+---------------+---------------+-----------+----------+----------------------|
+    | Birds      | Ec, SomM      | Ec, SomM      | En, SplM  | En, SplM | Ch, A                |
+    | Reptiles   | Ec, SomM      | Ec, SomM      | En, SplM  | En, SplM | Ch, A                |
+    | Monotremes | Ec, SomM      | Ec, SomM      | En, SplM  | En, SplM | Ch, A                |
+    | Marsupials | Ec, SomM      | Ec, SomM      | En, SplM  | En, SplM | Ch, splpl            |
+    | Placentals | Ec (tr), SomM | Ec (tr), SomM | En, SplM  | En, SplM | Ch, A                |
+
+ * Ec = Ectoderm
+ * SomM = Somatic mesoderm
+ * SplM = Splanchnic mesoderm
+ * Ch = Chorion
+ * A = Allantois
+ * splpl = Splanchnopleure
+
 "^^xsd:string
-    
+
     Types: 
         dc:resource
-    
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000014>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Representation of paired structures"^^xsd:string,
+        rdfs:label "Representation of paired structures"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        dc:description "
+
+Classes for paired structures should in general follow this subsumption hierarchy:
+
+ * X
+  * left X
+  * right X
+
+The following two sub-relation can be used to define left and right structures
+
+ * in_lateral_side_of
+  * in_left_side_of
+  * in_right_side_of
+
+For example:
+
+ * `left lung` EquivalentTo lung and in_left_side_of some `pair of lungs`
+
+However, these will not always be appropriate. For example, it may
+make sense to define certain paired veins by the structure they
+connect to. E.g. `left testicular vein` EquivalentTo 'testicular vein'
+and connected_to some `left testicle`.
+
+It is not always necessary to create the left and right
+subclasses. This is particularly true for skeletal subdivisions, which
+may more typically be symmetric. Internal organs may have more
+asymmetries and thus there is more of a case for making
+subclasses. Making explicit subclasses can be useful for representing
+joints that connect two symmetric structures.
+
+The generic class may also receive a in_lateral_side_of axiom. For
+example, if every `naris` is part of either the left or right side of
+the head, then we can write an axiom:
+
+ * `naris' SubClassOf in_lateral_side_of some `head`
+
+However, if there exist unpaired medial nares this would be
+inappropriate.
+
+Errors can automatically be detected for example if there is a class
+'median naris' and this is stated to be in the medial part of the head.
+
+"^^xsd:string
+
+    Types:
+        dc:resource
+     
     
 Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000007>
 

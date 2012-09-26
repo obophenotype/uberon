@@ -1,9 +1,9 @@
 Mereotopology Axioms in Anatomy Ontologies
 ==========================================
 
-Authors:
+Authors and contributors:
 
- * Uberon editors
+ * Uberon editors (author)
 
 Date: 2012
 

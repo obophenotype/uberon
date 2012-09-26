@@ -1,9 +1,9 @@
 Obo-anatomy call, 2012-08-17
 ============================
 
-Authors:
+Authors and contributors:
 
- * (Add participants here)
+ * (Add participants here) (author)
 
 Date: 2012
 
