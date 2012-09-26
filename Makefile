@@ -141,7 +141,7 @@ uberon-qc: $(QC_FILES)
 #	blip -u ontol_manifest_disjoint_from_preceded_by -i $*_closure-ontol_db.pro -i $< -u query_obo findall disjoint_from_violation/3 -label > $@
 # Replacing above with OWL. TODO: OPPL to manifest more disjoint_froms
 %-dv.txt: %.obo
-	owltools $<  --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	owltools $<  --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
 # TODO: axiom expansions + elk
 %-discv.txt: %.obo %_closure-ontol_db.pro
@@ -275,7 +275,7 @@ composite-vertebrate.obo: merged.obo  $(METCACHE)
 .PRECIOUS: composite-vertebrate.obo
 
 composite-metazoan.obo: merged.obo $(METCACHE)
-	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -i fbbt-nd.obo -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
 .PRECIOUS: composite-metazoan.obo
 
 metazoan_glommed.obo: merged.obo
@@ -497,16 +497,16 @@ uberon-taxmod-amniote.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:32524 > $@.tmp && grep ^UBERON $@.tmp > $@
 uberon-taxmod-mammal.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:40674 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-euarchontoglires.ids: merged_closure-ontol_db.pro
+uberon-taxmod-euarchontoglires.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:314146 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-sauropsid.ids: merged_closure-ontol_db.pro
-	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
+#uberon-taxmod-sauropsid.ids: merged_closure-ontol_db.pro
+#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
 uberon-taxmod-aves.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:8782 > $@.tmp && grep ^UBERON $@.tmp > $@
 uberon-taxmod-echinoderm.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:7586 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
-	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
+#uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
+#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
 
 .PRECIOUS: uberon-taxmod-%.ids
 
