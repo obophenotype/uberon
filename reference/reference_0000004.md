@@ -7,6 +7,8 @@ Authors and contributors:
 
 Date: 2012
 
+Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_documentation
+
 
 
 

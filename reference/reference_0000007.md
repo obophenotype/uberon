@@ -3,9 +3,13 @@ Vertebrate cranial terms
 
 Authors and contributors:
 
- * John Lundberg and Wasila Dahdul (Phenoscape) (author)
+ * John Lundberg (author)
+ * Wasila Dahdul (author)
+ * Phenoscape (contributor)
 
 Date: 2011
+
+Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_documentation
 
 
 

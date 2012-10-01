@@ -10,3 +10,8 @@ References
  * 0000008 [Obo-anatomy call, 2012-08-17](http://purl.obolibrary.org/obo/uberon/references/reference_0000008.md)
  * 0000009 [Representing individual endochondral elements](http://purl.obolibrary.org/obo/uberon/references/reference_0000009.md)
  * 0000010 [Modeling extraembryonic membranes](http://purl.obolibrary.org/obo/uberon/references/reference_0000010.md)
+ * 0000014 [Representation of paired structures](http://purl.obolibrary.org/obo/uberon/references/reference_0000014.md)
+ * 0000015 [Automatic classification of skeleton partonomy](http://purl.obolibrary.org/obo/uberon/references/reference_0000015.md)
+ * 0000016 [Inter-ontology disjointness axioms](http://purl.obolibrary.org/obo/uberon/references/reference_0000016.md)
+ * 0000017 [Multiple inheritance in Uberon](http://purl.obolibrary.org/obo/uberon/references/reference_0000017.md)
+ * 0000018 [Part-disjointness](http://purl.obolibrary.org/obo/uberon/references/reference_0000018.md)
