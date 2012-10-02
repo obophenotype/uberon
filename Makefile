@@ -163,7 +163,7 @@ dv-aba.txt:
 # ----------------------------------------
 #PA = phenoscape-vocab/phenoscape-anatomy.obo
 
-SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory 
+SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory cranial appendicular
 
 all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
 
@@ -185,6 +185,10 @@ subsets/immune-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
 subsets/circulatory-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/cranial-minimal.obo: merged.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+subsets/appendicular-minimal.obo: merged.owl
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
 
 # ----------------------------------------
 # Closure
@@ -545,8 +549,8 @@ release:
 	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
-	cp references/*{owl,html} $(RELDIR)/references ;\
-	(cd $(RELDIR)/references/ && svn add *.{owl,html}) ;\
+	cp reference/*{owl,html} $(RELDIR)/reference  ;\
+	(cd $(RELDIR)/reference/ && svn add *.{owl,html}) ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''
 
