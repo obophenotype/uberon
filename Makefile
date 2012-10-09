@@ -70,9 +70,9 @@ bridge-checks: $(patsubst %,bridge-check-%.txt,$(MAIN_AO_LIST))
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
 quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl mod/bridges external-disjoints.owl
-	owltools --catalog-xml $(CATALOG) $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	owltools --catalog-xml $(CATALOG) $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u | grep UNSAT > $@.tmp && mv $@.tmp $@
 bridge-check-%.txt: uberon_edit.obo mod/bridges external-disjoints.owl
-	owltools --catalog-xml $(CATALOG) $< $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@ || grep UNSAT $@.tmp > $@
+	owltools --catalog-xml $(CATALOG) $< $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u | grep UNSAT > $@.tmp && mv $@.tmp $@ || grep UNSAT $@.tmp > $@
 
 %.owl: %.obo
 	obolib-obo2owl -o $@ $<
@@ -133,14 +133,14 @@ QC_FILES = uberon_edit.owl\
     composite-metazoan-dv.txt\
     all_taxmods
 
-uberon-qc: $(QC_FILES)
+uberon-qc: $(QC_FILES) all_systems
 	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 
 
 #%-dv.txt: %.obo %_closure-ontol_db.pro
 #	blip -u ontol_manifest_disjoint_from_preceded_by -i $*_closure-ontol_db.pro -i $< -u query_obo findall disjoint_from_violation/3 -label > $@
 # Replacing above with OWL. TODO: OPPL to manifest more disjoint_froms
-%-dv.txt: %.obo
+%-dv.txt: %.owl
 	owltools $<  --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
 # TODO: axiom expansions + elk
@@ -167,28 +167,28 @@ SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immun
 
 all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
 
-subsets/musculoskeletal.obo: merged.owl
+subsets/musculoskeletal-full.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d -c $(OBO)/uberon/$@ "BFO_0000050 some UBERON_0002204" -o -f obo file://`pwd`/$@
 subsets/musculoskeletal-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/excretory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/reproductive-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/digestive-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/nervous-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/sensory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/immune-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/circulatory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/cranial-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 
 # ----------------------------------------
 # Closure
@@ -247,6 +247,7 @@ merged.obo: merged.owl
 .PRECIOUS: merged.obo
 
 # core: the full ontology, excluding external classes, but including references to these
+# TODO: use --make-subset-by-properties
 cl-core.obo: cl.obo
 	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat part_of.obo has_part.obo capable_of.obo)  > $@
 
@@ -525,8 +526,8 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 # RELEASE
 # ----------------------------------------
 # even tho the repo lives in github, release is via svn...
-mod/bridges: mod/uberon-bridge-to-vhog.owl
-	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-core.obo
+mod/bridges: mod/uberon-bridge-to-vhog.owl uberon_edit.obo
+	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-core.obo && touch bridges
 
 mod/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
@@ -542,6 +543,7 @@ release:
 	cp mod/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
+	cp subsets/*-minimal.obo $(RELDIR)/subsets/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
 	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
@@ -609,6 +611,12 @@ phenoscape-ext.owl: phenoscape-vocab/phenoscape-anatomy.obo
 # DOCS
 relation_table.txt:
 	blip-findall -r uberon -consult util/relation_report.pro "row(R)" -select R > relation_table.txt
+
+phenoscape_terms.txt:
+	find phenoscape-data/ -name "*xml" -exec grep UBERON {} \; | perl -ne 'print "$$1\n" if /(UBERON:\d+)/' | sort -u > $@
+
+phenoscape_terms-closure.txt: phenoscape_terms.txt
+	blip-findall -i $< -r pext "findall(X,phenoscape_terms(X),L),bf_parentRT(L,P),(member(P,L)->D=true;D=false)" -select P-D -no_pred -label -use_tabs > $@.tmp && sort -u $@.tmp > $@
 
 # ----------------------------------------
 # RELEASE
