@@ -116,6 +116,7 @@ QC_FILES = uberon_edit.owl\
     external-disjoints.owl\
     depictions.owl\
     mod/bridges\
+    quick-bridge-checks\
     taxon-constraint-check.txt\
     uberon_edit-cycles\
     uberon-cycles\
