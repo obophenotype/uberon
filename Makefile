@@ -169,7 +169,7 @@ SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immun
 all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
 
 subsets/musculoskeletal-full.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d -c $(OBO)/uberon/$@ "BFO_0000050 some UBERON_0002204" -o -f obo file://`pwd`/$@
+	owltools $< --reasoner-query -r elk -d -c $(OBO)/uberon/$@ "BFO_0000050 some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
 subsets/musculoskeletal-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/excretory-minimal.obo: merged.owl
@@ -190,6 +190,8 @@ subsets/cranial-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+subsets/appendicular-ext.obo: merged.owl
+	owltools pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "BFO_0000050 some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@  -o -f obo $@ --reasoner-dispose >& $@.LOG
 
 # ----------------------------------------
 # Closure
@@ -560,54 +562,6 @@ release:
 
 
 
-# ----------------------------------------
-# PHENOSCAPE
-# ----------------------------------------
-# NOTE: this is now no longer required
-
-xref-tao-new.obo: uberon_edit.obo
-	blip-findall -i $<  -r ZFA -r TAO -consult util/tao_checker.pro "ix,zut_new(U,T)"  -select U-T -no_pred -label -use_tabs | tbl2obolinks.pl -r xref - > $@
-
-# then run: obo-merge-tags.pl -t xref uberon_edit.obo xref-tao-new.obo 
-
-PA_INFO = 'This ontology is an aggregate of Uberon and leaf nodes from various ontologies'
-AAO = aao-fixed.obo
-VSAO = vertebrate_skeletal_anatomy.obo fake.obo
-TAO = tao-fixed.obo
-TAO_SRC = phenoscape-vocab/teleost_anatomy_VAO_edit.obo
-MSAOS = $(TAO) $(AAO) $(VSAO)
-
-
-fake.obo:
-	echo 'default-namespace: obo' > $@
-#aao-fixed.obo: AAO_v2_edit.obo
-aao-fixed.obo: phenoscape-vocab/AAO_cjm.obo
-	obo-map-ids.pl --use-xref --regex-filter 'CL:' $< | grep -v ^develops_from > $@
-
-tao-isaM.obo: $(TAO_SRC)
-	obo-merge-tags.pl -t is_a $< phenoscape-vocab/tao-scratchdir/tao-isa-from-zfa.obo > $@
-tao-fixed.obo: tao-isaM.obo
-	obo-map-ids.pl --ignore-tag alt_id --use-xref --regex-filter 'CL:' $< $< | perl -npe 's/OBO_REL://' | obo-grep.pl -r 'id: TAO' - > $@
-psc-merged.obo: $(TAO) fake.obo
-	obo2obo -o $@ $(MSAOS)  fake.obo
-psc-merged-u1.obo: psc-merged.obo uberon_edit.obo
-	obo-map-ids.pl --ignore-tag alt_id --use-xref-inverse uberon_edit.obo $< | perl -npe 's/OBO_REL://' > $@
-# map to CL IDs. 
-psc-merged-u.obo: psc-merged-u1.obo
-	obo-map-ids.pl --ignore-tag alt_id --use-xref --regex-filter 'CL'  $< $< > $@
-merged-dates.txt: $(MSAOS)
-	(perl -ne 'print "aggregates VSAO from $$1\n" if /^date: (\S+)/' $(VSAO) && \
-	 perl -ne 'print "aggregates AAO from $$1\n" if /^date: (\S+)/' $(AAO) && \
-	 perl -ne 'print "aggregates TAO from $$1\n" if /^date: (\S+)/' $(TAO)) > $@
-phenoscape-vocab/phenoscape-anatomy.obo: psc-merged-u.obo merged-dates.txt
-	obo-simple-merge.pl $< merged.obo | obo-add-remark.pl -r $(PA_INFO) merged-dates.txt - > $@ && perl -pi -ne 's@^ontology: uberon.*@ontology: uberon/phenoscape-anatomy@;s@^default-namespace: uberon.*@default-namespace: uberon/phenoscape-anatomy@;' $@
-#psc-merged-u-min.obo: psc-merged-u.obo
-#	obo-subtract.pl $< merged.obo
-#phenoscape-anatomy.obo: psc-merged-u-min.obo
-
-# copy this manually to phenoscape-vocab/edit/ (but only before the switch!)
-phenoscape-ext.owl: phenoscape-vocab/phenoscape-anatomy.obo
-	obo-grep.pl --neg -r 'id: (UBERON|CL)' $< | ./util/pa-to-uberon-ids.pl | obo-grep.pl -r 'id: UBERON' - | obo-sed.pl -r 'is_obsolete:.*true' 's/name: /name: obsolete /' - > $@.obo && owltools $@.obo --add-imports-declarations $(OBO)/uberon/merged.owl -o -f functional file://`pwd`/$@.tmp && egrep -v '^Declaration.*UBERON_0' $@.tmp > $@
 
 # DOCS
 relation_table.txt:
