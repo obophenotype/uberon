@@ -1,5 +1,9 @@
-Inter-ontology disjointness axioms
-==================================
+# Inter-ontology disjointness axioms
+
+
+Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000016](http://purl.obolibrary.org/obo/uberon/references/reference_0000016)
+
+Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:
 
@@ -7,10 +11,9 @@ Authors and contributors:
 
 Date: 2012
 
-Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_design_pattern
+Document Type: ontology_design_pattern
 
-Abstract
---------
+## Abstract
 ...
 
 
@@ -33,8 +36,8 @@ not spatial disjointness.
 
 
 
-See Also:
----------
-
+## See Also:
  * [http://purl.obolibrary.org/obo/uberon/external-disjoints.owl](http://purl.obolibrary.org/obo/uberon/external-disjoints.owl)
  * [http://ontogenesis.knowledgeblog.org/1260](http://ontogenesis.knowledgeblog.org/1260)
+
+

@@ -1,5 +1,9 @@
-Multiple inheritance in Uberon
-==============================
+# Multiple inheritance in Uberon
+
+
+Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000017](http://purl.obolibrary.org/obo/uberon/references/reference_0000017)
+
+Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:
 
@@ -7,11 +11,10 @@ Authors and contributors:
 
 Date: 2012
 
-Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_design_pattern
+Document Type: ontology_design_pattern
 
-Abstract
---------
-...
+## Abstract
+This article describes the practical approach taken in Uberon to avoid asserted multiple inheritance, and documents where exceptions are made to standard normalization practice
 
 
 It is good practice to avoid *asserted* multiple inheritance in
@@ -58,8 +61,8 @@ separate issue to asserted multiple inheritance.
 
 
 
-See Also:
----------
-
+## See Also:
  * [http://ontogenesis.knowledgeblog.org/49](http://ontogenesis.knowledgeblog.org/49)
- * [http://www.gong.manchester.ac.uk/odp/html/Normalisation.html](http://www.gong.manchester.ac.uk/odp/html/Normalisation.html)
+ * [http://odps.sourceforge.net/odp/html/Normalisation.html](http://odps.sourceforge.net/odp/html/Normalisation.html)
+
+

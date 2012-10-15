@@ -1,5 +1,9 @@
-Automatic classification of skeleton partonomy
-==============================================
+# Automatic classification of skeleton partonomy
+
+
+Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000015](http://purl.obolibrary.org/obo/uberon/references/reference_0000015)
+
+Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:
 
@@ -7,15 +11,13 @@ Authors and contributors:
 
 Date: 2012
 
-Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_design_pattern
+Document Type: ontology_design_pattern
 
-Abstract
---------
+## Abstract
 ...
 
 
-Problem
--------
+## Problem
 
 OWL reasoners can automatically generate a subsumption
 hierarchy. However, we often want to automatically classify a
@@ -23,8 +25,7 @@ partonomy - for example:
 
  * `manual digit phalanx` SubClassOf part_of some `forelimb skeleton`
 
-Solution
---------
+## Solution
 
 Our solution here is to create a bone grouping class for every
 skeletal subdivision. For example:
@@ -45,8 +46,7 @@ create these for every skeletal subdivsion, such that we have:
 
 It is important that X is the organism subdivision here.
 
-Alternatives
-------------
+## Alternatives
 
 One alternative is to use an actual GCI. Here we 'unfold' axioms 3 and
 4 above to make:
@@ -62,4 +62,6 @@ both approaches:
  * many ontologies like MA have 'X bone' classes, whereas ontologies like FMA have skeletal subdivsions
   * materializing both forms in Uberon simplifies bridging between these
   * the proliferation of terms can be confusing to annotators, but it is possible to make subsets that exclude either form
+
+
 

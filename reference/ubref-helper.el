@@ -17,15 +17,15 @@
 (defun xsd-int (s)
   (format "\"%s\"^^xsd:int" s))
 
-(defun owl-add-ref (title)
+(defun owl-add-ref (title type)
   "Adds a reference individual in omn"
-  (interactive "sTitle: ")
-  (insert (owl-new-ref title)))
+  (interactive "sTitle:\nsType:")
+  (insert (owl-new-ref title type)))
 
 
 
  
-(defun owl-new-ref (title)
+(defun owl-new-ref (title type)
   "adds a new ref"
   (init-id)
   (setq last-ubref-id (+ last-ubref-id 1))
@@ -41,7 +41,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_%07d>\n
         dc:description %s
 
     Types:
-        dc:resource
+        ubref:%s
  "
  last-ubref-id
  (xsd-int this-year)
@@ -50,6 +50,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_%07d>\n
  (xsd-str title)
  (xsd-str "...")
  (xsd-str "\n\n")
+ type
 ))
 
 

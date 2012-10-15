@@ -1,5 +1,9 @@
-Representation of paired structures
-===================================
+# Representation of paired structures
+
+
+Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000014](http://purl.obolibrary.org/obo/uberon/references/reference_0000014)
+
+Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:
 
@@ -7,10 +11,9 @@ Authors and contributors:
 
 Date: 2012
 
-Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_design_pattern
+Document Type: ontology_design_pattern
 
-Abstract
---------
+## Abstract
 ...
 
 
@@ -53,4 +56,6 @@ inappropriate.
 
 Errors can automatically be detected for example if there is a class
 'median naris' and this is stated to be in the medial part of the head.
+
+
 

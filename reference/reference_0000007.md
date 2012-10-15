@@ -1,5 +1,9 @@
-Vertebrate cranial terms
-========================
+# Vertebrate cranial terms
+
+
+Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000007](http://purl.obolibrary.org/obo/uberon/references/reference_0000007)
+
+Status: [peer reviewed](http://purl.org/spar/pso/peer-reviewed)
 
 Authors and contributors:
 
@@ -9,13 +13,13 @@ Authors and contributors:
 
 Date: 2011
 
-Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_documentation
+Document Type: spreadsheet_documentation
 
 
 
 
 
-See Also:
----------
-
+## See Also:
  * [https://docs.google.com/spreadsheet/ccc?key=0Aj8NJdyb-leqdDM0R3hTVTRHRExDVjRCSkZEbDc5N1E#gid=0](https://docs.google.com/spreadsheet/ccc?key=0Aj8NJdyb-leqdDM0R3hTVTRHRExDVjRCSkZEbDc5N1E#gid=0)
+
+

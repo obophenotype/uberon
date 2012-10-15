@@ -1,5 +1,9 @@
-Part-disjointness
-=================
+# Part-disjointness
+
+
+Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000018](http://purl.obolibrary.org/obo/uberon/references/reference_0000018)
+
+Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:
 
@@ -7,15 +11,13 @@ Authors and contributors:
 
 Date: 2012
 
-Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_design_pattern
+Document Type: ontology_design_pattern
 
-Abstract
---------
-...
+## Abstract
+A crucial part of anatomical knowledge concerns spatial disjointness. This article covers the concept of part-disjointness and how it is applied in Uberon
 
 
-Problem
--------
+## Problem
 
 In anatomy ontologies, it can be useful to state that two parts are
 non-overlapping - they contain no parts in common. For example, we may
@@ -23,8 +25,7 @@ want to model the limb such that the autopod, zeugopod and stylopod
 are spatially adjacent and have no parts in common (this does not mean
 that structures cannot overlap both).
 
-Disjointness axioms in OWL
---------------------------
+## Disjointness axioms in OWL
 
 In OWL, the statement ```X DisjointWith Y``` refers to the *classes* X
 and Y - it means there is nothing that instantiates both an X and a Y.
@@ -46,8 +47,7 @@ This sometimes causes confusion, as users unfamiliar with OWL read
 zeugopod. It does *not* restrict how other entities relate to these
 classes via properties such as part_of.
 
-Part-disjointness in OWL
-------------------------
+## Part-disjointness in OWL
 
 We can in fact make statements of parthood-disjointness in OWL using
 General Class Inclusion (GCI) axioms, for example:
@@ -62,8 +62,7 @@ part of a forelimb zeugopod. This can be written in an equivalent way:
 Using either (6) or (7) in conjunction with (4) and (5) leads to 'foo'
 being unsatisfiable.
 
-Implementation in OBO-Format
-----------------------------
+## Implementation in OBO-Format
 
 Note that GCIs cannot be directly authored in obo-format, by means of a *shortcut* relation:
 
@@ -86,8 +85,7 @@ This means the ontology can contain 'silent' annotation assertions of the form:
 
 An extra step in the obo to owl conversion process will expand this to the correct OWL axiom.
 
-A note on reflexivity
----------------------
+## A note on reflexivity
 
 Note that in classic mereology, the parthood relation is considered
 reflexive. This means that a statement:
@@ -109,9 +107,10 @@ creating axioms of the form 'X part_of some X' in an unreleased
 
 
 
-See Also:
----------
-
+## See Also:
  * [http://ontogenesis.knowledgeblog.org/1260](http://ontogenesis.knowledgeblog.org/1260)
  * [http://dx.doi.org/doi:10.1038/npre.2011.5292.2](http://dx.doi.org/doi:10.1038/npre.2011.5292.2)
+ * [http://ontogenesis.knowledgeblog.org/1288](http://ontogenesis.knowledgeblog.org/1288)
  * [https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit#heading=h.cx8lslfjfyrl](https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit#heading=h.cx8lslfjfyrl)
+
+

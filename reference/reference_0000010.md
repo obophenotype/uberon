@@ -1,5 +1,9 @@
-Modeling extraembryonic membranes
-=================================
+# Extraembryonic membranes
+
+
+Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000010](http://purl.obolibrary.org/obo/uberon/references/reference_0000010)
+
+Status: [initial draft](http://purl.org/spar/pso/initial-draft)
 
 Authors and contributors:
 
@@ -7,10 +11,9 @@ Authors and contributors:
 
 Date: 2012
 
-Document Type: http://purl.obolibrary.org/obo/uberon/refont/ontology_documentation
+Document Type: biological_modeling
 
-Abstract
---------
+## Abstract
 ...
 
 
@@ -31,8 +34,8 @@ Table 5.4 from Kardong:
  * A = Allantois
  * splpl = Splanchnopleure
 
-Sources:
---------
-
+## Sources:
  * Kardong
+
+
 
