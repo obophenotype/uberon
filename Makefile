@@ -189,7 +189,7 @@ subsets/circulatory-minimal.obo: merged.owl
 subsets/cranial-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --make-subset-by-properties part_of develops_from --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-ext.obo: merged.owl
 	owltools pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "BFO_0000050 some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@  -o -f obo $@ --reasoner-dispose >& $@.LOG
 
@@ -554,13 +554,10 @@ release:
 	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
-	cp reference/*{owl,html} $(RELDIR)/reference  ;\
-	(cd $(RELDIR)/reference/ && svn add *.{owl,html}) ;\
+	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
+	(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]*) && svn ps svn:mime-type text/html reference_[0-9]* ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''
-
-
-
 
 
 # DOCS

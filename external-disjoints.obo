@@ -4,6 +4,7 @@ property_value: dc-title "Uberon external disjoints" xsd:string
 property_value: dc-description "This ontology contains disjointness axioms between Uberon classes and classes from external ontologies (mostly anatomy ontologies). Use of this ontology can help prevent accidental associations between classes which may on the surface seem similar or equivalent (for example, based on the term) but are in fact completely distinct. This ontology can be used on combination with an OWL reasoner." xsd:string
 property_value: dc-creator "Chris Mungall" xsd:string
 property_value: foaf-homepage "http://uberon.org" xsd:anyURI
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000016" xsd:anyURI
 idspace: NIF_GrossAnatomy http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#
 
 [Term]
@@ -576,3 +577,9 @@ id: dc-description
 name: description
 is_metadata_tag: true
 xref: http://purl.org/dc/elements/1.1/description
+
+[Typedef]
+id: seeAlso
+name: see also
+is_metadata_tag: true
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso

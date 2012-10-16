@@ -1,4 +1,11 @@
 ontology: uberon/bridge/uberon-bridge-to-fma
+data-version: 2012-10-16
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
+property_value: dc-title "Uberon bridge to fma" xsd:string
+property_value: dc-description "Taxonomic equivalence axioms between the FMA and Uberon" xsd:string
+property_value: dc-creator "Uberon editors" xsd:string
+property_value: dcterms-references http://purl.obolibrary.org/obo/fma.owl
+property_value: dcterms-references http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
 id: FMA:17740 ! Cervix of uterus
@@ -2464,6 +2471,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:58616 ! Fat body
 property_value: IAO:0000589 "fat pad (post-embryonic human)" xsd:string
 intersection_of: UBERON:0003916 ! fat pad
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:59799 ! buccal fat pad
+property_value: IAO:0000589 "buccal fat pad    (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012167 ! buccal fat pad   
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -9652,6 +9665,18 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:61889 ! Nucleus accumbens
 property_value: IAO:0000589 "nucleus accumbens (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001882 ! nucleus accumbens
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:77383 ! core region of nucleus accumbens
+property_value: IAO:0000589 "core of nucleus accumbens (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012170 ! core of nucleus accumbens
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:77387 ! shell region of nucleus accumbens
+property_value: IAO:0000589 "shell of nucleus accumbens (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012171 ! shell of nucleus accumbens
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -22946,8 +22971,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:14655 ! Hepatic lamina
-property_value: IAO:0000589 "hepatic plate (post-embryonic human)" xsd:string
-intersection_of: UBERON:0005452 ! hepatic plate
+property_value: IAO:0000589 "hepatic lamina (post-embryonic human)" xsd:string
+intersection_of: UBERON:0005452 ! hepatic lamina
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -23152,6 +23177,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:59315 ! Lateral palpebral commissure
 property_value: IAO:0000589 "outer canthus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0006726 ! outer canthus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:14754 ! middle suprarenal artery
+property_value: IAO:0000589 "middle suprarenal artery (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012173 ! middle suprarenal artery
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -24337,7 +24368,7 @@ intersection_of: UBERON:0006670 ! central tendon
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:59005 ! Orbital fat body
+id: FMA:59005 ! orbital fat body
 property_value: IAO:0000589 "orbital fat pad (post-embryonic human)" xsd:string
 intersection_of: UBERON:0006671 ! orbital fat pad
 intersection_of: part_of NCBITaxon:9606
@@ -26442,3 +26473,98 @@ equivalent_to: BFO:0000050
 id: http://purl.obolibrary.org/obo/fma#develops_from
 equivalent_to: RO:0002225
 
+[Typedef]
+id: foaf-depicted_by
+name: depicted_by
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/depicted_by
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/homepage
+
+[Typedef]
+id: dc-title
+name: title
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/title
+
+[Typedef]
+id: dc-contributor
+name: contributor
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/contributor
+
+[Typedef]
+id: dc-creator
+name: creator
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/creator
+
+[Typedef]
+id: dc-publisher
+name: publisher
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/publisher
+
+[Typedef]
+id: dc-description
+name: description
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/description
+
+[Typedef]
+id: dc-source
+name: derived from resource
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/source
+
+[Typedef]
+id: dcterms-isReferencedBy
+name: is referenced by
+is_metadata_tag: true
+xref: http://purl.org/dc/terms/isReferencedBy
+
+[Typedef]
+id: dcterms-references
+name: references
+is_metadata_tag: true
+xref: http://purl.org/dc/terms/references
+
+[Typedef]
+id: doap-GitRepository
+name: Git repository
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#GitRepository
+
+[Typedef]
+id: doap-SVNRepository
+name: SVN repository
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#SVNRepository
+
+[Typedef]
+id: doap-wiki
+name: wiki
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#wiki
+
+[Typedef]
+id: doap-bug-database
+name: bug database
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#bug-database
+
+[Typedef]
+id: seeAlso
+name: see also
+is_metadata_tag: true
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+
+[Typedef]
+id: example_of_usage
+name: example of usage
+is_metadata_tag: true
+xref: IAO:0000122

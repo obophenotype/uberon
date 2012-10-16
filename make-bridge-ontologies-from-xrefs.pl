@@ -12,6 +12,7 @@ my $stype;
 my @fns = ();
 my $base = 'uberon';
 
+
 while ($ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-b' || $opt eq '--base') {
@@ -107,6 +108,13 @@ foreach my $s (keys %fhmap) {
     print $fh "id: $prefix#develops_from\n";
     print $fh "equivalent_to: RO:0002225\n\n";
 
+    open(F,"ftr.obo");
+    while(<F>) {
+        print $fh $_;
+    }
+    close(F);
+
+
     $fh->close;
 }
 foreach my $ont (@fns) {
@@ -145,8 +153,24 @@ sub mk_bridge {
     my $fn = "$ont.obo";
     push(@fns,$ont);
     print STDERR "Writing to: $fn\n";
+
+    my $date = `date "+%Y-%m-%d"`;
+    chomp $date;
+
     my $fh = FileHandle->new(">$fn") || die $fn;
-    print $fh "ontology: uberon/bridge/$ont\n\n";
+    print $fh "ontology: uberon/bridge/$ont\n";
+    print $fh "data-version: $date\n";
+    print $fh "property_value: seeAlso \"http://purl.obolibrary.org/obo/uberon/references/reference_0000026\" xsd:anyURI\n";
+    if (-f "hdr-$fn") {
+        open(F,"hdr-$fn");
+        while(<F>) {
+            print $fh $_;
+        }
+        close(F);
+    }
+    #print $fh ann_str('dc-description' =>"bridging axioms between uberon and $ont");
+    #print $fh ann_uri('foaf-homepage' => "bridging axioms between uberon and $ont");
+    print $fh "\n";
     $fhmap{$s} = $fh;
     $tmap{$s} = [$t,@args];
 }

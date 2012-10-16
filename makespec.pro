@@ -9,6 +9,7 @@ anatomy('XAO').
 anatomy('AAO').
 anatomy('MA').
 anatomy('aba').
+anatomy('efo').
 anatomy('FMA').
 anatomy('WBbt').
 anatomy('FBbt').
@@ -108,14 +109,15 @@ nlp_hook(_,snomed_anatomy,ignore_word_snomed) :- !.
         
 nlp_hook(A,B,metadata_nlp_parent_dist2_hook) :-
         L=[A,B],
-       \+ ((member(snomed_anatomy,L),
-            member('FMA',L))),
+       \+ member(snomed_anatomy,L),
+       \+ member('FMA',L),
+       \+ member(efo,L),
        !.
-nlp_hook(A,B,metadata_nlp) :- true.
+nlp_hook(A,B,null) :- true.
             
 'align/align-$A-$B.tbl' <-- ['align/stamp'],
        {anatomy(A),anatomy(B),nlp_hook(A,B,Hook)},
-       'blip-findall -r obol_av -r $A -r $B -u metadata_nlp -i $Hook.pro -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S),class(X),class(Y)" -select "m(X,Y,S)" -use_tabs -label -no_pred > $@'.
+       'blip-findall -i external-disjoints.obo  -r obol_av -r $A -r $B -u metadata_nlp -i $Hook.pro -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S),class(X),class(Y)" -select "m(X,Y,S)" -use_tabs -label -no_pred > $@'.
 
 'align/stamp' <-- [], 'touch $@'.
 

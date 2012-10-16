@@ -229,6 +229,9 @@ Any properties can be used, but the recommended set is:
  * dc:description (1, required) in markdown format
  * rdfs:seeAlso (0 or more) - links to other related articles or resources
 
+The publishing status ontology (pso) is used to give each article a
+status such as 'initial-draft'
+
 ## Connecting articles to ontology elements
 
 Each article can be references multiple times in the main ontology, in
@@ -259,8 +262,9 @@ Each article can be viewed on the web via its purl
 
 ## Guidelines for authors
 
-Ontology editors should edit the file references-edit.omn - any new
-articles created should be in their idrange - see
+Ontology editors should edit the file references-edit.omn [in
+git](https://github.com/cmungall/uberon/tree/master/reference) - any
+new articles created should be in their idrange - see
 uberonref-idranges.owl.
 
 The file can be edited in a text editor (the recommended text editor
@@ -278,7 +282,7 @@ than underlines.
 
 The format used is a variant called ontology markdown. Class labels
 can be written in backtics - the derived documentation will make PURL
-links from these (to be implemented).
+links from these (*to be implemented*).
 
 In general each article type should follow a certain template (to be
 documented).
@@ -291,7 +295,7 @@ from this file.
 The current implementation is somewhat ad-hoc and may be replaced.
 
 The references-edit.omn is translated to an rdf/owl ontology -
-http://purl.obolibrary.org/obo/uberon/references.owl
+[references.owl](http://purl.obolibrary.org/obo/uberon/references.owl)
 
 A perl script (owldoc2md.pl) generates individual markdown (.md) files
 from this owl file (using a to-be-released API). It assumes some of
