@@ -12,7 +12,6 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:doap="http://usefulinc.com/ns/doap#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-tao.owl">
-        <oboInOwl:data-version rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-10-16</oboInOwl:data-version>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paula Mabee</dc:contributor>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxonomic equivalence axioms between TAO and Uberon. Note that TAO is in the process of being merged into the core Uberon, so this mapping will become deprecated</dc:description>
         <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uberon bridge to tao</dc:title>
@@ -21,6 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/tao.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-tao/2012-10-24/uberon/bridge/uberon-bridge-to-tao.owl"/>
     </owl:Ontology>
     
 
@@ -155,7 +155,6 @@
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#data-version"/>
     
 
 
@@ -17738,6 +17737,46 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/TAO_0005259 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0005259">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_2005259"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005259</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous capillary (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TAO_0005260 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0005260">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_2005260"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005260</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fenestrated capillary (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/TAO_0005261 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0005261">
@@ -24623,6 +24662,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_1000010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_1000010"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_2005259 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_2005259"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_2005260 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_2005260"/>
 </rdf:RDF>
 
 

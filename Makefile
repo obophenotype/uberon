@@ -1,6 +1,7 @@
 OBO=http://purl.obolibrary.org/obo
 CATALOG=catalog-v001.xml
 MAIN_AO_LIST = fma ma emapa ehdaa2 zfa xao fbbt wbbt
+DC = http://purl.org/dc/elements/1.1
 
 all: uberon-qc
 
@@ -105,6 +106,9 @@ depictions.omn: uberon_edit.obo
 depictions.owl: depictions.omn
 	owltools $< -o file://`pwd`/$@
 
+quick-qc: uberon.obo-OE-check uberon_edit.owl uberon_edit-obscheck.txt
+	cat uberon_edit-obscheck.txt
+
 QC_FILES = uberon_edit.owl\
     uberon_edit-xp-check\
     uberon_edit-obscheck.txt\
@@ -191,7 +195,7 @@ subsets/cranial-minimal.obo: merged.owl
 subsets/appendicular-minimal.obo: merged.owl
 	owltools $< --make-subset-by-properties part_of develops_from --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-ext.obo: merged.owl
-	owltools pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "BFO_0000050 some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@  -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "BFO_0000050 some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "this ontology is a derived subset of the phenoscape uberon extension, including only classes that satisfy the query 'part of some appendicular skeleton' "  -o -f obo $@ --reasoner-dispose >& $@.LOG
 
 # ----------------------------------------
 # Closure
@@ -248,6 +252,9 @@ merged.owl: merged-nc.owl
 merged.obo: merged.owl
 	obolib-owl2obo -o $@.tmp $< && ./util/fix-synsubsetdef.pl $@.tmp > $@
 .PRECIOUS: merged.obo
+
+other-bridges: merged.owl
+	owltools $< --extract-bridge-ontologies -d tmp -s uberon -x -o -f obo z
 
 # core: the full ontology, excluding external classes, but including references to these
 # TODO: use --make-subset-by-properties
