@@ -8,6 +8,7 @@ my $check = 0;
 my $expand_relations = 0;
 my $no_src;
 my $preserve_def_xref = 0;
+my $is_use_all;
 while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-h' || $opt eq '--help') {
@@ -28,6 +29,9 @@ while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     }
     if ($opt eq '-n' || $opt eq '--no-src') {
         $no_src = 1;
+    }
+    if ($opt eq '-a' || $opt eq '--use-all') {
+        $is_use_all = 1;
     }
     if ($opt eq '-t' || $opt eq '--tag') {
         $tag_h{shift @ARGV} = 1;
@@ -89,8 +93,13 @@ while(<>) {
         $_ = sprintf("id: UBERON:%07d",$uid);
         $uid++;
         print "$_\n";
+
         if ($xrefh{$xref}) {
             print "! ALREADY HAVE THIS: id: $xrefh{$xref} ! $nh{$xrefh{$xref}}\n";
+        }
+        if ($is_use_all) {
+            $xrefh{$xref} = $_; 
+            #die "$id --> $uid";
         }
         ($src) = $xref =~/(\S+):/;
         if ($src && !$no_src) {

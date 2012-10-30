@@ -171,31 +171,35 @@ dv-aba.txt:
 SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory cranial appendicular
 
 all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
+PART_OF = BFO_0000050
 
 subsets/musculoskeletal-full.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d -c $(OBO)/uberon/$@ "BFO_0000050 some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
+	owltools $< --reasoner-query -r elk -d -c $(OBO)/uberon/$@ "$(PART_OF) some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
 subsets/musculoskeletal-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/excretory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/reproductive-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/digestive-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/nervous-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/sensory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/immune-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/circulatory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/cranial-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
-	owltools $< --make-subset-by-properties part_of develops_from --reasoner-query -r elk -d  "BFO_0000050 some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
-subsets/appendicular-ext.obo: merged.owl
-	owltools pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "BFO_0000050 some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "this ontology is a derived subset of the phenoscape uberon extension, including only classes that satisfy the query 'part of some appendicular skeleton' "  -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --make-subset-by-properties part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+subsets/appendicular-ext.owl: #merged.owl
+	owltools --use-catalog pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "$(PART_OF) some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "this ontology is a derived subset of the phenoscape uberon extension, including only classes that satisfy the query 'part of some appendicular skeleton' " -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
+.PRECIOUS: subsets/appendicular-ext.owl
+subsets/%.obo: subsets/%.owl
+	owltools $< -o -f obo $@
 
 # ----------------------------------------
 # Closure
@@ -390,6 +394,8 @@ nif_cell.obo:
 organ_association.txt:
 	wget http://bgee.unil.ch/download/organ_association.txt
 
+stages.obo:
+	wget http://bgee.unil.ch/download/stages.obo
 
 
 # ----------------------------------------
@@ -490,6 +496,8 @@ df.txt:
 new.txt:
 	blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "dbpedia_new(C)" -select C > $@
 
+ma2ncitx.obo: ma2ncit.obo
+	blip-findall -r MA -i $<  -r NCITA "class_xref(M,MX),atom_concat('ncithesaurus:',X,MX),inst_sv(C,_P,X,_)" -select "M-C" -no_pred -label -use_tabs | sort -u | tbl2obolinks.pl --rel xref - > $@
 
 # ----------------------------------------
 # BTO
