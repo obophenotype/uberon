@@ -118,7 +118,7 @@ QC_FILES = uberon_edit.owl\
     uberon-orphans\
     uberon-synclash\
     external-disjoints.owl\
-    depictions.owl\
+#    depictions.owl\
     mod/bridges\
     quick-bridge-checks\
     taxon-constraint-check.txt\
@@ -208,9 +208,14 @@ subsets/%.obo: subsets/%.owl
 %_closure-ontol_db.pro: %.obo
 	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@.tmp2 && cat $@.tmp2 abolish_subclassT.pro > $@
 
+
 #multi_closure-ontol_db.pro: merged.obo
 #	owltools $< $(OBO)/ma.owl $(OBO)/ehdaa2.owl $(OBO)/xao.owl $(OBO)/zfa.owl $(OBO)/fbbt.owl $(OBO)/wbbt.owl cl-core.obo --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
 
+simple.closure: uberon-simple.obo
+	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' > $@.tmp2 && mv $@.tmp2 $@
+mod/%.closure: mod/uberon-bridge-to-%.obo
+	owltools --use-catalog uberon-simple.obo $< $(OBO)/$*.owl --merge-support-ontologies --rename-entity http://purl.obolibrary.org/obo/emapa_part_of $(OBO)/BFO_0000050  --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | grep -v ^UBERON | perl -npe 's/OBO_REL:is_a/subclass/' > $@.tmp2 && mv $@.tmp2 $@
 
 
 
