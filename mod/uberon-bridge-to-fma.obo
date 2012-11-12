@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-fma
-data-version: 2012-10-29
+data-version: 2012-11-11
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to fma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the FMA and Uberon" xsd:string
@@ -219,14 +219,14 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:79793 ! dorsal pancreas
-property_value: IAO:0000589 "dorsal pancreas (post-embryonic human)" xsd:string
-intersection_of: UBERON:0009708 ! dorsal pancreas
+property_value: IAO:0000589 "pancreas dorsal primordium (post-embryonic human)" xsd:string
+intersection_of: UBERON:0010375 ! pancreas dorsal primordium
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:79794 ! ventral pancreas
-property_value: IAO:0000589 "ventral pancreas (post-embryonic human)" xsd:string
-intersection_of: UBERON:0009709 ! ventral pancreas
+property_value: IAO:0000589 "pancreas ventral primordium (post-embryonic human)" xsd:string
+intersection_of: UBERON:0010376 ! pancreas ventral primordium
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -896,12 +896,6 @@ intersection_of: UBERON:0008335 ! ventrolateral sulcus of medulla oblongata
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:83689 ! Cervical mucus
-property_value: IAO:0000589 "cervical mucus (post-embryonic human)" xsd:string
-intersection_of: UBERON:0000316 ! cervical mucus
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:83039 ! Cytotrophoblast
 property_value: IAO:0000589 "cytotrophoblast (post-embryonic human)" xsd:string
 intersection_of: UBERON:0000319 ! cytotrophoblast
@@ -1280,9 +1274,9 @@ intersection_of: UBERON:0000379 ! tracheal mucosa
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:68018 ! Detrusor
-property_value: IAO:0000589 "detrusor (post-embryonic human)" xsd:string
-intersection_of: UBERON:0000381 ! detrusor
+id: FMA:68018 ! detrusor
+property_value: IAO:0000589 "urinary bladder detrusor smooth muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0000381 ! urinary bladder detrusor smooth muscle
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -1565,12 +1559,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:70527 ! Cavernous artery
 property_value: IAO:0000589 "cavernous artery (post-embryonic human)" xsd:string
 intersection_of: UBERON:0000457 ! cavernous artery
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:86485 ! Endocervix
-property_value: IAO:0000589 "endocervix (post-embryonic human)" xsd:string
-intersection_of: UBERON:0000458 ! endocervix
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -3746,6 +3734,12 @@ intersection_of: UBERON:0001138 ! superior mesenteric vein
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:15391 ! Inferior mesenteric vein
+property_value: IAO:0000589 "inferior mesenteric vein (post-embryonic human)" xsd:string
+intersection_of: UBERON:0001215 ! inferior mesenteric vein
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:14333 ! Common iliac vein
 property_value: IAO:0000589 "common iliac vein (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001139 ! common iliac vein
@@ -4286,12 +4280,6 @@ intersection_of: UBERON:0001214 ! pancreatic tributary of splenic vein
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:15391 ! Inferior mesenteric vein
-property_value: IAO:0000589 "inferior mesenteric vein (post-embryonic human)" xsd:string
-intersection_of: UBERON:0001215 ! inferior mesenteric vein
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:15402 ! Jejunal vein
 property_value: IAO:0000589 "jejunal vein (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001216 ! jejunal vein
@@ -4589,18 +4577,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:15841 ! Hilum of spleen
 property_value: IAO:0000589 "hilum of spleen (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001248 ! hilum of spleen
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:50780 ! nutrient vein
-property_value: IAO:0000589 "nutrient vein (post-embryonic human)" xsd:string
-intersection_of: UBERON:0010175 ! nutrient vein
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:50779 ! nutrient artery
-property_value: IAO:0000589 "nutrient artery   (post-embryonic human)" xsd:string
-intersection_of: UBERON:0010176 ! nutrient artery  
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -5357,6 +5333,30 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:19675 ! Spongiose part of urethra
 property_value: IAO:0000589 "spongiose part of urethra (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001337 ! spongiose part of urethra
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:19650 ! external urethral orifice
+property_value: IAO:0000589 "urethral meatus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012240 ! urethral meatus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:85266 ! External orifice of female urethra
+property_value: IAO:0000589 "female urethral meatus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0006565 ! female urethral meatus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:85265 ! external orifice of male urethra
+property_value: IAO:0000589 "male urethral meatus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012241 ! male urethral meatus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:85263 ! internal urethral orifice
+property_value: IAO:0000589 "internal urethral orifice (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012242 ! internal urethral orifice
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -10946,6 +10946,12 @@ intersection_of: UBERON:0005305 ! thyroid follicle
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:68829 ! lumen of thyroid follicle
+property_value: IAO:0000589 "thyroid follicular lumen (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012246 ! thyroid follicular lumen
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:9603 ! Thyroid gland
 property_value: IAO:0000589 "thyroid gland (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002046 ! thyroid gland
@@ -11027,6 +11033,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:69330 ! Phrenic artery
 property_value: IAO:0000589 "phrenic artery (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002057 ! phrenic artery
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:14734 ! inferior phrenic artery
+property_value: IAO:0000589 "inferior phrenic artery (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012255 ! inferior phrenic artery
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -13493,6 +13505,36 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:19702 ! prostatic utricle
 property_value: IAO:0000589 "prostatic utricle (post-embryonic human)" xsd:string
 intersection_of: UBERON:0011199 ! prostatic utricle
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:71646 ! set of cervical glands
+property_value: IAO:0000589 "cervical gland (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012247 ! cervical gland
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:83689 ! Cervical mucus
+property_value: IAO:0000589 "cervical mucus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0000316 ! cervical mucus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:86484 ! ectocervix
+property_value: IAO:0000589 "ectocervix (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012249 ! ectocervix
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:77056 ! vaginal part of cervix
+property_value: IAO:0000589 "ectocervix (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012249 ! ectocervix
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:86485 ! Endocervix
+property_value: IAO:0000589 "endocervix (post-embryonic human)" xsd:string
+intersection_of: UBERON:0000458 ! endocervix
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -24014,12 +24056,6 @@ intersection_of: UBERON:0006564 ! superficial palmar arch
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:85266 ! External orifice of female urethra
-property_value: IAO:0000589 "female urethral meatus (post-embryonic human)" xsd:string
-intersection_of: UBERON:0006565 ! female urethral meatus
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:9558 ! Myocardium of left ventricle
 property_value: IAO:0000589 "left ventricle myocardium (post-embryonic human)" xsd:string
 intersection_of: UBERON:0006566 ! left ventricle myocardium
@@ -26216,12 +26252,6 @@ intersection_of: UBERON:0010181 ! straight venules of kidney
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:77056 ! vaginal part of cervix
-property_value: IAO:0000589 "vaginal part of cervix (post-embryonic human)" xsd:string
-intersection_of: UBERON:0010182 ! vaginal part of cervix
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:82506 ! protuberance
 property_value: IAO:0000589 "protuberance (post-embryonic human)" xsd:string
 intersection_of: UBERON:0010188 ! protuberance
@@ -26465,6 +26495,18 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:75304 ! nutrient foramen
 property_value: IAO:0000589 "lumen of nutrient foramen (post-embryonic human)" xsd:string
 intersection_of: UBERON:0012117 ! lumen of nutrient foramen
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:50780 ! nutrient vein
+property_value: IAO:0000589 "nutrient vein (post-embryonic human)" xsd:string
+intersection_of: UBERON:0010175 ! nutrient vein
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:50779 ! nutrient artery
+property_value: IAO:0000589 "nutrient artery   (post-embryonic human)" xsd:string
+intersection_of: UBERON:0010176 ! nutrient artery  
 intersection_of: part_of NCBITaxon:9606
 
 [Term]

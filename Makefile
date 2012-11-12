@@ -118,7 +118,6 @@ QC_FILES = uberon_edit.owl\
     uberon-orphans\
     uberon-synclash\
     external-disjoints.owl\
-#    depictions.owl\
     mod/bridges\
     quick-bridge-checks\
     taxon-constraint-check.txt\
@@ -136,7 +135,9 @@ QC_FILES = uberon_edit.owl\
     uberon-discv.txt\
     composites\
     composite-metazoan-dv.txt\
-    all_taxmods
+    all_taxmods\
+#    depictions.owl\
+
 
 uberon-qc: $(QC_FILES) all_systems
 	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 

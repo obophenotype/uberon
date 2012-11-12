@@ -31,6 +31,7 @@ Contents
  * metadata_description
      * 0000000 [UDoc - the Uberon documentation system](http://purl.obolibrary.org/obo/uberon/references/reference_0000000) *(intermediate draft)*
      * 0000021 [Depictions of anatomical structures](http://purl.obolibrary.org/obo/uberon/references/reference_0000021) *(intermediate draft)*
+     * 0000030 [Continuous integration](http://purl.obolibrary.org/obo/uberon/references/reference_0000030) *()*
  * ontology_design_pattern
      * 0000004 [Mereotopology Axioms in Anatomy Ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000004) *(initial draft)*
      * 0000009 [Representing individual endochondral elements](http://purl.obolibrary.org/obo/uberon/references/reference_0000009) *(intermediate draft)*
