@@ -21,7 +21,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/zfa.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa/2012-11-11/uberon/bridge/uberon-bridge-to-zfa.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa/2012-11-18/uberon/bridge/uberon-bridge-to-zfa.owl"/>
     </owl:Ontology>
     
 
@@ -5338,6 +5338,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0007391 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007391"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0007414 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007414"/>
     
 
 
@@ -24173,6 +24179,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005576</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral nuclear group (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0005577 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0005577">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0007414"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005577</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleus of midbrain tegmentum (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 

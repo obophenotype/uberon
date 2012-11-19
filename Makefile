@@ -556,6 +556,11 @@ mod/bridges: mod/uberon-bridge-to-vhog.owl uberon_edit.obo
 mod/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
 
+ext-xref.obo:
+	blip-findall  -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),id_idspace(U,'UBERON')" -select U-Z -no_pred | tbl2obolinks.pl --rel xref - > $@
+mod2/ext-bridge-to-zfa.obo: ext-xref.obo
+	cd mod2 && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo ../ext-ref.obo
+
 RELDIR=trunk
 release:
 	cp uberon_edit.owl $(RELDIR)/core.owl ;\
