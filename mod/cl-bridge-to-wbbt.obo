@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-wbbt
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -151,6 +151,22 @@ id: WBbt:0008378 !
 property_value: IAO:0000589 "somatic cell (worm)" xsd:string
 intersection_of: CL:0002371 ! somatic cell
 intersection_of: part_of NCBITaxon:6237
+
+[Term]
+id: WBbt:ENTITY
+name: WBbt entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:6237
+relationship: only_in_taxon NCBITaxon:6237
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/wbbt#part_of

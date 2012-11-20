@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-xao
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -25,6 +25,22 @@ id: XAO:0000262 !
 property_value: IAO:0000589 "polar body (xenopus)" xsd:string
 intersection_of: CL:0002090 ! polar body
 intersection_of: part_of NCBITaxon:8353
+
+[Term]
+id: XAO:ENTITY
+name: XAO entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:8353
+relationship: only_in_taxon NCBITaxon:8353
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/xao#part_of

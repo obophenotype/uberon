@@ -412,7 +412,60 @@ In the future we intend to add additional cross-species Jobs.
 
     Types:
         ubref:metadata_description
- 
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000032>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Automatic inference of part_of relationships"^^xsd:string,
+        rdfs:label "Automatic inference of part_of relationships"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        dc:description "
+
+Level of difficulty: advanced
+
+## Problem
+
+Given
+
+ * `metaphysis of femur` EquivalentTo `metaphysis` and part_of some `femur`
+ * `diaphysis of femur` EquivalentTo `diaphysis` and part_of some `femur`
+ * `metaphysis` SubClassOf part_of some `diaphysis`
+
+It might seem that we should be able to infer:
+
+ * `metaphysis of femur` SubClassOf part_of some `diaphysis of femur`
+
+But this is not the case, for good reason. The reasoner will infer
+that the femur metaphysis is both part of a diaphysis and part of a
+femur, but it cannot rule out that this diaphysis and this femur are
+partially overlapping.
+
+## Solution
+
+A robust solution requires adding more complex axioms to the ontology
+and using a more powerful reasoner.
+
+We instead opt for a *heuristic* solution. We have a rule that has the antecedents:
+
+ * X EquivalentTo  PX and part_of some W
+ * Y EquivalentTo  PY and part_of some W
+ * PX SubClassOf part_of some PY
+
+And consequents:
+
+ * X SubClassOf part_of some Y
+
+Note that this rule is *not safe*. However, they can form the basis of
+suggestions which can be implemented by the ontology editor.
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+  
 
 Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000024>
 

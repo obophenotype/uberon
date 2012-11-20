@@ -40,6 +40,9 @@ while (<>) {
     elsif (/^id:\s*(\S+)/) {
         $id = $1;
         $n = '';
+        if (/^id:\s*\S+\s+\!\s+(.*)/) {
+            $n = $1;
+        }
     }
     elsif (/^name:\s*(.*)/) {
         $n = $1;
@@ -82,7 +85,8 @@ print STDERR "n_xrefs: $n_xrefs\n";
 
 foreach my $s (keys %fhmap) {
     my $fh = $fhmap{$s};
-    if ($tmap{$s}->[0] eq 'gd' && $base eq 'uberon') {
+    #if ($tmap{$s}->[0] eq 'gd' && $base eq 'uberon') {
+    if ($tmap{$s}->[0] eq 'gd') {
         my ($t,$rel,$filler) = @{$tmap{$s}};
         # hidden GCI
         print $fh "[Term]\n";

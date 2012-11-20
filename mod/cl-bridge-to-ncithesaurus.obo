@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-ncithesaurus
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -13,6 +13,22 @@ id: ncithesaurus:Egg !
 property_value: IAO:0000589 "female germ cell (ncithesaurus)" xsd:string
 intersection_of: CL:0000021 ! female germ cell
 intersection_of: part_of NCBITaxon:40674
+
+[Term]
+id: ncithesaurus:ENTITY
+name: ncithesaurus entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:40674
+relationship: only_in_taxon NCBITaxon:40674
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/ncithesaurus#part_of

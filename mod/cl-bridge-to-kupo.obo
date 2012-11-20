@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-kupo
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -739,6 +739,22 @@ id: KUPO:0001129 !
 property_value: IAO:0000589 "kidney collecting duct intercalated cell (KUPO)" xsd:string
 intersection_of: CL:1001432 ! kidney collecting duct intercalated cell
 intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: KUPO:ENTITY
+name: KUPO entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:9606
+relationship: only_in_taxon NCBITaxon:9606
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/kupo#part_of

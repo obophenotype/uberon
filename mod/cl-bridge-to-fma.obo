@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-fma
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -4255,6 +4255,22 @@ id: FMA:84777 !
 property_value: IAO:0000589 "hippocampal interneuron (post-embryonic human)" xsd:string
 intersection_of: CL:1001569 ! hippocampal interneuron
 intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:ENTITY
+name: FMA entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:9606
+relationship: only_in_taxon NCBITaxon:9606
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/fma#part_of

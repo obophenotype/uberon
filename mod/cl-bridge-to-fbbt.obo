@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-fbbt
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -349,6 +349,22 @@ id: FBbt:00004230 !
 property_value: IAO:0000589 "visual pigment cell (sensu Nematoda and Protostomia) (drosophila)" xsd:string
 intersection_of: CL:0001658 ! visual pigment cell (sensu Nematoda and Protostomia)
 intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:ENTITY
+name: FBbt entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:7227
+relationship: only_in_taxon NCBITaxon:7227
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/fbbt#part_of

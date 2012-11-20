@@ -375,6 +375,13 @@ uberon-defs-from-mp.obo:
 	blip -i $< -u ontol_db findall -label '(class(C),setof_count(X,class_xref(C,X),Num))' -select 'C-Num' | sort -k3 -n > $@
 
 # ----------------------------------------
+# Rules
+# ----------------------------------------
+
+ipo.obo: uberon.obo
+	blip-findall  -i $< -consult util/partof.pro new_part_of/2 -label -no_pred -use_tabs | sort -u | tbl2obolinks.pl  --rel part_of --source reference_0000032 - > $@
+
+# ----------------------------------------
 # wikipedia
 # ----------------------------------------
 
@@ -557,9 +564,9 @@ mod/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
 
 ext-xref.obo:
-	blip-findall  -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),id_idspace(U,'UBERON')" -select U-Z -no_pred | tbl2obolinks.pl --rel xref - > $@
-mod2/ext-bridge-to-zfa.obo: ext-xref.obo
-	cd mod2 && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo ../ext-ref.obo
+	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON')" -select U-Z -label -use_tabs -no_pred | tbl2obolinks.pl --rel xref - > $@.tmp && cat ext-ref-hdr.obo $@.tmp > $@
+mod/uberon-ext-bridge-to-zfa.obo: ext-xref.obo
+	cd mod && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ../ext-xref.obo
 
 RELDIR=trunk
 release:
@@ -608,4 +615,5 @@ fbbt.obo:
 # See: http://code.google.com/p/caro2/issues/detail?id=10
 mod/fbbt-nd.obo: fbbt.obo
 	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && obo2obo $@.tmp -o $@
+
 

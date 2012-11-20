@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-zfa
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -13,6 +13,22 @@ id: ZFA:0001725 !
 property_value: IAO:0000589 "immature Schwann cell (zebrafish)" xsd:string
 intersection_of: CL:0002377 ! immature Schwann cell
 intersection_of: part_of NCBITaxon:7954
+
+[Term]
+id: ZFA:ENTITY
+name: ZFA entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:7954
+relationship: only_in_taxon NCBITaxon:7954
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/zfa#part_of

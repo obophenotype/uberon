@@ -1,6 +1,22 @@
 ontology: uberon/bridge/cl-bridge-to-tads
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
+
+[Term]
+id: TADS:ENTITY
+name: TADS entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:6939
+relationship: only_in_taxon NCBITaxon:6939
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/tads#part_of

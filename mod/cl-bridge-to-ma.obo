@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-ma
-data-version: 2012-11-18
+data-version: 2012-11-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -25,6 +25,22 @@ id: MA:0002419 !
 property_value: IAO:0000589 "type B pancreatic cell (post-embryonic mouse)" xsd:string
 intersection_of: CL:0000169 ! type B pancreatic cell
 intersection_of: part_of NCBITaxon:10088
+
+[Term]
+id: MA:ENTITY
+name: MA entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:10088
+relationship: only_in_taxon NCBITaxon:10088
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/ma#part_of
