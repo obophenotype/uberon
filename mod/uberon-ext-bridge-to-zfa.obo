@@ -1,6 +1,14 @@
 ontology: uberon/bridge/uberon-ext-bridge-to-zfa
 data-version: 2012-11-19
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
+property_value: dc-title "Uberon bridge to zfa" xsd:string
+property_value: dc-description "Taxonomic equivalence axioms between ZFA and Uberon" xsd:string
+property_value: dc-creator "Uberon editors" xsd:string
+property_value: dc-contributor "Ceri Van Slyke" xsd:string
+property_value: dc-contributor "Yvonne Bradford" xsd:string
+property_value: dc-contributor "Melissa Haendel" xsd:string
+property_value: dcterms-references http://purl.obolibrary.org/obo/zfa.owl
+property_value: dcterms-references http://purl.obolibrary.org/obo/uberon.owl
 
 [Term]
 id: ZFA:0005295 ! axial blood vessel
@@ -13435,6 +13443,22 @@ id: ZFA:0001231 ! pharyngeal arch 4 skeleton
 property_value: IAO:0000589 "gill arch 2 skeleton (zebrafish)" xsd:string
 intersection_of: UBERON:2001231 ! gill arch 2 skeleton
 intersection_of: part_of NCBITaxon:7954
+
+[Term]
+id: ZFA:ENTITY
+name: ZFA entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:7954
+relationship: only_in_taxon NCBITaxon:7954
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/zfa#part_of
