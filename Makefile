@@ -53,7 +53,7 @@ uberon.obo: uberon_edit-implied.obo
 #  * species anatomy bridge axioms
 # This can be used to reveal both internal inconsistencies within uberon, and the improper linking of a species AO class to an uberon class with a taxon constraint
 uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.owl
-	owltools --catalog-xml $(CATALOG) $< external-disjoints.owl mod/uberon-bridge-to-*.owl --merge-support-ontologies -o -f functional file://`pwd`/$@
+	owltools --catalog-xml $(CATALOG) $< external-disjoints.owl bridge/uberon-bridge-to-*.owl --merge-support-ontologies -o -f functional file://`pwd`/$@
 .PRECIOUS: uberon_edit-plus-tax-equivs.owl
 
 # see above
@@ -70,10 +70,10 @@ quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(MAIN_AO_LIST))
 bridge-checks: $(patsubst %,bridge-check-%.txt,$(MAIN_AO_LIST))
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
-quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl mod/bridges external-disjoints.owl
-	owltools --catalog-xml $(CATALOG) $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u | grep UNSAT > $@.tmp && mv $@.tmp $@
-bridge-check-%.txt: uberon_edit.obo mod/bridges external-disjoints.owl
-	owltools --catalog-xml $(CATALOG) $< $(OBO)/$*.owl mod/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u | grep UNSAT > $@.tmp && mv $@.tmp $@ || grep UNSAT $@.tmp > $@
+quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges external-disjoints.owl
+	owltools --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u | grep UNSAT > $@.tmp && mv $@.tmp $@
+bridge-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
+	owltools --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u | grep UNSAT > $@.tmp && mv $@.tmp $@ || grep UNSAT $@.tmp > $@
 
 %.owl: %.obo
 	obolib-obo2owl -o $@ $<
@@ -118,7 +118,7 @@ QC_FILES = uberon_edit.owl\
     uberon-orphans\
     uberon-synclash\
     external-disjoints.owl\
-    mod/bridges\
+    bridge/bridges\
     quick-bridge-checks\
     taxon-constraint-check.txt\
     uberon_edit-cycles\
@@ -215,7 +215,7 @@ subsets/%.obo: subsets/%.owl
 
 simple.closure: uberon-simple.obo
 	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' > $@.tmp2 && mv $@.tmp2 $@
-mod/%.closure: mod/uberon-bridge-to-%.obo
+bridge/%.closure: bridge/uberon-bridge-to-%.obo
 	owltools --use-catalog uberon-simple.obo $< $(OBO)/$*.owl --merge-support-ontologies --rename-entity http://purl.obolibrary.org/obo/emapa_part_of $(OBO)/BFO_0000050  --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | grep -v ^UBERON | perl -npe 's/OBO_REL:is_a/subclass/' > $@.tmp2 && mv $@.tmp2 $@
 
 
@@ -557,15 +557,15 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 # RELEASE
 # ----------------------------------------
 # even tho the repo lives in github, release is via svn...
-mod/bridges: mod/uberon-bridge-to-vhog.owl uberon_edit.obo
+bridge/bridges: bridge/uberon-bridge-to-vhog.owl uberon_edit.obo
 	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-core.obo && touch bridges
 
-mod/uberon-bridge-to-vhog.owl: uberon_edit.obo
+bridge/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
 
 ext-xref.obo:
 	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON')" -select U-Z -label -use_tabs -no_pred | tbl2obolinks.pl --rel xref - > $@.tmp && cat ext-ref-hdr.obo $@.tmp > $@
-mod/uberon-ext-bridge-to-zfa.obo: ext-xref.obo
+bridge/uberon-ext-bridge-to-zfa.obo: ext-xref.obo
 	cd mod && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ../ext-xref.obo
 
 RELDIR=trunk
@@ -576,7 +576,7 @@ release:
 	cp merged.{obo,owl} $(RELDIR)/ ;\
 	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
 	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
-	cp mod/*.{obo,owl} $(RELDIR)/bridge/ ;\
+	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp subsets/*-minimal.obo $(RELDIR)/subsets/ ;\
@@ -613,7 +613,7 @@ fbbt.obo:
 	wget $(OBO)/fbbt.obo
 
 # See: http://code.google.com/p/caro2/issues/detail?id=10
-mod/fbbt-nd.obo: fbbt.obo
+bridge/fbbt-nd.obo: fbbt.obo
 	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && obo2obo $@.tmp -o $@
 
 
