@@ -23,6 +23,7 @@
      * 0000022 [Taxon constraints](http://purl.obolibrary.org/obo/uberon/references/reference_0000022) *(intermediate draft)*
      * 0000023 [Evolutionary variability and general class axioms](http://purl.obolibrary.org/obo/uberon/references/reference_0000023) *(initial draft)*
      * 0000025 [Skeletal system vs skeleton](http://purl.obolibrary.org/obo/uberon/references/reference_0000025) *()*
+     * 0000032 [Automatic inference of part_of relationships](http://purl.obolibrary.org/obo/uberon/references/reference_0000032) *()*
  * ontology_usage_article
      * 0000024 [Connections between biological processes and anatomical structures](http://purl.obolibrary.org/obo/uberon/references/reference_0000024) *(intermediate draft)*
      * 0000026 [Inter anatomy ontology bridge module ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000026) *()*
