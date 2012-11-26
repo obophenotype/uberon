@@ -558,7 +558,7 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 # ----------------------------------------
 # even tho the repo lives in github, release is via svn...
 bridge/bridges: bridge/uberon-bridge-to-vhog.owl uberon_edit.obo
-	cd mod && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-core.obo && touch bridges
+	cd bridge && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-core.obo && touch bridges
 
 bridge/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
@@ -566,7 +566,7 @@ bridge/uberon-bridge-to-vhog.owl: uberon_edit.obo
 ext-xref.obo:
 	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON')" -select U-Z -label -use_tabs -no_pred | tbl2obolinks.pl --rel xref - > $@.tmp && cat ext-ref-hdr.obo $@.tmp > $@
 bridge/uberon-ext-bridge-to-zfa.obo: ext-xref.obo
-	cd mod && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ../ext-xref.obo
+	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ../ext-xref.obo
 
 RELDIR=trunk
 release:
@@ -588,7 +588,7 @@ release:
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
-	(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]*) && svn ps svn:mime-type text/html reference_[0-9]* ;\
+	(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]* && svn ps svn:mime-type text/html reference_[0-9]*) ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''
 
