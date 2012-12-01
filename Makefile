@@ -248,7 +248,8 @@ uberon-cl.owl: uberon_edit.obo cl-core.obo
 	owltools $< cl-core.obo --merge-support-ontologies   -o file://`pwd`/$@
 
 GOEXT = $(OBO)/go/extensions
-MCAT_ONTS = $(OBO)/go.owl $(GOEXT)/chebi-lite.obo  $(OBO)/pato.owl pr-core.owl
+#MCAT_ONTS = $(OBO)/go.owl $(GOEXT)/chebi-lite.obo  $(OBO)/pato.owl pr-core.owl
+MCAT_ONTS = $(OBO)/go.owl chebi-lite.obo  $(OBO)/pato.owl pr-core.owl
 
 # merged, non-classified
 merged-nc.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl

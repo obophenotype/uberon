@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-ehdaa2
-data-version: 2012-11-25
+data-version: 2012-11-30
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to ehdaa2" xsd:string
 property_value: dc-description "Equivalence axioms between EHDAA2 and Uberon. EHDAA2 replaces EHDAA" xsd:string
@@ -3409,11 +3409,6 @@ property_value: IAO:0000589 "intersegmental artery (embryonic human)" xsd:string
 is_a: UBERON:0002457 ! intersegmental artery
 
 [Term]
-id: EHDAA2:0001890 ! spinal artery
-property_value: IAO:0000589 "spinal artery (embryonic human)" xsd:string
-is_a: UBERON:0002458 ! spinal artery
-
-[Term]
 id: EHDAA2:0000125 ! anterior abdominal wall muscle system
 property_value: IAO:0000589 "anterior abdominal wall muscle (embryonic human)" xsd:string
 is_a: UBERON:0002461 ! anterior abdominal wall muscle
@@ -4809,7 +4804,12 @@ property_value: IAO:0000589 "mesonephric duct lumen (embryonic human)" xsd:strin
 is_a: UBERON:0011574 ! mesonephric duct lumen
 
 [Term]
-id: EHDAA2:0000581 ! frontonasal process
+id: EHDAA2:0000581 ! nasal process group
+property_value: IAO:0000589 "embryonic nasal process (embryonic human)" xsd:string
+is_a: UBERON:0009292 ! embryonic nasal process
+
+[Term]
+id: EHDAA2:0000578 ! frontonasal process
 property_value: IAO:0000589 "frontonasal prominence (embryonic human)" xsd:string
 is_a: UBERON:0004066 ! frontonasal prominence
 
@@ -5332,6 +5332,11 @@ is_a: UBERON:0005323 ! mesonephric mesenchyme
 id: EHDAA2:0000124 ! ansa cervicalis
 property_value: IAO:0000589 "ansa cervicalis (embryonic human)" xsd:string
 is_a: UBERON:0005430 ! ansa cervicalis
+
+[Term]
+id: EHDAA2:0001890 ! spinal artery
+property_value: IAO:0000589 "spinal artery (embryonic human)" xsd:string
+is_a: UBERON:0002458 ! spinal artery
 
 [Term]
 id: EHDAA2:0000131 ! anterior spinal artery
@@ -6009,9 +6014,19 @@ property_value: IAO:0000589 "1st arch maxillary mesenchyme (embryonic human)" xs
 is_a: UBERON:0010045 ! 1st arch maxillary mesenchyme
 
 [Term]
+id: EHDAA2:0000039 ! 1st arch maxillary ectoderm
+property_value: IAO:0000589 "1st arch maxillary ectoderm (embryonic human)" xsd:string
+is_a: UBERON:0012313 ! 1st arch maxillary ectoderm
+
+[Term]
 id: EHDAA2:0001071 ! maxillary process mesenchyme
 property_value: IAO:0000589 "maxillary process mesenchyme (embryonic human)" xsd:string
 is_a: UBERON:0009526 ! maxillary process mesenchyme
+
+[Term]
+id: EHDAA2:0004599 ! maxillary process ectoderm
+property_value: IAO:0000589 "maxillary process ectoderm (embryonic human)" xsd:string
+is_a: UBERON:0012312 ! maxillary process ectoderm
 
 [Term]
 id: EHDAA2:0000066 ! 2nd arch mesenchyme
