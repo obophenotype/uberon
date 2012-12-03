@@ -257,7 +257,7 @@ merged-nc.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
 ###	owltools --catalog-xml $(CATALOG) $< $(GOEXT)/x-metazoan-anatomy.owl $(GOEXT)/x-cell.owl --merge-support-ontologies  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --mcat --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ -n $(OBO)/uberon/merged.owl -o file://`pwd`/$@
 # merged, reasoned over
 merged.owl: merged-nc.owl
-	owltools $< --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
+	owltools $< --assert-inferred-subclass-axioms --useIsInferred --add-ontology-annotation $(DC)/description "This ontology combines all of uberon and cl plus a subset of other ontologies such as GO into a single merged ontology " -o file://`pwd`/$@
 
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
