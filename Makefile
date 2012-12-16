@@ -35,7 +35,7 @@ uberon_edit-implied.obo: uberon_edit.obo
 
 # TODO: use by Oort
 uberon.obo: uberon_edit-implied.obo
-	obo-filter-external.pl --idspace UBERON --xp2rel $< | egrep -v '^(domain|range):' > $@.tmp && obo-add-data-version.pl $@.tmp > $@
+	obo-filter-external.pl --idspace UBERON --xp2rel $< | egrep -v '^(domain|range):' > $@
 
 # check OE can parse:
 # for validation purposes only
@@ -569,6 +569,12 @@ ext-xref.obo:
 bridge/uberon-ext-bridge-to-zfa.obo: ext-xref.obo
 	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ../ext-xref.obo
 
+# see #157
+ext-xref-conflict.obo:
+	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(U,Zx),id_idspace(Zx,'ZFA'),Zx\=Z" -select "x(U,Z,Zx)" -label > $@
+ext-xref-conflict2.obo:
+	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(Ux,Z),id_idspace(Ux,'UBERON'),Ux\=U" -select "x(U,Z,Ux)" -label > $@
+
 RELDIR=trunk
 release:
 	cp uberon_edit.owl $(RELDIR)/core.owl ;\
@@ -579,6 +585,7 @@ release:
 	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
 	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
+	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp subsets/*-minimal.obo $(RELDIR)/subsets/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\

@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-zfa
-data-version: 2012-12-09
+data-version: 2012-12-16
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to zfa" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between ZFA and Uberon" xsd:string
@@ -276,8 +276,8 @@ intersection_of: part_of NCBITaxon:7954
 
 [Term]
 id: ZFA:0000330 ! cloacal chamber
-property_value: IAO:0000589 "cloaca (zebrafish)" xsd:string
-intersection_of: UBERON:0000162 ! cloaca
+property_value: IAO:0000589 "cloacal lumen (zebrafish)" xsd:string
+intersection_of: UBERON:0012463 ! cloacal lumen
 intersection_of: part_of NCBITaxon:7954
 
 [Term]
@@ -876,8 +876,8 @@ intersection_of: part_of NCBITaxon:7954
 
 [Term]
 id: ZFA:0000590 ! oral region
-property_value: IAO:0000589 "oral opening (zebrafish)" xsd:string
-intersection_of: UBERON:0000166 ! oral opening
+property_value: IAO:0000589 "mouth (zebrafish)" xsd:string
+intersection_of: UBERON:0000165 ! mouth
 intersection_of: part_of NCBITaxon:7954
 
 [Term]
@@ -3287,6 +3287,12 @@ intersection_of: UBERON:0002384 ! connective tissue
 intersection_of: part_of NCBITaxon:7954
 
 [Term]
+id: ZFA:0005658 ! lymph
+property_value: IAO:0000589 "lymph (zebrafish)" xsd:string
+intersection_of: UBERON:0002391 ! lymph
+intersection_of: part_of NCBITaxon:7954
+
+[Term]
 id: ZFA:0000308 ! prevomer
 property_value: IAO:0000589 "vomer (zebrafish)" xsd:string
 intersection_of: UBERON:0002396 ! vomer
@@ -4367,12 +4373,6 @@ intersection_of: UBERON:0003123 ! aortic arch 6
 intersection_of: part_of NCBITaxon:7954
 
 [Term]
-id: ZFA:0001270 ! blastema
-property_value: IAO:0000589 "blastema (zebrafish)" xsd:string
-intersection_of: UBERON:0005306 ! blastema
-intersection_of: part_of NCBITaxon:7954
-
-[Term]
 id: ZFA:0000386 ! macula
 property_value: IAO:0000589 "macula (zebrafish)" xsd:string
 intersection_of: UBERON:0000054 ! macula
@@ -4811,13 +4811,13 @@ intersection_of: UBERON:0004638 ! blood vessel endothelium
 intersection_of: part_of NCBITaxon:7954
 
 [Term]
-id: ZFA:0005307 ! afferent arteriole
+id: ZFA:0005307 ! afferent glomerular arteriole
 property_value: IAO:0000589 "afferent arteriole (zebrafish)" xsd:string
 intersection_of: UBERON:0004639 ! afferent arteriole
 intersection_of: part_of NCBITaxon:7954
 
 [Term]
-id: ZFA:0005308 ! efferent arteriole
+id: ZFA:0005308 ! efferent glomerular arteriole
 property_value: IAO:0000589 "efferent arteriole (zebrafish)" xsd:string
 intersection_of: UBERON:0004640 ! efferent arteriole
 intersection_of: part_of NCBITaxon:7954
@@ -5714,6 +5714,42 @@ intersection_of: part_of NCBITaxon:7954
 id: ZFA:0005147 ! regenerating tissue
 property_value: IAO:0000589 "regenerating anatomical structure (zebrafish)" xsd:string
 intersection_of: UBERON:0007567 ! regenerating anatomical structure
+intersection_of: part_of NCBITaxon:7954
+
+[Term]
+id: ZFA:0001269 ! regenerating fin
+property_value: IAO:0000589 "regenerating fin/limb (zebrafish)" xsd:string
+intersection_of: UBERON:2001269 ! regenerating fin/limb
+intersection_of: part_of NCBITaxon:7954
+
+[Term]
+id: ZFA:0001389 ! regeneration epithelium
+property_value: IAO:0000589 "regeneration epithelium of fin/limb (zebrafish)" xsd:string
+intersection_of: UBERON:2001389 ! regeneration epithelium of fin/limb
+intersection_of: part_of NCBITaxon:7954
+
+[Term]
+id: ZFA:0001388 ! epithelial mesenchymal boundary
+property_value: IAO:0000589 "epithelial mesenchymal boundary of regenerating fin/limb (zebrafish)" xsd:string
+intersection_of: UBERON:2001388 ! epithelial mesenchymal boundary of regenerating fin/limb
+intersection_of: part_of NCBITaxon:7954
+
+[Term]
+id: ZFA:0005149 ! distal epidermal cap
+property_value: IAO:0000589 "distal epidermal cap of regenerating fin/limb (zebrafish)" xsd:string
+intersection_of: UBERON:2005149 ! distal epidermal cap of regenerating fin/limb
+intersection_of: part_of NCBITaxon:7954
+
+[Term]
+id: ZFA:0005150 ! basal regeneration epithelium
+property_value: IAO:0000589 "basal regeneration epithelium of regenerating fin/limb (zebrafish)" xsd:string
+intersection_of: UBERON:2005150 ! basal regeneration epithelium of regenerating fin/limb
+intersection_of: part_of NCBITaxon:7954
+
+[Term]
+id: ZFA:0001270 ! blastema
+property_value: IAO:0000589 "blastema of regenerating fin/limb (zebrafish)" xsd:string
+intersection_of: UBERON:0012438 ! blastema of regenerating fin/limb
 intersection_of: part_of NCBITaxon:7954
 
 [Term]

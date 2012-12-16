@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-emapa
-data-version: 2012-12-09
+data-version: 2012-12-16
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to emapa" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between EMAPA (abstract developmental mouse) and Uberon" xsd:string
@@ -886,7 +886,7 @@ property_value: IAO:0000589 "ulna cartilage condensation (embryonic mouse)" xsd:
 is_a: UBERON:0006306 ! ulna cartilage condensation
 
 [Term]
-id: EMAPA:19142 ! tibia of lower leg
+id: EMAPA:19142 ! tibia
 property_value: IAO:0000589 "tibia (embryonic mouse)" xsd:string
 is_a: UBERON:0000979 ! tibia
 
@@ -1182,8 +1182,8 @@ is_a: UBERON:0001042 ! chordate pharynx
 
 [Term]
 id: EMAPA:16700 ! oesophageal region
-property_value: IAO:0000589 "esophageal region (embryonic mouse)" xsd:string
-is_a: UBERON:0009143 ! esophageal region
+property_value: IAO:0000589 "developing esophageal region (embryonic mouse)" xsd:string
+is_a: UBERON:0009143 ! developing esophageal region
 
 [Term]
 id: EMAPA:16833 ! oesophagus of foregut
@@ -1262,8 +1262,8 @@ is_a: UBERON:0000930 ! stomodeum
 
 [Term]
 id: EMAPA:16262 ! oral region
-property_value: IAO:0000589 "oral opening (embryonic mouse)" xsd:string
-is_a: UBERON:0000166 ! oral opening
+property_value: IAO:0000589 "mouth (embryonic mouse)" xsd:string
+is_a: UBERON:0000165 ! mouth
 
 [Term]
 id: EMAPA:17411 ! oral cavity
@@ -1929,6 +1929,16 @@ is_a: UBERON:0001230 ! glomerular capsule
 id: EMAPA:18679 ! renal capsule
 property_value: IAO:0000589 "kidney capsule (embryonic mouse)" xsd:string
 is_a: UBERON:0002015 ! kidney capsule
+
+[Term]
+id: EMAPA:27979 ! parietal epithelium
+property_value: IAO:0000589 "glomerular parietal epithelium (embryonic mouse)" xsd:string
+is_a: UBERON:0005750 ! glomerular parietal epithelium
+
+[Term]
+id: EMAPA:28260 ! parietal epithelium
+property_value: IAO:0000589 "glomerular parietal epithelium (embryonic mouse)" xsd:string
+is_a: UBERON:0005750 ! glomerular parietal epithelium
 
 [Term]
 id: EMAPA:27985 ! urinary space of renal corpuscle of Bowman's capsule of maturing renal corpuscle
@@ -3197,8 +3207,8 @@ is_a: UBERON:0001681 ! nasal bone
 
 [Term]
 id: EMAPA:25111 ! zygomatic bone
-property_value: IAO:0000589 "zygomatic bone (embryonic mouse)" xsd:string
-is_a: UBERON:0001683 ! zygomatic bone
+property_value: IAO:0000589 "jugal bone (embryonic mouse)" xsd:string
+is_a: UBERON:0001683 ! jugal bone
 
 [Term]
 id: EMAPA:18650 ! hyoid bone of skeleton of pharynx of foregut
@@ -3676,22 +3686,12 @@ property_value: IAO:0000589 "sympathetic ganglion (embryonic mouse)" xsd:string
 is_a: UBERON:0001806 ! sympathetic ganglion
 
 [Term]
-id: EMAPA:16987 ! nerve plexus of spinal (also: UBERON:0001813 'somatic nerve plexus')
-property_value: IAO:0000589 "nerve plexus (embryonic mouse)" xsd:string
-is_a: UBERON:0001810 ! nerve plexus
-
-[Term]
-id: EMAPA:18224 ! nerve plexus of autonomic (also: UBERON:0001816 'autonomic nerve plexus')
-property_value: IAO:0000589 "nerve plexus (embryonic mouse)" xsd:string
-is_a: UBERON:0001810 ! nerve plexus
-
-[Term]
 id: EMAPA:18233 ! conjunctival sac
 property_value: IAO:0000589 "conjunctival sac (embryonic mouse)" xsd:string
 is_a: UBERON:0005908 ! conjunctival sac
 
 [Term]
-id: EMAPA:16987 ! nerve plexus of spinal (also: UBERON:0001810 'nerve plexus')
+id: EMAPA:16987 ! nerve plexus of spinal
 property_value: IAO:0000589 "somatic nerve plexus (embryonic mouse)" xsd:string
 is_a: UBERON:0001813 ! somatic nerve plexus
 
@@ -3704,11 +3704,6 @@ is_a: UBERON:0001814 ! brachial nerve plexus
 id: EMAPA:17587 ! lumbo-sacral plexus
 property_value: IAO:0000589 "lumbosacral nerve plexus (embryonic mouse)" xsd:string
 is_a: UBERON:0001815 ! lumbosacral nerve plexus
-
-[Term]
-id: EMAPA:18224 ! nerve plexus of autonomic (also: UBERON:0001810 'nerve plexus')
-property_value: IAO:0000589 "autonomic nerve plexus (embryonic mouse)" xsd:string
-is_a: UBERON:0001816 ! autonomic nerve plexus
 
 [Term]
 id: EMAPA:18334 ! mucous membranes (also: UBERON:0004785 'respiratory system mucosa')
@@ -4104,6 +4099,16 @@ is_a: UBERON:0011940 ! arrector pili muscle of vibrissa
 id: EMAPA:18608 ! bronchial artery
 property_value: IAO:0000589 "bronchial artery (embryonic mouse)" xsd:string
 is_a: UBERON:0002040 ! bronchial artery
+
+[Term]
+id: EMAPA:19307 ! colloid-filled follicles
+property_value: IAO:0000589 "thyroid follicle (embryonic mouse)" xsd:string
+is_a: UBERON:0005305 ! thyroid follicle
+
+[Term]
+id: EMAPA:19308 ! colloid-filled follicles
+property_value: IAO:0000589 "thyroid follicle (embryonic mouse)" xsd:string
+is_a: UBERON:0005305 ! thyroid follicle
 
 [Term]
 id: EMAPA:17068 ! thyroid of gland of foregut
@@ -5421,6 +5426,11 @@ property_value: IAO:0000589 "infundibular recess of 3rd ventricle (embryonic mou
 is_a: UBERON:0006250 ! infundibular recess of 3rd ventricle
 
 [Term]
+id: EMAPA:18224 ! nerve plexus of autonomic
+property_value: IAO:0000589 "autonomic nerve plexus (embryonic mouse)" xsd:string
+is_a: UBERON:0001816 ! autonomic nerve plexus
+
+[Term]
 id: EMAPA:18439 ! inferior of cervical
 property_value: IAO:0000589 "inferior cervical ganglion (embryonic mouse)" xsd:string
 is_a: UBERON:0002440 ! inferior cervical ganglion
@@ -5612,8 +5622,8 @@ is_a: UBERON:0002533 ! tail bud
 
 [Term]
 id: EMAPA:16054 ! cavities
-property_value: IAO:0000589 "anatomical cavity (embryonic mouse)" xsd:string
-is_a: UBERON:0002553 ! anatomical cavity
+property_value: IAO:0000589 "extraembryonic cavities (embryonic mouse)" xsd:string
+is_a: UBERON:0012466 ! extraembryonic cavities
 
 [Term]
 id: EMAPA:18547 ! head of caudate nucleus
@@ -6517,13 +6527,13 @@ is_a: UBERON:0003292 ! meninx of spinal cord
 
 [Term]
 id: EMAPA:16572 ! gland of stomatodaeum
-property_value: IAO:0000589 "gland of oral region (embryonic mouse)" xsd:string
-is_a: UBERON:0003293 ! gland of oral region
+property_value: IAO:0000589 "oral gland (embryonic mouse)" xsd:string
+is_a: UBERON:0010047 ! oral gland
 
 [Term]
 id: EMAPA:16723 ! gland of oral region
-property_value: IAO:0000589 "gland of oral region (embryonic mouse)" xsd:string
-is_a: UBERON:0003293 ! gland of oral region
+property_value: IAO:0000589 "oral gland (embryonic mouse)" xsd:string
+is_a: UBERON:0010047 ! oral gland
 
 [Term]
 id: EMAPA:16557 ! gland of foregut
@@ -8981,6 +8991,26 @@ property_value: IAO:0000589 "alveolar system (embryonic mouse)" xsd:string
 is_a: UBERON:0006524 ! alveolar system
 
 [Term]
+id: EMAPA:27407 ! submucosa of fundus of stomach of gut
+property_value: IAO:0000589 "submucosa of fundus of stomach (embryonic mouse)" xsd:string
+is_a: UBERON:0004933 ! submucosa of fundus of stomach
+
+[Term]
+id: EMAPA:27153 ! submucosa of fundus of stomach of foregut
+property_value: IAO:0000589 "submucosa of fundus of stomach (embryonic mouse)" xsd:string
+is_a: UBERON:0004933 ! submucosa of fundus of stomach
+
+[Term]
+id: EMAPA:27201 ! submucosa of pyloric region of stomach of foregut
+property_value: IAO:0000589 "submucosa of pylorus (embryonic mouse)" xsd:string
+is_a: UBERON:0004937 ! submucosa of pylorus
+
+[Term]
+id: EMAPA:27503 ! submucosa of pyloric region of stomach of gut
+property_value: IAO:0000589 "submucosa of pylorus (embryonic mouse)" xsd:string
+is_a: UBERON:0004937 ! submucosa of pylorus
+
+[Term]
 id: EMAPA:16523 ! rostral neuropore
 property_value: IAO:0000589 "anterior neuropore (embryonic mouse)" xsd:string
 is_a: UBERON:0005070 ! anterior neuropore
@@ -9012,23 +9042,23 @@ is_a: UBERON:0005092 ! right horn of sinus venosus
 
 [Term]
 id: EMAPA:27758 ! renal connecting tubule of s-shaped body of early tubule of metanephros of urinary system
-property_value: IAO:0000589 "connecting tubule (embryonic mouse)" xsd:string
-is_a: UBERON:0005097 ! connecting tubule
+property_value: IAO:0000589 "renal connecting tubule (embryonic mouse)" xsd:string
+is_a: UBERON:0005097 ! renal connecting tubule
 
 [Term]
 id: EMAPA:27790 ! renal connecting tubule of renal tubule
-property_value: IAO:0000589 "connecting tubule (embryonic mouse)" xsd:string
-is_a: UBERON:0005097 ! connecting tubule
+property_value: IAO:0000589 "renal connecting tubule (embryonic mouse)" xsd:string
+is_a: UBERON:0005097 ! renal connecting tubule
 
 [Term]
 id: EMAPA:27865 ! renal connecting tubule of s-shaped body of early tubule of metanephros of urinary system
-property_value: IAO:0000589 "connecting tubule (embryonic mouse)" xsd:string
-is_a: UBERON:0005097 ! connecting tubule
+property_value: IAO:0000589 "renal connecting tubule (embryonic mouse)" xsd:string
+is_a: UBERON:0005097 ! renal connecting tubule
 
 [Term]
 id: EMAPA:28011 ! renal connecting tubule of cortical renal tubule
-property_value: IAO:0000589 "connecting tubule (embryonic mouse)" xsd:string
-is_a: UBERON:0005097 ! connecting tubule
+property_value: IAO:0000589 "renal connecting tubule (embryonic mouse)" xsd:string
+is_a: UBERON:0005097 ! renal connecting tubule
 
 [Term]
 id: EMAPA:28393 ! distal convoluted tubule (also: UBERON:0001292 'distal convoluted tubule') (also: UBERON:0005102 'late distal convoluted tubule')
@@ -11027,13 +11057,13 @@ is_a: UBERON:0006252 ! intersubcardinal venous anastomosis
 
 [Term]
 id: EMAPA:16676 ! intraretinal space of optic cup
-property_value: IAO:0000589 "intraretinal space (embryonic mouse)" xsd:string
-is_a: UBERON:0006253 ! intraretinal space
+property_value: IAO:0000589 "embryonic intraretinal space (embryonic mouse)" xsd:string
+is_a: UBERON:0006253 ! embryonic intraretinal space
 
 [Term]
 id: EMAPA:17170 ! intraretinal space of retina
-property_value: IAO:0000589 "intraretinal space (embryonic mouse)" xsd:string
-is_a: UBERON:0006253 ! intraretinal space
+property_value: IAO:0000589 "embryonic intraretinal space (embryonic mouse)" xsd:string
+is_a: UBERON:0006253 ! embryonic intraretinal space
 
 [Term]
 id: EMAPA:26930 ! ischial cartilage condensation
@@ -11282,13 +11312,13 @@ is_a: UBERON:0006310 ! vitelline venous plexus
 
 [Term]
 id: EMAPA:18047 ! left hepatic recess
-property_value: IAO:0000589 "left hepatic recess (embryonic mouse)" xsd:string
-is_a: UBERON:0006342 ! left hepatic recess
+property_value: IAO:0000589 "left subhepatic recess (embryonic mouse)" xsd:string
+is_a: UBERON:0006342 ! left subhepatic recess
 
 [Term]
 id: EMAPA:18050 ! right hepatic recess
-property_value: IAO:0000589 "right hepatic recess (embryonic mouse)" xsd:string
-is_a: UBERON:0006343 ! right hepatic recess
+property_value: IAO:0000589 "right subhepatic recess (embryonic mouse)" xsd:string
+is_a: UBERON:0006343 ! right subhepatic recess
 
 [Term]
 id: EMAPA:18750 ! epigastric artery
@@ -11594,11 +11624,6 @@ is_a: UBERON:0007732 ! interphalangeal joint of manual digit 5
 id: EMAPA:19010 ! cruciate ligament
 property_value: IAO:0000589 "cruciate ligament of atlas (embryonic mouse)" xsd:string
 is_a: UBERON:0011106 ! cruciate ligament of atlas
-
-[Term]
-id: EMAPA:29034 ! muscular layer
-property_value: IAO:0000589 "muscle layer (embryonic mouse)" xsd:string
-is_a: UBERON:0006660 ! muscle layer
 
 [Term]
 id: EMAPA:19210 ! epicranial aponeurosis
@@ -11974,6 +11999,11 @@ is_a: UBERON:0006854 ! distal straight tubule postmacula segment
 id: EMAPA:25036 ! wall
 property_value: IAO:0000589 "anatomical wall (embryonic mouse)" xsd:string
 is_a: UBERON:0000060 ! anatomical wall
+
+[Term]
+id: EMAPA:29034 ! muscular layer of uterine horn
+property_value: IAO:0000589 "ureter muscle layer (embryonic mouse)" xsd:string
+is_a: UBERON:0006855 ! ureter muscle layer
 
 [Term]
 id: EMAPA:28880 ! mesenchymal stroma of ovary

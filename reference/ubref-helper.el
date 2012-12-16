@@ -5,7 +5,7 @@
 (defun set-id (id)
   ""
   (interactive "sNum: ")
-  (setq last-ubref-id id))
+  (setq last-ubref-id (string-to-number id)))
 
 (defvar last-ubref-id 0
   "*database identifier incremental counter")
