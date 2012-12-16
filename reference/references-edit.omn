@@ -489,7 +489,128 @@ THEN generate:
 
     Types:
         ubref:ontology_design_pattern
-  
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000034>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Digestive tract"^^xsd:string,
+        rdfs:label "Digestive tract"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        dc:description "
+
+## Digestive Tract
+
+We follow Kardong in defining the digestive tract as a tube extending
+from mouth to anus. We use this definition across bilateria.
+
+Note that various other terms are used for other divisions or parts of
+the digestive system, for example
+
+ * alimentary tract - in Kardong, the portion of the DT after the pharynx
+ * digestive system - DT plus various organs
+ * gut - ambiguous term, sometimes synonymous with DT, sometimes intestines
+
+Reference: Kardong, fig 13.1
+
+## Subdivisions of the digestive tract
+
+Like any tube, the DT can be subdivided along its main axis, which we
+call the proximal-distal axis (terminology may vary across species;
+e.g. in some metazoans the terms oral-aboral may be used)
+
+Multiple overlapping subdivisions may exist. 
+
+## Anatomy of a digestive tract subdivision
+
+The DT can be subdivided along a proximal-distal axis. Each
+subdivision will typically have similar parts. Minimally: a wall, and
+a lumen, bounded by the wall.
+
+We use the class `subdivision of digestive tract` for any section of
+the tube, including the wall and lumen.
+
+In vertebrates the a subdivision typically contains:
+
+ * `mucosa`
+  * `epithelium`
+  * `lamina propria`
+  * `muscularis mucosa`
+ * `submucosa`
+ * `muscularis propria` (muscular coat)
+  * `circular muscle`
+  * `longitudinal muscle`
+ * `serosa` or `adventita`
+
+Glands may occur in the mucosa, submucosa or outside the walls
+
+## Ends of the digestive tract
+
+In metazoans, the DT is typically open at both ends - the mouth and
+the anus.
+
+We attempt to clearly distinguish between the opening itself (an
+orifice or aperture), the terminal portion of the tube (which
+encompasses the opening an extends along the tube some distance), and
+the lumen of that terminal portion. Terminology is often quite loose
+here.
+
+For the proximal section we have:
+
+ * `oral opening` - orifice
+ * `mouth` - terminal subdivision
+ * `oral cavity` - lumen of mouth
+
+We propose that these classes can be used across metazoans. In
+vertebrates the mouth typically contains tongue, teeth, etc, and
+extends to the pharynx.
+
+For the distal section we have:
+
+ * `anus` - orifice
+ * `terminal part of digestive tract` (`rectum` in vertebrates)
+ * `rectal lumen`
+
+We propose that these classes are also used across metazoans.
+
+The term 'rectum' may sometimes be used as a synonym for the terminal
+portion, but in vertebrates it used more specifically for the terminal
+portion of the large intestine, which is not necessarily the terminal
+portion of the DT when a cloacal chamber is present.
+
+### Cloaca
+
+The cloaca may be considered part of the DT, but it is also part of
+the genitourinary system. Note that if the rectum is considered the
+terminal portion of the DT, and the rectum empties into the cloaca,
+then it logically follows that the cloaca is not part of the DT.
+
+To avoid contradictions, we consider the rectum to be a part of the
+terminal part of DT, not necessarily the most distal part.
+
+### Variation in mouth and anus
+
+
+
+## Embryonic subdivisions
+
+One subdivision of the gut is as follows
+
+ * `foregut`
+ * `midgut`
+ * `hindgut`
+
+These are defined very generally for bilateria. For vertebrates,
+standard borders are used. See ontology for details.
+
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+   
 
 Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000024>
 
@@ -760,7 +881,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000019>
         dc:abstract "..."^^xsd:string,
         dc:description "
 
-We consider the autopod as consisting of 3 segments, divided according to the following jointly-exhaustive mutually-disjoint part-hierarchy, listed proximal to distal:
+We consider the autopod as consisting of 3 segments, divided according to the following jointly-exhaustive mutually-disjoint part-hierarchy, listed distal to proximal
 
   * `skeleton of autopod`    (aka 'autopod')
       * `skeleton of acropodium` (aka 'acropodium')
@@ -1313,6 +1434,89 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000003>
         dc:creator "other AO editors"^^xsd:string,
         dc:description "
 
+## Vertebrate appendages
+
+The generic pan-vertebrate schema is to allow treatment of free
+limb/fin plus girdle as both a single unit, and as two sub-parts, as
+in the following partonomy:
+
+ * `appendage girdle complex` (i.e. limb/fin PLUS girdle region)
+     * `appendage girdle region`
+     * `limb/fin` (aka free limb/fin)
+
+Note these classes are all organism subdivisions.
+
+The hierarchy is jointly exhaustive and pairwise disjoint with respect
+to parthood.
+
+This generic structure is repeated 4 times in many vertebrates - once
+bilaterally, and once for pelvic/pectoral.
+
+
+## Tetrapods 
+
+In tetrapods, this is further specified as the following JEPD
+hierarchy (with siblings ordered proximal to distal):
+
+ * `appendage girdle complex` (i.e. limb PLUS girdle region)
+     * `appendage girdle region`
+     * `limb` (aka free limb)
+         * `stylopod` 
+         * `zeugopod`
+         * `autopod`
+             * `mesopodium region`
+             * `digitopodium region` (aka hand/foot proper)
+                 * `metapodial region`
+                 * `acropodial segment`
+
+
+## Other combinations
+
+We include `arm` as the mereological sub of forelimb stylo- and zeugo-
+pods, and `leg` as the mereological sum of the corresponding parts in
+the hindlimb.
+
+Note that these labels are ambiguous. For example, FMA follows some
+clinical practice in using 'arm' and 'leg' for the zuegopodial segments.
+
+## Skeletons
+
+We include a parallel structure for representing skeletal subdivisions.
+
+ * `entire appendicular skeleton` **
+     * `girdle skeleton`
+     * `skeleton of limb`
+         * `stylopodial skeleton` 
+         * `zeugopodial skeleton`
+         * `skeleton of autopod`
+             * `mesopodium skeleton`
+             * `digitopodium skeleton` (aka skeleton of hand/foot proper)
+                 * `metapodial skeleton`
+                 * `acropodial skeleton`
+
+Note that `entire appendicular skeleton` denotes the entire skeleton of all limbs together.
+
+## Embryonic skeleton
+
+We consider pre-cartilage condensations part of the skeleton
+
+## Skeletal elements
+
+We follow the following subclass hierarchy (ordered ontogenetically, most recent first)
+
+ * X element
+     * X bone
+     * X cartilage
+     * X pre-cartilage condensation
+     * X mesenchyme
+
+This is consistent with the structure in EHDAA2
+
+Some exceptions:
+
+ * we have not always created the 'X element' grouping class, but we will likely add more of these in future.
+ * sometimes the developmental relationship may not be 1:1 - e.g. there may be fusions/splits
+
 "^^xsd:string
     
     Types: 
@@ -1325,10 +1529,12 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000004>
         ubref:has_status <http://purl.org/spar/pso/initial-draft>,
         dc:date "2012"^^xsd:int,
         rdfs:seeAlso "https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit"^^xsd:anyURI,
-        dc:title "Mereotopology Axioms in Anatomy Ontologies"^^xsd:string,
-        rdfs:label "Mereotopology Axioms in Anatomy Ontologies"^^xsd:string,
+        dc:title "Mereotopological relations"^^xsd:string,
+        rdfs:label "Mereotopological relations"^^xsd:string,
         dc:creator "Uberon editors"^^xsd:string,
         dc:description "
+
+This article needs to be migrated from the google doc
 
 "^^xsd:string
     
@@ -1340,16 +1546,19 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000001>
 
     Annotations: 
         dc:creator "Chris Mungall"^^xsd:string,
-        dc:title "The representation of epithelium morphotopology in ontologies"^^xsd:string,
+        dc:title "Epithelial configurations"^^xsd:string,
+        dc:abstract "Epithelia can take on a variety of different shapes and topologies. We present here a plan for a consistent representation of epithelial morphotopology based on representation in existing ontologies. We also look at the representation of ducts in different ontologies."^^xsd:string,
         dc:creator "David Osumi-Sutherland"^^xsd:string,
         ubref:has_status <http://purl.org/spar/pso/initial-draft>,
         dc:date "2011"^^xsd:int,
         dc:creator "Melissa Haendel"^^xsd:string,
-        dc:creator "Jonathan Bard"^^xsd:string,
-        rdfs:label "The representation of epithelium morphotopology in ontologies"^^xsd:string,
+        dc:contributor "Jonathan Bard"^^xsd:string,
+        rdfs:label "Epithelial configurations"^^xsd:string,
         rdfs:seeAlso "https://docs.google.com/document/d/1MnUgispgGfNQoezYzWzzGTnkAnI0gzRnJIwdip6MMtw/edit"^^xsd:anyURI,
-        dc:creator "David Hill"^^xsd:string,
+        dc:contributor "David Hill"^^xsd:string,
         dc:description "
+
+The documentation for this section has yet to be moved from the google document.
 
 "^^xsd:string
     
