@@ -525,6 +525,7 @@ Multiple overlapping subdivisions may exist.
 
 A standard list of divisions order proximal-distal for vertebrates is
 
+ * `mouth`
  * `pharynx`
  * `esophagus`
  * `stomach`
@@ -540,6 +541,26 @@ and use functional grouping classes such as `food storage organ`.
 There are variations and subdivisions of this scheme in vertebrates;
 e.g. the esophageal structures of avians; the stomachs of ruminants;
 divisions of the intestine in mammals. See Kardong for details.
+
+A 'combined' vertebrate pattern may be
+
+ * `mouth`
+ * `pharynx`
+  * `nasopharynx`
+  * `oropharynx`
+  * `hypopharynx`
+ * `esophagus` (may have: crop)
+ * `stomach` (may have: proventriculus, gizzard, multiple 'sub-stomachs'; absent in species such as zebrafish)
+ * `intestine`
+  * `small intestine`
+   * `duodenum`
+   * `jejunum`
+   * `ileum`
+  * `large intestine`
+   * `colon`
+   * `rectum`
+
+Note we treat the caecum as a diverticulum and not a true section of the DT
 
 ## Anatomy of a digestive tract subdivision
 
@@ -584,11 +605,14 @@ For the proximal section we have:
 
  * `oral opening` - orifice
  * `mouth` - terminal subdivision
- * `oral cavity` - lumen of mouth
+ * `oral cavity` - lumen of mouth, aka buccal cavity
 
 We propose that these classes can be used across metazoans. In
 vertebrates the mouth typically contains tongue, teeth, etc, and
 extends to the pharynx.
+
+There is some inconsistency in various anatomy ontologies as to the
+extent of the mouth. See section on AOs below
 
 For the distal section we have:
 
@@ -641,6 +665,36 @@ standard borders are used. See ontology for details.
 Some structures start as diverticula of the embryonic DT. We consider
 these to be not part of the DT, but they may still be part of the
 digestive system. Different subdivisions apply for systems.
+
+## Inconsistencies amongst various anatomy ontologies
+
+### Mouth and oral region
+
+MA has distinct classes for mouth an oral region, with the following
+parts:
+
+ * tonsil: O 
+ * tongue: O
+ * oral epithlium: O
+ * soft palate: O
+ * salivary gland: O, M
+ * oral region cartilage bone: O, M
+ * tooth: O, M
+ * gingiva: O, M
+ * oral mucosa: M
+ * lip: M
+ * palate: M
+
+We merge these in Uberon
+
+In FMA, the mouth contains salivary glands, dentition, lips, mucosa,
+soft palate.
+
+EHDAA2 has no class 'mouth', but 'oral region' corresponds to mouth
+
+The tongue and the palate are considered part of the face in FMA (as
+well as part of the mouth)
+
 
 "^^xsd:string
 
