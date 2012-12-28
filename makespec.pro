@@ -117,7 +117,7 @@ nlp_hook(A,B,null) :- true.
             
 'align/align-$A-$B.tbl' <-- ['align/stamp'],
        {anatomy(A),anatomy(B),nlp_hook(A,B,Hook)},
-       'blip-findall -i external-disjoints.obo  -r obol_av -r $A -r $B -u metadata_nlp -i $Hook.pro -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S),class(X),class(Y)" -select "m(X,Y,S)" -use_tabs -label -no_pred > $@'.
+       'blip-findall -i external-disjoints.obo  -r obol_av -r $A -r $B -u metadata_nlp -i $Hook.pro -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S),class(X),class(Y),\\+disjoint_from(X,Y),\\+disjoint_from(Y,X)" -select "m(X,Y,S)" -use_tabs -label -no_pred > $@'.
 
 'align/stamp' <-- [], 'touch $@'.
 

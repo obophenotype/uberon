@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-ehdaa
-data-version: 2012-12-16
+data-version: 2012-12-28
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -326,6 +326,11 @@ is_a: UBERON:0000301 ! amniotic cavity
 id: EHDAA:136 ! amnion
 property_value: IAO:0000589 "amnion (EHDAA)" xsd:string
 is_a: UBERON:0000305 ! amnion
+
+[Term]
+id: EHDAA:7567 ! choroid invagination
+property_value: IAO:0000589 "ventricular system choroidal fissure (EHDAA)" xsd:string
+is_a: UBERON:0002192 ! ventricular system choroidal fissure
 
 [Term]
 id: EHDAA:127 ! cytotrophoblast
@@ -2014,13 +2019,23 @@ is_a: UBERON:0002064 ! common cardinal vein
 
 [Term]
 id: EHDAA:1316 ! posterior
-property_value: IAO:0000589 "postcardinal vein (EHDAA)" xsd:string
-is_a: UBERON:0002065 ! postcardinal vein
+property_value: IAO:0000589 "posterior cardinal vein (EHDAA)" xsd:string
+is_a: UBERON:0002065 ! posterior cardinal vein
 
 [Term]
 id: EHDAA:1312 ! anterior
 property_value: IAO:0000589 "anterior cardinal vein (EHDAA)" xsd:string
 is_a: UBERON:0003087 ! anterior cardinal vein
+
+[Term]
+id: EHDAA:2631 ! subcardinal vein
+property_value: IAO:0000589 "subcardinal vein (EHDAA)" xsd:string
+is_a: UBERON:0006296 ! subcardinal vein
+
+[Term]
+id: EHDAA:3452 ! intersubcardinal venous anastomosis
+property_value: IAO:0000589 "intersubcardinal venous anastomosis (EHDAA)" xsd:string
+is_a: UBERON:0006252 ! intersubcardinal venous anastomosis
 
 [Term]
 id: EHDAA:7016 ! urachus
@@ -2499,13 +2514,13 @@ is_a: UBERON:0002262 ! celiac ganglion
 
 [Term]
 id: EHDAA:3502 ! lateral ventricle
-property_value: IAO:0000589 "lateral ventricle (EHDAA)" xsd:string
-is_a: UBERON:0002285 ! lateral ventricle
+property_value: IAO:0000589 "telencephalic ventricle (EHDAA)" xsd:string
+is_a: UBERON:0002285 ! telencephalic ventricle
 
 [Term]
 id: EHDAA:6576 ! lateral ventricles
-property_value: IAO:0000589 "lateral ventricle (EHDAA)" xsd:string
-is_a: UBERON:0002285 ! lateral ventricle
+property_value: IAO:0000589 "telencephalic ventricle (EHDAA)" xsd:string
+is_a: UBERON:0002285 ! telencephalic ventricle
 
 [Term]
 id: EHDAA:1343 ! optic recess
@@ -2528,9 +2543,9 @@ property_value: IAO:0000589 "optic recess of third ventricle (EHDAA)" xsd:string
 is_a: UBERON:0002287 ! optic recess of third ventricle
 
 [Term]
-id: EHDAA:3696 ! cerebral aqueduct
-property_value: IAO:0000589 "cerebral aqueduct (EHDAA)" xsd:string
-is_a: UBERON:0002289 ! cerebral aqueduct
+id: EHDAA:3696 ! midbrain cerebral aqueduct
+property_value: IAO:0000589 "midbrain cerebral aqueduct (EHDAA)" xsd:string
+is_a: UBERON:0002289 ! midbrain cerebral aqueduct
 
 [Term]
 id: EHDAA:3019 ! dorsal mesentery
@@ -2856,11 +2871,6 @@ is_a: UBERON:0010351 ! otic capsule cartilage condensation
 id: EHDAA:5789 ! isthmus
 property_value: IAO:0000589 "midbrain-hindbrain boundary (EHDAA)" xsd:string
 is_a: UBERON:0003052 ! midbrain-hindbrain boundary
-
-[Term]
-id: EHDAA:7567 ! choroid invagination
-property_value: IAO:0000589 "tela choroidea (EHDAA)" xsd:string
-is_a: UBERON:0005283 ! tela choroidea
 
 [Term]
 id: EHDAA:366 ! somite
@@ -3853,6 +3863,16 @@ property_value: IAO:0000589 "fourth ventricle (EHDAA)" xsd:string
 is_a: UBERON:0002422 ! fourth ventricle
 
 [Term]
+id: EHDAA:5474 ! telencephalic part of interventricular foramen
+property_value: IAO:0000589 "telencephalic part of interventricular foramen (EHDAA)" xsd:string
+is_a: UBERON:0006301 ! telencephalic part of interventricular foramen
+
+[Term]
+id: EHDAA:3476 ! diencephalic part of interventricular foramen
+property_value: IAO:0000589 "diencephalic part of interventricular foramen (EHDAA)" xsd:string
+is_a: UBERON:0006220 ! diencephalic part of interventricular foramen
+
+[Term]
 id: EHDAA:551 ! primitive pit
 property_value: IAO:0000589 "primitive pit (EHDAA)" xsd:string
 is_a: UBERON:0004055 ! primitive pit
@@ -4053,12 +4073,7 @@ property_value: IAO:0000589 "pulmonary artery (EHDAA)" xsd:string
 is_a: UBERON:0002012 ! pulmonary artery
 
 [Term]
-id: EHDAA:486 ! venous system of cardiovascular system (also: UBERON:0004582 'venous system')
-property_value: IAO:0000589 "systemic venous system (EHDAA)" xsd:string
-is_a: UBERON:0004581 ! systemic venous system
-
-[Term]
-id: EHDAA:486 ! venous system of cardiovascular system (also: UBERON:0004581 'systemic venous system')
+id: EHDAA:486 ! venous system of cardiovascular system
 property_value: IAO:0000589 "venous system (EHDAA)" xsd:string
 is_a: UBERON:0004582 ! venous system
 
@@ -4563,11 +4578,6 @@ property_value: IAO:0000589 "deltoid pre-muscle mass (EHDAA)" xsd:string
 is_a: UBERON:0006219 ! deltoid pre-muscle mass
 
 [Term]
-id: EHDAA:3476 ! diencephalic part of interventricular foramen
-property_value: IAO:0000589 "diencephalic part of interventricular foramen (EHDAA)" xsd:string
-is_a: UBERON:0006220 ! diencephalic part of interventricular foramen
-
-[Term]
 id: EHDAA:844 ! future diencephalon
 property_value: IAO:0000589 "future diencephalon (EHDAA)" xsd:string
 is_a: UBERON:0006222 ! future diencephalon
@@ -4603,24 +4613,9 @@ property_value: IAO:0000589 "frontal bone primordium (EHDAA)" xsd:string
 is_a: UBERON:0006236 ! frontal bone primordium
 
 [Term]
-id: EHDAA:300 ! future brain
-property_value: IAO:0000589 "future brain (EHDAA)" xsd:string
-is_a: UBERON:0006238 ! future brain
-
-[Term]
-id: EHDAA:830 ! future brain
-property_value: IAO:0000589 "future brain (EHDAA)" xsd:string
-is_a: UBERON:0006238 ! future brain
-
-[Term]
 id: EHDAA:4118 ! future central tendon
 property_value: IAO:0000589 "future central tendon (EHDAA)" xsd:string
 is_a: UBERON:0006239 ! future central tendon
-
-[Term]
-id: EHDAA:2643 ! future forebrain
-property_value: IAO:0000589 "future forebrain (EHDAA)" xsd:string
-is_a: UBERON:0006240 ! future forebrain
 
 [Term]
 id: EHDAA:898 ! future spinal cord of central nervous system
@@ -4676,11 +4671,6 @@ is_a: UBERON:0006294 ! stapes pre-cartilage condensation
 id: EHDAA:9024 ! incus pre-cartilage condensation
 property_value: IAO:0000589 "incus pre-cartilage condensation (EHDAA)" xsd:string
 is_a: UBERON:0006248 ! incus pre-cartilage condensation
-
-[Term]
-id: EHDAA:3452 ! intersubcardinal venous anastomosis
-property_value: IAO:0000589 "intersubcardinal venous anastomosis (EHDAA)" xsd:string
-is_a: UBERON:0006252 ! intersubcardinal venous anastomosis
 
 [Term]
 id: EHDAA:4761 ! intraretinal space of retina
@@ -4799,18 +4789,18 @@ is_a: UBERON:0006282 ! primary head vein
 
 [Term]
 id: EHDAA:1993 ! telencephalic vesicle
-property_value: IAO:0000589 "telencephalic vesicle (EHDAA)" xsd:string
-is_a: UBERON:0009676 ! telencephalic vesicle
+property_value: IAO:0000589 "early telencephalic vesicle (EHDAA)" xsd:string
+is_a: UBERON:0009676 ! early telencephalic vesicle
 
 [Term]
 id: EHDAA:2671 ! telencephalic vesicle
-property_value: IAO:0000589 "telencephalic vesicle (EHDAA)" xsd:string
-is_a: UBERON:0009676 ! telencephalic vesicle
+property_value: IAO:0000589 "early telencephalic vesicle (EHDAA)" xsd:string
+is_a: UBERON:0009676 ! early telencephalic vesicle
 
 [Term]
 id: EHDAA:1356 ! prosencephalic vesicle
-property_value: IAO:0000589 "prosencephalic vesicle (EHDAA)" xsd:string
-is_a: UBERON:0006284 ! prosencephalic vesicle
+property_value: IAO:0000589 "early prosencephalic vesicle (EHDAA)" xsd:string
+is_a: UBERON:0006284 ! early prosencephalic vesicle
 
 [Term]
 id: EHDAA:8368 ! scapula cartilage condensation
@@ -4833,11 +4823,6 @@ property_value: IAO:0000589 "sternebral bone pre-cartilage condensation (EHDAA)"
 is_a: UBERON:0006295 ! sternebral bone pre-cartilage condensation
 
 [Term]
-id: EHDAA:2631 ! subcardinal vein
-property_value: IAO:0000589 "subcardinal vein (EHDAA)" xsd:string
-is_a: UBERON:0006296 ! subcardinal vein
-
-[Term]
 id: EHDAA:7989 ! sublingual gland primordium
 property_value: IAO:0000589 "sublingual gland primordium (EHDAA)" xsd:string
 is_a: UBERON:0006297 ! sublingual gland primordium
@@ -4851,11 +4836,6 @@ is_a: UBERON:0006298 ! submandibular gland primordium
 id: EHDAA:7492 ! supracardinal vein
 property_value: IAO:0000589 "supracardinal vein (EHDAA)" xsd:string
 is_a: UBERON:0006300 ! supracardinal vein
-
-[Term]
-id: EHDAA:5474 ! telencephalic part of interventricular foramen
-property_value: IAO:0000589 "telencephalic part of interventricular foramen (EHDAA)" xsd:string
-is_a: UBERON:0006301 ! telencephalic part of interventricular foramen
 
 [Term]
 id: EHDAA:924 ! trigeminal V preganglion
@@ -4901,6 +4881,21 @@ is_a: UBERON:0006643 ! tunica albuginea of testis
 id: EHDAA:9554 ! orbitosphenoid cartilage
 property_value: IAO:0000589 "orbitosphenoid cartilage condensation (EHDAA)" xsd:string
 is_a: UBERON:0005687 ! orbitosphenoid cartilage condensation
+
+[Term]
+id: EHDAA:300 ! future brain
+property_value: IAO:0000589 "future brain (EHDAA)" xsd:string
+is_a: UBERON:0006238 ! future brain
+
+[Term]
+id: EHDAA:830 ! future brain
+property_value: IAO:0000589 "future brain (EHDAA)" xsd:string
+is_a: UBERON:0006238 ! future brain
+
+[Term]
+id: EHDAA:2643 ! future forebrain
+property_value: IAO:0000589 "future forebrain (EHDAA)" xsd:string
+is_a: UBERON:0006240 ! future forebrain
 
 [Term]
 id: EHDAA:6033 ! basioccipital pre-cartilage condensation

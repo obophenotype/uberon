@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-emapa
-data-version: 2012-12-16
+data-version: 2012-12-28
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to emapa" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between EMAPA (abstract developmental mouse) and Uberon" xsd:string
@@ -554,6 +554,11 @@ is_a: UBERON:0000301 ! amniotic cavity
 id: EMAPA:16109 ! amnion
 property_value: IAO:0000589 "amnion (embryonic mouse)" xsd:string
 is_a: UBERON:0000305 ! amnion
+
+[Term]
+id: EMAPA:17548 ! choroid invagination
+property_value: IAO:0000589 "ventricular system choroidal fissure (embryonic mouse)" xsd:string
+is_a: UBERON:0002192 ! ventricular system choroidal fissure
 
 [Term]
 id: EMAPA:17768 ! choroid fissure
@@ -1876,6 +1881,16 @@ property_value: IAO:0000589 "splenic artery (embryonic mouse)" xsd:string
 is_a: UBERON:0001194 ! splenic artery
 
 [Term]
+id: EMAPA:27259 ! muscularis mucosa of mucosa of duodenum of gut
+property_value: IAO:0000589 "muscularis mucosae of duodenum (embryonic mouse)" xsd:string
+is_a: UBERON:0012494 ! muscularis mucosae of duodenum
+
+[Term]
+id: EMAPA:27343 ! muscularis mucosa of mucosa of rectum of gut
+property_value: IAO:0000589 "muscularis mucosae of rectum (embryonic mouse)" xsd:string
+is_a: UBERON:0012497 ! muscularis mucosae of rectum
+
+[Term]
 id: EMAPA:18524 ! quadratus lumborum
 property_value: IAO:0000589 "quadratus lumborum (embryonic mouse)" xsd:string
 is_a: UBERON:0001220 ! quadratus lumborum
@@ -1999,6 +2014,16 @@ is_a: UBERON:0012279 ! paraganglion
 id: EMAPA:18223 ! paraganglion of Zuckerkandl
 property_value: IAO:0000589 "paraaortic body (embryonic mouse)" xsd:string
 is_a: UBERON:0001237 ! paraaortic body
+
+[Term]
+id: EMAPA:27157 ! serosa of fundus of stomach of foregut
+property_value: IAO:0000589 "serosa of fundus of stomach (embryonic mouse)" xsd:string
+is_a: UBERON:0012503 ! serosa of fundus of stomach
+
+[Term]
+id: EMAPA:27415 ! serosa of fundus of stomach of gut
+property_value: IAO:0000589 "serosa of fundus of stomach (embryonic mouse)" xsd:string
+is_a: UBERON:0012503 ! serosa of fundus of stomach
 
 [Term]
 id: EMAPA:18265 ! external sphincter
@@ -2976,16 +3001,6 @@ property_value: IAO:0000589 "ophthalmic vein (embryonic mouse)" xsd:string
 is_a: UBERON:0011191 ! ophthalmic vein
 
 [Term]
-id: EMAPA:19160 ! coronary artery of arterial system of cardiovascular system of organ system
-property_value: IAO:0000589 "coronary artery (embryonic mouse)" xsd:string
-is_a: UBERON:0001621 ! coronary artery
-
-[Term]
-id: EMAPA:25968 ! coronary artery of ascending aorta of arterial system of cardiovascular system of organ system
-property_value: IAO:0000589 "coronary artery (embryonic mouse)" xsd:string
-is_a: UBERON:0001621 ! coronary artery
-
-[Term]
 id: EMAPA:17854 ! anterior cerebral artery
 property_value: IAO:0000589 "anterior cerebral artery (embryonic mouse)" xsd:string
 is_a: UBERON:0001624 ! anterior cerebral artery
@@ -3124,6 +3139,11 @@ is_a: UBERON:0001653 ! facial vein
 id: EMAPA:19315 ! superficial temporal vein
 property_value: IAO:0000589 "superficial temporal vein (embryonic mouse)" xsd:string
 is_a: UBERON:0001657 ! superficial temporal vein
+
+[Term]
+id: EMAPA:19311 ! great cerebral vein of Galen
+property_value: IAO:0000589 "great cerebral vein (embryonic mouse)" xsd:string
+is_a: UBERON:0006666 ! great cerebral vein
 
 [Term]
 id: EMAPA:16797 ! trigeminal V of cranial of ganglion of central nervous system of nervous system of organ system
@@ -4172,13 +4192,28 @@ is_a: UBERON:0002064 ! common cardinal vein
 
 [Term]
 id: EMAPA:16357 ! posterior of cardinal vein
-property_value: IAO:0000589 "postcardinal vein (embryonic mouse)" xsd:string
-is_a: UBERON:0002065 ! postcardinal vein
+property_value: IAO:0000589 "posterior cardinal vein (embryonic mouse)" xsd:string
+is_a: UBERON:0002065 ! posterior cardinal vein
 
 [Term]
-id: EMAPA:16355 ! anterior of cardinal vein
+id: EMAPA:16355 ! anterior cardinal vein
 property_value: IAO:0000589 "anterior cardinal vein (embryonic mouse)" xsd:string
 is_a: UBERON:0003087 ! anterior cardinal vein
+
+[Term]
+id: EMAPA:16241 ! anterior cardinal vein
+property_value: IAO:0000589 "anterior cardinal vein (embryonic mouse)" xsd:string
+is_a: UBERON:0003087 ! anterior cardinal vein
+
+[Term]
+id: EMAPA:16829 ! subcardinal vein
+property_value: IAO:0000589 "subcardinal vein (embryonic mouse)" xsd:string
+is_a: UBERON:0006296 ! subcardinal vein
+
+[Term]
+id: EMAPA:16828 ! inter-subcardinal venous anastomosis
+property_value: IAO:0000589 "intersubcardinal venous anastomosis (embryonic mouse)" xsd:string
+is_a: UBERON:0006252 ! intersubcardinal venous anastomosis
 
 [Term]
 id: EMAPA:18323 ! urachus
@@ -4781,16 +4816,6 @@ property_value: IAO:0000589 "lentiform nucleus (embryonic mouse)" xsd:string
 is_a: UBERON:0002263 ! lentiform nucleus
 
 [Term]
-id: EMAPA:16515 ! 3rd ventricle of future diencephalon
-property_value: IAO:0000589 "third ventricle (embryonic mouse)" xsd:string
-is_a: UBERON:0002286 ! third ventricle
-
-[Term]
-id: EMAPA:16642 ! 3rd ventricle of diencephalon of future forebrain
-property_value: IAO:0000589 "third ventricle (embryonic mouse)" xsd:string
-is_a: UBERON:0002286 ! third ventricle
-
-[Term]
 id: EMAPA:16900 ! 3rd ventricle of diencephalon of forebrain
 property_value: IAO:0000589 "third ventricle (embryonic mouse)" xsd:string
 is_a: UBERON:0002286 ! third ventricle
@@ -4807,8 +4832,8 @@ is_a: UBERON:0002287 ! optic recess of third ventricle
 
 [Term]
 id: EMAPA:17795 ! cerebral aqueduct
-property_value: IAO:0000589 "cerebral aqueduct (embryonic mouse)" xsd:string
-is_a: UBERON:0002289 ! cerebral aqueduct
+property_value: IAO:0000589 "midbrain cerebral aqueduct (embryonic mouse)" xsd:string
+is_a: UBERON:0002289 ! midbrain cerebral aqueduct
 
 [Term]
 id: EMAPA:17025 ! dorsal mesogastrium of mesentery of stomach of foregut
@@ -5267,6 +5292,11 @@ is_a: UBERON:0001179 ! peritoneal cavity
 
 [Term]
 id: EMAPA:29925 ! adventitia
+property_value: IAO:0000589 "adventitia of uterus (embryonic mouse)" xsd:string
+is_a: UBERON:0005741 ! adventitia of uterus
+
+[Term]
+id: EMAPA:29933 ! adventitia of cervix uteri
 property_value: IAO:0000589 "adventitia of uterus (embryonic mouse)" xsd:string
 is_a: UBERON:0005741 ! adventitia of uterus
 
@@ -5824,11 +5854,6 @@ is_a: UBERON:0010351 ! otic capsule cartilage condensation
 id: EMAPA:18803 ! otic cartilage
 property_value: IAO:0000589 "cartilaginous otic capsule (embryonic mouse)" xsd:string
 is_a: UBERON:0005410 ! cartilaginous otic capsule
-
-[Term]
-id: EMAPA:17548 ! choroid invagination
-property_value: IAO:0000589 "tela choroidea (embryonic mouse)" xsd:string
-is_a: UBERON:0005283 ! tela choroidea
 
 [Term]
 id: EMAPA:17148 ! mantle layer of lateral wall of neural tube of future spinal cord of central nervous system of nervous system of organ system
@@ -6721,6 +6746,16 @@ property_value: IAO:0000589 "submucosa of anal canal (embryonic mouse)" xsd:stri
 is_a: UBERON:0003329 ! submucosa of anal canal
 
 [Term]
+id: EMAPA:27217 ! submucosa of caudal part of anal canal
+property_value: IAO:0000589 "submucosa of anal canal (embryonic mouse)" xsd:string
+is_a: UBERON:0003329 ! submucosa of anal canal
+
+[Term]
+id: EMAPA:27227 ! submucosa of rostral part of anal canal
+property_value: IAO:0000589 "submucosa of anal canal (embryonic mouse)" xsd:string
+is_a: UBERON:0003329 ! submucosa of anal canal
+
+[Term]
 id: EMAPA:27083 ! submucosa of rectum of hindgut
 property_value: IAO:0000589 "submucosa of rectum (embryonic mouse)" xsd:string
 is_a: UBERON:0003330 ! submucosa of rectum
@@ -6737,6 +6772,16 @@ is_a: UBERON:0003331 ! submucosa of colon
 
 [Term]
 id: EMAPA:27239 ! submucosa of duodenum of gut
+property_value: IAO:0000589 "submucosa of duodenum (embryonic mouse)" xsd:string
+is_a: UBERON:0003332 ! submucosa of duodenum
+
+[Term]
+id: EMAPA:27027 ! submucosa of rostral part of duodenum of foregut
+property_value: IAO:0000589 "submucosa of duodenum (embryonic mouse)" xsd:string
+is_a: UBERON:0003332 ! submucosa of duodenum
+
+[Term]
+id: EMAPA:27097 ! submucosa of caudal part of duodenum of midgut
 property_value: IAO:0000589 "submucosa of duodenum (embryonic mouse)" xsd:string
 is_a: UBERON:0003332 ! submucosa of duodenum
 
@@ -8101,6 +8146,26 @@ property_value: IAO:0000589 "lateral recess of fourth ventricle (embryonic mouse
 is_a: UBERON:0007656 ! lateral recess of fourth ventricle
 
 [Term]
+id: EMAPA:16654 ! telencephalic part of interventricular foramen of telencephalic vesicle of telencephalon of future forebrain
+property_value: IAO:0000589 "telencephalic part of interventricular foramen (embryonic mouse)" xsd:string
+is_a: UBERON:0006301 ! telencephalic part of interventricular foramen
+
+[Term]
+id: EMAPA:16915 ! telencephalic part of interventricular foramen of telencephalic vesicle of telencephalon of forebrain
+property_value: IAO:0000589 "telencephalic part of interventricular foramen (embryonic mouse)" xsd:string
+is_a: UBERON:0006301 ! telencephalic part of interventricular foramen
+
+[Term]
+id: EMAPA:16643 ! diencephalic part of interventricular foramen of 3rd ventricle of diencephalon of future forebrain
+property_value: IAO:0000589 "diencephalic part of interventricular foramen (embryonic mouse)" xsd:string
+is_a: UBERON:0006220 ! diencephalic part of interventricular foramen
+
+[Term]
+id: EMAPA:16901 ! diencephalic part of interventricular foramen of 3rd ventricle of diencephalon of forebrain
+property_value: IAO:0000589 "diencephalic part of interventricular foramen (embryonic mouse)" xsd:string
+is_a: UBERON:0006220 ! diencephalic part of interventricular foramen
+
+[Term]
 id: EMAPA:18651 ! greater horn of hyoid bone of skeleton of pharynx of foregut
 property_value: IAO:0000589 "hyoid bone greater horn (embryonic mouse)" xsd:string
 is_a: UBERON:0003997 ! hyoid bone greater horn
@@ -8132,8 +8197,8 @@ is_a: UBERON:0003999 ! hyoid bone body
 
 [Term]
 id: EMAPA:30837 ! labia
-property_value: IAO:0000589 "labium (embryonic mouse)" xsd:string
-is_a: UBERON:0004084 ! labium
+property_value: IAO:0000589 "genital labium (embryonic mouse)" xsd:string
+is_a: UBERON:0004084 ! genital labium
 
 [Term]
 id: EMAPA:19056 ! basal cistern of subarachnoid space of meninges of hindbrain of brain of central nervous system of nervous system of organ system
@@ -8289,6 +8354,16 @@ is_a: UBERON:0005338 ! outflow tract aortic component
 id: EMAPA:17330 ! pulmonary component
 property_value: IAO:0000589 "outflow tract pulmonary component (embryonic mouse)" xsd:string
 is_a: UBERON:0005339 ! outflow tract pulmonary component
+
+[Term]
+id: EMAPA:19160 ! coronary artery of arterial system of cardiovascular system of organ system
+property_value: IAO:0000589 "coronary artery (embryonic mouse)" xsd:string
+is_a: UBERON:0001621 ! coronary artery
+
+[Term]
+id: EMAPA:25968 ! coronary artery of ascending aorta of arterial system of cardiovascular system of organ system
+property_value: IAO:0000589 "coronary artery (embryonic mouse)" xsd:string
+is_a: UBERON:0001621 ! coronary artery
 
 [Term]
 id: EMAPA:17013 ! septum primum
@@ -8599,6 +8674,11 @@ is_a: UBERON:0002012 ! pulmonary artery
 id: EMAPA:16240 ! venous system of cardiovascular system of organ system
 property_value: IAO:0000589 "venous system (embryonic mouse)" xsd:string
 is_a: UBERON:0004582 ! venous system
+
+[Term]
+id: EMAPA:18631 ! brain of venous system of cardiovascular system of organ system
+property_value: IAO:0000589 "venous system of brain (embryonic mouse)" xsd:string
+is_a: UBERON:0013146 ! venous system of brain
 
 [Term]
 id: EMAPA:19433 ! C3 of vertebra of cervical region
@@ -9011,6 +9091,16 @@ property_value: IAO:0000589 "submucosa of pylorus (embryonic mouse)" xsd:string
 is_a: UBERON:0004937 ! submucosa of pylorus
 
 [Term]
+id: EMAPA:27199 ! mucosa of pyloric region of stomach of foregut
+property_value: IAO:0000589 "mucosa of pylorus (embryonic mouse)" xsd:string
+is_a: UBERON:0004998 ! mucosa of pylorus
+
+[Term]
+id: EMAPA:27499 ! mucosa of pyloric region of stomach of gut
+property_value: IAO:0000589 "mucosa of pylorus (embryonic mouse)" xsd:string
+is_a: UBERON:0004998 ! mucosa of pylorus
+
+[Term]
 id: EMAPA:16523 ! rostral neuropore
 property_value: IAO:0000589 "anterior neuropore (embryonic mouse)" xsd:string
 is_a: UBERON:0005070 ! anterior neuropore
@@ -9084,6 +9174,16 @@ is_a: UBERON:0006337 ! distal early tubule
 id: EMAPA:28390 ! early distal tubule of renal distal tubule
 property_value: IAO:0000589 "distal early tubule (embryonic mouse)" xsd:string
 is_a: UBERON:0006337 ! distal early tubule
+
+[Term]
+id: EMAPA:30562 ! cranial mesonephric tubule
+property_value: IAO:0000589 "anterior mesonephric tubule (embryonic mouse)" xsd:string
+is_a: UBERON:0005104 ! anterior mesonephric tubule
+
+[Term]
+id: EMAPA:30576 ! cranial mesonephric tubule
+property_value: IAO:0000589 "anterior mesonephric tubule (embryonic mouse)" xsd:string
+is_a: UBERON:0005104 ! anterior mesonephric tubule
 
 [Term]
 id: EMAPA:30571 ! caudal mesonephric tubule of mesonephric tubule of mesonephros of genitourinary system
@@ -10851,16 +10951,6 @@ property_value: IAO:0000589 "deltoid pre-muscle mass (embryonic mouse)" xsd:stri
 is_a: UBERON:0006219 ! deltoid pre-muscle mass
 
 [Term]
-id: EMAPA:16643 ! diencephalic part of interventricular foramen of 3rd ventricle of diencephalon of future forebrain
-property_value: IAO:0000589 "diencephalic part of interventricular foramen (embryonic mouse)" xsd:string
-is_a: UBERON:0006220 ! diencephalic part of interventricular foramen
-
-[Term]
-id: EMAPA:16901 ! diencephalic part of interventricular foramen of 3rd ventricle of diencephalon of forebrain
-property_value: IAO:0000589 "diencephalic part of interventricular foramen (embryonic mouse)" xsd:string
-is_a: UBERON:0006220 ! diencephalic part of interventricular foramen
-
-[Term]
 id: EMAPA:16514 ! future diencephalon
 property_value: IAO:0000589 "future diencephalon (embryonic mouse)" xsd:string
 is_a: UBERON:0006222 ! future diencephalon
@@ -10931,24 +11021,9 @@ property_value: IAO:0000589 "frontal bone primordium (embryonic mouse)" xsd:stri
 is_a: UBERON:0006236 ! frontal bone primordium
 
 [Term]
-id: EMAPA:16089 ! future brain of neural ectoderm of ectoderm of embryo
-property_value: IAO:0000589 "future brain (embryonic mouse)" xsd:string
-is_a: UBERON:0006238 ! future brain
-
-[Term]
-id: EMAPA:16471 ! future brain of central nervous system of nervous system of organ system
-property_value: IAO:0000589 "future brain (embryonic mouse)" xsd:string
-is_a: UBERON:0006238 ! future brain
-
-[Term]
 id: EMAPA:25035 ! future central tendon
 property_value: IAO:0000589 "future central tendon (embryonic mouse)" xsd:string
 is_a: UBERON:0006239 ! future central tendon
-
-[Term]
-id: EMAPA:16640 ! future forebrain
-property_value: IAO:0000589 "future forebrain (embryonic mouse)" xsd:string
-is_a: UBERON:0006240 ! future forebrain
 
 [Term]
 id: EMAPA:16092 ! future spinal cord of neural ectoderm of ectoderm of embryo
@@ -11049,11 +11124,6 @@ is_a: UBERON:0007374 ! incus cartilage condensation
 id: EMAPA:18018 ! inter-parietal bone primordium
 property_value: IAO:0000589 "interparietal bone primordium (embryonic mouse)" xsd:string
 is_a: UBERON:0006251 ! interparietal bone primordium
-
-[Term]
-id: EMAPA:16828 ! inter-subcardinal venous anastomosis
-property_value: IAO:0000589 "intersubcardinal venous anastomosis (embryonic mouse)" xsd:string
-is_a: UBERON:0006252 ! intersubcardinal venous anastomosis
 
 [Term]
 id: EMAPA:16676 ! intraretinal space of optic cup
@@ -11207,13 +11277,28 @@ is_a: UBERON:0006283 ! primitive ventricle of heart
 
 [Term]
 id: EMAPA:16914 ! telencephalic vesicle of telencephalon of forebrain
-property_value: IAO:0000589 "telencephalic vesicle (embryonic mouse)" xsd:string
-is_a: UBERON:0009676 ! telencephalic vesicle
+property_value: IAO:0000589 "early telencephalic vesicle (embryonic mouse)" xsd:string
+is_a: UBERON:0009676 ! early telencephalic vesicle
 
 [Term]
 id: EMAPA:16521 ! prosencephalic vesicle
-property_value: IAO:0000589 "prosencephalic vesicle (embryonic mouse)" xsd:string
-is_a: UBERON:0006284 ! prosencephalic vesicle
+property_value: IAO:0000589 "early prosencephalic vesicle (embryonic mouse)" xsd:string
+is_a: UBERON:0006284 ! early prosencephalic vesicle
+
+[Term]
+id: EMAPA:16515 ! 3rd ventricle of future diencephalon
+property_value: IAO:0000589 "early mesencephalic vesicle (embryonic mouse)" xsd:string
+is_a: UBERON:0013147 ! early mesencephalic vesicle
+
+[Term]
+id: EMAPA:16642 ! 3rd ventricle of diencephalon of future forebrain
+property_value: IAO:0000589 "early midbrain vesicle (embryonic mouse)" xsd:string
+is_a: UBERON:0013148 ! early midbrain vesicle
+
+[Term]
+id: EMAPA:16479 ! 4th ventricle
+property_value: IAO:0000589 "hindbrain vesicle (embryonic mouse)" xsd:string
+is_a: UBERON:0013149 ! hindbrain vesicle
 
 [Term]
 id: EMAPA:18722 ! scapula
@@ -11241,11 +11326,6 @@ property_value: IAO:0000589 "sternebral bone pre-cartilage condensation (embryon
 is_a: UBERON:0006295 ! sternebral bone pre-cartilage condensation
 
 [Term]
-id: EMAPA:16829 ! subcardinal vein
-property_value: IAO:0000589 "subcardinal vein (embryonic mouse)" xsd:string
-is_a: UBERON:0006296 ! subcardinal vein
-
-[Term]
 id: EMAPA:17752 ! sublingual gland primordium
 property_value: IAO:0000589 "sublingual gland primordium (embryonic mouse)" xsd:string
 is_a: UBERON:0006297 ! sublingual gland primordium
@@ -11259,16 +11339,6 @@ is_a: UBERON:0006298 ! submandibular gland primordium
 id: EMAPA:16830 ! supracardinal vein
 property_value: IAO:0000589 "supracardinal vein (embryonic mouse)" xsd:string
 is_a: UBERON:0006300 ! supracardinal vein
-
-[Term]
-id: EMAPA:16654 ! telencephalic part of interventricular foramen of telencephalic vesicle of telencephalon of future forebrain
-property_value: IAO:0000589 "telencephalic part of interventricular foramen (embryonic mouse)" xsd:string
-is_a: UBERON:0006301 ! telencephalic part of interventricular foramen
-
-[Term]
-id: EMAPA:16915 ! telencephalic part of interventricular foramen of telencephalic vesicle of telencephalon of forebrain
-property_value: IAO:0000589 "telencephalic part of interventricular foramen (embryonic mouse)" xsd:string
-is_a: UBERON:0006301 ! telencephalic part of interventricular foramen
 
 [Term]
 id: EMAPA:16740 ! tracheal diverticulum
@@ -11496,11 +11566,6 @@ property_value: IAO:0000589 "muscle layer of epididymis (embryonic mouse)" xsd:s
 is_a: UBERON:0006646 ! muscle layer of epididymis
 
 [Term]
-id: EMAPA:30747 ! muscle layer of epididymis of epididymis
-property_value: IAO:0000589 "muscle layer of epididymis (embryonic mouse)" xsd:string
-is_a: UBERON:0006646 ! muscle layer of epididymis
-
-[Term]
 id: EMAPA:29767 ! adventitia of ductus deferens
 property_value: IAO:0000589 "adventitia of ductus deferens (embryonic mouse)" xsd:string
 is_a: UBERON:0006647 ! adventitia of ductus deferens
@@ -11649,11 +11714,6 @@ is_a: UBERON:0006664 ! greater palatine artery
 id: EMAPA:19217 ! accessory hemiazygos vein
 property_value: IAO:0000589 "accessory hemiazygos vein (embryonic mouse)" xsd:string
 is_a: UBERON:0006665 ! accessory hemiazygos vein
-
-[Term]
-id: EMAPA:19311 ! great cerebral vein of Galen
-property_value: IAO:0000589 "great cerebral vein of Galen (embryonic mouse)" xsd:string
-is_a: UBERON:0006666 ! great cerebral vein of Galen
 
 [Term]
 id: EMAPA:18707 ! carotid canal
@@ -11966,6 +12026,11 @@ property_value: IAO:0000589 "orbitosphenoid (embryonic mouse)" xsd:string
 is_a: UBERON:0002478 ! orbitosphenoid
 
 [Term]
+id: EMAPA:25050 ! head
+property_value: IAO:0000589 "proximal head of humerus (embryonic mouse)" xsd:string
+is_a: UBERON:0006801 ! proximal head of humerus
+
+[Term]
 id: EMAPA:28254 ! visceral epithelium of glomerular tuft
 property_value: IAO:0000589 "glomerular visceral epithelium (embryonic mouse)" xsd:string
 is_a: UBERON:0006852 ! glomerular visceral epithelium
@@ -12001,7 +12066,7 @@ property_value: IAO:0000589 "anatomical wall (embryonic mouse)" xsd:string
 is_a: UBERON:0000060 ! anatomical wall
 
 [Term]
-id: EMAPA:29034 ! muscular layer of uterine horn
+id: EMAPA:28567 ! middle layer
 property_value: IAO:0000589 "ureter muscle layer (embryonic mouse)" xsd:string
 is_a: UBERON:0006855 ! ureter muscle layer
 
@@ -12177,8 +12242,8 @@ is_a: UBERON:0007177 ! lamina propria of mucosa of colon
 
 [Term]
 id: EMAPA:27399 ! muscularis mucosa of mucosa of colon
-property_value: IAO:0000589 "muscularis mucosa of mucosa of colon (embryonic mouse)" xsd:string
-is_a: UBERON:0007178 ! muscularis mucosa of mucosa of colon
+property_value: IAO:0000589 "muscularis mucosae of colon (embryonic mouse)" xsd:string
+is_a: UBERON:0007178 ! muscularis mucosae of colon
 
 [Term]
 id: EMAPA:28806 ! basal cell layer
@@ -12199,6 +12264,21 @@ is_a: UBERON:0007181 ! serosa of infundibulum of uterine tube
 id: EMAPA:31264 ! muscle layer of infundibulum
 property_value: IAO:0000589 "muscle layer of infundibulum of uterine tube (embryonic mouse)" xsd:string
 is_a: UBERON:0007182 ! muscle layer of infundibulum of uterine tube
+
+[Term]
+id: EMAPA:16089 ! future brain of neural ectoderm of ectoderm of embryo
+property_value: IAO:0000589 "future brain (embryonic mouse)" xsd:string
+is_a: UBERON:0006238 ! future brain
+
+[Term]
+id: EMAPA:16471 ! future brain of central nervous system of nervous system of organ system
+property_value: IAO:0000589 "future brain (embryonic mouse)" xsd:string
+is_a: UBERON:0006238 ! future brain
+
+[Term]
+id: EMAPA:16640 ! future forebrain
+property_value: IAO:0000589 "future forebrain (embryonic mouse)" xsd:string
+is_a: UBERON:0006240 ! future forebrain
 
 [Term]
 id: EMAPA:28679 ! blood vessels of bladder

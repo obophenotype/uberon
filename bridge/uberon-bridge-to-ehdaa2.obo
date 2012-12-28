@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-ehdaa2
-data-version: 2012-12-16
+data-version: 2012-12-28
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to ehdaa2" xsd:string
 property_value: dc-description "Equivalence axioms between EHDAA2 and Uberon. EHDAA2 replaces EHDAA" xsd:string
@@ -429,7 +429,7 @@ property_value: IAO:0000589 "amnion (embryonic human)" xsd:string
 is_a: UBERON:0000305 ! amnion
 
 [Term]
-id: EHDAA2:0000250 ! lateral ventricle choroid fissure (also: UBERON:0005283 'tela choroidea')
+id: EHDAA2:0000250 ! lateral ventricle choroid fissure
 property_value: IAO:0000589 "ventricular system choroidal fissure (embryonic human)" xsd:string
 is_a: UBERON:0002192 ! ventricular system choroidal fissure
 
@@ -982,6 +982,11 @@ is_a: UBERON:0008780 ! inner cell mass derived epiblast
 id: EHDAA2:0001929 ! stomatodaeum
 property_value: IAO:0000589 "stomodeum (embryonic human)" xsd:string
 is_a: UBERON:0000930 ! stomodeum
+
+[Term]
+id: EHDAA2:0000121 ! anal pit
+property_value: IAO:0000589 "proctodeum (embryonic human)" xsd:string
+is_a: UBERON:0000931 ! proctodeum
 
 [Term]
 id: EHDAA2:0001326 ! oral region
@@ -2534,6 +2539,11 @@ property_value: IAO:0000589 "epithelium of esophagus (embryonic human)" xsd:stri
 is_a: UBERON:0001976 ! epithelium of esophagus
 
 [Term]
+id: EHDAA2:0004728 ! serum
+property_value: IAO:0000589 "serum (embryonic human)" xsd:string
+is_a: UBERON:0001977 ! serum
+
+[Term]
 id: EHDAA2:0003252 ! blood vessel
 property_value: IAO:0000589 "blood vessel (embryonic human)" xsd:string
 is_a: UBERON:0001981 ! blood vessel
@@ -2649,17 +2659,12 @@ property_value: IAO:0000589 "sinus venosus (embryonic human)" xsd:string
 is_a: UBERON:0002063 ! sinus venosus
 
 [Term]
-id: EHDAA2:0000213 ! cardinal vein
+id: EHDAA2:0000213 ! cardinal vein system
 property_value: IAO:0000589 "cardinal vein (embryonic human)" xsd:string
 is_a: UBERON:0004344 ! cardinal vein
 
 [Term]
-id: EHDAA2:0000304 ! common cardinal vein (also: UBERON:0009769 'left common cardinal vein')
-property_value: IAO:0000589 "common cardinal vein (embryonic human)" xsd:string
-is_a: UBERON:0002064 ! common cardinal vein
-
-[Term]
-id: EHDAA2:0000304 ! common cardinal vein left  (also: UBERON:0002064 'common cardinal vein')
+id: EHDAA2:0000304 ! common cardinal vein left
 property_value: IAO:0000589 "left common cardinal vein (embryonic human)" xsd:string
 is_a: UBERON:0009769 ! left common cardinal vein
 
@@ -2670,18 +2675,43 @@ is_a: UBERON:0009138 ! right common cardinal vein
 
 [Term]
 id: EHDAA2:0001486 ! posterior cardinal vein
-property_value: IAO:0000589 "postcardinal vein (embryonic human)" xsd:string
-is_a: UBERON:0002065 ! postcardinal vein
+property_value: IAO:0000589 "posterior cardinal vein (embryonic human)" xsd:string
+is_a: UBERON:0002065 ! posterior cardinal vein
+
+[Term]
+id: EHDAA2:0004536 ! posterior cardinal vein right
+property_value: IAO:0000589 "right posterior cardinal vein (embryonic human)" xsd:string
+is_a: UBERON:0009139 ! right posterior cardinal vein
+
+[Term]
+id: EHDAA2:0001486 ! posterior cardinal vein left
+property_value: IAO:0000589 "left posterior cardinal vein (embryonic human)" xsd:string
+is_a: UBERON:0013124 ! left posterior cardinal vein
 
 [Term]
 id: EHDAA2:0000127 ! precardinal vein left
-property_value: IAO:0000589 "precardinal vein left (embryonic human)" xsd:string
-is_a: UBERON:0009771 ! precardinal vein left
+property_value: IAO:0000589 "left anterior cardinal vein (embryonic human)" xsd:string
+is_a: UBERON:0009771 ! left anterior cardinal vein
 
 [Term]
 id: EHDAA2:0004537 ! precardinal vein right
-property_value: IAO:0000589 "precardinal vein right (embryonic human)" xsd:string
-is_a: UBERON:0009772 ! precardinal vein right
+property_value: IAO:0000589 "right anterior cardinal vein (embryonic human)" xsd:string
+is_a: UBERON:0009772 ! right anterior cardinal vein
+
+[Term]
+id: EHDAA2:0000883 ! intersubcardinal venous anastomosis
+property_value: IAO:0000589 "intersubcardinal venous anastomosis (embryonic human)" xsd:string
+is_a: UBERON:0006252 ! intersubcardinal venous anastomosis
+
+[Term]
+id: EHDAA2:0004538 ! subcardinal vein right
+property_value: IAO:0000589 "right subcardinal vein (embryonic human)" xsd:string
+is_a: UBERON:0009140 ! right subcardinal vein
+
+[Term]
+id: EHDAA2:0001932 ! subcardinal vein left
+property_value: IAO:0000589 "left subcardinal vein (embryonic human)" xsd:string
+is_a: UBERON:0013125 ! left subcardinal vein
 
 [Term]
 id: EHDAA2:0002137 ! urachus
@@ -2864,7 +2894,7 @@ property_value: IAO:0000589 "hindlimb zeugopod (embryonic human)" xsd:string
 is_a: UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
-id: EHDAA2:0001904 ! splenic primordium
+id: EHDAA2:0001904 ! spleen
 property_value: IAO:0000589 "spleen primordium (embryonic human)" xsd:string
 is_a: UBERON:0006293 ! spleen primordium
 
@@ -3120,8 +3150,8 @@ is_a: UBERON:0002262 ! celiac ganglion
 
 [Term]
 id: EHDAA2:0001984 ! telencephalon lateral ventricle
-property_value: IAO:0000589 "lateral ventricle (embryonic human)" xsd:string
-is_a: UBERON:0002285 ! lateral ventricle
+property_value: IAO:0000589 "telencephalic ventricle (embryonic human)" xsd:string
+is_a: UBERON:0002285 ! telencephalic ventricle
 
 [Term]
 id: EHDAA2:0000084 ! 3rd ventricle
@@ -3135,8 +3165,8 @@ is_a: UBERON:0002287 ! optic recess of third ventricle
 
 [Term]
 id: EHDAA2:0001163 ! midbrain cerebral aqueduct
-property_value: IAO:0000589 "cerebral aqueduct (embryonic human)" xsd:string
-is_a: UBERON:0002289 ! cerebral aqueduct
+property_value: IAO:0000589 "midbrain cerebral aqueduct (embryonic human)" xsd:string
+is_a: UBERON:0002289 ! midbrain cerebral aqueduct
 
 [Term]
 id: EHDAA2:0004361 ! spinal cord central canal
@@ -3599,11 +3629,6 @@ property_value: IAO:0000589 "midbrain-hindbrain boundary (embryonic human)" xsd:
 is_a: UBERON:0003052 ! midbrain-hindbrain boundary
 
 [Term]
-id: EHDAA2:0000250 ! choroid invagination (also: UBERON:0002192 'ventricular system choroidal fissure')
-property_value: IAO:0000589 "tela choroidea (embryonic human)" xsd:string
-is_a: UBERON:0005283 ! tela choroidea
-
-[Term]
 id: EHDAA2:0004362 ! CNS ventricular system
 property_value: IAO:0000589 "ventricular system of central nervous system (embryonic human)" xsd:string
 is_a: UBERON:0005281 ! ventricular system of central nervous system
@@ -3904,11 +3929,6 @@ property_value: IAO:0000589 "cartilaginous condensation (embryonic human)" xsd:s
 is_a: UBERON:0005863 ! cartilaginous condensation
 
 [Term]
-id: EHDAA2:0003149 ! pre-muscle condensation
-property_value: IAO:0000589 "pre-muscle condensation (embryonic human)" xsd:string
-is_a: UBERON:0005865 ! pre-muscle condensation
-
-[Term]
 id: EHDAA2:0003150 ! pre-cartilage condensation
 property_value: IAO:0000589 "pre-cartilage condensation (embryonic human)" xsd:string
 is_a: UBERON:0005866 ! pre-cartilage condensation
@@ -4085,8 +4105,8 @@ is_a: UBERON:0003236 ! epithelium of lower jaw
 
 [Term]
 id: EHDAA2:0001845 ! skin basal layer
-property_value: IAO:0000589 "skin basal layer (embryonic human)" xsd:string
-is_a: UBERON:0011272 ! skin basal layer
+property_value: IAO:0000589 "embryonic skin basal layer (embryonic human)" xsd:string
+is_a: UBERON:0011272 ! embryonic skin basal layer
 
 [Term]
 id: EHDAA2:0001057 ! mammary gland epithelium
@@ -4789,6 +4809,21 @@ property_value: IAO:0000589 "fourth ventricle (embryonic human)" xsd:string
 is_a: UBERON:0002422 ! fourth ventricle
 
 [Term]
+id: EHDAA2:0001980 ! telencephalic part of interventricular foramen
+property_value: IAO:0000589 "telencephalic part of interventricular foramen (embryonic human)" xsd:string
+is_a: UBERON:0006301 ! telencephalic part of interventricular foramen
+
+[Term]
+id: EHDAA2:0000384 ! diencephalic part of interventricular foramen
+property_value: IAO:0000589 "diencephalic part of interventricular foramen (embryonic human)" xsd:string
+is_a: UBERON:0006220 ! diencephalic part of interventricular foramen
+
+[Term]
+id: EHDAA2:0004064 ! primary interventricular foramen
+property_value: IAO:0000589 "interventricular foramen of heart (embryonic human)" xsd:string
+is_a: UBERON:0013152 ! interventricular foramen of heart
+
+[Term]
 id: EHDAA2:0001521 ! primitive pit
 property_value: IAO:0000589 "primitive pit (embryonic human)" xsd:string
 is_a: UBERON:0004055 ! primitive pit
@@ -4955,8 +4990,8 @@ is_a: UBERON:0005339 ! outflow tract pulmonary component
 
 [Term]
 id: EHDAA2:0004507 ! cardiac veins
-property_value: IAO:0000589 "coronary vein (embryonic human)" xsd:string
-is_a: UBERON:0004148 ! coronary vein
+property_value: IAO:0000589 "cardiac vein (embryonic human)" xsd:string
+is_a: UBERON:0004148 ! cardiac vein
 
 [Term]
 id: EHDAA2:0001825 ! interatrial septum primum
@@ -5104,14 +5139,14 @@ property_value: IAO:0000589 "pulmonary artery (embryonic human)" xsd:string
 is_a: UBERON:0002012 ! pulmonary artery
 
 [Term]
-id: EHDAA2:0002171 ! venous system (also: UBERON:0004582 'venous system')
-property_value: IAO:0000589 "systemic venous system (embryonic human)" xsd:string
-is_a: UBERON:0004581 ! systemic venous system
-
-[Term]
-id: EHDAA2:0002171 ! venous system (also: UBERON:0004581 'systemic venous system')
+id: EHDAA2:0002171 ! venous system
 property_value: IAO:0000589 "venous system (embryonic human)" xsd:string
 is_a: UBERON:0004582 ! venous system
+
+[Term]
+id: EHDAA2:0000185 ! brain venous system
+property_value: IAO:0000589 "venous system of brain (embryonic human)" xsd:string
+is_a: UBERON:0013146 ! venous system of brain
 
 [Term]
 id: EHDAA2:0003143 ! 
@@ -5439,6 +5474,11 @@ property_value: IAO:0000589 "fundus of urinary bladder (embryonic human)" xsd:st
 is_a: UBERON:0006082 ! fundus of urinary bladder
 
 [Term]
+id: EHDAA2:0000447 ! epiploic foramen of Winslow
+property_value: IAO:0000589 "epiploic foramen (embryonic human)" xsd:string
+is_a: UBERON:0012442 ! epiploic foramen
+
+[Term]
 id: EHDAA2:0000720 ! greater omentum
 property_value: IAO:0000589 "greater omentum (embryonic human)" xsd:string
 is_a: UBERON:0005448 ! greater omentum
@@ -5577,6 +5617,11 @@ is_a: UBERON:0005591 ! diencephalon lateral wall
 id: EHDAA2:0001637 ! rhombomere 1
 property_value: IAO:0000589 "rhombomere 1 (embryonic human)" xsd:string
 is_a: UBERON:0005499 ! rhombomere 1
+
+[Term]
+id: EHDAA2:0004324 ! rhombencephalon floor plate
+property_value: IAO:0000589 "rhombomere floor plate (embryonic human)" xsd:string
+is_a: UBERON:0005500 ! rhombomere floor plate
 
 [Term]
 id: EHDAA2:0001657 ! rhombomere 3
@@ -6439,11 +6484,6 @@ property_value: IAO:0000589 "deltoid pre-muscle mass (embryonic human)" xsd:stri
 is_a: UBERON:0006219 ! deltoid pre-muscle mass
 
 [Term]
-id: EHDAA2:0000384 ! diencephalic part of interventricular foramen
-property_value: IAO:0000589 "diencephalic part of interventricular foramen (embryonic human)" xsd:string
-is_a: UBERON:0006220 ! diencephalic part of interventricular foramen
-
-[Term]
 id: EHDAA2:0000600 ! future diencephalon
 property_value: IAO:0000589 "future diencephalon (embryonic human)" xsd:string
 is_a: UBERON:0006222 ! future diencephalon
@@ -6492,11 +6532,6 @@ is_a: UBERON:0006236 ! frontal bone primordium
 id: EHDAA2:0000593 ! future central tendon
 property_value: IAO:0000589 "future central tendon (embryonic human)" xsd:string
 is_a: UBERON:0006239 ! future central tendon
-
-[Term]
-id: EHDAA2:0000661 ! prosencephalon
-property_value: IAO:0000589 "future forebrain (embryonic human)" xsd:string
-is_a: UBERON:0006240 ! future forebrain
 
 [Term]
 id: EHDAA2:0000674 ! future spinal cord
@@ -6567,11 +6602,6 @@ is_a: UBERON:0006248 ! incus pre-cartilage condensation
 id: EHDAA2:0000881 ! interparietal bone primordium
 property_value: IAO:0000589 "interparietal bone primordium (embryonic human)" xsd:string
 is_a: UBERON:0006251 ! interparietal bone primordium
-
-[Term]
-id: EHDAA2:0000883 ! intersubcardinal venous anastomosis
-property_value: IAO:0000589 "intersubcardinal venous anastomosis (embryonic human)" xsd:string
-is_a: UBERON:0006252 ! intersubcardinal venous anastomosis
 
 [Term]
 id: EHDAA2:0000889 ! intraretinal space
@@ -6705,13 +6735,28 @@ is_a: UBERON:0006283 ! primitive ventricle of heart
 
 [Term]
 id: EHDAA2:0001981 ! telencephalic vesicle
-property_value: IAO:0000589 "telencephalic vesicle (embryonic human)" xsd:string
-is_a: UBERON:0009676 ! telencephalic vesicle
+property_value: IAO:0000589 "early telencephalic vesicle (embryonic human)" xsd:string
+is_a: UBERON:0009676 ! early telencephalic vesicle
 
 [Term]
 id: EHDAA2:0001571 ! prosencephalic vesicle
-property_value: IAO:0000589 "prosencephalic vesicle (embryonic human)" xsd:string
-is_a: UBERON:0006284 ! prosencephalic vesicle
+property_value: IAO:0000589 "early prosencephalic vesicle (embryonic human)" xsd:string
+is_a: UBERON:0006284 ! early prosencephalic vesicle
+
+[Term]
+id: EHDAA2:0001102 ! mesencephalic vesicle
+property_value: IAO:0000589 "early mesencephalic vesicle (embryonic human)" xsd:string
+is_a: UBERON:0013147 ! early mesencephalic vesicle
+
+[Term]
+id: EHDAA2:0001103 ! midbrain vesicle
+property_value: IAO:0000589 "early midbrain vesicle (embryonic human)" xsd:string
+is_a: UBERON:0013148 ! early midbrain vesicle
+
+[Term]
+id: EHDAA2:0000101 ! rhombencephalic vesicle
+property_value: IAO:0000589 "hindbrain vesicle (embryonic human)" xsd:string
+is_a: UBERON:0013149 ! hindbrain vesicle
 
 [Term]
 id: EHDAA2:0001777 ! scapula cartilage condensation
@@ -6734,11 +6779,6 @@ property_value: IAO:0000589 "sternebral bone pre-cartilage condensation (embryon
 is_a: UBERON:0006295 ! sternebral bone pre-cartilage condensation
 
 [Term]
-id: EHDAA2:0001932 ! subcardinal vein
-property_value: IAO:0000589 "subcardinal vein (embryonic human)" xsd:string
-is_a: UBERON:0006296 ! subcardinal vein
-
-[Term]
 id: EHDAA2:0001935 ! sublingual gland primordium
 property_value: IAO:0000589 "sublingual gland primordium (embryonic human)" xsd:string
 is_a: UBERON:0006297 ! sublingual gland primordium
@@ -6757,11 +6797,6 @@ is_a: UBERON:0006300 ! supracardinal vein
 id: EHDAA2:0004539 ! supracardinal vein right
 property_value: IAO:0000589 "right supracardinal vein (embryonic human)" xsd:string
 is_a: UBERON:0008268 ! right supracardinal vein
-
-[Term]
-id: EHDAA2:0001980 ! telencephalic part of interventricular foramen
-property_value: IAO:0000589 "telencephalic part of interventricular foramen (embryonic human)" xsd:string
-is_a: UBERON:0006301 ! telencephalic part of interventricular foramen
 
 [Term]
 id: EHDAA2:0002097 ! tunica vasculosa lentis
@@ -6847,6 +6882,21 @@ is_a: UBERON:0006984 ! anatomical surface
 id: EHDAA2:0003154 ! organism surface
 property_value: IAO:0000589 "surface (embryonic human)" xsd:string
 is_a: UBERON:0007029 ! surface
+
+[Term]
+id: EHDAA2:0000661 ! prosencephalon
+property_value: IAO:0000589 "future forebrain (embryonic human)" xsd:string
+is_a: UBERON:0006240 ! future forebrain
+
+[Term]
+id: EHDAA2:0000615 ! mesencephalon
+property_value: IAO:0000589 "presumptive midbrain (embryonic human)" xsd:string
+is_a: UBERON:0009616 ! presumptive midbrain
+
+[Term]
+id: EHDAA2:0001630 ! rhombencephalon
+property_value: IAO:0000589 "presumptive hindbrain (embryonic human)" xsd:string
+is_a: UBERON:0007277 ! presumptive hindbrain
 
 [Term]
 id: EHDAA2:0003081 ! matrix-based tissue
@@ -6937,16 +6987,6 @@ is_a: UBERON:0009129 ! right atrium endocardium
 id: EHDAA2:0001483 ! pleuroperitoneal membranes
 property_value: IAO:0000589 "pleuroperitoneal membrane (embryonic human)" xsd:string
 is_a: UBERON:0009133 ! pleuroperitoneal membrane
-
-[Term]
-id: EHDAA2:0004536 ! posterior cardinal vein right
-property_value: IAO:0000589 "right posterior cardinal vein (embryonic human)" xsd:string
-is_a: UBERON:0009139 ! right posterior cardinal vein
-
-[Term]
-id: EHDAA2:0004538 ! subcardinal vein right
-property_value: IAO:0000589 "right subcardinal vein (embryonic human)" xsd:string
-is_a: UBERON:0009140 ! right subcardinal vein
 
 [Term]
 id: EHDAA2:0004542 ! head and neck veins
