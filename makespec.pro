@@ -24,7 +24,8 @@ anatomy(geisha).
 anatomy(vsao).
 anatomy(vhog).
 anatomy(galen).
-anatomy(rad).
+%anatomy(rad).
+anatomy(caloha).
 
 allow_dangling(ceph).
 allow_dangling(uberon_edit).

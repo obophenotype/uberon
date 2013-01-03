@@ -13,7 +13,7 @@
      xmlns:doap="http://usefulinc.com/ns/doap#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-ncithesaurus.owl">
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-ncithesaurus/2012-12-28/uberon/bridge/cl-bridge-to-ncithesaurus.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-ncithesaurus/2013-01-01/uberon/bridge/cl-bridge-to-ncithesaurus.owl"/>
     </owl:Ontology>
     
 
@@ -347,6 +347,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000354 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000354"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_40674 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
@@ -421,6 +427,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Beta_Cell</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type B pancreatic cell (ncithesaurus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ncithesaurus#_Blastemal_Cell -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ncithesaurus#_Blastemal_Cell">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000354"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blastemal cell (ncithesaurus)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Blastemal_Cell</oboInOwl:id>
     </owl:Class>
     
 
