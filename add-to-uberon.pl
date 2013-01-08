@@ -72,6 +72,9 @@ while (<F>) {
     elsif (/^def:.*(Wikipedia:[\w\(\)\-]+)/) {
         $xrefh{$1} = $id;
     }
+    elsif (/^synonym:.*(Wikipedia:[\w\(\)\-]+)/) {
+        $xrefh{$1} = $id;
+    }
 }
 close(F);
 
@@ -86,6 +89,11 @@ while(<>) {
 
     if (/^\[/) {
         $in_header = 0;
+    }
+
+    # fix syns
+    if (/^(synonym: \".*\")\s+(\[.*)/) {
+        $_ = "$1 RELATED $2";
     }
 
     if (/^id:\s*(\S+)/) {

@@ -21,7 +21,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/zfa.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa/2013-01-01/uberon/bridge/uberon-bridge-to-zfa.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa/2013-01-07/uberon/bridge/uberon-bridge-to-zfa.owl"/>
     </owl:Ontology>
     
 
@@ -5923,6 +5923,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0011299 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011299"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0011362 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011362"/>
@@ -8828,7 +8834,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000229</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral olfactory stria (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral olfactory tract (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -11991,6 +11997,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000595</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">supraoccipital bone (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0000597 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0000597">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0011299"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000597</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">white matter of telencephalon (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 

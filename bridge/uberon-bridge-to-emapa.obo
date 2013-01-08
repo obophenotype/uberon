@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-emapa
-data-version: 2013-01-01
+data-version: 2013-01-07
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to emapa" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between EMAPA (abstract developmental mouse) and Uberon" xsd:string
@@ -49,6 +49,16 @@ is_a: UBERON:0005870 ! olfactory pit
 id: EMAPA:17605 ! epithelium of nasal cavity
 property_value: IAO:0000589 "nasal cavity epithelium (embryonic mouse)" xsd:string
 is_a: UBERON:0005384 ! nasal cavity epithelium
+
+[Term]
+id: EMAPA:16839 ! oral epithelium of oral region
+property_value: IAO:0000589 "oral epithelium (embryonic mouse)" xsd:string
+is_a: UBERON:0002424 ! oral epithelium
+
+[Term]
+id: EMAPA:26942 ! oral epithelium of mucosa of oral region
+property_value: IAO:0000589 "oral epithelium (embryonic mouse)" xsd:string
+is_a: UBERON:0002424 ! oral epithelium
 
 [Term]
 id: EMAPA:17606 ! olfactory
@@ -1291,11 +1301,6 @@ property_value: IAO:0000589 "neural plate (embryonic mouse)" xsd:string
 is_a: UBERON:0003075 ! neural plate
 
 [Term]
-id: EMAPA:16090 ! neural fold of future brain of neural ectoderm of ectoderm of embryo (also: UBERON:0009748 'cephalic neural fold')
-property_value: IAO:0000589 "neural fold (embryonic mouse)" xsd:string
-is_a: UBERON:0005062 ! neural fold
-
-[Term]
 id: EMAPA:16142 ! neural fold of future midbrain of future brain of neural ectoderm of ectoderm of embryo
 property_value: IAO:0000589 "neural fold (embryonic mouse)" xsd:string
 is_a: UBERON:0005062 ! neural fold
@@ -2206,14 +2211,29 @@ property_value: IAO:0000589 "psoas minor muscle (embryonic mouse)" xsd:string
 is_a: UBERON:0001372 ! psoas minor muscle
 
 [Term]
+id: EMAPA:29288 ! glans penis of genital tubercle of male
+property_value: IAO:0000589 "future glans penis (embryonic mouse)" xsd:string
+is_a: UBERON:0013239 ! future glans penis
+
+[Term]
+id: EMAPA:19170 ! glans clitoris of genital tubercle of female
+property_value: IAO:0000589 "future glans clitoris (embryonic mouse)" xsd:string
+is_a: UBERON:0013240 ! future glans clitoris
+
+[Term]
 id: EMAPA:18988 ! glans penis of penis
 property_value: IAO:0000589 "glans penis (embryonic mouse)" xsd:string
 is_a: UBERON:0001299 ! glans penis
 
 [Term]
-id: EMAPA:29288 ! glans penis of genital tubercle of male
-property_value: IAO:0000589 "glans penis (embryonic mouse)" xsd:string
-is_a: UBERON:0001299 ! glans penis
+id: EMAPA:19170 ! glans clitoris of genital tubercle of female
+property_value: IAO:0000589 "glans clitoris (embryonic mouse)" xsd:string
+is_a: UBERON:0006653 ! glans clitoris
+
+[Term]
+id: EMAPA:30829 ! glans clitoris of clitoris
+property_value: IAO:0000589 "glans clitoris (embryonic mouse)" xsd:string
+is_a: UBERON:0006653 ! glans clitoris
 
 [Term]
 id: EMAPA:19296 ! scrotum
@@ -5389,16 +5409,6 @@ is_a: UBERON:0002411 ! clitoris
 id: EMAPA:16846 ! liver
 property_value: IAO:0000589 "liver (embryonic mouse)" xsd:string
 is_a: UBERON:0002107 ! liver
-
-[Term]
-id: EMAPA:16839 ! oral epithelium of oral region
-property_value: IAO:0000589 "oral epithelium (embryonic mouse)" xsd:string
-is_a: UBERON:0002424 ! oral epithelium
-
-[Term]
-id: EMAPA:26942 ! oral epithelium of mucosa of oral region
-property_value: IAO:0000589 "oral epithelium (embryonic mouse)" xsd:string
-is_a: UBERON:0002424 ! oral epithelium
 
 [Term]
 id: EMAPA:18062 ! skin of upper arm (also: UBERON:0004263 'upper arm skin')
@@ -11291,11 +11301,6 @@ property_value: IAO:0000589 "pleuroperitoneal canal (embryonic mouse)" xsd:strin
 is_a: UBERON:0006279 ! pleuroperitoneal canal
 
 [Term]
-id: EMAPA:18422 ! pre-hepatic part
-property_value: IAO:0000589 "pre-hepatic part (embryonic mouse)" xsd:string
-is_a: UBERON:0006281 ! pre-hepatic part
-
-[Term]
 id: EMAPA:16242 ! primary head vein
 property_value: IAO:0000589 "primary head vein (embryonic mouse)" xsd:string
 is_a: UBERON:0006282 ! primary head vein
@@ -11634,16 +11639,6 @@ is_a: UBERON:0006651 ! appendix testis
 id: EMAPA:30997 ! muscular layer of vagina
 property_value: IAO:0000589 "muscular layer of vagina (embryonic mouse)" xsd:string
 is_a: UBERON:0006652 ! muscular layer of vagina
-
-[Term]
-id: EMAPA:19170 ! glans clitoris of genital tubercle of female
-property_value: IAO:0000589 "glans clitoris (embryonic mouse)" xsd:string
-is_a: UBERON:0006653 ! glans clitoris
-
-[Term]
-id: EMAPA:30829 ! glans clitoris of clitoris
-property_value: IAO:0000589 "glans clitoris (embryonic mouse)" xsd:string
-is_a: UBERON:0006653 ! glans clitoris
 
 [Term]
 id: EMAPA:17892 ! perineal body of hindgut
@@ -12531,7 +12526,7 @@ property_value: IAO:0000589 "endoderm of foregut-midgut junction (embryonic mous
 is_a: UBERON:0009550 ! endoderm of foregut-midgut junction
 
 [Term]
-id: EMAPA:16090 ! neural fold (also: UBERON:0005062 'neural fold')
+id: EMAPA:16090 ! neural fold
 property_value: IAO:0000589 "cephalic neural fold (embryonic mouse)" xsd:string
 is_a: UBERON:0009748 ! cephalic neural fold
 

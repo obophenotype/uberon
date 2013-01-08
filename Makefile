@@ -423,8 +423,10 @@ stages.obo:
 # DBPEDIA
 # ----------------------------------------
 
+# note that dbpedia vastly underclassifies here.
+# 4k limit seems unusual...
 dbpedia_all_AnatomicalStructure.pro:
-	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+	 blip -debug sparql ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
 # this should be subsumed by AnatomicalStructure
 dbpedia_all_Embryology.pro:
@@ -433,11 +435,29 @@ dbpedia_all_Embryology.pro:
 dbpedia_all_Animal_anatomy.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Animal_anatomy> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
+dbpedia_all_Mammal_anatomy.pro:
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Mammal_anatomy> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+
+dbpedia_category_%.pro:
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:$*> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+.PRECIOUS: dbpedia_category_%.pro
+
 dbpedia_all_Bone.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type dbpedia-owl:Bone }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+dbpedia_all_Nerve.pro:
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type dbpedia-owl:Nerve }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
 dbpedia_subjects.pro:
 	sort -u dbpedia_all_*.pro > $@
+
+triples-%.pro: %.pro
+	blip-findall -debug sparql -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
+#	blip-findall -debug sparql -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[sameAs('http://dbpedia.org/property/redirect')])" -select "rdf(S,P,O)" -write_prolog > $@
+.PRECIOUS: triples-%.pro
+
+dbpo-%.obo: triples-%.pro
+	blip -i $< -u ontol_bridge_from_dbpedia io-convert -to obo > $@
+
 
 # everything as type AnatomicalStructure
 dbpedia_all.pro: dbpedia_subjects.pro
