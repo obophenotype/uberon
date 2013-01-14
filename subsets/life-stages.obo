@@ -1,0 +1,1603 @@
+format-version: 1.2
+ontology: uberon/subsets/life-stages.obo
+property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon composite-vertebrate ontology" xsd:string
+
+[Term]
+id: UBERON:0000000
+name: processual entity
+namespace: uberon
+def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." [span:ProcessualEntity]
+subset: upper_level
+
+[Term]
+id: UBERON:0000066
+name: fully formed stage
+namespace: uberon
+def: "The stage of development at which the animal is fully formed, including immaturity and maturity. Includes both juvenile stage, and adult stage. " [UBERON:cjm]
+synonym: "adult stage" BROAD []
+synonym: "fully formed animal stage" EXACT []
+synonym: "juvenile-adult stage" EXACT []
+xref: BilaDO:0000004
+xref: BTO:0001043
+xref: EFO:0001272
+xref: FBdv:00005369
+xref: WBls:0000041
+xref: XtroDO:0000084
+is_a: UBERON:0000092 ! post-embryonic stage
+relationship: preceded_by UBERON:0000111 ! organogenesis stage
+
+[Term]
+id: UBERON:0000067
+name: embryo stage part
+namespace: uberon
+def: "A stage that is part of the embryo stage." [UBERON:cjm]
+subset: grouping_class
+synonym: "embryonic stage part" EXACT []
+is_a: UBERON:0000105 ! life cycle stage
+intersection_of: UBERON:0000105 ! life cycle stage
+intersection_of: part_of UBERON:0000068 ! embryo stage
+relationship: part_of UBERON:0000068 ! embryo stage
+
+[Term]
+id: UBERON:0000068
+name: embryo stage
+namespace: uberon
+def: "A life cycle stage that starts with fertilization and ends with the fully formed embryo." []
+synonym: "embryogenesis" RELATED []
+synonym: "embryonic stage" EXACT []
+xref: BilaDO:0000002
+xref: EV:0300001
+xref: FBdv:00005289
+xref: HsapDO:0000002
+xref: MmusDO:0000002
+xref: OGES:000000
+xref: OGES:000022
+xref: SCTID:296280003
+xref: XAO:1000012
+is_a: UBERON:0000105 ! life cycle stage
+disjoint_from: UBERON:0000092 ! post-embryonic stage
+relationship: part_of UBERON:0000104 ! life cycle
+
+[Term]
+id: UBERON:0000069
+name: larval stage
+namespace: uberon
+def: "a distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." [Wikipedia:Larva]
+comment: It is a misunderstanding that the larval form always reflects the group's evolutionary history. It could be the case, but often the larval stage has evolved secondarily, as in insects. In these cases the larval form might differ more from the group's common origin than the adult form[WP]. Uberon includes clade-specific subclasses.
+synonym: "ammocoete" NARROW SENSU [Wikipedia:Larva]
+synonym: "ammocoete stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "bipinnaria" NARROW SENSU [Wikipedia:Larva]
+synonym: "bipinnaria stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "caterpillar" NARROW SENSU [Wikipedia:Larva]
+synonym: "caterpillar stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "glochidium" NARROW SENSU [Wikipedia:Larva]
+synonym: "glochidium stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "grub" NARROW SENSU [Wikipedia:Larva]
+synonym: "grub stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "larva" RELATED []
+synonym: "larva stage" EXACT []
+synonym: "leptocephalus" NARROW SENSU [Wikipedia:Larva]
+synonym: "leptocephalus stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "maggot" NARROW SENSU [Wikipedia:Larva]
+synonym: "maggot stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "metacestode" NARROW SENSU [BTO:0000859]
+synonym: "naiad, nymph" NARROW SENSU [Wikipedia:Larva]
+synonym: "naiad, nymph stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "nauplius" NARROW SENSU [Wikipedia:Larva]
+synonym: "nauplius stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "nymph" NARROW SENSU [Wikipedia:Larva]
+synonym: "nymph stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "planula" NARROW SENSU [Wikipedia:Larva]
+synonym: "planula stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "tornaria" NARROW SENSU [NCBITaxon:10219]
+synonym: "trochophore" NARROW SENSU [Wikipedia:Larva]
+synonym: "trochophore stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "veliger" NARROW SENSU [Wikipedia:Larva]
+synonym: "veliger stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "wriggler" NARROW SENSU [Wikipedia:Larva]
+synonym: "wriggler stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "zoea" NARROW SENSU [Wikipedia:Larva]
+synonym: "zoea stage" NARROW SENSU [Wikipedia:Larva]
+xref: BTO:0000915
+xref: BTO:0000954
+xref: EFO:0001303
+xref: FBdv:00005336
+xref: MIAA:0000400
+xref: OGES:000008
+xref: ZFS:0000048
+is_a: UBERON:0000092 ! post-embryonic stage
+relationship: directly_preceded_by UBERON:0000068 ! embryo stage
+property_value: RO:0002161 NCBITaxon:32524
+
+[Term]
+id: UBERON:0000070
+name: pupal stage
+namespace: uberon
+def: "A life stage of some insects undergoing transformation. The pupal stage is found only in holometabolous insects, those that undergo a complete metamorphosis, going through four life stages; embryo, larva, pupa and imago." [Wikipedia:Pupa]
+synonym: "aurelia stage" NARROW [NCBITaxon:37572, Wikipedia:Pupa]
+synonym: "chrysalides stage" NARROW [NCBITaxon:37572, Wikipedia:Pupa]
+synonym: "chrysalis stage" NARROW [NCBITaxon:37572, Wikipedia:Pupa]
+synonym: "pupa stage" EXACT []
+xref: FBdv:00005349
+is_a: UBERON:0000092 ! post-embryonic stage
+relationship: directly_preceded_by UBERON:0000069 ! larval stage
+
+[Term]
+id: UBERON:0000071
+name: death stage
+namespace: uberon
+def: "End of the life of an organism." [XAO:0000437]
+comment: AO notes - ncit:Death is an outcome
+synonym: "death" EXACT []
+xref: XAO:0000437
+xref: XtroDO:0000085
+is_a: UBERON:0000105 ! life cycle stage
+relationship: finishes UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000104 ! life cycle
+
+[Term]
+id: UBERON:0000092
+name: post-embryonic stage
+namespace: uberon
+def: "stage succeeding embryo, including mature structure" [UBERON:cjm]
+comment: In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)
+synonym: "post-hatching stage" NARROW []
+synonym: "postembryonic" RELATED []
+synonym: "postembryonic stage" EXACT []
+xref: BilaDO:0000003
+xref: MmusDO:0000030
+xref: OGES:000010
+xref: OGES:000014
+xref: OGES:000024
+xref: WBls:0000022
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000104 ! life cycle
+relationship: preceded_by UBERON:0000068 ! embryo stage
+
+[Term]
+id: UBERON:0000104
+name: life cycle
+namespace: uberon
+def: "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism." [UBERON:cjm]
+subset: upper_level
+synonym: "life" EXACT []
+synonym: "lifespan" EXACT []
+xref: FBdv_root:00000000
+xref: ncithesaurus:Life
+xref: OGES:000011
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000105
+name: life cycle stage
+namespace: uberon
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:cjm]
+comment: Editor notes: we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage
+subset: upper_level
+synonym: "developmental stage" EXACT []
+synonym: "stage" NARROW []
+xref: BILS:0000105
+xref: EFO:0000399
+xref: ncithesaurus:Developmental_Stage
+xref: WBls:0000002
+xref: XAO:1000000
+xref: ZFS:0000000
+xref: ZFS:0100000
+is_a: UBERON:0000000 ! processual entity
+
+[Term]
+id: UBERON:0000106
+name: zygote stage
+namespace: uberon
+def: "A stage at which the organism is a single cell produced by means of sexual reproduction." [Wikipedia:Zygote]
+synonym: "1-cell stage" EXACT []
+synonym: "fertilized egg stage" EXACT [BTO:0000854]
+synonym: "one cell stage" EXACT []
+synonym: "one-cell stage" RELATED [VHOG:0000745]
+synonym: "zygote" RELATED [VHOG:0000745]
+synonym: "zygotum" RELATED LATIN [Wikipedia:Zygote]
+xref: BilaDO:0000005
+xref: BILS:0000106
+xref: EFO:0001322
+xref: EHDAA:27
+xref: EMAPA:16033
+xref: FBdv:00005288
+xref: VHOG:0000745
+xref: XAO:1000001
+xref: ZFS:0000001
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: starts UBERON:0000104 ! life cycle
+property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string
+
+[Term]
+id: UBERON:0000107
+name: cleavage stage
+namespace: uberon
+def: "The first few specialized divisions of an activated animal egg; Stage consisting of division of cells in the early embryo. The zygotes of many species undergo rapid cell cycles with no significant growth, producing a cluster of cells the same size as the original zygote. The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula." [GO:0040016, Wikipedia:Cleavage_(embryo)]
+xref: BilaDO:0000006
+xref: BILS:0000107
+xref: EFO:0001290
+xref: MESH:A16.254.270
+xref: MmusDO:0000004
+xref: OGES:000015
+xref: OGES:000020
+xref: XAO:1000004
+xref: ZFS:0000046
+is_a: UBERON:0000067 ! embryo stage part
+relationship: directly_preceded_by UBERON:0000106 ! zygote stage
+relationship: part_of UBERON:0000068 ! embryo stage
+
+[Term]
+id: UBERON:0000108
+name: blastula stage
+namespace: uberon
+def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [Wikipedia:Blastula]
+xref: BilaDO:0000007
+xref: BILS:0000108
+xref: EFO:0001282
+xref: HsapDO:0000006
+xref: http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Blastulation.png/200px-Blastulation.png
+xref: MmusDO:0000007
+xref: OGES:000003
+xref: OGES:000016
+xref: OGES:000021
+xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg
+xref: XAO:1000003
+xref: ZFS:0000045
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000107 ! cleavage stage
+
+[Term]
+id: UBERON:0000109
+name: gastrula stage
+namespace: uberon
+def: "A stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage during embryonic development of most animals. The details of gastrulation vary from species to species, but usually result in the formation of the three primary germ layers, ectoderm, mesoderm and endoderm." [GO:0007369]
+synonym: "blastocystis trilaminaris stage" RELATED [UBERON:cjm]
+synonym: "trilaminar blastocyst stage" RELATED [UBERON:cjm]
+synonym: "trilaminar blastoderm stage" RELATED [UBERON:cjm]
+synonym: "trilaminar disk stage" RELATED [UBERON:cjm]
+synonym: "trilaminar germ stage" RELATED [UBERON:cjm]
+synonym: "trilaminar stage" RELATED [UBERON:cjm]
+xref: BilaDO:0000008
+xref: BILS:0000109
+xref: EFO:0001296
+xref: FBdv:00005317
+xref: HsapDO:0000010
+xref: MmusDO:0000013
+xref: OGES:000004
+xref: OGES:000019
+xref: XAO:1000005
+xref: ZFS:0000047
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000108 ! blastula stage
+
+[Term]
+id: UBERON:0000110
+name: neurula stage
+namespace: uberon
+def: "Staged defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate. This will give rise to the central nervous system." [GO:0001841]
+xref: BilaDO:0000009
+xref: BILS:0000110
+xref: HsapDO:0000012
+xref: MmusDO:0000016
+xref: XAO:1000006
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000109 ! gastrula stage
+
+[Term]
+id: UBERON:0000111
+name: organogenesis stage
+namespace: uberon
+def: "A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [Wikipedia:Organogenesis]
+synonym: "segmentation stage" RELATED []
+xref: BilaDO:0000010
+xref: BILS:0000111
+xref: HsapDO:0000015
+xref: MmusDO:0000018
+xref: OGES:000005
+xref: OGES:000032
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000110 ! neurula stage
+
+[Term]
+id: UBERON:0000112
+name: juvenile stage
+namespace: uberon
+comment: Consider renaming this to '(sexually) immature stage'; in mammals this would include infant (nourishment from lactation) and juvenile (prepubertal no longer dependent on mother)
+synonym: "immature stage" EXACT [VHOG:FB]
+xref: BILS:0000112
+xref: BTO:0002168
+xref: EFO:0001300
+xref: EV:0300051
+xref: OGES:000009
+xref: XAO:1000010
+xref: XtroDO:0000083
+xref: ZFS:0000051
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000066 ! fully formed stage
+property_value: UBPROP:0000001 "The stage of being a sexually immature adult animal[XAO:1000010]." xsd:string
+
+[Term]
+id: UBERON:0000113
+name: post-juvenile adult stage
+namespace: uberon
+def: "The stage of being a sexually mature adult animal." [UBERON:cjm]
+synonym: "adult stage" BROAD []
+xref: BILS:0000113
+xref: EFO:0001272
+xref: EV:0300064
+xref: EV:0300070
+xref: MIAA:0000403
+xref: MmusDO:0000039
+xref: MmusDO:0000040
+xref: OGES:000026
+xref: OGES:000027
+xref: XAO:1000009
+xref: ZFS:0000044
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000066 ! fully formed stage
+relationship: preceded_by UBERON:0000112 ! juvenile stage
+
+[Term]
+id: UBERON:0004707
+name: pharyngula stage
+namespace: uberon
+def: "A stage that follows the blastula, gastrula and neurula stages. At the pharyngula stage, all vertebrate embryos show remarkable similarities." [Wikipedia:Pharyngula]
+comment: Corresponds to E7-E11 in Mouse (Galis et al, TREE, 2001)
+synonym: "pharyngula" RELATED []
+synonym: "phylotypic stage" EXACT []
+xref: DrerDO:0000052
+xref: EFO:0001310
+xref: OGES:000006
+xref: ZFS:0000050
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+relationship: preceded_by UBERON:0000110 ! neurula stage
+
+[Term]
+id: UBERON:0004728
+name: amphibian larval stage
+namespace: uberon
+def: "Amphibian larvae, sometimes called pollywogs or tadpoles, hatch from eggs and begin to grow limbs and other adult physical features at various times, depending on the species, before they metamorphose into the adult form." [GO:0002117]
+comment: AO notes: the XAO class denotes a stage
+synonym: "larva" RELATED [XAO:1000008]
+synonym: "polliwog" NARROW SENSU [Wikipedia:Larva]
+synonym: "polliwog stage" NARROW SENSU [Wikipedia:Larva]
+synonym: "tadpole" NARROW SENSU [Wikipedia:Larva]
+synonym: "tadpole stage" NARROW SENSU [Wikipedia:Larva]
+xref: XAO:1000008
+xref: XtroDO:0000056
+is_a: UBERON:0000069 ! larval stage
+
+[Term]
+id: UBERON:0004729
+name: nematode larval stage
+namespace: uberon
+def: "Nematode larval development begins with the newly hatched first-stage larva (L1) and ends with the end of the last larval stage (for example the fourth larval stage (L4) in C. elegans). Each stage of nematode larval development is characterized by proliferation of specific cell lineages and an increase in body size without alteration of the basic body plan. Nematode larval stages are separated by molts in which each stage-specific exoskeleton, or cuticle, is shed and replaced anew." [GO:0002119]
+xref: WBls:0000023
+is_a: UBERON:0000069 ! larval stage
+
+[Term]
+id: UBERON:0004730
+name: instar larval stage
+namespace: uberon
+def: "This begins with the newly hatched first-instar larva, through its maturation to the end of the last larval stage. An example of this process is found in Drosophila melanogaster." [GO:0002168]
+xref: FBdv:00005336
+is_a: UBERON:0000069 ! larval stage
+
+[Term]
+id: UBERON:0007220
+name: late embryonic stage
+namespace: uberon
+synonym: "embryo late (growth) stage" EXACT [MIAA:0000399]
+synonym: "embryo late growth stage" RELATED [BTO:0000449]
+synonym: "embryo late stage" RELATED [BTO:0000449]
+synonym: "fetal stage" NARROW SENSU [UBERON:cjm]
+synonym: "fetus" NARROW [MIAA:0000399]
+synonym: "fetus stage" NARROW SENSU [UBERON:cjm]
+xref: EV:0300011
+xref: EVM:2990031
+xref: FBdv:00005333
+xref: MIAA:0000399
+xref: MmusDO:0000031
+xref: OGES:000023
+xref: SCTID:367619004
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
+
+[Term]
+id: UBERON:0007221
+name: neonate stage
+namespace: uberon
+def: "Of or pertaining to the period of time immediately following birth, or to the newborn." [http://en.wiktionary.org/wiki/neonatal, Wikipedia:Infant]
+comment: Editor note: consider splitting infant/newborn
+synonym: "fledgling stage" NARROW SENSU [UBERON:cjm]
+synonym: "hatchling" NARROW SENSU [UBERON:cjm]
+synonym: "hatchling stage" NARROW SENSU [UBERON:cjm]
+synonym: "infant stage" NARROW SENSU [UBERON:cjm]
+synonym: "neonatal stage" EXACT [OBOL:automatic]
+synonym: "nestling stage" NARROW SENSU [UBERON:cjm]
+synonym: "newborn stage" RELATED [UBERON:cjm]
+xref: BTO:0001762
+xref: EV:0300037
+xref: HsapDO:0000082
+xref: HsapDO:0000083
+xref: http://neurolex.org/wiki/Category\:Infant_organism
+xref: http://neurolex.org/wiki/Category\:Newborn_organism
+xref: MmusDO:0000038
+xref: NIF_Organism:birnlex_695
+xref: OGES:000025
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000112 ! juvenile stage
+
+[Term]
+id: UBERON:0007222
+name: late adult stage
+namespace: uberon
+synonym: "elderly" RELATED [EV:0300123]
+synonym: "elderly stage" RELATED [EV:0300123]
+synonym: "geriatric" RELATED [EV:0300123]
+synonym: "geriatric stage" RELATED [EV:0300123]
+xref: EV:0300123
+xref: HsapDO:0000093
+xref: ncithesaurus:Elderly
+xref: NIF_Organism:birnlex_691
+xref: UMLS:C0001792
+is_a: UBERON:0000113 ! post-juvenile adult stage
+
+[Term]
+id: UBERON:0007232
+name: 2 cell stage
+namespace: uberon
+synonym: "NF stage 2 (2-cell)" NARROW SENSU [XAO:1000011]
+synonym: "two-cell stage" EXACT [OBOL:automatic]
+xref: EMAPA:16036
+xref: XAO:1000011
+xref: XtroDO:0000006
+xref: ZFS:0000002
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: directly_preceded_by UBERON:0000106 ! zygote stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+
+[Term]
+id: UBERON:0007233
+name: 4 cell stage
+namespace: uberon
+synonym: "four-cell stage" EXACT [OBOL:automatic]
+synonym: "NF stage 3 (4-cell)" NARROW SENSU [XAO:1000013]
+xref: XAO:1000013
+xref: XtroDO:0000007
+xref: ZFS:0000003
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: directly_preceded_by UBERON:0007232 ! 2 cell stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+relationship: starts UBERON:0007234 ! 4-8 cell stage
+
+[Term]
+id: UBERON:0007234
+name: 4-8 cell stage
+namespace: uberon
+synonym: "four-eight cell stage" EXACT [OBOL:automatic]
+xref: EMAPA:16037
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: directly_preceded_by UBERON:0007232 ! 2 cell stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+
+[Term]
+id: UBERON:0007236
+name: 8 cell stage
+namespace: uberon
+synonym: "eight-cell stage" EXACT [OBOL:automatic]
+synonym: "NF stage 4 (8-cell)" NARROW SENSU [XAO:1000014]
+xref: XAO:1000014
+xref: XtroDO:0000008
+xref: ZFS:0000004
+is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: directly_preceded_by UBERON:0007233 ! 4 cell stage
+relationship: finishes UBERON:0007234 ! 4-8 cell stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+
+[Term]
+id: UBERON:0008264
+name: echinopluteus larval stage
+namespace: uberon
+def: "Larval stage in echinoderms characterized by a planktonic and feeding larval form that possesses limb-like outgrowths bearing ciliated bands." [http://www.encyclopedia.com/doc/1O8-echinopluteuslarva.html]
+synonym: "pluteus larval stage" EXACT []
+is_a: UBERON:0000069 ! larval stage
+
+[Term]
+id: UBERON:0009741
+name: tailbud stage
+namespace: uberon
+def: "Any of the developmental stages from Nieuwkoop and Faber stage 20 to stage 44 (feeding), including the beginning of hatching (NF stage 35/36)." [ISBN:0815318960]
+xref: XAO:1000007
+is_a: UBERON:0000068 ! embryo stage
+
+[Term]
+id: UBERON:0009849
+name: tadpole stage
+namespace: uberon
+def: "wholly aquatic larval stage in the life cycle of an amphibian, particularly of a frog or toad[WP]. XAO: The stages from feeding to the end of metamorphosis. Encompasses Weisz's first-form tadpole (equivalent to NF stages 45 to 49), second-form tadpole (NF 49 to 56) and third-form tadpole (NF 56 to 60-plus) stages." [ISBN:0471209627, ISSN:0003-276X, Wikipedia:Tadpole]
+xref: XAO:1000008
+is_a: UBERON:0000069 ! larval stage
+
+[Term]
+id: UBERON:0012101
+name: perinatal stage
+namespace: uberon
+def: "the period spanning the range immediately before and after birth" []
+comment: In birds, the paranatal stage starts when the beak penetrates into the air pocket (air cell) between the inner and outer shell membranes
+synonym: "paranatal stage" NARROW []
+is_a: UBERON:0000105 ! life cycle stage
+relationship: overlaps UBERON:0000068 ! embryo stage
+relationship: overlaps UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: XAO:1000002
+name: early tailbud (Xenopus)
+namespace: xenopus_developmental_stage
+def: "The stages from Nieuwkoop and Faber stage 22 to stage 28." [ISBN:0815318960]
+is_a: UBERON:0009741 ! tailbud stage
+
+[Term]
+id: XAO:1000015
+name: NF stage 5 (16-cell) (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 5; age 2 hr 45 min at 22-24 Celsius; corresponding to the following external morphological criteria: Advanced sixteen cell stage. Dorsal micromeres distinctly smaller and less pigmented than ventral ones. Macromeres entirely separated by cleavage grooves. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+synonym: "16-cell stage" EXACT []
+xref: ZFS:0000005
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+relationship: preceded_by UBERON:0007236 ! 8 cell stage
+
+[Term]
+id: XAO:1000016
+name: NF stage 6 (32-cell) (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 6; age 3 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Advanced thirty-two cell stage. Distinction between dorsal and ventral micromeres as in preceding stage. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+synonym: "32-cell stage" EXACT []
+xref: ZFS:0000006
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+relationship: preceded_by XAO:1000015 ! NF stage 5 (16-cell) (Xenopus)
+
+[Term]
+id: XAO:1000017
+name: NF stage 7 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 7, 64-cell embryo; age 4 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Large-cell blastula stage. In animal view about 10 micromeres along meridian. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+synonym: "64-cell stage" EXACT []
+xref: ZFS:0000007
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+
+[Term]
+id: XAO:1000018
+name: NF stage 8 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 8, 128-cell embryo; age 5 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Medium-cell blastula stage. Surface not yet entirely smooth. Border of animal pigment cap more diffuse at dorsal than at lateral and ventral sides. Gradual transition in cell size from animal to vegetative pole. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+synonym: "128-cell stage" EXACT []
+xref: ZFS:0000008
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by XAO:1000017 ! NF stage 7 (Xenopus)
+
+[Term]
+id: XAO:1000019
+name: NF stage 9 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 9; age 7 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Fine-cell blastula stage. Animal cells smaller at dorsal than at ventral side. Border between marginal zone and vegetative field distinct, particularly dorsally, owing to difference in cell size. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by XAO:1000018 ! NF stage 8 (Xenopus)
+
+[Term]
+id: XAO:1000020
+name: NF stage 10 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 10; age 9 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Initial gastrula stage. First indication of blastopore only by pigment concentration. No formation of groove. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by XAO:1000019 ! NF stage 9 (Xenopus)
+
+[Term]
+id: XAO:1000021
+name: NF stage 11 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 11; age 11 hr 45 min at 22-24 Celsius; corresponding to the following external morphological criteria: Horse-shoe-shaped blastopore stage. Blastopore groove surrounding about half of future yolk plug and indicated at its ventral side; future yolk plug often rounded rectangular, slightly elongated in dorso-ventral direction, diameter more than two-fifths of diameter of egg (plus or minus 50 degrees of circumference). Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by XAO:1000031 ! NF stage 10.5 (Xenopus)
+
+[Term]
+id: XAO:1000022
+name: NF stage 12 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 12; age 13 hr 15 min at 22-24 Celsius; corresponding to the following external morphological criteria: Medium yolk plug stage. Yolk plug circular; diameter somewhat less than one fourth of diameter of egg (plus or minus 25 degrees). More and less pigmented fields radiating from yolk plug. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by XAO:1000032 ! NF stage 11.5 (Xenopus)
+
+[Term]
+id: XAO:1000023
+name: NF stage 13 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 13; age 14 hr 45 min at 22-24 Celsius; corresponding to the following external morphological criteria: Slit-blastopore stage. Neural plate faintly delimited; slight elevation of its rostral part and slight flattening of its caudal part. Caudal part of median groove formed. Length: 1.5 - 1.6 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000033 ! NF stage 12.5 (Xenopus)
+
+[Term]
+id: XAO:1000024
+name: NF stage 14 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 14; age 16 hr 15 min at 22-24 Celsius; corresponding to the following external morphological criteria: Neural plate stage. Cerebral part of neural plate bent downwards, with median elevation at rostral end of median groove. Initial elevation of neural folds, most pronounced in future nucal region. Blastopore always slit-shaped. Length: 1.5 - 1.6 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000023 ! NF stage 13 (Xenopus)
+
+[Term]
+id: XAO:1000025
+name: NF stage 15 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 15; age 17 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Early neural fold stage. Presumptive cement gland faintly circumscribed. Anterior part of neural plate roundish. Neural folds distinct, except medio-rostrally; initial formation of sharp inner ridges on neural folds in rhombencephalic region. Length: 1.5 - 1.6 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000024 ! NF stage 14 (Xenopus)
+
+[Term]
+id: XAO:1000026
+name: NF stage 16 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 16; age 18 hr 15 min at 22-24 Celsius; corresponding to the following external morphological criteria: Mid neural fold stage. Anterior part of neural plate rectangular; darkly pigmented eye anlagen present; neural plate sharply constricted in the middle. Inner ridges on neural folds forming angle of about 90 degrees with neural plate in rhombencephalic region. Length: 1.5 - 1.6 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000025 ! NF stage 15 (Xenopus)
+
+[Term]
+id: XAO:1000027
+name: NF stage 17 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 17; age 18 hr 45 min at 22-24 Celsius; corresponding to the following external morphological criteria: Late neural fold stage. Anterior part of neural plate oblong triangular, angles formed by eye anlagen. Neural folds approaching each other from blastopore up to anterior trunk region. Length: 1.5 - 1.6 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000026 ! NF stage 16 (Xenopus)
+
+[Term]
+id: XAO:1000028
+name: NF stage 2- (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 2-; age 1 hr 15 min at 22-24 Celsius; corresponding to the following external morphological criteria: Beginning of first cleavage. First cleavage groove has not yet reached vegetal pole. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+relationship: preceded_by UBERON:0000106 ! zygote stage
+
+[Term]
+id: XAO:1000030
+name: NF stage 10.25 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 10.25; age 10 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Early gastrula stage. First formation of dorsal blastopore groove; the groove is still straight. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+synonym: "NF stage 10+" EXACT []
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by XAO:1000020 ! NF stage 10 (Xenopus)
+
+[Term]
+id: XAO:1000031
+name: NF stage 10.5 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 10.5; age 11 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Crescent-shaped blastopore stage. Blastopore groove angular. Vegetal field slightly decreased in size, ventral border of future yolk plug indicated by pigment contraction. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by XAO:1000030 ! NF stage 10.25 (Xenopus)
+
+[Term]
+id: XAO:1000032
+name: NF stage 11.5 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 11.5; age 12 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Large yolk plug stage. Blastopore groove closed ventrally; yolk plug not yet quite circular. At ventral side concentrated superficial pigment still visible. Diameter of yolk plug about a third of diameter of egg (plus or minus 40 degrees). Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by XAO:1000021 ! NF stage 11 (Xenopus)
+
+[Term]
+id: XAO:1000033
+name: NF stage 12.5 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 12.5; age 14 hr 15 min at 22-24 Celsius; corresponding to the following external morphological criteria: Small yolk plug stage. Future position of neural plate and median groove indicated by darker pigment lines. Yolk plug usually ovoid, variable in size. Length: 1.4 - 1.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by XAO:1000022 ! NF stage 12 (Xenopus)
+
+[Term]
+id: XAO:1000034
+name: NF stage 18 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 18; age 19 hr 45 min at 22-24 Celsius; corresponding to the following external morphological criteria: Neural groove stage. Anterior part of neural plate narrow, more or less club-shaped, often narrower towards rostral end. Parallel neural folds in trunk region very close to each other, not yet touching. Length: 1.5 - 1.6 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000027 ! NF stage 17 (Xenopus)
+
+[Term]
+id: XAO:1000035
+name: NF stage 19 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 19; age 20 hr 45 min at 22-24 Celsius; corresponding to the following external morphological criteria: Initial neural tube stage. Neural folds touching each other, except for inconstant openings at anterior and posterior end and behind nucal region. Considerable lateral extension of brain. Lateral outline of embryo still convex. Length: 1.5 - 1.6 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000034 ! NF stage 18 (Xenopus)
+
+[Term]
+id: XAO:1000036
+name: NF stage 20 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 20; age 21 hr 45 min at 22-24 Celsius; corresponding to the following external morphological criteria: Neural folds fused, suture still present. The two eye anlagen showing through dumb-bell-shaped, eyes hardly protruding. Beginning of stretching of embryos. Lateral outline flat. Length: 1.7 - 1.8 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000035 ! NF stage 19 (Xenopus)
+
+[Term]
+id: XAO:1000037
+name: NF stage 21 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 21; age 22 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Suture of neural tube completely closed. Delimitation of frontal field by pigment lines. Primary eye vesicles showing through in the form of two separate, obliquely placed oval spots; beginning of protrusion of eyes. Lateral outline of embryo just becoming concave, ventral outline flat. Length: 1.9 - 2.0 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000110 ! neurula stage
+relationship: preceded_by XAO:1000036 ! NF stage 20 (Xenopus)
+
+[Term]
+id: XAO:1000038
+name: NF stage 22 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 22; age 24 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Distinct protrusion of eyes. Initial groove between jaw- and gill-areas only at latero-dorsal side. Lateral and ventral outlines of embryo slightly concave. Anal opening displaced to ventral side. Vitelline membrane becoming wider. Length: 2.0 - 2.2 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000002 ! early tailbud (Xenopus)
+relationship: preceded_by XAO:1000037 ! NF stage 21 (Xenopus)
+
+[Term]
+id: XAO:1000039
+name: NF stage 23 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 23; age 1 day, 45 min at 22-24 Celsius; corresponding to the following external morphological criteria: Jaw- and gill-areas completely separated by groove. Ventral outline of embryo more concave. Length: 2.2 - 2.4 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000002 ! early tailbud (Xenopus)
+relationship: preceded_by XAO:1000038 ! NF stage 22 (Xenopus)
+
+[Term]
+id: XAO:1000040
+name: NF stage 24 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 24; age 1 day, 2 hr 15 min at 22-24 Celsius; corresponding to the following external morphological criteria: Eyes protruding less far laterally than gill-area. Gill-area more prominent than jaw-area, gill-area not yet grooved. Ventral outline of embryo nicked. Tail bud discernible. Initial motor reactions to external stimulation. Length: 2.5 - 2.7 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000002 ! early tailbud (Xenopus)
+relationship: preceded_by XAO:1000039 ! NF stage 23 (Xenopus)
+
+[Term]
+id: XAO:1000041
+name: NF stage 25 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 25; age 1 day, 3 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Eyes protruding equally far or further laterally than gill-area. Gill-area grooved. Invagination of otic vesicle indicated by pigment spot. Beginning of fin formation. Length: 2.8 - 3.0 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000002 ! early tailbud (Xenopus)
+relationship: preceded_by XAO:1000040 ! NF stage 24 (Xenopus)
+
+[Term]
+id: XAO:1000042
+name: NF stage 26 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 26; age 1 day, 5 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: otic vesicle protruding. Pronephros distinctly visible. Myotomes showing through for the first time. Fin somewhat broadened at dorso-caudal end of body. Beginning of spontaneous movements. Length: 3.0 - 3.3 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000002 ! early tailbud (Xenopus)
+relationship: preceded_by XAO:1000041 ! NF stage 25 (Xenopus)
+
+[Term]
+id: XAO:1000043
+name: NF stage 27 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 27; age 1 day, 7 hr 15 min at 22-24 Celsius; corresponding to the following external morphological criteria: Lateral flattening of eyes. Fin transluscent, except for region behind anus. Tail bud formation accentuated in lateral outline. Length: 3.4 - 3.7 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000002 ! early tailbud (Xenopus)
+relationship: preceded_by XAO:1000042 ! NF stage 26 (Xenopus)
+
+[Term]
+id: XAO:1000044
+name: NF stage 28 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 28; age 1 day, 8 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Fin extending up to anus. Fin broadened and distinctly divided into outer transparent and inner translucent band. Length: 3.8 - 4.0 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000002 ! early tailbud (Xenopus)
+relationship: preceded_by XAO:1000043 ! NF stage 27 (Xenopus)
+
+[Term]
+id: XAO:1000045
+name: NF stage 29 and 30 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 29 and 30; age 1 day, 11 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Gray eye cup showing through for the first time. Fin transparent up to the base over its whole length. Tail bud distinct. Length: 4.0 - 4.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000044 ! NF stage 28 (Xenopus)
+
+[Term]
+id: XAO:1000046
+name: NF stage 31 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 31; age 1 day, 13 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Tail bud equally long as broad. Length: 4.2 - 4.8 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000045 ! NF stage 29 and 30 (Xenopus)
+
+[Term]
+id: XAO:1000047
+name: NF stage 32 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 32; age 1 day, 16 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Eye cup horse-shoe-shaped, standing out distinctly. Length of tail bud about 1.5 times its breadth. Length: 4.5 - 5.1 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000046 ! NF stage 31 (Xenopus)
+
+[Term]
+id: XAO:1000048
+name: NF stage 33 and 34 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 33 and 34; age 1 day, 20 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Stomodeal invagination a shallow vertical groove. Dorsal part of eye more pigmented than ventral part; distinct melanophores in dorsal part. Melanophores appearing dorsally on the head and laterally in a row extending from just below the pronephros backwards. Length of tail bud about twice its breadth. Beginning of heart beat. Length: 4.7 - 5.3 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000047 ! NF stage 32 (Xenopus)
+
+[Term]
+id: XAO:1000049
+name: NF stage 35 and 36 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 35 and 36; age 2 days, 2 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Stomodeal invagination roundish. Eye entirely black, choroid fissure nearly closed. Formation of two gill rudiments, anterior one nipple-shaped. Melanophores appearing on back. Posterior outline of proctodeum still curved. Length of tail bud about three times its breadth. Beginning of hatching. Length: 5.3 - 6.0 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000048 ! NF stage 33 and 34 (Xenopus)
+
+[Term]
+id: XAO:1000050
+name: NF stage 37 and 38 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 37 and 38; age 2 days, 5 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Stomodeal invagination much deeper, opening round. Both gill rudiments nipple-shaped, a branch of the anterior one indicated. Posterior outline of proctodeum straight, forming very obtuse angle with ventral border of tail myotomes. Melanophores spreading over tail. Length: 5.6 - 6.2 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000049 ! NF stage 35 and 36 (Xenopus)
+
+[Term]
+id: XAO:1000051
+name: NF stage 39 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 39; age 2 days, 8 hr 30 min at 22-24 Celsius; corresponding to the following external morphological criteria: Melanophores appearing around nasal pits. Opening of stomodeal invagination transversely elongated. Melanophores on back arranged in a superficial and a deeper layer. Outlines of proctodeum and tail myotomes forming angle of about 135 degrees. Melanophores appearing along ventral edge of tail musculature. Length: 5.9 - 6.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000050 ! NF stage 37 and 38 (Xenopus)
+
+[Term]
+id: XAO:1000052
+name: NF stage 40 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 40; age 2 days, 18 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Mouth broken through. Length of gills about twice their breadth, posterior one sometimes also showing a branch. Outlines of proctodeum and tail myotomes forming angles of 90 degrees. Beginning of blood circulation in gills. Length: 6.3 - 6.8 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000051 ! NF stage 39 (Xenopus)
+
+[Term]
+id: XAO:1000053
+name: NF stage 41 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 41; age 3 days, 4 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Gills broader and flatter, more laterally directed. Formation of a left-rostral and a right-caudal furrow in yolk mass; torsion of interjacent part about 45 degrees; formation of conical proctodeum, forming angle of about 60 degrees with tail myotomes. Formation of fin rostral to proctodeum; ventral outline of yolk mass and proctodeum a smooth concave line. Length: 6.7 - 7.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000052 ! NF stage 40 (Xenopus)
+
+[Term]
+id: XAO:1000054
+name: NF stage 42 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 42; age 3 days, 8 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Beginning of formation of opercular folds. Torsion of intestine about 90 degrees; proctodeum connected with yolk mass by short horizontal intestinal tube. Length: 7.0 - 7.7 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000053 ! NF stage 41 (Xenopus)
+
+[Term]
+id: XAO:1000055
+name: NF stage 43 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 43; age 3 days, 15 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Lateral line system becoming visible externally. Cement gland losing its pigment. Torsion of intestine about 180 degrees; proctodeum narrower, arched or S-shaped. Length: 7.5 - 8.3 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000054 ! NF stage 42 (Xenopus)
+
+[Term]
+id: XAO:1000056
+name: NF stage 44 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 44; age 3 days, 20 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Appearance of tentacle rudiments. Opercular folds protruding further. Coiling part of intestine showing S-shaped loop; torsion about 360 degrees. Blood-circulation in gills usually ceased (gills smaller). Length: 7.8 - 8.5 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000080 ! late tailbud (Xenopus)
+relationship: preceded_by XAO:1000055 ! NF stage 43 (Xenopus)
+
+[Term]
+id: XAO:1000057
+name: NF stage 45 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 45; age 4 days, 2 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Operculum partly covering gills, edge still straight. Intestine spiralized in ventral aspects, showing 1.5 revolutions. Beginning of feeding. Length: 8 - 10 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000056 ! NF stage 44 (Xenopus)
+
+[Term]
+id: XAO:1000058
+name: NF stage 46 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 46; age 4 days, 10 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Edge of operculum becoming convex. Xantophores appearing on eye and abdomen. Intestine showing 2 to 2.5 revolutions. Hindlimb bud visible for the first time. Length: 9 - 12 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000057 ! NF stage 45 (Xenopus)
+
+[Term]
+id: XAO:1000059
+name: NF stage 47 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 47; age 5 days, 12 hr at 22-24 Celsius; corresponding to the following external morphological criteria: Tentacles larger. Edge of operculum forming quarter of a circle. Xantophores forming opaque layer on abdomen. Intestine showing 2.5 to 3.5 revolutions. Hindlimb bud more distinct. Length: 12 - 15 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000058 ! NF stage 46 (Xenopus)
+
+[Term]
+id: XAO:1000060
+name: NF stage 48 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 48; age 7.5 days at 22-24 Celsius; corresponding to the following external morphological criteria: Beginning of pigmentation around n. acusticus. Forelimb bud visible for the first time. Shining gold-coloured abdomen. Hindlimb bud semicircular in lateral aspect. Length: 14 - 17 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000059 ! NF stage 47 (Xenopus)
+
+[Term]
+id: XAO:1000061
+name: NF stage 49 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 49; age about 12 days at 22-24 Celsius; corresponding to the following external morphological criteria: Melanophores usually appearing around thymus gland and nerves and blood vessels of head; xantophores appearing on pericard. Forelimb bud distinct. Hindlimb bud somewhat longer, distal outline still circular, no constrictions at base. Melanophores appearing on dorsal and ventral fin. Length: 17 - 23 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000060 ! NF stage 48 (Xenopus)
+
+[Term]
+id: XAO:1000062
+name: NF stage 50 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 50; age about 15 days at 22-24 Celsius; corresponding to the following external morphological criteria: Forelimb bud somewhat oval-shaped in dorsal aspect. Hindlimb bud longer than broad, constricted at base, distal outline somewhat conical. Length: 20 - 27 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000061 ! NF stage 49 (Xenopus)
+
+[Term]
+id: XAO:1000063
+name: NF stage 51 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 51; age about 17 days at 22-24 Celsius; corresponding to the following external morphological criteria: Tentacles much longer. Forelimb bud oval-shaped in lateral aspect. Hindlimb bud conical in shape, its length about 1.5 times its breadth; melanophores appearing on it. Length: 28 - 36 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000062 ! NF stage 50 (Xenopus)
+
+[Term]
+id: XAO:1000064
+name: NF stage 52 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 52; age about 21 days at 22-24 Celsius; corresponding to the following external morphological criteria: Forelimb bud irregularly conical. Hindlimb bud showing first indication of ankle constriction and first sign of flattening of foot. Length: 42 - 56 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000063 ! NF stage 51 (Xenopus)
+
+[Term]
+id: XAO:1000065
+name: NF stage 53 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 53; age about 24 days at 22-24 Celsius; corresponding to the following external morphological criteria: Fore- and hindlimbs in paddle stage. Hindlimb whithout foot somewhat longer than broad; 4th and 5th toe indicated. Length: 50 - 60 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000064 ! NF stage 52 (Xenopus)
+
+[Term]
+id: XAO:1000066
+name: NF stage 54 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 54; age about 26 days at 22-24 Celsius; corresponding to the following external morphological criteria: All four fingers indicated; edge of hand slightly scalloped between fingers; melanophores appearing on forelimb. Length of hindlimb without foot nearly twice its breadth; all five toes indicated, the second only very slightly. Length: 58 - 65 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000089 ! premetamorphosis (Xenopus)
+relationship: preceded_by XAO:1000065 ! NF stage 53 (Xenopus)
+
+[Term]
+id: XAO:1000067
+name: NF stage 55 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 55; age about 32 days at 22-24 Celsius; corresponding to the following external morphological criteria: Hand pronated about 90 degrees; free parts of fingers about equally long as broad. Length of hindlimb without foot about 3 times its breadth; length of cartilages of 4th and 5th toe about 4 times their breadth. Length: 70 - 80 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000090 ! prometamorphosis (Xenopus)
+relationship: preceded_by XAO:1000066 ! NF stage 54 (Xenopus)
+
+[Term]
+id: XAO:1000068
+name: NF stage 56 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 56; age about 38 days at 22-24 Celsius; corresponding to the following external morphological criteria: Elbow and wrist clearly indicated; length of free parts of fingers 3 to 4 times their breadth. Length of cartilages of 4th and 5th toe about 6 times their breadth. Length: 70 - 100 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000090 ! prometamorphosis (Xenopus)
+relationship: preceded_by XAO:1000067 ! NF stage 55 (Xenopus)
+
+[Term]
+id: XAO:1000069
+name: NF stage 57 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 57; age about 41 days at 22-24 Celsius; corresponding to the following external morphological criteria: Pigment-free spot appearing above \"Stirnorgan\". Angle of elbow more than 90 degrees; fingers stretched out in forelimb atrium, their length about 7 times their breadth. Length: 75 - 105 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000090 ! prometamorphosis (Xenopus)
+relationship: preceded_by XAO:1000068 ! NF stage 56 (Xenopus)
+
+[Term]
+id: XAO:1000070
+name: NF stage 58 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 58; age about 44 days at 22-24 Celsius; corresponding to the following external morphological criteria: Forelimbs broken through. Guanophores appearing on abdomen and thighs (adult skin areas). All three claws present on hindlimbs. Length: 80 - 110 mm." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000069 ! NF stage 57 (Xenopus)
+
+[Term]
+id: XAO:1000071
+name: NF stage 59 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 59; age about 45 days at 22-24 Celsius; corresponding to the following external morphological criteria: Tentacles beginning to shrivel up. Stretched forelimb reaching down to base of hindlimb. Guanophores appearing near base of forelimb (adult skin area); anterior border of adult skin area on abdomen not yet sharp; appearance of irregular dark spots on back." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000070 ! NF stage 58 (Xenopus)
+
+[Term]
+id: XAO:1000072
+name: NF stage 60 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 60; age about 46 days at 22-24 Celsius; corresponding to the following external morphological criteria: N. olfactorius still longer than bulbus olfactorius. Guanophores appearing on lower jaw (adult skin area). Openings of gill chambers still wide. Distal half of fingers of stretched forelimb extending beyond base of hindlimb; forelimb still situated behind level of heart. Adult skin area of base of forelimb covered with guanophores; anterior border of adult skin area on abdomen sharper, reaching up to heart." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000071 ! NF stage 59 (Xenopus)
+
+[Term]
+id: XAO:1000073
+name: NF stage 61 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 61; age about 48 days at 22-24 Celsius; corresponding to the following external morphological criteria: Head narrower. Tentacles considerably shortened, mostly curved backwards. Length of n. olfactorius equal to diameter of bulbus olfactorius. 4th arterial arch seen just in front of adult skin area of forelimb. Openings of gill chambers considerably narrowed. Forelimb at level of posterior half of heart. Adult skin area on abdomen covering posterior half of heart. Fins considerably reduced." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000072 ! NF stage 60 (Xenopus)
+
+[Term]
+id: XAO:1000074
+name: NF stage 62 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 62; age about 49 days at 22-24 Celsius; corresponding to the following external morphological criteria: Head still somewhat broader than cranial part of trunk. Tentacles short, straight. N. olfactorius shorter than diameter of bulbus olfactorius. Corner of mouth still in front of eye. Thymus gland somewhat protruding. 3rd arterial arch (\"larval aorta\") seen at distance of its own diameter in front of adult skin area of forelimb. Opening of operculum reduced to curved slit. Forelimb at level of middle of heart. Anterior border of adult skin area on abdomen entirely sharp, mostly nicked medially. Ventral fin disappeared from abdomen." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000073 ! NF stage 61 (Xenopus)
+
+[Term]
+id: XAO:1000075
+name: NF stage 63 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 63; age about 51 days at 22-24 Celsius; corresponding to the following external morphological criteria: Head narrower than trunk. Tentacles mostly disappeared. Corner of mouth at level of caudal border of eye. \"Larval aorta\" and thymus gland no longer externally visible. Operculum closed. Adult skin areas on abdomen and lower jaw separated by narrow band of larval skin. Forelimb at level of anterior half of heart. Fin mostly perforated near anus. Tail still slightly longer than body." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000074 ! NF stage 62 (Xenopus)
+
+[Term]
+id: XAO:1000076
+name: NF stage 64 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 64; age about 53 days at 22-24 Celsius; corresponding to the following external morphological criteria: Corner of mouth well behind eye. Various adult skin areas joined almost everywhere, borderlines still clearly visible. Length of tail (from anus) is a third of body length." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000075 ! NF stage 63 (Xenopus)
+
+[Term]
+id: XAO:1000077
+name: NF stage 65 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 65; age about 54 days at 22-24 Celsius; corresponding to the following external morphological criteria: Borderlines between adult skin areas partly disappeared. Tail oblong triangular in dorsal aspect, length abouth one tenth of body length." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000076 ! NF stage 64 (Xenopus)
+
+[Term]
+id: XAO:1000078
+name: NF stage 66 (Xenopus)
+namespace: xenopus_developmental_stage
+def: "Nieuwkoop and Faber stage 66; age about 58 days at 22-24 Celsius; corresponding to the following external morphological criteria: Border lines between adult skin areas disappeared. Tail only a very small triangle, no longer visible from ventral side." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000091 ! climax (Xenopus)
+relationship: preceded_by XAO:1000077 ! NF stage 65 (Xenopus)
+
+[Term]
+id: XAO:1000079
+name: metamorphosing tadpole (Xenopus)
+namespace: xenopus_developmental_stage
+def: "The stages from Nieuwkoop and Faber stage 54 to stage 66." [ISBN:0815318960]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0004728 ! amphibian larval stage
+
+[Term]
+id: XAO:1000080
+name: late tailbud (Xenopus)
+namespace: xenopus_developmental_stage
+def: "The stages from Nieuwkoop and Faber stage 29/30 to stage 44." [ISBN:0815318960]
+is_a: UBERON:0009741 ! tailbud stage
+
+[Term]
+id: XAO:1000081
+name: unspecified stage (Xenopus)
+namespace: xenopus_developmental_stage
+comment: If an anatomical term has a starts_during or ends_during relationship to this stage term, this information is either unknown or has not yet been curated.
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: XAO:1000082
+name: unfertilized egg (Xenopus)
+namespace: xenopus_developmental_stage
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: XAO:1000083
+name: oocyte stage I (Xenopus)
+namespace: xenopus_developmental_stage
+is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+
+[Term]
+id: XAO:1000084
+name: oocyte stage II (Xenopus)
+namespace: xenopus_developmental_stage
+is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+
+[Term]
+id: XAO:1000085
+name: oocyte stage III (Xenopus)
+namespace: xenopus_developmental_stage
+is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+
+[Term]
+id: XAO:1000086
+name: oocyte stage IV (Xenopus)
+namespace: xenopus_developmental_stage
+is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+
+[Term]
+id: XAO:1000087
+name: oocyte stage V (Xenopus)
+namespace: xenopus_developmental_stage
+is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+
+[Term]
+id: XAO:1000088
+name: oocyte stage VI (Xenopus)
+namespace: xenopus_developmental_stage
+is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+
+[Term]
+id: XAO:1000089
+name: premetamorphosis (Xenopus)
+namespace: xenopus_developmental_stage
+def: "The period during which limb bud growth occurs, covering Nieuwkoop and Faber stage 45 to stage 54." [ISBN:0124554032]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0004728 ! amphibian larval stage
+
+[Term]
+id: XAO:1000090
+name: prometamorphosis (Xenopus)
+namespace: xenopus_developmental_stage
+def: "The period during which toe differentiation and rapid hind limb growth continue, covering Nieuwkoop and Faber stage 55 to stage 57." [ISBN:0124554032]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000079 ! metamorphosing tadpole (Xenopus)
+
+[Term]
+id: XAO:1000091
+name: climax (Xenopus)
+namespace: xenopus_developmental_stage
+def: "The period during which tail resorption occurs, covering Nieuwkoop and Faber stage 58 to stage 66." [ISBN:0124554032]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of XAO:1000079 ! metamorphosing tadpole (Xenopus)
+
+[Term]
+id: XAO:1000092
+name: mature egg (Xenopus)
+namespace: xenopus_developmental_stage
+is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+
+[Term]
+id: XAO:1000093
+name: adult frog (Xenopus)
+namespace: xenopus_developmental_stage
+def: "The stage of being a fully formed animal, following Nieuwkoop and Faber stage 66." [ISBN:0815318960]
+is_a: UBERON:0000113 ! post-juvenile adult stage
+
+[Term]
+id: ZFS:0000005
+name: Cleavage:16-cell
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-20
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+relationship: preceded_by UBERON:0007236 ! 8 cell stage
+
+[Term]
+id: ZFS:0000006
+name: Cleavage:32-cell
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-25
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+relationship: preceded_by ZFS:0000005 ! Cleavage:16-cell
+
+[Term]
+id: ZFS:0000007
+name: Cleavage:64-cell
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-28
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000107 ! cleavage stage
+relationship: preceded_by ZFS:0000006 ! Cleavage:32-cell
+
+[Term]
+id: ZFS:0000008
+name: Blastula:128-cell
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-7
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000007 ! Cleavage:64-cell
+
+[Term]
+id: ZFS:0000009
+name: Blastula:256-cell
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-1
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000008 ! Blastula:128-cell
+
+[Term]
+id: ZFS:0000010
+name: Blastula:512-cell
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-14
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000009 ! Blastula:256-cell
+
+[Term]
+id: ZFS:0000011
+name: Blastula:1k-cell
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-22
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000010 ! Blastula:512-cell
+
+[Term]
+id: ZFS:0000012
+name: Blastula:High
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-27
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000011 ! Blastula:1k-cell
+
+[Term]
+id: ZFS:0000013
+name: Blastula:Oblong
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-24
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000012 ! Blastula:High
+
+[Term]
+id: ZFS:0000014
+name: Blastula:Sphere
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-21
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000013 ! Blastula:Oblong
+
+[Term]
+id: ZFS:0000015
+name: Blastula:Dome
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-19
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000014 ! Blastula:Sphere
+
+[Term]
+id: ZFS:0000016
+name: Blastula:30%-epiboly
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-17
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000108 ! blastula stage
+relationship: preceded_by ZFS:0000015 ! Blastula:Dome
+
+[Term]
+id: ZFS:0000017
+name: Gastrula:50%-epiboly
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-6
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by ZFS:0000016 ! Blastula:30%-epiboly
+
+[Term]
+id: ZFS:0000018
+name: Gastrula:Germ-ring
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-3
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by ZFS:0000017 ! Gastrula:50%-epiboly
+
+[Term]
+id: ZFS:0000019
+name: Gastrula:Shield
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-2
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by ZFS:0000018 ! Gastrula:Germ-ring
+
+[Term]
+id: ZFS:0000020
+name: Gastrula:75%-epiboly
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-18
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by ZFS:0000019 ! Gastrula:Shield
+
+[Term]
+id: ZFS:0000021
+name: Gastrula:90%-epiboly
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-29
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by ZFS:0000020 ! Gastrula:75%-epiboly
+
+[Term]
+id: ZFS:0000022
+name: Gastrula:Bud
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-12
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000109 ! gastrula stage
+relationship: preceded_by ZFS:0000021 ! Gastrula:90%-epiboly
+
+[Term]
+id: ZFS:0000023
+name: Segmentation:1-4 somites
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-23
+is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by ZFS:0000022 ! Gastrula:Bud
+
+[Term]
+id: ZFS:0000024
+name: Segmentation:5-9 somites
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-5
+is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by ZFS:0000023 ! Segmentation:1-4 somites
+
+[Term]
+id: ZFS:0000025
+name: Segmentation:10-13 somites
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-020626-1
+is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by ZFS:0000024 ! Segmentation:5-9 somites
+
+[Term]
+id: ZFS:0000026
+name: Segmentation:14-19 somites
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-30
+is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by ZFS:0000025 ! Segmentation:10-13 somites
+
+[Term]
+id: ZFS:0000027
+name: Segmentation:20-25 somites
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-16
+is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by ZFS:0000026 ! Segmentation:14-19 somites
+
+[Term]
+id: ZFS:0000028
+name: Segmentation:26+ somites
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-34
+is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by ZFS:0000027 ! Segmentation:20-25 somites
+
+[Term]
+id: ZFS:0000029
+name: Pharyngula:Prim-5
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-10
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0004707 ! pharyngula stage
+relationship: preceded_by ZFS:0000028 ! Segmentation:26+ somites
+
+[Term]
+id: ZFS:0000030
+name: Pharyngula:Prim-15
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-32
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0004707 ! pharyngula stage
+relationship: preceded_by ZFS:0000029 ! Pharyngula:Prim-5
+
+[Term]
+id: ZFS:0000031
+name: Pharyngula:Prim-25
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-13
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0004707 ! pharyngula stage
+relationship: preceded_by ZFS:0000030 ! Pharyngula:Prim-15
+
+[Term]
+id: ZFS:0000032
+name: Pharyngula:High-pec
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-31
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0004707 ! pharyngula stage
+relationship: preceded_by ZFS:0000031 ! Pharyngula:Prim-25
+
+[Term]
+id: ZFS:0000033
+name: Hatching:Long-pec
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-9
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0004707 ! pharyngula stage
+relationship: preceded_by ZFS:0000032 ! Pharyngula:High-pec
+
+[Term]
+id: ZFS:0000034
+name: Hatching:Pec-fin
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-26
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
+relationship: preceded_by ZFS:0000033 ! Hatching:Long-pec
+
+[Term]
+id: ZFS:0000035
+name: Larval:Protruding-mouth
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-8
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
+relationship: preceded_by ZFS:0000034 ! Hatching:Pec-fin
+
+[Term]
+id: ZFS:0000036
+name: Larval:Day 4
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-35
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
+relationship: preceded_by ZFS:0000035 ! Larval:Protruding-mouth
+
+[Term]
+id: ZFS:0000037
+name: Larval:Day 5
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-36
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
+relationship: preceded_by ZFS:0000036 ! Larval:Day 4
+
+[Term]
+id: ZFS:0000038
+name: Larval:Day 6
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-37
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
+relationship: preceded_by ZFS:0000037 ! Larval:Day 5
+
+[Term]
+id: ZFS:0000039
+name: Larval:Days 7-13
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-47
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
+relationship: preceded_by ZFS:0000038 ! Larval:Day 6
+
+[Term]
+id: ZFS:0000040
+name: Larval:Days 14-20
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-48
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
+relationship: preceded_by ZFS:0000039 ! Larval:Days 7-13
+
+[Term]
+id: ZFS:0000041
+name: Larval:Days 21-29
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-49
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
+relationship: preceded_by ZFS:0000040 ! Larval:Days 14-20
+
+[Term]
+id: ZFS:0000042
+name: Juvenile:Days 30-44
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-51
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000112 ! juvenile stage
+relationship: preceded_by ZFS:0000041 ! Larval:Days 21-29
+
+[Term]
+id: ZFS:0000043
+name: Juvenile:Days 45-89
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-010723-52
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000112 ! juvenile stage
+relationship: preceded_by ZFS:0000042 ! Juvenile:Days 30-44
+
+[Typedef]
+id: BFO:0000051
+inverse_of: part_of
+
+[Typedef]
+id: directly_preceded_by
+is_a: preceded_by
+
+[Typedef]
+id: finishes
+is_a: part_of
+
+[Typedef]
+id: part_of
+is_transitive: true
+
+[Typedef]
+id: preceded_by
+is_transitive: true
+
+[Typedef]
+id: starts
+is_a: part_of
+

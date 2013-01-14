@@ -171,7 +171,7 @@ dv-aba.txt:
 
 SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory cranial appendicular
 
-all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
+all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS)) subsets/life-stages.obo
 PART_OF = BFO_0000050
 
 subsets/musculoskeletal-full.obo: merged.owl
@@ -199,6 +199,13 @@ subsets/appendicular-minimal.obo: merged.owl
 subsets/appendicular-ext.owl: #merged.owl
 	owltools --use-catalog pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "$(PART_OF) some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "this ontology is a derived subset of the phenoscape uberon extension, including only classes that satisfy the query 'part of some appendicular skeleton' " -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
 .PRECIOUS: subsets/appendicular-ext.owl
+
+#subsets/life-stages.obo: uberon.owl
+#subsets/life-stages.obo: composite-metazoan.obo
+subsets/life-stages.obo: composite-vertebrate.obo
+	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology" -o -f obo $@ --reasoner-dispose >& $@.LOG
+
+
 subsets/%.obo: subsets/%.owl
 	owltools $< -o -f obo $@
 
@@ -259,6 +266,9 @@ merged-nc.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
 merged.owl: merged-nc.owl
 	owltools $< --assert-inferred-subclass-axioms --useIsInferred --add-ontology-annotation $(DC)/description "This ontology combines all of uberon and cl plus a subset of other ontologies such as GO into a single merged ontology " -o file://`pwd`/$@
 
+foo.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
+	ontology-release-runner --reasoner elk --outdir tmp/ --useIsInferred --catalog-xml $(CATALOG) $<  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --no-subsets --skip-format owx
+
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
 	obolib-owl2obo -o $@.tmp $< && ./util/fix-synsubsetdef.pl $@.tmp > $@
@@ -297,7 +307,7 @@ composite-mammal.obo: merged.obo
 .PRECIOUS: mammal-mammal.obo
 
 composite-vertebrate.obo: merged.obo  $(METCACHE)
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@
 .PRECIOUS: composite-vertebrate.obo
 
 composite-metazoan.obo: merged.obo $(METCACHE)
@@ -321,8 +331,20 @@ composite-vertebrate.owl: composite-vertebrate.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
 
 
+# ----------------------------------------
+# OTHER
+# ----------------------------------------
 
-# TODO: use Oort
+xrefs/uberon-to-umls.tbl: uberon.obo
+	blip-findall -r NCITA  -i $< "entity_xref(U,X),inst_sv(X,'\"UMLS_CUI\"',C,_)" -select U-C -no_pred -label -use_tabs > $@.tmp && mv $@.tmp $@
+
+xrefs/uberon-to-umls.obo: uberon.obo
+	blip-findall -r NCITA  -i $< "entity_xref(U,X),inst_sv(X,'\"UMLS_CUI\"',C,_),atom_concat('UMLS:',C,CX)" -select U-CX -no_pred -use_tabs | tbl2obolinks.pl --rel xref  > $@.tmp && mv $@.tmp $@
+xrefs/uberon-to-umls-merged.obo: xrefs/uberon-to-umls.obo
+	obo-merge-tags.pl -t xref uberon_edit.obo $< > $@ && diff -u $@ uberon_edit.obo || echo
+
+
+# TODO: use Oort/owltools
 %-simple.obo: %.obo
 	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))' | obo-grep.pl --neg -r Typedef - > $@.tmp && cat $@.tmp uberon-simple-rel.obo > $@
 
@@ -560,6 +582,8 @@ uberon-taxmod-euarchontoglires.ids: uberon.obo
 #	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
 uberon-taxmod-aves.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:8782 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-archosaur.ids: uberon.obo
+	$(TAXFILTER) NCBITaxon:8492 > $@.tmp && grep ^UBERON $@.tmp > $@
 uberon-taxmod-echinoderm.ids: uberon.obo
 	$(TAXFILTER) NCBITaxon:7586 > $@.tmp && grep ^UBERON $@.tmp > $@
 #uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
@@ -572,6 +596,9 @@ uberon-taxmod-%.obo: uberon-taxmod-%.ids
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
 .PRECIOUS: uberon-taxmod-%.obo
 
+
+taxtable.txt: uberon_edit.obo
+	owltools $< --make-class-taxon-matrix --query-taxa external/ncbitaxon-subsets/taxslim.obo -o z NCBITaxon:9606 NCBITaxon:7955
 
 
 # ----------------------------------------
@@ -607,7 +634,7 @@ release:
 	cp depictions.owl $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
-	cp subsets/*-minimal.obo $(RELDIR)/subsets/ ;\
+	cp subsets/*.obo $(RELDIR)/subsets/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
 	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
