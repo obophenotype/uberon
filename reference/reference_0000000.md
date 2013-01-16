@@ -42,7 +42,7 @@ the ontology.
 
 Each article is represented as an individual, and gets a unique
 URI. For example, the URI for this article is
-(http://purl.obolibrary.org/obo/uberon/references/reference_0000000)[http://purl.obolibrary.org/obo/uberon/references/reference_0000000].
+[http://purl.obolibrary.org/obo/uberon/references/reference_0000000](http://purl.obolibrary.org/obo/uberon/references/reference_0000000).
 
 Each article is then adorned with metadata, using properties from
 vocabularies such as dublin core. The text of the article is

@@ -52,5 +52,6 @@ Contents
      * 0000026 [Inter anatomy ontology bridge module ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000026) *()*
      * 0000027 [Multi-species importer ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000027) *()*
      * 0000028 [Multi-species composite ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000028) *()*
+     * 0000037 [Synonyms in uberon](http://purl.obolibrary.org/obo/uberon/references/reference_0000037) *()*
  * spreadsheet_documentation
      * 0000007 [Vertebrate cranial terms](http://purl.obolibrary.org/obo/uberon/references/reference_0000007) *(peer reviewed)*

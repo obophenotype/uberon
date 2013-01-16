@@ -204,7 +204,7 @@ the ontology.
 
 Each article is represented as an individual, and gets a unique
 URI. For example, the URI for this article is
-(http://purl.obolibrary.org/obo/uberon/references/reference_0000000)[http://purl.obolibrary.org/obo/uberon/references/reference_0000000].
+[http://purl.obolibrary.org/obo/uberon/references/reference_0000000](http://purl.obolibrary.org/obo/uberon/references/reference_0000000).
 
 Each article is then adorned with metadata, using properties from
 vocabularies such as dublin core. The text of the article is
@@ -372,7 +372,7 @@ resolved immediately, rather than building up over time.
 
 ## The OBO-Jenkins CI system
 
-The (OBO CI system)[http://build.berkeleybop.org/] uses the Jenkins CI
+The [OBO CI system](http://build.berkeleybop.org/) uses the Jenkins CI
 server to perform integration tests over multiple OBO ontologies.
 
 The system consists of a set of jobs, each performing a particular set
@@ -381,7 +381,7 @@ Control System (VCS) such as SVN.
 
 For example, whenever an Uberon editor commits to the core github
 repository, the
-(build-uberon)[http://build.berkeleybop.org/job/build-uberon/] job is
+[build-uberon](http://build.berkeleybop.org/job/build-uberon/) job is
 queued. This job executes a number of scripts and runs Oort to perform
 a build. If a problem is found, Jenkins will email the committer.
 
@@ -393,12 +393,12 @@ union of Uberon and this AO plus bridging axioms is satisfiable.
 
 The following Jobs involve Uberon:
 
- * (build-uberon)[http://build.berkeleybop.org/job/build-uberon/]
- * (build-go-xp-uberon)[http://build.berkeleybop.org/job/build-go-xp-uberon/]
- * (check-uberon-ehdaa2)[http://build.berkeleybop.org/job/check-uberon-ehdaa2/]
- * (check-uberon-ma)[http://build.berkeleybop.org/job/check-uberon-ma/]
- * (check-uberon-zfa)[http://build.berkeleybop.org/job/check-uberon-zfa/]
- * (build-phenoscape)[http://build.berkeleybop.org/job/build-phenoscape/]
+ * [build-uberon](http://build.berkeleybop.org/job/build-uberon/)
+ * [build-go-xp-uberon](http://build.berkeleybop.org/job/build-go-xp-uberon/)
+ * [check-uberon-ehdaa2](http://build.berkeleybop.org/job/check-uberon-ehdaa2/)
+ * [check-uberon-ma](http://build.berkeleybop.org/job/check-uberon-ma/)
+ * [check-uberon-zfa](http://build.berkeleybop.org/job/check-uberon-zfa/)
+ * [build-phenoscape](http://build.berkeleybop.org/job/build-phenoscape/)
 
 ## Future developments
 
@@ -818,7 +818,7 @@ irrelevant whether a phenotypes affect an X vessel or X vasculature.
 "^^xsd:string
 
     Types:
-        ubref:
+        ubref:ontology_design_pattern
     
 
 Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000036>
@@ -843,7 +843,7 @@ and contributing ontologies.
 
 We have two disjoint hierarchies for stages and structures. This has
 certain consequences that are not ideal for everyone. For example, we
-have distinct classes for `larva` and `larva staage` - other
+have distinct classes for `larva` and `larva stage` - other
 ontologies may conflate these.
 
 There is also an increase in the number of relationship types used.
@@ -871,10 +871,10 @@ Stages are subdivided using the part_of relation. Each stage always
 has at least one subclass axiom (isa parent). This is typically to the
 parent `life cycle stage`.
 
-Stages are ordered in succession via the preceded_by relation. Note
-the distinction between direct and transitive precedence. An adult
-stage is always preceded by an embryonic stage, but it need not be
-*directly* preceded by this stage.
+Stages are ordered in succession via the preceded_by relation (MAY
+CHANGE TO starts_at_end_of). Note the distinction between direct and
+transitive precedence. An adult stage is always preceded by an
+embryonic stage, but it need not be *directly* preceded by this stage.
 
 ## Core generic classes
 
@@ -936,7 +936,7 @@ In order of preferences, stage ontologies should:
 Currently it is difficult to federate mammalian staging ontologies, we
 are working on solutions here.
 
-### Alternate staging schemes for a sinle species
+### Alternate staging schemes for a single species
 
 There may be more than one overlapping staging scheme for an
 organism. Currently these are not represented in Uberon, or in any of
@@ -2293,7 +2293,7 @@ A composite ontology can be used in conjunctions with ontology bridging axioms
          ubref:ontology_usage_article
 
 
-Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000027>
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000037>
 
     Annotations:
         dc:date "2012"^^xsd:int,

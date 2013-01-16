@@ -306,16 +306,17 @@ composite-mammal.obo: merged.obo
 	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r MA -r EHDAA2 -goal "rewrite_all('uberon/composite-mammal')" io-convert -to obo > $@
 .PRECIOUS: mammal-mammal.obo
 
+IVSTAGES = -i developmental-stage-ontologies/hsapdv.obo -i developmental-stage-ontologies/mmusdv.obo -i developmental-stage-ontologies/olatdv.obo
 composite-vertebrate.obo: merged.obo  $(METCACHE)
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@
 .PRECIOUS: composite-vertebrate.obo
 
 composite-metazoan.obo: merged.obo $(METCACHE)
-	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -i fbbt-nd.obo -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO $(IVSTAGES) -t fly_development -i fbbt-nd.obo -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
 .PRECIOUS: composite-metazoan.obo
 
 metazoan_glommed.obo: merged.obo
-	blip io-convert -debug index -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt -to obo | egrep -v '^(synonym|def|subset|xref|namespace|comment):' > $@.tmp && mv $@.tmp $@
+	blip io-convert -debug index -i $< -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt $(IVSTAGES) -to obo | egrep -v '^(synonym|def|subset|xref|namespace|comment):' > $@.tmp && mv $@.tmp $@
 
 # closures of individual ontologies, but not connections between them
 
@@ -432,6 +433,9 @@ organ_association.txt:
 
 stages.obo:
 	wget http://bgee.unil.ch/download/stages.obo
+
+mapping_EMAP_to_EMAPA.txt:
+	wget ftp://lausanne.isb-sib.ch/pub/databases/Bgee/general/mapping_EMAP_to_EMAPA.txt
 
 
 # ----------------------------------------
@@ -610,6 +614,12 @@ bridge/bridges: bridge/uberon-bridge-to-vhog.owl uberon_edit.obo
 
 bridge/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
+
+bridge/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt
+	blip ontol-query -r emapa -r emap -consult util/emap_to_cdef.pro -i $< -i uberon.obo -i developmental-stage-ontologies/mmusdv.obo -query "mapping_EMAP_to_EMAPA(ID,_,_)" -to obo | perl -npe 's/OBO_REL://' > $@.tmp && ./util/emap-to-cdef-add-hdr.pl $@.tmp > $@
+.PRECIOUS: bridge/uberon-bridge-to-emap.obo
+bridge/uberon-bridge-to-emap.owl: bridge/uberon-bridge-to-emap.obo
+	obolib-obo2owl --allow-dangling $< -o $@
 
 ext-xref.obo:
 	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON')" -select U-Z -label -use_tabs -no_pred | tbl2obolinks.pl --rel xref - > $@.tmp && cat ext-ref-hdr.obo $@.tmp > $@

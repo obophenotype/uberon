@@ -14,7 +14,7 @@ Date: 2012
 Document Type: ontology_usage_article
 
 ## Abstract
-This article describes how to use uberon synonymy metadata for text mining
+There are different ways of integrating a multi-species ontology with species-specific ones. This article describes the importer strategy
 
 
 Please read

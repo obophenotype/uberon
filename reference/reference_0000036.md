@@ -27,7 +27,7 @@ and contributing ontologies.
 
 We have two disjoint hierarchies for stages and structures. This has
 certain consequences that are not ideal for everyone. For example, we
-have distinct classes for `larva` and `larva staage` - other
+have distinct classes for `larva` and `larva stage` - other
 ontologies may conflate these.
 
 There is also an increase in the number of relationship types used.
@@ -55,10 +55,10 @@ Stages are subdivided using the part_of relation. Each stage always
 has at least one subclass axiom (isa parent). This is typically to the
 parent `life cycle stage`.
 
-Stages are ordered in succession via the preceded_by relation. Note
-the distinction between direct and transitive precedence. An adult
-stage is always preceded by an embryonic stage, but it need not be
-*directly* preceded by this stage.
+Stages are ordered in succession via the preceded_by relation (MAY
+CHANGE TO starts_at_end_of). Note the distinction between direct and
+transitive precedence. An adult stage is always preceded by an
+embryonic stage, but it need not be *directly* preceded by this stage.
 
 ## Core generic classes
 
@@ -120,7 +120,7 @@ In order of preferences, stage ontologies should:
 Currently it is difficult to federate mammalian staging ontologies, we
 are working on solutions here.
 
-### Alternate staging schemes for a sinle species
+### Alternate staging schemes for a single species
 
 There may be more than one overlapping staging scheme for an
 organism. Currently these are not represented in Uberon, or in any of

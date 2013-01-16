@@ -49,7 +49,7 @@ resolved immediately, rather than building up over time.
 
 ## The OBO-Jenkins CI system
 
-The (OBO CI system)[http://build.berkeleybop.org/] uses the Jenkins CI
+The [OBO CI system](http://build.berkeleybop.org/) uses the Jenkins CI
 server to perform integration tests over multiple OBO ontologies.
 
 The system consists of a set of jobs, each performing a particular set
@@ -58,7 +58,7 @@ Control System (VCS) such as SVN.
 
 For example, whenever an Uberon editor commits to the core github
 repository, the
-(build-uberon)[http://build.berkeleybop.org/job/build-uberon/] job is
+[build-uberon](http://build.berkeleybop.org/job/build-uberon/) job is
 queued. This job executes a number of scripts and runs Oort to perform
 a build. If a problem is found, Jenkins will email the committer.
 
@@ -70,12 +70,12 @@ union of Uberon and this AO plus bridging axioms is satisfiable.
 
 The following Jobs involve Uberon:
 
- * (build-uberon)[http://build.berkeleybop.org/job/build-uberon/]
- * (build-go-xp-uberon)[http://build.berkeleybop.org/job/build-go-xp-uberon/]
- * (check-uberon-ehdaa2)[http://build.berkeleybop.org/job/check-uberon-ehdaa2/]
- * (check-uberon-ma)[http://build.berkeleybop.org/job/check-uberon-ma/]
- * (check-uberon-zfa)[http://build.berkeleybop.org/job/check-uberon-zfa/]
- * (build-phenoscape)[http://build.berkeleybop.org/job/build-phenoscape/]
+ * [build-uberon](http://build.berkeleybop.org/job/build-uberon/)
+ * [build-go-xp-uberon](http://build.berkeleybop.org/job/build-go-xp-uberon/)
+ * [check-uberon-ehdaa2](http://build.berkeleybop.org/job/check-uberon-ehdaa2/)
+ * [check-uberon-ma](http://build.berkeleybop.org/job/check-uberon-ma/)
+ * [check-uberon-zfa](http://build.berkeleybop.org/job/check-uberon-zfa/)
+ * [build-phenoscape](http://build.berkeleybop.org/job/build-phenoscape/)
 
 ## Future developments
 
