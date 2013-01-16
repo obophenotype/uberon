@@ -20,7 +20,7 @@ Contents
 <!-- AUTO-ADD-CONTENTS -->
 
  * biological_modeling
-     * 0000001 [The representation of epithelium morphotopology in ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000001) *(initial draft)*
+     * 0000001 [Epithelial configurations](http://purl.obolibrary.org/obo/uberon/references/reference_0000001) *(initial draft)*
      * 0000003 [Appendages and appendicular skeleton](http://purl.obolibrary.org/obo/uberon/references/reference_0000003) *(intermediate draft)*
      * 0000006 [Ontology schema for representing the cephalic region and postcranial axial skeletal system](http://purl.obolibrary.org/obo/uberon/references/reference_0000006) *(initial draft)*
      * 0000010 [Extraembryonic membranes](http://purl.obolibrary.org/obo/uberon/references/reference_0000010) *(initial draft)*
@@ -33,7 +33,7 @@ Contents
      * 0000021 [Depictions of anatomical structures](http://purl.obolibrary.org/obo/uberon/references/reference_0000021) *(intermediate draft)*
      * 0000030 [Continuous integration](http://purl.obolibrary.org/obo/uberon/references/reference_0000030) *()*
  * ontology_design_pattern
-     * 0000004 [Mereotopology Axioms in Anatomy Ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000004) *(initial draft)*
+     * 0000004 [Mereotopological relations](http://purl.obolibrary.org/obo/uberon/references/reference_0000004) *(initial draft)*
      * 0000009 [Representing individual endochondral elements](http://purl.obolibrary.org/obo/uberon/references/reference_0000009) *(intermediate draft)*
      * 0000014 [Representation of paired structures](http://purl.obolibrary.org/obo/uberon/references/reference_0000014) *(intermediate draft)*
      * 0000015 [Automatic classification of skeleton partonomy](http://purl.obolibrary.org/obo/uberon/references/reference_0000015) *(intermediate draft)*
@@ -44,6 +44,9 @@ Contents
      * 0000023 [Evolutionary variability and general class axioms](http://purl.obolibrary.org/obo/uberon/references/reference_0000023) *(initial draft)*
      * 0000025 [Skeletal system vs skeleton](http://purl.obolibrary.org/obo/uberon/references/reference_0000025) *()*
      * 0000032 [Automatic inference of part_of relationships](http://purl.obolibrary.org/obo/uberon/references/reference_0000032) *()*
+     * 0000034 [Digestive tract](http://purl.obolibrary.org/obo/uberon/references/reference_0000034) *()*
+     * 0000035 [Conflation and Discrimination](http://purl.obolibrary.org/obo/uberon/references/reference_0000035) *()*
+     * 0000036 [Developmental stages](http://purl.obolibrary.org/obo/uberon/references/reference_0000036) *()*
  * ontology_usage_article
      * 0000024 [Connections between biological processes and anatomical structures](http://purl.obolibrary.org/obo/uberon/references/reference_0000024) *(intermediate draft)*
      * 0000026 [Inter anatomy ontology bridge module ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000026) *()*

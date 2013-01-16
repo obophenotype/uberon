@@ -18,7 +18,7 @@ Document Type: biological_modeling
 ...
 
 
-We consider the autopod as consisting of 3 segments, divided according to the following jointly-exhaustive mutually-disjoint part-hierarchy, listed proximal to distal:
+We consider the autopod as consisting of 3 segments, divided according to the following jointly-exhaustive mutually-disjoint part-hierarchy, listed distal to proximal
 
   * `skeleton of autopod`    (aka 'autopod')
       * `skeleton of acropodium` (aka 'acropodium')

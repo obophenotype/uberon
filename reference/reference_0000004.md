@@ -1,4 +1,4 @@
-# Mereotopology Axioms in Anatomy Ontologies
+# Mereotopological relations
 
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000004](http://purl.obolibrary.org/obo/uberon/references/reference_0000004)
@@ -14,6 +14,8 @@ Date: 2012
 Document Type: ontology_design_pattern
 
 
+
+This article needs to be migrated from the google doc
 
 
 
