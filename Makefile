@@ -53,7 +53,7 @@ uberon.obo: uberon_edit-implied.obo
 #  * species anatomy bridge axioms
 # This can be used to reveal both internal inconsistencies within uberon, and the improper linking of a species AO class to an uberon class with a taxon constraint
 uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.owl
-	owltools --catalog-xml $(CATALOG) $< external-disjoints.owl bridge/uberon-bridge-to-*.owl --merge-support-ontologies -o -f functional file://`pwd`/$@
+	owltools --catalog-xml $(CATALOG) $< external-disjoints.owl `ls bridge/uberon-bridge-to-*.owl | grep -v emap.owl` --merge-support-ontologies -o -f functional file://`pwd`/$@
 .PRECIOUS: uberon_edit-plus-tax-equivs.owl
 
 # see above
@@ -171,7 +171,7 @@ dv-aba.txt:
 
 SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory cranial appendicular
 
-all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS)) subsets/life-stages.obo
+all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS)) subsets/life-stages-composite.obo subsets/life-stages-core.obo
 PART_OF = BFO_0000050
 
 subsets/musculoskeletal-full.obo: merged.owl
@@ -202,12 +202,16 @@ subsets/appendicular-ext.owl: #merged.owl
 
 #subsets/life-stages.obo: uberon.owl
 #subsets/life-stages.obo: composite-metazoan.obo
-subsets/life-stages.obo: composite-vertebrate.obo
-	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology" -o -f obo $@ --reasoner-dispose >& $@.LOG
+subsets/life-stages-composite.obo: composite-vertebrate.obo
+	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f obo $@ --reasoner-dispose >& $@.LOG
+subsets/life-stages-core.obo: uberon.owl
+	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o -f obo $@ --reasoner-dispose >& $@.LOG
 
 
-subsets/%.obo: subsets/%.owl
-	owltools $< -o -f obo $@
+subsets/%.owl: subsets/%.obo
+	owltools $< -o file:///`pwd`/$@
+#subsets/%.obo: subsets/%.owl
+#	owltools $< -o -f obo $@
 
 # ----------------------------------------
 # Closure
