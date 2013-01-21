@@ -118,6 +118,7 @@ QC_FILES = uberon_edit.owl\
     uberon-orphans\
     uberon-synclash\
     external-disjoints.owl\
+    depictions.owl\
     bridge/bridges\
     quick-bridge-checks\
     taxon-constraint-check.txt\
@@ -471,6 +472,10 @@ dbpedia_all_Mammal_anatomy.pro:
 dbpedia_category_%.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:$*> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 .PRECIOUS: dbpedia_category_%.pro
+
+dbpedia_TH.pro:
+	 blip ontol-sparql-remote "SELECT ?x,?y WHERE {  ?x <http://dbpedia.org/property/code> ?y . FILTER strStarts(str(?y),'TH H')  }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+
 
 dbpedia_all_Bone.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type dbpedia-owl:Bone }" -write_prolog > $@.tmp && sort -u $@.tmp > $@

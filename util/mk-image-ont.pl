@@ -41,7 +41,7 @@ Prefix: foaf: <http://xmlns.com/foaf/0.1/>
 Prefix: wc: <http://upload.wikimedia.org/wikipedia/commons/>
 
 Ontology: <http://purl.obolibrary.org/obo/uberon/depictions.owl>
-Import: <http://purl.obolibrary.org/obo/uberon.owl>
+#Import: <http://purl.obolibrary.org/obo/uberon.owl>
 
 ObjectProperty: foaf:depicts
 
