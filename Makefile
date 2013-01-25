@@ -12,18 +12,18 @@ all: uberon-qc
 # - edit file contains dangling references
 IMPORTS= $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
 
-# edit owl file has
+# core.owl file has
 # * expanded macros
-# * imports to ncbitax
-uberon_edit.owl: uberon_edit-XM.owl
-	owltools $< --add-imports-declarations $(IMPORTS) // -o -f functional file://`pwd`/$@
-.PRECIOUS: uberon_edit.owl
+# * imports to ncbitax (for taxon checking)
+# note that a separate path builds the derived ontologies
 uberon_edit-XM.owl: uberon_edit.obo
 	obolib-obo2owl -x -xm INPLACE --allow-dangling -o $@ $< 
+core.owl: uberon_edit-XM.owl
+	owltools $< --add-imports-declarations $(IMPORTS) // -o -f functional file://`pwd`/$@
+.PRECIOUS: core.owl
 
 external-disjoints.owl: external-disjoints.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
-
 
 # REPLACEME
 #  step 1 - use noimports
@@ -31,9 +31,9 @@ external-disjoints.owl: external-disjoints.obo
 # todo: fix chemosensory organ problem...
 # todo: fix relation IDs
 uberon_edit-implied.obo: uberon_edit.obo
-	ontology-release-runner --catalog-xml $(CATALOG) --add-support-from-imports  --no-subsets --skip-format owx --outdir r/  --reasoner elk --asserted --allow-overwrite $< && cp r/uberon.obo $@
+	ontology-release-runner --catalog-xml $(CATALOG) --add-support-from-imports  --no-subsets --skip-format owx --outdir r/  --reasoner elk --simple --asserted --allow-overwrite $< && cp r/uberon.obo $@
 
-# TODO: use by Oort
+# TODO: use Oort. This roughly corresponds to the basic export of oort - however, Oort also removes axiom annotations
 uberon.obo: uberon_edit-implied.obo
 	obo-filter-external.pl --idspace UBERON --xp2rel $< | egrep -v '^(domain|range):' > $@
 
@@ -52,7 +52,7 @@ uberon.obo: uberon_edit-implied.obo
 #  * external-disjoints.owl
 #  * species anatomy bridge axioms
 # This can be used to reveal both internal inconsistencies within uberon, and the improper linking of a species AO class to an uberon class with a taxon constraint
-uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.owl
+uberon_edit-plus-tax-equivs.owl: core.owl external-disjoints.owl
 	owltools --catalog-xml $(CATALOG) $< external-disjoints.owl `ls bridge/uberon-bridge-to-*.owl | grep -v emap.owl` --merge-support-ontologies -o -f functional file://`pwd`/$@
 .PRECIOUS: uberon_edit-plus-tax-equivs.owl
 
@@ -88,7 +88,7 @@ bridge-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
 
 # TODO: add to Oort
 %-xp-check: %.obo
-	obo-check-xps.pl $< >& $@ || echo "problems"
+	obo-check-xps.pl $< >& $@ || (echo "problems" && exit 1)
 
 %-relstats: %.obo
 	blip-findall -r uberon  "aggregate(count,X-T,parent(X,R,T),Num)" -select "R-Num" -no_pred | | sort -nk2 > $@
@@ -106,11 +106,11 @@ depictions.omn: uberon_edit.obo
 depictions.owl: depictions.omn
 	owltools $< -o file://`pwd`/$@
 
-quick-qc: uberon.obo-OE-check uberon_edit.owl uberon_edit-obscheck.txt
+quick-qc: uberon.obo-OE-check core.owl uberon_edit-obscheck.txt
 	cat uberon_edit-obscheck.txt
 
-QC_FILES = uberon_edit.owl\
-    uberon_edit-xp-check\
+QC_FILES = uberon_edit-xp-check\
+    core.owl\
     uberon_edit-obscheck.txt\
     uberon.obo\
     uberon.obo-OE-check\
@@ -263,6 +263,10 @@ GOEXT = $(OBO)/go/extensions
 #MCAT_ONTS = $(OBO)/go.owl $(GOEXT)/chebi-lite.obo  $(OBO)/pato.owl pr-core.owl
 MCAT_ONTS = $(OBO)/go.owl chebi-lite.obo  $(OBO)/pato.owl pr-core.owl
 
+# ----------
+# merged.owl
+# ----------
+
 # merged, non-classified
 merged-nc.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
 	owltools --catalog-xml $(CATALOG) $<  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --mcat --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ -n $(OBO)/uberon/merged.owl -o file://`pwd`/$@
@@ -271,8 +275,8 @@ merged-nc.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
 merged.owl: merged-nc.owl
 	owltools $< --assert-inferred-subclass-axioms --useIsInferred --add-ontology-annotation $(DC)/description "This ontology combines all of uberon and cl plus a subset of other ontologies such as GO into a single merged ontology " -o file://`pwd`/$@
 
-foo.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
-	ontology-release-runner --reasoner elk --outdir tmp/ --useIsInferred --catalog-xml $(CATALOG) $<  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --no-subsets --skip-format owx
+#foo.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
+#	ontology-release-runner --reasoner elk --outdir tmp/ --useIsInferred --catalog-xml $(CATALOG) $<  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --no-subsets --skip-format owx
 
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
@@ -280,7 +284,7 @@ merged.obo: merged.owl
 .PRECIOUS: merged.obo
 
 other-bridges: merged.owl
-	owltools $< --extract-bridge-ontologies -d tmp -s uberon -x -o -f obo z
+	owltools $< --extract-bridge-ontologies -d tmp -s uberon -x -o -f obo tmp/minimal.obo
 
 # core: the full ontology, excluding external classes, but including references to these
 # TODO: use --make-subset-by-properties
@@ -402,6 +406,9 @@ uberon-defs-from-mp.obo:
 
 %.xrefcount: %.obo
 	blip -i $< -u ontol_db findall -label '(class(C),setof_count(X,class_xref(C,X),Num))' -select 'C-Num' | sort -k3 -n > $@
+
+caloha-not-in-uberon.txt: 
+	blip-findall -consult util/ubxref.pro -i uberon.obo -r caloha "class(X),atom_concat('TS-',_,X),\+ubxref(_,X)" -select X -label
 
 # ----------------------------------------
 # Rules
@@ -630,10 +637,11 @@ bridge/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt
 bridge/uberon-bridge-to-emap.owl: bridge/uberon-bridge-to-emap.obo
 	obolib-obo2owl --allow-dangling $< -o $@
 
-ext-xref.obo:
+# DO NOT REMAKE ANY MORE: See #157
+bridge/ext-xref-PREVIEW.obo:
 	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON')" -select U-Z -label -use_tabs -no_pred | tbl2obolinks.pl --rel xref - > $@.tmp && cat ext-ref-hdr.obo $@.tmp > $@
-bridge/uberon-ext-bridge-to-zfa.obo: ext-xref.obo
-	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ../ext-xref.obo
+bridge/uberon-ext-bridge-to-zfa.obo: bridge/ext-xref.obo
+	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ext-xref.obo
 
 # see #157
 ext-xref-conflict.obo:
@@ -643,7 +651,7 @@ ext-xref-conflict2.obo:
 
 RELDIR=trunk
 release:
-	cp uberon_edit.owl $(RELDIR)/core.owl ;\
+	cp core.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl} $(RELDIR) ;\
 	cp merged.{obo,owl} $(RELDIR)/ ;\

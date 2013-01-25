@@ -87,6 +87,8 @@ while(<>) {
     chomp;
     s/relationship: (constitutional|regional|systemic)_part/relationship: part/;
 
+    s/property_value:.*UMLS_CUI.*\"(\S+)\".*/xref: UMLS:$1/;
+
     if (/^\[/) {
         $in_header = 0;
     }
