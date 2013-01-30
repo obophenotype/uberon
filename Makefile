@@ -317,11 +317,12 @@ composite-mammal.obo: merged.obo
 
 IVSTAGES = -i developmental-stage-ontologies/hsapdv.obo -i developmental-stage-ontologies/mmusdv.obo -i developmental-stage-ontologies/olatdv.obo
 composite-vertebrate.obo: merged.obo  $(METCACHE)
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: composite-vertebrate.obo
 
+# TODO:  development CV 
 composite-metazoan.obo: merged.obo $(METCACHE)
-	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r MA -r EHDAA2 -r XAO $(IVSTAGES) -t fly_development -i fbbt-nd.obo -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i fbbt-nd.obo -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: composite-metazoan.obo
 
 metazoan_glommed.obo: merged.obo
