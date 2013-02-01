@@ -1,12 +1,14 @@
 OBO=http://purl.obolibrary.org/obo
-SRC = ../uberon.obo
+ONT = uberon
+SRC = ../$(ONT).obo
+LAST = $(OBO)/$(ONT).obo
 
-all: uberon-obo-diff.html uberon-def-diff.html uberon-lastbuild.obo
+all: $(ONT)-obo-diff.html $(ONT)-def-diff.html $(ONT)-lastbuild.obo
 
-uberon-obo-diff.html: uberon-lastbuild.obo $(SRC)
-	compare-obo-files.pl --config 'html/ontology_name=Uberon' --rss-path . -f1 $< -f2 $(SRC) -m html text rss -o uberon-obo-diff
-uberon-def-diff.html: uberon-lastbuild.obo $(SRC)
-	compare-defs.pl --config 'html/ontology_name=Uberon' --rss-path . -f1 $< -f2 $(SRC) -m html text rss -o uberon-def-diff
+$(ONT)-obo-diff.html: $(ONT)-lastbuild.obo $(SRC)
+	compare-obo-files.pl --config 'html/ontology_name=$(ONT)' --rss-path . -f1 $< -f2 $(SRC) -m html text rss -o $(ONT)-obo-diff
+$(ONT)-def-diff.html: $(ONT)-lastbuild.obo $(SRC)
+	compare-defs.pl --config 'html/ontology_name=$(ONT)' --rss-path . -f1 $< -f2 $(SRC) -m html text rss -o $(ONT)-def-diff
 
-uberon-lastbuild.obo: $(SRC)
-	wget $(OBO)/uberon.obo -O $@
+$(ONT)-lastbuild.obo: $(SRC)
+	wget $(LAST) -O $@
