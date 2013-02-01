@@ -33,9 +33,15 @@ external-disjoints.owl: external-disjoints.obo
 uberon_edit-implied.obo: uberon_edit.obo
 	ontology-release-runner --catalog-xml $(CATALOG) --add-support-from-imports  --no-subsets --skip-format owx --outdir r/  --reasoner elk --simple --asserted --allow-overwrite $< && cp r/uberon.obo $@
 
-# TODO: use Oort. This roughly corresponds to the basic export of oort - however, Oort also removes axiom annotations
+# TODO: use Oort. This roughly corresponds to the basic export of oort - however, Oort also removes axiom annotations in the basic export
 uberon.obo: uberon_edit-implied.obo
 	obo-filter-external.pl --idspace UBERON --xp2rel $< | egrep -v '^(domain|range):' > $@
+
+# TODO: use Oort/owltools
+uberon-simple.obo: uberon_edit-implied.obo
+	owltools r/uberon-simple.obo --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo $@
+#	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))' | obo-grep.pl --neg -r Typedef - > $@.tmp && cat $@.tmp uberon-simple-rel.obo > $@
+
 
 # check OE can parse:
 # for validation purposes only
@@ -315,7 +321,7 @@ composite-mammal.obo: merged.obo
 	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r MA -r EHDAA2 -goal "rewrite_all('uberon/composite-mammal')" io-convert -to obo > $@
 .PRECIOUS: mammal-mammal.obo
 
-IVSTAGES = -i developmental-stage-ontologies/hsapdv.obo -i developmental-stage-ontologies/mmusdv.obo -i developmental-stage-ontologies/olatdv.obo
+IVSTAGES = -i developmental-stage-ontologies/hsapdv/hsapdv.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -i developmental-stage-ontologies/olatdv/olatdv.obo
 composite-vertebrate.obo: merged.obo  $(METCACHE)
 	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: composite-vertebrate.obo
@@ -355,9 +361,6 @@ xrefs/uberon-to-umls-merged.obo: xrefs/uberon-to-umls.obo
 	obo-merge-tags.pl -t xref uberon_edit.obo $< > $@ && diff -u $@ uberon_edit.obo || echo
 
 
-# TODO: use Oort/owltools
-%-simple.obo: %.obo
-	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))' | obo-grep.pl --neg -r Typedef - > $@.tmp && cat $@.tmp uberon-simple-rel.obo > $@
 
 # TODO: use Oort
 #%-bridge.obo: %-with-isa.obo
