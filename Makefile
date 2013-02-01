@@ -171,6 +171,9 @@ dv-aba.txt:
 	blip-findall -r uberonp -r aba "disjoint_from(X1,X2),id_idspace(X1,'ABA'),entity_xref(U1,X1),entity_xref(U2,X2),parentRT(D,part_of,U1),parentRT(D,part_of,U2)" -select "d(D,U1,U2)" -label > $@
 
 
+ABA-with-parts.obo: ABA.obo
+	./util/make-aba-part-ofs.pl $< > $@
+
 # ----------------------------------------
 # System-specific subsets
 # ----------------------------------------
