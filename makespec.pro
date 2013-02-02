@@ -24,7 +24,7 @@ anatomy(geisha).
 anatomy(vsao).
 anatomy(vhog).
 anatomy(galen).
-%anatomy(rad).
+anatomy(rad).
 anatomy(caloha).
 
 allow_dangling(ceph).
@@ -138,8 +138,6 @@ nlp_hook(A,B,null) :- true.
 
 'align/unmatched-anc-%.tbl' <-- [],
        'blip-findall  -r uberonp -r $* "entity_xref(U,X),id_idspace(U,\'UBERON\'),class(X),parentT(X,Y),\\+entity_xref(_,Y)" -select Y -label | sort -u > $@'.
-
-
 
 
 suffix_fmt(mos,manchester).

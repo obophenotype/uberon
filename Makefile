@@ -289,7 +289,7 @@ merged.owl: merged-nc.owl
 
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
-	obolib-owl2obo -o $@.tmp $< && ./util/fix-synsubsetdef.pl $@.tmp > $@
+	obolib-owl2obo -o $@.tmp $< && ./util/fix-synsubsetdef.pl $@.tmp > $@.tmp2 && mv $@.tmp2 $@
 .PRECIOUS: merged.obo
 
 other-bridges: merged.owl

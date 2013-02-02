@@ -9,7 +9,8 @@ namespace: human_developmental_stage
 def: "Embryonic stage defined by a fertilized oocyte and presence of pronuclei." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Starts at day 1 post-fertilization, beginning of the first week.
 xref: XUO:0000130
-is_a: UBERON:0000068 ! embryo stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000068 ! embryo stage
 
 [Term]
 id: HsapDv:0000004
@@ -17,7 +18,8 @@ name: cleavage stage
 namespace: human_developmental_stage
 def: "Embryonic stage consisting of division of cells in the early embryo." [UBERON:0000107]
 comment: The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula.
-is_a: UBERON:0000068 ! embryo stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000068 ! embryo stage
 
 [Term]
 id: HsapDv:0000005
@@ -26,7 +28,9 @@ namespace: human_developmental_stage
 def: "Cleavage stage during which cell division occurs with reduction in cytoplasmic volume, and formation of inner and outer cell mass." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 2 and day 3 post-fertilization.
 xref: XUO:0000131
-is_a: HsapDv:0000004 ! cleavage stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000003 ! Carnegie stage 01
+relationship: part_of HsapDv:0000004 ! cleavage stage
 
 [Term]
 id: HsapDv:0000007
@@ -35,7 +39,9 @@ namespace: human_developmental_stage
 def: "Blastula stage with the loss of the zona pellucida and the definition of a free blastocyst." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 4 and day 5 post-fertilization.
 xref: XUO:0000132
-is_a: UBERON:0000108 ! blastula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000005 ! Carnegie stage 02
+relationship: part_of UBERON:0000108 ! blastula stage
 
 [Term]
 id: HsapDv:0000008
@@ -44,7 +50,9 @@ namespace: human_developmental_stage
 def: "Blastula stage during which the blastocyst becomes attached." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 5 and day 6 post-fertilization.
 xref: XUO:0000133
-is_a: UBERON:0000108 ! blastula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000007 ! Carnegie stage 03
+relationship: part_of UBERON:0000108 ! blastula stage
 
 [Term]
 id: HsapDv:0000009
@@ -53,7 +61,9 @@ namespace: human_developmental_stage
 def: "Blastula stage during which implantation occurs." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 7 and day 12 post-fertilization, beginning of the second week.
 xref: XUO:0000134
-is_a: UBERON:0000108 ! blastula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000008 ! Carnegie stage 04
+relationship: part_of UBERON:0000108 ! blastula stage
 
 [Term]
 id: HsapDv:0000011
@@ -62,7 +72,9 @@ namespace: human_developmental_stage
 def: "Gastrula stage during which the extraembryonic mesoderm and primitive streak appear." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 13 and day 15 post-fertilization.
 xref: XUO:0000135
-is_a: UBERON:0000109 ! gastrula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000009 ! Carnegie stage 05
+relationship: part_of UBERON:0000109 ! gastrula stage
 
 [Term]
 id: HsapDv:0000013
@@ -71,7 +83,9 @@ namespace: human_developmental_stage
 def: "Neurula stage during which the notochordal process appears, and gastrulation is continuing." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 15 and day 17 post-fertilization, beginning of the third week.
 xref: XUO:0000136
-is_a: UBERON:0000110 ! neurula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000011 ! Carnegie stage 06
+relationship: part_of UBERON:0000110 ! neurula stage
 
 [Term]
 id: HsapDv:0000014
@@ -80,7 +94,9 @@ namespace: human_developmental_stage
 def: "Neurula stage during which the primitive pit and the notochordal canal appear." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 17 and day 19 post-fertilization.
 xref: XUO:0000137
-is_a: UBERON:0000110 ! neurula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000013 ! Carnegie stage 07
+relationship: part_of UBERON:0000110 ! neurula stage
 
 [Term]
 id: HsapDv:0000016
@@ -89,7 +105,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which somites 1-3 appear, and neural folds, cardiac primordium, and head fold are present." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 19 and day 21 post-fertilization.
 xref: XUO:0000138
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000014 ! Carnegie stage 08
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000017
@@ -98,7 +116,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which somites 4-12 appear, and the neural fold fuses." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 22 and day 23 post-fertilization, beginning of the fourth week.
 xref: XUO:0000139
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000016 ! Carnegie stage 09
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000018
@@ -107,7 +127,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which somites 13-20 appear, and the rostral neuropore closes." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 23 and day 26 post-fertilization.
 xref: XUO:0000140
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000017 ! Carnegie stage 10
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000019
@@ -116,7 +138,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which somites 21-29 appear, and the caudal neuropore closes." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 26 and day 30 post-fertilization.
 xref: XUO:0000141
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000018 ! Carnegie stage 11
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000020
@@ -125,7 +149,9 @@ namespace: human_developmental_stage
 def: "Organogenesis developmental stage during which somite 30 appears, and leg buds, lens placode, pharyngeal arches are present." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 28 and day 32 post-fertilization, beginning of the fifth week.
 xref: XUO:0000142
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000019 ! Carnegie stage 12
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000021
@@ -134,7 +160,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which lens pit and optic cup appear." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 31 and day 35 post-fertilization.
 xref: XUO:0000143
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000020 ! Carnegie stage 13
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000022
@@ -143,7 +171,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which lens vesicle, nasal pit, and hand plate appear." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 35 and day 38 post-fertilization.
 xref: XUO:0000144
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000021 ! Carnegie stage 14
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000023
@@ -152,7 +182,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which nasal pits moved ventrally, and features are auricular hillocks, and foot plate." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 37 and day 42 post-fertilization, beginning of the sixth week.
 xref: XUO:0000145
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000022 ! Carnegie stage 15
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000024
@@ -161,7 +193,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which finger rays become visible." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 42 and day 44 post-fertilization.
 xref: XUO:0000146
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000023 ! Carnegie stage 16
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000025
@@ -170,7 +204,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which ossification commences." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 44 and day 48 post-fertilization, beginning of the seventh week.
 xref: XUO:0000147
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000024 ! Carnegie stage 17
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000026
@@ -179,7 +215,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which the straightening of the trunk starts." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 48 and day 51 post-fertilization.
 xref: XUO:0000148
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000025 ! Carnegie stage 18
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000027
@@ -188,7 +226,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which upper limbs are longer and bent at elbow." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 51 and day 53 post-fertilization, beginning of the eighth week.
 xref: XUO:0000149
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000026 ! Carnegie stage 19
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000028
@@ -197,7 +237,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which hands and feet turned inward." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 53 and day 54 post-fertilization.
 xref: XUO:0000150
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000027 ! Carnegie stage 20
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000029
@@ -206,7 +248,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which eyelids and external ears appear." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 54 and day 56 post-fertilization.
 xref: XUO:0000151
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000028 ! Carnegie stage 21
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000030
@@ -215,7 +259,9 @@ namespace: human_developmental_stage
 def: "Organogenesis stage during which the head, the body, and the limbs are rounded structures." [http://embryology.med.unsw.edu.au/wwwhuman/Stages/CStages.htm]
 comment: Usually starts between day 56 and day 60 post-fertilization.
 xref: XUO:0000152
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000029 ! Carnegie stage 22
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: HsapDv:0000031
@@ -223,7 +269,8 @@ name: Carnegie stage 05a
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 5 defined by a solid trophoblast." [http://nmhm.washingtondc.museum/collections/hdac/Stages_Table.htm]
 xref: XUO:0000187
-is_a: HsapDv:0000009 ! Carnegie stage 05
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000009 ! Carnegie stage 05
 
 [Term]
 id: HsapDv:0000032
@@ -231,7 +278,8 @@ name: Carnegie stage 05b
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 5 defined by a trophoblastic lacunae." [http://nmhm.washingtondc.museum/collections/hdac/Stages_Table.htm]
 xref: XUO:0000188
-is_a: HsapDv:0000009 ! Carnegie stage 05
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000009 ! Carnegie stage 05
 
 [Term]
 id: HsapDv:0000033
@@ -239,7 +287,8 @@ name: Carnegie stage 05c
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 5 defined by a lacunar vascular circle." [http://nmhm.washingtondc.museum/collections/hdac/Stages_Table.htm]
 xref: XUO:0000189
-is_a: HsapDv:0000009 ! Carnegie stage 05
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000009 ! Carnegie stage 05
 
 [Term]
 id: HsapDv:0000034
@@ -247,7 +296,8 @@ name: Carnegie stage 06a
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 6 during which chorionic villi appear." [http://nmhm.washingtondc.museum/collections/hdac/Stages_Table.htm]
 xref: XUO:0000190
-is_a: HsapDv:0000011 ! Carnegie stage 06
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000011 ! Carnegie stage 06
 
 [Term]
 id: HsapDv:0000035
@@ -255,7 +305,401 @@ name: Carnegie stage 06b
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 6 during which the primitive streak appears." [http://nmhm.washingtondc.museum/collections/hdac/Stages_Table.htm]
 xref: XUO:0000191
-is_a: HsapDv:0000011 ! Carnegie stage 06
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000011 ! Carnegie stage 06
+
+[Term]
+id: HsapDv:0000037
+name: fetal stage
+namespace: human_developmental_stage
+def: "Prenatal stage that starts with the fully formed embryo and ends at birth." [Bgee:curator]
+synonym: "fetus stage" RELATED []
+synonym: "foetus stage" RELATED []
+xref: EV:0300011
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000045 ! prenatal stage
+
+[Term]
+id: HsapDv:0000045
+name: prenatal stage
+namespace: human_developmental_stage
+def: "Human developmental stage that starts with fertilization and ends with birth." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+
+[Term]
+id: HsapDv:0000046
+name: 9th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 8 and under 9 weeks of development." [Bgee:curator]
+comment: External genitalia begin to distinguish themselves as either male or female. Eyelids are completely closed, and vocal ligaments appear (see http://ehd.org/resources_bpd_documentation_english.php).
+xref: EV:0300012
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000197 ! third LMP month
+
+[Term]
+id: HsapDv:0000047
+name: 10th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 9 and under 10 weeks of development." [Bgee:curator]
+comment: The fingernails and toenails begin to develop and unique fingerprints appear. Ossification is underway in most bones (see http://ehd.org/resources_bpd_documentation_english.php).
+xref: EV:0300013
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000197 ! third LMP month
+
+[Term]
+id: HsapDv:0000048
+name: 11th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 10 and under 11 weeks of development." [Bgee:curator]
+comment: The nose and lips are completely formed, and external genitalia can be distinguished as male or female (see http://ehd.org/resources_bpd_documentation_english.php).
+xref: EV:0300030
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000197 ! third LMP month
+
+[Term]
+id: HsapDv:0000049
+name: 12th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 11 and under 12 weeks of development." [Bgee:curator]
+comment: Upper limb length has nearly reached its final proportion to body size (see http://ehd.org/resources_bpd_documentation_english.php). The assignation of this week to the fourth or third LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+xref: EV:0300014
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000198 ! fourth LMP month
+
+[Term]
+id: HsapDv:0000050
+name: 13th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 12 and under 13 weeks of development." [Bgee:curator]
+xref: EV:0300015
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000198 ! fourth LMP month
+
+[Term]
+id: HsapDv:0000051
+name: 14th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 13 and under 14 weeks of development." [Bgee:curator]
+xref: EV:0300016
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000198 ! fourth LMP month
+
+[Term]
+id: HsapDv:0000052
+name: 15th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 14 and under 15 weeks of development." [Bgee:curator]
+xref: EV:0300031
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000198 ! fourth LMP month
+
+[Term]
+id: HsapDv:0000053
+name: 16th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 15 and under 16 weeks of development." [Bgee:curator]
+comment: The assignation of this week to the fifth or fourth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+xref: EV:0300017
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000199 ! fifth LMP month
+
+[Term]
+id: HsapDv:0000054
+name: 17th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 16 and under 17 weeks of development." [Bgee:curator]
+xref: EV:0300018
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000199 ! fifth LMP month
+
+[Term]
+id: HsapDv:0000055
+name: 18th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 17 and under 18 weeks of development." [Bgee:curator]
+xref: EV:0300019
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000199 ! fifth LMP month
+
+[Term]
+id: HsapDv:0000056
+name: 19th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 18 and under 19 weeks of development." [Bgee:curator]
+xref: EV:0300020
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000199 ! fifth LMP month
+
+[Term]
+id: HsapDv:0000057
+name: 20th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 19 and under 20 weeks of development." [Bgee:curator]
+comment: The cochlea has reached adult size within the fully developed inner ear (see http://ehd.org/resources_bpd_documentation_english.php). The assignation of this week to the sixth or fifth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+xref: EV:0300021
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000200 ! sixth LMP month
+
+[Term]
+id: HsapDv:0000058
+name: 21st week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 20 and under 21 weeks of development." [Bgee:curator]
+comment: The lungs gain some ability to breathe air. This stage is considered the age of viability because survival outside the womb becomes possible for some fetuses (see http://ehd.org/resources_bpd_documentation_english.php).
+xref: EV:0300029
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000200 ! sixth LMP month
+
+[Term]
+id: HsapDv:0000059
+name: 22nd week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 21 and under 22 weeks of development." [Bgee:curator]
+xref: EV:0300022
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000200 ! sixth LMP month
+
+[Term]
+id: HsapDv:0000060
+name: 23rd week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 22 and under 23 weeks of development." [Bgee:curator]
+xref: EV:0300023
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000200 ! sixth LMP month
+
+[Term]
+id: HsapDv:0000061
+name: 24th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 23 and under 24 weeks of development." [Bgee:curator]
+comment: The eyelids reopen (see http://ehd.org/resources_bpd_documentation_english.php).
+xref: EV:0300024
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000200 ! sixth LMP month
+
+[Term]
+id: HsapDv:0000062
+name: 25th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 24 and under 25 weeks of development." [Bgee:curator]
+comment: The assignation of this week to the seventh or sixth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+xref: EV:0300032
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000201 ! seventh LMP month
+
+[Term]
+id: HsapDv:0000063
+name: 26th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 25 and under 26 weeks of development." [Bgee:curator]
+xref: EV:0300025
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000201 ! seventh LMP month
+
+[Term]
+id: HsapDv:0000064
+name: 27th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 26 and under 27 weeks of development." [Bgee:curator]
+xref: EV:0300033
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000201 ! seventh LMP month
+
+[Term]
+id: HsapDv:0000065
+name: 28th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 27 and under 28 weeks of development." [Bgee:curator]
+xref: EV:0300026
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000201 ! seventh LMP month
+
+[Term]
+id: HsapDv:0000066
+name: 29th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 28 and under 29 weeks of development." [Bgee:curator]
+comment: The assignation of this week to the eighth or seventh LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+xref: EV:0300034
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000202 ! eighth LMP month
+
+[Term]
+id: HsapDv:0000067
+name: 30th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 29 and under 30 weeks of development." [Bgee:curator]
+xref: EV:0300035
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000202 ! eighth LMP month
+
+[Term]
+id: HsapDv:0000068
+name: 31st week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 30 and under 31 weeks of development." [Bgee:curator]
+xref: EV:0300036
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000202 ! eighth LMP month
+
+[Term]
+id: HsapDv:0000069
+name: 32nd week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 31 and under 32 weeks of development." [Bgee:curator]
+xref: EV:0300027
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000202 ! eighth LMP month
+
+[Term]
+id: HsapDv:0000070
+name: 33rd week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 32 and under 33 weeks of development." [Bgee:curator]
+comment: The assignation of this week to the eighth or ninth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000202 ! eighth LMP month
+
+[Term]
+id: HsapDv:0000071
+name: 34th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 33 and under 34 weeks of development." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000203 ! ninth LMP month
+
+[Term]
+id: HsapDv:0000072
+name: 35th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 34 and under 35 weeks of development." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000203 ! ninth LMP month
+
+[Term]
+id: HsapDv:0000073
+name: 36th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 35 and under 36 weeks of development." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000203 ! ninth LMP month
+
+[Term]
+id: HsapDv:0000074
+name: 37th week post-fertilization
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 36 and under 37 weeks of development." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000203 ! ninth LMP month
+
+[Term]
+id: HsapDv:0000075
+name: 38th week post-fertilization and over
+namespace: human_developmental_stage
+def: "Fetal stage when the fetus is over 37 weeks of development and until birth." [Bgee:curator]
+comment: The assignation of this week to the ninth or tenth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000203 ! ninth LMP month
+
+[Term]
+id: HsapDv:0000080
+name: immature stage
+namespace: human_developmental_stage
+def: "Human developmental stage that covers the period from birth until 19 years old." [Bgee:curator]
+synonym: "0-18 years" EXACT []
+is_a: UBERON:0000104 ! life cycle
+
+[Term]
+id: HsapDv:0000081
+name: child stage
+namespace: human_developmental_stage
+def: "Immature stage that refers to child who is born and is under 13 years old." [Bgee:curator]
+synonym: "0-12 years" EXACT []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000080 ! immature stage
+
+[Term]
+id: HsapDv:0000084
+name: 2-5 year-old child stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 24 months and under 6 years old." [Bgee:curator]
+synonym: "preschool child" RELATED []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000081 ! child stage
+
+[Term]
+id: HsapDv:0000085
+name: 6-12 year-old child stage
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 6 and under 13 years old." [Bgee:curator]
+synonym: "prepubescent" RELATED []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000081 ! child stage
+
+[Term]
+id: HsapDv:0000086
+name: adolescent stage
+namespace: human_developmental_stage
+def: "Immature stage that refers to an adolescent who is over 13 and under 19 years old." [Bgee:curator]
+synonym: "13-18 years" EXACT []
+synonym: "teen" RELATED []
+synonym: "teenager" RELATED []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000080 ! immature stage
+
+[Term]
+id: HsapDv:0000087
+name: adult stage
+namespace: human_developmental_stage
+def: "Human developmental stage that refers to an adult who is over 19." [Bgee:curator]
+synonym: "19+ years" EXACT []
+is_a: UBERON:0000104 ! life cycle
+
+[Term]
+id: HsapDv:0000088
+name: early adulthood
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is under 45." [Bgee:curator]
+synonym: "19-44 years" EXACT []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000087 ! adult stage
+
+[Term]
+id: HsapDv:0000089
+name: young adult stage
+namespace: human_developmental_stage
+def: "Early adulthood that refers to an adult who is under 25." [Bgee:curator]
+synonym: "19-24 years" EXACT []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000088 ! early adulthood
+
+[Term]
+id: HsapDv:0000090
+name: 25-44 year-old adult stage
+namespace: human_developmental_stage
+def: "Early adulthood that refers to an adult who is over 25 and under 45." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000088 ! early adulthood
+
+[Term]
+id: HsapDv:0000091
+name: late adulthood
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 45." [Bgee:curator]
+synonym: "45+ years" EXACT []
+synonym: "Middle Aged + Aged" RELATED []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000087 ! adult stage
+
+[Term]
+id: HsapDv:0000092
+name: middle aged stage
+namespace: human_developmental_stage
+def: "Late adulthood that refers to an adult who is over 45 and under 65." [Bgee:curator]
+synonym: "45-64 years" EXACT []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000091 ! late adulthood
 
 [Term]
 id: HsapDv:0000094
@@ -263,14 +707,646 @@ name: 65-79 year-old adult stage
 namespace: human_developmental_stage
 def: "Aged stage that refers to an adult who is under 80." [Bgee:curator]
 synonym: "elderly" RELATED []
-is_a: UBERON:0007222 ! late adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0007222 ! late adult stage
 
 [Term]
 id: HsapDv:0000095
 name: 80 and over year-old adult
 namespace: human_developmental_stage
 def: "Aged stage that refers to an adult who is over 80." [Bgee:curator]
-is_a: UBERON:0007222 ! late adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000173 ! 79 years
+relationship: part_of UBERON:0007222 ! late adult stage
+
+[Term]
+id: HsapDv:0000096
+name: 2 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 2 and under 3 years old." [Bgee:curator]
+xref: EV:0300053
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000084 ! 2-5 year-old child stage
+
+[Term]
+id: HsapDv:0000097
+name: 3 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 3 and under 4 years old." [Bgee:curator]
+xref: EV:0300054
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000096 ! 2 years
+relationship: part_of HsapDv:0000084 ! 2-5 year-old child stage
+
+[Term]
+id: HsapDv:0000098
+name: 4 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 4 and under 5 years old." [Bgee:curator]
+xref: EV:0300055
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000097 ! 3 years
+relationship: part_of HsapDv:0000084 ! 2-5 year-old child stage
+
+[Term]
+id: HsapDv:0000099
+name: 5 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 5 and under 6 years old." [Bgee:curator]
+xref: EV:0300056
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000098 ! 4 years
+relationship: part_of HsapDv:0000084 ! 2-5 year-old child stage
+
+[Term]
+id: HsapDv:0000100
+name: 6 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 6 and under 7 years old." [Bgee:curator]
+xref: EV:0300057
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000099 ! 5 years
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+
+[Term]
+id: HsapDv:0000101
+name: 7 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 7 and under 8 years old." [Bgee:curator]
+xref: EV:0300058
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000100 ! 6 years
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+
+[Term]
+id: HsapDv:0000102
+name: 8 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 8 and under 9 years old." [Bgee:curator]
+xref: EV:0300059
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000101 ! 7 years
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+
+[Term]
+id: HsapDv:0000103
+name: 9 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 9 and under 10 years old." [Bgee:curator]
+xref: EV:0300060
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000102 ! 8 years
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+
+[Term]
+id: HsapDv:0000104
+name: 10 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 10 and under 11 years old." [Bgee:curator]
+xref: EV:0300061
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000103 ! 9 years
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+
+[Term]
+id: HsapDv:0000105
+name: 11 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 11 and under 12 years old." [Bgee:curator]
+xref: EV:0300062
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000104 ! 10 years
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+
+[Term]
+id: HsapDv:0000106
+name: 12 years
+namespace: human_developmental_stage
+def: "Child stage that refers to a child who is over 12 and under 13 years old." [Bgee:curator]
+xref: EV:0300063
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000105 ! 11 years
+relationship: part_of HsapDv:0000085 ! 6-12 year-old child stage
+
+[Term]
+id: HsapDv:0000107
+name: 13 years
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 13 and under 14 years old." [Bgee:curator]
+xref: EV:0300065
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000106 ! 12 years
+relationship: part_of HsapDv:0000086 ! adolescent stage
+
+[Term]
+id: HsapDv:0000108
+name: 14 years
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 14 and under 15 years old." [Bgee:curator]
+xref: EV:0300066
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000107 ! 13 years
+relationship: part_of HsapDv:0000086 ! adolescent stage
+
+[Term]
+id: HsapDv:0000109
+name: 15 years
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 15 and under 16 years old." [Bgee:curator]
+xref: EV:0300067
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000108 ! 14 years
+relationship: part_of HsapDv:0000086 ! adolescent stage
+
+[Term]
+id: HsapDv:0000110
+name: 16 years
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 16 and under 17 years old." [Bgee:curator]
+xref: EV:0300068
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000109 ! 15 years
+relationship: part_of HsapDv:0000086 ! adolescent stage
+
+[Term]
+id: HsapDv:0000111
+name: 17 years
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 17 and under 18 years old." [Bgee:curator]
+xref: EV:0300069
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000110 ! 16 years
+relationship: part_of HsapDv:0000086 ! adolescent stage
+
+[Term]
+id: HsapDv:0000112
+name: 18 years
+namespace: human_developmental_stage
+def: "Adolescent stage that refers to an adolescent who is over 18 and under 19 years old." [Bgee:curator]
+xref: EV:0300071
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000111 ! 17 years
+relationship: part_of HsapDv:0000086 ! adolescent stage
+
+[Term]
+id: HsapDv:0000113
+name: 19 years
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is under 20." [Bgee:curator]
+xref: EV:0300072
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000112 ! 18 years
+relationship: part_of HsapDv:0000089 ! young adult stage
+
+[Term]
+id: HsapDv:0000114
+name: 20 years
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 20 and under 21." [Bgee:curator]
+xref: EV:0300073
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000113 ! 19 years
+relationship: part_of HsapDv:0000089 ! young adult stage
+
+[Term]
+id: HsapDv:0000115
+name: 21 years
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 21 and under 22." [Bgee:curator]
+xref: EV:0300074
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000114 ! 20 years
+relationship: part_of HsapDv:0000089 ! young adult stage
+
+[Term]
+id: HsapDv:0000116
+name: 22 years
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 22 and under 23." [Bgee:curator]
+xref: EV:0300075
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000115 ! 21 years
+relationship: part_of HsapDv:0000089 ! young adult stage
+
+[Term]
+id: HsapDv:0000117
+name: 23 years
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 23 and under 24." [Bgee:curator]
+xref: EV:0300076
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000116 ! 22 years
+relationship: part_of HsapDv:0000089 ! young adult stage
+
+[Term]
+id: HsapDv:0000118
+name: 24 years
+namespace: human_developmental_stage
+def: "Young adult stage that refers to an adult who is over 24 and under 25." [Bgee:curator]
+xref: EV:0300077
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000117 ! 23 years
+relationship: part_of HsapDv:0000089 ! young adult stage
+
+[Term]
+id: HsapDv:0000119
+name: 25 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 25 and under 26." [Bgee:curator]
+xref: EV:0300078
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000118 ! 24 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000120
+name: 26 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adultwho is over 26 and under 27." [Bgee:curator]
+xref: EV:0300079
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000119 ! 25 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000121
+name: 27 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 27 and under 28." [Bgee:curator]
+xref: EV:0300080
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000120 ! 26 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000122
+name: 28 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 28 and under 29." [Bgee:curator]
+xref: EV:0300081
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000121 ! 27 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000123
+name: 29 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 29 and under 30." [Bgee:curator]
+xref: EV:0300082
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000122 ! 28 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000124
+name: 30 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 30 and under 31." [Bgee:curator]
+xref: EV:0300083
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000123 ! 29 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000125
+name: 31 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 31 and under 32." [Bgee:curator]
+xref: EV:0300084
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000124 ! 30 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000126
+name: 32 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 32 and under 33." [Bgee:curator]
+xref: EV:0300085
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000125 ! 31 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000127
+name: 33 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 33 and under 34." [Bgee:curator]
+xref: EV:0300086
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000126 ! 32 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000128
+name: 34 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 34 and under 35." [Bgee:curator]
+xref: EV:0300087
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000127 ! 33 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000129
+name: 35 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 35 and under 36." [Bgee:curator]
+xref: EV:0300088
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000128 ! 34 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000130
+name: 36 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 36 and under 37." [Bgee:curator]
+xref: EV:0300089
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000129 ! 35 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000131
+name: 37 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 37 and under 38." [Bgee:curator]
+xref: EV:0300090
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000130 ! 36 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000132
+name: 38 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 38 and under 39." [Bgee:curator]
+xref: EV:0300091
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000131 ! 37 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000133
+name: 39 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 39 and under 40." [Bgee:curator]
+xref: EV:0300092
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000132 ! 38 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000134
+name: 40 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 40 and under 41." [Bgee:curator]
+xref: EV:0300093
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000133 ! 39 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000135
+name: 41 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 41 and under 42." [Bgee:curator]
+xref: EV:0300094
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000134 ! 40 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000136
+name: 42 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 42 and under 43." [Bgee:curator]
+xref: EV:0300095
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000135 ! 41 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000137
+name: 43 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 43 and under 44." [Bgee:curator]
+xref: EV:0300096
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000136 ! 42 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000138
+name: 44 years
+namespace: human_developmental_stage
+def: "Adult stage that refers to an adult who is over 44 and under 45." [Bgee:curator]
+xref: EV:0300097
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000137 ! 43 years
+relationship: part_of HsapDv:0000090 ! 25-44 year-old adult stage
+
+[Term]
+id: HsapDv:0000139
+name: 45 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 45 and under 46." [Bgee:curator]
+xref: EV:0300098
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000138 ! 44 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000140
+name: 46 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 46 and under 47." [Bgee:curator]
+xref: EV:0300099
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000139 ! 45 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000141
+name: 47 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 47 and under 48." [Bgee:curator]
+xref: EV:0300100
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000140 ! 46 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000142
+name: 48 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 48 and under 49." [Bgee:curator]
+xref: EV:0300101
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000141 ! 47 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000143
+name: 49 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 49 and under 50." [Bgee:curator]
+xref: EV:0300102
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000142 ! 48 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000144
+name: 50 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 50 and under 51." [Bgee:curator]
+xref: EV:0300103
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000143 ! 49 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000145
+name: 51 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 51 and under 52." [Bgee:curator]
+xref: EV:0300104
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000144 ! 50 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000146
+name: 52 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 52 and under 53." [Bgee:curator]
+xref: EV:0300105
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000145 ! 51 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000147
+name: 53 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 53 and under 54." [Bgee:curator]
+xref: EV:0300106
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000146 ! 52 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000148
+name: 54 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 54 and under 55." [Bgee:curator]
+xref: EV:0300107
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000147 ! 53 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000149
+name: 55 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 55 and under 56." [Bgee:curator]
+xref: EV:0300108
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000148 ! 54 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000150
+name: 56 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 56 and under 57." [Bgee:curator]
+xref: EV:0300109
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000149 ! 55 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000151
+name: 57 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 57 and under 58." [Bgee:curator]
+xref: EV:0300110
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000150 ! 56 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000152
+name: 58 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 58 and under 59." [Bgee:curator]
+xref: EV:0300111
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000151 ! 57 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000153
+name: 59 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 59 and under 60." [Bgee:curator]
+xref: EV:0300112
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000152 ! 58 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000154
+name: 60 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 60 and under 61." [Bgee:curator]
+xref: EV:0300113
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000153 ! 59 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000155
+name: 61 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 61 and under 62." [Bgee:curator]
+xref: EV:0300114
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000154 ! 60 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000156
+name: 62 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 62 and under 63." [Bgee:curator]
+xref: EV:0300115
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000155 ! 61 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000157
+name: 63 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 63 and under 64." [Bgee:curator]
+xref: EV:0300116
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000156 ! 62 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
+
+[Term]
+id: HsapDv:0000158
+name: 64 years
+namespace: human_developmental_stage
+def: "Middle aged stage that refers to an adult who is over 64 and under 65." [Bgee:curator]
+xref: EV:0300117
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000157 ! 63 years
+relationship: part_of HsapDv:0000092 ! middle aged stage
 
 [Term]
 id: HsapDv:0000159
@@ -278,7 +1354,9 @@ name: 65 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 65 and under 66." [Bgee:curator]
 xref: EV:0300118
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000158 ! 64 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000160
@@ -286,7 +1364,9 @@ name: 66 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 66 and under 67." [Bgee:curator]
 xref: EV:0300119
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000159 ! 65 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000161
@@ -294,7 +1374,9 @@ name: 67 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 67 and under 68." [Bgee:curator]
 xref: EV:0300120
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000160 ! 66 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000162
@@ -302,7 +1384,9 @@ name: 68 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 68 and under 69." [Bgee:curator]
 xref: EV:0300121
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000161 ! 67 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000163
@@ -310,7 +1394,9 @@ name: 69 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 69 and under 70." [Bgee:curator]
 xref: EV:0300122
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000162 ! 68 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000164
@@ -318,7 +1404,9 @@ name: 70 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 70 and under 71." [Bgee:curator]
 xref: EV:0300124
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000163 ! 69 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000165
@@ -326,7 +1414,9 @@ name: 71 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 71 and under 72." [Bgee:curator]
 xref: EV:0300125
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000164 ! 70 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000166
@@ -334,7 +1424,9 @@ name: 72 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 72 and under 73." [Bgee:curator]
 xref: EV:0300126
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000165 ! 71 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000167
@@ -342,7 +1434,9 @@ name: 73 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 73 and under 74." [Bgee:curator]
 xref: EV:0300127
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000166 ! 72 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000168
@@ -350,7 +1444,9 @@ name: 74 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 74 and under 75." [Bgee:curator]
 xref: EV:0300128
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000167 ! 73 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000169
@@ -358,7 +1454,9 @@ name: 75 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 75 and under 76." [Bgee:curator]
 xref: EV:0300129
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000168 ! 74 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000170
@@ -366,7 +1464,9 @@ name: 76 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 76 and under 77." [Bgee:curator]
 xref: EV:0300130
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000169 ! 75 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000171
@@ -374,7 +1474,9 @@ name: 77 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 77 and under 78." [Bgee:curator]
 xref: EV:0300131
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000170 ! 76 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000172
@@ -382,7 +1484,9 @@ name: 78 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 78 and under 79." [Bgee:curator]
 xref: EV:0300132
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000171 ! 77 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000173
@@ -390,7 +1494,9 @@ name: 79 years
 namespace: human_developmental_stage
 def: "Adult stage that refers to an adult who is over 79 and under 80." [Bgee:curator]
 xref: EV:0300133
-is_a: HsapDv:0000094 ! 65-79 year-old adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000172 ! 78 years
+relationship: part_of HsapDv:0000094 ! 65-79 year-old adult stage
 
 [Term]
 id: HsapDv:0000174
@@ -398,7 +1504,8 @@ name: 1 month
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 1 and under 2 months old." [Bgee:curator]
 xref: EV:0300039
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000175
@@ -406,7 +1513,8 @@ name: 2 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 2 and under 3 months old." [Bgee:curator]
 xref: EV:0300040
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000176
@@ -414,7 +1522,9 @@ name: 3 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 3 and under 4 months old." [Bgee:curator]
 xref: EV:0300041
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000175 ! 2 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000177
@@ -422,7 +1532,9 @@ name: 4 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 4 and under 5 months old." [Bgee:curator]
 xref: EV:0300042
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000176 ! 3 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000178
@@ -430,7 +1542,9 @@ name: 5 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 5 and under 6 months old." [Bgee:curator]
 xref: EV:0300043
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000177 ! 4 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000179
@@ -438,7 +1552,9 @@ name: 6 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 6 and under 7 months old." [Bgee:curator]
 xref: EV:0300044
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000178 ! 5 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000180
@@ -446,7 +1562,9 @@ name: 7 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 7 and under 8 months old." [Bgee:curator]
 xref: EV:0300045
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000179 ! 6 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000181
@@ -454,7 +1572,9 @@ name: 8 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 8 and under 9 months old." [Bgee:curator]
 xref: EV:0300046
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000180 ! 7 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000182
@@ -462,7 +1582,9 @@ name: 9 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 9 and under 10 months old." [Bgee:curator]
 xref: EV:0300047
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000181 ! 8 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000183
@@ -470,7 +1592,9 @@ name: 10 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 10 and under 11 months old." [Bgee:curator]
 xref: EV:0300048
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000182 ! 9 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000184
@@ -478,91 +1602,173 @@ name: 11 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 11 and under 12 months old." [Bgee:curator]
 xref: EV:0300049
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000183 ! 10 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000185
 name: 12 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 12 and under 13 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000184 ! 11 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000186
 name: 13 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 13 and under 14 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000185 ! 12 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000187
 name: 14 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 14 and under 15 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000186 ! 13 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000188
 name: 15 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 15 and under 16 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000187 ! 14 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000189
 name: 16 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 16 and under 17 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000188 ! 15 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000190
 name: 17 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 17 and under 18 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000189 ! 16 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000191
 name: 18 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 18 and under 19 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000190 ! 17 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000192
 name: 19 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 19 and under 20 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000191 ! 18 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000193
 name: 20 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 20 and under 21 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000192 ! 19 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000194
 name: 21 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 21 and under 22 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000193 ! 20 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000195
 name: 22 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 22 and under 23 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000194 ! 21 months
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: HsapDv:0000196
 name: 23 months
 namespace: human_developmental_stage
 def: "Infant stage that refers to an infant who is over 23 and under 24 months old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by HsapDv:0000195 ! 22 months
+relationship: part_of UBERON:0007221 ! neonate stage
+
+[Term]
+id: HsapDv:0000197
+name: third LMP month
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the third month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000037 ! fetal stage
+
+[Term]
+id: HsapDv:0000198
+name: fourth LMP month
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the fourth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000037 ! fetal stage
+
+[Term]
+id: HsapDv:0000199
+name: fifth LMP month
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the fifth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000037 ! fetal stage
+
+[Term]
+id: HsapDv:0000200
+name: sixth LMP month
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the sixth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000037 ! fetal stage
+
+[Term]
+id: HsapDv:0000201
+name: seventh LMP month
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the seventh month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000037 ! fetal stage
+
+[Term]
+id: HsapDv:0000202
+name: eighth LMP month
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the eighth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000037 ! fetal stage
+
+[Term]
+id: HsapDv:0000203
+name: ninth LMP month
+namespace: human_developmental_stage
+def: "Fetal stage that refers to the ninth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000037 ! fetal stage
 
 [Term]
 id: MmusDv:0000003
@@ -570,9 +1776,12 @@ name: Theiler stage 01
 namespace: mouse_developmental_stage
 def: "Embryonic stage defined by a one-cell embryo (fertilised egg) with zona pellucida present." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_1]
 comment: Starts the mouse development sequence, range from embryonic age 0-0.9 dpc (day post-coitum).
+synonym: "TS01 (E0-2.5)" RELATED [EMAPA:TS01]
 synonym: "zygote stage" RELATED []
+xref: TS01
 xref: XUO:0000045
-is_a: UBERON:0000068 ! embryo stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000068 ! embryo stage
 
 [Term]
 id: MmusDv:0000005
@@ -580,8 +1789,12 @@ name: Theiler stage 02
 namespace: mouse_developmental_stage
 def: "Embryonic cleavage stage defined by a dividing 2-4 cells egg." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_2]
 comment: Embryonic age 1 dpc (day post-coitum).
+synonym: "TS02 (E1-2.5)" RELATED [EMAPA:TS02]
+xref: TS02
 xref: XUO:0000046
-is_a: UBERON:0000107 ! cleavage stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000003 ! Theiler stage 01
+relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
 id: MmusDv:0000006
@@ -589,8 +1802,12 @@ name: Theiler stage 03
 namespace: mouse_developmental_stage
 def: "Embryonic cleavage stage defined by a dividing 4-16 cells egg, early to fully compacted morula." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_3]
 comment: Embryonic age 2 dpc (day post-coitum).
+synonym: "TS03 (E1-3.5)" RELATED [EMAPA:TS03]
+xref: TS03
 xref: XUO:0000047
-is_a: UBERON:0000107 ! cleavage stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000005 ! Theiler stage 02
+relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
 id: MmusDv:0000008
@@ -598,8 +1815,12 @@ name: Theiler stage 04
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage defined by a dividing 16-40 cells egg, with early evidence of the blastocoelic cavity." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_4]
 comment: Embryonic age 3 dpc (day post-coitum).
+synonym: "TS04 (E2-4)" RELATED [EMAPA:TS04]
+xref: TS04
 xref: XUO:0000048
-is_a: UBERON:0000108 ! blastula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000006 ! Theiler stage 03
+relationship: part_of UBERON:0000108 ! blastula stage
 
 [Term]
 id: MmusDv:0000009
@@ -607,8 +1828,12 @@ name: Theiler stage 05
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage defined by a zona free blastocyst (zona pellucida absent)." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_5]
 comment: Embryonic age 4 dpc (day post-coitum).
+synonym: "TS05 (E3-5.5)" RELATED [EMAPA:TS05]
+xref: TS05
 xref: XUO:0000049
-is_a: UBERON:0000108 ! blastula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000008 ! Theiler stage 04
+relationship: part_of UBERON:0000108 ! blastula stage
 
 [Term]
 id: MmusDv:0000010
@@ -616,8 +1841,12 @@ name: Theiler stage 06
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage during which the blastocyst attaches, with first evidence of embryonic endoderm cells covering the blastocoelic surface of the inner cell mass." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_6]
 comment: Embryonic age 4.5 dpc (day post-coitum). Refers to human CarnegieStage04.
+synonym: "TS06 (E4-5.5)" RELATED [EMAPA:TS06]
+xref: TS06
 xref: XUO:0000050
-is_a: UBERON:0000108 ! blastula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000009 ! Theiler stage 05
+relationship: part_of UBERON:0000108 ! blastula stage
 
 [Term]
 id: MmusDv:0000011
@@ -625,8 +1854,12 @@ name: Theiler stage 07
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage defined by implantation and formation of the egg cylinder resulting from the rapid increase in the number of inner cell mass cells." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_7]
 comment: Embryonic age 5 dpc (day post-coitum). Refers to human CarnegieStage05.
+synonym: "TS07 (E4.5-6)" RELATED [EMAPA:TS07]
+xref: TS07
 xref: XUO:0000051
-is_a: UBERON:0000108 ! blastula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000010 ! Theiler stage 06
+relationship: part_of UBERON:0000108 ! blastula stage
 
 [Term]
 id: MmusDv:0000012
@@ -634,8 +1867,12 @@ name: Theiler stage 08
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage during which the egg cylinder differentiates into embryonic and extra-embryonic regions, and the pro-amniotic cavity appears." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_8]
 comment: Embryonic age 6 dpc (day post-coitum). Refers to human CarnegieStage05.
+synonym: "TS08 (E5-6.5)" RELATED [EMAPA:TS08]
+xref: TS08
 xref: XUO:0000052
-is_a: UBERON:0000108 ! blastula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000011 ! Theiler stage 07
+relationship: part_of UBERON:0000108 ! blastula stage
 
 [Term]
 id: MmusDv:0000014
@@ -643,8 +1880,12 @@ name: Theiler stage 09
 namespace: mouse_developmental_stage
 def: "Embryonic gastrula stage during which gastrulation starts with first evidence of mesoderm and visible embryonic axis." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_9]
 comment: Embryonic age 6.5 dpc (day post-coitum).
+synonym: "TS09 (E6.25-7.25)" RELATED [EMAPA:TS09]
+xref: TS09
 xref: XUO:0000053
-is_a: UBERON:0000109 ! gastrula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000012 ! Theiler stage 08
+relationship: part_of UBERON:0000109 ! gastrula stage
 
 [Term]
 id: MmusDv:0000015
@@ -652,8 +1893,12 @@ name: Theiler stage 10
 namespace: mouse_developmental_stage
 def: "Embryonic gastrula stage during which the primitive streak bulges into the pro-amniotic cavity and forms the amniotic fold; the exocoelom appears; the allantoic bud first appears, gastrulation continues and the node becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_10]
 comment: Embryonic age 7 dpc (day post-coitum), (range 6.5-7.5 dpc). Refers to human CarnegieStage08.
+synonym: "TS10 (E6.5-7.75)" RELATED [EMAPA:TS10]
+xref: TS10
 xref: XUO:0000054
-is_a: UBERON:0000109 ! gastrula stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000014 ! Theiler stage 09
+relationship: part_of UBERON:0000109 ! gastrula stage
 
 [Term]
 id: MmusDv:0000017
@@ -662,8 +1907,12 @@ namespace: mouse_developmental_stage
 def: "Embryonic stage called presomite stage and defined by the formation of the neural plate." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
 comment: This stage starts the emergence of the central nervous system at embryonic age 7.5 dpc (day post-coitum).
 synonym: "neurula stage" RELATED []
+synonym: "TS11 (E7.25-8)" RELATED [EMAPA:TS11]
+xref: TS11
 xref: XUO:0000055
-is_a: UBERON:0000068 ! embryo stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000015 ! Theiler stage 10
+relationship: part_of UBERON:0000068 ! embryo stage
 
 [Term]
 id: MmusDv:0000019
@@ -671,8 +1920,12 @@ name: Theiler stage 12
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which first somites become visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12]
 comment: Embryonic age 8 dpc (day post-coitum). Refers to human CarnegieStage09.
+synonym: "TS12 (E7.5-8.75)" RELATED [EMAPA:TS12]
+xref: TS12
 xref: XUO:0000056
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000017 ! Theiler stage 11
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000020
@@ -680,8 +1933,12 @@ name: Theiler stage 13
 namespace: mouse_developmental_stage
 def: "Organogenesis stage defined by the turning of the embryo; initiated in embryos with 6-8 pairs of somites and usually completed in embryos with 14-16 pairs of somites." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_13]
 comment: Embryonic age 8.5 dpc (day post-coitum). Refers to human CarnegieStage10.
+synonym: "TS13 (E8-9.25)" RELATED [EMAPA:TS13]
+xref: TS13
 xref: XUO:0000057
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000019 ! Theiler stage 12
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000021
@@ -689,8 +1946,12 @@ name: Theiler stage 14
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the rostral extremity of the neural tube closes in embryos with usually about 15-18 somite pairs. Late in the stage the 3rd branchial arch becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_14]
 comment: Embryonic age 9 dpc (day post-coitum). Refers to human CarnegieStage11.
+synonym: "TS14 (E8.5-9.75)" RELATED [EMAPA:TS14]
+xref: TS14
 xref: XUO:0000058
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000020 ! Theiler stage 13
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000022
@@ -698,8 +1959,12 @@ name: Theiler stage 15
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the posterior neuropore forms and the condensation of the forelimb bud becomes apparent near the 8th-12th somite pairs." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_15]
 comment: Embryonic age 9.5 dpc (day post-coitum). Refers to human CarnegieStage12.
+synonym: "TS15 (E9-10.25)" RELATED [EMAPA:TS15]
+xref: TS15
 xref: XUO:0000059
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000021 ! Theiler stage 14
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000023
@@ -707,8 +1972,12 @@ name: Theiler stage 16
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the posterior neuropore closes and the hind limb bud becomes visible at the level of the 23rd-28th somites." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_16]
 comment: Embryonic age 10 dpc (day post-coitum). Refers to human CarnegieStages 13 to 15.
+synonym: "TS16 (E9.5-10.75)" RELATED [EMAPA:TS16]
+xref: TS16
 xref: XUO:0000060
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000022 ! Theiler stage 15
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000024
@@ -716,8 +1985,12 @@ name: Theiler stage 17
 namespace: mouse_developmental_stage
 def: "Organogenesis stage defined by the deepening of the lens pit and the first appearance of the physiological umbilical hernia." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_17]
 comment: Embryonic age 10.5 dpc (day post-coitum). Refers to human CarnegieStages 13 to 15.
+synonym: "TS17 (E10-11.25)" RELATED [EMAPA:TS17]
+xref: TS17
 xref: XUO:0000061
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000023 ! Theiler stage 16
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000025
@@ -725,8 +1998,12 @@ name: Theiler stage 18
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the lens vesicle gradually closes and the nasal pits start to form. The rapid growth of the brain is striking." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_18]
 comment: Embryonic age 11 dpc (day post-coitum). Refers to human CarnegieStages 13 to 15.
+synonym: "TS18 (E10.5-11.25)" RELATED [EMAPA:TS18]
+xref: TS18
 xref: XUO:0000062
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000024 ! Theiler stage 17
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000026
@@ -734,8 +2011,12 @@ name: Theiler stage 19
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the lens vesicle becomes completely closed and detached from the ectoderm, and peripheral margins of the eye become well defined." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_19]
 comment: Embryonic age 11.5 dpc (day post-coitum). Refers to human CarnegieStage16.
+synonym: "TS19 (E11-12.25)" RELATED [EMAPA:TS19]
+xref: TS19
 xref: XUO:0000063
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000025 ! Theiler stage 18
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000027
@@ -743,8 +2024,12 @@ name: Theiler stage 20
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the handplate develops angles corresponding to the future digits, and tongue and brain vesicles are clearly visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_20]
 comment: Embryonic age 12 dpc (day post-coitum). Refers to human CarnegieStage17.
+synonym: "TS20 (E11.5-13)" RELATED [EMAPA:TS20]
+xref: TS20
 xref: XUO:0000064
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000026 ! Theiler stage 19
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000028
@@ -752,8 +2037,12 @@ name: Theiler stage 21
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the digit widths and locations can be discerned, and the pinna rapidly develops and forms a crest at right angles to the head." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_21]
 comment: Embryonic age 13 dpc (day post-coitum). Refers to human CarnegieStages 18 and 19.
+synonym: "TS21 (E12.5-14)" RELATED [EMAPA:TS21]
+xref: TS21
 xref: XUO:0000065
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000027 ! Theiler stage 20
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000029
@@ -761,8 +2050,12 @@ name: Theiler stage 22
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the fingers are clearly visible and the long bones of the limbs are present." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_22]
 comment: Embryonic age 14 dpc (day post-coitum). Refers to human CarnegieStages 20 to 23.
+synonym: "TS22 (E13.5-15)" RELATED [EMAPA:TS22]
+xref: TS22
 xref: XUO:0000066
-is_a: UBERON:0000111 ! organogenesis stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000028 ! Theiler stage 21
+relationship: part_of UBERON:0000111 ! organogenesis stage
 
 [Term]
 id: MmusDv:0000032
@@ -770,8 +2063,12 @@ name: Theiler stage 23
 namespace: mouse_developmental_stage
 def: "Fetal stage during which the toes separate and hair follicles are present in the cephalic region but not at the periphery of the vibrissae." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_23]
 comment: Embryonic age 15 dpc (day post-coitum). Refers to the human fetal period.
+synonym: "TS23 (E15)" RELATED [EMAPA:TS23]
+xref: TS23
 xref: XUO:0000067
-is_a: UBERON:0007220 ! late embryonic stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000029 ! Theiler stage 22
+relationship: part_of UBERON:0007220 ! late embryonic stage
 
 [Term]
 id: MmusDv:0000033
@@ -779,8 +2076,12 @@ name: Theiler stage 24
 namespace: mouse_developmental_stage
 def: "Fetal stage during which the umbilical hernia disappears and there is a corresponding increase in the size of the peritoneal sac." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_24]
 comment: Embryonic age 16 dpc (day post-coitum). Refers to the human fetal period.
+synonym: "TS24 (E16)" RELATED [EMAPA:TS24]
+xref: TS24
 xref: XUO:0000068
-is_a: UBERON:0007220 ! late embryonic stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000032 ! Theiler stage 23
+relationship: part_of UBERON:0007220 ! late embryonic stage
 
 [Term]
 id: MmusDv:0000034
@@ -788,8 +2089,12 @@ name: Theiler stage 25
 namespace: mouse_developmental_stage
 def: "Fetal stage during which the thickened skin forms wrinkles and the subcutaneous veins are less visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_25]
 comment: Embryonic age 17 dpc (day post-coitum). Refers to the human fetal period.
+synonym: "TS25 (E17)" RELATED [EMAPA:TS25]
+xref: TS25
 xref: XUO:0000069
-is_a: UBERON:0007220 ! late embryonic stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000033 ! Theiler stage 24
+relationship: part_of UBERON:0007220 ! late embryonic stage
 
 [Term]
 id: MmusDv:0000035
@@ -797,36 +2102,100 @@ name: Theiler stage 26
 namespace: mouse_developmental_stage
 def: "Fetal stage defined by long whiskers and during which the eyes are barely visible through the closed eyelids." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_26]
 comment: Embryonic age 18 dpc (day post-coitum). Refers to the human fetal period.
+synonym: "TS26 (E18)" RELATED [EMAPA:TS26]
+xref: TS26
 xref: XUO:0000070
-is_a: UBERON:0007220 ! late embryonic stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000034 ! Theiler stage 25
+relationship: part_of UBERON:0007220 ! late embryonic stage
+
+[Term]
+id: MmusDv:0000036
+name: Theiler stage 27
+namespace: mouse_developmental_stage
+def: "Early immature stage that refers to the newborn mouse. Description of anatomical structures related to this stage corresponds to the first day of the mouse life." [http://www.emouseatlas.org/emap/ema/theiler_stages/StageDefinition/ts27definition.html]
+comment: Embryonic age 19-20 dpc (day post-coitum).
+synonym: "newborn stage" RELATED []
+synonym: "TS27" RELATED [EMAPA:TS27]
+xref: TS27
+xref: XUO:0000071
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000035 ! Theiler stage 26
+relationship: part_of MmusDv:0000096 ! early immature stage
+
+[Term]
+id: MmusDv:0000041
+name: unknown
+namespace: mouse_developmental_stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000105 ! life cycle stage
+
+[Term]
+id: MmusDv:0000042
+name: prenatal stage
+namespace: mouse_developmental_stage
+def: "mouse life cycle that starts with fertilization and ends with birth." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000105 ! life cycle stage
+
+[Term]
+id: MmusDv:0000043
+name: immature stage
+namespace: mouse_developmental_stage
+def: "mouse life cycle that covers the period from birth until 6 weeks old." [Bgee:curator]
+comment: The organisation of the postnatal development time in mouse is debatable, literature usually refers to mature or immature mice, with frontier around 6-8 weeks post-natal[Bgee]. We place the xref to EMAPA TS28 here as it seems the most appropriate place
+synonym: "P0-adult" RELATED [EMAP:TS28]
+synonym: "postnatal development" RELATED []
+synonym: "Theiler stage 28" RELATED []
+synonym: "TheilerStage28" RELATED []
+synonym: "TS28 (P0-Adult)" RELATED [EMAP:TS28]
+xref: TS28
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000105 ! life cycle stage
+
+[Term]
+id: MmusDv:0000044
+name: 1-7 days
+namespace: mouse_developmental_stage
+def: "Early immature stage that refers to the newborn mouse which is over 1 and under 8 days old." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000096 ! early immature stage
 
 [Term]
 id: MmusDv:0000045
 name: 1 week
 namespace: mouse_developmental_stage
 def: "Infant stage that refers to a mouse which is over 7 days and under 15 days old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000044 ! 1-7 days
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: MmusDv:0000046
 name: 2 weeks
 namespace: mouse_developmental_stage
 def: "Infant stage that refers to a mouse which is over 14 days and under 22 days old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000045 ! 1 week
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: MmusDv:0000047
 name: 3 weeks
 namespace: mouse_developmental_stage
 def: "Infant stage that refers to a mouse which is over 21 days and under 29 days old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000046 ! 2 weeks
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: MmusDv:0000048
 name: 4 weeks
 namespace: mouse_developmental_stage
 def: "Infant stage that refers to a mouse which is over 28 days and under 36 days old." [Bgee:curator]
-is_a: UBERON:0007221 ! neonate stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000047 ! 3 weeks
+relationship: part_of UBERON:0007221 ! neonate stage
 
 [Term]
 id: MmusDv:0000049
@@ -834,7 +2203,9 @@ name: 5 weeks
 namespace: mouse_developmental_stage
 def: "Adolescent stage that refers to a mouse which is over 35 days and under 43 days old." [Bgee:curator]
 comment: This stage is usually the stage during which the sexual maturity occurs.
-is_a: UBERON:0000113 ! post-juvenile adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000048 ! 4 weeks
+relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 
 [Term]
 id: MmusDv:0000050
@@ -842,21 +2213,26 @@ name: 6 weeks
 namespace: mouse_developmental_stage
 def: "Adolescent stage that refers to a mouse which is over 42 days and under 50 days old." [Bgee:curator]
 comment: This stage is commonly considered in the literature as the milestone that distinguishes between adolescent and adult stages.
-is_a: UBERON:0000113 ! post-juvenile adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000049 ! 5 weeks
+relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 
 [Term]
 id: MmusDv:0000051
 name: 7 weeks
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 49 days and under 57 days old." [Bgee:curator]
-is_a: MmusDv:0000061 ! early adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000050 ! 6 weeks
+relationship: part_of MmusDv:0000061 ! early adult stage
 
 [Term]
 id: MmusDv:0000052
 name: 8 weeks
 namespace: mouse_developmental_stage
 def: "2 month-old stage that refers to a mouse which is over 56 days and under 64 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000051 ! 7 weeks
 relationship: part_of MmusDv:0000062 ! 2 month-old stage
 
 [Term]
@@ -864,7 +2240,8 @@ id: MmusDv:0000053
 name: 9 weeks
 namespace: mouse_developmental_stage
 def: "2 month-old stage that refers to a mouse which is over 63 days and under 71 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000052 ! 8 weeks
 relationship: part_of MmusDv:0000062 ! 2 month-old stage
 
 [Term]
@@ -872,7 +2249,8 @@ id: MmusDv:0000054
 name: 10 weeks
 namespace: mouse_developmental_stage
 def: "2 month-old stage that refers to a mouse which is over 70 days and under 78 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000053 ! 9 weeks
 relationship: part_of MmusDv:0000062 ! 2 month-old stage
 
 [Term]
@@ -880,7 +2258,8 @@ id: MmusDv:0000055
 name: 11 weeks
 namespace: mouse_developmental_stage
 def: "2 month-old stage that refers to a mouse which is over 77 days and under 85 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000054 ! 10 weeks
 relationship: part_of MmusDv:0000062 ! 2 month-old stage
 
 [Term]
@@ -888,7 +2267,8 @@ id: MmusDv:0000056
 name: 12 weeks
 namespace: mouse_developmental_stage
 def: "3 month-old stage that refers to a mouse which is over 84 days and under 92 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000055 ! 11 weeks
 relationship: part_of MmusDv:0000063 ! 3 month-old stage
 
 [Term]
@@ -896,7 +2276,8 @@ id: MmusDv:0000057
 name: 13 weeks
 namespace: mouse_developmental_stage
 def: "3 month-old stage that refers to a mouse which is over 91 days and under 99 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000056 ! 12 weeks
 relationship: part_of MmusDv:0000063 ! 3 month-old stage
 
 [Term]
@@ -904,7 +2285,8 @@ id: MmusDv:0000058
 name: 14 weeks
 namespace: mouse_developmental_stage
 def: "3 month-old stage that refers to a mouse which is over 98 days and under 106 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000057 ! 13 weeks
 relationship: part_of MmusDv:0000063 ! 3 month-old stage
 
 [Term]
@@ -912,7 +2294,8 @@ id: MmusDv:0000059
 name: 15 weeks
 namespace: mouse_developmental_stage
 def: "3 month-old stage that refers to a mouse which is over 105 days and under 113 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000058 ! 14 weeks
 relationship: part_of MmusDv:0000063 ! 3 month-old stage
 
 [Term]
@@ -921,35 +2304,42 @@ name: early adult stage
 namespace: mouse_developmental_stage
 def: "Adult stage that refers to a mouse which is over 6 weeks and under 7 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
 comment: Mice under 7 months of age are commonly considered as young adult in the literature, without loss of functional capability like hearing (see http://www.ncbi.nlm.nih.gov/pubmed/18259074).
-is_a: UBERON:0000113 ! post-juvenile adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 
 [Term]
 id: MmusDv:0000062
 name: 2 month-old stage
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 2 and under 3 months old." [Bgee:curator]
-is_a: MmusDv:0000061 ! early adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000061 ! early adult stage
 
 [Term]
 id: MmusDv:0000063
 name: 3 month-old stage
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 3 and under 4 months old." [Bgee:curator]
-is_a: MmusDv:0000061 ! early adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000062 ! 2 month-old stage
+relationship: part_of MmusDv:0000061 ! early adult stage
 
 [Term]
 id: MmusDv:0000064
 name: 4 month-old stage
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 4 and under 5 months old." [Bgee:curator]
-is_a: MmusDv:0000061 ! early adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000063 ! 3 month-old stage
+relationship: part_of MmusDv:0000061 ! early adult stage
 
 [Term]
 id: MmusDv:0000065
 name: 16 weeks
 namespace: mouse_developmental_stage
 def: "4 month-old stage that refers to a mouse which is over 112 days and under 120 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000059 ! 15 weeks
 relationship: part_of MmusDv:0000064 ! 4 month-old stage
 
 [Term]
@@ -957,7 +2347,8 @@ id: MmusDv:0000066
 name: 17 weeks
 namespace: mouse_developmental_stage
 def: "4 month-old stage that refers to a mouse which is over 119 days and under 127 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000065 ! 16 weeks
 relationship: part_of MmusDv:0000064 ! 4 month-old stage
 
 [Term]
@@ -965,7 +2356,8 @@ id: MmusDv:0000067
 name: 18 weeks
 namespace: mouse_developmental_stage
 def: "4 month-old stage that refers to a mouse which is over 126 days and under 134 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000066 ! 17 weeks
 relationship: part_of MmusDv:0000064 ! 4 month-old stage
 
 [Term]
@@ -973,7 +2365,8 @@ id: MmusDv:0000068
 name: 19 weeks
 namespace: mouse_developmental_stage
 def: "4 month-old stage that refers to a mouse which is over 133 days and under 141 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000067 ! 18 weeks
 relationship: part_of MmusDv:0000064 ! 4 month-old stage
 
 [Term]
@@ -981,14 +2374,17 @@ id: MmusDv:0000069
 name: 5 month-old stage
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 5 and under 6 months old." [Bgee:curator]
-is_a: MmusDv:0000061 ! early adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000064 ! 4 month-old stage
+relationship: part_of MmusDv:0000061 ! early adult stage
 
 [Term]
 id: MmusDv:0000070
 name: 20 weeks
 namespace: mouse_developmental_stage
 def: "4 month-old stage that refers to a mouse which is over 140 days and under 148 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000068 ! 19 weeks
 relationship: part_of MmusDv:0000064 ! 4 month-old stage
 
 [Term]
@@ -996,7 +2392,8 @@ id: MmusDv:0000071
 name: 21 weeks
 namespace: mouse_developmental_stage
 def: "5 month-old stage that refers to a mouse which is over 147 days and under 155 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000070 ! 20 weeks
 relationship: part_of MmusDv:0000069 ! 5 month-old stage
 
 [Term]
@@ -1004,7 +2401,8 @@ id: MmusDv:0000072
 name: 22 weeks
 namespace: mouse_developmental_stage
 def: "5 month-old stage that refers to a mouse which is over 154 days and under 162 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000071 ! 21 weeks
 relationship: part_of MmusDv:0000069 ! 5 month-old stage
 
 [Term]
@@ -1012,7 +2410,8 @@ id: MmusDv:0000073
 name: 23 weeks
 namespace: mouse_developmental_stage
 def: "5 month-old stage that refers to a mouse which is over 161 days and under 169 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000072 ! 22 weeks
 relationship: part_of MmusDv:0000069 ! 5 month-old stage
 
 [Term]
@@ -1020,7 +2419,8 @@ id: MmusDv:0000074
 name: 24 weeks
 namespace: mouse_developmental_stage
 def: "5 month-old stage that refers to a mouse which is over 168 days and under 176 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000073 ! 23 weeks
 relationship: part_of MmusDv:0000069 ! 5 month-old stage
 
 [Term]
@@ -1029,161 +2429,210 @@ name: middle aged stage
 namespace: mouse_developmental_stage
 def: "Late adult stage that refers to a mouse which is over 7 and under 15 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
 comment: This stage is commonly considered in the literature as the stage during which first evidence of loss of functional capability like hearing occurs in wild type mouse strain (see http://www.ncbi.nlm.nih.gov/pubmed/18259074).
-is_a: MmusDv:0000097 ! late adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000097 ! late adult stage
 
 [Term]
 id: MmusDv:0000076
 name: aged adult stage
 namespace: mouse_developmental_stage
 def: "Late adult stage that refers to a mouse which is over 15 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
-is_a: MmusDv:0000097 ! late adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000097 ! late adult stage
 
 [Term]
 id: MmusDv:0000077
 name: 6 month-old stage
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 6 and under 7 months old." [Bgee:curator]
-is_a: MmusDv:0000061 ! early adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000069 ! 5 month-old stage
+relationship: part_of MmusDv:0000061 ! early adult stage
 
 [Term]
 id: MmusDv:0000078
 name: 7 month-old stage
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 7 and under 8 months old." [Bgee:curator]
-is_a: MmusDv:0000075 ! middle aged stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000077 ! 6 month-old stage
+relationship: part_of MmusDv:0000075 ! middle aged stage
 
 [Term]
 id: MmusDv:0000079
 name: 8 month-old stage
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 8 and under 9 months old." [Bgee:curator]
-is_a: MmusDv:0000075 ! middle aged stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000078 ! 7 month-old stage
+relationship: part_of MmusDv:0000075 ! middle aged stage
 
 [Term]
 id: MmusDv:0000080
 name: 9 month-old stage
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 9 and under 10 months old." [Bgee:curator]
-is_a: MmusDv:0000075 ! middle aged stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000079 ! 8 month-old stage
+relationship: part_of MmusDv:0000075 ! middle aged stage
 
 [Term]
 id: MmusDv:0000081
 name: 10 month-old stage
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 10 and under 11 months old." [Bgee:curator]
-is_a: MmusDv:0000075 ! middle aged stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000080 ! 9 month-old stage
+relationship: part_of MmusDv:0000075 ! middle aged stage
 
 [Term]
 id: MmusDv:0000082
 name: 11 month-old stage
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 11 and under 12 months old." [Bgee:curator]
-is_a: MmusDv:0000075 ! middle aged stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000081 ! 10 month-old stage
+relationship: part_of MmusDv:0000075 ! middle aged stage
 
 [Term]
 id: MmusDv:0000083
 name: 12 month-old stage
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 12 and under 13 months old." [Bgee:curator]
-is_a: MmusDv:0000075 ! middle aged stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000082 ! 11 month-old stage
+relationship: part_of MmusDv:0000075 ! middle aged stage
 
 [Term]
 id: MmusDv:0000084
 name: 13 month-old stage
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 13 and under 14 months old." [Bgee:curator]
-is_a: MmusDv:0000075 ! middle aged stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000083 ! 12 month-old stage
+relationship: part_of MmusDv:0000075 ! middle aged stage
 
 [Term]
 id: MmusDv:0000085
 name: 14 month-old stage
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 14 and under 15 months old." [Bgee:curator]
-is_a: MmusDv:0000075 ! middle aged stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000084 ! 13 month-old stage
+relationship: part_of MmusDv:0000075 ! middle aged stage
 
 [Term]
 id: MmusDv:0000086
 name: 15 month-old stage
 namespace: mouse_developmental_stage
 def: "Aged adult stage that refers to a mouse which is over 15 and under 16 months old." [Bgee:curator]
-is_a: MmusDv:0000076 ! aged adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000085 ! 14 month-old stage
+relationship: part_of MmusDv:0000076 ! aged adult stage
 
 [Term]
 id: MmusDv:0000087
 name: 16 month-old stage
 namespace: mouse_developmental_stage
 def: "Aged adult stage that refers to a mouse which is over 16 and under 17 months old." [Bgee:curator]
-is_a: MmusDv:0000076 ! aged adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000086 ! 15 month-old stage
+relationship: part_of MmusDv:0000076 ! aged adult stage
 
 [Term]
 id: MmusDv:0000088
 name: 17 month-old stage
 namespace: mouse_developmental_stage
 def: "Aged adult stage that refers to a mouse which is over 17 and under 18 months old." [Bgee:curator]
-is_a: MmusDv:0000076 ! aged adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000087 ! 16 month-old stage
+relationship: part_of MmusDv:0000076 ! aged adult stage
 
 [Term]
 id: MmusDv:0000089
 name: 18 month-old stage
 namespace: mouse_developmental_stage
 def: "Aged adult stage that refers to a mouse which is over 18 and under 19 months old." [Bgee:curator]
-is_a: MmusDv:0000076 ! aged adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000088 ! 17 month-old stage
+relationship: part_of MmusDv:0000076 ! aged adult stage
 
 [Term]
 id: MmusDv:0000090
 name: 19 month-old stage
 namespace: mouse_developmental_stage
 def: "Aged adult stage that refers to a mouse which is over 19 and under 20 months old." [Bgee:curator]
-is_a: MmusDv:0000076 ! aged adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000089 ! 18 month-old stage
+relationship: part_of MmusDv:0000076 ! aged adult stage
 
 [Term]
 id: MmusDv:0000091
 name: 20 month-old stage and over
 namespace: mouse_developmental_stage
 def: "Aged adult stage that refers to a mouse which is over 20 months old." [Bgee:curator]
-is_a: MmusDv:0000076 ! aged adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000076 ! aged adult stage
 
 [Term]
 id: MmusDv:0000092
 name: Theiler stage 11a
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the amniotic cavity is sealed off into three distinct cavities - the amniotic cavity, the exocoelom and the ectoplacental cleft." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
-is_a: MmusDv:0000017 ! Theiler stage 11
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000017 ! Theiler stage 11
 
 [Term]
 id: MmusDv:0000093
 name: Theiler stage 11b
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the allantoic bud elongates ." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
-is_a: MmusDv:0000017 ! Theiler stage 11
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000092 ! Theiler stage 11a
+relationship: part_of MmusDv:0000017 ! Theiler stage 11
 
 [Term]
 id: MmusDv:0000094
 name: Theiler stage 11c
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the head folds are formed while the neural groove becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
-is_a: MmusDv:0000017 ! Theiler stage 11
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000093 ! Theiler stage 11b
+relationship: part_of MmusDv:0000017 ! Theiler stage 11
 
 [Term]
 id: MmusDv:0000095
 name: Theiler stage 11d
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the head folds continue to enlarge while the foregut pocket begins to form." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
-is_a: MmusDv:0000017 ! Theiler stage 11
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000094 ! Theiler stage 11c
+relationship: part_of MmusDv:0000017 ! Theiler stage 11
+
+[Term]
+id: MmusDv:0000096
+name: early immature stage
+namespace: mouse_developmental_stage
+def: "Immature stage that covers the period from birth until end of the first week." [Bgee:curator]
+comment: This stage groups the first seven days of the mouse life as described in K.Theiler's book, The House Mouse, Atlas of Embryonic Development, Springer-Verlag (second printing 1989).
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000043 ! immature stage
 
 [Term]
 id: MmusDv:0000097
 name: late adult stage
 namespace: mouse_developmental_stage
 def: "Adult stage that refers to a mouse which is over 7 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
-is_a: UBERON:0000113 ! post-juvenile adult stage
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 
 [Term]
 id: MmusDv:0000098
 name: 25 weeks
 namespace: mouse_developmental_stage
 def: "6 month-old stage that refers to a mouse which is over 175 days and under 183 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000074 ! 24 weeks
 relationship: part_of MmusDv:0000077 ! 6 month-old stage
 
 [Term]
@@ -1191,7 +2640,8 @@ id: MmusDv:0000099
 name: 26 weeks
 namespace: mouse_developmental_stage
 def: "6 month-old stage that refers to a mouse which is over 182 days and under 190 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000098 ! 25 weeks
 relationship: part_of MmusDv:0000077 ! 6 month-old stage
 
 [Term]
@@ -1199,7 +2649,8 @@ id: MmusDv:0000100
 name: 27 weeks
 namespace: mouse_developmental_stage
 def: "6 month-old stage that refers to a mouse which is over 189 days and under 197 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000099 ! 26 weeks
 relationship: part_of MmusDv:0000077 ! 6 month-old stage
 
 [Term]
@@ -1207,7 +2658,8 @@ id: MmusDv:0000101
 name: 28 weeks
 namespace: mouse_developmental_stage
 def: "6 month-old stage that refers to a mouse which is over 196 days and under 204 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000100 ! 27 weeks
 relationship: part_of MmusDv:0000077 ! 6 month-old stage
 
 [Term]
@@ -1215,7 +2667,8 @@ id: MmusDv:0000102
 name: 29 weeks
 namespace: mouse_developmental_stage
 def: "6 month-old stage that refers to a mouse which is over 203 days and under 211 days old." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000101 ! 28 weeks
 relationship: part_of MmusDv:0000077 ! 6 month-old stage
 
 [Term]
@@ -1223,14 +2676,17 @@ id: MmusDv:0000103
 name: Theiler stage 09a
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 9 defined by advanced endometrial reaction and during which the egg-cylinder stage advances with the first evidence of an embryonic axis." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Stage_9a]
-is_a: MmusDv:0000014 ! Theiler stage 09
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000014 ! Theiler stage 09
 
 [Term]
 id: MmusDv:0000104
 name: Theiler stage 09b
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 9 defined by advanced endometrial reaction and during which the first mesodermal cells are produced by gastrulation late in this stage." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Stage_9b]
-is_a: MmusDv:0000014 ! Theiler stage 09
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000103 ! Theiler stage 09a
+relationship: part_of MmusDv:0000014 ! Theiler stage 09
 
 [Term]
 id: MmusDv:0000105
@@ -1238,7 +2694,8 @@ name: Theiler stage 10a
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 10 during which the tissue at the posterior end of the primitive streak bulges into the pro-amniotic cavity and forms the amniotic fold." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Stage_10a]
 comment: Refers to MS (mid-streak) stage in Downs and Davies staging of gastrulating mouse embryos (PMID: 8269852, 1993).
-is_a: MmusDv:0000015 ! Theiler stage 10
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000015 ! Theiler stage 10
 
 [Term]
 id: MmusDv:0000106
@@ -1246,7 +2703,9 @@ name: Theiler stage 10b
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 10 during which small cavities coalesce to form a single cavity in the mesoderm of the posterior amniotic fold, the exocoelom." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_10b]
 comment: Refers to MS-LS (mid-streak to late streak) stage in Downs and Davies staging of gastrulating mouse embryos, 1993 (see http://www.ncbi.nlm.nih.gov/pubmed/8269852).
-is_a: MmusDv:0000015 ! Theiler stage 10
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000105 ! Theiler stage 10a
+relationship: part_of MmusDv:0000015 ! Theiler stage 10
 
 [Term]
 id: MmusDv:0000107
@@ -1254,7 +2713,9 @@ name: Theiler stage 10c
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 10 during which the allantoic bud first appears, gastrulation continues and the node becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_10c]
 comment: Refers to MS-LS (mid-streak to late streak) stage in Downs and Davies staging of gastrulating mouse embryos, 1993 (see http://www.ncbi.nlm.nih.gov/pubmed/8269852).
-is_a: MmusDv:0000015 ! Theiler stage 10
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000106 ! Theiler stage 10b
+relationship: part_of MmusDv:0000015 ! Theiler stage 10
 
 [Term]
 id: MmusDv:0000108
@@ -1262,7 +2723,8 @@ name: Theiler stage 12a
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 12 defined by unturned embryo with first appearance of somite pairs 1-4 and during which the allantois extends further into the exocoelom. Maxillary components of the 1st branchial arch become prominent. The preotic sulcus is visible in the 2-3 somite embryo. The cardiogenic plate begins to form and the foregut pocket is clearly visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12a]
 comment: Embryonic age 8 dpc (day post-coitum). Refers to human CarnegieStage09.
-is_a: MmusDv:0000019 ! Theiler stage 12
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000019 ! Theiler stage 12
 
 [Term]
 id: MmusDv:0000109
@@ -1270,7 +2732,9 @@ name: Theiler stage 12b
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 12 defined by unturned embryo with first appearance of somite pairs 5-7 and during which neural closure occurs in the region of the 4th and 5th somites, extending in both directions from this site. Headfolds are particularly prominent. Optic placodes are first evident and become indented to form the optic pits. The heart rudiment develops rapidly. The allantois contacts the chorion at the end of this stage." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12b]
 comment: Embryonic age 8 dpc (day post-coitum). Refers to human CarnegieStage09.
-is_a: MmusDv:0000019 ! Theiler stage 12
+is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by MmusDv:0000108 ! Theiler stage 12a
+relationship: part_of MmusDv:0000019 ! Theiler stage 12
 
 [Term]
 id: OlatDv:0000020
@@ -1287,7 +2751,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 3 min  Stage 1 (3 min) Activated egg stage: When an egg is stimulated by a spermatozoon arriving at the vitelline surface through the micropyle, a transient wave of increase in cytoplasmic free calcium starts at the point of sperm attachment [5,33]. The cortical alveoli in the vicinity of the micropyle also begin to break down (exocytosis of alveolar contents) about 9 sec after sperm attachment [17]. The wave of exocytosis begins to propagate over the whole egg surface and ends at the vegetal pole 154 sec after its beginning. As a result of the exocytosis of cortical alveoli into the narrow space between the chorion and the vitellus, the chorion thins and hardens [24] as it separates from the vitellus to form a wide perivitelline space. Swollen spherical bodies secreted from the cortical alveoli are faintly visible in the perivitelline space. A transient \"contractile wave\" of cortical cytoplasmic layer follows the wave of exocytosis [9,15]. Due to the oscillatory contractions following this distinct contractile wave, the cortical cytoplasm progressively accumulates toward the animal pole to form a thick cytoplasmic layer [1,26]. At 7-8 minutes after sperm entry, the second polar body is extruded onto the surface of the cytoplasm at the center of the area where the germinal vesicle broke down during oocyte maturation. - 3 min " [OlatDv:curators]
 synonym: "Activated egg stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000020 ! Medaka stage 0
+relationship: immediately_preceded_by OlatDv:0000020 ! Medaka stage 0
 
 [Term]
 id: OlatDv:0000040
@@ -1296,7 +2760,6 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 30 min  Stage 2a (30 min) Blastodisc stage a: The male and the female pronuclei migrate toward and associate with each other at the center of the thick cytoplasmic disc at the animal pole. Chromosomes then appear and divide into two groups at the poles of the spindle marking the end of this stage. Oscillatory contractions cause the peripheral cortical cytoplasm to migrate toward the animal pole where it forms a convex, lens-shaped blastodisc. Meanwhile, oil droplets migrate toward the vegetal pole and begin coalescing. - 30 min " [OlatDv:curators]
 synonym: "Blastodisc stage a" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000030 ! Medaka stage 1
 
 [Term]
 id: OlatDv:0000050
@@ -1305,7 +2768,6 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 60 min  Stage 2b (60 min) Blastodisc stage b: The male and the female pronuclei migrate toward and associate with each other at the center of the thick cytoplasmic disc at the animal pole. Chromosomes then appear and divide into two groups at the poles of the spindle marking the end of this stage. The layer of cortical cytoplasm covering the yolk sphere is very thin except where it forms the cap-shaped blastodisc. By the end of this stage, most of the oil droplets from the animal hemisphere have already migrated to the vegetal hemisphere. Two dimple-like pits on the blastodisc serve as markers to locate the future blastomeres. - 60 min " [OlatDv:curators]
 synonym: "Blastodisc stage b" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000040 ! Medaka stage 2a
 
 [Term]
 id: OlatDv:0000060
@@ -1314,7 +2776,6 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 1 hr 5 min  Stage 3 (1 hr 5 min) 2 cell stage: The first cleavage plane is at a right angle to the axis between the second polar body (meiotic spindle) and the micropyle in 60-79% of eggs. The two blastomeres are highly rounded just after cleavage, but are comparatively flat just before the second cleavage. - 1 hr 5 min " [OlatDv:curators]
 synonym: "2 cell stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000050 ! Medaka stage 2b
 
 [Term]
 id: OlatDv:0000070
@@ -1323,7 +2784,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 1 hr 45 min  Stage 4 (1 hr 45 min) 4 cell stage: The second cleavage furrow develops on the two blastomeres at a right angle to the first cleavage plane. It deepens until each blastomere is divided into 2 of the same size. The oil droplets are larger but fewer and gather toward the vegetal pole. - 1 hr 45 min " [OlatDv:curators]
 synonym: "4 cell stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000060 ! Medaka stage 3
+relationship: immediately_preceded_by OlatDv:0000060 ! Medaka stage 3
 
 [Term]
 id: OlatDv:0000080
@@ -1332,7 +2793,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 2 hrs 20 min  Stage 5 (2 hrs 20 min) 8 cell stage: The third cleavage plane is parallel to the first and divides the 4 blastomeres into 8 blastomeres. The blastoderm has bilaterally symmetrical rows of blastomeres and elongates along the axis of the second cleavage plane. - 2 hrs 20 min " [OlatDv:curators]
 synonym: "8 cell stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000070 ! Medaka stage 4
+relationship: immediately_preceded_by OlatDv:0000070 ! Medaka stage 4
 
 [Term]
 id: OlatDv:0000090
@@ -1341,7 +2802,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 2 hrs 55 min  Stage 6 (2 hrs 55 min) 16 cell stage: The fourth cleavage plane, which is parallel to the second, divides the 2 rows of 4 blastomeres into 4 rows of 4 blastomeres. - 2 hrs 55 min " [OlatDv:curators]
 synonym: "16 cell stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000080 ! Medaka stage 5
+relationship: immediately_preceded_by OlatDv:0000080 ! Medaka stage 5
 
 [Term]
 id: OlatDv:0000100
@@ -1350,7 +2811,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 3 hrs 30 min  Stage 7 (3 hrs 30 min) 32 cell stage: The fifth cleavage plane divides the marginal 12blastomeres meridionally into 24, and the central 4 blastomeres horizontally into 8 thereby forming 2 layers, an outer and an inner layer, in the central region. The number of marginal cells is 14. These observations agree with those of Matui [24], Gamo and Terajima [4] and Iwamatsu [11] but differ from the earlier reports of Kamito [21, cf. 30] in which cleavage was reported to continue to occur meridionally at least through the 32 cell stage. - 3 hrs 30 min " [OlatDv:curators]
 synonym: "32 cell stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000090 ! Medaka stage 6
+relationship: immediately_preceded_by OlatDv:0000090 ! Medaka stage 6
 
 [Term]
 id: OlatDv:0000110
@@ -1359,7 +2820,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 4 hrs 5 min  Stage 8 (4 hrs 5 min) Early morula stage: The planes of the sixth and later cleavages are difficult to precisely trace. The blastomeres (64-128) have different cleavage planes depending on their positions within the dome-shaped blastoderm and are arranged in 3 layers. The peripheral blastomeres (21-24) are flattened in shape. The cells (30-35 m in diameter) are arranged in 3-4 layers but are still easily dissociated from each other [31]. - 4 hrs 5 min " [OlatDv:curators]
 synonym: "Early morula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000100 ! Medaka stage 7
+relationship: immediately_preceded_by OlatDv:0000100 ! Medaka stage 7
 
 [Term]
 id: OlatDv:0000120
@@ -1368,7 +2829,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 5 hrs 15 min  Stage 9 (5 hrs 15 min) Late morula stage: The blastodermal cells (256-512 blastomeres) are smaller than those of the previous stage and the number of marginal cells (30- 40) has increased. The blastodermal cells (central region, 25- 35 m in diameter) now form 4-5 layers. - 5 hrs 15 min " [OlatDv:curators]
 synonym: "Late morula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000110 ! Medaka stage 8
+relationship: immediately_preceded_by OlatDv:0000110 ! Medaka stage 8
 
 [Term]
 id: OlatDv:0000130
@@ -1377,7 +2838,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 6 hrs 30 min  Stage 10 (6 hrs 30 min) Early blastula stage: The blastoderm (about 1,000 cells) is still high (thick) as in the late morula stage, although its inner cells (20-30 m in diameter) are smaller. According to Kageyama [19], the 11th cleavage still takes place synchronously. Nuclei from the marginal cells (40, cf.[19]) migrate out of the cells and are distributed in a few rows in the periblast (cortical syncytial layer). - 6 hrs 30 min " [OlatDv:curators]
 synonym: "Early blastula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000120 ! Medaka stage 9
+relationship: immediately_preceded_by OlatDv:0000120 ! Medaka stage 9
 
 [Term]
 id: OlatDv:0000140
@@ -1386,7 +2847,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 8 hrs 15 min  Stage 11 (8 hrs 15 min) Late blastula stage: Projection of the underside of the blastoderm (central cells, about 20 m in diameter) into the yolk sphere is observed. In this stage, some blastomeres begin to cleave asynchronously and to migrate. Several (5-6) rows of periblast nuclei are visible around the blastoderm. - 8 hrs 15 min " [OlatDv:curators]
 synonym: "Late blastula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000130 ! Medaka stage 10
+relationship: immediately_preceded_by OlatDv:0000130 ! Medaka stage 10
 
 [Term]
 id: OlatDv:0000150
@@ -1395,7 +2856,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 10 hrs 20 min  Stage 12 (10 hrs 20 min) Pre-early gastrula stage: The blastoderm has flattened down onto the yolk sphere so that its outer surface follows the curvature of the yolk sphere. The cell layers are slightly thicker on one side. The diameter of the cells in the central region of the blastoderm remains about 20 m. - 10 hrs 20 min " [OlatDv:curators]
 synonym: "Pre-early gastrula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000140 ! Medaka stage 11
+relationship: immediately_preceded_by OlatDv:0000140 ! Medaka stage 11
 
 [Term]
 id: OlatDv:0000160
@@ -1404,7 +2865,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 13 hrs 0 min  Stage 13 (13 hrs 0 min) Early gastrula stage: The blastoderm begins to expand (epiboly, about 1/4 of the yolk sphere) over the surface of the yolk sphere, and the presumptive region of the embryonic shield arises as a thickened margin (dorsal lip) of the blastoderm. It is difficult to recognize the boundaries of the flattened marginal cells. The diameter of the cells in the central region of the blastoderm is 15-20 m. - 13 hrs 0 min " [OlatDv:curators]
 synonym: "Early gastrula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000150 ! Medaka stage 12
+relationship: immediately_preceded_by OlatDv:0000150 ! Medaka stage 12
 
 [Term]
 id: OlatDv:0000170
@@ -1413,7 +2874,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 15 hrs 0 min  Stage 14 (15 hrs 0 min) Pre-mid gastrula stage: Epiboly progressively advances and the blastoderm covers about 1/3 of the yolk sphere. The germ ring is well-defined, and the embryonic shield increases in size. Weak, rhythmically undulating movements [3,29] begin to occur on the blastoderm but not on the uncovered yolk sphere. - 15 hrs 0 min " [OlatDv:curators]
 synonym: "Pre-mid gastrula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000160 ! Medaka stage 13
+relationship: immediately_preceded_by OlatDv:0000160 ! Medaka stage 13
 
 [Term]
 id: OlatDv:0000180
@@ -1422,7 +2883,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 17 hrs 30 min  Stage 15 (17 hrs 30 min) Mid gastrula stage: A streak is visible in the midline of the embryonic shield projecting into the germ ring area. The blastoderm covers about 1/2 of the yolk sphere. The nuclei of the marginal periblast are barely visible on the yolk sphere. - 17 hrs 30 min " [OlatDv:curators]
 synonym: "Mid gastrula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000170 ! Medaka stage 14
+relationship: immediately_preceded_by OlatDv:0000170 ! Medaka stage 14
 
 [Term]
 id: OlatDv:0000190
@@ -1431,7 +2892,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 21 hrs 0 min  Stage 16 (21 hrs 0 min) Late gastrula stage: The blastoderm covers 3/4 of the yolk sphere, and the embryonic shield (body) becomes more clearly visible as a narrow streak. The enveloping layer expands uniformly over the yolk sphere until this stage [18]. - 21 hrs 0 min " [OlatDv:curators]
 synonym: "Late gastrula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000180 ! Medaka stage 15
+relationship: immediately_preceded_by OlatDv:0000180 ! Medaka stage 15
 
 [Term]
 id: OlatDv:0000200
@@ -1441,7 +2902,7 @@ def: "Zoological Science 11: 825-839 (1994) - 1 day 1 hr  Stage 17 (1 day 1 hr) 
 comment: Head formation
 synonym: "Early neurula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000190 ! Medaka stage 16
+relationship: immediately_preceded_by OlatDv:0000190 ! Medaka stage 16
 
 [Term]
 id: OlatDv:0000210
@@ -1451,7 +2912,7 @@ def: "Zoological Science 11: 825-839 (1994) - 1 day 2 hrs  Stage 18 (1 day 2 hrs
 comment: Optic bud formation
 synonym: "Late neurula stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000200 ! Medaka stage 17
+relationship: immediately_preceded_by OlatDv:0000200 ! Medaka stage 17
 
 [Term]
 id: OlatDv:0000220
@@ -1460,7 +2921,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 1 day 3 hrs 30 min  Stage 19 (1 day 3 hrs 30 min) 2 somite stage: A groove appears in the dorsum of each optic lobe. At the end of this stage (3 somites), two slight knobs are recognized behind the optic vesicles. The blastopore is completely closed. The expansion of the enveloping layer is accomplished without an accompanying increase in the number of constituent cells [18]. - 1 day 3 hrs 30 min " [OlatDv:curators]
 synonym: "2 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000210 ! Medaka stage 18
+relationship: immediately_preceded_by OlatDv:0000210 ! Medaka stage 18
 
 [Term]
 id: OlatDv:0000230
@@ -1469,7 +2930,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 1 day 7 hrs 30 min  Stage 20 (1 day 7 hrs 30 min) 4 somite stage: A paired placode of otic (auditory) vesicles appears at the posterior region of the head. Depressions begin to form at the dorsal surface of the eye vesicles. Three parts of the brain (the fore-, the mid- and the hind-brain) are discernible. - 1 day 7 hrs 30 min " [OlatDv:curators]
 synonym: "4 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000220 ! Medaka stage 19
+relationship: immediately_preceded_by OlatDv:0000220 ! Medaka stage 19
 
 [Term]
 id: OlatDv:0000240
@@ -1479,7 +2940,7 @@ def: "Zoological Science 11: 825-839 (1994) - 1 day 10 hrs  Stage 21 (1 day 10 h
 comment: Brain and otic vesicle formation
 synonym: "6 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000230 ! Medaka stage 20
+relationship: immediately_preceded_by OlatDv:0000230 ! Medaka stage 20
 
 [Term]
 id: OlatDv:0000250
@@ -1489,7 +2950,7 @@ def: "Zoological Science 11: 825-839 (1994) - 1 day 14 hrs  Stage 22 (1 day 14 h
 comment: Appearance of heart anlage
 synonym: "9 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000240 ! Medaka stage 21
+relationship: immediately_preceded_by OlatDv:0000240 ! Medaka stage 21
 
 [Term]
 id: OlatDv:0000260
@@ -1499,7 +2960,7 @@ def: "Zoological Science 11: 825-839 (1994) - 1 day 17 hrs  Stage 23 (1 day 17 h
 comment: Formation of tubular heart
 synonym: "12 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000250 ! Medaka stage 22
+relationship: immediately_preceded_by OlatDv:0000250 ! Medaka stage 22
 
 [Term]
 id: OlatDv:0000270
@@ -1509,7 +2970,7 @@ def: "Zoological Science 11: 825-839 (1994) - 1 day 20 hrs  Stage 24 (1 day 20 h
 comment: Start of heart beating
 synonym: "16 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000260 ! Medaka stage 23
+relationship: immediately_preceded_by OlatDv:0000260 ! Medaka stage 23
 
 [Term]
 id: OlatDv:0000280
@@ -1519,7 +2980,7 @@ def: "Zoological Science 11: 825-839 (1994) - 2 days 2 hrs  Stage 25 (2 days 2 h
 comment: Onset of blood circulation
 synonym: "18-19 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000270 ! Medaka stage 24
+relationship: immediately_preceded_by OlatDv:0000270 ! Medaka stage 24
 
 [Term]
 id: OlatDv:0000290
@@ -1529,7 +2990,7 @@ def: "Zoological Science 11: 825-839 (1994) - 2 days 6 hrs  Stage 26 (2 days 6 h
 comment: Development of guanophores and vacuolization of the notochord
 synonym: "22 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000280 ! Medaka stage 25
+relationship: immediately_preceded_by OlatDv:0000280 ! Medaka stage 25
 
 [Term]
 id: OlatDv:0000300
@@ -1539,7 +3000,7 @@ def: "Zoological Science 11: 825-839 (1994) - 2 days 10 hrs  Stage 27 (2 days 10
 comment: Appearance of pectoral fin bud
 synonym: "24 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000290 ! Medaka stage 26
+relationship: immediately_preceded_by OlatDv:0000290 ! Medaka stage 26
 
 [Term]
 id: OlatDv:0000310
@@ -1549,7 +3010,7 @@ def: "Zoological Science 11: 825-839 (1994) - 2 days 16 hrs  Stage 28 (2 days 16
 comment: Onset of retinal pigmentation
 synonym: "30 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000300 ! Medaka stage 27
+relationship: immediately_preceded_by OlatDv:0000300 ! Medaka stage 27
 
 [Term]
 id: OlatDv:0000320
@@ -1559,7 +3020,7 @@ def: "Zoological Science 11: 825-839 (1994) - 3 days 2 hrs  Stage 29 (3 days 2 h
 comment: Internal ear formation
 synonym: "34 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000310 ! Medaka stage 28
+relationship: immediately_preceded_by OlatDv:0000310 ! Medaka stage 28
 
 [Term]
 id: OlatDv:0000330
@@ -1569,7 +3030,7 @@ def: "Zoological Science 11: 825-839 (1994) - 3 days 10 hrs " [OlatDv:curators]
 comment: Blood vessel development
 synonym: "35 somite stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000320 ! Medaka stage 29
+relationship: immediately_preceded_by OlatDv:0000320 ! Medaka stage 29
 
 [Term]
 id: OlatDv:0000340
@@ -1578,7 +3039,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 3 days 23 hrs  Stage 31 (3 days 23 hrs) Gill blood vessel formation stage: Large cells of the hatching enzyme gland migrate up to the region under the central part of the eye, which now has a cornea. Blood circulation is seen in the gill arches. Pigmentation of the melanophores in the choroidea proceeds as a dark network in the eye. The pronephric kidney appears as a bright structure adjacent to the 1st somite. The transparent, colorless gallbladder first appears at the posterior region of the liver. Four transparent, membranous protrusions (the structures of the internal ear) are recognized in the otic vesicles. The anterior region of the oral cavity is formed. The tail has 21 somites and a membranous fin which is wider on the ventral side. - 3 days 23 hrs " [OlatDv:curators]
 synonym: "Gill blood vessel formation stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000330 ! Medaka stage 30
+relationship: immediately_preceded_by OlatDv:0000330 ! Medaka stage 30
 
 [Term]
 id: OlatDv:0000350
@@ -1588,7 +3049,7 @@ def: "Zoological Science 11: 825-839 (1994) - 4 days 5 hrs  Stage 32 (4 days 5 h
 comment: Formation of pronephros and air bladder
 synonym: "Somite completion stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000340 ! Medaka stage 31
+relationship: immediately_preceded_by OlatDv:0000340 ! Medaka stage 31
 
 [Term]
 id: OlatDv:0000360
@@ -1597,7 +3058,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 4 days 10 hrs  Stage 33 (4 days 10 hrs) Stage at which notochord vacuolization is completed: The tail tip has not yet reached within inter ocular distance of the eye. Because the eyeball (choroidea) is very dark, the lenses can be seen only with strong trans illumination. The notochord is completely vacuolized to the end of the tail. The pineal gland is distinct at the dorsal surface of the vascularized forebrain. The tips of the membranous margins of the pectoral fins reach the 4th somite. - 4 days 10 hrs " [OlatDv:curators]
 synonym: "Stage at which notochord vacuolization is completed" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000350 ! Medaka stage 32
+relationship: immediately_preceded_by OlatDv:0000350 ! Medaka stage 32
 
 [Term]
 id: OlatDv:0000370
@@ -1606,7 +3067,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 5 days 1 hr  Stage 34 (5 days 1 hr) Pectoral fin blood circulation stage: The tip of the caudal fin has several melanophores and reaches the eye. Blood circulation is apparent in the pectoral fins, which frequently move (flutter). The choroidea of the eye becomes so black that it is almost impervious to light. - 5 days 1 hr " [OlatDv:curators]
 synonym: "Pectoral fin blood circulation stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000360 ! Medaka stage 33
+relationship: immediately_preceded_by OlatDv:0000360 ! Medaka stage 33
 
 [Term]
 id: OlatDv:0000380
@@ -1615,7 +3076,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 5 days 12 hrs  Stage 35 (5 days 12 hrs) Stage at which visceral blood vessels form: The tip of the caudal fin reaches beyond the posterior border of the eye. Guanophores are distributed from the head to the vicinity of the tail tip. Blood circulates through the internal tissues of the head and the viscera to Cuvier's ducts. The tubular structure of the spinal cord is revealed. The opening of the oral cavity to the mouth and the presence of several pit organs on the frontal bone can be recognized. - 5 days 12 hrs " [OlatDv:curators]
 synonym: "Stage at which visceral blood vessels form" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000370 ! Medaka stage 34
+relationship: immediately_preceded_by OlatDv:0000370 ! Medaka stage 34
 
 [Term]
 id: OlatDv:0000390
@@ -1624,7 +3085,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 6 days  Stage 36 (6 days) Heart development stage: The tip of the tail reaches the otic vesicle. Guanophores and melanophores are distributed on the dorsal wall (peritoneum) of the peritoneal cavity beneath the 1st to the 4th somites. The extent of flexion of the atrio-ventricular region of the heart increases so that in a lateral view, the atrium and the ventricle lie adjacent to each other. - 6 days " [OlatDv:curators]
 synonym: "Heart development stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000380 ! Medaka stage 35
+relationship: immediately_preceded_by OlatDv:0000380 ! Medaka stage 35
 
 [Term]
 id: OlatDv:0000400
@@ -1633,7 +3094,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 7 days  Stage 37 (7 days) Pericardial cavity formation stage: The tip of the tail lies just past the otic vesicle (total length ca. 3.1 mm). The pharyngeal teeth are visible in the posterior region of the gills between the otic vesicles. The pericardial cavity (cardiac sac) surrounding the heart is easily observed. The slowly moving gut tube has a narrow lumen. - 7 days " [OlatDv:curators]
 synonym: "Pericardial cavity formation stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000390 ! Medaka stage 36
+relationship: immediately_preceded_by OlatDv:0000390 ! Medaka stage 36
 
 [Term]
 id: OlatDv:0000410
@@ -1643,7 +3104,7 @@ def: "Zoological Science 11: 825-839 (1994) - 8 days  Stage 38 (8 days) Spleen d
 comment: Differentiation of caudal fin begins
 synonym: "Spleen development stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000400 ! Medaka stage 37
+relationship: immediately_preceded_by OlatDv:0000400 ! Medaka stage 37
 
 [Term]
 id: OlatDv:0000420
@@ -1652,7 +3113,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) - 9 days  Stage 39 (9 days) Hatching stage: The tip of the tail extends to the base of the pectoral fin or to the posterior region of the swim bladder (total length 3.8- 4.2 mm). After hatching, the internal wall of the swim bladder expands remarkably. Cells of hatching gland have already disappeared. The embryos dissolve the inner layers of the chorion [27], tear the single outer layer by moving the body and escape from the chorion tail-first. - 9 days " [OlatDv:curators]
 synonym: "Hatching stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000410 ! Medaka stage 38
+relationship: immediately_preceded_by OlatDv:0000410 ! Medaka stage 38
 
 [Term]
 id: OlatDv:0000430
@@ -1661,7 +3122,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) -   Stage 40 1st fry stage: This period extends from hatching until fin rays appear in the caudal and pectoral fins (total length about 4.5 mm). -  " [OlatDv:curators]
 synonym: "1st fry stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000420 ! Medaka stage 39
+relationship: immediately_preceded_by OlatDv:0000420 ! Medaka stage 39
 
 [Term]
 id: OlatDv:0000440
@@ -1670,7 +3131,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) -   Stage 41 2nd fry stage: This period begins after the appearance of jointed rays in the pectoral fins and continues until fin rays appear in the dorsal and anal fins (total length about 5.5 mm). -  " [OlatDv:curators]
 synonym: "2nd fry stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000430 ! Medaka stage 40
+relationship: immediately_preceded_by OlatDv:0000430 ! Medaka stage 40
 
 [Term]
 id: OlatDv:0000450
@@ -1679,7 +3140,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) -   Stage 42 3rd fry stage: This stage follows the appearance of ventral fin rays and scales in addition and extends to the formation of the jointed fin rays in the dorsal and anal fins (total length about 7 mm). -  " [OlatDv:curators]
 synonym: "3rd fry stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000440 ! Medaka stage 41
+relationship: immediately_preceded_by OlatDv:0000440 ! Medaka stage 41
 
 [Term]
 id: OlatDv:0000460
@@ -1688,7 +3149,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) -   Stage 43 1st young fish stage: This is the period before the secondary sexual characteristics are manifested (total length about 22 mm). -  " [OlatDv:curators]
 synonym: "1st young fish stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000450 ! Medaka stage 42
+relationship: immediately_preceded_by OlatDv:0000450 ! Medaka stage 42
 
 [Term]
 id: OlatDv:0000470
@@ -1697,7 +3158,7 @@ namespace: medaka_ontology
 def: "Zoological Science 11: 825-839 (1994) -   Stage 44 2nd young fish stage: At this stage the mature fish ejaculate sperm and spawn eggs (total length about 23 mm ). -  " [OlatDv:curators]
 synonym: "2nd young fish stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by OlatDv:0000460 ! Medaka stage 43
+relationship: immediately_preceded_by OlatDv:0000460 ! Medaka stage 43
 
 [Term]
 id: UBERON:0000000
@@ -1803,7 +3264,7 @@ xref: MIAA:0000400
 xref: OGES:000008
 xref: ZFS:0000048
 is_a: UBERON:0000092 ! post-embryonic stage
-relationship: directly_preceded_by UBERON:0000068 ! embryo stage
+relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
 property_value: RO:0002161 NCBITaxon:32524
 
 [Term]
@@ -1817,7 +3278,7 @@ synonym: "chrysalis stage" NARROW [NCBITaxon:37572, Wikipedia:Pupa]
 synonym: "pupa stage" EXACT []
 xref: FBdv:00005349
 is_a: UBERON:0000092 ! post-embryonic stage
-relationship: directly_preceded_by UBERON:0000069 ! larval stage
+relationship: immediately_preceded_by UBERON:0000069 ! larval stage
 
 [Term]
 id: UBERON:0000071
@@ -1860,6 +3321,8 @@ subset: upper_level
 synonym: "life" EXACT []
 synonym: "lifespan" EXACT []
 xref: FBdv_root:00000000
+xref: HsapDv:0000000
+xref: MmusDv:0000000
 xref: ncithesaurus:Life
 xref: OGES:000011
 is_a: UBERON:0000105 ! life cycle stage
@@ -1875,6 +3338,7 @@ synonym: "developmental stage" EXACT []
 synonym: "stage" NARROW []
 xref: BILS:0000105
 xref: EFO:0000399
+xref: MmusDv:0000001
 xref: ncithesaurus:Developmental_Stage
 xref: OlatDv:0000010
 xref: WBls:0000002
@@ -1924,7 +3388,7 @@ xref: OGES:000020
 xref: XAO:1000004
 xref: ZFS:0000046
 is_a: UBERON:0000067 ! embryo stage part
-relationship: directly_preceded_by UBERON:0000106 ! zygote stage
+relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
 relationship: part_of UBERON:0000068 ! embryo stage
 
 [Term]
@@ -2019,6 +3483,7 @@ xref: BTO:0002168
 xref: EFO:0001300
 xref: EV:0300051
 xref: OGES:000009
+xref: TS28
 xref: XAO:1000010
 xref: XtroDO:0000083
 xref: ZFS:0000051
@@ -2168,7 +3633,7 @@ xref: XtroDO:0000006
 xref: ZFS:0000002
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: directly_preceded_by UBERON:0000106 ! zygote stage
+relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
@@ -2182,7 +3647,7 @@ xref: XtroDO:0000007
 xref: ZFS:0000003
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: directly_preceded_by UBERON:0007232 ! 2 cell stage
+relationship: immediately_preceded_by UBERON:0007232 ! 2 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 relationship: starts UBERON:0007234 ! 4-8 cell stage
 
@@ -2194,7 +3659,7 @@ synonym: "four-eight cell stage" EXACT [OBOL:automatic]
 xref: EMAPA:16037
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: directly_preceded_by UBERON:0007232 ! 2 cell stage
+relationship: immediately_preceded_by UBERON:0007232 ! 2 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
@@ -2208,8 +3673,8 @@ xref: XtroDO:0000008
 xref: ZFS:0000004
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: directly_preceded_by UBERON:0007233 ! 4 cell stage
 relationship: finishes UBERON:0007234 ! 4-8 cell stage
+relationship: immediately_preceded_by UBERON:0007233 ! 4 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
@@ -2936,8 +4401,8 @@ name: Cleavage:16-cell
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-20
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by UBERON:0007236 ! 8 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
-relationship: preceded_by UBERON:0007236 ! 8 cell stage
 
 [Term]
 id: ZFS:0000006
@@ -2945,8 +4410,8 @@ name: Cleavage:32-cell
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-25
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000005 ! Cleavage:16-cell
 relationship: part_of UBERON:0000107 ! cleavage stage
-relationship: preceded_by ZFS:0000005 ! Cleavage:16-cell
 
 [Term]
 id: ZFS:0000007
@@ -2954,8 +4419,8 @@ name: Cleavage:64-cell
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-28
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000006 ! Cleavage:32-cell
 relationship: part_of UBERON:0000107 ! cleavage stage
-relationship: preceded_by ZFS:0000006 ! Cleavage:32-cell
 
 [Term]
 id: ZFS:0000008
@@ -2963,8 +4428,8 @@ name: Blastula:128-cell
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-7
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000007 ! Cleavage:64-cell
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000007 ! Cleavage:64-cell
 
 [Term]
 id: ZFS:0000009
@@ -2972,8 +4437,8 @@ name: Blastula:256-cell
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-1
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000008 ! Blastula:128-cell
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000008 ! Blastula:128-cell
 
 [Term]
 id: ZFS:0000010
@@ -2981,8 +4446,8 @@ name: Blastula:512-cell
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-14
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000009 ! Blastula:256-cell
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000009 ! Blastula:256-cell
 
 [Term]
 id: ZFS:0000011
@@ -2990,8 +4455,8 @@ name: Blastula:1k-cell
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-22
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000010 ! Blastula:512-cell
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000010 ! Blastula:512-cell
 
 [Term]
 id: ZFS:0000012
@@ -2999,8 +4464,8 @@ name: Blastula:High
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-27
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000011 ! Blastula:1k-cell
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000011 ! Blastula:1k-cell
 
 [Term]
 id: ZFS:0000013
@@ -3008,8 +4473,8 @@ name: Blastula:Oblong
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-24
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000012 ! Blastula:High
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000012 ! Blastula:High
 
 [Term]
 id: ZFS:0000014
@@ -3017,8 +4482,8 @@ name: Blastula:Sphere
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-21
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000013 ! Blastula:Oblong
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000013 ! Blastula:Oblong
 
 [Term]
 id: ZFS:0000015
@@ -3026,8 +4491,8 @@ name: Blastula:Dome
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-19
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000014 ! Blastula:Sphere
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000014 ! Blastula:Sphere
 
 [Term]
 id: ZFS:0000016
@@ -3035,8 +4500,8 @@ name: Blastula:30%-epiboly
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-17
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000015 ! Blastula:Dome
 relationship: part_of UBERON:0000108 ! blastula stage
-relationship: preceded_by ZFS:0000015 ! Blastula:Dome
 
 [Term]
 id: ZFS:0000017
@@ -3044,8 +4509,8 @@ name: Gastrula:50%-epiboly
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-6
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000016 ! Blastula:30%-epiboly
 relationship: part_of UBERON:0000109 ! gastrula stage
-relationship: preceded_by ZFS:0000016 ! Blastula:30%-epiboly
 
 [Term]
 id: ZFS:0000018
@@ -3053,8 +4518,8 @@ name: Gastrula:Germ-ring
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-3
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000017 ! Gastrula:50%-epiboly
 relationship: part_of UBERON:0000109 ! gastrula stage
-relationship: preceded_by ZFS:0000017 ! Gastrula:50%-epiboly
 
 [Term]
 id: ZFS:0000019
@@ -3062,8 +4527,8 @@ name: Gastrula:Shield
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-2
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000018 ! Gastrula:Germ-ring
 relationship: part_of UBERON:0000109 ! gastrula stage
-relationship: preceded_by ZFS:0000018 ! Gastrula:Germ-ring
 
 [Term]
 id: ZFS:0000020
@@ -3071,8 +4536,8 @@ name: Gastrula:75%-epiboly
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-18
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000019 ! Gastrula:Shield
 relationship: part_of UBERON:0000109 ! gastrula stage
-relationship: preceded_by ZFS:0000019 ! Gastrula:Shield
 
 [Term]
 id: ZFS:0000021
@@ -3080,8 +4545,8 @@ name: Gastrula:90%-epiboly
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-29
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000020 ! Gastrula:75%-epiboly
 relationship: part_of UBERON:0000109 ! gastrula stage
-relationship: preceded_by ZFS:0000020 ! Gastrula:75%-epiboly
 
 [Term]
 id: ZFS:0000022
@@ -3089,8 +4554,8 @@ name: Gastrula:Bud
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-12
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000021 ! Gastrula:90%-epiboly
 relationship: part_of UBERON:0000109 ! gastrula stage
-relationship: preceded_by ZFS:0000021 ! Gastrula:90%-epiboly
 
 [Term]
 id: ZFS:0000023
@@ -3098,7 +4563,7 @@ name: Segmentation:1-4 somites
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-23
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by ZFS:0000022 ! Gastrula:Bud
+relationship: immediately_preceded_by ZFS:0000022 ! Gastrula:Bud
 
 [Term]
 id: ZFS:0000024
@@ -3106,7 +4571,7 @@ name: Segmentation:5-9 somites
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-5
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by ZFS:0000023 ! Segmentation:1-4 somites
+relationship: immediately_preceded_by ZFS:0000023 ! Segmentation:1-4 somites
 
 [Term]
 id: ZFS:0000025
@@ -3114,7 +4579,7 @@ name: Segmentation:10-13 somites
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-020626-1
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by ZFS:0000024 ! Segmentation:5-9 somites
+relationship: immediately_preceded_by ZFS:0000024 ! Segmentation:5-9 somites
 
 [Term]
 id: ZFS:0000026
@@ -3122,7 +4587,7 @@ name: Segmentation:14-19 somites
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-30
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by ZFS:0000025 ! Segmentation:10-13 somites
+relationship: immediately_preceded_by ZFS:0000025 ! Segmentation:10-13 somites
 
 [Term]
 id: ZFS:0000027
@@ -3130,7 +4595,7 @@ name: Segmentation:20-25 somites
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-16
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by ZFS:0000026 ! Segmentation:14-19 somites
+relationship: immediately_preceded_by ZFS:0000026 ! Segmentation:14-19 somites
 
 [Term]
 id: ZFS:0000028
@@ -3138,7 +4603,7 @@ name: Segmentation:26+ somites
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-34
 is_a: UBERON:0000105 ! life cycle stage
-relationship: preceded_by ZFS:0000027 ! Segmentation:20-25 somites
+relationship: immediately_preceded_by ZFS:0000027 ! Segmentation:20-25 somites
 
 [Term]
 id: ZFS:0000029
@@ -3146,8 +4611,8 @@ name: Pharyngula:Prim-5
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-10
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000028 ! Segmentation:26+ somites
 relationship: part_of UBERON:0004707 ! pharyngula stage
-relationship: preceded_by ZFS:0000028 ! Segmentation:26+ somites
 
 [Term]
 id: ZFS:0000030
@@ -3155,8 +4620,8 @@ name: Pharyngula:Prim-15
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-32
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000029 ! Pharyngula:Prim-5
 relationship: part_of UBERON:0004707 ! pharyngula stage
-relationship: preceded_by ZFS:0000029 ! Pharyngula:Prim-5
 
 [Term]
 id: ZFS:0000031
@@ -3164,8 +4629,8 @@ name: Pharyngula:Prim-25
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-13
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000030 ! Pharyngula:Prim-15
 relationship: part_of UBERON:0004707 ! pharyngula stage
-relationship: preceded_by ZFS:0000030 ! Pharyngula:Prim-15
 
 [Term]
 id: ZFS:0000032
@@ -3173,8 +4638,8 @@ name: Pharyngula:High-pec
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-31
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000031 ! Pharyngula:Prim-25
 relationship: part_of UBERON:0004707 ! pharyngula stage
-relationship: preceded_by ZFS:0000031 ! Pharyngula:Prim-25
 
 [Term]
 id: ZFS:0000033
@@ -3182,8 +4647,8 @@ name: Hatching:Long-pec
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-9
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000032 ! Pharyngula:High-pec
 relationship: part_of UBERON:0004707 ! pharyngula stage
-relationship: preceded_by ZFS:0000032 ! Pharyngula:High-pec
 
 [Term]
 id: ZFS:0000034
@@ -3191,8 +4656,8 @@ name: Hatching:Pec-fin
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-26
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000033 ! Hatching:Long-pec
 relationship: part_of UBERON:0000069 ! larval stage
-relationship: preceded_by ZFS:0000033 ! Hatching:Long-pec
 
 [Term]
 id: ZFS:0000035
@@ -3200,8 +4665,8 @@ name: Larval:Protruding-mouth
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-8
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000034 ! Hatching:Pec-fin
 relationship: part_of UBERON:0000069 ! larval stage
-relationship: preceded_by ZFS:0000034 ! Hatching:Pec-fin
 
 [Term]
 id: ZFS:0000036
@@ -3209,8 +4674,8 @@ name: Larval:Day 4
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-35
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000035 ! Larval:Protruding-mouth
 relationship: part_of UBERON:0000069 ! larval stage
-relationship: preceded_by ZFS:0000035 ! Larval:Protruding-mouth
 
 [Term]
 id: ZFS:0000037
@@ -3218,8 +4683,8 @@ name: Larval:Day 5
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-36
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000036 ! Larval:Day 4
 relationship: part_of UBERON:0000069 ! larval stage
-relationship: preceded_by ZFS:0000036 ! Larval:Day 4
 
 [Term]
 id: ZFS:0000038
@@ -3227,8 +4692,8 @@ name: Larval:Day 6
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-37
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000037 ! Larval:Day 5
 relationship: part_of UBERON:0000069 ! larval stage
-relationship: preceded_by ZFS:0000037 ! Larval:Day 5
 
 [Term]
 id: ZFS:0000039
@@ -3236,8 +4701,8 @@ name: Larval:Days 7-13
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-47
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000038 ! Larval:Day 6
 relationship: part_of UBERON:0000069 ! larval stage
-relationship: preceded_by ZFS:0000038 ! Larval:Day 6
 
 [Term]
 id: ZFS:0000040
@@ -3245,8 +4710,8 @@ name: Larval:Days 14-20
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-48
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000039 ! Larval:Days 7-13
 relationship: part_of UBERON:0000069 ! larval stage
-relationship: preceded_by ZFS:0000039 ! Larval:Days 7-13
 
 [Term]
 id: ZFS:0000041
@@ -3254,8 +4719,8 @@ name: Larval:Days 21-29
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-49
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000040 ! Larval:Days 14-20
 relationship: part_of UBERON:0000069 ! larval stage
-relationship: preceded_by ZFS:0000040 ! Larval:Days 14-20
 
 [Term]
 id: ZFS:0000042
@@ -3263,8 +4728,8 @@ name: Juvenile:Days 30-44
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-51
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000041 ! Larval:Days 21-29
 relationship: part_of UBERON:0000112 ! juvenile stage
-relationship: preceded_by ZFS:0000041 ! Larval:Days 21-29
 
 [Term]
 id: ZFS:0000043
@@ -3272,20 +4737,20 @@ name: Juvenile:Days 45-89
 namespace: zebrafish_stages
 xref: ZFIN:ZDB-STAGE-010723-52
 is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by ZFS:0000042 ! Juvenile:Days 30-44
 relationship: part_of UBERON:0000112 ! juvenile stage
-relationship: preceded_by ZFS:0000042 ! Juvenile:Days 30-44
 
 [Typedef]
 id: BFO:0000051
 inverse_of: part_of
 
 [Typedef]
-id: directly_preceded_by
-is_a: preceded_by
-
-[Typedef]
 id: finishes
 is_a: part_of
+
+[Typedef]
+id: immediately_preceded_by
+is_a: preceded_by
 
 [Typedef]
 id: part_of

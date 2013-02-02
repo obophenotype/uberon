@@ -106,7 +106,7 @@ xref: MIAA:0000400
 xref: OGES:000008
 xref: ZFS:0000048
 is_a: UBERON:0000092 ! post-embryonic stage
-relationship: directly_preceded_by UBERON:0000068 ! embryo stage
+relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
 property_value: RO:0002161 NCBITaxon:32524
 
 [Term]
@@ -120,7 +120,7 @@ synonym: "chrysalis stage" NARROW [NCBITaxon:37572, Wikipedia:Pupa]
 synonym: "pupa stage" EXACT []
 xref: FBdv:00005349
 is_a: UBERON:0000092 ! post-embryonic stage
-relationship: directly_preceded_by UBERON:0000069 ! larval stage
+relationship: immediately_preceded_by UBERON:0000069 ! larval stage
 
 [Term]
 id: UBERON:0000071
@@ -163,6 +163,8 @@ subset: upper_level
 synonym: "life" EXACT []
 synonym: "lifespan" EXACT []
 xref: FBdv_root:00000000
+xref: HsapDv:0000000
+xref: MmusDv:0000000
 xref: ncithesaurus:Life
 xref: OGES:000011
 is_a: UBERON:0000105 ! life cycle stage
@@ -178,6 +180,7 @@ synonym: "developmental stage" EXACT []
 synonym: "stage" NARROW []
 xref: BILS:0000105
 xref: EFO:0000399
+xref: MmusDv:0000001
 xref: ncithesaurus:Developmental_Stage
 xref: OlatDv:0000010
 xref: WBls:0000002
@@ -227,7 +230,7 @@ xref: OGES:000020
 xref: XAO:1000004
 xref: ZFS:0000046
 is_a: UBERON:0000067 ! embryo stage part
-relationship: directly_preceded_by UBERON:0000106 ! zygote stage
+relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
 relationship: part_of UBERON:0000068 ! embryo stage
 
 [Term]
@@ -318,6 +321,7 @@ xref: BTO:0002168
 xref: EFO:0001300
 xref: EV:0300051
 xref: OGES:000009
+xref: TS28
 xref: XAO:1000010
 xref: XtroDO:0000083
 xref: ZFS:0000051
@@ -464,7 +468,7 @@ xref: XAO:1000011
 xref: XtroDO:0000006
 xref: ZFS:0000002
 is_a: UBERON:0000067 ! embryo stage part
-relationship: directly_preceded_by UBERON:0000106 ! zygote stage
+relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
@@ -477,7 +481,7 @@ xref: XAO:1000013
 xref: XtroDO:0000007
 xref: ZFS:0000003
 is_a: UBERON:0000067 ! embryo stage part
-relationship: directly_preceded_by UBERON:0007232 ! 2 cell stage
+relationship: immediately_preceded_by UBERON:0007232 ! 2 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 relationship: starts UBERON:0007234 ! 4-8 cell stage
 
@@ -488,7 +492,7 @@ namespace: uberon
 synonym: "four-eight cell stage" EXACT [OBOL:automatic]
 xref: EMAPA:16037
 is_a: UBERON:0000067 ! embryo stage part
-relationship: directly_preceded_by UBERON:0007232 ! 2 cell stage
+relationship: immediately_preceded_by UBERON:0007232 ! 2 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
@@ -501,8 +505,8 @@ xref: XAO:1000014
 xref: XtroDO:0000008
 xref: ZFS:0000004
 is_a: UBERON:0000067 ! embryo stage part
-relationship: directly_preceded_by UBERON:0007233 ! 4 cell stage
 relationship: finishes UBERON:0007234 ! 4-8 cell stage
+relationship: immediately_preceded_by UBERON:0007233 ! 4 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
@@ -545,12 +549,12 @@ id: BFO:0000051
 inverse_of: part_of
 
 [Typedef]
-id: directly_preceded_by
-is_a: preceded_by
-
-[Typedef]
 id: finishes
 is_a: part_of
+
+[Typedef]
+id: immediately_preceded_by
+is_a: preceded_by
 
 [Typedef]
 id: part_of
