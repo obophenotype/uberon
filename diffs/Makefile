@@ -10,5 +10,5 @@ $(ONT)-obo-diff.html: $(ONT)-lastbuild.obo $(SRC)
 $(ONT)-def-diff.html: $(ONT)-lastbuild.obo $(SRC)
 	compare-defs.pl --config 'html/ontology_name=$(ONT)' --rss-path . -f1 $< -f2 $(SRC) -m html text rss -o $(ONT)-def-diff
 
-$(ONT)-lastbuild.obo: $(SRC)
+$(ONT)-lastbuild.obo:
 	wget $(LAST) -O $@
