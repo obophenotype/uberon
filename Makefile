@@ -170,20 +170,22 @@ uberon-qc: $(QC_FILES) all_systems
 dv-aba.txt:
 	blip-findall -r uberonp -r aba "disjoint_from(X1,X2),id_idspace(X1,'ABA'),entity_xref(U1,X1),entity_xref(U2,X2),parentRT(D,part_of,U1),parentRT(D,part_of,U2)" -select "d(D,U1,U2)" -label > $@
 
-
-ABA-with-parts.obo: ABA.obo
+aba.obo: ABA-src.obo
 	./util/make-aba-part-ofs.pl $< > $@
+bridge/aba.owl: aba.obo
+	owltools $< -o file://`pwd`/$@
 
 # ----------------------------------------
 # System-specific subsets
 # ----------------------------------------
 #PA = phenoscape-vocab/phenoscape-anatomy.obo
 
-SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory cranial appendicular
+SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory pulmonary cranial appendicular
 
 all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS)) subsets/life-stages-composite.obo subsets/life-stages-core.obo
 PART_OF = BFO_0000050
 
+# TODO: need to add subclass axioms for all intersections
 subsets/musculoskeletal-full.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d -c $(OBO)/uberon/$@ "$(PART_OF) some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
 subsets/musculoskeletal-minimal.obo: merged.owl
@@ -202,6 +204,8 @@ subsets/immune-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/circulatory-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+subsets/pulmonary-minimal.obo: merged.owl
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001004" --reasoner-query UBERON_0001004 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/cranial-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
@@ -316,17 +320,17 @@ composites: composite-metazoan.owl composite-vertebrate.owl
 METCACHE= metazoan_glommed_closure-ontol_db.pro
 
 # TODO: ensure treat-xrefs in merged
-composite-xenopus.obo: merged.obo
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r XAO -goal "rewrite_all('uberon/composite-xenopus')" io-convert -to obo > $@
-.PRECIOUS: mammal-xenopus.obo
+#composite-xenopus.obo: merged.obo
+#	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r XAO -goal "rewrite_all('uberon/composite-xenopus')" io-convert -to obo > $@
+#.PRECIOUS: mammal-xenopus.obo
 
 composite-mammal.obo: merged.obo
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r MA -r EHDAA2 -goal "rewrite_all('uberon/composite-mammal')" io-convert -to obo > $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r fma_downcase -r aba -r nif_anatomy -r MA -r EHDAA2 -goal "rewrite_all('uberon/composite-mammal')" io-convert -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: mammal-mammal.obo
 
 IVSTAGES = -i developmental-stage-ontologies/hsapdv/hsapdv.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -i developmental-stage-ontologies/olatdv/olatdv.obo
 composite-vertebrate.obo: merged.obo  $(METCACHE)
-	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@.tmp && mv $@.tmp $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i  $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@.tmp && mv $@.tmp $@.tmp && mv $@.tmp $@
 .PRECIOUS: composite-vertebrate.obo
 
 # TODO:  development CV 
@@ -656,6 +660,9 @@ ext-xref-conflict.obo:
 ext-xref-conflict2.obo:
 	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(Ux,Z),id_idspace(Ux,'UBERON'),Ux\=U" -select "x(U,Z,Ux)" -label > $@
 
+release-diff:
+	cd diffs && make
+
 RELDIR=trunk
 release:
 	cp core.owl $(RELDIR)/core.owl ;\
@@ -669,6 +676,7 @@ release:
 	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp subsets/*.obo $(RELDIR)/subsets/ ;\
+	cp diffs/* $(RELDIR)/diffs/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
 	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\

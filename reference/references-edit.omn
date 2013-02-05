@@ -2046,7 +2046,21 @@ classes subsume classes in existing anatomy ontologies;
 
 ![Figure 2](http://www.ncbi.nlm.nih.gov/pmc/articles/instance/3334586/bin/gb-2012-13-1-r5-2.jpg)
 
-Figure legend: *Illustration of how Uberon relates anatomical silos into a unified view*. Uberon classes are shown in gray and classes from external ontologies are indicated with their respective prefix. Classes in light gray have computable definitions, which are indicated by the relations shown. For example, 'alveolus of lung' is_a 'alveolus' that is part_of some 'lung'. 'Respiration organ' is_a organ that is capable_of GO:respiratory gaseous exchange. The blue circle indicates what would be included in a mammal-restricted subset of Uberon, as swim bladder is not found in mammals. Use of Uberon together with taxon-specific anatomy ontologies enables bridging of the data with full reasoning capabilities. In this example, Uberon 'lung' subsumes the lung classes from the mouse and human anatomy ontologies. Classes in the blue circle plus the blue classes at the bottom would be available in uberon-collected-mammal.owl. Note that some relationships have been trimmed for illustration purposes.
+Figure legend: '*Illustration of how Uberon relates anatomical silos into a unified view*.
+Uberon classes are shown in gray and classes
+from external ontologies are indicated with their respective
+prefix. Classes in light gray have computable definitions, which are
+indicated by the relations shown. For example, 'alveolus of lung' is_a
+'alveolus' that is part_of some 'lung'. 'Respiration organ' is_a organ
+that is capable_of GO:respiratory gaseous exchange. The blue circle
+indicates what would be included in a mammal-restricted subset of
+Uberon, as swim bladder is not found in mammals. Use of Uberon
+together with taxon-specific anatomy ontologies enables bridging of
+the data with full reasoning capabilities. In this example, Uberon
+'lung' subsumes the lung classes from the mouse and human anatomy
+ontologies. Classes in the blue circle plus the blue classes at the
+bottom would be available in uberon-collected-mammal.owl. Note that
+some relationships have been trimmed for illustration purposes.'
 
 This article describes how to obtain the axioms that connect these ontologies
 
@@ -2315,9 +2329,19 @@ Uberon uses the standard 4 OBO synonym scopes:
  * RELATED
 
 The standard obo2owl mapping is used here consult the (obo
-spec)[http://oboformat.org] for details.
+spec)[http://oboformat.org] for details; currently the following
+annotation properties are used:
 
-We follow the rule that exact synonyms must be exact within a multi-species context.
+ * hasExactSynonym
+ * hasBroadSynonym
+ * hasNarrowSynonym
+ * hasRelatedSynonym
+
+## Label uniqueness
+
+The uberon build pipeline ensures that no two classes share the same
+string as either a label or exact synonym. This helps detect common
+categories of errors.
 
 ## Languages
 
@@ -2331,8 +2355,11 @@ The exception is latin, for which a LATIN synonym type is used
 The ontology contains a growing list of synonym types or tags, which
 may be useful for text mining. See the ontology for a full list.
 
- * LATIN - actually, the TA preferred term
- * DUBIOUS - the synonym may nt be correct
+ * ABBREVIATION - Acronym or abbreviation
+ * LATIN - Typically the TA preferred term
+ * DUBIOUS - the synonym may be contested or midleading
+ * DEPRECATED - a historic synonym that may be used in older texts but discouraged in modern usage
+ * SENSU - a term typically used within a certain taxonomic scope
  * ...
 
 ## Synonym provenance
@@ -2341,11 +2368,27 @@ We aim to eventually have provenance for all synonyms. Currently most
 of these are xrefs to species anatomy ontologies, but in future more
 will be PMIDs etc.
 
+In some cases an NCBITaxon ID is used as synonym provenance. This
+indicates when a term is preferred or used within a particular
+taxonomic context.
+
 ## Relational adjectives
 
 We include a has_relational_adjective annotation property to indicate
 what the adjectival form of the noun that describes the structure
 is. For example, 'hippocampal' for `Ammon's horn`.
+
+## OBO Foundry Unique Label
+
+In the Uberon bridging axiom ontologies the 'OBO Foundry unique label'
+property is used to provide a label that is intended to be unique
+across the whole OBO Foundry. The unique labels are generated
+automatically be suffixing the ontology-provided label with a
+qualifying term.
+
+For example, the FMA class for 'heart' has the OBO Foundry unique
+label 'heart (canonical adult human)' to disambiguate it from 'heart
+(adult mouse)' in MA or the embryonic heart as represented in EHDAA2.
 
 "^^xsd:string
 

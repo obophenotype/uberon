@@ -3286,7 +3286,7 @@ name: death stage
 namespace: uberon
 def: "End of the life of an organism." [XAO:0000437]
 comment: AO notes - ncit:Death is an outcome
-synonym: "death" EXACT []
+synonym: "death" RELATED []
 xref: XAO:0000437
 xref: XtroDO:0000085
 is_a: UBERON:0000105 ! life cycle stage
@@ -4313,50 +4313,61 @@ is_a: UBERON:0009741 ! tailbud stage
 id: XAO:1000081
 name: unspecified stage (Xenopus)
 namespace: xenopus_developmental_stage
-comment: If an anatomical term has a starts_during or ends_during relationship to this stage term, this information is either unknown or has not yet been curated.
 is_a: UBERON:0000105 ! life cycle stage
 
 [Term]
 id: XAO:1000082
 name: unfertilized egg (Xenopus)
 namespace: xenopus_developmental_stage
+def: "Any of the developmental stages corresponding to the developing and mature female germ cells." [XAO:EJS]
 is_a: UBERON:0000105 ! life cycle stage
 
 [Term]
 id: XAO:1000083
 name: oocyte stage I (Xenopus)
 namespace: xenopus_developmental_stage
+def: "Developmental stage corresponding to the developing female gamete of the pre-vitellogenic stage." [XAO:EJS]
 is_a: XAO:1000082 ! unfertilized egg (Xenopus)
 
 [Term]
 id: XAO:1000084
 name: oocyte stage II (Xenopus)
 namespace: xenopus_developmental_stage
+def: "Developmental stage corresponding to the developing female gamete of the early vitellogenic stage." [XAO:EJS]
 is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+relationship: preceded_by XAO:1000083 ! oocyte stage I (Xenopus)
 
 [Term]
 id: XAO:1000085
 name: oocyte stage III (Xenopus)
 namespace: xenopus_developmental_stage
+def: "Developmental stage corresponding to the developing female gamete of the mid-vitellogenic stage." [XAO:EJS]
 is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+relationship: preceded_by XAO:1000084 ! oocyte stage II (Xenopus)
 
 [Term]
 id: XAO:1000086
 name: oocyte stage IV (Xenopus)
 namespace: xenopus_developmental_stage
+def: "Developmental stage corresponding to establishment of polarization along the animal-vegetal axis in the developing female gamete." [XAO:EJS]
 is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+relationship: preceded_by XAO:1000085 ! oocyte stage III (Xenopus)
 
 [Term]
 id: XAO:1000087
 name: oocyte stage V (Xenopus)
 namespace: xenopus_developmental_stage
+def: "Developmental stage corresponding to the developing female gamete of the late-vitellogenic stage." [XAO:EJS]
 is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+relationship: preceded_by XAO:1000086 ! oocyte stage IV (Xenopus)
 
 [Term]
 id: XAO:1000088
 name: oocyte stage VI (Xenopus)
 namespace: xenopus_developmental_stage
+def: "Developmental stage corresponding to the fully grown female gamete." [XAO:EJS]
 is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+relationship: preceded_by XAO:1000087 ! oocyte stage V (Xenopus)
 
 [Term]
 id: XAO:1000089
@@ -4386,14 +4397,17 @@ relationship: part_of XAO:1000079 ! metamorphosing tadpole (Xenopus)
 id: XAO:1000092
 name: mature egg (Xenopus)
 namespace: xenopus_developmental_stage
+def: "Developmental stage corresponding to the mature female germ cell." [XAO:EJS]
 is_a: XAO:1000082 ! unfertilized egg (Xenopus)
+relationship: preceded_by XAO:1000088 ! oocyte stage VI (Xenopus)
 
 [Term]
 id: XAO:1000093
 name: adult frog (Xenopus)
 namespace: xenopus_developmental_stage
-def: "The stage of being a fully formed animal, following Nieuwkoop and Faber stage 66." [ISBN:0815318960]
-is_a: UBERON:0000113 ! post-juvenile adult stage
+def: "The stage of being a fully formed animal." [XAO:curator]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: preceded_by UBERON:0000112 ! juvenile stage
 
 [Term]
 id: ZFS:0000005
