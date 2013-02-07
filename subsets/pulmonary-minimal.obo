@@ -1,5 +1,6 @@
 format-version: 1.2
 ontology: uberon/subsets/pulmonary-minimal.obo
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001004>))\n)
 
 [Term]
 id: CL:0000082
@@ -1151,8 +1152,8 @@ def: "Bottom part of the pharynx, and is the part of the throat that connects to
 subset: uberon_slim
 synonym: "laryngeal pharynx" EXACT [FMA:54877]
 synonym: "laryngopharynx" EXACT [FMA:54877]
-synonym: "pars laryngea pharyngis" RELATED LATIN [Wikipedia:Hypopharynx]
 synonym: "pars laryngea pharyngis" RELATED [BTO:0001740]
+synonym: "pars laryngea pharyngis" RELATED LATIN [Wikipedia:Hypopharynx]
 xref: BTO:0001740
 xref: EFO:0001388
 xref: EHDAA2:0004574
@@ -1377,8 +1378,8 @@ synonym: "columella nasi" RELATED [Wikipedia:Nasal_septum]
 synonym: "nasi columella" RELATED [Wikipedia:Nasal_septum]
 synonym: "septal cartilage" RELATED [Wikipedia:Nasal_septum]
 synonym: "septum mobile nasi" RELATED [Wikipedia:Nasal_septum]
-synonym: "septum nasi" RELATED [Wikipedia:Nasal_septum]
 synonym: "septum nasi" RELATED LATIN [Wikipedia:Nasal_septum]
+synonym: "septum nasi" RELATED [Wikipedia:Nasal_septum]
 synonym: "septum of the nose" RELATED [Wikipedia:Nasal_septum]
 xref: AAO:0000559
 xref: AAO:0010135
@@ -5744,7 +5745,7 @@ def: "Surface structure that provides one of the small external openings of the 
 comment: Fish have two pairs of external nostrils.
 subset: vertebrate_core
 synonym: "anterior nares" RELATED PLURAL [VHOG:0000544]
-synonym: "anterior naris" EXACT [ZFA:0001427]
+synonym: "anterior naris" RELATED [ZFA:0001427]
 synonym: "blowhole" NARROW [Wikipedia:Blowhole_(anatomy)]
 synonym: "external nares" EXACT PLURAL []
 synonym: "naris" BROAD [ZFA:0000550]
@@ -6441,8 +6442,8 @@ name: stylopharyngeus muscle
 namespace: uberon
 def: "The stylopharyngeus is a muscle in the head that stretches between the styloid process and the pharynx." [Wikipedia:Stylopharyngeus_muscle]
 synonym: "M. stylopharyngeus" RELATED [Wikipedia:Stylopharyngeus_muscle]
-synonym: "musculus stylopharyngeus" RELATED [Wikipedia:Stylopharyngeus_muscle]
 synonym: "musculus stylopharyngeus" RELATED LATIN [Wikipedia:Stylopharyngeus_muscle]
+synonym: "musculus stylopharyngeus" RELATED [Wikipedia:Stylopharyngeus_muscle]
 synonym: "stylopharyngeus" EXACT [Wikipedia:Stylopharyngeus_muscle]
 xref: FMA:46664
 xref: http://upload.wikimedia.org/wikipedia/commons/5/59/Musculusstylopharyngeus.png
@@ -7935,6 +7936,10 @@ id: http://owltools.org/Q
 [Typedef]
 id: RO:0002203
 inverse_of: develops_from
+
+[Typedef]
+id: adjacent_to
+is_symmetric: true
 
 [Typedef]
 id: anterior_part_of

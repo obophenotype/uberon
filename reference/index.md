@@ -1,3 +1,123 @@
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Epithelial configurations' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Appendages and appendicular skeleton' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Ontology schema for representing the cephalic region and postcranial axial skeletal system' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Extraembryonic membranes' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Autopod subdivisions' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Phenotype RCN Neural Crest Meeting' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Obo-anatomy call, 2012-08-17' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'UDoc - the Uberon documentation system' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Depictions of anatomical structures' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Continuous integration' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Mereotopological relations' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Representing individual endochondral elements' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Representation of paired structures' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Automatic classification of skeleton partonomy' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Inter-ontology disjointness axioms' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Multiple inheritance in Uberon' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Part-disjointness' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Taxon constraints' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Evolutionary variability and general class axioms' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Skeletal system vs skeleton' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Automatic inference of part_of relationships' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Digestive tract' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Conflation and Discrimination' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Developmental stages' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Connections between biological processes and anatomical structures' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Inter anatomy ontology bridge module ontologies' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Multi-species importer ontologies' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Multi-species composite ontologies' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Synonyms in uberon' in the subject line
+
+## Comments
+
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Vertebrate cranial terms' in the subject line
+
 
  * biological_modeling
      * 0000001 [Epithelial configurations](http://purl.obolibrary.org/obo/uberon/references/reference_0000001) *(initial draft)*

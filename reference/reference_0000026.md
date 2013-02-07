@@ -24,7 +24,21 @@ classes subsume classes in existing anatomy ontologies;
 
 ![Figure 2](http://www.ncbi.nlm.nih.gov/pmc/articles/instance/3334586/bin/gb-2012-13-1-r5-2.jpg)
 
-Figure legend: *Illustration of how Uberon relates anatomical silos into a unified view*. Uberon classes are shown in gray and classes from external ontologies are indicated with their respective prefix. Classes in light gray have computable definitions, which are indicated by the relations shown. For example, 'alveolus of lung' is_a 'alveolus' that is part_of some 'lung'. 'Respiration organ' is_a organ that is capable_of GO:respiratory gaseous exchange. The blue circle indicates what would be included in a mammal-restricted subset of Uberon, as swim bladder is not found in mammals. Use of Uberon together with taxon-specific anatomy ontologies enables bridging of the data with full reasoning capabilities. In this example, Uberon 'lung' subsumes the lung classes from the mouse and human anatomy ontologies. Classes in the blue circle plus the blue classes at the bottom would be available in uberon-collected-mammal.owl. Note that some relationships have been trimmed for illustration purposes.
+Figure legend: '*Illustration of how Uberon relates anatomical silos into a unified view*.
+Uberon classes are shown in gray and classes
+from external ontologies are indicated with their respective
+prefix. Classes in light gray have computable definitions, which are
+indicated by the relations shown. For example, 'alveolus of lung' is_a
+'alveolus' that is part_of some 'lung'. 'Respiration organ' is_a organ
+that is capable_of GO:respiratory gaseous exchange. The blue circle
+indicates what would be included in a mammal-restricted subset of
+Uberon, as swim bladder is not found in mammals. Use of Uberon
+together with taxon-specific anatomy ontologies enables bridging of
+the data with full reasoning capabilities. In this example, Uberon
+'lung' subsumes the lung classes from the mouse and human anatomy
+ontologies. Classes in the blue circle plus the blue classes at the
+bottom would be available in uberon-collected-mammal.owl. Note that
+some relationships have been trimmed for illustration purposes.'
 
 This article describes how to obtain the axioms that connect these ontologies
 
