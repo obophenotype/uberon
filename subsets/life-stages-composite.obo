@@ -3,6 +3,13 @@ ontology: uberon/subsets/life-stages-composite.obo
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" xsd:string
 
 [Term]
+id: HsapDv:0000001
+name: human life cycle
+namespace: human_developmental_stage
+def: "Temporal interval that defines human life from the prenatal stage until late adulthood." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+
+[Term]
 id: HsapDv:0000003
 name: Carnegie stage 01
 namespace: human_developmental_stage
@@ -325,6 +332,7 @@ name: prenatal stage
 namespace: human_developmental_stage
 def: "Human developmental stage that starts with fertilization and ends with birth." [Bgee:curator]
 is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000001 ! human life cycle
 
 [Term]
 id: HsapDv:0000046
@@ -610,6 +618,7 @@ def: "Human developmental stage that covers the period from birth until 12 years
 synonym: "0-12 years" EXACT []
 synonym: "child" RELATED []
 is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000001 ! human life cycle
 
 [Term]
 id: HsapDv:0000081
@@ -647,6 +656,7 @@ synonym: "13-18 years" EXACT []
 synonym: "teen" RELATED []
 synonym: "teenager" RELATED []
 is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000204 ! mature stage
 
 [Term]
 id: HsapDv:0000087
@@ -655,6 +665,7 @@ namespace: human_developmental_stage
 def: "Human developmental stage that refers to an adult who is over 19." [Bgee:curator]
 synonym: "19+ years" EXACT []
 is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000204 ! mature stage
 
 [Term]
 id: HsapDv:0000088
@@ -1771,6 +1782,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000037 ! fetal stage
 
 [Term]
+id: HsapDv:0000204
+name: mature stage
+namespace: human_developmental_stage
+def: "Human developmental stage that refers to a sexually mature human." [Bgee:curator]
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of HsapDv:0000001 ! human life cycle
+
+[Term]
 id: MmusDv:0000003
 name: Theiler stage 01
 namespace: mouse_developmental_stage
@@ -2304,6 +2323,7 @@ namespace: mouse_developmental_stage
 def: "Mature stage that refers to a adult mouse which is over 6 weeks and under 7 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
 comment: Mice under 7 months of age are commonly considered as young adult in the literature, without loss of functional capability like hearing (see http://www.ncbi.nlm.nih.gov/pubmed/18259074).
 is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000110 ! mature stage
 
 [Term]
 id: MmusDv:0000062
@@ -2622,6 +2642,7 @@ name: late adult stage
 namespace: mouse_developmental_stage
 def: "Mature stage that refers to an adult mouse which is over 7 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
 is_a: UBERON:0000104 ! life cycle
+relationship: part_of MmusDv:0000110 ! mature stage
 
 [Term]
 id: MmusDv:0000098
@@ -2732,6 +2753,15 @@ comment: Embryonic age 8 dpc (day post-coitum). Refers to human CarnegieStage09.
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000108 ! Theiler stage 12a
 relationship: part_of MmusDv:0000019 ! Theiler stage 12
+
+[Term]
+id: MmusDv:0000110
+name: mature stage
+namespace: mouse_developmental_stage
+def: "Mouse developmental stage that refers to a sexually mature adult mouse which is over 6 weeks old." [Bgee:curator]
+synonym: "mature" EXACT []
+is_a: UBERON:0000104 ! life cycle
+relationship: part_of UBERON:0000105 ! life cycle stage
 
 [Term]
 id: OlatDv:0000020
@@ -3533,6 +3563,7 @@ namespace: uberon
 def: "Amphibian larvae, sometimes called pollywogs or tadpoles, hatch from eggs and begin to grow limbs and other adult physical features at various times, depending on the species, before they metamorphose into the adult form." [GO:0002117]
 comment: AO notes: the XAO class denotes a stage
 synonym: "larva" RELATED [XAO:1000008]
+synonym: "larva stage" BROAD []
 synonym: "polliwog" NARROW SENSU [Wikipedia:Larva]
 synonym: "polliwog stage" NARROW SENSU [Wikipedia:Larva]
 synonym: "tadpole" NARROW SENSU [Wikipedia:Larva]

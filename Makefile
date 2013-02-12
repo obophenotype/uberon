@@ -491,6 +491,9 @@ dbpedia_category_%.pro:
 	 blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:$*> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 .PRECIOUS: dbpedia_category_%.pro
 
+dbpedia_type_%.pro:
+	 blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type dbpedia-owl:$* }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
+
 dbpedia_TH.pro:
 	 blip ontol-sparql-remote "SELECT ?x,?y WHERE {  ?x <http://dbpedia.org/property/code> ?y . FILTER strStarts(str(?y),'TH H')  }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
 
