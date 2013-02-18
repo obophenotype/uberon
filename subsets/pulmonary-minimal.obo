@@ -7942,6 +7942,14 @@ relationship: part_of UBERON:0007827 ! external nose
 id: http://owltools.org/Q
 
 [Typedef]
+id: BSPO:0001103
+inverse_of: posterior_part_of
+
+[Typedef]
+id: BSPO:0001105
+inverse_of: anterior_part_of
+
+[Typedef]
 id: RO:0002203
 inverse_of: develops_from
 
@@ -7952,6 +7960,7 @@ is_symmetric: true
 [Typedef]
 id: anterior_part_of
 is_a: BSPO:0000123
+is_a: part_of
 
 [Typedef]
 id: anterior_to
@@ -7986,10 +7995,6 @@ is_a: transitively_distally_connected_to
 inverse_of: proximally_connected_to
 
 [Typedef]
-id: has_anterior_part
-inverse_of: anterior_part_of
-
-[Typedef]
 id: has_muscle_insertion
 is_a: attaches_to
 
@@ -8001,10 +8006,6 @@ is_a: attaches_to
 id: has_part
 is_transitive: true
 inverse_of: part_of
-
-[Typedef]
-id: has_posterior_part
-inverse_of: posterior_part_of
 
 [Typedef]
 id: in_lateral_side_of
@@ -8025,6 +8026,7 @@ is_transitive: true
 [Typedef]
 id: posterior_part_of
 is_a: BSPO:0000122
+is_a: part_of
 
 [Typedef]
 id: posterior_to
