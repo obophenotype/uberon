@@ -9,6 +9,7 @@ my $expand_relations = 0;
 my $no_src;
 my $preserve_def_xref = 0;
 my $is_use_all;
+my $map_all = 0;
 while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-h' || $opt eq '--help') {
@@ -32,6 +33,9 @@ while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     }
     if ($opt eq '-a' || $opt eq '--use-all') {
         $is_use_all = 1;
+    }
+    if ($opt eq '-x' || $opt eq '--map-all') {
+        $map_all = 1;
     }
     if ($opt eq '-t' || $opt eq '--tag') {
         $tag_h{shift @ARGV} = 1;
@@ -127,6 +131,10 @@ while(<>) {
         next if $2 eq 'end';
         if ($xrefh{$3}) {
             print "$1: $2 $xrefh{$3} $srcqual! $nh{$xrefh{$3}}\n";
+        }
+        elsif ($map_all) {
+            s@ \! @ $srcqual\! @g;
+            print "$_\n";
         }
         else {
             print "! no mapping ($3) -- $_\n";

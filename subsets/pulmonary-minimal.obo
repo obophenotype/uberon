@@ -287,6 +287,7 @@ namespace: cell
 def: "A ciliated cell of the bronchus." [GOC:tfm, PMID:18757316]
 is_a: CL:0002145 ! ciliated columnar cell of tracheobronchial tree
 is_a: CL:0002328 ! bronchial epithelial cell
+relationship: part_of UBERON:0002185 ! bronchus
 created_by: tmeehan
 creation_date: 2010-09-20T02:21:12Z
 
@@ -2376,7 +2377,9 @@ synonym: "lobus medius pulmonis dextri" EXACT LATIN [FMA:7383, FMA:TA]
 synonym: "middle lobe of lung" BROAD [FMA:7383]
 synonym: "right lung middle lobe" EXACT []
 synonym: "right lung, middle lobe" EXACT []
-synonym: "right middle lobe" EXACT []
+synonym: "right medial lobe" BROAD []
+synonym: "right medial lobe of lung" EXACT []
+synonym: "right middle lobe" BROAD []
 synonym: "right middle lobe of lung" EXACT []
 xref: EMAPA:17997
 xref: FMA:7383
@@ -7169,13 +7172,13 @@ relationship: part_of UBERON:0001737 {source="EHDAA2"} ! larynx
 
 [Term]
 id: UBERON:0010234
-name: palatopharyngeus
+name: palatopharyngeus muscle
 namespace: uberon
 def: "The palatopharyngeus or palatopharyngeal or pharyngopalatinus muscle is a long, fleshy fasciculus, narrower in the middle than at either end, forming, with the mucous membrane covering its surface, the palatopharyngeal arch." [Wikipedia:Palatopharyngeus_muscle]
 comment: Structure notes: It is separated from the palatoglossus muscle by an angular interval, in which the palatine tonsil is lodged. It arises from the soft palate, where it is divided into two fasciculi by the levator veli palatini and musculus uvulae
 synonym: "musculus palatopharyngeus" RELATED LATIN [Wikipedia:Palatopharyngeus_muscle]
 synonym: "palatopharyngeal muscle" EXACT []
-synonym: "palatopharyngeus muscle" EXACT []
+synonym: "palatopharyngeus" EXACT [FMA:46666]
 synonym: "pharyngopalatinus" RELATED [Wikipedia:Palatopharyngeus_muscle]
 synonym: "pharyngopalatinus muscle" EXACT [Wikipedia:Palatopharyngeus_muscle]
 xref: FMA:46666
@@ -7286,7 +7289,7 @@ xref: SCTID:244807009
 xref: UMLS:C1521985
 is_a: UBERON:0003831 {is_inferred="true"} ! respiratory system muscle
 relationship: has_muscle_insertion UBERON:0001738 {source="dbpedia", notes="fibers pass downward and blend with the palatopharyngeus muscle to the upper border thyroid cartilage blending with constrictor fibers"} ! thyroid cartilage
-relationship: has_muscle_insertion UBERON:0010234 {source="dbpedia", notes="fibers pass downward and blend with the palatopharyngeus muscle to the upper border thyroid cartilage blending with constrictor fibers"} ! palatopharyngeus
+relationship: has_muscle_insertion UBERON:0010234 {source="dbpedia", notes="fibers pass downward and blend with the palatopharyngeus muscle to the upper border thyroid cartilage blending with constrictor fibers"} ! palatopharyngeus muscle
 relationship: in_lateral_side_of UBERON:0001042 {source="FMA-abduced-lr"} ! chordate pharynx
 property_value: UBPROP:0000001 "Salpingopharyngeus is a muscle that attaches to pharyngotympanic tube and the pharynx and is innervated by pharyngeal plexus of CN X and participates in oral/pharyngeal behaviors.[FEED]" xsd:string {date_retrieved="2012-07-02", ontology="FEED", url="http://www.feedexp.org"}
 
