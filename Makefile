@@ -48,6 +48,8 @@ uberon-simple.obo: uberon_edit-implied.obo
 %.obo-OE-check: %.obo
 	obo2obo -o $@ $<
 
+ext.owl: pe/phenoscape-ext.owl
+	owltools --create-ontology $OBO/uberon/ext.owl $< --merge-support-ontologies -o file://`pwd`/$@
 
 # ----------------------------------------
 # Taxonomy and external AO validation
