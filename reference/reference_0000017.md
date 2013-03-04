@@ -62,7 +62,7 @@ separate issue to asserted multiple inheritance.
 
 
 ## See Also:
- * [http://ontogenesis.knowledgeblog.org/49](http://ontogenesis.knowledgeblog.org/49)
  * [http://odps.sourceforge.net/odp/html/Normalisation.html](http://odps.sourceforge.net/odp/html/Normalisation.html)
+ * [http://ontogenesis.knowledgeblog.org/49](http://ontogenesis.knowledgeblog.org/49)
 
 

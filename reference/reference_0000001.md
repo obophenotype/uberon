@@ -7,8 +7,8 @@ Status: [initial draft](http://purl.org/spar/pso/initial-draft)
 
 Authors and contributors:
 
- * Melissa Haendel (author)
  * Chris Mungall (author)
+ * Melissa Haendel (author)
  * David Osumi-Sutherland (author)
  * David Hill (contributor)
  * Jonathan Bard (contributor)

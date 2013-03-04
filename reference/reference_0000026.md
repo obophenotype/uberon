@@ -6,8 +6,8 @@ Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_00000
 Authors and contributors:
 
  * Melissa Haendel (author)
- * Carlo Torniai (author)
  * Chris Mungall (author)
+ * Carlo Torniai (author)
 
 Date: 2012
 

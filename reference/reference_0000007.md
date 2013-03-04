@@ -7,8 +7,8 @@ Status: [peer reviewed](http://purl.org/spar/pso/peer-reviewed)
 
 Authors and contributors:
 
- * John Lundberg (author)
  * Wasila Dahdul (author)
+ * John Lundberg (author)
  * Phenoscape (contributor)
 
 Date: 2011

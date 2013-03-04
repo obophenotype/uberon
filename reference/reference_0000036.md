@@ -7,8 +7,8 @@ Authors and contributors:
 
  * Chris Mungall (author)
  * Fabian Neuhaus (contributor)
- * Melissa Haendel (contributor)
  * David Osumi-Sutherland (contributor)
+ * Melissa Haendel (contributor)
  * Frederic Bastian (contributor)
 
 Date: 2012

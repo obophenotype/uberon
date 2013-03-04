@@ -88,7 +88,7 @@ In the future we intend to add additional cross-species Jobs.
 
 
 ## See Also:
- * [http://bio-ontologies.knowledgeblog.org/405](http://bio-ontologies.knowledgeblog.org/405)
  * [http://build.berkeleybop.org/job/build-uberon/](http://build.berkeleybop.org/job/build-uberon/)
+ * [http://bio-ontologies.knowledgeblog.org/405](http://bio-ontologies.knowledgeblog.org/405)
 
 

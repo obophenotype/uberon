@@ -61,8 +61,8 @@ Uberon
 
 
 ## See Also:
- * [http://www.ncbi.nlm.nih.gov/pubmed/20152934](http://www.ncbi.nlm.nih.gov/pubmed/20152934)
  * [http://purl.obolibrary.org/obo/go/extensions/x-metazoan-anatomy.owl](http://purl.obolibrary.org/obo/go/extensions/x-metazoan-anatomy.owl)
  * [http://douroucouli.wordpress.com/2012/07/04/querying-for-connections-between-the-go-and-fma/](http://douroucouli.wordpress.com/2012/07/04/querying-for-connections-between-the-go-and-fma/)
+ * [http://www.ncbi.nlm.nih.gov/pubmed/20152934](http://www.ncbi.nlm.nih.gov/pubmed/20152934)
 
 

@@ -15,6 +15,7 @@ Prefix: creator: <http://purl.org/dc/elements/1.1/creator>
 Prefix: minipub: <http://purl.org/dc/elements/1.1/resource>
 Prefix: abstract: <http://purl.org/dc/elements/1.1/abstract>
 Prefix: pso: <http://purl.org/spar/pso/>
+Prefix: ice: <http://purl.obolibrary.org/obo/IAO_0000030>
 
 Ontology: <http://purl.obolibrary.org/obo/uberon/references.owl>
   Annotations: 
@@ -134,36 +135,44 @@ Datatype: xsd:int
 Datatype: xsd:string
 
     
-Class: dc:resource
+Class: ice:
+ Annotations: rdfs:label "information content entity"@en
 
 Class: ubref:ontology_documentation
- Annotations: dc:description "Documentation describing an ontology or some aspect of an ontology"
- SubClassOf: dc:resource
+ Annotations: rdfs:label "ontology documentation"@en,
+        dc:description "Documentation describing an ontology or some aspect of an ontology"
+ SubClassOf: ice:
 
 Class: ubref:ontology_design_pattern
     Annotations: 
+        rdfs:label "ontology design pattern"@en,
         dc:description "A template or design pattern that is repeated multiple kinds",
         rdfs:seeAlso "http://www.springerlink.com/content/d2lp476v0p281q73/"^^xsd:anyURI
   SubClassOf: ubref:ontology_documentation
 
 Class: ubref:description_of_a_meeting
- Annotations: dc:description "Some combination of: a meeting report, meeting minutes or a description of the outcomes of a meeting"
+ Annotations: rdfs:label "description of a meeting"@en,
+        dc:description "Some combination of: a meeting report, meeting minutes or a description of the outcomes of a meeting"
   SubClassOf: ubref:ontology_documentation
 
 Class: ubref:spreadsheet_documentation
- Annotations: dc:description "A description of and link to a spreadsheet that contains domain knowledge in tabular form"
+ Annotations: rdfs:label "spreadsheet documentation"@en,
+        dc:description "A description of and link to a spreadsheet that contains domain knowledge in tabular form"
   SubClassOf: ubref:ontology_documentation
 
 Class: ubref:metadata_description
- Annotations: dc:description "Documentation describing the metadata or metadata best practices used in an ontology"
+ Annotations: rdfs:label "metadata description"@en,
+        dc:description "Documentation describing the metadata or metadata best practices used in an ontology"
   SubClassOf: ubref:ontology_documentation
 
 Class: ubref:biological_modeling
- Annotations: dc:description "Documentation describing how a specific piece of biology is represented in the ontology"
+ Annotations: rdfs:label "biological modeling"@en,
+        dc:description "Documentation describing how a specific piece of biology is represented in the ontology"
   SubClassOf: ubref:ontology_documentation
 
 Class: ubref:ontology_usage_article
- Annotations: dc:description "Documentation describing how a particular piece of the ontology is intended to be used"
+ Annotations: rdfs:label "ontology usage article"@en,
+        dc:description "Documentation describing how a particular piece of the ontology is intended to be used"
   SubClassOf: ubref:ontology_documentation
 
 

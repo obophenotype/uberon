@@ -49,7 +49,10 @@ uberon-simple.obo: uberon_edit-implied.obo
 	obo2obo -o $@ $<
 
 ext.owl: pe/phenoscape-ext.owl
-	owltools --create-ontology $OBO/uberon/ext.owl $< --merge-support-ontologies -o file://`pwd`/$@
+#	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --add-imports-declarations $(OBO)/uberon/depictions.owl -o file://`pwd`/$@
+	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
+ext.obo: ext.owl
+	owltools --catalog-xml catalog-uberon-merged.xml $< --merge-import-closure --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo $@
 
 # ----------------------------------------
 # Taxonomy and external AO validation
@@ -140,6 +143,9 @@ QC_FILES = uberon_edit-xp-check\
     uberon-simple-orphans\
     merged.obo-OE-check\
     merged-cycles\
+    ext.owl\
+    ext.obo\
+    ext-obscheck.txt\
     uberon-dv.txt\
     uberon-discv.txt\
     composites\
@@ -184,7 +190,7 @@ bridge/aba.owl: aba.obo
 
 SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory pulmonary cranial appendicular
 
-all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS)) subsets/life-stages-composite.obo subsets/life-stages-core.obo
+all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS)) subsets/life-stages-composite.obo subsets/life-stages-core.obo subsets/life-stages-core.owl
 PART_OF = BFO_0000050
 
 # TODO: need to add subclass axioms for all intersections
@@ -216,12 +222,19 @@ subsets/appendicular-ext.owl: #merged.owl
 	owltools --use-catalog pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "$(PART_OF) some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "this ontology is a derived subset of the phenoscape uberon extension, including only classes that satisfy the query 'part of some appendicular skeleton' " -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
 .PRECIOUS: subsets/appendicular-ext.owl
 
+# TODO - switch to purls for OWL once released
+subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl
+	owltools $< developmental-stage-ontologies/mmusdv/mmusdv.obo developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies -o file://`pwd`/$@
+
 #subsets/life-stages.obo: uberon.owl
 #subsets/life-stages.obo: composite-metazoan.obo
 subsets/life-stages-composite.obo: composite-vertebrate.obo
 	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f obo $@ --reasoner-dispose >& $@.LOG
+
 subsets/life-stages-core.obo: uberon.owl
 	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o -f obo $@ --reasoner-dispose >& $@.LOG
+subsets/life-stages-core.owl: uberon.owl
+	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
 
 
 subsets/%.owl: subsets/%.obo
@@ -648,7 +661,7 @@ bridge/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
 
 bridge/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt
-	blip ontol-query -r emapa -r emap -consult util/emap_to_cdef.pro -i $< -i uberon.obo -i developmental-stage-ontologies/mmusdv.obo -query "mapping_EMAP_to_EMAPA(ID,_,_)" -to obo | perl -npe 's/OBO_REL://' > $@.tmp && ./util/emap-to-cdef-add-hdr.pl $@.tmp > $@
+	blip ontol-query -r emapa -r emap -consult util/emap_to_cdef.pro -i $< -i uberon.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -query "mapping_EMAP_to_EMAPA(ID,_,_)" -to obo | perl -npe 's/OBO_REL://' > $@.tmp && ./util/emap-to-cdef-add-hdr.pl $@.tmp > $@
 .PRECIOUS: bridge/uberon-bridge-to-emap.obo
 bridge/uberon-bridge-to-emap.owl: bridge/uberon-bridge-to-emap.obo
 	obolib-obo2owl --allow-dangling $< -o $@
@@ -678,9 +691,10 @@ release:
 	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
 	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
+	cp ext.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
-	cp subsets/*.obo $(RELDIR)/subsets/ ;\
+	cp subsets/*.{obo,owl} $(RELDIR)/subsets/ ;\
 	cp diffs/* $(RELDIR)/diffs/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\

@@ -67,8 +67,8 @@ photographs). We will also make use of other properties, including:
 
 
 ## See Also:
+ * [http://purl.obolibrary.org/obo/uberon/depictions.owl](http://purl.obolibrary.org/obo/uberon/depictions.owl)
  * [http://douroucouli.wordpress.com/2012/07/03/45/](http://douroucouli.wordpress.com/2012/07/03/45/)
  * [https://github.com/balhoff/image-depictions-view](https://github.com/balhoff/image-depictions-view)
- * [http://purl.obolibrary.org/obo/uberon/depictions.owl](http://purl.obolibrary.org/obo/uberon/depictions.owl)
 
 

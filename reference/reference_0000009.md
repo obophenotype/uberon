@@ -8,8 +8,8 @@ Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 Authors and contributors:
 
  * Wasila Dahdul (author)
- * Chris Mungall (author)
  * Melissa Haendel (author)
+ * Chris Mungall (author)
 
 Date: 2012
 

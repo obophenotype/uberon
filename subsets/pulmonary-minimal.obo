@@ -562,13 +562,12 @@ relationship: part_of UBERON:0002048 ! lung
 id: UBERON:0000004
 name: olfactory apparatus
 namespace: uberon
-def: "a protuberance in vertebrates that houses the nostrils, or nares, which admit and expel air for respiration in conjunction with the mouth. Behind the nose are the olfactory mucosa and the sinuses. Behind the nasal cavity, air next passes through the pharynx, shared with the digestive system, and then into the rest of the respiratory system. In humans, the nose is located centrally on the face; on most other mammals, it is on the upper tip of the snout[WP]. GO: The nose is the specialized structure of the face that serves as the organ of the sense of smell and as part of the respiratory system. Includes the nasi externus (external nose) and cavitas nasi (nasal cavity)." [Wikipedia:Nose]
 comment: TODO - distinguish generic olfactory apparatus from nose; we have olfactory organ for the generic organ - add new class 'olfactory structure'?
 subset: major_organ
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "nasal sac" EXACT SENSU [ZFA:0000047]
-synonym: "Nasus" RELATED LATIN [Wikipedia:Nose]
+synonym: "nasus" RELATED LATIN [Wikipedia:Nose]
 synonym: "nose" EXACT []
 synonym: "peripheral olfactory organ" EXACT []
 synonym: "proboscis" RELATED []
@@ -592,8 +591,10 @@ xref: OpenCyc:Mx4rvViCbJwpEbGdrcN5Y29ycA
 xref: SCTID:181195007
 xref: TAO:0000047
 xref: UMLS:C0028429
+xref: Wikipedia:Nose
 xref: ZFA:0000047
 relationship: part_of UBERON:0001004 ! respiratory system
+property_value: UBPROP:0000001 "a protuberance in vertebrates that houses the nostrils, or nares, which admit and expel air for respiration in conjunction with the mouth. Behind the nose are the olfactory mucosa and the sinuses. Behind the nasal cavity, air next passes through the pharynx, shared with the digestive system, and then into the rest of the respiratory system. In humans, the nose is located centrally on the face; on most other mammals, it is on the upper tip of the snout[WP]. GO: The nose is the specialized structure of the face that serves as the organ of the sense of smell and as part of the respiratory system. Includes the nasi externus (external nose) and cavitas nasi (nasal cavity)[Wikipedia:Nose]." xsd:string {source="Wikipedia:Nose"}
 
 [Term]
 id: UBERON:0000031
@@ -649,7 +650,7 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0000065
 name: respiratory tract
 namespace: uberon
-def: "anatomical structure that is part of the respiratory system. In mammals consists of upper and lower tracts" [UBERON:cjm]
+def: "anatomical structure that is part of the respiratory system. In mammals consists of upper and lower tracts" [https://orcid.org/0000-0002-6601-2165]
 xref: EHDAA2:0001606
 xref: EHDAA:1568
 xref: EHDAA:2219
@@ -792,6 +793,7 @@ name: pharyngeal gill
 namespace: uberon
 def: "Gills of vertebrates are developed in the walls of the pharynx along a series of gill slits opening to the exterior. In fish, the gills are located on both sides of the pharynx. Gills are made of filaments which help increase surface area for oxygen exchange. In bony fish, the gills are covered by a bony cover called an operculum. When a fish breathes, it opens its mouth at regular times and draws in a mouthful of water. It then draws the sides of its throat together, forcing the water through the gill openings. The water passes over the gills on the outside. Valves inside the mouth keep the water from escaping through the mouth again. The operculum can be very important in adjusting the pressure of water inside of the pharynx to allow proper ventilation of the gills. Lampreys and sharks lack an operculum, they have multiple gill openings. Also, they must use different methods to force water over the gills. In sharks and rays, this ventilation of the gills is achieved either by the use of spiracles or ram ventilation (ventilation by constantly swimming). Although some animals use this method it is much better for animals to use a spiracle because they are less susceptible to injury." [Wikipedia:Gill#Vertebrate_gills]
 xref: ANISEED:1235300
+xref: Wikipedia:Gill#Vertebrate_gills
 is_a: UBERON:0002535 ! gill
 relationship: adjacent_to UBERON:0001042 ! chordate pharynx
 created_by: cjm
@@ -869,6 +871,7 @@ xref: ncithesaurus:Epiglottis
 xref: OpenCyc:Mx4rvVjxE5wpEbGdrcN5Y29ycA
 xref: SCTID:245502004
 xref: UMLS:C0014540
+xref: Wikipedia:Epiglottis
 relationship: part_of UBERON:0001051 ! hypopharynx
 property_value: RO:0002161 NCBITaxon:8782
 property_value: UBPROP:0000007 "epiglottal" xsd:string
@@ -887,6 +890,7 @@ xref: FMA:59644
 xref: http://upload.wikimedia.org/wikipedia/commons/7/7c/Gray994.png
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Gray994.png/200px-Gray994.png
 xref: SCTID:278940000
+xref: Wikipedia:Nasal_vestibule
 relationship: part_of UBERON:0001707 ! nasal cavity
 
 [Term]
@@ -977,6 +981,7 @@ xref: TGMA:0001831
 xref: UMLS:C0460002
 xref: VHOG:0001725
 xref: WBbt:0005746
+xref: Wikipedia:Organ_system
 xref: XAO:0003002
 xref: ZFA:0001439
 is_a: UBERON:0000480 ! anatomical group
@@ -1024,6 +1029,7 @@ xref: FMA:6234
 xref: http://upload.wikimedia.org/wikipedia/commons/5/5e/Gray791.png
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Gray791.png/200px-Gray791.png
 xref: SCTID:280298006
+xref: Wikipedia:Pharyngeal_branch_of_vagus_nerve
 relationship: part_of UBERON:0001005 ! respiratory airway
 
 [Term]
@@ -1049,6 +1055,7 @@ xref: OpenCyc:Mx4rv3zwLZwpEbGdrcN5Y29ycA
 xref: SCTID:181609007
 xref: UMLS:C0032225
 xref: VHOG:0000394
+xref: Wikipedia:Pleura
 relationship: part_of UBERON:0001004 ! respiratory system
 relationship: part_of UBERON:0009778 {source="FMA"} ! pleural sac
 relationship: surrounds UBERON:0002402 ! pleural cavity
@@ -1089,6 +1096,7 @@ xref: SCTID:278197002
 xref: TAO:0000272
 xref: UMLS:C0035237
 xref: VHOG:0000202
+xref: Wikipedia:Respiratory_system
 xref: XAO:0000117
 xref: ZFA:0000272
 property_value: RO:0002161 NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
@@ -1104,6 +1112,7 @@ comment: This class generically groups trachea and analagous structures througho
 subset: grouping_class
 subset: uberon_slim
 xref: SCTID:361380005
+xref: Wikipedia:Trachea
 relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
@@ -1134,6 +1143,7 @@ xref: SCTID:181211006
 xref: TAO:0000056
 xref: UMLS:C0031354
 xref: VHOG:0000462
+xref: Wikipedia:Pharynx
 xref: XAO:0003227
 xref: ZFA:0000056
 relationship: develops_from UBERON:0009145 {source="EHDAA2"} ! pharyngeal region
@@ -1169,6 +1179,7 @@ xref: OpenCyc:Mx4rvq5O0JwpEbGdrcN5Y29ycA
 xref: SCTID:281490009
 xref: UMLS:C0020629
 xref: VHOG:0000445
+xref: Wikipedia:Hypopharynx
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: UBPROP:0000001 "The inferior portion of the pharynx, between the epiglottis and the larynx. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000445", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/hypopharynx"}
 property_value: UBPROP:0000007 "hypopharyngeal" xsd:string
@@ -1245,6 +1256,7 @@ xref: OpenCyc:Mx4rvVivz5wpEbGdrcN5Y29ycA
 xref: SCTID:181614006
 xref: UMLS:C0011980
 xref: VHOG:0000713
+xref: Wikipedia:Thoracid_diaphragm
 is_a: UBERON:0003831 {is_inferred="true"} ! respiratory system muscle
 is_a: UBERON:0004830 {is_inferred="true"} ! respiratory system skeletal muscle
 relationship: part_of UBERON:0001004 ! respiratory system
@@ -1269,6 +1281,7 @@ xref: MA:0000442
 xref: OpenCyc:Mx4rtT2HwgJMEdyAAADggVbxzQ
 xref: SCTID:361381009
 xref: VHOG:0000406
+xref: Wikipedia:Upper_respiratory_tract
 is_a: UBERON:0000072 ! segment of respiratory tract
 property_value: spatially_disjoint_from UBERON:0001558
 
@@ -1287,6 +1300,7 @@ xref: MA:0000435
 xref: OpenCyc:Mx4rQRqjUgAKEdyHxgDggVfs8g
 xref: SCTID:281488008
 xref: VHOG:0000382
+xref: Wikipedia:Lower_respiratory_tract
 is_a: UBERON:0000072 ! segment of respiratory tract
 
 [Term]
@@ -1308,6 +1322,7 @@ xref: MA:0002284
 xref: ncithesaurus:Cricothyroid_Muscle
 xref: SCTID:244809007
 xref: UMLS:C0224178
+xref: Wikipedia:Cricothyroid_muscle
 is_a: UBERON:0006328 ! laryngeal intrinsic muscle
 relationship: has_muscle_insertion UBERON:0001738 {notes="Inferior cornu and lamina of the thyroid cartilage", source="dbpedia"} ! thyroid cartilage
 relationship: has_muscle_origin UBERON:0002375 {notes="Anterior and lateral cricoid cartilage", source="dbpedia"} ! cricoid cartilage
@@ -1342,8 +1357,8 @@ def: "One of two small oblong bones, varying in size and form in different indiv
 comment: Taxon notes: In primitive bony fish and tetrapods, the nasal bones are the most anterior of a set of four paired bones forming the roof of the skull, being followed in sequence by the frontals, the parietals, and the postparietals. Their form in living species is highly variable, depending on the shape of the head, but they generally form the roof of the snout or beak, running from the nostrils to a position short of the orbits. In most animals, they are generally therefore proportionally larger than in humans or great apes, because of the shortened faces of the latter. Turtles, unusually, lack nasal bones, with the prefrontal bones of the orbit reaching all the way to the nostrils (ISBN 0-03-910284-X)
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "adnasal@fr" RELATED [TAO:0000365]
-synonym: "nasal@fr" RELATED [TAO:0000365]
+synonym: "adnasal@fr" EXACT [TAO:0000365]
+synonym: "nasal@fr" EXACT [TAO:0000365]
 synonym: "nasals" RELATED PLURAL [TAO:0000365]
 synonym: "os nasale" RELATED LATIN [Wikipedia:Nasal_bone]
 xref: AAO:0000312
@@ -1360,6 +1375,7 @@ xref: SCTID:181801008
 xref: TAO:0000365
 xref: UMLS:C0027422
 xref: VHOG:0001370
+xref: Wikipedia:Nasal_bone
 xref: ZFA:0000365
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 property_value: UBPROP:0000001 "Paired bone of intramembranous origin that roofs the olfactory capsule.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000312", ontology="AAO", source="AAO:LAP"}
@@ -1399,6 +1415,7 @@ xref: OpenCyc:Mx4rv7e-k5wpEbGdrcN5Y29ycA
 xref: SCTID:181197004
 xref: UMLS:C0027432
 xref: VHOG:0000017
+xref: Wikipedia:Nasal_septum
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 relationship: part_of UBERON:0006813 {source="AAO"} ! nasal skeleton
 property_value: UBPROP:0000001 "A median dividing wall, sagitally directed, which divides the nasal cavity into the right and the left nasal fossae. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000017", ontology="VHOG", source="http://bgee.unil.ch/"}
@@ -1410,14 +1427,15 @@ property_value: UBPROP:0000003 "Whatever the common ancestor of the lamprey and 
 id: UBERON:0001707
 name: nasal cavity
 namespace: uberon
-def: "a large air filled space above and behind the nose in the middle of the face[WP]." [Wikipedia:Nasal_cavity]
-comment: the cavity includes and starts at the nares and reaches all the way through to the and includes the choanae, the posterior nasal apertures[HP]
+def: "An anatomical cavity that is part of the olfactory apparatus. This includes the space bounded anteriorly by the nares and posteriorly by the choanae, when these structures are present." [UBERON:cjm]
+comment: the cavity includes and starts at the nares and reaches all the way through to the and includes the choanae, the posterior nasal apertures[HP]. Editor note: defne the boundaries of this cavity for a variety of species and check that parthood relations are not too strong.
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cavitas nasalis" RELATED [BTO:0002096]
 synonym: "cavitas nasi" RELATED [BTO:0002096]
+synonym: "cavitas nasi" RELATED LATIN [Wikipedia:Nasal_cavity]
 synonym: "cavity of nose" EXACT []
-synonym: "cavum nasi; cavitas nasi" RELATED LATIN [Wikipedia:Nasal_cavity]
+synonym: "cavum nasi" RELATED LATIN [Wikipedia:Nasal_cavity]
 synonym: "nasal canal" EXACT [ZFA:0000130]
 synonym: "nasal fossa" EXACT [Wikipedia:Nasal_cavity]
 synonym: "nasal pit" RELATED []
@@ -1439,10 +1457,12 @@ xref: SCTID:263481003
 xref: TAO:0000130
 xref: UMLS:C0027423
 xref: VHOG:0000271
+xref: Wikipedia:Nasal_cavity
 xref: ZFA:0000130
 relationship: develops_from UBERON:0005870 ! olfactory pit
 relationship: part_of UBERON:0000004 {source="MA"} ! olfactory apparatus
 relationship: part_of UBERON:0001557 {source="MA"} ! upper respiratory tract
+property_value: UBPROP:0000001 "a large air filled space above and behind the nose in the middle of the face[WP][Wikipedia:Nasal_cavity]." xsd:string {source="Wikipedia:Nasal_cavity"}
 property_value: UBPROP:0000001 "Saclike space internal to the nasal capsule lined by respiratory and sensory epithelium and glandular tissue.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000314", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000003 "Despite significant modification to the nasal cavity within Archosauria and its extreme hypertrophy and supraorbital development in Lambeosaurinae, the neural olfactory system and the olfactory region of the nasal cavity proper retain their plesiomorphic positions and associations, suggesting that this system is highly conserved in vertebrate evolution.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000271", ontology="VHOG", source="DOI:10.1666/0094-8373(2006)032[0109:NCHACC]2.0.CO;2 Evans DC, Nasal cavity homologies and cranial crest function in lambeosaurine dinosaurs. Paleobiology (2006)", source="http://bgee.unil.ch/"}
 
@@ -1465,13 +1485,15 @@ xref: ncithesaurus:Sphenoid_Sinus
 xref: OpenCyc:Mx4rwEIoz5wpEbGdrcN5Y29ycA
 xref: SCTID:181207000
 xref: UMLS:C0037885
+xref: Wikipedia:Sphenoidal_sinus
 is_a: UBERON:0001825 {source="MA"} ! paranasal sinus
 
 [Term]
 id: UBERON:0001728
 name: nasopharynx
 namespace: uberon
-def: "uppermost part of the pharynx. It extends from the base of the skull to the upper surface of the soft palate; it differs from the oral and laryngeal parts of the pharynx in that its cavity always remains patent (open)[WP]. In front it communicates through the choanae with the nasal cavities. On its lateral wall is the pharyngeal ostium of the auditory tube, somewhat triangular in shape, and bounded behind by a firm prominence, the torus tubarius or cushion, caused by the medial end of the cartilage of the tube which elevates the mucous membrane." [Wikipedia:Nasopharynx]
+def: "uppermost part of the pharynx. It extends from the base of the skull to the upper surface of the soft palate; it differs from the oral and laryngeal parts of the pharynx in that its cavity always remains patent (open)[WP]." [Wikipedia:Nasopharynx]
+comment: In humans: in front it communicates through the choanae with the nasal cavities. On its lateral wall is the pharyngeal ostium of the auditory tube, somewhat triangular in shape, and bounded behind by a firm prominence, the torus tubarius or cushion, caused by the medial end of the cartilage of the tube which elevates the mucous membrane
 subset: uberon_slim
 synonym: "epipharynx" RELATED [Wikipedia:Pharynx]
 synonym: "nasal part of pharynx" EXACT []
@@ -1496,6 +1518,7 @@ xref: OpenCyc:Mx4rwUPoDJwpEbGdrcN5Y29ycA
 xref: SCTID:181200003
 xref: UMLS:C0027442
 xref: VHOG:0000375
+xref: Wikipedia:Nasopharynx
 relationship: part_of UBERON:0001042 ! chordate pharynx
 relationship: part_of UBERON:0001557 ! upper respiratory tract
 property_value: UBPROP:0000001 "The uppermost of the three regions of the throat (pharynx), situated behind the nasal cavity and extending from the posterior nares to the level above the soft palate. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000375", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/nasopharynx"}
@@ -1527,6 +1550,7 @@ xref: SCTID:263376008
 xref: UMLS:C0521367
 xref: VHOG:0000457
 xref: VSAO:0000034
+xref: Wikipedia:Oropharynx
 xref: XAO:0004048
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: UBPROP:0000001 "One of the three anatomic divisions of the pharynx that lies posterior to the mouth and is continuous above with the nasopharynx and below with the laryngopharynx. It extends behind the mouth from the soft palate above to the level of the hyoid bone below and contains the palatine and lingual tonsils. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000457", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/oropharynx"}
@@ -1565,6 +1589,7 @@ xref: MESH:A15.382.520.604.084
 xref: ncithesaurus:Pharyngeal_Tonsil
 xref: SCTID:181199001
 xref: UMLS:C0001428
+xref: Wikipedia:Pharyngeal_tonsil
 is_a: UBERON:0002372 ! tonsil
 is_a: UBERON:0012330 {source="cjm"} ! nasal-associated lymphoid tissue
 relationship: part_of UBERON:0001728 ! nasopharynx
@@ -1587,6 +1612,7 @@ xref: MA:0000752
 xref: ncithesaurus:Waldeyers_Tonsillar_Ring
 xref: SCTID:56411004
 xref: UMLS:C0459892
+xref: Wikipedia:Waldeyer's_ring
 relationship: part_of UBERON:0001042 ! chordate pharynx
 
 [Term]
@@ -1615,6 +1641,7 @@ xref: OpenCyc:Mx4rvViOnZwpEbGdrcN5Y29ycA
 xref: SCTID:181212004
 xref: UMLS:C0023078
 xref: VHOG:0001279
+xref: Wikipedia:Larynx
 xref: XAO:0003081
 relationship: part_of UBERON:0001557 ! upper respiratory tract
 property_value: UBPROP:0000001 "An anatomical cluster consisting of the epiglottus, the arytenoid cartilages, the thyroid cartilage, the cricoid cartilage and the muscles, membranes, and ligaments connecting them, and also of the mucosal covering these structures.[FEED]" xsd:string {date_retrieved="2012-07-02", ontology="FEED", url="http://www.feedexp.org"}
@@ -1647,6 +1674,7 @@ xref: ncithesaurus:Thyroid_Cartilage
 xref: SCTID:263483000
 xref: UMLS:C0040126
 xref: VHOG:0001365
+xref: Wikipedia:Thyroid_cartilage
 is_a: UBERON:0001739 ! laryngeal cartilage
 relationship: develops_from UBERON:0010219 {source="EHDAA2"} ! thyroid pre-cartilage condensation
 relationship: part_of UBERON:0010212 {source="EHDAA2"} ! laryngeal apparatus
@@ -1699,6 +1727,7 @@ xref: MESH:A02.165.507.083
 xref: ncithesaurus:Arytenoid_Cartilage
 xref: SCTID:264446005
 xref: UMLS:C0003943
+xref: Wikipedia:Arytenoid_cartilage
 is_a: UBERON:0001739 ! laryngeal cartilage
 relationship: develops_from UBERON:0010220 {source="cjm"} ! arytenoid pre-cartilage condensation
 relationship: in_lateral_side_of UBERON:0001737 ! larynx
@@ -1720,6 +1749,7 @@ xref: MA:0001885
 xref: ncithesaurus:Corniculate_Cartilage
 xref: SCTID:278989005
 xref: UMLS:C0225556
+xref: Wikipedia:Corniculate_cartilages
 is_a: UBERON:0003406 {is_inferred="true"} ! cartilage of respiratory system
 is_a: UBERON:0003583 {is_inferred="true"} ! larynx connective tissue
 relationship: part_of UBERON:0001737 {source="FMA"} ! larynx
@@ -1774,6 +1804,7 @@ xref: ncithesaurus:Frontal_Sinus
 xref: OpenCyc:Mx4rvqMUR5wpEbGdrcN5Y29ycA
 xref: SCTID:181205008
 xref: UMLS:C0016734
+xref: Wikipedia:Frontal_sinus
 is_a: UBERON:0001825 {source="MA"} ! paranasal sinus
 
 [Term]
@@ -1797,6 +1828,7 @@ xref: ncithesaurus:Maxillary_Sinus
 xref: OpenCyc:Mx4rvp2ZWJwpEbGdrcN5Y29ycA
 xref: SCTID:181204007
 xref: UMLS:C0024957
+xref: Wikipedia:Maxillary_sinus
 is_a: UBERON:0001825 ! paranasal sinus
 
 [Term]
@@ -1813,6 +1845,7 @@ xref: MA:0001883
 xref: ncithesaurus:Nasal_Cartilage
 xref: SCTID:278941001
 xref: UMLS:C0225415
+xref: Wikipedia:Nasal_cartilage
 is_a: UBERON:0003406 {is_inferred="true"} ! cartilage of respiratory system
 relationship: encloses UBERON:0000402 ! nasal vestibule
 
@@ -1861,6 +1894,7 @@ xref: MESH:A04.531.621
 xref: ncithesaurus:Paranasal_Sinus
 xref: SCTID:181203001
 xref: UMLS:C0030471
+xref: Wikipedia:Paranasal_sinuses
 relationship: continuous_with UBERON:0001707 ! nasal cavity
 relationship: part_of UBERON:0001004 ! respiratory system
 
@@ -2058,7 +2092,7 @@ id: UBERON:0001997
 name: olfactory epithelium
 namespace: uberon
 alt_id: UBERON:0004853
-def: "Epithelium inside the nasal cavity that is responsible for detecting odors[WP]." [Wikipedia:Olfactory_epithelium, ZFIN:curator]
+def: "Epithelium inside the nasal cavity that is responsible for detecting odors[WP]." [Wikipedia:Olfactory_epithelium]
 comment: Genes: V1Rs, Trpc2 present in lamprey // See also: FMA:77199
 subset: uberon_slim
 subset: vertebrate_core
@@ -2086,6 +2120,7 @@ xref: SCTID:37623003
 xref: TAO:0000554
 xref: UMLS:C0599332
 xref: VHOG:0000985
+xref: Wikipedia:Olfactory_epithelium
 xref: ZFA:0000554
 is_a: UBERON:0004807 {is_inferred="true"} ! respiratory system epithelium
 relationship: part_of UBERON:0001826 {source="FMA"} ! nasal cavity mucosa
@@ -2161,6 +2196,7 @@ xref: OpenCyc:Mx4rvVjKy5wpEbGdrcN5Y29ycA
 xref: SCTID:181216001
 xref: UMLS:C0024109
 xref: VHOG:0000310
+xref: Wikipedia:Lung
 xref: XAO:0000119
 is_a: UBERON:0000117 {source="GO"} ! respiratory tube
 is_a: UBERON:0000171 ! respiration organ
@@ -2210,6 +2246,7 @@ synonym: "pair of nostrils" EXACT []
 synonym: "set of nares" RELATED [FMA:72005]
 xref: FMA:72005
 xref: OpenCyc:Mx4rvViCLpwpEbGdrcN5Y29ycA
+xref: Wikipedia:Nares
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 property_value: RO:0002161 NCBITaxon:7745 {source="http://webs.lander.edu/rsfox/invertebrates/ammocoetes.html"}
 
@@ -2231,6 +2268,7 @@ xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvVjKy5wpEbGdrcN5Y29ycA
 xref: SCTID:361967000
 xref: UMLS:C0225706
 xref: VHOG:0000301
+xref: Wikipedia:Right_lung
 intersection_of: UBERON:0002048 ! lung
 intersection_of: in_right_side_of UBERON:0000170 ! pair of lungs
 property_value: UBPROP:0000003 "Lungs had already developed as paired ventral pockets from the intestine in the ancestor of Osteognathostomata.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000301", ontology="VHOG", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.210", source="http://bgee.unil.ch/"}
@@ -2253,6 +2291,7 @@ xref: OpenCyc:Mx8Ngh4rvgIFoJwpEbGdrcN5Y29ycB4rvVjKy5wpEbGdrcN5Y29ycA
 xref: SCTID:361982005
 xref: UMLS:C0225730
 xref: VHOG:0000618
+xref: Wikipedia:Left_lung
 intersection_of: UBERON:0002048 ! lung
 intersection_of: in_left_side_of UBERON:0000170 ! pair of lungs
 property_value: UBPROP:0000003 "Lungs had already developed as paired ventral pockets from the intestine in the ancestor of Osteognathostomata.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000618", ontology="VHOG", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.210", source="http://bgee.unil.ch/"}
@@ -2274,6 +2313,7 @@ xref: ncithesaurus:Alveolar_Sac
 xref: OpenCyc:Mx4rwCvh75wpEbGdrcN5Y29ycA
 xref: SCTID:361964007
 xref: UMLS:C0225691
+xref: Wikipedia:Alveolar_sac
 is_a: UBERON:0000115 {is_inferred="true"} ! lung epithelium
 is_a: UBERON:0000117 {is_inferred="true"} ! respiratory tube
 relationship: part_of UBERON:0006524 {source="MA"} ! alveolar system
@@ -2283,7 +2323,7 @@ relationship: part_of UBERON:0008874 {source="FMA"} ! pulmonary acinus
 id: UBERON:0002170
 name: upper lobe of right lung
 namespace: uberon
-def: "The lobe of the right lung that is closest to the head." [UBERON:cjm]
+def: "The lobe of the right lung that is closest to the head." [https://orcid.org/0000-0002-6601-2165]
 synonym: "lobus superior pulmonis dextri" EXACT LATIN [FMA:TA]
 synonym: "right cranial lobe of lung" EXACT []
 synonym: "right lung cranial lobe" EXACT [MA:0000429]
@@ -2311,7 +2351,7 @@ intersection_of: part_of UBERON:0002167 ! right lung
 id: UBERON:0002171
 name: lower lobe of right lung
 namespace: uberon
-def: "The lobe of the right lung that is furtherst from the head." [UBERON:cjm]
+def: "The lobe of the right lung that is furtherst from the head." [https://orcid.org/0000-0002-6601-2165]
 synonym: "inferior lobe of right lung" EXACT [FMA:7337]
 synonym: "lobus inferior pulmonis dextri" EXACT LATIN [FMA:7337, FMA:TA]
 synonym: "lower lobe of right lung" EXACT [galen:LowerLobeOfRightLung]
@@ -2362,6 +2402,7 @@ xref: MA:0000417
 xref: ncithesaurus:Alveolar_Duct
 xref: OpenCyc:Mx4rvXmfV5wpEbGdrcN5Y29ycA
 xref: UMLS:C0391892
+xref: Wikipedia:Alveolar_duct
 relationship: part_of UBERON:0002048 ! lung
 relationship: part_of UBERON:0006524 ! alveolar system
 
@@ -2389,6 +2430,7 @@ xref: MA:0000430
 xref: ncithesaurus:Middle_Lobe_of_the_Right_Lung
 xref: SCTID:361973004
 xref: UMLS:C0225757
+xref: Wikipedia:Middle_lobe_of_right_lung
 is_a: UBERON:0006518 {is_inferred="true"} ! right lung lobe
 intersection_of: UBERON:0008955 ! middle lobe of lung
 intersection_of: part_of UBERON:0002167 ! right lung
@@ -2397,7 +2439,7 @@ intersection_of: part_of UBERON:0002167 ! right lung
 id: UBERON:0002177
 name: right main bronchus
 namespace: uberon
-def: "The main bronchus on the right side." [UBERON:cjm, Wikipedia:Right_main_bronchus]
+def: "The main bronchus on the right side." [https://orcid.org/0000-0002-6601-2165, Wikipedia:Right_main_bronchus]
 comment: Divides into 3 lobar bronchi in humans[ISBN10:0123813611]
 subset: uberon_slim
 synonym: "bronchus principalis dexter" RELATED LATIN [Wikipedia:Right_main_bronchus]
@@ -2412,6 +2454,7 @@ xref: ncithesaurus:Right_Main_Bronchus
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvoIuvJwpEbGdrcN5Y29ycA
 xref: SCTID:361955002
 xref: UMLS:C0225608
+xref: Wikipedia:Right_main_bronchus
 intersection_of: UBERON:0002182 ! main bronchus
 intersection_of: continuous_with UBERON:0006518 ! right lung lobe
 
@@ -2433,6 +2476,7 @@ xref: MA:0001843
 xref: ncithesaurus:Left_Main_Bronchus
 xref: SCTID:361959008
 xref: UMLS:C0225630
+xref: Wikipedia:Left_main_bronchus
 intersection_of: UBERON:0002182 ! main bronchus
 intersection_of: continuous_with UBERON:0008951 ! left lung lobe
 
@@ -2461,6 +2505,7 @@ xref: OpenCyc:Mx4rvoIuvJwpEbGdrcN5Y29ycA
 xref: SCTID:245508000
 xref: UMLS:C0024496
 xref: VHOG:0000370
+xref: Wikipedia:Main_bronchus
 is_a: UBERON:0002185 ! bronchus
 relationship: distally_connected_to UBERON:0002183 ! lobar bronchus
 relationship: proximally_connected_to UBERON:0003126 ! trachea
@@ -2496,6 +2541,7 @@ xref: ncithesaurus:Lobar_Bronchus
 xref: OpenCyc:Mx4rwQMLXJwpEbGdrcN5Y29ycA
 xref: SCTID:245509008
 xref: UMLS:C0225653
+xref: Wikipedia:Secondary_bronchus
 is_a: UBERON:0002185 ! bronchus
 relationship: distally_connected_to UBERON:0002184 ! segmental bronchus
 relationship: part_of UBERON:0000101 {source="FMA"} ! lobe of lung
@@ -2521,6 +2567,7 @@ xref: OpenCyc:Mx4rwQGFgZwpEbGdrcN5Y29ycA
 xref: SCTID:245513001
 xref: UMLS:C0444439
 xref: VHOG:0001446
+xref: Wikipedia:Segmental_bronchus
 is_a: UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0000101 {source="FMA"} ! lobe of lung
 relationship: proximally_connected_to UBERON:0002183 ! lobar bronchus
@@ -2551,6 +2598,7 @@ xref: ncithesaurus:Bronchus
 xref: SCTID:181215002
 xref: UMLS:C0006255
 xref: VHOG:0000262
+xref: Wikipedia:Bronchus
 xref: XAO:0000121
 is_a: UBERON:0001005 ! respiratory airway
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
@@ -2581,6 +2629,7 @@ xref: OpenCyc:Mx4rvl9iDpwpEbGdrcN5Y29ycA
 xref: SCTID:278982001
 xref: UMLS:C0006270
 xref: VHOG:0000675
+xref: Wikipedia:Bronchiole
 is_a: UBERON:0000115 {is_inferred="true"} ! lung epithelium
 is_a: UBERON:0000117 {is_inferred="true"} ! respiratory tube
 is_a: UBERON:0002031 {is_inferred="true"} ! epithelium of bronchus
@@ -2607,6 +2656,7 @@ xref: ncithesaurus:Terminal_Bronchiole
 xref: OpenCyc:Mx4rwS7IU5wpEbGdrcN5Y29ycA
 xref: SCTID:278981008
 xref: UMLS:C0225666
+xref: Wikipedia:Terminal_bronchiole
 is_a: UBERON:0002186 ! bronchiole
 
 [Term]
@@ -2627,6 +2677,7 @@ xref: ncithesaurus:Respiratory_Bronchiole
 xref: OpenCyc:Mx4rwS6ki5wpEbGdrcN5Y29ycA
 xref: SCTID:128517006
 xref: UMLS:C1261270
+xref: Wikipedia:Respiratory_bronchiole
 is_a: UBERON:0002186 ! bronchiole
 relationship: distally_connected_to UBERON:0002173 ! alveolar duct
 relationship: part_of UBERON:0008874 {source="ISBN10:0123813611"} ! pulmonary acinus
@@ -2665,6 +2716,7 @@ xref: FMA:75801
 xref: http://upload.wikimedia.org/wikipedia/commons/4/4d/Gray857.png
 xref: MA:0000287
 xref: SCTID:368891001
+xref: Wikipedia:Olfactory_glands
 is_a: UBERON:0012278 {is_inferred="true"} ! nasal gland
 relationship: part_of UBERON:0001997 ! olfactory epithelium
 property_value: UBPROP:0000001 "Multicellular mucous glands of the olfactory epithelium, present only in adults.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010162", ontology="AAO", source="AAO:EJS"}
@@ -2697,6 +2749,7 @@ xref: MA:0000289
 xref: MESH:A04.531.591.940
 xref: SCTID:361346007
 xref: VHOG:0000665
+xref: Wikipedia:Vomeronasal_organ
 xref: XAO:0000272
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 property_value: UBPROP:0000001 "An organ thought to supplement the olfactory system in receiving pheromonic communication. The sensory part of the organ is in two long, thin sacs, situated on either side of the nasal septum at its base. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000665", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/vomeronasal+organ"}
@@ -2724,6 +2777,7 @@ xref: MA:0000420
 xref: MESH:A04.411.715
 xref: SCTID:361364000
 xref: VHOG:0001445
+xref: Wikipedia:Pulmonary_alveolus
 relationship: part_of UBERON:0002169 {source="FMA"} ! alveolar sac
 relationship: part_of UBERON:0006524 {source="MA"} ! alveolar system
 
@@ -2858,6 +2912,7 @@ xref: UMLS:C0836921
 xref: UMLS:C1519547
 xref: UMLS:C1519548
 xref: VHOG:0001139
+xref: Wikipedia:Tonsil
 relationship: part_of UBERON:0001735 {source="cjm"} ! tonsillar ring
 
 [Term]
@@ -2883,6 +2938,7 @@ xref: ncithesaurus:Palatine_Tonsil
 xref: SCTID:265787001
 xref: UMLS:C0040421
 xref: VHOG:0001140
+xref: Wikipedia:Palatine_tonsil
 is_a: UBERON:0002372 ! tonsil
 
 [Term]
@@ -2914,6 +2970,7 @@ xref: ncithesaurus:Cricoid_Cartilage
 xref: SCTID:263484006
 xref: UMLS:C0010323
 xref: VHOG:0001308
+xref: Wikipedia:Cricoid_cartilage
 is_a: UBERON:0001739 {source="MA"} ! laryngeal cartilage
 is_a: UBERON:0003406 {is_inferred="true"} ! cartilage of respiratory system
 is_a: UBERON:0003583 {is_inferred="true"} ! larynx connective tissue
@@ -2939,6 +2996,7 @@ xref: OpenCyc:Mx4rvv2Uq5wpEbGdrcN5Y29ycA
 xref: SCTID:361998003
 xref: UMLS:C0225777
 xref: VHOG:0001495
+xref: Wikipedia:Parietal_pleura
 is_a: UBERON:0000977 {is_inferred="true"} ! pleura
 relationship: part_of UBERON:0000977 ! pleura
 
@@ -2965,6 +3023,7 @@ xref: OpenCyc:Mx4rwNFqppwpEbGdrcN5Y29ycA
 xref: SCTID:361997008
 xref: UMLS:C0225776
 xref: VHOG:0001496
+xref: Wikipedia:Visceral_pleura
 is_a: UBERON:0000977 {is_inferred="true"} ! pleura
 relationship: attaches_to UBERON:0008946 ! lung parenchyma
 relationship: part_of UBERON:0000977 {source="FMA"} ! pleura
@@ -2993,6 +3052,7 @@ xref: OpenCyc:Mx4rwCKAppwpEbGdrcN5Y29ycA
 xref: SCTID:361999006
 xref: UMLS:C0178802
 xref: VHOG:0000581
+xref: Wikipedia:Pleural_cavity
 relationship: part_of UBERON:0009778 {source="FMA"} ! pleural sac
 property_value: UBPROP:0000003 "In hagfishes a transverse septum extends upward from the ventral body wall posterior to the heart, partly separating an anterior pericardial cavity from a larger peritoneal cavity. (...) These basic relationships have not been modified by urodeles. The small pericardial cavity remains far forward where it is separated by a transverse septum from the principal coelom, which may now be called a pleuroperitoneal cavity because slender lungs are present. (...) The heart [of other tetrapods] is separated from the lungs (and liver if present) by more or less horizontal partitions that have their origin in the embryo as folds on the serous membrane of the right and left lateral body walls. These grow out to join in the midline of the body. They are called lateral mesocardia (birds) or pleuropericardial membranes. Posteriorly they join the transverse septum to form the adult pericardial membrane, or pericardium. (...) In their partitioning of their coelom, embryonic mammals resemble first early fishes (incomplete partition, posterior to heart, consisting of the transverse septum) and then reptiles (pericardium derived from transverse septum and pleuropericardial membranes). Mammals then separate paired pleural cavities from the peritoneal cavity by a diaphragm. The ventral portion of this organ comes from the transverse septum. The dorsal portion is derived from the dorsal mesentery and from still another pair of outgrowths from the lateral body wall, the pleuroperitoneal membranes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000581", ontology="VHOG", source="ISBN:978-0471090588 Hildebrand M, Analysis of vertebrate structure (1983) p.205-206", source="http://bgee.unil.ch/"}
 
@@ -3012,6 +3072,7 @@ xref: MESH:A04.531.621.267
 xref: ncithesaurus:Ethmoid_Sinus
 xref: SCTID:181206009
 xref: UMLS:C0015028
+xref: Wikipedia:Ethmoid_bone_sinus
 is_a: UBERON:0001825 ! paranasal sinus
 
 [Term]
@@ -3031,6 +3092,7 @@ xref: MESH:A04.329.364
 xref: ncithesaurus:Glottis
 xref: SCTID:264482000
 xref: UMLS:C0017681
+xref: Wikipedia:Glottis
 relationship: part_of UBERON:0001737 ! larynx
 property_value: UBPROP:0000001 "A small, slit-like aperture lying longitudinally on the floor of the pharynx.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010610", ontology="AAO", source="AAO:BMZ"}
 
@@ -3042,6 +3104,7 @@ def: "Anatomical surface structure found in many aquatic organisms. It is a resp
 comment: this term potentially applicable across multiple metazoa - see also the subclass 'pharyngeal arch derived gill'
 subset: functional_classification
 xref: MESH:A13.421
+xref: Wikipedia:Gill
 relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
@@ -3086,6 +3149,7 @@ xref: EMAPA:16686
 xref: SCTID:308775002
 xref: TAO:0005006
 xref: VHOG:0000148
+xref: Wikipedia:Aortic_arches#Arches_1_and_2
 xref: XAO:0000343
 xref: ZFA:0005006
 property_value: UBPROP:0000001 "The second in a series paired arterial connections between the dorsal and ventral aortae. Aortic arch 2 that is part of hyoid arch.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010418", ontology="AAO", source="ISBN:0-02-377110-0"}
@@ -3108,6 +3172,7 @@ xref: EMAPA:16687
 xref: SCTID:308776001
 xref: TAO:0005007
 xref: VHOG:0000147
+xref: Wikipedia:Aortic_arches#Arch_3
 xref: XAO:0000344
 xref: ZFA:0005007
 property_value: UBPROP:0000001 "Aortic arches 3 and 4 are not remodeled but are retained largely intact as the branchial arteries providing circulation through the gills.  These areches  are direct branches from the ventral aorta to the lateral dorsal aorta. Isogai et al. 2001.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005007", ontology="TAO", source="ZFIN:curator"}
@@ -3132,6 +3197,7 @@ xref: EMAPA:17004
 xref: SCTID:308777005
 xref: TAO:0005008
 xref: VHOG:0000146
+xref: Wikipedia:Aortic_arches#Arch_4
 xref: XAO:0000355
 xref: ZFA:0005008
 property_value: UBPROP:0000001 "Aortic arches 3 and 4 are not remodeled but are retained largely intact as the branchial arteries providing circulation through the gills.  These areches  are direct branches from the ventral aorta to the lateral dorsal aorta. Isogai et al. 2001.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005008", ontology="TAO", source="ZFIN:curator"}
@@ -3149,6 +3215,7 @@ xref: AAO:0010421
 xref: SCTID:308778000
 xref: TAO:0005009
 xref: VHOG:0000145
+xref: Wikipedia:Aortic_arches#Arch_5
 xref: XAO:0000352
 xref: ZFA:0005009
 property_value: UBPROP:0000001 "The fifth and sixth arches, which come on-line at approximately 2.5 dpf, have a common trunk from the ventral aorta and drain to the midline dorsal aorta via an independent route.   The fifth and sixth aortic arches supply the trunk and tail with oxigenated blood. Isogai et al. 2001.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005009", ontology="TAO", source="ZFIN:curator"}
@@ -3173,6 +3240,7 @@ xref: EMAPA:17005
 xref: SCTID:308779008
 xref: TAO:0005016
 xref: VHOG:0000144
+xref: Wikipedia:Aortic_arches#Arch_6
 xref: XAO:0000353
 xref: ZFA:0005016
 property_value: UBPROP:0000001 "The fifth and sixth arches, which come on-line at approximately 2.5 dpf, have a common trunk from the ventral aorta and drain to the midline dorsal aorta via an independent route. The fifth and sixth aortic arches supply the trunk and tail with oxigenated blood. Isogai et al. 2001.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005016", ontology="TAO", source="ZFIN:curator"}
@@ -3210,6 +3278,7 @@ xref: OpenCyc:Mx4rvViOX5wpEbGdrcN5Y29ycA
 xref: SCTID:181213009
 xref: UMLS:C0040578
 xref: VHOG:0000371
+xref: Wikipedia:Vertebrate_trachea
 xref: XAO:0000118
 is_a: UBERON:0000117 ! respiratory tube
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
@@ -3230,6 +3299,7 @@ synonym: "trachea" BROAD SENSU [FBbt:00005043]
 xref: FBbt:00005043
 xref: SPD:0000434
 xref: TADS:0000315
+xref: Wikipedia:Invertebrate_trachea
 is_a: UBERON:0001005 ! respiratory airway
 
 [Term]
@@ -4039,6 +4109,7 @@ xref: MA:0001857
 xref: ncithesaurus:Trachea_Cartilage
 xref: SCTID:278979006
 xref: UMLS:C1710456
+xref: Wikipedia:Tracheal_rings
 is_a: UBERON:0003571 {is_inferred="true"} ! trachea connective tissue
 is_a: UBERON:0003603 {is_inferred="true"} ! lower respiratory tract cartilage
 relationship: develops_from UBERON:0007267 ! trachea pre-cartilage rings
@@ -4213,7 +4284,7 @@ relationship: part_of UBERON:0000004 ! olfactory apparatus
 id: UBERON:0004110
 name: midnasal cavity
 namespace: uberon
-def: "includes the cavity between the nares and the choanae." [HP:0010641]
+def: "An anatomical cavity that is the combination of the cavity between the nares and the choanae[HP,modified]." [HP:0010641]
 relationship: adjacent_to UBERON:0005928 ! external naris
 relationship: part_of UBERON:0001707 ! nasal cavity
 
@@ -4375,6 +4446,7 @@ xref: ncithesaurus:Aortic_Arch
 xref: TAO:0005004
 xref: UMLS:C0003489
 xref: VHOG:0000122
+xref: Wikipedia:Aortic_arches
 xref: XAO:0000341
 xref: ZFA:0005004
 is_a: UBERON:0003351 {is_inferred="true"} ! pharyngeal epithelium
@@ -4877,13 +4949,14 @@ id: UBERON:0004893
 name: interalveolar septum
 namespace: uberon
 def: "A the thin septum that separates adjacent pulmonary alveoli, containing connective tissue constituents of the respiratory tissue and the capillary network of the blood supply of the lung." [LG:0012625, Wikipedia:Alveolar_septum]
-synonym: "alveolar septum" EXACT [UBERON:cjm]
+synonym: "alveolar septum" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "septal bone" RELATED [BTO:0003149]
 synonym: "septum interalveolare" RELATED [BTO:0003149]
 xref: BTO:0003149
 xref: MA:0000421
 xref: ncithesaurus:Alveolar_Septum
 xref: UMLS:C1706784
+xref: Wikipedia:Alveolar_septum
 relationship: part_of UBERON:0006524 ! alveolar system
 
 [Term]
@@ -5493,6 +5566,7 @@ xref: FMA:7397
 xref: SCTID:181806003
 xref: SCTID:361956001
 xref: VHOG:0000240
+xref: Wikipedia:Eparterial_bronchus
 is_a: UBERON:0003404 {is_inferred="true"} ! lobar bronchus of right lung
 intersection_of: UBERON:0002183 ! lobar bronchus
 intersection_of: part_of UBERON:0002170 ! upper lobe of right lung
@@ -5533,9 +5607,9 @@ relationship: part_of UBERON:0000116 ! lung saccule
 id: UBERON:0005384
 name: nasal cavity epithelium
 namespace: uberon
-def: "An epithelium that is part of a nasal cavity." [OBOL:automatic]
+def: "An epithelium that is part of a nasal cavity [Automatically generated definition]." [OBOL:automatic]
 synonym: "nasal epithelium" EXACT [FMA:63140]
-synonym: "nasal mucosa" RELATED []
+synonym: "nasal mucosa" RELATED [MA:0001324]
 xref: EHDAA2:0001227
 xref: EHDAA:6803
 xref: EMAPA:17605
@@ -5562,7 +5636,7 @@ is_a: UBERON:0005384 ! nasal cavity epithelium
 id: UBERON:0005386
 name: olfactory mucosa
 namespace: uberon
-def: "That portion of the nasal mucosa containing the sensory endings for olfaction; the organ of smell[GAID]. The olfactory mucosa is located in the upper region of the nasal cavity and is made up of the olfactory epithelium and the underlying lamina propria, connective tissue containing fibroblasts, blood vessels, Bowman's glands and bundles of fine axons from the olfactory neurons. The mucus protects the olfactory epithelium and allows odors to dissolve so that they can be detected by olfactory receptor neurons. Electron microscopy studies show that Bowman's glands contain cells with large secretory vesicles. The exact composition of the secretions from Bowman's glands is unclear, but there is evidence that Bowman's glands do not produce odorant binding protein[WP]." [GAID:303, Wikipedia:Olfactory_mucosa]
+def: "That portion of the nasal mucosa containing the sensory endings for olfaction; the organ of smell[MESH]." [MESH:A04.531.520.573, Wikipedia:Olfactory_mucosa]
 comment: note uberon uses the term 'mucosa' as 'portion of mucosa', thus the relationship is subclass, not part_of
 synonym: "olfactory area of nasal mucosa" EXACT [FMA:77199]
 synonym: "olfactory part of nasal mucosa" EXACT [FMA:77199]
@@ -5574,8 +5648,10 @@ xref: GAID:303
 xref: MESH:A04.531.520.573
 xref: ncithesaurus:Olfactory_Mucosa
 xref: UMLS:C0028937
+xref: Wikipedia:Olfactory_mucosa
 is_a: UBERON:0001826 ! nasal cavity mucosa
 relationship: has_part UBERON:0005384 ! nasal cavity epithelium
+property_value: UBPROP:0000001 "The olfactory mucosa is located in the upper region of the nasal cavity and is made up of the olfactory epithelium and the underlying lamina propria, connective tissue containing fibroblasts, blood vessels, Bowman's glands and bundles of fine axons from the olfactory neurons. The mucus protects the olfactory epithelium and allows odors to dissolve so that they can be detected by olfactory receptor neurons. Electron microscopy studies show that Bowman's glands contain cells with large secretory vesicles. The exact composition of the secretions from Bowman's glands is unclear, but there is evidence that Bowman's glands do not produce odorant binding protein[WP][Wikipedia:Olfactory_mucosa]." xsd:string {source="Wikipedia:Olfactory_mucosa"}
 
 [Term]
 id: UBERON:0005562
@@ -5735,6 +5811,7 @@ xref: EHDAA2:0001295
 xref: EHDAA:4772
 xref: EMAPA:16800
 xref: SCTID:361485001
+xref: Wikipedia:Nasal_pit
 xref: XAO:0000275
 xref: XAO:0004073
 relationship: part_of UBERON:0000004 {source="EMAPA"} ! olfactory apparatus
@@ -5744,7 +5821,7 @@ property_value: UBPROP:0000001 "By the upgrowth of the surrounding parts the olf
 id: UBERON:0005928
 name: external naris
 namespace: uberon
-def: "Surface structure that provides one of the small external openings of the head that give passage to air for breathing." [OMD:nostril, Wikipedia:Nostril]
+def: "Surface structure that provides one of the small external openings of the head that give passage to air for breathing." [Wikipedia:Nostril]
 comment: Fish have two pairs of external nostrils.
 subset: vertebrate_core
 synonym: "anterior nares" RELATED PLURAL [VHOG:0000544]
@@ -5767,6 +5844,7 @@ xref: SCTID:276165005
 xref: TAO:0000550
 xref: UMLS:C0595944
 xref: VHOG:0000544
+xref: Wikipedia:Nostril
 xref: XAO:0003033
 xref: ZFA:0000550
 relationship: part_of UBERON:0000004 ! olfactory apparatus
@@ -5803,6 +5881,7 @@ xref: RETIRED_EHDAA2:0000909
 xref: SCTID:361426003
 xref: UMLS:C1283960
 xref: VHOG:0001404
+xref: Wikipedia:Laryngotracheal_groove
 relationship: part_of UBERON:0001558 {source="EHDAA2"} ! lower respiratory tract
 property_value: UBPROP:0000003 "Lung development begins with the appearance of the laryngotracheal groove, which is a small diverticulum that arises from the floor of the primitive pharynx at E9 in mouse and 4 wk in human.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001404", ontology="VHOG", source="PMID:15817505 Warburton D, Bellusci S, De Langhe S, Del Moral PM, Fleury V, Mailleux A, Tefft D, Unbekandt M, Wang K, Shi W, Molecular mechanisms of early lung specification and branching morphogenesis. Pediatric Research (2005)", source="http://bgee.unil.ch/"}
 
@@ -5836,6 +5915,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/3/3f/Gray163.png
 xref: ncithesaurus:Nasolacrimal_Groove
 xref: UMLS:C1513875
 xref: VHOG:0001307
+xref: Wikipedia:Lacrimal_groove
 is_a: UBERON:0004807 {is_inferred="true"} ! respiratory system epithelium
 relationship: part_of UBERON:0000004 {source="EHDAA2"} ! olfactory apparatus
 
@@ -5986,6 +6066,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/f/f2/Diagrama_de_los_pulmone
 xref: ncithesaurus:Carina
 xref: SCTID:181214003
 xref: UMLS:C0225594
+xref: Wikipedia:Carina_of_trachea
 is_a: UBERON:0003604 {is_inferred="true"} ! trachea cartilage
 relationship: connects UBERON:0002182 ! main bronchus
 relationship: connects UBERON:0003126 ! trachea
@@ -6001,6 +6082,7 @@ synonym: "trachealis muscle" EXACT [FMA:7466]
 xref: EMAPA:19193
 xref: FMA:7466
 xref: SCTID:197333002
+xref: Wikipedia:Trachealis_muscle
 is_a: UBERON:0003387 {is_inferred="true"} ! smooth muscle of trachea
 relationship: part_of UBERON:0003387 ! smooth muscle of trachea
 
@@ -6027,6 +6109,7 @@ xref: EMAPA:17187
 xref: http://upload.wikimedia.org/wikipedia/commons/5/5c/Gray979.png
 xref: SCTID:308821003
 xref: VHOG:0000730
+xref: Wikipedia:Tuberculum_impar
 relationship: part_of UBERON:0006260 {source="EHDAA2"} ! lingual swellings
 property_value: UBPROP:0000003 "Most adult amphibians have a tongue, as do all known reptiles, birds and mammals. Thus it is likely that the tongue appeared with the establishment of tetrapods and this structure seems to be related, to some extant, to the terrestrial lifestyle.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000730", ontology="VHOG", source="DOI:10.1046/j.1469-7580.2002.00073.x", source="http://bgee.unil.ch/"}
 
@@ -6044,6 +6127,7 @@ xref: EHDAA2:0000911
 xref: EMAPA:17189
 xref: http://upload.wikimedia.org/wikipedia/commons/5/5c/Gray979.png
 xref: VHOG:0000731
+xref: Wikipedia:Lateral_lingual_swelling
 relationship: part_of UBERON:0006260 ! lingual swellings
 property_value: UBPROP:0000003 "Most adult amphibians have a tongue, as do all known reptiles, birds and mammals. Thus it is likely that the tongue appeared with the establishment of tetrapods and this structure seems to be related, to some extant, to the terrestrial lifestyle.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000731", ontology="VHOG", source="DOI:10.1046/j.1469-7580.2002.00073.x Iwasaki S, Evolution of the structure and function of the vertebrate tongue. J Anat (2002)", source="http://bgee.unil.ch/"}
 
@@ -6093,6 +6177,7 @@ synonym: "wings of the nose" RELATED [Wikipedia:Ala_of_nose]
 xref: FMA:59519
 xref: http://upload.wikimedia.org/wikipedia/commons/e/e1/Gray852.png
 xref: SCTID:361345006
+xref: Wikipedia:Ala_of_nose
 relationship: in_lateral_side_of UBERON:0007827 {source="FMA-abduced-lr"} ! external nose
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
@@ -6138,6 +6223,7 @@ subset: organ_slim
 synonym: "tracheobronchial system" RELATED [HP:0005607]
 xref: FMA:7393
 xref: SCTID:361384001
+xref: Wikipedia:Tracheobronchial_tree
 relationship: has_part UBERON:0002185 ! bronchus
 relationship: has_part UBERON:0003126 ! trachea
 relationship: part_of UBERON:0001558 ! lower respiratory tract
@@ -6155,6 +6241,7 @@ xref: MA:0000773
 xref: ncithesaurus:Lingual_Tonsil
 xref: SCTID:276957006
 xref: UMLS:C0229871
+xref: Wikipedia:Lingual_tonsils
 is_a: UBERON:0002372 ! tonsil
 
 [Term]
@@ -6201,6 +6288,7 @@ synonym: "greater alar cartilage" EXACT [FMA:59504]
 xref: FMA:59504
 xref: http://upload.wikimedia.org/wikipedia/commons/e/e1/Gray852.png
 xref: SCTID:361928006
+xref: Wikipedia:Greater_alar_cartilage
 is_a: UBERON:0001823 {source="FMA"} ! nasal cartilage
 
 [Term]
@@ -6214,6 +6302,7 @@ synonym: "lesser alar cartilages" RELATED PLURAL []
 xref: FMA:59507
 xref: http://upload.wikimedia.org/wikipedia/commons/e/e1/Gray852.png
 xref: SCTID:368118006
+xref: Wikipedia:Lesser_alar_cartilages
 is_a: UBERON:0001823 {source="FMA"} ! nasal cartilage
 
 [Term]
@@ -6224,6 +6313,7 @@ def: "small cartilages of the nose connecting the greater alar cartilage and lat
 synonym: "cartilago nasi accessoriae" RELATED LATIN [Wikipedia:Accessory_nasal_cartilage]
 xref: FMA:59510
 xref: SCTID:368124000
+xref: Wikipedia:Accessory_nasal_cartilages
 is_a: UBERON:0001823 {source="FMA"} ! nasal cartilage
 
 [Term]
@@ -6235,6 +6325,7 @@ synonym: "cartilago nasi lateralis" RELATED LATIN [Wikipedia:Lateral_nasal_carti
 xref: FMA:59511
 xref: http://upload.wikimedia.org/wikipedia/commons/e/e1/Gray852.png
 xref: SCTID:278944009
+xref: Wikipedia:Lateral_nasal_cartilage
 is_a: UBERON:0001823 {source="FMA"} ! nasal cartilage
 
 [Term]
@@ -6248,6 +6339,7 @@ synonym: "Jacobson's cartilage" EXACT [FMA:59514]
 xref: FMA:59514
 xref: http://upload.wikimedia.org/wikipedia/commons/8/84/Gray51.png
 xref: SCTID:368123006
+xref: Wikipedia:Vomeronasal_cartilage
 is_a: UBERON:0001823 {source="FMA"} ! nasal cartilage
 
 [Term]
@@ -6278,6 +6370,7 @@ name: nasal bridge
 namespace: uberon
 def: "A saddle-shaped area that includes the nasal root and the lateral aspects of the nose. It lies between the glabella and the inferior boundary of the nasal bone, and extends laterally to the inner canth[WP]." [http://onlinelibrary.wiley.com/doi/10.1002/ajmg.a.32600/full, Wikipedia:Nasal_bridge]
 xref: MA:0002874
+xref: Wikipedia:Nasal_bridge
 is_a: UBERON:0000061 {source="AEO"} ! anatomical structure
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
@@ -6326,6 +6419,7 @@ synonym: "posterior cricoarytenoideus" EXACT [FMA:46576]
 xref: FMA:46576
 xref: http://upload.wikimedia.org/wikipedia/commons/9/9d/Musculuscricoarytenoideusposterior.png
 xref: SCTID:244812005
+xref: Wikipedia:Posterior_cricoarytenoid_muscle
 is_a: UBERON:0010932 ! crico-arytenoid muscle
 relationship: has_muscle_antagonist UBERON:0008573 {source="dbpedia"} ! lateral crico-arytenoid
 relationship: has_muscle_insertion UBERON:0001740 {notes="muscular process of the arytenoid cartilage", source="dbpedia"} ! arytenoid cartilage
@@ -6347,6 +6441,7 @@ synonym: "musculus cricoarytenoideus lateralis" RELATED LATIN [Wikipedia:Lateral
 xref: FMA:46579
 xref: http://upload.wikimedia.org/wikipedia/commons/3/34/Musculuscricoarytenoideuslateralis.png
 xref: SCTID:244813000
+xref: Wikipedia:Lateral_cricoarytenoid_muscle
 is_a: UBERON:0010932 ! crico-arytenoid muscle
 relationship: has_muscle_antagonist UBERON:0008572 {source="dbpedia"} ! posterior crico-arytenoid
 relationship: has_muscle_insertion UBERON:0001740 {notes="muscular process of the arytenoid cartilage", source="dbpedia"} ! arytenoid cartilage
@@ -6360,6 +6455,7 @@ def: "The tranverse arytenoid crosses transversely between the two cartilages. I
 synonym: "arytenoid transversus" RELATED []
 synonym: "tranverse arytenoid muscle" RELATED [Wikipedia:Transverse_arytenoid]
 xref: FMA:46582
+xref: Wikipedia:Arytenoid_muscle
 is_a: UBERON:0010958 ! arytenoid muscle
 
 [Term]
@@ -6371,6 +6467,7 @@ synonym: "arytenoid obliquus" RELATED []
 synonym: "oblique arytenoid muscle" RELATED [Wikipedia:Oblique_arytenoid]
 xref: FMA:46583
 xref: SCTID:244817004
+xref: Wikipedia:Oblique_arytenoid_muscle
 is_a: UBERON:0010958 ! arytenoid muscle
 
 [Term]
@@ -6396,6 +6493,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/6/64/Musculusthyreoarytenoid
 xref: ncithesaurus:Thyroarytenoid_Muscle
 xref: SCTID:361814004
 xref: UMLS:C0224183
+xref: Wikipedia:Thyroarytenoid_muscle
 is_a: UBERON:0006328 {source="FMA"} ! laryngeal intrinsic muscle
 relationship: has_muscle_insertion UBERON:0001740 {notes="Anterior surface of arytenoid cartilage", source="dbpedia"} ! arytenoid cartilage
 relationship: has_muscle_origin UBERON:0001738 {notes="Inner surface of the thyroid cartilage", source="dbpedia"} ! thyroid cartilage
@@ -6414,6 +6512,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/6/64/Musculusthyreoarytenoid
 xref: ncithesaurus:Vocalis_Muscle
 xref: SCTID:244820007
 xref: UMLS:C0224181
+xref: Wikipedia:Vocal_muscle
 is_a: UBERON:0006328 {source="FMA"} ! laryngeal intrinsic muscle
 relationship: part_of UBERON:0001737 {source="FMA"} ! larynx
 relationship: part_of UBERON:0008576 {source="Wikipedia"} ! thyro-arytenoid
@@ -6430,6 +6529,7 @@ synonym: "pyramidalis nasi" RELATED [Wikipedia:Procerus_muscle]
 xref: FMA:46769
 xref: http://upload.wikimedia.org/wikipedia/commons/7/76/Procerus.png
 xref: SCTID:244731008
+xref: Wikipedia:Procerus_muscle
 is_a: UBERON:0008522 {source="FMA"} ! nasal muscle
 
 [Term]
@@ -6445,6 +6545,7 @@ synonym: "musculus depressor septi nasi" RELATED LATIN [Wikipedia:Depressor_sept
 xref: FMA:46777
 xref: http://upload.wikimedia.org/wikipedia/commons/6/6c/Musculusdepressorseptinasi.PNG
 xref: SCTID:244733006
+xref: Wikipedia:Depressor_septi_nasi_muscle
 is_a: UBERON:0008522 {source="FMA"} ! nasal muscle
 
 [Term]
@@ -6461,6 +6562,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/5/59/Musculusstylopharyngeus
 xref: ncithesaurus:Stylopharyngeus
 xref: SCTID:244806000
 xref: UMLS:C1522014
+xref: Wikipedia:Stylopharyngeus_muscle
 is_a: UBERON:0003831 {is_inferred="true"} ! respiratory system muscle
 relationship: has_muscle_insertion UBERON:0001738 {source="dbpedia", notes="thyroid cartilage"} ! thyroid cartilage
 relationship: in_lateral_side_of UBERON:0001042 {source="FMA-abduced-lr"} ! chordate pharynx
@@ -6506,6 +6608,7 @@ xref: FMA:7313
 xref: ncithesaurus:Pulmonary_Acinus
 xref: SCTID:361365004
 xref: UMLS:C0225696
+xref: Wikipedia:Acinus#The_Lungs
 is_a: UBERON:0010368 {source="FMA"} ! pulmonary lobule
 relationship: part_of UBERON:0002048 ! lung
 
@@ -6516,6 +6619,7 @@ namespace: uberon
 def: "External gills are the gills of an animal, most typically an amphibian, that are exposed to the environment, rather than set inside the pharynx and covered by gill slits, as they are in most fishes[BTO]." [BTO:0004689, Wikipedia:External_gills]
 xref: AAO:0010174
 xref: BTO:0004689
+xref: Wikipedia:External_gills
 xref: XAO:0000120
 is_a: UBERON:0002535 {source="BTO"} ! gill
 property_value: UBPROP:0000001 "External gills are the gills of an animal, most typically an amphibian, that are exposed to the environment, rather than set inside the pharynx and covered by gill slits, as they are in most fishes. Instead, the respiratory organs are set on a frill of stalks protruding from the sides of an animals head. This type of gill is most commonly observed on the aquatic larva of most species of salamanders, lungfish, and bichirs (which have only one large pair), and are retained by neotenic adult salamanders and some species of adult lungfish. They are present on non-transforming salamander species such as the mudpuppy, as well as most members of the Proteidae and Sirenidae families, which naturally never metamorphose into an air-breathing form. The embryos of frogs and caecilians also develop external gills at some point in their development, though these are either resorbed before or disappear shortly after hatching. Fossils of the distant relatives of modern amphibians, such as Branchiosaurus and Apateon, also show evidence of external gills. The external gills commonly consist of a single stalk (rami) protruding from a gill arch behind the head of the animal, above an associated gill slit. The stalk usually contains muscle tissue, and may be moved by the animal as a free appendage, in order to stir up stagnant water. The stalk is lined by many thinly walled filaments (fimbriae), containing the majority of blood vessels used in gas exchange. Animals usually have one external gill originating on each gill arch (except the hyoid), which leads to there being three pairs of external gills in salamanders, and four in the gilled larvae of lungfish[Wikipedia:External_gills]." xsd:string {source="Wikipedia:External_gills"}
@@ -6541,9 +6645,9 @@ relationship: part_of UBERON:0002048 {source="FMA"} ! lung
 id: UBERON:0008948
 name: upper lobe of lung
 namespace: uberon
-def: "A lobe of the lung that is closest to the head." [UBERON:cjm]
+def: "A lobe of the lung that is closest to the head." [https://orcid.org/0000-0002-6601-2165]
 comment: Editor notes: the logical definition must have a clause stating position relative to a lower lobe, otherwise a single lobed side (such as the left lobe in the mouse) trivially classifies as an upper lobe
-synonym: "cranial lobe of lung" EXACT [UBERON:cjm]
+synonym: "cranial lobe of lung" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "lobus superior" EXACT [FMA:7334]
 synonym: "lobus superior pulmonis" EXACT LATIN [FMA:TA]
 synonym: "superior lobe of lung" EXACT [FMA:7334]
@@ -6562,9 +6666,9 @@ id: UBERON:0008949
 name: lower lobe of lung
 namespace: uberon
 comment: Editor notes: defining lobes spatially across species
-synonym: "inferior lobe of lung" EXACT [UBERON:cjm]
-synonym: "lobus inferior" EXACT [UBERON:cjm]
-synonym: "lobus inferior pulmonis" EXACT [UBERON:cjm]
+synonym: "inferior lobe of lung" EXACT [https://orcid.org/0000-0002-6601-2165]
+synonym: "lobus inferior" EXACT [https://orcid.org/0000-0002-6601-2165]
+synonym: "lobus inferior pulmonis" EXACT [https://orcid.org/0000-0002-6601-2165]
 xref: FMA:7335
 xref: galen:LowerLobeOfLung
 xref: ncithesaurus:Lung_Lower_Lobe
@@ -6600,7 +6704,7 @@ intersection_of: part_of UBERON:0002168 ! left lung
 id: UBERON:0008952
 name: upper lobe of left lung
 namespace: uberon
-def: "The lobe of the left lung that is closest to the head." [UBERON:cjm]
+def: "The lobe of the left lung that is closest to the head." [https://orcid.org/0000-0002-6601-2165]
 synonym: "left lung cranial lobe" EXACT [EHDAA2:0000953]
 synonym: "left upper lobe" EXACT [FMA:7370]
 synonym: "left upper lobe of lung" EXACT [FMA:7370]
@@ -6658,6 +6762,7 @@ xref: galen:MiddleLobeOfLeftLung
 xref: ncithesaurus:Lingula
 xref: SCTID:184916009
 xref: UMLS:C0225740
+xref: Wikipedia:Lingula_of_left_lung
 is_a: UBERON:0000072 {is_inferred="true"} ! segment of respiratory tract
 relationship: part_of UBERON:0008952 {source="ISBN-10:0123813611"} ! upper lobe of left lung
 property_value: RO:0002161 NCBITaxon:10088 {source="ISBN-10:0123813611"}
@@ -6666,7 +6771,7 @@ property_value: RO:0002161 NCBITaxon:10088 {source="ISBN-10:0123813611"}
 id: UBERON:0008955
 name: middle lobe of lung
 namespace: uberon
-def: "A lobe of the lung that is situated somewhere between an upper lobe and lower lobe." [UBERON:cjm]
+def: "A lobe of the lung that is situated somewhere between an upper lobe and lower lobe." [https://orcid.org/0000-0002-6601-2165]
 comment: Taxon notes: mice have 4 right lobes (5 in some schemes), humans have 2, and thus no middle lobe (the lingula is not a lobe)
 synonym: "lung middle lobe" EXACT []
 xref: galen:MiddleLobeOfLung
@@ -6706,11 +6811,12 @@ name: air sac
 namespace: uberon
 def: "any of the membranous air-filled extensions of the lungs of birds, which increase the efficiency of gaseous exchange in the lungs" [http://www.thefreedictionary.com/air+sac, Wikipedia:Bird_anatomy#Respiratory_system]
 comment: Three distinct sets of organs perform respiration—the anterior air sacs (interclavicular, cervicals, and anterior thoracics), the lungs, and the posterior air sacs (posterior thoracics and abdominals). The posterior and anterior air sacs, typically nine, expand during inhalation. Air enters the bird via the trachea. Half of the inhaled air enters the posterior air sacs, the other half passes through the lungs and into the anterior air sacs. Air from the anterior air sacs empties directly into the trachea and out the bird's mouth or nares. The posterior air sacs empty their air into the lungs. Air passing through the lungs as the bird exhales is expelled via the trachea. Some taxonomic groups (Passeriformes) possess 7 air sacs, as the clavicular air sacs may interconnect or be fused with the cranial thoracic air sacs[WP]
-synonym: "psotcranial air sac" RELATED [UBERON:cjm]
+synonym: "psotcranial air sac" RELATED [https://orcid.org/0000-0002-6601-2165]
 synonym: "sacci pneumatici" EXACT LATIN []
 xref: http://upload.wikimedia.org/wikipedia/commons/f/f2/BirdRespiration.svg
 xref: MESH:A13.048
 xref: SCTID:49081009
+xref: Wikipedia:Bird_anatomy#Respiratory_system
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of UBERON:0001004 ! respiratory system
 
@@ -6811,6 +6917,7 @@ subset: organ_slim
 synonym: "avian vocal organ" RELATED []
 synonym: "syrinx" RELATED []
 xref: http://upload.wikimedia.org/wikipedia/commons/8/87/Syrinx.jpg
+xref: Wikipedia:Syrinx_(bird_anatomy)
 relationship: part_of UBERON:0003126 ! trachea
 
 [Term]
@@ -7055,6 +7162,7 @@ namespace: uberon
 def: "a small hole behind each eye that opens to the mouth in some fish. In the primitive jawless fish the first gill opening immediately behind the mouth is essentially similar to the other gill openings." [ISBN10:0073040584, Wikipedia:Spiracle#Vertebrates]
 comment: Taxon notes: The spiracle is still found in all cartilaginous fish except chimaeras, and in bony fishes in the coelacanth, sturgeon, paddlefish and bichirs. It is also seen as an otic notch in the skull of the extinct labyrinthodonts, and is thought to be associated with the ear opening in amniotes and frogs[WP]. In elasmobranchs (sharks and rays), a spiracle is found behind each eye, and is often used to pump water through the gills while the animal is at rest (Fouts, 2003). A spiracle is also found in primitive bony fishes as the chirrups. TODO - check GO:0035277-spiracle morphogenesis, open tracheal system - taxon constraint in GO
 synonym: "vertebrate spiracle" EXACT []
+xref: Wikipedia:Spiracle#Vertebrates
 relationship: part_of UBERON:0001004 ! respiratory system
 property_value: RO:0002161 NCBITaxon:32523
 
@@ -7069,6 +7177,7 @@ synonym: "copula linguae" RELATED LATIN [Wikipedia:Copula_linguae]
 xref: EHDAA2:0004611
 xref: http://upload.wikimedia.org/wikipedia/commons/8/85/Gray980.png
 xref: SCTID:361424000
+xref: Wikipedia:Copula_linguae
 relationship: part_of UBERON:0010056 {source="EHDAA2"} ! future tongue
 
 [Term]
@@ -7184,6 +7293,7 @@ synonym: "pharyngopalatinus muscle" EXACT [Wikipedia:Palatopharyngeus_muscle]
 xref: FMA:46666
 xref: http://upload.wikimedia.org/wikipedia/commons/1/1b/Musculuspalatopharyngeus.png
 xref: SCTID:244796000
+xref: Wikipedia:Palatopharyngeus_muscle
 is_a: UBERON:0003831 {is_inferred="true"} ! respiratory system muscle
 relationship: has_muscle_insertion UBERON:0001738 {notes="Upper border of thyroid cartilage", source="dbpedia"} ! thyroid cartilage
 relationship: in_lateral_side_of UBERON:0001042 {source="FMA-abduced-lr"} ! chordate pharynx
@@ -7252,6 +7362,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/6/64/Musculusthyreoarytenoid
 xref: ncithesaurus:Thyroepiglottic_Muscle
 xref: SCTID:244819001
 xref: UMLS:C0224182
+xref: Wikipedia:Thyroepiglottic_muscle
 is_a: UBERON:0001568 {source="ncithesaurus"} ! muscle of larynx
 relationship: part_of UBERON:0008576 {source="FMA"} ! thyro-arytenoid
 property_value: UBPROP:0000001 "Thexton, see notes from WG2.[FEED]" xsd:string {date_retrieved="2012-07-02", ontology="FEED", url="http://www.feedexp.org"}
@@ -7270,6 +7381,7 @@ xref: MA:0002283
 xref: ncithesaurus:Cricoarytenoid_Muscle
 xref: SCTID:244811003
 xref: UMLS:C0448336
+xref: Wikipedia:Cricoarytenoid_muscle
 is_a: UBERON:0006328 {source="FMA"} ! laryngeal intrinsic muscle
 relationship: has_muscle_insertion UBERON:0001740 {source="dbpedia"} ! arytenoid cartilage
 relationship: has_muscle_origin UBERON:0002375 {source="dbpedia"} ! cricoid cartilage
@@ -7287,6 +7399,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/e/e3/Salpingopharyngeus.png
 xref: ncithesaurus:Salpingopharyngeus
 xref: SCTID:244807009
 xref: UMLS:C1521985
+xref: Wikipedia:Salpingopharyngeus_muscle
 is_a: UBERON:0003831 {is_inferred="true"} ! respiratory system muscle
 relationship: has_muscle_insertion UBERON:0001738 {source="dbpedia", notes="fibers pass downward and blend with the palatopharyngeus muscle to the upper border thyroid cartilage blending with constrictor fibers"} ! thyroid cartilage
 relationship: has_muscle_insertion UBERON:0010234 {source="dbpedia", notes="fibers pass downward and blend with the palatopharyngeus muscle to the upper border thyroid cartilage blending with constrictor fibers"} ! palatopharyngeus muscle
@@ -7306,6 +7419,7 @@ synonym: "nasalis" EXACT [FMA:46770]
 xref: FMA:46770
 xref: http://upload.wikimedia.org/wikipedia/commons/b/bb/Nasalis.png
 xref: SCTID:244732001
+xref: Wikipedia:Nasalis_muscle
 is_a: UBERON:0008522 {source="FMA"} ! nasal muscle
 relationship: has_muscle_insertion UBERON:0001681 {source="dbpedia"} ! nasal bone
 relationship: in_lateral_side_of UBERON:0000004 {source="FMA-abduced-lr"} ! olfactory apparatus
@@ -7323,6 +7437,7 @@ synonym: "ArytÃ?noideus" RELATED LATIN [Wikipedia:Arytenoid_muscle]
 xref: http://upload.wikimedia.org/wikipedia/commons/5/52/Musculusarytenoideus.png
 xref: ncithesaurus:Arytenoid_Muscle
 xref: UMLS:C1510945
+xref: Wikipedia:Arytenoid_muscle
 is_a: UBERON:0006328 ! laryngeal intrinsic muscle
 relationship: has_muscle_insertion UBERON:0001740 {source="dbpedia", notes="Arytenoid cartilage on opposite side"} ! arytenoid cartilage
 relationship: has_muscle_origin UBERON:0001740 {source="dbpedia", notes="Arytenoid cartilage on one side"} ! arytenoid cartilage
@@ -7347,6 +7462,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/5/52/Musculusarytenoideus.pn
 xref: ncithesaurus:Aryepiglottic_Muscle
 xref: SCTID:244818009
 xref: UMLS:C0224177
+xref: Wikipedia:Aryepiglottic_muscle
 is_a: UBERON:0001568 {source="ncithesaurus"} ! muscle of larynx
 relationship: has_muscle_insertion UBERON:0000388 ! epiglottis
 relationship: has_muscle_origin UBERON:0001740 ! arytenoid cartilage
@@ -7393,6 +7509,7 @@ xref: AAO:0000690
 xref: FMA:55111
 xref: http://upload.wikimedia.org/wikipedia/commons/5/50/Gray956.png
 xref: SCTID:264456009
+xref: Wikipedia:Cuneiform_cartilages
 is_a: UBERON:0001739 {source="FMA"} ! laryngeal cartilage
 is_a: UBERON:0003406 {is_inferred="true"} ! cartilage of respiratory system
 is_a: UBERON:0003583 {is_inferred="true"} ! larynx connective tissue
@@ -7424,6 +7541,7 @@ name: rhinarium
 namespace: uberon
 def: "Moist, hairless, crenelated area around nostrils of some mammals" [http://anthro.palomar.edu/primate/glossary.htm, Wikipedia:Rhinarium]
 comment: Absent in Tarsiers
+xref: Wikipedia:Rhinarium
 relationship: part_of UBERON:0007827 ! external nose
 relationship: surrounds UBERON:0005928 ! external naris
 
@@ -7436,6 +7554,7 @@ synonym: "pharyngeal aponeurosis" EXACT [FMA:55074]
 synonym: "pharyngeal aponeurosis" RELATED [Wikipedia:Pharyngobasilar_fascia]
 xref: FMA:55074
 xref: SCTID:16675008
+xref: Wikipedia:Pharyngobasilar_fascia
 
 [Term]
 id: UBERON:0011311
@@ -7448,6 +7567,7 @@ xref: FMA:55227
 xref: ncithesaurus:Hyoepiglottic_Ligament
 xref: SCTID:279552007
 xref: UMLS:C0225515
+xref: Wikipedia:Hyoepiglottic_ligament
 is_a: UBERON:0001730 {source="FMA"} ! extrinsic ligament of larynx
 relationship: connects UBERON:0000388 ! epiglottis
 relationship: part_of UBERON:0001737 ! larynx
@@ -7483,6 +7603,7 @@ synonym: "cornu superius cartilaginis thyroideae" EXACT LATIN []
 synonym: "superior cornu of thyroid cartilage" EXACT [FMA:55294]
 xref: FMA:55294
 xref: SCTID:279520007
+xref: Wikipedia:Superior_horn_of_thyroid_cartilage
 is_a: UBERON:0011623 {source="FMA"} ! horn of thyroid cartilage
 
 [Term]
@@ -7494,6 +7615,7 @@ synonym: "cornu inferius (cartilago thyroidea)" EXACT [FMA:55297]
 synonym: "cornu inferius cartilaginis thyroideae" EXACT LATIN []
 xref: FMA:55297
 xref: SCTID:279521006
+xref: Wikipedia:Inferior_horn_of_thyroid_cartilage
 is_a: UBERON:0011623 {source="FMA"} ! horn of thyroid cartilage
 
 [Term]
@@ -7512,6 +7634,7 @@ synonym: "hair of vestibular part of nose" EXACT [FMA:53670]
 synonym: "nose hair" EXACT [FMA:53670]
 xref: FMA:53670
 xref: SCTID:368885003
+xref: Wikipedia:Nasal_hair
 
 [Term]
 id: UBERON:0011985
@@ -7619,6 +7742,7 @@ namespace: uberon
 def: "A bronchiole that arises from a segmental bronchus and does not contain cartilage." [ISBN10:0123813611, Wikipedia:Bronchiole#Primary_bronchioles]
 synonym: "proximal bronchiole" EXACT [FMA:62510]
 xref: FMA:62510
+xref: Wikipedia:Bronchiole#Primary_bronchioles
 is_a: UBERON:0002186 {source="FMA"} ! bronchiole
 relationship: proximally_connected_to UBERON:0002184 ! segmental bronchus
 
@@ -7720,8 +7844,9 @@ id: UBERON:0012121
 name: respiratory velum
 namespace: uberon
 def: "a respiratory pump found in basal craniates" [Wikipedia:http\://palaeos.com/vertebrates/glossary/glossaryUV.html]
-comment: Muscular scroll-like flap that moves water through median nostril and over gills
+comment: Muscular scroll-like flap that moves water through median nostril and over gills // trifid and posteriorly directed lamina arising from roof of pharynx, behind posterior end of naso-pharyngeal duct
 synonym: "velum" BROAD []
+xref: Wikipedia:http\://palaeos.com/vertebrates/glossary/glossaryUV.html
 is_a: UBERON:0000171 ! respiration organ
 property_value: present_in_taxon NCBITaxon:7762
 
@@ -7751,6 +7876,7 @@ xref: MA:0000777
 xref: ncithesaurus:Tonsillar_Crypt
 xref: SCTID:143723007
 xref: UMLS:C0229876
+xref: Wikipedia:Tonsillar_crypts
 is_a: UBERON:0003351 {is_inferred="true"} ! pharyngeal epithelium
 relationship: part_of UBERON:0002372 {source="MA"} ! tonsil
 
@@ -7762,6 +7888,7 @@ def: "The nasal glands are the seromucous glands in the respiratory region of th
 xref: ncithesaurus:Nose_Nasal_Cavity_Nasal_Gland_MMHCC
 xref: SCTID:368881007
 xref: UMLS:C1522269
+xref: Wikipedia:Nasal_glands
 
 [Term]
 id: UBERON:0012304
@@ -7800,6 +7927,7 @@ synonym: "crico-pharyngeal ligament" EXACT []
 synonym: "ligamentum cricopharyngeum" EXACT LATIN [Wikipedia:Cricopharyngeal_ligament]
 xref: FMA:55260
 xref: SCTID:172455006
+xref: Wikipedia:Cricopharyngeal_ligament
 is_a: UBERON:0001730 {source="FMA"} ! extrinsic ligament of larynx
 intersection_of: UBERON:0001743 ! ligament of larynx
 intersection_of: connects UBERON:0001042 ! chordate pharynx
@@ -7816,6 +7944,7 @@ xref: FMA:55230
 xref: ncithesaurus:Thyroepiglottic_Ligament
 xref: SCTID:279562000
 xref: UMLS:C0225514
+xref: Wikipedia:Thyroepiglottic_ligament
 is_a: UBERON:0006325 {source="FMA"} ! laryngeal intrinsic ligament
 intersection_of: UBERON:0001743 ! ligament of larynx
 intersection_of: connects UBERON:0001738 ! thyroid cartilage
@@ -7831,6 +7960,7 @@ synonym: "ventricular ligament" EXACT [Wikipedia:Vestibular_ligament]
 synonym: "vestibular ligament of larynx" EXACT []
 xref: FMA:64147
 xref: SCTID:279561007
+xref: Wikipedia:Vestibular_ligament
 is_a: UBERON:0006325 {source="FMA"} ! laryngeal intrinsic ligament
 intersection_of: UBERON:0001743 ! ligament of larynx
 intersection_of: connects UBERON:0001738 ! thyroid cartilage
@@ -7845,6 +7975,7 @@ synonym: "crico-arytenoid ligament" EXACT [FMA:55261]
 synonym: "ligamentum cricoaryteneoideum" EXACT LATIN [Wikipedia:Cricoarytenoid_ligament]
 xref: FMA:55261
 xref: SCTID:172533001
+xref: Wikipedia:Cricoarytenoid_ligament
 is_a: UBERON:0001730 {source="FMA"} ! extrinsic ligament of larynx
 intersection_of: UBERON:0001743 ! ligament of larynx
 intersection_of: connects UBERON:0001740 ! arytenoid cartilage
@@ -7861,6 +7992,7 @@ xref: FMA:55233
 xref: ncithesaurus:Cricothyroid_Ligament
 xref: SCTID:279558006
 xref: UMLS:C0225542
+xref: Wikipedia:Cricothyroid_ligament
 intersection_of: UBERON:0001743 ! ligament of larynx
 intersection_of: connects UBERON:0001738 ! thyroid cartilage
 intersection_of: connects UBERON:0002375 ! cricoid cartilage
@@ -7874,6 +8006,7 @@ xref: FMA:55259
 xref: ncithesaurus:Cricotracheal_Ligament
 xref: SCTID:279553002
 xref: UMLS:C0225543
+xref: Wikipedia:Cricotracheal_ligament
 is_a: UBERON:0001730 {source="FMA"} ! extrinsic ligament of larynx
 intersection_of: UBERON:0001743 ! ligament of larynx
 intersection_of: connects UBERON:0002375 ! cricoid cartilage
@@ -7895,6 +8028,7 @@ namespace: uberon
 def: "An olfactory ganglion at the entrance of the nose of mammals that is involved in the detection of alarm pheromones and cold temperatures. The ganglion was first described by Hans GrC<neberg in 1973." [Wikipedia:Gr%C3%BCneberg_ganglion]
 synonym: "Gruneberg ganglion" EXACT []
 synonym: "Grüneberg ganglion" EXACT []
+xref: Wikipedia:Gr%C3%BCneberg_ganglion
 relationship: located_in UBERON:0001826 ! nasal cavity mucosa
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 
@@ -7903,6 +8037,7 @@ id: UBERON:0013233
 name: supraorbital gland
 namespace: uberon
 def: "The supraorbital gland is a type of lateral nasal gland found in some species of marine birds, particularly penguins, which removes sodium chloride from the bloodstream. The gland's function is similar to that of the kidneys, though it is much more efficient at removing salt, allowing Penguins to survive without access to fresh water. Contrary to popular belief, the gland does not directly convert saltwater to freshwater. The term supraorbital refers to the area just above the eye socket (which is known as the orbit of the eye. ) Living in saltwater environments would naturally pose a large problem for penguins because the ingestion of saltwater would be detrimental to a penguin's health. Although penguins do not directly drink water, it is taken in when they engulf prey. As a result, saltwater enters their system and must be effectively excreted. The supraorbital gland has thus enabled the penguins' survival in such environments due to its water-filtering capability. The gland is located just above the eyes and surrounds a capillary in the head. This capillary constantly strains out the salt in the saltwater that a penguin takes in. Since the byproduct of the gland has roughly five times as much salt as would normally be found in the animal's fluids, the supraorbital gland is highly efficient. The penguin excretes the salt byproduct as a brine through its bill. Often, the fluid drips out, and this gives the appearance of a runny nose. However, the fluid may also be sneezed out. In the absence of saltwater, caused by captivity, the supraorbital gland will lie dormant as it has no other purpose. Having a dormant supraorbital gland does not negatively affect the health of a penguin." [Wikipedia:Supraorbital_gland]
+xref: Wikipedia:Supraorbital_gland
 is_a: UBERON:0012278 ! nasal gland
 
 [Term]
@@ -7912,6 +8047,7 @@ namespace: uberon
 def: "A hole at the top of a cetacean's head through which the animal breathes air" [Wikipedia:Blowhole_(anatomy)]
 comment: Taxon notes: Baleen whales have two blowholes positioned in a V-shape while toothed whales have only one blowhole. The blowhole of a sperm whale, a toothed whale, is located left of centre in the frontal area of the snout, and is actually its left nostril, while the right nostril lacks an opening to the surface despite the fact that its nasal passage is otherwise well developed.
 synonym: "blowhole slit" NARROW []
+xref: Wikipedia:Blowhole_(anatomy)
 is_a: UBERON:0005928 ! external naris
 
 [Term]
@@ -7996,6 +8132,10 @@ is_a: BSPO:0000100
 is_a: connected_to
 is_a: transitively_distally_connected_to
 inverse_of: proximally_connected_to
+
+[Typedef]
+id: encloses
+inverse_of: enclosed_by
 
 [Typedef]
 id: has_muscle_insertion
