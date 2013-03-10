@@ -95,7 +95,9 @@ bridge-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
 # check for dangling classes
 # TODO: add to Oort
 %-orphans: %.obo
-	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@.tmp && obo-skip-header.pl $@.tmp > $@
+	obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | obo-grep.pl -r Term - | obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | obo-grep.pl -r Term - > $@.tmp && (egrep '^(id|name):'  $@.tmp > $@ || echo ok)
+
+
 
 # TODO: add to Oort
 %-xp-check: %.obo
@@ -143,6 +145,7 @@ QC_FILES = uberon_edit-xp-check\
     uberon-simple-orphans\
     merged.obo-OE-check\
     merged-cycles\
+    merged-orphans\
     ext.owl\
     ext.obo\
     ext-obscheck.txt\
@@ -155,7 +158,7 @@ QC_FILES = uberon_edit-xp-check\
 
 
 uberon-qc: $(QC_FILES) all_systems
-	cat uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
+	cat merged-orphans uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 
 
 #%-dv.txt: %.obo %_closure-ontol_db.pro
