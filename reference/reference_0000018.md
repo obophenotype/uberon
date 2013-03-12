@@ -64,7 +64,8 @@ being unsatisfiable.
 
 ## Implementation in OBO-Format
 
-Note that GCIs cannot be directly authored in obo-format, by means of a *shortcut* relation:
+Note that GCIs cannot be *directly* authored in obo-format, but we can
+specify them indirectly, by means of a *shortcut* relation:
 
 ```
   [Typedef]
@@ -97,12 +98,16 @@ part_of some Y' and its reciprocal).
 
 However, working with reflexivity axioms poses some problems (outside
 the scope of this document, but briefly: global reflexivity axioms are
-too strong, and fast reasoners may not be able to use the correct axioms).
+too strong and cannot be used in conjunction with domain/range
+constraints; local reflexivity axioms of the form continuant
+SubClassOf part_of SELF should be used; also, fast reasoners such as
+Elk may not support these constructs, at least at the time of writing,
+and Uberon is heavily dependent on Elk for fast checking).
 
-To get around this, the Uberon release process will get around this
-limitation by performing a check where reflexivity is added as a rule,
-creating axioms of the form 'X part_of some X' in an unreleased
-'validator' ontology.
+One possible approach to get around this limitation: generate a
+supplementary ontology with axioms of the form 'X part_of some X';
+this could be hidden from the user, but imported as part of the
+Jenkins QC pipeline to check for spatial disjointness errors.
 
 
 
