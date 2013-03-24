@@ -20,7 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/xao.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2013-03-09/uberon/bridge/uberon-bridge-to-xao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2013-03-23/uberon/bridge/uberon-bridge-to-xao.owl"/>
     </owl:Ontology>
     
 
@@ -3789,6 +3789,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0013655 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0013655"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0013682 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0013682"/>
     
 
 
@@ -15052,6 +15058,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004215</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hypoglossal nerve (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004458 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004458">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0013682"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004458</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peripheral region of retina (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 

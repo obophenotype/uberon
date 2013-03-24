@@ -19,7 +19,7 @@ synonym: "bronchiolar non-ciliated cell" EXACT []
 synonym: "Clara cell of bronchiole" EXACT []
 xref: BTO:0004811
 xref: FMA:14119
-is_a: CL:0002328 ! bronchial epithelial cell
+is_a: CL:0002328 {is_inferred="true"} ! bronchial epithelial cell
 
 [Term]
 id: CL:0000307
@@ -30,7 +30,7 @@ def: "An epithelial cell found in the trachea." [GOC:tfm]
 synonym: "tracheocyte" EXACT []
 xref: FBbt:00005038
 xref: FMA:74793
-is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
+is_a: CL:0002202 {is_inferred="true"} ! epithelial cell of tracheobronchial tree
 relationship: part_of UBERON:0003126 ! trachea
 
 [Term]
@@ -219,8 +219,8 @@ namespace: cell
 alt_id: CL:1000388
 def: "Brush cell of the epithelium in the trachea." [GOC:tfm]
 xref: FMA:263224
-is_a: CL:0000307 ! tracheal epithelial cell
-is_a: CL:0002075 ! brush cell of trachebronchial tree
+is_a: CL:0000307 {is_inferred="true"} ! tracheal epithelial cell
+is_a: CL:0002075 {is_inferred="true"} ! brush cell of trachebronchial tree
 relationship: part_of UBERON:0001901 ! epithelium of trachea
 created_by: tmeehan
 creation_date: 2010-09-02T02:38:37Z
@@ -232,8 +232,8 @@ namespace: cell
 alt_id: CL:1000389
 def: "A brush cell found in the epithelium of bronchus." [GOC:tfm]
 xref: FMA:263226
-is_a: CL:0002075 ! brush cell of trachebronchial tree
-is_a: CL:0002328 ! bronchial epithelial cell
+is_a: CL:0002075 {is_inferred="true"} ! brush cell of trachebronchial tree
+is_a: CL:0002328 {is_inferred="true"} ! bronchial epithelial cell
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
 created_by: tmeehan
 creation_date: 2010-09-02T02:38:42Z
@@ -353,7 +353,7 @@ creation_date: 2011-03-06T05:50:28Z
 id: CL:0002631
 name: epithelial cell of upper respiratory tract
 namespace: cell
-is_a: CL:0002368 ! respiratory epithelial cell
+is_a: CL:0002368 {is_inferred="true"} ! respiratory epithelial cell
 relationship: part_of UBERON:0001557 ! upper respiratory tract
 created_by: tmeehan
 creation_date: 2011-06-21T12:28:55Z
@@ -362,7 +362,7 @@ creation_date: 2011-06-21T12:28:55Z
 id: CL:0002632
 name: epithelial cell of lower respiratory tract
 namespace: cell
-is_a: CL:0002368 ! respiratory epithelial cell
+is_a: CL:0002368 {is_inferred="true"} ! respiratory epithelial cell
 relationship: part_of UBERON:0001558 ! lower respiratory tract
 created_by: tmeehan
 creation_date: 2011-06-21T12:29:31Z
@@ -453,7 +453,7 @@ namespace: cell
 def: "A basal cell that is part of the epithelium of trachea." [GOC:tfm]
 xref: FMA:263118
 is_a: CL:0000307 ! tracheal epithelial cell
-is_a: CL:0002633 ! respiratory basal cell
+is_a: CL:0002633 {is_inferred="true"} ! respiratory basal cell
 relationship: part_of UBERON:0001901 ! epithelium of trachea
 
 [Term]
@@ -503,7 +503,7 @@ name: dense-core granulated cell of epithelium of trachea
 namespace: cell
 def: "A Feyrter cell that is part of the epithelium of trachea." [GOC:tfm]
 xref: FMA:263184
-is_a: CL:0000307 ! tracheal epithelial cell
+is_a: CL:0000307 {is_inferred="true"} ! tracheal epithelial cell
 relationship: part_of UBERON:0001901 ! epithelium of trachea
 
 [Term]
@@ -1238,6 +1238,7 @@ comment: The existence of some membrane separating the pharynx from the stomach 
 subset: organ_slim
 subset: uberon_slim
 synonym: "diaphragm muscle" EXACT [BTO:0000341]
+synonym: "diaphragm of thorax" EXACT []
 synonym: "midriff" RELATED [BTO:0000341]
 synonym: "phren" RELATED [BTO:0000341]
 synonym: "thoracic diaphragm" EXACT []
@@ -1258,10 +1259,8 @@ xref: UMLS:C0011980
 xref: VHOG:0000713
 xref: Wikipedia:Thoracid_diaphragm
 is_a: UBERON:0003831 {is_inferred="true"} ! respiratory system muscle
-is_a: UBERON:0004830 {is_inferred="true"} ! respiratory system skeletal muscle
 relationship: part_of UBERON:0001004 ! respiratory system
 property_value: RO:0002161 NCBITaxon:8782 {source="Wikipedia:Thoracic_diaphragm#Comparative_anatomy_and_evolution"}
-property_value: UBPROP:0000001 "A musculomembranous partition separating the abdominal and thoraic cavities and functioning in respiration. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000713", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/diaphragm"}
 property_value: UBPROP:0000003 "The mammals are characterized by a diaphragm, which separates the thoracic portion of the body cavity from the abdominal region and assists in drawing air into the lungs and forcing it out. Modern reptiles lack a muscular diaphragm and it is reasonable to suppose that the diaphragm developed as a new device that made possible a large degree of oxygen intake for active animals. The change may have taken place during the transition from reptile to mammal (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000713", ontology="VHOG", source="ISBN:978-0471384618 Colbert EH, Evolution of the vertebrates: a history of the backboned animals through time (2001) p.278", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "phrenic" xsd:string
 
