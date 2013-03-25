@@ -48,11 +48,14 @@ uberon-simple.obo: uberon_edit-implied.obo
 %.obo-OE-check: %.obo
 	obo2obo -o $@ $<
 
+CATALOG_MERGED = catalog-uberon-merged.xml
 ext.owl: pe/phenoscape-ext.owl
 #	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --add-imports-declarations $(OBO)/uberon/depictions.owl -o file://`pwd`/$@
-	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
+#	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
+#	ontology-release-runner --catalog-xml $(CATALOG_MERGED)  --outdir ext-release --reasoner elk --allow-overwrite --skip-format owx --no-subsets $<
+	owltools --catalog-xml $(CATALOG_MERGED) $< --set-ontology-id -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/ext.owl $(OBO)/uberon/ext.owl  --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
 ext.obo: ext.owl
-	owltools --catalog-xml catalog-uberon-merged.xml $< --merge-import-closure --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo $@
+	owltools --catalog-xml $(CATALOG_MERGED) $< --merge-import-closure --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo $@
 
 # ----------------------------------------
 # Taxonomy and external AO validation
@@ -708,6 +711,7 @@ release:
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
 	(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]* && svn ps svn:mime-type text/html reference_[0-9]*) ;\
+	release-diff ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''
 
