@@ -153,7 +153,7 @@ example, the axiom in Uberon:
   'metaphysis of femur' SubClassOf part_of some 'diaphysis of femur'
 ``
 
-Is accompanied by an axiom pointing to
+Is accompanied by an axiom annotation pointing to
 http://purl.obolibrary.org/obo/uberon/references/reference_0000032
 
 ## Other annotation properties used
