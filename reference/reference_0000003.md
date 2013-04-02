@@ -7,9 +7,9 @@ Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:
 
+ * other AO editors (author)
  * VAO editors (author)
  * Uberon editors (author)
- * other AO editors (author)
 
 Date: 2012
 

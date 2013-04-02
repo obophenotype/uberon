@@ -5,9 +5,9 @@ Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_00000
 
 Authors and contributors:
 
- * Melissa Haendel (author)
  * Chris Mungall (author)
  * Carlo Torniai (author)
+ * Melissa Haendel (author)
 
 Date: 2012
 
@@ -79,7 +79,7 @@ A composite ontology can be used in conjunctions with ontology bridging axioms
 
 
 ## See Also:
- * [http://purl.obolibrary.org/obo/uberon/references/reference_0000027](http://purl.obolibrary.org/obo/uberon/references/reference_0000027)
  * [http://www.obofoundry.org/wiki/index.php/UBERON:Merging](http://www.obofoundry.org/wiki/index.php/UBERON:Merging)
+ * [http://purl.obolibrary.org/obo/uberon/references/reference_0000027](http://purl.obolibrary.org/obo/uberon/references/reference_0000027)
 
 

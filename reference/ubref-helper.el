@@ -1,6 +1,6 @@
 ;; add yourself here
 (defvar creator "Chris Mungall")
-(defvar this-year "2012")
+(defvar this-year "2013")
 
 (defun set-id (id)
   ""

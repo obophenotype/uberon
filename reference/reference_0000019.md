@@ -7,8 +7,8 @@ Status: [initial draft](http://purl.org/spar/pso/initial-draft)
 
 Authors and contributors:
 
- * Chris Mungall (contributor)
  * Nizar Ibrahim (contributor)
+ * Chris Mungall (contributor)
 
 Date: 2012
 
