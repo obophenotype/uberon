@@ -65,9 +65,9 @@ PMID).
 The above looks like this in obo-format:
 
 ``
-id: UBERON:0010289
-name: scleral cartilage
-relationship: develops_from UBERON:0002342 {source='PMID:17051547'} ! neural crest
+  id: UBERON:0010289
+  name: scleral cartilage
+  relationship: develops_from UBERON:0002342 {source='PMID:17051547'} ! neural crest
 ``
 
 ## Provanence sources
@@ -173,6 +173,27 @@ This is somewhat ad-hoc. Conventions are still evolving and these
 annotations may be restructured to fit into a more standard community
 agreed upon model later on.
 
+## Evidence types
 
+Our goal is to eventually have each assertion backed up using an
+evidence system as in GO. Currently the focus is on capturing the
+reference, although we may go back later and add evidence types/codes.
+
+## Being bold vs conservative
+
+This article describes how to record provenance about a relationship,
+not when and whether a curator should make a relationship. There are
+separate articles for this. See for example
+http://purl.obolibrary.org/obo/uberon/references/reference_0000023 -
+which describes what to do for relationships that only hold for a
+subset of taxa.
+
+
+
+
+
+## See Also:
+ * [http://purl.obolibrary.org/obo/uberon/references/reference_0000023](http://purl.obolibrary.org/obo/uberon/references/reference_0000023)
+ * [http://purl.obolibrary.org/obo/uberon/references/reference_0000032](http://purl.obolibrary.org/obo/uberon/references/reference_0000032)
 
 
