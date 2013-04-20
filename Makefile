@@ -356,7 +356,7 @@ composite-vertebrate.obo: merged.obo  $(METCACHE)
 
 # TODO:  development CV 
 composite-metazoan.obo: merged.obo $(METCACHE)
-	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i fbbt-nd.obo -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@.tmp && mv $@.tmp $@
+	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r WBbt -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i fbbt-nd.obo -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@.tmp && mv $@.tmp $@
 .PRECIOUS: composite-metazoan.obo
 
 metazoan_glommed.obo: merged.obo
@@ -417,7 +417,12 @@ xrefs/uberon-to-umls-merged.obo: xrefs/uberon-to-umls.obo
 %-cmt.obo: %.obo
 	obo-add-comments.pl -t xref -t intersection_of uberon_edit.obo animal_gross_anatomy/*/*.obo ../cell_type/cell.obo ../caro/caro.obo MIAA.obo animal_gross_anatomy/*/*/*.obo ~/cvs/fma-conversion/fma2/fma2.obo gemina_anatomy.obo birnlex_anatomy.obo NIF-GrossAnatomy.obo hao.obo HOG.obo efo_anat.obo $< > $@
 
+caloha.obo:
+	wget ftp://ftp.nextprot.org/pub/current_release/controlled_vocabularies/caloha.obo -O $@
 
+
+xcaloha.obo: caloha.obo
+	perl -npe 's/TS\-/CALOHA:TS\-/g' $< > $@
 
 #
 

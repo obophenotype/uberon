@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-fma
-data-version: 2013-03-24
+data-version: 2013-04-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to fma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the FMA and Uberon" xsd:string
@@ -2338,6 +2338,12 @@ intersection_of: UBERON:0000989 ! penis
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:280610 ! genitourinary system
+property_value: IAO:0000589 "genitourinary system (post-embryonic human)" xsd:string
+intersection_of: UBERON:0004122 ! genitourinary system
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:7160 ! Genital system
 property_value: IAO:0000589 "reproductive system (post-embryonic human)" xsd:string
 intersection_of: UBERON:0000990 ! reproductive system
@@ -3319,6 +3325,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:20229 ! Coccyx
 property_value: IAO:0000589 "coccyx (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001350 ! coccyx
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:231424 ! body proper
+property_value: IAO:0000589 "body proper (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013702 ! body proper
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -11044,12 +11056,6 @@ intersection_of: UBERON:0001984 ! crypt of lieberkuhn of large intestine
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:63882 ! Corneal endothelium
-property_value: IAO:0000589 "corneal endothelium (post-embryonic human)" xsd:string
-intersection_of: UBERON:0001985 ! corneal endothelium
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:85538 ! Decidua
 property_value: IAO:0000589 "decidua (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002450 ! decidua
@@ -11365,12 +11371,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:68416 ! Terminal bronchus
 property_value: IAO:0000589 "terminal bronchus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002041 ! terminal bronchus
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:68444 ! Endothelium of lymphatic vessel
-property_value: IAO:0000589 "endothelium of lymphatic vessel (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002042 ! endothelium of lymphatic vessel
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -12283,6 +12283,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:7280 ! Endocardium
 property_value: IAO:0000589 "endocardium (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002165 ! endocardium
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:83596 ! endothelium of endocardium
+property_value: IAO:0000589 "endocardial endothelium (post-embryonic human)" xsd:string
+intersection_of: UBERON:0005316 ! endocardial endothelium
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -13487,8 +13493,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:78497 ! Central canal of spinal cord
-property_value: IAO:0000589 "central canal (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002291 ! central canal
+property_value: IAO:0000589 "central canal of spinal cord (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002291 ! central canal of spinal cord
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -22000,6 +22006,18 @@ intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:68444 ! endothelium of lymphatic vessel
+property_value: IAO:0000589 "lymphatic vessel endothelium (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002042 ! lymphatic vessel endothelium
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:63882 ! Corneal endothelium
+property_value: IAO:0000589 "corneal endothelium (post-embryonic human)" xsd:string
+intersection_of: UBERON:0001985 ! corneal endothelium
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:15849 ! Fibrous capsule of spleen
 property_value: IAO:0000589 "spleen capsule (post-embryonic human)" xsd:string
 intersection_of: UBERON:0004641 ! spleen capsule
@@ -23533,12 +23551,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:60523 ! Subdivision of skin of dorsal part of toe
 property_value: IAO:0000589 "dorsal skin of toe (post-embryonic human)" xsd:string
 intersection_of: UBERON:0005277 ! dorsal skin of toe
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:83596 ! endothelium of endocardium
-property_value: IAO:0000589 "endocardial endothelium (post-embryonic human)" xsd:string
-intersection_of: UBERON:0005316 ! endocardial endothelium
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -27787,6 +27799,30 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:7475 ! short bone
 property_value: IAO:0000589 "short bone (post-embryonic human)" xsd:string
 intersection_of: UBERON:0013630 ! short bone
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:25245 ! buttock
+property_value: IAO:0000589 "buttock (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013691 ! buttock
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:62109 ! inframammary fold
+property_value: IAO:0000589 "inframammary fold (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013692 ! inframammary fold
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:54319 ! pubic hair
+property_value: IAO:0000589 "strand of pubic hair (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013698 ! strand of pubic hair
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:54253 ! hair of axilla
+property_value: IAO:0000589 "strand of axillary hair (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013699 ! strand of axillary hair
 intersection_of: part_of NCBITaxon:9606
 
 [Term]

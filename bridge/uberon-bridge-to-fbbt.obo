@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-fbbt
-data-version: 2013-03-24
+data-version: 2013-04-20
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to fbbt" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the drosophila anatomy ontology and Uberon. Note that currently Uberon focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future Uberon may bridge via the arthropod anatomy ontology" xsd:string
@@ -54,12 +54,6 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00007000 ! appendage
 property_value: IAO:0000589 "appendage (drosophila)" xsd:string
 intersection_of: UBERON:0000026 ! appendage
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00007018 ! appendage segment
-property_value: IAO:0000589 "appendage segment (drosophila)" xsd:string
-intersection_of: UBERON:0010758 ! appendage segment
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -459,12 +453,6 @@ intersection_of: UBERON:0003917 ! arthropod fat body
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00001704 ! embryonic/larval fat body
-property_value: IAO:0000589 "arthropod fat body (drosophila)" xsd:string
-intersection_of: UBERON:0003917 ! arthropod fat body
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00005093 ! nervous system
 property_value: IAO:0000589 "nervous system (drosophila)" xsd:string
 intersection_of: UBERON:0001016 ! nervous system
@@ -648,6 +636,12 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:10000000 ! anatomical entity
 property_value: IAO:0000589 "anatomical entity (drosophila)" xsd:string
 intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00007018 ! appendage segment
+property_value: IAO:0000589 "subdivision of organism along appendicular axis (drosophila)" xsd:string
+intersection_of: UBERON:0010758 ! subdivision of organism along appendicular axis
 intersection_of: part_of NCBITaxon:7227
 
 [Term]

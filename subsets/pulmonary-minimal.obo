@@ -41,6 +41,7 @@ def: "An epithelial cell that lines the peripheral gas exchange region of the lu
 synonym: "alveolar epithelial cell" EXACT []
 synonym: "pneumonocyte" EXACT []
 xref: BTO:0000395
+xref: CALOHA:TS-2168
 xref: FMA:62499
 is_a: CL:0000082 ! epithelial cell of lung
 relationship: part_of UBERON:0002299 ! alveolus of lung
@@ -55,6 +56,7 @@ comment: Markers: Mouse: F4/80mid, CD11b-/low, CD11c+, CD68+, sialoadhesin+, dec
 synonym: "dust cell" EXACT []
 synonym: "MF.Lu" RELATED []
 xref: BTO:0000802
+xref: CALOHA:TS-0030
 xref: FMA:83023
 relationship: part_of UBERON:0002299 ! alveolus of lung
 
@@ -327,6 +329,7 @@ name: fibroblast of lung
 namespace: cell
 def: "A fibroblast that is part of lung." [GOC:tfm]
 xref: BTO:0000764
+xref: CALOHA:TS-0575
 relationship: part_of UBERON:0002048 ! lung
 created_by: tmeehan
 creation_date: 2011-02-28T05:11:03Z
@@ -559,6 +562,34 @@ relationship: part_of UBERON:0000102 ! lung vasculature
 relationship: part_of UBERON:0002048 ! lung
 
 [Term]
+id: CL:1001573
+name: nasopharyngeal epithelial cell
+def: "Cell of the nasopharyngeal epithelium." [NPX:PDR]
+synonym: "nasopharynx respiratory epithelial cells" RELATED [CALOHA:TS-2398]
+xref: CALOHA:TS-2398
+relationship: part_of UBERON:0001728 ! nasopharynx
+relationship: part_of UBERON:0001951 ! epithelium of nasopharynx
+
+[Term]
+id: CL:1001577
+name: tonsil squamous cell
+def: "Squamous cell of tonsil epithelium." [NPX:PDR]
+synonym: "tonsil squamous epithelial cell" RELATED [CALOHA:TS-1253]
+synonym: "tonsil squamous epithelial cells" RELATED [CALOHA:TS-1253]
+synonym: "tonsillar squamous cell" RELATED [CALOHA:TS-1253]
+synonym: "tonsillar squamous epithelial cell" RELATED [CALOHA:TS-1253]
+xref: CALOHA:TS-1253
+relationship: part_of UBERON:0013696 ! tonsil epithelium
+
+[Term]
+id: CL:1001603
+name: lung macrophage
+def: "Circulating macrophages and tissue macrophages (alveolar macrophages) of lung." [NPX:PDR;HPA\:HPA]
+synonym: "lung macrophages" RELATED [CALOHA:TS-0576]
+xref: CALOHA:TS-0576
+relationship: part_of UBERON:0002048 ! lung
+
+[Term]
 id: UBERON:0000004
 name: olfactory apparatus
 namespace: uberon
@@ -572,6 +603,7 @@ synonym: "nose" EXACT []
 synonym: "peripheral olfactory organ" EXACT []
 synonym: "proboscis" RELATED []
 xref: BTO:0000840
+xref: CALOHA:TS-2037
 xref: EFO:0000828
 xref: EHDAA2:0001274
 xref: EHDAA:1502
@@ -886,6 +918,7 @@ synonym: "vestibulum nasale" RELATED [BTO:0001761]
 synonym: "vestibulum nasi" RELATED LATIN [Wikipedia:Nasal_vestibule]
 synonym: "vestibulum nasi" RELATED [BTO:0001761]
 xref: BTO:0001761
+xref: CALOHA:TS-0660
 xref: FMA:59644
 xref: http://upload.wikimedia.org/wikipedia/commons/7/7c/Gray994.png
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Gray994.png/200px-Gray994.png
@@ -961,6 +994,7 @@ synonym: "system" BROAD [GO:0048731]
 xref: AAO:0000007
 xref: AEO:0000011
 xref: BILA:0000011
+xref: CALOHA:TS-2088
 xref: CARO:0000011
 xref: EHDAA2:0001330
 xref: EHDAA2:0003011
@@ -1043,6 +1077,7 @@ synonym: "pleura" RELATED []
 synonym: "pleural tissue" RELATED [BTO:0001791]
 synonym: "wall of pleural sac" EXACT []
 xref: BTO:0001791
+xref: CALOHA:TS-2081
 xref: EFO:0001980
 xref: EV:0100044
 xref: FMA:9583
@@ -1077,6 +1112,7 @@ synonym: "respiratory system" EXACT []
 synonym: "systema respiratorium" RELATED LATIN [Wikipedia:Respiratory_system]
 xref: AAO:0000541
 xref: BTO:0000203
+xref: CALOHA:TS-1319
 xref: EFO:0000804
 xref: EHDAA2:0001604
 xref: EHDAA:2203
@@ -1166,6 +1202,7 @@ synonym: "laryngopharynx" EXACT [FMA:54877]
 synonym: "pars laryngea pharyngis" RELATED [BTO:0001740]
 synonym: "pars laryngea pharyngis" RELATED LATIN [Wikipedia:Hypopharynx]
 xref: BTO:0001740
+xref: CALOHA:TS-2020
 xref: EFO:0001388
 xref: EHDAA2:0004574
 xref: EV:0100068
@@ -1243,6 +1280,7 @@ synonym: "midriff" RELATED [BTO:0000341]
 synonym: "phren" RELATED [BTO:0000341]
 synonym: "thoracic diaphragm" EXACT []
 xref: BTO:0000341
+xref: CALOHA:TS-0198
 xref: EFO:0000937
 xref: EHDAA2:0003495
 xref: EMAPA:17701
@@ -1500,6 +1538,7 @@ synonym: "Nasenrachenraum" RELATED [BTO:0000662]
 synonym: "pars nasalis pharyngis" RELATED LATIN [Wikipedia:Nasopharynx]
 synonym: "rhinopharynx" EXACT []
 xref: BTO:0000662
+xref: CALOHA:TS-0663
 xref: EHDAA2:0001239
 xref: EHDAA:7086
 xref: EMAPA:17670
@@ -1532,6 +1571,7 @@ subset: uberon_slim
 synonym: "mesopharynx" RELATED [Wikipedia:Pharynx]
 synonym: "oral part of pharynx" EXACT []
 synonym: "pars oralis pharyngis" RELATED LATIN [Wikipedia:Oropharynx]
+xref: CALOHA:TS-0718
 xref: EFO:0001976
 xref: EHDAA2:0004082
 xref: EMAPA:25094
@@ -1623,6 +1663,7 @@ comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 xref: AAO:0000268
 xref: BTO:0001208
+xref: CALOHA:TS-0532
 xref: EFO:0000838
 xref: EHDAA2:0004063
 xref: EMAPA:18333
@@ -1817,6 +1858,7 @@ synonym: "antrum of Highmore" EXACT []
 synonym: "highmore antrum" RELATED [MESH:A04.531.621.578]
 synonym: "maxillary antrum" RELATED [MESH:A04.531.621.578]
 synonym: "sinus maxilliaris" RELATED LATIN [Wikipedia:Maxillary_sinus]
+xref: CALOHA:TS-2231
 xref: FMA:57715
 xref: GAID:358
 xref: http://upload.wikimedia.org/wikipedia/commons/3/3d/Gray1199.png
@@ -1838,6 +1880,7 @@ def: "One of the cartilage structures in the nose that provide form and support[
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "cartilage of nose" EXACT []
+xref: CALOHA:TS-0655
 xref: FMA:59502
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Gray852.png/200px-Gray852.png
 xref: MA:0001883
@@ -1883,6 +1926,7 @@ comment: Arise as epithelial lined diverticula of the lining of the nasal cavity
 subset: uberon_slim
 synonym: "nasal sinus" RELATED [GAID:355]
 synonym: "sinus" BROAD []
+xref: CALOHA:TS-2082
 xref: EHDAA:6489
 xref: EV:0100038
 xref: FMA:59679
@@ -1909,6 +1953,7 @@ synonym: "nasal mucosa" RELATED []
 synonym: "tunica mucosa nasalis" EXACT []
 synonym: "tunica mucosa nasi" EXACT LATIN [FMA:59684, FMA:TA]
 xref: BTO:0000912
+xref: CALOHA:TS-0657
 xref: FMA:59684
 xref: GAID:302
 xref: SCTID:310211009
@@ -1931,6 +1976,7 @@ synonym: "tracheal epithelium" EXACT []
 synonym: "windpipe epithelial tissue" EXACT [OBOL:automatic]
 synonym: "windpipe epithelium" EXACT [OBOL:automatic]
 xref: BTO:0001389
+xref: CALOHA:TS-1061
 xref: EHDAA2:0002069
 xref: EHDAA:5007
 xref: EMAPA:16855
@@ -1961,6 +2007,7 @@ synonym: "nasopharynx epithelium" EXACT []
 synonym: "rhinopharynx epithelial tissue" EXACT [OBOL:automatic]
 synonym: "rhinopharynx epithelium" EXACT [OBOL:automatic]
 xref: BTO:0004480
+xref: CALOHA:TS-0662
 xref: EHDAA2:0001241
 xref: EHDAA:7090
 xref: EMAPA:17672
@@ -2104,6 +2151,7 @@ synonym: "olfactory sensory epithelium" EXACT []
 synonym: "sensory olfactory epithelium" EXACT []
 xref: AAO:0010158
 xref: BTO:0000108
+xref: CALOHA:TS-0703
 xref: EFO:0001972
 xref: EHDAA2:0001228
 xref: EHDAA:4774
@@ -2145,6 +2193,7 @@ synonym: "epithelial tissue of bronchus" EXACT [OBOL:automatic]
 synonym: "epithelium of bronchi" EXACT [OBOL:automatic]
 synonym: "epithelium of bronchial trunk" EXACT [OBOL:automatic]
 xref: BTO:0001845
+xref: CALOHA:TS-1240
 xref: EFO:0000307
 xref: FMA:67782
 xref: MA:0001839
@@ -2177,6 +2226,7 @@ synonym: "pulmo" EXACT LATIN []
 xref: AAO:0000275
 xref: AAO:0010567
 xref: BTO:0000763
+xref: CALOHA:TS-0568
 xref: EFO:0000934
 xref: EHDAA2:0001042
 xref: EHDAA:1554
@@ -2220,6 +2270,7 @@ synonym: "epithelium of lobular bronchiole" EXACT [OBOL:automatic]
 synonym: "lobular bronchiole epithelial tissue" EXACT [OBOL:automatic]
 synonym: "lobular bronchiole epithelium" EXACT [OBOL:automatic]
 xref: BTO:0001866
+xref: CALOHA:TS-0570
 xref: FMA:62497
 xref: FMA:69077
 xref: MA:0001772
@@ -2583,6 +2634,7 @@ synonym: "bronchi" EXACT PLURAL []
 synonym: "bronchial tissue" RELATED [BTO:0001340]
 synonym: "bronchial trunk" EXACT [FMA:7409]
 xref: BTO:0001340
+xref: CALOHA:TS-1229
 xref: EFO:0000932
 xref: EV:0100041
 xref: FMA:7409
@@ -2615,6 +2667,7 @@ synonym: "bronchioli" RELATED PLURAL []
 synonym: "bronchiolus" RELATED [BTO:0002375]
 synonym: "lobular bronchiole" EXACT [FMA:7410]
 xref: BTO:0002375
+xref: CALOHA:TS-2003
 xref: EHDAA:8171
 xref: EHDAA:8183
 xref: EHDAA:8199
@@ -2767,6 +2820,7 @@ synonym: "alveolus pulmonis" RELATED LATIN [Wikipedia:Pulmonary_alveolus]
 synonym: "lung alveolus" EXACT []
 synonym: "pulmonary alveolus" EXACT [FMA:7318]
 xref: BTO:0000060
+xref: CALOHA:TS-0031
 xref: EFO:0001985
 xref: EV:0100043
 xref: FMA:7318
@@ -2897,6 +2951,7 @@ comment: Usage notes: the term 'tonsil' can be ambiguous, sometimes refering spe
 subset: uberon_slim
 synonym: "Mandel" RELATED [BTO:0001387]
 xref: BTO:0001387
+xref: CALOHA:TS-1053
 xref: EFO:0001401
 xref: EV:0100052
 xref: FMA:9609
@@ -3259,6 +3314,7 @@ synonym: "vertebrate trachea" EXACT SENSU []
 synonym: "windpipe" EXACT []
 xref: AAO:0010140
 xref: BTO:0001388
+xref: CALOHA:TS-1060
 xref: EFO:0000935
 xref: EHDAA2:0002066
 xref: EHDAA:3078
@@ -3758,22 +3814,19 @@ is_a: UBERON:0003504 {is_inferred="true"} ! respiratory system blood vessel
 id: UBERON:0003529
 name: respiratory system lymphatic vessel endothelium
 namespace: uberon
-def: "An endothelium of lymphatic vessel that is part of a respiratory system [Automatically generated definition]." [OBOL:automatic]
+def: "An lymphatic vessel endothelium that is part of a respiratory system [Automatically generated definition]." [OBOL:automatic]
 synonym: "apparatus respiratorius endothelium of lymph vessel" EXACT [OBOL:automatic]
-synonym: "apparatus respiratorius endothelium of lymphatic vessel" EXACT [OBOL:automatic]
 synonym: "apparatus respiratorius lymph vessel endothelium" EXACT [OBOL:automatic]
 synonym: "apparatus respiratorius lymphatic vessel endothelium" EXACT [OBOL:automatic]
 synonym: "endothelium of lymph vessel of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "endothelium of lymph vessel of respiratory system" EXACT [OBOL:automatic]
-synonym: "endothelium of lymphatic vessel of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "endothelium of lymphatic vessel of respiratory system" EXACT [OBOL:automatic]
 synonym: "lymph vessel endothelium of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "lymph vessel endothelium of respiratory system" EXACT [OBOL:automatic]
 synonym: "lymphatic vessel endothelium of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "lymphatic vessel endothelium of respiratory system" EXACT [OBOL:automatic]
 synonym: "respiratory system endothelium of lymph vessel" EXACT [OBOL:automatic]
-synonym: "respiratory system endothelium of lymphatic vessel" EXACT [OBOL:automatic]
 synonym: "respiratory system lymph vessel endothelium" EXACT [OBOL:automatic]
+synonym: "respiratory system lymphatic vessel endothelium" EXACT [OBOL:automatic]
 xref: MA:0001825
 is_a: UBERON:0004807 {is_inferred="true"} ! respiratory system epithelium
 relationship: part_of UBERON:0003456 ! respiratory system lymphatic vessel
@@ -4663,6 +4716,7 @@ synonym: "epithelium of respiratory tract" EXACT [OBOL:automatic]
 synonym: "respiratory epithelium" RELATED [BTO:0000419]
 synonym: "respiratory tract epithelial tissue" EXACT [OBOL:automatic]
 xref: BTO:0000419
+xref: CALOHA:TS-0023
 xref: MA:0001480
 xref: SCTID:321764001
 xref: VHOG:0000981
@@ -4681,6 +4735,7 @@ synonym: "epithelial tissue of respiratory system" EXACT [OBOL:automatic]
 synonym: "epithelium of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "epithelium of respiratory system" EXACT [OBOL:automatic]
 synonym: "respiratory system epithelial tissue" EXACT [OBOL:automatic]
+xref: CALOHA:TS-0023
 xref: MA:0001823
 xref: VHOG:0000981
 
@@ -5609,6 +5664,7 @@ namespace: uberon
 def: "An epithelium that is part of a nasal cavity [Automatically generated definition]." [OBOL:automatic]
 synonym: "nasal epithelium" EXACT [FMA:63140]
 synonym: "nasal mucosa" RELATED [MA:0001324]
+xref: CALOHA:TS-0656
 xref: EHDAA2:0001227
 xref: EHDAA:6803
 xref: EMAPA:17605
@@ -5642,6 +5698,7 @@ synonym: "olfactory part of nasal mucosa" EXACT [FMA:77199]
 synonym: "olfactory zone of nasal mucosa" EXACT [FMA:77199]
 synonym: "pars olfactoria tunicae mucosae nasi" EXACT LATIN [FMA:77199, FMA:TA]
 synonym: "pars olfactoria tunicae mucosae nasi" RELATED LATIN [Wikipedia:Olfactory_mucosa]
+xref: CALOHA:TS-2197
 xref: FMA:77199
 xref: GAID:303
 xref: MESH:A04.531.520.573
@@ -6020,6 +6077,7 @@ def: "System pertaining to a bronchus and alveoli." [BTO:0000136]
 synonym: "bronchoalveolar system" RELATED [BTO:0000136]
 synonym: "pulmonary alveolar system" EXACT [MP:0010899]
 xref: BTO:0000136
+xref: CALOHA:TS-1296
 xref: EMAPA:19003
 xref: EMAPA:19005
 xref: EMAPA:19007
@@ -6269,6 +6327,7 @@ namespace: uberon
 def: "Matter ejected from the lungs, bronchi, and trachea, through the mouth." [Dorlands_Medical_Dictionary:MerckSource]
 synonym: "expectoration" RELATED [BTO:0001297]
 xref: BTO:0001297
+xref: CALOHA:TS-0963
 xref: GAID:1171
 xref: MA:0002536
 xref: MESH:A12.200.808
@@ -6390,6 +6449,7 @@ namespace: uberon
 def: "Epithelium pertaining to the trachea and bronchi." [Dorlands_Medical_Dictionary:MerckMedicus]
 synonym: "bronchotracheal epithelium" RELATED [BTO:0002925]
 xref: BTO:0002925
+xref: CALOHA:TS-1063
 is_a: UBERON:0004802 {source="BTO"} ! respiratory tract epithelium
 
 [Term]
@@ -7876,7 +7936,7 @@ xref: ncithesaurus:Tonsillar_Crypt
 xref: SCTID:143723007
 xref: UMLS:C0229876
 xref: Wikipedia:Tonsillar_crypts
-is_a: UBERON:0003351 {is_inferred="true"} ! pharyngeal epithelium
+is_a: UBERON:0013696 {is_inferred="true"} ! tonsil epithelium
 relationship: part_of UBERON:0002372 {source="MA"} ! tonsil
 
 [Term]
@@ -8059,6 +8119,25 @@ xref: BTO:0004128
 xref: CALOHA:TS-0573
 is_a: UBERON:0000115 {is_inferred="true"} ! lung epithelium
 is_a: UBERON:0004702 {is_inferred="true"} ! respiratory system blood vessel endothelium
+
+[Term]
+id: UBERON:0013688
+name: tonsil germinal center
+namespace: uberon
+comment: Editor note: consider adding related terms, e.g. secondary lymphoid tissue of tonsil
+synonym: "tonsil reaction center" RELATED [CALOHA:TS-1288]
+xref: CALOHA:TS-1288
+property_value: UBPROP:0000001 "The germinal center or reaction center is the activated center of a lymphoid follicle in secondary lymphoid tissue where B-lymphocytes are stimulated by antigens and helper T cells (T-lymphocytes, helper-inducer) are stimulated to generate memory cells. Here, the germinal center of a tonsil[TS-1288]." xsd:string {source="TS-1288"}
+
+[Term]
+id: UBERON:0013696
+name: tonsil epithelium
+namespace: uberon
+def: "The epithelium that forms the surface of the tonsil dips into the underlying connective tissue in numerous places, forming crypts kown as tonsillar crypts. Stratified squamous epithelium, that may be heavily infiltrated by lymphocytes. Epithelial cells are present in the germinal as well as in the periphery of the nodule." [CALOHA:TS-2070]
+synonym: "epithelium of tonsil" RELATED [CALOHA:TS-2070]
+synonym: "tonsil epithelial cell" RELATED [CALOHA:TS-2070]
+xref: CALOHA:TS-2070
+is_a: UBERON:0003351 {is_inferred="true"} ! pharyngeal epithelium
 
 [Term]
 id: UBERON:1000012
