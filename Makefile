@@ -49,7 +49,7 @@ uberon-simple.obo: uberon_edit-implied.obo
 	obo2obo -o $@ $<
 
 CATALOG_MERGED = catalog-uberon-merged.xml
-ext.owl: pe/phenoscape-ext.owl
+ext.owl: pe/phenoscape-ext.owl merged.owl
 #	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --add-imports-declarations $(OBO)/uberon/depictions.owl -o file://`pwd`/$@
 #	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
 #	ontology-release-runner --catalog-xml $(CATALOG_MERGED)  --outdir ext-release --reasoner elk --allow-overwrite --skip-format owx --no-subsets $<
