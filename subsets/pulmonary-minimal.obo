@@ -1155,8 +1155,8 @@ relationship: part_of UBERON:0001004 ! respiratory system
 id: UBERON:0001042
 name: chordate pharynx
 namespace: uberon
-def: "Funnel-shaped fibromuscular tube that conducts food to the esophagus, and air to the larynyx and lungs. It is located posterior to the NASAL CAVITY; ORAL CAVITY; and LARYNX, and extends from the SKULL BASE to the inferior border of the CRICOID CARTILAGE anteriorly and to the inferior border of the C6 vertebra posteriorly. It is divided into the NASOPHARYNX; OROPHARYNX; and HYPOPHARYNX (laryngopharynx)[MESH]. Swollen region of the anterior foregut, posterior to the mouth and anterior to the liver; its walls form the jaws and gills[ZFA]." [Wikipedia:Pharynx]
-comment: Note that MA/FMA pharynx not part of digestive/alimentary system, we follow their lead here
+def: "A portion of the respiratory and digestive tracts; its distal limit is the superior part of the esophagus and it connects the nasal and oral cavities with the esophagus and larynx; it contains the valleculae and the pyriform recesses; its upper limits are the nasal cavity and cranial base.[FEED]." [http://www.feedexp.org]
+comment: Note that MA/FMA pharynx not part of digestive/alimentary system, we are consistent with this scheme
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "pharynx" BROAD SENSU [FMA:46688]
@@ -1184,8 +1184,10 @@ xref: XAO:0003227
 xref: ZFA:0000056
 relationship: develops_from UBERON:0009145 {source="EHDAA2"} ! pharyngeal region
 relationship: part_of UBERON:0001004 ! respiratory system
+property_value: UBPROP:0000001 "A funnel-shaped fibromuscular tube that conducts food to the ESOPHAGUS, and air to the LARYNYX and LUNGS. It is located posterior to the NASAL CAVITY;  ORAL CAVITY; and LARYNX, and extends from the SKULL BASE to the inferior border of the CRICOID CARTILAGE anteriorly and to the inferior border of the C6 vertebra posteriorly. It is divided into the NASOPHARYNX; OROPHARYNX; and HYPOPHARYNX (laryngopharynx)[MESH:A03.867]." xsd:string {source="MESH:A03.867"}
 property_value: UBPROP:0000001 "Anatomical cavity bounded by the derivatives of the branchial arches.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000967", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000001 "Swollen region of the anterior foregut, posterior to the mouth and anterior to the liver; its walls form the jaws and gills. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000056", ontology="TAO", source="ZFIN:curator"}
+property_value: UBPROP:0000001 "Swollen region of the anterior foregut, posterior to the mouth and anterior to the liver; its walls form the jaws and gills[ZFA:0000056, ZFIN:ZDB-PUB-961014-576]." xsd:string {source="ZFIN:ZDB-PUB-961014-576"}
 property_value: UBPROP:0000001 "The portion of the alimentary canal between the mouth and the oesophagus. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000462", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000002 "relationship type change: part_of_proxy respiratory system (AAO:0000541) CHANGED TO: develops_from respiratory system (UBERON:0001004)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000967", ontology="AAO"}
 property_value: UBPROP:0000002 "relationship type change: part_of_proxy respiratory system (AAO:0000541) CHANGED TO: part_of respiratory system (UBERON:0001004)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000967", ontology="AAO"}
@@ -7882,9 +7884,10 @@ relationship: part_of UBERON:0008961 ! parabronchus
 
 [Term]
 id: UBERON:0012087
-name: air capilary
+name: air capillary of parabronchus
 namespace: uberon
 def: "An extension of the parabronchus, the walls of which are the site of gas exchange" [http://www.vetmed.vt.edu/education/Curriculum/VM8054/Labs/Lab26/Examples/exairves.htm, ISBN10:0073040584]
+synonym: "air capillary" EXACT []
 synonym: "air vesicle" EXACT []
 is_a: UBERON:0000061 ! anatomical structure
 relationship: connected_to UBERON:0008961 ! parabronchus

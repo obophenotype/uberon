@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-ehdaa2
-data-version: 2013-02-11
+data-version: 2013-05-03
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to ehdaa2" xsd:string
 property_value: dc-description "Equivalence axioms between EHDAA2 and CL. EHDAA2 replaces EHDAA" xsd:string
@@ -11,32 +11,54 @@ property_value: dcterms-references http://purl.obolibrary.org/obo/cl.owl
 [Term]
 id: EHDAA2:0004546 ! 
 property_value: IAO:0000589 "zygote (embryonic human)" xsd:string
-is_a: CL:0000365 ! zygote
+intersection_of: CL:0000365 ! zygote
+intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: EHDAA2:0004716 ! 
 property_value: IAO:0000589 "polar body (embryonic human)" xsd:string
-is_a: CL:0002090 ! polar body
+intersection_of: CL:0002090 ! polar body
+intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: EHDAA2:0000541 ! 
 property_value: IAO:0000589 "primary polar body (embryonic human)" xsd:string
-is_a: CL:0002091 ! primary polar body
+intersection_of: CL:0002091 ! primary polar body
+intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: EHDAA2:0001820 ! 
 property_value: IAO:0000589 "secondary polar body (embryonic human)" xsd:string
-is_a: CL:0002093 ! secondary polar body
+intersection_of: CL:0002093 ! secondary polar body
+intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: EHDAA2:0001053 ! 
 property_value: IAO:0000589 "male gonocyte (embryonic human)" xsd:string
-is_a: CL:0002238 ! male gonocyte
+intersection_of: CL:0002238 ! male gonocyte
+intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: EHDAA2:0000505 ! 
 property_value: IAO:0000589 "ooblast (embryonic human)" xsd:string
-is_a: CL:0002239 ! ooblast
+intersection_of: CL:0002239 ! ooblast
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: EHDAA2:ENTITY
+name: EHDAA2 entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:9606
+relationship: only_in_taxon NCBITaxon:9606
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/ehdaa2#part_of

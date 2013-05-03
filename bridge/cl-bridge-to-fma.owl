@@ -20,7 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/fma.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma/2013-02-11/uberon/bridge/cl-bridge-to-fma.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma/2013-05-03/uberon/bridge/cl-bridge-to-fma.owl"/>
     </owl:Ontology>
     
 
@@ -4437,6 +4437,18 @@
     <!-- http://purl.obolibrary.org/obo/CL_1001569 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1001569"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_1001598 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1001598"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_1001611 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1001611"/>
     
 
 
@@ -17028,6 +17040,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FMA_84665 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_84665">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_1001611"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84665</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cerebellar neuron (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FMA_84771 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_84771">
@@ -18128,6 +18160,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:86925</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">squamous cell of epidermis (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FMA_86928 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_86928">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_1001598"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:86928</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small intestine glandular cell (post-embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 

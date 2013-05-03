@@ -1,46 +1,26 @@
 ontology: uberon/bridge/cl-bridge-to-ncithesaurus
-data-version: 2013-02-11
+data-version: 2013-05-03
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
 id: ncithesaurus:Spermatogenic_Cell ! 
 property_value: IAO:0000589 "male germ cell (ncithesaurus)" xsd:string
-intersection_of: CL:0000015 ! male germ cell
-intersection_of: part_of NCBITaxon:40674
+is_a: CL:0000015 ! male germ cell
 
 [Term]
 id: ncithesaurus:Egg ! 
 property_value: IAO:0000589 "female germ cell (ncithesaurus)" xsd:string
-intersection_of: CL:0000021 ! female germ cell
-intersection_of: part_of NCBITaxon:40674
+is_a: CL:0000021 ! female germ cell
 
 [Term]
 id: ncithesaurus:Beta_Cell ! 
 property_value: IAO:0000589 "type B pancreatic cell (ncithesaurus)" xsd:string
-intersection_of: CL:0000169 ! type B pancreatic cell
-intersection_of: part_of NCBITaxon:40674
+is_a: CL:0000169 ! type B pancreatic cell
 
 [Term]
 id: ncithesaurus:Blastemal_Cell ! 
 property_value: IAO:0000589 "blastemal cell (ncithesaurus)" xsd:string
-intersection_of: CL:0000354 ! blastemal cell
-intersection_of: part_of NCBITaxon:40674
-
-[Term]
-id: ncithesaurus:ENTITY
-name: ncithesaurus entity
-intersection_of: UBERON:0001062 ! anatomical entity
-intersection_of: part_of NCBITaxon:40674
-relationship: only_in_taxon NCBITaxon:40674
-
-[Typedef]
-id: part_of
-xref: BFO:0000050
-is_transitive: true
-
-[Typedef]
-id: only_in_taxon
-xref: RO:0002160
+is_a: CL:0000354 ! blastemal cell
 
 [Typedef]
 id: http://purl.obolibrary.org/obo/ncithesaurus#part_of

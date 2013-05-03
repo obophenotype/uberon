@@ -8,6 +8,7 @@ my $check = 0;
 my $expand_relations = 0;
 my $no_src;
 my $preserve_def_xref = 0;
+my $combine_def_xref = 0;
 my $is_use_all;
 my $map_all = 0;
 while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
@@ -30,6 +31,9 @@ while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     }
     if ($opt eq '-n' || $opt eq '--no-src') {
         $no_src = 1;
+    }
+    if ($opt eq '-cx' || $opt eq '--combined-def-xref') {
+        $combine_def_xref = 1;
     }
     if ($opt eq '-a' || $opt eq '--use-all') {
         $is_use_all = 1;
@@ -153,6 +157,9 @@ while(<>) {
     }
     elsif (/^(def:\s+\".*\")\s+\[\]\s*$/) {
         print "$1 [$xref]\n";
+    }
+    elsif (/^(def:\s+\".*\")\s+\[(.*)\]\s*$/ && $combine_def_xref) {
+        print "$1 [$xref, $2]\n";
     }
     elsif (/^(def:\s+\".*\")\s+\[.*\]\s*$/ && !$preserve_def_xref) {
         print "$1 [$xref]\n";

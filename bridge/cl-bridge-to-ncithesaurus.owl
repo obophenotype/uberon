@@ -13,7 +13,7 @@
      xmlns:doap="http://usefulinc.com/ns/doap#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-ncithesaurus.owl">
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-ncithesaurus/2013-02-11/uberon/bridge/cl-bridge-to-ncithesaurus.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-ncithesaurus/2013-05-03/uberon/bridge/cl-bridge-to-ncithesaurus.owl"/>
     </owl:Ontology>
     
 
@@ -253,8 +253,8 @@
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homepage</rdfs:label>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://xmlns.com/foaf/0.1/homepage</oboInOwl:hasDbXref>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
@@ -275,21 +275,7 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
         <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ncithesaurus#part_of"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002160</oboInOwl:hasDbXref>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:shorthand>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only_in_taxon</oboInOwl:id>
     </owl:ObjectProperty>
     
 
@@ -353,58 +339,10 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_40674 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001062 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ncithesaurus_ENTITY -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ncithesaurus_ENTITY">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus entity</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:ENTITY</oboInOwl:id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/ncithesaurus_Egg -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ncithesaurus_Egg">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000021"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000021"/>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female germ cell (ncithesaurus)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Egg</oboInOwl:id>
     </owl:Class>
@@ -414,17 +352,7 @@
     <!-- http://purl.obolibrary.org/obo/ncithesaurus#_Beta_Cell -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ncithesaurus#_Beta_Cell">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000169"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000169"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Beta_Cell</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type B pancreatic cell (ncithesaurus)</obo:IAO_0000589>
     </owl:Class>
@@ -434,17 +362,7 @@
     <!-- http://purl.obolibrary.org/obo/ncithesaurus#_Blastemal_Cell -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ncithesaurus#_Blastemal_Cell">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000354"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000354"/>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blastemal cell (ncithesaurus)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Blastemal_Cell</oboInOwl:id>
     </owl:Class>
@@ -454,17 +372,7 @@
     <!-- http://purl.obolibrary.org/obo/ncithesaurus#_Spermatogenic_Cell -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ncithesaurus#_Spermatogenic_Cell">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000015"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000015"/>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male germ cell (ncithesaurus)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ncithesaurus:Spermatogenic_Cell</oboInOwl:id>
     </owl:Class>
