@@ -3,6 +3,15 @@ ontology: uberon/subsets/life-stages-composite.obo
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" xsd:string
 
 [Term]
+id: HsapDv:0000000
+name: human life cycle stage
+namespace: human_stages_ontology
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:0000105]
+synonym: "developmental stage" EXACT []
+synonym: "stage" NARROW []
+property_value: IAO:0000589 "life cycle (HsapDv)" xsd:string
+
+[Term]
 id: HsapDv:0000001
 name: human life cycle (embryonic human)
 namespace: human_developmental_stage
@@ -22,7 +31,7 @@ xref: XUO:0000130
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of UBERON:0000068 ! embryo stage
-property_value: start_dpf "1.0" xsd:float
+property_value: start_dpf "0.0" xsd:float
 
 [Term]
 id: HsapDv:0000004
@@ -497,6 +506,8 @@ synonym: "foetus stage" RELATED []
 xref: EV:0300011
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000045 ! prenatal stage (embryonic human)
+property_value: end_dpf "266.0" xsd:float
+property_value: start_dpf "56.0" xsd:float
 
 [Term]
 id: HsapDv:0000045
@@ -505,6 +516,7 @@ namespace: human_developmental_stage
 def: "Human developmental stage that starts with fertilization and ends with birth." [Bgee:curator]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000001 ! human life cycle (embryonic human)
+property_value: end_dpf "266.0" xsd:float
 property_value: end_ypb "0.0" xsd:float
 property_value: start_dpf "0.0" xsd:float
 
@@ -884,7 +896,7 @@ synonym: "0-12 years" EXACT []
 synonym: "child" RELATED []
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000001 ! human life cycle (embryonic human)
-property_value: end_ypb "12.0" xsd:float
+property_value: end_ypb "13.0" xsd:float
 property_value: start_ypb "0.0" xsd:float
 
 [Term]
@@ -895,7 +907,7 @@ def: "Immature stage that refers to child who is over 2 and under 13 years old."
 synonym: "2-12 years" EXACT []
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000080 ! immature stage (embryonic human)
-property_value: end_ypb "12.0" xsd:float
+property_value: end_ypb "13.0" xsd:float
 property_value: start_ypb "2.0" xsd:float
 
 [Term]
@@ -906,7 +918,7 @@ def: "Child stage that refers to a child who is over 24 months and under 6 years
 synonym: "preschool child" RELATED []
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000081 ! child stage (embryonic human)
-property_value: end_ypb "5.0" xsd:float
+property_value: end_ypb "6.0" xsd:float
 property_value: start_ypb "2.0" xsd:float
 
 [Term]
@@ -917,6 +929,8 @@ def: "Child stage that refers to a child who is over 6 and under 13 years old." 
 synonym: "prepubescent" RELATED []
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000081 ! child stage (embryonic human)
+property_value: end_ypb "13.0" xsd:float
+property_value: start_ypb "6.0" xsd:float
 
 [Term]
 id: HsapDv:0000086
@@ -928,6 +942,8 @@ synonym: "teen" RELATED []
 synonym: "teenager" RELATED []
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000204 ! mature stage (embryonic human)
+property_value: end_ypb "19.0" xsd:float
+property_value: start_ypb "13.0" xsd:float
 
 [Term]
 id: HsapDv:0000087
@@ -958,7 +974,7 @@ def: "Early adulthood that refers to an adult who is under 25." [Bgee:curator]
 synonym: "19-24 years" EXACT []
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000088 ! human early adulthood stage (embryonic human)
-property_value: end_ypb "24.0" xsd:float
+property_value: end_ypb "25.0" xsd:float
 property_value: start_ypb "19.0" xsd:float
 
 [Term]
@@ -990,7 +1006,7 @@ def: "Late adulthood that refers to an adult who is over 45 and under 65." [Bgee
 synonym: "45-64 years" EXACT []
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000091 ! human late adulthood stage (embryonic human)
-property_value: end_ypb "64.0" xsd:float
+property_value: end_ypb "65.0" xsd:float
 property_value: start_ypb "45.0" xsd:float
 
 [Term]
@@ -1957,6 +1973,8 @@ def: "Infant stage that refers to an infant who is over 1 and under 2 months old
 xref: EV:0300039
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of UBERON:0007221 ! neonate stage
+property_value: end_mpb "2.0" xsd:float
+property_value: start_mpb "1.0" xsd:float
 
 [Term]
 id: HsapDv:0000175
@@ -2207,6 +2225,7 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000195 ! 22-month-old human stage (embryonic human)
 relationship: part_of UBERON:0007221 ! neonate stage
 property_value: end_mpb "24.0" xsd:float
+property_value: end_ypb "2.0" xsd:float
 property_value: start_mpb "23.0" xsd:float
 
 [Term]
@@ -2216,7 +2235,9 @@ namespace: human_developmental_stage
 def: "Fetal stage that refers to the third month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
+property_value: end_dpf "77.0" xsd:float
 property_value: month_of_gestation "3.0" xsd:float
+property_value: start_dpf "56.0" xsd:float
 
 [Term]
 id: HsapDv:0000198
@@ -2226,7 +2247,9 @@ def: "Fetal stage that refers to the fourth month of gestation starting from the
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000197 ! third LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
+property_value: end_dpf "105.0" xsd:float
 property_value: month_of_gestation "4.0" xsd:float
+property_value: start_dpf "77.0" xsd:float
 
 [Term]
 id: HsapDv:0000199
@@ -2236,7 +2259,9 @@ def: "Fetal stage that refers to the fifth month of gestation starting from the 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000198 ! fourth LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
+property_value: end_dpf "133.0" xsd:float
 property_value: month_of_gestation "5.0" xsd:float
+property_value: start_dpf "105.0" xsd:float
 
 [Term]
 id: HsapDv:0000200
@@ -2246,7 +2271,9 @@ def: "Fetal stage that refers to the sixth month of gestation starting from the 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000199 ! fifth LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
+property_value: end_dpf "168.0" xsd:float
 property_value: month_of_gestation "6.0" xsd:float
+property_value: start_dpf "133.0" xsd:float
 
 [Term]
 id: HsapDv:0000201
@@ -2256,7 +2283,9 @@ def: "Fetal stage that refers to the seventh month of gestation starting from th
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000200 ! sixth LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
+property_value: end_dpf "196.0" xsd:float
 property_value: month_of_gestation "7.0" xsd:float
+property_value: start_dpf "168.0" xsd:float
 
 [Term]
 id: HsapDv:0000202
@@ -2266,7 +2295,9 @@ def: "Fetal stage that refers to the eighth month of gestation starting from the
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000201 ! seventh LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
+property_value: end_dpf "231.0" xsd:float
 property_value: month_of_gestation "8.0" xsd:float
+property_value: start_dpf "196.0" xsd:float
 
 [Term]
 id: HsapDv:0000203
@@ -2276,7 +2307,9 @@ def: "Fetal stage that refers to the ninth month of gestation starting from the 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000202 ! eighth LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
+property_value: end_dpf "266.0" xsd:float
 property_value: month_of_gestation "9.0" xsd:float
+property_value: start_dpf "231.0" xsd:float
 
 [Term]
 id: HsapDv:0000204
@@ -2285,13 +2318,34 @@ namespace: human_developmental_stage
 def: "Human developmental stage that refers to a sexually mature human." [Bgee:curator]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000001 ! human life cycle (embryonic human)
+property_value: start_ypb "13.0" xsd:float
+
+[Term]
+id: MmusDv:0000000
+name: mouse life cycle stage
+namespace: mouse_stages_ontology
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:0000105]
+synonym: "developmental stage" EXACT []
+synonym: "stage" NARROW []
+equivalent_to: MmusDv:0000001 ! mouse life cycle
+property_value: IAO:0000589 "life cycle (MmusDv)" xsd:string
+
+[Term]
+id: MmusDv:0000001
+name: mouse life cycle
+namespace: mouse_developmental_stage
+def: "Temporal interval that defines mouse life from prenatal stage until late adult stage." [Bgee:curator]
+is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: UBERON:0000104 ! life cycle
+property_value: IAO:0000589 "life cycle stage (MmusDv)" xsd:string
+property_value: start_dpc "0.45" xsd:float
 
 [Term]
 id: MmusDv:0000003
 name: Theiler stage 01 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic stage defined by a one-cell embryo (fertilised egg) with zona pellucida present." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_1]
-comment: Starts the mouse development sequence, range from embryonic age 0-0.9 dpc (day post-coitum).
+comment: "Starts the mouse development sequence, range from embryonic age 0-0.9 dpc (day post coitum). Assumes that fertilization takes place around midnight during a 7pm to 5am dark cycle. Noon of the day on which the vaginal plug is found the embryos are aged 0.5 d.p.c (days post coitum)." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Timed_Pregnancy "adapted from"]
 synonym: "E0-2.5" EXACT []
 synonym: "TS01" EXACT []
 synonym: "TS01 (E0-2.5)" RELATED [EMAPA:TS01]
@@ -2301,13 +2355,14 @@ xref: XUO:0000045
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of UBERON:0000068 ! embryo stage
+property_value: start_dpc "0.45" xsd:float
 
 [Term]
 id: MmusDv:0000005
 name: Theiler stage 02 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic cleavage stage defined by a dividing 2-4 cells egg." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_2]
-comment: Embryonic age 1 dpc (day post-coitum).
+comment: Embryonic age 1 dpc (day post coitum).
 synonym: "E1-2.5" EXACT []
 synonym: "TS02" EXACT []
 synonym: "TS02 (E1-2.5)" RELATED [EMAPA:TS02]
@@ -2317,13 +2372,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000003 ! Theiler stage 01 (Mus)
 relationship: part_of UBERON:0000107 ! cleavage stage
+property_value: start_dpc "1.0" xsd:float
 
 [Term]
 id: MmusDv:0000006
 name: Theiler stage 03 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic cleavage stage defined by a dividing 4-16 cells egg, early to fully compacted morula." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_3]
-comment: Embryonic age 2 dpc (day post-coitum).
+comment: Embryonic age 2 dpc (day post coitum).
 synonym: "E1-3.5" EXACT []
 synonym: "TS03" EXACT []
 synonym: "TS03 (E1-3.5)" RELATED [EMAPA:TS03]
@@ -2333,13 +2389,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000005 ! Theiler stage 02 (Mus)
 relationship: part_of UBERON:0000107 ! cleavage stage
+property_value: start_dpc "2.0" xsd:float
 
 [Term]
 id: MmusDv:0000008
 name: Theiler stage 04 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage defined by a dividing 16-40 cells egg, with early evidence of the blastocoelic cavity." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_4]
-comment: Embryonic age 3 dpc (day post-coitum).
+comment: Embryonic age 3 dpc (day post coitum).
 synonym: "E2-4" EXACT []
 synonym: "TS04" EXACT []
 synonym: "TS04 (E2-4)" RELATED [EMAPA:TS04]
@@ -2349,13 +2406,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000006 ! Theiler stage 03 (Mus)
 relationship: part_of UBERON:0000108 ! blastula stage
+property_value: start_dpc "3.0" xsd:float
 
 [Term]
 id: MmusDv:0000009
 name: Theiler stage 05 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage defined by a zona free blastocyst (zona pellucida absent)." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_5]
-comment: Embryonic age 4 dpc (day post-coitum).
+comment: Embryonic age 4 dpc (day post coitum).
 synonym: "E3-5.5" EXACT []
 synonym: "TS05" EXACT []
 synonym: "TS05 (E3-5.5)" RELATED [EMAPA:TS05]
@@ -2366,13 +2424,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000008 ! Theiler stage 04 (Mus)
 relationship: part_of UBERON:0000108 ! blastula stage
 property_value: has_stage_marker GO:0001835
+property_value: start_dpc "4.0" xsd:float
 
 [Term]
 id: MmusDv:0000010
 name: Theiler stage 06 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage during which the blastocyst attaches, with first evidence of embryonic endoderm cells covering the blastocoelic surface of the inner cell mass." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_6]
-comment: Embryonic age 4.5 dpc (day post-coitum). Refers to human CarnegieStage04.
+comment: Embryonic age 4.5 dpc (day post coitum). Refers to human CarnegieStage04.
 synonym: "E4-5.5" EXACT []
 synonym: "TS06" EXACT []
 synonym: "TS06 (E4-5.5)" RELATED [EMAPA:TS06]
@@ -2382,13 +2441,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000009 ! Theiler stage 05 (Mus)
 relationship: part_of UBERON:0000108 ! blastula stage
+property_value: start_dpc "4.5" xsd:float
 
 [Term]
 id: MmusDv:0000011
 name: Theiler stage 07 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage defined by implantation and formation of the egg cylinder resulting from the rapid increase in the number of inner cell mass cells." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_7]
-comment: Embryonic age 5 dpc (day post-coitum). Refers to human CarnegieStage05.
+comment: Embryonic age 5 dpc (day post coitum). Refers to human CarnegieStage05.
 synonym: "E4.5-6" EXACT []
 synonym: "TS07" EXACT []
 synonym: "TS07 (E4.5-6)" RELATED [EMAPA:TS07]
@@ -2399,13 +2459,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000010 ! Theiler stage 06 (Mus)
 relationship: part_of UBERON:0000108 ! blastula stage
 property_value: has_stage_marker GO:0007566
+property_value: start_dpc "5.0" xsd:float
 
 [Term]
 id: MmusDv:0000012
 name: Theiler stage 08 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage during which the egg cylinder differentiates into embryonic and extra-embryonic regions, and the pro-amniotic cavity appears." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_8]
-comment: Embryonic age 6 dpc (day post-coitum). Refers to human CarnegieStage05.
+comment: Embryonic age 6 dpc (day post coitum). Refers to human CarnegieStage05.
 synonym: "E5-6.5" EXACT []
 synonym: "TS08" EXACT []
 synonym: "TS08 (E5-6.5)" RELATED [EMAPA:TS08]
@@ -2415,13 +2476,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000011 ! Theiler stage 07 (Mus)
 relationship: part_of UBERON:0000108 ! blastula stage
+property_value: start_dpc "6.0" xsd:float
 
 [Term]
 id: MmusDv:0000014
 name: Theiler stage 09 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic gastrula stage during which gastrulation starts with first evidence of mesoderm and visible embryonic axis." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_9]
-comment: Embryonic age 6.5 dpc (day post-coitum).
+comment: Embryonic age 6.5 dpc (day post coitum).
 synonym: "E6.25-7.25" EXACT []
 synonym: "TS09" EXACT []
 synonym: "TS09 (E6.25-7.25)" RELATED [EMAPA:TS09]
@@ -2432,13 +2494,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000012 ! Theiler stage 08 (Mus)
 relationship: part_of UBERON:0000109 ! gastrula stage
 property_value: has_stage_marker UBERON:0000926
+property_value: start_dpc "6.5" xsd:float
 
 [Term]
 id: MmusDv:0000015
 name: Theiler stage 10 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic gastrula stage during which the primitive streak bulges into the pro-amniotic cavity and forms the amniotic fold; the exocoelom appears; the allantoic bud first appears, gastrulation continues and the node becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_10]
-comment: Embryonic age 7 dpc (day post-coitum), (range 6.5-7.5 dpc). Refers to human CarnegieStage08.
+comment: Embryonic age 7 dpc (day post coitum), (range 6.5-7.5 dpc). Refers to human CarnegieStage08.
 synonym: "E6.5-7.75" EXACT []
 synonym: "TS10" EXACT []
 synonym: "TS10 (E6.5-7.75)" RELATED [EMAPA:TS10]
@@ -2451,13 +2514,14 @@ relationship: part_of UBERON:0000109 ! gastrula stage
 property_value: has_stage_marker UBERON:0003888
 property_value: has_stage_marker UBERON:0004340
 property_value: has_stage_marker UBERON:0005971
+property_value: start_dpc "7.0" xsd:float
 
 [Term]
 id: MmusDv:0000017
 name: Theiler stage 11 (Mus)
 namespace: mouse_developmental_stage
 def: "Embryonic stage called presomite stage and defined by the formation of the neural plate." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
-comment: This stage starts the emergence of the central nervous system at embryonic age 7.5 dpc (day post-coitum).
+comment: This stage starts the emergence of the central nervous system at embryonic age 7.5 dpc (day post coitum).
 synonym: "E7.25-8" EXACT []
 synonym: "neurula stage" RELATED []
 synonym: "TS11" EXACT []
@@ -2469,13 +2533,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000015 ! Theiler stage 10 (Mus)
 relationship: part_of UBERON:0000068 ! embryo stage
 property_value: has_stage_marker UBERON:0003075
+property_value: start_dpc "7.5" xsd:float
 
 [Term]
 id: MmusDv:0000019
 name: Theiler stage 12 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which first somites become visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12]
-comment: Embryonic age 8 dpc (day post-coitum). Refers to human CarnegieStage09.
+comment: Embryonic age 8 dpc (day post coitum). Refers to human CarnegieStage09.
 synonym: "E7.5-8.75" EXACT []
 synonym: "TS12" EXACT []
 synonym: "TS12 (E7.5-8.75)" RELATED [EMAPA:TS12]
@@ -2486,13 +2551,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000017 ! Theiler stage 11 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker EMAPA:16173
+property_value: start_dpc "8.0" xsd:float
 
 [Term]
 id: MmusDv:0000020
 name: Theiler stage 13 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage defined by the turning of the embryo; initiated in embryos with 6-8 pairs of somites and usually completed in embryos with 14-16 pairs of somites." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_13]
-comment: Embryonic age 8.5 dpc (day post-coitum). Refers to human CarnegieStage10.
+comment: Embryonic age 8.5 dpc (day post coitum). Refers to human CarnegieStage10.
 synonym: "E8-9.25" EXACT []
 synonym: "TS13" EXACT []
 synonym: "TS13 (E8-9.25)" RELATED [EMAPA:TS13]
@@ -2505,13 +2571,14 @@ relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker EMAPA:16441
 property_value: has_stage_marker EMAPA:16445
 property_value: has_stage_marker EMAPA:16449
+property_value: start_dpc "8.5" xsd:float
 
 [Term]
 id: MmusDv:0000021
 name: Theiler stage 14 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the rostral extremity of the neural tube closes in embryos with usually about 15-18 somite pairs. Late in the stage the 3rd branchial arch becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_14]
-comment: Embryonic age 9 dpc (day post-coitum). Refers to human CarnegieStage11.
+comment: Embryonic age 9 dpc (day post coitum). Refers to human CarnegieStage11.
 synonym: "E8.5-9.75" EXACT []
 synonym: "TS14" EXACT []
 synonym: "TS14 (E8.5-9.75)" RELATED [EMAPA:TS14]
@@ -2525,13 +2592,14 @@ property_value: has_stage_marker EMAPA:16445
 property_value: has_stage_marker EMAPA:16449
 property_value: has_stage_marker EMAPA:16453
 property_value: has_stage_marker EMAPA:16457
+property_value: start_dpc "9.0" xsd:float
 
 [Term]
 id: MmusDv:0000022
 name: Theiler stage 15 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the posterior neuropore forms and the condensation of the forelimb bud becomes apparent near the 8th-12th somite pairs." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_15]
-comment: Embryonic age 9.5 dpc (day post-coitum). Refers to human CarnegieStage12.
+comment: Embryonic age 9.5 dpc (day post coitum). Refers to human CarnegieStage12.
 synonym: "E9-10.25" EXACT []
 synonym: "TS15" EXACT []
 synonym: "TS15 (E9-10.25)" RELATED [EMAPA:TS15]
@@ -2542,13 +2610,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000021 ! Theiler stage 14 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005417
+property_value: start_dpc "9.5" xsd:float
 
 [Term]
 id: MmusDv:0000023
 name: Theiler stage 16 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the posterior neuropore closes and the hind limb bud becomes visible at the level of the 23rd-28th somites." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_16]
-comment: Embryonic age 10 dpc (day post-coitum). Refers to human CarnegieStages 13 to 15.
+comment: Embryonic age 10 dpc (day post coitum). Refers to human CarnegieStages 13 to 15.
 synonym: "E9.5-10.75" EXACT []
 synonym: "TS16" EXACT []
 synonym: "TS16 (E9.5-10.75)" RELATED [EMAPA:TS16]
@@ -2559,13 +2628,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000022 ! Theiler stage 15 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005418
+property_value: start_dpc "10.0" xsd:float
 
 [Term]
 id: MmusDv:0000024
 name: Theiler stage 17 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage defined by the deepening of the lens pit and the first appearance of the physiological umbilical hernia." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_17]
-comment: Embryonic age 10.5 dpc (day post-coitum). Refers to human CarnegieStages 13 to 15.
+comment: Embryonic age 10.5 dpc (day post coitum). Refers to human CarnegieStages 13 to 15.
 synonym: "E10-11.25" EXACT []
 synonym: "TS17" EXACT []
 synonym: "TS17 (E10-11.25)" RELATED [EMAPA:TS17]
@@ -2577,13 +2647,14 @@ relationship: immediately_preceded_by MmusDv:0000023 ! Theiler stage 16 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker EMAPA:18411
 property_value: has_stage_marker UBERON:0006259
+property_value: start_dpc "10.5" xsd:float
 
 [Term]
 id: MmusDv:0000025
 name: Theiler stage 18 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the lens vesicle gradually closes and the nasal pits start to form. The rapid growth of the brain is striking." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_18]
-comment: Embryonic age 11 dpc (day post-coitum). Refers to human CarnegieStages 13 to 15.
+comment: Embryonic age 11 dpc (day post coitum). Refers to human CarnegieStages 13 to 15.
 synonym: "E10.5-11.25" EXACT []
 synonym: "TS18" EXACT []
 synonym: "TS18 (E10.5-11.25)" RELATED [EMAPA:TS18]
@@ -2594,13 +2665,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000024 ! Theiler stage 17 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005870
+property_value: start_dpc "11.0" xsd:float
 
 [Term]
 id: MmusDv:0000026
 name: Theiler stage 19 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the lens vesicle becomes completely closed and detached from the ectoderm, and peripheral margins of the eye become well defined." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_19]
-comment: Embryonic age 11.5 dpc (day post-coitum). Refers to human CarnegieStage16.
+comment: Embryonic age 11.5 dpc (day post coitum). Refers to human CarnegieStage16.
 synonym: "E11-12.25" EXACT []
 synonym: "TS19" EXACT []
 synonym: "TS19 (E11-12.25)" RELATED [EMAPA:TS19]
@@ -2610,13 +2682,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000025 ! Theiler stage 18 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
+property_value: start_dpc "11.5" xsd:float
 
 [Term]
 id: MmusDv:0000027
 name: Theiler stage 20 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the handplate develops angles corresponding to the future digits, and tongue and brain vesicles are clearly visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_20]
-comment: Embryonic age 12 dpc (day post-coitum). Refers to human CarnegieStage17.
+comment: Embryonic age 12 dpc (day post coitum). Refers to human CarnegieStage17.
 synonym: "E11.5-13" EXACT []
 synonym: "TS20" EXACT []
 synonym: "TS20 (E11.5-13)" RELATED [EMAPA:TS20]
@@ -2626,13 +2699,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000026 ! Theiler stage 19 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
+property_value: start_dpc "12.0" xsd:float
 
 [Term]
 id: MmusDv:0000028
 name: Theiler stage 21 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the digit widths and locations can be discerned, and the pinna rapidly develops and forms a crest at right angles to the head." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_21]
-comment: Embryonic age 13 dpc (day post-coitum). Refers to human CarnegieStages 18 and 19.
+comment: Embryonic age 13 dpc (day post coitum). Refers to human CarnegieStages 18 and 19.
 synonym: "E12.5-14" EXACT []
 synonym: "TS21" EXACT []
 synonym: "TS21 (E12.5-14)" RELATED [EMAPA:TS21]
@@ -2642,13 +2716,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000027 ! Theiler stage 20 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
+property_value: start_dpc "13.0" xsd:float
 
 [Term]
 id: MmusDv:0000029
 name: Theiler stage 22 (Mus)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the fingers are clearly visible and the long bones of the limbs are present." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_22]
-comment: Embryonic age 14 dpc (day post-coitum). Refers to human CarnegieStages 20 to 23.
+comment: Embryonic age 14 dpc (day post coitum). Refers to human CarnegieStages 20 to 23.
 synonym: "E13.5-15" EXACT []
 synonym: "TS22" EXACT []
 synonym: "TS22 (E13.5-15)" RELATED [EMAPA:TS22]
@@ -2659,13 +2734,14 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000028 ! Theiler stage 21 (Mus)
 relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker UBERON:0003606
+property_value: start_dpc "14.0" xsd:float
 
 [Term]
 id: MmusDv:0000032
 name: Theiler stage 23 (Mus)
 namespace: mouse_developmental_stage
 def: "Fetal stage during which the toes separate and hair follicles are present in the cephalic region but not at the periphery of the vibrissae." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_23]
-comment: Embryonic age 15 dpc (day post-coitum). Refers to the human fetal period.
+comment: Embryonic age 15 dpc (day post coitum). Refers to the human fetal period.
 synonym: "E15" EXACT []
 synonym: "TS23" EXACT []
 synonym: "TS23 (E15)" RELATED [EMAPA:TS23]
@@ -2675,13 +2751,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000029 ! Theiler stage 22 (Mus)
 relationship: part_of UBERON:0007220 ! late embryonic stage
+property_value: start_dpc "15.0" xsd:float
 
 [Term]
 id: MmusDv:0000033
 name: Theiler stage 24 (Mus)
 namespace: mouse_developmental_stage
 def: "Fetal stage during which the umbilical hernia disappears and there is a corresponding increase in the size of the peritoneal sac." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_24]
-comment: Embryonic age 16 dpc (day post-coitum). Refers to the human fetal period.
+comment: Embryonic age 16 dpc (day post coitum). Refers to the human fetal period.
 synonym: "E16" EXACT []
 synonym: "TS24" EXACT []
 synonym: "TS24 (E16)" RELATED [EMAPA:TS24]
@@ -2691,13 +2768,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000032 ! Theiler stage 23 (Mus)
 relationship: part_of UBERON:0007220 ! late embryonic stage
+property_value: start_dpc "16.0" xsd:float
 
 [Term]
 id: MmusDv:0000034
 name: Theiler stage 25 (Mus)
 namespace: mouse_developmental_stage
 def: "Fetal stage during which the thickened skin forms wrinkles and the subcutaneous veins are less visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_25]
-comment: Embryonic age 17 dpc (day post-coitum). Refers to the human fetal period.
+comment: Embryonic age 17 dpc (day post coitum). Refers to the human fetal period.
 synonym: "E17" EXACT []
 synonym: "TS25" EXACT []
 synonym: "TS25 (E17)" RELATED [EMAPA:TS25]
@@ -2707,13 +2785,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000033 ! Theiler stage 24 (Mus)
 relationship: part_of UBERON:0007220 ! late embryonic stage
+property_value: start_dpc "17.0" xsd:float
 
 [Term]
 id: MmusDv:0000035
 name: Theiler stage 26 (Mus)
 namespace: mouse_developmental_stage
 def: "Fetal stage defined by long whiskers and during which the eyes are barely visible through the closed eyelids." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_26]
-comment: Embryonic age 18 dpc (day post-coitum). Refers to the human fetal period.
+comment: Embryonic age 18 dpc (day post coitum). Refers to the human fetal period.
 synonym: "E18" EXACT []
 synonym: "TS26" EXACT []
 synonym: "TS26 (E18)" RELATED [EMAPA:TS26]
@@ -2723,13 +2802,14 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000034 ! Theiler stage 25 (Mus)
 relationship: part_of UBERON:0007220 ! late embryonic stage
+property_value: start_dpc "18.0" xsd:float
 
 [Term]
 id: MmusDv:0000036
 name: Theiler stage 27 (Mus)
 namespace: mouse_developmental_stage
 def: "Early immature stage that refers to the newborn mouse. Description of anatomical structures related to this stage corresponds to the first day of the mouse life." [http://www.emouseatlas.org/emap/ema/theiler_stages/StageDefinition/ts27definition.html]
-comment: Embryonic age 19-20 dpc (day post-coitum).
+comment: Embryonic age 19-20 dpc (day post coitum).
 synonym: "E19-20" EXACT []
 synonym: "newborn stage" RELATED []
 synonym: "TS27" RELATED [EMAPA:TS27]
@@ -2738,6 +2818,8 @@ xref: XUO:0000071
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000035 ! Theiler stage 26 (Mus)
 relationship: part_of MmusDv:0000096 ! early immature stage (Mus)
+property_value: start_dpc "19.0" xsd:float
+property_value: start_wpb "0.0" xsd:float
 
 [Term]
 id: MmusDv:0000041
@@ -2753,20 +2835,9 @@ namespace: mouse_developmental_stage
 def: "mouse life cycle that starts with fertilization and ends with birth." [Bgee:curator]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of UBERON:0000105 ! life cycle stage
-
-[Term]
-id: MmusDv:0000043
-name: immature stage (Mus)
-namespace: mouse_developmental_stage
-def: "Mouse developmental stage that covers the period from birth until 5 weeks old." [Bgee:curator]
-comment: The organisation of the postnatal development time in mouse is debatable, it is commonly accepted that mouse reaches sexual maturity by six weeks of age (see http://www.ahc.umn.edu/rar/breeding.html).synonym: "postnatal development" RELATED []
-synonym: "P0-adult" RELATED [EMAP:TS28]
-synonym: "Theiler stage 28" RELATED []
-synonym: "TheilerStage28" RELATED []
-synonym: "TS28 (P0-Adult)" RELATED [EMAP:TS28]
-xref: TS28
-is_a: UBERON:0000104 ! life cycle
-relationship: part_of UBERON:0000105 ! life cycle stage
+property_value: end_dpc "19.0" xsd:float
+property_value: end_ypb "0.0" xsd:float
+property_value: start_dpc "0.45" xsd:float
 
 [Term]
 id: MmusDv:0000044
@@ -2775,6 +2846,8 @@ namespace: mouse_developmental_stage
 def: "Early immature stage that refers to the newborn mouse which is over 1 and under 8 days old." [Bgee:curator]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of MmusDv:0000096 ! early immature stage (Mus)
+property_value: end_wpb "1.143" xsd:float
+property_value: start_wpb "0.143" xsd:float
 
 [Term]
 id: MmusDv:0000045
@@ -2784,6 +2857,8 @@ def: "Infant stage that refers to a mouse which is over 7 days and under 15 days
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000044 ! 1-7 days (Mus)
 relationship: part_of UBERON:0007221 ! neonate stage
+property_value: end_wpb "2.0" xsd:float
+property_value: start_wpb "1.0" xsd:float
 
 [Term]
 id: MmusDv:0000046
@@ -2793,6 +2868,8 @@ def: "Infant stage that refers to a mouse which is over 14 days and under 22 day
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000045 ! 1 week (Mus)
 relationship: part_of UBERON:0007221 ! neonate stage
+property_value: end_wpb "3.0" xsd:float
+property_value: start_wpb "2.0" xsd:float
 
 [Term]
 id: MmusDv:0000047
@@ -2802,6 +2879,8 @@ def: "Infant stage that refers to a mouse which is over 21 days and under 29 day
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000046 ! 2 weeks (Mus)
 relationship: part_of UBERON:0007221 ! neonate stage
+property_value: end_wpb "4.0" xsd:float
+property_value: start_wpb "3.0" xsd:float
 
 [Term]
 id: MmusDv:0000048
@@ -2811,6 +2890,8 @@ def: "Infant stage that refers to a mouse which is over 28 days and under 36 day
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000047 ! 3 weeks (Mus)
 relationship: part_of UBERON:0007221 ! neonate stage
+property_value: end_wpb "5.0" xsd:float
+property_value: start_wpb "4.0" xsd:float
 
 [Term]
 id: MmusDv:0000049
@@ -2821,6 +2902,8 @@ comment: This stage is usually the stage during which the sexual maturity occurs
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000048 ! 4 weeks (Mus)
 relationship: part_of UBERON:0007221 ! neonate stage
+property_value: end_wpb "6.0" xsd:float
+property_value: start_wpb "5.0" xsd:float
 
 [Term]
 id: MmusDv:0000050
@@ -2831,6 +2914,8 @@ comment: This stage is commonly considered in the literature as the milestone th
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000049 ! 5 weeks (Mus)
 relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+property_value: end_wpb "7.0" xsd:float
+property_value: start_wpb "6.0" xsd:float
 
 [Term]
 id: MmusDv:0000051
@@ -2840,6 +2925,8 @@ def: "Early adult stage that refers to a mouse which is over 49 days and under 5
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000050 ! 6 weeks (Mus)
 relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+property_value: end_wpb "8.0" xsd:float
+property_value: start_wpb "7.0" xsd:float
 
 [Term]
 id: MmusDv:0000052
@@ -2849,6 +2936,8 @@ def: "2 month-old stage that refers to a mouse which is over 56 days and under 6
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000051 ! 7 weeks (Mus)
 relationship: part_of MmusDv:0000062 ! 2 month-old stage (Mus)
+property_value: end_wpb "9.0" xsd:float
+property_value: start_wpb "8.0" xsd:float
 
 [Term]
 id: MmusDv:0000053
@@ -2858,6 +2947,8 @@ def: "2 month-old stage that refers to a mouse which is over 63 days and under 7
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000052 ! 8 weeks (Mus)
 relationship: part_of MmusDv:0000062 ! 2 month-old stage (Mus)
+property_value: end_wpb "10.0" xsd:float
+property_value: start_wpb "9.0" xsd:float
 
 [Term]
 id: MmusDv:0000054
@@ -2867,6 +2958,8 @@ def: "2 month-old stage that refers to a mouse which is over 70 days and under 7
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000053 ! 9 weeks (Mus)
 relationship: part_of MmusDv:0000062 ! 2 month-old stage (Mus)
+property_value: end_wpb "11.0" xsd:float
+property_value: start_wpb "10.0" xsd:float
 
 [Term]
 id: MmusDv:0000055
@@ -2876,6 +2969,8 @@ def: "2 month-old stage that refers to a mouse which is over 77 days and under 8
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000054 ! 10 weeks (Mus)
 relationship: part_of MmusDv:0000062 ! 2 month-old stage (Mus)
+property_value: end_wpb "12.0" xsd:float
+property_value: start_wpb "11.0" xsd:float
 
 [Term]
 id: MmusDv:0000056
@@ -2885,6 +2980,8 @@ def: "3 month-old stage that refers to a mouse which is over 84 days and under 9
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000055 ! 11 weeks (Mus)
 relationship: part_of MmusDv:0000063 ! 3 month-old stage (Mus)
+property_value: end_wpb "13.0" xsd:float
+property_value: start_wpb "12.0" xsd:float
 
 [Term]
 id: MmusDv:0000057
@@ -2894,6 +2991,8 @@ def: "3 month-old stage that refers to a mouse which is over 91 days and under 9
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000056 ! 12 weeks (Mus)
 relationship: part_of MmusDv:0000063 ! 3 month-old stage (Mus)
+property_value: end_wpb "14.0" xsd:float
+property_value: start_wpb "13.0" xsd:float
 
 [Term]
 id: MmusDv:0000058
@@ -2903,6 +3002,8 @@ def: "3 month-old stage that refers to a mouse which is over 98 days and under 1
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000057 ! 13 weeks (Mus)
 relationship: part_of MmusDv:0000063 ! 3 month-old stage (Mus)
+property_value: end_wpb "15.0" xsd:float
+property_value: start_wpb "14.0" xsd:float
 
 [Term]
 id: MmusDv:0000059
@@ -2912,6 +3013,8 @@ def: "3 month-old stage that refers to a mouse which is over 105 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000058 ! 14 weeks (Mus)
 relationship: part_of MmusDv:0000063 ! 3 month-old stage (Mus)
+property_value: end_wpb "16.0" xsd:float
+property_value: start_wpb "15.0" xsd:float
 
 [Term]
 id: MmusDv:0000061
@@ -2921,6 +3024,10 @@ def: "Mature stage that refers to a adult mouse which is over 6 weeks and under 
 comment: Mice under 7 months of age are commonly considered as young adult in the literature, without loss of functional capability like hearing (see http://www.ncbi.nlm.nih.gov/pubmed/18259074).
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of MmusDv:0000110 ! mature stage (Mus)
+property_value: end_mpb "7.0" xsd:float
+property_value: end_wpb "30.0" xsd:float
+property_value: start_mpb "1.5" xsd:float
+property_value: start_wpb "6.0" xsd:float
 
 [Term]
 id: MmusDv:0000062
@@ -2929,6 +3036,10 @@ namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 2 and under 3 months old." [Bgee:curator]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+property_value: end_mpb "3.0" xsd:float
+property_value: end_wpb "12.0" xsd:float
+property_value: start_mpb "2.0" xsd:float
+property_value: start_wpb "8.0" xsd:float
 
 [Term]
 id: MmusDv:0000063
@@ -2938,6 +3049,10 @@ def: "Early adult stage that refers to a mouse which is over 3 and under 4 month
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000062 ! 2 month-old stage (Mus)
 relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+property_value: end_mpb "4.0" xsd:float
+property_value: end_wpb "16.0" xsd:float
+property_value: start_mpb "3.0" xsd:float
+property_value: start_wpb "12.0" xsd:float
 
 [Term]
 id: MmusDv:0000064
@@ -2947,6 +3062,10 @@ def: "Early adult stage that refers to a mouse which is over 4 and under 5 month
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000063 ! 3 month-old stage (Mus)
 relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+property_value: end_mpb "5.0" xsd:float
+property_value: end_wpb "21.0" xsd:float
+property_value: start_mpb "4.0" xsd:float
+property_value: start_wpb "16.0" xsd:float
 
 [Term]
 id: MmusDv:0000065
@@ -2956,6 +3075,8 @@ def: "4 month-old stage that refers to a mouse which is over 112 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000059 ! 15 weeks (Mus)
 relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+property_value: end_wpb "17.0" xsd:float
+property_value: start_wpb "16.0" xsd:float
 
 [Term]
 id: MmusDv:0000066
@@ -2965,6 +3086,8 @@ def: "4 month-old stage that refers to a mouse which is over 119 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000065 ! 16 weeks (Mus)
 relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+property_value: end_wpb "18.0" xsd:float
+property_value: start_wpb "17.0" xsd:float
 
 [Term]
 id: MmusDv:0000067
@@ -2974,6 +3097,8 @@ def: "4 month-old stage that refers to a mouse which is over 126 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000066 ! 17 weeks (Mus)
 relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+property_value: end_wpb "19.0" xsd:float
+property_value: start_wpb "18.0" xsd:float
 
 [Term]
 id: MmusDv:0000068
@@ -2983,6 +3108,8 @@ def: "4 month-old stage that refers to a mouse which is over 133 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000067 ! 18 weeks (Mus)
 relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+property_value: end_wpb "20.0" xsd:float
+property_value: start_wpb "19.0" xsd:float
 
 [Term]
 id: MmusDv:0000069
@@ -2992,6 +3119,10 @@ def: "Early adult stage that refers to a mouse which is over 5 and under 6 month
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000064 ! 4 month-old stage (Mus)
 relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+property_value: end_mpb "6.0" xsd:float
+property_value: end_wpb "25.0" xsd:float
+property_value: start_mpb "5.0" xsd:float
+property_value: start_wpb "21.0" xsd:float
 
 [Term]
 id: MmusDv:0000070
@@ -3001,6 +3132,8 @@ def: "4 month-old stage that refers to a mouse which is over 140 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000068 ! 19 weeks (Mus)
 relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+property_value: end_wpb "21.0" xsd:float
+property_value: start_wpb "20.0" xsd:float
 
 [Term]
 id: MmusDv:0000071
@@ -3010,6 +3143,8 @@ def: "5 month-old stage that refers to a mouse which is over 147 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000070 ! 20 weeks (Mus)
 relationship: part_of MmusDv:0000069 ! 5 month-old stage (Mus)
+property_value: end_wpb "22.0" xsd:float
+property_value: start_wpb "21.0" xsd:float
 
 [Term]
 id: MmusDv:0000072
@@ -3019,6 +3154,8 @@ def: "5 month-old stage that refers to a mouse which is over 154 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000071 ! 21 weeks (Mus)
 relationship: part_of MmusDv:0000069 ! 5 month-old stage (Mus)
+property_value: end_wpb "23.0" xsd:float
+property_value: start_wpb "22.0" xsd:float
 
 [Term]
 id: MmusDv:0000073
@@ -3028,6 +3165,8 @@ def: "5 month-old stage that refers to a mouse which is over 161 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000072 ! 22 weeks (Mus)
 relationship: part_of MmusDv:0000069 ! 5 month-old stage (Mus)
+property_value: end_wpb "24.0" xsd:float
+property_value: start_wpb "23.0" xsd:float
 
 [Term]
 id: MmusDv:0000074
@@ -3037,6 +3176,8 @@ def: "5 month-old stage that refers to a mouse which is over 168 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000073 ! 23 weeks (Mus)
 relationship: part_of MmusDv:0000069 ! 5 month-old stage (Mus)
+property_value: end_wpb "25.0" xsd:float
+property_value: start_wpb "24.0" xsd:float
 
 [Term]
 id: MmusDv:0000075
@@ -3046,6 +3187,9 @@ def: "Late adult stage that refers to a mouse which is over 7 and under 15 month
 comment: This stage is commonly considered in the literature as the stage during which first evidence of loss of functional capability like hearing occurs in wild type mouse strain (see http://www.ncbi.nlm.nih.gov/pubmed/18259074).
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of MmusDv:0000097 ! late adult stage (Mus)
+property_value: end_mpb "15.0" xsd:float
+property_value: start_mpb "7.0" xsd:float
+property_value: start_wpb "30.0" xsd:float
 
 [Term]
 id: MmusDv:0000076
@@ -3054,6 +3198,7 @@ namespace: mouse_developmental_stage
 def: "Late adult stage that refers to a mouse which is over 15 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of MmusDv:0000097 ! late adult stage (Mus)
+property_value: start_mpb "15.0" xsd:float
 
 [Term]
 id: MmusDv:0000077
@@ -3063,6 +3208,10 @@ def: "Early adult stage that refers to a mouse which is over 6 and under 7 month
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000069 ! 5 month-old stage (Mus)
 relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+property_value: end_mpb "7.0" xsd:float
+property_value: end_wpb "30.0" xsd:float
+property_value: start_mpb "6.0" xsd:float
+property_value: start_wpb "25.0" xsd:float
 
 [Term]
 id: MmusDv:0000078
@@ -3072,6 +3221,9 @@ def: "Middle aged stage that refers to a mouse which is over 7 and under 8 month
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000077 ! 6 month-old stage (Mus)
 relationship: part_of MmusDv:0000075 ! middle aged stage (Mus)
+property_value: end_mpb "8.0" xsd:float
+property_value: start_mpb "7.0" xsd:float
+property_value: start_wpb "30.0" xsd:float
 
 [Term]
 id: MmusDv:0000079
@@ -3081,6 +3233,8 @@ def: "Middle aged stage that refers to a mouse which is over 8 and under 9 month
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000078 ! 7 month-old stage (Mus)
 relationship: part_of MmusDv:0000075 ! middle aged stage (Mus)
+property_value: end_mpb "9.0" xsd:float
+property_value: start_mpb "8.0" xsd:float
 
 [Term]
 id: MmusDv:0000080
@@ -3090,6 +3244,8 @@ def: "Middle aged stage that refers to a mouse which is over 9 and under 10 mont
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000079 ! 8 month-old stage (Mus)
 relationship: part_of MmusDv:0000075 ! middle aged stage (Mus)
+property_value: end_mpb "10.0" xsd:float
+property_value: start_mpb "9.0" xsd:float
 
 [Term]
 id: MmusDv:0000081
@@ -3099,6 +3255,8 @@ def: "Middle aged stage that refers to a mouse which is over 10 and under 11 mon
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000080 ! 9 month-old stage (Mus)
 relationship: part_of MmusDv:0000075 ! middle aged stage (Mus)
+property_value: end_mpb "11.0" xsd:float
+property_value: start_mpb "10.0" xsd:float
 
 [Term]
 id: MmusDv:0000082
@@ -3108,6 +3266,8 @@ def: "Middle aged stage that refers to a mouse which is over 11 and under 12 mon
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000081 ! 10 month-old stage (Mus)
 relationship: part_of MmusDv:0000075 ! middle aged stage (Mus)
+property_value: end_mpb "12.0" xsd:float
+property_value: start_mpb "11.0" xsd:float
 
 [Term]
 id: MmusDv:0000083
@@ -3117,6 +3277,8 @@ def: "Middle aged stage that refers to a mouse which is over 12 and under 13 mon
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000082 ! 11 month-old stage (Mus)
 relationship: part_of MmusDv:0000075 ! middle aged stage (Mus)
+property_value: end_mpb "13.0" xsd:float
+property_value: start_mpb "12.0" xsd:float
 
 [Term]
 id: MmusDv:0000084
@@ -3126,6 +3288,8 @@ def: "Middle aged stage that refers to a mouse which is over 13 and under 14 mon
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000083 ! 12 month-old stage (Mus)
 relationship: part_of MmusDv:0000075 ! middle aged stage (Mus)
+property_value: end_mpb "14.0" xsd:float
+property_value: start_mpb "13.0" xsd:float
 
 [Term]
 id: MmusDv:0000085
@@ -3135,6 +3299,8 @@ def: "Middle aged stage that refers to a mouse which is over 14 and under 15 mon
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000084 ! 13 month-old stage (Mus)
 relationship: part_of MmusDv:0000075 ! middle aged stage (Mus)
+property_value: end_mpb "15.0" xsd:float
+property_value: start_mpb "14.0" xsd:float
 
 [Term]
 id: MmusDv:0000086
@@ -3144,6 +3310,8 @@ def: "Aged adult stage that refers to a mouse which is over 15 and under 16 mont
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000085 ! 14 month-old stage (Mus)
 relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+property_value: end_mpb "16.0" xsd:float
+property_value: start_mpb "15.0" xsd:float
 
 [Term]
 id: MmusDv:0000087
@@ -3153,6 +3321,8 @@ def: "Aged adult stage that refers to a mouse which is over 16 and under 17 mont
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000086 ! 15 month-old stage (Mus)
 relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+property_value: end_mpb "17.0" xsd:float
+property_value: start_mpb "16.0" xsd:float
 
 [Term]
 id: MmusDv:0000088
@@ -3162,6 +3332,8 @@ def: "Aged adult stage that refers to a mouse which is over 17 and under 18 mont
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000087 ! 16 month-old stage (Mus)
 relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+property_value: end_mpb "18.0" xsd:float
+property_value: start_mpb "17.0" xsd:float
 
 [Term]
 id: MmusDv:0000089
@@ -3171,6 +3343,8 @@ def: "Aged adult stage that refers to a mouse which is over 18 and under 19 mont
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000088 ! 17 month-old stage (Mus)
 relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+property_value: end_mpb "19.0" xsd:float
+property_value: start_mpb "18.0" xsd:float
 
 [Term]
 id: MmusDv:0000090
@@ -3180,6 +3354,8 @@ def: "Aged adult stage that refers to a mouse which is over 19 and under 20 mont
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000089 ! 18 month-old stage (Mus)
 relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+property_value: end_mpb "20.0" xsd:float
+property_value: start_mpb "19.0" xsd:float
 
 [Term]
 id: MmusDv:0000091
@@ -3188,6 +3364,7 @@ namespace: mouse_developmental_stage
 def: "Aged adult stage that refers to a mouse which is over 20 months old." [Bgee:curator]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+property_value: start_mpb "20.0" xsd:float
 
 [Term]
 id: MmusDv:0000092
@@ -3239,7 +3416,10 @@ namespace: mouse_developmental_stage
 def: "Immature stage that covers the period from birth until end of the first week." [Bgee:curator]
 comment: This stage groups the first seven days of the mouse life as described in K.Theiler's book, The House Mouse, Atlas of Embryonic Development, Springer-Verlag (second printing 1989).
 is_a: UBERON:0000104 ! life cycle
-relationship: part_of MmusDv:0000043 ! immature stage (Mus)
+relationship: part_of UBERON:0000112 ! juvenile stage
+property_value: end_wpb "1.0" xsd:float
+property_value: start_dpc "19.0" xsd:float
+property_value: start_wpb "0.0" xsd:float
 
 [Term]
 id: MmusDv:0000097
@@ -3248,6 +3428,8 @@ namespace: mouse_developmental_stage
 def: "Mature stage that refers to an adult mouse which is over 7 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of MmusDv:0000110 ! mature stage (Mus)
+property_value: start_mpb "7.0" xsd:float
+property_value: start_wpb "30.0" xsd:float
 
 [Term]
 id: MmusDv:0000098
@@ -3257,6 +3439,8 @@ def: "6 month-old stage that refers to a mouse which is over 175 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000074 ! 24 weeks (Mus)
 relationship: part_of MmusDv:0000077 ! 6 month-old stage (Mus)
+property_value: end_wpb "26.0" xsd:float
+property_value: start_wpb "25.0" xsd:float
 
 [Term]
 id: MmusDv:0000099
@@ -3266,6 +3450,8 @@ def: "6 month-old stage that refers to a mouse which is over 182 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000098 ! 25 weeks (Mus)
 relationship: part_of MmusDv:0000077 ! 6 month-old stage (Mus)
+property_value: end_wpb "27.0" xsd:float
+property_value: start_wpb "26.0" xsd:float
 
 [Term]
 id: MmusDv:0000100
@@ -3275,6 +3461,8 @@ def: "6 month-old stage that refers to a mouse which is over 189 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000099 ! 26 weeks (Mus)
 relationship: part_of MmusDv:0000077 ! 6 month-old stage (Mus)
+property_value: end_wpb "28.0" xsd:float
+property_value: start_wpb "27.0" xsd:float
 
 [Term]
 id: MmusDv:0000101
@@ -3284,6 +3472,8 @@ def: "6 month-old stage that refers to a mouse which is over 196 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000100 ! 27 weeks (Mus)
 relationship: part_of MmusDv:0000077 ! 6 month-old stage (Mus)
+property_value: end_wpb "29.0" xsd:float
+property_value: start_wpb "28.0" xsd:float
 
 [Term]
 id: MmusDv:0000102
@@ -3293,6 +3483,8 @@ def: "6 month-old stage that refers to a mouse which is over 203 days and under 
 is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by MmusDv:0000101 ! 28 weeks (Mus)
 relationship: part_of MmusDv:0000077 ! 6 month-old stage (Mus)
+property_value: end_wpb "30.0" xsd:float
+property_value: start_wpb "29.0" xsd:float
 
 [Term]
 id: MmusDv:0000103
@@ -3355,7 +3547,7 @@ id: MmusDv:0000108
 name: Theiler stage 12a (Mus)
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 12 defined by unturned embryo with first appearance of somite pairs 1-4 and during which the allantois extends further into the exocoelom. Maxillary components of the 1st branchial arch become prominent. The preotic sulcus is visible in the 2-3 somite embryo. The cardiogenic plate begins to form and the foregut pocket is clearly visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12a]
-comment: Embryonic age 8 dpc (day post-coitum). Refers to human CarnegieStage09.
+comment: Embryonic age 8 dpc (day post coitum). Refers to human CarnegieStage09.
 synonym: "TS12a" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
@@ -3366,7 +3558,7 @@ id: MmusDv:0000109
 name: Theiler stage 12b (Mus)
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 12 defined by unturned embryo with first appearance of somite pairs 5-7 and during which neural closure occurs in the region of the 4th and 5th somites, extending in both directions from this site. Headfolds are particularly prominent. Optic placodes are first evident and become indented to form the optic pits. The heart rudiment develops rapidly. The allantois contacts the chorion at the end of this stage." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12b]
-comment: Embryonic age 8 dpc (day post-coitum). Refers to human CarnegieStage09.
+comment: Embryonic age 8 dpc (day post coitum). Refers to human CarnegieStage09.
 synonym: "TS12b" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000104 ! life cycle
@@ -3381,6 +3573,8 @@ def: "Mouse developmental stage that refers to a sexually mature adult mouse whi
 synonym: "mature" EXACT []
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of UBERON:0000105 ! life cycle stage
+property_value: start_mpb "1.5" xsd:float
+property_value: start_wpb "6.0" xsd:float
 
 [Term]
 id: UBERON:0000000
@@ -3709,6 +3903,7 @@ xref: BILS:0000112
 xref: BTO:0002168
 xref: EFO:0001300
 xref: EV:0300051
+xref: MmusDv:0000043
 xref: OGES:000009
 xref: TS28
 xref: XAO:1000010
@@ -3936,6 +4131,13 @@ synonym: "paranatal stage" NARROW []
 is_a: UBERON:0000105 ! life cycle stage
 relationship: overlaps UBERON:0000068 ! embryo stage
 relationship: overlaps UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: XAO:1000000
+name: Xenopus developmental stage
+namespace: xenopus_developmental_stage
+def: "A temporal interval that defines Xenopus life from unfertilized egg to adult and death stages." [XAO:EJS]
+property_value: IAO:0000589 "life cycle stage (xenopus)" xsd:string
 
 [Term]
 id: XAO:1000002
@@ -4704,6 +4906,15 @@ created_by: eriksegerdell
 creation_date: 2013-02-09T18:40:27Z
 
 [Term]
+id: ZFS:0000000
+name: Unknown
+namespace: zebrafish_stages
+xref: ZFIN:ZDB-STAGE-050211-1
+is_a: ZFS:0100000 ! zebrafish stage
+equivalent_to: ZFS:0100000 ! zebrafish stage
+property_value: IAO:0000589 "life cycle stage (ZFS)" xsd:string
+
+[Term]
 id: ZFS:0000005
 name: Cleavage:16-cell (Danio)
 namespace: zebrafish_stages
@@ -5060,6 +5271,12 @@ name: segmentation (Danio)
 namespace: zebrafish_stages
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000109 ! gastrula stage
+
+[Term]
+id: ZFS:0100000
+name: zebrafish stage
+namespace: zebrafish_stages
+property_value: IAO:0000589 "life cycle stage (ZFS)" xsd:string
 
 [Typedef]
 id: BFO:0000051

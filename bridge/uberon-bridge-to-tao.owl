@@ -20,7 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/tao.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-tao/2013-05-03/uberon/bridge/uberon-bridge-to-tao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-tao/2013-05-06/uberon/bridge/uberon-bridge-to-tao.owl"/>
     </owl:Ontology>
     
 
@@ -2661,7 +2661,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000170</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basibranchial (teleost)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basibranchial bone (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -18716,6 +18716,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/TAO_0005411 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0005411">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0013764"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005411</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">common crus of semicircular duct (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/TAO_0005413 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0005413">
@@ -24927,6 +24947,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0012463 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0012463"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0013764 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0013764"/>
     
 
 

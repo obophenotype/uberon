@@ -768,8 +768,9 @@ relationship: part_of UBERON:0002299 {source="GO"} ! alveolus of lung
 id: UBERON:0000117
 name: respiratory tube
 namespace: uberon
-def: "A tube in the respiratory tract." [GO:0030323]
-comment: Consider merging into respiratory tract
+def: "A tube in the respiratory system. Examples: bronchus, bronchiole, trachea." [GO:0030323, UBERON:cjm]
+synonym: "respiratory conducting tube" NARROW []
+synonym: "segment of tracheobronchial tree" EXACT [FMA:12224]
 synonym: "segment of tracheobronchial tree" NARROW [FMA:12224]
 synonym: "tracheobronchial tree segment" NARROW [FMA:12224]
 xref: FMA:12224
@@ -2444,10 +2445,12 @@ relationship: part_of UBERON:0002299 ! alveolus of lung
 
 [Term]
 id: UBERON:0002173
-name: alveolar duct
+name: pulmonary alveolar duct
 namespace: uberon
 def: "Alveolar ducts are the tiny end ducts of the branching airways that fill the lungs. Each lung holds approximately 1.5 to 2 million of them. The tubules divide into two or three alveolar sacs at the distal end. They are formed from the confluence openings of several alveoli. Distal terminations of alveolar ducts are atria which then end in alveolar sacs. In human anatomy, respiratory bronchioles exists proximal to the alveolar ducts. The epithelial lining consists of smooth muscle knobs covered by nonciliated, simple cuboidal cells. The smooth muscle constricts under parasympathetic innervation and relax under sympathetic innervation. [WP,unvetted]." [Wikipedia:Alveolar_duct]
 subset: uberon_slim
+synonym: "alveolar duct" EXACT [MA:0000417]
+synonym: "respiratory alveolar duct" EXACT []
 xref: FMA:7341
 xref: http://upload.wikimedia.org/wikipedia/commons/8/8f/Gray975.png
 xref: MA:0000417
@@ -2495,7 +2498,8 @@ def: "The main bronchus on the right side." [https://orcid.org/0000-0002-6601-21
 comment: Divides into 3 lobar bronchi in humans[ISBN10:0123813611]
 subset: uberon_slim
 synonym: "bronchus principalis dexter" RELATED LATIN [Wikipedia:Right_main_bronchus]
-synonym: "right bronchus" EXACT []
+synonym: "right bronchus" RELATED []
+synonym: "right major bronchus" EXACT []
 synonym: "right primary bronchus" EXACT [Wikipedia:Right_main_bronchus]
 synonym: "right principal bronchus" EXACT [Wikipedia:Right_main_bronchus]
 xref: FMA:7395
@@ -2518,7 +2522,8 @@ def: "The main bronchus on the left side." [Wikipedia:Left_main_bronchus]
 comment: Divides into 2 lobar bronchi in humans[ISBN10:0123813611]
 subset: uberon_slim
 synonym: "bronchus principalis sinister" RELATED LATIN [Wikipedia:Left_main_bronchus]
-synonym: "left bronchus" EXACT []
+synonym: "left bronchus" RELATED []
+synonym: "left major bronchus" EXACT []
 synonym: "left primary bronchus" EXACT [Wikipedia:Left_main_bronchus]
 synonym: "left principal bronchus" EXACT [Wikipedia:Left_main_bronchus]
 xref: FMA:7396
@@ -2543,6 +2548,7 @@ subset: uberon_slim
 synonym: "bronchus principalis" EXACT [FMA:7405]
 synonym: "extrapulmonary bronchus" EXACT [ISBN10:0123813611]
 synonym: "mainstem bronchus" EXACT []
+synonym: "major bronchus" EXACT []
 synonym: "primary bronchus" EXACT [FMA:7405]
 synonym: "principal bronchus" EXACT [FMA:7405]
 synonym: "proximal bronchus" RELATED []
@@ -2653,7 +2659,7 @@ xref: UMLS:C0006255
 xref: VHOG:0000262
 xref: Wikipedia:Bronchus
 xref: XAO:0000121
-is_a: UBERON:0001005 ! respiratory airway
+is_a: UBERON:0000117 ! respiratory tube
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 property_value: UBPROP:0000001 "Each of the two primary divisions of the trachea leading respectively into the right and the left lung. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000262", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "bronchial" xsd:string
@@ -2684,9 +2690,7 @@ xref: SCTID:278982001
 xref: UMLS:C0006270
 xref: VHOG:0000675
 xref: Wikipedia:Bronchiole
-is_a: UBERON:0000115 {is_inferred="true"} ! lung epithelium
-is_a: UBERON:0000117 {is_inferred="true"} ! respiratory tube
-is_a: UBERON:0002031 {is_inferred="true"} ! epithelium of bronchus
+is_a: UBERON:0000117 ! respiratory tube
 relationship: branch_of UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0002048 {source="MA"} ! lung
 relationship: part_of UBERON:0007196 {source="FMA"} ! tracheobronchial tree
@@ -2701,6 +2705,7 @@ def: "A terminal bronchiole is a bronchiole at the end of the conducting zone. A
 subset: uberon_slim
 synonym: "bronchioli terminalis" RELATED LATIN [Wikipedia:Terminal_bronchiole]
 synonym: "bronchiolus terminalis" EXACT LATIN []
+synonym: "terminal bronchiole tube" RELATED []
 xref: BTO:0003223
 xref: FMA:7411
 xref: http://upload.wikimedia.org/wikipedia/commons/d/db/Alveoli_diagram.png
@@ -2733,7 +2738,7 @@ xref: SCTID:128517006
 xref: UMLS:C1261270
 xref: Wikipedia:Respiratory_bronchiole
 is_a: UBERON:0002186 ! bronchiole
-relationship: distally_connected_to UBERON:0002173 ! alveolar duct
+relationship: distally_connected_to UBERON:0002173 ! pulmonary alveolar duct
 relationship: part_of UBERON:0008874 {source="ISBN10:0123813611"} ! pulmonary acinus
 relationship: proximally_connected_to UBERON:0002187 ! terminal bronchiole
 
@@ -2821,6 +2826,8 @@ synonym: "alveolus pulmonis" EXACT [Wikipedia:Pulmonary_alveolus]
 synonym: "alveolus pulmonis" RELATED LATIN [Wikipedia:Pulmonary_alveolus]
 synonym: "lung alveolus" EXACT []
 synonym: "pulmonary alveolus" EXACT [FMA:7318]
+synonym: "respiratory alveoli" RELATED PLURAL []
+synonym: "respiratory alveolus" EXACT []
 xref: BTO:0000060
 xref: CALOHA:TS-0031
 xref: EFO:0001985
@@ -3851,7 +3858,7 @@ xref: EMAPA:19191
 xref: MA:0001785
 xref: ncithesaurus:Right_Lung_Alveolar_Duct
 xref: UMLS:C1709958
-intersection_of: UBERON:0002173 ! alveolar duct
+intersection_of: UBERON:0002173 ! pulmonary alveolar duct
 intersection_of: part_of UBERON:0002167 ! right lung
 relationship: part_of UBERON:0006526 ! right lung alveolar system
 
@@ -3866,7 +3873,7 @@ xref: EMAPA:19183
 xref: MA:0001776
 xref: ncithesaurus:Left_Lung_Alveolar_Duct
 xref: UMLS:C1708672
-intersection_of: UBERON:0002173 ! alveolar duct
+intersection_of: UBERON:0002173 ! pulmonary alveolar duct
 intersection_of: part_of UBERON:0002168 ! left lung
 relationship: part_of UBERON:0006525 ! left lung alveolar system
 
@@ -3882,7 +3889,6 @@ xref: MA:0001787
 xref: ncithesaurus:Right_Lung_Bronchiole
 xref: SCTID:200089000
 xref: UMLS:C0225670
-is_a: UBERON:0003364 {is_inferred="true"} ! epithelium of right lung
 intersection_of: UBERON:0002186 ! bronchiole
 intersection_of: part_of UBERON:0002167 ! right lung
 
@@ -3899,7 +3905,6 @@ xref: MA:0001778
 xref: ncithesaurus:Left_Lung_Bronchiole
 xref: SCTID:200484003
 xref: UMLS:C0225674
-is_a: UBERON:0003365 {is_inferred="true"} ! epithelium of left lung
 intersection_of: UBERON:0002186 ! bronchiole
 intersection_of: part_of UBERON:0002168 ! left lung
 
@@ -4197,11 +4202,12 @@ relationship: part_of UBERON:0004777 ! respiratory system submucosa
 id: UBERON:0003615
 name: lung elastic tissue
 namespace: uberon
-def: "An elastic tissue that is part of a lung [Automatically generated definition]." [OBOL:automatic]
+def: "Elastic tissue that is part of a lung [Automatically generated definition]." [OBOL:automatic]
 synonym: "elastic connective tissue of lung" EXACT [OBOL:automatic]
 synonym: "elastic tissue of lung" EXACT [OBOL:automatic]
 synonym: "lung elastic connective tissue" EXACT [OBOL:automatic]
 synonym: "lung textus connectivus elasticus" EXACT [OBOL:automatic]
+synonym: "pulmonary elastic fiber" NARROW [UBERON:cjm]
 synonym: "textus connectivus elasticus of lung" EXACT [OBOL:automatic]
 xref: MA:0002860
 is_a: UBERON:0000114 {is_inferred="true"} ! lung connective tissue
@@ -5847,7 +5853,6 @@ xref: EHDAA2:0001749
 xref: EMAPA:19006
 xref: SCTID:84841004
 is_a: UBERON:0003538 {is_inferred="true"} ! right lung bronchiole
-is_a: UBERON:0005639 {is_inferred="true"} ! right lung cranial lobe epithelium
 intersection_of: UBERON:0002186 ! bronchiole
 intersection_of: part_of UBERON:0002170 ! upper lobe of right lung
 
@@ -5859,7 +5864,6 @@ def: "A bronchiole that is part of a right lung accessory lobe." [OBOL:automatic
 xref: EHDAA2:0001733
 xref: EMAPA:19002
 is_a: UBERON:0003538 {is_inferred="true"} ! right lung bronchiole
-is_a: UBERON:0005655 {is_inferred="true"} ! right lung accessory lobe epithelium
 intersection_of: UBERON:0002186 ! bronchiole
 intersection_of: part_of UBERON:0004890 ! right lung accessory lobe
 
@@ -7756,7 +7760,6 @@ xref: EHDAA2:0004094
 xref: EMAPA:19004
 xref: SCTID:15215000
 is_a: UBERON:0003538 {is_inferred="true"} ! right lung bronchiole
-is_a: UBERON:0005640 {is_inferred="true"} ! right lung caudal lobe epithelium
 intersection_of: UBERON:0002186 ! bronchiole
 intersection_of: part_of UBERON:0002171 ! lower lobe of right lung
 relationship: develops_from UBERON:0005640 {source="EHDAA2"} ! right lung caudal lobe epithelium

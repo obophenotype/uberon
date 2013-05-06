@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-fma
-data-version: 2013-05-03
+data-version: 2013-05-06
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to fma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the FMA and Uberon" xsd:string
@@ -16,9 +16,33 @@ intersection_of: UBERON:0000002 ! uterine cervix
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:17746 ! lumen of cervix of uterus
+property_value: IAO:0000589 "cervical cavity (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013761 ! cervical cavity
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:17739 ! body of uterus
 property_value: IAO:0000589 "body of uterus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0009853 ! body of uterus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:20422 ! cervical os
+property_value: IAO:0000589 "cervical os (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013758 ! cervical os
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:17747 ! internal cervical os
+property_value: IAO:0000589 "internal cervical os (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013759 ! internal cervical os
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:76836 ! external cervical os
+property_value: IAO:0000589 "external cervical os (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013760 ! external cervical os
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -2395,6 +2419,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:72173 ! fetal uterus
 property_value: IAO:0000589 "embryonic uterus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0005795 ! embryonic uterus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:17745 ! cavity of uterus
+property_value: IAO:0000589 "uterine lumen (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013769 ! uterine lumen
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -12569,8 +12599,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:7341 ! Alveolar duct
-property_value: IAO:0000589 "alveolar duct (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002173 ! alveolar duct
+property_value: IAO:0000589 "pulmonary alveolar duct (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002173 ! pulmonary alveolar duct
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -13007,6 +13037,12 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:77023 ! Dorsal thoracic nucleus
+property_value: IAO:0000589 "dorsal thoracic nucleus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002246 ! dorsal thoracic nucleus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:73912 ! dorsal nucleus of clarke
 property_value: IAO:0000589 "dorsal thoracic nucleus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002246 ! dorsal thoracic nucleus
 intersection_of: part_of NCBITaxon:9606
@@ -15190,9 +15226,39 @@ intersection_of: UBERON:0006930 ! glandular cuboidal epithelium
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:83852 ! trigeminothalamic tract
+property_value: IAO:0000589 "trigeminothalamic tract (post-embryonic human)" xsd:string
+intersection_of: UBERON:0004171 ! trigeminothalamic tract
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:72506 ! Ventral trigeminal tract
 property_value: IAO:0000589 "ventral trigeminal tract (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002549 ! ventral trigeminal tract
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:72489 ! Mesencephalic tract of trigeminal nerve
+property_value: IAO:0000589 "mesencephalic tract of trigeminal nerve (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002666 ! mesencephalic tract of trigeminal nerve
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:72625 ! Spinal trigeminal tract of medulla
+property_value: IAO:0000589 "spinal trigeminal tract of medulla (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002715 ! spinal trigeminal tract of medulla
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:72500 ! Dorsal trigeminal tract
+property_value: IAO:0000589 "dorsal trigeminal tract (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002797 ! dorsal trigeminal tract
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:72507 ! Spinal trigeminal tract of pons
+property_value: IAO:0000589 "spinal trigeminal tract of pons (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002800 ! spinal trigeminal tract of pons
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -15838,12 +15904,6 @@ intersection_of: UBERON:0002665 ! supracallosal gyrus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:72489 ! Mesencephalic tract of trigeminal nerve
-property_value: IAO:0000589 "mesencephalic tract of trigeminal nerve (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002666 ! mesencephalic tract of trigeminal nerve
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:61878 ! Lateral septal nucleus (also: UBERON:0007628 'lateral septal complex')
 property_value: IAO:0000589 "lateral septal nucleus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002667 ! lateral septal nucleus
@@ -16123,12 +16183,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:72640 ! Rubrospinal tract
 property_value: IAO:0000589 "rubrospinal tract (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002714 ! rubrospinal tract
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:72625 ! Spinal trigeminal tract of medulla
-property_value: IAO:0000589 "spinal trigeminal tract of medulla (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002715 ! spinal trigeminal tract of medulla
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -16543,18 +16597,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:52611 ! sensory root of trigeminal nerve
 property_value: IAO:0000589 "sensory root of trigeminal nerve (post-embryonic human)" xsd:string
 intersection_of: UBERON:0009907 ! sensory root of trigeminal nerve
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:72500 ! Dorsal trigeminal tract
-property_value: IAO:0000589 "dorsal trigeminal tract (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002797 ! dorsal trigeminal tract
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:72507 ! Spinal trigeminal tract of pons
-property_value: IAO:0000589 "spinal trigeminal tract of pons (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002800 ! spinal trigeminal tract of pons
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -19499,8 +19541,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:83605 ! meisner's corpuscle
-property_value: IAO:0000589 "Meisner's corpuscle (post-embryonic human)" xsd:string
-intersection_of: UBERON:0012450 ! Meisner's corpuscle
+property_value: IAO:0000589 "Meissner's corpuscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0012450 ! Meissner's corpuscle
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -19939,6 +19981,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:51873 ! Scleral venous sinus
 property_value: IAO:0000589 "canal of Schlemm (post-embryonic human)" xsd:string
 intersection_of: UBERON:0004029 ! canal of Schlemm
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:71881 ! set of common membranous limb of semicircular ducts
+property_value: IAO:0000589 "common crus of semicircular duct (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013764 ! common crus of semicircular duct
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -20491,12 +20539,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:77034 ! dorsal white commissure of spinal cord
 property_value: IAO:0000589 "spinal cord dorsal white commissure (post-embryonic human)" xsd:string
 intersection_of: UBERON:0007840 ! spinal cord dorsal white commissure
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:83852 ! Trigeminothalamic tract
-property_value: IAO:0000589 "trigeminothalamic tract (post-embryonic human)" xsd:string
-intersection_of: UBERON:0004171 ! trigeminothalamic tract
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -27913,6 +27955,102 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:54253 ! hair of axilla
 property_value: IAO:0000589 "strand of axillary hair (post-embryonic human)" xsd:string
 intersection_of: UBERON:0013699 ! strand of axillary hair
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:33767 ! metaphysis of ulna
+property_value: IAO:0000589 "ulnar metaphysis (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013748 ! ulnar metaphysis
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:32830 ! metaphysis of humerus
+property_value: IAO:0000589 "metaphysis of humerus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013749 ! metaphysis of humerus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:33135 ! metaphysis of tibia
+property_value: IAO:0000589 "metaphysis of tibia (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013750 ! metaphysis of tibia
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:33789 ! metaphysis of radius
+property_value: IAO:0000589 "metaphysis of radius (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013751 ! metaphysis of radius
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:33804 ! diaphysis of metacarpal bone
+property_value: IAO:0000589 "diaphysis of metacarpal bone (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013752 ! diaphysis of metacarpal bone
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:33798 ! distal epiphysis of metacarpal bone
+property_value: IAO:0000589 "distal epiphysis of metacarpal bone (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013753 ! distal epiphysis of metacarpal bone
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:33826 ! diaphysis of metatarsal bone
+property_value: IAO:0000589 "diaphysis of metatarsal bone (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013774 ! diaphysis of metatarsal bone
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:83066 ! portion of arterial blood
+property_value: IAO:0000589 "arterial blood (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013755 ! arterial blood
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:83067 ! portion of venous blood
+property_value: IAO:0000589 "venous blood (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013756 ! venous blood
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:263901 ! portion of blood in capillary
+property_value: IAO:0000589 "capillary blood (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013757 ! capillary blood
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:52894 ! frontal process of maxilla
+property_value: IAO:0000589 "frontal process of maxilla (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013767 ! frontal process of maxilla
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:55264 ! intermammary cleft
+property_value: IAO:0000589 "intermammary cleft (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013770 ! intermammary cleft
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:223695 ! left nipple
+property_value: IAO:0000589 "left nipple (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013772 ! left nipple
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:223693 ! right nipple
+property_value: IAO:0000589 "right nipple (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013773 ! right nipple
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:38301 ! skin of palm of hand
+property_value: IAO:0000589 "skin of palm of manus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013777 ! skin of palm of manus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:37849 ! skin of sole of foot
+property_value: IAO:0000589 "skin of sole of pes (post-embryonic human)" xsd:string
+intersection_of: UBERON:0013778 ! skin of sole of pes
 intersection_of: part_of NCBITaxon:9606
 
 [Term]

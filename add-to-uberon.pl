@@ -53,10 +53,12 @@ my %nh = ();
 my %xrefh=();
 my $uid = 0;
 my $stanza_type;
-my $f = shift @ARGV;
-if (!$f) {
-    $f = "uberon_edit.obo";
+my $f1 = shift @ARGV;
+my @fs = ($f1);
+if (!$f1) {
+    @fs = ("uberon_edit.obo", "new.obo");
 }
+while (my $f = shift @fs) {
 open(F,$f) || die($f);
 while (<F>) {
     s/\s+$//;
@@ -85,6 +87,7 @@ while (<F>) {
     }
 }
 close(F);
+}
 
 my $xref;
 my $name;
@@ -96,6 +99,12 @@ while(<>) {
     s/relationship: (constitutional|regional|systemic)_part/relationship: part/;
 
     s/property_value:.*UMLS_CUI.*\"(\S+)\".*/xref: UMLS:$1/;
+
+    s@http://www.obofoundry.org/ro/ro.owl#proper_part_of@part_of@;
+
+    s@property_value: nif_obo_annot:synonym "(.*)" xsd:string@synonym: "$1" RELATED []@;
+
+    s@property_value: skos:definition "(.*)" xsd:string@def: "$1" [$xref]@;
 
     if (/^\[/) {
         $in_header = 0;
