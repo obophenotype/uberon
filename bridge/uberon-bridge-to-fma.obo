@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-fma
-data-version: 2013-05-06
+data-version: 2013-05-22
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to fma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the FMA and Uberon" xsd:string
@@ -1108,12 +1108,6 @@ intersection_of: UBERON:0004760 ! gland of anal canal
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:74268 ! set of renal pyramids
-property_value: IAO:0000589 "renal medulla (post-embryonic human)" xsd:string
-intersection_of: UBERON:0000362 ! renal medulla
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:258870 ! Renal pyramid
 property_value: IAO:0000589 "kidney pyramid (post-embryonic human)" xsd:string
 intersection_of: UBERON:0004200 ! kidney pyramid
@@ -1223,8 +1217,14 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:37449 ! flexor hallucis brevis
-property_value: IAO:0000589 "flexor hallucis brevis (post-embryonic human)" xsd:string
-intersection_of: UBERON:0011022 ! flexor hallucis brevis
+property_value: IAO:0000589 "flexor hallucis brevis muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0011022 ! flexor hallucis brevis muscle
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:37450 ! flexor digitorum brevis
+property_value: IAO:0000589 "flexor digitorum brevis muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014380 ! flexor digitorum brevis muscle
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -1519,6 +1519,18 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:59154 ! Eccrine sweat gland
 property_value: IAO:0000589 "eccrine sweat gland (post-embryonic human)" xsd:string
 intersection_of: UBERON:0000423 ! eccrine sweat gland
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:63084 ! sweat of palm
+property_value: IAO:0000589 "sweat of palm (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014392 ! sweat of palm
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:63085 ! sweat of axilla
+property_value: IAO:0000589 "sweat of axilla (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014393 ! sweat of axilla
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -3415,6 +3427,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:16201 ! subdivision of vertebral column
 property_value: IAO:0000589 "subdivision of vertebral column (post-embryonic human)" xsd:string
 intersection_of: UBERON:0006077 ! subdivision of vertebral column
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:72066 ! Set of thoracolumbar vertebrae
+property_value: IAO:0000589 "trunk region of vertebral column (post-embryonic human)" xsd:string
+intersection_of: UBERON:0009568 ! trunk region of vertebral column
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -6838,18 +6856,6 @@ intersection_of: UBERON:0001487 ! pes joint
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:71349 ! Set of joints of foot
-property_value: IAO:0000589 "pes joint (post-embryonic human)" xsd:string
-intersection_of: UBERON:0001487 ! pes joint
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:71345 ! Set of joints of hand
-property_value: IAO:0000589 "manus joint (post-embryonic human)" xsd:string
-intersection_of: UBERON:0001489 ! manus joint
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:35289 ! Elbow joint
 property_value: IAO:0000589 "elbow joint (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001490 ! elbow joint
@@ -6916,6 +6922,30 @@ intersection_of: UBERON:0001500 ! muscle of manus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:42380 ! intrinsic muscle of hand
+property_value: IAO:0000589 "intrinsic muscle of manus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014375 ! intrinsic muscle of manus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:65020 ! intrinsic muscle of foot
+property_value: IAO:0000589 "intrinsic muscle of pes (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014378 ! intrinsic muscle of pes
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:64916 ! thenar muscle
+property_value: IAO:0000589 "thenar muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014376 ! thenar muscle
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:64917 ! hypothenar muscle
+property_value: IAO:0000589 "hypothenar muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014377 ! hypothenar muscle
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:37385 ! lumbrical of hand
 property_value: IAO:0000589 "lumbrical muscle of manus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001501 ! lumbrical muscle of manus
@@ -6937,6 +6967,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:37453 ! Lumbrical of foot
 property_value: IAO:0000589 "lumbrical muscle of pes (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001504 ! lumbrical muscle of pes
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:37454 ! adductor hallucis
+property_value: IAO:0000589 "adductor hallucis muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014379 ! adductor hallucis muscle
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -8795,6 +8831,12 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:54822 ! vallate papilla of tongue
+property_value: IAO:0000589 "gustatory papilla of tongue (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014389 ! gustatory papilla of tongue
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:54822 ! vallate papilla of tongue
 property_value: IAO:0000589 "vallate papilla (post-embryonic human)" xsd:string
 intersection_of: UBERON:0000396 ! vallate papilla
 intersection_of: part_of NCBITaxon:9606
@@ -9665,14 +9707,14 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:53097 ! supra-orbital margin of frontal bone
-property_value: IAO:0000589 "supra-orbital region of bone (post-embryonic human)" xsd:string
-intersection_of: UBERON:0011576 ! supra-orbital region of bone
+property_value: IAO:0000589 "supra-orbital ridge (post-embryonic human)" xsd:string
+intersection_of: UBERON:0011576 ! supra-orbital ridge
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:57137 ! supraorbital surface of frontal bone
-property_value: IAO:0000589 "supra-orbital region of bone (post-embryonic human)" xsd:string
-intersection_of: UBERON:0011576 ! supra-orbital region of bone
+property_value: IAO:0000589 "supra-orbital ridge (post-embryonic human)" xsd:string
+intersection_of: UBERON:0011576 ! supra-orbital ridge
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -25109,26 +25151,26 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:37456 ! Interosseous of foot
-property_value: IAO:0000589 "pes interosseus muscle (post-embryonic human)" xsd:string
-intersection_of: UBERON:0006497 ! pes interosseus muscle
+property_value: IAO:0000589 "interosseous muscle of pes (post-embryonic human)" xsd:string
+intersection_of: UBERON:0006497 ! interosseous muscle of pes
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:37457 ! Dorsal interosseous of foot
-property_value: IAO:0000589 "dorsal pes interosseus muscle (post-embryonic human)" xsd:string
-intersection_of: UBERON:0006499 ! dorsal pes interosseus muscle
+property_value: IAO:0000589 "dorsal pes interosseous muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0006499 ! dorsal pes interosseous muscle
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:37458 ! Plantar interosseous of foot
-property_value: IAO:0000589 "plantar foot interosseus muscle (post-embryonic human)" xsd:string
-intersection_of: UBERON:0006502 ! plantar foot interosseus muscle
+property_value: IAO:0000589 "plantar foot interosseous muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0006502 ! plantar foot interosseous muscle
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:37419 ! Palmar interosseous of hand
-property_value: IAO:0000589 "palmar hand interosseus muscle (post-embryonic human)" xsd:string
-intersection_of: UBERON:0006505 ! palmar hand interosseus muscle
+property_value: IAO:0000589 "palmar hand interosseous muscle (post-embryonic human)" xsd:string
+intersection_of: UBERON:0006505 ! palmar hand interosseous muscle
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -25783,6 +25825,18 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:63162 ! Hepatic perisinusoidal space
 property_value: IAO:0000589 "liver perisinusoidal space (post-embryonic human)" xsd:string
 intersection_of: UBERON:0006729 ! liver perisinusoidal space
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:63133 ! lumen of sinusoid
+property_value: IAO:0000589 "sinusoidal space (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014399 ! sinusoidal space
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:262090 ! lumen of hepatic sinusoid
+property_value: IAO:0000589 "hepatic sinusoidal space (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014400 ! hepatic sinusoidal space
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -26854,6 +26908,12 @@ intersection_of: UBERON:0008573 ! lateral crico-arytenoid
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:55448 ! ary-epiglottic fold
+property_value: IAO:0000589 "aryepiglottic fold (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014385 ! aryepiglottic fold
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:46582 ! transverse arytenoid
 property_value: IAO:0000589 "transverse arytenoid (post-embryonic human)" xsd:string
 intersection_of: UBERON:0008574 ! transverse arytenoid
@@ -27175,6 +27235,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:14944 ! muscle layer of duodenum
 property_value: IAO:0000589 "muscle layer of duodenum (post-embryonic human)" xsd:string
 intersection_of: UBERON:0012488 ! muscle layer of duodenum
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:14958 ! muscle layer of ileum
+property_value: IAO:0000589 "muscle layer of ileum (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014390 ! muscle layer of ileum
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -28051,6 +28117,60 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:37849 ! skin of sole of foot
 property_value: IAO:0000589 "skin of sole of pes (post-embryonic human)" xsd:string
 intersection_of: UBERON:0013778 ! skin of sole of pes
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:55239 ! fibro-elastic membrane of larynx
+property_value: IAO:0000589 "fibroelastic membrane of larynx (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014372 ! fibroelastic membrane of larynx
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:52770 ! lateral process of malleus
+property_value: IAO:0000589 "lateral process of malleus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014397 ! lateral process of malleus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:16902 ! greater sciatic notch
+property_value: IAO:0000589 "greater sciatic notch (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014411 ! greater sciatic notch
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:16914 ! iliac crest
+property_value: IAO:0000589 "iliac crest (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014437 ! iliac crest
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:16988 ! superior pubic ramus
+property_value: IAO:0000589 "superior pubic ramus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014438 ! superior pubic ramus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:16989 ! inferior pubic ramus
+property_value: IAO:0000589 "inferior pubic ramus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014439 ! inferior pubic ramus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:17007 ! ischial ramus
+property_value: IAO:0000589 "ischial ramus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014441 ! ischial ramus
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:17269 ! acetabular fossa
+property_value: IAO:0000589 "acetabular fossa (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014445 ! acetabular fossa
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:16944 ! acetabular notch
+property_value: IAO:0000589 "acetabular notch (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014446 ! acetabular notch
 intersection_of: part_of NCBITaxon:9606
 
 [Term]

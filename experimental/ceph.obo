@@ -18,6 +18,7 @@ creation_date: 2011-01-30T08:15:10Z
 [Term]
 id: CEPH:0000000 ! eyelid
 name: eyelid
+comment: Consider re-using Uberon class
 is_a: UBERON:0000061 ! anatomical structure
 created_by: cjm
 creation_date: 2011-01-30T08:15:10Z
@@ -278,7 +279,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000047
 name: calcareous
 def: "Composed of calcium carbonate (CaCO3)" [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
 
 [Term]
 id: CEPH:0000048
@@ -313,6 +314,7 @@ id: CEPH:0000053
 name: carpus
 def: "The &quot;wrist&quot; of the club." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000291 ! tentacular club
 
 [Term]
 id: CEPH:0000054 ! carpal locking apparatus
@@ -443,7 +445,7 @@ relationship: continuous_with UBERON:0001043 ! esophagus
 id: CEPH:0000079
 name: ctenoglossan radula
 def: "Radula in which the lateral teeth are multicuspid." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004289 ! radula
 
 [Term]
 id: CEPH:0000080
@@ -456,6 +458,7 @@ relationship: part_of CEPH:0000124 ! gladius
 id: CEPH:0000081
 name: cusp
 def: "A point or projection on a tooth of the radula or on a cartilagenous tubercule in the skin." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+comment: todo - add subclasses for radula or skin
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -475,7 +478,7 @@ relationship: part_of CEPH:0000291 ! tentacular club
 id: CEPH:0000084
 name: demersal
 def: "Living close to the ocean floor." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
 
 [Term]
 id: CEPH:0000085
@@ -487,7 +490,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000086
 name: diel vertical migration
 def: "Vertical animal migration during twilight. Many mesopelagic animals migrate at sunrise from near-surface waters to spend the day at greater depths then return to shallow depths at sunset where they spend the night. Some animals migrate vertically over 1000 m others migrate less than 100 m." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
 
 [Term]
 id: CEPH:0000087 ! digestive gland
@@ -527,6 +530,7 @@ relationship: part_of CEPH:0000278 ! visceropericardial coelom
 id: CEPH:0000091
 name: doratopsis stage
 def: "Peculiar paralarval stage of the Chiroteuthidae. The paralarva is very slender and can reach a large size." [http://tolweb.org/accessory/Chiroteuthid_Doratopsis_Stage?acc_id=656]
+synonym: "doratopsis" RELATED []
 is_a: CEPH:0000194 ! paralarval stage
 
 [Term]
@@ -572,7 +576,7 @@ relationship: part_of CEPH:0000130 ! hectocotylus
 id: CEPH:0000100
 name: epithelial pigmentation
 def: "The pigmentation that is contained in epithelial cells which are unable to change their shape. Color in most cephalopods, however, is due to pigment granules that are contained in specialized organs, the chromatophore organs, that can change shape rapidly under nervous control. See chromatophores." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
 
 [Term]
 id: CEPH:0000102
@@ -627,7 +631,7 @@ id: CEPH:0000110
 name: fin position
 def: "Fins are located anterior to the termination of the muscular mantle (subterminal position) or mostly posterior to it (terminal position) or somewhere inbetween. " [http://tolweb.org/accessory/Cephalopod_Fin_Position?acc_id=2041]
 is_a: CEPH:0000300 ! cephalopod trait
-relationship: trait_of CEPH:0000112 ! fin
+relationship: trait_of CEPH:0000112 ! fi
 
 [Term]
 id: CEPH:0000111
@@ -695,7 +699,7 @@ relationship: part_of CEPH:0000116 ! funnel
 [Term]
 id: CEPH:0000121
 name: funnel valve
-def: "Semicircular muscular flap extending from and continuous with the posterodorsal funnel wall. The funnel valve apparently acts as a one-way valve to prevent inspiration of water through the funnel when mantle expansion draws in water to pass over the gills for respiration. A funnel valve in absent in octopods and some squids.        " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+def: "Semicircular muscular flap extending from and continuous with the posterodorsal funnel wall. The funnel valve apparently acts as a one-way valve to prevent inspiration of water through the funnel when mantle expansion draws in water to pass over the gills for respiration. A funnel valve in absent in octopods and some squids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 intersection_of: UBERON:0003978 ! valve
 intersection_of: part_of CEPH:0000116 ! funnel
 
@@ -710,6 +714,7 @@ id: CEPH:0000123
 name: gill lamella
 def: "(=primary lamella) - Complex gill leaflet that extends perpendicular to the axis of the gill and contains the respiratory epithelium. The lamella contains further subdivisions, the secondary and tertiary lamellae. In octopods the number of lamellae is a taxonomic character." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000122 ! gill
 
 [Term]
 id: CEPH:0000124 ! gladius
@@ -723,36 +728,41 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000126
 name: half-orange gill
 def: "Gills of some cirrate octopods with broad primary lamellae whose arrangement looks similar to half of an orange. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000122 ! gill
 
 [Term]
 id: CEPH:0000127
-name: hatchling
+name: hatchling stage
 def: "Young cephalopod that has just hatched from the egg." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+synonym: "hatchling" RELATED []
+comment: todo - stages
+is_a: UBERON:0000105 ! life cycle stage
 
 [Term]
 id: CEPH:0000129
 name: head-mantle fusion
 def: "." [http://tolweb.org/accessory/Cephalopod_Dorsal_Head-Mantle_Fusion?acc_id=2020]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of UBERON:0000033 ! head
+relationship: trait_of UBERON:0006575 ! mantle
 
 [Term]
 id: CEPH:0000131
 name: heterodont radula
 def: "Radula with more than one cusp on the rhachidian tooth and, usually, the first lateral tooth." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004289 ! radula
 
 [Term]
 id: CEPH:0000132
 name: homodont radula
 def: "Radula with a single cusp on all teeth." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0004289 ! radula
 
 [Term]
 id: CEPH:0000133
 name: holotype
 def: "The single specimen designated to represent a species name. It is an international standard of reference that provides objectivity for the species name." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+comment: consider obsoleting
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -767,12 +777,15 @@ id: CEPH:0000135
 name: horizontal arm septa
 def: "Septa, extending the length of the arm (i.e., parallel to the arm axis), that roughly divides the arm into oral and aboral regions. This feature is a characteristic of the arms of cirrate octopods and the incirrate octopods of the family Bolitaenidae. The functional significance is unknown." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000015 ! arm
 
 [Term]
 id: CEPH:0000136
 name: horny rings of suckers
-def: "Suckers of decapodiforms have two types of hard, horny rings. One, the inner ring, lies around the inner walls of the acetabulum and often bears teeth. The other, the outer ring, is composed of numerous platelets and lies on the surface of the infundibulum.        " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+def: "Suckers of decapodiforms have two types of hard, horny rings. One, the inner ring, lies around the inner walls of the acetabulum and often bears teeth. The other, the outer ring, is composed of numerous platelets and lies on the surface of the infundibulum." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+comment: todo - add subclasses
 is_a: UBERON:0000061 ! anatomical structure
+relationship: surrounds CEPH:0000248 ! sucker
 
 [Term]
 id: CEPH:0000137
@@ -900,7 +913,8 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000160
 name: mantle length
 def: "(ML) - The standard measure of length in coleoid cephalopods. In decapodiforms ML is measured along the dorsal midline from the mantle margin to the posterior tip of the body, excluding long tails. In octopodiforms ML is measured from a line joining the midpoint of the eyes rather than the anterior mantle margin since the latter is obscured by the head/mantle fusion." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of UBERON:0006575 ! mantle
 
 [Term]
 id: CEPH:0000161
@@ -908,11 +922,13 @@ name: mantle septum
 synonym: "abdominal septum" EXACT []
 def: "A anteroposterior septum that connects the mantle wall with the visceral sac along the midline in the ventral mantle cavity. The ventral mantle artery runs along the anterior end of this septum. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0006575 ! mantle
 
 [Term]
 id: CEPH:0000162
-name: manus
+name: manus of tentacular club
 def: "The proximal, broad portion of the tentacular club. In squids the manus is generally equally expanded on both lateral margins and often includes enlarged suckers." [http://tolweb.org/accessory/Cephalopod_Tentacle_Terminology?acc_id=1962]
+synonym: "manus" BROAD []
 is_a: UBERON:0000061 ! anatomical structure
 relationship: part_of CEPH:0000291 ! tentacular club
 
@@ -920,25 +936,27 @@ relationship: part_of CEPH:0000291 ! tentacular club
 id: CEPH:0000163
 name: mature stage
 def: "In cephalopods this term refers to sexual maturity which is determined for females by the presence of ova (mature eggs) free in the coelom or oviducts, and for males by the presence of spermatophores in Needham's sac." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000105 ! life cycle stage
 
 [Term]
 id: CEPH:0000169
 name: molluscan foot
 def: "A major structure in molluscan morphology. In gastropods the foot is the muscular sole that the animal crawls with. In cephalopods the funnel, and possibly the arms and tentacles are derived from the molluscan foot. The evolutionary origin of the latter is still uncertain. They may represent outgrowths of the head (favored by anatomical evidence: nerve connections) or modifications of the molluscan foot that have migrated around the mouth (favored by embryological evidence: migration of arm primordia)." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+synonym: "foot" BROAD []
+is_a: UBERON:0000475 ! organism subdivision
 
 [Term]
 id: CEPH:0000170
 name: neck
 def: "The region separating the posterior end of the cephalic cartilage and the collar. Only those cephalopods with elongate heads (e.g., chiroteuthids) have distinct necks." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000475 ! organism subdivision
 
 [Term]
 id: CEPH:0000171
 name: Needham's sac
 def: "In males, the large storage sac for spermatophores that is an expanded region of the genital duct at the base of the penis." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000079 ! male reproductive system
 
 [Term]
 id: CEPH:0000172
@@ -957,26 +975,29 @@ relationship: continuous_with UBERON:0006580 ! mantle cavity
 id: CEPH:0000176
 name: nuchal cartilage
 def: "See nuchal locking-apparatus." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
 is_a: UBERON:0002418 ! cartilage
+relationship: part_of CEPH:0000180 ! nuchal region
 
 [Term]
 id: CEPH:0000177
 name: nuchal crest
 def: "See Occipital crest." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000180 ! nuchal region
 
 [Term]
 id: CEPH:0000178
 name: nuchal membrane
 def: "See occipital membrane." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000180 ! nuchal region
 
 [Term]
 id: CEPH:0000179
 name: nuchal organ
 def: "Small sensory organ with photoreceptor-like sensory cells that is located in the nuchal region of, apparently, all coleoid cephalopods." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000180 ! nuchal region
 
 [Term]
 id: CEPH:0000180
@@ -1001,19 +1022,21 @@ relationship: part_of UBERON:0002199 ! integument
 id: CEPH:0000183
 name: occipital membrane
 def: "A membrane connecting the main occipital folds at their posterior ends." [http://tolweb.org/accessory/Cephalopod_Occipital_Region_Terminology?acc_id=1970]
+comment: TODO - mireot membrane
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: CEPH:0000184
 name: olfactory organ
 def: "A chemosensory organ present on the head or neck in all coleoid cephalopods. The olfactory organ is thought to be the homologue of the rhinophore of <strong>Nautilus</strong>." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+comment: TODO - sensory organs
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: CEPH:0000185
 name: ontogenetic descent
 def: "The progressively descent into a deeper-water habitat as a cephalopod grows older and larger. This distribution pattern is a particularly common in many pelagic cranchiid squids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
 
 [Term]
 id: CEPH:0000187 ! optic lobes of brain
@@ -1196,23 +1219,26 @@ id: CEPH:0000218
 name: saddle
 def: "The region of the shell of cirrates connecting the lateral wings. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0006612 ! shell
 
 [Term]
 id: CEPH:0000219
 name: saddle-shaped
 def: "The shape of the shell with an elongate central region (saddle proper) and broad wings found in cirroteuthid cirrates." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
+relationship: trait_of CEPH:0000218 ! saddle
 
 [Term]
 id: CEPH:0000220
 name: sagittate fin
 def: "The most common fin-shape in squids with anterior free fin-lobes, a relatively sharp lateral angle and posterior elongation. See fin shapes. " [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000221
 name: scales and tubercule
 def: "The skin of the mantle contains scales, tubercules and warts in various species. " [http://tolweb.org/accessory/Cephalopod_Mantle_Armature?acc_id=1997]
+comment: todo - split
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -1232,7 +1258,7 @@ is_a: CEPH:0000000 ! eyelid
 id: CEPH:0000224
 name: secondary fin
 def: "A non-muscular fin-shaped structure found in some chiroteuthids, located posterior to the true or primary fin. The secondary fin may act as a buoyancy organ." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000112 ! fin
 
 [Term]
 id: CEPH:0000225
@@ -1244,19 +1270,21 @@ is_a: UBERON:0000061 ! anatomical structure
 id: CEPH:0000226
 name: semelparous
 def: "A reproductive strategy in which females spawn once then die. Sometimes called terminal or &quot;big-bang&quot; spawners. Many cephalopods are semelparous but many are not." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000300 ! cephalopod trait
 
 [Term]
 id: CEPH:0000227
 name: semicrescent plate
 def: "(arm suckers) - A semicrescent plate on the proximal margin of the inner sucker arm rings of the loliginid squid <strong>Uroteuthis</strong>." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+comment: todo - inner sucker
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000015 ! arm
 
 [Term]
 id: CEPH:0000228
 name: sepioid gill
 def: "Gills of some cirrate octopods that look superficially like gills of sepioids." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000122 ! gill
 
 [Term]
 id: CEPH:0000229
@@ -1281,24 +1309,29 @@ is_a: UBERON:0000025 ! tube
 id: CEPH:0000234
 name: sperm mass
 def: "The coiled rope of sperm that lies within the spermatophore or spermatangia." [http://tolweb.org/accessory/Cephalopod_Spermatophore_Terminology?acc_id=1972]
+synonym: "rope of sperm" RELATED []
+comment: todo
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of CEPH:0000237 ! spermatophore
 
 [Term]
 id: CEPH:0000235
 name: spermatangia
 def: "Discharged spermatophore which consists of the sperm mass surrounded by a membrane (the inner tunic) with the cement gland at one end." [http://tolweb.org/accessory/Cephalopod_Spermatophore_Terminology?acc_id=1972]
-is_a: UBERON:0000061 ! anatomical structure
+is_a: CEPH:0000237 ! spermatophore
 
 [Term]
 id: CEPH:0000236
 name: spermathecae
 def: "Specialized sperm-storage structures found in the skin of some female decapodiforms or as pockets of the oviducal gland in octopods." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
 is_a: UBERON:0000061 ! anatomical structure
+relationship: part_of UBERON:0000474 ! female reproductive system
 
 [Term]
 id: CEPH:0000237
 name: spermatophore
 def: "A packet of sperm that is formed by the male and passed to the female during mating. In most coleoids, this packet is very complex and contains a &quot;rope&quot; of sperm (= sperm mass), an ejaculatory apparatus and a cement body. Except for the sperm, the entire structure is non-cellular and consists of a complex architecture of secreted material." [http://tolweb.org/accessory/Cephalopod_Spermatophore_Terminology?acc_id=1972]
+comment: todo - create subclass for undischarged form
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -3042,6 +3075,11 @@ name: stuff accumulating cell
 namespace: cell
 def: "A cell that is specialised to accumulate a particular substance(s)." [FB:ma]
 is_a: CL:0000000  ! cell
+
+[Term]
+id: TEST:0000001
+name: test
+is_obsolete: true
 
 [Typedef]
 id: aboral_to

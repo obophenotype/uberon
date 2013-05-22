@@ -3792,6 +3792,7 @@ xref: ZFS:0000001
 is_a: UBERON:0000067 {is_inferred="true"} ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: starts UBERON:0000104 ! life cycle
+property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000745"}
 property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -4131,6 +4132,27 @@ synonym: "paranatal stage" NARROW []
 is_a: UBERON:0000105 ! life cycle stage
 relationship: overlaps UBERON:0000068 ! embryo stage
 relationship: overlaps UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: UBERON:0014405
+name: nymph stage
+namespace: uberon
+def: "A larval stage of that is the immature stage of some invertebrates that undergoe gradual metamorphosis (hemimetabolism) before reaching its adult stage." []
+synonym: "nymph" RELATED [BTO:0000954]
+xref: BTO:0000954
+xref: Wikipedia:Nymph_(biology)
+is_a: UBERON:0000069 ! larval stage
+property_value: UBPROP:0000001 "Any of various immature insects; especially: a larva of an insect (as a grasshopper, true bug, or mayfly) with incomplete metamorphosis that differs from the imago especially in size and in its incompletely developed wings and genitalia[BTO:0000954]." xsd:string {source="BTO:0000954"}
+
+[Term]
+id: UBERON:0014406
+name: nauplius stage
+namespace: uberon
+def: "The nauplius stage is characterised by the use of the appendages of the head (the antennae) for swimming. The nauplius is also the stage at which a simple, unpaired eye first appears. The eye is known for that reason as the 'naupliar eye', and is often absent in later developmental stages, although it is retained into the adult form in some groups, such as the Notostraca." [http://en.wikipedia.org/wiki/Crustacean_larvae#Nauplius]
+synonym: "nauplius" RELATED [BTO:0000915]
+xref: BTO:0000915
+is_a: UBERON:0000069 ! larval stage
+property_value: UBPROP:0000001 "A crustacean larva in usually the first stage after leaving the egg and with three pairs of appendages, a median eye, and little or no segmentation[BTO:0000915]." xsd:string {source="BTO:0000915"}
 
 [Term]
 id: XAO:1000000

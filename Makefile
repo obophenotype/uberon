@@ -161,12 +161,14 @@ uberon-qc: $(QC_FILES) all_systems
 	cat merged-orphans uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 
 
-#%-dv.txt: %.obo %_closure-ontol_db.pro
-#	blip -u ontol_manifest_disjoint_from_preceded_by -i $*_closure-ontol_db.pro -i $< -u query_obo findall disjoint_from_violation/3 -label > $@
-# Replacing above with OWL. TODO: OPPL to manifest more disjoint_froms
+
+
+# Disjoint violations
 %-dv.txt: %.owl
 	owltools --no-debug $<  --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
+%_closure-ontol_db.pro: %.obo
+	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@.tmp2 && cat $@.tmp2 abolish_subclassT.pro > $@
 # TODO: axiom expansions + elk
 %-discv.txt: %.obo %_closure-ontol_db.pro
 	blip -index "ontol_db:parentRT(-,-,1)" -i spatially_disjoint_from.obo -i $< -i $*_closure-ontol_db.pro -u query_obo findall disjoint_over_violation/4 -label > $@
@@ -247,10 +249,8 @@ subsets/%.owl: subsets/%.obo
 
 # ----------------------------------------
 # Closure
+# @Deprecated
 # ----------------------------------------
-
-%_closure-ontol_db.pro: %.obo
-	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@.tmp2 && cat $@.tmp2 abolish_subclassT.pro > $@
 
 
 #multi_closure-ontol_db.pro: merged.obo
@@ -342,7 +342,7 @@ cl-core.owl: cl-core.obo
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 composites: composite-metazoan.owl composite-vertebrate.owl
 
-METCACHE= metazoan_glommed_closure-ontol_db.pro
+#METCACHE= metazoan_glommed_closure-ontol_db.pro
 
 # TODO: ensure treat-xrefs in merged
 #composite-xenopus.obo: merged.obo
@@ -629,8 +629,8 @@ release:
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
-	(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]* && svn ps svn:mime-type text/html reference_[0-9]*) ;\
-	release-diff ;\
+	#(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]* && svn ps svn:mime-type text/html reference_[0-9]*) ;\
+	#make release-diff ;\
 	cp diffs/* $(RELDIR)/diffs/ ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''
