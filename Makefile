@@ -24,6 +24,12 @@ core.owl: uberon_edit-XM.owl
 external-disjoints.owl: external-disjoints.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
 
+subsets/taxon-constraints.owl: uberon_edit.obo
+	owlrhino js/extract-taxon-constraints.js
+
+taxcheck-%: % subsets/taxon-constraints.owl
+	owltools $< subsets/taxon-constraints.owl --add-imports-from-supports --run-reasoner -r elk -u  > $@.tmp && mv $@.tmp $@
+
 # REPLACEME
 #  step 1 - use noimports
 #  step 2 - with imports, --add-support-from-imports
@@ -300,15 +306,13 @@ uberon-cl.owl: uberon_edit.obo cl-core.obo
 	owltools $< cl-core.obo --merge-support-ontologies   -o file://`pwd`/$@
 
 # merged, non-classified
-merged-nc.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
-	owltools --catalog-xml $(CATALOG) $<  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --mcat --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ -n $(OBO)/uberon/merged.owl -o file://`pwd`/$@
+merged-nc.owl: uberon-cl.owl pr-core.owl
+	owltools --catalog-xml $(CATALOG) $< $(MCAT_ONTS) --mcat --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ -n $(OBO)/uberon/merged.owl -o file://`pwd`/$@
 ###	owltools --catalog-xml $(CATALOG) $< $(GOEXT)/x-metazoan-anatomy.owl $(GOEXT)/x-cell.owl --merge-support-ontologies  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --mcat --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ -n $(OBO)/uberon/merged.owl -o file://`pwd`/$@
 # merged, reasoned over
 merged.owl: merged-nc.owl
 	owltools $< --assert-inferred-subclass-axioms --useIsInferred --add-ontology-annotation $(DC)/description "This ontology combines all of uberon and cl plus a subset of other ontologies such as GO into a single merged ontology " -o file://`pwd`/$@
 
-#foo.owl: uberon-cl.owl ncbi_taxon_slim.obo pr-core.owl
-#	ontology-release-runner --reasoner elk --outdir tmp/ --useIsInferred --catalog-xml $(CATALOG) $<  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ --no-subsets --skip-format owx
 
 .PRECIOUS: merged.owl
 merged.obo: merged.owl
@@ -359,7 +363,7 @@ composite-vertebrate.obo: $(CVERTS)
 	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp >$@
 
 composite-metazoan.obo: $(CMETS)
-	owltools  --create-ontology uberon/$@ $(CMETS) --merge-support-ontologies --repair-relations -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp >$@
+	owltools  --create-ontology -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/composite-metazoan.owl uberon/$@  $(CMETS)  --merge-support-ontologies --repair-relations -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp >$@
 
 
 IVSTAGES = -i developmental-stage-ontologies/hsapdv/hsapdv.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -i developmental-stage-ontologies/olatdv/olatdv.obo
@@ -375,7 +379,7 @@ METAZOAN_ONTS = wbbt zfa fbbt ma ehdaa2 xao
 METAZOAN_OBOS = $(patsubst %,local-%.obo,$(METAZOAN_ONTS))
 METAZOAN_BRIDGES = $(patsubst %,bridge/uberon-bridge-to-%.owl,$(METAZOAN_ONTS))
 local-%.obo: merged.obo
-	wget $(OBO)/$*.owl -O cached-$*.owl && owltools cached-$*.owl --repair-relations -o -f obo $@.tmp && grep -v ^disjoint $@.tmp | perl -npe 's/default-namespace: FlyBase development CV/default-namespace: fbdv/' > $@
+	wget $(OBO)/$*.owl -O cached-$*.owl && owltools cached-$*.owl --repair-relations -o -f obo $@.tmp && egrep -v '^(disjoint|domain|range)' $@.tmp | perl -npe 's/default-namespace: FlyBase development CV/default-namespace: fbdv/' > $@
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
 
@@ -394,6 +398,7 @@ composite-wbbt.obo: merged.owl
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f obo --no-check $@
 
+# TODO - disallow equivalencies
 composite-fbbt.obo: merged.owl local-fbdv.obo
 	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-fbbt.owl bridge/cl-bridge-to-fbbt.owl local-fbbt.obo local-fbdv.obo --merge-support-ontologies --reasoner elk \
  --merge-species-ontology -s 'Drosophila' -t NCBITaxon:7227 \
