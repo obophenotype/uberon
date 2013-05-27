@@ -174,7 +174,7 @@ uberon-qc: $(QC_FILES) all_systems
 	owltools --no-debug $<  --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
 %_closure-ontol_db.pro: %.obo
-	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@.tmp2 && cat $@.tmp2 abolish_subclassT.pro > $@
+	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@.tmp2 && cat $@.tmp2 util/abolish_subclassT.pro > $@
 # TODO: axiom expansions + elk
 %-discv.txt: %.obo %_closure-ontol_db.pro
 	blip -index "ontol_db:parentRT(-,-,1)" -i spatially_disjoint_from.obo -i $< -i $*_closure-ontol_db.pro -u query_obo findall disjoint_over_violation/4 -label > $@
