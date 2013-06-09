@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-fma
-data-version: 2013-05-26
+data-version: 2013-06-08
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to fma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the FMA and Uberon" xsd:string
@@ -544,9 +544,21 @@ intersection_of: UBERON:0005764 ! acellular membrane
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:63872 ! Basement membrane
-property_value: IAO:0000589 "basement membrane (post-embryonic human)" xsd:string
-intersection_of: UBERON:0005769 ! basement membrane
+id: FMA:63872 ! basement membrane
+property_value: IAO:0000589 "basement membrane of epithelium (post-embryonic human)" xsd:string
+intersection_of: UBERON:0005769 ! basement membrane of epithelium
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:62918 ! Basal lamina
+property_value: IAO:0000589 "basal lamina of epithelium (post-embryonic human)" xsd:string
+intersection_of: UBERON:0000482 ! basal lamina of epithelium
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:62924 ! Reticular lamina
+property_value: IAO:0000589 "reticular lamina of epithelium (post-embryonic human)" xsd:string
+intersection_of: UBERON:0001967 ! reticular lamina of epithelium
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -1825,12 +1837,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:9637 ! Portion of tissue
 property_value: IAO:0000589 "tissue (post-embryonic human)" xsd:string
 intersection_of: UBERON:0000479 ! tissue
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:62918 ! Basal lamina
-property_value: IAO:0000589 "basal lamina (post-embryonic human)" xsd:string
-intersection_of: UBERON:0000482 ! basal lamina
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -4637,8 +4643,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:74276 ! middle layer of glomerular basement membrane
-property_value: IAO:0000589 "lamina densa (post-embryonic human)" xsd:string
-intersection_of: UBERON:0005787 ! lamina densa
+property_value: IAO:0000589 "lamina densa of glomerular basement membrane (post-embryonic human)" xsd:string
+intersection_of: UBERON:0005787 ! lamina densa of glomerular basement membrane
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -10174,12 +10180,6 @@ intersection_of: UBERON:0001876 ! amygdala
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:61879 ! Medial septal nucleus (also: UBERON:0007629 'medial septal complex') (also: UBERON:0007629 'medial septal complex')
-property_value: IAO:0000589 "medial septal nucleus (post-embryonic human)" xsd:string
-intersection_of: UBERON:0001877 ! medial septal nucleus
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:61881 ! Septofimbrial nucleus
 property_value: IAO:0000589 "septofimbrial nucleus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001878 ! septofimbrial nucleus
@@ -10600,6 +10600,12 @@ intersection_of: UBERON:0001932 ! arcuate nucleus of hypothalamus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:72609 ! Arcuate nucleus of medulla
+property_value: IAO:0000589 "arcuate nucleus of medulla (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002865 ! arcuate nucleus of medulla
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:62330 ! Retrochiasmatic area
 property_value: IAO:0000589 "retrochiasmatic area (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001933 ! retrochiasmatic area
@@ -10963,12 +10969,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:62908 ! Substantia nigra pars reticulata
 property_value: IAO:0000589 "substantia nigra pars reticulata (post-embryonic human)" xsd:string
 intersection_of: UBERON:0001966 ! substantia nigra pars reticulata
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:62924 ! Reticular lamina
-property_value: IAO:0000589 "reticular lamina (post-embryonic human)" xsd:string
-intersection_of: UBERON:0001967 ! reticular lamina
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -13618,6 +13618,30 @@ intersection_of: UBERON:0002297 ! cerumen
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:83141 ! gray matter layer of cerebellum [subclass: "gray matter layer of neuraxis"] 
+property_value: IAO:0000589 "cerebellar layer (post-embryonic human)" xsd:string
+intersection_of: UBERON:0004130 ! cerebellar layer
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:83140 ! Granular layer of cerebellar cortex
+property_value: IAO:0000589 "granular layer of cerebellar cortex (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002956 ! granular layer of cerebellar cortex
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:83896 ! Purkinje cell layer of cerebellar cortex
+property_value: IAO:0000589 "Purkinje cell layer of cerebellar cortex (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002979 ! Purkinje cell layer of cerebellar cortex
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:83897 ! Molecular layer of cerebellar cortex
+property_value: IAO:0000589 "molecular layer of cerebellar cortex (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002974 ! molecular layer of cerebellar cortex
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:83138 ! Layer of neocortex
 property_value: IAO:0000589 "layer of neocortex (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002301 ! layer of neocortex
@@ -15311,8 +15335,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:72432 ! Interstitial nucleus of medial longitudinal fasciculus
-property_value: IAO:0000589 "interstitial nucleus of cajal (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002551 ! interstitial nucleus of cajal
+property_value: IAO:0000589 "interstitial nucleus of Cajal (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002551 ! interstitial nucleus of Cajal
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -15928,12 +15952,6 @@ intersection_of: UBERON:0002662 ! medial pes lemniscus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:61845 ! Septal nuclear complex
-property_value: IAO:0000589 "septal nuclear complex (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002663 ! septal nuclear complex
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:62346 ! Lateral part of medial mammillary nucleus
 property_value: IAO:0000589 "lateral part of medial mammillary nucleus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002664 ! lateral part of medial mammillary nucleus
@@ -15943,12 +15961,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:61920 ! Supracallosal gyrus
 property_value: IAO:0000589 "supracallosal gyrus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002665 ! supracallosal gyrus
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:61878 ! Lateral septal nucleus (also: UBERON:0007628 'lateral septal complex')
-property_value: IAO:0000589 "lateral septal nucleus (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002667 ! lateral septal nucleus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -17032,12 +17044,6 @@ intersection_of: UBERON:0002864 ! accessory cuneate nucleus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:72609 ! Arcuate nucleus of medulla
-property_value: IAO:0000589 "arcuate nucleus of medulla (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002865 ! arcuate nucleus of medulla
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:72606 ! Caudal part of spinal trigeminal nucleus
 property_value: IAO:0000589 "caudal part of spinal trigeminal nucleus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002866 ! caudal part of spinal trigeminal nucleus
@@ -17560,18 +17566,6 @@ intersection_of: UBERON:0002955 ! rhomboidal nucleus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:83141 ! gray matter layer of cerebellum [subclass: "gray matter layer of neuraxis"] 
-property_value: IAO:0000589 "cerebellar layer (post-embryonic human)" xsd:string
-intersection_of: UBERON:0004130 ! cerebellar layer
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:83140 ! Granular layer of cerebellar cortex
-property_value: IAO:0000589 "granular layer of cerebellar cortex (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002956 ! granular layer of cerebellar cortex
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:72426 ! Caudal central oculomotor nucleus
 property_value: IAO:0000589 "caudal central oculomotor nucleus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002957 ! caudal central oculomotor nucleus
@@ -17662,12 +17656,6 @@ intersection_of: UBERON:0002973 ! parahippocampal gyrus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:83897 ! Molecular layer of cerebellar cortex
-property_value: IAO:0000589 "molecular layer of cerebellar cortex (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002974 ! molecular layer of cerebellar cortex
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:72421 ! Medial oculomotor nucleus
 property_value: IAO:0000589 "medial oculomotor nucleus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002975 ! medial oculomotor nucleus
@@ -17689,12 +17677,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:62193 ! Oral part of ventral lateral nucleus
 property_value: IAO:0000589 "oral part of ventral lateral nucleus (post-embryonic human)" xsd:string
 intersection_of: UBERON:0002978 ! oral part of ventral lateral nucleus
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:83896 ! Purkinje cell layer of cerebellar cortex
-property_value: IAO:0000589 "Purkinje cell layer of cerebellar cortex (post-embryonic human)" xsd:string
-intersection_of: UBERON:0002979 ! Purkinje cell layer of cerebellar cortex
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -18700,12 +18682,6 @@ intersection_of: UBERON:0008310 ! nasopharyngeal gland
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:86901 ! Neural network of ankle
-property_value: IAO:0000589 "ankle nerve (post-embryonic human)" xsd:string
-intersection_of: UBERON:0003446 ! ankle nerve
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:13895 ! intervertebral disk of cervical vertebra
 property_value: IAO:0000589 "intervertebral disk of cervical vertebra (post-embryonic human)" xsd:string
 intersection_of: UBERON:0007252 ! intervertebral disk of cervical vertebra
@@ -19309,6 +19285,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:71228 ! Epidural space
 property_value: IAO:0000589 "epidural space (post-embryonic human)" xsd:string
 intersection_of: UBERON:0003691 ! epidural space
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:14730 ! extraperitoneal space
+property_value: IAO:0000589 "extraperitoneal space (post-embryonic human)" xsd:string
+intersection_of: UBERON:0014456 ! extraperitoneal space
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -26494,21 +26476,21 @@ intersection_of: UBERON:0013525 ! stomach lumen
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:61878 ! Lateral septal nucleus (also: UBERON:0002667 'lateral septal nucleus')
-property_value: IAO:0000589 "lateral septal complex (post-embryonic human)" xsd:string
-intersection_of: UBERON:0007628 ! lateral septal complex
+id: FMA:61845 ! Septal nuclear complex
+property_value: IAO:0000589 "septal nuclear complex (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002663 ! septal nuclear complex
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:61879 ! Medial septal nucleus (also: UBERON:0001877 'medial septal nucleus')
-property_value: IAO:0000589 "medial septal complex (post-embryonic human)" xsd:string
-intersection_of: UBERON:0007629 ! medial septal complex
+id: FMA:61878 ! Lateral septal nucleus
+property_value: IAO:0000589 "lateral septal nucleus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0002667 ! lateral septal nucleus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:61879 ! medial septal nucleus (also: UBERON:0001877 'medial septal nucleus')
-property_value: IAO:0000589 "medial septal complex (post-embryonic human)" xsd:string
-intersection_of: UBERON:0007629 ! medial septal complex
+id: FMA:61879 ! Medial septal nucleus
+property_value: IAO:0000589 "medial septal nucleus (post-embryonic human)" xsd:string
+intersection_of: UBERON:0001877 ! medial septal nucleus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]

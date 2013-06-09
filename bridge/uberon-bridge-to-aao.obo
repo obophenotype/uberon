@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-aao
-data-version: 2013-05-26
+data-version: 2013-06-08
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to aao" xsd:string
 property_value: dc-description "Equivalence axioms between AAO and Uberon. Note that AAO is in the process of being merged into the core Uberon, so this mapping will become deprecated" xsd:string
@@ -228,8 +228,14 @@ intersection_of: part_of NCBITaxon:8292
 
 [Term]
 id: AAO:0010596 ! basement membrane
-property_value: IAO:0000589 "basement membrane (amphibian)" xsd:string
-intersection_of: UBERON:0005769 ! basement membrane
+property_value: IAO:0000589 "basement membrane of epithelium (amphibian)" xsd:string
+intersection_of: UBERON:0005769 ! basement membrane of epithelium
+intersection_of: part_of NCBITaxon:8292
+
+[Term]
+id: AAO:0010269 ! basal lamina
+property_value: IAO:0000589 "basal lamina of epithelium (amphibian)" xsd:string
+intersection_of: UBERON:0000482 ! basal lamina of epithelium
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -512,12 +518,6 @@ intersection_of: part_of NCBITaxon:8292
 id: AAO:0010048 ! multi-tissue structure
 property_value: IAO:0000589 "multi-tissue structure (amphibian)" xsd:string
 intersection_of: UBERON:0000481 ! multi-tissue structure
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0010269 ! basal lamina
-property_value: IAO:0000589 "basal lamina (amphibian)" xsd:string
-intersection_of: UBERON:0000482 ! basal lamina
 intersection_of: part_of NCBITaxon:8292
 
 [Term]

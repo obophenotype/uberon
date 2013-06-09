@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-ncithesaurus
-data-version: 2013-05-26
+data-version: 2013-06-08
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -309,8 +309,13 @@ is_a: UBERON:0000086 ! zona pellucida
 
 [Term]
 id: ncithesaurus:Basement_Membrane ! Basement Membrane
-property_value: IAO:0000589 "basement membrane (ncithesaurus)" xsd:string
-is_a: UBERON:0005769 ! basement membrane
+property_value: IAO:0000589 "basement membrane of epithelium (ncithesaurus)" xsd:string
+is_a: UBERON:0005769 ! basement membrane of epithelium
+
+[Term]
+id: ncithesaurus:Basal_Lamina ! Basal Lamina
+property_value: IAO:0000589 "basal lamina of epithelium (ncithesaurus)" xsd:string
+is_a: UBERON:0000482 ! basal lamina of epithelium
 
 [Term]
 id: ncithesaurus:Morula ! Morula
@@ -906,11 +911,6 @@ is_a: UBERON:0000478 ! extraembryonic structure
 id: ncithesaurus:Tissue ! Tissue
 property_value: IAO:0000589 "tissue (ncithesaurus)" xsd:string
 is_a: UBERON:0000479 ! tissue
-
-[Term]
-id: ncithesaurus:Basal_Lamina ! Basal Lamina
-property_value: IAO:0000589 "basal lamina (ncithesaurus)" xsd:string
-is_a: UBERON:0000482 ! basal lamina
 
 [Term]
 id: ncithesaurus:Osteoid ! Osteoid
@@ -2644,8 +2644,8 @@ is_a: UBERON:0005777 ! glomerular basement membrane
 
 [Term]
 id: ncithesaurus:Lamina_Densa ! Lamina Densa
-property_value: IAO:0000589 "lamina densa (ncithesaurus)" xsd:string
-is_a: UBERON:0005787 ! lamina densa
+property_value: IAO:0000589 "lamina densa of glomerular basement membrane (ncithesaurus)" xsd:string
+is_a: UBERON:0005787 ! lamina densa of glomerular basement membrane
 
 [Term]
 id: ncithesaurus:Lamina_Rara_Interna ! Lamina Rara Interna
@@ -7128,6 +7128,31 @@ property_value: IAO:0000589 "cerumen (ncithesaurus)" xsd:string
 is_a: UBERON:0002297 ! cerumen
 
 [Term]
+id: ncithesaurus:Cortical_Cell_Layer_of_the_Cerebellum ! Cortical Cell Layer of the Cerebellum
+property_value: IAO:0000589 "cerebellar layer (ncithesaurus)" xsd:string
+is_a: UBERON:0004130 ! cerebellar layer
+
+[Term]
+id: ncithesaurus:Granular_Layer_of_the_Cerebellum ! Granular Layer of the Cerebellum
+property_value: IAO:0000589 "granular layer of cerebellar cortex (ncithesaurus)" xsd:string
+is_a: UBERON:0002956 ! granular layer of cerebellar cortex
+
+[Term]
+id: ncithesaurus:Purkinje_Cell_Layer_of_the_Cerebellum ! Purkinje Cell Layer of the Cerebellum
+property_value: IAO:0000589 "Purkinje cell layer of cerebellar cortex (ncithesaurus)" xsd:string
+is_a: UBERON:0002979 ! Purkinje cell layer of cerebellar cortex
+
+[Term]
+id: ncithesaurus:Molecular_Layer_of_the_Cerebellum ! Molecular Layer of the Cerebellum
+property_value: IAO:0000589 "molecular layer of cerebellar cortex (ncithesaurus)" xsd:string
+is_a: UBERON:0002974 ! molecular layer of cerebellar cortex
+
+[Term]
+id: ncithesaurus:Internal_Granular_Layer_of_the_Cerebellum ! Internal Granular Layer of the Cerebellum
+property_value: IAO:0000589 "cerebellum internal granule cell layer (ncithesaurus)" xsd:string
+is_a: UBERON:0008830 ! cerebellum internal granule cell layer
+
+[Term]
 id: ncithesaurus:Molecular_Layer ! Molecular Layer of the Cerebral Cortex
 property_value: IAO:0000589 "cortical layer I (ncithesaurus)" xsd:string
 is_a: UBERON:0005390 ! cortical layer I
@@ -8223,16 +8248,6 @@ property_value: IAO:0000589 "longitudinal fissure (ncithesaurus)" xsd:string
 is_a: UBERON:0002921 ! longitudinal fissure
 
 [Term]
-id: ncithesaurus:Cortical_Cell_Layer_of_the_Cerebellum ! Cortical Cell Layer of the Cerebellum
-property_value: IAO:0000589 "cerebellar layer (ncithesaurus)" xsd:string
-is_a: UBERON:0004130 ! cerebellar layer
-
-[Term]
-id: ncithesaurus:Granular_Layer_of_the_Cerebellum ! Granular Layer of the Cerebellum
-property_value: IAO:0000589 "granular layer of cerebellar cortex (ncithesaurus)" xsd:string
-is_a: UBERON:0002956 ! granular layer of cerebellar cortex
-
-[Term]
 id: ncithesaurus:Cingulate_Gyrus ! cingulate gyrus
 property_value: IAO:0000589 "cingulate gyrus (ncithesaurus)" xsd:string
 is_a: UBERON:0002967 ! cingulate gyrus
@@ -8251,16 +8266,6 @@ is_a: UBERON:0002972 ! centromedian nucleus
 id: ncithesaurus:Parahippocampal_Gyrus ! Parahippocampal Gyrus
 property_value: IAO:0000589 "parahippocampal gyrus (ncithesaurus)" xsd:string
 is_a: UBERON:0002973 ! parahippocampal gyrus
-
-[Term]
-id: ncithesaurus:Molecular_Layer_of_the_Cerebellum ! Molecular Layer of the Cerebellum
-property_value: IAO:0000589 "molecular layer of cerebellar cortex (ncithesaurus)" xsd:string
-is_a: UBERON:0002974 ! molecular layer of cerebellar cortex
-
-[Term]
-id: ncithesaurus:Purkinje_Cell_Layer_of_the_Cerebellum ! Purkinje Cell Layer of the Cerebellum
-property_value: IAO:0000589 "Purkinje cell layer of cerebellar cortex (ncithesaurus)" xsd:string
-is_a: UBERON:0002979 ! Purkinje cell layer of cerebellar cortex
 
 [Term]
 id: ncithesaurus:Lateral_Posterior_Nucleus_of_the_Thalamus ! Lateral Posterior Nucleus of the Thalamus
@@ -9106,6 +9111,11 @@ is_a: UBERON:0003689 ! sella turcica
 id: ncithesaurus:Sacrum ! Sacrum
 property_value: IAO:0000589 "sacrum (ncithesaurus)" xsd:string
 is_a: UBERON:0003690 ! sacrum
+
+[Term]
+id: ncithesaurus:Extraperitoneal_Space ! extraperitoneal space
+property_value: IAO:0000589 "extraperitoneal space (ncithesaurus)" xsd:string
+is_a: UBERON:0014456 ! extraperitoneal space
 
 [Term]
 id: ncithesaurus:Retroperitoneum ! Retroperitoneum
@@ -11111,11 +11121,6 @@ is_a: UBERON:0008826 ! pulmonary surfactant
 id: ncithesaurus:Forestomach ! Forestomach
 property_value: IAO:0000589 "forestomach (ncithesaurus)" xsd:string
 is_a: UBERON:0008827 ! forestomach
-
-[Term]
-id: ncithesaurus:Internal_Granular_Layer_of_the_Cerebellum ! Internal Granular Layer of the Cerebellum
-property_value: IAO:0000589 "cerebellum internal granule cell layer (ncithesaurus)" xsd:string
-is_a: UBERON:0008830 ! cerebellum internal granule cell layer
 
 [Term]
 id: ncithesaurus:Intestinal_Smooth_Muscle_Tissue ! Intestinal Smooth Muscle Tissue

@@ -36,7 +36,7 @@ taxcheck-%: % subsets/taxon-constraints.owl
 # todo: fix chemosensory organ problem...
 # todo: fix relation IDs
 uberon_edit-implied.obo: uberon_edit.obo
-	ontology-release-runner --catalog-xml $(CATALOG) --add-support-from-imports  --no-subsets --skip-format owx --outdir r/  --reasoner elk --simple --asserted --allow-overwrite $< && cp r/uberon.obo $@
+	ontology-release-runner --catalog-xml $(CATALOG) --add-support-from-imports  --no-subsets --skip-format owx --outdir r/ --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp r/uberon.obo $@
 
 # TODO: use Oort. This roughly corresponds to the basic export of oort - however, Oort also removes axiom annotations in the basic export
 uberon.obo: uberon_edit-implied.obo
@@ -338,7 +338,7 @@ pr-core.owl: pr/pr-simple.obo
 #	(obo-grep.pl  -r 'id: PR:' $< && cat part_of.obo has_part.obo) > $@
 
 pr/pr-simple.obo:
-	ontology-release-runner --reasoner elk --outdir pr --skip-format owx --simple --no-subsets --allow-overwrite $(OBO)/pr.owl
+	ontology-release-runner --reasoner elk --outdir pr --skip-release-folder --skip-format owx --simple --no-subsets --allow-overwrite $(OBO)/pr.owl
 
 cl-core.owl: cl-core.obo
 	obolib-obo2owl --allow-dangling $< -o $@
