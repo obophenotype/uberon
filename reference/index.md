@@ -100,6 +100,10 @@
 
 ## Comments
 
+[click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Representation of joints/articulations' in the subject line
+
+## Comments
+
 [click here](http://purl.obolibrary.org/obo/uberon/tracker/) to comment on this document. Use 'Connections between biological processes and anatomical structures' in the subject line
 
 ## Comments
@@ -152,6 +156,7 @@
      * 0000034 [Digestive tract](http://purl.obolibrary.org/obo/uberon/references/reference_0000034) *()*
      * 0000035 [Conflation and Discrimination](http://purl.obolibrary.org/obo/uberon/references/reference_0000035) *()*
      * 0000036 [Developmental stages](http://purl.obolibrary.org/obo/uberon/references/reference_0000036) *()*
+     * 0000039 [Representation of joints/articulations](http://purl.obolibrary.org/obo/uberon/references/reference_0000039) *()*
  * ontology_usage_article
      * 0000024 [Connections between biological processes and anatomical structures](http://purl.obolibrary.org/obo/uberon/references/reference_0000024) *(intermediate draft)*
      * 0000026 [Inter anatomy ontology bridge module ontologies](http://purl.obolibrary.org/obo/uberon/references/reference_0000026) *()*

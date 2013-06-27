@@ -561,13 +561,13 @@ uberon-taxmod-echinoderm.ids: uberon.obo
 
 uberon-taxmod-aves.obo: uberon-taxmod-8782.obo
 	cp $< $@
-uberon-taxmod-euarchontoglires.obo.obo: uberon-taxmod-314146.obo
+uberon-taxmod-euarchontoglires.obo: uberon-taxmod-314146.obo
 	cp $< $@
-uberon-taxmod-amniote.obo.obo: uberon-taxmod-32524.obo
+uberon-taxmod-amniote.obo: uberon-taxmod-32524.obo
 	cp $< $@
 
 uberon-taxmod-%.obo: core.owl
-	owltools core.owl --reasoner elk --make-species-subset -t NCBITaxon:8782 --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o -f obo $@
+	owltools core.owl --reasoner elk --make-species-subset -t NCBITaxon:$* --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o -f obo $@
 #uberon-taxmod-%.obo: uberon-taxmod-%.ids
 #	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
