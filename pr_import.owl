@@ -5,7 +5,9 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/pr_import.owl"/>
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/pr_import.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2013-07-03/pr_import.owl"/>
+    </owl:Ontology>
     
 
 
@@ -87,7 +89,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018263">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino acid chain</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/snap_Object"/>
     </owl:Class>
     
 
@@ -97,23 +98,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000027222">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calcitonin</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/snap_MaterialEntity -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/snap_MaterialEntity">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material_entity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/snap_Object -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/snap_Object">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/snap_MaterialEntity"/>
     </owl:Class>
     
 

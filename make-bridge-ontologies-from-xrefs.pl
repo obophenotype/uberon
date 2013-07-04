@@ -123,11 +123,16 @@ foreach my $s (keys %fhmap) {
 }
 foreach my $ont (@fns) {
     #my $cmd = "obolib-obo2owl --allow-dangling $ont.obo -o $ont.owl";
-    my $cmd = "owltools $ont.obo -o file://`pwd`/$ont.owl";
+    my $cmd = "owltools $ont.obo -o $ont.owl";
+    if ($ont eq '') {
+        # TODO - fix obo2owl
+        $cmd .= ' && perl -pi -ne "s@http://purl.obolibrary.org/obo/NIF_GrossAnatomy#_@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@" '."$ont.owl";
+    }
     if (system($cmd)) {
         print STDERR "REMOVING: $ont.obo\n";
         system("rm $ont.obo");
     }
+    
 }
 
 print STDERR "n_xrefs: $n_xrefs\n";

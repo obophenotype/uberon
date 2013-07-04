@@ -1,51 +1,157 @@
 OBO=http://purl.obolibrary.org/obo
 CATALOG=catalog-v001.xml
 DC = http://purl.org/dc/elements/1.1
+DATE = `date +%Y-%m-%d`
+RELEASE = $(OBO)/uberon/releases/`date +%Y-%m-%d`
+
+# ----------------------------------------
+# ----------------------------------------
+# NEW, POST-JUNE-2013
+# ----------------------------------------
+# ----------------------------------------
+
+UCAT = --use-catalog
+
+# SEED ONTOLOGY - use to make import modules
+#
+# for now we combine all cell and gross anatomy into one edit file; TODO - ext
+uberon_edit.owl: uberon_edit.obo 
+	owltools $(UCAT) $< --merge-support-ontologies -o -f functional $@
+### TODO - restore --expand-macros
+###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
+
+# this is primarily used for seeding
+phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
+	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
+
+#t:
+#	echo $(RELEASE)
+
+# ----------------------------------------
+# IMPORTS
+# ----------------------------------------
+
+# seed.owl is never released - it is used to seed module extraction
+seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
+	owltools $(UCAT) uberon_edit.owl $< cl-core.obo --merge-support-ontologies -o -f functional $@
+
+# todo - change to phenoscape-ext
+#EDITSRC = uberon_edit.owl
+EDITSRC = seed.owl
+IMP = $(OBO)/uberon
+
+pato.owl:
+	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // -o $@
+pato_import.owl: pato.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+# TODO - logical definitions go->ubr,cl
+go.owl:
+	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
+go_import.owl: go.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+chebi.owl:
+	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
+chebi_import.owl: chebi.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+aminoacid.owl:
+	owltools $(OBO)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(OBO)/uberon/$@  -o $@
+pr.owl: aminoacid.owl
+	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@
+pr_import.owl: pr.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+ncbitaxon.owl:
+	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
+ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+# CL - take **everything**
+cl_import.owl: cl-core.obo 
+	owltools $(UCAT) $< --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+%_import.obo: %_import.owl
+	owltools $< -o -f obo $@
+
+imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo
+	touch $@
+
+# ----------------------------------------
+# MAIN RELEASE FILES
+# ----------------------------------------
+
+## TODO - restore Disjoints
+## TODO - get rid of declarations for other ontology classes
+unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl imports
+	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
+
+release.owl: unreasoned.owl
+	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --outdir newbuild --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp newbuild/uberon.owl $@
+
+# this should become the new uberon.owl
+#release.owl: unreasoned.owl
+#	owltools $(UCAT) $< --assert-inferred-subclass-axioms --useIsInferred --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+#release.obo: release.owl
+#	owltools $(UCAT) $< -o -f obo $@
+
+
+# previously we had merged and ext - now just ext. TODO: release/date
+ext.owl: release.owl
+	owltools $(UCAT) $< --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+ext.obo: ext.owl
+	owltools $(UCAT) $< --merge-import-closure --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
+
+# merged.owl is now the flattening of ext.owl
+# merged.obo will be the same as ext.obo
+merged.owl: ext.owl
+	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+merged.obo: merged.owl
+	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
+
+# this is like the old uberon.{obo,owl}
+uberon.owl: release.owl
+	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
+uberon.obo: uberon.owl
+	obolib-owl2obo $< -o $@.tmp && obo2obo $@.tmp -o $@
+
+
+# remember to git mv - this replaces uberon-simple
+basic.owl:  uberon.owl
+	owltools $< --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+basic.obo: basic.owl
+	obolib-owl2obo $< -o $@.tmp && obo2obo $@.tmp -o $@
+
+subsets/efo-slim.owl: basic.owl
+	owltools $< --extract-ontology-subset --subset efo_slim --iri $(OBO)/uberon/$@ -o $@
+subsets/efo-slim.obo: subsets/efo-slim.owl
+	obolib-owl2obo $< -o $@
+
+
+#TEMPORARY - we will later
+supercheck.owl: unreasoned.owl
+	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
+
+newpipe: basic-xp-check
+
+# ----------------------------------------
+# PRE-JUNE-2013
+# ----------------------------------------
 
 all: uberon-qc
 
-# ----------------------------------------
-# General release management
-# ----------------------------------------
-# note some aspects of this are quite complex.
-# - edit file contains dangling references
-IMPORTS= $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
-
-# core.owl file has
-# * expanded macros
-# * imports to ncbitax (for taxon checking)
-# note that a separate path builds the derived ontologies
-uberon_edit-XM.owl: uberon_edit.obo
-	obolib-obo2owl -x -xm INPLACE --allow-dangling -o $@ $< 
-core.owl: uberon_edit-XM.owl
-	owltools $< --add-imports-declarations $(IMPORTS) // -o -f functional file://`pwd`/$@
-.PRECIOUS: core.owl
-
+# TODO - manage this in OWL
 external-disjoints.owl: external-disjoints.obo
 	obolib-obo2owl --allow-dangling -o $@ $<
 
+# temp
 subsets/taxon-constraints.owl: uberon_edit.obo
 	owlrhino js/extract-taxon-constraints.js
 
 taxcheck-%: % subsets/taxon-constraints.owl
 	owltools $< subsets/taxon-constraints.owl --add-imports-from-supports --run-reasoner -r elk -u  > $@.tmp && mv $@.tmp $@
 
-# REPLACEME
-#  step 1 - use noimports
-#  step 2 - with imports, --add-support-from-imports
-# todo: fix chemosensory organ problem...
-# todo: fix relation IDs
-uberon_edit-implied.obo: uberon_edit.obo
-	ontology-release-runner --catalog-xml $(CATALOG) --add-support-from-imports  --no-subsets --skip-format owx --outdir r/ --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp r/uberon.obo $@
-
-# TODO: use Oort. This roughly corresponds to the basic export of oort - however, Oort also removes axiom annotations in the basic export
-uberon.obo: uberon_edit-implied.obo
-	obo-filter-external.pl --idspace UBERON --xp2rel $< | egrep -v '^(domain|range):' > $@
-
-# TODO: use Oort/owltools
-uberon-simple.obo: uberon_edit-implied.obo
-	owltools r/uberon-simple.obo --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo $@
-#	grep -v ^intersection_of $< | perl -ne 'print unless (/^relationship: (\S+)/ && ($$1 ne "part_of" && $$1 ne "develops_from"))' | obo-grep.pl --neg -r Typedef - > $@.tmp && cat $@.tmp uberon-simple-rel.obo > $@
 
 
 # check OE can parse:
@@ -53,14 +159,6 @@ uberon-simple.obo: uberon_edit-implied.obo
 %.obo-OE-check: %.obo
 	obo2obo -o $@ $<
 
-CATALOG_MERGED = catalog-uberon-merged.xml
-ext.owl: pe/phenoscape-ext.owl merged.owl
-#	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --add-imports-declarations $(OBO)/uberon/depictions.owl -o file://`pwd`/$@
-#	owltools --create-ontology $(OBO)/uberon/ext.owl $< --merge-support-ontologies --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
-#	ontology-release-runner --catalog-xml $(CATALOG_MERGED)  --outdir ext-release --reasoner elk --allow-overwrite --skip-format owx --no-subsets $<
-	owltools --catalog-xml $(CATALOG_MERGED) $< --set-ontology-id -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/ext.owl $(OBO)/uberon/ext.owl  --assert-inferred-subclass-axioms --useIsInferred -o file://`pwd`/$@
-ext.obo: ext.owl
-	owltools --catalog-xml $(CATALOG_MERGED) $< --merge-import-closure --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo $@
 
 # ----------------------------------------
 # Taxonomy and external AO validation
@@ -71,7 +169,7 @@ ext.obo: ext.owl
 #  * external-disjoints.owl
 #  * species anatomy bridge axioms
 # This can be used to reveal both internal inconsistencies within uberon, and the improper linking of a species AO class to an uberon class with a taxon constraint
-uberon_edit-plus-tax-equivs.owl: core.owl external-disjoints.owl
+uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.owl
 	owltools --catalog-xml $(CATALOG) $< external-disjoints.owl `ls bridge/uberon-bridge-to-*.owl | grep -v emap.owl` --merge-support-ontologies -o -f functional file://`pwd`/$@
 .PRECIOUS: uberon_edit-plus-tax-equivs.owl
 
@@ -96,11 +194,9 @@ quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges externa
 bridge-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
-%.owl: %.obo
-	obolib-obo2owl -o $@ $<
+#%.owl: %.obo
+#	obolib-obo2owl -o $@ $<
 
-#%.owlcheck: %.obo
-#	obolib-obo2owl --allow-dangling -o $@ $< && obolib-owl2obo -o $@-rt.obo $@
 
 # check for dangling classes
 # TODO: add to Oort
@@ -114,11 +210,8 @@ bridge-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
 	obo-check-xps.pl $< >& $@ || (echo "problems" && exit 1)
 
 
-# simplified CHEBI - we only want to follow SubClassOf in closure
-#CHEBI.obo: $(HOME)/cvs/obo/ontology/chemical/chebi.obo
-#	perl -ne 'print unless /^relationship/' $< | grep -v ^xref > $@
-
 # See: http://douroucouli.wordpress.com/2012/07/03/45/
+# TODO - make the OWL primary
 depictions.omn: uberon_edit.obo
 	./util/mk-image-ont.pl $< > $@
 depictions.owl: depictions.omn
@@ -128,7 +221,7 @@ quick-qc: uberon.obo-OE-check core.owl uberon_edit-obscheck.txt
 	cat uberon_edit-obscheck.txt
 
 QC_FILES = uberon_edit-xp-check\
-    core.owl\
+    uberon.owl\
     uberon_edit-obscheck.txt\
     uberon.obo\
     uberon.obo-OE-check\
@@ -145,16 +238,16 @@ QC_FILES = uberon_edit-xp-check\
     uberon-cycles\
     uberon.owl\
     uberon-with-isa.obo\
-    uberon-simple.obo\
-    uberon-simple.owl\
-    uberon-simple-allcycles\
-    uberon-simple-orphans\
+    basic.obo\
+    basic-allcycles\
+    basic-orphans\
     merged.obo-OE-check\
     merged-cycles\
     merged-orphans\
     ext.owl\
     ext.obo\
     ext-obscheck.txt\
+    subsets/efo-slim.obo\
     uberon-dv.txt\
     uberon-discv.txt\
     composites\
@@ -173,26 +266,12 @@ uberon-qc: $(QC_FILES) all_systems
 %-dv.txt: %.owl
 	owltools --no-debug $<  --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
-%_closure-ontol_db.pro: %.obo
-	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@.tmp2 && cat $@.tmp2 util/abolish_subclassT.pro > $@
-# TODO: axiom expansions + elk
-%-discv.txt: %.obo %_closure-ontol_db.pro
-	blip -index "ontol_db:parentRT(-,-,1)" -i spatially_disjoint_from.obo -i $< -i $*_closure-ontol_db.pro -u query_obo findall disjoint_over_violation/4 -label > $@
 
-#%-discvall.txt: %.obo
-#	blip -table_pred ontol_db:parentRT/3  -r fma_simple -r ZFA -r MA -r HAO -r FBbt -i spatially_disjoint_from.obo -u ontol_manifest_disconnected_from_adjacent -i $< -u ontol_manifest_has_subclass_from_selected_xref -goal "set_selected_idspaces('FMA-MA-ZFA'),materialize_index(ontol_db:subclass(1,1)),materialize_index(ontol_db:subclassT(1,1))"  -u query_obo findall disjoint_over_violation/4 -label > $@
 # TODO - need closure for taxslim too
 %-obscheck.txt: %.obo
 	((obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) >& $@
 
-# one off Allan BA check
-dv-aba.txt:
-	blip-findall -r uberonp -r aba "disjoint_from(X1,X2),id_idspace(X1,'ABA'),entity_xref(U1,X1),entity_xref(U2,X2),parentRT(D,part_of,U1),parentRT(D,part_of,U2)" -select "d(D,U1,U2)" -label > $@
 
-aba.obo: ABA-src.obo
-	./util/make-aba-part-ofs.pl $< > $@
-bridge/aba.owl: aba.obo
-	owltools $< -o file://`pwd`/$@
 
 # ----------------------------------------
 # System-specific subsets
@@ -239,7 +318,7 @@ subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl
 
 #subsets/life-stages.obo: uberon.owl
 #subsets/life-stages.obo: composite-metazoan.obo
-subsets/life-stages-composite.obo: composite-vertebrate.obo
+subsets/life-stages-composite.obo: composite-vertebrate.owl
 	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f obo $@ --reasoner-dispose >& $@.LOG
 
 subsets/life-stages-core.obo: uberon.owl
@@ -250,26 +329,10 @@ subsets/life-stages-core.owl: uberon.owl
 
 subsets/%.owl: subsets/%.obo
 	owltools $< -o file:///`pwd`/$@
-#subsets/%.obo: subsets/%.owl
-#	owltools $< -o -f obo $@
-
-# ----------------------------------------
-# Closure
-# @Deprecated
-# ----------------------------------------
-
-
-#multi_closure-ontol_db.pro: merged.obo
-#	owltools $< $(OBO)/ma.owl $(OBO)/ehdaa2.owl $(OBO)/xao.owl $(OBO)/zfa.owl $(OBO)/fbbt.owl $(OBO)/wbbt.owl cl-core.obo --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' | tbl2p -p parentT > $@
-
-simple.closure: uberon-simple.obo
-	owltools $< --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | perl -npe 's/OBO_REL:is_a/subclass/' > $@.tmp2 && mv $@.tmp2 $@
-bridge/%.closure: bridge/uberon-bridge-to-%.obo
-	owltools --use-catalog uberon-simple.obo $< $(OBO)/$*.owl --merge-support-ontologies --rename-entity http://purl.obolibrary.org/obo/emapa_part_of $(OBO)/BFO_0000050  --save-closure-for-chado --chain $@.tmp && cut -f1,2,4 $@.tmp | grep -v ^UBERON | perl -npe 's/OBO_REL:is_a/subclass/' > $@.tmp2 && mv $@.tmp2 $@
 
 
 # ----------------------------------------
-# BUILDS
+# HISTORIC/LEGACY, NEEDS PRESERVED
 # ----------------------------------------
 
 # get rid of non subclass xrefs
@@ -292,153 +355,144 @@ uberon-isa-to-%.obo: uberon.obo
 	obo-grep.pl -r '^id: $*' $< > $@
 
 
-# ----------
-# merged.owl
-# ----------
-
-GOEXT = $(OBO)/go/extensions
-#MCAT_ONTS = $(OBO)/go.owl $(GOEXT)/chebi-lite.obo  $(OBO)/pato.owl pr-core.owl
-MCAT_ONTS = $(OBO)/go.owl chebi-lite.obo  $(OBO)/pato.owl pr-core.owl
-
-# uberon + CL-core (all axioms, but excluding MIREOTs).
-# cl-core 
-uberon-cl.owl: uberon_edit.obo cl-core.obo
-	owltools $< cl-core.obo --merge-support-ontologies   -o file://`pwd`/$@
-
-# merged, non-classified
-merged-nc.owl: uberon-cl.owl pr-core.owl
-	owltools --catalog-xml $(CATALOG) $< $(MCAT_ONTS) --mcat --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ -n $(OBO)/uberon/merged.owl -o file://`pwd`/$@
-###	owltools --catalog-xml $(CATALOG) $< $(GOEXT)/x-metazoan-anatomy.owl $(GOEXT)/x-cell.owl --merge-support-ontologies  $(OBO)/ncbitaxon/subsets/taxslim.owl $(MCAT_ONTS) --mcat --prefix $(OBO)/UBERON_ --prefix $(OBO)/CL_ -n $(OBO)/uberon/merged.owl -o file://`pwd`/$@
-# merged, reasoned over
-merged.owl: merged-nc.owl
-	owltools $< --assert-inferred-subclass-axioms --useIsInferred --add-ontology-annotation $(DC)/description "This ontology combines all of uberon and cl plus a subset of other ontologies such as GO into a single merged ontology " -o file://`pwd`/$@
-
-
-.PRECIOUS: merged.owl
-merged.obo: merged.owl
-	obolib-owl2obo -o $@.tmp $< && ./util/fix-synsubsetdef.pl $@.tmp > $@.tmp2 && mv $@.tmp2 $@
-.PRECIOUS: merged.obo
-
+# @Dep
 other-bridges: merged.owl
 	owltools $< --extract-bridge-ontologies -d tmp -s uberon -x -o -f obo tmp/minimal.obo
+
+# ----------------------------------------
+# CL (to be replaced)
+# ----------------------------------------
 
 # core: the full ontology, excluding external classes, but including references to these
 # TODO: use --make-subset-by-properties
 cl-core.obo: cl.obo
-	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat part_of.obo has_part.obo capable_of.obo)  > $@
+	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
 
+# TODO - this may replace the above BUT need to preserve dangling axioms
 cl-core-new.obo: cl.obo
 	owltools $< --make-subset-by-properties BFO:0000050 RO:0002202 RO:0002215 // --remove-axioms -t DisjointClasses -o -f obo $@
 
+# this is required for bridging axioms
 cl-xrefs.obo:
 	blip-findall -r ZFA "entity_xref(Z,C),id_idspace(C,'CL')" -select C-Z -use_tabs -no_pred | tbl2obolinks.pl  --rel xref > $@
-
-pr-core.owl: pr/pr-simple.obo
-	owltools $< --make-subset-by-properties // -o file://`pwd`/$@
-#	(obo-grep.pl  -r 'id: PR:' $< && cat part_of.obo has_part.obo) > $@
-
-pr/pr-simple.obo:
-	ontology-release-runner --reasoner elk --outdir pr --skip-release-folder --skip-format owx --simple --no-subsets --allow-overwrite $(OBO)/pr.owl
 
 cl-core.owl: cl-core.obo
 	obolib-obo2owl --allow-dangling $< -o $@
 
+# ----------------------------------------
+# OBO-BASIC CHECKS
+# ----------------------------------------
+
+# NOTE: we should be able to replace these with oort now
+%-cycles: %.obo
+#	owltools --no-debug $< --list-cycles -f > $@
+	blip-findall -i $< "subclass_cycle/2" -label > $@
+
+%-allcycles: %.owl
+	owltools --no-debug $< --list-cycles -f > $@
+
+
+# TODO: use Oort
+%-synclash: %.obo
+	blip-findall -r goxp/biological_process_xp_uber_anatomy	 -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
+
+# ----------------------------------------
+# COMPOSITES
+# ----------------------------------------
+
+
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
-composites: composite-metazoan.owl composite-vertebrate.owl
+composites: composite-metazoan.obo composite-vertebrate.obo
 
-#METCACHE= metazoan_glommed_closure-ontol_db.pro
+CVERTS = composite-zfa.owl composite-ma.owl composite-xao.owl composite-ehdaa2.owl
+CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl
+composite-vertebrate.owl: $(CVERTS)
+	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations -o $@
 
-# TODO: ensure treat-xrefs in merged
-#composite-xenopus.obo: merged.obo
-#	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r XAO -goal "rewrite_all('uberon/composite-xenopus')" io-convert -to obo > $@
-#.PRECIOUS: mammal-xenopus.obo
+composite-metazoan.owl: $(CMETS)
+	owltools  --create-ontology -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/composite-metazoan.owl uberon/$@  $(CMETS)  --merge-support-ontologies --repair-relations -o $@
 
-#composite-mammal.obo: merged.obo
-#	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r fma_downcase -r aba -r nif_anatomy -r MA -r EHDAA2 -goal "rewrite_all('uberon/composite-mammal')" io-convert -to obo > $@.tmp && mv $@.tmp $@
-#.PRECIOUS: mammal-mammal.obo
+# owl2obo
+composite-%.obo: composite-%.owl
+	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
+#	obolib-owl2obo -o $@ $<
 
-CVERTS = composite-zfa.obo composite-ma.obo composite-xao.obo composite-ehdaa2.obo
-CMETS = $(CVERTS) composite-fbbt.obo composite-wbbt.obo
-composite-vertebrate.obo: $(CVERTS)
-	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp >$@
-
-composite-metazoan.obo: $(CMETS)
-	owltools  --create-ontology -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/composite-metazoan.owl uberon/$@  $(CMETS)  --merge-support-ontologies --repair-relations -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp >$@
+composite-mammal.owl: composite-mammal.obo
+	obolib-obo2owl --allow-dangling -o $@ $<
+#composite-vertebrate.owl: composite-vertebrate.obo
+#	obolib-obo2owl --allow-dangling -o $@ $<
 
 
 IVSTAGES = -i developmental-stage-ontologies/hsapdv/hsapdv.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -i developmental-stage-ontologies/olatdv/olatdv.obo
-#composite-vertebrate.obo: merged.obo  $(METCACHE)
-#	blip-ddb  -consult util/merge_species.pro -debug merge -i $< -i cl-core.obo -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES) -i $(METCACHE)  -goal "rewrite_all('uberon/composite-vertebrate')" io-convert -to obo > $@.tmp && mv $@.tmp $@.tmp && mv $@.tmp $@
-#.PRECIOUS: composite-vertebrate.obo
-# TODO:  development CV 
-#composite-metazoan.obo: merged.obo $(METCACHE)
-#	blip-ddb  -consult util/merge_species.pro -debug merge -debug index -i $<  -i cl-core.obo -r WBbt -r ZFA -r ZFS -r MA -r EHDAA2 -r XAO $(IVSTAGES)  -i fbbt-nd.obo -i  $(METCACHE) -goal "rewrite_all('uberon/composite-metazoan')" io-convert -to obo > $@.tmp && mv $@.tmp $@
-
-#METAZOAN_ONTS = wbbt fbbt zfa
 METAZOAN_ONTS = wbbt zfa fbbt ma ehdaa2 xao
 METAZOAN_OBOS = $(patsubst %,local-%.obo,$(METAZOAN_ONTS))
 METAZOAN_BRIDGES = $(patsubst %,bridge/uberon-bridge-to-%.owl,$(METAZOAN_ONTS))
 local-%.obo: merged.obo
 	wget $(OBO)/$*.owl -O cached-$*.owl && owltools cached-$*.owl --repair-relations -o -f obo $@.tmp && egrep -v '^(disjoint|domain|range)' $@.tmp | perl -npe 's/default-namespace: FlyBase development CV/default-namespace: fbdv/' > $@
+local-%.owl:
+	owltools $(OBO)/$*.owl --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#connected_to $(OBO)/UBREL_0000001 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain -o -f ofn $@
+
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
 
 # NEW:
 composite-deps: $(METAZOAN_OBOS)
+MBASE = merged.owl
 
-composite-zfa.obo: merged.owl 
-	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-zfa.owl bridge/cl-bridge-to-zfa.owl bridge/uberon-bridge-to-zfs.owl local-zfa.obo developmental-stage-ontologies/zfs/zfs.obo --merge-support-ontologies --reasoner elk \
+composite-zfa.owl: local-zfa.owl $(MBASE) 
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-zfa.owl bridge/cl-bridge-to-zfa.owl bridge/uberon-bridge-to-zfs.owl $< developmental-stage-ontologies/zfs/zfs.obo --merge-support-ontologies --reasoner elk \
  --merge-species-ontology -s 'Danio' -t NCBITaxon:7954 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
- -o -f obo --no-check $@
+ -o -f ofn $@
 
-composite-wbbt.obo: merged.owl
-	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-wbbt.owl bridge/cl-bridge-to-wbbt.owl local-wbbt.obo --merge-support-ontologies --reasoner elk \
+composite-wbbt.owl: local-wbbt.owl $(MBASE)
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-wbbt.owl bridge/cl-bridge-to-wbbt.owl $< --merge-support-ontologies --reasoner elk \
  --merge-species-ontology -s 'C elegans' -t NCBITaxon:6237 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
- -o -f obo --no-check $@
+ -o -f ofn $@
 
 # TODO - disallow equivalencies
-composite-fbbt.obo: merged.owl local-fbdv.obo
-	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-fbbt.owl bridge/cl-bridge-to-fbbt.owl local-fbbt.obo local-fbdv.obo --merge-support-ontologies --reasoner elk \
+composite-fbbt.owl: local-fbbt.owl local-fbdv.owl $(MBASE) local-fbdv.obo
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-fbbt.owl bridge/cl-bridge-to-fbbt.owl $< local-fbdv.owl --merge-support-ontologies --reasoner elk \
  --merge-species-ontology -s 'Drosophila' -t NCBITaxon:7227 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
- -o -f obo --no-check $@
+ -o -f ofn $@
 
-composite-ehdaa2.obo: merged.owl
-	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-ehdaa2.owl bridge/uberon-bridge-to-hsapdv.owl bridge/cl-bridge-to-ehdaa2.owl local-ehdaa2.obo developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+composite-ehdaa2.owl: local-ehdaa2.owl $(MBASE)
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ehdaa2.owl bridge/uberon-bridge-to-hsapdv.owl bridge/cl-bridge-to-ehdaa2.owl $< developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
  --merge-species-ontology -s 'embryonic human' -t NCBITaxon:9606 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
- -o -f obo --no-check $@
+ -o -f ofn $@
 
-composite-ma.obo: merged.owl 
-	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-ma.owl bridge/cl-bridge-to-ma.owl bridge/uberon-bridge-to-mmusdv.owl local-ma.obo developmental-stage-ontologies/mmusdv/mmusdv.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+composite-ma.owl: local-ma.owl $(MBASE) 
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ma.owl bridge/cl-bridge-to-ma.owl bridge/uberon-bridge-to-mmusdv.owl $< developmental-stage-ontologies/mmusdv/mmusdv.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
  --merge-species-ontology -s 'Mus' -t NCBITaxon:10088 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
- -o -f obo --no-check $@
+ -o -f ofn $@
 
-composite-aba.obo: merged.owl 
-	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-aba.owl aba.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+# TODO
+composite-aba.owl: local-aba.owl $(MBASE) 
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-aba.owl aba.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
  --merge-species-ontology -s 'Mouse brain' -t NCBITaxon:10088 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
- -o -f obo --no-check $@
+ -o -f ofn $@
 
 # TODO: fix IRIs
-#composite-nif.obo: merged.owl 
-#	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-aba.owl aba.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+#composite-nif.owl: local-.owl $(MBASE) 
+#	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-aba.owl aba.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
 # --merge-species-ontology -s 'Mouse brain' -t NCBITaxon:10088 \
 # --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
-# -o -f obo --no-check $@
+# -o -f ofn $@
 
-composite-xao.obo: merged.owl
-	owltools --no-debug --create-ontology uberon/$@ $<  bridge/uberon-bridge-to-xao.owl bridge/cl-bridge-to-xao.owl local-xao.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+composite-xao.owl: local-xao.owl $(MBASE)
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-xao.owl bridge/cl-bridge-to-xao.owl $< --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
  --merge-species-ontology -s 'Xenopus' -t NCBITaxon:8353 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
- -o -f obo --no-check $@
+ -o -f ofn $@
 
 # @Deprecated
-metazoan_glommed.obo: merged.obo
-	blip io-convert -debug index -i $< -i cl-core.obo -r WBbt -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt $(IVSTAGES) -to obo | egrep -v '^(synonym|def|subset|xref|namespace|comment):' > $@.tmp && mv $@.tmp $@
+#metazoan_glommed.obo: merged.obo
+#	blip io-convert -debug index -i $< -i cl-core.obo -r WBbt -r ZFA -r MA -r EHDAA2 -r XAO -r FBbt $(IVSTAGES) -to obo | egrep -v '^(synonym|def|subset|xref|namespace|comment):' > $@.tmp && mv $@.tmp $@
 
 # closures of individual ontologies, but not connections between them
 
@@ -446,12 +500,15 @@ metazoan_glommed.obo: merged.obo
 # COMPOSITES
 # ----------------------------------------
 
-composite-mammal.owl: composite-mammal.obo
-	obolib-obo2owl --allow-dangling -o $@ $<
-composite-metazoan.owl: composite-metazoan.obo
-	obolib-obo2owl --allow-dangling -o $@ $<
-composite-vertebrate.owl: composite-vertebrate.obo
-	obolib-obo2owl --allow-dangling -o $@ $<
+
+
+
+
+# ///////////////////////
+# ///////////////////////
+# ///  odds and ends ////
+# ///////////////////////
+# ///////////////////////
 
 # ----------------------------------------
 # OTHER
@@ -465,29 +522,6 @@ xrefs/uberon-to-umls.obo: uberon.obo
 xrefs/uberon-to-umls-merged.obo: xrefs/uberon-to-umls.obo
 	obo-merge-tags.pl -t xref uberon_edit.obo $< > $@ && diff -u $@ uberon_edit.obo || echo
 
-
-
-# TODO: use Oort
-#%-bridge.obo: %-with-isa.obo
-#	obo-filter-tags.pl -t id -t is_a $< | obo-grep.pl --neg -r 'id: UBERON' - | obo-grep.pl -r Term -  > $@
-
-
-
-# NOTE: we should be able to replace these with oort now
-%-cycles: %.obo
-#	owltools --no-debug $< --list-cycles -f > $@
-	blip-findall -i $< "subclass_cycle/2" -label > $@
-
-%-allcycles: %.obo
-	owltools --no-debug $< --list-cycles -f > $@
-#	blip-findall -i $< "parent_cycle/2" -label > $@
-
-# TODO: use Oort
-%-synclash: %.obo
-	blip-findall -r goxp/biological_process_xp_uber_anatomy	 -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
-
-#%-xpmatches: %.obo
-#	blip-findall -u query_obo -i $< "differentium(A,R,X),differentium(B,R,X),A\=B,class_cdef(A,D),class_cdef(B,D),class_refcount(A,AC),class_refcount(B,BC)" -select "x(A,B,AC,BC)" -label
 
 
 # OBO-Format Hacking
@@ -534,48 +568,51 @@ ipo.obo: uberon.obo
 # TAXON MODULES
 # ----------------------------------------
 # amniote = 32524
-all_taxmods: uberon-taxmod-amniote.owl uberon-taxmod-aves.owl uberon-taxmod-euarchontoglires.owl
+all_taxmods: uberon-taxmod-amniote.obo uberon-taxmod-aves.obo uberon-taxmod-euarchontoglires.obo
 
 # @Deprecated
 TAXFILTER = owltools merged.owl --merge-support-ontologies --make-taxon-set -s UBERON
-uberon-taxmod-tetrapod.ids: uberon.obo
+uberon-taxmod-tetrapod.ids: uberon.owl
 	$(TAXFILTER) NCBITaxon:32523 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-amniote.ids: uberon.obo
+uberon-taxmod-amniote.ids: uberon.owl
 	$(TAXFILTER) NCBITaxon:32524 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-mammal.ids: uberon.obo
+uberon-taxmod-mammal.ids: uberon.owl
 	$(TAXFILTER) NCBITaxon:40674 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-euarchontoglires.ids: uberon.obo
+uberon-taxmod-euarchontoglires.ids: uberon.owl
 	$(TAXFILTER) NCBITaxon:314146 > $@.tmp && grep ^UBERON $@.tmp > $@
 #uberon-taxmod-sauropsid.ids: merged_closure-ontol_db.pro
 #	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
-uberon-taxmod-aves.ids: uberon.obo
+uberon-taxmod-aves.ids: uberon.owl
 	$(TAXFILTER) NCBITaxon:8782 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-archosaur.ids: uberon.obo
+uberon-taxmod-archosaur.ids: uberon.owl
 	$(TAXFILTER) NCBITaxon:8492 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-echinoderm.ids: uberon.obo
+uberon-taxmod-echinoderm.ids: uberon.owl
 	$(TAXFILTER) NCBITaxon:7586 > $@.tmp && grep ^UBERON $@.tmp > $@
 #uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
 #	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
 
 .PRECIOUS: uberon-taxmod-%.ids
 
-uberon-taxmod-aves.obo: uberon-taxmod-8782.obo
+uberon-taxmod-aves.owl: uberon-taxmod-8782.owl
 	cp $< $@
-uberon-taxmod-euarchontoglires.obo: uberon-taxmod-314146.obo
+uberon-taxmod-euarchontoglires.owl: uberon-taxmod-314146.owl
 	cp $< $@
-uberon-taxmod-amniote.obo: uberon-taxmod-32524.obo
+uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
 	cp $< $@
 
-uberon-taxmod-%.obo: core.owl
-	owltools core.owl --reasoner elk --make-species-subset -t NCBITaxon:$* --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o -f obo $@
-#uberon-taxmod-%.obo: uberon-taxmod-%.ids
+uberon-taxmod-%.obo: uberon-taxmod-%.owl
+	owltools $< -o -f obo $@
+
+uberon-taxmod-%.owl: uberon.owl
+	owltools uberon.owl --reasoner elk --make-species-subset -t NCBITaxon:$* --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o $@
+#uberon-taxmod-%.owl: uberon-taxmod-%.ids
 #	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
-.PRECIOUS: uberon-taxmod-%.obo
+.PRECIOUS: uberon-taxmod-%.owl
 
 
-taxtable.txt: uberon_edit.obo
-	owltools $< --make-class-taxon-matrix --query-taxa external/ncbitaxon-subsets/taxslim.obo -o z NCBITaxon:9606 NCBITaxon:7955
+#taxtable.txt: uberon_edit.obo
+#	owltools $< --make-class-taxon-matrix --query-taxa external/ncbitaxon-subsets/taxslim.obo -o z NCBITaxon:9606 NCBITaxon:7955
 
 
 # ----------------------------------------
@@ -614,12 +651,13 @@ release-diff:
 
 RELDIR=trunk
 release:
-	cp core.owl $(RELDIR)/core.owl ;\
+	cp uberon_edit.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl} $(RELDIR) ;\
 	cp merged.{obo,owl} $(RELDIR)/ ;\
-	cp uberon-simple.obo $(RELDIR)/basic.obo ;\
-	cp uberon-simple.owl $(RELDIR)/basic.owl ;\
+	cp basic.obo $(RELDIR)/basic.obo ;\
+	cp basic.owl $(RELDIR)/basic.owl ;\
+	cp *_import.owl $(RELDIR)/ ;\
 	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
 	cp ext.{obo,owl} $(RELDIR)/ ;\
@@ -835,3 +873,34 @@ ma2ncitx.obo: ma2ncit.obo
 # ----------------------------------------
 bto-anat.obo:
 	blip ontol-query -r brenda -index "ontol_db:parentT(1,-,1)" -query "parentT(ID,'BTO:0000042'),\+((class(X,N),atom_concat(_,'cell line',N),parentT(ID,X)))" -to obo  > $@
+
+# ----------------------------------------
+# ABA
+# ----------------------------------------
+
+aba.obo: ABA-src.obo
+	./util/make-aba-part-ofs.pl $< > $@
+bridge/aba.owl: aba.obo
+	owltools $< -o file://`pwd`/$@
+
+# ----------------------------------------
+# NIF
+# ----------------------------------------
+NIF = 
+source-ontologies/NIF-GrossAnatomy.owl:
+	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O $@
+source-ontologies/NIF-GrossAnatomy.obo: source-ontologies/NIF-GrossAnatomy.owl
+	owltools $< -o -f obo $@
+
+uberon-nif-combined.owl: uberon.owl
+	owltools $< bridge/uberon-bridge-to-nif_grossanatomy.owl source-ontologies/NIF-GrossAnatomy.owl --merge-support-ontologies -o $@
+
+#uberon-nif-combined.obo: uberon.obo
+#	obo-cat.pl uberon.obo bridge/uberon-bridge-to-nif_grossanatomy.obo ~/cvs/pkb-owl/ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.obo > $@
+
+uberon-nif-merged.owl: uberon-nif-combined.obo
+	owltools $< --reasoner elk  --merge-equivalent-classes -f  -t UBERON -o $@.tmp && grep -v '<oboInOwl:id' $@.tmp > $@
+#	owltools $< --reasoner elk --remove-axioms -t DisjointClasses --merge-equivalent-classes -a  -t UBERON -o $@.tmp && grep -v '<oboInOwl:id' $@.tmp > $@
+
+uberon-nif-merged.obo:  uberon-nif-merged.owl
+	owltools $< -o -f obo --no-check $@
