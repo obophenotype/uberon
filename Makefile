@@ -34,6 +34,9 @@ phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
 # seed.owl is never released - it is used to seed module extraction
 seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 	owltools $(UCAT) uberon_edit.owl $< cl-core.obo --merge-support-ontologies -o -f functional $@
+# this is used for xrefs for bridge files
+seed.obo: seed.owl
+	owltools $< -o -f obo $@
 
 # todo - change to phenoscape-ext
 #EDITSRC = uberon_edit.owl
@@ -134,6 +137,12 @@ supercheck.owl: unreasoned.owl
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
 
 newpipe: basic-xp-check
+
+# ----------------------------------------
+# TEST
+# ----------------------------------------
+%-parts.owl: %.owl
+	owltools --use-catalog --create-ontology $*-parts  $< --materialize-existentials -p BFO:0000050 --add-imports-from-supports -o $@
 
 # ----------------------------------------
 # PRE-JUNE-2013
@@ -504,6 +513,143 @@ composite-xao.owl: local-xao.owl $(MBASE)
 
 
 
+# ----------------------------------------
+# TAXON MODULES
+# ----------------------------------------
+# amniote = 32524
+all_taxmods: uberon-taxmod-amniote.obo uberon-taxmod-aves.obo uberon-taxmod-euarchontoglires.obo
+
+# @Deprecated
+TAXFILTER = owltools merged.owl --merge-support-ontologies --make-taxon-set -s UBERON
+uberon-taxmod-tetrapod.ids: uberon.owl
+	$(TAXFILTER) NCBITaxon:32523 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-amniote.ids: uberon.owl
+	$(TAXFILTER) NCBITaxon:32524 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-mammal.ids: uberon.owl
+	$(TAXFILTER) NCBITaxon:40674 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-euarchontoglires.ids: uberon.owl
+	$(TAXFILTER) NCBITaxon:314146 > $@.tmp && grep ^UBERON $@.tmp > $@
+#uberon-taxmod-sauropsid.ids: merged_closure-ontol_db.pro
+#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
+uberon-taxmod-aves.ids: uberon.owl
+	$(TAXFILTER) NCBITaxon:8782 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-archosaur.ids: uberon.owl
+	$(TAXFILTER) NCBITaxon:8492 > $@.tmp && grep ^UBERON $@.tmp > $@
+uberon-taxmod-echinoderm.ids: uberon.owl
+	$(TAXFILTER) NCBITaxon:7586 > $@.tmp && grep ^UBERON $@.tmp > $@
+#uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
+#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
+
+.PRECIOUS: uberon-taxmod-%.ids
+
+uberon-taxmod-aves.owl: uberon-taxmod-8782.owl
+	cp $< $@
+uberon-taxmod-euarchontoglires.owl: uberon-taxmod-314146.owl
+	cp $< $@
+uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
+	cp $< $@
+
+uberon-taxmod-%.obo: uberon-taxmod-%.owl
+	owltools $< -o -f obo $@
+
+uberon-taxmod-%.owl: uberon.owl
+	owltools uberon.owl --reasoner elk --make-species-subset -t NCBITaxon:$* --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o $@
+#uberon-taxmod-%.owl: uberon-taxmod-%.ids
+#	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
+#	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
+.PRECIOUS: uberon-taxmod-%.owl
+
+
+#taxtable.txt: uberon_edit.obo
+#	owltools $< --make-class-taxon-matrix --query-taxa external/ncbitaxon-subsets/taxslim.obo -o z NCBITaxon:9606 NCBITaxon:7955
+
+
+# ----------------------------------------
+# BRIDGES
+# ----------------------------------------
+
+bridge/bridges: bridge/uberon-bridge-to-vhog.owl seed.obo cl-with-xrefs.obo
+	cd bridge && ../make-bridge-ontologies-from-xrefs.pl ../seed.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-with-xrefs.obo ../cl-xrefs.obo && touch bridges
+
+cl-with-xrefs.obo: cl-core.obo 
+	grep ^treat- uberon_edit.obo > $@ && cat $< >> $@
+
+bridge/uberon-bridge-to-vhog.owl: uberon_edit.obo
+	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
+
+bridge/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt
+	blip ontol-query -r emapa -r emap -consult util/emap_to_cdef.pro -i $< -i uberon.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -query "mapping_EMAP_to_EMAPA(ID,_,_)" -to obo | perl -npe 's/OBO_REL://' > $@.tmp && ./util/emap-to-cdef-add-hdr.pl $@.tmp > $@
+.PRECIOUS: bridge/uberon-bridge-to-emap.obo
+bridge/uberon-bridge-to-emap.owl: bridge/uberon-bridge-to-emap.obo
+	obolib-obo2owl --allow-dangling $< -o $@
+
+# DO NOT REMAKE ANY MORE: See #157
+bridge/ext-xref-PREVIEW.obo:
+	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON')" -select U-Z -label -use_tabs -no_pred | tbl2obolinks.pl --rel xref - > $@.tmp && cat ext-ref-hdr.obo $@.tmp > $@
+bridge/uberon-ext-bridge-to-zfa.obo: bridge/ext-xref.obo
+	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ext-xref.obo
+
+# see #157
+ext-xref-conflict.obo:
+	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(U,Zx),id_idspace(Zx,'ZFA'),Zx\=Z" -select "x(U,Z,Zx)" -label > $@
+ext-xref-conflict2.obo:
+	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(Ux,Z),id_idspace(Ux,'UBERON'),Ux\=U" -select "x(U,Z,Ux)" -label > $@
+
+release-diff:
+	cd diffs && make
+
+# ----------------------------------------
+# RELEASE DEPLOYMENT
+# ----------------------------------------
+# even tho the repo lives in github, release is via svn...
+
+RELDIR=trunk
+release:
+	cp uberon_edit.owl $(RELDIR)/core.owl ;\
+	cp uberon_edit.obo $(RELDIR)/core.obo ;\
+	cp uberon.{obo,owl} $(RELDIR) ;\
+	cp merged.{obo,owl} $(RELDIR)/ ;\
+	cp basic.obo $(RELDIR)/basic.obo ;\
+	cp basic.owl $(RELDIR)/basic.owl ;\
+	cp *_import.owl $(RELDIR)/ ;\
+	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
+	cp depictions.owl $(RELDIR)/ ;\
+	cp ext.{obo,owl} $(RELDIR)/ ;\
+	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
+	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
+	cp subsets/*.{obo,owl} $(RELDIR)/subsets/ ;\
+	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
+	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
+	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
+	cp uberon-taxmod-aves.owl $(RELDIR)/subsets/aves-basic.owl ;\
+	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
+	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
+	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
+	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
+	#(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]* && svn ps svn:mime-type text/html reference_[0-9]*) ;\
+	#make release-diff ;\
+	cp diffs/* $(RELDIR)/diffs/ ;\
+	echo done ;\
+#	cd $(RELDIR) && svn commit -m ''
+
+
+
+# ----------------------------------------
+# RELEASE
+# ----------------------------------------
+aao.obo:
+	wget $(OBO)/aao.obo
+
+fbbt.obo:
+	wget $(OBO)/fbbt.obo
+
+# See: http://code.google.com/p/caro2/issues/detail?id=10
+bridge/fbbt-nd.obo: fbbt.obo
+	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && obo2obo $@.tmp -o $@
+
+
+
+
 # ///////////////////////
 # ///////////////////////
 # ///  odds and ends ////
@@ -563,135 +709,6 @@ caloha-not-in-uberon.txt:
 
 ipo.obo: uberon.obo
 	blip-findall  -i $< -consult util/partof.pro new_part_of/2 -label -no_pred -use_tabs | sort -u | tbl2obolinks.pl  --rel part_of --source reference_0000032 - > $@
-
-# ----------------------------------------
-# TAXON MODULES
-# ----------------------------------------
-# amniote = 32524
-all_taxmods: uberon-taxmod-amniote.obo uberon-taxmod-aves.obo uberon-taxmod-euarchontoglires.obo
-
-# @Deprecated
-TAXFILTER = owltools merged.owl --merge-support-ontologies --make-taxon-set -s UBERON
-uberon-taxmod-tetrapod.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:32523 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-amniote.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:32524 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-mammal.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:40674 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-euarchontoglires.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:314146 > $@.tmp && grep ^UBERON $@.tmp > $@
-#uberon-taxmod-sauropsid.ids: merged_closure-ontol_db.pro
-#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
-uberon-taxmod-aves.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:8782 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-archosaur.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:8492 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-echinoderm.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:7586 > $@.tmp && grep ^UBERON $@.tmp > $@
-#uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
-#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
-
-.PRECIOUS: uberon-taxmod-%.ids
-
-uberon-taxmod-aves.owl: uberon-taxmod-8782.owl
-	cp $< $@
-uberon-taxmod-euarchontoglires.owl: uberon-taxmod-314146.owl
-	cp $< $@
-uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
-	cp $< $@
-
-uberon-taxmod-%.obo: uberon-taxmod-%.owl
-	owltools $< -o -f obo $@
-
-uberon-taxmod-%.owl: uberon.owl
-	owltools uberon.owl --reasoner elk --make-species-subset -t NCBITaxon:$* --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o $@
-#uberon-taxmod-%.owl: uberon-taxmod-%.ids
-#	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
-#	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
-.PRECIOUS: uberon-taxmod-%.owl
-
-
-#taxtable.txt: uberon_edit.obo
-#	owltools $< --make-class-taxon-matrix --query-taxa external/ncbitaxon-subsets/taxslim.obo -o z NCBITaxon:9606 NCBITaxon:7955
-
-
-# ----------------------------------------
-# RELEASE
-# ----------------------------------------
-# even tho the repo lives in github, release is via svn...
-bridge/bridges: bridge/uberon-bridge-to-vhog.owl uberon_edit.obo cl-with-xrefs.obo
-	cd bridge && ../make-bridge-ontologies-from-xrefs.pl ../uberon_edit.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-with-xrefs.obo ../cl-xrefs.obo && touch bridges
-
-cl-with-xrefs.obo: cl-core.obo 
-	grep ^treat- uberon_edit.obo > $@ && cat $< >> $@
-
-bridge/uberon-bridge-to-vhog.owl: uberon_edit.obo
-	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
-
-bridge/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt
-	blip ontol-query -r emapa -r emap -consult util/emap_to_cdef.pro -i $< -i uberon.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -query "mapping_EMAP_to_EMAPA(ID,_,_)" -to obo | perl -npe 's/OBO_REL://' > $@.tmp && ./util/emap-to-cdef-add-hdr.pl $@.tmp > $@
-.PRECIOUS: bridge/uberon-bridge-to-emap.obo
-bridge/uberon-bridge-to-emap.owl: bridge/uberon-bridge-to-emap.obo
-	obolib-obo2owl --allow-dangling $< -o $@
-
-# DO NOT REMAKE ANY MORE: See #157
-bridge/ext-xref-PREVIEW.obo:
-	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON')" -select U-Z -label -use_tabs -no_pred | tbl2obolinks.pl --rel xref - > $@.tmp && cat ext-ref-hdr.obo $@.tmp > $@
-bridge/uberon-ext-bridge-to-zfa.obo: bridge/ext-xref.obo
-	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ext-xref.obo
-
-# see #157
-ext-xref-conflict.obo:
-	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(U,Zx),id_idspace(Zx,'ZFA'),Zx\=Z" -select "x(U,Z,Zx)" -label > $@
-ext-xref-conflict2.obo:
-	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(Ux,Z),id_idspace(Ux,'UBERON'),Ux\=U" -select "x(U,Z,Ux)" -label > $@
-
-release-diff:
-	cd diffs && make
-
-RELDIR=trunk
-release:
-	cp uberon_edit.owl $(RELDIR)/core.owl ;\
-	cp uberon_edit.obo $(RELDIR)/core.obo ;\
-	cp uberon.{obo,owl} $(RELDIR) ;\
-	cp merged.{obo,owl} $(RELDIR)/ ;\
-	cp basic.obo $(RELDIR)/basic.obo ;\
-	cp basic.owl $(RELDIR)/basic.owl ;\
-	cp *_import.owl $(RELDIR)/ ;\
-	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
-	cp depictions.owl $(RELDIR)/ ;\
-	cp ext.{obo,owl} $(RELDIR)/ ;\
-	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
-	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
-	cp subsets/*.{obo,owl} $(RELDIR)/subsets/ ;\
-	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
-	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
-	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
-	cp uberon-taxmod-aves.owl $(RELDIR)/subsets/aves-basic.owl ;\
-	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
-	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
-	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
-	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
-	#(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]* && svn ps svn:mime-type text/html reference_[0-9]*) ;\
-	#make release-diff ;\
-	cp diffs/* $(RELDIR)/diffs/ ;\
-	echo done ;\
-#	cd $(RELDIR) && svn commit -m ''
-
-
-
-# ----------------------------------------
-# RELEASE
-# ----------------------------------------
-aao.obo:
-	wget $(OBO)/aao.obo
-
-fbbt.obo:
-	wget $(OBO)/fbbt.obo
-
-# See: http://code.google.com/p/caro2/issues/detail?id=10
-bridge/fbbt-nd.obo: fbbt.obo
-	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && obo2obo $@.tmp -o $@
 
 # ----------------------------------------
 # REPORTING

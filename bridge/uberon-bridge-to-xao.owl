@@ -20,7 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/xao.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2013-07-03/uberon/bridge/uberon-bridge-to-xao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2013-07-04/uberon/bridge/uberon-bridge-to-xao.owl"/>
     </owl:Ontology>
     
 
@@ -333,6 +333,30 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000064 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000064"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000893 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000893"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0002090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002090"/>
     
 
 
@@ -4330,6 +4354,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/XAO_0000031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0000031">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000064"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0000031</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ciliated cell (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/XAO_0000033 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0000033">
@@ -7592,6 +7636,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/XAO_0000262 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0000262">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002090"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0000262</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polar body (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/XAO_0000264 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0000264">
@@ -10012,6 +10076,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/XAO_0003012 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0003012">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0003012</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/XAO_0003013 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0003013">
@@ -11408,6 +11492,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0003152</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immune system (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0003159 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0003159">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000893"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0003159</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thymocyte (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
