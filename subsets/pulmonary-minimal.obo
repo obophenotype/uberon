@@ -1251,8 +1251,8 @@ comment: the cavity includes and starts at the nares and reaches all the way thr
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cavitas nasalis" RELATED [BTO:0002096]
-synonym: "cavitas nasi" RELATED [BTO:0002096]
 synonym: "cavitas nasi" RELATED LATIN [Wikipedia:Nasal_cavity]
+synonym: "cavitas nasi" RELATED [BTO:0002096]
 synonym: "cavity of nose" EXACT []
 synonym: "cavum nasi" RELATED LATIN [Wikipedia:Nasal_cavity]
 synonym: "nasal canal" EXACT [ZFA:0000130]
@@ -6257,8 +6257,8 @@ id: UBERON:0006906
 name: ala of nose
 namespace: uberon
 def: "The lateral surface of the external nose ends below in a rounded eminence, the wing of the nose. It is elevated by the Levator labii superioris alaeque nasi muscle[WP]. the tissue comprising the lateral boundary of the nose, inferiorly, surrounding the naris[EoM]." [http://onlinelibrary.wiley.com/doi/10.1002/ajmg.a.32600/full, Wikipedia:Ala_of_nose]
-synonym: "ala nasi" RELATED LATIN [Wikipedia:Ala_of_nose]
 synonym: "ala nasi" RELATED [Wikipedia:Ala_of_nose]
+synonym: "ala nasi" RELATED LATIN [Wikipedia:Ala_of_nose]
 synonym: "ala of the nose" RELATED [Wikipedia:Ala_of_nose]
 synonym: "nasal ala" EXACT [FMA:59519]
 synonym: "wing of nose" RELATED [Wikipedia:Ala_of_nose]
@@ -6618,8 +6618,8 @@ id: UBERON:0008588
 name: procerus
 namespace: uberon
 def: "The Procerus is a small pyramidal slip of muscle deep to the superior orbital nerve, artery and vein." [Wikipedia:Procerus_muscle]
-synonym: "depressor glabellae" RELATED [Wikipedia:Procerus_muscle]
 synonym: "depressor glabellae" RELATED LATIN [Wikipedia:Procerus_muscle]
+synonym: "depressor glabellae" RELATED [Wikipedia:Procerus_muscle]
 synonym: "musculus procerus glabellae" RELATED LATIN [Wikipedia:Procerus_muscle]
 synonym: "procerus muscle" RELATED [Wikipedia:Procerus_muscle]
 synonym: "pyramidalis nasi" RELATED LATIN [Wikipedia:Procerus_muscle]
@@ -8262,6 +8262,18 @@ relationship: in_lateral_side_of UBERON:0001737 ! larynx
 relationship: part_of UBERON:0001737 ! larynx
 
 [Term]
+id: UBERON:0014479
+name: elephant trunk
+namespace: uberon
+def: "An appendage formed by the fusion of the nose and upper lip." [http://en.wikipedia.org/wiki/Elephant#Trunk]
+synonym: "proboscis" BROAD []
+synonym: "trunk" BROAD INCONSISTENT []
+synonym: "trunk of elephant" EXACT []
+xref: SCTID:41253007
+relationship: has_fused_element UBERON:0007827 ! external nose
+relationship: part_of UBERON:0001004 ! respiratory system
+
+[Term]
 id: UBERON:1000012
 name: nose anterior margin
 namespace: uberon
@@ -8282,6 +8294,7 @@ id: UBERON:2000202
 name: efferent branchial artery
 namespace: uberon/phenoscape-anatomy
 synonym: "EBA" EXACT [TAO:0000202]
+xref: ZFA:0000202
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:0007303 ! pharyngeal vasculature
 relationship: part_of UBERON:0011150 ! pharyngeal arch derived gill
@@ -8293,6 +8306,7 @@ id: UBERON:2000211
 name: gill lamella
 namespace: uberon/phenoscape-anatomy
 synonym: "gill lamellae" EXACT PLURAL [TAO:0000211]
+xref: ZFA:0000211
 relationship: part_of UBERON:0011150 ! pharyngeal arch derived gill
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -8301,6 +8315,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000319
 name: branchiostegal membrane
 namespace: uberon/phenoscape-anatomy
+xref: ZFA:0000319
 relationship: part_of UBERON:0011150 ! pharyngeal arch derived gill
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -8310,6 +8325,7 @@ id: UBERON:2000666
 name: filamental artery
 namespace: uberon/phenoscape-anatomy
 synonym: "filamental arteries" EXACT PLURAL [TAO:0000666]
+xref: ZFA:0000666
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:0007303 ! pharyngeal vasculature
 relationship: part_of UBERON:0009120 ! gill filament
@@ -8321,6 +8337,7 @@ id: UBERON:2000716
 name: afferent branchial artery
 namespace: uberon/phenoscape-anatomy
 synonym: "ABA" EXACT [TAO:0000716]
+xref: ZFA:0000716
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:0007303 ! pharyngeal vasculature
 relationship: part_of UBERON:0011150 ! pharyngeal arch derived gill
@@ -8331,6 +8348,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2001379
 name: pharyngeal ectoderm
 namespace: uberon/phenoscape-anatomy
+xref: ZFA:0001379
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -8340,6 +8358,7 @@ id: UBERON:2001426
 name: posterior naris
 namespace: uberon/phenoscape-anatomy
 synonym: "posterior nostril" EXACT [TAO:0001426]
+xref: ZFA:0001426
 is_a: UBERON:0005928 ! external naris
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -8349,6 +8368,7 @@ id: UBERON:2001427
 name: anterior naris
 namespace: uberon/phenoscape-anatomy
 synonym: "anterior nostril" EXACT [TAO:0001427]
+xref: ZFA:0001427
 is_a: UBERON:0005928 ! external naris
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -8358,6 +8378,7 @@ id: UBERON:2001428
 name: olfactory rosette
 namespace: uberon/phenoscape-anatomy
 synonym: "nasal rosette" EXACT [TAO:0001428]
+xref: ZFA:0001428
 is_a: UBERON:0004807 ! respiratory system epithelium
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -8367,6 +8388,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2001467
 name: pharyngeal mesoderm
 namespace: uberon/phenoscape-anatomy
+xref: ZFA:0001467
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -8411,6 +8433,7 @@ synonym: "branchial aperture" EXACT [TAO:0002057]
 synonym: "branchial opening" EXACT [TAO:0002057]
 synonym: "gill aperture" EXACT [TAO:0002057]
 synonym: "opercular opening" EXACT [TAO:0002057]
+xref: ZFA:0005389
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -8429,6 +8452,7 @@ name: afferent filamental artery
 namespace: uberon/phenoscape-anatomy
 synonym: "AFA" EXACT [TAO:0005012]
 synonym: "afferent filamental arteries" EXACT PLURAL [TAO:0005012]
+xref: ZFA:0005012
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000666 ! filamental artery
 relationship: part_of UBERON:2000716 ! afferent branchial artery
@@ -8441,6 +8465,7 @@ name: concurrent branch afferent branchial artery
 namespace: uberon/phenoscape-anatomy
 def: "The branch of the afferent branchial artery that continues posteriodorsally. Isogai et al. 2001." [ZFIN:curator]
 synonym: "CCB" EXACT [TAO:0005013]
+xref: ZFA:0005013
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000716 ! afferent branchial artery
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -8453,6 +8478,7 @@ namespace: uberon/phenoscape-anatomy
 def: "The anterioventral proceeding branch of the afferent branchial artery. Isogai et al. 2001." [ZFIN:curator]
 synonym: "RCB" EXACT [TAO:0005014]
 synonym: "recurrent branch afferent branchial arteries" EXACT PLURAL [TAO:0005014]
+xref: ZFA:0005014
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000716 ! afferent branchial artery
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -8464,6 +8490,7 @@ name: afferent lamellar arteriole
 namespace: uberon/phenoscape-anatomy
 synonym: "afferent lamellar arterioles" EXACT PLURAL [TAO:0005015]
 synonym: "AFL" EXACT [TAO:0005015]
+xref: ZFA:0005015
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000211 ! gill lamella
 relationship: part_of UBERON:2005012 ! afferent filamental artery
@@ -8475,6 +8502,7 @@ id: UBERON:2005018
 name: efferent filamental artery
 namespace: uberon/phenoscape-anatomy
 synonym: "EFA" EXACT [TAO:0005018]
+xref: ZFA:0005018
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000202 ! efferent branchial artery
 relationship: part_of UBERON:2000666 ! filamental artery
@@ -8487,6 +8515,7 @@ name: efferent lamellar arteriole
 namespace: uberon/phenoscape-anatomy
 synonym: "efferent lamellar arterioles" EXACT PLURAL [TAO:0005019]
 synonym: "ELA" EXACT [TAO:0005019]
+xref: ZFA:0005019
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000211 ! gill lamella
 relationship: part_of UBERON:2005018 ! efferent filamental artery

@@ -27,6 +27,10 @@ phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
 #t:
 #	echo $(RELEASE)
 
+corecheck.owl: uberon_edit.obo 
+	owltools $(UCAT) $< external-disjoints.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
+
+
 # ----------------------------------------
 # IMPORTS
 # ----------------------------------------
@@ -91,7 +95,7 @@ unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl imports
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
 release.owl: unreasoned.owl
-	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --outdir newbuild --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp newbuild/uberon.owl $@
+	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --outdir newbuild --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp newbuild/uberon/core.owl $@
 
 # this should become the new uberon.owl
 #release.owl: unreasoned.owl
@@ -737,8 +741,8 @@ relation_table.txt:
 %-wikipedia.merge: %-wikipedia.xrefs
 	./wikitbl2defxref.pl $< | cut -f2,3 | tbl2obolinks.pl --rel xref > $@
 
-nif_anatomy.obo:
-	blip -i http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -f thea2_owl -import_all io-convert -to obo -u ontol_manifest_metadata_from_nif_via_thea -o $@.tmp && ./downcase-obo.pl $@.tmp > $@
+#nif_anatomy.obo:
+#	blip -i http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -f thea2_owl -import_all io-convert -to obo -u ontol_manifest_metadata_from_nif_via_thea -o $@.tmp && ./downcase-obo.pl $@.tmp > $@
 
 nif_subcellular.obo:
 	blip -i http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Subcellular.owl -f thea2_owl -import_all io-convert -to obo -u ontol_manifest_metadata_from_nif_via_thea -o $@.tmp && ./nif-downcase-obo.pl $@.tmp > $@
@@ -904,10 +908,16 @@ bridge/aba.owl: aba.obo
 # NIF
 # ----------------------------------------
 NIF = 
-source-ontologies/NIF-GrossAnatomy.owl:
+source-ontologies/NIF-GrossAnatomy-src.owl:
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O $@
-source-ontologies/NIF-GrossAnatomy.obo: source-ontologies/NIF-GrossAnatomy.owl
+source-ontologies/NIF-GrossAnatomy.owl: source-ontologies/NIF-GrossAnatomy-src.owl
+	perl -npe 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@http://purl.obolibrary.org/obo/NIF_GrossAnatomy_@g' $< > $@
+#	perl -npe 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@http://purl.obolibrary.org/obo/NIF_GrossAnatomy:@g' $< > $@
+
+source-ontologies/NIF-GrossAnatomy-orig.obo: source-ontologies/NIF-GrossAnatomy.owl
 	owltools $< -o -f obo $@
+source-ontologies/NIF-GrossAnatomy.obo: source-ontologies/NIF-GrossAnatomy-orig.obo
+	./util/fix-nif-ga.pl $< > $@
 
 uberon-nif-combined.owl: uberon.owl
 	owltools $< bridge/uberon-bridge-to-nif_grossanatomy.owl source-ontologies/NIF-GrossAnatomy.owl --merge-support-ontologies -o $@

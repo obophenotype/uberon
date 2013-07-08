@@ -20,7 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/xao.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2013-07-04/uberon/bridge/uberon-bridge-to-xao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2013-07-08/uberon/bridge/uberon-bridge-to-xao.owl"/>
     </owl:Ontology>
     
 
@@ -1368,6 +1368,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001715 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001715"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0001723 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001723"/>
@@ -2217,6 +2223,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0002546 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002546"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002691 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002691"/>
     
 
 
@@ -15194,6 +15206,46 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004221</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior lateral line placode (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004226 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004226">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0002691"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004226</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral tegmental area (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004389 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004389">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001715"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004389</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oculomotor nuclear complex (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
