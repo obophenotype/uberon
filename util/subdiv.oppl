@@ -1,0 +1,12 @@
+?skP:CLASS,
+?skW:CLASS,
+?p:CLASS,
+?w:CLASS
+SELECT
+   ?skP EquivalentTo 'subdivision of skeleton' and 'subdivision of' some ?p,
+   ?p SubClassOf part_of some ?w,
+   ?skW EquivalentTo 'subdivision of skeleton' and 'subdivision of' some ?w
+BEGIN
+ADD
+ ?skP SubClassOf part_of some ?skW
+END;
