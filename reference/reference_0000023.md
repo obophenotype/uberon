@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000023](http://purl.obolibrary.org/obo/uberon/references/reference_0000023)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Evolutionary-variability-GCIs](http://purl.obolibrary.org/obo/uberon/docs/Evolutionary-variability-GCIs)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Status: [initial draft](http://purl.org/spar/pso/initial-draft)
 
 Authors and contributors:

@@ -7,6 +7,32 @@ w :-
         nl,
         fail.
 
+wfix :-
+        fixdef(U,Def,Refs),
+        def(U,DefOrig),
+        class(U,N),
+        format('[Term]~n'),
+        format('id: ~w ! ~w~n',[U,N]),
+        format('def: "~w" ~w~n',[Def,Refs]),
+        format('-def: "~w" ~w~n',[DefOrig,[]]),
+        nl,
+        fail.
+
+
+wdiff :-
+        def(U,DefU),
+        findall(R,def_xref(U,R),URs),
+        entity_xref(U,X),
+        def(X,DefX),
+        DefU\=DefX,
+        class(U,N),
+        format('[Term]~n'),
+        format('id: ~w ! ~w~n',[U,N]),
+        format('-def: "~w" ~w~n',[DefU,URs]),
+        format('+def: "~w" ~w~n',[DefX,[X]]),
+        nl,
+        fail.
+
 newdef(U,Def,[X|Rs]) :-
         d(U,X,Def,Rs,new).
 fixdef(U,Def,[X|Rs]) :-

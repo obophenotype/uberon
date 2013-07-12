@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000014](http://purl.obolibrary.org/obo/uberon/references/reference_0000014)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Modeling-paired-structures-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Modeling-paired-structures-Design-Pattern)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:

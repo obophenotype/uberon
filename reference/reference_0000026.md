@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000026](http://purl.obolibrary.org/obo/uberon/references/reference_0000026)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/inter-anatomy-ontology-bridge-ontologies](http://purl.obolibrary.org/obo/uberon/docs/inter-anatomy-ontology-bridge-ontologies)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Authors and contributors:
 
  * Melissa Haendel (author)

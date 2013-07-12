@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000008](http://purl.obolibrary.org/obo/uberon/references/reference_0000008)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton](http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Status: [published](http://purl.org/spar/pso/published)
 
 Authors and contributors:

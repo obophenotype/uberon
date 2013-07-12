@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000036](http://purl.obolibrary.org/obo/uberon/references/reference_0000036)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Modeling-developmental-stages](http://purl.obolibrary.org/obo/uberon/docs/Modeling-developmental-stages)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Authors and contributors:
 
  * Chris Mungall (author)

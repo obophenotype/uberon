@@ -630,8 +630,7 @@ release:
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
-	#(cd $(RELDIR)/reference/ && svn add *.owl && svn add reference_[0-9]* && svn ps svn:mime-type text/html reference_[0-9]*) ;\
-	#make release-diff ;\
+	make release-diff ;\
 	cp diffs/* $(RELDIR)/diffs/ ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''

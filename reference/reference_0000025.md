@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000025](http://purl.obolibrary.org/obo/uberon/references/reference_0000025)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/The-skeletal-system](http://purl.obolibrary.org/obo/uberon/docs/The-skeletal-system)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Authors and contributors:
 
  * Chris Mungall (author)

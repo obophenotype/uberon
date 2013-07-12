@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000002](http://purl.obolibrary.org/obo/uberon/references/reference_0000002)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/The-neural-crest](http://purl.obolibrary.org/obo/uberon/docs/The-neural-crest)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Status: [initial draft](http://purl.org/spar/pso/initial-draft)
 
 Authors and contributors:

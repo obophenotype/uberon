@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000034](http://purl.obolibrary.org/obo/uberon/references/reference_0000034)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/The-digestive-tract](http://purl.obolibrary.org/obo/uberon/docs/The-digestive-tract)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Authors and contributors:
 
  * Chris Mungall (author)

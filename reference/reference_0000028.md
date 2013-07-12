@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000028](http://purl.obolibrary.org/obo/uberon/references/reference_0000028)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Multi-species-composite-ontologies](http://purl.obolibrary.org/obo/uberon/docs/Multi-species-composite-ontologies)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Authors and contributors:
 
  * Chris Mungall (author)

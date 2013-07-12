@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000017](http://purl.obolibrary.org/obo/uberon/references/reference_0000017)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Multiple-inheritance](http://purl.obolibrary.org/obo/uberon/docs/Multiple-inheritance)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:

@@ -113,6 +113,7 @@ nlp_hook(A,B,metadata_nlp_parent_dist2_hook) :-
        \+ member(snomed_anatomy,L),
        \+ member('FMA',L),
        \+ member('NIFGA',L),
+       \+ member('NCITA',L),
        \+ member(efo,L),
        !.
 nlp_hook(A,B,null) :- true.

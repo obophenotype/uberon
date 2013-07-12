@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000032](http://purl.obolibrary.org/obo/uberon/references/reference_0000032)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Inferring-part-of-relationships](http://purl.obolibrary.org/obo/uberon/docs/Inferring-part-of-relationships)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Authors and contributors:
 
  * Chris Mungall (author)

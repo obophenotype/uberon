@@ -22,6 +22,9 @@ Ontology: <http://purl.obolibrary.org/obo/uberon/references/references.owl>
         dc:title "Uberon ontology documentation"^^xsd:string,
         dc:creator "Chris Mungall"^^xsd:string
 
+AnnotationProperty: ubref:superseded_by
+
+
 AnnotationProperty: ubref:has_status
 
 Class: <http://purl.org/spar/pso/Status>
@@ -184,6 +187,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000000>
         dc:creator "Chris Mungall"^^xsd:string,
         dc:title "UDoc - the Uberon documentation system"^^xsd:string,
         rdfs:label "UDoc - the Uberon documentation system"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/About-documentation>,
         dc:description "
 ## Summary
 
@@ -343,6 +347,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000030>
         rdfs:label "Continuous integration"^^xsd:string,
         rdfs:seeAlso "http://bio-ontologies.knowledgeblog.org/405"^^xsd:anyURI,
         rdfs:seeAlso "http://build.berkeleybop.org/job/build-uberon/"^^xsd:anyURI,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Continuous-integration>,
 
         dc:abstract "
 
@@ -431,6 +436,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000032>
         dc:title "Automatic inference of part_of relationships"^^xsd:string,
         rdfs:label "Automatic inference of part_of relationships"^^xsd:string,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Inferring-part-of-relationships>,
         dc:description "
 
 Level of difficulty: advanced
@@ -508,6 +514,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000034>
         dc:title "Digestive tract"^^xsd:string,
         rdfs:label "Digestive tract"^^xsd:string,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/The-digestive-tract>,
         dc:description "
 
 ## Digestive Tract
@@ -722,6 +729,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000035>
         dc:title "Conflation and Discrimination"^^xsd:string,
         rdfs:label "Conflation and Discrimination"^^xsd:string,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Conflation-vs-discrimination-Design-Pattern>,
         dc:description "
 
 Ontology builders are often confronted with situations in which they
@@ -842,6 +850,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000036>
         dc:title "Developmental stages"^^xsd:string,
         rdfs:label "Developmental stages"^^xsd:string,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-developmental-stages>,
         dc:description "
 
 This document describes how developmental and life cycle stages are
@@ -1007,6 +1016,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000024>
         rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/pubmed/20152934"^^xsd:anyURI,
         rdfs:seeAlso "http://douroucouli.wordpress.com/2012/07/04/querying-for-connections-between-the-go-and-fma/"^^xsd:anyURI,
         rdfs:seeAlso "http://purl.obolibrary.org/obo/go/extensions/x-metazoan-anatomy.owl"^^xsd:anyURI,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Connecting-processes-to-anatomy>,
         
         dc:description "
 
@@ -1067,6 +1077,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000021>
         rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/depictions.owl"^^xsd:anyURI,
         rdfs:seeAlso "https://github.com/balhoff/image-depictions-view"^^xsd:anyURI,
         dc:abstract "Ontologies can be greatly enriched by including exemplar images. This article shows how images are associated with classes in the ontology."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Class-depictions>,
         dc:description "
 
 ## Model
@@ -1136,6 +1147,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000022>
         rdfs:seeAlso "http://genomebiology.com/2012/13/1/R5"^^xsd:anyURI,
         rdfs:seeAlso <http://purl.obolibrary.org/obo/uberon/references/reference_0000023>,
         dc:abstract "Confusion over naming and homology can lead to errors when developing or using multi-species ontologies. The addition of taxon constraints in OWL can eliminate certain kinds of errors"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Taxon-constraints>,
         dc:description "
 
 ## Model
@@ -1188,6 +1200,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000023>
         dc:title "Evolutionary variability and general class axioms"^^xsd:string,
         dc:abstract "Multi-species ontologies may be axiomatically weaker than dedicated species ontologies, as all statements in an ontology must be universal. Here we describe how axioms can be scoped to a particular species or taxon using OWL general axioms"^^xsd:string,
         rdfs:seeAlso "http://genomebiology.com/2012/13/1/R5"^^xsd:anyURI,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Evolutionary-variability-GCIs>,
         dc:description "
 
 This is also described in the section 'Managing taxonomic variation' in the [Uberon paper](http://genomebiology.com/2012/13/1/R5).
@@ -1264,6 +1277,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000019>
         dc:title "Autopod subdivisions"^^xsd:string,
         rdfs:seeAlso "https://docs.google.com/a/usd.edu/document/d/1l7pOCO6X5tsC7bnbevKurBx72qQu8HnlTk23CRFYI3o/edit"^^xsd:anyURI,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Subdivisions-of-the-autopod>,
         dc:description "
 
 We consider the autopod as consisting of 3 segments, divided according to the following jointly-exhaustive mutually-disjoint part-hierarchy, listed distal to proximal
@@ -1306,6 +1320,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000018>
         rdfs:seeAlso "http://dx.doi.org/doi:10.1038/npre.2011.5292.2"^^xsd:anyURI,
         rdfs:seeAlso "https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit#heading=h.cx8lslfjfyrl"^^xsd:anyURI,
         dc:abstract "A crucial part of anatomical knowledge concerns spatial disjointness. This article covers the concept of part-disjointness and how it is applied in Uberon"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Part-disjointness-Design-Pattern>,
         dc:description "
 
 ## Problem
@@ -1418,6 +1433,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000017>
         rdfs:seeAlso "http://ontogenesis.knowledgeblog.org/49"^^xsd:anyURI,
         rdfs:seeAlso "http://odps.sourceforge.net/odp/html/Normalisation.html"^^xsd:anyURI,
         dc:abstract "This article describes the practical approach taken in Uberon to avoid asserted multiple inheritance, and documents where exceptions are made to standard normalization practice"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Multiple-inheritance>,
         dc:description "
 
 It is good practice to avoid *asserted* multiple inheritance in
@@ -1478,6 +1494,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000016>
         rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/external-disjoints.owl"^^xsd:anyURI,
         rdfs:seeAlso "http://ontogenesis.knowledgeblog.org/1260"^^xsd:anyURI,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Inter-ontology-disjointness-Design-Pattern>,
         dc:description "
 
 Uberon contains explicit disjointness axioms between Uberon classes and classes in external ontologies.
@@ -1514,6 +1531,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000009>
         dc:creator "Melissa Haendel"^^xsd:string,
         dc:abstract "TODO"^^xsd:string,
         dc:creator "Wasila Dahdul"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-endochondral-elements-Design-Pattern>,
         dc:description "Preamble:
 
 Early draft to demonstrate markdown embedded in ontology.
@@ -1563,6 +1581,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000010>
         dc:date "2012"^^xsd:int,
         dc:title "Extraembryonic membranes"^^xsd:string,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-extraembryonic-membranes>,
         dc:description "
 
 Table 5.4 from Kardong:
@@ -1597,6 +1616,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000014>
         dc:title "Representation of paired structures"^^xsd:string,
         rdfs:label "Representation of paired structures"^^xsd:string,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-paired-structures-Design-Pattern>,
         dc:description "
 
 ## Pattern
@@ -1704,6 +1724,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000015>
         dc:title "Automatic classification of skeleton partonomy"^^xsd:string,
         rdfs:label "Automatic classification of skeleton partonomy"^^xsd:string,
         dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Skeleton-partonomy-Design-Pattern>,
         dc:description "
 
 ## Problem
@@ -1789,6 +1810,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000008>
         dc:creator "(Add participants here)"^^xsd:string,
         rdfs:label "Obo-anatomy call, 2012-08-17"^^xsd:string,
         dc:abstract "Decisions reached about axial skeleton: bless a 3 level division into cranial, axial and appendicular. here \"axial skeleton\" refers to what we have been calling \"post-cranial axial skeleton\" in uberon (and MA). We can still retain what we had been calling \"axial skeleton\" as a grouping class, but it can be renamed something like \"axial skeleton plus cranial skeleton\""^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton>,
         dc:description "
 
 "^^xsd:string
@@ -1825,6 +1847,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000003>
         dc:date "2012"^^xsd:int,
         dc:creator "Uberon editors"^^xsd:string,
         dc:creator "other AO editors"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Appendages-and-the-appendicular-skeleton>,
         dc:description "
 
 ## Vertebrate appendages
@@ -1925,6 +1948,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000004>
         dc:title "Mereotopological relations"^^xsd:string,
         rdfs:label "Mereotopological relations"^^xsd:string,
         dc:creator "Uberon editors"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern>,
         dc:description "
 
 This article needs to be migrated from the google doc
@@ -1949,6 +1973,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000001>
         rdfs:label "Epithelial configurations"^^xsd:string,
         rdfs:seeAlso "https://docs.google.com/document/d/1MnUgispgGfNQoezYzWzzGTnkAnI0gzRnJIwdip6MMtw/edit"^^xsd:anyURI,
         dc:contributor "David Hill"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Epithelial-configurations>,
         dc:description "
 
 The documentation for this section has yet to be moved from the google document.
@@ -1968,6 +1993,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000002>
         ubref:has_status <http://purl.org/spar/pso/initial-draft>,
         dc:date "2012"^^xsd:int,
         rdfs:label "Phenotype RCN Neural Crest Meeting"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/The-neural-crest>,
         dc:description "
 
 "^^xsd:string
@@ -1985,6 +2011,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000025>
         dc:title "Skeletal system vs skeleton"^^xsd:string,
         rdfs:label "Skeletal system vs skeleton"^^xsd:string,
         dc:abstract "In common usage the terms skeletal system and skeleton may be used interchangeably, but they have different meanings in this ontology"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/The-skeletal-system>,
         dc:description "
 
 ## Skeletons are part of the skeletal system
@@ -2051,6 +2078,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000026>
         dc:creator "Carlo Torniai"^^xsd:string,
         dc:title "Inter anatomy ontology bridge module ontologies"^^xsd:string,
         dc:abstract "This article describes how connections between species anatomy ontologies are made via formal axioms that connect to Uberon"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/inter-anatomy-ontology-bridge-ontologies>,
         dc:description "
 
 ## Problem
@@ -2170,6 +2198,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000027>
         dc:title "Multi-species importer ontologies"^^xsd:string,
         rdfs:label "Multi-species importer ontologies"^^xsd:string,
         dc:abstract "There are different ways of integrating a multi-species ontology with species-specific ones. This article describes the importer strategy"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Multi-species-importer-ontologies>,
         dc:description "
 
 Please read
@@ -2257,6 +2286,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000028>
         rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000027"^^xsd:anyURI,
         dc:title "Multi-species composite ontologies"^^xsd:string,
         dc:abstract "There are different ways of integrating a multi-species ontology with species-specific ones. This article describes the composite/merger strategy"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Multi-species-composite-ontologies>,
         dc:description "
 
 
@@ -2331,6 +2361,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000037>
         dc:creator "Chris Mungall"^^xsd:string,
         dc:title "Synonyms in uberon"^^xsd:string,
         dc:abstract "This article describes how to use uberon synonymy metadata for text mining"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Using-uberon-for-text-mining>,
         dc:description "
 
 ## Synonym scopes
@@ -2419,6 +2450,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000038>
         rdfs:label "Provenance of relationships in Uberon"^^xsd:string,
         rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000032"^^xsd:anyURI,
         rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000023"^^xsd:anyURI,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Provenance-Design-Pattern>,
         dc:description "
 
 ## Summary
@@ -2613,6 +2645,7 @@ Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000039>
         dc:creator "Melissa Haendel"^^xsd:string,
         dc:title "Representation of joints/articulations"^^xsd:string,
         rdfs:label "Representation of joints/articulations"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-articulations-Design-Pattern>,
         dc:description "
 
 ## Classification

@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000024](http://purl.obolibrary.org/obo/uberon/references/reference_0000024)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Connecting-processes-to-anatomy](http://purl.obolibrary.org/obo/uberon/docs/Connecting-processes-to-anatomy)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:

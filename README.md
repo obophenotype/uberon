@@ -1,10 +1,12 @@
-# Uberon
 
 Uberon is a multi-species anatomy ontology.
 
-This repository contains the ontology source, and is primarily of
-relevance to Uberon editors/developers. For an overview of the ontology, plus
-usage instructions etc see [uberon.org](http://uberon.org).
+This repository contains the ontology *source*, and is primarily of
+relevance to Uberon editors/developers.
+
+For an overview of the ontology, plus usage instructions on how to
+download the compiled versions of the ontology, please visit
+[uberon.org](http://uberon.org).
 
 ## Content
 
@@ -14,3 +16,4 @@ This repository contains the editors version of the ontology
 ## Editors:
 
 See the file README-editors.txt
+

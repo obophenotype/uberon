@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000010](http://purl.obolibrary.org/obo/uberon/references/reference_0000010)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Modeling-extraembryonic-membranes](http://purl.obolibrary.org/obo/uberon/docs/Modeling-extraembryonic-membranes)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Status: [initial draft](http://purl.org/spar/pso/initial-draft)
 
 Authors and contributors:

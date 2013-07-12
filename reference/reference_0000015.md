@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000015](http://purl.obolibrary.org/obo/uberon/references/reference_0000015)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Skeleton-partonomy-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Skeleton-partonomy-Design-Pattern)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Status: [intermediate draft](http://purl.org/spar/pso/intermediate-draft)
 
 Authors and contributors:

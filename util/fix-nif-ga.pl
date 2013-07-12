@@ -14,6 +14,9 @@ while(<>) {
     if (m@property_value: definition "(.*)"@) {
         $_ = 'def: "'.$1.'" []';  # TODO
     }
+    if (m@property_value: UmlsCui "(.*)"@) {
+        $_ = "xref: UMLS:$1";
+    }
     s@proper_part_of@part_of@;
     if (m@relationship: has_proper@) {
         next;

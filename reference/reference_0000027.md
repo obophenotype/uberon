@@ -3,6 +3,14 @@
 
 Permanent URL: [http://purl.obolibrary.org/obo/uberon/references/reference_0000027](http://purl.obolibrary.org/obo/uberon/references/reference_0000027)
 
+# THIS DOCUMENT HAS BEEN SUPERSEDED
+
+
+Replaced By: [http://purl.obolibrary.org/obo/uberon/docs/Multi-species-importer-ontologies](http://purl.obolibrary.org/obo/uberon/docs/Multi-species-importer-ontologies)
+
+# ORIGINAL TEXT FOLLOWS
+
+
 Authors and contributors:
 
  * Melissa Haendel (author)
