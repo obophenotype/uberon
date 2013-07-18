@@ -15,6 +15,7 @@ UCAT = --use-catalog
 # SEED ONTOLOGY - use to make import modules
 #
 # for now we combine all cell and gross anatomy into one edit file; TODO - ext
+# (syn for core.owl)
 uberon_edit.owl: uberon_edit.obo 
 	owltools $(UCAT) $< --merge-support-ontologies -o -f functional $@
 ### TODO - restore --expand-macros
@@ -139,6 +140,9 @@ subsets/efo-slim.obo: subsets/efo-slim.owl
 #TEMPORARY - we will later
 supercheck.owl: unreasoned.owl
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
+
+disjoint-violations.txt: unreasoned.owl
+	owltools --no-debug $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --reasoner welk --check-disjointness-axioms > $@
 
 newpipe: basic-xp-check
 

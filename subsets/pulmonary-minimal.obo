@@ -1046,7 +1046,7 @@ relationship: part_of UBERON:0002182 ! main bronchus
 id: UBERON:0001103
 name: diaphragm
 namespace: uberon
-def: "The diaphragm is a skeletal muscle that is responsible for contraction and expansion of the lungs[GO]." [GO:0060539, Wikipedia:Thoracid_diaphragm]
+def: "A thin musculomebranous barrier that separates the abdominal and thoracic cavities. Often used for breathing control" [MP:0002279]
 comment: The existence of some membrane separating the pharynx from the stomach can be traced widely among the chordates. Thus amphioxus possesses an atrium by which water exits the pharynx, which has been argued (and disputed) to be homologous to structures in ascidians and hagfishes.[3] The urochordate epicardium separates digestive organs from the pharynx and heart, but the anus returns to the upper compartment to discharge wastes through an outgoing siphon (Thoracic_diaphragm#Comparative_anatomy_and_evolution)
 subset: efo_slim
 subset: organ_slim
@@ -1077,6 +1077,7 @@ is_a: UBERON:0003831 ! respiratory system muscle
 relationship: part_of UBERON:0001004 ! respiratory system
 property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000713"}
 property_value: RO:0002161 NCBITaxon:8782 {source="Wikipedia:Thoracic_diaphragm#Comparative_anatomy_and_evolution"}
+property_value: UBPROP:0000001 "The diaphragm is a skeletal muscle that is responsible for contraction and expansion of the lungs[GO]." xsd:string {source="GO:0060539"}
 property_value: UBPROP:0000003 "The mammals are characterized by a diaphragm, which separates the thoracic portion of the body cavity from the abdominal region and assists in drawing air into the lungs and forcing it out. Modern reptiles lack a muscular diaphragm and it is reasonable to suppose that the diaphragm developed as a new device that made possible a large degree of oxygen intake for active animals. The change may have taken place during the transition from reptile to mammal (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000713", ontology="VHOG", source="ISBN:978-0471384618 Colbert EH, Evolution of the vertebrates: a history of the backboned animals through time (2001) p.278", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "phrenic" xsd:string
 
@@ -1965,6 +1966,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Gray857.png/200px
 xref: MA:0001325
 xref: MAT:0000445
 xref: ncithesaurus:Olfactory_Epithelium
+xref: NeuroNames:1093451762 {source="NIF_GrossAnatomy:birnlex_2703"}
 xref: NIF_GrossAnatomy:birnlex_2703
 xref: SCTID:37623003
 xref: TAO:0000554
@@ -6135,6 +6137,26 @@ relationship: part_of UBERON:0002167 ! right lung
 relationship: part_of UBERON:0006524 ! alveolar system
 
 [Term]
+id: UBERON:0006670
+name: central tendon of diaphragm
+namespace: uberon
+def: "The central tendon of the diaphragm is a thin but strong aponeurosis situated near the center of the vault formed by the muscle, but somewhat closer to the front than to the back of the thorax, so that the posterior muscular fibers are longer. It is situated immediately below the pericardium(fibrous part), with which it is partially blended. The caval opening(T8) passes through the central tendon. This transmits the inferior vena cava &amp; right phrenic nerve." [Wikipedia:Central_tendon_of_diaphragm]
+synonym: "central tendon" EXACT [FMA:58279]
+synonym: "centrum tendineum" EXACT [FMA:58279]
+synonym: "centrum tendineum diaphragmatis" EXACT LATIN [FMA:58279, FMA:TA]
+xref: EMAPA:17702
+xref: FMA:58279
+xref: ncithesaurus:Central_Tendon_of_the_Diaphragm
+xref: SCTID:244943002
+xref: UMLS:C0230162 {source="ncithesaurus:Central_Tendon_of_the_Diaphragm"}
+xref: VHOG:0001399
+xref: Wikipedia:Central_tendon_of_diaphragm
+is_a: UBERON:0003570 ! respiratory system connective tissue
+relationship: part_of UBERON:0001103 {source="VHOG"} ! diaphragm
+property_value: homologous_in NCBITaxon:7742 {source="VHOG:0001399"}
+property_value: UBPROP:0000003 "In mammals, the diaphragm muscle divides the thoracoabdominal cavity into thorax and abdomen. In most mammals, the diaphragm is a flat sheet with muscle fibers radiating outward from a central tendon, and the diaphragm's apposition to the cranial surface of the liver gives it a dome-shape. Muscle fiber contraction reduces the curvature of the dome, thereby expanding the thoracic cavity and aspirating air into the lungs.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001399", ontology="VHOG", source="DOI:10.1016/j.resp.2006.06.003", source="http://bgee.unil.ch/"}
+
+[Term]
 id: UBERON:0006679
 name: carina of trachea
 namespace: uberon
@@ -6765,6 +6787,7 @@ relationship: in_anterior_side_of UBERON:0002048 ! lung
 id: UBERON:0008949
 name: lower lobe of lung
 namespace: uberon
+def: "The bottom most subdivision of either the right or left lung." [ncithesaurus:Lung_Lower_Lobe]
 comment: Editor notes: defining lobes spatially across species
 synonym: "inferior lobe of lung" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "lobus inferior" EXACT [https://orcid.org/0000-0002-6601-2165]
@@ -7418,6 +7441,7 @@ property_value: UBPROP:0000001 "Palatopharyngeus is a muscle that attaches to th
 id: UBERON:0010368
 name: pulmonary lobule
 namespace: uberon
+def: "The smallest anatomical unit of the lung, measuring 0.50 to 2.00 cm in diameter. Each lobule is composed of 4-8 terminal bronchioles and their distal alveolar ducts and sacs. The lobules are separated by fibrous interlobular septa." [ncithesaurus:Pulmonary_Lobule]
 xref: FMA:75739
 xref: ncithesaurus:Pulmonary_Lobule
 relationship: part_of UBERON:0002048 ! lung
@@ -7703,6 +7727,15 @@ synonym: "hyoepiglotticus" EXACT []
 synonym: "hyoepiglottus" EXACT []
 is_a: UBERON:0001568 ! muscle of larynx
 relationship: attaches_to UBERON:0000388 ! epiglottis
+
+[Term]
+id: UBERON:0011495
+name: rectus thoracis muscle
+namespace: uberon
+def: "Rectus thoracis is a very small quadrilateral muscle sheet from the lateral thorax runs from the 3rd-1st rib that is in continuation with rectus abdominis. Its functioning muscle in respiration." [MURDOCH:2224]
+synonym: "rectus thoracis" EXACT [MA:0002366]
+xref: MA:0002366
+is_a: UBERON:0014398 ! respiratory muscle
 
 [Term]
 id: UBERON:0011623
@@ -8040,6 +8073,7 @@ relationship: part_of UBERON:0005928 ! external naris
 id: UBERON:0012330
 name: nasal-associated lymphoid tissue
 namespace: uberon
+def: "The lymphocytic cell population present in the mucosa of the nasopharyngeal duct of some animals." [ncithesaurus:Nasal-Associated_Lymphoid_Tissue]
 synonym: "NALT" RELATED [Wikipedia:Mucosa-associated_lymphoid_tissue#Categorisation]
 synonym: "naso-pharyngeal lymphoid tissue" EXACT [FMA:79771]
 xref: FMA:79771
@@ -8262,6 +8296,15 @@ xref: UMLS:C1510944 {source="ncithesaurus:Aryteno-epiglottic_Fold"}
 xref: Wikipedia:Aryepiglottic_fold
 relationship: in_lateral_side_of UBERON:0001737 ! larynx
 relationship: part_of UBERON:0001737 ! larynx
+
+[Term]
+id: UBERON:0014398
+name: respiratory muscle
+namespace: uberon
+def: "Muscle that is part of the respiratory system." [UBERON:cjm]
+comment: This class may be merged with 'respiratory system muscle'; check intercostals
+is_a: UBERON:0003831 ! respiratory system muscle
+relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0014479

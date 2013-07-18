@@ -1,8 +1,9 @@
 
 w :-
         newdef(U,Def,Refs),
+        class(U,N),
         format('[Term]~n'),
-        format('id: ~w~n',[U]),
+        format('id: ~w ! ~w~n',[U,N]),
         format('def: "~w" ~w~n',[Def,Refs]),
         nl,
         fail.
