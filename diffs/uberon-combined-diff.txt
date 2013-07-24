@@ -1,47 +1,168 @@
+
+
+     * NT: metapodial2-4 (plus metatarsal subtype). For jerboas.
+     * Fixed inner ear to avoid spatial disjointness violation between nervous and skeletal systems
+     * foramen cecum overhaul. Fixes issue #281
+     * Added more specific CARO classes for anatomical structures
+     * Fixed xrefs for NeuroNames - ones derived from NIF point to deprecated cNIDs; these now have OldNeuroNames xrefs. Fixes #309
+     * Added synonyms from NeuroNames. 
+     * Added part_of links for brain structures based on NIFSTD. Addresses issue #299
+     * Added logical defs for intervertebral disks
+     * Gland/duct overhaul
+     * Addition of classes from CARO2, and replacing CARO1 defs with CARO2
+     * Addition of definitions for turtle shell parts. Added carapacial ridge.
+     * Addition of pallial structures and aves-specific regions of the brain. Also hagfish structures P1-P5.
+     * Addition of synonyms from BTO (vetted)
+     * Addition of synonyms from FMA, EMAPA (new), NIF GA (vetted)
+     * Updated EMAPA xrefs based on 2013 release. Addresses issue #310
+
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 12:07:2013 00:30, cvs revision unknown
-! file 2 (new): 17:07:2013 22:26, cvs revision unknown
+! file 1 (old): 17:07:2013 22:26, cvs revision unknown
+! file 2 (new): 23:07:2013 23:27, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0001103 : diaphragm   
-OLD: The diaphragm is a skeletal muscle that is responsible for contraction and expansion of the lungs[GO].
-NEW: A thin musculomebranous barrier that separates the abdominal and thoracic cavities. Often used for breathing control
+UBERON:0000021 : cutaneous appendage   
+OLD: Appendage that protrudes from the skin.
+NEW: Anatomical projection that protrudes from the skin.
 
 
-UBERON:0001142 : left renal vein   
-OLD: The renal veins are veins that drain the kidney. They connect the kidney to the inferior vena cava. It is usually singular to each kidney, except in the condition 'multiple renal veins'. It also divides into 2 divisions upon entering the kidney: the anterior branch which receives blood from the anterior portion of the kidney and, the posterior branch which receives blood from the posterior portion. Often, each renal vein will have a branch that receives blood from the ureter. [WP,unvetted].
-NEW: A renal vein that drains the left kidney
+UBERON:0000058 : duct   
+OLD: A tube shaped portion of tissue lined with epithelial cells that collects secretions and routes them to their destination[ZFA].
+NEW: A tubular structure that transports or secretes substances.
 
 
-UBERON:0001617 : mental artery   
-OLD: The inferior alveolar artery (inferior dental artery) is an artery of the face. [WP,unvetted].
-NEW: The mental branch of inferior alveolar artery escapes with the nerve at the mental foramen, supplies the chin, and anastomoses with the submental and inferior labial arteries. [WP,unvetted].
+UBERON:0000084 : ureteric bud   
+OLD: a protrusion from the mesonephric duct during the development of the urinary and reproductive organs. It later develops into the adult kidney, except for the nephrons, which, in contrast, originate from the metanephric blastema[WP]. epithelial swelling on the Wolffian duct that elongates to invade the adjacent metanephric mesenchyme[MP]
+NEW: An epithelial swelling on the Wolffian duct that elongates to invade the adjacent metanephric mesenchyme[MP]
 
 
-UBERON:0002470 : autopod region   
-OLD: Terminal segment of free upper limb, immediately distal to the zeugopod region. The fully developed autopod consists of the autopod skeleton plus associated structures such as integument, muscle tissue, vasculature etc. The autopod is divided into mesopodial, metapodiual, and acropodial segments. Examples: human hand, mouse paw, human foot
-NEW: Terminal segment of free limb, immediately distal to the zeugopod region. The fully developed autopod consists of the autopod skeleton plus associated structures such as integument, muscle tissue, vasculature etc. The autopod is divided into mesopodial, metapodiual, and acropodial segments. Examples: human hand, mouse paw, human foot
+UBERON:0000409 : serous gland   
+OLD: Serous glands contain serous acini, a grouping of serous cells that secrete a fluid, isotonic with blood plasma, that contains enzymes such as alpha amylase. Serous glands are most common in the parotid gland and lacrimal gland but are also present in the submandibular gland and, to a far lesser extent, the sublingual gland.
+NEW: A gland in which the principal secretory cells are serous secreting cells.
 
 
-UBERON:0003484 : eye sebaceous gland   
-OLD: A sebaceous gland that is part of a camera-type eye [Automatically generated definition].
-NEW: A sebaceous gland that is part of a camera-type eye. Example: a tarsal gland.
+UBERON:0000414 : mucous gland   
+OLD: A gland that secretes mucus[cjm]. In humans, these are found in several different parts of the body, typically stain lighter than serous glands during standard histological preparation. Most are multicellular, but goblet cell are single-celled glands. [WP,modified].
+NEW: A gland in which the principal secretory cells are mucus secreting cells.
 
 
-UBERON:0004859 : eye gland   
-OLD: A gland that is part of a eye [Automatically generated definition].
-NEW: A gland that is part of a eye. The eye is a compound unit which depending on the species may consist of an eyeballs plus associated ducts and integumentary structures. Eye glands therefore include the various types of lacrimal gland, the various types of apocrine and sebaceous glands associated with the eyelid.
+UBERON:0000475 : organism subdivision   
+OLD: Anatomical structure which is a primary subdivision of whole organism. The mereological sum of these is the whole organism.
+NEW: Anatomical structure which is a subdivision of a whole organism, consisting of components of multiple anatomical systems, largely surrounded by a contiguous region of integument.
 
 
-UBERON:0014398 : respiratory muscle   
-OLD: Muscle that is involved in breathing
-NEW: Muscle that is part of the respiratory system.
+UBERON:0000479 : tissue   
+OLD: Anatomical structure, that consists of similar cells and intercellular matrix, aggregated according to genetically determined spatial relationships.
+NEW: Multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation.
+
+
+UBERON:0001817 : lacrimal gland   
+OLD: Lobular organ the parenchyma of which consists of glandular acini which communicate the lacrimal sac. Examples: There only two instances, right lacrimal and left lacrimal glands[FMA]. The lacrimal glands are paired almond-shaped glands, one for each eye, that secrete the aqueous layer of the tear film. They are situated in the upper, outer portion of each orbit. Inflammation of the lacrimal glands is called dacryoadenitis[WP].
+NEW: The lacrimal glands are paired almond-shaped glands, one for each eye, that secrete the aqueous layer of the tear film. They are situated in the upper, outer portion of each orbit. Inflammation of the lacrimal glands is called dacryoadenitis[WP].
+
+
+UBERON:0001950 : neocortex   
+OLD: The neocortex is a part of the brain of mammals. It is the outer layer of the cerebral hemispheres, and made up of six layers, labelled I to VI (with VI being the innermost and I being the outermost). The neocortex is part of the cerebral cortex (along with the archicortex and paleocortex, which are cortical parts of the limbic system). It is involved in higher functions such as sensory perception, generation of motor commands, spatial reasoning, conscious thought and, in humans, language. Other names for the neocortex include neopallium and isocortex ('equal rind'). [WP,unvetted].
+NEW: The term neocortex refers to those areas of cerebral cortex defined on the basis of cytoarchitecture that have six layers. Starting from the cortical surface the layers are: molecular layer (I), external granular layer (II), external pyramidal layer (III), internal granular layer (IV), internal pyramidal layer (V), and multiform layer (VI). Neocortex is most prominent in the frontal lobe, the parietal lobe, the temporal lobe and the occipital lobe, less so in the cingulate gyrus, the parahippocampal gyrus and the insula. It is composed of two subdivisions: true isocortex and proisocortex (Carpenter-83)(NN)
+
+
+UBERON:0002368 : endocrine gland   
+OLD: Endocrine glands are glands of the endocrine system that secrete their products, hormones, directly into the blood rather than through a duct. The main endocrine glands include the pituitary gland, pancreas, ovaries, testes, thyroid gland, and adrenal glands. The hypothalamus is a neuroendocrine organ. Other organs which are not so well known for their endocrine activity include the stomach, which produces such hormones as ghrelin[WP].
+NEW: Endocrine glands are glands of the endocrine system that secrete their products directly into the circulatory system rather than through a duct.[WP, modified].
+
+
+UBERON:0002778 : ventral pallidum   
+OLD: Part of the globus pallidus, consistingo of the more medial of the two segments.  In some species, e.g., primates, it is separated from the lateral segment by the fibers of the medial medullary lamina (MM).
+NEW: Part of the globus pallidus, consisting of the more medial of the two segments.  In some species, e.g., primates, it is separated from the lateral segment by the fibers of the medial medullary lamina (MM).
+
+
+UBERON:0003986 : minor sublingual duct   
+OLD: the 8-20 small ducts that open into the mouth on the surface of the sublingual fold
+NEW: Any of the 8-20 small ducts that open into the mouth on the surface of the sublingual fold
+
+
+UBERON:0005172 : abdomen organ   
+OLD: An organ that is part of an abdomen [Automatically generated definition].
+NEW: An organ that is in the abdomen. Examples: spleen, intestine, kidney, abdominal mammary gland.
+
+
+UBERON:0005173 : abdominal segment organ   
+OLD: An organ that is part of a abdominal segment of trunk.
+NEW: An organ that part of the adbominal segment of the organism. This region can be further subdivided into the abdominal cavity and the pelvic region.
+
+
+UBERON:0005174 : dorsal region organ   
+(was back organ)
+OLD: An organ that is part of a back [Automatically generated definition].
+NEW: An organ that part of the dorsum of the organism. In vertebrates this includes the spinal cord.
+
+
+UBERON:0005177 : trunk organ   
+OLD: An organ that is part of a trunk [Automatically generated definition].
+NEW: An organ that part of the trunk region. The trunk region can be further subdividied into thoracic (including chest and thoracic cavity) and abdominal (including abdomen and pelbis) regions.
+
+
+UBERON:0005178 : thoracic cavity organ   
+OLD: An organ that is part of a thoracic cavity [Automatically generated definition].
+NEW: An organ that is in the thoracic cavity. Examples: lung, heart.
+
+
+UBERON:0005179 : pelvic region organ   
+(was pelvis organ)
+OLD: An organ that is part of the pelvic region[Automatically generated definition].
+NEW: An organ that is part of the pelvic region. Examples: reproductive organs (in some organisms), urinary bladder.
+
+
+UBERON:0005181 : thoracic segment organ   
+OLD: An organ that is part of a thoracic segment of trunk.
+NEW: An organ that part of the thoracic segment region. This region can be further subdividied chest and thoracic cavity regions.
+
+
+UBERON:0005904 : duct of male reproductive system   
+OLD: A duct that is part of a male reproductive system.
+NEW: Any of the ducts that are part of a male reproductive system.
+
+
+UBERON:0007252 : intervertebral disk of cervical vertebra   
+OLD: An intervertebral disk that is part of a cervical region of vertebral column.
+NEW: An intervertebral disk that is part of a cervical region of vertebral column. A cervical intervertebral disk connects at least one cervical vertebra, either to another cervical vertebra, or at one point on the vertebral colummn, to a thoracic vertebra
+
+
+UBERON:0007254 : intervertebral disk of thoracic vertebra   
+OLD: An intervertebral disk that is part of a thoracic region of vertebral column.
+NEW: An intervertebral disk that is part of a thoracic region of vertebral column. A thoracic intervertebral disk connects at least one thoracic vertebra, either to another thoracic vertebra, or at one point on the vertebral colummn, to a lumbar vertebra
+
+
+UBERON:0007255 : intervertebral disk of lumbar vertebra   
+OLD: An intervertebral disk that is part of a lumbar region of vertebral column.
+NEW: An intervertebral disk that is part of a lumbar region of vertebral column. A lumbar intervertebral disk connects at least one lumbar vertebra, either to another thoracic vertebra, or at one point on the vertebral colummn, to a sacral vertebra
+
+
+UBERON:0007257 : intervertebral disk of sacral vertebra   
+OLD: An intervertebral disk that is part of a sacral region of vertebral column.
+NEW: An intervertebral disk that is part of a sacral region of vertebral column. A sacral intervertebral disk connects at least one sacral vertebra, either to another thoracic vertebra, or at one point on the vertebral colummn, to a sacral vertebra
+
+
+UBERON:0007350 : arcopallium   
+OLD: The arcopallium refers to regions of the avian brain which partially overlap regions homologous to the amygdala of mammals. These regions have formerly been referred to as archistriatum, and before this epistriatum or amygdaloid complex[1], and a recent change of nomenclature has divided the region into the arcopallium and posterior pallial amygdala.[2] The new nomenclature, adopted in 2004, reflects a modern understanding that the avian brain is broadly similar to the mammalian brain, containing large regions homologous to the mammalian neocortex, claustrum, and pallial amygdala. The outdated nomenclature it replaced perceived the avian brain as consisting almost entirely of enlarged basal ganglia, to which more complex outer layers had been added during a progress toward mammalian intelligence.
+NEW: The arcopallium refers to regions of the avian brain which partially overlap regions homologous to the amygdala of mammals. These regions have formerly been referred to as archistriatum, and before this epistriatum or amygdaloid complex, and a recent change of nomenclature has divided the region into the arcopallium and posterior pallial amygdala. The new nomenclature, adopted in 2004, reflects a modern understanding that the avian brain is broadly similar to the mammalian brain, containing large regions homologous to the mammalian neocortex, claustrum, and pallial amygdala. The outdated nomenclature it replaced perceived the avian brain as consisting almost entirely of enlarged basal ganglia, to which more complex outer layers had been added during a progress toward mammalian intelligence.
+
+
+UBERON:0011671 : nuchal plate of carapace   
+(was nuchal bone)
+OLD: A single bone on the anterior end of the carapace.
+NEW: The anteriormost plate of the carapace.
+
+
+UBERON:0013208 : Grueneberg ganglion   
+OLD: An olfactory ganglion at the entrance of the nose of mammals that is involved in the detection of alarm pheromones and cold temperatures. The ganglion was first described by Hans GrC<neberg in 1973.
+NEW: An olfactory ganglion at the entrance of the nose of mammals that is involved in the detection of alarm pheromones and cold temperatures.
 
 
 
@@ -50,40 +171,91 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-07-12; date: 12:07:2013 00:30
-- file 2 (new): uberon.obo; data version: releases/2013-07-17; date: 17:07:2013 22:26
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-07-17; date: 17:07:2013 22:26
+- file 2 (new): uberon.obo; data version: releases/2013-07-23; date: 23:07:2013 23:27
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:0014682	tooth whorl	
-UBERON:0014683	parasymphisial tooth whorl	
-UBERON:0014684	Helicoprion tooth whorl	
-UBERON:0014685	pterygoid plexus	
-UBERON:0014686	angular vein	
-UBERON:0014687	temporal sulcus	
-UBERON:0014689	middle temporal sulcus	
-UBERON:0014690	left gastric vein	
-UBERON:0014691	right gastric vein	
-UBERON:0014692	superficial epigastric vein	
-UBERON:0014693	inferior alveolar artery	
-UBERON:0014694	posterior auricular artery	
-UBERON:0014695	deep auricular artery	
-UBERON:0014696	anterior choroidal artery	
-UBERON:0014697	posterior choroidal artery	
-UBERON:0014698	lacrimal caruncle	
+UBERON:0010000	multicellular anatomical structure	
+UBERON:0010001	cell cluster organ	
+UBERON:0014699	extraembryonic venous system	
+UBERON:0014701	extraembryonic vascular system	
+UBERON:0014702	frontonasal process epithelium	
+UBERON:0014703	anal membrane ectodermal component	
+UBERON:0014704	pleuroperitoneal canal lumen	
+UBERON:0014705	median lingual swelling epithelium	
+UBERON:0014706	primitive renal collecting duct system	
+UBERON:0014707	hyoplastron	
+UBERON:0014708	costal plate of carapace	
+UBERON:0014709	carapace primordium	
+UBERON:0014710	carapacial ridge	
+UBERON:0014711	carapacial ridge mesenchyme	
+UBERON:0014712	carapacial ridge ectoderm	
+UBERON:0014716	interlobular duct	
+UBERON:0014717	mucous acinus	
+UBERON:0014719	intralobular duct	
+UBERON:0014720	interlobar duct	
+UBERON:0014725	intercalated duct	
+UBERON:0014726	intercalated duct of pancreas	
+UBERON:0014727	intercalated duct of salivary gland	
+UBERON:0014729	striated duct of salivary gland	
+UBERON:0014730	osteon	
+UBERON:0014731	haversian canal	
+UBERON:0014732	compound cell cluster organ	
+UBERON:0014733	dorsal ventricular ridge of pallium	
+UBERON:0014734	allocortex	
+UBERON:0014735	paleocortex	
+UBERON:0014736	periallocortex	
+UBERON:0014738	medial pallium	
+UBERON:0014740	dorsal pallium	
+UBERON:0014741	lateral pallium	
+UBERON:0014742	central nucleus of pallium	
+UBERON:0014751	P1 area of pallium (Myxiniformes)	
+UBERON:0014752	P2 area of pallium (Myxiniformes)	
+UBERON:0014753	P3 area of pallium (Myxiniformes)	
+UBERON:0014754	P4 area of pallium (Myxiniformes)	
+UBERON:0014755	P5 area of pallium (Myxiniformes)	
+UBERON:0014756	Wulst	
+UBERON:0014757	hyperpallium apicale	
+UBERON:0014758	interstitial part of hyperpallium apicale	
+UBERON:0014759	entopallium	
+UBERON:0014760	gustatory nucleus	
+UBERON:0014761	spinal trigeminal tract	
+UBERON:0014762	fused metapodial bones 2-4	
+UBERON:0014763	fused metatarsal bones 2-4	
 
 
 OBSOLETIONS
 ===========
-UBERON:3010398, obsolete follicle layer (uberon/phenoscape-anatomy)
+UBERON:0011668, obsolete nuchal plate of carapace
+UBERON:2000181, obsolete caudal zone of D (uberon/phenoscape-anatomy)
+UBERON:2000246, obsolete nucleus taeniae (uberon/phenoscape-anatomy)
+UBERON:2000256, obsolete pars subcommissuralis of V (uberon/phenoscape-anatomy)
+UBERON:2000299, obsolete ventral entopeduncular nucleus V (uberon/phenoscape-anatomy)
+UBERON:2000340, obsolete dorsal entopeduncular nucleus (uberon/phenoscape-anatomy)
+UBERON:2000343, obsolete dorsal nucleus of V (uberon/phenoscape-anatomy)
+UBERON:2000391, obsolete medial zone of D (uberon/phenoscape-anatomy)
+UBERON:2000456, obsolete ventral nucleus of V (uberon/phenoscape-anatomy)
+UBERON:2000487, obsolete central zone of D (uberon/phenoscape-anatomy)
+UBERON:2000506, obsolete dorsal zone of D (uberon/phenoscape-anatomy)
+UBERON:2000536, obsolete lateral zone of D (uberon/phenoscape-anatomy)
+UBERON:2000689, obsolete supracommissural nucleus of V (uberon/phenoscape-anatomy)
+UBERON:2000819, obsolete postcommissural nucleus of V central entopeduncular nucleus (uberon/phenoscape-anatomy)
+UBERON:2001339, obsolete nucleus of the tract of the anterior commissure (uberon/phenoscape-anatomy)
+UBERON:2002179, obsolete peripheral nucleus of ventral telencephalon (uberon/phenoscape-anatomy)
+UBERON:2002180, obsolete central nucleus of ventral telencephalon (uberon/phenoscape-anatomy)
+UBERON:2002204, obsolete lateral nucleus of ventral telencephalon (uberon/phenoscape-anatomy)
+UBERON:2002222, obsolete periventricular nucleus of ventral telencephalon (uberon/phenoscape-anatomy)
 
 
 TERM MERGES
 ===========
-
-None
+UBERON:0004095, corticospinal tract was merged into UBERON:0002707, pyramidal tract
+UBERON:0007333, avian pallium was merged into UBERON:0000203, pallium
+UBERON:0008872, pulmonary alveolus wall was merged into UBERON:0004894, alveolar wall
+UBERON:0010113, future membranous labyrinth was merged into UBERON:0001849, membranous labyrinth
 
 
 TERM CHANGES
@@ -91,803 +263,1904 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	subset	synonym	xref	is_a	intersection_of	relationship	is_obsolete	
-UBERON:0000007					1 A	1 A					
-UBERON:0000010						1 A					
-UBERON:0000026											
-UBERON:0000052						1 A					
-UBERON:0000323											
-UBERON:0000435					1 A	1 A					
-UBERON:0000446						1 A					
-UBERON:0000454		A									
-UBERON:0000936						1 A					
-UBERON:0000941					1 A	1 A					
-UBERON:0000955						1 A					
-UBERON:0000956						1 A					
-UBERON:0000959						1 A					
-UBERON:0000988						1 A					
-UBERON:0001017						1 A					
-UBERON:0001098							2 D				
-UBERON:0001103		C					2 D, 1 A		1 D, 1 A		
-UBERON:0001111							2 D, 1 A		1 A		
-UBERON:0001141		A	D					2 A	1 A		
-UBERON:0001142		C	D	1 D		1 D		2 A	1 A		
-UBERON:0001172		A									
-UBERON:0001212								2 A	1 D, 2 A		
-UBERON:0001217		A				1 A			1 D, 1 A		
-UBERON:0001495		A									
-UBERON:0001579					1 A	1 A					
-UBERON:0001591		A			2 A	1 A		2 A	2 A		
-UBERON:0001617		C				1 D, 1 A	3 A		1 A		
-UBERON:0001643					1 A	1 A					
-UBERON:0001644					1 A	1 A					
-UBERON:0001645					1 A	1 A					
-UBERON:0001646					1 A	1 A					
-UBERON:0001647					1 A	1 A					
-UBERON:0001648					1 A	1 A					
-UBERON:0001649					1 A	1 A					
-UBERON:0001650					1 A	1 A					
-UBERON:0001655		A	D				1 D, 4 A		1 A		
-UBERON:0001657						1 D					
-UBERON:0001661		A	D								
-UBERON:0001671		D				1 D, 1 A	1 D, 2 A		1 A		
-UBERON:0001701					1 D, 1 A						
-UBERON:0001715					1 A	1 A					
-UBERON:0001718					1 A	1 A					
-UBERON:0001719					1 A	1 A					
-UBERON:0001758							2 D				
-UBERON:0001759					1 A	1 A					
-UBERON:0001812		A									
-UBERON:0001817							1 A				
-UBERON:0001869						1 A					
-UBERON:0001870						1 A					
-UBERON:0001871						1 A					
-UBERON:0001872						1 A					
-UBERON:0001873						1 A					
-UBERON:0001874						1 A					
-UBERON:0001875						1 A					
-UBERON:0001876						1 A					
-UBERON:0001877						1 A					
-UBERON:0001878						1 A					
-UBERON:0001879		A				2 A					
-UBERON:0001880						1 A					
-UBERON:0001881						1 A					
-UBERON:0001882						1 A					
-UBERON:0001883						1 A					
-UBERON:0001888						1 A					
-UBERON:0001890					1 A	1 A					
-UBERON:0001891					1 A	1 A					
-UBERON:0001893						1 A					
-UBERON:0001894					1 A	1 A					
-UBERON:0001895						1 A					
-UBERON:0001896						1 A					
-UBERON:0001897					1 A	1 A					
-UBERON:0001898					1 A	1 A					
-UBERON:0001899					1 A	1 A					
-UBERON:0001900					1 A	1 A					
-UBERON:0001903						1 A					
-UBERON:0001904					1 A	1 A					
-UBERON:0001905					1 A	1 A					
-UBERON:0001906					1 A	1 A					
-UBERON:0001908						1 A					
-UBERON:0001909					1 A	1 A					
-UBERON:0001910					1 A	1 A					
-UBERON:0001920					1 A	1 A					
-UBERON:0001921					1 A	1 A					
-UBERON:0001922					1 A	1 A					
-UBERON:0001923					1 A	1 A					
-UBERON:0001924					1 A	1 A					
-UBERON:0001925					1 A	1 A					
-UBERON:0001926					1 A	1 A					
-UBERON:0001927					1 A	1 A					
-UBERON:0001928					1 A	1 A					
-UBERON:0001929					1 A	1 A					
-UBERON:0001930					1 A	1 A					
-UBERON:0001931					1 A	1 A					
-UBERON:0001932					1 A	1 A					
-UBERON:0001933					1 A	1 A					
-UBERON:0001934					1 A	1 A					
-UBERON:0001935					1 A	1 A					
-UBERON:0001936					1 A	1 A					
-UBERON:0001937					1 A	1 A					
-UBERON:0001938					1 A	1 A					
-UBERON:0001939					1 A	1 A					
-UBERON:0001940					1 A	1 A					
-UBERON:0001941					1 A	1 A					
-UBERON:0001942					1 A	1 A					
-UBERON:0001943					1 A	1 A					
-UBERON:0001944						1 A					
-UBERON:0001945						1 A					
-UBERON:0001946						1 A					
-UBERON:0001947					1 A	1 A					
-UBERON:0001950						1 A					
-UBERON:0001953						1 A					
-UBERON:0001965					1 A	1 A					
-UBERON:0001966					1 A	1 A					
-UBERON:0001997						1 A					
-UBERON:0002002									1 D, 1 A		
-UBERON:0002016								1 D, 1 A	1 A		
-UBERON:0002021						1 A					
-UBERON:0002022						1 A					
-UBERON:0002023						1 A					
-UBERON:0002028						1 A					
-UBERON:0002034					2 A	1 A					
-UBERON:0002035					1 A	1 A					
-UBERON:0002037						1 A					
-UBERON:0002038					1 A	1 A					
-UBERON:0002043					2 A	1 A					
-UBERON:0002044					2 A	2 A					
-UBERON:0002045					1 A	1 A					
-UBERON:0002047						1 A					
-UBERON:0002127						1 A					
-UBERON:0002128						1 A					
-UBERON:0002129						1 A					
-UBERON:0002130						1 A					
-UBERON:0002132						1 A					
-UBERON:0002136						1 A					
-UBERON:0002138						1 A					
-UBERON:0002139						1 A					
-UBERON:0002140						1 A					
-UBERON:0002141					1 A	1 A					
-UBERON:0002142					1 A	1 A					
-UBERON:0002143					1 A	1 A					
-UBERON:0002144					1 A	1 A					
-UBERON:0002145					1 A	1 A					
-UBERON:0002148						1 A					
-UBERON:0002149						1 A					
-UBERON:0002150						1 A					
-UBERON:0002151						1 A					
-UBERON:0002152						1 A					
-UBERON:0002153						1 A					
-UBERON:0002156						1 A					
-UBERON:0002157						1 A					
-UBERON:0002160					1 A	1 A					
-UBERON:0002161						1 A					
-UBERON:0002162					1 A	1 A					
-UBERON:0002163						1 A					
-UBERON:0002164						1 A					
-UBERON:0002196					1 A	1 A					
-UBERON:0002197					1 A	1 A					
-UBERON:0002198					1 A	1 A					
-UBERON:0002206					1 A	1 A					
-UBERON:0002240						1 A					
-UBERON:0002264						1 A					
-UBERON:0002265						1 A					
-UBERON:0002266						1 A					
-UBERON:0002298						1 A					
-UBERON:0002310						1 D, 2 A					
-UBERON:0002313						1 A					
-UBERON:0002314						1 A					
-UBERON:0002317						1 A					
-UBERON:0002337		A									
-UBERON:0002381					1 D, 1 A						
-UBERON:0002421						1 A					
-UBERON:0002430					1 A	1 A					
-UBERON:0002434					1 A	1 A					
-UBERON:0002435						1 A					
-UBERON:0002436					2 D, 3 A	1 A					
-UBERON:0002437						1 A					
-UBERON:0002438					1 A	1 A					
-UBERON:0002459		A	D		1 D, 2 A	1 D			1 A		
-UBERON:0002464											
-UBERON:0002470		C									
-UBERON:0002474						1 A					
-UBERON:0002476						1 A					
-UBERON:0002477						1 A					
-UBERON:0002479					1 A	1 A					
-UBERON:0002480					1 A	1 A					
-UBERON:0002490									1 D, 1 A		
-UBERON:0002492									1 D, 1 A		
-UBERON:0002528		A						2 A	1 A		
-UBERON:0002549						1 A					
-UBERON:0002550					1 A	1 A					
-UBERON:0002551					1 A	1 A					
-UBERON:0002552						1 A					
-UBERON:0002555					1 A	1 A					
-UBERON:0002556						1 A					
-UBERON:0002557					1 A	1 A					
-UBERON:0002559						1 A					
-UBERON:0002560						1 A					
-UBERON:0002562					1 A	1 A					
-UBERON:0002563						1 A					
-UBERON:0002564						1 A					
-UBERON:0002565						1 A					
-UBERON:0002566					1 A	1 A					
-UBERON:0002567		A				1 A					
-UBERON:0002568						1 A					
-UBERON:0002569						1 A					
-UBERON:0002570						1 A					
-UBERON:0002571						1 A					
-UBERON:0002572						1 A					
-UBERON:0002573						1 A					
-UBERON:0002575						1 A					
-UBERON:0002576						1 A					
-UBERON:0002577						1 A					
-UBERON:0002580						1 A					
-UBERON:0002581						1 A					
-UBERON:0002582					1 A	1 A					
-UBERON:0002583						1 A					
-UBERON:0002585					1 A	1 A					
-UBERON:0002586					1 A	1 A					
-UBERON:0002587						1 A					
-UBERON:0002588						1 A					
-UBERON:0002589						1 A					
-UBERON:0002590						1 A					
-UBERON:0002591						1 A					
-UBERON:0002592						1 A					
-UBERON:0002593						1 A					
-UBERON:0002594					1 A	1 A					
-UBERON:0002595					1 A	1 A					
-UBERON:0002596					1 A	1 A					
-UBERON:0002597						1 A					
-UBERON:0002598					1 A	1 A					
-UBERON:0002599						1 A					
-UBERON:0002600						1 A					
-UBERON:0002601						1 A					
-UBERON:0002602						1 A					
-UBERON:0002603						1 A					
-UBERON:0002604						1 A					
-UBERON:0002605						1 A					
-UBERON:0002607					1 A	1 A					
-UBERON:0002608					1 A	1 A					
-UBERON:0002609					1 A	1 A					
-UBERON:0002610						1 A					
-UBERON:0002612					1 A	1 A					
-UBERON:0002613						1 A					
-UBERON:0002614					1 A	1 A					
-UBERON:0002615					1 A	1 A					
-UBERON:0002617					1 A	1 A					
-UBERON:0002618					1 A	1 A					
-UBERON:0002620					1 A	1 A					
-UBERON:0002622					1 A	1 A					
-UBERON:0002623					1 A	1 A					
-UBERON:0002624						1 A					
-UBERON:0002625					1 A	1 A					
-UBERON:0002626						1 A					
-UBERON:0002627						1 A					
-UBERON:0002628						1 A					
-UBERON:0002629						1 A					
-UBERON:0002630						1 A					
-UBERON:0002631					1 A	1 A					
-UBERON:0002632					1 A	1 A					
-UBERON:0002633						1 A					
-UBERON:0002634					1 A	1 A					
-UBERON:0002636					1 A	1 A					
-UBERON:0002637					1 A	1 A					
-UBERON:0002638					1 A	1 A					
-UBERON:0002639					1 A	1 A					
-UBERON:0002640						1 A					
-UBERON:0002641					1 A	1 A					
-UBERON:0002642						1 A					
-UBERON:0002643						1 A					
-UBERON:0002644						1 A					
-UBERON:0002645					1 A	1 A					
-UBERON:0002646						1 A					
-UBERON:0002647					1 A	1 A					
-UBERON:0002648					1 A	1 A					
-UBERON:0002649						1 A					
-UBERON:0002650					1 A	1 A					
-UBERON:0002652					1 A	1 A					
-UBERON:0002653						1 A					
-UBERON:0002654					1 A	1 A					
-UBERON:0002656						1 A					
-UBERON:0002657						1 A					
-UBERON:0002658					1 A	1 A					
-UBERON:0002659						1 A					
-UBERON:0002660					1 A	1 A					
-UBERON:0002661						1 A					
-UBERON:0002662					1 A	1 A					
-UBERON:0002664					1 A	1 A					
-UBERON:0002665						1 A					
-UBERON:0002666					1 A	1 A					
-UBERON:0002667						1 A					
-UBERON:0002668					1 A	1 A					
-UBERON:0002669						1 A					
-UBERON:0002670						1 A					
-UBERON:0002671					1 A	1 A					
-UBERON:0002672						1 A					
-UBERON:0002673			C			1 A					
-UBERON:0002675						1 A					
-UBERON:0002676					1 A	1 A					
-UBERON:0002679					1 A	1 A					
-UBERON:0002681					1 A	1 A					
-UBERON:0002682						1 A					
-UBERON:0002683					1 A	1 A					
-UBERON:0002684						1 A					
-UBERON:0002685					1 A	1 A					
-UBERON:0002686						1 A					
-UBERON:0002687					1 A	1 A					
-UBERON:0002688						1 A					
-UBERON:0002689					1 A	1 A					
-UBERON:0002690					1 A	1 A					
-UBERON:0002691					1 A	1 A					
-UBERON:0002692						1 A					
-UBERON:0002693					1 A	1 A					
-UBERON:0002694					1 A	1 A					
-UBERON:0002695					1 A	1 A					
-UBERON:0002696					1 A	1 A					
-UBERON:0002697					1 A	1 A					
-UBERON:0002698					1 A	1 A					
-UBERON:0002699					1 A	1 A					
-UBERON:0002700					1 A	1 A					
-UBERON:0002701					1 A	1 A					
-UBERON:0002702						1 A					
-UBERON:0002703						1 A					
-UBERON:0002704					1 A	1 A					
-UBERON:0002705						1 A					
-UBERON:0002706					1 A	1 A					
-UBERON:0002707						1 A					
-UBERON:0002708					1 A	1 A					
-UBERON:0002709					1 A	1 A					
-UBERON:0002710					1 A	1 A					
-UBERON:0002711					1 A	1 A					
-UBERON:0002712					1 A	1 A					
-UBERON:0002713					1 A	1 A					
-UBERON:0002714						1 A					
-UBERON:0002715						1 A					
-UBERON:0002716					1 A	1 A					
-UBERON:0002717					1 A	1 A					
-UBERON:0002718						1 A					
-UBERON:0002719						1 A					
-UBERON:0002720					1 A	1 A					
-UBERON:0002721					1 A	1 A					
-UBERON:0002722					1 A	1 A					
-UBERON:0002723					1 A	1 A					
-UBERON:0002724					1 A	1 A					
-UBERON:0002727						1 A					
-UBERON:0002728						1 A					
-UBERON:0002729						1 A					
-UBERON:0002732						1 A					
-UBERON:0002733					1 A	1 A					
-UBERON:0002734		A			1 A	2 A	1 D, 1 A		1 A		
-UBERON:0002735						1 A					
-UBERON:0002736					1 A	1 A					
-UBERON:0002737						1 A					
-UBERON:0002738						1 A					
-UBERON:0002739						1 A					
-UBERON:0002740					1 A	1 A					
-UBERON:0002741						1 A					
-UBERON:0002742						1 A					
-UBERON:0002743						1 A					
-UBERON:0002744						1 A					
-UBERON:0002745						1 A					
-UBERON:0002746					1 A	1 A					
-UBERON:0002747						1 A					
-UBERON:0002748						1 A					
-UBERON:0002750						1 A					
-UBERON:0002751						1 A					
-UBERON:0002752						1 A					
-UBERON:0002753						1 A					
-UBERON:0002754						1 A					
-UBERON:0002755						1 A					
-UBERON:0002756						1 A					
-UBERON:0002758					2 A	1 A					
-UBERON:0002759					1 A	1 A					
-UBERON:0002760						1 A					
-UBERON:0002761					1 A	1 A					
-UBERON:0002763						1 A					
-UBERON:0002764						1 A					
-UBERON:0002765						1 A					
-UBERON:0002766						1 A					
-UBERON:0002767					1 A	1 A					
-UBERON:0002768						1 A					
-UBERON:0002769						1 A					
-UBERON:0002770					1 A	1 A					
-UBERON:0002771						1 A					
-UBERON:0002772					1 A	1 A					
-UBERON:0002773						1 A					
-UBERON:0002774						1 A					
-UBERON:0002775						1 A					
-UBERON:0002776					1 A	1 A					
-UBERON:0002778						1 A					
-UBERON:0002779						1 A					
-UBERON:0002781					1 A	1 A					
-UBERON:0002782						1 A					
-UBERON:0002783						1 A					
-UBERON:0002786						1 A					
-UBERON:0002787						1 A					
-UBERON:0002788					1 A	1 A					
-UBERON:0002790						1 A					
-UBERON:0002793						1 A					
-UBERON:0002794						1 A					
-UBERON:0002795						1 A					
-UBERON:0002796						1 A					
-UBERON:0002797						1 A					
-UBERON:0002798						1 A					
-UBERON:0002799					1 A	1 A					
-UBERON:0002800						1 A					
-UBERON:0002801						1 A					
-UBERON:0002824						1 A					
-UBERON:0002827						1 A					
-UBERON:0002828					1 A	1 A					
-UBERON:0002829					1 A	1 A					
-UBERON:0002830					1 A	1 A					
-UBERON:0002831					1 A	1 A					
-UBERON:0002864					1 A	1 A					
-UBERON:0002865					1 A	1 A					
-UBERON:0002866					1 A	1 A					
-UBERON:0002867					1 A	1 A					
-UBERON:0002868					1 A	1 A					
-UBERON:0002869					1 A	1 A					
-UBERON:0002870						1 A					
-UBERON:0002871						1 A					
-UBERON:0002872						1 A					
-UBERON:0002873						1 A					
-UBERON:0002874					1 A	1 A					
-UBERON:0002875					1 A	1 A					
-UBERON:0002876					1 A	1 A					
-UBERON:0002877					1 A	1 A					
-UBERON:0002879					1 A	1 A					
-UBERON:0002880					1 A	1 A					
-UBERON:0002881					2 A	2 A					
-UBERON:0002882					1 A	1 A					
-UBERON:0002883						1 A					
-UBERON:0002884						1 A					
-UBERON:0002885						1 A					
-UBERON:0002886						1 A					
-UBERON:0002887						1 A					
-UBERON:0002888						1 A					
-UBERON:0002889						1 A					
-UBERON:0002890						1 A					
-UBERON:0002891						1 A					
-UBERON:0002892						1 A					
-UBERON:0002893						1 A					
-UBERON:0002896					1 A	1 A					
-UBERON:0002897					1 A	1 A					
-UBERON:0002898					1 A	1 A					
-UBERON:0002899					1 A	1 A					
-UBERON:0002900					1 A	1 A					
-UBERON:0002901					1 A	1 A					
-UBERON:0002902					1 A	1 A					
-UBERON:0002903					1 A	1 A					
-UBERON:0002904					1 A	1 A					
-UBERON:0002905					1 A	1 A					
-UBERON:0002906					1 A	1 A					
-UBERON:0002907					1 A	1 A					
-UBERON:0002908					1 A	1 A					
-UBERON:0002909					1 A	1 A					
-UBERON:0002910					1 A	1 A					
-UBERON:0002911					1 A	1 A					
-UBERON:0002912					1 A	1 A					
-UBERON:0002913					1 A	1 D, 2 A					
-UBERON:0002914					1 A	1 A					
-UBERON:0002915					1 A	1 A					
-UBERON:0002916					1 A	1 A					
-UBERON:0002918						1 A					
-UBERON:0002919					1 A	1 A					
-UBERON:0002920					1 A	1 A					
-UBERON:0002921					1 A	1 A					
-UBERON:0002922					1 A	1 A					
-UBERON:0002923					1 A	1 A					
-UBERON:0002924					1 A	1 A					
-UBERON:0002930						1 A					
-UBERON:0002931						1 A					
-UBERON:0002932					1 A	1 A					
-UBERON:0002933						1 A					
-UBERON:0002934					1 A	1 A					
-UBERON:0002935					1 A	1 A					
-UBERON:0002936		A			1 A	2 A					
-UBERON:0002937					1 A	1 A					
-UBERON:0002938		A			1 A	2 A					
-UBERON:0002941					1 A	1 A					
-UBERON:0002942					1 A	1 A					
-UBERON:0002943						1 A					
-UBERON:0002944						1 A					
-UBERON:0002945					1 A	1 A					
-UBERON:0002947						1 A					
-UBERON:0002948						1 A					
-UBERON:0002949						1 A					
-UBERON:0002952						1 A					
-UBERON:0002953						1 A					
-UBERON:0002954					1 A	1 A					
-UBERON:0002955					1 A	1 A					
-UBERON:0002956						1 A					
-UBERON:0002957					1 A	1 A					
-UBERON:0002958						1 A					
-UBERON:0002959					1 A	1 A					
-UBERON:0002960					1 A	1 A					
-UBERON:0002964					1 A	1 A					
-UBERON:0002965					1 A	1 A					
-UBERON:0002967						1 A					
-UBERON:0002969		A				2 A	1 D, 1 A		1 A		
-UBERON:0002970					1 A	1 A					
-UBERON:0002971						1 A					
-UBERON:0002972					1 A	1 A					
-UBERON:0002973						1 A					
-UBERON:0002974						1 A					
-UBERON:0002975					1 A	1 A					
-UBERON:0002976						1 A					
-UBERON:0002977						1 A					
-UBERON:0002978					1 A	1 A					
-UBERON:0002979						1 A					
-UBERON:0002980						1 A					
-UBERON:0002981					1 A	1 A					
-UBERON:0002982					1 A	1 A					
-UBERON:0002983					1 A	1 A					
-UBERON:0002984					1 A	1 A					
-UBERON:0002985					2 A	1 A					
-UBERON:0002987						1 A					
-UBERON:0002990					1 A	1 A					
-UBERON:0002991					1 A	1 A					
-UBERON:0002992					1 A	1 A					
-UBERON:0002994						1 A					
-UBERON:0002995						1 A					
-UBERON:0002996						1 A					
-UBERON:0002998						1 A					
-UBERON:0003005					1 A	1 A					
-UBERON:0003006						1 A					
-UBERON:0003007						1 A					
-UBERON:0003008					1 A	1 A					
-UBERON:0003009					1 A	1 A					
-UBERON:0003010					1 A	1 A					
-UBERON:0003011						1 A					
-UBERON:0003016					1 A	1 A					
-UBERON:0003017						1 A					
-UBERON:0003018					1 A	1 A					
-UBERON:0003019					1 A	1 A					
-UBERON:0003020						1 A					
-UBERON:0003023						1 A					
-UBERON:0003024					1 A	1 A					
-UBERON:0003025						1 A					
-UBERON:0003026					1 A	1 A					
-UBERON:0003028						1 A					
-UBERON:0003029						1 A					
-UBERON:0003030					1 A	1 A					
-UBERON:0003031					1 A	1 A					
-UBERON:0003033					1 A	1 A					
-UBERON:0003034					1 A	1 A					
-UBERON:0003036					1 A	1 A					
-UBERON:0003040					1 A	1 A					
-UBERON:0003041						1 A					
-UBERON:0003044						1 A					
-UBERON:0003045						1 A					
-UBERON:0003046						1 A					
-UBERON:0003113					2 D, 5 A						
-UBERON:0003217					1 A	1 A					
-UBERON:0003267						1 D					
-UBERON:0003317							1 D				
-UBERON:0003350			A								
-UBERON:0003355							1 D				
-UBERON:0003484		C									
-UBERON:0003660		A									
-UBERON:0003671		A							2 A		
-UBERON:0003672		A			1 A		2 D		1 D		
-UBERON:0003675		A			1 D, 1 A						
-UBERON:0003679		A			1 D, 1 A						
-UBERON:0003685					1 D, 1 A						
-UBERON:0003688		A									
-UBERON:0003881						1 A					
-UBERON:0003882						1 A					
-UBERON:0003883						1 A					
-UBERON:0003884		A									
-UBERON:0004130		A			1 A	1 A					
-UBERON:0004339			C		2 A						
-UBERON:0004370		A				1 A					
-UBERON:0004450		A			1 A	1 A		2 A	1 A		
-UBERON:0004562		A									
-UBERON:0004563					2 A						
-UBERON:0004564					2 A						
-UBERON:0004671						1 A					
-UBERON:0004683						1 A					
-UBERON:0004690		A				1 A					
-UBERON:0004714						1 A					
-UBERON:0004717					4 D, 5 A						
-UBERON:0004718					3 D, 4 A	1 A					
-UBERON:0004725						1 A					
-UBERON:0004859		C	C		1 A		1 D	1 D, 1 A	1 D, 1 A		
-UBERON:0004923		A									
-UBERON:0005070					1 D, 1 A						
-UBERON:0005167					1 D, 3 A						
-UBERON:0005371						1 A					
-UBERON:0005372						1 A					
-UBERON:0005409											
-UBERON:0005417					1 D, 1 A						
-UBERON:0005418					1 D, 1 A						
-UBERON:0005610		A									
-UBERON:0005614		A									
-UBERON:0005800		A									
-UBERON:0005932		A									
-UBERON:0006086					1 A	1 A					
-UBERON:0006087						1 A					
-UBERON:0006088						1 A					
-UBERON:0006089						1 A					
-UBERON:0006090						1 A					
-UBERON:0006092						1 A					
-UBERON:0006093						1 A					
-UBERON:0006094						1 A					
-UBERON:0006095					2 D, 3 A	1 A					
-UBERON:0006096					2 D, 3 A	1 A					
-UBERON:0006097						1 A					
-UBERON:0006098						1 A					
-UBERON:0006099					1 D, 2 A	1 A					
-UBERON:0006100					1 D, 2 A	1 A					
-UBERON:0006101					1 A	1 A					
-UBERON:0006102					1 D, 2 A						
-UBERON:0006104					1 D, 2 A						
-UBERON:0006107						1 A					
-UBERON:0006108						1 A					
-UBERON:0006114						1 A					
-UBERON:0006116						1 A					
-UBERON:0006117						1 A					
-UBERON:0006135		A									
-UBERON:0006239							1 A		2 A		
-UBERON:0006347		A							1 A		
-UBERON:0006349		A				1 A		2 A	1 A		
-UBERON:0006356		A				1 A					
-UBERON:0006471	C				2 D, 3 A	1 A					
-UBERON:0006472	C				3 D, 4 A	1 A					
-UBERON:0006473	C				5 D, 6 A	1 A					
-UBERON:0006474	C				5 D, 6 A						
-UBERON:0006475	C				5 D, 6 A						
-UBERON:0006476	C				5 D, 6 A						
-UBERON:0006477	C				4 D, 5 A						
-UBERON:0006478	C				3 D, 4 A						
-UBERON:0006479	C				3 D, 4 A						
-UBERON:0006480	C				3 D, 4 A						
-UBERON:0006481	C				3 D, 4 A						
-UBERON:0006482	C				4 D, 6 A						
-UBERON:0006483	C				3 D, 4 A						
-UBERON:0006484	C				4 D, 5 A						
-UBERON:0006485	C				4 D, 5 A						
-UBERON:0006486	C				3 D, 4 A						
-UBERON:0006487					1 A						
-UBERON:0006606									1 D, 1 A		
-UBERON:0006658		A									
-UBERON:0006670	C	A			1 D, 1 A	1 A	3 A		1 A		
-UBERON:0006698					1 A	1 A					
-UBERON:0006743						1 A					
-UBERON:0006766											
-UBERON:0006844		A									
-UBERON:0006964					1 A	1 A					
-UBERON:0007115							2 D				
-UBERON:0007152		A									
-UBERON:0007154		A			2 A		1 D, 1 A		1 D, 1 A		
-UBERON:0007155		A			1 A	1 A	1 D, 1 A		1 D		
-UBERON:0007228			C								
-UBERON:0007633					1 A	1 A					
-UBERON:0007637						1 A					
-UBERON:0007639						1 A					
-UBERON:0007640						1 A					
-UBERON:0007707					1 A	1 A					
-UBERON:0007709					1 A	1 D, 1 A					
-UBERON:0007775							2 D				
-UBERON:0007798											
-UBERON:0008266							1 D				
-UBERON:0008807		A									
-UBERON:0008827											
-UBERON:0008949		A									
-UBERON:0008989	C				1 A			2 A	1 D, 2 A		
-UBERON:0009026		A									
-UBERON:0009030		A					1 D, 1 A	2 A	1 A		
-UBERON:0009032		A					1 D, 1 A	2 A	1 A		
-UBERON:0009050						1 A					
-UBERON:0009195		A									
-UBERON:0009552					1 D, 1 A						
-UBERON:0009654		A					3 A		2 A		
-UBERON:0009655		A					1 D, 1 A	2 A	1 A		
-UBERON:0009659		A	C				1 A		1 A		
-UBERON:0009679							1 A				
-UBERON:0009680							2 A				
-UBERON:0009689		A									
-UBERON:0009836						1 A					
-UBERON:0010010						1 A					
-UBERON:0010011		A									
-UBERON:0010306		A									
-UBERON:0010368		A									
-UBERON:0010372					1 D, 1 A						
-UBERON:0010506		A									
-UBERON:0011131									1 D, 1 A		
-UBERON:0011132									1 D, 1 A		
-UBERON:0011133									1 D, 1 A		
-UBERON:0011148								3 D, 2 A	2 D, 2 A		
-UBERON:0011172						1 A					
-UBERON:0011383		A									
-UBERON:0012131					1 A						
-UBERON:0012186		A									
-UBERON:0012193		A					1 D, 1 A	2 A	1 A		
-UBERON:0012252		A									
-UBERON:0012281		A						2 A			
-UBERON:0012330		A									
-UBERON:0012504					1 D						
-UBERON:0013140		A									
-UBERON:0013151		A									
-UBERON:0013173		A									
-UBERON:0013220									1 D, 1 A		
-UBERON:0013224					1 D, 1 A				1 A		
-UBERON:0013229		A					1 A				
-UBERON:0013230		A									
-UBERON:0013236		A									
-UBERON:0013398							1 A				
-UBERON:0013472		A									
-UBERON:0013473		A									
-UBERON:0013474		A									
-UBERON:0013487		A					1 A				
-UBERON:0013525		A									
-UBERON:0013528					3 D, 4 A	1 A					
-UBERON:0013529						1 A					
-UBERON:0013533					3 D, 4 A	1 A					
-UBERON:0013535					3 D, 4 A	1 A					
-UBERON:0013538					3 D, 4 A	1 A					
-UBERON:0013539					4 D, 5 A	1 A					
-UBERON:0013540					4 D, 5 A	1 A					
-UBERON:0013541					3 D, 4 A	1 A					
-UBERON:0013543					3 D, 4 A	1 A					
-UBERON:0013544					1 D, 2 A	1 A					
-UBERON:0013545					1 D, 2 A	1 A					
-UBERON:0013546					1 D, 2 A	1 A					
-UBERON:0013547					2 D, 3 A	1 A					
-UBERON:0013550					3 D, 4 A	1 A					
-UBERON:0013551					3 D, 4 A	1 A					
-UBERON:0013552					2 D, 3 A	1 A					
-UBERON:0013553					4 D, 5 A	1 A					
-UBERON:0013554					4 D, 5 A	1 A					
-UBERON:0013556					3 D, 4 A	1 A					
-UBERON:0013558					3 D, 4 A	1 A					
-UBERON:0013559					3 D, 4 A	1 A					
-UBERON:0013560					4 D, 5 A	1 A					
-UBERON:0013561					2 D, 3 A	1 A					
-UBERON:0013562					1 D, 2 A	1 A					
-UBERON:0013573					3 D, 4 A						
-UBERON:0013637		A					1 D, 1 A	2 A	1 A		
-UBERON:0013645		A									
-UBERON:0013702											
-UBERON:0014169						1 D, 1 A					
-UBERON:0014284						1 D, 1 A					
-UBERON:0014398		C	A			1 D	1 D, 1 A		1 A		
-UBERON:0014521					1 A	1 A					
-UBERON:0014540						1 A					
-UBERON:0014544					1 A	1 A					
-UBERON:0014589					1 A						
-UBERON:0014590					1 A						
-UBERON:0014591					1 A						
-UBERON:0014592					1 A						
-UBERON:0014593					1 A						
-UBERON:0014594					1 A						
-UBERON:0014595					1 A						
-UBERON:0014596					1 A						
-UBERON:0014597					1 A						
-UBERON:0014598					1 A						
-UBERON:0014599					1 A						
-UBERON:0014600					1 A						
-UBERON:0014601					1 A						
-UBERON:0014602					1 A						
-UBERON:0014603					1 A						
-UBERON:0014604					1 A						
-UBERON:0014606					1 A	1 A					
-UBERON:0014608						1 A					
-UBERON:0014615					1 A	1 A					
-UBERON:0014618					1 A	1 A					
-UBERON:0014640						1 A					
-UBERON:1000023		A							1 D		
-UBERON:2000194							1 D				
-UBERON:2000454							1 D				
-UBERON:2001141							2 D				
-UBERON:2001142							2 D				
-UBERON:2001143							2 D				
-UBERON:2001144							2 D				
-UBERON:2001145							2 D				
-UBERON:2001146							2 D				
-UBERON:2001147							2 D				
-UBERON:2001148							2 D				
-UBERON:2001150							2 D				
-UBERON:2001151							2 D				
-UBERON:2001152							2 D				
-UBERON:2001932									1 D, 1 A		
-UBERON:2002162											
-UBERON:3000388							2 D				
-UBERON:3010398	C						4 D		2 D	A	
-UBERON:3010624	C				1 A		2 D, 1 A		2 D, 1 A		
-
-
-
-OTHER STANZA TYPES
-==================
-
-Stanzas Edited
-==============
-
-Stanza type	ID	Name
-Typedef	tributary_of	tributary_of
+Term ID	name	alt_id	def	comment	subset	synonym	xref	is_a	intersection_of	relationship	is_obsolete	replaced_by	
+UBERON:0000002						1 A							
+UBERON:0000004													
+UBERON:0000005								1 D					
+UBERON:0000007							1 D, 1 A						
+UBERON:0000010						5 A	1 D, 1 A	1 D					
+UBERON:0000012								1 D					
+UBERON:0000021			C										
+UBERON:0000025			A			1 D, 2 A							
+UBERON:0000033							1 A						
+UBERON:0000045							1 A						
+UBERON:0000052						1 A	1 D, 2 A						
+UBERON:0000056								1 D, 1 A					
+UBERON:0000057								1 D, 1 A					
+UBERON:0000058			C	C	1 D, 1 A			1 D, 1 A					
+UBERON:0000060								1 D, 1 A					
+UBERON:0000061							1 A						
+UBERON:0000062						1 A							
+UBERON:0000064						1 A							
+UBERON:0000073								1 D					
+UBERON:0000074								1 D, 1 A					
+UBERON:0000080						2 A		1 D, 1 A					
+UBERON:0000081								1 D, 1 A					
+UBERON:0000082								1 D, 1 A					
+UBERON:0000084			C										
+UBERON:0000089							1 A						
+UBERON:0000100								1 D					
+UBERON:0000115							1 A						
+UBERON:0000122								1 D					
+UBERON:0000125								1 A					
+UBERON:0000128						1 A							
+UBERON:0000155						1 A		1 D					
+UBERON:0000156								1 D					
+UBERON:0000157								1 D					
+UBERON:0000159								1 D					
+UBERON:0000160							1 A						
+UBERON:0000162								2 D, 2 A					
+UBERON:0000163								2 D					
+UBERON:0000165								2 D, 1 A					
+UBERON:0000166								1 D					
+UBERON:0000203		1 A					2 A						
+UBERON:0000204						1 D, 1 A							
+UBERON:0000309							1 A						
+UBERON:0000325							2 A						
+UBERON:0000328								1 D					
+UBERON:0000329								1 A					
+UBERON:0000359							1 D						
+UBERON:0000375							1 A						
+UBERON:0000377							1 A						
+UBERON:0000378								1 D, 1 A					
+UBERON:0000395							1 A						
+UBERON:0000401								1 D, 1 A					
+UBERON:0000407								1 D					
+UBERON:0000409			C							1 A			
+UBERON:0000412								1 A					
+UBERON:0000414			C			1 D, 1 A							
+UBERON:0000415								1 D					
+UBERON:0000428								2 D, 1 A					
+UBERON:0000433						1 A							
+UBERON:0000435						3 A	1 D, 1 A						
+UBERON:0000446						3 A	1 D, 2 A						
+UBERON:0000459								1 D					
+UBERON:0000460								1 D					
+UBERON:0000475			C	C				1 D, 1 A					
+UBERON:0000479			C	C		1 D, 1 A		1 D, 1 A					
+UBERON:0000481								1 D, 1 A		1 D			
+UBERON:0000483							1 A						
+UBERON:0000569								1 D					
+UBERON:0000908								2 D					
+UBERON:0000925							1 A						
+UBERON:0000930						2 A		1 D					
+UBERON:0000931							2 A	1 D					
+UBERON:0000936						3 A	1 D, 1 A						
+UBERON:0000941						1 A	1 D, 1 A	1 A					
+UBERON:0000955						3 A	1 D, 1 A						
+UBERON:0000956				D		1 D, 4 A	1 D, 1 A			1 D, 1 A			
+UBERON:0000959						3 A	1 D, 1 A	1 A					
+UBERON:0000983							1 A						
+UBERON:0000988						1 A	1 D, 1 A						
+UBERON:0000989								1 D					
+UBERON:0000996								1 D					
+UBERON:0000997						2 A							
+UBERON:0000998								1 D					
+UBERON:0001003							1 A						
+UBERON:0001015							1 A						
+UBERON:0001016								1 D		1 D, 1 A			
+UBERON:0001017						7 A	1 D, 1 A			1 A			
+UBERON:0001018				C		1 A	1 A						
+UBERON:0001019	C					1 A	1 D						
+UBERON:0001020						1 A							
+UBERON:0001021							1 A						
+UBERON:0001029								1 D					
+UBERON:0001035								1 D					
+UBERON:0001042								1 A					
+UBERON:0001049						1 A							
+UBERON:0001052								1 D					
+UBERON:0001053								1 D					
+UBERON:0001065						2 A							
+UBERON:0001066							1 A						
+UBERON:0001073								1 D					
+UBERON:0001083							1 A						
+UBERON:0001091							1 A						
+UBERON:0001092							1 A						
+UBERON:0001093							1 A						
+UBERON:0001096								1 D					
+UBERON:0001098							1 A						
+UBERON:0001111							1 A						
+UBERON:0001130						1 A							
+UBERON:0001132							1 A						
+UBERON:0001133							1 A						
+UBERON:0001134							1 A						
+UBERON:0001135							1 A						
+UBERON:0001136							1 A			1 D, 1 A			
+UBERON:0001154								1 D					
+UBERON:0001160							2 A						
+UBERON:0001167								1 D, 1 A					
+UBERON:0001173								1 D					
+UBERON:0001193						1 A							
+UBERON:0001200						2 A							
+UBERON:0001201								1 D					
+UBERON:0001202								1 D					
+UBERON:0001208						1 A							
+UBERON:0001213								1 D					
+UBERON:0001224								1 D, 1 A					
+UBERON:0001228								1 D, 1 A					
+UBERON:0001230						3 A							
+UBERON:0001232								1 D, 1 A					
+UBERON:0001243								1 D					
+UBERON:0001245								1 D					
+UBERON:0001247								1 A					
+UBERON:0001248								1 D, 1 A					
+UBERON:0001249								1 D, 1 A					
+UBERON:0001252								1 D, 1 A					
+UBERON:0001253								1 D, 1 A					
+UBERON:0001254								2 D, 1 A					
+UBERON:0001255						1 A		1 D, 1 A					
+UBERON:0001256								1 D, 1 A					
+UBERON:0001257								1 D, 1 A					
+UBERON:0001258								1 D, 1 A					
+UBERON:0001259								1 D, 1 A					
+UBERON:0001260								1 D					
+UBERON:0001261								1 D, 1 A					
+UBERON:0001262								1 D					
+UBERON:0001265								1 D, 1 A					
+UBERON:0001266								1 D, 1 A					
+UBERON:0001269							1 A						
+UBERON:0001276							2 A						
+UBERON:0001277							1 A						
+UBERON:0001282								1 A					
+UBERON:0001287								3 D					
+UBERON:0001290						1 A							
+UBERON:0001292								3 D					
+UBERON:0001295						1 A							
+UBERON:0001296						1 A							
+UBERON:0001299								1 D					
+UBERON:0001301						1 A		1 D					
+UBERON:0001305								1 D					
+UBERON:0001306								1 D					
+UBERON:0001312								1 D					
+UBERON:0001319								1 D					
+UBERON:0001328								1 D					
+UBERON:0001331								1 D					
+UBERON:0001332								1 D					
+UBERON:0001334						2 A							
+UBERON:0001335								1 D					
+UBERON:0001336								1 D, 1 A					
+UBERON:0001337								1 D					
+UBERON:0001338								1 D, 1 A					
+UBERON:0001340								1 D					
+UBERON:0001343								1 D					
+UBERON:0001344								3 D					
+UBERON:0001346								1 D					
+UBERON:0001353								2 D		1 D, 1 A			
+UBERON:0001357								1 D, 1 A					
+UBERON:0001358						1 A		1 D					
+UBERON:0001380						1 A							
+UBERON:0001384						3 A							
+UBERON:0001393						1 A							
+UBERON:0001419							1 A						
+UBERON:0001436						1 A							
+UBERON:0001440							1 A						
+UBERON:0001441							1 A						
+UBERON:0001449						1 A							
+UBERON:0001450						1 A							
+UBERON:0001456							1 A						
+UBERON:0001458								1 D					
+UBERON:0001463						1 A							
+UBERON:0001466							1 A						
+UBERON:0001468										1 D, 1 A			
+UBERON:0001472								1 D					
+UBERON:0001474							1 A						
+UBERON:0001488						1 A							
+UBERON:0001497							1 A						
+UBERON:0001555				C		2 A		2 D, 1 A		1 D, 1 A			
+UBERON:0001570							1 A						
+UBERON:0001579						2 A	1 D, 1 A	1 A					
+UBERON:0001581								1 D, 1 A					
+UBERON:0001610								1 D, 1 A					
+UBERON:0001630							1 A						
+UBERON:0001638						1 A							
+UBERON:0001643						1 A	1 D, 1 A	1 A					
+UBERON:0001644						1 A	1 D, 1 A						
+UBERON:0001645						1 A	1 D, 1 A						
+UBERON:0001646						1 A	1 D, 1 A	1 A					
+UBERON:0001647						1 A	1 D, 1 A						
+UBERON:0001648						2 A	1 D, 1 A	1 A					
+UBERON:0001649						1 A	1 D, 1 A						
+UBERON:0001650						2 A	1 D, 1 A						
+UBERON:0001655								1 D, 1 A					
+UBERON:0001689								1 D					
+UBERON:0001701						1 A							
+UBERON:0001708								1 D					
+UBERON:0001715						1 A	1 D, 1 A						
+UBERON:0001716								1 D, 1 A					
+UBERON:0001718						5 A	1 D, 1 A						
+UBERON:0001719						2 A	1 D, 1 A						
+UBERON:0001720								3 D, 2 A		1 D, 1 A			
+UBERON:0001723								1 D					
+UBERON:0001726							1 A	1 D					
+UBERON:0001733								1 D					
+UBERON:0001734								1 D					
+UBERON:0001735								1 A					
+UBERON:0001737						1 A							
+UBERON:0001747						1 A							
+UBERON:0001759						1 A	1 D, 1 A						
+UBERON:0001761	C		A			3 A	1 D	1 D, 1 A		1 D, 2 A			
+UBERON:0001763							1 A						
+UBERON:0001766						2 A							
+UBERON:0001767						2 A							
+UBERON:0001776							2 D, 1 A						
+UBERON:0001786						1 A							
+UBERON:0001791						1 A							
+UBERON:0001795						2 A							
+UBERON:0001803							1 A						
+UBERON:0001808							1 A						
+UBERON:0001817			C			2 D, 4 A	1 A						
+UBERON:0001818						1 A							
+UBERON:0001827						1 A							
+UBERON:0001833							1 A	1 D, 1 A					
+UBERON:0001837							1 A	1 D, 1 A					
+UBERON:0001839										2 D, 2 A			
+UBERON:0001840							1 A	2 D, 2 A					
+UBERON:0001844										1 D, 1 A			
+UBERON:0001849		1 A					1 A	2 D, 2 A		1 D, 2 A			
+UBERON:0001855						1 A		3 D, 3 A					
+UBERON:0001856							1 A	3 D, 3 A					
+UBERON:0001860								3 D, 3 A					
+UBERON:0001861								3 D, 3 A					
+UBERON:0001862								2 D, 2 A					
+UBERON:0001869						4 A	1 D, 2 A						
+UBERON:0001870						1 A	1 D, 1 A						
+UBERON:0001871							1 D, 1 A						
+UBERON:0001872							1 D, 1 A						
+UBERON:0001873						1 A	1 D, 1 A						
+UBERON:0001874							1 D, 1 A						
+UBERON:0001875						2 A	1 D, 1 A						
+UBERON:0001876						1 A	1 D, 2 A						
+UBERON:0001877						5 A	1 D, 1 A						
+UBERON:0001878						2 A	1 D, 1 A						
+UBERON:0001879						5 A	1 D, 1 A						
+UBERON:0001880						2 A	1 D, 1 A						
+UBERON:0001881						1 A	1 D, 1 A						
+UBERON:0001882						1 A	1 D, 2 A						
+UBERON:0001883						6 A	1 D, 1 A						
+UBERON:0001886							1 A						
+UBERON:0001888						1 A	1 D, 1 A						
+UBERON:0001890							1 D, 1 A						
+UBERON:0001891							1 D, 1 A						
+UBERON:0001893							1 D, 1 A						
+UBERON:0001894							1 D, 1 A						
+UBERON:0001895							1 D, 1 A						
+UBERON:0001896							1 D, 1 A						
+UBERON:0001897						2 A	1 D, 1 A						
+UBERON:0001898							1 D, 1 A						
+UBERON:0001899							1 D, 1 A						
+UBERON:0001900							1 D, 1 A						
+UBERON:0001903						6 A	1 D, 1 A						
+UBERON:0001904						5 A	1 D, 1 A						
+UBERON:0001905						2 A	1 D, 1 A						
+UBERON:0001908						1 A	1 D, 1 A						
+UBERON:0001909						2 A	1 D, 1 A						
+UBERON:0001910						4 A	1 D, 1 A			1 D, 1 A			
+UBERON:0001920						3 A	1 D, 1 A						
+UBERON:0001921						4 A	1 D, 1 A						
+UBERON:0001922							1 D, 1 A						
+UBERON:0001923						1 A	1 D, 1 A						
+UBERON:0001924						2 A	1 D, 1 A						
+UBERON:0001925							1 D, 1 A						
+UBERON:0001926						4 A	1 D, 1 A						
+UBERON:0001927						3 A	1 D, 1 A			1 A			
+UBERON:0001928						1 A	1 D, 1 A						
+UBERON:0001929						4 A	1 D, 1 A						
+UBERON:0001930						7 A	1 D, 1 A						
+UBERON:0001931						4 A	1 D, 1 A						
+UBERON:0001932						3 A	1 D, 1 A						
+UBERON:0001933						5 A	1 D, 1 A			1 A			
+UBERON:0001934						4 A	1 D, 1 A						
+UBERON:0001935						4 A	1 D, 1 A						
+UBERON:0001936						5 A	1 D, 1 A						
+UBERON:0001937						2 A	1 D, 1 A						
+UBERON:0001938						5 A	1 D, 1 A						
+UBERON:0001939						1 A	1 D, 1 A						
+UBERON:0001940						3 A	1 D, 1 A						
+UBERON:0001941						1 A	1 D, 1 A						
+UBERON:0001942						4 A	1 D, 1 A						
+UBERON:0001943						1 A	1 D, 1 A						
+UBERON:0001944						4 A	1 D, 2 A						
+UBERON:0001945						10 A	1 D, 2 A						
+UBERON:0001946						4 A	1 D, 2 A						
+UBERON:0001947						3 A	1 D, 1 A						
+UBERON:0001948								1 A					
+UBERON:0001950			C			1 A	1 D, 2 A						
+UBERON:0001951						1 A							
+UBERON:0001953						1 A	1 D, 1 A			1 A			
+UBERON:0001954						1 A							
+UBERON:0001957						1 A							
+UBERON:0001960								1 D, 1 A					
+UBERON:0001962								1 D					
+UBERON:0001965						3 A	1 D, 1 A						
+UBERON:0001966						3 A	1 D, 1 A						
+UBERON:0001968						1 A							
+UBERON:0001972						2 A		1 D					
+UBERON:0001974								1 D					
+UBERON:0001975								1 D					
+UBERON:0001978							2 A						
+UBERON:0001981							1 A						
+UBERON:0001997							1 D, 1 A	1 A					
+UBERON:0002000							1 A			1 A			
+UBERON:0002002										1 D, 1 A			
+UBERON:0002021							1 D, 1 A						
+UBERON:0002022						6 A	1 D, 1 A						
+UBERON:0002023						1 A	1 D, 1 A						
+UBERON:0002025							1 A						
+UBERON:0002026							1 A						
+UBERON:0002027							1 A						
+UBERON:0002028							1 D, 1 A	1 A					
+UBERON:0002029								1 D					
+UBERON:0002031							1 A						
+UBERON:0002034						2 A	1 D, 1 A						
+UBERON:0002035						4 A	1 D, 1 A						
+UBERON:0002037						2 A	1 D, 1 A						
+UBERON:0002038						2 A	1 D, 1 A						
+UBERON:0002043						1 A	1 D, 1 A						
+UBERON:0002044						8 A	1 D, 1 A						
+UBERON:0002045						4 A	1 D, 1 A						
+UBERON:0002047						2 A	1 D, 1 A						
+UBERON:0002051							1 A						
+UBERON:0002059								1 D					
+UBERON:0002064						1 A							
+UBERON:0002067							1 A						
+UBERON:0002069							1 A						
+UBERON:0002075						1 A							
+UBERON:0002076								1 A					
+UBERON:0002091							1 A						
+UBERON:0002100							1 A						
+UBERON:0002106								1 D					
+UBERON:0002108							1 A						
+UBERON:0002110								1 D					
+UBERON:0002111						1 A							
+UBERON:0002112								1 D					
+UBERON:0002116							1 A						
+UBERON:0002120								1 D, 1 A					
+UBERON:0002127						4 A	1 D, 1 A						
+UBERON:0002128						2 A	1 D, 1 A			1 D, 1 A			
+UBERON:0002129						1 A	1 D, 1 A						
+UBERON:0002130						2 A	1 D, 1 A						
+UBERON:0002132						3 A	1 D, 1 A						
+UBERON:0002136						3 A	1 D, 1 A	3 D, 1 A		1 D, 1 A			
+UBERON:0002138						6 A	1 D, 1 A						
+UBERON:0002139						1 A	1 D, 1 A						
+UBERON:0002140						2 A	1 D, 1 A						
+UBERON:0002141						8 A	1 D, 1 A						
+UBERON:0002142						2 A	1 D, 1 A	2 D		3 D, 1 A			
+UBERON:0002143						6 A	1 D, 1 A						
+UBERON:0002144						2 A	1 D, 1 A						
+UBERON:0002145						3 A	1 D, 1 A						
+UBERON:0002148						2 A	1 D, 1 A			1 D, 1 A			
+UBERON:0002149						4 A	1 D, 1 A						
+UBERON:0002150						6 A	1 D, 1 A						
+UBERON:0002151						2 A	1 D, 1 A						
+UBERON:0002152						5 A	1 D, 1 A						
+UBERON:0002153						6 A	1 D, 1 A						
+UBERON:0002155						1 A							
+UBERON:0002156							1 D, 1 A						
+UBERON:0002157							1 D, 1 A						
+UBERON:0002160						3 A	1 D, 1 A						
+UBERON:0002161						3 A	1 D, 1 A						
+UBERON:0002162						1 A	1 D, 1 A						
+UBERON:0002163						4 A	1 D, 1 A						
+UBERON:0002164						1 A	1 D, 1 A						
+UBERON:0002173							1 A	2 D, 1 A					
+UBERON:0002181						2 A							
+UBERON:0002185							1 A						
+UBERON:0002186							1 A						
+UBERON:0002196						3 A	1 D, 1 A						
+UBERON:0002197						4 A	1 D, 1 A						
+UBERON:0002198						4 A	1 D, 1 A						
+UBERON:0002202						1 A							
+UBERON:0002204							1 A						
+UBERON:0002206						4 A	1 D, 1 A						
+UBERON:0002212								2 D					
+UBERON:0002214								2 D					
+UBERON:0002226								2 D, 2 A					
+UBERON:0002227								3 D, 2 A		1 D, 1 A			
+UBERON:0002233								2 D, 2 A					
+UBERON:0002240						4 A	1 D, 1 A						
+UBERON:0002242							1 A						
+UBERON:0002244								1 D					
+UBERON:0002247						1 A							
+UBERON:0002254								2 D, 2 A		1 D, 1 A			
+UBERON:0002260						3 A							
+UBERON:0002261						4 A							
+UBERON:0002264						2 A	1 D, 2 A						
+UBERON:0002265						3 A	1 D, 1 A						
+UBERON:0002266						3 A	1 D, 1 A						
+UBERON:0002268													
+UBERON:0002276								2 D, 2 A					
+UBERON:0002280								2 D, 2 A					
+UBERON:0002281								2 D, 2 A					
+UBERON:0002282								2 D, 2 A					
+UBERON:0002288							1 A						
+UBERON:0002290							1 A						
+UBERON:0002291							1 A						
+UBERON:0002295										1 D, 1 A			
+UBERON:0002298						5 A	1 D, 2 A						
+UBERON:0002299							1 A						
+UBERON:0002302							1 A						
+UBERON:0002307							1 A						
+UBERON:0002310						5 A	1 D, 1 A						
+UBERON:0002313						2 A	1 D, 1 A						
+UBERON:0002314						2 A	1 D, 1 A						
+UBERON:0002317						3 A	1 D, 1 A						
+UBERON:0002319								1 D, 1 A					
+UBERON:0002320								1 D, 1 A					
+UBERON:0002321								1 D, 1 A					
+UBERON:0002323						1 A							
+UBERON:0002325						2 A	1 A	2 D, 1 A					
+UBERON:0002326								1 D, 1 A					
+UBERON:0002334						2 A							
+UBERON:0002342							1 A						
+UBERON:0002349							1 A						
+UBERON:0002352						3 D, 3 A		1 D, 1 A		2 D, 1 A			
+UBERON:0002356								2 D					
+UBERON:0002361						1 A	1 A						
+UBERON:0002362							1 A						
+UBERON:0002367								1 D					
+UBERON:0002368			C										
+UBERON:0002371							1 A						
+UBERON:0002372								1 A					
+UBERON:0002373						1 A							
+UBERON:0002379								2 D					
+UBERON:0002389							1 A						
+UBERON:0002397								1 D					
+UBERON:0002399								1 D					
+UBERON:0002403							1 A						
+UBERON:0002410								1 D					
+UBERON:0002412							1 A						
+UBERON:0002418							1 A						
+UBERON:0002421						2 A	1 D, 3 A						
+UBERON:0002430						2 A	1 D, 1 A						
+UBERON:0002433								1 A					
+UBERON:0002434						2 A	1 D, 1 A			2 D, 1 A			
+UBERON:0002435						2 A	1 D, 1 A						
+UBERON:0002436						2 A	1 D, 1 A						
+UBERON:0002437						1 A	1 D, 1 A						
+UBERON:0002438						5 A	1 D, 1 A						
+UBERON:0002439							1 A	1 D					
+UBERON:0002440						1 A							
+UBERON:0002462						1 A							
+UBERON:0002468							1 A						
+UBERON:0002469								1 D					
+UBERON:0002470							1 A						
+UBERON:0002474						3 A	1 D, 1 A						
+UBERON:0002476						8 A	1 D, 1 A						
+UBERON:0002477						8 A	1 D, 1 A						
+UBERON:0002479						5 A	1 D, 1 A						
+UBERON:0002480						2 A	1 D, 1 A						
+UBERON:0002481							1 A						
+UBERON:0002485								1 D					
+UBERON:0002495						1 A							
+UBERON:0002499								2 D, 2 A					
+UBERON:0002501							1 A						
+UBERON:0002502							1 A						
+UBERON:0002512								1 D					
+UBERON:0002518								2 D, 2 A					
+UBERON:0002519								2 D, 2 A					
+UBERON:0002523						2 A							
+UBERON:0002536								1 D					
+UBERON:0002540								1 D					
+UBERON:0002542						1 A							
+UBERON:0002549						2 A	1 D, 1 A						
+UBERON:0002550						1 A	1 D, 1 A						
+UBERON:0002551						3 A	1 D, 1 A						
+UBERON:0002552						1 A	1 D, 1 A						
+UBERON:0002555						1 A	1 D, 1 A						
+UBERON:0002556						2 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002557						2 A	1 D, 1 A						
+UBERON:0002559						1 A	1 D, 1 A						
+UBERON:0002560							1 D, 1 A						
+UBERON:0002562							1 D, 1 A						
+UBERON:0002563						2 A	1 D, 1 A						
+UBERON:0002564						2 A	1 D, 1 A						
+UBERON:0002565						5 A	1 D, 1 A						
+UBERON:0002566						1 A	1 D, 1 A						
+UBERON:0002567						5 A	1 D, 1 A						
+UBERON:0002568						2 A	1 D, 1 A						
+UBERON:0002569						1 A	1 D, 1 A						
+UBERON:0002570						3 A	1 D, 1 A						
+UBERON:0002571						4 A	1 D, 1 A						
+UBERON:0002572						1 A	1 D, 1 A						
+UBERON:0002573						1 A	1 D, 1 A						
+UBERON:0002575							1 D, 1 A						
+UBERON:0002576						2 A	1 D, 1 A						
+UBERON:0002577						4 A	1 D, 1 A						
+UBERON:0002580						4 A	1 D, 1 A						
+UBERON:0002581						3 A	1 D, 1 A						
+UBERON:0002582							1 D, 1 A						
+UBERON:0002583						6 A	1 D, 1 A						
+UBERON:0002585						2 A	1 D, 1 A						
+UBERON:0002586						1 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002587							1 D, 1 A						
+UBERON:0002588						4 A	1 D, 1 A						
+UBERON:0002589						5 A	1 D, 1 A	1 D, 2 A		1 D, 2 A			
+UBERON:0002590						4 A	1 D, 2 A	1 D, 1 A		1 A			
+UBERON:0002591						5 A	1 D, 1 A						
+UBERON:0002592						1 A	1 D, 1 A			1 D, 1 A			
+UBERON:0002593						3 A	1 D, 1 A						
+UBERON:0002594							1 D, 1 A						
+UBERON:0002595						1 A	1 D, 1 A						
+UBERON:0002596						4 A	1 D, 1 A						
+UBERON:0002597						12 A	1 D, 1 A						
+UBERON:0002598						1 A	1 D, 1 A						
+UBERON:0002599						2 A	1 D, 1 A						
+UBERON:0002600						3 A	1 D, 1 A						
+UBERON:0002601						3 A	1 D, 1 A			1 A			
+UBERON:0002602						2 A	1 D, 1 A						
+UBERON:0002603						4 A	1 D, 1 A						
+UBERON:0002604						2 A	1 D, 1 A						
+UBERON:0002605						1 A	1 D, 1 A						
+UBERON:0002607							1 D, 1 A						
+UBERON:0002608						1 A	1 D, 1 A						
+UBERON:0002609						2 A	1 D, 1 A						
+UBERON:0002610				A			1 D, 1 A			1 D, 1 A			
+UBERON:0002612							1 D, 1 A						
+UBERON:0002613						3 A	1 D, 1 A						
+UBERON:0002614						2 A	1 D, 1 A						
+UBERON:0002615						5 A	1 D, 1 A						
+UBERON:0002616								1 A					
+UBERON:0002617						2 A	1 D, 1 A						
+UBERON:0002618						1 A	1 D, 1 A						
+UBERON:0002619							1 A						
+UBERON:0002620							1 D, 1 A						
+UBERON:0002622						5 A	1 D, 1 A						
+UBERON:0002623						4 A	1 D, 1 A						
+UBERON:0002624						1 A	1 D, 1 A						
+UBERON:0002625						4 A	1 D, 1 A						
+UBERON:0002626						2 A	1 D, 1 A						
+UBERON:0002627						1 A	1 D, 1 A						
+UBERON:0002628						3 A	1 D, 1 A						
+UBERON:0002629							1 D, 1 A						
+UBERON:0002630						2 A	1 D, 1 A						
+UBERON:0002631						9 A	1 D, 1 A						
+UBERON:0002632						3 A	1 D, 1 A						
+UBERON:0002633						5 A	2 D, 2 A						
+UBERON:0002634						2 A	1 D, 1 A						
+UBERON:0002636							1 D, 1 A						
+UBERON:0002637							1 D, 1 A						
+UBERON:0002638							1 D, 1 A						
+UBERON:0002639						4 A	1 D, 1 A						
+UBERON:0002640						1 A	1 D, 1 A						
+UBERON:0002641							1 D, 1 A						
+UBERON:0002642						1 A	1 D, 1 A						
+UBERON:0002643						4 A	1 D, 1 A						
+UBERON:0002644							1 D, 1 A						
+UBERON:0002645						1 A	1 D, 1 A						
+UBERON:0002646						2 A	1 D, 1 A						
+UBERON:0002647						1 A	1 D, 1 A						
+UBERON:0002648						1 A	1 D, 1 A						
+UBERON:0002649						4 A	1 D, 1 A						
+UBERON:0002650						2 A	1 D, 1 A						
+UBERON:0002651							1 A						
+UBERON:0002652						1 A	1 D, 1 A						
+UBERON:0002653						4 A	1 D, 1 A						
+UBERON:0002654						3 A	1 D, 1 A						
+UBERON:0002656						3 A	1 D, 1 A						
+UBERON:0002657						1 A	1 D, 1 A						
+UBERON:0002658						2 A	1 D, 1 A						
+UBERON:0002659						5 A	1 D, 1 A						
+UBERON:0002660						2 A	1 D, 1 A						
+UBERON:0002661						2 A	1 D, 1 A						
+UBERON:0002662						1 A	1 D, 1 A						
+UBERON:0002664						4 A	1 D, 1 A						
+UBERON:0002665						3 A	1 D, 1 A						
+UBERON:0002666						4 A	1 D, 1 A						
+UBERON:0002667						3 A	1 D, 1 A						
+UBERON:0002668						1 A	1 D, 1 A						
+UBERON:0002669						4 A	1 D, 1 A	1 D, 1 A		2 A			
+UBERON:0002670						6 A	1 D, 1 A	1 D, 1 A		2 A			
+UBERON:0002671						3 A	1 D, 1 A	1 D, 1 A					
+UBERON:0002672						2 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002673							1 D, 1 A						
+UBERON:0002675						1 A	1 D, 1 A						
+UBERON:0002676						1 A	1 D, 1 A						
+UBERON:0002679						1 A	1 D, 1 A						
+UBERON:0002681							1 D, 1 A						
+UBERON:0002682						2 A	1 D, 1 A						
+UBERON:0002683						1 D, 3 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002684							1 D, 1 A						
+UBERON:0002685						1 A	1 D, 1 A						
+UBERON:0002686						2 A	1 D, 1 A						
+UBERON:0002687						1 A	1 D, 1 A						
+UBERON:0002688						1 A	1 D, 1 A						
+UBERON:0002689						3 A	1 D, 1 A						
+UBERON:0002690						2 A	1 D, 1 A						
+UBERON:0002691						5 A	1 D, 1 A						
+UBERON:0002692						2 A	1 D, 1 A						
+UBERON:0002693						2 A	1 D, 1 A						
+UBERON:0002694						3 A	1 D, 1 A						
+UBERON:0002695							1 D, 1 A						
+UBERON:0002696						3 A	1 D, 1 A						
+UBERON:0002697						2 A	1 D, 1 A						
+UBERON:0002698							1 D, 1 A						
+UBERON:0002699						3 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002700						1 A	1 D, 1 A						
+UBERON:0002701						1 A	1 D, 1 A						
+UBERON:0002702						4 A	1 D, 1 A						
+UBERON:0002703						4 A	1 D, 1 A						
+UBERON:0002704							1 D, 1 A						
+UBERON:0002705						2 A	1 D, 1 A						
+UBERON:0002706						4 A	1 D, 1 A						
+UBERON:0002707		1 A				11 A	1 D, 2 A	2 D, 1 A		2 D, 1 A			
+UBERON:0002708						2 A	1 D, 1 A						
+UBERON:0002709							1 D, 1 A						
+UBERON:0002710							1 D, 1 A						
+UBERON:0002711						4 A	1 D, 1 A						
+UBERON:0002712						3 A	1 D, 1 A						
+UBERON:0002713						7 A	1 D, 1 A						
+UBERON:0002714							1 D, 1 A						
+UBERON:0002715						2 A	1 D, 1 A	1 D, 2 A					
+UBERON:0002716							1 D, 1 A						
+UBERON:0002717						2 A	1 D, 1 A						
+UBERON:0002718						3 A	1 D, 1 A						
+UBERON:0002719						3 A	1 D, 1 A						
+UBERON:0002720						3 A	1 D, 1 A						
+UBERON:0002721						1 A	1 D, 1 A			1 A			
+UBERON:0002722							1 D, 1 A						
+UBERON:0002723						4 A	1 D, 1 A						
+UBERON:0002724						2 A	1 D, 1 A						
+UBERON:0002727						8 A	1 D, 1 A						
+UBERON:0002728						3 A	1 D, 1 A						
+UBERON:0002729						2 A	1 D, 1 A						
+UBERON:0002732						2 A	1 D, 1 A						
+UBERON:0002733							1 D, 1 A						
+UBERON:0002734						2 A	1 D, 1 A						
+UBERON:0002735						2 A	1 D, 1 A						
+UBERON:0002736							1 D, 1 A						
+UBERON:0002737						1 A	1 D, 1 A						
+UBERON:0002738						7 A	1 D, 1 A						
+UBERON:0002739						5 A	1 D, 1 A						
+UBERON:0002740						3 A	1 D, 1 A						
+UBERON:0002741						8 A	1 D, 1 A						
+UBERON:0002742						2 A	1 D, 1 A						
+UBERON:0002743						1 A	1 D, 1 A						
+UBERON:0002744			A			2 A	1 D, 1 A						
+UBERON:0002745						1 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002746						2 A	1 D, 1 A						
+UBERON:0002747						2 A	1 D, 1 A						
+UBERON:0002748						2 A	1 D, 1 A						
+UBERON:0002750						2 A	1 D, 1 A						
+UBERON:0002751							1 D, 1 A						
+UBERON:0002752						3 A	1 D, 1 A						
+UBERON:0002753						1 A	1 D, 1 A						
+UBERON:0002754						2 A	1 D, 1 A						
+UBERON:0002755						2 A	1 D, 1 A	1 D, 1 A		1 D, 3 A			
+UBERON:0002756						4 A	1 D, 1 A						
+UBERON:0002758						1 A	1 D, 1 A						
+UBERON:0002759						6 A	1 D, 1 A						
+UBERON:0002760						3 D, 14 A	1 D, 1 A	1 D, 1 A		2 D, 3 A			
+UBERON:0002761						1 A	1 D, 1 A						
+UBERON:0002763						5 A	1 D, 1 A			1 A			
+UBERON:0002764							1 D, 1 A						
+UBERON:0002765			A			5 A	1 D, 1 A						
+UBERON:0002766						3 A	1 D, 1 A						
+UBERON:0002767							1 D, 1 A						
+UBERON:0002768						2 A	1 D, 1 A	2 D, 1 A		1 D, 2 A			
+UBERON:0002769							1 D, 1 A						
+UBERON:0002770						2 A	1 D, 1 A						
+UBERON:0002771						1 A	1 D, 1 A						
+UBERON:0002772							1 D, 1 A						
+UBERON:0002773						2 A	1 D, 1 A						
+UBERON:0002774						1 A	1 D, 1 A						
+UBERON:0002775							1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002776							1 D, 1 A						
+UBERON:0002778			C			1 A	1 D, 1 A			1 A			
+UBERON:0002779						2 A	1 D, 1 A						
+UBERON:0002781						6 A	1 D, 1 A						
+UBERON:0002782						4 A	1 D, 1 A						
+UBERON:0002783						2 A	1 D, 1 A						
+UBERON:0002786						2 A	1 D, 1 A						
+UBERON:0002787						4 A	1 D, 1 A						
+UBERON:0002788						4 A	1 D, 1 A						
+UBERON:0002790						2 A	1 D, 1 A						
+UBERON:0002793						2 A	1 D, 1 A						
+UBERON:0002794						2 A	1 D, 1 A						
+UBERON:0002795							1 D, 1 A						
+UBERON:0002796						9 A	1 D, 1 A						
+UBERON:0002797						4 A	1 D, 1 A						
+UBERON:0002798						2 A	1 D, 1 A						
+UBERON:0002799						1 A	1 D, 1 A						
+UBERON:0002800						2 A	1 D, 1 A	1 D, 2 A		1 A			
+UBERON:0002801						1 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002814						1 A							
+UBERON:0002816						1 A							
+UBERON:0002820								2 D, 2 A					
+UBERON:0002824						1 A	1 D, 1 A						
+UBERON:0002827						2 A	1 D, 1 A						
+UBERON:0002828						6 A	1 D, 1 A	2 D					
+UBERON:0002829						1 A	1 D, 1 A	2 D					
+UBERON:0002830						5 A	1 D, 1 A	2 D					
+UBERON:0002831						5 A	1 D, 1 A	2 D					
+UBERON:0002864						5 A	1 D, 1 A						
+UBERON:0002865						5 A	1 D, 1 A						
+UBERON:0002866						5 A	1 D, 1 A						
+UBERON:0002867						3 A	1 D, 1 A						
+UBERON:0002868						3 A	1 D, 1 A						
+UBERON:0002869						2 D, 6 A	1 D, 1 A	1 D, 3 A		1 A			
+UBERON:0002870						5 A	1 D, 1 A						
+UBERON:0002871						1 A	1 D, 1 A						
+UBERON:0002872						3 A	1 D, 1 A						
+UBERON:0002873						6 A	1 D, 1 A						
+UBERON:0002874						1 A	1 D, 1 A						
+UBERON:0002875						1 A	1 D, 1 A						
+UBERON:0002876						3 A	2 D, 2 A						
+UBERON:0002877							1 D, 1 A						
+UBERON:0002879						1 A	1 D, 1 A						
+UBERON:0002880						2 A	1 D, 1 A						
+UBERON:0002881						2 A	1 D, 1 A						
+UBERON:0002882						3 A	1 D, 1 A						
+UBERON:0002883						4 A	1 D, 1 A						
+UBERON:0002884						5 A	1 D, 1 A						
+UBERON:0002885						9 A	1 D, 1 A						
+UBERON:0002886						5 A	1 D, 1 A						
+UBERON:0002887						7 A	1 D, 1 A						
+UBERON:0002888						5 A	1 D, 1 A						
+UBERON:0002889						5 A	1 D, 1 A						
+UBERON:0002890						4 A	1 D, 1 A						
+UBERON:0002891						6 A	1 D, 1 A						
+UBERON:0002892						3 A	1 D, 1 A						
+UBERON:0002893						3 A	1 D, 1 A						
+UBERON:0002896						1 A	1 D, 1 A						
+UBERON:0002897						2 A	1 D, 1 A						
+UBERON:0002898							1 D, 1 A						
+UBERON:0002899						1 A	1 D, 1 A						
+UBERON:0002900							1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002901							1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002902							1 D, 1 A						
+UBERON:0002903							1 D, 1 A						
+UBERON:0002904						1 A	1 D, 1 A						
+UBERON:0002905							1 D, 1 A						
+UBERON:0002906							1 D, 1 A						
+UBERON:0002907						1 A	1 D, 1 A						
+UBERON:0002908							1 D, 1 A						
+UBERON:0002909							1 D, 1 A						
+UBERON:0002910						3 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002911							1 D, 1 A						
+UBERON:0002912						1 A	1 D, 1 A						
+UBERON:0002913							2 D, 2 A						
+UBERON:0002914							1 D, 1 A						
+UBERON:0002915							1 D, 1 A						
+UBERON:0002916							1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0002918						2 A	1 D, 1 A						
+UBERON:0002919							1 D, 1 A						
+UBERON:0002920							1 D, 1 A						
+UBERON:0002921							1 D, 1 A						
+UBERON:0002922							1 D, 1 A						
+UBERON:0002923						1 A	1 D, 1 A						
+UBERON:0002924							1 D, 1 A						
+UBERON:0002930						1 A	1 D, 1 A						
+UBERON:0002931						2 A	1 D, 1 A						
+UBERON:0002932						2 A	1 D, 1 A						
+UBERON:0002933						5 A	1 D, 1 A						
+UBERON:0002934						2 A	1 D, 1 A						
+UBERON:0002935						2 A	1 D, 1 A						
+UBERON:0002936						5 A	1 D, 1 A						
+UBERON:0002937						2 A	1 D, 1 A						
+UBERON:0002938						6 A	1 D, 1 A						
+UBERON:0002939						7 A							
+UBERON:0002941						3 A	1 D, 1 A						
+UBERON:0002942						3 A	1 D, 1 A						
+UBERON:0002943							1 D, 1 A						
+UBERON:0002944						2 A	1 D, 1 A						
+UBERON:0002945						1 A	1 D, 1 A						
+UBERON:0002947						1 A	1 D, 1 A						
+UBERON:0002948						1 A	1 D, 1 A						
+UBERON:0002949				A		1 D, 6 A	1 D, 1 A	2 D, 1 A		1 D, 2 A			
+UBERON:0002952						1 A	1 D, 1 A	1 D, 2 A		1 A			
+UBERON:0002953						3 A	1 D, 1 A						
+UBERON:0002954						3 A	1 D, 1 A						
+UBERON:0002955						3 A	1 D, 1 A						
+UBERON:0002956						1 A	1 D, 1 A						
+UBERON:0002957						2 A	1 D, 1 A						
+UBERON:0002958						3 A	1 D, 1 A						
+UBERON:0002959						1 A	1 D, 1 A						
+UBERON:0002960						2 A	1 D, 1 A						
+UBERON:0002961						3 A	1 A	1 D, 1 A		1 A			
+UBERON:0002964						1 A	1 D, 1 A						
+UBERON:0002965							1 D, 1 A						
+UBERON:0002967						2 A	1 D, 1 A						
+UBERON:0002969						4 A	1 D, 1 A						
+UBERON:0002970						1 A	1 D, 1 A						
+UBERON:0002971						1 A	1 D, 1 A						
+UBERON:0002972							1 D, 1 A						
+UBERON:0002973						3 A	1 D, 1 A			1 D, 1 A			
+UBERON:0002974						2 A	1 D, 1 A						
+UBERON:0002975						1 A	1 D, 1 A						
+UBERON:0002976						1 A	1 D, 1 A						
+UBERON:0002977						2 A	1 D, 1 A						
+UBERON:0002978						1 A	1 D, 1 A						
+UBERON:0002979						6 A	1 D, 1 A						
+UBERON:0002980							1 D, 1 A						
+UBERON:0002981						4 A	1 D, 1 A						
+UBERON:0002982							1 D, 1 A						
+UBERON:0002983							1 D, 1 A						
+UBERON:0002984						2 A	1 D, 1 A						
+UBERON:0002985						2 A	1 D, 1 A						
+UBERON:0002987						3 A	1 D, 1 A						
+UBERON:0002990						2 A	1 D, 1 A						
+UBERON:0002991						3 A	1 D, 1 A						
+UBERON:0002992						4 A	1 D, 1 A						
+UBERON:0002994						2 A	1 D, 1 A						
+UBERON:0002995						1 A	1 D, 1 A						
+UBERON:0002996						2 A	1 D, 1 A						
+UBERON:0002998						3 A	1 D, 1 A						
+UBERON:0003005						2 A	1 D, 1 A						
+UBERON:0003006						2 A	1 D, 1 A						
+UBERON:0003007						2 A	1 D, 1 A						
+UBERON:0003008						2 A	1 D, 1 A						
+UBERON:0003009						7 A	1 D, 1 A						
+UBERON:0003010						3 A	1 D, 1 A						
+UBERON:0003011						2 A	1 D, 1 A						
+UBERON:0003016						3 A	1 D, 1 A						
+UBERON:0003017						3 A	1 D, 1 A						
+UBERON:0003018						6 A	1 D, 1 A						
+UBERON:0003019						1 A	1 D, 1 A						
+UBERON:0003020						1 A	1 D, 1 A	1 D, 1 A		1 A			
+UBERON:0003022						2 A							
+UBERON:0003023						2 A	1 D, 1 A						
+UBERON:0003024						3 A	1 D, 1 A						
+UBERON:0003025						3 A	1 D, 1 A						
+UBERON:0003026							1 D, 1 A						
+UBERON:0003028						4 A	1 D, 1 A						
+UBERON:0003029						6 A	1 D, 1 A						
+UBERON:0003030						1 A	1 D, 1 A						
+UBERON:0003031						2 A	1 D, 1 A						
+UBERON:0003033							1 D, 1 A						
+UBERON:0003034							1 D, 1 A						
+UBERON:0003035								1 A					
+UBERON:0003036						1 A	1 D, 1 A						
+UBERON:0003040						9 A	1 D, 2 A	1 D, 1 A		1 A			
+UBERON:0003041						1 A	1 D, 1 A						
+UBERON:0003044						14 A	1 D, 1 A						
+UBERON:0003045						6 A	1 D, 1 A						
+UBERON:0003046						1 A	1 D, 1 A						
+UBERON:0003059							2 A						
+UBERON:0003060								3 D					
+UBERON:0003079							1 A						
+UBERON:0003082							1 A						
+UBERON:0003098								1 D, 2 A					
+UBERON:0003103								1 A					
+UBERON:0003107								1 D					
+UBERON:0003117							1 A						
+UBERON:0003118						3 A							
+UBERON:0003119						3 A							
+UBERON:0003120						3 A							
+UBERON:0003121						3 A							
+UBERON:0003123						3 A							
+UBERON:0003132								1 D					
+UBERON:0003216								1 D					
+UBERON:0003217						7 A	1 D, 1 A						
+UBERON:0003220								1 D, 1 A					
+UBERON:0003221							1 A						
+UBERON:0003238								2 D					
+UBERON:0003239								2 D					
+UBERON:0003240								2 D					
+UBERON:0003243								2 D					
+UBERON:0003248							1 A						
+UBERON:0003258								1 D					
+UBERON:0003259								1 D					
+UBERON:0003260								1 D					
+UBERON:0003267								1 D					
+UBERON:0003268								1 D					
+UBERON:0003273								1 D, 1 A					
+UBERON:0003277								1 D					
+UBERON:0003278								1 D					
+UBERON:0003281								1 D					
+UBERON:0003284								1 D					
+UBERON:0003295								1 A					
+UBERON:0003306								1 A					
+UBERON:0003317							1 A						
+UBERON:0003323								1 D					
+UBERON:0003324								1 D					
+UBERON:0003330								1 D					
+UBERON:0003334								1 D					
+UBERON:0003339								1 A					
+UBERON:0003346								1 D					
+UBERON:0003351								1 A					
+UBERON:0003354								1 D					
+UBERON:0003359						1 A							
+UBERON:0003361						1 A							
+UBERON:0003362								2 D					
+UBERON:0003394								1 D					
+UBERON:0003408								1 D					
+UBERON:0003414								1 D					
+UBERON:0003416								1 D					
+UBERON:0003420								1 D					
+UBERON:0003437								1 A					
+UBERON:0003438								1 A					
+UBERON:0003475								1 D					
+UBERON:0003485								1 D					
+UBERON:0003530							1 A						
+UBERON:0003531							1 A						
+UBERON:0003532							1 A						
+UBERON:0003533							1 A						
+UBERON:0003546								1 D, 1 A					
+UBERON:0003547							1 A						
+UBERON:0003549							1 A						
+UBERON:0003623						1 A							
+UBERON:0003625						1 A							
+UBERON:0003631						2 A							
+UBERON:0003635						2 A							
+UBERON:0003655							1 A						
+UBERON:0003679								1 D					
+UBERON:0003700								1 D, 1 A					
+UBERON:0003705								1 D					
+UBERON:0003714								1 D					
+UBERON:0003718								1 D					
+UBERON:0003719								1 A					
+UBERON:0003723								1 A					
+UBERON:0003729								1 D					
+UBERON:0003820								3 D					
+UBERON:0003829								1 D, 1 A					
+UBERON:0003832								1 D					
+UBERON:0003840							1 A						
+UBERON:0003843						1 A	1 A						
+UBERON:0003856							1 A						
+UBERON:0003859							1 A						
+UBERON:0003860							1 A						
+UBERON:0003881						5 A	1 D, 2 A						
+UBERON:0003882						6 A	1 D, 2 A						
+UBERON:0003883						6 A	1 D, 2 A						
+UBERON:0003884						4 D, 4 A	2 A						
+UBERON:0003890								1 D, 1 A					
+UBERON:0003904								1 D, 1 A					
+UBERON:0003905								1 D, 1 A					
+UBERON:0003906							1 A						
+UBERON:0003910								2 D					
+UBERON:0003929							1 A	1 D, 1 A					
+UBERON:0003941						1 A							
+UBERON:0003942								1 D					
+UBERON:0003945								1 D, 1 A					
+UBERON:0003959								1 D					
+UBERON:0003965								1 D, 1 A					
+UBERON:0003966								1 D					
+UBERON:0003974								1 D					
+UBERON:0003976								3 D, 3 A					
+UBERON:0003977								3 D, 3 A					
+UBERON:0003979								2 D, 2 A					
+UBERON:0003985										1 D			
+UBERON:0003986			C			1 A				1 D			
+UBERON:0003987								1 A					
+UBERON:0004014								1 D					
+UBERON:0004016							1 A						
+UBERON:0004023							1 A						
+UBERON:0004024								1 D					
+UBERON:0004025								1 D					
+UBERON:0004026								1 D					
+UBERON:0004027							1 A						
+UBERON:0004032								1 D, 1 A					
+UBERON:0004033								1 D, 1 A					
+UBERON:0004035							1 A						
+UBERON:0004040							1 A						
+UBERON:0004043							1 A	2 D, 2 A					
+UBERON:0004045								1 D					
+UBERON:0004047						4 A							
+UBERON:0004058								1 D, 1 A					
+UBERON:0004074						1 A							
+UBERON:0004076						1 A							
+UBERON:0004077						1 A							
+UBERON:0004079						1 A							
+UBERON:0004086							2 A	1 A					
+UBERON:0004103								1 D					
+UBERON:0004114						1 A							
+UBERON:0004117							1 A						
+UBERON:0004141							1 A						
+UBERON:0004163								1 D					
+UBERON:0004179								1 D, 1 A					
+UBERON:0004184								1 D					
+UBERON:0004185							1 A	1 D, 1 A	1 D, 1 A				
+UBERON:0004188								3 D					
+UBERON:0004190	C					1 A		1 D, 1 A					
+UBERON:0004196								1 D, 1 A					
+UBERON:0004197								1 D, 1 A					
+UBERON:0004200								1 A					
+UBERON:0004203								1 D, 1 A	1 D, 1 A				
+UBERON:0004204								1 D, 1 A					
+UBERON:0004205								1 D, 1 A					
+UBERON:0004212								1 D					
+UBERON:0004219								1 D					
+UBERON:0004221								1 D					
+UBERON:0004222								1 D					
+UBERON:0004223								1 D					
+UBERON:0004225						1 A							
+UBERON:0004228								1 D					
+UBERON:0004230						1 A							
+UBERON:0004231								1 D					
+UBERON:0004238								1 D					
+UBERON:0004240								1 D					
+UBERON:0004289								1 D, 1 A					
+UBERON:0004344						2 A							
+UBERON:0004355								1 D, 1 A					
+UBERON:0004358								1 D, 1 A					
+UBERON:0004359								1 D, 1 A					
+UBERON:0004360								1 D, 1 A					
+UBERON:0004363						1 A							
+UBERON:0004381							1 A						
+UBERON:0004453							1 A						
+UBERON:0004470						1 A	1 A						
+UBERON:0004477								1 D					
+UBERON:0004486								2 D					
+UBERON:0004527								1 D, 1 A					
+UBERON:0004528								1 D, 1 A					
+UBERON:0004544								3 D					
+UBERON:0004550							2 A	1 D					
+UBERON:0004637								1 D, 1 A					
+UBERON:0004641								1 D, 1 A					
+UBERON:0004645								2 D, 1 A					
+UBERON:0004657								1 D, 1 A					
+UBERON:0004658								1 D, 1 A					
+UBERON:0004659								1 D, 1 A					
+UBERON:0004660								1 D, 1 A					
+UBERON:0004661								1 D, 1 A					
+UBERON:0004665								1 D					
+UBERON:0004670								1 D					
+UBERON:0004671						1 A	1 D, 1 A						
+UBERON:0004672							1 A						
+UBERON:0004683							1 D, 1 A						
+UBERON:0004686								1 D, 1 A					
+UBERON:0004687								1 D, 1 A					
+UBERON:0004697								1 D					
+UBERON:0004713								1 D					
+UBERON:0004714						2 A	1 D, 1 A						
+UBERON:0004716				A				1 D, 1 A					
+UBERON:0004718						2 A	1 D, 1 A						
+UBERON:0004721							1 A	2 D, 2 A					
+UBERON:0004725						6 A	1 D, 2 A			1 D			
+UBERON:0004727							1 A	1 A					
+UBERON:0004731								1 A					
+UBERON:0004732								1 D					
+UBERON:0004733								1 A					
+UBERON:0004735								1 D					
+UBERON:0004737								1 D, 1 A		1 A			
+UBERON:0004738								1 D, 1 A					
+UBERON:0004742								1 D					
+UBERON:0004749						3 A							
+UBERON:0004750						2 A							
+UBERON:0004752								1 D					
+UBERON:0004757								1 D					
+UBERON:0004771							1 A						
+UBERON:0004780								1 D					
+UBERON:0004781								1 D					
+UBERON:0004783								1 D					
+UBERON:0004786								1 D					
+UBERON:0004796						1 A							
+UBERON:0004802							1 A						
+UBERON:0004803								3 D					
+UBERON:0004805								3 D					
+UBERON:0004807							1 A						
+UBERON:0004813								3 D					
+UBERON:0004829								1 D					
+UBERON:0004831								1 D					
+UBERON:0004832								1 D					
+UBERON:0004833								1 D, 1 A					
+UBERON:0004835								1 D					
+UBERON:0004851						1 A							
+UBERON:0004883							1 A						
+UBERON:0004893						1 D							
+UBERON:0004894		1 A											
+UBERON:0004902							2 A						
+UBERON:0004906								1 D, 1 A	1 D, 1 A				
+UBERON:0004907							1 D						
+UBERON:0004914								1 D					
+UBERON:0004916								2 D					
+UBERON:0004919				D		1 D, 1 A	1 D						
+UBERON:0004921								1 D					
+UBERON:0004922							1 A						
+UBERON:0004926								1 A					
+UBERON:0004938								1 D					
+UBERON:0004939								1 A					
+UBERON:0004940								1 A					
+UBERON:0004941								1 A					
+UBERON:0004942								1 A					
+UBERON:0004943							1 A	1 D, 1 A					
+UBERON:0004944							1 A						
+UBERON:0004945							1 A						
+UBERON:0004980								1 D, 1 A					
+UBERON:0004983								1 D					
+UBERON:0004984								1 D					
+UBERON:0004988								1 A					
+UBERON:0004994							2 A						
+UBERON:0004999								1 D					
+UBERON:0005000								1 A					
+UBERON:0005001								1 A					
+UBERON:0005002								1 A					
+UBERON:0005003								1 A					
+UBERON:0005090							1 A						
+UBERON:0005093						1 A							
+UBERON:0005096								1 A					
+UBERON:0005097								3 D					
+UBERON:0005101								3 D					
+UBERON:0005102								3 D					
+UBERON:0005103								3 D					
+UBERON:0005108								3 D					
+UBERON:0005109								1 D					
+UBERON:0005110								1 D, 1 A					
+UBERON:0005111								1 D, 1 A					
+UBERON:0005113								1 D, 1 A					
+UBERON:0005115								1 D, 1 A					
+UBERON:0005116								1 D, 1 A					
+UBERON:0005121								1 D, 1 A					
+UBERON:0005122								1 D, 1 A					
+UBERON:0005123								1 D, 1 A					
+UBERON:0005137								1 D, 1 A					
+UBERON:0005162						1 A							
+UBERON:0005170								1 D					
+UBERON:0005172			C										
+UBERON:0005173			C	D									
+UBERON:0005174	C		C		1 D	1 A							
+UBERON:0005176							1 A						
+UBERON:0005177			C										
+UBERON:0005178			C										
+UBERON:0005179	C		C			1 A							
+UBERON:0005180			D										
+UBERON:0005181			C										
+UBERON:0005192								1 D					
+UBERON:0005196								1 D, 1 A					
+UBERON:0005205								1 D					
+UBERON:0005220							2 A						
+UBERON:0005223							2 A						
+UBERON:0005224							2 A						
+UBERON:0005226							1 A						
+UBERON:0005227							1 A						
+UBERON:0005233								2 D, 1 A					
+UBERON:0005250								1 D					
+UBERON:0005255							1 A						
+UBERON:0005257							1 A						
+UBERON:0005283								1 D					
+UBERON:0005286								1 A					
+UBERON:0005287								1 A					
+UBERON:0005288								1 A					
+UBERON:0005289								1 A					
+UBERON:0005295								3 D					
+UBERON:0005296							1 A						
+UBERON:0005301								1 D					
+UBERON:0005308								1 D, 1 A					
+UBERON:0005309								1 D, 1 A					
+UBERON:0005310								3 D					
+UBERON:0005319								1 D, 1 A					
+UBERON:0005320								1 D, 1 A					
+UBERON:0005321								1 D					
+UBERON:0005322								1 D, 1 A					
+UBERON:0005323								1 D, 1 A					
+UBERON:0005324								1 D, 1 A					
+UBERON:0005334								1 D					
+UBERON:0005340								1 D, 2 A		1 A			
+UBERON:0005342								1 D					
+UBERON:0005343							1 A						
+UBERON:0005349						1 A							
+UBERON:0005353								1 D, 1 A					
+UBERON:0005354								1 D					
+UBERON:0005355								1 D					
+UBERON:0005356								1 D					
+UBERON:0005357								1 A					
+UBERON:0005358								1 D, 1 A					
+UBERON:0005359								1 A					
+UBERON:0005360							1 A						
+UBERON:0005361							1 A						
+UBERON:0005371						1 A	1 D, 1 A						
+UBERON:0005372							1 D, 1 A						
+UBERON:0005376						2 A							
+UBERON:0005378						2 A							
+UBERON:0005393													
+UBERON:0005397							1 A						
+UBERON:0005402								1 D, 1 A					
+UBERON:0005403						1 A							
+UBERON:0005424						3 A							
+UBERON:0005425						2 A							
+UBERON:0005433								1 D					
+UBERON:0005441							1 A						
+UBERON:0005448								1 D					
+UBERON:0005477							1 A						
+UBERON:0005496							1 A						
+UBERON:0005500							2 A						
+UBERON:0005501							2 A						
+UBERON:0005502							2 A						
+UBERON:0005600								2 D, 2 A					
+UBERON:0005619								1 D					
+UBERON:0005620								2 D, 1 A					
+UBERON:0005659								1 D					
+UBERON:0005670								2 D					
+UBERON:0005685								1 D					
+UBERON:0005686								1 D					
+UBERON:0005705								1 D					
+UBERON:0005711								1 D, 1 A					
+UBERON:0005712								1 D, 1 A					
+UBERON:0005724							1 A						
+UBERON:0005728							2 A						
+UBERON:0005749								1 D, 1 A					
+UBERON:0005760								2 D					
+UBERON:0005777								1 D, 1 A					
+UBERON:0005787								1 D, 1 A					
+UBERON:0005788								1 D, 1 A					
+UBERON:0005789								1 D, 1 A					
+UBERON:0005866							1 A						
+UBERON:0005871								1 D, 1 A					
+UBERON:0005879							1 A						
+UBERON:0005890						1 A							
+UBERON:0005903								1 D					
+UBERON:0005904			C										
+UBERON:0005905								1 D, 1 A					
+UBERON:0005911						2 A							
+UBERON:0005932								1 A					
+UBERON:0005933								1 A					
+UBERON:0005941							1 A						
+UBERON:0005942							1 A						
+UBERON:0005943								1 A					
+UBERON:0005968								1 A					
+UBERON:0005979								1 A					
+UBERON:0005980								1 A					
+UBERON:0005981								1 D, 1 A					
+UBERON:0005986								1 D, 2 A					
+UBERON:0005987								1 D, 2 A					
+UBERON:0005994								1 D, 1 A					
+UBERON:0006009								1 A					
+UBERON:0006048						1 A							
+UBERON:0006049						3 A							
+UBERON:0006050						3 A							
+UBERON:0006051						3 A							
+UBERON:0006052						4 A							
+UBERON:0006059								1 A					
+UBERON:0006081								1 D					
+UBERON:0006082								1 D, 1 A					
+UBERON:0006086						2 A	1 D, 1 A	1 A		1 D, 2 A			
+UBERON:0006087						3 A	1 D, 1 A						
+UBERON:0006088						5 A	1 D, 1 A						
+UBERON:0006089						2 A	1 D, 1 A						
+UBERON:0006090						1 A	1 D, 1 A						
+UBERON:0006091							1 A						
+UBERON:0006092						1 A	1 D, 1 A						
+UBERON:0006093						2 A	1 D, 1 A						
+UBERON:0006094						2 A	1 D, 1 A						
+UBERON:0006095							1 D, 1 A						
+UBERON:0006096							1 D, 1 A						
+UBERON:0006097						4 A	1 D, 1 A						
+UBERON:0006098						3 A	1 D, 1 A						
+UBERON:0006099						1 A	1 D, 1 A						
+UBERON:0006100						1 A	1 D, 1 A						
+UBERON:0006101						5 A	1 D, 1 A						
+UBERON:0006107							1 D, 1 A						
+UBERON:0006108						2 A	1 D, 1 A						
+UBERON:0006114						2 A	1 D, 1 A						
+UBERON:0006115								1 D, 1 A		1 A			
+UBERON:0006116						1 A	1 D, 1 A						
+UBERON:0006117						1 A	1 D, 1 A						
+UBERON:0006125										1 A			
+UBERON:0006134								1 D					
+UBERON:0006170								1 D, 1 A					
+UBERON:0006217								2 D, 2 A					
+UBERON:0006223								1 D, 1 A					
+UBERON:0006260								1 D, 1 A					
+UBERON:0006262								1 D					
+UBERON:0006263								1 D					
+UBERON:0006284						1 A							
+UBERON:0006293								1 D, 1 A					
+UBERON:0006307								1 D, 1 A					
+UBERON:0006311						1 A							
+UBERON:0006331							1 A						
+UBERON:0006333							1 A						
+UBERON:0006360								1 D					
+UBERON:0006364						1 A							
+UBERON:0006373								1 D, 1 A					
+UBERON:0006377								1 D					
+UBERON:0006435								1 D					
+UBERON:0006438						2 A							
+UBERON:0006444							1 A						
+UBERON:0006471						3 A	1 D, 1 A						
+UBERON:0006472						3 A	1 D, 1 A						
+UBERON:0006473						3 A	1 D, 1 A						
+UBERON:0006482										1 D, 1 A			
+UBERON:0006514							1 A						
+UBERON:0006516			A				1 A						
+UBERON:0006517								1 D, 1 A					
+UBERON:0006553								1 D, 1 A					
+UBERON:0006585										1 A			
+UBERON:0006606								1 D		1 D, 1 A			
+UBERON:0006638								1 A					
+UBERON:0006639								1 D					
+UBERON:0006641								1 D					
+UBERON:0006645								1 D					
+UBERON:0006646								1 D					
+UBERON:0006648								1 D					
+UBERON:0006649								1 D					
+UBERON:0006652								1 D					
+UBERON:0006654								2 D, 1 A					
+UBERON:0006656								1 D					
+UBERON:0006658										1 D, 1 A			
+UBERON:0006669								1 D					
+UBERON:0006672								1 D					
+UBERON:0006676								1 D					
+UBERON:0006688								1 D					
+UBERON:0006691								1 A					
+UBERON:0006698						7 A	1 D, 1 A						
+UBERON:0006699	C						1 A	3 A		1 D, 3 A			
+UBERON:0006722								1 D					
+UBERON:0006725								2 D, 2 A					
+UBERON:0006742								1 D, 1 A		2 D, 2 A			
+UBERON:0006743						2 A	1 D, 1 A						
+UBERON:0006783						1 A							
+UBERON:0006786						1 A							
+UBERON:0006794								1 D					
+UBERON:0006795								1 A					
+UBERON:0006796								1 A					
+UBERON:0006855								1 D, 1 A					
+UBERON:0006856								1 D					
+UBERON:0006857								1 D, 1 A					
+UBERON:0006867								2 D					
+UBERON:0006905								1 D					
+UBERON:0006909							1 A						
+UBERON:0006911						1 A							
+UBERON:0006931							2 A						
+UBERON:0006932							1 A	2 D					
+UBERON:0006934								1 D					
+UBERON:0006937							1 A						
+UBERON:0006951						1 A							
+UBERON:0006959								1 D, 1 A					
+UBERON:0006964						3 A	1 D, 1 A						
+UBERON:0006976								1 D					
+UBERON:0007026						6 A		1 D		1 D, 2 A			
+UBERON:0007105								2 D, 1 A					
+UBERON:0007132								1 D					
+UBERON:0007136								1 A					
+UBERON:0007193										1 A			
+UBERON:0007227						1 A							
+UBERON:0007230						1 A							
+UBERON:0007236							1 A						
+UBERON:0007252			C										
+UBERON:0007254			C										
+UBERON:0007255			C										
+UBERON:0007257			C										
+UBERON:0007260									3 A	2 A			
+UBERON:0007261									3 A	2 A			
+UBERON:0007262									3 A	2 A			
+UBERON:0007263									3 A	2 A			
+UBERON:0007264									3 A	2 A			
+UBERON:0007265						2 A			3 A	2 A			
+UBERON:0007266						2 A	1 D		3 A	2 A			
+UBERON:0007315								1 D					
+UBERON:0007329							2 A						
+UBERON:0007331								1 D					
+UBERON:0007332								1 D					
+UBERON:0007334										1 D, 1 A			
+UBERON:0007347										1 D, 1 A			
+UBERON:0007349										1 D, 1 A			
+UBERON:0007350			C			2 A				1 D, 3 A			
+UBERON:0007351										1 D, 1 A			
+UBERON:0007352								2 D, 2 A					
+UBERON:0007356								1 D					
+UBERON:0007615							1 A						
+UBERON:0007633						5 A	1 D, 1 A						
+UBERON:0007637							1 D, 1 A						
+UBERON:0007639						1 A	1 D, 1 A						
+UBERON:0007640						2 A	1 D, 1 A						
+UBERON:0007690							1 A						
+UBERON:0007691								1 D					
+UBERON:0007702				C			1 D						
+UBERON:0007707						2 A	1 D, 1 A						
+UBERON:0007709						2 A	1 D, 2 A						
+UBERON:0007722										1 D, 1 A			
+UBERON:0007798						1 A							
+UBERON:0007825								2 D, 2 A					
+UBERON:0007844							1 A						
+UBERON:0008199								1 D, 1 A					
+UBERON:0008231										1 D, 1 A			
+UBERON:0008253								1 D, 2 A					
+UBERON:0008266								1 D					
+UBERON:0008275						3 A				1 A			
+UBERON:0008276						2 A	1 D						
+UBERON:0008286								1 A					
+UBERON:0008290								1 A					
+UBERON:0008307						1 A							
+UBERON:0008311								1 D					
+UBERON:0008320								1 D					
+UBERON:0008321								1 D					
+UBERON:0008322								1 D					
+UBERON:0008323								1 D					
+UBERON:0008428								1 D, 1 A					
+UBERON:0008447										1 D, 1 A			
+UBERON:0008583							2 A						
+UBERON:0008584							2 A						
+UBERON:0008585								1 D, 1 A					
+UBERON:0008586								1 D, 1 A					
+UBERON:0008596								1 D, 1 A					
+UBERON:0008713							1 A						
+UBERON:0008715								1 D					
+UBERON:0008776						1 A							
+UBERON:0008791								1 D					
+UBERON:0008798								1 D					
+UBERON:0008799								1 D					
+UBERON:0008802								1 D					
+UBERON:0008807								1 D					
+UBERON:0008813								2 D, 2 A					
+UBERON:0008824								1 D					
+UBERON:0008829						1 A							
+UBERON:0008830						1 A							
+UBERON:0008835								2 A					
+UBERON:0008842								1 D					
+UBERON:0008859								1 A					
+UBERON:0008861							2 A	1 A					
+UBERON:0008862								1 D					
+UBERON:0008863								1 D, 1 A					
+UBERON:0008873								1 A					
+UBERON:0008874						1 A				1 D			
+UBERON:0008906								1 A					
+UBERON:0008917								1 D					
+UBERON:0008918								1 D					
+UBERON:0008930						2 A							
+UBERON:0008946						1 A							
+UBERON:0008971								1 D					
+UBERON:0008972								1 D					
+UBERON:0008978								1 D					
+UBERON:0008982										1 D, 1 A			
+UBERON:0009010								1 D, 1 A					
+UBERON:0009034								1 D					
+UBERON:0009050						5 A	1 D, 1 A						
+UBERON:0009095								1 D, 1 A					
+UBERON:0009097						1 A							
+UBERON:0009121								1 A					
+UBERON:0009127								1 A					
+UBERON:0009130								1 D, 2 A					
+UBERON:0009194							1 A						
+UBERON:0009195								1 D, 1 A					
+UBERON:0009199										1 D, 1 A			
+UBERON:0009200							1 A						
+UBERON:0009201								1 D					
+UBERON:0009203										1 D, 1 A			
+UBERON:0009206								2 D, 1 A					
+UBERON:0009207								1 D					
+UBERON:0009471								1 D					
+UBERON:0009478								1 D					
+UBERON:0009482								1 D					
+UBERON:0009483								1 D					
+UBERON:0009494							1 A						
+UBERON:0009495								1 D					
+UBERON:0009496								1 D					
+UBERON:0009503								1 D					
+UBERON:0009521								3 D, 2 A	1 D, 2 A	1 A			
+UBERON:0009522								1 D, 1 A					
+UBERON:0009538								1 D					
+UBERON:0009539								1 D					
+UBERON:0009550								1 D					
+UBERON:0009566								1 D					
+UBERON:0009568						1 A							
+UBERON:0009585							1 A						
+UBERON:0009600							1 A						
+UBERON:0009601							1 A						
+UBERON:0009616							2 A						
+UBERON:0009664							1 A						
+UBERON:0009670							2 A						
+UBERON:0009671								1 D, 2 A					
+UBERON:0009672								1 D, 2 A					
+UBERON:0009679								1 D					
+UBERON:0009680								1 D					
+UBERON:0009722							1 A	1 D					
+UBERON:0009835						1 A							
+UBERON:0009836						1 A	1 D, 1 A						
+UBERON:0009845							2 A						
+UBERON:0009846								2 D					
+UBERON:0009882								1 D					
+UBERON:0009908								1 A					
+UBERON:0009909								1 A					
+UBERON:0009916								1 D, 1 A					
+UBERON:0009919								1 D					
+UBERON:0009960								1 D, 1 A					
+UBERON:0009961								1 D, 1 A					
+UBERON:0009967								1 D					
+UBERON:0010010						7 A	1 D, 1 A						
+UBERON:0010011							1 A						
+UBERON:0010012								1 D, 1 A					
+UBERON:0010013								1 D, 1 A					
+UBERON:0010016								1 D					
+UBERON:0010031							1 A						
+UBERON:0010032								1 D					
+UBERON:0010033								1 D					
+UBERON:0010034								1 D, 1 A					
+UBERON:0010038							2 A	1 A					
+UBERON:0010039								1 D					
+UBERON:0010054								1 D					
+UBERON:0010056								1 D		2 D, 1 A			
+UBERON:0010057								1 D, 1 A					
+UBERON:0010059								1 D, 1 A					
+UBERON:0010062							1 A						
+UBERON:0010074								1 A					
+UBERON:0010131			A					1 D, 1 A					
+UBERON:0010133								1 D					
+UBERON:0010147						1 A							
+UBERON:0010150								1 D					
+UBERON:0010151								2 D, 1 A					
+UBERON:0010170							1 A						
+UBERON:0010174								1 D, 1 A					
+UBERON:0010185								1 D					
+UBERON:0010330							1 A						
+UBERON:0010332							1 A						
+UBERON:0010337								1 D, 1 A					
+UBERON:0010368								1 D, 1 A	2 A				
+UBERON:0010369			A										
+UBERON:0010373						1 D, 3 A	1 A						
+UBERON:0010386								1 D					
+UBERON:0010387								1 D					
+UBERON:0010399								1 D					
+UBERON:0010400								1 D					
+UBERON:0010401								1 D					
+UBERON:0010412								1 D					
+UBERON:0010421								1 D, 1 A					
+UBERON:0010426								1 D					
+UBERON:0010533								1 D, 1 A					
+UBERON:0010537								1 D, 1 A					
+UBERON:0010585							1 A						
+UBERON:0010586							1 A						
+UBERON:0010685							1 A						
+UBERON:0010686							1 A						
+UBERON:0010687							1 A						
+UBERON:0010697							1 A						
+UBERON:0010698							1 A						
+UBERON:0010699							1 A						
+UBERON:0010700							1 A						
+UBERON:0010701							1 A						
+UBERON:0010702							1 A						
+UBERON:0010743							1 A						
+UBERON:0010756								1 D, 1 A					
+UBERON:0010887								1 D, 1 A					
+UBERON:0011014						1 A							
+UBERON:0011060								1 D, 1 A					
+UBERON:0011079								1 D					
+UBERON:0011085								1 D					
+UBERON:0011094							1 A						
+UBERON:0011095							1 A						
+UBERON:0011133										1 D, 1 A			
+UBERON:0011135										1 D, 1 A			
+UBERON:0011172						3 A	1 D, 1 A						
+UBERON:0011183								1 D					
+UBERON:0011199								1 D					
+UBERON:0011204								1 D, 1 A					
+UBERON:0011267								1 D					
+UBERON:0011268								1 D					
+UBERON:0011283								1 D					
+UBERON:0011288								1 D					
+UBERON:0011309								1 D, 1 A					
+UBERON:0011310								1 D, 1 A					
+UBERON:0011318								1 D, 1 A					
+UBERON:0011319								1 D, 1 A					
+UBERON:0011320								1 D, 1 A					
+UBERON:0011332								1 D, 1 A					
+UBERON:0011345								1 D					
+UBERON:0011346								1 D					
+UBERON:0011349								1 D					
+UBERON:0011358								1 A					
+UBERON:0011359								1 A					
+UBERON:0011388								1 D					
+UBERON:0011390								1 D					
+UBERON:0011391								1 D					
+UBERON:0011510								1 D, 1 A					
+UBERON:0011535								1 D, 1 A					
+UBERON:0011595							1 A	1 D					
+UBERON:0011598								1 D					
+UBERON:0011628								1 D					
+UBERON:0011635								1 D					
+UBERON:0011636								1 D					
+UBERON:0011637								1 D					
+UBERON:0011640								1 D					
+UBERON:0011641							1 A						
+UBERON:0011657						1 A							
+UBERON:0011658										1 A			
+UBERON:0011659										1 A			
+UBERON:0011660			A							1 A			
+UBERON:0011661			A							1 A			
+UBERON:0011662	C					1 D				1 A			
+UBERON:0011663	C												
+UBERON:0011664	C												
+UBERON:0011667										1 A			
+UBERON:0011668	C		D					1 D			A	1 A	
+UBERON:0011669						1 A				1 A			
+UBERON:0011671	C		C										
+UBERON:0011672	C		C			2 A				1 A			
+UBERON:0011754							1 A						
+UBERON:0011756							1 A						
+UBERON:0011774								3 D, 3 A	1 D, 1 A				
+UBERON:0011830								2 D, 1 A					
+UBERON:0011847								1 D					
+UBERON:0011850								1 D					
+UBERON:0011876								1 D					
+UBERON:0011878								1 D					
+UBERON:0011901								1 A					
+UBERON:0011922								2 D, 2 A					
+UBERON:0011947								1 D, 1 A					
+UBERON:0011948								1 D, 1 A					
+UBERON:0011951								1 D, 1 A					
+UBERON:0011953							1 A						
+UBERON:0011954							2 A						
+UBERON:0012074								1 D					
+UBERON:0012105								1 D					
+UBERON:0012106								1 D					
+UBERON:0012187						1 A							
+UBERON:0012239								1 D, 1 A					
+UBERON:0012240								1 D, 1 A					
+UBERON:0012242								1 D, 1 A					
+UBERON:0012247							1 D						
+UBERON:0012270								1 D					
+UBERON:0012275						2 A							
+UBERON:0012279								1 A					
+UBERON:0012281								2 D					
+UBERON:0012287								1 A					
+UBERON:0012292								2 D					
+UBERON:0012293								2 D					
+UBERON:0012294								1 D					
+UBERON:0012295								1 D					
+UBERON:0012296								1 D, 1 A					
+UBERON:0012299								1 D, 1 A					
+UBERON:0012303								1 D, 1 A					
+UBERON:0012317								1 D					
+UBERON:0012327								1 D					
+UBERON:0012328								1 D					
+UBERON:0012330								1 A					
+UBERON:0012336								1 D					
+UBERON:0012337								1 D					
+UBERON:0012356						1 A							
+UBERON:0012360								1 D					
+UBERON:0012361								2 D					
+UBERON:0012367								1 D					
+UBERON:0012376								1 D					
+UBERON:0012378								1 D, 1 A					
+UBERON:0012398								1 D, 1 A					
+UBERON:0012399								1 D, 1 A					
+UBERON:0012401								1 D, 1 A					
+UBERON:0012402								1 D, 1 A					
+UBERON:0012420								1 D, 1 A					
+UBERON:0012421								1 D, 1 A					
+UBERON:0012427								1 D					
+UBERON:0012428								1 D, 1 A					
+UBERON:0012453								1 D					
+UBERON:0012462								1 D, 1 A					
+UBERON:0012464								1 D, 1 A					
+UBERON:0012468								2 D					
+UBERON:0012469								2 D					
+UBERON:0012471								1 D, 1 A					
+UBERON:0012472								1 D, 1 A					
+UBERON:0012478								1 D, 1 A					
+UBERON:0012480								1 D, 1 A					
+UBERON:0012481							2 A	1 D					
+UBERON:0012482								1 D, 1 A					
+UBERON:0012483								1 D					
+UBERON:0012485								1 D, 1 A					
+UBERON:0012486								1 D, 1 A					
+UBERON:0012487								1 D					
+UBERON:0012490						2 A							
+UBERON:0012504								1 D					
+UBERON:0012621								1 D, 1 A					
+UBERON:0012650								1 D					
+UBERON:0013128								1 D					
+UBERON:0013132								1 D					
+UBERON:0013135								1 D					
+UBERON:0013153								1 A					
+UBERON:0013154								1 A					
+UBERON:0013156								1 A					
+UBERON:0013204													
+UBERON:0013208			C					1 A					
+UBERON:0013217								1 D, 1 A					
+UBERON:0013232			A			1 A							
+UBERON:0013241								1 D					
+UBERON:0013244								1 D, 1 A					
+UBERON:0013245								1 D, 1 A					
+UBERON:0013248								3 D					
+UBERON:0013249								3 D					
+UBERON:0013450								1 D, 1 A					
+UBERON:0013476								1 D					
+UBERON:0013477										1 A			
+UBERON:0013499								1 D					
+UBERON:0013501								1 D, 1 A					
+UBERON:0013525							1 A						
+UBERON:0013528						3 A	1 D, 1 A						
+UBERON:0013529						8 A	1 D, 1 A						
+UBERON:0013533						1 A	1 D, 1 A						
+UBERON:0013535						1 A	1 D, 1 A						
+UBERON:0013538						4 A	1 D, 1 A						
+UBERON:0013539						2 A	1 D, 1 A						
+UBERON:0013540						2 A	1 D, 1 A						
+UBERON:0013541						3 A	1 D, 1 A						
+UBERON:0013543						1 A	1 D, 1 A						
+UBERON:0013544							1 D, 1 A						
+UBERON:0013545							1 D, 1 A						
+UBERON:0013546						4 A	1 D, 1 A						
+UBERON:0013547						3 A	1 D, 1 A						
+UBERON:0013550						2 A	1 D, 1 A						
+UBERON:0013551						2 A	1 D, 1 A						
+UBERON:0013552						2 A	1 D, 1 A						
+UBERON:0013553						2 A	1 D, 1 A						
+UBERON:0013554						3 A	1 D, 1 A						
+UBERON:0013556						1 A	1 D, 1 A						
+UBERON:0013558						2 A	1 D, 1 A						
+UBERON:0013559						1 A	1 D, 1 A						
+UBERON:0013560						4 A	1 D, 1 A						
+UBERON:0013561						2 A	1 D, 1 A						
+UBERON:0013562						2 A	1 D, 1 A						
+UBERON:0013612								1 D					
+UBERON:0013613								1 D					
+UBERON:0013656								1 D, 2 A					
+UBERON:0013689								1 D					
+UBERON:0013691													
+UBERON:0013695								1 D					
+UBERON:0013731								2 D, 2 A					
+UBERON:0013738						1 A							
+UBERON:0013763								1 D					
+UBERON:0013764								2 D, 2 A					
+UBERON:0014169						3 A	1 D, 2 A						
+UBERON:0014284							1 D, 2 A						
+UBERON:0014387							1 A						
+UBERON:0014397								1 D					
+UBERON:0014451								1 D, 1 A					
+UBERON:0014458								1 D					
+UBERON:0014473										1 D, 1 A			
+UBERON:0014475								2 D, 1 A	1 D, 1 A				
+UBERON:0014521						1 A	1 D, 1 A						
+UBERON:0014540						6 A	1 D, 1 A						
+UBERON:0014544						1 A	1 D, 1 A						
+UBERON:0014606							1 D, 1 A						
+UBERON:0014608						2 A	1 D, 1 A						
+UBERON:0014615						10 A	1 D, 1 A						
+UBERON:0014618						3 A	1 D, 1 A						
+UBERON:0014624						1 A							
+UBERON:0014640						1 A	1 D, 1 A						
+UBERON:1000000								1 D					
+UBERON:1000011								1 D					
+UBERON:1000023								1 D, 1 A					
+UBERON:1000024								1 D, 1 A					
+UBERON:2000116								2 D					
+UBERON:2000168								2 D					
+UBERON:2000181	C							1 D		1 D	A		
+UBERON:2000224								1 D					
+UBERON:2000228								1 D					
+UBERON:2000232								2 D					
+UBERON:2000234								2 D					
+UBERON:2000246	C							1 D		1 D	A		
+UBERON:2000256	C							1 D		1 D	A		
+UBERON:2000299	C							1 D		1 D	A		
+UBERON:2000315								2 A					
+UBERON:2000340	C							1 D		1 D	A		
+UBERON:2000343	C							1 D		1 D	A		
+UBERON:2000391	C							1 D		1 D	A		
+UBERON:2000412								2 D					
+UBERON:2000456	C							1 D		1 D	A		
+UBERON:2000469								2 D					
+UBERON:2000479								1 A					
+UBERON:2000487	C							1 D		1 D	A		
+UBERON:2000506	C							1 D		1 D	A		
+UBERON:2000536	C							1 D		1 D	A		
+UBERON:2000657								1 D					
+UBERON:2000689	C							1 D		1 D	A		
+UBERON:2000699								1 D, 1 A					
+UBERON:2000819	C							1 D		1 D	A		
+UBERON:2000910								1 A					
+UBERON:2001076								1 D, 1 A					
+UBERON:2001157								1 A					
+UBERON:2001200								1 D, 1 A					
+UBERON:2001274								1 D					
+UBERON:2001293								1 D, 1 A					
+UBERON:2001312								1 A					
+UBERON:2001313								1 A					
+UBERON:2001314								1 A					
+UBERON:2001324								1 D					
+UBERON:2001339	C							1 D		1 D	A		
+UBERON:2001430								1 D					
+UBERON:2001577								1 D, 1 A					
+UBERON:2001578								1 D					
+UBERON:2001603								1 D, 1 A					
+UBERON:2001610								1 D					
+UBERON:2001611								1 D					
+UBERON:2001688								1 D					
+UBERON:2001689								1 D					
+UBERON:2001690								1 D					
+UBERON:2001691								1 D					
+UBERON:2002009								1 D					
+UBERON:2002020								1 D					
+UBERON:2002099								1 D					
+UBERON:2002108								1 D, 1 A					
+UBERON:2002179	C							1 D		1 D	A		
+UBERON:2002180	C							1 D			A		
+UBERON:2002193								2 D, 2 A					
+UBERON:2002204	C							1 D			A		
+UBERON:2002222	C							1 D		1 D	A		
+UBERON:2002223								2 D, 2 A					
+UBERON:2002225								1 D, 1 A					
+UBERON:2002257								1 D, 1 A					
+UBERON:2005144								1 A					
+UBERON:2005227								1 D					
+UBERON:2005256								1 D					
+UBERON:2005260						1 A							
+UBERON:2005279								1 D					
+UBERON:2007055								1 A					
+UBERON:3000003								1 D, 1 A					
+UBERON:3000012								1 D, 1 A					
+UBERON:3000017								1 D, 1 A					
+UBERON:3000022								1 D, 1 A					
+UBERON:3000031								1 D					
+UBERON:3000036								1 D					
+UBERON:3000038								1 D					
+UBERON:3000110								1 D, 1 A					
+UBERON:3000111								1 D, 1 A					
+UBERON:3000112								1 D, 1 A					
+UBERON:3000115								1 D, 1 A					
+UBERON:3000177								1 D, 1 A					
+UBERON:3000237								1 D					
+UBERON:3000255								1 D, 1 A					
+UBERON:3000281								1 D, 1 A					
+UBERON:3000288								1 D					
+UBERON:3000295								1 D					
+UBERON:3000323								1 D					
+UBERON:3000363								1 D					
+UBERON:3000365								1 D					
+UBERON:3000374								1 D, 1 A					
+UBERON:3000375								1 D, 1 A					
+UBERON:3000380								1 D					
+UBERON:3000393								2 D, 2 A					
+UBERON:3000394								1 D					
+UBERON:3000395								2 D, 2 A					
+UBERON:3000396								1 D, 1 A					
+UBERON:3000397								1 D, 1 A					
+UBERON:3000400								1 D, 1 A					
+UBERON:3000401								1 D, 1 A					
+UBERON:3000413								1 D, 1 A					
+UBERON:3000414								1 D, 1 A					
+UBERON:3000446								1 D					
+UBERON:3000450								1 D					
+UBERON:3000459								1 D, 1 A					
+UBERON:3000467								1 D, 1 A					
+UBERON:3000492								1 D, 1 A					
+UBERON:3000493								1 D					
+UBERON:3000500								1 D, 1 A					
+UBERON:3000505								1 D, 1 A					
+UBERON:3000509								1 D, 1 A					
+UBERON:3000512								1 D, 1 A					
+UBERON:3000516								1 D					
+UBERON:3000518								1 D					
+UBERON:3000523								1 D					
+UBERON:3000527								1 D					
+UBERON:3000543								1 D					
+UBERON:3000597								1 D					
+UBERON:3000645								1 D					
+UBERON:3000646								1 D, 1 A					
+UBERON:3000647								1 D, 1 A					
+UBERON:3000650								1 D, 1 A					
+UBERON:3000651								1 D, 1 A					
+UBERON:3000653								1 D, 1 A					
+UBERON:3000654								1 D, 1 A					
+UBERON:3000966								1 D					
+UBERON:3000998								1 D					
+UBERON:3001003								1 D, 1 A					
+UBERON:3010061								1 D					
+UBERON:3010094								1 D					
+UBERON:3010144								1 D					
+UBERON:3010392								1 D, 1 A					
+UBERON:3010393								1 D, 1 A					
+UBERON:3010394								1 D, 1 A					
+UBERON:3010431								1 D					
+UBERON:3010432								1 D					
+UBERON:3010455								1 D					
+UBERON:3010458								1 D					
+UBERON:3010528								1 D					
+UBERON:3010589								1 D, 1 A					
+UBERON:3010632								1 A					
+UBERON:3010671								1 D					
+UBERON:3010706								1 D					
+UBERON:3010726								1 D					
+UBERON:3010735								1 A					
+UBERON:3010736								1 A					
+UBERON:3010750								1 D					
+UBERON:3010751								1 D					
+UBERON:3010820								1 D					
+UBERON:3010824								1 D					
+UBERON:3011120								1 D, 1 A					
+UBERON:3011121								1 D, 1 A					
 
 
 
@@ -897,17 +2170,17 @@ FILE STATS
 Term counts for the old and new files
 
 Ontology	Old file	New file	Change
-uberon	8837	8853	+16
-	(7143 defined)	(7234 defined)	
-uberon/phenoscape-anatomy	2286	2285	-1
-	(1530 defined)	(1530 defined)	
+uberon	8853	8895	+42
+	(7234 defined)	(7274 defined)	
+uberon/phenoscape-anatomy	2285	2267	-18
+	(1530 defined)	(1526 defined)	
 
-Obsolete	588	589	+1
-	(5.0% of total)	 (5.0% of total)	(+0.2%)
+Obsolete	589	608	+19
+	(5.0% of total)	 (5.2% of total)	(+3.2%)
 
-Totals	11123	11138	+16 (+0.1%)
-	8673 (78.0%) defined	8764 (78.7%) defined	
-	11711 inc. obs	11727 inc. obs
+Totals	11138	11162	+43 (+0.4%)
+	8764 (78.7%) defined	8800 (78.8%) defined	
+	11727 inc. obs	11770 inc. obs
 
 
 

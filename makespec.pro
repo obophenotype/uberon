@@ -14,7 +14,8 @@ anatomy('FMA').
 anatomy('WBbt').
 anatomy('FBbt').
 anatomy(amniote).
-anatomy(emapaa).
+%%anatomy(emapaa).
+anatomy('EMAPA').
 anatomy(ehdaa2).
 anatomy(snomed_anatomy).
 anatomy('NIFGA').

@@ -934,3 +934,12 @@ uberon-nif-merged.owl: uberon-nif-combined.obo
 
 uberon-nif-merged.obo:  uberon-nif-merged.owl
 	owltools $< -o -f obo --no-check $@
+
+source-ontologies/NeuroNames.obo: source-ontologies/NeuroNames.xml
+	./util/nn2obo.pl $< > $@
+
+# ----------------------------------------
+# UTIL
+# ----------------------------------------
+util/ubermacros.el:
+	blip-findall  -r pext -r taxslim -consult util/write_ubermacros.pro  w > $@

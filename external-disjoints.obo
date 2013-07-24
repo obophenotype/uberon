@@ -1,10 +1,9 @@
 format-version: 1.2
 ontology: uberon/external-disjoints
 property_value: dc-title "Uberon external disjoints" xsd:string
-property_value: dc-description "This ontology contains disjointness axioms between Uberon classes and classes from external ontologies (mostly anatomy ontologies). Use of this ontology can help prevent accidental associations between classes which may on the surface seem similar or equivalent (for example, based on the term) but are in fact completely distinct. This ontology can be used on combination with an OWL reasoner." xsd:string
+property_value: dc-description "This ontology contains disjointness axioms between Uberon classes and classes from external ontologies (mostly anatomy ontologies). Use of this ontology can help prevent accidental associations between classes which may on the surface seem similar or equivalent (for example, based on the term) but are in fact completely distinct. This ontology can be used on combination with an OWL reasoner. For more details, see the homepage of this ontology - http://purl.obolibrary.org/obo/uberon/docs/Inter-ontology-disjointness-Design-Pattern" xsd:string
 property_value: dc-creator "Chris Mungall" xsd:string
-property_value: foaf-homepage "http://uberon.org" xsd:anyURI
-property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000016" xsd:anyURI
+property_value: foaf-homepage "http://purl.obolibrary.org/obo/uberon/docs/Inter-ontology-disjointness-Design-Pattern" xsd:anyURI
 idspace: NIF_GrossAnatomy http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#
 
 [Term]
@@ -872,6 +871,22 @@ disjoint_from: XAO:0004176 ! choroidal vascular plexus
 [Term]
 id: UBERON:0002815 ! horizontal fissure of cerebellum
 disjoint_from: FMA:14697 ! Horizontal fissure
+
+[Term]
+id: UBERON:0001019 ! fascicle
+disjoint_from: BTO:0004101 ! fascicle
+
+[Term]
+id: UBERON:0007843 ! uncinate process of ribs
+disjoint_from: EMAPA:17509 ! uncinate process
+
+[Term]
+id: UBERON:0010372 ! uncinate process of ethmoid
+disjoint_from: EMAPA:17509 ! uncinate process
+
+[Term]
+id: UBERON:0002387 ! pes
+disjoint_from: CEPH:0000169 ! molluscan foot
 
 [Typedef]
 id: foaf-homepage
