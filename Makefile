@@ -21,12 +21,17 @@ uberon_edit.owl: uberon_edit.obo
 ### TODO - restore --expand-macros
 ###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 
+pe:
+	mkdir pe
+
+# note: developers may want to do this via a symlink
+pe/phenoscape-ext.owl: pe
+	wget http://purl.obolibrary.org/obo/uberon/phenoscape-ext.owl -O $@
+
 # this is primarily used for seeding
 phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
-#t:
-#	echo $(RELEASE)
 
 corecheck.owl: uberon_edit.obo 
 	owltools $(UCAT) $< external-disjoints.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
@@ -224,7 +229,7 @@ bridge-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
 
 # TODO: add to Oort
 %-xp-check: %.obo
-	obo-check-xps.pl $< >& $@ || (echo "problems" && exit 1)
+	obo-check-xps.pl $< > $@ 2> $@.err || (echo "problems" && exit 1)
 
 
 # See: http://douroucouli.wordpress.com/2012/07/03/45/
@@ -274,7 +279,7 @@ QC_FILES = uberon_edit-xp-check\
 
 
 uberon-qc: $(QC_FILES) all_systems
-	cat merged-orphans uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
+	cat merged-orphans uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check.err uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 
 
 

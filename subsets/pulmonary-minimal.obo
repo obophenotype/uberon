@@ -2649,6 +2649,7 @@ xref: http://upload.wikimedia.org/wikipedia/commons/8/84/Gray51.png
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Gray51.png/200px-Gray51.png
 xref: MA:0000289
 xref: MESH:A04.531.591.940
+xref: NeuroNames:1566
 xref: SCTID:361346007
 xref: VHOG:0000665
 xref: Wikipedia:Vomeronasal_organ
@@ -2821,6 +2822,7 @@ xref: MESH:A03.867.603.925
 xref: ncithesaurus:Tonsil
 xref: ncithesaurus:Tonsilar_Tissue
 xref: ncithesaurus:Tonsillar_Lymphoid_Tissue
+xref: NeuroNames:671
 xref: OpenCyc:Mx4rvVivrZwpEbGdrcN5Y29ycA
 xref: UMLS:C0836921 {source="ncithesaurus:Tonsil"}
 xref: UMLS:C1519547 {source="ncithesaurus:Tonsilar_Tissue"}
@@ -8160,7 +8162,7 @@ comment: Taxon notes: Baleen whales have two blowholes positioned in a V-shape w
 synonym: "blowhole slit" NARROW []
 xref: Wikipedia:Blowhole_(anatomy)
 is_a: UBERON:0005928 ! external naris
-relationship: evolved_from UBERON:0005928 ! external naris
+relationship: evolved_from UBERON:0005928 {subset="musculoskeletal"} ! external naris
 
 [Term]
 id: UBERON:0013479
@@ -8244,6 +8246,47 @@ synonym: "trunk of elephant" EXACT []
 xref: SCTID:41253007
 relationship: has_fused_element UBERON:0007827 ! external nose
 relationship: part_of UBERON:0001004 ! respiratory system
+
+[Term]
+id: UBERON:0014765
+name: crus of diaphragm
+namespace: uberon
+def: "The crura of the diaphragm are tendinous structures that extend inferiorly from the diaphragm to attach to the vertebral column." [Wikipedia:Crus_of_diaphragm]
+synonym: "crura of the diaphragm" RELATED [Wikipedia:Crus_of_diaphragm]
+synonym: "crus of the diaphragm" RELATED [Wikipedia:Crus_of_diaphragm]
+synonym: "diaphragm crura" RELATED PLURAL []
+synonym: "diaphragmatic crura" RELATED [Wikipedia:Crus_of_diaphragm]
+xref: EHDAA2:0000597
+xref: EMAPA:17703
+xref: SCTID:244668003
+xref: Wikipedia:Crus_of_diaphragm
+relationship: part_of UBERON:0001103 {source="EMAPA"} ! diaphragm
+
+[Term]
+id: UBERON:0014766
+name: right crus of diaphragm
+namespace: uberon
+synonym: "right crus of diaphragm" EXACT [FMA:58286]
+synonym: "right crus of lumbar part of diaphragm" EXACT [FMA:58286]
+xref: FMA:58286
+xref: SCTID:362690009
+is_a: UBERON:0014765 ! crus of diaphragm
+intersection_of: UBERON:0014765 ! crus of diaphragm
+intersection_of: in_right_side_of UBERON:0001103 ! diaphragm
+relationship: in_right_side_of UBERON:0001103 ! diaphragm
+
+[Term]
+id: UBERON:0014767
+name: left crus of diaphragm
+namespace: uberon
+synonym: "left crus of diaphragm" EXACT [FMA:58287]
+synonym: "left crus of lumbar part of diaphragm" EXACT [FMA:58287]
+xref: FMA:58287
+xref: SCTID:244937004
+is_a: UBERON:0014765 ! crus of diaphragm
+intersection_of: UBERON:0014765 ! crus of diaphragm
+intersection_of: in_left_side_of UBERON:0001103 ! diaphragm
+relationship: in_left_side_of UBERON:0001103 ! diaphragm
 
 [Term]
 id: UBERON:1000012

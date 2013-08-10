@@ -27,6 +27,7 @@ anatomy(vhog).
 anatomy(galen).
 anatomy(rad).
 anatomy(caloha).
+anatomy(neuronames).
 
 allow_dangling(ceph).
 allow_dangling(uberon_edit).
