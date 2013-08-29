@@ -1,0 +1,648 @@
+format-version: 1.2
+subsetdef: abnormal_slim "Abnormal/normal slim"
+subsetdef: absent_slim "Absent/present slim"
+subsetdef: attribute_slim "Attribute slim"
+subsetdef: cell_quality "cell_quality"
+subsetdef: cumbo "CUMBO"
+subsetdef: cyclostome_subset "cyclostome structures"
+subsetdef: defined_by_ordinal_series "classes that are defined by relative position counting from first in a series of elements along an axis in an individual organism rather than by strict homology"
+subsetdef: developmental_classification "developmental_classification"
+subsetdef: disjointness_axiom_removed "A class which has a weakened disjointness axiom, to avoid inconsistency. These are kept separately in the uberon_disjoint_from_strict ontology."
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: dubious_grouping "Indicates that subclasses in AOs may be inappropriately linked"
+subsetdef: early_development "A class that represents an early developmental structure, like a blastocyst. This part of the ontology is undergoing review to remove inappropriate grouping classes."
+subsetdef: efo_slim "EFO slim"
+subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to be checked"
+subsetdef: functional_classification "functional_classification"
+subsetdef: goslim_aspergillus "Aspergillus GO slim"
+subsetdef: goslim_candida "Candida GO slim"
+subsetdef: goslim_generic "Generic GO slim"
+subsetdef: goslim_goa "GOA and proteome slim"
+subsetdef: goslim_metagenomics "Metagenomics GO slim"
+subsetdef: goslim_pir "PIR GO slim"
+subsetdef: goslim_plant "Plant GO slim"
+subsetdef: goslim_pombe "Fission yeast GO slim"
+subsetdef: goslim_yeast "Yeast GO slim"
+subsetdef: gosubset_prok "Prokaryotic GO subset"
+subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
+subsetdef: high_level_annotation_qc "High-level terms not to be used for direct annotation"
+subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
+subsetdef: inherited_grouping_class "A grouping class that originates in two or more separate anatomical ontologies. Includes 'region of X' type terms"
+subsetdef: loose_concept "loose concept"
+subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
+subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord, peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
+subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
+subsetdef: mf_needs_review "Catalytic activity terms in need of attention"
+subsetdef: non_informative "abstract class brought in to group ontology classes but not informative"
+subsetdef: organ_slim "organs, excluding individual muscles and skeletal elements"
+subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: uberon_slim "Uberon slim - somewhat arbitrary subset that excludes obscure terms and deep compositional terms"
+subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
+subsetdef: unvetted ""
+subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
+subsetdef: upper_ontology_conflict "Terms in this subset group together terms from different anatomy ontologies that have conflicting upper ontology/CARO assignments. For example, in FMA the naris is immaterial and in ZFA it is an organism subdivision."
+subsetdef: value_slim "Value slim"
+subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
+subsetdef: vessel_or_tree "A term classified differently in FMA due to its treatment of branching structures - to be reviewed and revised by editors"
+subsetdef: virus_checked "Viral overhaul terms"
+synonymtypedef: ABBREVIATION "abbreviation"
+synonymtypedef: ATTRIBUTION_REQUIRED "expert consultation and attribution required"
+synonymtypedef: BRAND_NAME "BRAND NAME"
+synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged"
+synonymtypedef: DEVELOPMENTAL "developmental term"
+synonymtypedef: DUBIOUS "dubious or contested synonym"
+synonymtypedef: FORMULA "FORMULA"
+synonymtypedef: HOMOLOGY "a synonym made on the basis of a possibly homologous structure in another species"
+synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
+synonymtypedef: InChI "InChI"
+synonymtypedef: InChIKey "InChIKey"
+synonymtypedef: INCONSISTENT "indicates that a synonym is used in an inconsistent or confusing way, typically between species"
+synonymtypedef: INN "INN"
+synonymtypedef: IUPAC_NAME "IUPAC NAME"
+synonymtypedef: LATIN "latin term"
+synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
+synonymtypedef: PLURAL "plural term"
+synonymtypedef: PRO-short-label "Unique short label for PRO terms for display purposes" EXACT
+synonymtypedef: PSI-MOD-label "Unique short label curated by PSI-MOD" EXACT
+synonymtypedef: SENSU "taxonomic disambiguation"
+synonymtypedef: SMILES "SMILES"
+synonymtypedef: systematic_synonym "Systematic synonym" EXACT
+ontology: uberon/subsets/cumbo
+
+[Term]
+id: UBERON:0000119
+name: cell layer
+namespace: uberon
+def: "Portion of tissue, that consists of one or more layers of cells connected to each other by cell junctions. Examples: layer of glial cells; epithelium." [https://orcid.org/0000-0002-6601-2165]
+subset: cumbo
+subset: upper_level
+synonym: "cell sheath" RELATED []
+synonym: "layer of cells" EXACT []
+synonym: "sheath of cells" RELATED []
+property_value: external_definition "Single layer of a laminar structure, identified by different density, arrangement or size of cells and processes arranged in flattened layers or lamina." xsd:string {source="Neurolex:nlx_149357"}
+
+[Term]
+id: UBERON:0000955
+name: brain
+namespace: uberon
+def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [http://purl.obolibrary.org/obo/uberon/tracker/300, Wikipedia:Brain]
+comment: include synganglion?
+subset: cumbo
+subset: efo_slim
+subset: major_organ
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "encephalon" RELATED [BTO:0000142]
+synonym: "suprasegmental levels of nervous system" RELATED [NeuroNames:21]
+synonym: "suprasegmental structures" RELATED [NeuroNames:21]
+synonym: "synganglion" RELATED []
+synonym: "the brain" RELATED [NeuroNames:21]
+xref: AAO:0010478
+xref: ABA:Brain
+xref: BILA:0000135
+xref: BTO:0000142
+xref: CALOHA:TS-0095
+xref: EFO:0000302
+xref: EHDAA2:0000183
+xref: EHDAA:2641
+xref: EHDAA:6485
+xref: EMAPA:16894
+xref: EV:0100164
+xref: FBbt:00005095
+xref: FMA:50801
+xref: GAID:571
+xref: galen:Brain
+xref: MA:0000168
+xref: MAT:0000098
+xref: MESH:A08.186.211
+xref: MIAA:0000098
+xref: ncithesaurus:Brain
+xref: NeuroNames:21 {source="NIF_GrossAnatomy:birnlex_796"}
+xref: NIF_GrossAnatomy:birnlex_796
+xref: OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA
+xref: SCTID:258335003
+xref: TAO:0000008
+xref: UMLS:C0006104 {source="ncithesaurus:Brain"}
+xref: UMLS:C0006104 {source="NIF_GrossAnatomy:birnlex_796"}
+xref: UMLS:C1269537 {source="NIF_GrossAnatomy:birnlex_796"}
+xref: VHOG:0000157
+xref: Wikipedia:Brain
+xref: XAO:0000010
+xref: ZFA:0000008
+relationship: part_of UBERON:0001016 ! nervous system
+property_value: external_definition "Cavitated compound organ which is comprised of gray and white matter and surrounds the cerebral ventricular system.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000008", ontology="TAO", source="ZFIN:curator"}
+property_value: external_definition "Part of the central nervous system situated within the cranium and composed of both nerve cell bodies and nerve fibers.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010478", ontology="AAO", source="AAO:BJB"}
+property_value: external_definition "The part of the central nervous system contained within the cranium, comprising the forebrain, midbrain, hindbrain, and metencephalon. It is derived from the anterior part of the embryonic neural tube (or the encephalon). Does not include retina. (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000157"}
+property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000157", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28, ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165", source="http://bgee.unil.ch/"}
+
+[Term]
+id: UBERON:0001016
+name: nervous system
+namespace: uberon
+def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [ISBN:0-14-051288-8, ISBN:3110148986, NLM:nervous+system, WB:rynl, Wikipedia:Nervous_system, ZFIN:curator]
+comment: This class was created automatically from a combination of ontologies
+subset: cumbo
+subset: efo_slim
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "nerve net" NARROW [Wikipedia:Nerve_net]
+synonym: "Nervensystem" RELATED [BTO:0001484]
+synonym: "systema nervosum" RELATED LATIN [Wikipedia:Nervous_system]
+xref: AAO:0000324
+xref: BILA:0000079
+xref: BTO:0001484
+xref: CALOHA:TS-1313
+xref: EFO:0000802
+xref: EHDAA2:0001246
+xref: EHDAA:826
+xref: EMAPA:16469
+xref: EV:0100162
+xref: FBbt:00005093
+xref: FMA:7157
+xref: GAID:466
+xref: http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nervous_system_diagram.png/200px-Nervous_system_diagram.png
+xref: MA:0000016
+xref: MAT:0000026
+xref: MESH:A08
+xref: MIAA:0000026
+xref: ncithesaurus:Nervous_System
+xref: NeuroNames:3236
+xref: NIF_GrossAnatomy:birnlex_844
+xref: OpenCyc:Mx4rvViT_pwpEbGdrcN5Y29ycA
+xref: SCTID:278196006
+xref: TAO:0000396
+xref: UMLS:C0027763 {source="ncithesaurus:Nervous_System"}
+xref: VHOG:0000402
+xref: WBbt:0005735
+xref: Wikipedia:Nervous_system
+xref: XAO:0000177
+xref: ZFA:0000396
+property_value: axiom_lost_from_external_ontology "relationship type change: differentiates_from ectoderm (AAO:0000137) CHANGED TO: develops_from ectoderm (UBERON:0000924)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000324", ontology="AAO"}
+property_value: external_definition "A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000396", ontology="TAO", source="ZFIN:curator"}
+property_value: external_definition "Anatomical system consisting of nerve bodies and nerve fibers which regulate the response of the body to external and internal stimuli.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000324", ontology="AAO", source="AAO:BJB"}
+property_value: has_relational_adjective "nervous" xsd:string
+property_value: has_relational_adjective "neural" xsd:string
+property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000402"}
+property_value: homology_notes "Nervous systems evolved in the ancestor of Eumetazoa.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000402", ontology="VHOG", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.117", source="http://bgee.unil.ch/"}
+
+[Term]
+id: UBERON:0006238
+name: future brain
+namespace: uberon
+def: "The embryonic precursor of the brain and the set of mature brain structures that derive from it (CUMBO)" [Neurolex:nlx_94995]
+comment: Usage notes: this class is restricted to neural-tube derived brains
+subset: cumbo
+subset: efo_slim
+subset: emapa_ehdaa2
+subset: vertebrate_core
+synonym: "brain rudiment" EXACT [TAO:0000146]
+synonym: "encephalon" EXACT [Neurolex:nlx_94995]
+synonym: "presumptive brain" EXACT [ZFA:0000146]
+xref: EFO:0003431
+xref: EHDAA:300
+xref: EHDAA:830
+xref: EMAPA:16089
+xref: EMAPA:16471
+xref: RETIRED_EHDAA2:0000591
+xref: TAO:0000146
+xref: ZFA:0000146
+relationship: develops_from UBERON:0000119 ! cell layer
+relationship: develops_from UBERON:0001016 ! nervous system
+
+[Term]
+id: UBERON:0014778
+name: cell group
+namespace: uberon
+def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala" [Neurolex:nlx_532]
+subset: cumbo
+subset: upper_level
+synonym: "group of cells" EXACT []
+
+[Typedef]
+id: ambiguous_for_taxon
+name: ambiguous_for_taxon
+namespace: uberon
+def: "S ambiguous_for_taxon T if the class S does not have a clear referent in taxon T. An example would be the class 'manual digit 1', which encompasses a homology hypotheses that is accepted for some species (e.g. human and mouse), but does not have a clear referent in Aves - the referent is dependent on the hypothesis embraced, and also on the ontogenetic stage." [PHENOSCPAE:asilomar_mtg]
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: appendage_segment_number
+name: appendage segment number
+namespace: uberon
+def: "x appendage_segment_number N if and only if (i) x is a appendage_segment, and (ii) x is appendage_segment number N in a series of appendage_segments repeated along an proximo-distal axis, with appendage_segment_number 1 being the proximalmost appendage_segment (in tetrapods this would be the stylopod, as we do not classify girdles as appendage segments)." [https://orcid.org/0000-0002-6601-2165]
+comment: Examples: in dropsphila coxa=1, trochanter=2, femur=3, tibia=4, tarsal segments 1-5=5-9, pretarsus=10
+xref: UBPROP:0000110
+property_value: is_count_of UBERON:0010758
+property_value: preceding_element_is BSPO:0000100
+is_metadata_tag: true
+
+[Typedef]
+id: axiom_lost_from_external_ontology
+name: axiom_lost_from_external_ontology
+namespace: uberon
+def: "A textual description of an axiom loss in this ontology compared to an external ontology." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000002
+is_metadata_tag: true
+
+[Typedef]
+id: dc-contributor
+name: contributor
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/contributor
+is_metadata_tag: true
+
+[Typedef]
+id: dc-creator
+name: creator
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/creator
+is_metadata_tag: true
+
+[Typedef]
+id: dc-description
+name: description
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/description
+is_metadata_tag: true
+
+[Typedef]
+id: dc-publisher
+name: publisher
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/publisher
+is_metadata_tag: true
+
+[Typedef]
+id: dc-rights
+name: rights
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/rights
+is_metadata_tag: true
+
+[Typedef]
+id: dc-source
+name: derived from resource
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/source
+is_metadata_tag: true
+
+[Typedef]
+id: dc-title
+name: title
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/title
+is_metadata_tag: true
+
+[Typedef]
+id: dcterms-isReferencedBy
+name: is referenced by
+namespace: uberon
+xref: http://purl.org/dc/terms/isReferencedBy
+is_metadata_tag: true
+
+[Typedef]
+id: dental_formula
+name: dental formula
+namespace: uberon
+def: "Syntax: upper/lower = I.C.P.M / I.C.P.M. When used with generic tooth class applies to both deciduous and primary. Should also be used with a taxon property." [Wikipedia:Dentition#Dental_formula]
+xref: UBPROP:0000113
+is_metadata_tag: true
+
+[Typedef]
+id: develops_from
+name: develops_from
+namespace: uberon
+xref: RO:0002202
+holds_over_chain: part_of develops_from
+is_transitive: true
+transitive_over: part_of ! part_of
+
+[Typedef]
+id: doap-GitRepository
+name: Git repository
+namespace: uberon
+xref: http://usefulinc.com/ns/doap#GitRepository
+is_metadata_tag: true
+
+[Typedef]
+id: doap-SVNRepository
+name: SVN repository
+namespace: uberon
+xref: http://usefulinc.com/ns/doap#SVNRepository
+is_metadata_tag: true
+
+[Typedef]
+id: doap-bug-database
+name: bug database
+namespace: uberon
+xref: http://usefulinc.com/ns/doap#bug-database
+is_metadata_tag: true
+
+[Typedef]
+id: doap-mailing-list
+name: mailing list
+namespace: uberon
+xref: http://usefulinc.com/ns/doap#mailing-list
+is_metadata_tag: true
+
+[Typedef]
+id: doap-wiki
+name: wiki
+namespace: uberon
+xref: http://usefulinc.com/ns/doap#wiki
+is_metadata_tag: true
+
+[Typedef]
+id: dubious_for_taxon
+name: dubious_for_taxon
+namespace: uberon
+def: "S dubious_for_taxon T if it is probably the case that no instances of S can be found in any instance of T." [https://orcid.org/0000-0002-6601-2165]
+comment: this relation lacks a strong logical interpretation, but can be used in place of never_in_taxon where it is desirable to state that the definition of the class is too strict for the taxon under consideration, but placing a never_in_taxon link would result in a chain of inconsistencies that will take time to resolve. Example: metencephalon in teleost
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: example_of_usage
+name: example of usage
+namespace: uberon
+xref: IAO:0000122
+is_metadata_tag: true
+
+[Typedef]
+id: external_comment
+name: external_comment
+namespace: uberon
+def: "An alternate comment for a class taken unmodified from an external source. Note that obo format only allows a single comment for a class, and does not provide a structured means of adding provenance info." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000005
+is_metadata_tag: true
+
+[Typedef]
+id: external_definition
+name: external_definition
+namespace: uberon
+def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000001
+is_metadata_tag: true
+
+[Typedef]
+id: fma_set_term
+name: fma_set_term
+namespace: uberon
+comment: FMA has terms like 'set of X'. In general we do not include set-of terms in uberon, but provide a mapping between the singular form and the FMA set term
+is_metadata_tag: true
+
+[Typedef]
+id: foaf-depicted_by
+name: depicted_by
+namespace: uberon
+xref: http://xmlns.com/foaf/0.1/depicted_by
+is_metadata_tag: true
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+namespace: uberon
+xref: http://xmlns.com/foaf/0.1/homepage
+is_metadata_tag: true
+
+[Typedef]
+id: has_no_connections_with
+name: has_no_connections_with
+namespace: uberon
+def: "A is has_no_connections_with B if there are no parts of A or B that have a connection with the other." [https://orcid.org/0000-0002-6601-2165]
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (UBREL_0000001 some (BFO_0000050 some ?Y)), (BFO_0000050 some ?Y) and (UBREL_0000001 some (BFO_0000050 some ?X))" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: has_relational_adjective
+name: has_relational_adjective
+namespace: uberon
+comment: Used to connect a class to an adjectival form of its label. For example, a class with label 'intestine' may have a relational adjective 'intestinal'.
+xref: UBPROP:0000007
+is_metadata_tag: true
+
+[Typedef]
+id: homologous_in
+name: homologous_in
+namespace: uberon
+comment: Status: experimental
+is_metadata_tag: true
+
+[Typedef]
+id: homology_notes
+name: homology_notes
+namespace: uberon
+def: "Notes on the homology status of this class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000003
+is_metadata_tag: true
+
+[Typedef]
+id: immediate_transformation_of
+name: immediate_transformation_of
+namespace: uberon
+synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
+synonym: "immediately transforms from" EXACT [SIO:000658]
+xref: http://semanticscience.org/resource/SIO_000658
+
+[Typedef]
+id: implements_design_pattern
+name: implements_design_pattern
+namespace: uberon
+xref: UBPROP:0000006
+is_metadata_tag: true
+
+[Typedef]
+id: is_count_of
+name: is count of
+namespace: uberon
+xref: UBPROP:0000100
+is_metadata_tag: true
+
+[Typedef]
+id: never_in_taxon
+name: never_in_taxon
+namespace: uberon
+def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [PMID:20973947]
+xref: RO:0002161
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: paired_appendage_number
+name: paired_appendage number
+namespace: uberon
+def: "x paired_appendage_number N if and only if (i) x is a paired_appendage, and (ii) x is paired_appendage number N in a series of paired_appendages repeated along an anterior-posterior axis, with paired_appendage_number 1 being the anteriormost paired_appendage. In vertebrates, this is the pectoral appendage" [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000109
+property_value: is_count_of UBERON:0000026
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: part_of
+name: part_of
+namespace: uberon
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: phalanx_number
+name: phalanx number
+namespace: uberon
+def: "x phalanx_number N if and only if (i) x is a phalanx, and (ii) x is phalanx number N in a series of phalanges repeated along an prixomo-distal axis, with phalanx_number 1 being the proximalmost phalanx. Note that in humans, the distalmost phalanx has phlanax_number 3, except in ray_number 1, where the distalmost has phalanx_number 2" [https://orcid.org/0000-0002-6601-2165, Wikipedia:Phalanx_bone#Phalangeal_formula]
+comment: Most land mammals including humans have a 2-3-3-3-3 formula in both the hands (or paws) and feet. Primitive reptiles typically had the formula 2-3-4-4-5, and this pattern, with some modification, remained in many later reptiles and in the mammal-like reptiles. The phalangeal formula in the flippers of cetaceans (marine mammals) is 2-12-8-1
+xref: UBPROP:0000105
+property_value: is_count_of UBERON:0003221
+property_value: preceding_element_is BSPO:0000100
+is_metadata_tag: true
+
+[Typedef]
+id: pharyngeal_arch_number
+name: pharyngeal arch number
+namespace: uberon
+def: "x pharyngeal_arch_number N if and only if (i) x is a pharyngeal arch, and (ii) x is ancestrally pharyngeal arch number N in a series of pharyngeal arches repeated along a antero-posterior axis, with arch_number 1 being the mandibular arch." [https://orcid.org/0000-0002-6601-2165]
+comment: Note that gill arch N = PA N-2. the term branchial_arch is ambiguous.
+xref: UBPROP:0000103
+property_value: is_count_of UBERON:0002539
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: preceding_element_is
+name: preceding element is
+namespace: uberon
+def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000101
+is_metadata_tag: true
+
+[Typedef]
+id: present_in_taxon
+name: present_in_taxon
+namespace: uberon
+def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [https://orcid.org/0000-0002-6601-2165]
+synonym: "applicable for taxon" EXACT []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: provenance_notes
+name: provenance_notes
+namespace: uberon
+def: "Notes on the provenance of this class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000004
+is_metadata_tag: true
+
+[Typedef]
+id: ray_number
+name: ray number
+namespace: uberon
+def: "x ray_number N if and only if (i) x is a ray, and (ii) x is ancestrally associated with ray number N in a series of phalanges repeated along a radio-ulnar or equivalent axis, with ray_number 1 being the anteriormost ray." [https://orcid.org/0000-0002-6601-2165]
+comment: The correct terminology is yet to be established; in tetrapods 'ray' might mean the mereological sum of the phalanges of a manual digit plus a metatarsal bone (or equivalent for hindlimb)
+xref: UBPROP:0000104
+property_value: is_count_of UBERON:0002544
+property_value: preceding_element_is BSPO:1000000
+is_metadata_tag: true
+
+[Typedef]
+id: repeated_element_number
+name: repeated element number
+namespace: uberon
+def: "A property used to indicate the position of an element where that element is of a type that is serially repeated linearly along some axis for which a total ordering exists. The ordering may represent an ancestral condition" [https://orcid.org/0000-0002-6601-2165]
+comment: The range is currently non-negative integer
+xref: UBPROP:0000102
+is_metadata_tag: true
+
+[Typedef]
+id: rhombomere_number
+name: rhombomere number
+namespace: uberon
+def: "x rhombomere_number N if and only if (i) x is a rhombomere, and (ii) x is rhombomere number N in a series of rhombomeres repeated along an anterior-posterior axis, with rhombomere_number 1 being the anteriormost rhombomere." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000111
+property_value: is_count_of UBERON:0001892
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: rib_number
+name: rib number
+namespace: uberon
+def: "x rib_number N if and only if (i) x is a rib, and (ii) x is rib number N in a series of ribs repeated along an anterior-posterior axis, with rib_number 1 being the anteriormost rib. Note that this property counts ribs, *not* the adjoining vertebrae." [https://orcid.org/0000-0002-6601-2165]
+comment: AO notes: Note that in TAO, ribs are numbered by *vertebrae*.  Taxon notes: In the early tetrapods, every vertebra bore a pair of ribs, although those on the thoracic vertebrae are typically the longest. In most subsequent forms, many of these early ribs have been lost, and in living amphibians and reptiles, there is great variation in rib structure and number. For example, turtles have only eight pairs of ribs, which are developed into a bony or cartilagenous carapace and plastron, while snakes have numerous ribs running along the full length of their trunk. Frogs typically have no ribs, aside from a sacral pair, which form part of the pelvis. Mammals usually also only have distinct ribs on the thoracic vertebra, although fixed cervical ribs are also present in monotremes. In marsupials and placental mammals, the cervical and lumbar ribs are found only as tiny remnants fused to the vertebrae, where they are referred to as transverse processes. In general, the structure and number of the true ribs in humans is similar to that in other mammals. Unlike reptiles, caudal ribs are never found in mammals.
+xref: UBPROP:0000106
+property_value: is_count_of UBERON:0002228
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: seeAlso
+name: see also
+namespace: uberon
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+is_metadata_tag: true
+
+[Typedef]
+id: sexually_homologous_to
+name: sexually_homologous_to
+namespace: uberon
+is_metadata_tag: true
+
+[Typedef]
+id: somite_number
+name: somite number
+namespace: uberon
+def: "x somite_number N if and only if (i) x is a somite, and (ii) x is somite number N in a series of somites repeated along an anterior-posterior axis, with somite_number 1 being the anteriormost somite." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000108
+property_value: is_count_of UBERON:0002329
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: spatially_disjoint_from
+name: spatially_disjoint_from
+namespace: uberon
+def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+synonym: "shares_no_parts_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: taxon_notes
+name: taxon_notes
+namespace: uberon
+xref: UBPROP:0000008
+is_metadata_tag: true
+
+[Typedef]
+id: tooth_number
+name: tooth number
+namespace: uberon
+def: "x tooth_number N if and only if (i) x is a tooth, and (ii) x is ancestrally tooth number N in a series of teeth repeated along an anterior-posterior axis, typically on the lateral side of a structure such as a jaw, with tooth_number 1 being the anteriormost. Note that this count refers to the total number of teeth starting from the first, regardless of the type of tooth. If sub-systems are required for numbering within a series of teeth of the same type, consider a subproperty. For example, in a human, maxillary canine = tooth 3 of upper jaw = canine_tooth 1 of upper jaw" []
+comment: see also: dental_formula
+xref: UBPROP:0000112
+property_value: is_count_of UBERON:0001091
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: vertebra_number
+name: vertebra number
+namespace: uberon
+def: "x vertebra_number N if and only if (i) x is a vertebra, and (ii) x is vertebra number N in a series of vertebras repeated along an anterior-posterior axis, with vertebra_number 1 being the anteriormost vertebra (also known as the atlas)." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000107
+property_value: is_count_of UBERON:0002412
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
