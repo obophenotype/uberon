@@ -1,77 +1,60 @@
-     * Added ambiguous_for_taxon annotation property - applied to serial digits for aves
-     * Neuro
-       * Adding Cumbo defs and subsets. Addresses issue #320
-       * NTs for prosomere and mesomere, not clear if these will remain. See issue #318
-       * Added multiple NN xrefs
-     * tagged homology with subsets
-     * removed homology logical assertions for procoracoid and scapular spine based on review by Phenoscape AD/PM. Addresses issue #319
-     * merged future {corpus striatum, caudate nucleus} into the generic structure
-     * NT: {left,right} crus of diaphragm
-     * relabeled median umbilical ligament -> remnant of urachus
-     * NTs for palpebral vein/arteries
-     * Made groove a feature of a tissue (anatomical structure). Created separate class for groove qua line (not clear if this is useful). Addressses #314
-     * classified digestive tube junctions as anatomical junctions (material) rather than boundaries (immaterial). Fixes issue #314
+     * Fixed def of extraembryonic structure to be the same as latest CARO
+     * nerve fiber - made disjoint union of myelinated and unmylelinated forms
+     * made commissure terminologically and logically appropriate for non-myelin-axon taxa. Fixes issue #325
+     * weakened develops_from relationship mouth -> stomodeum to contribution - some parts of tghe mouth are ectodermal. Fixes DV with ZFA
+     * jaw refactoring
+     * Fixed inverted L/R xrefs for EHDAA2 in auricular muscle tissue. Fixes issue #321
+     * Fixed synclash for spinal cord neuromere
+     * Added ambiguous_for_taxon. 
+     * Added not_recommended_for_taxon
+     * editing nervous system def and adding to cumbo slim
 
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 23:07:2013 23:27, cvs revision unknown
-! file 2 (new): 09:08:2013 15:21, cvs revision unknown
+! file 1 (old): 09:08:2013 15:21, cvs revision unknown
+! file 2 (new): 28:08:2013 15:34, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0000955 : brain   
-OLD: The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals.[1] Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP].
-NEW: The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP].
+UBERON:0000478 : extraembryonic structure   
+OLD: Anatomical structure that is contiguous with the embryo and is comprised of portions of tissue or cells that will not contribute to the embryo.
+NEW: A multicellular anatomical structure that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis.
 
 
-UBERON:0001016 : nervous system   
-OLD: a network of specialized cells that communicate information about an organism's surroundings and itself[Wikipedia].
-NEW: The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO].
+UBERON:0001008 : renal system   
+(was excretory system)
+OLD: The excretory system is the system of an organism that mainly performs the function of excretion, the bodily process of discharging wastes. It is responsible for the elimination of wastes produced by the processes that maintain homeostasis.
+NEW: The renal system in an anatomical system that maintains fluid balance and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products. In humans, the renal system comprises a pair of kidneys, a pair of ureters, urinary bladder, urethra, sphincter muscle and associated blood vessels[GO].
 
 
-UBERON:0001017 : central nervous system   
-OLD: The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the brain, spinal cord and spinal nerves. In those invertebrates with a central nervous system it typically consists of a brain, cerebral ganglia and a nerve cord[GO]. The part of the nervous system which in vertebrates consists of the brain and spinal cord, to which sensory impulses are transmitted and from which motor impulses pass out, and which supervises and coordinates the activity of the entire nervous system[XAO]. Neuraxis plus retina[INCF].
-NEW: The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the brain, spinal cord and spinal nerves. In those invertebrates with a central nervous system it typically consists of a brain, cerebral ganglia and a nerve cord[GO].
+UBERON:0001020 : nervous system commissure   
+(was white matter commissure)
+OLD: White matter fiber bundle that crosses the midline of the brain or spinal cord[NIF]. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain[FBbt].
+NEW: axon tract that crosses the midline of the brain or spinal cord[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt].
 
 
-UBERON:0002459 : inferior palpebral vein   
-OLD: The blood vessels that drain blood from the inferior eyelid into the angular vein.
-NEW: A blood vessel that drains from from an lower eyelid.
+UBERON:0001134 : skeletal muscle tissue   
+OLD: Tissue which consists of skeletal muscle fibers surrounded by endomysium. Examples: Skeletal muscle tissue of biceps, Skeletal muscle tissue of diaphragm[FMA]. Striated muscle tissue under control of the somatic nervous system. It is one of three major muscle types, the others being cardiac and smooth muscle. As its name suggests, most skeletal muscle is attached to bones by bundles of collagen fibers known as tendons. Skeletal muscle is made up of individual components known as muscle fibers. These fibers are formed from the fusion of developmental myoblasts. The myofibers are long, cylindrical, multinucleated cells composed of actin and myosin myofibrils repeated as a sarcomere, the basic functional unit of the cell and responsible for skeletal muscle's striated appearance and forming the basic machinery necessary for muscle contraction. The term muscle refers to multiple bundles of muscle fibers held together by connective tissue[WP].
+NEW: Striated muscle tissue under control of the somatic nervous system. It is one of three major muscle types, the others being cardiac and smooth muscle. As its name suggests, most skeletal muscle is attached to bones by bundles of collagen fibers known as tendons. Skeletal muscle is made up of individual components known as muscle fibers. These fibers are formed from the fusion of developmental myoblasts. The myofibers are long, cylindrical, multinucleated cells composed of actin and myosin myofibrils repeated as a sarcomere, the basic functional unit of the cell and responsible for skeletal muscle's striated appearance and forming the basic machinery necessary for muscle contraction. The term muscle refers to multiple bundles of muscle fibers held together by connective tissue[WP].
 
 
-UBERON:0002460 : vesical vein   
-OLD: The vesical veins are tributaries of the internal iliac veins. [WP,unvetted].
-NEW: The vesical veins are veins in the pelvis that drain blood from the urinary bladder. The vesical veins receive blood from the vesical venous plexus and are tributaries of the internal iliac veins. [WP].
+UBERON:0003277 : skeleton of upper jaw   
+OLD: A subdivision of skeleton that is part of the upper jaw region[Automatically generated definition].
+NEW: A subdivision of the skeleton that corresponds to the upper part of the mouth. The lower jaw skeleton includes the following elements, when present: upper jaw teeth, the maxilla and other lower jaw bones.
 
 
-UBERON:0004731 : neuromere   
-OLD: A segment of the developing neural tube[MP]. A metameric segment of the central nervous system[ZFA]. morphologically or molecularly defined transient segments of the early developing brain. Rhombomeres are such segments that make up the rhombencephalon or hindbrain. [WP].
-NEW: A transverse unitary subdivision of the neural tube that shares a common dorsoventral structure (floor, basal, alar, and roof plates), but each having differential molecular identities and fates; they comprise the secondary prosencephalon, diencephalon (prosomeres), the midbrain (mesomeres), and the hindbrain (rhombomeres).
+UBERON:0003278 : skeleton of lower jaw   
+OLD: A subdivision of skeleton that is part of a lower jaw [Automatically generated definition].
+NEW: A subdivision of the skeleton that corresponds to the lower part of the mouth. The lower jaw skeleton includes the following elements, when present: lower jaw teeth, the mandible and other lower jaw bones, and Meckel's cartilage.
 
 
-UBERON:0004732 : segmental subdivision of nervous system   
-OLD: An organ segment that is part of a nervous system [Automatically generated definition].
-NEW: Any segmental subdivision of a nervous system. Includes metameric developmental segments, such as vertebrates neuromeres.
-
-
-UBERON:0006235 : foregut-midgut junction   
-OLD: An anatomical boundary that adjacent_to a foregut and adjacent_to a midgut.
-NEW: An anatomical junctions that overlaps the foregut and midgut.
-
-
-UBERON:0006264 : mouth-foregut junction   
-OLD: An anatomical boundary that adjacent_to a mouth and adjacent_to a foregut.
-NEW: An anatomical junctions that overlaps the mouth and foregut.
-
-
-UBERON:0006846 : surface groove   
-(was groove)
-OLD: Anatomical line that delineates a furrow or depression in an organ or tissue.
-NEW: A furrow or an incomplete tube.
+UBERON:0006134 : nerve fiber   
+OLD: A threadlike extension of a nerve cell and consists of an axon and myelin sheath (if existence) in the nervous system. There are nerve fibers in the central nervous system and peripheral nervous system. A nerve fiber may be myelinated and/or unmyelinated. In the central nervous system (CNS), myelin by oligodendroglia cells is formed. Schwann cells form myelin in the peripheral nervous system (PNS). Schwann cells also make a thin covering in an axon without myelin (in the PNS). A peripheral nerve fiber contains an axon, myelin sheath, schwann cells and its endoneurium. There are no endoneurium and schwann cells in the central nervous system
+NEW: A threadlike extension of a nerve cell and consists of an axon and myelin sheath (if it is myelinated) in the nervous system. There are nerve fibers in the central nervous system and peripheral nervous system. A nerve fiber may be myelinated and/or unmyelinated. In the central nervous system (CNS), myelin by oligodendroglia cells is formed. Schwann cells form myelin in the peripheral nervous system (PNS). Schwann cells also make a thin covering in an axon without myelin (in the PNS). A peripheral nerve fiber contains an axon, myelin sheath, schwann cells and its endoneurium. There are no endoneurium and schwann cells in the central nervous system.
 
 
 
@@ -80,26 +63,15 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-07-23; date: 23:07:2013 23:27
-- file 2 (new): uberon.obo; data version: releases/2013-08-09; date: 09:08:2013 15:21
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-08-09; date: 09:08:2013 15:21
+- file 2 (new): uberon.obo; data version: releases/2013-08-28; date: 28:08:2013 15:34
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:0014764	anatomical line along groove	
-UBERON:0014765	crus of diaphragm	
-UBERON:0014766	right crus of diaphragm	
-UBERON:0014767	left crus of diaphragm	
-UBERON:0014768	superior palpebral vein	
-UBERON:0014769	palpebral vein	
-UBERON:0014770	palpebral artery	
-UBERON:0014772	lateral palpebral artery	
-UBERON:0014773	medial palpebral artery	
-UBERON:0014775	prosomere	
-UBERON:0014776	mesomere	
-UBERON:0014777	spinal neuromere	
-UBERON:0014778	cell group	
+UBERON:4300012	clavus	
+UBERON:4300013	paired fin radial skeleton	
 
 
 OBSOLETIONS
@@ -110,8 +82,8 @@ None
 
 TERM MERGES
 ===========
-UBERON:0010082, future corpus striatum was merged into UBERON:0000369, corpus striatum
-UBERON:0010122, future caudate nucleus was merged into UBERON:0001873, caudate nucleus
+
+None
 
 
 TERM CHANGES
@@ -119,527 +91,158 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	alt_id	def	comment	subset	synonym	xref	is_a	intersection_of	relationship	
-UBERON:0000024										1 D, 1 A	
-UBERON:0000119					1 A						
-UBERON:0000153							1 A				
-UBERON:0000200							1 A				
-UBERON:0000203							1 A				
-UBERON:0000322							1 A				
-UBERON:0000349							1 A				
-UBERON:0000369		1 A					2 A			1 D	
-UBERON:0000373							1 A				
-UBERON:0000391							1 A				
-UBERON:0000395							1 A				
-UBERON:0000432							1 A				
-UBERON:0000445							1 A				
-UBERON:0000451							1 A				
-UBERON:0000908							1 A				
-UBERON:0000935							1 A				
-UBERON:0000950										1 D, 1 A	
-UBERON:0000955			C		1 A						
-UBERON:0000962							1 A				
-UBERON:0000966							1 A				
-UBERON:0001016			C		1 A		1 A				
-UBERON:0001017			C								
-UBERON:0001033							1 A				
-UBERON:0001049							1 A				
-UBERON:0001063							1 A				
-UBERON:0001094							1 A				
-UBERON:0001173								1 A			
-UBERON:0001255						1 D, 1 A					
-UBERON:0001311						1 D, 1 A					
-UBERON:0001384							1 A				
-UBERON:0001389										1 D, 1 A	
-UBERON:0001392										1 D, 1 A	
-UBERON:0001393							1 A				
-UBERON:0001463											
-UBERON:0001533						2 D, 2 A				1 A	
-UBERON:0001609							1 A				
-UBERON:0001675							1 A				
-UBERON:0001687										2 D, 2 A	
-UBERON:0001688										1 D, 1 A	
-UBERON:0001689										1 D, 1 A	
-UBERON:0001699						2 D, 2 A	1 A				
-UBERON:0001700							1 A				
-UBERON:0001711											
-UBERON:0001717							1 A				
-UBERON:0001721							1 A				
-UBERON:0001722							1 A				
-UBERON:0001734							1 A				
-UBERON:0001775							1 A				
-UBERON:0001780							1 A				
-UBERON:0001785							1 A				
-UBERON:0001873		1 A		D			1 A			4 D, 4 A	
-UBERON:0001885							1 A				
-UBERON:0001886							1 A	1 A			
-UBERON:0001892								1 D	1 D, 1 A	1 D, 1 A	
-UBERON:0001906							1 A				
-UBERON:0001907							1 A				
-UBERON:0001954							1 A				
-UBERON:0002019							1 A				
-UBERON:0002020							1 A				
-UBERON:0002028								2 D, 1 A		1 D	
-UBERON:0002029								1 A			
-UBERON:0002068								1 A		1 D, 2 A	
-UBERON:0002071							1 A				
-UBERON:0002105							1 A				
-UBERON:0002110								1 A			
-UBERON:0002131							1 A				
-UBERON:0002147							1 A				
-UBERON:0002154							1 A				
-UBERON:0002155							1 A				
-UBERON:0002158							1 A				
-UBERON:0002159							1 A				
-UBERON:0002175							1 A				
-UBERON:0002176							1 A				
-UBERON:0002179							1 A				
-UBERON:0002180							1 A				
-UBERON:0002181							1 A				
-UBERON:0002191							1 A				
-UBERON:0002192							1 A				
-UBERON:0002205										1 D, 1 A	
-UBERON:0002207										1 D, 1 A	
-UBERON:0002219							1 A				
-UBERON:0002227										1 D, 1 A	
-UBERON:0002229										1 D, 1 A	
-UBERON:0002245							1 A				
-UBERON:0002255							1 A				
-UBERON:0002256							1 A				
-UBERON:0002257							1 A				
-UBERON:0002258							1 A				
-UBERON:0002259							1 A				
-UBERON:0002260							1 A				
-UBERON:0002261							1 A				
-UBERON:0002263							1 A			2 D, 2 A	
-UBERON:0002267							1 A				
-UBERON:0002271							1 A				
-UBERON:0002272							1 A				
-UBERON:0002273							1 A				
-UBERON:0002274							1 A				
-UBERON:0002275							2 A				
-UBERON:0002285							1 A				
-UBERON:0002286							1 A				
-UBERON:0002287							1 A				
-UBERON:0002288							1 A				
-UBERON:0002289							1 A				
-UBERON:0002290							1 A				
-UBERON:0002291							1 A				
-UBERON:0002307							1 A				
-UBERON:0002309							1 A				
-UBERON:0002315							1 A				
-UBERON:0002316							1 A				
-UBERON:0002336							1 A				
-UBERON:0002342							1 A				
-UBERON:0002361							1 A				
-UBERON:0002362							1 A				
-UBERON:0002363							1 A				
-UBERON:0002372							1 A				
-UBERON:0002410							1 A				
-UBERON:0002422							1 A				
-UBERON:0002432							1 A				
-UBERON:0002435				C		4 A					
-UBERON:0002457						2 D	1 D, 1 A			1 A	
-UBERON:0002459			C			1 D		1 D, 1 A	2 A	1 D, 1 A	
-UBERON:0002460			C	D		2 D, 1 A	1 D		2 A	2 A	
-UBERON:0002575							1 A				
-UBERON:0002578						1 A	1 D, 2 A	1 D		1 D, 1 A	
-UBERON:0002626								1 D, 1 A			
-UBERON:0002628								1 D, 1 A			
-UBERON:0002630								1 D, 1 A			
-UBERON:0002651							1 A				
-UBERON:0002655							1 A				
-UBERON:0002663							1 A				
-UBERON:0002726							1 A				
-UBERON:0002731							1 A				
-UBERON:0002762							1 A				
-UBERON:0002792							1 A				
-UBERON:0002814							1 A				
-UBERON:0002815							1 A				
-UBERON:0002816							1 A				
-UBERON:0002817							1 A				
-UBERON:0002818							1 A				
-UBERON:0002832							1 A				
-UBERON:0002877							1 A				
-UBERON:0002894							1 A				
-UBERON:0002895							1 A				
-UBERON:0002910			A								
-UBERON:0002928							1 A				
-UBERON:0002939							1 A				
-UBERON:0002940							1 A				
-UBERON:0002963							1 A				
-UBERON:0002968							1 A				
-UBERON:0002993							1 A				
-UBERON:0002997							1 A				
-UBERON:0002999							1 A				
-UBERON:0003002							1 A				
-UBERON:0003004							1 A				
-UBERON:0003012							1 A				
-UBERON:0003013							1 A				
-UBERON:0003015							1 A				
-UBERON:0003021							1 A				
-UBERON:0003039							1 A				
-UBERON:0003043							1 A				
-UBERON:0003052							1 A	1 D, 2 A	3 D, 3 A	2 D, 2 A	
-UBERON:0003054							1 A				
-UBERON:0003075							1 A				
-UBERON:0003085										1 D, 1 A	
-UBERON:0003622											
-UBERON:0003623											
-UBERON:0003624											
-UBERON:0003709							1 A				
-UBERON:0003723							1 A				
-UBERON:0003726							1 A				
-UBERON:0003939							1 A				
-UBERON:0003941							1 A				
-UBERON:0003961							1 A				
-UBERON:0003980							1 A				
-UBERON:0003989							1 A				
-UBERON:0003991							1 A				
-UBERON:0003992							1 A				
-UBERON:0003993							1 A				
-UBERON:0004002							1 A				
-UBERON:0004006							1 A				
-UBERON:0004008							1 A				
-UBERON:0004009							1 A				
-UBERON:0004047							1 A				
-UBERON:0004048							1 A				
-UBERON:0004049							1 A				
-UBERON:0004052							1 A				
-UBERON:0004061							1 A				
-UBERON:0004062							1 A				
-UBERON:0004064							1 A				
-UBERON:0004069							1 A				
-UBERON:0004074							1 A				
-UBERON:0004075							1 A				
-UBERON:0004076							1 A				
-UBERON:0004078							1 A				
-UBERON:0004079							1 A				
-UBERON:0004080							1 A				
-UBERON:0004081							2 A				
-UBERON:0004082							1 A				
-UBERON:0004083							1 A				
-UBERON:0004086							1 A	1 D, 1 A			
-UBERON:0004108							1 A				
-UBERON:0004167							1 A				
-UBERON:0004170							1 A				
-UBERON:0004171							1 A				
-UBERON:0004173							1 A				
-UBERON:0004240								1 A			
-UBERON:0004545							1 A				
-UBERON:0004651				D						1 D	
-UBERON:0004670							1 A				
-UBERON:0004672							1 A				
-UBERON:0004674							1 A				
-UBERON:0004675							1 A				
-UBERON:0004678							1 A				
-UBERON:0004679							1 A				
-UBERON:0004680							1 A				
-UBERON:0004682							1 A				
-UBERON:0004683							1 A				
-UBERON:0004684							1 A				
-UBERON:0004703							1 A				
-UBERON:0004708										1 D, 1 A	
-UBERON:0004717							1 A				
-UBERON:0004720							1 A				
-UBERON:0004727							1 A				
-UBERON:0004731			C	C		1 D, 3 A					
-UBERON:0004732			C								
-UBERON:0004733					1 A						
-UBERON:0004744										1 D, 1 A	
-UBERON:0004781								1 A			
-UBERON:0004783								1 A			
-UBERON:0004922							1 A				
-UBERON:0004926								1 D			
-UBERON:0004938								1 A			
-UBERON:0004939								1 D			
-UBERON:0004940								1 D			
-UBERON:0004941								1 D			
-UBERON:0004942								1 D			
-UBERON:0004988								1 D			
-UBERON:0004999								1 A			
-UBERON:0005000								1 D			
-UBERON:0005001								1 D			
-UBERON:0005002								1 D			
-UBERON:0005003								1 D			
-UBERON:0005061							1 A				
-UBERON:0005062							1 A				
-UBERON:0005078							1 A				
-UBERON:0005159							1 A				
-UBERON:0005281							1 A				
-UBERON:0005283							1 A				
-UBERON:0005287							1 A				
-UBERON:0005288							1 A				
-UBERON:0005289							1 A				
-UBERON:0005343							1 A				
-UBERON:0005346							1 A				
-UBERON:0005347							1 A				
-UBERON:0005348							1 A				
-UBERON:0005349							1 A				
-UBERON:0005350							1 A				
-UBERON:0005351							1 A				
-UBERON:0005356							1 A				
-UBERON:0005366							1 A				
-UBERON:0005368							1 A				
-UBERON:0005373							1 A				
-UBERON:0005374							1 A				
-UBERON:0005375							1 A				
-UBERON:0005377							1 A				
-UBERON:0005378							1 A				
-UBERON:0005381							1 A				
-UBERON:0005382						1 A	1 A			1 D, 1 A	
-UBERON:0005383				C		6 A				1 D, 1 A	
-UBERON:0005390							1 A				
-UBERON:0005391							1 A				
-UBERON:0005393							1 A				
-UBERON:0005395							1 A				
-UBERON:0005403						1 A	1 A			1 D, 1 A	
-UBERON:0005408							1 A				
-UBERON:0005412							1 A	1 A			
-UBERON:0005413							1 A				
-UBERON:0005437							1 A				
-UBERON:0005443							1 A				
-UBERON:0005478							1 A	2 A			
-UBERON:0005481							1 A				
-UBERON:0005500								1 D, 2 A			
-UBERON:0005805										1 D, 1 A	
-UBERON:0005818							1 A				
-UBERON:0005819							1 A				
-UBERON:0005820							1 A				
-UBERON:0005821							1 A				
-UBERON:0005826							1 A				
-UBERON:0005832							1 A				
-UBERON:0005835							1 A				
-UBERON:0005844						1 D	2 D				
-UBERON:0005882							1 A				
-UBERON:0005902							1 A				
-UBERON:0005974							1 A				
-UBERON:0005976							1 A				
-UBERON:0005977							1 A				
-UBERON:0006059							1 A				
-UBERON:0006070							1 A				
-UBERON:0006081								1 A			
-UBERON:0006083							1 A				
-UBERON:0006091							1 A				
-UBERON:0006115							1 A				
-UBERON:0006118							1 A				
-UBERON:0006119							1 A				
-UBERON:0006120							1 A				
-UBERON:0006121							1 A				
-UBERON:0006127							1 A				
-UBERON:0006235			C					1 D, 1 A	3 D, 3 A	2 D, 2 A	
-UBERON:0006238			A		1 A	1 A					
-UBERON:0006250							1 A				
-UBERON:0006257								2 A			
-UBERON:0006264			C					1 D, 1 A	3 D, 3 A	2 D, 2 A	
-UBERON:0006319							1 A				
-UBERON:0006474							1 A				
-UBERON:0006475							1 A				
-UBERON:0006476							1 A				
-UBERON:0006477							1 A				
-UBERON:0006478							1 A				
-UBERON:0006479							1 A				
-UBERON:0006480							1 A				
-UBERON:0006481							1 A				
-UBERON:0006482							1 A				
-UBERON:0006483							1 A				
-UBERON:0006484							1 A				
-UBERON:0006485							1 A				
-UBERON:0006486							1 A				
-UBERON:0006514							1 A				
-UBERON:0006606										1 D, 1 A	
-UBERON:0006607						1 A		1 D, 1 A		1 A	
-UBERON:0006638	C					1 A		2 D, 1 A		2 D, 2 A	
-UBERON:0006667							1 A				
-UBERON:0006681							1 A				
-UBERON:0006691							1 A				
-UBERON:0006696							1 A				
-UBERON:0006777							1 A				
-UBERON:0006779							1 A				
-UBERON:0006780							1 A				
-UBERON:0006787							1 A				
-UBERON:0006788							1 A				
-UBERON:0006789							1 A				
-UBERON:0006790							1 A				
-UBERON:0006840							1 A				
-UBERON:0006846	C		C			1 A	5 D, 1 A	1 D, 1 A		1 A	
-UBERON:0006847							1 A				
-UBERON:0006848							1 A				
-UBERON:0006856										1 D, 1 A	
-UBERON:0006860										1 D, 1 A	
-UBERON:0007190							1 A				
-UBERON:0007191							1 A				
-UBERON:0007192							1 A				
-UBERON:0007193							1 A				
-UBERON:0007224							1 A				
-UBERON:0007225							1 A				
-UBERON:0007227							1 A				
-UBERON:0007230							1 A				
-UBERON:0007247							1 A				
-UBERON:0007249							1 A				
-UBERON:0007277										1 A	
-UBERON:0007350										2 D, 2 A	
-UBERON:0007415							1 A				
-UBERON:0007416							1 A				
-UBERON:0007626							1 A				
-UBERON:0007627							1 A				
-UBERON:0007628							1 A				
-UBERON:0007629							1 A				
-UBERON:0007630							1 A				
-UBERON:0007631							1 A				
-UBERON:0007632							1 A				
-UBERON:0007634							1 A				
-UBERON:0007637							1 A				
-UBERON:0007641							1 A				
-UBERON:0007651						2 A		1 D, 1 A			
-UBERON:0007656							1 A				
-UBERON:0007703							1 A				
-UBERON:0007710							1 A				
-UBERON:0007721										1 D, 1 A	
-UBERON:0007763							1 A				
-UBERON:0007764							1 A				
-UBERON:0007767							1 A				
-UBERON:0007768							1 A				
-UBERON:0008231										1 D, 1 A	
-UBERON:0008254										1 D, 1 A	
-UBERON:0008333							1 A				
-UBERON:0008335							1 A				
-UBERON:0008447										1 D, 1 A	
-UBERON:0008835								1 D			
-UBERON:0008922								1 D, 5 A			
-UBERON:0008923								1 D, 6 A			
-UBERON:0008924								1 D, 7 A			
-UBERON:0008925								1 D, 6 A			
-UBERON:0008926								1 D, 3 A			
-UBERON:0008930							1 A				
-UBERON:0008933							1 A				
-UBERON:0008934							1 A				
-UBERON:0008959										1 D, 1 A	
-UBERON:0008967							1 A				
-UBERON:0008976										1 D, 1 A	
-UBERON:0008977							1 A				
-UBERON:0009027			A			2 A		1 D, 1 A	2 A	1 A	
-UBERON:0009121							1 A				
-UBERON:0009203										1 D, 1 A	
-UBERON:0009495								1 A			
-UBERON:0009496								1 A			
-UBERON:0009497								1 A		2 A	
-UBERON:0009573							1 A				
-UBERON:0009576								1 A			
-UBERON:0009624							1 A				
-UBERON:0009625							1 A				
-UBERON:0009641							1 A				
-UBERON:0009643							1 A				
-UBERON:0009718										2 D, 2 A	
-UBERON:0009775							1 A				
-UBERON:0009777							1 A				
-UBERON:0009857							1 A				
-UBERON:0009864										1 D, 1 A	
-UBERON:0009865										1 D, 1 A	
-UBERON:0009907							1 A				
-UBERON:0009965										1 D, 1 A	
-UBERON:0010036							1 A				
-UBERON:0010048										1 D, 1 A	
-UBERON:0010066										1 D, 1 A	
-UBERON:0010074										1 D, 1 A	
-UBERON:0010134							1 A				
-UBERON:0010209										1 D, 1 A	
-UBERON:0010239										1 D, 1 A	
-UBERON:0010415							1 A				
-UBERON:0010743							1 A				
-UBERON:0011131										1 D, 1 A	
-UBERON:0011132										1 D, 1 A	
-UBERON:0011135										1 D, 1 A	
-UBERON:0011173							1 A				
-UBERON:0011175							1 A				
-UBERON:0011176							1 A				
-UBERON:0011177							1 A				
-UBERON:0011178							1 A				
-UBERON:0011179							1 A				
-UBERON:0011202								1 A			
-UBERON:0011203								2 A			
-UBERON:0011246				C						1 D	
-UBERON:0011611										1 D, 1 A	
-UBERON:0011618										1 D, 1 A	
-UBERON:0011768							1 A				
-UBERON:0011776							1 A				
-UBERON:0011905										1 D, 1 A	
-UBERON:0011907										1 D, 1 A	
-UBERON:0011908										1 D, 1 A	
-UBERON:0012111										1 D, 1 A	
-UBERON:0012132										1 D, 1 A	
-UBERON:0012170							1 A				
-UBERON:0012171							1 A				
-UBERON:0012337							1 A				
-UBERON:0013076										1 D, 1 A	
-UBERON:0013150							1 A				
-UBERON:0013166							1 A				
-UBERON:0013201							1 A				
-UBERON:0013220										1 D, 1 A	
-UBERON:0013411							1 A				
-UBERON:0013477										1 D, 1 A	
-UBERON:0013531							1 A				
-UBERON:0013544							1 A				
-UBERON:0013545							1 A				
-UBERON:0013573							1 A				
-UBERON:0013589							1 A				
-UBERON:0013599							1 A				
-UBERON:0013600							1 A				
-UBERON:0013601							1 A				
-UBERON:0013608							1 A				
-UBERON:0013609							1 A				
-UBERON:0013734							1 A				
-UBERON:0013737							1 A				
-UBERON:0013738							1 A				
-UBERON:0014287							1 A				
-UBERON:0014288							1 A				
-UBERON:0014370							1 A				
-UBERON:0014468							1 A				
-UBERON:0014471							1 A				
-UBERON:0014473							1 A				
-UBERON:0014474							1 A				
-UBERON:0014511							1 A				
-UBERON:0014526							1 A				
-UBERON:0014527							1 A				
-UBERON:0014528							1 A				
-UBERON:0014529							1 A				
-UBERON:0014534							1 A				
-UBERON:0014539							1 A				
-UBERON:0014570							1 A				
-UBERON:0014571							1 A				
-UBERON:0014589							1 A				
-UBERON:0014590							1 A				
-UBERON:0014591							1 A				
-UBERON:0014592							1 A				
-UBERON:0014593							1 A				
-UBERON:0014602							1 A				
-UBERON:0014603							1 A				
-UBERON:0014604							1 A				
-UBERON:0014605							2 A				
-UBERON:0014644							1 A				
-UBERON:0014647							1 A				
-UBERON:0014648							1 A				
-UBERON:0014649							1 A				
-UBERON:0014667							1 A				
-UBERON:0014686								1 D, 2 A		1 A	
-UBERON:0014689							1 A				
-UBERON:0014733										2 D, 2 A	
-UBERON:0014759										1 D, 1 A	
-UBERON:2000305								1 A			
-UBERON:2000589								2 A			
-UBERON:3010286	C										
-
-
-
-OTHER STANZA TYPES
-==================
-
-New Stanzas
-==========-
-
-Stanza type	ID	Name
-Typedef	ambiguous_for_taxon	ambiguous_for_taxon
-
+Term ID	name	def	comment	synonym	xref	is_a	union_of	relationship	
+UBERON:0000165			C	1 D, 1 A		1 D, 1 A		1 D, 1 A	
+UBERON:0000166						1 D			
+UBERON:0000378						1 D			
+UBERON:0000478		C							
+UBERON:0001008	C	C		1 A					
+UBERON:0001020	C	C		1 D, 1 A				1 D, 1 A	
+UBERON:0001035						1 D			
+UBERON:0001134		C							
+UBERON:0001468								1 D, 1 A	
+UBERON:0001581						1 D			
+UBERON:0001610						1 D			
+UBERON:0001617						1 D, 1 A			
+UBERON:0001655						1 D			
+UBERON:0001708						1 D			
+UBERON:0001709					1 A				
+UBERON:0001710				1 A					
+UBERON:0001716						1 D			
+UBERON:0001723						1 D		1 D, 1 A	
+UBERON:0001726						1 D			
+UBERON:0001733						1 D			
+UBERON:0001734						1 D			
+UBERON:0001833						2 D, 1 A		2 D, 2 A	
+UBERON:0001837						1 D			
+UBERON:0002002								1 D, 1 A	
+UBERON:0002025				1 A					
+UBERON:0002424						1 D			
+UBERON:0002490								1 D, 1 A	
+UBERON:0002492								1 D, 1 A	
+UBERON:0003216						1 D			
+UBERON:0003235						1 D			
+UBERON:0003236						1 D			
+UBERON:0003273						1 D			
+UBERON:0003277		C			1 D	1 D			
+UBERON:0003278		C	C						
+UBERON:0003323						1 D			
+UBERON:0003324						1 D			
+UBERON:0003357						1 D			
+UBERON:0003361						1 D			
+UBERON:0003416						1 D			
+UBERON:0003420						1 D			
+UBERON:0003679						1 D			
+UBERON:0003705	C			3 D, 3 A					
+UBERON:0003729						1 D			
+UBERON:0004103						1 D			
+UBERON:0004185	C			2 A					
+UBERON:0004477						1 D			
+UBERON:0004752						1 D			
+UBERON:0004833						1 D			
+UBERON:0004906	C			2 A					
+UBERON:0004997				2 A	1 A			1 A	
+UBERON:0004998					1 D, 1 A				
+UBERON:0005334						1 D			
+UBERON:0005402						1 D			
+UBERON:0005619						1 D			
+UBERON:0005659						1 A			
+UBERON:0005905						1 D			
+UBERON:0006134		C					2 A		
+UBERON:0006260						1 D			
+UBERON:0006360						1 D, 1 A			
+UBERON:0006606						1 D		1 D, 1 A	
+UBERON:0006658								1 D, 1 A	
+UBERON:0006669						1 D			
+UBERON:0006672						1 D			
+UBERON:0006688						1 D			
+UBERON:0006699						1 D			
+UBERON:0006905						1 D			
+UBERON:0006913						1 D			
+UBERON:0007250						1 D			
+UBERON:0007721								1 D, 1 A	
+UBERON:0007722								1 D, 1 A	
+UBERON:0008199						1 D			
+UBERON:0008253						1 D			
+UBERON:0008428						1 D			
+UBERON:0008585						1 D			
+UBERON:0008586						1 D			
+UBERON:0008596						1 D			
+UBERON:0008799						1 D			
+UBERON:0009203								1 D, 1 A	
+UBERON:0009207						1 D			
+UBERON:0009471						1 D			
+UBERON:0009522						1 D			
+UBERON:0009538						1 D			
+UBERON:0009539						1 D			
+UBERON:0009654						1 D, 1 A			
+UBERON:0009680						1 D			
+UBERON:0009779				1 D, 1 A	1 D, 1 A				
+UBERON:0009780				1 D, 1 A	1 D, 1 A				
+UBERON:0010012						1 D			
+UBERON:0010013						1 D			
+UBERON:0010032						1 D			
+UBERON:0010033						1 D			
+UBERON:0010034						1 D			
+UBERON:0010047						1 D			
+UBERON:0010056						1 D			
+UBERON:0010057						1 D			
+UBERON:0010059						1 D			
+UBERON:0010426						1 D			
+UBERON:0011085						1 D			
+UBERON:0011131								1 D, 1 A	
+UBERON:0011135								1 D, 1 A	
+UBERON:0011268						1 D			
+UBERON:0011346						1 D			
+UBERON:0011349						1 D			
+UBERON:0011535						1 D			
+UBERON:0011595						1 D		1 D, 1 A	
+UBERON:0011642						1 A			
+UBERON:0011847						1 D			
+UBERON:0011850						1 D			
+UBERON:0011876						1 D			
+UBERON:0012074						1 D			
+UBERON:0012105						1 D, 1 A			
+UBERON:0012106						1 D, 1 A			
+UBERON:0012132								1 D, 1 A	
+UBERON:0012376						1 D			
+UBERON:0012621						1 D			
+UBERON:0013135						1 D			
+UBERON:0013220								1 D, 1 A	
+UBERON:0013476						1 D			
+UBERON:0013656						1 D			
+UBERON:0014451						1 D			
+UBERON:0014453						1 D, 1 A			
+UBERON:0014705						1 D			
+UBERON:1000000						1 D			
+UBERON:1000011						1 D			
+UBERON:1500006								1 D, 1 A	
+UBERON:2000230				1 A					
+UBERON:2001688						1 D			
+UBERON:2001689						1 D			
+UBERON:2001690						1 D			
+UBERON:2001691						1 D			
+UBERON:2002009						1 D			
+UBERON:2002108						1 D			
+UBERON:3000031						1 D			
+UBERON:3000036						1 D			
+UBERON:3000237						1 D			
+UBERON:3000295						1 D			
+UBERON:3000363						1 D			
+UBERON:3000365						1 D			
+UBERON:3000380						1 D			
+UBERON:3000516						1 D			
+UBERON:3000523						1 D			
+UBERON:3000527						1 D			
+UBERON:3000597						1 D			
+UBERON:3000998						1 D			
+UBERON:3010061						1 D			
+UBERON:3010094						1 D			
+UBERON:3010144						1 D			
+UBERON:3010458						1 D			
+UBERON:3010528						1 D			
+UBERON:3010820						1 D			
+UBERON:3010824						1 D			
 
 
 
@@ -649,17 +252,17 @@ FILE STATS
 Term counts for the old and new files
 
 Ontology	Old file	New file	Change
-uberon	8895	8906	+11
-	(7274 defined)	(7285 defined)	
+uberon	8906	8908	+2
+	(7285 defined)	(7286 defined)	
 uberon/phenoscape-anatomy	2267	2267	
 	(1526 defined)	(1526 defined)	
 
 Obsolete	608	608	0
 	(5.2% of total)	 (5.2% of total)	(0.0%)
 
-Totals	11162	11173	+11 (+0.1%)
-	8800 (78.8%) defined	8811 (78.9%) defined	
-	11770 inc. obs	11781 inc. obs
+Totals	11173	11175	+2 (0.0%)
+	8811 (78.9%) defined	8812 (78.9%) defined	
+	11781 inc. obs	11783 inc. obs
 
 
 

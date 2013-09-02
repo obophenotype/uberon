@@ -46,7 +46,7 @@ seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 	owltools $(UCAT) uberon_edit.owl $< cl-core.obo --merge-support-ontologies -o -f functional $@
 # this is used for xrefs for bridge files
 seed.obo: seed.owl
-	owltools $< -o -f obo $@
+	owltools $(UCAT) $< -o -f obo $@
 
 # todo - change to phenoscape-ext
 #EDITSRC = uberon_edit.owl
@@ -139,6 +139,10 @@ basic.obo: basic.owl
 subsets/efo-slim.owl: basic.owl
 	owltools $< --extract-ontology-subset --subset efo_slim --iri $(OBO)/uberon/$@ -o $@
 subsets/efo-slim.obo: subsets/efo-slim.owl
+	obolib-owl2obo $< -o $@
+subsets/cumbo.owl: basic.owl
+	owltools $< --extract-ontology-subset --subset cumbo --iri $(OBO)/uberon/$@ -o $@
+subsets/cumbo.obo: subsets/cumbo.owl
 	obolib-owl2obo $< -o $@
 
 
@@ -270,6 +274,7 @@ QC_FILES = uberon_edit-xp-check\
     ext.obo\
     ext-obscheck.txt\
     subsets/efo-slim.obo\
+    subsets/cumbo.obo\
     uberon-dv.txt\
     uberon-discv.txt\
     composites\
