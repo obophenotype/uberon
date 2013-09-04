@@ -1,60 +1,40 @@
-     * Fixed def of extraembryonic structure to be the same as latest CARO
-     * nerve fiber - made disjoint union of myelinated and unmylelinated forms
-     * made commissure terminologically and logically appropriate for non-myelin-axon taxa. Fixes issue #325
-     * weakened develops_from relationship mouth -> stomodeum to contribution - some parts of tghe mouth are ectodermal. Fixes DV with ZFA
-     * jaw refactoring
-     * Fixed inverted L/R xrefs for EHDAA2 in auricular muscle tissue. Fixes issue #321
-     * Fixed synclash for spinal cord neuromere
-     * Added ambiguous_for_taxon. 
-     * Added not_recommended_for_taxon
-     * editing nervous system def and adding to cumbo slim
+
+    * removed some stringent constraint axioms to a separate ontology (pendind-disjoints.owl) until ssAO issues fixed
+    * NT: stomodeal ectoderm, and various modifications of relations and definitions surrounding the mouth. Addresses issue #326
+    * NT: palatine aponeurosis
+    * XAO xref for pharyngeal mesenchyme, adapted xao definition for uberon
+    * adding cumbo slim, external def for cell group, CNS, brain, cell layer
 
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 09:08:2013 15:21, cvs revision unknown
-! file 2 (new): 28:08:2013 15:34, cvs revision unknown
+! file 1 (old): 28:08:2013 15:34, cvs revision unknown
+! file 2 (new): 03:09:2013 17:59, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0000478 : extraembryonic structure   
-OLD: Anatomical structure that is contiguous with the embryo and is comprised of portions of tissue or cells that will not contribute to the embryo.
-NEW: A multicellular anatomical structure that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis.
+UBERON:0000166 : oral opening   
+OLD: The orifice that connects the mouth to the exterio of the body.
+NEW: The orifice that connects the mouth to the exterior of the body.
 
 
-UBERON:0001008 : renal system   
-(was excretory system)
-OLD: The excretory system is the system of an organism that mainly performs the function of excretion, the bodily process of discharging wastes. It is responsible for the elimination of wastes produced by the processes that maintain homeostasis.
-NEW: The renal system in an anatomical system that maintains fluid balance and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products. In humans, the renal system comprises a pair of kidneys, a pair of ureters, urinary bladder, urethra, sphincter muscle and associated blood vessels[GO].
+UBERON:0000930 : stomodeum   
+OLD: Anterior part of the embryonic alimentary canal formed as an invagination of the ectoderm; the future mouth[ZFA]. In humans, a depression between the brain and the pericardium in an embryo, and is the precursor of the mouth and the anterior lobe of the pituitary gland. The stomodeum is lined by ectoderm, and is separated from the anterior end of the fore-gut by the buccopharyngeal membrane. This membrane is devoid of mesoderm, being formed by the apposition of the stomodeal ectoderm with the fore-gut endoderm; at the end of the third week it disappears, and thus a communication is established between the mouth and the future pharynx[WP]. The anterior part of the embryonic digestive system deriving from the stomodeal invagination of the ectoderm[FBbt].
+NEW: Anterior part of the embryonic digestive tract that develops into a mouth. The stomodeum includes as parts an invagination of the ectoderm and the stomodeal cavity.
 
 
-UBERON:0001020 : nervous system commissure   
-(was white matter commissure)
-OLD: White matter fiber bundle that crosses the midline of the brain or spinal cord[NIF]. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain[FBbt].
-NEW: axon tract that crosses the midline of the brain or spinal cord[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt].
+UBERON:0001734 : palatine uvula   
+(was uvula)
+OLD: Conic projection from the posterior edge of the middle of the soft palate, composed of connective tissue containing a number of racemose glands, and some muscular fibers. The uvula, hanging from the end of the soft palate, is responsible for the sound of snoring. Touching the uvula or the end of the soft palate evokes a strong gag reflex in most people.
+NEW: Conic projection from the posterior edge of the middle of the soft palate, composed of connective tissue containing a number of racemose glands, and some muscular fibers.
 
 
-UBERON:0001134 : skeletal muscle tissue   
-OLD: Tissue which consists of skeletal muscle fibers surrounded by endomysium. Examples: Skeletal muscle tissue of biceps, Skeletal muscle tissue of diaphragm[FMA]. Striated muscle tissue under control of the somatic nervous system. It is one of three major muscle types, the others being cardiac and smooth muscle. As its name suggests, most skeletal muscle is attached to bones by bundles of collagen fibers known as tendons. Skeletal muscle is made up of individual components known as muscle fibers. These fibers are formed from the fusion of developmental myoblasts. The myofibers are long, cylindrical, multinucleated cells composed of actin and myosin myofibrils repeated as a sarcomere, the basic functional unit of the cell and responsible for skeletal muscle's striated appearance and forming the basic machinery necessary for muscle contraction. The term muscle refers to multiple bundles of muscle fibers held together by connective tissue[WP].
-NEW: Striated muscle tissue under control of the somatic nervous system. It is one of three major muscle types, the others being cardiac and smooth muscle. As its name suggests, most skeletal muscle is attached to bones by bundles of collagen fibers known as tendons. Skeletal muscle is made up of individual components known as muscle fibers. These fibers are formed from the fusion of developmental myoblasts. The myofibers are long, cylindrical, multinucleated cells composed of actin and myosin myofibrils repeated as a sarcomere, the basic functional unit of the cell and responsible for skeletal muscle's striated appearance and forming the basic machinery necessary for muscle contraction. The term muscle refers to multiple bundles of muscle fibers held together by connective tissue[WP].
-
-
-UBERON:0003277 : skeleton of upper jaw   
-OLD: A subdivision of skeleton that is part of the upper jaw region[Automatically generated definition].
-NEW: A subdivision of the skeleton that corresponds to the upper part of the mouth. The lower jaw skeleton includes the following elements, when present: upper jaw teeth, the maxilla and other lower jaw bones.
-
-
-UBERON:0003278 : skeleton of lower jaw   
-OLD: A subdivision of skeleton that is part of a lower jaw [Automatically generated definition].
-NEW: A subdivision of the skeleton that corresponds to the lower part of the mouth. The lower jaw skeleton includes the following elements, when present: lower jaw teeth, the mandible and other lower jaw bones, and Meckel's cartilage.
-
-
-UBERON:0006134 : nerve fiber   
-OLD: A threadlike extension of a nerve cell and consists of an axon and myelin sheath (if existence) in the nervous system. There are nerve fibers in the central nervous system and peripheral nervous system. A nerve fiber may be myelinated and/or unmyelinated. In the central nervous system (CNS), myelin by oligodendroglia cells is formed. Schwann cells form myelin in the peripheral nervous system (PNS). Schwann cells also make a thin covering in an axon without myelin (in the PNS). A peripheral nerve fiber contains an axon, myelin sheath, schwann cells and its endoneurium. There are no endoneurium and schwann cells in the central nervous system
-NEW: A threadlike extension of a nerve cell and consists of an axon and myelin sheath (if it is myelinated) in the nervous system. There are nerve fibers in the central nervous system and peripheral nervous system. A nerve fiber may be myelinated and/or unmyelinated. In the central nervous system (CNS), myelin by oligodendroglia cells is formed. Schwann cells form myelin in the peripheral nervous system (PNS). Schwann cells also make a thin covering in an axon without myelin (in the PNS). A peripheral nerve fiber contains an axon, myelin sheath, schwann cells and its endoneurium. There are no endoneurium and schwann cells in the central nervous system.
+UBERON:0010046 : entire pharyngeal arch associated mesenchyme   
+OLD: The sum total of mesenchymal tissue in the pharyngeal arch region.
+NEW: The sum total of mesenchymal tissue in the pharyngeal arch region. Pharyngeal mesenchyme is undifferentiated, loose connective tissue derived mostly from mesoderm, and also contains ectodermally derived neural crest cells.
 
 
 
@@ -63,15 +43,25 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-08-09; date: 09:08:2013 15:21
-- file 2 (new): uberon.obo; data version: releases/2013-08-28; date: 28:08:2013 15:34
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-08-28; date: 28:08:2013 15:34
+- file 2 (new): uberon.obo; data version: releases/2013-09-03; date: 03:09:2013 17:59
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:4300012	clavus	
-UBERON:4300013	paired fin radial skeleton	
+UBERON:0014779	liver reticuloendothelial system	
+UBERON:0014780	palatine aponeurosis	
+UBERON:0014781	stomodeal ectoderm	
+UBERON:0014782	allantois of embryonic urinary system	
+UBERON:4300014	dorsal cleithrum	
+UBERON:4300015	ventral cleithrum	
+UBERON:4300016	pelvic cartilage	
+UBERON:4300017	rostrodermethmoid	
+UBERON:4440008	fin radial skeleton	
+UBERON:4440009	pectoral fin radial skeleton	
+UBERON:4440010	pelvic fin radial skeleton	
+UBERON:4440011	paired fin lepidothrichium	
 
 
 OBSOLETIONS
@@ -91,158 +81,243 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	synonym	xref	is_a	union_of	relationship	
-UBERON:0000165			C	1 D, 1 A		1 D, 1 A		1 D, 1 A	
-UBERON:0000166						1 D			
-UBERON:0000378						1 D			
-UBERON:0000478		C							
-UBERON:0001008	C	C		1 A					
-UBERON:0001020	C	C		1 D, 1 A				1 D, 1 A	
-UBERON:0001035						1 D			
-UBERON:0001134		C							
-UBERON:0001468								1 D, 1 A	
-UBERON:0001581						1 D			
-UBERON:0001610						1 D			
-UBERON:0001617						1 D, 1 A			
-UBERON:0001655						1 D			
-UBERON:0001708						1 D			
-UBERON:0001709					1 A				
-UBERON:0001710				1 A					
-UBERON:0001716						1 D			
-UBERON:0001723						1 D		1 D, 1 A	
-UBERON:0001726						1 D			
-UBERON:0001733						1 D			
-UBERON:0001734						1 D			
-UBERON:0001833						2 D, 1 A		2 D, 2 A	
-UBERON:0001837						1 D			
-UBERON:0002002								1 D, 1 A	
-UBERON:0002025				1 A					
-UBERON:0002424						1 D			
-UBERON:0002490								1 D, 1 A	
-UBERON:0002492								1 D, 1 A	
-UBERON:0003216						1 D			
-UBERON:0003235						1 D			
-UBERON:0003236						1 D			
-UBERON:0003273						1 D			
-UBERON:0003277		C			1 D	1 D			
-UBERON:0003278		C	C						
-UBERON:0003323						1 D			
-UBERON:0003324						1 D			
-UBERON:0003357						1 D			
-UBERON:0003361						1 D			
-UBERON:0003416						1 D			
-UBERON:0003420						1 D			
-UBERON:0003679						1 D			
-UBERON:0003705	C			3 D, 3 A					
-UBERON:0003729						1 D			
-UBERON:0004103						1 D			
-UBERON:0004185	C			2 A					
-UBERON:0004477						1 D			
-UBERON:0004752						1 D			
-UBERON:0004833						1 D			
-UBERON:0004906	C			2 A					
-UBERON:0004997				2 A	1 A			1 A	
-UBERON:0004998					1 D, 1 A				
-UBERON:0005334						1 D			
-UBERON:0005402						1 D			
-UBERON:0005619						1 D			
-UBERON:0005659						1 A			
-UBERON:0005905						1 D			
-UBERON:0006134		C					2 A		
-UBERON:0006260						1 D			
-UBERON:0006360						1 D, 1 A			
-UBERON:0006606						1 D		1 D, 1 A	
-UBERON:0006658								1 D, 1 A	
-UBERON:0006669						1 D			
-UBERON:0006672						1 D			
-UBERON:0006688						1 D			
-UBERON:0006699						1 D			
-UBERON:0006905						1 D			
-UBERON:0006913						1 D			
-UBERON:0007250						1 D			
-UBERON:0007721								1 D, 1 A	
-UBERON:0007722								1 D, 1 A	
-UBERON:0008199						1 D			
-UBERON:0008253						1 D			
-UBERON:0008428						1 D			
-UBERON:0008585						1 D			
-UBERON:0008586						1 D			
-UBERON:0008596						1 D			
-UBERON:0008799						1 D			
-UBERON:0009203								1 D, 1 A	
-UBERON:0009207						1 D			
-UBERON:0009471						1 D			
-UBERON:0009522						1 D			
-UBERON:0009538						1 D			
-UBERON:0009539						1 D			
-UBERON:0009654						1 D, 1 A			
-UBERON:0009680						1 D			
-UBERON:0009779				1 D, 1 A	1 D, 1 A				
-UBERON:0009780				1 D, 1 A	1 D, 1 A				
-UBERON:0010012						1 D			
-UBERON:0010013						1 D			
-UBERON:0010032						1 D			
-UBERON:0010033						1 D			
-UBERON:0010034						1 D			
-UBERON:0010047						1 D			
-UBERON:0010056						1 D			
-UBERON:0010057						1 D			
-UBERON:0010059						1 D			
-UBERON:0010426						1 D			
-UBERON:0011085						1 D			
-UBERON:0011131								1 D, 1 A	
-UBERON:0011135								1 D, 1 A	
-UBERON:0011268						1 D			
-UBERON:0011346						1 D			
-UBERON:0011349						1 D			
-UBERON:0011535						1 D			
-UBERON:0011595						1 D		1 D, 1 A	
-UBERON:0011642						1 A			
-UBERON:0011847						1 D			
-UBERON:0011850						1 D			
-UBERON:0011876						1 D			
-UBERON:0012074						1 D			
-UBERON:0012105						1 D, 1 A			
-UBERON:0012106						1 D, 1 A			
-UBERON:0012132								1 D, 1 A	
-UBERON:0012376						1 D			
-UBERON:0012621						1 D			
-UBERON:0013135						1 D			
-UBERON:0013220								1 D, 1 A	
-UBERON:0013476						1 D			
-UBERON:0013656						1 D			
-UBERON:0014451						1 D			
-UBERON:0014453						1 D, 1 A			
-UBERON:0014705						1 D			
-UBERON:1000000						1 D			
-UBERON:1000011						1 D			
-UBERON:1500006								1 D, 1 A	
-UBERON:2000230				1 A					
-UBERON:2001688						1 D			
-UBERON:2001689						1 D			
-UBERON:2001690						1 D			
-UBERON:2001691						1 D			
-UBERON:2002009						1 D			
-UBERON:2002108						1 D			
-UBERON:3000031						1 D			
-UBERON:3000036						1 D			
-UBERON:3000237						1 D			
-UBERON:3000295						1 D			
-UBERON:3000363						1 D			
-UBERON:3000365						1 D			
-UBERON:3000380						1 D			
-UBERON:3000516						1 D			
-UBERON:3000523						1 D			
-UBERON:3000527						1 D			
-UBERON:3000597						1 D			
-UBERON:3000998						1 D			
-UBERON:3010061						1 D			
-UBERON:3010094						1 D			
-UBERON:3010144						1 D			
-UBERON:3010458						1 D			
-UBERON:3010528						1 D			
-UBERON:3010820						1 D			
-UBERON:3010824						1 D			
+Term ID	name	def	comment	subset	synonym	xref	is_a	intersection_of	relationship	
+UBERON:0000085						1 D				
+UBERON:0000108			A							
+UBERON:0000165							1 D, 1 A		1 D, 1 A	
+UBERON:0000166		C			1 D		1 A			
+UBERON:0000363									1 A	
+UBERON:0000378							1 A			
+UBERON:0000433		A			3 A	1 D, 1 A				
+UBERON:0000434		A			4 A	1 D, 1 A				
+UBERON:0000467						1 D				
+UBERON:0000468					1 D, 2 A	1 D, 1 A				
+UBERON:0000930		C					1 D, 1 A			
+UBERON:0001017				1 A						
+UBERON:0001035							1 A			
+UBERON:0001295			C							
+UBERON:0001581							1 A			
+UBERON:0001610							1 A			
+UBERON:0001617							1 D, 1 A			
+UBERON:0001655							1 A			
+UBERON:0001708							1 A			
+UBERON:0001716							1 A			
+UBERON:0001723							1 A			
+UBERON:0001726							1 A			
+UBERON:0001733							1 A			
+UBERON:0001734	C	C			1 A	1 D	1 A			
+UBERON:0001833							1 A			
+UBERON:0001837							1 A			
+UBERON:0002424							1 A			
+UBERON:0002450						1 D			1 A	
+UBERON:0002831					1 D, 1 A					
+UBERON:0003104									1 D	
+UBERON:0003216							1 A			
+UBERON:0003224							1 D, 2 A	3 D, 3 A	2 D, 2 A	
+UBERON:0003235							1 A			
+UBERON:0003236							1 A			
+UBERON:0003262							1 D, 1 A			
+UBERON:0003265	C						1 D, 1 A	2 D, 1 A	1 D	
+UBERON:0003273							1 A			
+UBERON:0003277							1 A			
+UBERON:0003314							1 A			
+UBERON:0003323							1 A			
+UBERON:0003324							1 A			
+UBERON:0003328							1 D			
+UBERON:0003357							1 A			
+UBERON:0003361							1 A			
+UBERON:0003374							1 D, 2 A			
+UBERON:0003416							1 A			
+UBERON:0003420							1 A			
+UBERON:0003665			A							
+UBERON:0003679							1 A			
+UBERON:0003682							3 A	2 A	1 D, 1 A	
+UBERON:0003729							1 A			
+UBERON:0004103							1 A			
+UBERON:0004160							1 D, 1 A			
+UBERON:0004161							1 D, 1 A			
+UBERON:0004340						2 D, 1 A				
+UBERON:0004477							1 A			
+UBERON:0004752							1 A			
+UBERON:0004833			A				1 A			
+UBERON:0004921		A						2 A		
+UBERON:0005025					23 D, 1 A					
+UBERON:0005110									1 D, 1 A	
+UBERON:0005253					1 A	1 A	1 D, 2 A	3 A	2 A	
+UBERON:0005255							1 D, 1 A			
+UBERON:0005256					1 A		1 A	1 A	2 A	
+UBERON:0005257							1 D, 1 A			
+UBERON:0005323							1 D, 1 A			
+UBERON:0005334							1 A			
+UBERON:0005402							1 A			
+UBERON:0005474					1 D, 1 A					
+UBERON:0005619							1 A			
+UBERON:0005631									1 A	
+UBERON:0005659							1 D			
+UBERON:0005905							1 A			
+UBERON:0006211									2 D, 3 A	
+UBERON:0006213							1 D			
+UBERON:0006247							1 D, 1 A			
+UBERON:0006254							1 D, 1 A			
+UBERON:0006255							1 D, 1 A			
+UBERON:0006260							1 A			
+UBERON:0006285							1 D, 1 A			
+UBERON:0006288							1 D			
+UBERON:0006289							1 D			
+UBERON:0006295							1 D			
+UBERON:0006360							1 D, 1 A			
+UBERON:0006606							1 A		1 D, 1 A	
+UBERON:0006669							1 A			
+UBERON:0006672							1 A			
+UBERON:0006688							1 A			
+UBERON:0006699							1 A			
+UBERON:0006905							2 D, 2 A			
+UBERON:0006909	C				1 A					
+UBERON:0006913							1 A			
+UBERON:0007250							1 A			
+UBERON:0008199							1 A			
+UBERON:0008231									1 D, 1 A	
+UBERON:0008253							1 A			
+UBERON:0008428							1 A			
+UBERON:0008447									1 D, 1 A	
+UBERON:0008585							2 D			
+UBERON:0008586							2 D			
+UBERON:0008596							1 A			
+UBERON:0008799							1 A			
+UBERON:0008982									1 D, 1 A	
+UBERON:0008992							1 D, 2 A			
+UBERON:0009142	C	A					1 D, 2 A		2 A	
+UBERON:0009199									1 D, 1 A	
+UBERON:0009203									1 D, 1 A	
+UBERON:0009207							1 A			
+UBERON:0009471							1 A			
+UBERON:0009477							1 D			
+UBERON:0009478							1 D, 2 A			
+UBERON:0009494							1 D, 1 A			
+UBERON:0009500							1 D			
+UBERON:0009501							1 D			
+UBERON:0009522							1 A			
+UBERON:0009523							1 D			
+UBERON:0009538							2 D, 2 A			
+UBERON:0009539							2 D, 2 A			
+UBERON:0009617							3 D, 1 A			
+UBERON:0009618							1 D			
+UBERON:0009654							1 D, 1 A		1 D, 1 A	
+UBERON:0009680							1 A			
+UBERON:0009715	C				3 A		1 D, 1 A	2 D, 2 A	1 D, 1 A	
+UBERON:0009752							1 D, 1 A			
+UBERON:0010012							1 A			
+UBERON:0010013							1 A			
+UBERON:0010032							1 A			
+UBERON:0010033							1 A			
+UBERON:0010034							1 A			
+UBERON:0010046		C				1 A				
+UBERON:0010047							1 A			
+UBERON:0010056							1 A			
+UBERON:0010057							1 A			
+UBERON:0010059							1 A			
+UBERON:0010234							2 D, 1 A			
+UBERON:0010235								2 A	2 A	
+UBERON:0010329							1 D			
+UBERON:0010337							1 D, 1 A			
+UBERON:0010341							1 A			
+UBERON:0010343							1 A			
+UBERON:0010344							1 A			
+UBERON:0010345							1 A			
+UBERON:0010347							1 A			
+UBERON:0010377							1 A	1 A	1 A	
+UBERON:0010378							1 A	1 A	1 A	
+UBERON:0010426							1 A			
+UBERON:0010518					1 A					
+UBERON:0010697							1 D, 1 A			
+UBERON:0010714							1 D, 1 A			
+UBERON:0010718							1 D, 1 A			
+UBERON:0010744							1 D			
+UBERON:0010745							1 D			
+UBERON:0010905					1 D, 1 A					
+UBERON:0010975							1 D			
+UBERON:0011085							1 A			
+UBERON:0011135									1 D, 1 A	
+UBERON:0011203							1 D			
+UBERON:0011268							1 A			
+UBERON:0011301							1 D			
+UBERON:0011346							1 A			
+UBERON:0011349							1 A			
+UBERON:0011535							1 A			
+UBERON:0011595							1 A		1 D, 1 A	
+UBERON:0011642							1 D			
+UBERON:0011696									1 D, 1 A	
+UBERON:0011847							1 A			
+UBERON:0011850							1 A			
+UBERON:0011876							1 A			
+UBERON:0012074							1 A			
+UBERON:0012105							1 D, 1 A			
+UBERON:0012106							1 D, 1 A			
+UBERON:0012111									1 D, 1 A	
+UBERON:0012132									1 D, 1 A	
+UBERON:0012314					3 A					
+UBERON:0012376							1 A			
+UBERON:0012621							1 A			
+UBERON:0013075			A		1 A	1 A				
+UBERON:0013135							1 A			
+UBERON:0013220									1 D, 1 A	
+UBERON:0013476							1 A			
+UBERON:0013507							1 D			
+UBERON:0013508							1 D			
+UBERON:0013509							1 D			
+UBERON:0013510							1 D			
+UBERON:0013656							1 A			
+UBERON:0013702					1 A	1 A				
+UBERON:0014451							1 A			
+UBERON:0014453							1 D, 1 A			
+UBERON:0014705							1 A			
+UBERON:1000000							1 A			
+UBERON:1000011							1 A			
+UBERON:1500006							1 D			
+UBERON:2000271							1 D, 2 A		1 A	
+UBERON:2000373							1 D, 1 A			
+UBERON:2000508									1 A	
+UBERON:2001419							1 D			
+UBERON:2001586									1 D, 1 A	
+UBERON:2001647					2 A					
+UBERON:2001672								2 A	1 A	
+UBERON:2001688							1 A			
+UBERON:2001689							1 A			
+UBERON:2001690							1 A			
+UBERON:2001691							1 A			
+UBERON:2001699							1 D, 3 A			
+UBERON:2001817							1 D, 3 A			
+UBERON:2001820							1 D, 3 A			
+UBERON:2002003							3 D, 3 A			
+UBERON:2002009							1 A			
+UBERON:2002108							1 A			
+UBERON:2005225							1 D			
+UBERON:3000031							1 A			
+UBERON:3000036							1 A			
+UBERON:3000237							1 A			
+UBERON:3000295							1 A			
+UBERON:3000363							1 A			
+UBERON:3000365							1 A			
+UBERON:3000380							1 A			
+UBERON:3000516							1 A			
+UBERON:3000523							1 A			
+UBERON:3000527							1 A			
+UBERON:3000597							1 A			
+UBERON:3000998							1 A			
+UBERON:3010061							1 A			
+UBERON:3010094							1 A			
+UBERON:3010144							1 A			
+UBERON:3010458							1 A			
+UBERON:3010528							1 A			
+UBERON:3010820							1 A			
+UBERON:3010824							1 A			
+UBERON:4000173							2 D, 1 A	2 A	1 A	
+UBERON:4000174								2 A	1 A	
+UBERON:4000175							2 D, 1 A	2 A	1 A	
+UBERON:4000176								2 A	1 A	
+UBERON:4000177							1 D, 1 A	2 A	1 A	
+UBERON:4200102	C									
+UBERON:4300013							1 D, 1 A	2 A	1 A	
 
 
 
@@ -252,17 +327,17 @@ FILE STATS
 Term counts for the old and new files
 
 Ontology	Old file	New file	Change
-uberon	8906	8908	+2
-	(7285 defined)	(7286 defined)	
+uberon	8908	8920	+12
+	(7286 defined)	(7292 defined)	
 uberon/phenoscape-anatomy	2267	2267	
 	(1526 defined)	(1526 defined)	
 
 Obsolete	608	608	0
 	(5.2% of total)	 (5.2% of total)	(0.0%)
 
-Totals	11173	11175	+2 (0.0%)
-	8811 (78.9%) defined	8812 (78.9%) defined	
-	11781 inc. obs	11783 inc. obs
+Totals	11175	11187	+12 (+0.1%)
+	8812 (78.9%) defined	8818 (78.8%) defined	
+	11783 inc. obs	11795 inc. obs
 
 
 
