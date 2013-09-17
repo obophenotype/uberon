@@ -1,60 +1,28 @@
-     * Fixed def of extraembryonic structure to be the same as latest CARO
-     * nerve fiber - made disjoint union of myelinated and unmylelinated forms
-     * made commissure terminologically and logically appropriate for non-myelin-axon taxa. Fixes issue #325
-     * weakened develops_from relationship mouth -> stomodeum to contribution - some parts of tghe mouth are ectodermal. Fixes DV with ZFA
-     * jaw refactoring
-     * Fixed inverted L/R xrefs for EHDAA2 in auricular muscle tissue. Fixes issue #321
-     * Fixed synclash for spinal cord neuromere
-     * Added ambiguous_for_taxon. 
-     * Added not_recommended_for_taxon
-     * editing nervous system def and adding to cumbo slim
+
+     * NTs for subdivision of umbilical vein into extraembryonic and embryonic portions. Fixes issue #328
+     * Removed redundant synonym. Fixes issue #329
+     * NTs: cloacal muscles
+     * Fixed typo in syn. Fixes issue #327
 
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 09:08:2013 15:21, cvs revision unknown
-! file 2 (new): 28:08:2013 15:34, cvs revision unknown
+! file 1 (old): 03:09:2013 17:59, cvs revision unknown
+! file 2 (new): 09:09:2013 09:45, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0000478 : extraembryonic structure   
-OLD: Anatomical structure that is contiguous with the embryo and is comprised of portions of tissue or cells that will not contribute to the embryo.
-NEW: A multicellular anatomical structure that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis.
+UBERON:4200009 : hypochordal lepidotrichium   
+OLD: Lepidotrichium located ventral to the notochord
+NEW: Caudal fin lepidotrichium located ventral to the notochord.
 
 
-UBERON:0001008 : renal system   
-(was excretory system)
-OLD: The excretory system is the system of an organism that mainly performs the function of excretion, the bodily process of discharging wastes. It is responsible for the elimination of wastes produced by the processes that maintain homeostasis.
-NEW: The renal system in an anatomical system that maintains fluid balance and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products. In humans, the renal system comprises a pair of kidneys, a pair of ureters, urinary bladder, urethra, sphincter muscle and associated blood vessels[GO].
-
-
-UBERON:0001020 : nervous system commissure   
-(was white matter commissure)
-OLD: White matter fiber bundle that crosses the midline of the brain or spinal cord[NIF]. In the context of Drosophila refers to a broad band of axons connecting the same neuropils each side of the brain[FBbt].
-NEW: axon tract that crosses the midline of the brain or spinal cord[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt].
-
-
-UBERON:0001134 : skeletal muscle tissue   
-OLD: Tissue which consists of skeletal muscle fibers surrounded by endomysium. Examples: Skeletal muscle tissue of biceps, Skeletal muscle tissue of diaphragm[FMA]. Striated muscle tissue under control of the somatic nervous system. It is one of three major muscle types, the others being cardiac and smooth muscle. As its name suggests, most skeletal muscle is attached to bones by bundles of collagen fibers known as tendons. Skeletal muscle is made up of individual components known as muscle fibers. These fibers are formed from the fusion of developmental myoblasts. The myofibers are long, cylindrical, multinucleated cells composed of actin and myosin myofibrils repeated as a sarcomere, the basic functional unit of the cell and responsible for skeletal muscle's striated appearance and forming the basic machinery necessary for muscle contraction. The term muscle refers to multiple bundles of muscle fibers held together by connective tissue[WP].
-NEW: Striated muscle tissue under control of the somatic nervous system. It is one of three major muscle types, the others being cardiac and smooth muscle. As its name suggests, most skeletal muscle is attached to bones by bundles of collagen fibers known as tendons. Skeletal muscle is made up of individual components known as muscle fibers. These fibers are formed from the fusion of developmental myoblasts. The myofibers are long, cylindrical, multinucleated cells composed of actin and myosin myofibrils repeated as a sarcomere, the basic functional unit of the cell and responsible for skeletal muscle's striated appearance and forming the basic machinery necessary for muscle contraction. The term muscle refers to multiple bundles of muscle fibers held together by connective tissue[WP].
-
-
-UBERON:0003277 : skeleton of upper jaw   
-OLD: A subdivision of skeleton that is part of the upper jaw region[Automatically generated definition].
-NEW: A subdivision of the skeleton that corresponds to the upper part of the mouth. The lower jaw skeleton includes the following elements, when present: upper jaw teeth, the maxilla and other lower jaw bones.
-
-
-UBERON:0003278 : skeleton of lower jaw   
-OLD: A subdivision of skeleton that is part of a lower jaw [Automatically generated definition].
-NEW: A subdivision of the skeleton that corresponds to the lower part of the mouth. The lower jaw skeleton includes the following elements, when present: lower jaw teeth, the mandible and other lower jaw bones, and Meckel's cartilage.
-
-
-UBERON:0006134 : nerve fiber   
-OLD: A threadlike extension of a nerve cell and consists of an axon and myelin sheath (if existence) in the nervous system. There are nerve fibers in the central nervous system and peripheral nervous system. A nerve fiber may be myelinated and/or unmyelinated. In the central nervous system (CNS), myelin by oligodendroglia cells is formed. Schwann cells form myelin in the peripheral nervous system (PNS). Schwann cells also make a thin covering in an axon without myelin (in the PNS). A peripheral nerve fiber contains an axon, myelin sheath, schwann cells and its endoneurium. There are no endoneurium and schwann cells in the central nervous system
-NEW: A threadlike extension of a nerve cell and consists of an axon and myelin sheath (if it is myelinated) in the nervous system. There are nerve fibers in the central nervous system and peripheral nervous system. A nerve fiber may be myelinated and/or unmyelinated. In the central nervous system (CNS), myelin by oligodendroglia cells is formed. Schwann cells form myelin in the peripheral nervous system (PNS). Schwann cells also make a thin covering in an axon without myelin (in the PNS). A peripheral nerve fiber contains an axon, myelin sheath, schwann cells and its endoneurium. There are no endoneurium and schwann cells in the central nervous system.
+UBERON:4200062 : epichordal lepidotrichium   
+OLD: lepidotrichium located upon or above the notochord.
+NEW: Caudal fin lepidotrichium located upon or above the notochord.
 
 
 
@@ -63,15 +31,23 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-08-09; date: 09:08:2013 15:21
-- file 2 (new): uberon.obo; data version: releases/2013-08-28; date: 28:08:2013 15:34
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-09-03; date: 03:09:2013 17:59
+- file 2 (new): uberon.obo; data version: releases/2013-09-09; date: 09:09:2013 09:45
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:4300012	clavus	
-UBERON:4300013	paired fin radial skeleton	
+UBERON:0014783	cloacal muscle	
+UBERON:0014784	transverse cloacal muscle	
+UBERON:0014785	levator cloacae	
+UBERON:0014786	extraembryonic portion of umbilical vein	
+UBERON:0014787	extraembryonic portion of left umbilical vein	
+UBERON:0014788	extraembryonic umbilical vein right	
+UBERON:0014789	embryo portion of umbilical vein	
+UBERON:4300018	ventral marginal cartilage	
+UBERON:4300019	dorsal fin basal cartilage	
+UBERON:4300020	anal fin basal cartilage	
 
 
 OBSOLETIONS
@@ -91,158 +67,22 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	synonym	xref	is_a	union_of	relationship	
-UBERON:0000165			C	1 D, 1 A		1 D, 1 A		1 D, 1 A	
-UBERON:0000166						1 D			
-UBERON:0000378						1 D			
-UBERON:0000478		C							
-UBERON:0001008	C	C		1 A					
-UBERON:0001020	C	C		1 D, 1 A				1 D, 1 A	
-UBERON:0001035						1 D			
-UBERON:0001134		C							
-UBERON:0001468								1 D, 1 A	
-UBERON:0001581						1 D			
-UBERON:0001610						1 D			
-UBERON:0001617						1 D, 1 A			
-UBERON:0001655						1 D			
-UBERON:0001708						1 D			
-UBERON:0001709					1 A				
-UBERON:0001710				1 A					
-UBERON:0001716						1 D			
-UBERON:0001723						1 D		1 D, 1 A	
-UBERON:0001726						1 D			
-UBERON:0001733						1 D			
-UBERON:0001734						1 D			
-UBERON:0001833						2 D, 1 A		2 D, 2 A	
-UBERON:0001837						1 D			
-UBERON:0002002								1 D, 1 A	
-UBERON:0002025				1 A					
-UBERON:0002424						1 D			
-UBERON:0002490								1 D, 1 A	
-UBERON:0002492								1 D, 1 A	
-UBERON:0003216						1 D			
-UBERON:0003235						1 D			
-UBERON:0003236						1 D			
-UBERON:0003273						1 D			
-UBERON:0003277		C			1 D	1 D			
-UBERON:0003278		C	C						
-UBERON:0003323						1 D			
-UBERON:0003324						1 D			
-UBERON:0003357						1 D			
-UBERON:0003361						1 D			
-UBERON:0003416						1 D			
-UBERON:0003420						1 D			
-UBERON:0003679						1 D			
-UBERON:0003705	C			3 D, 3 A					
-UBERON:0003729						1 D			
-UBERON:0004103						1 D			
-UBERON:0004185	C			2 A					
-UBERON:0004477						1 D			
-UBERON:0004752						1 D			
-UBERON:0004833						1 D			
-UBERON:0004906	C			2 A					
-UBERON:0004997				2 A	1 A			1 A	
-UBERON:0004998					1 D, 1 A				
-UBERON:0005334						1 D			
-UBERON:0005402						1 D			
-UBERON:0005619						1 D			
-UBERON:0005659						1 A			
-UBERON:0005905						1 D			
-UBERON:0006134		C					2 A		
-UBERON:0006260						1 D			
-UBERON:0006360						1 D, 1 A			
-UBERON:0006606						1 D		1 D, 1 A	
-UBERON:0006658								1 D, 1 A	
-UBERON:0006669						1 D			
-UBERON:0006672						1 D			
-UBERON:0006688						1 D			
-UBERON:0006699						1 D			
-UBERON:0006905						1 D			
-UBERON:0006913						1 D			
-UBERON:0007250						1 D			
-UBERON:0007721								1 D, 1 A	
-UBERON:0007722								1 D, 1 A	
-UBERON:0008199						1 D			
-UBERON:0008253						1 D			
-UBERON:0008428						1 D			
-UBERON:0008585						1 D			
-UBERON:0008586						1 D			
-UBERON:0008596						1 D			
-UBERON:0008799						1 D			
-UBERON:0009203								1 D, 1 A	
-UBERON:0009207						1 D			
-UBERON:0009471						1 D			
-UBERON:0009522						1 D			
-UBERON:0009538						1 D			
-UBERON:0009539						1 D			
-UBERON:0009654						1 D, 1 A			
-UBERON:0009680						1 D			
-UBERON:0009779				1 D, 1 A	1 D, 1 A				
-UBERON:0009780				1 D, 1 A	1 D, 1 A				
-UBERON:0010012						1 D			
-UBERON:0010013						1 D			
-UBERON:0010032						1 D			
-UBERON:0010033						1 D			
-UBERON:0010034						1 D			
-UBERON:0010047						1 D			
-UBERON:0010056						1 D			
-UBERON:0010057						1 D			
-UBERON:0010059						1 D			
-UBERON:0010426						1 D			
-UBERON:0011085						1 D			
-UBERON:0011131								1 D, 1 A	
-UBERON:0011135								1 D, 1 A	
-UBERON:0011268						1 D			
-UBERON:0011346						1 D			
-UBERON:0011349						1 D			
-UBERON:0011535						1 D			
-UBERON:0011595						1 D		1 D, 1 A	
-UBERON:0011642						1 A			
-UBERON:0011847						1 D			
-UBERON:0011850						1 D			
-UBERON:0011876						1 D			
-UBERON:0012074						1 D			
-UBERON:0012105						1 D, 1 A			
-UBERON:0012106						1 D, 1 A			
-UBERON:0012132								1 D, 1 A	
-UBERON:0012376						1 D			
-UBERON:0012621						1 D			
-UBERON:0013135						1 D			
-UBERON:0013220								1 D, 1 A	
-UBERON:0013476						1 D			
-UBERON:0013656						1 D			
-UBERON:0014451						1 D			
-UBERON:0014453						1 D, 1 A			
-UBERON:0014705						1 D			
-UBERON:1000000						1 D			
-UBERON:1000011						1 D			
-UBERON:1500006								1 D, 1 A	
-UBERON:2000230				1 A					
-UBERON:2001688						1 D			
-UBERON:2001689						1 D			
-UBERON:2001690						1 D			
-UBERON:2001691						1 D			
-UBERON:2002009						1 D			
-UBERON:2002108						1 D			
-UBERON:3000031						1 D			
-UBERON:3000036						1 D			
-UBERON:3000237						1 D			
-UBERON:3000295						1 D			
-UBERON:3000363						1 D			
-UBERON:3000365						1 D			
-UBERON:3000380						1 D			
-UBERON:3000516						1 D			
-UBERON:3000523						1 D			
-UBERON:3000527						1 D			
-UBERON:3000597						1 D			
-UBERON:3000998						1 D			
-UBERON:3010061						1 D			
-UBERON:3010094						1 D			
-UBERON:3010144						1 D			
-UBERON:3010458						1 D			
-UBERON:3010528						1 D			
-UBERON:3010820						1 D			
-UBERON:3010824						1 D			
+Term ID	def	comment	synonym	xref	is_a	relationship	
+UBERON:0001468						1 D, 1 A	
+UBERON:0002066				1 D			
+UBERON:0002353			1 A				
+UBERON:0003899		C					
+UBERON:0004461						1 A	
+UBERON:0005110						1 D, 1 A	
+UBERON:0007722						1 D, 1 A	
+UBERON:0007831			1 D				
+UBERON:0009199						1 D, 1 A	
+UBERON:0011131						1 D, 1 A	
+UBERON:0011133						1 D, 1 A	
+UBERON:0012464	A						
+UBERON:0013501		A			2 D, 1 A		
+UBERON:4200009	C						
+UBERON:4200062	C				1 D, 1 A		
 
 
 
@@ -252,17 +92,17 @@ FILE STATS
 Term counts for the old and new files
 
 Ontology	Old file	New file	Change
-uberon	8906	8908	+2
-	(7285 defined)	(7286 defined)	
+uberon	8920	8930	+10
+	(7292 defined)	(7299 defined)	
 uberon/phenoscape-anatomy	2267	2267	
 	(1526 defined)	(1526 defined)	
 
 Obsolete	608	608	0
 	(5.2% of total)	 (5.2% of total)	(0.0%)
 
-Totals	11173	11175	+2 (0.0%)
-	8811 (78.9%) defined	8812 (78.9%) defined	
-	11781 inc. obs	11783 inc. obs
+Totals	11187	11197	+10 (+0.1%)
+	8818 (78.8%) defined	8825 (78.8%) defined	
+	11795 inc. obs	11805 inc. obs
 
 
 

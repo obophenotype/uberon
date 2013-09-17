@@ -1,0 +1,90 @@
+format-version: 1.2
+ontology: uberon/pending-disjoints
+property_value: dc-title "Uberon pending disjoints" xsd:string
+property_value: dc-description "This ontology contains disjointness axioms that give rise to unsatisfiable classes - they are excluded from the production release until they can be fixed. For more details, see the homepage of this ontology - http://purl.obolibrary.org/obo/uberon/docs/Inter-ontology-disjointness-Design-Pattern" xsd:string
+property_value: dc-creator "Chris Mungall" xsd:string
+property_value: foaf-homepage "http://purl.obolibrary.org/obo/uberon/docs/Inter-ontology-disjointness-Design-Pattern" xsd:anyURI
+idspace: NIF_GrossAnatomy http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#
+
+[Term]
+id: UBERON:0000470 ! cell part
+property_value: blockedBy https://sourceforge.net/p/obo/xenopus-anatomy-xao-term-requests/19/
+property_value: unsatisfiable XAO:0000262 ! polar body
+disjoint_from: CL:0000000 ! cell
+
+[Term]
+id: UBERON:0000486 ! multilaminar epithelium
+disjoint_from: UBERON:0000490 ! unilaminar epithelium
+
+[Term]
+id: UBERON:0013702
+name: body proper
+relationship: spatially_disjoint_from UBERON:0000033 ! head  ** TODO **
+
+[Term]
+id: UBERON:0013702
+name: body proper
+relationship: spatially_disjoint_from UBERON:0002415 ! tail  ** VIOLATIONS: parachordal vessel, intersegmental vessel, dorsal longitudinal anastomotic vessel (ZFA) (tail and trunk vasculature) **
+
+[Term]
+id: UBERON:0000026 ! appendage
+relationship: spatially_disjoint_from UBERON:0013701 ! main body axis ** TODO - caro issue **
+
+[Term]
+id: UBERON:0000033 ! head
+relationship: spatially_disjoint_from UBERON:0002100 ! trunk
+
+[Term]
+id: UBERON:0007529 ! loose mesenchyme tissue
+disjoint_from: UBERON:0007524 ! dense mesenchyme tissue
+! EHDAA2:0004581 'future jejunum & ileum mesentery (embryonic human)' UNSAT: EHDAA2:0004580 'coecum mesentery (embryonic human)' UNSAT: EHDAA2:0004579 'midgut part of future large intestine mesentery (embryonic human)' UNSAT: EHDAA2:0004718 'chorionic villus mesenchyme (embryonic human)'
+
+[Term]
+id: UBERON:0004185
+name: endodermal part of digestive tract
+disjoint_from: UBERON:0004906 ! ectodermal gut
+property_value: unsatisfiable ZFA:0000547 ! mouth
+
+[Typedef]
+id: spatially_disjoint_from
+name: spatially_disjoint_from
+def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+synonym: "shares_no_parts_with" EXACT []
+!expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
+!expand_assertion_to: "DisjointClasses: (BFO_0000050 some ?X), (BFO_0000050 some ?Y)" []
+!expand_assertion_to: "Class: http://www.w3.org/2002/07/owl#Nothing EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/homepage
+
+[Typedef]
+id: dc-title
+name: title
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/title
+
+[Typedef]
+id: dc-creator
+name: creator
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/creator
+
+[Typedef]
+id: dc-description
+name: description
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/description
+
+[Typedef]
+id: seeAlso
+name: see also
+is_metadata_tag: true
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+

@@ -21,12 +21,17 @@ uberon_edit.owl: uberon_edit.obo
 ### TODO - restore --expand-macros
 ###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 
+# todo - rename this
+core.owl:
+	ln -s $@ uberon_edit.owl
+
+
 pe:
 	mkdir pe
 
 # note: developers may want to do this via a symlink
-pe/phenoscape-ext.owl: pe
-	wget http://purl.obolibrary.org/obo/uberon/phenoscape-ext.owl -O $@
+#pe/phenoscape-ext.owl: pe
+#	wget http://purl.obolibrary.org/obo/uberon/phenoscape-ext.owl -O $@
 
 # this is primarily used for seeding
 phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
@@ -151,7 +156,7 @@ supercheck.owl: unreasoned.owl
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
 
 disjoint-violations.txt: unreasoned.owl
-	owltools --no-debug $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --reasoner welk --check-disjointness-axioms > $@
+	owltools --no-debug $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --reasoner elk --check-disjointness-axioms > $@
 
 newpipe: basic-xp-check
 
@@ -209,16 +214,28 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 # * full tests use these axioms
 # note at this time we don't expect all full bridge tests to pass. This is because the disjointness axioms are
 # very strong and even seemingly minor variations in representation across ontologies can lead to unsatisfiable classes
-CHECK_AO_LIST = ma emapa ehdaa2 zfa xao fbbt wbbt
+# note: exclude EHDAA2 for now until extraembryonic/embryonic issues sorted
+## CHECK_AO_LIST = ma emapa ehdaa2 zfa xao fbbt wbbt
+CHECK_AO_LIST = ma emapa zfa xao fbbt wbbt
 FULL_CHECK_AO_LIST = fma $(CHECK_AO_LIST)
-quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_MAIN_AO_LIST))
-bridge-checks: $(patsubst %,bridge-check-%.txt,$(MAIN_AO_LIST))
+quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
+bridge-checks: $(patsubst %,bridge-check-%.txt,$(CHECK_AO_LIST))
+full-bridge-checks: $(patsubst %,full-bridge-check-%.txt,$(CHECK_AO_LIST))
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
 quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 bridge-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+full-bridge-check-%.txt: ext.owl bridge/bridges external-disjoints.owl
+	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+core-bridge-check-%.txt: core.owl bridge/bridges external-disjoints.owl
+	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+
+bridge-dv-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
+	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl  --merge-support-ontologies --reasoner elk --check-disjointness-axioms  > $@.tmp && mv $@.tmp $@
+
+ 
 
 #%.owl: %.obo
 #	obolib-obo2owl -o $@ $<
