@@ -2675,19 +2675,6 @@ property_value: has_stage_marker UBERON:0005971
 property_value: start_dpc "7.0" xsd:float
 
 [Term]
-id: MmusDv:0000016
-name: neurula stage
-namespace: mouse_developmental_stage
-def: "Embryonic stage defined by formation of a tube from the flat layer of ectodermal cells known as the neural plate." [UBERON:0000110]
-comment: This term was obsoleted as it was the only child associated to MmusDv:0000017., This stage starts the emergence of the central nervous system at embryonic age 7.5 dpc (day post coitum).
-synonym: "TheilerStage11" RELATED []
-is_a: MmusDv:0000000 ! mouse life cycle stage
-is_a: MmusDv:0000001 ! mouse life cycle
-property_value: IAO:0000589 "neurula stage (MmusDv)" xsd:string
-is_obsolete: true
-consider: MmusDv:0000017
-
-[Term]
 id: MmusDv:0000017
 name: Theiler stage 11
 namespace: mouse_developmental_stage
@@ -2701,10 +2688,10 @@ xref: TS11
 xref: XUO:0000055
 is_a: MmusDv:0000000 ! mouse life cycle stage
 is_a: MmusDv:0000001 ! mouse life cycle
-is_a: UBERON:0000067 ! embryo stage part
 relationship: immediately_preceded_by MmusDv:0000015 ! Theiler stage 10
 relationship: part_of MmusDv:0000002 ! embryonic mouse stage
 property_value: has_stage_marker UBERON:0003075
+property_value: IAO:0000589 "neurula stage (MmusDv)" xsd:string
 property_value: start_dpc "7.5" xsd:float
 
 [Term]
@@ -2930,17 +2917,6 @@ property_value: has_stage_marker UBERON:0003606
 property_value: start_dpc "14.0" xsd:float
 
 [Term]
-id: MmusDv:0000030
-name: post-embryonic developmental stage
-namespace: mouse_developmental_stage
-def: "mouse life cycle that follows the embryonic development stage and during which further organogenesis and histogenesis occur." [Bgee:curator]
-comment: This term was obsoleted to follow human developmental ontology structure.
-is_a: MmusDv:0000000 ! mouse life cycle stage
-is_a: MmusDv:0000001 ! mouse life cycle
-property_value: IAO:0000589 "post-embryonic stage (MmusDv)" xsd:string
-is_obsolete: true
-
-[Term]
 id: MmusDv:0000031
 name: fetal stage
 namespace: mouse_developmental_stage
@@ -3054,32 +3030,6 @@ relationship: part_of MmusDv:0000043 ! immature stage
 property_value: end_wpb "6.0" xsd:float
 property_value: IAO:0000589 "neonate stage (MmusDv)" xsd:string
 property_value: start_wpb "1.0" xsd:float
-
-[Term]
-id: MmusDv:0000039
-name: adolescent stage
-namespace: mouse_developmental_stage
-def: "Immature stage that refers to a mouse which is over 4 weeks and under 7 weeks old." [Bgee:curator]
-comment: This term was obsoleted as it is not fully accepted as a defined developmental stage in the literature.. This stage describes the age at which mice are usually used as adolescent mouse models in the literature.
-synonym: "4-6 weeks" EXACT []
-is_a: MmusDv:0000000 ! mouse life cycle stage
-is_a: MmusDv:0000001 ! mouse life cycle
-equivalent_to: MmusDv:0000040 ! adult stage
-property_value: IAO:0000589 "post-juvenile adult stage (MmusDv)" xsd:string
-is_obsolete: true
-
-[Term]
-id: MmusDv:0000040
-name: adult stage
-namespace: mouse_developmental_stage
-def: "Mouse developmental stage that refers to a mouse which is over 5 weeks old." [Bgee:curator]
-comment: This term was obsoleted to include the mature stage into the ontology. Both terms have the same children, but contains of children (children of children) differ. The organisation of the postnatal development time in mouse is debatable, literature usually refers to mature or immature mice, with milestone around 6-8 weeks post-natal.
-synonym: "mature" EXACT []
-is_a: MmusDv:0000000 ! mouse life cycle stage
-is_a: MmusDv:0000001 ! mouse life cycle
-property_value: IAO:0000589 "post-juvenile adult stage (MmusDv)" xsd:string
-is_obsolete: true
-replaced_by: MmusDv:0000110
 
 [Term]
 id: MmusDv:0000041
@@ -3922,6 +3872,7 @@ synonym: "mature" EXACT []
 is_a: MmusDv:0000000 ! mouse life cycle stage
 is_a: MmusDv:0000001 ! mouse life cycle
 relationship: part_of MmusDv:0000001 ! mouse life cycle
+property_value: IAO:0000589 "post-juvenile adult stage (MmusDv)" xsd:string
 property_value: start_mpb "1.5" xsd:float
 property_value: start_wpb "6.0" xsd:float
 
@@ -4071,7 +4022,6 @@ synonym: "post-hatching stage" NARROW []
 synonym: "postembryonic" RELATED []
 synonym: "postembryonic stage" EXACT []
 xref: BilaDO:0000003
-xref: MmusDv:0000030
 xref: OGES:000010
 xref: OGES:000014
 xref: OGES:000024
@@ -4228,7 +4178,7 @@ def: "Staged defined by the formation of a tube from the flat layer of ectoderma
 xref: BilaDO:0000009
 xref: BILS:0000110
 xref: HsapDv:0000012
-xref: MmusDv:0000016
+xref: MmusDv:0000017
 xref: XAO:1000006
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
@@ -4282,8 +4232,7 @@ xref: BILS:0000113
 xref: EV:0300064
 xref: EV:0300070
 xref: MIAA:0000403
-xref: MmusDv:0000039
-xref: MmusDv:0000040
+xref: MmusDv:0000110
 xref: OGES:000026
 xref: OGES:000027
 xref: XAO:1000009

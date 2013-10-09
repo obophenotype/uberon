@@ -13,3 +13,8 @@ missing(S,X1,R,X2,U1,U2) :-
 anc_in(X1,X2,S) :-
         parentT(X1,X2),
         entity_xref_idspace(_,X2,S).
+
+/*
+
+
+*/

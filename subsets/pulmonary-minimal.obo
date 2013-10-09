@@ -761,6 +761,7 @@ synonym: "system" BROAD [GO:0048731]
 xref: AAO:0000007
 xref: AEO:0000011
 xref: BILA:0000011
+xref: BSA:0000049
 xref: CALOHA:TS-2088
 xref: CARO:0000011
 xref: EHDAA2:0003011
@@ -814,7 +815,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: UBERON:0000929
 name: pharyngeal branch of vagus nerve
 namespace: uberon
-def: "Motor nerve of the pharynx, arises from the upper part of the ganglion nodosum, and consists principally of filaments from the cranial portion of the accessory nerve." [Wikipedia:Pharyngeal_branch_of_vagus_nerve]
+def: "Motor nerve of the pharynx, arises from the upper part of the ganglion nodosum, and consists principally of filaments from the cranial portion of the accessory nerve." [Wikipedia:Pharyngeal_part_of_vagus_nerve]
 comment: This class was created automatically from a combination of ontologies
 subset: uberon_slim
 synonym: "pharyngeal branch" EXACT []
@@ -823,7 +824,7 @@ synonym: "pharyngeal branch of vagus" EXACT [FMA:6234]
 synonym: "pharyngeal branch of vagus nerve" EXACT []
 synonym: "ramus pharyngealis nervi vagalis" EXACT []
 synonym: "ramus pharyngeus" EXACT LATIN [FMA:6234, FMA:TA]
-synonym: "ramus pharyngeus nervi vagi" RELATED LATIN [Wikipedia:Pharyngeal_branch_of_vagus_nerve]
+synonym: "ramus pharyngeus nervi vagi" RELATED LATIN [Wikipedia:Pharyngeal_part_of_vagus_nerve]
 synonym: "tenth cranial nerve pharyngeal branch" EXACT []
 synonym: "vagal pharyngeal branch" EXACT []
 synonym: "vagus nerve pharyngeal branch" EXACT []
@@ -831,7 +832,7 @@ xref: FMA:6234
 xref: http://upload.wikimedia.org/wikipedia/commons/5/5e/Gray791.png
 xref: http://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Gray791.png/200px-Gray791.png
 xref: SCTID:280298006
-xref: Wikipedia:Pharyngeal_branch_of_vagus_nerve
+xref: Wikipedia:Pharyngeal_part_of_vagus_nerve
 relationship: part_of UBERON:0001005 ! respiratory airway
 
 [Term]
@@ -1169,6 +1170,7 @@ xref: SCTID:181744001
 xref: UMLS:C0023054 {source="ncithesaurus:Laryngeal_Muscle"}
 is_a: UBERON:0003831 ! respiratory system muscle
 relationship: part_of UBERON:0001737 ! larynx
+relationship: part_of UBERON:0004478 {source="prolog"} ! musculature of larynx
 
 [Term]
 id: UBERON:0001681
@@ -2530,7 +2532,7 @@ xref: UMLS:C0006270 {source="ncithesaurus:Bronchiole"}
 xref: VHOG:0000675
 xref: Wikipedia:Bronchiole
 is_a: UBERON:0000117 ! respiratory tube
-relationship: branch_of UBERON:0002185 ! bronchus
+relationship: branching_part_of UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0002048 {source="MA"} ! lung
 relationship: part_of UBERON:0007196 {source="FMA"} ! tracheobronchial tree
 relationship: part_of UBERON:0010368 {source="ncit"} ! pulmonary lobule
@@ -3312,6 +3314,7 @@ synonym: "epithelial tissue of pharynx" EXACT [OBOL:automatic]
 synonym: "epithelium of pharynx" EXACT [OBOL:automatic]
 synonym: "pharynx epithelial tissue" EXACT [OBOL:automatic]
 synonym: "pharynx epithelium" EXACT [OBOL:automatic]
+xref: BSA:0000112
 xref: EMAPA:16551
 xref: EMAPA:16708
 xref: MA:0002725
@@ -3382,7 +3385,7 @@ relationship: part_of UBERON:0002255 ! vomeronasal organ
 
 [Term]
 id: UBERON:0003384
-name: skeletal muscle of pharynx
+name: skeletal muscle tissue of pharynx
 namespace: uberon
 def: "A portion of skeletal muscle tissue that is part of a pharynx [Automatically generated definition]." [OBOL:automatic]
 synonym: "pharynx skeletal muscle" EXACT [OBOL:automatic]
@@ -4491,7 +4494,7 @@ relationship: part_of UBERON:0001557 {source="EHDAA2"} ! upper respiratory tract
 id: UBERON:0004478
 name: musculature of larynx
 namespace: uberon
-def: "A musculature that is part of a larynx [Automatically generated definition]." [OBOL:automatic]
+def: "Any collection of muscles that is part of a larynx [Automatically generated definition]." [OBOL:automatic]
 synonym: "laryngeal muscles" EXACT [FMA:46616]
 synonym: "laryngeal muscles set" EXACT [FMA:46616]
 synonym: "muscle group of larynx" EXACT [FMA:46616]
@@ -6079,7 +6082,7 @@ id: UBERON:0006332
 name: nasal capsule
 namespace: uberon
 def: "an embryonic cartilaginous frame, the nasal capsule, an evolutionary-conserved structure composed of ventral and dorsal components: the mesethmoid and ectethmoid cartilages, respectively.[PMID]." [PMID:21270050]
-comment: Taxon notes: In most mammals, the nasal capsule remains unossified, except in mammals where the ethmoid portion ossifies to form the turbinates[Kardong]. In avians, the mesethmoid supports upper beak formation, whereas the ectethmoid comprises elements of the olfactory system, including the lamina cribosa, the crista galli apophysis and the conchae. Editor's note - consider splitting this class. Developing cartilage in mammals? Connective tissue sheath in TAO. Structure that has both respiratory and olfactory functions and lies anterior to the braincase, in the foremost section of the cranium[AAO]. Cartilaginous envelope containing the nasal organ[FishBase] Multi-tissue structure composed of connective tissue that surrounds, the internal portions of the olfactory epithelium[ZFA]. Avian def: The nasal capsule is dorsoventrally divided into two parts: the upper part, the ectethmoid, serves olfaction and is composed of the lamina cribosa, the crista galli apophysis and the conchae. The lower part, the mesethmoid, is a thick cartilage bar extending from the corpus sphenoidalis to the rostral extremity of the nose (Fig. 1A-B?). In the avian embryo, the mesethmoid constitutes the cartilage primordium of the upper beak
+comment: Taxon notes: In most mammals, the nasal capsule remains unossified, except in mammals where the ethmoid portion ossifies to form the turbinates[Kardong]. In avians, the mesethmoid supports upper beak formation, whereas the ectethmoid comprises elements of the olfactory system, including the lamina cribosa, the crista galli apophysis and the conchae. Editor's note - consider splitting this class. Developing cartilage in mammals? Connective tissue sheath in TAO. Structure that has both respiratory and olfactory functions and lies anterior to the braincase, in the foremost section of the cranium[AAO]. Cartilaginous envelope containing the nasal organ[FishBase] Multi-tissue structure composed of connective tissue that surrounds, the internal portions of the olfactory epithelium[ZFA]. Avian def: The nasal capsule is dorsoventrally divided into two parts: the upper part, the ectethmoid, serves olfaction and is composed of the lamina cribosa, the crista galli apophysis and the conchae. The lower part, the mesethmoid, is a thick cartilage bar extending from the corpus sphenoidalis to the rostral extremity of the nose (Fig. 1A-B). In the avian embryo, the mesethmoid constitutes the cartilage primordium of the upper beak
 subset: vertebrate_core
 synonym: "cartilaginous nasal capsule" RELATED []
 xref: AAO:0000313
@@ -6512,8 +6515,8 @@ id: UBERON:0008572
 name: posterior crico-arytenoid
 namespace: uberon
 def: "The posterior cricoarytenoid muscles are extremely small, paired muscles that extend from the posterior cricoid cartilage to the arytenoid cartilages in the larynx. By rotating the arytenoid cartilages laterally, these muscles abduct the vocal cords and thereby open the rima glottidis. Their action opposes the lateral cricoarytenoid muscles. The posterior cricoarytenoid muscles receive innervation from the recurrent laryngeal branch of the vagus nerve (CN X). Paralysis of the posterior cricoarytenoid muscles may lead to asphyxiation as they are the only laryngeal muscles to open the true vocal folds, allowing inspiration and expiration." [Wikipedia:Posterior_cricoarytenoid_muscle]
-synonym: "cricoaryt%c3%a6noideus posterior" RELATED [Wikipedia:Posterior_cricoarytenoid_muscle]
 synonym: "cricoarytaenoideus posterior" RELATED [Wikipedia:Posterior_cricoarytenoid_muscle]
+synonym: "cricoaryt¾noideus posterior" RELATED [Wikipedia:Posterior_cricoarytenoid_muscle]
 synonym: "musculus cricoarytenoideus posterior" RELATED LATIN [Wikipedia:Posterior_cricoarytenoid_muscle]
 synonym: "posterior cricoarytenoid" EXACT [FMA:46576]
 synonym: "posterior cricoarytenoid muscle" EXACT [Wikipedia:Posterior_cricoarytenoid_muscle]
@@ -6532,10 +6535,10 @@ id: UBERON:0008573
 name: lateral crico-arytenoid
 namespace: uberon
 def: "The lateral cricoarytenoid (also anterior cricoarytenoid) muscles extend from the lateral cricoid cartilage to the ipsilateral arytenoid cartilage. By rotating the arytenoid cartilages medially, these muscles adduct the vocal cords and thereby close the rima glottidis, protecting the airway. (Their action is antagonistic to that of the posterior cricoarytenoid muscles. ) The lateral cricoarytenoid muscles receive innervation from the recurrent laryngeal branch of the vagus nerve (CN X)." [Wikipedia:Lateral_cricoarytenoid_muscle]
-synonym: "cricoaryt%c3%a6noideus lateralis" RELATED [Wikipedia:Lateral_cricoarytenoid_muscle]
-synonym: "cricoaryt%c3%a6noideus lateralis muscle" RELATED [Wikipedia:Lateral_cricoarytenoid_muscle]
 synonym: "cricoarytaenoideus lateralis" RELATED [Wikipedia:Lateral_cricoarytenoid_muscle]
 synonym: "cricoarytaenoideus lateralis muscle" RELATED [Wikipedia:Lateral_cricoarytenoid_muscle]
+synonym: "cricoaryt¾noideus lateralis" RELATED [Wikipedia:Lateral_cricoarytenoid_muscle]
+synonym: "cricoaryt¾noideus lateralis muscle" RELATED [Wikipedia:Lateral_cricoarytenoid_muscle]
 synonym: "lateral cricoarytenoid" EXACT [FMA:46579]
 synonym: "lateral cricoarytenoid muscle" EXACT [Wikipedia:Lateral_cricoarytenoid_muscle]
 synonym: "lateral cricoarytenoideus" EXACT [FMA:46579]
@@ -6578,16 +6581,16 @@ name: thyro-arytenoid
 namespace: uberon
 def: "The Thyroarytenoid is a broad, thin, muscle which lies parallel with and lateral to the vocal fold, and supports the wall of the ventricle and its appendix. It functions in fine tonal control of the vocal cords." [Wikipedia:Thyroarytenoid_muscle]
 synonym: "musculus thyroarytenoideus" RELATED LATIN [Wikipedia:Thyroarytenoid_muscle]
-synonym: "thyreoaryt%c3%a6noideus" RELATED [Wikipedia:Thyroarytenoid_muscle]
-synonym: "thyreoaryt%c3%a6noideus muscle" RELATED [Wikipedia:Thyroarytenoid_muscle]
 synonym: "thyreoarytaenoideus" RELATED [Wikipedia:Thyroarytenoid_muscle]
 synonym: "thyreoarytaenoideus muscle" RELATED [Wikipedia:Thyroarytenoid_muscle]
+synonym: "thyreoaryt¾noideus" RELATED [Wikipedia:Thyroarytenoid_muscle]
+synonym: "thyreoaryt¾noideus muscle" RELATED [Wikipedia:Thyroarytenoid_muscle]
 synonym: "thyreoepiglotticus" RELATED [Wikipedia:Thyroarytenoid_muscle]
 synonym: "thyro-arytenoid %26 vocalis" RELATED [Wikipedia:Thyroarytenoid_muscle]
 synonym: "thyro-arytenoid muscle" RELATED [Wikipedia:Thyroarytenoid_muscle]
-synonym: "thyroaryt%c3%a6noideus" RELATED [Wikipedia:Thyroarytenoid_muscle]
 synonym: "thyroarytenoid" EXACT [Wikipedia:Thyroarytenoid_muscle]
 synonym: "thyroarytenoid muscle" RELATED [Wikipedia:Thyroarytenoid_muscle]
+synonym: "thyroaryt¾noideus" RELATED [Wikipedia:Thyroarytenoid_muscle]
 synonym: "ventricularis" RELATED [Wikipedia:Thyroarytenoid_muscle]
 synonym: "ventricularis muscle" RELATED [Wikipedia:Thyroarytenoid_muscle]
 xref: FMA:46588
@@ -6641,8 +6644,8 @@ id: UBERON:0008589
 name: depressor septi nasi
 namespace: uberon
 def: "The depressor septi (Depressor alE nasi) arises from the incisive fossa of the maxilla. Its fibers ascend to be inserted into the nasal septum and back part of the alar part of nasalis muscle. It lies between the mucous membrane and muscular structure of the lip." [Wikipedia:Depressor_septi_nasi_muscle]
-synonym: "depressor al%c3%a6 nasi" RELATED [Wikipedia:Depressor_septi_nasi_muscle]
 synonym: "depressor alae nasi" RELATED [Wikipedia:Depressor_septi_nasi_muscle]
+synonym: "depressor al¾ nasi" RELATED [Wikipedia:Depressor_septi_nasi_muscle]
 synonym: "depressor septi" EXACT [Wikipedia:Depressor_septi_nasi_muscle]
 synonym: "depressor septi nasi muscle" RELATED [Wikipedia:Depressor_septi_nasi_muscle]
 synonym: "musculus depressor septi nasi" RELATED LATIN [Wikipedia:Depressor_septi_nasi_muscle]
@@ -7942,6 +7945,7 @@ namespace: uberon
 def: "a respiratory pump found in basal craniates" [Wikipedia:http\://palaeos.com/vertebrates/glossary/glossaryUV.html]
 comment: Muscular scroll-like flap that moves water through median nostril and over gills // trifid and posteriorly directed lamina arising from roof of pharynx, behind posterior end of naso-pharyngeal duct
 synonym: "velum" BROAD []
+xref: BSA:0000110
 xref: Wikipedia:http\://palaeos.com/vertebrates/glossary/glossaryUV.html
 is_a: UBERON:0000171 ! respiration organ
 property_value: present_in_taxon NCBITaxon:7762
@@ -9289,10 +9293,11 @@ is_transitive: true
 
 [Typedef]
 id: attaches_to
+is_a: attaches_to_part_of
 is_a: connects
 
 [Typedef]
-id: branch_of
+id: branching_part_of
 is_a: part_of
 
 [Typedef]

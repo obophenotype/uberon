@@ -72,16 +72,94 @@ synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 ontology: uberon/subsets/cumbo
 
 [Term]
+id: UBERON:0000010
+name: peripheral nervous system
+namespace: uberon
+def: "Nervous structures including ganglia outside of the central nervous system. Divided into somatic nervous system and autonomic nervous system" [FB:gg, OMD:peripheral+nervous+system, Wikipedia:Peripheral_nervous_system, ZFIN:curator]
+subset: cumbo
+subset: efo_slim
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "lateral part of the basal amygdalar nucleus" RELATED [NeuroNames:247]
+synonym: "lateral part of the basolateral nucleus" RELATED [NeuroNames:247]
+synonym: "nucleus amygdalae basalis, pars lateralis" RELATED LATIN [NeuroNames:247]
+synonym: "nucleus amygdaloideus basalis, pars lateralis magnocellularis" RELATED LATIN [NeuroNames:247]
+synonym: "nucleus basalis lateralis amygdalae" RELATED LATIN [NeuroNames:247]
+synonym: "pars peripherica; systema nervosum periphericum" RELATED LATIN [Wikipedia:Peripheral_nervous_system]
+synonym: "PNS" RELATED []
+xref: AAO:0000429
+xref: BILA:0000081
+xref: BTO:0001028
+xref: CALOHA:TS-0808
+xref: EFO:0000891
+xref: EHDAA2:0001445
+xref: EHDAA:2893
+xref: EMAPA:16665
+xref: EMAPA:18370
+xref: EV:0100335
+xref: FBbt:00005098
+xref: FMA:9903
+xref: GAID:715
+xref: http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png
+xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nervous_system_diagram.png/200px-Nervous_system_diagram.png
+xref: MA:0000218
+xref: MAT:0000338
+xref: MESH:A08.800
+xref: MIAA:0000338
+xref: ncithesaurus:Peripheral_Nervous_System
+xref: NeuroNames:247 {source="NIF_GrossAnatomy:birnlex_1111"}
+xref: NIF_GrossAnatomy:birnlex_1111
+xref: SCTID:362292005
+xref: TAO:0000142
+xref: UMLS:C0206417 {source="NIF_GrossAnatomy:birnlex_1111"}
+xref: UMLS:C0206417 {source="ncithesaurus:Peripheral_Nervous_System"}
+xref: UMLS:C1305921 {source="NIF_GrossAnatomy:birnlex_1111"}
+xref: VHOG:0000399
+xref: Wikipedia:Peripheral_nervous_system
+xref: XAO:0000178
+xref: ZFA:0000142
+relationship: part_of UBERON:0001016 ! nervous system
+property_value: external_definition "Nervous structures including ganglia outside of the central nervous system. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000142", ontology="TAO", source="ZFIN:curator"}
+property_value: external_definition "Part of nervous system in which nerves extend throughout the body outside of the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000429", ontology="AAO", source="AAO:BJB"}
+property_value: external_definition "The peripheral nervous system (PNS) is the part of the nervous system connected to the CNS which contains cranial nerves III - XII, spinal, peripheral and autonomic nerves. (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000399"}
+property_value: homology_notes " (...) specific vertebrate traits within the chordate phylum such as skeletal tissues, PNS, and spectacular head and brain development, are linked to the NC (neural crest) and its derivatives.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000399", ontology="VHOG", source="DOI:10.1007/978-0-387-46954-6_6 Dupin E, Creuzet S, Le Douarin NM, The contribution of the neural crest to the vertebrate body. Advances in experimental medicine and biology (2006)", source="http://bgee.unil.ch/"}
+property_value: spatially_disjoint_from UBERON:0001017
+
+[Term]
 id: UBERON:0000119
 name: cell layer
 namespace: uberon
-def: "Portion of tissue, that consists of one or more layers of cells connected to each other by cell junctions. Examples: layer of glial cells; epithelium." [https://orcid.org/0000-0002-6601-2165]
+def: "Portion of tissue, that consists of single layer of cells connected to each other by cell junctions. Examples: layer of glial cells; epithelium." [https://orcid.org/0000-0002-6601-2165]
+comment: consider adding to caro
 subset: cumbo
 subset: upper_level
 synonym: "cell sheath" RELATED []
 synonym: "layer of cells" EXACT []
 synonym: "sheath of cells" RELATED []
-property_value: external_definition "Single layer of a laminar structure, identified by different density, arrangement or size of cells and processes arranged in flattened layers or lamina." xsd:string {source="Neurolex:nlx_149357"}
+xref: NIF_GrossAnatomy:nlx_149357
+property_value: external_definition "Single layer of a laminar structure, identified by different density, arrangement or size of cells and processes arranged in flattened layers or lamina. (CUMBO)" xsd:string {source="NIF_GrossAnatomy:nlx_149357"}
+
+[Term]
+id: UBERON:0000125
+name: neural nucleus
+namespace: uberon
+def: "A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)" [NIF_GrossAnatomy:nlx_28443]
+comment: Proposed CUMBO def from MM: A subcortical part of the nervous system consisting of a relatively compact group of cells that is distinguishable histologically that share a commonality of cytoarchitecture, chemoarchitecturel and connectivity. (comments: I put in "subcortical" because I don't think we consider either the cerebellar cortex or cerebral cortex to be nuclei. Some people distinguish between a nucleus and a laminar structure (see Wikipedia definition). However, there are structures identified as nuclei that are laminar, e.g., lateral geniculate nucleus, although they are not laminated in all species. Also, I put in "relatively compact" and "distiguishable by histology" because we have groups of cells, e.g., cholinergic cell groups, doparminergic cell groups that are related on the 3 criteria but which we don't tend to consider nuclei because they don't occupy an easily defined territory. But all is open to debate.
+subset: cumbo
+synonym: "nervous system nucleus" EXACT []
+synonym: "neuraxis nucleus" EXACT [FMA:83686]
+synonym: "neuronal nucleus" EXACT [AEO:0000136]
+synonym: "nucleus" BROAD []
+synonym: "nucleus of CNS" EXACT [NIF_GrossAnatomy:nlx_28443]
+synonym: "nucleus of neuraxis" RELATED []
+xref: AEO:0000136
+xref: FMA:83686
+xref: NIF_GrossAnatomy:nlx_28443
+xref: Wikipedia:Nucleus_(neuroanatomy)
+relationship: part_of UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0001017 {source="NIFSTD"} ! central nervous system
+property_value: external_definition "Anatomical structure consisting of a discrete aggregate of neuronal soma[GO][GO_REF:0000021]." xsd:string {source="GO_REF:0000021"}
 
 [Term]
 id: UBERON:0000955
@@ -142,7 +220,7 @@ property_value: homology_notes " (...) at some stage of its development, every c
 id: UBERON:0001016
 name: nervous system
 namespace: uberon
-def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [ISBN:0-14-051288-8, ISBN:3110148986, NLM:nervous+system, WB:rynl, Wikipedia:Nervous_system, ZFIN:curator]
+def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [ISBN:0-14-051288-8, ISBN:3110148986, NIF_GrossAnatomy:birnlex_844, NLM:nervous+system, WB:rynl, Wikipedia:Nervous_system, ZFIN:curator]
 comment: This class was created automatically from a combination of ontologies
 subset: cumbo
 subset: efo_slim
@@ -240,24 +318,138 @@ xref: ZFA:0000012
 relationship: part_of UBERON:0001016 ! nervous system
 property_value: external_definition "Part of the nervous system which includes the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000090", ontology="AAO", source="AAO:BJB"}
 property_value: external_definition "The brain and spinal cord. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000012", ontology="TAO", source="ZFIN:curator"}
-property_value: external_definition "The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina (CUMBO)." xsd:string {source="Neurolex:birnlex_1099"}
+property_value: external_definition "The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina (CUMBO)." xsd:string {source="NIF_GrossAnatomy:birnlex_1099"}
 property_value: external_definition "The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina." xsd:string {source="GO:1"}
 property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000293"}
 property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2); Taken together, our data make a very strong case that the complex molecular mediolateral architecture of the developing trunk CNS (central nervous system), as shared between Platynereis and vertebrates, was already present in their last common ancestor, Urbilateria. The concept of bilaterian nervous system centralization implies that neuron types concentrate on one side of the trunk, as is the case in vertebrates and many invertebrates including Platynereis, where they segregate and become spatially organized (as opposed to a diffuse nerve net). Our data reveal that a large part of the spatial organization of the annelid and vertebrate CNS was already present in their last common ancestor, which implies that Urbilateria had already possessed a CNS (reference 3).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000293", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28 (reference 1), ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165 (reference 2), DOI:10.1016/j.cell.2007.02.040 Denes AS, Jekely G, Steinmetz PRH, Raible F, Snyman H, Prud'homme B, Ferrier DEK, Balavoine G and Arendt D, Molecular architecture of annelid nerve cord supports common origin of nervous system centralization in Bilateria. Cell (2007) (reference 3)", source="http://bgee.unil.ch/"}
 property_value: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 
 [Term]
+id: UBERON:0001018
+name: axon tract
+namespace: uberon
+def: "A group of axons linking two or more neuropils and having a common origin, termination[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
+comment: WP says this is the analog of peripheral nerves in CNS.
+subset: cumbo
+synonym: "axonal tract" EXACT []
+synonym: "Nerve tract" NARROW [NIF_GrossAnatomy:birnlex_1649]
+synonym: "nerve tract" RELATED []
+synonym: "neuraxis tract" EXACT [FMA:83847]
+synonym: "tract" RELATED []
+synonym: "tract of neuraxis" EXACT [FMA:83847]
+xref: EV:0100304
+xref: FBbt:00005100
+xref: FMA:83847
+relationship: part_of UBERON:0001017 ! central nervous system
+property_value: external_definition "White matter structure of CNS that contains axons that arise predominantly in one central nervous system part and terminate in another. Tracts are generally named by their region or origin followed by their region of primary termination, e.g., mammillothalamic tract contains axons that arise from neurons in the mammillary bodies and terminate in the thalamus. (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+
+[Term]
+id: UBERON:0001020
+name: nervous system commissure
+namespace: uberon
+def: "axon tract that crosses the midline of the brain or spinal cord[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [http://purl.obolibrary.org/obo/uberon/tracker/300, http://purl.obolibrary.org/obo/uberon/tracker/325, NIF_GrossAnatomy:nlx_anat_20090513]
+comment: *not* the same as FMA:76741 Commissure
+subset: cumbo
+subset: uberon_slim
+synonym: "commissure" BROAD []
+synonym: "commissure of neuraxis" EXACT [FMA:83906]
+synonym: "neuraxis commissure" EXACT [FMA:83906]
+synonym: "white matter commissure" NARROW [CUMBO:CUMBO]
+xref: FBbt:00005103
+xref: FMA:83906
+xref: ncithesaurus:Commissure
+xref: NIF_GrossAnatomy:nlx_110
+xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
+xref: TADS:0000201
+xref: UMLS:C1185742 {source="ncithesaurus:Commissure"}
+xref: Wikipedia:Commissure
+is_a: UBERON:0001018 ! axon tract
+property_value: external_definition "White matter fiber bundle that crosses the midline of the brain or spinal cord, that connects similar structures on both sides. (CUMBO; Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+property_value: has_relational_adjective "commissural" xsd:string
+
+[Term]
+id: UBERON:0002240
+name: spinal cord
+namespace: uberon
+def: "Part of the central nervous system located in the vertebral canal continuous with and caudal to the brain; demarcated from brain by plane of foramen magnum. It is composed of an inner core of gray matter in which nerve cells predominate, and an outer layer of white matter in which myelinated nerve fibers predominate, and surrounds the central canal. (CUMBO)" [NIF_GrossAnatomy:birnlex_1709]
+comment: TODO: add superclass to unify with VNC?
+subset: cumbo
+subset: efo_slim
+subset: major_organ
+subset: organ_slim
+subset: uberon_slim
+subset: vertebrate_core
+synonym: "cerebro-cerebellar fissure" RELATED [NeuroNames:22]
+synonym: "cerebrocerebellar fissure" RELATED [NeuroNames:22]
+synonym: "fissura cerebro-cerebellaris" RELATED LATIN [NeuroNames:22]
+synonym: "fissura cerebrocerebellaris" RELATED LATIN [NeuroNames:22]
+synonym: "medulla spinalis" RELATED [BTO:0001279]
+synonym: "medulla spinalis" RELATED LATIN [Wikipedia:Spinal_cord]
+synonym: "spinal cord structure" RELATED [ZFA:0000075]
+synonym: "spinal medulla" RELATED [BTO:0001279]
+xref: AAO:0010151
+xref: BM:SpC
+xref: BTO:0001279
+xref: CALOHA:TS-0953
+xref: EFO:0000110
+xref: EHDAA2:0001255
+xref: EHDAA:2863
+xref: EMAPA:17577
+xref: EMAPA:17700
+xref: EV:0100316
+xref: FMA:7647
+xref: GAID:695
+xref: http://upload.wikimedia.org/wikipedia/commons/5/58/Spinal_cord_direv.svg
+xref: MA:0000216
+xref: MAT:0000183
+xref: MESH:A08.186.854
+xref: MIAA:0000183
+xref: ncithesaurus:Spinal_Cord
+xref: NeuroNames:22 {source="NIF_GrossAnatomy:birnlex_1709"}
+xref: NIF_GrossAnatomy:birnlex_1709
+xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
+xref: SCTID:180959008
+xref: TAO:0000075
+xref: UMLS:C0037925 {source="NIF_GrossAnatomy:birnlex_1709"}
+xref: UMLS:C0037925 {source="ncithesaurus:Spinal_Cord"}
+xref: VHOG:0000601
+xref: Wikipedia:Spinal_cord
+xref: XAO:0000020
+xref: ZFA:0000075
+relationship: develops_from UBERON:0000119 ! cell layer
+relationship: develops_from UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0001017 ! central nervous system
+property_value: external_definition "Part of the central nervous system which descends from the hindbrain within the vertebral column.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010151", ontology="AAO", source="AAO:BJB"}
+property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000601"}
+property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000601", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28, ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165", source="http://bgee.unil.ch/"}
+property_value: spatially_disjoint_from UBERON:0000955
+
+[Term]
+id: UBERON:0003338
+name: ganglion of peripheral nervous system
+namespace: uberon
+def: "A spatially aggregated collection of nerve cell bodies in the PNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections. (CUMBO)." [NIF_GrossAnatomy:birnlex_2548]
+comment: We follow MA in including separate classes for ganglion and peripheral nervous system, even though for vertebrates gangia are always in the PNS
+subset: cumbo
+synonym: "peripheral nervous system ganglion" EXACT [OBOL:automatic]
+xref: birnlex_2548
+xref: BTO:0001123
+xref: EMAPA:18371
+xref: MA:0001161
+relationship: part_of UBERON:0000010 ! peripheral nervous system
+
+[Term]
 id: UBERON:0006238
 name: future brain
 namespace: uberon
-def: "The embryonic precursor of the brain and the set of mature brain structures that derive from it (CUMBO)" [Neurolex:nlx_94995]
+def: "The embryonic precursor of the brain." [NIF_GrossAnatomy:nlx_94995]
 comment: Usage notes: this class is restricted to neural-tube derived brains
 subset: cumbo
 subset: efo_slim
 subset: emapa_ehdaa2
 subset: vertebrate_core
 synonym: "brain rudiment" EXACT [TAO:0000146]
-synonym: "encephalon" EXACT [Neurolex:nlx_94995]
+synonym: "encephalon" NARROW [NIF_GrossAnatomy:nlx_94995]
 synonym: "presumptive brain" EXACT [ZFA:0000146]
 xref: EFO:0003431
 xref: EHDAA:300
@@ -269,12 +461,37 @@ xref: TAO:0000146
 xref: ZFA:0000146
 relationship: develops_from UBERON:0000119 ! cell layer
 relationship: develops_from UBERON:0001016 ! nervous system
+property_value: external_definition "The embryonic precursor of the brain and the set of mature brain structures that derive from it (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+
+[Term]
+id: UBERON:0007418
+name: decussation of neuraxis
+namespace: uberon
+def: "Nerve fibers crossing the midline of the neuraxis relative to their point of origin, on a course to from one level of the nervous system to another. (CUMBO, Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" [NIF_GrossAnatomy:nlx_144064]
+subset: cumbo
+synonym: "neuraxis decussation" EXACT [FMA:83858]
+xref: FMA:83858
+xref: NIF_GrossAnatomy:nlx_144064
+relationship: part_of UBERON:0001017 ! central nervous system
+
+[Term]
+id: UBERON:0013118
+name: sulcus of brain
+namespace: uberon
+def: "a depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [Wikipedia:Sulcus_(neuroanatomy)]
+subset: cumbo
+synonym: "fissure of brain" NARROW [Wikipedia:Sulcus_(neuroanatomy)]
+synonym: "sulcus" BROAD [NIF_GrossAnatomy:nlx_144078]
+xref: Wikipedia:Sulcus_(neuroanatomy)
+relationship: part_of UBERON:0000955 ! brain
+property_value: external_definition "Indentation on the surface of the brain or spinal cord that forms a recognizable landmark, e.g., central sulcus, sulcus limitans (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
 
 [Term]
 id: UBERON:0014778
 name: cell group
 namespace: uberon
-def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala" [Neurolex:nlx_532]
+def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala (CUMBO)" [NIF_GrossAnatomy:nlx_532]
+comment: Consider adding to CARO.
 subset: cumbo
 subset: upper_level
 synonym: "group of cells" EXACT []
