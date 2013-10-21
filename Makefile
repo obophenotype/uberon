@@ -101,10 +101,11 @@ imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo
 # ----------------------------------------
 
 ## TODO - restore Disjoints
-## TODO - get rid of declarations for other ontology classes
+## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
 unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl imports
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
+## TODO - get rid of inferred subclass axioms for other ontology classes
 release.owl: unreasoned.owl
 	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --outdir newbuild --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp newbuild/uberon/core.owl $@
 
