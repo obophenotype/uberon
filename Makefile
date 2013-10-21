@@ -17,7 +17,7 @@ UCAT = --use-catalog
 # for now we combine all cell and gross anatomy into one edit file; TODO - ext
 # (syn for core.owl)
 uberon_edit.owl: uberon_edit.obo 
-	owltools $(UCAT) $< --merge-support-ontologies -o -f functional $@
+	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 ### TODO - restore --expand-macros
 ###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 
@@ -67,6 +67,11 @@ pato_import.owl: pato.owl $(EDITSRC)
 go.owl:
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
 go_import.owl: go.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+envo.owl:
+	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
+envo_import.owl: envo.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 chebi.owl:
@@ -555,29 +560,6 @@ composite-xao.owl: local-xao.owl $(MBASE)
 # amniote = 32524
 all_taxmods: uberon-taxmod-amniote.obo uberon-taxmod-aves.obo uberon-taxmod-euarchontoglires.obo
 
-# @Deprecated
-TAXFILTER = owltools merged.owl --merge-support-ontologies --make-taxon-set -s UBERON
-uberon-taxmod-tetrapod.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:32523 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-amniote.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:32524 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-mammal.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:40674 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-euarchontoglires.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:314146 > $@.tmp && grep ^UBERON $@.tmp > $@
-#uberon-taxmod-sauropsid.ids: merged_closure-ontol_db.pro
-#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:8457')" -select X > $@
-uberon-taxmod-aves.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:8782 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-archosaur.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:8492 > $@.tmp && grep ^UBERON $@.tmp > $@
-uberon-taxmod-echinoderm.ids: uberon.owl
-	$(TAXFILTER) NCBITaxon:7586 > $@.tmp && grep ^UBERON $@.tmp > $@
-#uberon-taxmod-vertebrata.ids: merged_closure-ontol_db.pro
-#	blip-findall -table_pred ontol_db:subclassRT/2 -r taxslim -i uberon_edit.obo -i $< -consult adhoc_uberon.pro "class_in_taxon_slim(X,'NCBITaxon:7742')" -select X > $@
-
-.PRECIOUS: uberon-taxmod-%.ids
-
 uberon-taxmod-aves.owl: uberon-taxmod-8782.owl
 	cp $< $@
 uberon-taxmod-euarchontoglires.owl: uberon-taxmod-314146.owl
@@ -588,8 +570,8 @@ uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
 uberon-taxmod-%.obo: uberon-taxmod-%.owl
 	owltools $< -o -f obo $@
 
-uberon-taxmod-%.owl: uberon.owl
-	owltools uberon.owl --reasoner elk --make-species-subset -t NCBITaxon:$* --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o $@
+uberon-taxmod-%.owl: ext.owl
+	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$* --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o $@ >& $@.log
 #uberon-taxmod-%.owl: uberon-taxmod-%.ids
 #	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
