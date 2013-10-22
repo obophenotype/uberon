@@ -74,6 +74,11 @@ envo.owl:
 envo_import.owl: envo.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
+nbo.owl:
+	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
+nbo_import.owl: envo.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
 chebi.owl:
 	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
 chebi_import.owl: chebi.owl $(EDITSRC) 
@@ -487,7 +492,11 @@ local-NIF_GrossAnatomy.obo: merged.obo
 
 # NEW:
 composite-deps: $(METAZOAN_OBOS)
-MBASE = merged.owl
+
+# many external ontologies do not adhere to all uberon constraints
+merged-weak.owl: merged.owl
+	owltools $< --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
+MBASE = merged-weak.owl
 
 composite-zfa.owl: local-zfa.owl $(MBASE) 
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-zfa.owl bridge/cl-bridge-to-zfa.owl bridge/uberon-bridge-to-zfs.owl $< developmental-stage-ontologies/zfs/zfs.obo --merge-support-ontologies --reasoner elk \
