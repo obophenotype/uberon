@@ -16,7 +16,9 @@ UCAT = --use-catalog
 #
 # for now we combine all cell and gross anatomy into one edit file; TODO - ext
 # (syn for core.owl)
-uberon_edit.owl: uberon_edit.obo 
+uberon_edit_safe.obo: uberon_edit.obo 
+	egrep -v 'spatially_disjoint_from.*pending' $< > $@
+uberon_edit.owl: uberon_edit_safe.obo 
 	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 ### TODO - restore --expand-macros
 ###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
@@ -72,12 +74,12 @@ go_import.owl: go.owl $(EDITSRC)
 envo.owl:
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
 envo_import.owl: envo.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 nbo.owl:
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
-nbo_import.owl: envo.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+nbo_import.owl: nbo.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 chebi.owl:
 	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
@@ -242,11 +244,14 @@ full-bridge-check-%.txt: ext.owl bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 core-bridge-check-%.txt: core.owl bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+# for debugging:
 
-bridge-dv-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
-	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl  --merge-support-ontologies --reasoner elk --check-disjointness-axioms  > $@.tmp && mv $@.tmp $@
+ext-merged-%.owl: ext.owl bridge/bridges external-disjoints.owl
+	owltools --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-imports-closure  --merge-support-ontologies -o $@
+.PRECIOUS: ext-merged-%.owl
+bridge-dv-check-%.txt: ext-merged-%.owl
+	owltools --no-debug $< --reasoner elk --check-disjointness-axioms  > $@.tmp && mv $@.tmp $@
 
- 
 
 #%.owl: %.obo
 #	obolib-obo2owl -o $@ $<
@@ -577,7 +582,7 @@ uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
 	cp $< $@
 
 uberon-taxmod-%.obo: uberon-taxmod-%.owl
-	owltools $< -o -f obo $@
+	owltools $(UCAT) $< -o -f obo $@
 
 uberon-taxmod-%.owl: ext.owl
 	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$* --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o $@ >& $@.log
