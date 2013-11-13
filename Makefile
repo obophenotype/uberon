@@ -174,7 +174,7 @@ disjoint-violations.txt: unreasoned.owl
 newpipe: basic-xp-check
 
 # ----------------------------------------
-# TEST
+# SEP MATERIALIZATION
 # ----------------------------------------
 %-parts.owl: %.owl
 	owltools --use-catalog --create-ontology $*-parts  $< --materialize-existentials -p BFO:0000050 --add-imports-from-supports -o $@

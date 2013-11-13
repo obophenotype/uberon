@@ -1,217 +1,175 @@
-releases/2013-11-05
+releases/2013-11-12
 
-Highlights:
- * muscle fixes (thanks to DOS and RD for input)
- * some tidying of brain regions, addition of BAMS xrefs
-
-Changes:
-
-     * Added xrefs to BAMS
-     * Made some spatial disjointness axioms pending
-     * Added additional part_of relationships for sulci
-     * relabeling confusingly labeled starfish structure. Addresses 368
-     * Added clauses to ECA. Addresses issue 324
-     * Spermathecum part_of to male weakened (C elegans is a hermaphrodite). Fixes issue 367
-     * weakened part-of for nerve cord. Fixes issue 366
-     * Muscle fixes (David Osumi-Sutherland and Robert Druzinsky)
-      * NT: skeletal muscle organ
-       * moved various xrefs from tissue here. FMA and NCIt seem to be tissues though
-       * modified initial suggestion from DOS, some clauses are in SCAs rather than ECA
-       * need 'somatic motor neuron' from CL
-       * NTs: obliquely striated somatic muscle, transversely striated somatic muscle. Addresses issue #324
-       * NT: somatic muscle. Pending review. Addresses issue #324
-       * fixed skeletal muscle tissue and striated muscle tissue to have standardized ECAs. Addresses issue #324
-    * NT: brainstem white matter
-     * NT: L/R cerebellar hemisphere
-     * Added connects-based logical definitions for commissures
-     * Changed isa->part of for cerebellar white matter
-     * Commissure tidying
-    * added source for brain relationships (MP)
-    * relabed limb/fin to make the paired aspect clear
-    * Fixes issue #/34
-
+ * Syns for craniocervical region. Addresses issue #379
+ * Suppressing expansion of some spatial disjointness axioms. Addresses issue #378
+ * Aligned more defs with MP
+ * issue #334 - implemented element/bone/cartilage pattern for radials
 
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 21:10:2013 18:43, cvs revision unknown
-! file 2 (new): 05:11:2013 19:58, cvs revision unknown
+! file 1 (old): 08:11:2013 00:37, cvs revision unknown
+! file 2 (new): 12:11:2013 22:30, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0000052 : fornix of brain   
-OLD: is a C-shaped bundle of fibres (axons) in the brain, and carries signals from the hippocampus to the mammillary bodies and septal nuclei. It is typically divided into the columns (crus), body, commissure and the pre-commissural and post-commissural fornix (MM).
-NEW: A C-shaped bundle of fibres (axons) in the brain, and carries signals from the hippocampus to the mammillary bodies and septal nuclei. It is typically divided into the columns (crus), body, commissure and the pre-commissural and post-commissural fornix (MM).
+UBERON:0001041 : foregut   
+OLD: Anterior subdivision of a digestive tract[CJM]. An anterior part of the alimentary canal derived from the ectoderm[WP].
+NEW: Anterior subdivision of a digestive tract.
 
 
-UBERON:0000908 : hippocampal commissure   
-OLD: The lateral portions of the body of the fornix are joined by a thin triangular lamina, named the psalterium (lyra). This lamina contains some transverse fibers that connect the two hippocampi across the middle line and constitute the commissure of fornix (hippocampal commissure).
-NEW: A commissure that connects the two hippocampi across the middle line. The fibers emanate from the lateral portions of the body of the fornix[WP,modified].
+UBERON:0005452 : hepatic cord   
+(was hepatic lamina)
+OLD: Composed of hepatocytes, usually only one cell thick. The spaces between hepatic plates are occupied by sinusoids.
+NEW: A three-dimensional arrangement formed by plates of hepatocytes, usually one cell thick, that radiates from the center of the liver lobule; hepatic laminae are highly branched, irregular structures bordered by endothelial lined vascular spaces called hepatic sinusoids.
 
 
-UBERON:0000935 : anterior commissure   
-OLD: bundle of nerve fibers (white matter), connecting the two cerebral hemispheres across the midline, and placed in front of the columns of the fornix. The great majority of fibers connecting the two hemispheres travel through the corpus callosum, which is over 10 times larger than the anterior commissure, and other routes of communication pass through the hippocampal commissure or, indirectly, via subcortical connections. Nevertheless, the anterior commissure is a significant pathway that can be clearly distinguished in the brains of all mammals.
-NEW: A bundle of myelinated nerve fibers passing transversely through the lamina terminalis and connecting symmetrical parts of the two cerebral hemispheres; it consists of a smaller anterior part (pars anterior commissurae anterioris) and a larger posterior part (pars posterior commissurae anterioris).
+UBERON:0008835 : hepatic diverticulum   
+OLD: The first morphological sign of the embryonic liver is the formation of the hepatic diverticulum, an out-pocket of thickened ventral foregut epithelium adjacent to the developing heart. The anterior portion of the hepatic diverticulum gives rise to the liver and intrahepatic biliary tree, while the posterior portion forms the gall bladder and extrahepatic bile duct.
+NEW: An out-pocket of thickened ventral foregut epithelium adjacent to the developing heart. Constitutes the first morphological sign of the embryonic liver. The anterior portion of the hepatic diverticulum gives rise to the liver and intrahepatic biliary tree, while the posterior portion forms the gall bladder and extrahepatic bile ducts.
 
 
-UBERON:0000936 : posterior commissure   
-OLD: Rounded band of white fibers crossing the middle line on the dorsal aspect of the upper end of the cerebral aqueduct. It is important in the bilateral pupillary light reflex. Its fibers acquire their medullary sheaths early, but their connections have not been definitely determined. Most of them have their origin in a nucleus, the nucleus of the posterior commissure (nucleus of Darkschewitsch), which lies in the central gray substance of the upper end of the cerebral aqueduct, in front of the nucleus of the oculomotor nerve. Some are probably derived from the posterior part of the thalamus and from the superior colliculus, whereas others are believed to be continued downward into the medial longitudinal fasciculus. The posterior commissure interconnects the pretectal nuclei, mediating the consensual pupillary light reflex[WP].Diencephalic tract which is located in the vicinity of the dorsal diencephalon and mesencephalon and connects the pretectal nuclei. From Neuroanatomy of the Zebrafish Brain[ZFA].
-NEW: Rounded band of white fibers crossing the middle line on the dorsal aspect of the upper end of the cerebral aqueduct. It is important in the bilateral pupillary light reflex. Its fibers acquire their medullary sheaths early, but their connections have not been definitely determined. Most of them have their origin in a nucleus, the nucleus of the posterior commissure (nucleus of Darkschewitsch), which lies in the central gray substance of the upper end of the cerebral aqueduct, in front of the nucleus of the oculomotor nerve. Some are probably derived from the posterior part of the thalamus and from the superior colliculus, whereas others are believed to be continued downward into the medial longitudinal fasciculus. The posterior commissure interconnects the pretectal nuclei, mediating the consensual pupillary light reflex[WP]. Diencephalic tract which is located in the vicinity of the dorsal diencephalon and mesencephalon and connects the pretectal nuclei. From Neuroanatomy of the Zebrafish Brain[ZFA].
+UBERON:0010198 : carotid duct   
+OLD: a portion of the embryonic dorsal aorta between points of juncture with the third and fourth arch arteries; it disappears early in development.
+NEW: a segment of the embryonic dorsal aorta between points of juncture with the third and fourth arch arteries; it regresses early in development to allow the carotid axis to take its definitive appearance.
 
 
-UBERON:0001082 : epicardium of ventricle   
-OLD: The external layer of the ventricle bounding the ventricular myocardium. It is formed by a single layer of mesothelial cells supported by a basal lamina, and imbricated with collagen, fibroblasts, and vascular structures in the subepicardial space. <a href='ZFIN_jump?record=ZDB-PUB-010912-30'>Hu et al. 2001.</a>.
-NEW: The external layer of the ventricle bounding the ventricular myocardium. It is formed by a single layer of mesothelial cells supported by a basal lamina, and imbricated with collagen, fibroblasts, and vascular structures in the subepicardial space.[Hu et al. 2001]
+UBERON:0010260 : umbilical blood vessel   
+OLD: A blood vessel that overlaps a umbilical cord.
+NEW: One of the three blood vessels, usually one large umbilical vein and two small umbilical arteries, buried within Wharton’s jelly, that transport blood to and from the placenta, where exchange between the mother and fetus takes place; the umbilical vein carries oxygenated, nutrient-rich blood from the placenta to the fetus, and the umbilical arteries carry deoxygenated, nutrient-depleted blood from the fetus to the placenta.
 
 
-UBERON:0001134 : skeletal muscle tissue   
-OLD: Striated muscle tissue under control of the somatic nervous system. It is one of three major muscle types, the others being cardiac and smooth muscle. As its name suggests, most skeletal muscle is attached to bones by bundles of collagen fibers known as tendons. Skeletal muscle is made up of individual components known as muscle fibers. These fibers are formed from the fusion of developmental myoblasts. The myofibers are long, cylindrical, multinucleated cells composed of actin and myosin myofibrils repeated as a sarcomere, the basic functional unit of the cell and responsible for skeletal muscle's striated appearance and forming the basic machinery necessary for muscle contraction. The term muscle refers to multiple bundles of muscle fibers held together by connective tissue[WP].
-NEW: Muscle tissue that consists primarily of skeletal muscle fibers.
+UBERON:1500006 : paired fin radial bone   
+(was paired fin radial)
+OLD: Radial that is part of a paired fin.
+NEW: paired fin radial element that is composed of bone tissue.
 
 
-UBERON:0001155 : colon   
-OLD: Last portion of the digestive system in most vertebrates; it extracts water and salt from solid wastes before they are eliminated from the body[WP] In mammals, the colon consists of four sections: the ascending colon, the transverse colon, the descending colon, and the sigmoid colon[WP]. In zebrafish, the posterior intestine has short longitudinally arranged epithelial folds which are similar to the colon of higher vertebrates. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-050120-6'>Wallace et al, 2005.</a>
-NEW: Last portion of the digestive system in most vertebrates; it extracts water and salt from solid wastes before they are eliminated from the body[WP] In mammals, the colon consists of four sections: the ascending colon, the transverse colon, the descending colon, and the sigmoid colon[WP]. In zebrafish, the posterior intestine has short longitudinally arranged epithelial folds which are similar to the colon of higher vertebrates[ZFIN].
+UBERON:2000268 : anal fin proximal radial bone   
+(was anal fin proximal radial)
+OLD: Rod-like internal median skeletal support bones of the anal fin, which articulate with the distal radials.
+NEW: anal fin proximal radial element that is composed of bone tissue.
 
 
-UBERON:0001271 : pelvic girdle region   
-OLD: Subdivision of lower limb or fin which links the limb/fin to the body[FMA,modified]. Examples: There are only two instances, right and left pelvic girdle regions.
-NEW: Subdivision of lower limb or fin which links the paired limb/fin to the body[FMA,modified]. Examples: There are only two instances, right and left pelvic girdle regions.
+UBERON:2000271 : radial bone   
+(was radial)
+OLD: Radials are the internal skeletal supports of the median and paired fins.
+NEW: radial element that is composed of bone tissue.
 
 
-UBERON:0001675 : trigeminal ganglion   
-OLD: A prominent collection of touch-sensory neurons of the trigeminal or fifth cranial nerve, positioned beside the brain between the eye and the ear. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>
-NEW: A prominent collection of touch-sensory neurons of the trigeminal or fifth cranial nerve, positioned beside the brain between the eye and the ear.
+UBERON:2000508 : pelvic fin radial bone   
+(was pelvic fin radial)
+OLD: Pelvic fin radials are internal skeletal supports of the pelvic fin.
+NEW: pelvic fin radial element that is composed of bone tissue.
 
 
-UBERON:0001840 : semicircular canal   
-OLD: One of three half-circular, interconnected tubes located inside each ear[WP]. Fluid-filled toroidal spaces, arranged orthogonally to each other in the ear, that detect angular accelerations. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/semi_canal/semi.html'>semicircular canals</a> by T. Whitfield.)
-NEW: One of three half-circular, interconnected tubes located inside each ear[WP]. Fluid-filled toroidal spaces, arranged orthogonally to each other in the ear, that detect angular accelerations[ZFIN].
+UBERON:2000623 : basipterygium bone   
+(was basipterygium)
+OLD: Endochondral bone that is paired and supports the pelvic fin. The basipterygium has a posteromedial process called the ischiac process (Wietzman 1962).
+NEW: basipterygium element that is composed of bone tissue.
 
 
-UBERON:0001841 : anterior semicircular canal   
-OLD: One of three fluid-filled toroidal spaces, arranged orthogonally to each other in each ear, that detect angular acceleration. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/semi_canal/semi.html'>semicircular canals</a> by T. Whitfield.)
-NEW: One of three fluid-filled toroidal spaces, arranged orthogonally to each other in each ear, that detect angular acceleration.
+UBERON:2000646 : anal fin distal radial bone   
+(was anal fin distal radial)
+OLD: Rod-like internal median skeletal support bones of the anal fin, which articulate with the lepidotrichia distally.
+NEW: anal fin distal radial element that is composed of bone tissue.
 
 
-UBERON:0001842 : posterior semicircular canal   
-OLD: One of three fluid-filled toroidal spaces, arranged orthogonally to each other in each ear, that detect angular acceleration. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/semi_canal/semi.html'>semicircular canals</a> by T. Whitfield.)
-NEW: One of three fluid-filled toroidal spaces, arranged orthogonally to each other in each ear, that detect angular acceleration.
+UBERON:2000936 : dorsal fin distal radial bone   
+(was dorsal fin distal radial)
+OLD: Rod-like internal median skeletal support bones of the dorsal fin, which articulate with the lepidotrichia distally.
+NEW: dorsal fin distal radial element that is composed of bone tissue.
 
 
-UBERON:0001843 : lateral semicircular canal   
-OLD: One of three fluid-filled toroidal spaces, arranged orthogonally to each other in each ear, that detect angular acceleration. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/semi_canal/semi.html'>semicircular canals</a> by T. Whitfield.)
-NEW: One of three fluid-filled toroidal spaces, arranged orthogonally to each other in each ear, that detect angular acceleration.
+UBERON:2000947 : dorsal fin proximal radial bone   
+(was dorsal fin proximal radial)
+OLD: Rod-like internal median skeletal support bones of the dorsal fin, which articulate with the distal radials.
+NEW: dorsal fin proximal radial element that is composed of bone tissue.
 
 
-UBERON:0001894 : diencephalon   
-OLD: Organ component of neuraxis that has as its parts the epithalamus, thalamus, hypothalamus, subthalamus[FMA]. The more posterior and ventral of two forebrain neuromeres, the other being the telencephalon; major derivatives are the eye cups, the brain pretectal region, the thalamus, hypothalamus, and epithalamus (including the habenula and epiphysis). <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>
-NEW: Organ component of neuraxis that has as its parts the epithalamus, thalamus, hypothalamus, subthalamus[FMA]. The more posterior and ventral of two forebrain neuromeres, the other being the telencephalon; major derivatives are the eye cups, the brain pretectal region, the thalamus, hypothalamus, and epithalamus (including the habenula and epiphysis).
+UBERON:2001586 : pectoral fin radial bone   
+(was pectoral fin radial)
+OLD: Pectoral fin radials are the internal skeletal supports of the pectoral fin which develop from the pectoral fin endoskeletal disc, supports the pectoral lepidotrichia or fin rays and connects the lepidotrichia with the primary pectoral girdle.
+NEW: pectoral fin radial element that is composed of bone tissue.
 
 
-UBERON:0002133 : atrioventricular valve   
-OLD: Cardiac valve which has as its parts the leaf of cardiac valve that separates the atrium from the ventricle. // The atrioventricular valve has four distinct leaflets oriented anterior, posterior, left, and right of the atrioventricular orifice. <a href='ZFIN_jump?record=ZDB-PUB-010912-30'>Hu et al. 2001.</a>
-NEW: Cardiac valve which has as its parts the leaf of cardiac valve that separates the atrium from the ventricle.
+UBERON:2001587 : pectoral fin proximal radial bone   
+(was pectoral fin proximal radial)
+OLD: Pectoral fin radial which develops from the pectoral fin endoskeletal disc, supports a few pectoral lepidotrichia or fin rays and connects the lepidotrichia and distal radials with the primary pectoral girdle (scapula and coracoid).
+NEW: pectoral fin proximal radial element that is composed of bone tissue.
 
 
-UBERON:0002196 : adenohypophysis   
-OLD: The glandular, anterior lobe of the pituitary gland. The anterior pituitary regulates several physiological processes including stress, growth, and reproduction[WP]. The anterior lobe of the hypophysis (pituitary gland). This lobe contains cells that produce prolactin, growth hormone, thyroid-stimulating hormone, follicle-stimulating hormone and proopiomelanocortin. In contrast to mammalian vertebrates, the adenohypophysis remains in a subepithelial position and there exists no equivalent of Rathke's pouch in zebrafish[ZFA].
-NEW: The glandular, anterior lobe of the pituitary gland. The anterior pituitary regulates several physiological processes including stress, growth, and reproduction[WP]. The anterior lobe of the hypophysis (pituitary gland). This lobe contains cells that produce prolactin, growth hormone, thyroid-stimulating hormone, follicle-stimulating hormone and proopiomelanocortin[ZFA].
+UBERON:2001588 : pectoral fin distal radial bone   
+(was pectoral fin distal radial)
+OLD: Pectoral fin radial that sometimes ossifies, develops from the pectoral fin endoskeletal disc, and is located at the proximal region of a lepidotrichium, between its hemitrichia. Pectoral fin distal radial is paired.
+NEW: pectoral fin distal radial element that is composed of bone tissue.
 
 
-UBERON:0002336 : corpus callosum   
-OLD: The corpus callosum is a thick bundle of nerve fibers comprising a commissural plate connecting the two cerebral hemispheres. It consists of contralateral axon projections that provides communications between the right and left cerebral hemispheres[GO].
-NEW: A thick bundle of nerve fibers comprising a commissural plate connecting the two cerebral hemispheres. It consists of contralateral axon projections that provides communications between the right and left cerebral hemispheres[GO].
+UBERON:2001613 : dorsal fin middle radial bone   
+(was dorsal fin middle radial)
+OLD: Dorsal fin radial that is the rod-like internal median skeletal support bone of the dorsal fin located between the dorsal fin proximal radial and dorsal fin distal radial.
+NEW: dorsal fin middle radial element that is composed of bone tissue.
 
 
-UBERON:0002473 : intercerebral commissure   
-OLD: Class of unpaired telencephalic white matter structures consisting of fiber pathways which project across the midsagittal plane and which serve to interconnect telencephalic structures lying within the contralateral cerebral hemisphere[FMA].
-NEW: A commissure that connects the two cerebral hemispheres. Examples: anterior commissure, corpus callosum.
+UBERON:2001614 : anal fin middle radial bone   
+(was anal fin middle radial)
+OLD: Anal fin radial that is the rod-like internal median skeletal support bone of the anal fin located between the anal fin proximal radial and anal fin distal radial.
+NEW: anal fin middle radial element that is composed of bone tissue.
 
 
-UBERON:0002474 : cerebellar peduncular complex   
-OLD: A composite structure of the brain stem, which in NeuroNames is subdivided into the superior cerebellar peduncle of pons, the decussation of superior cerebellar peduncle and the superior cerebellar peduncle of midbrain (MM)[NIF].
-NEW: A composite structure of the brain stem, which is subdivided into the superior cerebellar peduncle of pons, the decussation of superior cerebellar peduncle and the superior cerebellar peduncle of midbrain (MM)[NIF, based on NN].
+UBERON:2001671 : anal fin radial bone   
+(was anal fin radial)
+OLD: Anal fin radials are internal skeletal supports of the anal fin.
+NEW: anal fin radial element that is composed of bone tissue.
 
 
-UBERON:0002538 : hatching gland   
-OLD: The cells of the hatching gland contain enzymes responsible for solubilization of the egg chorion, facilitating the hatching process[GO]. A transversely oriented set of cells located deep to the EVL on the pericardial membrane, especially prominent during pharyngula period because of the brightly refractile cytoplasmic granules (containing hatching enzymes) of the principal cells of the gland. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>
-NEW: The cells of the hatching gland contain enzymes responsible for solubilization of the egg chorion, facilitating the hatching process[GO]. A transversely oriented set of cells located deep to the EVL on the pericardial membrane, especially prominent during pharyngula period because of the brightly refractile cytoplasmic granules (containing hatching enzymes) of the principal cells of the gland.
+UBERON:2001672 : dorsal fin radial bone   
+(was dorsal fin radial)
+OLD: Dorsal fin radials are internal skeletal supports of the dorsal fin.
+NEW: dorsal fin radial element that is composed of bone tissue.
 
 
-UBERON:0003059 : presomitic mesoderm   
-OLD: Unsegmented field of paraxial mesoderm present posterior to the most recently formed somite pair, from which somites will form. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>
-NEW: Unsegmented field of paraxial mesoderm present posterior to the most recently formed somite pair, from which somites will form.
+UBERON:2002026 : pectoral fin proximal radial bone 1   
+(was pectoral fin proximal radial 1)
+OLD: Pectoral fin proximal radial that is the most anterior or dorsal pectoral fin radial.
+NEW: pectoral fin proximal radial 1 element that is composed of bone tissue.
 
 
-UBERON:0003065 : ciliary marginal zone   
-OLD: Region at the periphery of the retina where retinal stem cells are located. After 60 hpf, the CMZ is the source of most retinal growth. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-050427-5'>Wehman et al, 2005.</a>
-NEW: Region at the periphery of the retina where retinal stem cells are located. After 60 hpf, the CMZ is the source of most retinal growth.[Wehman et al, 2005]
+UBERON:2002027 : pectoral fin proximal radial bone 2   
+(was pectoral fin proximal radial 2)
+OLD: Pectoral fin proximal radial that is the second most anterior or dorsal pectoral fin radial.
+NEW: pectoral fin proximal radial 2 element that is composed of bone tissue.
 
 
-UBERON:0003086 : caudal artery   
-OLD: Extension of the dorsal aorta in the tail. <a href='http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-PUB-961014-576'>Kimmel et al, 1995.</a>
-NEW: Extension of the dorsal aorta in the tail.
+UBERON:2002028 : pectoral fin proximal radial bone 3   
+(was pectoral fin proximal radial 3)
+OLD: Pectoral fin proximal radial that is the third most anterior or dorsal pectoral fin radial.
+NEW: pectoral fin proximal radial 3 element that is composed of bone tissue.
 
 
-UBERON:0003090 : supraorbital lateral line   
-OLD: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)
-NEW: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance.
+UBERON:2002029 : pectoral fin proximal radial bone 4   
+(was pectoral fin proximal radial 4)
+OLD: Pectoral fin proximal radial that is the fourth most anterior or dorsal pectoral fin radial.
+NEW: pectoral fin proximal radial 4 element that is composed of bone tissue.
 
 
-UBERON:0003093 : occipital lateral line   
-OLD: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)
-NEW: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance.
+UBERON:2005225 : median fin radial bone   
+(was median fin radial)
+OLD: Radial that is part of a median fin.
+NEW: median fin radial element that is composed of bone tissue.
 
 
-UBERON:0003094 : infraorbital lateral line   
-OLD: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)
-NEW: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance.
+UBERON:4200110 : prepectoral spine   
+OLD: Fin spine located anterior to the pectoral fin
+NEW: Spine located anterior to the pectoral fin
 
 
-UBERON:0003095 : dorsal lateral line   
-OLD: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)
-NEW: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance.
-
-
-UBERON:0003096 : middle lateral line   
-OLD: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)
-NEW: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance.
-
-
-UBERON:0004066 : frontonasal prominence   
-OLD: An unpaired facial process in the embryo formed from the tissues surrounding the forebrain vesicle that develops into the forehead and bridge of the nose/snout[MP]. During embryonic development, two areas of thickened ectoderm, the olfactory areas, appear immediately under the fore-brain in the anterior wall of the stomodeum, one on either side of a region termed the frontonasal prominence (or process)[WP]. By the upgrowth of the surrounding parts these areas are converted into pits, the olfactory pits, which indent the frontonasal prominence and divide it into a medial and two lateral nasal processes[WP].
-NEW: The unpaired embryonic prominence that is formed by the tissues surrounding the forebrain vesicle and develops into the forehead and bridge of the nose/snout.
-
-
-UBERON:0005340 : dorsal telencephalic commissure   
-OLD: the fiber tracts that connect the dorsal region of the two cerebral hemispheres and span the longitudinal fissure, including the corpus callosum and hippocampal commissure[MP].
-NEW: A fiber tracts that connect the dorsal region of the two cerebral hemispheres and span the longitudinal fissure, including the corpus callosum and hippocampal commissure[MP].
-
-
-UBERON:0006334 : posterior lateral line   
-OLD: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)
-NEW: One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance.
-
-
-UBERON:0007271 : appendage musculature   
-(was limb/fin musculature)
-OLD: Any collection of muscles that is part of a limb/fin.
-NEW: Any collection of muscles that is part of an appendage.
-
-
-UBERON:0007389 : paired limb/fin cartilage   
-(was limb/fin cartilage)
-OLD: A cartilage tissue that is part of a limb/fin.
-NEW: A cartilage tissue that is part of a paired limb or fin.
-
-
-UBERON:0008904 : neuromast   
-OLD: Volcano-shaped lateral line sensory organ located in characteristic positions within the skin epithelium and containing hair cells and their support elements. (Also see Anatomical Atlas entry for <a href='http://zfin.org/zf_info/anatomy/dict/lat_line/lat_line.html'>lateral line</a> by T. Whitfield.)
-NEW: Volcano-shaped lateral line sensory organ located in characteristic positions within the skin epithelium and containing hair cells and their support elements.
+UBERON:4200111 : prepelvic fin spine   
+OLD: Fin spine located anterior to the pelvic fin and posterior to the pectoral fin. 
+NEW: Spine located anterior to the pelvic fin and posterior to the pectoral fin. 
 
 
 
@@ -220,27 +178,108 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-10-21; date: 21:10:2013 18:43
-- file 2 (new): uberon.obo; data version: releases/2013-11-05; date: 05:11:2013 19:58
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-11-08; date: 08:11:2013 00:37
+- file 2 (new): uberon.obo; data version: releases/2013-11-12; date: 12:11:2013 22:30
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:0014889	left hemisphere of cerebellum	
-UBERON:0014890	right hemisphere of cerebellum	
-UBERON:0014891	brainstem white matter	
-UBERON:0014892	skeletal muscle organ	
-UBERON:0014895	somatic muscle	
-UBERON:0014896	transversely striated somatic muscle	
-UBERON:0014897	obliquely striated somatic muscle	
-UBERON:0014898	lamina terminalis of ischium	
+UBERON:0014903	primordial vasculature	
+UBERON:1600006	paired fin radial element	none
+UBERON:1600008	pelvic fin distal radial element	none
+UBERON:1600009	pelvic fin basipterygial radial element	none
+UBERON:1600010	pelvic fin middle radial element	none
+UBERON:1700006	paired fin radial cartilage	none
+UBERON:2100268	anal fin proximal radial element	none
+UBERON:2100271	radial element	none
+UBERON:2100508	pelvic fin radial element	none
+UBERON:2100623	basipterygium element	none
+UBERON:2100646	anal fin distal radial element	none
+UBERON:2100936	dorsal fin distal radial element	none
+UBERON:2100947	dorsal fin proximal radial element	none
+UBERON:2101415	pelvic fin distal radial element 2	none
+UBERON:2101416	pelvic fin distal radial element 3	none
+UBERON:2101417	pelvic fin distal radial element 1	none
+UBERON:2101586	pectoral fin radial element	none
+UBERON:2101587	pectoral fin proximal radial element	none
+UBERON:2101588	pectoral fin distal radial element	none
+UBERON:2101613	dorsal fin middle radial element	none
+UBERON:2101614	anal fin middle radial element	none
+UBERON:2101671	anal fin radial element	none
+UBERON:2101672	dorsal fin radial element	none
+UBERON:2101818	dorsal fin proximal radial element 1	none
+UBERON:2101819	dorsal fin proximal radial element 2	none
+UBERON:2102026	pectoral fin proximal radial element 1	none
+UBERON:2102027	pectoral fin proximal radial element 2	none
+UBERON:2102028	pectoral fin proximal radial element 3	none
+UBERON:2102029	pectoral fin proximal radial element 4	none
+UBERON:2102277	pectoral fin distal radial element 1	none
+UBERON:2102279	pectoral fin distal radial element 2	none
+UBERON:2102280	pectoral fin distal radial element 3	none
+UBERON:2105225	median fin radial element	none
+UBERON:2105226	median fin proximal radial element	none
+UBERON:2105372	dorsal fin distal radial element 1	none
+UBERON:2105373	dorsal fin distal radial element 2	none
+UBERON:2105374	dorsal fin distal radial element 3	none
+UBERON:2105375	dorsal fin distal radial element 4	none
+UBERON:2105376	dorsal fin distal radial element 5	none
+UBERON:2105377	dorsal fin distal radial element 6	none
+UBERON:2105378	dorsal fin distal radial element 7	none
+UBERON:2105379	dorsal fin distal radial element 8	none
+UBERON:2105380	dorsal fin proximal radial element 3	none
+UBERON:2105381	dorsal fin proximal radial element 4	none
+UBERON:2105382	dorsal fin proximal radial element 5	none
+UBERON:2105383	dorsal fin proximal radial element 6	none
+UBERON:2105384	dorsal fin proximal radial element 7	none
+UBERON:2105385	dorsal fin proximal radial element 8	none
+UBERON:2200268	anal fin proximal radial cartilage	uberon/phenoscape-anatomy
+UBERON:2200271	radial cartilage	uberon/phenoscape-anatomy
+UBERON:2200508	obsolete pelvic fin radial cartilage	uberon/phenoscape-anatomy
+UBERON:2200623	obsolete basipterygium cartilage	uberon/phenoscape-anatomy
+UBERON:2200646	anal fin distal radial cartilage	uberon/phenoscape-anatomy
+UBERON:2200936	dorsal fin distal radial cartilage	uberon/phenoscape-anatomy
+UBERON:2200947	dorsal fin proximal radial cartilage	uberon/phenoscape-anatomy
+UBERON:2201415	pelvic fin distal radial cartilage 2	uberon/phenoscape-anatomy
+UBERON:2201416	pelvic fin distal radial cartilage 3	uberon/phenoscape-anatomy
+UBERON:2201417	pelvic fin distal radial cartilage 1	uberon/phenoscape-anatomy
+UBERON:2201586	pectoral fin radial cartilage	uberon/phenoscape-anatomy
+UBERON:2201587	pectoral fin proximal radial cartilage	uberon/phenoscape-anatomy
+UBERON:2201588	pectoral fin distal radial cartilage	uberon/phenoscape-anatomy
+UBERON:2201613	dorsal fin middle radial cartilage	uberon/phenoscape-anatomy
+UBERON:2201614	anal fin middle radial cartilage	uberon/phenoscape-anatomy
+UBERON:2201671	anal fin radial cartilage	uberon/phenoscape-anatomy
+UBERON:2201672	dorsal fin radial cartilage	uberon/phenoscape-anatomy
+UBERON:2201818	dorsal fin proximal radial cartilage 1	uberon/phenoscape-anatomy
+UBERON:2201819	dorsal fin proximal radial cartilage 2	uberon/phenoscape-anatomy
+UBERON:2202026	pectoral fin proximal radial cartilage 1	uberon/phenoscape-anatomy
+UBERON:2202027	pectoral fin proximal radial cartilage 2	uberon/phenoscape-anatomy
+UBERON:2202028	pectoral fin proximal radial cartilage 3	uberon/phenoscape-anatomy
+UBERON:2202029	pectoral fin proximal radial cartilage 4	uberon/phenoscape-anatomy
+UBERON:2202277	pectoral fin distal radial cartilage 1	uberon/phenoscape-anatomy
+UBERON:2202279	pectoral fin distal radial cartilage 2	uberon/phenoscape-anatomy
+UBERON:2202280	pectoral fin distal radial cartilage 3	uberon/phenoscape-anatomy
+UBERON:2205225	median fin radial cartilage	uberon/phenoscape-anatomy
+UBERON:2205226	median fin proximal radial cartilage	uberon/phenoscape-anatomy
+UBERON:2205372	dorsal fin distal radial cartilage 1	uberon/phenoscape-anatomy
+UBERON:2205373	dorsal fin distal radial cartilage 2	uberon/phenoscape-anatomy
+UBERON:2205374	dorsal fin distal radial cartilage 3	uberon/phenoscape-anatomy
+UBERON:2205375	dorsal fin distal radial cartilage 4	uberon/phenoscape-anatomy
+UBERON:2205376	dorsal fin distal radial cartilage 5	uberon/phenoscape-anatomy
+UBERON:2205377	dorsal fin distal radial cartilage 6	uberon/phenoscape-anatomy
+UBERON:2205378	dorsal fin distal radial cartilage 7	uberon/phenoscape-anatomy
+UBERON:2205379	dorsal fin distal radial cartilage 8	uberon/phenoscape-anatomy
+UBERON:2205380	dorsal fin proximal radial cartilage 3	uberon/phenoscape-anatomy
+UBERON:2205381	dorsal fin proximal radial cartilage 4	uberon/phenoscape-anatomy
+UBERON:2205382	dorsal fin proximal radial cartilage 5	uberon/phenoscape-anatomy
+UBERON:2205383	dorsal fin proximal radial cartilage 6	uberon/phenoscape-anatomy
+UBERON:2205384	dorsal fin proximal radial cartilage 7	uberon/phenoscape-anatomy
+UBERON:2205385	dorsal fin proximal radial cartilage 8	uberon/phenoscape-anatomy
 
 
 OBSOLETIONS
 ===========
-
-None
+UBERON:2005076, obsolete primordial vasculature (uberon/phenoscape-anatomy)
 
 
 TERM MERGES
@@ -254,1002 +293,341 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	subset	synonym	xref	is_a	intersection_of	relationship	
-UBERON:0000007					1 A	2 A				
-UBERON:0000010						1 A				
-UBERON:0000045						1 A				
-UBERON:0000052		C				1 A	1 D, 2 A			
-UBERON:0000127						3 A				
-UBERON:0000311									1 D, 1 A	
-UBERON:0000315									1 A	
-UBERON:0000366									1 D, 1 A	
-UBERON:0000369						1 A				
-UBERON:0000395						1 A				
-UBERON:0000407						1 A				
-UBERON:0000411					1 A	1 A				
-UBERON:0000432						1 A				
-UBERON:0000433					1 A	1 A				
-UBERON:0000434					3 A	2 A				
-UBERON:0000435						1 A				
-UBERON:0000445						1 A				
-UBERON:0000446					1 A	5 A				
-UBERON:0000451						1 A				
-UBERON:0000908		C			3 A	5 A			1 D, 1 A	
-UBERON:0000935		C	D		1 D, 7 A	5 A	1 A			
-UBERON:0000936		C	C			2 A		2 A	2 A	
-UBERON:0000941					2 A	1 D, 5 A				
-UBERON:0000955						2 A				
-UBERON:0000956					1 A	4 A				
-UBERON:0000959						4 A				
-UBERON:0000962						1 A				
-UBERON:0000966						1 A				
-UBERON:0000988						3 A				
-UBERON:0000994				1 A			1 D		1 D	
-UBERON:0001016			D							
-UBERON:0001017						1 A				
-UBERON:0001020						1 A				
-UBERON:0001021						1 A				
-UBERON:0001032						1 A				
-UBERON:0001063						2 A				
-UBERON:0001082		C								
-UBERON:0001134		C			2 D, 1 A	22 D	1 D, 1 A		1 A	
-UBERON:0001153					1 A					
-UBERON:0001155		C								
-UBERON:0001271		C								
-UBERON:0001384					4 A	3 A				
-UBERON:0001393					1 A	3 A				
-UBERON:0001579						2 A				
-UBERON:0001630								1 D, 1 A	1 D	
-UBERON:0001643					2 A	1 D, 3 A				
-UBERON:0001644					2 A	3 A				
-UBERON:0001645						3 A				
-UBERON:0001646					1 A	2 A				
-UBERON:0001647					2 A	4 A				
-UBERON:0001648						3 A				
-UBERON:0001649						2 A				
-UBERON:0001650					1 A	3 A				
-UBERON:0001675		C				2 A				
-UBERON:0001699						2 A				
-UBERON:0001700						1 A				
-UBERON:0001715						2 A				
-UBERON:0001717					1 A	2 A				
-UBERON:0001718					1 A	2 A				
-UBERON:0001719						2 A				
-UBERON:0001721						4 A				
-UBERON:0001722					1 A	7 A				
-UBERON:0001759					1 A	1 D, 3 A				
-UBERON:0001780					1 A	1 A				
-UBERON:0001785						1 A				
-UBERON:0001789					1 A	1 A				
-UBERON:0001790					1 A	1 A				
-UBERON:0001791					1 A	1 A				
-UBERON:0001792					1 A	1 A				
-UBERON:0001795					1 A	1 A				
-UBERON:0001814					1 A	1 A				
-UBERON:0001815						1 A				
-UBERON:0001840		C								
-UBERON:0001841		C								
-UBERON:0001842		C								
-UBERON:0001843		C								
-UBERON:0001869					1 A	1 A				
-UBERON:0001870						2 A				
-UBERON:0001871						2 A				
-UBERON:0001872					1 A	2 A				
-UBERON:0001873					1 A	2 A				
-UBERON:0001874						3 A				
-UBERON:0001875						1 A				
-UBERON:0001876						5 A				
-UBERON:0001877					1 A	2 A				
-UBERON:0001878						3 A				
-UBERON:0001879						2 A				
-UBERON:0001880					2 A	6 A				
-UBERON:0001881						4 A				
-UBERON:0001882					1 A	5 A				
-UBERON:0001883						5 A				
-UBERON:0001884						1 A				
-UBERON:0001885						1 A				
-UBERON:0001886						4 A				
-UBERON:0001887					1 A	3 A				
-UBERON:0001888					1 A	4 A				
-UBERON:0001890						2 A				
-UBERON:0001891						2 A				
-UBERON:0001893					1 A	4 A				
-UBERON:0001894		C			1 A	6 A				
-UBERON:0001895						1 A				
-UBERON:0001896					3 A	3 A				
-UBERON:0001897						2 A				
-UBERON:0001898						2 A				
-UBERON:0001899						4 A				
-UBERON:0001900						4 A				
-UBERON:0001903						2 A				
-UBERON:0001904						2 A				
-UBERON:0001905						2 A				
-UBERON:0001906						3 A				
-UBERON:0001907					2 A	1 A				
-UBERON:0001908						2 A				
-UBERON:0001909					2 A	3 A		2 A	1 A	
-UBERON:0001910						1 A				
-UBERON:0001920						2 A				
-UBERON:0001921					3 A	2 A				
-UBERON:0001922						1 A				
-UBERON:0001923					1 A	3 A				
-UBERON:0001924						4 A				
-UBERON:0001925					2 A	2 A				
-UBERON:0001926					1 A	2 A				
-UBERON:0001927					1 A	2 A				
-UBERON:0001928						1 A				
-UBERON:0001929					1 A	2 A				
-UBERON:0001930					1 A	3 A				
-UBERON:0001931						1 A				
-UBERON:0001932					1 A	5 A				
-UBERON:0001933						2 A				
-UBERON:0001934						2 A				
-UBERON:0001935						1 A				
-UBERON:0001936						1 A				
-UBERON:0001937						1 A				
-UBERON:0001938						1 A				
-UBERON:0001939					2 A	2 A				
-UBERON:0001940						2 A				
-UBERON:0001941						3 A				
-UBERON:0001942						3 A				
-UBERON:0001943						1 A				
-UBERON:0001944						4 A				
-UBERON:0001945					1 A	1 A				
-UBERON:0001946						1 A				
-UBERON:0001947					2 A	3 A				
-UBERON:0001950					1 A	3 A				
-UBERON:0001953						3 A				
-UBERON:0001954					1 A	1 A				
-UBERON:0001965					1 A	2 A				
-UBERON:0001966					5 A	2 A				
-UBERON:0001989						2 A				
-UBERON:0001990						1 A				
-UBERON:0002005						1 A				
-UBERON:0002019					1 A	2 A				
-UBERON:0002020					1 A		2 D, 1 A			
-UBERON:0002021						2 A				
-UBERON:0002022					5 A	2 A				
-UBERON:0002023						3 A				
-UBERON:0002028						1 A				
-UBERON:0002034						2 A				
-UBERON:0002035					1 A	2 A				
-UBERON:0002037					1 A	2 A				
-UBERON:0002038						1 A				
-UBERON:0002043					1 A	1 A				
-UBERON:0002044						2 A				
-UBERON:0002045						2 A				
-UBERON:0002047						3 A				
-UBERON:0002058						1 A				
-UBERON:0002127						2 A				
-UBERON:0002128						2 A				
-UBERON:0002129					1 A	3 A				
-UBERON:0002130						4 A				
-UBERON:0002131						3 A				
-UBERON:0002132						2 A				
-UBERON:0002133		C								
-UBERON:0002136						2 A				
-UBERON:0002138						1 A				
-UBERON:0002139					1 A	1 A				
-UBERON:0002140					1 A	1 A				
-UBERON:0002141						2 A				
-UBERON:0002142						2 A				
-UBERON:0002143						2 A				
-UBERON:0002144						2 A				
-UBERON:0002145					2 A	2 A				
-UBERON:0002147					2 A	2 A				
-UBERON:0002148						2 A				
-UBERON:0002149						2 A				
-UBERON:0002150					2 A	2 A				
-UBERON:0002151					2 A	2 A				
-UBERON:0002152					1 A	3 A	1 D			
-UBERON:0002153					1 A	3 A				
-UBERON:0002154						2 A				
-UBERON:0002155						2 A				
-UBERON:0002156					2 A	2 A				
-UBERON:0002157					1 A	2 A				
-UBERON:0002158					1 A	3 A				
-UBERON:0002159						2 A				
-UBERON:0002160						3 A				
-UBERON:0002161					1 A	2 A				
-UBERON:0002162					2 A	2 A				
-UBERON:0002163					1 A	1 A				
-UBERON:0002164						1 A				
-UBERON:0002176						2 A				
-UBERON:0002181					2 A	1 A				
-UBERON:0002191					1 A	3 A				
-UBERON:0002192						2 A				
-UBERON:0002196		C	C		7 A	4 A				
-UBERON:0002197						1 A				
-UBERON:0002198					1 A	4 A				
-UBERON:0002206						3 A				
-UBERON:0002219						1 A				
-UBERON:0002240						2 A				
-UBERON:0002245						1 A				
-UBERON:0002246					2 A	1 A				
-UBERON:0002256					1 A	1 A				
-UBERON:0002257					1 A	1 A				
-UBERON:0002260					1 A	2 A				
-UBERON:0002261					1 A	1 A				
-UBERON:0002262						1 A				
-UBERON:0002264					1 A	4 A				
-UBERON:0002265						1 A				
-UBERON:0002266					2 A	2 A				
-UBERON:0002267					1 A	2 A				
-UBERON:0002271					1 A	1 A				
-UBERON:0002272					4 A	2 A				
-UBERON:0002273					2 A	1 A				
-UBERON:0002274						1 A				
-UBERON:0002275						1 A				
-UBERON:0002285					3 A	4 A				
-UBERON:0002286					1 A	2 A				
-UBERON:0002287						1 A				
-UBERON:0002288						2 A				
-UBERON:0002289					3 A	2 A				
-UBERON:0002290						2 A				
-UBERON:0002291					1 A	2 A				
-UBERON:0002298						1 A				
-UBERON:0002307						1 A				
-UBERON:0002309					1 A	1 A				
-UBERON:0002310						2 A				
-UBERON:0002313						1 A				
-UBERON:0002314						2 A				
-UBERON:0002315						1 A				
-UBERON:0002317						2 A				
-UBERON:0002318						1 A				
-UBERON:0002336		C				2 A				
-UBERON:0002421						3 A				
-UBERON:0002422					2 A	2 A				
-UBERON:0002430					1 A	3 A				
-UBERON:0002432						1 A				
-UBERON:0002434						2 A				
-UBERON:0002435						3 A				
-UBERON:0002436					2 A	3 A				
-UBERON:0002437						1 A				
-UBERON:0002438						2 A				
-UBERON:0002439						1 A				
-UBERON:0002440						1 A				
-UBERON:0002441						1 A				
-UBERON:0002473		C			1 D, 2 A	1 A		3 A	1 D, 2 A	
-UBERON:0002474		C				1 A	1 D, 2 A		2 A	
-UBERON:0002476					2 A	4 A				
-UBERON:0002477					4 A	4 A				
-UBERON:0002479					1 A	2 A				
-UBERON:0002480					1 A	5 A				
-UBERON:0002538		C								
-UBERON:0002549						1 A				
-UBERON:0002550						1 A				
-UBERON:0002551					2 A	5 A				
-UBERON:0002552						1 A				
-UBERON:0002555						1 A				
-UBERON:0002556						2 A				
-UBERON:0002557					1 A	1 A				
-UBERON:0002559						3 A				
-UBERON:0002560						2 A				
-UBERON:0002562						2 A				
-UBERON:0002563					3 A	3 A				
-UBERON:0002564						1 A				
-UBERON:0002565						6 A				
-UBERON:0002566						1 A				
-UBERON:0002567						1 A				
-UBERON:0002568						1 A				
-UBERON:0002569						1 A				
-UBERON:0002570						1 A				
-UBERON:0002571					2 A	2 A				
-UBERON:0002572						1 A				
-UBERON:0002573					2 A	4 A				
-UBERON:0002575						1 A				
-UBERON:0002576						2 A				
-UBERON:0002577						2 A				
-UBERON:0002578						1 A				
-UBERON:0002580						1 A				
-UBERON:0002581						1 A				
-UBERON:0002582						2 A				
-UBERON:0002583					2 A	2 A				
-UBERON:0002585						1 A	1 D, 1 A			
-UBERON:0002586					2 A	1 A				
-UBERON:0002587					1 A	2 A				
-UBERON:0002588					1 A	2 A	1 D, 1 A			
-UBERON:0002589						1 A				
-UBERON:0002590					1 A	1 A				
-UBERON:0002591					2 A	3 A				
-UBERON:0002592						2 A				
-UBERON:0002593						1 A				
-UBERON:0002594						1 A	1 D, 1 A			
-UBERON:0002595						2 A				
-UBERON:0002596					3 A	1 A				
-UBERON:0002597						2 A				
-UBERON:0002598					1 A	1 A				
-UBERON:0002599						1 A				
-UBERON:0002600					1 A	2 A				
-UBERON:0002601					1 A	2 A				
-UBERON:0002602						2 A				
-UBERON:0002603						2 A				
-UBERON:0002604					1 A	2 A				
-UBERON:0002605						1 A				
-UBERON:0002607						1 A				
-UBERON:0002608						1 A				
-UBERON:0002609						1 A				
-UBERON:0002610					1 A	2 A				
-UBERON:0002612						1 A				
-UBERON:0002613						1 A				
-UBERON:0002614					4 A	2 A				
-UBERON:0002615						2 A	1 D, 1 A			
-UBERON:0002617					2 A	1 A				
-UBERON:0002618					2 A	2 A				
-UBERON:0002619					1 A	5 A				
-UBERON:0002620						2 A	1 A		1 A	
-UBERON:0002622					1 A	2 A				
-UBERON:0002623					1 A	3 A				
-UBERON:0002624						1 D, 3 A				
-UBERON:0002625						2 A				
-UBERON:0002626						1 A				
-UBERON:0002627						1 A				
-UBERON:0002628						1 A				
-UBERON:0002629					1 A	2 A	2 A		1 A	
-UBERON:0002630						1 A				
-UBERON:0002631					3 A	2 A	1 D, 1 A		1 A	
-UBERON:0002632					3 A	5 A				
-UBERON:0002633					1 A	2 A				
-UBERON:0002634					4 A	5 A				
-UBERON:0002636						1 A				
-UBERON:0002637					2 A	1 A				
-UBERON:0002638						1 A				
-UBERON:0002639						1 A				
-UBERON:0002640						2 A				
-UBERON:0002641						2 A				
-UBERON:0002642						1 A				
-UBERON:0002643						1 A				
-UBERON:0002644						1 A				
-UBERON:0002645					1 A	1 A				
-UBERON:0002646						1 A				
-UBERON:0002647					2 A	1 A				
-UBERON:0002648						1 A				
-UBERON:0002649						2 A				
-UBERON:0002650					1 A	1 A				
-UBERON:0002651						1 A				
-UBERON:0002652						1 A				
-UBERON:0002653					2 A	1 A				
-UBERON:0002654						1 A				
-UBERON:0002655					4 A	1 D, 3 A				
-UBERON:0002656					2 A	3 A				
-UBERON:0002657						1 A				
-UBERON:0002658						1 A	1 A			
-UBERON:0002659						3 A				
-UBERON:0002660						1 A				
-UBERON:0002661						1 A				
-UBERON:0002662						1 A	1 D, 1 A			
-UBERON:0002663						1 A				
-UBERON:0002664					1 A	2 A				
-UBERON:0002665						3 A				
-UBERON:0002666					1 A	2 A	1 D, 1 A			
-UBERON:0002667						2 A				
-UBERON:0002668						1 A				
-UBERON:0002669						1 A	1 A			
-UBERON:0002670						1 A	1 A			
-UBERON:0002671						1 A				
-UBERON:0002672						1 A	1 A			
-UBERON:0002673						2 A				
-UBERON:0002675						1 A				
-UBERON:0002676						2 A				
-UBERON:0002679						1 A				
-UBERON:0002681					1 A	1 A				
-UBERON:0002682						2 A				
-UBERON:0002683						2 A				
-UBERON:0002684					2 A	2 A				
-UBERON:0002685					2 A	5 A				
-UBERON:0002686						1 A				
-UBERON:0002687					1 A	1 A				
-UBERON:0002688						1 A				
-UBERON:0002689					2 A	3 A				
-UBERON:0002690					2 A	2 A				
-UBERON:0002691						1 A				
-UBERON:0002692						1 A				
-UBERON:0002693					1 A	2 A	1 D, 1 A			
-UBERON:0002694						1 A				
-UBERON:0002695					1 A	2 A	1 D, 1 A			
-UBERON:0002696						2 A				
-UBERON:0002697						2 A				
-UBERON:0002698						1 A			1 A	
-UBERON:0002699						1 A				
-UBERON:0002700						1 A				
-UBERON:0002701						1 A				
-UBERON:0002702					1 A	1 A				
-UBERON:0002703						1 A				
-UBERON:0002704					2 A	4 A				
-UBERON:0002705					4 A	3 A				
-UBERON:0002706					1 A	3 A				
-UBERON:0002707					1 A	2 A				
-UBERON:0002708					2 A	2 A				
-UBERON:0002709					3 A	3 A				
-UBERON:0002710						2 A	1 D, 1 A			
-UBERON:0002711						3 A				
-UBERON:0002712						2 A				
-UBERON:0002713					1 A	2 A				
-UBERON:0002714					2 D, 2 A	2 A			2 D, 1 A	
-UBERON:0002715						1 A				
-UBERON:0002716						1 A	1 D, 1 A			
-UBERON:0002717						1 A				
-UBERON:0002718						2 A				
-UBERON:0002719						1 A				
-UBERON:0002720						2 A				
-UBERON:0002721						2 A				
-UBERON:0002722						3 A				
-UBERON:0002723					1 D, 1 A	2 A				
-UBERON:0002724					1 D, 1 A	1 A			1 A	
-UBERON:0002727					1 A	1 A				
-UBERON:0002728						2 A				
-UBERON:0002729						2 A				
-UBERON:0002731						1 A	2 A		1 A	
-UBERON:0002732						2 A				
-UBERON:0002733					4 A	3 A				
-UBERON:0002734						1 A				
-UBERON:0002735					1 A	2 A				
-UBERON:0002736					2 A	3 A				
-UBERON:0002737						1 A				
-UBERON:0002738					1 A	2 A				
-UBERON:0002739					3 A	3 A				
-UBERON:0002740						1 A				
-UBERON:0002741					1 A	1 A				
-UBERON:0002742						1 A				
-UBERON:0002743						1 A				
-UBERON:0002744						1 A				
-UBERON:0002745						1 A				
-UBERON:0002746					2 A	2 A				
-UBERON:0002747						1 A				
-UBERON:0002748						1 A				
-UBERON:0002750						1 A				
-UBERON:0002751						1 A				
-UBERON:0002752						2 A				
-UBERON:0002753						3 A				
-UBERON:0002754						1 A				
-UBERON:0002755						2 A				
-UBERON:0002756						1 A				
-UBERON:0002758					4 A	3 A				
-UBERON:0002759					4 A	3 A				
-UBERON:0002760						1 A				
-UBERON:0002761						2 A				
-UBERON:0002762					2 A	2 A				
-UBERON:0002763					1 A	2 A				
-UBERON:0002764						1 A				
-UBERON:0002765					1 A	1 A				
-UBERON:0002766					1 A	3 A				
-UBERON:0002767						1 A				
-UBERON:0002768						1 A				
-UBERON:0002769						1 A				
-UBERON:0002770						2 A				
-UBERON:0002771					1 A	1 A				
-UBERON:0002772						1 A				
-UBERON:0002773						1 A				
-UBERON:0002774						1 A				
-UBERON:0002775						1 A				
-UBERON:0002776					2 A	2 A				
-UBERON:0002778					4 A	2 A				
-UBERON:0002779					1 A	2 A				
-UBERON:0002781					1 A	2 A				
-UBERON:0002782						1 A				
-UBERON:0002783						1 A				
-UBERON:0002786					1 A	2 A				
-UBERON:0002787					1 A	2 A				
-UBERON:0002788					4 A	4 A				
-UBERON:0002790						1 A				
-UBERON:0002793						1 A				
-UBERON:0002794						1 A				
-UBERON:0002795					1 A	3 A				
-UBERON:0002796						4 A				
-UBERON:0002797					2 A	2 A				
-UBERON:0002798					2 A	1 A				
-UBERON:0002799						1 A	1 A			
-UBERON:0002800						1 A				
-UBERON:0002801						1 A				
-UBERON:0002814						1 A				
-UBERON:0002815						1 A				
-UBERON:0002816						2 A				
-UBERON:0002817					1 A	3 A				
-UBERON:0002818						1 A				
-UBERON:0002824						1 A				
-UBERON:0002828					1 A	2 A				
-UBERON:0002829					1 A	3 A				
-UBERON:0002830						1 A				
-UBERON:0002831						1 A				
-UBERON:0002864						3 A				
-UBERON:0002865					2 A	1 A				
-UBERON:0002866					3 A	3 A				
-UBERON:0002867						1 A				
-UBERON:0002868						1 A				
-UBERON:0002869					2 A	2 A				
-UBERON:0002870					1 A	2 A				
-UBERON:0002871						3 A				
-UBERON:0002872						2 A				
-UBERON:0002873					2 A	3 A				
-UBERON:0002874						1 A				
-UBERON:0002875						1 A				
-UBERON:0002876					1 A	2 A				
-UBERON:0002877					1 A	2 A				
-UBERON:0002879						1 A				
-UBERON:0002880						1 A				
-UBERON:0002881						3 A				
-UBERON:0002882					1 A	1 A				
-UBERON:0002883					1 A	4 A				
-UBERON:0002884					6 A	2 A				
-UBERON:0002885						2 A				
-UBERON:0002886					1 A	3 A				
-UBERON:0002887					4 A	4 A				
-UBERON:0002888						1 A				
-UBERON:0002889					3 A	4 A				
-UBERON:0002890						2 A				
-UBERON:0002891					3 A	4 A				
-UBERON:0002892					4 A	4 A				
-UBERON:0002893					1 A	2 A				
-UBERON:0002894					1 A	1 A				
-UBERON:0002895						1 A				
-UBERON:0002896						1 A	1 D, 1 A			
-UBERON:0002897						1 A				
-UBERON:0002898						1 A				
-UBERON:0002899						2 A	1 D, 1 A	4 A	3 A	
-UBERON:0002900						1 A				
-UBERON:0002901						1 A				
-UBERON:0002902						3 A				
-UBERON:0002903						1 A	1 D, 1 A		1 A	
-UBERON:0002904						1 A				
-UBERON:0002905						1 A	1 D, 1 A		1 A	
-UBERON:0002906						1 A	1 D, 1 A		1 A	
-UBERON:0002907						1 A				
-UBERON:0002908						1 A				
-UBERON:0002909						1 A				
-UBERON:0002910						1 A				
-UBERON:0002911						2 A				
-UBERON:0002912					1 A	1 A				
-UBERON:0002913					1 A	2 A				
-UBERON:0002914						2 A				
-UBERON:0002915						1 A				
-UBERON:0002916						1 A				
-UBERON:0002918						1 A				
-UBERON:0002919						1 A	1 D, 1 A			
-UBERON:0002920						1 A	1 D, 1 A			
-UBERON:0002921						2 A	1 D, 1 A		1 D	
-UBERON:0002922						2 A				
-UBERON:0002923						2 A	1 D, 1 A			
-UBERON:0002924						2 A				
-UBERON:0002928					1 A	2 A				
-UBERON:0002930					2 A	1 A				
-UBERON:0002931						1 A				
-UBERON:0002932						3 A				
-UBERON:0002933					1 A	4 A				
-UBERON:0002934					1 A	1 A				
-UBERON:0002935						1 A				
-UBERON:0002936					2 A	2 A				
-UBERON:0002937						1 A				
-UBERON:0002938					1 A	2 A				
-UBERON:0002939					6 A	2 A				
-UBERON:0002940						1 A	1 D, 1 A			
-UBERON:0002941						1 A	1 D, 1 A			
-UBERON:0002942					4 A	1 A				
-UBERON:0002943					1 A	3 A				
-UBERON:0002944						1 A				
-UBERON:0002945					4 A	3 A				
-UBERON:0002947						2 A				
-UBERON:0002948						2 A				
-UBERON:0002949						2 A				
-UBERON:0002952						1 A	1 D, 1 A			
-UBERON:0002953					2 A	2 A				
-UBERON:0002954					1 A	4 A				
-UBERON:0002955						2 A				
-UBERON:0002957						1 A				
-UBERON:0002958						1 A	1 A			
-UBERON:0002959						1 A				
-UBERON:0002960					2 A	1 A				
-UBERON:0002961						1 A				
-UBERON:0002963					3 A	2 A				
-UBERON:0002964						1 A				
-UBERON:0002965						1 A				
-UBERON:0002967					2 A	2 A				
-UBERON:0002968					1 A	2 A				
-UBERON:0002969						1 A				
-UBERON:0002970					1 A	1 A				
-UBERON:0002971					3 A	2 A				
-UBERON:0002972					1 A	2 A				
-UBERON:0002973						1 A				
-UBERON:0002974						1 A				
-UBERON:0002975						1 A				
-UBERON:0002976						1 A				
-UBERON:0002977						3 A				
-UBERON:0002978						1 A				
-UBERON:0002980		A			1 A	3 A	2 A		1 A	
-UBERON:0002981						3 A				
-UBERON:0002982						2 A				
-UBERON:0002983					1 A	1 A				
-UBERON:0002984					1 A	3 A				
-UBERON:0002985					2 A	3 A				
-UBERON:0002987						3 A				
-UBERON:0002990						1 A				
-UBERON:0002991						2 A				
-UBERON:0002992					1 A	2 A				
-UBERON:0002993					4 A	2 A				
-UBERON:0002994						1 A				
-UBERON:0002995					4 A	2 A				
-UBERON:0002996						3 A				
-UBERON:0002997						1 A				
-UBERON:0002998						1 A				
-UBERON:0002999					4 A	2 A				
-UBERON:0003002						2 A				
-UBERON:0003004					2 A	4 A				
-UBERON:0003005						1 A				
-UBERON:0003006					1 A	2 A				
-UBERON:0003007						1 A				
-UBERON:0003008						1 A				
-UBERON:0003009						2 A	1 D, 1 A			
-UBERON:0003010						1 A	1 D, 1 A			
-UBERON:0003011						2 A				
-UBERON:0003012						1 A				
-UBERON:0003013						1 A				
-UBERON:0003015						1 A				
-UBERON:0003016						2 A	1 D, 1 A			
-UBERON:0003017						1 A				
-UBERON:0003018					3 A	3 A				
-UBERON:0003019					1 A	2 A				
-UBERON:0003020						1 A				
-UBERON:0003021					1 A	2 A				
-UBERON:0003023						1 A				
-UBERON:0003024						1 A				
-UBERON:0003025					1 A	2 A				
-UBERON:0003026						1 A				
-UBERON:0003028					3 A	3 A				
-UBERON:0003029						2 A				
-UBERON:0003030						1 A				
-UBERON:0003031					2 A	3 A				
-UBERON:0003033					4 A	4 A				
-UBERON:0003034					1 A	3 A				
-UBERON:0003036						2 A				
-UBERON:0003037						1 D				
-UBERON:0003039					2 A	2 A	1 D, 2 A	3 A	1 A	
-UBERON:0003040					2 A	2 A				
-UBERON:0003041						1 A				
-UBERON:0003043					2 A	2 A	1 D, 2 A	3 A	3 A	
-UBERON:0003044					1 A	1 A				
-UBERON:0003045					1 A	2 A				
-UBERON:0003046						1 A				
-UBERON:0003059		C								
-UBERON:0003065		C								
-UBERON:0003086		C								
-UBERON:0003090		C								
-UBERON:0003093		C								
-UBERON:0003094		C								
-UBERON:0003095		C								
-UBERON:0003096		C								
-UBERON:0003217						1 A				
-UBERON:0003715					1 A	1 A				
-UBERON:0003721						1 A				
-UBERON:0003723					1 A	1 A				
-UBERON:0003725						1 A				
-UBERON:0003876					1 A	3 A				
-UBERON:0003881					1 A	1 A				
-UBERON:0003882					1 A	1 A				
-UBERON:0003883					1 A	1 A				
-UBERON:0003931					1 D, 1 A					
-UBERON:0003941					2 A	1 A				
-UBERON:0003961					1 A	1 A				
-UBERON:0003962						1 A				
-UBERON:0003963						1 A				
-UBERON:0003980					1 A	1 A				
-UBERON:0003989						1 A				
-UBERON:0003991						2 A				
-UBERON:0003992						2 A				
-UBERON:0003993						2 A				
-UBERON:0004002						1 A				
-UBERON:0004009						1 A				
-UBERON:0004047						2 A				
-UBERON:0004048						2 A				
-UBERON:0004049						2 A				
-UBERON:0004050						1 A				
-UBERON:0004052						1 A				
-UBERON:0004066		C			4 A					
-UBERON:0004069						2 A				
-UBERON:0004074					2 A	2 A				
-UBERON:0004078					1 A	2 A				
-UBERON:0004079						2 A				
-UBERON:0004080						1 A				
-UBERON:0004081						1 A				
-UBERON:0004082						1 A				
-UBERON:0004083						1 A				
-UBERON:0004170					1 A	1 A				
-UBERON:0004171					2 A	1 A				
-UBERON:0004186					1 A	1 A				
-UBERON:0004357	C				1 A					
-UBERON:0004520							1 A			
-UBERON:0004545					1 A	2 A				
-UBERON:0004671						1 A				
-UBERON:0004672					1 A	1 A				
-UBERON:0004674					2 A	2 A				
-UBERON:0004675					1 A	2 A				
-UBERON:0004677							1 D		1 A	
-UBERON:0004679					1 A	2 A				
-UBERON:0004680					1 A	2 A	2 D, 1 A		2 A	
-UBERON:0004683						3 A				
-UBERON:0004684					1 A	1 A				
-UBERON:0004703						2 A				
-UBERON:0004708	C				1 D, 2 A					
-UBERON:0004714						2 A				
-UBERON:0004720						2 A				
-UBERON:0004725					1 A	2 A				
-UBERON:0004727						1 A				
-UBERON:0004904					2 A	4 A				
-UBERON:0004922						2 A				
-UBERON:0005053							1 D		1 D, 1 A	
-UBERON:0005054							1 A			
-UBERON:0005078	C	C			1 A	1 D, 2 A			1 A	
-UBERON:0005159						1 A				
-UBERON:0005160		A				1 A				
-UBERON:0005281					1 A	1 A				
-UBERON:0005287						1 A				
-UBERON:0005288						1 A				
-UBERON:0005289						1 A				
-UBERON:0005293					1 A	1 A				
-UBERON:0005340		C								
-UBERON:0005341							1 D, 2 A		1 A	
-UBERON:0005343						1 A				
-UBERON:0005346					1 A	1 A				
-UBERON:0005347						1 A				
-UBERON:0005348						2 A				
-UBERON:0005349					1 A	3 A				
-UBERON:0005350					1 A	3 A				
-UBERON:0005351						3 A				
-UBERON:0005371						1 A				
-UBERON:0005372					1 A	1 A				
-UBERON:0005373					2 A	1 A				
-UBERON:0005376					1 A	1 A				
-UBERON:0005377					1 A	1 A				
-UBERON:0005378					4 A	2 A				
-UBERON:0005379					1 A	1 A				
-UBERON:0005381					2 A	3 A				
-UBERON:0005382						3 A				
-UBERON:0005383					1 A	2 A				
-UBERON:0005402					1 A					
-UBERON:0005403						3 A				
-UBERON:0005412						1 D				
-UBERON:0005413						1 A				
-UBERON:0005430						1 A				
-UBERON:0005453						1 A				
-UBERON:0005478						2 A				
-UBERON:0005479						1 A				
-UBERON:0005732	C				1 A					
-UBERON:0005821					2 A	2 A				
-UBERON:0005832					2 A	2 A				
-UBERON:0005976						1 A				
-UBERON:0005977					1 A	1 A				
-UBERON:0006007						1 A				
-UBERON:0006083					2 A	3 A				
-UBERON:0006086					2 A	4 A				
-UBERON:0006087						2 A				
-UBERON:0006088					2 A	1 A				
-UBERON:0006089						1 A				
-UBERON:0006090						1 A				
-UBERON:0006091						1 A				
-UBERON:0006092						1 A				
-UBERON:0006093						2 A				
-UBERON:0006094						1 A				
-UBERON:0006097						1 A				
-UBERON:0006098						2 A				
-UBERON:0006101						1 A				
-UBERON:0006107					2 A	2 A				
-UBERON:0006108						1 A				
-UBERON:0006114						1 A				
-UBERON:0006115						2 A				
-UBERON:0006116						1 A				
-UBERON:0006117						1 A				
-UBERON:0006119						1 A				
-UBERON:0006120					2 A	3 A				
-UBERON:0006121						1 A				
-UBERON:0006123					1 A	1 A				
-UBERON:0006124					1 A	1 A				
-UBERON:0006134					1 A	1 A				
-UBERON:0006238						1 A				
-UBERON:0006240						1 A				
-UBERON:0006250					2 A	2 A				
-UBERON:0006319					1 A	1 A				
-UBERON:0006334		C								
-UBERON:0006514						2 A				
-UBERON:0006516					4 A	2 A				
-UBERON:0006681						2 A				
-UBERON:0006696					1 A	2 A				
-UBERON:0006698					1 A	1 A				
-UBERON:0006743						1 A				
-UBERON:0006779					2 A	3 A				
-UBERON:0006780					5 A	4 A				
-UBERON:0006782						1 A				
-UBERON:0006783						1 A				
-UBERON:0006787					3 A	4 A				
-UBERON:0006788					1 A	2 A				
-UBERON:0006789					4 A	3 A				
-UBERON:0006790					4 A	3 A				
-UBERON:0006791					2 A	1 A				
-UBERON:0006792					1 A	1 A				
-UBERON:0006793					1 A	1 A				
-UBERON:0006840					1 A	1 A				
-UBERON:0006847					1 A	1 A	1 D	3 A	3 A	
-UBERON:0006848						2 A				
-UBERON:0006907							1 A			
-UBERON:0006908							1 A			
-UBERON:0006964						1 A				
-UBERON:0007193						1 A				
-UBERON:0007224						1 A				
-UBERON:0007225					1 A	2 A				
-UBERON:0007227						3 A				
-UBERON:0007230						3 A				
-UBERON:0007249					1 A	2 A				
-UBERON:0007251					2 A	1 A				
-UBERON:0007271	C	C						1 D, 1 A	1 D, 1 A	
-UBERON:0007277						1 A				
-UBERON:0007301	C				1 A			1 D, 1 A	1 D, 2 A	
-UBERON:0007304	C							1 D, 1 A	1 D, 1 A	
-UBERON:0007384	C									
-UBERON:0007389	C	C								
-UBERON:0007415					2 A	1 A				
-UBERON:0007416						1 A	1 A			
-UBERON:0007626						2 A				
-UBERON:0007627					1 A	1 A				
-UBERON:0007628					1 A	1 A				
-UBERON:0007629					1 A	2 A				
-UBERON:0007630						2 A				
-UBERON:0007631					3 A	3 A				
-UBERON:0007632					2 A	1 A				
-UBERON:0007633					2 A	2 A				
-UBERON:0007634						1 A				
-UBERON:0007637					1 A	1 A				
-UBERON:0007639					3 A	2 A				
-UBERON:0007640						1 A				
-UBERON:0007641						1 A				
-UBERON:0007656					2 A	2 A				
-UBERON:0007703						2 A				
-UBERON:0007707						1 A				
-UBERON:0007709						1 A				
-UBERON:0007710					3 A	3 A				
-UBERON:0007721									1 D, 1 A	
-UBERON:0007722									1 D, 1 A	
-UBERON:0007763						2 A				
-UBERON:0007764						3 A				
-UBERON:0007767					1 A	1 A				
-UBERON:0007768					1 A	1 A				
-UBERON:0007769					1 A	2 A				
-UBERON:0008248	C				1 A					
-UBERON:0008333					1 A	1 A				
-UBERON:0008334							1 D, 1 A			
-UBERON:0008335						1 A				
-UBERON:0008810						1 A				
-UBERON:0008904		C								
-UBERON:0008930					1 A	1 A				
-UBERON:0008933					1 A	2 A				
-UBERON:0008934					1 A	2 A				
-UBERON:0008967						2 A				
-UBERON:0008993						1 A				
-UBERON:0009050						2 A				
-UBERON:0009121					1 A	2 A				
-UBERON:0009573						2 A				
-UBERON:0009616						1 A				
-UBERON:0009641						1 A				
-UBERON:0009643						1 A				
-UBERON:0009775						1 A				
-UBERON:0009777						2 A				
-UBERON:0009835					1 A	1 A				
-UBERON:0009836						2 A				
-UBERON:0009857						1 A				
-UBERON:0009907					3 A	2 A				
-UBERON:0009951						1 A				
-UBERON:0010010					3 A	3 A				
-UBERON:0010011						1 A				
-UBERON:0010036					4 A	3 A				
-UBERON:0010329	C									
-UBERON:0010415					2 A	2 A				
-UBERON:0010538	C				1 A					
-UBERON:0011172					3 A	1 A				
-UBERON:0011173					6 A	1 A				
-UBERON:0011175					5 A	1 A				
-UBERON:0011177					4 A	1 A				
-UBERON:0011178					3 A	1 A				
-UBERON:0011179					3 A	1 A				
-UBERON:0011256							1 A			
-UBERON:0011322						1 A				
-UBERON:0011326						1 A				
-UBERON:0011582	C				1 A					
-UBERON:0011768						1 A				
-UBERON:0012111									1 D, 1 A	
-UBERON:0012170					3 A	2 A				
-UBERON:0012171					2 A	2 A				
-UBERON:0013118						1 A				
-UBERON:0013166						1 A				
-UBERON:0013220									1 D, 1 A	
-UBERON:0013529						1 A				
-UBERON:0013531					1 A	1 A				
-UBERON:0013541						1 A				
-UBERON:0013543					1 A	1 A				
-UBERON:0013560					1 A	1 A				
-UBERON:0013599						1 A				
-UBERON:0013600						1 A				
-UBERON:0013601					2 A	1 A				
-UBERON:0013646						1 A				
-UBERON:0013734					1 A	2 A				
-UBERON:0013737					1 A	1 A				
-UBERON:0013738						1 A				
-UBERON:0014169						2 A				
-UBERON:0014284						1 A				
-UBERON:0014287					1 A	1 A				
-UBERON:0014288					1 A	1 A				
-UBERON:0014468						2 A				
-UBERON:0014471						1 A				
-UBERON:0014473						3 A				
-UBERON:0014474						1 A				
-UBERON:0014521						1 A				
-UBERON:0014526						1 A				
-UBERON:0014527					1 A	1 A				
-UBERON:0014528						2 A				
-UBERON:0014529						1 A				
-UBERON:0014533						1 A				
-UBERON:0014534					3 A	2 A				
-UBERON:0014537						1 A				
-UBERON:0014539					2 A	5 A				
-UBERON:0014544					1 A	1 A				
-UBERON:0014548					2 A	1 A				
-UBERON:0014551						1 A				
-UBERON:0014552						1 A				
-UBERON:0014553						1 A				
-UBERON:0014554						1 A				
-UBERON:0014555						1 A				
-UBERON:0014556						1 A				
-UBERON:0014557						1 A				
-UBERON:0014558						1 A				
-UBERON:0014559						1 A				
-UBERON:0014560						1 A				
-UBERON:0014570					3 A	1 A				
-UBERON:0014571					3 A	1 A				
-UBERON:0014589					2 A	1 A				
-UBERON:0014590					6 A	2 A				
-UBERON:0014591					3 A	1 A				
-UBERON:0014592					4 A	2 A				
-UBERON:0014593					1 A	1 A				
-UBERON:0014594						1 A				
-UBERON:0014595					3 A	1 A				
-UBERON:0014596					3 A	1 A				
-UBERON:0014597					3 A	1 A				
-UBERON:0014598					4 A	1 A				
-UBERON:0014599					3 A	1 A				
-UBERON:0014600					3 A	1 A				
-UBERON:0014601					3 A	1 A				
-UBERON:0014602					2 A	1 A				
-UBERON:0014603					3 A	1 A				
-UBERON:0014604					3 A	1 A				
-UBERON:0014605					1 A	2 A				
-UBERON:0014606						1 A				
-UBERON:0014608						2 A				
-UBERON:0014615					1 A	1 A				
-UBERON:0014618						1 A				
-UBERON:0014640						1 A				
-UBERON:0014647						1 A				
-UBERON:0014648						1 A				
-UBERON:0014649					1 A	1 A	1 D, 1 A			
-UBERON:0014650						3 A				
-UBERON:0014667					1 A	2 A				
-UBERON:0014689					1 A	1 A				
-UBERON:0014734						1 A				
-UBERON:0014735						1 A				
-UBERON:0014761						1 A				
-UBERON:3000677	C				1 A					
-
-
-
-OTHER STANZA TYPES
-==================
-
-New Stanzas
-==========-
-
-Stanza type	ID	Name
-Typedef	branch_of	branch_of (UNDECLARED)
-Typedef	has_location	has_location (UNDECLARED)
-Typedef	in_median_plane_of	in_median_plane_of (UNDECLARED)
-Typedef	innervated	innervated (UNDECLARED)
-Typedef	is_innervated_by	is_innervated_by (UNDECLARED)
-Typedef	preaxial_part_of	preaxial_part_of (UNDECLARED)
-Typedef	synapsed_by	synapsed by
-
+Term ID	name	namespace	def	comment	synonym	is_a	intersection_of	relationship	is_obsolete	
+UBERON:0001041			C							
+UBERON:0001105					1 A					
+UBERON:0001450					1 A					
+UBERON:0003077								1 A		
+UBERON:0003888					1 D, 1 A					
+UBERON:0004141					1 A					
+UBERON:0004752						1 D				
+UBERON:0005452	C		C		1 D, 1 A			1 D, 1 A		
+UBERON:0006965								2 D, 1 A		
+UBERON:0007811					1 D, 4 A					
+UBERON:0008835			C	A						
+UBERON:0008851					1 D					
+UBERON:0008982								1 D, 1 A		
+UBERON:0010198			C							
+UBERON:0010260			C		2 A			1 A		
+UBERON:0010518					1 D					
+UBERON:0012111								1 D, 1 A		
+UBERON:0012132								1 D, 1 A		
+UBERON:1500000		A								
+UBERON:1500003		A								
+UBERON:1500005		A								
+UBERON:1500006	C	A	C			1 A	2 A	1 A		
+UBERON:1500007		A								
+UBERON:1500008		A								
+UBERON:1500009		A								
+UBERON:1500010		A								
+UBERON:2000089				C						
+UBERON:2000226					3 D, 3 A					
+UBERON:2000268	C		C			1 A	2 A	1 D, 2 A		
+UBERON:2000271	C		C			1 D, 2 A	2 A	1 D, 2 A		
+UBERON:2000350					3 D, 3 A					
+UBERON:2000356					1 D, 1 A					
+UBERON:2000410					2 D, 2 A					
+UBERON:2000508	C		C			1 A	2 D, 2 A	3 D, 2 A		
+UBERON:2000526					2 D, 2 A					
+UBERON:2000594					1 D, 1 A					
+UBERON:2000623	C		C		1 D, 3 A	1 D, 2 A	2 A	3 D, 1 A		
+UBERON:2000646	C		C			1 A	2 A	1 D, 2 A		
+UBERON:2000660					2 D, 2 A					
+UBERON:2000936	C		C			1 A	2 A	1 D, 2 A		
+UBERON:2000947	C		C			1 A	2 A	1 D, 2 A		
+UBERON:2001058					2 D, 2 A					
+UBERON:2001162					2 D, 2 A					
+UBERON:2001167		A								
+UBERON:2001168		A								
+UBERON:2001364					2 D, 2 A					
+UBERON:2001391		A								
+UBERON:2001415	C		A			1 D, 2 A	2 A	1 D, 2 A		
+UBERON:2001416	C		A			1 D, 2 A	2 A	1 D, 2 A		
+UBERON:2001417	C		A			1 D, 2 A	2 A	1 D, 2 A		
+UBERON:2001538					1 A					
+UBERON:2001539						1 D, 2 A	2 A	1 A		
+UBERON:2001586	C		C			1 A	2 D, 2 A	3 D, 2 A		
+UBERON:2001587	C		C			1 A	2 A	2 A		
+UBERON:2001588	C		C			1 A	2 A	2 A		
+UBERON:2001613	C		C			1 A	2 A	1 D, 2 A		
+UBERON:2001614	C		C			1 A	2 A	1 D, 2 A		
+UBERON:2001671	C		C			1 A	2 D, 2 A	2 D, 2 A		
+UBERON:2001672	C		C			2 A	2 D, 2 A	1 D, 2 A		
+UBERON:2001684								1 A		
+UBERON:2001787						1 A				
+UBERON:2001798					1 D, 1 A					
+UBERON:2001818	C		A			1 A	2 A	2 A		
+UBERON:2001819	C		A			1 A	2 A	2 A		
+UBERON:2002026	C		C			1 A	2 A	2 A		
+UBERON:2002027	C		C			1 A	2 A	2 A		
+UBERON:2002028	C		C			1 A	2 A	2 A		
+UBERON:2002029	C		C			1 A	2 A	2 A		
+UBERON:2002044					1 D, 1 A					
+UBERON:2002051					1 D, 1 A					
+UBERON:2002261						1 A				
+UBERON:2002262						1 A				
+UBERON:2002270						1 A				
+UBERON:2002276					1 D, 1 A					
+UBERON:2002277	C		A			1 A	2 A	2 A		
+UBERON:2002279	C		A			1 A	2 A	2 A		
+UBERON:2002280	C		A			1 A	2 A	2 A		
+UBERON:2005076	C					1 D			A	
+UBERON:2005225	C		C		1 D, 1 A	1 A	2 D, 2 A	1 D, 2 A		
+UBERON:2005226	C		A		2 D, 2 A	1 A	2 A	2 A		
+UBERON:2005372	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005373	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005374	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005375	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005376	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005377	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005378	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005379	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005380	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005381	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005382	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005383	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005384	C		A			1 A	2 A	1 D, 2 A		
+UBERON:2005385	C		A			1 A	2 A	1 D, 2 A		
+UBERON:3000752								1 A		
+UBERON:3000753								1 A		
+UBERON:3000818								1 A		
+UBERON:3000819								1 A		
+UBERON:3000820								1 A		
+UBERON:3000821								1 A		
+UBERON:3000822								1 A		
+UBERON:3000823								1 A		
+UBERON:3000824								1 A		
+UBERON:3000825						1 D, 1 A		1 A		
+UBERON:3000922								1 A		
+UBERON:4000162					1 D, 1 A					
+UBERON:4000163					2 D, 2 A					
+UBERON:4000164					2 D, 2 A					
+UBERON:4100000		A								
+UBERON:4100001		A								
+UBERON:4100002		A								
+UBERON:4100003		A								
+UBERON:4100004		A								
+UBERON:4100005		A								
+UBERON:4100006		A								
+UBERON:4100007		A								
+UBERON:4100008		A								
+UBERON:4100009		A								
+UBERON:4100010		A								
+UBERON:4100011		A								
+UBERON:4100012		A								
+UBERON:4100013		A								
+UBERON:4100014		A								
+UBERON:4100015		A								
+UBERON:4100016		A								
+UBERON:4200000		A								
+UBERON:4200001		A								
+UBERON:4200002		A								
+UBERON:4200003		A								
+UBERON:4200004		A								
+UBERON:4200005		A								
+UBERON:4200006		A								
+UBERON:4200007		A								
+UBERON:4200008		A								
+UBERON:4200009		A								
+UBERON:4200010		A								
+UBERON:4200011		A								
+UBERON:4200012		A								
+UBERON:4200013		A								
+UBERON:4200014		A								
+UBERON:4200015		A								
+UBERON:4200016		A								
+UBERON:4200017		A								
+UBERON:4200018		A								
+UBERON:4200019		A								
+UBERON:4200020		A								
+UBERON:4200021		A								
+UBERON:4200022		A								
+UBERON:4200023		A								
+UBERON:4200024		A								
+UBERON:4200025		A								
+UBERON:4200026		A								
+UBERON:4200027		A								
+UBERON:4200028		A								
+UBERON:4200029		A								
+UBERON:4200030		A								
+UBERON:4200031		A								
+UBERON:4200032		A								
+UBERON:4200033		A								
+UBERON:4200034		A								
+UBERON:4200036		A								
+UBERON:4200037		A								
+UBERON:4200038		A								
+UBERON:4200039		A								
+UBERON:4200040		A								
+UBERON:4200041		A								
+UBERON:4200042		A								
+UBERON:4200043		A								
+UBERON:4200044		A								
+UBERON:4200045		A								
+UBERON:4200046		A								
+UBERON:4200047		A								
+UBERON:4200048		A								
+UBERON:4200049		A								
+UBERON:4200050		A								
+UBERON:4200051		A								
+UBERON:4200052		A								
+UBERON:4200053		A								
+UBERON:4200054		A								
+UBERON:4200055		A								
+UBERON:4200056		A								
+UBERON:4200060		A								
+UBERON:4200061		A								
+UBERON:4200062		A								
+UBERON:4200063		A								
+UBERON:4200068		A								
+UBERON:4200069		A								
+UBERON:4200070		A								
+UBERON:4200075		A								
+UBERON:4200076		A								
+UBERON:4200077		A								
+UBERON:4200078		A								
+UBERON:4200079		A								
+UBERON:4200080		A								
+UBERON:4200081		A								
+UBERON:4200083		A								
+UBERON:4200084		A								
+UBERON:4200085		A								
+UBERON:4200086		A								
+UBERON:4200087		A								
+UBERON:4200088		A								
+UBERON:4200089		A								
+UBERON:4200090		A								
+UBERON:4200091		A								
+UBERON:4200092		A								
+UBERON:4200093		A								
+UBERON:4200094		A								
+UBERON:4200095		A								
+UBERON:4200096		A								
+UBERON:4200097		A								
+UBERON:4200098		A								
+UBERON:4200099		A								
+UBERON:4200100		A								
+UBERON:4200101		A								
+UBERON:4200102		A								
+UBERON:4200103		A								
+UBERON:4200104		A								
+UBERON:4200105		A								
+UBERON:4200106		A								
+UBERON:4200107		A								
+UBERON:4200108		A								
+UBERON:4200109		A								
+UBERON:4200110		A	C			1 D, 1 A				
+UBERON:4200111		A	C			1 D, 1 A				
+UBERON:4200112		A								
+UBERON:4200113		A								
+UBERON:4200114		A								
+UBERON:4200115		A								
+UBERON:4200116		A								
+UBERON:4200117		A								
+UBERON:4200118		A								
+UBERON:4200119		A								
+UBERON:4200120		A								
+UBERON:4200121		A								
+UBERON:4200122		A								
+UBERON:4200123		A								
+UBERON:4200124		A								
+UBERON:4200125		A								
+UBERON:4200126		A								
+UBERON:4200127		A								
+UBERON:4200128		A								
+UBERON:4200129		A								
+UBERON:4200130		A								
+UBERON:4200131		A								
+UBERON:4200132		A								
+UBERON:4200133		A								
+UBERON:4200134		A								
+UBERON:4200135		A								
+UBERON:4200136		A								
+UBERON:4200139		A								
+UBERON:4200140		A								
+UBERON:4200141		A								
+UBERON:4200150		A								
+UBERON:4200151		A								
+UBERON:4200152		A								
+UBERON:4200153		A								
+UBERON:4200154		A								
+UBERON:4200155		A								
+UBERON:4200156		A								
+UBERON:4200157		A								
+UBERON:4200158		A								
+UBERON:4200159		A								
+UBERON:4200160		A								
+UBERON:4200161		A								
+UBERON:4200162		A								
+UBERON:4200165		A								
+UBERON:4200166		A								
+UBERON:4200167		A								
+UBERON:4200168		A								
+UBERON:4200169		A								
+UBERON:4200170		A								
+UBERON:4200171		A								
+UBERON:4200172		A								
+UBERON:4200173		A								
+UBERON:4200174		A								
+UBERON:4200175		A								
+UBERON:4200176		A								
+UBERON:4200177		A								
+UBERON:4200178		A								
+UBERON:4200179		A								
+UBERON:4200180		A								
+UBERON:4200181		A								
+UBERON:4200182		A								
+UBERON:4200183		A								
+UBERON:4200184		A								
+UBERON:4200185		A								
+UBERON:4200186		A								
+UBERON:4200187		A								
+UBERON:4200188		A								
+UBERON:4200189		A								
+UBERON:4300001		A								
+UBERON:4300002		A								
+UBERON:4300003		A								
+UBERON:4300004		A								
+UBERON:4300005		A								
+UBERON:4300006		A								
+UBERON:4300007		A								
+UBERON:4300008		A								
+UBERON:4300012		A								
+UBERON:4300013		A								
+UBERON:4300014		A								
+UBERON:4300015		A								
+UBERON:4300016		A								
+UBERON:4300017		A								
+UBERON:4300018		A								
+UBERON:4300019		A								
+UBERON:4300020		A								
+UBERON:4300021		A								
+UBERON:4300022		A								
+UBERON:4300023		A								
+UBERON:4300024		A								
+UBERON:4300025		A								
+UBERON:4300026		A								
+UBERON:4300028		A								
+UBERON:4300029		A								
+UBERON:4300030		A								
+UBERON:4300031		A								
+UBERON:4300032		A								
+UBERON:4300033		A								
+UBERON:4300034		A								
+UBERON:4300035		A								
+UBERON:4300036		A								
+UBERON:4300037		A								
+UBERON:4300038		A								
+UBERON:4400000		A								
+UBERON:4400001		A								
+UBERON:4400005		A								
+UBERON:4400006		A								
+UBERON:4400007		A	C	C						
+UBERON:4400009		A								
+UBERON:4440008		A								
+UBERON:4440009		A								
+UBERON:4440010		A								
+UBERON:4440011		A								
 
 
 
@@ -1259,17 +637,19 @@ FILE STATS
 Term counts for the old and new files
 
 Ontology	Old file	New file	Change
-uberon	9033	9041	+8
-	(7373 defined)	(7381 defined)	
-uberon/phenoscape-anatomy	2267	2267	
-	(1526 defined)	(1526 defined)	
+none	-	273	
+		(217 defined)	
+uberon	9040	8815	-225
+	(7380 defined)	(7188 defined)	
+uberon/phenoscape-anatomy	2267	2306	+39
+	(1526 defined)	(1589 defined)	
 
-Obsolete	613	613	0
-	(5.1% of total)	 (5.1% of total)	(0.0%)
+Obsolete	613	616	+3
+	(5.1% of total)	 (5.1% of total)	(+0.5%)
 
-Totals	11300	11308	+8 (+0.1%)
-	8899 (78.8%) defined	8907 (78.8%) defined	
-	11913 inc. obs	11921 inc. obs
+Totals	11307	11394	+90 (+0.8%)
+	8906 (78.8%) defined	8994 (78.9%) defined	
+	11920 inc. obs	12010 inc. obs
 
 
 
