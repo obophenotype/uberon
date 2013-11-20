@@ -15,3 +15,12 @@ simpledef(C,G,R,Y) :-
         %subclassRT(G_Direct, G),
         genus(C,G),
         differentium(C,R,Y).
+
+/*
+
+'subdivision of skeleton'(?sp), 'subdivision of skeleton'(?sw), part_of(?p, ?w), subdivision_of(?sp, ?p), subdivision_of(?sw, ?w) -> part_of(?sp, ?sw)
+
+'subdivision of skeleton'(?sw),subdivision_of(?sw, ?w),part_of(?p, ?w),subdivision_of(?sp, ?p),'subdivision of skeleton'(?sp) ->
+-> part_of(?sp, ?sw)
+  
+*/
