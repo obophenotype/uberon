@@ -1,174 +1,35 @@
- * Fixed composite builds
- * Syns for craniocervical region. Addresses issue #379
- * Suppressing expansion of some spatial disjointness axioms. Addresses issue #378
- * Aligned more defs with MP
- * issue #334 - implemented element/bone/cartilage pattern for radials
+releases/2013-11-20
+
+ * intersomitic vessel overhaul
+ * Suppressed some neuro spatial disjoitness axioms. Addrsses #378
+ * syns for uber-head. Addresses issue #379
 
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 08:11:2013 00:37, cvs revision unknown
-! file 2 (new): 13:11:2013 00:14, cvs revision unknown
+! file 1 (old): 13:11:2013 00:14, cvs revision unknown
+! file 2 (new): 19:11:2013 19:49, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0001041 : foregut   
-OLD: Anterior subdivision of a digestive tract[CJM]. An anterior part of the alimentary canal derived from the ectoderm[WP].
-NEW: Anterior subdivision of a digestive tract.
+UBERON:0004140 : primary heart field   
+(was heart field)
+OLD: a specific region of the lateral mesoderm in which the heart will develop.
+NEW: A specific region of the lateral mesoderm that will form the primary beating heart tube. In mammals the primary heart field gives rise to the left ventricle.
 
 
-UBERON:0005452 : hepatic cord   
-(was hepatic lamina)
-OLD: Composed of hepatocytes, usually only one cell thick. The spaces between hepatic plates are occupied by sinusoids.
-NEW: A three-dimensional arrangement formed by plates of hepatocytes, usually one cell thick, that radiates from the center of the liver lobule; hepatic laminae are highly branched, irregular structures bordered by endothelial lined vascular spaces called hepatic sinusoids.
+UBERON:0007679 : intersomitic vein   
+(was intersegmental vein)
+OLD: a vein receiving blood from adjacent bronchopulmonary segments; it emerges from the inferior margin of a segment to become a tributary of a branch of a pulmonary vein[web]. Primary intersegmental vessels that are contacted by secondary angiogenic sprouts from the posterior cardinal vein and take on the characteristics of veins.  These eventually link with other secondary sprouts from the posterior cardinal vein to form the parachordal vessel[ZFA].
+NEW: The vein that sprouts from the posterior cardinal vein, growing dorsally between the somites, and then joining, and draining the dorsal longitudinal anastomosing vessel.
 
 
-UBERON:0008835 : hepatic diverticulum   
-OLD: The first morphological sign of the embryonic liver is the formation of the hepatic diverticulum, an out-pocket of thickened ventral foregut epithelium adjacent to the developing heart. The anterior portion of the hepatic diverticulum gives rise to the liver and intrahepatic biliary tree, while the posterior portion forms the gall bladder and extrahepatic bile duct.
-NEW: An out-pocket of thickened ventral foregut epithelium adjacent to the developing heart. Constitutes the first morphological sign of the embryonic liver. The anterior portion of the hepatic diverticulum gives rise to the liver and intrahepatic biliary tree, while the posterior portion forms the gall bladder and extrahepatic bile ducts.
-
-
-UBERON:0010198 : carotid duct   
-OLD: a portion of the embryonic dorsal aorta between points of juncture with the third and fourth arch arteries; it disappears early in development.
-NEW: a segment of the embryonic dorsal aorta between points of juncture with the third and fourth arch arteries; it regresses early in development to allow the carotid axis to take its definitive appearance.
-
-
-UBERON:0010260 : umbilical blood vessel   
-OLD: A blood vessel that overlaps a umbilical cord.
-NEW: One of the three blood vessels, usually one large umbilical vein and two small umbilical arteries, buried within Wharton’s jelly, that transport blood to and from the placenta, where exchange between the mother and fetus takes place; the umbilical vein carries oxygenated, nutrient-rich blood from the placenta to the fetus, and the umbilical arteries carry deoxygenated, nutrient-depleted blood from the fetus to the placenta.
-
-
-UBERON:1500006 : paired fin radial bone   
-(was paired fin radial)
-OLD: Radial that is part of a paired fin.
-NEW: paired fin radial element that is composed of bone tissue.
-
-
-UBERON:2000268 : anal fin proximal radial bone   
-(was anal fin proximal radial)
-OLD: Rod-like internal median skeletal support bones of the anal fin, which articulate with the distal radials.
-NEW: anal fin proximal radial element that is composed of bone tissue.
-
-
-UBERON:2000271 : radial bone   
-(was radial)
-OLD: Radials are the internal skeletal supports of the median and paired fins.
-NEW: radial element that is composed of bone tissue.
-
-
-UBERON:2000508 : pelvic fin radial bone   
-(was pelvic fin radial)
-OLD: Pelvic fin radials are internal skeletal supports of the pelvic fin.
-NEW: pelvic fin radial element that is composed of bone tissue.
-
-
-UBERON:2000623 : basipterygium bone   
-(was basipterygium)
-OLD: Endochondral bone that is paired and supports the pelvic fin. The basipterygium has a posteromedial process called the ischiac process (Wietzman 1962).
-NEW: basipterygium element that is composed of bone tissue.
-
-
-UBERON:2000646 : anal fin distal radial bone   
-(was anal fin distal radial)
-OLD: Rod-like internal median skeletal support bones of the anal fin, which articulate with the lepidotrichia distally.
-NEW: anal fin distal radial element that is composed of bone tissue.
-
-
-UBERON:2000936 : dorsal fin distal radial bone   
-(was dorsal fin distal radial)
-OLD: Rod-like internal median skeletal support bones of the dorsal fin, which articulate with the lepidotrichia distally.
-NEW: dorsal fin distal radial element that is composed of bone tissue.
-
-
-UBERON:2000947 : dorsal fin proximal radial bone   
-(was dorsal fin proximal radial)
-OLD: Rod-like internal median skeletal support bones of the dorsal fin, which articulate with the distal radials.
-NEW: dorsal fin proximal radial element that is composed of bone tissue.
-
-
-UBERON:2001586 : pectoral fin radial bone   
-(was pectoral fin radial)
-OLD: Pectoral fin radials are the internal skeletal supports of the pectoral fin which develop from the pectoral fin endoskeletal disc, supports the pectoral lepidotrichia or fin rays and connects the lepidotrichia with the primary pectoral girdle.
-NEW: pectoral fin radial element that is composed of bone tissue.
-
-
-UBERON:2001587 : pectoral fin proximal radial bone   
-(was pectoral fin proximal radial)
-OLD: Pectoral fin radial which develops from the pectoral fin endoskeletal disc, supports a few pectoral lepidotrichia or fin rays and connects the lepidotrichia and distal radials with the primary pectoral girdle (scapula and coracoid).
-NEW: pectoral fin proximal radial element that is composed of bone tissue.
-
-
-UBERON:2001588 : pectoral fin distal radial bone   
-(was pectoral fin distal radial)
-OLD: Pectoral fin radial that sometimes ossifies, develops from the pectoral fin endoskeletal disc, and is located at the proximal region of a lepidotrichium, between its hemitrichia. Pectoral fin distal radial is paired.
-NEW: pectoral fin distal radial element that is composed of bone tissue.
-
-
-UBERON:2001613 : dorsal fin middle radial bone   
-(was dorsal fin middle radial)
-OLD: Dorsal fin radial that is the rod-like internal median skeletal support bone of the dorsal fin located between the dorsal fin proximal radial and dorsal fin distal radial.
-NEW: dorsal fin middle radial element that is composed of bone tissue.
-
-
-UBERON:2001614 : anal fin middle radial bone   
-(was anal fin middle radial)
-OLD: Anal fin radial that is the rod-like internal median skeletal support bone of the anal fin located between the anal fin proximal radial and anal fin distal radial.
-NEW: anal fin middle radial element that is composed of bone tissue.
-
-
-UBERON:2001671 : anal fin radial bone   
-(was anal fin radial)
-OLD: Anal fin radials are internal skeletal supports of the anal fin.
-NEW: anal fin radial element that is composed of bone tissue.
-
-
-UBERON:2001672 : dorsal fin radial bone   
-(was dorsal fin radial)
-OLD: Dorsal fin radials are internal skeletal supports of the dorsal fin.
-NEW: dorsal fin radial element that is composed of bone tissue.
-
-
-UBERON:2002026 : pectoral fin proximal radial bone 1   
-(was pectoral fin proximal radial 1)
-OLD: Pectoral fin proximal radial that is the most anterior or dorsal pectoral fin radial.
-NEW: pectoral fin proximal radial 1 element that is composed of bone tissue.
-
-
-UBERON:2002027 : pectoral fin proximal radial bone 2   
-(was pectoral fin proximal radial 2)
-OLD: Pectoral fin proximal radial that is the second most anterior or dorsal pectoral fin radial.
-NEW: pectoral fin proximal radial 2 element that is composed of bone tissue.
-
-
-UBERON:2002028 : pectoral fin proximal radial bone 3   
-(was pectoral fin proximal radial 3)
-OLD: Pectoral fin proximal radial that is the third most anterior or dorsal pectoral fin radial.
-NEW: pectoral fin proximal radial 3 element that is composed of bone tissue.
-
-
-UBERON:2002029 : pectoral fin proximal radial bone 4   
-(was pectoral fin proximal radial 4)
-OLD: Pectoral fin proximal radial that is the fourth most anterior or dorsal pectoral fin radial.
-NEW: pectoral fin proximal radial 4 element that is composed of bone tissue.
-
-
-UBERON:2005225 : median fin radial bone   
-(was median fin radial)
-OLD: Radial that is part of a median fin.
-NEW: median fin radial element that is composed of bone tissue.
-
-
-UBERON:4200110 : prepectoral spine   
-OLD: Fin spine located anterior to the pectoral fin
-NEW: Spine located anterior to the pectoral fin
-
-
-UBERON:4200111 : prepelvic fin spine   
-OLD: Fin spine located anterior to the pelvic fin and posterior to the pectoral fin. 
-NEW: Spine located anterior to the pelvic fin and posterior to the pectoral fin. 
+UBERON:0009889 : secondary heart field   
+OLD: extra-cardiac population of mesodermal progenitors that gives rise to the right ventricle and outflow tract.
+NEW: A specific region of the lateral mesoderm that will form the majority of the mesodermal component of the right ventricle, arterial pole (outflow tract) and venous pole (inflow tract).
 
 
 
@@ -177,114 +38,25 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-11-08; date: 08:11:2013 00:37
-- file 2 (new): uberon.obo; data version: releases/2013-11-13; date: 13:11:2013 00:14
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-11-13; date: 13:11:2013 00:14
+- file 2 (new): uberon.obo; data version: releases/2013-11-19; date: 19:11:2013 19:49
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:0014903	primordial vasculature	
-UBERON:1600006	paired fin radial element	none
-UBERON:1600008	pelvic fin distal radial element	none
-UBERON:1600009	pelvic fin basipterygial radial element	none
-UBERON:1600010	pelvic fin middle radial element	none
-UBERON:1700006	paired fin radial cartilage	none
-UBERON:2100268	anal fin proximal radial element	none
-UBERON:2100271	radial element	none
-UBERON:2100508	pelvic fin radial element	none
-UBERON:2100623	basipterygium element	none
-UBERON:2100646	anal fin distal radial element	none
-UBERON:2100936	dorsal fin distal radial element	none
-UBERON:2100947	dorsal fin proximal radial element	none
-UBERON:2101415	pelvic fin distal radial element 2	none
-UBERON:2101416	pelvic fin distal radial element 3	none
-UBERON:2101417	pelvic fin distal radial element 1	none
-UBERON:2101586	pectoral fin radial element	none
-UBERON:2101587	pectoral fin proximal radial element	none
-UBERON:2101588	pectoral fin distal radial element	none
-UBERON:2101613	dorsal fin middle radial element	none
-UBERON:2101614	anal fin middle radial element	none
-UBERON:2101671	anal fin radial element	none
-UBERON:2101672	dorsal fin radial element	none
-UBERON:2101818	dorsal fin proximal radial element 1	none
-UBERON:2101819	dorsal fin proximal radial element 2	none
-UBERON:2102026	pectoral fin proximal radial element 1	none
-UBERON:2102027	pectoral fin proximal radial element 2	none
-UBERON:2102028	pectoral fin proximal radial element 3	none
-UBERON:2102029	pectoral fin proximal radial element 4	none
-UBERON:2102277	pectoral fin distal radial element 1	none
-UBERON:2102279	pectoral fin distal radial element 2	none
-UBERON:2102280	pectoral fin distal radial element 3	none
-UBERON:2105225	median fin radial element	none
-UBERON:2105226	median fin proximal radial element	none
-UBERON:2105372	dorsal fin distal radial element 1	none
-UBERON:2105373	dorsal fin distal radial element 2	none
-UBERON:2105374	dorsal fin distal radial element 3	none
-UBERON:2105375	dorsal fin distal radial element 4	none
-UBERON:2105376	dorsal fin distal radial element 5	none
-UBERON:2105377	dorsal fin distal radial element 6	none
-UBERON:2105378	dorsal fin distal radial element 7	none
-UBERON:2105379	dorsal fin distal radial element 8	none
-UBERON:2105380	dorsal fin proximal radial element 3	none
-UBERON:2105381	dorsal fin proximal radial element 4	none
-UBERON:2105382	dorsal fin proximal radial element 5	none
-UBERON:2105383	dorsal fin proximal radial element 6	none
-UBERON:2105384	dorsal fin proximal radial element 7	none
-UBERON:2105385	dorsal fin proximal radial element 8	none
-UBERON:2200268	anal fin proximal radial cartilage	uberon/phenoscape-anatomy
-UBERON:2200271	radial cartilage	uberon/phenoscape-anatomy
-UBERON:2200508	obsolete pelvic fin radial cartilage	uberon/phenoscape-anatomy
-UBERON:2200623	obsolete basipterygium cartilage	uberon/phenoscape-anatomy
-UBERON:2200646	anal fin distal radial cartilage	uberon/phenoscape-anatomy
-UBERON:2200936	dorsal fin distal radial cartilage	uberon/phenoscape-anatomy
-UBERON:2200947	dorsal fin proximal radial cartilage	uberon/phenoscape-anatomy
-UBERON:2201415	pelvic fin distal radial cartilage 2	uberon/phenoscape-anatomy
-UBERON:2201416	pelvic fin distal radial cartilage 3	uberon/phenoscape-anatomy
-UBERON:2201417	pelvic fin distal radial cartilage 1	uberon/phenoscape-anatomy
-UBERON:2201586	pectoral fin radial cartilage	uberon/phenoscape-anatomy
-UBERON:2201587	pectoral fin proximal radial cartilage	uberon/phenoscape-anatomy
-UBERON:2201588	pectoral fin distal radial cartilage	uberon/phenoscape-anatomy
-UBERON:2201613	dorsal fin middle radial cartilage	uberon/phenoscape-anatomy
-UBERON:2201614	anal fin middle radial cartilage	uberon/phenoscape-anatomy
-UBERON:2201671	anal fin radial cartilage	uberon/phenoscape-anatomy
-UBERON:2201672	dorsal fin radial cartilage	uberon/phenoscape-anatomy
-UBERON:2201818	dorsal fin proximal radial cartilage 1	uberon/phenoscape-anatomy
-UBERON:2201819	dorsal fin proximal radial cartilage 2	uberon/phenoscape-anatomy
-UBERON:2202026	pectoral fin proximal radial cartilage 1	uberon/phenoscape-anatomy
-UBERON:2202027	pectoral fin proximal radial cartilage 2	uberon/phenoscape-anatomy
-UBERON:2202028	pectoral fin proximal radial cartilage 3	uberon/phenoscape-anatomy
-UBERON:2202029	pectoral fin proximal radial cartilage 4	uberon/phenoscape-anatomy
-UBERON:2202277	pectoral fin distal radial cartilage 1	uberon/phenoscape-anatomy
-UBERON:2202279	pectoral fin distal radial cartilage 2	uberon/phenoscape-anatomy
-UBERON:2202280	pectoral fin distal radial cartilage 3	uberon/phenoscape-anatomy
-UBERON:2205225	median fin radial cartilage	uberon/phenoscape-anatomy
-UBERON:2205226	median fin proximal radial cartilage	uberon/phenoscape-anatomy
-UBERON:2205372	dorsal fin distal radial cartilage 1	uberon/phenoscape-anatomy
-UBERON:2205373	dorsal fin distal radial cartilage 2	uberon/phenoscape-anatomy
-UBERON:2205374	dorsal fin distal radial cartilage 3	uberon/phenoscape-anatomy
-UBERON:2205375	dorsal fin distal radial cartilage 4	uberon/phenoscape-anatomy
-UBERON:2205376	dorsal fin distal radial cartilage 5	uberon/phenoscape-anatomy
-UBERON:2205377	dorsal fin distal radial cartilage 6	uberon/phenoscape-anatomy
-UBERON:2205378	dorsal fin distal radial cartilage 7	uberon/phenoscape-anatomy
-UBERON:2205379	dorsal fin distal radial cartilage 8	uberon/phenoscape-anatomy
-UBERON:2205380	dorsal fin proximal radial cartilage 3	uberon/phenoscape-anatomy
-UBERON:2205381	dorsal fin proximal radial cartilage 4	uberon/phenoscape-anatomy
-UBERON:2205382	dorsal fin proximal radial cartilage 5	uberon/phenoscape-anatomy
-UBERON:2205383	dorsal fin proximal radial cartilage 6	uberon/phenoscape-anatomy
-UBERON:2205384	dorsal fin proximal radial cartilage 7	uberon/phenoscape-anatomy
-UBERON:2205385	dorsal fin proximal radial cartilage 8	uberon/phenoscape-anatomy
+UBERON:0014904	intersegmental pulmonary vein	
+UBERON:0014907	intersomitic vessel	
 
 
 OBSOLETIONS
 ===========
-UBERON:2005076, obsolete primordial vasculature (uberon/phenoscape-anatomy)
+UBERON:2001285, obsolete intersegmental vessel (uberon/phenoscape-anatomy)
 
 
 TERM MERGES
 ===========
-
-None
+UBERON:0006001, intersomitic artery was merged into UBERON:0002457, intersomitic artery
 
 
 TERM CHANGES
@@ -292,344 +64,25 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	namespace	def	comment	synonym	xref	is_a	intersection_of	relationship	is_obsolete	
-UBERON:0001041			C								
-UBERON:0001105					1 A						
-UBERON:0001450					1 A						
-UBERON:0002002									1 D, 1 A		
-UBERON:0002867							1 D, 1 A		1 A		
-UBERON:0002968							1 D, 1 A		1 A		
-UBERON:0003040				D	1 D, 1 A						
-UBERON:0003077									1 A		
-UBERON:0003888					1 D, 1 A						
-UBERON:0004141					1 A						
-UBERON:0004676						1 A			1 A		
-UBERON:0004752							1 D				
-UBERON:0005452	C		C		1 D, 1 A				1 D, 1 A		
-UBERON:0006965									2 D, 1 A		
-UBERON:0007811					1 D, 4 A						
-UBERON:0008835			C	A							
-UBERON:0008851					1 D						
-UBERON:0010198			C								
-UBERON:0010260			C		2 A				1 A		
-UBERON:0010518					1 D						
-UBERON:0012111									1 D, 1 A		
-UBERON:1500000		A									
-UBERON:1500003		A									
-UBERON:1500005		A									
-UBERON:1500006	C	A	C				1 A	2 A	1 A		
-UBERON:1500007		A									
-UBERON:1500008		A									
-UBERON:1500009		A									
-UBERON:1500010		A									
-UBERON:2000089				C							
-UBERON:2000226					3 D, 3 A						
-UBERON:2000268	C		C				1 A	2 A	1 D, 2 A		
-UBERON:2000271	C		C				1 D, 2 A	2 A	1 D, 2 A		
-UBERON:2000350					3 D, 3 A						
-UBERON:2000356					1 D, 1 A						
-UBERON:2000410					2 D, 2 A						
-UBERON:2000508	C		C				1 A	2 D, 2 A	3 D, 2 A		
-UBERON:2000526					2 D, 2 A						
-UBERON:2000594					1 D, 1 A						
-UBERON:2000623	C		C		1 D, 3 A		1 D, 2 A	2 A	3 D, 1 A		
-UBERON:2000646	C		C				1 A	2 A	1 D, 2 A		
-UBERON:2000660					2 D, 2 A						
-UBERON:2000936	C		C				1 A	2 A	1 D, 2 A		
-UBERON:2000947	C		C				1 A	2 A	1 D, 2 A		
-UBERON:2001058					2 D, 2 A						
-UBERON:2001162					2 D, 2 A						
-UBERON:2001167		A									
-UBERON:2001168		A									
-UBERON:2001364					2 D, 2 A						
-UBERON:2001391		A									
-UBERON:2001415	C		A				1 D, 2 A	2 A	1 D, 2 A		
-UBERON:2001416	C		A				1 D, 2 A	2 A	1 D, 2 A		
-UBERON:2001417	C		A				1 D, 2 A	2 A	1 D, 2 A		
-UBERON:2001538					1 A						
-UBERON:2001539							1 D, 2 A	2 A	1 A		
-UBERON:2001586	C		C				1 A	2 D, 2 A	3 D, 2 A		
-UBERON:2001587	C		C				1 A	2 A	2 A		
-UBERON:2001588	C		C				1 A	2 A	2 A		
-UBERON:2001613	C		C				1 A	2 A	1 D, 2 A		
-UBERON:2001614	C		C				1 A	2 A	1 D, 2 A		
-UBERON:2001671	C		C				1 A	2 D, 2 A	2 D, 2 A		
-UBERON:2001672	C		C				2 A	2 D, 2 A	1 D, 2 A		
-UBERON:2001684									1 A		
-UBERON:2001787							1 A				
-UBERON:2001798					1 D, 1 A						
-UBERON:2001818	C		A				1 A	2 A	2 A		
-UBERON:2001819	C		A				1 A	2 A	2 A		
-UBERON:2002026	C		C				1 A	2 A	2 A		
-UBERON:2002027	C		C				1 A	2 A	2 A		
-UBERON:2002028	C		C				1 A	2 A	2 A		
-UBERON:2002029	C		C				1 A	2 A	2 A		
-UBERON:2002044					1 D, 1 A						
-UBERON:2002051					1 D, 1 A						
-UBERON:2002261							1 A				
-UBERON:2002262							1 A				
-UBERON:2002270							1 A				
-UBERON:2002276					1 D, 1 A						
-UBERON:2002277	C		A				1 A	2 A	2 A		
-UBERON:2002279	C		A				1 A	2 A	2 A		
-UBERON:2002280	C		A				1 A	2 A	2 A		
-UBERON:2005076	C						1 D			A	
-UBERON:2005225	C		C		1 D, 1 A		1 A	2 D, 2 A	1 D, 2 A		
-UBERON:2005226	C		A		2 D, 2 A		1 A	2 A	2 A		
-UBERON:2005372	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005373	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005374	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005375	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005376	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005377	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005378	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005379	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005380	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005381	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005382	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005383	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005384	C		A				1 A	2 A	1 D, 2 A		
-UBERON:2005385	C		A				1 A	2 A	1 D, 2 A		
-UBERON:3000752									1 A		
-UBERON:3000753									1 A		
-UBERON:3000818									1 A		
-UBERON:3000819									1 A		
-UBERON:3000820									1 A		
-UBERON:3000821									1 A		
-UBERON:3000822									1 A		
-UBERON:3000823									1 A		
-UBERON:3000824									1 A		
-UBERON:3000825							1 D, 1 A		1 A		
-UBERON:3000922									1 A		
-UBERON:4000162					1 D, 1 A						
-UBERON:4000163					2 D, 2 A						
-UBERON:4000164					2 D, 2 A						
-UBERON:4100000		A									
-UBERON:4100001		A									
-UBERON:4100002		A									
-UBERON:4100003		A									
-UBERON:4100004		A									
-UBERON:4100005		A									
-UBERON:4100006		A									
-UBERON:4100007		A									
-UBERON:4100008		A									
-UBERON:4100009		A									
-UBERON:4100010		A									
-UBERON:4100011		A									
-UBERON:4100012		A									
-UBERON:4100013		A									
-UBERON:4100014		A									
-UBERON:4100015		A									
-UBERON:4100016		A									
-UBERON:4200000		A									
-UBERON:4200001		A									
-UBERON:4200002		A									
-UBERON:4200003		A									
-UBERON:4200004		A									
-UBERON:4200005		A									
-UBERON:4200006		A									
-UBERON:4200007		A									
-UBERON:4200008		A									
-UBERON:4200009		A									
-UBERON:4200010		A									
-UBERON:4200011		A									
-UBERON:4200012		A									
-UBERON:4200013		A									
-UBERON:4200014		A									
-UBERON:4200015		A									
-UBERON:4200016		A									
-UBERON:4200017		A									
-UBERON:4200018		A									
-UBERON:4200019		A									
-UBERON:4200020		A									
-UBERON:4200021		A									
-UBERON:4200022		A									
-UBERON:4200023		A									
-UBERON:4200024		A									
-UBERON:4200025		A									
-UBERON:4200026		A									
-UBERON:4200027		A									
-UBERON:4200028		A									
-UBERON:4200029		A									
-UBERON:4200030		A									
-UBERON:4200031		A									
-UBERON:4200032		A									
-UBERON:4200033		A									
-UBERON:4200034		A									
-UBERON:4200036		A									
-UBERON:4200037		A									
-UBERON:4200038		A									
-UBERON:4200039		A									
-UBERON:4200040		A									
-UBERON:4200041		A									
-UBERON:4200042		A									
-UBERON:4200043		A									
-UBERON:4200044		A									
-UBERON:4200045		A									
-UBERON:4200046		A									
-UBERON:4200047		A									
-UBERON:4200048		A									
-UBERON:4200049		A									
-UBERON:4200050		A									
-UBERON:4200051		A									
-UBERON:4200052		A									
-UBERON:4200053		A									
-UBERON:4200054		A									
-UBERON:4200055		A									
-UBERON:4200056		A									
-UBERON:4200060		A									
-UBERON:4200061		A									
-UBERON:4200062		A									
-UBERON:4200063		A									
-UBERON:4200068		A									
-UBERON:4200069		A									
-UBERON:4200070		A									
-UBERON:4200075		A									
-UBERON:4200076		A									
-UBERON:4200077		A									
-UBERON:4200078		A									
-UBERON:4200079		A									
-UBERON:4200080		A									
-UBERON:4200081		A									
-UBERON:4200083		A									
-UBERON:4200084		A									
-UBERON:4200085		A									
-UBERON:4200086		A									
-UBERON:4200087		A									
-UBERON:4200088		A									
-UBERON:4200089		A									
-UBERON:4200090		A									
-UBERON:4200091		A									
-UBERON:4200092		A									
-UBERON:4200093		A									
-UBERON:4200094		A									
-UBERON:4200095		A									
-UBERON:4200096		A									
-UBERON:4200097		A									
-UBERON:4200098		A									
-UBERON:4200099		A									
-UBERON:4200100		A									
-UBERON:4200101		A									
-UBERON:4200102		A									
-UBERON:4200103		A									
-UBERON:4200104		A									
-UBERON:4200105		A									
-UBERON:4200106		A									
-UBERON:4200107		A									
-UBERON:4200108		A									
-UBERON:4200109		A									
-UBERON:4200110		A	C				1 D, 1 A				
-UBERON:4200111		A	C				1 D, 1 A				
-UBERON:4200112		A									
-UBERON:4200113		A									
-UBERON:4200114		A									
-UBERON:4200115		A									
-UBERON:4200116		A									
-UBERON:4200117		A									
-UBERON:4200118		A									
-UBERON:4200119		A									
-UBERON:4200120		A									
-UBERON:4200121		A									
-UBERON:4200122		A									
-UBERON:4200123		A									
-UBERON:4200124		A									
-UBERON:4200125		A									
-UBERON:4200126		A									
-UBERON:4200127		A									
-UBERON:4200128		A									
-UBERON:4200129		A									
-UBERON:4200130		A									
-UBERON:4200131		A									
-UBERON:4200132		A									
-UBERON:4200133		A									
-UBERON:4200134		A									
-UBERON:4200135		A									
-UBERON:4200136		A									
-UBERON:4200139		A									
-UBERON:4200140		A									
-UBERON:4200141		A									
-UBERON:4200150		A									
-UBERON:4200151		A									
-UBERON:4200152		A									
-UBERON:4200153		A									
-UBERON:4200154		A									
-UBERON:4200155		A									
-UBERON:4200156		A									
-UBERON:4200157		A									
-UBERON:4200158		A									
-UBERON:4200159		A									
-UBERON:4200160		A									
-UBERON:4200161		A									
-UBERON:4200162		A									
-UBERON:4200165		A									
-UBERON:4200166		A									
-UBERON:4200167		A									
-UBERON:4200168		A									
-UBERON:4200169		A									
-UBERON:4200170		A									
-UBERON:4200171		A									
-UBERON:4200172		A									
-UBERON:4200173		A									
-UBERON:4200174		A									
-UBERON:4200175		A									
-UBERON:4200176		A									
-UBERON:4200177		A									
-UBERON:4200178		A									
-UBERON:4200179		A									
-UBERON:4200180		A									
-UBERON:4200181		A									
-UBERON:4200182		A									
-UBERON:4200183		A									
-UBERON:4200184		A									
-UBERON:4200185		A									
-UBERON:4200186		A									
-UBERON:4200187		A									
-UBERON:4200188		A									
-UBERON:4200189		A									
-UBERON:4300001		A									
-UBERON:4300002		A									
-UBERON:4300003		A									
-UBERON:4300004		A									
-UBERON:4300005		A									
-UBERON:4300006		A									
-UBERON:4300007		A									
-UBERON:4300008		A									
-UBERON:4300012		A									
-UBERON:4300013		A									
-UBERON:4300014		A									
-UBERON:4300015		A									
-UBERON:4300016		A									
-UBERON:4300017		A									
-UBERON:4300018		A									
-UBERON:4300019		A									
-UBERON:4300020		A									
-UBERON:4300021		A									
-UBERON:4300022		A									
-UBERON:4300023		A									
-UBERON:4300024		A									
-UBERON:4300025		A									
-UBERON:4300026		A									
-UBERON:4300028		A									
-UBERON:4300029		A									
-UBERON:4300030		A									
-UBERON:4300031		A									
-UBERON:4300032		A									
-UBERON:4300033		A									
-UBERON:4300034		A									
-UBERON:4300035		A									
-UBERON:4300036		A									
-UBERON:4300037		A									
-UBERON:4300038		A									
-UBERON:4400000		A									
-UBERON:4400001		A									
-UBERON:4400005		A									
-UBERON:4400006		A									
-UBERON:4400007		A	C	C							
-UBERON:4400009		A									
-UBERON:4440008		A									
-UBERON:4440009		A									
-UBERON:4440010		A									
-UBERON:4440011		A									
+Term ID	name	alt_id	def	comment	synonym	xref	is_a	relationship	is_obsolete	
+UBERON:0002002								1 D, 1 A		
+UBERON:0002084								1 A		
+UBERON:0002457	C	1 A	A		1 A	1 A	1 A	1 D		
+UBERON:0003084				C						
+UBERON:0004031							2 D, 1 A	1 D		
+UBERON:0004140	C		C		2 A					
+UBERON:0004161				C						
+UBERON:0006239				A	2 A		1 D, 1 A	1 D		
+UBERON:0006436					1 A	1 A				
+UBERON:0006438						1 A				
+UBERON:0007204			A							
+UBERON:0007679	C		C		1 D, 1 A	1 D	1 D, 2 A			
+UBERON:0008835				C				1 A		
+UBERON:0009751				C						
+UBERON:0009889			C				1 A	1 D, 1 A		
+UBERON:0013220								1 D, 1 A		
+UBERON:2001285	C						2 D	3 D	A	
+UBERON:2005034							2 D			
 
 
 
@@ -639,19 +92,19 @@ FILE STATS
 Term counts for the old and new files
 
 Ontology	Old file	New file	Change
-none	-	273	
-		(217 defined)	
-uberon	9040	8815	-225
-	(7380 defined)	(7188 defined)	
-uberon/phenoscape-anatomy	2267	2306	+39
-	(1526 defined)	(1589 defined)	
+none	273	273	
+	(217 defined)	(217 defined)	
+uberon	8815	8816	+1
+	(7188 defined)	(7191 defined)	
+uberon/phenoscape-anatomy	2306	2305	-1
+	(1589 defined)	(1589 defined)	
 
-Obsolete	613	616	+3
-	(5.1% of total)	 (5.1% of total)	(+0.5%)
+Obsolete	616	617	+1
+	(5.1% of total)	 (5.1% of total)	(+0.2%)
 
-Totals	11307	11394	+90 (+0.8%)
-	8906 (78.8%) defined	8994 (78.9%) defined	
-	11920 inc. obs	12010 inc. obs
+Totals	11394	11394	+1 (0.0%)
+	8994 (78.9%) defined	8997 (79.0%) defined	
+	12010 inc. obs	12011 inc. obs
 
 
 
