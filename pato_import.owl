@@ -4,55 +4,10 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/pato_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2013-11-19/pato_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2013-12-03/pato_import.owl"/>
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#shorthand -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/pato#has_cross_section -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/pato#has_cross_section">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_cross_section</rdfs:label>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_cross_section</oboInOwl:hasDbXref>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_cross_section</oboInOwl:shorthand>
-    </owl:ObjectProperty>
     
 
 
@@ -120,20 +75,20 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0000261 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000261">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maturity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001995"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0000404 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000404">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coiled</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001794"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0000411 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000411">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circular</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000947"/>
     </owl:Class>
     
 
@@ -174,20 +129,38 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PATO_0000947 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000947">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elliptic</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002318"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/PATO_0001018 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001018">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001185 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001185">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">larval</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000261"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001187 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001187">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pupal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000261"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001190 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001190">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">juvenile</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000261"/>
     </owl:Class>
     
 
@@ -232,7 +205,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001407">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mononucleate</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001404"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
     </owl:Class>
     
 
@@ -278,12 +251,6 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001873">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cylindrical</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002007"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#has_cross_section"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000411"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -292,7 +259,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001908">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multinucleate</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001404"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
     </owl:Class>
     
 
@@ -315,26 +282,11 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PATO_0002006 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002006">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D shape</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/PATO_0002007 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002007">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">convex 3-D shape</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002266"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pato#has_cross_section"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -375,11 +327,11 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PATO_0002318 -->
+    <!-- http://purl.obolibrary.org/obo/PATO_0002505 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002318">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superelliptic</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002006"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002505">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleated</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001404"/>
     </owl:Class>
     
 

@@ -1,35 +1,42 @@
-releases/2013-11-20
+releases/2013-12-02
 
- * intersomitic vessel overhaul
- * Suppressed some neuro spatial disjoitness axioms. Addrsses #378
- * syns for uber-head. Addresses issue #379
+    * nerve root syns
+    * NT: genu of facial nerve
+    * disambiguated between dorsal (proper) thalamus and grouping (D+V)
+    * Fixed lower lip def
+    * Added def of gladiolus from MP. Added links to PATO for age qualities from stages
+    * Fixes #380
+    * NT: velar vocal fold
 
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 13:11:2013 00:14, cvs revision unknown
-! file 2 (new): 19:11:2013 19:49, cvs revision unknown
+! file 1 (old): 21:11:2013 00:09, cvs revision unknown
+! file 2 (new): 03:12:2013 01:15, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0004140 : primary heart field   
-(was heart field)
-OLD: a specific region of the lateral mesoderm in which the heart will develop.
-NEW: A specific region of the lateral mesoderm that will form the primary beating heart tube. In mammals the primary heart field gives rise to the left ventricle.
+UBERON:0001835 : lower lip   
+OLD: Lip that covers the upper portion of the mouth.[TAO].
+NEW: Lip that covers the lower portion of the mouth.[TAO].
 
 
-UBERON:0007679 : intersomitic vein   
-(was intersegmental vein)
-OLD: a vein receiving blood from adjacent bronchopulmonary segments; it emerges from the inferior margin of a segment to become a tributary of a branch of a pulmonary vein[web]. Primary intersegmental vessels that are contacted by secondary angiogenic sprouts from the posterior cardinal vein and take on the characteristics of veins.  These eventually link with other secondary sprouts from the posterior cardinal vein to form the parachordal vessel[ZFA].
-NEW: The vein that sprouts from the posterior cardinal vein, growing dorsally between the somites, and then joining, and draining the dorsal longitudinal anastomosing vessel.
+UBERON:0002420 : basal ganglion   
+OLD: one of a group of nuclei in the brains of vertebrates, situated at the base of the forebrain and strongly connected with the cerebral cortex, thalamus and other areas.ganglion in the head. The main components of the basal ganglia are the striatum, pallidum, substantia nigra, and subthalamic nucleus[WP]. Subcortical masses of gray matter in the forebrain and midbrain that are richly interconnected and so viewed as a functional system. The nuclei usually included are the caudate nucleus (caudoputamen in rodents), putamen, globus pallidus, substantia nigra (pars compacta and pars reticulata) and the subthalamic nucleus. Some also include the nucleus accumbens and ventral pallidum[NIF].
+NEW: An individual member of a collection of basal ganglia. Basal ganglia are subcortical masses of gray matter in the forebrain and midbrain that are richly interconnected and so viewed as a functional system. The nuclei usually included are the caudate nucleus (caudoputamen in rodents), putamen, globus pallidus, substantia nigra (pars compacta and pars reticulata) and the subthalamic nucleus. Some also include the nucleus accumbens and ventral pallidum[NIF,modified].
 
 
-UBERON:0009889 : secondary heart field   
-OLD: extra-cardiac population of mesodermal progenitors that gives rise to the right ventricle and outflow tract.
-NEW: A specific region of the lateral mesoderm that will form the majority of the mesodermal component of the right ventricle, arterial pole (outflow tract) and venous pole (inflow tract).
+UBERON:0006820 : body of sternum   
+OLD: The body of the sternum (gladiolus), considerably lengthier, narrower, and thinner than the manubrium, attains its greatest breadth close to the lower end.
+NEW: The middle and longest portion of the sternum, lying between the manubrium superiorly and the xiphoid process inferiorly; it considerably lengthier, narrower, and thinner than the manubrium, attains its greatest breadth close to the lower end.
+
+
+UBERON:0010011 : collection of basal ganglia   
+OLD: Clusters of neurons comprising the globus pallidus, putamen, caudate, nucleus accumbens, substantia nigra and subthalamic nucleus. They are involved with high level aspects of inhibitory motor activity in coordination with the excitation commands issued from the cerebellum.
+NEW: Subcortical masses of gray matter in the forebrain and midbrain that are richly interconnected and so viewed as a functional system. The nuclei usually included are the caudate nucleus (caudoputamen in rodents), putamen, globus pallidus, substantia nigra (pars compacta and pars reticulata) and the subthalamic nucleus. Some also include the nucleus accumbens and ventral pallidum.
 
 
 
@@ -38,25 +45,31 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-11-13; date: 13:11:2013 00:14
-- file 2 (new): uberon.obo; data version: releases/2013-11-19; date: 19:11:2013 19:49
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-11-21; date: 21:11:2013 00:09
+- file 2 (new): uberon.obo; data version: releases/2013-12-03; date: 03:12:2013 01:15
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:0014904	intersegmental pulmonary vein	
-UBERON:0014907	intersomitic vessel	
+UBERON:0014908	cerebellopontine angle	
+UBERON:0014912	thalamic eminence	
+UBERON:0014913	ventral pallium	
+UBERON:0014914	blood-testis barrier	
+UBERON:0014915	genu of facial nerve	
+UBERON:0014916	velar vocal fold	
 
 
 OBSOLETIONS
 ===========
-UBERON:2001285, obsolete intersegmental vessel (uberon/phenoscape-anatomy)
+UBERON:0002730, regional part of thalamus
+UBERON:2007010, obsolete eminentia thalami (uberon/phenoscape-anatomy)
 
 
 TERM MERGES
 ===========
-UBERON:0006001, intersomitic artery was merged into UBERON:0002457, intersomitic artery
+
+None
 
 
 TERM CHANGES
@@ -64,25 +77,75 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	alt_id	def	comment	synonym	xref	is_a	relationship	is_obsolete	
-UBERON:0002002								1 D, 1 A		
-UBERON:0002084								1 A		
-UBERON:0002457	C	1 A	A		1 A	1 A	1 A	1 D		
-UBERON:0003084				C						
-UBERON:0004031							2 D, 1 A	1 D		
-UBERON:0004140	C		C		2 A					
-UBERON:0004161				C						
-UBERON:0006239				A	2 A		1 D, 1 A	1 D		
-UBERON:0006436					1 A	1 A				
-UBERON:0006438						1 A				
-UBERON:0007204			A							
-UBERON:0007679	C		C		1 D, 1 A	1 D	1 D, 2 A			
-UBERON:0008835				C				1 A		
-UBERON:0009751				C						
-UBERON:0009889			C				1 A	1 D, 1 A		
-UBERON:0013220								1 D, 1 A		
-UBERON:2001285	C						2 D	3 D	A	
-UBERON:2005034							2 D			
+Term ID	name	def	comment	synonym	xref	is_a	intersection_of	relationship	is_obsolete	consider	
+UBERON:0000369						1 D, 1 A					
+UBERON:0000431		A		1 D, 1 A		2 D, 2 A		1 D, 1 A			
+UBERON:0000446				1 A							
+UBERON:0001699				2 A							
+UBERON:0001737								1 D, 1 A			
+UBERON:0001835		C									
+UBERON:0001886				1 A							
+UBERON:0001897	C			4 D, 3 A	1 D						
+UBERON:0001898								1 D, 1 A			
+UBERON:0001899								1 D, 1 A			
+UBERON:0001900		A	C	1 A		1 D, 1 A					
+UBERON:0001928				1 A							
+UBERON:0001941						1 D, 1 A					
+UBERON:0001942						1 D, 1 A					
+UBERON:0001965						1 D					
+UBERON:0001966						1 D					
+UBERON:0002038						1 D					
+UBERON:0002283				2 A							
+UBERON:0002284			A								
+UBERON:0002420		C			1 D	1 D, 1 A					
+UBERON:0002512											
+UBERON:0002705								1 D			
+UBERON:0002709	C		A					1 D, 1 A			
+UBERON:0002730					3 D	1 D	2 D	1 D	A	3 A	
+UBERON:0002733								1 D, 1 A			
+UBERON:0002739	C							1 D, 1 A			
+UBERON:0002762		A		1 A				2 A			
+UBERON:0002776								1 D, 1 A			
+UBERON:0002995						1 D					
+UBERON:0003031								1 D, 1 A			
+UBERON:0003706	C			1 D, 1 A							
+UBERON:0004023				2 D, 6 A							
+UBERON:0004024				1 D, 1 A		1 D, 1 A					
+UBERON:0004025				1 D, 1 A		1 D, 1 A					
+UBERON:0004026						1 D, 1 A					
+UBERON:0004703				1 D, 4 A	1 A	1 D, 1 A					
+UBERON:0004816						1 D, 1 A					
+UBERON:0004922				1 D, 5 A							
+UBERON:0005343				1 A							
+UBERON:0006086						1 D		1 D, 1 A			
+UBERON:0006514						1 D, 1 A					
+UBERON:0006696								1 D, 1 A			
+UBERON:0006820		C		1 A							
+UBERON:0007692				1 D, 1 A		1 D					
+UBERON:0008982								1 D, 1 A			
+UBERON:0009641						1 D, 1 A					
+UBERON:0010011		C			1 A	1 D, 1 A		2 D			
+UBERON:0010225		A									
+UBERON:0011604				1 A							
+UBERON:0012111								1 D, 1 A			
+UBERON:0013220								1 D, 1 A			
+UBERON:0013683	C			1 A		1 D, 1 A	1 D, 1 A				
+UBERON:0013684	C			1 A		1 D, 1 A	1 D, 1 A				
+UBERON:0014533		C						1 D, 1 A			
+UBERON:0014534		A		2 D, 2 A				2 A			
+UBERON:0014738				1 A							
+UBERON:0014740				1 A							
+UBERON:0014741				1 A							
+UBERON:1500008	C					1 A	2 A	1 A			
+UBERON:1500010	C										
+UBERON:2000623								1 A			
+UBERON:2001415						1 D, 1 A					
+UBERON:2001416						1 D, 1 A					
+UBERON:2001417						1 D, 1 A					
+UBERON:2002091								1 A			
+UBERON:2002261				1 A							
+UBERON:2007010	C					1 D		1 D	A		
+UBERON:4000172			A					1 A			
 
 
 
@@ -94,17 +157,17 @@ Term counts for the old and new files
 Ontology	Old file	New file	Change
 none	273	273	
 	(217 defined)	(217 defined)	
-uberon	8815	8816	+1
-	(7188 defined)	(7191 defined)	
-uberon/phenoscape-anatomy	2306	2305	-1
-	(1589 defined)	(1589 defined)	
+uberon	8816	8821	+5
+	(7191 defined)	(7200 defined)	
+uberon/phenoscape-anatomy	2305	2304	-1
+	(1589 defined)	(1588 defined)	
 
-Obsolete	616	617	+1
-	(5.1% of total)	 (5.1% of total)	(+0.2%)
+Obsolete	617	619	+2
+	(5.1% of total)	 (5.2% of total)	(+0.3%)
 
-Totals	11394	11394	+1 (0.0%)
-	8994 (78.9%) defined	8997 (79.0%) defined	
-	12010 inc. obs	12011 inc. obs
+Totals	11394	11398	+6 (0.0%)
+	8997 (79.0%) defined	9005 (79.0%) defined	
+	12011 inc. obs	12017 inc. obs
 
 
 

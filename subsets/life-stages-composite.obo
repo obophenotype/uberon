@@ -493,10 +493,13 @@ id: HsapDv:0000037
 name: fetal stage (embryonic human)
 namespace: human_developmental_stage
 def: "Prenatal stage that starts with the fully formed embryo and ends at birth." [Bgee:curator]
+comment: Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term "fetus" generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective. [Wikipedia:Fetus]
 synonym: "fetus stage" RELATED []
 synonym: "foetus stage" RELATED []
+synonym: "second and third trimester" RELATED [http://en.wikipedia.org/wiki/Gestational_age]
 xref: EV:0300011
 is_a: UBERON:0000104 ! life cycle
+relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
 relationship: part_of HsapDv:0000045 ! prenatal stage (embryonic human)
 property_value: end_dpf "266.0" xsd:float
 property_value: start_dpf "56.0" xsd:float
@@ -2242,8 +2245,8 @@ def: "Fetal stage that refers to the third month of gestation starting from the 
 is_a: UBERON:0000104 ! life cycle
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
 property_value: end_dpf "77.0" xsd:float
-property_value: month_of_gestation "3.0" xsd:float
 property_value: start_dpf "56.0" xsd:float
+property_value: Wikipedia:Gestational_age "3.0" xsd:float
 
 [Term]
 id: HsapDv:0000198
@@ -2254,8 +2257,8 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000197 ! third LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
 property_value: end_dpf "105.0" xsd:float
-property_value: month_of_gestation "4.0" xsd:float
 property_value: start_dpf "77.0" xsd:float
+property_value: Wikipedia:Gestational_age "4.0" xsd:float
 
 [Term]
 id: HsapDv:0000199
@@ -2266,8 +2269,8 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000198 ! fourth LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
 property_value: end_dpf "133.0" xsd:float
-property_value: month_of_gestation "5.0" xsd:float
 property_value: start_dpf "105.0" xsd:float
+property_value: Wikipedia:Gestational_age "5.0" xsd:float
 
 [Term]
 id: HsapDv:0000200
@@ -2278,8 +2281,8 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000199 ! fifth LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
 property_value: end_dpf "168.0" xsd:float
-property_value: month_of_gestation "6.0" xsd:float
 property_value: start_dpf "133.0" xsd:float
+property_value: Wikipedia:Gestational_age "6.0" xsd:float
 
 [Term]
 id: HsapDv:0000201
@@ -2290,8 +2293,8 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000200 ! sixth LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
 property_value: end_dpf "196.0" xsd:float
-property_value: month_of_gestation "7.0" xsd:float
 property_value: start_dpf "168.0" xsd:float
+property_value: Wikipedia:Gestational_age "7.0" xsd:float
 
 [Term]
 id: HsapDv:0000202
@@ -2302,8 +2305,8 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000201 ! seventh LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
 property_value: end_dpf "231.0" xsd:float
-property_value: month_of_gestation "8.0" xsd:float
 property_value: start_dpf "196.0" xsd:float
+property_value: Wikipedia:Gestational_age "8.0" xsd:float
 
 [Term]
 id: HsapDv:0000203
@@ -2314,8 +2317,8 @@ is_a: UBERON:0000104 ! life cycle
 relationship: immediately_preceded_by HsapDv:0000202 ! eighth LMP month human stage (embryonic human)
 relationship: part_of HsapDv:0000037 ! fetal stage (embryonic human)
 property_value: end_dpf "266.0" xsd:float
-property_value: month_of_gestation "9.0" xsd:float
 property_value: start_dpf "231.0" xsd:float
+property_value: Wikipedia:Gestational_age "9.0" xsd:float
 
 [Term]
 id: HsapDv:0000204
@@ -2787,6 +2790,7 @@ def: "Early immature stage that refers to the newborn mouse. Description of anat
 comment: Embryonic age 19-20 dpc (day post coitum).
 synonym: "E19-20" EXACT []
 synonym: "newborn stage" RELATED []
+synonym: "P0" RELATED [UBERON:cjm]
 synonym: "TS27" RELATED [EMAPA:TS27]
 xref: TS27
 xref: XUO:0000071

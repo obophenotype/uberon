@@ -60,49 +60,49 @@ seed.obo: seed.owl
 EDITSRC = seed.owl
 IMP = $(OBO)/uberon
 
-pato.owl:
-	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // -o $@
+pato.owl: uberon.owl
+	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // --set-ontology-id $(OBO)/$@ -o $@
 pato_import.owl: pato.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 # TODO - logical definitions go->ubr,cl
-go.owl:
+go.owl: uberon.owl
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
 go_import.owl: go.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-envo.owl:
+envo.owl: uberon.owl
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
 envo_import.owl: envo.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-nbo.owl:
+nbo.owl: uberon.owl
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
 nbo_import.owl: nbo.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-chebi.owl:
+chebi.owl: uberon.owl
 	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
 chebi_import.owl: chebi.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-aminoacid.owl:
+aminoacid.owl: uberon.owl
 	owltools $(OBO)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(OBO)/uberon/$@  -o $@
 pr.owl: aminoacid.owl
 	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@
 pr_import.owl: pr.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-ncbitaxon.owl:
+ncbitaxon.owl: uberon.owl
 	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
 ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 # CL - take **everything**
-cl_import.owl: cl-core.obo 
+cl_import.owl: cl-core.obo uberon.owl
 	owltools $(UCAT) $< --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-%_import.obo: %_import.owl
+%_import.obo: %_import.owl uberon.owl
 	owltools $< -o -f obo $@
 
 imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo
