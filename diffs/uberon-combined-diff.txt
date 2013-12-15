@@ -1,42 +1,32 @@
-releases/2013-12-02
+releases/2013-12-15
 
-    * nerve root syns
-    * NT: genu of facial nerve
-    * disambiguated between dorsal (proper) thalamus and grouping (D+V)
-    * Fixed lower lip def
-    * Added def of gladiolus from MP. Added links to PATO for age qualities from stages
-    * Fixes #380
-    * NT: velar vocal fold
+     * NTs for cerebral cortex precursor layers
+     * Moved basipterygium element back under endochondral element. Obsoleted  pelvic fin basipterygial radial element [wdahdul]
 
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 21:11:2013 00:09, cvs revision unknown
-! file 2 (new): 03:12:2013 01:15, cvs revision unknown
+! file 1 (old): 10:12:2013 20:58, cvs revision unknown
+! file 2 (new): 15:12:2013 12:26, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0001835 : lower lip   
-OLD: Lip that covers the upper portion of the mouth.[TAO].
-NEW: Lip that covers the lower portion of the mouth.[TAO].
+UBERON:0000076 : external ectoderm   
+OLD: The surface ectoderm (or external ectoderm forms the following structures: Skin Epithelium of the mouth and nasal cavity saliavary glands, and glands of mouth and nasal cavity Enamel - as a side note dentin and dental pulp are formed from ectomesenchyme which is derived from ectoderm Epithelium of pineal and pituitary glands Lens and cornea of the eye Apical ectodermal ridge inducing development of the limb buds of the embryo. Sensory receptors in epidermis [WP,unvetted].
+NEW: the surface (external) layer of ectoderm which begins to proliferate shortly after separation from the neuroectoderm.
 
 
-UBERON:0002420 : basal ganglion   
-OLD: one of a group of nuclei in the brains of vertebrates, situated at the base of the forebrain and strongly connected with the cerebral cortex, thalamus and other areas.ganglion in the head. The main components of the basal ganglia are the striatum, pallidum, substantia nigra, and subthalamic nucleus[WP]. Subcortical masses of gray matter in the forebrain and midbrain that are richly interconnected and so viewed as a functional system. The nuclei usually included are the caudate nucleus (caudoputamen in rodents), putamen, globus pallidus, substantia nigra (pars compacta and pars reticulata) and the subthalamic nucleus. Some also include the nucleus accumbens and ventral pallidum[NIF].
-NEW: An individual member of a collection of basal ganglia. Basal ganglia are subcortical masses of gray matter in the forebrain and midbrain that are richly interconnected and so viewed as a functional system. The nuclei usually included are the caudate nucleus (caudoputamen in rodents), putamen, globus pallidus, substantia nigra (pars compacta and pars reticulata) and the subthalamic nucleus. Some also include the nucleus accumbens and ventral pallidum[NIF,modified].
+UBERON:0000453 : decidua basalis   
+OLD: Region between the blastocyst and the myometrium.
+NEW: area of uterine endometrium found between the implanted chorionic vesicle and the myometrium.
 
 
-UBERON:0006820 : body of sternum   
-OLD: The body of the sternum (gladiolus), considerably lengthier, narrower, and thinner than the manubrium, attains its greatest breadth close to the lower end.
-NEW: The middle and longest portion of the sternum, lying between the manubrium superiorly and the xiphoid process inferiorly; it considerably lengthier, narrower, and thinner than the manubrium, attains its greatest breadth close to the lower end.
-
-
-UBERON:0010011 : collection of basal ganglia   
-OLD: Clusters of neurons comprising the globus pallidus, putamen, caudate, nucleus accumbens, substantia nigra and subthalamic nucleus. They are involved with high level aspects of inhibitory motor activity in coordination with the excitation commands issued from the cerebellum.
-NEW: Subcortical masses of gray matter in the forebrain and midbrain that are richly interconnected and so viewed as a functional system. The nuclei usually included are the caudate nucleus (caudoputamen in rodents), putamen, globus pallidus, substantia nigra (pars compacta and pars reticulata) and the subthalamic nucleus. Some also include the nucleus accumbens and ventral pallidum.
+UBERON:0007383 : enveloping layer of ectoderm   
+OLD: Outermost monolayer of cells surrounding the embryo that become very flattened in the blastula and give rise to the periderm. Originallu this tissue is one cell layer thick but in most vertebrates it soon becomes a two layered structure. The outer layer gives rise to the periderm.
+NEW: Outermost monolayer of cells surrounding the embryo that become very flattened in the blastula and give rise to the periderm. Originally this tissue is one cell layer thick but in most vertebrates it soon becomes a two layered structure. The outer layer gives rise to the periderm.
 
 
 
@@ -45,25 +35,23 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-11-21; date: 21:11:2013 00:09
-- file 2 (new): uberon.obo; data version: releases/2013-12-03; date: 03:12:2013 01:15
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-12-10; date: 10:12:2013 20:58
+- file 2 (new): uberon.obo; data version: releases/2013-12-15; date: 15:12:2013 12:26
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:0014908	cerebellopontine angle	
-UBERON:0014912	thalamic eminence	
-UBERON:0014913	ventral pallium	
-UBERON:0014914	blood-testis barrier	
-UBERON:0014915	genu of facial nerve	
-UBERON:0014916	velar vocal fold	
+UBERON:0014934	cerebral cortex mantle layer	
+UBERON:0014935	cerebral cortex marginal layer	
+UBERON:0014936	cerebral cortex ventricular layer	
+UBERON:0014940	cerebral cortex subventricular zone	
+UBERON:0014950	layer of developing cerebral cortex	
 
 
 OBSOLETIONS
 ===========
-UBERON:0002730, regional part of thalamus
-UBERON:2007010, obsolete eminentia thalami (uberon/phenoscape-anatomy)
+UBERON:1600009, obsolete pelvic fin basipterygial radial element (none)
 
 
 TERM MERGES
@@ -77,75 +65,33 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	synonym	xref	is_a	intersection_of	relationship	is_obsolete	consider	
-UBERON:0000369						1 D, 1 A					
-UBERON:0000431		A		1 D, 1 A		2 D, 2 A		1 D, 1 A			
-UBERON:0000446				1 A							
-UBERON:0001699				2 A							
-UBERON:0001737								1 D, 1 A			
-UBERON:0001835		C									
-UBERON:0001886				1 A							
-UBERON:0001897	C			4 D, 3 A	1 D						
-UBERON:0001898								1 D, 1 A			
-UBERON:0001899								1 D, 1 A			
-UBERON:0001900		A	C	1 A		1 D, 1 A					
-UBERON:0001928				1 A							
-UBERON:0001941						1 D, 1 A					
-UBERON:0001942						1 D, 1 A					
-UBERON:0001965						1 D					
-UBERON:0001966						1 D					
-UBERON:0002038						1 D					
-UBERON:0002283				2 A							
-UBERON:0002284			A								
-UBERON:0002420		C			1 D	1 D, 1 A					
-UBERON:0002512											
-UBERON:0002705								1 D			
-UBERON:0002709	C		A					1 D, 1 A			
-UBERON:0002730					3 D	1 D	2 D	1 D	A	3 A	
-UBERON:0002733								1 D, 1 A			
-UBERON:0002739	C							1 D, 1 A			
-UBERON:0002762		A		1 A				2 A			
-UBERON:0002776								1 D, 1 A			
-UBERON:0002995						1 D					
-UBERON:0003031								1 D, 1 A			
-UBERON:0003706	C			1 D, 1 A							
-UBERON:0004023				2 D, 6 A							
-UBERON:0004024				1 D, 1 A		1 D, 1 A					
-UBERON:0004025				1 D, 1 A		1 D, 1 A					
-UBERON:0004026						1 D, 1 A					
-UBERON:0004703				1 D, 4 A	1 A	1 D, 1 A					
-UBERON:0004816						1 D, 1 A					
-UBERON:0004922				1 D, 5 A							
-UBERON:0005343				1 A							
-UBERON:0006086						1 D		1 D, 1 A			
-UBERON:0006514						1 D, 1 A					
-UBERON:0006696								1 D, 1 A			
-UBERON:0006820		C		1 A							
-UBERON:0007692				1 D, 1 A		1 D					
-UBERON:0008982								1 D, 1 A			
-UBERON:0009641						1 D, 1 A					
-UBERON:0010011		C			1 A	1 D, 1 A		2 D			
-UBERON:0010225		A									
-UBERON:0011604				1 A							
-UBERON:0012111								1 D, 1 A			
-UBERON:0013220								1 D, 1 A			
-UBERON:0013683	C			1 A		1 D, 1 A	1 D, 1 A				
-UBERON:0013684	C			1 A		1 D, 1 A	1 D, 1 A				
-UBERON:0014533		C						1 D, 1 A			
-UBERON:0014534		A		2 D, 2 A				2 A			
-UBERON:0014738				1 A							
-UBERON:0014740				1 A							
-UBERON:0014741				1 A							
-UBERON:1500008	C					1 A	2 A	1 A			
-UBERON:1500010	C										
-UBERON:2000623								1 A			
-UBERON:2001415						1 D, 1 A					
-UBERON:2001416						1 D, 1 A					
-UBERON:2001417						1 D, 1 A					
-UBERON:2002091								1 A			
-UBERON:2002261				1 A							
-UBERON:2007010	C					1 D		1 D	A		
-UBERON:4000172			A					1 A			
+Term ID	name	def	comment	synonym	xref	is_a	relationship	is_obsolete	
+UBERON:0000060				1 D, 1 A					
+UBERON:0000076		C	C	1 A	1 D	1 D, 2 A			
+UBERON:0000453		C		1 A					
+UBERON:0001272				1 A					
+UBERON:0003662				1 A					
+UBERON:0003663				1 A					
+UBERON:0004035				2 A	1 A	2 D, 1 A			
+UBERON:0004040				1 A		2 D, 1 A			
+UBERON:0005343			A	2 A		2 D, 1 A			
+UBERON:0005390							1 A		
+UBERON:0005391							1 A		
+UBERON:0005392							1 A		
+UBERON:0005393							1 A		
+UBERON:0005394							1 A		
+UBERON:0005395							1 A		
+UBERON:0005863					2 D, 1 A				
+UBERON:0006083	C			2 D, 4 A	1 A		1 D, 1 A		
+UBERON:0007383		C					1 D, 1 A		
+UBERON:0007721							1 D, 1 A		
+UBERON:0007722							1 D, 1 A		
+UBERON:0012132							1 D, 1 A		
+UBERON:0014734				1 D					
+UBERON:1600009	C		A			1 D		A	
+UBERON:2000623						1 D, 1 A			
+UBERON:2001539						1 D, 1 A			
+UBERON:2100623						1 D, 2 A			
 
 
 
@@ -155,19 +101,19 @@ FILE STATS
 Term counts for the old and new files
 
 Ontology	Old file	New file	Change
-none	273	273	
-	(217 defined)	(217 defined)	
-uberon	8816	8821	+5
-	(7191 defined)	(7200 defined)	
-uberon/phenoscape-anatomy	2305	2304	-1
-	(1589 defined)	(1588 defined)	
+none	273	272	-1
+	(217 defined)	(216 defined)	
+uberon	8825	8830	+5
+	(7212 defined)	(7212 defined)	
+uberon/phenoscape-anatomy	2304	2304	
+	(1588 defined)	(1588 defined)	
 
-Obsolete	617	619	+2
-	(5.1% of total)	 (5.2% of total)	(+0.3%)
+Obsolete	620	621	+1
+	(5.2% of total)	 (5.2% of total)	(+0.2%)
 
-Totals	11394	11398	+6 (0.0%)
-	8997 (79.0%) defined	9005 (79.0%) defined	
-	12011 inc. obs	12017 inc. obs
+Totals	11402	11406	+5 (0.0%)
+	9017 (79.1%) defined	9016 (79.0%) defined	
+	12022 inc. obs	12027 inc. obs
 
 
 

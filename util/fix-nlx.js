@@ -1,7 +1,14 @@
-// owlringo
+var Parser = require('ringo/args').Parser;
+var httpclient = require('ringo/httpclient');
+var system = require('system');
+
+addToClasspath('owl.js/jars/owltools-runner-all.jar');
+var OWL = require('../owl.js/jars/lib/owl.js').OWL;
+
+var owl = new OWL();
 
 //loadont("source-ontologies/nlx_stage_all.rdf");
-loadont("source-ontologies/z.rdf");
+owl.loadFile("source-ontologies/nlx_stage_all_test.rdf");
 
 var gen = new bbop.owl.Generator(g().getSourceOntology()); 
 
@@ -13,8 +20,8 @@ var NLXp = 'http://neurolex.org/wiki/Property-3A';
 var exMap =
     {
         'http://neurolex.org/wiki/Property-3AIs_part_of' : "http://purl.obolibrary.org/obo/BFO_0000050",
-        'http://neurolex.org/wiki/Property-3AEfferentProjections' : "http://purl.obolibrary.org/obo/efferentProjecyions",
-        'http://neurolex.org/wiki/Property-3AAfferentProjections' : "http://purl.obolibrary.org/obo/afferentProjecyions",
+        'http://neurolex.org/wiki/Property-3AEfferentProjections' : "http://purl.obolibrary.org/obo/efferentProjections",
+        'http://neurolex.org/wiki/Property-3AAfferentProjections' : "http://purl.obolibrary.org/obo/afferentProjections",
         'http://neurolex.org/wiki/Property-3APartiallyOverlapsWith' : "http://purl.obolibrary.org/obo/RO_0002131"
     };
 
