@@ -14,7 +14,7 @@ This repository contains the editors version of the ontology
 
 ## Editors:
 
-See the file README-editors.txt
+See the file [README-editors.txt](bridge/../README-editors.txt)
 
 ## Google Plus
 
