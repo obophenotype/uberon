@@ -37,23 +37,30 @@ foreach (@lines) {
 exit 1;
 
 sub mk() {
-    my $cc = sprintf("UBERON:%07d", $max);
-    my $pc = sprintf("UBERON:%07d", $max+1);
+    my $ec = sprintf("UBERON:%07d", $max);
+    my $cc = sprintf("UBERON:%07d", $max+1);
+    my $pc = sprintf("UBERON:%07d", $max+2);
     print "relationship: develops_from $cc ! $n cartilaginous condensation\n";
     print "\n";
     print "[Term]\n";
+    printf "id: $ec\n"; 
+    print "name: $n endochondral element\n";
+    print "is_a: UBERON:0010363 ! endochondral element\n";
+    print "relationship: part_of $p\n";
+    print "\n";
+    print "[Term]\n";
     printf "id: $cc\n"; 
-    print "name: $n cartilaginous condensation\n";
-    print "intersection_of: UBERON:0005863 ! cartilaginous condensation\n";
-    print "intersection_of: develops_into $id ! $n\n";
+    print "name: $n cartilage\n";
+    print "intersection_of: $ec ! $n endochondral element\n";
+    print "intersection_of: composed_primarily_of UBERON:0002418 ! cartilage tissue\n";
     print "relationship: part_of $p\n";
     print "relationship: develops_from $pc ! $n pre-cartilage condensation\n";
     print "\n";
     print "[Term]\n";
     printf "id: $pc\n"; 
     print "name: $n pre-cartilage condensation\n";
-    print "intersection_of: UBERON:0005866 ! pre-cartilage condensation\n";
-    print "intersection_of: develops_into $id ! $n\n";
+    print "intersection_of: $ec ! $n endochondral element\n";
+    print "intersection_of: composed_primarily_of UBERON:0005866 ! pre-cartilage condensation\n";
     print "relationship: part_of $p\n";
     print "\n";
 

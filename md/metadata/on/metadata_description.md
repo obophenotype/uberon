@@ -27,5 +27,8 @@
 
  * *[description](../../on/description.md)* = Documentation describing the metadata or metadata best practices used in an ontology
 
+## Usage
+
+
 ## External Comments
 

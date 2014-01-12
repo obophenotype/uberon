@@ -28,5 +28,8 @@
  * *[description](../../on/description.md)* = A template or design pattern that is repeated multiple kinds
  * *[see also](../../so/rdf-schema#seeAlso.md)* = http://www.springerlink.com/content/d2lp476v0p281q73/
 
+## Usage
+
+
 ## External Comments
 

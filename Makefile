@@ -109,6 +109,12 @@ imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo
 	touch $@
 
 # ----------------------------------------
+# MARKDOWN EXPORT
+# ----------------------------------------
+markdown:
+	owltools ext.owl --merge-imports-closure --ontology-to-markdown md
+
+# ----------------------------------------
 # MAIN RELEASE FILES
 # ----------------------------------------
 

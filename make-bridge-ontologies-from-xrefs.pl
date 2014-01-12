@@ -8,10 +8,10 @@ my $id;
 my $n;
 my $n_xrefs = 0;
 my $stype;
+my %nh = ();
 
 my @fns = ();
 my $base = 'uberon';
-
 
 while ($ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
@@ -46,6 +46,7 @@ while (<>) {
     }
     elsif (/^name:\s*(.*)/) {
         $n = $1;
+        $nh{$id} = $n;
     }
     elsif (/^xref:\s*(\S+)(.*)/) {
         next unless $stype eq 'Term';
@@ -58,10 +59,13 @@ while (<>) {
             if ($fh) {
                 $n_xrefs++;
                 my ($t,$rel,$filler) = @{$tmap{$s}};
+                $n = $nh{$id};
                 print $fh "[Term]\n";
                 print $fh "id: $x ! $cmt\n";
                 my $unique_label = mk_unique_label($s,$n);
-                print $fh "property_value: IAO:0000589 \"$unique_label\" xsd:string\n";
+                if ($n) {
+                    print $fh "property_value: IAO:0000589 \"$unique_label\" xsd:string\n";
+                }
                 if ($t eq 'equivalent') {
                     print $fh "equivalent_to: $id ! $n\n";
                 }

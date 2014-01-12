@@ -1,32 +1,93 @@
-releases/2013-12-15
+releases/2014-01-11
 
-     * NTs for cerebral cortex precursor layers
-     * Moved basipterygium element back under endochondral element. Obsoleted  pelvic fin basipterygial radial element [wdahdul]
+    Fixing def of hem.poi system. Adding provenance notes on relationships. Starting to address issue #388
+    Definition improvements. Endochondral element refactoring continued
+     * neuropore fixes
+      * fixed defs
+      * split lamina terminalis into embryonic and mature
+    fixed unsatisfiable class, equivalence axioms and naming conventions. Issue #382
+    new terms:
+     UBERON:0015117	lamina terminalis of cerebral hemisphere	
+     UBERON:4300081	mesopterygium element	
+     UBERON:4300082	metapterygium element	
+     UBERON:4300083	propterygium element	
+
 
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 10:12:2013 20:58, cvs revision unknown
-! file 2 (new): 15:12:2013 12:26, cvs revision unknown
+! file 1 (old): 18:12:2013 08:04, cvs revision unknown
+! file 2 (new): 11:01:2014 11:00, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
 
 
-UBERON:0000076 : external ectoderm   
-OLD: The surface ectoderm (or external ectoderm forms the following structures: Skin Epithelium of the mouth and nasal cavity saliavary glands, and glands of mouth and nasal cavity Enamel - as a side note dentin and dental pulp are formed from ectomesenchyme which is derived from ectoderm Epithelium of pineal and pituitary glands Lens and cornea of the eye Apical ectodermal ridge inducing development of the limb buds of the embryo. Sensory receptors in epidermis [WP,unvetted].
-NEW: the surface (external) layer of ectoderm which begins to proliferate shortly after separation from the neuroectoderm.
+UBERON:0000642 : suspensory ligament of duodenum   
+OLD: Ligament that connects the duodenum of the small intestines to the diaphragm. It contains a slender band of skeletal muscle from the diaphragm and a fibromuscular band of smooth muscle from the horizontal and ascending parts of the duodenum. When it contracts, the suspensory muscle of the duodenum widens the angle of the duodenojejunal flexure, allowing movement of the intestinal contents It arises from the right crus as it passes around the esophagus, continues as connective tissue around the stems of the celiac trunk and superior mesenteric artery and inserts into the third and fourth portions of the duodenum and frequently into the duodenojejunal (DJ) flexure (between the duodenum and the jejunum) as well. 
+NEW: A thin muscle connecting the junction between the duodenum, jejunum, and duodenojejunal flexure to connective tissue surrounding the superior mesenteric artery and coeliac artery 
 
 
-UBERON:0000453 : decidua basalis   
-OLD: Region between the blastocyst and the myometrium.
-NEW: area of uterine endometrium found between the implanted chorionic vesicle and the myometrium.
+UBERON:0002205 : manubrium of sternum   
+OLD: broad, upper part of the sternum. Located ventrally with a quadrangular shape, wider superiorly and narrower inferiorly, it articulates with the clavicles and the first two ribs[WP].
+NEW: The cranial most segment of the sternum. Located ventrally with a quadrangular shape, wider superiorly and narrower inferiorly, it articulates with the clavicles and the first two ribs[MP,WP].
 
 
-UBERON:0007383 : enveloping layer of ectoderm   
-OLD: Outermost monolayer of cells surrounding the embryo that become very flattened in the blastula and give rise to the periderm. Originallu this tissue is one cell layer thick but in most vertebrates it soon becomes a two layered structure. The outer layer gives rise to the periderm.
-NEW: Outermost monolayer of cells surrounding the embryo that become very flattened in the blastula and give rise to the periderm. Originally this tissue is one cell layer thick but in most vertebrates it soon becomes a two layered structure. The outer layer gives rise to the periderm.
+UBERON:0002390 : hematopoietic system   
+OLD: The tissues concerned in production of the blood, including the bone marrow, liver, lymph nodes, spleen, and thymus[BTO]. Anatomical system that consists of the blood and blood forming tissues. The bodily system of organs and tissues, primarily the bone marrow, spleen, tonsils, and lymph nodes, involved in the production of blood[FD].
+NEW: Anatomical system that is involved in the production of hematopoietic cells. In humans this is primarily the bone marrow, spleen, tonsils, and lymph nodes.
+
+
+UBERON:0003054 : roof plate   
+OLD: a single row of glia at the dorsal midline of the developing neural tube. This region provides inductive signals for the specification of neuronal cell types and of the specification of neural crest cells. The cells comprising the roof plate are the precursors to radial glial cells.
+NEW: a single row of glia at the dorsal midline of the developing neural tube along the entire anterior-posterior axis. This region provides inductive signals for the specification of neuronal cell types and of the specification of neural crest cells. The cells comprising the roof plate are the precursors to radial glial cells.
+
+
+UBERON:0003079 : floor plate   
+OLD: A ventral region of glial cells in the neural tube that provides inductive signals for the specification of neuronal cell types. The floor plate is evident at the ventral midline by the neural fold stage[GO]. A structure integral to the developing nervous system of vertebrate organisms. Located on the ventral midline of the embryonic neural tube, the floor plate is a specialized glial structure that spans the anteroposterior axis from the midbrain to the tail regions. It has been shown that the floor plate is conserved among vertebrates with homologous structures in invertebrates such as the fruit fly Drosophila and the nematode C. elegans. Functionally, the structure serves as an organizer to ventralize tissues in the embryo as well as to guide neuronal positioning and differentiation along the dorsoventral axis of the neural tube[WP].
+NEW: The specialized glial structure (non-neuronal cells) situated at the ventral midline of the embryonic neural tube; this structure spans the anteroposterior axis from the midbrain to the tail regions, separating the left and right basal plates of the developing neural tube, and serves as an organizer to ventralize tissues in the embryo as well as to guide neuronal positioning and differentiation along the dorsoventral axis of the neural tube.
+
+
+UBERON:0004547 : decidua capsularis   
+OLD: Endometrium that covers the implanted blastocyst.
+NEW: The layer of uterine endometrium overlying the implanted chorionic vesicle and facing the uterine cavity
+
+
+UBERON:0005070 : anterior neuropore   
+OLD: The anterior neuropore appears before the process of neural tube closure is complete[GO].
+NEW: The neuropore at the anterior (rostral) end of the neural tube.
+
+
+UBERON:0005071 : posterior neuropore   
+OLD: The posterior neuropore appears before the process of neural tube closure is complete[GO].
+NEW: The neuropore at the posterior (caudal) end of the neural tube.
+
+
+UBERON:0005077 : neuropore   
+OLD: Joined neural folds at either end of the neural tube.[GO].
+NEW: A temporary opening leading from the central canal of the embryonic neural tube to the exterior.
+
+
+UBERON:0005078 : lamina terminalis of neural tube   
+(was lamina terminalis of forebrain vesicle)
+OLD: The median portion of the wall of the fore-brain vesicle consists of a thin, the lamina terminalis, which stretches from the interventricular foramen to the recess at the base of the optic stalk and contains the organum vasculosum of the lamina terminalis, which regulates the osmolarity of the blood. This is the rostral end (tip) of the neural tube in the early weeks of development.
+NEW: The anterior-most (rostral) portion of the wall of the neural tube, formed by closure of the anterior neuropore; the median strip of the anterior wall of the prosencephalon, which persists in a relatively unchanged state as the cerebral hemispheres grow out forward beyond the original anterior end of the prosencephalon.
+
+
+UBERON:0005432 : aortic sac   
+OLD: the merged ventral aortae of the embryo which supplies blood to the aortic arches[TMD].
+NEW: The dilated structure that is lined by endothelial cells and located at the arterial pole of the heart just above (distal to) the truncus arteriosus in mammalian embryos; it is the primordial vascular channel from which the aortic arches (and eventually the dorsal aortae) arise; the aortic sac is homologous to the ventral aorta of gill-bearing vertebrates
+
+
+UBERON:0006211 : buccopharyngeal membrane   
+OLD: The region where the crescentic masses of the ectoderm and endoderm come into direct contact with each other constitutes a thin membrane, the buccopharyngeal membrane (or oropharyngeal membrane), which forms a septum between the primitive mouth and pharynx. In front of the buccopharyngeal area, where the lateral crescents of mesoderm fuse in the middle line, the pericardium is afterward developed, and this region is therefore designated the pericardial area.
+NEW: The thin bilaminar membrane derived from the prechordal plate that is devoid of mesoderm and formed by the apposition of the stomodeal ectoderm with the foregut endoderm; after the embryonic head fold has evolved it lies at the caudal limit of the stomodeum, forming a septum between the primitive mouth and pharynx; the membrane eventually disappears, and thus a communication is established between the mouth and the future pharynx.
+
+
+UBERON:0009210 : pharyngeal membrane   
+OLD: a thin fold of ectoderm and endoderm that separates the pharyngeal pouches from the branchial clefts in a developing embryo.
+NEW: a thin fold of ectoderm and endoderm that separates the pharyngeal pouches from the pharyngeal clefts in a developing embryo.
 
 
 
@@ -35,23 +96,23 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-12-10; date: 10:12:2013 20:58
-- file 2 (new): uberon.obo; data version: releases/2013-12-15; date: 15:12:2013 12:26
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2013-12-18; date: 18:12:2013 08:04
+- file 2 (new): uberon.obo; data version: releases/2014-01-11; date: 11:01:2014 11:00
 
 NEW TERMS
 =========
 
 ID	name	namespace
-UBERON:0014934	cerebral cortex mantle layer	
-UBERON:0014935	cerebral cortex marginal layer	
-UBERON:0014936	cerebral cortex ventricular layer	
-UBERON:0014940	cerebral cortex subventricular zone	
-UBERON:0014950	layer of developing cerebral cortex	
+UBERON:0015117	lamina terminalis of cerebral hemisphere	
+UBERON:4300081	mesopterygium element	
+UBERON:4300082	metapterygium element	
+UBERON:4300083	propterygium element	
 
 
 OBSOLETIONS
 ===========
-UBERON:1600009, obsolete pelvic fin basipterygial radial element (none)
+
+None
 
 
 TERM MERGES
@@ -65,33 +126,78 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	synonym	xref	is_a	relationship	is_obsolete	
-UBERON:0000060				1 D, 1 A					
-UBERON:0000076		C	C	1 A	1 D	1 D, 2 A			
-UBERON:0000453		C		1 A					
-UBERON:0001272				1 A					
-UBERON:0003662				1 A					
-UBERON:0003663				1 A					
-UBERON:0004035				2 A	1 A	2 D, 1 A			
-UBERON:0004040				1 A		2 D, 1 A			
-UBERON:0005343			A	2 A		2 D, 1 A			
-UBERON:0005390							1 A		
-UBERON:0005391							1 A		
-UBERON:0005392							1 A		
-UBERON:0005393							1 A		
-UBERON:0005394							1 A		
-UBERON:0005395							1 A		
-UBERON:0005863					2 D, 1 A				
-UBERON:0006083	C			2 D, 4 A	1 A		1 D, 1 A		
-UBERON:0007383		C					1 D, 1 A		
-UBERON:0007721							1 D, 1 A		
-UBERON:0007722							1 D, 1 A		
-UBERON:0012132							1 D, 1 A		
-UBERON:0014734				1 D					
-UBERON:1600009	C		A			1 D		A	
-UBERON:2000623						1 D, 1 A			
-UBERON:2001539						1 D, 1 A			
-UBERON:2100623						1 D, 2 A			
+Term ID	name	def	comment	synonym	xref	is_a	intersection_of	union_of	relationship	
+UBERON:0000453										
+UBERON:0000642		C								
+UBERON:0000930										
+UBERON:0001687	C		C							
+UBERON:0001688	C			1 A						
+UBERON:0001689	C			2 A						
+UBERON:0002002									1 D, 1 A	
+UBERON:0002205		C								
+UBERON:0002390		C	D		1 D, 1 A					
+UBERON:0002689			C	2 D, 1 A						
+UBERON:0003054		C				1 D, 3 A			1 D, 1 A	
+UBERON:0003079		C				1 D, 4 A			2 D, 2 A	
+UBERON:0003252					1 A					
+UBERON:0003307						2 D, 1 A				
+UBERON:0003308						2 D, 1 A				
+UBERON:0003309						2 D, 1 A				
+UBERON:0003310						2 D, 1 A				
+UBERON:0003311						2 D, 1 A				
+UBERON:0003957			D							
+UBERON:0004547		C								
+UBERON:0004601				1 D, 2 A						
+UBERON:0004602				1 D, 2 A						
+UBERON:0004603				1 A						
+UBERON:0004604				1 A						
+UBERON:0004605				1 A						
+UBERON:0004606				1 A						
+UBERON:0004607				1 A						
+UBERON:0004608				1 A						
+UBERON:0004609				1 A						
+UBERON:0004610				1 A						
+UBERON:0004611				1 A						
+UBERON:0005070		C	D				2 A		1 A	
+UBERON:0005071		C					2 A		1 A	
+UBERON:0005077		C				1 A		2 A	1 A	
+UBERON:0005078	C	C		1 D, 1 A	3 D, 3 A	2 D, 2 A				
+UBERON:0005432		C								
+UBERON:0005723						2 D, 1 A				
+UBERON:0006211		C		3 A						
+UBERON:0006248						1 D				
+UBERON:0006820										
+UBERON:0007374						2 D, 1 A				
+UBERON:0007722									1 D, 1 A	
+UBERON:0009210		C							1 A	
+UBERON:0009840				1 A						
+UBERON:0009841				1 A						
+UBERON:0010054						1 D, 1 A				
+UBERON:0010055						3 D, 1 A				
+UBERON:0010078			C							
+UBERON:0010757				1 A						
+UBERON:0011606							2 A		1 A	
+UBERON:0011607							2 A		1 A	
+UBERON:0011608				1 A		1 D, 1 A				
+UBERON:0011820				2 A						
+UBERON:0012429				1 A						
+UBERON:0013220									1 D, 1 A	
+UBERON:0015016						1 A			1 A	
+UBERON:0015017						1 A			1 A	
+UBERON:0015018				1 A		1 A			1 A	
+
+
+
+OTHER STANZA TYPES
+==================
+
+New Stanzas
+==========-
+
+Stanza type	ID	Name
+Typedef	in_dorsal_side_of	in_dorsal_side_of
+Typedef	in_ventral_side_of	in_ventral_side_of
+
 
 
 
@@ -101,19 +207,19 @@ FILE STATS
 Term counts for the old and new files
 
 Ontology	Old file	New file	Change
-none	273	272	-1
-	(217 defined)	(216 defined)	
-uberon	8825	8830	+5
-	(7212 defined)	(7212 defined)	
+none	272	272	
+	(216 defined)	(216 defined)	
+uberon	8938	8942	+4
+	(7277 defined)	(7278 defined)	
 uberon/phenoscape-anatomy	2304	2304	
 	(1588 defined)	(1588 defined)	
 
-Obsolete	620	621	+1
-	(5.2% of total)	 (5.2% of total)	(+0.2%)
+Obsolete	621	621	0
+	(5.1% of total)	 (5.1% of total)	(0.0%)
 
-Totals	11402	11406	+5 (0.0%)
-	9017 (79.1%) defined	9016 (79.0%) defined	
-	12022 inc. obs	12027 inc. obs
+Totals	11514	11518	+4 (0.0%)
+	9081 (78.9%) defined	9082 (78.9%) defined	
+	12135 inc. obs	12139 inc. obs
 
 
 
