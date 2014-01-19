@@ -1,30 +1,24 @@
-var Parser = require('ringo/args').Parser;
-var httpclient = require('ringo/httpclient');
-var system = require('system');
+// To run:
+// owljs-repl -i util/fix-nlx.js source-ontologies/nlx_stage_all_test.rdf
 
-addToClasspath('owl.js/jars/owltools-runner-all.jar');
-var OWL = require('../owl.js/jars/lib/owl.js').OWL;
+importPackage(Packages.org.semanticweb.owlapi.model);
 
-var owl = new OWL();
 
-//loadont("source-ontologies/nlx_stage_all.rdf");
-owl.loadFile("source-ontologies/nlx_stage_all_test.rdf");
-
-var gen = new bbop.owl.Generator(g().getSourceOntology()); 
-
-var m = gen.getMaker();
-
+// declare prefixes
 var OBO = 'http://purl.obolibrary.org/obo/';
 var NLXp = 'http://neurolex.org/wiki/Property-3A';
 
+// the following are mapped to existential restrictions
 var exMap =
     {
         'http://neurolex.org/wiki/Property-3AIs_part_of' : "http://purl.obolibrary.org/obo/BFO_0000050",
         'http://neurolex.org/wiki/Property-3AEfferentProjections' : "http://purl.obolibrary.org/obo/efferentProjections",
         'http://neurolex.org/wiki/Property-3AAfferentProjections' : "http://purl.obolibrary.org/obo/afferentProjections",
-        'http://neurolex.org/wiki/Property-3APartiallyOverlapsWith' : "http://purl.obolibrary.org/obo/RO_0002131"
+        'http://neurolex.org/wiki/Property-3APartiallyOverlapsWith' : "http://purl.obolibrary.org/obo/RO_0002131",
+        'http://neurolex.org/wiki/Property-3AHas_role' : "http://purl.obolibrary.org/obo/RO_0000053"
     };
 
+// the following are mapped to annotations
 var aMap =
     {
         'type': "a",
@@ -33,36 +27,36 @@ var aMap =
     };
 
 // OWLProperty -> OWLProperty
-function plookup(p1, m) {
+function mapProperty(p1, dict) {
     var p1id = p1.getIRI().toString();
-    if (m[p1id]) {
+    if (dict[p1id]) {
         var newIRI = exMap[p1id];
-        if (m.type != null && m.type == 'a') {
-            return gen.df().getOWLAnnotationProperty(IRI.create(newIRI));
+        if (dict.type != null && dict.type == 'a') {
+            return owl.df().getOWLAnnotationProperty(IRI.create(newIRI));
         }
-        return gen.df().getOWLObjectProperty(IRI.create(newIRI));
+        return owl.df().getOWLObjectProperty(IRI.create(newIRI));
     }
     return null;
 }
 
+// translate on a per-triple basis
 function tr(axiom) {
     if (axiom instanceof OWLDataPropertyAssertionAxiom) {
-        var p = plookup(axiom.getProperty(), aMap);
+        var p = mapProperty(axiom.getProperty(), aMap);
         if (p != null) {
             var sub = axiom.getSubject().getIRI();
             var ob = axiom.getObject();
             console.log(typeof ob + " // " + ob);
-            return m.annotationAssertion(p, sub, ob);
+            return owl.annotationAssertion(p, sub, ob);
         }
-        
     }
     else if (axiom instanceof OWLObjectPropertyAssertionAxiom) {
         // existential
-        var p = plookup(axiom.getProperty(), exMap);
+        var p = mapProperty(axiom.getProperty(), exMap);
         if (p != null) {
-            var sub = m.class(axiom.getSubject());
-            var ob = m.someValuesFrom(p, m.class(axiom.getObject()));
-            return m.subClassOf(sub, ob);
+            var sub = owl.class(axiom.getSubject());
+            var ob = owl.someValuesFrom(p, owl.class(axiom.getObject()));
+            return owl.subClassOf(sub, ob);
         }
     }
     else if (axiom instanceof OWLSameIndividualAxiom) {
@@ -71,11 +65,9 @@ function tr(axiom) {
     return null;
 }
 
-//var classes = ont.getClassesInSignature().toArray();
-
 function fix() {
-    gen.sedAxioms(tr);
+    owl.sedAxioms(tr);
 }
 fix();
-gen.saveOntology(gen.getOntology(),'foo.owl',new OWLFunctionalSyntaxOntologyFormat());
-require('ringo/shell').start();
+owl.useFunctionalSyntax();
+owl.save('foo.owl');
