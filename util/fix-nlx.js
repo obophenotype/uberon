@@ -83,7 +83,8 @@ function tr(axiom) {
         }
     }
     if (skip) {
-        continue;
+        // drop the axiom
+        return [];
     }
 
     if (axiom.getProperty != null) {
