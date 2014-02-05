@@ -24,18 +24,18 @@
 ### New Class : [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125)
 
  * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[label](http://www.w3.org/2000/01/rdf-schema#label)* anterior internodal tract
- * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* anterior internodal tract muscle tissue
+ * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* anterior internodal tract muscle tissue { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9480 } 
  * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015125
  * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:9480
  * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) **SubClassOf** [internodal tract](http://purl.obolibrary.org/obo/UBERON_0009966)
  * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) **SubClassOf** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [conducting system of heart](http://purl.obolibrary.org/obo/UBERON_0002350)
- * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* anterior internodal fasciculus
- * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Internodal tract which consists of the atrial and atrial septal branches.
+ * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* anterior internodal fasciculus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9480 } 
+ * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Internodal tract which consists of the atrial and atrial septal branches. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9480 } 
  * [anterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015125) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
 
 ### New Class : [anatomical line between outer canthi](http://purl.obolibrary.org/obo/UBERON_0015122)
 
- * [anatomical line between outer canthi](http://purl.obolibrary.org/obo/UBERON_0015122) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An anatomical line of the face that connects the two outer (lateral) canthi of the eye. The length of this line is known as the outer canthal distance.
+ * [anatomical line between outer canthi](http://purl.obolibrary.org/obo/UBERON_0015122) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An anatomical line of the face that connects the two outer (lateral) canthi of the eye. The length of this line is known as the outer canthal distance. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
  * [anatomical line between outer canthi](http://purl.obolibrary.org/obo/UBERON_0015122) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015122
  * [anatomical line between outer canthi](http://purl.obolibrary.org/obo/UBERON_0015122) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* inter lateral canthal line
  * [anatomical line between outer canthi](http://purl.obolibrary.org/obo/UBERON_0015122) **EquivalentTo** [anatomical line](http://purl.obolibrary.org/obo/UBERON_0006800) **and** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [face](http://purl.obolibrary.org/obo/UBERON_0001456) **and** [connects](http://purl.obolibrary.org/obo/uberon/core#connects) **some** [right outer canthus](http://purl.obolibrary.org/obo/UBERON_0015120) **and** [connects](http://purl.obolibrary.org/obo/uberon/core#connects) **some** [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121)
@@ -61,12 +61,12 @@
 
 ### New Class : [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128)
 
- * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* subepicardial connective tissue
+ * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* subepicardial connective tissue { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:83105 } 
  * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:83105
  * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
  * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015128
  * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) *[label](http://www.w3.org/2000/01/rdf-schema#label)* subepicardial layer of epicardium
- * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* perimysial connective tissue of subepicardium
+ * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* perimysial connective tissue of subepicardium { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:83105 } 
  * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) **SubClassOf** [mesothelium of serous pericardium](http://purl.obolibrary.org/obo/UBERON_0007188)
  * [subepicardial layer of epicardium](http://purl.obolibrary.org/obo/UBERON_0015128) **SubClassOf** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [epicardium](http://purl.obolibrary.org/obo/UBERON_0002348)
 
@@ -76,20 +76,20 @@
  * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[label](http://www.w3.org/2000/01/rdf-schema#label)* posterior internodal tract
  * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015127
  * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
- * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* posterior internodal tract muscle tissue
- * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* posterior internodal fasciculus
- * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* internodal tract of Thorel
+ * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* posterior internodal tract muscle tissue { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9483 } 
+ * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* posterior internodal fasciculus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9483 } 
+ * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* internodal tract of Thorel { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9483 } 
  * [posterior internodal tract](http://purl.obolibrary.org/obo/UBERON_0015127) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:9483
 
 ### New Class : [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126)
 
- * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* middle internodal fasciculus
+ * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* middle internodal fasciculus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9482 } 
  * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:9482
  * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) **SubClassOf** [internodal tract](http://purl.obolibrary.org/obo/UBERON_0009966)
  * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[label](http://www.w3.org/2000/01/rdf-schema#label)* middle internodal tract
- * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* internodal tract of Wenckebach
+ * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* internodal tract of Wenckebach { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9482 } 
  * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015126
- * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* middle internodal tract muscle tissue
+ * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* middle internodal tract muscle tissue { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9482 } 
  * [middle internodal tract](http://purl.obolibrary.org/obo/UBERON_0015126) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
 
 ### New Class : [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121)
@@ -100,7 +100,7 @@
  * [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121) **EquivalentTo** [outer canthus](http://purl.obolibrary.org/obo/UBERON_0006726) **and** [in_left_side_of](http://purl.obolibrary.org/obo/BSPO_0000120) **some** [head](http://purl.obolibrary.org/obo/UBERON_0000033)
  * [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
  * [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* left angle of eye
- * [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* left lateral palpebral commissure
+ * [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* left lateral palpebral commissure { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:59318 } 
  * [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:59318
  * [left outer canthus](http://purl.obolibrary.org/obo/UBERON_0015121) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015121
 
@@ -114,7 +114,7 @@
  * [right outer canthus](http://purl.obolibrary.org/obo/UBERON_0015120) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015120
  * [right outer canthus](http://purl.obolibrary.org/obo/UBERON_0015120) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:59317
  * [right outer canthus](http://purl.obolibrary.org/obo/UBERON_0015120) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
- * [right outer canthus](http://purl.obolibrary.org/obo/UBERON_0015120) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* right lateral palpebral commissure
+ * [right outer canthus](http://purl.obolibrary.org/obo/UBERON_0015120) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* right lateral palpebral commissure { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:59317 } 
 
 ### New Class : [main lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015134)
 
@@ -130,8 +130,8 @@
  * [terminal lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015133) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:58260
  * [terminal lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015133) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
  * [terminal lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015133) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015133
- * [terminal lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015133) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* branch of lactiferous duct proper
- * [terminal lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015133) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* lobular lactiferous duct
+ * [terminal lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015133) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* branch of lactiferous duct proper { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:58260 } 
+ * [terminal lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015133) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* lobular lactiferous duct { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:58260 } 
  * [terminal lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015133) **SubClassOf** [mammary duct](http://purl.obolibrary.org/obo/UBERON_0001765)
 
 ### New Class : [secondary lactiferous duct](http://purl.obolibrary.org/obo/UBERON_0015136)
@@ -169,12 +169,12 @@
 ### New Class : [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139)
 
  * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015139
- * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* infundibulum vesicae biliaris
+ * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* infundibulum vesicae biliaris { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0009465 [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) } 
  * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:76652
  * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) **SubClassOf** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [gallbladder](http://purl.obolibrary.org/obo/UBERON_0002110)
- * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* gallbladder infundibulum
+ * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* gallbladder infundibulum { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:76652 } 
  * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) **SubClassOf** [organ part](http://purl.obolibrary.org/obo/UBERON_0000064)
- * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The tapering portion of the gall bladder that narrows to form the neck and cystic duct.
+ * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The tapering portion of the gall bladder that narrows to form the neck and cystic duct. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0009465 } 
  * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
  * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) *[label](http://www.w3.org/2000/01/rdf-schema#label)* infundibulum of gallbladder
  * [infundibulum of gallbladder](http://purl.obolibrary.org/obo/UBERON_0015139) **SubClassOf** [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119)
@@ -210,35 +210,35 @@
 ### New Class : [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170)
 
  * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015170
- * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* three-partite eye
+ * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* three-partite eye { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
  * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) **SubClassOf** [has_part](http://purl.obolibrary.org/obo/BFO_0000051) **some** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211)
- * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* four-partite eye
+ * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* four-partite eye { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
  * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
  * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[label](http://www.w3.org/2000/01/rdf-schema#label)* nauplius eye
  * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) **SubClassOf** [eye](http://purl.obolibrary.org/obo/UBERON_0000970)
- * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An eye that consists of a cluster of three or four ➞median eyes that form a single structural unit but are separated from one another by pigment layers
+ * [nauplius eye](http://purl.obolibrary.org/obo/UBERON_0015170) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An eye that consists of a cluster of three or four ➞median eyes that form a single structural unit but are separated from one another by pigment layers { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
 
 ### New Class : [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162)
 
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) **SubClassOf** [supplies](http://purl.obolibrary.org/obo/FMA_86003) **some** [levator palpebrae superioris](http://purl.obolibrary.org/obo/UBERON_0001604)
- * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* oculomotor nerve superior division
+ * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* oculomotor nerve superior division { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:52572 } 
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015162
- * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* superior ramus of oculomotor nerve
+ * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* superior ramus of oculomotor nerve { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:52572 } 
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* AAO:0010628
- * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* dorsal ramus of oculomotor nerve
+ * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* dorsal ramus of oculomotor nerve { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0010628 } 
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) **SubClassOf** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021)
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) **SubClassOf** [branching_part_of](http://purl.obolibrary.org/obo/RO_0002380) **some** [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643)
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) **EquivalentTo** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021) **and** [supplies](http://purl.obolibrary.org/obo/FMA_86003) **some** [superior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006323) **and** [branching_part_of](http://purl.obolibrary.org/obo/RO_0002380) **some** [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643)
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) **SubClassOf** [supplies](http://purl.obolibrary.org/obo/FMA_86003) **some** [superior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006323)
- * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus superior (nervus oculomotorius [III])
- * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* dorsal ramus of occulomotor nerve
+ * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus superior (nervus oculomotorius [III]) { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:52572 } 
+ * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* dorsal ramus of occulomotor nerve { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0010628 } 
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[label](http://www.w3.org/2000/01/rdf-schema#label)* superior branch of oculomotor nerve
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* Wikipedia:Superior_branch_of_oculomotor_nerve
- * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The superior branch of the oculomotor nerve or the superior division, the smaller, passes medialward over the optic nerve. It supplies the Superior rectus and Levator palpebrae superioris.
+ * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The superior branch of the oculomotor nerve or the superior division, the smaller, passes medialward over the optic nerve. It supplies the Superior rectus and Levator palpebrae superioris. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Superior_branch_of_oculomotor_nerve } 
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* SCTID:280205004
- * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus superior nervi oculomotorii
+ * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus superior nervi oculomotorii { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Superior_branch_of_oculomotor_nerve [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) } 
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) **SubClassOf** [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121)
  * [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:52572
 
@@ -247,32 +247,32 @@
  * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) **EquivalentTo** [eye](http://purl.obolibrary.org/obo/UBERON_0000970) **and** [composed_primarily_of](http://purl.obolibrary.org/obo/UBREL_0000002) **some** [sense organ](http://purl.obolibrary.org/obo/UBERON_0000020)
  * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) **SubClassOf** [composed_primarily_of](http://purl.obolibrary.org/obo/UBREL_0000002) **some** [sense organ](http://purl.obolibrary.org/obo/UBERON_0000020)
  * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
- * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_6544
- * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An eye consisting of multiple light-sensing organs
- * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_6340
+ * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_6544 { [notes](http://www.geneontology.org/formats/oboInOwl#notes)=present on mantle edge in arcacean Bivalvia [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:21062451 } 
+ * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An eye consisting of multiple light-sensing organs { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
+ * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_6340 { [notes](http://www.geneontology.org/formats/oboInOwl#notes)=present on tentacular crown [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:21062451 } 
  * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) **SubClassOf** [eye](http://purl.obolibrary.org/obo/UBERON_0000970)
  * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[label](http://www.w3.org/2000/01/rdf-schema#label)* multi-unit eye
  * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015165
- * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_7588
+ * [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_7588 { [notes](http://www.geneontology.org/formats/oboInOwl#notes)=The eyes (optic cushions) on the oral surface of Asteroida (Echinodermata), close to the base of the terminal tentacles, are also composed of a number of simple ocelli - as many as 80-200 in certain species [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:21062451 } 
 
 ### New Class : [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160)
 
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) **SubClassOf** [supplies](http://purl.obolibrary.org/obo/FMA_86003) **some** [levator palpebrae superioris](http://purl.obolibrary.org/obo/UBERON_0001604)
- * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* supra-orbital artery
+ * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* supra-orbital artery { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:49973 } 
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* Wikipedia:Supraorbital_artery
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* SCTID:369330002
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) **SubClassOf** [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573)
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) **SubClassOf** [mixed endoderm/mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0000077)
- * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* supraorbital artery
+ * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* supraorbital artery { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:49973 } 
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:49973
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) **SubClassOf** [supplies](http://purl.obolibrary.org/obo/FMA_86003) **some** [frontal sinus](http://purl.obolibrary.org/obo/UBERON_0001760)
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[label](http://www.w3.org/2000/01/rdf-schema#label)* supraorbital artery
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) **SubClassOf** [branching_part_of](http://purl.obolibrary.org/obo/RO_0002380) **some** [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619)
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* supraorbital branch of external ophthalmic artery
- * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* arteria supraorbitalis
- * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The supraorbital artery is an artery of the head. It springs from the ophthalmic artery as that vessel is crossing over to the medial side of the optic nerve.
+ * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* arteria supraorbitalis { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Supraorbital_artery [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) } 
+ * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The supraorbital artery is an artery of the head. It springs from the ophthalmic artery as that vessel is crossing over to the medial side of the optic nerve. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Supraorbital_artery } 
  * [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015160
 
 ### New Class : [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161)
@@ -280,23 +280,23 @@
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) **SubClassOf** [supplies](http://purl.obolibrary.org/obo/FMA_86003) **some** [inferior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006322)
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) **SubClassOf** [branching_part_of](http://purl.obolibrary.org/obo/RO_0002380) **some** [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643)
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* SCTID:280206003
- * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* ventral ramus of occulomotor nerve
- * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The inferior branch of the oculomotor nerve or the inferior division, the larger, divides into three branches. One passes beneath the optic nerve to the medial rectus. Another, to the inferior rectus. The third and longest runs forward between the inferior recti and lateralis to the inferior oblique. From the last a short thick branch is given off to the lower part of the ciliary ganglion, and forms its short root. All these branches enter the muscles on their ocular surfaces, with the exception of the nerve to the inferior oblique, which enters the muscle at its posterior border.
+ * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* ventral ramus of occulomotor nerve { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0010632 } 
+ * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The inferior branch of the oculomotor nerve or the inferior division, the larger, divides into three branches. One passes beneath the optic nerve to the medial rectus. Another, to the inferior rectus. The third and longest runs forward between the inferior recti and lateralis to the inferior oblique. From the last a short thick branch is given off to the lower part of the ciliary ganglion, and forms its short root. All these branches enter the muscles on their ocular surfaces, with the exception of the nerve to the inferior oblique, which enters the muscle at its posterior border. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Inferior_branch_of_oculomotor_nerve } 
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015161
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
- * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* ventral ramus of oculomotor nerve
+ * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* ventral ramus of oculomotor nerve { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0010632 } 
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) **SubClassOf** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021)
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:52573
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) **EquivalentTo** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021) **and** [supplies](http://purl.obolibrary.org/obo/FMA_86003) **some** [inferior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006322) **and** [branching_part_of](http://purl.obolibrary.org/obo/RO_0002380) **some** [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643)
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) **SubClassOf** [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121)
- * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus inferior nervi oculomotorii
+ * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus inferior nervi oculomotorii { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Inferior_branch_of_oculomotor_nerve [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) } 
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[label](http://www.w3.org/2000/01/rdf-schema#label)* inferior branch of oculomotor nerve
- * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* inferior ramus of oculomotor nerve
+ * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* inferior ramus of oculomotor nerve { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:52573 } 
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) **SubClassOf** [supplies](http://purl.obolibrary.org/obo/FMA_86003) **some** [medial rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0001602)
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* Wikipedia:Inferior_branch_of_oculomotor_nerve
- * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus inferior (nervus oculomotorius [III])
+ * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus inferior (nervus oculomotorius [III]) { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:52573 } 
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* AAO:0010632
- * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* oculomotor nerve inferior division
+ * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* oculomotor nerve inferior division { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:52573 } 
  * [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
 
 ### New Class : [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169)
@@ -307,7 +307,7 @@
  * [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) *[label](http://www.w3.org/2000/01/rdf-schema#label)* tapetum
  * [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015169
  * [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_72037
- * [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Light reflecting layer found in a variety of different types of eye.
+ * [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Light reflecting layer found in a variety of different types of eye. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
  * [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) **SubClassOf** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [eye](http://purl.obolibrary.org/obo/UBERON_0000970)
  * [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) **SubClassOf** [tissue](http://purl.obolibrary.org/obo/UBERON_0000479)
  * [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* tapetal layer
@@ -370,12 +370,12 @@
 
 ### New Class : [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157)
 
- * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The middle temporal artery occasionally gives off a zygomatico-orbital branch, which runs along the upper border of the zygomatic arch, between the two layers of the temporal fascia, to the lateral angle of the orbit. This branch, which may arise directly from the superficial temporal artery, supplies the Orbicularis oculi, and anastomoses with the lacrimal and palpebral branches of the ophthalmic artery.
+ * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The middle temporal artery occasionally gives off a zygomatico-orbital branch, which runs along the upper border of the zygomatic arch, between the two layers of the temporal fascia, to the lateral angle of the orbit. This branch, which may arise directly from the superficial temporal artery, supplies the Orbicularis oculi, and anastomoses with the lacrimal and palpebral branches of the ophthalmic artery. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Zygomatico-orbital_artery } 
  * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:49663
- * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* zygomaticoorbital branch
+ * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* zygomaticoorbital branch { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Zygomatico-orbital_artery } 
  * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* Wikipedia:Zygomatico-orbital_artery
  * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[label](http://www.w3.org/2000/01/rdf-schema#label)* zygomatico-orbital artery
- * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* zygomaticooerbital branch
+ * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* zygomaticooerbital branch { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Zygomatico-orbital_artery } 
  * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* SCTID:146753008
  * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) **SubClassOf** [branching_part_of](http://purl.obolibrary.org/obo/RO_0002380) **some** [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614)
  * [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) **SubClassOf** [artery](http://purl.obolibrary.org/obo/UBERON_0001637)
@@ -398,21 +398,21 @@
 
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) **EquivalentTo** [anatomical space](http://purl.obolibrary.org/obo/UBERON_0000464) **and** [enclosed_by](http://purl.obolibrary.org/obo/uberon/core#enclosed_by) **some** [conjunctiva](http://purl.obolibrary.org/obo/UBERON_0001811)
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015155
- * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* subbrillar space
+ * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* subbrillar space { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=NCBITaxon:8570 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:7559104 } 
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) **SubClassOf** [anatomical space](http://purl.obolibrary.org/obo/UBERON_0000464)
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[label](http://www.w3.org/2000/01/rdf-schema#label)* conjunctival space
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) **SubClassOf** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [conjunctival sac](http://purl.obolibrary.org/obo/UBERON_0005908)
- * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* conjunctival sac cavity
+ * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* conjunctival sac cavity { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:59083 } 
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* SCTID:280957009
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:59083
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* subconjunctival space
  * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) **SubClassOf** [enclosed_by](http://purl.obolibrary.org/obo/uberon/core#enclosed_by) **some** [conjunctiva](http://purl.obolibrary.org/obo/UBERON_0001811)
- * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* cavity of conjunctival sac
+ * [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* cavity of conjunctival sac { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:59083 } 
 
 ### New Class : [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156)
 
- * [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The two terminal branches of the ophthalmic artery in humans are the dorsal nasal artery and the supratrochlear artery
+ * [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The two terminal branches of the ophthalmic artery in humans are the dorsal nasal artery and the supratrochlear artery { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Dorsal_nasal_artery [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Supratrochlear_artery } 
  * [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
  * [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015156
  * [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) *[label](http://www.w3.org/2000/01/rdf-schema#label)* terminal branch of ophthalmic artery
@@ -435,14 +435,14 @@
  * [falciform fat](http://purl.obolibrary.org/obo/UBERON_0015142) **SubClassOf** [mixed endoderm/mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0000077)
  * [falciform fat](http://purl.obolibrary.org/obo/UBERON_0015142) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0015142
  * [falciform fat](http://purl.obolibrary.org/obo/UBERON_0015142) **EquivalentTo** [fat pad](http://purl.obolibrary.org/obo/UBERON_0003916) **and** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [falciform ligament](http://purl.obolibrary.org/obo/UBERON_0001247)
- * [falciform fat](http://purl.obolibrary.org/obo/UBERON_0015142) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A large fat pad that is located at the base of the abdominal wall, in the falciform ligament of the liver.
+ * [falciform fat](http://purl.obolibrary.org/obo/UBERON_0015142) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A large fat pad that is located at the base of the abdominal wall, in the falciform ligament of the liver. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MURDOCH:768 } 
 
 ### New Class : [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143)
 
- * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* mesenteric fat depot
+ * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* mesenteric fat depot { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0008903 } 
  * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) *[label](http://www.w3.org/2000/01/rdf-schema#label)* mesenteric fat pad
  * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) **EquivalentTo** [fat pad](http://purl.obolibrary.org/obo/UBERON_0003916) **and** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [mesentery](http://purl.obolibrary.org/obo/UBERON_0002095)
- * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Encapsulated adipose tissue associated with the mesentery
+ * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Encapsulated adipose tissue associated with the mesentery { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0008903 } 
  * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) **SubClassOf** [part_of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [mesentery](http://purl.obolibrary.org/obo/UBERON_0002095)
  * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) **SubClassOf** [fat pad](http://purl.obolibrary.org/obo/UBERON_0003916)
  * [mesenteric fat pad](http://purl.obolibrary.org/obo/UBERON_0015143) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
@@ -542,14 +542,14 @@
 ### Changes for: [strand of pubic hair](http://purl.obolibrary.org/obo/UBERON_0013698)
 
  * _Added_
-    *  **+** [strand of pubic hair](http://purl.obolibrary.org/obo/UBERON_0013698) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A hair in the frontal genital area of adolescent and adult humans, located on and around the sex organs, the crotch, and sometimes at the top of the inside of the thighs, in the pubic region around the pubis bone.
+    *  **+** [strand of pubic hair](http://purl.obolibrary.org/obo/UBERON_0013698) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A hair in the frontal genital area of adolescent and adult humans, located on and around the sex organs, the crotch, and sometimes at the top of the inside of the thighs, in the pubic region around the pubis bone. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Pubic_hair } 
 
 ### Changes for: [anatomical line between inner canthi](http://purl.obolibrary.org/obo/UBERON_0013678)
 
  * _Deleted_
-    *  **-** [anatomical line between inner canthi](http://purl.obolibrary.org/obo/UBERON_0013678) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An anatomical line of the face that connects the two inner (medial) canthi of the eye
+    *  **-** [anatomical line between inner canthi](http://purl.obolibrary.org/obo/UBERON_0013678) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An anatomical line of the face that connects the two inner (medial) canthi of the eye { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
  * _Added_
-    *  **+** [anatomical line between inner canthi](http://purl.obolibrary.org/obo/UBERON_0013678) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An anatomical line of the face that connects the two inner (medial) canthi of the eye. The length of this line is known as the inter canthal distance.
+    *  **+** [anatomical line between inner canthi](http://purl.obolibrary.org/obo/UBERON_0013678) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* An anatomical line of the face that connects the two inner (medial) canthi of the eye. The length of this line is known as the inter canthal distance. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
 
 ### Changes for: [obsolete dorsal ramus of occulomotor nerve](http://purl.obolibrary.org/obo/UBERON_3010628)
 
@@ -570,28 +570,28 @@
  * _Deleted_
     *  **-** [nerve cord](http://purl.obolibrary.org/obo/UBERON_0005053) *[in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset)* [dubious_grouping](http://purl.obolibrary.org/obo/uberon/core#dubious_grouping)
  * _Added_
-    *  **+** [nerve cord](http://purl.obolibrary.org/obo/UBERON_0005053) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A cluster of ➞neurons that is the most prominent longitudinally extending condensed part of a ➞nervous system.
+    *  **+** [nerve cord](http://purl.obolibrary.org/obo/UBERON_0005053) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A cluster of ➞neurons that is the most prominent longitudinally extending condensed part of a ➞nervous system. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
 
 ### Changes for: [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187)
 
  * _Deleted_
-    *  **-** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The Harderian gland is an anterior orbital structure usually associated with the nictitating membrane, and produces and secretes a variety of substances to the eye, depending upon the species[GO]. An accessory lacrimal gland on the inner side of the orbit in reptiles and birds but usually degenerate in mammals[BTO].
+    *  **-** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The Harderian gland is an anterior orbital structure usually associated with the nictitating membrane, and produces and secretes a variety of substances to the eye, depending upon the species[GO]. An accessory lacrimal gland on the inner side of the orbit in reptiles and birds but usually degenerate in mammals[BTO]. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=GO:0070384 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Harderian_gland } 
  * _Added_
     *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) **SubClassOf** [innervated_by](http://purl.obolibrary.org/obo/RO_0002005) **some** [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161)
     *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) **SubClassOf** [intersects_midsagittal_plane_of](http://purl.obolibrary.org/obo/BSPO_0005001) **some** [orbital region](http://purl.obolibrary.org/obo/UBERON_0001697)
     *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) **SubClassOf** [medial gland of orbital region](http://purl.obolibrary.org/obo/UBERON_0015153)
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The Harderian gland is an anterior orbital structure usually associated with the nictitating membrane, and produces and secretes a variety of substances to the eye, depending upon the species[GO].
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[function_notes](http://purl.obolibrary.org/obo/UBPROP_0000009)* The functions attributed to the gland are many and diverse. Amongst these, it has been held to be a site of immune responses, a source of thermoregulatory lipids, a source of pheromones, a photoprotective organ and part of a retinal-pineal axis. It is arguably the last remaining large organ of widespread dis- tribution among the vertebrates to which we cannot confidently ascribe a confirmed function.
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* deep gland of the nictitating membrane
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* glandula palpebra tertia profundus
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_8293
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_8342
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9263
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9397
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9608
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9681
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9845
-    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[structure_notes](http://purl.obolibrary.org/obo/UBPROP_0000010)* The harderian gland may be compound tubular (MacLeod, 1880; Paule, 1957) or compound tubuloacinar/tubuloalveolar (Aureli, 1957; Hoffman, 1971).
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The Harderian gland is an anterior orbital structure usually associated with the nictitating membrane, and produces and secretes a variety of substances to the eye, depending upon the species[GO]. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=GO:0070384 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Harderian_gland } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[function_notes](http://purl.obolibrary.org/obo/UBPROP_0000009)* The functions attributed to the gland are many and diverse. Amongst these, it has been held to be a site of immune responses, a source of thermoregulatory lipids, a source of pheromones, a photoprotective organ and part of a retinal-pineal axis. It is arguably the last remaining large organ of widespread dis- tribution among the vertebrates to which we cannot confidently ascribe a confirmed function. { [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:7559104 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* deep gland of the nictitating membrane { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:7559104 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* glandula palpebra tertia profundus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:7559104 [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_8293 { [source](http://www.geneontology.org/formats/oboInOwl#source)=https://sourceforge.net/p/geneontology/ontology-requests/10639 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_8342 { [source](http://www.geneontology.org/formats/oboInOwl#source)=https://sourceforge.net/p/geneontology/ontology-requests/10639 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9263 { [source](http://www.geneontology.org/formats/oboInOwl#source)=https://sourceforge.net/p/geneontology/ontology-requests/10639 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9397 { [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:20665821 [source](http://www.geneontology.org/formats/oboInOwl#source)=https://sourceforge.net/p/geneontology/ontology-requests/10639 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9608 { [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:14803383 [source](http://www.geneontology.org/formats/oboInOwl#source)=https://sourceforge.net/p/geneontology/ontology-requests/10639 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9681 { [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:6997222  [source](http://www.geneontology.org/formats/oboInOwl#source)=https://sourceforge.net/p/geneontology/ontology-requests/10639 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[present_in_taxon](http://purl.obolibrary.org/obo/uberon/core#present_in_taxon)* http://purl.obolibrary.org/obo/NCBITaxon_9845 { [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:12969024 [source](http://www.geneontology.org/formats/oboInOwl#source)=https://sourceforge.net/p/geneontology/ontology-requests/10639 } 
+    *  **+** [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) *[structure_notes](http://purl.obolibrary.org/obo/UBPROP_0000010)* The harderian gland may be compound tubular (MacLeod, 1880; Paule, 1957) or compound tubuloacinar/tubuloalveolar (Aureli, 1957; Hoffman, 1971). { [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:7559104 } 
 
 ### Changes for: [prostate gland stroma](http://purl.obolibrary.org/obo/UBERON_0004184)
 
@@ -606,21 +606,21 @@
  * _Added_
     *  **+** [inferior oblique extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006320) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* AAO:0010117
     *  **+** [inferior oblique extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006320) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* m. obliquus inferior
-    *  **+** [inferior oblique extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006320) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* musculus obliquus inferior
+    *  **+** [inferior oblique extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006320) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* musculus obliquus inferior { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0010117 } 
 
 ### Changes for: [superior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006323)
 
  * _Added_
     *  **+** [superior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006323) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* AAO:0010099
     *  **+** [superior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006323) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* m. rectus superior
-    *  **+** [superior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006323) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* musculus rectus superior
+    *  **+** [superior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006323) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* musculus rectus superior { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0010099 } 
 
 ### Changes for: [inferior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006322)
 
  * _Added_
     *  **+** [inferior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006322) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* AAO:0010101
     *  **+** [inferior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006322) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* m, rectus inferior
-    *  **+** [inferior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006322) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* musculus rectus inferior
+    *  **+** [inferior rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0006322) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* musculus rectus inferior { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0010101 } 
 
 ### Changes for: [acinus of lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0011857)
 
@@ -638,14 +638,14 @@
 
  * _Deleted_
     *  **-** [median ocellus](http://purl.obolibrary.org/obo/UBERON_0003211) **SubClassOf** [dorsal ocellus](http://purl.obolibrary.org/obo/UBERON_0003161)
-    *  **-** [median ocellus](http://purl.obolibrary.org/obo/UBERON_0003211) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The ocellus that is is located medially on the cranium[HAO]. The number, form, and function of the dorsal ocelli varies markedly throughout insect orders. They tend to be larger and more strongly expressed in flying insects (particularly bees, wasps, dragonflies and locusts), where they are typically found as a triplet. Two lateral ocelli are directed to the left and right of the head respectively, while a central (median) ocellus is directed frontally. In some terrestrial insects (e.g. some ants and cockroaches), only two lateral ocelli are present: the median ocellus is absent. Note that the unfortunately labelled 'lateral ocelli' here refers to the sideways facing position of the ocelli, which are of the dorsal type. They should not be confused with the lateral ocelli of some insect larvae (see stemmata)[Wikipedia].
+    *  **-** [median ocellus](http://purl.obolibrary.org/obo/UBERON_0003211) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The ocellus that is is located medially on the cranium[HAO]. The number, form, and function of the dorsal ocelli varies markedly throughout insect orders. They tend to be larger and more strongly expressed in flying insects (particularly bees, wasps, dragonflies and locusts), where they are typically found as a triplet. Two lateral ocelli are directed to the left and right of the head respectively, while a central (median) ocellus is directed frontally. In some terrestrial insects (e.g. some ants and cockroaches), only two lateral ocelli are present: the median ocellus is absent. Note that the unfortunately labelled 'lateral ocelli' here refers to the sideways facing position of the ocelli, which are of the dorsal type. They should not be confused with the lateral ocelli of some insect larvae (see stemmata)[Wikipedia]. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=HAO:0000526 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[Ocelli](Wikipedia:Ocellus#Ocelli) } 
     *  **-** [median ocellus](http://purl.obolibrary.org/obo/UBERON_0003211) *[label](http://www.w3.org/2000/01/rdf-schema#label)* median ocellus
  * _Added_
     *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) **SubClassOf** [eye](http://purl.obolibrary.org/obo/UBERON_0000970)
-    *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A median eye is an ➞eye that is connected to a paired or unpaired median anterior ➞neuropil of the ➞syncerebrum by one or several median eye nerves.
-    *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* medial ocellus
-    *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* median ocellus
-    *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* frontal ocellus
+    *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A median eye is an ➞eye that is connected to a paired or unpaired median anterior ➞neuropil of the ➞syncerebrum by one or several median eye nerves. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
+    *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* medial ocellus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FBbt:00004507 } 
+    *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* median ocellus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=HAO:0000526 } 
+    *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* frontal ocellus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
     *  **+** [median eye](http://purl.obolibrary.org/obo/UBERON_0003211) *[label](http://www.w3.org/2000/01/rdf-schema#label)* median eye
 
 ### Changes for: [haemolymphatic fluid](http://purl.obolibrary.org/obo/UBERON_0000179)
@@ -716,7 +716,7 @@
     *  **-** [harderian gland epithelium](http://purl.obolibrary.org/obo/UBERON_0004694) *[label](http://www.w3.org/2000/01/rdf-schema#label)* harderian gland epithelium
  * _Added_
     *  **+** [Harderian gland epithelium](http://purl.obolibrary.org/obo/UBERON_0004694) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* epithelium of harderian gland
-    *  **+** [Harderian gland epithelium](http://purl.obolibrary.org/obo/UBERON_0004694) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* harderian gland epithelium
+    *  **+** [Harderian gland epithelium](http://purl.obolibrary.org/obo/UBERON_0004694) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* harderian gland epithelium { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MA:0001248 } 
     *  **+** [Harderian gland epithelium](http://purl.obolibrary.org/obo/UBERON_0004694) *[label](http://www.w3.org/2000/01/rdf-schema#label)* Harderian gland epithelium
 
 ### Changes for: [glossopharyngeal ganglion](http://purl.obolibrary.org/obo/UBERON_0001701)
@@ -734,7 +734,7 @@
     *  **+** [compound eye](http://purl.obolibrary.org/obo/UBERON_0000018) **SubClassOf** [composed_primarily_of](http://purl.obolibrary.org/obo/UBREL_0000002) **some** [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971)
     *  **+** [compound eye](http://purl.obolibrary.org/obo/UBERON_0000018) **SubClassOf** [multi-unit eye](http://purl.obolibrary.org/obo/UBERON_0015165)
     *  **+** [compound eye](http://purl.obolibrary.org/obo/UBERON_0000018) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* faceted eye
-    *  **+** [compound eye](http://purl.obolibrary.org/obo/UBERON_0000018) *[taxon_notes](http://purl.obolibrary.org/obo/UBPROP_0000008)* The term compound eye is sometimes used for the multi-unit eyes of annelids, bivalves, echinoderms. We follow Richter et al and restrict this class to the arthropod structure for these structures
+    *  **+** [compound eye](http://purl.obolibrary.org/obo/UBERON_0000018) *[taxon_notes](http://purl.obolibrary.org/obo/UBPROP_0000008)* The term compound eye is sometimes used for the multi-unit eyes of annelids, bivalves, echinoderms. We follow Richter et al and restrict this class to the arthropod structure for these structures { [source](http://www.geneontology.org/formats/oboInOwl#source)=PMID:21062451 } 
 
 ### Changes for: [gastropod cerebral ganglion](http://purl.obolibrary.org/obo/UBERON_0008942)
 
@@ -746,7 +746,7 @@
  * _Added_
     *  **+** [medial rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0001602) *[database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* AAO:0010113
     *  **+** [medial rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0001602) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* m. rectus medialis
-    *  **+** [medial rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0001602) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* musculus rectus medialis
+    *  **+** [medial rectus extraocular muscle](http://purl.obolibrary.org/obo/UBERON_0001602) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* musculus rectus medialis { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0010113 } 
 
 ### Changes for: [frontal artery](http://purl.obolibrary.org/obo/UBERON_0012187)
 
@@ -767,8 +767,8 @@
     *  **-** [dorsal nasal artery](http://purl.obolibrary.org/obo/UBERON_0001623) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* external nasal artery
  * _Added_
     *  **+** [dorsal nasal artery](http://purl.obolibrary.org/obo/UBERON_0001623) **SubClassOf** [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156)
-    *  **+** [dorsal nasal artery](http://purl.obolibrary.org/obo/UBERON_0001623) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* dorsal nasal branch of ophthalmic artery
-    *  **+** [dorsal nasal artery](http://purl.obolibrary.org/obo/UBERON_0001623) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* external nasal artery
+    *  **+** [dorsal nasal artery](http://purl.obolibrary.org/obo/UBERON_0001623) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* dorsal nasal branch of ophthalmic artery { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:50000 } 
+    *  **+** [dorsal nasal artery](http://purl.obolibrary.org/obo/UBERON_0001623) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* external nasal artery { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:50000 } 
 
 ### Changes for: [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622)
 
@@ -786,9 +786,9 @@
 ### Changes for: [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643)
 
  * _Deleted_
-    *  **-** [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Cranial nerve which connects the midbrain to the extra-ocular and intra-ocular muscles. // Cranial nerve that runs to the eye muscles.
+    *  **-** [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Cranial nerve which connects the midbrain to the extra-ocular and intra-ocular muscles. // Cranial nerve that runs to the eye muscles. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ISBN:0471209627 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Oculomotor_nerve } 
  * _Added_
-    *  **+** [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Cranial nerve which connects the midbrain to the extra-ocular and intra-ocular muscles.
+    *  **+** [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Cranial nerve which connects the midbrain to the extra-ocular and intra-ocular muscles. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ISBN:0471209627 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Oculomotor_nerve } 
 
 ### Changes for: [tapetum lucidum of camera-type eye](http://purl.obolibrary.org/obo/UBERON_0004868)
 
@@ -803,31 +803,31 @@
 ### Changes for: [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953)
 
  * _Deleted_
-    *  **-** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Outflow part of ventricle which is continuous with the pulmonary trunk[FNA]. The right ventricular outflow tract (RVOT) is an infundibular extension of the ventricular cavity which connects to the pulmonary artery[WP].
+    *  **-** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Outflow part of ventricle which is continuous with the pulmonary trunk[FNA]. The right ventricular outflow tract (RVOT) is an infundibular extension of the ventricular cavity which connects to the pulmonary artery[WP]. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:7216 } 
     *  **-** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* RVOT
     *  **-** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* right ventricular outflow tract
  * _Added_
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* anteriosuperior, smooth-walled portion of the cavity of the right ventricle, beginning at the supraventricular crest and terminating in the pulmonary trunk
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* RVOT
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* infundibulum of right ventricle
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* right ventricle pulmonary outflow tract
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* right ventricular outflow tract
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* arterial cone
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* conus arteriosus
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* pulmonary cone
-    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* pulmonary conus
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* anteriosuperior, smooth-walled portion of the cavity of the right ventricle, beginning at the supraventricular crest and terminating in the pulmonary trunk { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 } 
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* RVOT { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[abbreviation](http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION) } 
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* infundibulum of right ventricle { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 } 
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* right ventricle pulmonary outflow tract { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 } 
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* right ventricular outflow tract { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 } 
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* arterial cone { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 } 
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* conus arteriosus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 } 
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* pulmonary cone { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 } 
+    *  **+** [outflow part of right ventricle](http://purl.obolibrary.org/obo/UBERON_0005953) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* pulmonary conus { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010428 } 
 
 ### Changes for: [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956)
 
  * _Deleted_
-    *  **-** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Outflow part of ventricle which is continuous with the aorta[FMA]. The left ventricular outflow tract (LVOT), which connects to the aorta, is nearly indistinguishable from the rest of the ventricle[WP].
+    *  **-** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Outflow part of ventricle which is continuous with the aorta[FMA]. The left ventricular outflow tract (LVOT), which connects to the aorta, is nearly indistinguishable from the rest of the ventricle[WP]. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:9473 } 
     *  **-** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* LVOT
  * _Added_
-    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* anterosuperior fibrous portion of the left ventricle that connects to the ascending aorta.
-    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* LVOT
-    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* Sibson vestibule
-    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* aortic vestibule
-    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* heart left ventricle outflow tract
+    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* anterosuperior fibrous portion of the left ventricle that connects to the ascending aorta. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010429 } 
+    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* LVOT { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010429 [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[abbreviation](http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION) } 
+    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* Sibson vestibule { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010429 } 
+    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* aortic vestibule { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010429 } 
+    *  **+** [outflow part of left ventricle](http://purl.obolibrary.org/obo/UBERON_0005956) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* heart left ventricle outflow tract { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0010429 } 
 
 ### Changes for: [lacrimal gland epithelium](http://purl.obolibrary.org/obo/UBERON_0004817)
 
@@ -851,16 +851,16 @@
 ### Changes for: [neuropil](http://purl.obolibrary.org/obo/UBERON_0002606)
 
  * _Deleted_
-    *  **-** [neuropil](http://purl.obolibrary.org/obo/UBERON_0002606) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A dense intricate feltwork of interwoven fine glial processes, fibrils, synaptic terminals, axons, and dendrites interspersed among the nerve cells of the central nervous system[MESH]
+    *  **-** [neuropil](http://purl.obolibrary.org/obo/UBERON_0002606) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A dense intricate feltwork of interwoven fine glial processes, fibrils, synaptic terminals, axons, and dendrites interspersed among the nerve cells of the central nervous system[MESH] { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MESH:A08.637.500 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Neuropil } 
  * _Added_
-    *  **+** [neuropil](http://purl.obolibrary.org/obo/UBERON_0002606) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A cluster of ➞neurites that is part of a ➞nervous system and forms a network of dendrites and axons where ➞synapses are present and in which neuronal somata do not occur.
+    *  **+** [neuropil](http://purl.obolibrary.org/obo/UBERON_0002606) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A cluster of ➞neurites that is part of a ➞nervous system and forms a network of dendrites and axons where ➞synapses are present and in which neuronal somata do not occur. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
 
 ### Changes for: [white adipose tissue](http://purl.obolibrary.org/obo/UBERON_0001347)
 
  * _Deleted_
-    *  **-** [white adipose tissue](http://purl.obolibrary.org/obo/UBERON_0001347) *[external_definition](http://purl.obolibrary.org/obo/UBPROP_0000001)* Adipose tissue, cells of which contain a single large lipid droplet.[FMA[FMA:FMA]]
+    *  **-** [white adipose tissue](http://purl.obolibrary.org/obo/UBERON_0001347) *[external_definition](http://purl.obolibrary.org/obo/UBPROP_0000001)* Adipose tissue, cells of which contain a single large lipid droplet.[FMA[FMA:FMA]] { [source](http://www.geneontology.org/formats/oboInOwl#source)=FMA:FMA } 
  * _Added_
-    *  **+** [white adipose tissue](http://purl.obolibrary.org/obo/UBERON_0001347) *[external_definition](http://purl.obolibrary.org/obo/UBPROP_0000001)* Adipose tissue, cells of which contain a single large lipid droplet.[FMA[FMA:FMA]
+    *  **+** [white adipose tissue](http://purl.obolibrary.org/obo/UBERON_0001347) *[external_definition](http://purl.obolibrary.org/obo/UBPROP_0000001)* Adipose tissue, cells of which contain a single large lipid droplet.[FMA[FMA:FMA] { [source](http://www.geneontology.org/formats/oboInOwl#source)=FMA:FMA } 
 
 ### Changes for: [ascidian cerebral ganglion](http://purl.obolibrary.org/obo/UBERON_0009862)
 
@@ -889,8 +889,8 @@
     *  **+** [gland of nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0013230) **SubClassOf** [intersects_midsagittal_plane_of](http://purl.obolibrary.org/obo/BSPO_0005001) **some** [orbital region](http://purl.obolibrary.org/obo/UBERON_0001697)
     *  **+** [gland of nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0013230) **SubClassOf** [medial gland of orbital region](http://purl.obolibrary.org/obo/UBERON_0015153)
     *  **+** [gland of nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0013230) *[comment](http://www.w3.org/2000/01/rdf-schema#comment)* This gland is distinct from the other medial ocular gland, the Harderian gland, and is typified by clusters of glandular tissue within the nictitating membrane
-    *  **+** [gland of nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0013230) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* glandula palpebra tertia superficialis
-    *  **+** [gland of nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0013230) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* superficial gland of the nictitating membrane
+    *  **+** [gland of nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0013230) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* glandula palpebra tertia superficialis { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:7559104 [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) } 
+    *  **+** [gland of nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0013230) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* superficial gland of the nictitating membrane { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:7559104 } 
 
 ### Changes for: [lateral palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014772)
 
@@ -903,12 +903,12 @@
 
  * _Deleted_
     *  **-** [brille](http://purl.obolibrary.org/obo/UBERON_0010515) *[comment](http://www.w3.org/2000/01/rdf-schema#comment)* Taxon notes: In snakes, there is no eyelid and the brille is clear and cannot be distinguished except when the animal is becoming ready for ecdysis. At that time, it becomes cloudy and is visible as a cover over the eye. When the snake moults, the brille is also shed as part of its skin. The Brilles protect their eyes from dust and dirt and gives them a "glassy-eyed" blank appearance Snakes, flap-footed lizards, night lizards, and some skinks have brilles. All geckos except those in the subfamily Eublepharinae (eyelid geckos) possess brilles. Fish also have transparent eyelids called adipose eyelids.
-    *  **-** [brille](http://purl.obolibrary.org/obo/UBERON_0010515) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* layer of transparent, immovable disc-shaped skin or scale covering the eyes of some animals for protection, especially in animals without eyelids. The brille has evolved from a fusion of the upper and lower eyelids.
+    *  **-** [brille](http://purl.obolibrary.org/obo/UBERON_0010515) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* layer of transparent, immovable disc-shaped skin or scale covering the eyes of some animals for protection, especially in animals without eyelids. The brille has evolved from a fusion of the upper and lower eyelids. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Brille } 
  * _Added_
     *  **+** [brille](http://purl.obolibrary.org/obo/UBERON_0010515) **SubClassOf** [has_fused_element](http://purl.obolibrary.org/obo/RO_0002374) **some** [lower eyelid](http://purl.obolibrary.org/obo/UBERON_0001713)
     *  **+** [brille](http://purl.obolibrary.org/obo/UBERON_0010515) **SubClassOf** [has_fused_element](http://purl.obolibrary.org/obo/RO_0002374) **some** [upper eyelid](http://purl.obolibrary.org/obo/UBERON_0001712)
     *  **+** [brille](http://purl.obolibrary.org/obo/UBERON_0010515) *[comment](http://www.w3.org/2000/01/rdf-schema#comment)* Taxon notes: In snakes, there is no eyelid and the brille is clear and cannot be distinguished except when the animal is becoming ready for ecdysis. At that time, it becomes cloudy and is visible as a cover over the eye. When the snake moults, the brille is also shed as part of its skin. The Brilles protect their eyes from dust and dirt and gives them a "glassy-eyed" blank appearance Snakes, flap-footed lizards, night lizards, and some skinks have brilles. All geckos except those in the subfamily Eublepharinae (eyelid geckos) possess brilles. Fish also have transparent eyelids called adipose eyelids. // there are transitional stages between total lid loss and full brille formation (Bellairs & Boyd, 1947).
-    *  **+** [brille](http://purl.obolibrary.org/obo/UBERON_0010515) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A layer of transparent, immovable disc-shaped skin or scale covering the eyes of some animals for protection, especially in animals without eyelids. The brille has evolved from a fusion of the upper and lower eyelids.
+    *  **+** [brille](http://purl.obolibrary.org/obo/UBERON_0010515) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A layer of transparent, immovable disc-shaped skin or scale covering the eyes of some animals for protection, especially in animals without eyelids. The brille has evolved from a fusion of the upper and lower eyelids. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Brille } 
 
 ### Changes for: [parametrial fat pad](http://purl.obolibrary.org/obo/UBERON_0010413)
 
@@ -921,15 +921,15 @@
 ### Changes for: [central nervous system](http://purl.obolibrary.org/obo/UBERON_0001017)
 
  * _Deleted_
-    *  **-** [central nervous system](http://purl.obolibrary.org/obo/UBERON_0001017) *[external_definition](http://purl.obolibrary.org/obo/UBPROP_0000001)* The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina.
+    *  **-** [central nervous system](http://purl.obolibrary.org/obo/UBERON_0001017) *[external_definition](http://purl.obolibrary.org/obo/UBPROP_0000001)* The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina. { [source](http://www.geneontology.org/formats/oboInOwl#source)=GO:1 } 
 
 ### Changes for: [mushroom body](http://purl.obolibrary.org/obo/UBERON_0001058)
 
  * _Deleted_
-    *  **-** [mushroom body](http://purl.obolibrary.org/obo/UBERON_0001058) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* corpora pedunculata
+    *  **-** [mushroom body](http://purl.obolibrary.org/obo/UBERON_0001058) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* corpora pedunculata { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FBbt:00005801 } 
  * _Added_
-    *  **+** [mushroom body](http://purl.obolibrary.org/obo/UBERON_0001058) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* corpora pedunculata
-    *  **+** [mushroom body](http://purl.obolibrary.org/obo/UBERON_0001058) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* corps pédonculés@fr
+    *  **+** [mushroom body](http://purl.obolibrary.org/obo/UBERON_0001058) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* corpora pedunculata { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FBbt:00005801 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
+    *  **+** [mushroom body](http://purl.obolibrary.org/obo/UBERON_0001058) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* corps pédonculés@fr { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
 
 ### Changes for: [region of conjunctiva](http://purl.obolibrary.org/obo/UBERON_0010305)
 
@@ -939,7 +939,7 @@
 ### Changes for: [nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0010207)
 
  * _Added_
-    *  **+** [nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0010207) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* palperbra tertia
+    *  **+** [nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0010207) *[has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* palperbra tertia { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:7559104 [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) } 
 
 ### Changes for: [brain](http://purl.obolibrary.org/obo/UBERON_0000955)
 
@@ -959,11 +959,11 @@
 ### Changes for: [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971)
 
  * _Deleted_
-    *  **-** [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* One of the small facets of the compound eye.
+    *  **-** [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* One of the small facets of the compound eye. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ISBN:3110148986 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=Wikipedia:Ommatidium } 
  * _Added_
     *  **+** [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971) **SubClassOf** [eye](http://purl.obolibrary.org/obo/UBERON_0000970)
-    *  **+** [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The smallest morphological and functional unit of the ➞compound eye that consists of a usually limited and often constant number of rhabdomeric ➞photoreceptor cells, cornea-secreting epithelial cells, and interommatidial pigment cells, and may additionally contain crystalline cone cells.
-    *  **+** [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* omatidia
+    *  **+** [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The smallest morphological and functional unit of the ➞compound eye that consists of a usually limited and often constant number of rhabdomeric ➞photoreceptor cells, cornea-secreting epithelial cells, and interommatidial pigment cells, and may additionally contain crystalline cone cells. { [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=PMID:21062451 } 
+    *  **+** [ommatidium](http://purl.obolibrary.org/obo/UBERON_0000971) *[has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* omatidia { [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[plural term](http://purl.obolibrary.org/obo/uberon/core#PLURAL) } 
 
 # Report for properties
 
