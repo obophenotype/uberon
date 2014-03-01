@@ -60,52 +60,67 @@ seed.obo: seed.owl
 EDITSRC = seed.owl
 IMP = $(OBO)/uberon
 
-pato.owl: uberon.owl
+bspo.owl:
+	owltools $(OBO)/bspo.owl  -o $@
+##	owltools $(OBO)/bspo.owl --remove-annotation-assertions -l -d -o $@
+
+ro.owl: $(EDITSRC) bspo.owl
+	owltools external/obo-relations/ro-edit.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@
+##	owltools $(OBO)/ro.owl $(OBO)/bspo.owl --merge-support-ontologies --merge-imports-closure -o $@
+
+ro_import.owl: ro.owl $(EDITSRC)
+##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
+	owltools --use-catalog $< --remove-axioms --remove-annotation-assertions -l -d -r  uberon.owl --extract-properties --set-ontology-id $(OBO)/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
+
+pato.owl: $(EDITSRC) 
 	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // --set-ontology-id $(OBO)/$@ -o $@
 pato_import.owl: pato.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 # TODO - logical definitions go->ubr,cl
-go.owl: uberon.owl
+go.owl: $(EDITSRC) 
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
 go_import.owl: go.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-envo.owl: uberon.owl
+envo.owl: $(EDITSRC) 
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
 envo_import.owl: envo.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-nbo.owl: uberon.owl
+nbo.owl: $(EDITSRC) 
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
 nbo_import.owl: nbo.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-chebi.owl: uberon.owl
-	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
+chebi.owl: $(EDITSRC) 
+	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
 chebi_import.owl: chebi.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-aminoacid.owl: uberon.owl
+aminoacid.owl: $(EDITSRC) 
 	owltools $(OBO)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(OBO)/uberon/$@  -o $@
 pr.owl: aminoacid.owl
-	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@
+	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@
 pr_import.owl: pr.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-ncbitaxon.owl: uberon.owl
-	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
+# TODO - use full taxonomy
+ncbitaxon.owl: 
+	OWLTOOLS_MEMORY=14G owltools $(OBO)/ncbitaxon.owl -o $@
+##	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
+
 ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 # CL - take **everything**
-cl_import.owl: cl-core.obo uberon.owl
+cl_import.owl: cl-core.obo $(EDITSRC)
 	owltools $(UCAT) $< --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-%_import.obo: %_import.owl uberon.owl
-	owltools $< -o -f obo $@
+%_import.obo: %_import.owl
+	owltools $< -o -f obo --no-check $@
 
-imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo
+imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo cl_import.obo
 	touch $@
 
 # ----------------------------------------
@@ -120,11 +135,11 @@ markdown:
 
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
-unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl imports
+unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
 ## TODO - get rid of inferred subclass axioms for other ontology classes
-release.owl: unreasoned.owl
+release.owl: unreasoned.owl imports
 	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --outdir newbuild --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp newbuild/uberon/core.owl $@
 
 # this should become the new uberon.owl
@@ -138,7 +153,7 @@ release.owl: unreasoned.owl
 ext.owl: release.owl
 	owltools $(UCAT) $< --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 ext.obo: ext.owl
-	owltools $(UCAT) $< --merge-import-closure --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
+	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
 
 # merged.owl is now the flattening of ext.owl
 # merged.obo will be the same as ext.obo
@@ -156,7 +171,7 @@ uberon.obo: uberon.owl
 
 # remember to git mv - this replaces uberon-simple
 basic.owl:  uberon.owl
-	owltools $< --make-subset-by-properties BFO:0000050 RO:0002202 immediate_transformation_of // --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+	owltools $< --make-subset-by-properties -f BFO:0000050 RO:0002202 immediate_transformation_of // --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 basic.obo: basic.owl
 	obolib-owl2obo $< -o $@.tmp && obo2obo $@.tmp -o $@
 
@@ -178,6 +193,17 @@ disjoint-violations.txt: unreasoned.owl
 	owltools --no-debug $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --reasoner elk --check-disjointness-axioms > $@
 
 newpipe: basic-xp-check
+
+# ----------------------------------------
+# REPORTS
+# ----------------------------------------
+%-classes.tsv: %.owl
+	owljs-tableify -R "develops from,in taxon" -c -o $@ $<
+
+ro_import-relations.tsv: %.owl
+	owljs-tableify -r hermit -t ObjectProperty -c -o $@ $<
+%-relations.tsv: %.owl
+	owljs-tableify -t ObjectProperty -c -o $@ $<
 
 # ----------------------------------------
 # SEP MATERIALIZATION
@@ -231,7 +257,7 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 # these can be used to validate on a per-bridge file basis. There are two flavours:
 # * quick tests ignore the axioms in the external ontology
 # * full tests use these axioms
-# note at this time we don't expect all full bridge tests to pass. This is because the disjointness axioms are
+# note at this time we don't expect all full-bridge tests to pass. This is because the disjointness axioms are
 # very strong and even seemingly minor variations in representation across ontologies can lead to unsatisfiable classes
 # note: exclude EHDAA2 for now until extraembryonic/embryonic issues sorted
 ## CHECK_AO_LIST = ma emapa ehdaa2 zfa xao fbbt wbbt
@@ -244,8 +270,11 @@ full-bridge-checks: $(patsubst %,full-bridge-check-%.txt,$(CHECK_AO_LIST))
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
 quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-bridge-check-%.txt: uberon_edit.obo bridge/bridges external-disjoints.owl
-	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+bridge-check-%.owl: uberon_edit.obo bridge/bridges external-disjoints.owl
+	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies -o -f ofn $@
+.PRECIOUS: bridge-check-%.owl
+bridge-check-%.txt: bridge-check-%.owl
+	owltools --no-debug --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 full-bridge-check-%.txt: ext.owl bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 core-bridge-check-%.txt: core.owl bridge/bridges external-disjoints.owl
@@ -373,7 +402,7 @@ subsets/pulmonary-minimal.obo: merged.owl
 subsets/cranial-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
-	owltools $< --make-subset-by-properties part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --make-subset-by-properties -f part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-ext.owl: #merged.owl
 	owltools --use-catalog pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "$(PART_OF) some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "this ontology is a derived subset of the phenoscape uberon extension, including only classes that satisfy the query 'part of some appendicular skeleton' " -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
 .PRECIOUS: subsets/appendicular-ext.owl
@@ -432,7 +461,7 @@ other-bridges: merged.owl
 # core: the full ontology, excluding external classes, but including references to these
 # TODO: use --make-subset-by-properties
 cl-core.obo: cl.obo
-	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
+	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | grep -v ^equivalent | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
 
 # TODO - this may replace the above BUT need to preserve dangling axioms
 cl-core-new.obo: cl.obo
@@ -517,6 +546,12 @@ composite-zfa.owl: local-zfa.owl $(MBASE)
 
 composite-wbbt.owl: local-wbbt.owl $(MBASE)
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-wbbt.owl bridge/cl-bridge-to-wbbt.owl $< --merge-support-ontologies --reasoner elk \
+ --merge-species-ontology -s 'C elegans' -t NCBITaxon:6237 \
+ --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
+ -o -f ofn $@
+
+composite-wbls.owl: local-wbls.owl $(MBASE)
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-wbls.owl bridge/cl-bridge-to-wbls.owl $< --merge-support-ontologies --reasoner elk \
  --merge-species-ontology -s 'C elegans' -t NCBITaxon:6237 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
@@ -809,8 +844,8 @@ mapping_EMAP_to_EMAPA.txt:
 # TEXT MINING
 # ----------------------------------------
 
-%-matches.tbl: %.txt
-	 blip-findall  -debug index -index "metadata_nlp:entity_label_token_list_stemmed(1,0,0,0)" -u metadata_nlp -i $< -r cell -r uberon "$*(X),label_full_parse(X,true,S)" -select "m(X,S)" -label > $@
+#%-matches.tbl: %.txt
+#	 blip-findall  -debug index -index "metadata_nlp:entity_label_token_list_stemmed(1,0,0,0)" -u metadata_nlp -i $< -r cell -r uberon "$*(X),label_full_parse(X,true,S)" -select "m(X,S)" -label > $@
 
 # ----------------------------------------
 # DBPEDIA
@@ -984,3 +1019,41 @@ source-ontologies/NeuroNames.obo: source-ontologies/NeuroNames.xml
 # ----------------------------------------
 util/ubermacros.el:
 	blip-findall  -r pext -r taxslim -consult util/write_ubermacros.pro  w > $@
+
+# ----------------------------------------
+# DOCUMENTATION
+# ----------------------------------------
+
+all_html: $(patsubst %, %_import/.index.html, $(IMPORTS))
+
+# experimental: owltools will generate graphs of import closures, as well as basic metadata as markdown files
+%.md: %.dot
+	echo done
+.PRECIOUS: %.md
+
+%.dot: %.owl
+	owltools --use-catalog $< --write-imports-dot $@ --ontology-metadata-to-markdown $*.md
+.PRECIOUS: %.dot
+
+%.png: %.dot
+	dot  -Grankdir=LR -Tpng $< -o $@
+.PRECIOUS: %.png
+
+%.cmapx: %.dot %.png
+	dot  -Grankdir=LR -Tcmapx $< -o $@
+.PRECIOUS: %.cmapx
+
+# adds image map
+%-x.md: %.md %.cmapx %.png
+	./util/add-map.pl $*.png $< $*.cmapx > $@
+.PRECIOUS: %-x.md
+
+%-dir:
+	test -d $* || mkdir $*
+
+# requires pandoc
+%/index.html: %-x.md %-dir
+	pandoc $< -o $@  && cp $*.png $*/
+#	pandoc $< -o $@ && cp $@ $*/index.html && cp $*.png $*/
+#	pandoc $< -o $@ && svn ps svn:mime-type text/html $*
+#	pandoc $< -o $@ && cp $*.html $* && svn ps svn:mime-type text/html $*
