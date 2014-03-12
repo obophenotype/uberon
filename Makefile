@@ -261,7 +261,7 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 # very strong and even seemingly minor variations in representation across ontologies can lead to unsatisfiable classes
 # note: exclude EHDAA2 for now until extraembryonic/embryonic issues sorted
 ## CHECK_AO_LIST = ma emapa ehdaa2 zfa xao fbbt wbbt
-CHECK_AO_LIST = ma emapa zfa xao fbbt wbbt
+CHECK_AO_LIST = ma emapa zfa xao fbbt wbbt wbls
 FULL_CHECK_AO_LIST = fma $(CHECK_AO_LIST)
 quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
 bridge-checks: $(patsubst %,bridge-check-%.txt,$(CHECK_AO_LIST))
@@ -346,6 +346,7 @@ QC_FILES = uberon_edit-xp-check\
     uberon-dv.txt\
     uberon-discv.txt\
     composites\
+    composite-metazoan-basic.obo\
     composite-metazoan-dv.txt\
     all_taxmods\
 #    depictions.owl\
@@ -500,7 +501,7 @@ cl-core.owl: cl-core.obo
 composites: composite-metazoan.obo composite-vertebrate.obo
 
 CVERTS = composite-zfa.owl composite-ma.owl composite-xao.owl composite-ehdaa2.owl
-CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl
+CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl composite-wbls.owl
 composite-vertebrate.owl: $(CVERTS)
 	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations -o $@
 
@@ -642,7 +643,7 @@ uberon-taxmod-%.owl: ext.owl
 # ----------------------------------------
 
 bridge/bridges: bridge/uberon-bridge-to-vhog.owl seed.obo cl-with-xrefs.obo
-	cd bridge && ../make-bridge-ontologies-from-xrefs.pl ../seed.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-with-xrefs.obo ../cl-xrefs.obo && touch bridges
+	cd ./bridge && ../make-bridge-ontologies-from-xrefs.pl ../seed.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-with-xrefs.obo ../cl-xrefs.obo && touch bridges
 
 cl-with-xrefs.obo: cl-core.obo 
 	grep ^treat- uberon_edit.obo > $@ && cat $< >> $@
@@ -828,6 +829,8 @@ stages.obo:
 mapping_EMAP_to_EMAPA.txt:
 	wget ftp://lausanne.isb-sib.ch/pub/databases/Bgee/general/mapping_EMAP_to_EMAPA.txt
 
+similarity.tsv:
+	wget http://svn.code.sf.net/p/bgee/code/trunk/release/similarity/similarity.tsv -O $@
 
 # ----------------------------------------
 # VIEWS
