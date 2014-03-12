@@ -115,7 +115,7 @@ ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC)
 
 # CL - take **everything**
 cl_import.owl: cl-core.obo $(EDITSRC)
-	owltools $(UCAT) $< --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+	owltools $(UCAT) $<  --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 %_import.obo: %_import.owl
 	owltools $< -o -f obo --no-check $@
