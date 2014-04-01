@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/pato_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2014-01-23/pato_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2014-03-31/pato_import.owl"/>
     </owl:Ontology>
     
 
@@ -26,6 +26,15 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000025 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000025">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
     </owl:Class>
     
 
@@ -53,6 +62,15 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000136">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">closure</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000140 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000140">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
     </owl:Class>
     
 
@@ -134,6 +152,15 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001018">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001154 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001154">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elongated</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
     </owl:Class>
     
 
@@ -228,6 +255,33 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001579 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001579">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contractility</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001598 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001598">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protruding</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001690 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001690">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contractile</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001579"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001736 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001736">
@@ -269,6 +323,24 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001987">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">saccular</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002014"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001992 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001992">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cellularity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001995"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001993 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001993">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multicellular</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001992"/>
     </owl:Class>
     
 
@@ -327,11 +399,39 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0002299 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002299">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tubular</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001873"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002078"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0002505 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002505">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleated</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001404"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002507 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002507">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">keratinous</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000025"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002519 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002519">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cancellous</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
     </owl:Class>
     
 

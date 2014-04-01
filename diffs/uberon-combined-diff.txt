@@ -1,33 +1,12 @@
-releases/2014-01-21
-
-ext:
-   r4036 | wdahdul | updated label on epicentral bone
-core:
-   NT: scolex
-   removed analogy-syns from bone marrow. Fixes issue #391
-   NT (obs) neocortical column
-
-
-
 ! uberon definition changes
 !
 ! Files used:
-! file 1 (old): 11:01:2014 11:00, cvs revision unknown
-! file 2 (new): 23:01:2014 22:36, cvs revision unknown
+! file 1 (old): 28:03:2014 16:02, cvs revision unknown
+! file 2 (new): 30:03:2014 12:49, cvs revision unknown
 
 !
 ! Format of first line of each entry:
 ! Term ID : term name  ( total # annots / # direct annots)
-
-
-UBERON:0002270 : hyaloid artery   
-OLD: The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus. During the tenth week of development in humans (time varies depending on species), the lens grows independent of a blood supply and the hyaloid artery usually regresses. Its proximal portion remains as the central artery of the retina. Regression of the hyaloid artery leaves a clear central zone through the vitreous called the hyaloid canal or Cloquet's canal. . Occasionally the artery may not fully regress, resulting in the condition persistent hyaloid artery. More commonly, small remnants of the artery may remain. Free remnants can sometimes be seen as 'floaters'. An anterior remnant of the hyaloid artery can be seen in some people as Mittendorf's dot, a small pinpoint-like scar on the posterior surface of the lens. A posterior remnant may be seen where the artery left the optic disc, and is known as Bergmeister's papilla.
-NEW: The hyaloid artery is a branch of the ophthalmic artery, which is itself a branch of the internal carotid artery. It is contained within the optic stalk of the eye and extends from the optic disc through the vitreous humor to the lens. Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus. During the tenth week of development in humans (time varies depending on species), the lens grows independent of a blood supply and the hyaloid artery usually regresses. Its proximal portion remains as the central artery of the retina. Regression of the hyaloid artery leaves a clear central zone through the vitreous called the hyaloid canal or Cloquet's canal. Occasionally the artery may not fully regress, resulting in the condition persistent hyaloid artery. More commonly, small remnants of the artery may remain. Free remnants can sometimes be seen as 'floaters'. An anterior remnant of the hyaloid artery can be seen in some people as Mittendorf's dot, a small pinpoint-like scar on the posterior surface of the lens. A posterior remnant may be seen where the artery left the optic disc, and is known as Bergmeister's papilla.
-
-
-UBERON:0006010 : hyaloid canal   
-OLD: Hyaloid canal is a small transparent canal running through the vitreous body from the optical nerve disc to the lens; in foetus it contains a prolongation of the central artery of the retina, the hyaloid artery. Other names: Cloquet's canal, Stilling's canal. The function of the canal is to provide an adjustable reservoir of mobile liquid which may be easily and rapidly displaced backwards in positive accommodation, forwards in negative accommodation[WP]. a passage running from in front of the optic disk to the lens of the eye; in the fetus, it transmits the hyaloid artery[TFD].
-NEW: A small transparent canal running through the vitreous body from the optical nerve disc to the lens. It is formed by an invagination of the hyaloid, a membrane which encloses the vitreous body[WP].
 
 
 
@@ -36,15 +15,13 @@ Ontology Comparison Report
 ==========================
 
 Files used:
-- file 1 (old): uberon-lastbuild.obo; data version: releases/2014-01-11; date: 11:01:2014 11:00
-- file 2 (new): uberon.obo; data version: releases/2014-01-23; date: 23:01:2014 22:36
+- file 1 (old): uberon-lastbuild.obo; data version: releases/2014-03-28; date: 28:03:2014 16:02
+- file 2 (new): uberon.obo; data version: releases/2014-03-30; date: 30:03:2014 12:49
 
 NEW TERMS
 =========
 
-ID	name	namespace
-UBERON:0015118	neocortical column	
-UBERON:0015119	scolex	
+None
 
 
 OBSOLETIONS
@@ -64,22 +41,11 @@ TERM CHANGES
 
 KEY:  'A' : added, 'D' : deleted, 'C' : changed
 
-Term ID	name	def	comment	synonym	xref	is_a	relationship	
-UBERON:0001284				1 D, 4 A	2 A			
-UBERON:0002002							1 D, 1 A	
-UBERON:0002270		C				2 A	3 A	
-UBERON:0002319					1 D			
-UBERON:0002371				6 D, 2 A				
-UBERON:0004785				1 A	1 A			
-UBERON:0005392				3 A	1 A			
-UBERON:0005394				6 A	1 A			
-UBERON:0005395				1 D, 5 A				
-UBERON:0006010		C	D	2 D, 3 A		2 D, 1 A		
-UBERON:0007721							1 D, 1 A	
-UBERON:0008982							1 D, 1 A	
-UBERON:0012111							1 D, 1 A	
-UBERON:0012132							1 D, 1 A	
-UBERON:2001798	C							
+Term ID	relationship	
+UBERON:0002002	1 D, 1 A	
+UBERON:0007721	1 D, 1 A	
+UBERON:0007722	1 D, 1 A	
+UBERON:0012132	1 D, 1 A	
 
 
 
@@ -91,17 +57,17 @@ Term counts for the old and new files
 Ontology	Old file	New file	Change
 none	272	272	
 	(216 defined)	(216 defined)	
-uberon	8942	8943	+1
-	(7278 defined)	(7279 defined)	
-uberon/phenoscape-anatomy	2304	2304	
-	(1588 defined)	(1588 defined)	
+uberon	9218	9218	
+	(7392 defined)	(7392 defined)	
+uberon/phenoscape-anatomy	2294	2294	
+	(1581 defined)	(1581 defined)	
 
-Obsolete	621	622	+1
-	(5.1% of total)	 (5.1% of total)	(+0.2%)
+Obsolete	637	637	0
+	(5.1% of total)	 (5.1% of total)	(0.0%)
 
-Totals	11518	11519	+2 (0.0%)
-	9082 (78.9%) defined	9083 (78.9%) defined	
-	12139 inc. obs	12141 inc. obs
+Totals	11784	11784	0 (0.0%)
+	9189 (78.0%) defined	9189 (78.0%) defined	
+	12421 inc. obs	12421 inc. obs
 
 
 

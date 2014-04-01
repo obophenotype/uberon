@@ -19,7 +19,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/fbbt.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt/2014-01-23/uberon/bridge/uberon-bridge-to-fbbt.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt/2014-03-28/uberon/bridge/uberon-bridge-to-fbbt.owl"/>
     </owl:Ontology>
     
 
@@ -470,12 +470,6 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000306 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000306"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CL_0000307 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000307"/>
     
 
 
@@ -1523,6 +1517,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FBbt_00003152 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003152">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0015231"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003152</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circulatory system dorsal vessel (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FBbt_00003154 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003154">
@@ -1530,6 +1544,7 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0007100"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0015230"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
@@ -1538,7 +1553,8 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003154</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circulatory organ (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal vessel heart (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary circulatory organ (drosophila)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1838,7 +1854,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00004507</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">median ocellus (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">median eye (drosophila)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2758,7 +2774,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00004993</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">outer epithelial layer (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">outer epithelium (drosophila)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -2819,26 +2835,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005024</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open tracheal system (drosophila)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FBbt_00005038 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005038">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000307"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005038</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tracheal epithelial cell (drosophila)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -4825,6 +4821,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FBbt_00007278 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00007278">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0015203"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00007278</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-connected functional system (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FBbt_00007330 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00007330">
@@ -5976,6 +5992,24 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0014895 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0014895"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0015203 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0015203"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0015230 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0015230"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0015231 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0015231"/>
 </rdf:RDF>
 
 

@@ -14,34 +14,24 @@ UCAT = --use-catalog
 
 # SEED ONTOLOGY - use to make import modules
 #
-# for now we combine all cell and gross anatomy into one edit file; TODO - ext
-# (syn for core.owl)
-uberon_edit_safe.obo: uberon_edit.obo 
-	egrep -v 'spatially_disjoint_from.*pending' $< > $@
-uberon_edit.owl: uberon_edit_safe.obo 
-	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
+uberon_edit.owl: uberon_edit.obo 
+	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o  $@.tmp && ./util/expand-dbxref-literals.pl $@.tmp > $@
 ### TODO - restore --expand-macros
 ###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 
-# todo - rename this
-core.owl:
-	ln -s $@ uberon_edit.owl
-
+# This is primarily for use in editing the phenoscape-ext.owl file
+core.owl: uberon_edit.owl
+	owltools $< -o -f ofn $@
 
 pe:
 	mkdir pe
-
-# note: developers may want to do this via a symlink
-#pe/phenoscape-ext.owl: pe
-#	wget http://purl.obolibrary.org/obo/uberon/phenoscape-ext.owl -O $@
 
 # this is primarily used for seeding
 phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
-
-corecheck.owl: uberon_edit.obo 
-	owltools $(UCAT) $< external-disjoints.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
+#corecheck.owl: uberon_edit.owl
+#	owltools $(UCAT) $< external-disjoints.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
 
 
 # ----------------------------------------
@@ -51,9 +41,6 @@ corecheck.owl: uberon_edit.obo
 # seed.owl is never released - it is used to seed module extraction
 seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 	owltools $(UCAT) uberon_edit.owl $< cl-core.obo --merge-support-ontologies -o -f functional $@
-# this is used for xrefs for bridge files
-seed.obo: seed.owl
-	owltools $(UCAT) $< -o -f obo $@
 
 # todo - change to phenoscape-ext
 #EDITSRC = uberon_edit.owl
@@ -64,6 +51,7 @@ bspo.owl:
 	owltools $(OBO)/bspo.owl  -o $@
 ##	owltools $(OBO)/bspo.owl --remove-annotation-assertions -l -d -o $@
 
+# merge BSPO into RO
 ro.owl: $(EDITSRC) bspo.owl
 	owltools external/obo-relations/ro-edit.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@
 ##	owltools $(OBO)/ro.owl $(OBO)/bspo.owl --merge-support-ontologies --merge-imports-closure -o $@
@@ -147,7 +135,6 @@ release.owl: unreasoned.owl imports
 #	owltools $(UCAT) $< --assert-inferred-subclass-axioms --useIsInferred --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 #release.obo: release.owl
 #	owltools $(UCAT) $< -o -f obo $@
-
 
 # previously we had merged and ext - now just ext. TODO: release/date
 ext.owl: release.owl
@@ -461,14 +448,15 @@ other-bridges: merged.owl
 
 # core: the full ontology, excluding external classes, but including references to these
 # TODO: use --make-subset-by-properties
-cl-core.obo: cl.obo
+# note: requires symlink to cl directory
+cl-core.obo: cell-ontology/cl.obo
 	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | grep -v ^equivalent | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
 
 # TODO - this may replace the above BUT need to preserve dangling axioms
-cl-core-new.obo: cl.obo
+cl-core-new.obo: cell-ontology/cl.obo
 	owltools $< --make-subset-by-properties BFO:0000050 RO:0002202 RO:0002215 // --remove-axioms -t DisjointClasses -o -f obo $@
 
-# this is required for bridging axioms
+# this is required for bridging axioms; ZFA inverts the usual directionality
 cl-xrefs.obo:
 	blip-findall -r ZFA "entity_xref(Z,C),id_idspace(C,'CL')" -select C-Z -use_tabs -no_pred | tbl2obolinks.pl  --rel xref > $@
 
@@ -507,6 +495,9 @@ composite-vertebrate.owl: $(CVERTS)
 
 composite-metazoan.owl: $(CMETS)
 	owltools  --create-ontology -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/composite-metazoan.owl uberon/$@  $(CMETS)  --merge-support-ontologies --repair-relations -o $@
+
+composite-metazoan-basic.obo: composite-metazoan.owl
+	owltools $<  --extract-mingraph --set-ontology-id $(OBO)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
 
 # owl2obo
 composite-%.obo: composite-%.owl
@@ -562,7 +553,7 @@ composite-fbbt.owl: local-fbbt.owl local-fbdv.owl $(MBASE) local-fbdv.obo
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-fbbt.owl bridge/cl-bridge-to-fbbt.owl $< local-fbdv.owl --merge-support-ontologies --reasoner elk \
  --merge-species-ontology -s 'Drosophila' -t NCBITaxon:7227 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
- -o -f ofn $@
+ -o -f ofn $@ && perl -pi -ne 's@FlyBase development CV@FlyBase_development_CV@' $@
 
 composite-ehdaa2.owl: local-ehdaa2.owl $(MBASE)
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ehdaa2.owl bridge/uberon-bridge-to-hsapdv.owl bridge/cl-bridge-to-ehdaa2.owl $< developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
@@ -622,6 +613,8 @@ uberon-taxmod-euarchontoglires.owl: uberon-taxmod-314146.owl
 	cp $< $@
 uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
 	cp $< $@
+uberon-taxmod-annelid.owl: uberon-taxmod-6340.owl
+	cp $< $@
 
 uberon-taxmod-%.obo: uberon-taxmod-%.owl
 	owltools $(UCAT) $< -o -f obo $@
@@ -641,6 +634,10 @@ uberon-taxmod-%.owl: ext.owl
 # ----------------------------------------
 # BRIDGES
 # ----------------------------------------
+
+# this is used for xrefs for bridge files
+seed.obo: seed.owl
+	owltools $(UCAT) $< -o -f obo $@
 
 bridge/bridges: bridge/uberon-bridge-to-vhog.owl seed.obo cl-with-xrefs.obo
 	cd ./bridge && ../make-bridge-ontologies-from-xrefs.pl ../seed.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-with-xrefs.obo ../cl-xrefs.obo && touch bridges
@@ -679,7 +676,7 @@ release-diff:
 
 RELDIR=trunk
 release:
-	cp uberon_edit.owl $(RELDIR)/core.owl ;\
+	cp core.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl} $(RELDIR) ;\
 	cp merged.{obo,owl} $(RELDIR)/ ;\
@@ -699,6 +696,7 @@ release:
 	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
+	cp composite-{vertebrate,metazoan}-*.{obo,owl} $(RELDIR) ;\
 	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
 	make release-diff ;\
 	cp diffs/* $(RELDIR)/diffs/ ;\

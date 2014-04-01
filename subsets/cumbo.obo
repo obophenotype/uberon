@@ -40,7 +40,7 @@ ontology: uberon/subsets/cumbo
 id: UBERON:0000010
 name: peripheral nervous system
 namespace: uberon
-def: "Nervous structures including ganglia outside of the central nervous system. Divided into somatic nervous system and autonomic nervous system" [FB:gg, OMD:peripheral+nervous+system, Wikipedia:Peripheral_nervous_system, ZFIN:curator]
+def: "A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands." [GO:0007422]
 subset: cumbo
 subset: efo_slim
 subset: uberon_slim
@@ -50,7 +50,7 @@ synonym: "lateral part of the basolateral nucleus" RELATED [NeuroNames:247]
 synonym: "nucleus amygdalae basalis, pars lateralis" RELATED LATIN [NeuroNames:247]
 synonym: "nucleus amygdaloideus basalis, pars lateralis magnocellularis" RELATED LATIN [NeuroNames:247]
 synonym: "nucleus basalis lateralis amygdalae" RELATED LATIN [NeuroNames:247]
-synonym: "pars peripherica; systema nervosum periphericum" RELATED LATIN [Wikipedia:Peripheral_nervous_system]
+synonym: "pars peripherica; systema nervosum periphericum" RELATED LATIN [http://en.wikipedia.org/wiki/Peripheral_nervous_system]
 synonym: "PNS" RELATED []
 xref: AAO:0000429
 xref: BAMS:PNS
@@ -66,8 +66,10 @@ xref: EV:0100335
 xref: FBbt:00005098
 xref: FMA:9903
 xref: GAID:715
-xref: http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nervous_system_diagram.png/200px-Nervous_system_diagram.png
+xref: http://en.wikipedia.org/wiki/Peripheral_nervous_system
+xref: http://linkedlifedata.com/resource/umls/id/C0206417
+xref: http://linkedlifedata.com/resource/umls/id/C1305921
+xref: http://www.snomedbrowser.com/Codes/Details/362292005
 xref: MA:0000218
 xref: MAT:0000338
 xref: MESH:A08.800
@@ -75,21 +77,20 @@ xref: MIAA:0000338
 xref: ncithesaurus:Peripheral_Nervous_System
 xref: NeuroNames:247 {source="NIF_GrossAnatomy:birnlex_1111"}
 xref: NIF_GrossAnatomy:birnlex_1111
-xref: SCTID:362292005
 xref: TAO:0000142
 xref: UMLS:C0206417 {source="NIF_GrossAnatomy:birnlex_1111"}
 xref: UMLS:C0206417 {source="ncithesaurus:Peripheral_Nervous_System"}
 xref: UMLS:C1305921 {source="NIF_GrossAnatomy:birnlex_1111"}
 xref: VHOG:0000399
-xref: Wikipedia:Peripheral_nervous_system
 xref: XAO:0000178
 xref: ZFA:0000142
 relationship: part_of UBERON:0001016 ! nervous system
 property_value: external_definition "Nervous structures including ganglia outside of the central nervous system. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000142", ontology="TAO", source="ZFIN:curator"}
 property_value: external_definition "Part of nervous system in which nerves extend throughout the body outside of the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000429", ontology="AAO", source="AAO:BJB"}
-property_value: external_definition "The peripheral nervous system (PNS) is the part of the nervous system connected to the CNS which contains cranial nerves III - XII, spinal, peripheral and autonomic nerves. (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
-property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000399"}
-property_value: homology_notes " (...) specific vertebrate traits within the chordate phylum such as skeletal tissues, PNS, and spectacular head and brain development, are linked to the NC (neural crest) and its derivatives.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000399", ontology="VHOG", source="DOI:10.1007/978-0-387-46954-6_6 Dupin E, Creuzet S, Le Douarin NM, The contribution of the neural crest to the vertebrate body. Advances in experimental medicine and biology (2006)", source="http://bgee.unil.ch/"}
+property_value: external_definition "The peripheral nervous system (PNS) is the part of the nervous system connected to the CNS which contains cranial nerves III - XII, spinal, peripheral and autonomic nerves. (CUMBO)" xsd:string {source="Cumbo:terms"}
+property_value: foaf-depicted_by http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png
+property_value: foaf-depicted_by http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nervous_system_diagram.png/200px-Nervous_system_diagram.png
+property_value: homology_notes " (...) specific vertebrate traits within the chordate phylum such as skeletal tissues, PNS, and spectacular head and brain development, are linked to the NC (neural crest) and its derivatives.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000399", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1007/978-0-387-46954-6_6 Dupin E, Creuzet S, Le Douarin NM, The contribution of the neural crest to the vertebrate body. Advances in experimental medicine and biology (2006)"}
 
 [Term]
 id: UBERON:0000119
@@ -121,8 +122,7 @@ synonym: "nucleus of neuraxis" RELATED []
 xref: AEO:0000136
 xref: FMA:83686
 xref: NIF_GrossAnatomy:nlx_28443
-xref: Wikipedia:Nucleus_(neuroanatomy)
-relationship: part_of UBERON:0001016 ! nervous system
+xref: Nucleus:(neuroanatomy)
 relationship: part_of UBERON:0001017 ! central nervous system
 property_value: external_definition "Anatomical structure consisting of a discrete aggregate of neuronal soma[GO][GO_REF:0000021]." xsd:string {source="GO_REF:0000021"}
 
@@ -130,7 +130,7 @@ property_value: external_definition "Anatomical structure consisting of a discre
 id: UBERON:0000955
 name: brain
 namespace: uberon
-def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [http://purl.obolibrary.org/obo/uberon/tracker/300, Wikipedia:Brain]
+def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [http://en.wikipedia.org/wiki/Brain, http://purl.obolibrary.org/obo/uberon/tracker/300]
 comment: include synganglion?
 subset: cumbo
 subset: efo_slim
@@ -159,6 +159,10 @@ xref: FBbt:00005095
 xref: FMA:50801
 xref: GAID:571
 xref: galen:Brain
+xref: http://en.wikipedia.org/wiki/Brain
+xref: http://linkedlifedata.com/resource/umls/id/C0006104
+xref: http://linkedlifedata.com/resource/umls/id/C1269537
+xref: http://www.snomedbrowser.com/Codes/Details/258335003
 xref: MA:0000168
 xref: MAT:0000098
 xref: MESH:A08.186.211
@@ -167,34 +171,31 @@ xref: ncithesaurus:Brain
 xref: NeuroNames:21 {source="NIF_GrossAnatomy:birnlex_796"}
 xref: NIF_GrossAnatomy:birnlex_796
 xref: OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA
-xref: SCTID:258335003
 xref: TAO:0000008
 xref: UMLS:C0006104 {source="ncithesaurus:Brain"}
 xref: UMLS:C0006104 {source="NIF_GrossAnatomy:birnlex_796"}
 xref: UMLS:C1269537 {source="NIF_GrossAnatomy:birnlex_796"}
 xref: VHOG:0000157
-xref: Wikipedia:Brain
 xref: XAO:0000010
 xref: ZFA:0000008
 relationship: part_of UBERON:0001017 ! central nervous system
 property_value: external_definition "Cavitated compound organ which is comprised of gray and white matter and surrounds the cerebral ventricular system.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000008", ontology="TAO", source="ZFIN:curator"}
 property_value: external_definition "Part of the central nervous system situated within the cranium and composed of both nerve cell bodies and nerve fibers.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010478", ontology="AAO", source="AAO:BJB"}
-property_value: external_definition "The part of the central nervous system contained within the cranium, comprising the forebrain, midbrain, hindbrain, and metencephalon. It is derived from the anterior part of the embryonic neural tube (or the encephalon). Does not include retina. (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
-property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000157"}
-property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000157", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28, ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165", source="http://bgee.unil.ch/"}
+property_value: external_definition "The part of the central nervous system contained within the cranium, comprising the forebrain, midbrain, hindbrain, and metencephalon. It is derived from the anterior part of the embryonic neural tube (or the encephalon). Does not include retina. (CUMBO)" xsd:string {source="Cumbo:terms"}
+property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000157", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28, ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165"}
 
 [Term]
 id: UBERON:0001016
 name: nervous system
 namespace: uberon
-def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [ISBN:0-14-051288-8, ISBN:3110148986, NIF_GrossAnatomy:birnlex_844, NLM:nervous+system, WB:rynl, Wikipedia:Nervous_system, ZFIN:curator]
+def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [http://en.wikipedia.org/wiki/Nervous_system, ISBN:0-14-051288-8, ISBN:3110148986, NIF_GrossAnatomy:birnlex_844, NLM:nervous+system, WB:rynl, ZFIN:curator]
 subset: cumbo
 subset: efo_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "nerve net" NARROW [Wikipedia:Nerve_net]
+synonym: "nerve net" NARROW [http://en.wikipedia.org/wiki/Nerve_net]
 synonym: "Nervensystem" RELATED [BTO:0001484]
-synonym: "systema nervosum" RELATED LATIN [Wikipedia:Nervous_system]
+synonym: "systema nervosum" RELATED LATIN [http://en.wikipedia.org/wiki/Nervous_system]
 xref: AAO:0000324
 xref: BILA:0000079
 xref: BTO:0001484
@@ -207,31 +208,31 @@ xref: EV:0100162
 xref: FBbt:00005093
 xref: FMA:7157
 xref: GAID:466
-xref: http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg
-xref: http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nervous_system_diagram.png/200px-Nervous_system_diagram.png
+xref: http://linkedlifedata.com/resource/umls/id/C0027763
+xref: http://www.snomedbrowser.com/Codes/Details/278196006
 xref: MA:0000016
 xref: MAT:0000026
 xref: MESH:A08
 xref: MIAA:0000026
 xref: ncithesaurus:Nervous_System
+xref: Nervous:system
 xref: NeuroNames:3236
 xref: NIF_GrossAnatomy:birnlex_844
 xref: OpenCyc:Mx4rvViT_pwpEbGdrcN5Y29ycA
-xref: SCTID:278196006
 xref: TAO:0000396
 xref: UMLS:C0027763 {source="ncithesaurus:Nervous_System"}
 xref: VHOG:0000402
 xref: WBbt:0005735
-xref: Wikipedia:Nervous_system
 xref: XAO:0000177
 xref: ZFA:0000396
 property_value: axiom_lost_from_external_ontology "relationship type change: differentiates_from ectoderm (AAO:0000137) CHANGED TO: develops_from ectoderm (UBERON:0000924)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000324", ontology="AAO"}
 property_value: external_definition "A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000396", ontology="TAO", source="ZFIN:curator"}
 property_value: external_definition "Anatomical system consisting of nerve bodies and nerve fibers which regulate the response of the body to external and internal stimuli.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000324", ontology="AAO", source="AAO:BJB"}
+property_value: foaf-depicted_by http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg
+property_value: foaf-depicted_by http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nervous_system_diagram.png/200px-Nervous_system_diagram.png
 property_value: has_relational_adjective "nervous" xsd:string
 property_value: has_relational_adjective "neural" xsd:string
-property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000402"}
-property_value: homology_notes "Nervous systems evolved in the ancestor of Eumetazoa.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000402", ontology="VHOG", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.117", source="http://bgee.unil.ch/"}
+property_value: homology_notes "Nervous systems evolved in the ancestor of Eumetazoa.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000402", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.117"}
 
 [Term]
 id: UBERON:0001017
@@ -245,7 +246,7 @@ subset: vertebrate_core
 synonym: "basal nucleus of the amygdala" RELATED [NeuroNames:246]
 synonym: "basolateral nucleus of amygdala" RELATED [NeuroNames:246]
 synonym: "basolateral nucleus of the amygdala" RELATED [NeuroNames:246]
-synonym: "cerebrospinal axis" EXACT [FMA:55675]
+synonym: "cerebrospinal axis" NARROW [FMA:55675]
 synonym: "CNS" EXACT []
 synonym: "neuraxis" EXACT [FMA:55675]
 synonym: "nucleus amygdalae basalis" RELATED LATIN [NeuroNames:246]
@@ -267,6 +268,9 @@ xref: EV:0100163
 xref: FBbt:00005094
 xref: FMA:55675
 xref: GAID:570
+xref: http://en.wikipedia.org/wiki/Central_nervous_system
+xref: http://linkedlifedata.com/resource/umls/id/C0927232
+xref: http://www.snomedbrowser.com/Codes/Details/278199004
 xref: MA:0000167
 xref: MAT:0000457
 xref: MESH:A08.186
@@ -274,21 +278,17 @@ xref: ncithesaurus:Central_Nervous_System
 xref: NeuroNames:246 {source="NIF_GrossAnatomy:birnlex_1099"}
 xref: NIF_GrossAnatomy:birnlex_1099
 xref: OpenCyc:Mx4rvzYt3pwpEbGdrcN5Y29ycA
-xref: SCTID:278199004
 xref: TAO:0000012
 xref: UMLS:C0927232 {source="ncithesaurus:Central_Nervous_System"}
 xref: UMLS:C0927232 {source="NIF_GrossAnatomy:birnlex_1099"}
 xref: VHOG:0000293
-xref: Wikipedia:Central_nervous_system
 xref: XAO:0000215
 xref: ZFA:0000012
 relationship: part_of UBERON:0001016 ! nervous system
 property_value: external_definition "Part of the nervous system which includes the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000090", ontology="AAO", source="AAO:BJB"}
 property_value: external_definition "The brain and spinal cord. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000012", ontology="TAO", source="ZFIN:curator"}
 property_value: external_definition "The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina (CUMBO)." xsd:string {source="NIF_GrossAnatomy:birnlex_1099"}
-property_value: external_definition "The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina." xsd:string {source="GO:1"}
-property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000293"}
-property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2); Taken together, our data make a very strong case that the complex molecular mediolateral architecture of the developing trunk CNS (central nervous system), as shared between Platynereis and vertebrates, was already present in their last common ancestor, Urbilateria. The concept of bilaterian nervous system centralization implies that neuron types concentrate on one side of the trunk, as is the case in vertebrates and many invertebrates including Platynereis, where they segregate and become spatially organized (as opposed to a diffuse nerve net). Our data reveal that a large part of the spatial organization of the annelid and vertebrate CNS was already present in their last common ancestor, which implies that Urbilateria had already possessed a CNS (reference 3).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000293", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28 (reference 1), ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165 (reference 2), DOI:10.1016/j.cell.2007.02.040 Denes AS, Jekely G, Steinmetz PRH, Raible F, Snyman H, Prud'homme B, Ferrier DEK, Balavoine G and Arendt D, Molecular architecture of annelid nerve cord supports common origin of nervous system centralization in Bilateria. Cell (2007) (reference 3)", source="http://bgee.unil.ch/"}
+property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2); Taken together, our data make a very strong case that the complex molecular mediolateral architecture of the developing trunk CNS (central nervous system), as shared between Platynereis and vertebrates, was already present in their last common ancestor, Urbilateria. The concept of bilaterian nervous system centralization implies that neuron types concentrate on one side of the trunk, as is the case in vertebrates and many invertebrates including Platynereis, where they segregate and become spatially organized (as opposed to a diffuse nerve net). Our data reveal that a large part of the spatial organization of the annelid and vertebrate CNS was already present in their last common ancestor, which implies that Urbilateria had already possessed a CNS (reference 3).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000293", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28 (reference 1), ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165 (reference 2), DOI:10.1016/j.cell.2007.02.040 Denes AS, Jekely G, Steinmetz PRH, Raible F, Snyman H, Prud'homme B, Ferrier DEK, Balavoine G and Arendt D, Molecular architecture of annelid nerve cord supports common origin of nervous system centralization in Bilateria. Cell (2007) (reference 3)"}
 
 [Term]
 id: UBERON:0001018
@@ -307,7 +307,7 @@ xref: EV:0100304
 xref: FBbt:00005100
 xref: FMA:83847
 relationship: part_of UBERON:0001017 ! central nervous system
-property_value: external_definition "White matter structure of CNS that contains axons that arise predominantly in one central nervous system part and terminate in another. Tracts are generally named by their region or origin followed by their region of primary termination, e.g., mammillothalamic tract contains axons that arise from neurons in the mammillary bodies and terminate in the thalamus. (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+property_value: external_definition "White matter structure of CNS that contains axons that arise predominantly in one central nervous system part and terminate in another. Tracts are generally named by their region or origin followed by their region of primary termination, e.g., mammillothalamic tract contains axons that arise from neurons in the mammillary bodies and terminate in the thalamus. (CUMBO)" xsd:string {source="Cumbo:terms"}
 
 [Term]
 id: UBERON:0001020
@@ -323,15 +323,16 @@ synonym: "neuraxis commissure" EXACT [FMA:83906]
 synonym: "white matter commissure" NARROW [CUMBO:CUMBO]
 xref: FBbt:00005103
 xref: FMA:83906
+xref: http://en.wikipedia.org/wiki/Commissure
+xref: http://linkedlifedata.com/resource/umls/id/C1185742
 xref: ncithesaurus:Commissure
 xref: NIF_GrossAnatomy:nlx_110
 xref: NIF_GrossAnatomy:nlx_anat_20090513
 xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
 xref: TADS:0000201
 xref: UMLS:C1185742 {source="ncithesaurus:Commissure"}
-xref: Wikipedia:Commissure
 is_a: UBERON:0001018 ! axon tract
-property_value: external_definition "White matter fiber bundle that crosses the midline of the brain or spinal cord, that connects similar structures on both sides. (CUMBO; Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+property_value: external_definition "White matter fiber bundle that crosses the midline of the brain or spinal cord, that connects similar structures on both sides. (CUMBO; Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" xsd:string {source="Cumbo:terms"}
 property_value: has_relational_adjective "commissural" xsd:string
 
 [Term]
@@ -351,7 +352,7 @@ synonym: "cerebrocerebellar fissure" RELATED [NeuroNames:22]
 synonym: "fissura cerebro-cerebellaris" RELATED LATIN [NeuroNames:22]
 synonym: "fissura cerebrocerebellaris" RELATED LATIN [NeuroNames:22]
 synonym: "medulla spinalis" RELATED [BTO:0001279]
-synonym: "medulla spinalis" RELATED LATIN [Wikipedia:Spinal_cord]
+synonym: "medulla spinalis" RELATED LATIN [http://en.wikipedia.org/wiki/Spinal_cord]
 synonym: "spinal cord structure" RELATED [ZFA:0000075]
 synonym: "spinal medulla" RELATED [BTO:0001279]
 xref: AAO:0010151
@@ -368,7 +369,8 @@ xref: EMAPA:17700
 xref: EV:0100316
 xref: FMA:7647
 xref: GAID:695
-xref: http://upload.wikimedia.org/wikipedia/commons/5/58/Spinal_cord_direv.svg
+xref: http://linkedlifedata.com/resource/umls/id/C0037925
+xref: http://www.snomedbrowser.com/Codes/Details/180959008
 xref: MA:0000216
 xref: MAT:0000183
 xref: MESH:A08.186.854
@@ -377,20 +379,19 @@ xref: ncithesaurus:Spinal_Cord
 xref: NeuroNames:22 {source="NIF_GrossAnatomy:birnlex_1709"}
 xref: NIF_GrossAnatomy:birnlex_1709
 xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
-xref: SCTID:180959008
+xref: Spinal:cord
 xref: TAO:0000075
 xref: UMLS:C0037925 {source="NIF_GrossAnatomy:birnlex_1709"}
 xref: UMLS:C0037925 {source="ncithesaurus:Spinal_Cord"}
 xref: VHOG:0000601
-xref: Wikipedia:Spinal_cord
 xref: XAO:0000020
 xref: ZFA:0000075
 relationship: develops_from UBERON:0000119 ! cell layer
 relationship: develops_from UBERON:0001016 ! nervous system
 relationship: part_of UBERON:0001017 ! central nervous system
 property_value: external_definition "Part of the central nervous system which descends from the hindbrain within the vertebral column.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010151", ontology="AAO", source="AAO:BJB"}
-property_value: homologous_in NCBITaxon:7742 {source="VHOG:0000601"}
-property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000601", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28, ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165", source="http://bgee.unil.ch/"}
+property_value: foaf-depicted_by http://upload.wikimedia.org/wikipedia/commons/5/58/Spinal_cord_direv.svg
+property_value: homology_notes " (...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000601", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28, ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165"}
 
 [Term]
 id: UBERON:0003338
@@ -430,7 +431,7 @@ xref: TAO:0000146
 xref: ZFA:0000146
 relationship: develops_from UBERON:0000119 ! cell layer
 relationship: develops_from UBERON:0001016 ! nervous system
-property_value: external_definition "The embryonic precursor of the brain and the set of mature brain structures that derive from it (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+property_value: external_definition "The embryonic precursor of the brain and the set of mature brain structures that derive from it (CUMBO)" xsd:string {source="Cumbo:terms"}
 
 [Term]
 id: UBERON:0007418
@@ -447,14 +448,14 @@ relationship: part_of UBERON:0001017 ! central nervous system
 id: UBERON:0013118
 name: sulcus of brain
 namespace: uberon
-def: "a depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [Wikipedia:Sulcus_(neuroanatomy)]
+def: "a depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 subset: cumbo
-synonym: "fissure of brain" NARROW [Wikipedia:Sulcus_(neuroanatomy)]
+synonym: "fissure of brain" NARROW [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 synonym: "sulcus" BROAD [NIF_GrossAnatomy:nlx_144078]
-xref: SCTID:279337001
-xref: Wikipedia:Sulcus_(neuroanatomy)
+xref: http://www.snomedbrowser.com/Codes/Details/279337001
+xref: Sulcus:(neuroanatomy)
 relationship: part_of UBERON:0000955 ! brain
-property_value: external_definition "Indentation on the surface of the brain or spinal cord that forms a recognizable landmark, e.g., central sulcus, sulcus limitans (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
+property_value: external_definition "Indentation on the surface of the brain or spinal cord that forms a recognizable landmark, e.g., central sulcus, sulcus limitans (CUMBO)" xsd:string {source="Cumbo:terms"}
 
 [Term]
 id: UBERON:0014778
@@ -471,6 +472,7 @@ id: ambiguous_for_taxon
 name: ambiguous_for_taxon
 namespace: uberon
 def: "S ambiguous_for_taxon T if the class S does not have a clear referent in taxon T. An example would be the class 'manual digit 1', which encompasses a homology hypotheses that is accepted for some species (e.g. human and mouse), but does not have a clear referent in Aves - the referent is dependent on the hypothesis embraced, and also on the ontogenetic stage." [PHENOSCPAE:asilomar_mtg]
+xref: RO:0002173
 is_metadata_tag: true
 is_class_level: true
 
@@ -554,7 +556,7 @@ is_metadata_tag: true
 id: dental_formula
 name: dental formula
 namespace: uberon
-def: "Syntax: upper/lower = I.C.P.M / I.C.P.M. When used with generic tooth class applies to both deciduous and primary. Should also be used with a taxon property." [Wikipedia:Dentition#Dental_formula]
+def: "Syntax: upper/lower = I.C.P.M / I.C.P.M. When used with generic tooth class applies to both deciduous and primary. Should also be used with a taxon property." [http://en.wikipedia.org/wiki/Dentition#Dental_formula]
 xref: UBPROP:0000113
 is_metadata_tag: true
 
@@ -571,35 +573,35 @@ transitive_over: part_of ! part_of
 id: doap-GitRepository
 name: Git repository
 namespace: uberon
-xref: http://usefulinc.com/ns/doap#GitRepository
+xref: GitRepository
 is_metadata_tag: true
 
 [Typedef]
 id: doap-SVNRepository
 name: SVN repository
 namespace: uberon
-xref: http://usefulinc.com/ns/doap#SVNRepository
+xref: SVNRepository
 is_metadata_tag: true
 
 [Typedef]
 id: doap-bug-database
 name: bug database
 namespace: uberon
-xref: http://usefulinc.com/ns/doap#bug-database
+xref: bug-database
 is_metadata_tag: true
 
 [Typedef]
 id: doap-mailing-list
 name: mailing list
 namespace: uberon
-xref: http://usefulinc.com/ns/doap#mailing-list
+xref: mailing-list
 is_metadata_tag: true
 
 [Typedef]
 id: doap-wiki
 name: wiki
 namespace: uberon
-xref: http://usefulinc.com/ns/doap#wiki
+xref: wiki
 is_metadata_tag: true
 
 [Typedef]
@@ -608,6 +610,7 @@ name: dubious_for_taxon
 namespace: uberon
 def: "S dubious_for_taxon T if it is probably the case that no instances of S can be found in any instance of T." [https://orcid.org/0000-0002-6601-2165]
 comment: this relation lacks a strong logical interpretation, but can be used in place of never_in_taxon where it is desirable to state that the definition of the class is too strict for the taxon under consideration, but placing a never_in_taxon link would result in a chain of inconsistencies that will take time to resolve. Example: metencephalon in teleost
+xref: RO:0002174
 is_metadata_tag: true
 is_class_level: true
 
@@ -647,7 +650,7 @@ is_metadata_tag: true
 id: foaf-depicted_by
 name: depicted_by
 namespace: uberon
-xref: http://xmlns.com/foaf/0.1/depicted_by
+xref: depicted:by
 is_metadata_tag: true
 
 [Typedef]
@@ -658,10 +661,27 @@ xref: http://xmlns.com/foaf/0.1/homepage
 is_metadata_tag: true
 
 [Typedef]
+id: foaf-page
+name: page
+namespace: uberon
+xref: http://xmlns.com/foaf/0.1/page
+is_metadata_tag: true
+
+[Typedef]
+id: function_notes
+name: function_notes
+namespace: uberon
+def: "Notes on the evolved function of this class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000009
+is_metadata_tag: true
+
+[Typedef]
 id: has_no_connections_with
 name: has_no_connections_with
 namespace: uberon
 def: "A is has_no_connections_with B if there are no parts of A or B that have a connection with the other." [https://orcid.org/0000-0002-6601-2165]
+xref: UBREL:0000003
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (UBREL_0000001 some (BFO_0000050 some ?Y)), (BFO_0000050 some ?Y) and (UBREL_0000001 some (BFO_0000050 some ?X))" []
 is_metadata_tag: true
 is_class_level: true
@@ -696,7 +716,7 @@ name: immediate_transformation_of
 namespace: uberon
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
-xref: http://semanticscience.org/resource/SIO_000658
+xref: SIO:000658
 
 [Typedef]
 id: implements_design_pattern
@@ -713,10 +733,19 @@ xref: UBPROP:0000100
 is_metadata_tag: true
 
 [Typedef]
+id: mutually_spatially_disjoint_with
+name: mutually_spatially_disjoint_with
+namespace: uberon
+xref: RO:0002171
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
 id: never_in_taxon
 name: never_in_taxon
 namespace: uberon
-def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [PMID:20973947]
+def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [http://www.ncbi.nlm.nih.gov/pubmed/20973947]
 xref: RO:0002161
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
 is_metadata_tag: true
@@ -743,7 +772,7 @@ is_transitive: true
 id: phalanx_number
 name: phalanx number
 namespace: uberon
-def: "x phalanx_number N if and only if (i) x is a phalanx, and (ii) x is phalanx number N in a series of phalanges repeated along an prixomo-distal axis, with phalanx_number 1 being the proximalmost phalanx. Note that in humans, the distalmost phalanx has phlanax_number 3, except in ray_number 1, where the distalmost has phalanx_number 2" [https://orcid.org/0000-0002-6601-2165, Wikipedia:Phalanx_bone#Phalangeal_formula]
+def: "x phalanx_number N if and only if (i) x is a phalanx, and (ii) x is phalanx number N in a series of phalanges repeated along an prixomo-distal axis, with phalanx_number 1 being the proximalmost phalanx. Note that in humans, the distalmost phalanx has phlanax_number 3, except in ray_number 1, where the distalmost has phalanx_number 2" [http://en.wikipedia.org/wiki/Phalanx_bone#Phalangeal_formula, https://orcid.org/0000-0002-6601-2165]
 comment: Most land mammals including humans have a 2-3-3-3-3 formula in both the hands (or paws) and feet. Primitive reptiles typically had the formula 2-3-4-4-5, and this pattern, with some modification, remained in many later reptiles and in the mammal-like reptiles. The phalangeal formula in the flippers of cetaceans (marine mammals) is 2-12-8-1
 xref: UBPROP:0000105
 property_value: is_count_of UBERON:0003221
@@ -775,6 +804,7 @@ name: present_in_taxon
 namespace: uberon
 def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [https://orcid.org/0000-0002-6601-2165]
 synonym: "applicable for taxon" EXACT []
+xref: RO:0002175
 is_metadata_tag: true
 is_class_level: true
 
@@ -832,7 +862,7 @@ is_metadata_tag: true
 id: seeAlso
 name: see also
 namespace: uberon
-xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+xref: seeAlso
 is_metadata_tag: true
 
 [Typedef]
@@ -852,15 +882,13 @@ property_value: preceding_element_is BSPO:0000096
 is_metadata_tag: true
 
 [Typedef]
-id: spatially_disjoint_from
-name: spatially_disjoint_from
+id: structure_notes
+name: structure_notes
 namespace: uberon
-def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
-synonym: "non_overlapping_with" EXACT []
-synonym: "shares_no_parts_with" EXACT []
-expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+def: "Notes on the structure, composition or histology of this class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000010
 is_metadata_tag: true
-is_class_level: true
 
 [Typedef]
 id: taxon_notes

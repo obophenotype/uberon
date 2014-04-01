@@ -153,6 +153,7 @@ sub mk_unique_label {
     $s =~ s/^SPD$/spider/; 
     $s =~ s/^TAO$/teleost/; 
     $s =~ s/^WBbt$/worm/;
+    $s =~ s/^WBls$/worm/;
     $s =~ s/^XAO$/xenopus/; 
     $s =~ s/^ZFA$/zebrafish/; 
     $s =~ s/^EHDAA2$/embryonic human/; 

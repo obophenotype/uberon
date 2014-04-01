@@ -7,7 +7,7 @@ while (<>) {
         $id = $1;
         $id =~ s/:/_/;
     }
-    elsif (m@^xref: http://upload.wikimedia.org/wikipedia/commons/(\S+)@) {	 
+    elsif (m@^property_value: foaf-depicted_by (\S+)@) {	 
         my $x = $1;
         if ($x =~ /,/) {
             # TODO
@@ -16,13 +16,7 @@ while (<>) {
         }
         print "Class: :$id\n";
         print "Individual: wc:$x\n";
-        print "  Types: foaf:depicts some :$id\n\n";
-    }
-    elsif (m@^xref: (http://purl.obolibrary.org/obo/uberon/images/\S+\.jpg)@) {	 
-        my $x = $1;
-        print "Class: :$id\n";
-        print "Individual: <$x>\n";
-        print "  Types: foaf:depicts some :$id\n\n";
+        print "  Types: image:, foaf:depicts some :$id\n\n";
     }
 }
 
@@ -39,11 +33,15 @@ Prefix: dc: <http://purl.org/dc/elements/1.1/>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Prefix: foaf: <http://xmlns.com/foaf/0.1/>
 Prefix: wc: <http://upload.wikimedia.org/wikipedia/commons/>
+Prefix: image: <http://purl.obolibrary.org/obo/IAO_0000101>
 
 Ontology: <http://purl.obolibrary.org/obo/uberon/depictions.owl>
 #Import: <http://purl.obolibrary.org/obo/uberon.owl>
 
 ObjectProperty: foaf:depicts
+
+Class: image:
+ Annotations: rdfs:label "image"
 
 EOM
 
