@@ -222,6 +222,9 @@ taxcheck-%: % subsets/taxon-constraints.owl
 %.obo-OE-check: %.obo
 	obo2obo -o $@ $<
 
+%.obo-OWL-check: %.obo
+	owltools $<
+
 
 # ----------------------------------------
 # Taxonomy and external AO validation
@@ -306,6 +309,7 @@ QC_FILES = uberon_edit-xp-check\
     uberon_edit-obscheck.txt\
     uberon.obo\
     uberon.obo-OE-check\
+    uberon.obo-OWL-check\
     uberon-obscheck.txt\
     uberon-orphans\
     uberon-synclash\
