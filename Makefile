@@ -58,7 +58,7 @@ ro.owl: $(EDITSRC) bspo.owl
 
 ro_import.owl: ro.owl $(EDITSRC)
 ##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
-	owltools --use-catalog $< --remove-axioms --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
+	owltools --use-catalog $< --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -t Domain --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
 
 pato.owl: $(EDITSRC) 
 	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // --set-ontology-id $(OBO)/$@ -o $@
