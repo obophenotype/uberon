@@ -31,6 +31,8 @@ synonymtypedef: HOMOLOGY "a synonym made on the basis of a possibly homologous s
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: INCONSISTENT "indicates that a synonym is used in an inconsistent or confusing way, typically between species"
 synonymtypedef: LATIN "latin term"
+synonymtypedef: NON_AMNIOTE "synonym that is inappropriate for amniotes"
+synonymtypedef: NON_MAMMAL "synonym that is inappropriate for mammals"
 synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
@@ -313,7 +315,7 @@ property_value: external_definition "White matter structure of CNS that contains
 id: UBERON:0001020
 name: nervous system commissure
 namespace: uberon
-def: "axon tract that crosses the midline of the brain or spinal cord[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [http://purl.obolibrary.org/obo/uberon/tracker/300, http://purl.obolibrary.org/obo/uberon/tracker/325, NIF_GrossAnatomy:nlx_anat_20090513]
+def: "axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [http://purl.obolibrary.org/obo/uberon/tracker/300, http://purl.obolibrary.org/obo/uberon/tracker/325, NIF_GrossAnatomy:nlx_anat_20090513]
 comment: *not* the same as FMA:76741 Commissure
 subset: cumbo
 subset: uberon_slim
@@ -681,8 +683,8 @@ id: has_no_connections_with
 name: has_no_connections_with
 namespace: uberon
 def: "A is has_no_connections_with B if there are no parts of A or B that have a connection with the other." [https://orcid.org/0000-0002-6601-2165]
-xref: UBREL:0000003
-expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (UBREL_0000001 some (BFO_0000050 some ?Y)), (BFO_0000050 some ?Y) and (UBREL_0000001 some (BFO_0000050 some ?X))" []
+xref: RO:0002475
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (RO_0002170 some (BFO_0000050 some ?Y))" []
 is_metadata_tag: true
 is_class_level: true
 
