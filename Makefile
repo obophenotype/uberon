@@ -43,8 +43,8 @@ seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 	owltools $(UCAT) uberon_edit.owl $< cl-core.obo --merge-support-ontologies -o -f functional $@
 
 # todo - change to phenoscape-ext
-#EDITSRC = uberon_edit.owl
-EDITSRC = seed.owl
+EDITSRC = uberon_edit.owl
+#EDITSRC = seed.owl
 IMP = $(OBO)/uberon
 
 bspo.owl:
@@ -496,10 +496,10 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 CVERTS = composite-zfa.owl composite-ma.owl composite-xao.owl composite-ehdaa2.owl
 CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl composite-wbls.owl
 composite-vertebrate.owl: $(CVERTS)
-	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations  -o $@
+	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations --remove-dangling -o $@
 
 composite-metazoan.owl: $(CMETS)
-	owltools  --create-ontology -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/composite-metazoan.owl uberon/$@  $(CMETS)  --merge-support-ontologies --repair-relations -o $@
+	owltools  --create-ontology -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/composite-metazoan.owl uberon/$@  $(CMETS)  --merge-support-ontologies --repair-relations --remove-dangling -o $@
 
 composite-metazoan-basic.obo: composite-metazoan.owl
 	owltools $<  --extract-mingraph --set-ontology-id $(OBO)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
