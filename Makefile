@@ -305,6 +305,7 @@ quick-qc: uberon.obo-OE-check core.owl uberon_edit-obscheck.txt
 	cat uberon_edit-obscheck.txt
 
 QC_FILES = uberon_edit-xp-check\
+    core.owl\
     uberon.owl\
     uberon_edit-obscheck.txt\
     uberon.obo\
@@ -495,7 +496,7 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 CVERTS = composite-zfa.owl composite-ma.owl composite-xao.owl composite-ehdaa2.owl
 CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl composite-wbls.owl
 composite-vertebrate.owl: $(CVERTS)
-	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations -o $@
+	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations  -o $@
 
 composite-metazoan.owl: $(CMETS)
 	owltools  --create-ontology -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/composite-metazoan.owl uberon/$@  $(CMETS)  --merge-support-ontologies --repair-relations -o $@
