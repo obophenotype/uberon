@@ -54,7 +54,6 @@ bspo.owl:
 # merge BSPO into RO
 ro.owl: $(EDITSRC) bspo.owl
 	owltools external/obo-relations/ro-edit.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@
-##	owltools $(OBO)/ro.owl $(OBO)/bspo.owl --merge-support-ontologies --merge-imports-closure -o $@
 
 ro_import.owl: ro.owl $(EDITSRC)
 ##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
@@ -522,7 +521,7 @@ METAZOAN_BRIDGES = $(patsubst %,bridge/uberon-bridge-to-%.owl,$(METAZOAN_ONTS))
 #local-%.obo: merged.obo
 #	wget $(OBO)/$*.owl -O cached-$*.owl && owltools cached-$*.owl --repair-relations -o -f obo $@.tmp && egrep -v '^(disjoint|domain|range)' $@.tmp | perl -npe 's/default-namespace: FlyBase development CV/default-namespace: fbdv/' > $@
 local-%.owl: 
-	owltools $(OBO)/$*.owl bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
+	owltools $(OBO)/$*.owl bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/wbbt$*#DESCENDENTOF $(OBO)/RO_0002476 --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
 
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
