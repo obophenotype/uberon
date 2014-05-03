@@ -5244,7 +5244,7 @@ property_value: UBPROP:0000003 "When vertebrates first appeared, they must have 
 id: UBERON:0004368
 name: Reichert's cartilage
 namespace: uberon
-def: "a continuous cartilaginous formation in mesenchyme of the second pharyngeal arch in the embryo. The longer cranial or styloid segment is continuous with the otic capsule; its inferior end is angulated and is situated very close to the oropharynx. The smaller caudal segment is in contact with the body and greater horn of the hyoid cartilaginous structure" [http://dx.doi.org//10.1111/j.1469-7580.2006.00524.x, MP:0004916]
+def: "a continuous cartilaginous formation in mesenchyme of the second pharyngeal arch in the embryo. The longer cranial or styloid segment is continuous with the otic capsule; its inferior end is angulated and is situated very close to the oropharynx. The smaller caudal segment is in contact with the body and greater horn of the hyoid cartilaginous structure" [http://dx.doi.org/10.1111/j.1469-7580.2006.00524.x, MP:0004916]
 comment: AO notes: in EHDAA2 this also develops from 3rd arch Mes from NC. Development notes: Classically defined as: a structure... develop the stapes, the styloid processes, the stylohyoid ligaments, and the lesser cornua of the hyoid bone; its proximal end gives rise to the stylohyoid ligament. Relationship to stapes disputed.
 synonym: "hyaloid cartilage" EXACT [MP:0004916]
 synonym: "hyoid cartilage" EXACT [EHDAA2:0000793]
@@ -7023,14 +7023,6 @@ xref: MA:0001322
 relationship: part_of UBERON:0005928 ! external naris
 
 [Term]
-id: UBERON:0006172
-name: rectal diverticulum
-namespace: uberon
-def: "The rectal diverticulum is an outgrowth of the cloaca and links the pronephric kidney to the exterior" [GO:0039009]
-xref: XAO:0001015
-is_a: UBERON:3010717 ! diverticulum
-
-[Term]
 id: UBERON:0006216
 name: cervical sinus of His
 namespace: uberon
@@ -7247,7 +7239,7 @@ xref: UMLS:C0230162 {source="ncithesaurus:Central_Tendon_of_the_Diaphragm"}
 xref: VHOG:0001399
 is_a: UBERON:0003570 ! respiratory system connective tissue
 relationship: part_of UBERON:0001103 ! diaphragm
-property_value: UBPROP:0000003 "In mammals, the diaphragm muscle divides the thoracoabdominal cavity into thorax and abdomen. In most mammals, the diaphragm is a flat sheet with muscle fibers radiating outward from a central tendon, and the diaphragm's apposition to the cranial surface of the liver gives it a dome-shape. Muscle fiber contraction reduces the curvature of the dome, thereby expanding the thoracic cavity and aspirating air into the lungs.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001399", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1016/j.resp.2006.06.003"}
+property_value: UBPROP:0000003 "In mammals, the diaphragm muscle divides the thoracoabdominal cavity into thorax and abdomen. In most mammals, the diaphragm is a flat sheet with muscle fibers radiating outward from a central tendon, and the diaphragm's apposition to the cranial surface of the liver gives it a dome-shape. Muscle fiber contraction reduces the curvature of the dome, thereby expanding the thoracic cavity and aspirating air into the lungs.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001399", ontology="VHOG", source="http://bgee.unil.ch/", source="http://dx.doi.org/10.1016/j.resp.2006.06.003"}
 
 [Term]
 id: UBERON:0006679
@@ -8733,7 +8725,7 @@ relationship: part_of UBERON:0009644 ! trachea non-cartilage connective tissue
 id: UBERON:0009671
 name: nasal fin
 namespace: uberon
-def: "The nasal fin is an epithelial seam that develops by fusion between the epithelial linings of the medial and lateral nasal swellings. Shortly after its formation the nasal fin regresses and is replaced by mesenchyme, with exception of its most posterior portion which remains as the bucconasal membrane." [DOI:10.1002/aja.1001500308]
+def: "The nasal fin is an epithelial seam that develops by fusion between the epithelial linings of the medial and lateral nasal swellings. Shortly after its formation the nasal fin regresses and is replaced by mesenchyme, with exception of its most posterior portion which remains as the bucconasal membrane." [http://dx.doi.org/10.1002/aja.1001500308]
 xref: EHDAA2:0004548
 relationship: part_of UBERON:0005384 ! nasal cavity epithelium
 
@@ -10771,15 +10763,6 @@ property_value: provenance_notes "This class was sourced from an external ontolo
 created_by: teleost_anatomy_curators
 
 [Term]
-id: UBERON:2001806
-name: intracranial diverticulum of swimbladder
-namespace: uberon/phenoscape-anatomy
-def: "An anterior extension of the swimbladder that passes through a foramen in the exoccipital; part of the otophysic connection between swimbladder and inner ear." [TAO:wd]
-is_a: UBERON:3010717 ! diverticulum
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
-
-[Term]
 id: UBERON:2001857
 name: hyoidean artery
 namespace: uberon/phenoscape-anatomy
@@ -11631,14 +11614,6 @@ property_value: provenance_notes "This class was sourced from an external ontolo
 created_by: amphibian_anatomy_curators
 
 [Term]
-id: UBERON:3010717
-name: diverticulum
-namespace: uberon/phenoscape-anatomy
-relationship: part_of UBERON:0002048 ! lung
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
-
-[Term]
 id: UBERON:3010827
 name: anterior prenasal cartilage
 namespace: uberon/phenoscape-anatomy
@@ -11700,6 +11675,10 @@ is_a: transitively_connected_to
 id: continuous_with
 is_symmetric: true
 is_a: RO:0002323
+
+[Typedef]
+id: contributes_to_morphology_of
+is_a: RO:0002131
 
 [Typedef]
 id: developmentally_induced_by

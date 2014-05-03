@@ -530,7 +530,7 @@ local-ehdaa2.obo:
 	wget $(OBO)/ehdaa2.obo -O $@
 
 fixed-ehdaa2.obo: local-ehdaa2.obo
-	./util/fix-ehdaa2-stages.pl $< > $@
+	./util/fix-ehdaa2-stages.pl $< | grep -v ^alt_id > $@
 
 # NEW:
 composite-deps: $(METAZOAN_OBOS)
