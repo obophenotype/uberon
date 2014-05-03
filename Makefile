@@ -107,7 +107,7 @@ cl_import.owl: cl-core.obo $(EDITSRC)
 %_import.obo: %_import.owl
 	owltools $< -o -f obo --no-check $@
 
-imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo cl_import.obo
+imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo cl_import.obo go_import.obo ro_import.obo
 	touch $@
 
 # ----------------------------------------
@@ -521,10 +521,16 @@ METAZOAN_BRIDGES = $(patsubst %,bridge/uberon-bridge-to-%.owl,$(METAZOAN_ONTS))
 #local-%.obo: merged.obo
 #	wget $(OBO)/$*.owl -O cached-$*.owl && owltools cached-$*.owl --repair-relations -o -f obo $@.tmp && egrep -v '^(disjoint|domain|range)' $@.tmp | perl -npe 's/default-namespace: FlyBase development CV/default-namespace: fbdv/' > $@
 local-%.owl: 
-	owltools $(OBO)/$*.owl bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/wbbt$*#DESCENDENTOF $(OBO)/RO_0002476 --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
+	owltools $(OBO)/$*.owl bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#DESCENDENTOF $(OBO)/RO_0002476 --rename-entity $(OBO)/$*#DESCINMALE $(OBO)/RO_0002478 --rename-entity $(OBO)/$*#DESCINHERM $(OBO)/RO_0002477 --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
 
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
+
+local-ehdaa2.obo:
+	wget $(OBO)/ehdaa2.obo -O $@
+
+fixed-ehdaa2.obo: local-ehdaa2.obo
+	./util/fix-ehdaa2-stages.pl $< > $@
 
 # NEW:
 composite-deps: $(METAZOAN_OBOS)
@@ -559,7 +565,7 @@ composite-fbbt.owl: local-fbbt.owl local-fbdv.owl $(MBASE)
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@ && perl -pi -ne 's@FlyBase development CV@FlyBase_development_CV@' $@
 
-composite-ehdaa2.owl: local-ehdaa2.owl $(MBASE)
+composite-ehdaa2.owl: fixed-ehdaa2.obo $(MBASE)
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ehdaa2.owl bridge/uberon-bridge-to-hsapdv.owl bridge/cl-bridge-to-ehdaa2.owl  bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl  $< developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s UBERON 10 -s CL 9 -s CARO 1 --remove-axioms -t DisjointClasses --reasoner elk \
  --merge-species-ontology -s 'embryonic human' -t NCBITaxon:9606 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
