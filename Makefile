@@ -14,8 +14,10 @@ UCAT = --use-catalog
 
 # SEED ONTOLOGY - use to make import modules
 #
-uberon_edit.owl: uberon_edit.obo 
-	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o  $@.tmp && ./util/expand-dbxref-literals.pl $@.tmp > $@
+uberon_edit_x.obo: uberon_edit.obo
+	./util/expand-idspaces.pl $< > $@.tmp && mv $@.tmp $@
+uberon_edit.owl: uberon_edit_x.obo 
+	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 ### TODO - restore --expand-macros
 ###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 
@@ -38,9 +40,6 @@ phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
 # IMPORTS
 # ----------------------------------------
 
-# seed.owl is never released - it is used to seed module extraction
-seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
-	owltools $(UCAT) uberon_edit.owl $< cl-core.obo --merge-support-ontologies -o -f functional $@
 
 # todo - change to phenoscape-ext
 EDITSRC = uberon_edit.owl
@@ -184,7 +183,8 @@ newpipe: basic-xp-check
 # REPORTS
 # ----------------------------------------
 %-classes.tsv: %.owl
-	owljs-tableify -R "develops from,in taxon" -c -o $@ $<
+	owljs-tableify -R "RO_0002202,transformation of,in taxon,existence starts during,existence ends during" -c -o $@ $<
+##	owljs-tableify -R "develops from,in taxon,existence_starts_during,existence ends during" -c -o $@ $<
 
 ro_import-relations.tsv: %.owl
 	owljs-tableify -r hermit -t ObjectProperty -c -o $@ $<
@@ -645,15 +645,24 @@ uberon-taxmod-%.owl: ext.owl
 # BRIDGES
 # ----------------------------------------
 
+# seed.owl is never released - it is used to seed module extraction
+seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
+	owltools $(UCAT) uberon_edit.owl $< cl-core.obo --merge-support-ontologies -o -f functional $@
+
 # this is used for xrefs for bridge files
 seed.obo: seed.owl
 	owltools $(UCAT) $< -o -f obo $@
 
-bridge/bridges: bridge/uberon-bridge-to-vhog.owl seed.obo cl-with-xrefs.obo
+BRIDGESRC_OBO = uberon_edit_x.obo cl-with-xrefs.obo
+bridge/uberon-bridge-to-nifstd.obo: uberon_edit_x.obo
+	./util/xref-to-equiv.pl uberon/bridge/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
+bridge/%.owl: bridge/%.obo
+	owltools --use-catalog $< --remove-annotation-assertions -o $@
+bridge/bridges: bridge/uberon-bridge-to-vhog.owl seed.obo cl-with-xrefs.obo bridge/uberon-bridge-to-nifstd.owl
 	cd ./bridge && ../make-bridge-ontologies-from-xrefs.pl ../seed.obo && ../make-bridge-ontologies-from-xrefs.pl -b cl ../cl-with-xrefs.obo ../cl-xrefs.obo && touch bridges
 
 cl-with-xrefs.obo: cl-core.obo 
-	grep ^treat- uberon_edit.obo > $@ && cat $< >> $@
+	egrep '^(idspace|treat-)' uberon_edit.obo > $@ && cat $< >> $@.tmp && ./util/expand-idspaces.pl $@.tmp > $@
 
 bridge/uberon-bridge-to-vhog.owl: uberon_edit.obo
 	./util/mk-vhog-individs.pl organ_association_vHOG.txt uberon_edit.obo > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
