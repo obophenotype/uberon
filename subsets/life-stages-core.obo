@@ -131,20 +131,19 @@ id: UBERON:0000071
 name: death stage
 namespace: uberon
 def: "End of the life of an organism." [XAO:0000437]
-comment: AO notes - ncit:Death is an outcome
 synonym: "death" RELATED []
 xref: XAO:0000437
 xref: XtroDO:0000085
 is_a: UBERON:0000105 ! life cycle stage
 relationship: ends UBERON:0000104 ! life cycle
 relationship: part_of UBERON:0000104 ! life cycle
+property_value: UBPROP:0000012 "ncit:Death is an outcome" xsd:string {external_ontology="ncit"}
 
 [Term]
 id: UBERON:0000092
 name: post-embryonic stage
 namespace: uberon
 def: "stage succeeding embryo, including mature structure" [https://orcid.org/0000-0002-6601-2165]
-comment: In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)
 synonym: "post-hatching stage" NARROW []
 synonym: "postembryonic" RELATED []
 synonym: "postembryonic stage" EXACT []
@@ -156,6 +155,7 @@ xref: WBls:0000022
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000104 ! life cycle
 relationship: preceded_by UBERON:0000068 ! embryo stage
+property_value: UBPROP:0000008 "In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)" xsd:string
 
 [Term]
 id: UBERON:0000104
@@ -167,8 +167,8 @@ synonym: "life" EXACT []
 synonym: "lifespan" EXACT []
 xref: FBdv:00000000
 xref: HsapDv:0000000
+xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Life
 xref: MmusDv:0000000
-xref: ncithesaurus:Life
 xref: OGES:000011
 is_a: UBERON:0000105 ! life cycle stage
 
@@ -177,15 +177,14 @@ id: UBERON:0000105
 name: life cycle stage
 namespace: uberon
 def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [https://orcid.org/0000-0002-6601-2165]
-comment: Editor notes: we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage
 subset: efo_slim
 subset: upper_level
 synonym: "developmental stage" NARROW []
 synonym: "stage" NARROW []
 xref: BILS:0000105
+xref: Developmental:Stage
 xref: EFO:0000399
 xref: MmusDv:0000001
-xref: ncithesaurus:Developmental_Stage
 xref: OlatDv:0000010
 xref: PdumDv:0000090
 xref: WBls:0000002
@@ -193,6 +192,7 @@ xref: XAO:1000000
 xref: ZFS:0000000
 xref: ZFS:0100000
 is_a: UBERON:0000000 ! processual entity
+property_value: IAO:0000116 "we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage" xsd:string
 
 [Term]
 id: UBERON:0000106
@@ -214,7 +214,7 @@ xref: EHDAA:27
 xref: EMAPA:16033
 xref: FBdv:00005288
 xref: http://en.wikipedia.org/wiki/Zygote
-xref: ncithesaurus:Zygote
+xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Zygote
 xref: PdumDv:0000100
 xref: VHOG:0000745
 xref: XAO:1000001
@@ -222,7 +222,7 @@ xref: ZFS:0000001
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: starts UBERON:0000104 ! life cycle
-property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107"}
+property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107", source="http://bgee.unil.ch/"}
 
 [Term]
 id: UBERON:0000107
@@ -250,7 +250,6 @@ id: UBERON:0000108
 name: blastula stage
 namespace: uberon
 def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." [http://en.wikipedia.org/wiki/Blastula]
-comment: Editor note: consider adding a preceding stage 'morula stage' as part of cleavage
 subset: efo_slim
 xref: BilaDO:0000007
 xref: BILS:0000108
@@ -270,6 +269,7 @@ relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000107 ! cleavage stage
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Blastulation.png/200px-Blastulation.png
+property_value: IAO:0000116 "consider adding a preceding stage 'morula stage' as part of cleavage" xsd:string
 
 [Term]
 id: UBERON:0000109
@@ -333,7 +333,6 @@ relationship: preceded_by UBERON:0000110 ! neurula stage
 id: UBERON:0000112
 name: sexually immature stage
 namespace: uberon
-comment: Consider renaming this to '(sexually) immature stage'; in mammals this would include infant (nourishment from lactation) and juvenile (prepubertal no longer dependent on mother)
 subset: efo_slim
 synonym: "immature stage" EXACT [VHOG:FB]
 synonym: "juvenile stage" EXACT [XAO:1000010]
@@ -350,6 +349,7 @@ xref: ZFS:0000051
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000066 ! fully formed stage
 property_value: UBPROP:0000001 "The stage of being a sexually immature adult animal[XAO:1000010]." xsd:string {source="XAO:1000010"}
+property_value: UBPROP:0000008 "In mammals this would include infant (nourishment from lactation) and juvenile (prepubertal no longer dependent on mother)" xsd:string
 
 [Term]
 id: UBERON:0000113
@@ -393,7 +393,6 @@ id: UBERON:0004728
 name: amphibian larval stage
 namespace: uberon
 def: "Amphibian larvae, sometimes called pollywogs or tadpoles, hatch from eggs and begin to grow limbs and other adult physical features at various times, depending on the species, before they metamorphose into the adult form." [GO:0002117]
-comment: AO notes: the XAO class denotes a stage
 synonym: "larva" RELATED [XAO:1000008]
 synonym: "larva stage" BROAD []
 synonym: "polliwog" NARROW SENSU [http://en.wikipedia.org/wiki/Larva]
@@ -403,6 +402,8 @@ synonym: "tadpole stage" NARROW SENSU [http://en.wikipedia.org/wiki/Larva]
 xref: XAO:1000008
 xref: XtroDO:0000056
 is_a: UBERON:0000069 ! larval stage
+property_value: RO:0002175 NCBITaxon:8355
+property_value: UBPROP:0000012 "the XAO class denotes a stage" xsd:string {external_ontology="XAO"}
 
 [Term]
 id: UBERON:0004729
@@ -419,6 +420,7 @@ namespace: uberon
 def: "This begins with the newly hatched first-instar larva, through its maturation to the end of the last larval stage. An example of this process is found in Drosophila melanogaster." [GO:0002168]
 xref: FBdv:00005336
 is_a: UBERON:0000069 ! larval stage
+property_value: RO:0002175 NCBITaxon:7227
 
 [Term]
 id: UBERON:0007220
@@ -446,7 +448,6 @@ id: UBERON:0007221
 name: neonate stage
 namespace: uberon
 def: "Of or pertaining to the period of time immediately following birth, or to the newborn." [http://en.wikipedia.org/wiki/Infant, http://en.wiktionary.org/wiki/neonatal]
-comment: Editor note: consider splitting infant/newborn
 synonym: "fledgling stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 synonym: "hatchling" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 synonym: "hatchling stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
@@ -465,6 +466,7 @@ xref: NIF_Organism:birnlex_695
 xref: OGES:000025
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000112 ! sexually immature stage
+property_value: IAO:0000116 "consider splitting infant/newborn" xsd:string
 
 [Term]
 id: UBERON:0007222
@@ -477,7 +479,7 @@ synonym: "geriatric stage" RELATED [EV:0300123]
 xref: EV:0300123
 xref: HsapDv:0000093
 xref: http://linkedlifedata.com/resource/umls/id/C0001792
-xref: ncithesaurus:Elderly
+xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Elderly
 xref: NIF_Organism:birnlex_691
 xref: UMLS:C0001792 {source="ncithesaurus:Elderly"}
 is_a: UBERON:0000113 ! post-juvenile adult stage
@@ -565,9 +567,9 @@ id: UBERON:0012101
 name: perinatal stage
 namespace: uberon
 def: "the period spanning the range immediately before and after birth" []
-comment: In birds, the paranatal stage starts when the beak penetrates into the air pocket (air cell) between the inner and outer shell membranes
 synonym: "paranatal stage" NARROW []
 is_a: UBERON:0000105 ! life cycle stage
+property_value: UBPROP:0000008 "In birds, the paranatal stage starts when the beak penetrates into the air pocket (air cell) between the inner and outer shell membranes " xsd:string
 
 [Term]
 id: UBERON:0014405

@@ -3,7 +3,7 @@
 // owljs-repl -i util/fix-nlx.js source-ontologies/nlx_stage_all.rdf
 
 importPackage(Packages.org.semanticweb.owlapi.model);
-var javautil = require("owl/javautil");
+var javautil = require("owljs/javautil");
 
 
 // declare prefixes
@@ -77,7 +77,8 @@ function tr(axiom) {
 
     var skip = false;
     for (var k in rmObjMap) {
-        if (owl.objectInAxiomSignature(k)) {
+        var obj = rmObjMap[k];
+        if (owl.objectInAxiomSignature(obj)) {
             skip = true;
             break;
         }

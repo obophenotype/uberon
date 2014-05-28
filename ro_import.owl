@@ -133,18 +133,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000068 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000068"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000069 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000069"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BSPO_0000096 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000096">
@@ -753,6 +741,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002000</oboInOwl:hasDbXref>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relationships between a boundary (a 2D immaterial entity) and the material entity that it delimits.</obo:IAO_0000115>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">boundary_of</oboInOwl:shorthand>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
     </owl:ObjectProperty>
     
 
@@ -765,7 +754,7 @@
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relationship between a material entity and the boundary (2D immaterial entity) that delimits it.</obo:IAO_0000115>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_boundary</oboInOwl:shorthand>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002000"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
     </owl:ObjectProperty>
     
 
@@ -1000,6 +989,18 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:label xml:lang="en">connected to</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002170</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">connected_to</oboInOwl:shorthand>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002176 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002176">
+        <rdfs:label xml:lang="en">connects</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002176</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">connects</oboInOwl:shorthand>
+        <obo:IAO_0000115>Binary relationship: z connects x if and only if there exists some y such that z connects x and y in a ternary connected_to(x,y,z) relationship.</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
     </owl:ObjectProperty>
     
@@ -1415,6 +1416,18 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002329 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002329">
+        <rdfs:label xml:lang="en">part of structure that is capable of</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002329</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of_structure_that_is_capable_of</oboInOwl:shorthand>
+        <obo:IAO_0000115>this relation holds between c and p when c is part of some c&apos;, and c&apos; is capable of p.</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002350 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002350">
@@ -1657,6 +1670,54 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002488 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002488"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002489 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002489"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002492 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002492"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002493 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002493"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002494 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002494"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002495 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002495"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002496 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002496"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002497 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002497"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0003000 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003000">
@@ -1679,27 +1740,9 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/core#attaches_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#attaches_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#branch_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#branch_of"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/core#connected_to -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#connects -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#connects"/>
     
 
 
@@ -1709,45 +1752,9 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/core#has_fused_element -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#has_fused_element"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#has_location -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#has_location"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#in_median_plane_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#in_median_plane_of"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/core#innervated_by -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#innervated_by"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#innervates -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#innervates"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#is_innervated_by -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#is_innervated_by"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#preaxial_part_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#preaxial_part_of"/>
     
 
 
@@ -1781,9 +1788,9 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/uberon/core#connects -->
+    <!-- http://purl.obolibrary.org/obo/uberon/core#developmentally_succeeded_by -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#connects"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#developmentally_succeeded_by"/>
     
 
 
@@ -1817,69 +1824,21 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_ends_at -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_ends_at"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_ends_before -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_ends_before"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_ends_with -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_ends_with"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_starts_after -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_starts_after"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_starts_at -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_starts_at"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_starts_or_ends_during -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_starts_or_ends_during"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_starts_with -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_starts_with"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#exists_during -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#exists_during"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#has_end -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#has_end"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/uberon/core#has_muscle_antagonist -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#has_muscle_antagonist"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/uberon/core#has_skeleton -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#has_skeleton"/>
     
 
 
@@ -1913,12 +1872,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/uberon/core#start_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#start_of"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/uberon/core#subdivision_of -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#subdivision_of"/>
@@ -1946,18 +1899,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <!-- http://purl.obolibrary.org/obo/uberon/core#transitively_proximally_connected_to -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#transitively_proximally_connected_to"/>
-    
-
-
-    <!-- http://semanticscience.org/resource/SIO_000657 -->
-
-    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000657"/>
-    
-
-
-    <!-- http://semanticscience.org/resource/SIO_000658 -->
-
-    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000658"/>
     
 
 
