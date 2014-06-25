@@ -65,9 +65,9 @@ pato_import.owl: pato.owl $(EDITSRC)
 
 # TODO - logical definitions go->ubr,cl
 go.owl: $(EDITSRC) 
-	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
+	wget $(OBO)/$@ -O $@
 go_import.owl: go.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $<  $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 envo.owl: $(EDITSRC) 
 	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
@@ -245,6 +245,8 @@ nh-nematode.owl: composite-wbbt.owl
 RPT_SPECIES = human mouse zebrafish xenopus
 
 reports/stages: $(patsubst %,reports/stages-%-report.tsv,$(RPT_SPECIES))
+	echo done
+reports/parts: $(patsubst %,reports/part-%-report.tsv,$(RPT_SPECIES))
 	echo done
 
 reports/stages-%-report.tsv: %-view.owl
@@ -595,7 +597,7 @@ mirror-%.owl:
 .PRECIOUS: mirror-%.owl
 
 local-%.owl: mirror-%.owl
-	owltools $< bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#DESCENDENTOF $(OBO)/RO_0002476 --rename-entity $(OBO)/$*#DESCINMALE $(OBO)/RO_0002478 --rename-entity $(OBO)/$*#DESCINHERM $(OBO)/RO_0002477 --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 --rename-entity $(OBO)/$*#start $(OBO)/RO_0002496 --rename-entity $(OBO)/$*#end $(OBO)/RO_0002497 --rename-entity $(OBO)/$*#start_stage $(OBO)/RO_0002496 --rename-entity $(OBO)/$*#end_stage $(OBO)/RO_0002497 --rename-entity $(OBO)/$*#releases_neurotransmitter $(OBO)/RO_0002111  --rename-entity $(OBO)/$*#develops_directly_from $(OBO)/RO_0002207   --rename-entity $(OBO)/$*#electrically_synapsed_to $(OBO)/RO_0002003 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
+	owltools $< bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#DESCENDENTOF $(OBO)/RO_0002476 --rename-entity $(OBO)/$*#DESCINMALE $(OBO)/RO_0002478 --rename-entity $(OBO)/$*#DESCINHERM $(OBO)/RO_0002477 --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 --rename-entity $(OBO)/$*#start $(OBO)/RO_0002496 --rename-entity $(OBO)/$*#end $(OBO)/RO_0002497 --rename-entity $(OBO)/$*#start_stage $(OBO)/RO_0002496 --rename-entity $(OBO)/$*#end_stage $(OBO)/RO_0002497 --rename-entity $(OBO)/$*#releases_neurotransmitter $(OBO)/RO_0002111  --rename-entity $(OBO)/$*#develops_directly_from $(OBO)/RO_0002207   --rename-entity $(OBO)/$*#electrically_synapsed_to $(OBO)/RO_0002003 --rename-entity $(OBO)/$*#regional_part_of $(OBO)/BFO_0000050 --rename-entity $(OBO)/$*#systemic_part_of $(OBO)/BFO_0000050 --rename-entity $(OBO)/$*#constitutional_part_of $(OBO)/BFO_0000050 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
 
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
@@ -674,6 +676,13 @@ composite-ma.owl: local-ma.owl $(MBASE)
  --merge-species-ontology -s 'Mus' -t NCBITaxon:10088 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
+
+composite-fma.owl: local-fma.owl $(MBASE) 
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-fma.owl bridge/cl-bridge-to-fma.owl  $<  --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+ --merge-species-ontology -s 'adult human' -t NCBITaxon:9606 \
+ --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
+ -o -f ofn $@
+
 
 # TODO
 composite-aba.owl: local-aba.owl $(MBASE) 
