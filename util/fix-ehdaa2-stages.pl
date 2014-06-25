@@ -1,6 +1,8 @@
 #!/usr/bin/perl -np
 
+
 ## blip-findall -r hsapdv "entity_xref_idspace(E,X,'EHDAA2'),concat_atom([_,Frag],:,X),format('s@~w@~w@g;~n',[Frag,E]),fail"
+
 ## unreliable: in EHDAA2 this means CS20 or after
 s@relationship: ends_at CS20@!!!relationship: ends_at CS20@;
 
@@ -32,11 +34,12 @@ else {
     s@CS20@HsapDv:0000027@g;
 }
 
-s@BFO:0000068@RO:0002488@;
-s@BFO:0000069@RO:0002492@;
+# the current ehdaa2 obo release uses BFO IDs for existence starts and ends
+s@BFO:0000068@RO:0002496@;
+s@BFO:0000069@RO:0002497@;
 
-s@starts_at@RO:0002488@;
-s@ends_at@RO:0002492@;
+s@starts_at@RO:0002496@;
+s@ends_at@RO:0002497@;
 s@part_of@BFO:0000050@;
 
 ###s@is_a: AEO@!!!@;
