@@ -3614,7 +3614,6 @@ id: UBERON:0000069
 name: larval stage
 namespace: uberon
 def: "a distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." [http://en.wikipedia.org/wiki/Larva]
-comment: It is a misunderstanding that the larval form always reflects the group's evolutionary history. It could be the case, but often the larval stage has evolved secondarily, as in insects. In these cases the larval form might differ more from the group's common origin than the adult form[WP]. Uberon includes clade-specific subclasses.
 subset: efo_slim
 synonym: "ammocoete" NARROW SENSU [http://en.wikipedia.org/wiki/Larva]
 synonym: "ammocoete stage" NARROW SENSU [http://en.wikipedia.org/wiki/Larva]
@@ -3660,6 +3659,8 @@ xref: OGES:000008
 xref: ZFS:0000048
 is_a: UBERON:0000092 ! post-embryonic stage
 relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
+property_value: IAO:0000232 "Uberon includes clade-specific subclasses, e.g. nematod larva" xsd:string
+property_value: UBPROP:0000008 "It is a misunderstanding that the larval form always reflects the group's evolutionary history. It could be the case, but often the larval stage has evolved secondarily, as in insects. In these cases the larval form might differ more from the group's common origin than the adult form" xsd:string {source="WP"}
 
 [Term]
 id: UBERON:0000070
@@ -3770,7 +3771,7 @@ xref: XAO:1000001
 xref: ZFS:0000001
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
-relationship: starts_with UBERON:0000104 ! life cycle
+relationship: starts UBERON:0000104 ! life cycle
 property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -4004,6 +4005,9 @@ synonym: "infant stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 synonym: "neonatal stage" EXACT [OBOL:automatic]
 synonym: "nestling stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 synonym: "newborn stage" RELATED [https://orcid.org/0000-0002-6601-2165]
+synonym: "pouch stage" NARROW SENSU [NCBITaxon:9263]
+synonym: "puggle" NARROW SENSU [NCBITaxon:189497]
+synonym: "puggle stage" NARROW SENSU [NCBITaxon:189497]
 xref: BTO:0001762
 xref: Category:Infant\:organism
 xref: Category:Newborn\:organism
@@ -4059,7 +4063,7 @@ xref: ZFS:0000003
 is_a: UBERON:0000067 ! embryo stage part
 relationship: immediately_preceded_by UBERON:0007232 ! 2 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
-relationship: starts_with UBERON:0007234 ! 4-8 cell stage
+relationship: starts UBERON:0007234 ! 4-8 cell stage
 
 [Term]
 id: UBERON:0007234
@@ -5261,6 +5265,10 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000109 ! gastrula stage
 
 [Typedef]
+id: RO:0002224
+inverse_of: starts
+
+[Typedef]
 id: ends
 is_a: part_of
 is_a: RO:0002222
@@ -5274,6 +5282,7 @@ is_a: RO:0002496
 id: has_part
 is_transitive: true
 is_a: RO:0002131
+is_a: RO:0002507
 inverse_of: part_of
 
 [Typedef]
@@ -5294,9 +5303,7 @@ is_a: RO:0002086
 inverse_of: BFO:0000063
 
 [Typedef]
-id: starts_with
-is_transitive: true
+id: starts
 is_a: part_of
 is_a: RO:0002222
-inverse_of: RO:0002223
 

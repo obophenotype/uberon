@@ -97,6 +97,8 @@ my $in_header = 1;
 while(<>) {
     chomp;
     s/relationship: (constitutional|regional|systemic)_part/relationship: part/;
+    s/ attached_to / attaches_to /;
+    s/ branch_of / branching_part_of /;
 
     s/property_value:.*UMLS_CUI.*\"(\S+)\".*/xref: UMLS:$1/;
 

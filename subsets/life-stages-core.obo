@@ -65,7 +65,6 @@ id: UBERON:0000069
 name: larval stage
 namespace: uberon
 def: "a distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." [http://en.wikipedia.org/wiki/Larva]
-comment: It is a misunderstanding that the larval form always reflects the group's evolutionary history. It could be the case, but often the larval stage has evolved secondarily, as in insects. In these cases the larval form might differ more from the group's common origin than the adult form[WP]. Uberon includes clade-specific subclasses.
 subset: efo_slim
 synonym: "ammocoete" NARROW SENSU [http://en.wikipedia.org/wiki/Larva]
 synonym: "ammocoete stage" NARROW SENSU [http://en.wikipedia.org/wiki/Larva]
@@ -111,6 +110,8 @@ xref: OGES:000008
 xref: ZFS:0000048
 is_a: UBERON:0000092 ! post-embryonic stage
 relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
+property_value: IAO:0000232 "Uberon includes clade-specific subclasses, e.g. nematod larva" xsd:string
+property_value: UBPROP:0000008 "It is a misunderstanding that the larval form always reflects the group's evolutionary history. It could be the case, but often the larval stage has evolved secondarily, as in insects. In these cases the larval form might differ more from the group's common origin than the adult form" xsd:string {source="WP"}
 
 [Term]
 id: UBERON:0000070
@@ -455,6 +456,9 @@ synonym: "infant stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 synonym: "neonatal stage" EXACT [OBOL:automatic]
 synonym: "nestling stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 synonym: "newborn stage" RELATED [https://orcid.org/0000-0002-6601-2165]
+synonym: "pouch stage" NARROW SENSU [NCBITaxon:9263]
+synonym: "puggle" NARROW SENSU [NCBITaxon:189497]
+synonym: "puggle stage" NARROW SENSU [NCBITaxon:189497]
 xref: BTO:0001762
 xref: Category:Infant\:organism
 xref: Category:Newborn\:organism
@@ -680,6 +684,7 @@ is_a: part_of
 [Typedef]
 id: has_part
 is_transitive: true
+is_a: RO:0002507
 inverse_of: part_of
 
 [Typedef]

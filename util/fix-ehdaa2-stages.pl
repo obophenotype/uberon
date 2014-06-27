@@ -1,12 +1,14 @@
 #!/usr/bin/perl -np
 
-
+## this script was seeded via:
 ## blip-findall -r hsapdv "entity_xref_idspace(E,X,'EHDAA2'),concat_atom([_,Frag],:,X),format('s@~w@~w@g;~n',[Frag,E]),fail"
 
 ## unreliable: in EHDAA2 this means CS20 or after
 s@relationship: ends_at CS20@!!!relationship: ends_at CS20@;
 
 if (m@^name:@) {
+    # no transform
+    # (sometimes the name of terms might be 'CS11'. We want to preserve these)
 }
 else {
     s@CS01@HsapDv:0000003@g;
@@ -38,6 +40,8 @@ else {
 s@BFO:0000068@RO:0002496@;
 s@BFO:0000069@RO:0002497@;
 
+# we interpret these with the more general relation
+# see: https://github.com/obophenotype/uberon/issues/423
 s@starts_at@RO:0002496@;
 s@ends_at@RO:0002497@;
 s@part_of@BFO:0000050@;

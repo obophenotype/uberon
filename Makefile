@@ -65,7 +65,7 @@ pato_import.owl: pato.owl $(EDITSRC)
 
 # TODO - logical definitions go->ubr,cl
 go.owl: $(EDITSRC) 
-	wget $(OBO)/$@ -O $@
+	wget $(OBO)/$@ -O $@ && touch $@
 go_import.owl: go.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $<  $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
@@ -217,6 +217,7 @@ reports/%-function-parents.tsv: %.owl
 	owltools $< --reasoner elk --reasoner mexr --export-parents -p RO:0002328 -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-function-parents.tsv
 
+# match pattern for any relation to be filtered out
 XSPECIES_RE = -m '/(RO_0002158|evolved_from)/'
 
 nh-human.owl: composite-ehdaa2.owl
@@ -237,9 +238,14 @@ nh-drosophila.owl: composite-fbbt.owl
 nh-nematode.owl: composite-wbbt.owl
 	owljs-grep -v $(XSPECIES_RE) -o $@ $<
 
+
+generic-view.owl: ext.owl
+	ln -s $< $@ 
 %-view.owl: nh-%.owl contexts/context-%.owl
-	OWLTOOLS_MEMORY=10G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure --run-reasoner -r elk -x -o -f ofn $@
+	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure --run-reasoner -r elk -x -o -f ofn $@
 .PRECIOUS: %-view.owl
+
+
 
 # note: drosophila too slow....
 RPT_SPECIES = human mouse zebrafish xenopus
@@ -559,20 +565,26 @@ cl-core.owl: cl-core.obo
 # COMPOSITES
 # ----------------------------------------
 
+composite-stages.obo:
+	owltools developmental-stage-ontologies/*/*-uberon.obo --merge-support-ontologies -o -f obo --no-check $@
 
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 composites: composite-metazoan.obo composite-vertebrate.obo
 
-CVERTS = composite-zfa.owl composite-ma.owl composite-xao.owl composite-ehdaa2.owl
-CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl composite-wbls.owl
-composite-vertebrate.owl: $(CVERTS)
+CVERTS = composite-zfa.owl composite-ma.owl composite-xao.owl composite-ehdaa2.owl composite-emapa.owl
+CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl composite-wbls.owl composite-stages.obo
+raw-composite-vertebrate.owl: $(CVERTS)
 	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations --remove-dangling -o $@
 
-composite-metazoan.owl: $(CMETS)
+raw-composite-metazoan.owl: $(CMETS)
 	owltools  --create-ontology -v $(OBO)/uberon/releases/`date +%Y-%m-%d`/composite-metazoan.owl uberon/$@  $(CMETS)  --merge-support-ontologies --repair-relations --remove-dangling -o $@
+
+composite-%.owl: raw-composite-%.owl
+	owljs-grep -v -m "/IAO_0000589/" -o $@ $<
 
 composite-metazoan-basic.obo: composite-metazoan.owl
 	owltools $<  --extract-mingraph --set-ontology-id $(OBO)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
+
 
 # owl2obo
 composite-%.obo: composite-%.owl
@@ -593,7 +605,7 @@ METAZOAN_BRIDGES = $(patsubst %,bridge/uberon-bridge-to-%.owl,$(METAZOAN_ONTS))
 #	wget $(OBO)/$*.owl -O cached-$*.owl && owltools cached-$*.owl --repair-relations -o -f obo $@.tmp && egrep -v '^(disjoint|domain|range)' $@.tmp | perl -npe 's/default-namespace: FlyBase development CV/default-namespace: fbdv/' > $@
 
 mirror-%.owl:
-	wget $(OBO)/$*.owl -O $@
+	wget $(OBO)/$*.owl -O $@ &&  && touch $@
 .PRECIOUS: mirror-%.owl
 
 local-%.owl: mirror-%.owl
@@ -602,14 +614,12 @@ local-%.owl: mirror-%.owl
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
 
-mirror-ehdaa2.owl: fixed-ehdaa2.obo
-	owltools $< -o -f ofn $@ 
-mirror-ehdaa2.obo:
-	wget $(OBO)/ehdaa2.obo -O $@
-fixed-ehdaa2.obo: mirror-ehdaa2.obo
-	obo-grep.pl -r 'id: (EHDAA2|AEO)' $< | ./util/fix-ehdaa2-stages.pl | grep -v ^alt_id > $@
-##	./util/fix-ehdaa2-stages.pl $< | grep -v ^alt_id > $@
-
+mirror-ehdaa2.owl: 
+	owltools https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/master/src/ontology/ehdaa2-edit.obo -o -f ofn $@ 
+#mirror-ehdaa2.obo:
+#	wget $(OBO)/ehdaa2.obo -O $@
+#fixed-ehdaa2.obo: mirror-ehdaa2.obo
+#	obo-grep.pl -r 'id: (EHDAA2|AEO)' $< | ./util/fix-ehdaa2-stages.pl | grep -v ^alt_id > $@
 
 mirror-emapa.owl: fixed-emapa.obo
 	owltools $< -o -f ofn $@ 
@@ -624,7 +634,7 @@ mirror-zfa.obo:
 	wget $(OBO)/zfa.obo -O $@
 # https://github.com/obophenotype/uberon/issues/423#issuecomment-43425949
 fixed-zfa.obo: mirror-zfa.obo
-	perl -npe 's@RO:0002091@RO:0002496@;s@RO:0002093@RO:0002497@' $< > $@
+	perl -npe 's@RO:0002488@RO:0002496@;s@RO:0002492@RO:0002497@' $< > $@
 
 # NEW:
 composite-deps: $(METAZOAN_OBOS)
@@ -633,6 +643,8 @@ composite-deps: $(METAZOAN_OBOS)
 merged-weak.owl: merged.owl
 	owltools $< --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
 MBASE = merged-weak.owl
+
+TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
 
 composite-zfa.owl: local-zfa.owl $(MBASE) 
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-zfa.owl bridge/cl-bridge-to-zfa.owl bridge/uberon-bridge-to-zfs.owl $< developmental-stage-ontologies/zfs/zfs.obo --merge-support-ontologies --reasoner elk \
@@ -660,14 +672,14 @@ composite-fbbt.owl: local-fbbt.owl local-fbdv.owl $(MBASE)
  -o -f ofn $@ && perl -pi -ne 's@FlyBase development CV@FlyBase_development_CV@' $@
 
 composite-ehdaa2.owl: local-ehdaa2.owl $(MBASE)
-	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ehdaa2.owl bridge/uberon-bridge-to-aeo.owl bridge/uberon-bridge-to-hsapdv.owl bridge/cl-bridge-to-ehdaa2.owl  bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl  $< developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s UBERON 10 -s CL 9 -s HsapDv 8 -s CARO 2 -s AEO 1 -l UBERON 10 -l HsapDv 9 -d UBERON 10 --remove-axioms -t DisjointClasses --reasoner elk \
- --merge-species-ontology -s 'human' -t NCBITaxon:9606 \
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ehdaa2.owl bridge/uberon-bridge-to-aeo.owl bridge/uberon-bridge-to-hsapdv.owl bridge/cl-bridge-to-ehdaa2.owl  bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl  $< developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s UBERON 10 -s CL 9 -s HsapDv 8 -s CARO 2 -s AEO 1 -l UBERON 10 -l HsapDv 9 -d UBERON 10 --remove-axioms -t DisjointClasses  \
+ --merge-species-ontology -s 'human' -t NCBITaxon:9606 -q $(TAXON_GCI_RELS) \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
 
 composite-emapa.owl: local-emapa.owl $(MBASE)
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-emapa.owl bridge/uberon-bridge-to-mmusdv.owl bridge/cl-bridge-to-emapa.owl  bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl  $< developmental-stage-ontologies/mmusdv/mmusdv.obo --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s UBERON 10 -s CL 9 -s MmusDv 8 -s CARO 2  -l UBERON 10 -l MmusDv 9 -d UBERON 10 --remove-axioms -t DisjointClasses --reasoner elk \
- --merge-species-ontology -s 'mouse' -t NCBITaxon:10088 \
+ --merge-species-ontology -s 'mouse' -t NCBITaxon:10088 -q $(TAXON_GCI_RELS) \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
 
