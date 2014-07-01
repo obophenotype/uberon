@@ -248,7 +248,8 @@ generic-view.owl: ext.owl
 
 
 # note: drosophila too slow....
-RPT_SPECIES = human mouse zebrafish xenopus
+#RPT_SPECIES = human mouse zebrafish xenopus
+RPT_SPECIES = human mouse xenopus
 
 reports/stages: $(patsubst %,reports/stages-%-report.tsv,$(RPT_SPECIES))
 	echo done
@@ -482,7 +483,7 @@ subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl
 
 #subsets/life-stages.obo: uberon.owl
 #subsets/life-stages.obo: composite-metazoan.obo
-subsets/life-stages-composite.obo: composite-vertebrate.owl
+subsets/life-stages-composite.obo: composite-metazoan.owl
 	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f obo $@ --reasoner-dispose >& $@.LOG
 
 subsets/life-stages-core.obo: uberon.owl
@@ -734,7 +735,8 @@ composite-xao.owl: local-xao.owl $(MBASE)
 # TAXON MODULES
 # ----------------------------------------
 # amniote = 32524
-all_taxmods: uberon-taxmod-amniote.obo uberon-taxmod-aves.obo uberon-taxmod-euarchontoglires.obo
+all_taxmods: uberon-taxmod-amniote.obo uberon-taxmod-euarchontoglires.obo
+#all_taxmods: uberon-taxmod-amniote.obo uberon-taxmod-aves.obo uberon-taxmod-euarchontoglires.obo
 
 uberon-taxmod-aves.owl: uberon-taxmod-8782.owl
 	cp $< $@
@@ -746,7 +748,7 @@ uberon-taxmod-annelid.owl: uberon-taxmod-6340.owl
 	cp $< $@
 
 uberon-taxmod-%.obo: uberon-taxmod-%.owl
-	owltools $(UCAT) $< -o -f obo $@
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< -o -f obo $@
 
 uberon-taxmod-%.owl: ext.owl
 	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$* --remove-dangling --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o $@ >& $@.log
@@ -830,8 +832,6 @@ release:
 	cp reports/*.tsv $(RELDIR)/reports/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
-	cp uberon-taxmod-aves.obo $(RELDIR)/subsets/aves-basic.obo ;\
-	cp uberon-taxmod-aves.owl $(RELDIR)/subsets/aves-basic.owl ;\
 	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
@@ -963,8 +963,10 @@ organ_association.txt:
 stages.obo:
 	wget http://bgee.unil.ch/download/stages.obo
 
+#mapping_EMAP_to_EMAPA.txt:
+#	wget ftp://lausanne.isb-sib.ch/pub/databases/Bgee/general/mapping_EMAP_to_EMAPA.txt
 mapping_EMAP_to_EMAPA.txt:
-	wget ftp://lausanne.isb-sib.ch/pub/databases/Bgee/general/mapping_EMAP_to_EMAPA.txt
+	wget ftp://ftp.hgu.mrc.ac.uk/pub/MouseAtlas/Anatomy/EMAP-EMAPA.txt -O $@
 
 similarity.tsv:
 	wget http://svn.code.sf.net/p/bgee/code/trunk/release/similarity/similarity.tsv -O $@
