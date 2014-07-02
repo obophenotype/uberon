@@ -19,7 +19,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/fbbt.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt/2014-06-24/uberon/bridge/uberon-bridge-to-fbbt.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt/2014-07-01/uberon/bridge/uberon-bridge-to-fbbt.owl"/>
     </owl:Ontology>
     
 
@@ -674,6 +674,12 @@
     <!-- http://purl.obolibrary.org/obo/CL_0001658 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001658"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_1000155 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000155"/>
     
 
 
@@ -4197,6 +4203,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005786</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malpighian tubule (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00005797 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005797">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_1000155"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005797</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malpighian tubule stellate cell (drosophila)</obo:IAO_0000589>
     </owl:Class>
     
 

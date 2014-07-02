@@ -598,7 +598,7 @@ composite-mammal.owl: composite-mammal.obo
 #	obolib-obo2owl --allow-dangling -o $@ $<
 
 
-IVSTAGES = -i developmental-stage-ontologies/hsapdv/hsapdv.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -i developmental-stage-ontologies/olatdv/olatdv.obo
+#IVSTAGES = -i developmental-stage-ontologies/hsapdv/hsapdv.obo -i developmental-stage-ontologies/mmusdv/mmusdv.obo -i developmental-stage-ontologies/olatdv/olatdv.obo
 METAZOAN_ONTS = wbbt zfa fbbt ma ehdaa2 xao
 METAZOAN_OBOS = $(patsubst %,local-%.obo,$(METAZOAN_ONTS))
 METAZOAN_BRIDGES = $(patsubst %,bridge/uberon-bridge-to-%.owl,$(METAZOAN_ONTS))
@@ -673,20 +673,20 @@ composite-fbbt.owl: local-fbbt.owl local-fbdv.owl $(MBASE)
  -o -f ofn $@ && perl -pi -ne 's@FlyBase development CV@FlyBase_development_CV@' $@
 
 composite-ehdaa2.owl: local-ehdaa2.owl $(MBASE)
-	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ehdaa2.owl bridge/uberon-bridge-to-aeo.owl bridge/uberon-bridge-to-hsapdv.owl bridge/cl-bridge-to-ehdaa2.owl  bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl  $< developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s UBERON 10 -s CL 9 -s HsapDv 8 -s CARO 2 -s AEO 1 -l UBERON 10 -l HsapDv 9 -d UBERON 10 --remove-axioms -t DisjointClasses  \
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ehdaa2.owl bridge/uberon-bridge-to-aeo.owl bridge/uberon-bridge-to-hsapdv.owl bridge/cl-bridge-to-ehdaa2.owl  bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl  $< developmental-stage-ontologies/hsapdv/hsapdv.obo developmental-stage-ontologies/hsapdv/hsapdv-bridge-to-uberon.obo --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s UBERON 10 -s CL 9 -s HsapDv 8 -s CARO 2 -s AEO 1 -l UBERON 10 -l HsapDv 9 -d UBERON 10 --remove-axioms -t DisjointClasses  \
  --merge-species-ontology -s 'human' -t NCBITaxon:9606 -q $(TAXON_GCI_RELS) \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
 
 composite-emapa.owl: local-emapa.owl $(MBASE)
-	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-emapa.owl bridge/uberon-bridge-to-mmusdv.owl bridge/cl-bridge-to-emapa.owl  bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl  $< developmental-stage-ontologies/mmusdv/mmusdv.obo --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s UBERON 10 -s CL 9 -s MmusDv 8 -s CARO 2  -l UBERON 10 -l MmusDv 9 -d UBERON 10 --remove-axioms -t DisjointClasses --reasoner elk \
- --merge-species-ontology -s 'mouse' -t NCBITaxon:10088 -q $(TAXON_GCI_RELS) \
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-emapa.owl  bridge/cl-bridge-to-emapa.owl  bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl  $< developmental-stage-ontologies/mmusdv/mmusdv.obo developmental-stage-ontologies/mmusdv/mmusdv-bridge-to-uberon.obo --merge-support-ontologies --reasoner elk --merge-equivalence-sets -s UBERON 10 -s CL 9 -s MmusDv 8 -s CARO 2  -l UBERON 10 -l MmusDv 9 -d UBERON 10 --remove-axioms -t DisjointClasses --reasoner elk \
+ --merge-species-ontology -s 'mouse' -t NCBITaxon:10090 -q $(TAXON_GCI_RELS) \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
 
 composite-ma.owl: local-ma.owl $(MBASE) 
-	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ma.owl bridge/cl-bridge-to-ma.owl bridge/uberon-bridge-to-mmusdv.owl $< developmental-stage-ontologies/mmusdv/mmusdv.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
- --merge-species-ontology -s 'Mus' -t NCBITaxon:10088 \
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-ma.owl bridge/cl-bridge-to-ma.owl $<  --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+ --merge-species-ontology -s 'Mus' -t NCBITaxon:10090 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
 
@@ -700,14 +700,14 @@ composite-fma.owl: local-fma.owl $(MBASE)
 # TODO
 composite-aba.owl: local-aba.owl $(MBASE) 
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-aba.owl aba.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
- --merge-species-ontology -s 'mouse brain' -t NCBITaxon:10088 \
+ --merge-species-ontology -s 'mouse brain' -t NCBITaxon:10090 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
 
 # TODO: fix IRIs
 #composite-nif.owl: local-.owl $(MBASE) 
 #	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-aba.owl aba.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
-# --merge-species-ontology -s 'Mouse brain' -t NCBITaxon:10088 \
+# --merge-species-ontology -s 'Mouse brain' -t NCBITaxon:10090 \
 # --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
 # -o -f ofn $@
 
@@ -912,6 +912,13 @@ uberon-defs-from-mp.obo:
 
 caloha-not-in-uberon.txt: 
 	blip-findall -consult util/ubxref.pro -i uberon.obo -r caloha "class(X),atom_concat('TS-',_,X),\+ubxref(_,X)" -select X -label
+
+# ----------------------------------------
+# Neurolex
+# ----------------------------------------
+nlx-%.owl: source-ontologies/nlx_stage_all.rdf 
+	owltools --catalog-xml catalog-nlx.xml $< --abox-to-tbox  --reasoner-query -r elk -d  -l "$*" -c $(OBO)/nlx/neuron  -o $@
+#	owltools --catalog-xml catalog-nlx.xml $<  --reasoner-query -r elk -d -l "$*" --abox-to-tbox  --make-ontology-from-results $(OBO)/nlx/neuron.owl -o $@
 
 # ----------------------------------------
 # Rules

@@ -1088,13 +1088,6 @@ property_value: start_dpf "0.0" xsd:float
 
 [Term]
 id: HsapDv:0000004
-name: cleavage stage (human)
-namespace: human_developmental_stage
-def: "Early stage of Carnegie stage 02 consisting of division of cells in the early embryo." [Bgee:curator]
-xref: UBERON:0000107
-is_a: UBERON:0000067 ! embryo stage part
-relationship: immediately_preceded_by HsapDv:0000003 ! Carnegie stage 01 (human)
-relationship: part_of HsapDv:0000005 ! Carnegie stage 02 (human)
 
 [Term]
 id: HsapDv:0000005
@@ -1678,32 +1671,9 @@ property_value: has_stage_marker EHDAA2:0001525
 
 [Term]
 id: HsapDv:0000037
-name: fetal stage (human)
-namespace: human_developmental_stage
-def: "Prenatal stage that starts with the fully formed embryo and ends at birth." [Bgee:curator]
-comment: Prenatal development is a continuum, with no clear defining feature distinguishing an embryo from a fetus. The use of the term "fetus" generally implies that a mammalian embryo has developed to the point of being recognizable as belonging to its own species, though the point at which this occurs is subjective. [Wikipedia:Fetus]
-synonym: "fetus stage" RELATED []
-synonym: "foetus stage" RELATED []
-synonym: "second and third trimester" RELATED [http://en.wikipedia.org/wiki/Gestational_age]
-xref: EV:0300011
-xref: UBERON:0007220
-is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
-relationship: part_of HsapDv:0000045 ! prenatal stage (human)
-property_value: end_dpf "266.0" xsd:float
-property_value: start_dpf "56.0" xsd:float
 
 [Term]
 id: HsapDv:0000045
-name: prenatal stage (human)
-namespace: human_developmental_stage
-def: "Prenatal stage that starts with fertilization and ends at birth." [UBERON:0000068]
-xref: UBERON:0000068
-is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of UBERON:0000104 ! life cycle
-property_value: end_dpf "266.0" xsd:float
-property_value: end_ypb "0.0" xsd:float
-property_value: start_dpf "0.0" xsd:float
 
 [Term]
 id: HsapDv:0000046
@@ -1713,6 +1683,7 @@ def: "Fetal stage when the fetus is over 8 and under 9 weeks of development." [B
 comment: External genitalia begin to distinguish themselves as either male or female. Eyelids are completely closed, and vocal ligaments appear (see http://ehd.org/resources_bpd_documentation_english.php).
 subset: granular_stage
 xref: EV:0300012
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of HsapDv:0000197 ! third LMP month human stage (human)
 property_value: end_dpf "63.0" xsd:float
@@ -1728,6 +1699,7 @@ def: "Fetal stage when the fetus is over 9 and under 10 weeks of development." [
 comment: The fingernails and toenails begin to develop and unique fingerprints appear. Ossification is underway in most bones (see http://ehd.org/resources_bpd_documentation_english.php).
 subset: granular_stage
 xref: EV:0300013
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000046 ! 9th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000197 ! third LMP month human stage (human)
@@ -1744,6 +1716,7 @@ def: "Fetal stage when the fetus is over 10 and under 11 weeks of development." 
 comment: The nose and lips are completely formed, and external genitalia can be distinguished as male or female (see http://ehd.org/resources_bpd_documentation_english.php).
 subset: granular_stage
 xref: EV:0300030
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000047 ! 10th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000197 ! third LMP month human stage (human)
@@ -1764,6 +1737,7 @@ def: "Fetal stage when the fetus is over 11 and under 12 weeks of development." 
 comment: Upper limb length has nearly reached its final proportion to body size (see http://ehd.org/resources_bpd_documentation_english.php). The assignation of this week to the fourth or third LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
 subset: granular_stage
 xref: EV:0300014
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000048 ! 11th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000198 ! fourth LMP month human stage (human)
@@ -1779,6 +1753,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 12 and under 13 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300015
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000049 ! 12th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000198 ! fourth LMP month human stage (human)
@@ -1794,6 +1769,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 13 and under 14 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300016
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000050 ! 13th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000198 ! fourth LMP month human stage (human)
@@ -1809,6 +1785,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 14 and under 15 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300031
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000051 ! 14th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000198 ! fourth LMP month human stage (human)
@@ -1825,6 +1802,7 @@ def: "Fetal stage when the fetus is over 15 and under 16 weeks of development." 
 comment: The assignation of this week to the fifth or fourth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
 subset: granular_stage
 xref: EV:0300017
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000052 ! 15th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000199 ! fifth LMP month human stage (human)
@@ -1840,6 +1818,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 16 and under 17 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300018
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000053 ! 16th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000199 ! fifth LMP month human stage (human)
@@ -1855,6 +1834,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 17 and under 18 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300019
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000054 ! 17th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000199 ! fifth LMP month human stage (human)
@@ -1870,6 +1850,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 18 and under 19 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300020
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000055 ! 18th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000199 ! fifth LMP month human stage (human)
@@ -1886,6 +1867,7 @@ def: "Fetal stage when the fetus is over 19 and under 20 weeks of development." 
 comment: The cochlea has reached adult size within the fully developed inner ear (see http://ehd.org/resources_bpd_documentation_english.php). The assignation of this week to the sixth or fifth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
 subset: granular_stage
 xref: EV:0300021
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000056 ! 19th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000200 ! sixth LMP month human stage (human)
@@ -1902,6 +1884,7 @@ def: "Fetal stage when the fetus is over 20 and under 21 weeks of development." 
 comment: The lungs gain some ability to breathe air. This stage is considered the age of viability because survival outside the womb becomes possible for some fetuses (see http://ehd.org/resources_bpd_documentation_english.php).
 subset: granular_stage
 xref: EV:0300029
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000057 ! 20th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000200 ! sixth LMP month human stage (human)
@@ -1917,6 +1900,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 21 and under 22 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300022
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000058 ! 21st week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000200 ! sixth LMP month human stage (human)
@@ -1932,6 +1916,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 22 and under 23 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300023
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000059 ! 22nd week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000200 ! sixth LMP month human stage (human)
@@ -1948,6 +1933,7 @@ def: "Fetal stage when the fetus is over 23 and under 24 weeks of development." 
 comment: The eyelids reopen (see http://ehd.org/resources_bpd_documentation_english.php).
 subset: granular_stage
 xref: EV:0300024
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000060 ! 23rd week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000200 ! sixth LMP month human stage (human)
@@ -1964,6 +1950,7 @@ def: "Fetal stage when the fetus is over 24 and under 25 weeks of development." 
 comment: The assignation of this week to the seventh or sixth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
 subset: granular_stage
 xref: EV:0300032
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000061 ! 24th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000201 ! seventh LMP month human stage (human)
@@ -1979,6 +1966,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 25 and under 26 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300025
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000062 ! 25th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000201 ! seventh LMP month human stage (human)
@@ -1994,6 +1982,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 26 and under 27 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300033
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000063 ! 26th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000201 ! seventh LMP month human stage (human)
@@ -2009,6 +1998,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 27 and under 28 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300026
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000064 ! 27th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000201 ! seventh LMP month human stage (human)
@@ -2025,6 +2015,7 @@ def: "Fetal stage when the fetus is over 28 and under 29 weeks of development." 
 comment: The assignation of this week to the eighth or seventh LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
 subset: granular_stage
 xref: EV:0300034
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000065 ! 28th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000202 ! eighth LMP month human stage (human)
@@ -2040,6 +2031,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 29 and under 30 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300035
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000066 ! 29th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000202 ! eighth LMP month human stage (human)
@@ -2055,6 +2047,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 30 and under 31 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300036
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000067 ! 30th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000202 ! eighth LMP month human stage (human)
@@ -2070,6 +2063,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 31 and under 32 weeks of development." [Bgee:curator]
 subset: granular_stage
 xref: EV:0300027
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000068 ! 31st week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000202 ! eighth LMP month human stage (human)
@@ -2085,6 +2079,7 @@ namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 32 and under 33 weeks of development." [Bgee:curator]
 comment: The assignation of this week to the eighth or ninth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
 subset: granular_stage
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000069 ! 32nd week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000202 ! eighth LMP month human stage (human)
@@ -2099,6 +2094,7 @@ name: 34th week post-fertilization human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 33 and under 34 weeks of development." [Bgee:curator]
 subset: granular_stage
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000070 ! 33rd week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000203 ! ninth LMP month human stage (human)
@@ -2113,6 +2109,7 @@ name: 35th week post-fertilization human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 34 and under 35 weeks of development." [Bgee:curator]
 subset: granular_stage
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000071 ! 34th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000203 ! ninth LMP month human stage (human)
@@ -2127,6 +2124,7 @@ name: 36th week post-fertilization human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 35 and under 36 weeks of development." [Bgee:curator]
 subset: granular_stage
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000072 ! 35th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000203 ! ninth LMP month human stage (human)
@@ -2141,6 +2139,7 @@ name: 37th week post-fertilization human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 36 and under 37 weeks of development." [Bgee:curator]
 subset: granular_stage
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000073 ! 36th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000203 ! ninth LMP month human stage (human)
@@ -2155,6 +2154,7 @@ name: 38th week post-fertilization and over human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage when the fetus is over 37 weeks of development and until birth." [Bgee:curator]
 comment: The assignation of this week to the ninth or tenth LMP month is debatable (see http://en.wikipedia.org/wiki/File:Prenatal_development_table.svg).
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000074 ! 37th week post-fertilization human stage (human)
 relationship: part_of HsapDv:0000203 ! ninth LMP month human stage (human)
@@ -2165,16 +2165,6 @@ property_value: start_dpf "259.0" xsd:float
 
 [Term]
 id: HsapDv:0000080
-name: immature stage (human)
-namespace: human_developmental_stage
-def: "Human developmental stage that covers the period from birth until 12 years old." [Bgee:curator]
-synonym: "0-12 years" EXACT []
-synonym: "child" RELATED []
-xref: UBERON:0000112
-is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of UBERON:0000104 ! life cycle
-property_value: end_ypb "13.0" xsd:float
-property_value: start_ypb "0.0" xsd:float
 
 [Term]
 id: HsapDv:0000081
@@ -2183,7 +2173,6 @@ namespace: human_developmental_stage
 def: "Immature stage that refers to child who is over 2 and under 13 years old." [Bgee:curator]
 synonym: "2-12 years" EXACT []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of HsapDv:0000080 ! immature stage (human)
 relationship: part_of UBERON:0000112 ! sexually immature stage
 property_value: end_ypb "13.0" xsd:float
 property_value: end_ypb "13.0" xsd:float
@@ -2213,7 +2202,6 @@ def: "Immature stage that refers to an infant who is over 31 days and is under 2
 synonym: "1-23 months" EXACT []
 synonym: "infantile stage" EXACT []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of HsapDv:0000080 ! immature stage (human)
 relationship: part_of UBERON:0000112 ! sexually immature stage
 property_value: end_mpb "24.0" xsd:float
 property_value: end_mpb "24.0" xsd:float
@@ -2259,7 +2247,6 @@ synonym: "13-18 years" EXACT []
 synonym: "teen" RELATED []
 synonym: "teenager" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of HsapDv:0000204 ! mature stage (human)
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 property_value: end_ypb "19.0" xsd:float
 property_value: end_ypb "19.0" xsd:float
@@ -2273,7 +2260,6 @@ namespace: human_developmental_stage
 def: "Human developmental stage that refers to an adult who is over 19." [Bgee:curator]
 synonym: "19+ years" EXACT []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of HsapDv:0000204 ! mature stage (human)
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 property_value: start_ypb "19.0" xsd:float
 property_value: start_ypb "19.0" xsd:float
@@ -3885,8 +3871,8 @@ id: HsapDv:0000197
 name: third LMP month human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage that refers to the third month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of HsapDv:0000037 ! fetal stage (human)
 relationship: part_of UBERON:0007220 ! late embryonic stage
 property_value: end_dpf "77.0" xsd:float
 property_value: end_dpf "77.0" xsd:float
@@ -3899,9 +3885,9 @@ id: HsapDv:0000198
 name: fourth LMP month human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage that refers to the fourth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000197 ! third LMP month human stage (human)
-relationship: part_of HsapDv:0000037 ! fetal stage (human)
 relationship: part_of UBERON:0007220 ! late embryonic stage
 property_value: end_dpf "105.0" xsd:float
 property_value: end_dpf "105.0" xsd:float
@@ -3914,9 +3900,9 @@ id: HsapDv:0000199
 name: fifth LMP month human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage that refers to the fifth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000198 ! fourth LMP month human stage (human)
-relationship: part_of HsapDv:0000037 ! fetal stage (human)
 relationship: part_of UBERON:0007220 ! late embryonic stage
 property_value: end_dpf "133.0" xsd:float
 property_value: end_dpf "133.0" xsd:float
@@ -3929,9 +3915,9 @@ id: HsapDv:0000200
 name: sixth LMP month human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage that refers to the sixth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000199 ! fifth LMP month human stage (human)
-relationship: part_of HsapDv:0000037 ! fetal stage (human)
 relationship: part_of UBERON:0007220 ! late embryonic stage
 property_value: end_dpf "168.0" xsd:float
 property_value: end_dpf "168.0" xsd:float
@@ -3944,9 +3930,9 @@ id: HsapDv:0000201
 name: seventh LMP month human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage that refers to the seventh month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000200 ! sixth LMP month human stage (human)
-relationship: part_of HsapDv:0000037 ! fetal stage (human)
 relationship: part_of UBERON:0007220 ! late embryonic stage
 property_value: end_dpf "196.0" xsd:float
 property_value: end_dpf "196.0" xsd:float
@@ -3959,9 +3945,9 @@ id: HsapDv:0000202
 name: eighth LMP month human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage that refers to the eighth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000201 ! seventh LMP month human stage (human)
-relationship: part_of HsapDv:0000037 ! fetal stage (human)
 relationship: part_of UBERON:0007220 ! late embryonic stage
 property_value: end_dpf "231.0" xsd:float
 property_value: end_dpf "231.0" xsd:float
@@ -3974,9 +3960,9 @@ id: HsapDv:0000203
 name: ninth LMP month human stage (human)
 namespace: human_developmental_stage
 def: "Fetal stage that refers to the ninth month of gestation starting from the last menstrual period (LMP)." [Bgee:curator]
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000202 ! eighth LMP month human stage (human)
-relationship: part_of HsapDv:0000037 ! fetal stage (human)
 relationship: part_of UBERON:0007220 ! late embryonic stage
 property_value: end_dpf "266.0" xsd:float
 property_value: end_dpf "266.0" xsd:float
@@ -3986,13 +3972,6 @@ property_value: Wikipedia:Gestational_age "9.0" xsd:float
 
 [Term]
 id: HsapDv:0000204
-name: mature stage (human)
-namespace: human_developmental_stage
-def: "Human developmental stage that refers to a sexually mature human." [Bgee:curator]
-xref: UBERON:0000113
-is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of UBERON:0000104 ! life cycle
-property_value: start_ypb "13.0" xsd:float
 
 [Term]
 id: HsapDv:0000205
@@ -4001,7 +3980,6 @@ namespace: human_developmental_stage
 def: "The morula stage is the later part of Carnegie stage 02 when the cells have coalesced into a mass but the blastocystic cavity has not formed. Formation of the cavity marks the beginning of Carnegie stage 03." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000004 ! cleavage stage (human)
 relationship: immediately_preceded_by UBERON:0000107 ! cleavage stage
 relationship: part_of HsapDv:0000005 ! Carnegie stage 02 (human)
 
@@ -5118,31 +5096,17 @@ name: embryonic mouse stage (mouse)
 namespace: mouse_developmental_stage
 def: "Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage." [Bgee:curator]
 comment: By embryo we mean in the sense of up to the 2nd week postfertilization (beginning of Theiler stage 23), we treat fetus as a separate stage.
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 property_value: start_dpc "0.45" xsd:float
+property_value: start_dpc "0.45" xsd:float
+property_value: start_dpf "0.0" xsd:float
 property_value: start_dpf "0.0" xsd:float
 
 [Term]
-id: MmusDv:0000003
-name: Theiler stage 01 (Mus)
-namespace: mouse_developmental_stage
-def: "Embryonic stage defined by a one-cell embryo (fertilised egg) with zona pellucida present." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_1]
-comment: "Starts the mouse development sequence, range from embryonic age 0-0.9 dpc (day post coitum). Assumes that fertilization takes place around midnight during a 7pm to 5am dark cycle. Noon of the day on which the vaginal plug is found the embryos are aged 0.5 d.p.c (days post coitum)." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Timed_Pregnancy "adapted from"]
-synonym: "E0-2.5" EXACT []
-synonym: "Theiler stage 1" EXACT []
-synonym: "TS01 (E0-2.5)" RELATED [EMAPA:TS01]
-synonym: "zygote stage" RELATED []
-xref: EMAPA:TS01
-xref: UBERON:0000106
-xref: XUO:0000045
-is_a: UBERON:0000067 ! embryo stage part
-relationship: part_of UBERON:0000068 ! embryo stage
-property_value: start_dpc "0.45" xsd:float
-
-[Term]
 id: MmusDv:0000005
-name: Theiler stage 02 (Mus)
+name: Theiler stage 02 (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic cleavage stage defined by a dividing 2-4 cells egg." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_2]
 comment: Embryonic age 1 dpc (day post coitum).
@@ -5154,7 +5118,6 @@ xref: EMAPA:TS02
 xref: XUO:0000046
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000003 ! Theiler stage 01 (Mus)
 relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 property_value: start_dpc "1.0" xsd:float
@@ -5162,7 +5125,7 @@ property_value: start_dpc "1.0" xsd:float
 
 [Term]
 id: MmusDv:0000006
-name: Theiler stage 03 (Mus)
+name: Theiler stage 03 (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic cleavage stage defined by a dividing 4-16 cells egg, early to fully compacted morula." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_3]
 comment: Embryonic age 2 dpc (day post coitum).
@@ -5174,7 +5137,7 @@ xref: EMAPA:TS03
 xref: XUO:0000047
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000005 ! Theiler stage 02 (Mus)
+relationship: immediately_preceded_by MmusDv:0000005 ! Theiler stage 02 (mouse)
 relationship: part_of UBERON:0000107 ! cleavage stage
 property_value: start_dpc "2.0" xsd:float
 property_value: start_dpc "2.0" xsd:float
@@ -5185,12 +5148,13 @@ name: blastula stage (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic stage that is an early stage of embryonic development in animals and is produced by cleavage of a fertilized ovum, with formation of a central fluid-filled cavity called the blastocoel." [UBERON:0000108]
 comment: The blastula follows the morula and precedes the gastrula in the developmental sequence.
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of MmusDv:0000002 ! embryonic mouse stage (mouse)
 
 [Term]
 id: MmusDv:0000008
-name: Theiler stage 04 (Mus)
+name: Theiler stage 04 (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage defined by a dividing 16-40 cells egg, with early evidence of the blastocoelic cavity." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_4]
 comment: Embryonic age 3 dpc (day post coitum).
@@ -5202,15 +5166,14 @@ xref: EMAPA:TS04
 xref: XUO:0000048
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000006 ! Theiler stage 03 (Mus)
+relationship: immediately_preceded_by MmusDv:0000006 ! Theiler stage 03 (mouse)
 relationship: part_of MmusDv:0000007 ! blastula stage (mouse)
-relationship: part_of UBERON:0000108 ! blastula stage
 property_value: start_dpc "3.0" xsd:float
 property_value: start_dpc "3.0" xsd:float
 
 [Term]
 id: MmusDv:0000009
-name: Theiler stage 05 (Mus)
+name: Theiler stage 05 (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage defined by a zona free blastocyst (zona pellucida absent)." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_5]
 comment: Embryonic age 4 dpc (day post coitum).
@@ -5222,9 +5185,8 @@ xref: EMAPA:TS05
 xref: XUO:0000049
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000008 ! Theiler stage 04 (Mus)
+relationship: immediately_preceded_by MmusDv:0000008 ! Theiler stage 04 (mouse)
 relationship: part_of MmusDv:0000007 ! blastula stage (mouse)
-relationship: part_of UBERON:0000108 ! blastula stage
 property_value: has_stage_marker GO:0001835
 property_value: has_stage_marker GO:0001835
 property_value: start_dpc "4.0" xsd:float
@@ -5244,9 +5206,8 @@ xref: EMAPA:TS06
 xref: XUO:0000050
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000009 ! Theiler stage 05 (Mus)
+relationship: immediately_preceded_by MmusDv:0000009 ! Theiler stage 05 (mouse)
 relationship: part_of MmusDv:0000007 ! blastula stage (mouse)
-relationship: part_of UBERON:0000108 ! blastula stage
 property_value: start_dpc "4.5" xsd:float
 property_value: start_dpc "4.5" xsd:float
 
@@ -5266,7 +5227,6 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000010 ! Theiler stage 06 (mouse)
 relationship: part_of MmusDv:0000007 ! blastula stage (mouse)
-relationship: part_of UBERON:0000108 ! blastula stage
 property_value: has_stage_marker GO:0007566
 property_value: has_stage_marker GO:0007566
 property_value: start_dpc "5.0" xsd:float
@@ -5274,7 +5234,7 @@ property_value: start_dpc "5.0" xsd:float
 
 [Term]
 id: MmusDv:0000012
-name: Theiler stage 08 (Mus)
+name: Theiler stage 08 (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic blastula stage during which the egg cylinder differentiates into embryonic and extra-embryonic regions, and the pro-amniotic cavity appears." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_8]
 comment: Embryonic age 6 dpc (day post coitum). Refers to human CarnegieStage05.
@@ -5288,13 +5248,12 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000011 ! Theiler stage 07 (mouse)
 relationship: part_of MmusDv:0000007 ! blastula stage (mouse)
-relationship: part_of UBERON:0000108 ! blastula stage
 property_value: start_dpc "6.0" xsd:float
 property_value: start_dpc "6.0" xsd:float
 
 [Term]
 id: MmusDv:0000014
-name: Theiler stage 09 (Mus)
+name: Theiler stage 09 (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic gastrula stage during which gastrulation starts with first evidence of mesoderm and visible embryonic axis." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_9]
 comment: Embryonic age 6.5 dpc (day post coitum).
@@ -5306,7 +5265,7 @@ xref: EMAPA:TS09
 xref: XUO:0000053
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000012 ! Theiler stage 08 (Mus)
+relationship: immediately_preceded_by MmusDv:0000012 ! Theiler stage 08 (mouse)
 relationship: part_of UBERON:0000109 ! gastrula stage
 property_value: has_stage_marker UBERON:0000926
 property_value: has_stage_marker UBERON:0000926
@@ -5326,7 +5285,7 @@ xref: EMAPA:TS10
 xref: XUO:0000054
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000014 ! Theiler stage 09 (Mus)
+relationship: immediately_preceded_by MmusDv:0000014 ! Theiler stage 09 (mouse)
 relationship: part_of UBERON:0000109 ! gastrula stage
 property_value: has_stage_marker UBERON:0003888
 property_value: has_stage_marker UBERON:0003888
@@ -5349,10 +5308,13 @@ synonym: "TS11" EXACT []
 synonym: "TS11 (E7.25-8)" RELATED [EMAPA:TS11]
 xref: EMAPA:TS11
 xref: XUO:0000055
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000015 ! Theiler stage 10 (mouse)
 relationship: part_of MmusDv:0000002 ! embryonic mouse stage (mouse)
 property_value: has_stage_marker UBERON:0003075
+property_value: has_stage_marker UBERON:0003075
+property_value: start_dpc "7.5" xsd:float
 property_value: start_dpc "7.5" xsd:float
 
 [Term]
@@ -5360,12 +5322,13 @@ id: MmusDv:0000018
 name: organogenesis stage (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [UBERON:0000111]
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of MmusDv:0000002 ! embryonic mouse stage (mouse)
 
 [Term]
 id: MmusDv:0000019
-name: Theiler stage 12 (Mus)
+name: Theiler stage 12 (mouse)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which first somites become visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12]
 comment: Embryonic age 8 dpc (day post coitum). Refers to human CarnegieStage09.
@@ -5377,9 +5340,7 @@ xref: XUO:0000056
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000017 ! Theiler stage 11 (mouse)
-relationship: immediately_preceded_by UBERON:0000110 ! neurula stage
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker EMAPA:16173
 property_value: has_stage_marker EMAPA:16173
 property_value: start_dpc "8.0" xsd:float
@@ -5387,7 +5348,7 @@ property_value: start_dpc "8.0" xsd:float
 
 [Term]
 id: MmusDv:0000020
-name: Theiler stage 13 (Mus)
+name: Theiler stage 13 (mouse)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage defined by the turning of the embryo; initiated in embryos with 6-8 pairs of somites and usually completed in embryos with 14-16 pairs of somites." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_13]
 comment: Embryonic age 8.5 dpc (day post coitum). Refers to human CarnegieStage10.
@@ -5398,9 +5359,8 @@ xref: EMAPA:TS13
 xref: XUO:0000057
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000019 ! Theiler stage 12 (Mus)
+relationship: immediately_preceded_by MmusDv:0000019 ! Theiler stage 12 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker EMAPA:16441
 property_value: has_stage_marker EMAPA:16441
 property_value: has_stage_marker EMAPA:16445
@@ -5423,9 +5383,8 @@ xref: EMAPA:TS14
 xref: XUO:0000058
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000020 ! Theiler stage 13 (Mus)
+relationship: immediately_preceded_by MmusDv:0000020 ! Theiler stage 13 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker EMAPA:16445
 property_value: has_stage_marker EMAPA:16445
 property_value: has_stage_marker EMAPA:16449
@@ -5452,7 +5411,6 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000021 ! Theiler stage 14 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005417
 property_value: has_stage_marker UBERON:0005417
 property_value: start_dpc "9.5" xsd:float
@@ -5473,7 +5431,6 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000022 ! Theiler stage 15 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005418
 property_value: has_stage_marker UBERON:0005418
 property_value: start_dpc "10.0" xsd:float
@@ -5494,7 +5451,6 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000023 ! Theiler stage 16 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker EMAPA:18411
 property_value: has_stage_marker EMAPA:18411
 property_value: has_stage_marker UBERON:0006259
@@ -5504,7 +5460,7 @@ property_value: start_dpc "10.5" xsd:float
 
 [Term]
 id: MmusDv:0000025
-name: Theiler stage 18 (Mus)
+name: Theiler stage 18 (mouse)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the lens vesicle gradually closes and the nasal pits start to form. The rapid growth of the brain is striking." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_18]
 comment: Embryonic age 11 dpc (day post coitum). Refers to human CarnegieStages 13 to 15.
@@ -5517,7 +5473,6 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000024 ! Theiler stage 17 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005870
 property_value: has_stage_marker UBERON:0005870
 property_value: start_dpc "11.0" xsd:float
@@ -5536,15 +5491,14 @@ xref: EMAPA:TS19
 xref: XUO:0000063
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000025 ! Theiler stage 18 (Mus)
+relationship: immediately_preceded_by MmusDv:0000025 ! Theiler stage 18 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: start_dpc "11.5" xsd:float
 property_value: start_dpc "11.5" xsd:float
 
 [Term]
 id: MmusDv:0000027
-name: Theiler stage 20 (Mus)
+name: Theiler stage 20 (mouse)
 namespace: mouse_developmental_stage
 def: "Organogenesis stage during which the handplate develops angles corresponding to the future digits, and tongue and brain vesicles are clearly visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_20]
 comment: Embryonic age 12 dpc (day post coitum). Refers to human CarnegieStage17.
@@ -5557,7 +5511,6 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000026 ! Theiler stage 19 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: start_dpc "12.0" xsd:float
 property_value: start_dpc "12.0" xsd:float
 
@@ -5574,9 +5527,8 @@ xref: EMAPA:TS21
 xref: XUO:0000065
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000027 ! Theiler stage 20 (Mus)
+relationship: immediately_preceded_by MmusDv:0000027 ! Theiler stage 20 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: start_dpc "13.0" xsd:float
 property_value: start_dpc "13.0" xsd:float
 
@@ -5595,7 +5547,6 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000028 ! Theiler stage 21 (mouse)
 relationship: part_of MmusDv:0000018 ! organogenesis stage (mouse)
-relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: has_stage_marker UBERON:0003606
 property_value: has_stage_marker UBERON:0003606
 property_value: start_dpc "14.0" xsd:float
@@ -5657,7 +5608,7 @@ property_value: start_dpc "17.0" xsd:float
 
 [Term]
 id: MmusDv:0000035
-name: Theiler stage 26 (Mus)
+name: Theiler stage 26 (mouse)
 namespace: mouse_developmental_stage
 def: "Fetal stage defined by long whiskers and during which the eyes are barely visible through the closed eyelids." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_26]
 comment: Embryonic age 18 dpc (day post coitum). Refers to the human fetal period.
@@ -5675,7 +5626,7 @@ property_value: start_dpc "18.0" xsd:float
 
 [Term]
 id: MmusDv:0000036
-name: Theiler stage 27 (Mus)
+name: Theiler stage 27 (mouse)
 namespace: mouse_developmental_stage
 def: "Early immature stage that refers to the newborn mouse. Description of anatomical structures related to this stage corresponds to the first day of the mouse life." [http://www.emouseatlas.org/emap/ema/theiler_stages/StageDefinition/ts27definition.html]
 comment: Embryonic age 19-20 dpc (day post coitum).
@@ -5687,9 +5638,8 @@ xref: EMAPA:TS27
 xref: XUO:0000071
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000035 ! Theiler stage 26 (Mus)
+relationship: immediately_preceded_by MmusDv:0000035 ! Theiler stage 26 (mouse)
 relationship: part_of MmusDv:0000096 ! early immature stage (mouse)
-relationship: part_of UBERON:0007221 ! neonate stage
 property_value: start_dpc "19.0" xsd:float
 property_value: start_dpc "19.0" xsd:float
 property_value: start_wpb "0.0" xsd:float
@@ -5718,27 +5668,13 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000104 ! life cycle
 
 [Term]
-id: MmusDv:0000042
-name: prenatal stage (mouse)
-namespace: mouse_developmental_stage
-def: "Mouse life cycle that starts with fertilization and ends with birth." [UBERON:0000068]
-xref: UBERON:0000068
-is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of UBERON:0000104 ! life cycle
-property_value: end_dpc "19.0" xsd:float
-property_value: end_ypb "0.0" xsd:float
-property_value: start_dpc "0.45" xsd:float
-property_value: start_dpf "0.0" xsd:float
-
-[Term]
 id: MmusDv:0000044
-name: 1-7 days (Mus)
+name: 1-7 days (mouse)
 namespace: mouse_developmental_stage
 def: "Early immature stage that refers to the newborn mouse which is over 1 and under 8 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of MmusDv:0000096 ! early immature stage (mouse)
-relationship: part_of UBERON:0007221 ! neonate stage
 property_value: end_wpb "1.143" xsd:float
 property_value: end_wpb "1.143" xsd:float
 property_value: start_wpb "0.143" xsd:float
@@ -5746,12 +5682,12 @@ property_value: start_wpb "0.143" xsd:float
 
 [Term]
 id: MmusDv:0000045
-name: 1 week (Mus)
+name: 1 week (mouse)
 namespace: mouse_developmental_stage
 def: "Infant stage that refers to a mouse which is over 7 days and under 15 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000044 ! 1-7 days (Mus)
+relationship: immediately_preceded_by MmusDv:0000044 ! 1-7 days (mouse)
 relationship: part_of MmusDv:0000038 ! infant stage (mouse)
 property_value: end_wpb "2.0" xsd:float
 property_value: end_wpb "2.0" xsd:float
@@ -5760,12 +5696,12 @@ property_value: start_wpb "1.0" xsd:float
 
 [Term]
 id: MmusDv:0000046
-name: 2 weeks (Mus)
+name: 2 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "Infant stage that refers to a mouse which is over 14 days and under 22 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000045 ! 1 week (Mus)
+relationship: immediately_preceded_by MmusDv:0000045 ! 1 week (mouse)
 relationship: part_of MmusDv:0000038 ! infant stage (mouse)
 property_value: end_wpb "3.0" xsd:float
 property_value: end_wpb "3.0" xsd:float
@@ -5774,12 +5710,12 @@ property_value: start_wpb "2.0" xsd:float
 
 [Term]
 id: MmusDv:0000047
-name: 3 weeks (Mus)
+name: 3 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "Infant stage that refers to a mouse which is over 21 days and under 29 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000046 ! 2 weeks (Mus)
+relationship: immediately_preceded_by MmusDv:0000046 ! 2 weeks (mouse)
 relationship: part_of MmusDv:0000038 ! infant stage (mouse)
 property_value: end_wpb "4.0" xsd:float
 property_value: end_wpb "4.0" xsd:float
@@ -5793,7 +5729,7 @@ namespace: mouse_developmental_stage
 def: "Infant stage that refers to a mouse which is over 28 days and under 36 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000047 ! 3 weeks (Mus)
+relationship: immediately_preceded_by MmusDv:0000047 ! 3 weeks (mouse)
 relationship: part_of MmusDv:0000038 ! infant stage (mouse)
 property_value: end_wpb "5.0" xsd:float
 property_value: end_wpb "5.0" xsd:float
@@ -5824,7 +5760,7 @@ comment: This stage is commonly considered in the literature as the milestone th
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000049 ! 5 weeks (mouse)
-relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+relationship: part_of MmusDv:0000061 ! early adult stage (mouse)
 property_value: end_wpb "7.0" xsd:float
 property_value: end_wpb "7.0" xsd:float
 property_value: start_wpb "6.0" xsd:float
@@ -5832,13 +5768,13 @@ property_value: start_wpb "6.0" xsd:float
 
 [Term]
 id: MmusDv:0000051
-name: 7 weeks (Mus)
+name: 7 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 49 days and under 57 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000050 ! 6 weeks (mouse)
-relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+relationship: part_of MmusDv:0000061 ! early adult stage (mouse)
 property_value: end_wpb "8.0" xsd:float
 property_value: end_wpb "8.0" xsd:float
 property_value: start_wpb "7.0" xsd:float
@@ -5846,13 +5782,13 @@ property_value: start_wpb "7.0" xsd:float
 
 [Term]
 id: MmusDv:0000052
-name: 8 weeks (Mus)
+name: 8 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "2 month-old stage that refers to a mouse which is over 56 days and under 64 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000051 ! 7 weeks (Mus)
-relationship: part_of MmusDv:0000062 ! 2 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000051 ! 7 weeks (mouse)
+relationship: part_of MmusDv:0000062 ! 2 month-old stage (mouse)
 property_value: end_wpb "9.0" xsd:float
 property_value: end_wpb "9.0" xsd:float
 property_value: start_wpb "8.0" xsd:float
@@ -5860,13 +5796,13 @@ property_value: start_wpb "8.0" xsd:float
 
 [Term]
 id: MmusDv:0000053
-name: 9 weeks (Mus)
+name: 9 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "2 month-old stage that refers to a mouse which is over 63 days and under 71 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000052 ! 8 weeks (Mus)
-relationship: part_of MmusDv:0000062 ! 2 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000052 ! 8 weeks (mouse)
+relationship: part_of MmusDv:0000062 ! 2 month-old stage (mouse)
 property_value: end_wpb "10.0" xsd:float
 property_value: end_wpb "10.0" xsd:float
 property_value: start_wpb "9.0" xsd:float
@@ -5879,8 +5815,8 @@ namespace: mouse_developmental_stage
 def: "2 month-old stage that refers to a mouse which is over 70 days and under 78 days old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000053 ! 9 weeks (Mus)
-relationship: part_of MmusDv:0000062 ! 2 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000053 ! 9 weeks (mouse)
+relationship: part_of MmusDv:0000062 ! 2 month-old stage (mouse)
 property_value: end_wpb "11.0" xsd:float
 property_value: end_wpb "11.0" xsd:float
 property_value: start_wpb "10.0" xsd:float
@@ -5894,7 +5830,7 @@ def: "2 month-old stage that refers to a mouse which is over 77 days and under 8
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000054 ! 10 weeks (mouse)
-relationship: part_of MmusDv:0000062 ! 2 month-old stage (Mus)
+relationship: part_of MmusDv:0000062 ! 2 month-old stage (mouse)
 property_value: end_wpb "12.0" xsd:float
 property_value: end_wpb "12.0" xsd:float
 property_value: start_wpb "11.0" xsd:float
@@ -5909,7 +5845,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000055 ! 11 weeks (mouse)
-relationship: part_of MmusDv:0000063 ! 3 month-old stage (Mus)
+relationship: part_of MmusDv:0000063 ! 3 month-old stage (mouse)
 property_value: end_wpb "13.0" xsd:float
 property_value: end_wpb "13.0" xsd:float
 property_value: start_wpb "12.0" xsd:float
@@ -5924,7 +5860,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000056 ! 12 weeks (mouse)
-relationship: part_of MmusDv:0000063 ! 3 month-old stage (Mus)
+relationship: part_of MmusDv:0000063 ! 3 month-old stage (mouse)
 property_value: end_wpb "14.0" xsd:float
 property_value: end_wpb "14.0" xsd:float
 property_value: start_wpb "13.0" xsd:float
@@ -5932,14 +5868,14 @@ property_value: start_wpb "13.0" xsd:float
 
 [Term]
 id: MmusDv:0000058
-name: 14 weeks (Mus)
+name: 14 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "3 month-old stage that refers to a mouse which is over 98 days and under 106 days old." [Bgee:curator]
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000057 ! 13 weeks (mouse)
-relationship: part_of MmusDv:0000063 ! 3 month-old stage (Mus)
+relationship: part_of MmusDv:0000063 ! 3 month-old stage (mouse)
 property_value: end_wpb "15.0" xsd:float
 property_value: end_wpb "15.0" xsd:float
 property_value: start_wpb "14.0" xsd:float
@@ -5947,14 +5883,14 @@ property_value: start_wpb "14.0" xsd:float
 
 [Term]
 id: MmusDv:0000059
-name: 15 weeks (Mus)
+name: 15 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "3 month-old stage that refers to a mouse which is over 105 days and under 113 days old." [Bgee:curator]
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000058 ! 14 weeks (Mus)
-relationship: part_of MmusDv:0000063 ! 3 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000058 ! 14 weeks (mouse)
+relationship: part_of MmusDv:0000063 ! 3 month-old stage (mouse)
 property_value: end_wpb "16.0" xsd:float
 property_value: end_wpb "16.0" xsd:float
 property_value: start_wpb "15.0" xsd:float
@@ -5962,7 +5898,7 @@ property_value: start_wpb "15.0" xsd:float
 
 [Term]
 id: MmusDv:0000061
-name: early adult stage (Mus)
+name: early adult stage (mouse)
 namespace: mouse_developmental_stage
 def: "Mature stage that refers to a adult mouse which is over 6 weeks and under 7 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
 comment: Mice under 7 months of age are commonly considered as young adult in the literature, without loss of functional capability like hearing (see http://www.ncbi.nlm.nih.gov/pubmed/18259074).
@@ -5980,12 +5916,12 @@ property_value: start_wpb "6.0" xsd:float
 
 [Term]
 id: MmusDv:0000062
-name: 2 month-old stage (Mus)
+name: 2 month-old stage (mouse)
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 2 and under 3 months old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+relationship: part_of MmusDv:0000061 ! early adult stage (mouse)
 property_value: end_mpb "3.0" xsd:float
 property_value: end_mpb "3.0" xsd:float
 property_value: end_wpb "12.0" xsd:float
@@ -5997,13 +5933,13 @@ property_value: start_wpb "8.0" xsd:float
 
 [Term]
 id: MmusDv:0000063
-name: 3 month-old stage (Mus)
+name: 3 month-old stage (mouse)
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 3 and under 4 months old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000062 ! 2 month-old stage (Mus)
-relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000062 ! 2 month-old stage (mouse)
+relationship: part_of MmusDv:0000061 ! early adult stage (mouse)
 property_value: end_mpb "4.0" xsd:float
 property_value: end_mpb "4.0" xsd:float
 property_value: end_wpb "16.0" xsd:float
@@ -6015,13 +5951,13 @@ property_value: start_wpb "12.0" xsd:float
 
 [Term]
 id: MmusDv:0000064
-name: 4 month-old stage (Mus)
+name: 4 month-old stage (mouse)
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 4 and under 5 months old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000063 ! 3 month-old stage (Mus)
-relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000063 ! 3 month-old stage (mouse)
+relationship: part_of MmusDv:0000061 ! early adult stage (mouse)
 property_value: end_mpb "5.0" xsd:float
 property_value: end_mpb "5.0" xsd:float
 property_value: end_wpb "21.0" xsd:float
@@ -6039,8 +5975,8 @@ def: "4 month-old stage that refers to a mouse which is over 112 days and under 
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000059 ! 15 weeks (Mus)
-relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000059 ! 15 weeks (mouse)
+relationship: part_of MmusDv:0000064 ! 4 month-old stage (mouse)
 property_value: end_wpb "17.0" xsd:float
 property_value: end_wpb "17.0" xsd:float
 property_value: start_wpb "16.0" xsd:float
@@ -6055,7 +5991,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000065 ! 16 weeks (mouse)
-relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+relationship: part_of MmusDv:0000064 ! 4 month-old stage (mouse)
 property_value: end_wpb "18.0" xsd:float
 property_value: end_wpb "18.0" xsd:float
 property_value: start_wpb "17.0" xsd:float
@@ -6070,7 +6006,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000066 ! 17 weeks (mouse)
-relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+relationship: part_of MmusDv:0000064 ! 4 month-old stage (mouse)
 property_value: end_wpb "19.0" xsd:float
 property_value: end_wpb "19.0" xsd:float
 property_value: start_wpb "18.0" xsd:float
@@ -6085,7 +6021,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000067 ! 18 weeks (mouse)
-relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+relationship: part_of MmusDv:0000064 ! 4 month-old stage (mouse)
 property_value: end_wpb "20.0" xsd:float
 property_value: end_wpb "20.0" xsd:float
 property_value: start_wpb "19.0" xsd:float
@@ -6093,13 +6029,13 @@ property_value: start_wpb "19.0" xsd:float
 
 [Term]
 id: MmusDv:0000069
-name: 5 month-old stage (Mus)
+name: 5 month-old stage (mouse)
 namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 5 and under 6 months old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000064 ! 4 month-old stage (Mus)
-relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000064 ! 4 month-old stage (mouse)
+relationship: part_of MmusDv:0000061 ! early adult stage (mouse)
 property_value: end_mpb "6.0" xsd:float
 property_value: end_mpb "6.0" xsd:float
 property_value: end_wpb "25.0" xsd:float
@@ -6118,7 +6054,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000068 ! 19 weeks (mouse)
-relationship: part_of MmusDv:0000064 ! 4 month-old stage (Mus)
+relationship: part_of MmusDv:0000064 ! 4 month-old stage (mouse)
 property_value: end_wpb "21.0" xsd:float
 property_value: end_wpb "21.0" xsd:float
 property_value: start_wpb "20.0" xsd:float
@@ -6133,7 +6069,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000070 ! 20 weeks (mouse)
-relationship: part_of MmusDv:0000069 ! 5 month-old stage (Mus)
+relationship: part_of MmusDv:0000069 ! 5 month-old stage (mouse)
 property_value: end_wpb "22.0" xsd:float
 property_value: end_wpb "22.0" xsd:float
 property_value: start_wpb "21.0" xsd:float
@@ -6148,7 +6084,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000071 ! 21 weeks (mouse)
-relationship: part_of MmusDv:0000069 ! 5 month-old stage (Mus)
+relationship: part_of MmusDv:0000069 ! 5 month-old stage (mouse)
 property_value: end_wpb "23.0" xsd:float
 property_value: end_wpb "23.0" xsd:float
 property_value: start_wpb "22.0" xsd:float
@@ -6156,14 +6092,14 @@ property_value: start_wpb "22.0" xsd:float
 
 [Term]
 id: MmusDv:0000073
-name: 23 weeks (Mus)
+name: 23 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "5 month-old stage that refers to a mouse which is over 161 days and under 169 days old." [Bgee:curator]
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000072 ! 22 weeks (mouse)
-relationship: part_of MmusDv:0000069 ! 5 month-old stage (Mus)
+relationship: part_of MmusDv:0000069 ! 5 month-old stage (mouse)
 property_value: end_wpb "24.0" xsd:float
 property_value: end_wpb "24.0" xsd:float
 property_value: start_wpb "23.0" xsd:float
@@ -6177,8 +6113,8 @@ def: "5 month-old stage that refers to a mouse which is over 168 days and under 
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000073 ! 23 weeks (Mus)
-relationship: part_of MmusDv:0000069 ! 5 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000073 ! 23 weeks (mouse)
+relationship: part_of MmusDv:0000069 ! 5 month-old stage (mouse)
 property_value: end_wpb "25.0" xsd:float
 property_value: end_wpb "25.0" xsd:float
 property_value: start_wpb "24.0" xsd:float
@@ -6202,7 +6138,7 @@ property_value: start_wpb "30.0" xsd:float
 
 [Term]
 id: MmusDv:0000076
-name: aged adult stage (Mus)
+name: aged adult stage (mouse)
 namespace: mouse_developmental_stage
 def: "Late adult stage that refers to a mouse which is over 15 months old." [http://research.jax.org/faculty/harrison/ger1vLifespan1.html#VD]
 is_a: UBERON:0000067 ! embryo stage part
@@ -6218,8 +6154,8 @@ namespace: mouse_developmental_stage
 def: "Early adult stage that refers to a mouse which is over 6 and under 7 months old." [Bgee:curator]
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000069 ! 5 month-old stage (Mus)
-relationship: part_of MmusDv:0000061 ! early adult stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000069 ! 5 month-old stage (mouse)
+relationship: part_of MmusDv:0000061 ! early adult stage (mouse)
 property_value: end_mpb "7.0" xsd:float
 property_value: end_mpb "7.0" xsd:float
 property_value: end_wpb "30.0" xsd:float
@@ -6231,7 +6167,7 @@ property_value: start_wpb "25.0" xsd:float
 
 [Term]
 id: MmusDv:0000078
-name: 7 month-old stage (Mus)
+name: 7 month-old stage (mouse)
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 7 and under 8 months old." [Bgee:curator]
 subset: granular_stage
@@ -6254,7 +6190,7 @@ def: "Middle aged stage that refers to a mouse which is over 8 and under 9 month
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000078 ! 7 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000078 ! 7 month-old stage (mouse)
 relationship: part_of MmusDv:0000075 ! middle aged stage (mouse)
 property_value: end_mpb "9.0" xsd:float
 property_value: end_mpb "9.0" xsd:float
@@ -6263,7 +6199,7 @@ property_value: start_mpb "8.0" xsd:float
 
 [Term]
 id: MmusDv:0000080
-name: 9 month-old stage (Mus)
+name: 9 month-old stage (mouse)
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 9 and under 10 months old." [Bgee:curator]
 subset: granular_stage
@@ -6284,7 +6220,7 @@ def: "Middle aged stage that refers to a mouse which is over 10 and under 11 mon
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000080 ! 9 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000080 ! 9 month-old stage (mouse)
 relationship: part_of MmusDv:0000075 ! middle aged stage (mouse)
 property_value: end_mpb "11.0" xsd:float
 property_value: end_mpb "11.0" xsd:float
@@ -6323,7 +6259,7 @@ property_value: start_mpb "12.0" xsd:float
 
 [Term]
 id: MmusDv:0000084
-name: 13 month-old stage (Mus)
+name: 13 month-old stage (mouse)
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 13 and under 14 months old." [Bgee:curator]
 subset: granular_stage
@@ -6338,13 +6274,13 @@ property_value: start_mpb "13.0" xsd:float
 
 [Term]
 id: MmusDv:0000085
-name: 14 month-old stage (Mus)
+name: 14 month-old stage (mouse)
 namespace: mouse_developmental_stage
 def: "Middle aged stage that refers to a mouse which is over 14 and under 15 months old." [Bgee:curator]
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000084 ! 13 month-old stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000084 ! 13 month-old stage (mouse)
 relationship: part_of MmusDv:0000075 ! middle aged stage (mouse)
 property_value: end_mpb "15.0" xsd:float
 property_value: end_mpb "15.0" xsd:float
@@ -6359,8 +6295,8 @@ def: "Aged adult stage that refers to a mouse which is over 15 and under 16 mont
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000085 ! 14 month-old stage (Mus)
-relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+relationship: immediately_preceded_by MmusDv:0000085 ! 14 month-old stage (mouse)
+relationship: part_of MmusDv:0000076 ! aged adult stage (mouse)
 property_value: end_mpb "16.0" xsd:float
 property_value: end_mpb "16.0" xsd:float
 property_value: start_mpb "15.0" xsd:float
@@ -6375,7 +6311,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000086 ! 15 month-old stage (mouse)
-relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+relationship: part_of MmusDv:0000076 ! aged adult stage (mouse)
 property_value: end_mpb "17.0" xsd:float
 property_value: end_mpb "17.0" xsd:float
 property_value: start_mpb "16.0" xsd:float
@@ -6390,7 +6326,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000087 ! 16 month-old stage (mouse)
-relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+relationship: part_of MmusDv:0000076 ! aged adult stage (mouse)
 property_value: end_mpb "18.0" xsd:float
 property_value: end_mpb "18.0" xsd:float
 property_value: start_mpb "17.0" xsd:float
@@ -6405,7 +6341,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000088 ! 17 month-old stage (mouse)
-relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+relationship: part_of MmusDv:0000076 ! aged adult stage (mouse)
 property_value: end_mpb "19.0" xsd:float
 property_value: end_mpb "19.0" xsd:float
 property_value: start_mpb "18.0" xsd:float
@@ -6420,7 +6356,7 @@ subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000089 ! 18 month-old stage (mouse)
-relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+relationship: part_of MmusDv:0000076 ! aged adult stage (mouse)
 property_value: end_mpb "20.0" xsd:float
 property_value: end_mpb "20.0" xsd:float
 property_value: start_mpb "19.0" xsd:float
@@ -6428,42 +6364,26 @@ property_value: start_mpb "19.0" xsd:float
 
 [Term]
 id: MmusDv:0000091
-name: 20 month-old stage and over (Mus)
+name: 20 month-old stage and over (mouse)
 namespace: mouse_developmental_stage
 def: "Aged adult stage that refers to a mouse which is over 20 months old." [Bgee:curator]
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of MmusDv:0000076 ! aged adult stage (Mus)
+relationship: part_of MmusDv:0000076 ! aged adult stage (mouse)
 property_value: start_mpb "20.0" xsd:float
 property_value: start_mpb "20.0" xsd:float
-
-[Term]
-id: MmusDv:0000092
-name: Theiler stage 11a (Mus)
-namespace: mouse_developmental_stage
-def: "Embryonic neurula stage during which the neural plate formation occurs and the amniotic cavity is sealed off into three distinct cavities - the amniotic cavity, the exocoelom and the ectoplacental cleft." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
-synonym: "TS11a" EXACT []
-xref: UBERON:0000066
-is_a: UBERON:0000067 ! embryo stage part
-relationship: immediately_preceded_by MmusDv:0000042 ! prenatal stage (mouse)
-relationship: part_of UBERON:0000104 ! life cycle
-relationship: part_of UBERON:0000110 ! neurula stage
-property_value: start_dpc "19.0" xsd:float
-property_value: start_wpb "0.0" xsd:float
 
 [Term]
 id: MmusDv:0000093
-name: Theiler stage 11b (Mus)
+name: Theiler stage 11b (mouse)
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the allantoic bud elongates ." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
 synonym: "TS11b" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000092 ! Theiler stage 11a (Mus)
 relationship: immediately_preceded_by UBERON:0000066 ! fully formed stage
 relationship: part_of MmusDv:0000017 ! Theiler stage 11 (mouse)
-relationship: part_of UBERON:0000110 ! neurula stage
 
 [Term]
 id: MmusDv:0000094
@@ -6473,9 +6393,8 @@ def: "Embryonic neurula stage during which the neural plate formation occurs and
 synonym: "TS11c" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000093 ! Theiler stage 11b (Mus)
+relationship: immediately_preceded_by MmusDv:0000093 ! Theiler stage 11b (mouse)
 relationship: part_of MmusDv:0000017 ! Theiler stage 11 (mouse)
-relationship: part_of UBERON:0000110 ! neurula stage
 
 [Term]
 id: MmusDv:0000095
@@ -6487,7 +6406,6 @@ is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000094 ! Theiler stage 11c (mouse)
 relationship: part_of MmusDv:0000017 ! Theiler stage 11 (mouse)
-relationship: part_of UBERON:0000110 ! neurula stage
 
 [Term]
 id: MmusDv:0000096
@@ -6495,10 +6413,14 @@ name: early immature stage (mouse)
 namespace: mouse_developmental_stage
 def: "Immature stage that covers the period from birth until end of the first week." [Bgee:curator]
 comment: This stage groups the first seven days of the mouse life as described in K.Theiler's book, The House Mouse, Atlas of Embryonic Development, Springer-Verlag (second printing 1989).
+is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000112 ! sexually immature stage
 property_value: end_wpb "1.0" xsd:float
+property_value: end_wpb "1.0" xsd:float
 property_value: start_dpc "19.0" xsd:float
+property_value: start_dpc "19.0" xsd:float
+property_value: start_wpb "0.0" xsd:float
 property_value: start_wpb "0.0" xsd:float
 
 [Term]
@@ -6516,7 +6438,7 @@ property_value: start_wpb "30.0" xsd:float
 
 [Term]
 id: MmusDv:0000098
-name: 25 weeks (Mus)
+name: 25 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "6 month-old stage that refers to a mouse which is over 175 days and under 183 days old." [Bgee:curator]
 subset: granular_stage
@@ -6537,7 +6459,7 @@ def: "6 month-old stage that refers to a mouse which is over 182 days and under 
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000098 ! 25 weeks (Mus)
+relationship: immediately_preceded_by MmusDv:0000098 ! 25 weeks (mouse)
 relationship: part_of MmusDv:0000077 ! 6 month-old stage (mouse)
 property_value: end_wpb "27.0" xsd:float
 property_value: end_wpb "27.0" xsd:float
@@ -6561,7 +6483,7 @@ property_value: start_wpb "27.0" xsd:float
 
 [Term]
 id: MmusDv:0000101
-name: 28 weeks (Mus)
+name: 28 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "6 month-old stage that refers to a mouse which is over 196 days and under 204 days old." [Bgee:curator]
 subset: granular_stage
@@ -6576,13 +6498,13 @@ property_value: start_wpb "28.0" xsd:float
 
 [Term]
 id: MmusDv:0000102
-name: 29 weeks (Mus)
+name: 29 weeks (mouse)
 namespace: mouse_developmental_stage
 def: "6 month-old stage that refers to a mouse which is over 203 days and under 211 days old." [Bgee:curator]
 subset: granular_stage
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000101 ! 28 weeks (Mus)
+relationship: immediately_preceded_by MmusDv:0000101 ! 28 weeks (mouse)
 relationship: part_of MmusDv:0000077 ! 6 month-old stage (mouse)
 property_value: end_wpb "30.0" xsd:float
 property_value: end_wpb "30.0" xsd:float
@@ -6591,30 +6513,30 @@ property_value: start_wpb "29.0" xsd:float
 
 [Term]
 id: MmusDv:0000103
-name: Theiler stage 09a (Mus)
+name: Theiler stage 09a (mouse)
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 9 defined by advanced endometrial reaction and during which the egg-cylinder stage advances with the first evidence of an embryonic axis." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Stage_9a]
 synonym: "Theiler stage 9" EXACT []
 synonym: "TS09a" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of MmusDv:0000014 ! Theiler stage 09 (Mus)
+relationship: part_of MmusDv:0000014 ! Theiler stage 09 (mouse)
 
 [Term]
 id: MmusDv:0000104
-name: Theiler stage 09b (Mus)
+name: Theiler stage 09b (mouse)
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 9 defined by advanced endometrial reaction and during which the first mesodermal cells are produced by gastrulation late in this stage." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Stage_9b]
 synonym: "Theiler stage 9" EXACT []
 synonym: "TS09b" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000103 ! Theiler stage 09a (Mus)
-relationship: part_of MmusDv:0000014 ! Theiler stage 09 (Mus)
+relationship: immediately_preceded_by MmusDv:0000103 ! Theiler stage 09a (mouse)
+relationship: part_of MmusDv:0000014 ! Theiler stage 09 (mouse)
 
 [Term]
 id: MmusDv:0000105
-name: Theiler stage 10a (Mus)
+name: Theiler stage 10a (mouse)
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 10 during which the tissue at the posterior end of the primitive streak bulges into the pro-amniotic cavity and forms the amniotic fold." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Stage_10a]
 comment: Refers to MS (mid-streak) stage in Downs and Davies staging of gastrulating mouse embryos (PMID: 8269852, 1993).
@@ -6632,12 +6554,12 @@ comment: Refers to MS-LS (mid-streak to late streak) stage in Downs and Davies s
 synonym: "TS10b" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by MmusDv:0000105 ! Theiler stage 10a (Mus)
+relationship: immediately_preceded_by MmusDv:0000105 ! Theiler stage 10a (mouse)
 relationship: part_of MmusDv:0000015 ! Theiler stage 10 (mouse)
 
 [Term]
 id: MmusDv:0000107
-name: Theiler stage 10c (Mus)
+name: Theiler stage 10c (mouse)
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 10 during which the allantoic bud first appears, gastrulation continues and the node becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_10c]
 comment: Refers to MS-LS (mid-streak to late streak) stage in Downs and Davies staging of gastrulating mouse embryos, 1993 (see http://www.ncbi.nlm.nih.gov/pubmed/8269852).
@@ -6656,11 +6578,11 @@ comment: Embryonic age 8 dpc (day post coitum). Refers to human CarnegieStage09.
 synonym: "TS12a" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of MmusDv:0000019 ! Theiler stage 12 (Mus)
+relationship: part_of MmusDv:0000019 ! Theiler stage 12 (mouse)
 
 [Term]
 id: MmusDv:0000109
-name: Theiler stage 12b (Mus)
+name: Theiler stage 12b (mouse)
 namespace: mouse_developmental_stage
 def: "Theiler developmental stage 12 defined by unturned embryo with first appearance of somite pairs 5-7 and during which neural closure occurs in the region of the 4th and 5th somites, extending in both directions from this site. Headfolds are particularly prominent. Optic placodes are first evident and become indented to form the optic pits. The heart rudiment develops rapidly. The allantois contacts the chorion at the end of this stage." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12b]
 comment: Embryonic age 8 dpc (day post coitum). Refers to human CarnegieStage09.
@@ -6668,7 +6590,7 @@ synonym: "TS12b" EXACT []
 is_a: UBERON:0000067 ! embryo stage part
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000108 ! Theiler stage 12a (mouse)
-relationship: part_of MmusDv:0000019 ! Theiler stage 12 (Mus)
+relationship: part_of MmusDv:0000019 ! Theiler stage 12 (mouse)
 
 [Term]
 id: OanaDv:0000005

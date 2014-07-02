@@ -27,6 +27,7 @@ xref: WBls:0000041
 xref: XtroDO:0000084
 is_a: UBERON:0000092 ! post-embryonic stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
+relationship: precedes UBERON:0000071 ! death stage
 
 [Term]
 id: UBERON:0000067
@@ -56,9 +57,13 @@ xref: MmusDv:0000002
 xref: OGES:000000
 xref: OGES:000022
 xref: WBls:0000003
+xref: WBls:0000092
+xref: WBls:0000102
 xref: XAO:1000012
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000104 ! life cycle
+relationship: precedes UBERON:0000066 ! fully formed stage
+relationship: precedes UBERON:0000092 ! post-embryonic stage
 
 [Term]
 id: UBERON:0000069
@@ -153,6 +158,8 @@ xref: OGES:000010
 xref: OGES:000014
 xref: OGES:000024
 xref: WBls:0000022
+xref: WBls:0000093
+xref: WBls:0000103
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000104 ! life cycle
 relationship: preceded_by UBERON:0000068 ! embryo stage
@@ -167,9 +174,9 @@ subset: upper_level
 synonym: "life" EXACT []
 synonym: "lifespan" EXACT []
 xref: FBdv:00000000
-xref: HsapDv:0000000
+xref: HsapDv:0000001
 xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Life
-xref: MmusDv:0000000
+xref: MmusDv:0000001
 xref: OGES:000011
 is_a: UBERON:0000105 ! life cycle stage
 
@@ -185,7 +192,8 @@ synonym: "stage" NARROW []
 xref: BILS:0000105
 xref: Developmental:Stage
 xref: EFO:0000399
-xref: MmusDv:0000001
+xref: HsapDv:0000000
+xref: MmusDv:0000000
 xref: OlatDv:0000010
 xref: PdumDv:0000090
 xref: WBls:0000002
@@ -486,7 +494,9 @@ xref: http://linkedlifedata.com/resource/umls/id/C0001792
 xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Elderly
 xref: NIF_Organism:birnlex_691
 xref: UMLS:C0001792 {source="ncithesaurus:Elderly"}
-is_a: UBERON:0000113 ! post-juvenile adult stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000113 ! post-juvenile adult stage
+relationship: preceded_by UBERON:0018241 ! prime adult stage
 
 [Term]
 id: UBERON:0007232
@@ -677,6 +687,15 @@ synonym: "caterpillar" RELATED []
 xref: http://en.wikipedia.org/wiki/Caterpillar
 is_a: UBERON:0000069 ! larval stage
 
+[Term]
+id: UBERON:0018241
+name: prime adult stage
+namespace: uberon
+def: "A life cycle stage that starts at completion of development and growth of the sexually mature adult animal, and ends before senescence." [Bgee:AN, https://github.com/obophenotype/uberon/issues/496]
+synonym: "adulthood stage" RELATED []
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000113 ! post-juvenile adult stage
+
 [Typedef]
 id: ends
 is_a: part_of
@@ -697,6 +716,10 @@ is_transitive: true
 
 [Typedef]
 id: preceded_by
+is_transitive: true
+
+[Typedef]
+id: precedes
 is_transitive: true
 
 [Typedef]

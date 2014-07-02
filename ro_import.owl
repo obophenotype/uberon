@@ -605,6 +605,7 @@
         <rdfs:label xml:lang="en">inheres in</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000052</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inheres_in</oboInOwl:shorthand>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002314"/>
     </owl:ObjectProperty>
     
 
@@ -1184,6 +1185,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002223</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">starts</oboInOwl:shorthand>
         <obo:IAO_0000115>inverse of starts with</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
     </owl:ObjectProperty>
     
@@ -1197,6 +1199,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002224</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">starts_with</oboInOwl:shorthand>
         <obo:IAO_0000115>x starts with y if and only if x has part y and the time point at which x starts is equivalent to the time point at which y starts. Formally: α(y) = α(x) ∧ ω(y) &lt; ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
     </owl:ObjectProperty>
@@ -1234,6 +1237,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002229</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ends</oboInOwl:shorthand>
         <obo:IAO_0000115>inverse of ends with</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002230"/>
     </owl:ObjectProperty>
@@ -1248,6 +1252,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002230</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ends_with</oboInOwl:shorthand>
         <obo:IAO_0000115>x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: α(y) &gt; α(x) ∧ ω(y) = ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
     </owl:ObjectProperty>
     
@@ -1259,6 +1264,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:label xml:lang="en">has output</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002234</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_output</oboInOwl:shorthand>
+        <obo:IAO_0000115>p has output c if either: p has direct output c or p has output input c. See subrelations for definitions.</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
     </owl:ObjectProperty>
     
@@ -1352,6 +1358,18 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002314 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002314">
+        <rdfs:label xml:lang="en">inheres in part of</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002314</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inheres_in_part_of</oboInOwl:shorthand>
+        <obo:IAO_0000115>q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w.</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002502"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002320 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002320">
@@ -1402,6 +1420,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:label xml:lang="en">developmentally related to</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002324</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developmentally_related_to</oboInOwl:shorthand>
+        <obo:IAO_0000115>A relationship that holds via some developmental process (GO:0032502)</obo:IAO_0000115>
     </owl:ObjectProperty>
     
 
@@ -1462,6 +1481,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">output_of</oboInOwl:shorthand>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
     </owl:ObjectProperty>
     
 
@@ -1664,57 +1684,136 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:label>child nucleus of in male</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002478</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">child_nucleus_of_in_male</oboInOwl:shorthand>
-        <obo:IAO_0000115>A child nucleus relationship in which the cells are part of a hermaphroditic organism</obo:IAO_0000115>
+        <obo:IAO_0000115>A child nucleus relationship in which the cells are part of a male organism</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002476"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002487 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002487">
+        <rdfs:label>relation between structure and stage</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002487</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relation_between_structure_and_stage</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002488 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002488"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002488">
+        <rdfs:label>existence starts during</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002488</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">existence_starts_during</oboInOwl:shorthand>
+        <obo:IAO_0000115>c existence starts during s iff start_of(c) part_of s</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002496"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002489 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002489"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002489">
+        <rdfs:label>existence starts with</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002489</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">existence_starts_with</oboInOwl:shorthand>
+        <obo:IAO_0000115>c existence starts during s iff start_of(c) = start_of(s)</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002490 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002490">
+        <rdfs:label>existence overlaps</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002490</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">existence_overlaps</oboInOwl:shorthand>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002487"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002492 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002492"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002492">
+        <rdfs:label>existence ends during</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002492</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">existence_ends_during</oboInOwl:shorthand>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002490"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002497"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002493 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002493"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002493">
+        <rdfs:label>existence ends with</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002493</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">existence_ends_with</oboInOwl:shorthand>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002494 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002494"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002494">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>transformation of</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002494</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transformation_of</oboInOwl:shorthand>
+        <obo:IAO_0000115>x transformation of y if x is the immediate transformation of y, or is linked to y through a chain of transformation relationships</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002495 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002495"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002495">
+        <rdfs:label>immediate transformation of</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002495</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immediate_transformation_of</oboInOwl:shorthand>
+        <obo:IAO_0000115>x immediate transformation of y iff x immediately succeeds y temporally at a time boundary t, and all of the matter present in x at t is present in y at t, and all the matter in y at t is present in x at t</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002207"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002494"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002496 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002496"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002496">
+        <rdfs:label>existence starts during or after</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002496</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">existence_starts_during_or_after</oboInOwl:shorthand>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002487"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002497 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002497"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002497">
+        <rdfs:label>existence ends during or before</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002497</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">existence_ends_during_or_before</oboInOwl:shorthand>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002487"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002502 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002502">
+        <rdfs:label>depends on</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002502</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depends_on</oboInOwl:shorthand>
+    </owl:ObjectProperty>
     
 
 
