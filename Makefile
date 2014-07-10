@@ -191,7 +191,8 @@ Human = NCBITaxon:9606
 Dmel = NCBITaxon:7227
 ##RPT_TAXA_ARGS = -gp BFO:0000050 -gf $(Drerio) $(Xenopus) $(Human) $(Dmel)
 RPT_TAXA_ARGS = 
-RPT_STAGE_RELS = RO:0002488 RO:0002492 RO:0002496 RO:0002497
+#RPT_STAGE_RELS = RO:0002488 RO:0002492 RO:0002496 RO:0002497
+RPT_STAGE_RELS = RO:0002496 RO:0002497
 
 %-classes.tsv: %.owl
 	owljs-tableify -R "RO_0002202,transformation of,in taxon,existence starts during,existence ends during" -c -o $@ $<
@@ -239,8 +240,9 @@ nh-nematode.owl: composite-wbbt.owl
 	owljs-grep -v $(XSPECIES_RE) -o $@ $<
 
 
-generic-view.owl: ext.owl
+metazoan-view.owl: ext.owl
 	ln -s $< $@ 
+
 %-view.owl: nh-%.owl contexts/context-%.owl
 	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure --run-reasoner -r elk -x -o -f ofn $@
 .PRECIOUS: %-view.owl
@@ -249,7 +251,7 @@ generic-view.owl: ext.owl
 
 # note: drosophila too slow....
 #RPT_SPECIES = human mouse zebrafish xenopus
-RPT_SPECIES = human mouse xenopus
+RPT_SPECIES = human mouse xenopus metazoan
 
 reports/stages: $(patsubst %,reports/stages-%-report.tsv,$(RPT_SPECIES))
 	echo done
@@ -566,7 +568,7 @@ cl-core.owl: cl-core.obo
 # COMPOSITES
 # ----------------------------------------
 
-composite-stages.obo:
+composite-stages.obo: 
 	owltools developmental-stage-ontologies/*/*-uberon.obo --merge-support-ontologies -o -f obo --no-check $@
 
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
