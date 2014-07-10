@@ -568,7 +568,10 @@ cl-core.owl: cl-core.obo
 # COMPOSITES
 # ----------------------------------------
 
-composite-stages.obo: 
+update-stages:
+	cd developmental-stage-ontologies && svn update
+
+composite-stages.obo: update-stages
 	owltools developmental-stage-ontologies/*/*-uberon.obo --merge-support-ontologies -o -f obo --no-check $@
 
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
