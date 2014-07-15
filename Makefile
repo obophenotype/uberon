@@ -672,7 +672,7 @@ composite-wbls.owl: local-wbls.owl $(MBASE)
 
 # TODO - disallow equivalencies
 composite-fbbt.owl: local-fbbt.owl local-fbdv.owl $(MBASE) 
-	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-fbbt.owl bridge/cl-bridge-to-fbbt.owl $< local-fbdv.owl --merge-support-ontologies --reasoner elk \
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE) bridge/uberon-bridge-to-fbdv.owl bridge/uberon-bridge-to-fbbt.owl bridge/cl-bridge-to-fbbt.owl $< local-fbdv.owl --merge-support-ontologies --reasoner elk \
  --merge-species-ontology -s 'Drosophila' -t NCBITaxon:7227 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@ && perl -pi -ne 's@FlyBase development CV@FlyBase_development_CV@' $@
