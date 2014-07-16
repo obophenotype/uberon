@@ -96,8 +96,8 @@ ncbitaxon.owl:
 	OWLTOOLS_MEMORY=14G owltools $(OBO)/ncbitaxon.owl -o $@
 ##	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
 
-ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC) 
-	OWLTOOLS_MEMORY=14G owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC) composite-stages.obo
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) composite-stages.obo --merge-support-ontologies --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 # CL - take **everything**
 cl_import.owl: cl-core.obo $(EDITSRC)
@@ -568,8 +568,8 @@ cl-core.owl: cl-core.obo
 # COMPOSITES
 # ----------------------------------------
 
-update-stages:
-	cd developmental-stage-ontologies && svn update
+update-stages: $(EDITSRC)
+	(cd developmental-stage-ontologies && svn update) && touch $@
 
 composite-stages.obo: update-stages
 	owltools developmental-stage-ontologies/*/*-uberon.obo --merge-support-ontologies -o -f obo --no-check $@
