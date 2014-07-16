@@ -648,7 +648,7 @@ composite-deps: $(METAZOAN_OBOS)
 # many external ontologies do not adhere to all uberon constraints
 merged-weak.owl: merged.owl
 	owltools $< --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
-MBASE = merged-weak.owl
+MBASE = merged-weak.owl bridge/bridges
 
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
 
