@@ -1,0 +1,68 @@
+@prefix    void: <http://rdfs.org/ns/void#> .
+@prefix	    lib: <http://www.swi-prolog.org/rdf/library/> .
+@prefix     owl: <http://www.w3.org/2002/07/owl#> .
+@prefix     rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix    rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix	dcterms: <http://purl.org/dc/terms/> .
+@prefix	   foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix     obo: <http://purl.obolibrary.org/obo/> .
+@prefix  uberon: <http://purl.obolibrary.org/obo/UBERON_> .
+@prefix       u: <http://purl.obolibrary.org/obo/uberon/> .
+@prefix  bridge: <http://purl.obolibrary.org/obo/uberon/bridge/> .
+@prefix      bm: <http://ontology.neuinfo.org/NIF/BiomaterialEntities/> .
+@prefix        : <http://purl.obolibrary.org/obo/uberon/> .
+
+u:ext.owl
+    a void:Dataset ;
+    dcterms:title "uberon/ext" ;
+    void:dataDump <ext.owl> ;
+    lib:source <http://purl.obolibrary.org/obo/uberon/ext.owl> .
+
+#u:uberon_bridges
+#    a void:Dataset ;
+#    void:subset u:uberon-bridge-to-nifstd.owl ;
+#    void:subset u:uberon-bridge-to-zfa.owl ;
+#    dcterms:title "all bridges" .
+
+u:uberon_bridges
+    a void:Dataset ;
+    void:subset <bridge/uberon-bridge-to-nifstd.owl> ;
+    void:subset <bridge/uberon-bridge-to-zfa.owl> ;
+    dcterms:title "all bridges" .
+    
+<http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-nifstd.owl>
+    a void:Dataset ;
+    dcterms:title "bridge to nifstd" ;
+    void:dataDump <bridge/uberon-bridge-to-nifstd.owl> ;
+    lib:source <http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-nifstd.owl> .
+
+<http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa.owl>
+    a void:Dataset ;
+    dcterms:title "bridge to ZFA" ;
+    void:dataDump <bridge/uberon-bridge-to-zfa.owl> ;
+    lib:source <http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa.owl> .
+
+obo:cl.owl
+    a void:Dataset ;
+    dcterms:title "cl" ;
+    void:dataDump <cl.owl> ;
+    lib:source <http://purl.obolibrary.org/obo/cl.owl> .
+
+obo:uberon.owl
+    a void:Dataset ;
+    dcterms:title "uberon" ;
+    foaf:page <http://uberon.org> ;
+    void:dataDump <uberon.owl> ;
+    lib:source <http://purl.obolibrary.org/obo/uberon/> .
+
+:nif_cell
+    a void:Dataset ;
+    dcterms:title "NIF Cell" ;
+    void:dataDump <source-ontologies/NIF-Cell.owl> ;
+    lib:source <http://purl.obolibrary.org/obo/NIF-Cell/> .
+
+:nlx
+    a void:Dataset ;
+    dcterms:title "nlx" ;
+    void:dataDump <source-ontologies/nlx_stage_all.rdf> ;
+    lib:source <http://neurolex.org/> .

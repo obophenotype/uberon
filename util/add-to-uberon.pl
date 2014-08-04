@@ -35,6 +35,9 @@ while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     if ($opt eq '-cx' || $opt eq '--combined-def-xref') {
         $combine_def_xref = 1;
     }
+    if ($opt eq '-px' || $opt eq '--preserve-def-xref') {
+        $preserve_def_xref = 1;
+    }
     if ($opt eq '-a' || $opt eq '--use-all') {
         $is_use_all = 1;
     }

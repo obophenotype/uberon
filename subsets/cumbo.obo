@@ -8,6 +8,7 @@ subsetdef: dubious_grouping "Indicates that subclasses in AOs may be inappropria
 subsetdef: early_development "A class that represents an early developmental structure, like a blastocyst. This part of the ontology is undergoing review to remove inappropriate grouping classes."
 subsetdef: efo_slim "EFO slim"
 subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to be checked"
+subsetdef: feed_aligned "subset of classes that have logical defs text defs and synonyms aligned with FEED"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
@@ -115,7 +116,6 @@ id: UBERON:0000125
 name: neural nucleus
 namespace: uberon
 def: "A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)" [NIF_GrossAnatomy:nlx_28443]
-comment: Proposed CUMBO def from MM: A subcortical part of the nervous system consisting of a relatively compact group of cells that is distinguishable histologically that share a commonality of cytoarchitecture, chemoarchitecturel and connectivity. (comments: I put in "subcortical" because I don't think we consider either the cerebellar cortex or cerebral cortex to be nuclei. Some people distinguish between a nucleus and a laminar structure (see Wikipedia definition). However, there are structures identified as nuclei that are laminar, e.g., lateral geniculate nucleus, although they are not laminated in all species. Also, I put in "relatively compact" and "distiguishable by histology" because we have groups of cells, e.g., cholinergic cell groups, doparminergic cell groups that are related on the 3 criteria but which we don't tend to consider nuclei because they don't occupy an easily defined territory. But all is open to debate.
 subset: cumbo
 synonym: "nervous system nucleus" EXACT []
 synonym: "neuraxis nucleus" EXACT [FMA:83686]
@@ -129,6 +129,7 @@ xref: nlx:28443
 xref: Nucleus:(neuroanatomy)
 relationship: part_of UBERON:0001017 ! central nervous system
 property_value: external_definition "Anatomical structure consisting of a discrete aggregate of neuronal soma[GO][GO_REF:0000021]." xsd:string {source="GO_REF:0000021"}
+property_value: external_ontology_notes "Proposed CUMBO def from MM: A subcortical part of the nervous system consisting of a relatively compact group of cells that is distinguishable histologically that share a commonality of cytoarchitecture, chemoarchitecturel and connectivity. (comments: I put in 'subcortical' because I don't think we consider either the cerebellar cortex or cerebral cortex to be nuclei. Some people distinguish between a nucleus and a laminar structure (see Wikipedia definition). However, there are structures identified as nuclei that are laminar, e.g., lateral geniculate nucleus, although they are not laminated in all species. Also, I put in 'relatively compact' and 'distiguishable by histology' because we have groups of cells, e.g., cholinergic cell groups, doparminergic cell groups that are related on the 3 criteria but which we don't tend to consider nuclei because they don't occupy an easily defined territory. But all is open to debate." xsd:string
 
 [Term]
 id: UBERON:0000955
@@ -320,7 +321,7 @@ property_value: external_definition "White matter structure of CNS that contains
 id: UBERON:0001020
 name: nervous system commissure
 namespace: uberon
-def: "axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [http://purl.obolibrary.org/obo/uberon/tracker/300, http://purl.obolibrary.org/obo/uberon/tracker/325, NIF_GrossAnatomy:nlx_anat_20090513]
+def: "Axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [http://purl.obolibrary.org/obo/uberon/tracker/300, http://purl.obolibrary.org/obo/uberon/tracker/325, NIF_GrossAnatomy:nlx_anat_20090513]
 comment: *not* the same as FMA:76741 Commissure
 subset: cumbo
 subset: uberon_slim
@@ -452,7 +453,7 @@ relationship: part_of UBERON:0001017 ! central nervous system
 id: UBERON:0013118
 name: sulcus of brain
 namespace: uberon
-def: "a depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
+def: "A depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 subset: cumbo
 synonym: "fissure of brain" NARROW [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 synonym: "sulcus" BROAD [NIF_GrossAnatomy:nlx_144078]
@@ -762,7 +763,7 @@ namespace: uberon
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: RO:0002495
-xref: SIO:000658
+property_value: seeAlso SIO:000658
 
 [Typedef]
 id: implements_design_pattern
@@ -959,10 +960,10 @@ id: tooth_number
 name: tooth number
 namespace: uberon
 def: "x tooth_number N if and only if (i) x is a tooth, and (ii) x is ancestrally tooth number N in a series of teeth repeated along an anterior-posterior axis, typically on the lateral side of a structure such as a jaw, with tooth_number 1 being the anteriormost. Note that this count refers to the total number of teeth starting from the first, regardless of the type of tooth. If sub-systems are required for numbering within a series of teeth of the same type, consider a subproperty. For example, in a human, maxillary canine = tooth 3 of upper jaw = canine_tooth 1 of upper jaw" []
-comment: see also: dental_formula
 xref: UBPROP:0000112
 property_value: is_count_of UBERON:0001091
 property_value: preceding_element_is BSPO:0000096
+property_value: seeAlso UBPROP:0000113
 is_metadata_tag: true
 
 [Typedef]

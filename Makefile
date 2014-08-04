@@ -728,6 +728,9 @@ composite-xao.owl: local-xao.owl $(MBASE)
 
 # closures of individual ontologies, but not connections between them
 
+#stage-commposite-%.obo: developmental-stage-ontologies/%/%.obo
+#	owltools developmental-stage-ontologies/$*/$*.obo developmental-stage-ontologies/$*/$*-bridge-to-uberon.obo --merge-support-ontologies --reasoner elk --merge-species-ontology -s rat -t  NCBITaxon:10116 -q RO:0002087 -o -f obo
+
 # ----------------------------------------
 # COMPOSITES
 # ----------------------------------------

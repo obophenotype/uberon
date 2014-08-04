@@ -25,7 +25,8 @@ xref: EFO:0001272
 xref: FBdv:00005369
 xref: WBls:0000041
 xref: XtroDO:0000084
-is_a: UBERON:0000092 ! post-embryonic stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000092 ! post-embryonic stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
 relationship: precedes UBERON:0000071 ! death stage
 
@@ -61,7 +62,6 @@ xref: WBls:0000092
 xref: WBls:0000102
 xref: XAO:1000012
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of UBERON:0000104 ! life cycle
 relationship: precedes UBERON:0000066 ! fully formed stage
 relationship: precedes UBERON:0000092 ! post-embryonic stage
 
@@ -69,7 +69,7 @@ relationship: precedes UBERON:0000092 ! post-embryonic stage
 id: UBERON:0000069
 name: larval stage
 namespace: uberon
-def: "a distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." [http://en.wikipedia.org/wiki/Larva]
+def: "A distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." [http://en.wikipedia.org/wiki/Larva]
 subset: efo_slim
 synonym: "ammocoete" NARROW SENSU [http://en.wikipedia.org/wiki/Larva]
 synonym: "ammocoete stage" NARROW SENSU [http://en.wikipedia.org/wiki/Larva]
@@ -113,8 +113,9 @@ xref: http://en.wikipedia.org/wiki/Larva
 xref: MIAA:0000400
 xref: OGES:000008
 xref: ZFS:0000048
-is_a: UBERON:0000092 ! post-embryonic stage
+is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
+relationship: part_of UBERON:0000092 ! post-embryonic stage
 property_value: IAO:0000232 "Uberon includes clade-specific subclasses, e.g. nematod larva" xsd:string
 property_value: UBPROP:0000008 "It is a misunderstanding that the larval form always reflects the group's evolutionary history. It could be the case, but often the larval stage has evolved secondarily, as in insects. In these cases the larval form might differ more from the group's common origin than the adult form" xsd:string {source="WP"}
 
@@ -129,8 +130,9 @@ synonym: "chrysalis stage" NARROW [http://en.wikipedia.org/wiki/Pupa, NCBITaxon:
 synonym: "pupa stage" EXACT []
 xref: FBdv:00005349
 xref: http://en.wikipedia.org/wiki/Pupa
-is_a: UBERON:0000092 ! post-embryonic stage
+is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000069 ! larval stage
+relationship: part_of UBERON:0000092 ! post-embryonic stage
 
 [Term]
 id: UBERON:0000071
@@ -141,8 +143,6 @@ synonym: "death" RELATED []
 xref: XAO:0000437
 xref: XtroDO:0000085
 is_a: UBERON:0000105 ! life cycle stage
-relationship: ends UBERON:0000104 ! life cycle
-relationship: part_of UBERON:0000104 ! life cycle
 property_value: UBPROP:0000012 "ncit:Death is an outcome" xsd:string {external_ontology="ncit"}
 
 [Term]
@@ -161,24 +161,8 @@ xref: WBls:0000022
 xref: WBls:0000093
 xref: WBls:0000103
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of UBERON:0000104 ! life cycle
 relationship: preceded_by UBERON:0000068 ! embryo stage
 property_value: UBPROP:0000008 "In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)" xsd:string
-
-[Term]
-id: UBERON:0000104
-name: life cycle
-namespace: uberon
-def: "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism." [https://orcid.org/0000-0002-6601-2165]
-subset: upper_level
-synonym: "life" EXACT []
-synonym: "lifespan" EXACT []
-xref: FBdv:00000000
-xref: HsapDv:0000001
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Life
-xref: MmusDv:0000001
-xref: OGES:000011
-is_a: UBERON:0000105 ! life cycle stage
 
 [Term]
 id: UBERON:0000105
@@ -192,6 +176,7 @@ synonym: "stage" NARROW []
 xref: BILS:0000105
 xref: Developmental:Stage
 xref: EFO:0000399
+xref: FBdv:00007012
 xref: HsapDv:0000000
 xref: MmusDv:0000000
 xref: OlatDv:0000010
@@ -201,7 +186,9 @@ xref: XAO:1000000
 xref: ZFS:0000000
 xref: ZFS:0100000
 is_a: UBERON:0000000 ! processual entity
-property_value: IAO:0000116 "we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage" xsd:string
+property_value: IAO:0000116 "this class represents a proper part of the life cycle of an organism. The class 'life cycle' should not be placed here" xsd:string
+property_value: UBPROP:0000012 "the WBls class 'all stages' belongs here as it is the superclass of other WBls stages" xsd:string
+property_value: UBPROP:0000012 "we map the ZFS unknown stage here as it is logically equivalent to saying *some* life cycle stage" xsd:string
 
 [Term]
 id: UBERON:0000106
@@ -230,7 +217,6 @@ xref: XAO:1000001
 xref: ZFS:0000001
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
-relationship: starts UBERON:0000104 ! life cycle
 property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -243,6 +229,7 @@ xref: BilaDO:0000006
 xref: BILS:0000107
 xref: Cleavage:(embryo)
 xref: EFO:0001290
+xref: FBdv:00000054
 xref: MESH:A16.254.270
 xref: MmusDv:0000004
 xref: OGES:000015
@@ -345,6 +332,7 @@ namespace: uberon
 subset: efo_slim
 synonym: "immature stage" EXACT [VHOG:FB]
 synonym: "juvenile stage" EXACT [XAO:1000010]
+synonym: "subadult stage" RELATED [http://eol.org/schema/terms/subadult]
 xref: BILS:0000112
 xref: BTO:0002168
 xref: EFO:0001300
@@ -373,7 +361,7 @@ xref: MIAA:0000403
 xref: MmusDv:0000110
 xref: OGES:000026
 xref: OGES:000027
-xref: XAO:1000009
+xref: XAO:1000093
 xref: ZFS:0000044
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000066 ! fully formed stage
@@ -384,7 +372,6 @@ id: UBERON:0004707
 name: pharyngula stage
 namespace: uberon
 def: "A stage that follows the blastula, gastrula and neurula stages. At the pharyngula stage, all vertebrate embryos show remarkable similarities." [http://en.wikipedia.org/wiki/Pharyngula]
-comment: Corresponds to E7-E11 in Mouse (Galis et al, TREE, 2001)
 subset: efo_slim
 synonym: "pharyngula" RELATED []
 synonym: "phylotypic stage" EXACT []
@@ -394,8 +381,9 @@ xref: http://en.wikipedia.org/wiki/Pharyngula
 xref: OGES:000006
 xref: ZFS:0000050
 is_a: UBERON:0000067 ! embryo stage part
-relationship: part_of UBERON:0000068 ! embryo stage
+relationship: part_of UBERON:0000111 ! organogenesis stage
 relationship: preceded_by UBERON:0000110 ! neurula stage
+property_value: UBPROP:0000008 "Corresponds to E7-E11 in Mouse (Galis et al, TREE, 2001)" xsd:string
 
 [Term]
 id: UBERON:0004728
@@ -560,27 +548,19 @@ synonym: "pluteus larval stage" EXACT []
 is_a: UBERON:0000069 ! larval stage
 
 [Term]
-id: UBERON:0009741
-name: tailbud stage
-namespace: uberon
-def: "Any of the developmental stages from Nieuwkoop and Faber stage 20 to stage 44 (feeding), including the beginning of hatching (NF stage 35/36)." [ISBN:0815318960]
-xref: XAO:1000007
-is_a: UBERON:0000068 ! embryo stage
-
-[Term]
 id: UBERON:0009849
 name: tadpole stage
 namespace: uberon
 def: "wholly aquatic larval stage in the life cycle of an amphibian, particularly of a frog or toad[WP]. XAO: The stages from feeding to the end of metamorphosis. Encompasses Weisz's first-form tadpole (equivalent to NF stages 45 to 49), second-form tadpole (NF 49 to 56) and third-form tadpole (NF 56 to 60-plus) stages." [http://en.wikipedia.org/wiki/Tadpole, ISBN:0471209627, ISSN:0003-276X]
 xref: http://en.wikipedia.org/wiki/Tadpole
 xref: XAO:1000008
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0004728 ! amphibian larval stage
 
 [Term]
 id: UBERON:0012101
 name: perinatal stage
 namespace: uberon
-def: "the period spanning the range immediately before and after birth" []
+def: "The period spanning the range immediately before and after birth" []
 synonym: "paranatal stage" NARROW []
 is_a: UBERON:0000105 ! life cycle stage
 property_value: UBPROP:0000008 "In birds, the paranatal stage starts when the beak penetrates into the air pocket (air cell) between the inner and outer shell membranes " xsd:string
@@ -603,7 +583,8 @@ namespace: uberon
 def: "The free-swimming first stage of the larva of certain crustaceans, having an unsegmented body with three pairs of appendages and a single median eye. The eye is known for that reason as the 'naupliar eye', and is often absent in later developmental stages, although it is retained into the adult form in some groups, such as the Notostraca." [http://en.wikipedia.org/wiki/Crustacean_larvae#Nauplius]
 synonym: "nauplius" RELATED [BTO:0000915]
 xref: BTO:0000915
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0018378 ! crustacean larval stage
 property_value: UBPROP:0000001 "A crustacean larva in usually the first stage after leaving the egg and with three pairs of appendages, a median eye, and little or no segmentation[BTO:0000915]." xsd:string {source="BTO:0000915"}
 
 [Term]
@@ -614,7 +595,8 @@ def: "The larval form of any of the Taenia tapeworms." [BTO:0003168, Medical_Dic
 synonym: "cysticercus" EXACT [BTO:0003168]
 xref: BTO:0003168
 xref: MESH:B01.500.736.215.895.286
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
 
 [Term]
 id: UBERON:0014857
@@ -622,25 +604,32 @@ name: zoea stage
 namespace: uberon
 def: "A crustacean larval stage characterised by the use of the thoracic appendages for swimming." [http://en.wikipedia.org/wiki/Crustacean_larvae#Zoea]
 synonym: "zoea" RELATED []
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0018378 ! crustacean larval stage
 relationship: preceded_by UBERON:0014406 ! nauplius stage
 
 [Term]
 id: UBERON:0014858
-name: post-larval stage
+name: crustacean post-larval stage
 namespace: uberon
 def: "A crustacean larval stage characterised by the use of abdominal appendages (pleopods) for propulsion." [http://en.wikipedia.org/wiki/Crustacean_larvae#Post-larval]
+synonym: "glaucothoe stage (hermit crab)" NARROW []
+synonym: "parva stage (shrimp)" NARROW []
 synonym: "post-larva" RELATED []
 synonym: "post-larval" RELATED []
+synonym: "post-larval stage" RELATED []
 synonym: "postlarva" RELATED []
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0018378 ! crustacean larval stage
 
 [Term]
 id: UBERON:0014859
 name: megalopa stage
 namespace: uberon
+def: "The crustacean post-larval stage of a crab" []
 synonym: "megalopa" RELATED []
-is_a: UBERON:0014858 ! post-larval stage
+is_a: UBERON:0014858 ! crustacean post-larval stage
+property_value: IAO:0000116 "Consider merging into parent" xsd:string
 
 [Term]
 id: UBERON:0014860
@@ -648,16 +637,18 @@ name: copepodite stage
 namespace: uberon
 def: "A development stage of copepods which follows the nauplius stage. It is segmented with more than 3 pairs of appendages" [http://www.encyclo.co.uk/define/Copepodite]
 synonym: "copepodite" RELATED []
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0018378 ! crustacean larval stage
 relationship: preceded_by UBERON:0014406 ! nauplius stage
 
 [Term]
 id: UBERON:0014861
 name: glaucothoe stage
 namespace: uberon
-def: "a developmental stage in a hermit crab that has completed the swimming larval stages." [http://www.encyclo.co.uk/define/Copepodite]
+def: "A developmental stage in a hermit crab that has completed the swimming larval stages." [http://www.encyclo.co.uk/define/Copepodite]
 synonym: "glaucothoe" RELATED []
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0018378 ! crustacean larval stage
 
 [Term]
 id: UBERON:0014862
@@ -667,7 +658,8 @@ def: "A larval stage of a trochozoan in which the organism is in free-swimming p
 synonym: "trochophore" RELATED []
 synonym: "trocophore" RELATED []
 xref: http://en.wikipedia.org/wiki/Trochophore
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
 
 [Term]
 id: UBERON:0014863
@@ -676,7 +668,8 @@ namespace: uberon
 def: "The characteristic larval stage of the gastropod, bivalve and scaphopod taxonomic classes. It is produced following either the embryonic or trochophore larval stage of development" [http://en.wikipedia.org/wiki/Veliger]
 synonym: "veliger" RELATED []
 xref: http://en.wikipedia.org/wiki/Veliger
-is_a: UBERON:0000069 ! larval stage
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000069 ! larval stage
 
 [Term]
 id: UBERON:0014864
@@ -695,6 +688,17 @@ def: "A life cycle stage that starts at completion of development and growth of 
 synonym: "adulthood stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
+
+[Term]
+id: UBERON:0018378
+name: crustacean larval stage
+namespace: uberon
+def: "The larval stage of a crustacean, the stages of which are separated my moults. Typically this goes through a nauplius - zoea - post-larval cycle." [http://en.wikipedia.org/wiki/Crustacean_larvae]
+is_a: UBERON:0000069 ! larval stage
+
+[Typedef]
+id: RO:0002224
+inverse_of: starts
 
 [Typedef]
 id: ends
