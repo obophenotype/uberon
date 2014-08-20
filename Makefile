@@ -780,7 +780,7 @@ seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 
 # this is used for xrefs for bridge files
 seed.obo: seed.owl
-	owltools $(UCAT) $< -o -f obo $@
+	owltools $(UCAT) $< -o -f obo $@.tmp && obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
 BRIDGESRC_OBO = uberon_edit_x.obo cl-with-xrefs.obo
 bridge/uberon-bridge-to-nifstd.obo: uberon_edit_x.obo
