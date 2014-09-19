@@ -596,7 +596,7 @@ composite-metazoan-basic.obo: composite-metazoan.owl
 
 # owl2obo
 composite-%.obo: composite-%.owl
-	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
+	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@-oe.obo && mv $@.tmp $@
 #	obolib-owl2obo -o $@ $<
 
 composite-mammal.owl: composite-mammal.obo
