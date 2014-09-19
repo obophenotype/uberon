@@ -23,7 +23,7 @@ uberon_edit.owl: uberon_edit_x.obo
 
 # This is primarily for use in editing the phenoscape-ext.owl file
 core.owl: uberon_edit.owl
-	owltools $< -o -f ofn $@
+	owltools $(UCAT) $< -o -f ofn $@
 
 pe:
 	mkdir pe
@@ -571,8 +571,10 @@ cl-core.owl: cl-core.obo
 update-stages: $(EDITSRC)
 	(cd developmental-stage-ontologies && svn update) && touch $@
 
-composite-stages.obo: update-stages
-	owltools developmental-stage-ontologies/*/*-uberon.obo --merge-support-ontologies -o -f obo --no-check $@
+CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard developmental-stage-ontologies/*/*-uberon.obo))
+
+composite-stages.obo: 
+	owltools $(CSTAGES) --merge-support-ontologies -o -f obo --no-check $@
 
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 composites: composite-metazoan.obo composite-vertebrate.obo
