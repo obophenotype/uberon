@@ -571,7 +571,8 @@ cl-core.owl: cl-core.obo
 update-stages: $(EDITSRC)
 	(cd developmental-stage-ontologies && svn update) && touch $@
 
-CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard developmental-stage-ontologies/*/*-uberon.obo))
+#CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard developmental-stage-ontologies/*/*-uberon.obo))
+CSTAGES := $(wildcard developmental-stage-ontologies/*/*-uberon.obo)
 
 composite-stages.obo: 
 	owltools $(CSTAGES) --merge-support-ontologies -o -f obo --no-check $@
