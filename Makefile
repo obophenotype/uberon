@@ -571,11 +571,17 @@ cl-core.owl: cl-core.obo
 update-stages: $(EDITSRC)
 	(cd developmental-stage-ontologies && svn update) && touch $@
 
-#CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard developmental-stage-ontologies/*/*-uberon.obo))
-CSTAGES := $(wildcard developmental-stage-ontologies/*/*-uberon.obo)
+CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard developmental-stage-ontologies/*/*-uberon.obo))
+#CSTAGES := $(wildcard developmental-stage-ontologies/*/*-uberon.obo)
 
-composite-stages.obo: 
-	owltools $(CSTAGES) --merge-support-ontologies -o -f obo --no-check $@
+merged-stages.obo: 
+	owltools $(filter-out %-uberon.obo, $(wildcard developmental-stage-ontologies/*/*.obo)) -o -f obo $@
+
+merged-stages-xrefs.obo: developmental-stage-ontologies/ssso-merged.obo
+	blip-findall  -i $< "entity_xref_idspace(X,U,'UBERON')" -no_pred -label -select U-X | tbl2obolinks.pl -k  --rel xref - > $@.tmp && mv $@.tmp $@
+
+composite-stages.obo: update-stages merged-stages-xrefs.obo
+	owltools $(CSTAGES) merged-stages-xrefs.obo --merge-support-ontologies -o -f obo --no-check $@
 
 #composites: composite-metazoan.owl composite-vertebrate.owl composite-mammal.owl
 composites: composite-metazoan.obo composite-vertebrate.obo
