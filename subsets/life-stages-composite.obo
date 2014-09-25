@@ -94,24 +94,13 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by FBdv:00007025 ! immature adult stage (Drosophila)
 
 [Term]
-id: GgalDv:0000004
-name: hatchling stage (chicken)
-namespace: chicken_developmental_stage
-def: "Chicken developmental stage that covers the period from hatching until 4 weeks old, during which individuals have no feathers." [Bgee:curator]
-is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of UBERON:0000112 ! sexually immature stage
-property_value: end_mph "1.0" xsd:float
-property_value: start_dpf "21.0" xsd:float
-property_value: start_mph "0.0" xsd:float
-
-[Term]
 id: GgalDv:0000005
 name: juvenile stage (chicken)
 namespace: chicken_developmental_stage
 def: "Chicken developmental stage that covers the period from 4 weeks old, when individuals are fully feathered, until 5 months old." [Bgee:curator]
 comment: Chicken reach sexual maturity by five months of age.
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by GgalDv:0000004 ! hatchling stage (chicken)
+relationship: immediately_preceded_by UBERON:0007221 ! neonate stage
 relationship: part_of UBERON:0000112 ! sexually immature stage
 property_value: end_mph "5.0" xsd:float
 property_value: start_mph "1.0" xsd:float
@@ -1653,25 +1642,12 @@ property_value: start_ypb "45.0" xsd:float
 property_value: start_ypb "45.0" xsd:float
 
 [Term]
-id: HsapDv:0000093
-name: human aged stage (human)
-namespace: human_developmental_stage
-def: "Late adulthood that refers to an adult who is over 65." [Bgee:curator]
-synonym: "65+ years" EXACT []
-synonym: "elderly" RELATED []
-is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000092 ! human middle aged stage (human)
-relationship: part_of HsapDv:0000091 ! human late adulthood stage (human)
-property_value: start_ypb "65.0" xsd:float
-
-[Term]
 id: HsapDv:0000094
 name: 65-79 year-old human stage (human)
 namespace: human_developmental_stage
 def: "Aged stage that refers to an adult who is under 80." [Bgee:curator]
 synonym: "elderly" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
-relationship: part_of HsapDv:0000093 ! human aged stage (human)
 relationship: part_of UBERON:0007222 ! late adult stage
 property_value: end_ypb "80.0" xsd:float
 property_value: end_ypb "80.0" xsd:float
@@ -1685,7 +1661,6 @@ namespace: human_developmental_stage
 def: "Aged stage that refers to an adult who is over 80." [Bgee:curator]
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000173 ! 79-year-old human stage (human)
-relationship: part_of HsapDv:0000093 ! human aged stage (human)
 relationship: part_of UBERON:0007222 ! late adult stage
 property_value: start_ypb "80.0" xsd:float
 property_value: start_ypb "80.0" xsd:float
@@ -7380,18 +7355,6 @@ relationship: part_of PtroDv:0000019 ! 14-year-old stage (chimpanzee)
 property_value: start_ypb "45.0" xsd:float
 
 [Term]
-id: RnorDv:00000010
-name: metamorphosing embryo stage (rat)
-namespace: rat_developmental_stage
-def: "Embryonic stage during which somites 43-45 (caudal) up to somite 65 (usually this is last caudal) appear." [http://php.med.unsw.edu.au/embryology/index.php?title=Rat_Development_Stages]
-comment: This stage corresponds to Standard Witschi Stage 26 up to 33 (see http://php.med.unsw.edu.au/embryology/index.php?title=Rat_Timeline). Refers to human Carnegie stage 15 up to 22 (see http://books.google.ch/books?id=yr1ZRO8H0ysC&printsec=frontcover&hl=fr#v=onepage&q&f=false "Table 12.17, p.510")
-is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by RnorDv:0000009 ! complete embryo stage (rat)
-relationship: part_of RnorDv:0000003 ! embryonic stage (rat)
-property_value: end_dpc "16.0" xsd:float
-property_value: start_dpc "12.5" xsd:float
-
-[Term]
 id: RnorDv:0000003
 name: embryonic stage (rat)
 namespace: rat_developmental_stage
@@ -7437,6 +7400,18 @@ relationship: immediately_preceded_by UBERON:0000111 ! organogenesis stage
 relationship: part_of RnorDv:0000003 ! embryonic stage (rat)
 property_value: end_dpc "12.5" xsd:float
 property_value: start_dpc "12.375" xsd:float
+
+[Term]
+id: RnorDv:0000010
+name: metamorphosing embryo stage (rat)
+namespace: rat_developmental_stage
+def: "Embryonic stage during which somites 43-45 (caudal) up to somite 65 (usually this is last caudal) appear." [http://php.med.unsw.edu.au/embryology/index.php?title=Rat_Development_Stages]
+comment: This stage corresponds to Standard Witschi Stage 26 up to 33 (see http://php.med.unsw.edu.au/embryology/index.php?title=Rat_Timeline). Refers to human Carnegie stage 15 up to 22 (see http://books.google.ch/books?id=yr1ZRO8H0ysC&printsec=frontcover&hl=fr#v=onepage&q&f=false "Table 12.17, p.510")
+is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by RnorDv:0000009 ! complete embryo stage (rat)
+relationship: part_of RnorDv:0000003 ! embryonic stage (rat)
+property_value: end_dpc "16.0" xsd:float
+property_value: start_dpc "12.5" xsd:float
 
 [Term]
 id: RnorDv:0000014
@@ -7495,6 +7470,7 @@ xref: BilaDO:0000004
 xref: BTO:0001043
 xref: EFO:0001272
 xref: FBdv:00005369
+xref: MmusDv:0000092
 xref: WBls:0000041
 xref: XtroDO:0000084
 is_a: UBERON:0000105 ! life cycle stage
@@ -7521,14 +7497,29 @@ namespace: uberon
 def: "A life cycle stage that starts with fertilization and ends with the fully formed embryo." []
 synonym: "embryogenesis" RELATED []
 synonym: "embryonic stage" EXACT []
+xref: AcarDv:0000002
 xref: BilaDO:0000002
+xref: BtauDv:0000002
 xref: EV:0300001
 xref: FBdv:00005289
+xref: GgalDv:0000002
+xref: GgorDv:0000002
 xref: HsapDv:0000002
+xref: HsapDv:0000045
 xref: http://www.snomedbrowser.com/Codes/Details/296280003
+xref: MdomDv:0000002
+xref: MmulDv:0000002
 xref: MmusDv:0000002
+xref: MmusDv:0000042
+xref: OanaDv:0000002
 xref: OGES:000000
 xref: OGES:000022
+xref: PpanDv:0000002
+xref: PpygDv:0000002
+xref: PtroDv:0000002
+xref: RnorDv:0000002
+xref: SscrDv:0000002
+xref: TnigDv:0000002
 xref: WBls:0000003
 xref: WBls:0000092
 xref: WBls:0000102
@@ -7595,7 +7586,7 @@ property_value: UBPROP:0000008 "It is a misunderstanding that the larval form al
 id: UBERON:0000070
 name: pupal stage
 namespace: uberon
-def: "A life stage of some insects undergoing transformation. The pupal stage is found only in holometabolous insects, those that undergo a complete metamorphosis, going through four life stages; embryo, larva, pupa and imago." [http://en.wikipedia.org/wiki/Pupa]
+def: "A life cycle stage of holometabolous insects in which the organism is a pupa and starts with the larval-pupal apolysis and ends with pupal-adult apolysis." [http://en.wikipedia.org/wiki/Pupa, https://github.com/obophenotype/uberon/issues/562]
 synonym: "aurelia stage" NARROW [http://en.wikipedia.org/wiki/Pupa, NCBITaxon:37572]
 synonym: "chrysalides stage" NARROW [http://en.wikipedia.org/wiki/Pupa, NCBITaxon:37572]
 synonym: "chrysalis stage" NARROW [http://en.wikipedia.org/wiki/Pupa, NCBITaxon:37572]
@@ -7605,6 +7596,7 @@ xref: http://en.wikipedia.org/wiki/Pupa
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000069 ! larval stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
+property_value: UBPROP:0000008 "The pupal stage is found only in holometabolous insects, those that undergo a complete metamorphosis, going through four life stages; embryo, larva, pupa and imago" xsd:string
 
 [Term]
 id: UBERON:0000071
@@ -7645,14 +7637,27 @@ subset: efo_slim
 subset: upper_level
 synonym: "developmental stage" NARROW []
 synonym: "stage" NARROW []
+xref: AcarDv:0000000
 xref: BILS:0000105
+xref: BtauDv:0000000
 xref: Developmental:Stage
 xref: EFO:0000399
 xref: FBdv:00007012
+xref: GgalDv:0000000
+xref: GgorDv:0000000
 xref: HsapDv:0000000
+xref: MdomDv:0000000
+xref: MmulDv:0000000
 xref: MmusDv:0000000
+xref: OanaDv:0000000
 xref: OlatDv:0000010
 xref: PdumDv:0000090
+xref: PpanDv:0000000
+xref: PpygDv:0000000
+xref: PtroDv:0000000
+xref: RnorDv:0000000
+xref: SscrDv:0000000
+xref: TnigDv:0000000
 xref: WBls:0000002
 xref: XAO:1000000
 xref: ZFS:0000000
@@ -7681,8 +7686,10 @@ xref: EFO:0001322
 xref: EHDAA:27
 xref: EMAPA:16033
 xref: FBdv:00005288
+xref: HsapDv:0000003
 xref: http://en.wikipedia.org/wiki/Zygote
 xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Zygote
+xref: MmusDv:0000003
 xref: PdumDv:0000100
 xref: VHOG:0000745
 xref: XAO:1000001
@@ -7702,6 +7709,7 @@ xref: BILS:0000107
 xref: Cleavage:(embryo)
 xref: EFO:0001290
 xref: FBdv:00000054
+xref: HsapDv:0000004
 xref: MESH:A16.254.270
 xref: MmusDv:0000004
 xref: OGES:000015
@@ -7759,6 +7767,7 @@ xref: HsapDv:0000010
 xref: MmusDv:0000013
 xref: OGES:000004
 xref: OGES:000019
+xref: RnorDv:0000005
 xref: WBls:0000010
 xref: XAO:1000005
 xref: ZFS:0000047
@@ -7775,6 +7784,7 @@ xref: BilaDO:0000009
 xref: BILS:0000110
 xref: HsapDv:0000012
 xref: MmusDv:0000017
+xref: RnorDv:0000007
 xref: XAO:1000006
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
@@ -7793,6 +7803,7 @@ xref: http://en.wikipedia.org/wiki/Organogenesis
 xref: MmusDv:0000018
 xref: OGES:000005
 xref: OGES:000032
+xref: RnorDv:0000008
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000110 ! neurula stage
@@ -7805,12 +7816,26 @@ subset: efo_slim
 synonym: "immature stage" EXACT [VHOG:FB]
 synonym: "juvenile stage" EXACT [XAO:1000010]
 synonym: "subadult stage" RELATED [http://eol.org/schema/terms/subadult]
+xref: AcarDv:0000003
 xref: BILS:0000112
+xref: BtauDv:0000003
 xref: BTO:0002168
 xref: EFO:0001300
 xref: EV:0300051
+xref: GgalDv:0000003
+xref: GgorDv:0000003
+xref: HsapDv:0000080
+xref: MdomDv:0000003
+xref: MmulDv:0000003
 xref: MmusDv:0000043
+xref: OanaDv:0000003
 xref: OGES:000009
+xref: PpanDv:0000003
+xref: PpygDv:0000003
+xref: PtroDv:0000003
+xref: RnorDv:0000012
+xref: SscrDv:0000003
+xref: TnigDv:0000003
 xref: TS28
 xref: XAO:1000010
 xref: XtroDO:0000083
@@ -7826,13 +7851,29 @@ name: post-juvenile adult stage
 namespace: uberon
 def: "The stage of being a sexually mature adult animal." [https://orcid.org/0000-0002-6601-2165]
 synonym: "adult stage" BROAD []
+xref: AcarDv:0000004
 xref: BILS:0000113
+xref: BtauDv:0000004
 xref: EV:0300064
 xref: EV:0300070
+xref: GgalDv:0000006
+xref: GgorDv:0000006
+xref: HsapDv:0000204
+xref: MdomDv:0000006
 xref: MIAA:0000403
+xref: MmulDv:0000021
 xref: MmusDv:0000110
+xref: OanaDv:0000004
 xref: OGES:000026
 xref: OGES:000027
+xref: OlatDv:0000470
+xref: PdumDv:0001600
+xref: PpanDv:0000016
+xref: PpygDv:0000006
+xref: PtroDv:0000011
+xref: RnorDv:0000015
+xref: SscrDv:0000006
+xref: TnigDv:0000004
 xref: XAO:1000093
 xref: ZFS:0000044
 is_a: UBERON:0000105 ! life cycle stage
@@ -7905,10 +7946,12 @@ synonym: "fetus stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 xref: EV:0300011
 xref: EVM:2990031
 xref: FBdv:00005333
+xref: HsapDv:0000037
 xref: http://www.snomedbrowser.com/Codes/Details/367619004
 xref: MIAA:0000399
 xref: MmusDv:0000031
 xref: OGES:000023
+xref: RnorDv:0000011
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
@@ -7933,11 +7976,14 @@ xref: BTO:0001762
 xref: Category:Infant\:organism
 xref: Category:Newborn\:organism
 xref: EV:0300037
+xref: GgalDv:0000004
 xref: HsapDv:0000082
 xref: http://en.wikipedia.org/wiki/Infant
+xref: MdomDv:0000004
 xref: MmusDv:0000096
 xref: NIF_Organism:birnlex_695
 xref: OGES:000025
+xref: RnorDv:0000013
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000112 ! sexually immature stage
 property_value: IAO:0000116 "consider splitting infant/newborn" xsd:string
@@ -7951,10 +7997,18 @@ synonym: "elderly stage" RELATED [EV:0300123]
 synonym: "geriatric" RELATED [EV:0300123]
 synonym: "geriatric stage" RELATED [EV:0300123]
 xref: EV:0300123
+xref: GgorDv:0000008
 xref: HsapDv:0000093
 xref: http://linkedlifedata.com/resource/umls/id/C0001792
 xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Elderly
+xref: MmulDv:0000045
+xref: MmusDv:0000097
 xref: NIF_Organism:birnlex_691
+xref: OanaDv:0000006
+xref: PpanDv:0000040
+xref: PpygDv:0000036
+xref: PtroDv:0000039
+xref: SscrDv:0000008
 xref: UMLS:C0001792 {source="ncithesaurus:Elderly"}
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
@@ -8160,6 +8214,17 @@ name: prime adult stage
 namespace: uberon
 def: "A life cycle stage that starts at completion of development and growth of the sexually mature adult animal, and ends before senescence." [Bgee:AN, https://github.com/obophenotype/uberon/issues/496]
 synonym: "adulthood stage" RELATED []
+xref: AcarDv:0000005
+xref: BtauDv:0000005
+xref: GgorDv:0000007
+xref: MdomDv:0000007
+xref: MmulDv:0000022
+xref: MmusDv:0000061
+xref: OanaDv:0000005
+xref: PpanDv:0000017
+xref: PpygDv:0000007
+xref: PtroDv:0000012
+xref: SscrDv:0000007
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 
