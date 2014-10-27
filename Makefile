@@ -32,6 +32,9 @@ pe:
 phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
+phenoscape-ext-noimports.obo: phenoscape-ext-noimports.owl
+	owltools $< -o -f obo $@
+
 #corecheck.owl: uberon_edit.owl
 #	owltools $(UCAT) $< external-disjoints.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
 
@@ -95,6 +98,8 @@ pr_import.owl: pr.owl $(EDITSRC)
 ncbitaxon.owl: 
 	OWLTOOLS_MEMORY=14G owltools $(OBO)/ncbitaxon.owl -o $@
 ##	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
+ncbitaxon.obo: ncbitaxon.owl
+	owltools $< -o -f obo $@
 
 ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC) composite-stages.obo
 	OWLTOOLS_MEMORY=14G owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) composite-stages.obo --merge-support-ontologies --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
@@ -340,6 +345,8 @@ bridge-check-%.owl: uberon_edit.obo bridge/bridges external-disjoints.owl
 .PRECIOUS: bridge-check-%.owl
 bridge-check-%.txt: bridge-check-%.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+expl-bridge-check-%.txt: bridge-check-%.owl
+	owltools  --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
 full-bridge-check-%.txt: ext.owl bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 core-bridge-check-%.txt: core.owl bridge/bridges external-disjoints.owl
@@ -405,6 +412,7 @@ QC_FILES = uberon_edit-xp-check\
     merged.obo-OE-check\
     merged-cycles\
     merged-orphans\
+    composite-fma.owl\
     ext.owl\
     ext.obo\
     ext-obscheck.txt\
@@ -625,6 +633,9 @@ mirror-%.owl:
 
 local-%.owl: mirror-%.owl
 	owltools $< bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#starts_at_end_of $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#DESCENDENTOF $(OBO)/RO_0002476 --rename-entity $(OBO)/$*#DESCINMALE $(OBO)/RO_0002478 --rename-entity $(OBO)/$*#DESCINHERM $(OBO)/RO_0002477 --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 --rename-entity $(OBO)/$*#start $(OBO)/RO_0002496 --rename-entity $(OBO)/$*#end $(OBO)/RO_0002497 --rename-entity $(OBO)/$*#start_stage $(OBO)/RO_0002496 --rename-entity $(OBO)/$*#end_stage $(OBO)/RO_0002497 --rename-entity $(OBO)/$*#releases_neurotransmitter $(OBO)/RO_0002111  --rename-entity $(OBO)/$*#develops_directly_from $(OBO)/RO_0002207   --rename-entity $(OBO)/$*#electrically_synapsed_to $(OBO)/RO_0002003 --rename-entity $(OBO)/$*#regional_part_of $(OBO)/BFO_0000050 --rename-entity $(OBO)/$*#systemic_part_of $(OBO)/BFO_0000050 --rename-entity $(OBO)/$*#constitutional_part_of $(OBO)/BFO_0000050 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
+
+local-%.obo: local-%.owl
+	owltools $< -o -f obo $@
 
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
@@ -992,8 +1003,17 @@ stages.obo:
 mapping_EMAP_to_EMAPA.txt:
 	wget ftp://ftp.hgu.mrc.ac.uk/pub/MouseAtlas/Anatomy/EMAP-EMAPA.txt -O $@
 
-similarity.tsv:
-	wget http://svn.code.sf.net/p/bgee/code/trunk/release/similarity/similarity.tsv -O $@
+simil%.tsv:
+	wget http://svn.code.sf.net/p/bgee/code/trunk/release/similarity/$@ -O $@
+
+simil%.jsonld: simil%.tsv ./util/sim2jsonld.pl
+	./util/sim2jsonld.pl $< > $@
+
+simil%.ttl: simil%.jsonld
+	riot $< > $@
+
+simil%.owl: simil%.ttl
+	owltools --use-catalog $< -o $@
 
 # ----------------------------------------
 # VIEWS
@@ -1004,6 +1024,9 @@ similarity.tsv:
 
 %-exprview.owl: %.owl
 	owltools --use-catalog $< $(OBO)/ro.owl --merge-support-ontologies  --remove-subset grouping_class --remove-subset upper_level --bpvo  --prefix " expressed in" --suffix "" -r elk -p BFO:0000050 --replace --set-ontology-id $(OBO)/uberon/$@ -o -f ttl $@
+
+%-homolview.owl: %.owl
+	owltools --use-catalog $< $(OBO)/ro.owl homologous-to-part-of.obo --merge-support-ontologies  --remove-subset grouping_class --remove-subset upper_level --bpvo  --prefix " expressed in" --suffix "" -r elk -p UBREL:0002000 --replace --set-ontology-id $(OBO)/uberon/$@ -o -f ttl $@
 
 
 # ----------------------------------------

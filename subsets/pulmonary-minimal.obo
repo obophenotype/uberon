@@ -1320,7 +1320,7 @@ property_value: UBPROP:0000012 "MA/FMA pharynx not part of digestive/alimentary 
 id: UBERON:0001051
 name: hypopharynx
 namespace: uberon
-def: "Bottom part of the pharynx, and is the part of the throat that connects to the esophagus." [http://en.wikipedia.org/wiki/Hypopharynx]
+def: "Bottom part of the pharynx that connects to the esophagus." [http://en.wikipedia.org/wiki/Hypopharynx]
 subset: efo_slim
 subset: uberon_slim
 synonym: "laryngeal pharynx" EXACT [FMA:54877]
@@ -2147,6 +2147,7 @@ synonym: "tunica mucosa nasalis" EXACT []
 synonym: "tunica mucosa nasi" EXACT LATIN [FMA:59684, FMA:TA]
 xref: BTO:0000912
 xref: CALOHA:TS-0657
+xref: EMAPA:36026
 xref: FMA:59684
 xref: GAID:302
 xref: http://www.snomedbrowser.com/Codes/Details/310211009
@@ -5754,6 +5755,7 @@ synonym: "hilus of lung" EXACT [OBOL:automatic]
 synonym: "lung hilum" EXACT [OBOL:automatic]
 synonym: "pulmonary hilum" EXACT [FMA:7330]
 synonym: "pulmonary hilus" EXACT [OBOL:automatic]
+xref: EMAPA:36005
 xref: FMA:7330
 xref: http://linkedlifedata.com/resource/umls/id/C0225701
 xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Hilar_Area_of_the_Lung
@@ -5911,6 +5913,7 @@ id: UBERON:0004897
 name: right lung accessory lobe lobar bronchus mesenchyme
 namespace: uberon
 def: "The right lung accessory lobe lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung accessory lobe lobar bronchus" [LG:0012640]
+xref: EMAPA:17983
 is_a: UBERON:0004901 ! right lung lobar bronchus mesenchyme
 relationship: part_of UBERON:0003404 ! lobar bronchus of right lung
 relationship: part_of UBERON:0004890 ! right lung accessory lobe
@@ -5920,6 +5923,7 @@ id: UBERON:0004899
 name: right lung cranial lobe lobar bronchus mesenchyme
 namespace: uberon
 def: "The right lung cranial lobe lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung cranial lobe lobar bronchus" [LG:0012659]
+xref: EMAPA:17993
 is_a: UBERON:0004901 ! right lung lobar bronchus mesenchyme
 relationship: part_of UBERON:0002170 ! upper lobe of right lung
 relationship: part_of UBERON:0003404 ! lobar bronchus of right lung
@@ -5929,6 +5933,7 @@ id: UBERON:0004900
 name: right lung middle lobe lobar bronchus mesenchyme
 namespace: uberon
 def: "The right lung middle lobe lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung middle lobe lobar bronchus" [LG:0012672]
+xref: EMAPA:17999
 is_a: UBERON:0004901 ! right lung lobar bronchus mesenchyme
 relationship: part_of UBERON:0002174 ! middle lobe of right lung
 relationship: part_of UBERON:0003404 ! lobar bronchus of right lung
@@ -5938,6 +5943,7 @@ id: UBERON:0004901
 name: right lung lobar bronchus mesenchyme
 namespace: uberon
 def: "The right lung lobar bronchus mesenchyme is a type of tissue made up of loosely-packed mesenchymal cells in the right lung lobar bronchus" [LG:0012681]
+xref: EMAPA:17665
 is_a: UBERON:0004884 ! lobar bronchus mesenchyme
 is_a: UBERON:0009603 ! right lung associated mesenchyme
 relationship: part_of UBERON:0002167 ! right lung
@@ -6132,6 +6138,7 @@ synonym: "nasal septum mucosa of organ" EXACT [OBOL:automatic]
 synonym: "nasal septum mucous membrane" EXACT [OBOL:automatic]
 synonym: "nasal septum organ mucosa" EXACT [OBOL:automatic]
 synonym: "organ mucosa of nasal septum" EXACT [OBOL:automatic]
+xref: EMAPA:36028
 xref: FMA:60113
 is_a: UBERON:0004785 ! respiratory system mucosa
 relationship: part_of UBERON:0001706 ! nasal septum
@@ -7046,7 +7053,7 @@ property_value: IAO:0000116 "Note we use overlaps as the relationship to the arc
 id: UBERON:0005928
 name: external naris
 namespace: uberon
-def: "Surface structure that provides one of the small external openings of the head that give passage to air for breathing." [http://en.wikipedia.org/wiki/Nostril]
+def: "A naris that provides one of the small external openings of the head that give passage to air for breathing." [http://en.wikipedia.org/wiki/Nostril, UBERON:cjm]
 subset: vertebrate_core
 synonym: "anterior nares" RELATED PLURAL [VHOG:0000544]
 synonym: "anterior naris" RELATED [ZFA:0001427]
@@ -9909,6 +9916,7 @@ def: "A lobar bronchus that is part of a middle lobe of right lung." [OBOL:autom
 synonym: "bronchus of right middle lobe" EXACT [FMA:7401]
 synonym: "middle lobar bronchus" EXACT [FMA:7401]
 synonym: "middle lobe bronchus" EXACT [FMA:7401]
+xref: EMAPA:17998
 xref: FMA:7401
 is_a: UBERON:0003404 ! lobar bronchus of right lung
 intersection_of: UBERON:0002183 ! lobar bronchus
@@ -10853,6 +10861,18 @@ synonym: "nasal foramina" RELATED PLURAL [FMA:57653]
 xref: FMA:57653
 xref: Nasal:foramina
 relationship: part_of UBERON:0001681 ! nasal bone
+
+[Term]
+id: UBERON:0019190
+name: mucous gland of lung
+namespace: uberon
+synonym: "bronchial gland" EXACT [FMA:13119]
+synonym: "bronchial mucous gland" EXACT [FMA:13119]
+synonym: "peribronchial gland" EXACT [BTO:0004638]
+xref: BTO:0004638
+xref: FMA:13119
+xref: http://www.snomedbrowser.com/Codes/Details/88410004
+relationship: part_of UBERON:0002048 ! lung
 
 [Term]
 id: UBERON:1000012
@@ -11929,6 +11949,10 @@ inverse_of: enclosed_by
 [Typedef]
 id: evolved_from
 is_a: RO:0002158
+
+[Typedef]
+id: has_branching_part
+inverse_of: branching_part_of
 
 [Typedef]
 id: has_component

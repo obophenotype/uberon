@@ -59,37 +59,37 @@ my $stanza_type;
 my $f1 = shift @ARGV;
 my @fs = ($f1);
 if (!$f1) {
-    @fs = ("uberon_edit.obo", "new.obo");
+    @fs = ("uberon_edit.obo", "phenoscape-ext-noimports.obo", "new.obo");
 }
 while (my $f = shift @fs) {
-open(F,$f) || die($f);
-while (<F>) {
-    s/\s+$//;
-    if (/^\[(\S+)\]/) {
-        $stanza_type = lc($1);
-    }
-    if (/^id:\s+(\S+)/) {
-        $id = $1;
-        if ($id =~ /UBERON:(\d+)/ && $1 >= $uid && $1 < 1000000) {
-            $uid = $1+1;
+    open(F,$f) || die($f);
+    while (<F>) {
+        s/\s+$//;
+        if (/^\[(\S+)\]/) {
+            $stanza_type = lc($1);
         }
-        $xrefh{$id} = $id; # make xref reflexive
-    }
-    elsif (/^name:\s*(.*)/) {
+        if (/^id:\s+(\S+)/) {
+            $id = $1;
+            if ($id =~ /UBERON:(\d+)/ && $1 >= $uid && $1 < 1000000) {
+                $uid = $1+1;
+            }
+            $xrefh{$id} = $id; # make xref reflexive
+        }
+        elsif (/^name:\s*(.*)/) {
         $nh{$id} = $1;
+        }
+        elsif (/^xref:\s*(\S+)/) {
+            $xrefh{$1} = $id;
+            #print STDERR "$1 ==> $xrefh{$1}\n";
+        }
+        elsif (/^def:.*(Wikipedia:[\w\(\)\-]+)/) {
+            $xrefh{$1} = $id;
+        }
+        elsif (/^synonym:.*(Wikipedia:[\w\(\)\-]+)/) {
+            $xrefh{$1} = $id;
+        }
     }
-    elsif (/^xref:\s*(\S+)/) {
-        $xrefh{$1} = $id;
-        #print STDERR "$1 ==> $xrefh{$1}\n";
-    }
-    elsif (/^def:.*(Wikipedia:[\w\(\)\-]+)/) {
-        $xrefh{$1} = $id;
-    }
-    elsif (/^synonym:.*(Wikipedia:[\w\(\)\-]+)/) {
-        $xrefh{$1} = $id;
-    }
-}
-close(F);
+    close(F);
 }
 
 my $xref;
