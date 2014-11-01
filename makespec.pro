@@ -10,6 +10,11 @@ anatomy('AAO').
 anatomy('BSA').
 anatomy('MA').
 anatomy('aba').
+anatomy('dmba').
+anatomy('dhba').
+anatomy('pba').
+anatomy('hba').
+anatomy('ubrain').
 anatomy('efo').
 anatomy('FMA').
 anatomy('WBbt').

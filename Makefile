@@ -1167,10 +1167,25 @@ bto-anat.obo:
 # ABA
 # ----------------------------------------
 
+ALLENS = dmba hba dhba pba
+
 aba.obo: ABA-src.obo
 	./util/make-aba-part-ofs.pl $< > $@
 bridge/aba.owl: aba.obo
 	owltools $< -o file://`pwd`/$@
+
+allen_all: $(patsubst %,source-ontologies/allen-%.obo,$(ALLENS))
+source-ontologies/allen-dmba.json:
+	wget http://api.brain-map.org/api/v2/structure_graph_download/17.json -O $@
+source-ontologies/allen-hba.json:
+	wget http://api.brain-map.org/api/v2/structure_graph_download/10.json -O $@
+source-ontologies/allen-dhba.json:
+	wget http://api.brain-map.org/api/v2/structure_graph_download/16.json -O $@
+source-ontologies/allen-pba.json:
+	wget http://api.brain-map.org/api/v2/structure_graph_download/8.json -O $@
+
+source-ontologies/allen-%.obo: source-ontologies/allen-%.json
+	./util/allen-json2obo.pl $< > $@
 
 # ----------------------------------------
 # NIF
