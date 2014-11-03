@@ -29,6 +29,10 @@ sub descend {
     my $obj = shift;
     my $id = $obj->{id};
     my $oid = "$ns:".$obj->{acronym};
+    if ($oid =~ /\s/) {
+        print STDERR "Fixing: $oid\n";
+        $oid =~ s/\s/_/g;
+    }
     $idmap->{$id} = $oid;
     print "[Term]\n";
     print "id: $oid\n";

@@ -7,7 +7,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/go_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2014-10-26/go_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2014-11-01/go_import.owl"/>
     </owl:Ontology>
     
 
@@ -258,7 +258,7 @@
     <!-- http://purl.obolibrary.org/obo/GO_0001667 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0001667">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ameboidal cell migration</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ameboidal-type cell migration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016477"/>
     </owl:Class>
     
@@ -514,8 +514,13 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0002007">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of hypoxic conditions in blood by chemoreceptor signaling</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009593"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0010850"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0070887"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0003022"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -1350,6 +1355,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0003022 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003022">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of pH by chemoreceptor signaling</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003030"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0003025 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003025">
@@ -1379,6 +1393,15 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0003027"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0003030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003030">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detection of hydrogen ion</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009593"/>
     </owl:Class>
     
 
@@ -1858,13 +1881,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0098645"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005604"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005604"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0098645"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -4112,16 +4135,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0010850 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0010850">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulation of blood pressure by chemoreceptor signaling pathway</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0007165"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008217"/>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GO_0010876 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0010876">
@@ -4702,13 +4715,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007399"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043009"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0043009"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007399"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -8584,13 +8597,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007548"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007275"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007275"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007548"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -10571,14 +10584,14 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0060284"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0048699"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0022008"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0022008"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0048699"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -13159,13 +13172,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0060348"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0048705"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0048705"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0060348"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>

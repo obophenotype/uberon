@@ -208,7 +208,6 @@ xref: BilaDO:0000005
 xref: BILS:0000106
 xref: EFO:0001322
 xref: EHDAA:27
-xref: EMAPA:16033
 xref: FBdv:00005288
 xref: http://en.wikipedia.org/wiki/Zygote
 xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Zygote
@@ -495,7 +494,6 @@ name: 2 cell stage
 namespace: uberon
 synonym: "NF stage 2 (2-cell)" NARROW SENSU [XAO:1000011]
 synonym: "two-cell stage" EXACT [OBOL:automatic]
-xref: EMAPA:16036
 xref: XAO:1000011
 xref: XtroDO:0000006
 xref: ZFS:0000002
@@ -515,17 +513,6 @@ xref: ZFS:0000003
 is_a: UBERON:0000067 ! embryo stage part
 relationship: immediately_preceded_by UBERON:0007232 ! 2 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
-relationship: starts UBERON:0007234 ! 4-8 cell stage
-
-[Term]
-id: UBERON:0007234
-name: 4-8 cell stage
-namespace: uberon
-synonym: "four-eight cell stage" EXACT [OBOL:automatic]
-xref: EMAPA:16037
-is_a: UBERON:0000067 ! embryo stage part
-relationship: immediately_preceded_by UBERON:0007232 ! 2 cell stage
-relationship: part_of UBERON:0000107 ! cleavage stage
 
 [Term]
 id: UBERON:0007236
@@ -533,12 +520,10 @@ name: 8 cell stage
 namespace: uberon
 synonym: "eight-cell stage" EXACT [OBOL:automatic]
 synonym: "NF stage 4 (8-cell)" NARROW SENSU [XAO:1000014]
-xref: EMAPA:31865
 xref: XAO:1000014
 xref: XtroDO:0000008
 xref: ZFS:0000004
 is_a: UBERON:0000067 ! embryo stage part
-relationship: ends UBERON:0007234 ! 4-8 cell stage
 relationship: immediately_preceded_by UBERON:0007233 ! 4 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
@@ -708,14 +693,6 @@ synonym: "suckling stage" EXACT []
 is_a: UBERON:0000105 ! life cycle stage
 
 [Typedef]
-id: RO:0002224
-inverse_of: starts
-
-[Typedef]
-id: ends
-is_a: part_of
-
-[Typedef]
 id: has_part
 is_transitive: true
 is_a: RO:0002507
@@ -736,8 +713,4 @@ is_transitive: true
 [Typedef]
 id: precedes
 is_transitive: true
-
-[Typedef]
-id: starts
-is_a: part_of
 

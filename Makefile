@@ -637,6 +637,9 @@ local-%.owl: mirror-%.owl
 local-%.obo: local-%.owl
 	owltools $< -o -f obo $@
 
+local-brain.owl: source-ontologies/external-brain.obo
+	owltools $< --remove-annotation-assertions -l -s -d -o $@
+
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
 
@@ -728,6 +731,34 @@ composite-aba.owl: local-aba.owl $(MBASE)
  --merge-species-ontology -s 'mouse brain' -t NCBITaxon:10090 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
+
+composite-mouse-brain.owl: local-aba.owl source-ontologies/allen-dmba.obo $(MBASE) 
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE) source-ontologies/allen-dmba.obo local-aba.owl  bridge/uberon-bridge-to-aba.owl bridge/uberon-bridge-to-dmba.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+ --merge-species-ontology -s 'mouse brain' -t NCBITaxon:10090 \
+ --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
+ -o -f ofn $@
+
+composite-human-brain.owl: $(MBASE) 
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE) source-ontologies/allen-hba.obo source-ontologies/allen-dhba.obo bridge/uberon-bridge-to-hba.owl bridge/uberon-bridge-to-dhba.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+ --merge-species-ontology -s 'human brain' -t NCBITaxon:9606 \
+ --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
+ -o -f ofn $@
+
+composite-primate-brain.owl: $(MBASE) 
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE) source-ontologies/allen-pba.obo bridge/uberon-bridge-to-pba.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+ --merge-species-ontology -s 'primate brain' -t NCBITaxon:9443 \
+ --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
+ -o -f ofn $@
+
+composite-brain.owl: composite-mouse-brain.owl composite-human-brain.owl composite-primate-brain.owl
+	owltools $^ --merge-support-ontologies -o $@
+
+composite-nlx.owl: $(MBASE)
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE) source-ontologies/nlx-ns-part-dn.obo  bridge/uberon-bridge-to-nifstd.owl bridge/cl-bridge-to-nifstd.owl $< --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+ --merge-equivalent-classes -f NIF_GrossAnatomy -t UBERON \
+ --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
+ -o -f ofn $@
+
 
 # TODO: fix IRIs
 #composite-nif.owl: local-.owl $(MBASE) 
@@ -862,6 +893,7 @@ release:
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
 	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
+	cp composite-brain.{obo,owl} $(RELDIR) ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp composite-{vertebrate,metazoan}-*.{obo,owl} $(RELDIR) ;\
 	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
@@ -1169,6 +1201,8 @@ bto-anat.obo:
 
 ALLENS = dmba hba dhba pba
 
+
+
 aba.obo: ABA-src.obo
 	./util/make-aba-part-ofs.pl $< > $@
 bridge/aba.owl: aba.obo
@@ -1186,6 +1220,9 @@ source-ontologies/allen-pba.json:
 
 source-ontologies/allen-%.obo: source-ontologies/allen-%.json
 	./util/allen-json2obo.pl $< > $@
+
+source-ontologies/external-brain.obo: $(patsubst %,source-ontologies/allen-%.obo, $(ALLENS)) aba.obo source-ontologies/nlx-ns-part-dn.obo
+	owltools $^ --merge-support-ontologies -o -f obo --no-check $@
 
 # ----------------------------------------
 # NIF

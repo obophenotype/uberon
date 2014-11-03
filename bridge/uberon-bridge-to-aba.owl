@@ -13,7 +13,7 @@
      xmlns:doap="http://usefulinc.com/ns/doap#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-aba.owl">
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-aba/2014-10-26/uberon/bridge/uberon-bridge-to-aba.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-aba/2014-11-01/uberon/bridge/uberon-bridge-to-aba.owl"/>
     </owl:Ontology>
     
 
@@ -784,7 +784,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABA:AV</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anteroventral nucleus (ABA)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anteroventral nucleus of thalamus (ABA)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1685,6 +1685,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABA:CN</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cochlear nuclear complex (ABA)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ABA_CNU -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ABA_CNU">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0010011"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABA:CNU</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">collection of basal ganglia (ABA)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -3210,7 +3230,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABA:LP</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral posterior nucleus (ABA)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral posterior nucleus of thalamus (ABA)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -5592,7 +5612,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABA:SGN</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">suprageniculate nucleus (ABA)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">suprageniculate nucleus of thalamus (ABA)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -5692,7 +5712,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABA:SMT</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">submedial nucleus (ABA)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">submedial nucleus of thalamus (ABA)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -5893,6 +5913,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABA:SSN</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superior salivatory nucleus (ABA)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ABA_SSp -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ABA_SSp">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0008933"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABA:SSp</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary somatosensory cortex (ABA)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -8105,6 +8145,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0008933 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0008933"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0009050 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009050"/>
@@ -8132,6 +8178,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0009951 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009951"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010011"/>
     
 
 

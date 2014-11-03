@@ -24,7 +24,7 @@ anatomy(amniote).
 anatomy('EMAPA').
 anatomy(ehdaa2).
 anatomy(snomed_anatomy).
-anatomy('NIFGA').
+anatomy(nlxa).
 anatomy('NCITA').
 anatomy('ANISEED').
 anatomy(geisha).
