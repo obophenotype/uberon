@@ -39,7 +39,7 @@ sub descend {
     print "name: $obj->{name}\n";
     print "synonym: \"$obj->{acronym}\" RELATED ABBREVIATION []\n";
     print "is_a: UBERON:0000481 ! multi-tissue structure\n";
-    print "relationship: part_of $idmap->{$parent}\n" if $idmap->{$parent};
+    print "relationship: part_of $idmap->{$parent}\n" if $idmap->{$parent} && $idmap->{$parent} ne $oid;
     print "\n";
     map {descend($id,$_)} @{$obj->{children}};
 }
