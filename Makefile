@@ -61,6 +61,9 @@ ro_import.owl: ro.owl $(EDITSRC)
 ##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
 	owltools --use-catalog $< --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -t Domain --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --remove-dangling --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
 
+bless-mirrors:
+	touch go.owl chebi.owl ncbitaxon.owl
+
 pato.owl: $(EDITSRC) 
 	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // --set-ontology-id $(OBO)/$@ -o $@
 pato_import.owl: pato.owl $(EDITSRC) 
@@ -252,6 +255,9 @@ metazoan-view.owl: ext.owl
 	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure --run-reasoner -r elk -x -o -f ofn $@
 .PRECIOUS: %-view.owl
 
+branches: reports/branches-nerve.png reports/branches-artery.png
+reports/branches-%.png: 
+	blip -r uberon ontol-subset -query "class(R,$*),parent(ID,branching_part_of,_),subclassT(ID,R)" -rel branching_part_of -to png -cr branching_part_of > $@.tmp && mv $@.tmp $@
 
 
 # note: drosophila too slow....
@@ -339,7 +345,7 @@ full-bridge-checks: $(patsubst %,full-bridge-check-%.txt,$(CHECK_AO_LIST))
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
 quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges external-disjoints.owl
-	owltools --no-debug --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	owltools  --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 bridge-check-%.owl: uberon_edit.obo bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< local-$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: bridge-check-%.owl
@@ -501,6 +507,9 @@ subsets/life-stages-core.obo: uberon.owl
 subsets/life-stages-core.owl: uberon.owl
 	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
 
+subsets/immaterial.obo: merged.owl
+	owltools $< --reasoner-query -r elk -d  UBERON_0000466  --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+
 
 subsets/%.owl: subsets/%.obo
 	owltools $< -o file:///`pwd`/$@
@@ -643,8 +652,10 @@ local-brain.owl: source-ontologies/external-brain.obo
 local-NIF_GrossAnatomy.obo: merged.obo
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(OBO)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
 
+# We use the branch here: https://github.com/cmungall/human-developmental-anatomy-ontology/tree/uberon
+# this has some necessary changes, e.g. https://github.com/cmungall/human-developmental-anatomy-ontology/issues/1
 mirror-ehdaa2.owl: 
-	owltools https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/master/src/ontology/ehdaa2-edit.obo -o -f ofn $@ 
+	owltools https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o -f ofn $@ 
 #mirror-ehdaa2.obo:
 #	wget $(OBO)/ehdaa2.obo -O $@
 #fixed-ehdaa2.obo: mirror-ehdaa2.obo
@@ -807,10 +818,10 @@ uberon-taxmod-annelid.owl: uberon-taxmod-6340.owl
 	cp $< $@
 
 uberon-taxmod-%.obo: uberon-taxmod-%.owl
-	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< -o -f obo $@
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< --remove-imports-declarations -o -f obo $@.tmp && grep -v ^owl $@.tmp > $@
 
 uberon-taxmod-%.owl: ext.owl
-	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$* --remove-dangling --assert-inferred-subclass-axioms --useIsInferred --remove-dangling -o $@ >& $@.log
+	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$* --remove-dangling --assert-inferred-subclass-axioms --useIsInferred --remove-dangling --set-ontology-id $(OBO)/uberon/subsets/$@ -o $@ >& $@.log
 #uberon-taxmod-%.owl: uberon-taxmod-%.ids
 #	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
@@ -830,8 +841,9 @@ seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 	owltools $(UCAT) uberon_edit.owl $< cl-core.obo --merge-support-ontologies -o -f functional $@
 
 # this is used for xrefs for bridge files
+# TODO: investigate why this necessary: --add-support-from-imports --remove-imports-declarations
 seed.obo: seed.owl
-	owltools $(UCAT) $< -o -f obo $@.tmp && obo-grep.pl --neg -r is_obsolete $@.tmp > $@
+	owltools $(UCAT) $< --add-support-from-imports --remove-imports-declarations  -o -f obo $@.tmp && obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
 BRIDGESRC_OBO = uberon_edit_x.obo cl-with-xrefs.obo
 bridge/uberon-bridge-to-nifstd.obo: uberon_edit_x.obo
@@ -917,6 +929,10 @@ fbbt.obo:
 bridge/fbbt-nd.obo: fbbt.obo
 	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && obo2obo $@.tmp -o $@
 
+bridge/caro-bridge-to-zfa.obo:
+	blip-findall -r uberonp -consult util/caro_equiv.pro "ec(C,Z,'ZFA')" -select C-Z  -no_pred | tbl2obolinks.pl --rel equivalent_to - > $@
+bridge/caro-bridge-to-xao.obo:
+	blip-findall -r uberonp -consult util/caro_equiv.pro "ec(C,Z,'XAO')" -select C-Z  -no_pred | tbl2obolinks.pl --rel equivalent_to - > $@
 
 
 
@@ -1199,7 +1215,7 @@ bto-anat.obo:
 # ABA
 # ----------------------------------------
 
-ALLENS = dmba hba dhba pba
+ALLENS = dmba hba dhba pba mba
 
 
 
@@ -1217,6 +1233,8 @@ source-ontologies/allen-dhba.json:
 	wget http://api.brain-map.org/api/v2/structure_graph_download/16.json -O $@
 source-ontologies/allen-pba.json:
 	wget http://api.brain-map.org/api/v2/structure_graph_download/8.json -O $@
+source-ontologies/allen-mba.json:
+	wget http://api.brain-map.org/api/v2/structure_graph_download/1.json -O $@
 
 source-ontologies/allen-%.obo: source-ontologies/allen-%.json
 	./util/allen-json2obo.pl $< > $@

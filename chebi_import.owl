@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/chebi_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2014-11-01/chebi_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2015-01-01/chebi_import.owl"/>
     </owl:Ontology>
     
 
@@ -431,6 +431,15 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26082">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phosphorus molecular entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33302"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26214 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26214">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porphyrins</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36309"/>
     </owl:Class>
     
 
@@ -887,6 +896,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35507 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35507">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">natural product fundamental parent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33245"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_35605 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35605">
@@ -910,7 +928,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35701">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ester</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50860"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36963"/>
     </owl:Class>
     
 
@@ -935,11 +953,31 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_35794 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_35794">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tetrapyrrole fundamental parent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26932"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35507"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_36080 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36080">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33695"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36309 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36309">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cyclic tetrapyrrole</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26932"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_47882"/>
     </owl:Class>
     
 
@@ -1184,6 +1222,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_47882 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_47882">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cyclic polypyrrole</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38077"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_50047 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50047">
@@ -1356,8 +1403,18 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_82830 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_82830">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sphingosine-based sphingolipid</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sphingosine-based sphingolipid</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26739"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_8337 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_8337">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porphyrin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_26214"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35794"/>
     </owl:Class>
 </rdf:RDF>
 

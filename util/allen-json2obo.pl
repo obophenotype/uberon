@@ -28,16 +28,19 @@ sub descend {
     my $parent = shift;
     my $obj = shift;
     my $id = $obj->{id};
-    my $oid = "$ns:".$obj->{acronym};
-    if ($oid =~ /\s/) {
-        print STDERR "Fixing: $oid\n";
-        $oid =~ s/\s/_/g;
+    my $oid = "$ns:$id";
+    my $alt_id = "$ns:$obj->{acronym}";
+    if ($alt_id =~ /\s/) {
+        print STDERR "Fixing: $alt_id\n";
+        $alt_id =~ s/\s/_/g;
     }
     $idmap->{$id} = $oid;
     print "[Term]\n";
     print "id: $oid\n";
     print "name: $obj->{name}\n";
     print "synonym: \"$obj->{acronym}\" RELATED ABBREVIATION []\n";
+    print "alt_id: $alt_id\n";
+    print "property_value: identifier \"$id\" xsd:int\n";
     print "is_a: UBERON:0000481 ! multi-tissue structure\n";
     print "relationship: part_of $idmap->{$parent}\n" if $idmap->{$parent} && $idmap->{$parent} ne $oid;
     print "\n";

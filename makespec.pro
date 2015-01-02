@@ -9,12 +9,13 @@ anatomy('XAO').
 anatomy('AAO').
 anatomy('BSA').
 anatomy('MA').
-anatomy('aba').
+anatomy('mba').
 anatomy('dmba').
 anatomy('dhba').
 anatomy('pba').
 anatomy('hba').
 anatomy('ubrain').
+anatomy('NIFGA').
 anatomy('efo').
 anatomy('FMA').
 anatomy('WBbt').
@@ -24,7 +25,9 @@ anatomy(amniote).
 anatomy('EMAPA').
 anatomy(ehdaa2).
 anatomy(snomed_anatomy).
+anatomy(ta).
 anatomy(nlxa).
+anatomy(nlxn).
 anatomy('NCITA').
 anatomy('ANISEED').
 anatomy(geisha).
@@ -34,6 +37,7 @@ anatomy(galen).
 anatomy(rad).
 anatomy(caloha).
 anatomy(neuronames).
+anatomy(wpanat).
 
 allow_dangling(ceph).
 allow_dangling(uberon_edit).
@@ -115,6 +119,8 @@ align_all <-- Deps,
 
 nlp_hook(snomed_anatomy,_,ignore_word_snomed) :- !.
 nlp_hook(_,snomed_anatomy,ignore_word_snomed) :- !.
+nlp_hook(_,hba,ignore_lateral) :- !.
+nlp_hook(hba,_,ignore_lateral) :- !.
         
 nlp_hook(A,B,metadata_nlp_parent_dist2_hook) :-
         L=[A,B],
@@ -123,6 +129,7 @@ nlp_hook(A,B,metadata_nlp_parent_dist2_hook) :-
        \+ member('NIFGA',L),
        \+ member('NCITA',L),
        \+ member(efo,L),
+       \+ member(mba,L),
        !.
 nlp_hook(A,B,null) :- true.
             

@@ -40,13 +40,20 @@ fixdef(U,Def,[X|Rs]) :-
         d(U,X,Def,Rs,Msg),
         Msg\=new.
 
+wpdef(U,X,DefU,DefX) :-
+        entity_xref(U,X),
+        def(U,DefU),
+        forall(def_xref(U,UR),
+               id_idspace(UR,'Wikipedia')),
+        def(X,DefX).
+
 
 
 d(U,X,Def,Rs,Msg) :-
         entity_xref(U,X),
         def(X,Def),
         Def\='',
-        findall(R,def_xref(X,R),Rs),
+        setof(R,def_xref(X,R),Rs),
         is_better(U,X,Def,Rs,Msg).
 
 is_better(U,_,_,_,new) :-

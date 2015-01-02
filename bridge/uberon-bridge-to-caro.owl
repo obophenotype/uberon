@@ -13,7 +13,7 @@
      xmlns:doap="http://usefulinc.com/ns/doap#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-caro.owl">
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-caro/2014-11-01/uberon/bridge/uberon-bridge-to-caro.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-caro/2015-01-01/uberon/bridge/uberon-bridge-to-caro.owl"/>
     </owl:Ontology>
     
 
@@ -51,8 +51,8 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contributor</rdfs:label>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/contributor</oboInOwl:hasDbXref>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
@@ -230,8 +230,8 @@
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">see also</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2000/01/rdf-schema#seeAlso</oboInOwl:hasDbXref>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:shorthand>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:shorthand>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
     
@@ -253,8 +253,8 @@
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homepage</rdfs:label>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:shorthand>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:shorthand>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://xmlns.com/foaf/0.1/homepage</oboInOwl:hasDbXref>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
@@ -720,7 +720,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0001000">
         <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005162"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:0001000</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multi cell component structure (CARO)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multi cell part structure (CARO)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -731,6 +731,28 @@
         <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000122"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:0001001</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuron projection bundle (CARO)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0001004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0001004">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010199"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:0001004</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bona-fide anatomical boundary (CARO)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0001007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0001007">
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0022294"/>
+        <owl:equivalentClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0022295"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:0001007</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integumental surface (CARO)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">morphological boundary (CARO)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1049,6 +1071,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010199 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010199"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0010895 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010895"/>
@@ -1064,6 +1092,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0014732 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0014732"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0022294 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0022294"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0022295 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0022295"/>
 </rdf:RDF>
 
 

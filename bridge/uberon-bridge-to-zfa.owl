@@ -21,7 +21,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/zfa.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa/2014-11-01/uberon/bridge/uberon-bridge-to-zfa.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa/2015-01-01/uberon/bridge/uberon-bridge-to-zfa.owl"/>
     </owl:Ontology>
     
 
@@ -59,8 +59,8 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contributor</rdfs:label>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/contributor</oboInOwl:hasDbXref>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
@@ -238,8 +238,8 @@
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">see also</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2000/01/rdf-schema#seeAlso</oboInOwl:hasDbXref>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:shorthand>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:shorthand>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
     
@@ -261,8 +261,8 @@
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homepage</rdfs:label>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:shorthand>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:shorthand>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://xmlns.com/foaf/0.1/homepage</oboInOwl:hasDbXref>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
@@ -1750,12 +1750,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001886 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001886"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001888 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001888"/>
     
 
 
@@ -3814,12 +3808,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0004704 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004704"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004706 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004706"/>
     
 
 
@@ -6232,6 +6220,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0018674 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0018674"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0034730 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034730"/>
     
 
 
@@ -15818,7 +15812,6 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004152"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004706"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
@@ -15828,7 +15821,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000173</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bulbus arteriosus (zebrafish)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bulbus cordis (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -16779,7 +16771,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001888"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0034730"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
@@ -16788,7 +16780,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000229</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral olfactory tract (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">olfactory tract linking bulb to ipsilateral dorsal telencephalon (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -16968,7 +16960,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000238</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medial olfactory tract (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">olfactory tract linking bulb to ipsilateral ventral telencephalon (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -31216,7 +31208,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001112</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ovary stratum granulosum (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">granulosa cell layer (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -47296,7 +47288,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005307</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afferent arteriole (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">renal afferent arteriole (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -47316,7 +47308,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005308</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efferent arteriole (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">renal efferent arteriole (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 

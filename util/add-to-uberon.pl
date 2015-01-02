@@ -111,6 +111,19 @@ while(<>) {
 
     s@property_value: skos:definition "(.*)" xsd:string@def: "$1" [$xref]@;
 
+    s@property_value: related:synonym "(.*)" xsd:string@synonym: "$1" RELATED []@;
+
+    s@property_value: .*abbreviation "(.*)" xsd:string@synonym: "$1" RELATED ABBREVIATION []@;
+
+    s@BFO:0000050@part_of@;
+
+    s@UBERON:0000481 {source="DHBA"} ! multi-tissue structure@UBERON:0000481 ! multi-tissue structure@;
+
+    s@property_value: defining:criteria "cyto-architecture" xsd:string@subset: defined_by_cytoarchitecture@;
+
+    next if (m@property_value: identifier@);
+    next if (m@alt_id: (DHBA|HBA|MBA|PBA|DHBA)@);
+
     if (/^\[/) {
         $in_header = 0;
     }

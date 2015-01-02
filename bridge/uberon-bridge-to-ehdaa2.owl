@@ -19,7 +19,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/ehdaa2.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ehdaa2/2014-11-01/uberon/bridge/uberon-bridge-to-ehdaa2.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ehdaa2/2015-01-01/uberon/bridge/uberon-bridge-to-ehdaa2.owl"/>
     </owl:Ontology>
     
 
@@ -57,8 +57,8 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contributor</rdfs:label>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/contributor</oboInOwl:hasDbXref>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
@@ -236,8 +236,8 @@
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">see also</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2000/01/rdf-schema#seeAlso</oboInOwl:hasDbXref>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:shorthand>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:shorthand>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
     
@@ -259,8 +259,8 @@
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homepage</rdfs:label>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:shorthand>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:shorthand>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://xmlns.com/foaf/0.1/homepage</oboInOwl:hasDbXref>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
     </owl:AnnotationProperty>
@@ -5074,7 +5074,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000469</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external oblique (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abdominal external oblique muscle (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -12585,6 +12585,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001152 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001152">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0034708"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001152</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cerebellum marginal layer (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0001153 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001153">
@@ -13601,6 +13621,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001265</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spinal cord sulcus limitans (embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001267 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001267">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0034710"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001267</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spinal cord ventricular layer (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -15151,7 +15191,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005466"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001807"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -15160,7 +15200,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001403</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paravertebral ganglia (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paravertebral ganglion (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -18523,26 +18563,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001820</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secondary polar body (embryonic human)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/EHDAA2_0001822 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0001822">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005197"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0001822</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">segmental spinal nerve (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -25606,7 +25626,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0004022</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">urogenital ridge (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">urogenital fold (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -28270,7 +28290,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0004558</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">omental bursa cavity (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lesser sac cavity (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -29151,26 +29171,6 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0004650</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">future dorsal motor nucleus of vagus (embryonic human)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/EHDAA2_0004654 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0004654">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004022"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0004654</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">embryonic neuroepithelium (embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -31258,6 +31258,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001806 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001806"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001807 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001807"/>
     
 
 
@@ -33355,12 +33361,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004022 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004022"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0004055 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004055"/>
@@ -33790,12 +33790,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005171 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005171"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005197 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005197"/>
     
 
 
@@ -34258,12 +34252,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0005465 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005465"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005466 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005466"/>
     
 
 
@@ -38302,6 +38290,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0019274 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0019274"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0034708 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034708"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0034710 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034710"/>
 </rdf:RDF>
 
 

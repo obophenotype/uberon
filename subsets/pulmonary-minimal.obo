@@ -58,6 +58,7 @@ synonym: "MF.Lu" RELATED []
 xref: BTO:0000802
 xref: CALOHA:TS-0030
 xref: FMA:83023
+is_a: CL:0010003 ! epithelial cell of alveolus of lung
 is_a: CL:1001603 ! lung macrophage
 relationship: part_of UBERON:0002299 ! alveolus of lung
 
@@ -671,6 +672,7 @@ creation_date: 2014-06-04T16:00:56Z
 id: UBERON:0000004
 name: olfactory apparatus
 namespace: uberon
+def: "the organ that is specialized for smell and is part of the respiratory system" [MP:0002233\,MESH\:A01.456.505.733\,MGI\:cwg]
 subset: efo_slim
 subset: major_organ
 subset: uberon_slim
@@ -826,13 +828,15 @@ relationship: part_of UBERON:0002048 ! lung
 id: UBERON:0000114
 name: lung connective tissue
 namespace: uberon
-def: "A portion of connective tissue that is part of a lung [Automatically generated definition]." [OBOL:automatic]
+def: "the connective tissue located between the respiratory (airway and alveolar) epithelium, the capillary endothelium and pleural mesothelium; it contains basement membrane composed of collagen, elastin, proteoglycans, and fibronectin; it functions in the mechanical behavior of the lung, and forms a barrier to regulate the flow of plasma constituents from the capillaries to the airway and alveolar spaces" [MP:0002276\,ISBN\:0-683-40008-8\,MGI\:anna\,PMID\:14635660]
 synonym: "connective tissue of lung" EXACT [OBOL:automatic]
 synonym: "lung interstitial tissue" RELATED [MA:0001782]
 synonym: "lung interstitium" RELATED []
 synonym: "lung portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "lung textus connectivus" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of lung" EXACT [OBOL:automatic]
+synonym: "pulmonary connective tissue" RELATED [EMAPA:35521]
+synonym: "pulmonary interstitial tissue" RELATED []
 synonym: "pulmonary interstitium" EXACT [FMA:27533]
 synonym: "textus connectivus of lung" EXACT [OBOL:automatic]
 xref: EMAPA:35521
@@ -1000,7 +1004,7 @@ relationship: part_of UBERON:0001005 ! respiratory airway
 id: UBERON:0000388
 name: epiglottis
 namespace: uberon
-def: "A subdivision of the pharynx that consists of a flap of elastic cartilage tissue plus a mucous membrane covering, attached to the entrance of the larynx[WP,modified]." [http://en.wikipedia.org/wiki/Epiglottis]
+def: "A part of the pharynx that consists of a flap of elastic cartilage tissue plus a mucous membrane covering, attached to the entrance of the larynx. The epiglottis is found at the root of the tongue and folds back over the entrance to the larynx during swallowing, preventing inhalation of food or drink[MP,modified]" [http://en.wikipedia.org/wiki/Epiglottis, MP:0010371\,MGI\:llw2\,UBERON\:cjm]
 xref: BTO:0001628
 xref: EHDAA2:0004081
 xref: EMAPA:18289
@@ -1027,8 +1031,8 @@ namespace: uberon
 def: "The nasal vestibule is the most anterior part of the nasal cavity. It's enclosed by the cartilages of nose and lined by the same epithelium of the skin. The other part of the nasal cavity, which is lined by the respiratory epithelium, is called nasal cavity proper. [WP,unvetted]." [http://en.wikipedia.org/wiki/Nasal_vestibule]
 synonym: "vestibular part of nasal cavity" EXACT [FMA:59644]
 synonym: "vestibulum nasale" RELATED [BTO:0001761]
-synonym: "vestibulum nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_vestibule]
 synonym: "vestibulum nasi" RELATED [BTO:0001761]
+synonym: "vestibulum nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_vestibule]
 xref: BTO:0001761
 xref: CALOHA:TS-0660
 xref: FMA:59644
@@ -1101,7 +1105,7 @@ namespace: uberon
 def: "Anatomical group that is has as its parts distinct anatomical structures interconnected by anatomical structures at a lower level of granularity[CARO]. A group of organs that work together to perform a certain task [Wikipedia]." [CARO:0000011, CARO:MAH, http://en.wikipedia.org/wiki/Organ_system]
 subset: uberon_slim
 subset: upper_level
-synonym: "body system" EXACT [NIF_GrossAnatomy:birnlex_14]
+synonym: "body system" EXACT [NIFSTD:birnlex_14]
 synonym: "organ system" EXACT []
 synonym: "system" BROAD [GO:0048731]
 xref: AAO:0000007
@@ -1154,6 +1158,7 @@ xref: VHOG:0001724
 xref: XAO:0003001
 xref: ZFA:0001512
 is_a: UBERON:0000061 ! anatomical structure
+property_value: IAO:0000116 "Will be obsoleted in v2 of CARO [https://github.com/obophenotype/caro/issues/2]" xsd:string
 
 [Term]
 id: UBERON:0000929
@@ -1183,7 +1188,7 @@ property_value: IAO:0000116 "This class was created automatically from a combina
 id: UBERON:0000977
 name: pleura
 namespace: uberon
-def: "The delicate serous membrane that lines each half of the thorax of mammals and is folded back over the surface of the lung of the same side[BTO]." [http://en.wikipedia.org/wiki/Pleura]
+def: "the serous membrane surrounding the lungs and lining the walls of the pleural cavity" [MP:0010820\,ISBN\:0-683-40008-8]
 subset: efo_slim
 subset: uberon_slim
 synonym: "pleura" RELATED []
@@ -1218,7 +1223,7 @@ property_value: UBPROP:0000012 "In MA, is_a cavity lining. In FMA, is_a (viscous
 id: UBERON:0001004
 name: respiratory system
 namespace: uberon
-def: "Functional system which consists of structures involved in respiration." [http://en.wikipedia.org/wiki/Respiratory_system]
+def: "Functional system which consists of structures involved in respiration." [http://en.wikipedia.org/wiki/Respiratory_system, UBERON:cjm]
 subset: efo_slim
 subset: functional_classification
 subset: uberon_slim
@@ -1607,8 +1612,8 @@ def: "An anatomical cavity that is part of the olfactory apparatus. This include
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cavitas nasalis" RELATED [BTO:0002096]
-synonym: "cavitas nasi" RELATED [BTO:0002096]
 synonym: "cavitas nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_cavity]
+synonym: "cavitas nasi" RELATED [BTO:0002096]
 synonym: "cavity of nose" EXACT []
 synonym: "cavity of olfactory apparatus" EXACT [http://orcid.org/0000-0002-6601-2165]
 synonym: "cavum nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_cavity]
@@ -1674,7 +1679,7 @@ property_value: IAO:0000116 "This class was created automatically from a combina
 id: UBERON:0001728
 name: nasopharynx
 namespace: uberon
-def: "uppermost part of the pharynx. It extends from the base of the skull to the upper surface of the soft palate; it differs from the oral and laryngeal parts of the pharynx in that its cavity always remains patent (open)[WP]." [http://en.wikipedia.org/wiki/Nasopharynx]
+def: "the section of the pharynx that lies above the soft palate" [MP:0002251\,MGI\:cwg]
 subset: uberon_slim
 synonym: "epipharynx" RELATED [http://en.wikipedia.org/wiki/Pharynx]
 synonym: "nasal part of pharynx" EXACT []
@@ -1712,7 +1717,7 @@ property_value: UBPROP:0000008 "In humans - in front it communicates through the
 id: UBERON:0001729
 name: oropharynx
 namespace: uberon
-def: "The Oropharynx (oral part of the pharynx) reaches from the Uvula to the level of the hyoid bone. It opens anteriorly, through the isthmus faucium, into the mouth, while in its lateral wall, between the two palatine arches, is the palatine tonsil. [WP,unvetted]." [http://en.wikipedia.org/wiki/Oropharynx]
+def: "the portion of the pharynx that lies between the soft palate and the upper edge of the epiglottis" [MP:0002252\,MGI\:cwg]
 subset: efo_slim
 subset: uberon_slim
 synonym: "mesopharynx" RELATED [http://en.wikipedia.org/wiki/Pharynx]
@@ -1759,7 +1764,7 @@ is_a: UBERON:0001743 ! ligament of larynx
 id: UBERON:0001732
 name: pharyngeal tonsil
 namespace: uberon
-def: "Adenoids (or pharyngeal tonsils, or nasopharyngeal tonsils) are a mass of lymphoid tissue situated at the very back of the nose, in the roof of the nasopharynx, where the nose blends into the mouth. Normally, in children, they make a soft mound in the roof and posterior wall of the nasopharynx, just above and behind the uvula. [WP,unvetted]." [http://en.wikipedia.org/wiki/Pharyngeal_tonsil]
+def: "the lymph tissue in the roof and posterior wall of the nasopharynx" [MP:0002384\,MGI\:cwg]
 subset: uberon_slim
 synonym: "adenoid" EXACT []
 synonym: "nasopharyngeal tonsil" EXACT []
@@ -1783,13 +1788,12 @@ relationship: contributes_to_morphology_of UBERON:0001735 ! tonsillar ring
 relationship: part_of UBERON:0001728 ! nasopharynx
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/be/Gray994-adenoid.png
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Gray994-adenoid.png/200px-Gray994-adenoid.png
-property_value: IAO:0000116 "This class was created automatically from a combination of ontologies" xsd:string
 
 [Term]
 id: UBERON:0001735
 name: tonsillar ring
 namespace: uberon
-def: "lymphoid tissue ring located in the pharynx and to the back of the oral cavity. The ring consists of (from superior to inferior): Pharyngeal tonsil (also known as 'adenoids' when infected) Tubal tonsil (where Eustachian tube opens in the nasopharynx) Palatine tonsils (commonly called 'the tonsils' in the vernacular, less commonly termed 'faucial tonsils') Lingual tonsils Some animals, but not humans, have one or two additional tonsils: Soft palate tonsil Paraepiglottic tonsil[WP]." [http://en.wikipedia.org/wiki/Waldeyer's_ring]
+def: "the circular lymphoid tissue formed by the lingual, pharyngeal, and facial tonsils" [MP:0002379\,MGI\:cwg]
 subset: uberon_slim
 synonym: "anulus lymphoideus pharyngis" EXACT LATIN [FMA:55070, FMA:TA]
 synonym: "oropharyngeal lymphoid tissue" EXACT []
@@ -1850,7 +1854,7 @@ property_value: UBPROP:0000007 "laryngeal" xsd:string
 id: UBERON:0001738
 name: thyroid cartilage
 namespace: uberon
-def: "The thyroid cartilage is the largest of the nine cartilages that make up the laryngeal skeleton, the cartilage structure in and around the trachea that contains the larynx. It is composed of two plate-like laminae that fuse on the anterior side of the cartilage to form a peak, called the laryngeal prominence. This prominence is often referred to as the 'pomus Adamus' or 'Adam's apple'. The laryngeal prominence is more prominent in adult male than female because of the difference in the size of the angle: 90° in male and 120° in female. The lip of the thyroid cartilage just superior to the laryngeal prominence is called the superior thyroid notch, while the notch inferior to the thyroid angle is called the inferior thyroid notch. Its posterior border is elongated both inferiorly and superiorly to form the superior horn of thyroid cartilage and inferior horn of thyroid cartilage. [WP,unvetted]." [http://en.wikipedia.org/wiki/Thyroid_cartilage]
+def: "the largest of the laryngeal cartilages" [MP:0002260\,ISBN\:0-397-51047-0\,MGI\:cwg]
 subset: uberon_slim
 synonym: "cartilago thyroidea" RELATED [http://en.wikipedia.org/wiki/Thyroid_cartilage]
 synonym: "cartilago thyroidea" RELATED LATIN [http://en.wikipedia.org/wiki/Thyroid_cartilage]
@@ -1903,14 +1907,14 @@ is_a: UBERON:0003406 ! cartilage of respiratory system
 relationship: develops_from UBERON:0010213 ! laryngeal pre-cartilage condensation
 relationship: part_of UBERON:0001737 ! larynx
 relationship: part_of UBERON:0010212 ! laryngeal apparatus
-property_value: fma_set_term FMA:64159
 property_value: UBPROP:0000003 "(In anura) a dorsal pair of arytenoid cartilages (...), which support vocal cords, and a ventral pair (often fused) of cricoid cartilage (...). These cartilages are regarded as derivatives of posterior visceral arches of ancestors. Together they constitute the larynx, a structure characteristic of tetrapods. (...) (In mammals) Paired arytenoid cartilages help support and control the vocal cords. The cricoid cartilage is single. Two additional cartilages are present that are lacking in other vertebrates: a large ventral thyroid cartilage (...) and a cartilage in the epiglottis.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001550", ontology="VHOG", source="ISBN:978-0471090588 Hildebrand M, Analysis of vertebrate structure (1983) p.239-241", source="http://bgee.unil.ch/"}
+property_value: UBPROP:0000202 FMA:64159
 
 [Term]
 id: UBERON:0001740
 name: arytenoid cartilage
 namespace: uberon
-def: "The arytenoid cartilages are a pair of small three-sided pyramids which form part of the larynx, to which the vocal cords are attached. Each is pyramidal in form, and has three surfaces, a base, and an apex. [WP,unvetted]." [http://en.wikipedia.org/wiki/Arytenoid_cartilage]
+def: "the paired triangular laryngeal cartilages located postlaterally at the level of the thyroid cartilage" [MP:0002257\,ISBN\:0-397-51047-0\,MGI\:cwg]
 subset: uberon_slim
 synonym: "arytenoid" EXACT [EMAPA:18695]
 synonym: "arytenoids" RELATED [http://en.wikipedia.org/wiki/Arytenoid_cartilage]
@@ -1989,7 +1993,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/279508004
 xref: Laryngeal:Ligament
 xref: MA:0001755
 xref: UMLS:C0458519 {source="ncithesaurus:Laryngeal_Ligament"}
-is_a: UBERON:0003583 ! larynx connective tissue
 relationship: part_of UBERON:0001737 ! larynx
 
 [Term]
@@ -2075,7 +2078,7 @@ xref: Nasal:cartilage
 xref: UMLS:C0225415 {source="ncithesaurus:Nasal_Cartilage"}
 is_a: UBERON:0003406 ! cartilage of respiratory system
 is_a: UBERON:0003570 ! respiratory system connective tissue
-relationship: encloses UBERON:0000402 ! nasal vestibule
+relationship: contains UBERON:0000402 ! nasal vestibule
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Gray852.png/200px-Gray852.png
 property_value: IAO:0000116 "This class was created automatically from a combination of ontologies" xsd:string
@@ -2086,6 +2089,7 @@ name: mucosa of larynx
 namespace: uberon
 def: "The mucous lining of the larynx, which is composed of squamous epithelium in the upper larynx and ciliated columnar epithelium in the lower larynx." [MP:0002261]
 synonym: "laryngeal mucosa" EXACT []
+synonym: "laryngeal mucous membrane" RELATED [EMAPA:18334]
 synonym: "larynx mucosa" EXACT []
 synonym: "larynx mucosa of organ" EXACT [OBOL:automatic]
 synonym: "larynx mucous membrane" EXACT [OBOL:automatic]
@@ -2111,7 +2115,7 @@ property_value: IAO:0000116 "This class was created automatically from a combina
 id: UBERON:0001825
 name: paranasal sinus
 namespace: uberon
-def: "Paranasal sinuses are air-filled spaces, communicating with the nasal cavity, within the bones of the skull and face. [WP,unvetted]." [http://en.wikipedia.org/wiki/Paranasal_sinuses]
+def: "the paired air-filled cavities surrounded by the bones of the face that are lined by mucous membranes and are continuous with the nasal cavity" [MP:0002240\,ISBN\:0-683-40008-8]
 subset: uberon_slim
 synonym: "nasal sinus" RELATED [GAID:355]
 synonym: "sinus" BROAD []
@@ -2132,8 +2136,8 @@ relationship: continuous_with UBERON:0001707 ! nasal cavity
 relationship: contributes_to_morphology_of UBERON:0001004 ! respiratory system
 relationship: part_of UBERON:0001004 ! respiratory system
 property_value: depicted:by 200px-Nnh:front.svg.png
-property_value: fma_set_term FMA:76587
 property_value: UBPROP:0000011 "Arise as epithelial lined diverticula of the lining of the nasal cavity. The extent of sinus development varies with species, most of the development occurs postnatally" xsd:string
+property_value: UBPROP:0000202 FMA:76587
 
 [Term]
 id: UBERON:0001826
@@ -2161,7 +2165,7 @@ id: UBERON:0001901
 name: epithelium of trachea
 namespace: uberon
 alt_id: UBERON:0003227
-def: "An epithelium that is part of a trachea." [OBOL:automatic]
+def: "the epithelial lining of the trachea which contains numerous ciliated cells" [MP:0002285\,ISBN\:0-397-51047-0\,MGI\:cwg]
 synonym: "epithelial tissue of trachea" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of windpipe" EXACT [OBOL:automatic]
 synonym: "epithelium of windpipe" EXACT [OBOL:automatic]
@@ -2362,7 +2366,7 @@ synonym: "MOE" RELATED ABBREVIATION [NCBIBook:NBK55971]
 synonym: "nasal cavity olfactory epithelium" EXACT [MA:0001325]
 synonym: "nasal epithelium" RELATED []
 synonym: "nasal sensory epithelium" RELATED []
-synonym: "olfactory membrane" EXACT [NIF_GrossAnatomy:birnlex_2703]
+synonym: "olfactory membrane" EXACT [NIFSTD:birnlex_2703]
 synonym: "olfactory sensory epithelium" EXACT []
 synonym: "pseudostratified main olfactory epithelium" RELATED [http://www.ncbi.nlm.nih.gov/books/NBK55971/]
 synonym: "sensory olfactory epithelium" EXACT []
@@ -2375,7 +2379,7 @@ xref: EHDAA2:0001228
 xref: EHDAA:4774
 xref: EMAPA:17606
 xref: FMA:64803
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900 {source="NIF_GrossAnatomy:birnlex_2703"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900 {source="NIFSTD:birnlex_2703"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900
 xref: http://linkedlifedata.com/resource/umls/id/C0599332
 xref: http://www.snomedbrowser.com/Codes/Details/37623003
@@ -2384,7 +2388,7 @@ xref: MAT:0000445
 xref: Olfactory:Epithelium
 xref: Olfactory:epithelium
 xref: TAO:0000554
-xref: UMLS:C0599332 {source="NIF_GrossAnatomy:birnlex_2703"}
+xref: UMLS:C0599332 {source="NIFSTD:birnlex_2703"}
 xref: UMLS:C0599332 {source="ncithesaurus:Olfactory_Epithelium"}
 xref: VHOG:0000985
 xref: ZFA:0000554
@@ -2693,7 +2697,7 @@ relationship: part_of UBERON:0002299 ! alveolus of lung
 id: UBERON:0002173
 name: pulmonary alveolar duct
 namespace: uberon
-def: "Alveolar ducts are the tiny end ducts of the branching airways that fill the lungs. Each lung holds approximately 1.5 to 2 million of them. The tubules divide into two or three alveolar sacs at the distal end. They are formed from the confluence openings of several alveoli. Distal terminations of alveolar ducts are atria which then end in alveolar sacs. [WP,unvetted]." [http://en.wikipedia.org/wiki/Alveolar_duct]
+def: "the respiratory conducting tubes distal to the respiratory bronchiole that lead to the alveolar sacs and the alveoli" [MP:0002271\,ISBN\:0-683-40008-8\,MGI\:cwg]
 subset: uberon_slim
 synonym: "alveolar duct" EXACT [MA:0000417]
 synonym: "respiratory alveolar duct" EXACT []
@@ -2897,7 +2901,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/thumb/
 id: UBERON:0002185
 name: bronchus
 namespace: uberon
-def: "A portion of the airway that connects to the lungs[GO]." [http://en.wikipedia.org/wiki/Bronchus]
+def: "the upper conducting airways of the lung; these airways arise from the terminus of the trachea" [MP:0002264\,ISBN\:0-397-51047-0\,MESH\:A04.411.125\,MGI\:cwg]
 subset: efo_slim
 subset: organ_slim
 subset: uberon_slim
@@ -2934,7 +2938,7 @@ property_value: UBPROP:0000008 "In humans, the main bronchus is histologically i
 id: UBERON:0002186
 name: bronchiole
 namespace: uberon
-def: "The first airway branch that no longer contains cartilage; it is a branch of the bronchus[GO]." [http://en.wikipedia.org/wiki/Bronchiole]
+def: "the conducting airway of the lungs found terminal to the bronchi; these structures contain neither cartilage nor mucous-secreting glands; the epithelium of the bronchioles becomes thinner with each branching" [MP:0002267\,ISBN\:0-397-51047-0\,MGI\:cwg]
 subset: uberon_slim
 synonym: "bronchioli" RELATED PLURAL []
 synonym: "bronchiolus" RELATED [BTO:0002375]
@@ -2969,7 +2973,7 @@ property_value: UBPROP:0000010 "lacks submucosa and cartilage plates; they have 
 id: UBERON:0002187
 name: terminal bronchiole
 namespace: uberon
-def: "A terminal bronchiole is a bronchiole at the end of the conducting zone. At the transition into the respiratory zone, alveoli become present. The terminal bronchiole is the most distal segment of the conducting zone. Each of the terminal bronchioles divides to form respiratory bronchioles which contain a small number of alveoli. Terminal bronchioles are lined with simple cuboidal epithelium containing Clara cells. Terminal bronchioles contain a limited number of ciliated cells and no goblet cells. Clara cells are non-ciliated, rounded protein secreting cells. Their secretions are a nonsticky, proteinaceous compound to maintain the airway in the smallest bronchioles. The secretion, called surfactant, reduces surface tension allowing for bronchioles to expand during inspiration and keeping the bronchioles from collapsing during expiration. Clara cells, a stem cell of the respiratory system, produce enzymes that detoxify substances dissolved in the respiratory fluid. [WP,unvetted]." [http://en.wikipedia.org/wiki/Terminal_bronchiole]
+def: "the last conducting structure of non-respiratory bronchioles; after this point, the airways have alveoli in their walls" [MP:0002268\,ISBN\:0-397-51047-0\,MGI\:cwg]
 subset: uberon_slim
 synonym: "bronchioli terminalis" RELATED LATIN [http://en.wikipedia.org/wiki/Terminal_bronchiole]
 synonym: "bronchiolus terminalis" EXACT LATIN []
@@ -3134,6 +3138,7 @@ def: "A lamina propria that is part of a bronchus [Automatically generated defin
 synonym: "bronchi lamina propria" EXACT [OBOL:automatic]
 synonym: "bronchi lamina propria mucosa" EXACT [OBOL:automatic]
 synonym: "bronchi lamina propria mucosae" EXACT [OBOL:automatic]
+synonym: "bronchial lamina propria" RELATED [EMAPA:35194]
 synonym: "bronchial trunk lamina propria" EXACT [OBOL:automatic]
 synonym: "bronchial trunk lamina propria mucosa" EXACT [OBOL:automatic]
 synonym: "bronchial trunk lamina propria mucosae" EXACT [OBOL:automatic]
@@ -3235,7 +3240,7 @@ property_value: IAO:0000116 "This class was created automatically from a combina
 id: UBERON:0002372
 name: tonsil
 namespace: uberon
-def: "Portion of lymphoid tissue on either side of the throat." [http://en.wikipedia.org/wiki/Tonsil]
+def: "either of the two small almond-shaped masses of lymph tissue found on either side of the oropharynx" [MP:0002380\,MGI\:cwg]
 subset: efo_slim
 subset: uberon_slim
 synonym: "Mandel" RELATED [BTO:0001387]
@@ -3383,7 +3388,7 @@ xref: VHOG:0001496
 xref: Visceral:Pleura
 xref: Visceral:pleura
 is_a: UBERON:0000977 ! pleura
-relationship: attaches_to UBERON:0008946 ! lung parenchyma
+relationship: attached_to UBERON:0008946 ! lung parenchyma
 relationship: contributes_to_morphology_of UBERON:0000977 ! pleura
 relationship: part_of UBERON:0000977 ! pleura
 relationship: part_of UBERON:0002048 ! lung
@@ -3423,9 +3428,10 @@ property_value: UBPROP:0000012 "the EHDAA2 class is not quite equivalent. See ht
 id: UBERON:0002453
 name: ethmoid sinus
 namespace: uberon
-def: "The ethmoid sinus, one of the paranasal sinuses, is the collective name for the ethmoidal air cells. Each ethmoid sinus is an air-space enclosed within the ethmoid bone. The ethmoidal air cells consist of numerous thin-walled cavities situated in the ethmoidal labyrinth and completed by the frontal, maxilla, lacrimal, sphenoidal, and palatine bones. They lie between the upper parts of the nasal cavities and the orbits, and are separated from these cavities by thin bony laminæ. [WP,unvetted]." [http://en.wikipedia.org/wiki/Ethmoid_bone_sinus]
+def: "the evaginations of the mucous membrane of the nasal cavity into the ethmoidal bony labyrinth, forming multiple small paranasal sinuses" [MP:0002245\,ISBN\:0-683-40008-8]
 subset: uberon_slim
 synonym: "cellulae ethmoidales" RELATED LATIN [http://en.wikipedia.org/wiki/Ethmoid_sinus]
+synonym: "ethmoidal bone sinus" EXACT [http://en.wikipedia.org/wiki/Ethmoid_bone_sinus]
 synonym: "ethmoidal sinus" EXACT [FMA:84115]
 xref: Ethmoid:Sinus
 xref: FMA:84115
@@ -3443,7 +3449,7 @@ property_value: depicted:by 200px-Nnh:front.svg.png
 id: UBERON:0002486
 name: glottis
 namespace: uberon
-def: "The glottis is defined as the combination of the vocal folds and the space in between the folds. [WP,unvetted]." [http://en.wikipedia.org/wiki/Glottis]
+def: "the vocal apparatus of the larynx, which includes the vocal cords and the opening between them" [MP:0002255\,ISBN\:0-397-51047-0\,MGI\:cwg]
 subset: uberon_slim
 xref: AAO:0010610
 xref: BTO:0001627
@@ -3707,6 +3713,7 @@ synonym: "1st pharyngeal arch artery" RELATED [EMAPA:16685]
 synonym: "AA1" EXACT [ZFA:0005005]
 synonym: "aortic arch 1" EXACT [ZFA:0005005]
 synonym: "first aortic arch" EXACT [XAO:0000342]
+synonym: "first arch artery" RELATED [EMAPA:16685]
 synonym: "first branchial arch artery" EXACT []
 synonym: "mandibular aortic arch" EXACT [ZFA:0005005]
 xref: AAO:0010415
@@ -3937,7 +3944,7 @@ property_value: UBPROP:0000008 "in mouse 15-18 C-rings, 15-20 in human. " xsd:st
 id: UBERON:0003127
 name: open tracheal system trachea
 namespace: uberon
-def: "A trachea composed of composed of spiracles, tracheae, and tracheoles [Wikipedia]. An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." [GO:0007424, http://en.wikipedia.org/wiki/Invertebrate_trachea]
+def: "A respiratory airway that is part of an open tracheal system." [UBERON:cjm]
 subset: uberon_slim
 synonym: "invertebrate trachea" EXACT []
 synonym: "trachea" BROAD SENSU [FBbt:00005043]
@@ -3946,7 +3953,7 @@ xref: Invertebrate:trachea
 xref: SPD:0000434
 xref: TADS:0000315
 is_a: UBERON:0001005 ! respiratory airway
-property_value: IAO:0000116 "TODO check if is_a epithelium" xsd:string
+relationship: part_of UBERON:0005155 ! open tracheal system
 
 [Term]
 id: UBERON:0003261
@@ -4037,7 +4044,7 @@ synonym: "epithelial tissue of nasal septum" EXACT [OBOL:automatic]
 synonym: "nasal septum epithelial tissue" EXACT [OBOL:automatic]
 synonym: "nasal septum epithelium" EXACT [OBOL:automatic]
 xref: EMAPA:18442
-is_a: UBERON:0004807 ! respiratory system epithelium
+is_a: UBERON:0019306 ! nose epithelium
 relationship: part_of UBERON:0001706 ! nasal septum
 
 [Term]
@@ -4083,9 +4090,10 @@ synonym: "vomeronasal organ sensory epithelium" EXACT [MA:0001328]
 xref: EHDAA2:0004102
 xref: EMAPA:18444
 xref: MA:0001328
-is_a: UBERON:0004807 ! respiratory system epithelium
+is_a: UBERON:0019306 ! nose epithelium
 relationship: develops_from UBERON:0001997 ! olfactory epithelium
 relationship: part_of UBERON:0002255 ! vomeronasal organ
+property_value: IAO:0000116 "TODO - add cell types" xsd:string
 
 [Term]
 id: UBERON:0003384
@@ -4409,6 +4417,7 @@ name: lung blood vessel
 namespace: uberon
 def: "A blood vessel that is part of a lung [Automatically generated definition]." [OBOL:automatic]
 synonym: "blood vessel of lung" EXACT [OBOL:automatic]
+synonym: "pulmonary vascular element" RELATED [EMAPA:32867]
 xref: EMAPA:32867
 xref: MA:0002457
 is_a: UBERON:0003504 ! respiratory system blood vessel
@@ -4426,7 +4435,9 @@ synonym: "blood vessel of primary bronchus" EXACT [OBOL:automatic]
 synonym: "blood vessel of principal bronchus" EXACT [OBOL:automatic]
 synonym: "bronchus principalis blood vessel" EXACT [OBOL:automatic]
 synonym: "primary bronchus blood vessel" EXACT [OBOL:automatic]
+synonym: "primary bronchus vascular element" RELATED [EMAPA:16852]
 synonym: "principal bronchus blood vessel" EXACT [OBOL:automatic]
+synonym: "principal bronchus vascular element" RELATED [EMAPA:16852]
 xref: EMAPA:16852
 xref: MA:0001844
 is_a: UBERON:0003504 ! respiratory system blood vessel
@@ -4707,6 +4718,7 @@ name: larynx connective tissue
 namespace: uberon
 def: "A portion of connective tissue that is part of a larynx [Automatically generated definition]." [OBOL:automatic]
 synonym: "connective tissue of larynx" EXACT [OBOL:automatic]
+synonym: "laryngeal connective tissue" RELATED [EMAPA:35471]
 synonym: "larynx portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "larynx textus connectivus" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of larynx" EXACT [OBOL:automatic]
@@ -4738,9 +4750,11 @@ synonym: "portion of connective tissue of main bronchus" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of primary bronchus" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of principal bronchus" EXACT [OBOL:automatic]
 synonym: "primary bronchus connective tissue" EXACT [OBOL:automatic]
+synonym: "primary bronchus mesenchyme" RELATED [EMAPA:16850]
 synonym: "primary bronchus portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "primary bronchus textus connectivus" EXACT [OBOL:automatic]
 synonym: "principal bronchus connective tissue" EXACT [OBOL:automatic]
+synonym: "principal bronchus mesenchyme" RELATED [EMAPA:16850]
 synonym: "principal bronchus portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "principal bronchus textus connectivus" EXACT [OBOL:automatic]
 synonym: "textus connectivus of bronchus principalis" EXACT [OBOL:automatic]
@@ -4782,6 +4796,8 @@ def: "A portion of connective tissue that is part of a bronchus [Automatically g
 synonym: "bronchi connective tissue" EXACT [OBOL:automatic]
 synonym: "bronchi portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "bronchi textus connectivus" EXACT [OBOL:automatic]
+synonym: "bronchial connective tissue" RELATED [EMAPA:35193]
+synonym: "bronchial mesenchyme" RELATED [EMAPA:32690]
 synonym: "bronchial trunk connective tissue" EXACT [OBOL:automatic]
 synonym: "bronchial trunk portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "bronchial trunk textus connectivus" EXACT [OBOL:automatic]
@@ -4822,7 +4838,7 @@ relationship: part_of UBERON:0001558 ! lower respiratory tract
 id: UBERON:0003604
 name: trachea cartilage
 namespace: uberon
-def: "The cartilages of the trachea (or tracheal rings) vary from sixteen to twenty in number: each forms an imperfect ring, which occupies the anterior two-thirds or so of the circumference of the trachea, being deficient behind, where the tube is completed by fibrous tissue and unstriped muscular fibers." [http://en.wikipedia.org/wiki/Tracheal_rings]
+def: "the ring-shaped cartilaginous structures that support the trachea" [MP:0003120\,J\:97123\,MGI\:smb, UBERON:cjm]
 synonym: "cartilage of the trachea" RELATED [http://en.wikipedia.org/wiki/Tracheal_rings]
 synonym: "cartilage of trachea" EXACT [OBOL:automatic]
 synonym: "cartilage of windpipe" EXACT [OBOL:automatic]
@@ -4849,7 +4865,7 @@ relationship: develops_from UBERON:0007267 ! trachea pre-cartilage rings
 relationship: part_of UBERON:0003126 ! trachea
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/56/Gray952.png
 property_value: IAO:0000116 "check whether to classify as part of splanchoncranium" xsd:string
-property_value: UBPROP:0000008 "in avians the rings are complete." xsd:string
+property_value: UBPROP:0000008 "in mammals the rings are incomplete, in avians the rings are complete." xsd:string
 
 [Term]
 id: UBERON:0003611
@@ -5163,6 +5179,7 @@ synonym: "bronchi involuntary muscle" EXACT [OBOL:automatic]
 synonym: "bronchi non-striated muscle" EXACT [OBOL:automatic]
 synonym: "bronchi smooth muscle" EXACT [OBOL:automatic]
 synonym: "bronchi smooth muscle tissue" EXACT [OBOL:automatic]
+synonym: "bronchial smooth muscle" RELATED [EMAPA:35195]
 synonym: "bronchial trunk involuntary muscle" EXACT [OBOL:automatic]
 synonym: "bronchial trunk non-striated muscle" EXACT [OBOL:automatic]
 synonym: "bronchial trunk smooth muscle" EXACT [OBOL:automatic]
@@ -5214,7 +5231,7 @@ relationship: part_of UBERON:0003504 ! respiratory system blood vessel
 id: UBERON:0004362
 name: pharyngeal arch 1
 namespace: uberon
-def: "The first pharyngeal arch is the most anteriorly positioned arch and forms the jaw. It is located between the stomodeum and the first pharyngeal groove. The neural crest cells that contribute to pharyngeal arch 1 arise from the caudal midbrain and rhombomeres 1 and 2 of the hindbrain." [http://en.wikipedia.org/wiki/First_pharyngeal_arch]
+def: "The first of the series of pharyngeal arches that develop into jaw bones or their homologs, and their associated nerves and arteries" []
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "1st arch" RELATED [EHDAA2:0000006]
@@ -5245,6 +5262,7 @@ xref: ZFA:0001612
 is_a: UBERON:0002539 ! pharyngeal arch
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/2d/Gray48.png
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Gray48.png/200px-Gray48.png
+property_value: UBPROP:0000001 "the first arch which contributes to development of mastication muscles, maxilla, mandible, incus, malleus, Meckel's cartilage, trigeminal nerve, and maxillary artery" xsd:string {source="MP:0006337,MGI:smb"}
 property_value: UBPROP:0000001 "The first of the series of bony or cartilaginous arches that develop in the walls of the mouth cavity and pharynx of the embryo.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010364", ontology="AAO", source="XAO:EJS"}
 property_value: UBPROP:0000003 "A conserved feature of all vertebrate embryos is the presence of a series of bulges on the lateral surface of the head, the pharyngeal arches; it is within these structures that the nerves, muscles and skeletal components of the pharyngeal apparatus are laid down. The pharyngeal arches are separated by endodermal outpocketings, the pharyngeal pouches.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000296", ontology="VHOG", source="DOI:10.1111/j.1469-7580.2005.00472.x Graham A, Okabe M and Quinlan R, The role of the endoderm in the development and evolution of the pharyngeal arches. J Anat (2005)", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000103 "1" xsd:nonNegativeInteger
@@ -5375,7 +5393,7 @@ namespace: uberon
 def: "An epithelium that is part of a naris [Automatically generated definition]." [OBOL:automatic]
 xref: EMAPA:18596
 xref: MA:0001321
-is_a: UBERON:0004807 ! respiratory system epithelium
+is_a: UBERON:0019306 ! nose epithelium
 relationship: part_of UBERON:0005928 ! external naris
 
 [Term]
@@ -5406,6 +5424,7 @@ id: UBERON:0004778
 name: larynx submucosa
 namespace: uberon
 def: "A submucosa that is part of a larynx [Automatically generated definition]." [OBOL:automatic]
+synonym: "laryngeal submucosa" RELATED [EMAPA:35474]
 synonym: "submucosa of larynx" EXACT [OBOL:automatic]
 xref: EMAPA:35474
 xref: http://www.snomedbrowser.com/Codes/Details/361941005
@@ -5434,10 +5453,11 @@ relationship: part_of UBERON:0004785 ! respiratory system mucosa
 id: UBERON:0004785
 name: respiratory system mucosa
 namespace: uberon
-def: "A mucosa that is part of a respiratory system [Automatically generated definition]." [OBOL:automatic]
+def: "the mucous membrane lining the respiratory tract" [MP:0002277\,MESH\:A04.760\,MGI\:cwg]
 synonym: "apparatus respiratorius mucosa" EXACT [OBOL:automatic]
 synonym: "apparatus respiratorius mucosa of organ" EXACT [OBOL:automatic]
 synonym: "apparatus respiratorius mucous membrane" EXACT [OBOL:automatic]
+synonym: "laryngeal mucous membrane" RELATED [EMAPA:18334]
 synonym: "mucosa of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "mucosa of organ of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "mucosa of organ of respiratory system" EXACT [OBOL:automatic]
@@ -5522,7 +5542,7 @@ relationship: part_of UBERON:0002185 ! bronchus
 id: UBERON:0004802
 name: respiratory tract epithelium
 namespace: uberon
-def: "An epithelium that is part of a respiratory tract [Automatically generated definition]." [OBOL:automatic]
+def: "the pseudostratified ciliated epithelium that lines much of the conducting portion of the airway, including part of the nasal cavity and larynx, the trachea, and bronchi" [MP:0010942\,ISBN\:0-683-40008-8\,MGI\:anna]
 synonym: "airway epithelium" RELATED [BTO:0000419]
 synonym: "epithelial tissue of respiratory tract" EXACT [OBOL:automatic]
 synonym: "epithelium of respiratory tract" EXACT [OBOL:automatic]
@@ -5600,6 +5620,7 @@ xref: UMLS:C0751258 {source="ncithesaurus:Laryngeal_Epithelium"}
 is_a: UBERON:0004802 ! respiratory tract epithelium
 relationship: contributes_to_morphology_of UBERON:0001737 ! larynx
 relationship: part_of UBERON:0001737 ! larynx
+property_value: UBPROP:0000010 "composed of squamous epithelium in the upper larynx and ciliated columnar epithelium in the lower larynx [ISBN:0-397-51047-0]" xsd:string
 
 [Term]
 id: UBERON:0004818
@@ -5618,6 +5639,7 @@ id: UBERON:0004821
 name: pulmonary alveolus epithelium
 namespace: uberon
 def: "The epithelial layer of the alveoli[MP]. The layer of cells covering the lining of the tiny air sacs at the end of the bronchioles[BTO]." [BTO:0003511, MP:0010898]
+synonym: "alveolar epithelium" RELATED [EMAPA:35121]
 synonym: "alveolus epithelial tissue" EXACT [OBOL:automatic]
 synonym: "alveolus epithelium" EXACT [MA:0001771]
 synonym: "epithelial tissue of alveolus" EXACT [OBOL:automatic]
@@ -5868,6 +5890,7 @@ name: alveolar wall
 namespace: uberon
 alt_id: UBERON:0008872
 def: "A wall that contains the alveoli" [LG:0012626, MP:0010903]
+synonym: "alveolus wall" RELATED [EMAPA:35120]
 synonym: "pulmonary alveolar wall" EXACT [FMA:14117]
 synonym: "pulmonary interalveolar septum" EXACT [FMA:14117]
 synonym: "wall of pulmonary alveolus" EXACT [FMA:14117]
@@ -6495,6 +6518,7 @@ name: larynx submucosa gland
 namespace: uberon
 def: "A gland that is part of a larynx submucosa [Automatically generated definition]." [OBOL:automatic]
 subset: organ_slim
+synonym: "laryngeal submucosa gland" RELATED [EMAPA:35475]
 xref: EMAPA:35475
 xref: MA:0002729
 relationship: part_of UBERON:0004778 ! larynx submucosa
@@ -6567,7 +6591,7 @@ property_value: IAO:0000116 "TODO - check UBERON:0004893 interalveolar septum" x
 id: UBERON:0005384
 name: nasal cavity epithelium
 namespace: uberon
-def: "An epithelium that is part of a nasal cavity [Automatically generated definition]." [OBOL:automatic]
+def: "An epithelium that lines the nasal cavity." [UBERON:cjm]
 synonym: "nasal epithelium" EXACT [FMA:63140]
 synonym: "nasal mucosa" RELATED [MA:0001324]
 xref: CALOHA:TS-0656
@@ -6581,6 +6605,7 @@ xref: MA:0001324
 xref: UMLS:C1709151 {source="ncithesaurus:Nasal_Cavity_Epithelium"}
 xref: VHOG:0000501
 is_a: UBERON:0004814 ! upper respiratory tract epithelium
+is_a: UBERON:0019306 ! nose epithelium
 relationship: bounding_layer_of UBERON:0015788 ! olfactory apparatus chamber
 relationship: contributes_to_morphology_of UBERON:0000004 ! olfactory apparatus
 relationship: contributes_to_morphology_of UBERON:0004785 ! respiratory system mucosa
@@ -6953,6 +6978,7 @@ def: "A groove that is situated between the 1st and 2nd pharyngeal arch." [ISBN1
 subset: vertebrate_core
 synonym: "1st arch branchial groove" EXACT [EHDAA2:0000008]
 synonym: "1st arch groove ectoderm" EXACT [EHDAA2:0000009]
+synonym: "1st branchial cleft" RELATED [EMAPA:16119]
 synonym: "1st pharyngeal cleft" RELATED [VHOG:0000969]
 synonym: "1st pharyngeal groove" EXACT [VHOG:0000969]
 synonym: "1st pharyngeal groove ectoderm" EXACT [VHOG:0000554]
@@ -6973,6 +6999,7 @@ def: "A groove that is situated between the 2nd and 3rd pharyngeal arch." [ISBN1
 subset: vertebrate_core
 synonym: "2nd arch branchial groove" EXACT [EHDAA2:0000054]
 synonym: "2nd arch groove ectoderm" EXACT [EHDAA2:0000057]
+synonym: "2nd branchial cleft" RELATED [EMAPA:16396]
 synonym: "2nd pharyngeal cleft" RELATED [VHOG:0000972]
 synonym: "2nd pharyngeal groove" EXACT [VHOG:0000972]
 synonym: "2nd pharyngeal groove ectoderm" EXACT [VHOG:0000568]
@@ -6992,6 +7019,7 @@ def: "A groove that is situated between the 3rd and 4th pharyngeal arch." [ISBN1
 subset: vertebrate_core
 synonym: "3rd arch branchial groove" EXACT [EHDAA2:0000071]
 synonym: "3rd arch groove ectoderm" EXACT [EHDAA2:0000074]
+synonym: "3rd branchial cleft" RELATED [EMAPA:16581]
 synonym: "3rd pharyngeal cleft" RELATED [VHOG:0000973]
 synonym: "3rd pharyngeal groove" EXACT [VHOG:0000973]
 synonym: "3rd pharyngeal groove ectoderm" EXACT [VHOG:0000572]
@@ -7011,6 +7039,7 @@ def: "A groove that is situated between the 4th and 5th pharyngeal arch." [ISBN1
 subset: vertebrate_core
 synonym: "4th arch branchial groove" EXACT [RETIRED_EHDAA2:0000088]
 synonym: "4th arch pharyngeal groove ectoderm" EXACT [EHDAA2:0000089]
+synonym: "4th branchial cleft" RELATED [EMAPA:16761]
 synonym: "4th pharyngeal cleft" RELATED [VHOG:0000968]
 synonym: "4th pharyngeal groove" EXACT [VHOG:0000968]
 synonym: "4th pharyngeal groove ectoderm" EXACT [VHOG:0000577]
@@ -7104,6 +7133,7 @@ namespace: uberon
 def: "A temporary depression caudal to the second pharyngeal arch, containing the succeeding pharyngeal arches; it is overgrown by the second pharyngeal arch and closes off as the cervical vesicle. This sinus is bounded in front by the hyoid arch, and behind by the thoracic wall." [http://en.wikipedia.org/wiki/Cervical_sinus, http://medical-dictionary.thefreedictionary.com/cervical+sinus]
 subset: emapa_ehdaa2
 synonym: "cervical sinus" EXACT [EHDAA2:0000078]
+synonym: "retro-hyoid depression" RELATED [EMAPA:16884]
 synonym: "sinus cervicalis" EXACT LATIN [http://en.wikipedia.org/wiki/Cervical_sinus]
 synonym: "sinus cervicalis" RELATED LATIN [http://en.wikipedia.org/wiki/Cervical_sinus]
 xref: Cervical:sinus
@@ -7158,7 +7188,7 @@ xref: Lacrimal:groove
 xref: Nasolacrimal:Groove
 xref: UMLS:C1513875 {source="ncithesaurus:Nasolacrimal_Groove"}
 xref: VHOG:0001307
-is_a: UBERON:0004807 ! respiratory system epithelium
+is_a: UBERON:0019306 ! nose epithelium
 relationship: develops_from UBERON:0012313 ! 1st arch maxillary ectoderm
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3f/Gray163.png
@@ -7274,7 +7304,6 @@ xref: BTO:0000136
 xref: CALOHA:TS-1296
 xref: EMAPA:32692
 xref: MA:0000416
-is_a: UBERON:0000467 ! anatomical system
 relationship: contributes_to_morphology_of UBERON:0002048 ! lung
 relationship: part_of UBERON:0002048 ! lung
 
@@ -7284,7 +7313,6 @@ name: left lung alveolar system
 namespace: uberon
 xref: EMAPA:19001
 xref: MA:0001775
-is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0002168 ! left lung
 relationship: part_of UBERON:0006524 ! alveolar system
 
@@ -7294,7 +7322,6 @@ name: right lung alveolar system
 namespace: uberon
 xref: EMAPA:35717
 xref: MA:0001784
-is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0002167 ! right lung
 relationship: part_of UBERON:0006524 ! alveolar system
 
@@ -7302,7 +7329,7 @@ relationship: part_of UBERON:0006524 ! alveolar system
 id: UBERON:0006670
 name: central tendon of diaphragm
 namespace: uberon
-def: "The central tendon of the diaphragm is a thin but strong aponeurosis situated near the center of the vault formed by the muscle, but somewhat closer to the front than to the back of the thorax, so that the posterior muscular fibers are longer. It is situated immediately below the pericardium(fibrous part), with which it is partially blended. The caval opening(T8) passes through the central tendon. This transmits the inferior vena cava &amp; right phrenic nerve." [http://en.wikipedia.org/wiki/Central_tendon_of_diaphragm]
+def: "the three-lobed cloverleaf-shaped aponeurosis situated at the center of the diaphragm; the central tendon is fused with the fibrous pericardium that provides attachment for the muscle fibers" [MP:0012061\,MGI\:csmith]
 synonym: "central tendon" EXACT [FMA:58279]
 synonym: "centrum tendineum" EXACT [FMA:58279]
 synonym: "centrum tendineum diaphragmatis" EXACT LATIN [FMA:58279, FMA:TA]
@@ -7384,7 +7411,7 @@ namespace: uberon
 def: "An anatomical space that surrounded_by a open tracheal system trachea." [OBOL:automatic]
 synonym: "tracheal lumen" BROAD SENSU [FBbt:00007410]
 xref: FBbt:00007410
-relationship: enclosed_by UBERON:0003127 ! open tracheal system trachea
+relationship: luminal_space_of UBERON:0003127 ! open tracheal system trachea
 relationship: part_of UBERON:0003127 ! open tracheal system trachea
 
 [Term]
@@ -7396,7 +7423,7 @@ synonym: "lumen of cartilaginous trachea" EXACT [OBOL:automatic]
 synonym: "tracheal lumen" EXACT [FMA:7469]
 xref: FMA:7469
 xref: http://www.snomedbrowser.com/Codes/Details/197486000
-relationship: enclosed_by UBERON:0003126 ! trachea
+relationship: luminal_space_of UBERON:0003126 ! trachea
 relationship: part_of UBERON:0003126 ! trachea
 
 [Term]
@@ -7747,7 +7774,7 @@ property_value: UBPROP:0000003 "Subsequent vertebrate evolution has also involve
 id: UBERON:0007250
 name: lingual tonsil
 namespace: uberon
-def: "The lingual tonsils are rounded masses of lymphatic tissue that cover the posterior region of the tongue. They are on the dorsal surface at the base of the tongue. Their lymphatic tissue are dense and nodular, their surface is covered with stratified squamous epithelium which invaginates as a single crypt into each lingual tonsil. They are partially surrounded by connective tissue placing them in the group of Partially-Encapsulated Lymphatic Organs, tonsils, the only one of its kind. They have associated mucous glands which are drained by ducts directly into the single tonsillar crypt." [http://en.wikipedia.org/wiki/Lingual_tonsils]
+def: "the lymph tissue on the floor of the oropharyngeal passage, near the root of the tongue" [MP:0002385\,MGI\:cwg]
 synonym: "lingual tonsillar tissue" EXACT [MA:0000773]
 synonym: "tonsilla lingualis" RELATED LATIN [http://en.wikipedia.org/wiki/Lingual_tonsils]
 xref: FMA:54836
@@ -8087,8 +8114,8 @@ synonym: "depressor glabellae" RELATED LATIN [http://en.wikipedia.org/wiki/Proce
 synonym: "depressor glabellae" RELATED [http://en.wikipedia.org/wiki/Procerus_muscle]
 synonym: "musculus procerus glabellae" RELATED LATIN [http://en.wikipedia.org/wiki/Procerus_muscle]
 synonym: "procerus muscle" RELATED [http://en.wikipedia.org/wiki/Procerus_muscle]
-synonym: "pyramidalis nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Procerus_muscle]
 synonym: "pyramidalis nasi" RELATED [http://en.wikipedia.org/wiki/Procerus_muscle]
+synonym: "pyramidalis nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Procerus_muscle]
 xref: FMA:46769
 xref: http://www.snomedbrowser.com/Codes/Details/244731008
 xref: Procerus:muscle
@@ -8117,8 +8144,8 @@ name: stylopharyngeus muscle
 namespace: uberon
 def: "The stylopharyngeus is a muscle in the head that stretches between the styloid process and the pharynx." [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "M. stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
-synonym: "musculus stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "musculus stylopharyngeus" RELATED LATIN [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
+synonym: "musculus stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "stylopharyngeus" EXACT [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 xref: FMA:46664
 xref: http://linkedlifedata.com/resource/umls/id/C1522014
@@ -8254,6 +8281,7 @@ name: lung parenchyma
 namespace: uberon
 def: "A parenchyma that is part of a lung." [OBOL:automatic]
 synonym: "parenchyma of lung" RELATED [BTO:0000763]
+synonym: "pulmonary parenchyma" RELATED [EMAPA:35522]
 synonym: "respiratory portion of lung" EXACT [FMA:27360]
 xref: EMAPA:35522
 xref: FMA:27360
@@ -8710,6 +8738,8 @@ name: associated mesenchyme of main bronchus
 namespace: uberon
 def: "Mesenchyme that is part of a developing main bronchus." [OBOL:automatic]
 subset: emapa_ehdaa2
+synonym: "primary bronchus mesenchyme" RELATED [EMAPA:16850]
+synonym: "principal bronchus mesenchyme" RELATED [EMAPA:16850]
 xref: EHDAA2:0001045
 xref: EMAPA:16850
 relationship: part_of UBERON:0002182 ! main bronchus
@@ -8912,7 +8942,7 @@ synonym: "oropharyngeal cavity" EXACT [EHDAA2:0004556]
 synonym: "oropharynx lumen" EXACT [FMA:55095]
 xref: EHDAA2:0004556
 xref: FMA:55095
-relationship: enclosed_by UBERON:0001729 ! oropharynx
+relationship: luminal_space_of UBERON:0001729 ! oropharynx
 relationship: part_of UBERON:0001729 ! oropharynx
 
 [Term]
@@ -9471,7 +9501,7 @@ namespace: uberon
 def: "A anatomical space that is enclosed by a hypopharynx." [OBOL:automatic]
 synonym: "laryngopharynx lumen" EXACT [FMA:55096]
 xref: FMA:55096
-relationship: enclosed_by UBERON:0001051 ! hypopharynx
+relationship: luminal_space_of UBERON:0001051 ! hypopharynx
 relationship: part_of UBERON:0001051 ! hypopharynx
 
 [Term]
@@ -9759,7 +9789,7 @@ synonym: "hyo-epiglottic muscle" EXACT []
 synonym: "hyoepiglotticus" EXACT []
 synonym: "hyoepiglottus" EXACT []
 is_a: UBERON:0001568 ! muscle of larynx
-relationship: attaches_to UBERON:0000388 ! epiglottis
+relationship: attached_to UBERON:0000388 ! epiglottis
 
 [Term]
 id: UBERON:0011345
@@ -9989,7 +10019,7 @@ synonym: "bronchial lumen" EXACT [FMA:62646]
 synonym: "lumen of bronchus" EXACT [FMA:62646]
 xref: FMA:62646
 xref: http://www.snomedbrowser.com/Codes/Details/199401001
-relationship: enclosed_by UBERON:0002185 ! bronchus
+relationship: luminal_space_of UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0002185 ! bronchus
 
 [Term]
@@ -10002,7 +10032,7 @@ synonym: "main bronchial lumen" EXACT [FMA:13116]
 synonym: "principal bronchial lumen" EXACT []
 xref: FMA:13116
 is_a: UBERON:0012082 ! bronchial lumen
-relationship: enclosed_by UBERON:0002182 ! main bronchus
+relationship: luminal_space_of UBERON:0002182 ! main bronchus
 relationship: part_of UBERON:0002182 ! main bronchus
 
 [Term]
@@ -10015,7 +10045,7 @@ synonym: "lumen of lobar bronchus" EXACT [FMA:62520]
 synonym: "secondary bronchial lumen" EXACT []
 xref: FMA:62520
 is_a: UBERON:0012082 ! bronchial lumen
-relationship: enclosed_by UBERON:0002183 ! lobar bronchus
+relationship: luminal_space_of UBERON:0002183 ! lobar bronchus
 relationship: part_of UBERON:0002183 ! lobar bronchus
 
 [Term]
@@ -10027,7 +10057,7 @@ synonym: "lumen of segmental bronchus" EXACT [FMA:62593]
 synonym: "segmental bronchial lumen" EXACT [FMA:62593]
 xref: FMA:62593
 is_a: UBERON:0012082 ! bronchial lumen
-relationship: enclosed_by UBERON:0002184 ! segmental bronchus
+relationship: luminal_space_of UBERON:0002184 ! segmental bronchus
 relationship: part_of UBERON:0002184 ! segmental bronchus
 
 [Term]
@@ -10036,7 +10066,7 @@ name: lumen of parabronchus
 namespace: uberon
 def: "An anatomical cavity that is part of a parabronchus." [OBOL:automatic]
 is_a: UBERON:0012085 ! lumen of tertiary bronchus
-relationship: enclosed_by UBERON:0008961 ! parabronchus
+relationship: luminal_space_of UBERON:0008961 ! parabronchus
 relationship: part_of UBERON:0008961 ! parabronchus
 
 [Term]
@@ -10345,6 +10375,7 @@ name: Grueneberg ganglion
 namespace: uberon
 def: "An olfactory ganglion at the entrance of the nose of mammals that is involved in the detection of alarm pheromones and cold temperatures." [http://en.wikipedia.org/wiki/Gr%C3%BCneberg_ganglion]
 synonym: "GG" RELATED ABBREVIATION [NCBIBook:NBK55971]
+synonym: "Gruneberg ganglion" RELATED [MA:0002891]
 synonym: "Grüneberg ganglion" EXACT []
 synonym: "septal organ of Gruneberg" RELATED [MA:0002891]
 xref: EMAPA:35765
@@ -10488,6 +10519,7 @@ id: UBERON:0014766
 name: right crus of diaphragm
 namespace: uberon
 def: "A crus of diaphragm that is in_the_right_side_of a diaphragm." [OBOL:automatic]
+synonym: "external sphincter of esophagus" EXACT [FMA:58286]
 synonym: "right crus of diaphragm" EXACT [FMA:58286]
 synonym: "right crus of lumbar part of diaphragm" EXACT [FMA:58286]
 xref: FMA:58286
@@ -10520,7 +10552,6 @@ namespace: uberon
 def: "A ligament that is part of a diaphragm." [OBOL:automatic]
 xref: EMAPA:19236
 xref: FMA:58280
-is_a: UBERON:0003570 ! respiratory system connective tissue
 relationship: part_of UBERON:0001103 ! diaphragm
 
 [Term]
@@ -10659,7 +10690,9 @@ id: UBERON:0015476
 name: nose skin
 namespace: uberon
 def: "A zone of skin that is part of a external nose." [OBOL:automatic]
+synonym: "external nasal skin" EXACT [FMA:24763]
 synonym: "skin of external nose" EXACT [FMA:24763]
+synonym: "skin of nose" EXACT [FMA:24763]
 xref: FMA:24763
 xref: MA:0003090
 relationship: part_of UBERON:0007827 ! external nose
@@ -10875,6 +10908,44 @@ xref: http://www.snomedbrowser.com/Codes/Details/88410004
 relationship: part_of UBERON:0002048 ! lung
 
 [Term]
+id: UBERON:0019306
+name: nose epithelium
+namespace: uberon
+xref: EMAPA:35958
+xref: MA:0003171
+is_a: UBERON:0004807 ! respiratory system epithelium
+relationship: part_of UBERON:0000004 ! olfactory apparatus
+
+[Term]
+id: UBERON:0019307
+name: epithelium of external nose
+namespace: uberon
+synonym: "epithelium of skin of external nose" EXACT [FMA:63143]
+xref: FMA:63143
+is_a: UBERON:0019306 ! nose epithelium
+relationship: part_of UBERON:0007827 ! external nose
+
+[Term]
+id: UBERON:0034680
+name: laryngeal prominence
+namespace: uberon
+def: "A zone of thyroid cartilage formed by fusion of the two plate-like laminae of the cartilages." [http://en.wikipedia.org/wiki/Thyroid_cartilage, UBERON:cjm]
+synonym: "Adam's apple" EXACT [FMA:55304]
+synonym: "Adams apple" EXACT []
+xref: BTO:0003656
+xref: FMA:55304
+xref: http://www.snomedbrowser.com/Codes/Details/362648003
+relationship: part_of UBERON:0001738 ! thyroid cartilage
+
+[Term]
+id: UBERON:0034721
+name: pharyngeal taste bud
+namespace: uberon
+def: "A taste bud that is located in the pharynx." [UBERON:cjm]
+relationship: part_of UBERON:0000355 ! pharyngeal mucosa
+property_value: RO:0002175 NCBITaxon:7778
+
+[Term]
 id: UBERON:1000012
 name: nose anterior margin
 namespace: uberon
@@ -10985,7 +11056,7 @@ name: olfactory rosette
 namespace: uberon/phenoscape-anatomy
 synonym: "nasal rosette" EXACT [TAO:0001428]
 xref: ZFA:0001428
-is_a: UBERON:0004807 ! respiratory system epithelium
+is_a: UBERON:0019306 ! nose epithelium
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -11858,6 +11929,10 @@ created_by: amphibian_anatomy_curators
 id: http://owltools.org/Q
 
 [Typedef]
+id: RO:0001018
+inverse_of: contains
+
+[Typedef]
 id: RO:0002203
 inverse_of: develops_from
 
@@ -11870,6 +11945,10 @@ id: RO:0002257
 inverse_of: developmentally_induced_by
 
 [Typedef]
+id: RO:0002569
+inverse_of: branching_part_of
+
+[Typedef]
 id: adjacent_to
 is_symmetric: true
 is_a: RO:0002163
@@ -11880,7 +11959,7 @@ is_transitive: true
 inverse_of: posterior_to
 
 [Typedef]
-id: attaches_to
+id: attached_to
 is_symmetric: true
 is_a: connects
 is_a: RO:0002177
@@ -11932,27 +12011,14 @@ id: distally_connected_to
 is_a: BSPO:0000100
 is_a: connected_to
 is_a: transitively_distally_connected_to
-inverse_of: proximally_connected_to
 
 [Typedef]
 id: drains
 is_a: connected_to
 
 [Typedef]
-id: enclosed_by
-is_a: part_of
-
-[Typedef]
-id: encloses
-inverse_of: enclosed_by
-
-[Typedef]
 id: evolved_from
 is_a: RO:0002158
-
-[Typedef]
-id: has_branching_part
-inverse_of: branching_part_of
 
 [Typedef]
 id: has_component
@@ -11969,12 +12035,18 @@ id: has_fused_element
 is_a: RO:0002320
 
 [Typedef]
+id: has_muscle_antagonist
+is_a: RO:0002567
+
+[Typedef]
 id: has_muscle_insertion
-is_a: attaches_to
+is_a: attached_to
+is_a: RO:0002567
 
 [Typedef]
 id: has_muscle_origin
-is_a: attaches_to
+is_a: attached_to
+is_a: RO:0002567
 
 [Typedef]
 id: has_part
@@ -12015,6 +12087,11 @@ is_transitive: true
 inverse_of: RO:0001015
 
 [Typedef]
+id: luminal_space_of
+is_a: part_of
+is_a: RO:0002571
+
+[Typedef]
 id: part_of
 is_transitive: true
 is_a: RO:0002131
@@ -12028,6 +12105,7 @@ id: proximally_connected_to
 is_a: BSPO:0000097
 is_a: connected_to
 is_a: transitively_proximally_connected_to
+inverse_of: distally_connected_to
 
 [Typedef]
 id: supplies
