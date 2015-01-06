@@ -1,0 +1,13 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix replacedBy: <http://purl.obolibrary.org/obo/IAO_0100001>
+
+SELECT ?cls ?r ?extCls WHERE 
+{
+  ?cls a owl:Class .
+  ?cls owl:deprecated ?obs .
+  ?cls ?r ?extCls .
+  FILTER(?obs = true) .
+  FILTER( regex(STR(?extCls), "nifstd"))
+}
