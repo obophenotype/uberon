@@ -3,6 +3,10 @@ This guide is for uberon core editors.
 
 Contributing editors see README-contributing-editors.txt
 
+See also:
+
+https://github.com/obophenotype/uberon/wiki/Manual#editor-docs
+
 = Editors file =
 
 The editors file is currently uberon_edit.obo

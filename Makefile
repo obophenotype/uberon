@@ -226,6 +226,13 @@ reports/%-function-parents.tsv: %.owl
 	owltools $< --reasoner elk --reasoner mexr --export-parents -p RO:0002328 -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-function-parents.tsv
 
+reports/uberon-%.csv: uberon.owl sparql/%.sparql
+	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
+
+reports/uberon-%.csv: uberon.owl sparql/%.sparql
+	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
+
+
 # match pattern for any relation to be filtered out
 XSPECIES_RE = -m '/(RO_0002158|evolved_from)/'
 
@@ -736,15 +743,15 @@ composite-fma.owl: local-fma.owl $(MBASE)
  -o -f ofn $@
 
 
-# TODO
+# @Deprecated - replaced by mba
 composite-aba.owl: local-aba.owl $(MBASE) 
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-aba.owl aba.obo --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
  --merge-species-ontology -s 'mouse brain' -t NCBITaxon:10090 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
 
-composite-mouse-brain.owl: local-aba.owl source-ontologies/allen-dmba.obo $(MBASE) 
-	owltools --no-debug --create-ontology uberon/$@ $(MBASE) source-ontologies/allen-dmba.obo local-aba.owl  bridge/uberon-bridge-to-aba.owl bridge/uberon-bridge-to-dmba.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
+composite-mouse-brain.owl: $(MBASE) 
+	owltools --no-debug --create-ontology uberon/$@ $(MBASE) source-ontologies/allen-dmba.obo source-ontologies/allen-mba.obo  bridge/uberon-bridge-to-mba.owl bridge/uberon-bridge-to-dmba.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --reasoner elk \
  --merge-species-ontology -s 'mouse brain' -t NCBITaxon:10090 \
  --assert-inferred-subclass-axioms --removeRedundant --allowEquivalencies \
  -o -f ofn $@
@@ -893,6 +900,7 @@ release:
 	cp merged.{obo,owl} $(RELDIR)/ ;\
 	cp basic.obo $(RELDIR)/basic.obo ;\
 	cp basic.owl $(RELDIR)/basic.owl ;\
+	cp homology.owl $(RELDIR)/homology.owl ;\
 	cp *_import.owl $(RELDIR)/ ;\
 	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
@@ -969,7 +977,7 @@ xcaloha.obo: caloha.obo
 
 #
 uberon-new-mp.obo:
-	blip -u query_anatomy -i uberon_edit.obo -r cell -r emap -r EMAPA -r mammalian_phenotype -r mammalian_phenotype_xp  -r fma_downcase -r NIFGA -r zebrafish_anatomy  -r mouse_anatomy findall uberon_mpxp_write > $@
+	blip -u query_anatomy -i uberon_edit.obo -r cell  -r EMAPA -r mammalian_phenotype -r mammalian_phenotype_xp  -r fma_downcase -r NIFGA -r zebrafish_anatomy  -r mouse_anatomy findall uberon_mpxp_write > $@
 
 uberon-new-hp.obo:
 	blip -u query_anatomy -i uberon_edit.obo -r cell -r human_phenotype -r human_phenotype_xp -r NIFGA -r zebrafish_anatomy -r mouse_anatomy -r EMAPA -goal "uberon_mpxp_write,halt" > $@
@@ -1052,7 +1060,7 @@ mapping_EMAP_to_EMAPA.txt:
 	wget ftp://ftp.hgu.mrc.ac.uk/pub/MouseAtlas/Anatomy/EMAP-EMAPA.txt -O $@
 
 simil%.tsv:
-	wget http://svn.code.sf.net/p/bgee/code/trunk/release/similarity/$@ -O $@
+	wget --no-check-certificate https://raw.githubusercontent.com/BgeeDB/anatomical-similarity-annotations/master/release/$@ -O $@
 
 simil%.jsonld: simil%.tsv ./util/sim2jsonld.pl
 	./util/sim2jsonld.pl $< > $@
@@ -1060,7 +1068,7 @@ simil%.jsonld: simil%.tsv ./util/sim2jsonld.pl
 simil%.ttl: simil%.jsonld
 	riot $< > $@
 
-simil%.owl: simil%.ttl
+homology.owl: similarity.ttl
 	owltools --use-catalog $< -o $@
 
 # ----------------------------------------

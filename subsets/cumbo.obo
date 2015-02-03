@@ -455,15 +455,19 @@ name: sulcus of brain
 namespace: uberon
 def: "A depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 subset: cumbo
+synonym: "cerebral sulci" EXACT [DHBA:10610]
 synonym: "cerebral sulci" RELATED [NeuroNames:1208]
 synonym: "cerebral sulcus" RELATED [NeuroNames:1208]
 synonym: "fissure of brain" NARROW [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 synonym: "sulcus" BROAD [NIFSTD:nlx_144078]
 xref: Cerebral:Sulcus
+xref: DHBA:10610
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1208
 xref: http://www.snomedbrowser.com/Codes/Details/279337001
 xref: Sulcus:(neuroanatomy)
 relationship: part_of UBERON:0000955 ! brain
+property_value: dubious_for_taxon NCBITaxon:10088
+property_value: editor_note "sulci are considered absent from lissencephalic mammals such as mice, but they may possess fissures. For example, the Allen mouse brain Atlas includes hippocampal, rhinal and choroid fissure. For this reason we do not place a taxon constraint on this class" xsd:string
 property_value: external_definition "Indentation on the surface of the brain or spinal cord that forms a recognizable landmark, e.g., central sulcus, sulcus limitans (CUMBO)" xsd:string {source="Cumbo:terms"}
 
 [Term]

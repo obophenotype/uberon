@@ -48,21 +48,6 @@ is_a: CL:0010003 ! epithelial cell of alveolus of lung
 relationship: part_of UBERON:0004821 ! pulmonary alveolus epithelium
 
 [Term]
-id: CL:0000583
-name: alveolar macrophage
-namespace: cell
-def: "A tissue-resident macrophage found in the alveoli of the lungs. Ingests small inhaled particles resulting in degradation and presentation of the antigen to immunocompetent cells. Markers include F4/80-positive, CD11b-/low, CD11c-positive, CD68-positive, sialoadhesin-positive, dectin-1-positive, MR-positive, CX3CR1-negative." [GO_REF:0000031, GOC:ana, GOC:dsd, GOC:tfm, MESH:A11.329.372.600]
-comment: Markers: Mouse: F4/80mid, CD11b-/low, CD11c+, CD68+, sialoadhesin+, dectin-1+, MR+, CX3CR1-.
-synonym: "dust cell" EXACT []
-synonym: "MF.Lu" RELATED []
-xref: BTO:0000802
-xref: CALOHA:TS-0030
-xref: FMA:83023
-is_a: CL:0010003 ! epithelial cell of alveolus of lung
-is_a: CL:1001603 ! lung macrophage
-relationship: part_of UBERON:0002299 ! alveolus of lung
-
-[Term]
 id: CL:0000869
 name: tonsillar macrophage
 namespace: cell
@@ -214,7 +199,7 @@ alt_id: CL:1000390
 def: "A brush cell of the epithelium in the terminal bronchiole." [GOC:tfm]
 xref: FMA:263228
 is_a: CL:0002205 ! brush cell of lobular bronchiole
-relationship: part_of UBERON:0001958 ! epithelium of terminal bronchiole
+relationship: part_of UBERON:0001958 ! terminal bronchiole epithelium
 created_by: tmeehan
 creation_date: 2010-09-02T02:38:36Z
 
@@ -410,7 +395,7 @@ synonym: "BASC" EXACT []
 is_a: CL:1000350 ! basal cell of epithelium of terminal bronchiole
 is_a: CL:1000351 ! basal cell of epithelium of respiratory bronchiole
 relationship: part_of UBERON:0001955 ! epithelium of respiratory bronchiole
-relationship: part_of UBERON:0001958 ! epithelium of terminal bronchiole
+relationship: part_of UBERON:0001958 ! terminal bronchiole epithelium
 created_by: tmeehan
 creation_date: 2011-06-21T03:26:08Z
 
@@ -496,7 +481,7 @@ namespace: cell
 def: "A serous secreting cell that is part of the epithelium of terminal bronchiole." [GOC:tfm]
 xref: FMA:263082
 is_a: CL:1000333 ! serous cell of epithelium of lobular bronchiole
-relationship: part_of UBERON:0001958 ! epithelium of terminal bronchiole
+relationship: part_of UBERON:0001958 ! terminal bronchiole epithelium
 
 [Term]
 id: CL:1000333
@@ -538,7 +523,7 @@ namespace: cell
 def: "A basal cell that is part of the epithelium of terminal bronchiole." [GOC:tfm]
 xref: FMA:263122
 is_a: CL:1000352 ! basal cell of epithelium of lobular bronchiole
-relationship: part_of UBERON:0001958 ! epithelium of terminal bronchiole
+relationship: part_of UBERON:0001958 ! terminal bronchiole epithelium
 
 [Term]
 id: CL:1000351
@@ -862,6 +847,7 @@ xref: MA:0001783
 is_a: UBERON:0004815 ! lower respiratory tract epithelium
 relationship: contributes_to_morphology_of UBERON:0002048 ! lung
 relationship: part_of UBERON:0002048 ! lung
+property_value: UBPROP:0000008 "A pseudostratified epithelium, containing basal cells, stem cells of the airway, submucosal glands and cartilage rings, is limited to the trachea and large lobar airways in the mouse (Morrisey and Hogan, 2010). This more complex epithelium extends to terminal bronchioles in the human[doi:10.1242/dev.115469]" xsd:string
 
 [Term]
 id: UBERON:0000116
@@ -882,7 +868,7 @@ synonym: "segment of tracheobronchial tree" NARROW [FMA:12224]
 synonym: "tracheobronchial tree segment" NARROW [FMA:12224]
 xref: FMA:12224
 relationship: part_of UBERON:0000065 ! respiratory tract
-property_value: UBPROP:0000012 "in GO lung development is part of respiratory tube development. This can lead to inconsistencies with other ontologies, e.g. VT. The GO structure may be better represneted by a tree of tubes (see the FMA class)" xsd:string {external_ontology="GO"}
+property_value: UBPROP:0000012 "in GO lung development is part of respiratory tube development. This can lead to inconsistencies with other ontologies, e.g. VT. The GO structure may be better represented by a tree of tubes (see the FMA class)" xsd:string {external_ontology="GO"}
 
 [Term]
 id: UBERON:0000170
@@ -2078,7 +2064,7 @@ xref: Nasal:cartilage
 xref: UMLS:C0225415 {source="ncithesaurus:Nasal_Cartilage"}
 is_a: UBERON:0003406 ! cartilage of respiratory system
 is_a: UBERON:0003570 ! respiratory system connective tissue
-relationship: contains UBERON:0000402 ! nasal vestibule
+relationship: location_of UBERON:0000402 ! nasal vestibule
 relationship: part_of UBERON:0000004 ! olfactory apparatus
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Gray852.png/200px-Gray852.png
 property_value: IAO:0000116 "This class was created automatically from a combination of ontologies" xsd:string
@@ -2316,14 +2302,15 @@ property_value: IAO:0000116 "This class was created automatically from a combina
 
 [Term]
 id: UBERON:0001958
-name: epithelium of terminal bronchiole
+name: terminal bronchiole epithelium
 namespace: uberon
-def: "An epithelium that is part of a terminal bronchiole [Automatically generated definition]." [OBOL:automatic]
+def: "An epithelium that lines a terminal bronchiole." [UBERON:cjm]
 synonym: "bronchiolus terminalis epithelial tissue" EXACT [OBOL:automatic]
 synonym: "bronchiolus terminalis epithelium" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of bronchiolus terminalis" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of terminal bronchiole" EXACT [OBOL:automatic]
 synonym: "epithelium of bronchiolus terminalis" EXACT [OBOL:automatic]
+synonym: "epithelium of terminal bronchiole" EXACT [FMA:62794]
 synonym: "terminal bronchiole epithelial tissue" EXACT [OBOL:automatic]
 synonym: "terminal bronchiole epithelium" EXACT []
 xref: FMA:62794
@@ -2334,7 +2321,7 @@ xref: UMLS:C1179400 {source="ncithesaurus:Terminal_Bronchiole_Epithelium"}
 is_a: UBERON:0002051 ! epithelium of bronchiole
 relationship: has_part CL:0000158 ! Clara cell
 relationship: part_of UBERON:0002187 ! terminal bronchiole
-property_value: IAO:0000116 "This class was created automatically from a combination of ontologies" xsd:string
+property_value: UBPROP:0000008 "A pseudostratified epithelium, containing basal cells, stem cells of the airway, submucosal glands and cartilage rings, is limited to the trachea and large lobar airways in the mouse (Morrisey and Hogan, 2010). This more complex epithelium extends to terminal bronchioles in the human[doi:10.1242/dev.115469]" xsd:string
 
 [Term]
 id: UBERON:0001963
@@ -5285,6 +5272,7 @@ synonym: "branchial aortic arches " EXACT PLURAL [ZFIN:ZDB-PUB-080512-6]
 synonym: "branchial arch artery" EXACT [EMAPA:16684]
 synonym: "embryonic aortic arch artery" EXACT [EMAPA:16684, MP:0002672]
 synonym: "PAA" EXACT ABBREVIATION [MP:0002672]
+synonym: "pharyngeal arch arteries" RELATED PLURAL []
 synonym: "pharyngeal arch artery" EXACT [MP:0002672]
 synonym: "pharyngeal arch artery" RELATED [VHOG:0000122]
 xref: AAO:0010414
@@ -7402,7 +7390,7 @@ xref: AAO:0000320
 xref: FMA:60116
 xref: http://www.snomedbrowser.com/Codes/Details/281486007
 relationship: part_of UBERON:0000004 ! olfactory apparatus
-relationship: subdivision_of UBERON:0000004 ! olfactory apparatus
+relationship: skeleton_of UBERON:0000004 ! olfactory apparatus
 
 [Term]
 id: UBERON:0006832
@@ -8515,6 +8503,7 @@ name: anterior thoracic air sac
 namespace: uberon
 synonym: "cranial thoracic air sac" RELATED []
 synonym: "cranial thoracic sac" RELATED []
+xref: http://www.snomedbrowser.com/Codes/Details/17911004
 is_a: UBERON:0009061 ! anterior air sac
 relationship: in_lateral_side_of UBERON:0001004 ! respiratory system
 
@@ -10427,6 +10416,15 @@ is_a: UBERON:0009494 ! pharyngeal arch mesenchymal region
 relationship: part_of UBERON:0003116 ! pharyngeal arch 5
 
 [Term]
+id: UBERON:0013653
+name: velar skeleton
+namespace: uberon
+def: "Subdivision of skeleton that is part of the velum and consists of a complex arrangement of thin cartilage rods and arches" [http://orcid.org/0000-0002-6601-2165, ISBN:9780226315683]
+synonym: "skeleton of velum" EXACT [http://orcid.org/0000-0002-6601-2165]
+relationship: skeleton_of UBERON:0012121 ! respiratory velum
+property_value: RO:0002175 NCBITaxon:7762
+
+[Term]
 id: UBERON:0013688
 name: tonsil germinal center
 namespace: uberon
@@ -11791,7 +11789,6 @@ name: bronchial process
 namespace: uberon/phenoscape-anatomy
 def: "Paired processes that extend posteroventrally from the anterolateral margins of the cricoid ring." [AAO:LAP]
 synonym: "processus trachealis" RELATED [UBERON:3000676]
-is_a: UBERON:0000072 ! segment of respiratory tract
 relationship: part_of UBERON:0002375 ! cricoid cartilage
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -11801,7 +11798,6 @@ id: UBERON:3000677
 name: lateral process of cricoid cartilage
 namespace: uberon/phenoscape-anatomy
 synonym: "lateral process" BROAD []
-is_a: UBERON:0000072 ! segment of respiratory tract
 relationship: part_of UBERON:0002375 ! cricoid cartilage
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -11812,7 +11808,6 @@ name: esophageal process
 namespace: uberon/phenoscape-anatomy
 def: "Median process located on the posterior end of the cricoid cartilage." [AAO:LAP]
 synonym: "spina oesophagea" RELATED [UBERON:3000678]
-is_a: UBERON:0000072 ! segment of respiratory tract
 relationship: part_of UBERON:0002375 ! cricoid cartilage
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -11823,7 +11818,6 @@ name: prominentia apicalis dorsalis
 namespace: uberon/phenoscape-anatomy
 def: "Anterior end of the arytenoid cartilage." [AAO:LAP]
 synonym: "prominentia apicalis anterior" RELATED [UBERON:3000688]
-is_a: UBERON:0000072 ! segment of respiratory tract
 relationship: part_of UBERON:0001740 ! arytenoid cartilage
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -11834,7 +11828,6 @@ name: prominentia apicalis ventralis
 namespace: uberon/phenoscape-anatomy
 def: "Posterior (cardiac) end of the arytenoid cartilage." [AAO:LAP]
 synonym: "prominentia apicalis posterior" RELATED [UBERON:3000689]
-is_a: UBERON:0000072 ! segment of respiratory tract
 relationship: part_of UBERON:0001740 ! arytenoid cartilage
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -11845,7 +11838,6 @@ name: articular process
 namespace: uberon/phenoscape-anatomy
 def: "Paired processes located on the anterior end of the cricoid cartilage." [AAO:LAP]
 synonym: "processus articularis anterior" RELATED [UBERON:3000948]
-is_a: UBERON:0000072 ! segment of respiratory tract
 relationship: part_of UBERON:0002375 ! cricoid cartilage
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -11927,10 +11919,6 @@ created_by: amphibian_anatomy_curators
 
 [Term]
 id: http://owltools.org/Q
-
-[Typedef]
-id: RO:0001018
-inverse_of: contains
 
 [Typedef]
 id: RO:0002203
@@ -12084,7 +12072,11 @@ is_a: in_lateral_side_of
 [Typedef]
 id: located_in
 is_transitive: true
-inverse_of: RO:0001015
+inverse_of: location_of
+
+[Typedef]
+id: location_of
+is_transitive: true
 
 [Typedef]
 id: luminal_space_of
@@ -12106,6 +12098,11 @@ is_a: BSPO:0000097
 is_a: connected_to
 is_a: transitively_proximally_connected_to
 inverse_of: distally_connected_to
+
+[Typedef]
+id: skeleton_of
+is_a: part_of
+inverse_of: RO:0002551
 
 [Typedef]
 id: supplies

@@ -30,6 +30,7 @@ while(<>) {
         id => $id,
         type => $hom_class_id,
         line_type => $line_type,
+        #in_taxon => $tax_id     ## Elk doesn't do blank node. Convert to class expression?
         in_taxon => {
             a => $tax_id
         }
@@ -92,12 +93,13 @@ while(<>) {
             if ($xi != $yi) {
                 my $x = @e_ids[$xi];
                 my $y = @e_ids[$yi];
-                my $subj = make_gd($x, 'part_of', $tax_id);
+                #my $subj = make_gd($x, 'part_of', $tax_id);
                 my $restr = 
                 {
                     a => 'owl:Restriction',
                     onProperty => $rel_type_id,
-                    someValuesFrom => make_gd($x, 'part_of', $y)
+                    someValuesFrom => $y,
+                    #someValuesFrom => make_gd($x, 'part_of', $y)
                 };
                 # TODO - axiom annotations
                 push(@axioms,
