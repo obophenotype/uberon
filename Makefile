@@ -90,8 +90,9 @@ chebi.owl: $(EDITSRC)
 chebi_import.owl: chebi.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-aminoacid.owl: $(EDITSRC) 
-	owltools $(OBO)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(OBO)/uberon/$@  -o $@
+# Do not rebuild: PR is now too big
+#aminoacid.owl: $(EDITSRC) 
+#	owltools $(OBO)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(OBO)/uberon/$@  -o $@
 pr.owl: aminoacid.owl
 	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@
 pr_import.owl: pr.owl $(EDITSRC) 
@@ -167,7 +168,7 @@ uberon.obo: uberon.owl
 
 # remember to git mv - this replaces uberon-simple
 basic.owl:  uberon.owl
-	owltools $< --make-subset-by-properties -f BFO:0000050 RO:0002202 immediate_transformation_of // --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+	owltools $< --make-subset-by-properties -f BFO:0000050 RO:0002202 immediate_transformation_of transformation_of // --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 basic.obo: basic.owl
 	obolib-owl2obo $< -o $@.tmp && obo2obo $@.tmp -o $@
 
@@ -210,9 +211,12 @@ RPT_STAGE_RELS = RO:0002496 RO:0002497
 	echo done
 
 
-reports/%-part-parents.tsv: %.owl
-	owltools $< --reasoner elk --reasoner mexr --log-error  --export-parents -p BFO:0000050 BFO:0000051 $(RPT_TAXA_ARGS) -o $@.tmp && mv $@.tmp $@
-.PRECIOUS: reports/%-part-parents.tsv
+reports/%-part-of-parents.tsv: %.owl
+	owltools $< --reasoner elk --reasoner mexr --log-error  --export-parents -p BFO:0000050 $(RPT_TAXA_ARGS) -o $@.tmp && mv $@.tmp $@
+.PRECIOUS: reports/%-part-of-parents.tsv
+reports/%-has-part-parents.tsv: %.owl
+	owltools $< --reasoner elk --reasoner mexr --log-error  --export-parents -p BFO:0000051 $(RPT_TAXA_ARGS) -o $@.tmp && mv $@.tmp $@
+.PRECIOUS: reports/%-has-part-parents.tsv
 reports/%-dev-parents.tsv: %.owl
 	owltools $< --reasoner elk --reasoner mexr --export-parents -p RO:0002202 RO:0002494 -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-dev-parents.tsv
@@ -344,7 +348,8 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 # note: exclude EHDAA2 for now until extraembryonic/embryonic issues sorted
 ## CHECK_AO_LIST = ma emapa ehdaa2 zfa xao fbbt wbbt
 ## CHECK_AO_LIST = ma emapa zfa xao fbbt wbbt wbls
-CHECK_AO_LIST = ma emapa zfa xao fbbt wbls
+#####  CHECK_AO_LIST = ma emapa zfa xao fbbt wbls : Add MA back to list when this is solved; https://sourceforge.net/p/obo/mouse-anatomy-requests/94/
+CHECK_AO_LIST = emapa zfa xao fbbt wbls
 FULL_CHECK_AO_LIST = fma $(CHECK_AO_LIST)
 quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
 bridge-checks: $(patsubst %,bridge-check-%.txt,$(CHECK_AO_LIST))
@@ -1060,7 +1065,8 @@ mapping_EMAP_to_EMAPA.txt:
 	wget ftp://ftp.hgu.mrc.ac.uk/pub/MouseAtlas/Anatomy/EMAP-EMAPA.txt -O $@
 
 simil%.tsv:
-	wget --no-check-certificate https://raw.githubusercontent.com/BgeeDB/anatomical-similarity-annotations/master/release/$@ -O $@
+#	wget --no-check-certificate https://raw.githubusercontent.com/BgeeDB/anatomical-similarity-annotations/master/release/$@ -O $@
+	cp $(HOME)/repos/cmungall/anatomical-similarity-annotations/release/$@ $@
 
 simil%.jsonld: simil%.tsv ./util/sim2jsonld.pl
 	./util/sim2jsonld.pl $< > $@
@@ -1285,7 +1291,7 @@ source-ontologies/NeuroNames.obo: source-ontologies/NeuroNames.xml
 # UTIL
 # ----------------------------------------
 util/ubermacros.el:
-	blip-findall  -r pext -r taxslim -consult util/write_ubermacros.pro  w > $@
+	blip-findall -r go -r pato  -r pext -r taxslim -consult util/write_ubermacros.pro  w > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # DOCUMENTATION
