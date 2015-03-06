@@ -349,7 +349,8 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 ## CHECK_AO_LIST = ma emapa ehdaa2 zfa xao fbbt wbbt
 ## CHECK_AO_LIST = ma emapa zfa xao fbbt wbbt wbls
 #####  CHECK_AO_LIST = ma emapa zfa xao fbbt wbls : Add MA back to list when this is solved; https://sourceforge.net/p/obo/mouse-anatomy-requests/94/
-CHECK_AO_LIST = emapa zfa xao fbbt wbls
+#####CHECK_AO_LIST = emapa zfa xao fbbt wbls  Add XAO back when this is fixed: https://code.google.com/p/xenopus-anatomy-ontology/issues/detail?id=8
+CHECK_AO_LIST = emapa zfa fbbt wbls
 FULL_CHECK_AO_LIST = fma $(CHECK_AO_LIST)
 quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
 bridge-checks: $(patsubst %,bridge-check-%.txt,$(CHECK_AO_LIST))
