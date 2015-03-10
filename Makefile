@@ -506,6 +506,9 @@ subsets/appendicular-ext.owl: #merged.owl
 	owltools --use-catalog pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "$(PART_OF) some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "this ontology is a derived subset of the phenoscape uberon extension, including only classes that satisfy the query 'part of some appendicular skeleton' " -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
 .PRECIOUS: subsets/appendicular-ext.owl
 
+subsets/vertebrate-head.obo: composite-vertebrate.owl
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000033" --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+
 # TODO - switch to purls for OWL once released
 subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl
 	owltools $< developmental-stage-ontologies/mmusdv/mmusdv.obo developmental-stage-ontologies/hsapdv/hsapdv.obo --merge-support-ontologies -o file://`pwd`/$@
