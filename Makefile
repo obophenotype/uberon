@@ -620,7 +620,15 @@ composite-stages.obo: update-stages merged-stages-xrefs.obo
 composites: composite-metazoan.obo composite-vertebrate.obo
 
 CVERTS = composite-zfa.owl composite-ma.owl composite-xao.owl composite-ehdaa2.owl composite-emapa.owl
-CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl composite-wbls.owl composite-stages.obo
+CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl composite-wbls.owl composite-stages.obo local-poro.owl local-cteno.owl local-ceph.owl
+
+local-poro.owl:
+	wget $(OBO)/poro.owl -O $@
+local-cteno.owl:
+	wget $(OBO)/cteno.owl -O $@
+local-cteno.owl:
+	wget $(OBO)/ceph.owl -O $@
+
 raw-composite-vertebrate.owl: $(CVERTS)
 	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations --remove-dangling -o $@
 
