@@ -623,11 +623,11 @@ CVERTS = composite-zfa.owl composite-ma.owl composite-xao.owl composite-ehdaa2.o
 CMETS = $(CVERTS) composite-fbbt.owl composite-wbbt.owl composite-wbls.owl composite-stages.obo local-poro.owl local-cteno.owl local-ceph.owl
 
 local-poro.owl:
-	wget $(OBO)/poro.owl -O $@
+	owltools $(OBO)/poro.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@
 local-cteno.owl:
-	wget $(OBO)/cteno.owl -O $@
-local-cteno.owl:
-	wget $(OBO)/ceph.owl -O $@
+	owltools $(OBO)/cteno.owl --remove-import-declaration $(OBO)/uberon/ext.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@
+local-ceph.owl:
+	owltools $(OBO)/ceph.owl --remove-import-declaration $(OBO)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@
 
 raw-composite-vertebrate.owl: $(CVERTS)
 	owltools   --create-ontology uberon/$@ $(CVERTS) --merge-support-ontologies --repair-relations --remove-dangling -o $@
@@ -644,7 +644,7 @@ composite-metazoan-basic.obo: composite-metazoan.owl
 
 # owl2obo
 composite-%.obo: composite-%.owl
-	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@-oe.obo && mv $@.tmp $@
+	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@-oe.obo && grep -v ^owl-axioms $@.tmp > $@
 #	obolib-owl2obo -o $@ $<
 
 composite-mammal.owl: composite-mammal.obo

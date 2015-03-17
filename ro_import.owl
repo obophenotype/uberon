@@ -62,6 +62,7 @@
         <rdfs:label xml:lang="en">part of</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
     </owl:ObjectProperty>
     
@@ -75,15 +76,10 @@
         <rdfs:label xml:lang="en">has part</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000051</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a core relation that holds between a whole and its part</obo:IAO_0000115>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000056 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000056"/>
     
 
 
@@ -118,6 +114,7 @@
         <rdfs:label xml:lang="en">occurs in</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000066</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurs_in</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">b occurs_in c =def b is a process and c is a material entity or immaterial entity&amp; there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.&amp; forall(t) if b exists_at t then c exists_at t &amp; there exist spatial regions s and s’ where &amp; b spatially_projects_onto s at t&amp; c is occupies_spatial_region s’ at t&amp; s is a proper_continuant_part_of s’ at t</obo:IAO_0000115>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000067"/>
     </owl:ObjectProperty>
     
@@ -129,6 +126,7 @@
         <rdfs:label xml:lang="en">contains process</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000067</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contains_process</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">[copied from inverse property &apos;occurs in&apos;] b occurs_in c =def b is a process and c is a material entity or immaterial entity&amp; there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.&amp; forall(t) if b exists_at t then c exists_at t &amp; there exist spatial regions s and s’ where &amp; b spatially_projects_onto s at t&amp; c is occupies_spatial_region s’ at t&amp; s is a proper_continuant_part_of s’ at t</obo:IAO_0000115>
     </owl:ObjectProperty>
     
 
@@ -569,18 +567,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BSPO_0015101 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0015101"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BSPO_0015102 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0015102"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BSPO_1000000 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_1000000">
@@ -605,6 +591,7 @@
         <rdfs:label xml:lang="en">inheres in</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000052</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inheres_in</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002314"/>
     </owl:ObjectProperty>
     
@@ -616,6 +603,7 @@
         <rdfs:label xml:lang="en">bearer of</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000053</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bearer_of</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence</obo:IAO_0000115>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
     </owl:ObjectProperty>
     
@@ -627,6 +615,7 @@
         <rdfs:label xml:lang="en">participates in</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000056</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">participates_in</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between a continuant and a process, in which the continuant is somehow involved in the process</obo:IAO_0000115>
     </owl:ObjectProperty>
     
 
@@ -637,7 +626,21 @@
         <rdfs:label xml:lang="en">has participant</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000057</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_participant</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between a process and a continuant, in which the continuant is somehow involved in the process</obo:IAO_0000115>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
+        <rdfs:label xml:lang="en">quality of</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000080</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality_of</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
     </owl:ObjectProperty>
     
 
@@ -648,6 +651,7 @@
         <rdfs:label xml:lang="en">has quality</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000086</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_quality</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
     </owl:ObjectProperty>
     
@@ -698,27 +702,7 @@
         <rdfs:label xml:lang="en">location of</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0001015</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location_of</oboInOwl:shorthand>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0001018 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001018">
-        <rdfs:label xml:lang="en">contained in</rdfs:label>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0001018</oboInOwl:hasDbXref>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contained_in</oboInOwl:shorthand>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001019"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0001019 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001019">
-        <rdfs:label xml:lang="en">contains</rdfs:label>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0001019</oboInOwl:hasDbXref>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contains</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between two independent continuants, the location and the target, in which the target is entirely within the location</obo:IAO_0000115>
     </owl:ObjectProperty>
     
 
@@ -730,6 +714,7 @@
         <rdfs:label xml:lang="en">located in</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0001025</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">located_in</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between two independent continuants, the target and the location, in which the target is entirely within the location</obo:IAO_0000115>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001015"/>
     </owl:ObjectProperty>
     
@@ -738,10 +723,10 @@
     <!-- http://purl.obolibrary.org/obo/RO_0002000 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002000">
-        <rdfs:label xml:lang="en">boundary of</rdfs:label>
+        <rdfs:label xml:lang="en">2D boundary of</rdfs:label>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2D_boundary_of</oboInOwl:shorthand>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002000</oboInOwl:hasDbXref>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relationships between a boundary (a 2D immaterial entity) and the material entity that it delimits.</obo:IAO_0000115>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">boundary_of</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between a 2D immaterial entity (the boundary) and a material entity, in which the boundary delimits the material entity</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
     </owl:ObjectProperty>
     
@@ -750,10 +735,10 @@
     <!-- http://purl.obolibrary.org/obo/RO_0002002 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002002">
-        <rdfs:label xml:lang="en">has boundary</rdfs:label>
+        <rdfs:label xml:lang="en">has 2D boundary</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002002</oboInOwl:hasDbXref>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The relationship between a material entity and the boundary (2D immaterial entity) that delimits it.</obo:IAO_0000115>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_boundary</oboInOwl:shorthand>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_2D_boundary</oboInOwl:shorthand>
+        <obo:IAO_0000115 xml:lang="en">a relation between a material entity and a 2D immaterial entity (the boundary), in which the boundary delimits the material entity</obo:IAO_0000115>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002000"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
     </owl:ObjectProperty>
@@ -794,7 +779,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/RO_0002081 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002081">
-        <rdfs:label xml:lang="en">before_or_simultaneous_with</rdfs:label>
+        <rdfs:label xml:lang="en">before or simultaneous with</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002081</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">before_or_simultaneous_with</oboInOwl:shorthand>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
@@ -806,7 +791,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002082">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:label xml:lang="en">simultaneous_with</rdfs:label>
+        <rdfs:label xml:lang="en">simultaneous with</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002082</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">simultaneous_with</oboInOwl:shorthand>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002081"/>
@@ -818,7 +803,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002086">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:label xml:lang="en">ends_after</rdfs:label>
+        <rdfs:label xml:lang="en">ends after</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002086</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ends_after</oboInOwl:shorthand>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
@@ -829,7 +814,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/RO_0002087 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002087">
-        <rdfs:label xml:lang="en">immediately_preceded_by</rdfs:label>
+        <rdfs:label xml:lang="en">immediately preceded by</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002087</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immediately_preceded_by</oboInOwl:shorthand>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
@@ -841,7 +826,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/RO_0002090 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002090">
-        <rdfs:label xml:lang="en">immediately_precedes</rdfs:label>
+        <rdfs:label xml:lang="en">immediately precedes</rdfs:label>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002090</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immediately_precedes</oboInOwl:shorthand>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
@@ -904,7 +889,6 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">Relation between a &apos;neuron projection bundle&apos; and a region in which one or more of its component neuron projections either synapses to targets or receives synaptic input.
 T innervates some R
 Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:IAO_0000115>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -1845,12 +1829,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002507 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002507"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0002551 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002551">
@@ -1922,12 +1900,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002576 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002576"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0003000 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003000">
@@ -1947,189 +1919,9 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0003001</oboInOwl:hasDbXref>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">produced_by</oboInOwl:shorthand>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBPROP_0000004 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000004"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#distally_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#distally_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#innervated_by -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#innervated_by"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#subdivision_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/core#subdivision_of"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#anteriorly_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#anteriorly_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#channel_for -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#channel_for"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#channels_from -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#channels_from"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#channels_into -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#channels_into"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#conduit_for -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#conduit_for"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#developmentally_succeeded_by -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#developmentally_succeeded_by"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#distally_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#distally_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#evolved_from -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#evolved_from"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#evolved_multiple_times_in -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#evolved_multiple_times_in"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#extends_fibers_into -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#extends_fibers_into"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#has_start -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#has_start"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#in_central_side_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#in_central_side_of"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#indirectly_supplies -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#indirectly_supplies"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#occurs_in -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#occurs_in"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#posteriorly_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#posteriorly_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#proximally_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#proximally_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#site_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#site_of"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#subdivision_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#subdivision_of"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#transitively_anteriorly_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#transitively_anteriorly_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#transitively_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#transitively_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#transitively_distally_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#transitively_distally_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#transitively_proximally_connected_to -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#transitively_proximally_connected_to"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/uberon/core#trunk_part_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#trunk_part_of"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 0.2.1-SNAPSHOT) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 0.2.2-SNAPSHOT) http://owlapi.sourceforge.net -->
 

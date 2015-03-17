@@ -190,7 +190,7 @@ subset: efo_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "nerve net" NARROW [http://en.wikipedia.org/wiki/Nerve_net]
-synonym: "Nervensystem" RELATED [BTO:0001484]
+synonym: "neurological system" EXACT [GO:0050877]
 synonym: "systema nervosum" RELATED LATIN [http://en.wikipedia.org/wiki/Nervous_system]
 xref: AAO:0000324
 xref: BILA:0000079
@@ -490,6 +490,7 @@ synonym: "lamina" BROAD [CUMBO:CUMBO]
 synonym: "layer" BROAD [CUMBO:CUMBO]
 xref: nlx:149357
 relationship: part_of UBERON:0001016 ! nervous system
+property_value: editor_note "this is currently used to group some cellular layers that may not strictly conform to the CARO definition of cell-part layer. Consider genericisizing and introducing subtypes for cellular layer, fibrous layer and cell soma layer" xsd:string
 
 [Typedef]
 id: action_notes
@@ -784,6 +785,7 @@ synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: RO:0002495
 property_value: seeAlso SIO:000658
+is_a: transformation_of ! transformation of
 
 [Typedef]
 id: implements_design_pattern
@@ -992,6 +994,16 @@ property_value: is_count_of UBERON:0001091
 property_value: preceding_element_is BSPO:0000096
 property_value: seeAlso UBPROP:0000113
 is_metadata_tag: true
+
+[Typedef]
+id: transformation_of
+name: transformation of
+namespace: uberon
+synonym: "transforms from" EXACT [SIO:000657]
+xref: RO:0002494
+property_value: seeAlso SIO:000657
+is_transitive: true
+is_a: develops_from ! develops_from
 
 [Typedef]
 id: vertebra_number

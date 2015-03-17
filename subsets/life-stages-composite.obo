@@ -1,7 +1,7 @@
 format-version: 1.2
 ontology: uberon/subsets/life-stages-composite.obo
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" xsd:string
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0018685> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0007221>)))\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n)
 
 [Term]
 id: AcarDv:0000006
@@ -13,6 +13,54 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0018241 ! prime adult stage
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 property_value: start_mph "24.0" xsd:float
+
+[Term]
+id: CEPH:0000006
+name: adult stage
+def: "A female that has mature eggs (these are frequently stored in the oviducts), or a male that has produced spermatophores (these are stored in Needham's sac)." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: CEPH:0000091
+name: doratopsis stage
+def: "Peculiar paralarval stage of the Chiroteuthidae. The paralarva is very slender and can reach a large size." [http://tolweb.org/accessory/Chiroteuthid_Doratopsis_Stage?acc_id=656]
+synonym: "doratopsis" RELATED []
+is_a: CEPH:0000194 ! paralarval stage
+
+[Term]
+id: CEPH:0000127
+name: hatchling stage
+def: "Young cephalopod that has just hatched from the egg." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+synonym: "hatchling" RELATED []
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: CEPH:0000163
+name: mature stage
+def: "In cephalopods this term refers to sexual maturity which is determined for females by the presence of ova (mature eggs) free in the coelom or oviducts, and for males by the presence of spermatophores in Needham's sac." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: CEPH:0000194
+name: paralarval stage
+def: "First free-living, cephalopod life-history stage that is found in the near-surface plankton and that differs in both morphology and vertical distribution from older juveniles." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: CEPH:0000246
+name: subadult stage
+def: "Stage at which all of the characters that typically define the species are present. The subadult stage follows the Juvenile Stage and precedes the Adult Stage. A subadult stage is defined in cephalopods since the adult phase is frequently abbreviated." [http://tolweb.org/accessory/Cephalopoda_Glossary?acc_id=587]
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: CTENO:0000024
+name: cydippid stage
+is_a: UBERON:0000069 ! larval stage
+
+[Term]
+id: CTENO:0000025
+name: ctenophore adult stage
+is_a: UBERON:0000066 ! fully formed stage
 
 [Term]
 id: FBdv:00005337
@@ -5849,6 +5897,24 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000110 ! neurula stage
 
 [Term]
+id: PORO:0000420
+name: olynthus stage
+def: "Earliest developmental stage with a functional aquiferous system, with a single choanocyte chamber opening directly into the osculum; typical of some calcareous sponges" [http://www.portol.org/thesaurus]
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: PORO:0000505
+name: rhagon stage
+def: "Earliest functional stage with multiple choanocyte chambers and aquiferous canals, typical for Demospongiae" [http://www.portol.org/thesaurus]
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: PORO:0000561
+name: stomoblastula stage
+def: "Developmental stage of amphiblastulas that precedes the reversion stage and is characterized by internal flagella and a large opening through which the eversion occurs" [http://www.portol.org/thesaurus]
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
 id: PpanDv:0000004
 name: nursing stage (bonobo)
 namespace: bonobo_developmental_stage
@@ -7532,7 +7598,7 @@ property_value: start_mpb "1.85" xsd:float
 id: UBERON:0000000
 name: processual entity
 namespace: uberon
-def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." [span:ProcessualEntity]
+def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." []
 subset: upper_level
 
 [Term]
@@ -7710,7 +7776,7 @@ property_value: UBPROP:0000008 "In birds, the postnatal stage begins when the be
 id: UBERON:0000105
 name: life cycle stage
 namespace: uberon
-def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [https://orcid.org/0000-0002-6601-2165]
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." []
 subset: efo_slim
 subset: upper_level
 synonym: "developmental stage" NARROW []
@@ -7891,7 +7957,7 @@ name: sexually immature stage
 namespace: uberon
 subset: efo_slim
 synonym: "immature stage" EXACT [VHOG:FB]
-synonym: "juvenile stage" EXACT [XAO:1000010]
+synonym: "juvenile stage" NARROW [XAO:1000010]
 synonym: "subadult stage" RELATED [http://eol.org/schema/terms/subadult]
 xref: AcarDv:0000003
 xref: BILS:0000112
@@ -7913,7 +7979,6 @@ xref: PtroDv:0000003
 xref: RnorDv:0000012
 xref: SscrDv:0000003
 xref: TnigDv:0000003
-xref: TS28
 xref: XAO:1000010
 xref: XtroDO:0000083
 xref: ZFS:0000051
@@ -8013,7 +8078,7 @@ property_value: RO:0002175 NCBITaxon:7227
 id: UBERON:0007220
 name: late embryonic stage
 namespace: uberon
-def: "Am embryo stage that covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching." [BGEE:ANiknejad]
+def: "An embryo stage that covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching." [BGEE:ANiknejad]
 synonym: "embryo late (growth) stage" EXACT [MIAA:0000399]
 synonym: "embryo late growth stage" RELATED [BTO:0000449]
 synonym: "embryo late stage" RELATED [BTO:0000449]
@@ -8308,7 +8373,25 @@ namespace: uberon
 def: "A mammalian developmental stage that covers the period from birth until weaning." [Bgee:AN]
 synonym: "suckling stage" EXACT []
 is_a: UBERON:0000105 ! life cycle stage
+relationship: has_part UBERON:0007221 ! neonate stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: UBERON:0034919
+name: juvenile stage
+namespace: uberon
+def: "The stage of being no more dependent of the nest and/or from caregivers for subsistence while having not reach sexual maturity." [Bgee:AN, https://github.com/obophenotype/uberon/issues/645]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000112 ! sexually immature stage
+
+[Term]
+id: UBERON:0034920
+name: infant stage
+namespace: uberon
+def: "Nursing stage that follows the neonate stage in mammals and ends at weaning." [Bgee:AN, https://github.com/obophenotype/uberon/issues/644]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by UBERON:0007221 ! neonate stage
+relationship: part_of UBERON:0018685 ! nursing stage
 
 [Term]
 id: WBls:0000056

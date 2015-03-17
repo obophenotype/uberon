@@ -20,7 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/xao.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2015-02-02/uberon/bridge/uberon-bridge-to-xao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2015-03-15/uberon/bridge/uberon-bridge-to-xao.owl"/>
     </owl:Ontology>
     
 
@@ -1668,6 +1668,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001943 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001943"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001944 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001944"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0001945 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001945"/>
@@ -2175,6 +2187,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0002465 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002465"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002481 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002481"/>
     
 
 
@@ -3873,6 +3891,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_2001316 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_2001316"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_4000013 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_4000013"/>
     
 
 
@@ -12153,7 +12177,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0003200</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gut epithelium (xenopus)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">digestive tract epithelium (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -13394,6 +13418,46 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004038</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">skeletal tissue (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004039 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004039">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_4000013"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004039</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mineralized skeletal tissue (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004040">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0002481"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004040</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bone tissue (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -15320,6 +15384,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/XAO_0004271 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004271">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001943"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004271</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">midbrain tegmentum (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/XAO_0004301 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004301">
@@ -15336,6 +15420,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004301</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thalamic eminence (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004303 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004303">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001944"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004303</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pretectal region (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -15789,5 +15893,5 @@
 
 
 
-<!-- Generated by the OWL API (version 0.2.1-SNAPSHOT) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 0.2.2-SNAPSHOT) http://owlapi.sourceforge.net -->
 

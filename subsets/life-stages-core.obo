@@ -1,7 +1,7 @@
 format-version: 1.2
 ontology: uberon/subsets/life-stages-core.obo
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon core (generic stages only)" xsd:string
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0018685> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0007221>)))\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n)
 
 [Term]
 id: UBERON:0000000
@@ -331,7 +331,7 @@ name: sexually immature stage
 namespace: uberon
 subset: efo_slim
 synonym: "immature stage" EXACT [VHOG:FB]
-synonym: "juvenile stage" EXACT [XAO:1000010]
+synonym: "juvenile stage" NARROW [XAO:1000010]
 synonym: "subadult stage" RELATED [http://eol.org/schema/terms/subadult]
 xref: BILS:0000112
 xref: BTO:0002168
@@ -339,7 +339,6 @@ xref: EFO:0001300
 xref: EV:0300051
 xref: MmusDv:0000043
 xref: OGES:000009
-xref: TS28
 xref: XAO:1000010
 xref: XtroDO:0000083
 xref: ZFS:0000051
@@ -423,7 +422,7 @@ property_value: RO:0002175 NCBITaxon:7227
 id: UBERON:0007220
 name: late embryonic stage
 namespace: uberon
-def: "Am embryo stage that covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching." [BGEE:ANiknejad]
+def: "An embryo stage that covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching." [BGEE:ANiknejad]
 synonym: "embryo late (growth) stage" EXACT [MIAA:0000399]
 synonym: "embryo late growth stage" RELATED [BTO:0000449]
 synonym: "embryo late stage" RELATED [BTO:0000449]
@@ -694,7 +693,25 @@ namespace: uberon
 def: "A mammalian developmental stage that covers the period from birth until weaning." [Bgee:AN]
 synonym: "suckling stage" EXACT []
 is_a: UBERON:0000105 ! life cycle stage
+relationship: has_part UBERON:0007221 ! neonate stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: UBERON:0034919
+name: juvenile stage
+namespace: uberon
+def: "The stage of being no more dependent of the nest and/or from caregivers for subsistence while having not reach sexual maturity." [Bgee:AN, https://github.com/obophenotype/uberon/issues/645]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000112 ! sexually immature stage
+
+[Term]
+id: UBERON:0034920
+name: infant stage
+namespace: uberon
+def: "Nursing stage that follows the neonate stage in mammals and ends at weaning." [Bgee:AN, https://github.com/obophenotype/uberon/issues/644]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by UBERON:0007221 ! neonate stage
+relationship: part_of UBERON:0018685 ! nursing stage
 
 [Typedef]
 id: has_part

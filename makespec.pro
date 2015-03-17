@@ -15,6 +15,7 @@ anatomy('dhba').
 anatomy('pba').
 anatomy('hba').
 anatomy('ubrain').
+anatomy(cmbn).
 anatomy('NIFGA').
 anatomy('efo').
 anatomy('FMA').
