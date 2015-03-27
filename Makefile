@@ -165,10 +165,10 @@ uberon.owl: release.owl
 uberon.obo: uberon.owl
 	obolib-owl2obo $< -o $@.tmp && obo2obo $@.tmp -o $@
 
-
+BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
 # remember to git mv - this replaces uberon-simple
 basic.owl:  uberon.owl
-	owltools $< --make-subset-by-properties -f BFO:0000050 RO:0002202 immediate_transformation_of transformation_of // --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+	owltools $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 basic.obo: basic.owl
 	obolib-owl2obo $< -o $@.tmp && obo2obo $@.tmp -o $@
 
@@ -639,7 +639,7 @@ composite-%.owl: raw-composite-%.owl
 	owljs-grep -v -m "/IAO_0000589/" -o $@ $<
 
 composite-metazoan-basic.obo: composite-metazoan.owl
-	owltools $<  --extract-mingraph --set-ontology-id $(OBO)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
+	owltools $<  --extract-mingraph --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(OBO)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
 
 
 # owl2obo
@@ -660,7 +660,7 @@ METAZOAN_BRIDGES = $(patsubst %,bridge/uberon-bridge-to-%.owl,$(METAZOAN_ONTS))
 #local-%.obo: merged.obo
 #	wget $(OBO)/$*.owl -O cached-$*.owl && owltools cached-$*.owl --repair-relations -o -f obo $@.tmp && egrep -v '^(disjoint|domain|range)' $@.tmp | perl -npe 's/default-namespace: FlyBase development CV/default-namespace: fbdv/' > $@
 
-mirror-%.owl:
+mirror-%.owl: uberon_edit.obo
 	wget $(OBO)/$*.owl -O $@ &&  touch $@
 .PRECIOUS: mirror-%.owl
 
@@ -687,7 +687,7 @@ mirror-ehdaa2.owl:
 
 mirror-emapa.owl: fixed-emapa.obo
 	owltools $< -o -f ofn $@ 
-mirror-emapa.obo:
+mirror-emapa.obo: 
 	wget $(OBO)/emapa.obo -O $@
 fixed-emapa.obo: mirror-emapa.obo
 	obo-grep.pl -r 'id: EMAPA' $< | ./util/fix-emapa-stages.pl | grep -v ^alt_id > $@
