@@ -687,7 +687,7 @@ mirror-ehdaa2.owl:
 
 mirror-emapa.owl: fixed-emapa.obo
 	owltools $< -o -f ofn $@ 
-mirror-emapa.obo: 
+mirror-emapa.obo: uberon_edit.obo
 	wget $(OBO)/emapa.obo -O $@
 fixed-emapa.obo: mirror-emapa.obo
 	obo-grep.pl -r 'id: EMAPA' $< | ./util/fix-emapa-stages.pl | grep -v ^alt_id > $@
