@@ -4,7 +4,6 @@ subsetdef: cyclostome_subset "cyclostome structures"
 subsetdef: defined_by_cytoarchitecture "brain region defined by cyto-architecture"
 subsetdef: defined_by_ordinal_series "classes that are defined by relative position counting from first in a series of elements along an axis in an individual organism rather than by strict homology"
 subsetdef: developmental_classification "developmental_classification"
-subsetdef: disjointness_axiom_removed "A class which has a weakened disjointness axiom, to avoid inconsistency. These are kept separately in the uberon_disjoint_from_strict ontology."
 subsetdef: dubious_grouping "Indicates that subclasses in AOs may be inappropriately linked"
 subsetdef: early_development "A class that represents an early developmental structure, like a blastocyst. This part of the ontology is undergoing review to remove inappropriate grouping classes."
 subsetdef: efo_slim "EFO slim"
@@ -13,18 +12,16 @@ subsetdef: feed_aligned "subset of classes that have logical defs text defs and 
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
-subsetdef: loose_concept "loose concept"
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
 subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
 subsetdef: non_informative "abstract class brought in to group ontology classes but not informative"
 subsetdef: organ_slim "organs, excluding individual muscles and skeletal elements"
+subsetdef: pheno_slim "Phenotype slim"
 subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
-subsetdef: uberon_slim "Uberon slim - somewhat arbitrary subset that excludes obscure terms and deep compositional terms"
+subsetdef: uberon_slim "Uberon slim - subset that excludes obscure terms and deep compositional terms"
 subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
 subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
-subsetdef: upper_ontology_conflict "Terms in this subset group together terms from different anatomy ontologies that have conflicting upper ontology/CARO assignments. For example, in FMA the naris is immaterial and in ZFA it is an organism subdivision."
 subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
-subsetdef: vessel_or_tree "A term classified differently in FMA due to its treatment of branching structures - to be reviewed and revised by editors"
 synonymtypedef: ABBREVIATION "abbreviation"
 synonymtypedef: COMPARATIVE_PREFERRED "preferred term in the context of comparative anatomy"
 synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged"
@@ -48,6 +45,7 @@ namespace: uberon
 def: "A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands." [GO:0007422]
 subset: cumbo
 subset: efo_slim
+subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "lateral part of the basal amygdalar nucleus" RELATED [NeuroNames:247]
@@ -125,6 +123,7 @@ def: "The brain is the center of the nervous system in all vertebrate, and most 
 subset: cumbo
 subset: efo_slim
 subset: major_organ
+subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "encephalon" RELATED [BTO:0000142]
@@ -187,6 +186,7 @@ namespace: uberon
 def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [http://en.wikipedia.org/wiki/Nervous_system, http://uri.neuinfo.org/nif/nifstd/birnlex_844, ISBN:0-14-051288-8, ISBN:3110148986, NLM:nervous+system, WB:rynl, ZFIN:curator]
 subset: cumbo
 subset: efo_slim
+subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "nerve net" NARROW [http://en.wikipedia.org/wiki/Nerve_net]
@@ -236,18 +236,12 @@ namespace: uberon
 def: "The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord." [GO:0021551, http://www.frontiersinzoology.com/content/7/1/29, https://sourceforge.net/p/geneontology/ontology-requests/11422/]
 subset: cumbo
 subset: efo_slim
+subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "basal nucleus of the amygdala" RELATED [NeuroNames:246]
-synonym: "basolateral nucleus of amygdala" RELATED [NeuroNames:246]
-synonym: "basolateral nucleus of the amygdala" RELATED [NeuroNames:246]
 synonym: "cerebrospinal axis" NARROW [FMA:55675]
 synonym: "CNS" EXACT ABBREVIATION []
 synonym: "neuraxis" RELATED [FMA:55675]
-synonym: "nucleus amygdalae basalis" RELATED LATIN [NeuroNames:246]
-synonym: "nucleus amygdaloideus basalis" RELATED LATIN [NeuroNames:246]
-synonym: "nucleus amygdaloideus basolateralis" RELATED LATIN [NeuroNames:246]
-synonym: "nucleus basalis amygdalae" RELATED LATIN [NeuroNames:246]
 synonym: "systema nervosum centrale" EXACT LATIN [FMA:55675, FMA:TA]
 xref: AAO:0000090
 xref: BAMS:CNS
@@ -264,8 +258,7 @@ xref: EV:0100163
 xref: FBbt:00005094
 xref: FMA:55675
 xref: GAID:570
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=246
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=246 {source="NIFSTD:birnlex_1099"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=854
 xref: http://en.wikipedia.org/wiki/Central_nervous_system
 xref: http://linkedlifedata.com/resource/umls/id/C0927232
 xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Central_Nervous_System
@@ -293,6 +286,7 @@ namespace: uberon
 def: "A group of axons linking two or more neuropils and having a common origin, termination[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
 comment: WP says this is the analog of peripheral nerves in CNS.
 subset: cumbo
+subset: pheno_slim
 synonym: "axonal tract" EXACT []
 synonym: "Nerve tract" NARROW [NIFSTD:birnlex_1649]
 synonym: "nerve tract" RELATED []
@@ -342,6 +336,7 @@ subset: cumbo
 subset: efo_slim
 subset: major_organ
 subset: organ_slim
+subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cerebro-cerebellar fissure" RELATED [NeuroNames:22]

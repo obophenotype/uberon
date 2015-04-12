@@ -122,6 +122,7 @@ nlp_hook(snomed_anatomy,_,ignore_word_snomed) :- !.
 nlp_hook(_,snomed_anatomy,ignore_word_snomed) :- !.
 nlp_hook(_,hba,ignore_lateral) :- !.
 nlp_hook(hba,_,ignore_lateral) :- !.
+nlp_hook('EMAPA',uberon,metadata_nlp_parent_dist1_hook) :- !.
         
 nlp_hook(A,B,metadata_nlp_parent_dist2_hook) :-
         L=[A,B],

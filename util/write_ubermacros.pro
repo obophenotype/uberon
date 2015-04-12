@@ -1,9 +1,15 @@
 
+obj(ID,N) :- class(ID,N).
+obj(ID,N) :- property(ID,N),atomic(N),concat_atom([_,_],:,ID).
+
+
+
+
 w :-
         format(';; TO GENERATE: blip-findall  -i ONT.obo -consult util/write_ubermacros.pro  w > util/ubermacros.el~n'),
         format(';; TO USE: (load-file "util/ubermacros.el")~n'),
         nl,
-        class(ID,N),
+        obj(ID,N),
         safe(N,Safe),
         format('(defun oa-~w () (interactive "") (insert "~w ! ~w"))~n',[Safe,ID,N]),
         format('(defun oj-~w () (interactive "") (progn (goto-char 1) (search-forward "id: ~w" nil nil 1)))~n',[Safe,ID]),

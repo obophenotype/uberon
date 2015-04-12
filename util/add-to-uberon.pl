@@ -105,6 +105,8 @@ while(<>) {
 
     s/property_value:.*UMLS_CUI.*\"(\S+)\".*/xref: UMLS:$1/;
 
+    s@property_value: hasSynonym "(.*)" xsd:string@synonym: "$1" EXACT []@;
+
     s@http://www.obofoundry.org/ro/ro.owl#proper_part_of@part_of@;
 
     s@property_value: nif_obo_annot:synonym "(.*)" xsd:string@synonym: "$1" RELATED []@;

@@ -35,6 +35,7 @@ CARO:0000063	asexual organism	UBERON:0000106	zygote stage	UBERON:0000071	death s
 CARO:0000064	single cell organism	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 CHEBI:15440	squalene				
 CHEBI:16247	phospholipid				
+CHEBI:16526	carbon dioxide				
 CHEBI:16646	carbohydrate				
 CHEBI:16990	bilirubin				
 CHEBI:17029	chitin				
@@ -50,6 +51,7 @@ CHEBI:22478	amino alcohol
 CHEBI:22506	aminoglycan				
 CHEBI:22868	bile salt				
 CHEBI:22985	calcium molecular entity				
+CHEBI:23014	carbon oxide				
 CHEBI:23016	carbonates				
 CHEBI:23044	carotenoid				
 CHEBI:23045	carotenol				
@@ -73,8 +75,13 @@ CHEBI:24913	isoprenoid
 CHEBI:25046	linear tetrapyrrole				
 CHEBI:25367	molecule				
 CHEBI:25513	neutral glycosphingolipid				
+CHEBI:25585	nonmetal atom				
+CHEBI:25701	organic oxide				
 CHEBI:25703	organic phosphate				
+CHEBI:25704	organic sulfate				
 CHEBI:25710	organophosphorus compound				
+CHEBI:25741	oxide				
+CHEBI:25805	oxygen atom				
 CHEBI:25806	oxygen molecular entity				
 CHEBI:26020	phosphate				
 CHEBI:26079	phosphoric acid derivative				
@@ -84,6 +91,9 @@ CHEBI:26469	quaternary nitrogen compound
 CHEBI:26712	sodium molecular entity				
 CHEBI:26714	sodium salt				
 CHEBI:26739	sphingolipid				
+CHEBI:26819	sulfuric ester				
+CHEBI:26820	sulfates				
+CHEBI:26835	sulfur molecular entity				
 CHEBI:26873	terpenoid				
 CHEBI:26932	tetrapyrrole				
 CHEBI:26935	tetraterpenoid				
@@ -98,12 +108,18 @@ CHEBI:32988	amide
 CHEBI:3311	calcium carbonate				
 CHEBI:33241	oxoacid derivative				
 CHEBI:33245	organic fundamental parent				
+CHEBI:33250	atom				
 CHEBI:33256	primary amide				
+CHEBI:33261	organosulfur compound				
 CHEBI:33285	heteroorganic entity				
 CHEBI:33296	alkali metal molecular entity				
 CHEBI:33299	alkaline earth molecular entity				
 CHEBI:33302	pnictogen molecular entity				
+CHEBI:33303	chalcogen				
 CHEBI:33304	chalcogen molecular entity				
+CHEBI:33318	main group element atom				
+CHEBI:33424	sulfur oxoacid derivative				
+CHEBI:33560	p-block element atom				
 CHEBI:33563	glycolipid				
 CHEBI:33575	carboxylic acid				
 CHEBI:33579	main group molecular entity				
@@ -138,6 +154,8 @@ CHEBI:35507	natural product fundamental parent
 CHEBI:35605	carbon oxoacid				
 CHEBI:35692	dicarboxylic acid				
 CHEBI:35701	ester				
+CHEBI:35722	sulfated glycosaminoglycan				
+CHEBI:35724	carbohydrate sulfate				
 CHEBI:35740	liposaccharide				
 CHEBI:35786	phosphosphingolipid				
 CHEBI:35794	tetrapyrrole fundamental parent				
@@ -162,18 +180,23 @@ CHEBI:37163	glucan
 CHEBI:37164	homopolysaccharide				
 CHEBI:37175	organic hydride				
 CHEBI:37395	mucopolysaccharide				
+CHEBI:37397	chondroitin sulfate				
 CHEBI:37577	heteroatomic molecular entity				
 CHEBI:37622	carboxamide				
 CHEBI:37734	phosphoric ester				
+CHEBI:37826	sulfuric acid derivative				
 CHEBI:38077	polypyrrole				
 CHEBI:38101	organonitrogen heterocyclic compound				
 CHEBI:38700	organic sodium salt				
+CHEBI:39022	inclusion compound				
+CHEBI:39024	clathrate compound				
 CHEBI:46662	mineral				
 CHEBI:46721	carbonate salt				
 CHEBI:46723	phosphate mineral				
 CHEBI:47882	cyclic polypyrrole				
 CHEBI:50047	organic amino compound				
 CHEBI:50860	organic molecular entity				
+CHEBI:50967	non-covalently-bound molecular entity				
 CHEBI:51143	nitrogen molecular entity				
 CHEBI:51151	dipolar compound				
 CHEBI:51958	organic polycyclic compound				
@@ -182,12 +205,14 @@ CHEBI:52255	hydroxylapatite
 CHEBI:5254	galactolipid				
 CHEBI:5686	heterocyclic compound				
 CHEBI:59999	chemical substance				
+CHEBI:60924	keratan sulfate				
 CHEBI:60926	amino monosaccharide				
 CHEBI:62941	glycosylceramide				
 CHEBI:63299	carbohydrate derivative				
 CHEBI:64583	sphingomyelin				
 CHEBI:64708	one-carbon compound				
 CHEBI:64709	organic acid				
+CHEBI:6495	lipoprotein				
 CHEBI:65212	polysaccharide derivative				
 CHEBI:72695	organic molecule				
 CHEBI:78616	carbohydrates and carbohydrate derivatives				
@@ -250,10 +275,10 @@ CL:0000064	ciliated cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 CL:0000065	ependymal cell	HsapDv:0000034	CS06a (human)	UBERON:0000071	death stage
 CL:0000066	epithelial cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 CL:0000067	ciliated epithelial cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-CL:0000068	duct epithelial cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-CL:0000069	branched duct epithelial cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+CL:0000068	duct epithelial cell	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+CL:0000069	branched duct epithelial cell	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 CL:0000071	blood vessel endothelial cell	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-CL:0000072	non-branched duct epithelial cell	HsapDv:0000035	CS06b (human)	UBERON:0000071	death stage
+CL:0000072	non-branched duct epithelial cell	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000071	death stage
 CL:0000073	barrier epithelial cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 CL:0000075	columnar/cuboidal epithelial cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 CL:0000076	squamous epithelial cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
@@ -497,7 +522,7 @@ CL:0000372	tormogen cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed
 CL:0000373	histoblast	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 CL:0000374	trichogen cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0000376	humidity receptor cell	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
-CL:0000377	tracheoblast	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+CL:0000377	tracheoblast	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 CL:0000378	support cell (sensu Nematoda and Protostomia)	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 CL:0000379	sensory processing neuron	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 CL:0000380	thecogen cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
@@ -746,7 +771,7 @@ CL:0000648	kidney granular cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully
 CL:0000649	prickle cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0000650	mesangial cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 CL:0000651	mucous neck cell	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-CL:0000652	pinealocyte	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+CL:0000652	pinealocyte	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
 CL:0000653	glomerular visceral epithelial cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0000654	primary oocyte	HsapDv:0000007	CS03 (human)	UBERON:0000071	death stage
 CL:0000655	secondary oocyte	HsapDv:0000007	CS03 (human)	UBERON:0000071	death stage
@@ -933,7 +958,7 @@ CL:0000847	ciliated olfactory receptor neuron	HsapDv:0000018	CS11 (human)	UBERON
 CL:0000848	microvillous olfactory receptor neuron	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 CL:0000849	crypt olfactory receptor neuron	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 CL:0000850	serotonergic neuron	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
-CL:0000853	olfactory epithelial support cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+CL:0000853	olfactory epithelial support cell	HsapDv:0000034	CS06a (human)	UBERON:0000071	death stage
 CL:0000854	interneuromast cell	HsapDv:0000034	CS06a (human)	UBERON:0000068	embryo stage
 CL:0000855	sensory hair cell	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 CL:0000857	slow muscle myoblast	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
@@ -1436,7 +1461,7 @@ CL:0002300	type-7 epithelial cell of thymus	HsapDv:0000026	CS19 (human)	UBERON:0
 CL:0002301	type B synovial cell	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
 CL:0002302	type A synovial cell	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
 CL:0002303	pigmented ciliary epithelial cell	HsapDv:0000034	CS06a (human)	UBERON:0000071	death stage
-CL:0002304	non-pigmented ciliary epithelial cell	HsapDv:0000034	CS06a (human)	UBERON:0000071	death stage
+CL:0002304	non-pigmented ciliary epithelial cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0002305	epithelial cell of distal tubule	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0002306	epithelial cell of proximal tubule	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0002307	brush border cell of the proximal tubule	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -1706,7 +1731,7 @@ CL:0002574	stromal cell of pancreas	HsapDv:0000024	CS17 (human)	UBERON:0000071	d
 CL:0002575	central nervous system pericyte	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 CL:0002576	perineural cell	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 CL:0002577	placental epithelial cell	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
-CL:0002578	mesenteric preadipocyte	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000071	death stage
+CL:0002578	mesenteric preadipocyte	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000071	death stage
 CL:0002579	omentum preadipocyte	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 CL:0002580	preadipocyte of the breast	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 CL:0002581	perirenal preadipocyte	UBERON:0000106	zygote stage	UBERON:0000071	death stage
@@ -1892,8 +1917,6 @@ CL:0010009	camera-type eye photoreceptor cell	HsapDv:0000024	CS17 (human)	UBERON
 CL:0010010	cerebellar stellate cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0010011	cerebral cortex GABAergic interneuron	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0010012	cerebral cortex neuron	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-CL:0010013	type I pinealocyte	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-CL:0010014	type II pinealocyte	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0010020	cardiac glial cell	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:0010021	cardiac myoblast	HsapDv:0000035	CS06b (human)	UBERON:0000071	death stage
 CL:0010022	cardiac neuron	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -2069,7 +2092,7 @@ CL:1000432	conjunctival epithelial cell	HsapDv:0000024	CS17 (human)	UBERON:00000
 CL:1000433	epithelial cell of lacrimal canaliculus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:1000434	epithelial cell of external acoustic meatus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:1000435	epithelial cell of lacrimal duct	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-CL:1000436	epithelial cell of lacrimal sac	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+CL:1000436	epithelial cell of lacrimal sac	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 CL:1000437	epithelial cell of nasolacrimal duct	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 CL:1000438	epithelial cell of wall of inferior part of anal canal	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 CL:1000441	epithelial cell of viscerocranial mucosa	UBERON:0000106	zygote stage	UBERON:0000071	death stage
@@ -2424,7 +2447,7 @@ EHDAA2:0000376	dermomyotome 36 (human)	HsapDv:0000024	CS17 (human)	HsapDv:000002
 EHDAA2:0000377	dermomyotome 37 (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000024	CS17 (human)
 EHDAA2:0000378	dermomyotome 38 (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000024	CS17 (human)
 EHDAA2:0000379	dermomyotome 39 (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000024	CS17 (human)
-EHDAA2:0000389	diencephalon future arachnoid layer (human)	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+EHDAA2:0000389	diencephalon future arachnoid layer (human)	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 EHDAA2:0000390	diencephalon primary meninx future arachnoid layer (human)	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 EHDAA2:0000391	diencephalon future dura mater (human)	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 EHDAA2:0000392	diencephalon primary meninx future dura mater (human)	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000025	Carnegie stage 18 (human)
@@ -2484,7 +2507,7 @@ EHDAA2:0000695	dorsal thalamus ventricular layer (human)	HsapDv:0000024	CS17 (hu
 EHDAA2:0000717	indifferent gonad associated mesenchyme (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000024|HsapDv:0000025	CS17 (human)|Carnegie stage 18 (human)
 EHDAA2:0000718	indifferent gonad mesothelium (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000024|HsapDv:0000025	CS17 (human)|Carnegie stage 18 (human)
 EHDAA2:0000737	head somite group (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000017|HsapDv:0000021	CS10 (human)|CS14 (human)
-EHDAA2:0000750	hindbrain future arachnoid layer (human)	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+EHDAA2:0000750	hindbrain future arachnoid layer (human)	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 EHDAA2:0000751	hindbrain primary meninx future arachnoid layer (human)	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 EHDAA2:0000752	hindbrain future dura mater (human)	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 EHDAA2:0000753	hindbrain primary meninx future dura mater (human)	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000025	Carnegie stage 18 (human)
@@ -2569,7 +2592,7 @@ EHDAA2:0001155	pons basal plate (human)	HsapDv:0000024	CS17 (human)	HsapDv:00000
 EHDAA2:0001156	pons marginal layer (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 EHDAA2:0001157	pons ventricular layer (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 EHDAA2:0001159	pons lateral wall (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-EHDAA2:0001165	midbrain future arachnoid layer (human)	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+EHDAA2:0001165	midbrain future arachnoid layer (human)	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 EHDAA2:0001166	midbrain primary meninx future arachnoid layer (human)	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 EHDAA2:0001167	midbrain future dura mater (human)	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 EHDAA2:0001168	midbrain primary meninx future dura mater (human)	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000025	Carnegie stage 18 (human)
@@ -2838,7 +2861,7 @@ EHDAA2:0002146	urogenital sinus lumen vesical part	HsapDv:0000024	CS17 (human)
 EHDAA2:0002157	vagal X nerve (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 EHDAA2:0002158	vagal X ganglion (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 EHDAA2:0002159	vagal X inferior ganglion (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-EHDAA2:0002161	vagal X nerve trunk recurrent laryngeal branch (human)	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
+EHDAA2:0002161	vagal X nerve trunk recurrent laryngeal branch (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 EHDAA2:0002163	vagal X superior ganglion (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 EHDAA2:0002165	valve mesenchyme (human)	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 EHDAA2:0002218	early yolk sac stalk (human)	HsapDv:0000019	Carnegie stage 12 (human)	HsapDv:0000020	Carnegie stage 13 (human)
@@ -3062,7 +3085,7 @@ EHDAA2:0003488	finger 2 apical ectodermal ridge (human)	HsapDv:0000024	CS17 (hum
 EHDAA2:0003489	finger 3 apical ectodermal ridge (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000023	Carnegie stage 16 (human)
 EHDAA2:0003490	finger 4 apical ectodermal ridge (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000023	Carnegie stage 16 (human)
 EHDAA2:0003491	finger 5 apical ectodermal ridge (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000023	Carnegie stage 16 (human)
-EHDAA2:0003494	diaphragm body wall component (human)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+EHDAA2:0003494	diaphragm body wall component (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000020	Carnegie stage 13 (human)
 EHDAA2:0004000	vertebra C4 pre-cartilage condensation (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000023	Carnegie stage 16 (human)
 EHDAA2:0004001	vertebra C5 pre-cartilage condensation (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000023	Carnegie stage 16 (human)
 EHDAA2:0004002	vertebra C6 pre-cartilage condensation (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000023	Carnegie stage 16 (human)
@@ -3089,10 +3112,10 @@ EHDAA2:0004035	genital tubercle epithelium (human)	HsapDv:0000023	Carnegie stage
 EHDAA2:0004036	clitoris epithelium (human)	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 EHDAA2:0004037	clitoris mesenchyme (human)	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 EHDAA2:0004038	penis mesenchyme (human)	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-EHDAA2:0004040	female labial swelling mesenchyme (human)	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-EHDAA2:0004041	female labial swelling epithelium (human)	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
-EHDAA2:0004042	male genital swelling mesenchyme (human)	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-EHDAA2:0004043	male genital swelling epithelium (human)	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
+EHDAA2:0004040	female labial swelling mesenchyme (human)	HsapDv:0000026	CS19 (human)	HsapDv:0000024|HsapDv:0000020	CS17 (human)|Carnegie stage 13 (human)
+EHDAA2:0004041	female labial swelling epithelium (human)	HsapDv:0000026	CS19 (human)	HsapDv:0000024	CS17 (human)
+EHDAA2:0004042	male genital swelling mesenchyme (human)	HsapDv:0000026	CS19 (human)	HsapDv:0000024	CS17 (human)
+EHDAA2:0004043	male genital swelling epithelium (human)	HsapDv:0000026	CS19 (human)	HsapDv:0000024	CS17 (human)
 EHDAA2:0004045	ovary mesothelium (human)	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 EHDAA2:0004047	mesonephros mesothelium (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 EHDAA2:0004049	gonadal ridge mesothelium (human)	HsapDv:0000024	CS17 (human)	HsapDv:0000025|HsapDv:0000021	Carnegie stage 18 (human)|CS14 (human)
@@ -3499,6 +3522,7 @@ GO:0002018	renin-angiotensin regulation of aldosterone production
 GO:0002027	regulation of heart rate				
 GO:0002062	chondrocyte differentiation				
 GO:0002063	chondrocyte development				
+GO:0002087	regulation of respiratory gaseous exchange by neurological system process				
 GO:0002117	amphibian larval development				
 GO:0002119	nematode larval development				
 GO:0002164	larval development				
@@ -3521,17 +3545,26 @@ GO:0002335	mature B cell differentiation
 GO:0002351	serotonin production involved in inflammatory response				
 GO:0002366	leukocyte activation involved in immune response				
 GO:0002376	immune system process				
+GO:0002377	immunoglobulin production				
+GO:0002378	immunoglobulin biosynthetic process				
 GO:0002384	hepatic immune response				
+GO:0002440	production of molecular mediator of immune response				
 GO:0002442	serotonin secretion involved in inflammatory response				
 GO:0002520	immune system development				
 GO:0002521	leukocyte differentiation				
 GO:0002532	production of molecular mediator involved in inflammatory response				
+GO:0002637	regulation of immunoglobulin production				
+GO:0002638	negative regulation of immunoglobulin production				
+GO:0002640	regulation of immunoglobulin biosynthetic process				
+GO:0002641	negative regulation of immunoglobulin biosynthetic process				
 GO:0002682	regulation of immune system process				
 GO:0002683	negative regulation of immune system process				
 GO:0002694	regulation of leukocyte activation				
 GO:0002695	negative regulation of leukocyte activation				
 GO:0002697	regulation of immune effector process				
 GO:0002698	negative regulation of immune effector process				
+GO:0002700	regulation of production of molecular mediator of immune response				
+GO:0002701	negative regulation of production of molecular mediator of immune response				
 GO:0002790	peptide secretion				
 GO:0002791	regulation of peptide secretion				
 GO:0002792	negative regulation of peptide secretion				
@@ -3575,6 +3608,7 @@ GO:0004930	G-protein coupled receptor activity
 GO:0005057	receptor signaling protein activity				
 GO:0005575	cellular_component				
 GO:0005576	extracellular region				
+GO:0005577	fibrinogen complex				
 GO:0005578	proteinaceous extracellular matrix				
 GO:0005581	collagen trimer				
 GO:0005583	fibrillar collagen trimer				
@@ -3584,6 +3618,7 @@ GO:0005586	collagen type III trimer
 GO:0005587	collagen type IV trimer				
 GO:0005604	basement membrane				
 GO:0005605	basal lamina				
+GO:0005615	extracellular space				
 GO:0005622	intracellular				
 GO:0005623	cell				
 GO:0005634	nucleus				
@@ -4006,7 +4041,7 @@ GO:0040011	locomotion
 GO:0040012	regulation of locomotion				
 GO:0040013	negative regulation of locomotion				
 GO:0040016	embryonic cleavage				
-GO:0040020	regulation of meiosis				
+GO:0040020	regulation of meiotic nuclear division				
 GO:0042044	fluid transport				
 GO:0042048	olfactory behavior				
 GO:0042060	wound healing				
@@ -4530,6 +4565,8 @@ GO:1903792	negative regulation of anion transport
 GO:1903827	regulation of cellular protein localization				
 GO:1903828	negative regulation of cellular protein localization				
 GO:1903941	negative regulation of respiratory gaseous exchange				
+GO:1904057	negative regulation of sensory perception of pain				
+GO:1904115	axon cytoplasm				
 GO:2000021	regulation of ion homeostasis				
 GO:2000026	regulation of multicellular organismal development				
 GO:2000027	regulation of organ morphogenesis				
@@ -5113,6 +5150,10 @@ PATO:0000415	uncoiled
 PATO:0000588	vestigial				
 PATO:0000608	closed				
 PATO:0000610	open				
+PATO:0000957	opacity				
+PATO:0000964	transparent				
+PATO:0000992	viscosity				
+PATO:0000998	viscous				
 PATO:0001018	physical quality				
 PATO:0001031	elasticity				
 PATO:0001154	elongated				
@@ -5136,6 +5177,7 @@ PATO:0001548	quality of a liquid
 PATO:0001579	contractility				
 PATO:0001591	curvature				
 PATO:0001598	protruding				
+PATO:0001665	superficial				
 PATO:0001690	contractile				
 PATO:0001735	liquid configuration				
 PATO:0001736	solid configuration				
@@ -5144,6 +5186,7 @@ PATO:0001794	coiling
 PATO:0001842	acidity				
 PATO:0001873	cylindrical				
 PATO:0001890	tripartite				
+PATO:0001910	folded				
 PATO:0001925	surface feature shape				
 PATO:0001987	saccular				
 PATO:0001992	cellularity				
@@ -5164,6 +5207,7 @@ PATO:0002254	flattened
 PATO:0002255	grooved				
 PATO:0002266	3-D shape				
 PATO:0002299	tubular				
+PATO:0002358	ridged				
 PATO:0002422	acinar				
 PATO:0002444	mineralized				
 PATO:0002462	collagenous				
@@ -5228,12 +5272,12 @@ UBERON:0000054	macula	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed st
 UBERON:0000055	vessel	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0000056	ureter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000057	urethra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0000058	duct	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0000058	duct	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0000059	large intestine	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
 UBERON:0000060	anatomical wall	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0000061	anatomical structure	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0000062	organ	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
-UBERON:0000063	organ segment	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:0000063	organ subunit	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0000064	organ part	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0000065	respiratory tract	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000066	fully formed stage				
@@ -5242,7 +5286,7 @@ UBERON:0000068	embryo stage
 UBERON:0000069	larval stage				
 UBERON:0000070	pupal stage				
 UBERON:0000071	death stage				
-UBERON:0000072	segment of respiratory tract	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0000072	proximo-distal subdivision of respiratory tract	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000073	regional part of nervous system	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0000074	renal glomerulus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000075	subdivision of skeletal system	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
@@ -5311,13 +5355,13 @@ UBERON:0000164	primitive urogenital sinus	HsapDv:0000024	CS17 (human)	HsapDv:000
 UBERON:0000165	mouth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000166	oral opening	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000167	oral cavity	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0000168	segment of colon	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
+UBERON:0000168	proximal-distal subdivision of colon	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
 UBERON:0000170	pair of lungs	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000171	respiration organ	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0000172	vomit	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0000173	amniotic fluid	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0000174	excreta	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:0000175	pleural effusion	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0000175	pleural effusion	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0000176	oronasal secretion	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0000177	pus	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0000178	blood	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -5353,7 +5397,7 @@ UBERON:0000316	cervical mucus	UBERON:0000106	zygote stage	UBERON:0000071	death s
 UBERON:0000317	colonic mucosa	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
 UBERON:0000319	cytotrophoblast	UBERON:0000111|HsapDv:0000007	organogenesis stage|CS03 (human)	UBERON:0000108	blastula stage
 UBERON:0000320	duodenal mucosa	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0000323	late embryo	HsapDv:0000007	CS03 (human)	UBERON:0007220	late embryonic stage
+UBERON:0000323	late embryo	UBERON:0007220|HsapDv:0000007	late embryonic stage|CS03 (human)	UBERON:0007220	late embryonic stage
 UBERON:0000325	gastric gland	HsapDv:0000020	Carnegie stage 13 (human)	HsapDv:0000016|HsapDv:0000019|HsapDv:0000021	CS09 (human)|Carnegie stage 12 (human)|CS14 (human)
 UBERON:0000326	pancreatic juice	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0000328	gut wall	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
@@ -5440,7 +5484,7 @@ UBERON:0000451	prefrontal cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	full
 UBERON:0000453	decidua basalis	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0000454	cerebral subcortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000456	bodily secretion	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:0000457	cavernous artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0000457	cavernous artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0000458	endocervix	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0000459	uterine wall	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0000460	major vestibular gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -5583,7 +5627,7 @@ UBERON:0001053	arthropod neurohemal organ	HsapDv:0000018	CS11 (human)	UBERON:000
 UBERON:0001062	anatomical entity				
 UBERON:0001063	flocculus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001064	ventral pancreatic duct	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
-UBERON:0001065	parotid duct	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0001065	parotid main excretory duct	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0001066	intervertebral disk	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001067	vertebral arch joint	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001068	skin of back	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -5604,10 +5648,10 @@ UBERON:0001082	epicardium of ventricle	HsapDv:0000024	CS17 (human)	UBERON:000006
 UBERON:0001083	myocardium of ventricle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001084	skin of head	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001085	skin of trunk	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001087	pleural fluid	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0001087	pleural fluid	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0001088	urine	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0001089	sweat	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:0001090	synovial fluid	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0001090	synovial fluid	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0001091	calcareous tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001092	vertebral bone 1	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001093	vertebral bone 2	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -5621,7 +5665,7 @@ UBERON:0001100	pectoralis minor	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:
 UBERON:0001101	external jugular vein	HsapDv:0000027	CS20 (human)	UBERON:0000066	fully formed stage
 UBERON:0001102	cartilage of main bronchus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001103	diaphragm	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0001104	anterior jugular vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001104	anterior jugular vein	HsapDv:0000027	CS20 (human)	UBERON:0000066	fully formed stage
 UBERON:0001105	clavicle bone	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0001106	cephalic vein	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0001107	sternohyoid muscle	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -5752,7 +5796,7 @@ UBERON:0001233	right adrenal gland	HsapDv:0000024	CS17 (human)	UBERON:0000066	fu
 UBERON:0001234	left adrenal gland	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001235	adrenal cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001236	adrenal medulla	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001237	paraaortic body	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
+UBERON:0001237	paraaortic body	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0001238	lamina propria of small intestine	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0001239	muscularis mucosae of large intestine	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
 UBERON:0001240	muscularis mucosae of intestine	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
@@ -5783,7 +5827,7 @@ UBERON:0001264	pancreas	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0001265	trabecula of spleen	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001266	splenic cord	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001267	femoral nerve	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001268	peritoneal fluid	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0001268	peritoneal fluid	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0001269	acetabular part of hip bone	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0001270	bony pelvis	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0001271	pelvic girdle region	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -5828,9 +5872,9 @@ UBERON:0001309	internal iliac artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	
 UBERON:0001310	umbilical artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0001311	inferior vesical artery	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0001312	superior vesical artery	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0001313	iliolumbar artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0001314	obturator artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0001315	superior gluteal artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0001313	iliolumbar artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001314	obturator artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001315	superior gluteal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001316	external iliac vein	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0001317	internal iliac vein	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0001318	inferior vesical vein	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -5865,12 +5909,12 @@ UBERON:0001347	white adipose tissue	UBERON:0000106	zygote stage	UBERON:0000071	d
 UBERON:0001348	brown adipose tissue	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0001349	vestibule				
 UBERON:0001350	coccyx	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0001351	lacrimal sac	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001351	lacrimal sac	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0001352	external acoustic meatus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001353	anal region	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0001354	inferior epigastric artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001355	deep femoral artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0001356	medial circumflex femoral artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0001355	deep femoral artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001356	medial circumflex femoral artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001357	inferior rectal artery	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 UBERON:0001358	perineal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001359	cerebrospinal fluid	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000071	death stage
@@ -6050,7 +6094,7 @@ UBERON:0001535	vertebral artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully
 UBERON:0001536	left common carotid artery plus branches	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001537	anterior tibial artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001538	posterior tibial artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001539	dorsalis pedis artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0001539	dorsalis pedis artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001540	peroneal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001541	medial plantar artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001542	inguinal lymph node	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -6060,7 +6104,7 @@ UBERON:0001545	anterior tibial vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	f
 UBERON:0001546	posterior tibial vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001547	small saphenous vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001548	lateral marginal vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001549	dorsal metatarsal vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001549	dorsal metatarsal vein	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0001550	medial marginal vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001551	vein of hindlimb zeugopod	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001552	kidney arcuate artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -6102,7 +6146,7 @@ UBERON:0001588	vertebral vein	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully f
 UBERON:0001589	internal thoracic vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001590	pericardiacophrenic vein	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0001591	thymic vein	HsapDv:0000027	CS20 (human)	UBERON:0000066	fully formed stage
-UBERON:0001592	bronchial vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001592	bronchial vein	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0001593	venous plexus	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0001594	azygos vein	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0001595	auricular muscle	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -6121,14 +6165,14 @@ UBERON:0001607	sphincter pupillae	HsapDv:0000024	CS17 (human)	UBERON:0000066	ful
 UBERON:0001608	dilatator pupillae	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001609	isthmus of thyroid gland	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001610	lingual artery	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0001611	sublingual artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0001611	sublingual artery	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0001612	facial artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001613	occipital artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0001613	occipital artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001614	superficial temporal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001615	transverse facial artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0001615	transverse facial artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001616	maxillary artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001617	mental artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001618	buccal artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0001618	buccal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001619	ophthalmic artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001620	central retinal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001621	coronary artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -6432,7 +6476,7 @@ UBERON:0001921	reuniens nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully
 UBERON:0001922	parafascicular nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001923	central medial nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001924	paracentral nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001925	ventral lateral nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001925	ventral lateral nucleus of thalamus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001926	lateral geniculate body	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001927	medial geniculate body	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001928	preoptic area	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -6483,7 +6527,7 @@ UBERON:0001972	submucosa of esophagus	HsapDv:0000024	CS17 (human)	UBERON:0000066
 UBERON:0001974	lamina propria of esophagus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001975	serosa of esophagus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0001976	epithelium of esophagus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0001977	serum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0001977	serum	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0001978	parenchyma of pancreas	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0001979	venule	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0001980	arteriole	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
@@ -6565,7 +6609,7 @@ UBERON:0002056	inferior suprarenal artery	HsapDv:0000026	CS19 (human)	UBERON:000
 UBERON:0002057	phrenic artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0002058	ciliary ganglion	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002059	submandibular ganglion	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0002060	femoral artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0002060	femoral artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002061	truncus arteriosus	HsapDv:0000024	CS17 (human)	HsapDv:0000018	CS11 (human)
 UBERON:0002062	endocardial cushion	HsapDv:0000024	CS17 (human)	HsapDv:0000020	Carnegie stage 13 (human)
 UBERON:0002063	sinus venosus	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000020	Carnegie stage 13 (human)
@@ -6600,7 +6644,7 @@ UBERON:0002091	appendicular skeleton	HsapDv:0000022	Carnegie stage 15 (human)	UB
 UBERON:0002092	brain dura mater	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002093	spinal dura mater	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002094	interventricular septum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0002095	mesentery	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000071	death stage
+UBERON:0002095	mesentery	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000071	death stage
 UBERON:0002097	skin of body	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002098	apex of heart	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002099	cardiac septum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -6750,8 +6794,8 @@ UBERON:0002245	cerebellar hemisphere	HsapDv:0000024	CS17 (human)	UBERON:0000066	
 UBERON:0002246	dorsal thoracic nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002247	uterine horn	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0002248	transverse pericardial sinus	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
-UBERON:0002249	median artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0002250	popliteal artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0002249	median artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0002250	popliteal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002251	iliocostalis muscle	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0002252	splenius	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002254	thyroglossal duct	HsapDv:0000024|UBERON:0000113	CS17 (human)|post-juvenile adult stage	UBERON:0000113	post-juvenile adult stage
@@ -6903,7 +6947,7 @@ UBERON:0002405	immune system	UBERON:0000111	organogenesis stage	UBERON:0000066	f
 UBERON:0002406	pericardial sac	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002407	pericardium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002408	parietal serous pericardium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0002409	pericardial fluid	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0002409	pericardial fluid	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0002410	autonomic nervous system	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0002411	clitoris	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0002412	vertebra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -7091,7 +7135,7 @@ UBERON:0002608	caudal part of ventral lateral nucleus	HsapDv:0000024	CS17 (human
 UBERON:0002609	spinothalamic tract of midbrain	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002610	cochlear nuclear complex	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0002612	transverse orbital sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0002613	globose nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0002613	cerebellum globose nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002614	medial part of ventral lateral nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002615	ventral tegmental decussation	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002616	regional part of brain	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -7112,7 +7156,7 @@ UBERON:0002632	medial part of medial mammillary nucleus	HsapDv:0000024	CS17 (hum
 UBERON:0002633	motor nucleus of trigeminal nerve	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002634	anterior nucleus of hypothalamus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002636	lateral pulvinar nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0002637	ventral anterior nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0002637	ventral anterior nucleus of thalamus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002638	medial pulvinar nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002639	midbrain reticular formation	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0002640	cuneocerebellar tract	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
@@ -7530,9 +7574,9 @@ UBERON:0003082	myotome	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0003083	trunk neural crest	HsapDv:0000018	CS11 (human)	HsapDv:0000016|HsapDv:0000021|HsapDv:0000020	CS09 (human)|CS14 (human)|Carnegie stage 13 (human)
 UBERON:0003084	heart primordium	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0003085	ventral aorta	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0003086	caudal artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0003086	caudal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003087	anterior cardinal vein	HsapDv:0000018	CS11 (human)	UBERON:0000068	embryo stage
-UBERON:0003088	caudal vein	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0003088	caudal vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003089	sclerotome	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0003091	thyroid primordium	HsapDv:0000024	CS17 (human)	HsapDv:0000019	Carnegie stage 12 (human)
 UBERON:0003092	ultimobranchial body	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -7621,7 +7665,6 @@ UBERON:0003268	tooth of lower jaw	HsapDv:0000025	Carnegie stage 18 (human)	UBERO
 UBERON:0003269	skeletal muscle tissue of eye	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003273	skeletal muscle tissue of tongue	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0003274	mesothelium of omental bursa	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
-UBERON:0003276	skeleton of embryo	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000068	embryo stage
 UBERON:0003277	skeleton of upper jaw	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0003278	skeleton of lower jaw	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0003279	endothelium of trachea	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -7664,9 +7707,9 @@ UBERON:0003319	mesenchyme of carpal region	HsapDv:0000024	CS17 (human)	UBERON:00
 UBERON:0003320	mesenchyme of hip	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0003321	mesenchyme of knee	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003322	mesenchyme of shoulder	HsapDv:0000026	CS19 (human)	UBERON:0000071	death stage
-UBERON:0003323	mesenchyme of upper jaw	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000071	death stage
+UBERON:0003323	mesenchyme of upper jaw	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0003324	mesenchyme of lower jaw	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000071	death stage
-UBERON:0003325	mesenchyme of pinna	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0003325	mesenchyme of pinna	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0003326	mesenchyme of mammary gland	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003327	mesenchyme of forearm	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003328	mesenchyme of footplate	HsapDv:0000024	CS17 (human)	HsapDv:0000020	Carnegie stage 13 (human)
@@ -7720,8 +7763,8 @@ UBERON:0003387	smooth muscle of trachea	HsapDv:0000024	CS17 (human)	UBERON:00000
 UBERON:0003388	mesothelium of pericardial cavity	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003389	mesothelium of diaphragm	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0003390	mesothelium of pleural cavity	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000071	death stage
-UBERON:0003393	mesentery of urinary system	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
-UBERON:0003394	mesentery of hindgut	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0003393	mesentery of urinary system	HsapDv:0000014|UBERON:0000111	CS08 (human)|organogenesis stage	UBERON:0000066	fully formed stage
+UBERON:0003394	mesentery of hindgut	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
 UBERON:0003395	mesentery of rectum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003396	mesentery of colon	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003397	mesentery of duodenum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -7738,14 +7781,14 @@ UBERON:0003412	pelvic appendage bud mesenchyme	HsapDv:0000024	CS17 (human)	HsapD
 UBERON:0003413	pectoral appendage bud mesenchyme	HsapDv:0000024	CS17 (human)	HsapDv:0000021|HsapDv:0000020	CS14 (human)|Carnegie stage 13 (human)
 UBERON:0003414	mesenchyme of mandible	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0003415	mesenchyme of nasal septum	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
-UBERON:0003416	mesenchyme of tongue	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0003417	mesenchyme of soft palate	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0003418	mesenchyme of submandibular gland	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0003419	mesenchyme of parotid	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0003420	mesenchyme of sublingual gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0003416	mesenchyme of tongue	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
+UBERON:0003417	mesenchyme of soft palate	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
+UBERON:0003418	mesenchyme of submandibular gland	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
+UBERON:0003419	mesenchyme of parotid	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
+UBERON:0003420	mesenchyme of sublingual gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0003421	mesenchyme of vomeronasal organ	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0003422	mesenchyme of umbilical cord	HsapDv:0000016	CS09 (human)	UBERON:0000068	embryo stage
-UBERON:0003424	mesenchyme of hard palate	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0003424	mesenchyme of hard palate	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0003425	renal lymph node	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0003426	dermis adipose tissue	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003427	abdominal fat pad	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
@@ -8112,8 +8155,8 @@ UBERON:0003908	right atrioventricular canal	HsapDv:0000024	CS17 (human)	UBERON:0
 UBERON:0003909	sinusoid	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0003910	splenic sinusoid	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0003911	choroid plexus epithelium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0003912	chitinous tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0003913	tooth-like structure	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0003912	chitinous tooth	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
+UBERON:0003913	tooth-like structure	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0003914	epithelial tube	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0003915	endothelial tube	HsapDv:0000035	CS06b (human)	UBERON:0000071	death stage
 UBERON:0003916	fat pad	UBERON:0000106	zygote stage	UBERON:0000071	death stage
@@ -8226,7 +8269,7 @@ UBERON:0004041	spleen primary B follicle	HsapDv:0000024	CS17 (human)	UBERON:0000
 UBERON:0004042	spleen secondary B follicle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0004043	semicircular canal ampulla	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0004044	anterior visceral endoderm	HsapDv:0000035	CS06b (human)	UBERON:0000068	embryo stage
-UBERON:0004045	tailgut	HsapDv:0000017	CS10 (human)	UBERON:0000068	embryo stage
+UBERON:0004045	tailgut	HsapDv:0000018	CS11 (human)	UBERON:0000068	embryo stage
 UBERON:0004046	anterior definitive endoderm	HsapDv:0000007	CS03 (human)	UBERON:0000109	gastrula stage
 UBERON:0004047	basal cistern	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0004048	pontine cistern	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -8251,8 +8294,6 @@ UBERON:0004067	lateral nasal prominence	HsapDv:0000024	CS17 (human)	HsapDv:00000
 UBERON:0004068	medial nasal prominence	HsapDv:0000024	CS17 (human)	HsapDv:0000024|HsapDv:0000025	CS17 (human)|Carnegie stage 18 (human)
 UBERON:0004069	accessory olfactory bulb	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0004070	cerebellum vermis lobule	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0004071	cerebellum emboliform nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0004072	cerebellum globose nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0004073	cerebellum interpositus nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0004074	cerebellum vermis lobule I	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0004075	cerebellum vermis lobule II	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -8474,7 +8515,7 @@ UBERON:0004340	allantois	HsapDv:0000024	CS17 (human)	HsapDv:0000017	CS10 (human)
 UBERON:0004341	primitive streak	UBERON:0000111|HsapDv:0000007	organogenesis stage|CS03 (human)	UBERON:0000068	embryo stage
 UBERON:0004344	cardinal vein	HsapDv:0000018	CS11 (human)	UBERON:0000068	embryo stage
 UBERON:0004345	trophectoderm	UBERON:0000111|HsapDv:0000007	organogenesis stage|CS03 (human)	UBERON:0000068	embryo stage
-UBERON:0004346	gubernaculum (male or female)	HsapDv:0000024	CS17 (human)	UBERON:0007220	late embryonic stage
+UBERON:0004346	gubernaculum (male or female)	HsapDv:0000024|UBERON:0007220	CS17 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
 UBERON:0004347	limb bud	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0004348	optic eminence	HsapDv:0000007	CS03 (human)	UBERON:0000068	embryo stage
 UBERON:0004353	female inguinal canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -8644,8 +8685,8 @@ UBERON:0004525	cardiac muscle tissue of trabecula carnea of right ventricle	Hsap
 UBERON:0004526	cardiac muscle tissue of trabecula carnea of left ventricle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0004527	alveolar process of maxilla	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0004528	alveolar ridge of mandible	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0004529	anatomical projection	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:0004530	bony projection	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0004529	anatomical projection	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:0004530	bony projection	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0004533	left testis	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0004534	right testis	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0004535	cardiovascular system	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
@@ -8902,7 +8943,7 @@ UBERON:0004849	respiratory system venous endothelium	HsapDv:0000016	CS09 (human)
 UBERON:0004850	lymph node endothelium	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0004851	aorta endothelium	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0004852	cardiovascular system endothelium	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0004854	gastrointestinal system mesentery	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0004854	gastrointestinal system mesentery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0004857	skeletal muscle connective tissue	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0004858	cellular cartilage	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
 UBERON:0004859	eye gland	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
@@ -9028,7 +9069,7 @@ UBERON:0005013	mucosa of male urethra	HsapDv:0000024	CS17 (human)	UBERON:0000066
 UBERON:0005014	mucosa of female urethra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005015	mucosa of prostatic urethra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005016	mucosa of intermediate urethra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0005017	mucosa of lacrimal sac	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0005017	mucosa of lacrimal sac	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0005018	mucosa of nasal septum	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0005019	mucosa of palate	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0005020	mucosa of tongue	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -9171,8 +9212,6 @@ UBERON:0005179	pelvic region element	HsapDv:0000024	CS17 (human)	UBERON:0000071	
 UBERON:0005181	thoracic segment organ	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0005184	hair medulla	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005185	renal medulla collecting duct	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0005186	outer renal medulla collecting duct	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0005187	inner renal medulla collecting duct	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005192	deferent duct artery	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0005193	ethmoidal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005194	thoracic vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -9230,7 +9269,6 @@ UBERON:0005259	lower leg mesenchyme	HsapDv:0000024	CS17 (human)	UBERON:0000066	f
 UBERON:0005261	atrium cardiac jelly	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005262	ventricle cardiac jelly	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005263	outflow tract cardiac jelly	HsapDv:0000024	CS17 (human)	HsapDv:0000020	Carnegie stage 13 (human)
-UBERON:0005267	renal cortex collecting duct	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005268	renal cortex artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005269	renal cortex vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005270	renal cortex interstitium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -9404,7 +9442,7 @@ UBERON:0005450	greater sac cavity	HsapDv:0000024	CS17 (human)	UBERON:0000071	dea
 UBERON:0005451	segment of manus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005452	hepatic cord	HsapDv:0000024	CS17 (human)	HsapDv:0000020	Carnegie stage 13 (human)
 UBERON:0005453	inferior mesenteric ganglion	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0005454	internal oblique	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0005454	abdominal internal oblique muscle	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0005455	interventricular groove	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005456	jugular foramen	HsapDv:0000027	CS20 (human)	UBERON:0000066	fully formed stage
 UBERON:0005457	left thymus lobe	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
@@ -9582,7 +9620,7 @@ UBERON:0005699	pedal digit 5 mesenchyme	HsapDv:0000024	CS17 (human)	UBERON:00000
 UBERON:0005700	upper jaw molar odontogenic papilla	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0005701	lower jaw molar odontogenic papilla	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0005702	optic eminence mesenchyme	HsapDv:0000035	CS06b (human)	UBERON:0000068	embryo stage
-UBERON:0005704	secondary palatal shelf mesenchyme	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0005704	secondary palatal shelf mesenchyme	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0005705	primary palate mesenchyme	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000023	Carnegie stage 16 (human)
 UBERON:0005707	upper jaw incisor odontogenic papilla	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0005708	lower jaw incisor odontogenic papilla	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
@@ -9607,7 +9645,7 @@ UBERON:0005740	tunica intima of artery	HsapDv:0000016	CS09 (human)	UBERON:000006
 UBERON:0005742	adventitia	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0005744	bone foramen	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0005745	optic canal	HsapDv:0000027	CS20 (human)	UBERON:0000066	fully formed stage
-UBERON:0005746	primary vitreous humour	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
+UBERON:0005746	primary vitreous	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0005749	glomerular tuft	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005750	glomerular parietal epithelium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005751	visceral layer of glomerular capsule	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -9626,14 +9664,14 @@ UBERON:0005796	duplex uterus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:000
 UBERON:0005797	bipartite uterus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0005798	bicornuate uterus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0005799	simplex uterus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0005800	segment of aorta	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0005800	section of aorta	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0005805	dorsal aorta	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005806	portal system	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0005807	rostral ventrolateral medulla	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0005808	bone tissue of long bone	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
 UBERON:0005809	cortex of manus bone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005810	cervical vertebra 1 anterior tubercle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0005813	tubercle	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0005813	tubercle	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0005814	arch of atlas	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005815	anterior tubercle of transverse process of cervical vertebra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005816	posterior tubercle of transverse process of cervical vertebra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -9744,7 +9782,7 @@ UBERON:0005990	aortic valve cusp	HsapDv:0000024	CS17 (human)	UBERON:0000066	full
 UBERON:0005991	aortic valve anulus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005992	pulmonary valve cusp	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005993	pulmonary valve anulus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0005994	chordae tendineae	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0005994	chorda tendineae	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0005995	mitral valve anulus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0005996	mitral valve cusp	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0005997	tricuspid valve anulus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -9882,7 +9920,7 @@ UBERON:0006205	pectineal ligament	HsapDv:0000025	Carnegie stage 18 (human)	UBERO
 UBERON:0006206	iridocorneal angle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0006207	aortico-pulmonary spiral septum	HsapDv:0000024	CS17 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0006208	auditory hillocks	HsapDv:0000024	CS17 (human)	HsapDv:0000024	CS17 (human)
-UBERON:0006209	basioccipital cartilage element	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0006209	basioccipital cartilage element	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0006210	body-wall mesenchyme	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0006211	buccopharyngeal membrane	HsapDv:0000024	CS17 (human)	HsapDv:0000018	CS11 (human)
 UBERON:0006212	bulbo-ventricular groove	HsapDv:0000024	CS17 (human)	HsapDv:0000018	CS11 (human)
@@ -9908,7 +9946,7 @@ UBERON:0006234	femur pre-cartilage condensation	HsapDv:0000024	CS17 (human)	Hsap
 UBERON:0006235	foregut-midgut junction	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0006236	tetrapod frontal bone primordium	HsapDv:0000026	CS19 (human)	UBERON:0000071	death stage
 UBERON:0006238	future brain	HsapDv:0000018	CS11 (human)	HsapDv:0000016	CS09 (human)
-UBERON:0006239	future central tendon	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0006239	future central tendon	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 UBERON:0006240	future forebrain	HsapDv:0000018	CS11 (human)	HsapDv:0000016|HsapDv:0000018	CS09 (human)|CS11 (human)
 UBERON:0006241	future spinal cord	HsapDv:0000018	CS11 (human)	HsapDv:0000019	Carnegie stage 12 (human)
 UBERON:0006242	gall bladder primordium	HsapDv:0000024	CS17 (human)	HsapDv:0000024|HsapDv:0000019	CS17 (human)|Carnegie stage 12 (human)
@@ -9971,7 +10009,6 @@ UBERON:0006304	future trigeminal ganglion	HsapDv:0000024	CS17 (human)	UBERON:000
 UBERON:0006305	tunica vasculosa lentis	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0006306	ulna cartilage element	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0006307	urogenital membrane	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
-UBERON:0006308	vagal X nerve trunk	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0006309	venous vitelline plexus	HsapDv:0000016	CS09 (human)	UBERON:0000068	embryo stage
 UBERON:0006310	vitelline venous plexus	HsapDv:0000016	CS09 (human)	HsapDv:0000017	CS10 (human)
 UBERON:0006311	chamber of eyeball	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -10000,7 +10037,7 @@ UBERON:0006341	outer renal medulla peritubular capillary	HsapDv:0000024	CS17 (hu
 UBERON:0006342	left subhepatic recess	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0006343	right subhepatic recess	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0006345	stapedial artery	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
-UBERON:0006347	communicating artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0006347	communicating artery				
 UBERON:0006349	epigastric artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0006351	principal vein of forelimb	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0006353	principal vein of hindlimb	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -10119,11 +10156,11 @@ UBERON:0006585	vestibular organ	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:
 UBERON:0006586	otolymph	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0006587	ligamentum venosum	HsapDv:0000024|UBERON:0000113	CS17 (human)|post-juvenile adult stage	UBERON:0000113	post-juvenile adult stage
 UBERON:0006588	round ligament of liver	HsapDv:0000024|UBERON:0000113	CS17 (human)|post-juvenile adult stage	UBERON:0000113	post-juvenile adult stage
-UBERON:0006589	round ligament of uterus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000071	death stage
+UBERON:0006589	round ligament of uterus	HsapDv:0000025|UBERON:0007220	Carnegie stage 18 (human)|late embryonic stage	UBERON:0000071	death stage
 UBERON:0006590	remnant of embryonic structure	UBERON:0000113	post-juvenile adult stage	UBERON:0000113	post-juvenile adult stage
 UBERON:0006591	transformed artery	HsapDv:0000016|UBERON:0000113	CS09 (human)|post-juvenile adult stage	UBERON:0000113	post-juvenile adult stage
 UBERON:0006592	transformed vein	HsapDv:0000016|UBERON:0000113	CS09 (human)|post-juvenile adult stage	UBERON:0000113	post-juvenile adult stage
-UBERON:0006594	gubernacular cord	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0007220	late embryonic stage
+UBERON:0006594	gubernacular cord	HsapDv:0000025|UBERON:0007220	Carnegie stage 18 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
 UBERON:0006595	presumptive endoderm	HsapDv:0000007	CS03 (human)	UBERON:0000108	blastula stage
 UBERON:0006596	presumptive blood	HsapDv:0000007	CS03 (human)	UBERON:0000068	embryo stage
 UBERON:0006598	presumptive structure	HsapDv:0000007	CS03 (human)	UBERON:0000068	embryo stage
@@ -10151,7 +10188,7 @@ UBERON:0006633	coracoid process of scapula	HsapDv:0000026	CS19 (human)	UBERON:00
 UBERON:0006634	lingual vein	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0006635	anterior abdominal wall	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0006636	lumbar artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0006637	coeliac trunk	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0006637	celiac trunk	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0006638	remnant of urachus	HsapDv:0000026|UBERON:0000113	CS19 (human)|post-juvenile adult stage	UBERON:0000113	post-juvenile adult stage
 UBERON:0006639	crus of penis	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0006640	crus of clitoris	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -10245,7 +10282,7 @@ UBERON:0006765	left anterior vena cava	HsapDv:0000026	CS19 (human)	UBERON:000006
 UBERON:0006766	right anterior vena cava	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0006767	head of femur	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0006768	epiphyseal line	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
-UBERON:0006770	apophysis	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0006770	apophysis	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0006771	long bone epiphyseal plate proliferative zone	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
 UBERON:0006772	long bone epiphyseal plate hypertrophic zone	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
 UBERON:0006773	long bone epiphyseal plate ossification zone	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
@@ -10394,8 +10431,8 @@ UBERON:0007099	hyoid neural crest	HsapDv:0000018	CS11 (human)	HsapDv:0000016|Hsa
 UBERON:0007100	primary circulatory organ	UBERON:0000111	organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0007105	vitelline duct	HsapDv:0000017	CS10 (human)	UBERON:0000071	death stage
 UBERON:0007106	chorionic villus	HsapDv:0000016	CS09 (human)	UBERON:0000068	embryo stage
-UBERON:0007108	vernix caseosa	HsapDv:0000024	CS17 (human)	UBERON:0007220	late embryonic stage
-UBERON:0007109	meconium	HsapDv:0000007	CS03 (human)	UBERON:0007220	late embryonic stage
+UBERON:0007108	vernix caseosa	HsapDv:0000024|UBERON:0007220	CS17 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
+UBERON:0007109	meconium	UBERON:0007220|HsapDv:0000007	late embryonic stage|CS03 (human)	UBERON:0007220	late embryonic stage
 UBERON:0007111	Douglas' pouch	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0007113	venom	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0007115	deciduous tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -10403,7 +10440,7 @@ UBERON:0007116	primary dentition	HsapDv:0000024	CS17 (human)	UBERON:0000066	full
 UBERON:0007118	umbilicus	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0007119	neck of femur	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0007120	premolar tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0007121	dermatome segment of skin	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0007121	skin nerve field	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0007122	pharyngeal pouch 1	HsapDv:0000024	CS17 (human)	HsapDv:0000024|HsapDv:0000016|HsapDv:0000023	CS17 (human)|CS09 (human)|Carnegie stage 16 (human)
 UBERON:0007123	pharyngeal pouch 2	HsapDv:0000024	CS17 (human)	HsapDv:0000024|HsapDv:0000016|HsapDv:0000023	CS17 (human)|CS09 (human)|Carnegie stage 16 (human)
 UBERON:0007124	pharyngeal pouch 3	HsapDv:0000024	CS17 (human)	HsapDv:0000024|HsapDv:0000016|HsapDv:0000022	CS17 (human)|CS09 (human)|Carnegie stage 15 (human)
@@ -10419,7 +10456,7 @@ UBERON:0007140	parietal mesothelium	HsapDv:0000035|UBERON:0000111	CS06b (human)|
 UBERON:0007141	visceral mesothelium	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000071	death stage
 UBERON:0007142	left internal carotid artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0007143	right internal carotid artery	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0007144	tail of embryo	HsapDv:0000007	CS03 (human)	UBERON:0000068	embryo stage
+UBERON:0007144	embryonic post-anal tail	HsapDv:0000018	CS11 (human)	UBERON:0000068	embryo stage
 UBERON:0007145	dome of diaphragm	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0007146	posterior spinal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0007147	lumen of midgut	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
@@ -10716,9 +10753,9 @@ UBERON:0007775	secondary tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully 
 UBERON:0007776	unerupted tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0007777	umbilical vein endothelium	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0007778	umbilical artery endothelium	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0007779	transduate	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0007779	transduate	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0007780	exudate	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:0007794	serous fluid	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0007794	serous fluid	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0007795	ascitic fluid	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0007798	vascular system	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0007799	mixed dentition	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -10970,11 +11007,11 @@ UBERON:0008839	palmar pad	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully forme
 UBERON:0008840	plantar pad	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0008841	suspensory ligament	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0008842	suspensory ligament of testis	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
-UBERON:0008843	gubernaculum testis	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0007220	late embryonic stage
-UBERON:0008844	gubernaculum (female)	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0007220	late embryonic stage
+UBERON:0008843	gubernaculum testis	HsapDv:0000025|UBERON:0007220	Carnegie stage 18 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
+UBERON:0008844	gubernaculum (female)	HsapDv:0000025|UBERON:0007220	Carnegie stage 18 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
 UBERON:0008845	nonskeletal ligament	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0008846	skeletal ligament	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
-UBERON:0008847	ovarian ligament	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0008847	ovarian ligament	HsapDv:0000025|UBERON:0007220	Carnegie stage 18 (human)|late embryonic stage	UBERON:0000066	fully formed stage
 UBERON:0008848	cranial suspensory ligament	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0008851	ectoplacental cavity	UBERON:0000111|HsapDv:0000007	organogenesis stage|CS03 (human)	UBERON:0000108	blastula stage
 UBERON:0008852	visceral yolk sac	HsapDv:0000016	CS09 (human)	UBERON:0000068	embryo stage
@@ -11088,8 +11125,8 @@ UBERON:0009038	sulcus ampullaris	HsapDv:0000024	CS17 (human)	UBERON:0000066	full
 UBERON:0009039	lymph node germinal center	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0009040	deep circumflex iliac artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0009041	superficial circumflex iliac artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0009042	prostatic venous plexus	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0009044	pudendal venous plexus	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0009042	prostatic venous plexus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0009044	pudendal venous plexus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0009046	inferior external pudendal vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0009047	superior external pudendal vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0009048	deep external pudendal vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -11134,7 +11171,7 @@ UBERON:0009145	pharyngeal region of foregut	HsapDv:0000024	CS17 (human)	UBERON:0
 UBERON:0009149	foramen primum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0009191	sphenoid bone pre-cartilage condensation	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 UBERON:0009192	basisphenoid pre-cartilage condensation	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
-UBERON:0009193	sphenoid cartilage element	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0009193	sphenoid cartilage element	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0009194	basisphenoid cartilage condenstion	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0009195	anal membrane	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 UBERON:0009196	indifferent external genitalia	HsapDv:0000023	Carnegie stage 16 (human)	UBERON:0000068	embryo stage
@@ -11177,10 +11214,10 @@ UBERON:0009499	parietal of mesothelium of pericardio-peritoneal canal	HsapDv:000
 UBERON:0009500	associated mesenchyme of otocyst	HsapDv:0000024	CS17 (human)	HsapDv:0000021|HsapDv:0000020	CS14 (human)|Carnegie stage 13 (human)
 UBERON:0009501	mesenchyme of fronto-nasal process	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 UBERON:0009502	ventral mesentery of mesentery of foregut-midgut junction	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
-UBERON:0009503	associated mesenchyme of hindgut	HsapDv:0000018	CS11 (human)	HsapDv:0000018	CS11 (human)
-UBERON:0009504	associated mesenchyme of main bronchus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0009505	associated mesenchyme of trachea	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0009506	associated mesenchyme of middle ear	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0009503	mesenchyme of hindgut	HsapDv:0000018	CS11 (human)	HsapDv:0000018	CS11 (human)
+UBERON:0009504	mesenchyme of main bronchus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0009505	mesenchyme of trachea	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0009506	mesenchyme of middle ear	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0009521	anal membrane endodermal component	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0009522	lateral lingual swelling epithelium	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 UBERON:0009523	mesenchyme of handplate	HsapDv:0000024	CS17 (human)	HsapDv:0000020	Carnegie stage 13 (human)
@@ -11378,7 +11415,7 @@ UBERON:0009887	interlobar vein	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully 
 UBERON:0009888	Koller's sickle	HsapDv:0000007	CS03 (human)	UBERON:0000068	embryo stage
 UBERON:0009889	secondary heart field	HsapDv:0000016	CS09 (human)	HsapDv:0000020	Carnegie stage 13 (human)
 UBERON:0009890	anterior intestinal portal	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0009891	facial mesenchyme	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
+UBERON:0009891	facial mesenchyme	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0009897	right auditory cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0009898	left auditory cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0009899	pole of cerebral hemisphere	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -11489,7 +11526,7 @@ UBERON:0010077	cuboidal epithelium	UBERON:0000106	zygote stage	UBERON:0000071	de
 UBERON:0010078	optic choroid vascular plexus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010081	future common hepatic duct	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010083	future dermis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0010084	future diaphragm	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0010084	future diaphragm	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0010090	future falx cerebri	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0010091	future hindbrain meninges	HsapDv:0000024	CS17 (human)	HsapDv:0000021	CS14 (human)
 UBERON:0010092	future metencephalon	HsapDv:0000024	CS17 (human)	HsapDv:0000022	Carnegie stage 15 (human)
@@ -11598,7 +11635,7 @@ UBERON:0010269	filum terminale internum	HsapDv:0000024	CS17 (human)	UBERON:00000
 UBERON:0010270	filum terminale externum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010272	hyoid apparatus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010273	zone of hyoid bone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0010276	vertebral column opening	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0010276	space in vertebral column	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010277	mesocardium	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0010279	pericardial sinus	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0010283	oblique pericardial sinus	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
@@ -11840,7 +11877,7 @@ UBERON:0010748	lymph node follicle	HsapDv:0000020	Carnegie stage 13 (human)	UBER
 UBERON:0010749	middle pharyngeal constrictor	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010750	prefrontal bone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010751	squamous part of temporal bone primordium	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0010752	exoccipital cartilage element	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0010752	exoccipital cartilage element	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
 UBERON:0010753	lymph node secondary follicle	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0010754	germinal center	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0010755	secondary follicle corona	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
@@ -11865,7 +11902,7 @@ UBERON:0010858	inter limb-segment region	HsapDv:0000024	CS17 (human)	UBERON:0000
 UBERON:0010879	tusk	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010880	gular fold	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010881	limb cartilage element	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0010882	limb bone pre-cartilage condensation	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
+UBERON:0010882	limb bone pre-cartilage condensation	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010883	forelimb cartilage element	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010884	forelimb bone pre-cartilage condensation	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0010885	hindlimb cartilage element	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -11876,7 +11913,7 @@ UBERON:0010890	pelvic complex muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	
 UBERON:0010891	pectoral complex muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010892	mesethmoid element	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010893	median external naris	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0010894	keratinous tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0010894	keratinous tooth	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0010895	sequential hermaphroditic organism	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0010899	synchronous hermaphroditic organism	HsapDv:0000023	Carnegie stage 16 (human)	UBERON:0000071	death stage
 UBERON:0010905	clavicle bone primordium	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -11890,12 +11927,12 @@ UBERON:0010925	median thyrohyoid ligament	UBERON:0000111	organogenesis stage	UBE
 UBERON:0010926	lateral thyrohyoid ligament	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0010927	thyroepiglotticus muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010928	cricopharyngeus muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0010929	stapedius pre-muscle condensation	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0010929	stapedius pre-muscle condensation	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 UBERON:0010930	interhyoideus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0010931	intermandibularis	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0010932	crico-arytenoid muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010933	orbicularis oris muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0010935	tensor tympani pre-muscle condensation	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0010935	tensor tympani pre-muscle condensation	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0010936	thyropharyngeus muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010937	salpingopharyngeus muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0010938	muscle belly	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
@@ -11930,7 +11967,7 @@ UBERON:0010983	levator scapulae pre-muscle mass	HsapDv:0000024	CS17 (human)	Hsap
 UBERON:0010984	pectoral pre-muscle mass	HsapDv:0000024	CS17 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0010985	rhomboid pre-muscle mass	HsapDv:0000024	CS17 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0010986	serratus ventralis pre-muscle mass	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
-UBERON:0010987	sterno-mastoid pre-muscle mass	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0010987	sterno-mastoid pre-muscle mass	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0010988	teres major pre-muscle mass	HsapDv:0000024	CS17 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0010989	transverospinalis pre-muscle mass	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 UBERON:0010990	transversospinales muscle	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
@@ -12033,7 +12070,7 @@ UBERON:0011179	transverse nucleus of stria terminalis	HsapDv:0000027	CS20 (human
 UBERON:0011183	corpus spongiosum of penis	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011184	epithelium of crypt of Lieberkuhn	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0011185	gastrointestinal sphincter	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0011186	Krause's gland	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0011186	Krause's gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011187	ventral tubercle of humerus	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0011188	lesser tubercle of humerus	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0011189	lamina propria of large intestine	HsapDv:0000017	CS10 (human)	UBERON:0000066	fully formed stage
@@ -12125,7 +12162,7 @@ UBERON:0011322	mylohyoid nerve	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0
 UBERON:0011325	pharyngeal nerve plexus	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0011326	superior laryngeal nerve	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011327	deep temporal nerve	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0011332	extrinsic tongue pre-muscle mass	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0011332	extrinsic tongue pre-muscle mass	HsapDv:0000026	CS19 (human)	UBERON:0000068	embryo stage
 UBERON:0011342	surface of mandible	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011343	medial surface of mandible	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011344	lateral surface of mandible	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -12240,8 +12277,8 @@ UBERON:0011639	frontoparietal bone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fu
 UBERON:0011640	palatoglossal arch	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0011641	odontogenic mesenchyme of molar	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
 UBERON:0011642	oral epithelium from ectoderm	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0011643	puboischiofemoralis internus muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0011644	puboischiofemoralis externus muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0011643	puboischiofemoralis internus muscle	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
+UBERON:0011644	puboischiofemoralis externus muscle	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0011645	iliofemoralis muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011647	depressor mandibulae muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011648	jaw muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -12249,7 +12286,7 @@ UBERON:0011649	levator operculi	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:
 UBERON:0011650	epihyoidean	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011651	ventral head of rib	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011652	dorsal head of rib	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0011653	diapophysis of rib	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0011653	diapophysis of neural arch	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011655	interclavicle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011675	perichordal ring	HsapDv:0000024	CS17 (human)	HsapDv:0000022	Carnegie stage 15 (human)
 UBERON:0011676	subdivision of organism along main body axis	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
@@ -12274,15 +12311,15 @@ UBERON:0011738	quadrate lobe hepatic sinusoids	HsapDv:0000025	Carnegie stage 18 
 UBERON:0011741	cardiac valve leaflet	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011742	aortic valve leaflet	HsapDv:0000027	CS20 (human)	UBERON:0000066	fully formed stage
 UBERON:0011745	pulmonary valve leaflets	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0011754	genital swelling	HsapDv:0000023	Carnegie stage 16 (human)	UBERON:0000066	fully formed stage
-UBERON:0011755	female labial swelling	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0011756	male genital swelling	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0011754	genital swelling	HsapDv:0000023	Carnegie stage 16 (human)	HsapDv:0000024	CS17 (human)
+UBERON:0011755	female labial swelling	HsapDv:0000026	CS19 (human)	HsapDv:0000024	CS17 (human)
+UBERON:0011756	male genital swelling	HsapDv:0000026	CS19 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0011757	differentiated genital tubercle	HsapDv:0000023	Carnegie stage 16 (human)	UBERON:0000066	fully formed stage
-UBERON:0011765	jugular lymph sac	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0011765	jugular lymph sac	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000068	embryo stage
 UBERON:0011766	vagus X nerve left recurrent laryngeal branch	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011767	vagus X nerve right recurrent laryngeal branch	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011768	pineal gland stalk	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0011769	cartilaginous projection	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0011769	cartilaginous projection	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0011770	mentomeckelian	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011772	lower jaw opening	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011773	upper jaw opening	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -12337,7 +12374,7 @@ UBERON:0011877	margin of tongue	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:
 UBERON:0011878	muscle layer of esophagus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011879	mesorchium	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011892	anterior uvea	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0011893	endoneurial fluid	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0011893	endoneurial fluid	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011894	lumen of vagina	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011895	endomysium	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0011896	smooth muscle endomysium	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
@@ -12353,7 +12390,6 @@ UBERON:0011907	gastrocnemius medialis	HsapDv:0000025	Carnegie stage 18 (human)	U
 UBERON:0011908	gastrocnemius lateralis	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011909	gastrocnemius internus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0011910	gastrocnemius externus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0011914	pubioischiotibialis muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011915	cerebellar glomerulus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011917	thalamic glomerulus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0011918	line of Schwalbe	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -12481,7 +12517,7 @@ UBERON:0012150	skeleton of digitopodium	HsapDv:0000024	CS17 (human)	UBERON:00000
 UBERON:0012151	skeleton of manual digitopodium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0012152	skeleton of pedal digitopodium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0012167	buccal fat pad	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
-UBERON:0012168	umbilical cord blood	HsapDv:0000024	CS17 (human)	UBERON:0007220	late embryonic stage
+UBERON:0012168	umbilical cord blood	HsapDv:0000024|UBERON:0007220	CS17 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
 UBERON:0012170	core of nucleus accumbens	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0012171	shell of nucleus accumbens	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0012172	stomach primordium	HsapDv:0000016	CS09 (human)	HsapDv:0000016	CS09 (human)
@@ -12528,7 +12564,7 @@ UBERON:0012274	columnar epithelium	UBERON:0000106	zygote stage	UBERON:0000071	de
 UBERON:0012275	meso-epithelium	HsapDv:0000035	CS06b (human)	UBERON:0000071	death stage
 UBERON:0012276	endometrium glandular epithelium	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0012278	gland of nasal mucosa	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0012279	paraganglion	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
+UBERON:0012279	chromaffin paraganglion	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0012281	perianal sebaceous gland	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0012282	mammary fat pad	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0012283	femoral fat pad	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -12572,12 +12608,12 @@ UBERON:0012320	cervical artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully 
 UBERON:0012321	deep cervical artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0012322	ascending cervical artery	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0012324	transverse cervical artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0012326	gubernacular bulb	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0007220	late embryonic stage
+UBERON:0012326	gubernacular bulb	HsapDv:0000025|UBERON:0007220	Carnegie stage 18 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
 UBERON:0012327	pearly penile papule	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0012329	keratinized stratified squamous epithelium	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0012330	nasal-associated lymphoid tissue	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0012331	mesosalpinx	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000071	death stage
-UBERON:0012332	broad ligament of uterus	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000071	death stage
+UBERON:0012331	mesosalpinx	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000071	death stage
+UBERON:0012332	broad ligament of uterus	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000071	death stage
 UBERON:0012333	ovarian bursa	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0012336	perianal skin	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0012337	cauda equina	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
@@ -12630,7 +12666,6 @@ UBERON:0012442	epiploic foramen	HsapDv:0000024	CS17 (human)	UBERON:0000071	death
 UBERON:0012443	row of scales	HsapDv:0000016	CS09 (human)		
 UBERON:0012444	gastropege	HsapDv:0000016	CS09 (human)		
 UBERON:0012447	podotheca	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0012448	corpuscles of herbst	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0012449	mechanoreceptor	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0012450	Meissner's corpuscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0012451	sensory receptor	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
@@ -12748,7 +12783,7 @@ UBERON:0013212	anal sac gland secretion	UBERON:0000106	zygote stage	UBERON:00000
 UBERON:0013216	udder	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0013217	zygomatic plate	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0013218	rete mirabile	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
-UBERON:0013221	caudofemoralis	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
+UBERON:0013221	caudofemoralis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0013222	otic notch	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
 UBERON:0013223	alveolar gland	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0013224	Ciaccio's gland	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
@@ -12843,7 +12878,7 @@ UBERON:0013508	thoracic vertebra pre-cartilage condensation	HsapDv:0000024	CS17 
 UBERON:0013509	lumbar vertebra cartilage element	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0013510	lumbar vertebra pre-cartilage condensation	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0013514	space surrounding organism				
-UBERON:0013515	subdivision of uterine tube	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0013515	subdivision of oviduct	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0013522	subdivision of tube	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0013525	stomach lumen	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0013526	otocyst lumen	HsapDv:0000024	CS17 (human)	HsapDv:0000021	CS14 (human)
@@ -12962,7 +12997,7 @@ UBERON:0013702	body proper	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stag
 UBERON:0013703	integumentary projection	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0013704	notochordal canal	HsapDv:0000013	CS07 (human)	HsapDv:0000013	CS07 (human)
 UBERON:0013705	fascia of Scarpa	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
-UBERON:0013706	bone spine	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0013706	bone spine	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0013707	iliac spine	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0013708	anterior superior iliac spine	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0013709	anterior inferior iliac spine	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
@@ -12977,7 +13012,7 @@ UBERON:0013720	dartos muscle of labia majora	HsapDv:0000026	CS19 (human)	UBERON:
 UBERON:0013721	deep inguinal ring	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0013725	anterior talofibular ligament	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0013726	posterior talofibular ligament	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0013727	notochordal fluid	HsapDv:0000018	CS11 (human)	HsapDv:0000022	Carnegie stage 15 (human)
+UBERON:0013727	notochordal fluid	HsapDv:0000024	CS17 (human)	HsapDv:0000022	Carnegie stage 15 (human)
 UBERON:0013732	vestibule of nasal cavity	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
 UBERON:0013733	caudal linear nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0013734	rostral linear nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -13133,11 +13168,11 @@ UBERON:0014537	periamygdaloid cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	
 UBERON:0014538	subdivision of spinal cord central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0014539	precommissural fornix of forebrain	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0014540	white matter lamina of cerebellum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0014541	thoracic spinal cord central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0014542	cervical spinal cord central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0014543	lumbar spinal cord central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0014541	thoracic division of spinal cord central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0014542	cervical division of cord spinal central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0014543	lumbar division of spinal cord central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0014544	frontomarginal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0014547	sacral spinal cord central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0014547	sacral division of spinal cord central canal	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0014548	pyramidal layer of CA1	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0014549	pyramidal layer of CA2	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0014550	pyramidal layer of CA3	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -13250,11 +13285,11 @@ UBERON:0014703	anal membrane ectodermal component	HsapDv:0000024	CS17 (human)	Hs
 UBERON:0014704	pleuroperitoneal canal lumen	HsapDv:0000022	Carnegie stage 15 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0014705	median lingual swelling epithelium	HsapDv:0000024	CS17 (human)	HsapDv:0000025	Carnegie stage 18 (human)
 UBERON:0014706	primitive renal collecting duct system	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
-UBERON:0014716	interlobular duct	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0014716	interlobular duct	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0014717	mucous acinus	HsapDv:0000019	Carnegie stage 12 (human)	UBERON:0000066	fully formed stage
 UBERON:0014719	intralobular duct	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
-UBERON:0014720	interlobar duct	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:0014725	intercalated duct	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0014720	interlobar duct	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:0014725	intercalated duct	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0014726	intercalated duct of pancreas	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0014727	intercalated duct of salivary gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0014729	striated duct of salivary gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
@@ -13309,18 +13344,16 @@ UBERON:0014797	hypobranchial group muscle	HsapDv:0000024	CS17 (human)	UBERON:000
 UBERON:0014798	clavotrapezius muscle	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0014799	acromiotrapezius muscle	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0014800	spinotrapezius muscle	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
-UBERON:0014801	nuchal line	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0014802	highest nuchal line	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0014803	superior nuchal line	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0014804	median nuchal line	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0014805	inferior nuchal line	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0014801	nuchal line attachment site	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0014802	highest nuchal line attachment site	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0014803	superior nuchal line attachment site	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0014804	median nuchal line attachment site	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0014805	inferior nuchal line attachment site	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0014835	serratus muscle	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0014836	levator arcuum muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0014837	pectoantebrachialis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0014838	xiphihumeralis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0014842	pubioischiofemoralis muscle	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
-UBERON:0014843	pubioischiofemoralis internus muscle	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
-UBERON:0014844	pubioischiofemoralis externus muscle	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
+UBERON:0014842	puboischiofemoralis muscle	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0014847	vastus intermedius	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0014848	tendon of quadriceps femoris	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0014849	hemotrichorial placental membrane	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000068	embryo stage
@@ -13503,7 +13536,7 @@ UBERON:0015137	tertiary lactiferous duct	HsapDv:0000024	CS17 (human)	UBERON:0000
 UBERON:0015138	quarternary lactiferous duct	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0015139	infundibulum of gallbladder	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0015142	falciform fat	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
-UBERON:0015143	mesenteric fat pad	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000071	death stage
+UBERON:0015143	mesenteric fat pad	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000071	death stage
 UBERON:0015144	autopod hair	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0015145	pes hair	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0015146	manus hair	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -13724,7 +13757,7 @@ UBERON:0016466	antihelix	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066
 UBERON:0016467	antitragus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0016475	skin of forehead	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0016476	primary incisor tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0016477	zygomatic process of maxilla	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0016477	zygomatic process of maxilla	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0016478	liver stroma	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0016479	capsule of liver	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0016480	interlobular stroma of liver	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14027,7 +14060,7 @@ UBERON:0018272	apex of paracone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully
 UBERON:0018273	caniniform region	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0018274	postcingulum of deciduous premolar 5	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0018275	posthypocrista of deciduous premolar 5	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0018276	egg tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0018276	egg tooth	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0018277	calcareous egg tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0018278	epidermal egg tooth	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0018279	hypoconid	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14057,7 +14090,7 @@ UBERON:0018303	adrenal tissue	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully f
 UBERON:0018304	post-axial region	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0018305	bicipital surface	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0018306	bulge	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0018307	keel	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0018307	keel	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0018308	caudal melanophore spot	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0018309	central figure of scute	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0018310	cephalic dermal scale	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14231,8 +14264,8 @@ UBERON:0019198	dorsal nerve of clitoris	HsapDv:0000025	Carnegie stage 18 (human)
 UBERON:0019199	lateral side of chest	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0019200	skin of anterior chest	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0019201	gemellus muscle	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0019202	gemellus inferior muscle	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0019203	gemellus superior muscle	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0019202	inferior gemellus muscle	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0019203	superior gemellus muscle	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0019204	skin epithelium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0019206	tongue papilla epithelium	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0019207	chorioretinal region	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14270,7 +14303,6 @@ UBERON:0019275	uncinate fasciculus of the forebrain	HsapDv:0000024	CS17 (human)	
 UBERON:0019278	inferior rostral gyrus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0019279	superior rostral gyrus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0019280	rostral gyrus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0019281	interpositus nucleus of cerebellum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0019283	lateral longitudinal stria	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0019284	rhombomere 9	HsapDv:0000018	CS11 (human)	HsapDv:0000016|HsapDv:0000019|HsapDv:0000020	CS09 (human)|Carnegie stage 12 (human)|Carnegie stage 13 (human)
 UBERON:0019285	rhombomere 10	HsapDv:0000018	CS11 (human)	HsapDv:0000016|HsapDv:0000019|HsapDv:0000020	CS09 (human)|Carnegie stage 12 (human)|Carnegie stage 13 (human)
@@ -14344,6 +14376,7 @@ UBERON:0022288	surface of eyeball	HsapDv:0000024	CS17 (human)	UBERON:0000066	ful
 UBERON:0022292	splenic arteriole	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022293	reproductive system fluid/secretion	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0022294	morphological boundary				
+UBERON:0022295	integumental surface				
 UBERON:0022296	inferior palpebral branch of infra-orbital nerve	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022297	palpebral branch of infra-orbital nerve	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022298	lower eyelid nerve	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
@@ -14407,44 +14440,33 @@ UBERON:0022438	rostral anterior cingulate cortex	HsapDv:0000024	CS17 (human)	UBE
 UBERON:0022453	olfactory entorhinal cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022469	primary olfactory cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022534	pericalcarine cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0022569	regional part of a lobe of the cerebellum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022649	habenulo-interpeduncular tract of diencephalon	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0022654	regional part of ear	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022695	orbital gyri complex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022716	lateral orbital frontal cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022730	transverse frontopolar gyri complex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0022740	superficial feature part of pons	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0022756	regional part of sacral spinal cord	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022776	composite part spanning multiple base regional parts of brain	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022783	paraventricular nucleus of the hypothalamus magnocellular division - posterior magnocellular part medial zone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022791	paraventricular nucleus of the hypothalamus magnocellular division - posterior magnocellular part lateral zone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0022941	dorsal nerve root of sacral spinal cord	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0022943	reticulospinal tract	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
-UBERON:0022976	regional part of cervical spinal cord	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023074	regional part of lumbar spinal cord	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023094	posterodorsal nucleus of medial geniculate body	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023255	sub-lobar region	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023378	medullary anterior horn	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0023390	medial subnucleus of solitary tract	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
-UBERON:0023399	regional part of spinal cord dorsal horn	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023401	regional part of spinal cord gray commissure	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023404	regional part of amygdala	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023415	lateral amygdaloid nucleus, dorsolateral part	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023416	lateral amygdaloid nucleus, ventrolateral part	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023417	lateral amygdaloid nucleus, ventromedial part	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023443	superficial feature part of forebrain	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023462	superficial feature part of occipital lobe	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023536	regional part of tongue	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0023541	conical papilla	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0023564	cytoarchitectural part of dentate gyrus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023623	ventral nerve root of sacral spinal cord	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0023740	habenulo-interpeduncular tract of midbrain	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023752	intermediate part of hypophysis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023787	subicular complex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023812	regional part of thoracic spinal cord	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023836	gross anatomical parts of the cerebellum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023852	temporoparietal junction	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023855	commissural nucleus of the solitary tract	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0023855	commissural nucleus of the solitary tract	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0023859	primary somatosensory cortex lamina VI	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023861	planum polare	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023862	hippocampal formation of GP94	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14458,17 +14480,13 @@ UBERON:0023901	piriform cortex layer 1b	HsapDv:0000024	CS17 (human)	UBERON:00000
 UBERON:0023920	basal ganglia of rodent	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023927	subbrachial nucleus of mouse of Franklin and Paxinos 2008	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023928	postrhinal cortex of rodent of Burwell et al 1995	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023932	sommer's sector	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0023932	Sommer's sector	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023934	olfactory bulb main glomerular layer	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023935	telencephalon of primate	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023936	perirhinal cortex of Burwell et al 1995	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023938	telencephalon of rodent	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023939	brain of rodent	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023942	olfactory bulb main of rodent	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023943	molecular system	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0023958	bed nuclei of the stria terminalis oval nucleus	HsapDv:0000027	CS20 (human)	UBERON:0000066	fully formed stage
-UBERON:0023983	central cervical spinocerebellar tract	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0023984	rostral spinocerebellar tract	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0023983	central cervical spinocerebellar tract	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
+UBERON:0023984	rostral spinocerebellar tract	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0023998	hemispheric Lobule II	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0023999	hemispheric Lobule III	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024000	hemispheric Lobule IV	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14481,35 +14499,25 @@ UBERON:0024045	white matter of the cerebellar cortex	HsapDv:0000024	CS17 (human)
 UBERON:0024046	superficial feature part of the cerebellum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024078	principal anterior division of supraoptic nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024079	tuberal supraoptic nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0024090	chemoarchitectural part	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0024090	chemoarchitectural part of brain	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024110	basis pontis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024151	tegmentum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0024177	regional part orbital frontal cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024183	inferior transverse frontopolar gyrus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024193	medial transverse frontopolar gyrus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024201	superior transverse frontopolar gyrus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024382	ventral nerve root of lumbar spinal cord	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0024449	hemispheric parts of the cerebellar cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0024621	regional part of sacral spinal cord white matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0024762	regional part of lumbar spinal cord white matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024900	left sub-lobar region	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024901	right sub-lobar region	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0024904	regional part of retina	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024907	hemisphere parts of cerebral cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0024914	circuit part of central nervous system	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0024940	ganglion part of peripheral nervous system	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
-UBERON:0024946	regional part of cochlear canal	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0024952	duct part of cochlear canal	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0024952	duct part of cochlear canal	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0025096	superior calcarine sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0025102	inferior occipital sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0025103	inferior calcarine sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0025104	ectocalcarine sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0025116	superficial feature part of parietal cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0025182	regional part of gustatory epithelium	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0025236	regional part of cervical spinal cord white matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0025261	thalamic Fiber Tracts	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0025444	regional part of cerebellar white matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0025473	regional part of thoracic spinal cord gray matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0025261	thalamic fiber tract	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0025525	motor system	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0025533	proprioceptive system	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0025534	sensorimotor	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
@@ -14521,9 +14529,8 @@ UBERON:0025591	gABAergic system	UBERON:0000111	organogenesis stage	UBERON:000007
 UBERON:0025592	glutamatergic system	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0025593	serotonergic system	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0025595	cholinergic system	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
-UBERON:0025619	part of neuraxis	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0025677	paravermis parts of the cerebellar cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0025736	chemoarchitectural part of neostriatum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0025736	chemoarchitectural part of striatum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0025763	rostral sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0025768	posterior middle temporal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0025772	spur of arcuate sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14533,7 +14540,6 @@ UBERON:0025903	principal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully
 UBERON:0026006	dorsal nerve root of lumbar spinal cord	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0026137	annectant gyrus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026246	sacral spinal cord white matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0026271	regional part of cervical spinal cord gray matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026293	thoracic spinal cord gray commissure	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026382	inferior ramus of arcuate sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026384	lateral orbital sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14542,25 +14548,23 @@ UBERON:0026391	medial orbital sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	
 UBERON:0026541	dorsomedial subnucleus of solitary tract	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0026546	principal neuronal circuit	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
 UBERON:0026547	intrinsic neuronal circuit	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
-UBERON:0026564	regional part of macula	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0026584	tympanic canal	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:0026586	vestibular canal	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0026584	tympanic canal	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:0026586	vestibular canal	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:0026602	spinal ganglion part of peripheral nervous system	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
 UBERON:0026663	dorsolateral subnucleus of solitary tract	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0026666	parvicellular subnucleus of solitary tract	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
 UBERON:0026719	intermediate frontal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026721	medial precentral sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026722	transverse parietal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0026723	inferior Parietal Sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0026723	inferior parietal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026724	superior parietal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026725	angular sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0026760	inferior Sagittal Sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0026761	superior Sagittal Sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0026760	inferior sagittal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0026761	superior sagittal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026765	Hadjikhani et al. (1998) visuotopic partition scheme region	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026775	Tootell and Hadjikhani (2001) LOC/LOP complex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026776	Press, Brewer, Dougherty, Wade and Wandell (2001) Visuotopic area V7	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0026777	Ongur, Price, and Ferry (2003) prefrontal cortical partition scheme region	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0027007	regional part of thoracic spinal cord white matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027061	isthmus of cingulate cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027109	lateral eminence of hypophysis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027113	anterior middle temporal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14570,27 +14574,19 @@ UBERON:0027239	dopaminergic system	UBERON:0000111	organogenesis stage	UBERON:000
 UBERON:0027244	striosomal part of body of caudate nucleus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0027245	matrix part of head of caudate nucleus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0027246	matrix part of tail of caudate nucleus	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
-UBERON:0027285	regional Parts of the Paravermal Lobules	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0027285	paravermis lobule area	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027309	paravermis of the posterior lobe of the cerebellum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027310	paravermis of the anterior lobe of the cerebellum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0027314	regional Parts of the Interpositus Nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027331	hemispheric part of the flocculonodular lobe of the cerebellum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0027333	arbor Vitae	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0027333	arbor vitae	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027368	matrix compartment	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027371	striosome	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027513	posterior superior frontal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027716	anterior superior frontal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027768	suprachiasmatic nucleus dorsomedial part	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0027771	suprachiasmatic nucleus ventrolateral part	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0027796	regional part of thoracic spinal cord dorsal horn	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0027874	regional part of sacral spinal cord gray matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028010	regional part of lumbar spinal cord gray matter	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028079	regional part of cervical spinal cord dorsal horn	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028186	spiral ligament of cochlea	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028194	spiral prominence of cochlea	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028200	regional part of fovea	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028205	regional part of vestibular ganglion	HsapDv:0000024	CS17 (human)	HsapDv:0000022	Carnegie stage 15 (human)
-UBERON:0028395	calcarine Sulcus (dorsal)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028194	spiral prominence of cochlear duct	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028395	calcarine sulcus (dorsal)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0028396	calcarine Sulcus (ventral)	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0028398	hadjikhani et al. (1998) Visuotopic area V1d	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0028399	hadjikhani et al. (1998) Visuotopic area V1v	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14630,14 +14626,14 @@ UBERON:0028439	Ongur, Price, and Ferry (2003) area Iapm	HsapDv:0000024	CS17 (hum
 UBERON:0028440	Ongur, Price, and Ferry (2003) area AON	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0028622	banks of superior temporal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0028715	caudal anterior cingulate cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028918	paravermic Lobule II	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028919	paravermic Lobule III	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028920	paravermic Lobule IV	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028921	paravermic Lobule IX	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028922	paravermic Lobule V	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028923	paravermic Lobule VI	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028924	paravermic Lobule VII	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0028925	paravermic Lobule VIII	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028918	paravermic lobule II	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028919	paravermic lobule III	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028920	paravermic lobule IV	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028921	paravermic lobule IX	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028922	paravermic lobule V	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028923	paravermic lobule VI	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028924	paravermic lobule VII	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0028925	paravermic lobule VIII	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0029001	matrix compartment of caudate nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0029002	matrix compartment of putamen	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0029004	striosomal part of caudate nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14651,11 +14647,9 @@ UBERON:0030276	lumbar spinal cord ventral horn	HsapDv:0000024	CS17 (human)	UBERO
 UBERON:0030649	cytoarchitecture of entorhinal cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0031111	sacral spinal cord gray commissure	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0031906	lumbar spinal cord lateral horn	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0032288	pyramidal layer of entorhinal cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0032748	sacral spinal cord ventral horn	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0033483	lumbar spinal cord gray commissure	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0033939	sacral spinal cord dorsal horn	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0034667	regional part of lumbar spinal cord dorsal horn	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0034670	palatal taste bud	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:0034671	arcuate sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0034672	lateral eminence of fourth ventricle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14669,8 +14663,8 @@ UBERON:0034688	spermatic fascia	HsapDv:0000035|UBERON:0000111	CS06b (human)|orga
 UBERON:0034690	external spermatic fascia	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0034691	internal spermatic fascia	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:0034693	cremasteric artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:0034694	gubernacular bulb, intra-abdominal part	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0007220	late embryonic stage
-UBERON:0034695	gubernacular bulb, extra-abdominal part	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0007220	late embryonic stage
+UBERON:0034694	gubernacular bulb, intra-abdominal part	HsapDv:0000025|UBERON:0007220	Carnegie stage 18 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
+UBERON:0034695	gubernacular bulb, extra-abdominal part	HsapDv:0000025|UBERON:0007220	Carnegie stage 18 (human)|late embryonic stage	UBERON:0007220	late embryonic stage
 UBERON:0034696	fold of peritoneum	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:0034697	inflow tract	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0034698	inflow tract of ventricle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -14773,7 +14767,7 @@ UBERON:0034870	stratum lucidum  of uncal CA3	HsapDv:0000024	CS17 (human)	UBERON:
 UBERON:0034871	stratum pyramidale of uncal CA3	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0034872	stratum oriens of uncal CA3	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0034873	bodily gas	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:0034874	respiratory air	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0034874	air in respiratory system	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0034875	future pituitary gland	HsapDv:0000024	CS17 (human)	HsapDv:0000019	Carnegie stage 12 (human)
 UBERON:0034876	future neurohypophysis	HsapDv:0000024	CS17 (human)	HsapDv:0000019|HsapDv:0000021	Carnegie stage 12 (human)|CS14 (human)
 UBERON:0034877	angioblastic cord	HsapDv:0000016	CS09 (human)	UBERON:0000071	death stage
@@ -14817,6 +14811,114 @@ UBERON:0034934	Weber's gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:000
 UBERON:0034935	pars plicata of ciliary body	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0034936	pars plana of ciliary body	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:0034937	pharyngeal bar	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034940	venous sinus cavity	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0034941	blood sinus of vibrissa	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034942	vibrissal follicle-sinus complex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034943	saccus vasculosus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034944	zone of organ	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:0034945	excreted gas	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0034946	gas excreted from digestive tract	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0034947	gas in respiratory system	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0034948	carbon dioxide in respiratory system	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:0034949	lymphatic valve	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0034950	lymph sac	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0034951	subcutaneous lymph sac	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0034952	intrapleuroperitoneal lymph sac	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0034953	embryonic lymph sac	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000068	embryo stage
+UBERON:0034958	retroperitoneal embryonic lymph sac	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000068	embryo stage
+UBERON:0034963	lateral fornix of vagina	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0034964	superficial epigastric artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034965	middle thyroid vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034968	sagittal sulcus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034969	epithelial layer of duct	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:0034971	aortic body	HsapDv:0000024	CS17 (human)	HsapDv:0000024|HsapDv:0000016	CS17 (human)|CS09 (human)
+UBERON:0034972	jugular body	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034978	paraganglion (generic)	HsapDv:0000018	CS11 (human)	UBERON:0000071	death stage
+UBERON:0034979	nonchromaffin paraganglion	HsapDv:0000018	CS11 (human)	UBERON:0000071	death stage
+UBERON:0034980	jugular bulb	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034981	superior bulb of internal jugular vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034982	inferior bulb of internal jugular vein	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034983	ischial tuberosity	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:0034984	nerve to quadratus femoris	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
+UBERON:0034986	sacral nerve plexus	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
+UBERON:0034987	lumbar nerve plexus	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
+UBERON:0034988	tendon of obturator internus	HsapDv:0000022	Carnegie stage 15 (human)	UBERON:0000066	fully formed stage
+UBERON:0034989	amygdalopiriform transition area	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034991	anterior cortical amygdaloid nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034993	basal ventral medial nucleus of thalamus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034994	hindbrain cortical intermediate zone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034995	jaw mesenchyme	HsapDv:0000024	CS17 (human)	UBERON:0000068	embryo stage
+UBERON:0034996	outer renal medulla loop of henle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034997	renal medulla loop of henle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0034999	posterolateral cortical amygdaloid nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035001	posteromedial cortical amygdaloid nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035004	preputial swelling	HsapDv:0000023	Carnegie stage 16 (human)	HsapDv:0000024	CS17 (human)
+UBERON:0035005	preputial swelling of male	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
+UBERON:0035006	preputial swelling of female	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
+UBERON:0035007	nasal concha primordium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035011	central gray substance	HsapDv:0000018	CS11 (human)	UBERON:0000066	fully formed stage
+UBERON:0035013	temporal cortex association area	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035014	functional part of brain	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035015	association cortex	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035016	tactile mechanoreceptor	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0035017	nociceptor	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0035018	thermoreceptor	HsapDv:0000020	Carnegie stage 13 (human)	UBERON:0000066	fully formed stage
+UBERON:0035019	inferior olive, beta nucleus	HsapDv:0000025	Carnegie stage 18 (human)	HsapDv:0000024	CS17 (human)
+UBERON:0035020	left vagus X nerve trunk	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035021	right vagus X nerve trunk	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035022	trunk of segmental spinal nerve	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035024	lateral spinal nucleus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035026	amygdalohippocampal transition area	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035027	amygdalohippocampal area, magnocellular division	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035028	amygdalohippocampal area, parvocellular division	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035032	abdominal oblique muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035034	eyelid epithelium	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0035036	naris epithelium	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0035037	jaw epithelium	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035038	carpal tunnel	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035039	rectal artery	HsapDv:0000016	CS09 (human)	UBERON:0000066	fully formed stage
+UBERON:0035040	superior rectal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035041	deep temporal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035042	middle temporal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035043	temporal branch of lateral pretrosal artery	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035044	olfactory cortex layer 3	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035045	parotid gland intralobular duct	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0035046	parotid gland intercalated duct	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0035047	parotid gland striated duct	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0035048	parotid gland excretory duct	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0035049	excretory duct of salivary gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0035050	excretory duct	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:0035053	interlobular duct of salivary gland	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0035073	duct of eccrine sweat gland	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035074	duct of apocrine sweat gland	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035075	thymus subunit	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035076	parotid gland myoepithelium	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0035078	parotid gland interlobular duct	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0035079	deep intraparotid lymph node	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035080	intraparotid lymph node	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035081	caudofemoralis longus	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035082	caudofemoralis brevis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035083	transverse process-bearing vertebra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035084	non-transverse process-bearing vertebra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035085	anatomical plane				
+UBERON:0035086	plane of autotomy	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
+UBERON:0035087	fracture plane	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
+UBERON:0035088	vertebral fracture plane	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
+UBERON:0035089	plane of autotomy bisecting joint	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
+UBERON:0035090	plane of autotomy bisecting intervertebral joint	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
+UBERON:0035091	extrinsic post-anal tail muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035092	spinalis caudalis muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035093	extensor caudae muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035094	extensor caudae medialis muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035095	extensor caudae lateralis muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035096	fascia of tail	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035097	iliocaudalis muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035102	transverse process of caudal vertebra	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035103	perineal body smooth muscle muscle tissue	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:0035104	raphe of penis	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
+UBERON:0035105	sac of scrotum	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
+UBERON:0035106	raphe of perineum	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
+UBERON:0035108	temporalis fascia	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:1000000	chin ventral margin	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:1000001	collection of hairs on vertex	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:1000002	cranial midline area	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
@@ -15565,7 +15667,7 @@ UBERON:2001828	primordial ligament	HsapDv:0000022	Carnegie stage 15 (human)	UBER
 UBERON:2001831	pterosphenoid-orbitosphenoid joint	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:2001832	parasphenoid-basioccipital joint	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:2001833	premaxillary tooth row	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:2001840	tip	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:2001840	tip	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:2001841	interhyal-epihyal joint	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:2001842	epihyal-ceratohyal joint	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:2001843	ceratohyal-dorsal hypohyal joint	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
@@ -15703,7 +15805,7 @@ UBERON:2001995	papilla	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed s
 UBERON:2001996	maxillary canal	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:2001997	parietal-supraoccipital	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:2001998	posttemporal-supracleithrum	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:2002004	anterior dentation of dorsal fin spine 2	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:2002004	anterior dentation of dorsal fin spine 2	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:2002005	canal plate	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:2002006	axillary pore				
 UBERON:2002007	supraneural 4 bone	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -16441,18 +16543,18 @@ UBERON:3010166	fringe on postaxial edge of Toe V	HsapDv:0000024	CS17 (human)	UBE
 UBERON:3010167	metatarsal fold	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010168	tarsal fringe	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010170	ungual flap	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:3010172	subarticular tubercles	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:3010173	supernumerary tubercles	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:3010172	subarticular tubercles	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:3010173	supernumerary tubercles	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:3010175	circumferential groove	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010178	finger glands	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010179	web glands	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010181	humeral glands	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010182	tibial glands	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010183	femoral glands	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:3010184	inner metatarsal tubercle	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:3010186	outer metatarsal tubercle	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:3010187	inner metacarpal tubercle	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:3010188	outer metacarpal tubercle	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:3010184	inner metatarsal tubercle	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:3010186	outer metatarsal tubercle	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:3010187	inner metacarpal tubercle	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:3010188	outer metacarpal tubercle	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:3010189	ulnar protuberances	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010190	tibial protuberances	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:3010191	calcar anterior	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -16794,10 +16896,10 @@ UBERON:4200093	guard scale	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully form
 UBERON:4200094	inner digits of hand	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:4200095	infraspinous process	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:4200096	intercondylar fossa	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogenesis stage	UBERON:0000066	fully formed stage
-UBERON:4200097	intermediate spine	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:4200097	intermediate spine	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:4200098	ischial foot	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:4200099	lateral extrascapular	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:4200100	latissimus dorsi process	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:4200100	latissimus dorsi process	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:4200101	m.scapulotriceps	HsapDv:0000025	Carnegie stage 18 (human)	UBERON:0000066	fully formed stage
 UBERON:4200102	median dorsal plate	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:4200103	median extrascapular	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
@@ -16807,8 +16909,8 @@ UBERON:4200106	muscle scar	HsapDv:0000035|UBERON:0000111	CS06b (human)|organogen
 UBERON:4200107	obturator process of ischium	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:4200108	outer digit of hand	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:4200109	outer digits of pes	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:4200110	prepectoral spine	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:4200111	prepelvic fin spine	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:4200110	prepectoral spine	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:4200111	prepelvic fin spine	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:4200112	prepectoral space	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:4200113	predorsal scute	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:4200114	prepubic process	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
@@ -16818,7 +16920,7 @@ UBERON:4200117	pubic boot	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully forme
 UBERON:4200118	pubic peduncle	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:4200119	pubis-ischium contact	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:4200120	puboischiadic plate	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:4200121	puboischiotibialis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
+UBERON:4200121	puboischiotibialis muscle	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:4200122	pubotibialis	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:4200123	scapular process	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:4200124	sternal trabecula	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
@@ -16829,8 +16931,8 @@ UBERON:4200128	synarcual region of vertebral column	HsapDv:0000024	CS17 (human)	
 UBERON:4200129	synarcual region	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:4200130	tibial facet of astragalus	HsapDv:0000026	CS19 (human)	UBERON:0000066	fully formed stage
 UBERON:4200131	trochanteric shelf	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
-UBERON:4200132	tuber	UBERON:0000106	zygote stage	UBERON:0000071	death stage
-UBERON:4200133	crest	UBERON:0000106	zygote stage	UBERON:0000071	death stage
+UBERON:4200132	tuber	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
+UBERON:4200133	crest	UBERON:0000111	organogenesis stage	UBERON:0000071	death stage
 UBERON:4200134	antimere	HsapDv:0000024	CS17 (human)	UBERON:0000071	death stage
 UBERON:4200135	puboischiadic bar	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage
 UBERON:4200139	palatoquadrate element	HsapDv:0000024	CS17 (human)	UBERON:0000066	fully formed stage

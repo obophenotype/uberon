@@ -602,7 +602,7 @@ cl-core.owl: cl-core.obo
 # ----------------------------------------
 
 update-stages: $(EDITSRC)
-	(cd developmental-stage-ontologies && svn update) && touch $@
+	(cd developmental-stage-ontologies && git pull) && touch $@
 
 CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard developmental-stage-ontologies/*/*-uberon.obo))
 #CSTAGES := $(wildcard developmental-stage-ontologies/*/*-uberon.obo)
@@ -1086,8 +1086,12 @@ simil%.jsonld: simil%.tsv ./util/sim2jsonld.pl
 simil%.ttl: simil%.jsonld
 	riot $< > $@
 
-homology.owl: similarity.ttl
-	owltools --use-catalog $< -o $@
+
+homology.owl: similarity.ttl homology-relations.owl
+	owltools --use-catalog $^ --merge-support-ontologies -o $@
+
+simil%.pro: simil%.tsv
+	./util/sim2pro.pl $< | tbl2p > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # VIEWS
@@ -1303,7 +1307,7 @@ source-ontologies/NeuroNames.obo: source-ontologies/NeuroNames.xml
 # UTIL
 # ----------------------------------------
 util/ubermacros.el:
-	blip-findall -r go -r pato  -r pext -r taxslim -consult util/write_ubermacros.pro  w > $@.tmp && mv $@.tmp $@
+	blip-findall -r ro -r go -r pato  -r pext -r taxslim -consult util/write_ubermacros.pro  w > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # DOCUMENTATION

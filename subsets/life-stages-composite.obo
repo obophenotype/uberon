@@ -136,13 +136,24 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by FBdv:00007025 ! immature adult stage (Drosophila)
 
 [Term]
+id: GgalDv:0000004
+name: hatchling stage (chicken)
+namespace: chicken_developmental_stage
+def: "Chicken developmental stage that covers the period from hatching until 4 weeks old, during which individuals have no feathers." [Bgee:curator]
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000112 ! sexually immature stage
+property_value: end_mph "1.0" xsd:float
+property_value: start_dpf "21.0" xsd:float
+property_value: start_mph "0.0" xsd:float
+
+[Term]
 id: GgalDv:0000005
 name: juvenile stage (chicken)
 namespace: chicken_developmental_stage
 def: "Chicken developmental stage that covers the period from 4 weeks old, when individuals are fully feathered, until 5 months old." [Bgee:curator]
 comment: Chicken reach sexual maturity by five months of age.
 is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by UBERON:0007221 ! neonate stage
+relationship: immediately_preceded_by GgalDv:0000004 ! hatchling stage (chicken)
 relationship: part_of UBERON:0000112 ! sexually immature stage
 property_value: end_mph "5.0" xsd:float
 property_value: start_mph "1.0" xsd:float
@@ -1684,12 +1695,25 @@ property_value: start_ypb "45.0" xsd:float
 property_value: start_ypb "45.0" xsd:float
 
 [Term]
+id: HsapDv:0000093
+name: human aged stage (human)
+namespace: human_developmental_stage
+def: "Late adulthood that refers to an adult who is over 65." [Bgee:curator]
+synonym: "65+ years" EXACT []
+synonym: "elderly" RELATED []
+is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by HsapDv:0000092 ! human middle aged stage (human)
+relationship: part_of HsapDv:0000091 ! human late adulthood stage (human)
+property_value: start_ypb "65.0" xsd:float
+
+[Term]
 id: HsapDv:0000094
 name: 65-79 year-old human stage (human)
 namespace: human_developmental_stage
 def: "Aged stage that refers to an adult who is under 80." [Bgee:curator]
 synonym: "elderly" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of HsapDv:0000093 ! human aged stage (human)
 relationship: part_of UBERON:0007222 ! late adult stage
 property_value: end_ypb "80.0" xsd:float
 property_value: end_ypb "80.0" xsd:float
@@ -1703,6 +1727,7 @@ namespace: human_developmental_stage
 def: "Aged stage that refers to an adult who is over 80." [Bgee:curator]
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000173 ! 79-year-old human stage (human)
+relationship: part_of HsapDv:0000093 ! human aged stage (human)
 relationship: part_of UBERON:0007222 ! late adult stage
 property_value: start_ypb "80.0" xsd:float
 property_value: start_ypb "80.0" xsd:float
@@ -7499,6 +7524,18 @@ relationship: part_of PtroDv:0000019 ! 14-year-old stage (chimpanzee)
 property_value: start_ypb "45.0" xsd:float
 
 [Term]
+id: RnorDv:00000010
+name: metamorphosing embryo stage (rat)
+namespace: rat_developmental_stage
+def: "Embryonic stage during which somites 43-45 (caudal) up to somite 65 (usually this is last caudal) appear." [http://php.med.unsw.edu.au/embryology/index.php?title=Rat_Development_Stages]
+comment: This stage corresponds to Standard Witschi Stage 26 up to 33 (see http://php.med.unsw.edu.au/embryology/index.php?title=Rat_Timeline). Refers to human Carnegie stage 15 up to 22 (see http://books.google.ch/books?id=yr1ZRO8H0ysC&printsec=frontcover&hl=fr#v=onepage&q&f=false "Table 12.17, p.510")
+is_a: UBERON:0000105 ! life cycle stage
+relationship: immediately_preceded_by RnorDv:0000009 ! complete embryo stage (rat)
+relationship: part_of RnorDv:0000003 ! embryonic stage (rat)
+property_value: end_dpc "16.0" xsd:float
+property_value: start_dpc "12.5" xsd:float
+
+[Term]
 id: RnorDv:0000003
 name: embryonic stage (rat)
 namespace: rat_developmental_stage
@@ -7544,18 +7581,6 @@ relationship: immediately_preceded_by UBERON:0000111 ! organogenesis stage
 relationship: part_of RnorDv:0000003 ! embryonic stage (rat)
 property_value: end_dpc "12.5" xsd:float
 property_value: start_dpc "12.375" xsd:float
-
-[Term]
-id: RnorDv:0000010
-name: metamorphosing embryo stage (rat)
-namespace: rat_developmental_stage
-def: "Embryonic stage during which somites 43-45 (caudal) up to somite 65 (usually this is last caudal) appear." [http://php.med.unsw.edu.au/embryology/index.php?title=Rat_Development_Stages]
-comment: This stage corresponds to Standard Witschi Stage 26 up to 33 (see http://php.med.unsw.edu.au/embryology/index.php?title=Rat_Timeline). Refers to human Carnegie stage 15 up to 22 (see http://books.google.ch/books?id=yr1ZRO8H0ysC&printsec=frontcover&hl=fr#v=onepage&q&f=false "Table 12.17, p.510")
-is_a: UBERON:0000105 ! life cycle stage
-relationship: immediately_preceded_by RnorDv:0000009 ! complete embryo stage (rat)
-relationship: part_of RnorDv:0000003 ! embryonic stage (rat)
-property_value: end_dpc "16.0" xsd:float
-property_value: start_dpc "12.5" xsd:float
 
 [Term]
 id: RnorDv:0000014
@@ -8372,6 +8397,13 @@ name: nursing stage
 namespace: uberon
 def: "A mammalian developmental stage that covers the period from birth until weaning." [Bgee:AN]
 synonym: "suckling stage" EXACT []
+xref: GgorDv:0000004
+xref: MdomDv:0000032
+xref: MmulDv:0000004
+xref: PpanDv:0000004
+xref: PpygDv:0000004
+xref: PtroDv:0000004
+xref: SscrDv:0000004
 is_a: UBERON:0000105 ! life cycle stage
 relationship: has_part UBERON:0007221 ! neonate stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
@@ -8404,6 +8436,70 @@ id: WBls:0000057
 name: adult hermaphrodite Ce (C elegans)
 def: "The stage after an hermaphrodite animal is fully-developed and reaches maturity." [wb:wjc]
 is_a: UBERON:0000066 ! fully formed stage
+
+[Term]
+id: WBls:0000083
+name: adult Bma (C elegans)
+def: "The stage that begins when a B. malayi individual is fully-developed and has reached maturity. Adult B. malayi (or at least adult females) can live for 10 years in a human host, and can outlive their rodent laboratory hosts; it is usual to state the chronological age of the nematodes in days or months post-infection, and occasionally post-patency (the production of first microfilariae)." [WB:dr&mb]
+is_a: WBls:0000104 ! adult nematode (C elegans)
+relationship: part_of UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: WBls:0000097
+name: larva Bma (C elegans)
+def: "From the time after hatch till becomes adult." [WB:dr]
+is_a: WBls:0000105 ! larva nematode (C elegans)
+relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
+relationship: part_of UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: WBls:0000098
+name: vector-derived L3 Bma (C elegans)
+def: "Also known as infective L3, or iL3; i.e. isolated from the vector salivary glands; these samples may-should be conditioned by age, which is usually counted in days from the blood meal." [wb:dr&mb]
+synonym: "iL3" RELATED []
+synonym: "infective L3" RELATED []
+is_a: WBls:0000679 ! infective stage larva (C elegans)
+
+[Term]
+id: WBls:0000104
+name: adult nematode (C elegans)
+def: "The stage that begins when an animal is fully-developed and has reached maturity." [wb:dr]
+is_a: UBERON:0000092 ! post-embryonic stage
+relationship: immediately_preceded_by WBls:0000105 ! larva nematode (C elegans)
+
+[Term]
+id: WBls:0000105
+name: larva nematode (C elegans)
+def: "The stage that begins after hatching and ends when the nematode becomes adult." [wb:dr]
+is_a: UBERON:0000092 ! post-embryonic stage
+
+[Term]
+id: WBls:0000679
+name: infective stage larva (C elegans)
+def: "Larval stage that is capable of infecting a host organism." [wb:jl]
+is_a: WBls:0000105 ! larva nematode (C elegans)
+
+[Term]
+id: WBls:0000680
+name: Strongyloides infective L3 (C elegans)
+def: "Strongyloides infective stage L3 larval stage. This stage can develop as a part of a of free-living life-cycle, or from a parasitic, parthenogenic female stage." [wb:jl]
+synonym: "Strongyloides iL3" EXACT []
+synonym: "Strongyloides infective stage larva" EXACT []
+is_a: WBls:0000679 ! infective stage larva (C elegans)
+
+[Term]
+id: WBls:0000681
+name: Strongyloides parasitic female (C elegans)
+def: "The Strongyloides life-cycle stage in which a female adult worm produces larval progeny parthenogenetically within the host organism." [wb:jl]
+synonym: "Strongyloides L5" EXACT []
+is_a: WBls:0000104 ! adult nematode (C elegans)
+
+[Term]
+id: WBls:0000682
+name: Strongyloides free-living adult (C elegans)
+def: "The Strongyloides life-cycle stage in which male and female adult worms reproduce sexually and live entirely outside a host organism." [wb:jl]
+synonym: "Strongyloides free-living L5" EXACT []
+is_a: WBls:0000104 ! adult nematode (C elegans)
 
 [Term]
 id: XAO:1000002

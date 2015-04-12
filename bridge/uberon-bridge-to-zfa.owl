@@ -21,7 +21,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/zfa.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa/2015-03-15/uberon/bridge/uberon-bridge-to-zfa.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa/2015-04-12/uberon/bridge/uberon-bridge-to-zfa.owl"/>
     </owl:Ontology>
     
 
@@ -3589,6 +3589,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004029 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004029"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0004058 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004058"/>
@@ -4810,6 +4816,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0006614 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006614"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0006615 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006615"/>
     
 
 
@@ -6232,6 +6244,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0034763 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034763"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0034940 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034940"/>
     
 
 
@@ -17970,7 +17988,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000306</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral lateral nucleus (zebrafish)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral lateral nucleus of thalamus (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -31923,9 +31941,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ZFA_0001167b -->
+    <!-- http://purl.obolibrary.org/obo/ZFA_0001167 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001167b">
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001167">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -31937,7 +31955,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001167b</oboInOwl:id>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001167</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertebral bone 1 (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
@@ -52607,6 +52625,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ZFA_0005829 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0005829">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004029"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005829</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">canal of Schlemm (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ZFA_0007000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0007000">
@@ -53963,6 +54001,46 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0007071</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flexural organ (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0007072 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0007072">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006615"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0007072</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">venous sinus (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0007073 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0007073">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0034940"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0007073</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">venous sinus cavity (zebrafish)</obo:IAO_0000589>
     </owl:Class>
     
 
