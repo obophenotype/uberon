@@ -321,6 +321,9 @@ taxcheck-%: % subsets/taxon-constraints.owl
 %.obo-OWL-check: %.obo
 	owltools $<
 
+DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid definition-lacks-dbxref ontology-declaration-check
+%.obo-gocheck: %.obo
+	check-obo-for-standard-release.pl --xref-abbs ../go/doc/GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $<
 
 # ----------------------------------------
 # Taxonomy and external AO validation
@@ -1077,14 +1080,15 @@ mapping_EMAP_to_EMAPA.txt:
 	wget ftp://ftp.hgu.mrc.ac.uk/pub/MouseAtlas/Anatomy/EMAP-EMAPA.txt -O $@
 
 simil%.tsv:
-#	wget --no-check-certificate https://raw.githubusercontent.com/BgeeDB/anatomical-similarity-annotations/master/release/$@ -O $@
-	cp $(HOME)/repos/cmungall/anatomical-similarity-annotations/release/$@ $@
+	wget --no-check-certificate https://raw.githubusercontent.com/BgeeDB/anatomical-similarity-annotations/master/release/$@ -O $@
+#	cp $(HOME)/repos/cmungall/anatomical-similarity-annotations/release/$@ $@
+#       ^^^ use this when forking is required
 
 simil%.jsonld: simil%.tsv ./util/sim2jsonld.pl
 	./util/sim2jsonld.pl $< > $@
 
 simil%.ttl: simil%.jsonld
-	riot $< > $@
+	riot -q $< > $@
 
 
 homology.owl: similarity.ttl homology-relations.owl
