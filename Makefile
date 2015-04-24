@@ -16,7 +16,7 @@ UCAT = --use-catalog
 #
 uberon_edit_x.obo: uberon_edit.obo
 	./util/expand-idspaces.pl $< > $@.tmp && mv $@.tmp $@
-uberon_edit.owl: uberon_edit_x.obo 
+uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck  
 	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 ### TODO - restore --expand-macros
 ###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@

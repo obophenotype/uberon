@@ -44,8 +44,19 @@ synonym: "pneumonocyte" EXACT []
 xref: BTO:0000395
 xref: CALOHA:TS-2168
 xref: FMA:62499
-is_a: CL:0010003 ! epithelial cell of alveolus of lung
 relationship: part_of UBERON:0004821 ! pulmonary alveolus epithelium
+
+[Term]
+id: CL:0000853
+name: olfactory epithelial support cell
+namespace: cell
+def: "Olfactory epithelial support cell is a columnar cell that extends from the epithelial free margin to the basement membrane of the olfactory epithelium. This cell type has a large, vertically, elongate, euchromatic nucleus, along with other nuclei, forms a layer superficial to the cell body of the receptor cell; sends long somewhat irregular microvilli into the mucus layer; at the base, with expanded end-feet containing numerous lamellated dense bodies resembling lipofuscin of neurons." [GOC:tfm, ISBN:0517223651, SANBI:mhl]
+synonym: "olfactory sustentacular cell" EXACT []
+synonym: "supporting cell of olfactory epithelium" EXACT []
+synonym: "sustentaculocyte of olfactory epithelium" EXACT []
+xref: FMA:62302
+is_a: CL:0002169 ! basal cell of olfactory epithelium
+relationship: part_of UBERON:0001997 ! olfactory epithelium
 
 [Term]
 id: CL:0000869
@@ -106,7 +117,6 @@ synonym: "type II alveolocyte" EXACT []
 xref: BTO:0000538
 xref: FMA:62501
 is_a: CL:0000322 ! pneumocyte
-is_a: CL:1000272 ! lung secretory cell
 created_by: tmeehan
 creation_date: 2010-06-24T12:04:13Z
 
@@ -185,7 +195,6 @@ namespace: cell
 alt_id: CL:1000386
 def: "A brush cell found in the epithelium of lobular bronchiole." [GOC:tfm]
 xref: FMA:263220
-is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:0002208 ! brush cell of bronchus
 relationship: part_of UBERON:0002051 ! epithelium of bronchiole
 created_by: tmeehan
@@ -198,6 +207,7 @@ namespace: cell
 alt_id: CL:1000390
 def: "A brush cell of the epithelium in the terminal bronchiole." [GOC:tfm]
 xref: FMA:263228
+is_a: CL:0000082 {is_inferred="true"} ! epithelial cell of lung
 is_a: CL:0002205 ! brush cell of lobular bronchiole
 relationship: part_of UBERON:0001958 ! terminal bronchiole epithelium
 created_by: tmeehan
@@ -258,7 +268,6 @@ name: bronchial epithelial cell
 namespace: cell
 def: "An epithelial cell of the bronchus." [GOC:tfm]
 xref: BTO:0002922
-is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
 relationship: part_of UBERON:0002185 ! bronchus
 created_by: tmeehan
@@ -321,7 +330,6 @@ name: nasal mucosa goblet cell
 namespace: cell
 def: "A goblet cell located in the nasal epithelium." [GOC:cjm, GOC:tfm]
 xref: MP:0002262
-is_a: CL:0002370 ! respiratory goblet cell
 relationship: part_of UBERON:0001826 ! nasal cavity mucosa
 relationship: part_of UBERON:0005384 ! nasal cavity epithelium
 created_by: tmeehan
@@ -405,7 +413,6 @@ name: epithelial cell of alveolus of lung
 def: "a epithelial cell that is part_of a alveolus of lung" []
 comment: May be merged with pneumocyte in future
 synonym: "alveolus of lung epithelial cell" EXACT []
-is_a: CL:0000082 ! epithelial cell of lung
 relationship: part_of UBERON:0002299 ! alveolus of lung
 created_by: GOC:cjm
 
@@ -413,7 +420,6 @@ created_by: GOC:cjm
 id: CL:1000143
 name: lung goblet cell
 is_a: CL:0000082 ! epithelial cell of lung
-is_a: CL:0002370 ! respiratory goblet cell
 is_a: CL:1000272 ! lung secretory cell
 relationship: part_of UBERON:0002048 ! lung
 
@@ -442,7 +448,6 @@ def: "A goblet cell that is part of the epithelium of bronchus." [GOC:tfm]
 synonym: "goblet cell of epithelium of bronchus" EXACT [FMA:263032]
 xref: FMA:263032
 is_a: CL:0002328 ! bronchial epithelial cell
-is_a: CL:0002370 ! respiratory goblet cell
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
 relationship: part_of UBERON:0002185 ! bronchus
 
@@ -489,7 +494,6 @@ name: serous cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A serous secreting cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263084
-is_a: CL:1000272 ! lung secretory cell
 is_a: CL:1000331 ! serous cell of epithelium of bronchus
 relationship: part_of UBERON:0002051 ! epithelium of bronchiole
 
@@ -499,7 +503,6 @@ name: basal cell of epithelium of trachea
 namespace: cell
 def: "A basal cell that is part of the epithelium of trachea." [GOC:tfm]
 xref: FMA:263118
-is_a: CL:0000307 ! tracheal epithelial cell
 is_a: CL:0002633 {is_inferred="true"} ! respiratory basal cell
 relationship: part_of UBERON:0001901 ! epithelium of trachea
 
@@ -511,7 +514,6 @@ alt_id: CL:0002331
 def: "A basal cell found in the bronchus epithelium." [GOC:tfm]
 synonym: "basal cell of bronchus" EXACT []
 xref: FMA:263120
-is_a: CL:0002328 ! bronchial epithelial cell
 is_a: CL:0002329 ! basal epithelial cell of tracheobronchial tree
 is_a: CL:0002633 ! respiratory basal cell
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
@@ -540,7 +542,6 @@ name: basal cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A basal cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263126
-is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000349 ! basal cell of epithelium of bronchus
 relationship: part_of UBERON:0002051 ! epithelium of bronchiole
 
@@ -577,7 +578,6 @@ name: mesothelial cell of visceral pleura
 namespace: cell
 def: "A mesothelial cell that is part of the visceral pleura." [GOC:tfm]
 xref: FMA:86739
-is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000491 ! mesothelial cell of pleura
 relationship: part_of UBERON:0002401 ! visceral pleura
 
@@ -611,7 +611,6 @@ name: nasopharyngeal epithelial cell
 def: "Cell of the nasopharyngeal epithelium." [NPX:PDR]
 synonym: "nasopharynx respiratory epithelial cells" RELATED [CALOHA:TS-2398]
 xref: CALOHA:TS-2398
-is_a: CL:0002631 ! epithelial cell of upper respiratory tract
 relationship: part_of UBERON:0001728 ! nasopharynx
 relationship: part_of UBERON:0001951 ! epithelium of nasopharynx
 
@@ -791,6 +790,7 @@ subset: pheno_slim
 synonym: "lung lobe" EXACT []
 synonym: "pulminory lobe" EXACT []
 synonym: "pulmonary lobe" EXACT [FMA:7311]
+xref: EMAPA:36281
 xref: FMA:7311
 xref: galen:LobeOfLung
 xref: http://linkedlifedata.com/resource/umls/id/C0225752
@@ -1209,7 +1209,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "apparatus respiratorius" EXACT []
-synonym: "apparatus respiratorius " RELATED [BTO:0000203]
+synonym: "apparatus respiratorius" RELATED [BTO:0000203]
 synonym: "Atmungssystem" RELATED [BTO:0000203]
 synonym: "respiratory system" EXACT []
 synonym: "systema respiratorium" RELATED LATIN [http://en.wikipedia.org/wiki/Respiratory_system]
@@ -2358,6 +2358,7 @@ synonym: "epithelium of bronchiolus terminalis" EXACT [OBOL:automatic]
 synonym: "epithelium of terminal bronchiole" EXACT [FMA:62794]
 synonym: "terminal bronchiole epithelial tissue" EXACT [OBOL:automatic]
 synonym: "terminal bronchiole epithelium" EXACT []
+xref: EMAPA:36283
 xref: FMA:62794
 xref: http://linkedlifedata.com/resource/umls/id/C1179400
 xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Terminal_Bronchiole_Epithelium
@@ -2428,6 +2429,7 @@ xref: VHOG:0000985
 xref: ZFA:0000554
 is_a: UBERON:0005384 ! nasal cavity epithelium
 relationship: contributes_to_morphology_of UBERON:0000004 ! olfactory apparatus
+relationship: has_part CL:0000853 ! olfactory epithelial support cell
 relationship: has_part CL:0002169 ! basal cell of olfactory epithelium
 relationship: part_of UBERON:0005386 ! olfactory segment of nasal mucosa
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/4d/Gray857.png
@@ -3024,6 +3026,7 @@ synonym: "bronchioli terminalis" RELATED LATIN [http://en.wikipedia.org/wiki/Ter
 synonym: "bronchiolus terminalis" EXACT LATIN []
 synonym: "terminal bronchiole tube" RELATED []
 xref: BTO:0003223
+xref: EMAPA:36282
 xref: FMA:7411
 xref: http://linkedlifedata.com/resource/umls/id/C0225666
 xref: http://www.snomedbrowser.com/Codes/Details/278981008
@@ -5324,7 +5327,7 @@ synonym: "aortic arch" EXACT [ZFA:0005004]
 synonym: "aortic arch artery" RELATED [EMAPA:16684]
 synonym: "aortic arches" EXACT PLURAL [ZFA:0005004]
 synonym: "arteriae arcuum pharyngeorum" RELATED LATIN [http://en.wikipedia.org/wiki/Aortic_arches]
-synonym: "branchial aortic arches " EXACT PLURAL [ZFIN:ZDB-PUB-080512-6]
+synonym: "branchial aortic arches" EXACT PLURAL [ZFIN:ZDB-PUB-080512-6]
 synonym: "branchial arch artery" EXACT [EMAPA:16684]
 synonym: "embryonic aortic arch artery" EXACT [EMAPA:16684, MP:0002672]
 synonym: "PAA" EXACT ABBREVIATION [MP:0002672]
@@ -11135,6 +11138,15 @@ synonym: "LNG" RELATED ABBREVIATION [MP:0013582]
 synonym: "Steno gland" EXACT [MP:0013582]
 synonym: "Steno's gland" EXACT [MP:0013582]
 is_a: UBERON:0012278 ! gland of nasal mucosa
+
+[Term]
+id: UBERON:0035120
+name: fauces
+namespace: uberon
+def: "lateral walls of the oropharynx that are located medial to the palatoglossal folds" [http://www.avdc.org/Nomenclature.pdf]
+xref: FMA:55019
+xref: http://www.snomedbrowser.com/Codes/Details/361362001
+relationship: part_of UBERON:0001729 ! oropharynx
 
 [Term]
 id: UBERON:1000012

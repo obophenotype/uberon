@@ -41,7 +41,7 @@ sub descend {
     print "synonym: \"$obj->{acronym}\" RELATED ABBREVIATION []\n";
     print "alt_id: $alt_id\n";
     print "property_value: identifier \"$id\" xsd:int\n";
-    print "is_a: UBERON:0000481 ! multi-tissue structure\n";
+    print "is_a: UBERON:0002616 ! regional part of brain\n";
     print "relationship: part_of $idmap->{$parent}\n" if $idmap->{$parent} && $idmap->{$parent} ne $oid;
     print "\n";
     map {descend($id,$_)} @{$obj->{children}};
