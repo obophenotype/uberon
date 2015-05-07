@@ -321,7 +321,7 @@ taxcheck-%: % subsets/taxon-constraints.owl
 %.obo-OWL-check: %.obo
 	owltools $<
 
-DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid definition-lacks-dbxref ontology-declaration-check
+DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check
 %.obo-gocheck: %.obo
 	check-obo-for-standard-release.pl --xref-abbs ../go/doc/GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $<
 
