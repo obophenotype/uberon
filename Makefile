@@ -343,37 +343,54 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # BRIDGE CHECKS.
-# these can be used to validate on a per-bridge file basis. There are two flavours:
-# * quick tests ignore the axioms in the external ontology
-# * full tests use these axioms
+# these can be used to validate on a per-bridge file basis. There are a variety of flavours:
+#
+# * quick bridge tests ignore the axioms in the external ontology (but include the bridge axioms themselves)
+# * standard bridge tests use the logical axioms in the external ontology
+# * full bridge tests do the above using the constructed ext ontology
+# * extra full bridge tests also throw in the set of all pending disjoints. Only 'gold star' external ontologies will pass this.
+#
 # note at this time we don't expect all full-bridge tests to pass. This is because the disjointness axioms are
 # very strong and even seemingly minor variations in representation across ontologies can lead to unsatisfiable classes
-# note: exclude EHDAA2 for now until extraembryonic/embryonic issues sorted
+#
 ## CHECK_AO_LIST = ma emapa ehdaa2 zfa xao fbbt wbbt
 ## CHECK_AO_LIST = ma emapa zfa xao fbbt wbbt wbls
 #####  CHECK_AO_LIST = ma emapa zfa xao fbbt wbls : Add MA back to list when this is solved; https://sourceforge.net/p/obo/mouse-anatomy-requests/94/
-CHECK_AO_LIST = emapa zfa fbbt wbls xao
+CHECK_AO_LIST = emapa zfa fbbt wbls 
 FULL_CHECK_AO_LIST = fma $(CHECK_AO_LIST)
+EXTRA_FULL_CHECK_AO_LIST = caro fbbt wbbt
 quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
 bridge-checks: $(patsubst %,bridge-check-%.txt,$(CHECK_AO_LIST))
 full-bridge-checks: $(patsubst %,full-bridge-check-%.txt,$(CHECK_AO_LIST))
+extra-full-bridge-checks: $(patsubst %,extra-full-bridge-check-%.txt,$(EXTRA_FULL_CHECK_AO_LIST))
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
 quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges external-disjoints.owl
 	owltools  --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+
+# A bridge check uses uberon (no TCs) plus external ontology and the bridge
 bridge-check-%.owl: uberon_edit.obo bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< local-$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: bridge-check-%.owl
 bridge-check-%.txt: bridge-check-%.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+
 expl-bridge-check-%.txt: bridge-check-%.owl
 	owltools  --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
+
+# A full bridge check uses ext plus external ontology and the bridge
 full-bridge-check-%.txt: ext.owl bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+
+# As above, but include pending disjoints. This is a very strict check and we don't expect this to pass for lots of ssAOs.
+extra-full-bridge-check-%.txt: ext.owl local-%.owl bridge/uberon-bridge-to-%.owl pending-disjoints.obo external-disjoints.owl
+	owltools --no-debug --catalog-xml $(CATALOG) $^  --merge-support-ontologies --run-reasoner -r elk -u $(ROPTS) > $@.tmp && mv $@.tmp $@
+
+# @Deprecated
 core-bridge-check-%.txt: core.owl bridge/bridges external-disjoints.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-# for debugging:
 
+# for debugging:
 ext-merged-%.owl: ext.owl bridge/bridges external-disjoints.owl
 	owltools --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-imports-closure  --merge-support-ontologies -o $@
 .PRECIOUS: ext-merged-%.owl
@@ -422,6 +439,7 @@ QC_FILES = uberon_edit-xp-check\
     bridge/bridges\
     quick-bridge-checks\
     bridge-checks\
+    full-bridge-checks\
     taxon-constraint-check.txt\
     uberon_edit-cycles\
     uberon-cycles\
@@ -662,7 +680,8 @@ METAZOAN_BRIDGES = $(patsubst %,bridge/uberon-bridge-to-%.owl,$(METAZOAN_ONTS))
 #local-%.obo: merged.obo
 #	wget $(OBO)/$*.owl -O cached-$*.owl && owltools cached-$*.owl --repair-relations -o -f obo $@.tmp && egrep -v '^(disjoint|domain|range)' $@.tmp | perl -npe 's/default-namespace: FlyBase development CV/default-namespace: fbdv/' > $@
 
-mirror-%.owl: uberon_edit.obo
+##mirror-%.owl: uberon_edit.obo
+mirror-%.owl:
 	wget $(OBO)/$*.owl -O $@ &&  touch $@
 .PRECIOUS: mirror-%.owl
 
@@ -1303,8 +1322,6 @@ uberon-nif-merged.owl: uberon-nif-combined.obo
 uberon-nif-merged.obo:  uberon-nif-merged.owl
 	owltools $< -o -f obo --no-check $@
 
-source-ontologies/NeuroNames.obo: source-ontologies/NeuroNames.xml
-	./util/nn2obo.pl $< > $@
 
 # ----------------------------------------
 # UTIL
