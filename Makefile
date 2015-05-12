@@ -358,7 +358,7 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 #####  CHECK_AO_LIST = ma emapa zfa xao fbbt wbls : Add MA back to list when this is solved; https://sourceforge.net/p/obo/mouse-anatomy-requests/94/
 CHECK_AO_LIST = emapa zfa fbbt wbls 
 FULL_CHECK_AO_LIST = fma $(CHECK_AO_LIST)
-EXTRA_FULL_CHECK_AO_LIST = caro fbbt wbbt
+EXTRA_FULL_CHECK_AO_LIST = caro fbbt
 quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
 bridge-checks: $(patsubst %,bridge-check-%.txt,$(CHECK_AO_LIST))
 full-bridge-checks: $(patsubst %,full-bridge-check-%.txt,$(CHECK_AO_LIST))
