@@ -361,13 +361,13 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 EXTRA_FULL_CHECK_AO_LIST = caro
 
 # silver club
-FULL_CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST)  emapa wbls
+FULL_CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST)  wbls
 
 # premier execs
 CHECK_AO_LIST = $(FULL_CHECK_AO_LIST)
 
 # economy
-QUICK_CHECK_AO_LIST = $(CHECK_AO_LIST) fbbt zfa xao fma  ma
+QUICK_CHECK_AO_LIST = $(CHECK_AO_LIST) fbbt zfa xao fma  ma emapa 
 
 quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
 bridge-checks: $(patsubst %,bridge-check-%.txt,$(CHECK_AO_LIST))
