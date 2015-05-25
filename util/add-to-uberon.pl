@@ -125,6 +125,7 @@ while(<>) {
 
     next if (m@property_value: identifier@);
     next if (m@alt_id: (DHBA|HBA|MBA|PBA|DHBA)@);
+    next if (m@synonym: ""@);
 
     if (/^\[/) {
         $in_header = 0;

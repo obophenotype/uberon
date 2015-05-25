@@ -20,7 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/xao.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2015-04-23/uberon/bridge/uberon-bridge-to-xao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2015-05-25/uberon/bridge/uberon-bridge-to-xao.owl"/>
     </owl:Ontology>
     
 
@@ -3648,6 +3648,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0009955 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009955"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0010046 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010046"/>
@@ -3891,6 +3897,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0034960 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034960"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035597 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035597"/>
     
 
 
@@ -4247,7 +4259,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0000018</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genital ridge (xenopus)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gonadal ridge (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -7269,7 +7281,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0000225</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trigeminal placode (xenopus)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trigeminal placode complex (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -14134,6 +14146,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/XAO_0004093 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004093">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035597"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004093</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">profundal placode (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/XAO_0004094 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004094">
@@ -15652,6 +15684,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004542</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">central amygdaloid nucleus (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004620 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004620">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0009955"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004620</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neurogenic placode (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 

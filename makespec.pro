@@ -132,6 +132,7 @@ nlp_hook(A,B,metadata_nlp_parent_dist2_hook) :-
        \+ member('NCITA',L),
        \+ member(efo,L),
        \+ member(mba,L),
+       \+ member(uberon,L),
        !.
 nlp_hook(A,B,null) :- true.
             

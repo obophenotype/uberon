@@ -4,10 +4,19 @@ use JSON;
 
 my @objs = ();
 my @axioms = ();
+my $has_line_type;
 while(<>) {
     chomp;
-    next if m/^HOM ID/;
+    if (m/^HOM ID/) {
+        if (m/line type/) {
+            $has_line_type=1;
+        }
+        next;
+    }
     my @vals = split(/\t/, $_);
+    if (!$has_line_type) {
+        splice(@vals,7,0,('RAW'));
+    }
     my $hom_class_id = $vals[0];
     my @e_ids = split(/\|/,$vals[2]);
     my $qual = $vals[4];

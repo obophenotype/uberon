@@ -35,9 +35,16 @@ sub descend {
         $alt_id =~ s/\s/_/g;
     }
     $idmap->{$id} = $oid;
+
+    my $name = $obj->{name};
+    # MBA uses Caps
+    if ($oid =~ /^MBA:/) {
+        $name =~ s/^(\S)/lc($1)/e;
+    }
+
     print "[Term]\n";
     print "id: $oid\n";
-    print "name: $obj->{name}\n";
+    print "name: $name\n";
     print "synonym: \"$obj->{acronym}\" RELATED ABBREVIATION []\n";
     print "alt_id: $alt_id\n";
     print "property_value: identifier \"$id\" xsd:int\n";

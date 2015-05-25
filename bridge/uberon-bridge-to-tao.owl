@@ -20,7 +20,7 @@
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/tao.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-tao/2015-04-23/uberon/bridge/uberon-bridge-to-tao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-tao/2015-05-25/uberon/bridge/uberon-bridge-to-tao.owl"/>
     </owl:Ontology>
     
 
@@ -2601,7 +2601,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000162</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trigeminal placode (teleost)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trigeminal placode complex (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -3162,6 +3162,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000231</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral recess of third vetricle (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TAO_0000235 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0000235">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035563"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000235</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magnocellular superficial pretectal nucleus (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -3892,7 +3912,6 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0002709"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003030"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -3902,7 +3921,6 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000325</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior nuclear complex of thalamus (teleost)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior nucleus of thalamus (teleost)</obo:IAO_0000589>
     </owl:Class>
     
@@ -4668,6 +4686,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/TAO_0000404 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0000404">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035577"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000404</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paracommissural periventricular pretectal nucleus (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/TAO_0000405 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0000405">
@@ -4684,6 +4722,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000405</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oculomotor nerve (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TAO_0000406 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0000406">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035564"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000406</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parvocellular superficial pretectal nucleus (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -6468,6 +6526,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/TAO_0000601 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0000601">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035569"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000601</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">periventricular pretectal nucleus (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/TAO_0000603 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0000603">
@@ -6594,7 +6672,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006848"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035565"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
@@ -6603,7 +6681,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000631</oboInOwl:id>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior pretectal nucleus (teleost)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">caudal pretectal nucleus (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -6624,6 +6702,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000632</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reproductive system (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TAO_0000635 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0000635">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035566"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000635</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">central pretectal nucleus (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -7286,6 +7384,26 @@
         </owl:equivalentClass>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000713</oboInOwl:id>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abducens nucleus (teleost)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TAO_0000714 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/TAO_0000714">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0035567"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000714</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accessory pretectal nucleus (teleost)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -22326,12 +22444,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0002709 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002709"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0002722 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002722"/>
@@ -24330,12 +24442,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0006848 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006848"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0006849 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006849"/>
@@ -25629,6 +25735,48 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0034763 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034763"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035563 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035563"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035564 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035564"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035565 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035565"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035566 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035566"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035567 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035567"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035569 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035569"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0035577 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035577"/>
     
 
 
