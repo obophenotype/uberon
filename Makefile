@@ -323,7 +323,7 @@ taxcheck-%: % subsets/taxon-constraints.owl
 
 DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check
 %.obo-gocheck: %.obo
-	check-obo-for-standard-release.pl --xref-abbs ../go/doc/GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $<
+	check-obo-for-standard-release.pl --xref-abbs ../go/doc/GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Taxonomy and external AO validation
@@ -356,20 +356,30 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 ## CHECK_AO_LIST = ma emapa ehdaa2 zfa xao fbbt wbbt
 ## CHECK_AO_LIST = ma emapa zfa xao fbbt wbbt wbls
 #####  CHECK_AO_LIST = ma emapa zfa xao fbbt wbls : Add MA back to list when this is solved; https://sourceforge.net/p/obo/mouse-anatomy-requests/94/
-CHECK_AO_LIST = emapa zfa fbbt wbls 
-FULL_CHECK_AO_LIST = fma $(CHECK_AO_LIST)
-EXTRA_FULL_CHECK_AO_LIST = caro fbbt
+
+# gold glub 
+EXTRA_FULL_CHECK_AO_LIST = caro
+
+# silver club
+FULL_CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST)  emapa wbls
+
+# premier execs
+CHECK_AO_LIST = $(FULL_CHECK_AO_LIST)
+
+# economy
+QUICK_CHECK_AO_LIST = $(CHECK_AO_LIST) fbbt zfa xao fma  ma
+
 quick-bridge-checks: $(patsubst %,quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
 bridge-checks: $(patsubst %,bridge-check-%.txt,$(CHECK_AO_LIST))
 full-bridge-checks: $(patsubst %,full-bridge-check-%.txt,$(CHECK_AO_LIST))
 extra-full-bridge-checks: $(patsubst %,extra-full-bridge-check-%.txt,$(EXTRA_FULL_CHECK_AO_LIST))
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
-quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges external-disjoints.owl
+quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges external-disjoints.owl local-%.owl
 	owltools  --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # A bridge check uses uberon (no TCs) plus external ontology and the bridge
-bridge-check-%.owl: uberon_edit.obo bridge/bridges external-disjoints.owl
+bridge-check-%.owl: uberon_edit.obo bridge/bridges external-disjoints.owl local-%.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< local-$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: bridge-check-%.owl
 bridge-check-%.txt: bridge-check-%.owl
@@ -440,6 +450,7 @@ QC_FILES = uberon_edit-xp-check\
     quick-bridge-checks\
     bridge-checks\
     full-bridge-checks\
+    extra-full-bridge-checks\
     taxon-constraint-check.txt\
     uberon_edit-cycles\
     uberon-cycles\
@@ -710,6 +721,8 @@ mirror-emapa.owl: fixed-emapa.obo
 	owltools $< -o -f ofn $@ 
 mirror-emapa.obo: uberon_edit.obo
 	wget $(OBO)/emapa.obo -O $@
+.PRECIOUS: mirror-emapa.obo
+
 fixed-emapa.obo: mirror-emapa.obo
 	obo-grep.pl -r 'id: EMAPA' $< | ./util/fix-emapa-stages.pl | grep -v ^alt_id > $@
 
@@ -1097,19 +1110,21 @@ stages.obo:
 mapping_EMAP_to_EMAPA.txt:
 	wget ftp://ftp.hgu.mrc.ac.uk/pub/MouseAtlas/Anatomy/EMAP-EMAPA.txt -O $@
 
-simil%.tsv:
-	wget --no-check-certificate https://raw.githubusercontent.com/BgeeDB/anatomical-similarity-annotations/master/release/$@ -O $@
+# e.g. raw_similarity_annotations.tsv
+ASA=raw_similarity_annotations
+asa-%.tsv:
+	wget --no-check-certificate https://raw.githubusercontent.com/BgeeDB/anatomical-similarity-annotations/master/release/$*.tsv -O $@
 #	cp $(HOME)/repos/cmungall/anatomical-similarity-annotations/release/$@ $@
 #       ^^^ use this when forking is required
 
-simil%.jsonld: simil%.tsv ./util/sim2jsonld.pl
+homology.jsonld: asa-$(ASA).tsv ./util/sim2jsonld.pl
 	./util/sim2jsonld.pl $< > $@
 
-simil%.ttl: simil%.jsonld
+homology.ttl: homology.jsonld
 	riot -q $< > $@
 
 
-homology.owl: similarity.ttl homology-relations.owl
+homology.owl: homology.ttl homology-relations.owl
 	owltools --use-catalog $^ --merge-support-ontologies -o $@
 
 simil%.pro: simil%.tsv
