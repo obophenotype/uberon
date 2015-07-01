@@ -15,9 +15,9 @@ UCAT = --use-catalog
 # SEED ONTOLOGY - use to make import modules
 #
 uberon_edit_x.obo: uberon_edit.obo
-	./util/expand-idspaces.pl $< > $@.tmp && mv $@.tmp $@
+	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl > $@.tmp && mv $@.tmp $@
 uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck  
-	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
+	owltools $(UCAT) $< issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 ### TODO - restore --expand-macros
 ###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 
@@ -211,6 +211,8 @@ RPT_STAGE_RELS = RO:0002496 RO:0002497
 	echo done
 
 
+
+
 reports/%-part-of-parents.tsv: %.owl
 	owltools $< --reasoner elk --reasoner mexr --log-error  --export-parents -p BFO:0000050 $(RPT_TAXA_ARGS) -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-part-of-parents.tsv
@@ -321,7 +323,7 @@ taxcheck-%: % subsets/taxon-constraints.owl
 %.obo-OWL-check: %.obo
 	owltools $<
 
-DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check
+DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check
 %.obo-gocheck: %.obo
 	check-obo-for-standard-release.pl --xref-abbs ../go/doc/GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
 
@@ -379,7 +381,7 @@ quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges externa
 	owltools  --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # A bridge check uses uberon (no TCs) plus external ontology and the bridge
-bridge-check-%.owl: uberon_edit.obo bridge/bridges external-disjoints.owl local-%.owl
+bridge-check-%.owl: uberon.owl bridge/bridges external-disjoints.owl local-%.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< local-$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: bridge-check-%.owl
 bridge-check-%.txt: bridge-check-%.owl
