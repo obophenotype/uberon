@@ -881,7 +881,7 @@ uberon-taxmod-%.obo: uberon-taxmod-%.owl
 	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< --remove-imports-declarations -o -f obo $@.tmp && grep -v ^owl $@.tmp > $@
 
 uberon-taxmod-%.owl: ext.owl
-	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$* --remove-dangling --assert-inferred-subclass-axioms --useIsInferred --remove-dangling --set-ontology-id $(OBO)/uberon/subsets/$@ -o $@ >& $@.log
+	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$*  --assert-inferred-subclass-axioms --useIsInferred --remove-dangling --set-ontology-id $(OBO)/uberon/subsets/$@ -o $@ >& $@.log
 #uberon-taxmod-%.owl: uberon-taxmod-%.ids
 #	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
