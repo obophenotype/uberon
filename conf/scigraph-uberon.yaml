@@ -1,0 +1,47 @@
+graphConfiguration:
+    curies:
+       'UBERON' : 'http://purl.obolibrary.org/obo/UBERON_'
+       'RO' : 'http://purl.obolibrary.org/obo/RO_'
+       'BFO' : 'http://purl.obolibrary.org/obo/BFO_'
+       'oboInOwl' : 'http://www.geneontology.org/formats/oboInOwl#'
+    # The location of the graph.
+    # If this location does not exist it will be created.
+    # Loading will append content to existing graphs.
+    location: target/uberonGraph
+    indexedNodeProperties:
+      - category
+      - label
+      - fragment
+    exactNodeProperties:
+      - label
+      - synonym
+
+# A list of ontologies to import.
+ontologies:
+  # Files can be local paths...
+  - url: uberon.owl
+    # Or URIs
+    #- http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine.rdf
+    # And can optionally include a reasoner factory
+    reasonerConfiguration:
+      factory: org.semanticweb.elk.owlapi.ElkReasonerFactory
+
+# Categories are used for vocabulary term filtering and are inherited to
+# subclasses of their parent. They are also added as node labels for
+# convenience
+categories:
+    'UBERON:0000467'  : anatomical_system
+    http://www.co-ode.org/ontologies/pizza/pizza.owl#PizzaTopping : topping
+
+# All properties are stored but can optionally be added to a new node property
+mappedProperties:
+  - name: label # The name of the new property
+    properties: # The list of properties mapped to the new property
+    - http://www.w3.org/2000/01/rdf-schema#label
+    - http://www.w3.org/2004/02/skos/core#prefLabel
+  - name: comment
+    properties:
+    - http://www.w3.org/2000/01/rdf-schema#comment
+  - name: synonym
+    properties:
+    - oboInOwl:hasExactSynonym

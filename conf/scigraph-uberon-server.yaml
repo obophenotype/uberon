@@ -1,0 +1,85 @@
+server:
+  type: simple
+  applicationContextPath: /scigraph
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 9000
+
+logging:
+  level: INFO
+
+graphConfiguration:
+  location: target/uberonGraph
+  curies:
+    'UBERON' : 'http://purl.obolibrary.org/obo/UBERON_'
+    'RO' : 'http://purl.obolibrary.org/obo/RO_'
+    'BFO' : 'http://purl.obolibrary.org/obo/BFO_'
+  indexedNodeProperties:
+    - category
+    - label
+    - fragment
+  exactNodeProperties:
+    - label
+    - synonym
+
+cypherResources:
+  - path: /dynamic/toppings
+    query: |
+            MATCH path = (pizza)-[:hasTopping]->(topping)
+            WHERE pizza.fragment = {pizza_id}
+            RETURN path
+    operations:
+      - nickname: toppings
+        summary: Get toppings for a pizza
+        notes: Note that this uses additional convenience edges
+        parameters:
+          - name: pizza_id
+            description: The ID of the pizza
+            required: true
+            type: string
+            paramType: query
+  - path: /dynamic/nodes/{part_id}/part_of
+    query: |
+            START part = node:node_auto_index(fragment={part_id})
+            MATCH path = (part)-[:subClassOf*0..]->(x)-[:BFO_0000050]->(y)-[:subClassOf*0..]->(whole)
+            RETURN path
+    operations:
+      - nickname: part-parents
+        summary: Get parthood parents
+        notes: poor persons reasoning
+        parameters:
+          - name: part_id
+            description: The child ID
+            required: true
+            type: string
+            paramType: query
+
+  - path: /dynamic/nodes/{part_id}/direct_part_of
+    query: |
+            START part = node:node_auto_index(fragment={part_id})
+            MATCH path = (part)-[:BFO_0000050]->(whole)
+            RETURN path
+    operations:
+      - nickname: part-parents
+        summary: Get parthood parents
+        notes: poor persons reasoning
+        parameters:
+          - name: part_id
+            description: The child ID
+            required: true
+            type: string
+            paramType: query
+
+serviceMetadata:
+  name: 'Pizza Reconciliation Service'
+  identifierSpace: 'http://example.org'
+  schemaSpace: 'http://example.org'
+  view: {
+    url: 'http://localhost:9000/scigraph/refine/view/{{id}}'
+  }
+  preview: {
+    url: 'http://localhost:9000/scigraph/refine/preview/{{id}}',
+    width: 400,
+    height: 400
+  }
