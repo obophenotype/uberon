@@ -11,6 +11,7 @@ subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to b
 subsetdef: feed_aligned "subset of classes that have logical defs text defs and synonyms aligned with FEED"
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
+subsetdef: homology_grouping "A grouping class that depends on an assumption of homology between subclasses"
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
 subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
@@ -37,6 +38,7 @@ synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
 ontology: uberon/subsets/cumbo
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001016>) ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001017>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000010>)))\n)
 
 [Term]
 id: UBERON:0000010
@@ -78,7 +80,7 @@ xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Peripheral_Nervous_System
 xref: http://www.snomedbrowser.com/Codes/Details/362292005
 xref: MA:0000218
 xref: MAT:0000338
-xref: MESH:A08.800
+xref: MESH:D017933
 xref: MIAA:0000338
 xref: TAO:0000142
 xref: UMLS:C0206417 {source="NIFSTD:birnlex_1111"}
@@ -118,7 +120,7 @@ property_value: external_ontology_notes "Proposed CUMBO def from MM: A subcortic
 id: UBERON:0000955
 name: brain
 namespace: uberon
-def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [http://en.wikipedia.org/wiki/Brain, http://purl.obolibrary.org/obo/uberon/tracker/300]
+def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [http://en.wikipedia.org/wiki/Brain, https://github.com/obophenotype/uberon/issues/300]
 subset: cumbo
 subset: efo_slim
 subset: major_organ
@@ -159,7 +161,7 @@ xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Brain
 xref: http://www.snomedbrowser.com/Codes/Details/258335003
 xref: MA:0000168
 xref: MAT:0000098
-xref: MESH:A08.186.211
+xref: MESH:D001921
 xref: MIAA:0000098
 xref: OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA
 xref: PBA:3999
@@ -172,6 +174,7 @@ xref: XAO:0000010
 xref: ZFA:0000008
 relationship: immediate_transformation_of UBERON:0006238 ! future brain
 relationship: part_of UBERON:0001017 ! central nervous system
+property_value: dc-contributor https://github.com/cmungall
 property_value: editor_note "requires review for applicability to invertebrate structures, e.g. synganglion" xsd:string
 property_value: external_definition "Cavitated compound organ which is comprised of gray and white matter and surrounds the cerebral ventricular system.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000008", ontology="TAO", source="ZFIN:curator"}
 property_value: external_definition "Part of the central nervous system situated within the cranium and composed of both nerve cell bodies and nerve fibers.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010478", ontology="AAO", source="AAO:BJB"}
@@ -209,7 +212,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C0027763
 xref: http://www.snomedbrowser.com/Codes/Details/278196006
 xref: MA:0000016
 xref: MAT:0000026
-xref: MESH:A08
+xref: MESH:D009420
 xref: MIAA:0000026
 xref: Nervous:System
 xref: Nervous:system
@@ -264,7 +267,7 @@ xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Central_Nervous_System
 xref: http://www.snomedbrowser.com/Codes/Details/278199004
 xref: MA:0000167
 xref: MAT:0000457
-xref: MESH:A08.186
+xref: MESH:D002490
 xref: OpenCyc:Mx4rvzYt3pwpEbGdrcN5Y29ycA
 xref: TAO:0000012
 xref: UMLS:C0927232 {source="NIFSTD:birnlex_1099"}
@@ -304,7 +307,7 @@ property_value: external_definition "White matter structure of CNS that contains
 id: UBERON:0001020
 name: nervous system commissure
 namespace: uberon
-def: "Axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [http://purl.obolibrary.org/obo/uberon/tracker/300, http://purl.obolibrary.org/obo/uberon/tracker/325, NIFSTD:nlx_anat_20090513]
+def: "Axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [https://github.com/obophenotype/uberon/issues/300, https://github.com/obophenotype/uberon/issues/325, NIFSTD:nlx_anat_20090513]
 comment: *not* the same as FMA:76741 Commissure
 subset: cumbo
 subset: uberon_slim
@@ -323,6 +326,8 @@ xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
 xref: TADS:0000201
 xref: UMLS:C1185742 {source="ncithesaurus:Commissure"}
 is_a: UBERON:0001018 ! axon tract
+property_value: dc-contributor https://github.com/cmungall
+property_value: dc-contributor https://github.com/mellybelly
 property_value: external_definition "White matter fiber bundle that crosses the midline of the brain or spinal cord, that connects similar structures on both sides. (CUMBO; Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" xsd:string {source="Cumbo:terms"}
 property_value: has_relational_adjective "commissural" xsd:string
 
@@ -369,7 +374,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C0037925
 xref: http://www.snomedbrowser.com/Codes/Details/180959008
 xref: MA:0000216
 xref: MAT:0000183
-xref: MESH:A08.186.854
+xref: MESH:D013116
 xref: MIAA:0000183
 xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
 xref: Spinal:Cord

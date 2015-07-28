@@ -7646,6 +7646,7 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
 relationship: precedes UBERON:0000071 ! death stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/566
 
 [Term]
 id: UBERON:0000067
@@ -7663,7 +7664,7 @@ relationship: part_of UBERON:0000068 ! embryo stage
 id: UBERON:0000068
 name: embryo stage
 namespace: uberon
-def: "A life cycle stage that starts with fertilization and ends with the fully formed embryo." [UBERON:cjm]
+def: "A life cycle stage that starts with fertilization and ends with the fully formed embryo." [http://orcid.org/0000-0002-6601-2165]
 synonym: "embryogenesis" RELATED []
 synonym: "embryonic stage" EXACT []
 xref: AcarDv:0000002
@@ -7765,6 +7766,12 @@ xref: http://en.wikipedia.org/wiki/Pupa
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000069 ! larval stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/dosumis
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/fbastian
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mmc46
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/562
 property_value: UBPROP:0000008 "The pupal stage is found only in holometabolous insects, those that undergo a complete metamorphosis, going through four life stages; embryo, larva, pupa and imago" xsd:string
 
 [Term]
@@ -7795,6 +7802,7 @@ xref: WBls:0000093
 xref: WBls:0000103
 is_a: UBERON:0000105 ! life cycle stage
 relationship: preceded_by UBERON:0000068 ! embryo stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/344
 property_value: UBPROP:0000008 "In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)" xsd:string
 
 [Term]
@@ -7956,6 +7964,7 @@ xref: XAO:1000006
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000109 ! gastrula stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/343
 
 [Term]
 id: UBERON:0000111
@@ -7974,6 +7983,7 @@ xref: RnorDv:0000008
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000110 ! neurula stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/533
 
 [Term]
 id: UBERON:0000112
@@ -8008,6 +8018,7 @@ xref: XtroDO:0000083
 xref: ZFS:0000051
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000066 ! fully formed stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/427
 property_value: UBPROP:0000001 "The stage of being a sexually immature adult animal[XAO:1000010]." xsd:string {source="XAO:1000010"}
 property_value: UBPROP:0000008 "In mammals this would include infant (nourishment from lactation) and juvenile (prepubertal no longer dependent on mother)" xsd:string
 
@@ -8045,6 +8056,8 @@ xref: ZFS:0000044
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000066 ! fully formed stage
 relationship: preceded_by UBERON:0000112 ! sexually immature stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/345
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/499
 
 [Term]
 id: UBERON:0004707
@@ -8079,6 +8092,7 @@ xref: XAO:1000008
 xref: XtroDO:0000056
 is_a: UBERON:0000069 ! larval stage
 property_value: RO:0002175 NCBITaxon:8355
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/534
 property_value: UBPROP:0000012 "the XAO class denotes a stage" xsd:string {external_ontology="XAO"}
 
 [Term]
@@ -8088,6 +8102,7 @@ namespace: uberon
 def: "Nematode larval development begins with the newly hatched first-stage larva (L1) and ends with the end of the last larval stage (for example the fourth larval stage (L4) in C. elegans). Each stage of nematode larval development is characterized by proliferation of specific cell lineages and an increase in body size without alteration of the basic body plan. Nematode larval stages are separated by molts in which each stage-specific exoskeleton, or cuticle, is shed and replaced anew." [GO:0002119]
 xref: WBls:0000023
 is_a: UBERON:0000069 ! larval stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/567
 
 [Term]
 id: UBERON:0004730
@@ -8097,6 +8112,7 @@ def: "This begins with the newly hatched first-instar larva, through its maturat
 xref: FBdv:00005336
 is_a: UBERON:0000069 ! larval stage
 property_value: RO:0002175 NCBITaxon:7227
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/526
 
 [Term]
 id: UBERON:0007220
@@ -8122,6 +8138,8 @@ is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
 relationship: preceded_by UBERON:0004707 ! pharyngula stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/355
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/565
 
 [Term]
 id: UBERON:0007221
@@ -8153,6 +8171,7 @@ xref: RnorDv:0000013
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000112 ! sexually immature stage
 property_value: IAO:0000116 "consider splitting infant/newborn" xsd:string
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/350
 
 [Term]
 id: UBERON:0007222
@@ -8179,6 +8198,7 @@ xref: UMLS:C0001792 {source="ncithesaurus:Elderly"}
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 relationship: preceded_by UBERON:0018241 ! prime adult stage
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/495
 
 [Term]
 id: UBERON:0007232
@@ -8243,7 +8263,7 @@ is_a: UBERON:0004728 ! amphibian larval stage
 id: UBERON:0012101
 name: perinatal stage
 namespace: uberon
-def: "The period spanning the range immediately before and after birth" [UBERON:cjm]
+def: "The period spanning the range immediately before and after birth" [http://orcid.org/0000-0002-6601-2165]
 synonym: "paranatal stage" NARROW []
 is_a: UBERON:0000105 ! life cycle stage
 property_value: UBPROP:0000008 "In birds, the paranatal stage starts when the beak penetrates into the air pocket (air cell) between the inner and outer shell membranes " xsd:string
@@ -8309,7 +8329,7 @@ relationship: part_of UBERON:0018378 ! crustacean larval stage
 id: UBERON:0014859
 name: megalopa stage
 namespace: uberon
-def: "The crustacean post-larval stage of a crab" [UBERON:cjm]
+def: "The crustacean post-larval stage of a crab" [http://orcid.org/0000-0002-6601-2165]
 synonym: "megalopa" RELATED []
 is_a: UBERON:0014858 ! crustacean post-larval stage
 property_value: IAO:0000116 "Consider merging into parent" xsd:string
@@ -8382,6 +8402,9 @@ xref: PtroDv:0000012
 xref: SscrDv:0000007
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/fbastian
 
 [Term]
 id: UBERON:0018378
@@ -8414,6 +8437,8 @@ namespace: uberon
 def: "The stage of being no more dependent of the nest and/or from caregivers for subsistence while having not reach sexual maturity." [Bgee:AN, https://github.com/obophenotype/uberon/issues/645]
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000112 ! sexually immature stage
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 
 [Term]
 id: UBERON:0034920
@@ -8423,6 +8448,8 @@ def: "Nursing stage that follows the neonate stage in mammals and ends at weanin
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0007221 ! neonate stage
 relationship: part_of UBERON:0018685 ! nursing stage
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
+property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 
 [Term]
 id: WBls:0000056

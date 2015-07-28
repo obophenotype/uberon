@@ -24,9 +24,12 @@
 
 ## Other Annotations
 
+ * *[rdf-schema#label](../../el/rdf-schema#label.md)* = root
 
 ## Usage
 
+ * -
+ * [cellular organisms](../../NCBITaxon/67/NCBITaxon_131567.md) SubClassOf [root](../../NCBITaxon/_1/NCBITaxon_1.md)
 
 ## External Comments
 

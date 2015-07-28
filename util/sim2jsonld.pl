@@ -77,6 +77,7 @@ while(<>) {
 
     if ($qual) {
         if ($qual eq 'NOT') {
+            next;
             $obj->{type} = {
                 complementOf => {
                     id => $obj->{type}

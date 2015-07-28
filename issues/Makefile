@@ -18,7 +18,7 @@ i2user.pro:
 	./hack.pl *json | tbl2p -p i2user | sort -u > $@
 
 contributor.obo: i2user.pro
-	blip-findall -r uberon -consult add.pro -i $< wall > $@
+	blip-findall -r uberonp -consult add.pro -i $< wall > $@
 
 contributor.owl: contributor.obo
 	owltools $< -o -f ofn $@.tmp && grep -v '#id' $@.tmp > $@

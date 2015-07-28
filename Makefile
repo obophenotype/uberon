@@ -15,7 +15,7 @@ UCAT = --use-catalog
 # SEED ONTOLOGY - use to make import modules
 #
 uberon_edit_x.obo: uberon_edit.obo
-	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl > $@.tmp && mv $@.tmp $@
+	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl | ./util/separate-ALL.pl > $@.tmp && mv $@.tmp $@
 uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck  
 	owltools $(UCAT) $< issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 ### TODO - restore --expand-macros
@@ -476,9 +476,6 @@ QC_FILES = uberon_edit-xp-check\
     composite-metazoan-basic.obo\
     composite-metazoan-dv.txt\
     reports/stages\
-    uberon-parents.tsv\
-    ext-parents.tsv\
-    composite-metazoan-parents.tsv\
     all_taxmods\
 #    depictions.owl\
 
@@ -1077,6 +1074,26 @@ relation_table.txt:
 
 %-el.owl: %.owl
 	makeElWithoutReasoning.sh -i `pwd`/$< -o `pwd`/$@
+
+# ----------------------------------------
+# SPELLCHECK
+# ----------------------------------------
+
+# notes:
+# to add to a dict
+# yes a | aspell check --home-dir . obo-syntax.html
+
+# interactive
+ispellcheck: uberon_edit.obo-ispellcheck
+
+# batch
+spellcheck: uberon_edit.obo-spellcheck
+
+%-spellcheck: %
+	cat $< | aspell -a check --home-dir . 
+
+%-ispellcheck: %
+	aspell check --home-dir . $<
 
 # ----------------------------------------
 # wikipedia

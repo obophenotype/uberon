@@ -16,6 +16,7 @@
 ## Superclasses
 
  * [Annelida](../../NCBITaxon/40/NCBITaxon_6340.md)
+ * [in taxon](../../RO/62/RO_0002162.md) some [Polychaeta](../../NCBITaxon/41/NCBITaxon_6341.md)
 
 ## Equivalencies
 
@@ -25,9 +26,14 @@
 
 ## Other Annotations
 
+ * *[rdf-schema#label](../../el/rdf-schema#label.md)* = Polychaeta
 
 ## Usage
 
+ * -
+ * [Palpata](../../NCBITaxon/89/NCBITaxon_105389.md) SubClassOf [Polychaeta](../../NCBITaxon/41/NCBITaxon_6341.md)
+ * [Polychaeta](../../NCBITaxon/41/NCBITaxon_6341.md) SubClassOf [Annelida](../../NCBITaxon/40/NCBITaxon_6340.md)
+ * [Polychaeta](../../NCBITaxon/41/NCBITaxon_6341.md) SubClassOf [in taxon](../../RO/62/RO_0002162.md) some [Polychaeta](../../NCBITaxon/41/NCBITaxon_6341.md)
 
 ## External Comments
 
