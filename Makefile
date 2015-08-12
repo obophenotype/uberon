@@ -167,6 +167,7 @@ uberon.obo: uberon.owl
 
 BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
 # remember to git mv - this replaces uberon-simple
+# TODO: ensure relaxation is properly implemented; see for example craniofacial suture
 basic.owl:  uberon.owl
 	owltools $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 basic.obo: basic.owl
