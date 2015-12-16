@@ -3,6 +3,11 @@ CATALOG=catalog-v001.xml
 DC = http://purl.org/dc/elements/1.1
 DATE = `date +%Y-%m-%d`
 RELEASE = $(OBO)/uberon/releases/`date +%Y-%m-%d`
+QELK = --silence-elk
+
+
+# Note: need to rework phenoscape-ext.owl dependency for travis to work
+travis_test: core.owl
 
 # ----------------------------------------
 # ----------------------------------------
@@ -24,9 +29,6 @@ uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck
 # This is primarily for use in editing the phenoscape-ext.owl file
 core.owl: uberon_edit.owl
 	owltools $(UCAT) $< -o -f ofn $@
-
-pe:
-	mkdir pe
 
 # this is primarily used for seeding
 phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
@@ -130,8 +132,10 @@ markdown:
 
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
+## TODO: omitting removal of DisjointClasses to see what happens
 unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl
-	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
+	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
+#	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
 ## TODO - get rid of inferred subclass axioms for other ontology classes
 release.owl: unreasoned.owl imports
@@ -266,13 +270,22 @@ metazoan-view.owl: ext.owl
 	ln -s $< $@ 
 
 %-view.owl: nh-%.owl contexts/context-%.owl
-	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure --run-reasoner -r elk -x -o -f ofn $@
+	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@
 .PRECIOUS: %-view.owl
 
 branches: reports/branches-nerve.png reports/branches-artery.png
 reports/branches-%.png: 
 	blip -r uberon ontol-subset -query "class(R,$*),parent(ID,branching_part_of,_),subclassT(ID,R)" -rel branching_part_of -to png -cr branching_part_of > $@.tmp && mv $@.tmp $@
 
+reports/circo-bones.dot:
+	blip -r uberon ontol-subset -query "class(R,'bone element'),subclassT(ID,R)" -rel connected_to -to dot > $@.tmp && mv $@.tmp $@
+
+reports/circo-head-muscles.dot:
+	blip -r uberonp ontol-subset -query "class(R,'craniocervical muscle'),subclassT(ID,R)"  -rel attaches_to -rel connected_to -down 1 -to dot > $@.tmp && mv $@.tmp $@
+##	blip -r uberonp ontol-subset -query "class(R,'muscle organ'),subclassT(ID,R),parent_over_nr(part_of,ID,'UBERON:0007811')"  -rel attaches_to -rel connected_to -down 1 -to dot > $@.tmp && mv $@.tmp $@
+
+reports/circo-%.png: reports/circo-%.dot
+	circo -o$@ -Tpng $<
 
 # note: drosophila too slow....
 #RPT_SPECIES = human mouse zebrafish xenopus
@@ -290,6 +303,15 @@ ro_import-relations.tsv: %.owl
 	owljs-tableify -r hermit -t ObjectProperty -c -o $@ $<
 %-relations.tsv: %.owl
 	owljs-tableify -t ObjectProperty -c -o $@ $<
+
+# ----------------------------------------
+# EXTRACT TCs
+# ----------------------------------------
+uberon-taxon-constraints.obo: uberon_edit.obo
+	obo-filter-relationships.pl -t only_in_taxon -t never_in_taxon $<  | obo-filter-tags.pl -t id -t name -t relationship - | obo-grep.pl --noheader -r relationship: - > $@.tmp && cat $@.tmp taxon-relations.obo > $@
+
+uberon-taxon-constraints.owl: uberon-taxon-constraints.obo
+	owltools $< --expand-macros -o $@
 
 # ----------------------------------------
 # SEP MATERIALIZATION
@@ -312,7 +334,7 @@ subsets/taxon-constraints.owl: uberon_edit.obo
 	owlrhino js/extract-taxon-constraints.js
 
 taxcheck-%: % subsets/taxon-constraints.owl
-	owltools $< subsets/taxon-constraints.owl --add-imports-from-supports --run-reasoner -r elk -u  > $@.tmp && mv $@.tmp $@
+	owltools $< subsets/taxon-constraints.owl --add-imports-from-supports $(QELK) --run-reasoner -r elk -u  > $@.tmp && mv $@.tmp $@
 
 
 
@@ -326,6 +348,7 @@ taxcheck-%: % subsets/taxon-constraints.owl
 
 DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check
 %.obo-gocheck: %.obo
+	iconv -f UTF-8 -t ISO-8859-15 $< && \
 	check-obo-for-standard-release.pl --xref-abbs ../go/doc/GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
@@ -343,7 +366,7 @@ uberon_edit-plus-tax-equivs.owl: uberon_edit.owl external-disjoints.owl
 
 # see above
 taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
-	owltools --no-debug --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	owltools --no-debug --catalog-xml $(CATALOG) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # BRIDGE CHECKS.
 # these can be used to validate on a per-bridge file basis. There are a variety of flavours:
@@ -379,29 +402,29 @@ extra-full-bridge-checks: $(patsubst %,extra-full-bridge-check-%.txt,$(EXTRA_FUL
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
 quick-bridge-check-%.txt: uberon_edit-plus-tax-equivs.owl bridge/bridges external-disjoints.owl local-%.owl
-	owltools  --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	owltools  --catalog-xml $(CATALOG) $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # A bridge check uses uberon (no TCs) plus external ontology and the bridge
 bridge-check-%.owl: uberon.owl bridge/bridges external-disjoints.owl local-%.owl
 	owltools --no-debug --catalog-xml $(CATALOG) $< local-$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: bridge-check-%.owl
 bridge-check-%.txt: bridge-check-%.owl
-	owltools --no-debug --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	owltools --no-debug --catalog-xml $(CATALOG) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 expl-bridge-check-%.txt: bridge-check-%.owl
-	owltools  --catalog-xml $(CATALOG) $< --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
+	owltools  --catalog-xml $(CATALOG) $< $(QELK) --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
 
 # A full bridge check uses ext plus external ontology and the bridge
 full-bridge-check-%.txt: ext.owl bridge/bridges external-disjoints.owl
-	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # As above, but include pending disjoints. This is a very strict check and we don't expect this to pass for lots of ssAOs.
 extra-full-bridge-check-%.txt: ext.owl local-%.owl bridge/uberon-bridge-to-%.owl pending-disjoints.obo external-disjoints.owl
-	owltools --no-debug --catalog-xml $(CATALOG) $^  --merge-support-ontologies --run-reasoner -r elk -u $(ROPTS) > $@.tmp && mv $@.tmp $@
+	owltools --no-debug --catalog-xml $(CATALOG) $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@.tmp && mv $@.tmp $@
 
 # @Deprecated
 core-bridge-check-%.txt: core.owl bridge/bridges external-disjoints.owl
-	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # for debugging:
 ext-merged-%.owl: ext.owl bridge/bridges external-disjoints.owl
@@ -489,7 +512,7 @@ uberon-qc: $(QC_FILES) all_systems
 
 # Disjoint violations
 %-dv.txt: %.owl
-	owltools --no-debug $<  --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
+	owltools --no-debug $<  $(QELK) --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
 
 # TODO - need closure for taxslim too
@@ -874,6 +897,7 @@ uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
 	cp $< $@
 uberon-taxmod-annelid.owl: uberon-taxmod-6340.owl
 	cp $< $@
+
 
 uberon-taxmod-%.obo: uberon-taxmod-%.owl
 	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< --remove-imports-declarations -o -f obo $@.tmp && grep -v ^owl $@.tmp > $@
@@ -1379,8 +1403,8 @@ all_html: $(patsubst %, %_import/.index.html, $(IMPORTS))
 	owltools --use-catalog $< --write-imports-dot $@ --ontology-metadata-to-markdown $*.md
 .PRECIOUS: %.dot
 
-%.png: %.dot
-	dot  -Grankdir=LR -Tpng $< -o $@
+#%.png: %.dot
+#	dot  -Grankdir=LR -Tpng $< -o $@
 .PRECIOUS: %.png
 
 %.cmapx: %.dot %.png
