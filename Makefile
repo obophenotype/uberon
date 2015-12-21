@@ -348,7 +348,7 @@ taxcheck-%: % subsets/taxon-constraints.owl
 
 DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check
 %.obo-gocheck: %.obo
-	iconv -f UTF-8 -t ISO-8859-15 $< && \
+	iconv -f UTF-8 -t ISO-8859-15 $< > $@-iconv && \
 	check-obo-for-standard-release.pl --xref-abbs ../go/doc/GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
