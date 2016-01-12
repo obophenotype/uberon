@@ -8,6 +8,7 @@ QELK = --silence-elk
 
 # Note: need to rework phenoscape-ext.owl dependency for travis to work
 travis_test: core.owl
+	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp || (tail -1000 $@.tmp && exit -1) && (tail -1000 $@.tmp && mv $@.tmp $@)
 
 # ----------------------------------------
 # ----------------------------------------
@@ -57,7 +58,7 @@ bspo.owl:
 
 # merge BSPO into RO
 ro.owl: $(EDITSRC) bspo.owl
-	owltools external/obo-relations/ro-edit.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@
+	owltools $(OBO)/ro.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@
 
 ro_import.owl: ro.owl $(EDITSRC)
 ##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
@@ -928,7 +929,7 @@ seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 # this is used for xrefs for bridge files
 # TODO: investigate why this necessary: --add-support-from-imports --remove-imports-declarations
 seed.obo: seed.owl
-	owltools $(UCAT) $< --add-support-from-imports --remove-imports-declarations  -o -f obo $@.tmp && obo-grep.pl --neg -r is_obsolete $@.tmp > $@
+	owltools $(UCAT) $< --add-support-from-imports --remove-imports-declarations  -o -f obo --no-check $@.tmp && obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
 BRIDGESRC_OBO = uberon_edit_x.obo cl-with-xrefs.obo
 bridge/uberon-bridge-to-nifstd.obo: uberon_edit_x.obo
