@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon/pato_import.owl#"
      xml:base="http://purl.obolibrary.org/obo/uberon/pato_import.owl"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/pato_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2015-08-11/pato_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2016-01-24/pato_import.owl"/>
     </owl:Ontology>
     
 
@@ -354,6 +354,33 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001292 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001292">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">full-spectrum EM radiation quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001291"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001294 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001294">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radiation reflective quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001292"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001297 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001297">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reflectivity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001294"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001300 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001300">
@@ -530,6 +557,15 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001739">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radiation quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001748 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001748">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">invaginated</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001857"/>
     </owl:Class>
     
 
@@ -897,6 +933,9 @@
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
 

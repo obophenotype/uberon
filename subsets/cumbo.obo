@@ -38,7 +38,7 @@ synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
 ontology: uberon/subsets/cumbo
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001016>) ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001017>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000010>)))\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001016>) ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001017>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000010>)))\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001017>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000010>))\n)
 
 [Term]
 id: UBERON:0000010
@@ -64,6 +64,7 @@ xref: BAMS:PNS
 xref: BILA:0000081
 xref: birnlex:1111
 xref: BTO:0001028
+xref: C12465
 xref: CALOHA:TS-0808
 xref: EFO:0000891
 xref: EHDAA2:0001445
@@ -78,7 +79,6 @@ xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=247
 xref: http://en.wikipedia.org/wiki/Peripheral_nervous_system
 xref: http://linkedlifedata.com/resource/umls/id/C0206417
 xref: http://linkedlifedata.com/resource/umls/id/C1305921
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Peripheral_Nervous_System
 xref: http://www.snomedbrowser.com/Codes/Details/362292005
 xref: MA:0000218
 xref: MAT:0000338
@@ -111,6 +111,7 @@ synonym: "nucleus" BROAD []
 synonym: "nucleus of CNS" EXACT [NIFSTD:nlx_28443]
 synonym: "nucleus of neuraxis" RELATED []
 xref: AEO:0000136
+xref: C13197
 xref: FMA:83686
 xref: nlx:28443
 xref: Nucleus:(neuroanatomy)
@@ -141,6 +142,7 @@ xref: BAMS:Brain
 xref: BILA:0000135
 xref: birnlex:796
 xref: BTO:0000142
+xref: C12439
 xref: CALOHA:TS-0095
 xref: DHBA:10155
 xref: EFO:0000302
@@ -159,7 +161,6 @@ xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=21 {source="
 xref: http://en.wikipedia.org/wiki/Brain
 xref: http://linkedlifedata.com/resource/umls/id/C0006104
 xref: http://linkedlifedata.com/resource/umls/id/C1269537
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Brain
 xref: http://www.snomedbrowser.com/Codes/Details/258335003
 xref: MA:0000168
 xref: MAT:0000098
@@ -200,6 +201,7 @@ xref: AAO:0000324
 xref: BILA:0000079
 xref: birnlex:844
 xref: BTO:0001484
+xref: C12755
 xref: CALOHA:TS-1313
 xref: EFO:0000802
 xref: EHDAA2:0001246
@@ -216,7 +218,6 @@ xref: MA:0000016
 xref: MAT:0000026
 xref: MESH:D009420
 xref: MIAA:0000026
-xref: Nervous:System
 xref: Nervous:system
 xref: OpenCyc:Mx4rvViT_pwpEbGdrcN5Y29ycA
 xref: TAO:0000396
@@ -252,6 +253,7 @@ xref: BAMS:CNS
 xref: BILA:0000080
 xref: birnlex:1099
 xref: BTO:0000227
+xref: C12438
 xref: CALOHA:TS-0150
 xref: EFO:0000908
 xref: EHDAA2:0000225
@@ -265,7 +267,6 @@ xref: GAID:570
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=854
 xref: http://en.wikipedia.org/wiki/Central_nervous_system
 xref: http://linkedlifedata.com/resource/umls/id/C0927232
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Central_Nervous_System
 xref: http://www.snomedbrowser.com/Codes/Details/278199004
 xref: MA:0000167
 xref: MAT:0000457
@@ -317,11 +318,11 @@ synonym: "commissure" BROAD []
 synonym: "commissure of neuraxis" EXACT [FMA:83906]
 synonym: "neuraxis commissure" EXACT [FMA:83906]
 synonym: "white matter commissure" NARROW [CUMBO:CUMBO]
+xref: C32349
 xref: FBbt:00005103
 xref: FMA:83906
 xref: http://en.wikipedia.org/wiki/Commissure
 xref: http://linkedlifedata.com/resource/umls/id/C1185742
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Commissure
 xref: nlx:110
 xref: nlx_anat:20090513
 xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
@@ -360,6 +361,7 @@ xref: BAMS:Spinal
 xref: birnlex:1709
 xref: BM:SpC
 xref: BTO:0001279
+xref: C12464
 xref: CALOHA:TS-0953
 xref: DHBA:12890
 xref: DMBA:17651
@@ -379,7 +381,6 @@ xref: MAT:0000183
 xref: MESH:D013116
 xref: MIAA:0000183
 xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
-xref: Spinal:Cord
 xref: Spinal:cord
 xref: TAO:0000075
 xref: UMLS:C0037925 {source="NIFSTD:birnlex_1709"}
@@ -446,6 +447,7 @@ synonym: "decussation of neuraxis" EXACT [FMA:83858]
 synonym: "neuraxis chiasm" EXACT []
 synonym: "neuraxis chiasma" EXACT []
 synonym: "neuraxis decussation" EXACT [FMA:83858]
+xref: C28351
 xref: FMA:83858
 xref: nlx:144064
 relationship: part_of UBERON:0001017 ! central nervous system
@@ -461,7 +463,7 @@ synonym: "cerebral sulci" RELATED [NeuroNames:1208]
 synonym: "cerebral sulcus" RELATED [NeuroNames:1208]
 synonym: "fissure of brain" NARROW [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 synonym: "sulcus" BROAD [NIFSTD:nlx_144078]
-xref: Cerebral:Sulcus
+xref: C32292
 xref: DHBA:10610
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1208
 xref: http://www.snomedbrowser.com/Codes/Details/279337001
@@ -618,7 +620,7 @@ namespace: uberon
 xref: RO:0002202
 holds_over_chain: part_of develops_from
 is_transitive: true
-transitive_over: part_of ! part_of
+transitive_over: part_of ! part of
 
 [Typedef]
 id: doap-GitRepository
@@ -676,7 +678,7 @@ is_metadata_tag: true
 id: example_of_usage
 name: example of usage
 namespace: uberon
-xref: IAO:0000122
+xref: IAO:0000112
 is_metadata_tag: true
 
 [Typedef]
@@ -842,7 +844,7 @@ is_metadata_tag: true
 
 [Typedef]
 id: part_of
-name: part_of
+name: part of
 namespace: uberon
 xref: BFO:0000050
 is_transitive: true

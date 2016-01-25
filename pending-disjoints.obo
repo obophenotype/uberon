@@ -16,12 +16,14 @@ relationship: mutually_spatially_disjoint_with UBERON:0001016 ! nervous system
 id: UBERON:0002294 ! biliary system
 relationship: mutually_spatially_disjoint_with UBERON:0002107 ! liver
 
-[Term]
-id: UBERON:0000470 ! cell part
-property_value: blockedBy https://sourceforge.net/p/obo/xenopus-anatomy-xao-term-requests/19/
-property_value: unsatisfiable XAO:0000262 ! polar body
-property_value: unsatisfiable WBbt:0008212 ! anterior spermathecal-uterine valve cell 5R -- see https://github.com/raymond91125/Wao/issues/4
-disjoint_from: CL:0000000 ! cell
+! REQUIRES PROPER PART
+! https://github.com/oborel/obo-relations/issues/78
+![Term]
+!id: UBERON:0000470 ! cell part
+!property_value: blockedBy https://sourceforge.net/p/obo/xenopus-anatomy-xao-term-requests/19/
+!property_value: unsatisfiable XAO:0000262 ! polar body
+!property_value: unsatisfiable WBbt:0008212 ! anterior spermathecal-uterine valve cell 5R -- see https://github.com/raymond91125/Wao/issues/4
+!disjoint_from: CL:0000000 ! cell
 
 [Term]
 id: UBERON:0000486 ! multilaminar epithelium

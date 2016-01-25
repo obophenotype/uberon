@@ -681,10 +681,10 @@ synonym: "tracheal lamina propria" EXACT []
 synonym: "windpipe lamina propria" EXACT [OBOL:automatic]
 synonym: "windpipe lamina propria mucosa" EXACT [OBOL:automatic]
 synonym: "windpipe lamina propria mucosae" EXACT [OBOL:automatic]
+xref: C49305
 xref: EMAPA:35877
 xref: FMA:265157
 xref: http://linkedlifedata.com/resource/umls/id/C1710457
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Trachea_Lamina_Propria
 xref: MA:0001858
 xref: UMLS:C1710457 {source="ncithesaurus:Trachea_Lamina_Propria"}
 is_a: UBERON:0004779 ! respiratory system lamina propria
@@ -760,12 +760,12 @@ subset: pheno_slim
 synonym: "lung lobe" EXACT []
 synonym: "pulminory lobe" EXACT []
 synonym: "pulmonary lobe" EXACT [FMA:7311]
+xref: C34021
 xref: EMAPA:36281
 xref: FMA:7311
 xref: galen:LobeOfLung
 xref: http://linkedlifedata.com/resource/umls/id/C0225752
 xref: http://www.snomedbrowser.com/Codes/Details/245524004
-xref: Lung:Lobe
 xref: MA:0003098
 xref: OpenCyc:Mx4rvo6-vpwpEbGdrcN5Y29ycA
 xref: UMLS:C0225752 {source="ncithesaurus:Lung_Lobe"}
@@ -974,13 +974,13 @@ namespace: uberon
 def: "A part of the pharynx that consists of a flap of elastic cartilage tissue plus a mucous membrane covering, attached to the entrance of the larynx. The epiglottis is found at the root of the tongue and folds back over the entrance to the larynx during swallowing, preventing inhalation of food or drink[MP,modified]" [http://en.wikipedia.org/wiki/Epiglottis, http://orcid.org/0000-0002-6601-2165, MGI:llw2, MP:0010371]
 subset: pheno_slim
 xref: BTO:0001628
+xref: C12709
 xref: EHDAA2:0004081
 xref: EMAPA:18289
 xref: FMA:55130
 xref: GAID:111
 xref: http://en.wikipedia.org/wiki/Epiglottis
 xref: http://linkedlifedata.com/resource/umls/id/C0014540
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Epiglottis
 xref: http://www.snomedbrowser.com/Codes/Details/245502004
 xref: MESH:A02.165.507.411
 xref: OpenCyc:Mx4rvVjxE5wpEbGdrcN5Y29ycA
@@ -1050,7 +1050,7 @@ relationship: part_of UBERON:0002185 ! bronchus
 id: UBERON:0000465
 name: material anatomical entity
 namespace: uberon
-def: "Anatomical entity that has mass." [CARO:MAH]
+def: "Anatomical entity that has mass." [http://orcid.org/0000-0001-9114-8737]
 subset: upper_level
 xref: AAO:0010264
 xref: AEO:0000006
@@ -1083,6 +1083,7 @@ xref: AEO:0000011
 xref: BILA:0000011
 xref: birnlex:14
 xref: BSA:0000049
+xref: C12919
 xref: CALOHA:TS-2088
 xref: CARO:0000011
 xref: EHDAA2:0003011
@@ -1097,7 +1098,6 @@ xref: http://linkedlifedata.com/resource/umls/id/C0460002
 xref: http://www.snomedbrowser.com/Codes/Details/278195005
 xref: MA:0000003
 xref: OpenCyc:Mx4rCWM0QCtDEdyAAADggVbxzQ
-xref: Organ:System
 xref: Organ:system
 xref: TAO:0001439
 xref: TGMA:0001831
@@ -1136,14 +1136,15 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5e/G
 id: UBERON:0000977
 name: pleura
 namespace: uberon
-def: "the serous membrane surrounding the lungs and lining the walls of the pleural cavity" [ISBN:0-683-40008-8, MP:0010820]
+def: "The invaginated serous membrane that surrounds the lungs (the visceral portion) and lines the walls of the pleural cavity (parietal portion)." [https://en.wikipedia.org/wiki/Pulmonary_pleurae, ISBN:0-683-40008-8, MP:0010820, UBERON:cjm]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
 synonym: "pleura" RELATED []
-synonym: "pleural tissue" RELATED [BTO:0001791]
+synonym: "pleural tissue" RELATED [BTO:0001791, http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C12469]
 synonym: "wall of pleural sac" EXACT []
 xref: BTO:0001791
+xref: C12469
 xref: CALOHA:TS-2081
 xref: EFO:0001980
 xref: EMAPA:16775
@@ -1156,17 +1157,17 @@ xref: http://www.snomedbrowser.com/Codes/Details/181609007
 xref: MA:0000433
 xref: MESH:D010994
 xref: OpenCyc:Mx4rv3zwLZwpEbGdrcN5Y29ycA
-xref: Pleural:Tissue
 xref: UMLS:C0032225 {source="ncithesaurus:Pleural_Tissue"}
 xref: VHOG:0000394
 relationship: contributes_to_morphology_of UBERON:0001004 ! respiratory system
+relationship: has_part UBERON:0002400 ! parietal pleura
+relationship: has_part UBERON:0002401 ! visceral pleura
 relationship: part_of UBERON:0001004 ! respiratory system
 relationship: part_of UBERON:0009778 ! pleural sac
-relationship: surrounds UBERON:0002402 ! pleural cavity
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/ab/Gray965.png
 property_value: UBPROP:0000001 "The serous membrane that covers the lungs and lines the pleural cavity. [Kaufman_MH_and_Bard_JBL, The_anatomical_basis_of_mouse_development_(1999)_San_Diego:_Academic_Press, p.264][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000394", ontology="VHOG", source="ISBN10:0124020607", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "pleural" xsd:string
-property_value: UBPROP:0000012 "In MA, is_a cavity lining. In FMA, is_a (viscous) serous membrane (which includes mesothelium plus connective tissue). Note the MA structure should probably be associated with the mesothelium of pleura in FMA. JB/EHDAA2 argues the term 'pleura' is best used for the mesothelial lining (thus excluding connective tissue). See https://github.com/obophenotype/uberon/issues/86" xsd:string
+property_value: UBPROP:0000012 "In MA, is_a cavity lining (which we equate to parietal). In FMA, is_a (viscous) serous membrane (which includes mesothelium plus connective tissue). Note the MA structure should probably be associated with the mesothelium of pleura in FMA. JB/EHDAA2 argues the term 'pleura' is best used for the mesothelial lining (thus excluding connective tissue). See https://github.com/obophenotype/uberon/issues/86" xsd:string
 
 [Term]
 id: UBERON:0001004
@@ -1185,6 +1186,7 @@ synonym: "respiratory system" EXACT []
 synonym: "systema respiratorium" RELATED LATIN [http://en.wikipedia.org/wiki/Respiratory_system]
 xref: AAO:0000541
 xref: BTO:0000203
+xref: C12779
 xref: CALOHA:TS-1319
 xref: EFO:0000804
 xref: EHDAA2:0001604
@@ -1200,7 +1202,6 @@ xref: MAT:0000030
 xref: MESH:D012137
 xref: MIAA:0000030
 xref: OpenCyc:Mx4rvVjzFJwpEbGdrcN5Y29ycA
-xref: Respiratory:System
 xref: Respiratory:system
 xref: TAO:0000272
 xref: UMLS:C0035237 {source="ncithesaurus:Respiratory_System"}
@@ -1240,6 +1241,7 @@ subset: vertebrate_core
 synonym: "pharynx" BROAD SENSU [FMA:46688]
 xref: AAO:0000967
 xref: BTO:0001049
+xref: C12425
 xref: CALOHA:TS-0785
 xref: EFO:0000836
 xref: EHDAA2:0001458
@@ -1251,7 +1253,6 @@ xref: GAID:155
 xref: galen:Pharynx
 xref: http://en.wikipedia.org/wiki/Pharynx
 xref: http://linkedlifedata.com/resource/umls/id/C0031354
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Pharynx
 xref: http://www.snomedbrowser.com/Codes/Details/181211006
 xref: MA:0000432
 xref: MESH:A03.867
@@ -1286,6 +1287,7 @@ synonym: "laryngopharynx" EXACT [FMA:54877]
 synonym: "pars laryngea pharyngis" RELATED LATIN [http://en.wikipedia.org/wiki/Hypopharynx]
 synonym: "pars laryngea pharyngis" RELATED [BTO:0001740]
 xref: BTO:0001740
+xref: C12246
 xref: CALOHA:TS-2020
 xref: EFO:0001388
 xref: EHDAA2:0004574
@@ -1294,7 +1296,6 @@ xref: FMA:54880
 xref: GAID:338
 xref: http://en.wikipedia.org/wiki/Hypopharynx
 xref: http://linkedlifedata.com/resource/umls/id/C0020629
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Hypopharynx
 xref: http://www.snomedbrowser.com/Codes/Details/281490009
 xref: MA:0001796
 xref: MESH:A03.867.490
@@ -1311,12 +1312,13 @@ property_value: UBPROP:0000007 "hypopharyngeal" xsd:string
 id: UBERON:0001062
 name: anatomical entity
 namespace: uberon
-def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." [CARO:MAH, FMA:62955]
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." [FMA:62955, http://orcid.org/0000-0001-9114-8737]
 subset: upper_level
 xref: AAO:0010841
 xref: AEO:0000000
 xref: BILA:0000000
 xref: birnlex:6
+xref: C12219
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
@@ -1324,7 +1326,6 @@ xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
 xref: http://linkedlifedata.com/resource/umls/id/C1515976
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Anatomic_Structure_System_or_Substance
 xref: MA:0000001
 xref: TAO:0100000
 xref: TGMA:0001822
@@ -1358,7 +1359,6 @@ id: UBERON:0001103
 name: diaphragm
 namespace: uberon
 def: "A thin musculomebranous barrier that separates the abdominal and thoracic cavities. Often used for breathing control" [MP:0002279]
-comment: Taxon notesL The existence of some membrane separating the pharynx from the stomach can be traced widely among the chordates. Thus amphioxus possesses an atrium by which water exits the pharynx, which has been argued (and disputed) to be homologous to structures in ascidians and hagfishes.[3] The urochordate epicardium separates digestive organs from the pharynx and heart, but the anus returns to the upper compartment to discharge wastes through an outgoing siphon (Thoracic_diaphragm#Comparative_anatomy_and_evolution)
 subset: efo_slim
 subset: organ_slim
 subset: pheno_slim
@@ -1369,6 +1369,7 @@ synonym: "midriff" RELATED [BTO:0000341]
 synonym: "phren" RELATED [BTO:0000341]
 synonym: "thoracic diaphragm" EXACT []
 xref: BTO:0000341
+xref: C12702
 xref: CALOHA:TS-0198
 xref: EFO:0000937
 xref: EHDAA2:0003495
@@ -1377,7 +1378,6 @@ xref: EV:0100376
 xref: FMA:13295
 xref: GAID:158
 xref: http://linkedlifedata.com/resource/umls/id/C0011980
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Diaphragm
 xref: http://www.snomedbrowser.com/Codes/Details/181614006
 xref: MA:0001904
 xref: MAT:0000502
@@ -1391,6 +1391,11 @@ relationship: part_of UBERON:0001004 ! respiratory system
 property_value: UBPROP:0000001 "The diaphragm is a skeletal muscle that is responsible for contraction and expansion of the lungs[GO]." xsd:string {source="GO:0060539"}
 property_value: UBPROP:0000003 "The mammals are characterized by a diaphragm, which separates the thoracic portion of the body cavity from the abdominal region and assists in drawing air into the lungs and forcing it out. Modern reptiles lack a muscular diaphragm and it is reasonable to suppose that the diaphragm developed as a new device that made possible a large degree of oxygen intake for active animals. The change may have taken place during the transition from reptile to mammal (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000713", ontology="VHOG", source="ISBN:978-0471384618 Colbert EH, Evolution of the vertebrates: a history of the backboned animals through time (2001) p.278", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "phrenic" xsd:string
+property_value: UBPROP:0000008 "The existence of some membrane separating the pharynx from the stomach can be traced widely among the chordates. Thus amphioxus possesses an atrium by which water exits the pharynx, which has been argued (and disputed) to be homologous to structures in ascidians and hagfishes.[3]" xsd:string
+property_value: UBPROP:0000008 "The urochordate epicardium separates digestive organs from the pharynx and heart, but the anus returns to the upper compartment to discharge wastes through an outgoing siphon (Thoracic_diaphragm#Comparative_anatomy_and_evolution)" xsd:string
+property_value: UBPROP:0000009 "barrier between thoracic and abdominal cavities; stop gastric contents from refluxing into the oesophagus" xsd:string
+property_value: UBPROP:0000009 "breathing control" xsd:string
+property_value: UBPROP:0000011 "originate from the cervical somites, likely C3-C5[PMID:23586979]" xsd:string
 
 [Term]
 id: UBERON:0001557
@@ -1442,7 +1447,7 @@ synonym: "cricothyroid" EXACT []
 synonym: "cricothyroideus" EXACT []
 synonym: "M. cricothyroideus" EXACT LATIN [http://en.wikipedia.org/wiki/Cricothyroid_muscle]
 synonym: "musculus cricothyroideus" EXACT LATIN [FMA:46417, FMA:TA]
-xref: Cricothyroid:Muscle
+xref: C32404
 xref: Cricothyroid:muscle
 xref: EMAPA:19270
 xref: FMA:46417
@@ -1470,13 +1475,13 @@ synonym: "larynx muscle organ" EXACT [OBOL:automatic]
 synonym: "muscle organ of larynx" EXACT [OBOL:automatic]
 synonym: "musculi laryngeales" EXACT []
 xref: BTO:0001626
+xref: C32934
 xref: EMAPA:35473
 xref: FMA:46562
 xref: GAID:144
 xref: http://en.wikipedia.org/wiki/Muscles_of_larynx
 xref: http://linkedlifedata.com/resource/umls/id/C0023054
 xref: http://www.snomedbrowser.com/Codes/Details/181744001
-xref: Laryngeal:Muscle
 xref: MA:0001768
 xref: MESH:D007821
 xref: UMLS:C0023054 {source="ncithesaurus:Laryngeal_Muscle"}
@@ -1540,6 +1545,7 @@ synonym: "olfactory chamber cavity" EXACT [http://orcid.org/0000-0002-6601-2165]
 synonym: "olfactory pit" RELATED INCONSISTENT [ZFA:0000130]
 xref: AAO:0000314
 xref: BTO:0002096
+xref: C12424
 xref: EHDAA2:0001226
 xref: EHDAA:6801
 xref: EMAPA:17604
@@ -1549,7 +1555,6 @@ xref: http://linkedlifedata.com/resource/umls/id/C0027423
 xref: http://www.snomedbrowser.com/Codes/Details/263481003
 xref: MA:0000284
 xref: MESH:D009296
-xref: Nasal:Cavity
 xref: Nasal:cavity
 xref: TAO:0000130
 xref: UMLS:C0027423 {source="ncithesaurus:Nasal_Cavity"}
@@ -1572,6 +1577,7 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "sinus sphenoidalis" RELATED LATIN [http://en.wikipedia.org/wiki/Sphenoidal_sinus]
 synonym: "sphenoid sinus" EXACT []
+xref: C12278
 xref: FMA:54683
 xref: GAID:359
 xref: http://linkedlifedata.com/resource/umls/id/C0037885
@@ -1579,7 +1585,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/181207000
 xref: MA:0001795
 xref: MESH:D013101
 xref: OpenCyc:Mx4rwEIoz5wpEbGdrcN5Y29ycA
-xref: Sphenoid:Sinus
 xref: Sphenoidal:sinus
 xref: UMLS:C0037885 {source="ncithesaurus:Sphenoid_Sinus"}
 is_a: UBERON:0001825 ! paranasal sinus
@@ -1598,6 +1603,7 @@ synonym: "Nasenrachenraum" RELATED [BTO:0000662]
 synonym: "pars nasalis pharyngis" RELATED LATIN [http://en.wikipedia.org/wiki/Nasopharynx]
 synonym: "rhinopharynx" EXACT []
 xref: BTO:0000662
+xref: C12423
 xref: CALOHA:TS-0663
 xref: EHDAA2:0001239
 xref: EHDAA:7086
@@ -1607,7 +1613,6 @@ xref: FMA:54878
 xref: GAID:339
 xref: http://en.wikipedia.org/wiki/Nasopharynx
 xref: http://linkedlifedata.com/resource/umls/id/C0027442
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Nasopharynx
 xref: http://www.snomedbrowser.com/Codes/Details/181200003
 xref: MA:0000443
 xref: MAT:0000447
@@ -1634,6 +1639,7 @@ subset: uberon_slim
 synonym: "mesopharynx" RELATED [http://en.wikipedia.org/wiki/Pharynx]
 synonym: "oral part of pharynx" EXACT []
 synonym: "pars oralis pharyngis" RELATED LATIN [http://en.wikipedia.org/wiki/Oropharynx]
+xref: C12762
 xref: CALOHA:TS-0718
 xref: EFO:0001976
 xref: EHDAA2:0004082
@@ -1643,7 +1649,6 @@ xref: FMA:54879
 xref: GAID:340
 xref: http://en.wikipedia.org/wiki/Oropharynx
 xref: http://linkedlifedata.com/resource/umls/id/C0521367
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Oropharynx
 xref: http://www.snomedbrowser.com/Codes/Details/263376008
 xref: MA:0000351
 xref: MAT:0000446
@@ -1684,6 +1689,7 @@ synonym: "tonsil of luschka" EXACT []
 synonym: "tonsilla pharyngea" RELATED LATIN [http://en.wikipedia.org/wiki/Pharyngeal_tonsil]
 synonym: "tonsilla pharyngealis" EXACT LATIN [FMA:54970, FMA:TA]
 xref: BTO:0000777
+xref: C33318
 xref: EV:0100054
 xref: FMA:54970
 xref: GAID:1288
@@ -1691,7 +1697,6 @@ xref: http://linkedlifedata.com/resource/umls/id/C0001428
 xref: http://www.snomedbrowser.com/Codes/Details/181199001
 xref: MA:0000774
 xref: MESH:A15.382.520.604.084
-xref: Pharyngeal:Tonsil
 xref: Pharyngeal:tonsil
 xref: UMLS:C0001428 {source="ncithesaurus:Pharyngeal_Tonsil"}
 is_a: UBERON:0002372 ! tonsil
@@ -1713,9 +1718,9 @@ synonym: "pharyngeal lymphatic ring" EXACT []
 synonym: "pharyngeal lymphoid ring" EXACT []
 synonym: "Waldeyer's ring" EXACT []
 synonym: "Waldeyer's tonsillar ring" EXACT []
+xref: C73468
 xref: FMA:55070
 xref: http://linkedlifedata.com/resource/umls/id/C0459892
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Waldeyers_Tonsillar_Ring
 xref: http://www.snomedbrowser.com/Codes/Details/56411004
 xref: MA:0000752
 xref: UMLS:C0459892 {source="ncithesaurus:Waldeyers_Tonsillar_Ring"}
@@ -1734,6 +1739,7 @@ subset: uberon_slim
 synonym: "Kehlkopf@ge" RELATED [BTO:0001208]
 xref: AAO:0000268
 xref: BTO:0001208
+xref: C12420
 xref: CALOHA:TS-0532
 xref: EFO:0000838
 xref: EHDAA2:0004063
@@ -1744,7 +1750,6 @@ xref: GAID:108
 xref: galen:Larynx
 xref: http://en.wikipedia.org/wiki/Larynx
 xref: http://linkedlifedata.com/resource/umls/id/C0023078
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Larynx
 xref: http://www.snomedbrowser.com/Codes/Details/181212004
 xref: MA:0000414
 xref: MAT:0000187
@@ -1776,6 +1781,7 @@ synonym: "laryngeal prominence" RELATED [http://en.wikipedia.org/wiki/Thyroid_ca
 synonym: "pomus" RELATED [http://en.wikipedia.org/wiki/Thyroid_cartilage]
 synonym: "pomus adamus" RELATED [http://en.wikipedia.org/wiki/Thyroid_cartilage]
 xref: BTO:0003655
+xref: C33780
 xref: EHDAA2:0002030
 xref: EHDAA:9395
 xref: EMAPA:18698
@@ -1785,7 +1791,6 @@ xref: http://linkedlifedata.com/resource/umls/id/C0040126
 xref: http://www.snomedbrowser.com/Codes/Details/263483000
 xref: MA:0001764
 xref: MESH:A02.165.507.870
-xref: Thyroid:Cartilage
 xref: Thyroid:cartilage
 xref: UMLS:C0040126 {source="ncithesaurus:Thyroid_Cartilage"}
 xref: VHOG:0001365
@@ -1806,13 +1811,13 @@ synonym: "cartilage of larynx" EXACT [FMA:55108]
 synonym: "cartilagines laryngeales" EXACT PLURAL []
 synonym: "larynx cartilage" EXACT [VHOG:0001550]
 xref: BTO:0003660
+xref: C12281
 xref: EHDAA:8157
 xref: EMAPA:18697
 xref: FMA:55108
 xref: GAID:107
 xref: http://linkedlifedata.com/resource/umls/id/C0023050
 xref: http://www.snomedbrowser.com/Codes/Details/263482005
-xref: Laryngeal:Cartilage
 xref: MA:0001758
 xref: MESH:A02.165.507
 xref: UMLS:C0023050 {source="ncithesaurus:Laryngeal_Cartilage"}
@@ -1837,8 +1842,8 @@ synonym: "cartilagines arytenoidea" RELATED LATIN [http://en.wikipedia.org/wiki/
 synonym: "cartilago arytaenoidea" RELATED [AAO:0000674]
 synonym: "cartilago arytenoidea" RELATED []
 xref: AAO:0000674
-xref: Arytenoid:Cartilage
 xref: Arytenoid:cartilage
+xref: C32148
 xref: EMAPA:17977
 xref: EMAPA:18695
 xref: FMA:55109
@@ -1863,7 +1868,7 @@ subset: uberon_slim
 synonym: "cartilage of Santorini" EXACT []
 synonym: "cartilagines corniculata" EXACT LATIN [http://en.wikipedia.org/wiki/Corniculate_cartilage]
 synonym: "Santorini's cartilage" EXACT []
-xref: Corniculate:Cartilage
+xref: C32373
 xref: Corniculate:cartilages
 xref: FMA:55110
 xref: http://linkedlifedata.com/resource/umls/id/C0225556
@@ -1881,7 +1886,7 @@ name: epiglottic cartilage
 namespace: uberon
 def: "The most superior of the laryngeal cartilages, which is found at the root of the tongue and folds back over the entrance to the larynx during swallowing." [MP:0002259]
 subset: uberon_slim
-xref: Epiglottic:Cartilage
+xref: C32526
 xref: FMA:55112
 xref: http://linkedlifedata.com/resource/umls/id/C0458526
 xref: http://www.snomedbrowser.com/Codes/Details/278990001
@@ -1900,10 +1905,10 @@ namespace: uberon
 def: "A ligament that is part of a larynx and connexts the cartilages of the larynx" [http://education.yahoo.com/reference/gray/subjects/subject/236]
 synonym: "laryngeal ligament" EXACT []
 synonym: "larynx ligament" EXACT [MA:0001755]
+xref: C32933
 xref: FMA:55131
 xref: http://linkedlifedata.com/resource/umls/id/C0458519
 xref: http://www.snomedbrowser.com/Codes/Details/279508004
-xref: Laryngeal:Ligament
 xref: MA:0001755
 xref: UMLS:C0458519 {source="ncithesaurus:Laryngeal_Ligament"}
 relationship: part_of UBERON:0001737 ! larynx
@@ -1917,8 +1922,8 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "cavity of frontal bone" EXACT [FMA:57417]
 synonym: "sinus frontales" RELATED LATIN [http://en.wikipedia.org/wiki/Frontal_sinus]
+xref: C12277
 xref: FMA:57417
-xref: Frontal:Sinus
 xref: Frontal:sinus
 xref: GAID:357
 xref: http://linkedlifedata.com/resource/umls/id/C0016734
@@ -1960,13 +1965,13 @@ synonym: "antrum of Highmore" EXACT []
 synonym: "highmore antrum" RELATED [MESH:A04.531.621.578]
 synonym: "maxillary antrum" RELATED [MESH:A04.531.621.578]
 synonym: "sinus maxilliaris" EXACT LATIN [http://en.wikipedia.org/wiki/Maxillary_sinus]
+xref: C12275
 xref: CALOHA:TS-2231
 xref: FMA:57715
 xref: GAID:358
 xref: http://linkedlifedata.com/resource/umls/id/C0024957
 xref: http://www.snomedbrowser.com/Codes/Details/181204007
 xref: MA:0001794
-xref: Maxillary:Sinus
 xref: Maxillary:sinus
 xref: MESH:D008443
 xref: OpenCyc:Mx4rvp2ZWJwpEbGdrcN5Y29ycA
@@ -1989,12 +1994,12 @@ synonym: "mucosa of organ of larynx" EXACT [OBOL:automatic]
 synonym: "mucous membrane of larynx" EXACT []
 synonym: "organ mucosa of larynx" EXACT [OBOL:automatic]
 synonym: "tunica mucosa laryngis" EXACT LATIN [FMA:59662, FMA:TA]
+xref: C49246
 xref: EMAPA:18334
 xref: FMA:59662
 xref: GAID:301
 xref: http://linkedlifedata.com/resource/umls/id/C0023053
 xref: http://www.snomedbrowser.com/Codes/Details/361940006
-xref: Laryngeal:Mucosa
 xref: MA:0001766
 xref: MESH:D007820
 xref: UMLS:C0023053 {source="ncithesaurus:Laryngeal_Mucosa"}
@@ -2010,6 +2015,7 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "nasal sinus" RELATED [GAID:355]
 synonym: "sinus" BROAD []
+xref: C12763
 xref: CALOHA:TS-2082
 xref: EHDAA:6489
 xref: EMAPA:35662
@@ -2020,7 +2026,6 @@ xref: http://linkedlifedata.com/resource/umls/id/C0030471
 xref: http://www.snomedbrowser.com/Codes/Details/181203001
 xref: MA:0000431
 xref: MESH:D010256
-xref: Paranasal:Sinus
 xref: Paranasal:sinuses
 xref: UMLS:C0030471 {source="ncithesaurus:Paranasal_Sinus"}
 relationship: continuous_with UBERON:0001707 ! nasal cavity
@@ -2069,6 +2074,7 @@ synonym: "tracheal epithelium" EXACT []
 synonym: "windpipe epithelial tissue" EXACT [OBOL:automatic]
 synonym: "windpipe epithelium" EXACT [OBOL:automatic]
 xref: BTO:0001389
+xref: C33797
 xref: CALOHA:TS-1061
 xref: EHDAA2:0002069
 xref: EHDAA:5007
@@ -2077,7 +2083,6 @@ xref: EMAPA:18409
 xref: FMA:62015
 xref: http://linkedlifedata.com/resource/umls/id/C1179002
 xref: MA:0001862
-xref: Tracheal:Epithelium
 xref: UMLS:C1179002 {source="ncithesaurus:Tracheal_Epithelium"}
 xref: VHOG:0001045
 is_a: UBERON:0004815 ! lower respiratory tract epithelium
@@ -2103,6 +2108,7 @@ synonym: "nasopharynx epithelium" EXACT []
 synonym: "rhinopharynx epithelial tissue" EXACT [OBOL:automatic]
 synonym: "rhinopharynx epithelium" EXACT [OBOL:automatic]
 xref: BTO:0004480
+xref: C49263
 xref: CALOHA:TS-0662
 xref: EHDAA2:0001241
 xref: EHDAA:7090
@@ -2110,7 +2116,6 @@ xref: EMAPA:17672
 xref: FMA:62452
 xref: http://linkedlifedata.com/resource/umls/id/C1179157
 xref: MA:0001865
-xref: Nasopharynx:Epithelium
 xref: UMLS:C1179157 {source="ncithesaurus:Nasopharynx_Epithelium"}
 xref: VHOG:0001038
 is_a: UBERON:0003351 ! pharyngeal epithelium
@@ -2125,11 +2130,11 @@ def: "An epithelium that is part of a oropharynx [Automatically generated defini
 synonym: "oropharyngeal epithelium" EXACT []
 synonym: "oropharynx epithelial tissue" EXACT [OBOL:automatic]
 synonym: "oropharynx epithelium" EXACT [MA:0001605]
+xref: C49264
 xref: EHDAA2:0004083
 xref: FMA:62453
 xref: http://linkedlifedata.com/resource/umls/id/C1179158
 xref: MA:0001605
-xref: Oropharynx:Epithelium
 xref: UMLS:C1179158 {source="ncithesaurus:Oropharynx_Epithelium"}
 is_a: UBERON:0003351 ! pharyngeal epithelium
 relationship: part_of UBERON:0001729 ! oropharynx
@@ -2147,10 +2152,10 @@ synonym: "epithelial tissue of respiratory bronchiole" EXACT [OBOL:automatic]
 synonym: "epithelium of bronchiolus respiratorius" EXACT [OBOL:automatic]
 synonym: "respiratory bronchiole epithelial tissue" EXACT [OBOL:automatic]
 synonym: "respiratory bronchiole epithelium" EXACT []
+xref: C48943
 xref: EMAPA:35730
 xref: FMA:62498
 xref: http://linkedlifedata.com/resource/umls/id/C1179179
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Respiratory_Bronchiole_Epithelium
 xref: MA:0001773
 xref: UMLS:C1179179 {source="ncithesaurus:Respiratory_Bronchiole_Epithelium"}
 is_a: UBERON:0002051 ! epithelium of bronchiole
@@ -2171,7 +2176,7 @@ synonym: "bronchus cartilage" EXACT []
 synonym: "cartilage of bronchi" EXACT [OBOL:automatic]
 synonym: "cartilage of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "cartilagines bronchiales" EXACT PLURAL []
-xref: Bronchus:Cartilage
+xref: C49209
 xref: EMAPA:35192
 xref: FMA:62649
 xref: http://linkedlifedata.com/resource/umls/id/C0225604
@@ -2196,8 +2201,8 @@ synonym: "submucosa of bronchi" EXACT [OBOL:automatic]
 synonym: "submucosa of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "submucous layer of bronchi" RELATED [BTO:0002108]
 synonym: "tela submucosa bronchi" EXACT LATIN [FMA:62653, FMA:TA]
-xref: Bronchus:Submucosa
 xref: BTO:0002108
+xref: C49214
 xref: FMA:62653
 xref: http://linkedlifedata.com/resource/umls/id/C0225601
 xref: http://www.snomedbrowser.com/Codes/Details/85546005
@@ -2219,10 +2224,10 @@ synonym: "epithelium of bronchiolus terminalis" EXACT [OBOL:automatic]
 synonym: "epithelium of terminal bronchiole" EXACT [FMA:62794]
 synonym: "terminal bronchiole epithelial tissue" EXACT [OBOL:automatic]
 synonym: "terminal bronchiole epithelium" EXACT []
+xref: C33755
 xref: EMAPA:36283
 xref: FMA:62794
 xref: http://linkedlifedata.com/resource/umls/id/C1179400
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Terminal_Bronchiole_Epithelium
 xref: MA:0001774
 xref: UMLS:C1179400 {source="ncithesaurus:Terminal_Bronchiole_Epithelium"}
 is_a: UBERON:0002051 ! epithelium of bronchiole
@@ -2239,9 +2244,9 @@ comment: Lymphoid tissue associated with airways in mice has functional similari
 subset: pheno_slim
 synonym: "BALT" RELATED []
 synonym: "bronchus associated lymphoid tissue" EXACT []
+xref: C32234
 xref: FMA:62821
 xref: http://linkedlifedata.com/resource/umls/id/C1179418
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchus-Associated_Lymphoid_Tissue
 xref: MA:0000135
 xref: UMLS:C1179418 {source="ncithesaurus:Bronchus-Associated_Lymphoid_Tissue"}
 relationship: part_of UBERON:0002185 ! bronchus
@@ -2269,6 +2274,7 @@ synonym: "sensory olfactory epithelium" EXACT []
 xref: AAO:0010158
 xref: birnlex:2703
 xref: BTO:0000108
+xref: C33203
 xref: CALOHA:TS-0703
 xref: EFO:0001972
 xref: EHDAA2:0001228
@@ -2281,7 +2287,6 @@ xref: http://linkedlifedata.com/resource/umls/id/C0599332
 xref: http://www.snomedbrowser.com/Codes/Details/37623003
 xref: MA:0001325
 xref: MAT:0000445
-xref: Olfactory:Epithelium
 xref: Olfactory:epithelium
 xref: TAO:0000554
 xref: UMLS:C0599332 {source="NIFSTD:birnlex_2703"}
@@ -2315,8 +2320,8 @@ synonym: "epithelial tissue of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "epithelial tissue of bronchus" EXACT [OBOL:automatic]
 synonym: "epithelium of bronchi" EXACT [OBOL:automatic]
 synonym: "epithelium of bronchial trunk" EXACT [OBOL:automatic]
-xref: Bronchial:Epithelium
 xref: BTO:0001845
+xref: C32231
 xref: CALOHA:TS-1240
 xref: EFO:0000307
 xref: EMAPA:32691
@@ -2353,6 +2358,7 @@ synonym: "pulmo" EXACT LATIN []
 xref: AAO:0000275
 xref: AAO:0010567
 xref: BTO:0000763
+xref: C12468
 xref: CALOHA:TS-0568
 xref: EFO:0000934
 xref: EHDAA2:0001042
@@ -2365,7 +2371,6 @@ xref: GAID:345
 xref: galen:Lung
 xref: http://en.wikipedia.org/wiki/Lung
 xref: http://linkedlifedata.com/resource/umls/id/C0024109
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lung
 xref: http://www.snomedbrowser.com/Codes/Details/181216001
 xref: MA:0000415
 xref: MAT:0000135
@@ -2399,8 +2404,8 @@ synonym: "epithelial tissue of lobular bronchiole" EXACT [OBOL:automatic]
 synonym: "epithelium of lobular bronchiole" EXACT [OBOL:automatic]
 synonym: "lobular bronchiole epithelial tissue" EXACT [OBOL:automatic]
 synonym: "lobular bronchiole epithelium" EXACT [OBOL:automatic]
-xref: Bronchiole:Epithelium
 xref: BTO:0001866
+xref: C48942
 xref: CALOHA:TS-0570
 xref: EMAPA:32693
 xref: FMA:62497
@@ -2423,6 +2428,7 @@ namespace: uberon
 def: "Lung which consists of the right upper lobe, middle lobe and right lower lobe.[FMA]" [FMA:FMA, http://en.wikipedia.org/wiki/Right_lung]
 subset: pheno_slim
 subset: uberon_slim
+xref: C33483
 xref: EHDAA2:0001730
 xref: EHDAA:4969
 xref: EMAPA:17661
@@ -2431,7 +2437,6 @@ xref: http://linkedlifedata.com/resource/umls/id/C0225706
 xref: http://www.snomedbrowser.com/Codes/Details/361967000
 xref: MA:0000426
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvVjKy5wpEbGdrcN5Y29ycA
-xref: Right:Lung
 xref: Right:lung
 xref: UMLS:C0225706 {source="ncithesaurus:Right_Lung"}
 xref: VHOG:0000301
@@ -2450,13 +2455,13 @@ namespace: uberon
 def: "Lung which consists of the left upper lobe and left lower lobe.[FMA]" [FMA:FMA, http://en.wikipedia.org/wiki/Left_lung]
 subset: pheno_slim
 subset: uberon_slim
+xref: C32967
 xref: EHDAA2:0000943
 xref: EHDAA:4947
 xref: EMAPA:17653
 xref: FMA:7310
 xref: http://linkedlifedata.com/resource/umls/id/C0225730
 xref: http://www.snomedbrowser.com/Codes/Details/361982005
-xref: Left:Lung
 xref: Left:lung
 xref: MA:0000425
 xref: OpenCyc:Mx8Ngh4rvgIFoJwpEbGdrcN5Y29ycB4rvVjKy5wpEbGdrcN5Y29ycA
@@ -2481,9 +2486,9 @@ subset: uberon_slim
 synonym: "air sac" RELATED [MP:0010902]
 synonym: "pulmonary alveolar sac" EXACT [MP:0010902]
 synonym: "sacculus alveolaris" EXACT [FMA:7317]
-xref: Alveolar:Sac
 xref: Alveolar:sac
 xref: BTO:0000061
+xref: C32057
 xref: EMAPA:35119
 xref: FMA:7317
 xref: http://linkedlifedata.com/resource/umls/id/C0225691
@@ -2512,13 +2517,13 @@ synonym: "right upper lobe" EXACT [FMA:7333]
 synonym: "right upper lobe of lung" EXACT [FMA:7333]
 synonym: "superior lobe of right lung" EXACT [FMA:7333]
 synonym: "upper lobe of right lung" EXACT [galen:UpperLobeOfRightLung]
+xref: C33023
 xref: EHDAA2:0001747
 xref: EHDAA:4987
 xref: EMAPA:17991
 xref: FMA:7333
 xref: galen:UpperLobeOfRightLung
 xref: http://linkedlifedata.com/resource/umls/id/C1261074
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Upper_Lobe_of_the_Right_Lung
 xref: http://www.snomedbrowser.com/Codes/Details/361969002
 xref: MA:0000429
 xref: UMLS:C1261074 {source="ncithesaurus:Upper_Lobe_of_the_Right_Lung"}
@@ -2545,13 +2550,13 @@ synonym: "right lower lobe" EXACT [FMA:7337]
 synonym: "right lower lobe of lung" EXACT [FMA:7337]
 synonym: "right lung caudal lobe" RELATED [MA:0000428]
 synonym: "right lung inferior lobe" RELATED [MA:0000428]
+xref: C33022
 xref: EHDAA2:0001740
 xref: EHDAA:4979
 xref: EMAPA:17986
 xref: FMA:7337
 xref: galen:LowerLobeOfRightLung
 xref: http://linkedlifedata.com/resource/umls/id/C1261075
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lower_Lobe_of_the_Right_Lung
 xref: http://www.snomedbrowser.com/Codes/Details/361976007
 xref: MA:0000428
 xref: UMLS:C1261075 {source="ncithesaurus:Lower_Lobe_of_the_Right_Lung"}
@@ -2588,8 +2593,8 @@ subset: uberon_slim
 synonym: "alveolar duct" EXACT [MA:0000417]
 synonym: "ductus alveolaris" EXACT LATIN [FMA:7341, FMA:TA]
 synonym: "respiratory alveolar duct" EXACT []
-xref: Alveolar:Duct
 xref: Alveolar:duct
+xref: C32056
 xref: EMAPA:32694
 xref: FMA:7341
 xref: http://linkedlifedata.com/resource/umls/id/C0391892
@@ -2619,12 +2624,12 @@ synonym: "right medial lobe" BROAD []
 synonym: "right medial lobe of lung" EXACT []
 synonym: "right middle lobe" BROAD []
 synonym: "right middle lobe of lung" EXACT []
+xref: C12286
 xref: EMAPA:17997
 xref: FMA:7383
 xref: galen:MiddleLobeOfRightLung
 xref: http://en.wikipedia.org/wiki/Middle_lobe_of_right_lung
 xref: http://linkedlifedata.com/resource/umls/id/C0225757
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Middle_Lobe_of_the_Right_Lung
 xref: http://www.snomedbrowser.com/Codes/Details/361973004
 xref: MA:0000430
 xref: UMLS:C0225757 {source="ncithesaurus:Middle_Lobe_of_the_Right_Lung"}
@@ -2648,10 +2653,10 @@ synonym: "right bronchus" RELATED []
 synonym: "right major bronchus" EXACT []
 synonym: "right primary bronchus" EXACT [http://en.wikipedia.org/wiki/Right_main_bronchus]
 synonym: "right principal bronchus" EXACT [http://en.wikipedia.org/wiki/Right_main_bronchus]
+xref: C33486
 xref: FMA:7395
 xref: http://en.wikipedia.org/wiki/Right_main_bronchus
 xref: http://linkedlifedata.com/resource/umls/id/C0225608
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Right_Main_Bronchus
 xref: http://www.snomedbrowser.com/Codes/Details/361955002
 xref: MA:0001849
 xref: OpenCyc:Mx8Ngh4rvgHsHZwpEbGdrcN5Y29ycB4rvoIuvJwpEbGdrcN5Y29ycA
@@ -2676,10 +2681,10 @@ synonym: "left bronchus" RELATED []
 synonym: "left major bronchus" EXACT []
 synonym: "left primary bronchus" EXACT [http://en.wikipedia.org/wiki/Left_main_bronchus]
 synonym: "left principal bronchus" EXACT [http://en.wikipedia.org/wiki/Left_main_bronchus]
+xref: C32968
 xref: FMA:7396
 xref: http://en.wikipedia.org/wiki/Left_main_bronchus
 xref: http://linkedlifedata.com/resource/umls/id/C0225630
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Left_Main_Bronchus
 xref: http://www.snomedbrowser.com/Codes/Details/361959008
 xref: MA:0001843
 xref: UMLS:C0225630 {source="ncithesaurus:Left_Main_Bronchus"}
@@ -2706,6 +2711,7 @@ synonym: "major bronchus" EXACT []
 synonym: "primary bronchus" EXACT [FMA:7405]
 synonym: "principal bronchus" EXACT [FMA:7405]
 synonym: "proximal bronchus" RELATED []
+xref: C12284
 xref: EHDAA2:0001044
 xref: EHDAA:3072
 xref: EMAPA:16849
@@ -2713,7 +2719,6 @@ xref: FMA:7405
 xref: http://linkedlifedata.com/resource/umls/id/C0024496
 xref: http://www.snomedbrowser.com/Codes/Details/245508000
 xref: MA:0000438
-xref: Main:Bronchus
 xref: Main:bronchus
 xref: OpenCyc:Mx4rvoIuvJwpEbGdrcN5Y29ycA
 xref: UMLS:C0024496 {source="ncithesaurus:Main_Bronchus"}
@@ -2734,6 +2739,7 @@ synonym: "bronchi lobaris" EXACT LATIN [http://en.wikipedia.org/wiki/Secondary_b
 synonym: "lobar bronchi" RELATED PLURAL [http://en.wikipedia.org/wiki/Secondary_bronchus]
 synonym: "secondary bronchi" RELATED PLURAL [http://en.wikipedia.org/wiki/Secondary_bronchus]
 synonym: "secondary bronchus" EXACT [FMA:7406, http://en.wikipedia.org/wiki/Secondary_bronchus]
+xref: C32998
 xref: EHDAA:4955
 xref: EHDAA:4963
 xref: EHDAA:4977
@@ -2748,7 +2754,6 @@ xref: EMAPA:32696
 xref: FMA:7406
 xref: http://linkedlifedata.com/resource/umls/id/C0225653
 xref: http://www.snomedbrowser.com/Codes/Details/245509008
-xref: Lobar:Bronchus
 xref: MA:0000437
 xref: OpenCyc:Mx4rwQMLXJwpEbGdrcN5Y29ycA
 xref: Secondary:bronchus
@@ -2767,6 +2772,7 @@ def: "The tertiary bronchi (also known as the segmental bronchi) arise from the 
 subset: organ_slim
 subset: uberon_slim
 synonym: "tertiary bronchus" EXACT []
+xref: C33526
 xref: EHDAA:7043
 xref: EHDAA:7049
 xref: EHDAA:7058
@@ -2777,7 +2783,6 @@ xref: http://linkedlifedata.com/resource/umls/id/C0444439
 xref: http://www.snomedbrowser.com/Codes/Details/245513001
 xref: MA:0000439
 xref: OpenCyc:Mx4rwQGFgZwpEbGdrcN5Y29ycA
-xref: Segmental:Bronchus
 xref: Segmental:bronchus
 xref: UMLS:C0444439 {source="ncithesaurus:Segmental_Bronchus"}
 xref: VHOG:0001446
@@ -2799,6 +2804,7 @@ synonym: "bronchi" EXACT PLURAL []
 synonym: "bronchial tissue" RELATED [BTO:0001340]
 synonym: "bronchial trunk" EXACT [FMA:7409]
 xref: BTO:0001340
+xref: C12683
 xref: CALOHA:TS-1229
 xref: EFO:0000932
 xref: EMAPA:32689
@@ -2807,7 +2813,6 @@ xref: FMA:7409
 xref: GAID:346
 xref: http://en.wikipedia.org/wiki/Bronchus
 xref: http://linkedlifedata.com/resource/umls/id/C0006255
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchus
 xref: http://www.snomedbrowser.com/Codes/Details/181215002
 xref: MA:0000436
 xref: MAT:0000133
@@ -2834,6 +2839,7 @@ synonym: "bronchioli" RELATED PLURAL []
 synonym: "bronchiolus" RELATED [BTO:0002375]
 synonym: "lobular bronchiole" EXACT [FMA:7410]
 xref: BTO:0002375
+xref: C12684
 xref: CALOHA:TS-2003
 xref: EHDAA:8171
 xref: EHDAA:8183
@@ -2843,7 +2849,6 @@ xref: EMAPA:32697
 xref: FMA:7410
 xref: http://en.wikipedia.org/wiki/Bronchiole
 xref: http://linkedlifedata.com/resource/umls/id/C0006270
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchiole
 xref: http://www.snomedbrowser.com/Codes/Details/278982001
 xref: MA:0000422
 xref: OpenCyc:Mx4rvl9iDpwpEbGdrcN5Y29ycA
@@ -2869,13 +2874,13 @@ synonym: "bronchioli terminalis" RELATED LATIN [http://en.wikipedia.org/wiki/Ter
 synonym: "bronchiolus terminalis" EXACT LATIN []
 synonym: "terminal bronchiole tube" RELATED []
 xref: BTO:0003223
+xref: C33754
 xref: EMAPA:36282
 xref: FMA:7411
 xref: http://linkedlifedata.com/resource/umls/id/C0225666
 xref: http://www.snomedbrowser.com/Codes/Details/278981008
 xref: MA:0000424
 xref: OpenCyc:Mx4rwS7IU5wpEbGdrcN5Y29ycA
-xref: Terminal:Bronchiole
 xref: Terminal:bronchiole
 xref: UMLS:C0225666 {source="ncithesaurus:Terminal_Bronchiole"}
 is_a: UBERON:0002186 ! bronchiole
@@ -2891,13 +2896,13 @@ subset: uberon_slim
 synonym: "bronchiolus respiratorii" EXACT LATIN [http://en.wikipedia.org/wiki/Respiratory_bronchiole]
 synonym: "bronchiolus respiratorius" EXACT LATIN [FMA:7412]
 xref: BTO:0003222
+xref: C33465
 xref: EMAPA:35729
 xref: FMA:7412
 xref: http://linkedlifedata.com/resource/umls/id/C1261270
 xref: http://www.snomedbrowser.com/Codes/Details/128517006
 xref: MA:0000423
 xref: OpenCyc:Mx4rwS6ki5wpEbGdrcN5Y29ycA
-xref: Respiratory:Bronchiole
 xref: Respiratory:bronchiole
 xref: UMLS:C1261270 {source="ncithesaurus:Respiratory_Bronchiole"}
 is_a: UBERON:0002186 ! bronchiole
@@ -2920,12 +2925,12 @@ synonym: "trachea submucosa" EXACT []
 synonym: "tracheal submucosa" EXACT []
 synonym: "windpipe submucosa" EXACT [OBOL:automatic]
 xref: BTO:0002115
+xref: C49307
 xref: EMAPA:35879
 xref: FMA:7472
 xref: http://linkedlifedata.com/resource/umls/id/C0225586
 xref: http://www.snomedbrowser.com/Codes/Details/4419000
 xref: MA:0001860
-xref: Trachea:Submucosa
 xref: UMLS:C0225586 {source="ncithesaurus:Trachea_Submucosa"}
 is_a: UBERON:0004777 ! respiratory system submucosa
 relationship: part_of UBERON:0003126 ! trachea
@@ -3010,10 +3015,10 @@ synonym: "lamina propria mucosae of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "lamina propria mucosae of bronchus" EXACT [OBOL:automatic]
 synonym: "lamina propria of bronchi" EXACT [OBOL:automatic]
 synonym: "lamina propria of bronchial trunk" EXACT [OBOL:automatic]
+xref: C49212
 xref: EMAPA:35194
 xref: FMA:86619
 xref: http://linkedlifedata.com/resource/umls/id/C1707054
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchus_Lamina_Propria
 xref: MA:0001836
 xref: UMLS:C1707054 {source="ncithesaurus:Bronchus_Lamina_Propria"}
 is_a: UBERON:0000031 ! lamina propria of trachea
@@ -3100,6 +3105,7 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "Mandel" RELATED [BTO:0001387]
 xref: BTO:0001387
+xref: C12802
 xref: CALOHA:TS-1053
 xref: EFO:0001401
 xref: EMAPA:35871
@@ -3111,12 +3117,9 @@ xref: http://en.wikipedia.org/wiki/Tonsil
 xref: http://linkedlifedata.com/resource/umls/id/C0836921
 xref: http://linkedlifedata.com/resource/umls/id/C1519547
 xref: http://linkedlifedata.com/resource/umls/id/C1519548
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Tonsil
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Tonsillar_Lymphoid_Tissue
 xref: MA:0000143
 xref: MESH:A03.867.603.925
 xref: OpenCyc:Mx4rvVivrZwpEbGdrcN5Y29ycA
-xref: Tonsilar:Tissue
 xref: UMLS:C0836921 {source="ncithesaurus:Tonsil"}
 xref: UMLS:C1519547 {source="ncithesaurus:Tonsilar_Tissue"}
 xref: UMLS:C1519548 {source="ncithesaurus:Tonsillar_Lymphoid_Tissue"}
@@ -3137,6 +3140,7 @@ synonym: "Gaumenmandel@ge" RELATED [BTO:0004714]
 synonym: "tonsil" BROAD []
 synonym: "tonsilla palatina" RELATED LATIN [http://en.wikipedia.org/wiki/Palatine_tonsil]
 xref: BTO:0004714
+xref: C33250
 xref: EFO:0001977
 xref: EMAPA:35644
 xref: EV:0100393
@@ -3146,7 +3150,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/265787001
 xref: MA:0000775
 xref: MAT:0000291
 xref: MIAA:0000291
-xref: Palatine:Tonsil
 xref: Palatine:tonsil
 xref: UMLS:C0040421 {source="ncithesaurus:Palatine_Tonsil"}
 xref: VHOG:0001140
@@ -3173,7 +3176,7 @@ synonym: "cricoidea" RELATED [http://en.wikipedia.org/wiki/Cricoid_cartilage]
 synonym: "innominate cartilage" RELATED [VHOG:0001308]
 synonym: "krykoid cartilage" RELATED [http://en.wikipedia.org/wiki/Cricoid_cartilage]
 xref: AAO:0000675
-xref: Cricoid:Cartilage
+xref: C32400
 xref: Cricoid:cartilage
 xref: EHDAA2:0000326
 xref: EHDAA:9393
@@ -3199,21 +3202,21 @@ property_value: UBPROP:0000003 "(In anura) a dorsal pair of arytenoid cartilages
 id: UBERON:0002400
 name: parietal pleura
 namespace: uberon
-def: "the part of the pleura external to the visceral pleura. It lines the inner surface of the chest wall, covers the diaphragm, and is reflected over the structures occupying the middle of the thorax." [http://en.wikipedia.org/wiki/Parietal_pleura]
+def: "The outer serous membrane of the pulmonary pleural." [https://en.wikipedia.org/wiki/Pulmonary_pleurae, UBERON:cjm]
+comment: the part of the pleura external to the visceral pleura. It lines the inner surface of the chest wall, covers the diaphragm, and is reflected over the structures occupying the middle of the thorax
 subset: pheno_slim
 subset: uberon_slim
 synonym: "pleura parietalis" RELATED LATIN [http://en.wikipedia.org/wiki/Parietal_pleura]
+xref: C33273
 xref: EMAPA:16776
 xref: FMA:9733
 xref: http://linkedlifedata.com/resource/umls/id/C0225777
 xref: http://www.snomedbrowser.com/Codes/Details/361998003
 xref: MA:0002488
 xref: OpenCyc:Mx4rvv2Uq5wpEbGdrcN5Y29ycA
-xref: Parietal:Pleura
 xref: Parietal:pleura
 xref: UMLS:C0225777 {source="ncithesaurus:Parietal_Pleura"}
 xref: VHOG:0001495
-is_a: UBERON:0000977 ! pleura
 relationship: contributes_to_morphology_of UBERON:0000977 ! pleura
 relationship: part_of UBERON:0000977 ! pleura
 
@@ -3221,8 +3224,7 @@ relationship: part_of UBERON:0000977 ! pleura
 id: UBERON:0002401
 name: visceral pleura
 namespace: uberon
-def: "Visceral serous membrane which is continuous with the parietal pleura and is attached to the parenchyma of lobe of lung.[FMA]" [FMA:FMA, http://en.wikipedia.org/wiki/Visceral_pleura]
-comment: See comments for pleura
+def: "The inner serous membrane of the pulmonary pleural. The visceral pleura lines the lungs." [https://en.wikipedia.org/wiki/Pulmonary_pleurae, UBERON:cjm]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "lung mesothelium" RELATED [EHDAA2:0002205]
@@ -3230,7 +3232,9 @@ synonym: "lung pleura" RELATED []
 synonym: "pleura pulmonalis" EXACT LATIN [FMA:9734, FMA:TA]
 synonym: "pleura visceralis" EXACT LATIN [http://en.wikipedia.org/wiki/Visceral_pleura]
 synonym: "pleura visceralis (pulmonalis)" EXACT []
-synonym: "pulmonary pleura" EXACT []
+synonym: "pulmonary pleura" RELATED INCONSISTENT [FMA:9734]
+synonym: "pulmonary visceral pleura" EXACT []
+xref: C33881
 xref: EHDAA2:0002205
 xref: EMAPA:16777
 xref: FMA:9734
@@ -3240,24 +3244,26 @@ xref: MA:0002489
 xref: OpenCyc:Mx4rwNFqppwpEbGdrcN5Y29ycA
 xref: UMLS:C0225776 {source="ncithesaurus:Visceral_Pleura"}
 xref: VHOG:0001496
-xref: Visceral:Pleura
-xref: Visceral:pleura
-is_a: UBERON:0000977 ! pleura
+relationship: adjacent_to UBERON:0002048 ! lung
 relationship: attached_to UBERON:0008946 ! lung parenchyma
 relationship: contributes_to_morphology_of UBERON:0000977 ! pleura
 relationship: part_of UBERON:0000977 ! pleura
 relationship: part_of UBERON:0002048 ! lung
 property_value: UBPROP:0000001 "Each lung is invested by an exceedingly delicate serous membrane, the pleura, which is arranged in the form of a closed invaginated sac. A portion of the serous membrane covers the surface of the lung and dips into the fissures between its lobes; it is called the pulmonary pleura (or visceral pleura). The visceral pleura is attached directly to the lungs[Wikipedia:Visceral_pleura]." xsd:string {source="Visceral:pleura"}
+property_value: UBPROP:0000012 "FMA treats this as part of the lungs" xsd:string {external_ontology="FMA"}
 
 [Term]
 id: UBERON:0002402
 name: pleural cavity
 namespace: uberon
-def: "Cavity of serous sac surropunded by the pleura.[FMA]" [FMA:FMA, http://en.wikipedia.org/wiki/Pleural_cavity]
+def: "The fluid-filled cavity that lies between the visceral and parietal pleurae." [https://en.wikipedia.org/wiki/Pleural_cavity, https://github.com/obophenotype/uberon/issues/86]
 subset: pheno_slim
 subset: uberon_slim
-synonym: "cavitas pleurallis" RELATED LATIN [http://en.wikipedia.org/wiki/Pleural_cavity]
+synonym: "cavitas pleuralis" EXACT LATIN [http://en.wikipedia.org/wiki/Pleural_cavity]
+synonym: "cavitum pleuralae" RELATED LATIN [http://en.wikipedia.org/wiki/Pleural_cavity]
+synonym: "cavitum pleurale" RELATED LATIN [http://en.wikipedia.org/wiki/Pleural_cavity]
 xref: BTO:0004422
+xref: C12840
 xref: EHDAA2:0001475
 xref: EMAPA:16773
 xref: EMAPA:16774
@@ -3268,14 +3274,16 @@ xref: http://www.snomedbrowser.com/Codes/Details/361999006
 xref: MA:0000055
 xref: MESH:A01.911.800.650
 xref: OpenCyc:Mx4rwCKAppwpEbGdrcN5Y29ycA
-xref: Pleural:Cavity
 xref: Pleural:cavity
 xref: UMLS:C0178802 {source="ncithesaurus:Pleural_Cavity"}
 xref: VHOG:0000581
-relationship: part_of UBERON:0009778 ! pleural sac
+relationship: adjacent_to UBERON:0002400 ! parietal pleura
+relationship: adjacent_to UBERON:0002401 ! visceral pleura
+relationship: luminal_space_of UBERON:0009778 ! pleural sac
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/ab/Gray965.png
 property_value: UBPROP:0000003 "In hagfishes a transverse septum extends upward from the ventral body wall posterior to the heart, partly separating an anterior pericardial cavity from a larger peritoneal cavity. (...) These basic relationships have not been modified by urodeles. The small pericardial cavity remains far forward where it is separated by a transverse septum from the principal coelom, which may now be called a pleuroperitoneal cavity because slender lungs are present. (...) The heart [of other tetrapods] is separated from the lungs (and liver if present) by more or less horizontal partitions that have their origin in the embryo as folds on the serous membrane of the right and left lateral body walls. These grow out to join in the midline of the body. They are called lateral mesocardia (birds) or pleuropericardial membranes. Posteriorly they join the transverse septum to form the adult pericardial membrane, or pericardium. (...) In their partitioning of their coelom, embryonic mammals resemble first early fishes (incomplete partition, posterior to heart, consisting of the transverse septum) and then reptiles (pericardium derived from transverse septum and pleuropericardial membranes). Mammals then separate paired pleural cavities from the peritoneal cavity by a diaphragm. The ventral portion of this organ comes from the transverse septum. The dorsal portion is derived from the dorsal mesentery and from still another pair of outgrowths from the lateral body wall, the pleuroperitoneal membranes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000581", ontology="VHOG", source="ISBN:978-0471090588 Hildebrand M, Analysis of vertebrate structure (1983) p.205-206", source="http://bgee.unil.ch/"}
-property_value: UBPROP:0000012 "the EHDAA2 class is not quite equivalent. See https://github.com/obophenotype/uberon/issues/86" xsd:string {external_ontology="EHDAA2"}
+property_value: UBPROP:0000009 "The contraction of the diaphragm creates a negative pressure within the pleural cavity which forces the lungs to expand resulting in passive exhalation and active inhalation. This breathing process can be made forceful through the contraction of the external intercostal muscles which forces the rib cage to expand and add to the negative pressure in the pleural cavity causing the lungs to fill with air. The fluid in the cavity provides lubrication and cushioning" xsd:string
+property_value: UBPROP:0000012 "the EHDAA2 class of the same is not equivalent. See https://github.com/obophenotype/uberon/issues/86" xsd:string {external_ontology="EHDAA2"}
 
 [Term]
 id: UBERON:0002453
@@ -3288,7 +3296,7 @@ synonym: "cellulae ethmoidales" RELATED LATIN [http://en.wikipedia.org/wiki/Ethm
 synonym: "ethmoidal air cell" RELATED [FMA:84115]
 synonym: "ethmoidal bone sinus" EXACT [http://en.wikipedia.org/wiki/Ethmoid_bone_sinus]
 synonym: "ethmoidal sinus" EXACT [FMA:84115]
-xref: Ethmoid:Sinus
+xref: C12276
 xref: FMA:84115
 xref: GAID:356
 xref: http://en.wikipedia.org/wiki/Ethmoid_bone_sinus
@@ -3309,11 +3317,11 @@ subset: pheno_slim
 subset: uberon_slim
 xref: AAO:0010610
 xref: BTO:0001627
+xref: C12724
 xref: FMA:55414
 xref: GAID:343
 xref: http://en.wikipedia.org/wiki/Glottis
 xref: http://linkedlifedata.com/resource/umls/id/C0017681
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Glottis
 xref: http://www.snomedbrowser.com/Codes/Details/264482000
 xref: MA:0002788
 xref: MESH:D005931
@@ -3350,6 +3358,7 @@ synonym: "pharyngeal arches" EXACT PLURAL []
 synonym: "visceral arch" RELATED []
 xref: AAO:0010359
 xref: BTO:0001785
+xref: C34249
 xref: EFO:0000959
 xref: EHDAA:571
 xref: EMAPA:16117
@@ -3360,7 +3369,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/308766004
 xref: MAT:0000242
 xref: MESH:A16.254.160
 xref: MIAA:0000242
-xref: Pharyngeal:Arch
 xref: Pharyngeal:arch
 xref: TAO:0001306
 xref: UMLS:C0080322 {source="ncithesaurus:Pharyngeal_Arch"}
@@ -3396,12 +3404,12 @@ synonym: "second pharyngeal arch" EXACT []
 synonym: "second visceral arch" EXACT SENSU []
 synonym: "visceral arch 2" EXACT SENSU []
 xref: AAO:0010363
+xref: C34288
 xref: EHDAA2:0000050
 xref: EHDAA:611
 xref: EMAPA:16272
 xref: FMA:293017
 xref: http://en.wikipedia.org/wiki/Second_pharyngeal_arch
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Second_Pharyngeal_Arch
 xref: http://www.snomedbrowser.com/Codes/Details/308768003
 xref: TAO:0001596
 xref: VHOG:0000297
@@ -3423,12 +3431,12 @@ subset: vertebrate_core
 synonym: "thyroid primordia" RELATED PLURAL [ZFA:0001081]
 xref: AAO:0011106
 xref: BTO:0004709
+xref: C34312
 xref: EHDAA2:0002033
 xref: EHDAA:952
 xref: EMAPA:16361
 xref: http://linkedlifedata.com/resource/umls/id/C1519512
 xref: TAO:0001081
-xref: Thyroid:Primordium
 xref: UMLS:C1519512 {source="ncithesaurus:Thyroid_Primordium"}
 xref: XAO:0000444
 xref: ZFA:0001081
@@ -3779,6 +3787,7 @@ synonym: "vertebrate trachea" EXACT SENSU []
 synonym: "windpipe" EXACT []
 xref: AAO:0010140
 xref: BTO:0001388
+xref: C12428
 xref: CALOHA:TS-1060
 xref: EFO:0000935
 xref: EHDAA2:0002066
@@ -3788,7 +3797,6 @@ xref: EV:0100040
 xref: FMA:7394
 xref: GAID:361
 xref: http://linkedlifedata.com/resource/umls/id/C0040578
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Trachea
 xref: http://www.snomedbrowser.com/Codes/Details/181213009
 xref: MA:0000441
 xref: MAT:0000137
@@ -3954,10 +3962,10 @@ subset: pheno_slim
 synonym: "trachea smooth muscle" EXACT [MA:0001863]
 synonym: "tracheal smooth muscle" EXACT [BTO:0001391]
 xref: BTO:0001391
+xref: C49306
 xref: EMAPA:19192
 xref: FMA:262010
 xref: http://linkedlifedata.com/resource/umls/id/C1710458
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Trachea_Smooth_Muscle_Tissue
 xref: MA:0001863
 xref: UMLS:C1710458 {source="ncithesaurus:Trachea_Smooth_Muscle_Tissue"}
 is_a: UBERON:0004233 ! lower respiratory tract smooth muscle
@@ -4294,9 +4302,9 @@ name: right lung alveolar duct
 namespace: uberon
 def: "An alveolar duct that is part of a right lung [Automatically generated definition]." [OBOL:automatic]
 synonym: "alveolar duct of right lung" EXACT [OBOL:automatic]
+xref: C49277
 xref: EMAPA:35819
 xref: http://linkedlifedata.com/resource/umls/id/C1709958
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Right_Lung_Alveolar_Duct
 xref: MA:0001785
 xref: UMLS:C1709958 {source="ncithesaurus:Right_Lung_Alveolar_Duct"}
 is_a: UBERON:0002173 ! pulmonary alveolar duct
@@ -4312,9 +4320,9 @@ namespace: uberon
 def: "An alveolar duct that is part of a left lung [Automatically generated definition]." [OBOL:automatic]
 comment: Mice have 1 left lobe
 synonym: "alveolar duct of left lung" EXACT [OBOL:automatic]
+xref: C49250
 xref: EMAPA:19183
 xref: http://linkedlifedata.com/resource/umls/id/C1708672
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Left_Lung_Alveolar_Duct
 xref: MA:0001776
 xref: UMLS:C1708672 {source="ncithesaurus:Left_Lung_Alveolar_Duct"}
 is_a: UBERON:0002173 ! pulmonary alveolar duct
@@ -4331,9 +4339,9 @@ def: "A bronchiole that is part of a right lung [Automatically generated definit
 synonym: "bronchiole of right lung" EXACT [OBOL:automatic]
 synonym: "lobular bronchiole of right lung" EXACT [OBOL:automatic]
 synonym: "right lung lobular bronchiole" EXACT [OBOL:automatic]
+xref: C49279
 xref: EMAPA:35425
 xref: http://linkedlifedata.com/resource/umls/id/C0225670
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Right_Lung_Bronchiole
 xref: http://www.snomedbrowser.com/Codes/Details/200089000
 xref: MA:0001787
 xref: UMLS:C0225670 {source="ncithesaurus:Right_Lung_Bronchiole"}
@@ -4350,9 +4358,9 @@ def: "A bronchiole that is part of a left lung [Automatically generated definiti
 synonym: "bronchiole of left lung" EXACT [OBOL:automatic]
 synonym: "left lung lobular bronchiole" EXACT [OBOL:automatic]
 synonym: "lobular bronchiole of left lung" EXACT [OBOL:automatic]
+xref: C49252
 xref: EMAPA:19000
 xref: http://linkedlifedata.com/resource/umls/id/C0225674
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Left_Lung_Bronchiole
 xref: http://www.snomedbrowser.com/Codes/Details/200484003
 xref: MA:0001778
 xref: UMLS:C0225674 {source="ncithesaurus:Left_Lung_Bronchiole"}
@@ -4369,8 +4377,9 @@ def: "A terminal bronchiole that is part of a right lung [Automatically generate
 synonym: "bronchiolus terminalis of right lung" EXACT [OBOL:automatic]
 synonym: "right lung bronchiolus terminalis" EXACT [OBOL:automatic]
 synonym: "terminal bronchiole of right lung" EXACT [OBOL:automatic]
+xref: C49294
+xref: EMAPA:36638
 xref: http://linkedlifedata.com/resource/umls/id/C1709961
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Right_Lung_Terminal_Bronchiole
 xref: MA:0001789
 xref: UMLS:C1709961 {source="ncithesaurus:Right_Lung_Terminal_Bronchiole"}
 is_a: UBERON:0002187 ! terminal bronchiole
@@ -4387,8 +4396,9 @@ def: "A terminal bronchiole that is part of a left lung [Automatically generated
 synonym: "bronchiolus terminalis of left lung" EXACT [OBOL:automatic]
 synonym: "left lung bronchiolus terminalis" EXACT [OBOL:automatic]
 synonym: "terminal bronchiole of left lung" EXACT [OBOL:automatic]
+xref: C49255
+xref: EMAPA:36636
 xref: http://linkedlifedata.com/resource/umls/id/C1708675
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Left_Lung_Terminal_Bronchiole
 xref: MA:0001780
 xref: UMLS:C1708675 {source="ncithesaurus:Left_Lung_Terminal_Bronchiole"}
 is_a: UBERON:0002187 ! terminal bronchiole
@@ -4405,8 +4415,9 @@ def: "A respiratory bronchiole that is part of a right lung [Automatically gener
 synonym: "bronchiolus respiratorius of right lung" EXACT [OBOL:automatic]
 synonym: "respiratory bronchiole of right lung" EXACT [OBOL:automatic]
 synonym: "right lung bronchiolus respiratorius" EXACT [OBOL:automatic]
+xref: C49285
+xref: EMAPA:36637
 xref: http://linkedlifedata.com/resource/umls/id/C1709960
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Right_Lung_Respiratory_Bronchiole
 xref: MA:0001788
 xref: UMLS:C1709960 {source="ncithesaurus:Right_Lung_Respiratory_Bronchiole"}
 is_a: UBERON:0002188 ! respiratory bronchiole
@@ -4423,8 +4434,9 @@ def: "A respiratory bronchiole that is part of a left lung [Automatically genera
 synonym: "bronchiolus respiratorius of left lung" EXACT [OBOL:automatic]
 synonym: "left lung bronchiolus respiratorius" EXACT [OBOL:automatic]
 synonym: "respiratory bronchiole of left lung" EXACT [OBOL:automatic]
+xref: C49254
+xref: EMAPA:36635
 xref: http://linkedlifedata.com/resource/umls/id/C1708674
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Left_Lung_Respiratory_Bronchiole
 xref: MA:0001779
 xref: UMLS:C1708674 {source="ncithesaurus:Left_Lung_Respiratory_Bronchiole"}
 is_a: UBERON:0002188 ! respiratory bronchiole
@@ -4518,9 +4530,9 @@ synonym: "larynx portion of connective tissue" EXACT [OBOL:automatic]
 synonym: "larynx textus connectivus" EXACT [OBOL:automatic]
 synonym: "portion of connective tissue of larynx" EXACT [OBOL:automatic]
 synonym: "textus connectivus of larynx" EXACT [OBOL:automatic]
+xref: C49245
 xref: EMAPA:35471
 xref: http://linkedlifedata.com/resource/umls/id/C1708651
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Laryngeal_Connective_Tissue
 xref: MA:0001754
 xref: UMLS:C1708651 {source="ncithesaurus:Laryngeal_Connective_Tissue"}
 is_a: UBERON:0003570 ! respiratory system connective tissue
@@ -4582,10 +4594,10 @@ synonym: "portion of connective tissue of bronchus" EXACT [OBOL:automatic]
 synonym: "textus connectivus of bronchi" EXACT [OBOL:automatic]
 synonym: "textus connectivus of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "textus connectivus of bronchus" EXACT [OBOL:automatic]
+xref: C49210
 xref: EMAPA:32690
 xref: EMAPA:35193
 xref: http://linkedlifedata.com/resource/umls/id/C1707052
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchus_Connective_Tissue
 xref: MA:0001831
 xref: UMLS:C1707052 {source="ncithesaurus:Bronchus_Connective_Tissue"}
 is_a: UBERON:0003580 ! lower respiratory tract connective tissue
@@ -4597,8 +4609,8 @@ name: lower respiratory tract cartilage
 namespace: uberon
 def: "A cartilage that is part of a lower respiratory tract [Automatically generated definition]." [OBOL:automatic]
 synonym: "cartilage of lower respiratory tract" EXACT [OBOL:automatic]
+xref: C49256
 xref: http://linkedlifedata.com/resource/umls/id/C1708759
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lower_Respiratory_Tract_Cartilage
 xref: MA:0001819
 xref: UMLS:C1708759 {source="ncithesaurus:Lower_Respiratory_Tract_Cartilage"}
 is_a: UBERON:0003406 ! cartilage of respiratory system
@@ -4622,13 +4634,13 @@ synonym: "trachea ring" RELATED []
 synonym: "tracheal cartilage" EXACT [FMA:7434]
 synonym: "tracheal ring" RELATED [http://en.wikipedia.org/wiki/Tracheal_rings]
 synonym: "windpipe cartilage" EXACT [OBOL:automatic]
+xref: C49304
 xref: EMAPA:18699
 xref: EMAPA:35875
 xref: FMA:7434
 xref: http://linkedlifedata.com/resource/umls/id/C1710456
 xref: http://www.snomedbrowser.com/Codes/Details/278979006
 xref: MA:0001857
-xref: Trachea:Cartilage
 xref: Tracheal:rings
 xref: UMLS:C1710456 {source="ncithesaurus:Trachea_Cartilage"}
 is_a: UBERON:0003603 ! lower respiratory tract cartilage
@@ -4697,8 +4709,8 @@ synonym: "elastic tissue of bronchus" EXACT [OBOL:automatic]
 synonym: "textus connectivus elasticus of bronchi" EXACT [OBOL:automatic]
 synonym: "textus connectivus elasticus of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "textus connectivus elasticus of bronchus" EXACT [OBOL:automatic]
+xref: C49211
 xref: http://linkedlifedata.com/resource/umls/id/C1707053
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchus_Elastic_Tissue
 xref: MA:0001838
 xref: UMLS:C1707053 {source="ncithesaurus:Bronchus_Elastic_Tissue"}
 is_a: UBERON:0003592 ! bronchus connective tissue
@@ -4757,6 +4769,7 @@ synonym: "vocal chord" RELATED [BTO:0005084]
 synonym: "vocal cord" EXACT [FMA:55457]
 synonym: "vocal fold" RELATED [MESH:A04.329.364.737]
 xref: BTO:0005084
+xref: C12822
 xref: EMAPA:19181
 xref: FMA:55457
 xref: GAID:344
@@ -4765,7 +4778,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/245504003
 xref: MESH:D014827
 xref: OpenCyc:Mx4rvVieepwpEbGdrcN5Y29ycA
 xref: UMLS:C0042930 {source="ncithesaurus:Vocal_Cord"}
-xref: Vocal:Cord
 relationship: in_lateral_side_of UBERON:0002486 ! glottis
 relationship: part_of UBERON:0002486 ! glottis
 property_value: IAO:0000116 "we follow FMA in modeling this is mucous membrane plus ligament" xsd:string
@@ -4832,6 +4844,7 @@ synonym: "pharyngeal pouches" RELATED [VHOG:0001203]
 synonym: "visceral pouch" EXACT SENSU []
 synonym: "visceral pouches" RELATED [VHOG:0001203]
 xref: AAO:0011113
+xref: C34252
 xref: EFO:0003627
 xref: EHDAA:1086
 xref: EHDAA:1669
@@ -4842,7 +4855,6 @@ xref: FMA:293063
 xref: http://en.wikipedia.org/wiki/Pharyngeal_pouch_(embryology)
 xref: http://linkedlifedata.com/resource/umls/id/C0231067
 xref: http://www.snomedbrowser.com/Codes/Details/34674002
-xref: Pharyngeal:Pouch
 xref: TAO:0001106
 xref: UMLS:C0231067 {source="ncithesaurus:Pharyngeal_Pouch"}
 xref: VHOG:0001203
@@ -4969,9 +4981,9 @@ synonym: "smooth muscle of bronchus" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of bronchi" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of bronchus" EXACT [OBOL:automatic]
+xref: C49213
 xref: EMAPA:35195
 xref: http://linkedlifedata.com/resource/umls/id/C1707055
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchus_Smooth_Muscle_Tissue
 xref: MA:0001840
 xref: UMLS:C1707055 {source="ncithesaurus:Bronchus_Smooth_Muscle_Tissue"}
 is_a: UBERON:0004233 ! lower respiratory tract smooth muscle
@@ -5016,6 +5028,7 @@ synonym: "first visceral arch" EXACT SENSU []
 synonym: "mandibular arch" EXACT []
 synonym: "visceral arch 1" EXACT SENSU []
 xref: AAO:0010364
+xref: C34175
 xref: CALOHA:TS-2089
 xref: EHDAA2:0000006
 xref: EHDAA:573
@@ -5023,7 +5036,6 @@ xref: EMAPA:16118
 xref: FMA:293019
 xref: http://en.wikipedia.org/wiki/First_pharyngeal_arch
 xref: http://linkedlifedata.com/resource/umls/id/C1517197
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/First_Pharyngeal_Arch
 xref: http://www.snomedbrowser.com/Codes/Details/308767008
 xref: MFMO:0000095
 xref: TAO:0001595
@@ -5062,8 +5074,8 @@ synonym: "pharyngeal arch arteries" RELATED PLURAL []
 synonym: "pharyngeal arch artery" EXACT [MP:0002672]
 synonym: "pharyngeal arch artery" RELATED [VHOG:0000122]
 xref: AAO:0010414
-xref: Aortic:Arch
 xref: Aortic:arches
+xref: C32123
 xref: EFO:0003695
 xref: EHDAA2:0000186
 xref: EHDAA:398
@@ -5277,8 +5289,8 @@ name: trachea basal lamina
 namespace: uberon
 def: "A basal lamina that is part of a respiratory airway [Automatically generated definition]." [OBOL:automatic]
 synonym: "basal lamina of connective tissue of respiratory airway" EXACT [OBOL:automatic]
+xref: C49303
 xref: http://linkedlifedata.com/resource/umls/id/C1710454
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Trachea_Basal_Lamina
 xref: MA:0001855
 xref: UMLS:C1710454 {source="ncithesaurus:Trachea_Basal_Lamina"}
 is_a: UBERON:0004798 ! respiratory system basal lamina
@@ -5300,8 +5312,8 @@ synonym: "bronchi basal lamina of connective tissue" EXACT [OBOL:automatic]
 synonym: "bronchial trunk basal lamina" EXACT [OBOL:automatic]
 synonym: "bronchial trunk basal lamina of connective tissue" EXACT [OBOL:automatic]
 synonym: "bronchus basal lamina of connective tissue" EXACT [OBOL:automatic]
+xref: C49207
 xref: http://linkedlifedata.com/resource/umls/id/C1707050
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchus_Basal_Lamina
 xref: MA:0001833
 xref: UMLS:C1707050 {source="ncithesaurus:Bronchus_Basal_Lamina"}
 is_a: UBERON:0004799 ! trachea basal lamina
@@ -5383,10 +5395,10 @@ synonym: "epithelial tissue of larynx" EXACT [OBOL:automatic]
 synonym: "epithelium of larynx" EXACT [OBOL:automatic]
 synonym: "laryngeal epithelium" EXACT [OBOL:automatic]
 synonym: "larynx epithelial tissue" EXACT [OBOL:automatic]
+xref: C49247
 xref: EHDAA2:0004065
 xref: EMAPA:35472
 xref: http://linkedlifedata.com/resource/umls/id/C0751258
-xref: Laryngeal:Epithelium
 xref: MA:0001765
 xref: UMLS:C0751258 {source="ncithesaurus:Laryngeal_Epithelium"}
 is_a: UBERON:0004802 ! respiratory tract epithelium
@@ -5421,6 +5433,7 @@ synonym: "epithelium of pulmonary alveolus" EXACT [FMA:63915]
 synonym: "pulmonary alveolar epithelium" EXACT [FMA:63915]
 synonym: "pulmonary alveolus epithelium" EXACT [MP:0010898]
 xref: BTO:0003511
+xref: C12867
 xref: EMAPA:35121
 xref: FMA:63915
 xref: MA:0001771
@@ -5494,9 +5507,9 @@ name: right lung alveolus
 namespace: uberon
 def: "An alveolus that is part of a right lung [Automatically generated definition]." [OBOL:automatic]
 synonym: "alveolus of right lung" EXACT [OBOL:automatic]
+xref: C49278
 xref: EMAPA:35997
 xref: http://linkedlifedata.com/resource/umls/id/C1709959
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Right_Lung_Alveolus
 xref: MA:0001786
 xref: UMLS:C1709959 {source="ncithesaurus:Right_Lung_Alveolus"}
 is_a: UBERON:0002299 ! alveolus of lung
@@ -5510,9 +5523,9 @@ namespace: uberon
 def: "An alveolus that is part of a left lung [Automatically generated definition]." [OBOL:automatic]
 synonym: "alveolus of left lung" EXACT [OBOL:automatic]
 synonym: "alveolus of lobe of left lung" EXACT [OBOL:automatic]
+xref: C49251
 xref: EMAPA:19182
 xref: http://linkedlifedata.com/resource/umls/id/C1708673
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Left_Lung_Alveolus
 xref: MA:0001777
 xref: UMLS:C1708673 {source="ncithesaurus:Left_Lung_Alveolus"}
 is_a: UBERON:0002299 ! alveolus of lung
@@ -5552,11 +5565,11 @@ synonym: "hilus of lung" EXACT [OBOL:automatic]
 synonym: "lung hilum" EXACT [OBOL:automatic]
 synonym: "pulmonary hilum" EXACT [FMA:7330]
 synonym: "pulmonary hilus" EXACT [OBOL:automatic]
+xref: C49282
 xref: EMAPA:36005
 xref: FMA:7330
 xref: http://en.wikipedia.org/wiki/Hilum_of_lung
 xref: http://linkedlifedata.com/resource/umls/id/C0225701
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Hilar_Area_of_the_Lung
 xref: http://www.snomedbrowser.com/Codes/Details/264017007
 xref: MA:0003099
 xref: UMLS:C0225701 {source="ncithesaurus:Hilar_Area_of_the_Lung"}
@@ -5652,9 +5665,9 @@ def: "A the thin septum that separates adjacent pulmonary alveoli, containing co
 subset: pheno_slim
 synonym: "alveolar septum" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "septum interalveolare" RELATED [BTO:0003149]
-xref: Alveolar:Septum
 xref: Alveolar:septum
 xref: BTO:0003149
+xref: C49473
 xref: EMAPA:35433
 xref: http://linkedlifedata.com/resource/umls/id/C1706784
 xref: MA:0000421
@@ -5673,8 +5686,8 @@ synonym: "alveolus wall" RELATED [EMAPA:35120]
 synonym: "pulmonary alveolar wall" EXACT [FMA:14117]
 synonym: "pulmonary interalveolar septum" EXACT [FMA:14117]
 synonym: "wall of pulmonary alveolus" EXACT [FMA:14117]
-xref: Alveolar:Wall
 xref: BTO:0002543
+xref: C13085
 xref: EMAPA:35120
 xref: FMA:14117
 xref: http://linkedlifedata.com/resource/umls/id/C0225695
@@ -6272,6 +6285,7 @@ subset: pheno_slim
 synonym: "glandula trachealis" EXACT [FMA:7473]
 synonym: "tracheal gland" EXACT [FMA:7473]
 synonym: "tubular seromucous gland of trachea" RELATED [FMA:7473]
+xref: EMAPA:36574
 xref: FMA:7473
 xref: http://www.snomedbrowser.com/Codes/Details/197423006
 xref: MA:0002937
@@ -6361,13 +6375,13 @@ def: "An epithelium that lines the nasal cavity." [http://orcid.org/0000-0002-66
 subset: pheno_slim
 synonym: "nasal epithelium" EXACT [FMA:63140]
 synonym: "nasal mucosa" RELATED [MA:0001324]
+xref: C49261
 xref: CALOHA:TS-0656
 xref: EHDAA2:0001227
 xref: EHDAA:6803
 xref: EMAPA:17605
 xref: FMA:63140
 xref: http://linkedlifedata.com/resource/umls/id/C1709151
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Nasal_Cavity_Epithelium
 xref: MA:0001324
 xref: UMLS:C1709151 {source="ncithesaurus:Nasal_Cavity_Epithelium"}
 xref: VHOG:0000501
@@ -6382,11 +6396,11 @@ id: UBERON:0005385
 name: nasal cavity respiratory epithelium
 namespace: uberon
 def: "An epithelium that is part of the respiratory segment of the nasal mucosa [Automatically generated definition]." [https://github.com/obophenotype/uberon/issues/50, OBOL:automatic]
+xref: C49262
 xref: EHDAA2:0001230
 xref: EHDAA:6807
 xref: EMAPA:17607
 xref: http://linkedlifedata.com/resource/umls/id/C1709152
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Nasal_Cavity_Respiratory_Epithelium
 xref: MA:0001326
 xref: UMLS:C1709152 {source="ncithesaurus:Nasal_Cavity_Respiratory_Epithelium"}
 is_a: UBERON:0005384 ! nasal cavity epithelium
@@ -6405,15 +6419,16 @@ synonym: "olfactory part of nasal mucosa" EXACT [FMA:77199]
 synonym: "olfactory zone of nasal mucosa" EXACT [FMA:77199]
 synonym: "pars olfactoria tunicae mucosae nasi" EXACT LATIN [FMA:77199, FMA:TA]
 synonym: "pars olfactoria tunicae mucosae nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Olfactory_mucosa]
+xref: C33205
 xref: CALOHA:TS-2197
 xref: FMA:77199
 xref: GAID:303
 xref: http://linkedlifedata.com/resource/umls/id/C0028937
 xref: MESH:D009831
-xref: Olfactory:Mucosa
 xref: Olfactory:mucosa
 xref: UMLS:C0028937 {source="ncithesaurus:Olfactory_Mucosa"}
 is_a: UBERON:0001826 ! nasal cavity mucosa
+disjoint_from: UBERON:0015786 ! respiratory segment of nasal mucosa
 relationship: has_part UBERON:0001997 ! olfactory epithelium
 property_value: UBPROP:0000001 "The olfactory mucosa is located in the upper region of the nasal cavity and is made up of the olfactory epithelium and the underlying lamina propria, connective tissue containing fibroblasts, blood vessels, Bowman's glands and bundles of fine axons from the olfactory neurons. The mucus protects the olfactory epithelium and allows odors to dissolve so that they can be detected by olfactory receptor neurons. Electron microscopy studies show that Bowman's glands contain cells with large secretory vesicles. The exact composition of the secretions from Bowman's glands is unclear, but there is evidence that Bowman's glands do not produce odorant binding protein[WP][Wikipedia:Olfactory_mucosa]." xsd:string {source="Olfactory:mucosa"}
 
@@ -6818,10 +6833,10 @@ synonym: "pharyngeal groove ectoderm" EXACT [https://orcid.org/0000-0002-6601-21
 synonym: "pharyngeal slit" RELATED INCONSISTENT []
 synonym: "sulcus pharyngei" RELATED LATIN [http://en.wikipedia.org/wiki/Pharyngeal_groove]
 xref: AAO:0010623
+xref: C34250
 xref: EMAPA:32750
 xref: FMA:295672
 xref: http://linkedlifedata.com/resource/umls/id/C1280559
-xref: Pharyngeal:Groove
 xref: Pharyngeal:groove
 xref: UMLS:C1280559 {source="ncithesaurus:Pharyngeal_Groove"}
 is_a: UBERON:0016545 ! pharyngeal ectoderm
@@ -6860,13 +6875,13 @@ synonym: "laryngo-tracheal groove" EXACT [EHDAA2:0004073]
 synonym: "laryngo-tracheal tube" RELATED [http://en.wikipedia.org/wiki/Laryngotracheal_groove]
 synonym: "laryngotracheal endoderm" RELATED []
 synonym: "sulcus laryngotrachealis" EXACT LATIN [http://en.wikipedia.org/wiki/Laryngotracheal_groove]
+xref: C34198
 xref: EHDAA2:0004073
 xref: EHDAA:1005
 xref: EMAPA:16739
 xref: http://linkedlifedata.com/resource/umls/id/C1283960
 xref: http://www.snomedbrowser.com/Codes/Details/361426003
 xref: Laryngotracheal:groove
-xref: Laryngotracheal:Tube
 xref: RETIRED_EHDAA2:0000909
 xref: UMLS:C1283960 {source="ncithesaurus:Laryngotracheal_Tube"}
 xref: VHOG:0001404
@@ -6940,9 +6955,9 @@ namespace: uberon
 def: "A lobe of lung that is part of a right lung." [OBOL:automatic]
 synonym: "lobe of right lung" EXACT []
 synonym: "lobe of the right lung" EXACT [ncithesaurus:Lobe_of_the_Right_Lung]
+xref: C48944
 xref: EMAPA:35155
 xref: http://linkedlifedata.com/resource/umls/id/C1285106
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lobe_of_the_Right_Lung
 xref: http://www.snomedbrowser.com/Codes/Details/272654004
 xref: MA:0001791
 xref: UMLS:C1285106 {source="ncithesaurus:Lobe_of_the_Right_Lung"}
@@ -6994,11 +7009,11 @@ subset: pheno_slim
 synonym: "central tendon" EXACT [FMA:58279]
 synonym: "centrum tendineum" EXACT [FMA:58279]
 synonym: "centrum tendineum diaphragmatis" EXACT LATIN [FMA:58279, FMA:TA]
+xref: C34119
 xref: EMAPA:17702
 xref: FMA:58279
 xref: http://en.wikipedia.org/wiki/Central_tendon_of_diaphragm
 xref: http://linkedlifedata.com/resource/umls/id/C0230162
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Central_Tendon_of_the_Diaphragm
 xref: http://www.snomedbrowser.com/Codes/Details/244943002
 xref: UMLS:C0230162 {source="ncithesaurus:Central_Tendon_of_the_Diaphragm"}
 xref: VHOG:0001399
@@ -7018,11 +7033,11 @@ synonym: "carina of trachea" RELATED [http://en.wikipedia.org/wiki/Carina_of_tra
 synonym: "carina tracheae" EXACT [EMAPA:18407]
 synonym: "carina tracheae" RELATED LATIN [http://en.wikipedia.org/wiki/Carina_of_trachea]
 synonym: "tracheal carina" EXACT [FMA:7465]
+xref: C25264
 xref: EMAPA:18407
 xref: FMA:7465
 xref: http://en.wikipedia.org/wiki/Carina_of_trachea
 xref: http://linkedlifedata.com/resource/umls/id/C0225594
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Carina
 xref: http://www.snomedbrowser.com/Codes/Details/181214003
 xref: UMLS:C0225594 {source="ncithesaurus:Carina"}
 is_a: UBERON:0003604 ! trachea cartilage
@@ -7098,6 +7113,7 @@ synonym: "hyomandibular pouch" EXACT []
 synonym: "pharyngeal pouches 1" EXACT PLURAL [ZFA:0001128]
 synonym: "visceral pouch 1" EXACT [XAO:0000102]
 xref: AAO:0011114
+xref: C34176
 xref: EFO:0003631
 xref: EHDAA2:0000016
 xref: EMAPA:16124
@@ -7105,7 +7121,6 @@ xref: EMAPA:16125
 xref: First_pouch
 xref: FMA:295668
 xref: http://linkedlifedata.com/resource/umls/id/C0231068
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/First_Pharyngeal_Pouch
 xref: http://www.snomedbrowser.com/Codes/Details/345248006
 xref: TAO:0001128
 xref: UMLS:C0231068 {source="ncithesaurus:First_Pharyngeal_Pouch"}
@@ -7139,13 +7154,13 @@ synonym: "second pharyngeal pouch" RELATED [VHOG:0000967]
 synonym: "second visceral pouch" EXACT [XAO:0000247]
 synonym: "visceral pouch 2" EXACT [XAO:0000247]
 xref: AAO:0011115
+xref: C34289
 xref: EFO:0003633
 xref: EHDAA2:0000058
 xref: EMAPA:16275
 xref: EMAPA:16276
 xref: FMA:295676
 xref: http://linkedlifedata.com/resource/umls/id/C0231069
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Second_Pharyngeal_Pouch
 xref: http://www.snomedbrowser.com/Codes/Details/345349000
 xref: RETIRED_EHDAA2:0000060
 xref: Second_pouch
@@ -7181,12 +7196,12 @@ synonym: "third pharyngeal pouch" RELATED [VHOG:0000966]
 synonym: "third visceral pouch" EXACT [XAO:0000251]
 synonym: "visceral pouch 3" EXACT [XAO:0000251]
 xref: AAO:0011116
+xref: C34311
 xref: EFO:0003634
 xref: EHDAA2:0000077
 xref: EMAPA:16586
 xref: FMA:295682
 xref: http://linkedlifedata.com/resource/umls/id/C0231070
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Third_Pharyngeal_Pouch
 xref: http://www.snomedbrowser.com/Codes/Details/345450001
 xref: RETIRED_EHDAA2:0000076
 xref: TAO:0001131
@@ -7221,13 +7236,13 @@ synonym: "fourth visceral pouch" EXACT [XAO:0000254]
 synonym: "pharyngeal pouches 4" EXACT PLURAL [ZFA:0001134]
 synonym: "visceral pouch 4" EXACT [XAO:0000254]
 xref: AAO:0011117
+xref: C34181
 xref: EFO:0003637
 xref: EHDAA2:0000091
 xref: EMAPA:16766
 xref: FMA:295688
 xref: Fourth_pouch
 xref: http://linkedlifedata.com/resource/umls/id/C0231071
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Fourth_Pharyngeal_Pouch
 xref: http://www.snomedbrowser.com/Codes/Details/362858001
 xref: RETIRED_EHDAA2:0000090
 xref: TAO:0001134
@@ -7258,10 +7273,10 @@ synonym: "fifth visceral pouch" RELATED [VHOG:0001206]
 synonym: "pharyngeal pouches 5" EXACT PLURAL [ZFA:0001133]
 synonym: "visceral pouch 5" EXACT [XAO:0000255]
 xref: AAO:0011118
+xref: C34174
 xref: EFO:0003636
 xref: Fifth_pouch
 xref: http://linkedlifedata.com/resource/umls/id/C1517185
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Fifth_Pharyngeal_Pouch
 xref: TAO:0001133
 xref: UMLS:C1517185 {source="ncithesaurus:Fifth_Pharyngeal_Pouch"}
 xref: VHOG:0001206
@@ -7319,6 +7334,7 @@ xref: EMAPA:19237
 xref: FMA:58282
 xref: http://en.wikipedia.org/wiki/Medial_arcuate_ligament
 is_a: UBERON:0015214 ! arcuate ligament
+disjoint_from: UBERON:0007162 {source="lexical"} ! lateral arcuate ligament
 
 [Term]
 id: UBERON:0007162
@@ -7362,6 +7378,7 @@ subset: organ_slim
 subset: pheno_slim
 synonym: "arbor tracheobronchialis" EXACT LATIN [FMA:7393, FMA:TA]
 synonym: "tracheobronchial system" RELATED [HP:0005607]
+xref: C117875
 xref: FMA:7393
 xref: http://www.snomedbrowser.com/Codes/Details/361384001
 xref: Tracheobronchial:tree
@@ -7404,10 +7421,10 @@ def: "the lymph tissue on the floor of the oropharyngeal passage, near the root 
 subset: pheno_slim
 synonym: "lingual tonsillar tissue" EXACT [MA:0000773]
 synonym: "tonsilla lingualis" RELATED LATIN [http://en.wikipedia.org/wiki/Lingual_tonsils]
+xref: C32988
 xref: FMA:54836
 xref: http://linkedlifedata.com/resource/umls/id/C0229871
 xref: http://www.snomedbrowser.com/Codes/Details/276957006
-xref: Lingual:Tonsil
 xref: Lingual:tonsils
 xref: MA:0000773
 xref: UMLS:C0229871 {source="ncithesaurus:Lingual_Tonsil"}
@@ -7443,11 +7460,12 @@ namespace: uberon
 def: "Matter ejected from the lungs, bronchi, and trachea, through the mouth." [Dorlands_Medical_Dictionary:MerckSource]
 synonym: "expectoration" RELATED [BTO:0001297]
 xref: BTO:0001297
+xref: C13278
 xref: CALOHA:TS-0963
+xref: EMAPA:36553
 xref: FMA:312401
 xref: GAID:1171
 xref: http://linkedlifedata.com/resource/umls/id/C0038056
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Sputum
 xref: MA:0002536
 xref: MESH:D013183
 xref: UMLS:C0038056 {source="ncithesaurus:Sputum"}
@@ -7590,10 +7608,10 @@ synonym: "thyroarytenoid muscle" RELATED [http://en.wikipedia.org/wiki/Thyroaryt
 synonym: "thyroarytænoideus" RELATED [http://en.wikipedia.org/wiki/Thyroarytenoid_muscle]
 synonym: "ventricularis" RELATED [http://en.wikipedia.org/wiki/Thyroarytenoid_muscle]
 synonym: "ventricularis muscle" RELATED [http://en.wikipedia.org/wiki/Thyroarytenoid_muscle]
+xref: C33776
 xref: FMA:46588
 xref: http://linkedlifedata.com/resource/umls/id/C0224183
 xref: http://www.snomedbrowser.com/Codes/Details/361814004
-xref: Thyroarytenoid:Muscle
 xref: Thyroarytenoid:muscle
 xref: UMLS:C0224183 {source="ncithesaurus:Thyroarytenoid_Muscle"}
 is_a: UBERON:0006328 ! laryngeal intrinsic muscle
@@ -7610,12 +7628,12 @@ def: "The vocal muscle is the upper portion of the thyroarytenoid muscle which i
 synonym: "musculus vocalis" RELATED LATIN [http://en.wikipedia.org/wiki/Vocal_muscle]
 synonym: "vocal muscle" EXACT [FMA:46591]
 synonym: "vocalis" EXACT []
+xref: C33886
 xref: FMA:46591
 xref: http://linkedlifedata.com/resource/umls/id/C0224181
 xref: http://www.snomedbrowser.com/Codes/Details/244820007
 xref: UMLS:C0224181 {source="ncithesaurus:Vocalis_Muscle"}
 xref: Vocal:muscle
-xref: Vocalis:Muscle
 is_a: UBERON:0006328 ! laryngeal intrinsic muscle
 relationship: part_of UBERON:0001737 ! larynx
 relationship: part_of UBERON:0008576 ! thyro-arytenoid
@@ -7631,9 +7649,9 @@ synonym: "M. stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyng
 synonym: "musculus stylopharyngeus" RELATED LATIN [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "musculus stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "stylopharyngeus" EXACT [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
+xref: C33639
 xref: FMA:46664
 xref: http://linkedlifedata.com/resource/umls/id/C1522014
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Stylopharyngeus
 xref: http://www.snomedbrowser.com/Codes/Details/244806000
 xref: Stylopharyngeus:muscle
 xref: UMLS:C1522014 {source="ncithesaurus:Stylopharyngeus"}
@@ -7653,10 +7671,10 @@ synonym: "pharyngeal apparatus" EXACT []
 synonym: "pharyngeal arch region" EXACT [EHDAA2:0000187]
 synonym: "pharyngeal arches and clefts" RELATED []
 synonym: "pharyngeal system" EXACT [GO:0060037]
+xref: C34248
 xref: EHDAA2:0000187
 xref: FMA:293041
 xref: http://linkedlifedata.com/resource/umls/id/C1519038
-xref: Pharyngeal:Apparatus
 xref: UMLS:C1519038 {source="ncithesaurus:Pharyngeal_Apparatus"}
 relationship: part_of UBERON:0009145 ! pharyngeal region of foregut
 property_value: IAO:0000116 "Currently defined in a vertebrate specific manner. The arch system has origins in basal deuterostomes, consider generalizing" xsd:string
@@ -7715,10 +7733,10 @@ synonym: "arbor alveolaris" EXACT LATIN [FMA:7313, FMA:TA]
 synonym: "lobulus pulmonis primarius" EXACT LATIN [FMA:7313, FMA:TA]
 synonym: "primary pulmonary lobule" EXACT [FMA:7313]
 synonym: "respiratory lobule" EXACT []
+xref: C33426
 xref: FMA:7313
 xref: http://linkedlifedata.com/resource/umls/id/C0225696
 xref: http://www.snomedbrowser.com/Codes/Details/361365004
-xref: Pulmonary:Acinus
 xref: The_Lungs
 xref: UMLS:C0225696 {source="ncithesaurus:Pulmonary_Acinus"}
 is_a: UBERON:0010368 ! pulmonary lobule
@@ -7793,16 +7811,17 @@ synonym: "cranial lobe of lung" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "lobus superior" EXACT [FMA:7334]
 synonym: "lobus superior pulmonis" EXACT LATIN [FMA:TA]
 synonym: "superior lobe of lung" EXACT [FMA:7334]
+xref: C12285
 xref: FMA:7334
 xref: galen:UpperLobeOfLung
 xref: http://linkedlifedata.com/resource/umls/id/C0225756
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lung_Upper_Lobe
 xref: http://www.snomedbrowser.com/Codes/Details/303548008
 xref: UMLS:C0225756 {source="ncithesaurus:Lung_Upper_Lobe"}
 is_a: UBERON:0000101 ! lobe of lung
 intersection_of: UBERON:0000101 ! lobe of lung
 intersection_of: anterior_to UBERON:0008949 ! lower lobe of lung
 intersection_of: in_anterior_side_of UBERON:0002048 ! lung
+disjoint_from: UBERON:0008955 ! middle lobe of lung
 relationship: anterior_to UBERON:0008949 ! lower lobe of lung
 relationship: in_anterior_side_of UBERON:0002048 ! lung
 property_value: IAO:0000116 "the logical definition must have a clause stating position relative to a lower lobe, otherwise a single lobed side (such as the left lobe in the mouse) trivially classifies as an upper lobe" xsd:string
@@ -7815,13 +7834,14 @@ def: "The bottom most subdivision of either the right or left lung." [ncithesaur
 synonym: "inferior lobe of lung" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "lobus inferior" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "lobus inferior pulmonis" EXACT [https://orcid.org/0000-0002-6601-2165]
+xref: C12287
 xref: FMA:7335
 xref: galen:LowerLobeOfLung
 xref: http://linkedlifedata.com/resource/umls/id/C0225758
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lung_Lower_Lobe
 xref: http://www.snomedbrowser.com/Codes/Details/303549000
 xref: UMLS:C0225758 {source="ncithesaurus:Lung_Lower_Lobe"}
 is_a: UBERON:0000101 ! lobe of lung
+disjoint_from: UBERON:0008955 ! middle lobe of lung
 relationship: in_posterior_side_of UBERON:0002048 ! lung
 property_value: IAO:0000116 "defining lobes spatially across species" xsd:string
 
@@ -7839,9 +7859,9 @@ namespace: uberon
 def: "A lobe of lung that is part of a left lung." [OBOL:automatic]
 synonym: "lobe of left lung" EXACT []
 synonym: "lobe of the left lung" EXACT []
+xref: C48945
 xref: EHDAA:2981
 xref: http://linkedlifedata.com/resource/umls/id/C1285107
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lobe_of_the_Left_Lung
 xref: http://www.snomedbrowser.com/Codes/Details/272655003
 xref: UMLS:C1285107 {source="ncithesaurus:Lobe_of_the_Left_Lung"}
 is_a: UBERON:0000101 ! lobe of lung
@@ -7861,12 +7881,12 @@ synonym: "left upper lobe of lung" EXACT [FMA:7370]
 synonym: "lobus superior (pulmo sinister)" EXACT LATIN [FMA:7370, FMA:TA]
 synonym: "lobus superior pulmonis sinistri" EXACT LATIN [FMA:TA]
 synonym: "superior lobe of left lung" EXACT [FMA:7370]
+xref: C33021
 xref: EHDAA2:0000953
 xref: EHDAA:4957
 xref: FMA:7370
 xref: galen:UpperLobeOfLeftLung
 xref: http://linkedlifedata.com/resource/umls/id/C1261076
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Upper_Lobe_of_the_Left_Lung
 xref: http://www.snomedbrowser.com/Codes/Details/361984006
 xref: UMLS:C1261076 {source="ncithesaurus:Upper_Lobe_of_the_Left_Lung"}
 is_a: UBERON:0008948 ! upper lobe of lung
@@ -7886,12 +7906,12 @@ synonym: "left lower lobe of lung" EXACT [FMA:7371]
 synonym: "left lung caudal lobe" EXACT [EHDAA2:0000945]
 synonym: "lobus inferior (pulmo sinister)" EXACT [FMA:7371]
 synonym: "lobus inferior pulmonis sinistri" EXACT LATIN [FMA:TA]
+xref: C33020
 xref: EHDAA2:0000945
 xref: EHDAA:4949
 xref: FMA:7371
 xref: galen:LowerLobeOfLeftLung
 xref: http://linkedlifedata.com/resource/umls/id/C1261077
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lower_Lobe_of_the_Left_Lung
 xref: http://www.snomedbrowser.com/Codes/Details/361989001
 xref: UMLS:C1261077 {source="ncithesaurus:Lower_Lobe_of_the_Left_Lung"}
 is_a: UBERON:0008949 ! lower lobe of lung
@@ -7909,11 +7929,11 @@ synonym: "left pulmonary lingula" EXACT [FMA:7433]
 synonym: "lingula of lung" EXACT [FMA:7433]
 synonym: "lingula of the lung" EXACT []
 synonym: "middle lobe of left lung" RELATED [galen:MiddleLobeOfLeftLung]
+xref: C40373
 xref: FMA:7433
 xref: galen:MiddleLobeOfLeftLung
 xref: http://en.wikipedia.org/wiki/Lingula_of_left_lung
 xref: http://linkedlifedata.com/resource/umls/id/C0225740
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lingula
 xref: http://www.snomedbrowser.com/Codes/Details/184916009
 xref: UMLS:C0225740 {source="ncithesaurus:Lingula"}
 relationship: part_of UBERON:0008952 ! upper lobe of left lung
@@ -7962,9 +7982,10 @@ id: UBERON:0009060
 name: air sac
 namespace: uberon
 def: "Any of the membranous air-filled extensions of the lungs of birds, which increase the efficiency of gaseous exchange in the lungs" [http://en.wikipedia.org/wiki/Bird_anatomy#Respiratory_system, http://www.thefreedictionary.com/air+sac]
-comment: Three distinct sets of organs perform respiration—the anterior air sacs (interclavicular, cervicals, and anterior thoracics), the lungs, and the posterior air sacs (posterior thoracics and abdominals). The posterior and anterior air sacs, typically nine, expand during inhalation. Air enters the bird via the trachea. Half of the inhaled air enters the posterior air sacs, the other half passes through the lungs and into the anterior air sacs. Air from the anterior air sacs empties directly into the trachea and out the bird's mouth or nares. The posterior air sacs empty their air into the lungs. Air passing through the lungs as the bird exhales is expelled via the trachea. Some taxonomic groups (Passeriformes) possess 7 air sacs, as the clavicular air sacs may interconnect or be fused with the cranial thoracic air sacs[WP]
+comment: Three distinct sets of organs perform respiration-the anterior air sacs (interclavicular, cervicals, and anterior thoracics), the lungs, and the posterior air sacs (posterior thoracics and abdominals). The posterior and anterior air sacs, typically nine, expand during inhalation. Air enters the bird via the trachea. Half of the inhaled air enters the posterior air sacs, the other half passes through the lungs and into the anterior air sacs. Air from the anterior air sacs empties directly into the trachea and out the bird's mouth or nares. The posterior air sacs empty their air into the lungs. Air passing through the lungs as the bird exhales is expelled via the trachea. Some taxonomic groups (Passeriformes) possess 7 air sacs, as the clavicular air sacs may interconnect or be fused with the cranial thoracic air sacs[WP]
 synonym: "psotcranial air sac" RELATED [https://orcid.org/0000-0002-6601-2165]
 synonym: "sacci pneumatici" EXACT LATIN []
+xref: C120926
 xref: http://www.snomedbrowser.com/Codes/Details/49081009
 xref: MESH:D000400
 xref: Respiratory_system
@@ -7979,6 +8000,7 @@ comment: interclavicular, cervicals, & anterior thoracics
 subset: grouping_class
 synonym: "cranial air sac" RELATED []
 is_a: UBERON:0009060 ! air sac
+disjoint_from: UBERON:0009062 {source="lexical"} ! posterior air sac
 
 [Term]
 id: UBERON:0009062
@@ -8012,6 +8034,7 @@ synonym: "cranial thoracic air sac" RELATED []
 synonym: "cranial thoracic sac" RELATED []
 xref: http://www.snomedbrowser.com/Codes/Details/17911004
 is_a: UBERON:0009061 ! anterior air sac
+disjoint_from: UBERON:0009066 {source="lexical"} ! posterior thoracic air sac
 relationship: in_lateral_side_of UBERON:0001004 ! respiratory system
 
 [Term]
@@ -8069,6 +8092,7 @@ def: "vocal organ of birds, located at the base of a trachea" [http://en.wikiped
 subset: organ_slim
 synonym: "avian vocal organ" RELATED []
 synonym: "syrinx" RELATED []
+xref: C111323
 xref: http://en.wikipedia.org/wiki/Syrinx_(bird_anatomy)
 relationship: part_of UBERON:0003126 ! trachea
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/87/Syrinx.jpg
@@ -8088,6 +8112,7 @@ name: membrana tympaniformis lateralis
 namespace: uberon
 synonym: "lateral wall of syrinx" EXACT []
 is_a: UBERON:0009075 ! membrana tympaniformis
+disjoint_from: UBERON:0009077 {source="lexical"} ! membrana tympaniformis medialis
 
 [Term]
 id: UBERON:0009077
@@ -8112,7 +8137,8 @@ def: "A thymus-like lympho-epithelial structures, in the tips of the gill filame
 comment: Genes: FOXN1
 subset: organ_slim
 is_a: UBERON:0003295 ! pharyngeal gland
-relationship: part_of UBERON:0009119 ! branchial basket
+relationship: located_in UBERON:0009119 ! branchial basket
+relationship: part_of UBERON:0001042 ! chordate pharynx
 
 [Term]
 id: UBERON:0009119
@@ -8159,10 +8185,10 @@ subset: pheno_slim
 synonym: "branchial arch membrane" EXACT [EMAPA:32749]
 synonym: "branchial membrane" EXACT []
 synonym: "pharyngeal membrane" EXACT []
+xref: C34251
 xref: EMAPA:32749
 xref: FMA:295758
 xref: http://linkedlifedata.com/resource/umls/id/C1519040
-xref: Pharyngeal:Membrane
 xref: UMLS:C1519040 {source="ncithesaurus:Pharyngeal_Membrane"}
 relationship: part_of UBERON:0002539 ! pharyngeal arch
 property_value: UBPROP:0000003 "In all vertebrates, the endodermal epithelium lining each pouch contacts the surface ectoderm of the clefts to form a series of bilayered branchial membranes, that break down in fish to form the gill openings.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001427", ontology="VHOG", source="ISBN:978-0124020603 Kaufman MH, Bard JBL, The anatomical basis of mouse development (1999) p.72", source="http://bgee.unil.ch/"}
@@ -8330,8 +8356,8 @@ name: bronchus basement membrane
 namespace: uberon
 def: "A basement membrane that is part of a bronchus." [OBOL:automatic]
 synonym: "bronchial basement membrane" EXACT [http://orcid.org/0000-0002-6601-2165]
+xref: C49208
 xref: http://linkedlifedata.com/resource/umls/id/C1707051
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchus_Basement_Membrane
 xref: MA:0001832
 xref: UMLS:C1707051 {source="ncithesaurus:Bronchus_Basement_Membrane"}
 is_a: UBERON:0015329 ! respiratory system basement membrane
@@ -8344,8 +8370,8 @@ id: UBERON:0009653
 name: trachea basement membrane
 namespace: uberon
 def: "A basement membrane that is part of a trachea." [OBOL:automatic]
+xref: C49302
 xref: http://linkedlifedata.com/resource/umls/id/C1710455
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Trachea_Basement_Membrane
 xref: MA:0001854
 xref: UMLS:C1710455 {source="ncithesaurus:Trachea_Basement_Membrane"}
 is_a: UBERON:0015329 ! respiratory system basement membrane
@@ -8405,11 +8431,16 @@ relationship: part_of UBERON:0008814 ! pharyngeal arch system
 id: UBERON:0009778
 name: pleural sac
 namespace: uberon
-def: "Serous sac, which has as parts the pleura and the pleural cavity. Examples: There are only two canonical instances, right and left pleural sacs." [FMA:9690]
+def: "A serous sac that has the pleura and the pleural cavity as parts." [https://github.com/obophenotype/uberon/issues/86]
+subset: non_informative
+xref: EHDAA2:0004737
 xref: FMA:9690
 xref: http://www.snomedbrowser.com/Codes/Details/361996004
+relationship: has_part UBERON:0000977 ! pleura
+relationship: has_part UBERON:0002402 ! pleural cavity
 relationship: in_lateral_side_of UBERON:0001004 ! respiratory system
 relationship: part_of UBERON:0001558 ! lower respiratory tract
+property_value: UBPROP:0000012 "despite its name the class EHDAA2:0004737 is not a true cavity, it corresponds to what we call the sac" xsd:string {external_ontology="EHDAA2"}
 
 [Term]
 id: UBERON:0009867
@@ -8990,8 +9021,8 @@ name: pulmonary lobule
 namespace: uberon
 def: "The smallest anatomical unit of the lung, measuring 0.50 to 2.00 cm in diameter. Each lobule is composed of 4-8 terminal bronchioles and their distal alveolar ducts and sacs. The lobules are separated by fibrous interlobular septa." [ncithesaurus:Pulmonary_Lobule]
 synonym: "lobulus pulmonis" EXACT LATIN [FMA:75739, FMA:TA]
+xref: C33428
 xref: FMA:75739
-xref: Pulmonary:Lobule
 relationship: has_part UBERON:0002187 ! terminal bronchiole
 relationship: part_of UBERON:0002048 ! lung
 
@@ -9039,10 +9070,10 @@ synonym: "thyroepiglottic muscle" EXACT [FMA:46594]
 synonym: "thyroepiglotticus" EXACT [FMA:46594]
 synonym: "thyroepiglottus" EXACT []
 synonym: "thyroepiglottus muscle" EXACT []
+xref: C33778
 xref: FMA:46594
 xref: http://linkedlifedata.com/resource/umls/id/C0224182
 xref: http://www.snomedbrowser.com/Codes/Details/244819001
-xref: Thyroepiglottic:Muscle
 xref: Thyroepiglottic:muscle
 xref: UMLS:C0224182 {source="ncithesaurus:Thyroepiglottic_Muscle"}
 is_a: UBERON:0001568 ! muscle of larynx
@@ -9055,7 +9086,7 @@ property_value: UBPROP:0000012 "not a distinct muscle in FMA" xsd:string {extern
 id: UBERON:0010928
 name: cricopharyngeus muscle
 namespace: uberon
-def: "The cricopharyngeus is a pharyngeal arch 4/6 muscle that participates in oral/pharyngeal behaviors and is innervated by the pharyngeal plexus and the recurrent laryngeal n. (from Vagus, CN X), and is an integral part of the pharyngeal tube, and attaches to the cricoid cartilage and the midline raphe.  It acts as a sphincter between the pharynx and esophagus." [MFMO:0000009]
+def: "The cricopharyngeus is a pharyngeal arch 4/6 muscle that participates in oral/pharyngeal behaviors and is innervated by the pharyngeal plexus and the recurrent laryngeal n. (from Vagus, CN X), and is an integral part of the pharyngeal tube, and attaches to the cricoid cartilage and the midline raphe. It acts as a sphincter between the pharynx and esophagus." [MFMO:0000009]
 comment: muscle belly
 synonym: "cricopharyngeal part" BROAD []
 synonym: "cricopharyngeal part of inferior constrictor pharyngeus" EXACT [FMA:46661]
@@ -9066,7 +9097,7 @@ synonym: "cricopharyngeus portion of the inferior pharyngeal constrictor" EXACT 
 synonym: "musculus cricopharyngeus" EXACT LATIN [FMA:46661, FMA:TA]
 synonym: "pars cricopharyngea (musculus constrictor pharyngis inferior)" EXACT [FMA:46661]
 synonym: "pars cricopharyngea musculus constrictoris pharyngis inferioris" EXACT LATIN [FMA:TA]
-xref: Cricopharyngeus:Muscle
+xref: C32401
 xref: FMA:46661
 xref: http://linkedlifedata.com/resource/umls/id/C0224214
 xref: http://www.snomedbrowser.com/Codes/Details/244804002
@@ -9088,7 +9119,7 @@ synonym: "crico-arytenoid" EXACT [http://en.wikipedia.org/wiki/Cricoarytenoid_mu
 synonym: "cricoarytenoid" EXACT [http://en.wikipedia.org/wiki/Cricoarytenoid_muscle]
 synonym: "cricoarytenoid muscle" EXACT [http://en.wikipedia.org/wiki/Cricoarytenoid_muscle]
 synonym: "cricoarytenoideus" EXACT []
-xref: Cricoarytenoid:Muscle
+xref: C32398
 xref: Cricoarytenoid:muscle
 xref: http://linkedlifedata.com/resource/umls/id/C0448336
 xref: http://www.snomedbrowser.com/Codes/Details/244811003
@@ -9127,9 +9158,9 @@ namespace: uberon
 def: "The salpingopharyngeus muscle arises from the inferior part of the cartilage of the pharyngotympanic tube (Eustachian tube) in the nasal cavity; it passes downward and blends with the posterior fasciculus of the palatopharyngeus muscle. The salpingopharyngeus is known to raise the pharynx and larynx during deglutition (swallowing) and laterally draws the pharyngeal walls up. In addition, it opens the pharyngeal orifice of the pharyngotympanic tube during swallowing. This allows for the equalization of pressure between the auditory canal and the pharynx. The salpingopharyngeus is innervated by the vagus nerve (CN X) via the pharyngeal plexus." [http://en.wikipedia.org/wiki/Salpingopharyngeus_muscle]
 synonym: "musculus salpingopharyngeus" RELATED LATIN [http://en.wikipedia.org/wiki/Salpingopharyngeus_muscle]
 synonym: "salpingopharyngeus" EXACT [http://en.wikipedia.org/wiki/Salpingopharyngeus_muscle]
+xref: C33510
 xref: FMA:46665
 xref: http://linkedlifedata.com/resource/umls/id/C1521985
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Salpingopharyngeus
 xref: http://www.snomedbrowser.com/Codes/Details/244807009
 xref: Salpingopharyngeus:muscle
 xref: UMLS:C1521985 {source="ncithesaurus:Salpingopharyngeus"}
@@ -9146,11 +9177,11 @@ name: arytenoid muscle
 namespace: uberon
 def: "A single muscle, filling up the posterior concave surfaces of the arytenoid cartilages. It arises from the posterior surface and lateral border of one arytenoid cartilage, and is inserted into the corresponding parts of the opposite cartilage. It consists of oblique and transverse parts." [http://en.wikipedia.org/wiki/Arytenoid_muscle]
 synonym: "aryepiglotticus muscle" RELATED [http://en.wikipedia.org/wiki/Arytenoid_muscle]
+synonym: "arytaenoideus" RELATED LATIN [http://en.wikipedia.org/wiki/Arytenoid_muscle]
 synonym: "arytaenoideus" RELATED [http://en.wikipedia.org/wiki/Arytenoid_muscle]
 synonym: "arytaenoideus muscle" RELATED [http://en.wikipedia.org/wiki/Arytenoid_muscle]
-synonym: "ArytÃ¦noideus" RELATED LATIN [http://en.wikipedia.org/wiki/Arytenoid_muscle]
-xref: Arytenoid:Muscle
 xref: Arytenoid:muscle
+xref: C32149
 xref: http://linkedlifedata.com/resource/umls/id/C1510945
 xref: UMLS:C1510945 {source="ncithesaurus:Arytenoid_Muscle"}
 is_a: UBERON:0006328 ! laryngeal intrinsic muscle
@@ -9174,8 +9205,8 @@ synonym: "musculus aryepiglotticus" RELATED LATIN [http://en.wikipedia.org/wiki/
 synonym: "pars aryepiglottica (musculus arytenoideus obliquus)" EXACT [FMA:46602]
 synonym: "pars aryepiglottica musculi arytenoidei obliqui" RELATED LATIN [http://en.wikipedia.org/wiki/Aryepiglottic_muscle]
 synonym: "pars aryepiglottica musculus arytenoidei obliqui" EXACT LATIN [FMA:TA]
-xref: Aryepiglottic:Muscle
 xref: Aryepiglottic:muscle
+xref: C32146
 xref: FMA:46602
 xref: http://linkedlifedata.com/resource/umls/id/C0224177
 xref: http://www.snomedbrowser.com/Codes/Details/244818009
@@ -9208,10 +9239,10 @@ subset: uberon_slim
 synonym: "branchia" RELATED [BTO:0000518]
 synonym: "gills" RELATED PLURAL [VHOG:0001214]
 xref: BTO:0000518
+xref: C92593
 xref: EFO:0000933
 xref: GAID:1218
 xref: http://linkedlifedata.com/resource/umls/id/C0017558
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Gill
 xref: MAT:0000134
 xref: MIAA:0000134
 xref: OpenCyc:Mx4rvVi9dZwpEbGdrcN5Y29ycA
@@ -9237,7 +9268,7 @@ synonym: "cartilago apicalis intermedia" RELATED [AAO:0000690]
 synonym: "cartilago apicalis seu cartilago Santoriniana" RELATED [AAO:0000690]
 synonym: "Wrisbergi cartilage" EXACT [AAO:0000690]
 xref: AAO:0000690
-xref: Cuneiform:Cartilage
+xref: C32417
 xref: Cuneiform:cartilages
 xref: FMA:55111
 xref: http://www.snomedbrowser.com/Codes/Details/264456009
@@ -9266,10 +9297,10 @@ namespace: uberon
 def: "An elastic band connecting the anterior surface of the epiglottis to the upper border of the body of the hyoid bone." [http://en.wikipedia.org/wiki/Hyoepiglottic_ligament]
 synonym: "hyo-epiglottic ligament" EXACT [FMA:55227]
 synonym: "igamentum hyoepiglotticum" EXACT LATIN [http://en.wikipedia.org/wiki/Hyoepiglottic_ligament]
+xref: C32751
 xref: FMA:55227
 xref: http://linkedlifedata.com/resource/umls/id/C0225515
 xref: http://www.snomedbrowser.com/Codes/Details/279552007
-xref: Hyoepiglottic:Ligament
 xref: Hyoepiglottic:ligament
 xref: UMLS:C0225515 {source="ncithesaurus:Hyoepiglottic_Ligament"}
 is_a: UBERON:0001730 ! extrinsic ligament of larynx
@@ -9598,11 +9629,11 @@ namespace: uberon
 def: "Tonsils consist of an extensive system of crypts, which result in a large internal surface. The tonsils contain four lymphoid compartments that influence immune functions, namely the reticular crypt epithelium, the extrafollicular area, the mantle zones of lymphoid follicles, and the follicular germinal centers. In human palatine tonsils, the very first part exposed to the outside environment is tonsillar epithelium." [http://en.wikipedia.org/wiki/Tonsillar_crypts]
 synonym: "cryptae tonsillares" EXACT LATIN [http://en.wikipedia.org/wiki/Tonsillar_crypts]
 synonym: "tonsillar crypt" EXACT [FMA:55044]
+xref: C33791
 xref: FMA:55044
 xref: http://linkedlifedata.com/resource/umls/id/C0229876
 xref: http://www.snomedbrowser.com/Codes/Details/143723007
 xref: MA:0000777
-xref: Tonsillar:Crypt
 xref: Tonsillar:crypts
 xref: UMLS:C0229876 {source="ncithesaurus:Tonsillar_Crypt"}
 is_a: UBERON:0013696 ! tonsil epithelium
@@ -9617,9 +9648,9 @@ subset: pheno_slim
 synonym: "glandula nasalis" EXACT LATIN []
 synonym: "glandulae nasales" EXACT LATIN []
 synonym: "nasal gland" BROAD []
+xref: C22725
 xref: FMA:321518
 xref: http://linkedlifedata.com/resource/umls/id/C1522269
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Nose_Nasal_Cavity_Nasal_Gland_MMHCC
 xref: http://www.snomedbrowser.com/Codes/Details/368881007
 xref: Nasal:glands
 xref: UMLS:C1522269 {source="ncithesaurus:Nose_Nasal_Cavity_Nasal_Gland_MMHCC"}
@@ -9642,9 +9673,9 @@ namespace: uberon
 def: "The lymphocytic cell population present in the mucosa of the nasopharyngeal duct of some animals." [ncithesaurus:Nasal-Associated_Lymphoid_Tissue]
 synonym: "NALT" EXACT ABBREVIATION [http://en.wikipedia.org/wiki/Mucosa-associated_lymphoid_tissue#Categorisation]
 synonym: "naso-pharyngeal lymphoid tissue" EXACT [FMA:79771]
+xref: C77659
 xref: FMA:79771
 xref: http://linkedlifedata.com/resource/umls/id/C2698431
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Nasal-Associated_Lymphoid_Tissue
 xref: MA:0003030
 xref: UMLS:C2698431 {source="ncithesaurus:Nasal-Associated_Lymphoid_Tissue"}
 relationship: part_of UBERON:0001728 ! nasopharynx
@@ -9738,10 +9769,10 @@ namespace: uberon
 def: "Laryngeal ligament that connects the epiglottis to the thyroid cartilage[WP,modified]" [http://en.wikipedia.org/wiki/Thyroepiglottic_ligament]
 synonym: "ligamentum thyroepiglotticum" EXACT LATIN []
 synonym: "thyroepiglottic ligament" EXACT [FMA:55230]
+xref: C33777
 xref: FMA:55230
 xref: http://linkedlifedata.com/resource/umls/id/C0225514
 xref: http://www.snomedbrowser.com/Codes/Details/279562000
-xref: Thyroepiglottic:Ligament
 xref: Thyroepiglottic:ligament
 xref: UMLS:C0225514 {source="ncithesaurus:Thyroepiglottic_Ligament"}
 is_a: UBERON:0006325 ! laryngeal intrinsic ligament
@@ -9793,7 +9824,7 @@ namespace: uberon
 def: "This attaches the caudal border of the thyroid cartilage to the ventral arch of the cricoid cartilage. Its sheetlike ventral portion is sometimes referred to as the cricothyroid membrane. Being elastic, it 'balances' movement at the hinge-like cricothyroid joint and determines the resting position of the larynx when the muscles are relaxed[MURDOCH]. The cricothyroid ligament is the larger part of the laryngeal membrane, continuing inferiorly as a median or anterior part and twin lateral ligaments. The median cricothyroid ligament is a flat band of white tissue joining the cricoid and thyroid cartilages, while the lateral cricothyroid ligament is also known as the cricothyroid membrane (also called conus elasticus)." [http://en.wikipedia.org/wiki/Cricothyroid_ligament, MURDOCH:483]
 synonym: "crico-thyroid ligament" EXACT []
 synonym: "ligamentum cricothyreoideum" EXACT LATIN [http://en.wikipedia.org/wiki/Cricothyroid_ligament]
-xref: Cricothyroid:Ligament
+xref: C32403
 xref: Cricothyroid:ligament
 xref: FMA:55233
 xref: http://linkedlifedata.com/resource/umls/id/C0225542
@@ -9811,7 +9842,7 @@ id: UBERON:0013172
 name: cricotracheal ligament
 namespace: uberon
 def: "The cricotracheal ligament connects the cricoid cartilage with the first ring of the trachea[WP]. The caudal border of the cricoid cartilage is joined to the first ring of the trachea by this ligament. It is an extrinsic laryngeal ligament. It resembles the fibrous membrane which connects the cartilaginous rings of the trachea to each other." [http://en.wikipedia.org/wiki/Cricotracheal_ligament, MURDOCH:486]
-xref: Cricotracheal:Ligament
+xref: C32405
 xref: Cricotracheal:ligament
 xref: FMA:55259
 xref: http://linkedlifedata.com/resource/umls/id/C0225543
@@ -9919,7 +9950,7 @@ synonym: "aryepiglottic sphincter" RELATED [http://en.wikipedia.org/wiki/Aryepig
 synonym: "aryepiglottis" RELATED [http://en.wikipedia.org/wiki/Aryepiglottic_fold]
 synonym: "plica aryepiglottica" RELATED LATIN [http://en.wikipedia.org/wiki/Aryepiglottic_fold]
 xref: Aryepiglottic:fold
-xref: Aryteno-epiglottic:Fold
+xref: C32147
 xref: FMA:55448
 xref: http://linkedlifedata.com/resource/umls/id/C1510944
 xref: http://www.snomedbrowser.com/Codes/Details/245503009
@@ -9952,8 +9983,10 @@ relationship: part_of UBERON:0001004 ! respiratory system
 id: UBERON:0014765
 name: crus of diaphragm
 namespace: uberon
-def: "The crura of the diaphragm are tendinous structures that extend inferiorly from the diaphragm to attach to the vertebral column." [http://en.wikipedia.org/wiki/Crus_of_diaphragm]
+def: "The domain of the diaphragm that is located dorsally and attaches to the vertebrae and surrounds the esophagus and aorta." [http://www.ncbi.nlm.nih.gov/pubmed/23586979]
+comment: Classification notes: May be considered an external sphincter[PMID:8224664]
 synonym: "crura of the diaphragm" RELATED [http://en.wikipedia.org/wiki/Crus_of_diaphragm]
+synonym: "crural diaphragm" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/23586979]
 synonym: "crus of the diaphragm" RELATED [http://en.wikipedia.org/wiki/Crus_of_diaphragm]
 synonym: "diaphragm crura" RELATED PLURAL []
 synonym: "diaphragmatic crura" RELATED [http://en.wikipedia.org/wiki/Crus_of_diaphragm]
@@ -9961,6 +9994,9 @@ xref: EHDAA2:0000597
 xref: EMAPA:17703
 xref: http://en.wikipedia.org/wiki/Crus_of_diaphragm
 xref: http://www.snomedbrowser.com/Codes/Details/244668003
+xref: VHOG:0001546
+relationship: attached_to UBERON:0006670 ! central tendon of diaphragm
+relationship: intersects_midsagittal_plane_of UBERON:0001103 ! diaphragm
 relationship: part_of UBERON:0001103 ! diaphragm
 
 [Term]
@@ -10063,10 +10099,10 @@ synonym: "nodus tracheobronchiale lymphaticus" EXACT [FMA:5950]
 synonym: "tracheobronchal lymph node" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/16624319]
 synonym: "tracheobronchal node" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/16624319]
 synonym: "tracheobronchial node" EXACT [FMA:5950]
+xref: C77651
 xref: FMA:5950
 xref: http://en.wikipedia.org/wiki/Tracheobronchial_lymph_nodes
 xref: http://linkedlifedata.com/resource/umls/id/C0229751
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Tracheobronchial_Lymph_Node
 xref: http://www.snomedbrowser.com/Codes/Details/245341003
 xref: MA:0003068
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
@@ -10175,8 +10211,8 @@ id: UBERON:0016481
 name: bronchial lymph node
 namespace: uberon
 def: "A lymph node that is part of a bronchus." [OBOL:automatic]
+xref: C32232
 xref: http://linkedlifedata.com/resource/umls/id/C1305372
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Bronchial_Lymph_Node
 xref: MA:0003078
 relationship: part_of UBERON:0002185 ! bronchus
 
@@ -10300,8 +10336,8 @@ def: "one of several small clusters of chemoreceptors, baroreceptors, and suppor
 synonym: "aortic bodies" RELATED PLURAL [http://en.wikipedia.org/wiki/Aortic_body]
 synonym: "aortic glands" RELATED PLURAL [http://en.wikipedia.org/wiki/Aortic_body]
 synonym: "Zuckerkandl's body" RELATED [http://en.wikipedia.org/wiki/Aortic_body]
-xref: Aortic:Body
 xref: Aortic:body
+xref: C97112
 xref: http://www.snomedbrowser.com/Codes/Details/75061007
 relationship: part_of UBERON:0004363 ! pharyngeal arch artery
 
@@ -10332,10 +10368,10 @@ namespace: uberon
 def: "Between the plica triangularis and the surface of the palatine tonsils is a space known as the tonsillar fossa (or tonsillar sinus); in many cases, however, this sinus is obliterated by its walls becoming adherent." [http://en.wikipedia.org/wiki/Tonsillar_fossa]
 synonym: "tonsillar bed" EXACT [FMA:55041]
 synonym: "tonsillar sinus" EXACT [FMA:55041]
+xref: C12235
 xref: FMA:55041
 xref: http://linkedlifedata.com/resource/umls/id/C0229881
 xref: http://www.snomedbrowser.com/Codes/Details/362596009
-xref: Tonsillar:Fossa
 xref: Tonsillar:fossa
 relationship: part_of UBERON:0002372 ! tonsil
 
@@ -10343,9 +10379,9 @@ relationship: part_of UBERON:0002372 ! tonsil
 id: UBERON:0035240
 name: posterior wall of oropharynx
 namespace: uberon
+xref: C12240
 xref: FMA:55032
 xref: http://linkedlifedata.com/resource/umls/id/C0227155
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Posterior_Wall_of_the_Oropharynx
 xref: http://www.snomedbrowser.com/Codes/Details/276960004
 relationship: in_posterior_side_of UBERON:0001729 ! oropharynx
 relationship: part_of UBERON:0001729 ! oropharynx
@@ -10360,9 +10396,9 @@ synonym: "roof of nasal part of pharynx" EXACT [FMA:54906]
 synonym: "superior nasopharynx" EXACT [FMA:54906]
 synonym: "superior wall of nasopharynx" EXACT [FMA:54906]
 synonym: "vault of pharynx" EXACT [FMA:54906]
+xref: C12242
 xref: FMA:54906
 xref: http://linkedlifedata.com/resource/umls/id/C0225492
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Superior_Wall_of_the_Nasopharynx
 xref: http://www.snomedbrowser.com/Codes/Details/179268001
 relationship: part_of UBERON:0001728 ! nasopharynx
 
@@ -10370,9 +10406,9 @@ relationship: part_of UBERON:0001728 ! nasopharynx
 id: UBERON:0035286
 name: lateral wall of oropharynx
 namespace: uberon
+xref: C12239
 xref: FMA:55008
 xref: http://linkedlifedata.com/resource/umls/id/C0227156
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lateral_Wall_of_the_Oropharynx
 xref: http://www.snomedbrowser.com/Codes/Details/362125007
 relationship: in_lateral_side_of UBERON:0001729 ! oropharynx
 relationship: part_of UBERON:0001729 ! oropharynx
@@ -10382,9 +10418,9 @@ id: UBERON:0035313
 name: posterior wall of laryngopharynx
 namespace: uberon
 synonym: "posterior wall of hypopharynx" EXACT [FMA:55063]
+xref: C12249
 xref: FMA:55063
 xref: http://linkedlifedata.com/resource/umls/id/C0227174
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Posterior_Wall_of_the_Hypopharynx
 xref: http://www.snomedbrowser.com/Codes/Details/276966005
 relationship: in_posterior_side_of UBERON:0001051 ! hypopharynx
 relationship: part_of UBERON:0001051 ! hypopharynx
@@ -10394,9 +10430,9 @@ id: UBERON:0035383
 name: lateral wall of nasopharynx
 namespace: uberon
 synonym: "lateral nasopharynx" EXACT [FMA:54908]
+xref: C12244
 xref: FMA:54908
 xref: http://linkedlifedata.com/resource/umls/id/C0225486
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Lateral_Wall_of_the_Nasopharynx
 xref: http://www.snomedbrowser.com/Codes/Details/361937006
 relationship: in_lateral_side_of UBERON:0001728 ! nasopharynx
 relationship: part_of UBERON:0001728 ! nasopharynx
@@ -10406,9 +10442,9 @@ id: UBERON:0035401
 name: posterior wall of nasopharynx
 namespace: uberon
 synonym: "posterior nasopharynx" EXACT [FMA:54907]
+xref: C12243
 xref: FMA:54907
 xref: http://linkedlifedata.com/resource/umls/id/C0225484
-xref: http://ncicb.nci.nih.gov/xml/owl/EVS/Posterior_Wall_of_the_Nasopharynx
 xref: http://www.snomedbrowser.com/Codes/Details/361936002
 relationship: in_posterior_side_of UBERON:0001728 ! nasopharynx
 relationship: part_of UBERON:0001728 ! nasopharynx
@@ -10421,10 +10457,10 @@ def: "The parietal pleura that lines the mediastinum." [ncithesaurus:Mediastinal
 synonym: "mediastinal part of parietal pleura" EXACT [FMA:9736]
 synonym: "pars mediastinalis (pleurae)" EXACT [FMA:9736]
 synonym: "pars mediastinalis pleurae parietalis" EXACT LATIN [FMA:9736, FMA:TA]
+xref: C94820
 xref: FMA:9736
 xref: http://linkedlifedata.com/resource/umls/id/C0225789
 xref: http://www.snomedbrowser.com/Codes/Details/362002008
-xref: Mediastinal:Pleura
 xref: Mediastinal:pleura
 relationship: part_of UBERON:0002400 ! parietal pleura
 
@@ -10434,10 +10470,10 @@ name: laryngeal ventricle
 namespace: uberon
 synonym: "ventricle of larynx" EXACT [FMA:64171]
 synonym: "ventricle of Morgagni" EXACT [FMA:64171]
+xref: C32935
 xref: FMA:64171
 xref: http://linkedlifedata.com/resource/umls/id/C0225566
 xref: http://www.snomedbrowser.com/Codes/Details/361949007
-xref: Laryngeal:Ventricle
 relationship: part_of UBERON:0001737 ! larynx
 
 [Term]
@@ -10446,8 +10482,8 @@ name: costodiaphragmatic recess
 namespace: uberon
 def: "The angled junction where the diaphragm meets the chest wall." [ncithesaurus:Costophrenic_Angle]
 synonym: "costophrenic angle" EXACT [FMA:11355]
+xref: C32393
 xref: Costodiaphragmatic:recess
-xref: Costophrenic:Angle
 xref: FMA:11355
 xref: http://linkedlifedata.com/resource/umls/id/C0230151
 xref: http://www.snomedbrowser.com/Codes/Details/46297007
@@ -10457,13 +10493,26 @@ relationship: part_of UBERON:0001103 ! diaphragm
 id: UBERON:0035767
 name: intrapulmonary bronchus
 namespace: uberon
+xref: C12930
 xref: FMA:223208
 xref: http://linkedlifedata.com/resource/umls/id/C1512970
-xref: Intrapulmonary:Bronchus
 is_a: UBERON:0002185 ! bronchus
 intersection_of: UBERON:0002185 ! bronchus
 intersection_of: part_of UBERON:0002048 ! lung
 relationship: part_of UBERON:0002048 ! lung
+
+[Term]
+id: UBERON:0035831
+name: costal diaphragm
+namespace: uberon
+def: "The domain of the diaphragm that is a thin domed sheet of muscle composed of a radial array of myofibers extending laterally from the ribs and medially to a central tendon." [http://www.ncbi.nlm.nih.gov/pubmed/23586979]
+synonym: "costal part of diaphragm" EXACT [FMA:58277]
+synonym: "pars costalis diaphragmatis" EXACT LATIN [FMA:TA]
+xref: FMA:58277
+xref: http://www.snomedbrowser.com/Codes/Details/368048007
+relationship: attached_to UBERON:0006670 ! central tendon of diaphragm
+relationship: in_lateral_side_of UBERON:0001103 ! diaphragm
+relationship: part_of UBERON:0001103 ! diaphragm
 
 [Term]
 id: UBERON:2000202
@@ -10980,6 +11029,10 @@ id: in_right_side_of
 is_a: in_lateral_side_of
 
 [Typedef]
+id: intersects_midsagittal_plane_of
+is_a: part_of
+
+[Typedef]
 id: located_in
 is_transitive: true
 inverse_of: RO:0001015
@@ -11013,11 +11066,6 @@ inverse_of: RO:0002551
 [Typedef]
 id: supplies
 is_a: connected_to
-
-[Typedef]
-id: surrounds
-is_a: adjacent_to
-inverse_of: RO:0002219
 
 [Typedef]
 id: transformation_of

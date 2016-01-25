@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/cmungall/uberon.svg?branch=master)](https://travis-ci.org/cmungall/uberon)
+[![DOI](https://zenodo.org/badge/13996/cmungall/uberon.svg)](https://zenodo.org/badge/latestdoi/13996/cmungall/uberon)
+
 Uberon is a multi-species anatomy ontology.
 
 This repository contains the ontology *source*, and is primarily of
