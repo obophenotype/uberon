@@ -58,7 +58,7 @@ bspo.owl:
 
 # merge BSPO into RO
 ro.owl: $(EDITSRC) bspo.owl
-	owltools $(OBO)/ro.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@
+	owltools $(OBO)/ro.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@
 
 ro_import.owl: ro.owl $(EDITSRC)
 ##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
@@ -89,7 +89,7 @@ nbo_import.owl: nbo.owl $(EDITSRC)
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 chebi.owl: $(EDITSRC) 
-	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
+	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@ && touch $@
 chebi_import.owl: chebi.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
@@ -97,13 +97,13 @@ chebi_import.owl: chebi.owl $(EDITSRC)
 #aminoacid.owl: $(EDITSRC) 
 #	owltools $(OBO)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(OBO)/uberon/$@  -o $@
 pr.owl: aminoacid.owl
-	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@
+	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@ && touch $@
 pr_import.owl: pr.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 # TODO - use full taxonomy
 ncbitaxon.owl: 
-	OWLTOOLS_MEMORY=14G owltools $(OBO)/ncbitaxon.owl -o $@
+	OWLTOOLS_MEMORY=14G owltools $(OBO)/ncbitaxon.owl -o $@ && touch $@
 ##	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
 ncbitaxon.obo: ncbitaxon.owl
 	owltools $< -o -f obo $@
@@ -353,7 +353,7 @@ DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-def
 	check-obo-for-standard-release.pl --xref-abbs GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
 
 GO.xrf_abbs: uberon_edit.obo
-	wget http://geneontology.org/doc/GO.xrf_abbs -O $@
+	wget http://geneontology.org/doc/GO.xrf_abbs -O $@ && touch $@
 
 # ----------------------------------------
 # Taxonomy and external AO validation
@@ -653,7 +653,7 @@ cl-core.owl: cl-core.obo
 
 # TODO: use Oort
 %-synclash: %.obo
-	blip-findall -r goxp/biological_process_xp_uber_anatomy	 -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
+	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
 
 # ----------------------------------------
 # COMPOSITES
@@ -1111,6 +1111,8 @@ relation_table.txt:
 # notes:
 # to add to a dict
 # yes a | aspell check --home-dir . obo-syntax.html
+#
+# setting --home-dir to . will cause the dictionary .aspell.en.pws  in this directory to be used
 
 # interactive
 ispellcheck: uberon_edit.obo-ispellcheck
