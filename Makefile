@@ -32,7 +32,9 @@ core.owl: uberon_edit.owl
 	owltools $(UCAT) $< -o -f ofn $@
 
 # this is primarily used for seeding
-phenoscape-ext-noimports.owl: pe/phenoscape-ext.owl
+phenoscape-ext.owl: uberon_edit.obo
+	wget --no-check-certificate- https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
+phenoscape-ext-noimports.owl: phenoscape-ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
 phenoscape-ext-noimports.obo: phenoscape-ext-noimports.owl
@@ -560,9 +562,6 @@ subsets/cranial-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
 	owltools $< --make-subset-by-properties -f part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
-subsets/appendicular-ext.owl: #merged.owl
-	owltools --use-catalog pe/phenoscape-ext.owl --merge-import-closure --reasoner-query -r elk  -d "$(PART_OF) some UBERON_0002091" --make-subset-by-properties part_of develops_from // --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "this ontology is a derived subset of the phenoscape uberon extension, including only classes that satisfy the query 'part of some appendicular skeleton' " -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
-.PRECIOUS: subsets/appendicular-ext.owl
 
 subsets/vertebrate-head.obo: composite-vertebrate.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000033" --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
@@ -951,9 +950,6 @@ bridge/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt
 bridge/uberon-bridge-to-emap.owl: bridge/uberon-bridge-to-emap.obo
 	obolib-obo2owl --allow-dangling $< -o $@
 
-# DO NOT REMAKE ANY MORE: See #157
-bridge/ext-xref-PREVIEW.obo:
-	blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON')" -select U-Z -label -use_tabs -no_pred | tbl2obolinks.pl --rel xref - > $@.tmp && cat ext-ref-hdr.obo $@.tmp > $@
 bridge/uberon-ext-bridge-to-zfa.obo: bridge/ext-xref.obo
 	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ext-xref.obo
 
