@@ -33,7 +33,7 @@ core.owl: uberon_edit.owl
 
 # this is primarily used for seeding
 phenoscape-ext.owl: uberon_edit.obo
-	wget --no-check-certificate- https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
+	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
 phenoscape-ext-noimports.owl: phenoscape-ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 

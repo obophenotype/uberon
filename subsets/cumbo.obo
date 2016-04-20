@@ -38,7 +38,7 @@ synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: SENSU "taxonomic disambiguation"
 ontology: uberon/subsets/cumbo
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001016>) ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001017>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000010>)))\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001017>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000010>))\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001017>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000010>))\nEquivalentClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001016>) ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001017>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000010>)))\n)
 
 [Term]
 id: UBERON:0000010
@@ -85,8 +85,8 @@ xref: MAT:0000338
 xref: MESH:D017933
 xref: MIAA:0000338
 xref: TAO:0000142
-xref: UMLS:C0206417 {source="NIFSTD:birnlex_1111"}
 xref: UMLS:C0206417 {source="ncithesaurus:Peripheral_Nervous_System"}
+xref: UMLS:C0206417 {source="NIFSTD:birnlex_1111"}
 xref: UMLS:C1305921 {source="NIFSTD:birnlex_1111"}
 xref: VHOG:0000399
 xref: XAO:0000178
@@ -156,14 +156,16 @@ xref: FMA:50801
 xref: GAID:571
 xref: galen:Brain
 xref: HBA:4005
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=21
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=21 {source="NIFSTD:birnlex_796"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=21
 xref: http://en.wikipedia.org/wiki/Brain
 xref: http://linkedlifedata.com/resource/umls/id/C0006104
 xref: http://linkedlifedata.com/resource/umls/id/C1269537
 xref: http://www.snomedbrowser.com/Codes/Details/258335003
 xref: MA:0000168
 xref: MAT:0000098
+xref: MBA:8
+xref: MBA:997
 xref: MESH:D001921
 xref: MIAA:0000098
 xref: OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA
@@ -273,8 +275,8 @@ xref: MAT:0000457
 xref: MESH:D002490
 xref: OpenCyc:Mx4rvzYt3pwpEbGdrcN5Y29ycA
 xref: TAO:0000012
-xref: UMLS:C0927232 {source="NIFSTD:birnlex_1099"}
 xref: UMLS:C0927232 {source="ncithesaurus:Central_Nervous_System"}
+xref: UMLS:C0927232 {source="NIFSTD:birnlex_1099"}
 xref: VHOG:0000293
 xref: XAO:0000215
 xref: ZFA:0000012
@@ -383,8 +385,8 @@ xref: MIAA:0000183
 xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
 xref: Spinal:cord
 xref: TAO:0000075
-xref: UMLS:C0037925 {source="NIFSTD:birnlex_1709"}
 xref: UMLS:C0037925 {source="ncithesaurus:Spinal_Cord"}
+xref: UMLS:C0037925 {source="NIFSTD:birnlex_1709"}
 xref: VHOG:0000601
 xref: XAO:0000020
 xref: ZFA:0000075
@@ -458,13 +460,15 @@ name: sulcus of brain
 namespace: uberon
 def: "A depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 subset: cumbo
-synonym: "cerebral sulci" EXACT [DHBA:10610]
+synonym: "cerebral sulci" EXACT PLURAL [DHBA:10610]
 synonym: "cerebral sulci" RELATED [NeuroNames:1208]
 synonym: "cerebral sulcus" RELATED [NeuroNames:1208]
 synonym: "fissure of brain" NARROW [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
+synonym: "sulci & spaces" BROAD PLURAL [HBA:9352]
 synonym: "sulcus" BROAD [NIFSTD:nlx_144078]
 xref: C32292
 xref: DHBA:10610
+xref: HBA:9352
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1208
 xref: http://www.snomedbrowser.com/Codes/Details/279337001
 xref: Sulcus:(neuroanatomy)

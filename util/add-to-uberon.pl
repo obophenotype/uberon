@@ -11,6 +11,7 @@ my $preserve_def_xref = 0;
 my $combine_def_xref = 0;
 my $is_use_all;
 my $map_all = 0;
+my $is_reuse_already = 0;
 while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-h' || $opt eq '--help') {
@@ -43,6 +44,9 @@ while (scalar(@ARGV) && $ARGV[0] =~ /^\-/) {
     }
     if ($opt eq '-x' || $opt eq '--map-all') {
         $map_all = 1;
+    }
+    if ($opt eq '-ra' || $opt eq '--reuse-already') {
+        $is_reuse_already = 1;
     }
     if ($opt eq '-t' || $opt eq '--tag') {
         $tag_h{shift @ARGV} = 1;
@@ -144,6 +148,11 @@ while(<>) {
 
         if ($xrefh{$xref}) {
             print "! ALREADY HAVE THIS: id: $xrefh{$xref} ! $nh{$xrefh{$xref}}\n";
+
+            if ($is_reuse_already) {
+                $uid--;
+            }
+
         }
         if ($is_use_all) {
             $xrefh{$xref} = $_; 

@@ -44,6 +44,7 @@ synonym: "pneumonocyte" EXACT []
 xref: BTO:0000395
 xref: CALOHA:TS-2168
 xref: FMA:62499
+is_a: CL:0010003 ! epithelial cell of alveolus of lung
 relationship: part_of UBERON:0004821 ! pulmonary alveolus epithelium
 
 [Term]
@@ -117,6 +118,7 @@ synonym: "type II alveolocyte" EXACT []
 xref: BTO:0000538
 xref: FMA:62501
 is_a: CL:0000322 ! pneumocyte
+is_a: CL:1000272 ! lung secretory cell
 created_by: tmeehan
 creation_date: 2010-06-24T12:04:13Z
 
@@ -195,6 +197,7 @@ namespace: cell
 alt_id: CL:1000386
 def: "A brush cell found in the epithelium of lobular bronchiole." [GOC:tfm]
 xref: FMA:263220
+is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:0002208 ! brush cell of bronchus
 relationship: part_of UBERON:0002051 ! epithelium of bronchiole
 created_by: tmeehan
@@ -207,7 +210,6 @@ namespace: cell
 alt_id: CL:1000390
 def: "A brush cell of the epithelium in the terminal bronchiole." [GOC:tfm]
 xref: FMA:263228
-is_a: CL:0000082 {is_inferred="true"} ! epithelial cell of lung
 is_a: CL:0002205 ! brush cell of lobular bronchiole
 relationship: part_of UBERON:0001958 ! terminal bronchiole epithelium
 created_by: tmeehan
@@ -268,6 +270,7 @@ name: bronchial epithelial cell
 namespace: cell
 def: "An epithelial cell of the bronchus." [GOC:tfm]
 xref: BTO:0002922
+is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
 relationship: part_of UBERON:0002185 ! bronchus
 created_by: tmeehan
@@ -330,6 +333,7 @@ name: nasal mucosa goblet cell
 namespace: cell
 def: "A goblet cell located in the nasal epithelium." [GOC:cjm, GOC:tfm]
 xref: MP:0002262
+is_a: CL:0002370 ! respiratory goblet cell
 relationship: part_of UBERON:0001826 ! nasal cavity mucosa
 relationship: part_of UBERON:0005384 ! nasal cavity epithelium
 created_by: tmeehan
@@ -413,6 +417,7 @@ name: epithelial cell of alveolus of lung
 def: "a epithelial cell that is part_of a alveolus of lung" []
 comment: May be merged with pneumocyte in future
 synonym: "alveolus of lung epithelial cell" EXACT []
+is_a: CL:0000082 ! epithelial cell of lung
 relationship: part_of UBERON:0002299 ! alveolus of lung
 created_by: GOC:cjm
 
@@ -420,6 +425,7 @@ created_by: GOC:cjm
 id: CL:1000143
 name: lung goblet cell
 is_a: CL:0000082 ! epithelial cell of lung
+is_a: CL:0002370 ! respiratory goblet cell
 is_a: CL:1000272 ! lung secretory cell
 relationship: part_of UBERON:0002048 ! lung
 
@@ -448,6 +454,7 @@ def: "A goblet cell that is part of the epithelium of bronchus." [GOC:tfm]
 synonym: "goblet cell of epithelium of bronchus" EXACT [FMA:263032]
 xref: FMA:263032
 is_a: CL:0002328 ! bronchial epithelial cell
+is_a: CL:0002370 ! respiratory goblet cell
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
 relationship: part_of UBERON:0002185 ! bronchus
 
@@ -494,8 +501,17 @@ name: serous cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A serous secreting cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263084
+is_a: CL:1000272 ! lung secretory cell
 is_a: CL:1000331 ! serous cell of epithelium of bronchus
 relationship: part_of UBERON:0002051 ! epithelium of bronchiole
+
+[Term]
+id: CL:1000337
+name: enterocyte of epithelium of duodenal gland
+namespace: cell
+def: "An enterocyte that is part of the epithelium of duodenal gland." [GOC:tfm]
+xref: FMA:263092
+relationship: part_of UBERON:0001212 ! duodenal gland
 
 [Term]
 id: CL:1000348
@@ -503,6 +519,7 @@ name: basal cell of epithelium of trachea
 namespace: cell
 def: "A basal cell that is part of the epithelium of trachea." [GOC:tfm]
 xref: FMA:263118
+is_a: CL:0000307 ! tracheal epithelial cell
 is_a: CL:0002633 {is_inferred="true"} ! respiratory basal cell
 relationship: part_of UBERON:0001901 ! epithelium of trachea
 
@@ -514,6 +531,7 @@ alt_id: CL:0002331
 def: "A basal cell found in the bronchus epithelium." [GOC:tfm]
 synonym: "basal cell of bronchus" EXACT []
 xref: FMA:263120
+is_a: CL:0002328 ! bronchial epithelial cell
 is_a: CL:0002329 ! basal epithelial cell of tracheobronchial tree
 is_a: CL:0002633 ! respiratory basal cell
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
@@ -542,6 +560,7 @@ name: basal cell of epithelium of lobular bronchiole
 namespace: cell
 def: "A basal cell that is part of the epithelium of bronchiole." [GOC:tfm]
 xref: FMA:263126
+is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000349 ! basal cell of epithelium of bronchus
 relationship: part_of UBERON:0002051 ! epithelium of bronchiole
 
@@ -578,6 +597,7 @@ name: mesothelial cell of visceral pleura
 namespace: cell
 def: "A mesothelial cell that is part of the visceral pleura." [GOC:tfm]
 xref: FMA:86739
+is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000491 ! mesothelial cell of pleura
 relationship: part_of UBERON:0002401 ! visceral pleura
 
@@ -604,6 +624,7 @@ name: nasopharyngeal epithelial cell
 def: "Cell of the nasopharyngeal epithelium." [NPX:PDR]
 synonym: "nasopharynx respiratory epithelial cells" RELATED [CALOHA:TS-2398]
 xref: CALOHA:TS-2398
+is_a: CL:0002631 ! epithelial cell of upper respiratory tract
 relationship: part_of UBERON:0001728 ! nasopharynx
 relationship: part_of UBERON:0001951 ! epithelium of nasopharynx
 
@@ -789,7 +810,7 @@ relationship: part_of UBERON:0002048 ! lung
 id: UBERON:0000114
 name: lung connective tissue
 namespace: uberon
-def: "the connective tissue located between the respiratory (airway and alveolar) epithelium, the capillary endothelium and pleural mesothelium; it contains basement membrane composed of collagen, elastin, proteoglycans, and fibronectin; it functions in the mechanical behavior of the lung, and forms a barrier to regulate the flow of plasma constituents from the capillaries to the airway and alveolar spaces" [http://www.ncbi.nlm.nih.gov/pubmed/14635660, ISBN:0-683-40008-8, MGI:anna, MP:0002276]
+def: "the connective tissue located between the respiratory (airway and alveolar) epithelium, the capillary endothelium and pleural mesothelium; it contains basement membrane composed of collagen, elastin, proteoglycans, and fibronectin" [http://www.ncbi.nlm.nih.gov/pubmed/14635660, ISBN:0-683-40008-8, MGI:anna, MP:0002276]
 subset: pheno_slim
 synonym: "connective tissue of lung" EXACT [OBOL:automatic]
 synonym: "lung interstitial tissue" RELATED [MA:0001782]
@@ -805,6 +826,7 @@ is_a: UBERON:0003580 ! lower respiratory tract connective tissue
 relationship: contributes_to_morphology_of UBERON:0002048 ! lung
 relationship: part_of UBERON:0002048 ! lung
 relationship: transformation_of UBERON:0004883 ! lung mesenchyme
+property_value: UBPROP:0000009 "it functions in the mechanical behavior of the lung, and forms a barrier to regulate the flow of plasma constituents from the capillaries to the airway and alveolar spaces" xsd:string
 
 [Term]
 id: UBERON:0000115
@@ -999,8 +1021,8 @@ namespace: uberon
 def: "The nasal vestibule is the most anterior part of the nasal cavity. It's enclosed by the cartilages of nose and lined by the same epithelium of the skin. The other part of the nasal cavity, which is lined by the respiratory epithelium, is called nasal cavity proper. [WP,unvetted]." [http://en.wikipedia.org/wiki/Nasal_vestibule]
 synonym: "vestibular part of nasal cavity" EXACT [FMA:59644]
 synonym: "vestibulum nasale" RELATED [BTO:0001761]
-synonym: "vestibulum nasi" RELATED [BTO:0001761]
 synonym: "vestibulum nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_vestibule]
+synonym: "vestibulum nasi" RELATED [BTO:0001761]
 xref: BTO:0001761
 xref: CALOHA:TS-0660
 xref: FMA:59644
@@ -1120,8 +1142,8 @@ synonym: "pharyngeal branch" EXACT [FMA:6234]
 synonym: "pharyngeal branch of inferior vagal ganglion" EXACT [FMA:6234]
 synonym: "pharyngeal branch of vagus" EXACT [FMA:6234]
 synonym: "ramus pharyngealis nervi vagalis" EXACT [FMA:6234]
-synonym: "ramus pharyngeus" EXACT [FMA:TA]
 synonym: "ramus pharyngeus" EXACT LATIN [FMA:6234, FMA:TA]
+synonym: "ramus pharyngeus" EXACT [FMA:TA]
 synonym: "ramus pharyngeus nervi vagi" RELATED LATIN [http://en.wikipedia.org/wiki/Pharyngeal_part_of_vagus_nerve]
 synonym: "tenth cranial nerve pharyngeal branch" EXACT [FMA:6234]
 synonym: "vagal pharyngeal branch" EXACT [FMA:6234]
@@ -1284,8 +1306,8 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "laryngeal pharynx" EXACT [FMA:54877]
 synonym: "laryngopharynx" EXACT [FMA:54877]
-synonym: "pars laryngea pharyngis" RELATED LATIN [http://en.wikipedia.org/wiki/Hypopharynx]
 synonym: "pars laryngea pharyngis" RELATED [BTO:0001740]
+synonym: "pars laryngea pharyngis" RELATED LATIN [http://en.wikipedia.org/wiki/Hypopharynx]
 xref: BTO:0001740
 xref: C12246
 xref: CALOHA:TS-2020
@@ -1398,6 +1420,34 @@ property_value: UBPROP:0000009 "breathing control" xsd:string
 property_value: UBPROP:0000011 "originate from the cervical somites, likely C3-C5[PMID:23586979]" xsd:string
 
 [Term]
+id: UBERON:0001212
+name: duodenal gland
+namespace: uberon
+def: "A compound tubular submucosal gland found in that portion of the duodenum which is above the hepatopancreatic sphincter (Sphincter of Oddi). The main function of these glands is to produce a mucus-rich alkaline secretion (containing bicarbonate)[WP]." [http://en.wikipedia.org/wiki/Brunner's_glands]
+subset: organ_slim
+subset: pheno_slim
+subset: uberon_slim
+synonym: "Brunner's gland" EXACT [FMA:15060]
+synonym: "gland of Brunner" EXACT [FMA:15060]
+synonym: "glandula duodenales" RELATED LATIN [BTO:0002376]
+synonym: "glandula duodenales Brunneri" RELATED LATIN [BTO:0002376]
+synonym: "submucosal gland of duodenum" EXACT []
+xref: Brunner's:glands
+xref: BTO:0002376
+xref: C13010
+xref: EMAPA:36522
+xref: FMA:15060
+xref: GAID:314
+xref: http://linkedlifedata.com/resource/umls/id/C0006323
+xref: http://www.snomedbrowser.com/Codes/Details/41298001
+xref: MA:0001551
+xref: MESH:A03.492.411.620.270.322
+xref: UMLS:C0006323 {source="ncithesaurus:Brunner_s_Gland"}
+is_a: UBERON:0011148 ! submucosal gland
+property_value: IAO:0000116 "currently defined as equivalent to any submucosal gland in the duodenum." xsd:string
+property_value: UBPROP:0000008 "Said to be absent outside mammlian (Andrew 1959) but Ziswiler and Farner (1972) noted similar glands at the gastroduodenal junction of some birds" xsd:string {source="ISBN:9780521617147"}
+
+[Term]
 id: UBERON:0001557
 name: upper respiratory tract
 namespace: uberon
@@ -1506,8 +1556,8 @@ synonym: "inferior constrictor muscle" RELATED [http://en.wikipedia.org/wiki/Inf
 synonym: "inferior constrictor of pharynx" EXACT [FMA:46623]
 synonym: "inferior constrictor pharyngeus" EXACT [FMA:46623]
 synonym: "inferior pharyngeal constrictor" RELATED [http://en.wikipedia.org/wiki/Inferior_pharyngeal_constrictor_muscle]
-synonym: "musculus constrictor pharyngis inferior" EXACT LATIN [FMA:46623, FMA:TA]
 synonym: "musculus constrictor pharyngis inferior" EXACT LATIN [FMA:TA]
+synonym: "musculus constrictor pharyngis inferior" EXACT LATIN [FMA:46623, FMA:TA]
 synonym: "musculus constrictor pharyngis inferior" RELATED LATIN [http://en.wikipedia.org/wiki/Inferior_pharyngeal_constrictor_muscle]
 xref: EMAPA:18965
 xref: FMA:46623
@@ -1530,8 +1580,8 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cavitas nasalis" RELATED [BTO:0002096]
-synonym: "cavitas nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_cavity]
 synonym: "cavitas nasi" RELATED [BTO:0002096]
+synonym: "cavitas nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_cavity]
 synonym: "cavity of nose" EXACT []
 synonym: "cavity of olfactory apparatus" EXACT [http://orcid.org/0000-0002-6601-2165]
 synonym: "cavum nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_cavity]
@@ -2281,8 +2331,8 @@ xref: EHDAA2:0001228
 xref: EHDAA:4774
 xref: EMAPA:17606
 xref: FMA:64803
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900 {source="NIFSTD:birnlex_2703"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900 {source="NIFSTD:birnlex_2703"}
 xref: http://linkedlifedata.com/resource/umls/id/C0599332
 xref: http://www.snomedbrowser.com/Codes/Details/37623003
 xref: MA:0001325
@@ -6279,7 +6329,7 @@ is_a: UBERON:0001004 ! respiratory system
 id: UBERON:0005203
 name: trachea gland
 namespace: uberon
-def: "A gland that is part of a submucosa of trachea [Automatically generated definition]." [OBOL:automatic]
+def: "a tubuloacinar seromucous gland that is located principally in the submucosa of the trachea. Excretory ducts from this gland pass through the lamina propria to the tracheal lumen." [http://medical-dictionary.thefreedictionary.com/tracheal+glands, http://www.ncbi.nlm.nih.gov/pubmed/15973734, https://github.com/obophenotype/uberon/issues/1197, ISBN:1451113412, MGI:Anna]
 subset: organ_slim
 subset: pheno_slim
 synonym: "glandula trachealis" EXACT [FMA:7473]
@@ -6289,7 +6339,9 @@ xref: EMAPA:36574
 xref: FMA:7473
 xref: http://www.snomedbrowser.com/Codes/Details/197423006
 xref: MA:0002937
+is_a: UBERON:0011148 ! submucosal gland
 relationship: part_of UBERON:0002202 ! submucosa of trachea
+property_value: UBPROP:0000009 "These glands secrete mucus, lysozyme, defensins, and other agents that help protect the lungs from particles and infectious agents." xsd:string
 
 [Term]
 id: UBERON:0005204
@@ -7646,8 +7698,8 @@ name: stylopharyngeus muscle
 namespace: uberon
 def: "The stylopharyngeus is a muscle in the head that stretches between the styloid process and the pharynx." [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "M. stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
-synonym: "musculus stylopharyngeus" RELATED LATIN [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "musculus stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
+synonym: "musculus stylopharyngeus" RELATED LATIN [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "stylopharyngeus" EXACT [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 xref: C33639
 xref: FMA:46664
@@ -7965,6 +8017,24 @@ is_a: UBERON:0002184 ! segmental bronchus
 relationship: connected_to UBERON:0009072 ! ventrobronchus
 relationship: connected_to UBERON:0009073 ! dorsobronchus
 relationship: part_of UBERON:0002048 ! lung
+
+[Term]
+id: UBERON:0008989
+name: submocosal esophageal gland
+namespace: uberon
+def: "One of the racemose glands in the walls of the esophagus that in humans are small and serve principally to lubricate the food but in some birds secrete a milky fluid on which the young are fed." [BTO:0003634, http://en.wikipedia.org/wiki/Esophageal_glands]
+synonym: "esophageal gland" EXACT [FMA:9404]
+synonym: "glandulae oesophageae" EXACT [http://en.wikipedia.org/wiki/Esophageal_glands]
+synonym: "mucous gland of submucosa of esophagus" EXACT [FMA:9404]
+xref: BTO:0003634
+xref: C32536
+xref: Esophageal:glands
+xref: FMA:9404
+xref: http://linkedlifedata.com/resource/umls/id/C0227178
+xref: http://www.snomedbrowser.com/Codes/Details/322749003
+xref: UMLS:C0227178 {source="ncithesaurus:Esophageal_Gland"}
+is_a: UBERON:0011148 ! submucosal gland
+property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e8/Illu_esophageal_layers.jpg
 
 [Term]
 id: UBERON:0009058
@@ -8496,9 +8566,10 @@ relationship: part_of UBERON:0000115 ! lung epithelium
 
 [Term]
 id: UBERON:0010019
-name: spiracle
+name: spiracle (sensu Vertebrata)
 namespace: uberon
 def: "A small hole behind each eye that opens to the mouth in some fish. In the primitive jawless fish the first gill opening immediately behind the mouth is essentially similar to the other gill openings." [http://en.wikipedia.org/wiki/Spiracle#Vertebrates, ISBN10:0073040584]
+synonym: "spiracle" EXACT SENSU [NCBITaxon:7742]
 synonym: "vertebrate spiracle" EXACT []
 xref: Vertebrates
 relationship: develops_from UBERON:0004362 ! pharyngeal arch 1
@@ -9228,6 +9299,15 @@ xref: TAO:0001602
 xref: ZFA:0001610
 is_a: UBERON:0008896 ! post-hyoid pharyngeal arch
 property_value: UBPROP:0000103 "7" xsd:nonNegativeInteger
+
+[Term]
+id: UBERON:0011148
+name: submucosal gland
+namespace: uberon
+def: "Gland of the lamina epithelialis mucosae which perforate the lamina muscularis, with their adenomeres located in the submucosal connective tissue." [BTO:0003751, http://en.wikipedia.org/wiki/Submucosal_glands]
+xref: BTO:0003751
+xref: Submucosal:glands
+relationship: part_of UBERON:0003126 ! trachea
 
 [Term]
 id: UBERON:0011150
@@ -10235,7 +10315,7 @@ def: "A section of a pharyngeal arch artery that carries blood away from the spi
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0015787 ! upper respiratory conduit
 relationship: branching_part_of UBERON:0003118 ! pharyngeal arch artery 1
-relationship: supplies UBERON:0010019 ! spiracle
+relationship: supplies UBERON:0010019 ! spiracle (sensu Vertebrata)
 
 [Term]
 id: UBERON:0017617
@@ -10245,7 +10325,7 @@ def: "A section of a pharyngeal arch artery that drains the spiracle." [ISBN10:0
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0015787 ! upper respiratory conduit
 relationship: branching_part_of UBERON:0003118 ! pharyngeal arch artery 1
-relationship: drains UBERON:0010019 ! spiracle
+relationship: drains UBERON:0010019 ! spiracle (sensu Vertebrata)
 
 [Term]
 id: UBERON:0018103
@@ -10962,6 +11042,7 @@ id: distally_connected_to
 is_a: BSPO:0000100
 is_a: connected_to
 is_a: transitively_distally_connected_to
+inverse_of: proximally_connected_to
 
 [Typedef]
 id: drains
@@ -11056,7 +11137,6 @@ id: proximally_connected_to
 is_a: BSPO:0000097
 is_a: connected_to
 is_a: transitively_proximally_connected_to
-inverse_of: distally_connected_to
 
 [Typedef]
 id: skeleton_of
