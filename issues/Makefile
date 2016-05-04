@@ -1,4 +1,4 @@
-LAST=701
+LAST=1204
 
 NUMBERS := $(shell seq 1 ${LAST})
 ISSUES := $(patsubst %,issue-%.json,${NUMBERS})
