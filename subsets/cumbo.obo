@@ -50,15 +50,9 @@ subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "lateral part of the basal amygdalar nucleus" RELATED [NeuroNames:247]
-synonym: "lateral part of the basolateral nucleus" RELATED [NeuroNames:247]
-synonym: "nucleus amygdalae basalis, pars lateralis" RELATED LATIN [NeuroNames:247]
-synonym: "nucleus amygdaloideus basalis, pars lateralis magnocellularis" RELATED LATIN [NeuroNames:247]
-synonym: "nucleus basalis lateralis amygdalae" RELATED LATIN [NeuroNames:247]
-synonym: "pars peripherica" EXACT LATIN [FMA:9903, FMA:TA]
-synonym: "pars peripherica; systema nervosum periphericum" RELATED LATIN [http://en.wikipedia.org/wiki/Peripheral_nervous_system]
-synonym: "PNS" RELATED []
-synonym: "systema nervosum periphericum" EXACT LATIN [FMA:9903, FMA:TA]
+synonym: "pars peripherica" EXACT LATIN [FMA:9903, FMA:TA, http://en.wikipedia.org/wiki/Peripheral_nervous_system]
+synonym: "PNS" BROAD ABBREVIATION []
+synonym: "systema nervosum periphericum" EXACT LATIN [FMA:9903, FMA:TA, http://en.wikipedia.org/wiki/Peripheral_nervous_system]
 xref: AAO:0000429
 xref: BAMS:PNS
 xref: BILA:0000081
@@ -74,8 +68,7 @@ xref: EV:0100335
 xref: FBbt:00005098
 xref: FMA:9903
 xref: GAID:715
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=247 {source="NIFSTD:birnlex_1111"}
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=247
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3232
 xref: http://en.wikipedia.org/wiki/Peripheral_nervous_system
 xref: http://linkedlifedata.com/resource/umls/id/C0206417
 xref: http://linkedlifedata.com/resource/umls/id/C1305921
@@ -85,8 +78,8 @@ xref: MAT:0000338
 xref: MESH:D017933
 xref: MIAA:0000338
 xref: TAO:0000142
-xref: UMLS:C0206417 {source="ncithesaurus:Peripheral_Nervous_System"}
 xref: UMLS:C0206417 {source="NIFSTD:birnlex_1111"}
+xref: UMLS:C0206417 {source="ncithesaurus:Peripheral_Nervous_System"}
 xref: UMLS:C1305921 {source="NIFSTD:birnlex_1111"}
 xref: VHOG:0000399
 xref: XAO:0000178
@@ -290,7 +283,7 @@ property_value: homology_notes "(...) at some stage of its development, every ch
 id: UBERON:0001018
 name: axon tract
 namespace: uberon
-def: "A group of axons linking two or more neuropils and having a common origin, termination[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html]
+def: "A group of axons linking two or more neuropils and having a common origin, termination[FBbt]." [http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html, https://github.com/obophenotype/uberon/issues/286]
 comment: WP says this is the analog of peripheral nerves in CNS.
 subset: cumbo
 subset: pheno_slim
@@ -458,7 +451,7 @@ relationship: part_of UBERON:0001017 ! central nervous system
 id: UBERON:0013118
 name: sulcus of brain
 namespace: uberon
-def: "A depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
+def: "A depression or fissure in the surface of the brain. It surrounds the gyri, creating the characteristic appearance of the brain in humans and other large mammals." [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy), https://github.com/obophenotype/uberon/issues/315]
 subset: cumbo
 synonym: "cerebral sulci" EXACT PLURAL [DHBA:10610]
 synonym: "cerebral sulci" RELATED [NeuroNames:1208]
@@ -952,7 +945,7 @@ is_metadata_tag: true
 id: somite_number
 name: somite number
 namespace: uberon
-def: "x somite_number N if and only if (i) x is a somite, and (ii) x is somite number N in a series of somites repeated along an anterior-posterior axis, with somite_number 1 being the anteriormost somite." [https://orcid.org/0000-0002-6601-2165]
+def: "x somite_number N if and only if (i) x is a somite, and (ii) x is somite number N in a series of somites repeated along an anterior-posterior axis, with somite_number 1 being the anteriormost somite." [https://github.com/obophenotype/uberon/issues/100, https://orcid.org/0000-0002-6601-2165]
 xref: UBPROP:0000108
 property_value: is_count_of UBERON:0002329
 property_value: preceding_element_is BSPO:0000096

@@ -1,5 +1,4 @@
 ont(ceph).
-ont(spongebo).
 
 anatomy(uberon).
 anatomy('CL').
@@ -27,6 +26,7 @@ anatomy('EMAPA').
 anatomy(ehdaa2).
 anatomy(snomed_anatomy).
 anatomy(ta).
+anatomy(brenda).
 anatomy(nlxa).
 anatomy(nlxn).
 anatomy('NCITA').

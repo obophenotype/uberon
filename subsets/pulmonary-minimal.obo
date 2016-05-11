@@ -1689,6 +1689,7 @@ subset: uberon_slim
 synonym: "mesopharynx" RELATED [http://en.wikipedia.org/wiki/Pharynx]
 synonym: "oral part of pharynx" EXACT []
 synonym: "pars oralis pharyngis" RELATED LATIN [http://en.wikipedia.org/wiki/Oropharynx]
+xref: BTO:0005257
 xref: C12762
 xref: CALOHA:TS-0718
 xref: EFO:0001976
@@ -3436,7 +3437,7 @@ property_value: UBPROP:0000013 "Numbered cranial to caudal. different in mammals
 id: UBERON:0003066
 name: pharyngeal arch 2
 namespace: uberon
-def: "The second pharyngeal arch will form the hyoid apparatus. The cranial neural crest cells that populate the second pharyngeal arch emerge primarily from rhombomere 4 and will form skeletal elements." [http://www.ncbi.nlm.nih.gov/pubmed/12784288, ZFIN:yb]
+def: "The second pharyngeal arch will form the hyoid apparatus. The cranial neural crest cells that populate the second pharyngeal arch emerge primarily from rhombomere 4 and will form skeletal elements." [http://www.ncbi.nlm.nih.gov/pubmed/12784288, https://github.com/obophenotype/uberon/issues/258, ZFIN:yb]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -3953,6 +3954,7 @@ synonym: "epithelium of pharynx" EXACT [OBOL:automatic]
 synonym: "pharynx epithelial tissue" EXACT [OBOL:automatic]
 synonym: "pharynx epithelium" EXACT [OBOL:automatic]
 xref: BSA:0000112
+xref: BTO:0005240
 xref: EMAPA:16708
 xref: MA:0002725
 xref: RETIRED_EHDAA2:0001460
@@ -5031,6 +5033,7 @@ synonym: "smooth muscle of bronchus" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of bronchi" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "smooth muscle tissue of bronchus" EXACT [OBOL:automatic]
+xref: BTO:0004401
 xref: C49213
 xref: EMAPA:35195
 xref: http://linkedlifedata.com/resource/umls/id/C1707055
@@ -8214,13 +8217,14 @@ relationship: part_of UBERON:0001042 ! chordate pharynx
 id: UBERON:0009119
 name: branchial basket
 namespace: uberon
-def: "The network-like cartilaginous skeleton of the gill region of Petromyzontiformes and Holocephali" [http://www.briancoad.com/dictionary/DicPics/branchial%20basket.htm]
+def: "The network-like non-segmented cartilaginous skeleton of the gill region of Petromyzontiformes and Holocephali, connected to the heart and surrounding respiratory tissue." [http://www.briancoad.com/dictionary/DicPics/branchial%20basket.htm, UBERON:cjm]
 subset: cyclostome_subset
 synonym: "gill basket" EXACT [http://www.briancoad.com/dictionary/DicPics/branchial%20basket.htm]
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: depicted:by http://dev.duit.uwa.edu.au/zoology/media/lamp/E19.jpg
 property_value: IAO:0000116 "developmental relationship needs to be changed if the scope is broadened, as NC is vertebrate-specific" xsd:string
 property_value: UBPROP:0000008 "May also be present in amphioxus" xsd:string
+property_value: UBPROP:0000009 "functions by elastic recoil" xsd:string
 
 [Term]
 id: UBERON:0009120
@@ -10052,7 +10056,7 @@ property_value: IAO:0000232 "this class may be merged with 'respiratory system m
 id: UBERON:0014479
 name: elephant trunk
 namespace: uberon
-def: "An appendage formed by the fusion of the nose and upper lip." [http://en.wikipedia.org/wiki/Elephant#Trunk]
+def: "An appendage formed by the fusion of the nose and upper lip." [http://en.wikipedia.org/wiki/Elephant#Trunk, https://github.com/obophenotype/uberon/issues/295]
 synonym: "proboscis" BROAD []
 synonym: "trunk" BROAD INCONSISTENT []
 synonym: "trunk of elephant" EXACT []
@@ -10593,6 +10597,16 @@ xref: http://www.snomedbrowser.com/Codes/Details/368048007
 relationship: attached_to UBERON:0006670 ! central tendon of diaphragm
 relationship: in_lateral_side_of UBERON:0001103 ! diaphragm
 relationship: part_of UBERON:0001103 ! diaphragm
+
+[Term]
+id: UBERON:0035963
+name: epithelial lining fluid
+namespace: uberon
+def: "Epithelial lining fluid forms a thin fluid layer that covers the mucosa of the alveoli, the small airways, and the large airways." [BTO:0005566, http://www.ncbi.nlm.nih.gov/pubmed/21948403]
+synonym: "ELF" RELATED [BTO:0005566]
+xref: BTO:0005566
+xref: FMA:276456
+relationship: part_of UBERON:0002299 ! alveolus of lung
 
 [Term]
 id: UBERON:2000202
