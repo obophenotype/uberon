@@ -24,8 +24,6 @@ uberon_edit_x.obo: uberon_edit.obo
 	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl | ./util/separate-ALL.pl > $@.tmp && mv $@.tmp $@
 uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck  
 	owltools $(UCAT) $< issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
-### TODO - restore --expand-macros
-###	owltools $(UCAT) $< --merge-support-ontologies --expand-macros -o -f functional $@
 
 # This is primarily for use in editing the phenoscape-ext.owl file
 core.owl: uberon_edit.owl
