@@ -48,8 +48,8 @@ phenoscape-ext-noimports.owl: phenoscape-ext.owl
 unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
-ext.owl: release.owl
-       owltools $(UCAT) $< --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+ext.owl: unreasoned.owl
+	robot reason -i $< -r elk relax reduce -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@
 
 ## TODO - get rid of inferred subclass axioms for other ontology classes
 ###release.owl: unreasoned.owl
