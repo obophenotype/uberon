@@ -7,40 +7,42 @@ QELK = --silence-elk
 
 
 # Note: need to rework phenoscape-ext.owl dependency for travis to work
-travis_test: core.owl
+travis_test: uberon.owl
 	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp || (tail -1000 $@.tmp && exit -1) && (tail -1000 $@.tmp && mv $@.tmp $@)
 
-# ----------------------------------------
-# ----------------------------------------
-# NEW, POST-JUNE-2013
-# ----------------------------------------
-# ----------------------------------------
 
 UCAT = --use-catalog
 
-# SEED ONTOLOGY - use to make import modules
-#
+# ----------------------------------------
+# STEP 1: pre-processing and quick validation
+# ----------------------------------------
+
+# the source file is pseudo-obo - expand psueo-syntax, expand special comments, expand ID spaces
 uberon_edit_x.obo: uberon_edit.obo
 	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl | ./util/separate-ALL.pl > $@.tmp && mv $@.tmp $@
+
+# make edit owl file from previous step, merge in contributors (derived from github API) and expand macros
 uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck  
 	owltools $(UCAT) $< issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 
-# This is primarily for use in editing the phenoscape-ext.owl file
+# ----------------------------------------
+# STEP 2: preparing core release, and merging with phenoscape edit file
+# ----------------------------------------
+
+# core.owl is imported by phenoscape-ext.owl; the two together make up the complete ontology
 core.owl: uberon_edit.owl
 	owltools $(UCAT) $< -o -f ofn $@
 
 # A portion of uberon is maintained in a separate github repo - we merge that in here
 # as part of the release
-
 phenoscape-ext.owl: uberon_edit.obo
 	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
 
 # including the imports would lead to circularity, so we remove these here
-
 phenoscape-ext-noimports.owl: phenoscape-ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
-## MERGED ONTOLOGY
+## MERGED UNREASONED ONTOLOGY
 ##
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
@@ -48,33 +50,40 @@ phenoscape-ext-noimports.owl: phenoscape-ext.owl
 unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
+# ----------------------------------------
+# STEP 3: Perform reasoning and create release ext.owl file
+# ----------------------------------------
+
+# ext.owl is the release file that includes full imports and inter-ontology axioms
 ext.owl: unreasoned.owl
 	robot reason -i $< -r elk relax reduce -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@
 
-## TODO - get rid of inferred subclass axioms for other ontology classes
-###release.owl: unreasoned.owl
-###	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --outdir newbuild --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp newbuild/uberon/core.owl $@
-
-# previously we had merged and ext - now just ext. TODO: release/date
-#ext.owl: release.owl
-#	owltools $(UCAT) $< --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+# ext.obo is a relation subset of this
 ext.obo: ext.owl
 	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
 
-ext-taxon-axioms.owl: ext.owl
-	owljs-grep -m /NCBITaxon/ -t ofn -o $@ $<
+# ----------------------------------------
+# STEP 4: Create uberon.owl and .obo
+# ----------------------------------------
 
 # merged.owl is now the flattening of ext.owl
-# merged.obo will be the same as ext.obo
+# TODO: do we need this intermediate step? Used for subsets
 merged.owl: ext.owl
 	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 merged.obo: merged.owl
 	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
 
-uberon.owl: release.owl
+# strip imports and dangling references
+uberon.owl: ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
+
+# also do OE check here
 uberon.obo: uberon.owl
-	obolib-owl2obo $< -o $@.tmp && obo2obo $@.tmp -o $@
+	owltools $< -o -f obo $@.tmp && obo2obo $@.tmp -o $@
+
+# ----------------------------------------
+# STEP 5: Create basic subset
+# ----------------------------------------
 
 BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
 # remember to git mv - this replaces uberon-simple
