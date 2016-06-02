@@ -39,7 +39,7 @@ phenoscape-ext.owl: uberon_edit.obo
 	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
 
 # including the imports would lead to circularity, so we remove these here
-phenoscape-ext-noimports.owl: phenoscape-ext.owl
+phenoscape-ext-noimports.owl: phenoscape-ext.owl core.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
 ## MERGED UNREASONED ONTOLOGY
