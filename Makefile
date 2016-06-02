@@ -29,49 +29,35 @@ uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck
 core.owl: uberon_edit.owl
 	owltools $(UCAT) $< -o -f ofn $@
 
-# this is primarily used for seeding
+# A portion of uberon is maintained in a separate github repo - we merge that in here
+# as part of the release
+
 phenoscape-ext.owl: uberon_edit.obo
 	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
+
+# including the imports would lead to circularity, so we remove these here
+
 phenoscape-ext-noimports.owl: phenoscape-ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
-phenoscape-ext-noimports.obo: phenoscape-ext-noimports.owl
-	owltools $< -o -f obo $@
-
-#corecheck.owl: uberon_edit.owl
-#	owltools $(UCAT) $< external-disjoints.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
-
-
-# ----------------------------------------
-# MARKDOWN EXPORT
-# ----------------------------------------
-markdown:
-	owltools ext.owl --merge-imports-closure --ontology-to-markdown md
-
-# ----------------------------------------
-# MAIN RELEASE FILES
-# ----------------------------------------
-
+## MERGED ONTOLOGY
+##
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
 ## TODO: omitting removal of DisjointClasses to see what happens
 unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl
 	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
-#	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
+
+ext.owl: release.owl
+       owltools $(UCAT) $< --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 
 ## TODO - get rid of inferred subclass axioms for other ontology classes
-release.owl: unreasoned.owl imports
-	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --outdir newbuild --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp newbuild/uberon/core.owl $@
-
-# this should become the new uberon.owl
-#release.owl: unreasoned.owl
-#	owltools $(UCAT) $< --assert-inferred-subclass-axioms --useIsInferred --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
-#release.obo: release.owl
-#	owltools $(UCAT) $< -o -f obo $@
+###release.owl: unreasoned.owl
+###	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --outdir newbuild --skip-release-folder  --reasoner elk --simple --asserted --allow-overwrite $< && cp newbuild/uberon/core.owl $@
 
 # previously we had merged and ext - now just ext. TODO: release/date
-ext.owl: release.owl
-	owltools $(UCAT) $< --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
+#ext.owl: release.owl
+#	owltools $(UCAT) $< --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 ext.obo: ext.owl
 	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
 
@@ -85,7 +71,6 @@ merged.owl: ext.owl
 merged.obo: merged.owl
 	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
 
-# this is like the old uberon.{obo,owl}
 uberon.owl: release.owl
 	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@
 uberon.obo: uberon.owl
@@ -110,14 +95,8 @@ subsets/cumbo.obo: subsets/cumbo.owl
 
 
 #TEMPORARY - we will later
-supercheck.owl: unreasoned.owl
-	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
-
-disjoint-violations.txt: unreasoned.owl
-	owltools --no-debug $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --reasoner elk --check-disjointness-axioms > $@
-
-newpipe: basic-xp-check
-
+#supercheck.owl: unreasoned.owl
+#	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
 
 
 
@@ -199,6 +178,12 @@ cl_import.owl: cl-core.obo $(EDITSRC)
 
 imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo cl_import.obo go_import.obo ro_import.obo
 	touch $@
+
+# ----------------------------------------
+# MARKDOWN EXPORT
+# ----------------------------------------
+markdown:
+	owltools ext.owl --merge-imports-closure --ontology-to-markdown md
 
 # ----------------------------------------
 # REPORTS
@@ -511,7 +496,7 @@ QC_FILES = uberon_edit-xp-check\
 #    depictions.owl\
 
 
-uberon-qc: $(QC_FILES) all_systems
+uberon-qc: imports $(QC_FILES) all_systems
 	cat merged-orphans uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check.err uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
 
 
