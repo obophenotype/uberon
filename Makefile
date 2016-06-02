@@ -43,85 +43,6 @@ phenoscape-ext-noimports.obo: phenoscape-ext-noimports.owl
 
 
 # ----------------------------------------
-# IMPORTS
-# ----------------------------------------
-
-
-# todo - change to phenoscape-ext
-EDITSRC = uberon_edit.owl
-#EDITSRC = seed.owl
-IMP = $(OBO)/uberon
-
-bspo.owl:
-	owltools $(OBO)/bspo.owl  -o $@
-##	owltools $(OBO)/bspo.owl --remove-annotation-assertions -l -d -o $@
-
-# merge BSPO into RO
-ro.owl: $(EDITSRC) bspo.owl
-	owltools $(OBO)/ro.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@
-
-ro_import.owl: ro.owl $(EDITSRC)
-##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
-	owltools --use-catalog $< --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -t Domain --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --remove-dangling --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
-
-bless-mirrors:
-	touch go.owl chebi.owl ncbitaxon.owl
-
-pato.owl: $(EDITSRC) 
-	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // --set-ontology-id $(OBO)/$@ -o $@
-pato_import.owl: pato.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
-
-# TODO - logical definitions go->ubr,cl
-go.owl: $(EDITSRC) 
-	wget $(OBO)/$@ -O $@ && touch $@
-go_import.owl: go.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $<  $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
-
-envo.owl: $(EDITSRC) 
-	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
-envo_import.owl: envo.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
-
-nbo.owl: $(EDITSRC) 
-	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
-nbo_import.owl: nbo.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
-
-chebi.owl: $(EDITSRC) 
-	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@ && touch $@
-chebi_import.owl: chebi.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
-
-# Do not rebuild: PR is now too big
-#aminoacid.owl: $(EDITSRC) 
-#	owltools $(OBO)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(OBO)/uberon/$@  -o $@
-pr.owl: aminoacid.owl
-	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@ && touch $@
-pr_import.owl: pr.owl $(EDITSRC) 
-	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
-
-# TODO - use full taxonomy
-ncbitaxon.owl: 
-	OWLTOOLS_MEMORY=14G owltools $(OBO)/ncbitaxon.owl -o $@ && touch $@
-##	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
-ncbitaxon.obo: ncbitaxon.owl
-	owltools $< -o -f obo $@
-
-ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC) composite-stages.obo
-	OWLTOOLS_MEMORY=14G owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) composite-stages.obo --merge-support-ontologies --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
-
-# CL - take **everything**
-cl_import.owl: cl-core.obo $(EDITSRC)
-	owltools $(UCAT) $<  --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
-
-%_import.obo: %_import.owl
-	owltools $< -o -f obo --no-check $@
-
-imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo cl_import.obo go_import.obo ro_import.obo
-	touch $@
-
-# ----------------------------------------
 # MARKDOWN EXPORT
 # ----------------------------------------
 markdown:
@@ -196,6 +117,88 @@ disjoint-violations.txt: unreasoned.owl
 	owltools --no-debug $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --reasoner elk --check-disjointness-axioms > $@
 
 newpipe: basic-xp-check
+
+
+
+
+
+# ----------------------------------------
+# IMPORTS
+# ----------------------------------------
+
+
+# todo - change to phenoscape-ext
+EDITSRC = uberon_edit.owl
+#EDITSRC = seed.owl
+IMP = $(OBO)/uberon
+
+bspo.owl:
+	owltools $(OBO)/bspo.owl  -o $@
+
+# merge BSPO into RO
+ro.owl: $(EDITSRC) bspo.owl
+	owltools $(OBO)/ro.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@
+
+ro_import.owl: ro.owl $(EDITSRC)
+##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
+	owltools --use-catalog $< --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -t Domain --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --remove-dangling --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
+
+bless-mirrors:
+	touch go.owl chebi.owl ncbitaxon.owl
+
+pato.owl: $(EDITSRC) 
+	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // --set-ontology-id $(OBO)/$@ -o $@
+pato_import.owl: pato.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+# TODO - logical definitions go->ubr,cl
+go.owl: $(EDITSRC) 
+	wget $(OBO)/$@ -O $@ && touch $@
+go_import.owl: go.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $<  $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+envo.owl: $(EDITSRC) 
+	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
+envo_import.owl: envo.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+nbo.owl: $(EDITSRC) 
+	owltools $(OBO)/$@ --extract-mingraph --set-ontology-id $(OBO)/$@ -o $@
+nbo_import.owl: nbo.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+chebi.owl: $(EDITSRC) 
+	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@ && touch $@
+chebi_import.owl: chebi.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+# Do not rebuild: PR is now too big
+#aminoacid.owl: $(EDITSRC) 
+#	owltools $(OBO)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(OBO)/uberon/$@  -o $@
+pr.owl: aminoacid.owl
+	owltools $< --extract-mingraph --rename-entity $(OBO)/pr#has_part $(OBO)/BFO_0000051 --rename-entity $(OBO)/pr#part_of $(OBO)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d null -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(OBO)/$@ -o $@ && touch $@
+pr_import.owl: pr.owl $(EDITSRC) 
+	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+# TODO - use full taxonomy
+ncbitaxon.owl: 
+	OWLTOOLS_MEMORY=14G owltools $(OBO)/ncbitaxon.owl -o $@ && touch $@
+##	owltools $(OBO)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(OBO)/$@ -o $@
+ncbitaxon.obo: ncbitaxon.owl
+	owltools $< -o -f obo $@
+
+ncbitaxon_import.owl: ncbitaxon.owl $(EDITSRC) composite-stages.obo
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) composite-stages.obo --merge-support-ontologies --extract-module -s $(OBO)/$< -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+# CL - take **everything**
+cl_import.owl: cl-core.obo $(EDITSRC)
+	owltools $(UCAT) $<  --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
+
+%_import.obo: %_import.owl
+	owltools $< -o -f obo --no-check $@
+
+imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo cl_import.obo go_import.obo ro_import.obo
+	touch $@
 
 # ----------------------------------------
 # REPORTS
