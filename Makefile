@@ -47,8 +47,8 @@ phenoscape-ext-noimports.owl: phenoscape-ext.owl core.owl
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
 ## TODO: omitting removal of DisjointClasses to see what happens
-unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl
-	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
+unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl bridge/uberon-bridge-to-bfo.owl 
+	owltools $(UCAT) $^ --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
 # ----------------------------------------
 # STEP 3: Perform reasoning and create release ext.owl file
