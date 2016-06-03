@@ -1,26 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon-bridge-to-bfo.owl#"
      xml:base="http://purl.obolibrary.org/obo/uberon-bridge-to-bfo.owl"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon-bridge-to-bfo.owl"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_id"/>
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
     
 
 
@@ -35,55 +21,22 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entity</rdfs:label>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000001</obo:IAO_id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuant</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An entity  that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts.</obo:IAO_0000115>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000002</obo:IAO_id>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurrent</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An entity  that has temporal parts and that happens, unfolds or develops through time. Sometimes also called perdurants.</obo:IAO_0000115>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000003</obo:IAO_id>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003"/>
     
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000004 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">independent continuant</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A continuant  that is a bearer of quality  and realizable entity  entities, in which other entities inhere and which itself cannot inhere in anything.</obo:IAO_0000115>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000004</obo:IAO_id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000007 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000007">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A processual entity  that is a maximally connected spatiotemporal whole and has bona fide beginnings and endings corresponding to real discontinuities.</obo:IAO_0000115>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000007</obo:IAO_id>
     </owl:Class>
     
 
@@ -91,10 +44,31 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processual entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An occurrent  that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity.</obo:IAO_0000115>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000015</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000141 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000141">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
     </owl:Class>
     
 
@@ -102,9 +76,23 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000000">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processual entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0000000</obo:IAO_id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000465 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000465">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000466 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000466">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
     </owl:Class>
     
 
@@ -112,13 +100,11 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001062 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <obo:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:0001062</obo:IAO_id>
     </owl:Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.2.0.1502) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.5) https://github.com/owlcs/owlapi -->
 
