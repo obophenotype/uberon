@@ -4,6 +4,9 @@ DC = http://purl.org/dc/elements/1.1
 DATE = `date +%Y-%m-%d`
 RELEASE = $(OBO)/uberon/releases/`date +%Y-%m-%d`
 QELK = --silence-elk
+UCAT = --use-catalog
+
+all: uberon-qc
 
 
 # Note: need to rework phenoscape-ext.owl dependency for travis to work
@@ -11,14 +14,32 @@ travis_test: uberon.owl
 	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp || (tail -1000 $@.tmp && exit -1) && (tail -1000 $@.tmp && mv $@.tmp $@)
 
 
-UCAT = --use-catalog
+
+# ----------------------------------------
+# PREP: catalog
+# ----------------------------------------
+$(CATALOG):
+	./util/make-catalog.pl uberon.owl ext.owl *_import.owl  local-*owl bridge/*owl source-ontologies/allen-*.obo > $@.tmp && mv $@.tmp $@
+
+# ----------------------------------------
+# STEP 0: checks
+# ----------------------------------------
+# NOTE: these are bypassed by travis for now, as some rely on ad-hoc perl
+
+checks: uberon_edit-xp-check\
+    uberon_edit-obscheck.txt\
+    uberon.obo-OE-check\
+    uberon.obo-OWL-check\
+    uberon-obscheck.txt\
+    uberon-orphans\
+    uberon-synclash\
 
 # ----------------------------------------
 # STEP 1: pre-processing and quick validation
 # ----------------------------------------
 
 # the source file is pseudo-obo - expand psueo-syntax, expand special comments, expand ID spaces
-uberon_edit_x.obo: uberon_edit.obo
+uberon_edit_x.obo: uberon_edit.obo 
 	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl | ./util/separate-ALL.pl > $@.tmp && mv $@.tmp $@
 
 # make edit owl file from previous step, merge in contributors (derived from github API) and expand macros
@@ -81,6 +102,7 @@ uberon.owl: ext.owl
 uberon.obo: uberon.owl
 	owltools $< -o -f obo $@.tmp && obo2obo $@.tmp -o $@
 
+
 # ----------------------------------------
 # STEP 5: Create basic subset
 # ----------------------------------------
@@ -113,11 +135,14 @@ subsets/cumbo.obo: subsets/cumbo.owl
 # ----------------------------------------
 # IMPORTS
 # ----------------------------------------
+# imports can be built independently of the main release.
+# (although pre-processing of the source is done first)
+#
+# The typical pipeline (see uberon-qc) is to first make imports, then the rest of the release
 
 
-# todo - change to phenoscape-ext
+# todo - change to include phenoscape-ext
 EDITSRC = uberon_edit.owl
-#EDITSRC = seed.owl
 IMP = $(OBO)/uberon
 
 bspo.owl:
@@ -127,9 +152,13 @@ bspo.owl:
 ro.owl: $(EDITSRC) bspo.owl
 	owltools $(OBO)/ro.owl bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@
 
-ro_import.owl: ro.owl $(EDITSRC)
+#seed.tsv: seed.owl
+#	owltools $(USECAT) --extract-
+
+ro_import.owl: ro.owl $(EDITSRC) reports/uberon_edit-object-properties.csv
 ##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
-	owltools --use-catalog $< --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -t Domain --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --remove-dangling --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
+##	owltools --use-catalog $< --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -t Domain --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --remove-dangling --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
+	robot extract -i $< -m STAR -T reports/uberon_edit-object-properties.csv annotate -O $(OBO)/uberon/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@
 
 bless-mirrors:
 	touch go.owl chebi.owl ncbitaxon.owl
@@ -183,7 +212,7 @@ cl_import.owl: cl-core.obo $(EDITSRC)
 	owltools $(UCAT) $<  --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
 %_import.obo: %_import.owl
-	owltools $< -o -f obo --no-check $@
+	owltools $< --add-obo-shorthand-to-properties -o -f obo --no-check $@
 
 imports: pato_import.obo chebi_import.obo pr_import.obo ncbitaxon_import.obo cl_import.obo go_import.obo ro_import.obo
 	touch $@
@@ -238,7 +267,7 @@ reports/%-function-parents.tsv: %.owl
 reports/uberon-%.csv: uberon.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
-reports/uberon-%.csv: uberon.owl sparql/%.sparql
+reports/uberon_edit-%.csv: uberon_edit.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
 
@@ -297,10 +326,6 @@ reports/parts: $(patsubst %,reports/part-%-report.tsv,$(RPT_SPECIES))
 reports/stages-%-report.tsv: %-view.owl
 	owltools $<  --reasoner mexr --export-parents -p $(RPT_STAGE_RELS) -o $@.tmp && mv $@.tmp $@
 
-ro_import-relations.tsv: %.owl
-	owljs-tableify -r hermit -t ObjectProperty -c -o $@ $<
-%-relations.tsv: %.owl
-	owljs-tableify -t ObjectProperty -c -o $@ $<
 
 # ----------------------------------------
 # EXTRACT TCs
@@ -312,29 +337,8 @@ uberon-taxon-constraints.owl: uberon-taxon-constraints.obo
 	owltools $< --expand-macros -o $@
 
 # ----------------------------------------
-# SEP MATERIALIZATION
+# SYNTACTIC CHECKS
 # ----------------------------------------
-%-parts.owl: %.owl
-	owltools --use-catalog --create-ontology $*-parts  $< --materialize-existentials -p BFO:0000050 --add-imports-from-supports -o $@
-
-# ----------------------------------------
-# PRE-JUNE-2013
-# ----------------------------------------
-
-all: uberon-qc
-
-# TODO - manage this in OWL
-external-disjoints.owl: external-disjoints.obo
-	obolib-obo2owl --allow-dangling -o $@ $<
-
-# temp
-subsets/taxon-constraints.owl: uberon_edit.obo
-	owlrhino js/extract-taxon-constraints.js
-
-taxcheck-%: % subsets/taxon-constraints.owl
-	owltools $< subsets/taxon-constraints.owl --add-imports-from-supports $(QELK) --run-reasoner -r elk -u  > $@.tmp && mv $@.tmp $@
-
-
 
 # check OE can parse:
 # for validation purposes only
@@ -450,7 +454,6 @@ bridge-dv-check-%.txt: ext-merged-%.owl
 %-xp-check: %.obo
 	obo-check-xps.pl $< > $@ 2> $@.err || (echo "problems" && exit 1)
 
-
 # See: http://douroucouli.wordpress.com/2012/07/03/45/
 # TODO - make the OWL primary
 depictions.omn: uberon_edit.obo
@@ -461,16 +464,10 @@ depictions.owl: depictions.omn
 quick-qc: uberon.obo-OE-check core.owl uberon_edit-obscheck.txt
 	cat uberon_edit-obscheck.txt
 
-QC_FILES = uberon_edit-xp-check\
+QC_FILES = checks\
     core.owl\
     uberon.owl\
-    uberon_edit-obscheck.txt\
     uberon.obo\
-    uberon.obo-OE-check\
-    uberon.obo-OWL-check\
-    uberon-obscheck.txt\
-    uberon-orphans\
-    uberon-synclash\
     external-disjoints.owl\
     depictions.owl\
     bridge/bridges\
@@ -521,10 +518,11 @@ uberon-qc: imports $(QC_FILES) all_systems
 	((obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) >& $@
 
 
-
+# ----------------------------------------
+# SUBSETS
 # ----------------------------------------
 # System-specific subsets
-# ----------------------------------------
+
 #PA = phenoscape-vocab/phenoscape-anatomy.obo
 
 SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory pulmonary cranial appendicular
@@ -717,8 +715,28 @@ mirror-%.owl:
 	wget $(OBO)/$*.owl -O $@ &&  touch $@
 .PRECIOUS: mirror-%.owl
 
+## TODO: many ontologies may have fixed their legacy properties
 local-%.owl: mirror-%.owl
-	owltools $< bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#starts_at_end_of $(OBO)/RO_0002087 --rename-entity $(OBO)/$*#DESCENDENTOF $(OBO)/RO_0002476 --rename-entity $(OBO)/$*#DESCINMALE $(OBO)/RO_0002478 --rename-entity $(OBO)/$*#DESCINHERM $(OBO)/RO_0002477 --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 --rename-entity $(OBO)/$*#start $(OBO)/RO_0002496 --rename-entity $(OBO)/$*#end $(OBO)/RO_0002497 --rename-entity $(OBO)/$*#start_stage $(OBO)/RO_0002496 --rename-entity $(OBO)/$*#end_stage $(OBO)/RO_0002497 --rename-entity $(OBO)/$*#releases_neurotransmitter $(OBO)/RO_0002111  --rename-entity $(OBO)/$*#develops_directly_from $(OBO)/RO_0002207   --rename-entity $(OBO)/$*#electrically_synapsed_to $(OBO)/RO_0002003 --rename-entity $(OBO)/$*#regional_part_of $(OBO)/BFO_0000050 --rename-entity $(OBO)/$*#systemic_part_of $(OBO)/BFO_0000050 --rename-entity $(OBO)/$*#constitutional_part_of $(OBO)/BFO_0000050 --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
+	owltools $< bridge/uberon-bridge-to-caro.owl bridge/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations \
+    --rename-entity $(OBO)/$*#develops_in $(OBO)/RO_0002203 \
+    --rename-entity $(OBO)/$*#develops_from $(OBO)/RO_0002202 \
+    --rename-entity $(OBO)/$*#preceded_by $(OBO)/RO_0002087 \
+    --rename-entity $(OBO)/$*#starts_at_end_of $(OBO)/RO_0002087 \
+    --rename-entity $(OBO)/$*#DESCENDENTOF $(OBO)/RO_0002476 \
+    --rename-entity $(OBO)/$*#DESCINMALE $(OBO)/RO_0002478 \
+    --rename-entity $(OBO)/$*#DESCINHERM $(OBO)/RO_0002477 \
+    --rename-entity $(OBO)/$*#connected_to $(OBO)/RO_0002170 \
+    --rename-entity $(OBO)/$*#start $(OBO)/RO_0002496 \
+    --rename-entity $(OBO)/$*#end $(OBO)/RO_0002497 \
+    --rename-entity $(OBO)/$*#start_stage $(OBO)/RO_0002496 \
+    --rename-entity $(OBO)/$*#end_stage $(OBO)/RO_0002497 \
+    --rename-entity $(OBO)/$*#releases_neurotransmitter $(OBO)/RO_0002111  \
+    --rename-entity $(OBO)/$*#develops_directly_from $(OBO)/RO_0002207   \
+    --rename-entity $(OBO)/$*#electrically_synapsed_to $(OBO)/RO_0002003 \
+    --rename-entity $(OBO)/$*#regional_part_of $(OBO)/BFO_0000050 \
+    --rename-entity $(OBO)/$*#systemic_part_of $(OBO)/BFO_0000050 \
+    --rename-entity $(OBO)/$*#constitutional_part_of $(OBO)/BFO_0000050\
+    --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
 
 local-%.obo: local-%.owl
 	owltools $< -o -f obo $@
@@ -759,11 +777,45 @@ fixed-zfa.obo: mirror-zfa.obo
 composite-deps: $(METAZOAN_OBOS)
 
 # many external ontologies do not adhere to all uberon constraints
-merged-weak.owl: merged.owl
-	owltools $< --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
-MBASE = merged-weak.owl bridge/bridges
+ext-weak.owl: ext.owl
+	owltools $(UCAT) $< --merge-imports-closure --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
+MBASE = ext-weak.owl bridge/bridges
 
+# A subset of OPs will be turned into taxon GCIs
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
+
+MERGESPECIES =\
+  --merge-species-ontology -s 'mouse' -t NCBITaxon:10090 -q $(TAXON_GCI_RELS) \
+  --merge-species-ontology -s 'human' -t NCBITaxon:9606 -q $(TAXON_GCI_RELS) \
+  --merge-species-ontology -s 'primate' -t NCBITaxon:9443 \
+  --merge-species-ontology -s 'Xenopus' -t NCBITaxon:8353 \
+  --merge-species-ontology -s 'Danio' -t NCBITaxon:7954 \
+  --merge-species-ontology -s 'Drosophila' -t NCBITaxon:7227 \
+  --merge-species-ontology -s 'C elegans' -t NCBITaxon:6237 \
+
+MERGE_EQSETS =  --merge-equivalence-sets -s UBERON 10 -s CL 9 -s CARO 5  -l UBERON 10 -l CL 9 -d UBERON 10 -d CL 9
+
+MAKESPMERGE= $(UCAT)\
+  --map-ontology-iri $(OBO)/uberon.owl ext-weak.owl\
+  --map-ontology-iri $(OBO)/fma.owl null.owl\
+  --map-ontology-iri $(OBO)/uberon/bridge/uberon-bridge-to-fma.owl null.owl\
+ $(OBO)/uberon/bridge/collected-$*.owl --merge-imports-closure
+
+pre-nucomposite-%.owl: $(MBASE)
+	OWLTOOLS_MEMORY=12G owltools $(MAKESPMERGE) --reasoner elk $(MERGESPECIES) $(MERGE_EQSETS) -o -f ofn $@
+.PRECIOUS: pre-nucomposite-%.owl
+
+nucomposite-%.owl: pre-nucomposite-%.owl
+	robot reason -r ELK -i $< relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: nucomposite-%.owl
+
+nucomposite-%.obo: nucomposite-%.owl
+	owltools $< --add-obo-shorthand-to-properties -o -f obo --no-check $@
+
+test-nucomposite-%.owl: $(MBASE)
+	owltools $(MAKESPMERGE)  -o -f ofn $@ 
+
+
 
 composite-zfa.owl: local-zfa.owl $(MBASE) 
 	owltools --no-debug --create-ontology uberon/$@ $(MBASE)  bridge/uberon-bridge-to-zfa.owl bridge/cl-bridge-to-zfa.owl bridge/uberon-bridge-to-zfs.owl $< developmental-stage-ontologies/zfs/zfs.obo --merge-support-ontologies --reasoner elk \
@@ -1422,3 +1474,4 @@ all_html: $(patsubst %, %_import/.index.html, $(IMPORTS))
 #	pandoc $< -o $@ && cp $@ $*/index.html && cp $*.png $*/
 #	pandoc $< -o $@ && svn ps svn:mime-type text/html $*
 #	pandoc $< -o $@ && cp $*.html $* && svn ps svn:mime-type text/html $*
+
