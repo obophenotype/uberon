@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<rdf:RDF
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  >
+  <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/collected-teleost.owl">
+<foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/bridge/collected-teleost</foaf:homepage>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://uberon.org</foaf:homepage>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000027</rdfs:seeAlso>
+    <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://genomebiology.com/2012/13/1/R5</rdfs:seeAlso>
+    <dc:subject rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
+    <dc:creator xml:lang="en">Uberon editors</dc:creator>
+    <dc:title xml:lang="en">Uberon importer for teleost structures</dc:title>
+    <dc:description xml:lang="en">
+      This is an ontology that collects all of the core uberon, plus
+      TAO (teleosts) and ZFA and bridging ontologies. It may be
+      retired in the future, as TAO is merged into the core uberon.
+    </dc:description>
+    <rdfs:comment xml:lang="en">
+      Uberon ontologies with the prefix 'collected' are ontologies
+      that import the core Uberon ontology together with one or more
+      external typically species-centric ontologies plus *bridging*
+      axioms that connect Uberon to the species-centric
+      ontology. Bridging axioms may be direct equivalence axioms,
+      taxonomic equivalence axioms, or subclass axioms. See the Uberon
+      homepage for details.
+    </rdfs:comment>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa.owl"/>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-zfa.owl"/>
+    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/zfa.owl"/>
+  </owl:Ontology>
+</rdf:RDF>
