@@ -1,7 +1,7 @@
 format-version: 1.2
 ontology: uberon/subsets/life-stages-core.obo
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon core (generic stages only)" xsd:string
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012101>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012101> (perinatal stage)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n\n\n)
 
 [Term]
 id: UBERON:0000000
@@ -228,8 +228,7 @@ xref: VHOG:0000745
 xref: XAO:1000001
 xref: ZFS:0000001
 is_a: UBERON:0000067 ! embryo stage part
-relationship: part_of UBERON:0000068 ! embryo stage
-property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107", source="http://bgee.unil.ch/"}
+property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107"}
 
 [Term]
 id: UBERON:0000107
@@ -251,7 +250,6 @@ xref: XAO:1000004
 xref: ZFS:0000046
 is_a: UBERON:0000067 ! embryo stage part
 relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
-relationship: part_of UBERON:0000068 ! embryo stage
 
 [Term]
 id: UBERON:0000108
@@ -273,7 +271,6 @@ xref: WBls:0000005
 xref: XAO:1000003
 xref: ZFS:0000045
 is_a: UBERON:0000067 ! embryo stage part
-relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000107 ! cleavage stage
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png
 property_value: IAO:0000116 "consider adding a preceding stage 'morula stage' as part of cleavage" xsd:string
@@ -302,8 +299,7 @@ xref: WBls:0000010
 xref: XAO:1000005
 xref: ZFS:0000047
 is_a: UBERON:0000067 ! embryo stage part
-relationship: part_of UBERON:0000068 ! embryo stage
-relationship: preceded_by UBERON:0000108 ! blastula stage
+relationship: preceded_by UBERON:0000108 {source="BILS"} ! blastula stage
 
 [Term]
 id: UBERON:0000110
@@ -316,7 +312,6 @@ xref: HsapDv:0000012
 xref: MmusDv:0000017
 xref: XAO:1000006
 is_a: UBERON:0000067 ! embryo stage part
-relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000109 ! gastrula stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/343
 
@@ -334,7 +329,6 @@ xref: MmusDv:0000018
 xref: OGES:000005
 xref: OGES:000032
 is_a: UBERON:0000067 ! embryo stage part
-relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000110 ! neurula stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/533
 
@@ -397,7 +391,6 @@ xref: OGES:000006
 xref: ZFS:0000050
 is_a: UBERON:0000067 ! embryo stage part
 relationship: part_of UBERON:0000111 ! organogenesis stage
-relationship: preceded_by UBERON:0000110 ! neurula stage
 property_value: UBPROP:0000008 "Corresponds to E7-E11 in Mouse (Galis et al, TREE, 2001)" xsd:string
 
 [Term]
@@ -457,7 +450,6 @@ xref: MIAA:0000399
 xref: MmusDv:0000031
 xref: OGES:000023
 is_a: UBERON:0000067 ! embryo stage part
-relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
 relationship: preceded_by UBERON:0004707 ! pharyngula stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/355
@@ -752,7 +744,6 @@ property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/c
 id: has_part
 is_transitive: true
 is_a: RO:0002507
-inverse_of: part_of
 
 [Typedef]
 id: immediately_preceded_by
@@ -761,6 +752,7 @@ is_a: preceded_by
 [Typedef]
 id: part_of
 is_transitive: true
+inverse_of: has_part
 
 [Typedef]
 id: preceded_by
