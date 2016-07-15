@@ -952,7 +952,7 @@ alt_id: UBERON:0003344
 def: "A mucosa that is part of a pharynx [Automatically generated definition]." [OBOL:automatic]
 synonym: "mucosa of organ of pharynx" EXACT [OBOL:automatic]
 synonym: "mucosa of pharynx" EXACT [OBOL:automatic]
-synonym: "Mucous membrane of pharynx" EXACT [FMA:55031]
+synonym: "mucous membrane of pharynx" EXACT [FMA:55031]
 synonym: "mucous membrane of pharynx" EXACT [OBOL:automatic]
 synonym: "mucous membrane of the pharynx" RELATED [BTO:0001047]
 synonym: "organ mucosa of pharynx" EXACT [OBOL:automatic]
@@ -979,7 +979,7 @@ synonym: "mucosa of organ of trachea" EXACT [OBOL:automatic]
 synonym: "mucosa of organ of windpipe" EXACT [OBOL:automatic]
 synonym: "mucosa of trachea" EXACT [OBOL:automatic]
 synonym: "mucosa of windpipe" EXACT [OBOL:automatic]
-synonym: "Mucous membrane of trachea" EXACT [FMA:7471]
+synonym: "mucous membrane of trachea" EXACT [FMA:7471]
 synonym: "mucous membrane of trachea" EXACT [OBOL:automatic]
 synonym: "mucous membrane of windpipe" EXACT [OBOL:automatic]
 synonym: "organ mucosa of trachea" EXACT [OBOL:automatic]
@@ -988,8 +988,8 @@ synonym: "trachea mucosa" EXACT [OBOL:automatic]
 synonym: "trachea mucosa of organ" EXACT [OBOL:automatic]
 synonym: "trachea mucous membrane" EXACT [OBOL:automatic]
 synonym: "trachea organ mucosa" EXACT [OBOL:automatic]
-synonym: "Tracheal mucous membrane" EXACT [FMA:7471]
-synonym: "Tunica mucosa (tracheae)" EXACT [FMA:7471]
+synonym: "tracheal mucous membrane" EXACT [FMA:7471]
+synonym: "tunica mucosa (tracheae)" EXACT [FMA:7471]
 synonym: "tunica mucosa tracheae" EXACT LATIN [FMA:7471, FMA:TA]
 synonym: "windpipe mucosa" EXACT [OBOL:automatic]
 synonym: "windpipe mucosa of organ" EXACT [OBOL:automatic]
@@ -1068,7 +1068,7 @@ synonym: "mucosa of organ of bronchial trunk" EXACT [OBOL:automatic]
 synonym: "mucosa of organ of bronchus" EXACT [OBOL:automatic]
 synonym: "mucous membrane of bronchi" EXACT [OBOL:automatic]
 synonym: "mucous membrane of bronchial trunk" EXACT [OBOL:automatic]
-synonym: "Mucous membrane of bronchus" EXACT [FMA:62652]
+synonym: "mucous membrane of bronchus" EXACT [FMA:62652]
 synonym: "mucous membrane of bronchus" EXACT [OBOL:automatic]
 synonym: "organ mucosa of bronchi" EXACT [OBOL:automatic]
 synonym: "organ mucosa of bronchial trunk" EXACT [OBOL:automatic]
@@ -1171,7 +1171,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5e/G
 id: UBERON:0000977
 name: pleura
 namespace: uberon
-def: "The invaginated serous membrane that surrounds the lungs (the visceral portion) and lines the walls of the pleural cavity (parietal portion)." [https://en.wikipedia.org/wiki/Pulmonary_pleurae, ISBN:0-683-40008-8, MP:0010820, UBERON:cjm]
+def: "The invaginated serous membrane that surrounds the lungs (the visceral portion) and lines the walls of the pleural cavity (parietal portion)." [https://en.wikipedia.org/wiki/Pulmonary_pleurae, https://github.com/obophenotype/uberon/issues/1231, ISBN:0-683-40008-8, MP:0010820, UBERON:cjm]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -1199,6 +1199,7 @@ relationship: has_part UBERON:0002400 ! parietal pleura
 relationship: has_part UBERON:0002401 ! visceral pleura
 relationship: part_of UBERON:0009778 {source="https://github.com/obophenotype/uberon/issues/86"} ! pleural sac
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/ab/Gray965.png
+property_value: RO:0002175 NCBITaxon:8782 {source="BGEE:AN", source="ISBN:978-0030223693"}
 property_value: UBPROP:0000001 "The serous membrane that covers the lungs and lines the pleural cavity. [Kaufman_MH_and_Bard_JBL, The_anatomical_basis_of_mouse_development_(1999)_San_Diego:_Academic_Press, p.264][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000394", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN10:0124020607"}
 property_value: UBPROP:0000007 "pleural" xsd:string
 property_value: UBPROP:0000012 "In MA, is_a cavity lining (which we equate to parietal). In FMA, is_a (viscous) serous membrane (which includes mesothelium plus connective tissue). Note the MA structure should probably be associated with the mesothelium of pleura in FMA. JB/EHDAA2 argues the term 'pleura' is best used for the mesothelial lining (thus excluding connective tissue). See https://github.com/obophenotype/uberon/issues/86" xsd:string
@@ -1678,6 +1679,7 @@ xref: MESH:A03.867.557
 xref: OpenCyc:Mx4rwUPoDJwpEbGdrcN5Y29ycA
 xref: UMLS:C0027442 {source="ncithesaurus:Nasopharynx"}
 xref: VHOG:0000375
+is_a: UBERON:0000072 ! proximo-distal subdivision of respiratory tract
 relationship: contributes_to_morphology_of UBERON:0001042 ! chordate pharynx
 relationship: part_of UBERON:0001042 ! chordate pharynx
 relationship: part_of UBERON:0001557 ! upper respiratory tract
@@ -1744,7 +1746,7 @@ subset: uberon_slim
 synonym: "adenoid" EXACT []
 synonym: "nasopharyngeal tonsil" EXACT []
 synonym: "Rachenmandel" RELATED [BTO:0000777]
-synonym: "tonsil of luschka" EXACT []
+synonym: "tonsil of Luschka" EXACT []
 synonym: "tonsilla pharyngea" RELATED LATIN [http://en.wikipedia.org/wiki/Pharyngeal_tonsil]
 synonym: "tonsilla pharyngealis" EXACT LATIN [FMA:54970, FMA:TA]
 xref: BTO:0000777
@@ -2017,7 +2019,7 @@ def: "One of the paired paranasal sinuses, located in the body of the maxilla, c
 subset: pheno_slim
 subset: uberon_slim
 synonym: "antrum of Highmore" EXACT []
-synonym: "highmore antrum" RELATED [MESH:A04.531.621.578]
+synonym: "Highmore antrum" RELATED [MESH:A04.531.621.578]
 synonym: "maxillary antrum" RELATED [MESH:A04.531.621.578]
 synonym: "sinus maxilliaris" EXACT LATIN [http://en.wikipedia.org/wiki/Maxillary_sinus]
 xref: C12275
@@ -4898,22 +4900,8 @@ namespace: uberon
 def: "A portion of smooth muscle tissue that is part of a respiratory system [Automatically generated definition]." [OBOL:automatic]
 synonym: "airway smooth muscle" RELATED [BTO:0001660]
 synonym: "airway smooth muscle cell" RELATED [BTO:0001660]
-synonym: "apparatus respiratorius involuntary muscle" EXACT [OBOL:automatic]
-synonym: "apparatus respiratorius non-striated muscle" EXACT [OBOL:automatic]
-synonym: "apparatus respiratorius smooth muscle" EXACT [OBOL:automatic]
-synonym: "apparatus respiratorius smooth muscle tissue" EXACT [OBOL:automatic]
-synonym: "involuntary muscle of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "involuntary muscle of respiratory system" EXACT [OBOL:automatic]
-synonym: "non-striated muscle of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "non-striated muscle of respiratory system" EXACT [OBOL:automatic]
 synonym: "respiratory smooth muscle" EXACT [BTO:0001660]
-synonym: "respiratory system involuntary muscle" EXACT [OBOL:automatic]
-synonym: "respiratory system non-striated muscle" EXACT [OBOL:automatic]
-synonym: "respiratory system smooth muscle tissue" EXACT [OBOL:automatic]
-synonym: "smooth muscle of apparatus respiratorius" EXACT [OBOL:automatic]
 synonym: "smooth muscle of respiratory system" EXACT [OBOL:automatic]
-synonym: "smooth muscle tissue of apparatus respiratorius" EXACT [OBOL:automatic]
-synonym: "smooth muscle tissue of respiratory system" EXACT [OBOL:automatic]
 xref: BTO:0001660
 xref: EMAPA:35734
 xref: MA:0001830
@@ -10530,6 +10518,29 @@ xref: FMA:276456
 relationship: part_of UBERON:0002299 ! alveolus of lung
 
 [Term]
+id: UBERON:0036068
+name: subglottis
+namespace: uberon
+def: "The lower portion of the larynx, extending from just beneath the vocal cords down to the top of the trachea." [https://en.wikipedia.org/wiki/Subglottis, MP:0030000, ORCID:orcid.org/0000-0002-6490-7723]
+synonym: "infraglottic part of larynx" EXACT [FMA:55477]
+synonym: "subglottic larynx" EXACT [FMA:55477]
+synonym: "subglottic region" EXACT [MP:0030000]
+xref: C12280
+xref: FMA:55477
+xref: http://www.snomedbrowser.com/Codes/Details/281511009
+is_a: UBERON:0000072 ! proximo-distal subdivision of respiratory tract
+relationship: part_of UBERON:0001737 ! larynx
+property_value: UBPROP:0000009 "the structures in the subglottis are implicated in the regulation of the temperature of the breath" xsd:string
+
+[Term]
+id: UBERON:0036071
+name: diaphragmaticus muscle
+namespace: uberon
+def: "A skeletal muscle found in crocodilians that is analogous to the diaphragm of mammals" [http://www.ncbi.nlm.nih.gov/pubmed/22323207, https://github.com/obophenotype/uberon/issues/1229]
+synonym: "diaphragmaticus" RELATED []
+is_a: UBERON:0003831 ! respiratory system muscle
+
+[Term]
 id: UBERON:2000202
 name: efferent portion of pharyngeal arch artery
 namespace: uberon
@@ -10956,7 +10967,6 @@ id: develops_from
 is_transitive: true
 is_a: has_developmental_contribution_from
 is_a: RO:0002258
-is_a: RO:0002507
 inverse_of: RO:0002203
 
 [Typedef]
@@ -10980,7 +10990,6 @@ domain: CARO:0000003
 range: CARO:0000003
 is_transitive: true
 is_a: RO:0002258
-is_a: RO:0002507
 inverse_of: RO:0002255
 
 [Typedef]
@@ -11004,7 +11013,6 @@ is_a: RO:0002567
 [Typedef]
 id: has_part
 is_transitive: true
-is_a: RO:0002507
 
 [Typedef]
 id: in_anterior_side_of

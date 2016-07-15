@@ -41,7 +41,7 @@ ttest-tax: uberon_edit-plus-tax-equivs.owl
 # PREP: catalog
 # ----------------------------------------
 $(CATALOG):
-	./util/make-catalog.pl uberon.owl ext.owl ncbitaxon.obo *_import.owl  local-*owl bridge/*owl source-ontologies/allen-*.obo > $@.tmp && mv $@.tmp $@
+	./util/make-catalog.pl uberon.owl ext.owl ncbitaxon.obo *_import.owl  local-*owl bridge/*owl source-ontologies/allen-*.obo developmental-stage-ontologies/ssso-merged-uberon.obo > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # STEP 0: checks
@@ -101,9 +101,10 @@ unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl bridge/uberon-bridg
 ext.owl: unreasoned.owl
 	robot reason -i $< -r elk relax reduce -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@
 
+RELSIM = BFO:0000050 RO:0002202 immediate_transformation_of
 # ext.obo is a relation subset of this
 ext.obo: ext.owl
-	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f BFO:0000050 RO:0002202 immediate_transformation_of // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
+	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f $(RELSLIM) // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
 
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
@@ -260,12 +261,12 @@ RPT_TAXA_ARGS =
 #RPT_STAGE_RELS = RO:0002488 RO:0002492 RO:0002496 RO:0002497
 RPT_STAGE_RELS = RO:0002496 RO:0002497
 
-%-classes.tsv: %.owl
-	owljs-tableify -R "RO_0002202,transformation of,in taxon,existence starts during,existence ends during" -c -o $@ $<
+#%-classes.tsv: %.owl
+#	owljs-tableify -R "RO_0002202,transformation of,in taxon,existence starts during,existence ends during" -c -o $@ $<
 ##	owljs-tableify -R "develops from,in taxon,existence_starts_during,existence ends during" -c -o $@ $<
 
-%-parents.tsv: %-part-parents.tsv %-dev-parents.tsv %-tax-parents.tsv %-stage-parents.tsv %-function-parents.tsv
-	echo done
+#%-parents.tsv: %-part-parents.tsv %-dev-parents.tsv %-tax-parents.tsv %-stage-parents.tsv %-function-parents.tsv
+#	echo done
 
 
 
@@ -295,21 +296,28 @@ reports/uberon-%.csv: uberon.owl sparql/%.sparql
 reports/uberon_edit-%.csv: uberon_edit.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
-
 # match pattern for any relation to be filtered out
 XSPECIES_RE = -m '/(RO_0002158|evolved_from)/'
 
-nh-human.owl: composite-human.owl
-	owljs-grep -v $(XSPECIES_RE) -o $@ $<
+nh-%.obo: composite-%.owl
+	owltools $< -o -f obo --no-check $@.tmp && egrep -v 'relationship: (homologous_to|evolved_from)' $@.tmp > $@
 
-nh-mouse.owl: composite-mouse.owl
-	owljs-grep -v $(XSPECIES_RE) -o $@ $<
+nh-%.owl: nh-%.obo
+	owltools $< -o $@.tmp && mv $@.tmp $@
+
+
+
+#nh-human.owl: composite-human.owl
+#	owljs-grep -v $(XSPECIES_RE) -o $@ $<
+
+#nh-mouse.owl: composite-mouse.owl
+#	owljs-grep -v $(XSPECIES_RE) -o $@ $<
 
 #nh-zebrafish.owl: composite-zfa.owl
 #	owljs-grep -v $(XSPECIES_RE) -o $@ $<
 
-nh-xenopus.owl: composite-xenopus.owl
-	owljs-grep -v $(XSPECIES_RE) -o $@ $<
+#nh-xenopus.owl: composite-xenopus.owl
+#	owljs-grep -v $(XSPECIES_RE) -o $@ $<
 
 #nh-drosophila.owl: composite-fbbt.owl
 #	owljs-grep -v $(XSPECIES_RE) -o $@ $<
@@ -448,6 +456,7 @@ extra-full-bridge-checks: $(patsubst %,extra-full-bridge-check-%.txt,$(EXTRA_FUL
 ##bfo-check.txt: uberon_edit-plus-tax-equivs.owl
 bfo-check.txt: uberon_edit.owl
 	OWLTOOLS_MEMORY=14G owltools   $(OBO)/bfo.owl --catalog-xml $(CATALOG) $< bridge/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+
 bfo-basic-check.txt: basic.owl
 	OWLTOOLS_MEMORY=14G owltools   $(OBO)/bfo.owl --catalog-xml $(CATALOG) $< bridge/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
@@ -566,7 +575,7 @@ uberon-qc: imports $(QC_FILES) all_systems
 
 #PA = phenoscape-vocab/phenoscape-anatomy.obo
 
-SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory pulmonary cranial appendicular
+SYSTEMS = musculoskeletal excretory reproductive digestive nervous sensory immune circulatory pulmonary cranial renal appendicular
 
 all_systems: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS)) subsets/life-stages-composite.obo subsets/life-stages-core.obo subsets/life-stages-core.owl subsets/uberon-with-isa-for-FMA-MA-ZFA.obo
 PART_OF = BFO_0000050
@@ -594,6 +603,8 @@ subsets/pulmonary-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001004" --reasoner-query UBERON_0001004 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/cranial-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+subsets/renal-minimal.obo: merged.owl
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
 	owltools $< --make-subset-by-properties -f part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 
@@ -607,7 +618,7 @@ subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl
 #subsets/life-stages.obo: uberon.owl
 #subsets/life-stages.obo: composite-metazoan.obo
 subsets/life-stages-composite.obo: composite-metazoan.owl
-	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 
 subsets/life-stages-core.obo: uberon.owl
 	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o -f obo $@ --reasoner-dispose >& $@.LOG
@@ -699,9 +710,10 @@ update-stages: $(EDITSRC)
 CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard developmental-stage-ontologies/*/*-uberon.obo))
 #CSTAGES := $(wildcard developmental-stage-ontologies/*/*-uberon.obo)
 
-merged-stages.obo: 
-	owltools $(filter-out %-uberon.obo, $(wildcard developmental-stage-ontologies/*/*.obo)) -o -f obo $@
+#merged-stages.obo:  $(EDITSRC)
+#	owltools $(filter-out %-uberon.obo, $(wildcard developmental-stage-ontologies/*/*.obo)) -o -f obo $@
 
+# TODO: properly trigger this from changes
 merged-stages-xrefs.obo: developmental-stage-ontologies/ssso-merged.obo
 	blip-findall  -i $< "entity_xref_idspace(X,U,'UBERON')" -no_pred -label -select U-X | tbl2obolinks.pl -k  --rel xref - > $@.tmp && mv $@.tmp $@
 
@@ -818,14 +830,23 @@ MAKESPMERGE= $(UCAT)\
   --map-ontology-iri $(OBO)/uberon/bridge/uberon-bridge-to-fma.owl null.owl\
  $(OBO)/uberon/bridge/collected-$*.owl --merge-imports-closure
 
+# bundled: collect all ontologies and do a basic (non-species) import closure merge
+# primarily for testing: not released
+bundled-%.owl: $(MBASE)
+	OWLTOOLS_MEMORY=12G owltools $(MAKESPMERGE) --merge-import-closure -o -f ofn $@
+.PRECIOUS: unreasoned-composite-%.owl
+
+# stage1 of composite build: do a species merge, but no additional reasoning
 unreasoned-composite-%.owl: $(MBASE)
 	OWLTOOLS_MEMORY=12G owltools $(MAKESPMERGE) --reasoner elk $(MERGESPECIES) $(MERGE_EQSETS) -o -f ofn $@
 .PRECIOUS: unreasoned-composite-%.owl
 
+# stage 2 (final) of composite build: reason
 composite-%.owl: unreasoned-composite-%.owl
 	robot reason -r ELK -i $< relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 
+# composute obo is made from owl
 composite-%.obo: composite-%.owl
 	owltools $< --add-obo-shorthand-to-properties -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp > $@
 
