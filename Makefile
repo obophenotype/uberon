@@ -1151,6 +1151,9 @@ homology.owl: homology.ttl homology-relations.owl
 simil%.pro: simil%.tsv
 	./util/sim2pro.pl $< | tbl2p > $@.tmp && mv $@.tmp $@
 
+phenoscape_homology.owl:
+	wget --no-check-certificate https://raw.githubusercontent.com/phenoscape/phenoscape-ontologies/master/demo/phenoscape_homology.owl -O $@
+
 # ----------------------------------------
 # VIEWS
 # ----------------------------------------
