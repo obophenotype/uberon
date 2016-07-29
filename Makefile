@@ -328,6 +328,7 @@ nh-%.owl: nh-%.obo
 metazoan-view.owl: ext.owl
 	ln -s $< $@ 
 
+# run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
 %-view.owl: nh-%.owl contexts/context-%.owl
 	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@
 .PRECIOUS: %-view.owl
@@ -787,8 +788,8 @@ mirror-ehdaa2.owl:
 fixed-emapa.obo: mirror-emapa.obo
 	obo-grep.pl -r 'id: EMAPA' $< | ./util/fix-emapa-stages.pl | grep -v ^alt_id > $@
 
-mirror-emapa.owl: fixed-emapa.obo
-	owltools $< -o -f ofn $@ 
+mirror-emapa.owl: fixed-emapa.obo developmental-stage-ontologies/mmusdv/mmusdv.obo
+	owltools $^ --merge-support-ontologies -o -f ofn $@ 
 mirror-emapa.obo: uberon_edit.obo
 	wget $(OBO)/emapa.obo -O $@
 .PRECIOUS: mirror-emapa.obo
