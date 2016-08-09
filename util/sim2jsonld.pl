@@ -146,7 +146,11 @@ push(@objs,
      },
      {
          id => 'dc:source',
-             a => 'owl:AnnotationProperty',
+         a => 'owl:AnnotationProperty',
+     },
+     {
+         id => 'RO:0002162',
+         a => 'owl:ObjectProperty'
      }
     );
 
