@@ -333,6 +333,9 @@ metazoan-view.owl: ext.owl
 	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@
 .PRECIOUS: %-view.owl
 
+%-view.obo: %-view.owl
+	owltools $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
+
 # note: drosophila too slow....
 #RPT_SPECIES = human mouse zebrafish xenopus
 RPT_SPECIES = human mouse xenopus metazoan
@@ -959,6 +962,7 @@ release:
 	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp subsets/*.{obo,owl} $(RELDIR)/subsets/ ;\
+	cp *-view.{obo,owl} $(RELDIR)/subsets/ ;\
 	cp reports/*.tsv $(RELDIR)/reports/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
