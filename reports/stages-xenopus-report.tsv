@@ -2440,6 +2440,7 @@ GO:0006837	serotonin transport
 GO:0006869	lipid transport				
 GO:0006885	regulation of pH				
 GO:0006887	exocytosis				
+GO:0006906	vesicle fusion				
 GO:0006928	movement of cell or subcellular component				
 GO:0006936	muscle contraction				
 GO:0006937	regulation of muscle contraction				
@@ -2632,6 +2633,7 @@ GO:0016023	cytoplasmic, membrane-bounded vesicle
 GO:0016043	cellular component organization				
 GO:0016048	detection of temperature stimulus				
 GO:0016049	cell growth				
+GO:0016050	vesicle organization				
 GO:0016051	carbohydrate biosynthetic process				
 GO:0016052	carbohydrate catabolic process				
 GO:0016053	organic acid biosynthetic process				
@@ -2737,6 +2739,9 @@ GO:0031328	positive regulation of cellular biosynthetic process
 GO:0031329	regulation of cellular catabolic process				
 GO:0031330	negative regulation of cellular catabolic process				
 GO:0031331	positive regulation of cellular catabolic process				
+GO:0031338	regulation of vesicle fusion				
+GO:0031339	negative regulation of vesicle fusion				
+GO:0031340	positive regulation of vesicle fusion				
 GO:0031347	regulation of defense response				
 GO:0031348	negative regulation of defense response				
 GO:0031349	positive regulation of defense response				
@@ -2971,7 +2976,10 @@ GO:0044724	single-organism carbohydrate catabolic process
 GO:0044763	single-organism cellular process				
 GO:0044765	single-organism transport				
 GO:0044767	single-organism developmental process				
+GO:0044801	single-organism membrane fusion				
+GO:0044802	single-organism membrane organization				
 GO:0044848	biological phase				
+GO:0045026	plasma membrane fusion				
 GO:0045058	T cell selection				
 GO:0045095	keratin filament				
 GO:0045111	intermediate filament cytoskeleton				
@@ -3070,6 +3078,7 @@ GO:0046942	carboxylic acid transport
 GO:0048232	male gamete generation				
 GO:0048240	sperm capacitation				
 GO:0048243	norepinephrine secretion				
+GO:0048284	organelle fusion				
 GO:0048285	organelle fission				
 GO:0048332	mesoderm morphogenesis				
 GO:0048468	cell development				
@@ -3303,6 +3312,8 @@ GO:0060688	regulation of morphogenesis of a branching structure
 GO:0060764	cell-cell signaling involved in mammary gland development				
 GO:0060986	endocrine hormone secretion				
 GO:0061007	hepaticobiliary system process				
+GO:0061024	membrane organization				
+GO:0061025	membrane fusion				
 GO:0061035	regulation of cartilage development				
 GO:0061036	positive regulation of cartilage development				
 GO:0061037	negative regulation of cartilage development				
@@ -3378,6 +3389,7 @@ GO:0090031	positive regulation of steroid hormone biosynthetic process
 GO:0090032	negative regulation of steroid hormone biosynthetic process				
 GO:0090068	positive regulation of cell cycle process				
 GO:0090087	regulation of peptide transport				
+GO:0090174	organelle membrane fusion				
 GO:0090257	regulation of muscle system process				
 GO:0090273	regulation of somatostatin secretion				
 GO:0090274	positive regulation of somatostatin secretion				
@@ -3416,6 +3428,7 @@ GO:0098797	plasma membrane protein complex
 GO:0098801	regulation of renal system process				
 GO:0098846	podocyte foot				
 GO:0098858	actin-based cell projection				
+GO:0099500	vesicle fusion to plasma membrane				
 GO:0099512	supramolecular fiber				
 GO:0099513	polymeric cytoskeletal fiber				
 GO:0099568	cytoplasmic region				
@@ -3452,6 +3465,7 @@ GO:1902491	negative regulation of sperm capacitation
 GO:1902492	positive regulation of sperm capacitation				
 GO:1902578	single-organism localization				
 GO:1902584	positive regulation of response to water deprivation				
+GO:1902589	single-organism organelle organization				
 GO:1902738	regulation of chondrocyte differentiation involved in endochondral bone morphogenesis				
 GO:1902761	positive regulation of chondrocyte development				
 GO:1903010	regulation of bone development				
@@ -3508,6 +3522,9 @@ GO:1904951	positive regulation of establishment of protein localization
 GO:1905276	regulation of epithelial tube formation				
 GO:1905277	negative regulation of epithelial tube formation				
 GO:1905278	positive regulation of epithelial tube formation				
+GO:1905330	regulation of morphogenesis of an epithelium				
+GO:1905331	negative regulation of morphogenesis of an epithelium				
+GO:1905332	positive regulation of morphogenesis of an epithelium				
 GO:2000021	regulation of ion homeostasis				
 GO:2000026	regulation of multicellular organismal development				
 GO:2000027	regulation of organ morphogenesis				
@@ -12779,6 +12796,8 @@ UBERON:0036067	superior endocardial cushion	UBERON:0000111|XAO:1000048	organogen
 UBERON:0036068	subglottis	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0036069	tracheoesophageal fold	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0036070	tracheoesophageal septum	XAO:1000020	NF stage 10 (Xenopus)	UBERON:0000071	death stage
+UBERON:0036072	respiratory primordium epithelium	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0036073	respiratory primordium mesenchyme	UBERON:0000111|XAO:1000040	organogenesis stage|NF stage 24 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:1000000	chin ventral margin	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000071	death stage
 UBERON:1000002	cranial midline area	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000071	death stage
 UBERON:1000003	dewlap	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -14705,7 +14724,7 @@ UBERON:3010123	finger fringes	UBERON:0000111|XAO:1000068	organogenesis stage|NF 
 UBERON:3010124	toe fringes	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010125	musculus levator bulbi	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010126	middle lateral line nerve (MLLN)	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:3010127	fringe on postaxial edge of Finger IV	UBERON:0000111|XAO:1000068	organogenesis stage|NF stage 56 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:3010127	fringe on postaxial edge of finger IV	UBERON:0000111|XAO:1000068	organogenesis stage|NF stage 56 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010128	taeniae tecti marginalis	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010130	taenia tecti transversalis	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010131	orbital cartilages	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
@@ -14717,7 +14736,7 @@ UBERON:3010144	odontoids	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage
 UBERON:3010146	lacrimal	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010163	metacarpal fold	UBERON:0000111|XAO:1000068	organogenesis stage|NF stage 56 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010164	ulnar fold	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:3010166	fringe on postaxial edge of Toe V	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:3010166	fringe on postaxial edge of toe V	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010167	metatarsal fold	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010168	tarsal fringe	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010170	ungual flap	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
@@ -14954,9 +14973,9 @@ UBERON:3010829	sulcus intermedius	UBERON:0000111|XAO:1000023	organogenesis stage
 UBERON:3010830	spicule	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:3010831	occipito-petrosal	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010832	occipital segment	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:3010836	Posterolateral Supplementary Element	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:3010837	Apical Supplementary Element	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:3010838	Anterolateral Supplementary Element	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:3010836	posterolateral supplementary element	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:3010837	apical supplementary element	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:3010838	anterolateral supplementary element	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3011040	first pancreatic bud	UBERON:0000106	zygote stage	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:3011045	gasserian ganglion	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3011048	genital system	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	UBERON:0000066	fully formed stage
