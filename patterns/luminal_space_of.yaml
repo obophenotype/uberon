@@ -1,0 +1,50 @@
+## http://www.histology.leeds.ac.uk/digestive/GI_layers.php
+
+pattern_name: uberon/patterns/luminal_space_of
+
+classes: 
+  anatomical space: UBERON:0000464
+
+relations:
+  luminal space of: RO:0002572
+  part of: BFO:0000050
+
+vars: 
+  structure: "'material anatomical entity'"
+
+name: 
+  text: "lumen of %s"
+  vars: 
+    - structure
+
+annotations: 
+  - property: oio:hasExactSynonym
+    text: "lumen of %s"
+    vars:
+      - structure
+  - property: oio:hasExactSynonym
+    text: "%s lumen"
+    vars:
+      - structure
+  - property: oio:hasExactSynonym
+    text: "%s cavity"
+    vars:
+      - structure
+    
+def: 
+  text: "The luminal space that is within the %s."
+  vars:
+    - structure
+
+equivalentTo: 
+  text: "'anatomical space' and 'luminal space of' some %s"
+  vars:
+    - structure
+
+# (space and luminal-space-of some (part-of some W)) SubClassOf part-of some (space and luminal-space-of some W)
+axioms: 
+  - syntax: ofn
+    text: "SubClassOf(ObjectIntersectionOf('anatomical space' ObjectSomeValuesFrom(:'luminal space of' ObjectSomeValuesFrom(:'part of' %s))) ObjectSomeValuesFrom(:'part of' ObjectIntersectionOf('anatomical space' ObjectSomeValuesFrom(:'luminal space of' %s))))" 
+    vars:
+      - structure
+      - structure

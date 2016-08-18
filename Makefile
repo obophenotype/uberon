@@ -1374,6 +1374,37 @@ util/ubermacros.el:
 	blip-findall -r ro -r go -r pato  -r pext -r taxslim -consult util/write_ubermacros.pro  w > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
+# DEAD SIMPLE DESIGN PATTERNS
+# ----------------------------------------
+
+# OWL->CSV
+PSRC = uberon_edit.obo
+modules/%.csv: $(PSRC)
+	blip-findall -i $< -r pext -consult patterns/patternq.pro "q($*)" > $@.tmp && mv $@.tmp $@
+
+MODDIR=modules
+PATTERNDIR=patterns
+
+all_modules: all_modules_omn all_modules_owl all_modules_obo
+all_modules_owl: $(patsubst %, $(MODDIR)/%.owl, $(MODS))
+all_modules_omn: $(patsubst %, $(MODDIR)/%.omn, $(MODS))
+all_modules_obo: $(patsubst %, $(MODDIR)/%.obo, $(MODS))
+
+$(MODDIR)/%.omn: $(MODDIR)/%.csv $(PATTERNDIR)/%.yaml
+	apply-pattern.py -s label -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p $(PATTERNDIR)/$*.yaml -G $(MODDIR)/$*-gci.owl > $@.tmp && mv $@.tmp $@
+
+#$(MODDIR)/%-gci.owl: $(MODDIR)/%.omn
+
+$(MODDIR)/%.rdf: $(MODDIR)/%.omn 
+	owltools $^ --merge-support-ontologies --set-ontology-id $(OBO)/ecto/$@ -o  $@
+
+$(MODDIR)/%.owl: $(MODDIR)/%.rdf
+	owltools $< -o -f ofn $@
+
+$(MODDIR)/%.obo: $(MODDIR)/%.owl
+	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+
+# ----------------------------------------
 # DOCUMENTATION
 # ----------------------------------------
 
@@ -1410,4 +1441,5 @@ all_html: $(patsubst %, %_import/.index.html, $(IMPORTS))
 #	pandoc $< -o $@ && cp $@ $*/index.html && cp $*.png $*/
 #	pandoc $< -o $@ && svn ps svn:mime-type text/html $*
 #	pandoc $< -o $@ && cp $*.html $* && svn ps svn:mime-type text/html $*
+
 
