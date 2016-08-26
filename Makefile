@@ -1376,14 +1376,21 @@ util/ubermacros.el:
 # ----------------------------------------
 # DEAD SIMPLE DESIGN PATTERNS
 # ----------------------------------------
+MODDIR=modules
+PATTERNDIR=patterns
 
 # OWL->CSV
 PSRC = uberon_edit.obo
 modules/%.csv: $(PSRC)
 	blip-findall -i $< -r pext -consult patterns/patternq.pro "q($*)" > $@.tmp && mv $@.tmp $@
 
-MODDIR=modules
-PATTERNDIR=patterns
+$(PATTERNDIR)/%.yaml:
+	blip-findall  -consult patterns/patternq.pro "write_yaml($*),fail" > $@.tmp && mv $@.tmp $@
+
+modules/missing.txt:
+	blip-findall -i uberon_edit.obo -r pext -consult patterns/patternq.pro "nomatch/3" -label -no_pred > $@
+
+
 
 all_modules: all_modules_omn all_modules_owl all_modules_obo
 all_modules_owl: $(patsubst %, $(MODDIR)/%.owl, $(MODS))
@@ -1395,8 +1402,9 @@ $(MODDIR)/%.omn: $(MODDIR)/%.csv $(PATTERNDIR)/%.yaml
 
 #$(MODDIR)/%-gci.owl: $(MODDIR)/%.omn
 
-$(MODDIR)/%.rdf: $(MODDIR)/%.omn 
-	owltools $^ --merge-support-ontologies --set-ontology-id $(OBO)/ecto/$@ -o  $@
+# need to go via RDF due to OWLAPI bug
+$(MODDIR)/%.rdf: $(MODDIR)/%.omn $(MODDIR)/%-gci.owl 
+	owltools $^ --merge-support-ontologies --set-ontology-id $(OBO)/uberon/$@ -o  $@
 
 $(MODDIR)/%.owl: $(MODDIR)/%.rdf
 	owltools $< -o -f ofn $@
