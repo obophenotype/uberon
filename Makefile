@@ -1379,16 +1379,20 @@ util/ubermacros.el:
 MODDIR=modules
 PATTERNDIR=patterns
 
+MODS = luminal_space_of gland_duct gland_acinus endochondral_bone endochondral_cartilage
+
 # OWL->CSV
 PSRC = uberon_edit.obo
 modules/%.csv: $(PSRC)
-	blip-findall -i $< -r pext -consult patterns/patternq.pro "q($*)" > $@.tmp && mv $@.tmp $@
+	blip-findall -i $< -r pext  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_tuple($*)" > $@.tmp && mv $@.tmp $@
+.PRECIOUS: modules/%.csv
 
-$(PATTERNDIR)/%.yaml:
-	blip-findall  -consult patterns/patternq.pro "write_yaml($*),fail" > $@.tmp && mv $@.tmp $@
+$(PATTERNDIR)/%.yaml: patterns/uberon_patterns.pro
+	blip-findall -r uberonp  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_yaml($*),fail" > $@.tmp && mv $@.tmp $@
+.PRECIOUS: $(PATTERNDIR)/%.yaml
 
 modules/missing.txt:
-	blip-findall -i uberon_edit.obo -r pext -consult patterns/patternq.pro "nomatch/3" -label -no_pred > $@
+	blip-findall -i uberon_edit.obo -r pext -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "nomatch/3" -label -no_pred > $@
 
 
 
