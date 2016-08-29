@@ -789,7 +789,7 @@ mirror-ehdaa2.owl:
 
 # stages must be mapped to MmusDv
 fixed-emapa.obo: mirror-emapa.obo
-	obo-grep.pl -r 'id: EMAPA' $< | ./util/fix-emapa-stages.pl | grep -v ^alt_id > $@
+	obo-grep.pl -r 'id: EMAPA' $< | ./util/fix-emapa-stages.pl  > $@
 
 mirror-emapa.owl: fixed-emapa.obo developmental-stage-ontologies/mmusdv/mmusdv.obo
 	owltools $^ --merge-support-ontologies -o -f ofn $@ 
