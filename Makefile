@@ -1391,6 +1391,9 @@ $(PATTERNDIR)/%.yaml: patterns/uberon_patterns.pro
 	blip-findall -r uberonp  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_yaml($*),fail" > $@.tmp && mv $@.tmp $@
 .PRECIOUS: $(PATTERNDIR)/%.yaml
 
+modules/conflict_analysis.tsv:
+	blip-findall -i uberon_edit.obo -r pext  -u odputil -i patterns/uberon_patterns.pro conflicting_tuple_from_ldef/4 -label -no_pred -use_tabs > $@.tmp && mv $@.tmp $@
+
 modules/missing.txt:
 	blip-findall -i uberon_edit.obo -r pext -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "nomatch/3" -label -no_pred > $@
 
