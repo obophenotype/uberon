@@ -5,15 +5,29 @@ ontology: fbbt
 id: UBERON:6000000
 name: germ layer derivative
 xref: FBbt:00000000
-namespace: fly_anatomy.ontology
 is_a: UBERON:0002050 ! developing embryonic structure
 relationship: develops_from UBERON:0000923 ! germ layer
+
+[Term]
+id: UBERON:6000002
+name: tagma
+xref: FBbt:00000002
+def: "The three main divisions of the whole organism formed from groups of segments." [FBC:gg]
+is_a: UBERON:6057001 ! anterior-posterior subdivision of organism
+relationship: part_of UBERON:0000468 ! organism
+
+[Term]
+id: UBERON:6000005
+name: ocular segment
+xref: FBbt:00000005
+def: "Head segment derived from the second embryonic segment (between the labral and antennal segments). In the larva, this segment includes Bolwig's organ." [FlyBase:FBrf0055841, FlyBase:FBrf0075072]
+synonym: "acron" RELATED []
+is_a: UBERON:6000007 ! procephalic segment
 
 [Term]
 id: UBERON:6000006
 name: head segment
 xref: FBbt:00000006
-namespace: fly_anatomy.ontology
 def: "Any segment (UBERON:6000003) that is part of some head (UBERON:6000004)." [FBC:auto_generated_definition, FlyBase:FBrf0075072]
 is_a: UBERON:0000914 ! segment
 relationship: part_of UBERON:0000033 ! head
@@ -21,19 +35,165 @@ intersection_of: UBERON:0000914 ! segment
 intersection_of: part_of UBERON:0000033 ! head
 
 [Term]
+id: UBERON:6000007
+name: procephalic segment
+xref: FBbt:00000007
+def: "A segment that is anterior to the gnathal segments." [FBC:gg]
+synonym: "cephalic segment" RELATED []
+synonym: "pregnathal segment" EXACT []
+synonym: "preoral segment" EXACT []
+synonym: "procephalon" RELATED []
+is_a: UBERON:6000006 ! head segment
+relationship: part_of UBERON:0000033 ! head
+
+[Term]
+id: UBERON:6000008
+name: labral segment
+xref: FBbt:00000008
+def: "Procephalic segment anterior to the antennal segment. In the adult it bears the clypeo-labrum." [FlyBase:FBrf0075072, FlyBase:FBrf0089570]
+synonym: "clypeo-labrum" RELATED []
+is_a: UBERON:6000007 ! procephalic segment
+
+[Term]
+id: UBERON:6000009
+name: antennal segment
+xref: FBbt:00000009
+def: "Segment anterior to the intercalary segment. In the adult it bears the antennae." [FBC:DOS]
+is_a: UBERON:6000007 ! procephalic segment
+
+[Term]
+id: UBERON:6000011
+name: gnathal segment
+xref: FBbt:00000011
+def: "The head segments that develop posterior to the embryonic/larval mouth." [FBC:gg]
+synonym: "postoral segment" RELATED []
+is_a: UBERON:6000006 ! head segment
+relationship: part_of UBERON:0000033 ! head
+
+[Term]
+id: UBERON:6000014
+name: labial segment
+xref: FBbt:00000014
+def: "Most posterior of the gnathal segments. In the adult it bears a pair of fused appendages, the labia, and its ectodermal invaginations give rise to the salivary glands." [FlyBase:FBrf0007734]
+is_a: UBERON:6000011 ! gnathal segment
+
+[Term]
+id: UBERON:6000015
+name: thorax
+xref: FBbt:00000015
+def: "The main middle section of the insect body comprising three thoracic rings: the pro-, the meso- and the metathoraces which are more or less well fused and cask-like sometimes having on the upper lateral part one of two pairs of wings, while on the ventrolateral part each thoracic ring bears a pair of legs." [FlyBase:FBrf0166419]
+is_a: UBERON:6000002 ! tagma
+
+[Term]
+id: UBERON:6000016
+name: thoracic segment
+xref: FBbt:00000016
+def: "Any segment (UBERON:6000003) that is part of some thorax (UBERON:6000015)." [FBC:auto_generated_definition]
+is_a: UBERON:0000914 ! segment
+relationship: part_of UBERON:6000015 ! thorax
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6000015 ! thorax
+
+[Term]
+id: UBERON:6000017
+name: prothoracic segment
+xref: FBbt:00000017
+def: "The first (most anterior) segment of the thorax." [FBC:DOS]
+synonym: "prothorax" RELATED []
+synonym: "t1" RELATED []
+synonym: "thoracic segment 1" RELATED []
+is_a: UBERON:6000016 ! thoracic segment
+relationship: part_of UBERON:6000015 ! thorax
+
+[Term]
+id: UBERON:6000018
+name: mesothoracic segment
+xref: FBbt:00000018
+def: "The second (middle) segment of the thorax." [FBC:DOS]
+synonym: "mesothorax" RELATED []
+synonym: "t2" RELATED []
+synonym: "thoracic segment 2" RELATED []
+is_a: UBERON:6000016 ! thoracic segment
+relationship: part_of UBERON:6000015 ! thorax
+
+[Term]
+id: UBERON:6000019
+name: metathoracic segment
+xref: FBbt:00000019
+def: "The third (most posterior) segment of the thorax." [FBC:DOS]
+synonym: "metathorax" RELATED []
+synonym: "t3" RELATED []
+synonym: "thoracic segment 3" RELATED []
+is_a: UBERON:6000016 ! thoracic segment
+relationship: part_of UBERON:6000015 ! thorax
+
+[Term]
+id: UBERON:6000020
+name: abdomen
+xref: FBbt:00000020
+def: "The most posterior of the three tagma (UBERON:6000002)." [FlyBase:FBrf0166419]
+is_a: UBERON:6000002 ! tagma
+
+[Term]
+id: UBERON:6000021
+name: abdominal segment
+xref: FBbt:00000021
+def: "Metameric subdivision of the abdomen." [FBC:SPR]
+is_a: UBERON:0000914 ! segment
+relationship: part_of UBERON:6000020 ! abdomen
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6000020 ! abdomen
+
+[Term]
+id: UBERON:6000029
+name: abdominal segment 8
+xref: FBbt:00000029
+synonym: "a8" RELATED []
+is_a: UBERON:6000021 ! abdominal segment
+relationship: part_of UBERON:6000020 ! abdomen
+
+[Term]
+id: UBERON:6000030
+name: abdominal segment 9
+xref: FBbt:00000030
+synonym: "a9" RELATED []
+is_a: UBERON:6000021 ! abdominal segment
+relationship: part_of UBERON:6000020 ! abdomen
+
+[Term]
+id: UBERON:6000034
+name: egg
+xref: FBbt:00000034
+is_a: UBERON:0000468 ! organism
+
+[Term]
 id: UBERON:6000046
 name: dorsal appendage
 xref: FBbt:00000046
-namespace: fly_anatomy.ontology
 def: "Paired appendage of the eggshell, located on the anterior-dorsal side of the egg, just posterior to the operculum. Functions as a respiratory structures." [FBC:DOS]
 synonym: "chorionic appendage" EXACT [FlyBase:FBrf0047871]
 is_a: UBERON:6007248 ! chorionic specialization
 
 [Term]
+id: UBERON:6000054
+name: cleavage stage embryo
+xref: FBbt:00000054
+def: "A collective term for stages 1-4." [FBC:DOS]
+is_a: UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:6000094
+name: clypeo-labral anlage in statu nascendi
+xref: FBbt:00000094
+def: "." [FBC:VH]
+synonym: "Asn Cly" RELATED [FBC:DOS]
+is_a: UBERON:6005413 ! anlage in statu nascendi
+relationship: part_of FBbt:01000119 ! anterior ectoderm anlage
+
+[Term]
 id: UBERON:6000096
 name: ventral furrow
 xref: FBbt:00000096
-namespace: fly_anatomy.ontology
 is_a: UBERON:6007424 ! epithelial furrow
 relationship: part_of UBERON:6005318 ! stage 6 embryo
 relationship: part_of UBERON:6005319 ! stage 7 embryo
@@ -42,47 +202,464 @@ relationship: part_of UBERON:6005319 ! stage 7 embryo
 id: UBERON:6000097
 name: cephalic furrow
 xref: FBbt:00000097
-namespace: fly_anatomy.ontology
 is_a: UBERON:6007424 ! epithelial furrow
 relationship: part_of UBERON:0004734 ! gastrula embryo
+
+[Term]
+id: UBERON:6000104
+name: mesoderm anlage
+xref: FBbt:00000104
+synonym: "ventral plate" RELATED []
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:0007688 ! anlage
+relationship: part_of UBERON:6005311 ! stage 5 embryo
+
+[Term]
+id: UBERON:6000112
+name: dorsal ectoderm
+xref: FBbt:00000112
+synonym: "AdorEc" RELATED []
+synonym: "dorEc" RELATED []
+is_a: UBERON:0010000 ! multicellular structure
+relationship: develops_from UBERON:6005428 ! dorsal ectoderm anlage
+relationship: part_of UBERON:6007045 ! trunk ectoderm
+
+[Term]
+id: UBERON:6000119
+name: anterior ectoderm
+xref: FBbt:00000119
+def: "The region of the ectoderm anterior to the cephalic furrow." [FBC:DOS]
+is_a: UBERON:0010000 ! multicellular structure
+relationship: develops_from FBbt:01000119 ! anterior ectoderm anlage
+relationship: part_of UBERON:0000924 ! ectoderm
 
 [Term]
 id: UBERON:6000124
 name: epithelial cell
 xref: FBbt:00000124
-namespace: fly_anatomy.ontology
 def: "Cell that has as its part a cytoskeleton that allows for tight cell to cell contact and which has apical-basal cell polarity." [CARO:MAH]
 is_a: UBERON:6100318 ! somatic cell
 relationship: part_of UBERON:0000483 ! epithelium
 
 [Term]
+id: UBERON:6000128
+name: trunk mesoderm
+xref: FBbt:00000128
+def: "The mesoderm of segments T1-A9. It first becomes morphologically distinct during ventral furrow formation. Following invagination during stages 6 and 7, it remains a coherent structure with no morphologically apparent subdivisions, apart from transient metamery during stage 9, until stage 11. It undergoes a number of morphological changes during this period: as its cells divide following invagination, it loses its epithelial integrity and by stage 9 has rearranged into a monolayer of cuboidal cells. A further division happens during stage 10 leading to two distinct layers by stage 11." [FlyBase:FBrf0089570]
+synonym: "AtrunkMes" RELATED []
+synonym: "P2 TrMes" RELATED [FBC:DOS]
+synonym: "TrMes" RELATED []
+is_a: UBERON:0000926 ! mesoderm
+relationship: develops_from UBERON:6005436 ! trunk mesoderm anlage
+
+[Term]
+id: UBERON:6000130
+name: visceral mesoderm
+xref: FBbt:00000130
+is_a: UBERON:0002050 ! developing embryonic structure
+relationship: part_of UBERON:6000128 ! trunk mesoderm
+
+[Term]
+id: UBERON:6000131
+name: mesodermal crest
+xref: FBbt:00000131
+is_a: UBERON:6026002 ! visceral mesoderm derivative
+relationship: part_of UBERON:6000130 ! visceral mesoderm
+
+[Term]
+id: UBERON:6000132
+name: mesodermal crest of segment T3
+xref: FBbt:00000132
+is_a: UBERON:6026002 ! visceral mesoderm derivative
+relationship: part_of UBERON:6000131 ! mesodermal crest
+
+[Term]
+id: UBERON:6000137
+name: embryonic tagma
+xref: FBbt:00000137
+def: "Any tagma (UBERON:6000002) that is part of some embryo (UBERON:6000052)." [FBC:auto_generated_definition]
+is_a: UBERON:6000002 ! tagma
+relationship: part_of UBERON:0000922 ! embryo
+intersection_of: UBERON:6000002 ! tagma
+intersection_of: part_of UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:6000154
+name: embryonic segment
+xref: FBbt:00000154
+def: "Any segment (UBERON:6000003) that is part of some embryo (UBERON:6000052)." [FBC:auto_generated_definition]
+is_a: UBERON:0000914 ! segment
+relationship: part_of UBERON:0000922 ! embryo
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:6000157
+name: embryonic head segment
+xref: FBbt:00000157
+def: "Any segment (UBERON:6000003) that is part of some embryonic head (UBERON:6000155)." [FBC:auto_generated_definition, FlyBase:FBrf0075072]
+is_a: UBERON:6000006 ! head segment
+is_a: UBERON:6000154 ! embryonic segment
+relationship: part_of UBERON:0008816 ! embryonic head
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:0008816 ! embryonic head
+
+[Term]
+id: UBERON:6000158
+name: embryonic procephalic segment
+xref: FBbt:00000158
+def: "Any procephalic segment (UBERON:6000007) that is part of some embryonic head (UBERON:6000155)." [FBC:auto_generated_definition]
+is_a: UBERON:6000007 ! procephalic segment
+is_a: UBERON:6000157 ! embryonic head segment
+relationship: part_of UBERON:0008816 ! embryonic head
+intersection_of: UBERON:6000007 ! procephalic segment
+intersection_of: part_of UBERON:0008816 ! embryonic head
+
+[Term]
+id: UBERON:6000160
+name: embryonic antennal segment
+xref: FBbt:00000160
+def: "Any antennal segment (UBERON:6000009) that is part of some embryonic head (UBERON:6000155)." [FBC:auto_generated_definition]
+is_a: UBERON:6000009 ! antennal segment
+is_a: UBERON:6000158 ! embryonic procephalic segment
+relationship: part_of UBERON:0008816 ! embryonic head
+intersection_of: UBERON:6000009 ! antennal segment
+intersection_of: part_of UBERON:0008816 ! embryonic head
+
+[Term]
+id: UBERON:6000162
+name: embryonic gnathal segment
+xref: FBbt:00000162
+def: "Any gnathal segment (UBERON:6000011) that is part of some embryonic head (UBERON:6000155)." [FBC:auto_generated_definition]
+is_a: UBERON:6000011 ! gnathal segment
+is_a: UBERON:6000157 ! embryonic head segment
+relationship: part_of UBERON:0008816 ! embryonic head
+intersection_of: UBERON:6000011 ! gnathal segment
+intersection_of: part_of UBERON:0008816 ! embryonic head
+
+[Term]
+id: UBERON:6000165
+name: embryonic labial segment
+xref: FBbt:00000165
+def: "Any labial segment (UBERON:6000014) that is part of some embryonic head (UBERON:6000155)." [FBC:auto_generated_definition]
+is_a: UBERON:6000014 ! labial segment
+is_a: UBERON:6000162 ! embryonic gnathal segment
+relationship: part_of UBERON:0008816 ! embryonic head
+intersection_of: UBERON:6000014 ! labial segment
+intersection_of: part_of UBERON:0008816 ! embryonic head
+
+[Term]
+id: UBERON:6000166
+name: embryonic thorax
+xref: FBbt:00000166
+def: "Any thorax (UBERON:6000015) that is part of some embryo (UBERON:6000052)." [FBC:auto_generated_definition]
+is_a: UBERON:6000015 ! thorax
+is_a: UBERON:6000137 ! embryonic tagma
+relationship: part_of UBERON:0000922 ! embryo
+intersection_of: UBERON:6000015 ! thorax
+intersection_of: part_of UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:6000167
+name: embryonic thoracic segment
+xref: FBbt:00000167
+def: "Any segment (UBERON:6000003) that is part of some embryonic thorax (UBERON:6000166)." [FBC:auto_generated_definition]
+is_a: UBERON:6000016 ! thoracic segment
+is_a: UBERON:6000154 ! embryonic segment
+relationship: part_of UBERON:6000166 ! embryonic thorax
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6000166 ! embryonic thorax
+
+[Term]
+id: UBERON:6000168
+name: embryonic prothoracic segment
+xref: FBbt:00000168
+def: "Prothoracic segment of the embryo." [FBC:DOS]
+synonym: "prothorax" RELATED []
+synonym: "t1" RELATED []
+synonym: "thoracic segment 1" RELATED []
+is_a: UBERON:6000017 ! prothoracic segment
+is_a: UBERON:6000167 ! embryonic thoracic segment
+relationship: part_of UBERON:6000166 ! embryonic thorax
+intersection_of: UBERON:6000017 ! prothoracic segment
+intersection_of: part_of UBERON:6000166 ! embryonic thorax
+
+[Term]
+id: UBERON:6000169
+name: embryonic mesothoracic segment
+xref: FBbt:00000169
+def: "Mesothoracic segment of the embryo." [FBC:DOS]
+synonym: "mesothorax" RELATED []
+synonym: "t2" RELATED []
+synonym: "thoracic segment 2" RELATED []
+is_a: UBERON:6000018 ! mesothoracic segment
+is_a: UBERON:6000167 ! embryonic thoracic segment
+relationship: part_of UBERON:6000166 ! embryonic thorax
+intersection_of: UBERON:6000018 ! mesothoracic segment
+intersection_of: part_of UBERON:6000166 ! embryonic thorax
+
+[Term]
+id: UBERON:6000170
+name: embryonic metathoracic segment
+xref: FBbt:00000170
+def: "Metathoracic segment of the embryo." [FBC:DOS]
+synonym: "metathorax" RELATED []
+synonym: "t3" RELATED []
+synonym: "thoracic segment 3" RELATED []
+is_a: UBERON:6000019 ! metathoracic segment
+is_a: UBERON:6000167 ! embryonic thoracic segment
+relationship: part_of UBERON:6000166 ! embryonic thorax
+intersection_of: UBERON:6000019 ! metathoracic segment
+intersection_of: part_of UBERON:6000166 ! embryonic thorax
+
+[Term]
+id: UBERON:6000171
+name: embryonic abdomen
+xref: FBbt:00000171
+def: "Abdomen of the embryo." [FBC:DOS]
+is_a: UBERON:6000020 ! abdomen
+is_a: UBERON:6000137 ! embryonic tagma
+relationship: part_of UBERON:0000922 ! embryo
+intersection_of: UBERON:6000020 ! abdomen
+intersection_of: part_of UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:6000172
+name: embryonic abdominal segment
+xref: FBbt:00000172
+def: "Metameric subdivision of the embryonic abdomen." [FBC:SPR]
+is_a: UBERON:6000021 ! abdominal segment
+is_a: UBERON:6000154 ! embryonic segment
+relationship: part_of UBERON:6000171 ! embryonic abdomen
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6000171 ! embryonic abdomen
+
+[Term]
+id: UBERON:6000180
+name: embryonic abdominal segment 8
+xref: FBbt:00000180
+def: "Any abdominal segment 8 (UBERON:6000029) that is part of some embryonic abdomen (UBERON:6000171)." [FBC:auto_generated_definition]
+synonym: "a8" RELATED []
+is_a: UBERON:6000029 ! abdominal segment 8
+is_a: UBERON:6000172 ! embryonic abdominal segment
+relationship: part_of UBERON:6000171 ! embryonic abdomen
+intersection_of: UBERON:6000029 ! abdominal segment 8
+intersection_of: part_of UBERON:6000171 ! embryonic abdomen
+
+[Term]
+id: UBERON:6000181
+name: embryonic abdominal segment 9
+xref: FBbt:00000181
+def: "Any abdominal segment 9 (UBERON:6000030) that is part of some embryonic abdomen (UBERON:6000171)." [FBC:auto_generated_definition]
+synonym: "a9" RELATED []
+is_a: UBERON:6000030 ! abdominal segment 9
+is_a: UBERON:6000172 ! embryonic abdominal segment
+relationship: part_of UBERON:6000171 ! embryonic abdomen
+intersection_of: UBERON:6000030 ! abdominal segment 9
+intersection_of: part_of UBERON:6000171 ! embryonic abdomen
+
+[Term]
 id: UBERON:6000186
 name: embryonic optic lobe primordium
 xref: FBbt:00000186
-namespace: fly_anatomy.ontology
 def: "." [FBC:DOS, FBC:VH]
 synonym: "optic lobe placode" RELATED []
 synonym: "optic lobe primordium" RELATED []
 is_a: UBERON:0001048 ! primordium
 
 [Term]
+id: UBERON:6001055
+name: presumptive embryonic/larval nervous system
+xref: FBbt:00001055
+def: "The sum of all the structures in the embryo that will develop into the embryonic/larval nervous system." [FlyBase:FBrf0031012]
+synonym: "embryonic nervous system" RELATED [FBC:DOS]
+is_a: UBERON:6007116 ! presumptive embryonic/larval system
+
+[Term]
+id: UBERON:6001056
+name: presumptive embryonic/larval central nervous system
+xref: FBbt:00001056
+def: "The sum of all the structures in the embryo that will develop into the embryonic/larval central nervous system." [FlyBase:FBrf0031012]
+synonym: "embryonic central nervous system" RELATED [FBC:DOS]
+is_a: UBERON:6007116 ! presumptive embryonic/larval system
+relationship: part_of UBERON:6001055 ! presumptive embryonic/larval nervous system
+
+[Term]
+id: UBERON:6001057
+name: neurogenic region
+xref: FBbt:00001057
+is_a: UBERON:0005423 ! developing material anatomical entity
+relationship: part_of UBERON:0000924 ! ectoderm
+
+[Term]
 id: UBERON:6001059
 name: visual primordium
 xref: FBbt:00001059
-namespace: fly_anatomy.ontology
 synonym: "P2 VisSys" RELATED [FBC:DOS]
 synonym: "optic lobe placode" RELATED []
 synonym: "optic lobe primordium" RELATED []
 is_a: UBERON:0001048 ! primordium
 is_a: UBERON:6025991 ! anterior ectoderm derivative
-relationship: part_of UBERON:6014201 ! early extended germ band embryo
 relationship: develops_from UBERON:6005434 ! visual anlage
+relationship: part_of UBERON:6014201 ! early extended germ band embryo
+
+[Term]
+id: UBERON:6001060
+name: embryonic brain
+xref: FBbt:00001060
+def: "Brain of the embryo." [FBC:SPR]
+is_a: UBERON:0000955 ! brain
+relationship: part_of UBERON:6001056 ! presumptive embryonic/larval central nervous system
+
+[Term]
+id: UBERON:6001135
+name: proneural cluster
+xref: FBbt:00001135
+def: "An equivalence group of the neurectoderm where all cells can, although only one will, become a neural progenitor cell." [FlyBase:FBrf0074477, FlyBase:FBrf0089570]
+is_a: UBERON:0007688 ! anlage
+
+[Term]
+id: UBERON:6001137
+name: sensory mother cell
+xref: FBbt:00001137
+synonym: "SOP" RELATED []
+synonym: "sensillum precursor" RELATED []
+synonym: "sensory organ mother cell" RELATED []
+synonym: "sensory organ precursor cell" RELATED []
+is_a: UBERON:6007008 ! somatic precursor cell
+relationship: part_of UBERON:6001135 ! proneural cluster
+
+[Term]
+id: UBERON:6001648
+name: embryonic imaginal precursor
+xref: FBbt:00001648
+def: "Embryonic structure that will proliferate during larval development into a larval imaginal disc. During early embryogenesis the precursor is part of the epithelial sheet before segregating from the epithelial sheet by late embryogenesis (Bate and Martinez Arias, 1991)." [FlyBase:FBrf0053815, FlyBase:FBrf0064789]
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:6005023 ! imaginal precursor
+
+[Term]
+id: UBERON:6001649
+name: imaginal disc primordium
+xref: FBbt:00001649
+def: "Population of contiguous, morphologically distinct cells that will form an imaginal disc." [FBC:SPR]
+synonym: "imaginal disc specific anlage" RELATED []
+is_a: UBERON:6001648 ! embryonic imaginal precursor
+is_a: UBERON:0001048 ! primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6005331 ! dorsal closure embryo
+
+[Term]
+id: UBERON:6001650
+name: labial disc primordium
+xref: FBbt:00001650
+def: "Primordium that will form the labial disc." [FBC:SPR]
+synonym: "labial disc specific anlage" RELATED []
+is_a: UBERON:6001649 ! imaginal disc primordium
+relationship: part_of UBERON:6000165 ! embryonic labial segment
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
+
+[Term]
+id: UBERON:6001652
+name: eye-antennal disc primordium
+xref: FBbt:00001652
+def: "Primordium from which the eye-antennal disc develops." [FBC:SPR]
+synonym: "eye-antennal disc specific anlage" RELATED []
+is_a: UBERON:6001649 ! imaginal disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6000160 ! embryonic antennal segment
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
+
+[Term]
+id: UBERON:6001653
+name: dorsal thoracic disc primordium
+xref: FBbt:00001653
+synonym: "dorsal thoracic disc specific anlage" RELATED []
+is_a: UBERON:6001649 ! imaginal disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6000167 ! embryonic thoracic segment
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
+
+[Term]
+id: UBERON:6001655
+name: dorsal mesothoracic disc primordium
+xref: FBbt:00001655
+synonym: "dorsal mesothoracic disc specific anlage" RELATED []
+is_a: UBERON:6001653 ! dorsal thoracic disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6000169 ! embryonic mesothoracic segment
+
+[Term]
+id: UBERON:6001656
+name: dorsal metathoracic disc primordium
+xref: FBbt:00001656
+synonym: "dorsal metathoracic disc specific anlage" RELATED []
+is_a: UBERON:6001653 ! dorsal thoracic disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6000170 ! embryonic metathoracic segment
+
+[Term]
+id: UBERON:6001657
+name: ventral thoracic disc primordium
+xref: FBbt:00001657
+synonym: "ventral thoracic disc specific anlage" RELATED []
+is_a: UBERON:6001649 ! imaginal disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6000167 ! embryonic thoracic segment
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
+
+[Term]
+id: UBERON:6001658
+name: ventral prothoracic disc primordium
+xref: FBbt:00001658
+synonym: "ventral prothoracic disc specific anlage" RELATED []
+is_a: UBERON:6001657 ! ventral thoracic disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6000168 ! embryonic prothoracic segment
+
+[Term]
+id: UBERON:6001661
+name: genital disc primordium
+xref: FBbt:00001661
+def: "Primordium from which the genital disc develops." [FBC:SPR]
+synonym: "genital disc specific anlage" RELATED []
+is_a: UBERON:6001649 ! imaginal disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
+
+[Term]
+id: UBERON:6001662
+name: male genital disc primordium
+xref: FBbt:00001662
+def: "Primordium from which the male genital disc derives." [FBC:SPR]
+synonym: "male genital disc specific anlage" RELATED []
+is_a: UBERON:6001661 ! genital disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6000181 ! embryonic abdominal segment 9
+
+[Term]
+id: UBERON:6001663
+name: female genital disc primordium
+xref: FBbt:00001663
+def: "Primordium from which the female genital disc derives." [FBC:SPR]
+synonym: "female genital disc specific anlage" RELATED []
+is_a: UBERON:6001661 ! genital disc primordium
+relationship: develops_from UBERON:6005533 ! ventral epidermis primordium
+relationship: part_of UBERON:6000180 ! embryonic abdominal segment 8
+
+[Term]
+id: UBERON:6001664
+name: embryonic/larval circulatory system
+xref: FBbt:00001664
+def: "Tubular system of the embryo/larva through which hemolymph flows." [FlyBase:FBrf0031012]
+synonym: "larval circulatory system" EXACT []
+is_a: UBERON:0001009 ! circulatory system
+relationship: part_of UBERON:0002548 ! larva
+relationship: part_of UBERON:0000323 ! late embryo
 
 [Term]
 id: UBERON:6001666
 name: cardioblast
 xref: FBbt:00001666
-namespace: fly_anatomy.ontology
 def: "." [FlyBase:FBrf0031012]
 synonym: "dorsal vessel primordium cuboidal cells" RELATED []
 synonym: "heart cell" RELATED [FlyBase:FBrf0130155]
@@ -93,33 +670,247 @@ is_a: UBERON:6007008 ! somatic precursor cell
 id: UBERON:6001668
 name: embryonic/larval lymph gland
 xref: FBbt:00001668
-namespace: fly_anatomy.ontology
 def: "Hematopoietic organ of the larva, located along the dorsal vessel, behind the brain. It produces the plasmatocytes, crystal cells and lamellocytes which are released at the end of the larval instar and onset of metamorphosis. It is composed of 3 pairs of bilateral lobes: an anterior primary lobe, a posterior secondary lobe and the most posterior lobe (or multiple lobes), the tertiary lobe. Each lobe is separated by pericardial cells. In the late embryo, the lymph gland consists of a single pair of lobes (primary lobes) containing around 20 cells each that flank the dorsal vessel. By the second larval instar, the lymph gland is composed of two or three new pairs of posterior lobes, and the primary lobes have increased in size to contain around 200 cells. During the first and early second larval instars, the lymph gland comprises only the hematopoietic progenitor population. The lymph gland increases in size ten-fold by the late third instar, and at this stage the progenitor cells (prohemocytes) become restricted to the medial region (medullary zone) of the primary lobe and become quiescent. The differentiated hemocytes are found in the periphery (cortical zone) of the primary lobe and these cells proliferate extensively. The posterior signalling center is a group of about 30 cells at the posterior tip of the primary lobe that secretes several signalling molecules and functions as a stem-cell niche. The secondary and tertiary lobes contain prohemocytes, and rarely a differentiated cell. Lymph glands are eliminated at metamorphosis." [FlyBase:FBrf0031001, FlyBase:FBrf0032406, FlyBase:FBrf0074444, FlyBase:FBrf0155787, FlyBase:FBrf0162082, FlyBase:FBrf0187467]
 synonym: "embryonic/larval hematopoietic organ" EXACT [FlyBase:FBrf0074444]
 synonym: "hematopoietic organ" EXACT []
 is_a: UBERON:0000481 ! multi-tissue structure
-relationship: part_of UBERON:6001664 ! embryonic/larval circulatory system
 relationship: develops_from UBERON:6000132 ! mesodermal crest of segment T3
 relationship: develops_from UBERON:6005467 ! lymph gland primordium
+relationship: part_of UBERON:6001664 ! embryonic/larval circulatory system
 
 [Term]
 id: UBERON:6001722
 name: ring gland
 xref: FBbt:00001722
-namespace: fly_anatomy.ontology
 def: "A closely associated cluster of three neuroendocrine glands located anterior to the aorta and dorsal to the esophagus. At embryonic stage 17 and in larva it is found anterior to the brain and is formed by the corpus cardiacum ventrally, the prothoracic gland laterally and the corpus allatum dorsally. The adult ring gland is located anterior to the proventriculus and is formed by the corpus cardiacum ventrally, the corpus allatum dorsally and the hypocerebral ganglion posterior to the corpus cardiacum. It is innervated by neurons of the nervus corporis cardiaci (NccI-III)." [FlyBase:FBrf0064803, FlyBase:FBrf0089570, FlyBase:FBrf0179777, PMID:12966498]
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:6007435 ! endocrine system component
-relationship: continuous_with UBERON:6001721 ! nervus corporis cardiaci I
-relationship: continuous_with UBERON:6110626 ! nervus corporis cardiaci II
-relationship: continuous_with UBERON:6110627 ! nervus corporis cardiaci III
 relationship: capable_of GO:0060986 ! endocrine hormone secretion
+
+[Term]
+id: UBERON:6001728
+name: larval tagma
+xref: FBbt:00001728
+def: "Any tagma (UBERON:6000002) that is part of some larva (UBERON:6001727)." [FBC:auto_generated_definition]
+is_a: UBERON:6000002 ! tagma
+relationship: part_of UBERON:0002548 ! larva
+intersection_of: UBERON:6000002 ! tagma
+intersection_of: part_of UBERON:0002548 ! larva
+
+[Term]
+id: UBERON:6001729
+name: larval segment
+xref: FBbt:00001729
+def: "Any segment (UBERON:6000003) that is part of some larva (UBERON:6001727)." [FBC:auto_generated_definition]
+is_a: UBERON:0000914 ! segment
+relationship: develops_from UBERON:6000154 ! embryonic segment
+relationship: part_of UBERON:0002548 ! larva
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:0002548 ! larva
+
+[Term]
+id: UBERON:6001730
+name: larval head
+xref: FBbt:00001730
+def: "Any head (UBERON:6000004) that is part of some larva (UBERON:6001727)." [FBC:auto_generated_definition]
+is_a: UBERON:0000033 ! head
+is_a: UBERON:6001728 ! larval tagma
+relationship: part_of UBERON:0002548 ! larva
+intersection_of: UBERON:0000033 ! head
+intersection_of: part_of UBERON:0002548 ! larva
+
+[Term]
+id: UBERON:6001731
+name: larval ocular segment
+xref: FBbt:00001731
+def: "Any ocular segment (UBERON:6000005) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition]
+synonym: "larval acron" RELATED []
+is_a: UBERON:6000005 ! ocular segment
+is_a: UBERON:6001733 ! larval procephalic segment
+relationship: part_of UBERON:6001730 ! larval head
+intersection_of: UBERON:6000005 ! ocular segment
+intersection_of: part_of UBERON:6001730 ! larval head
+
+[Term]
+id: UBERON:6001732
+name: larval head segment
+xref: FBbt:00001732
+def: "Any segment (UBERON:6000003) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition, FlyBase:FBrf0075072]
+is_a: UBERON:6000006 ! head segment
+is_a: UBERON:6001729 ! larval segment
+relationship: part_of UBERON:6001730 ! larval head
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6001730 ! larval head
+
+[Term]
+id: UBERON:6001733
+name: larval procephalic segment
+xref: FBbt:00001733
+def: "Any procephalic segment (UBERON:6000007) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition]
+is_a: UBERON:6000007 ! procephalic segment
+is_a: UBERON:6001732 ! larval head segment
+relationship: part_of UBERON:6001730 ! larval head
+intersection_of: UBERON:6000007 ! procephalic segment
+intersection_of: part_of UBERON:6001730 ! larval head
+
+[Term]
+id: UBERON:6001734
+name: larval labral segment
+xref: FBbt:00001734
+def: "Any labral segment (UBERON:6000008) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition]
+is_a: UBERON:6000008 ! labral segment
+is_a: UBERON:6001733 ! larval procephalic segment
+relationship: part_of UBERON:6001730 ! larval head
+intersection_of: UBERON:6000008 ! labral segment
+intersection_of: part_of UBERON:6001730 ! larval head
+
+[Term]
+id: UBERON:6001735
+name: larval antennal segment
+xref: FBbt:00001735
+def: "Any antennal segment (UBERON:6000009) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition]
+is_a: UBERON:6000009 ! antennal segment
+is_a: UBERON:6001733 ! larval procephalic segment
+relationship: part_of UBERON:6001730 ! larval head
+intersection_of: UBERON:6000009 ! antennal segment
+intersection_of: part_of UBERON:6001730 ! larval head
+
+[Term]
+id: UBERON:6001737
+name: larval gnathal segment
+xref: FBbt:00001737
+def: "Any gnathal segment (UBERON:6000011) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition]
+is_a: UBERON:6000011 ! gnathal segment
+is_a: UBERON:6001732 ! larval head segment
+relationship: part_of UBERON:6001730 ! larval head
+intersection_of: UBERON:6000011 ! gnathal segment
+intersection_of: part_of UBERON:6001730 ! larval head
+
+[Term]
+id: UBERON:6001740
+name: larval labial segment
+xref: FBbt:00001740
+def: "Any labial segment (UBERON:6000014) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition]
+is_a: UBERON:6000014 ! labial segment
+is_a: UBERON:6001737 ! larval gnathal segment
+relationship: part_of UBERON:6001730 ! larval head
+intersection_of: UBERON:6000014 ! labial segment
+intersection_of: part_of UBERON:6001730 ! larval head
+
+[Term]
+id: UBERON:6001741
+name: larval thorax
+xref: FBbt:00001741
+def: "Any thorax (UBERON:6000015) that is part of some larva (UBERON:6001727)." [FBC:auto_generated_definition]
+is_a: UBERON:6000015 ! thorax
+is_a: UBERON:6001728 ! larval tagma
+relationship: part_of UBERON:0002548 ! larva
+intersection_of: UBERON:6000015 ! thorax
+intersection_of: part_of UBERON:0002548 ! larva
+
+[Term]
+id: UBERON:6001742
+name: larval thoracic segment
+xref: FBbt:00001742
+def: "Any segment (UBERON:6000003) that is part of some larval thorax (UBERON:6001741)." [FBC:auto_generated_definition]
+is_a: UBERON:6000016 ! thoracic segment
+is_a: UBERON:6001729 ! larval segment
+relationship: part_of UBERON:6001741 ! larval thorax
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6001741 ! larval thorax
+
+[Term]
+id: UBERON:6001743
+name: larval prothoracic segment
+xref: FBbt:00001743
+def: "Any prothoracic segment (UBERON:6000017) that is part of some larval thorax (UBERON:6001741)." [FBC:auto_generated_definition]
+synonym: "prothorax" RELATED []
+synonym: "t1" RELATED []
+synonym: "thoracic segment 1" RELATED []
+is_a: UBERON:6000017 ! prothoracic segment
+is_a: UBERON:6001742 ! larval thoracic segment
+relationship: part_of UBERON:6001741 ! larval thorax
+intersection_of: UBERON:6000017 ! prothoracic segment
+intersection_of: part_of UBERON:6001741 ! larval thorax
+
+[Term]
+id: UBERON:6001744
+name: larval mesothoracic segment
+xref: FBbt:00001744
+def: "Any mesothoracic segment (UBERON:6000018) that is part of some larval thorax (UBERON:6001741)." [FBC:auto_generated_definition]
+synonym: "mesothorax" RELATED []
+synonym: "t2" RELATED []
+synonym: "thoracic segment 2" RELATED []
+is_a: UBERON:6000018 ! mesothoracic segment
+is_a: UBERON:6001742 ! larval thoracic segment
+relationship: part_of UBERON:6001741 ! larval thorax
+intersection_of: UBERON:6000018 ! mesothoracic segment
+intersection_of: part_of UBERON:6001741 ! larval thorax
+
+[Term]
+id: UBERON:6001745
+name: larval metathoracic segment
+xref: FBbt:00001745
+def: "Any metathoracic segment (UBERON:6000019) that is part of some larval thorax (UBERON:6001741)." [FBC:auto_generated_definition]
+synonym: "metathorax" RELATED []
+synonym: "t3" RELATED []
+synonym: "thoracic segment 3" RELATED []
+is_a: UBERON:6000019 ! metathoracic segment
+is_a: UBERON:6001742 ! larval thoracic segment
+relationship: part_of UBERON:6001741 ! larval thorax
+intersection_of: UBERON:6000019 ! metathoracic segment
+intersection_of: part_of UBERON:6001741 ! larval thorax
+
+[Term]
+id: UBERON:6001746
+name: larval abdomen
+xref: FBbt:00001746
+def: "Any abdomen (UBERON:6000020) that is part of some larva (UBERON:6001727)." [FBC:auto_generated_definition]
+is_a: UBERON:6000020 ! abdomen
+is_a: UBERON:6001728 ! larval tagma
+relationship: part_of UBERON:0002548 ! larva
+intersection_of: UBERON:6000020 ! abdomen
+intersection_of: part_of UBERON:0002548 ! larva
+
+[Term]
+id: UBERON:6001747
+name: larval abdominal segment
+xref: FBbt:00001747
+def: "Any segment (UBERON:6000003) that is part of some larval abdomen (UBERON:6001746)." [FBC:auto_generated_definition]
+is_a: UBERON:6000021 ! abdominal segment
+is_a: UBERON:6001729 ! larval segment
+relationship: part_of UBERON:6001746 ! larval abdomen
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6001746 ! larval abdomen
+
+[Term]
+id: UBERON:6001755
+name: larval abdominal segment 8
+xref: FBbt:00001755
+def: "Any abdominal segment 8 (UBERON:6000029) that is part of some larval abdomen (UBERON:6001746)." [FBC:auto_generated_definition]
+synonym: "a8" RELATED []
+is_a: UBERON:6000029 ! abdominal segment 8
+is_a: UBERON:6001747 ! larval abdominal segment
+relationship: part_of UBERON:6001746 ! larval abdomen
+intersection_of: UBERON:6000029 ! abdominal segment 8
+intersection_of: part_of UBERON:6001746 ! larval abdomen
+
+[Term]
+id: UBERON:6001756
+name: larval abdominal segment 9
+xref: FBbt:00001756
+def: "Any abdominal segment 9 (UBERON:6000030) that is part of some larval abdomen (UBERON:6001746)." [FBC:auto_generated_definition]
+synonym: "a9" RELATED []
+is_a: UBERON:6000030 ! abdominal segment 9
+is_a: UBERON:6001747 ! larval abdominal segment
+relationship: part_of UBERON:6001746 ! larval abdomen
+intersection_of: UBERON:6000030 ! abdominal segment 9
+intersection_of: part_of UBERON:6001746 ! larval abdomen
 
 [Term]
 id: UBERON:6001760
 name: embryonic/larval imaginal precursor
 xref: FBbt:00001760
-namespace: fly_anatomy.ontology
 def: "Imaginal precursor that is part of the embryo/larva." [FBC:SPR]
 synonym: "larval imaginal precursor" EXACT []
 is_a: UBERON:6005023 ! imaginal precursor
@@ -131,101 +922,231 @@ relationship: part_of UBERON:0003143 ! pupa
 id: UBERON:6001764
 name: labial disc
 xref: FBbt:00001764
-namespace: fly_anatomy.ontology
 def: "Imaginal disc that, in the adult, gives rise to the proboscis, including the prementum, prestomal cavity, labellum, labellar cap and pseudotrachea (Cohen, 1993)." [FlyBase:FBrf0033866, FlyBase:FBrf0064789]
 is_a: UBERON:0000939 ! imaginal disc
-relationship: part_of UBERON:6001740 ! larval labial segment
 relationship: develops_from UBERON:6001650 ! labial disc primordium
+relationship: part_of UBERON:6001740 ! larval labial segment
 
 [Term]
 id: UBERON:6001765
 name: clypeo-labral disc
 xref: FBbt:00001765
-namespace: fly_anatomy.ontology
 def: "Imaginal disc that in the adults gives rise to the labrum, anterior and posterior cibarial plates, fish trap bristles, epipharyngeal sclerite and clypeus (Cohen, 1993)." [FlyBase:FBrf0064789]
 synonym: "clypeolabral disc" EXACT []
 is_a: UBERON:0000939 ! imaginal disc
-relationship: part_of UBERON:6001734 ! larval labral segment
 relationship: develops_from UBERON:6005514 ! adult clypeo-labral primordium
+relationship: part_of UBERON:6001734 ! larval labral segment
 
 [Term]
 id: UBERON:6001766
 name: eye-antennal disc
 xref: FBbt:00001766
-namespace: fly_anatomy.ontology
 def: "Imaginal disc that, in the adults, gives rise to the eye, antenna, head capsule (including all bristles and external membranes) and the maxillary palps (Cohen, 1993)." [FlyBase:FBrf0064789]
 is_a: UBERON:0000939 ! imaginal disc
 relationship: develops_from UBERON:6001652 ! eye-antennal disc primordium
 
 [Term]
+id: UBERON:6001767
+name: antennal disc
+xref: FBbt:00001767
+def: "Posterior portion of the eye-antennal disc. It gives rise to the adult antennal segments and the maxillary palp, as well as contributing to the head capsule." [FlyBase:FBrf0064789]
+is_a: UBERON:0000939 ! imaginal disc
+relationship: part_of UBERON:6001735 ! larval antennal segment
+relationship: part_of UBERON:6001766 ! eye-antennal disc
+
+[Term]
 id: UBERON:6001776
 name: dorsal thoracic disc
 xref: FBbt:00001776
-namespace: fly_anatomy.ontology
 def: "Imaginal disc that is a precursor of dorsal thoracic structures of the adult." [FlyBase:FBrf0064789, FlyBase:FBrf0064803]
 synonym: "dorsal thoracic disk" EXACT []
 is_a: UBERON:0000939 ! imaginal disc
-relationship: part_of UBERON:6001742 ! larval thoracic segment
 relationship: develops_from UBERON:6001653 ! dorsal thoracic disc primordium
+relationship: part_of UBERON:6001742 ! larval thoracic segment
 
 [Term]
 id: UBERON:6001778
 name: wing disc
 xref: FBbt:00001778
-namespace: fly_anatomy.ontology
 def: "Dorsal imaginal disc of the mesothorax. Precursor of dorsal mesothoracic structures of the adult including the postnotum, scutum, scutellum, wing, wing hinge and part of the notal pleura." [FlyBase:FBrf0064789]
 synonym: "dorsal mesothoracic disc" EXACT []
 is_a: UBERON:6001776 ! dorsal thoracic disc
-relationship: part_of UBERON:6001744 ! larval mesothoracic segment
 relationship: develops_from UBERON:6001655 ! dorsal mesothoracic disc primordium
+relationship: part_of UBERON:6001744 ! larval mesothoracic segment
 
 [Term]
 id: UBERON:6001779
 name: haltere disc
 xref: FBbt:00001779
-namespace: fly_anatomy.ontology
 def: "Dorsal imaginal disc of the metathorax. Precursor of structure of the adult dorsal metathorax including the haltere." [FlyBase:FBrf0064789]
 synonym: "dorsal metathoracic disc" EXACT []
 is_a: UBERON:6001776 ! dorsal thoracic disc
-relationship: part_of UBERON:6001745 ! larval metathoracic segment
 relationship: develops_from UBERON:6001656 ! dorsal metathoracic disc primordium
+relationship: part_of UBERON:6001745 ! larval metathoracic segment
 
 [Term]
 id: UBERON:6001780
 name: ventral thoracic disc
 xref: FBbt:00001780
-namespace: fly_anatomy.ontology
 def: "Imaginal disc that is a precursor of ventral thoracic structures of the adult." [FlyBase:FBrf0064789, FlyBase:FBrf0064803]
 synonym: "leg disc" RELATED []
 synonym: "ventral thoracic disk" EXACT []
 is_a: UBERON:0000939 ! imaginal disc
-relationship: part_of UBERON:6001742 ! larval thoracic segment
 relationship: develops_from UBERON:6001657 ! ventral thoracic disc primordium
+relationship: part_of UBERON:6001742 ! larval thoracic segment
+
+[Term]
+id: UBERON:6001781
+name: prothoracic leg disc
+xref: FBbt:00001781
+def: "Imaginal disc of the ventral prothoracic segment. Precursor of structures of the adult ventral prothorax including the prothoracic (1st) leg." [FlyBase:FBrf0064789]
+synonym: "1st leg disc" EXACT []
+synonym: "T1 leg disc" EXACT []
+synonym: "ventral prothoracic disc" EXACT []
+is_a: UBERON:6001780 ! ventral thoracic disc
+relationship: develops_from UBERON:6001658 ! ventral prothoracic disc primordium
+relationship: part_of UBERON:6001743 ! larval prothoracic segment
 
 [Term]
 id: UBERON:6001784
 name: genital disc
 xref: FBbt:00001784
-namespace: fly_anatomy.ontology
 def: "Imaginal disc that gives rise to the internal and external genitalia, analia and adult hind gut (Cohen, 1993)." [FlyBase:FBrf0064789]
 is_a: UBERON:0000939 ! imaginal disc
 relationship: develops_from UBERON:6001661 ! genital disc primordium
 
 [Term]
+id: UBERON:6001785
+name: male genital disc
+xref: FBbt:00001785
+def: "Genital disc that gives rise to the penis and external genitalia, sperm pump, ejaculatory duct, paragonia and vas deferens, anal plates and adult hindgut (Cohen, 1993)." [FlyBase:FBrf0064789]
+is_a: UBERON:6001784 ! genital disc
+relationship: develops_from UBERON:6001662 ! male genital disc primordium
+relationship: part_of UBERON:6001756 ! larval abdominal segment 9
+
+[Term]
+id: UBERON:6001787
+name: female genital disc
+xref: FBbt:00001787
+def: "Genital disc that gives rise to the vagina and vaginal plates, uterus, parovaria, spermatheca, seminal recepticle, oviducts, female analia and hindgut. (Cohen, 1993)." [FlyBase:FBrf0064789]
+is_a: UBERON:6001784 ! genital disc
+relationship: develops_from UBERON:6001663 ! female genital disc primordium
+relationship: part_of UBERON:6001755 ! larval abdominal segment 8
+
+[Term]
+id: UBERON:6001789
+name: histoblast
+xref: FBbt:00001789
+def: "A progenitor of the adult external abdomen." [FBC:DOS, FBC:gg]
+is_a: UBERON:6001760 ! embryonic/larval imaginal precursor
+is_a: UBERON:0002050 ! developing embryonic structure
+relationship: develops_from UBERON:6016022 ! abdominal histoblast primordium
+relationship: part_of UBERON:0000323 ! late embryo
+
+[Term]
+id: UBERON:6001790
+name: histoblast nest
+xref: FBbt:00001790
+def: "One of several groups of cells in the larval abdomen that gives rise to the adult external abdomen." [FBC:gg]
+is_a: UBERON:6001789 ! histoblast
+relationship: part_of UBERON:6001747 ! larval abdominal segment
+
+[Term]
+id: UBERON:6001791
+name: dorsal histoblast nest abdominal
+xref: FBbt:00001791
+is_a: UBERON:6001790 ! histoblast nest
+is_a: UBERON:6005831 ! dorsal imaginal precursor
+
+[Term]
+id: UBERON:6001792
+name: anterior dorsal histoblast nest abdominal
+xref: FBbt:00001792
+is_a: UBERON:6001791 ! dorsal histoblast nest abdominal
+
+[Term]
+id: UBERON:6001809
+name: posterior dorsal histoblast nest abdominal
+xref: FBbt:00001809
+is_a: UBERON:6001790 ! histoblast nest
+
+[Term]
+id: UBERON:6001842
+name: embryonic/larval digestive system
+xref: FBbt:00001842
+def: "." [FlyBase:FBrf0007733, FlyBase:FBrf0064792]
+synonym: "larval digestive system" EXACT []
+is_a: UBERON:0001007 ! digestive system
+relationship: part_of UBERON:0002548 ! larva
+
+[Term]
+id: UBERON:6001845
+name: cephalopharyngeal skeleton
+xref: FBbt:00001845
+def: "A group of connected sclerites of the anterior embryonic/larval digestive system (atrium, pharynx and dorsal pouch). The cibarial dilator muscles connect to the cephalopharyngeal skeleton to lift the roof of the pharynx and thereby widen its lumen (Jurgens, 1986)." [FlyBase:FBrf0007734, FlyBase:FBrf0045366]
+synonym: "cephalo-pharyngeal skeleton" EXACT [FlyBase:FBrf0045366]
+synonym: "larval head skeleton" EXACT [FlyBase:FBrf0205317]
+synonym: "mouth parts" EXACT []
+is_a: UBERON:6007245 ! cuticular specialization
+relationship: part_of UBERON:0008816 ! embryonic head
+relationship: part_of UBERON:6001730 ! larval head
+relationship: part_of UBERON:6001842 ! embryonic/larval digestive system
+
+[Term]
 id: UBERON:6001848
 name: epipharyngeal sclerite
 xref: FBbt:00001848
-namespace: fly_anatomy.ontology
 def: "Unpaired sclerite to which the median tooth (labrum) posteriorly merges, and bears the cuticular pores of the labral sense organ." [FlyBase:FBrf0045366]
 synonym: "epistomal sclerite" EXACT [FlyBase:FBrf0045366]
 is_a: UBERON:6007245 ! cuticular specialization
 relationship: part_of UBERON:6001845 ! cephalopharyngeal skeleton
 
 [Term]
+id: UBERON:6001911
+name: embryonic/larval nervous system
+xref: FBbt:00001911
+def: "Nervous system of the embryo/larva." [FlyBase:FBrf0045359, FlyBase:FBrf0075072, FlyBase:FBrf0105282]
+synonym: "larval nervous system" EXACT []
+is_a: UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0002548 ! larva
+relationship: part_of UBERON:0000323 ! late embryo
+
+[Term]
+id: UBERON:6001919
+name: embryonic/larval central nervous system
+xref: FBbt:00001919
+def: "Central nervous system of the embryo/larva." [FBC:SPR]
+synonym: "larval central nervous system" EXACT []
+is_a: UBERON:0001017 ! central nervous system
+relationship: part_of UBERON:6001911 ! embryonic/larval nervous system
+
+[Term]
+id: UBERON:6001920
+name: embryonic/larval brain
+xref: FBbt:00001920
+def: "Brain of the embryo/larva." [FBC:SPR]
+synonym: "larval brain" NARROW []
+synonym: "larval supraesophageal ganglion" NARROW []
+is_a: UBERON:0000955 ! brain
+is_a: UBERON:0000045 ! ganglion
+relationship: develops_from UBERON:6001060 ! embryonic brain
+relationship: part_of UBERON:6001730 ! larval head
+relationship: part_of UBERON:6001919 ! embryonic/larval central nervous system
+
+[Term]
+id: UBERON:6001925
+name: embryonic/larval protocerebrum
+xref: FBbt:00001925
+def: "Protocerebrum of the embryo/larva." [FBC:SPR]
+synonym: "larval protocerebrum" RELATED []
+is_a: UBERON:6003627 ! protocerebrum
+relationship: part_of UBERON:6001734 ! larval labral segment
+relationship: part_of UBERON:6001920 ! embryonic/larval brain
+
+[Term]
 id: UBERON:6002639
 name: embryonic/larval sense organ
 xref: FBbt:00002639
-namespace: fly_anatomy.ontology
 def: "Any sense organ (UBERON:6005155) that is part of some larva (UBERON:6001727)." [FBC:auto_generated_definition]
 synonym: "larval sense organ" EXACT []
 is_a: UBERON:0000020 ! sense organ
@@ -237,7 +1158,6 @@ intersection_of: part_of UBERON:0002548 ! larva
 id: UBERON:6002642
 name: embryonic/larval ocular segment sensillum
 xref: FBbt:00002642
-namespace: fly_anatomy.ontology
 def: "Any embryonic/larval sense organ (UBERON:6002639) that is part of some larval ocular segment (UBERON:6001731)." [FBC:auto_generated_definition]
 synonym: "larval ocular segment sensillum" EXACT []
 is_a: UBERON:6007280 ! embryonic/larval head sense organ
@@ -246,10 +1166,165 @@ intersection_of: UBERON:6002639 ! embryonic/larval sense organ
 intersection_of: part_of UBERON:6001731 ! larval ocular segment
 
 [Term]
+id: UBERON:6003005
+name: adult tagma
+xref: FBbt:00003005
+def: "Any tagma (UBERON:6000002) that is part of some adult (UBERON:6003004)." [FBC:auto_generated_definition]
+is_a: UBERON:6000002 ! tagma
+relationship: part_of UBERON:0007023 ! adult
+intersection_of: UBERON:6000002 ! tagma
+intersection_of: part_of UBERON:0007023 ! adult
+
+[Term]
+id: UBERON:6003006
+name: adult segment
+xref: FBbt:00003006
+def: "Segment of the adult." [FBC:SPR]
+is_a: UBERON:0000914 ! segment
+relationship: part_of UBERON:0007023 ! adult
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:0007023 ! adult
+
+[Term]
+id: UBERON:6003007
+name: adult head
+xref: FBbt:00003007
+def: "Head of the adult organism." [FBC:SPR]
+is_a: UBERON:0000033 ! head
+is_a: UBERON:6003005 ! adult tagma
+relationship: part_of UBERON:0007023 ! adult
+intersection_of: UBERON:0000033 ! head
+intersection_of: part_of UBERON:0007023 ! adult
+
+[Term]
+id: UBERON:6003009
+name: adult head segment
+xref: FBbt:00003009
+def: "Segment of the adult head." [FlyBase:FBrf0064788]
+is_a: UBERON:6000006 ! head segment
+is_a: UBERON:6003006 ! adult segment
+relationship: part_of UBERON:6003007 ! adult head
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6003007 ! adult head
+
+[Term]
+id: UBERON:6003010
+name: adult procephalic segment
+xref: FBbt:00003010
+def: "Any procephalic segment (UBERON:6000007) that is part of some adult head (UBERON:6003007)." [FBC:auto_generated_definition]
+is_a: UBERON:6000007 ! procephalic segment
+is_a: UBERON:6003009 ! adult head segment
+relationship: part_of UBERON:6003007 ! adult head
+intersection_of: UBERON:6000007 ! procephalic segment
+intersection_of: part_of UBERON:6003007 ! adult head
+
+[Term]
+id: UBERON:6003011
+name: adult labral segment
+xref: FBbt:00003011
+def: "Any labral segment (UBERON:6000008) that is part of some adult head (UBERON:6003007)." [FBC:auto_generated_definition]
+is_a: UBERON:6000008 ! labral segment
+is_a: UBERON:6003010 ! adult procephalic segment
+relationship: part_of UBERON:6003007 ! adult head
+intersection_of: UBERON:6000008 ! labral segment
+intersection_of: part_of UBERON:6003007 ! adult head
+
+[Term]
+id: UBERON:6003012
+name: adult antennal segment
+xref: FBbt:00003012
+def: "Any antennal segment (UBERON:6000009) that is part of some adult head (UBERON:6003007)." [FBC:auto_generated_definition]
+synonym: "adult antennal structure" EXACT []
+is_a: UBERON:6000009 ! antennal segment
+is_a: UBERON:6003010 ! adult procephalic segment
+relationship: part_of UBERON:6003007 ! adult head
+intersection_of: UBERON:6000009 ! antennal segment
+intersection_of: part_of UBERON:6003007 ! adult head
+
+[Term]
+id: UBERON:6003018
+name: adult thorax
+xref: FBbt:00003018
+def: "Thorax of the adult." [FlyBase:FBim0000792]
+is_a: UBERON:6000015 ! thorax
+is_a: UBERON:6003005 ! adult tagma
+relationship: part_of UBERON:0007023 ! adult
+intersection_of: UBERON:6000015 ! thorax
+intersection_of: part_of UBERON:0007023 ! adult
+
+[Term]
+id: UBERON:6003019
+name: adult thoracic segment
+xref: FBbt:00003019
+def: "Any segment (UBERON:6000003) that is part of some adult thorax (UBERON:6003018)." [FBC:auto_generated_definition]
+is_a: UBERON:6000016 ! thoracic segment
+is_a: UBERON:6003006 ! adult segment
+relationship: part_of UBERON:6003018 ! adult thorax
+intersection_of: UBERON:0000914 ! segment
+intersection_of: part_of UBERON:6003018 ! adult thorax
+
+[Term]
+id: UBERON:6003020
+name: adult prothoracic segment
+xref: FBbt:00003020
+def: "Any prothoracic segment (UBERON:6000017) that is part of some adult thorax (UBERON:6003018)." [FBC:auto_generated_definition]
+synonym: "prothorax" EXACT []
+synonym: "t1" EXACT []
+synonym: "thoracic segment 1" EXACT []
+is_a: UBERON:6000017 ! prothoracic segment
+is_a: UBERON:6003019 ! adult thoracic segment
+relationship: part_of UBERON:6003018 ! adult thorax
+intersection_of: UBERON:6000017 ! prothoracic segment
+intersection_of: part_of UBERON:6003018 ! adult thorax
+
+[Term]
+id: UBERON:6003021
+name: adult mesothoracic segment
+xref: FBbt:00003021
+def: "Any mesothoracic segment (UBERON:6000018) that is part of some adult thorax (UBERON:6003018)." [FBC:auto_generated_definition]
+synonym: "mesothorax" EXACT []
+synonym: "t2" EXACT []
+synonym: "thoracic segment 2" EXACT []
+is_a: UBERON:6000018 ! mesothoracic segment
+is_a: UBERON:6003019 ! adult thoracic segment
+relationship: part_of UBERON:6003018 ! adult thorax
+intersection_of: UBERON:6000018 ! mesothoracic segment
+intersection_of: part_of UBERON:6003018 ! adult thorax
+
+[Term]
+id: UBERON:6003023
+name: adult abdomen
+xref: FBbt:00003023
+def: "Abdomen of the adult." [FlyBase:FBim0000809, FlyBase:FBim0000810]
+is_a: UBERON:6000020 ! abdomen
+is_a: UBERON:6003005 ! adult tagma
+relationship: part_of UBERON:0007023 ! adult
+intersection_of: UBERON:6000020 ! abdomen
+intersection_of: part_of UBERON:0007023 ! adult
+
+[Term]
+id: UBERON:6003024
+name: adult abdominal segment
+xref: FBbt:00003024
+def: "Any abdominal segment (UBERON:6000021) that is part of some adult abdomen (UBERON:6003023)." [FBC:auto_generated_definition]
+is_a: UBERON:6000021 ! abdominal segment
+is_a: UBERON:6003006 ! adult segment
+relationship: part_of UBERON:6003023 ! adult abdomen
+intersection_of: UBERON:6000021 ! abdominal segment
+intersection_of: part_of UBERON:6003023 ! adult abdomen
+
+[Term]
+id: UBERON:6003218
+name: adult muscle system
+xref: FBbt:00003218
+def: "Muscle system of the adult." [FlyBase:FBrf0007735]
+is_a: UBERON:0000383 ! muscle system
+relationship: part_of UBERON:0007023 ! adult
+
+[Term]
 id: UBERON:6003259
 name: adult somatic muscle
 xref: FBbt:00003259
-namespace: fly_anatomy.ontology
 def: "Muscle attached to the inner surface of the adult body wall, extending between articulated or flexibly joined areas, that serves to move the parts of the exoskeleton." [FlyBase:FBrf0007735]
 is_a: UBERON:0005090 ! somatic muscle
 relationship: part_of UBERON:6003218 ! adult muscle system
@@ -257,25 +1332,79 @@ intersection_of: UBERON:0005090 ! somatic muscle
 intersection_of: part_of UBERON:6003218 ! adult muscle system
 
 [Term]
+id: UBERON:6003559
+name: adult nervous system
+xref: FBbt:00003559
+def: "." [FlyBase:FBrf0002482, FlyBase:FBrf0007196, FlyBase:FBrf0007735, FlyBase:FBrf0034076]
+is_a: UBERON:0001016 ! nervous system
+relationship: part_of UBERON:0007023 ! adult
+
+[Term]
+id: UBERON:6003623
+name: adult central nervous system
+xref: FBbt:00003623
+def: "Central nervous system of the adult." [FBC:SPR]
+is_a: UBERON:0001017 ! central nervous system
+relationship: part_of UBERON:6003559 ! adult nervous system
+
+[Term]
+id: UBERON:6003624
+name: adult brain
+xref: FBbt:00003624
+def: "Brain of the adult." [FBC:SPR]
+is_a: UBERON:0000955 ! brain
+relationship: part_of UBERON:6003007 ! adult head
+relationship: part_of UBERON:6003623 ! adult central nervous system
+
+[Term]
+id: UBERON:6003626
+name: supraesophageal ganglion
+xref: FBbt:00003626
+def: "The pre-oral neuropils of the brain located above and some of it below the esophagus, comprising three fused ganglia (protocerebrum, deutocerebrum, and tritocerebrum) in the head." [FlyBase:FBrf0224194, http://flybrain.neurobio.arizona.edu/Flybrain/html/terms/terms.html]
+synonym: "SPG" RELATED []
+is_a: UBERON:0000045 ! ganglion
+relationship: develops_from UBERON:6001920 ! embryonic/larval brain
+relationship: part_of UBERON:0000955 ! brain
+
+[Term]
+id: UBERON:6003627
+name: protocerebrum
+xref: FBbt:00003627
+def: "The most anterior of the segmental subdivisions of the insect CNS; thought to represent the first pre-oral segment of the brain. The protocerebrum comprises many discrete neuropil regions including the central body complex and mushroom bodies." [http://flybrain.neurobio.arizona.edu/Flybrain/html/terms/terms.html]
+synonym: "protocerebral neuromere" EXACT [FlyBase:FBrf0092819]
+is_a: UBERON:0004732 ! neuromere
+relationship: part_of UBERON:6000008 ! labral segment
+relationship: part_of UBERON:6003626 ! supraesophageal ganglion
+
+[Term]
 id: UBERON:6003632
 name: adult central complex
 xref: FBbt:00003632
-namespace: fly_anatomy.ontology
 def: "A midline crossing complex of 4 synaptic neuropil domains of the adult brain: the ellipsoid body, the fan-shaped body, the paired noduli, and the protocerebral bridge. It is closely associated with another paired synaptic neuropil domain, the lateral complex. It lies in the middle of the brain between the pedunculi of the mushroom bodies and is bounded ventrally by the esophagus, dorsally by the pars intercerebralis and laterally by the antenno-glomerular tracts." [FlyBase:FBrf0049409, http://flybrain.neurobio.arizona.edu/Flybrain/html/terms/terms.html]
 synonym: "CX" EXACT BRAIN_NAME_ABV [FlyBase:FBrf0224194]
 synonym: "adult central body complex" EXACT []
 synonym: "central body" RELATED []
 synonym: "central body complex" RELATED []
 is_a: UBERON:6041000 ! synaptic neuropil block
+relationship: develops_from UBERON:6007070 ! centro-posterior medial synaptic neuropil domain
 relationship: part_of UBERON:6007145 ! adult protocerebrum
 relationship: part_of UBERON:6110636 ! adult cerebral ganglion
-relationship: develops_from UBERON:6007070 ! centro-posterior medial synaptic neuropil domain
+
+[Term]
+id: UBERON:6004203
+name: adult clypeo-labral anlage
+xref: FBbt:00004203
+def: "." [FBC:VH]
+synonym: "A AdCly" RELATED [FBC:DOS]
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:0007688 ! anlage
+relationship: develops_from UBERON:6005538 ! clypeo-labral primordium
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
 
 [Term]
 id: UBERON:6004296
 name: sex comb
 xref: FBbt:00004296
-namespace: fly_anatomy.ontology
 def: "A row of darkly pigmented, male specific chaetae located on the prothoracic metatarsal segment of the prothoracic leg. The number of chaetae (teeth) per sex comb varies between individuals, e.g.- Hannah-Alava and Stern report 10-13." [FlyBase:FBrf0011482, FlyBase:FBrf0012178]
 synonym: "ctenidium" EXACT [FlyBase:FBrf0012178]
 synonym: "metatarsal comb" EXACT []
@@ -286,17 +1415,23 @@ relationship: part_of UBERON:6007020 ! metatarsus of male prothoracic leg
 id: UBERON:6004340
 name: wing hair
 xref: FBbt:00004340
-namespace: fly_anatomy.ontology
 def: "The posteriorly oriented trichome of a cell of the wing blade. Each cell makes one of these trichomes at its posterior vertex." [FBC:DOS]
 synonym: "wing trichome" RELATED []
 is_a: UBERON:6004979 ! trichome
 relationship: part_of UBERON:0000984 ! wing
 
 [Term]
+id: UBERON:6004450
+name: late extended germ band embryo
+xref: FBbt:00004450
+def: "A collective term for stages 11 and 12." [FBC:DOS]
+is_a: UBERON:6005321 ! extended germ band embryo
+relationship: develops_from UBERON:6014201 ! early extended germ band embryo
+
+[Term]
 id: UBERON:6004475
 name: sclerite
 xref: FBbt:00004475
-namespace: fly_anatomy.ontology
 def: "A region of integument whose external cuticular part is a hard, sclerotized plate." [FBC:gg]
 synonym: "integumentary plate" EXACT []
 synonym: "plate" RELATED []
@@ -306,80 +1441,197 @@ is_a: UBERON:6007284 ! region of integument
 id: UBERON:6004476
 name: tergite
 xref: FBbt:00004476
-namespace: fly_anatomy.ontology
 def: "The dorsal plate (sclerite) of an adult abdominal segment." [FlyBase:FBrf0007734, FlyBase:FBrf0111704]
 synonym: "abdominal tergite" EXACT []
 is_a: UBERON:6004475 ! sclerite
-relationship: part_of UBERON:6003024 ! adult abdominal segment
-relationship: part_of UBERON:6004788 ! adult external abdomen
 relationship: develops_from UBERON:6001792 ! anterior dorsal histoblast nest abdominal
 relationship: develops_from UBERON:6001809 ! posterior dorsal histoblast nest abdominal
+relationship: part_of UBERON:6003024 ! adult abdominal segment
+relationship: part_of UBERON:6004788 ! adult external abdomen
 
 [Term]
 id: UBERON:6004477
 name: sternite
 xref: FBbt:00004477
-namespace: fly_anatomy.ontology
 def: "An adult ventral sclerite." [FlyBase:FBrf0007734, FlyBase:FBrf0111704]
 synonym: "abdominal sternite" EXACT []
 is_a: UBERON:6004475 ! sclerite
 
 [Term]
+id: UBERON:6004481
+name: adult external head
+xref: FBbt:00004481
+is_a: UBERON:6007289 ! tagmatic subdivision of integument
+relationship: part_of UBERON:6003007 ! adult head
+relationship: part_of UBERON:6005396 ! adult integumentary system
+
+[Term]
+id: UBERON:6004519
+name: arista
+xref: FBbt:00004519
+def: "Highly specialised, slender sixth segment of the antenna covered in bristle-like outgrowths known as laterals. It extends laterally from the dorsal region of the third segment of the antenna." [FlyBase:FBrf0007734, FlyBase:FBrf0031004, FlyBase:FBrf0137012]
+synonym: "segment 6" EXACT []
+is_a: UBERON:6007149 ! segment of antenna
+relationship: develops_from UBERON:6110811 ! presumptive arista
+relationship: part_of UBERON:0000972 ! antenna
+
+[Term]
+id: UBERON:6004520
+name: mouthpart
+xref: FBbt:00004520
+is_a: UBERON:0001062 ! anatomical entity
+relationship: part_of UBERON:6004481 ! adult external head
+
+[Term]
 id: UBERON:6004521
 name: clypeus
 xref: FBbt:00004521
-namespace: fly_anatomy.ontology
 def: "The anterior part of the head between the frons and the labrum, which occasionally may fuse with either one to form the frontoclypeus and the clypeolabrum. In the context of Drosophila refers to a round structure on the center of the frontal adult external head." [FBC:gg, FlyBase:FBrf0166419]
 is_a: UBERON:6004475 ! sclerite
-relationship: part_of UBERON:6004540 ! basiproboscis
 relationship: develops_from UBERON:6001765 ! clypeo-labral disc
+relationship: part_of UBERON:6004540 ! basiproboscis
 
 [Term]
 id: UBERON:6004535
 name: proboscis
 xref: FBbt:00004535
-namespace: fly_anatomy.ontology
 def: "The trunk-like extension of adult head, forming a protrusible sucking proboscis for the ingestion of liquid food (pg 425 Miller et al., 1950; pg 383, Ferris et al., 1950)." [FlyBase:FBrf0007734, FlyBase:FBrf0007735]
 is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:6004520 ! mouthpart
 relationship: develops_from UBERON:6001764 ! labial disc
+relationship: part_of UBERON:6004520 ! mouthpart
+
+[Term]
+id: UBERON:6004540
+name: basiproboscis
+xref: FBbt:00004540
+is_a: UBERON:0010000 ! multicellular structure
+relationship: part_of UBERON:6004520 ! mouthpart
+
+[Term]
+id: UBERON:6004551
+name: adult external thorax
+xref: FBbt:00004551
+def: "." [FlyBase:FBrf0006943]
+is_a: UBERON:6007289 ! tagmatic subdivision of integument
+relationship: part_of UBERON:6003018 ! adult thorax
+relationship: part_of UBERON:6005396 ! adult integumentary system
 
 [Term]
 id: UBERON:6004552
 name: tergum
 xref: FBbt:00004552
-namespace: fly_anatomy.ontology
 def: "The upper, originally unpaired plate of the segmented insect body, which either independently or fused with a ventral plate covers the body dorsally, specifically that of the thorax." [FlyBase:FBrf0166419]
 is_a: UBERON:6007284 ! region of integument
 relationship: part_of UBERON:6004551 ! adult external thorax
 
 [Term]
+id: UBERON:6004578
+name: adult external mesothorax
+xref: FBbt:00004578
+is_a: UBERON:6007285 ! segmental subdivision of integument
+relationship: part_of UBERON:6003021 ! adult mesothoracic segment
+relationship: part_of UBERON:6004551 ! adult external thorax
+
+[Term]
+id: UBERON:6004579
+name: dorsal mesothorax
+xref: FBbt:00004579
+is_a: UBERON:6007284 ! region of integument
+relationship: develops_from UBERON:6001778 ! wing disc
+relationship: part_of UBERON:6004578 ! adult external mesothorax
+
+[Term]
 id: UBERON:6004580
 name: mesothoracic tergum
 xref: FBbt:00004580
-namespace: fly_anatomy.ontology
 def: "The dorsal sclerites (tergites) of the mesothorax." [FBC:DOS]
 synonym: "alinotum" EXACT [FlyBase:FBrf0111704]
 synonym: "mesonotum" EXACT [FlyBase:FBrf0166419]
 synonym: "notum" BROAD []
 is_a: UBERON:6004552 ! tergum
-relationship: part_of UBERON:6004579 ! dorsal mesothorax
 relationship: develops_from UBERON:6006032 ! mesothoracic tergum primordium
+relationship: part_of UBERON:6004579 ! dorsal mesothorax
+
+[Term]
+id: UBERON:6004646
+name: tarsal segment
+xref: FBbt:00004646
+def: "A segment of the tarsus of the adult leg. The first tarsal segment, the metatarsus, is proximally connected to the tibia. Tarsal segments are covered in 8 longitudinal rows of bristles, with row 1 being the most ventral." [FlyBase:FBim0000836.html, FlyBase:FBrf0007734, FlyBase:FBrf0012178]
+synonym: "tarsomere" EXACT [FlyBase:FBrf0111704]
+is_a: UBERON:6007150 ! segment of leg
+relationship: part_of UBERON:0005895 ! leg
+
+[Term]
+id: UBERON:6004648
+name: metatarsus
+xref: FBbt:00004648
+def: "The first of the tarsal segments of the adult leg. It is located between the tibia and the second tarsal segment and is longer than the other tarsal segments. It has 8 longitudinal rows of bristles around the circumference." [FlyBase:FBim0000836, FlyBase:FBrf0007734, FlyBase:FBrf0012178, FlyBase:FBrf0111704]
+synonym: "1st tarsal segment" EXACT []
+synonym: "basitarsus" EXACT [FlyBase:FBrf0111704]
+synonym: "first segment of the tarsus" EXACT []
+synonym: "first tarsal segment" EXACT []
+synonym: "tarsal segment 1" EXACT []
+is_a: UBERON:6004646 ! tarsal segment
+
+[Term]
+id: UBERON:6004663
+name: prothoracic leg
+xref: FBbt:00004663
+def: "Leg of the prothoracic segment." [FBC:DOS]
+synonym: "T1 leg" EXACT []
+synonym: "first leg" EXACT []
+is_a: UBERON:0005895 ! leg
+relationship: develops_from UBERON:6001781 ! prothoracic leg disc
+relationship: part_of UBERON:6003020 ! adult prothoracic segment
+intersection_of: UBERON:0005895 ! leg
+intersection_of: part_of UBERON:6003020 ! adult prothoracic segment
+
+[Term]
+id: UBERON:6004668
+name: prothoracic tarsal segment
+xref: FBbt:00004668
+def: "Tarsal segment of the adult prothoracic leg." [FBC:MMC]
+is_a: UBERON:6004646 ! tarsal segment
+relationship: part_of UBERON:6004663 ! prothoracic leg
+intersection_of: UBERON:6004646 ! tarsal segment
+intersection_of: part_of UBERON:6004663 ! prothoracic leg
+
+[Term]
+id: UBERON:6004670
+name: prothoracic metatarsus
+xref: FBbt:00004670
+def: "First tarsal segment of the prothoracic leg. Proximally, it articulates with the tibia and distally with the second tarsal segment. Its surface is covered with eight longitudinal rows of bristles and with transverse rows of bristles (TR) in the anterior compartment, between proximo-distal rows 7 and 8. There is sexual dimorphism in the number of TRs (transverse row bristles, TR). In males, 2 TRs are replaced by the sex comb and one central bristle." [FlyBase:FBrf0031004, FlyBase:FBrf0219028]
+synonym: "T1 Ts1" EXACT [FlyBase:FBrf0219028]
+synonym: "T1 tarsal segment 1" EXACT []
+synonym: "prothoracic basitarsus" EXACT [FlyBase:FBrf0111704]
+synonym: "prothoracic tarsal segment 1" EXACT []
+is_a: UBERON:6004648 ! metatarsus
+is_a: UBERON:6004668 ! prothoracic tarsal segment
+relationship: develops_from UBERON:6110746 ! presumptive prothoracic metatarsus
+relationship: part_of UBERON:6004663 ! prothoracic leg
+intersection_of: UBERON:6004648 ! metatarsus
+intersection_of: part_of UBERON:6004663 ! prothoracic leg
+
+[Term]
+id: UBERON:6004788
+name: adult external abdomen
+xref: FBbt:00004788
+is_a: UBERON:6007289 ! tagmatic subdivision of integument
+relationship: part_of UBERON:6003023 ! adult abdomen
+relationship: part_of UBERON:6005396 ! adult integumentary system
 
 [Term]
 id: UBERON:6004823
 name: analia
 xref: FBbt:00004823
-namespace: fly_anatomy.ontology
 is_a: UBERON:0000477 ! anatomical cluster
-relationship: part_of UBERON:6004788 ! adult external abdomen
 relationship: develops_from UBERON:6001784 ! genital disc
+relationship: part_of UBERON:6004788 ! adult external abdomen
 
 [Term]
 id: UBERON:6004824
 name: female analia
 xref: FBbt:00004824
-namespace: fly_anatomy.ontology
 is_a: UBERON:6004823 ! analia
 relationship: develops_from UBERON:6001787 ! female genital disc
 
@@ -387,15 +1639,19 @@ relationship: develops_from UBERON:6001787 ! female genital disc
 id: UBERON:6004825
 name: male analia
 xref: FBbt:00004825
-namespace: fly_anatomy.ontology
 is_a: UBERON:6004823 ! analia
 relationship: develops_from UBERON:6001785 ! male genital disc
+
+[Term]
+id: UBERON:6004888
+name: oocyte nucleus
+xref: FBbt:00004888
+is_a: UBERON:0000470 ! cell component
 
 [Term]
 id: UBERON:6004889
 name: karyosome
 xref: FBbt:00004889
-namespace: fly_anatomy.ontology
 def: "The condensed chromosomes of an oocyte." [FlyBase:FBrf0034074, FlyBase:FBrf0064777]
 is_a: UBERON:0000470 ! cell component
 relationship: part_of UBERON:6004888 ! oocyte nucleus
@@ -404,16 +1660,28 @@ relationship: part_of UBERON:6004888 ! oocyte nucleus
 id: UBERON:6004979
 name: trichome
 xref: FBbt:00004979
-namespace: fly_anatomy.ontology
 def: "Non-innervated projection of the cuticle around an actin-rich cellular process of an underlying epidermal cell." [FBC:DOS]
 synonym: "cell hair" RELATED []
 is_a: UBERON:6007245 ! cuticular specialization
 
 [Term]
+id: UBERON:6004983
+name: embryonic/larval cuticle
+xref: FBbt:00004983
+synonym: "larval cuticle" EXACT []
+is_a: UBERON:0001001 ! cuticle
+relationship: part_of UBERON:6005393 ! embryonic/larval integumentary system
+
+[Term]
+id: UBERON:6004986
+name: third instar larval cuticle
+xref: FBbt:00004986
+is_a: UBERON:6004983 ! embryonic/larval cuticle
+
+[Term]
 id: UBERON:6005023
 name: imaginal precursor
 xref: FBbt:00005023
-namespace: fly_anatomy.ontology
 def: "Structure that proliferates to produce a larval imaginal disc and which gives rise to adult tissues (Bate and Martinez Arias, 1991)." [FlyBase:FBrf0053815, FlyBase:FBrf0064789]
 is_a: UBERON:0005423 ! developing material anatomical entity
 
@@ -421,7 +1689,6 @@ is_a: UBERON:0005423 ! developing material anatomical entity
 id: UBERON:6005036
 name: tracheal pit
 xref: FBbt:00005036
-namespace: fly_anatomy.ontology
 def: "Deep and narrow pit formed by the invagination of a tracheal placode in a late extended germ band embryo. Invagination of the placode begins during stage 11. Branches begin to bud from the pit during stage 11, with a dorsal and ventral stem being apparent by mid-stage 12. The pit closes over during stage 13. There are 10 pairs of tracheal pits - one pair in each tracheal metamere (each segment from T2 to A8). Pits are located in the central one third of each parasegment, with the most anterior in parasegment 4 and the most posterior in parasegment 14." [FlyBase:FBrf0064787, FlyBase:FBrf0089570]
 synonym: "embryonic tracheal pit" EXACT []
 synonym: "tracheal sac" EXACT [FlyBase:FBrf0147036]
@@ -432,7 +1699,6 @@ relationship: part_of UBERON:6004450 ! late extended germ band embryo
 id: UBERON:6005037
 name: tracheal primordium
 xref: FBbt:00005037
-namespace: fly_anatomy.ontology
 def: "Primordium of a single tracheal metamere of the embryonic/larval tracheal system from its appearance as a placode during stage 11 to the completion of fusion with adjacent tracheal metameres in stage 15/16. There are 10 pairs of tracheal primordia - one pair in each segment from T2 to A8. Each tracheal primordium originates as a slight depression in the lateral ectoderm during stage 10 known as a tracheal placode. During stage 11, these placodes invaginate to form tracheal pits that elongate and branch. These pits close over during stage 13. Fusion of tracheal primordia begins at stage 14 with fusion of the dorsal trunk primordia and is complete by early stage 16." [FlyBase:FBrf0089570]
 synonym: "P2 TrachP" EXACT [FBC:DOS]
 synonym: "TrachP3" RELATED []
@@ -440,17 +1706,16 @@ synonym: "tracheal placode" RELATED []
 is_a: UBERON:0002050 ! developing embryonic structure
 is_a: UBERON:0001048 ! primordium
 is_a: UBERON:6007046 ! dorsal ectoderm derivative
+relationship: develops_from UBERON:6000112 ! dorsal ectoderm
 relationship: part_of UBERON:6004450 ! late extended germ band embryo
 relationship: part_of UBERON:6005331 ! dorsal closure embryo
 relationship: part_of UBERON:6005569 ! presumptive embryonic/larval tracheal system
 relationship: part_of UBERON:6014201 ! early extended germ band embryo
-relationship: develops_from UBERON:6000112 ! dorsal ectoderm
 
 [Term]
 id: UBERON:6005038
 name: tracheocyte
 xref: FBbt:00005038
-namespace: fly_anatomy.ontology
 def: "Epithelial cell of the tracheal epithelium." [FBC:DOS]
 is_a: UBERON:6000124 ! epithelial cell
 relationship: part_of UBERON:0005155 ! tracheal system
@@ -459,7 +1724,6 @@ relationship: part_of UBERON:0005155 ! tracheal system
 id: UBERON:6005054
 name: spiracle
 xref: FBbt:00005054
-namespace: fly_anatomy.ontology
 def: "Opening of the tracheal system on the surface of the body." [FlyBase:FBrf0166419]
 is_a: UBERON:6007288 ! integumentary specialisation
 relationship: part_of UBERON:0005155 ! tracheal system
@@ -468,7 +1732,6 @@ relationship: part_of UBERON:0005155 ! tracheal system
 id: UBERON:6005070
 name: visceral muscle
 xref: FBbt:00005070
-namespace: fly_anatomy.ontology
 def: "The visceral musculature comprises circular and longitudinal fibers which surround the entire intestinal tract, with the exception of the recurrent layer of the proventriculus. The circular fibers derive from a bilaterally symmetrical band of mesodermal cells extending continuously throughout most of the germ band. The longitudinal fibers derive from clusters of mesodermal cells which appear during stage 12 at the posterior end of the embryo and migrate anteriorly." [FlyBase:FBrf0064793, FlyBase:FBrf0089570]
 is_a: UBERON:6005074 ! muscle cell
 relationship: part_of UBERON:0000383 ! muscle system
@@ -477,21 +1740,18 @@ relationship: part_of UBERON:0000383 ! muscle system
 id: UBERON:6005074
 name: muscle cell
 xref: FBbt:00005074
-namespace: fly_anatomy.ontology
 is_a: UBERON:6100318 ! somatic cell
 
 [Term]
 id: UBERON:6005075
 name: muscle fiber
 xref: FBbt:00005075
-namespace: fly_anatomy.ontology
 is_a: UBERON:6005070 ! visceral muscle
 
 [Term]
 id: UBERON:6005096
 name: stomatogastric nervous system
 xref: FBbt:00005096
-namespace: fly_anatomy.ontology
 def: "A group of small, interconnected ganglia situated posterior to and between the two brain hemispheres and associated with the pharynx, esophagus and aorta." [FlyBase:FBrf0089570, PMID:12966498]
 synonym: "stomodaeal nervous system" RELATED [FlyBase:FBrf0111704]
 synonym: "stomodeal nervous system" RELATED [FlyBase:FBrf0111704]
@@ -499,10 +1759,16 @@ is_a: UBERON:0011216 ! organ system subdivision
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
+id: UBERON:6005164
+name: external sensory organ precursor cell
+xref: FBbt:00005164
+def: "Precursor cell that gives rise to an external sensory organ." [FlyBase:FBrf0111371]
+is_a: UBERON:6001137 ! sensory mother cell
+
+[Term]
 id: UBERON:6005168
 name: external sensory organ
 xref: FBbt:00005168
-namespace: fly_anatomy.ontology
 synonym: "eo" RELATED []
 synonym: "es" RELATED []
 synonym: "sensillum" RELATED []
@@ -513,26 +1779,292 @@ relationship: develops_from UBERON:6005164 ! external sensory organ precursor ce
 id: UBERON:6005177
 name: chaeta
 xref: FBbt:00005177
-namespace: fly_anatomy.ontology
 def: "A sensillum with a long, unicellular, setiform outgrowth that is strongly chitinized." [FlyBase:FBrf0111704, FlyBase:FBrf0166419]
 synonym: "sensillum chaeticum" EXACT [FlyBase:FBrf0111704]
 is_a: UBERON:6007232 ! eo-type sensillum
 
 [Term]
+id: UBERON:6005290
+name: pre-blastoderm embryo
+xref: FBbt:00005290
+is_a: UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:6005291
+name: stage 1 embryo
+xref: FBbt:00005291
+def: "Nuclear divisions 1 and 2. Duration at 25 degrees C: approximately 25 minutes (0-25 minutes after egg laying)." [FlyBase:FBrf0089570]
+is_a: UBERON:6000054 ! cleavage stage embryo
+is_a: UBERON:6005290 ! pre-blastoderm embryo
+
+[Term]
+id: UBERON:6005293
+name: stage 2 embryo
+xref: FBbt:00005293
+def: "Nuclear divisions 3-8. The egg cytoplasm contracts producing a clear separation from the vitelline membrane and empty spaces at the anterior and posterior. The cleavage nuclei migrate towards the periphery. Duration at 25 degrees C approximately 40 minutes (25-65 minutes AEL)." [FlyBase:FBrf0089570]
+is_a: UBERON:6000054 ! cleavage stage embryo
+is_a: UBERON:6005290 ! pre-blastoderm embryo
+relationship: develops_from UBERON:6005291 ! stage 1 embryo
+
+[Term]
+id: UBERON:6005301
+name: stage 3 embryo
+xref: FBbt:00005301
+def: "Nuclear division 9. The cleavage nuclei complete there migration to the periphery. Polar buds form at the posterior pole and divide once. Duration at 25 degrees C: approximately 15 minutes (65-80 minutes after egg laying)." [FlyBase:FBrf0089570]
+is_a: UBERON:6000054 ! cleavage stage embryo
+is_a: UBERON:6005305 ! syncytial blastoderm embryo
+relationship: develops_from UBERON:6005293 ! stage 2 embryo
+
+[Term]
+id: UBERON:6005304
+name: blastoderm embryo
+xref: FBbt:00005304
+def: "A collective term for stages 3-5." [FBC:DOS]
+is_a: UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:6005305
+name: syncytial blastoderm embryo
+xref: FBbt:00005305
+def: "A blastoderm embryo prior to cellularization (corresponds to embryonic stages 3 and 4)." [FBC:DOS, FBC:gg]
+is_a: UBERON:6005304 ! blastoderm embryo
+
+[Term]
+id: UBERON:6005306
+name: stage 4 embryo
+xref: FBbt:00005306
+def: "Nuclear division 10-13. Polar buds divide twice and become tightly grouped at the posterior pole by the end of this stage. Nuclei visible at the rim of the embryo. Stage 4 ends with the beginning of cellularization. Duration at 25 degrees C: approximately 50 minutes (80-130 minutes after egg laying)." [FlyBase:FBrf0089570]
+is_a: UBERON:6000054 ! cleavage stage embryo
+is_a: UBERON:6005305 ! syncytial blastoderm embryo
+relationship: develops_from UBERON:6005301 ! stage 3 embryo
+
+[Term]
+id: UBERON:6005311
+name: stage 5 embryo
+xref: FBbt:00005311
+def: "Stage 5 begins when cellularization starts. Near the end of this stage the pole cells begin to migrate dorsally and ventral midline cells acquire an irregular, wavy appearance. Stage 5 ends when ventral furrow formation becomes apparent. Duration at 25 degrees C: approximately 40 minutes (130-170 minutes after egg laying)." [FBC:DOS, FBC:MA, FlyBase:FBrf0089570]
+synonym: "cellular blastoderm embryo" RELATED []
+is_a: UBERON:6005304 ! blastoderm embryo
+relationship: develops_from UBERON:6005306 ! stage 4 embryo
+
+[Term]
+id: UBERON:6005318
+name: stage 6 embryo
+xref: FBbt:00005318
+def: "Stage 6 begins when the ventral furrow becomes apparent, an event which is followed rapidly by the formation of the cephalic furrow. Stage 6 ends when the pole cells have adopted a dorsal (horizontal) position at the posterior. Duration at 25 degrees C: approximately 10 minutes (170-180 minutes after egg laying)." [FlyBase:FBrf0089570]
+is_a: UBERON:0004734 ! gastrula embryo
+relationship: develops_from UBERON:6005311 ! stage 5 embryo
+
+[Term]
+id: UBERON:6005319
+name: stage 7 embryo
+xref: FBbt:00005319
+def: "Stage 7 begins when the pole cells have adopted a dorsal (horizontal) position at the posterior. Invagination of the anterior and posterior midgut and hindgut follows. The 'discoid plate' carrying the pole cells forms a pocket. Transverse furrows (dorsal folds) form on the dorsal surface. This stage ends when the anterior wall of the amnioproctodeal invagination starts moving anteriorly and the pole cells are no longer visible externally. Duration at 25 degrees C: approximately 10 minutes (180-190 minutes after egg laying)." [FBC:DOS, FlyBase:FBrf0089570]
+is_a: UBERON:0004734 ! gastrula embryo
+relationship: develops_from UBERON:6005318 ! stage 6 embryo
+
+[Term]
+id: UBERON:6005321
+name: extended germ band embryo
+xref: FBbt:00005321
+def: "A collective term for stages 9-12." [FBC:DOS]
+is_a: UBERON:0000922 ! embryo
+relationship: develops_from UBERON:0004734 ! gastrula embryo
+
+[Term]
+id: UBERON:6005331
+name: dorsal closure embryo
+xref: FBbt:00005331
+def: "A collective term for stages 13-15." [FBC:DOS]
+synonym: "contracted germ band embryo" RELATED []
+synonym: "head involution embryo" RELATED []
+is_a: UBERON:0000922 ! embryo
+relationship: develops_from UBERON:6004450 ! late extended germ band embryo
+relationship: develops_from UBERON:6005321 ! extended germ band embryo
+
+[Term]
 id: UBERON:6005378
 name: wing margin
 xref: FBbt:00005378
-namespace: fly_anatomy.ontology
 def: "The border or edge of the wing. It separates the dorsal and ventral compartments." [FBC:gg]
 synonym: "margin" RELATED []
 is_a: UBERON:6007284 ! region of integument
 relationship: part_of UBERON:0000984 ! wing
 
 [Term]
+id: UBERON:6005393
+name: embryonic/larval integumentary system
+xref: FBbt:00005393
+synonym: "larval integumentary system" EXACT []
+is_a: UBERON:0002416 ! integumentary system
+relationship: part_of UBERON:0002548 ! larva
+
+[Term]
+id: UBERON:6005396
+name: adult integumentary system
+xref: FBbt:00005396
+synonym: "adult external" RELATED []
+synonym: "adult integument" EXACT []
+is_a: UBERON:0002416 ! integumentary system
+relationship: part_of UBERON:0007023 ! adult
+
+[Term]
+id: UBERON:6005413
+name: anlage in statu nascendi
+xref: FBbt:00005413
+def: "\"anlagen in statu nascendi\" are domains that do not yet coincide 1:1 with a later organ. Anlagen in statu nascendi are typically defined for the early blastoderm by the expression domains of genes which, in the late blastoderm or later, are expressed in specific anlagen, but initially come on in larger domains." [FlyBase:FBrf0178740]
+synonym: "A0" RELATED []
+is_a: UBERON:0002050 ! developing embryonic structure
+
+[Term]
+id: UBERON:6005425
+name: visual anlage in statu nascendi
+xref: FBbt:00005425
+synonym: "A0Vis" RELATED []
+synonym: "Asn VisSys" RELATED [FBC:DOS]
+is_a: UBERON:6005413 ! anlage in statu nascendi
+relationship: part_of FBbt:01000119 ! anterior ectoderm anlage
+
+[Term]
+id: UBERON:6005427
+name: ectoderm anlage
+xref: FBbt:00005427
+is_a: UBERON:0007688 ! anlage
+
+[Term]
+id: UBERON:6005428
+name: dorsal ectoderm anlage
+xref: FBbt:00005428
+is_a: UBERON:0007688 ! anlage
+relationship: part_of UBERON:6005427 ! ectoderm anlage
+
+[Term]
+id: UBERON:6005434
+name: visual anlage
+xref: FBbt:00005434
+synonym: "A VisSys" RELATED [FBC:DOS]
+synonym: "AVis" RELATED []
+is_a: UBERON:0007688 ! anlage
+relationship: develops_from UBERON:6005425 ! visual anlage in statu nascendi
+relationship: part_of UBERON:6000119 ! anterior ectoderm
+
+[Term]
+id: UBERON:6005436
+name: trunk mesoderm anlage
+xref: FBbt:00005436
+synonym: "Asn/A TrMes" RELATED [FBC:DOS]
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:0007688 ! anlage
+relationship: part_of UBERON:6000104 ! mesoderm anlage
+
+[Term]
+id: UBERON:6005439
+name: clypeo-labral anlage
+xref: FBbt:00005439
+def: "." [FBC:DOS, FBC:VH]
+synonym: "A Cly" RELATED [FBC:DOS]
+synonym: "clypeo-labral specific anlage" RELATED []
+is_a: UBERON:0007688 ! anlage
+relationship: develops_from UBERON:6000094 ! clypeo-labral anlage in statu nascendi
+relationship: part_of UBERON:6000119 ! anterior ectoderm
+
+[Term]
+id: UBERON:6005461
+name: circulatory system primordium
+xref: FBbt:00005461
+synonym: "embryonic/larval circulatory system specific anlage" RELATED []
+is_a: UBERON:0001048 ! primordium
+
+[Term]
+id: UBERON:6005467
+name: lymph gland primordium
+xref: FBbt:00005467
+def: "." [FBC:VH]
+synonym: "lymph gland specific anlage" RELATED []
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:6005461 ! circulatory system primordium
+relationship: develops_from UBERON:6005541 ! cardiogenic mesoderm
+relationship: part_of UBERON:6005331 ! dorsal closure embryo
+
+[Term]
+id: UBERON:6005514
+name: adult clypeo-labral primordium
+xref: FBbt:00005514
+synonym: "A AdCly" RELATED [FBC:DOS]
+is_a: UBERON:6001648 ! embryonic imaginal precursor
+is_a: UBERON:0001048 ! primordium
+relationship: develops_from UBERON:6004203 ! adult clypeo-labral anlage
+relationship: part_of UBERON:6005331 ! dorsal closure embryo
+relationship: part_of UBERON:0000323 ! late embryo
+
+[Term]
+id: UBERON:6005526
+name: dorsal epidermis primordium
+xref: FBbt:00005526
+synonym: "dorEpiP2" RELATED []
+synonym: "dorsal epidermis specific anlage" RELATED []
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:0001048 ! primordium
+is_a: UBERON:6007046 ! dorsal ectoderm derivative
+relationship: develops_from UBERON:6000112 ! dorsal ectoderm
+relationship: part_of UBERON:6014201 ! early extended germ band embryo
+
+[Term]
+id: UBERON:6005533
+name: ventral epidermis primordium
+xref: FBbt:00005533
+synonym: "P2 iVenEp" RELATED [FBC:DOS]
+synonym: "venEpiP2" RELATED []
+is_a: UBERON:0001048 ! primordium
+is_a: UBERON:6025993 ! ventral ectoderm derivative
+relationship: develops_from UBERON:0002346 ! ventral neurectoderm
+relationship: part_of UBERON:6014201 ! early extended germ band embryo
+
+[Term]
+id: UBERON:6005538
+name: clypeo-labral primordium
+xref: FBbt:00005538
+synonym: "ClyP2" RELATED []
+is_a: UBERON:0001048 ! primordium
+is_a: UBERON:6025991 ! anterior ectoderm derivative
+relationship: develops_from UBERON:6005439 ! clypeo-labral anlage
+relationship: part_of UBERON:6014201 ! early extended germ band embryo
+
+[Term]
+id: UBERON:6005541
+name: cardiogenic mesoderm
+xref: FBbt:00005541
+synonym: "CardMes" EXACT []
+synonym: "CardMesP2" EXACT []
+synonym: "P2 CardMes" EXACT [FBC:DOS]
+synonym: "cardiac mesoderm" EXACT []
+synonym: "cardiac mesoderm primordium" RELATED []
+is_a: UBERON:6026002 ! visceral mesoderm derivative
+relationship: develops_from UBERON:6000130 ! visceral mesoderm
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
+
+[Term]
+id: UBERON:6005558
+name: ventral ectoderm
+xref: FBbt:00005558
+def: "." [FlyBase:FBrf0089570]
+synonym: "P2 VenEc" RELATED [FBC:DOS]
+synonym: "venEc" RELATED []
+is_a: UBERON:0005423 ! developing material anatomical entity
+relationship: part_of UBERON:6007045 ! trunk ectoderm
+
+[Term]
+id: UBERON:6005569
+name: presumptive embryonic/larval tracheal system
+xref: FBbt:00005569
+def: "The sum of all the structures in the embryo that will develop into the embryonic/larval tracheal system. This corresponds to the tracheal primordia and their component tracheal branch primordia along with primordia of the spiracles." [FBC:DOS]
+synonym: "embryonic tracheal system" RELATED [FBC:DOS]
+is_a: UBERON:6007116 ! presumptive embryonic/larval system
+
+[Term]
 id: UBERON:6005805
 name: Bolwig organ
 xref: FBbt:00005805
-namespace: fly_anatomy.ontology
 def: "Visual organ of the larva. It consists of a dense cluster of 12 ciliated photoreceptor neurons." [FlyBase:FBrf0089570]
 synonym: "Bolwig's organ" EXACT []
 synonym: "dorsocaudal pharyngeal sense organ" RELATED []
@@ -543,25 +2075,58 @@ is_a: UBERON:6002642 ! embryonic/larval ocular segment sensillum
 is_a: UBERON:0000970 ! photoreceptor
 is_a: UBERON:6007233 ! internal sensillum
 is_a: UBERON:6007242 ! embryonic/larval head sensillum
+relationship: capable_of GO:0050908 ! detection of light stimulus involved in visual perception
+relationship: develops_from UBERON:6005830 ! Bolwig organ primordium
 relationship: part_of UBERON:6001731 ! larval ocular segment
 relationship: part_of UBERON:0000323 ! late embryo
-relationship: develops_from UBERON:6005830 ! Bolwig organ primordium
-relationship: capable_of GO:0050908 ! detection of light stimulus involved in visual perception
+
+[Term]
+id: UBERON:6005830
+name: Bolwig organ primordium
+xref: FBbt:00005830
+def: "." [FBC:DOS, FBC:VH]
+synonym: "Bolwig's organ primordium" EXACT []
+synonym: "P1 BolOrg" RELATED [FBC:DOS]
+is_a: UBERON:0001048 ! primordium
+is_a: UBERON:6025991 ! anterior ectoderm derivative
+relationship: develops_from UBERON:6001059 ! visual primordium
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
+relationship: part_of UBERON:6005331 ! dorsal closure embryo
+
+[Term]
+id: UBERON:6005831
+name: dorsal imaginal precursor
+xref: FBbt:00005831
+is_a: UBERON:6005023 ! imaginal precursor
 
 [Term]
 id: UBERON:6005913
 name: arista lateral
 xref: FBbt:00005913
-namespace: fly_anatomy.ontology
 def: "A bristle-like, non-innervated outgrowth of the arista. Each lateral is formed from the outgrowth of a single polyploid central core cell." [FlyBase:FBrf0137012]
 is_a: UBERON:6004979 ! trichome
 relationship: part_of UBERON:6004519 ! arista
 
 [Term]
+id: UBERON:6006011
+name: pharate adult
+xref: FBbt:00006011
+def: "The developing adult after pupal-adult apolysis, i.e. from stage P8 (when yellow eye color first becomes visible through the pupal case), to eclosion." [FlyBase:FBrf0049147]
+is_a: UBERON:0000468 ! organism
+relationship: develops_from UBERON:0003143 ! pupa
+
+[Term]
+id: UBERON:6006032
+name: mesothoracic tergum primordium
+xref: FBbt:00006032
+def: "Region of the dorsal mesothoracic disc that will develop into the mesothoracic tergum." [FBC:DOS, FlyBase:FBrf0027793]
+is_a: UBERON:0000485 ! cuboidal/columnar epithelium
+relationship: part_of UBERON:6001778 ! wing disc
+
+[Term]
 id: UBERON:6007002
 name: cell
 xref: FBbt:00007002
-namespace: fly_anatomy.ontology
 def: "Anatomical structure that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." [CARO:MAH]
 is_a: UBERON:0000061 ! anatomical structure
 
@@ -569,23 +2134,88 @@ is_a: UBERON:0000061 ! anatomical structure
 id: UBERON:6007008
 name: somatic precursor cell
 xref: FBbt:00007008
-namespace: fly_anatomy.ontology
 is_a: UBERON:0005423 ! developing material anatomical entity
 is_a: UBERON:6100318 ! somatic cell
+
+[Term]
+id: UBERON:6007020
+name: metatarsus of male prothoracic leg
+xref: FBbt:00007020
+def: "First tarsal segment of the male prothoracic leg. In contrast to females, it has a sex comb, central bristle and 5 to 6 transverse rows of bristles (TR)." [FlyBase:FBrf0012178, FlyBase:FBrf0031004, FlyBase:FBrf0219028]
+is_a: UBERON:6004670 ! prothoracic metatarsus
+relationship: part_of UBERON:0003101 ! male organism
+
+[Term]
+id: UBERON:6007045
+name: trunk ectoderm
+xref: FBbt:00007045
+def: "The region of the ectoderm posterior to the cephalic furrow." [FBC:DOS]
+is_a: UBERON:0005423 ! developing material anatomical entity
+relationship: part_of UBERON:0000924 ! ectoderm
 
 [Term]
 id: UBERON:6007046
 name: dorsal ectoderm derivative
 xref: FBbt:00007046
-namespace: fly_anatomy.ontology
 is_a: UBERON:0010000 ! multicellular structure
 relationship: develops_from UBERON:6000112 ! dorsal ectoderm
+
+[Term]
+id: UBERON:6007070
+name: centro-posterior medial synaptic neuropil domain
+xref: FBbt:00007070
+def: "A synaptic neuropil domain of the larval brain located posterior to the medial lobe of the mushroom body. It is separated from the centro-lateral compartment by the peduncle, and from the centro-posterior intermediate compartment by the antenno-cerebral tract to which it is connected via a branch." [FlyBase:FBrf0155900]
+synonym: "CPM" RELATED []
+synonym: "centro-posterior medial neuropil" EXACT []
+synonym: "centro-posterior medial synaptic neuropil domain" EXACT []
+synonym: "larval central complex" EXACT []
+is_a: UBERON:6040007 ! synaptic neuropil domain
+relationship: part_of UBERON:6001925 ! embryonic/larval protocerebrum
+
+[Term]
+id: UBERON:6007116
+name: presumptive embryonic/larval system
+xref: FBbt:00007116
+def: "The sum of all the developing presumptive components of a specific embryonic/larval system in an embryo." [FBC:DOS]
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:6040003 ! non-connected developing system
+relationship: part_of UBERON:0000922 ! embryo
+intersection_of: UBERON:6040003 ! non-connected developing system
+intersection_of: part_of UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:6007145
+name: adult protocerebrum
+xref: FBbt:00007145
+def: "Protocerebrum of the adult brain." [FBC:SPR]
+is_a: UBERON:6003627 ! protocerebrum
+relationship: part_of UBERON:6003011 ! adult labral segment
+relationship: part_of UBERON:6110636 ! adult cerebral ganglion
+
+[Term]
+id: UBERON:6007149
+name: segment of antenna
+xref: FBbt:00007149
+def: "Any appendage segment (UBERON:6007018) that is part of some antenna (UBERON:6004511)." [FBC:auto_generated_definition]
+is_a: UBERON:0010758 ! appendage segment
+relationship: part_of UBERON:0000972 ! antenna
+intersection_of: UBERON:0010758 ! appendage segment
+intersection_of: part_of UBERON:0000972 ! antenna
+
+[Term]
+id: UBERON:6007150
+name: segment of leg
+xref: FBbt:00007150
+def: "Any appendage segment (UBERON:6007018) that is part of some leg (UBERON:6004640)." [FBC:auto_generated_definition]
+is_a: UBERON:0010758 ! appendage segment
+relationship: part_of UBERON:0005895 ! leg
+intersection_of: UBERON:0010758 ! appendage segment
+intersection_of: part_of UBERON:0005895 ! leg
 
 [Term]
 id: UBERON:6007231
 name: external sensillum
 xref: FBbt:00007231
-namespace: fly_anatomy.ontology
 def: "Sensillum which is embedded in the body wall and has a specific cuticular structure involved in the transduction of some sensory signal as a part." [FBC:DOS]
 is_a: UBERON:6005168 ! external sensory organ
 is_a: UBERON:0002536 ! sensillum
@@ -594,7 +2224,6 @@ is_a: UBERON:0002536 ! sensillum
 id: UBERON:6007232
 name: eo-type sensillum
 xref: FBbt:00007232
-namespace: fly_anatomy.ontology
 def: "Sensillum with innervated external cuticular sensory structure consisting of one or more bipolar sensory neurons, and 3 support cells: a trichogen cell which makes the external cuticular sensory structure, a thecogen cell which makes the socket that holds the base of the external sensory structure and a tormogen cell which makes the cuticular matrix (cap) at the tip of the innervating dendrite(s)." [FlyBase:FBrf0089570]
 synonym: "eso" RELATED []
 is_a: UBERON:6007231 ! external sensillum
@@ -603,7 +2232,6 @@ is_a: UBERON:6007231 ! external sensillum
 id: UBERON:6007233
 name: internal sensillum
 xref: FBbt:00007233
-namespace: fly_anatomy.ontology
 def: "Sensillum that is internal to the animal - i.e. having no part that is part of the cuticle." [FBC:DOS]
 is_a: UBERON:0002536 ! sensillum
 is_a: UBERON:6007373 ! internal sense organ
@@ -612,7 +2240,6 @@ is_a: UBERON:6007373 ! internal sense organ
 id: UBERON:6007240
 name: embryonic/larval sensillum
 xref: FBbt:00007240
-namespace: fly_anatomy.ontology
 def: "Any sensillum (UBERON:6007152) that is part of some larva (UBERON:6001727)." [FBC:auto_generated_definition]
 synonym: "larval sensillum" EXACT []
 is_a: UBERON:6002639 ! embryonic/larval sense organ
@@ -625,7 +2252,6 @@ intersection_of: part_of UBERON:0002548 ! larva
 id: UBERON:6007242
 name: embryonic/larval head sensillum
 xref: FBbt:00007242
-namespace: fly_anatomy.ontology
 def: "Any sensillum (UBERON:6007152) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition]
 synonym: "larval head sensillum" NARROW []
 is_a: UBERON:0000963 ! head sensillum
@@ -639,7 +2265,6 @@ intersection_of: part_of UBERON:6001730 ! larval head
 id: UBERON:6007245
 name: cuticular specialization
 xref: FBbt:00007245
-namespace: fly_anatomy.ontology
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of UBERON:0001001 ! cuticle
 
@@ -647,24 +2272,14 @@ relationship: part_of UBERON:0001001 ! cuticle
 id: UBERON:6007248
 name: chorionic specialization
 xref: FBbt:00007248
-namespace: fly_anatomy.ontology
 def: "Specialized structure of the chorion of the egg." [FBC:MMC]
 is_a: UBERON:0000476 ! acellular anatomical structure
 relationship: part_of UBERON:0000920 ! chorion
 
 [Term]
-id: UBERON:6007276
-name: anatomical group
-xref: FBbt:00007276
-namespace: fly_anatomy.ontology
-def: "Material anatomical entity generated by coordinated expression of the organism's own genome and whose component parts are not all connected to each other." [FBC:DOS]
-is_a: UBERON:0000465 ! material anatomical entity
-
-[Term]
 id: UBERON:6007280
 name: embryonic/larval head sense organ
 xref: FBbt:00007280
-namespace: fly_anatomy.ontology
 def: "Any sense organ (UBERON:6005155) that is part of some larval head (UBERON:6001730)." [FBC:auto_generated_definition]
 synonym: "larval head sense organ" EXACT []
 is_a: UBERON:6002639 ! embryonic/larval sense organ
@@ -676,31 +2291,47 @@ intersection_of: part_of UBERON:6001730 ! larval head
 id: UBERON:6007284
 name: region of integument
 xref: FBbt:00007284
-namespace: fly_anatomy.ontology
 def: "A region of cuticle and its underlying epidermis." [FBC:DOS]
 is_a: UBERON:0011216 ! organ system subdivision
 relationship: part_of UBERON:0002416 ! integumentary system
 
 [Term]
+id: UBERON:6007285
+name: segmental subdivision of integument
+xref: FBbt:00007285
+def: "A segmental subdivision of the integument of the whole animal." [FBC:DOS]
+is_a: UBERON:6007284 ! region of integument
+
+[Term]
 id: UBERON:6007288
 name: integumentary specialisation
 xref: FBbt:00007288
-namespace: fly_anatomy.ontology
+is_a: UBERON:6007284 ! region of integument
+
+[Term]
+id: UBERON:6007289
+name: tagmatic subdivision of integument
+xref: FBbt:00007289
 is_a: UBERON:6007284 ! region of integument
 
 [Term]
 id: UBERON:6007290
 name: syncytium
 xref: FBbt:00007290
-namespace: fly_anatomy.ontology
 def: "A multi-nucleate cell having no internal boundaries between nuclei." [FBC:DOS]
 is_a: UBERON:6007002 ! cell
+
+[Term]
+id: UBERON:6007331
+name: segmental subdivision of organ system
+xref: FBbt:00007331
+def: "The part of some organism that is part of some specified segment." [FBC:DOS]
+is_a: UBERON:0011216 ! organ system subdivision
 
 [Term]
 id: UBERON:6007373
 name: internal sense organ
 xref: FBbt:00007373
-namespace: fly_anatomy.ontology
 def: "Sense organ that is internal to the animal - i.e. having no part that is part of the cuticle." [FBC:DOS]
 is_a: UBERON:0000020 ! sense organ
 
@@ -708,7 +2339,6 @@ is_a: UBERON:0000020 ! sense organ
 id: UBERON:6007424
 name: epithelial furrow
 xref: FBbt:00007424
-namespace: fly_anatomy.ontology
 def: "A region of an epithelium that folds inwards from the epithelial plane to form a furrow." [FBC:DOS]
 is_a: UBERON:0000483 ! epithelium
 
@@ -716,73 +2346,180 @@ is_a: UBERON:0000483 ! epithelium
 id: UBERON:6007435
 name: endocrine system component
 xref: FBbt:00007435
-namespace: fly_anatomy.ontology
 def: "Any material anatomical entity (UBERON:6007016) that capable of some endocrine hormone secretion (GO:0060986)." [FBC:auto_generated_definition]
 synonym: "endocrine organ" EXACT []
 is_a: UBERON:0000465 ! material anatomical entity
-relationship: part_of UBERON:0000949 ! endocrine system
 relationship: capable_of GO:0060986 ! endocrine hormone secretion
+relationship: part_of UBERON:0000949 ! endocrine system
 intersection_of: UBERON:0000465 ! material anatomical entity
 intersection_of: capable_of GO:0060986 ! endocrine hormone secretion
 
 [Term]
-id: UBERON:6025990
-name: ectodermal derivative
-xref: FBbt:00025990
-namespace: fly_anatomy.ontology
-def: "Any germ layer derivative (UBERON:6000000) that develops from some ectoderm (UBERON:6000111)." [FBC:DOS, FBC:auto_generated_definition]
-is_a: UBERON:6000000 ! germ layer derivative
-relationship: develops_from UBERON:0000924 ! ectoderm
-intersection_of: UBERON:6000000 ! germ layer derivative
-intersection_of: develops_from UBERON:0000924 ! ectoderm
+id: UBERON:6007692
+name: sensory system
+xref: FBbt:00007692
+def: "An anatomical system consisting of all of the anatomical entities that function in some part of the sensory perception." [FBC:DOS]
+is_a: UBERON:0015203 ! non-connected functional system
+relationship: capable_of GO:0007600 ! sensory perception
+relationship: overlaps UBERON:0001016 ! nervous system
+intersection_of: UBERON:0015203 ! non-connected functional system
+intersection_of: capable_of GO:0007600 ! sensory perception
+
+[Term]
+id: UBERON:6014201
+name: early extended germ band embryo
+xref: FBbt:00014201
+def: "A collective term for stages 9 and 10." [FBC:DOS]
+is_a: UBERON:6005321 ! extended germ band embryo
+relationship: develops_from UBERON:0004734 ! gastrula embryo
+
+[Term]
+id: UBERON:6016022
+name: abdominal histoblast primordium
+xref: FBbt:00016022
+def: "." [FBC:VH]
+synonym: "abdominal histoblast specific anlage" RELATED []
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:0001048 ! primordium
+relationship: develops_from UBERON:6017021 ! abdominal histoblast anlage
+relationship: part_of UBERON:6005331 ! dorsal closure embryo
+
+[Term]
+id: UBERON:6017021
+name: abdominal histoblast anlage
+xref: FBbt:00017021
+def: "." [FBC:VH]
+is_a: UBERON:0002050 ! developing embryonic structure
+is_a: UBERON:0007688 ! anlage
+relationship: develops_from UBERON:6005526 ! dorsal epidermis primordium
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
 
 [Term]
 id: UBERON:6025991
 name: anterior ectoderm derivative
 xref: FBbt:00025991
-namespace: fly_anatomy.ontology
 def: "." [FBC:DOS]
-is_a: UBERON:6025990 ! ectodermal derivative
+is_a: UBERON:0004121 ! ectodermal derivative
 relationship: develops_from UBERON:6000119 ! anterior ectoderm
+
+[Term]
+id: UBERON:6025993
+name: ventral ectoderm derivative
+xref: FBbt:00025993
+def: "." [FBC:DOS]
+is_a: UBERON:0004121 ! ectodermal derivative
+relationship: develops_from UBERON:6005558 ! ventral ectoderm
+
+[Term]
+id: UBERON:6025998
+name: mesodermal derivative
+xref: FBbt:00025998
+def: "Any germ layer derivative (UBERON:6000000) that is part of some late extended germ band embryo (UBERON:6004450) and that develops from some mesoderm (UBERON:6000126)." [FBC:DOS, FBC:auto_generated_definition]
+is_a: UBERON:6000000 ! germ layer derivative
+relationship: develops_from UBERON:0000926 ! mesoderm
+relationship: part_of UBERON:6004450 ! late extended germ band embryo
+intersection_of: UBERON:6000000 ! germ layer derivative
+intersection_of: develops_from UBERON:0000926 ! mesoderm
+intersection_of: part_of UBERON:6004450 ! late extended germ band embryo
+
+[Term]
+id: UBERON:6026000
+name: trunk mesoderm derivative
+xref: FBbt:00026000
+def: "." [FBC:DOS]
+is_a: UBERON:6025998 ! mesodermal derivative
+relationship: develops_from UBERON:6000128 ! trunk mesoderm
+
+[Term]
+id: UBERON:6026002
+name: visceral mesoderm derivative
+xref: FBbt:00026002
+def: "." [FBC:DOS]
+is_a: UBERON:6026000 ! trunk mesoderm derivative
+relationship: develops_from UBERON:6000130 ! visceral mesoderm
+
+[Term]
+id: UBERON:6040003
+name: non-connected developing system
+xref: FBbt:00040003
+def: "The sum of all the anlagen and primordia that will develop into a single system." [FBC:DOS]
+is_a: UBERON:0005423 ! developing material anatomical entity
+is_a: UBERON:0000480 ! anatomical group
+
+[Term]
+id: UBERON:6040005
+name: synaptic neuropil
+xref: FBbt:00040005
+def: "The part of the neuropil consisting largely of synapsing neuron projections." [FlyBase:FBrf0224194]
+is_a: UBERON:0000480 ! anatomical group
+relationship: part_of UBERON:0002606 ! neuropil
+
+[Term]
+id: UBERON:6040007
+name: synaptic neuropil domain
+xref: FBbt:00040007
+def: "Region of synaptic neuropil whose boundaries are largely discontinuities in the density of presynaptic terminals: high density in the synaptic neuropil domain, lower or zero density outside this region. These boundaries often correspond to a boundary with glial sheath, tract neuropil or cortex." [FlyBase:FBrf0155900, FlyBase:FBrf0224194, http://flybrain.neurobio.arizona.edu/Flybrain/html/terms/terms.html]
+synonym: "fibrous neuropil" RELATED []
+synonym: "synaptic neuropil" RELATED []
+is_a: UBERON:0005162 ! multi-cell-component structure
+relationship: part_of UBERON:6040005 ! synaptic neuropil
 
 [Term]
 id: UBERON:6041000
 name: synaptic neuropil block
 xref: FBbt:00041000
-namespace: fly_anatomy.ontology
 def: "A closely associated group of synaptic neuropil domains." [FBC:DOS, FBC:KI]
 synonym: "level 1 neuropil" EXACT [FlyBase:FBrf0224194]
-is_a: UBERON:6007276 ! anatomical group
+is_a: UBERON:0000480 ! anatomical group
 relationship: part_of UBERON:6040005 ! synaptic neuropil
 
 [Term]
 id: UBERON:6057001
 name: anterior-posterior subdivision of organism
 xref: FBbt:00057001
-namespace: fly_anatomy.ontology
 is_a: UBERON:0000475 ! organism subdivision
-
-[Term]
-id: UBERON:6100152
-name: row
-xref: FBbt:00100152
-namespace: fly_anatomy.ontology
-def: "Anatomical group whose component structures are arranged in a row." [FBC:DOS]
-is_a: UBERON:6007276 ! anatomical group
 
 [Term]
 id: UBERON:6100153
 name: sensilla row
 xref: FBbt:00100153
-namespace: fly_anatomy.ontology
 def: "A row of sensilla." [FBC:DOS]
-is_a: UBERON:6100152 ! row
+is_a: UBERON:0034926 ! row
 relationship: composed_primarily_of UBERON:0002536 ! sensillum
 
 [Term]
 id: UBERON:6100318
 name: somatic cell
 xref: FBbt:00100318
-namespace: fly_anatomy.ontology
 is_a: UBERON:6007002 ! cell
+
+[Term]
+id: UBERON:6110636
+name: adult cerebral ganglion
+xref: FBbt:00110636
+def: "The pre-oral neuropils of the adult brain located above, around and partially below the esophagus, including the optic lobes. It excludes the gnathal ganglion. Developmentally, it comprises three fused neuromeres: protocerebrum, deutocerebrum, and tritocerebrum." [FlyBase:FBrf0224194, http://flybrain.neurobio.arizona.edu/Flybrain/html/terms/terms.html]
+synonym: "CRG" EXACT BRAIN_NAME_ABV [FlyBase:FBrf0224194]
+synonym: "SPG" RELATED []
+synonym: "brain" RELATED []
+synonym: "cerebrum" RELATED []
+synonym: "supraesophageal ganglion" RELATED []
+is_a: UBERON:6003626 ! supraesophageal ganglion
+relationship: develops_from UBERON:6001920 ! embryonic/larval brain
+relationship: part_of UBERON:6003624 ! adult brain
+
+[Term]
+id: UBERON:6110746
+name: presumptive prothoracic metatarsus
+xref: FBbt:00110746
+def: "Region of the prothoracic leg disc that will develop into the prothoracic metatarsus." [FlyBase:FBrf0219028]
+is_a: UBERON:0007688 ! anlage
+relationship: part_of UBERON:6001781 ! prothoracic leg disc
+
+[Term]
+id: UBERON:6110811
+name: presumptive arista
+xref: FBbt:00110811
+def: "Region of the antennal disc that will develop into the arista." [FlyBase:FBrf0031004]
+is_a: UBERON:0007688 ! anlage
+relationship: part_of UBERON:6001767 ! antennal disc
 
