@@ -17,6 +17,9 @@ all: uberon-qc
 ##MAKEOBO= owltools $< --remove-axiom-annotations -o -f obo $@.tmp1 && grep -v ^property_value: $@.tmp1 | grep -v ^owl-axioms: > $@.tmp && obo2obo $@.tmp -o $@
 MAKEOBO= owltools $< --add-obo-shorthand-to-properties  -o -f obo $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && obo2obo $@.tmp -o $@
 
+MAKEJSON= owltools $< --add-obo-shorthand-to-properties  -o -f json $@.tmp && mv $@.tmp $@
+MAKEYAML= owltools $< --add-obo-shorthand-to-properties  -o -f yaml $@.tmp && mv $@.tmp $@
+
 # ----------------------------------------
 # TRAVIS TOP LEVEL TARGETS
 # ----------------------------------------
@@ -87,11 +90,11 @@ phenoscape-ext-noimports.owl: phenoscape-ext.owl core.owl
 
 # A portion of uberon is maintained in a separate github repo - we merge that in here
 # as part of the release
-insect-anatomy.owl: uberon_edit.obo
-	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/insect-anatomy-ontology/master/insect-anatomy-edit.owl -O $@ && touch $@
+insect-anatomy.obo: uberon_edit.obo
+	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/insect-anatomy-ontology/master/insect-anatomy-edit.obo -O $@ && touch $@
 
 # including the imports would lead to circularity, so we remove these here
-insect-anatomy-noimports.owl: insect-anatomy.owl core.owl
+insect-anatomy-noimports.owl: insect-anatomy.obo core.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
 ## MERGED UNREASONED ONTOLOGY
@@ -135,6 +138,17 @@ uberon.owl: ext.owl
 uberon.obo: uberon.owl
 	$(MAKEOBO)
 #	owltools $< -o -f obo $@.tmp && obo2obo $@.tmp -o $@
+
+uberon.json: uberon.owl
+	$(MAKEJSON)
+.PRECIOUS: uberon.json
+
+uberon.yaml: uberon.owl
+	$(MAKEYAML)
+.PRECIOUS: uberon.yaml
+
+uberon.json.gz: uberon.json
+	gzip -c $< > $@.tmp && mv $@.tmp $@
 
 
 # ----------------------------------------
@@ -1396,6 +1410,10 @@ modules/%.csv: $(PSRC)
 	blip-findall -i $< -r pext  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_tuple($*)" > $@.tmp && mv $@.tmp $@
 .PRECIOUS: modules/%.csv
 
+modules/new-%.csv: $(PSRC)
+	blip-findall -i $< -r pext  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_tuple($*)" > $@.tmp && mv $@.tmp $@
+.PRECIOUS: modules/%.csv
+
 $(PATTERNDIR)/%.yaml: patterns/uberon_patterns.pro
 	blip-findall -r uberonp  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_yaml($*),fail" > $@.tmp && mv $@.tmp $@
 .PRECIOUS: $(PATTERNDIR)/%.yaml
@@ -1408,10 +1426,11 @@ modules/missing.txt:
 
 
 
-all_modules: all_modules_omn all_modules_owl all_modules_obo
+all_modules: all_modules_omn all_modules_owl all_modules_obo all_modules_new
 all_modules_owl: $(patsubst %, $(MODDIR)/%.owl, $(MODS))
 all_modules_omn: $(patsubst %, $(MODDIR)/%.omn, $(MODS))
 all_modules_obo: $(patsubst %, $(MODDIR)/%.obo, $(MODS))
+all_modules_new: $(patsubst %, $(MODDIR)/%-new.obo, $(MODS))
 
 $(MODDIR)/%.omn: $(MODDIR)/%.csv $(PATTERNDIR)/%.yaml
 	apply-pattern.py -s label -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p $(PATTERNDIR)/$*.yaml -G $(MODDIR)/$*-gci.owl > $@.tmp && mv $@.tmp $@
@@ -1427,6 +1446,9 @@ $(MODDIR)/%.owl: $(MODDIR)/%.rdf
 
 $(MODDIR)/%.obo: $(MODDIR)/%.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+
+$(MODDIR)/%-new.obo: $(MODDIR)/%.owl uberon_edit.owl
+	owltools --use-catalog $^ --diff -f obo -s -u  --o1r $@ --o2r $(MODDIR)/%-missing.obo
 
 # ----------------------------------------
 # DOCUMENTATION
