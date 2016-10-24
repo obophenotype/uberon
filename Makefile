@@ -5,6 +5,7 @@ DATE = `date +%Y-%m-%d`
 RELEASE = $(OBO)/uberon/releases/`date +%Y-%m-%d`
 QELK = --silence-elk
 UCAT = --use-catalog
+ROBOT = ROBOT_JAVA_ARGS=-Xmx12G robot
 
 all: uberon-qc
 
@@ -110,11 +111,22 @@ unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl insect-anatomy-noim
 # ----------------------------------------
 
 # ext.owl is the release file that includes full imports and inter-ontology axioms
-ext.owl: unreasoned.owl
-	robot reason -i $< -r elk relax reduce -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@
+#ext.owl: unreasoned.owl
+#	$(ROBOT) reason -i $< -r elk relax reduce -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@
+
+## TESTING - NEW
+is_ok: unreasoned.owl
+	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+
+materialized.owl: unreasoned.owl is_ok
+	$(ROBOT) materialize -T basic_properties.txt -i $< -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
+.PRECIOUS: materialized.owl
+
+ext.owl: materialized.owl
+	$(ROBOT) reduce -i $< -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
 
 RELSIM = BFO:0000050 RO:0002202 immediate_transformation_of
-# ext.obo is a relation subset of this
+# ext.obo is a relation subset of this. TODO: use case?
 ext.obo: ext.owl
 	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f $(RELSLIM) // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
 
@@ -207,7 +219,7 @@ ro.owl: $(EDITSRC) bspo.owl
 ro_import.owl: ro.owl $(EDITSRC) reports/uberon_edit-object-properties.csv
 ##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
 ##	owltools --use-catalog $< --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -t Domain --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --remove-dangling --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
-	robot extract -i $< -m STAR -T reports/uberon_edit-object-properties.csv annotate -O $(OBO)/uberon/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@
+	$(ROBOT) extract -i $< -m STAR -T reports/uberon_edit-object-properties.csv annotate -O $(OBO)/uberon/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@
 
 bless-mirrors:
 	touch go.owl chebi.owl ncbitaxon.obo
@@ -424,7 +436,7 @@ uberon-taxon-constraints.owl: uberon-taxon-constraints.obo
 # run subset of syntax and structure checks used by GO
 # (see .travis.yml for dependencies)
 
-DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check
+DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check is-symmetric-check
 %.obo-gocheck: %.obo GO.xrf_abbs
 	check-obo-for-standard-release.pl --xref-abbs GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
 
@@ -870,7 +882,7 @@ unreasoned-composite-%.owl: $(MBASE)
 
 # stage 2 (final) of composite build: reason
 composite-%.owl: unreasoned-composite-%.owl
-	robot reason -r ELK -i $< relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 
 # composute obo is made from owl

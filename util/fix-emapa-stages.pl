@@ -2,7 +2,7 @@
 
 ## blip-findall -r mmusdv "entity_xref_idspace(E,X,'EMAPA'),concat_atom([_,Frag],:,X),format('s@~w@~w@g;~n',[Frag,E]),fail"
 
-s@relationship: .* TS28@!!!@;
+s@(relationship: .* TS28)@!!! $1@;
 
 if (m@^name:@) {
 }

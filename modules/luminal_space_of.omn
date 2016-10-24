@@ -2,26 +2,26 @@ Prefix: : <http://purl.obolibrary.org/obo/>
 Prefix: IAO: <http://purl.obolibrary.org/obo/IAO_>
 Prefix: DOSDP: <http://geneontology.org/foo/>
 Prefix: oio: <http://www.geneontology.org/formats/oboInOwl#>
-Prefix: PO: <http://purl.obolibrary.org/obo/PO_>
-Prefix: GOCHE: <http://purl.obolibrary.org/obo/GOCHE_>
-Prefix: PR: <http://purl.obolibrary.org/obo/PR_>
-Prefix: NPO: <http://purl.obolibrary.org/obo/NPO_>
-Prefix: ExO: <http://purl.obolibrary.org/obo/ExO_>
-Prefix: CL: <http://purl.obolibrary.org/obo/CL_>
 Prefix: OBA: <http://purl.obolibrary.org/obo/OBA_>
-Prefix: GO: <http://purl.obolibrary.org/obo/GO_>
-Prefix: ZECO: <http://purl.obolibrary.org/obo/ZECO_>
+Prefix: SO: <http://purl.obolibrary.org/obo/SO_>
+Prefix: GOCHE: <http://purl.obolibrary.org/obo/GOCHE_>
+Prefix: NCIT: <http://purl.obolibrary.org/obo/NCIT_>
 Prefix: UBERON: <http://purl.obolibrary.org/obo/UBERON_>
-Prefix: CHEBI: <http://purl.obolibrary.org/obo/CHEBI_>
-Prefix: ECTO: <http://purl.obolibrary.org/obo/ECTO_>
+Prefix: XCO: <http://purl.obolibrary.org/obo/XCO_>
+Prefix: GO: <http://purl.obolibrary.org/obo/GO_>
+Prefix: NBO: <http://purl.obolibrary.org/obo/NBO_>
 Prefix: RO: <http://purl.obolibrary.org/obo/RO_>
 Prefix: BFO: <http://purl.obolibrary.org/obo/BFO_>
-Prefix: NBO: <http://purl.obolibrary.org/obo/NBO_>
+Prefix: CHEBI: <http://purl.obolibrary.org/obo/CHEBI_>
+Prefix: PO: <http://purl.obolibrary.org/obo/PO_>
+Prefix: ECTO: <http://purl.obolibrary.org/obo/ECTO_>
 Prefix: ENVO: <http://purl.obolibrary.org/obo/ENVO_>
 Prefix: PATO: <http://purl.obolibrary.org/obo/PATO_>
-Prefix: NCIT: <http://purl.obolibrary.org/obo/NCIT_>
-Prefix: SO: <http://purl.obolibrary.org/obo/SO_>
-Prefix: XCO: <http://purl.obolibrary.org/obo/XCO_>
+Prefix: ZECO: <http://purl.obolibrary.org/obo/ZECO_>
+Prefix: CL: <http://purl.obolibrary.org/obo/CL_>
+Prefix: PR: <http://purl.obolibrary.org/obo/PR_>
+Prefix: ExO: <http://purl.obolibrary.org/obo/ExO_>
+Prefix: NPO: <http://purl.obolibrary.org/obo/NPO_>
 
  ## Auto-generated
 
@@ -30,6 +30,10 @@ AnnotationProperty: IAO:0000115
 AnnotationProperty: luminal_space_of/structure
 AnnotationProperty: DOSDP:applies-pattern
 AnnotationProperty: oio:hasRelatedSynonym
+AnnotationProperty: oio:hasExactSynonym
+AnnotationProperty: oio:hasExactSynonym
+AnnotationProperty: oio:hasExactSynonym
+AnnotationProperty: oio:hasExactSynonym
 Class: UBERON:0000464 ## anatomical space
 ObjectProperty: RO:0002572 ## luminal_space_of
 ## Auto-generated classes
@@ -38,316 +42,528 @@ Class: UBERON:0000165 ## mouth
 ## {"structure": "UBERON:0000165"}
 Class: UBERON:0000167
  Annotations: IAO:0000115 "The luminal space within the mouth."
+ Annotations: oio:hasExactSynonym "mouth lumen"
+ Annotations: oio:hasExactSynonym "lumen of mouth"
+ Annotations: oio:hasExactSynonym "cavity of mouth"
+ Annotations: oio:hasExactSynonym "mouth cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000165 ## 'anatomical space' and 'luminal_space_of' some mouth
 
 Class: UBERON:0006562 ## pharynx
 ## {"structure": "UBERON:0006562"}
 Class: UBERON:0001731
  Annotations: IAO:0000115 "The luminal space within the pharynx."
+ Annotations: oio:hasExactSynonym "pharynx lumen"
+ Annotations: oio:hasExactSynonym "lumen of pharynx"
+ Annotations: oio:hasExactSynonym "cavity of pharynx"
+ Annotations: oio:hasExactSynonym "pharynx cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0006562 ## 'anatomical space' and 'luminal_space_of' some pharynx
 
 Class: UBERON:0001049 ## neural tube
 ## {"structure": "UBERON:0001049"}
 Class: UBERON:0003842
  Annotations: IAO:0000115 "The luminal space within the neural tube."
+ Annotations: oio:hasExactSynonym "neural tube lumen"
+ Annotations: oio:hasExactSynonym "lumen of neural tube"
+ Annotations: oio:hasExactSynonym "cavity of neural tube"
+ Annotations: oio:hasExactSynonym "neural tube cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001049 ## 'anatomical space' and 'luminal_space_of' some neural tube
 
 Class: UBERON:0001490 ## elbow joint
 ## {"structure": "UBERON:0001490"}
 Class: UBERON:0004099
  Annotations: IAO:0000115 "The luminal space within the elbow joint."
+ Annotations: oio:hasExactSynonym "elbow joint lumen"
+ Annotations: oio:hasExactSynonym "lumen of elbow joint"
+ Annotations: oio:hasExactSynonym "cavity of elbow joint"
+ Annotations: oio:hasExactSynonym "elbow joint cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001490 ## 'anatomical space' and 'luminal_space_of' some elbow joint
 
 Class: UBERON:0005449 ## greater sac
 ## {"structure": "UBERON:0005449"}
 Class: UBERON:0005450
  Annotations: IAO:0000115 "The luminal space within the greater sac."
+ Annotations: oio:hasExactSynonym "greater sac lumen"
+ Annotations: oio:hasExactSynonym "lumen of greater sac"
+ Annotations: oio:hasExactSynonym "cavity of greater sac"
+ Annotations: oio:hasExactSynonym "greater sac cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0005449 ## 'anatomical space' and 'luminal_space_of' some greater sac
 
 Class: UBERON:0005426 ## lens vesicle
 ## {"structure": "UBERON:0005426"}
 Class: UBERON:0005688
  Annotations: IAO:0000115 "The luminal space within the lens vesicle."
+ Annotations: oio:hasExactSynonym "lens vesicle lumen"
+ Annotations: oio:hasExactSynonym "lumen of lens vesicle"
+ Annotations: oio:hasExactSynonym "cavity of lens vesicle"
+ Annotations: oio:hasExactSynonym "lens vesicle cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0005426 ## 'anatomical space' and 'luminal_space_of' some lens vesicle
 
 Class: UBERON:0006575 ## mantle
 ## {"structure": "UBERON:0006575"}
 Class: UBERON:0006580
  Annotations: IAO:0000115 "The luminal space within the mantle."
+ Annotations: oio:hasExactSynonym "mantle lumen"
+ Annotations: oio:hasExactSynonym "lumen of mantle"
+ Annotations: oio:hasExactSynonym "cavity of mantle"
+ Annotations: oio:hasExactSynonym "mantle cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0006575 ## 'anatomical space' and 'luminal_space_of' some mantle
 
 Class: UBERON:0003127 ## open tracheal system trachea
 ## {"structure": "UBERON:0003127"}
 Class: UBERON:0006832
  Annotations: IAO:0000115 "The luminal space within the open tracheal system trachea."
+ Annotations: oio:hasExactSynonym "open tracheal system trachea lumen"
+ Annotations: oio:hasExactSynonym "lumen of open tracheal system trachea"
+ Annotations: oio:hasExactSynonym "cavity of open tracheal system trachea"
+ Annotations: oio:hasExactSynonym "open tracheal system trachea cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0003127 ## 'anatomical space' and 'luminal_space_of' some open tracheal system trachea
 
 Class: UBERON:0003126 ## trachea
 ## {"structure": "UBERON:0003126"}
 Class: UBERON:0006833
  Annotations: IAO:0000115 "The luminal space within the trachea."
+ Annotations: oio:hasExactSynonym "trachea lumen"
+ Annotations: oio:hasExactSynonym "lumen of trachea"
+ Annotations: oio:hasExactSynonym "cavity of trachea"
+ Annotations: oio:hasExactSynonym "trachea cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0003126 ## 'anatomical space' and 'luminal_space_of' some trachea
 
 Class: UBERON:0001555 ## digestive tract
 ## {"structure": "UBERON:0001555"}
 Class: UBERON:0006909
  Annotations: IAO:0000115 "The luminal space within the digestive tract."
+ Annotations: oio:hasExactSynonym "digestive tract lumen"
+ Annotations: oio:hasExactSynonym "lumen of digestive tract"
+ Annotations: oio:hasExactSynonym "cavity of digestive tract"
+ Annotations: oio:hasExactSynonym "digestive tract cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001555 ## 'anatomical space' and 'luminal_space_of' some digestive tract
 
 Class: UBERON:0001045 ## midgut
 ## {"structure": "UBERON:0001045"}
 Class: UBERON:0007147
  Annotations: IAO:0000115 "The luminal space within the midgut."
+ Annotations: oio:hasExactSynonym "midgut lumen"
+ Annotations: oio:hasExactSynonym "lumen of midgut"
+ Annotations: oio:hasExactSynonym "cavity of midgut"
+ Annotations: oio:hasExactSynonym "midgut cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001045 ## 'anatomical space' and 'luminal_space_of' some midgut
 
 Class: UBERON:0001046 ## hindgut
 ## {"structure": "UBERON:0001046"}
 Class: UBERON:0007148
  Annotations: IAO:0000115 "The luminal space within the hindgut."
+ Annotations: oio:hasExactSynonym "hindgut lumen"
+ Annotations: oio:hasExactSynonym "lumen of hindgut"
+ Annotations: oio:hasExactSynonym "cavity of hindgut"
+ Annotations: oio:hasExactSynonym "hindgut cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001046 ## 'anatomical space' and 'luminal_space_of' some hindgut
 
 Class: UBERON:0000159 ## anal canal
 ## {"structure": "UBERON:0000159"}
 Class: UBERON:0007158
  Annotations: IAO:0000115 "The luminal space within the anal canal."
+ Annotations: oio:hasExactSynonym "anal canal lumen"
+ Annotations: oio:hasExactSynonym "lumen of anal canal"
+ Annotations: oio:hasExactSynonym "cavity of anal canal"
+ Annotations: oio:hasExactSynonym "anal canal cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000159 ## 'anatomical space' and 'luminal_space_of' some anal canal
 
 Class: UBERON:0001155 ## colon
 ## {"structure": "UBERON:0001155"}
 Class: UBERON:0007159
  Annotations: IAO:0000115 "The luminal space within the colon."
+ Annotations: oio:hasExactSynonym "colon lumen"
+ Annotations: oio:hasExactSynonym "lumen of colon"
+ Annotations: oio:hasExactSynonym "cavity of colon"
+ Annotations: oio:hasExactSynonym "colon cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001155 ## 'anatomical space' and 'luminal_space_of' some colon
 
 Class: UBERON:0007499 ## epithelial sac
 ## {"structure": "UBERON:0007499"}
 Class: UBERON:0007473
  Annotations: IAO:0000115 "The luminal space within the epithelial sac."
+ Annotations: oio:hasExactSynonym "epithelial sac lumen"
+ Annotations: oio:hasExactSynonym "lumen of epithelial sac"
+ Annotations: oio:hasExactSynonym "cavity of epithelial sac"
+ Annotations: oio:hasExactSynonym "epithelial sac cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0007499 ## 'anatomical space' and 'luminal_space_of' some epithelial sac
 
 Class: UBERON:0004364 ## ectoplacental cone
 ## {"structure": "UBERON:0004364"}
 Class: UBERON:0008851
  Annotations: IAO:0000115 "The luminal space within the ectoplacental cone."
+ Annotations: oio:hasExactSynonym "ectoplacental cone lumen"
+ Annotations: oio:hasExactSynonym "lumen of ectoplacental cone"
+ Annotations: oio:hasExactSynonym "cavity of ectoplacental cone"
+ Annotations: oio:hasExactSynonym "ectoplacental cone cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0004364 ## 'anatomical space' and 'luminal_space_of' some ectoplacental cone
 
 Class: UBERON:0002291 ## central canal of spinal cord
 ## {"structure": "UBERON:0002291"}
 Class: UBERON:0009572
  Annotations: IAO:0000115 "The luminal space within the central canal of spinal cord."
+ Annotations: oio:hasExactSynonym "central canal of spinal cord lumen"
+ Annotations: oio:hasExactSynonym "lumen of central canal of spinal cord"
+ Annotations: oio:hasExactSynonym "cavity of central canal of spinal cord"
+ Annotations: oio:hasExactSynonym "central canal of spinal cord cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0002291 ## 'anatomical space' and 'luminal_space_of' some central canal of spinal cord
 
 Class: UBERON:0000163 ## embryonic cloaca
 ## {"structure": "UBERON:0000163"}
 Class: UBERON:0009669
  Annotations: IAO:0000115 "The luminal space within the embryonic cloaca."
+ Annotations: oio:hasExactSynonym "embryonic cloaca lumen"
+ Annotations: oio:hasExactSynonym "lumen of embryonic cloaca"
+ Annotations: oio:hasExactSynonym "cavity of embryonic cloaca"
+ Annotations: oio:hasExactSynonym "embryonic cloaca cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000163 ## 'anatomical space' and 'luminal_space_of' some embryonic cloaca
 
 Class: UBERON:0001052 ## rectum
 ## {"structure": "UBERON:0001052"}
 Class: UBERON:0009670
  Annotations: IAO:0000115 "The luminal space within the rectum."
+ Annotations: oio:hasExactSynonym "rectum lumen"
+ Annotations: oio:hasExactSynonym "lumen of rectum"
+ Annotations: oio:hasExactSynonym "cavity of rectum"
+ Annotations: oio:hasExactSynonym "rectum cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001052 ## 'anatomical space' and 'luminal_space_of' some rectum
 
 Class: UBERON:0000930 ## stomodeum
 ## {"structure": "UBERON:0000930"}
 Class: UBERON:0009715
  Annotations: IAO:0000115 "The luminal space within the stomodeum."
+ Annotations: oio:hasExactSynonym "stomodeum lumen"
+ Annotations: oio:hasExactSynonym "lumen of stomodeum"
+ Annotations: oio:hasExactSynonym "cavity of stomodeum"
+ Annotations: oio:hasExactSynonym "stomodeum cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000930 ## 'anatomical space' and 'luminal_space_of' some stomodeum
 
 Class: UBERON:0008852 ## visceral yolk sac
 ## {"structure": "UBERON:0008852"}
 Class: UBERON:0009743
  Annotations: IAO:0000115 "The luminal space within the visceral yolk sac."
+ Annotations: oio:hasExactSynonym "visceral yolk sac lumen"
+ Annotations: oio:hasExactSynonym "lumen of visceral yolk sac"
+ Annotations: oio:hasExactSynonym "cavity of visceral yolk sac"
+ Annotations: oio:hasExactSynonym "visceral yolk sac cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0008852 ## 'anatomical space' and 'luminal_space_of' some visceral yolk sac
 
 Class: UBERON:0000164 ## primitive urogenital sinus
 ## {"structure": "UBERON:0000164"}
 Class: UBERON:0009844
  Annotations: IAO:0000115 "The luminal space within the primitive urogenital sinus."
+ Annotations: oio:hasExactSynonym "primitive urogenital sinus lumen"
+ Annotations: oio:hasExactSynonym "lumen of primitive urogenital sinus"
+ Annotations: oio:hasExactSynonym "cavity of primitive urogenital sinus"
+ Annotations: oio:hasExactSynonym "primitive urogenital sinus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000164 ## 'anatomical space' and 'luminal_space_of' some primitive urogenital sinus
 
 Class: UBERON:0004714 ## septum pellucidum
 ## {"structure": "UBERON:0004714"}
 Class: UBERON:0009857
  Annotations: IAO:0000115 "The luminal space within the septum pellucidum."
+ Annotations: oio:hasExactSynonym "septum pellucidum lumen"
+ Annotations: oio:hasExactSynonym "lumen of septum pellucidum"
+ Annotations: oio:hasExactSynonym "cavity of septum pellucidum"
+ Annotations: oio:hasExactSynonym "septum pellucidum cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0004714 ## 'anatomical space' and 'luminal_space_of' some septum pellucidum
 
 Class: UBERON:0001255 ## urinary bladder
 ## {"structure": "UBERON:0001255"}
 Class: UBERON:0009958
  Annotations: IAO:0000115 "The luminal space within the urinary bladder."
+ Annotations: oio:hasExactSynonym "urinary bladder lumen"
+ Annotations: oio:hasExactSynonym "lumen of urinary bladder"
+ Annotations: oio:hasExactSynonym "cavity of urinary bladder"
+ Annotations: oio:hasExactSynonym "urinary bladder cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001255 ## 'anatomical space' and 'luminal_space_of' some urinary bladder
 
 Class: UBERON:0001729 ## oropharynx
 ## {"structure": "UBERON:0001729"}
 Class: UBERON:0009959
  Annotations: IAO:0000115 "The luminal space within the oropharynx."
+ Annotations: oio:hasExactSynonym "oropharynx lumen"
+ Annotations: oio:hasExactSynonym "lumen of oropharynx"
+ Annotations: oio:hasExactSynonym "cavity of oropharynx"
+ Annotations: oio:hasExactSynonym "oropharynx cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001729 ## 'anatomical space' and 'luminal_space_of' some oropharynx
 
 Class: UBERON:0005356 ## Rathke's pouch
 ## {"structure": "UBERON:0005356"}
 Class: UBERON:0009974
  Annotations: IAO:0000115 "The luminal space within the Rathke's pouch."
+ Annotations: oio:hasExactSynonym "Rathke's pouch lumen"
+ Annotations: oio:hasExactSynonym "lumen of Rathke's pouch"
+ Annotations: oio:hasExactSynonym "cavity of Rathke's pouch"
+ Annotations: oio:hasExactSynonym "Rathke's pouch cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0005356 ## 'anatomical space' and 'luminal_space_of' some Rathke's pouch
 
 Class: UBERON:0008867 ## trabecular network of bone
 ## {"structure": "UBERON:0008867"}
 Class: UBERON:0010076
  Annotations: IAO:0000115 "The luminal space within the trabecular network of bone."
+ Annotations: oio:hasExactSynonym "trabecular network of bone lumen"
+ Annotations: oio:hasExactSynonym "lumen of trabecular network of bone"
+ Annotations: oio:hasExactSynonym "cavity of trabecular network of bone"
+ Annotations: oio:hasExactSynonym "trabecular network of bone cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0008867 ## 'anatomical space' and 'luminal_space_of' some trabecular network of bone
 
 Class: UBERON:0001473 ## lymphatic vessel
 ## {"structure": "UBERON:0001473"}
 Class: UBERON:0010160
  Annotations: IAO:0000115 "The luminal space within the lymphatic vessel."
+ Annotations: oio:hasExactSynonym "lymphatic vessel lumen"
+ Annotations: oio:hasExactSynonym "lumen of lymphatic vessel"
+ Annotations: oio:hasExactSynonym "cavity of lymphatic vessel"
+ Annotations: oio:hasExactSynonym "lymphatic vessel cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001473 ## 'anatomical space' and 'luminal_space_of' some lymphatic vessel
 
 Class: UBERON:0001981 ## blood vessel
 ## {"structure": "UBERON:0001981"}
 Class: UBERON:0010161
  Annotations: IAO:0000115 "The luminal space within the blood vessel."
+ Annotations: oio:hasExactSynonym "blood vessel lumen"
+ Annotations: oio:hasExactSynonym "lumen of blood vessel"
+ Annotations: oio:hasExactSynonym "cavity of blood vessel"
+ Annotations: oio:hasExactSynonym "blood vessel cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001981 ## 'anatomical space' and 'luminal_space_of' some blood vessel
 
 Class: UBERON:0001051 ## hypopharynx
 ## {"structure": "UBERON:0001051"}
 Class: UBERON:0010384
  Annotations: IAO:0000115 "The luminal space within the hypopharynx."
+ Annotations: oio:hasExactSynonym "hypopharynx lumen"
+ Annotations: oio:hasExactSynonym "lumen of hypopharynx"
+ Annotations: oio:hasExactSynonym "cavity of hypopharynx"
+ Annotations: oio:hasExactSynonym "hypopharynx cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001051 ## 'anatomical space' and 'luminal_space_of' some hypopharynx
 
 Class: UBERON:0000057 ## urethra
 ## {"structure": "UBERON:0000057"}
 Class: UBERON:0010390
  Annotations: IAO:0000115 "The luminal space within the urethra."
+ Annotations: oio:hasExactSynonym "urethra lumen"
+ Annotations: oio:hasExactSynonym "lumen of urethra"
+ Annotations: oio:hasExactSynonym "cavity of urethra"
+ Annotations: oio:hasExactSynonym "urethra cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000057 ## 'anatomical space' and 'luminal_space_of' some urethra
 
 Class: UBERON:0001043 ## esophagus
 ## {"structure": "UBERON:0001043"}
 Class: UBERON:0011566
  Annotations: IAO:0000115 "The luminal space within the esophagus."
+ Annotations: oio:hasExactSynonym "esophagus lumen"
+ Annotations: oio:hasExactSynonym "lumen of esophagus"
+ Annotations: oio:hasExactSynonym "cavity of esophagus"
+ Annotations: oio:hasExactSynonym "esophagus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001043 ## 'anatomical space' and 'luminal_space_of' some esophagus
 
 Class: UBERON:0002087 ## atrioventricular canal
 ## {"structure": "UBERON:0002087"}
 Class: UBERON:0011819
  Annotations: IAO:0000115 "The luminal space within the atrioventricular canal."
+ Annotations: oio:hasExactSynonym "atrioventricular canal lumen"
+ Annotations: oio:hasExactSynonym "lumen of atrioventricular canal"
+ Annotations: oio:hasExactSynonym "cavity of atrioventricular canal"
+ Annotations: oio:hasExactSynonym "atrioventricular canal cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0002087 ## 'anatomical space' and 'luminal_space_of' some atrioventricular canal
 
 Class: UBERON:0002185 ## bronchus
 ## {"structure": "UBERON:0002185"}
 Class: UBERON:0012082
  Annotations: IAO:0000115 "The luminal space within the bronchus."
+ Annotations: oio:hasExactSynonym "bronchus lumen"
+ Annotations: oio:hasExactSynonym "lumen of bronchus"
+ Annotations: oio:hasExactSynonym "cavity of bronchus"
+ Annotations: oio:hasExactSynonym "bronchus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0002185 ## 'anatomical space' and 'luminal_space_of' some bronchus
 
 Class: UBERON:0002182 ## main bronchus
 ## {"structure": "UBERON:0002182"}
 Class: UBERON:0012083
  Annotations: IAO:0000115 "The luminal space within the main bronchus."
+ Annotations: oio:hasExactSynonym "main bronchus lumen"
+ Annotations: oio:hasExactSynonym "lumen of main bronchus"
+ Annotations: oio:hasExactSynonym "cavity of main bronchus"
+ Annotations: oio:hasExactSynonym "main bronchus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0002182 ## 'anatomical space' and 'luminal_space_of' some main bronchus
 
 Class: UBERON:0002183 ## lobar bronchus
 ## {"structure": "UBERON:0002183"}
 Class: UBERON:0012084
  Annotations: IAO:0000115 "The luminal space within the lobar bronchus."
+ Annotations: oio:hasExactSynonym "lobar bronchus lumen"
+ Annotations: oio:hasExactSynonym "lumen of lobar bronchus"
+ Annotations: oio:hasExactSynonym "cavity of lobar bronchus"
+ Annotations: oio:hasExactSynonym "lobar bronchus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0002183 ## 'anatomical space' and 'luminal_space_of' some lobar bronchus
 
 Class: UBERON:0002184 ## segmental bronchus
 ## {"structure": "UBERON:0002184"}
 Class: UBERON:0012085
  Annotations: IAO:0000115 "The luminal space within the segmental bronchus."
+ Annotations: oio:hasExactSynonym "segmental bronchus lumen"
+ Annotations: oio:hasExactSynonym "lumen of segmental bronchus"
+ Annotations: oio:hasExactSynonym "cavity of segmental bronchus"
+ Annotations: oio:hasExactSynonym "segmental bronchus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0002184 ## 'anatomical space' and 'luminal_space_of' some segmental bronchus
 
 Class: UBERON:0008961 ## parabronchus
 ## {"structure": "UBERON:0008961"}
 Class: UBERON:0012086
  Annotations: IAO:0000115 "The luminal space within the parabronchus."
+ Annotations: oio:hasExactSynonym "parabronchus lumen"
+ Annotations: oio:hasExactSynonym "lumen of parabronchus"
+ Annotations: oio:hasExactSynonym "cavity of parabronchus"
+ Annotations: oio:hasExactSynonym "parabronchus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0008961 ## 'anatomical space' and 'luminal_space_of' some parabronchus
 
 Class: UBERON:0012116 ## nutrient foramen conduit
 ## {"structure": "UBERON:0012116"}
 Class: UBERON:0012117
  Annotations: IAO:0000115 "The luminal space within the nutrient foramen conduit."
+ Annotations: oio:hasExactSynonym "nutrient foramen conduit lumen"
+ Annotations: oio:hasExactSynonym "lumen of nutrient foramen conduit"
+ Annotations: oio:hasExactSynonym "cavity of nutrient foramen conduit"
+ Annotations: oio:hasExactSynonym "nutrient foramen conduit cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0012116 ## 'anatomical space' and 'luminal_space_of' some nutrient foramen conduit
 
 Class: UBERON:0005305 ## thyroid follicle
 ## {"structure": "UBERON:0005305"}
 Class: UBERON:0012246
  Annotations: IAO:0000115 "The luminal space within the thyroid follicle."
+ Annotations: oio:hasExactSynonym "thyroid follicle lumen"
+ Annotations: oio:hasExactSynonym "lumen of thyroid follicle"
+ Annotations: oio:hasExactSynonym "cavity of thyroid follicle"
+ Annotations: oio:hasExactSynonym "thyroid follicle cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0005305 ## 'anatomical space' and 'luminal_space_of' some thyroid follicle
 
 Class: UBERON:0002068 ## urachus
 ## {"structure": "UBERON:0002068"}
 Class: UBERON:0012351
  Annotations: IAO:0000115 "The luminal space within the urachus."
+ Annotations: oio:hasExactSynonym "urachus lumen"
+ Annotations: oio:hasExactSynonym "lumen of urachus"
+ Annotations: oio:hasExactSynonym "cavity of urachus"
+ Annotations: oio:hasExactSynonym "urachus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0002068 ## 'anatomical space' and 'luminal_space_of' some urachus
 
 Class: UBERON:0000162 ## cloaca
 ## {"structure": "UBERON:0000162"}
 Class: UBERON:0012463
  Annotations: IAO:0000115 "The luminal space within the cloaca."
+ Annotations: oio:hasExactSynonym "cloaca lumen"
+ Annotations: oio:hasExactSynonym "lumen of cloaca"
+ Annotations: oio:hasExactSynonym "cavity of cloaca"
+ Annotations: oio:hasExactSynonym "cloaca cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000162 ## 'anatomical space' and 'luminal_space_of' some cloaca
 
 Class: UBERON:0006866 ## terminal part of digestive tract
 ## {"structure": "UBERON:0006866"}
 Class: UBERON:0012465
  Annotations: IAO:0000115 "The luminal space within the terminal part of digestive tract."
+ Annotations: oio:hasExactSynonym "terminal part of digestive tract lumen"
+ Annotations: oio:hasExactSynonym "lumen of terminal part of digestive tract"
+ Annotations: oio:hasExactSynonym "cavity of terminal part of digestive tract"
+ Annotations: oio:hasExactSynonym "terminal part of digestive tract cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0006866 ## 'anatomical space' and 'luminal_space_of' some terminal part of digestive tract
 
 Class: UBERON:0000945 ## stomach
 ## {"structure": "UBERON:0000945"}
 Class: UBERON:0013525
  Annotations: IAO:0000115 "The luminal space within the stomach."
+ Annotations: oio:hasExactSynonym "stomach lumen"
+ Annotations: oio:hasExactSynonym "lumen of stomach"
+ Annotations: oio:hasExactSynonym "cavity of stomach"
+ Annotations: oio:hasExactSynonym "stomach cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000945 ## 'anatomical space' and 'luminal_space_of' some stomach
 
 Class: UBERON:0003909 ## sinusoid
 ## {"structure": "UBERON:0003909"}
 Class: UBERON:0014399
  Annotations: IAO:0000115 "The luminal space within the sinusoid."
+ Annotations: oio:hasExactSynonym "sinusoid lumen"
+ Annotations: oio:hasExactSynonym "lumen of sinusoid"
+ Annotations: oio:hasExactSynonym "cavity of sinusoid"
+ Annotations: oio:hasExactSynonym "sinusoid cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0003909 ## 'anatomical space' and 'luminal_space_of' some sinusoid
 
 Class: UBERON:0006279 ## pleuroperitoneal canal
 ## {"structure": "UBERON:0006279"}
 Class: UBERON:0014704
  Annotations: IAO:0000115 "The luminal space within the pleuroperitoneal canal."
+ Annotations: oio:hasExactSynonym "pleuroperitoneal canal lumen"
+ Annotations: oio:hasExactSynonym "lumen of pleuroperitoneal canal"
+ Annotations: oio:hasExactSynonym "cavity of pleuroperitoneal canal"
+ Annotations: oio:hasExactSynonym "pleuroperitoneal canal cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0006279 ## 'anatomical space' and 'luminal_space_of' some pleuroperitoneal canal
 
 Class: UBERON:0001811 ## conjunctiva
 ## {"structure": "UBERON:0001811"}
 Class: UBERON:0015155
  Annotations: IAO:0000115 "The luminal space within the conjunctiva."
+ Annotations: oio:hasExactSynonym "conjunctiva lumen"
+ Annotations: oio:hasExactSynonym "lumen of conjunctiva"
+ Annotations: oio:hasExactSynonym "cavity of conjunctiva"
+ Annotations: oio:hasExactSynonym "conjunctiva cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001811 ## 'anatomical space' and 'luminal_space_of' some conjunctiva
 
 Class: UBERON:0001160 ## fundus of stomach
 ## {"structure": "UBERON:0001160"}
 Class: UBERON:0016502
  Annotations: IAO:0000115 "The luminal space within the fundus of stomach."
+ Annotations: oio:hasExactSynonym "fundus of stomach lumen"
+ Annotations: oio:hasExactSynonym "lumen of fundus of stomach"
+ Annotations: oio:hasExactSynonym "cavity of fundus of stomach"
+ Annotations: oio:hasExactSynonym "fundus of stomach cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001160 ## 'anatomical space' and 'luminal_space_of' some fundus of stomach
 
 Class: UBERON:4100111 ## hemipenal sheath
 ## {"structure": "UBERON:4100111"}
 Class: UBERON:0017160
  Annotations: IAO:0000115 "The luminal space within the hemipenal sheath."
+ Annotations: oio:hasExactSynonym "hemipenal sheath lumen"
+ Annotations: oio:hasExactSynonym "lumen of hemipenal sheath"
+ Annotations: oio:hasExactSynonym "cavity of hemipenal sheath"
+ Annotations: oio:hasExactSynonym "hemipenal sheath cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:4100111 ## 'anatomical space' and 'luminal_space_of' some hemipenal sheath
 
 Class: UBERON:0000160 ## intestine
 ## {"structure": "UBERON:0000160"}
 Class: UBERON:0018543
  Annotations: IAO:0000115 "The luminal space within the intestine."
+ Annotations: oio:hasExactSynonym "intestine lumen"
+ Annotations: oio:hasExactSynonym "lumen of intestine"
+ Annotations: oio:hasExactSynonym "cavity of intestine"
+ Annotations: oio:hasExactSynonym "intestine cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0000160 ## 'anatomical space' and 'luminal_space_of' some intestine
 
 Class: UBERON:0002530 ## gland
 ## {"structure": "UBERON:0002530"}
 Class: UBERON:0034905
  Annotations: IAO:0000115 "The luminal space within the gland."
+ Annotations: oio:hasExactSynonym "gland lumen"
+ Annotations: oio:hasExactSynonym "lumen of gland"
+ Annotations: oio:hasExactSynonym "cavity of gland"
+ Annotations: oio:hasExactSynonym "gland cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0002530 ## 'anatomical space' and 'luminal_space_of' some gland
 
 Class: UBERON:0006615 ## venous sinus
 ## {"structure": "UBERON:0006615"}
 Class: UBERON:0034940
  Annotations: IAO:0000115 "The luminal space within the venous sinus."
+ Annotations: oio:hasExactSynonym "venous sinus lumen"
+ Annotations: oio:hasExactSynonym "lumen of venous sinus"
+ Annotations: oio:hasExactSynonym "cavity of venous sinus"
+ Annotations: oio:hasExactSynonym "venous sinus cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0006615 ## 'anatomical space' and 'luminal_space_of' some venous sinus
 
 Class: UBERON:0001301 ## epididymis
 ## {"structure": "UBERON:0001301"}
 Class: UBERON:0035956
  Annotations: IAO:0000115 "The luminal space within the epididymis."
+ Annotations: oio:hasExactSynonym "epididymis lumen"
+ Annotations: oio:hasExactSynonym "lumen of epididymis"
+ Annotations: oio:hasExactSynonym "cavity of epididymis"
+ Annotations: oio:hasExactSynonym "epididymis cavity"
  EquivalentTo: UBERON:0000464 and RO:0002572 some UBERON:0001301 ## 'anatomical space' and 'luminal_space_of' some epididymis

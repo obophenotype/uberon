@@ -4,6 +4,7 @@ BFO:0000015	null
 BFO:0000030	object				
 BFO:0000040	material entity				
 BFO:0000141	null				
+CHEBI:131927	dicarboxylic acids and O-substituted derivatives				
 CHEBI:15440	squalene				
 CHEBI:16247	phospholipid				
 CHEBI:16526	carbon dioxide				
@@ -1820,6 +1821,7 @@ CL:0011008	embryonic hemocyte
 CL:0011009	embryonic plasmatocyte				
 CL:0011010	lateral mesodermal cell	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 CL:0011011	intermediate mesodermal cell	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+CL:0011012	neural crest cell				
 CL:0011100	galanergic neuron	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 CL:0011102	parasympathetic neuron	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 CL:0011103	sympathetic neuron	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
@@ -2392,6 +2394,12 @@ GO:0005623	cell
 GO:0005634	nucleus				
 GO:0005737	cytoplasm				
 GO:0005856	cytoskeleton				
+GO:0005858	axonemal dynein complex				
+GO:0005874	microtubule				
+GO:0005875	microtubule associated complex				
+GO:0005879	axonemal microtubule				
+GO:0005880	nuclear microtubule				
+GO:0005881	cytoplasmic microtubule				
 GO:0005882	intermediate filament				
 GO:0005884	actin filament				
 GO:0005886	plasma membrane				
@@ -2399,6 +2407,7 @@ GO:0005902	microvillus
 GO:0005911	cell-cell junction				
 GO:0005923	bicellular tight junction				
 GO:0005929	cilium				
+GO:0005930	axoneme				
 GO:0005975	carbohydrate metabolic process				
 GO:0005976	polysaccharide metabolic process				
 GO:0005977	glycogen metabolic process				
@@ -2474,7 +2483,6 @@ GO:0007399	nervous system development
 GO:0007492	endoderm development				
 GO:0007498	mesoderm development				
 GO:0007548	sex differentiation				
-GO:0007558	regulation of juvenile hormone secretion				
 GO:0007565	female pregnancy				
 GO:0007585	respiratory gaseous exchange				
 GO:0007586	digestion				
@@ -2555,7 +2563,7 @@ GO:0009712	catechol-containing compound metabolic process
 GO:0009790	embryo development				
 GO:0009791	post-embryonic development				
 GO:0009792	embryo development ending in birth or egg hatching				
-GO:0009887	organ morphogenesis				
+GO:0009887	animal organ morphogenesis				
 GO:0009888	tissue development				
 GO:0009889	regulation of biosynthetic process				
 GO:0009890	negative regulation of biosynthetic process				
@@ -2618,6 +2626,7 @@ GO:0014832	urinary bladder smooth muscle contraction
 GO:0014848	urinary tract smooth muscle contraction				
 GO:0015031	protein transport				
 GO:0015629	actin cytoskeleton				
+GO:0015630	microtubule cytoskeleton				
 GO:0015711	organic anion transport				
 GO:0015718	monocarboxylic acid transport				
 GO:0015721	bile acid and bile salt transport				
@@ -2629,7 +2638,6 @@ GO:0015850	organic hydroxy compound transport
 GO:0015874	norepinephrine transport				
 GO:0015980	energy derivation by oxidation of organic compounds				
 GO:0016020	membrane				
-GO:0016023	cytoplasmic, membrane-bounded vesicle				
 GO:0016043	cellular component organization				
 GO:0016048	detection of temperature stimulus				
 GO:0016049	cell growth				
@@ -2703,9 +2711,10 @@ GO:0030217	T cell differentiation
 GO:0030278	regulation of ossification				
 GO:0030279	negative regulation of ossification				
 GO:0030282	bone mineralization				
+GO:0030286	dynein complex				
 GO:0030307	positive regulation of cell growth				
 GO:0030308	negative regulation of cell growth				
-GO:0030317	sperm motility				
+GO:0030317	flagellated sperm motility				
 GO:0030334	regulation of cell migration				
 GO:0030335	positive regulation of cell migration				
 GO:0030336	negative regulation of cell migration				
@@ -2748,7 +2757,6 @@ GO:0031349	positive regulation of defense response
 GO:0031410	cytoplasmic vesicle				
 GO:0031413	regulation of buoyancy				
 GO:0031424	keratinization				
-GO:0031513	nonmotile primary cilium				
 GO:0031644	regulation of neurological system process				
 GO:0031645	negative regulation of neurological system process				
 GO:0031646	positive regulation of neurological system process				
@@ -2760,7 +2768,6 @@ GO:0031947	negative regulation of glucocorticoid biosynthetic process
 GO:0031948	positive regulation of glucocorticoid biosynthetic process				
 GO:0031982	vesicle				
 GO:0031987	locomotion involved in locomotory behavior				
-GO:0031988	membrane-bounded vesicle				
 GO:0032024	positive regulation of insulin secretion				
 GO:0032101	regulation of response to external stimulus				
 GO:0032102	negative regulation of response to external stimulus				
@@ -2839,6 +2846,7 @@ GO:0036072	direct ossification
 GO:0036073	perichondral ossification				
 GO:0036075	replacement ossification				
 GO:0036147	rumination				
+GO:0036157	outer dynein arm				
 GO:0036161	calcitonin secretion				
 GO:0036194	muscle cell projection				
 GO:0036293	response to decreased oxygen levels				
@@ -2957,6 +2965,7 @@ GO:0044433	cytoplasmic vesicle part
 GO:0044441	ciliary part				
 GO:0044444	cytoplasmic part				
 GO:0044446	intracellular organelle part				
+GO:0044447	axoneme part				
 GO:0044449	contractile fiber part				
 GO:0044459	plasma membrane part				
 GO:0044463	cell projection part				
@@ -2988,7 +2997,6 @@ GO:0045184	establishment of protein localization
 GO:0045187	regulation of circadian sleep/wake cycle, sleep				
 GO:0045188	regulation of circadian sleep/wake cycle, non-REM sleep				
 GO:0045321	leukocyte activation				
-GO:0045443	juvenile hormone secretion				
 GO:0045577	regulation of B cell differentiation				
 GO:0045578	negative regulation of B cell differentiation				
 GO:0045579	positive regulation of B cell differentiation				
@@ -3041,8 +3049,6 @@ GO:0045933	positive regulation of muscle contraction
 GO:0045938	positive regulation of circadian sleep/wake cycle, sleep				
 GO:0045939	negative regulation of steroid metabolic process				
 GO:0045940	positive regulation of steroid metabolic process				
-GO:0045972	negative regulation of juvenile hormone secretion				
-GO:0045973	positive regulation of juvenile hormone secretion				
 GO:0045986	negative regulation of smooth muscle contraction				
 GO:0045987	positive regulation of smooth muscle contraction				
 GO:0045988	negative regulation of striated muscle contraction				
@@ -3061,8 +3067,6 @@ GO:0046660	female sex differentiation
 GO:0046676	negative regulation of insulin secretion				
 GO:0046692	sperm competition				
 GO:0046717	acid secretion				
-GO:0046864	isoprenoid transport				
-GO:0046865	terpenoid transport				
 GO:0046877	regulation of saliva secretion				
 GO:0046878	positive regulation of saliva secretion				
 GO:0046879	hormone secretion				
@@ -3303,7 +3307,7 @@ GO:0060454	positive regulation of gastric acid secretion
 GO:0060455	negative regulation of gastric acid secretion				
 GO:0060456	positive regulation of digestive system process				
 GO:0060457	negative regulation of digestive system process				
-GO:0060474	positive regulation of sperm motility involved in capacitation				
+GO:0060474	positive regulation of flagellated sperm motility involved in capacitation				
 GO:0060560	developmental growth involved in morphogenesis				
 GO:0060562	epithelial tube morphogenesis				
 GO:0060606	tube closure				
@@ -3330,7 +3334,6 @@ GO:0061458	reproductive system development
 GO:0065007	biological regulation				
 GO:0065008	regulation of biological quality				
 GO:0065009	regulation of molecular function				
-GO:0070062	extracellular exosome				
 GO:0070091	glucagon secretion				
 GO:0070092	regulation of glucagon secretion				
 GO:0070093	negative regulation of glucagon secretion				
@@ -3380,7 +3383,6 @@ GO:0072201	negative regulation of mesenchymal cell proliferation
 GO:0072330	monocarboxylic acid biosynthetic process				
 GO:0072358	cardiovascular system development				
 GO:0072359	circulatory system development				
-GO:0072372	primary cilium				
 GO:0072507	divalent inorganic cation homeostasis				
 GO:0080090	regulation of primary metabolic process				
 GO:0080134	regulation of response to stress				
@@ -3403,6 +3405,7 @@ GO:0090326	positive regulation of locomotion involved in locomotory behavior
 GO:0090327	negative regulation of locomotion involved in locomotory behavior				
 GO:0090328	regulation of olfactory learning				
 GO:0090594	inflammatory response to wounding				
+GO:0097014	ciliary plasm				
 GO:0097164	ammonium ion metabolic process				
 GO:0097205	renal filtration				
 GO:0097386	glial cell projection				
@@ -3411,6 +3414,10 @@ GO:0097450	astrocyte end-foot
 GO:0097457	hippocampal mossy fiber				
 GO:0097458	neuron part				
 GO:0097708	intracellular vesicle				
+GO:0097722	sperm motility				
+GO:0097730	non-motile cilium				
+GO:0097732	9+2 non-motile cilium				
+GO:0097733	photoreceptor cell cilium				
 GO:0098583	learned vocalization behavior				
 GO:0098590	plasma membrane region				
 GO:0098598	learned vocalization behavior or vocal learning				
@@ -3428,6 +3435,8 @@ GO:0098797	plasma membrane protein complex
 GO:0098801	regulation of renal system process				
 GO:0098846	podocyte foot				
 GO:0098858	actin-based cell projection				
+GO:0099080	supramolecular complex				
+GO:0099081	supramolecular polymer				
 GO:0099500	vesicle fusion to plasma membrane				
 GO:0099512	supramolecular fiber				
 GO:0099513	polymeric cytoskeletal fiber				
@@ -3442,8 +3451,8 @@ GO:1900100	positive regulation of plasma cell differentiation
 GO:1901135	carbohydrate derivative metabolic process				
 GO:1901137	carbohydrate derivative biosynthetic process				
 GO:1901160	primary amino compound metabolic process				
-GO:1901317	regulation of sperm motility				
-GO:1901318	negative regulation of sperm motility				
+GO:1901317	regulation of flagellated sperm motility				
+GO:1901318	negative regulation of flagellated sperm motility				
 GO:1901342	regulation of vasculature development				
 GO:1901343	negative regulation of vasculature development				
 GO:1901360	organic cyclic compound metabolic process				
@@ -3452,17 +3461,19 @@ GO:1901564	organonitrogen compound metabolic process
 GO:1901566	organonitrogen compound biosynthetic process				
 GO:1901575	organic substance catabolic process				
 GO:1901576	organic substance biosynthetic process				
+GO:1901588	dendritic microtubule				
 GO:1901605	alpha-amino acid metabolic process				
 GO:1901615	organic hydroxy compound metabolic process				
 GO:1901617	organic hydroxy compound biosynthetic process				
 GO:1901700	response to oxygen-containing compound				
-GO:1902093	positive regulation of sperm motility				
+GO:1902093	positive regulation of flagellated sperm motility				
 GO:1902105	regulation of leukocyte differentiation				
 GO:1902106	negative regulation of leukocyte differentiation				
 GO:1902107	positive regulation of leukocyte differentiation				
 GO:1902490	regulation of sperm capacitation				
 GO:1902491	negative regulation of sperm capacitation				
 GO:1902492	positive regulation of sperm capacitation				
+GO:1902494	catalytic complex				
 GO:1902578	single-organism localization				
 GO:1902584	positive regulation of response to water deprivation				
 GO:1902589	single-organism organelle organization				
@@ -3869,10 +3880,17 @@ NCBITaxon:8570	Serpentes
 NCBITaxon:8578	Colubridae				
 NCBITaxon:862507	Mus <mouse, subgenus>				
 NCBITaxon:8782	Aves				
+NCBITaxon:8783	Palaeognathae				
+NCBITaxon:8798	Struthioniformes				
+NCBITaxon:8799	Struthionidae				
+NCBITaxon:8800	Struthio				
+NCBITaxon:8801	Struthio camelus				
 NCBITaxon:8825	Neognathae				
 NCBITaxon:8826	Anseriformes				
 NCBITaxon:8827	Anhimidae				
 NCBITaxon:88770	Panarthropoda				
+NCBITaxon:8929	Columbiformes				
+NCBITaxon:8930	Columbidae				
 NCBITaxon:89593	Craniata <chordata>				
 NCBITaxon:8976	Galliformes				
 NCBITaxon:9005	Phasianidae				
@@ -4353,7 +4371,7 @@ UBERON:0000927	mesectoderm	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056|XAO:100
 UBERON:0000929	pharyngeal branch of vagus nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0000930	stomodeum	UBERON:0000111|XAO:1000044	organogenesis stage|NF stage 28 (Xenopus)	XAO:1000072|XAO:1000056|XAO:1000078	NF stage 60 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0000931	proctodeum	UBERON:0000111|XAO:1000037	organogenesis stage|NF stage 21 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:0000933	pharyngeal muscle	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0000933	pharyngeal muscle	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0000935	anterior commissure	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0000936	posterior commissure	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0000941	cranial nerve II	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -4857,7 +4875,7 @@ UBERON:0001549	dorsal metatarsal vein	UBERON:0000111|XAO:1000048	organogenesis s
 UBERON:0001550	medial marginal vein	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001551	vein of hindlimb zeugopod	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001552	kidney arcuate artery	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0001553	medial tarsal artery	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0001553	medial tarsal artery	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001554	skin of hip	UBERON:0000111|XAO:1000065	organogenesis stage|NF stage 53 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001555	digestive tract	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001556	lower urinary tract	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	UBERON:0000066	fully formed stage
@@ -4872,7 +4890,7 @@ UBERON:0001565	geniohyoid muscle	UBERON:0000111|XAO:1000054	organogenesis stage|
 UBERON:0001566	cricothyroid muscle	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001567	cheek	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000071	death stage
 UBERON:0001568	muscle of larynx	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0001569	constrictor muscle of pharynx	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0001569	constrictor muscle of pharynx	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001570	inferior pharyngeal constrictor	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001571	genioglossus muscle	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0001572	hyoglossus muscle	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
@@ -7071,7 +7089,7 @@ UBERON:0004463	musculature of hindlimb stylopod	UBERON:0000111|XAO:1000067	organ
 UBERON:0004464	musculature of thorax	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0004465	musculature of neck	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0004466	musculature of leg	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0004467	musculature of pharynx	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0004467	musculature of pharynx	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0004468	set of muscles of vertebral column	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0004469	musculature of back	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0004470	musculature of pelvic girdle	UBERON:0000111|XAO:1000065	organogenesis stage|NF stage 53 (Xenopus)	UBERON:0000066	fully formed stage
@@ -8208,12 +8226,12 @@ UBERON:0006207	aortico-pulmonary spiral septum	UBERON:0000111|XAO:1000053	organo
 UBERON:0006208	auditory hillocks	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0006209	basioccipital cartilage element	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0006210	body-wall mesenchyme	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000071	death stage
-UBERON:0006211	buccopharyngeal membrane	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:0006211	buccopharyngeal membrane	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0006212	bulbo-ventricular groove	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0006213	carpus cartilage element	UBERON:0000111|XAO:1000069	organogenesis stage|NF stage 57 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0006214	carpus pre-cartilage condensation	UBERON:0000111|XAO:1000069	organogenesis stage|NF stage 57 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0006215	rhombic lip	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000044|XAO:1000056	NF stage 28 (Xenopus)|NF stage 44 (Xenopus)
-UBERON:0006216	cervical sinus of His	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:0006216	cervical sinus of His	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0006217	cloacal membrane	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0006218	common atrial chamber	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0006219	deltoid pre-muscle mass	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
@@ -8302,7 +8320,7 @@ UBERON:0006325	laryngeal intrinsic ligament	UBERON:0000111|XAO:1000059	organogen
 UBERON:0006326	base of arytenoid	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006327	laryngeal extrinsic muscle	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006328	laryngeal intrinsic muscle	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0006329	superior pharyngeal constrictor	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0006329	superior pharyngeal constrictor	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006330	anterior lingual gland	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006331	brainstem nucleus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006332	nasal capsule	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -8560,7 +8578,7 @@ UBERON:0006821	cutaneous muscle	UBERON:0000111|XAO:1000058	organogenesis stage|N
 UBERON:0006822	proximal epiphysis of ulna	UBERON:0000111|XAO:1000068	organogenesis stage|NF stage 56 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006828	trabecula carnea of atrium	UBERON:0000111|XAO:1000051	organogenesis stage|NF stage 39 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006829	remnant of left anterior vena cava	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0006831	pre-tracheal muscle	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0006831	pre-tracheal muscle	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006833	lumen of trachea	XAO:1000049|UBERON:0000111	NF stage 35 and 36 (Xenopus)|organogenesis stage	UBERON:0000066	fully formed stage
 UBERON:0006834	uterus or analog	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006836	medial tibial tarsal bone	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
@@ -8645,13 +8663,12 @@ UBERON:0006974	metanephridium	UBERON:0000111|XAO:1000064	organogenesis stage|NF 
 UBERON:0006976	peptonephridium	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0006983	anatomical point				
 UBERON:0006984	anatomical surface				
-UBERON:0007005	cardiac mesoderm	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000037|XAO:1000048|XAO:1000056|XAO:1000078	NF stage 21 (Xenopus)|NF stage 33 and 34 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:0007005	cardiogenic splanchnic mesoderm	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000037|XAO:1000048|XAO:1000056|XAO:1000078	NF stage 21 (Xenopus)|NF stage 33 and 34 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0007010	cleaving embryo	UBERON:0000107	cleavage stage	UBERON:0000107|XAO:1000056	cleavage stage|NF stage 44 (Xenopus)
 UBERON:0007021	sexually immature organism	UBERON:0000112	sexually immature stage	UBERON:0000112	sexually immature stage
 UBERON:0007023	adult organism	UBERON:0000113	post-juvenile adult stage	UBERON:0000113	post-juvenile adult stage
 UBERON:0007026	presumptive gut	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0007037	mechanosensory system	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0007094	visceral musculature	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0007095	somatic musculature	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0007097	chordo neural hinge	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0007098	mandibular neural crest	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000054|XAO:1000056|XAO:1000078	NF stage 42 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
@@ -8770,7 +8787,7 @@ UBERON:0007281	presumptive midbrain hindbrain boundary	UBERON:0000111|XAO:100004
 UBERON:0007282	presumptive segmental plate	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0007283	presumptive shield	UBERON:0000106	zygote stage	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0007284	presumptive neural plate	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000109|XAO:1000056	gastrula stage|NF stage 44 (Xenopus)
-UBERON:0007285	presumptive paraxial mesoderm	XAO:1000022	NF stage 12 (Xenopus)	XAO:1000033|XAO:1000056|XAO:1000078	NF stage 12.5 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:0007285	presumptive paraxial mesoderm	XAO:1000022	NF stage 12 (Xenopus)	XAO:1000033|UBERON:0000108|XAO:1000056|XAO:1000078	NF stage 12.5 (Xenopus)|blastula stage|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0007286	presumptive floor plate	UBERON:0000106	zygote stage	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0007287	presumptive bulbus arteriosus	UBERON:0000106	zygote stage	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0007288	presumptive forebrain midbrain boundary	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
@@ -8814,9 +8831,9 @@ UBERON:0007373	inferior surface of tongue	UBERON:0000111|XAO:1000052	organogenes
 UBERON:0007374	incus cartilage element	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0007375	roof of mouth	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000071	death stage
 UBERON:0007376	outer epithelium	UBERON:0000111|XAO:1000023	organogenesis stage|NF stage 13 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0007377	stratum compactum	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0007377	stratum compactum of dermis	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0007378	egg yolk	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
-UBERON:0007379	egg	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:0007379	shelled egg	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0007380	dermal scale	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0007381	epidermal scale	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0007383	enveloping layer of ectoderm	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
@@ -8898,7 +8915,7 @@ UBERON:0007685	region of nephron tubule	UBERON:0000111|XAO:1000064	organogenesis
 UBERON:0007687	kidney field	UBERON:0000106	zygote stage	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0007688	anlage	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0007689	thyroid diverticulum	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0007690	early pharyngeal endoderm	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:0007690	early pharyngeal endoderm	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0007691	gustatory pore	UBERON:0000111|XAO:1000063	organogenesis stage|NF stage 51 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0007692	nucleus of thalamus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0007693	caroticotympanic artery	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -9139,7 +9156,7 @@ UBERON:0008804	stylopharyngeus muscle	UBERON:0000111|XAO:1000052	organogenesis s
 UBERON:0008805	gingival groove	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0008811	intromittent organ	UBERON:0000111|XAO:1000064	organogenesis stage|NF stage 52 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0008813	helicotrema	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0008814	pharyngeal arch system	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:0008814	pharyngeal arch system	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0008816	embryonic head	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0008817	thymus primordium endoderm	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0008823	neural tube derived brain	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -9300,7 +9317,7 @@ UBERON:0009139	right posterior cardinal vein	UBERON:0000111|XAO:1000048	organoge
 UBERON:0009140	right subcardinal vein	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0009141	craniocervical region vein	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0009142	entire embryonic mesenchyme	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
-UBERON:0009145	pharyngeal region of foregut	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0009145	pharyngeal region of foregut	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0009149	foramen primum	UBERON:0000111|XAO:1000053	organogenesis stage|NF stage 41 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0009191	sphenoid bone pre-cartilage condensation	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0009192	basisphenoid pre-cartilage condensation	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
@@ -9332,8 +9349,8 @@ UBERON:0009471	dorsum of tongue	UBERON:0000111|XAO:1000052	organogenesis stage|N
 UBERON:0009472	axilla	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000071	death stage
 UBERON:0009477	associated mesenchyme of otic placode	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	XAO:1000054|XAO:1000052|XAO:1000042|XAO:1000056|XAO:1000078	NF stage 42 (Xenopus)|NF stage 40 (Xenopus)|NF stage 26 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0009478	associated mesenchyme of midgut	UBERON:0000111|XAO:1000040	organogenesis stage|NF stage 24 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0009479	ectoderm of buccopharyngeal membrane	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:0009480	endoderm of buccopharyngeal membrane	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:0009479	ectoderm of buccopharyngeal membrane	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:0009480	endoderm of buccopharyngeal membrane	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0009481	cavity of pericardio-peritoneal canal	XAO:1000040	NF stage 24 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0009482	associated mesenchyme of foregut-midgut junction	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0009483	mesentery of foregut-midgut junction	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	UBERON:0000066	fully formed stage
@@ -9473,7 +9490,7 @@ UBERON:0009712	endocardium of right ventricle	UBERON:0000111|XAO:1000051	organog
 UBERON:0009713	endocardium of left ventricle	UBERON:0000111|XAO:1000051	organogenesis stage|NF stage 39 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0009714	intermaxillary process	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0009715	stomodeal lumen	UBERON:0000111|XAO:1000044	organogenesis stage|NF stage 28 (Xenopus)	XAO:1000072|XAO:1000056|XAO:1000078	NF stage 60 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:0009722	entire pharyngeal arch endoderm	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:0009722	entire pharyngeal arch endoderm	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0009731	sublaminar layers S3 or S4	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0009732	sublaminar layers S1 or S2 or S5	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0009733	sublaminar layers S1 or S2 or S3	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -9970,7 +9987,7 @@ UBERON:0010745	sacral vertebra cartilage element	UBERON:0000111|XAO:1000065	orga
 UBERON:0010746	iliac blade	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010747	body of ilium	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010748	lymph node follicle	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0010749	middle pharyngeal constrictor	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0010749	middle pharyngeal constrictor	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010750	prefrontal bone	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010751	squamous part of temporal bone primordium	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010752	exoccipital cartilage element	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
@@ -10053,9 +10070,9 @@ UBERON:0010950	styloauricular muscle	UBERON:0000111|XAO:1000058	organogenesis st
 UBERON:0010951	interscutular muscle	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010952	frontalis muscle belly	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010953	nasalis muscle	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0010954	ceratohyoideus muscle	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0010954	ceratohyoideus muscle	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010955	trapezius pre-muscle mass	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:0010956	pterygopharyngeal part of superior pharyngeal constrictor	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0010956	pterygopharyngeal part of superior pharyngeal constrictor	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010958	arytenoid muscle	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010959	craniocervical muscle	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0010961	erector spinae pre-muscle mass	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
@@ -10376,7 +10393,7 @@ UBERON:0011655	interclavicle	UBERON:0000111|XAO:1000067	organogenesis stage|NF s
 UBERON:0011675	perichordal ring	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066|XAO:1000074|XAO:1000078	fully formed stage|NF stage 62 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0011676	subdivision of organism along main body axis	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000071	death stage
 UBERON:0011677	trunk vertebra	UBERON:0000111|XAO:1000060	organogenesis stage|NF stage 48 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0011678	hindlimb intermedium	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0011678	hindlimb intermedium bone	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011679	proximal tarsal bone	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011683	adductor mandibulae	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011684	levator palatoquadrati	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
@@ -10408,7 +10425,7 @@ UBERON:0011777	nucleus of spinal cord	UBERON:0000111|XAO:1000048	organogenesis s
 UBERON:0011778	motor nucleus of vagal nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011779	nerve of head region	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011814	non-neurogenic ectodermal placode	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:0011817	follicle placode	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:0011817	skin appendage placode	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0011818	superficial fascia	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011819	lumen of atrioventricular canal	UBERON:0000111|XAO:1000053	organogenesis stage|NF stage 41 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0011820	atrioventricular region	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
@@ -10504,7 +10521,7 @@ UBERON:0011981	manual digit 6	UBERON:0000111|XAO:1000068	organogenesis stage|NF 
 UBERON:0011982	manual digit 7	UBERON:0000111|XAO:1000068	organogenesis stage|NF stage 56 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011983	manual digit 8	UBERON:0000111|XAO:1000068	organogenesis stage|NF stage 56 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011984	pedal digit 6	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0011996	pharyngeal adductor	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0011996	pharyngeal adductor	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0011997	coelom	UBERON:0000106	zygote stage	UBERON:0000071	death stage
 UBERON:0012054	myocoele	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)		
 UBERON:0012055	left lung lower lobe bronchiole	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	UBERON:0000066	fully formed stage
@@ -10608,8 +10625,8 @@ UBERON:0012285	vegetal hemisphere	UBERON:0000106	zygote stage	XAO:1000056	NF sta
 UBERON:0012286	hemisphere of embryo	UBERON:0000106	zygote stage	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0012287	Rathkes pouch epithelium	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000072|XAO:1000052|XAO:1000056|XAO:1000078	NF stage 60 (Xenopus)|NF stage 40 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0012288	centroquartal bone	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0012289	fused tarsals 2 and 3	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0012290	fused carpals 2 and 3	UBERON:0000111|XAO:1000069	organogenesis stage|NF stage 57 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0012289	fused tarsal bones 2 and 3	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0012290	fused carpal bones 2 and 3	UBERON:0000111|XAO:1000069	organogenesis stage|NF stage 57 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0012291	lateral malleolus of fibula	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0012292	embryonic cloacal fold	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0012293	anal fold	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000071	death stage
@@ -10630,7 +10647,7 @@ UBERON:0012311	deep anterior cervical lymph node	UBERON:0000111|XAO:1000052	orga
 UBERON:0012312	maxillary process ectoderm	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0012313	1st arch maxillary ectoderm	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0012314	embryonic facial prominence	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
-UBERON:0012315	incisive foramen	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0012315	incisive foramen	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0012316	primitive palate	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0012318	anterior ethmoidal artery	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0012319	posterior ethmoidal artery	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -10932,7 +10949,7 @@ UBERON:0013645	gular gland	UBERON:0000111|XAO:1000052	organogenesis stage|NF sta
 UBERON:0013646	buccal nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0013647	lateral pterygoid nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0013648	masseteric artery	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0013649	fused tarsals 1 and 2	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0013649	fused tarsal bones 1 and 2	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0013653	velar skeleton	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0013655	elastica externa of notochord	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066|XAO:1000074|XAO:1000078	fully formed stage|NF stage 62 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:0013678	anatomical line between inner canthi	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000071	death stage
@@ -11896,7 +11913,6 @@ UBERON:0018329	interpterygoid region	UBERON:0000111|XAO:1000057	organogenesis st
 UBERON:0018330	interpterygoid vacuity	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0018331	intraramal joint	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0018332	jugal bar	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:0018333	labial cartilage	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0018334	lateral condyle of quadrate	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0018335	lateral dorsal aorta canal	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0018336	maxillary shank	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
@@ -12796,8 +12812,14 @@ UBERON:0036067	superior endocardial cushion	UBERON:0000111|XAO:1000048	organogen
 UBERON:0036068	subglottis	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0036069	tracheoesophageal fold	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:0036070	tracheoesophageal septum	XAO:1000020	NF stage 10 (Xenopus)	UBERON:0000071	death stage
-UBERON:0036072	respiratory primordium epithelium	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0036072	respiratory primordium epithelium	UBERON:0000111|XAO:1000036	organogenesis stage|NF stage 20 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:0036073	respiratory primordium mesenchyme	UBERON:0000111|XAO:1000040	organogenesis stage|NF stage 24 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0036074	vein of vestibular aqueduct	UBERON:0000111|XAO:1000055	organogenesis stage|NF stage 43 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0036143	meningeal branch of mandibular nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0036145	glymphatic system	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0036146	cardiopharyngeal field	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:0036148	orovelar muscle	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:0036150	skin appendage follicle	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:1000000	chin ventral margin	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000071	death stage
 UBERON:1000002	cranial midline area	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000071	death stage
 UBERON:1000003	dewlap	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -12830,7 +12852,7 @@ UBERON:2000040	median fin fold	UBERON:0000111|XAO:1000023	organogenesis stage|NF
 UBERON:2000044	myotome somite 14	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000059|XAO:1000056|XAO:1000078	NF stage 47 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000052	dorsal actinotrichium	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000058	polster	UBERON:0000111|XAO:1000023	organogenesis stage|NF stage 13 (Xenopus)	XAO:1000049|XAO:1000056|XAO:1000078	NF stage 35 and 36 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:2000068	proneural cluster	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000038|XAO:1000056|XAO:1000078	NF stage 22 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:2000068	neural plate proneural cluster	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000038|XAO:1000056|XAO:1000078	NF stage 22 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000072	somite 1	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000059|XAO:1000056|XAO:1000078	NF stage 47 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000073	somite 5	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000059|XAO:1000056|XAO:1000078	NF stage 47 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000074	somite 26	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000059|XAO:1000056|XAO:1000078	NF stage 47 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
@@ -12861,7 +12883,7 @@ UBERON:2000171	interhyal bone	UBERON:0000111|XAO:1000057	organogenesis stage|NF 
 UBERON:2000174	caudal cerebellar tract	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000175	posterior lateral line nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000176	lateral entopeduncular nucleus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:2000177	caudal oblique	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000177	caudal oblique	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000178	caudal peduncle	UBERON:0000111|XAO:1000023	organogenesis stage|NF stage 13 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000182	central caudal thalamic nucleus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000183	central pretectum	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -12873,7 +12895,7 @@ UBERON:2000194	dorsal accessory optic nucleus	UBERON:0000111|XAO:1000052	organog
 UBERON:2000195	dorsal depressor muscle	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000196	dorsal hypohyal bone	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000199	dorsal periventricular hypothalamus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:2000201	dorsal transverse	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000201	dorsal transverse	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000202	efferent portion of pharyngeal arch artery	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000203	rhinosphenoid	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000205	external ventral flexor	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
@@ -12883,7 +12905,7 @@ UBERON:2000211	gill lamella	UBERON:0000111|XAO:1000052	organogenesis stage|NF st
 UBERON:2000212	granular eminence	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000214	hypobranchial vessel	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000216	infracarinalis	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:2000221	internal levator	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000221	internal levator	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000222	isthmic primary nucleus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000223	infraorbital 1	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000224	quadrate ventral process	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
@@ -12903,7 +12925,7 @@ UBERON:2000248	magnocellular preoptic nucleus	UBERON:0000111|XAO:1000052	organog
 UBERON:2000250	opercle	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:2000251	adipose fin	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000259	mandibular lateral line	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:2000261	pharyngohyoid	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000261	pharyngohyoid	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000264	preopercle	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:2000267	primary olfactory fiber layer	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000268	anal fin proximal radial bone	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
@@ -12933,7 +12955,7 @@ UBERON:2000313	anal inclinator	UBERON:0000111|XAO:1000066	organogenesis stage|NF
 UBERON:2000315	asteriscus	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000318	brainstem and spinal white matter	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000319	branchiostegal membrane	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:2000321	caudal levator	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000321	caudal levator	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000322	caudal octaval nerve sensory nucleus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000324	caudal periventricular hypothalamus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000335	crossed tecto-bulbar tract	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -12951,7 +12973,7 @@ UBERON:2000358	granular layer corpus cerebelli	UBERON:0000111|XAO:1000052	organo
 UBERON:2000362	hypaxialis	UBERON:0000111|XAO:1000058	organogenesis stage|NF stage 46 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000363	hypobranchial bone	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:2000364	hypural	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:2000371	internal pharyngoclavicularis	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000371	internal pharyngoclavicularis	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000372	interpeduncular nucleus medulla oblongata	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000373	dorsal fin actinotrichium	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000375	anal fin actinotrichium	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
@@ -13016,10 +13038,10 @@ UBERON:2000498	dilator operculi	UBERON:0000111|XAO:1000058	organogenesis stage|N
 UBERON:2000499	dorsal arrector	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000500	dorsal erector muscle	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 UBERON:2000502	dorsal motor nucleus trigeminal nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:2000503	dorsal oblique branchial muscle	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:2000504	dorsal retractor	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000503	dorsal oblique branchial muscle	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000504	dorsal retractor	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000507	epineural	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:2000510	external levatores	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000510	external levatores	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000512	facial lobe	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000516	periventricular grey zone	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000517	glossopharyngeal lobe	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -13053,7 +13075,7 @@ UBERON:2000594	supracleithrum	UBERON:0000111|XAO:1000067	organogenesis stage|NF 
 UBERON:2000597	telencephalic tracts	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000599	torus semicircularis	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000602	uroneural	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:2000608	ventral transverse	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000608	ventral transverse	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000609	ventrolateral nucleus	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000610	vertical myoseptum	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000071	death stage
 UBERON:2000611	visceromotor column	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -13084,7 +13106,7 @@ UBERON:2000654	rostral motor nucleus of abducens	UBERON:0000111|XAO:1000052	orga
 UBERON:2000657	entopterygoid	UBERON:0000111|XAO:1000059	organogenesis stage|NF stage 47 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000658	epibranchial bone	UBERON:0000111|XAO:1000057	organogenesis stage|NF stage 45 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
 UBERON:2000660	epural	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
-UBERON:2000662	external pharyngoclavicularis	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:2000662	external pharyngoclavicularis	UBERON:0000111|XAO:1000043	organogenesis stage|NF stage 27 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000663	extrascapula	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000666	filamental artery	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:2000673	hypobranchial artery	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
@@ -14930,7 +14952,6 @@ UBERON:3010748	M. coccygeoiliacus	UBERON:0000111|XAO:1000065	organogenesis stage
 UBERON:3010749	M. iliolumbaris	UBERON:0000111|XAO:1000065	organogenesis stage|NF stage 53 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010750	descending branch of the vagus nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010751	ramus muscularis of vagus nerve	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
-UBERON:3010752	lobe	UBERON:0000111|XAO:1000053	organogenesis stage|NF stage 41 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010754	ramus recurrens	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010757	ramus superficial ophthalmic	UBERON:0000111|XAO:1000052	organogenesis stage|NF stage 40 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:3010758	M. coccygeocutaneus	UBERON:0000111|XAO:1000065	organogenesis stage|NF stage 53 (Xenopus)	UBERON:0000066	fully formed stage
@@ -15398,6 +15419,19 @@ UBERON:5111983	manual digit 8 digitopodial skeleton	UBERON:0000111|XAO:1000067	o
 UBERON:5111984	pedal digit 6 digitopodial skeleton	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:5112137	pedal digit 7 digitopodial skeleton	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
 UBERON:5112138	pedal digit 8 digitopodial skeleton	UBERON:0000111|XAO:1000067	organogenesis stage|NF stage 55 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:6000104	mesoderm anlage	UBERON:0000106	zygote stage	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:6000128	trunk mesoderm	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:6000130	visceral mesoderm	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:6000131	mesodermal crest	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:6000132	mesodermal crest of segment T3	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
+UBERON:6001722	ring gland				
+UBERON:6005023	imaginal precursor				
+UBERON:6005168	external sensory organ	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	UBERON:0000066	fully formed stage
+UBERON:6005436	trunk mesoderm anlage	UBERON:0000106	zygote stage	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:6005541	cardiogenic mesoderm	XAO:1000020	NF stage 10 (Xenopus)	XAO:1000056	NF stage 44 (Xenopus)
+UBERON:6005831	dorsal imaginal precursor				
+UBERON:6026000	trunk mesoderm derivative	XAO:1000020	NF stage 10 (Xenopus)	UBERON:0000071	death stage
+UBERON:6026002	visceral mesoderm derivative	XAO:1000020	NF stage 10 (Xenopus)	UBERON:0000071	death stage
 XAO:0000003	outer fin (Xenopus)	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 XAO:0000004	inner fin (Xenopus)	UBERON:0000111|XAO:1000066	organogenesis stage|NF stage 54 (Xenopus)	XAO:1000056|XAO:1000078	NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
 XAO:0000026	branchial crest (Xenopus)	UBERON:0000111|XAO:1000048	organogenesis stage|NF stage 33 and 34 (Xenopus)	XAO:1000038|XAO:1000056|XAO:1000078	NF stage 22 (Xenopus)|NF stage 44 (Xenopus)|NF stage 66 (Xenopus)
