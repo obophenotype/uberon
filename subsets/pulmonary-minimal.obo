@@ -101,7 +101,6 @@ synonym: "type I alveolar cells" EXACT []
 synonym: "type I alveolar epithelial cells" EXACT []
 xref: BTO:0000780
 xref: FMA:62500
-is_a: BFO:0000040 ! material entity
 is_a: CL:0000322 ! pneumocyte
 created_by: tmeehan
 creation_date: 2010-06-23T04:37:54Z
@@ -6564,7 +6563,6 @@ xref: FMA:7466
 xref: http://www.snomedbrowser.com/Codes/Details/197333002
 xref: Trachealis:muscle
 is_a: UBERON:0003387 ! smooth muscle of trachea
-relationship: part_of UBERON:0003387 ! smooth muscle of trachea
 
 [Term]
 id: UBERON:0006685
@@ -9482,6 +9480,8 @@ inverse_of: has_member
 
 [Typedef]
 id: adjacent_to
+domain: BFO:0000004
+range: BFO:0000004
 is_symmetric: true
 
 [Typedef]
@@ -9516,11 +9516,19 @@ id: connected_to
 is_a: transitively_connected_to
 
 [Typedef]
+id: connects
+domain: BFO:0000004
+
+[Typedef]
 id: continuous_with
+domain: BFO:0000004
+range: BFO:0000004
 is_symmetric: true
 
 [Typedef]
 id: develops_from
+domain: BFO:0000004
+range: BFO:0000004
 is_transitive: true
 is_a: RO:0002254
 is_a: RO:0002258
@@ -9607,6 +9615,5 @@ is_a: transitively_proximally_connected_to
 [Typedef]
 id: transformation_of
 is_transitive: true
-is_a: BFO:0000062
 is_a: develops_from
 

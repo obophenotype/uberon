@@ -9,17 +9,15 @@ ROBOT = ROBOT_JAVA_ARGS=-Xmx12G robot
 
 all: uberon-qc
 
-
-
 # ----------------------------------------
 # COMMANDS
 # ----------------------------------------
 
 ##MAKEOBO= owltools $< --remove-axiom-annotations -o -f obo $@.tmp1 && grep -v ^property_value: $@.tmp1 | grep -v ^owl-axioms: > $@.tmp && obo2obo $@.tmp -o $@
-MAKEOBO= owltools $< --add-obo-shorthand-to-properties  -o -f obo $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && obo2obo $@.tmp -o $@
+MAKEOBO= owltools $< --add-obo-shorthand-to-properties  -o -f obo --no-check $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && obo2obo $@.tmp -o $@
 
-MAKEJSON= owltools $< --add-obo-shorthand-to-properties  -o -f json $@.tmp && mv $@.tmp $@
-MAKEYAML= owltools $< --add-obo-shorthand-to-properties  -o -f yaml $@.tmp && mv $@.tmp $@
+MAKEJSON= owltools $(UCAT) $< --add-obo-shorthand-to-properties  -o -f json $@.tmp && mv $@.tmp $@
+MAKEYAML= owltools $(UCAT) $< --add-obo-shorthand-to-properties  -o -f yaml $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # TRAVIS TOP LEVEL TARGETS
@@ -122,13 +120,21 @@ materialized.owl: unreasoned.owl is_ok
 	$(ROBOT) materialize -T basic_properties.txt -i $< -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
 .PRECIOUS: materialized.owl
 
-ext.owl: materialized.owl
-	$(ROBOT) reduce -i $< -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
+TMP_REFL=reflexivity_axioms.owl
+ext.owl: materialized.owl $(TMP_REFL)
+	$(ROBOT) merge -i $< -i $(TMP_REFL) \
+	reduce -r elk \
+	unmerge -i $(TMP_REFL) \
+	annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
 
 RELSIM = BFO:0000050 RO:0002202 immediate_transformation_of
 # ext.obo is a relation subset of this. TODO: use case?
 ext.obo: ext.owl
-	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f $(RELSLIM) // -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
+	owltools $(UCAT) $< --merge-import-closure  -o -f obo --no-check $@.tmp && mv $@.tmp $@
+#	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f $(RELSLIM) // -o -f obo --no-check $@.tmp && mv $@.tmp $@
+
+ext.json: ext.owl
+	$(MAKEJSON)
 
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
@@ -216,9 +222,10 @@ ro.owl: $(EDITSRC) bspo.owl
 #seed.tsv: seed.owl
 #	owltools $(USECAT) --extract-
 
+# Import module for RO
+#
+# No TBox; use an OP seed that is derived from a separate sparql query
 ro_import.owl: ro.owl $(EDITSRC) reports/uberon_edit-object-properties.csv
-##	owltools --use-catalog --map-ontology-iri $(IMP)/$@ $< $(EDITSRC)  --extract-module -s $(OBO)/$< -c --remove-annotation-assertions -l -d --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/uberon/ro_import.owl --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o -f ofn $@
-##	owltools --use-catalog $< --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -t Domain --remove-annotation-assertions -l -d -r uberon.owl --extract-properties --remove-dangling --set-ontology-id $(OBO)/uberon/$@ --add-ontology-annotation $(DCE)/title "Relations Ontology Module for Uberon" -o $@
 	$(ROBOT) extract -i $< -m STAR -T reports/uberon_edit-object-properties.csv annotate -O $(OBO)/uberon/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@
 
 bless-mirrors:
@@ -917,7 +924,7 @@ uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
 
 
 uberon-taxmod-%.obo: uberon-taxmod-%.owl
-	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< --remove-imports-declarations -o -f obo $@.tmp && grep -v ^owl $@.tmp > $@
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
 
 uberon-taxmod-%.owl: ext.owl
 	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$*  --assert-inferred-subclass-axioms --useIsInferred --remove-dangling --set-ontology-id $(OBO)/uberon/subsets/$@ -o $@ >& $@.log
@@ -985,7 +992,7 @@ RELDIR=trunk
 release:
 	cp core.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
-	cp uberon.{obo,owl} $(RELDIR) ;\
+	cp uberon.{obo,owl,json} $(RELDIR) ;\
 	cp merged.{obo,owl} $(RELDIR)/ ;\
 	cp basic.obo $(RELDIR)/basic.obo ;\
 	cp basic.owl $(RELDIR)/basic.owl ;\
@@ -993,7 +1000,7 @@ release:
 	cp *_import.owl $(RELDIR)/ ;\
 	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
-	cp ext.{obo,owl} $(RELDIR)/ ;\
+	cp ext.{obo,owl,json} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp subsets/*.{obo,owl} $(RELDIR)/subsets/ ;\
@@ -1418,6 +1425,8 @@ MODS = luminal_space_of gland_duct gland_acinus endochondral_bone endochondral_c
 
 # OWL->CSV
 PSRC = uberon_edit.obo
+
+# reverse engineer CSV from uberon axioms and DOSDPs
 modules/%.csv: $(PSRC)
 	blip-findall -i $< -r pext  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_tuple($*)" > $@.tmp && mv $@.tmp $@
 .PRECIOUS: modules/%.csv
@@ -1426,13 +1435,16 @@ modules/new-%.csv: $(PSRC)
 	blip-findall -i $< -r pext  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_tuple($*)" > $@.tmp && mv $@.tmp $@
 .PRECIOUS: modules/%.csv
 
+# currently, the pattern source is prolog - generate dosdp yaml from this
 $(PATTERNDIR)/%.yaml: patterns/uberon_patterns.pro
 	blip-findall -r uberonp  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_yaml($*),fail" > $@.tmp && mv $@.tmp $@
 .PRECIOUS: $(PATTERNDIR)/%.yaml
 
+# compare ldef with lexical aspect
 modules/conflict_analysis.tsv:
 	blip-findall -i uberon_edit.obo -r pext  -u odputil -i patterns/uberon_patterns.pro conflicting_tuple_from_ldef/4 -label -no_pred -use_tabs > $@.tmp && mv $@.tmp $@
 
+# some patterns are paired: check for missing members of pairs
 modules/missing.txt:
 	blip-findall -i uberon_edit.obo -r pext -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "nomatch/3" -label -no_pred > $@
 

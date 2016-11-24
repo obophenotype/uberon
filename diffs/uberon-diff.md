@@ -12,6 +12,34 @@ tags:
 
 # Ontology Diff Report
 
+ * neuro
+   * Fixing isa->partof for parts of fornix . See #1277
+   * remove subthalamic fasciculus po VT. See #1277
+   * splitting limen of insula, #1279
+ * developmental
+   * Making presumptive paraxial mesoderm part-of blastula. See #1277
+   * NT: cardiopharyngeal field, fixes #1263
+   * primary heart field part of cardiopharyngeal field, fixes #1263
+ * evolutionary
+   * Added various subtypes of placenta, and added taxon constraints
+   * NT: orovelar muscle. Fixes #1264
+   * NT: oral siphon muscle. Fixes #1265
+   * Taxon constraints for nose
+ * Other
+   * generalizing pancreatic duct. Fixes #1250
+   * NT: for skin appendage follicle. Renamed follicle placode. Fixes #1266
+   * NT: suprapubic skin, fixes #1272
+   * Updated facial lymph node def
+   * Removed equiv axiom for hyoid skeleton. Still need to determine correct DP. Fixes #1271
+ * admin
+   * ceding 3 terms to uberon-insect... https://github.com/obophenotype/uberon/issues/1262
+   * Standardized spelling of Malpighian.
+   * fixed koala typo
+   * Removing many with the auto-generated comment
+   * Removed evolved-from axioms, fixes #1270
+   * obsolete lobe. Fixes https://github.com/obophenotype/uberon-phenoscape-ext/issues/5
+
+
 
 ## Original Ontology
 

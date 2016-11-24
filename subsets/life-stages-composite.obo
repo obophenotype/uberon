@@ -10141,6 +10141,10 @@ synonym: "Nieuwkoop-Faber stage" EXACT []
 is_a: UBERON:0000105 ! life cycle stage
 
 [Typedef]
+id: existence_starts_during_or_after
+is_a: RO:0002487
+
+[Typedef]
 id: has_part
 is_transitive: true
 is_a: RO:0002131
@@ -10174,10 +10178,16 @@ inverse_of: has_part
 
 [Typedef]
 id: preceded_by
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
 is_transitive: true
+is_a: RO:0002086
 inverse_of: precedes
 
 [Typedef]
 id: precedes
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
 is_transitive: true
+is_a: RO:0002222
 
