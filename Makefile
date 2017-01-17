@@ -50,13 +50,12 @@ $(CATALOG):
 # ----------------------------------------
 # NOTE: these are bypassed by travis for now, as some rely on ad-hoc perl
 
-checks: uberon_edit-xp-check\
-    uberon_edit-obscheck.txt\
-    uberon.obo-OE-check\
-    uberon.obo-OWL-check\
-    uberon-obscheck.txt\
-    uberon-orphans\
-    uberon-synclash\
+checks: uberon_edit-xp-check uberon_edit-obscheck.txt \
+    uberon.obo-OE-check \
+    uberon.obo-OWL-check \
+    uberon-obscheck.txt \
+    uberon-orphans \
+    uberon-synclash
 
 # ----------------------------------------
 # STEP 1: pre-processing and quick validation
@@ -117,13 +116,13 @@ is_ok: unreasoned.owl
 	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 materialized.owl: unreasoned.owl is_ok
-	$(ROBOT) materialize -T basic_properties.txt -i $< -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
+	$(ROBOT) materialize -T basic_properties.txt -i $< -r elk reason -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
 .PRECIOUS: materialized.owl
 
 TMP_REFL=reflexivity_axioms.owl
 ext.owl: materialized.owl $(TMP_REFL)
-	$(ROBOT) merge -i $< -i $(TMP_REFL) \
-	reduce -r elk \
+	owltools --use-catalog $< $(TMP_REFL) --merge-support-ontologies -o m1.owl && \
+	$(ROBOT) reduce -i m1.owl -r elk \
 	unmerge -i $(TMP_REFL) \
 	annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
 
@@ -252,8 +251,10 @@ nbo.owl: $(EDITSRC)
 nbo_import.owl: nbo.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --make-subset-by-properties  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
-chebi.owl: $(EDITSRC) 
-	owltools $(OBO)/$@ --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@ && touch $@
+chebi.obo: $(EDITSRC)
+	wget --no-check-certificate $(OBO)/chebi.obo -O $@.tmp && mv $@.tmp $@ && touch $@
+chebi.owl: $(EDITSRC) chebi.obo
+	owltools chebi.obo --extract-mingraph --rename-entity $(OBO)/chebi#has_part $(OBO)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/$@ $(OBO)/$@ -o $@ && touch $@
 chebi_import.owl: chebi.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
