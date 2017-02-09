@@ -154,7 +154,6 @@ uberon.owl: ext.owl
 # also do OE check here
 uberon.obo: uberon.owl
 	$(MAKEOBO)
-#	owltools $< -o -f obo $@.tmp && obo2obo $@.tmp -o $@
 
 uberon.json: uberon.owl
 	$(MAKEJSON)
@@ -377,7 +376,7 @@ metazoan-view.owl: ext.owl
 .PRECIOUS: %-view.owl
 
 %-view.obo: %-view.owl
-	owltools $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
+	owltools --use-catalog $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
 
 # note: drosophila too slow....
 #RPT_SPECIES = human mouse zebrafish xenopus
@@ -389,7 +388,7 @@ reports/parts: $(patsubst %,reports/part-%-report.tsv,$(RPT_SPECIES))
 	echo done
 
 reports/stages-%-report.tsv: %-view.owl
-	owltools $<  --reasoner mexr --export-parents -p $(RPT_STAGE_RELS) -o $@.tmp && mv $@.tmp $@
+	owltools --use-catalog $<  --reasoner mexr --export-parents -p $(RPT_STAGE_RELS) -o $@.tmp && mv $@.tmp $@
 
 # experimental....
 
@@ -927,8 +926,9 @@ uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
 uberon-taxmod-%.obo: uberon-taxmod-%.owl
 	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
 
+# added --allowEquivalencies, see https://github.com/geneontology/go-ontology/issues/12926
 uberon-taxmod-%.owl: ext.owl
-	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$*  --assert-inferred-subclass-axioms --useIsInferred --remove-dangling --set-ontology-id $(OBO)/uberon/subsets/$@ -o $@ >& $@.log
+	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$*  --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling --set-ontology-id $(OBO)/uberon/subsets/$@ -o $@ >& $@.log
 #uberon-taxmod-%.owl: uberon-taxmod-%.ids
 #	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@

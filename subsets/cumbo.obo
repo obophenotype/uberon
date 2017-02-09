@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 23:11:2016 21:36
+date: 05:02:2017 17:15
 saved-by: cjm
 subsetdef: cumbo "CUMBO"
 subsetdef: cyclostome_subset "cyclostome structures"
@@ -22,7 +22,6 @@ subsetdef: organ_slim "organs, excluding individual muscles and skeletal element
 subsetdef: pheno_slim "Phenotype slim"
 subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
 subsetdef: uberon_slim "Uberon slim - subset that excludes obscure terms and deep compositional terms"
-subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
 subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
 subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
@@ -277,7 +276,7 @@ xref: EV:0100304
 xref: FBbt:00005100
 xref: FMA:83847
 xref: nlx:147822
-relationship: part_of UBERON:0001017 ! central nervous system
+relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0001020
@@ -370,7 +369,7 @@ xref: birnlex:2548
 xref: BTO:0001123
 xref: EMAPA:32814
 xref: MA:0001161
-relationship: part_of UBERON:0000010 ! peripheral nervous system
+relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0006238
@@ -413,7 +412,7 @@ synonym: "neuraxis decussation" EXACT [FMA:83858]
 xref: :C28351
 xref: FMA:83858
 xref: nlx:144064
-relationship: part_of UBERON:0001017 ! central nervous system
+relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0013118
@@ -434,7 +433,6 @@ xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1208
 xref: http://www.snomedbrowser.com/Codes/Details/279337001
 xref: Sulcus:(neuroanatomy)
 relationship: dubious_for_taxon NCBITaxon:10088
-relationship: part_of UBERON:0000955 ! brain
 
 [Term]
 id: UBERON:0014778
@@ -454,7 +452,6 @@ subset: cumbo
 synonym: "lamina" BROAD [CUMBO:CUMBO]
 synonym: "layer" BROAD [CUMBO:CUMBO]
 xref: nlx:149357
-relationship: part_of UBERON:0001016 ! nervous system
 
 [Typedef]
 id: action_notes
@@ -574,11 +571,10 @@ is_metadata_tag: true
 id: develops_from
 name: develops_from
 namespace: uberon
-def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
 xref: RO:0002202
 is_transitive: true
 holds_over_chain: part_of develops_from
-transitive_over: part_of ! part_of
+transitive_over: part_of ! part of
 
 [Typedef]
 id: doap-bug-database
@@ -731,7 +727,6 @@ is_metadata_tag: true
 id: immediate_transformation_of
 name: immediate transformation of
 namespace: uberon
-def: "x immediate transformation of y iff x immediately succeeds y temporally at a time boundary t, and all of the matter present in x at t is present in y at t, and all the matter in y at t is present in x at t" []
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: RO:0002495
@@ -788,9 +783,8 @@ is_metadata_tag: true
 
 [Typedef]
 id: part_of
-name: part_of
+name: part of
 namespace: uberon
-def: "a core relation that holds between a part and its whole" []
 xref: BFO:0000050
 is_transitive: true
 
@@ -914,7 +908,6 @@ is_metadata_tag: true
 id: transformation_of
 name: transformation of
 namespace: uberon
-def: "x transformation of y if x is the immediate transformation of y, or is linked to y through a chain of transformation relationships" []
 synonym: "transforms from" EXACT [SIO:000657]
 xref: RO:0002494
 is_transitive: true

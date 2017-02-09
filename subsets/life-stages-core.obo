@@ -32,18 +32,6 @@ relationship: precedes UBERON:0000071 ! death stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/566
 
 [Term]
-id: UBERON:0000067
-name: embryo stage part
-namespace: uberon
-def: "A stage that is part of the embryo stage." [https://orcid.org/0000-0002-6601-2165]
-subset: grouping_class
-synonym: "embryonic stage part" EXACT []
-is_a: UBERON:0000105 ! life cycle stage
-intersection_of: UBERON:0000105 ! life cycle stage
-intersection_of: part_of UBERON:0000068 ! embryo stage
-relationship: part_of UBERON:0000068 ! embryo stage
-
-[Term]
 id: UBERON:0000068
 name: embryo stage
 namespace: uberon
@@ -228,7 +216,8 @@ xref: PdumDv:0000100
 xref: VHOG:0000745
 xref: XAO:1000001
 xref: ZFS:0000001
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
 property_value: UBPROP:0000003 "As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000745", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107"}
 
 [Term]
@@ -249,8 +238,9 @@ xref: OGES:000020
 xref: PdumDv:0000200
 xref: XAO:1000004
 xref: ZFS:0000046
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
+relationship: part_of UBERON:0000068 ! embryo stage
 
 [Term]
 id: UBERON:0000108
@@ -271,7 +261,8 @@ xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg
 xref: WBls:0000005
 xref: XAO:1000003
 xref: ZFS:0000045
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000107 ! cleavage stage
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png
 property_value: IAO:0000116 "consider adding a preceding stage 'morula stage' as part of cleavage" xsd:string
@@ -299,7 +290,8 @@ xref: OGES:000019
 xref: WBls:0000010
 xref: XAO:1000005
 xref: ZFS:0000047
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000108 {source="BILS"} ! blastula stage
 
 [Term]
@@ -312,7 +304,8 @@ xref: BILS:0000110
 xref: HsapDv:0000012
 xref: MmusDv:0000017
 xref: XAO:1000006
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000109 ! gastrula stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/343
 
@@ -329,7 +322,8 @@ xref: http://en.wikipedia.org/wiki/Organogenesis
 xref: MmusDv:0000018
 xref: OGES:000005
 xref: OGES:000032
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000110 ! neurula stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/533
 
@@ -390,7 +384,7 @@ xref: EFO:0001310
 xref: http://en.wikipedia.org/wiki/Pharyngula
 xref: OGES:000006
 xref: ZFS:0000050
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000111 ! organogenesis stage
 property_value: UBPROP:0000008 "Corresponds to E7-E11 in Mouse (Galis et al, TREE, 2001)" xsd:string
 
@@ -450,7 +444,8 @@ xref: http://www.snomedbrowser.com/Codes/Details/367619004
 xref: MIAA:0000399
 xref: MmusDv:0000031
 xref: OGES:000023
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
+relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
 relationship: preceded_by UBERON:0004707 ! pharyngula stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/355
@@ -515,7 +510,7 @@ synonym: "two-cell stage" EXACT [OBOL:automatic]
 xref: XAO:1000011
 xref: XtroDO:0000006
 xref: ZFS:0000002
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
@@ -530,7 +525,7 @@ synonym: "NF stage 3 (4-cell)" NARROW SENSU [XAO:1000013]
 xref: XAO:1000013
 xref: XtroDO:0000007
 xref: ZFS:0000003
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0007232 ! 2 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
@@ -545,7 +540,7 @@ synonym: "NF stage 4 (8-cell)" NARROW SENSU [XAO:1000014]
 xref: XAO:1000014
 xref: XtroDO:0000008
 xref: ZFS:0000004
-is_a: UBERON:0000067 ! embryo stage part
+is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0007233 ! 4 cell stage
 relationship: part_of UBERON:0000107 ! cleavage stage
 
@@ -748,7 +743,6 @@ is_transitive: true
 [Typedef]
 id: immediately_preceded_by
 is_a: preceded_by
-inverse_of: RO:0002090
 
 [Typedef]
 id: part_of
@@ -758,11 +752,8 @@ inverse_of: has_part
 [Typedef]
 id: preceded_by
 is_transitive: true
-is_a: RO:0002086
-inverse_of: precedes
 
 [Typedef]
 id: precedes
 is_transitive: true
-is_a: RO:0002222
 
