@@ -9424,6 +9424,7 @@ id: WBls:0000083
 name: adult Bma (C elegans)
 def: "The stage that begins when a B. malayi individual is fully-developed and has reached maturity. Adult B. malayi (or at least adult females) can live for 10 years in a human host, and can outlive their rodent laboratory hosts; it is usual to state the chronological age of the nematodes in days or months post-infection, and occasionally post-patency (the production of first microfilariae)." [WB:dr&mb]
 is_a: WBls:0000104 ! adult nematode (C elegans)
+relationship: part_of UBERON:0000092 ! post-embryonic stage
 
 [Term]
 id: WBls:0000097
@@ -9431,6 +9432,7 @@ name: larva Bma (C elegans)
 def: "From the time after hatch till becomes adult." [WB:dr]
 is_a: WBls:0000105 ! larva nematode (C elegans)
 relationship: immediately_preceded_by UBERON:0000068 ! embryo stage
+relationship: part_of UBERON:0000092 ! post-embryonic stage
 
 [Term]
 id: WBls:0000098
@@ -10134,7 +10136,6 @@ inverse_of: RO:0002090
 
 [Typedef]
 id: part_of
-is_reflexive: true
 is_transitive: true
 is_a: RO:0002131
 equivalent_to: part_of

@@ -116,9 +116,12 @@ is_ok: unreasoned.owl
 	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 materialized.owl: unreasoned.owl is_ok
-	$(ROBOT) materialize -T basic_properties.txt -i $< -r elk reason -r elk annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
+	$(ROBOT) relax -i $< materialize -T basic_properties.txt -r elk \
+		 reason -r elk \
+		 annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
 .PRECIOUS: materialized.owl
 
+# somewhat awkward: we temporarily inject reflexivity axioms
 TMP_REFL=reflexivity_axioms.owl
 ext.owl: materialized.owl $(TMP_REFL)
 	owltools --use-catalog $< $(TMP_REFL) --merge-support-ontologies -o m1.owl && \
@@ -445,7 +448,7 @@ uberon-taxon-constraints.owl: uberon-taxon-constraints.obo
 
 DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check is-symmetric-check
 %.obo-gocheck: %.obo GO.xrf_abbs
-	check-obo-for-standard-release.pl --xref-abbs GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
+	../go-ontology/src/util/check-obo-for-standard-release.pl --xref-abbs GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
 
 GO.xrf_abbs: uberon_edit.obo
 	wget http://geneontology.org/doc/GO.xrf_abbs -O $@ && touch $@
@@ -714,8 +717,10 @@ other-bridges: merged.owl
 # core: the full ontology, excluding external classes, but including references to these
 # TODO: use --make-subset-by-properties
 # note: requires symlink to cl directory
-cl-core.obo: cell-ontology/cl.obo
-	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | grep -v ^equivalent | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
+cl-core.obo: uberon_edit.obo
+	owltools $(OBO)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-axiom-annotations --remove-imports-declarations -o -f obo $@
+#cl-core.obo: cell-ontology/cl.obo
+#	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | grep -v ^equivalent | grep -v ^owl-axioms | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
 
 # TODO - this may replace the above BUT need to preserve dangling axioms
 cl-core-new.obo: cell-ontology/cl.obo

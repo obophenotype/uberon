@@ -72,6 +72,7 @@ while (my $f = shift @fs) {
         if (/^\[(\S+)\]/) {
             $stanza_type = lc($1);
         }
+
         if (/^id:\s+(\S+)/) {
             $id = $1;
             if ($id =~ /UBERON:(\d+)/ && $1 >= $uid && $1 < 1000000) {
@@ -139,7 +140,13 @@ while(<>) {
     if (/^(synonym: \".*\")\s+(\[.*)/) {
         $_ = "$1 RELATED $2";
     }
-
+    
+    if ($xref && $xref =~ m@^MP:@) {
+        s@abnormal @@;
+        s@ morphology@@;
+    }
+        
+    
     if (/^id:\s*(\S+)/) {
         $xref = $1;
         $_ = sprintf("id: UBERON:%07d",$uid);
