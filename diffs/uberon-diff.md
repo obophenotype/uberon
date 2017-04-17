@@ -12,6 +12,8 @@ tags:
 
 # Ontology Diff Report
 
+Note: this release is expected to percolate to OntoBee and OLS by 2017-04-22
+
 ## Reasoning
 
  * use robot `relax` as part of release process. Many relationships that were embedded in equivalence axioms are now materialized
