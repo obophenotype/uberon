@@ -1,9 +1,9 @@
 ---
 comments: true
 layout: post
-title: "/releases/2017-04-15/uberon.owl"
+title: "2017-04-15 release"
 date: 2017-04-15
-summary: ""
+summary: "Improvements to the representation of the developing tooth"
 categories: release
 image: '/anatomy/images/u-logo.jpg'
 tags:
@@ -11,6 +11,26 @@ tags:
 ---
 
 # Ontology Diff Report
+
+## Reasoning
+
+ * use robot `relax` as part of release process. Many relationships that were embedded in equivalence axioms are now materialized
+ * Explicit materialization of part-of for division of colon, fixes #1315
+
+## Xrefs
+
+ * added EMAPA xref for chordaa tendinae
+ * changed def xref for endochondral pattern, uses https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern
+
+## Content
+
+ * obsoleting cell part, myelin sheath no longer subclass of cell part, fixes #1314
+ * obsoleted cnida. https://github.com/geneontology/go-ontology/issues/13341
+ * renamed ectomesenchyme -> head ectomesenchyme
+ * various changes to representation of developing tooth, summarized in #1313
+ * Fixed typo in paired-limb fin def, fixes #1312
+ * vestibulum vaginae synonym fixes.
+ * new classes, [pectoral fin bud](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300172) and [pelvic fin bud](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300173)
 
 
 ## Original Ontology
