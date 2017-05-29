@@ -51,6 +51,7 @@ $(CATALOG):
 # NOTE: these are bypassed by travis for now, as some rely on ad-hoc perl
 
 checks: uberon_edit-xp-check uberon_edit-obscheck.txt \
+    bfo-check.txt \
     uberon.obo-OE-check \
     uberon.obo-OWL-check \
     uberon-obscheck.txt \
@@ -504,7 +505,7 @@ extra-full-bridge-checks: $(patsubst %,extra-full-bridge-check-%.txt,$(EXTRA_FUL
 
 ##bfo-check.txt: uberon_edit-plus-tax-equivs.owl
 bfo-check.txt: uberon_edit.owl
-	OWLTOOLS_MEMORY=14G owltools   $(OBO)/bfo.owl --catalog-xml $(CATALOG) $< bridge/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	OWLTOOLS_MEMORY=14G owltools   $(OBO)/bfo.owl $(OBO)/ro.owl --catalog-xml $(CATALOG) $< bridge/uberon-bridge-to-bfo.owl  --merge-support-ontologies -o bfo-check.owl $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 bfo-basic-check.txt: basic.owl
 	OWLTOOLS_MEMORY=14G owltools   $(OBO)/bfo.owl --catalog-xml $(CATALOG) $< bridge/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
