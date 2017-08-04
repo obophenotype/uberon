@@ -234,7 +234,7 @@ bless-mirrors:
 	touch go.owl chebi.owl ncbitaxon.obo
 
 pato.owl: $(EDITSRC) 
-	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties BFO:0000050 // --set-ontology-id $(OBO)/$@ -o $@
+	owltools $(OBO)/$@ --extract-mingraph --make-subset-by-properties -f BFO:0000050 // --set-ontology-id $(OBO)/$@ -o $@
 pato_import.owl: pato.owl $(EDITSRC) 
 	owltools $(UCAT) --map-ontology-iri $(IMP)/$@ $< $(EDITSRC) --extract-module -s $(OBO)/$< -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(IMP)/$@ -o $@
 
@@ -1482,41 +1482,12 @@ $(MODDIR)/%-new.obo: $(MODDIR)/%.owl uberon_edit.owl
 	owltools --use-catalog $^ --diff -f obo -s -u  --o1r $@ --o2r $(MODDIR)/%-missing.obo
 
 # ----------------------------------------
-# DOCUMENTATION
+# SPARQL
 # ----------------------------------------
+reports/%.csv: sparql/%.sparql uberon.owl
+	robot merge -i $< query -s $< $@ -f csv
 
-all_html: $(patsubst %, %_import/.index.html, $(IMPORTS))
-
-# experimental: owltools will generate graphs of import closures, as well as basic metadata as markdown files
-%.md: %.dot
-	echo done
-.PRECIOUS: %.md
-
-%.dot: %.owl
-	owltools --use-catalog $< --write-imports-dot $@ --ontology-metadata-to-markdown $*.md
-.PRECIOUS: %.dot
-
-#%.png: %.dot
-#	dot  -Grankdir=LR -Tpng $< -o $@
-.PRECIOUS: %.png
-
-%.cmapx: %.dot %.png
-	dot  -Grankdir=LR -Tcmapx $< -o $@
-.PRECIOUS: %.cmapx
-
-# adds image map
-%-x.md: %.md %.cmapx %.png
-	./util/add-map.pl $*.png $< $*.cmapx > $@
-.PRECIOUS: %-x.md
-
-%-dir:
-	test -d $* || mkdir $*
-
-# requires pandoc
-%/index.html: %-x.md %-dir
-	pandoc $< -o $@  && cp $*.png $*/
-#	pandoc $< -o $@ && cp $@ $*/index.html && cp $*.png $*/
-#	pandoc $< -o $@ && svn ps svn:mime-type text/html $*
-#	pandoc $< -o $@ && cp $*.html $* && svn ps svn:mime-type text/html $*
-
+# ----------------------------------------
+# BLAZEGRAPH
+# ----------------------------------------
 
