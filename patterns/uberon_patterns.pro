@@ -1,3 +1,14 @@
+pattern(stroma,n(stroma),[part_of=X],[structure],[X],
+        [v(structure)-stroma,
+         stroma-of-v(structure)],
+        'The connective, non-functional supportive framework of a %s.'-[structure]).
+
+pattern(parenchyma,n(parenchyma),[part_of=X],[structure],[X],
+        [v(structure)-parenchyma,
+         parenchyma-of-v(structure)],
+  'The functional (non-stroma) part of the tissue of a %s.'-[structure]).
+paired(stroma,parenchyma).
+
 pattern(luminal_space_of,n('anatomical space'),[luminal_space_of=X],[structure],[X],
         [v(structure)-space,
          v(structure)-lumen,
