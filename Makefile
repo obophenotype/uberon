@@ -449,7 +449,7 @@ uberon-taxon-constraints.owl: uberon-taxon-constraints.obo
 
 DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check is-symmetric-check
 %.obo-gocheck: %.obo GO.xrf_abbs
-	../go-ontology/src/util/check-obo-for-standard-release.pl --xref-abbs GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
+	./util/check-obo-for-standard-release.pl --xref-abbs GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
 
 GO.xrf_abbs: uberon_edit.obo
 	wget http://geneontology.org/doc/GO.xrf_abbs -O $@ && touch $@
