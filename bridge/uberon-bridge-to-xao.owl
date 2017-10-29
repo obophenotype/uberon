@@ -13,7 +13,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2017-09-09/uberon/bridge/uberon-bridge-to-xao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao/2017-10-28/uberon/bridge/uberon-bridge-to-xao.owl"/>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VG Ponferrada</dc:contributor>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxonomic equivalence axioms between XAO and Uberon</dc:description>
@@ -3274,6 +3274,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0006011 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006011"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0006012 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006012"/>
     
 
 
@@ -15551,6 +15557,26 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zona limitans intrathalamica (xenopus)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004305</oboInOwl:id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0004316 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004316">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006012"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interdigital region (xenopus)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO:0004316</oboInOwl:id>
     </owl:Class>
     
 

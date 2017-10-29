@@ -1420,7 +1420,7 @@ uberon-nif-merged.obo:  uberon-nif-merged.owl
 # UTIL
 # ----------------------------------------
 util/ubermacros.el:
-	blip-findall -r ro -r go -r pato  -r pext -r taxslim -consult util/write_ubermacros.pro  w > $@.tmp && mv $@.tmp $@
+	blip-findall -r ro -r go -r pato  -r pext -r taxslim -r mondo_edit -consult util/write_ubermacros.pro  w > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # DEAD SIMPLE DESIGN PATTERNS
