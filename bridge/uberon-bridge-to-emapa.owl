@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-emapa.owl#"
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-emapa.owl"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:doap="http://usefulinc.com/ns/doap#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-emapa.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-emapa/2017-12-01/uberon/bridge/uberon-bridge-to-emapa.owl"/>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anne Niknejad</dc:creator>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-emapa/2018-02-28/uberon/bridge/uberon-bridge-to-emapa.owl"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aurelie Comte</dc:creator>
-        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uberon editors</dc:creator>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anne Niknejad</dc:creator>
+        <terms:references rdf:resource="http://purl.obolibrary.org/obo/fma.owl"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vHOG editors</dc:creator>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxonomic equivalence axioms between EMAPA (abstract developmental mouse) and Uberon</dc:description>
-        <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uberon bridge to emapa</dc:title>
-        <terms:references rdf:resource="http://purl.obolibrary.org/obo/fma.owl"/>
         <terms:references rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
+        <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uberon bridge to emapa</dc:title>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uberon editors</dc:creator>
     </owl:Ontology>
     
 
@@ -434,26 +434,6 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary polar body (embryonic mouse)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16032</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/EMAPA_16033 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_16033">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000106"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zygote stage (embryonic mouse)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:16033</oboInOwl:id>
     </owl:Class>
     
 
@@ -45402,6 +45382,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/EMAPA_30807 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_30807">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0036269"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">penis blood vessel (embryonic mouse)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EMAPA:30807</oboInOwl:id>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/EMAPA_30819 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EMAPA_30819">
@@ -72636,12 +72636,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000106 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000106"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0000114 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000114"/>
@@ -92628,6 +92622,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0036269 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0036269"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_1000021 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_1000021"/>
@@ -92641,5 +92641,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.0) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.8) https://github.com/owlcs/owlapi -->
 

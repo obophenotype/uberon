@@ -4,7 +4,7 @@ if (m@(OMIM|Orphanet):@) {
     s@Orphanet:(\d+)@[Orphanet:$1](http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=$1)@g;
 }
 else {
-    s@(\S+):(\d+)@[$1:$2](http://purl.obolibrary.org/obo/$1_$2)@g;
+    s@(\S+):(\w+\d+)@[$1:$2](http://purl.obolibrary.org/obo/$1_$2)@g;
 }
 s@\*\*\*@@;
 
