@@ -1,8 +1,8 @@
 ---
 comments: true
 layout: post
-title: "/releases/2017-12-01/uberon.owl"
-date: 2017-12-01
+title: "/releases/2018-02-28/uberon.owl"
+date: 2018-02-28
 summary: ""
 categories: release
 image: '/anatomy/images/u-logo.jpg'
@@ -16,12 +16,12 @@ tags:
 ## Original Ontology
 
  * IRI: http://purl.obolibrary.org/obo/uberon.owl
- * VersionIRI: http://purl.obolibrary.org/obo/uberon/releases/2017-10-28/uberon.owl
+ * VersionIRI: http://purl.obolibrary.org/obo/uberon/releases/2017-12-01/uberon.owl
 
 ## New Ontology
 
  * IRI: http://purl.obolibrary.org/obo/uberon.owl
- * VersionIRI: http://purl.obolibrary.org/obo/uberon/releases/2017-12-01/uberon.owl
+ * VersionIRI: http://purl.obolibrary.org/obo/uberon/releases/2018-02-28/uberon.owl
 
 # Report for classes
 
@@ -29,941 +29,358 @@ tags:
 ## Class objects lost from source: 0
 
 
-## Class objects new in target: 5
+## Class objects new in target: 17
 
 
-### New Class : [procumbent dorsal fin spine](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300175)
+### New Class : [isthmus](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300180)
 
- * [procumbent dorsal fin spine](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300175) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* [http://orcid.org/0000-0003-3162-7490](http://orcid.org/0000-0003-3162-7490)
- * [procumbent dorsal fin spine](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300175) **SubClassOf** [dorsal fin spine](http://purl.obolibrary.org/obo/UBERON_2002261)
- * [procumbent dorsal fin spine](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300175) *[label](http://www.w3.org/2000/01/rdf-schema#label)* procumbent dorsal fin spine
- * [procumbent dorsal fin spine](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300175) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Fin spine that precedes the dorsal fin, oriented anteriorly towards the head of the fish.
+ * [isthmus](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300180) **SubClassOf** [external soft tissue zone](http://purl.obolibrary.org/obo/UBERON_0034929)
+ * [isthmus](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300180) *[label](http://www.w3.org/2000/01/rdf-schema#label)* isthmus
+ * [isthmus](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300180) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* [http://orcid.org/0000-0003-3162-7490](http://orcid.org/0000-0003-3162-7490)
+ * [isthmus](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300180) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The fleshy throat region of a fish which extends forward from the ventral part of the chest and narrows anteriorly, and externally separating the two gill chambers; that narrowed portion of the breast which lies between the gill chambers and separates them. { [comment](http://www.w3.org/2000/01/rdf-schema#comment)=[http://www.fishbase.org/glossary/Glossary.php?q=isthmus](http://www.fishbase.org/glossary/Glossary.php?q=isthmus) } 
 
-### New Class : [parietal branch of the supraorbital canal](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300176)
+### New Class : [posterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300181)
 
- * [parietal branch of the supraorbital canal](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300176) **SubClassOf** [sensory canal](http://purl.obolibrary.org/obo/UBERON_2001612)
- * [parietal branch of the supraorbital canal](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300176) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* [http://orcid.org/0000-0003-3162-7490](http://orcid.org/0000-0003-3162-7490)
- * [parietal branch of the supraorbital canal](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300176) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [head sensory canal system](http://purl.obolibrary.org/obo/UBERON_2001873)
- * [parietal branch of the supraorbital canal](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300176) *[label](http://www.w3.org/2000/01/rdf-schema#label)* parietal branch of the supraorbital canal
- * [parietal branch of the supraorbital canal](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300176) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Branch of supraorbital sensory canal that extends to the parietal.
+ * [posterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300181) *[label](http://www.w3.org/2000/01/rdf-schema#label)* posterior sclerotic cartilage
+ * [posterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300181) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Sclerotic cartilage that is located posterior to the eye.
+ * [posterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300181) **SubClassOf** [scleral cartilage](http://purl.obolibrary.org/obo/UBERON_0010289)
+ * [posterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300181) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* [http://orcid.org/0000-0003-3162-7490](http://orcid.org/0000-0003-3162-7490)
 
-### New Class : [replacement tooth row](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300177)
+### New Class : [anterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300182)
 
- * [replacement tooth row](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300177) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Tooth row consisting of replacement teeth.
- * [replacement tooth row](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300177) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* [http://orcid.org/0000-0003-3162-7490](http://orcid.org/0000-0003-3162-7490)
- * [replacement tooth row](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300177) *[label](http://www.w3.org/2000/01/rdf-schema#label)* replacement tooth row
- * [replacement tooth row](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300177) **SubClassOf** [tooth row](http://purl.obolibrary.org/obo/UBERON_0009678)
+ * [anterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300182) **SubClassOf** [scleral cartilage](http://purl.obolibrary.org/obo/UBERON_0010289)
+ * [anterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300182) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Sclerotic cartilage that is located anterior to the eye.
+ * [anterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300182) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* [http://orcid.org/0000-0003-3162-7490](http://orcid.org/0000-0003-3162-7490)
+ * [anterior sclerotic cartilage](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300182) *[label](http://www.w3.org/2000/01/rdf-schema#label)* anterior sclerotic cartilage
 
-### New Class : [inner tooth row of dentary](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300178)
+### New Class : [neural spine 5](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300184)
 
- * [inner tooth row of dentary](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300178) **SubClassOf** [dentary tooth row](http://purl.obolibrary.org/obo/UBERON_2001952)
- * [inner tooth row of dentary](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300178) *[label](http://www.w3.org/2000/01/rdf-schema#label)* inner tooth row of dentary
- * [inner tooth row of dentary](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300178) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* [http://orcid.org/0000-0003-3162-7490](http://orcid.org/0000-0003-3162-7490)
+ * [neural spine 5](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300184) **SubClassOf** [neural spine](http://purl.obolibrary.org/obo/UBERON_0001076)
+ * [neural spine 5](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300184) *[label](http://www.w3.org/2000/01/rdf-schema#label)* neural spine 5
+ * [neural spine 5](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300184) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Neural spine that is associated with the fifth vertebra.
+ * [neural spine 5](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300184) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* WD
 
-### New Class : [inner tooth row of premaxilla](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300179)
+### New Class : [neural spine 6](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300185)
 
- * [inner tooth row of premaxilla](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300179) *[label](http://www.w3.org/2000/01/rdf-schema#label)* inner tooth row of premaxilla
- * [inner tooth row of premaxilla](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300179) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* [http://orcid.org/0000-0003-3162-7490](http://orcid.org/0000-0003-3162-7490)
- * [inner tooth row of premaxilla](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300179) **SubClassOf** [premaxillary tooth row](http://purl.obolibrary.org/obo/UBERON_2001833)
+ * [neural spine 6](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300185) *[label](http://www.w3.org/2000/01/rdf-schema#label)* neural spine 6
+ * [neural spine 6](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300185) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Neural spine that is associated with the sixth vertebra.
+ * [neural spine 6](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300185) **SubClassOf** [neural spine](http://purl.obolibrary.org/obo/UBERON_0001076)
+ * [neural spine 6](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300185) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* WD
 
-## Changed Class objects: 171
+### New Class : [neural spine 7](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300186)
+
+ * [neural spine 7](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300186) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* WD
+ * [neural spine 7](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300186) *[label](http://www.w3.org/2000/01/rdf-schema#label)* neural spine 7
+ * [neural spine 7](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300186) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Neural spine that is associated with the seventh vertebra.
+ * [neural spine 7](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300186) **SubClassOf** [neural spine](http://purl.obolibrary.org/obo/UBERON_0001076)
+
+### New Class : [buccopharyngeal complex](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300187)
+
+ * [buccopharyngeal complex](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300187) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [mouth](http://purl.obolibrary.org/obo/UBERON_0000165)
+ * [buccopharyngeal complex](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300187) **SubClassOf** [anatomical cluster](http://purl.obolibrary.org/obo/UBERON_0000477)
+ * [buccopharyngeal complex](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300187) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Anatomical cluster that is located in the oral cavity and consists of modifications to the skin on the roof of the mouth into three primary skin folds. In addition to these longitudinally oriented folds, secondary folds are present in some taxa.[PHENOSCAPE:WD] { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[https://doi.org/10.5479/si.00810282.471](https://doi.org/10.5479/si.00810282.471) } 
+ * [buccopharyngeal complex](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300187) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* WD
+ * [buccopharyngeal complex](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300187) *[label](http://www.w3.org/2000/01/rdf-schema#label)* buccopharyngeal complex
+
+### New Class : [terminal scale](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300188)
+
+ * [terminal scale](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300188) *[label](http://www.w3.org/2000/01/rdf-schema#label)* terminal scale
+ * [terminal scale](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300188) *[created by](http://www.geneontology.org/formats/oboInOwl#created_by)* WD
+ * [terminal scale](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300188) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The posteriormost scale in a scale series.[PHENOSCAPE:WD]
+ * [terminal scale](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300188) **SubClassOf** [dermal scale](http://purl.obolibrary.org/obo/UBERON_0007380)
+
+### New Class : [parapophysis 3](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300189)
+
+ * [parapophysis 3](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300189) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Parapophysis that is the lateral projection from the third centrum. Parapophysis 3 is bilaterally paired.[PHENOSCAPE:WD]
+ * [parapophysis 3](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300189) **SubClassOf** [parapophysis](http://purl.obolibrary.org/obo/UBERON_0003109)
+ * [parapophysis 3](http://purl.obolibrary.org/obo/uberon/ext.owl/UBERON_4300189) *[label](http://www.w3.org/2000/01/rdf-schema#label)* parapophysis 3
+
+### New Class : [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262)
+
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) **SubClassOf** [reproductive structure](http://purl.obolibrary.org/obo/UBERON_0005156)
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* NCIT:C61360
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) **EquivalentTo** [ligament](http://purl.obolibrary.org/obo/UBERON_0000211) **and** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [uterine cervix](http://purl.obolibrary.org/obo/UBERON_0000002)
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/272668006](http://www.snomedbrowser.com/Codes/Details/272668006)
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) *[label](http://www.w3.org/2000/01/rdf-schema#label)* uterine ligament
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) **SubClassOf** [ligament](http://purl.obolibrary.org/obo/UBERON_0000211)
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Any of the eight ligaments pertaining to the uterus including the anterior, posterior, lateral, sacro-uterine and round ligaments. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=NCIT:C61360 } 
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036262
+ * [uterine ligament](http://purl.obolibrary.org/obo/UBERON_0036262) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [uterine cervix](http://purl.obolibrary.org/obo/UBERON_0000002)
+
+### New Class : [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263)
+
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The upper part of the larynx, including the epiglottis; the area above the vocal cords. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=NCIT:C12279 } 
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/361953009](http://www.snomedbrowser.com/Codes/Details/361953009)
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:55476
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) **SubClassOf** [proximo-distal subdivision of respiratory tract](http://purl.obolibrary.org/obo/UBERON_0000072)
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036263
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* NCIT:C12279
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [larynx](http://purl.obolibrary.org/obo/UBERON_0001737) { [source](http://www.geneontology.org/formats/oboInOwl#source)=FMA } 
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[label](http://www.w3.org/2000/01/rdf-schema#label)* supraglottic part of larynx
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* supraglottis { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=NCIT:C12279 } 
+ * [supraglottic part of larynx](http://purl.obolibrary.org/obo/UBERON_0036263) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* supraglottic larynx { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:55476 } 
+
+### New Class : [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264)
+
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* zygomaticotemporal branch of zygomatic nerve { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:52972 } 
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/280243001](http://www.snomedbrowser.com/Codes/Details/280243001)
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* zygomaticotemporal branch { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Zygomaticotemporal_nerve](http://en.wikipedia.org/wiki/Zygomaticotemporal_nerve) } 
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* zygomaticotemporal { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Zygomaticotemporal_nerve](http://en.wikipedia.org/wiki/Zygomaticotemporal_nerve) } 
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus zygomaticotemporalis (Nervus zygomaticus) { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:52972 } 
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) **SubClassOf** [nerve of head region](http://purl.obolibrary.org/obo/UBERON_0011779)
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The zygomaticotemporal nerve or zygomaticotemporal branch (temporal branch) is derived from the maxillary branch of the trigeminal nerve (Cranial nerve V). It runs along the lateral wall of the orbit in a groove in the zygomatic bone, receives a branch of communication from the lacrimal, and passes through zygomaticotemporal foramen in the zygomatic bone to enter the temporal fossa. It ascends between the bone, and substance of the Temporalis muscle, pierces the temporal fascia about 2.5 cm. above the zygomatic arch, and is distributed to the skin of the side of the forehead, and communicates with the facial nerve and with the auriculotemporal branch of the mandibular nerve. As it pierces the temporal fascia, it gives off a slender twig, which runs between the two layers of the fascia to the lateral angle of the orbit. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Zygomaticotemporal_nerve](http://en.wikipedia.org/wiki/Zygomaticotemporal_nerve) } 
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) **SubClassOf** [branching part of](http://purl.obolibrary.org/obo/RO_0002380) **some** [maxillary nerve](http://purl.obolibrary.org/obo/UBERON_0000377)
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://en.wikipedia.org/wiki/Zygomaticotemporal_nerve](http://en.wikipedia.org/wiki/Zygomaticotemporal_nerve)
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[label](http://www.w3.org/2000/01/rdf-schema#label)* zygomaticotemporal nerve
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* ramus zygomaticotemporalis nervus zygomatici { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:TA , [has synonym type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) } 
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:52972
+ * [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036264
+
+### New Class : [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265)
+
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) **EquivalentTo** [papilla](http://purl.obolibrary.org/obo/UBERON_2001995) **and** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [conjunctiva](http://purl.obolibrary.org/obo/UBERON_0001811)
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [conjunctiva](http://purl.obolibrary.org/obo/UBERON_0001811)
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) *[label](http://www.w3.org/2000/01/rdf-schema#label)* conjunctival papilla
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* conjunctival papillae { [has synonym type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[plural term](http://purl.obolibrary.org/obo/uberon/core#PLURAL) } 
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/280681004](http://www.snomedbrowser.com/Codes/Details/280681004)
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) **SubClassOf** [papilla](http://purl.obolibrary.org/obo/UBERON_2001995)
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036265
+ * [conjunctival papilla](http://purl.obolibrary.org/obo/UBERON_0036265) **SubClassOf** [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121)
+
+### New Class : [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266)
+
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036266
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/705098005](http://www.snomedbrowser.com/Codes/Details/705098005)
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* pars interarticularis
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [vertebra](http://purl.obolibrary.org/obo/UBERON_0002412)
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) **SubClassOf** [skeletal element](http://purl.obolibrary.org/obo/UBERON_0004765)
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) *[label](http://www.w3.org/2000/01/rdf-schema#label)* pars interarticularis of vertebra
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://en.wikipedia.org/wiki/Pars_interarticularis](http://en.wikipedia.org/wiki/Pars_interarticularis)
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The part of vertebra located between the inferior and superior articular processes of the facet joint. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[https://en.wikipedia.org/wiki/Pars_interarticularis](https://en.wikipedia.org/wiki/Pars_interarticularis) } 
+ * [pars interarticularis of vertebra](http://purl.obolibrary.org/obo/UBERON_0036266) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+
+### New Class : [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267)
+
+ * [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/279975006](http://www.snomedbrowser.com/Codes/Details/279975006)
+ * [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) **SubClassOf** [vein](http://purl.obolibrary.org/obo/UBERON_0001638)
+ * [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036267
+ * [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) **EquivalentTo** [vein](http://purl.obolibrary.org/obo/UBERON_0001638) **and** [drains](http://purl.obolibrary.org/obo/RO_0002179) **some** [mammalian vulva](http://purl.obolibrary.org/obo/UBERON_0000997)
+ * [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) *[label](http://www.w3.org/2000/01/rdf-schema#label)* vulval vein
+ * [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) **SubClassOf** [drains](http://purl.obolibrary.org/obo/RO_0002179) **some** [mammalian vulva](http://purl.obolibrary.org/obo/UBERON_0000997)
+
+### New Class : [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268)
+
+ * [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) *[label](http://www.w3.org/2000/01/rdf-schema#label)* pelvic vein
+ * [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036268
+ * [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) **SubClassOf** [drains](http://purl.obolibrary.org/obo/RO_0002179) **some** [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355)
+ * [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/13152008](http://www.snomedbrowser.com/Codes/Details/13152008)
+ * [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) **EquivalentTo** [vein](http://purl.obolibrary.org/obo/UBERON_0001638) **and** [drains](http://purl.obolibrary.org/obo/RO_0002179) **some** [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355)
+ * [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) **SubClassOf** [vein](http://purl.obolibrary.org/obo/UBERON_0001638)
+
+### New Class : [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269)
+
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036269
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) *[label](http://www.w3.org/2000/01/rdf-schema#label)* penis blood vessel
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/363673006](http://www.snomedbrowser.com/Codes/Details/363673006)
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* penis vasculature
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* EMAPA:30807
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) **EquivalentTo** [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) **and** [connected to](http://purl.obolibrary.org/obo/RO_0002170) **some** [penis](http://purl.obolibrary.org/obo/UBERON_0000989)
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* vasculature of penis { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=EMAPA:30807 } 
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) **SubClassOf** [connected to](http://purl.obolibrary.org/obo/RO_0002170) **some** [penis](http://purl.obolibrary.org/obo/UBERON_0000989)
+ * [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) **SubClassOf** [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981)
+
+## Changed Class objects: 23
 
 
-### Changes for: [deltopectoral crest](http://purl.obolibrary.org/obo/UBERON_0002498)
+### Changes for: [obsolete ptychocyst](http://purl.obolibrary.org/obo/UBERON_0014462)
 
  * _Deleted_
-    *  **-** [deltopectoral crest](http://purl.obolibrary.org/obo/UBERON_0002498) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* deltoid crest { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0004353 } 
-    *  **-** [deltopectoral crest](http://purl.obolibrary.org/obo/UBERON_0002498) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* deltoid crest { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0000736 } 
+    *  **-** [ptychocyst](http://purl.obolibrary.org/obo/UBERON_0014462) **SubClassOf** [obsolete cnida](http://purl.obolibrary.org/obo/UBERON_0008277)
+    *  **-** [ptychocyst](http://purl.obolibrary.org/obo/UBERON_0014462) *[label](http://www.w3.org/2000/01/rdf-schema#label)* ptychocyst
  * _Added_
-    *  **+** [deltopectoral crest](http://purl.obolibrary.org/obo/UBERON_0002498) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* deltoid crest { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=AAO:0000736 , [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0004353 } 
+    *  **+** [obsolete ptychocyst](http://purl.obolibrary.org/obo/UBERON_0014462) *[comment](http://www.w3.org/2000/01/rdf-schema#comment)* Will be added to GO or a cnidarian ontology
+    *  **+** [obsolete ptychocyst](http://purl.obolibrary.org/obo/UBERON_0014462) *[deprecated](http://www.w3.org/2002/07/owl#deprecated)* true
+    *  **+** [obsolete ptychocyst](http://purl.obolibrary.org/obo/UBERON_0014462) *[label](http://www.w3.org/2000/01/rdf-schema#label)* obsolete ptychocyst
 
-### Changes for: [spiral modiolar artery](http://purl.obolibrary.org/obo/UBERON_0002505)
-
- * _Added_
-    *  **+** [spiral modiolar artery](http://purl.obolibrary.org/obo/UBERON_0002505) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [mucosa of epiglottis](http://purl.obolibrary.org/obo/UBERON_0004982)
-
- * _Added_
-    *  **+** [mucosa of epiglottis](http://purl.obolibrary.org/obo/UBERON_0004982) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [myocardium](http://purl.obolibrary.org/obo/UBERON_0002349)
-
- * _Added_
-    *  **+** [myocardium](http://purl.obolibrary.org/obo/UBERON_0002349) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [dentition](http://purl.obolibrary.org/obo/UBERON_0003672)
+### Changes for: [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106)
 
  * _Deleted_
-    *  **-** [dentition](http://purl.obolibrary.org/obo/UBERON_0003672) **SubClassOf** [skeleton](http://purl.obolibrary.org/obo/UBERON_0004288)
+    *  **-** [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* EMAPA:16033
  * _Added_
-    *  **+** [dentition](http://purl.obolibrary.org/obo/UBERON_0003672) **SubClassOf** [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925)
+    *  **+** [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) *[seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso)* [http://purl.obolibrary.org/obo/EMAPA_16033](http://purl.obolibrary.org/obo/EMAPA_16033)
 
-### Changes for: [choroid plexus of lateral ventricle](http://purl.obolibrary.org/obo/UBERON_0002307)
-
- * _Added_
-    *  **+** [choroid plexus of lateral ventricle](http://purl.obolibrary.org/obo/UBERON_0002307) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)
-
- * _Added_
-    *  **+** [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [bone marrow](http://purl.obolibrary.org/obo/UBERON_0002371)
-
- * _Added_
-    *  **+** [bone marrow](http://purl.obolibrary.org/obo/UBERON_0002371) *[editor note](http://purl.obolibrary.org/obo/IAO_0000116)* consider placement of NCIT:C53466 medullary bone
-    *  **+** [bone marrow](http://purl.obolibrary.org/obo/UBERON_0002371) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* medullary bone
-
-### Changes for: [palatine tonsil](http://purl.obolibrary.org/obo/UBERON_0002373)
-
- * _Added_
-    *  **+** [palatine tonsil](http://purl.obolibrary.org/obo/UBERON_0002373) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [circle of Willis](http://purl.obolibrary.org/obo/UBERON_0003709)
-
- * _Added_
-    *  **+** [circle of Willis](http://purl.obolibrary.org/obo/UBERON_0003709) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [lacrimal gland epithelium](http://purl.obolibrary.org/obo/UBERON_0004817)
-
- * _Added_
-    *  **+** [lacrimal gland epithelium](http://purl.obolibrary.org/obo/UBERON_0004817) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [choroid plexus of fourth ventricle](http://purl.obolibrary.org/obo/UBERON_0002290)
-
- * _Added_
-    *  **+** [choroid plexus of fourth ventricle](http://purl.obolibrary.org/obo/UBERON_0002290) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [caudal division of the internal carotid artery](http://purl.obolibrary.org/obo/UBERON_2001051)
-
- * _Added_
-    *  **+** [caudal division of the internal carotid artery](http://purl.obolibrary.org/obo/UBERON_2001051) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [future internal carotid artery](http://purl.obolibrary.org/obo/UBERON_2001053)
-
- * _Added_
-    *  **+** [future internal carotid artery](http://purl.obolibrary.org/obo/UBERON_2001053) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [cranial division of the internal carotid artery](http://purl.obolibrary.org/obo/UBERON_2001059)
-
- * _Added_
-    *  **+** [cranial division of the internal carotid artery](http://purl.obolibrary.org/obo/UBERON_2001059) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [supraoccipital bone](http://purl.obolibrary.org/obo/UBERON_0004747)
-
- * _Added_
-    *  **+** [supraoccipital bone](http://purl.obolibrary.org/obo/UBERON_0004747) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [prootic bone](http://purl.obolibrary.org/obo/UBERON_0004746)
-
- * _Added_
-    *  **+** [prootic bone](http://purl.obolibrary.org/obo/UBERON_0004746) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470)
-
- * _Added_
-    *  **+** [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471)
-
- * _Added_
-    *  **+** [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627)
-
- * _Added_
-    *  **+** [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628)
-
- * _Added_
-    *  **+** [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622)
-
- * _Added_
-    *  **+** [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624)
-
- * _Added_
-    *  **+** [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [superior sagittal sinus](http://purl.obolibrary.org/obo/UBERON_0001642)
-
- * _Added_
-    *  **+** [superior sagittal sinus](http://purl.obolibrary.org/obo/UBERON_0001642) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [submental vein](http://purl.obolibrary.org/obo/UBERON_0001655)
-
- * _Added_
-    *  **+** [submental vein](http://purl.obolibrary.org/obo/UBERON_0001655) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [ciliary muscle](http://purl.obolibrary.org/obo/UBERON_0001605)
-
- * _Added_
-    *  **+** [ciliary muscle](http://purl.obolibrary.org/obo/UBERON_0001605) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616)
-
- * _Added_
-    *  **+** [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617)
-
- * _Added_
-    *  **+** [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618)
-
- * _Added_
-    *  **+** [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611)
-
- * _Added_
-    *  **+** [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619)
-
- * _Added_
-    *  **+** [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [medial palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014773)
-
- * _Added_
-    *  **+** [medial palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014773) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [lateral palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014772)
-
- * _Added_
-    *  **+** [lateral palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014772) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [bone element](http://purl.obolibrary.org/obo/UBERON_0001474)
+### Changes for: [respiratory tube](http://purl.obolibrary.org/obo/UBERON_0000117)
 
  * _Deleted_
-    *  **-** [bone element](http://purl.obolibrary.org/obo/UBERON_0001474) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* bone element { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=VSAO:0000057 } 
-
-### Changes for: [ascending aorta](http://purl.obolibrary.org/obo/UBERON_0001496)
-
+    *  **-** [respiratory tube](http://purl.obolibrary.org/obo/UBERON_0000117) *[has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* respiratory conducting tube
  * _Added_
-    *  **+** [ascending aorta](http://purl.obolibrary.org/obo/UBERON_0001496) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
+    *  **+** [respiratory tube](http://purl.obolibrary.org/obo/UBERON_0000117) *[has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* respiratory conducting tube { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0004391 } 
+    *  **+** [respiratory tube](http://purl.obolibrary.org/obo/UBERON_0000117) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* airway
 
-### Changes for: [skin of external ear](http://purl.obolibrary.org/obo/UBERON_0001459)
-
- * _Added_
-    *  **+** [skin of external ear](http://purl.obolibrary.org/obo/UBERON_0001459) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [arch of aorta](http://purl.obolibrary.org/obo/UBERON_0001508)
-
- * _Added_
-    *  **+** [arch of aorta](http://purl.obolibrary.org/obo/UBERON_0001508) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [common carotid artery plus branches](http://purl.obolibrary.org/obo/UBERON_0001530)
-
- * _Added_
-    *  **+** [common carotid artery plus branches](http://purl.obolibrary.org/obo/UBERON_0001530) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)
-
- * _Added_
-    *  **+** [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007)
-
- * _Added_
-    *  **+** [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [anterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014696)
-
- * _Added_
-    *  **+** [anterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014696) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [deep auricular artery](http://purl.obolibrary.org/obo/UBERON_0014695)
-
- * _Added_
-    *  **+** [deep auricular artery](http://purl.obolibrary.org/obo/UBERON_0014695) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [tympanic cavity epithelium](http://purl.obolibrary.org/obo/UBERON_0010063)
-
- * _Added_
-    *  **+** [tympanic cavity epithelium](http://purl.obolibrary.org/obo/UBERON_0010063) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pharyngotympanic tube epithelium](http://purl.obolibrary.org/obo/UBERON_0010062)
-
- * _Added_
-    *  **+** [pharyngotympanic tube epithelium](http://purl.obolibrary.org/obo/UBERON_0010062) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350)
-
- * _Added_
-    *  **+** [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380)
-
- * _Added_
-    *  **+** [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398)
-
- * _Added_
-    *  **+** [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [superior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035404)
-
- * _Added_
-    *  **+** [superior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035404) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [right atrium endocardium](http://purl.obolibrary.org/obo/UBERON_0009129)
-
- * _Added_
-    *  **+** [right atrium endocardium](http://purl.obolibrary.org/obo/UBERON_0009129) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237)
-
- * _Added_
-    *  **+** [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [ethmoid cartilage](http://purl.obolibrary.org/obo/UBERON_0011242)
-
- * _Added_
-    *  **+** [ethmoid cartilage](http://purl.obolibrary.org/obo/UBERON_0011242) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pseudobranchial artery](http://purl.obolibrary.org/obo/UBERON_2005011)
-
- * _Added_
-    *  **+** [pseudobranchial artery](http://purl.obolibrary.org/obo/UBERON_2005011) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [afferent lamellar arteriole](http://purl.obolibrary.org/obo/UBERON_2005015)
-
- * _Added_
-    *  **+** [afferent lamellar arteriole](http://purl.obolibrary.org/obo/UBERON_2005015) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [efferent lamellar arteriole](http://purl.obolibrary.org/obo/UBERON_2005019)
-
- * _Added_
-    *  **+** [efferent lamellar arteriole](http://purl.obolibrary.org/obo/UBERON_2005019) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [opercular artery](http://purl.obolibrary.org/obo/UBERON_2005022)
-
- * _Added_
-    *  **+** [opercular artery](http://purl.obolibrary.org/obo/UBERON_2005022) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [supraoccipital cartilage element](http://purl.obolibrary.org/obo/UBERON_0011162)
-
- * _Added_
-    *  **+** [supraoccipital cartilage element](http://purl.obolibrary.org/obo/UBERON_0011162) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457)
-
- * _Added_
-    *  **+** [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [multicellular organism](http://purl.obolibrary.org/obo/UBERON_0000468)
+### Changes for: [trochlear nucleus](http://purl.obolibrary.org/obo/UBERON_0002722)
 
  * _Deleted_
-    *  **-** [multicellular organism](http://purl.obolibrary.org/obo/UBERON_0000468) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* EHDAA:9178
+    *  **-** [trochlear nucleus](http://purl.obolibrary.org/obo/UBERON_0002722) *[has broad synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym)* 4 { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://uri.neuinfo.org/nif/nifstd/birnlex_1488](http://uri.neuinfo.org/nif/nifstd/birnlex_1488) , [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=NIFSTD:NeuroNames_abbrevSource , [has synonym type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[abbreviation](http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION) } 
 
-### Changes for: [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831)
-
- * _Added_
-    *  **+** [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [lobule of pinna](http://purl.obolibrary.org/obo/UBERON_0001847)
-
- * _Added_
-    *  **+** [lobule of pinna](http://purl.obolibrary.org/obo/UBERON_0001847) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [cerebral vein](http://purl.obolibrary.org/obo/UBERON_0001663)
-
- * _Added_
-    *  **+** [cerebral vein](http://purl.obolibrary.org/obo/UBERON_0001663) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648)
-
- * _Added_
-    *  **+** [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [squamous part of temporal bone](http://purl.obolibrary.org/obo/UBERON_0001695)
+### Changes for: [endocervix](http://purl.obolibrary.org/obo/UBERON_0000458)
 
  * _Deleted_
-    *  **-** [squamous part of temporal bone](http://purl.obolibrary.org/obo/UBERON_0001695) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* temporal bone squamous part { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=VHOG:0001561 } 
+    *  **-** [endocervix](http://purl.obolibrary.org/obo/UBERON_0000458) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* 1. The mucous membrane lining the canal of the cervix uteri. 2. The region of the opening of the uterine cervix into the uterine cavity. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=BTO:0003002 } 
  * _Added_
-    *  **+** [squamous part of temporal bone](http://purl.obolibrary.org/obo/UBERON_0001695) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* temporal bone squamous part { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MP:0004423 , [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=VHOG:0001561 } 
+    *  **+** [endocervix](http://purl.obolibrary.org/obo/UBERON_0000458) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The region of the opening of the uterine cervix into the uterine cavity. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=BTO:0003002 } 
 
-### Changes for: [basioccipital bone](http://purl.obolibrary.org/obo/UBERON_0001692)
-
- * _Added_
-    *  **+** [basioccipital bone](http://purl.obolibrary.org/obo/UBERON_0001692) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [exoccipital bone](http://purl.obolibrary.org/obo/UBERON_0001693)
+### Changes for: [lacrimal drainage system](http://purl.obolibrary.org/obo/UBERON_0001850)
 
  * _Added_
-    *  **+** [exoccipital bone](http://purl.obolibrary.org/obo/UBERON_0001693) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
+    *  **+** [lacrimal drainage system](http://purl.obolibrary.org/obo/UBERON_0001850) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* lacrimal duct { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:61063 , [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=MA:0001295 } 
 
-### Changes for: [deep temporal artery](http://purl.obolibrary.org/obo/UBERON_0035041)
-
- * _Added_
-    *  **+** [deep temporal artery](http://purl.obolibrary.org/obo/UBERON_0035041) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [middle temporal artery](http://purl.obolibrary.org/obo/UBERON_0035042)
-
- * _Added_
-    *  **+** [middle temporal artery](http://purl.obolibrary.org/obo/UBERON_0035042) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [temporal branch of lateral pretrosal artery](http://purl.obolibrary.org/obo/UBERON_0035043)
-
- * _Added_
-    *  **+** [temporal branch of lateral pretrosal artery](http://purl.obolibrary.org/obo/UBERON_0035043) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [turbinate bone](http://purl.obolibrary.org/obo/UBERON_0001762)
-
- * _Added_
-    *  **+** [turbinate bone](http://purl.obolibrary.org/obo/UBERON_0001762) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [ocular angle artery](http://purl.obolibrary.org/obo/UBERON_0010408)
-
- * _Added_
-    *  **+** [ocular angle artery](http://purl.obolibrary.org/obo/UBERON_0010408) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [feather follicle](http://purl.obolibrary.org/obo/UBERON_0011782)
-
- * _Added_
-    *  **+** [feather follicle](http://purl.obolibrary.org/obo/UBERON_0011782) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [future upper lip](http://purl.obolibrary.org/obo/UBERON_0011592)
-
- * _Added_
-    *  **+** [future upper lip](http://purl.obolibrary.org/obo/UBERON_0011592) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [middle meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010250)
-
- * _Added_
-    *  **+** [middle meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010250) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [anterior meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010251)
-
- * _Added_
-    *  **+** [anterior meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010251) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [gingiva of lower jaw](http://purl.obolibrary.org/obo/UBERON_0011602)
-
- * _Added_
-    *  **+** [gingiva of lower jaw](http://purl.obolibrary.org/obo/UBERON_0011602) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [spiracular notch](http://purl.obolibrary.org/obo/UBERON_4100115)
+### Changes for: [oculomotor nuclear complex](http://purl.obolibrary.org/obo/UBERON_0001715)
 
  * _Deleted_
-    *  **-** [spiracular notch](http://purl.obolibrary.org/obo/UBERON_4100115) **SubClassOf** [anatomical structure](http://purl.obolibrary.org/obo/UBERON_0000061)
- * _Added_
-    *  **+** [spiracular notch](http://purl.obolibrary.org/obo/UBERON_4100115) **SubClassOf** [anatomical space](http://purl.obolibrary.org/obo/UBERON_0000464)
+    *  **-** [oculomotor nuclear complex](http://purl.obolibrary.org/obo/UBERON_0001715) *[has broad synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym)* 3 { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://uri.neuinfo.org/nif/nifstd/birnlex_1240](http://uri.neuinfo.org/nif/nifstd/birnlex_1240) , [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=NIFSTD:NeuroNames_abbrevSource , [has synonym type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[abbreviation](http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION) } 
 
-### Changes for: [inferior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035492)
-
- * _Added_
-    *  **+** [inferior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035492) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [trunk of common carotid artery](http://purl.obolibrary.org/obo/UBERON_0010197)
-
- * _Added_
-    *  **+** [trunk of common carotid artery](http://purl.obolibrary.org/obo/UBERON_0010197) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [posterior lateral plate mesoderm](http://purl.obolibrary.org/obo/UBERON_0009910)
-
- * _Added_
-    *  **+** [posterior lateral plate mesoderm](http://purl.obolibrary.org/obo/UBERON_0009910) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
-
-### Changes for: [mandibular rhamphotheca](http://purl.obolibrary.org/obo/UBERON_0007332)
-
- * _Added_
-    *  **+** [mandibular rhamphotheca](http://purl.obolibrary.org/obo/UBERON_0007332) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [hair follicle isthmus](http://purl.obolibrary.org/obo/UBERON_0006005)
-
- * _Added_
-    *  **+** [hair follicle isthmus](http://purl.obolibrary.org/obo/UBERON_0006005) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [hair follicle matrix region](http://purl.obolibrary.org/obo/UBERON_0006004)
-
- * _Added_
-    *  **+** [hair follicle matrix region](http://purl.obolibrary.org/obo/UBERON_0006004) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [blastocoel roof](http://purl.obolibrary.org/obo/UBERON_3010436)
+### Changes for: [obsolete spirocyst](http://purl.obolibrary.org/obo/UBERON_0008279)
 
  * _Deleted_
-    *  **-** [blastocoel roof](http://purl.obolibrary.org/obo/UBERON_3010436) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [blastocele](http://purl.obolibrary.org/obo/UBERON_0000090)
+    *  **-** [spirocyst](http://purl.obolibrary.org/obo/UBERON_0008279) **SubClassOf** [obsolete cnida](http://purl.obolibrary.org/obo/UBERON_0008277)
+    *  **-** [spirocyst](http://purl.obolibrary.org/obo/UBERON_0008279) *[label](http://www.w3.org/2000/01/rdf-schema#label)* spirocyst
  * _Added_
-    *  **+** [blastocoel roof](http://purl.obolibrary.org/obo/UBERON_3010436) **SubClassOf** [adjacent to](http://purl.obolibrary.org/obo/RO_0002220) **some** [blastocele](http://purl.obolibrary.org/obo/UBERON_0000090)
+    *  **+** [obsolete spirocyst](http://purl.obolibrary.org/obo/UBERON_0008279) *[comment](http://www.w3.org/2000/01/rdf-schema#comment)* Will be added to GO or a cnidarian ontology
+    *  **+** [obsolete spirocyst](http://purl.obolibrary.org/obo/UBERON_0008279) *[deprecated](http://www.w3.org/2002/07/owl#deprecated)* true
+    *  **+** [obsolete spirocyst](http://purl.obolibrary.org/obo/UBERON_0008279) *[label](http://www.w3.org/2000/01/rdf-schema#label)* obsolete spirocyst
 
-### Changes for: [mandibular artery](http://purl.obolibrary.org/obo/UBERON_3010496)
-
- * _Added_
-    *  **+** [mandibular artery](http://purl.obolibrary.org/obo/UBERON_3010496) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [lateral pretrosal artery](http://purl.obolibrary.org/obo/UBERON_3010494)
-
- * _Added_
-    *  **+** [lateral pretrosal artery](http://purl.obolibrary.org/obo/UBERON_3010494) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [muscular artery](http://purl.obolibrary.org/obo/UBERON_3010489)
-
- * _Added_
-    *  **+** [muscular artery](http://purl.obolibrary.org/obo/UBERON_3010489) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [choroid plexus of tectal ventricle](http://purl.obolibrary.org/obo/UBERON_0007299)
-
- * _Added_
-    *  **+** [choroid plexus of tectal ventricle](http://purl.obolibrary.org/obo/UBERON_0007299) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [lateral appendix](http://purl.obolibrary.org/obo/UBERON_3010195)
+### Changes for: [enteric nerve](http://purl.obolibrary.org/obo/UBERON_0010380)
 
  * _Deleted_
-    *  **-** [lateral appendix](http://purl.obolibrary.org/obo/UBERON_3010195) **SubClassOf** [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121)
-    *  **-** [lateral appendix](http://purl.obolibrary.org/obo/UBERON_3010195) **SubClassOf** [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119)
-    *  **-** [lateral appendix](http://purl.obolibrary.org/obo/UBERON_3010195) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [nasal cavity](http://purl.obolibrary.org/obo/UBERON_0001707)
-    *  **-** [lateral appendix](http://purl.obolibrary.org/obo/UBERON_3010195) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
+    *  **-** [enteric nerve](http://purl.obolibrary.org/obo/UBERON_0010380) **SubClassOf** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728)
  * _Added_
-    *  **+** [lateral appendix](http://purl.obolibrary.org/obo/UBERON_3010195) **SubClassOf** [located in](http://purl.obolibrary.org/obo/RO_0001025) **some** [nasal cavity](http://purl.obolibrary.org/obo/UBERON_0001707)
+    *  **+** [enteric nerve](http://purl.obolibrary.org/obo/UBERON_0010380) **SubClassOf** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021)
 
-### Changes for: [exoccipital cartilage element](http://purl.obolibrary.org/obo/UBERON_0010752)
-
- * _Added_
-    *  **+** [exoccipital cartilage element](http://purl.obolibrary.org/obo/UBERON_0010752) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [endocardium of right ventricle](http://purl.obolibrary.org/obo/UBERON_0009712)
-
- * _Added_
-    *  **+** [endocardium of right ventricle](http://purl.obolibrary.org/obo/UBERON_0009712) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [arrector pili muscle of vibrissa](http://purl.obolibrary.org/obo/UBERON_0011940)
-
- * _Added_
-    *  **+** [arrector pili muscle of vibrissa](http://purl.obolibrary.org/obo/UBERON_0011940) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [alveolar artery](http://purl.obolibrary.org/obo/UBERON_0009654)
-
- * _Added_
-    *  **+** [alveolar artery](http://purl.obolibrary.org/obo/UBERON_0009654) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [anterior inferior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0009689)
-
- * _Added_
-    *  **+** [anterior inferior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0009689) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0005193)
-
- * _Added_
-    *  **+** [ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0005193) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [hypobranchial artery](http://purl.obolibrary.org/obo/UBERON_2000673)
-
- * _Added_
-    *  **+** [hypobranchial artery](http://purl.obolibrary.org/obo/UBERON_2000673) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [facial neural crest](http://purl.obolibrary.org/obo/UBERON_0007681)
-
- * _Added_
-    *  **+** [facial neural crest](http://purl.obolibrary.org/obo/UBERON_0007681) **SubClassOf** [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313)
-
-### Changes for: [mucosa of upper lip](http://purl.obolibrary.org/obo/UBERON_0005031)
-
- * _Added_
-    *  **+** [mucosa of upper lip](http://purl.obolibrary.org/obo/UBERON_0005031) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032)
-
- * _Added_
-    *  **+** [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693)
-
- * _Added_
-    *  **+** [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [mucosa of nasolacrimal duct](http://purl.obolibrary.org/obo/UBERON_0005043)
-
- * _Added_
-    *  **+** [mucosa of nasolacrimal duct](http://purl.obolibrary.org/obo/UBERON_0005043) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [ligamentum arteriosum](http://purl.obolibrary.org/obo/UBERON_0007642)
-
- * _Added_
-    *  **+** [ligamentum arteriosum](http://purl.obolibrary.org/obo/UBERON_0007642) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [lateral ventricle choroid plexus stroma](http://purl.obolibrary.org/obo/UBERON_0006338)
-
- * _Added_
-    *  **+** [lateral ventricle choroid plexus stroma](http://purl.obolibrary.org/obo/UBERON_0006338) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [fourth ventricle choroid plexus stroma](http://purl.obolibrary.org/obo/UBERON_0006340)
-
- * _Added_
-    *  **+** [fourth ventricle choroid plexus stroma](http://purl.obolibrary.org/obo/UBERON_0006340) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [stapedial artery](http://purl.obolibrary.org/obo/UBERON_0006345)
-
- * _Added_
-    *  **+** [stapedial artery](http://purl.obolibrary.org/obo/UBERON_0006345) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [posterior superior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0018397)
-
- * _Added_
-    *  **+** [posterior superior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0018397) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [shagreen tooth field](http://purl.obolibrary.org/obo/UBERON_4200239)
+### Changes for: [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549)
 
  * _Deleted_
-    *  **-** [shagreen tooth field](http://purl.obolibrary.org/obo/UBERON_4200239) *[label](http://www.w3.org/2000/01/rdf-schema#label)* shagreen tooth field
+    *  **-** [superficial vasculature](http://purl.obolibrary.org/obo/UBERON_0035549) **EquivalentTo** [vasculature](http://purl.obolibrary.org/obo/UBERON_0002049) **and** [located in](http://purl.obolibrary.org/obo/RO_0001025) **some** [hypodermis](http://purl.obolibrary.org/obo/UBERON_0002072)
+    *  **-** [superficial vasculature](http://purl.obolibrary.org/obo/UBERON_0035549) **SubClassOf** [located in](http://purl.obolibrary.org/obo/RO_0001025) **some** [hypodermis](http://purl.obolibrary.org/obo/UBERON_0002072)
+    *  **-** [superficial vasculature](http://purl.obolibrary.org/obo/UBERON_0035549) *[label](http://www.w3.org/2000/01/rdf-schema#label)* superficial vasculature
  * _Added_
-    *  **+** [shagreen tooth field](http://purl.obolibrary.org/obo/UBERON_4200239) *[label](http://www.w3.org/2000/01/rdf-schema#label)* shagreen tooth field
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) **EquivalentTo** [vasculature](http://purl.obolibrary.org/obo/UBERON_0002049) **and** [located in](http://purl.obolibrary.org/obo/RO_0001025) **some** [integument](http://purl.obolibrary.org/obo/UBERON_0002199)
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) **SubClassOf** [located in](http://purl.obolibrary.org/obo/RO_0001025) **some** [integument](http://purl.obolibrary.org/obo/UBERON_0002199)
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:225275
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* superficial vasculature
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) *[has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* dermis vasculature
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) *[has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym)* hypodermis vasculature
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* skin vasculature
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* subcutaneous vasculature
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* vasculature of skin { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:225275 } 
+    *  **+** [vasculature of integument](http://purl.obolibrary.org/obo/UBERON_0035549) *[label](http://www.w3.org/2000/01/rdf-schema#label)* vasculature of integument
 
-### Changes for: [thymus primordium endoderm](http://purl.obolibrary.org/obo/UBERON_0008817)
-
- * _Added_
-    *  **+** [thymus primordium endoderm](http://purl.obolibrary.org/obo/UBERON_0008817) **SubClassOf** [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119)
-
-### Changes for: [labyrinthine artery](http://purl.obolibrary.org/obo/UBERON_0018231)
-
- * _Added_
-    *  **+** [labyrinthine artery](http://purl.obolibrary.org/obo/UBERON_0018231) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [nasolacrimal groove](http://purl.obolibrary.org/obo/UBERON_0006266)
-
- * _Added_
-    *  **+** [nasolacrimal groove](http://purl.obolibrary.org/obo/UBERON_0006266) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [basioccipital cartilage element](http://purl.obolibrary.org/obo/UBERON_0006209)
-
- * _Added_
-    *  **+** [basioccipital cartilage element](http://purl.obolibrary.org/obo/UBERON_0006209) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pulmonary vascular system](http://purl.obolibrary.org/obo/UBERON_0008886)
-
- * _Added_
-    *  **+** [pulmonary vascular system](http://purl.obolibrary.org/obo/UBERON_0008886) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [cartilago lateralis of aryngo-tracheal chamber](http://purl.obolibrary.org/obo/UBERON_3010614)
+### Changes for: [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551)
 
  * _Deleted_
-    *  **-** [cartilago lateralis of aryngo-tracheal chamber](http://purl.obolibrary.org/obo/UBERON_3010614) **SubClassOf** [laryngeal cartilage](http://purl.obolibrary.org/obo/UBERON_0001739)
-    *  **-** [cartilago lateralis of aryngo-tracheal chamber](http://purl.obolibrary.org/obo/UBERON_3010614) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [laryngo-tracheal chamber](http://purl.obolibrary.org/obo/UBERON_3010613)
+    *  **-** [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551) **EquivalentTo** [vasculature](http://purl.obolibrary.org/obo/UBERON_0002049) **and** [deep to](http://purl.obolibrary.org/obo/BSPO_0000107) **some** [hypodermis](http://purl.obolibrary.org/obo/UBERON_0002072)
+    *  **-** [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551) **SubClassOf** [deep to](http://purl.obolibrary.org/obo/BSPO_0000107) **some** [hypodermis](http://purl.obolibrary.org/obo/UBERON_0002072)
  * _Added_
-    *  **+** [cartilago lateralis of aryngo-tracheal chamber](http://purl.obolibrary.org/obo/UBERON_3010614) **SubClassOf** [cartilage element](http://purl.obolibrary.org/obo/UBERON_0007844)
-    *  **+** [cartilago lateralis of aryngo-tracheal chamber](http://purl.obolibrary.org/obo/UBERON_3010614) **SubClassOf** [located in](http://purl.obolibrary.org/obo/RO_0001025) **some** [laryngo-tracheal chamber](http://purl.obolibrary.org/obo/UBERON_3010613)
+    *  **+** [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551) **EquivalentTo** [vasculature](http://purl.obolibrary.org/obo/UBERON_0002049) **and** [deep to](http://purl.obolibrary.org/obo/BSPO_0000107) **some** [integument](http://purl.obolibrary.org/obo/UBERON_0002199)
+    *  **+** [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551) **SubClassOf** [deep to](http://purl.obolibrary.org/obo/BSPO_0000107) **some** [integument](http://purl.obolibrary.org/obo/UBERON_0002199)
 
-### Changes for: [skin of upper lip](http://purl.obolibrary.org/obo/UBERON_0018151)
-
- * _Added_
-    *  **+** [skin of upper lip](http://purl.obolibrary.org/obo/UBERON_0018151) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [skin of lower lip](http://purl.obolibrary.org/obo/UBERON_0018150)
-
- * _Added_
-    *  **+** [skin of lower lip](http://purl.obolibrary.org/obo/UBERON_0018150) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [foramen perilymphaticus inferius](http://purl.obolibrary.org/obo/UBERON_3000195)
+### Changes for: [palpebral bone](http://purl.obolibrary.org/obo/UBERON_0010309)
 
  * _Deleted_
-    *  **-** [foramen perilymphaticus inferius](http://purl.obolibrary.org/obo/UBERON_3000195) **SubClassOf** [bone foramen](http://purl.obolibrary.org/obo/UBERON_0005744)
+    *  **-** [palpebral bone](http://purl.obolibrary.org/obo/UBERON_0010309) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* palpebral
  * _Added_
-    *  **+** [foramen perilymphaticus inferius](http://purl.obolibrary.org/obo/UBERON_3000195) **SubClassOf** [braincase and otic capsule opening](http://purl.obolibrary.org/obo/UBERON_3000051)
+    *  **+** [palpebral bone](http://purl.obolibrary.org/obo/UBERON_0010309) *[has broad synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym)* palpebral
 
-### Changes for: [foramen perilymphaticum accessorium](http://purl.obolibrary.org/obo/UBERON_3000193)
+### Changes for: [obsolete basihyal](http://purl.obolibrary.org/obo/UBERON_3000957)
 
  * _Deleted_
-    *  **-** [foramen perilymphaticum accessorium](http://purl.obolibrary.org/obo/UBERON_3000193) **SubClassOf** [bone foramen](http://purl.obolibrary.org/obo/UBERON_0005744)
+    *  **-** [basihyal](http://purl.obolibrary.org/obo/UBERON_3000957) **SubClassOf** [endochondral bone](http://purl.obolibrary.org/obo/UBERON_0002513)
+    *  **-** [basihyal](http://purl.obolibrary.org/obo/UBERON_3000957) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [hyoid apparatus](http://purl.obolibrary.org/obo/UBERON_0010272)
+    *  **-** [basihyal](http://purl.obolibrary.org/obo/UBERON_3000957) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
+    *  **-** [basihyal](http://purl.obolibrary.org/obo/UBERON_3000957) *[label](http://www.w3.org/2000/01/rdf-schema#label)* basihyal
  * _Added_
-    *  **+** [foramen perilymphaticum accessorium](http://purl.obolibrary.org/obo/UBERON_3000193) **SubClassOf** [braincase and otic capsule opening](http://purl.obolibrary.org/obo/UBERON_3000051)
+    *  **+** [obsolete basihyal](http://purl.obolibrary.org/obo/UBERON_3000957) *[consider](http://www.geneontology.org/formats/oboInOwl#consider)* UBERON:0011614
+    *  **+** [obsolete basihyal](http://purl.obolibrary.org/obo/UBERON_3000957) *[deprecated](http://www.w3.org/2002/07/owl#deprecated)* true
+    *  **+** [obsolete basihyal](http://purl.obolibrary.org/obo/UBERON_3000957) *[label](http://www.w3.org/2000/01/rdf-schema#label)* obsolete basihyal
 
-### Changes for: [dorsal fin radial bone](http://purl.obolibrary.org/obo/UBERON_2001672)
-
- * _Added_
-    *  **+** [dorsal fin radial bone](http://purl.obolibrary.org/obo/UBERON_2001672) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [exoccipital posteroventral region](http://purl.obolibrary.org/obo/UBERON_2000348)
-
- * _Added_
-    *  **+** [exoccipital posteroventral region](http://purl.obolibrary.org/obo/UBERON_2000348) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [basioccipital posterodorsal region](http://purl.obolibrary.org/obo/UBERON_2000337)
-
- * _Added_
-    *  **+** [basioccipital posterodorsal region](http://purl.obolibrary.org/obo/UBERON_2000337) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [crista dentalis of premaxilla](http://purl.obolibrary.org/obo/UBERON_3000112)
+### Changes for: [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728)
 
  * _Deleted_
-    *  **-** [crista dentalis of premaxilla](http://purl.obolibrary.org/obo/UBERON_3000112) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [alveolar ridge](http://purl.obolibrary.org/obo/UBERON_0004103) **and** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [premaxilla](http://purl.obolibrary.org/obo/UBERON_0002244)
+    *  **-** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) **EquivalentTo** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021) **and** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [autonomic nervous system](http://purl.obolibrary.org/obo/UBERON_0002410)
+    *  **-** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) **SubClassOf** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021)
+    *  **-** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://en.wikipedia.org/wiki/Splanchnic_nerves](http://en.wikipedia.org/wiki/Splanchnic_nerves)
+    *  **-** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The splanchnic nerves are paired nerves that contribute to the innervation of the viscera, carrying fibers of the autonomic nervous system as well as sensory fibers from the organs. All carry sympathetic fibers except for the pelvic splanchnic nerves, which carry parasympathetic fibers. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Splanchnic_nerves](http://en.wikipedia.org/wiki/Splanchnic_nerves) } 
+ * _Added_
+    *  **+** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) **SubClassOf** [branching part of](http://purl.obolibrary.org/obo/RO_0002380) **some** [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264)
+    *  **+** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) **SubClassOf** [nerve of head region](http://purl.obolibrary.org/obo/UBERON_0011779)
+    *  **+** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://en.wikipedia.org/wiki/Autonomic_nerve](http://en.wikipedia.org/wiki/Autonomic_nerve)
+    *  **+** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The autonomic nerve is a small nerve which carries postganglionic sympathetic and parasympathetic neurons from the zygomaticotemporal nerve; a branch of the maxillary nerve, to the lacrimal nerve; a branch of the ophthalmic nerve. These neurons derive from the superior cervical ganglion and the pterygopalatine ganglion respectively. They will travel to the lacrimal gland via the lacrimal nerve. Parasympathetic will induce lacrimation and vice versa. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Autonomic_nerve](http://en.wikipedia.org/wiki/Autonomic_nerve) } 
 
-### Changes for: [foramen acusticum anterius](http://purl.obolibrary.org/obo/UBERON_3000180)
+### Changes for: [sympathetic nerve](http://purl.obolibrary.org/obo/UBERON_0034729)
 
  * _Deleted_
-    *  **-** [foramen acusticum anterius](http://purl.obolibrary.org/obo/UBERON_3000180) **SubClassOf** [bone foramen](http://purl.obolibrary.org/obo/UBERON_0005744)
+    *  **-** [sympathetic nerve](http://purl.obolibrary.org/obo/UBERON_0034729) **SubClassOf** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728)
  * _Added_
-    *  **+** [foramen acusticum anterius](http://purl.obolibrary.org/obo/UBERON_3000180) **SubClassOf** [braincase and otic capsule opening](http://purl.obolibrary.org/obo/UBERON_3000051)
+    *  **+** [sympathetic nerve](http://purl.obolibrary.org/obo/UBERON_0034729) **SubClassOf** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021)
 
-### Changes for: [foramen acusticum posterius](http://purl.obolibrary.org/obo/UBERON_3000183)
+### Changes for: [obsolete vertebral](http://purl.obolibrary.org/obo/UBERON_3010224)
 
  * _Deleted_
-    *  **-** [foramen acusticum posterius](http://purl.obolibrary.org/obo/UBERON_3000183) **SubClassOf** [bone foramen](http://purl.obolibrary.org/obo/UBERON_0005744)
+    *  **-** [vertebral](http://purl.obolibrary.org/obo/UBERON_3010224) **SubClassOf** [artery](http://purl.obolibrary.org/obo/UBERON_0001637)
+    *  **-** [vertebral](http://purl.obolibrary.org/obo/UBERON_3010224) *[label](http://www.w3.org/2000/01/rdf-schema#label)* vertebral
  * _Added_
-    *  **+** [foramen acusticum posterius](http://purl.obolibrary.org/obo/UBERON_3000183) **SubClassOf** [braincase and otic capsule opening](http://purl.obolibrary.org/obo/UBERON_3000051)
+    *  **+** [obsolete vertebral](http://purl.obolibrary.org/obo/UBERON_3010224) *[consider](http://www.geneontology.org/formats/oboInOwl#consider)* UBERON:0010913
+    *  **+** [obsolete vertebral](http://purl.obolibrary.org/obo/UBERON_3010224) *[deprecated](http://www.w3.org/2002/07/owl#deprecated)* true
+    *  **+** [obsolete vertebral](http://purl.obolibrary.org/obo/UBERON_3010224) *[label](http://www.w3.org/2000/01/rdf-schema#label)* obsolete vertebral
 
-### Changes for: [foramen acusticum maius](http://purl.obolibrary.org/obo/UBERON_3000181)
+### Changes for: [common penile artery](http://purl.obolibrary.org/obo/UBERON_0008320)
+
+ * _Added_
+    *  **+** [common penile artery](http://purl.obolibrary.org/obo/UBERON_0008320) **SubClassOf** [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269)
+
+### Changes for: [postganglionic autonomic fiber](http://purl.obolibrary.org/obo/UBERON_0011924)
 
  * _Deleted_
-    *  **-** [foramen acusticum maius](http://purl.obolibrary.org/obo/UBERON_3000181) **SubClassOf** [bone foramen](http://purl.obolibrary.org/obo/UBERON_0005744)
+    *  **-** [postganglionic autonomic fiber](http://purl.obolibrary.org/obo/UBERON_0011924) **SubClassOf** [nerve fiber](http://purl.obolibrary.org/obo/UBERON_0006134)
  * _Added_
-    *  **+** [foramen acusticum maius](http://purl.obolibrary.org/obo/UBERON_3000181) **SubClassOf** [braincase and otic capsule opening](http://purl.obolibrary.org/obo/UBERON_3000051)
+    *  **+** [postganglionic autonomic fiber](http://purl.obolibrary.org/obo/UBERON_0011924) **SubClassOf** [trigeminal nerve fibers](http://purl.obolibrary.org/obo/UBERON_0003041)
 
-### Changes for: [foramen acusticum minus](http://purl.obolibrary.org/obo/UBERON_3000182)
+### Changes for: [preganglionic autonomic fiber](http://purl.obolibrary.org/obo/UBERON_0011925)
 
  * _Deleted_
-    *  **-** [foramen acusticum minus](http://purl.obolibrary.org/obo/UBERON_3000182) **SubClassOf** [bone foramen](http://purl.obolibrary.org/obo/UBERON_0005744)
+    *  **-** [preganglionic autonomic fiber](http://purl.obolibrary.org/obo/UBERON_0011925) **SubClassOf** [nerve fiber](http://purl.obolibrary.org/obo/UBERON_0006134)
  * _Added_
-    *  **+** [foramen acusticum minus](http://purl.obolibrary.org/obo/UBERON_3000182) **SubClassOf** [braincase and otic capsule opening](http://purl.obolibrary.org/obo/UBERON_3000051)
+    *  **+** [preganglionic autonomic fiber](http://purl.obolibrary.org/obo/UBERON_0011925) **SubClassOf** [trigeminal nerve fibers](http://purl.obolibrary.org/obo/UBERON_0003041)
 
-### Changes for: [lateral ventricle choroid plexus epithelium](http://purl.obolibrary.org/obo/UBERON_0004274)
-
- * _Added_
-    *  **+** [lateral ventricle choroid plexus epithelium](http://purl.obolibrary.org/obo/UBERON_0004274) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [fourth ventricle choroid plexus epithelium](http://purl.obolibrary.org/obo/UBERON_0004276)
-
- * _Added_
-    *  **+** [fourth ventricle choroid plexus epithelium](http://purl.obolibrary.org/obo/UBERON_0004276) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [skeleton](http://purl.obolibrary.org/obo/UBERON_0004288)
+### Changes for: [parasympathetic nerve](http://purl.obolibrary.org/obo/UBERON_0004293)
 
  * _Deleted_
-    *  **-** [skeleton](http://purl.obolibrary.org/obo/UBERON_0004288) **EquivalentTo** [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925) **and** [has member](http://purl.obolibrary.org/obo/RO_0002351) **some** [skeletal element](http://purl.obolibrary.org/obo/UBERON_0004765)
-
-### Changes for: [lower oral valve](http://purl.obolibrary.org/obo/UBERON_2000233)
-
- * _Deleted_
-    *  **-** [lower oral valve](http://purl.obolibrary.org/obo/UBERON_2000233) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [labial cavities](http://purl.obolibrary.org/obo/UBERON_2000695)
+    *  **-** [parasympathetic nerve](http://purl.obolibrary.org/obo/UBERON_0004293) **SubClassOf** [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728)
  * _Added_
-    *  **+** [lower oral valve](http://purl.obolibrary.org/obo/UBERON_2000233) **SubClassOf** [adjacent to](http://purl.obolibrary.org/obo/RO_0002220) **some** [labial cavities](http://purl.obolibrary.org/obo/UBERON_2000695)
+    *  **+** [parasympathetic nerve](http://purl.obolibrary.org/obo/UBERON_0004293) **SubClassOf** [nerve](http://purl.obolibrary.org/obo/UBERON_0001021)
 
-### Changes for: [lateral ethmoid bone](http://purl.obolibrary.org/obo/UBERON_2000226)
+### Changes for: [alimentary part of gastrointestinal system](http://purl.obolibrary.org/obo/UBERON_0005409)
 
  * _Added_
-    *  **+** [lateral ethmoid bone](http://purl.obolibrary.org/obo/UBERON_2000226) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
+    *  **+** [alimentary part of gastrointestinal system](http://purl.obolibrary.org/obo/UBERON_0005409) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* gastroenterological system { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
 
-### Changes for: [crus of ear](http://purl.obolibrary.org/obo/UBERON_0004106)
-
- * _Added_
-    *  **+** [crus of ear](http://purl.obolibrary.org/obo/UBERON_0004106) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [aortic sac](http://purl.obolibrary.org/obo/UBERON_0005432)
+### Changes for: [deep dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0006656)
 
  * _Added_
-    *  **+** [aortic sac](http://purl.obolibrary.org/obo/UBERON_0005432) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
+    *  **+** [deep dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0006656) **SubClassOf** [drains](http://purl.obolibrary.org/obo/RO_0002179) **some** [corpus cavernosum penis](http://purl.obolibrary.org/obo/UBERON_0004713)
+    *  **+** [deep dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0006656) **SubClassOf** [drains](http://purl.obolibrary.org/obo/RO_0002179) **some** [glans penis](http://purl.obolibrary.org/obo/UBERON_0001299)
 
-### Changes for: [ductus arteriosus](http://purl.obolibrary.org/obo/UBERON_0005440)
-
- * _Added_
-    *  **+** [ductus arteriosus](http://purl.obolibrary.org/obo/UBERON_0005440) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [foramen cecum of frontal bone](http://purl.obolibrary.org/obo/UBERON_0006713)
+### Changes for: [helicine artery of penis](http://purl.obolibrary.org/obo/UBERON_0015174)
 
  * _Added_
-    *  **+** [foramen cecum of frontal bone](http://purl.obolibrary.org/obo/UBERON_0006713) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [sphenotic](http://purl.obolibrary.org/obo/UBERON_2000587)
-
- * _Added_
-    *  **+** [sphenotic](http://purl.obolibrary.org/obo/UBERON_2000587) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pulmonary artery endothelium](http://purl.obolibrary.org/obo/UBERON_0005317)
-
- * _Added_
-    *  **+** [pulmonary artery endothelium](http://purl.obolibrary.org/obo/UBERON_0005317) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [greater palatine artery](http://purl.obolibrary.org/obo/UBERON_0006664)
-
- * _Added_
-    *  **+** [greater palatine artery](http://purl.obolibrary.org/obo/UBERON_0006664) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [hyoidean artery](http://purl.obolibrary.org/obo/UBERON_2001857)
-
- * _Added_
-    *  **+** [hyoidean artery](http://purl.obolibrary.org/obo/UBERON_2001857) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pterosphenoid](http://purl.obolibrary.org/obo/UBERON_2000419)
-
- * _Added_
-    *  **+** [pterosphenoid](http://purl.obolibrary.org/obo/UBERON_2000419) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [upper oral valve](http://purl.obolibrary.org/obo/UBERON_2000451)
-
- * _Deleted_
-    *  **-** [upper oral valve](http://purl.obolibrary.org/obo/UBERON_2000451) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [labial cavities](http://purl.obolibrary.org/obo/UBERON_2000695)
- * _Added_
-    *  **+** [upper oral valve](http://purl.obolibrary.org/obo/UBERON_2000451) **SubClassOf** [adjacent to](http://purl.obolibrary.org/obo/RO_0002220) **some** [labial cavities](http://purl.obolibrary.org/obo/UBERON_2000695)
-
-### Changes for: [tela choroidea of midbrain cerebral aqueduct](http://purl.obolibrary.org/obo/UBERON_0005286)
-
- * _Added_
-    *  **+** [tela choroidea of midbrain cerebral aqueduct](http://purl.obolibrary.org/obo/UBERON_0005286) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [tela choroidea of fourth ventricle](http://purl.obolibrary.org/obo/UBERON_0005287)
-
- * _Added_
-    *  **+** [tela choroidea of fourth ventricle](http://purl.obolibrary.org/obo/UBERON_0005287) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [tela choroidea of telencephalic ventricle](http://purl.obolibrary.org/obo/UBERON_0005289)
-
- * _Added_
-    *  **+** [tela choroidea of telencephalic ventricle](http://purl.obolibrary.org/obo/UBERON_0005289) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [infraorbital artery](http://purl.obolibrary.org/obo/UBERON_0004646)
-
- * _Added_
-    *  **+** [infraorbital artery](http://purl.obolibrary.org/obo/UBERON_0004646) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [hair follicle bulge](http://purl.obolibrary.org/obo/UBERON_0005975)
-
- * _Added_
-    *  **+** [hair follicle bulge](http://purl.obolibrary.org/obo/UBERON_0005975) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [blood-inner ear barrier](http://purl.obolibrary.org/obo/UBERON_0005973)
-
- * _Added_
-    *  **+** [blood-inner ear barrier](http://purl.obolibrary.org/obo/UBERON_0005973) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [epithelium of vomeronasal organ](http://purl.obolibrary.org/obo/UBERON_0003367)
-
- * _Added_
-    *  **+** [epithelium of vomeronasal organ](http://purl.obolibrary.org/obo/UBERON_0003367) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [truncus arteriosus](http://purl.obolibrary.org/obo/UBERON_0002061)
-
- * _Added_
-    *  **+** [truncus arteriosus](http://purl.obolibrary.org/obo/UBERON_0002061) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [mesenchyme of lower jaw](http://purl.obolibrary.org/obo/UBERON_0003324)
-
- * _Added_
-    *  **+** [mesenchyme of lower jaw](http://purl.obolibrary.org/obo/UBERON_0003324) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [mesenchyme of upper jaw](http://purl.obolibrary.org/obo/UBERON_0003323)
-
- * _Added_
-    *  **+** [mesenchyme of upper jaw](http://purl.obolibrary.org/obo/UBERON_0003323) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [subendocardium layer](http://purl.obolibrary.org/obo/UBERON_0005984)
-
- * _Added_
-    *  **+** [subendocardium layer](http://purl.obolibrary.org/obo/UBERON_0005984) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016)
-
- * _Added_
-    *  **+** [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012)
-
- * _Added_
-    *  **+** [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [hair follicle](http://purl.obolibrary.org/obo/UBERON_0002073)
-
- * _Added_
-    *  **+** [hair follicle](http://purl.obolibrary.org/obo/UBERON_0002073) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [cerebral blood vessel](http://purl.obolibrary.org/obo/UBERON_0016565)
-
- * _Added_
-    *  **+** [cerebral blood vessel](http://purl.obolibrary.org/obo/UBERON_0016565) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [thyroid primordium endoderm](http://purl.obolibrary.org/obo/UBERON_0003261)
-
- * _Added_
-    *  **+** [thyroid primordium endoderm](http://purl.obolibrary.org/obo/UBERON_0003261) **SubClassOf** [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119)
-
-### Changes for: [upper lip protuberances](http://purl.obolibrary.org/obo/UBERON_3010091)
-
- * _Added_
-    *  **+** [upper lip protuberances](http://purl.obolibrary.org/obo/UBERON_3010091) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [epithelium of lower jaw](http://purl.obolibrary.org/obo/UBERON_0003236)
-
- * _Added_
-    *  **+** [epithelium of lower jaw](http://purl.obolibrary.org/obo/UBERON_0003236) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [epiotic](http://purl.obolibrary.org/obo/UBERON_2001412)
-
- * _Added_
-    *  **+** [epiotic](http://purl.obolibrary.org/obo/UBERON_2001412) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [preethmoid bone](http://purl.obolibrary.org/obo/UBERON_2001404)
-
- * _Added_
-    *  **+** [preethmoid bone](http://purl.obolibrary.org/obo/UBERON_2001404) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pronephric mesoderm](http://purl.obolibrary.org/obo/UBERON_0005721)
-
- * _Added_
-    *  **+** [pronephric mesoderm](http://purl.obolibrary.org/obo/UBERON_0005721) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
-
-### Changes for: [hindbrain venous system](http://purl.obolibrary.org/obo/UBERON_0005720)
-
- * _Added_
-    *  **+** [hindbrain venous system](http://purl.obolibrary.org/obo/UBERON_0005720) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [melanophore stripe](http://purl.obolibrary.org/obo/UBERON_2001463)
-
- * _Added_
-    *  **+** [melanophore stripe](http://purl.obolibrary.org/obo/UBERON_2001463) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* bar
-    *  **+** [melanophore stripe](http://purl.obolibrary.org/obo/UBERON_2001463) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* melanophore bar
-
-### Changes for: [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156)
-
- * _Added_
-    *  **+** [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157)
-
- * _Added_
-    *  **+** [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158)
-
- * _Added_
-    *  **+** [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160)
-
- * _Added_
-    *  **+** [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [hyoid artery](http://purl.obolibrary.org/obo/UBERON_0005608)
-
- * _Added_
-    *  **+** [hyoid artery](http://purl.obolibrary.org/obo/UBERON_0005608) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [inner ear epithelium](http://purl.obolibrary.org/obo/UBERON_0006937)
-
- * _Added_
-    *  **+** [inner ear epithelium](http://purl.obolibrary.org/obo/UBERON_0006937) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pinna surface epithelium](http://purl.obolibrary.org/obo/UBERON_0006938)
-
- * _Added_
-    *  **+** [pinna surface epithelium](http://purl.obolibrary.org/obo/UBERON_0006938) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_0004363)
-
- * _Added_
-    *  **+** [pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_0004363) **SubClassOf** [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314)
-
-### Changes for: [mastoid lymph node](http://purl.obolibrary.org/obo/UBERON_0016392)
-
- * _Added_
-    *  **+** [mastoid lymph node](http://purl.obolibrary.org/obo/UBERON_0016392) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/245328002](http://www.snomedbrowser.com/Codes/Details/245328002)
-    *  **+** [mastoid lymph node](http://purl.obolibrary.org/obo/UBERON_0016392) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* postauricular lymph node { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
+    *  **+** [helicine artery of penis](http://purl.obolibrary.org/obo/UBERON_0015174) **SubClassOf** [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269)
+    *  **+** [helicine artery of penis](http://purl.obolibrary.org/obo/UBERON_0015174) **SubClassOf** [supplies](http://purl.obolibrary.org/obo/RO_0002178) **some** [penis](http://purl.obolibrary.org/obo/UBERON_0000989)
 
 # Report for properties
 
