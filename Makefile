@@ -119,7 +119,7 @@ is_ok: unreasoned.owl
 materialized.owl: unreasoned.owl is_ok
 	$(ROBOT) relax -i $< materialize -T basic_properties.txt -r elk \
 		 reason -r elk \
-		 annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
+		 annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ > $@.LOG 2>&1
 .PRECIOUS: materialized.owl
 
 # somewhat awkward: we temporarily inject reflexivity axioms
@@ -128,7 +128,7 @@ ext.owl: materialized.owl $(TMP_REFL)
 	owltools --use-catalog $< $(TMP_REFL) --merge-support-ontologies -o m1.owl && \
 	$(ROBOT) reduce -i m1.owl -r elk \
 	unmerge -i $(TMP_REFL) \
-	annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
+	annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ > $@.LOG 2>&1
 
 RELSIM = BFO:0000050 RO:0002202 immediate_transformation_of
 # ext.obo is a relation subset of this. TODO: use case?
@@ -615,7 +615,7 @@ uberon-qc: imports $(QC_FILES) all_systems
 
 # TODO - need closure for taxslim too
 %-obscheck.txt: %.obo
-	((obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) >& $@
+	((obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) > $@ 2>&1
 
 
 # ----------------------------------------
@@ -634,32 +634,32 @@ PART_OF = BFO_0000050
 subsets/musculoskeletal-full.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d -c $(OBO)/uberon/$@ "$(PART_OF) some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
 subsets/musculoskeletal-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/excretory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/reproductive-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/digestive-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/nervous-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/sensory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/immune-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/circulatory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/pulmonary-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001004" --reasoner-query UBERON_0001004 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001004" --reasoner-query UBERON_0001004 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/cranial-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/renal-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/appendicular-minimal.obo: merged.owl
-	owltools $< --make-subset-by-properties -f part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --make-subset-by-properties -f part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 
 subsets/vertebrate-head.obo: composite-vertebrate.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000033" --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000033" --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 
 # TODO - switch to purls for OWL once released
 subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl
@@ -668,15 +668,15 @@ subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl
 #subsets/life-stages.obo: uberon.owl
 #subsets/life-stages.obo: composite-metazoan.obo
 subsets/life-stages-composite.obo: composite-metazoan.owl
-	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f obo --no-check $@ --reasoner-dispose > $@.LOG 2>&1
 
 subsets/life-stages-core.obo: uberon.owl
-	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 subsets/life-stages-core.owl: uberon.owl
-	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o file://`pwd`/$@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(OBO)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o file://`pwd`/$@ --reasoner-dispose > $@.LOG 2>&1
 
 subsets/immaterial.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  UBERON_0000466  --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  UBERON_0000466  --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose > $@.LOG 2>&1
 
 
 subsets/%.owl: subsets/%.obo
@@ -934,7 +934,7 @@ uberon-taxmod-%.obo: uberon-taxmod-%.owl
 
 # added --allowEquivalencies, see https://github.com/geneontology/go-ontology/issues/12926
 uberon-taxmod-%.owl: ext.owl
-	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$*  --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling --set-ontology-id $(OBO)/uberon/subsets/$@ -o $@ >& $@.log
+	owltools --use-catalog $< --reasoner elk --make-species-subset -t NCBITaxon:$*  --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling --set-ontology-id $(OBO)/uberon/subsets/$@ -o $@ > $@.log 2>&1
 #uberon-taxmod-%.owl: uberon-taxmod-%.ids
 #	blip-ddb -u ontol_db -r uberonp -format "tbl(ids)" -i $< -goal "forall((class(C),\+ids(C)),delete_class(C)),remove_dangling_facts" io-convert -to obo > $@
 #	blip ontol-query -r uberonp -format "tbl(ids)" -i $< -to obo -query "ids(ID)" > $@.tmp && grep -v ^disjoint_from $@.tmp | grep -v 'relationship: spatially_disjoint' > $@
@@ -1156,7 +1156,7 @@ spellcheck: uberon_edit.obo-spellcheck
 # ----------------------------------------
 
 %-wikipedia.xrefs: %.obo
-	(blip -i $< -u web_fetch_wikipedia -u query_anatomy findall class_wikipage/2 > $@) >& $@.err
+	(blip -i $< -u web_fetch_wikipedia -u query_anatomy findall class_wikipage/2 > $@) > $@.err 2>&1
 
 %-wikipedia.pro: %-wikipedia.xrefs
 	./wikitbl2defxref.pl $< | tbl2p > $@
