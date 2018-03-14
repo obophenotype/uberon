@@ -526,7 +526,7 @@ expl-bridge-check-%.txt: bridge-check-%.owl
 
 # A full bridge check uses ext plus external ontology and the bridge
 full-bridge-check-%.txt: ext.owl bridge/bridges external-disjoints.owl
-	OWLTOOLS_MEMORY=14G owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	OWLTOOLS_MEMORY=14G owltools --no-debug --catalog-xml $(CATALOG) $< $(OBO)/$*.owl bridge/uberon-bridge-to-$*.owl external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m debug-full-bridge-check-$*.owl  > $@.tmp && mv $@.tmp $@
 
 # As above, but include pending disjoints. This is a very strict check and we don't expect this to pass for lots of ssAOs.
 extra-full-bridge-check-%.txt: ext.owl local-%.owl bridge/uberon-bridge-to-%.owl pending-disjoints.obo external-disjoints.owl
