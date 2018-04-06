@@ -117,6 +117,7 @@ is_ok: unreasoned.owl
 	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # Produce file containing assertions but no imports or inferences. Currently this will be missing the temporary reflexivity axioms.
+# TODO ideally some annotations would point to external referenced ontologies
 asserted.owl: unreasoned.owl is_ok
 	owltools $(UCAT) $< --remove-imports-declarations -o $@.tmp &&\
 	$(ROBOT) annotate -i $@.tmp -O $(OBO)/uberon/asserted/uberon.owl -V $(RELEASE)/asserted/uberon.owl -o $@ && rm $@.tmp
