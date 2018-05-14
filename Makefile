@@ -496,7 +496,7 @@ taxon-constraint-check.txt: uberon_edit-plus-tax-equivs.owl
 EXTRA_FULL_CHECK_AO_LIST = caro
 
 # silver club
-FULL_CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST)  wbls
+FULL_CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST)  wbls wbbt
 
 # premier execs
 CHECK_AO_LIST = $(FULL_CHECK_AO_LIST)
