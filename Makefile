@@ -62,7 +62,7 @@ checks: uberon_edit-xp-check uberon_edit-obscheck.txt \
 # STEP 1: pre-processing and quick validation
 # ----------------------------------------
 
-# the source file is pseudo-obo - expand psueo-syntax, expand special comments, expand ID spaces
+# the source file is pseudo-obo - expand pseduo-syntax, expand special comments, expand ID spaces
 uberon_edit_x.obo: uberon_edit.obo 
 	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl | ./util/separate-ALL.pl > $@.tmp && mv $@.tmp $@
 
@@ -102,7 +102,13 @@ insect-anatomy-noimports.owl: insect-anatomy.obo core.owl
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
 ## TODO: omitting removal of DisjointClasses to see what happens
 unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl insect-anatomy-noimports.owl bridge/uberon-bridge-to-bfo.owl 
-	owltools $(UCAT) $^ --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
+	owltools $(UCAT) $^ --merge-support-ontologies -o -f functional $@
+#	owltools $(UCAT) $^ --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
+
+# First pass at making atomic module (name TBD)
+# should this include downward-injected axioms, e.g on ZFA?
+uberon-component.owl: unreasoned.owl
+	owltools $(UCAT) $< --remove-imports-declarations --remove-axioms -t Declaration --set-ontology-id $(OBO)/uberon/uberon-component.owl -o $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # STEP 3: Perform reasoning and create release ext.owl file
