@@ -105,10 +105,11 @@ unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl insect-anatomy-noim
 	owltools $(UCAT) $^ --merge-support-ontologies -o -f functional $@
 #	owltools $(UCAT) $^ --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
-# First pass at making atomic module (name TBD)
+# First pass at making base module
+# Currently this will be missing the temporary reflexivity axioms.
 # should this include downward-injected axioms, e.g on ZFA?
-uberon-component.owl: unreasoned.owl
-	owltools $(UCAT) $< --remove-imports-declarations --remove-axioms -t Declaration --set-ontology-id $(OBO)/uberon/uberon-component.owl -o $@.tmp && mv $@.tmp $@
+uberon-base.owl: unreasoned.owl
+	owltools $(UCAT) $< --remove-imports-declarations --remove-axioms -t Declaration --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # STEP 3: Perform reasoning and create release ext.owl file
@@ -121,12 +122,6 @@ uberon-component.owl: unreasoned.owl
 ## TESTING - NEW
 is_ok: unreasoned.owl
 	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-
-# Produce file containing assertions but no imports or inferences. Currently this will be missing the temporary reflexivity axioms.
-# TODO ideally some annotations would point to external referenced ontologies
-asserted.owl: unreasoned.owl is_ok
-	owltools $(UCAT) $< --remove-imports-declarations -o $@.tmp &&\
-	$(ROBOT) annotate -i $@.tmp -O $(OBO)/uberon/asserted/uberon.owl -V $(RELEASE)/asserted/uberon.owl -o $@ && rm $@.tmp
 
 materialized.owl: unreasoned.owl is_ok
 	$(ROBOT) relax -i $< materialize -T basic_properties.txt -r elk \
@@ -1013,6 +1008,7 @@ release:
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl,json} $(RELDIR) ;\
 	cp merged.{obo,owl} $(RELDIR)/ ;\
+	cp uberon-base.owl $(RELDIR) ;\
 	cp basic.obo $(RELDIR)/basic.obo ;\
 	cp basic.owl $(RELDIR)/basic.owl ;\
 	cp homology.owl $(RELDIR)/homology.owl ;\
@@ -1020,8 +1016,6 @@ release:
 	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
 	cp ext.{obo,owl,json} $(RELDIR)/ ;\
-	mkdir -p $(RELDIR)/asserted ;\
-	cp asserted.owl $(RELDIR)/asserted/uberon.owl ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp subsets/*.{obo,owl} $(RELDIR)/subsets/ ;\
