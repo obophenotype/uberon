@@ -641,7 +641,7 @@ PART_OF = BFO_0000050
 subsets/musculoskeletal-full.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d -c $(OBO)/uberon/$@ "$(PART_OF) some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
 subsets/musculoskeletal-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/excretory-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
 subsets/reproductive-minimal.obo: merged.owl
@@ -687,7 +687,7 @@ subsets/immaterial.obo: merged.owl
 
 
 subsets/%.owl: subsets/%.obo
-	owltools $< -o file:///`pwd`/$@
+	owltools $< -o $@.tmp && mv $@.tmp $@
 
 
 # ----------------------------------------
