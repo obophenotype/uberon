@@ -1,0 +1,35 @@
+pattern_name: X part of X
+pattern_iri: http://purl.obolibrary.org/obo/uberon/X_part_of_X
+
+description: >-
+  This is auto-generated. Add your description here
+
+  Examples: [submucosa of large intestine](http://purl.obolibrary.org/obo/UBERON_0001208), [submucosa of anal canal](http://purl.obolibrary.org/obo/UBERON_0003329), [intestinal submucosa](http://purl.obolibrary.org/obo/UBERON_0009566) (3557 total)
+
+classes: []
+
+relations: 
+  part of: "BFO:0000050"
+
+
+vars:
+  v0: "owl:Thing"
+  v1: "owl:Thing"
+
+name:
+  text: "%s part of %s"
+  vars:
+    - v0
+    - v1
+
+def:
+  text: "Any %s that part of a %s."
+  vars:
+    - v0
+    - v1
+
+equivalentTo:
+  text: "%s and 'part of' some %s"
+  vars:
+    - v0
+    - v1

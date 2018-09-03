@@ -1,0 +1,35 @@
+pattern_name: X in_right_side_of X
+pattern_iri: http://purl.obolibrary.org/obo/uberon/X_in_right_side_of_X
+
+description: >-
+  This is auto-generated. Add your description here
+
+  Examples: [right ureter](http://purl.obolibrary.org/obo/UBERON_0001222), [right testis](http://purl.obolibrary.org/obo/UBERON_0004534), [right eye](http://purl.obolibrary.org/obo/UBERON_0004549) (44 total)
+
+classes: []
+
+relations: 
+  in_right_side_of: "http://purl.obolibrary.org/obo/BSPO_0000121"
+
+
+vars:
+  v0: "owl:Thing"
+  v1: "owl:Thing"
+
+name:
+  text: "%s in_right_side_of %s"
+  vars:
+    - v0
+    - v1
+
+def:
+  text: "Any %s that in_right_side_of a %s."
+  vars:
+    - v0
+    - v1
+
+equivalentTo:
+  text: "%s and 'in_right_side_of' some %s"
+  vars:
+    - v0
+    - v1

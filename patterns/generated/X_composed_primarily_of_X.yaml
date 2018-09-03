@@ -1,0 +1,35 @@
+pattern_name: X composed primarily of X
+pattern_iri: http://purl.obolibrary.org/obo/uberon/X_composed_primarily_of_X
+
+description: >-
+  This is auto-generated. Add your description here
+
+  Examples: [muscle organ](http://purl.obolibrary.org/obo/UBERON_0001630), [vertebral column](http://purl.obolibrary.org/obo/UBERON_0001130), [endothelial blood brain barrier](http://purl.obolibrary.org/obo/UBERON_0000201) (403 total)
+
+classes: []
+
+relations: 
+  composed primarily of: "RO:0002473"
+
+
+vars:
+  v0: "owl:Thing"
+  v1: "owl:Thing"
+
+name:
+  text: "%s composed primarily of %s"
+  vars:
+    - v0
+    - v1
+
+def:
+  text: "Any %s that composed primarily of a %s."
+  vars:
+    - v0
+    - v1
+
+equivalentTo:
+  text: "%s and 'composed primarily of' some %s"
+  vars:
+    - v0
+    - v1

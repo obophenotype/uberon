@@ -1,0 +1,35 @@
+pattern_name: X drains X
+pattern_iri: http://purl.obolibrary.org/obo/uberon/X_drains_X
+
+description: >-
+  This is auto-generated. Add your description here
+
+  Examples: [left renal vein](http://purl.obolibrary.org/obo/UBERON_0001142), [right renal vein](http://purl.obolibrary.org/obo/UBERON_0001141), [left testicular vein](http://purl.obolibrary.org/obo/UBERON_0000443) (53 total)
+
+classes: []
+
+relations: 
+  drains: "RO:0002179"
+
+
+vars:
+  v0: "owl:Thing"
+  v1: "owl:Thing"
+
+name:
+  text: "%s drains %s"
+  vars:
+    - v0
+    - v1
+
+def:
+  text: "Any %s that drains a %s."
+  vars:
+    - v0
+    - v1
+
+equivalentTo:
+  text: "%s and 'drains' some %s"
+  vars:
+    - v0
+    - v1
