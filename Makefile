@@ -587,6 +587,7 @@ QC_FILES = checks\
     uberon_edit-cycles\
     uberon-cycles\
     uberon.owl\
+    uberon-base.owl\
     uberon-with-isa.obo\
     basic.obo\
     basic-allcycles\
@@ -1428,7 +1429,7 @@ uberon-nif-merged.obo:  uberon-nif-merged.owl
 # UTIL
 # ----------------------------------------
 util/ubermacros.el:
-	blip-findall -r ro -r go -r pato  -r pext -r taxslim -r mondo_edit -consult util/write_ubermacros.pro  w > $@.tmp && mv $@.tmp $@
+	blip-findall -r ro -r go -r pato  -r pext -r mondo -r taxslim -r mondo_edit -consult util/write_ubermacros.pro  w > $@.tmp && sort -u $@.tmp > $@
 
 # ----------------------------------------
 # DEAD SIMPLE DESIGN PATTERNS
@@ -1440,6 +1441,10 @@ MODS = luminal_space_of gland_duct gland_acinus endochondral_bone endochondral_c
 
 # OWL->CSV
 PSRC = uberon_edit.obo
+
+# NEW: reverse engineer using patternizer
+patternizer:
+	pl2sparql   -e -c patterns/patternizer_conf.pl -A void.ttl -i ext doall
 
 # reverse engineer CSV from uberon axioms and DOSDPs
 modules/%.csv: $(PSRC)
