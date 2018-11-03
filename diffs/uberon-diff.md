@@ -1,8 +1,8 @@
 ---
 comments: true
 layout: post
-title: "/releases/2018-10-14/uberon.owl"
-date: 2018-10-14
+title: "/releases/2018-11-01/uberon.owl"
+date: 2018-11-01
 summary: ""
 categories: release
 image: '/anatomy/images/u-logo.jpg'
@@ -12,20 +12,16 @@ tags:
 
 # Ontology Diff Report
 
- * Adding grouping class for oral frenulum, see https://github.com/obophenotype/human-phenotype-ontology/issues/3336
- * NT: adnexa of uterus
- * Removed incorrect xref for hsapdv, @ANiknejad fixed https://github.com/obophenotype/developmental-stage-ontologies/issues/60
-
 
 ## Original Ontology
 
  * IRI: http://purl.obolibrary.org/obo/uberon.owl
- * VersionIRI: http://purl.obolibrary.org/obo/uberon/releases/2018-09-10/uberon.owl
+ * VersionIRI: http://purl.obolibrary.org/obo/uberon/releases/2018-10-14/uberon.owl
 
 ## New Ontology
 
  * IRI: http://purl.obolibrary.org/obo/uberon.owl
- * VersionIRI: http://purl.obolibrary.org/obo/uberon/releases/2018-10-14/uberon.owl
+ * VersionIRI: http://purl.obolibrary.org/obo/uberon/releases/2018-11-01/uberon.owl
 
 # Report for classes
 
@@ -33,135 +29,177 @@ tags:
 ## Class objects lost from source: 0
 
 
-## Class objects new in target: 3
+## Class objects new in target: 1
 
 
-### New Class : [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292)
+### New Class : [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295)
 
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036292
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* adnexa uteri { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Adnexa_of_uterus](http://en.wikipedia.org/wiki/Adnexa_of_uterus) } 
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://en.wikipedia.org/wiki/Adnexa_of_uterus](http://en.wikipedia.org/wiki/Adnexa_of_uterus)
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [uterus](http://purl.obolibrary.org/obo/UBERON_0000995)
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[label](http://www.w3.org/2000/01/rdf-schema#label)* adnexa of uterus
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* FMA:265256
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The fallopian tubes and ovaries. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Adnexa_of_uterus](http://en.wikipedia.org/wiki/Adnexa_of_uterus) } 
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) **SubClassOf** [organ part](http://purl.obolibrary.org/obo/UBERON_0000064)
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) **SubClassOf** [reproductive structure](http://purl.obolibrary.org/obo/UBERON_0005156)
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/361373008](http://www.snomedbrowser.com/Codes/Details/361373008)
- * [adnexa of uterus](http://purl.obolibrary.org/obo/UBERON_0036292) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* uterine adnexa { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=FMA:265256 } 
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* NCIT:C54419
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [upper urinary tract](http://purl.obolibrary.org/obo/UBERON_0011143) { [source](http://www.geneontology.org/formats/oboInOwl#source)=NCIT } 
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* renal pelvis and ureter
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036295
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* renal pelvis plus ureter
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) *[label](http://www.w3.org/2000/01/rdf-schema#label)* renal pelvis/ureter
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) **SubClassOf** [anatomical cluster](http://purl.obolibrary.org/obo/UBERON_0000477)
+ * [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* The upper tract of the renal system. The renal pelvis is the large cavity in the middle of each kidney. Urine drains from each kidney through a long tube called the ureter, into the bladder, where it is stored until it is passed from the body through the urethra. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=NCIT:C54419 } 
 
-### New Class : [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293)
-
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) **SubClassOf** [mouth mucosa](http://purl.obolibrary.org/obo/UBERON_0003729)
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) **EquivalentTo** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) **or** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910)
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* [http://www.snomedbrowser.com/Codes/Details/303771008](http://www.snomedbrowser.com/Codes/Details/303771008)
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[label](http://www.w3.org/2000/01/rdf-schema#label)* oral frenulum
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036293
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* oral frenulum { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=HP:0000190 } 
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[has broad synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym)* frenulum
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A small fold of mucous membrane in the mouth, connecting either the tongue or the lip to the mouth mucosa. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[https://github.com/obophenotype/human-phenotype-ontology/issues/3336](https://github.com/obophenotype/human-phenotype-ontology/issues/3336) , [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* oral frenula { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=HP:0000190 , [has synonym type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[plural term](http://purl.obolibrary.org/obo/uberon/core#PLURAL) } 
- * [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* oral frenum
-
-### New Class : [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294)
-
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) *[label](http://www.w3.org/2000/01/rdf-schema#label)* mucosa of lip
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [lip](http://purl.obolibrary.org/obo/UBERON_0001833)
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) *[id](http://www.geneontology.org/formats/oboInOwl#id)* UBERON:0036294
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) **EquivalentTo** [mucosa](http://purl.obolibrary.org/obo/UBERON_0000344) **and** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [lip](http://purl.obolibrary.org/obo/UBERON_0001833)
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A mucosa that is part of a lip region [Automatically generated definition]. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=OBOL:automatic } 
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) **SubClassOf** [mouth mucosa](http://purl.obolibrary.org/obo/UBERON_0003729)
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* labial mucosa { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) **SubClassOf** [integumentary system layer](http://purl.obolibrary.org/obo/UBERON_0013754)
- * [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* NCIT:C12226
-
-## Changed Class objects: 8
+## Changed Class objects: 22
 
 
-### Changes for: [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910)
+### Changes for: [kidney pelvis urothelium](http://purl.obolibrary.org/obo/UBERON_0004788)
 
  * _Deleted_
-    *  **-** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) **SubClassOf** [integumentary system layer](http://purl.obolibrary.org/obo/UBERON_0013754)
-    *  **-** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) **SubClassOf** [mouth mucosa](http://purl.obolibrary.org/obo/UBERON_0003729)
-    *  **-** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [lip](http://purl.obolibrary.org/obo/UBERON_0001833)
+    *  **-** [kidney pelvis urothelium](http://purl.obolibrary.org/obo/UBERON_0004788) **SubClassOf** [urothelium of ureter](http://purl.obolibrary.org/obo/UBERON_0001254)
  * _Added_
-    *  **+** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) **EquivalentTo** [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) **and** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [lip](http://purl.obolibrary.org/obo/UBERON_0001833)
-    *  **+** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) **SubClassOf** [connects](http://purl.obolibrary.org/obo/RO_0002176) **some** [mouth floor](http://purl.obolibrary.org/obo/UBERON_0003679)
-    *  **+** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) **SubClassOf** [connects](http://purl.obolibrary.org/obo/RO_0002176) **some** [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294)
-    *  **+** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) **SubClassOf** [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294)
-    *  **+** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) **SubClassOf** [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293)
-    *  **+** [frenulum of lip](http://purl.obolibrary.org/obo/UBERON_0016910) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* labial frenulum
+    *  **+** [kidney pelvis urothelium](http://purl.obolibrary.org/obo/UBERON_0004788) **SubClassOf** [urothelium](http://purl.obolibrary.org/obo/UBERON_0000365)
 
-### Changes for: [frenulum of upper lip](http://purl.obolibrary.org/obo/UBERON_0016912)
-
- * _Added_
-    *  **+** [frenulum of upper lip](http://purl.obolibrary.org/obo/UBERON_0016912) **SubClassOf** [connects](http://purl.obolibrary.org/obo/RO_0002176) **some** [mucosa of upper lip](http://purl.obolibrary.org/obo/UBERON_0005031)
-
-### Changes for: [frenulum of lower lip](http://purl.obolibrary.org/obo/UBERON_0016913)
-
- * _Added_
-    *  **+** [frenulum of lower lip](http://purl.obolibrary.org/obo/UBERON_0016913) **SubClassOf** [connects](http://purl.obolibrary.org/obo/RO_0002176) **some** [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032)
-
-### Changes for: [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106)
+### Changes for: [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)
 
  * _Deleted_
-    *  **-** [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* HsapDv:0000001
+    *  **-** [ureter](http://purl.obolibrary.org/obo/UBERON_0000056) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [upper urinary tract](http://purl.obolibrary.org/obo/UBERON_0011143) { [source](http://www.geneontology.org/formats/oboInOwl#source)=FMA } 
+ * _Added_
+    *  **+** [ureter](http://purl.obolibrary.org/obo/UBERON_0000056) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295)
 
-### Changes for: [sensory receptor](http://purl.obolibrary.org/obo/UBERON_0012451)
+### Changes for: [major calyx](http://purl.obolibrary.org/obo/UBERON_0001226)
 
  * _Deleted_
-    *  **-** [sensory receptor](http://purl.obolibrary.org/obo/UBERON_0012451) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A sensory nerve ending that responds to a stimulus in the internal or external environment of an organism. In response to stimuli the sensory receptor initiates sensory transduction by creating graded potentials or action potentials in the same cell or in an adjacent one.. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Sensory_receptor](http://en.wikipedia.org/wiki/Sensory_receptor) } 
- * _Added_
-    *  **+** [sensory receptor](http://purl.obolibrary.org/obo/UBERON_0012451) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* A sensory nerve ending that responds to a stimulus in the internal or external environment of an organism. In response to stimuli the sensory receptor initiates sensory transduction by creating graded potentials or action potentials in the same cell or in an adjacent one. { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Sensory_receptor](http://en.wikipedia.org/wiki/Sensory_receptor) } 
+    *  **-** [major calyx](http://purl.obolibrary.org/obo/UBERON_0001226) **SubClassOf** [ureteric vein](http://purl.obolibrary.org/obo/UBERON_0003475)
 
-### Changes for: [mucosa of upper lip](http://purl.obolibrary.org/obo/UBERON_0005031)
+### Changes for: [minor calyx](http://purl.obolibrary.org/obo/UBERON_0001227)
 
  * _Deleted_
-    *  **-** [mucosa of upper lip](http://purl.obolibrary.org/obo/UBERON_0005031) **SubClassOf** [integumentary system layer](http://purl.obolibrary.org/obo/UBERON_0013754)
-    *  **-** [mucosa of upper lip](http://purl.obolibrary.org/obo/UBERON_0005031) **SubClassOf** [mouth mucosa](http://purl.obolibrary.org/obo/UBERON_0003729)
- * _Added_
-    *  **+** [mucosa of upper lip](http://purl.obolibrary.org/obo/UBERON_0005031) **SubClassOf** [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294)
-    *  **+** [mucosa of upper lip](http://purl.obolibrary.org/obo/UBERON_0005031) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* upper labial mucosa { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
+    *  **-** [minor calyx](http://purl.obolibrary.org/obo/UBERON_0001227) **SubClassOf** [ureteric vein](http://purl.obolibrary.org/obo/UBERON_0003475)
 
-### Changes for: [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032)
+### Changes for: [renal papilla](http://purl.obolibrary.org/obo/UBERON_0001228)
 
  * _Deleted_
-    *  **-** [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032) **SubClassOf** [integumentary system layer](http://purl.obolibrary.org/obo/UBERON_0013754)
-    *  **-** [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032) **SubClassOf** [mouth mucosa](http://purl.obolibrary.org/obo/UBERON_0003729)
- * _Added_
-    *  **+** [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032) **SubClassOf** [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294)
-    *  **+** [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* lower labial mucosa { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=UBERON:cjm } 
+    *  **-** [renal papilla](http://purl.obolibrary.org/obo/UBERON_0001228) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
 
-### Changes for: [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689)
+### Changes for: [renal pelvis](http://purl.obolibrary.org/obo/UBERON_0001224)
 
  * _Deleted_
-    *  **-** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* oral frenula { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=HP:0000190 , [has synonym type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType)=[plural term](http://purl.obolibrary.org/obo/uberon/core#PLURAL) } 
-    *  **-** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* oral frenulum { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=HP:0000190 } 
-    *  **-** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* frenulum linguae { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Frenulum_of_tongue](http://en.wikipedia.org/wiki/Frenulum_of_tongue) } 
-    *  **-** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* frenulum linguæ { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Frenulum_of_tongue](http://en.wikipedia.org/wiki/Frenulum_of_tongue) } 
-    *  **-** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* frenulum of the tongue { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Frenulum_of_tongue](http://en.wikipedia.org/wiki/Frenulum_of_tongue) } 
-    *  **-** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has related synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym)* lingual frenulum { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Frenulum_of_tongue](http://en.wikipedia.org/wiki/Frenulum_of_tongue) } 
+    *  **-** [renal pelvis](http://purl.obolibrary.org/obo/UBERON_0001224) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
+    *  **-** [renal pelvis](http://purl.obolibrary.org/obo/UBERON_0001224) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [ureter](http://purl.obolibrary.org/obo/UBERON_0000056) { [source](http://www.geneontology.org/formats/oboInOwl#source)=FMA } 
  * _Added_
-    *  **+** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) **EquivalentTo** [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293) **and** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [tongue](http://purl.obolibrary.org/obo/UBERON_0001723)
-    *  **+** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) **SubClassOf** [connects](http://purl.obolibrary.org/obo/RO_0002176) **some** [mouth floor](http://purl.obolibrary.org/obo/UBERON_0003679)
-    *  **+** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) **SubClassOf** [connects](http://purl.obolibrary.org/obo/RO_0002176) **some** [tongue](http://purl.obolibrary.org/obo/UBERON_0001723)
-    *  **+** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) **SubClassOf** [oral frenulum](http://purl.obolibrary.org/obo/UBERON_0036293)
-    *  **+** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* frenulum linguae { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Frenulum_of_tongue](http://en.wikipedia.org/wiki/Frenulum_of_tongue) } 
-    *  **+** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* frenulum linguæ { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Frenulum_of_tongue](http://en.wikipedia.org/wiki/Frenulum_of_tongue) } 
-    *  **+** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* frenulum of the tongue { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Frenulum_of_tongue](http://en.wikipedia.org/wiki/Frenulum_of_tongue) } 
-    *  **+** [frenulum of tongue](http://purl.obolibrary.org/obo/UBERON_0006689) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* lingual frenulum { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=[http://en.wikipedia.org/wiki/Frenulum_of_tongue](http://en.wikipedia.org/wiki/Frenulum_of_tongue) } 
+    *  **+** [renal pelvis](http://purl.obolibrary.org/obo/UBERON_0001224) **SubClassOf** [continuous with](http://purl.obolibrary.org/obo/RO_0002150) **some** [ureter](http://purl.obolibrary.org/obo/UBERON_0000056) { [source](http://www.geneontology.org/formats/oboInOwl#source)=FMA } 
+    *  **+** [renal pelvis](http://purl.obolibrary.org/obo/UBERON_0001224) **SubClassOf** [part of](http://purl.obolibrary.org/obo/BFO_0000050) **some** [renal pelvis/ureter](http://purl.obolibrary.org/obo/UBERON_0036295)
+
+### Changes for: [brain ventricle/choroid plexus](http://purl.obolibrary.org/obo/UBERON_0003947)
+
+ * _Added_
+    *  **+** [brain ventricle/choroid plexus](http://purl.obolibrary.org/obo/UBERON_0003947) *[editor note](http://purl.obolibrary.org/obo/IAO_0000116)* TODO merge into BV
+
+### Changes for: [tip of renal papilla](http://purl.obolibrary.org/obo/UBERON_0009095)
+
+ * _Deleted_
+    *  **-** [tip of renal papilla](http://purl.obolibrary.org/obo/UBERON_0009095) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
+
+### Changes for: [upper urinary tract](http://purl.obolibrary.org/obo/UBERON_0011143)
+
+ * _Added_
+    *  **+** [upper urinary tract](http://purl.obolibrary.org/obo/UBERON_0011143) *[database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)* NCIT:C61107
+
+### Changes for: [neuroendocrine gland](http://purl.obolibrary.org/obo/UBERON_0010133)
+
+ * _Added_
+    *  **+** [neuroendocrine gland](http://purl.obolibrary.org/obo/UBERON_0010133) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* neuroendocrine system gland
+
+### Changes for: [internal yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000712)
+
+ * _Deleted_
+    *  **-** [I-YSL](http://purl.obolibrary.org/obo/UBERON_2000712) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* internal yolk syncytial layer { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ZFIN:ZDB-PUB-961014-576 } 
+    *  **-** [I-YSL](http://purl.obolibrary.org/obo/UBERON_2000712) *[label](http://www.w3.org/2000/01/rdf-schema#label)* I-YSL
+ * _Added_
+    *  **+** [internal yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000712) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* I-YSL { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ZFIN:ZDB-PUB-961014-576 } 
+    *  **+** [internal yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000712) *[label](http://www.w3.org/2000/01/rdf-schema#label)* internal yolk syncytial layer
+
+### Changes for: [perihilar interstitium](http://purl.obolibrary.org/obo/UBERON_0006373)
+
+ * _Deleted_
+    *  **-** [perihilar interstitium](http://purl.obolibrary.org/obo/UBERON_0006373) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
+
+### Changes for: [post-axial region of pectoral appendage](http://purl.obolibrary.org/obo/UBERON_0018304)
+
+ * _Deleted_
+    *  **-** [post-axial region](http://purl.obolibrary.org/obo/UBERON_0018304) *[label](http://www.w3.org/2000/01/rdf-schema#label)* post-axial region
+ * _Added_
+    *  **+** [post-axial region of pectoral appendage](http://purl.obolibrary.org/obo/UBERON_0018304) *[has broad synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym)* post-axial region
+    *  **+** [post-axial region of pectoral appendage](http://purl.obolibrary.org/obo/UBERON_0018304) *[label](http://www.w3.org/2000/01/rdf-schema#label)* post-axial region of pectoral appendage
+
+### Changes for: [mucosa of renal pelvis](http://purl.obolibrary.org/obo/UBERON_0005006)
+
+ * _Deleted_
+    *  **-** [mucosa of renal pelvis](http://purl.obolibrary.org/obo/UBERON_0005006) **SubClassOf** [mucosa of ureter](http://purl.obolibrary.org/obo/UBERON_0004980)
+ * _Added_
+    *  **+** [mucosa of renal pelvis](http://purl.obolibrary.org/obo/UBERON_0005006) **SubClassOf** [mucosa](http://purl.obolibrary.org/obo/UBERON_0000344)
+
+### Changes for: [left renal pelvis](http://purl.obolibrary.org/obo/UBERON_0018115)
+
+ * _Added_
+    *  **+** [left renal pelvis](http://purl.obolibrary.org/obo/UBERON_0018115) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
+
+### Changes for: [right renal pelvis](http://purl.obolibrary.org/obo/UBERON_0018116)
+
+ * _Added_
+    *  **+** [right renal pelvis](http://purl.obolibrary.org/obo/UBERON_0018116) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
+
+### Changes for: [external yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000309)
+
+ * _Deleted_
+    *  **-** [E-YSL](http://purl.obolibrary.org/obo/UBERON_2000309) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* external yolk syncytial layer { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ZFIN:ZDB-PUB-961014-576 } 
+    *  **-** [E-YSL](http://purl.obolibrary.org/obo/UBERON_2000309) *[label](http://www.w3.org/2000/01/rdf-schema#label)* E-YSL
+ * _Added_
+    *  **+** [external yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000309) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* E-YSL { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ZFIN:ZDB-PUB-961014-576 } 
+    *  **+** [external yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000309) *[label](http://www.w3.org/2000/01/rdf-schema#label)* external yolk syncytial layer
+
+### Changes for: [kidney pelvis smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004227)
+
+ * _Deleted_
+    *  **-** [kidney pelvis smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004227) **SubClassOf** [ureter smooth muscle](http://purl.obolibrary.org/obo/UBERON_0009919)
+ * _Added_
+    *  **+** [kidney pelvis smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004227) **SubClassOf** [smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_0001135)
+
+### Changes for: [kidney calyx](http://purl.obolibrary.org/obo/UBERON_0006517)
+
+ * _Deleted_
+    *  **-** [kidney calyx](http://purl.obolibrary.org/obo/UBERON_0006517) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
+
+### Changes for: [metanephric renal pelvis](http://purl.obolibrary.org/obo/UBERON_0005249)
+
+ * _Added_
+    *  **+** [metanephric renal pelvis](http://purl.obolibrary.org/obo/UBERON_0005249) **SubClassOf** [mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004120)
+
+### Changes for: [transitional epithelium of major calyx](http://purl.obolibrary.org/obo/UBERON_0005912)
+
+ * _Added_
+    *  **+** [transitional epithelium of major calyx](http://purl.obolibrary.org/obo/UBERON_0005912) **SubClassOf** [urothelium of ureter](http://purl.obolibrary.org/obo/UBERON_0001254)
+
+### Changes for: [yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000088)
+
+ * _Deleted_
+    *  **-** [YSL](http://purl.obolibrary.org/obo/UBERON_2000088) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* yolk syncytial layer { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ZFIN:ZDB-PUB-961014-576 } 
+    *  **-** [YSL](http://purl.obolibrary.org/obo/UBERON_2000088) *[label](http://www.w3.org/2000/01/rdf-schema#label)* YSL
+ * _Added_
+    *  **+** [yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000088) *[has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym)* YSL { [database cross reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref)=ZFIN:ZDB-PUB-961014-576 } 
+    *  **+** [yolk syncytial layer](http://purl.obolibrary.org/obo/UBERON_2000088) *[label](http://www.w3.org/2000/01/rdf-schema#label)* yolk syncytial layer
 
 # Report for properties
 
 
-## ObjectProperty objects lost from source: 0
+## ObjectProperty objects lost from source: 1
+
+ * [synapsed by](http://purl.obolibrary.org/obo/RO_0002103)
+
+## ObjectProperty objects new in target: 1
 
 
-## ObjectProperty objects new in target: 0
+### New ObjectProperty : [synapsed by](http://purl.obolibrary.org/obo/uberon/core#synapsed_by)
 
+ * [synapsed by](http://purl.obolibrary.org/obo/uberon/core#synapsed_by) *[id](http://www.geneontology.org/formats/oboInOwl#id)* synapsed_by
+ * [synapsed by](http://purl.obolibrary.org/obo/uberon/core#synapsed_by) *[label](http://www.w3.org/2000/01/rdf-schema#label)* synapsed by
+ * [synapsed by](http://purl.obolibrary.org/obo/uberon/core#synapsed_by) *[has obo namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace)* uberon
+ * [synapsed by](http://purl.obolibrary.org/obo/uberon/core#synapsed_by) *[definition](http://purl.obolibrary.org/obo/IAO_0000115)* Relation between an anatomical structure (including cells) and a neuron that chemically synapses to it.
 
 ## Changed ObjectProperty objects: 0
 
