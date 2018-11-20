@@ -38,10 +38,10 @@ while(<>) {
                 $x2 = "http://www.snomedbrowser.com/Codes/Details/$1";
             }
             elsif ($x =~ /^doi:(\S+)/) {
-                $x2 = "http://dx.doi.org/$1";
+                $x2 = "https://doi.org/$1";
             }
             elsif ($x =~ /^DOI:([\d|\.\/\:\(\)\w\-]+)$/) {
-                $x2 = "http://dx.doi.org/$1";
+                $x2 = "https://doi.org/$1";
             }
             elsif ($x =~ /^PMID:(\S+)/) {
                 $x2 = "http://www.ncbi.nlm.nih.gov/pubmed/$1";

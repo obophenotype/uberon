@@ -904,7 +904,7 @@ creating axioms of the form 'X part_of some X' in an unreleased
 
 #### See Also:
  * [http://ontogenesis.knowledgeblog.org/1260](http://ontogenesis.knowledgeblog.org/1260)
- * [http://dx.doi.org/doi:10.1038/npre.2011.5292.2](http://dx.doi.org/doi:10.1038/npre.2011.5292.2)
+ * [https://doi.org/doi:10.1038/npre.2011.5292.2](https://doi.org/doi:10.1038/npre.2011.5292.2)
  * [http://ontogenesis.knowledgeblog.org/1288](http://ontogenesis.knowledgeblog.org/1288)
  * [https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit#heading=h.cx8lslfjfyrl](https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit#heading=h.cx8lslfjfyrl)
 
@@ -1016,7 +1016,7 @@ valid taxon constraint despire the presence of polydactlyous humans.
 
 #### See Also:
  * [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
- * [http://dx.doi.org/10.1016/j.jbi.2007.07.007](http://dx.doi.org/10.1016/j.jbi.2007.07.007)
+ * [https://doi.org/10.1016/j.jbi.2007.07.007](https://doi.org/10.1016/j.jbi.2007.07.007)
  * [http://genomebiology.com/2012/13/1/R5](http://genomebiology.com/2012/13/1/R5)
  * [http://douroucouli.wordpress.com/2012/04/24/taxon-constraints-in-owl/](http://douroucouli.wordpress.com/2012/04/24/taxon-constraints-in-owl/)
 
