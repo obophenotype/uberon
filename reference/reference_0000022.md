@@ -68,6 +68,6 @@ valid taxon constraint despire the presence of polydactlyous humans.
  * [http://genomebiology.com/2012/13/1/R5](http://genomebiology.com/2012/13/1/R5)
  * [http://douroucouli.wordpress.com/2012/04/24/taxon-constraints-in-owl/](http://douroucouli.wordpress.com/2012/04/24/taxon-constraints-in-owl/)
  * [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
- * [http://dx.doi.org/10.1016/j.jbi.2007.07.007](http://dx.doi.org/10.1016/j.jbi.2007.07.007)
+ * [https://doi.org/10.1016/j.jbi.2007.07.007](https://doi.org/10.1016/j.jbi.2007.07.007)
 
 
