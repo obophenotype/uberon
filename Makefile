@@ -850,7 +850,7 @@ fixed-emapa.obo: mirror-emapa.obo
 mirror-emapa.owl: fixed-emapa.obo developmental-stage-ontologies/mmusdv/mmusdv.obo
 	owltools $^ --merge-support-ontologies -o -f ofn $@ 
 mirror-emapa.obo: uberon_edit.obo
-	wget $(OBO)/emapa.obo -O $@
+	wget --no-check-certificate $(OBO)/emapa.obo -O $@
 .PRECIOUS: mirror-emapa.obo
 
 # https://github.com/obophenotype/uberon/issues/423#issuecomment-43425949
