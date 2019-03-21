@@ -63,7 +63,7 @@ checks: uberon_edit-xp-check uberon_edit-obscheck.txt \
 # ----------------------------------------
 
 # make edit owl file from previous step, merge in contributors (derived from github API) and expand macros
-uberon_edit.owl: uberon_edit.obo disjoint_union_over.ofn uberon_edit_x.obo-gocheck  uberon_edit_x.obo-iconv
+uberon_edit.owl: uberon_edit.obo disjoint_union_over.ofn uberon_edit.obo-gocheck  uberon_edit.obo-iconv
 	owltools $(UCAT) $< disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 
 # ----------------------------------------
@@ -962,8 +962,8 @@ seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 seed.obo: seed.owl
 	owltools $(UCAT) $< --add-support-from-imports --remove-imports-declarations  -o -f obo --no-check $@.tmp && obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
-BRIDGESRC_OBO = uberon_edit_x.obo cl-with-xrefs.obo
-bridge/uberon-bridge-to-nifstd.obo: uberon_edit_x.obo
+BRIDGESRC_OBO = uberon_edit.obo cl-with-xrefs.obo
+bridge/uberon-bridge-to-nifstd.obo: uberon_edit.obo
 	./util/xref-to-equiv.pl uberon/bridge/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
 bridge/%.owl: bridge/%.obo
 	owltools --use-catalog $< --remove-annotation-assertions -o $@
