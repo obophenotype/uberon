@@ -62,13 +62,9 @@ checks: uberon_edit-xp-check uberon_edit-obscheck.txt \
 # STEP 1: pre-processing and quick validation
 # ----------------------------------------
 
-# the source file is pseudo-obo - expand pseduo-syntax, expand special comments, expand ID spaces
-uberon_edit_x.obo: uberon_edit.obo 
-	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl | ./util/separate-ALL.pl > $@.tmp && mv $@.tmp $@
-
 # make edit owl file from previous step, merge in contributors (derived from github API) and expand macros
-uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck  uberon_edit_x.obo-iconv
-	owltools $(UCAT) $< issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
+uberon_edit.owl: uberon_edit.obo disjoint_union_over.ofn uberon_edit_x.obo-gocheck  uberon_edit_x.obo-iconv
+	owltools $(UCAT) $< disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 
 # ----------------------------------------
 # STEP 2: preparing core release, and merging with phenoscape edit file
