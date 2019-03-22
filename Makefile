@@ -26,7 +26,9 @@ MAKEYAML= owltools $(UCAT) $< --add-obo-shorthand-to-properties  -o -f yaml $@.t
 # This OWLTools call is designed for running in travis; does not clog stdout
 ELKRUN= owltools $(UCAT) $< $(QELK) --run-reasoner -r elk -u > $@.tmp || (tail -1000 $@.tmp && exit -1) && (tail -1000 $@.tmp && mv $@.tmp $@)
 
-travis_test: ttest-uberon ttest-ext ttest-tax
+# materialize takes too long on travis
+#travis_test: ttest-uberon ttest-ext ttest-tax
+travis_test: is_ok
 
 ttest-uberon: uberon.owl bfo-check.txt
 	$(ELKRUN)
@@ -62,13 +64,9 @@ checks: uberon_edit-xp-check uberon_edit-obscheck.txt \
 # STEP 1: pre-processing and quick validation
 # ----------------------------------------
 
-# the source file is pseudo-obo - expand pseduo-syntax, expand special comments, expand ID spaces
-uberon_edit_x.obo: uberon_edit.obo 
-	./util/expand-idspaces.pl $< | ./util/expand-disjoint-rel-union.pl | ./util/separate-ALL.pl > $@.tmp && mv $@.tmp $@
-
 # make edit owl file from previous step, merge in contributors (derived from github API) and expand macros
-uberon_edit.owl: uberon_edit_x.obo uberon_edit_x.obo-gocheck  uberon_edit_x.obo-iconv
-	owltools $(UCAT) $< issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
+uberon_edit.owl: uberon_edit.obo disjoint_union_over.ofn uberon_edit.obo-gocheck  uberon_edit.obo-iconv
+	owltools $(UCAT) $< disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 
 # ----------------------------------------
 # STEP 2: preparing core release, and merging with phenoscape edit file
@@ -850,7 +848,7 @@ fixed-emapa.obo: mirror-emapa.obo
 mirror-emapa.owl: fixed-emapa.obo developmental-stage-ontologies/mmusdv/mmusdv.obo
 	owltools $^ --merge-support-ontologies -o -f ofn $@ 
 mirror-emapa.obo: uberon_edit.obo
-	wget $(OBO)/emapa.obo -O $@
+	wget --no-check-certificate $(OBO)/emapa.obo -O $@
 .PRECIOUS: mirror-emapa.obo
 
 # https://github.com/obophenotype/uberon/issues/423#issuecomment-43425949
@@ -966,8 +964,8 @@ seed.owl: phenoscape-ext-noimports.owl uberon_edit.owl cl-core.obo
 seed.obo: seed.owl
 	owltools $(UCAT) $< --add-support-from-imports --remove-imports-declarations  -o -f obo --no-check $@.tmp && obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
-BRIDGESRC_OBO = uberon_edit_x.obo cl-with-xrefs.obo
-bridge/uberon-bridge-to-nifstd.obo: uberon_edit_x.obo
+BRIDGESRC_OBO = uberon_edit.obo cl-with-xrefs.obo
+bridge/uberon-bridge-to-nifstd.obo: uberon_edit.obo
 	./util/xref-to-equiv.pl uberon/bridge/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
 bridge/%.owl: bridge/%.obo
 	owltools --use-catalog $< --remove-annotation-assertions -o $@
