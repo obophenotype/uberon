@@ -171,6 +171,8 @@ while (<>) {
         push(@referenced_ids, $2);
     }
     if (/^intersection_of:\s*(.*)/) {
+        s@ \{.*\}@@;
+        /^intersection_of:\s*(.*)/;
         my $arg1 = $1;
         if ($arg1 =~ /$id/) {
             flag("circular intersection_of ref", $id);
