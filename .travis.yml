@@ -18,11 +18,6 @@ branches:
     - master
     - test-travis
 
-before_script:
-  - mkdir -p bin
-  - export PATH=$PATH:$PWD/bin
-  - wget http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/software/utilities/check-obo-for-standard-release.pl -O bin/check-obo-for-standard-release.pl
-  - chmod +x bin/*
 
 # command to run tests
 script: ./run.sh make travis_test
