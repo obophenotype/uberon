@@ -18,10 +18,6 @@ branches:
     - master
     - test-travis
 
-before_script:
-  - mkdir -p bin
-  - export PATH=$PATH:$PWD/bin
-  - chmod +x bin/*
 
 # command to run tests
 script: ./run.sh make travis_test
