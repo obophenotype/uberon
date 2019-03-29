@@ -68,6 +68,9 @@ checks: uberon_edit-xp-check uberon_edit-obscheck.txt \
 uberon_edit.owl: uberon_edit.obo disjoint_union_over.ofn uberon_edit.obo-gocheck  uberon_edit.obo-iconv
 	owltools $(UCAT) $< disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  ./util/expand-dbxref-literals.pl $@.tmp > $@
 
+roundtrip.obo: uberon_edit.obo
+	robot convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@ && diff -i $< $@
+
 # ----------------------------------------
 # STEP 2: preparing core release, and merging with phenoscape edit file
 # ----------------------------------------
