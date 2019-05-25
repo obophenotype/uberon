@@ -14,7 +14,7 @@ all: uberon-qc
 # ----------------------------------------
 
 ##MAKEOBO= owltools $< --remove-axiom-annotations -o -f obo $@.tmp1 && grep -v ^property_value: $@.tmp1 | grep -v ^owl-axioms: > $@.tmp && obo2obo $@.tmp -o $@
-MAKEOBO= owltools $< --add-obo-shorthand-to-properties  -o -f obo --no-check $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && obo2obo $@.tmp -o $@
+MAKEOBO= owltools $< --add-obo-shorthand-to-properties  -o -f obo --no-check $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && mv $@.tmp  $@
 
 MAKEJSON= owltools $(UCAT) $< --add-obo-shorthand-to-properties  -o -f json $@.tmp && mv $@.tmp $@
 MAKEYAML= owltools $(UCAT) $< --add-obo-shorthand-to-properties  -o -f yaml $@.tmp && mv $@.tmp $@
@@ -54,7 +54,6 @@ $(CATALOG):
 
 checks: uberon_edit-xp-check uberon_edit-obscheck.txt \
     bfo-check.txt \
-    uberon.obo-OE-check \
     uberon.obo-OWL-check \
     uberon-obscheck.txt \
     uberon-orphans \
@@ -156,7 +155,7 @@ ext.json: ext.owl
 merged.owl: ext.owl
 	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(OBO)/uberon/$@ -o $@
 merged.obo: merged.owl
-	owltools $< -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@
+	owltools $< -o -f obo --no-check $@.tmp && mv $@.tmp $@
 
 # strip imports and dangling references
 uberon.owl: ext.owl
@@ -345,10 +344,10 @@ reports/%-function-parents.tsv: %.owl
 .PRECIOUS: reports/%-function-parents.tsv
 
 reports/uberon-%.csv: uberon.owl sparql/%.sparql
-	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
+	robot query -i $< --query sparql/$*.sparql  $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
 reports/uberon_edit-%.csv: uberon_edit.owl sparql/%.sparql
-	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
+	robot query -i $< --query sparql/$*.sparql  $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
 # match pattern for any relation to be filtered out
 XSPECIES_RE = -m '/(RO_0002158|evolved_from)/'
@@ -441,6 +440,7 @@ uberon-taxon-constraints.owl: uberon-taxon-constraints.obo
 %.obo-allchecks: %.obo-OE-check  %.obo-OWL-check %.obo-gocheck %.obo-iconv
 
 # check OBO-Edit can parse the .obo output
+# @Deprecated
 %.obo-OE-check: %.obo
 	obo2obo -o $@ $<
 
@@ -915,7 +915,7 @@ test-composite-%.owl: composite-%.owl
 	$(ELKRUN)
 
 composite-metazoan-basic.obo: composite-metazoan.owl
-	owltools $<  --extract-mingraph --remove-axiom-annotations --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(OBO)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && obo2obo $@.tmp -o $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
+	owltools $<  --extract-mingraph --remove-axiom-annotations --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(OBO)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && mv $@.tmp  $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
 
 
 # ----------------------------------------
@@ -1049,7 +1049,7 @@ fbbt.obo:
 
 # See: http://code.google.com/p/caro2/issues/detail?id=10
 bridge/fbbt-nd.obo: fbbt.obo
-	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && obo2obo $@.tmp -o $@
+	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && owltools --use-catalog $@.tmp -o -f obo $@
 
 bridge/caro-bridge-to-zfa.obo:
 	blip-findall -r uberonp -consult util/caro_equiv.pro "ec(C,Z,'ZFA')" -select C-Z  -no_pred | tbl2obolinks.pl --rel equivalent_to - > $@
