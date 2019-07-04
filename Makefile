@@ -9,6 +9,9 @@ ROBOT = ROBOT_JAVA_ARGS=-Xmx12G robot
 
 all: uberon-qc
 
+xxtest:
+	echo $(QELK)
+
 # ----------------------------------------
 # COMMANDS
 # ----------------------------------------
@@ -437,12 +440,12 @@ uberon-taxon-constraints.owl: uberon-taxon-constraints.obo
 # mostly for checking OBO files
 # the outputs of these targets are not consumed, used only for diagnostics
 
-%.obo-allchecks: %.obo-OE-check  %.obo-OWL-check %.obo-gocheck %.obo-iconv
+%.obo-allchecks: %.obo-OWL-check %.obo-gocheck %.obo-iconv
 
 # check OBO-Edit can parse the .obo output
 # @Deprecated
-%.obo-OE-check: %.obo
-	obo2obo -o $@ $<
+#%.obo-OE-check: %.obo
+#	obo2obo -o $@ $<
 
 # check OWLAPI can parse the .obo output
 %.obo-OWL-check: %.obo
@@ -570,7 +573,7 @@ depictions.omn: uberon_edit.obo
 depictions.owl: depictions.omn
 	owltools $< -o file://`pwd`/$@
 
-quick-qc: uberon.obo-OE-check core.owl uberon_edit-obscheck.txt
+quick-qc: core.owl uberon_edit-obscheck.txt
 	cat uberon_edit-obscheck.txt
 
 QC_FILES = checks\
@@ -593,7 +596,6 @@ QC_FILES = checks\
     basic.obo\
     basic-allcycles\
     basic-orphans\
-    merged.obo-OE-check\
     merged-cycles\
     merged-orphans\
     ext.owl\
@@ -645,30 +647,30 @@ subsets/musculoskeletal-full.obo: merged.owl
 subsets/musculoskeletal-minimal.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002204" --reasoner-query UBERON_0002204 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/excretory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/reproductive-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000990" --reasoner-query UBERON_0000990 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/digestive-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001007" --reasoner-query UBERON_0001007 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/nervous-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001016" --reasoner-query UBERON_0001016 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/sensory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0004456" --reasoner-query UBERON_0004456 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/immune-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002405" --reasoner-query UBERON_0002405 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/circulatory-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001009" --reasoner-query UBERON_0001009 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/pulmonary-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001004" --reasoner-query UBERON_0001004 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001004" --reasoner-query UBERON_0001004 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/cranial-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0010323" --reasoner-query UBERON_0010323 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/renal-minimal.obo: merged.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0001008" --reasoner-query UBERON_0001008 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 subsets/appendicular-minimal.obo: merged.owl
-	owltools $< --make-subset-by-properties -f part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --make-subset-by-properties -f part_of develops_from --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0002091" --reasoner-query UBERON_0002091 --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 
 subsets/vertebrate-head.obo: composite-vertebrate.owl
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000033" --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo $@ --reasoner-dispose >& $@.LOG
+	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000033" --make-ontology-from-results $(OBO)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose >& $@.LOG
 
 # TODO - switch to purls for OWL once released
 subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl
@@ -728,7 +730,7 @@ other-bridges: merged.owl
 # TODO: use --make-subset-by-properties
 # note: requires symlink to cl directory
 cl-core.obo: uberon_edit.obo
-	owltools $(OBO)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-axiom-annotations --remove-imports-declarations -o -f obo $@
+	owltools $(OBO)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-axiom-annotations --remove-imports-declarations -o -f obo --no-check $@
 #cl-core.obo: cell-ontology/cl.obo
 #	obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | grep -v ^equivalent | grep -v ^owl-axioms | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
 

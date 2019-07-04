@@ -1,6 +1,6 @@
 format-version: 1.2
 ontology: uberon/subsets/pulmonary-minimal.obo
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000002>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000004>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000006>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0000402>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/RO_0002577>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001004>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001557>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001558>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001957>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001963>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0005022>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012330>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0001025>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002170>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002176>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002380>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#source>))\n\n############################\n#   Object Properties\n############################\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0001025> (located in)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0001025> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000004> ObjectComplementOf(<http://purl.obolibrary.org/obo/BFO_0000006>)))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002170> (connected to)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002170> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/RO_0002577>))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002176> (connects)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002176> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/RO_0002577>))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002351> (has member)\n\nIrreflexiveObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>)\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002380> (branching part of)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002380> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0000402>))\n\n\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001004>))\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000002> (<http://purl.obolibrary.org/obo/BFO_0000002>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/BFO_0000002> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001963> (bronchial-associated lymphoid tissue)\n\nSubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> \"ISBN10:0123813611\"^^xsd:string) <http://purl.obolibrary.org/obo/UBERON_0001963> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001957>)))\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012330> (nasal-associated lymphoid tissue)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012330> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0005022>)))\n\n# Class: owl:Nothing (owl:Nothing)\n\nEquivalentClasses(owl:Nothing ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001557>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001558>)))\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000004>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000006>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0000402>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/RO_0002577>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001004>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001557>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001558>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001957>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001963>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0005022>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012330>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0001025>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002170>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002176>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002380>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#source>))\n\n############################\n#   Object Properties\n############################\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0001025> (<http://purl.obolibrary.org/obo/RO_0001025>)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0001025> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000004> ObjectComplementOf(<http://purl.obolibrary.org/obo/BFO_0000006>)))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002170> (<http://purl.obolibrary.org/obo/RO_0002170>)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002170> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/RO_0002577>))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002176> (<http://purl.obolibrary.org/obo/RO_0002176>)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002176> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/RO_0002577>))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002351> (<http://purl.obolibrary.org/obo/RO_0002351>)\n\nIrreflexiveObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>)\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002380> (<http://purl.obolibrary.org/obo/RO_0002380>)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002380> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0000402>))\n\n\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001004>))\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001963> (<http://purl.obolibrary.org/obo/UBERON_0001963>)\n\nSubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> \"ISBN:0123813611\"^^xsd:string) <http://purl.obolibrary.org/obo/UBERON_0001963> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001957>)))\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012330> (<http://purl.obolibrary.org/obo/UBERON_0012330>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012330> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0005022>)))\n\n# Class: owl:Nothing (owl:Nothing)\n\nEquivalentClasses(owl:Nothing ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001557>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001558>)))\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
 id: BFO:0000004
@@ -19,7 +19,6 @@ synonym: "lung epithelial cell" EXACT []
 xref: BTO:0004299
 is_a: BFO:0000004
 relationship: part_of UBERON:0000115 ! lung epithelium
-relationship: part_of UBERON:0002048 ! lung
 
 [Term]
 id: CL:0000158
@@ -67,7 +66,6 @@ synonym: "supporting cell of olfactory epithelium" EXACT []
 synonym: "sustentaculocyte of olfactory epithelium" EXACT []
 xref: FMA:62302
 is_a: CL:0002169 ! basal cell of olfactory epithelium
-relationship: part_of UBERON:0001997 ! olfactory epithelium
 
 [Term]
 id: CL:0000869
@@ -140,7 +138,6 @@ namespace: cell
 def: "Infrequent type of columnar epithelial cell. This cell is characterized by the presence of a tuft of blunt, squat microvilli (approximately 120-140/cell) on the cell surface. The microvilli contain filaments that stretch into the underlying cytoplasm. They have a distinctive pear shape with a wide base and a narrow microvillous apex. Function not known." []
 synonym: "pulmonary brush cell" RELATED []
 is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
-relationship: part_of UBERON:0007196 ! tracheobronchial tree
 created_by: tmeehan
 creation_date: 2010-06-29T03:22:46Z
 
@@ -254,7 +251,6 @@ is_a: CL:0002075 ! brush cell of trachebronchial tree
 is_a: CL:0002328 ! bronchial epithelial cell
 intersection_of: CL:0002075 ! brush cell of trachebronchial tree
 intersection_of: part_of UBERON:0002031 ! epithelium of bronchus
-relationship: part_of UBERON:0002031 ! epithelium of bronchus
 created_by: tmeehan
 creation_date: 2010-09-02T02:38:42Z
 
@@ -289,7 +285,6 @@ def: "An epithelial cell of the bronchus." []
 xref: BTO:0002922
 is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
-relationship: part_of UBERON:0002185 ! bronchus
 created_by: tmeehan
 creation_date: 2010-09-20T02:00:00Z
 
@@ -318,7 +313,6 @@ namespace: cell
 def: "A ciliated cell of the bronchus." []
 is_a: CL:0002145 ! ciliated columnar cell of tracheobronchial tree
 is_a: CL:0002328 ! bronchial epithelial cell
-relationship: part_of UBERON:0002185 ! bronchus
 created_by: tmeehan
 creation_date: 2010-09-20T02:21:12Z
 
@@ -339,7 +333,6 @@ name: respiratory goblet cell
 namespace: cell
 def: "A simple columnar epithelial cell that secretes mucin. Rough endoplasmic reticulum, mitochondria, the nucleus, and other organelles are concentrated in the basal portion. The apical plasma membrane projects microvilli to increase surface area for secretion." []
 synonym: "respiratory mucosa goblet cells" EXACT []
-relationship: part_of UBERON:0000065 ! respiratory tract
 relationship: part_of UBERON:0004802 ! respiratory tract epithelium
 created_by: tmeehan
 creation_date: 2010-09-23T04:42:27Z
@@ -351,7 +344,6 @@ namespace: cell
 def: "A goblet cell located in the nasal epithelium." []
 xref: MP:0002262
 is_a: CL:0002370 ! respiratory goblet cell
-relationship: part_of UBERON:0001826 ! nasal cavity mucosa
 relationship: part_of UBERON:0005384 ! nasal cavity epithelium
 created_by: tmeehan
 creation_date: 2010-12-03T03:03:02Z
@@ -430,8 +422,6 @@ is_a: CL:1000351 ! basal cell of epithelium of respiratory bronchiole
 intersection_of: CL:0002633 ! respiratory basal cell
 intersection_of: part_of UBERON:0001955 ! epithelium of respiratory bronchiole
 intersection_of: part_of UBERON:0001958 ! terminal bronchiole epithelium
-relationship: part_of UBERON:0001955 ! epithelium of respiratory bronchiole
-relationship: part_of UBERON:0001958 ! terminal bronchiole epithelium
 created_by: tmeehan
 creation_date: 2011-06-21T03:26:08Z
 
@@ -458,14 +448,12 @@ name: lung goblet cell
 is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:0002370 ! respiratory goblet cell
 is_a: CL:1000272 ! lung secretory cell
-relationship: part_of UBERON:0002048 ! lung
 
 [Term]
 id: CL:1000223
 name: lung neuroendocrine cell
 is_a: CL:0000082 ! epithelial cell of lung
 is_a: CL:1000272 ! lung secretory cell
-relationship: part_of UBERON:0002048 ! lung
 
 [Term]
 id: CL:1000271
@@ -487,8 +475,6 @@ synonym: "goblet cell of epithelium of bronchus" EXACT []
 xref: FMA:263032
 is_a: CL:0002328 ! bronchial epithelial cell
 is_a: CL:0002370 ! respiratory goblet cell
-relationship: part_of UBERON:0002031 ! epithelium of bronchus
-relationship: part_of UBERON:0002185 ! bronchus
 
 [Term]
 id: CL:1000329
@@ -500,7 +486,6 @@ xref: FMA:263075
 is_a: CL:0000307 ! tracheal epithelial cell
 is_a: CL:0002370 ! respiratory goblet cell
 relationship: part_of UBERON:0001901 ! epithelium of trachea
-relationship: part_of UBERON:0003126 ! trachea
 
 [Term]
 id: CL:1000330
@@ -571,7 +556,6 @@ is_a: CL:0002329 ! basal epithelial cell of tracheobronchial tree
 is_a: CL:0002633 ! respiratory basal cell
 intersection_of: CL:0002633 ! respiratory basal cell
 intersection_of: part_of UBERON:0002031 ! epithelium of bronchus
-relationship: part_of UBERON:0002031 ! epithelium of bronchus
 
 [Term]
 id: CL:1000350
@@ -659,7 +643,6 @@ synonym: "endothelial cell of lung" RELATED []
 synonym: "pulmonary vessel endothelial cell" RELATED []
 is_a: CL:0000082 ! epithelial cell of lung
 relationship: part_of UBERON:0000102 ! lung vasculature
-relationship: part_of UBERON:0002048 ! lung
 
 [Term]
 id: CL:1001573
@@ -668,7 +651,6 @@ def: "Cell of the nasopharyngeal epithelium." []
 synonym: "nasopharynx respiratory epithelial cells" RELATED []
 xref: CALOHA:TS-2398
 is_a: CL:0002631 ! epithelial cell of upper respiratory tract
-relationship: part_of UBERON:0001728 ! nasopharynx
 relationship: part_of UBERON:0001951 ! epithelium of nasopharynx
 
 [Term]
@@ -680,7 +662,6 @@ synonym: "tonsil squamous epithelial cells" RELATED []
 synonym: "tonsillar squamous cell" RELATED []
 synonym: "tonsillar squamous epithelial cell" RELATED []
 xref: CALOHA:TS-1253
-relationship: part_of UBERON:0002372 ! tonsil
 relationship: part_of UBERON:0013696 ! tonsil epithelium
 
 [Term]
@@ -889,7 +870,7 @@ xref: MA:0001783
 is_a: UBERON:0004815 ! lower respiratory tract epithelium
 relationship: contributes_to_morphology_of UBERON:0002048 ! lung
 relationship: part_of UBERON:0002048 ! lung
-property_value: UBPROP:0000008 "A pseudostratified epithelium, containing basal cells, stem cells of the airway, submucosal glands and cartilage rings, is limited to the trachea and large lobar airways in the mouse (Morrisey and Hogan, 2010). This more complex epithelium extends to terminal bronchioles in the human[doi:10.1242/dev.115469]" xsd:string
+property_value: UBPROP:0000008 "A pseudostratified epithelium, containing basal cells, stem cells of the airway, submucosal glands and cartilage rings, is limited to the trachea and large lobar airways in the mouse (Morrisey and Hogan, 2010). This more complex epithelium extends to terminal bronchioles in the human[DOI:10.1242/dev.115469]" xsd:string
 
 [Term]
 id: UBERON:0000116
@@ -927,10 +908,10 @@ synonym: "pulmones" EXACT LATIN [FMA:68877, FMA:TA]
 synonym: "set of lungs" EXACT []
 xref: FMA:68877
 xref: OpenCyc:Mx4rvVjKy5wpEbGdrcN5Y29ycA
-relationship: has_member UBERON:0002167 ! right lung
 relationship: has_member UBERON:0002167 {minCardinality="1", maxCardinality="1"} ! right lung
-relationship: has_member UBERON:0002168 ! left lung
+relationship: has_member UBERON:0002167 ! right lung
 relationship: has_member UBERON:0002168 {minCardinality="1", maxCardinality="1"} ! left lung
+relationship: has_member UBERON:0002168 ! left lung
 relationship: part_of UBERON:0001558 {source="FMA-abduced"} ! lower respiratory tract
 
 [Term]
@@ -987,8 +968,8 @@ alt_id: UBERON:0003344
 def: "A mucosa that is part of a pharynx [Automatically generated definition]." [OBOL:automatic]
 synonym: "mucosa of organ of pharynx" EXACT [OBOL:automatic]
 synonym: "mucosa of pharynx" EXACT [OBOL:automatic]
-synonym: "mucous membrane of pharynx" EXACT [FMA:55031]
 synonym: "mucous membrane of pharynx" EXACT [OBOL:automatic]
+synonym: "mucous membrane of pharynx" EXACT [FMA:55031]
 synonym: "mucous membrane of the pharynx" RELATED [BTO:0001047]
 synonym: "organ mucosa of pharynx" EXACT [OBOL:automatic]
 synonym: "pharynx mucosa" EXACT [OBOL:automatic]
@@ -1067,8 +1048,8 @@ namespace: uberon
 def: "The nasal vestibule is the most anterior part of the nasal cavity. It's enclosed by the cartilages of nose and lined by the same epithelium of the skin. The other part of the nasal cavity, which is lined by the respiratory epithelium, is called nasal cavity proper. [WP,unvetted]." [http://en.wikipedia.org/wiki/Nasal_vestibule]
 synonym: "vestibular part of nasal cavity" EXACT [FMA:59644]
 synonym: "vestibulum nasale" RELATED [BTO:0001761]
-synonym: "vestibulum nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_vestibule]
 synonym: "vestibulum nasi" RELATED [BTO:0001761]
+synonym: "vestibulum nasi" RELATED LATIN [http://en.wikipedia.org/wiki/Nasal_vestibule]
 xref: BTO:0001761
 xref: CALOHA:TS-0660
 xref: FMA:59644
@@ -1143,14 +1124,14 @@ subset: pheno_slim
 subset: uberon_slim
 subset: upper_level
 synonym: "anatomical systems" RELATED PLURAL [ZFA:0001439]
-synonym: "body system" EXACT [NIFSTD:birnlex_14]
+synonym: "body system" EXACT [BIRNLEX:14]
 synonym: "connected anatomical system" EXACT [CARO:0000011]
 synonym: "organ system" EXACT []
 synonym: "system" BROAD [GO:0048731]
 xref: AAO:0000007
 xref: AEO:0000011
 xref: BILA:0000011
-xref: birnlex:14
+xref: BIRNLEX:14
 xref: BSA:0000049
 xref: CALOHA:TS-2088
 xref: CARO:0000011
@@ -1198,7 +1179,6 @@ synonym: "vagus nerve pharyngeal branch" EXACT [FMA:6234]
 xref: FMA:6234
 xref: http://en.wikipedia.org/wiki/Pharyngeal_part_of_vagus_nerve
 xref: http://www.snomedbrowser.com/Codes/Details/280298006
-is_a: BFO:0000040 ! material entity
 relationship: part_of UBERON:0001005 ! respiratory airway
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5e/Gray791.png
 
@@ -1206,7 +1186,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5e/G
 id: UBERON:0000977
 name: pleura
 namespace: uberon
-def: "The invaginated serous membrane that surrounds the lungs (the visceral portion) and lines the walls of the pleural cavity (parietal portion)." [https://en.wikipedia.org/wiki/Pulmonary_pleurae, https://github.com/obophenotype/uberon/issues/1231, ISBN:0-683-40008-8, MP:0010820, UBERON:cjm]
+def: "The invaginated serous membrane that surrounds the lungs (the visceral portion) and lines the walls of the pleural cavity (parietal portion)." [http://en.wikipedia.org/wiki/Pulmonary_pleurae, https://github.com/obophenotype/uberon/issues/1231, ISBN:0-683-40008-8, MP:0010820, UBERON:cjm]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -1235,7 +1215,7 @@ relationship: has_part UBERON:0002401 ! visceral pleura
 relationship: part_of UBERON:0009778 {source="https://github.com/obophenotype/uberon/issues/86"} ! pleural sac
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/ab/Gray965.png
 property_value: RO:0002175 NCBITaxon:8782 {source="BGEE:AN", source="ISBN:978-0030223693"}
-property_value: UBPROP:0000001 "The serous membrane that covers the lungs and lines the pleural cavity. [Kaufman_MH_and_Bard_JBL, The_anatomical_basis_of_mouse_development_(1999)_San_Diego:_Academic_Press, p.264][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000394", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN10:0124020607"}
+property_value: UBPROP:0000001 "The serous membrane that covers the lungs and lines the pleural cavity. [Kaufman_MH_and_Bard_JBL, The_anatomical_basis_of_mouse_development_(1999)_San_Diego:_Academic_Press, p.264][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000394", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:0124020607"}
 property_value: UBPROP:0000007 "pleural" xsd:string
 property_value: UBPROP:0000012 "In MA, is_a cavity lining (which we equate to parietal). In FMA, is_a (viscous) serous membrane (which includes mesothelium plus connective tissue). Note the MA structure should probably be associated with the mesothelium of pleura in FMA. JB/EHDAA2 argues the term 'pleura' is best used for the mesothelial lining (thus excluding connective tissue). See https://github.com/obophenotype/uberon/issues/86" xsd:string
 
@@ -1353,8 +1333,8 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "laryngeal pharynx" EXACT [FMA:54877]
 synonym: "laryngopharynx" EXACT [FMA:54877]
-synonym: "pars laryngea pharyngis" RELATED [BTO:0001740]
 synonym: "pars laryngea pharyngis" RELATED LATIN [http://en.wikipedia.org/wiki/Hypopharynx]
+synonym: "pars laryngea pharyngis" RELATED [BTO:0001740]
 xref: BTO:0001740
 xref: CALOHA:TS-2020
 xref: EFO:0001388
@@ -1386,7 +1366,7 @@ subset: upper_level
 xref: AAO:0010841
 xref: AEO:0000000
 xref: BILA:0000000
-xref: birnlex:6
+xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
@@ -1870,8 +1850,8 @@ namespace: uberon
 def: "the largest of the laryngeal cartilages" [ISBN:0-397-51047-0, MGI:cwg, MP:0002260]
 subset: pheno_slim
 subset: uberon_slim
-synonym: "cartilago thyroidea" RELATED [http://en.wikipedia.org/wiki/Thyroid_cartilage]
 synonym: "cartilago thyroidea" RELATED LATIN [http://en.wikipedia.org/wiki/Thyroid_cartilage]
+synonym: "cartilago thyroidea" RELATED [http://en.wikipedia.org/wiki/Thyroid_cartilage]
 synonym: "laryngeal prominence" RELATED [http://en.wikipedia.org/wiki/Thyroid_cartilage]
 synonym: "pomus" RELATED [http://en.wikipedia.org/wiki/Thyroid_cartilage]
 synonym: "pomus adamus" RELATED [http://en.wikipedia.org/wiki/Thyroid_cartilage]
@@ -2034,7 +2014,7 @@ property_value: UBPROP:0000008 "A unique feature in the horse is that the fronta
 id: UBERON:0001761
 name: future foramen cecum
 namespace: uberon
-def: "A thickened and indented region in the midline in the floor of the rostral part of the pharyngeal region of the foregut, located between the second and third branchial arches that is the first indication of the thyroid primordium. [Kaufman_MH_and_Bard_JBL, The_anatomical_basis_of_mouse_development_(1999)_San_Diego:_Academic_Press, p.132]" [ISBN10:0124020607, VHOG:0000826]
+def: "A thickened and indented region in the midline in the floor of the rostral part of the pharyngeal region of the foregut, located between the second and third branchial arches that is the first indication of the thyroid primordium. [Kaufman_MH_and_Bard_JBL, The_anatomical_basis_of_mouse_development_(1999)_San_Diego:_Academic_Press, p.132]" [ISBN:0124020607, VHOG:0000826]
 subset: uberon_slim
 synonym: "foramen caecum" BROAD [MA:0000725]
 synonym: "foramen cecum" BROAD []
@@ -2327,14 +2307,14 @@ xref: UMLS:C1179400 {source="ncithesaurus:Terminal_Bronchiole_Epithelium"}
 is_a: UBERON:0002051 ! epithelium of bronchiole
 relationship: has_part CL:0000158 {source="FMA"} ! Clara cell
 relationship: part_of UBERON:0002187 ! terminal bronchiole
-property_value: UBPROP:0000008 "A pseudostratified epithelium, containing basal cells, stem cells of the airway, submucosal glands and cartilage rings, is limited to the trachea and large lobar airways in the mouse (Morrisey and Hogan, 2010). This more complex epithelium extends to terminal bronchioles in the human[doi:10.1242/dev.115469]" xsd:string
+property_value: UBPROP:0000008 "A pseudostratified epithelium, containing basal cells, stem cells of the airway, submucosal glands and cartilage rings, is limited to the trachea and large lobar airways in the mouse (Morrisey and Hogan, 2010). This more complex epithelium extends to terminal bronchioles in the human[DOI:10.1242/dev.115469]" xsd:string
 
 [Term]
 id: UBERON:0001963
 name: bronchial-associated lymphoid tissue
 namespace: uberon
-def: "A diffuse collection of lymphpoid cells that participate in airway immune responses" [ISBN10:0123813611]
-comment: Lymphoid tissue associated with airways in mice has functional similarities to human BALT[ISBN10:0123813611] Notes: FMA classifies this as organized, not diffuse
+def: "A diffuse collection of lymphpoid cells that participate in airway immune responses" [ISBN:0123813611]
+comment: Lymphoid tissue associated with airways in mice has functional similarities to human BALT[ISBN:0123813611] Notes: FMA classifies this as organized, not diffuse
 subset: pheno_slim
 synonym: "BALT" RELATED []
 synonym: "bronchus associated lymphoid tissue" EXACT []
@@ -2361,12 +2341,12 @@ synonym: "MOE" RELATED ABBREVIATION [NCBIBook:NBK55971]
 synonym: "nasal cavity olfactory epithelium" EXACT [MA:0001325]
 synonym: "nasal epithelium" RELATED []
 synonym: "nasal sensory epithelium" RELATED []
-synonym: "olfactory membrane" EXACT [NIFSTD:birnlex_2703]
+synonym: "olfactory membrane" EXACT [BIRNLEX:2703]
 synonym: "olfactory sensory epithelium" EXACT []
 synonym: "pseudostratified main olfactory epithelium" RELATED [http://www.ncbi.nlm.nih.gov/books/NBK55971/]
 synonym: "sensory olfactory epithelium" EXACT []
 xref: AAO:0010158
-xref: birnlex:2703
+xref: BIRNLEX:2703
 xref: BTO:0000108
 xref: CALOHA:TS-0703
 xref: EFO:0001972
@@ -2374,7 +2354,7 @@ xref: EHDAA2:0001228
 xref: EHDAA:4774
 xref: EMAPA:17606
 xref: FMA:64803
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900 {source="NIFSTD:birnlex_2703"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900 {source="BIRNLEX:2703"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1900
 xref: http://linkedlifedata.com/resource/umls/id/C0599332
 xref: http://www.snomedbrowser.com/Codes/Details/37623003
@@ -2383,7 +2363,7 @@ xref: MAT:0000445
 xref: NCIT:C33203
 xref: Olfactory:epithelium
 xref: TAO:0000554
-xref: UMLS:C0599332 {source="NIFSTD:birnlex_2703"}
+xref: UMLS:C0599332 {source="BIRNLEX:2703"}
 xref: UMLS:C0599332 {source="ncithesaurus:Olfactory_Epithelium"}
 xref: VHOG:0000985
 xref: ZFA:0000554
@@ -2758,7 +2738,7 @@ intersection_of: continuous_with UBERON:0006518 ! right lung lobe
 relationship: continuous_with UBERON:0006518 ! right lung lobe
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/9f/Illu_conducting_passages.svg
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c3/Illu_conducting_passages.jpg
-property_value: UBPROP:0000008 "Divides into 3 lobar bronchi in humans" xsd:string {source="ISBN10:0123813611"}
+property_value: UBPROP:0000008 "Divides into 3 lobar bronchi in humans" xsd:string {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0002178
@@ -2786,7 +2766,7 @@ intersection_of: continuous_with UBERON:0008951 ! left lung lobe
 relationship: continuous_with UBERON:0008951 ! left lung lobe
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/9f/Illu_conducting_passages.svg
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c3/Illu_conducting_passages.jpg
-property_value: UBPROP:0000008 "Divides into 2 lobar bronchi in humans" xsd:string {source="ISBN10:0123813611"}
+property_value: UBPROP:0000008 "Divides into 2 lobar bronchi in humans" xsd:string {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0002182
@@ -2797,7 +2777,7 @@ subset: efo_slim
 subset: organ_slim
 subset: uberon_slim
 synonym: "bronchus principalis" EXACT [FMA:7405]
-synonym: "extrapulmonary bronchus" EXACT [ISBN10:0123813611]
+synonym: "extrapulmonary bronchus" EXACT [ISBN:0123813611]
 synonym: "mainstem bronchus" EXACT []
 synonym: "major bronchus" EXACT []
 synonym: "primary bronchus" EXACT [FMA:7405]
@@ -2953,7 +2933,7 @@ relationship: part_of UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0010368 {source="ncit"} ! pulmonary lobule
 property_value: depicted:by Alveoli:diagram.png
 property_value: UBPROP:0000007 "bronchiolar" xsd:string
-property_value: UBPROP:0000010 "lacks submucosa and cartilage plates; they have 3 layers: mucosa, muscular layer and outer layer" xsd:string {source="ISBN10:0123813611"}
+property_value: UBPROP:0000010 "lacks submucosa and cartilage plates; they have 3 layers: mucosa, muscular layer and outer layer" xsd:string {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0002187
@@ -2982,7 +2962,7 @@ property_value: depicted:by Alveoli:diagram.png
 id: UBERON:0002188
 name: respiratory bronchiole
 namespace: uberon
-def: "A bronchiole that is the first segment of the respiratory zone." [http://en.wikipedia.org/wiki/Respiratory_bronchiole, ISBN10:0123813611]
+def: "A bronchiole that is the first segment of the respiratory zone." [http://en.wikipedia.org/wiki/Respiratory_bronchiole, ISBN:0123813611]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "bronchiolus respiratorii" EXACT LATIN [http://en.wikipedia.org/wiki/Respiratory_bronchiole]
@@ -3000,10 +2980,10 @@ xref: UMLS:C1261270 {source="ncithesaurus:Respiratory_Bronchiole"}
 is_a: UBERON:0002186 ! bronchiole
 relationship: contributes_to_morphology_of UBERON:0008874 ! pulmonary acinus
 relationship: distally_connected_to UBERON:0002173 ! pulmonary alveolar duct
-relationship: part_of UBERON:0008874 {source="ISBN10:0123813611"} ! pulmonary acinus
+relationship: part_of UBERON:0008874 {source="ISBN:0123813611"} ! pulmonary acinus
 relationship: proximally_connected_to UBERON:0002187 ! terminal bronchiole
 property_value: depicted:by Alveoli:diagram.png
-property_value: UBPROP:0000008 "mice have few or none of these structures, with the terminal bronchioles transitioning directly to the alveolary ducts" xsd:string {source="ISBN10:0123813611"}
+property_value: UBPROP:0000008 "mice have few or none of these structures, with the terminal bronchioles transitioning directly to the alveolary ducts" xsd:string {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0002202
@@ -3246,7 +3226,7 @@ xref: VHOG:0001140
 is_a: UBERON:0002372 ! tonsil
 property_value: depicted:by Illu:mouth.jpg
 property_value: RO:0002174 NCBITaxon:9989 {source="http://www.ncbi.nlm.nih.gov/pubmed/20144910"}
-property_value: UBPROP:0000011 "tonsillar fossa develops from dorsal portion of pouch 2. Note that pharyngeal and lingual tonsils do not develop from pharyngeal pouches" xsd:string {source="ISBN10:1607950324"}
+property_value: UBPROP:0000011 "tonsillar fossa develops from dorsal portion of pouch 2. Note that pharyngeal and lingual tonsils do not develop from pharyngeal pouches" xsd:string {source="ISBN:1607950324"}
 
 [Term]
 id: UBERON:0002375
@@ -3290,7 +3270,7 @@ property_value: UBPROP:0000003 "(In anura) a dorsal pair of arytenoid cartilages
 id: UBERON:0002400
 name: parietal pleura
 namespace: uberon
-def: "The outer serous membrane of the pulmonary pleural." [https://en.wikipedia.org/wiki/Pulmonary_pleurae, UBERON:cjm]
+def: "The outer serous membrane of the pulmonary pleural." [http://en.wikipedia.org/wiki/Pulmonary_pleurae, UBERON:cjm]
 comment: the part of the pleura external to the visceral pleura. It lines the inner surface of the chest wall, covers the diaphragm, and is reflected over the structures occupying the middle of the thorax
 subset: pheno_slim
 subset: uberon_slim
@@ -3312,7 +3292,7 @@ relationship: part_of UBERON:0000977 ! pleura
 id: UBERON:0002401
 name: visceral pleura
 namespace: uberon
-def: "The inner serous membrane of the pulmonary pleural. The visceral pleura lines the lungs." [https://en.wikipedia.org/wiki/Pulmonary_pleurae, UBERON:cjm]
+def: "The inner serous membrane of the pulmonary pleural. The visceral pleura lines the lungs." [http://en.wikipedia.org/wiki/Pulmonary_pleurae, UBERON:cjm]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "lung mesothelium" RELATED [EHDAA2:0002205]
@@ -3344,7 +3324,7 @@ property_value: UBPROP:0000012 "FMA treats this as part of the lungs" xsd:string
 id: UBERON:0002402
 name: pleural cavity
 namespace: uberon
-def: "The fluid-filled cavity that lies between the visceral and parietal pleurae." [https://en.wikipedia.org/wiki/Pleural_cavity, https://github.com/obophenotype/uberon/issues/86]
+def: "The fluid-filled cavity that lies between the visceral and parietal pleurae." [http://en.wikipedia.org/wiki/Pleural_cavity, https://github.com/obophenotype/uberon/issues/86]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "cavitas pleuralis" EXACT LATIN [http://en.wikipedia.org/wiki/Pleural_cavity]
@@ -3565,7 +3545,7 @@ synonym: "AA4" EXACT [ZFA:0005008]
 synonym: "aortic arch 4" EXACT [ZFA:0005008]
 synonym: "fourth aortic arch" EXACT [XAO:0000355]
 synonym: "fourth branchial arch artery" EXACT []
-synonym: "systemic arch" RELATED [ISBN10:0073040584, XAO:0000355]
+synonym: "systemic arch" RELATED [ISBN:0073040584, XAO:0000355]
 xref: AAO:0010420
 xref: Arch_4
 xref: EHDAA2:0000087
@@ -3616,7 +3596,7 @@ synonym: "6th branchial arch artery" RELATED [EMAPA:17005]
 synonym: "6th pharyngeal arch artery" RELATED [EMAPA:17005]
 synonym: "AA6" EXACT [ZFA:0005016]
 synonym: "aortic arch 6" EXACT [ZFA:0005016]
-synonym: "pulmonary arch" RELATED [ISBN10:0073040584]
+synonym: "pulmonary arch" RELATED [ISBN:0073040584]
 synonym: "sixth aortic arch" EXACT [XAO:0000353]
 synonym: "sixth branchial arch artery" EXACT []
 xref: AAO:0010422
@@ -3679,7 +3659,7 @@ property_value: UBPROP:0000001 "The respiratory tube between the larynx and the 
 property_value: UBPROP:0000003 "In primitive fishes and most tetrapods, the lungs of adults are usually paired. They lie ventral to the digestive tract and are connected to the outside environment through the trachea.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000371", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.409"}
 property_value: UBPROP:0000007 "tracheal" xsd:string
 property_value: UBPROP:0000008 "In birds, the trachea runs from the pharynx to the syrinx, from which the primary bronchi diverge. Swans have an unusually elongated trachea, part of which is coiled beneath the sternum; this may act as a resonator to amplify sound. In some birds, the cartilagenous rings are complete, and may even be ossified. In amphibians, the trachea is normally extremely short, and leads directly into the lungs, without clear primary bronchi. A longer trachea is, however found in some long-necked salamanders, and in caecilians. While there are irregular cartilagenous nodules on the amphibian trachea, these do not form the rings found in amniotes. The only vertebrate to have lungs, but no trachea, is Polypterus, in which the lungs arise directly from the pharynx." xsd:string
-property_value: UBPROP:0000008 "in mouse 15-18 C-rings, 15-20 in human." xsd:string {source="ISBN10:0123813611"}
+property_value: UBPROP:0000008 "in mouse 15-18 C-rings, 15-20 in human." xsd:string {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0003127
@@ -3741,7 +3721,7 @@ is_a: UBERON:0002340 ! epithelium of main bronchus
 id: UBERON:0003295
 name: pharyngeal gland
 namespace: uberon
-def: "Racemose mucous glands beneath the mucous membrane of the pharynx." [Biology-Online_Dictionary:http\://www.biology-online.org/dictionary/]
+def: "Racemose mucous glands beneath the mucous membrane of the pharynx." [http://www.biology-online.org/dictionary/]
 subset: organ_slim
 synonym: "glandulae pharyngeae" RELATED [BTO:0004849]
 synonym: "pharynx gland" EXACT [EHDAA2:0001461]
@@ -4618,7 +4598,7 @@ is_a: UBERON:0003504 ! respiratory system blood vessel
 id: UBERON:0003706
 name: laryngeal vocal fold
 namespace: uberon
-def: "Either of two pairs of folds of mucous membrane projecting into the larynx." [Medical_Dictionary:http\://medical-dictionary.thefreedictionary.com/]
+def: "Either of two pairs of folds of mucous membrane projecting into the larynx." [http://medical-dictionary.thefreedictionary.com/]
 subset: pheno_slim
 synonym: "plica vocalis" RELATED [BTO:0005084]
 synonym: "true vocal cord" EXACT [FMA:55457]
@@ -4835,7 +4815,7 @@ synonym: "aortic arch artery" RELATED [EMAPA:16684]
 synonym: "aortic arches" EXACT PLURAL [ZFA:0005004]
 synonym: "arteriae arcuum pharyngeorum" RELATED LATIN [http://en.wikipedia.org/wiki/Aortic_arches]
 synonym: "branchial aortic arches" EXACT PLURAL [ZFIN:ZDB-PUB-080512-6]
-synonym: "branchial aortic arches" RELATED PLURAL [ZFA:0005004\,ZFIN\:ZDB-PUB-080512-6]
+synonym: "branchial aortic arches" RELATED PLURAL [ZFA:0005004, ZFIN:ZDB-PUB-080512-6]
 synonym: "branchial arch artery" EXACT [EMAPA:16684]
 synonym: "embryonic aortic arch artery" EXACT [EMAPA:16684, MP:0002672]
 synonym: "PAA" EXACT ABBREVIATION [MP:0002672]
@@ -5400,8 +5380,8 @@ name: right lung accessory lobe
 namespace: uberon
 def: "A specialized lobe of the right lung that extends to the left side of the organism" [LG:0012619]
 subset: pheno_slim
-synonym: "diaphragmatic lobe" NARROW [ISBN10:0123813611]
-synonym: "intermediate lobe of right lung" NARROW [ISBN10:0123813611]
+synonym: "diaphragmatic lobe" NARROW [ISBN:0123813611]
+synonym: "intermediate lobe of right lung" NARROW [ISBN:0123813611]
 synonym: "right lung postcaval lobe" EXACT [MA:0000427]
 xref: EHDAA2:0001731
 xref: EHDAA:4971
@@ -5411,7 +5391,7 @@ xref: VHOG:0000831
 is_a: UBERON:0006518 ! right lung lobe
 relationship: contributes_to_morphology_of UBERON:0002167 ! right lung
 property_value: UBPROP:0000008 "in humans, the right lung typically has 3 lobes (superior, middle, inferior). The lobar fissures are often incomplete, making a connection between two apposed lobes. Conversely, more than the expected number of lobes may be produced by new fissures e.g. the azygous lobe of the lung. The additional lobes are termed 'accessory lobes' -- http://www.gpnotebook.co.uk/simplepage.cfm?ID=1120927803" xsd:string
-property_value: UBPROP:0000008 "In mouse this is sometimes divided into intermediate and diaphragmatic lobes" xsd:string {source="ISBN10:0123813611"}
+property_value: UBPROP:0000008 "In mouse this is sometimes divided into intermediate and diaphragmatic lobes" xsd:string {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0004892
@@ -6218,9 +6198,9 @@ xref: TAO:0001077
 xref: ZFA:0001077
 is_a: UBERON:0003351 ! pharyngeal epithelium
 relationship: part_of UBERON:0003295 {source="EHDAA2"} ! pharyngeal gland
-property_value: IAO:0000116 "we follow Kardong table 13.1 in having some developmental contribution of pouch 4 in mammals, but this isn't reflected in EHDAA2. Consider adding distinct term for mesenchyme (see EHDAA2), to indicate NC constribution." xsd:string {source="ISBN-10:0781714125"}
+property_value: IAO:0000116 "we follow Kardong table 13.1 in having some developmental contribution of pouch 4 in mammals, but this isn't reflected in EHDAA2. Consider adding distinct term for mesenchyme (see EHDAA2), to indicate NC constribution." xsd:string {source="ISBN:0781714125"}
 property_value: UBPROP:0000001 "A small outgrowth of the pharyngeal epithelium that is the site of lymphocyte cell production. Willett et al, 1999.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001077", ontology="TAO", source="ZFIN:curator"}
-property_value: UBPROP:0000008 "variability of developmental origin: In fish, thymic primordia are generated by all the pouches except the first. However, in avians the thymus arises from pouches 3 and 4, whereas in humans it is only generated by the third pouch[PMID:16313389] The thymus arises from the second pouch in frogs, 2-6 in cartilaginous fish, 2-3 in reptiles, 3 or 4 in bony fish, birds and mammals. The final number is variable - 5 paired organs in sharks, 4 in caecilians, 3 in urodeles, 1 in many teleost, anurans and many mammals" xsd:string {source="ISBN-10:0781714125"}
+property_value: UBPROP:0000008 "variability of developmental origin: In fish, thymic primordia are generated by all the pouches except the first. However, in avians the thymus arises from pouches 3 and 4, whereas in humans it is only generated by the third pouch[PMID:16313389] The thymus arises from the second pouch in frogs, 2-6 in cartilaginous fish, 2-3 in reptiles, 3 or 4 in bony fish, birds and mammals. The final number is variable - 5 paired organs in sharks, 4 in caecilians, 3 in urodeles, 1 in many teleost, anurans and many mammals" xsd:string {source="ISBN:0781714125"}
 
 [Term]
 id: UBERON:0005639
@@ -6360,7 +6340,7 @@ relationship: part_of UBERON:0004890 ! right lung accessory lobe
 id: UBERON:0005872
 name: 1st arch pharyngeal cleft
 namespace: uberon
-def: "A groove that is situated between the 1st and 2nd pharyngeal arch." [ISBN10:0124020607, VHOG:OG]
+def: "A groove that is situated between the 1st and 2nd pharyngeal arch." [ISBN:0124020607, VHOG:OG]
 subset: vertebrate_core
 synonym: "1st arch branchial groove" EXACT [EHDAA2:0000008]
 synonym: "1st arch groove ectoderm" EXACT [EHDAA2:0000009]
@@ -6381,7 +6361,7 @@ property_value: UBPROP:0000003 "In all jawed vertebrates the first arch forms th
 id: UBERON:0005873
 name: 2nd arch pharyngeal cleft
 namespace: uberon
-def: "A groove that is situated between the 2nd and 3rd pharyngeal arch." [ISBN10:0124020607, VHOG:OG]
+def: "A groove that is situated between the 2nd and 3rd pharyngeal arch." [ISBN:0124020607, VHOG:OG]
 subset: vertebrate_core
 synonym: "2nd arch branchial groove" EXACT [EHDAA2:0000054]
 synonym: "2nd arch groove ectoderm" EXACT [EHDAA2:0000057]
@@ -6401,7 +6381,7 @@ is_a: UBERON:0005879 ! pharyngeal cleft
 id: UBERON:0005874
 name: 3rd arch pharyngeal cleft
 namespace: uberon
-def: "A groove that is situated between the 3rd and 4th pharyngeal arch." [ISBN10:0124020607, VHOG:OG]
+def: "A groove that is situated between the 3rd and 4th pharyngeal arch." [ISBN:0124020607, VHOG:OG]
 subset: vertebrate_core
 synonym: "3rd arch branchial groove" EXACT [EHDAA2:0000071]
 synonym: "3rd arch groove ectoderm" EXACT [EHDAA2:0000074]
@@ -6421,7 +6401,7 @@ is_a: UBERON:0005879 ! pharyngeal cleft
 id: UBERON:0005875
 name: 4th arch pharyngeal cleft
 namespace: uberon
-def: "A groove that is situated between the 4th and 5th pharyngeal arch." [ISBN10:0124020607, VHOG:OG]
+def: "A groove that is situated between the 4th and 5th pharyngeal arch." [ISBN:0124020607, VHOG:OG]
 subset: vertebrate_core
 synonym: "4th arch branchial groove" EXACT [RETIRED_EHDAA2:0000088]
 synonym: "4th arch pharyngeal groove ectoderm" EXACT [EHDAA2:0000089]
@@ -6570,7 +6550,7 @@ is_a: UBERON:0000101 ! lobe of lung
 intersection_of: UBERON:0000101 ! lobe of lung
 intersection_of: part_of UBERON:0002167 ! right lung
 relationship: part_of UBERON:0002167 ! right lung
-property_value: UBPROP:0000008 "4 in mice, divided into 3 in human by two interlobal fissures" xsd:string {source="ISBN-10:0123813611"}
+property_value: UBPROP:0000008 "4 in mice, divided into 3 in human by two interlobal fissures" xsd:string {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0006524
@@ -6633,7 +6613,7 @@ namespace: uberon
 def: "A cartilaginous ridge within the trachea that runs anteroposteriorly between the two primary bronchi at the site of the tracheal bifurcation at the lower end of the trachea." [http://en.wikipedia.org/wiki/Carina_of_trachea]
 synonym: "bifurcation of the trachea" RELATED [http://en.wikipedia.org/wiki/Carina_of_trachea]
 synonym: "carina" BROAD [FMA:7465]
-synonym: "carina %28anatomy%29" RELATED [http://en.wikipedia.org/wiki/Carina_of_trachea]
+synonym: "carina (anatomy)" RELATED [http://en.wikipedia.org/wiki/Carina_of_trachea]
 synonym: "carina of trachea" RELATED [http://en.wikipedia.org/wiki/Carina_of_trachea]
 synonym: "carina tracheae" EXACT [EMAPA:18407]
 synonym: "carina tracheae" RELATED LATIN [http://en.wikipedia.org/wiki/Carina_of_trachea]
@@ -6974,8 +6954,8 @@ name: stylopharyngeus muscle
 namespace: uberon
 def: "The stylopharyngeus is a muscle in the head that stretches between the styloid process and the pharynx." [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "M. stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
-synonym: "musculus stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "musculus stylopharyngeus" RELATED LATIN [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
+synonym: "musculus stylopharyngeus" RELATED [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 synonym: "stylopharyngeus" EXACT [http://en.wikipedia.org/wiki/Stylopharyngeus_muscle]
 xref: FMA:46664
 xref: http://linkedlifedata.com/resource/umls/id/C1522014
@@ -7152,7 +7132,7 @@ is_a: UBERON:0000101 ! lobe of lung
 intersection_of: UBERON:0000101 ! lobe of lung
 intersection_of: part_of UBERON:0002168 ! left lung
 relationship: part_of UBERON:0002168 ! left lung
-property_value: UBPROP:0000008 "1 in mice, divided into 2 in human by a single interlobar fissure, the oblqiue fissure" xsd:string {source="ISBN-10:0123813611"}
+property_value: UBPROP:0000008 "1 in mice, divided into 2 in human by a single interlobar fissure, the oblqiue fissure" xsd:string {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0008952
@@ -7206,7 +7186,7 @@ intersection_of: part_of UBERON:0002168 ! left lung
 id: UBERON:0008954
 name: lingula of left lung
 namespace: uberon
-def: "Anterioinferior portion of left upper lung lobe" [http://en.wikipedia.org/wiki/Lingula_of_left_lung, ISBN-10:0123813611]
+def: "Anterioinferior portion of left upper lung lobe" [http://en.wikipedia.org/wiki/Lingula_of_left_lung, ISBN:0123813611]
 synonym: "left pulmonary lingula" EXACT [FMA:7433]
 synonym: "lingula of lung" EXACT [FMA:7433]
 synonym: "lingula of the lung" EXACT []
@@ -7218,7 +7198,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C0225740
 xref: http://www.snomedbrowser.com/Codes/Details/184916009
 xref: NCIT:C40373
 xref: UMLS:C0225740 {source="ncithesaurus:Lingula"}
-relationship: part_of UBERON:0008952 {source="ISBN-10:0123813611"} ! upper lobe of left lung
+relationship: part_of UBERON:0008952 {source="ISBN:0123813611"} ! upper lobe of left lung
 property_value: UBPROP:0000008 "the lingula of the left lung in humans is not normally considered a true lobe" xsd:string {seeAlso="https://github.com/obophenotype/uberon/issues/79"}
 property_value: UBPROP:0000012 "in Galen, it is a middle lobe" xsd:string
 
@@ -7243,7 +7223,7 @@ def: "tertiary bronchus in the avian lung." [http://medical-dictionary.thefreedi
 synonym: "neopulmonic parabronchus" NARROW []
 synonym: "paleopulmonic parabronchus" NARROW []
 synonym: "parabronchi" RELATED PLURAL []
-is_a: UBERON:0002184 {notes="tertiary", source="ISBN10:0073040584"} ! segmental bronchus
+is_a: UBERON:0002184 {notes="tertiary", source="ISBN:0073040584"} ! segmental bronchus
 relationship: connected_to UBERON:0009072 ! ventrobronchus
 relationship: connected_to UBERON:0009073 ! dorsobronchus
 
@@ -7323,7 +7303,7 @@ name: cervical air sac
 namespace: uberon
 xref: http://www.snomedbrowser.com/Codes/Details/62426003
 is_a: UBERON:0009061 ! anterior air sac
-relationship: in_lateral_side_of UBERON:0001004 {source="ISBN10:0073040584"} ! respiratory system
+relationship: in_lateral_side_of UBERON:0001004 {source="ISBN:0073040584"} ! respiratory system
 
 [Term]
 id: UBERON:0009065
@@ -7334,7 +7314,7 @@ synonym: "cranial thoracic sac" RELATED []
 xref: http://www.snomedbrowser.com/Codes/Details/17911004
 is_a: UBERON:0009061 ! anterior air sac
 disjoint_from: UBERON:0009066 {source="lexical"} ! posterior thoracic air sac
-relationship: in_lateral_side_of UBERON:0001004 {source="ISBN10:0073040584"} ! respiratory system
+relationship: in_lateral_side_of UBERON:0001004 {source="ISBN:0073040584"} ! respiratory system
 
 [Term]
 id: UBERON:0009066
@@ -7344,7 +7324,7 @@ synonym: "caudal thoracic air sac" RELATED []
 synonym: "caudal thoracic sac" RELATED []
 xref: http://www.snomedbrowser.com/Codes/Details/10576005
 is_a: UBERON:0009062 ! posterior air sac
-relationship: in_lateral_side_of UBERON:0001004 {source="ISBN10:0073040584"} ! respiratory system
+relationship: in_lateral_side_of UBERON:0001004 {source="ISBN:0073040584"} ! respiratory system
 
 [Term]
 id: UBERON:0009067
@@ -7352,7 +7332,7 @@ name: abdominal air sac
 namespace: uberon
 xref: http://www.snomedbrowser.com/Codes/Details/43701009
 is_a: UBERON:0009062 ! posterior air sac
-relationship: in_lateral_side_of UBERON:0001004 {source="ISBN10:0073040584"} ! respiratory system
+relationship: in_lateral_side_of UBERON:0001004 {source="ISBN:0073040584"} ! respiratory system
 
 [Term]
 id: UBERON:0009071
@@ -7360,7 +7340,7 @@ name: mesobronchus
 namespace: uberon
 subset: organ_slim
 synonym: "mesobronchi" RELATED PLURAL []
-is_a: UBERON:0002182 {source="ISBN10:0073040584"} ! main bronchus
+is_a: UBERON:0002182 {source="ISBN:0073040584"} ! main bronchus
 is_a: UBERON:0035767 ! intrapulmonary bronchus
 relationship: connected_to UBERON:0009060 ! air sac
 
@@ -7676,7 +7656,7 @@ relationship: part_of UBERON:0000115 ! lung epithelium
 id: UBERON:0010019
 name: spiracle (sensu Vertebrata)
 namespace: uberon
-def: "A small hole behind each eye that opens to the mouth in some fish. In the primitive jawless fish the first gill opening immediately behind the mouth is essentially similar to the other gill openings." [http://en.wikipedia.org/wiki/Spiracle#Vertebrates, ISBN10:0073040584]
+def: "A small hole behind each eye that opens to the mouth in some fish. In the primitive jawless fish the first gill opening immediately behind the mouth is essentially similar to the other gill openings." [http://en.wikipedia.org/wiki/Spiracle#Vertebrates, ISBN:0073040584]
 synonym: "spiracle" BROAD SENSU [NCBITaxon:7742]
 synonym: "vertebrate spiracle" EXACT []
 xref: Vertebrates
@@ -7967,8 +7947,8 @@ name: arytenoid muscle
 namespace: uberon
 def: "A single muscle, filling up the posterior concave surfaces of the arytenoid cartilages. It arises from the posterior surface and lateral border of one arytenoid cartilage, and is inserted into the corresponding parts of the opposite cartilage. It consists of oblique and transverse parts." [http://en.wikipedia.org/wiki/Arytenoid_muscle]
 synonym: "aryepiglotticus muscle" RELATED [http://en.wikipedia.org/wiki/Arytenoid_muscle]
-synonym: "arytaenoideus" RELATED [http://en.wikipedia.org/wiki/Arytenoid_muscle]
 synonym: "arytaenoideus" RELATED LATIN [http://en.wikipedia.org/wiki/Arytenoid_muscle]
+synonym: "arytaenoideus" RELATED [http://en.wikipedia.org/wiki/Arytenoid_muscle]
 synonym: "arytaenoideus muscle" RELATED [http://en.wikipedia.org/wiki/Arytenoid_muscle]
 xref: Arytenoid:muscle
 xref: http://linkedlifedata.com/resource/umls/id/C1510945
@@ -8283,7 +8263,7 @@ relationship: part_of UBERON:0008953 ! lower lobe of left lung
 id: UBERON:0012067
 name: primary bronchiole
 namespace: uberon
-def: "A bronchiole that arises from a segmental bronchus and does not contain cartilage." [http://en.wikipedia.org/wiki/Bronchiole#Primary_bronchioles, ISBN10:0123813611]
+def: "A bronchiole that arises from a segmental bronchus and does not contain cartilage." [http://en.wikipedia.org/wiki/Bronchiole#Primary_bronchioles, ISBN:0123813611]
 synonym: "proximal bronchiole" EXACT [FMA:62510]
 xref: FMA:62510
 xref: Primary_bronchioles
@@ -8368,7 +8348,7 @@ relationship: part_of UBERON:0008961 ! parabronchus
 id: UBERON:0012087
 name: air capillary of parabronchus
 namespace: uberon
-def: "An extension of the parabronchus, the walls of which are the site of gas exchange" [http://www.vetmed.vt.edu/education/Curriculum/VM8054/Labs/Lab26/Examples/exairves.htm, ISBN10:0073040584]
+def: "An extension of the parabronchus, the walls of which are the site of gas exchange" [http://www.vetmed.vt.edu/education/Curriculum/VM8054/Labs/Lab26/Examples/exairves.htm, ISBN:0073040584]
 synonym: "air capillary" EXACT []
 synonym: "air vesicle" EXACT []
 relationship: connected_to UBERON:0008961 ! parabronchus
@@ -8941,7 +8921,7 @@ is_a: UBERON:0003351 ! pharyngeal epithelium
 id: UBERON:0017616
 name: afferent spiracular artery
 namespace: uberon
-def: "A section of a pharyngeal arch artery that carries blood away from the spiracle." [ISBN10:0073040584]
+def: "A section of a pharyngeal arch artery that carries blood away from the spiracle." [ISBN:0073040584]
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: branching_part_of UBERON:0003118 ! pharyngeal arch artery 1
 relationship: part_of UBERON:0003118 ! pharyngeal arch artery 1
@@ -8951,7 +8931,7 @@ relationship: supplies UBERON:0010019 ! spiracle (sensu Vertebrata)
 id: UBERON:0017617
 name: efferent spiracular artery
 namespace: uberon
-def: "A section of a pharyngeal arch artery that drains the spiracle." [ISBN10:0073040584]
+def: "A section of a pharyngeal arch artery that drains the spiracle." [ISBN:0073040584]
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: branching_part_of UBERON:0003118 ! pharyngeal arch artery 1
 relationship: drains UBERON:0010019 ! spiracle (sensu Vertebrata)
@@ -9037,19 +9017,6 @@ relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: RO:0002175 NCBITaxon:117569
 property_value: RO:0002175 NCBITaxon:7737
 property_value: UBPROP:0000008 "Haikouella possessed a small number of pharyngeal bars that may have been composed of mucocartilage, as in modern lampreys (Holland and Chen, 2001). the pharyngeal bars of Haikouella were probably derived from neural crest, as were the sensory components of the cranial nerves that innervated its pharyngeal muscles[http://icb.oxfordjournals.org/content/42/4/743.full]" xsd:string
-
-[Term]
-id: UBERON:0034971
-name: aortic body
-namespace: uberon
-def: "one of several small clusters of chemoreceptors, baroreceptors, and supporting cells located along the aortic arch." [http://en.wikipedia.org/wiki/Aortic_body]
-synonym: "aortic bodies" RELATED PLURAL [http://en.wikipedia.org/wiki/Aortic_body]
-synonym: "aortic glands" RELATED PLURAL [http://en.wikipedia.org/wiki/Aortic_body]
-synonym: "Zuckerkandl's body" RELATED [http://en.wikipedia.org/wiki/Aortic_body]
-xref: Aortic:body
-xref: http://www.snomedbrowser.com/Codes/Details/75061007
-xref: NCIT:C97112
-relationship: part_of UBERON:0004363 ! pharyngeal arch artery
 
 [Term]
 id: UBERON:0035077
@@ -9239,7 +9206,7 @@ relationship: part_of UBERON:0002299 ! alveolus of lung
 id: UBERON:0036068
 name: subglottis
 namespace: uberon
-def: "The lower portion of the larynx, extending from just beneath the vocal cords down to the top of the trachea." [https://en.wikipedia.org/wiki/Subglottis, MP:0030000, ORCID:orcid.org/0000-0002-6490-7723]
+def: "The lower portion of the larynx, extending from just beneath the vocal cords down to the top of the trachea." [http://en.wikipedia.org/wiki/Subglottis, MP:0030000, ORCID:orcid.org/0000-0002-6490-7723]
 synonym: "infraglottic part of larynx" EXACT [FMA:55477]
 synonym: "subglottic larynx" EXACT [FMA:55477]
 synonym: "subglottic region" EXACT [MP:0030000]
@@ -9292,7 +9259,7 @@ relationship: part_of UBERON:0002372 {source="NCIT"} ! tonsil
 id: UBERON:2000202
 name: efferent portion of pharyngeal arch artery
 namespace: uberon
-def: "A section of a pharyngeal arch artery that carries blood away from the gills." [ISBN10:0073040584]
+def: "A section of a pharyngeal arch artery that carries blood away from the gills." [ISBN:0073040584]
 synonym: "efferent branchial artery" EXACT [ZFA:0000202]
 synonym: "efferent portion of branchial artery" EXACT []
 xref: TAO:0000202
@@ -9337,7 +9304,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000716
 name: afferent portion of pharyngeal arch artery
 namespace: uberon
-def: "A section of a pharyngeal arch artery that delivers blood to the gills." [ISBN10:0073040584]
+def: "A section of a pharyngeal arch artery that delivers blood to the gills." [ISBN:0073040584]
 synonym: "afferent branchial artery" EXACT [ZFA:0000716]
 synonym: "afferent portion of branchial artery" EXACT []
 xref: TAO:0000716
@@ -9667,6 +9634,8 @@ inverse_of: RO:0002569
 
 [Typedef]
 id: composed_primarily_of
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
 is_a: has_part
 
 [Typedef]
@@ -9682,6 +9651,10 @@ id: continuous_with
 domain: BFO:0000004
 range: BFO:0000004
 is_symmetric: true
+
+[Typedef]
+id: contributes_to_morphology_of
+is_a: RO:0002131
 
 [Typedef]
 id: develops_from
@@ -9731,6 +9704,7 @@ is_a: RO:0002567
 [Typedef]
 id: has_part
 is_transitive: true
+is_a: RO:0002131
 
 [Typedef]
 id: has_potential_to_develop_into
@@ -9777,6 +9751,7 @@ is_a: RO:0002571
 [Typedef]
 id: part_of
 is_transitive: true
+is_a: RO:0002131
 inverse_of: has_part
 
 [Typedef]

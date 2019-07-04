@@ -1,6 +1,4 @@
 format-version: 1.2
-date: 25:11:2018 17:02
-saved-by: cjm
 subsetdef: cumbo "CUMBO"
 subsetdef: cyclostome_subset "cyclostome structures"
 subsetdef: defined_by_cytoarchitecture "brain region defined by cyto-architecture"
@@ -40,9 +38,9 @@ synonymtypedef: NON_AMNIOTE "synonym that is inappropriate for amniotes"
 synonymtypedef: NON_MAMMAL "synonym that is inappropriate for mammals"
 synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
 synonymtypedef: PLURAL "plural term"
+synonymtypedef: PLURAL "plurals"
 synonymtypedef: SENSU "taxonomic disambiguation"
 synonymtypedef: SYSTEMATIC "a systematic synonym used as the base name for design patterns"
-default-namespace: file:/Users/cjm/repos/uberon/subsets/cumbo.obo.tmp
 ontology: uberon/subsets/cumbo
 
 [Term]
@@ -61,12 +59,12 @@ synonym: "systema nervosum periphericum" EXACT LATIN [FMA:9903, FMA:TA, http://e
 xref: AAO:0000429
 xref: BAMS:PNS
 xref: BILA:0000081
-xref: birnlex:1111
+xref: BIRNLEX:1111
 xref: BTO:0001028
 xref: CALOHA:TS-0808
 xref: EFO:0000891
-xref: EHDAA:2893
 xref: EHDAA2:0001445
+xref: EHDAA:2893
 xref: EMAPA:16665
 xref: EV:0100335
 xref: FBbt:00005098
@@ -83,29 +81,31 @@ xref: MESH:D017933
 xref: MIAA:0000338
 xref: NCIT:C12465
 xref: TAO:0000142
-xref: UMLS:C0206417 {source="NIFSTD:birnlex_1111"}
-xref: UMLS:C1305921 {source="NIFSTD:birnlex_1111"}
+xref: UMLS:C0206417 {source="ncithesaurus:Peripheral_Nervous_System"}
+xref: UMLS:C0206417 {source="BIRNLEX:1111"}
+xref: UMLS:C1305921 {source="BIRNLEX:1111"}
 xref: VHOG:0000399
 xref: XAO:0000178
 xref: ZFA:0000142
+relationship: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0000125
 name: neural nucleus
 namespace: uberon
-def: "A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)" [NIFSTD:nlx_28443]
+def: "A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)" [NLX:28443]
 subset: cumbo
 synonym: "nervous system nucleus" EXACT []
 synonym: "neuraxis nucleus" EXACT [FMA:83686]
 synonym: "neuronal nucleus" EXACT [AEO:0000136]
 synonym: "nucleus" BROAD []
-synonym: "nucleus of CNS" EXACT [NIFSTD:nlx_28443]
+synonym: "nucleus of CNS" EXACT [NLX:28443]
 synonym: "nucleus of neuraxis" RELATED []
 xref: AEO:0000136
 xref: FMA:83686
 xref: NCIT:C13197
-xref: nlx:28443
+xref: NLX:28443
 xref: Nucleus:(neuroanatomy)
 relationship: part_of UBERON:0001017 ! central nervous system
 
@@ -130,14 +130,14 @@ xref: ABA:Brain
 xref: BAMS:Br
 xref: BAMS:Brain
 xref: BILA:0000135
-xref: birnlex:796
+xref: BIRNLEX:796
 xref: BTO:0000142
 xref: CALOHA:TS-0095
 xref: DHBA:10155
 xref: EFO:0000302
+xref: EHDAA2:0000183
 xref: EHDAA:2641
 xref: EHDAA:6485
-xref: EHDAA2:0000183
 xref: EMAPA:16894
 xref: EV:0100164
 xref: FBbt:00005095
@@ -146,6 +146,7 @@ xref: GAID:571
 xref: galen:Brain
 xref: HBA:4005
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=21
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=21 {source="BIRNLEX:796"}
 xref: http://en.wikipedia.org/wiki/Brain
 xref: http://linkedlifedata.com/resource/umls/id/C0006104
 xref: http://linkedlifedata.com/resource/umls/id/C1269537
@@ -161,20 +162,21 @@ xref: OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA
 xref: PBA:3999
 xref: TAO:0000008
 xref: UMLS:C0006104 {source="ncithesaurus:Brain"}
-xref: UMLS:C1269537 {source="NIFSTD:birnlex_796"}
+xref: UMLS:C0006104 {source="BIRNLEX:796"}
+xref: UMLS:C1269537 {source="BIRNLEX:796"}
 xref: VHOG:0000157
 xref: XAO:0000010
 xref: ZFA:0000008
+property_value: dc-contributor https://github.com/cmungall
 relationship: develops_from UBERON:0006238 ! future brain
 relationship: immediate_transformation_of UBERON:0006238 {source="Bgee:AN"} ! future brain
 relationship: part_of UBERON:0001017 {source="FMA"} ! central nervous system
-property_value: dc-contributor https://github.com/cmungall
 
 [Term]
 id: UBERON:0001016
 name: nervous system
 namespace: uberon
-def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [http://en.wikipedia.org/wiki/Nervous_system, http://uri.neuinfo.org/nif/nifstd/birnlex_844, ISBN:0-14-051288-8, ISBN:3110148986, NLM:nervous+system, WB:rynl, ZFIN:curator]
+def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [BIRNLEX:844, http://en.wikipedia.org/wiki/Nervous_system, ISBN:0-14-051288-8, ISBN:3110148986, NLM:nervous+system, WB:rynl, ZFIN:curator]
 subset: cumbo
 subset: efo_slim
 subset: pheno_slim
@@ -185,12 +187,12 @@ synonym: "neurological system" EXACT [GO:0050877]
 synonym: "systema nervosum" RELATED LATIN [http://en.wikipedia.org/wiki/Nervous_system]
 xref: AAO:0000324
 xref: BILA:0000079
-xref: birnlex:844
+xref: BIRNLEX:844
 xref: BTO:0001484
 xref: CALOHA:TS-1313
 xref: EFO:0000802
-xref: EHDAA:826
 xref: EHDAA2:0001246
+xref: EHDAA:826
 xref: EMAPA:16469
 xref: EV:0100162
 xref: FBbt:00005093
@@ -212,6 +214,8 @@ xref: VHOG:0000402
 xref: WBbt:0005735
 xref: XAO:0000177
 xref: ZFA:0000396
+relationship: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg
+relationship: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png
 
 [Term]
 id: UBERON:0001017
@@ -230,12 +234,12 @@ synonym: "systema nervosum centrale" EXACT LATIN [FMA:55675, FMA:TA]
 xref: AAO:0000090
 xref: BAMS:CNS
 xref: BILA:0000080
-xref: birnlex:1099
+xref: BIRNLEX:1099
 xref: BTO:0000227
 xref: CALOHA:TS-0150
 xref: EFO:0000908
-xref: EHDAA:828
 xref: EHDAA2:0000225
+xref: EHDAA:828
 xref: EMAPA:16470
 xref: EMAPA:16754
 xref: EV:0100163
@@ -253,6 +257,7 @@ xref: NCIT:C12438
 xref: OpenCyc:Mx4rvzYt3pwpEbGdrcN5Y29ycA
 xref: TAO:0000012
 xref: UMLS:C0927232 {source="ncithesaurus:Central_Nervous_System"}
+xref: UMLS:C0927232 {source="BIRNLEX:1099"}
 xref: VHOG:0000293
 xref: XAO:0000215
 xref: ZFA:0000012
@@ -267,23 +272,23 @@ comment: WP says this is the analog of peripheral nerves in CNS.
 subset: cumbo
 subset: pheno_slim
 synonym: "axonal tract" EXACT []
-synonym: "nerve tract" NARROW [NIFSTD:birnlex_1649]
+synonym: "nerve tract" NARROW [BIRNLEX:1649]
 synonym: "nerve tract" RELATED []
 synonym: "neuraxis tract" EXACT [FMA:83847]
 synonym: "tract" RELATED []
 synonym: "tract of neuraxis" EXACT [FMA:83847]
-xref: birnlex:1649
+xref: BIRNLEX:1649
 xref: EV:0100304
 xref: FBbt:00005100
 xref: FMA:83847
-xref: nlx:147822
+xref: NLX:147822
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
 id: UBERON:0001020
 name: nervous system commissure
 namespace: uberon
-def: "Axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [https://github.com/obophenotype/uberon/issues/300, https://github.com/obophenotype/uberon/issues/325, NIFSTD:nlx_anat_20090513]
+def: "Axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt]." [https://github.com/obophenotype/uberon/issues/300, https://github.com/obophenotype/uberon/issues/325, NLXANAT:20090513]
 comment: *not* the same as FMA:76741 Commissure
 subset: cumbo
 subset: uberon_slim
@@ -296,21 +301,21 @@ xref: FMA:83906
 xref: http://en.wikipedia.org/wiki/Commissure
 xref: http://linkedlifedata.com/resource/umls/id/C1185742
 xref: NCIT:C32349
-xref: nlx:110
-xref: nlx_anat:20090513
+xref: NLX:110
+xref: NLXANAT:20090513
 xref: OpenCyc:Mx4rdBrmE6gOEdudWQACs5b6Bw
 xref: TADS:0000201
 xref: UMLS:C1185742 {source="ncithesaurus:Commissure"}
 is_a: UBERON:0001018 ! axon tract
-relationship: part_of UBERON:0001016 ! nervous system
 property_value: dc-contributor https://github.com/cmungall
 property_value: dc-contributor https://github.com/mellybelly
+relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0002240
 name: spinal cord
 namespace: uberon
-def: "Part of the central nervous system located in the vertebral canal continuous with and caudal to the brain; demarcated from brain by plane of foramen magnum. It is composed of an inner core of gray matter in which nerve cells predominate, and an outer layer of white matter in which myelinated nerve fibers predominate, and surrounds the central canal. (CUMBO)" [NIFSTD:birnlex_1709]
+def: "Part of the central nervous system located in the vertebral canal continuous with and caudal to the brain; demarcated from brain by plane of foramen magnum. It is composed of an inner core of gray matter in which nerve cells predominate, and an outer layer of white matter in which myelinated nerve fibers predominate, and surrounds the central canal. (CUMBO)" [BIRNLEX:1709]
 subset: cumbo
 subset: efo_slim
 subset: major_organ
@@ -330,19 +335,20 @@ synonym: "spinal medulla" RELATED [BTO:0001279]
 xref: AAO:0010151
 xref: BAMS:SP
 xref: BAMS:Spinal
-xref: birnlex:1709
+xref: BIRNLEX:1709
 xref: BM:SpC
 xref: BTO:0001279
 xref: CALOHA:TS-0953
 xref: DHBA:12890
 xref: DMBA:17651
 xref: EFO:0000110
-xref: EHDAA:2863
 xref: EHDAA2:0001255
+xref: EHDAA:2863
 xref: EMAPA:17577
 xref: EV:0100316
 xref: FMA:7647
 xref: GAID:695
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=22 {source="BIRNLEX:1709"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=22
 xref: http://linkedlifedata.com/resource/umls/id/C0037925
 xref: http://www.snomedbrowser.com/Codes/Details/180959008
@@ -354,10 +360,12 @@ xref: NCIT:C12464
 xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
 xref: Spinal:cord
 xref: TAO:0000075
-xref: UMLS:C0037925 {source="NIFSTD:birnlex_1709"}
+xref: UMLS:C0037925 {source="ncithesaurus:Spinal_Cord"}
+xref: UMLS:C0037925 {source="BIRNLEX:1709"}
 xref: VHOG:0000601
 xref: XAO:0000020
 xref: ZFA:0000075
+relationship: depicted_by http://upload.wikimedia.org/wikipedia/commons/5/58/Spinal_cord_direv.svg
 relationship: develops_from UBERON:0001017 ! central nervous system
 relationship: part_of UBERON:0001017 ! central nervous system
 
@@ -365,10 +373,10 @@ relationship: part_of UBERON:0001017 ! central nervous system
 id: UBERON:0003338
 name: ganglion of peripheral nervous system
 namespace: uberon
-def: "A spatially aggregated collection of nerve cell bodies in the PNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections. (CUMBO)." [NIFSTD:birnlex_2548]
+def: "A spatially aggregated collection of nerve cell bodies in the PNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections. (CUMBO)." [BIRNLEX:2548]
 subset: cumbo
 synonym: "peripheral nervous system ganglion" EXACT [OBOL:automatic]
-xref: birnlex:2548
+xref: BIRNLEX:2548
 xref: BTO:0001123
 xref: EMAPA:32814
 xref: MA:0001161
@@ -378,14 +386,14 @@ relationship: part_of UBERON:0000010 ! peripheral nervous system
 id: UBERON:0006238
 name: future brain
 namespace: uberon
-def: "The embryonic precursor of the brain." [NIFSTD:nlx_94995]
+def: "The embryonic precursor of the brain." [NLX:94995]
 subset: cumbo
 subset: efo_slim
 subset: emapa_ehdaa2
 subset: vertebrate_core
 synonym: "brain rudiment" EXACT [TAO:0000146]
 synonym: "embryonic brain" RELATED [BTO:0004726]
-synonym: "encephalon" NARROW [NIFSTD:nlx_94995]
+synonym: "encephalon" NARROW [NLX:94995]
 synonym: "presumptive brain" EXACT [ZFA:0000146]
 xref: BAMS:Enc
 xref: BTO:0004726
@@ -402,7 +410,7 @@ xref: ZFA:0000146
 id: UBERON:0007418
 name: neural decussation
 namespace: uberon
-def: "Nerve fibers crossing the midline of the neuraxis relative to their point of origin, on a course to from one level of the nervous system to another. (CUMBO, Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" [NIFSTD:nlx_144064]
+def: "Nerve fibers crossing the midline of the neuraxis relative to their point of origin, on a course to from one level of the nervous system to another. (CUMBO, Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" [NLX:144064]
 subset: cumbo
 synonym: "chiasm" BROAD []
 synonym: "chiasma" BROAD []
@@ -413,7 +421,7 @@ synonym: "neuraxis chiasma" EXACT []
 synonym: "neuraxis decussation" EXACT [FMA:83858]
 xref: FMA:83858
 xref: NCIT:C28351
-xref: nlx:144064
+xref: NLX:144064
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -427,7 +435,7 @@ synonym: "cerebral sulci" RELATED [NeuroNames:1208]
 synonym: "cerebral sulcus" RELATED [NeuroNames:1208]
 synonym: "fissure of brain" NARROW [http://en.wikipedia.org/wiki/Sulcus_(neuroanatomy)]
 synonym: "sulci & spaces" BROAD PLURAL [HBA:9352]
-synonym: "sulcus" BROAD [NIFSTD:nlx_144078]
+synonym: "sulcus" BROAD [NLX:144078]
 xref: DHBA:10610
 xref: HBA:9352
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1208
@@ -441,7 +449,7 @@ relationship: part_of UBERON:0000955 ! brain
 id: UBERON:0014778
 name: cell group
 namespace: uberon
-def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala (CUMBO)" [NIFSTD:nlx_532]
+def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala (CUMBO)" [NLX:532]
 subset: cumbo
 subset: upper_level
 synonym: "group of cells" EXACT []
@@ -450,11 +458,11 @@ synonym: "group of cells" EXACT []
 id: UBERON:0022303
 name: nervous system cell part layer
 namespace: uberon
-def: "Single layer of a laminar structure, identified by different density, arrangement or size of cells and processes arranged in flattened layers or lamina[CUMBO]." [NIFSTD:nlx_149357]
+def: "Single layer of a laminar structure, identified by different density, arrangement or size of cells and processes arranged in flattened layers or lamina[CUMBO]." [NLX:149357]
 subset: cumbo
 synonym: "lamina" BROAD [CUMBO:CUMBO]
 synonym: "layer" BROAD [CUMBO:CUMBO]
-xref: nlx:149357
+xref: NLX:149357
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Typedef]
@@ -471,8 +479,8 @@ name: ambiguous_for_taxon
 namespace: uberon
 def: "S ambiguous_for_taxon T if the class S does not have a clear referent in taxon T. An example would be the class 'manual digit 1', which encompasses a homology hypotheses that is accepted for some species (e.g. human and mouse), but does not have a clear referent in Aves - the referent is dependent on the hypothesis embraced, and also on the ontogenetic stage." [PHENOSCPAE:asilomar_mtg]
 xref: RO:0002173
-is_class_level: true
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: appendage_segment_number
@@ -564,6 +572,13 @@ xref: UBPROP:0000113
 is_metadata_tag: true
 
 [Typedef]
+id: depicted_by
+name: depicted by
+namespace: uberon
+xref: depicted:by
+is_metadata_tag: true
+
+[Typedef]
 id: development_notes
 name: development_notes
 namespace: uberon
@@ -576,43 +591,43 @@ id: develops_from
 name: develops_from
 namespace: uberon
 xref: RO:0002202
-is_transitive: true
 holds_over_chain: part_of develops_from
+is_transitive: true
 transitive_over: part_of ! part of
-
-[Typedef]
-id: doap-bug-database
-name: bug database
-namespace: uberon
-xref: :bug-database
-is_metadata_tag: true
 
 [Typedef]
 id: doap-GitRepository
 name: Git repository
 namespace: uberon
-xref: :GitRepository
-is_metadata_tag: true
-
-[Typedef]
-id: doap-mailing-list
-name: mailing list
-namespace: uberon
-xref: :mailing-list
+xref: GitRepository
 is_metadata_tag: true
 
 [Typedef]
 id: doap-SVNRepository
 name: SVN repository
 namespace: uberon
-xref: :SVNRepository
+xref: SVNRepository
+is_metadata_tag: true
+
+[Typedef]
+id: doap-bug-database
+name: bug database
+namespace: uberon
+xref: bug-database
+is_metadata_tag: true
+
+[Typedef]
+id: doap-mailing-list
+name: mailing list
+namespace: uberon
+xref: mailing-list
 is_metadata_tag: true
 
 [Typedef]
 id: doap-wiki
 name: wiki
 namespace: uberon
-xref: :wiki
+xref: wiki
 is_metadata_tag: true
 
 [Typedef]
@@ -622,8 +637,8 @@ namespace: uberon
 def: "S dubious_for_taxon T if it is probably the case that no instances of S can be found in any instance of T." [https://orcid.org/0000-0002-6601-2165]
 comment: this relation lacks a strong logical interpretation, but can be used in place of never_in_taxon where it is desirable to state that the definition of the class is too strict for the taxon under consideration, but placing a never_in_taxon link would result in a chain of inconsistencies that will take time to resolve. Example: metencephalon in teleost
 xref: RO:0002174
-is_class_level: true
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: editor_note
@@ -701,8 +716,8 @@ namespace: uberon
 def: "A is has_no_connections_with B if there are no parts of A or B that have a connection with the other." [https://orcid.org/0000-0002-6601-2165]
 xref: RO:0002475
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (RO_0002170 some (BFO_0000050 some ?Y))" []
-is_class_level: true
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: has_relational_adjective
@@ -764,8 +779,8 @@ name: mutually_spatially_disjoint_with
 namespace: uberon
 xref: RO:0002171
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
-is_class_level: true
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: never_in_taxon
@@ -774,8 +789,8 @@ namespace: uberon
 def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [http://www.ncbi.nlm.nih.gov/pubmed/20973947]
 xref: RO:0002161
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
-is_class_level: true
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: paired_appendage_number
@@ -824,8 +839,8 @@ namespace: uberon
 def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [https://orcid.org/0000-0002-6601-2165]
 synonym: "applicable for taxon" EXACT []
 xref: RO:0002175
-is_class_level: true
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: ray_number
@@ -859,6 +874,13 @@ name: rib number
 namespace: uberon
 def: "x rib_number N if and only if (i) x is a rib, and (ii) x is rib number N in a series of ribs repeated along an anterior-posterior axis, with rib_number 1 being the anteriormost rib. Note that this property counts ribs, *not* the adjoining vertebrae." [https://orcid.org/0000-0002-6601-2165]
 xref: UBPROP:0000106
+is_metadata_tag: true
+
+[Typedef]
+id: seeAlso
+name: see also
+namespace: uberon
+xref: seeAlso
 is_metadata_tag: true
 
 [Typedef]
