@@ -24,3 +24,4 @@ $(ONT)-lastbuild.owl: $(SRC)
 
 $(ONT)-diff.md: $(ONT)-lastbuild.owl $(OWLSRC)
 	owljs-diff -o $@ $< $(OWLSRC) 
+
