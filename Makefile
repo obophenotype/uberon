@@ -935,6 +935,8 @@ uberon-taxmod-euarchontoglires.owl: uberon-taxmod-314146.owl
 	cp $< $@
 uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
 	cp $< $@
+uberon-taxmod-human.owl: uberon-taxmod-9606.owl
+	cp $< $@
 
 #uberon-taxmod-annelid.owl: uberon-taxmod-6340.owl
 #	cp $< $@
