@@ -352,9 +352,10 @@ reports/uberon-%.csv: uberon.owl sparql/%.sparql
 reports/uberon_edit-%.csv: uberon_edit.owl sparql/%.sparql
 	robot query -i $< --query sparql/$*.sparql  $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
+# nh-% : no -homology relations
+#
 # match pattern for any relation to be filtered out
 XSPECIES_RE = -m '/(RO_0002158|evolved_from)/'
-
 nh-%.obo: composite-%.owl
 	owltools $< -o -f obo --no-check $@.tmp && egrep -v 'relationship: (homologous_to|evolved_from)' $@.tmp > $@
 
@@ -1435,6 +1436,12 @@ uberon-nif-merged.obo:  uberon-nif-merged.owl
 # ----------------------------------------
 util/ubermacros.el:
 	blip-findall -r ro -r go -r pato  -r pext -r mondo -r taxslim -r mondo_edit -consult util/write_ubermacros.pro  w > $@.tmp && sort -u $@.tmp > $@
+
+%-noext.obo: %.obo
+	obo-grep.pl -r 'id: UBERON:' $< > $@.tmp && mv $@.tmp $@
+
+%-names.txt: %.obo
+	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
 
 # ----------------------------------------
 # DEAD SIMPLE DESIGN PATTERNS
