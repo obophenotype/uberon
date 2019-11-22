@@ -386,7 +386,7 @@ metazoan-view.owl: ext.owl
 	ln -s $< $@ 
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
-%-view.owl: nh-%.owl contexts/context-%.owl
+%-view.owl: ext.owl contexts/context-%.owl
 	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@
 .PRECIOUS: %-view.owl
 
