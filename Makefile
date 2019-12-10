@@ -386,11 +386,11 @@ metazoan-view.owl: ext.owl
 	ln -s $< $@ 
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
-%-view.owl: ext.owl contexts/context-%.owl
-	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@
-.PRECIOUS: %-view.owl
+subsets/%-view.owl: ext.owl contexts/context-%.owl
+	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(OBO)/$@ --run-reasoner -r elk -x -o -f ofn $@
+.PRECIOUS: subsets/%-view.owl
 
-%-view.obo: %-view.owl
+subsets/%-view.obo: %-view.owl
 	owltools --use-catalog $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
 
 # note: drosophila too slow....
@@ -604,6 +604,10 @@ QC_FILES = checks\
     ext-obscheck.txt\
     subsets/efo-slim.obo\
     subsets/cumbo.obo\
+    subsets/human-view.obo\
+    subsets/human-view.owl\
+    subsets/mouse-view.obo\
+    subsets/mouse-view.owl\
     uberon-dv.txt\
     uberon-discv.txt\
     composites\
