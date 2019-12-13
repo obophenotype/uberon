@@ -3,13 +3,25 @@ ontology: uberon/subsets/pulmonary-minimal.obo
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000004>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000006>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0000402>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/RO_0002577>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001004>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001557>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001558>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001957>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001963>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0005022>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012330>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0001025>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002170>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002176>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002380>))\nDeclaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#source>))\n\n############################\n#   Object Properties\n############################\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0001025> (<http://purl.obolibrary.org/obo/RO_0001025>)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0001025> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000004> ObjectComplementOf(<http://purl.obolibrary.org/obo/BFO_0000006>)))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002170> (<http://purl.obolibrary.org/obo/RO_0002170>)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002170> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/RO_0002577>))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002176> (<http://purl.obolibrary.org/obo/RO_0002176>)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002176> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/RO_0002577>))\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002351> (<http://purl.obolibrary.org/obo/RO_0002351>)\n\nIrreflexiveObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>)\n\n# Object Property: <http://purl.obolibrary.org/obo/RO_0002380> (<http://purl.obolibrary.org/obo/RO_0002380>)\n\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002380> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0000402>))\n\n\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001004>))\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0001963> (<http://purl.obolibrary.org/obo/UBERON_0001963>)\n\nSubClassOf(Annotation(<http://www.geneontology.org/formats/oboInOwl#source> \"ISBN:0123813611\"^^xsd:string) <http://purl.obolibrary.org/obo/UBERON_0001963> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001957>)))\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012330> (<http://purl.obolibrary.org/obo/UBERON_0012330>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012330> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0005022>)))\n\n# Class: owl:Nothing (owl:Nothing)\n\nEquivalentClasses(owl:Nothing ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001557>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001558>)))\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
+id: BFO:0000002
+name: continuant
+is_a: BFO:0000001 ! entity
+relationship: part_of BFO:0000002 ! continuant
+
+[Term]
 id: BFO:0000004
-is_a: BFO:0000002
+name: independent continuant
+is_a: BFO:0000002 ! continuant
+relationship: part_of BFO:0000004 ! independent continuant
 
 [Term]
 id: BFO:0000040
 name: material entity
-is_a: BFO:0000004
+is_a: BFO:0000004 ! independent continuant
 
 [Term]
 id: CL:0000082
@@ -17,16 +29,17 @@ name: epithelial cell of lung
 namespace: cell
 synonym: "lung epithelial cell" EXACT []
 xref: BTO:0004299
-is_a: BFO:0000004
+is_a: BFO:0000004 ! independent continuant
 relationship: part_of UBERON:0000115 ! lung epithelium
 
 [Term]
 id: CL:0000158
-name: Clara cell
+name: club cell
 namespace: cell
-def: "Epithelial progenitor cell of the lung. Clara cells are dome-shaped with short microvilli but no cilia. They function to protect the bronchiolar epithelium. Clara cells also multiply and differentiate into ciliated cells to regenerate the bronchiolar epithelium." []
+def: "Epithelial progenitor cell of the lung. Club cells are dome-shaped with short microvilli but no cilia. They function to protect the bronchiolar epithelium. Club cells also multiply and differentiate into ciliated cells to regenerate the bronchiolar epithelium." []
 synonym: "bronchiolar non-ciliated cell" EXACT []
-synonym: "Clara cell of bronchiole" EXACT []
+synonym: "Clara cell" EXACT []
+synonym: "club cell of bronchiole" EXACT []
 xref: BTO:0004811
 xref: FMA:14119
 is_a: CL:0002328 ! bronchial epithelial cell
@@ -414,7 +427,7 @@ creation_date: 2011-06-21T03:11:10Z
 id: CL:0002638
 name: bronchioalveolar stem cell
 namespace: cell
-def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and Clara cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc." []
+def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and club cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc." []
 synonym: "basal epithelial cell of bronchioalveolar duct junction" EXACT []
 synonym: "BASC" EXACT []
 is_a: CL:1000350 ! basal cell of epithelium of terminal bronchiole
@@ -458,7 +471,7 @@ is_a: CL:1000272 ! lung secretory cell
 [Term]
 id: CL:1000271
 name: lung ciliated cell
-is_a: BFO:0000004
+is_a: BFO:0000004 ! independent continuant
 relationship: part_of UBERON:0002048 ! lung
 
 [Term]
@@ -632,7 +645,7 @@ relationship: part_of UBERON:0002401 ! visceral pleura
 id: CL:1001566
 name: bronchioalveolar stem cells
 namespace: cl
-def: "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and Clara cells in response to lung injury." []
+def: "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury." []
 relationship: part_of UBERON:0000115 ! lung epithelium
 
 [Term]
@@ -707,7 +720,7 @@ id: CL:2000094
 name: nasal cavity respiratory epithelium epithelial cell of viscerocranial mucosa
 namespace: cell
 def: "Any epithelial cell of viscerocranial mucosa that is part of a nasal cavity respiratory epithelium." []
-is_a: BFO:0000004
+is_a: BFO:0000004 ! independent continuant
 relationship: part_of UBERON:0005385 ! nasal cavity respiratory epithelium
 created_by: TermGenie
 creation_date: 2015-03-31T22:25:17Z
@@ -1382,7 +1395,7 @@ xref: UMLS:C1515976 {source="ncithesaurus:Anatomic_Structure_System_or_Substance
 xref: WBbt:0000100
 xref: XAO:0000000
 xref: ZFA:0100000
-is_a: BFO:0000004
+is_a: BFO:0000004 ! independent continuant
 
 [Term]
 id: UBERON:0001102
@@ -2233,7 +2246,7 @@ xref: MA:0001773
 xref: NCIT:C48943
 xref: UMLS:C1179179 {source="ncithesaurus:Respiratory_Bronchiole_Epithelium"}
 is_a: UBERON:0002051 ! epithelium of bronchiole
-relationship: has_part CL:0000158 {source="FMA"} ! Clara cell
+relationship: has_part CL:0000158 {source="FMA"} ! club cell
 relationship: part_of UBERON:0002188 ! respiratory bronchiole
 
 [Term]
@@ -2305,7 +2318,7 @@ xref: MA:0001774
 xref: NCIT:C33755
 xref: UMLS:C1179400 {source="ncithesaurus:Terminal_Bronchiole_Epithelium"}
 is_a: UBERON:0002051 ! epithelium of bronchiole
-relationship: has_part CL:0000158 {source="FMA"} ! Clara cell
+relationship: has_part CL:0000158 {source="FMA"} ! club cell
 relationship: part_of UBERON:0002187 ! terminal bronchiole
 property_value: UBPROP:0000008 "A pseudostratified epithelium, containing basal cells, stem cells of the airway, submucosal glands and cartilage rings, is limited to the trachea and large lobar airways in the mouse (Morrisey and Hogan, 2010). This more complex epithelium extends to terminal bronchioles in the human[DOI:10.1242/dev.115469]" xsd:string
 
@@ -9605,8 +9618,8 @@ inverse_of: skeleton_of
 
 [Typedef]
 id: adjacent_to
-domain: BFO:0000004
-range: BFO:0000004
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
 is_symmetric: true
 
 [Typedef]
@@ -9644,12 +9657,12 @@ is_a: transitively_connected_to
 
 [Typedef]
 id: connects
-domain: BFO:0000004
+domain: BFO:0000004 ! independent continuant
 
 [Typedef]
 id: continuous_with
-domain: BFO:0000004
-range: BFO:0000004
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
 is_symmetric: true
 
 [Typedef]
@@ -9658,8 +9671,8 @@ is_a: RO:0002131
 
 [Typedef]
 id: develops_from
-domain: BFO:0000004
-range: BFO:0000004
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
 is_transitive: true
 is_a: RO:0002254
 is_a: RO:0002258
@@ -9738,8 +9751,8 @@ is_a: part_of
 
 [Typedef]
 id: located_in
-domain: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."}
-range: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."}
+domain: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
+range: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
 is_transitive: true
 
 [Typedef]

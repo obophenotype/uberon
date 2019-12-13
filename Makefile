@@ -352,9 +352,10 @@ reports/uberon-%.csv: uberon.owl sparql/%.sparql
 reports/uberon_edit-%.csv: uberon_edit.owl sparql/%.sparql
 	robot query -i $< --query sparql/$*.sparql  $@.tmp && ./util/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
+# nh-% : no -homology relations
+#
 # match pattern for any relation to be filtered out
 XSPECIES_RE = -m '/(RO_0002158|evolved_from)/'
-
 nh-%.obo: composite-%.owl
 	owltools $< -o -f obo --no-check $@.tmp && egrep -v 'relationship: (homologous_to|evolved_from)' $@.tmp > $@
 
@@ -385,11 +386,11 @@ metazoan-view.owl: ext.owl
 	ln -s $< $@ 
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
-%-view.owl: nh-%.owl contexts/context-%.owl
-	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@
-.PRECIOUS: %-view.owl
+subsets/%-view.owl: ext.owl contexts/context-%.owl
+	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(OBO)/$@ --run-reasoner -r elk -x -o -f ofn $@
+.PRECIOUS: subsets/%-view.owl
 
-%-view.obo: %-view.owl
+subsets/%-view.obo: %-view.owl
 	owltools --use-catalog $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
 
 # note: drosophila too slow....
@@ -603,6 +604,10 @@ QC_FILES = checks\
     ext-obscheck.txt\
     subsets/efo-slim.obo\
     subsets/cumbo.obo\
+    subsets/human-view.obo\
+    subsets/human-view.owl\
+    subsets/mouse-view.obo\
+    subsets/mouse-view.owl\
     uberon-dv.txt\
     uberon-discv.txt\
     composites\
@@ -934,6 +939,8 @@ all_taxmods: uberon-taxmod-amniote.obo uberon-taxmod-euarchontoglires.obo
 uberon-taxmod-euarchontoglires.owl: uberon-taxmod-314146.owl
 	cp $< $@
 uberon-taxmod-amniote.owl: uberon-taxmod-32524.owl
+	cp $< $@
+uberon-taxmod-human.owl: uberon-taxmod-9606.owl
 	cp $< $@
 
 #uberon-taxmod-annelid.owl: uberon-taxmod-6340.owl
@@ -1433,6 +1440,12 @@ uberon-nif-merged.obo:  uberon-nif-merged.owl
 # ----------------------------------------
 util/ubermacros.el:
 	blip-findall -r ro -r go -r pato  -r pext -r mondo -r taxslim -r mondo_edit -consult util/write_ubermacros.pro  w > $@.tmp && sort -u $@.tmp > $@
+
+%-noext.obo: %.obo
+	obo-grep.pl -r 'id: UBERON:' $< > $@.tmp && mv $@.tmp $@
+
+%-names.txt: %.obo
+	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
 
 # ----------------------------------------
 # DEAD SIMPLE DESIGN PATTERNS
