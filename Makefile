@@ -90,21 +90,12 @@ phenoscape-ext.owl: uberon_edit.obo
 phenoscape-ext-noimports.owl: phenoscape-ext.owl core.owl
 	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
-# A portion of uberon is maintained in a separate github repo - we merge that in here
-# as part of the release
-insect-anatomy.obo: uberon_edit.obo
-	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/insect-anatomy-ontology/master/insect-anatomy-edit.obo -O $@ && touch $@
-
-# including the imports would lead to circularity, so we remove these here
-insect-anatomy-noimports.owl: insect-anatomy.obo core.owl
-	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
-
 ## MERGED UNREASONED ONTOLOGY
 ##
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
 ## TODO: omitting removal of DisjointClasses to see what happens
-unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl insect-anatomy-noimports.owl bridge/uberon-bridge-to-bfo.owl 
+unreasoned.owl: uberon_edit.owl phenoscape-ext-noimports.owl bridge/uberon-bridge-to-bfo.owl 
 	owltools $(UCAT) $^ --merge-support-ontologies -o -f functional $@
 #	owltools $(UCAT) $^ --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
