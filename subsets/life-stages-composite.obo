@@ -1,7 +1,6 @@
 format-version: 1.2
 ontology: uberon/subsets/life-stages-composite.obo
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" xsd:string
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000001>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012101>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000001> (<http://purl.obolibrary.org/obo/BFO_0000001>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/BFO_0000001> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012101> (<http://purl.obolibrary.org/obo/UBERON_0012101>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
 id: AcarDv:0000006
@@ -22,7 +21,6 @@ name: entity
 [Term]
 id: BFO:0000003
 name: occurrent
-namespace: FlyBase development CV
 def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
 def: "An entity that has temporal parts and that happens, unfolds or develops through time. Sometimes also called perdurants." [BFOC:ANON]
 is_a: BFO:0000001 ! entity
@@ -295,7 +293,6 @@ property_value: start_dph "9.0" xsd:float
 [Term]
 id: FBdv:00005337
 name: first instar larval stage (Drosophila)
-namespace: FlyBase development CV
 def: "The first larval instar begins at hatching and ends at the first larval molt. Anterior spiracles are not yet present; posterior spiracles have two openings each. Salivary glands are very small and all cells are uniform in size. Mouth hooks typically have one tooth. Duration at 25 degrees C: approximately 25 hours (24-49 hours after egg laying; 0-25 hours after hatching)." [FlyBase:FBrf0007733]
 comment: Temporal ordering number - 410.
 synonym: "first instar larva" EXACT []
@@ -308,7 +305,6 @@ relationship: part_of UBERON:0004730 ! instar larval stage
 [Term]
 id: FBdv:00005338
 name: second instar larval stage (Drosophila)
-namespace: FlyBase development CV
 def: "The second larval instar begins at the first larval molt and ends at the second larval molt. Larvae are actively feeding and crawling in the food. Distinct anterior spiracles are present as enlargements at the end of the tracheal trunk, but not open to the outside; posterior spiracles have three openings each, and four groups of small unbranched hairs. The salivary glands extend to the first abdominal segment, and have cells that are uniform in size. Mouth hooks typically have two or three teeth. Duration at 25 degrees C: approximately 23 hours (49-72 hours after egg laying; 25-48 hours after hatching)." [FlyBase:FBrf0007733]
 comment: Temporal ordering number - 420.
 synonym: "L2" EXACT []
@@ -320,7 +316,6 @@ relationship: part_of UBERON:0004730 ! instar larval stage
 [Term]
 id: FBdv:00005339
 name: third instar larval stage (Drosophila)
-namespace: FlyBase development CV
 def: "The third larval instar begins at the second larval molt and ends at puparium formation. Anterior spiracles are open to the outside; posterior spiracles have three openings each, and four groups of large branched hairs. The salivary glands extend to the second abdominal segment, with cells larger in the posterior than in the anterior of the gland. Mouth hooks typically have 9-12 teeth. About 24 hours before pupariation (at 25 degree C), larvae stop feeding and climb away from their food. Duration at 25 degrees C: approximately 48 hours (72-120 hours after egg laying; 48-96 hours after hatching)." [FlyBase:FBrf0007733]
 comment: Temporal ordering number - 430.
 synonym: "L3" EXACT []
@@ -332,7 +327,6 @@ relationship: part_of UBERON:0004730 ! instar larval stage
 [Term]
 id: FBdv:00005342
 name: prepupal stage (Drosophila)
-namespace: FlyBase development CV
 def: "The prepupal stage begins at puparium formation and ends when larval/pupal apolysis is complete, as indicated by the completion of imaginal head sac eversion and the expulsion of the oral armature of the larva. Duration at 25 degrees C: approximately 12 hours. (120-132.2 hours after egg laying; 0-12.2 hours after puparium formation)." [FlyBase:FBrf0036849, FlyBase:FBrf0048355]
 comment: Temporal ordering number - 500.
 is_a: UBERON:0000105 ! life cycle stage
@@ -343,7 +337,6 @@ relationship: part_of FBdv:00007001 ! P-stage (Drosophila)
 [Term]
 id: FBdv:00006011
 name: pharate adult stage (Drosophila)
-namespace: FlyBase development CV
 def: "The developing adult after pupal-adult apolysis, i.e.- from stage P8 (when yellow eye color first becomes visible through the pupal case), to eclosion. Duration at 25 degrees C: approximately 55.7 hours (164.3-220 hours after egg laying; 44.3-100 hours after puparium formation)." [FlyBase:FBrf0036849, FlyBase:FBrf0048355, FlyBase:FBrf0049147]
 comment: Temporal ordering number - 625.
 is_a: UBERON:0000105 ! life cycle stage
@@ -353,7 +346,6 @@ relationship: part_of FBdv:00007001 ! P-stage (Drosophila)
 [Term]
 id: FBdv:00007001
 name: P-stage (Drosophila)
-namespace: FlyBase development CV
 def: "The stage of the Drosophila life-cycle from the formation of the puparium (beginning of the prepupal stage) to eclosion." [FBC:DOS]
 comment: Temporal ordering number - 490. DISAMBIGUATION: In Drosophila lab vernacular, the term 'pupal stage' is often used to refer to the entire period from formation of the puparium to eclosion. However, this does not correspond to the standard usage of 'pupal stage' for Cyclorrhaphous flies (for discussion see: FBrf0087128). Briefly: formation of the puparium (hardening of the larval cuticle) marks the beginning of the pre-pupal stage. The pupal stage begins following pupal/larval apolysis - detachment of the larval epidermis from the puparium. In Drosophila, the outward sign of the completion of apolysis is the eversion of the head an expulsion of the larval mouthparts (FBrf0036849). We use P-stage to refer to the stage from pupariation to eclosion, and restrict pupal stage to its standard usage.
 synonym: "metamorphosis" BROAD []
@@ -367,7 +359,6 @@ creation_date: 2008-06-05T04:51:40Z
 [Term]
 id: FBdv:00007025
 name: immature adult stage (Drosophila)
-namespace: FlyBase development CV
 def: "The developmental stage that lasts from eclosion of the adult from the pupal case until tanning is complete (the end of adult stage A3)." [FBC:DOS]
 comment: Temporal ordering number - 782.
 is_a: UBERON:0000105 ! life cycle stage
@@ -379,7 +370,6 @@ creation_date: 2013-01-08T20:06:59Z
 [Term]
 id: FBdv:00007026
 name: mature adult stage (Drosophila)
-namespace: FlyBase development CV
 def: "Life stage from the end of adult stage A3, when tanning is complete, to death." [FBC:DOS]
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by FBdv:00007025 ! immature adult stage (Drosophila)
@@ -10143,6 +10133,8 @@ inverse_of: RO:0002090
 
 [Typedef]
 id: part_of
+name: part of
+xref: BFO:0000050
 is_transitive: true
 is_a: RO:0002131
 equivalent_to: part_of
