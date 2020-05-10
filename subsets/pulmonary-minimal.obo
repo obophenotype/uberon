@@ -3,13 +3,8 @@ ontology: uberon/subsets/pulmonary-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001004>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001004>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
-id: BFO:0000001
-name: entity
-
-[Term]
 id: BFO:0000002
 name: continuant
-is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -29,7 +24,6 @@ name: epithelial cell of lung
 namespace: cell
 synonym: "lung epithelial cell" EXACT []
 xref: BTO:0004299
-is_a: BFO:0000004 ! independent continuant
 relationship: part_of UBERON:0000115 ! lung epithelium
 
 [Term]
@@ -68,6 +62,19 @@ xref: CALOHA:TS-2168
 xref: FMA:62499
 is_a: CL:0010003 ! epithelial cell of alveolus of lung
 relationship: part_of UBERON:0004821 ! pulmonary alveolus epithelium
+
+[Term]
+id: CL:0000583
+name: alveolar macrophage
+namespace: cell
+def: "A tissue-resident macrophage found in the alveoli of the lungs. Ingests small inhaled particles resulting in degradation and presentation of the antigen to immunocompetent cells. Markers include F4/80-positive, CD11b-/low, CD11c-positive, CD68-positive, sialoadhesin-positive, dectin-1-positive, MR-positive, CX3CR1-negative." []
+comment: Markers: Mouse: F4/80mid, CD11b-/low, CD11c+, CD68+, sialoadhesin+, dectin-1+, MR+, CX3CR1-.
+synonym: "dust cell" EXACT []
+synonym: "MF.Lu" RELATED []
+xref: BTO:0000802
+xref: CALOHA:TS-0030
+xref: FMA:83023
+is_a: CL:1001603 ! lung macrophage
 
 [Term]
 id: CL:0000853
@@ -113,7 +120,6 @@ synonym: "type I alveolar cells" EXACT []
 synonym: "type I alveolar epithelial cells" EXACT []
 xref: BTO:0000780
 xref: FMA:62500
-is_a: BFO:0000040 ! material entity
 is_a: CL:0000322 ! pneumocyte
 created_by: tmeehan
 creation_date: 2010-06-23T04:37:54Z
@@ -442,6 +448,14 @@ relationship: part_of UBERON:0002299 ! alveolus of lung
 created_by: GOC:cjm
 
 [Term]
+id: CL:0017000
+name: pulmonary ionocyte
+namespace: cell
+def: "An ionocyte that is part of the lung epithelium. The cells from this type are major sources of the CFTR protein in human and mice." []
+is_a: CL:0000082 ! epithelial cell of lung
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-2473-2313
+
+[Term]
 id: CL:1000143
 name: lung goblet cell
 is_a: CL:0000082 ! epithelial cell of lung
@@ -457,7 +471,6 @@ is_a: CL:1000272 ! lung secretory cell
 [Term]
 id: CL:1000271
 name: lung ciliated cell
-is_a: BFO:0000004 ! independent continuant
 relationship: part_of UBERON:0002048 ! lung
 
 [Term]
@@ -694,7 +707,6 @@ id: CL:2000094
 name: nasal cavity respiratory epithelium epithelial cell of viscerocranial mucosa
 namespace: cell
 def: "Any epithelial cell of viscerocranial mucosa that is part of a nasal cavity respiratory epithelium." []
-is_a: BFO:0000004 ! independent continuant
 relationship: part_of UBERON:0005385 ! nasal cavity respiratory epithelium
 created_by: TermGenie
 creation_date: 2015-03-31T22:25:17Z

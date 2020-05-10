@@ -24,7 +24,7 @@ subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses c
 subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
 subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
 synonymtypedef: ABBREVIATION "abbreviation"
-synonymtypedef: BRAIN_NAME_ABV ""
+synonymtypedef: BRAIN_NAME_ABV "brain name abbreviations (drosophila)"
 synonymtypedef: COMPARATIVE_PREFERRED "preferred term in the context of comparative anatomy"
 synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged"
 synonymtypedef: DEVELOPMENTAL "developmental term"
@@ -38,7 +38,6 @@ synonymtypedef: NON_AMNIOTE "synonym that is inappropriate for amniotes"
 synonymtypedef: NON_MAMMAL "synonym that is inappropriate for mammals"
 synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
 synonymtypedef: PLURAL "plural term"
-synonymtypedef: PLURAL "plurals"
 synonymtypedef: SENSU "taxonomic disambiguation"
 synonymtypedef: SYSTEMATIC "a systematic synonym used as the base name for design patterns"
 ontology: uberon/subsets/cumbo
@@ -87,7 +86,6 @@ xref: UMLS:C1305921 {source="BIRNLEX:1111"}
 xref: VHOG:0000399
 xref: XAO:0000178
 xref: ZFA:0000142
-relationship: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -214,8 +212,6 @@ xref: VHOG:0000402
 xref: WBbt:0005735
 xref: XAO:0000177
 xref: ZFA:0000396
-relationship: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg
-relationship: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png
 
 [Term]
 id: UBERON:0001017
@@ -365,7 +361,6 @@ xref: UMLS:C0037925 {source="BIRNLEX:1709"}
 xref: VHOG:0000601
 xref: XAO:0000020
 xref: ZFA:0000075
-relationship: depicted_by http://upload.wikimedia.org/wikipedia/commons/5/58/Spinal_cord_direv.svg
 relationship: develops_from UBERON:0001017 ! central nervous system
 relationship: part_of UBERON:0001017 ! central nervous system
 
@@ -536,13 +531,6 @@ xref: http://purl.org/dc/elements/1.1/publisher
 is_metadata_tag: true
 
 [Typedef]
-id: dc-rights
-name: rights
-namespace: uberon
-xref: http://purl.org/dc/elements/1.1/rights
-is_metadata_tag: true
-
-[Typedef]
 id: dc-source
 name: derived from resource
 namespace: uberon
@@ -561,6 +549,13 @@ id: dcterms-isReferencedBy
 name: is referenced by
 namespace: uberon
 xref: http://purl.org/dc/terms/isReferencedBy
+is_metadata_tag: true
+
+[Typedef]
+id: dcterms-license
+name: license
+namespace: uberon
+xref: http://purl.org/dc/terms/license
 is_metadata_tag: true
 
 [Typedef]

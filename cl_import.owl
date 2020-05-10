@@ -13,7 +13,7 @@
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/cl_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2019-11-22/cl_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2020-05-06/cl_import.owl"/>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alexander Diehl</dc:contributor>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ceri van Slyke</dc:contributor>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Mungall</dc:contributor>
@@ -175,9 +175,7 @@
         <obo:IAO_0000119 rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20973947"/>
         <obo:IAO_0000425 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?X DisjointWith RO_0002162 some ?Y </obo:IAO_0000425>
         <obo:IAO_0000425 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class: &lt;http://www.w3.org/2002/07/owl#Nothing&gt; EquivalentTo: ?X and (RO_0002162 some ?Y)</obo:IAO_0000425>
-        <obo:IAO_0000425 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Class: ?X DisjointWith: RO_0002162 some ?Y</obo:IAO_0000425>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002161</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external</oboInOwl:hasOBONamespace>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">never_in_taxon</oboInOwl:id>
         <oboInOwl:is_class_level rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_class_level>
@@ -244,6 +242,7 @@
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_opposite_of</oboInOwl:shorthand>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is opposite of</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_opposite_of</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -1148,6 +1147,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000008">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000333"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cell that is part of the migratory cranial neural crest population. Migratory cranial neural crest cells develop from premigratory cranial neural crest cells and have undergone epithelial to mesenchymal transition and delamination.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000008</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">migratory cranial neural crest cell</rdfs:label>
@@ -1189,6 +1189,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000011">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000333"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cell that is part of the migratory trunk neural crest population. Migratory trunk neural crest cells develop from premigratory trunk neural crest cells and have undergone epithelial to mesenchymal transition and delamination.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000011</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">migratory trunk neural crest cell</rdfs:label>
@@ -1381,40 +1382,12 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000019 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000019">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000408"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030317"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0048240"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000064"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000219"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000408"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000018"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030317"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0048240"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mature male germ cell that develops from a spermatid.</obo:IAO_0000115>
@@ -1702,15 +1675,15 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000031 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000031">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000047"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000055"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell that will develop into a neuron often after a migration phase.</obo:IAO_0000115>
+        <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000337</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0000930</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005146</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:70563</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroblast</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000031</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroblast</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroblast (sensu Vertebrata)</rdfs:label>
     </owl:Class>
     
 
@@ -1867,7 +1840,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000039 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000039">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000548"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
@@ -1939,7 +1912,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000041">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000771"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -2151,7 +2123,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000767"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002274"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -3441,7 +3412,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000096">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000234"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000775"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -3971,12 +3941,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000117">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000029"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000337"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000117</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CNS neuron (sensu Vertebrata)</rdfs:label>
@@ -5282,7 +5246,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type of enteocrine cell found in the periphery of the islets of Langerhans that secretes glucagon.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0000990</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:70585</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alpha cell of iselt of Langerhans</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alpha cell of islet of Langerhans</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pancreatic alpha cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000171</oboInOwl:id>
@@ -5965,7 +5929,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000202">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002374"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002491"/>
         <rdfs:subClassOf>
@@ -6157,7 +6120,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000206"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000362"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002076"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -6505,7 +6467,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000226 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000226">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell with a single nucleus.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000226</oboInOwl:id>
@@ -6528,7 +6490,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000228 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000228">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell with more than one nucleus.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AEO:0000203</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WBbt:0008074</oboInOwl:hasDbXref>
@@ -6743,7 +6705,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0019724"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphocyte of B lineage that is capable of B cell mediated immunity.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0000776</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALOHA:TS-0068</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:62869</oboInOwl:hasDbXref>
@@ -8296,11 +8258,9 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000337 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000337">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An embryonic cell that develops into a nerve cell or neuron.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000337</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroblast (sensu Vertebrata)</rdfs:label>
+        <obo:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -8308,7 +8268,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000338 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000338">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000047"/>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroblast</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000338</oboInOwl:id>
@@ -8602,17 +8562,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000351 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000351">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000349"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000358"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000349"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -10172,7 +10121,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000451 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000451">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000738"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000842"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -10558,11 +10507,11 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000468">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000047"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000055"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005147</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroglioblast</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000468</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroglioblast</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuroglioblast (sensu Nematoda and Protostomia)</rdfs:label>
     </owl:Class>
     
 
@@ -10570,7 +10519,14 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000469 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000469">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000468"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011020"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000338"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A neural progenitor cell that is the daughter of a neuroblast (sensu arthopoda).  The progeny of ganglion mother cells develop into neurons, glia and (occasionally) epithelial cells.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005149</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000469</oboInOwl:id>
@@ -10967,11 +10923,16 @@ Covers cells actively being cultured or stored in a quiescent state for future u
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000624"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000896"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0001816"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD4-positive, alpha-beta T cell that cooperates with other lymphocytes via direct contact or cytokine release to initiate a variety of immune functions.</obo:IAO_0000115>
@@ -11471,8 +11432,8 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000525">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000228"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000351"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo. It It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000060"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo, directly associated with the maternal blood supply. It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:83043</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plasmidotrophoblast</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">syncytial trophoblast</oboInOwl:hasExactSynonym>
@@ -11735,8 +11696,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000542 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000542">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002087"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000842"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -12350,17 +12310,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000562 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000562">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000232"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000232"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
@@ -13045,6 +12994,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000583">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000864"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1001603"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -14499,10 +14449,17 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000653">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002522"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000451"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000450"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005751"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A glomerular visceral epithelial cell is a specialized kidney epithelial cell that contains &quot;feet&quot; that interdigitate with the &quot;feet&quot; of other glomerular epithelial cells.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epithelial cell of visceral layer of glomerular capsule</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0002295</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:70967</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glomerular podocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">podocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
@@ -14746,6 +14703,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000183"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000630"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002320"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0008034"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An elongated, contractile cell found wrapped about precapillary arterioles outside the basement membrane. Pericytes are present in capillaries where proper adventitia and muscle layer are missing (thus distingushing this cell type from adventitial cells). They are relatively undifferentiated and may become fibroblasts, macrophages, or smooth muscle cells.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000184</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0002441</oboInOwl:hasDbXref>
@@ -15129,7 +15087,8 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000691 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000691">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000099"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000122"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000402"/>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000691</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stellate interneuron</rdfs:label>
@@ -15879,19 +15838,9 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000738 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000738">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000988"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0001667"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000219"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000988"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -16369,8 +16318,13 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000765">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000764"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011115"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -16484,7 +16438,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000767"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -16683,7 +16636,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000771"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -16875,7 +16827,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000775"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -16930,7 +16881,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000778">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000092"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000226"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000842"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specialized mononuclear osteoclast associated with the absorption and removal of bone, precursor of multinuclear osteoclasts.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000778</oboInOwl:id>
@@ -17076,7 +17027,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000785 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000785">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001201"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -17345,7 +17296,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000794">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000625"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000910"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -17362,6 +17312,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000906"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0001913"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -17871,20 +17827,8 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000813">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002419"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001017"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001869"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/CL_0000898"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A distinctly differentiated long-lived T cell that has the phenotype CD45RO-positive and CD127-positive.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A long-lived, antigen-experienced T cell that has acquired a memory phenotype including distinct surface markers and the ability to differentiate into an effector T cell upon antigen reexposure.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0003435</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">memory T lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">memory T-cell</oboInOwl:hasExactSynonym>
@@ -17900,7 +17844,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000814">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000791"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002127"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -17917,6 +17860,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0032394"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0045087"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mature alpha-beta T cell of a distinct lineage that bears natural killer markers and a T cell receptor specific for a limited set of ligands. NK T cells have activation and regulatory roles particularly early in an immune response.</obo:IAO_0000115>
@@ -17963,6 +17912,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">suppressor T-lymphocyte</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0004520</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84070</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Treg</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulatory T lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulatory T-cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulatory T-lymphocyte</oboInOwl:hasExactSynonym>
@@ -17977,7 +17927,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000816 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000816">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001201"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -18012,7 +17962,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000817 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000817">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001201"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -18034,7 +17984,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000818 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000818">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001201"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -18668,7 +18618,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000835">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000763"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002191"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -18708,7 +18657,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000836">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000763"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002191"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -18950,7 +18898,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000842">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000226"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002087"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000738"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A leukocyte with a single non-segmented nucleus in the mature form.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0000878</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALOHA:TS-0768</oboInOwl:hasDbXref>
@@ -20626,25 +20574,8 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000897">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000624"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000813"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001307"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001381"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000896"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD4-positive, alpha-beta T cell that has differentiated into a memory T cell.</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9990-8331</dc:creator>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta memory T lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta memory T-cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta memory T-lymphocyte</oboInOwl:hasExactSynonym>
@@ -20890,7 +20821,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000904 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000904">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000897"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001204"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -20917,7 +20848,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000905 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000905">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000897"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001204"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">effector memory CD4+ T cell</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">effector CD4-positive, alpha-beta memory T cell</oboInOwl:hasExactSynonym>
@@ -20971,7 +20902,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000907 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000907">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000909"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001203"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -20999,7 +20930,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000908">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000625"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -21018,6 +20948,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000906"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0001816"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD8-positive, alpha-beta T cell with the phenotype CD69-positive, CD62L-negative, CD127-negative, and CD25-positive, that secretes cytokines.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta cytokine secreting effector T lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta cytokine secreting effector T-cell</oboInOwl:hasExactSynonym>
@@ -21034,30 +20970,13 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000909">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000625"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000813"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001307"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001381"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000906"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD8-positive, alpha-beta T cell that has differentiated into a memory T cell.</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9990-8331</dc:creator>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T-cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T-lymphocyte</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T.8Mem.Sp</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T.8Mem.Sp</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000909</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T cell</rdfs:label>
     </owl:Class>
@@ -21151,7 +21070,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000913 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000913">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000909"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001203"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">effector memory CD8+ T cell</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">effector CD8-positive, alpha-beta memory T cell</oboInOwl:hasExactSynonym>
@@ -21296,12 +21215,15 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0004793</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0004888</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84793</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive Th1 cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cytotoxic T cell type 1</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc1 CD8+ T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc1 T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc1 T lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc1 T-cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc1 T-lymphocyte</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Th1 CD8-positive T cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Th1 non-TFH CD8-positive T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000917</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This cell type is compatible with the HIPC Lyoplate markers for &apos;Tc1 CD8+ T cell&apos;, but its logical definition includes additional known characteristics of Tc1 T cells.</rdfs:comment>
@@ -21330,11 +21252,14 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD8-positive, alpha-beta positive T cell expressing GATA-3 and secreting IL-4.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0004794</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84794</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive Th2 cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-cytotoxic T cell type 2</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc2 T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc2 T lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc2 T-cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc2 T-lymphocyte</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Th2 CD8-positive T cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Th2 non-TFH CD8-positive T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000918</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This cell type is compatible with the HIPC Lyoplate markers for &apos;non-Tc1/Tc17 CD8+ T cell&apos; (see CL:0001052), but includes the additional necessary and sufficient conditions to allow classification as a Tc2 T cell.</rdfs:comment>
@@ -21530,7 +21455,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000925 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000925">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000923"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21571,7 +21495,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000926 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000926">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000923"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21607,7 +21530,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000927 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000927">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000923"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21649,7 +21571,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000928 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000928">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000924"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21684,7 +21605,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000929 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000929">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000924"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21720,7 +21640,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000930 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000930">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000924"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21756,7 +21675,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000931 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000931">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000922"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21785,7 +21703,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000932 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000932">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000922"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21821,7 +21738,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0000933 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000933">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000922"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -21858,11 +21774,16 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000934">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000624"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000910"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000896"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0001913"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD4-positive, alpha-beta T cell that has cytotoxic function.</obo:IAO_0000115>
@@ -22046,7 +21967,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000940">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000791"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002127"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
@@ -22271,17 +22191,11 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000542"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001002"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000826"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphocyte of B lineage is a lymphocyte that expresses CD19 on the cell surface. An additional defining characteristic is the commitment to express an immunoglobulin complex.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphocyte of B lineage with the commitment to express an immunoglobulin complex.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000945</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).</rdfs:comment>
@@ -23182,7 +23096,9 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An activated mature (naive or memory) B cell that is secreting immunoglobulin, typified by being CD27-positive, CD38-positive, CD138-negative.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD20-negative B cell</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84371</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD27-positive, CD38-positive, CD20-negative B cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000980</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This cell type is compatible with the HIPC Lyoplate markers for &apos;plasmablast&apos;. Plasmablasts are also reportedly CD48-positive, CD63-positive, CD229-positive, CD270-positive, CD319-positive, CD352-positive, CD361-positive, and IgD-negative.</rdfs:comment>
@@ -24822,6 +24738,12 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001046">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001047"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002678"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A memory regulatory T cell with phenotype CD4-positive, CD25-positive, CD127lo, CCR4-positive, and CD45RO-positive.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">memory CCR4+ Treg</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">memory CCR4-positive regulatory T lymphocyte</oboInOwl:hasExactSynonym>
@@ -25171,7 +25093,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0001062 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001062">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000625"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000909"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -25431,6 +25353,156 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0001071</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">group 3 innate lymphoid cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001200 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001200">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000945"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001002"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphocyte of B lineage that is CD19-positive.</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9990-8331</dc:creator>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0001200</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte of B lineage, CD19-positive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001201 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001201">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001200"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A B cell that is CD19-positive.</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9990-8331</dc:creator>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B lymphocyte, CD19-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B-cell, CD19-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B-lymphocyte, CD19-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD19+ B cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD19-positive B cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0001201</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B cell, CD19-positive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001202 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001202">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000980"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001412"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A plasmablast that is CD86-positive.</obo:IAO_0000115>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-9990-8331</dc:creator>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD86-positive, CD20-negative plasmablast</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD86+ plasmablast</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0001202</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD86-positive plasmablast</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001203 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001203">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000909"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001307"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001381"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001869"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000906"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T lymphocyte, CD45RO-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T-cell, CD45RO-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T-lymphocyte, CD45RO-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0001203</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive, alpha-beta memory T cell, CD45RO-positive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001204 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0001204">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000897"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001307"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001381"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001869"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000896"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta memory T lymphocyte, CD45RO-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta memory T-cell, CD45RO-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta memory T-lymphocyte, CD45RO-positive</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0001204</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-positive, alpha-beta memory T cell, CD45RO-positive</rdfs:label>
     </owl:Class>
     
 
@@ -27240,7 +27312,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0002048"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pre-BCR positive T cell that is CD38-high.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pre-BCR positive B cell that is CD38-high.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-04-28T02:27:47Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
@@ -29104,7 +29176,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002124">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000800"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -29139,7 +29210,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002125">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000800"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000912"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -29280,11 +29350,14 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-positive, CCR5-high, CD45RA-negative, and capable of producing IL-17 and some IFNg.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD8-positive Th17 cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc17 CD8+ T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc17 T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc17 T lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc17 T-cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tc17 T-lymphocyte</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Th17 CD8-positive T cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Th17 non-TFH CD8-positive T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002128</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This cell type is compatible with the HIPC Lyoplate markers for &apos;Tc17 CD8+ T cell&apos;, but its logical definition includes additional known characteristics of Tc17 T cells.  Found in the CD27-positive, CD28-positive or CD27-negative, CD28-positive fractions with the phenotype CCR4-negative and CCR7-negative (this sentence not part of definition).</rdfs:comment>
@@ -29632,7 +29705,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:69080</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002143</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dark chief cell of parathyroid cell</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dark chief cell of parathyroid gland</rdfs:label>
     </owl:Class>
     
 
@@ -29725,9 +29798,10 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-08-24T10:39:42Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:69081</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clear chief cell of parathyroid cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002147</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clear chief cell of parathyroid cell</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clear chief cell of parathyroid gland</rdfs:label>
     </owl:Class>
     
 
@@ -30974,7 +31048,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002203</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brush cells are a distinct cell type from brush border cell-types.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brush cell of epithelium proper of large intestine</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brush cell of epithelium proper of large intestine</rdfs:label>
     </owl:Class>
     
 
@@ -31887,24 +31961,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0002242 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002242">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000003"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell containing at least one nucleus.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-09-07T03:32:33Z</oboInOwl:creation_date>
@@ -32251,18 +32308,18 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000499"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002149"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001295"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An epithelial cell that regulates growth and differentiation of the overlying epithelium.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Connective tissue cells of the endometrium, these cells are fibroblastic in appearance. During decidualization they tranform into decidual (stromal) cells, swellling up and adopt an epithelial cell-like appearance due to the accumulation of glycogen and lipid droplets.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-09-08T09:50:04Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALOHA:TS-1266</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:86490</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endometrial stromal cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002255</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stromal cell of endometrium</rdfs:label>
@@ -32498,7 +32555,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-09-10T11:37:35Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:268744</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon D-cell</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonc delta cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonic delta cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">delta cell of colon</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002265</oboInOwl:id>
@@ -34742,7 +34799,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0002362 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002362">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000337"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell located in the outermost proliferative zone of the external germinal layer that can differentiate into astroglial cells and granule cells. This cell type is glial fibrillary acidic protein-positive and NK1-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-09-22T01:40:44Z</oboInOwl:creation_date>
@@ -35943,17 +36000,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0002421 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002421">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000558"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005634"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000558"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002242"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A reticulocyte that retains the nucleus and other organelles. Found in birds, fish, amphibians and reptiles.</obo:IAO_0000115>
@@ -37566,7 +37612,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0001974"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A trophoblast cell that has a large volume of cytoplasm, is polyploidy and is usually mononuclear but is also occasionally multi-nucleate. This cell type is important in establishing maternal physiology and remodeling of the vasculature of the placenta.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A trophoblast cell that has a large volume of cytoplasm, is polyploid and is usually mononuclear but is also occasionally multi-nucleate. This cell type is important in establishing maternal physiology and remodeling of the vasculature of the placenta.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-12-06T02:55:24Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">giant trophoblast cell</oboInOwl:hasExactSynonym>
@@ -37584,9 +37630,11 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thymocyte that lacks expression of CD4 and CD8.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-12-06T03:03:38Z</oboInOwl:creation_date>
-        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double negative T cell</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD4-CD8- T cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double negative T cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002489</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These are precursors to mature T cells; normally, they do not circulate, but are found in the thymus and they have not undergone rearrangement of the alpha and beta T cell receptor genes.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double negative thymocyte</rdfs:label>
     </owl:Class>
     
@@ -42014,6 +42062,8 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stem cell that can give rise to multiple cell types (i.e. smooth muscle, endothelial) in the developing heart.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2011-07-11T03:15:38Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CPC</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cardiovascular progenitor cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002664</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discrepancy in develops from origins prevents me from making the assertion that cardioblasts give rise to all instances of cardiocytes as we state cardiac muscle cells develop from cardiac myoblast, which in turn develop from muscle stem cell.</rdfs:comment>
@@ -42219,7 +42269,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0002676 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002676">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000337"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -42259,7 +42309,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002678">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000792"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000813"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000897"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CD4-positive, CD25-positive alpha-beta regulatory T cell that has encountered antigen.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2011-08-25T03:17:34Z</oboInOwl:creation_date>
@@ -42686,7 +42736,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0005019">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0005018"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ghrelin secreting cells found in the found in the exocrine pancreas.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ghrelin secreting cells found in the exocrine pancreas.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pancreatic E cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0005019</oboInOwl:id>
@@ -43163,7 +43213,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000206"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000362"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -43243,7 +43292,8 @@ Covers cells actively being cultured or stored in a quiescent state for future u
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Secretory cell that produces a chemical mixture that triggers antipredator behavior. The substance is released only upon disruption of the epidermis. [Behavior of teleost fishes, second edition, edited by Pitcher, 1992]</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">haendel</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">club cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">club cell (zebrafish)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">club cell</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0007021</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alarm substance cell</rdfs:label>
     </owl:Class>
@@ -43866,6 +43916,96 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0008033 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0008033">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000669"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002450"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000349"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000078"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002450"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pericyte of the decidual vasculature.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-02-29T11:45:57Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decidual perivascular cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0008033</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decidual pericyte</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0008034 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0008034">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002371"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mural cells are pericytes and the vascular smooth muscle cells (vSMCs) of the microcirculation.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-02-29T17:33:55Z</oboInOwl:creation_date>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0008034</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mural cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0008035 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0008035">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000359"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010523"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000359"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0008034"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010523"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-02-29T17:37:00Z</oboInOwl:creation_date>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0008035</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microcirculation associated smooth muscle cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0008036 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0008036">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000351"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A trophoblast cell that is not part of a placental villous</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-03-02T08:45:06Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EVT</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extravillous cytotrophloblast</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0008036</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extravillous trophoblast</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0009000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009000">
@@ -44006,6 +44146,12 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009005">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002371"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001044"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any cell in a salivary gland.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:pr</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Salivary_gland</oboInOwl:hasDbXref>
@@ -44674,6 +44820,127 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0011013 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011013">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000019"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0097722"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000019"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000219"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0097722"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sperm cell that is cabaple of motion (motility).</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011013</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">motile sperm cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0011014 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011014">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000019"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sperm cell that is not cabaple of motion (motility).</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011014</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-motile sperm cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0011015 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011013"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A motile sperm cell that contain no F-actin, and their motility is powered by a dynamic filament system.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011015</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amoeboid sperm cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0011016 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011016">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0011013"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030317"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011013"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0030317"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A motile sperm cell that contains a slender threadlike microscopic appendage that enables motion.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011016</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flagellated sperm cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0011017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011017">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011012"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cell that is part of the vagal neural crest population. The vagal neural crest arises from the axial level of somites 1-7 and has been described as a hybrid between the head and the trunk populations.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011017</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vagal neural crest cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0011018 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011018">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000988"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hematopoietic cell that express ROR gamma t and IL-7R alpha in the absence of lineage markers (e.g. CD3, CD19, B220, CD11c, Gr-1), with the functional ability to interact with mesenchymal cells through lymphotoxin and tumor necrosis factor. Lymphoid tissue-inducer cells are key to the development of lymph nodes and Peyer’s patches.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LTi</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphoid tissue inducer cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011018</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphoid tissue–inducer cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0011020 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011020">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000055"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An undifferentiated cell that originates from a neural stem cell and has the capacity to generate multiple types of lineage-restricted progenitors but not to self-renew.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011020</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neural progenitor cell</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0011100 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011100">
@@ -45138,6 +45405,38 @@ plexiform layer using GABA.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cranial motoneuron</oboInOwl:hasExactSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0015000</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cranial motor neuron</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0017000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0017000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000082"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0005006"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ionocyte that is part of the lung epithelium. The cells from this type are major sources of the CFTR protein in human and mice.</obo:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0003-2473-2313"/>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0017000</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pulmonary ionocyte</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0017001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0017001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011010"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004872"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mesodermal cell that is part of the splanchnic layer of lateral plate mesoderm.</obo:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0003-2473-2313"/>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0017001</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">splanchnic mesodermal cell</rdfs:label>
     </owl:Class>
     
 
@@ -46954,7 +47253,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">goblet cell of epithelium of pyloric gland</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:1000323</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pylroric gastric gland goblet cell</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyloric gastric gland goblet cell</rdfs:label>
     </owl:Class>
     
 
@@ -48255,7 +48554,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002070"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
         <rdfs:subClassOf>
@@ -48289,7 +48587,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002070"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
         <rdfs:subClassOf>
@@ -48323,7 +48620,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002070"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
         <rdfs:subClassOf>
@@ -48363,7 +48659,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002070"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
         <rdfs:subClassOf>
@@ -48397,7 +48692,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002069"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
         <rdfs:subClassOf>
@@ -48431,7 +48725,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002069"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
         <rdfs:subClassOf>
@@ -48465,7 +48758,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002069"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
         <rdfs:subClassOf>
@@ -48505,7 +48797,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000710"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002069"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000032"/>
         <rdfs:subClassOf>
@@ -48702,8 +48993,11 @@ plexiform layer using GABA.</obo:IAO_0000115>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An endothelial cell that is part of the hepatic sinusoid.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:000125</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:62911</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LSEC</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endotheliocyte of hepatic sinusoid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">liver senusoidal endothelial cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:1000398</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">endothelial cell of hepatic sinusoid</rdfs:label>
@@ -49893,31 +50187,11 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000451 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000451">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000066"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005751"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000450"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005751"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An epithelial cell that is part of the visceral layer of glomerular capsule.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:70967</oboInOwl:hasDbXref>
-        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glomerular podocyte</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <obo:IAO_0100001 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000653</obo:IAO_0100001>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:1000451</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">consider merging into CL:0000653</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epithelial cell of visceral layer of glomerular capsule</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete epithelial cell of visceral layer of glomerular capsule</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -53905,6 +54179,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">olfactory bulb (accessory) glomerular layer cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">olfactory bulb glomerular layer cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">olfactory bulb glomerularal cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">olfactory bulb periglomerular cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">periglomerular cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cl</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:1001435</oboInOwl:id>
@@ -55415,30 +55690,30 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_2000002 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_2000002">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000003"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002450"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000349"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000499"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002450"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any native cell that is part of a decidua.</obo:IAO_0000115>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TermGenie</oboInOwl:created_by>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0002255"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specialized, enlarged, connective tissue cell of the decidua with enlarged nucleus, dense membrane‐bound secretory granules and cytoplasmic accumulation of glycogen and lipid droplets. These cells develop by the transformation of endometrial stromal cells during decidualization.</obo:IAO_0000115>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-02-20T23:06:41Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0002770</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0005756</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCIT:C32429</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decidua cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decidual stromal cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:2000002</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decidua cell</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decidual cell</rdfs:label>
     </owl:Class>
     
 
@@ -57123,7 +57398,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000351"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001987"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010005"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -57132,14 +57407,19 @@ plexiform layer using GABA.</obo:IAO_0000115>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001987"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010005"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any trophoblast cell that is part of a placenta.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TermGenie</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-10-07T17:48:27Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0006119</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0006208</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vCTB</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">villous cytotrophoblast</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:2000060</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Same as synctial trophoblast?</rdfs:comment>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.sciencellonline.com/site/productInformation.php?keyword=7120</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">placental villous trophoblast</rdfs:label>
     </owl:Class>
@@ -57187,13 +57467,19 @@ plexiform layer using GABA.</obo:IAO_0000115>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002144"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001987"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010005"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002144"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002577"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010005"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any capillary endothelial cell that is part of a placenta.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TermGenie</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-10-07T17:55:56Z</oboInOwl:creation_date>
@@ -59590,12 +59876,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0048240 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0048240"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GO_0048242 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0048242"/>
@@ -59911,6 +60191,12 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/GO_0097186 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0097186"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0097722 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0097722"/>
     
 
 
@@ -63484,6 +63770,12 @@ plexiform layer using GABA.</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004872 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004872"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0004880 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004880"/>
@@ -64036,6 +64328,12 @@ plexiform layer using GABA.</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010005"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0010190 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010190"/>
@@ -64051,6 +64349,12 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/UBERON_0010302 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010302"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010523 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010523"/>
     
 
 

@@ -8,7 +8,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/pato_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2019-11-22/pato_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2020-05-06/pato_import.owl"/>
     </owl:Ontology>
     
 
@@ -69,18 +69,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
-        <rdfs:label xml:lang="en">entity</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -95,7 +86,6 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -161,26 +151,57 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000031 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000031">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">generically dependent continuant</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0030000"/>
+        <rdfs:label xml:lang="en">anatomical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
+        <rdfs:label xml:lang="en">connected anatomical structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:label xml:lang="en">material anatomical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0030000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0030000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:label>biological entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:label xml:lang="en">cell</rdfs:label>
     </owl:Class>
     
 
@@ -202,19 +223,11 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0005623 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005623">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005575"/>
-        <rdfs:label>cell</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GO_0005634 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005634">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043231"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044464"/>
         <rdfs:label xml:lang="en">nucleus</rdfs:label>
     </owl:Class>
     
@@ -283,388 +296,20 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0044464 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0044464">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <rdfs:label xml:lang="en">cell part</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0110165 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0110165">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005575"/>
         <rdfs:label>cellular anatomical entity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <rdfs:label xml:lang="en">data item</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-        <rdfs:label xml:lang="en">information content entity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000078 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000078">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000002"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000120"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000121"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000122"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000123"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000124"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000125"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000423"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000428"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000102"/>
-        <rdfs:label xml:lang="en">curation status specification</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000102 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000102">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
-        <rdfs:label xml:lang="en">data about an ontology part</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000225 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000225">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000103"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000226"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000227"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000228"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000229"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000102"/>
-        <rdfs:label xml:lang="en">obsolescence reason specification</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000409 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000409">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000410"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000420"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000421"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000102"/>
-        <rdfs:label>denotator type</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_1 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:label>root</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_117570 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_117570">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7776"/>
-        <rdfs:label>Teleostomi</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_117571 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_117571">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_117570"/>
-        <rdfs:label>Euteleostomi</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_131567 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_131567">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1"/>
-        <rdfs:label>cellular organisms</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_1338369 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1338369">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8287"/>
-        <rdfs:label>Dipnotetrapodomorpha</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_1437010 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1437010">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9347"/>
-        <rdfs:label>Boreoeutheria</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_207598 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_207598">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9604"/>
-        <rdfs:label>Homininae</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_131567"/>
-        <rdfs:label>Eukaryota</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_314146 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314146">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1437010"/>
-        <rdfs:label>Euarchontoglires</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_314293 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314293">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_376913"/>
-        <rdfs:label>Simiiformes</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_314295 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314295">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9526"/>
-        <rdfs:label>Hominoidea</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_32523 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_32523">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1338369"/>
-        <rdfs:label>Tetrapoda</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_32524 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_32524">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32523"/>
-        <rdfs:label>Amniota</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_32525 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_32525">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
-        <rdfs:label>Theria &lt;Mammalia&gt;</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33154 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33154">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
-        <rdfs:label>Opisthokonta</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33208 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33208">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
-        <rdfs:label>Metazoa</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33213 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33213">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6072"/>
-        <rdfs:label>Bilateria</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33511 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33511">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
-        <rdfs:label>Deuterostomia</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_376913 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_376913">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9443"/>
-        <rdfs:label>Haplorrhini</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_40674 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_40674">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32524"/>
-        <rdfs:label>Mammalia</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6072 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6072">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
-        <rdfs:label>Eumetazoa</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_7711 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7711">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33511"/>
-        <rdfs:label>Chordata</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_7742 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7742">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_89593"/>
-        <rdfs:label>Vertebrata &lt;Metazoa&gt;</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_7776 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7776">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
-        <rdfs:label>Gnathostomata &lt;vertebrate&gt;</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_8287 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_8287">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_117571"/>
-        <rdfs:label>Sarcopterygii</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_89593 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_89593">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
-        <rdfs:label>Craniata &lt;chordata&gt;</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9347 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9347">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32525"/>
-        <rdfs:label>Eutheria</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9443 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9443">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314146"/>
-        <rdfs:label>Primates</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9526 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9526">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314293"/>
-        <rdfs:label>Catarrhini</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9604 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9604">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314295"/>
-        <rdfs:label>Hominidae</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9605 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9605">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_207598"/>
-        <rdfs:label>Homo</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9605"/>
-        <rdfs:label>Homo sapiens</rdfs:label>
     </owl:Class>
     
 
@@ -1654,162 +1299,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001062 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <rdfs:label>anatomical entity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000002 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000002">
-        <rdfs:label xml:lang="en">example to be eventually removed</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000103 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000103">
-        <rdfs:label xml:lang="en">failed exploratory term</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000120 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000120">
-        <rdfs:label xml:lang="en">metadata complete</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000121 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000121">
-        <rdfs:label xml:lang="en">organizational term</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000122 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000122">
-        <rdfs:label xml:lang="en">ready for release</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000123 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000123">
-        <rdfs:label xml:lang="en">metadata incomplete</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000124 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000124">
-        <rdfs:label xml:lang="en">uncurated</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000125 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000125">
-        <rdfs:label xml:lang="en">pending final vetting</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000226 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000226">
-        <rdfs:label xml:lang="en">placeholder removed</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000227 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000227">
-        <rdfs:label xml:lang="en">terms merged</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000228 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000228">
-        <rdfs:label xml:lang="en">term imported</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000229 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000229">
-        <rdfs:label xml:lang="en">term split</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000410 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000410">
-        <rdfs:label>universal</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000420 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000420">
-        <rdfs:label>defined class</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000421 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000421">
-        <rdfs:label>named class expression</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000423 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000423">
-        <rdfs:label xml:lang="en">to be replaced with external ontology term</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000428 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000428">
-        <rdfs:label xml:lang="en">requires discussion</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1822,111 +1311,67 @@
         <rdfs:label>has part</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062">
-        <rdfs:label>preceded_by</rdfs:label>
+        <rdfs:label xml:lang="en">preceded by</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000063">
         <rdfs:label xml:lang="en">precedes</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000067">
-        <rdfs:label>contains process</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0044464">
-        <rdfs:label>obsolete cell part</rdfs:label>
-        <rdfs:label xml:lang="en">cell part</rdfs:label>
+        <rdfs:label xml:lang="en">contains process</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000053">
         <rdfs:label xml:lang="en">bearer of</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000086">
-        <rdfs:label xml:lang="en">has quality</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0001015">
-        <rdfs:label>location_of</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0001019">
-        <rdfs:label xml:lang="en">contains</rdfs:label>
-        <rdfs:label>contains</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0001025">
-        <rdfs:label xml:lang="en">located in</rdfs:label>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000056">
+        <rdfs:label xml:lang="en">participates in</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087">
         <rdfs:label xml:lang="en">immediately preceded by</rdfs:label>
-        <rdfs:label>immediately_preceded_by</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
-        <rdfs:label>overlaps</rdfs:label>
+        <rdfs:label xml:lang="en">overlaps</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
-        <rdfs:label>has component</rdfs:label>
+        <rdfs:label xml:lang="en">has component</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002202">
         <rdfs:label xml:lang="en">develops from</rdfs:label>
-        <rdfs:label>develops_from</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002203">
-        <rdfs:label>develops_into</rdfs:label>
         <rdfs:label xml:lang="en">develops into</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002215">
-        <rdfs:label>capable of</rdfs:label>
+        <rdfs:label xml:lang="en">capable of</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002216">
-        <rdfs:label>capable of part of</rdfs:label>
+        <rdfs:label xml:lang="en">capable of part of</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002254">
-        <rdfs:label>has developmental contribution from</rdfs:label>
         <rdfs:label xml:lang="en">has developmental contribution from</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002255">
         <rdfs:label xml:lang="en">developmentally contributes to</rdfs:label>
-        <rdfs:label>developmentally_contributes_to</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002258">
         <rdfs:label xml:lang="en">developmentally preceded by</rdfs:label>
-        <rdfs:label>developmentally preceded by</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002328">
-        <rdfs:label>functionally related to</rdfs:label>
+        <rdfs:label xml:lang="en">functionally related to</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002329">
         <rdfs:label xml:lang="en">part of structure that is capable of</rdfs:label>
-        <rdfs:label>part of structure that is capable of</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002350">
-        <rdfs:label>member of</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002351">
-        <rdfs:label>has member</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002352">
-        <rdfs:label>input of</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002353">
-        <rdfs:label xml:lang="en">output of</rdfs:label>
+        <rdfs:label xml:lang="en">input of</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002385">
         <rdfs:label xml:lang="en">has potential to developmentally contribute to</rdfs:label>
-        <rdfs:label>has potential to developmentally contribute to</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002387">
-        <rdfs:label>has potential to develop into</rdfs:label>
         <rdfs:label xml:lang="en">has potential to develop into</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002388">
-        <rdfs:label>has potential to directly develop into</rdfs:label>
         <rdfs:label xml:lang="en">has potential to directly develop into</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002473">
-        <rdfs:label>composed primarily of</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003000">
-        <rdfs:label>produces</rdfs:label>
-        <rdfs:label xml:lang="en">produces</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003001">
-        <rdfs:label>produced_by</rdfs:label>
-        <rdfs:label xml:lang="en">produced by</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
 
