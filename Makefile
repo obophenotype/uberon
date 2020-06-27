@@ -74,6 +74,9 @@ uberon_edit.owl: uberon_edit.obo disjoint_union_over.ofn uberon_edit.obo-gocheck
 roundtrip.obo: uberon_edit.obo
 	robot convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@ && diff -i $< $@
 
+NORMALIZE.obo: uberon_edit.obo
+	robot convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
+
 # ----------------------------------------
 # STEP 2: preparing core release, and merging with phenoscape edit file
 # ----------------------------------------
@@ -1018,7 +1021,7 @@ release-diff:
 # ----------------------------------------
 # even tho the repo lives in github, release is via svn...
 
-RELDIR=trunk
+RELDIR=./trunk
 release:
 	cp core.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
@@ -1049,6 +1052,18 @@ release:
 	cp diffs/* $(RELDIR)/diffs/ ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''
+
+S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy 
+
+# see https://github.com/obophenotype/uberon/issues/1551
+# we now use S3 directly
+
+deploy: deploy-main deploy-top
+
+deploy-main:
+	$(S3CMD) sync $(RELDIR)/ s3://bbop-ontologies/uberon/
+deploy-top:
+	$(S3CMD) sync $(RELDIR)/uberon.{obo,owl,json} s3://bbop-ontologies/
 
 
 
