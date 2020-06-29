@@ -123,7 +123,7 @@ is_ok: unreasoned.owl
 
 materialized.owl: unreasoned.owl is_ok
 	$(ROBOT) relax -i $< materialize -T basic_properties.txt -r elk \
-		 reason -r elk --exclude-duplicate-axioms true \
+		 reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed none \
 		 annotate -O $(OBO)/uberon/$@ -V  $(RELEASE)/$@ -o $@ >& $@.LOG
 .PRECIOUS: materialized.owl
 
