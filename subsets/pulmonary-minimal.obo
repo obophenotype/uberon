@@ -22,6 +22,7 @@ is_a: BFO:0000004 ! independent continuant
 id: CL:0000082
 name: epithelial cell of lung
 namespace: cell
+def: "An epithelial cell of the lung." []
 synonym: "lung epithelial cell" EXACT []
 xref: BTO:0004299
 relationship: part_of UBERON:0000115 ! lung epithelium
@@ -440,7 +441,7 @@ relationship: part_of UBERON:0003127 ! open tracheal system trachea
 [Term]
 id: CL:0010003
 name: epithelial cell of alveolus of lung
-def: "a epithelial cell that is part_of a alveolus of lung" []
+def: "An epithelial cell that is part_of a alveolus of lung." []
 comment: May be merged with pneumocyte in future
 synonym: "alveolus of lung epithelial cell" EXACT []
 is_a: CL:0000082 ! epithelial cell of lung
@@ -454,6 +455,34 @@ namespace: cell
 def: "An ionocyte that is part of the lung epithelium. The cells from this type are major sources of the CFTR protein in human and mice." []
 is_a: CL:0000082 ! epithelial cell of lung
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-2473-2313
+
+[Term]
+id: CL:0019001
+name: tracheobronchial serous cell
+def: "Any serous secreting cell that is part of the tracheobronchial epithelium." []
+synonym: "serous cell of tracheobronchial tree" EXACT []
+relationship: part_of UBERON:0007196 ! tracheobronchial tree
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T16:03:27Z xsd:dateTime
+
+[Term]
+id: CL:0019002
+name: tracheobronchial chondrocyte
+def: "Any chondrocyte that is part of the tracheobronchial tree." []
+synonym: "chondrocyte of tracheobronchial tree" EXACT []
+relationship: part_of UBERON:0007196 ! tracheobronchial tree
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T17:29:51Z xsd:dateTime
+
+[Term]
+id: CL:0019003
+name: tracheobronchial goblet cell
+def: "Any goblet cell that is part of the tracheobronchial epithelium." []
+synonym: "goblet cell of tracheobronchial tree" EXACT []
+is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
+is_a: CL:0002370 ! respiratory goblet cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T18:14:52Z xsd:dateTime
 
 [Term]
 id: CL:1000143
@@ -486,7 +515,7 @@ def: "A goblet cell that is part of the epithelium of bronchus." []
 synonym: "goblet cell of epithelium of bronchus" EXACT []
 xref: FMA:263032
 is_a: CL:0002328 ! bronchial epithelial cell
-is_a: CL:0002370 ! respiratory goblet cell
+is_a: CL:0019003 ! tracheobronchial goblet cell
 
 [Term]
 id: CL:1000329
@@ -496,7 +525,7 @@ def: "A goblet cell that is part of the epithelium of trachea." []
 synonym: "goblet cell of epithelium of trachea" EXACT []
 xref: FMA:263075
 is_a: CL:0000307 ! tracheal epithelial cell
-is_a: CL:0002370 ! respiratory goblet cell
+is_a: CL:0019003 ! tracheobronchial goblet cell
 relationship: part_of UBERON:0001901 ! epithelium of trachea
 
 [Term]
@@ -505,6 +534,7 @@ name: serous cell of epithelium of trachea
 namespace: cell
 def: "A serous secreting cell that is part of the epithelium of trachea." []
 xref: FMA:263078
+is_a: CL:0019001 ! tracheobronchial serous cell
 relationship: part_of UBERON:0001901 ! epithelium of trachea
 
 [Term]
@@ -513,6 +543,7 @@ name: serous cell of epithelium of bronchus
 namespace: cell
 def: "A serous secreting cell that is part of the epithelium of bronchus." []
 xref: FMA:263080
+is_a: CL:0019001 ! tracheobronchial serous cell
 relationship: part_of UBERON:0002031 ! epithelium of bronchus
 
 [Term]
@@ -541,7 +572,6 @@ namespace: cell
 def: "An enterocyte that is part of the epithelium of duodenal gland." []
 xref: FMA:263092
 is_a: CL:0000307 ! tracheal epithelial cell
-relationship: part_of UBERON:0001212 ! duodenal gland
 
 [Term]
 id: CL:1000348
@@ -634,7 +664,7 @@ relationship: part_of UBERON:0002401 ! visceral pleura
 id: CL:1001566
 name: bronchioalveolar stem cells
 namespace: cl
-def: "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury." []
+def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury." []
 relationship: part_of UBERON:0000115 ! lung epithelium
 
 [Term]
@@ -1429,34 +1459,6 @@ property_value: UBPROP:0000009 "breathing control" xsd:string
 property_value: UBPROP:0000011 "originate from the cervical somites, likely C3-C5[PMID:23586979]" xsd:string
 
 [Term]
-id: UBERON:0001212
-name: duodenal gland
-namespace: uberon
-def: "A compound tubular submucosal gland found in that portion of the duodenum which is above the hepatopancreatic sphincter (Sphincter of Oddi). The main function of these glands is to produce a mucus-rich alkaline secretion (containing bicarbonate)[WP]." [http://en.wikipedia.org/wiki/Brunner's_glands]
-subset: organ_slim
-subset: pheno_slim
-subset: uberon_slim
-synonym: "Brunner's gland" EXACT [FMA:15060]
-synonym: "gland of Brunner" EXACT [FMA:15060]
-synonym: "glandula duodenales" RELATED LATIN [BTO:0002376]
-synonym: "glandula duodenales Brunneri" RELATED LATIN [BTO:0002376]
-synonym: "submucosal gland of duodenum" EXACT []
-xref: Brunner's:glands
-xref: BTO:0002376
-xref: EMAPA:36522
-xref: FMA:15060
-xref: GAID:314
-xref: http://linkedlifedata.com/resource/umls/id/C0006323
-xref: http://www.snomedbrowser.com/Codes/Details/41298001
-xref: MA:0001551
-xref: MESH:A03.492.411.620.270.322
-xref: NCIT:C13010
-xref: UMLS:C0006323 {source="ncithesaurus:Brunner_s_Gland"}
-is_a: UBERON:0011148 {notes="compound tubular"} ! submucosal gland
-property_value: IAO:0000116 "currently defined as equivalent to any submucosal gland in the duodenum." xsd:string
-property_value: UBPROP:0000008 "Said to be absent outside mammlian (Andrew 1959) but Ziswiler and Farner (1972) noted similar glands at the gastroduodenal junction of some birds" xsd:string {source="ISBN:9780521617147"}
-
-[Term]
 id: UBERON:0001557
 name: upper respiratory tract
 namespace: uberon
@@ -2120,7 +2122,7 @@ xref: MA:0001862
 xref: NCIT:C33797
 xref: UMLS:C1179002 {source="ncithesaurus:Tracheal_Epithelium"}
 xref: VHOG:0001045
-is_a: UBERON:0004815 ! lower respiratory tract epithelium
+is_a: UBERON:0008397 ! tracheobronchial epithelium
 relationship: part_of UBERON:0003126 ! trachea
 
 [Term]
@@ -2359,7 +2361,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C0599333
 xref: MA:0001839
 xref: NCIT:C32231
 xref: UMLS:C0599333 {source="ncithesaurus:Bronchial_Epithelium"}
-is_a: UBERON:0004815 ! lower respiratory tract epithelium
+is_a: UBERON:0008397 ! tracheobronchial epithelium
 relationship: part_of UBERON:0002185 ! bronchus
 
 [Term]
@@ -2376,7 +2378,7 @@ is_a: UBERON:0002185 ! bronchus
 id: UBERON:0002048
 name: lung
 namespace: uberon
-def: "Respiration organ that develops as an oupocketing of the esophagus." [http://orcid.org/0000-0002-6601-2165]
+def: "Respiration organ that develops as an outpocketing of the esophagus." [http://orcid.org/0000-0002-6601-2165]
 comment: Snakes and limbless lizards typically possess only the right lung as a major respiratory organ; the left lung is greatly reduced, or even absent. Amphisbaenians, however, have the opposite arrangement, with a major left lung, and a reduced or absent right lung [WP]
 subset: efo_slim
 subset: major_organ
@@ -5895,7 +5897,7 @@ xref: EMAPA:36574
 xref: FMA:7473
 xref: http://www.snomedbrowser.com/Codes/Details/197423006
 xref: MA:0002937
-is_a: UBERON:0011148 ! submucosal gland
+is_a: UBERON:0036225 ! respiratory system gland
 relationship: part_of UBERON:0002202 ! submucosa of trachea
 property_value: UBPROP:0000009 "These glands secrete mucus, lysozyme, defensins, and other agents that help protect the lungs from particles and infectious agents." xsd:string
 
@@ -6666,7 +6668,8 @@ def: "Epithelium pertaining to the trachea and bronchi." [Dorlands_Medical_Dicti
 synonym: "bronchotracheal epithelium" RELATED [BTO:0002925]
 xref: BTO:0002925
 xref: CALOHA:TS-1063
-is_a: UBERON:0004802 {source="BTO"} ! respiratory tract epithelium
+is_a: UBERON:0004815 ! lower respiratory tract epithelium
+relationship: part_of UBERON:0007196 ! tracheobronchial tree
 
 [Term]
 id: UBERON:0008572
@@ -7030,24 +7033,6 @@ synonym: "neopulmonic parabronchus" NARROW []
 synonym: "paleopulmonic parabronchus" NARROW []
 synonym: "parabronchi" RELATED PLURAL []
 is_a: UBERON:0002184 {notes="tertiary", source="ISBN:0073040584"} ! segmental bronchus
-
-[Term]
-id: UBERON:0008989
-name: submocosal esophageal gland
-namespace: uberon
-def: "One of the racemose glands in the walls of the esophagus that in humans are small and serve principally to lubricate the food but in some birds secrete a milky fluid on which the young are fed." [BTO:0003634, http://en.wikipedia.org/wiki/Esophageal_glands]
-synonym: "esophageal gland" EXACT [FMA:9404]
-synonym: "glandulae oesophageae" EXACT [http://en.wikipedia.org/wiki/Esophageal_glands]
-synonym: "mucous gland of submucosa of esophagus" EXACT [FMA:9404]
-xref: BTO:0003634
-xref: Esophageal:glands
-xref: FMA:9404
-xref: http://linkedlifedata.com/resource/umls/id/C0227178
-xref: http://www.snomedbrowser.com/Codes/Details/322749003
-xref: NCIT:C32536
-xref: UMLS:C0227178 {source="ncithesaurus:Esophageal_Gland"}
-is_a: UBERON:0011148 ! submucosal gland
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e8/Illu_esophageal_layers.jpg xsd:anyURI
 
 [Term]
 id: UBERON:0009058
@@ -7754,17 +7739,6 @@ xref: UMLS:C0224177 {source="ncithesaurus:Aryepiglottic_Muscle"}
 is_a: UBERON:0001568 {source="ncithesaurus"} ! muscle of larynx
 relationship: part_of UBERON:0008575 {source="FMA"} ! oblique arytenoid
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/52/Musculusarytenoideus.png xsd:anyURI
-
-[Term]
-id: UBERON:0011148
-name: submucosal gland
-namespace: uberon
-def: "Gland of the lamina epithelialis mucosae which perforate the lamina muscularis, with their adenomeres located in the submucosal connective tissue." [BTO:0003751, http://en.wikipedia.org/wiki/Submucosal_glands]
-xref: BTO:0003751
-xref: EMAPA:37970 {source="MA:th"}
-xref: Submucosal:glands
-is_a: UBERON:0036225 ! respiratory system gland
-relationship: part_of UBERON:0003126 ! trachea
 
 [Term]
 id: UBERON:0011150

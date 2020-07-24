@@ -1038,7 +1038,7 @@ release:
 	cp external-disjoints.{obo,owl} $(RELDIR)/ ;\
 	cp external-disjoints.{obo,owl} $(RELDIR)/bridge/ ;\
 	cp subsets/*.{obo,owl} $(RELDIR)/subsets/ ;\
-	cp *-view.{obo,owl} $(RELDIR)/subsets/ ;\
+	cp subsets/*-view.{obo,owl} $(RELDIR)/subsets/ ;\
 	cp reports/*.tsv $(RELDIR)/reports/ ;\
 	cp uberon-taxmod-amniote.obo $(RELDIR)/subsets/amniote-basic.obo ;\
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
