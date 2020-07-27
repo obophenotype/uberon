@@ -203,6 +203,12 @@ subsets/cumbo.obo: subsets/cumbo.owl
 #	owltools $(UCAT) $< phenoscape-ext-noimports.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
 
 
+# ----------------------------------------
+# GENERIC CONVERSION
+# ----------------------------------------
+%.json: %.owl
+	$(MAKEJSON)
+
 
 
 # ----------------------------------------
@@ -576,6 +582,7 @@ QC_FILES = checks\
     core.owl\
     uberon.owl\
     uberon.obo\
+    uberon.json\
     external-disjoints.owl\
     depictions.owl\
     bridge/bridges\
@@ -590,12 +597,14 @@ QC_FILES = checks\
     uberon-base.owl\
     uberon-with-isa.obo\
     basic.obo\
+    basic.json\
     basic-allcycles\
     basic-orphans\
     merged-cycles\
     merged-orphans\
     ext.owl\
     ext.obo\
+    ext.json\
     ext-obscheck.txt\
     subsets/efo-slim.obo\
     subsets/cumbo.obo\
@@ -1028,8 +1037,7 @@ release:
 	cp uberon.{obo,owl,json} $(RELDIR) ;\
 	cp merged.{obo,owl} $(RELDIR)/ ;\
 	cp uberon-base.owl $(RELDIR) ;\
-	cp basic.obo $(RELDIR)/basic.obo ;\
-	cp basic.owl $(RELDIR)/basic.owl ;\
+	cp basic.{obo,owl,json{ $(RELDIR)/ ;\
 	cp homology.owl $(RELDIR)/homology.owl ;\
 	cp *_import.owl $(RELDIR)/ ;\
 	cp bridge/*.{obo,owl} $(RELDIR)/bridge/ ;\
