@@ -1,11 +1,11 @@
 ---
 name: Obsolete a term
-about: Obsolete or deprecate an existing HPO term
-assignees: pnrobinson, drseb
-labels: obsoletion
+about: Obsolete or deprecate an existing Uberon term
+assignees: 
+labels: obsolete
 ---
 
-**HPO term**
+**Uberon term**
 
 
 **Reason for deprecation**
