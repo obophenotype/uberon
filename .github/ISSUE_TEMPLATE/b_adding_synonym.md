@@ -2,7 +2,7 @@
 name: Add synonym
 about: New synonym suggestion for an existing Uberon term
 assignees: nicolevasilevsky
-labels: synonyms
+labels: synonym
 ---
 
 **Uberon term**
