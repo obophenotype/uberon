@@ -1,11 +1,11 @@
 ---
 name: Revise logical definition
-about: Improve the OWL-DL statement of an HPO term
-assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
+about: Improve the OWL-DL statement of an Uberon term
+assignees:  
 labels: 'logical definition'
 ---
 
-**HPO term**
+**Uberon term**
 
 
 **Suggested revision of logical definition**
