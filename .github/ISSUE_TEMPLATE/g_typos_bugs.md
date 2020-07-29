@@ -1,11 +1,11 @@
 ---
 name: Typos/Bugs/Errors
-about: Report all kinds of typos or bugs in HPO
-assignees: drseb, nicolevasilevsky, LCCarmody 
+about: Report all kinds of typos or bugs in Uberon
+assignees: 
 labels: typo, bug
 ---
 
-**HPO term**
+**Uberon term**
 
 
 **Bug description**
