@@ -597,16 +597,12 @@ QC_FILES = checks\
     full-bridge-checks\
     extra-full-bridge-checks\
     taxon-constraint-check.txt\
-    uberon_edit-cycles\
-    uberon-cycles\
     uberon.owl\
     uberon-base.owl\
-    uberon-with-isa.obo\
     basic.obo\
     basic.json\
     basic-allcycles\
     basic-orphans\
-    merged-cycles\
     merged-orphans\
     ext.owl\
     ext.obo\
@@ -629,7 +625,7 @@ QC_FILES = checks\
 
 
 uberon-qc: imports $(QC_FILES) all_subsets
-	cat merged-orphans uberon_edit-obscheck.txt uberon_edit-cycles uberon_edit-xp-check.err uberon-cycles uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans merged-cycles composite-metazoan-dv.txt 
+	cat merged-orphans uberon_edit-obscheck.txt  uberon_edit-xp-check.err  uberon-orphans uberon-synclash uberon-dv.txt uberon-discv.txt uberon-simple-allcycles uberon-simple-orphans composite-metazoan-dv.txt 
 
 
 
@@ -667,7 +663,7 @@ TERM_appendicular := UBERON:0002091
 
 SYSTEMS = musculoskeletal excretory nephron reproductive digestive nervous sensory immune circulatory pulmonary cranial renal appendicular
 
-all_subsets: all_systems subsets/life-stages-composite.obo subsets/life-stages-core.obo subsets/life-stages-core.owl subsets/uberon-with-isa-for-FMA-MA-ZFA.obo
+all_subsets: all_systems subsets/life-stages-composite.obo subsets/life-stages-core.obo subsets/life-stages-core.owl 
 all_systems: all_systems_obo all_systems_owl  all_systems_json all_systems_tsv
 all_systems_obo: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
 all_systems_owl: $(patsubst %,subsets/%-minimal.owl,$(SYSTEMS))
@@ -733,10 +729,9 @@ subsets/%.owl: subsets/%.obo
 # used for (obsolete) disjointness checks
 
 # historic
-%-with-isa.obo: %-xf.obo
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip -i $*.obo -u ontol_manifest_has_subclass_from_xref io-convert -to obo -o $@
-.PRECIOUS: %-with-isa.obo
+#%-with-isa.obo: %-xf.obo
+#	blip -i $*.obo -u ontol_manifest_has_subclass_from_xref io-convert -to obo -o $@
+#.PRECIOUS: %-with-isa.obo
 
 # for now we use a simplified set of relations, as this is geared towards analysis
 subsets/uberon-with-isa-for-%.obo: uberon.obo
@@ -791,7 +786,9 @@ cl-core.owl: cl-core.obo
 	owltools --no-debug $< --list-cycles -f > $@
 
 
-# TODO: use Oort
+# TODO: use ROBOT
+#%-synclash: %.obo
+#	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
 %-synclash: %.obo
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
