@@ -1635,9 +1635,9 @@ reports/%.csv: sparql/%.sparql uberon.owl
 #############################################
 ############ Nico hacks #####################
 
-external-disjoints.owl:
-	echo "STRONG WARNING make $@ does not exist, and will be touched (empty file)!" && touch $@
-	
+external-disjoints.owl: external-disjoints.obo
+	robot convert -i $< -f owl -o $@
+
 bridge/uberon-bridge-to-nifstd.obo:
 	echo "STRONG WARNING make $@ failed, because xref-to-equiv.pl script is missing!" && touch $@
 
