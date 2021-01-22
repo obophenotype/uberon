@@ -12,7 +12,7 @@ download the compiled versions of the ontology, please visit
 
 ## Content
 
-This repository contains the editors version of the ontology
+This repository contains the editors version of the ontology 
 (uberon_edit.obo), and the material required to make a release.
 
 ## Editors:
