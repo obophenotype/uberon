@@ -377,6 +377,7 @@ id: CL:0002598
 name: bronchial smooth muscle cell
 namespace: cell
 xref: BTO:0004402
+is_a: CL:0019019 ! tracheobronchial smooth muscle cell
 relationship: part_of UBERON:0002185 ! bronchus
 created_by: tmeehan
 creation_date: 2011-03-06T05:46:39Z
@@ -386,6 +387,7 @@ id: CL:0002600
 name: smooth muscle cell of trachea
 namespace: cell
 def: "A smooth muscle cell of the trachea." []
+is_a: CL:0019019 ! tracheobronchial smooth muscle cell
 relationship: part_of UBERON:0003126 ! trachea
 created_by: tmeehan
 creation_date: 2011-03-06T05:50:28Z
@@ -485,6 +487,25 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T18:14:52Z xsd:dateTime
 
 [Term]
+id: CL:0019015
+name: lung parenchyma resident eosinophil
+def: "An eosinophil with a ring-shaped nucleus that is resident in the lung parenchyma. In mouse, lung parenchyma resident eosinophils are IL-5-independent Siglec-F(intermediate) CD62L+ CD101(low). In human, they are Siglec-8+ CD62L+ IL-3R(low)." []
+synonym: "lung-resident eosinophil" EXACT []
+synonym: "rEos" EXACT []
+relationship: part_of UBERON:0008946 ! lung parenchyma
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-26T09:42:19Z xsd:dateTime
+
+[Term]
+id: CL:0019019
+name: tracheobronchial smooth muscle cell
+def: "A smooth muscle cell that is part of the tracheobronchial tree." []
+synonym: "smooth muscle cell of tracheobronchial tree" EXACT []
+relationship: part_of UBERON:0007196 ! tracheobronchial tree
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-07-21T12:50:22Z xsd:dateTime
+
+[Term]
 id: CL:1000143
 name: lung goblet cell
 is_a: CL:0000082 ! epithelial cell of lung
@@ -564,14 +585,6 @@ xref: FMA:263084
 is_a: CL:1000272 ! lung secretory cell
 is_a: CL:1000331 ! serous cell of epithelium of bronchus
 relationship: part_of UBERON:0002051 ! epithelium of bronchiole
-
-[Term]
-id: CL:1000337
-name: enterocyte of epithelium of duodenal gland
-namespace: cell
-def: "An enterocyte that is part of the epithelium of duodenal gland." []
-xref: FMA:263092
-is_a: CL:0000307 ! tracheal epithelial cell
 
 [Term]
 id: CL:1000348
@@ -8910,6 +8923,28 @@ xref: NCIT:C12236
 relationship: part_of UBERON:0002372 {source="NCIT"} ! tonsil
 
 [Term]
+id: UBERON:0038897
+name: superior tracheobronchial lymph node
+namespace: uberon
+synonym: "4 thoracic lymph node" EXACT [FMA:5959]
+synonym: "4R+L thoracic lymph node" EXACT [FMA:5959]
+synonym: "lower paratracheal lymph node" EXACT [FMA:5959]
+synonym: "nodus tracheobronchiale superiore lymphaticus" EXACT [FMA:5959]
+synonym: "station 4 lymph node" EXACT [FMA:5959]
+synonym: "station 4 N2 lymph node" EXACT [FMA:5959]
+xref: FMA:5959
+is_a: UBERON:0015472 {source="FMA"} ! tracheobronchial lymph node
+
+[Term]
+id: UBERON:0038900
+name: inferior tracheobronchial lymph node
+namespace: uberon
+synonym: "carinate lymph node" EXACT [FMA:5962]
+synonym: "nodus tracheobronchialis inferioris lymphaticus" EXACT [FMA:5962]
+xref: FMA:5962
+is_a: UBERON:0015472 {source="FMA"} ! tracheobronchial lymph node
+
+[Term]
 id: UBERON:2000202
 name: efferent portion of pharyngeal arch artery
 namespace: uberon
@@ -9251,6 +9286,10 @@ namespace: protein
 namespace: quality
 namespace: uberon
 def: "a core relation that holds between a part and its whole" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000050
 property_value: IAO:0000111 "is part of" xsd:string
 property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
