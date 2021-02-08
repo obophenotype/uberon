@@ -15,9 +15,6 @@ TMPDIR=tmp/
 REPORTSDIR=reports/
 SRC=uberon_edit.obo
 
-dirs:
-	mkdir -p $(TMPDIR)
-	mkdir -p $(REPORTSDIR)
 
 tmp/$(ONT)-quick.obo: | dirs
 	$(ROBOT) merge -i $(SRC) reason -o $@.owl && mv $@.owl $@
