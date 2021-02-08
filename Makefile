@@ -1025,7 +1025,22 @@ release-diff:
 # even tho the repo lives in github, release is via svn...
 
 RELDIR=./trunk
-release:
+
+.PHONY: dirs
+
+dirs:
+	rm -rf $(RELDIR)
+	mkdir -p $(RELDIR)
+	mkdir -p $(RELDIR)/subsets
+	mkdir -p $(RELDIR)/diffs
+	mkdir -p $(RELDIR)/reference
+	mkdir -p $(RELDIR)/bridge
+	mkdir -p $(RELDIR)/reports
+	mkdir -p $(TMPDIR)
+	mkdir -p $(REPORTSDIR)
+
+
+release: dirs
 	cp core.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl,json} $(RELDIR) ;\
@@ -1046,14 +1061,15 @@ release:
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
 	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
-	cp composite-brain.{obo,owl} $(RELDIR) ;\
-	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
-	cp composite-{vertebrate,metazoan}-*.{obo,owl} $(RELDIR) ;\
-	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
+	cp reference/*.{owl,md} $(RELDIR)/reference  ;\
 	make release-diff ;\
 	cp diffs/* $(RELDIR)/diffs/ ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''
+# cp composite-brain.{obo,owl} $(RELDIR) ;\
+# cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
+# cp composite-{vertebrate,metazoan}-*.{obo,owl} $(RELDIR) ;\
+
 
 S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy 
 
