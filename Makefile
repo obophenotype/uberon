@@ -387,8 +387,9 @@ metazoan-view.owl: ext.owl
 	ln -s $< $@ 
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
+#ext-taxon-axioms.owl 
 subsets/%-view.owl: ext.owl contexts/context-%.owl
-	OWLTOOLS_MEMORY=14G owltools --use-catalog $< ext-taxon-axioms.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(OBO)/$@ --run-reasoner -r elk -x -o -f ofn $@
+	OWLTOOLS_MEMORY=14G owltools --use-catalog $< contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(OBO)/$@ --run-reasoner -r elk -x -o -f ofn $@
 .PRECIOUS: subsets/%-view.owl
 
 subsets/%-view.obo: %-view.owl
@@ -1024,7 +1025,22 @@ release-diff:
 # even tho the repo lives in github, release is via svn...
 
 RELDIR=./trunk
-release:
+
+.PHONY: dirs
+
+dirs:
+	rm -rf $(RELDIR)
+	mkdir -p $(RELDIR)
+	mkdir -p $(RELDIR)/subsets
+	mkdir -p $(RELDIR)/diffs
+	mkdir -p $(RELDIR)/reference
+	mkdir -p $(RELDIR)/bridge
+	mkdir -p $(RELDIR)/reports
+	mkdir -p $(TMPDIR)
+	mkdir -p $(REPORTSDIR)
+
+
+release: dirs
 	cp core.owl $(RELDIR)/core.owl ;\
 	cp uberon_edit.obo $(RELDIR)/core.obo ;\
 	cp uberon.{obo,owl,json} $(RELDIR) ;\
@@ -1045,14 +1061,15 @@ release:
 	cp uberon-taxmod-amniote.owl $(RELDIR)/subsets/amniote-basic.owl ;\
 	cp uberon-taxmod-euarchontoglires.obo $(RELDIR)/subsets/euarchontoglires-basic.obo ;\
 	cp uberon-taxmod-euarchontoglires.owl $(RELDIR)/subsets/euarchontoglires-basic.owl ;\
-	cp composite-brain.{obo,owl} $(RELDIR) ;\
-	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
-	cp composite-{vertebrate,metazoan}-*.{obo,owl} $(RELDIR) ;\
-	cp reference/*{owl,html} reference/*[0-9] $(RELDIR)/reference  ;\
+	cp reference/*.{owl,md} $(RELDIR)/reference  ;\
 	make release-diff ;\
 	cp diffs/* $(RELDIR)/diffs/ ;\
 	echo done ;\
 #	cd $(RELDIR) && svn commit -m ''
+# cp composite-brain.{obo,owl} $(RELDIR) ;\
+# cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
+# cp composite-{vertebrate,metazoan}-*.{obo,owl} $(RELDIR) ;\
+
 
 S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy 
 
@@ -1119,7 +1136,7 @@ caloha.obo:
 xcaloha.obo: caloha.obo
 	perl -npe 's/TS\-/CALOHA:TS\-/g' $< > $@
 
-#
+# KIl all the following
 uberon-new-mp.obo:
 	blip -u query_anatomy -i uberon_edit.obo -r cell  -r EMAPA -r mammalian_phenotype -r mammalian_phenotype_xp  -r fma_downcase -r NIFGA -r zebrafish_anatomy  -r mouse_anatomy findall uberon_mpxp_write > $@
 
@@ -1140,6 +1157,8 @@ uberon-defs-from-mp.obo:
 
 caloha-not-in-uberon.txt: 
 	blip-findall -consult util/ubxref.pro -i uberon.obo -r caloha "class(X),atom_concat('TS-',_,X),\+ubxref(_,X)" -select X -label
+
+# kill till here
 
 # ----------------------------------------
 # Neurolex
@@ -1477,7 +1496,10 @@ PATTERNDIR=patterns
 MODS = luminal_space_of gland_duct gland_acinus endochondral_bone endochondral_cartilage
 
 # OWL->CSV
+ONT=uberon
+ONTBASE = $(OBO)/$(ONT)
 PSRC = uberon_edit.obo
+SRC = uberon_edit.obo
 
 # NEW: reverse engineer using patternizer
 patternizer:
@@ -1541,3 +1563,4 @@ reports/%.csv: sparql/%.sparql uberon.owl
 # BLAZEGRAPH
 # ----------------------------------------
 
+include uberon.Makefile
