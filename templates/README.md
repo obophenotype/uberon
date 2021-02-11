@@ -26,5 +26,3 @@ By convention, it is a good idea to use the `/components/` part in the url to de
 ```
 <uri id="User Entered Import Resolution" name="http://purl.obolibrary.org/obo/components/subclasses.owl" uri="templates/subclasses.owl"/>
 ```
-
-
