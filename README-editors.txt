@@ -153,6 +153,10 @@ Blocked on:
 The editors version will most likely owl-import other ontologies. Need
 to figure this into release process.
 
+== How to deal with templates ==
+see templates/REAMDE.md
+
+
 == Other matters ==
 
 How does this work with CL? Synchronize this? Mutual imports?
