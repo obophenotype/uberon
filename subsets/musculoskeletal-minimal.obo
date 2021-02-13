@@ -802,7 +802,7 @@ name: atrioventricular bundle cell
 def: "A specialized cardiomyocyte that transmit signals from the AV node to the cardiac Purkinje fibers." []
 synonym: "AV bundle cell" EXACT []
 is_a: CL:0010007 ! His-Purkinje system cell
-relationship: part_of UBERON:0002353 ! atrioventricular bundle
+relationship: part_of UBERON:0002353 ! bundle of His
 
 [Term]
 id: CL:0010007
@@ -944,7 +944,7 @@ namespace: cell
 def: "A transitional myocyte that is part of the left branch of atrioventricular bundle." []
 xref: FMA:263170
 is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
-relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
+relationship: part_of UBERON:0005986 ! left bundle branch
 
 [Term]
 id: CL:1000371
@@ -953,7 +953,7 @@ namespace: cell
 def: "A transitional myocyte that is part of the right branch of atrioventricular bundle." []
 xref: FMA:263172
 is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
-relationship: part_of UBERON:0005987 ! right branch of atrioventricular bundle
+relationship: part_of UBERON:0005987 ! right bundle branch
 
 [Term]
 id: CL:1000372
@@ -986,7 +986,7 @@ namespace: cell
 def: "A myocardial endocrine cell that is part of the septal division of left branch of atrioventricular bundle." []
 xref: FMA:263180
 is_a: CL:0010005 ! atrioventricular bundle cell
-relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
+relationship: part_of UBERON:0005986 ! left bundle branch
 
 [Term]
 id: CL:1000409
@@ -4655,8 +4655,8 @@ synonym: "musculus popliteus" RELATED LATIN [http://en.wikipedia.org/wiki/Poplit
 synonym: "poplitea" EXACT []
 synonym: "popliteal" EXACT []
 synonym: "popliteal muscle" EXACT [FMA:22590]
-synonym: "popliteus" EXACT [FMA:22590]
 synonym: "popliteus" EXACT [MA:0002554]
+synonym: "popliteus" EXACT [FMA:22590]
 xref: EMAPA:36240
 xref: FMA:22590
 xref: http://linkedlifedata.com/resource/umls/id/C0224457
@@ -10810,16 +10810,18 @@ property_value: UBPROP:0000003 "Three major adaptations, or 'novel cardiac compo
 
 [Term]
 id: UBERON:0002353
-name: atrioventricular bundle
+name: bundle of His
 namespace: uberon
 def: "A part of the His-Purkinje system that transmits signals from the AV node to the cardiac Purkinje fibers[GO]" [GO:0003166, GOC:mtg_heart]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "A-V bundle" RELATED [EMAPA:35152]
-synonym: "atrio-ventricular bundle" RELATED [EMAPA:35152]
+synonym: "atrio-ventricular bundle" EXACT [EMAPA:35152]
+synonym: "atrioventricular bundle" EXACT []
 synonym: "atrioventricular bundle muscle tissue" EXACT [FMA:9484]
 synonym: "atrioventricular fasciculus" EXACT [FMA:9484]
 synonym: "AV bundle" EXACT []
+synonym: "AVB" EXACT ABBREVIATION []
 synonym: "bundle of His" EXACT [FMA:9484, GO:0003166]
 synonym: "fasciculus atrioventricularis" EXACT LATIN [http://en.wikipedia.org/wiki/Bundle_of_His]
 synonym: "His bundle" EXACT []
@@ -10866,7 +10868,7 @@ xref: Purkinje:fiber
 xref: UMLS:C0034144 {source="ncithesaurus:Purkinje_Fiber"}
 is_a: UBERON:0010131 {source="FMA"} ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
-relationship: part_of UBERON:0004146 {source="GO"} ! His-Purkinje system
+relationship: part_of UBERON:8000009 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! Purkinje fiber network
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/96/Gray498.png xsd:anyURI
 
 [Term]
@@ -16186,6 +16188,8 @@ namespace: uberon
 def: "The His-Purkinje system receives signals from the AV node and is composed of the fibers that regulate cardiac muscle contraction in the ventricles" [GO:0003164, https://github.com/geneontology/go-ontology/issues/12451]
 synonym: "His-Purkinji network" EXACT []
 synonym: "HPS" EXACT ABBREVIATION []
+synonym: "VCS" EXACT []
+synonym: "ventricular conduction system" EXACT []
 is_a: UBERON:0010131 {source="cjm"} ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
 relationship: part_of UBERON:0002350 {source="GO"} ! conducting system of heart
@@ -22957,12 +22961,14 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/05/C
 
 [Term]
 id: UBERON:0005986
-name: left branch of atrioventricular bundle
+name: left bundle branch
 namespace: uberon
 def: "The left branch of the atrioventricular bundle that separates at the bundle of His, descends the septal wall of the left ventricle and connects to the terminal Purkinje fiber[MP]." [MP:0010566]
 subset: pheno_slim
 synonym: "crus sinistrum (fasciculi atrioventricularis)" EXACT [FMA:9487]
 synonym: "crus sinistrum fasciculi atrioventricularis" EXACT LATIN [FMA:9487, FMA:TA]
+synonym: "LBB" EXACT ABBREVIATION []
+synonym: "left branch of atrioventricular bundle" EXACT []
 synonym: "left bundle branch" EXACT [MP:0010566]
 synonym: "left bundle branch of bundle of His" EXACT [HP:0005172]
 synonym: "left bundle of atrioventricular bundle" EXACT [MP:0010566]
@@ -22975,16 +22981,18 @@ xref: galen:LeftBundleBranch
 xref: http://www.snomedbrowser.com/Codes/Details/277690001
 is_a: UBERON:0010131 ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
-relationship: part_of UBERON:0002353 ! atrioventricular bundle
+relationship: part_of UBERON:0002353 ! bundle of His
 
 [Term]
 id: UBERON:0005987
-name: right branch of atrioventricular bundle
+name: right bundle branch
 namespace: uberon
 def: "The right branch of the atrioventricular bundle that separates just below the bundle of His, descends the septal wall of the right ventricle and connects to the terminal Purkinje fibers[MP]." [MP:0010567]
 subset: pheno_slim
 synonym: "crus dextrum (fasciculi atrioventricularis)" EXACT [FMA:9486]
 synonym: "crus dextrum fasciculi atrioventricularis" EXACT LATIN [FMA:9486, FMA:TA]
+synonym: "RBB" EXACT ABBREVIATION []
+synonym: "right branch of atrioventricular bundle" EXACT []
 synonym: "right bundle" EXACT [FMA:9486, MP:0010567]
 synonym: "right bundle branch" EXACT [FMA:9486]
 synonym: "right bundle branch of bundle of His" EXACT []
@@ -22996,7 +23004,7 @@ xref: galen:RightBundleBranch
 xref: http://www.snomedbrowser.com/Codes/Details/277689005
 is_a: UBERON:0010131 ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
-relationship: part_of UBERON:0002353 ! atrioventricular bundle
+relationship: part_of UBERON:0002353 ! bundle of His
 
 [Term]
 id: UBERON:0005988
@@ -46571,7 +46579,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000089
 name: actinotrichium
 namespace: uberon/phenoscape-anatomy
-def: "Elastoidin fin ray that is slender, sometimes branched distally and present in the embryonic fin fold. Actinotrichia are translucent and exhibit birefringence." [http://purl.obolibrary.org/obo/uberon/tracker/129, PHENOSCAPE:pm]
+def: "Elastoidin fin ray that is slender, sometimes branched distally and present in the embryonic fin fold. Actinotrichia are translucent and exhibit birefringence. " [http://purl.obolibrary.org/obo/uberon/tracker/129, PHENOSCAPE:pm]
 comment: Actinotrichia are required for lepidotrichium development. They are occasionally retained in adult fishes. Further taxon comments from Witten & Huysseune (2007): 'Actinotrichia are found in the embryonic fin fold, along the outer edge of the fin in Actinopterygii, and in the adipose fin in teleosts (Starck 1979; Géraudie and Meunier 1982; Becerra et al. 1983). Only in polypterids has their presence been reported in the joints between adjacent lepidotrichial elements (Géraudie 1988). In the sarcopterygian lineage, actinotrichia are present in coelacanths (Géraudie and Meunier 1980) and in young dipnoans (Arratia et al. 2001).'
 synonym: "actinotrichia" EXACT PLURAL [TAO:0000089]
 xref: ZFA:0000089
@@ -46987,7 +46995,7 @@ namespace: uberon/phenoscape-anatomy
 def: "A dermal bone that is the upper, vertical portion of the preopercle bone." [TAO:wd]
 synonym: "ascending arm of preopercle" EXACT [TAO:0000336]
 synonym: "preopercle upper limb" EXACT [TAO:0000336]
-synonym: "preopercle vertical arm" EXACT [TAO:0000336]
+synonym: "preopercle vertical arm " EXACT [TAO:0000336]
 xref: ZFA:0001595
 is_a: UBERON:0008907 ! dermal bone
 relationship: part_of UBERON:2000264 ! preopercle
@@ -49173,7 +49181,7 @@ id: UBERON:2001221
 name: anterior copula
 namespace: uberon/phenoscape-anatomy
 def: "Copula that is ventral, median, and associated with pharyngeal arches 3-5." [ZFIN:curator]
-synonym: "anterior basibranchial copula" EXACT [TAO:0001221]
+synonym: "anterior basibranchial copula " EXACT [TAO:0001221]
 synonym: "copula 1" BROAD [TAO:0001221]
 synonym: "copula 2" BROAD [TAO:0001221]
 xref: ZFA:0001221
@@ -52338,7 +52346,7 @@ name: trigeminal foramen
 namespace: uberon/phenoscape-anatomy
 def: "Foramen through which cranial nerve V (trigeminal) exits." [TAO:wd]
 comment: This is the posterior opening of trigeminofacialis (or trigeminal-facialis) chamber.
-synonym: "posterior opening of trigeminofacialis chamber" EXACT [TAO:0001809]
+synonym: "posterior opening of trigeminofacialis chamber " EXACT [TAO:0001809]
 is_a: UBERON:0005744 ! bone foramen
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -52494,7 +52502,7 @@ namespace: uberon/phenoscape-anatomy
 def: "Ligament that connects the maxilla with the lower jaw." [TAO:wd]
 comment: Synonym articular-maxillary ligament (Alexander 1964).
 synonym: "articular-maxillary ligament" EXACT [TAO:0001828]
-synonym: "ligamentum primordiale" EXACT [TAO:0001828]
+synonym: "ligamentum primordiale " EXACT [TAO:0001828]
 synonym: "maxillo-mandibular ligament" EXACT [TAO:0001828]
 xref: ZFA:0005264
 is_a: UBERON:0008846 ! skeletal ligament
@@ -57587,7 +57595,7 @@ created_by: amphibian_anatomy_curators
 id: UBERON:3000431
 name: pila antoptica
 namespace: uberon/phenoscape-anatomy
-def: "A strut of cartilage  extending dorsally from the basal plate and with other similar cartilages forming the sides of the brain case. The pila antoptica is posterior to pila metoptica together with which it may enclose the foramen for the ocular motor nerve and opthalmica magna artery." []
+def: "A strut of cartilage  extending dorsally from the basal plate and with other similar cartilages forming the sides of the brain case. The pila antoptica is posterior to pila metoptica together with which it may enclose the foramen for the ocular motor nerve and opthalmica magna artery. " []
 is_a: UBERON:0003932 ! cartilage element of chondrocranium
 relationship: part_of UBERON:3000052 ! braincase and otic capsule skeleton
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -58827,7 +58835,7 @@ id: UBERON:3000756
 name: crista dorsalis humeri
 namespace: uberon/phenoscape-anatomy
 def: "Small hooked process on the dorsal aspect of the humeral shaft; it does not extend on to the glenoid head. The m subscapularis is inserted on it." [AAO:LAP]
-synonym: "crista dorsalis" RELATED [UBERON:3000756]
+synonym: "crista dorsalis " RELATED [UBERON:3000756]
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0000976 ! humerus
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -60776,7 +60784,7 @@ created_by: amphibian_anatomy_curators
 id: UBERON:3010682
 name: proximal-most prepollical element
 namespace: uberon/phenoscape-anatomy
-def: "Is the proximal-most prepollical element." []
+def: "Is the proximal-most prepollical element.  " []
 is_a: UBERON:4200140 ! prepollical element
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -61839,7 +61847,7 @@ created_by: Nizar Ibrahim
 id: UBERON:4100004
 name: ischial peduncle
 namespace: none
-def: "Bony projection (peduncle) that is located on the posterior portion of the ilium, posterior to the acetabulum." []
+def: "Bony projection (peduncle) that is located on the posterior portion of the ilium, posterior to the acetabulum. " []
 is_a: UBERON:0004530 ! bony projection
 relationship: part_of UBERON:0001274 ! ischium
 created_by: Nizar Ibrahim
@@ -62039,7 +62047,7 @@ created_by: A.Dececchi
 id: UBERON:4200004
 name: intertrochanteric fossa
 namespace: none
-def: "Depression on the ventreal side of the femoral head. Associated with the pubioischiofemoralis externus muscle." []
+def: "Depression on the ventreal side of the femoral head. Associated with the pubioischiofemoralis externus muscle. " []
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004704 ! bone fossa
 relationship: part_of UBERON:0000981 ! femur
@@ -62179,7 +62187,7 @@ created_by: AD
 id: UBERON:4200021
 name: astragalus-calcaneum unit
 namespace: none
-def: "Osteological unit consisting of the astragalus and calcaneum." []
+def: "Osteological unit consisting of the astragalus and calcaneum. " []
 xref: PHENOSCAPE:NI
 is_a: UBERON:0000075 ! subdivision of skeletal system
 relationship: part_of UBERON:0009879 ! tarsal skeleton
@@ -62273,7 +62281,7 @@ created_by: Ad
 id: UBERON:4200033
 name: cleithrum head
 namespace: none
-def: "Expanded dorsal region of the cleithrum." []
+def: "Expanded dorsal region of the cleithrum. " []
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0004741 ! cleithrum
 created_by: AD
@@ -62377,7 +62385,7 @@ created_by: AD
 id: UBERON:4200045
 name: articular surface for the astragalus on the calcaneum
 namespace: none
-def: "Contact surface between the calcaneum and the astragalus located on the calcaneum." []
+def: "Contact surface between the calcaneum and the astragalus located on the calcaneum. " []
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100003 ! articular surface
 is_a: UBERON:4200230 ! surface of bone
@@ -62388,7 +62396,7 @@ created_by: AD
 id: UBERON:4200046
 name: astragalo-calcaneal canal
 namespace: none
-def: "The astragalo-calcaneal canal forms a foramen between the articulated astragalus and calcaneum when the canal is ossified (Nesbitt, 2011)." []
+def: "The astragalo-calcaneal canal forms a foramen between the articulated astragalus and calcaneum when the canal is ossified (Nesbitt, 2011). " []
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004705 ! fenestra
 relationship: part_of UBERON:4200021 ! astragalus-calcaneum unit
@@ -62407,7 +62415,7 @@ created_by: AD
 id: UBERON:4200048
 name: bicipital crest
 namespace: none
-def: "Anatomical projection that is an expansion on the proximal region of the humerus." []
+def: "Anatomical projection that is an expansion on the proximal region of the humerus. " []
 comment: Origin of the aponeursis of humeral head of the M. biceps brachii. From Bamuel et al. 1993
 synonym: "crista bicipitalis" EXACT []
 synonym: "crista tuberculi majoris" EXACT []
@@ -62678,7 +62686,7 @@ created_by: AD
 id: UBERON:4200100
 name: latissimus dorsi process
 namespace: none
-def: "A bony process on the dorsal side of the proximal region of the humerus which corresponds to the insertion site of the Latissimus dorsi muscle." []
+def: "A bony process on the dorsal side of the proximal region of the humerus which corresponds to the insertion site of the Latissimus dorsi muscle. " []
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0000976 ! humerus
 created_by: AD
@@ -62714,7 +62722,7 @@ created_by: AD
 id: UBERON:4200104
 name: metacarpal extensor pit
 namespace: none
-def: "Pits located on the proximodorsal part of metacarpals denoting the attachemnt sites for ligaments." []
+def: "Pits located on the proximodorsal part of metacarpals denoting the attachemnt sites for ligaments. " []
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004704 ! bone fossa
 relationship: part_of UBERON:0002374 ! metacarpal bone
@@ -62744,7 +62752,7 @@ created_by: AD
 id: UBERON:4200112
 name: prepectoral space
 namespace: none
-def: "A triangular, anteroventrally facing area developed between the preaxial margin of the humerus and the proximal limb of the ventral humeral ridge. Based on Callier et al. 2009" []
+def: "A triangular, anteroventrally facing area developed between the preaxial margin of the humerus and the proximal limb of the ventral humeral ridge. Based on Callier et al. 2009 " []
 is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0000976 ! humerus
 created_by: AD
@@ -62796,7 +62804,7 @@ created_by: AD
 id: UBERON:4200118
 name: pubic peduncle
 namespace: none
-def: "Bony projection on the anterior portion of the ilium, anterior to the acetabulum that articulates with the pubis." []
+def: "Bony projection on the anterior portion of the ilium, anterior to the acetabulum that articulates with the pubis. " []
 is_a: UBERON:0004530 ! bony projection
 relationship: part_of UBERON:0001273 ! ilium
 created_by: AD
@@ -62805,7 +62813,7 @@ created_by: AD
 id: UBERON:4200119
 name: pubis-ischium contact
 namespace: none
-def: "Contact zone between the pubis and the ischium." []
+def: "Contact zone between the pubis and the ischium. " []
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0007830 ! pelvic girdle bone/zone
 created_by: AD
@@ -62814,7 +62822,7 @@ created_by: AD
 id: UBERON:4200120
 name: puboischiadic plate
 namespace: none
-def: "A broad expnase of bone incorperating both the pubis and the ischium. Origin site for ventral limb muscle including the pubioishciofemoralis externus. Modified from Romer 1956" []
+def: "A broad expnase of bone incorperating both the pubis and the ischium. Origin site for ventral limb muscle including the pubioishciofemoralis externus. Modified from Romer 1956 " []
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0007830 ! pelvic girdle bone/zone
 created_by: AD
@@ -62931,7 +62939,7 @@ created_by: AD
 id: UBERON:4200139
 name: palatoquadrate element
 namespace: none
-def: "Endochondral element that is part of the suspensorium sometimes ossifying distally as the quadrate bone and linking the basal section of the braincase to the lower jaw." []
+def: "Endochondral element that is part of the suspensorium sometimes ossifying distally as the quadrate bone and linking the basal section of the braincase to the lower jaw. " []
 comment: The palatoquadrate cartilage is the primary element of the suspensorium in larval amphibians and can ossify distally in some taxa, becoming the quadrate bone. In mammals the quadrate bone becomes the incus.
 is_a: UBERON:0010363 ! endochondral element
 relationship: part_of UBERON:0003108 ! suspensorium
@@ -63145,14 +63153,14 @@ relationship: part_of UBERON:0001442 ! skeleton of manus
 id: UBERON:4200180
 name: semilunate carpal
 namespace: none
-def: "The moon shaped fusion of distal carpals 1 and 2 found in some theropod dinosaurs, permitting greater wrist mobility." []
+def: "The moon shaped fusion of distal carpals 1 and 2 found in some theropod dinosaurs, permitting greater wrist mobility. " []
 is_a: UBERON:0001435 ! carpal bone
 
 [Term]
 id: UBERON:4200181
 name: astragalus head
 namespace: none
-def: "The region of the astragalus/ talus that carries the articular surface for the navicular." []
+def: "The region of the astragalus/ talus that carries the articular surface for the navicular. " []
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0002395 ! talus
 
@@ -63183,7 +63191,7 @@ relationship: part_of UBERON:0001424 ! ulna
 id: UBERON:4200185
 name: entepicondyle fossa
 namespace: none
-def: "A fossa on the distal humerus proximal to the entepicondyle." []
+def: "A fossa on the distal humerus proximal to the entepicondyle. " []
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004704 ! bone fossa
 relationship: part_of UBERON:0000976 ! humerus
@@ -63224,14 +63232,14 @@ created_by: AD
 [Term]
 id: UBERON:4200194
 name: intercentrum
-def: "The anteriormost of the two possible elements found in the tetrapod centrum (when the centrum is not a single element)." []
+def: "The anteriormost of the two possible elements found in the tetrapod centrum (when the centrum is not a single element). " []
 comment: If there is only one element that makes part of the centrum it can be either the intercentrum (some amphibians) or the pleurocentrum (amniotes) (see Hildebrand and Goslow 's Analysis of Vertebrate structure)
 is_a: UBERON:0001075 ! bony vertebral centrum
 
 [Term]
 id: UBERON:4200195
 name: pleurocentrum
-def: "The posteriormost of the two possible elements found in the tetrapod centrum (when the centrum is not a single element)." []
+def: "The posteriormost of the two possible elements found in the tetrapod centrum (when the centrum is not a single element). " []
 comment: If there is only one element that makes part of the centrum it can be either the intercentrum (some amphibians) or the pleurocentrum (amniotes) (see Hildebrand and Goslow 's Analysis of Vertebrate structure)
 is_a: UBERON:0001075 ! bony vertebral centrum
 
@@ -63253,7 +63261,7 @@ created_by: AD
 [Term]
 id: UBERON:4200198
 name: incisor process
-def: "Process that is part of the mandible that is in close proximity to the incisor teeth." []
+def: "Process that is part of the mandible that is in close proximity to the incisor teeth. " []
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0001684 ! mandible
 created_by: AD
@@ -63261,7 +63269,7 @@ created_by: AD
 [Term]
 id: UBERON:4200203
 name: humeral facet on the ulna
-def: "Facet on the ulna for articulation with the ulnar condyle of the humerus." []
+def: "Facet on the ulna for articulation with the ulnar condyle of the humerus. " []
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4200230 ! surface of bone
 is_a: UBERON:4300038 ! facet
@@ -63270,7 +63278,7 @@ relationship: part_of UBERON:0001424 ! ulna
 [Term]
 id: UBERON:4200204
 name: humeral facet on radius
-def: "Facet on the radius for articulation with the radial condyle of the humerus." []
+def: "Facet on the radius for articulation with the radial condyle of the humerus. " []
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4200230 ! surface of bone
 is_a: UBERON:4300038 ! facet
@@ -63285,7 +63293,7 @@ is_a: UBERON:2001737 ! coracoid foramen
 [Term]
 id: UBERON:4200207
 name: external rim of the coracoid foramen
-synonym: "the external wall of the rim denoting the coracoid foramen." EXACT []
+synonym: "the external wall of the rim denoting the coracoid foramen. " EXACT []
 is_a: UBERON:2001737 ! coracoid foramen
 
 [Term]
@@ -63354,7 +63362,7 @@ relationship: part_of UBERON:0000981 ! femur
 [Term]
 id: UBERON:4200217
 name: tibial facet of femur
-def: "Facet on the femur for the tibia." []
+def: "Facet on the femur for the tibia. " []
 is_a: UBERON:4200214 ! epipodial facet
 is_a: UBERON:4200230 ! surface of bone
 relationship: part_of UBERON:0000981 ! femur
@@ -63362,7 +63370,7 @@ relationship: part_of UBERON:0000981 ! femur
 [Term]
 id: UBERON:4200218
 name: musculotendinous bundle
-def: "A collection of muscle and tendinous tissue." []
+def: "A collection of muscle and tendinous tissue. " []
 is_a: UBERON:0001134 ! skeletal muscle tissue
 
 [Term]
@@ -63401,13 +63409,13 @@ relationship: part_of UBERON:0000976 ! humerus
 [Term]
 id: UBERON:4200225
 name: scapulohumeralis muscle
-def: "Muscle found primarily in basal sarcopterygians that runs between teh scapulocoracoid and the humerus. Its exact homologies with more derived shoulder muscles in Tetrapoda is unclear." []
+def: "Muscle found primarily in basal sarcopterygians that runs between teh scapulocoracoid and the humerus. Its exact homologies with more derived shoulder muscles in Tetrapoda is unclear. " []
 is_a: UBERON:0001482 ! muscle of shoulder
 
 [Term]
 id: UBERON:4200226
 name: anteroventral process of cleithrum
-def: "A ramus of the celithrum that descend along the girdle. Its rounded outer surface forms the articulation surface for the clavicle while its anterior surface overlaps with the anterior process of the scapulocoracoid." []
+def: "A ramus of the celithrum that descend along the girdle. Its rounded outer surface forms the articulation surface for the clavicle while its anterior surface overlaps with the anterior process of the scapulocoracoid. " []
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0004741 ! cleithrum
 
@@ -63439,13 +63447,13 @@ is_a: UBERON:4200230 ! surface of bone
 [Term]
 id: UBERON:4200232
 name: finished bone surface
-def: "A smooth periosteal bone surface." []
+def: "A smooth periosteal bone surface.  " []
 is_a: UBERON:4200230 ! surface of bone
 
 [Term]
 id: UBERON:4200233
 name: dorsal clavicular process
-def: "A process, extending dorsally from the clavicular plate, that attaches to the cleithrum. Modified from Clack 2012 and Coates 1996." []
+def: "A process, extending dorsally from the clavicular plate, that attaches to the cleithrum. Modified from Clack 2012 and Coates 1996. " []
 synonym: "ascending dorsal clavicular process" EXACT []
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0001105 ! clavicle bone
@@ -63525,7 +63533,7 @@ is_a: UBERON:4200245 ! parasymphysial plate
 [Term]
 id: UBERON:4200248
 name: hypophysial region
-comment: Region of the endocranium that encompasses the connection between the hypothalamus and the anterior pituitary.
+comment: Region of the endocranium that encompasses the connection between the hypothalamus and the anterior pituitary. 
 synonym: "hypophyseal region" EXACT []
 relationship: part_of UBERON:0002241 ! chondrocranium
 
@@ -63554,7 +63562,7 @@ created_by: WD
 id: UBERON:4300003
 name: urodermal bone
 namespace: none
-def: "Paired, thin dermal bones at the rear of the caudal fin skeleton, derived from scales." []
+def: "Paired, thin dermal bones at the rear of the caudal fin skeleton, derived from scales. " []
 xref: http://www.briancoad.com/Dictionary/R-Z\,%20Abbreviations\,%20Symbols%20and%20References.htm
 is_a: UBERON:0004376 ! fin bone
 is_a: UBERON:0008907 ! dermal bone
@@ -63631,7 +63639,7 @@ name: dorsal fin basal cartilage (elasmobranchs)
 namespace: none
 def: "The large cartilage of the dorsal fin, on which the radials articulate distally. [Compagno 2001. Sharks of the World: An Annotated and Illustrated Catalogue of Shark Species Known to Date. Volume 2]" []
 synonym: "basal plate" BROAD []
-synonym: "dorsal fin basal plate" EXACT []
+synonym: "dorsal fin basal plate\n" EXACT []
 is_a: UBERON:0007844 ! cartilage element
 relationship: part_of UBERON:4000168 ! dorsal fin skeleton
 created_by: WD
@@ -63652,7 +63660,7 @@ created_by: WD
 id: UBERON:4300021
 name: anterolateral plate
 namespace: none
-def: "Dermal bone that is part of the scapular complex in placoderm fishes." [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
+def: "Dermal bone that is part of the scapular complex in placoderm fishes. " [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
 synonym: "AL" EXACT [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:0008907 ! dermal bone
@@ -63695,7 +63703,7 @@ created_by: WD
 id: UBERON:4300025
 name: posterior dorsolateral plate
 namespace: none
-def: "Dermal bone that is part of the scapular complex in placoderms." [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
+def: "Dermal bone that is part of the scapular complex in placoderms. " [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
 synonym: "PDL" EXACT [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:0008907 ! dermal bone
@@ -63706,7 +63714,7 @@ created_by: WD
 id: UBERON:4300026
 name: anterior ventrolateral plate
 namespace: none
-def: "Dermal bone that is part of the scapular complex in placoderms." [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
+def: "Dermal bone that is part of the scapular complex in placoderms. " [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
 synonym: "AVL" EXACT [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:0008907 ! dermal bone
@@ -63717,7 +63725,7 @@ created_by: WD
 id: UBERON:4300028
 name: posterior ventrolateral plate
 namespace: none
-def: "Dermal bone that is part of the scapular complex in placoderms." [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
+def: "Dermal bone that is part of the scapular complex in placoderms. " [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
 synonym: "PVL" EXACT [ISBN 3-89937-052-X [Goujet and Young\, 2004\]]
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:0008907 ! dermal bone
@@ -63851,7 +63859,7 @@ created_by: WD
 [Term]
 id: UBERON:4300091
 name: Y bone
-def: "The y bone is a detached neural spine anterior to the haemal spines of preural centrum 2." []
+def: "The y bone is a detached neural spine anterior to the haemal spines of preural centrum 2. " []
 comment: Comment: In fishes, accessory bones (e.g., Y bone) are common in Gadiformes and rare in Zeiformes (Borden et al., 2013).
 is_a: UBERON:0001076 ! neural spine
 created_by: WD
@@ -63909,7 +63917,7 @@ created_by: WD
 [Term]
 id: UBERON:4300104
 name: ectocoracoid bone
-def: "A paired dermal bone in Gasterosteiformes connected with the coracoid and extending posteriorly. Has also been applied to the element below the scapula and applied to the coracoid in Dipnoi. Dictionary of Ichthyology." []
+def: "A paired dermal bone in Gasterosteiformes connected with the coracoid and extending posteriorly. Has also been applied to the element below the scapula and applied to the coracoid in Dipnoi. Dictionary of Ichthyology. " []
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:0008907 ! dermal bone
 created_by: WD
@@ -63932,7 +63940,7 @@ created_by: WD
 [Term]
 id: UBERON:4300108
 name: lepidotrichial segment
-def: "Zone of bone organ that is part of a lepidotrich and connected to other segments by collagen fibers. These segments lend flexibility to the lepidtrich." [DOI 10.1002/jmor.20161]
+def: "Zone of bone organ that is part of a lepidotrich and connected to other segments by collagen fibers. These segments lend flexibility to the lepidtrich. " [DOI 10.1002/jmor.20161]
 synonym: "segment of fin ray" EXACT []
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:4000172 ! lepidotrichium
@@ -63987,7 +63995,7 @@ created_by: WD
 [Term]
 id: UBERON:4300119
 name: glenoid region
-def: "Region surrounding the glenoid fossa on the scapulocoracoid. [PHENOSCAPE:AD]" []
+def: " Region surrounding the glenoid fossa on the scapulocoracoid. [PHENOSCAPE:AD]" []
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0004753 ! scapulocoracoid
 created_by: WD
@@ -64689,7 +64697,7 @@ is_a: UBERON:4300082 ! metapterygium element
 id: UBERON:4400001
 name: ceratotrichium
 namespace: none
-def: "Elastoidin fin ray that is thickened, generally unbranched and found in the fins of Chondrichthyes." [http://purl.obolibrary.org/obo/uberon/tracker/129, PHENOSCAPE:pm]
+def: "Elastoidin fin ray that is thickened, generally unbranched and found in the fins of Chondrichthyes. " [http://purl.obolibrary.org/obo/uberon/tracker/129, PHENOSCAPE:pm]
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4400006 ! elastoidin fin ray
 
@@ -64758,7 +64766,7 @@ created_by: LJ
 [Term]
 id: UBERON:4500003
 name: predorsal scale
-def: "Scale that is part of row along the midline between the dorsal fin and the back of the skull. In counting, all scales crossing the midline are included. (Fishbase)" []
+def: "Scale that is part of row along the midline between the dorsal fin and the back of the skull. In counting, all scales crossing the midline are included. (Fishbase) " []
 is_a: UBERON:0007380 ! dermal scale
 created_by: LMJ
 
@@ -65195,7 +65203,7 @@ property_value: IAO:0000232 "this class represents a series of phalanges plus a 
 
 [Term]
 id: UBERON:6003218
-name: adult muscle system
+name: insect adult muscle system
 namespace: uberon
 def: "Muscle system of the adult." [FlyBase:FBrf0007735]
 xref: FBbt:00003218
@@ -65203,11 +65211,11 @@ is_a: UBERON:0000383 ! musculature of body
 
 [Term]
 id: UBERON:6003259
-name: adult somatic muscle
+name: insect adult somatic muscle
 namespace: uberon
 def: "Muscle attached to the inner surface of the adult body wall, extending between articulated or flexibly joined areas, that serves to move the parts of the exoskeleton." [FlyBase:FBrf0007735]
 xref: FBbt:00003259
-relationship: part_of UBERON:6003218 ! adult muscle system
+relationship: part_of UBERON:6003218 ! insect adult muscle system
 
 [Term]
 id: UBERON:7500033
@@ -65353,6 +65361,17 @@ synonym: "P3" RELATED []
 synonym: "upper third permanent premolar tooth" EXACT []
 is_a: UBERON:0016452 ! upper secondary premolar tooth
 created_by: https://orcid.org/0000-0003-2699-3066
+
+[Term]
+id: UBERON:8000009
+name: Purkinje fiber network
+namespace: uberon
+def: "A collection of Purkinje fibers that receives signals from the right and left bundle branches and innervates the ventricular cardiac muscle. The Purkinje fiber network creates synchronized contractions of the heart ventricles." [http://www.ncbi.nlm.nih.gov/pubmed/26786210]
+synonym: "Purkinje fibre network" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/26786210]
+is_a: UBERON:0010131 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! conducting tissue of heart
+is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
+relationship: part_of UBERON:0002354 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! cardiac Purkinje fiber
+created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: http://owltools.org/Q

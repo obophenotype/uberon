@@ -608,7 +608,7 @@ name: atrioventricular bundle cell
 def: "A specialized cardiomyocyte that transmit signals from the AV node to the cardiac Purkinje fibers." []
 synonym: "AV bundle cell" EXACT []
 is_a: CL:0010007 ! His-Purkinje system cell
-relationship: part_of UBERON:0002353 ! atrioventricular bundle
+relationship: part_of UBERON:0002353 ! bundle of His
 
 [Term]
 id: CL:0010006
@@ -854,7 +854,7 @@ namespace: cell
 def: "A transitional myocyte that is part of the left branch of atrioventricular bundle." []
 xref: FMA:263170
 is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
-relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
+relationship: part_of UBERON:0005986 ! left bundle branch
 
 [Term]
 id: CL:1000371
@@ -863,7 +863,7 @@ namespace: cell
 def: "A transitional myocyte that is part of the right branch of atrioventricular bundle." []
 xref: FMA:263172
 is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
-relationship: part_of UBERON:0005987 ! right branch of atrioventricular bundle
+relationship: part_of UBERON:0005987 ! right bundle branch
 
 [Term]
 id: CL:1000372
@@ -898,7 +898,7 @@ xref: FMA:263180
 is_a: CL:0002074 ! myocardial endocrine cell
 is_a: CL:0010005 ! atrioventricular bundle cell
 is_a: CL:2000046 ! ventricular cardiac muscle cell
-relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
+relationship: part_of UBERON:0005986 ! left bundle branch
 
 [Term]
 id: CL:1000376
@@ -8317,16 +8317,18 @@ property_value: UBPROP:0000003 "Three major adaptations, or 'novel cardiac compo
 
 [Term]
 id: UBERON:0002353
-name: atrioventricular bundle
+name: bundle of His
 namespace: uberon
 def: "A part of the His-Purkinje system that transmits signals from the AV node to the cardiac Purkinje fibers[GO]" [GO:0003166, GOC:mtg_heart]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "A-V bundle" RELATED [EMAPA:35152]
-synonym: "atrio-ventricular bundle" RELATED [EMAPA:35152]
+synonym: "atrio-ventricular bundle" EXACT [EMAPA:35152]
+synonym: "atrioventricular bundle" EXACT []
 synonym: "atrioventricular bundle muscle tissue" EXACT [FMA:9484]
 synonym: "atrioventricular fasciculus" EXACT [FMA:9484]
 synonym: "AV bundle" EXACT []
+synonym: "AVB" EXACT ABBREVIATION []
 synonym: "bundle of His" EXACT [FMA:9484, GO:0003166]
 synonym: "fasciculus atrioventricularis" EXACT LATIN [http://en.wikipedia.org/wiki/Bundle_of_His]
 synonym: "His bundle" EXACT []
@@ -8373,7 +8375,7 @@ xref: Purkinje:fiber
 xref: UMLS:C0034144 {source="ncithesaurus:Purkinje_Fiber"}
 is_a: UBERON:0010131 {source="FMA"} ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
-relationship: part_of UBERON:0004146 {source="GO"} ! His-Purkinje system
+relationship: part_of UBERON:8000009 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! Purkinje fiber network
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/96/Gray498.png xsd:anyURI
 
 [Term]
@@ -10928,6 +10930,8 @@ namespace: uberon
 def: "The His-Purkinje system receives signals from the AV node and is composed of the fibers that regulate cardiac muscle contraction in the ventricles" [GO:0003164, https://github.com/geneontology/go-ontology/issues/12451]
 synonym: "His-Purkinji network" EXACT []
 synonym: "HPS" EXACT ABBREVIATION []
+synonym: "VCS" EXACT []
+synonym: "ventricular conduction system" EXACT []
 is_a: UBERON:0010131 {source="cjm"} ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
 relationship: part_of UBERON:0002350 {source="GO"} ! conducting system of heart
@@ -14222,12 +14226,14 @@ property_value: IAO:0000116 "TODO - change relation from part_of" xsd:string
 
 [Term]
 id: UBERON:0005986
-name: left branch of atrioventricular bundle
+name: left bundle branch
 namespace: uberon
 def: "The left branch of the atrioventricular bundle that separates at the bundle of His, descends the septal wall of the left ventricle and connects to the terminal Purkinje fiber[MP]." [MP:0010566]
 subset: pheno_slim
 synonym: "crus sinistrum (fasciculi atrioventricularis)" EXACT [FMA:9487]
 synonym: "crus sinistrum fasciculi atrioventricularis" EXACT LATIN [FMA:9487, FMA:TA]
+synonym: "LBB" EXACT ABBREVIATION []
+synonym: "left branch of atrioventricular bundle" EXACT []
 synonym: "left bundle branch" EXACT [MP:0010566]
 synonym: "left bundle branch of bundle of His" EXACT [HP:0005172]
 synonym: "left bundle of atrioventricular bundle" EXACT [MP:0010566]
@@ -14240,16 +14246,18 @@ xref: galen:LeftBundleBranch
 xref: http://www.snomedbrowser.com/Codes/Details/277690001
 is_a: UBERON:0010131 ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
-relationship: part_of UBERON:0002353 ! atrioventricular bundle
+relationship: part_of UBERON:0002353 ! bundle of His
 
 [Term]
 id: UBERON:0005987
-name: right branch of atrioventricular bundle
+name: right bundle branch
 namespace: uberon
 def: "The right branch of the atrioventricular bundle that separates just below the bundle of His, descends the septal wall of the right ventricle and connects to the terminal Purkinje fibers[MP]." [MP:0010567]
 subset: pheno_slim
 synonym: "crus dextrum (fasciculi atrioventricularis)" EXACT [FMA:9486]
 synonym: "crus dextrum fasciculi atrioventricularis" EXACT LATIN [FMA:9486, FMA:TA]
+synonym: "RBB" EXACT ABBREVIATION []
+synonym: "right branch of atrioventricular bundle" EXACT []
 synonym: "right bundle" EXACT [FMA:9486, MP:0010567]
 synonym: "right bundle branch" EXACT [FMA:9486]
 synonym: "right bundle branch of bundle of His" EXACT []
@@ -14261,7 +14269,7 @@ xref: galen:RightBundleBranch
 xref: http://www.snomedbrowser.com/Codes/Details/277689005
 is_a: UBERON:0010131 ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
-relationship: part_of UBERON:0002353 ! atrioventricular bundle
+relationship: part_of UBERON:0002353 ! bundle of His
 
 [Term]
 id: UBERON:0005988
@@ -23406,7 +23414,7 @@ created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:6001664
-name: embryonic/larval circulatory system
+name: insect embryonic/larval circulatory system
 namespace: uberon
 def: "Tubular system of the embryo/larva through which hemolymph flows." [FlyBase:FBrf0031012]
 synonym: "larval circulatory system" EXACT []
@@ -23415,13 +23423,24 @@ is_a: UBERON:0001009 ! circulatory system
 
 [Term]
 id: UBERON:6001668
-name: embryonic/larval lymph gland
+name: insect embryonic/larval lymph gland
 namespace: uberon
 def: "Hematopoietic organ of the larva, located along the dorsal vessel, behind the brain. It produces the plasmatocytes, crystal cells and lamellocytes which are released at the end of the larval instar and onset of metamorphosis. It is composed of 3 pairs of bilateral lobes: an anterior primary lobe, a posterior secondary lobe and the most posterior lobe (or multiple lobes), the tertiary lobe. Each lobe is separated by pericardial cells. In the late embryo, the lymph gland consists of a single pair of lobes (primary lobes) containing around 20 cells each that flank the dorsal vessel. By the second larval instar, the lymph gland is composed of two or three new pairs of posterior lobes, and the primary lobes have increased in size to contain around 200 cells. During the first and early second larval instars, the lymph gland comprises only the hematopoietic progenitor population. The lymph gland increases in size ten-fold by the late third instar, and at this stage the progenitor cells (prohemocytes) become restricted to the medial region (medullary zone) of the primary lobe and become quiescent. The differentiated hemocytes are found in the periphery (cortical zone) of the primary lobe and these cells proliferate extensively. The posterior signalling center is a group of about 30 cells at the posterior tip of the primary lobe that secretes several signalling molecules and functions as a stem-cell niche. The secondary and tertiary lobes contain prohemocytes, and rarely a differentiated cell. Lymph glands are eliminated at metamorphosis." [FlyBase:FBrf0031001, FlyBase:FBrf0032406, FlyBase:FBrf0074444, FlyBase:FBrf0155787, FlyBase:FBrf0162082, FlyBase:FBrf0187467]
 synonym: "embryonic/larval hematopoietic organ" EXACT [FlyBase:FBrf0074444]
 synonym: "hematopoietic organ" EXACT []
 xref: FBbt:00001668
-relationship: part_of UBERON:6001664 ! embryonic/larval circulatory system
+relationship: part_of UBERON:6001664 ! insect embryonic/larval circulatory system
+
+[Term]
+id: UBERON:8000009
+name: Purkinje fiber network
+namespace: uberon
+def: "A collection of Purkinje fibers that receives signals from the right and left bundle branches and innervates the ventricular cardiac muscle. The Purkinje fiber network creates synchronized contractions of the heart ventricles." [http://www.ncbi.nlm.nih.gov/pubmed/26786210]
+synonym: "Purkinje fibre network" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/26786210]
+is_a: UBERON:0010131 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! conducting tissue of heart
+is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
+relationship: part_of UBERON:0002354 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! cardiac Purkinje fiber
+created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: UBERON:8410017
@@ -23479,7 +23498,6 @@ def: "An artery that enters the lymph node at the hilum and branches into smalle
 synonym: "artery of lymph node" EXACT []
 synonym: "hilar artery of lymph node" EXACT []
 is_a: UBERON:0001637 ! artery
-created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: http://owltools.org/Q

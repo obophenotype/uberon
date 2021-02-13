@@ -3055,7 +3055,7 @@ xref: EMAPA:37601 {source="MA:th"}
 xref: FMA:11338
 xref: http://www.snomedbrowser.com/Codes/Details/264021000
 xref: MA:0000332
-relationship: part_of UBERON:0000160 ! intestine
+is_a: UBERON:8410024 ! intestinal junction
 
 [Term]
 id: UBERON:0001096
@@ -6115,7 +6115,7 @@ xref: ZFA:0007006
 relationship: part_of UBERON:0000165 {source="BTO", source="FMA-implicit", source="VHOG", source="ZFA"} ! mouth
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/90/Lips.JPG xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/99/Mouth.jpg xsd:anyURI
-property_value: UBPROP:0000001 "Surface structure that is one of the two fleshy folds surrounding the opening of the mouth.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0007006", ontology="TAO", source="http://purl.obolibrary.org/obo/uberon/http//:www.medterms.com/script/main/art.asp?articlekey=9458", source="ZFIN:curator"}
+property_value: UBPROP:0000001 "Surface structure that is one of the two fleshy folds surrounding the opening of the mouth.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0007006", ontology="TAO", source="http://purl.obolibrary.org/obo/uberon/http/:www.medterms.com/script/main/art.asp?articlekey=9458", source="ZFIN:curator"}
 property_value: UBPROP:0000007 "labial" xsd:string
 
 [Term]
@@ -12799,6 +12799,7 @@ xref: http://www.snomedbrowser.com/Codes/Details/245445008
 xref: NCIT:C34245
 xref: Pectinate:line
 xref: UMLS:C0821671 {source="ncithesaurus:Pectinate_Line"}
+is_a: UBERON:8410024 ! intestinal junction
 relationship: part_of UBERON:0000159 ! anal canal
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/7b/Hemorrhoid.png xsd:anyURI
 property_value: UBPROP:0000012 "FMA also has FMA:29321 but it's not clear how this differs" xsd:string {external_ontology="FMA"}
@@ -15269,6 +15270,7 @@ xref: FMA:14558
 xref: http://www.snomedbrowser.com/Codes/Details/245415005
 xref: MA:0002561
 xref: Sections
+is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: part_of UBERON:0000945 ! stomach
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/29/Regions_of_stomach.svg xsd:anyURI
 property_value: IAO:0000116 "We follow Kardong in defining stomach regions by gland, but we also include 'body of stomach'. In future we may want to have different partitions of the stomach" xsd:string
@@ -21123,6 +21125,16 @@ relationship: part_of UBERON:0006672 ! incisive canal
 property_value: UBPROP:0000008 "horses exhibit Flehmen response but do not have an incisive duct communication between the nasal and the oral cavity because they do not breathe through their mouths, instead, the VNOs connect to the nasal passages by the nasopalatine duct" xsd:string
 
 [Term]
+id: UBERON:0036214
+name: rectosigmoid junction
+namespace: uberon
+def: "An anatomical junction that is between the sigmoid colon and rectum." [https://github.com/obophenotype/uberon/issues/1319, https://www.cdc.gov/cancer/npcr/pdf/abstracting/colon.pdf, NCIT:C54188]
+synonym: "rectosigmoid region" RELATED [NCIT:C54188]
+xref: http://www.snomedbrowser.com/Codes/Details/245429006
+xref: NCIT:C54188
+is_a: UBERON:8410024 ! intestinal junction
+
+[Term]
 id: UBERON:0036274
 name: tonsillar pillar
 namespace: uberon
@@ -22532,7 +22544,7 @@ created_by: amphibian_anatomy_curators
 [Term]
 id: UBERON:4200198
 name: incisor process
-def: "Process that is part of the mandible that is in close proximity to the incisor teeth." []
+def: "Process that is part of the mandible that is in close proximity to the incisor teeth. " []
 relationship: part_of UBERON:0001684 ! mandible
 created_by: AD
 
@@ -22627,7 +22639,7 @@ created_by: WD
 [Term]
 id: UBERON:4300133
 name: upper jaw symphyseal region
-def: "The region of the upper jaw on or near the midline. [PHENOSCAPE:WD]" []
+def: " The region of the upper jaw on or near the midline. [PHENOSCAPE:WD]" []
 synonym: "upper jaw symphysial region" EXACT []
 is_a: UBERON:0001709 ! upper jaw region
 created_by: WD
@@ -22734,7 +22746,7 @@ is_a: UBERON:0001007 ! digestive system
 
 [Term]
 id: UBERON:6001845
-name: cephalopharyngeal skeleton
+name: insect cephalopharyngeal skeleton
 namespace: uberon
 def: "A group of connected sclerites of the anterior embryonic/larval digestive system (atrium, pharynx and dorsal pouch). The cibarial dilator muscles connect to the cephalopharyngeal skeleton to lift the roof of the pharynx and thereby widen its lumen (Jurgens, 1986)." [FlyBase:FBrf0007734, FlyBase:FBrf0045366]
 synonym: "cephalo-pharyngeal skeleton" EXACT [FlyBase:FBrf0045366]
@@ -22745,12 +22757,12 @@ relationship: part_of UBERON:6001842 ! insect embryonic/larval digestive system
 
 [Term]
 id: UBERON:6001848
-name: epipharyngeal sclerite
+name: insect epipharyngeal sclerite
 namespace: uberon
 def: "Unpaired sclerite to which the median tooth (labrum) posteriorly merges, and bears the cuticular pores of the labral sense organ." [FlyBase:FBrf0045366]
 synonym: "epistomal sclerite" EXACT [FlyBase:FBrf0045366]
 xref: FBbt:00001848
-relationship: part_of UBERON:6001845 ! cephalopharyngeal skeleton
+relationship: part_of UBERON:6001845 ! insect cephalopharyngeal skeleton
 
 [Term]
 id: UBERON:7500052
@@ -22817,10 +22829,11 @@ id: UBERON:8400001
 name: hepatic acinus zone 1
 namespace: uberon
 def: "The region of the hepatic acinus that is closest to the arterial blood supply and has the highest oxygen concentration. Hepatocytes in this region are primarily involved in oxidative energy metabolism." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
+synonym: "hepatic acinus periportal zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 synonym: "liver lobule periportal zone" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0001172 ! hepatic acinus
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-09-08T14:14:21Z
 
 [Term]
@@ -22828,10 +22841,13 @@ id: UBERON:8400002
 name: hepatic acinus zone 3
 namespace: uberon
 def: "The region of the hepatic acinus immediately surrounding the central veins. This region has the lowest oxygen concentration in the acinus. Hepatocytes in this region are the primary location for the biotransformation of drugs." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
+synonym: "hepatic acinus centrilobular zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
+synonym: "hepatic acinus pericentral zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
+synonym: "hepatic acinus perivenous zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 synonym: "liver lobule centrilobular region" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0001172 ! hepatic acinus
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-09-08T15:05:03Z
 
 [Term]
@@ -22839,10 +22855,11 @@ id: UBERON:8400003
 name: hepatic acinus zone 2
 namespace: uberon
 def: "The region of the hepatic acinus in between zones 1 and 3. Blood in this region has an intermediate oxygen concentration relative to the other two zones of the hepatic acinus. Hepatocytes in this region have mixed functionality in comparison with those in zones 1 and 3." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
+synonym: "hepatic acinus intermediary zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 synonym: "liver lobule midzonal region" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0001172 ! hepatic acinus
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-09-08T15:15:57Z
 
 [Term]
@@ -22851,8 +22868,9 @@ name: metabolic zone of liver
 namespace: uberon
 def: "Any of the metabolic zones found in the hepatic acinus. Liver tissue is heterogenous at the level of morphometry and histochemistry. This heterogeneity is linked to the position of a cell within the functional unit of the tissue, which, in turn, is related to the blood supply: Cells located in the upstream zone differ from those in the downstream zone with respect to subcellular structures, key enzymes, translocators, and receptors and, therefore, have different metabolic capacities. This is the basis for \"metabolic zonation\", a concept first proposed for carbohydrate metabolism and later expanded to include amino acid and ammonia metabolism, xenobiotic metabolism, protective metabolism, and formation of plasma proteins." [http://www.ncbi.nlm.nih.gov/pubmed/8839925]
 synonym: "hepatic acinus metabolic zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/8839925]
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
-creation_date: 2020-09-29T15:45:36Z
+relationship: part_of UBERON:0002107 ! liver
+created_by: http://orcid.org/0000-0003-2034-601X
+creation_date: 202z-09-29T15:45:36Z
 
 [Term]
 id: UBERON:8400006
@@ -22862,7 +22880,7 @@ def: "The region of the liver lobule that is closest to the portal triad." [http
 synonym: "hepatic acinus zone 1" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0004647 ! liver lobule
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-10-05T12:56:57Z
 
 [Term]
@@ -22873,7 +22891,7 @@ def: "The region of the liver lobule that is closest to the central vein." [http
 synonym: "hepatic acinus zone 3" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0004647 ! liver lobule
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-10-05T15:43:18Z
 
 [Term]
@@ -22884,8 +22902,42 @@ def: "The region of the liver lobule that is between the periportal and centrilo
 synonym: "hepatic acinus zone 2" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0004647 ! liver lobule
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-10-05T15:52:22Z
+
+[Term]
+id: UBERON:8400021
+name: liver serosa
+namespace: uberon
+def: "Hepatic serous coat; peritoneal covering of the liver, enclosing almost all except for a triangular area on its posterior surface (the \"bare area of the liver\") and a smaller area where the liver and gallbladder are in direct contact." [https://medical-dictionary.thefreedictionary.com/serosa+of+liver, https://orcid.org/0000-0002-0449-2730]
+synonym: "serosa of liver" EXACT [FMA:15811]
+synonym: "tunica serosa hepatis" EXACT [https://medical-dictionary.thefreedictionary.com/serosa+of+liver] {synonymtypedef="LATIN"}
+relationship: part_of UBERON:0002107 ! liver
+created_by: https://orcid.org/0000-0003-2034-601X
+
+[Term]
+id: UBERON:8400023
+name: liver subserosa
+namespace: uberon
+def: "Subserosal tissue of liver. A zone of areolar connective tissue lying beneath the serous coat of the liver and distinguished with difficulty from the fibrous capsule of Glisson." [FMA:15812, https://medical-dictionary.thefreedictionary.com/subserosa+of+liver, https://orcid.org/0000-0002-0449-2730]
+synonym: "hepatic subserosa" EXACT []
+synonym: "subserosal tissue of liver" EXACT []
+synonym: "subserous layer of liver" EXACT []
+synonym: "tela subserosa (hepar)" EXACT [FMA:15821]
+synonym: "tela subserosa hepatis" EXACT [https://medical-dictionary.thefreedictionary.com/subserosa+of+liver]
+relationship: part_of UBERON:0002107 ! liver
+created_by: https://orcid.org/0000-0003-2034-601X
+
+[Term]
+id: UBERON:8400024
+name: subcapsular region of liver
+namespace: uberon
+def: "Region of liver parenchyma immediately below the capsule. This region is frequently specified in pathology diagnoses." [http://www.ncbi.nlm.nih.gov/pubmed/30992875, https://orcid.org/0000-0002-0449-2730]
+synonym: "liver subcapsular region" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/30992875]
+synonym: "liver subcapsular tissue" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/30992875]
+synonym: "subcapsular tissue of liver" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/30992875]
+is_a: UBERON:0001280 ! liver parenchyma
+created_by: https://orcid.org/0000-0003-2034-601X
 
 [Term]
 id: UBERON:8410000
@@ -22895,11 +22947,12 @@ def: "The anatomical junction between the duodenum and the jejunum." [http://www
 synonym: "duodeno-jejunal flexure" EXACT []
 synonym: "duodenojejunal flexure" EXACT []
 synonym: "duodenojejunal junction" EXACT []
-synonym: "flexura duodenojejunalis" EXACT [] {http://purl.obolibrary.org/obo/uberon/core#LATIN=""}
+synonym: "flexura duodenojejunalis" EXACT LATIN [http://en.wikipedia.org/wiki/Duodenojejunal_flexure]
 xref: FMA:15957
 xref: https://orcid.org/0000-0003-4183-8865
 xref: TA2:2952
 xref: WikipediaVersioned:Duodenojejunal_flexure&oldid=937307798
+is_a: UBERON:8410024 ! intestinal junction
 relationship: part_of UBERON:0002108 ! small intestine
 
 [Term]
@@ -22910,6 +22963,7 @@ def: "The anatomical junction between the descending colon and the sigmoid colon
 synonym: "descending-sigmoid colon junction" EXACT []
 synonym: "descending-sigmoid junction" EXACT []
 synonym: "sigmoid junction" BROAD []
+is_a: UBERON:8410024 ! intestinal junction
 relationship: part_of UBERON:0000168 ! proximal-distal subdivision of colon
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -22919,7 +22973,17 @@ name: jejuno-ileal junction
 namespace: uberon
 def: "The area where the jejunum ends and the ileum part of the intestine begins. Although there is no clear distinct section, the ileum is narrower and has smaller villi than the jejunum." [http://www.ncbi.nlm.nih.gov/pubmed/21802415, https://doi.org/10.1016/B978-1-4377-2206-2.00068-3, https://orcid.org/0000-0003-4183-8865]
 synonym: "jejunoileal junction" EXACT []
+is_a: UBERON:8410024 ! intestinal junction
 relationship: part_of UBERON:0002108 ! small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410024
+name: intestinal junction
+namespace: uberon
+def: "An anatomical junction between two parts of the intestine." [ORCID:0000-0002-7073-9172]
+synonym: "junction of intestine" EXACT []
+relationship: part_of UBERON:0000160 ! intestine
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]

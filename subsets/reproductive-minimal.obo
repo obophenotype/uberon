@@ -1854,8 +1854,8 @@ def: "external genital organs of the female mammal[WP]." [http://en.wikipedia.or
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
-synonym: "female pudendum" EXACT [BTO:0003101]
 synonym: "female pudendum" EXACT [FMA:20462]
+synonym: "female pudendum" EXACT [BTO:0003101]
 synonym: "mammalian vulva" EXACT []
 synonym: "puboperineal region" EXACT [FMA:20462]
 synonym: "pudendum" RELATED [BTO:0003101]
@@ -8490,6 +8490,44 @@ xref: http://orcid.org/0000-0001-7505-5418
 is_a: UBERON:0003889 ! fallopian tube
 property_value: RO:0002175 "Mammalia" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410025
+name: transition zone of prostate
+namespace: uberon
+def: "The region of the prostate gland anterior to the central and peripheral zones, surrounding the proximal urethra. It is the zone of the human prostate gland that grows the most throughout life, and is responsible for benign prostatic hypertrophy." [http://www.ncbi.nlm.nih.gov/pubmed/30566875, https://orcid.org/0000-0002-7431-4139]
+subset: added_for_HCA
+synonym: "prostate transition zone" EXACT []
+synonym: "transition zone of human prostate" NARROW []
+is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0002367 ! prostate gland
+property_value: RO:0002175 "Homo sapiens" xsd:string {xref="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410026
+name: peripheral zone of prostate
+namespace: uberon
+def: "The region of the prostate that is located posterior to the central and transition zones, surrounding the distal urethra. It is the zone of origin for the vast majority of human prostatic cancers." [http://www.ncbi.nlm.nih.gov/pubmed/30566875, https://orcid.org/0000-0002-7431-4139]
+subset: added_for_HCA
+synonym: "peripheral zone of human prostate" NARROW []
+synonym: "prostate peripheral zone" EXACT []
+is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0002367 ! prostate gland
+property_value: RO:0002175 "Homo sapiens" xsd:string {xref="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410027
+name: central zone of prostate
+namespace: uberon
+def: "The region of the prostate gland that is located between the peripheral and transition zones, surrounding the ejaculatory ducts. It gives rise to a very small percentage of human prostate cancers, often aggressive and invading the seminal vesicles." [http://www.ncbi.nlm.nih.gov/pubmed/30566875, https://orcid.org/0000-0002-7431-4139]
+subset: added_for_HCA
+synonym: "central zone of human prostate" NARROW []
+synonym: "prostate central zone" EXACT []
+is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0002367 ! prostate gland
+property_value: RO:0002175 "Homo sapiens" xsd:string {xref="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
 
 [Term]
 id: http://owltools.org/Q

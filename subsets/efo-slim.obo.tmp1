@@ -225,6 +225,7 @@ xref: XAO:0000017
 xref: ZFA:0000118
 is_a: UBERON:0002530 ! gland
 relationship: develops_from UBERON:0000033 ! head
+relationship: immediate_transformation_of UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0000949 ! endocrine system
 relationship: part_of UBERON:0001894 ! diencephalon
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/9/97/Gray1180.png xsd:anyURI
@@ -277,7 +278,6 @@ xref: UMLS:C1305921 {source="BIRNLEX:1111"}
 xref: VHOG:0000399
 xref: XAO:0000178
 xref: ZFA:0000142
-relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: part_of UBERON:0001016 ! nervous system
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png xsd:anyURI
 property_value: external_definition "Nervous structures including ganglia outside of the central nervous system. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000142", ontology="TAO", source="ZFIN:curator"}
@@ -682,7 +682,6 @@ xref: XAO:0000209
 xref: ZFA:0000190
 disjoint_from: UBERON:0002420 {inconsistent_with="BTO"} ! basal ganglion
 relationship: dc-contributor https://github.com/cmungall
-relationship: immediate_transformation_of UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0001016 ! nervous system
 property_value: editor_note "TODO - check vert vs invert. Other species: Any of a number of aggregations of neurons, glial cells and their processes, surrounded by a glial cell and connective tissue sheath (plural: ganglia). // Subdivision of neural tree (organ) which primarily consists of cell bodies of neurons located outside the neuraxis (brain and spinal cord); together with a nucleus and its associated nerve, it constitutes a neural tree (organ). Examples: spinal ganglion, trigeminal ganglion, superior cervical ganglion, celiac ganglion, inferior hypogastric (pelvic) ganglion. // a cluster of nerve cells and associated glial cells (nuclear location) // Portion of tissue that contains cell bodies of neurons and is located outside the central nervous system." xsd:string
 property_value: external_definition "A ganglion is a cluster of neurons. It is part of a nervous system. It may include glial cells. The neurons are arranged in a specific constellation: neuronal somata are concentrated at the surface, thus forming a cell cortex, and neurites are concentrated in the centre of the ganglion to form the neuropil. A ganglion is a distinct unit but several ganglia may be anterio-posteriorly joined by connectives or transversally by commissures" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/21062451"}
@@ -947,7 +946,6 @@ relationship: develops_from UBERON:0000064 ! organ part
 relationship: develops_from UBERON:0000080 ! mesonephros
 relationship: develops_from UBERON:0004122 ! genitourinary system
 relationship: part_of UBERON:0000064 ! organ part
-relationship: part_of UBERON:0002113 ! kidney
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/3/30/Gray1130.svg xsd:anyURI
 property_value: depicted_by Renal:corpuscle.svg xsd:anyURI
 property_value: external_ontology_notes "ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries. GUDMAP: 'Together, the Bowman's capsule and the glomerulus comprise the definitive renal corpuscle.' - here the glomerulus is part of the capsule?" xsd:string {external_ontology="ZFA"}
@@ -1478,12 +1476,13 @@ relationship: dc-contributor https://github.com/cmungall
 relationship: dc-contributor https://github.com/tmeehan
 relationship: develops_from UBERON:0006596 ! presumptive blood
 relationship: immediate_transformation_of UBERON:0006596 {source="Bgee:AN"} ! presumptive blood
+relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: part_of UBERON:0002390 ! hematopoietic system
 property_value: axiom_lost_from_external_ontology "relationship loss: subclass specialized connective tissue (AAO:0000571)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000046", ontology="AAO"}
 property_value: curator_notes "This class excludes blood analogues, such as the insect analog of blood. See UBERON:0000179 haemolymphatic fluid." xsd:string
 property_value: external_definition "A complex mixture of cells suspended in a liquid matrix that delivers nutrients to cells and removes wastes. (Source: BioGlossary, www.Biology-Text.com)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000007", ontology="TAO", source="ZFIN:curator"}
 property_value: external_definition "Highly specialized circulating tissue consisting of several types of cells suspended in a fluid medium known as plasma.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000046", ontology="AAO", source="AAO:LAP"}
-property_value: homology_notes "Recent findings strongly suggest that the molecular pathways involved in the development and function of blood cells are highly conserved among vertebrates and various invertebrates phyla. (...) There is now good reason to believe that, in vertebrates and invertebrates alike, blood cell lineages diverge from a common type of progenitor cell, the hemocytoblast.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000224", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1146/annurev.cellbio.22.010605.093317 Hartenstein V, Blood cells and blood cell development in the animal kingdom. Annual review of cell and developmental biology (2006)"}
+property_value: homology_notes "Recent findings strongly suggest that the molecular pathways involved in the development and function of blood cells are highly conserved among vertebrates and various invertebrates phyla. (...) There is now good reason to believe that, in vertebrates and invertebrates alike, blood cell lineages diverge from a common type of progenitor cell, the hemocytoblast.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000224", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1146/annurev.cellbio.22.010605.093317 Hartenstein V, Blood cells and blood cell development in the animal kingdom. Annual review of cell and developmental biology (2006) "}
 
 [Term]
 id: UBERON:0000203
@@ -4061,6 +4060,7 @@ disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 relationship: develops_from UBERON:0002050 ! embryonic structure
 relationship: immediate_transformation_of UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0000468 ! multicellular organism
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg xsd:anyURI
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png xsd:anyURI
 property_value: external_definition "A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000396", ontology="TAO", source="ZFIN:curator"}
@@ -4113,7 +4113,7 @@ xref: UMLS:C0927232 {source="BIRNLEX:1099"}
 xref: VHOG:0000293
 xref: XAO:0000215
 xref: ZFA:0000012
-relationship: develops_from UBERON:0000924 ! ectoderm
+relationship: immediate_transformation_of UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0001016 ! nervous system
 property_value: external_definition "Part of the nervous system which includes the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000090", ontology="AAO", source="AAO:BJB"}
 property_value: external_definition "The brain and spinal cord. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000012", ontology="TAO", source="ZFIN:curator"}
@@ -4892,7 +4892,8 @@ xref: OpenCyc:Mx4rvVivz5wpEbGdrcN5Y29ycA
 xref: Thoracid:diaphragm
 xref: UMLS:C0011980 {source="ncithesaurus:Diaphragm"}
 xref: VHOG:0000713
-relationship: immediate_transformation_of UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003059 ! presomitic mesoderm
+relationship: develops_from UBERON:0005253 ! head mesenchyme
 relationship: part_of UBERON:0001004 ! respiratory system
 relationship: part_of UBERON:0004479 ! musculature of trunk
 property_value: development_notes "originate from the cervical somites, likely C3-C5[PMID:23586979]" xsd:string
@@ -6182,7 +6183,6 @@ xref: ZFA:0001626
 relationship: develops_from UBERON:0001886 ! choroid plexus
 relationship: develops_from UBERON:0001969 ! blood plasma
 relationship: develops_from UBERON:0002285 ! telencephalic ventricle
-relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: transformation_of UBERON:0001969 ! blood plasma
 property_value: editor_note "many sources state the CP as sole producer of CSF, but this is disputed [DOI:10.1007/s11064-015-1581-6]" xsd:string
 property_value: external_definition "Portion of organism substance that is a clear fluid that occupies the subarachnoid space and the ventricular system around and inside the brain.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0002184", ontology="TAO", source="ZFIN:curator"}
@@ -7415,7 +7415,8 @@ is_a: UBERON:0001714 ! cranial ganglion
 relationship: dc-contributor https://github.com/ANiknejad
 relationship: dc-contributor https://github.com/cmungall
 relationship: dc-contributor https://github.com/mellybelly
-relationship: develops_from UBERON:0007284 ! presumptive neural plate
+relationship: develops_from UBERON:0003070 ! trigeminal placode complex
+relationship: develops_from UBERON:0005563 ! trigeminal neural crest
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/6/69/Gray776.png xsd:anyURI
 property_value: editor_note "consider renaming this 'trigeminal ganglion complex'. The complex may be fused (amniotes) partially fused (xenopus) or separate (sharks)" xsd:string
 property_value: external_definition "A prominent collection of touch-sensory neurons of the trigeminal or fifth cranial nerve, positioned beside the brain between the eye and the ear. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000295", ontology="TAO", source="ZFIN:curator"}
@@ -9113,6 +9114,7 @@ xref: UMLS:C0039452 {source="BIRNLEX:1115"}
 xref: VHOG:0000283
 xref: XAO:0000012
 xref: ZFA:0000079
+relationship: immediate_transformation_of UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0001890 ! forebrain
 property_value: axiom_lost_from_external_ontology "relationship loss: develops_from presumptive telencephalon (TAO:0000571)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000079", ontology="TAO"}
 property_value: external_definition "Organ component of neuraxis that has as its parts the cerebral cortex, cerebral white matter, basal ganglia, septum and fornix, as well as subcortical gray and white matter structures[FMA:62000]." xsd:string {source="FMA:62000"}
@@ -9251,6 +9253,7 @@ xref: ZFA:0000545
 is_a: UBERON:0000064 ! organ part
 relationship: develops_from UBERON:0002028 ! hindbrain
 relationship: part_of UBERON:0000064 ! organ part
+relationship: part_of UBERON:0002028 ! hindbrain
 relationship: part_of UBERON:0002298 ! brainstem
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/6/6b/Illu_pituitary_pineal_glands.jpg xsd:anyURI
 property_value: external_definition "Posterior portion of the hindbrain which controls respiration, heartbeat, digestion, and swallowing as well as some locomotor responses.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010486", ontology="AAO", source="AAO:BJB"}
@@ -9583,6 +9586,7 @@ xref: VHOG:0000398
 is_a: UBERON:0002530 ! gland
 relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: develops_from UBERON:0001048 ! primordium
+relationship: develops_from UBERON:0002100 ! trunk
 relationship: part_of UBERON:0002416 ! integumental system
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/6/64/Illu_breast_anatomy.jpg xsd:anyURI
 property_value: editor_note "Originally this was classified as a female reproductive structure, as it was in the MP in 2011" xsd:string
@@ -10679,6 +10683,7 @@ relationship: develops_from UBERON:0001048 ! primordium
 relationship: develops_from UBERON:0002028 ! hindbrain
 relationship: dubious_for_taxon NCBITaxon:117569 {source="http://icb.oxfordjournals.org/content/42/4/743.full"}
 relationship: part_of UBERON:0000064 ! organ part
+relationship: part_of UBERON:0000955 ! brain
 relationship: present_in_taxon NCBITaxon:117569 {source="ISBN:0471888893"}
 property_value: depicted_by Cerebellum:NIH.png xsd:anyURI
 property_value: external_definition "Dorsal part of the hindbrain that coordinates muscle movement, posture, and balance.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010485", ontology="AAO", source="AAO:BJB"}
@@ -10821,8 +10826,6 @@ is_a: UBERON:0002530 ! gland
 relationship: develops_from UBERON:0000949 ! endocrine system
 relationship: develops_from UBERON:0001042 ! chordate pharynx
 relationship: develops_from UBERON:0001048 ! primordium
-relationship: develops_from UBERON:0007123 ! pharyngeal pouch 2
-relationship: part_of UBERON:0000949 ! endocrine system
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/a/a3/Illu_thyroid_parathyroid.jpg xsd:anyURI
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/c/c6/Illu_endocrine_system.jpg xsd:anyURI
 property_value: external_definition "Either of paired structures located in the throat which develop from the ventral wall of the pharynx and excretes hormones involved in the morphological and functional changes during metamorphosis as well as influencing other tissues.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010544", ontology="AAO", source="AAO:BJB"}
@@ -11010,6 +11013,7 @@ xref: VHOG:0000108
 xref: XAO:0000217
 xref: ZFA:0001119
 is_a: UBERON:0000064 ! organ part
+relationship: develops_from UBERON:0003059 ! presomitic mesoderm
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0002097 {source="FMA"} ! skin of body
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/2/23/EpidermisPainted.svg xsd:anyURI
@@ -12022,6 +12026,7 @@ xref: UMLS:C0023951 {source="BIRNLEX:905"}
 xref: UMLS:C0023951 {source="ncithesaurus:Locus_Coeruleus"}
 xref: ZFA:0000539
 relationship: part_of UBERON:0000988 ! pons
+relationship: part_of UBERON:0002028 ! hindbrain
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/7/77/Gray709.png xsd:anyURI
 property_value: editor_note "TODO - check ZFA/pons. also GO says part of dorsorostral pons" xsd:string
 
@@ -12098,6 +12103,7 @@ xref: VHOG:0000084
 xref: XAO:0000066
 xref: ZFA:0001320
 is_a: UBERON:0000064 ! organ part
+relationship: immediate_transformation_of UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000948 ! heart
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/6/6c/Gray493.png xsd:anyURI
@@ -13142,7 +13148,8 @@ xref: VHOG:0001295
 xref: ZFA:0001355
 relationship: develops_from UBERON:0001017 ! central nervous system
 relationship: fma_set_term FMA:76821
-relationship: part_of UBERON:0001017 ! central nervous system
+relationship: immediate_transformation_of UBERON:0002050 ! embryonic structure
+relationship: part_of UBERON:0000468 ! multicellular organism
 property_value: depicted_by Illu:meninges.jpg xsd:anyURI
 property_value: external_definition "Membrane covering the brain and spinal cord. It is represented by a single layer in fishes, two in amphibians, reptiles and birds and three in mammals (named dura mater, arachnoid and pia mater). [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001295", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/meninges"}
 property_value: external_ontology_notes "Not consider part of the CNS/neuraxis in FMA" xsd:string {external_ontology="FMA", seeAlso="https://github.com/obophenotype/uberon/issues/1261"}
@@ -13566,7 +13573,6 @@ xref: ZFA:0005023
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 relationship: develops_from UBERON:0003061 {evidence="definitional"} ! blood island
-relationship: part_of UBERON:0000468 ! multicellular organism
 property_value: external_definition "Anatomical system that consists of the blood and blood forming tissues.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0011002", ontology="AAO", source="AAO:EJS"}
 property_value: has_relational_adjective "hematopoietic" xsd:string
 property_value: homology_notes "Zebrafish developmental hematopoiesis shows close correspondence to the development of the mammalian hematopoietic system and is regulated by conserved molecular pathways.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001624", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1016/j.coph.2010.05.004 Ellett F, Lieschke GJ, Zebrafish as a model for vertebrate hematopoiesis. Current Opinion in Pharmacology (2010)"}
@@ -14217,6 +14223,7 @@ is_a: UBERON:0000064 ! organ part
 relationship: develops_from UBERON:0002050 ! embryonic structure
 relationship: part_of UBERON:0000033 ! head
 relationship: part_of UBERON:0000064 ! organ part
+relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0001007 ! digestive system
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/8/8b/Gray41.png xsd:anyURI
 property_value: external_definition "One of a series of bony or cartilaginous arches that develop in the walls of the mouth cavity and pharynx of the embryo.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010359", ontology="AAO", source="NLM:branchial+arch"}
@@ -15071,7 +15078,6 @@ xref: ZFA:0000570
 is_a: UBERON:0001048 ! primordium
 is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0007284 ! presumptive neural plate
-relationship: part_of UBERON:0002050 ! embryonic structure
 property_value: external_ontology_notes "TODO - check that GO's optic placode is the same as ZFA's eye primordium; we may want to have separate term for ocular primordium precursor. XAO has both optic field and eye primordium." xsd:string {external_ontology="GO"}
 
 [Term]
@@ -15234,6 +15240,7 @@ xref: ZFA:0000011
 is_a: UBERON:0001637 ! artery
 relationship: develops_from UBERON:0001637 ! artery
 relationship: develops_from UBERON:0001986 ! endothelium
+relationship: develops_from UBERON:0002533 ! post-anal tail bud
 relationship: develops_from UBERON:0005256 ! trunk mesenchyme
 relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0002100 ! trunk
@@ -15257,6 +15264,7 @@ xref: VHOG:0000126
 xref: XAO:0000390
 xref: ZFA:0000180
 is_a: UBERON:0001638 ! vein
+relationship: develops_from UBERON:0002533 ! post-anal tail bud
 relationship: part_of UBERON:0002415 ! tail
 property_value: axiom_lost_from_external_ontology "relationship loss: develops_from caudal vein plexus (TAO:0001286)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000180", ontology="TAO"}
 property_value: axiom_lost_from_external_ontology "relationship loss: part_of axial vasculature (TAO:0001073)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000180", ontology="TAO"}
@@ -17209,6 +17217,7 @@ xref: MBA:73
 xref: TAO:0001261
 xref: Ventricular:system
 xref: ZFA:0001261
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001017 ! central nervous system
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/7/7d/Gray734.png xsd:anyURI
 property_value: editor_note "TODO - resolve space vs structure conflation. We follow FMA in making this and the various ventricles a structure - it follows from this that strutures such as the tela choroidea and choroid plexuses can be part of the ventricles and ventricular system. Note: see also the class 'neuraxis cavity'" xsd:string
@@ -17637,7 +17646,6 @@ xref: VHOG:0001372
 xref: XAO:0004091
 xref: ZFA:0001178
 relationship: develops_from UBERON:0000924 ! ectoderm
-relationship: part_of UBERON:0000468 ! multicellular organism
 property_value: development_notes "After gastrulation, neural crest cells are specified at the border of the neural plate and the non-neural ectoderm." xsd:string
 property_value: editor_note "todo - epidermis? todo - track down EHDAA2 class in new release" xsd:string
 property_value: homology_notes "In the early gastrula of vertebrates, factors from the organizer (e.g. noggin, chordin, and follistatin in Xenopus) antagonize the epidermalizing factor bone morphogenetic protein 4 (BMP4), thus dividing the epiblast into neuroectoderm. In Drosophila, decapentaplegic, the homologue of BMP4, interacts similarly with the protein short gastrulation, the homologue of chordin. Thus, a comparable molecular mechanism for distinguishing non-neural ectoderm from neural ectoderm was probably present in the common ancestor of all bilaterally symmetrical animals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001372", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1016/S0959-4388(99)00003-3 Holland LZ and Holland ND, Chordate origins of the vertebrate central nervous system. Current Opinion in Neurobiology (1999)"}
@@ -19632,6 +19640,7 @@ xref: EMAPA:16914
 relationship: develops_from UBERON:0005281 ! ventricular system of central nervous system
 relationship: part_of UBERON:0001893 {source="EHDAA2"} ! telencephalon
 relationship: part_of UBERON:0005281 ! ventricular system of central nervous system
+relationship: part_of UBERON:0006238 ! future brain
 
 [Term]
 id: UBERON:0009752
