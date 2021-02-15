@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/pr_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2020-09-16/pr_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-02-12/pr_import.owl"/>
     </owl:Ontology>
     
 
@@ -43,8 +43,26 @@
     <!-- http://purl.obolibrary.org/obo/CHEBI_23367 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23367">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24431 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24431">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chemical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50047 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50047">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic amino compound</rdfs:label>
     </owl:Class>
     
 
@@ -133,8 +151,17 @@
     <!-- http://purl.obolibrary.org/obo/PR_000018263 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018263">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50047"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino acid chain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000018264 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018264">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proteolytic cleavage product</rdfs:label>
     </owl:Class>
     
 
@@ -143,7 +170,16 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000027222">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calcitonin</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALCA gene translation product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000028527 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000028527">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">casein derived peptide</rdfs:label>
     </owl:Class>
     
 
@@ -158,6 +194,9 @@
 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_component</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
 
