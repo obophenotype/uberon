@@ -7,7 +7,7 @@
 
 ## Right
 - Ontology IRI: `http://purl.obolibrary.org/obo/uberon.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2021-02-08/uberon.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2021-02-12/uberon.owl`
 - Loaded from: `file:/work/ws/uberon/diffs/../uberon.owl`
 
 ### Ontology imports 
@@ -16,52 +16,102 @@
 
 ### Ontology annotations 
 #### Removed
-- [creator](http://purl.org/dc/elements/1.1/creator) "Chris Mungall - http://orcid.org/0000-0002-6601-2165    "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
 - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Includes Ontology(OntologyID(OntologyIRI(&lt;http://purl.obolibrary.org/obo/uberon/ext.owl&gt;) VersionIRI(&lt;null&gt;))) [Axioms: 26464 Logical Axioms: 4904]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [creator](http://purl.org/dc/elements/1.1/creator) "Chris Mungall - http://orcid.org/0000-0002-6601-2165"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
 - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Includes Ontology(OntologyID(OntologyIRI(&lt;http://purl.obolibrary.org/obo/uberon/ext.owl&gt;) VersionIRI(&lt;null&gt;))) [Axioms: 26525 Logical Axioms: 4920]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### Harderian gland `http://purl.obolibrary.org/obo/UBERON_0004187`
+### Bolwig organ `http://purl.obolibrary.org/obo/UBERON_6005805`
 #### Removed
-- [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9681](http://purl.obolibrary.org/obo/NCBITaxon_9681) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) [10639](https://sourceforge.net/p/geneontology/ontology-requests/10639) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMID:6997222 "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [Bolwig organ](http://purl.obolibrary.org/obo/UBERON_6005805) [label](http://www.w3.org/2000/01/rdf-schema#label) "Bolwig organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9681](http://purl.obolibrary.org/obo/NCBITaxon_9681) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMID:6997222"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) [10639](https://sourceforge.net/p/geneontology/ontology-requests/10639) 
+- [Bolwig organ](http://purl.obolibrary.org/obo/UBERON_6005805) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect Bolwig organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### LATIN `http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/uberon/core#LATIN`
-
-#### Added
-- AnnotationProperty: [LATIN](http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/uberon/core#LATIN) 
-
-
-### Meyer's loop of optic radiation `http://purl.obolibrary.org/obo/UBERON_0035935`
+### Bolwig organ primordium `http://purl.obolibrary.org/obo/UBERON_6005830`
 #### Removed
-- [Meyer's loop of optic radiation](http://purl.obolibrary.org/obo/UBERON_0035935) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "part of the optic radiation which sweeps back on itself into the temporal lobe, just lateral to the temporal horn of the lateral ventricle. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [meyer-loop](http://radiopaedia.org/articles/meyer-loop) 
+- [Bolwig organ primordium](http://purl.obolibrary.org/obo/UBERON_6005830) [label](http://www.w3.org/2000/01/rdf-schema#label) "Bolwig organ primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [Meyer's loop of optic radiation](http://purl.obolibrary.org/obo/UBERON_0035935) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "part of the optic radiation which sweeps back on itself into the temporal lobe, just lateral to the temporal horn of the lateral ventricle."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [meyer-loop](http://radiopaedia.org/articles/meyer-loop) 
+- [Bolwig organ primordium](http://purl.obolibrary.org/obo/UBERON_6005830) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect Bolwig organ primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### Y bone `http://purl.obolibrary.org/obo/UBERON_4300091`
+### His-Purkinje system `http://purl.obolibrary.org/obo/UBERON_0004146`
+
+#### Added
+- [His-Purkinje system](http://purl.obolibrary.org/obo/UBERON_0004146) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "VCS"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [His-Purkinje system](http://purl.obolibrary.org/obo/UBERON_0004146) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ventricular conduction system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### Purkinje fiber network `http://purl.obolibrary.org/obo/UBERON_8000009`
+
+#### Added
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) [label](http://www.w3.org/2000/01/rdf-schema#label) "Purkinje fiber network"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A collection of Purkinje fibers that receives signals from the right and left bundle branches and innervates the ventricular cardiac muscle. The Purkinje fiber network creates synchronized contractions of the heart ventricles."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [26786210](http://www.ncbi.nlm.nih.gov/pubmed/26786210) 
+
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8000009"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Purkinje fibre network"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [26786210](http://www.ncbi.nlm.nih.gov/pubmed/26786210) 
+
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0001-5208-3432"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) 
+
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) SubClassOf [conducting tissue of heart](http://purl.obolibrary.org/obo/UBERON_0010131) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [1785](https://github.com/obophenotype/uberon/issues/1785) 
+
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [0000-0002-9791-0064](https://orcid.org/0000-0002-9791-0064) 
+
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
+
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) SubClassOf [cardiac muscle tissue of ventricle](http://purl.obolibrary.org/obo/UBERON_0018649) 
+
+- [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [cardiac Purkinje fiber](http://purl.obolibrary.org/obo/UBERON_0002354) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [1785](https://github.com/obophenotype/uberon/issues/1785) 
+
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [0000-0002-9791-0064](https://orcid.org/0000-0002-9791-0064) 
+
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
+
+
+### abdominal histoblast anlage `http://purl.obolibrary.org/obo/UBERON_6017021`
 #### Removed
-- [Y bone](http://purl.obolibrary.org/obo/UBERON_4300091) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The y bone is a detached neural spine anterior to the haemal spines of preural centrum 2. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [abdominal histoblast anlage](http://purl.obolibrary.org/obo/UBERON_6017021) [label](http://www.w3.org/2000/01/rdf-schema#label) "abdominal histoblast anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [Y bone](http://purl.obolibrary.org/obo/UBERON_4300091) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The y bone is a detached neural spine anterior to the haemal spines of preural centrum 2."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [abdominal histoblast anlage](http://purl.obolibrary.org/obo/UBERON_6017021) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect abdominal histoblast anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### abdominal histoblast primordium `http://purl.obolibrary.org/obo/UBERON_6016022`
+#### Removed
+- [abdominal histoblast primordium](http://purl.obolibrary.org/obo/UBERON_6016022) [label](http://www.w3.org/2000/01/rdf-schema#label) "abdominal histoblast primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [abdominal histoblast primordium](http://purl.obolibrary.org/obo/UBERON_6016022) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect abdominal histoblast primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### abdominal segment 8 `http://purl.obolibrary.org/obo/UBERON_6000029`
+#### Removed
+- [abdominal segment 8](http://purl.obolibrary.org/obo/UBERON_6000029) [label](http://www.w3.org/2000/01/rdf-schema#label) "abdominal segment 8"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [abdominal segment 8](http://purl.obolibrary.org/obo/UBERON_6000029) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect abdominal segment 8"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### abdominal segment 9 `http://purl.obolibrary.org/obo/UBERON_6000030`
+#### Removed
+- [abdominal segment 9](http://purl.obolibrary.org/obo/UBERON_6000030) [label](http://www.w3.org/2000/01/rdf-schema#label) "abdominal segment 9"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [abdominal segment 9](http://purl.obolibrary.org/obo/UBERON_6000030) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect abdominal segment 9"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### accessory cervical lymph node `http://purl.obolibrary.org/obo/UBERON_0038938`
@@ -79,20 +129,6 @@
 
 - [accessory cervical lymph node](http://purl.obolibrary.org/obo/UBERON_0038938) SubClassOf [cervical lymph node](http://purl.obolibrary.org/obo/UBERON_0002429) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### actinotrichium `http://purl.obolibrary.org/obo/UBERON_2000089`
-#### Removed
-- [actinotrichium](http://purl.obolibrary.org/obo/UBERON_2000089) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Elastoidin fin ray that is slender, sometimes branched distally and present in the embryonic fin fold. Actinotrichia are translucent and exhibit birefringence. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:pm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://purl.obolibrary.org/obo/uberon/tracker/129"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [actinotrichium](http://purl.obolibrary.org/obo/UBERON_2000089) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Elastoidin fin ray that is slender, sometimes branched distally and present in the embryonic fin fold. Actinotrichia are translucent and exhibit birefringence."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:pm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://purl.obolibrary.org/obo/uberon/tracker/129"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### added_for_HCA `http://purl.obolibrary.org/obo/uberon/core#added_for_HCA`
@@ -119,6 +155,214 @@
 - [adipose fin skeleton](http://purl.obolibrary.org/obo/UBERON_4500004) EquivalentTo [subdivision of skeleton](http://purl.obolibrary.org/obo/UBERON_0010912) and ([skeleton of](http://purl.obolibrary.org/obo/RO_0002576) some [adipose fin](http://purl.obolibrary.org/obo/UBERON_2000251)) 
 
 - [adipose fin skeleton](http://purl.obolibrary.org/obo/UBERON_4500004) SubClassOf [skeleton of](http://purl.obolibrary.org/obo/RO_0002576) some [adipose fin](http://purl.obolibrary.org/obo/UBERON_2000251) 
+
+
+### adult abdomen `http://purl.obolibrary.org/obo/UBERON_6003023`
+#### Removed
+- [adult abdomen](http://purl.obolibrary.org/obo/UBERON_6003023) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult abdomen"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult abdomen](http://purl.obolibrary.org/obo/UBERON_6003023) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult abdomen"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult abdominal segment `http://purl.obolibrary.org/obo/UBERON_6003024`
+#### Removed
+- [adult abdominal segment](http://purl.obolibrary.org/obo/UBERON_6003024) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult abdominal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult abdominal segment](http://purl.obolibrary.org/obo/UBERON_6003024) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult abdominal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult antennal segment `http://purl.obolibrary.org/obo/UBERON_6003012`
+#### Removed
+- [adult antennal segment](http://purl.obolibrary.org/obo/UBERON_6003012) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult antennal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult antennal segment](http://purl.obolibrary.org/obo/UBERON_6003012) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult antennal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult brain `http://purl.obolibrary.org/obo/UBERON_6003624`
+#### Removed
+- [adult brain](http://purl.obolibrary.org/obo/UBERON_6003624) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult brain"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult brain](http://purl.obolibrary.org/obo/UBERON_6003624) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult brain"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult central complex `http://purl.obolibrary.org/obo/UBERON_6003632`
+#### Removed
+- [adult central complex](http://purl.obolibrary.org/obo/UBERON_6003632) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult central complex"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult central complex](http://purl.obolibrary.org/obo/UBERON_6003632) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult central complex"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult central nervous system `http://purl.obolibrary.org/obo/UBERON_6003623`
+#### Removed
+- [adult central nervous system](http://purl.obolibrary.org/obo/UBERON_6003623) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult central nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult central nervous system](http://purl.obolibrary.org/obo/UBERON_6003623) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult central nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult cerebral ganglion `http://purl.obolibrary.org/obo/UBERON_6110636`
+#### Removed
+- [adult cerebral ganglion](http://purl.obolibrary.org/obo/UBERON_6110636) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult cerebral ganglion"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult cerebral ganglion](http://purl.obolibrary.org/obo/UBERON_6110636) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult cerebral ganglion"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult clypeo-labral anlage `http://purl.obolibrary.org/obo/UBERON_6004203`
+#### Removed
+- [adult clypeo-labral anlage](http://purl.obolibrary.org/obo/UBERON_6004203) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult clypeo-labral anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult clypeo-labral anlage](http://purl.obolibrary.org/obo/UBERON_6004203) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult clypeo-labral anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult clypeo-labral primordium `http://purl.obolibrary.org/obo/UBERON_6005514`
+#### Removed
+- [adult clypeo-labral primordium](http://purl.obolibrary.org/obo/UBERON_6005514) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult clypeo-labral primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult clypeo-labral primordium](http://purl.obolibrary.org/obo/UBERON_6005514) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult clypeo-labral primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult external abdomen `http://purl.obolibrary.org/obo/UBERON_6004788`
+#### Removed
+- [adult external abdomen](http://purl.obolibrary.org/obo/UBERON_6004788) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult external abdomen"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult external abdomen](http://purl.obolibrary.org/obo/UBERON_6004788) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult external abdomen"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult external head `http://purl.obolibrary.org/obo/UBERON_6004481`
+#### Removed
+- [adult external head](http://purl.obolibrary.org/obo/UBERON_6004481) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult external head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult external head](http://purl.obolibrary.org/obo/UBERON_6004481) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult external head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult external mesothorax `http://purl.obolibrary.org/obo/UBERON_6004578`
+#### Removed
+- [adult external mesothorax](http://purl.obolibrary.org/obo/UBERON_6004578) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult external mesothorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult external mesothorax](http://purl.obolibrary.org/obo/UBERON_6004578) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult external mesothorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult external thorax `http://purl.obolibrary.org/obo/UBERON_6004551`
+#### Removed
+- [adult external thorax](http://purl.obolibrary.org/obo/UBERON_6004551) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult external thorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult external thorax](http://purl.obolibrary.org/obo/UBERON_6004551) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult external thorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult head segment `http://purl.obolibrary.org/obo/UBERON_6003009`
+#### Removed
+- [adult head segment](http://purl.obolibrary.org/obo/UBERON_6003009) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult head segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult head segment](http://purl.obolibrary.org/obo/UBERON_6003009) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult head segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult integumentary system `http://purl.obolibrary.org/obo/UBERON_6005396`
+#### Removed
+- [adult integumentary system](http://purl.obolibrary.org/obo/UBERON_6005396) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult integumentary system](http://purl.obolibrary.org/obo/UBERON_6005396) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult labral segment `http://purl.obolibrary.org/obo/UBERON_6003011`
+#### Removed
+- [adult labral segment](http://purl.obolibrary.org/obo/UBERON_6003011) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult labral segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult labral segment](http://purl.obolibrary.org/obo/UBERON_6003011) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult labral segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult mesothoracic segment `http://purl.obolibrary.org/obo/UBERON_6003021`
+#### Removed
+- [adult mesothoracic segment](http://purl.obolibrary.org/obo/UBERON_6003021) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult mesothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult mesothoracic segment](http://purl.obolibrary.org/obo/UBERON_6003021) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult mesothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult muscle system `http://purl.obolibrary.org/obo/UBERON_6003218`
+#### Removed
+- [adult muscle system](http://purl.obolibrary.org/obo/UBERON_6003218) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult muscle system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult muscle system](http://purl.obolibrary.org/obo/UBERON_6003218) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult muscle system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult nervous system `http://purl.obolibrary.org/obo/UBERON_6003559`
+#### Removed
+- [adult nervous system](http://purl.obolibrary.org/obo/UBERON_6003559) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult nervous system](http://purl.obolibrary.org/obo/UBERON_6003559) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult procephalic segment `http://purl.obolibrary.org/obo/UBERON_6003010`
+#### Removed
+- [adult procephalic segment](http://purl.obolibrary.org/obo/UBERON_6003010) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult procephalic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult procephalic segment](http://purl.obolibrary.org/obo/UBERON_6003010) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult procephalic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult prothoracic segment `http://purl.obolibrary.org/obo/UBERON_6003020`
+#### Removed
+- [adult prothoracic segment](http://purl.obolibrary.org/obo/UBERON_6003020) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult prothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult prothoracic segment](http://purl.obolibrary.org/obo/UBERON_6003020) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult prothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult protocerebrum `http://purl.obolibrary.org/obo/UBERON_6007145`
+#### Removed
+- [adult protocerebrum](http://purl.obolibrary.org/obo/UBERON_6007145) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult protocerebrum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult protocerebrum](http://purl.obolibrary.org/obo/UBERON_6007145) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult protocerebrum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult somatic muscle `http://purl.obolibrary.org/obo/UBERON_6003259`
+#### Removed
+- [adult somatic muscle](http://purl.obolibrary.org/obo/UBERON_6003259) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult somatic muscle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult somatic muscle](http://purl.obolibrary.org/obo/UBERON_6003259) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult somatic muscle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult tagma `http://purl.obolibrary.org/obo/UBERON_6003005`
+#### Removed
+- [adult tagma](http://purl.obolibrary.org/obo/UBERON_6003005) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult tagma"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult tagma](http://purl.obolibrary.org/obo/UBERON_6003005) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult tagma"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult thoracic segment `http://purl.obolibrary.org/obo/UBERON_6003019`
+#### Removed
+- [adult thoracic segment](http://purl.obolibrary.org/obo/UBERON_6003019) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult thoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult thoracic segment](http://purl.obolibrary.org/obo/UBERON_6003019) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult thoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### adult thorax `http://purl.obolibrary.org/obo/UBERON_6003018`
+#### Removed
+- [adult thorax](http://purl.obolibrary.org/obo/UBERON_6003018) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult thorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [adult thorax](http://purl.obolibrary.org/obo/UBERON_6003018) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult thorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### anagen hair `http://purl.obolibrary.org/obo/UBERON_0037467`
@@ -148,34 +392,42 @@
 - [anal fin](http://purl.obolibrary.org/obo/UBERON_4000163) SubClassOf [has skeleton](http://purl.obolibrary.org/obo/RO_0002551) some [anal fin skeleton](http://purl.obolibrary.org/obo/UBERON_4000166) 
 
 
-### anal fin hook `http://purl.obolibrary.org/obo/UBERON_2001948`
-#### Removed
-- [anal fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "anal fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001948"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [anal fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) [label](http://www.w3.org/2000/01/rdf-schema#label) "anal-fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [anal fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
-
-- [anal fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
-
-- [anal fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) SubClassOf [skeletal element projection](http://purl.obolibrary.org/obo/UBERON_4100000) 
-
-#### Added
-- [anal fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "anal-fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001948"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [anal fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) [label](http://www.w3.org/2000/01/rdf-schema#label) "anal fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [anal fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) SubClassOf [fin hook](http://purl.obolibrary.org/obo/UBERON_4300284) 
-
-
 ### anal fin skeleton `http://purl.obolibrary.org/obo/UBERON_4000166`
 
 #### Added
 - [anal fin skeleton](http://purl.obolibrary.org/obo/UBERON_4000166) EquivalentTo [subdivision of skeleton](http://purl.obolibrary.org/obo/UBERON_0010912) and ([skeleton of](http://purl.obolibrary.org/obo/RO_0002576) some [anal fin](http://purl.obolibrary.org/obo/UBERON_4000163)) 
 
 - [anal fin skeleton](http://purl.obolibrary.org/obo/UBERON_4000166) SubClassOf [skeleton of](http://purl.obolibrary.org/obo/RO_0002576) some [anal fin](http://purl.obolibrary.org/obo/UBERON_4000163) 
+
+
+### anal-fin hook `http://purl.obolibrary.org/obo/UBERON_2001948`
+#### Removed
+- [anal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "anal fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001948"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [anal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) [label](http://www.w3.org/2000/01/rdf-schema#label) "anal-fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [anal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
+
+- [anal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+
+- [anal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) SubClassOf [skeletal element projection](http://purl.obolibrary.org/obo/UBERON_4100000) 
+
+#### Added
+- [anal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "anal-fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001948"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [anal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) [label](http://www.w3.org/2000/01/rdf-schema#label) "anal fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [anal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001948) SubClassOf [fin hook](http://purl.obolibrary.org/obo/UBERON_4300284) 
+
+
+### analia `http://purl.obolibrary.org/obo/UBERON_6004823`
+#### Removed
+- [analia](http://purl.obolibrary.org/obo/UBERON_6004823) [label](http://www.w3.org/2000/01/rdf-schema#label) "analia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [analia](http://purl.obolibrary.org/obo/UBERON_6004823) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect analia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### androgenic hair `http://purl.obolibrary.org/obo/UBERON_0037464`
@@ -198,6 +450,14 @@
 - Class: [androgenic hair](http://purl.obolibrary.org/obo/UBERON_0037464) 
 
 - [androgenic hair](http://purl.obolibrary.org/obo/UBERON_0037464) SubClassOf [terminal hair](http://purl.obolibrary.org/obo/UBERON_0037463) 
+
+
+### anlage in statu nascendi `http://purl.obolibrary.org/obo/UBERON_6005413`
+#### Removed
+- [anlage in statu nascendi](http://purl.obolibrary.org/obo/UBERON_6005413) [label](http://www.w3.org/2000/01/rdf-schema#label) "anlage in statu nascendi"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [anlage in statu nascendi](http://purl.obolibrary.org/obo/UBERON_6005413) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect anlage in statu nascendi"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### anorectal lymph node `http://purl.obolibrary.org/obo/UBERON_0037559`
@@ -234,14 +494,12 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### anterior copula `http://purl.obolibrary.org/obo/UBERON_2001221`
+### antennal disc `http://purl.obolibrary.org/obo/UBERON_6001767`
 #### Removed
-- [anterior copula](http://purl.obolibrary.org/obo/UBERON_2001221) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "anterior basibranchial copula "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001221"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [antennal disc](http://purl.obolibrary.org/obo/UBERON_6001767) [label](http://www.w3.org/2000/01/rdf-schema#label) "antennal disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [anterior copula](http://purl.obolibrary.org/obo/UBERON_2001221) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "anterior basibranchial copula"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001221"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [antennal disc](http://purl.obolibrary.org/obo/UBERON_6001767) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect antennal disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### anterior diaphragmatic lymph node `http://purl.obolibrary.org/obo/UBERON_0038879`
@@ -262,6 +520,30 @@
 
 - [anterior diaphragmatic lymph node](http://purl.obolibrary.org/obo/UBERON_0038879) SubClassOf [diaphragmatic lymph node](http://purl.obolibrary.org/obo/UBERON_0037566) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### anterior dorsal histoblast nest abdominal `http://purl.obolibrary.org/obo/UBERON_6001792`
+#### Removed
+- [anterior dorsal histoblast nest abdominal](http://purl.obolibrary.org/obo/UBERON_6001792) [label](http://www.w3.org/2000/01/rdf-schema#label) "anterior dorsal histoblast nest abdominal"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [anterior dorsal histoblast nest abdominal](http://purl.obolibrary.org/obo/UBERON_6001792) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect anterior dorsal histoblast nest abdominal"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### anterior ectoderm `http://purl.obolibrary.org/obo/UBERON_6000119`
+#### Removed
+- [anterior ectoderm](http://purl.obolibrary.org/obo/UBERON_6000119) [label](http://www.w3.org/2000/01/rdf-schema#label) "anterior ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [anterior ectoderm](http://purl.obolibrary.org/obo/UBERON_6000119) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect anterior ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### anterior ectoderm derivative `http://purl.obolibrary.org/obo/UBERON_6025991`
+#### Removed
+- [anterior ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6025991) [label](http://www.w3.org/2000/01/rdf-schema#label) "anterior ectoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [anterior ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6025991) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect anterior ectoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### anterior inferior deep cervical lymph node `http://purl.obolibrary.org/obo/UBERON_0037766`
@@ -393,32 +675,12 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### anterior ventrolateral plate `http://purl.obolibrary.org/obo/UBERON_4300026`
+### anterior-posterior subdivision of organism `http://purl.obolibrary.org/obo/UBERON_6057001`
 #### Removed
-- [anterior ventrolateral plate](http://purl.obolibrary.org/obo/UBERON_4300026) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Dermal bone that is part of the scapular complex in placoderms. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN 3-89937-052-X [Goujet and Young, 2004]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [anterior-posterior subdivision of organism](http://purl.obolibrary.org/obo/UBERON_6057001) [label](http://www.w3.org/2000/01/rdf-schema#label) "anterior-posterior subdivision of organism"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [anterior ventrolateral plate](http://purl.obolibrary.org/obo/UBERON_4300026) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Dermal bone that is part of the scapular complex in placoderms."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN 3-89937-052-X [Goujet and Young, 2004]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### anterolateral plate `http://purl.obolibrary.org/obo/UBERON_4300021`
-#### Removed
-- [anterolateral plate](http://purl.obolibrary.org/obo/UBERON_4300021) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Dermal bone that is part of the scapular complex in placoderm fishes. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN 3-89937-052-X [Goujet and Young, 2004]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [anterolateral plate](http://purl.obolibrary.org/obo/UBERON_4300021) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Dermal bone that is part of the scapular complex in placoderm fishes."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN 3-89937-052-X [Goujet and Young, 2004]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### anteroventral process of cleithrum `http://purl.obolibrary.org/obo/UBERON_4200226`
-#### Removed
-- [anteroventral process of cleithrum](http://purl.obolibrary.org/obo/UBERON_4200226) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ramus of the celithrum that descend along the girdle. Its rounded outer surface forms the articulation surface for the clavicle while its anterior surface overlaps with the anterior process of the scapulocoracoid. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [anteroventral process of cleithrum](http://purl.obolibrary.org/obo/UBERON_4200226) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ramus of the celithrum that descend along the girdle. Its rounded outer surface forms the articulation surface for the clavicle while its anterior surface overlaps with the anterior process of the scapulocoracoid."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [anterior-posterior subdivision of organism](http://purl.obolibrary.org/obo/UBERON_6057001) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect anterior-posterior subdivision of organism"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### aortopulmonary lymph node `http://purl.obolibrary.org/obo/UBERON_0038633`
@@ -454,14 +716,6 @@
 
 - [aortopulmonary lymph node](http://purl.obolibrary.org/obo/UBERON_0038633) SubClassOf [mediastinal lymph node](http://purl.obolibrary.org/obo/UBERON_0002524) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### aphakic space `http://purl.obolibrary.org/obo/UBERON_4300005`
-#### Removed
-- [aphakic space](http://purl.obolibrary.org/obo/UBERON_4300005) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The space in the pupil, which is not occupied by the lens. A rostral aphakic space may enhance the forward binocular field of vision. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [aphakic space](http://purl.obolibrary.org/obo/UBERON_4300005) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The space in the pupil, which is not occupied by the lens. A rostral aphakic space may enhance the forward binocular field of vision."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### apical axillary lymph node `http://purl.obolibrary.org/obo/UBERON_0037503`
@@ -507,36 +761,39 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### articular surface for the astragalus on the calcaneum `http://purl.obolibrary.org/obo/UBERON_4200045`
+### arista `http://purl.obolibrary.org/obo/UBERON_6004519`
 #### Removed
-- [articular surface for the astragalus on the calcaneum](http://purl.obolibrary.org/obo/UBERON_4200045) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Contact surface between the calcaneum and the astragalus located on the calcaneum. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [arista](http://purl.obolibrary.org/obo/UBERON_6004519) [label](http://www.w3.org/2000/01/rdf-schema#label) "arista"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [articular surface for the astragalus on the calcaneum](http://purl.obolibrary.org/obo/UBERON_4200045) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Contact surface between the calcaneum and the astragalus located on the calcaneum."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [arista](http://purl.obolibrary.org/obo/UBERON_6004519) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect arista"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### astragalo-calcaneal canal `http://purl.obolibrary.org/obo/UBERON_4200046`
+### arista lateral `http://purl.obolibrary.org/obo/UBERON_6005913`
 #### Removed
-- [astragalo-calcaneal canal](http://purl.obolibrary.org/obo/UBERON_4200046) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The astragalo-calcaneal canal forms a foramen between the articulated astragalus and calcaneum when the canal is ossified (Nesbitt, 2011). "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [arista lateral](http://purl.obolibrary.org/obo/UBERON_6005913) [label](http://www.w3.org/2000/01/rdf-schema#label) "arista lateral"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [astragalo-calcaneal canal](http://purl.obolibrary.org/obo/UBERON_4200046) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The astragalo-calcaneal canal forms a foramen between the articulated astragalus and calcaneum when the canal is ossified (Nesbitt, 2011)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [arista lateral](http://purl.obolibrary.org/obo/UBERON_6005913) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect arista lateral"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### astragalus head `http://purl.obolibrary.org/obo/UBERON_4200181`
+### atrioventricular bundle `http://purl.obolibrary.org/obo/UBERON_0002353`
 #### Removed
-- [astragalus head](http://purl.obolibrary.org/obo/UBERON_4200181) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the astragalus/ talus that carries the articular surface for the navicular. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0002353) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "atrio-ventricular bundle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:35152"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0002353) [label](http://www.w3.org/2000/01/rdf-schema#label) "atrioventricular bundle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [astragalus head](http://purl.obolibrary.org/obo/UBERON_4200181) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the astragalus/ talus that carries the articular surface for the navicular."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0002353) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "atrio-ventricular bundle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:35152"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
+- [atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0002353) [label](http://www.w3.org/2000/01/rdf-schema#label) "bundle of His"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-### astragalus-calcaneum unit `http://purl.obolibrary.org/obo/UBERON_4200021`
-#### Removed
-- [astragalus-calcaneum unit](http://purl.obolibrary.org/obo/UBERON_4200021) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Osteological unit consisting of the astragalus and calcaneum. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0002353) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "atrioventricular bundle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-#### Added
-- [astragalus-calcaneum unit](http://purl.obolibrary.org/obo/UBERON_4200021) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Osteological unit consisting of the astragalus and calcaneum."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0002353) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "AVB"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION) 
 
 
 ### autopod hair `http://purl.obolibrary.org/obo/UBERON_0015144`
@@ -555,38 +812,12 @@
 - [axillary lymph node](http://purl.obolibrary.org/obo/UBERON_0001097) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:276805"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### bicipital crest `http://purl.obolibrary.org/obo/UBERON_4200048`
+### basiproboscis `http://purl.obolibrary.org/obo/UBERON_6004540`
 #### Removed
-- [bicipital crest](http://purl.obolibrary.org/obo/UBERON_4200048) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical projection that is an expansion on the proximal region of the humerus. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [basiproboscis](http://purl.obolibrary.org/obo/UBERON_6004540) [label](http://www.w3.org/2000/01/rdf-schema#label) "basiproboscis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [bicipital crest](http://purl.obolibrary.org/obo/UBERON_4200048) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical projection that is an expansion on the proximal region of the humerus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### blood `http://purl.obolibrary.org/obo/UBERON_0000178`
-#### Removed
-- [blood](http://purl.obolibrary.org/obo/UBERON_0000178) [homology_notes](http://purl.obolibrary.org/obo/UBPROP_0000003) "Recent findings strongly suggest that the molecular pathways involved in the development and function of blood cells are highly conserved among vertebrates and various invertebrates phyla. (...) There is now good reason to believe that, in vertebrates and invertebrates alike, blood cell lineages diverge from a common type of progenitor cell, the hemocytoblast.[well established][VHOG]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [external_class](http://www.geneontology.org/formats/oboInOwl#external_class) "VHOG:0000224"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [ontology](http://www.geneontology.org/formats/oboInOwl#ontology) "VHOG"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "DOI:10.1146/annurev.cellbio.22.010605.093317 Hartenstein V, Blood cells and blood cell development in the animal kingdom. Annual review of cell and developmental biology (2006) "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) [<http://bgee.unil.ch/>](http://bgee.unil.ch/) 
-
-  - [date_retrieved](http://www.geneontology.org/formats/oboInOwl#date_retrieved) "2012-09-17"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [blood](http://purl.obolibrary.org/obo/UBERON_0000178) [homology_notes](http://purl.obolibrary.org/obo/UBPROP_0000003) "Recent findings strongly suggest that the molecular pathways involved in the development and function of blood cells are highly conserved among vertebrates and various invertebrates phyla. (...) There is now good reason to believe that, in vertebrates and invertebrates alike, blood cell lineages diverge from a common type of progenitor cell, the hemocytoblast.[well established][VHOG]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [external_class](http://www.geneontology.org/formats/oboInOwl#external_class) "VHOG:0000224"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [ontology](http://www.geneontology.org/formats/oboInOwl#ontology) "VHOG"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) [<http://bgee.unil.ch/>](http://bgee.unil.ch/) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "DOI:10.1146/annurev.cellbio.22.010605.093317 Hartenstein V, Blood cells and blood cell development in the animal kingdom. Annual review of cell and developmental biology (2006)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [date_retrieved](http://www.geneontology.org/formats/oboInOwl#date_retrieved) "2012-09-17"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [basiproboscis](http://purl.obolibrary.org/obo/UBERON_6004540) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect basiproboscis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### brachiocephalic lymph node `http://purl.obolibrary.org/obo/UBERON_0038885`
@@ -651,6 +882,18 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### brush border layer `http://purl.obolibrary.org/obo/UBERON_0012424`
+#### Removed
+- [brush border layer](http://purl.obolibrary.org/obo/UBERON_0012424) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The microvilli-covered surface of simple cuboidal epithelium and simple columnar epithelium cells found in certain locations of the body. Found in small intestine and kidney"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brush_border](http://en.wikipedia.org/wiki/Brush_border) 
+
+#### Added
+- [brush border layer](http://purl.obolibrary.org/obo/UBERON_0012424) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The microvilli-covered surface of simple cuboidal epithelium and simple columnar epithelium cells found in certain locations of the body; mainly in the small an large intestines and kidneys."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brush_border](http://en.wikipedia.org/wiki/Brush_border) 
+
+- [brush border layer](http://purl.obolibrary.org/obo/UBERON_0012424) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Note - this anatomical structure differs from the cellular component GO_0005903 brush border (defined as: the dense covering of microvilli on the apical surface of a epithelial cells in tissues such as the intestine, kidney, and choroid plexus; the microvilli aid absorption by increasing the surface area of the cell)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### buccinator lymph node `http://purl.obolibrary.org/obo/UBERON_0038920`
 
 #### Added
@@ -682,6 +925,45 @@
 
 - [buccinator lymph node](http://purl.obolibrary.org/obo/UBERON_0038920) SubClassOf [facial lymph node](http://purl.obolibrary.org/obo/UBERON_0015871) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### buccopharyngeal complex `http://purl.obolibrary.org/obo/UBERON_4300187`
+#### Removed
+- [buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) [label](http://www.w3.org/2000/01/rdf-schema#label) "buccopharyngeal complex"@en 
+
+- [buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical cluster that is located in the oral cavity and consists of modifications to the skin on the roof of the mouth into three primary skin folds. In addition to these longitudinally oriented folds, secondary folds are present in some taxa.[PHENOSCAPE:WD]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [si.00810282.471](https://doi.org/10.5479/si.00810282.471) 
+
+- [buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) SubClassOf [anatomical cluster](http://purl.obolibrary.org/obo/UBERON_0000477) 
+
+- [buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [mouth](http://purl.obolibrary.org/obo/UBERON_0000165) 
+
+#### Added
+- [buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
+
+- [buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete buccopharyngeal complex"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### cardiac Purkinje fiber `http://purl.obolibrary.org/obo/UBERON_0002354`
+#### Removed
+- [cardiac Purkinje fiber](http://purl.obolibrary.org/obo/UBERON_0002354) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [His-Purkinje system](http://purl.obolibrary.org/obo/UBERON_0004146) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "GO"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [cardiac Purkinje fiber](http://purl.obolibrary.org/obo/UBERON_0002354) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [Purkinje fiber network](http://purl.obolibrary.org/obo/UBERON_8000009) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [1785](https://github.com/obophenotype/uberon/issues/1785) 
+
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [0000-0002-9791-0064](https://orcid.org/0000-0002-9791-0064) 
+
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
+
+
+### cardiogenic mesoderm `http://purl.obolibrary.org/obo/UBERON_6005541`
+#### Removed
+- [cardiogenic mesoderm](http://purl.obolibrary.org/obo/UBERON_6005541) [label](http://www.w3.org/2000/01/rdf-schema#label) "cardiogenic mesoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [cardiogenic mesoderm](http://purl.obolibrary.org/obo/UBERON_6005541) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect cardiogenic mesoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### cardiophrenic angle lymph node `http://purl.obolibrary.org/obo/UBERON_0038053`
@@ -723,39 +1005,11 @@
 
 
 ### caudal fin `http://purl.obolibrary.org/obo/UBERON_4000164`
-#### Removed
-- [caudal fin](http://purl.obolibrary.org/obo/UBERON_4000164) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The caudal fin is the most posterior median fin. It is composed of a complex of modified centra and modified neural and hemal arches and spines. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Phenoscape:PM"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [caudal fin](http://purl.obolibrary.org/obo/UBERON_4000164) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The caudal fin is the most posterior median fin. It is composed of a complex of modified centra and modified neural and hemal arches and spines."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Phenoscape:PM"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
 - [caudal fin](http://purl.obolibrary.org/obo/UBERON_4000164) EquivalentTo [fin](http://purl.obolibrary.org/obo/UBERON_0008897) and ([has skeleton](http://purl.obolibrary.org/obo/RO_0002551) some [caudal fin skeleton](http://purl.obolibrary.org/obo/UBERON_4000167)) 
 
 - [caudal fin](http://purl.obolibrary.org/obo/UBERON_4000164) SubClassOf [has skeleton](http://purl.obolibrary.org/obo/RO_0002551) some [caudal fin skeleton](http://purl.obolibrary.org/obo/UBERON_4000167) 
-
-
-### caudal fin hook `http://purl.obolibrary.org/obo/UBERON_2001949`
-#### Removed
-- [caudal fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) [label](http://www.w3.org/2000/01/rdf-schema#label) "caudal-fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [caudal fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "caudal fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001949"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [caudal fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) SubClassOf [skeletal element projection](http://purl.obolibrary.org/obo/UBERON_4100000) 
-
-- [caudal fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
-
-- [caudal fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
-
-#### Added
-- [caudal fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "caudal-fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001949"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [caudal fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) [label](http://www.w3.org/2000/01/rdf-schema#label) "caudal fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [caudal fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) SubClassOf [fin hook](http://purl.obolibrary.org/obo/UBERON_4300284) 
 
 
 ### caudal fin skeleton `http://purl.obolibrary.org/obo/UBERON_4000167`
@@ -764,6 +1018,28 @@
 - [caudal fin skeleton](http://purl.obolibrary.org/obo/UBERON_4000167) EquivalentTo [subdivision of skeleton](http://purl.obolibrary.org/obo/UBERON_0010912) and ([skeleton of](http://purl.obolibrary.org/obo/RO_0002576) some [caudal fin](http://purl.obolibrary.org/obo/UBERON_4000164)) 
 
 - [caudal fin skeleton](http://purl.obolibrary.org/obo/UBERON_4000167) SubClassOf [skeleton of](http://purl.obolibrary.org/obo/RO_0002576) some [caudal fin](http://purl.obolibrary.org/obo/UBERON_4000164) 
+
+
+### caudal-fin hook `http://purl.obolibrary.org/obo/UBERON_2001949`
+#### Removed
+- [caudal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) [label](http://www.w3.org/2000/01/rdf-schema#label) "caudal-fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [caudal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "caudal fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001949"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [caudal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) SubClassOf [skeletal element projection](http://purl.obolibrary.org/obo/UBERON_4100000) 
+
+- [caudal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
+
+- [caudal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+
+#### Added
+- [caudal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "caudal-fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001949"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [caudal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) [label](http://www.w3.org/2000/01/rdf-schema#label) "caudal fin hook"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [caudal-fin hook](http://purl.obolibrary.org/obo/UBERON_2001949) SubClassOf [fin hook](http://purl.obolibrary.org/obo/UBERON_4300284) 
 
 
 ### central axillary lymph node `http://purl.obolibrary.org/obo/UBERON_0037502`
@@ -792,26 +1068,126 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### ceratotrichium `http://purl.obolibrary.org/obo/UBERON_4400001`
-#### Removed
-- [ceratotrichium](http://purl.obolibrary.org/obo/UBERON_4400001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Elastoidin fin ray that is thickened, generally unbranched and found in the fins of Chondrichthyes. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:pm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://purl.obolibrary.org/obo/uberon/tracker/129"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+### central zone of prostate `http://purl.obolibrary.org/obo/UBERON_8410027`
 
 #### Added
-- [ceratotrichium](http://purl.obolibrary.org/obo/UBERON_4400001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Elastoidin fin ray that is thickened, generally unbranched and found in the fins of Chondrichthyes."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:pm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the prostate gland that is located between the peripheral and transition zones, surrounding the ejaculatory ducts. It gives rise to a very small percentage of human prostate cancers, often aggressive and invading the seminal vesicles."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [30566875](http://www.ncbi.nlm.nih.gov/pubmed/30566875) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://purl.obolibrary.org/obo/uberon/tracker/129"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7431-4139](https://orcid.org/0000-0002-7431-4139) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "prostate central zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) [label](http://www.w3.org/2000/01/rdf-schema#label) "central zone of prostate"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8410027"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [added_for_HCA](http://purl.obolibrary.org/obo/uberon/core#added_for_HCA) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "central zone of human prostate"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) "Homo sapiens"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [29038334](http://www.ncbi.nlm.nih.gov/pubmed/29038334) 
+
+- Class: [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [prostate gland](http://purl.obolibrary.org/obo/UBERON_0002367) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) SubClassOf [reproductive structure](http://purl.obolibrary.org/obo/UBERON_0005156) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) SubClassOf [mixed endoderm/mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0000077) 
+
+- [central zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410027) SubClassOf [zone of organ](http://purl.obolibrary.org/obo/UBERON_0034944) 
 
 
-### cleithrum head `http://purl.obolibrary.org/obo/UBERON_4200033`
+### centro-posterior medial synaptic neuropil domain `http://purl.obolibrary.org/obo/UBERON_6007070`
 #### Removed
-- [cleithrum head](http://purl.obolibrary.org/obo/UBERON_4200033) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Expanded dorsal region of the cleithrum. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [centro-posterior medial synaptic neuropil domain](http://purl.obolibrary.org/obo/UBERON_6007070) [label](http://www.w3.org/2000/01/rdf-schema#label) "centro-posterior medial synaptic neuropil domain"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [cleithrum head](http://purl.obolibrary.org/obo/UBERON_4200033) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Expanded dorsal region of the cleithrum."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [centro-posterior medial synaptic neuropil domain](http://purl.obolibrary.org/obo/UBERON_6007070) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect centro-posterior medial synaptic neuropil domain"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### cephalic furrow `http://purl.obolibrary.org/obo/UBERON_6000097`
+#### Removed
+- [cephalic furrow](http://purl.obolibrary.org/obo/UBERON_6000097) [label](http://www.w3.org/2000/01/rdf-schema#label) "cephalic furrow"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [cephalic furrow](http://purl.obolibrary.org/obo/UBERON_6000097) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect cephalic furrow"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### cephalopharyngeal skeleton `http://purl.obolibrary.org/obo/UBERON_6001845`
+#### Removed
+- [cephalopharyngeal skeleton](http://purl.obolibrary.org/obo/UBERON_6001845) [label](http://www.w3.org/2000/01/rdf-schema#label) "cephalopharyngeal skeleton"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [cephalopharyngeal skeleton](http://purl.obolibrary.org/obo/UBERON_6001845) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect cephalopharyngeal skeleton"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### chaeta `http://purl.obolibrary.org/obo/UBERON_6005177`
+#### Removed
+- [chaeta](http://purl.obolibrary.org/obo/UBERON_6005177) [label](http://www.w3.org/2000/01/rdf-schema#label) "chaeta"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [chaeta](http://purl.obolibrary.org/obo/UBERON_6005177) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect chaeta"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### choledocho-duodenal junction `http://purl.obolibrary.org/obo/UBERON_0015485`
+#### Removed
+- [choledocho-duodenal junction](http://purl.obolibrary.org/obo/UBERON_0015485) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
+
+#### Added
+- [choledocho-duodenal junction](http://purl.obolibrary.org/obo/UBERON_0015485) SubClassOf [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) 
+
+
+### chorionic specialization `http://purl.obolibrary.org/obo/UBERON_6007248`
+#### Removed
+- [chorionic specialization](http://purl.obolibrary.org/obo/UBERON_6007248) [label](http://www.w3.org/2000/01/rdf-schema#label) "chorionic specialization"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [chorionic specialization](http://purl.obolibrary.org/obo/UBERON_6007248) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect chorionic specialization"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### circulatory system primordium `http://purl.obolibrary.org/obo/UBERON_6005461`
+#### Removed
+- [circulatory system primordium](http://purl.obolibrary.org/obo/UBERON_6005461) [label](http://www.w3.org/2000/01/rdf-schema#label) "circulatory system primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [circulatory system primordium](http://purl.obolibrary.org/obo/UBERON_6005461) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect circulatory system primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### clypeo-labral anlage `http://purl.obolibrary.org/obo/UBERON_6005439`
+#### Removed
+- [clypeo-labral anlage](http://purl.obolibrary.org/obo/UBERON_6005439) [label](http://www.w3.org/2000/01/rdf-schema#label) "clypeo-labral anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [clypeo-labral anlage](http://purl.obolibrary.org/obo/UBERON_6005439) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect clypeo-labral anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### clypeo-labral disc `http://purl.obolibrary.org/obo/UBERON_6001765`
+#### Removed
+- [clypeo-labral disc](http://purl.obolibrary.org/obo/UBERON_6001765) [label](http://www.w3.org/2000/01/rdf-schema#label) "clypeo-labral disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [clypeo-labral disc](http://purl.obolibrary.org/obo/UBERON_6001765) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect clypeo-labral disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### clypeo-labral primordium `http://purl.obolibrary.org/obo/UBERON_6005538`
+#### Removed
+- [clypeo-labral primordium](http://purl.obolibrary.org/obo/UBERON_6005538) [label](http://www.w3.org/2000/01/rdf-schema#label) "clypeo-labral primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [clypeo-labral primordium](http://purl.obolibrary.org/obo/UBERON_6005538) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect clypeo-labral primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### clypeus `http://purl.obolibrary.org/obo/UBERON_6004521`
+#### Removed
+- [clypeus](http://purl.obolibrary.org/obo/UBERON_6004521) [label](http://www.w3.org/2000/01/rdf-schema#label) "clypeus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [clypeus](http://purl.obolibrary.org/obo/UBERON_6004521) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect clypeus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### coat of hair `http://purl.obolibrary.org/obo/UBERON_0010166`
@@ -846,16 +1222,6 @@
 
 - [colic lymph node](http://purl.obolibrary.org/obo/UBERON_0039168) SubClassOf [intestinal lymph node](http://purl.obolibrary.org/obo/UBERON_0037531) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### commissura rostral, pars dorsalis `http://purl.obolibrary.org/obo/UBERON_2000638`
-#### Removed
-- [commissura rostral, pars dorsalis](http://purl.obolibrary.org/obo/UBERON_2000638) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Part of the anterior commissure which is located immediately ventral to the supracommissural nucleus of area ventralis telencephali. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:3764351209"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [commissura rostral, pars dorsalis](http://purl.obolibrary.org/obo/UBERON_2000638) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Part of the anterior commissure which is located immediately ventral to the supracommissural nucleus of area ventralis telencephali."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:3764351209"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### common hepatic lymph node `http://purl.obolibrary.org/obo/UBERON_0038691`
@@ -907,16 +1273,6 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### crista dorsalis humeri `http://purl.obolibrary.org/obo/UBERON_3000756`
-#### Removed
-- [crista dorsalis humeri](http://purl.obolibrary.org/obo/UBERON_3000756) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "crista dorsalis "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:3000756"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [crista dorsalis humeri](http://purl.obolibrary.org/obo/UBERON_3000756) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "crista dorsalis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:3000756"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### cubital lymph node `http://purl.obolibrary.org/obo/UBERON_0038870`
 
 #### Added
@@ -935,6 +1291,14 @@
 
 - [cubital lymph node](http://purl.obolibrary.org/obo/UBERON_0038870) SubClassOf [lymph node of upper limb](http://purl.obolibrary.org/obo/UBERON_0016399) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### cuticular specialization `http://purl.obolibrary.org/obo/UBERON_6007245`
+#### Removed
+- [cuticular specialization](http://purl.obolibrary.org/obo/UBERON_6007245) [label](http://www.w3.org/2000/01/rdf-schema#label) "cuticular specialization"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [cuticular specialization](http://purl.obolibrary.org/obo/UBERON_6007245) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect cuticular specialization"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### deep popliteal lymph node `http://purl.obolibrary.org/obo/UBERON_0038854`
@@ -980,11 +1344,11 @@
 
 - [descending sigmoid junction](http://purl.obolibrary.org/obo/UBERON_8410016) EquivalentTo [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158)) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159)) 
 
-- [descending sigmoid junction](http://purl.obolibrary.org/obo/UBERON_8410016) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
-
 - [descending sigmoid junction](http://purl.obolibrary.org/obo/UBERON_8410016) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) 
 
 - [descending sigmoid junction](http://purl.obolibrary.org/obo/UBERON_8410016) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [proximal-distal subdivision of colon](http://purl.obolibrary.org/obo/UBERON_0000168) 
+
+- [descending sigmoid junction](http://purl.obolibrary.org/obo/UBERON_8410016) SubClassOf [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) 
 
 - [descending sigmoid junction](http://purl.obolibrary.org/obo/UBERON_8410016) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159) 
 
@@ -1007,6 +1371,31 @@
 
 - [diaphragmatic lymph node](http://purl.obolibrary.org/obo/UBERON_0037566) SubClassOf [mediastinal lymph node](http://purl.obolibrary.org/obo/UBERON_0002524) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### digestive tract junction `http://purl.obolibrary.org/obo/UBERON_1100000`
+
+#### Added
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An anatomical junction between two parts of the digestive tract."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ORCID:0000-0002-7073-9172"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:1100000"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2021-02-05T11:19:31Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) [label](http://www.w3.org/2000/01/rdf-schema#label) "digestive tract junction"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) [creator](http://purl.org/dc/elements/1.1/creator) [0000-0002-7073-9172](http://orcid.org/0000-0002-7073-9172) 
+
+- Class: [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) 
+
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) EquivalentTo [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [subdivision of digestive tract](http://purl.obolibrary.org/obo/UBERON_0004921)) 
+
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
+
+- [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [subdivision of digestive tract](http://purl.obolibrary.org/obo/UBERON_0004921) 
 
 
 ### distal deep inguinal lymph node `http://purl.obolibrary.org/obo/UBERON_0038860`
@@ -1074,21 +1463,44 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### dorsal clavicular process `http://purl.obolibrary.org/obo/UBERON_4200233`
+### dorsal appendage `http://purl.obolibrary.org/obo/UBERON_6000046`
 #### Removed
-- [dorsal clavicular process](http://purl.obolibrary.org/obo/UBERON_4200233) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A process, extending dorsally from the clavicular plate, that attaches to the cleithrum. Modified from Clack 2012 and Coates 1996. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [dorsal appendage](http://purl.obolibrary.org/obo/UBERON_6000046) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal appendage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [dorsal clavicular process](http://purl.obolibrary.org/obo/UBERON_4200233) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A process, extending dorsally from the clavicular plate, that attaches to the cleithrum. Modified from Clack 2012 and Coates 1996."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [dorsal appendage](http://purl.obolibrary.org/obo/UBERON_6000046) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal appendage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### dorsal fin basal cartilage (elasmobranchs) `http://purl.obolibrary.org/obo/UBERON_4300019`
+### dorsal ectoderm `http://purl.obolibrary.org/obo/UBERON_6000112`
 #### Removed
-- [dorsal fin basal cartilage (elasmobranchs)](http://purl.obolibrary.org/obo/UBERON_4300019) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "dorsal fin basal plate
-"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [dorsal ectoderm](http://purl.obolibrary.org/obo/UBERON_6000112) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [dorsal fin basal cartilage (elasmobranchs)](http://purl.obolibrary.org/obo/UBERON_4300019) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "dorsal fin basal plate"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [dorsal ectoderm](http://purl.obolibrary.org/obo/UBERON_6000112) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### dorsal ectoderm anlage `http://purl.obolibrary.org/obo/UBERON_6005428`
+#### Removed
+- [dorsal ectoderm anlage](http://purl.obolibrary.org/obo/UBERON_6005428) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal ectoderm anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal ectoderm anlage](http://purl.obolibrary.org/obo/UBERON_6005428) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal ectoderm anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### dorsal ectoderm derivative `http://purl.obolibrary.org/obo/UBERON_6007046`
+#### Removed
+- [dorsal ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6007046) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal ectoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6007046) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal ectoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### dorsal epidermis primordium `http://purl.obolibrary.org/obo/UBERON_6005526`
+#### Removed
+- [dorsal epidermis primordium](http://purl.obolibrary.org/obo/UBERON_6005526) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal epidermis primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal epidermis primordium](http://purl.obolibrary.org/obo/UBERON_6005526) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal epidermis primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### dorsal fin hook `http://purl.obolibrary.org/obo/UBERON_4300281`
@@ -1117,6 +1529,46 @@
 - [dorsal fin skeleton](http://purl.obolibrary.org/obo/UBERON_4000168) SubClassOf [skeleton of](http://purl.obolibrary.org/obo/RO_0002576) some [dorsal fin](http://purl.obolibrary.org/obo/UBERON_0003097) 
 
 
+### dorsal histoblast nest abdominal `http://purl.obolibrary.org/obo/UBERON_6001791`
+#### Removed
+- [dorsal histoblast nest abdominal](http://purl.obolibrary.org/obo/UBERON_6001791) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal histoblast nest abdominal"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal histoblast nest abdominal](http://purl.obolibrary.org/obo/UBERON_6001791) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal histoblast nest abdominal"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### dorsal imaginal precursor `http://purl.obolibrary.org/obo/UBERON_6005831`
+#### Removed
+- [dorsal imaginal precursor](http://purl.obolibrary.org/obo/UBERON_6005831) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal imaginal precursor"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal imaginal precursor](http://purl.obolibrary.org/obo/UBERON_6005831) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal imaginal precursor"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### dorsal mesothoracic disc primordium `http://purl.obolibrary.org/obo/UBERON_6001655`
+#### Removed
+- [dorsal mesothoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001655) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal mesothoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal mesothoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001655) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal mesothoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### dorsal mesothorax `http://purl.obolibrary.org/obo/UBERON_6004579`
+#### Removed
+- [dorsal mesothorax](http://purl.obolibrary.org/obo/UBERON_6004579) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal mesothorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal mesothorax](http://purl.obolibrary.org/obo/UBERON_6004579) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal mesothorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### dorsal metathoracic disc primordium `http://purl.obolibrary.org/obo/UBERON_6001656`
+#### Removed
+- [dorsal metathoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001656) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal metathoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal metathoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001656) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal metathoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### dorsal myorhabdoid bone `http://purl.obolibrary.org/obo/UBERON_4300282`
 
 #### Added
@@ -1128,6 +1580,22 @@
 - Class: [dorsal myorhabdoid bone](http://purl.obolibrary.org/obo/UBERON_4300282) 
 
 - [dorsal myorhabdoid bone](http://purl.obolibrary.org/obo/UBERON_4300282) SubClassOf [myorhabdoid bone](http://purl.obolibrary.org/obo/UBERON_2002127) 
+
+
+### dorsal thoracic disc `http://purl.obolibrary.org/obo/UBERON_6001776`
+#### Removed
+- [dorsal thoracic disc](http://purl.obolibrary.org/obo/UBERON_6001776) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal thoracic disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal thoracic disc](http://purl.obolibrary.org/obo/UBERON_6001776) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal thoracic disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### dorsal thoracic disc primordium `http://purl.obolibrary.org/obo/UBERON_6001653`
+#### Removed
+- [dorsal thoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001653) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal thoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [dorsal thoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001653) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal thoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### duodeno-jejunal junction `http://purl.obolibrary.org/obo/UBERON_8410000`
@@ -1144,10 +1612,12 @@
 
 - [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "duodenojejunal junction"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
 - [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "flexura duodenojejunalis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [LATIN](http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/uberon/core#LATIN) ""^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [latin term](http://purl.obolibrary.org/obo/uberon/core#LATIN) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Duodenojejunal_flexure](http://en.wikipedia.org/wiki/Duodenojejunal_flexure) 
+
+- [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "duodenojejunal junction"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "WikipediaVersioned:Duodenojejunal_flexure&amp;oldid=937307798"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
@@ -1167,30 +1637,215 @@
 
 - [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) 
 
-- [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
-
 - [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [duodenum](http://purl.obolibrary.org/obo/UBERON_0002114) 
+
+- [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) SubClassOf [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) 
 
 - [duodeno-jejunal junction](http://purl.obolibrary.org/obo/UBERON_8410000) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) 
 
 
-### ectocoracoid bone `http://purl.obolibrary.org/obo/UBERON_4300104`
+### ectoderm anlage `http://purl.obolibrary.org/obo/UBERON_6005427`
 #### Removed
-- [ectocoracoid bone](http://purl.obolibrary.org/obo/UBERON_4300104) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A paired dermal bone in Gasterosteiformes connected with the coracoid and extending posteriorly. Has also been applied to the element below the scapula and applied to the coracoid in Dipnoi. Dictionary of Ichthyology. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ectoderm anlage](http://purl.obolibrary.org/obo/UBERON_6005427) [label](http://www.w3.org/2000/01/rdf-schema#label) "ectoderm anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [ectocoracoid bone](http://purl.obolibrary.org/obo/UBERON_4300104) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A paired dermal bone in Gasterosteiformes connected with the coracoid and extending posteriorly. Has also been applied to the element below the scapula and applied to the coracoid in Dipnoi. Dictionary of Ichthyology."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ectoderm anlage](http://purl.obolibrary.org/obo/UBERON_6005427) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ectoderm anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### embryonic germ layer derivative `http://purl.obolibrary.org/obo/UBERON_6000000`
+### embryonic abdominal segment 8 `http://purl.obolibrary.org/obo/UBERON_6000180`
 #### Removed
-- [embryonic germ layer derivative](http://purl.obolibrary.org/obo/UBERON_6000000) [label](http://www.w3.org/2000/01/rdf-schema#label) "germ layer derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [embryonic abdominal segment 8](http://purl.obolibrary.org/obo/UBERON_6000180) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic abdominal segment 8"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [embryonic germ layer derivative](http://purl.obolibrary.org/obo/UBERON_6000000) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "germ layer derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBbt:00000000"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [embryonic abdominal segment 8](http://purl.obolibrary.org/obo/UBERON_6000180) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic abdominal segment 8"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [embryonic germ layer derivative](http://purl.obolibrary.org/obo/UBERON_6000000) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic germ layer derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+### embryonic abdominal segment 9 `http://purl.obolibrary.org/obo/UBERON_6000181`
+#### Removed
+- [embryonic abdominal segment 9](http://purl.obolibrary.org/obo/UBERON_6000181) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic abdominal segment 9"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic abdominal segment 9](http://purl.obolibrary.org/obo/UBERON_6000181) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic abdominal segment 9"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic antennal segment `http://purl.obolibrary.org/obo/UBERON_6000160`
+#### Removed
+- [embryonic antennal segment](http://purl.obolibrary.org/obo/UBERON_6000160) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic antennal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic antennal segment](http://purl.obolibrary.org/obo/UBERON_6000160) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic antennal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic brain `http://purl.obolibrary.org/obo/UBERON_6001060`
+#### Removed
+- [embryonic brain](http://purl.obolibrary.org/obo/UBERON_6001060) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic brain"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic brain](http://purl.obolibrary.org/obo/UBERON_6001060) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic brain"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic gnathal segment `http://purl.obolibrary.org/obo/UBERON_6000162`
+#### Removed
+- [embryonic gnathal segment](http://purl.obolibrary.org/obo/UBERON_6000162) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic gnathal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic gnathal segment](http://purl.obolibrary.org/obo/UBERON_6000162) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic gnathal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic imaginal precursor `http://purl.obolibrary.org/obo/UBERON_6001648`
+#### Removed
+- [embryonic imaginal precursor](http://purl.obolibrary.org/obo/UBERON_6001648) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic imaginal precursor"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic imaginal precursor](http://purl.obolibrary.org/obo/UBERON_6001648) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic imaginal precursor"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic labial segment `http://purl.obolibrary.org/obo/UBERON_6000165`
+#### Removed
+- [embryonic labial segment](http://purl.obolibrary.org/obo/UBERON_6000165) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic labial segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic labial segment](http://purl.obolibrary.org/obo/UBERON_6000165) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic labial segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic mesothoracic segment `http://purl.obolibrary.org/obo/UBERON_6000169`
+#### Removed
+- [embryonic mesothoracic segment](http://purl.obolibrary.org/obo/UBERON_6000169) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic mesothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic mesothoracic segment](http://purl.obolibrary.org/obo/UBERON_6000169) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic mesothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic metathoracic segment `http://purl.obolibrary.org/obo/UBERON_6000170`
+#### Removed
+- [embryonic metathoracic segment](http://purl.obolibrary.org/obo/UBERON_6000170) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic metathoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic metathoracic segment](http://purl.obolibrary.org/obo/UBERON_6000170) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic metathoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic optic lobe primordium `http://purl.obolibrary.org/obo/UBERON_6000186`
+#### Removed
+- [embryonic optic lobe primordium](http://purl.obolibrary.org/obo/UBERON_6000186) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic optic lobe primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic optic lobe primordium](http://purl.obolibrary.org/obo/UBERON_6000186) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic optic lobe primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic procephalic segment `http://purl.obolibrary.org/obo/UBERON_6000158`
+#### Removed
+- [embryonic procephalic segment](http://purl.obolibrary.org/obo/UBERON_6000158) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic procephalic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic procephalic segment](http://purl.obolibrary.org/obo/UBERON_6000158) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic procephalic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic prothoracic segment `http://purl.obolibrary.org/obo/UBERON_6000168`
+#### Removed
+- [embryonic prothoracic segment](http://purl.obolibrary.org/obo/UBERON_6000168) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic prothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic prothoracic segment](http://purl.obolibrary.org/obo/UBERON_6000168) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic prothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic thoracic segment `http://purl.obolibrary.org/obo/UBERON_6000167`
+#### Removed
+- [embryonic thoracic segment](http://purl.obolibrary.org/obo/UBERON_6000167) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic thoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic thoracic segment](http://purl.obolibrary.org/obo/UBERON_6000167) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic thoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval central nervous system `http://purl.obolibrary.org/obo/UBERON_6001919`
+#### Removed
+- [embryonic/larval central nervous system](http://purl.obolibrary.org/obo/UBERON_6001919) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval central nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval central nervous system](http://purl.obolibrary.org/obo/UBERON_6001919) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval central nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval circulatory system `http://purl.obolibrary.org/obo/UBERON_6001664`
+#### Removed
+- [embryonic/larval circulatory system](http://purl.obolibrary.org/obo/UBERON_6001664) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval circulatory system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval circulatory system](http://purl.obolibrary.org/obo/UBERON_6001664) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval circulatory system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval cuticle `http://purl.obolibrary.org/obo/UBERON_6004983`
+#### Removed
+- [embryonic/larval cuticle](http://purl.obolibrary.org/obo/UBERON_6004983) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval cuticle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval cuticle](http://purl.obolibrary.org/obo/UBERON_6004983) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval cuticle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval head sense organ `http://purl.obolibrary.org/obo/UBERON_6007280`
+#### Removed
+- [embryonic/larval head sense organ](http://purl.obolibrary.org/obo/UBERON_6007280) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval head sense organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval head sense organ](http://purl.obolibrary.org/obo/UBERON_6007280) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval head sense organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval head sensillum `http://purl.obolibrary.org/obo/UBERON_6007242`
+#### Removed
+- [embryonic/larval head sensillum](http://purl.obolibrary.org/obo/UBERON_6007242) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval head sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval head sensillum](http://purl.obolibrary.org/obo/UBERON_6007242) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval head sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval imaginal precursor `http://purl.obolibrary.org/obo/UBERON_6001760`
+#### Removed
+- [embryonic/larval imaginal precursor](http://purl.obolibrary.org/obo/UBERON_6001760) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval imaginal precursor"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval imaginal precursor](http://purl.obolibrary.org/obo/UBERON_6001760) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval imaginal precursor"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval integumentary system `http://purl.obolibrary.org/obo/UBERON_6005393`
+#### Removed
+- [embryonic/larval integumentary system](http://purl.obolibrary.org/obo/UBERON_6005393) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "larval integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [embryonic/larval integumentary system](http://purl.obolibrary.org/obo/UBERON_6005393) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval integumentary system](http://purl.obolibrary.org/obo/UBERON_6005393) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "larval integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [embryonic/larval integumentary system](http://purl.obolibrary.org/obo/UBERON_6005393) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval lymph gland `http://purl.obolibrary.org/obo/UBERON_6001668`
+#### Removed
+- [embryonic/larval lymph gland](http://purl.obolibrary.org/obo/UBERON_6001668) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval lymph gland"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval lymph gland](http://purl.obolibrary.org/obo/UBERON_6001668) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval lymph gland"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval ocular segment sensillum `http://purl.obolibrary.org/obo/UBERON_6002642`
+#### Removed
+- [embryonic/larval ocular segment sensillum](http://purl.obolibrary.org/obo/UBERON_6002642) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval ocular segment sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval ocular segment sensillum](http://purl.obolibrary.org/obo/UBERON_6002642) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval ocular segment sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval protocerebrum `http://purl.obolibrary.org/obo/UBERON_6001925`
+#### Removed
+- [embryonic/larval protocerebrum](http://purl.obolibrary.org/obo/UBERON_6001925) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval protocerebrum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval protocerebrum](http://purl.obolibrary.org/obo/UBERON_6001925) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval protocerebrum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### embryonic/larval sensillum `http://purl.obolibrary.org/obo/UBERON_6007240`
+#### Removed
+- [embryonic/larval sensillum](http://purl.obolibrary.org/obo/UBERON_6007240) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [embryonic/larval sensillum](http://purl.obolibrary.org/obo/UBERON_6007240) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### endolymphatic duct `http://purl.obolibrary.org/obo/UBERON_0001860`
@@ -1201,12 +1856,12 @@
 - [endolymphatic duct](http://purl.obolibrary.org/obo/UBERON_0001860) [has_relational_adjective](http://purl.obolibrary.org/obo/UBPROP_0000007) "endolymphatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### entepicondyle fossa `http://purl.obolibrary.org/obo/UBERON_4200185`
+### eo-type sensillum `http://purl.obolibrary.org/obo/UBERON_6007232`
 #### Removed
-- [entepicondyle fossa](http://purl.obolibrary.org/obo/UBERON_4200185) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A fossa on the distal humerus proximal to the entepicondyle. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [eo-type sensillum](http://purl.obolibrary.org/obo/UBERON_6007232) [label](http://www.w3.org/2000/01/rdf-schema#label) "eo-type sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [entepicondyle fossa](http://purl.obolibrary.org/obo/UBERON_4200185) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A fossa on the distal humerus proximal to the entepicondyle."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [eo-type sensillum](http://purl.obolibrary.org/obo/UBERON_6007232) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect eo-type sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### epicolic lymph node `http://purl.obolibrary.org/obo/UBERON_0037518`
@@ -1229,6 +1884,42 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### epipharyngeal sclerite `http://purl.obolibrary.org/obo/UBERON_6001848`
+#### Removed
+- [epipharyngeal sclerite](http://purl.obolibrary.org/obo/UBERON_6001848) [label](http://www.w3.org/2000/01/rdf-schema#label) "epipharyngeal sclerite"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [epipharyngeal sclerite](http://purl.obolibrary.org/obo/UBERON_6001848) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect epipharyngeal sclerite"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### epithelial furrow `http://purl.obolibrary.org/obo/UBERON_6007424`
+#### Removed
+- [epithelial furrow](http://purl.obolibrary.org/obo/UBERON_6007424) [label](http://www.w3.org/2000/01/rdf-schema#label) "epithelial furrow"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [epithelial furrow](http://purl.obolibrary.org/obo/UBERON_6007424) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect epithelial furrow"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### esophagogastric junction `http://purl.obolibrary.org/obo/UBERON_0007650`
+#### Removed
+- [esophagogastric junction](http://purl.obolibrary.org/obo/UBERON_0007650) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
+
+- [esophagogastric junction](http://purl.obolibrary.org/obo/UBERON_0007650) SubClassOf [continuous_with](http://purl.obolibrary.org/obo/RO_0002150) some [epithelium of stomach](http://purl.obolibrary.org/obo/UBERON_0001276) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "tFD"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [esophagogastric junction](http://purl.obolibrary.org/obo/UBERON_0007650) SubClassOf [continuous_with](http://purl.obolibrary.org/obo/RO_0002150) some [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "MESH"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [esophagogastric junction](http://purl.obolibrary.org/obo/UBERON_0007650) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "MESH"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [esophagogastric junction](http://purl.obolibrary.org/obo/UBERON_0007650) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [epithelium of stomach](http://purl.obolibrary.org/obo/UBERON_0001276) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "tFD"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [esophagogastric junction](http://purl.obolibrary.org/obo/UBERON_0007650) SubClassOf [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) 
+
+
 ### external jugular lymph node `http://purl.obolibrary.org/obo/UBERON_0037998`
 
 #### Added
@@ -1246,24 +1937,68 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### external rim of the coracoid foramen `http://purl.obolibrary.org/obo/UBERON_4200207`
+### external sensillum `http://purl.obolibrary.org/obo/UBERON_6007231`
 #### Removed
-- [external rim of the coracoid foramen](http://purl.obolibrary.org/obo/UBERON_4200207) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "the external wall of the rim denoting the coracoid foramen. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [external sensillum](http://purl.obolibrary.org/obo/UBERON_6007231) [label](http://www.w3.org/2000/01/rdf-schema#label) "external sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [external rim of the coracoid foramen](http://purl.obolibrary.org/obo/UBERON_4200207) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "the external wall of the rim denoting the coracoid foramen."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [external sensillum](http://purl.obolibrary.org/obo/UBERON_6007231) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect external sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### external sensory organ `http://purl.obolibrary.org/obo/UBERON_6005168`
 #### Removed
 - [external sensory organ](http://purl.obolibrary.org/obo/UBERON_6005168) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "eo"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
+- [external sensory organ](http://purl.obolibrary.org/obo/UBERON_6005168) [label](http://www.w3.org/2000/01/rdf-schema#label) "external sensory organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [external sensory organ](http://purl.obolibrary.org/obo/UBERON_6005168) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "es"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [external sensory organ](http://purl.obolibrary.org/obo/UBERON_6005168) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
+- [external sensory organ](http://purl.obolibrary.org/obo/UBERON_6005168) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect external sensory organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [external sensory organ](http://purl.obolibrary.org/obo/UBERON_6005168) [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### eye-antennal disc `http://purl.obolibrary.org/obo/UBERON_6001766`
+#### Removed
+- [eye-antennal disc](http://purl.obolibrary.org/obo/UBERON_6001766) [label](http://www.w3.org/2000/01/rdf-schema#label) "eye-antennal disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [eye-antennal disc](http://purl.obolibrary.org/obo/UBERON_6001766) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect eye-antennal disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### eye-antennal disc primordium `http://purl.obolibrary.org/obo/UBERON_6001652`
+#### Removed
+- [eye-antennal disc primordium](http://purl.obolibrary.org/obo/UBERON_6001652) [label](http://www.w3.org/2000/01/rdf-schema#label) "eye-antennal disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [eye-antennal disc primordium](http://purl.obolibrary.org/obo/UBERON_6001652) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect eye-antennal disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### female analia `http://purl.obolibrary.org/obo/UBERON_6004824`
+#### Removed
+- [female analia](http://purl.obolibrary.org/obo/UBERON_6004824) [label](http://www.w3.org/2000/01/rdf-schema#label) "female analia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [female analia](http://purl.obolibrary.org/obo/UBERON_6004824) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect female analia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### female genital disc `http://purl.obolibrary.org/obo/UBERON_6001787`
+#### Removed
+- [female genital disc](http://purl.obolibrary.org/obo/UBERON_6001787) [label](http://www.w3.org/2000/01/rdf-schema#label) "female genital disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [female genital disc](http://purl.obolibrary.org/obo/UBERON_6001787) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect female genital disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### female genital disc primordium `http://purl.obolibrary.org/obo/UBERON_6001663`
+#### Removed
+- [female genital disc primordium](http://purl.obolibrary.org/obo/UBERON_6001663) [label](http://www.w3.org/2000/01/rdf-schema#label) "female genital disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [female genital disc primordium](http://purl.obolibrary.org/obo/UBERON_6001663) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect female genital disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### fibular lymph node `http://purl.obolibrary.org/obo/UBERON_0038864`
@@ -1355,12 +2090,40 @@
 - [fin hook](http://purl.obolibrary.org/obo/UBERON_4300284) SubClassOf [skeletal element projection](http://purl.obolibrary.org/obo/UBERON_4100000) 
 
 
-### finished bone surface `http://purl.obolibrary.org/obo/UBERON_4200232`
+### foregut-midgut junction `http://purl.obolibrary.org/obo/UBERON_0006235`
 #### Removed
-- [finished bone surface](http://purl.obolibrary.org/obo/UBERON_4200232) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A smooth periosteal bone surface.  "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [foregut-midgut junction](http://purl.obolibrary.org/obo/UBERON_0006235) EquivalentTo [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [foregut](http://purl.obolibrary.org/obo/UBERON_0001041))) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [midgut](http://purl.obolibrary.org/obo/UBERON_0001045))) 
+
+- [foregut-midgut junction](http://purl.obolibrary.org/obo/UBERON_0006235) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
+
+- [foregut-midgut junction](http://purl.obolibrary.org/obo/UBERON_0006235) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [foregut](http://purl.obolibrary.org/obo/UBERON_0001041)) 
+
+- [foregut-midgut junction](http://purl.obolibrary.org/obo/UBERON_0006235) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [midgut](http://purl.obolibrary.org/obo/UBERON_0001045)) 
 
 #### Added
-- [finished bone surface](http://purl.obolibrary.org/obo/UBERON_4200232) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A smooth periosteal bone surface."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [foregut-midgut junction](http://purl.obolibrary.org/obo/UBERON_0006235) EquivalentTo [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [foregut](http://purl.obolibrary.org/obo/UBERON_0001041)) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [midgut](http://purl.obolibrary.org/obo/UBERON_0001045)) 
+
+- [foregut-midgut junction](http://purl.obolibrary.org/obo/UBERON_0006235) SubClassOf [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) 
+
+- [foregut-midgut junction](http://purl.obolibrary.org/obo/UBERON_0006235) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [midgut](http://purl.obolibrary.org/obo/UBERON_0001045) 
+
+- [foregut-midgut junction](http://purl.obolibrary.org/obo/UBERON_0006235) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [foregut](http://purl.obolibrary.org/obo/UBERON_0001041) 
+
+
+### forestomach-glandular stomach junction `http://purl.obolibrary.org/obo/UBERON_0012270`
+#### Removed
+- [forestomach-glandular stomach junction](http://purl.obolibrary.org/obo/UBERON_0012270) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
+
+- [forestomach-glandular stomach junction](http://purl.obolibrary.org/obo/UBERON_0012270) SubClassOf [continuous_with](http://purl.obolibrary.org/obo/RO_0002150) some [stomach glandular region](http://purl.obolibrary.org/obo/UBERON_0011953) 
+
+- [forestomach-glandular stomach junction](http://purl.obolibrary.org/obo/UBERON_0012270) SubClassOf [continuous_with](http://purl.obolibrary.org/obo/RO_0002150) some [murine forestomach](http://purl.obolibrary.org/obo/UBERON_0008827) 
+
+#### Added
+- [forestomach-glandular stomach junction](http://purl.obolibrary.org/obo/UBERON_0012270) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [stomach glandular region](http://purl.obolibrary.org/obo/UBERON_0011953) 
+
+- [forestomach-glandular stomach junction](http://purl.obolibrary.org/obo/UBERON_0012270) SubClassOf [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) 
+
+- [forestomach-glandular stomach junction](http://purl.obolibrary.org/obo/UBERON_0012270) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [murine forestomach](http://purl.obolibrary.org/obo/UBERON_0008827) 
 
 
 ### gastro-epiploic lymph node `http://purl.obolibrary.org/obo/UBERON_0038746`
@@ -1401,12 +2164,47 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### glenoid region `http://purl.obolibrary.org/obo/UBERON_4300119`
+### gastroduodenal junction `http://purl.obolibrary.org/obo/UBERON_0012650`
 #### Removed
-- [glenoid region](http://purl.obolibrary.org/obo/UBERON_4300119) [definition](http://purl.obolibrary.org/obo/IAO_0000115) " Region surrounding the glenoid fossa on the scapulocoracoid. [PHENOSCAPE:AD]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [gastroduodenal junction](http://purl.obolibrary.org/obo/UBERON_0012650) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
 
 #### Added
-- [glenoid region](http://purl.obolibrary.org/obo/UBERON_4300119) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Region surrounding the glenoid fossa on the scapulocoracoid. [PHENOSCAPE:AD]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [gastroduodenal junction](http://purl.obolibrary.org/obo/UBERON_0012650) SubClassOf [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) 
+
+
+### genital disc `http://purl.obolibrary.org/obo/UBERON_6001784`
+#### Removed
+- [genital disc](http://purl.obolibrary.org/obo/UBERON_6001784) [label](http://www.w3.org/2000/01/rdf-schema#label) "genital disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [genital disc](http://purl.obolibrary.org/obo/UBERON_6001784) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect genital disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### genital disc primordium `http://purl.obolibrary.org/obo/UBERON_6001661`
+#### Removed
+- [genital disc primordium](http://purl.obolibrary.org/obo/UBERON_6001661) [label](http://www.w3.org/2000/01/rdf-schema#label) "genital disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [genital disc primordium](http://purl.obolibrary.org/obo/UBERON_6001661) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect genital disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### germ layer derivative `http://purl.obolibrary.org/obo/UBERON_6000000`
+#### Removed
+- [germ layer derivative](http://purl.obolibrary.org/obo/UBERON_6000000) [label](http://www.w3.org/2000/01/rdf-schema#label) "germ layer derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [germ layer derivative](http://purl.obolibrary.org/obo/UBERON_6000000) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "germ layer derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBbt:00000000"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [germ layer derivative](http://purl.obolibrary.org/obo/UBERON_6000000) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic germ layer derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### gnathal segment `http://purl.obolibrary.org/obo/UBERON_6000011`
+#### Removed
+- [gnathal segment](http://purl.obolibrary.org/obo/UBERON_6000011) [label](http://www.w3.org/2000/01/rdf-schema#label) "gnathal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [gnathal segment](http://purl.obolibrary.org/obo/UBERON_6000011) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect gnathal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### hair of limb `http://purl.obolibrary.org/obo/UBERON_0037459`
@@ -1455,92 +2253,115 @@
 - [hair of neck](http://purl.obolibrary.org/obo/UBERON_0037458) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [neck](http://purl.obolibrary.org/obo/UBERON_0000974) 
 
 
-### hepatic acinus zone 1 `http://purl.obolibrary.org/obo/UBERON_8400001`
+### haltere disc `http://purl.obolibrary.org/obo/UBERON_6001779`
 #### Removed
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus closest to the portal triad. Blood in this zone has the highest oxygen concentration of the three metabolic zones in the hepatic acinus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
-
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus periportal zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus zone 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
-
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) 
-
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) SubClassOf [adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [portal triad](http://purl.obolibrary.org/obo/UBERON_0001279) 
-
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
+- [haltere disc](http://purl.obolibrary.org/obo/UBERON_6001779) [label](http://www.w3.org/2000/01/rdf-schema#label) "haltere disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus that is closest to the arterial blood supply and has the highest oxygen concentration. Hepatocytes in this region are primarily involved in oxidative energy metabolism."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [29763190](http://www.ncbi.nlm.nih.gov/pubmed/29763190) 
-
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "liver lobule periportal zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
-
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus zone 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [hepatic acinus zone 1](http://purl.obolibrary.org/obo/UBERON_8400001) SubClassOf [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) 
+- [haltere disc](http://purl.obolibrary.org/obo/UBERON_6001779) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect haltere disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### hepatic acinus zone 2 `http://purl.obolibrary.org/obo/UBERON_8400003`
+### hepatic acinus intermediary zone `http://purl.obolibrary.org/obo/UBERON_8400003`
 #### Removed
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus in between the periportal zone and the perivenous zone. Blood in this region has an intermediate oxygen concentration relative to the other two zones of the hepatic acinus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus in between the periportal zone and the perivenous zone. Blood in this region has an intermediate oxygen concentration relative to the other two zones of the hepatic acinus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
 
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus zone 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus zone 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
 
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus intermediary zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [creator](http://purl.org/dc/elements/1.1/creator) [X](http://orcid.org/0000-0003-2034-601X) 
 
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus intermediary zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
+
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) 
 
 #### Added
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus in between zones 1 and 3. Blood in this region has an intermediate oxygen concentration relative to the other two zones of the hepatic acinus. Hepatocytes in this region have mixed functionality in comparison with those in zones 1 and 3."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus intermediary zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
+
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus in between zones 1 and 3. Blood in this region has an intermediate oxygen concentration relative to the other two zones of the hepatic acinus. Hepatocytes in this region have mixed functionality in comparison with those in zones 1 and 3."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [29763190](http://www.ncbi.nlm.nih.gov/pubmed/29763190) 
 
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus zone 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus zone 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "liver lobule midzonal region"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "liver lobule midzonal region"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
 
-- [hepatic acinus zone 2](http://purl.obolibrary.org/obo/UBERON_8400003) SubClassOf [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) 
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [hepatic acinus intermediary zone](http://purl.obolibrary.org/obo/UBERON_8400003) SubClassOf [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) 
 
 
-### hepatic acinus zone 3 `http://purl.obolibrary.org/obo/UBERON_8400002`
+### hepatic acinus periportal zone `http://purl.obolibrary.org/obo/UBERON_8400001`
 #### Removed
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus pericentral zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus closest to the portal triad. Blood in this zone has the highest oxygen concentration of the three metabolic zones in the hepatic acinus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
 
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus closest to the central vein of the liver lobule. Blood in this zome has the lowest oxygen concentration of the three metabolic zones in the hepatic acinus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus periportal zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [creator](http://purl.org/dc/elements/1.1/creator) [X](http://orcid.org/0000-0003-2034-601X) 
+
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus zone 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
 
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus zone 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) 
 
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus perivenous zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) SubClassOf [adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [portal triad](http://purl.obolibrary.org/obo/UBERON_0001279) 
 
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus centrilobular zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
-
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
-
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) 
-
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) SubClassOf [adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [central vein of liver](http://purl.obolibrary.org/obo/UBERON_0006841) 
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
 
 #### Added
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "liver lobule centrilobular region"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
-
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus zone 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus immediately surrounding the central veins. This region has the lowest oxygen concentration in the acinus. Hepatocytes in this region are the primary location for the biotransformation of drugs."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus that is closest to the arterial blood supply and has the highest oxygen concentration. Hepatocytes in this region are primarily involved in oxidative energy metabolism."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [29763190](http://www.ncbi.nlm.nih.gov/pubmed/29763190) 
 
-- [hepatic acinus zone 3](http://purl.obolibrary.org/obo/UBERON_8400002) SubClassOf [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) 
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus periportal zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
+
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "liver lobule periportal zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
+
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus zone 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [hepatic acinus periportal zone](http://purl.obolibrary.org/obo/UBERON_8400001) SubClassOf [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) 
+
+
+### hepatic acinus perivenous zone `http://purl.obolibrary.org/obo/UBERON_8400002`
+#### Removed
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus closest to the central vein of the liver lobule. Blood in this zome has the lowest oxygen concentration of the three metabolic zones in the hepatic acinus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [creator](http://purl.org/dc/elements/1.1/creator) [X](http://orcid.org/0000-0003-2034-601X) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus zone 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus perivenous zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) SubClassOf [adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [central vein of liver](http://purl.obolibrary.org/obo/UBERON_0006841) 
+
+#### Added
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "liver lobule centrilobular region"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic acinus zone 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the hepatic acinus immediately surrounding the central veins. This region has the lowest oxygen concentration in the acinus. Hepatocytes in this region are the primary location for the biotransformation of drugs."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [29763190](http://www.ncbi.nlm.nih.gov/pubmed/29763190) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus perivenous zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
+
+- [hepatic acinus perivenous zone](http://purl.obolibrary.org/obo/UBERON_8400002) SubClassOf [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) 
 
 
 ### hepatoportal lymph node `http://purl.obolibrary.org/obo/UBERON_0038694`
@@ -1584,28 +2405,20 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### humeral facet on radius `http://purl.obolibrary.org/obo/UBERON_4200204`
+### histoblast `http://purl.obolibrary.org/obo/UBERON_6001789`
 #### Removed
-- [humeral facet on radius](http://purl.obolibrary.org/obo/UBERON_4200204) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Facet on the radius for articulation with the radial condyle of the humerus. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [histoblast](http://purl.obolibrary.org/obo/UBERON_6001789) [label](http://www.w3.org/2000/01/rdf-schema#label) "histoblast"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [humeral facet on radius](http://purl.obolibrary.org/obo/UBERON_4200204) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Facet on the radius for articulation with the radial condyle of the humerus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [histoblast](http://purl.obolibrary.org/obo/UBERON_6001789) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect histoblast"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### humeral facet on the ulna `http://purl.obolibrary.org/obo/UBERON_4200203`
+### histoblast nest `http://purl.obolibrary.org/obo/UBERON_6001790`
 #### Removed
-- [humeral facet on the ulna](http://purl.obolibrary.org/obo/UBERON_4200203) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Facet on the ulna for articulation with the ulnar condyle of the humerus. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [histoblast nest](http://purl.obolibrary.org/obo/UBERON_6001790) [label](http://www.w3.org/2000/01/rdf-schema#label) "histoblast nest"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [humeral facet on the ulna](http://purl.obolibrary.org/obo/UBERON_4200203) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Facet on the ulna for articulation with the ulnar condyle of the humerus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### hypophysial region `http://purl.obolibrary.org/obo/UBERON_4200248`
-#### Removed
-- [hypophysial region](http://purl.obolibrary.org/obo/UBERON_4200248) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Region of the endocranium that encompasses the connection between the hypothalamus and the anterior pituitary. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [hypophysial region](http://purl.obolibrary.org/obo/UBERON_4200248) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Region of the endocranium that encompasses the connection between the hypothalamus and the anterior pituitary."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [histoblast nest](http://purl.obolibrary.org/obo/UBERON_6001790) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect histoblast nest"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### ileal lymph node `http://purl.obolibrary.org/obo/UBERON_0037522`
@@ -1631,12 +2444,30 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### incisor process `http://purl.obolibrary.org/obo/UBERON_4200198`
+### ileocecal junction `http://purl.obolibrary.org/obo/UBERON_0001073`
 #### Removed
-- [incisor process](http://purl.obolibrary.org/obo/UBERON_4200198) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Process that is part of the mandible that is in close proximity to the incisor teeth. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ileocecal junction](http://purl.obolibrary.org/obo/UBERON_0001073) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160) 
+
+- [ileocecal junction](http://purl.obolibrary.org/obo/UBERON_0001073) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
 
 #### Added
-- [incisor process](http://purl.obolibrary.org/obo/UBERON_4200198) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Process that is part of the mandible that is in close proximity to the incisor teeth."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ileocecal junction](http://purl.obolibrary.org/obo/UBERON_0001073) SubClassOf [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) 
+
+
+### imaginal disc primordium `http://purl.obolibrary.org/obo/UBERON_6001649`
+#### Removed
+- [imaginal disc primordium](http://purl.obolibrary.org/obo/UBERON_6001649) [label](http://www.w3.org/2000/01/rdf-schema#label) "imaginal disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [imaginal disc primordium](http://purl.obolibrary.org/obo/UBERON_6001649) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect imaginal disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### imaginal precursor `http://purl.obolibrary.org/obo/UBERON_6005023`
+#### Removed
+- [imaginal precursor](http://purl.obolibrary.org/obo/UBERON_6005023) [label](http://www.w3.org/2000/01/rdf-schema#label) "imaginal precursor"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [imaginal precursor](http://purl.obolibrary.org/obo/UBERON_6005023) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect imaginal precursor"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### inferior deep lateral cervical lymph node `http://purl.obolibrary.org/obo/UBERON_0038935`
@@ -1915,111 +2746,15 @@
 - [insect adult head](http://purl.obolibrary.org/obo/UBERON_6003007) SubClassOf [head](http://purl.obolibrary.org/obo/UBERON_0000033) 
 
 #### Added
-- [insect adult head](http://purl.obolibrary.org/obo/UBERON_6003007) SubClassOf [panarthropod head](http://purl.obolibrary.org/obo/UBERON_6000004) 
+- [insect adult head](http://purl.obolibrary.org/obo/UBERON_6003007) SubClassOf [insect head](http://purl.obolibrary.org/obo/UBERON_6000004) 
 
 
-### insect adult integumentary system `http://purl.obolibrary.org/obo/UBERON_6005396`
+### insect head `http://purl.obolibrary.org/obo/UBERON_6000004`
 #### Removed
-- [insect adult integumentary system](http://purl.obolibrary.org/obo/UBERON_6005396) [label](http://www.w3.org/2000/01/rdf-schema#label) "adult integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [insect head](http://purl.obolibrary.org/obo/UBERON_6000004) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [insect adult integumentary system](http://purl.obolibrary.org/obo/UBERON_6005396) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect adult integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect cardiogenic mesoderm `http://purl.obolibrary.org/obo/UBERON_6005541`
-#### Removed
-- [insect cardiogenic mesoderm](http://purl.obolibrary.org/obo/UBERON_6005541) [label](http://www.w3.org/2000/01/rdf-schema#label) "cardiogenic mesoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect cardiogenic mesoderm](http://purl.obolibrary.org/obo/UBERON_6005541) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect cardiogenic mesoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect circulatory system primordium `http://purl.obolibrary.org/obo/UBERON_6005461`
-#### Removed
-- [insect circulatory system primordium](http://purl.obolibrary.org/obo/UBERON_6005461) [label](http://www.w3.org/2000/01/rdf-schema#label) "circulatory system primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect circulatory system primordium](http://purl.obolibrary.org/obo/UBERON_6005461) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect circulatory system primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect dorsal ectoderm `http://purl.obolibrary.org/obo/UBERON_6000112`
-#### Removed
-- [insect dorsal ectoderm](http://purl.obolibrary.org/obo/UBERON_6000112) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect dorsal ectoderm](http://purl.obolibrary.org/obo/UBERON_6000112) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect dorsal ectoderm derivative `http://purl.obolibrary.org/obo/UBERON_6007046`
-#### Removed
-- [insect dorsal ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6007046) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal ectoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect dorsal ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6007046) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal ectoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect dorsal epidermis primordium `http://purl.obolibrary.org/obo/UBERON_6005526`
-#### Removed
-- [insect dorsal epidermis primordium](http://purl.obolibrary.org/obo/UBERON_6005526) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal epidermis primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect dorsal epidermis primordium](http://purl.obolibrary.org/obo/UBERON_6005526) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect dorsal epidermis primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect embryonic/larval integumentary system `http://purl.obolibrary.org/obo/UBERON_6005393`
-#### Removed
-- [insect embryonic/larval integumentary system](http://purl.obolibrary.org/obo/UBERON_6005393) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "larval integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [insect embryonic/larval integumentary system](http://purl.obolibrary.org/obo/UBERON_6005393) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic/larval integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect embryonic/larval integumentary system](http://purl.obolibrary.org/obo/UBERON_6005393) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "larval integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [insect embryonic/larval integumentary system](http://purl.obolibrary.org/obo/UBERON_6005393) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect embryonic/larval integumentary system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect lymph gland primordium `http://purl.obolibrary.org/obo/UBERON_6005467`
-#### Removed
-- [insect lymph gland primordium](http://purl.obolibrary.org/obo/UBERON_6005467) [label](http://www.w3.org/2000/01/rdf-schema#label) "lymph gland primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect lymph gland primordium](http://purl.obolibrary.org/obo/UBERON_6005467) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect lymph gland primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect trunk ectoderm `http://purl.obolibrary.org/obo/UBERON_6007045`
-#### Removed
-- [insect trunk ectoderm](http://purl.obolibrary.org/obo/UBERON_6007045) [label](http://www.w3.org/2000/01/rdf-schema#label) "trunk ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect trunk ectoderm](http://purl.obolibrary.org/obo/UBERON_6007045) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect trunk ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect ventral ectoderm `http://purl.obolibrary.org/obo/UBERON_6005558`
-#### Removed
-- [insect ventral ectoderm](http://purl.obolibrary.org/obo/UBERON_6005558) [label](http://www.w3.org/2000/01/rdf-schema#label) "ventral ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect ventral ectoderm](http://purl.obolibrary.org/obo/UBERON_6005558) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ventral ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### insect wing margin `http://purl.obolibrary.org/obo/UBERON_6005378`
-#### Removed
-- [insect wing margin](http://purl.obolibrary.org/obo/UBERON_6005378) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "margin"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [insect wing margin](http://purl.obolibrary.org/obo/UBERON_6005378) [label](http://www.w3.org/2000/01/rdf-schema#label) "wing margin"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [insect wing margin](http://purl.obolibrary.org/obo/UBERON_6005378) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "margin"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [insect wing margin](http://purl.obolibrary.org/obo/UBERON_6005378) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect wing margin"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### intercentrum `http://purl.obolibrary.org/obo/UBERON_4200194`
-#### Removed
-- [intercentrum](http://purl.obolibrary.org/obo/UBERON_4200194) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The anteriormost of the two possible elements found in the tetrapod centrum (when the centrum is not a single element). "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [intercentrum](http://purl.obolibrary.org/obo/UBERON_4200194) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The anteriormost of the two possible elements found in the tetrapod centrum (when the centrum is not a single element)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [insect head](http://purl.obolibrary.org/obo/UBERON_6000004) [label](http://www.w3.org/2000/01/rdf-schema#label) "panarthropod head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### interiliac lymph node `http://purl.obolibrary.org/obo/UBERON_0037541`
@@ -2216,6 +2951,22 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### internal sense organ `http://purl.obolibrary.org/obo/UBERON_6007373`
+#### Removed
+- [internal sense organ](http://purl.obolibrary.org/obo/UBERON_6007373) [label](http://www.w3.org/2000/01/rdf-schema#label) "internal sense organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [internal sense organ](http://purl.obolibrary.org/obo/UBERON_6007373) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect internal sense organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### internal sensillum `http://purl.obolibrary.org/obo/UBERON_6007233`
+#### Removed
+- [internal sensillum](http://purl.obolibrary.org/obo/UBERON_6007233) [label](http://www.w3.org/2000/01/rdf-schema#label) "internal sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [internal sensillum](http://purl.obolibrary.org/obo/UBERON_6007233) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect internal sensillum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### interpectoral lymph node `http://purl.obolibrary.org/obo/UBERON_0038867`
 
 #### Added
@@ -2236,12 +2987,29 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### intertrochanteric fossa `http://purl.obolibrary.org/obo/UBERON_4200004`
-#### Removed
-- [intertrochanteric fossa](http://purl.obolibrary.org/obo/UBERON_4200004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Depression on the ventreal side of the femoral head. Associated with the pubioischiofemoralis externus muscle. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+### intestinal junction `http://purl.obolibrary.org/obo/UBERON_8410024`
 
 #### Added
-- [intertrochanteric fossa](http://purl.obolibrary.org/obo/UBERON_4200004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Depression on the ventreal side of the femoral head. Associated with the pubioischiofemoralis externus muscle."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An anatomical junction between two parts of the intestine."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ORCID:0000-0002-7073-9172"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0002-2825-0621"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8410024"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) [label](http://www.w3.org/2000/01/rdf-schema#label) "intestinal junction"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "junction of intestine"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) 
+
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) EquivalentTo [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) and ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160)) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [subdivision of digestive tract](http://purl.obolibrary.org/obo/UBERON_0004921)) 
+
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160) 
+
+- [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) SubClassOf [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) 
 
 
 ### intestinal lymph node `http://purl.obolibrary.org/obo/UBERON_0037531`
@@ -2267,12 +3035,12 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### ischial peduncle `http://purl.obolibrary.org/obo/UBERON_4100004`
+### intestinal-cloacal junction `http://purl.obolibrary.org/obo/UBERON_0016498`
 #### Removed
-- [ischial peduncle](http://purl.obolibrary.org/obo/UBERON_4100004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Bony projection (peduncle) that is located on the posterior portion of the ilium, posterior to the acetabulum. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [intestinal-cloacal junction](http://purl.obolibrary.org/obo/UBERON_0016498) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
 
 #### Added
-- [ischial peduncle](http://purl.obolibrary.org/obo/UBERON_4100004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Bony projection (peduncle) that is located on the posterior portion of the ilium, posterior to the acetabulum."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [intestinal-cloacal junction](http://purl.obolibrary.org/obo/UBERON_0016498) SubClassOf [digestive tract junction](http://purl.obolibrary.org/obo/UBERON_1100000) 
 
 
 ### jejunal lymph node `http://purl.obolibrary.org/obo/UBERON_0038093`
@@ -2319,13 +3087,13 @@
 
 - [jejuno-ileal junction](http://purl.obolibrary.org/obo/UBERON_8410019) EquivalentTo [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) 
 
+- [jejuno-ileal junction](http://purl.obolibrary.org/obo/UBERON_8410019) SubClassOf [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) 
+
 - [jejuno-ileal junction](http://purl.obolibrary.org/obo/UBERON_8410019) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) 
 
 - [jejuno-ileal junction](http://purl.obolibrary.org/obo/UBERON_8410019) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) 
 
 - [jejuno-ileal junction](http://purl.obolibrary.org/obo/UBERON_8410019) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) 
-
-- [jejuno-ileal junction](http://purl.obolibrary.org/obo/UBERON_8410019) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
 
 
 ### jugular lymph node `http://purl.obolibrary.org/obo/UBERON_0037865`
@@ -2453,6 +3221,190 @@
 
 - [juxta-intestinal mesenteric lymph node](http://purl.obolibrary.org/obo/UBERON_0038727) SubClassOf [mesenteric lymph node](http://purl.obolibrary.org/obo/UBERON_0002509) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### labial disc `http://purl.obolibrary.org/obo/UBERON_6001764`
+#### Removed
+- [labial disc](http://purl.obolibrary.org/obo/UBERON_6001764) [label](http://www.w3.org/2000/01/rdf-schema#label) "labial disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [labial disc](http://purl.obolibrary.org/obo/UBERON_6001764) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect labial disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### labial disc primordium `http://purl.obolibrary.org/obo/UBERON_6001650`
+#### Removed
+- [labial disc primordium](http://purl.obolibrary.org/obo/UBERON_6001650) [label](http://www.w3.org/2000/01/rdf-schema#label) "labial disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [labial disc primordium](http://purl.obolibrary.org/obo/UBERON_6001650) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect labial disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### labial segment `http://purl.obolibrary.org/obo/UBERON_6000014`
+#### Removed
+- [labial segment](http://purl.obolibrary.org/obo/UBERON_6000014) [label](http://www.w3.org/2000/01/rdf-schema#label) "labial segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [labial segment](http://purl.obolibrary.org/obo/UBERON_6000014) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect labial segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval abdomen `http://purl.obolibrary.org/obo/UBERON_6001746`
+#### Removed
+- [larval abdomen](http://purl.obolibrary.org/obo/UBERON_6001746) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval abdomen"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval abdomen](http://purl.obolibrary.org/obo/UBERON_6001746) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval abdomen"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval abdominal segment `http://purl.obolibrary.org/obo/UBERON_6001747`
+#### Removed
+- [larval abdominal segment](http://purl.obolibrary.org/obo/UBERON_6001747) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval abdominal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval abdominal segment](http://purl.obolibrary.org/obo/UBERON_6001747) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval abdominal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval abdominal segment 8 `http://purl.obolibrary.org/obo/UBERON_6001755`
+#### Removed
+- [larval abdominal segment 8](http://purl.obolibrary.org/obo/UBERON_6001755) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval abdominal segment 8"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval abdominal segment 8](http://purl.obolibrary.org/obo/UBERON_6001755) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval abdominal segment 8"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval abdominal segment 9 `http://purl.obolibrary.org/obo/UBERON_6001756`
+#### Removed
+- [larval abdominal segment 9](http://purl.obolibrary.org/obo/UBERON_6001756) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval abdominal segment 9"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval abdominal segment 9](http://purl.obolibrary.org/obo/UBERON_6001756) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval abdominal segment 9"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval antennal segment `http://purl.obolibrary.org/obo/UBERON_6001735`
+#### Removed
+- [larval antennal segment](http://purl.obolibrary.org/obo/UBERON_6001735) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval antennal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval antennal segment](http://purl.obolibrary.org/obo/UBERON_6001735) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval antennal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval gnathal segment `http://purl.obolibrary.org/obo/UBERON_6001737`
+#### Removed
+- [larval gnathal segment](http://purl.obolibrary.org/obo/UBERON_6001737) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval gnathal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval gnathal segment](http://purl.obolibrary.org/obo/UBERON_6001737) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval gnathal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval head `http://purl.obolibrary.org/obo/UBERON_6001730`
+#### Removed
+- [larval head](http://purl.obolibrary.org/obo/UBERON_6001730) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval head](http://purl.obolibrary.org/obo/UBERON_6001730) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval head segment `http://purl.obolibrary.org/obo/UBERON_6001732`
+#### Removed
+- [larval head segment](http://purl.obolibrary.org/obo/UBERON_6001732) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval head segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval head segment](http://purl.obolibrary.org/obo/UBERON_6001732) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval head segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval labial segment `http://purl.obolibrary.org/obo/UBERON_6001740`
+#### Removed
+- [larval labial segment](http://purl.obolibrary.org/obo/UBERON_6001740) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval labial segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval labial segment](http://purl.obolibrary.org/obo/UBERON_6001740) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval labial segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval labral segment `http://purl.obolibrary.org/obo/UBERON_6001734`
+#### Removed
+- [larval labral segment](http://purl.obolibrary.org/obo/UBERON_6001734) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval labral segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval labral segment](http://purl.obolibrary.org/obo/UBERON_6001734) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval labral segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval mesothoracic segment `http://purl.obolibrary.org/obo/UBERON_6001744`
+#### Removed
+- [larval mesothoracic segment](http://purl.obolibrary.org/obo/UBERON_6001744) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval mesothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval mesothoracic segment](http://purl.obolibrary.org/obo/UBERON_6001744) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval mesothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval metathoracic segment `http://purl.obolibrary.org/obo/UBERON_6001745`
+#### Removed
+- [larval metathoracic segment](http://purl.obolibrary.org/obo/UBERON_6001745) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval metathoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval metathoracic segment](http://purl.obolibrary.org/obo/UBERON_6001745) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval metathoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval ocular segment `http://purl.obolibrary.org/obo/UBERON_6001731`
+#### Removed
+- [larval ocular segment](http://purl.obolibrary.org/obo/UBERON_6001731) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval ocular segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval ocular segment](http://purl.obolibrary.org/obo/UBERON_6001731) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval ocular segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval procephalic segment `http://purl.obolibrary.org/obo/UBERON_6001733`
+#### Removed
+- [larval procephalic segment](http://purl.obolibrary.org/obo/UBERON_6001733) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval procephalic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval procephalic segment](http://purl.obolibrary.org/obo/UBERON_6001733) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval procephalic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval prothoracic segment `http://purl.obolibrary.org/obo/UBERON_6001743`
+#### Removed
+- [larval prothoracic segment](http://purl.obolibrary.org/obo/UBERON_6001743) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval prothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval prothoracic segment](http://purl.obolibrary.org/obo/UBERON_6001743) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval prothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval segment `http://purl.obolibrary.org/obo/UBERON_6001729`
+#### Removed
+- [larval segment](http://purl.obolibrary.org/obo/UBERON_6001729) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval segment](http://purl.obolibrary.org/obo/UBERON_6001729) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval sense organ `http://purl.obolibrary.org/obo/UBERON_6002639`
+#### Removed
+- [larval sense organ](http://purl.obolibrary.org/obo/UBERON_6002639) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval sense organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval sense organ](http://purl.obolibrary.org/obo/UBERON_6002639) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval sense organ"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval tagma `http://purl.obolibrary.org/obo/UBERON_6001728`
+#### Removed
+- [larval tagma](http://purl.obolibrary.org/obo/UBERON_6001728) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval tagma"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval tagma](http://purl.obolibrary.org/obo/UBERON_6001728) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval tagma"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval thoracic segment `http://purl.obolibrary.org/obo/UBERON_6001742`
+#### Removed
+- [larval thoracic segment](http://purl.obolibrary.org/obo/UBERON_6001742) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval thoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval thoracic segment](http://purl.obolibrary.org/obo/UBERON_6001742) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval thoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### larval thorax `http://purl.obolibrary.org/obo/UBERON_6001741`
+#### Removed
+- [larval thorax](http://purl.obolibrary.org/obo/UBERON_6001741) [label](http://www.w3.org/2000/01/rdf-schema#label) "larval thorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [larval thorax](http://purl.obolibrary.org/obo/UBERON_6001741) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect larval thorax"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### lateral axillary lymph node `http://purl.obolibrary.org/obo/UBERON_0037590`
@@ -2592,14 +3544,6 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### latissimus dorsi process `http://purl.obolibrary.org/obo/UBERON_4200100`
-#### Removed
-- [latissimus dorsi process](http://purl.obolibrary.org/obo/UBERON_4200100) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A bony process on the dorsal side of the proximal region of the humerus which corresponds to the insertion site of the Latissimus dorsi muscle. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [latissimus dorsi process](http://purl.obolibrary.org/obo/UBERON_4200100) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A bony process on the dorsal side of the proximal region of the humerus which corresponds to the insertion site of the Latissimus dorsi muscle."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### left apical axillary lymph node `http://purl.obolibrary.org/obo/UBERON_0037790`
 
 #### Added
@@ -2620,6 +3564,19 @@
 - [left apical axillary lymph node](http://purl.obolibrary.org/obo/UBERON_0037790) SubClassOf [in_left_side_of](http://purl.obolibrary.org/obo/BSPO_0000120) some [multicellular organism](http://purl.obolibrary.org/obo/UBERON_0000468) 
 
 - [left apical axillary lymph node](http://purl.obolibrary.org/obo/UBERON_0037790) SubClassOf [lateral structure](http://purl.obolibrary.org/obo/UBERON_0015212) 
+
+
+### left branch of atrioventricular bundle `http://purl.obolibrary.org/obo/UBERON_0005986`
+#### Removed
+- [left branch of atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0005986) [label](http://www.w3.org/2000/01/rdf-schema#label) "left branch of atrioventricular bundle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [left branch of atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0005986) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "left branch of atrioventricular bundle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [left branch of atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0005986) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "LBB"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION) 
+
+- [left branch of atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0005986) [label](http://www.w3.org/2000/01/rdf-schema#label) "left bundle branch"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### left central axillary lymph node `http://purl.obolibrary.org/obo/UBERON_0037798`
@@ -2852,16 +3809,6 @@
 - [left subscapular axillary lymph node](http://purl.obolibrary.org/obo/UBERON_0037794) SubClassOf [lateral structure](http://purl.obolibrary.org/obo/UBERON_0015212) 
 
 
-### lepidotrichial segment `http://purl.obolibrary.org/obo/UBERON_4300108`
-#### Removed
-- [lepidotrichial segment](http://purl.obolibrary.org/obo/UBERON_4300108) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Zone of bone organ that is part of a lepidotrich and connected to other segments by collagen fibers. These segments lend flexibility to the lepidtrich. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI 10.1002/jmor.20161"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [lepidotrichial segment](http://purl.obolibrary.org/obo/UBERON_4300108) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Zone of bone organ that is part of a lepidotrich and connected to other segments by collagen fibers. These segments lend flexibility to the lepidtrich."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI 10.1002/jmor.20161"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### lingual lymph node `http://purl.obolibrary.org/obo/UBERON_0038925`
 
 #### Added
@@ -2879,35 +3826,11 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### lip `http://purl.obolibrary.org/obo/UBERON_0001833`
-#### Removed
-- [lip](http://purl.obolibrary.org/obo/UBERON_0001833) [external_definition](http://purl.obolibrary.org/obo/UBPROP_0000001) "Surface structure that is one of the two fleshy folds surrounding the opening of the mouth.[TAO]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [ontology](http://www.geneontology.org/formats/oboInOwl#ontology) "TAO"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) [art.asp?articlekey=9458](http://purl.obolibrary.org/obo/uberon/http/:www.medterms.com/script/main/art.asp?articlekey=9458) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ZFIN:curator"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [date_retrieved](http://www.geneontology.org/formats/oboInOwl#date_retrieved) "2012-08-14"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [external_class](http://www.geneontology.org/formats/oboInOwl#external_class) "TAO:0007006"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [lip](http://purl.obolibrary.org/obo/UBERON_0001833) [external_definition](http://purl.obolibrary.org/obo/UBPROP_0000001) "Surface structure that is one of the two fleshy folds surrounding the opening of the mouth.[TAO]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [ontology](http://www.geneontology.org/formats/oboInOwl#ontology) "TAO"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ZFIN:curator"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [date_retrieved](http://www.geneontology.org/formats/oboInOwl#date_retrieved) "2012-08-14"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) [art.asp?articlekey=9458](http://purl.obolibrary.org/obo/uberon/http//:www.medterms.com/script/main/art.asp?articlekey=9458) 
-
-  - [external_class](http://www.geneontology.org/formats/oboInOwl#external_class) "TAO:0007006"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### liver lobule centrilobular region `http://purl.obolibrary.org/obo/UBERON_8400007`
 
 #### Added
+- [liver lobule centrilobular region](http://purl.obolibrary.org/obo/UBERON_8400007) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [liver lobule centrilobular region](http://purl.obolibrary.org/obo/UBERON_8400007) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [liver lobule centrilobular region](http://purl.obolibrary.org/obo/UBERON_8400007) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the liver lobule that is closest to the central vein."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2921,8 +3844,6 @@
 
 - [liver lobule centrilobular region](http://purl.obolibrary.org/obo/UBERON_8400007) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hepatic acinus zone 3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
-
-- [liver lobule centrilobular region](http://purl.obolibrary.org/obo/UBERON_8400007) [creator](http://purl.org/dc/elements/1.1/creator) [X](http://orcid.org/0000-0003-2034-601X) 
 
 - Class: [liver lobule centrilobular region](http://purl.obolibrary.org/obo/UBERON_8400007) 
 
@@ -2945,12 +3866,12 @@
 - [liver lobule midzonal region](http://purl.obolibrary.org/obo/UBERON_8400008) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hepatic acinus zone 2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
 
+- [liver lobule midzonal region](http://purl.obolibrary.org/obo/UBERON_8400008) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [liver lobule midzonal region](http://purl.obolibrary.org/obo/UBERON_8400008) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the liver lobule that is between the periportal and centrilobular regions."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
 
 - [liver lobule midzonal region](http://purl.obolibrary.org/obo/UBERON_8400008) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2020-10-05T15:52:22Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [liver lobule midzonal region](http://purl.obolibrary.org/obo/UBERON_8400008) [creator](http://purl.org/dc/elements/1.1/creator) [X](http://orcid.org/0000-0003-2034-601X) 
 
 - Class: [liver lobule midzonal region](http://purl.obolibrary.org/obo/UBERON_8400008) 
 
@@ -2973,12 +3894,12 @@
 
 - [liver lobule periportal region](http://purl.obolibrary.org/obo/UBERON_8400006) [label](http://www.w3.org/2000/01/rdf-schema#label) "liver lobule periportal region"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
+- [liver lobule periportal region](http://purl.obolibrary.org/obo/UBERON_8400006) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [liver lobule periportal region](http://purl.obolibrary.org/obo/UBERON_8400006) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8400006"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [liver lobule periportal region](http://purl.obolibrary.org/obo/UBERON_8400006) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hepatic acinus zone 1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [28126520](http://www.ncbi.nlm.nih.gov/pubmed/28126520) 
-
-- [liver lobule periportal region](http://purl.obolibrary.org/obo/UBERON_8400006) [creator](http://purl.org/dc/elements/1.1/creator) [X](http://orcid.org/0000-0003-2034-601X) 
 
 - [liver lobule periportal region](http://purl.obolibrary.org/obo/UBERON_8400006) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2020-10-05T12:56:57Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
@@ -2989,6 +3910,82 @@
 - [liver lobule periportal region](http://purl.obolibrary.org/obo/UBERON_8400006) SubClassOf [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) 
 
 - [liver lobule periportal region](http://purl.obolibrary.org/obo/UBERON_8400006) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver lobule](http://purl.obolibrary.org/obo/UBERON_0004647) 
+
+
+### liver serosa `http://purl.obolibrary.org/obo/UBERON_8400021`
+
+#### Added
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "serosa of liver"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:15811"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8400021"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) [label](http://www.w3.org/2000/01/rdf-schema#label) "liver serosa"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "https://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "tunica serosa hepatis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [liver](https://medical-dictionary.thefreedictionary.com/serosa+of+liver) 
+
+  - [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) "LATIN"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Hepatic serous coat; peritoneal covering of the liver, enclosing almost all except for a triangular area on its posterior surface (the &quot;bare area of the liver&quot;) and a smaller area where the liver and gallbladder are in direct contact."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-0449-2730](https://orcid.org/0000-0002-0449-2730) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [liver](https://medical-dictionary.thefreedictionary.com/serosa+of+liver) 
+
+- Class: [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) EquivalentTo [serous membrane](http://purl.obolibrary.org/obo/UBERON_0000042) and ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107)) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) SubClassOf [mixed endoderm/mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0000077) 
+
+- [liver serosa](http://purl.obolibrary.org/obo/UBERON_8400021) SubClassOf [serous membrane](http://purl.obolibrary.org/obo/UBERON_0000042) 
+
+
+### liver subserosa `http://purl.obolibrary.org/obo/UBERON_8400023`
+
+#### Added
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "tela subserosa (hepar)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:15821"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [label](http://www.w3.org/2000/01/rdf-schema#label) "liver subserosa"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8400023"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "subserosal tissue of liver"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Subserosal tissue of liver. A zone of areolar connective tissue lying beneath the serous coat of the liver and distinguished with difficulty from the fibrous capsule of Glisson."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-0449-2730](https://orcid.org/0000-0002-0449-2730) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:15812"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [liver](https://medical-dictionary.thefreedictionary.com/subserosa+of+liver) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "https://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic subserosa"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "subserous layer of liver"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "tela subserosa hepatis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [liver](https://medical-dictionary.thefreedictionary.com/subserosa+of+liver) 
+
+- Class: [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) EquivalentTo [subserosa](http://purl.obolibrary.org/obo/UBERON_0012375) and ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107)) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107) 
+
+- [liver subserosa](http://purl.obolibrary.org/obo/UBERON_8400023) SubClassOf [subserosa](http://purl.obolibrary.org/obo/UBERON_0012375) 
 
 
 ### lobar lymph node `http://purl.obolibrary.org/obo/UBERON_0038638`
@@ -3034,6 +4031,14 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### lymph gland primordium `http://purl.obolibrary.org/obo/UBERON_6005467`
+#### Removed
+- [lymph gland primordium](http://purl.obolibrary.org/obo/UBERON_6005467) [label](http://www.w3.org/2000/01/rdf-schema#label) "lymph gland primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [lymph gland primordium](http://purl.obolibrary.org/obo/UBERON_6005467) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect lymph gland primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### lymph node along bile duct `http://purl.obolibrary.org/obo/UBERON_0038796`
 
 #### Added
@@ -3071,8 +4076,6 @@
 - [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8410034"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) [label](http://www.w3.org/2000/01/rdf-schema#label) "lymph node artery"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0002-2825-0621"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "artery of lymph node"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
@@ -3191,6 +4194,30 @@
 
 - [malar lymph node](http://purl.obolibrary.org/obo/UBERON_0038923) SubClassOf [facial lymph node](http://purl.obolibrary.org/obo/UBERON_0015871) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### male analia `http://purl.obolibrary.org/obo/UBERON_6004825`
+#### Removed
+- [male analia](http://purl.obolibrary.org/obo/UBERON_6004825) [label](http://www.w3.org/2000/01/rdf-schema#label) "male analia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [male analia](http://purl.obolibrary.org/obo/UBERON_6004825) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect male analia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### male genital disc `http://purl.obolibrary.org/obo/UBERON_6001785`
+#### Removed
+- [male genital disc](http://purl.obolibrary.org/obo/UBERON_6001785) [label](http://www.w3.org/2000/01/rdf-schema#label) "male genital disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [male genital disc](http://purl.obolibrary.org/obo/UBERON_6001785) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect male genital disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### male genital disc primordium `http://purl.obolibrary.org/obo/UBERON_6001662`
+#### Removed
+- [male genital disc primordium](http://purl.obolibrary.org/obo/UBERON_6001662) [label](http://www.w3.org/2000/01/rdf-schema#label) "male genital disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [male genital disc primordium](http://purl.obolibrary.org/obo/UBERON_6001662) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect male genital disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### medial common iliac lymph node `http://purl.obolibrary.org/obo/UBERON_0037532`
@@ -3313,6 +4340,54 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### mesoderm anlage `http://purl.obolibrary.org/obo/UBERON_6000104`
+#### Removed
+- [mesoderm anlage](http://purl.obolibrary.org/obo/UBERON_6000104) [label](http://www.w3.org/2000/01/rdf-schema#label) "mesoderm anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [mesoderm anlage](http://purl.obolibrary.org/obo/UBERON_6000104) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect mesoderm anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### mesodermal crest `http://purl.obolibrary.org/obo/UBERON_6000131`
+#### Removed
+- [mesodermal crest](http://purl.obolibrary.org/obo/UBERON_6000131) [label](http://www.w3.org/2000/01/rdf-schema#label) "mesodermal crest"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [mesodermal crest](http://purl.obolibrary.org/obo/UBERON_6000131) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect mesodermal crest"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### mesodermal crest of segment T3 `http://purl.obolibrary.org/obo/UBERON_6000132`
+#### Removed
+- [mesodermal crest of segment T3](http://purl.obolibrary.org/obo/UBERON_6000132) [label](http://www.w3.org/2000/01/rdf-schema#label) "mesodermal crest of segment T3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [mesodermal crest of segment T3](http://purl.obolibrary.org/obo/UBERON_6000132) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect mesodermal crest of segment T3"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### mesothoracic segment `http://purl.obolibrary.org/obo/UBERON_6000018`
+#### Removed
+- [mesothoracic segment](http://purl.obolibrary.org/obo/UBERON_6000018) [label](http://www.w3.org/2000/01/rdf-schema#label) "mesothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [mesothoracic segment](http://purl.obolibrary.org/obo/UBERON_6000018) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect mesothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### mesothoracic tergum `http://purl.obolibrary.org/obo/UBERON_6004580`
+#### Removed
+- [mesothoracic tergum](http://purl.obolibrary.org/obo/UBERON_6004580) [label](http://www.w3.org/2000/01/rdf-schema#label) "mesothoracic tergum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [mesothoracic tergum](http://purl.obolibrary.org/obo/UBERON_6004580) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect mesothoracic tergum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### mesothoracic tergum primordium `http://purl.obolibrary.org/obo/UBERON_6006032`
+#### Removed
+- [mesothoracic tergum primordium](http://purl.obolibrary.org/obo/UBERON_6006032) [label](http://www.w3.org/2000/01/rdf-schema#label) "mesothoracic tergum primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [mesothoracic tergum primordium](http://purl.obolibrary.org/obo/UBERON_6006032) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect mesothoracic tergum primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### metabolic zone of liver `http://purl.obolibrary.org/obo/UBERON_8400005`
 
 #### Added
@@ -3321,30 +4396,24 @@
 - [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hepatic acinus metabolic zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [8839925](http://www.ncbi.nlm.nih.gov/pubmed/8839925) 
 
-- [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2020-09-29T15:45:36Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any of the metabolic zones found in the hepatic acinus. Liver tissue is heterogenous at the level of morphometry and histochemistry. This heterogeneity is linked to the position of a cell within the functional unit of the tissue, which, in turn, is related to the blood supply: Cells located in the upstream zone differ from those in the downstream zone with respect to subcellular structures, key enzymes, translocators, and receptors and, therefore, have different metabolic capacities. This is the basis for &quot;metabolic zonation&quot;, a concept first proposed for carbohydrate metabolism and later expanded to include amino acid and ammonia metabolism, xenobiotic metabolism, protective metabolism, and formation of plasma proteins."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [8839925](http://www.ncbi.nlm.nih.gov/pubmed/8839925) 
 
-- [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) [creator](http://purl.org/dc/elements/1.1/creator) [X](http://orcid.org/0000-0003-2034-601X) 
-
 - [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8400005"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "202z-09-29T15:45:36Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - Class: [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) 
 
-- [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) and ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107)) 
+- [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107) 
 
 - [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
 
-
-### metacarpal extensor pit `http://purl.obolibrary.org/obo/UBERON_4200104`
-#### Removed
-- [metacarpal extensor pit](http://purl.obolibrary.org/obo/UBERON_4200104) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Pits located on the proximodorsal part of metacarpals denoting the attachemnt sites for ligaments. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [metacarpal extensor pit](http://purl.obolibrary.org/obo/UBERON_4200104) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Pits located on the proximodorsal part of metacarpals denoting the attachemnt sites for ligaments."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [metabolic zone of liver](http://purl.obolibrary.org/obo/UBERON_8400005) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) 
 
 
 ### metapterygoid tooth `http://purl.obolibrary.org/obo/UBERON_4300280`
@@ -3363,12 +4432,36 @@
 - [metapterygoid tooth](http://purl.obolibrary.org/obo/UBERON_4300280) SubClassOf [calcareous tooth](http://purl.obolibrary.org/obo/UBERON_0001091) 
 
 
-### musculotendinous bundle `http://purl.obolibrary.org/obo/UBERON_4200218`
+### metatarsus `http://purl.obolibrary.org/obo/UBERON_6004648`
 #### Removed
-- [musculotendinous bundle](http://purl.obolibrary.org/obo/UBERON_4200218) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A collection of muscle and tendinous tissue. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [metatarsus](http://purl.obolibrary.org/obo/UBERON_6004648) [label](http://www.w3.org/2000/01/rdf-schema#label) "metatarsus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [musculotendinous bundle](http://purl.obolibrary.org/obo/UBERON_4200218) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A collection of muscle and tendinous tissue."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [metatarsus](http://purl.obolibrary.org/obo/UBERON_6004648) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect metatarsus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### metatarsus of male prothoracic leg `http://purl.obolibrary.org/obo/UBERON_6007020`
+#### Removed
+- [metatarsus of male prothoracic leg](http://purl.obolibrary.org/obo/UBERON_6007020) [label](http://www.w3.org/2000/01/rdf-schema#label) "metatarsus of male prothoracic leg"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [metatarsus of male prothoracic leg](http://purl.obolibrary.org/obo/UBERON_6007020) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect metatarsus of male prothoracic leg"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### metathoracic segment `http://purl.obolibrary.org/obo/UBERON_6000019`
+#### Removed
+- [metathoracic segment](http://purl.obolibrary.org/obo/UBERON_6000019) [label](http://www.w3.org/2000/01/rdf-schema#label) "metathoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [metathoracic segment](http://purl.obolibrary.org/obo/UBERON_6000019) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect metathoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### mouthpart `http://purl.obolibrary.org/obo/UBERON_6004520`
+#### Removed
+- [mouthpart](http://purl.obolibrary.org/obo/UBERON_6004520) [label](http://www.w3.org/2000/01/rdf-schema#label) "mouthpart"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [mouthpart](http://purl.obolibrary.org/obo/UBERON_6004520) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect mouthpart"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### nasal barbel `http://purl.obolibrary.org/obo/UBERON_4300287`
@@ -3434,111 +4527,28 @@
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-6601-2165](http://orcid.org/0000-0002-6601-2165) 
 
 
-### obsolete RoM3l `http://purl.obolibrary.org/obo/UBERON_2005207`
+### neurogenic region `http://purl.obolibrary.org/obo/UBERON_6001057`
 #### Removed
-- [obsolete RoM3l](http://purl.obolibrary.org/obo/UBERON_2005207) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "rostral medial 3 lateral interneuron "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0005207"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [neurogenic region](http://purl.obolibrary.org/obo/UBERON_6001057) [label](http://www.w3.org/2000/01/rdf-schema#label) "neurogenic region"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [obsolete RoM3l](http://purl.obolibrary.org/obo/UBERON_2005207) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "rostral medial 3 lateral interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0005207"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [neurogenic region](http://purl.obolibrary.org/obo/UBERON_6001057) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect neurogenic region"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### obsolete RoM3m `http://purl.obolibrary.org/obo/UBERON_2005208`
+### non-connected developing system `http://purl.obolibrary.org/obo/UBERON_6040003`
 #### Removed
-- [obsolete RoM3m](http://purl.obolibrary.org/obo/UBERON_2005208) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "rostral medial 3 medial interneuron "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0005208"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [non-connected developing system](http://purl.obolibrary.org/obo/UBERON_6040003) [label](http://www.w3.org/2000/01/rdf-schema#label) "non-connected developing system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [obsolete RoM3m](http://purl.obolibrary.org/obo/UBERON_2005208) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "rostral medial 3 medial interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0005208"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [non-connected developing system](http://purl.obolibrary.org/obo/UBERON_6040003) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect non-connected developing system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### obsolete ansulate commissure `http://purl.obolibrary.org/obo/UBERON_2000618`
+### ocular segment `http://purl.obolibrary.org/obo/UBERON_6000005`
 #### Removed
-- [obsolete ansulate commissure](http://purl.obolibrary.org/obo/UBERON_2000618) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A brainstem commissure that contains major crossed descending projections from both tectal lobes. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.ncbi.nlm.nih.gov/pubmed/3496554"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ocular segment](http://purl.obolibrary.org/obo/UBERON_6000005) [label](http://www.w3.org/2000/01/rdf-schema#label) "ocular segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [obsolete ansulate commissure](http://purl.obolibrary.org/obo/UBERON_2000618) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A brainstem commissure that contains major crossed descending projections from both tectal lobes."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.ncbi.nlm.nih.gov/pubmed/3496554"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### obsolete buccopharyngeal complex `http://purl.obolibrary.org/obo/UBERON_4300187`
-#### Removed
-- [obsolete buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) [label](http://www.w3.org/2000/01/rdf-schema#label) "buccopharyngeal complex"@en 
-
-- [obsolete buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical cluster that is located in the oral cavity and consists of modifications to the skin on the roof of the mouth into three primary skin folds. In addition to these longitudinally oriented folds, secondary folds are present in some taxa.[PHENOSCAPE:WD]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [si.00810282.471](https://doi.org/10.5479/si.00810282.471) 
-
-- [obsolete buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) SubClassOf [anatomical cluster](http://purl.obolibrary.org/obo/UBERON_0000477) 
-
-- [obsolete buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [mouth](http://purl.obolibrary.org/obo/UBERON_0000165) 
-
-#### Added
-- [obsolete buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
-
-- [obsolete buccopharyngeal complex](http://purl.obolibrary.org/obo/UBERON_4300187) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete buccopharyngeal complex"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### obsolete maxillary saddle `http://purl.obolibrary.org/obo/UBERON_4300001`
-#### Removed
-- [obsolete maxillary saddle](http://purl.obolibrary.org/obo/UBERON_4300001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) " A fossa that is a depression in the proximal end of the maxilla involved in articulation with the palatine. [Baldwin, CC and Johnson GD. 1996. Interrelationships of Aulopiformes. Pages 355-404 in MLJ Stiassny, LR Parenti, and DG Johnson, (eds.), Interrelationships of fishes. Academic Press, San Diego, CA.]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [obsolete maxillary saddle](http://purl.obolibrary.org/obo/UBERON_4300001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A fossa that is a depression in the proximal end of the maxilla involved in articulation with the palatine. [Baldwin, CC and Johnson GD. 1996. Interrelationships of Aulopiformes. Pages 355-404 in MLJ Stiassny, LR Parenti, and DG Johnson, (eds.), Interrelationships of fishes. Academic Press, San Diego, CA.]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### obsolete mitochondrial aggregate `http://purl.obolibrary.org/obo/UBERON_3010306`
-#### Removed
-- [obsolete mitochondrial aggregate](http://purl.obolibrary.org/obo/UBERON_3010306) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A large distinctive organelle aggregate comprised of mitochondria found in developing oocytes of many species. From Pepling et al. 2007. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [obsolete mitochondrial aggregate](http://purl.obolibrary.org/obo/UBERON_3010306) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A large distinctive organelle aggregate comprised of mitochondria found in developing oocytes of many species. From Pepling et al. 2007."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### obsolete palatine process of pars palatina of premaxilla `http://purl.obolibrary.org/obo/UBERON_3000374`
-#### Removed
-- [obsolete palatine process of pars palatina of premaxilla](http://purl.obolibrary.org/obo/UBERON_3000374) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "median palatal squame "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:3000374"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [obsolete palatine process of pars palatina of premaxilla](http://purl.obolibrary.org/obo/UBERON_3000374) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "median palatal squame"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:3000374"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### obsolete pelvic fin basipterygial radial element `http://purl.obolibrary.org/obo/UBERON_1600009`
-#### Removed
-- [obsolete pelvic fin basipterygial radial element](http://purl.obolibrary.org/obo/UBERON_1600009) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Obsoleted because basipterygium is not a type of radial. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [obsolete pelvic fin basipterygial radial element](http://purl.obolibrary.org/obo/UBERON_1600009) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Obsoleted because basipterygium is not a type of radial."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### obsolete posterior iliac process `http://purl.obolibrary.org/obo/UBERON_4200077`
-#### Removed
-- [obsolete posterior iliac process](http://purl.obolibrary.org/obo/UBERON_4200077) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Distinct posterior most of the two 'double heads' of the blade of the ilium. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [obsolete posterior iliac process](http://purl.obolibrary.org/obo/UBERON_4200077) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Distinct posterior most of the two 'double heads' of the blade of the ilium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### obsolete ventral ramus of occulomotor nerve `http://purl.obolibrary.org/obo/UBERON_3010632`
-#### Removed
-- [obsolete ventral ramus of occulomotor nerve](http://purl.obolibrary.org/obo/UBERON_3010632) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) "UBERON:0015161 " 
-
-#### Added
-- [obsolete ventral ramus of occulomotor nerve](http://purl.obolibrary.org/obo/UBERON_3010632) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) "UBERON:0015161" 
-
-
-### outer fin tissue `http://purl.obolibrary.org/obo/UBERON_3010380`
-#### Removed
-- [outer fin tissue](http://purl.obolibrary.org/obo/UBERON_3010380) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Part of the fin consisting of flattened epidermal cells elevated into a keel-like structure. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15188431"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [outer fin tissue](http://purl.obolibrary.org/obo/UBERON_3010380) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Part of the fin consisting of flattened epidermal cells elevated into a keel-like structure."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15188431"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ocular segment](http://purl.obolibrary.org/obo/UBERON_6000005) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ocular segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### outer tooth row of dentary `http://purl.obolibrary.org/obo/UBERON_4300279`
@@ -3553,30 +4563,6 @@
 - Class: [outer tooth row of dentary](http://purl.obolibrary.org/obo/UBERON_4300279) 
 
 - [outer tooth row of dentary](http://purl.obolibrary.org/obo/UBERON_4300279) SubClassOf [dentary tooth row](http://purl.obolibrary.org/obo/UBERON_2001952) 
-
-
-### palatoquadrate element `http://purl.obolibrary.org/obo/UBERON_4200139`
-#### Removed
-- [palatoquadrate element](http://purl.obolibrary.org/obo/UBERON_4200139) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Endochondral element that is part of the suspensorium sometimes ossifying distally as the quadrate bone and linking the basal section of the braincase to the lower jaw. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [palatoquadrate element](http://purl.obolibrary.org/obo/UBERON_4200139) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Endochondral element that is part of the suspensorium sometimes ossifying distally as the quadrate bone and linking the basal section of the braincase to the lower jaw."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### panarthropod head `http://purl.obolibrary.org/obo/UBERON_6000004`
-#### Removed
-- [panarthropod head](http://purl.obolibrary.org/obo/UBERON_6000004) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [panarthropod head](http://purl.obolibrary.org/obo/UBERON_6000004) [label](http://www.w3.org/2000/01/rdf-schema#label) "panarthropod head"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### panarthropod tagma `http://purl.obolibrary.org/obo/UBERON_6000002`
-#### Removed
-- [panarthropod tagma](http://purl.obolibrary.org/obo/UBERON_6000002) [label](http://www.w3.org/2000/01/rdf-schema#label) "tagma"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [panarthropod tagma](http://purl.obolibrary.org/obo/UBERON_6000002) [label](http://www.w3.org/2000/01/rdf-schema#label) "panarthropod tagma"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### para-aortic thoracic lymph node `http://purl.obolibrary.org/obo/UBERON_0038634`
@@ -3775,6 +4761,26 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### pectinate line `http://purl.obolibrary.org/obo/UBERON_0006574`
+#### Removed
+- [pectinate line](http://purl.obolibrary.org/obo/UBERON_0006574) EquivalentTo [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) and ([adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [proctodeum](http://purl.obolibrary.org/obo/UBERON_0000931)) and ([adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [hindgut](http://purl.obolibrary.org/obo/UBERON_0001046)) 
+
+- [pectinate line](http://purl.obolibrary.org/obo/UBERON_0006574) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
+
+- [pectinate line](http://purl.obolibrary.org/obo/UBERON_0006574) SubClassOf [adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [proctodeum](http://purl.obolibrary.org/obo/UBERON_0000931) 
+
+- [pectinate line](http://purl.obolibrary.org/obo/UBERON_0006574) SubClassOf [adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [hindgut](http://purl.obolibrary.org/obo/UBERON_0001046) 
+
+#### Added
+- [pectinate line](http://purl.obolibrary.org/obo/UBERON_0006574) EquivalentTo [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [proctodeum](http://purl.obolibrary.org/obo/UBERON_0000931)) and ([connects](http://purl.obolibrary.org/obo/RO_0002176) some [hindgut](http://purl.obolibrary.org/obo/UBERON_0001046)) 
+
+- [pectinate line](http://purl.obolibrary.org/obo/UBERON_0006574) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [proctodeum](http://purl.obolibrary.org/obo/UBERON_0000931) 
+
+- [pectinate line](http://purl.obolibrary.org/obo/UBERON_0006574) SubClassOf [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) 
+
+- [pectinate line](http://purl.obolibrary.org/obo/UBERON_0006574) SubClassOf [connects](http://purl.obolibrary.org/obo/RO_0002176) some [hindgut](http://purl.obolibrary.org/obo/UBERON_0001046) 
+
+
 ### pectoral axillary lymph node `http://purl.obolibrary.org/obo/UBERON_0037501`
 
 #### Added
@@ -3834,16 +4840,6 @@
 - [pelvic fin hook](http://purl.obolibrary.org/obo/UBERON_4300262) SubClassOf [fin hook](http://purl.obolibrary.org/obo/UBERON_4300284) 
 
 
-### pelvic sucking disc `http://purl.obolibrary.org/obo/UBERON_4300114`
-#### Removed
-- [pelvic sucking disc](http://purl.obolibrary.org/obo/UBERON_4300114) [definition](http://purl.obolibrary.org/obo/IAO_0000115) " An adhesive disk modified from the pelvic fins in, for example, clingfishes (Gobiesocidae), gobies (Gobiidae) and snailfishes (Liparidae)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.briancoad.com/dictionary/complete%20dictionary.htm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [pelvic sucking disc](http://purl.obolibrary.org/obo/UBERON_4300114) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An adhesive disk modified from the pelvic fins in, for example, clingfishes (Gobiesocidae), gobies (Gobiidae) and snailfishes (Liparidae)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.briancoad.com/dictionary/complete%20dictionary.htm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### pericardial lymph node `http://purl.obolibrary.org/obo/UBERON_0038632`
 
 #### Added
@@ -3861,20 +4857,48 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### pila antoptica `http://purl.obolibrary.org/obo/UBERON_3000431`
-#### Removed
-- [pila antoptica](http://purl.obolibrary.org/obo/UBERON_3000431) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A strut of cartilage  extending dorsally from the basal plate and with other similar cartilages forming the sides of the brain case. The pila antoptica is posterior to pila metoptica together with which it may enclose the foramen for the ocular motor nerve and opthalmica magna artery. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+### peripheral zone of prostate `http://purl.obolibrary.org/obo/UBERON_8410026`
 
 #### Added
-- [pila antoptica](http://purl.obolibrary.org/obo/UBERON_3000431) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A strut of cartilage  extending dorsally from the basal plate and with other similar cartilages forming the sides of the brain case. The pila antoptica is posterior to pila metoptica together with which it may enclose the foramen for the ocular motor nerve and opthalmica magna artery."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) "Homo sapiens"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [29038334](http://www.ncbi.nlm.nih.gov/pubmed/29038334) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [added_for_HCA](http://purl.obolibrary.org/obo/uberon/core#added_for_HCA) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8410026"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "peripheral zone of human prostate"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the prostate that is located posterior to the central and transition zones, surrounding the distal urethra. It is the zone of origin for the vast majority of human prostatic cancers."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [30566875](http://www.ncbi.nlm.nih.gov/pubmed/30566875) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7431-4139](https://orcid.org/0000-0002-7431-4139) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [label](http://www.w3.org/2000/01/rdf-schema#label) "peripheral zone of prostate"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "prostate peripheral zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0002-2825-0621"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) SubClassOf [zone of organ](http://purl.obolibrary.org/obo/UBERON_0034944) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [prostate gland](http://purl.obolibrary.org/obo/UBERON_0002367) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) SubClassOf [mixed endoderm/mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0000077) 
+
+- [peripheral zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410026) SubClassOf [reproductive structure](http://purl.obolibrary.org/obo/UBERON_0005156) 
 
 
-### pleurocentrum `http://purl.obolibrary.org/obo/UBERON_4200195`
+### pharate adult `http://purl.obolibrary.org/obo/UBERON_6006011`
 #### Removed
-- [pleurocentrum](http://purl.obolibrary.org/obo/UBERON_4200195) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The posteriormost of the two possible elements found in the tetrapod centrum (when the centrum is not a single element). "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [pharate adult](http://purl.obolibrary.org/obo/UBERON_6006011) [label](http://www.w3.org/2000/01/rdf-schema#label) "pharate adult"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [pleurocentrum](http://purl.obolibrary.org/obo/UBERON_4200195) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The posteriormost of the two possible elements found in the tetrapod centrum (when the centrum is not a single element)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [pharate adult](http://purl.obolibrary.org/obo/UBERON_6006011) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect pharate adult"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### posterior ancreaticoduodenal lymph node `http://purl.obolibrary.org/obo/UBERON_0038818`
@@ -3920,14 +4944,12 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### posterior dorsolateral plate `http://purl.obolibrary.org/obo/UBERON_4300025`
+### posterior dorsal histoblast nest abdominal `http://purl.obolibrary.org/obo/UBERON_6001809`
 #### Removed
-- [posterior dorsolateral plate](http://purl.obolibrary.org/obo/UBERON_4300025) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Dermal bone that is part of the scapular complex in placoderms. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN 3-89937-052-X [Goujet and Young, 2004]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [posterior dorsal histoblast nest abdominal](http://purl.obolibrary.org/obo/UBERON_6001809) [label](http://www.w3.org/2000/01/rdf-schema#label) "posterior dorsal histoblast nest abdominal"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [posterior dorsolateral plate](http://purl.obolibrary.org/obo/UBERON_4300025) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Dermal bone that is part of the scapular complex in placoderms."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN 3-89937-052-X [Goujet and Young, 2004]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [posterior dorsal histoblast nest abdominal](http://purl.obolibrary.org/obo/UBERON_6001809) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect posterior dorsal histoblast nest abdominal"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### posterior inferior pancreaticoduodenal lymph node `http://purl.obolibrary.org/obo/UBERON_0038700`
@@ -4025,24 +5047,6 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### posterior ventrolateral plate `http://purl.obolibrary.org/obo/UBERON_4300028`
-#### Removed
-- [posterior ventrolateral plate](http://purl.obolibrary.org/obo/UBERON_4300028) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Dermal bone that is part of the scapular complex in placoderms. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN 3-89937-052-X [Goujet and Young, 2004]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [posterior ventrolateral plate](http://purl.obolibrary.org/obo/UBERON_4300028) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Dermal bone that is part of the scapular complex in placoderms."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN 3-89937-052-X [Goujet and Young, 2004]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### predorsal scale `http://purl.obolibrary.org/obo/UBERON_4500003`
-#### Removed
-- [predorsal scale](http://purl.obolibrary.org/obo/UBERON_4500003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Scale that is part of row along the midline between the dorsal fin and the back of the skull. In counting, all scales crossing the midline are included. (Fishbase) "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [predorsal scale](http://purl.obolibrary.org/obo/UBERON_4500003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Scale that is part of row along the midline between the dorsal fin and the back of the skull. In counting, all scales crossing the midline are included. (Fishbase)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### prelaryngeal lymph node `http://purl.obolibrary.org/obo/UBERON_0038930`
 
 #### Added
@@ -4063,30 +5067,52 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### preopercle vertical limb `http://purl.obolibrary.org/obo/UBERON_2000336`
+### presumptive arista `http://purl.obolibrary.org/obo/UBERON_6110811`
 #### Removed
-- [preopercle vertical limb](http://purl.obolibrary.org/obo/UBERON_2000336) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "preopercle vertical arm "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0000336"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [presumptive arista](http://purl.obolibrary.org/obo/UBERON_6110811) [label](http://www.w3.org/2000/01/rdf-schema#label) "presumptive arista"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [preopercle vertical limb](http://purl.obolibrary.org/obo/UBERON_2000336) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "preopercle vertical arm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0000336"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [presumptive arista](http://purl.obolibrary.org/obo/UBERON_6110811) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect presumptive arista"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### prepectoral space `http://purl.obolibrary.org/obo/UBERON_4200112`
+### presumptive embryonic/larval central nervous system `http://purl.obolibrary.org/obo/UBERON_6001056`
 #### Removed
-- [prepectoral space](http://purl.obolibrary.org/obo/UBERON_4200112) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A triangular, anteroventrally facing area developed between the preaxial margin of the humerus and the proximal limb of the ventral humeral ridge. Based on Callier et al. 2009 "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [presumptive embryonic/larval central nervous system](http://purl.obolibrary.org/obo/UBERON_6001056) [label](http://www.w3.org/2000/01/rdf-schema#label) "presumptive embryonic/larval central nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [prepectoral space](http://purl.obolibrary.org/obo/UBERON_4200112) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A triangular, anteroventrally facing area developed between the preaxial margin of the humerus and the proximal limb of the ventral humeral ridge. Based on Callier et al. 2009"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [presumptive embryonic/larval central nervous system](http://purl.obolibrary.org/obo/UBERON_6001056) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect presumptive embryonic/larval central nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### prepelvic fin spine `http://purl.obolibrary.org/obo/UBERON_4200111`
+### presumptive embryonic/larval nervous system `http://purl.obolibrary.org/obo/UBERON_6001055`
 #### Removed
-- [prepelvic fin spine](http://purl.obolibrary.org/obo/UBERON_4200111) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Spine located anterior to the pelvic fin and posterior to the pectoral fin. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [presumptive embryonic/larval nervous system](http://purl.obolibrary.org/obo/UBERON_6001055) [label](http://www.w3.org/2000/01/rdf-schema#label) "presumptive embryonic/larval nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [prepelvic fin spine](http://purl.obolibrary.org/obo/UBERON_4200111) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Spine located anterior to the pelvic fin and posterior to the pectoral fin."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [presumptive embryonic/larval nervous system](http://purl.obolibrary.org/obo/UBERON_6001055) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect presumptive embryonic/larval nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### presumptive embryonic/larval system `http://purl.obolibrary.org/obo/UBERON_6007116`
+#### Removed
+- [presumptive embryonic/larval system](http://purl.obolibrary.org/obo/UBERON_6007116) [label](http://www.w3.org/2000/01/rdf-schema#label) "presumptive embryonic/larval system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [presumptive embryonic/larval system](http://purl.obolibrary.org/obo/UBERON_6007116) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect presumptive embryonic/larval system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### presumptive embryonic/larval tracheal system `http://purl.obolibrary.org/obo/UBERON_6005569`
+#### Removed
+- [presumptive embryonic/larval tracheal system](http://purl.obolibrary.org/obo/UBERON_6005569) [label](http://www.w3.org/2000/01/rdf-schema#label) "presumptive embryonic/larval tracheal system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [presumptive embryonic/larval tracheal system](http://purl.obolibrary.org/obo/UBERON_6005569) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect presumptive embryonic/larval tracheal system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### presumptive prothoracic metatarsus `http://purl.obolibrary.org/obo/UBERON_6110746`
+#### Removed
+- [presumptive prothoracic metatarsus](http://purl.obolibrary.org/obo/UBERON_6110746) [label](http://www.w3.org/2000/01/rdf-schema#label) "presumptive prothoracic metatarsus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [presumptive prothoracic metatarsus](http://purl.obolibrary.org/obo/UBERON_6110746) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect presumptive prothoracic metatarsus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### preterminal colic lymph node `http://purl.obolibrary.org/obo/UBERON_0037521`
@@ -4158,14 +5184,12 @@
 - [primary hair](http://purl.obolibrary.org/obo/UBERON_0037461) SubClassOf [strand of hair](http://purl.obolibrary.org/obo/UBERON_0001037) 
 
 
-### primordial ligament `http://purl.obolibrary.org/obo/UBERON_2001828`
+### proboscis `http://purl.obolibrary.org/obo/UBERON_6004535`
 #### Removed
-- [primordial ligament](http://purl.obolibrary.org/obo/UBERON_2001828) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ligamentum primordiale "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001828"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [proboscis](http://purl.obolibrary.org/obo/UBERON_6004535) [label](http://www.w3.org/2000/01/rdf-schema#label) "proboscis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [primordial ligament](http://purl.obolibrary.org/obo/UBERON_2001828) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ligamentum primordiale"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001828"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [proboscis](http://purl.obolibrary.org/obo/UBERON_6004535) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect proboscis"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### promontory lymph node `http://purl.obolibrary.org/obo/UBERON_0037536`
@@ -4186,6 +5210,62 @@
 
 - [promontory lymph node](http://purl.obolibrary.org/obo/UBERON_0037536) SubClassOf [common iliac lymph node](http://purl.obolibrary.org/obo/UBERON_0015878) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### proneural cluster `http://purl.obolibrary.org/obo/UBERON_6001135`
+#### Removed
+- [proneural cluster](http://purl.obolibrary.org/obo/UBERON_6001135) [label](http://www.w3.org/2000/01/rdf-schema#label) "proneural cluster"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [proneural cluster](http://purl.obolibrary.org/obo/UBERON_6001135) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect proneural cluster"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### prothoracic leg `http://purl.obolibrary.org/obo/UBERON_6004663`
+#### Removed
+- [prothoracic leg](http://purl.obolibrary.org/obo/UBERON_6004663) [label](http://www.w3.org/2000/01/rdf-schema#label) "prothoracic leg"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [prothoracic leg](http://purl.obolibrary.org/obo/UBERON_6004663) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect prothoracic leg"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### prothoracic leg disc `http://purl.obolibrary.org/obo/UBERON_6001781`
+#### Removed
+- [prothoracic leg disc](http://purl.obolibrary.org/obo/UBERON_6001781) [label](http://www.w3.org/2000/01/rdf-schema#label) "prothoracic leg disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [prothoracic leg disc](http://purl.obolibrary.org/obo/UBERON_6001781) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect prothoracic leg disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### prothoracic metatarsus `http://purl.obolibrary.org/obo/UBERON_6004670`
+#### Removed
+- [prothoracic metatarsus](http://purl.obolibrary.org/obo/UBERON_6004670) [label](http://www.w3.org/2000/01/rdf-schema#label) "prothoracic metatarsus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [prothoracic metatarsus](http://purl.obolibrary.org/obo/UBERON_6004670) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect prothoracic metatarsus"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### prothoracic segment `http://purl.obolibrary.org/obo/UBERON_6000017`
+#### Removed
+- [prothoracic segment](http://purl.obolibrary.org/obo/UBERON_6000017) [label](http://www.w3.org/2000/01/rdf-schema#label) "prothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [prothoracic segment](http://purl.obolibrary.org/obo/UBERON_6000017) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect prothoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### prothoracic tarsal segment `http://purl.obolibrary.org/obo/UBERON_6004668`
+#### Removed
+- [prothoracic tarsal segment](http://purl.obolibrary.org/obo/UBERON_6004668) [label](http://www.w3.org/2000/01/rdf-schema#label) "prothoracic tarsal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [prothoracic tarsal segment](http://purl.obolibrary.org/obo/UBERON_6004668) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect prothoracic tarsal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### protocerebrum `http://purl.obolibrary.org/obo/UBERON_6003627`
+#### Removed
+- [protocerebrum](http://purl.obolibrary.org/obo/UBERON_6003627) [label](http://www.w3.org/2000/01/rdf-schema#label) "protocerebrum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [protocerebrum](http://purl.obolibrary.org/obo/UBERON_6003627) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect protocerebrum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### proximal superior pancreatic lymph node `http://purl.obolibrary.org/obo/UBERON_0038695`
@@ -4223,36 +5303,12 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### proximal-most prepollical element `http://purl.obolibrary.org/obo/UBERON_3010682`
+### rectosigmoid junction `http://purl.obolibrary.org/obo/UBERON_0036214`
 #### Removed
-- [proximal-most prepollical element](http://purl.obolibrary.org/obo/UBERON_3010682) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Is the proximal-most prepollical element.  "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [rectosigmoid junction](http://purl.obolibrary.org/obo/UBERON_0036214) SubClassOf [anatomical junction](http://purl.obolibrary.org/obo/UBERON_0007651) 
 
 #### Added
-- [proximal-most prepollical element](http://purl.obolibrary.org/obo/UBERON_3010682) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Is the proximal-most prepollical element."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### pubic peduncle `http://purl.obolibrary.org/obo/UBERON_4200118`
-#### Removed
-- [pubic peduncle](http://purl.obolibrary.org/obo/UBERON_4200118) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Bony projection on the anterior portion of the ilium, anterior to the acetabulum that articulates with the pubis. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [pubic peduncle](http://purl.obolibrary.org/obo/UBERON_4200118) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Bony projection on the anterior portion of the ilium, anterior to the acetabulum that articulates with the pubis."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### pubis-ischium contact `http://purl.obolibrary.org/obo/UBERON_4200119`
-#### Removed
-- [pubis-ischium contact](http://purl.obolibrary.org/obo/UBERON_4200119) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Contact zone between the pubis and the ischium. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [pubis-ischium contact](http://purl.obolibrary.org/obo/UBERON_4200119) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Contact zone between the pubis and the ischium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### puboischiadic plate `http://purl.obolibrary.org/obo/UBERON_4200120`
-#### Removed
-- [puboischiadic plate](http://purl.obolibrary.org/obo/UBERON_4200120) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A broad expnase of bone incorperating both the pubis and the ischium. Origin site for ventral limb muscle including the pubioishciofemoralis externus. Modified from Romer 1956 "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [puboischiadic plate](http://purl.obolibrary.org/obo/UBERON_4200120) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A broad expnase of bone incorperating both the pubis and the ischium. Origin site for ventral limb muscle including the pubioishciofemoralis externus. Modified from Romer 1956"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [rectosigmoid junction](http://purl.obolibrary.org/obo/UBERON_0036214) SubClassOf [intestinal junction](http://purl.obolibrary.org/obo/UBERON_8410024) 
 
 
 ### retro-aortic lymph node `http://purl.obolibrary.org/obo/UBERON_0038139`
@@ -4360,6 +5416,19 @@
 - [right apical axillary lymph node](http://purl.obolibrary.org/obo/UBERON_0037789) SubClassOf [apical axillary lymph node](http://purl.obolibrary.org/obo/UBERON_0037503) 
 
 - [right apical axillary lymph node](http://purl.obolibrary.org/obo/UBERON_0037789) SubClassOf [in_right_side_of](http://purl.obolibrary.org/obo/BSPO_0000121) some [multicellular organism](http://purl.obolibrary.org/obo/UBERON_0000468) 
+
+
+### right branch of atrioventricular bundle `http://purl.obolibrary.org/obo/UBERON_0005987`
+#### Removed
+- [right branch of atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0005987) [label](http://www.w3.org/2000/01/rdf-schema#label) "right branch of atrioventricular bundle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [right branch of atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0005987) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "RBB"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION) 
+
+- [right branch of atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0005987) [label](http://www.w3.org/2000/01/rdf-schema#label) "right bundle branch"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [right branch of atrioventricular bundle](http://purl.obolibrary.org/obo/UBERON_0005987) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "right branch of atrioventricular bundle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### right central axillary lymph node `http://purl.obolibrary.org/obo/UBERON_0037797`
@@ -4526,42 +5595,36 @@
 - [right subscapular axillary lymph node](http://purl.obolibrary.org/obo/UBERON_0037793) SubClassOf [lateral structure](http://purl.obolibrary.org/obo/UBERON_0015212) 
 
 
-### sallet `http://purl.obolibrary.org/obo/UBERON_0018374`
+### ring gland `http://purl.obolibrary.org/obo/UBERON_6001722`
 #### Removed
-- [sallet](http://purl.obolibrary.org/obo/UBERON_0018374) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A unit of the tectoral membrane that is shaped like string of flat, pearls. Modified from Manley, Fey and Popper 2008 "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:Alex"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:9780387714691"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ring gland](http://purl.obolibrary.org/obo/UBERON_6001722) [label](http://www.w3.org/2000/01/rdf-schema#label) "ring gland"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [sallet](http://purl.obolibrary.org/obo/UBERON_0018374) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A unit of the tectoral membrane that is shaped like string of flat, pearls. Modified from Manley, Fey and Popper 2008"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:Alex"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:9780387714691"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ring gland](http://purl.obolibrary.org/obo/UBERON_6001722) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ring gland"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### scapulohumeralis muscle `http://purl.obolibrary.org/obo/UBERON_4200225`
+### sclerite `http://purl.obolibrary.org/obo/UBERON_6004475`
 #### Removed
-- [scapulohumeralis muscle](http://purl.obolibrary.org/obo/UBERON_4200225) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Muscle found primarily in basal sarcopterygians that runs between teh scapulocoracoid and the humerus. Its exact homologies with more derived shoulder muscles in Tetrapoda is unclear. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [sclerite](http://purl.obolibrary.org/obo/UBERON_6004475) [label](http://www.w3.org/2000/01/rdf-schema#label) "sclerite"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [scapulohumeralis muscle](http://purl.obolibrary.org/obo/UBERON_4200225) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Muscle found primarily in basal sarcopterygians that runs between teh scapulocoracoid and the humerus. Its exact homologies with more derived shoulder muscles in Tetrapoda is unclear."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [sclerite](http://purl.obolibrary.org/obo/UBERON_6004475) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect sclerite"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### second preethmoid bone `http://purl.obolibrary.org/obo/UBERON_2002023`
+### second preethmoid `http://purl.obolibrary.org/obo/UBERON_2002023`
 #### Removed
-- [second preethmoid bone](http://purl.obolibrary.org/obo/UBERON_2002023) [label](http://www.w3.org/2000/01/rdf-schema#label) "second preethmoid"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [second preethmoid](http://purl.obolibrary.org/obo/UBERON_2002023) [label](http://www.w3.org/2000/01/rdf-schema#label) "second preethmoid"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [second preethmoid bone](http://purl.obolibrary.org/obo/UBERON_2002023) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [olfactory region](http://purl.obolibrary.org/obo/UBERON_0003112) 
+- [second preethmoid](http://purl.obolibrary.org/obo/UBERON_2002023) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [olfactory region](http://purl.obolibrary.org/obo/UBERON_0003112) 
 
 #### Added
-- [second preethmoid bone](http://purl.obolibrary.org/obo/UBERON_2002023) [label](http://www.w3.org/2000/01/rdf-schema#label) "second preethmoid bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [second preethmoid](http://purl.obolibrary.org/obo/UBERON_2002023) [label](http://www.w3.org/2000/01/rdf-schema#label) "second preethmoid bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [second preethmoid bone](http://purl.obolibrary.org/obo/UBERON_2002023) SubClassOf [develops_from](http://purl.obolibrary.org/obo/RO_0002202) some [second preethmoid cartilage](http://purl.obolibrary.org/obo/UBERON_4300285) 
+- [second preethmoid](http://purl.obolibrary.org/obo/UBERON_2002023) SubClassOf [develops_from](http://purl.obolibrary.org/obo/RO_0002202) some [second preethmoid cartilage](http://purl.obolibrary.org/obo/UBERON_4300285) 
 
-- [second preethmoid bone](http://purl.obolibrary.org/obo/UBERON_2002023) SubClassOf [second preethmoid element](http://purl.obolibrary.org/obo/UBERON_4300286) 
+- [second preethmoid](http://purl.obolibrary.org/obo/UBERON_2002023) SubClassOf [second preethmoid element](http://purl.obolibrary.org/obo/UBERON_4300286) 
 
-- [second preethmoid bone](http://purl.obolibrary.org/obo/UBERON_2002023) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
+- [second preethmoid](http://purl.obolibrary.org/obo/UBERON_2002023) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
 
 ### second preethmoid cartilage `http://purl.obolibrary.org/obo/UBERON_4300285`
@@ -4596,6 +5659,22 @@
 - [second preethmoid element](http://purl.obolibrary.org/obo/UBERON_4300286) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [olfactory region](http://purl.obolibrary.org/obo/UBERON_0003112) 
 
 
+### segment of antenna `http://purl.obolibrary.org/obo/UBERON_6007149`
+#### Removed
+- [segment of antenna](http://purl.obolibrary.org/obo/UBERON_6007149) [label](http://www.w3.org/2000/01/rdf-schema#label) "segment of antenna"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [segment of antenna](http://purl.obolibrary.org/obo/UBERON_6007149) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect segment of antenna"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### segment of leg `http://purl.obolibrary.org/obo/UBERON_6007150`
+#### Removed
+- [segment of leg](http://purl.obolibrary.org/obo/UBERON_6007150) [label](http://www.w3.org/2000/01/rdf-schema#label) "segment of leg"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [segment of leg](http://purl.obolibrary.org/obo/UBERON_6007150) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect segment of leg"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### segmental lymph node `http://purl.obolibrary.org/obo/UBERON_0038641`
 
 #### Added
@@ -4622,12 +5701,36 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### semilunate carpal `http://purl.obolibrary.org/obo/UBERON_4200180`
+### segmental subdivision of integument `http://purl.obolibrary.org/obo/UBERON_6007285`
 #### Removed
-- [semilunate carpal](http://purl.obolibrary.org/obo/UBERON_4200180) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The moon shaped fusion of distal carpals 1 and 2 found in some theropod dinosaurs, permitting greater wrist mobility. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [segmental subdivision of integument](http://purl.obolibrary.org/obo/UBERON_6007285) [label](http://www.w3.org/2000/01/rdf-schema#label) "segmental subdivision of integument"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [semilunate carpal](http://purl.obolibrary.org/obo/UBERON_4200180) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The moon shaped fusion of distal carpals 1 and 2 found in some theropod dinosaurs, permitting greater wrist mobility."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [segmental subdivision of integument](http://purl.obolibrary.org/obo/UBERON_6007285) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect segmental subdivision of integument"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### segmental subdivision of organ system `http://purl.obolibrary.org/obo/UBERON_6007331`
+#### Removed
+- [segmental subdivision of organ system](http://purl.obolibrary.org/obo/UBERON_6007331) [label](http://www.w3.org/2000/01/rdf-schema#label) "segmental subdivision of organ system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [segmental subdivision of organ system](http://purl.obolibrary.org/obo/UBERON_6007331) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect segmental subdivision of organ system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### sensilla row `http://purl.obolibrary.org/obo/UBERON_6100153`
+#### Removed
+- [sensilla row](http://purl.obolibrary.org/obo/UBERON_6100153) [label](http://www.w3.org/2000/01/rdf-schema#label) "sensilla row"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [sensilla row](http://purl.obolibrary.org/obo/UBERON_6100153) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect sensilla row"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### sex comb `http://purl.obolibrary.org/obo/UBERON_6004296`
+#### Removed
+- [sex comb](http://purl.obolibrary.org/obo/UBERON_6004296) [label](http://www.w3.org/2000/01/rdf-schema#label) "sex comb"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [sex comb](http://purl.obolibrary.org/obo/UBERON_6004296) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect sex comb"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### sheath of Schwann `http://purl.obolibrary.org/obo/UBERON_0001031`
@@ -4636,18 +5739,26 @@
 
 
 
-### soleus muscle `http://purl.obolibrary.org/obo/UBERON_0001389`
+### shelled egg `http://purl.obolibrary.org/obo/UBERON_0007379`
 #### Removed
-- [soleus muscle](http://purl.obolibrary.org/obo/UBERON_0001389) SubClassOf [innervated_by](http://purl.obolibrary.org/obo/RO_0002005) some [tibial nerve](http://purl.obolibrary.org/obo/UBERON_0001323) 
-  - [notes](http://www.geneontology.org/formats/oboInOwl#notes) "tibial nerve specifically nerve roots "^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [shelled egg](http://purl.obolibrary.org/obo/UBERON_0007379) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The hard-shelled reproductive body produced by a bird and especially by the common domestic chicken; also: its contents used as food."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Egg_(biology)](http://en.wikipedia.org/wiki/Egg_(biology)) 
 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "dbpedia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0000369"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [soleus muscle](http://purl.obolibrary.org/obo/UBERON_0001389) SubClassOf [innervated_by](http://purl.obolibrary.org/obo/RO_0002005) some [tibial nerve](http://purl.obolibrary.org/obo/UBERON_0001323) 
-  - [notes](http://www.geneontology.org/formats/oboInOwl#notes) "tibial nerve specifically nerve roots"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [shelled egg](http://purl.obolibrary.org/obo/UBERON_0007379) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The hard-shelled reproductive body produced by a bird (especially by the common domestic chicken) or a reptile; also: its contents used as food."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Egg_(biology)](http://en.wikipedia.org/wiki/Egg_(biology)) 
 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "dbpedia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0000369"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### spiracle `http://purl.obolibrary.org/obo/UBERON_6005054`
+#### Removed
+- [spiracle](http://purl.obolibrary.org/obo/UBERON_6005054) [label](http://www.w3.org/2000/01/rdf-schema#label) "spiracle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [spiracle](http://purl.obolibrary.org/obo/UBERON_6005054) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect spiracle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### sternal lymph node `http://purl.obolibrary.org/obo/UBERON_0038001`
@@ -4665,6 +5776,22 @@
 
 - [sternal lymph node](http://purl.obolibrary.org/obo/UBERON_0038001) SubClassOf [thoracic lymph node](http://purl.obolibrary.org/obo/UBERON_0007644) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### sternite `http://purl.obolibrary.org/obo/UBERON_6004477`
+#### Removed
+- [sternite](http://purl.obolibrary.org/obo/UBERON_6004477) [label](http://www.w3.org/2000/01/rdf-schema#label) "sternite"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [sternite](http://purl.obolibrary.org/obo/UBERON_6004477) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect sternite"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### stomatogastric nervous system `http://purl.obolibrary.org/obo/UBERON_6005096`
+#### Removed
+- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_6005096) [label](http://www.w3.org/2000/01/rdf-schema#label) "stomatogastric nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_6005096) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect stomatogastric nervous system"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### subaortic common iliac lymph node `http://purl.obolibrary.org/obo/UBERON_0037535`
@@ -4688,6 +5815,40 @@
 
 - [subaortic common iliac lymph node](http://purl.obolibrary.org/obo/UBERON_0037535) SubClassOf [common iliac lymph node](http://purl.obolibrary.org/obo/UBERON_0015878) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### subcapsular region of liver `http://purl.obolibrary.org/obo/UBERON_8400024`
+
+#### Added
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) [label](http://www.w3.org/2000/01/rdf-schema#label) "subcapsular region of liver"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "subcapsular tissue of liver"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [30992875](http://www.ncbi.nlm.nih.gov/pubmed/30992875) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Region of liver parenchyma immediately below the capsule. This region is frequently specified in pathology diagnoses."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-0449-2730](https://orcid.org/0000-0002-0449-2730) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [30992875](http://www.ncbi.nlm.nih.gov/pubmed/30992875) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "https://orcid.org/0000-0003-2034-601X"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8400024"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "liver subcapsular tissue"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [30992875](http://www.ncbi.nlm.nih.gov/pubmed/30992875) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "liver subcapsular region"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [30992875](http://www.ncbi.nlm.nih.gov/pubmed/30992875) 
+
+- Class: [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) EquivalentTo [parenchyma](http://purl.obolibrary.org/obo/UBERON_0000353) and ([part of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107)) and ([adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [capsule of liver](http://purl.obolibrary.org/obo/UBERON_0016479)) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) SubClassOf [liver parenchyma](http://purl.obolibrary.org/obo/UBERON_0001280) 
+
+- [subcapsular region of liver](http://purl.obolibrary.org/obo/UBERON_8400024) SubClassOf [adjacent_to](http://purl.obolibrary.org/obo/RO_0002220) some [capsule of liver](http://purl.obolibrary.org/obo/UBERON_0016479) 
 
 
 ### subclavian lymph node `http://purl.obolibrary.org/obo/UBERON_0038037`
@@ -5029,6 +6190,14 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### supraesophageal ganglion `http://purl.obolibrary.org/obo/UBERON_6003626`
+#### Removed
+- [supraesophageal ganglion](http://purl.obolibrary.org/obo/UBERON_6003626) [label](http://www.w3.org/2000/01/rdf-schema#label) "supraesophageal ganglion"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [supraesophageal ganglion](http://purl.obolibrary.org/obo/UBERON_6003626) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect supraesophageal ganglion"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### supramammary lymph node `http://purl.obolibrary.org/obo/UBERON_0037480`
 
 #### Added
@@ -5134,6 +6303,54 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### synaptic neuropil `http://purl.obolibrary.org/obo/UBERON_6040005`
+#### Removed
+- [synaptic neuropil](http://purl.obolibrary.org/obo/UBERON_6040005) [label](http://www.w3.org/2000/01/rdf-schema#label) "synaptic neuropil"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [synaptic neuropil](http://purl.obolibrary.org/obo/UBERON_6040005) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect synaptic neuropil"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### synaptic neuropil block `http://purl.obolibrary.org/obo/UBERON_6041000`
+#### Removed
+- [synaptic neuropil block](http://purl.obolibrary.org/obo/UBERON_6041000) [label](http://www.w3.org/2000/01/rdf-schema#label) "synaptic neuropil block"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [synaptic neuropil block](http://purl.obolibrary.org/obo/UBERON_6041000) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect synaptic neuropil block"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### synaptic neuropil domain `http://purl.obolibrary.org/obo/UBERON_6040007`
+#### Removed
+- [synaptic neuropil domain](http://purl.obolibrary.org/obo/UBERON_6040007) [label](http://www.w3.org/2000/01/rdf-schema#label) "synaptic neuropil domain"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [synaptic neuropil domain](http://purl.obolibrary.org/obo/UBERON_6040007) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect synaptic neuropil domain"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### tagma `http://purl.obolibrary.org/obo/UBERON_6000002`
+#### Removed
+- [tagma](http://purl.obolibrary.org/obo/UBERON_6000002) [label](http://www.w3.org/2000/01/rdf-schema#label) "tagma"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [tagma](http://purl.obolibrary.org/obo/UBERON_6000002) [label](http://www.w3.org/2000/01/rdf-schema#label) "panarthropod tagma"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### tagmatic subdivision of integument `http://purl.obolibrary.org/obo/UBERON_6007289`
+#### Removed
+- [tagmatic subdivision of integument](http://purl.obolibrary.org/obo/UBERON_6007289) [label](http://www.w3.org/2000/01/rdf-schema#label) "tagmatic subdivision of integument"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [tagmatic subdivision of integument](http://purl.obolibrary.org/obo/UBERON_6007289) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect tagmatic subdivision of integument"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### tarsal segment `http://purl.obolibrary.org/obo/UBERON_6004646`
+#### Removed
+- [tarsal segment](http://purl.obolibrary.org/obo/UBERON_6004646) [label](http://www.w3.org/2000/01/rdf-schema#label) "tarsal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [tarsal segment](http://purl.obolibrary.org/obo/UBERON_6004646) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect tarsal segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### telogen hair `http://purl.obolibrary.org/obo/UBERON_0037466`
 
 #### Added
@@ -5150,6 +6367,22 @@
 - Class: [telogen hair](http://purl.obolibrary.org/obo/UBERON_0037466) 
 
 - [telogen hair](http://purl.obolibrary.org/obo/UBERON_0037466) SubClassOf [strand of hair](http://purl.obolibrary.org/obo/UBERON_0001037) 
+
+
+### tergite `http://purl.obolibrary.org/obo/UBERON_6004476`
+#### Removed
+- [tergite](http://purl.obolibrary.org/obo/UBERON_6004476) [label](http://www.w3.org/2000/01/rdf-schema#label) "tergite"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [tergite](http://purl.obolibrary.org/obo/UBERON_6004476) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect tergite"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### tergum `http://purl.obolibrary.org/obo/UBERON_6004552`
+#### Removed
+- [tergum](http://purl.obolibrary.org/obo/UBERON_6004552) [label](http://www.w3.org/2000/01/rdf-schema#label) "tergum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [tergum](http://purl.obolibrary.org/obo/UBERON_6004552) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect tergum"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### terminal hair `http://purl.obolibrary.org/obo/UBERON_0037463`
@@ -5169,6 +6402,22 @@
 - Class: [terminal hair](http://purl.obolibrary.org/obo/UBERON_0037463) 
 
 - [terminal hair](http://purl.obolibrary.org/obo/UBERON_0037463) SubClassOf [strand of hair](http://purl.obolibrary.org/obo/UBERON_0001037) 
+
+
+### third instar larval cuticle `http://purl.obolibrary.org/obo/UBERON_6004986`
+#### Removed
+- [third instar larval cuticle](http://purl.obolibrary.org/obo/UBERON_6004986) [label](http://www.w3.org/2000/01/rdf-schema#label) "third instar larval cuticle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [third instar larval cuticle](http://purl.obolibrary.org/obo/UBERON_6004986) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect third instar larval cuticle"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### thoracic segment `http://purl.obolibrary.org/obo/UBERON_6000016`
+#### Removed
+- [thoracic segment](http://purl.obolibrary.org/obo/UBERON_6000016) [label](http://www.w3.org/2000/01/rdf-schema#label) "thoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [thoracic segment](http://purl.obolibrary.org/obo/UBERON_6000016) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect thoracic segment"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### thyroid lymph node `http://purl.obolibrary.org/obo/UBERON_0038931`
@@ -5194,14 +6443,6 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### tibial facet of femur `http://purl.obolibrary.org/obo/UBERON_4200217`
-#### Removed
-- [tibial facet of femur](http://purl.obolibrary.org/obo/UBERON_4200217) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Facet on the femur for the tibia. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [tibial facet of femur](http://purl.obolibrary.org/obo/UBERON_4200217) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Facet on the femur for the tibia."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### tibial lymph node `http://purl.obolibrary.org/obo/UBERON_0038861`
 
 #### Added
@@ -5222,14 +6463,96 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### trigeminal foramen `http://purl.obolibrary.org/obo/UBERON_2001809`
+### tracheal pit `http://purl.obolibrary.org/obo/UBERON_6005036`
 #### Removed
-- [trigeminal foramen](http://purl.obolibrary.org/obo/UBERON_2001809) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "posterior opening of trigeminofacialis chamber "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001809"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [tracheal pit](http://purl.obolibrary.org/obo/UBERON_6005036) [label](http://www.w3.org/2000/01/rdf-schema#label) "tracheal pit"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [trigeminal foramen](http://purl.obolibrary.org/obo/UBERON_2001809) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "posterior opening of trigeminofacialis chamber"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "TAO:0001809"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [tracheal pit](http://purl.obolibrary.org/obo/UBERON_6005036) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect tracheal pit"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### tracheal primordium `http://purl.obolibrary.org/obo/UBERON_6005037`
+#### Removed
+- [tracheal primordium](http://purl.obolibrary.org/obo/UBERON_6005037) [label](http://www.w3.org/2000/01/rdf-schema#label) "tracheal primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [tracheal primordium](http://purl.obolibrary.org/obo/UBERON_6005037) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect tracheal primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### transition zone of prostate `http://purl.obolibrary.org/obo/UBERON_8410025`
+
+#### Added
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) "Homo sapiens"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [29038334](http://www.ncbi.nlm.nih.gov/pubmed/29038334) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8410025"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "transition zone of human prostate"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [added_for_HCA](http://purl.obolibrary.org/obo/uberon/core#added_for_HCA) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "prostate transition zone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [label](http://www.w3.org/2000/01/rdf-schema#label) "transition zone of prostate"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0002-2825-0621"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the prostate gland anterior to the central and peripheral zones, surrounding the proximal urethra. It is the zone of the human prostate gland that grows the most throughout life, and is responsible for benign prostatic hypertrophy."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [30566875](http://www.ncbi.nlm.nih.gov/pubmed/30566875) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7431-4139](https://orcid.org/0000-0002-7431-4139) 
+
+- Class: [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [prostate gland](http://purl.obolibrary.org/obo/UBERON_0002367) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) SubClassOf [mixed endoderm/mesoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0000077) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) SubClassOf [zone of organ](http://purl.obolibrary.org/obo/UBERON_0034944) 
+
+- [transition zone of prostate](http://purl.obolibrary.org/obo/UBERON_8410025) SubClassOf [reproductive structure](http://purl.obolibrary.org/obo/UBERON_0005156) 
+
+
+### trichome `http://purl.obolibrary.org/obo/UBERON_6004979`
+#### Removed
+- [trichome](http://purl.obolibrary.org/obo/UBERON_6004979) [label](http://www.w3.org/2000/01/rdf-schema#label) "trichome"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [trichome](http://purl.obolibrary.org/obo/UBERON_6004979) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect trichome"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### trunk ectoderm `http://purl.obolibrary.org/obo/UBERON_6007045`
+#### Removed
+- [trunk ectoderm](http://purl.obolibrary.org/obo/UBERON_6007045) [label](http://www.w3.org/2000/01/rdf-schema#label) "trunk ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [trunk ectoderm](http://purl.obolibrary.org/obo/UBERON_6007045) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect trunk ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### trunk mesoderm `http://purl.obolibrary.org/obo/UBERON_6000128`
+#### Removed
+- [trunk mesoderm](http://purl.obolibrary.org/obo/UBERON_6000128) [label](http://www.w3.org/2000/01/rdf-schema#label) "trunk mesoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [trunk mesoderm](http://purl.obolibrary.org/obo/UBERON_6000128) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect trunk mesoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### trunk mesoderm anlage `http://purl.obolibrary.org/obo/UBERON_6005436`
+#### Removed
+- [trunk mesoderm anlage](http://purl.obolibrary.org/obo/UBERON_6005436) [label](http://www.w3.org/2000/01/rdf-schema#label) "trunk mesoderm anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [trunk mesoderm anlage](http://purl.obolibrary.org/obo/UBERON_6005436) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect trunk mesoderm anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### trunk mesoderm derivative `http://purl.obolibrary.org/obo/UBERON_6026000`
+#### Removed
+- [trunk mesoderm derivative](http://purl.obolibrary.org/obo/UBERON_6026000) [label](http://www.w3.org/2000/01/rdf-schema#label) "trunk mesoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [trunk mesoderm derivative](http://purl.obolibrary.org/obo/UBERON_6026000) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect trunk mesoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### upper intercostal lymph node `http://purl.obolibrary.org/obo/UBERON_0038002`
@@ -5247,22 +6570,6 @@
 
 - [upper intercostal lymph node](http://purl.obolibrary.org/obo/UBERON_0038002) SubClassOf [intercostal lymph node](http://purl.obolibrary.org/obo/UBERON_0012236) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### upper jaw symphyseal region `http://purl.obolibrary.org/obo/UBERON_4300133`
-#### Removed
-- [upper jaw symphyseal region](http://purl.obolibrary.org/obo/UBERON_4300133) [definition](http://purl.obolibrary.org/obo/IAO_0000115) " The region of the upper jaw on or near the midline. [PHENOSCAPE:WD]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [upper jaw symphyseal region](http://purl.obolibrary.org/obo/UBERON_4300133) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region of the upper jaw on or near the midline. [PHENOSCAPE:WD]"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### urodermal bone `http://purl.obolibrary.org/obo/UBERON_4300003`
-#### Removed
-- [urodermal bone](http://purl.obolibrary.org/obo/UBERON_4300003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Paired, thin dermal bones at the rear of the caudal fin skeleton, derived from scales. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [urodermal bone](http://purl.obolibrary.org/obo/UBERON_4300003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Paired, thin dermal bones at the rear of the caudal fin skeleton, derived from scales."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### uterine tube infundibulum `http://purl.obolibrary.org/obo/UBERON_0003984`
@@ -5298,6 +6605,38 @@
 - [vellus hair](http://purl.obolibrary.org/obo/UBERON_0037462) SubClassOf [strand of hair](http://purl.obolibrary.org/obo/UBERON_0001037) 
 
 
+### ventral ectoderm `http://purl.obolibrary.org/obo/UBERON_6005558`
+#### Removed
+- [ventral ectoderm](http://purl.obolibrary.org/obo/UBERON_6005558) [label](http://www.w3.org/2000/01/rdf-schema#label) "ventral ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [ventral ectoderm](http://purl.obolibrary.org/obo/UBERON_6005558) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ventral ectoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### ventral ectoderm derivative `http://purl.obolibrary.org/obo/UBERON_6025993`
+#### Removed
+- [ventral ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6025993) [label](http://www.w3.org/2000/01/rdf-schema#label) "ventral ectoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [ventral ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6025993) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ventral ectoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### ventral epidermis primordium `http://purl.obolibrary.org/obo/UBERON_6005533`
+#### Removed
+- [ventral epidermis primordium](http://purl.obolibrary.org/obo/UBERON_6005533) [label](http://www.w3.org/2000/01/rdf-schema#label) "ventral epidermis primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [ventral epidermis primordium](http://purl.obolibrary.org/obo/UBERON_6005533) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ventral epidermis primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### ventral furrow `http://purl.obolibrary.org/obo/UBERON_6000096`
+#### Removed
+- [ventral furrow](http://purl.obolibrary.org/obo/UBERON_6000096) [label](http://www.w3.org/2000/01/rdf-schema#label) "ventral furrow"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [ventral furrow](http://purl.obolibrary.org/obo/UBERON_6000096) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ventral furrow"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### ventral myorhabdoid bone `http://purl.obolibrary.org/obo/UBERON_4300283`
 
 #### Added
@@ -5311,14 +6650,28 @@
 - [ventral myorhabdoid bone](http://purl.obolibrary.org/obo/UBERON_4300283) SubClassOf [myorhabdoid bone](http://purl.obolibrary.org/obo/UBERON_2002127) 
 
 
-### villosities `http://purl.obolibrary.org/obo/UBERON_3010093`
+### ventral prothoracic disc primordium `http://purl.obolibrary.org/obo/UBERON_6001658`
 #### Removed
-- [villosities](http://purl.obolibrary.org/obo/UBERON_3010093) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Small hair or nipple like projection on the integument. "^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "R. C. Stebbins 1951"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ventral prothoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001658) [label](http://www.w3.org/2000/01/rdf-schema#label) "ventral prothoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [villosities](http://purl.obolibrary.org/obo/UBERON_3010093) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Small hair or nipple like projection on the integument."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "R. C. Stebbins 1951"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [ventral prothoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001658) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ventral prothoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### ventral thoracic disc `http://purl.obolibrary.org/obo/UBERON_6001780`
+#### Removed
+- [ventral thoracic disc](http://purl.obolibrary.org/obo/UBERON_6001780) [label](http://www.w3.org/2000/01/rdf-schema#label) "ventral thoracic disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [ventral thoracic disc](http://purl.obolibrary.org/obo/UBERON_6001780) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ventral thoracic disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### ventral thoracic disc primordium `http://purl.obolibrary.org/obo/UBERON_6001657`
+#### Removed
+- [ventral thoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001657) [label](http://www.w3.org/2000/01/rdf-schema#label) "ventral thoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [ventral thoracic disc primordium](http://purl.obolibrary.org/obo/UBERON_6001657) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect ventral thoracic disc primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### visceral lymph node of abdomen `http://purl.obolibrary.org/obo/UBERON_0038687`
@@ -5335,6 +6688,22 @@
 - Class: [visceral lymph node of abdomen](http://purl.obolibrary.org/obo/UBERON_0038687) 
 
 - [visceral lymph node of abdomen](http://purl.obolibrary.org/obo/UBERON_0038687) SubClassOf [abdominal lymph node](http://purl.obolibrary.org/obo/UBERON_0002507) 
+
+
+### visceral mesoderm `http://purl.obolibrary.org/obo/UBERON_6000130`
+#### Removed
+- [visceral mesoderm](http://purl.obolibrary.org/obo/UBERON_6000130) [label](http://www.w3.org/2000/01/rdf-schema#label) "visceral mesoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [visceral mesoderm](http://purl.obolibrary.org/obo/UBERON_6000130) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect visceral mesoderm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### visceral mesoderm derivative `http://purl.obolibrary.org/obo/UBERON_6026002`
+#### Removed
+- [visceral mesoderm derivative](http://purl.obolibrary.org/obo/UBERON_6026002) [label](http://www.w3.org/2000/01/rdf-schema#label) "visceral mesoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [visceral mesoderm derivative](http://purl.obolibrary.org/obo/UBERON_6026002) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect visceral mesoderm derivative"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### visceral pre-aortic lymph node `http://purl.obolibrary.org/obo/UBERON_0038734`
@@ -5366,6 +6735,30 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### visual anlage `http://purl.obolibrary.org/obo/UBERON_6005434`
+#### Removed
+- [visual anlage](http://purl.obolibrary.org/obo/UBERON_6005434) [label](http://www.w3.org/2000/01/rdf-schema#label) "visual anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [visual anlage](http://purl.obolibrary.org/obo/UBERON_6005434) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect visual anlage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### visual anlage in statu nascendi `http://purl.obolibrary.org/obo/UBERON_6005425`
+#### Removed
+- [visual anlage in statu nascendi](http://purl.obolibrary.org/obo/UBERON_6005425) [label](http://www.w3.org/2000/01/rdf-schema#label) "visual anlage in statu nascendi"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [visual anlage in statu nascendi](http://purl.obolibrary.org/obo/UBERON_6005425) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect visual anlage in statu nascendi"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### visual primordium `http://purl.obolibrary.org/obo/UBERON_6001059`
+#### Removed
+- [visual primordium](http://purl.obolibrary.org/obo/UBERON_6001059) [label](http://www.w3.org/2000/01/rdf-schema#label) "visual primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [visual primordium](http://purl.obolibrary.org/obo/UBERON_6001059) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect visual primordium"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### waist `http://purl.obolibrary.org/obo/UBERON_0037468`
 
 #### Added
@@ -5389,3 +6782,37 @@
 
 - [waist](http://purl.obolibrary.org/obo/UBERON_0037468) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [abdomen](http://purl.obolibrary.org/obo/UBERON_0000916) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) [0000-0002-2825-0621](https://orcid.org/0000-0002-2825-0621) 
+
+
+### wing disc `http://purl.obolibrary.org/obo/UBERON_6001778`
+#### Removed
+- [wing disc](http://purl.obolibrary.org/obo/UBERON_6001778) [label](http://www.w3.org/2000/01/rdf-schema#label) "wing disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [wing disc](http://purl.obolibrary.org/obo/UBERON_6001778) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect wing disc"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### wing hair `http://purl.obolibrary.org/obo/UBERON_6004340`
+#### Removed
+- [wing hair](http://purl.obolibrary.org/obo/UBERON_6004340) [label](http://www.w3.org/2000/01/rdf-schema#label) "wing hair"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [wing hair](http://purl.obolibrary.org/obo/UBERON_6004340) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect wing hair"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### wing margin `http://purl.obolibrary.org/obo/UBERON_6005378`
+#### Removed
+- [wing margin](http://purl.obolibrary.org/obo/UBERON_6005378) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "margin"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [wing margin](http://purl.obolibrary.org/obo/UBERON_6005378) [label](http://www.w3.org/2000/01/rdf-schema#label) "wing margin"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [wing margin](http://purl.obolibrary.org/obo/UBERON_6005378) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "margin"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [wing margin](http://purl.obolibrary.org/obo/UBERON_6005378) [label](http://www.w3.org/2000/01/rdf-schema#label) "insect wing margin"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### zone of stomach `http://purl.obolibrary.org/obo/UBERON_0009870`
+
+#### Added
+- [zone of stomach](http://purl.obolibrary.org/obo/UBERON_0009870) SubClassOf [subdivision of digestive tract](http://purl.obolibrary.org/obo/UBERON_0004921) 
