@@ -1,0 +1,78 @@
+format-version: 1.2
+data-version: uberon/releases/2021-03-03/imports/zfa_import.owl
+ontology: uberon/imports/zfa_import
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/zfa/releases/2020-04-14/zfa.owl
+property_value: owl:versionInfo "2021-03-03" xsd:string
+
+[Term]
+id: ZFA:0005094
+alt_id: ZFA:0005228
+
+[Typedef]
+id: continuous_with
+name: continuous with
+namespace: zebrafish_anatomical_ontology
+def: "X continuous_with Y if and only if X and Y share a fiat boundary." [goc:cjm]
+synonym: "continuous_with" EXACT []
+xref: RO:0002150
+is_symmetric: true
+
+[Typedef]
+id: develops_from
+name: develops from
+namespace: zebrafish_anatomical_ontology
+xref: RO:0002202
+holds_over_chain: part_of develops_from
+is_transitive: true
+transitive_over: part_of ! part of
+
+[Typedef]
+id: end
+name: end stage
+namespace: zebrafish_anatomical_ontology
+def: "c existence ends during s iff  end_of(c) part_of s." [goc:cjm]
+synonym: "ends_during" EXACT []
+synonym: "existence ends during" RELATED []
+xref: RO:0002497
+
+[Typedef]
+id: has_developmental_contribution_from
+name: has developmental contribution from
+namespace: zebrafish_anatomical_ontology
+def: "x has developmental contribution from y iff x has some part z such that z develops from y." [goc:cjm]
+synonym: "has_developmental_contribution_from" EXACT []
+xref: RO:0002254
+holds_over_chain: has_part develops_from
+
+[Typedef]
+id: has_part
+name: has_part
+namespace: zebrafish_anatomical_ontology
+xref: BFO:0000051
+is_transitive: true
+is_a: overlaps ! overlaps
+
+[Typedef]
+id: overlaps
+name: overlaps
+namespace: zebrafish_anatomical_ontology
+xref: RO:0002131
+
+[Typedef]
+id: part_of
+name: part of
+namespace: zebrafish_anatomical_ontology
+xref: BFO:0000050
+is_transitive: true
+is_a: overlaps ! overlaps
+inverse_of: has_part ! has_part
+
+[Typedef]
+id: start
+name: start stage
+namespace: zebrafish_anatomical_ontology
+def: "c existence starts during s iff start_of(c) part_of s." [goc:cjm]
+synonym: "existence starts during" RELATED []
+synonym: "starts_during" EXACT []
+xref: RO:0002496
+

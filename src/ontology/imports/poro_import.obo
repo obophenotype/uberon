@@ -1,0 +1,3219 @@
+format-version: 1.2
+data-version: uberon/releases/2021-03-03/imports/poro_import.owl
+ontology: uberon/imports/poro_import
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/poro/releases/2016-09-13/poro.owl
+property_value: owl:versionInfo "2021-03-03" xsd:string
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://org.semanticweb.owlapi/error#Error1>))\nDeclaration(Class(<http://org.semanticweb.owlapi/error#Error2>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/GO_0005634>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0001405>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PATO_0002505>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PORO_0000001>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PORO_0000002>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PORO_0000043>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PORO_0000200>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000104>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000466>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000053>))\nDeclaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))\n\n\n\n\nEquivalentClasses(ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000002>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000043>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000200>)) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000001>))\nEquivalentClasses(ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000104>))\nEquivalentClasses(ObjectComplementOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0005634>)) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0001405>))\nEquivalentClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/GO_0005634>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0002505>))\nSubClassOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000466>) <http://org.semanticweb.owlapi/error#Error2>)\nSubClassOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001062>) <http://org.semanticweb.owlapi/error#Error1>)\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000002>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000043>))\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000002>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000200>))\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000043>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/PORO_0000200>))\nDisjointClasses(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>))\nAnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/PORO_0000017> \"\")\n)
+
+[Term]
+id: BFO:0000002
+name: continuant
+def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+
+[Term]
+id: BFO:0000003
+name: occurrent
+def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000015
+name: process
+def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
+is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000020
+name: specifically dependent continuant
+def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000040
+name: material entity
+def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CARO:0000003
+name: anatomical structure
+is_a: CARO:0000006 ! material anatomical entity
+
+[Term]
+id: CARO:0000006
+name: material anatomical entity
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: CARO:0000014
+name: cell part
+is_a: CARO:0000003 ! anatomical structure
+
+[Term]
+id: CHEBI:10545
+name: electron
+def: "Elementary particle not affected by the strong force having a spin 1/2, a negative elementary charge and a rest mass of 0.000548579903(13) u, or 0.51099906(15) MeV." []
+synonym: "[*-]" RELATED []
+synonym: "beta" RELATED []
+synonym: "beta(-)" RELATED []
+synonym: "beta-particle" RELATED []
+synonym: "e" RELATED []
+synonym: "e(-)" RELATED []
+synonym: "e-" RELATED []
+synonym: "electron" EXACT []
+synonym: "negatron" RELATED []
+is_a: CHEBI:36338 ! lepton
+relationship: RO:0000087 CHEBI:75771 ! has role mouse metabolite
+
+[Term]
+id: CHEBI:17544
+name: hydrogencarbonate
+def: "The carbon oxoanion resulting from the removal of a proton from carbonic acid." []
+synonym: "[CO2(OH)](-)" RELATED []
+synonym: "Acid carbonate" RELATED []
+synonym: "Bicarbonate" RELATED []
+synonym: "bicarbonate" RELATED []
+synonym: "Bicarbonate (HCO3-)" RELATED []
+synonym: "Bicarbonate anion" RELATED []
+synonym: "BICARBONATE ION" RELATED []
+synonym: "Bicarbonate ion" RELATED []
+synonym: "Bicarbonate ion (HCO31-)" RELATED []
+synonym: "Bicarbonate ions" RELATED []
+synonym: "BVKZGUZCCUSVTD-UHFFFAOYSA-M" RELATED []
+synonym: "Carbonate" RELATED []
+synonym: "Carbonate (HCO31-)" RELATED []
+synonym: "Carbonate ion (HCO31-)" RELATED []
+synonym: "Carbonic acid" RELATED []
+synonym: "CHO3" RELATED []
+synonym: "HCO3(-)" RELATED []
+synonym: "HCO3-" RELATED []
+synonym: "Hydrocarbonate(1-)" RELATED []
+synonym: "hydrogen carbonate" RELATED []
+synonym: "Hydrogen carbonate (HCO3-)" RELATED []
+synonym: "Hydrogen carbonate anion" RELATED []
+synonym: "Hydrogen carbonate ion" RELATED []
+synonym: "Hydrogen carbonate ion (HCO3-)" RELATED []
+synonym: "hydrogen(trioxidocarbonate)(1-)" EXACT []
+synonym: "Hydrogencarbonate" EXACT []
+synonym: "hydrogencarbonate" EXACT []
+synonym: "hydrogencarbonate(1-)" EXACT []
+synonym: "Hydrogentrioxocarbonate" RELATED []
+synonym: "hydrogentrioxocarbonate(1-)" EXACT []
+synonym: "hydrogentrioxocarbonate(IV)" EXACT []
+synonym: "hydroxidodioxidocarbonate(1-)" EXACT []
+synonym: "InChI=1S/CH2O3/c2-1(3)4/h(H2,2,3,4)/p-1" RELATED []
+synonym: "Monohydrogen carbonate" RELATED []
+synonym: "OC([O-])=O" RELATED []
+is_a: CHEBI:35604 ! carbon oxoanion
+relationship: is_conjugate_acid_of CHEBI:41609 ! carbonate
+relationship: is_conjugate_base_of CHEBI:28976 ! carbonic acid
+relationship: RO:0000087 CHEBI:75771 ! has role mouse metabolite
+relationship: RO:0000087 CHEBI:75772 ! has role Saccharomyces cerevisiae metabolite
+relationship: RO:0000087 CHEBI:76971 ! has role Escherichia coli metabolite
+relationship: RO:0000087 CHEBI:77746 ! has role human metabolite
+
+[Term]
+id: CHEBI:17891
+name: donor
+def: "A molecular entity that can transfer (\"donate\") an electron, a pair of electrons, an atom or a group to another molecular entity." []
+synonym: "Donator" RELATED []
+synonym: "donneur" RELATED []
+synonym: "Donor" EXACT []
+synonym: "donor" EXACT []
+is_a: CHEBI:51086 ! chemical role
+
+[Term]
+id: CHEBI:22313
+name: alkaline earth metal atom
+synonym: "alkaline earth metal" RELATED []
+synonym: "alkaline earth metals" EXACT []
+synonym: "alkaline-earth metal" RELATED []
+synonym: "alkaline-earth metals" RELATED []
+synonym: "Erdalkalimetall" RELATED []
+synonym: "Erdalkalimetalle" RELATED []
+synonym: "metal alcalino-terreux" RELATED []
+synonym: "metal alcalinoterreo" RELATED []
+synonym: "metales alcalinoterreos" RELATED []
+synonym: "metaux alcalino-terreux" RELATED []
+is_a: CHEBI:33318 ! main group element atom
+is_a: CHEBI:33521 ! metal atom
+is_a: CHEBI:33559 ! s-block element atom
+
+[Term]
+id: CHEBI:22563
+name: anion
+def: "A monoatomic or polyatomic species having one or more elementary charges of the electron." []
+synonym: "Anion" EXACT []
+synonym: "anion" EXACT []
+synonym: "Anionen" RELATED []
+synonym: "aniones" RELATED []
+synonym: "anions" RELATED []
+is_a: CHEBI:24870 ! ion
+
+[Term]
+id: CHEBI:22984
+name: calcium atom
+def: "An alkaline earth metal atom that has formula Ca." []
+synonym: "20Ca" RELATED []
+synonym: "[Ca]" RELATED []
+synonym: "Ca" RELATED []
+synonym: "calcio" RELATED []
+synonym: "Calcium" RELATED []
+synonym: "calcium" EXACT []
+synonym: "calcium" RELATED []
+synonym: "InChI=1S/Ca" RELATED []
+synonym: "Kalzium" RELATED []
+synonym: "OYPRJOBELJOOCE-UHFFFAOYSA-N" RELATED []
+is_a: CHEBI:22313 ! alkaline earth metal atom
+relationship: RO:0000087 CHEBI:33937 ! has role macronutrient
+
+[Term]
+id: CHEBI:22985
+name: calcium molecular entity
+synonym: "calcium compounds" RELATED []
+synonym: "calcium molecular entities" RELATED []
+synonym: "calcium molecular entity" EXACT []
+is_a: CHEBI:33299 ! alkaline earth molecular entity
+relationship: BFO_0000051 CHEBI:22984 ! calcium atom
+
+[Term]
+id: CHEBI:23016
+name: carbonates
+def: "Organooxygen compounds that are salts or esters of carbonic acid, H2CO3." []
+is_a: CHEBI:36963 ! organooxygen compound
+relationship: has_functional_parent CHEBI:28976 ! carbonic acid
+
+[Term]
+id: CHEBI:23367
+name: molecular entity
+def: "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity." []
+synonym: "entidad molecular" RELATED []
+synonym: "entidades moleculares" RELATED []
+synonym: "entite moleculaire" RELATED []
+synonym: "molecular entities" RELATED []
+synonym: "molecular entity" EXACT []
+synonym: "molekulare Entitaet" RELATED []
+is_a: CHEBI:24431 ! chemical entity
+
+[Term]
+id: CHEBI:23888
+name: drug
+def: "Any substance which when absorbed into a living organism may modify one or more of its functions. The term is generally accepted for a substance taken for a therapeutic purpose, but is also commonly used for abused substances." []
+synonym: "drugs" RELATED []
+synonym: "medicine" RELATED []
+is_a: CHEBI:52217 ! pharmaceutical
+
+[Term]
+id: CHEBI:23906
+name: monoatomic cation
+synonym: "monoatomic cations" RELATED []
+is_a: CHEBI:24867 ! monoatomic ion
+is_a: CHEBI:36916 ! cation
+
+[Term]
+id: CHEBI:24431
+name: chemical entity
+def: "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." []
+synonym: "chemical entity" EXACT []
+synonym: "grouped_by_chemistry" RELATED []
+
+[Term]
+id: CHEBI:24432
+name: biological role
+def: "A role played by the molecular entity or part thereof within a biological context." []
+synonym: "biological function" RELATED []
+synonym: "grouped_by_functions" RELATED []
+is_a: CHEBI:50906 ! role
+
+[Term]
+id: CHEBI:24433
+name: group
+def: "A defined linked collection of atoms or a single atom within a molecular entity." []
+synonym: "group" EXACT []
+synonym: "groupe" RELATED []
+synonym: "grupo" RELATED []
+synonym: "grupos" RELATED []
+synonym: "Gruppe" RELATED []
+synonym: "Rest" RELATED []
+is_a: CHEBI:24431 ! chemical entity
+relationship: BFO_0000051 CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:24651
+name: hydroxides
+def: "Hydroxides are chemical compounds containing a hydroxy group or salts containing hydroxide (OH(-))." []
+synonym: "hydroxides" EXACT []
+is_a: CHEBI:25806 ! oxygen molecular entity
+is_a: CHEBI:33608 ! hydrogen molecular entity
+is_a: CHEBI:37577 ! heteroatomic molecular entity
+relationship: BFO_0000051 CHEBI:43176 ! hydroxy group
+
+[Term]
+id: CHEBI:24833
+name: oxoacid
+def: "A compound which contains oxygen, at least one other element, and at least one hydrogen bound to oxygen, and which produces a conjugate base by loss of positive hydrogen ion(s) (hydrons)." []
+synonym: "inorganic acids" RELATED []
+synonym: "oxacids" RELATED []
+synonym: "oxiacids" RELATED []
+synonym: "oxo acid" RELATED []
+synonym: "oxoacid" EXACT []
+synonym: "oxoacids" EXACT []
+synonym: "oxy-acids" RELATED []
+synonym: "oxyacids" RELATED []
+is_a: CHEBI:24651 ! hydroxides
+relationship: RO:0000087 CHEBI:39141 ! has role Bronsted acid
+
+[Term]
+id: CHEBI:24835
+name: inorganic molecular entity
+def: "A molecular entity that contains no carbon." []
+synonym: "anorganische Verbindungen" RELATED []
+synonym: "inorganic compounds" RELATED []
+synonym: "inorganic entity" RELATED []
+synonym: "inorganic molecular entities" RELATED []
+synonym: "inorganics" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:24866
+name: salt
+def: "A salt is an assembly of cations and anions." []
+synonym: "ionic compound" RELATED []
+synonym: "ionic compounds" RELATED []
+synonym: "sal" RELATED []
+synonym: "sales" RELATED []
+synonym: "salt" EXACT []
+synonym: "salts" RELATED []
+synonym: "Salz" RELATED []
+synonym: "Salze" RELATED []
+synonym: "sel" RELATED []
+synonym: "sels" RELATED []
+is_a: CHEBI:37577 ! heteroatomic molecular entity
+relationship: BFO_0000051 CHEBI:22563 ! anion
+relationship: BFO_0000051 CHEBI:36916 ! cation
+
+[Term]
+id: CHEBI:24867
+name: monoatomic ion
+synonym: "ionic elements" RELATED []
+synonym: "monoatomic ions" RELATED []
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:33238 ! monoatomic entity
+
+[Term]
+id: CHEBI:24870
+name: ion
+def: "A molecular entity having a net electric charge." []
+synonym: "Ion" EXACT []
+synonym: "ion" EXACT []
+synonym: "Ionen" RELATED []
+synonym: "iones" RELATED []
+synonym: "ions" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:25212
+name: metabolite
+def: "Any intermediate or product resulting from metabolism. The term 'metabolite' subsumes the classes commonly known as primary and secondary metabolites." []
+synonym: "metabolite" EXACT []
+synonym: "metabolites" RELATED []
+synonym: "primary metabolites" RELATED []
+synonym: "secondary metabolites" RELATED []
+is_a: CHEBI:52206 ! biochemical role
+
+[Term]
+id: CHEBI:25213
+name: metal cation
+synonym: "a metal cation" RELATED []
+synonym: "metal cations" RELATED []
+is_a: CHEBI:23906 ! monoatomic cation
+is_a: CHEBI:36915 ! inorganic cation
+
+[Term]
+id: CHEBI:25585
+name: nonmetal atom
+synonym: "Nichtmetall" RELATED []
+synonym: "Nichtmetalle" RELATED []
+synonym: "no metal" RELATED []
+synonym: "no metales" RELATED []
+synonym: "non-metal" RELATED []
+synonym: "non-metaux" RELATED []
+synonym: "nonmetal" EXACT []
+synonym: "nonmetal" RELATED []
+synonym: "nonmetals" RELATED []
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:25696
+name: organic anion
+synonym: "organic anions" RELATED []
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:25699 ! organic ion
+
+[Term]
+id: CHEBI:25699
+name: organic ion
+synonym: "organic ions" RELATED []
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:25741
+name: oxide
+def: "An oxide is a chemical compound of oxygen with other chemical elements." []
+synonym: "oxide" EXACT []
+synonym: "oxides" RELATED []
+is_a: CHEBI:25806 ! oxygen molecular entity
+is_a: CHEBI:37577 ! heteroatomic molecular entity
+
+[Term]
+id: CHEBI:25805
+name: oxygen atom
+def: "A chalcogen that has formula O." []
+synonym: "8O" RELATED []
+synonym: "[O]" RELATED []
+synonym: "InChI=1S/O" RELATED []
+synonym: "O" RELATED []
+synonym: "oxigeno" RELATED []
+synonym: "oxygen" EXACT []
+synonym: "oxygen" RELATED []
+synonym: "oxygene" RELATED []
+synonym: "QVGXLLKOCUKJST-UHFFFAOYSA-N" RELATED []
+synonym: "Sauerstoff" RELATED []
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33303 ! chalcogen
+relationship: RO:0000087 CHEBI:33937 ! has role macronutrient
+
+[Term]
+id: CHEBI:25806
+name: oxygen molecular entity
+synonym: "oxygen compounds" RELATED []
+synonym: "oxygen molecular entities" RELATED []
+synonym: "oxygen molecular entity" EXACT []
+is_a: CHEBI:33304 ! chalcogen molecular entity
+relationship: BFO_0000051 CHEBI:25805 ! oxygen atom
+
+[Term]
+id: CHEBI:27594
+name: carbon atom
+def: "A carbon group element atom that has formula C." []
+synonym: "6C" RELATED []
+synonym: "[C]" RELATED []
+synonym: "C" RELATED []
+synonym: "Carbon" RELATED []
+synonym: "carbon" EXACT []
+synonym: "carbon" RELATED []
+synonym: "carbone" RELATED []
+synonym: "carbonium" RELATED []
+synonym: "carbono" RELATED []
+synonym: "InChI=1S/C" RELATED []
+synonym: "Kohlenstoff" RELATED []
+synonym: "OKTJSMMVPCPJKN-UHFFFAOYSA-N" RELATED []
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33306 ! carbon group element atom
+relationship: RO:0000087 CHEBI:33937 ! has role macronutrient
+
+[Term]
+id: CHEBI:28976
+name: carbonic acid
+def: "A chalcocarbonic acid that has formula CH2O3." []
+synonym: "[CO(OH)2]" RELATED []
+synonym: "Acid of air" RELATED []
+synonym: "Aerial acid" RELATED []
+synonym: "Bisodium carbonate" RELATED []
+synonym: "BVKZGUZCCUSVTD-UHFFFAOYSA-N" RELATED []
+synonym: "Calcined" RELATED []
+synonym: "Carbonic acid" EXACT []
+synonym: "carbonic acid" EXACT []
+synonym: "Carbonic acid sodium salt" RELATED []
+synonym: "CH2O3" RELATED []
+synonym: "Consal" RELATED []
+synonym: "Crystol carbonate" RELATED []
+synonym: "Dihydrogen carbonate" RELATED []
+synonym: "dihydroxidooxidocarbon" EXACT []
+synonym: "Disodium carbonate" RELATED []
+synonym: "H2CO3" RELATED []
+synonym: "InChI=1S/CH2O3/c2-1(3)4/h(H2,2,3,4)" RELATED []
+synonym: "Koehlensaeure" RELATED []
+synonym: "Mild alkali" RELATED []
+synonym: "Na-X" RELATED []
+synonym: "OC(O)=O" RELATED []
+synonym: "Oxyper" RELATED []
+synonym: "Sal soda" RELATED []
+synonym: "Salt of soda" RELATED []
+synonym: "Scotch soda" RELATED []
+synonym: "Soda" RELATED []
+synonym: "Soda ash" RELATED []
+synonym: "Sodium carbonate" RELATED []
+synonym: "Sodium carbonate anhydrous" RELATED []
+synonym: "Sodium carbonate hydrated" RELATED []
+synonym: "Sodium carbonate peroxyhydrate" RELATED []
+synonym: "Solvay soda" RELATED []
+synonym: "Trona soda ash" RELATED []
+synonym: "Tronalight light soda ash" RELATED []
+is_a: CHEBI:35605 ! carbon oxoacid
+is_a: CHEBI:36961 ! chalcocarbonic acid
+relationship: is_conjugate_acid_of CHEBI:17544 ! hydrogencarbonate
+relationship: RO:0000087 CHEBI:75771 ! has role mouse metabolite
+
+[Term]
+id: CHEBI:29108
+name: calcium(2+)
+def: "A calcium cation that has formula Ca." []
+synonym: "[Ca++]" RELATED []
+synonym: "BHPQYMZQTOCNFJ-UHFFFAOYSA-N" RELATED []
+synonym: "Ca" RELATED []
+synonym: "Ca(2+)" RELATED []
+synonym: "Ca2+" RELATED []
+synonym: "calcium" RELATED []
+synonym: "Calcium element" RELATED []
+synonym: "CALCIUM ION" RELATED []
+synonym: "calcium(2+)" EXACT []
+synonym: "calcium(2+) ion" EXACT []
+synonym: "calcium(II) cation" EXACT []
+synonym: "calcium, doubly charged positive ion" RELATED []
+synonym: "InChI=1S/Ca/q+2" RELATED []
+is_a: CHEBI:30412 ! monoatomic dication
+is_a: CHEBI:39123 ! calcium cation
+is_a: CHEBI:60240 ! divalent metal cation
+relationship: RO:0000087 CHEBI:77746 ! has role human metabolite
+
+[Term]
+id: CHEBI:30412
+name: monoatomic dication
+synonym: "[*++]" RELATED []
+synonym: "Divalent cation" RELATED []
+synonym: "divalent cation" RELATED []
+synonym: "divalent inorganic cations" RELATED []
+synonym: "monoatomic dications" RELATED []
+is_a: CHEBI:23906 ! monoatomic cation
+
+[Term]
+id: CHEBI:3311
+name: calcium carbonate
+def: "A carbonate salt that has formula CO3.Ca." []
+synonym: "[Ca++].[O-]C([O-])=O" RELATED []
+synonym: "CaCO3" RELATED []
+synonym: "Calcium carbonate" EXACT []
+synonym: "calcium carbonate" EXACT []
+synonym: "calcium carbonate (1:1)" RELATED []
+synonym: "calcium trioxidocarbonate" EXACT []
+synonym: "Calciumcarbonat" RELATED []
+synonym: "carbonate de calcium" RELATED []
+synonym: "carbonato de calcio" RELATED []
+synonym: "carbonic acid calcium salt (1:1)" RELATED []
+synonym: "CCaO3" RELATED []
+synonym: "CO3.Ca" RELATED []
+synonym: "E 170" RELATED []
+synonym: "InChI=1S/CH2O3.Ca/c2-1(3)4;/h(H2,2,3,4);/q;+2/p-2" RELATED []
+synonym: "Kalziumkarbonat" RELATED []
+synonym: "kohlensaurer Kalk" RELATED []
+synonym: "Precipitated calcium carbonate" RELATED []
+synonym: "VTYYLEPIZMXCLO-UHFFFAOYSA-L" RELATED []
+is_a: CHEBI:35156 ! calcium salt
+is_a: CHEBI:46721 ! carbonate salt
+is_a: CHEBI:64708 ! one-carbon compound
+relationship: RO:0000087 CHEBI:65265 ! has role antacid
+relationship: RO:0000087 CHEBI:77182 ! has role food colouring
+relationship: RO:0000087 CHEBI:77960 ! has role food firming agent
+
+[Term]
+id: CHEBI:33232
+name: application
+def: "Intended use of the molecular entity or part thereof by humans." []
+is_a: CHEBI:50906 ! role
+
+[Term]
+id: CHEBI:33233
+name: fundamental particle
+def: "A particle not known to have substructure." []
+synonym: "elementary particle" EXACT []
+synonym: "elementary particles" RELATED []
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:33238
+name: monoatomic entity
+def: "A monoatomic entity is a molecular entity consisting of a single atom." []
+synonym: "atomic entity" RELATED []
+synonym: "monoatomic entities" RELATED []
+is_a: CHEBI:33259 ! elemental molecular entity
+
+[Term]
+id: CHEBI:33246
+name: inorganic group
+def: "Any substituent group which does not contain carbon." []
+synonym: "inorganic groups" RELATED []
+is_a: CHEBI:24433 ! group
+
+[Term]
+id: CHEBI:33250
+name: atom
+def: "A chemical entity constituting the smallest component of an element having the chemical properties of the element." []
+synonym: "atom" EXACT []
+synonym: "atome" RELATED []
+synonym: "atomo" RELATED []
+synonym: "atoms" RELATED []
+synonym: "atomus" RELATED []
+synonym: "element" RELATED []
+synonym: "elements" RELATED []
+is_a: CHEBI:24431 ! chemical entity
+relationship: BFO_0000051 CHEBI:10545 ! electron
+relationship: BFO_0000051 CHEBI:33252 ! atomic nucleus
+
+[Term]
+id: CHEBI:33252
+name: atomic nucleus
+def: "A nucleus is the positively charged central portion of an atom, excluding the orbital electrons." []
+synonym: "Atomkern" RELATED []
+synonym: "Kern" RELATED []
+synonym: "noyau" RELATED []
+synonym: "noyau atomique" RELATED []
+synonym: "nuclei" RELATED []
+synonym: "nucleo" RELATED []
+synonym: "nucleo atomico" RELATED []
+synonym: "nucleus" EXACT []
+synonym: "nucleus atomi" RELATED []
+is_a: CHEBI:36347 ! nuclear particle
+relationship: BFO_0000051 CHEBI:33253 ! nucleon
+
+[Term]
+id: CHEBI:33253
+name: nucleon
+def: "Heavy nuclear particle: proton or neutron." []
+synonym: "nucleon" EXACT []
+synonym: "nucleons" RELATED []
+synonym: "Nukleon" RELATED []
+synonym: "Nukleonen" RELATED []
+is_a: CHEBI:36339 ! baryon
+is_a: CHEBI:36347 ! nuclear particle
+
+[Term]
+id: CHEBI:33259
+name: elemental molecular entity
+def: "A molecular entity all atoms of which have the same atomic number." []
+synonym: "homoatomic entity" RELATED []
+synonym: "homoatomic molecular entities" RELATED []
+synonym: "homoatomic molecular entity" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:33273
+name: polyatomic anion
+def: "An anion consisting of more than one atom." []
+synonym: "polyatomic anions" RELATED []
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:36358 ! polyatomic ion
+
+[Term]
+id: CHEBI:33284
+name: nutrient
+def: "A nutrient is a chemical element needed by all life forms." []
+synonym: "nutrients" RELATED []
+is_a: CHEBI:78295 ! food component
+
+[Term]
+id: CHEBI:33285
+name: heteroorganic entity
+def: "A heteroorganic entity is an organic molecular entity in which carbon atoms or organic groups are bonded directly to one or more heteroatoms." []
+synonym: "heteroorganic entities" RELATED []
+synonym: "organoelement compounds" RELATED []
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:33299
+name: alkaline earth molecular entity
+def: "An alkaline earth molecular entity is a molecular entity containing one or more atoms of an alkaline earth metal." []
+synonym: "alkaline earth compounds" RELATED []
+synonym: "alkaline earth molecular entities" RELATED []
+synonym: "alkaline earth molecular entity" EXACT []
+synonym: "alkaline-earth compounds" RELATED []
+is_a: CHEBI:33674 ! s-block molecular entity
+relationship: BFO_0000051 CHEBI:22313 ! alkaline earth metal atom
+
+[Term]
+id: CHEBI:33303
+name: chalcogen
+def: "Any p-block element belonging to the group 16 family of the periodic table." []
+synonym: "anfigeno" RELATED []
+synonym: "anfigenos" RELATED []
+synonym: "calcogeno" RELATED []
+synonym: "calcogenos" RELATED []
+synonym: "chalcogen" EXACT []
+synonym: "chalcogene" RELATED []
+synonym: "chalcogenes" RELATED []
+synonym: "chalcogens" EXACT []
+synonym: "Chalkogen" RELATED []
+synonym: "Chalkogene" RELATED []
+synonym: "group 16 elements" RELATED []
+synonym: "group VI elements" RELATED []
+is_a: CHEBI:33560 ! p-block element atom
+
+[Term]
+id: CHEBI:33304
+name: chalcogen molecular entity
+def: "Any p-block molecular entity containing a chalcogen." []
+synonym: "chalcogen compounds" RELATED []
+synonym: "chalcogen molecular entities" RELATED []
+synonym: "chalcogen molecular entity" EXACT []
+is_a: CHEBI:33675 ! p-block molecular entity
+relationship: BFO_0000051 CHEBI:33303 ! chalcogen
+
+[Term]
+id: CHEBI:33306
+name: carbon group element atom
+synonym: "carbon group element" RELATED []
+synonym: "carbon group elements" RELATED []
+synonym: "carbonoides" RELATED []
+synonym: "cristallogene" RELATED []
+synonym: "cristallogenes" RELATED []
+synonym: "group 14 elements" EXACT []
+synonym: "group IV elements" RELATED []
+is_a: CHEBI:33560 ! p-block element atom
+
+[Term]
+id: CHEBI:33318
+name: main group element atom
+def: "An atom belonging to one of the main groups (found in the s- and p- blocks) of the periodic table." []
+synonym: "Hauptgruppenelement" RELATED []
+synonym: "Hauptgruppenelemente" RELATED []
+synonym: "main group element" RELATED []
+synonym: "main group elements" EXACT []
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:33513
+name: alkaline earth cation
+synonym: "alkaline earth cations" RELATED []
+synonym: "alkaline earth metal cation" RELATED []
+synonym: "alkaline-earth metal cations" RELATED []
+is_a: CHEBI:25213 ! metal cation
+is_a: CHEBI:33299 ! alkaline earth molecular entity
+
+[Term]
+id: CHEBI:33521
+name: metal atom
+def: "An atom of an element that exhibits typical metallic properties, being typically shiny, with high electrical and thermal conductivity." []
+synonym: "elemental metal" RELATED []
+synonym: "elemental metals" RELATED []
+synonym: "Metal" RELATED []
+synonym: "metal element" RELATED []
+synonym: "metal elements" RELATED []
+synonym: "metals" RELATED []
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:33559
+name: s-block element atom
+synonym: "s-block element" RELATED []
+synonym: "s-block elements" RELATED []
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:33560
+name: p-block element atom
+def: "Any main group element atom belonging to the p-block of the periodic table." []
+synonym: "p-block element" RELATED []
+synonym: "p-block elements" RELATED []
+is_a: CHEBI:33318 ! main group element atom
+
+[Term]
+id: CHEBI:33579
+name: main group molecular entity
+def: "A molecular entity containing one or more atoms from any of groups 1, 2, 13, 14, 15, 16, 17, and 18 of the periodic table." []
+synonym: "main group compounds" RELATED []
+synonym: "main group molecular entities" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+relationship: BFO_0000051 CHEBI:33318 ! main group element atom
+
+[Term]
+id: CHEBI:33582
+name: carbon group molecular entity
+synonym: "carbon group molecular entities" RELATED []
+synonym: "carbon group molecular entity" EXACT []
+is_a: CHEBI:33675 ! p-block molecular entity
+relationship: BFO_0000051 CHEBI:33306 ! carbon group element atom
+
+[Term]
+id: CHEBI:33608
+name: hydrogen molecular entity
+synonym: "hydrogen compounds" RELATED []
+synonym: "hydrogen molecular entities" RELATED []
+is_a: CHEBI:33674 ! s-block molecular entity
+relationship: BFO_0000051 CHEBI:49637 ! hydrogen atom
+
+[Term]
+id: CHEBI:33674
+name: s-block molecular entity
+def: "An s-block molecular entity is a molecular entity containing one or more atoms of an s-block element." []
+synonym: "s-block compounds" RELATED []
+synonym: "s-block molecular entities" RELATED []
+synonym: "s-block molecular entity" EXACT []
+is_a: CHEBI:33579 ! main group molecular entity
+relationship: BFO_0000051 CHEBI:33559 ! s-block element atom
+
+[Term]
+id: CHEBI:33675
+name: p-block molecular entity
+def: "A main group molecular entity that contains one or more atoms of a p-block element." []
+synonym: "p-block compounds" RELATED []
+synonym: "p-block molecular entities" RELATED []
+synonym: "p-block molecular entitiy" RELATED []
+is_a: CHEBI:33579 ! main group molecular entity
+relationship: BFO_0000051 CHEBI:33560 ! p-block element atom
+
+[Term]
+id: CHEBI:33937
+name: macronutrient
+synonym: "macronutrients" RELATED []
+is_a: CHEBI:33284 ! nutrient
+
+[Term]
+id: CHEBI:35155
+name: elemental calcium
+is_a: CHEBI:22985 ! calcium molecular entity
+
+[Term]
+id: CHEBI:35156
+name: calcium salt
+synonym: "calcium salts" RELATED []
+synonym: "Kalziumsalz" RELATED []
+synonym: "Kalziumsalze" RELATED []
+is_a: CHEBI:22985 ! calcium molecular entity
+is_a: CHEBI:36364 ! alkaline earth salt
+relationship: BFO_0000051 CHEBI:29108 ! calcium(2+)
+
+[Term]
+id: CHEBI:35406
+name: oxoanion
+def: "An oxoanion is an anion derived from an oxoacid by loss of hydron(s) bound to oxygen." []
+synonym: "oxoacid anions" RELATED []
+synonym: "oxoanion" EXACT []
+synonym: "oxoanions" RELATED []
+is_a: CHEBI:25741 ! oxide
+is_a: CHEBI:33273 ! polyatomic anion
+
+[Term]
+id: CHEBI:35604
+name: carbon oxoanion
+def: "A negative ion consisting solely of carbon and oxygen  atoms, and therefore having the general formula CxOy(n-) for some integers x, y and n." []
+synonym: "carbon oxoanion" EXACT []
+synonym: "carbon oxoanions" RELATED []
+synonym: "oxocarbon anion" RELATED []
+synonym: "oxocarbon anions" RELATED []
+is_a: CHEBI:25696 ! organic anion
+is_a: CHEBI:35406 ! oxoanion
+is_a: CHEBI:36963 ! organooxygen compound
+
+[Term]
+id: CHEBI:35605
+name: carbon oxoacid
+synonym: "carbon oxoacids" RELATED []
+synonym: "oxoacids of carbon" RELATED []
+is_a: CHEBI:24833 ! oxoacid
+is_a: CHEBI:36963 ! organooxygen compound
+
+[Term]
+id: CHEBI:36338
+name: lepton
+def: "Lepton is a fermion that does not experience the strong force (strong interaction). The term is derived from the Greek lambdaepsilonpitauomicronsigma (small, thin)." []
+synonym: "leptons" RELATED []
+is_a: CHEBI:33233 ! fundamental particle
+is_a: CHEBI:36340 ! fermion
+
+[Term]
+id: CHEBI:36339
+name: baryon
+def: "Baryon is a fermion that does experience the strong force (strong interaction). The term is derived from the Greek betaalpharhoupsilonsigma (heavy)." []
+synonym: "baryons" RELATED []
+is_a: CHEBI:36340 ! fermion
+is_a: CHEBI:36344 ! hadron
+
+[Term]
+id: CHEBI:36340
+name: fermion
+def: "Particle of half-integer spin quantum number following Fermi-Dirac statistics. Fermions are named after Enrico Fermi." []
+synonym: "fermion" EXACT []
+synonym: "fermions" RELATED []
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:36342
+name: subatomic particle
+def: "A particle smaller than an atom." []
+synonym: "subatomic particles" RELATED []
+
+[Term]
+id: CHEBI:36343
+name: composite particle
+def: "A subatomic particle known to have substructure (i.e. consisting of smaller particles)." []
+synonym: "composite particles" RELATED []
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:36344
+name: hadron
+def: "Hadron is a subatomic particle which experiences the strong force." []
+synonym: "hadrons" RELATED []
+is_a: CHEBI:36343 ! composite particle
+
+[Term]
+id: CHEBI:36347
+name: nuclear particle
+def: "A nucleus or any of its constituents in any of their energy states." []
+synonym: "nuclear particle" EXACT []
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:36357
+name: polyatomic entity
+def: "Any molecular entity consisting of more than one atom." []
+synonym: "polyatomic entities" RELATED []
+is_a: CHEBI:23367 ! molecular entity
+relationship: BFO_0000051 CHEBI:24433 ! group
+
+[Term]
+id: CHEBI:36358
+name: polyatomic ion
+def: "An ion consisting of more than one atom." []
+synonym: "polyatomic ions" RELATED []
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
+id: CHEBI:36364
+name: alkaline earth salt
+synonym: "alkaline earth salts" RELATED []
+is_a: CHEBI:24866 ! salt
+is_a: CHEBI:33299 ! alkaline earth molecular entity
+
+[Term]
+id: CHEBI:36914
+name: inorganic ion
+synonym: "inorganic ions" RELATED []
+is_a: CHEBI:24835 ! inorganic molecular entity
+is_a: CHEBI:24870 ! ion
+
+[Term]
+id: CHEBI:36915
+name: inorganic cation
+synonym: "inorganic cations" RELATED []
+is_a: CHEBI:36914 ! inorganic ion
+is_a: CHEBI:36916 ! cation
+
+[Term]
+id: CHEBI:36916
+name: cation
+def: "A monoatomic or polyatomic species having one or more elementary charges of the proton." []
+synonym: "Cation" EXACT []
+synonym: "cation" EXACT []
+synonym: "cationes" RELATED []
+synonym: "cations" RELATED []
+synonym: "Kation" RELATED []
+synonym: "Kationen" RELATED []
+is_a: CHEBI:24870 ! ion
+
+[Term]
+id: CHEBI:36961
+name: chalcocarbonic acid
+synonym: "chalcocarbonic acid" EXACT []
+synonym: "chalcocarbonic acids" EXACT []
+synonym: "chalcocarbonic acids" RELATED []
+is_a: CHEBI:36962 ! organochalcogen compound
+
+[Term]
+id: CHEBI:36962
+name: organochalcogen compound
+def: "An organochalcogen compound is a compound containing at least one carbon-chalcogen bond." []
+synonym: "organochalcogen compound" EXACT []
+synonym: "organochalcogen compounds" RELATED []
+is_a: CHEBI:33285 ! heteroorganic entity
+is_a: CHEBI:33304 ! chalcogen molecular entity
+
+[Term]
+id: CHEBI:36963
+name: organooxygen compound
+def: "An organochalcogen compound containing at least one carbon-oxygen bond." []
+synonym: "organooxygen compound" EXACT []
+synonym: "organooxygen compounds" RELATED []
+is_a: CHEBI:25806 ! oxygen molecular entity
+is_a: CHEBI:36962 ! organochalcogen compound
+
+[Term]
+id: CHEBI:37527
+name: acid
+def: "An acid is a molecular entity capable of donating a hydron (Bronsted acid) or capable of forming a covalent bond with an electron pair (Lewis acid)." []
+synonym: "Acid" EXACT []
+synonym: "acid" EXACT []
+synonym: "acide" RELATED []
+synonym: "acido" RELATED []
+synonym: "acids" RELATED []
+synonym: "an acid" RELATED []
+synonym: "Saeure" RELATED []
+synonym: "Saeuren" RELATED []
+is_a: CHEBI:51086 ! chemical role
+
+[Term]
+id: CHEBI:37577
+name: heteroatomic molecular entity
+def: "A molecular entity consisting of two or more chemical elements." []
+synonym: "chemical compound" RELATED []
+synonym: "heteroatomic molecular entities" RELATED []
+is_a: CHEBI:36357 ! polyatomic entity
+
+[Term]
+id: CHEBI:39123
+name: calcium cation
+synonym: "Ca" RELATED []
+synonym: "calcium cation" EXACT []
+synonym: "calcium cations" RELATED []
+is_a: CHEBI:33513 ! alkaline earth cation
+is_a: CHEBI:39124 ! calcium ion
+
+[Term]
+id: CHEBI:39124
+name: calcium ion
+synonym: "Ca" RELATED []
+synonym: "calcium ion" EXACT []
+synonym: "calcium ions" RELATED []
+is_a: CHEBI:25213 ! metal cation
+is_a: CHEBI:35155 ! elemental calcium
+
+[Term]
+id: CHEBI:39141
+name: Bronsted acid
+def: "A molecular entity capable of donating a hydron to an acceptor (Bronsted base)." []
+synonym: "acide de Bronsted" RELATED []
+synonym: "Bronsted acid" EXACT []
+synonym: "Bronsted-Saeure" RELATED []
+synonym: "donneur d'hydron" RELATED []
+synonym: "hydron donor" RELATED []
+is_a: CHEBI:17891 ! donor
+is_a: CHEBI:37527 ! acid
+
+[Term]
+id: CHEBI:41609
+name: carbonate
+def: "A carbon oxoanion that has formula CO3." []
+synonym: "[CO3](2-)" RELATED []
+synonym: "[O-]C([O-])=O" RELATED []
+synonym: "BVKZGUZCCUSVTD-UHFFFAOYSA-L" RELATED []
+synonym: "carbonate" EXACT []
+synonym: "CARBONATE ION" RELATED []
+synonym: "CO3" RELATED []
+synonym: "CO3(2-)" RELATED []
+synonym: "InChI=1S/CH2O3/c2-1(3)4/h(H2,2,3,4)/p-2" RELATED []
+synonym: "Karbonat" RELATED []
+synonym: "trioxidocarbonate(2-)" EXACT []
+is_a: CHEBI:35604 ! carbon oxoanion
+relationship: is_conjugate_base_of CHEBI:17544 ! hydrogencarbonate
+
+[Term]
+id: CHEBI:43176
+name: hydroxy group
+synonym: "-OH" RELATED []
+synonym: "HO" RELATED []
+synonym: "hydroxide" RELATED []
+synonym: "hydroxy" EXACT []
+synonym: "HYDROXY GROUP" EXACT []
+synonym: "hydroxy group" EXACT []
+synonym: "hydroxyl" RELATED []
+synonym: "hydroxyl group" RELATED []
+synonym: "oxidanyl" EXACT []
+is_a: CHEBI:33246 ! inorganic group
+
+[Term]
+id: CHEBI:46662
+name: mineral
+def: "In general, a mineral is a chemical substance that is normally crystalline formed and has been formed as a result of geological processes. The term also includes metamict substances (naturally occurring, formerly crystalline substances whose crystallinity has been destroyed by ionising radiation) and can include naturally occurring amorphous substances that have never been crystalline ('mineraloids') such as georgite and calciouranoite as well as substances formed by the action of geological processes on bigenic compounds ('biogenic minerals')." []
+synonym: "mineral" EXACT []
+synonym: "Minerale" RELATED []
+synonym: "minerales" RELATED []
+synonym: "minerals" RELATED []
+synonym: "mineraux" RELATED []
+is_a: CHEBI:59999 ! chemical substance
+
+[Term]
+id: CHEBI:46719
+name: calcite
+synonym: "Calcit" RELATED []
+synonym: "calcita" RELATED []
+synonym: "calcite" EXACT []
+synonym: "CCaO3" RELATED []
+synonym: "Kalzit" RELATED []
+is_a: CHEBI:3311 ! calcium carbonate
+is_a: CHEBI:46720 ! carbonate mineral
+
+[Term]
+id: CHEBI:46720
+name: carbonate mineral
+synonym: "carbonate minerals" RELATED []
+is_a: CHEBI:46662 ! mineral
+is_a: CHEBI:46721 ! carbonate salt
+
+[Term]
+id: CHEBI:46721
+name: carbonate salt
+synonym: "carbonate salts" RELATED []
+is_a: CHEBI:23016 ! carbonates
+relationship: BFO_0000051 CHEBI:41609 ! carbonate
+
+[Term]
+id: CHEBI:49637
+name: hydrogen atom
+def: "A s-block element atom that has formula H." []
+synonym: "1H" RELATED []
+synonym: "[H]" RELATED []
+synonym: "ETNAM H HYDROGEN ATOM" RELATED []
+synonym: "H" RELATED []
+synonym: "hidrogeno" RELATED []
+synonym: "hydrogen" EXACT []
+synonym: "hydrogen" RELATED []
+synonym: "hydrogene" RELATED []
+synonym: "InChI=1S/H" RELATED []
+synonym: "Wasserstoff" RELATED []
+synonym: "YZCKVEUIGOORGS-UHFFFAOYSA-N" RELATED []
+is_a: CHEBI:24835 ! inorganic molecular entity
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33559 ! s-block element atom
+relationship: RO:0000087 CHEBI:33937 ! has role macronutrient
+
+[Term]
+id: CHEBI:50860
+name: organic molecular entity
+def: "Any molecular entity that contains carbon." []
+synonym: "organic compounds" RELATED []
+synonym: "organic entity" RELATED []
+synonym: "organic molecular entities" RELATED []
+synonym: "organic molecules" RELATED []
+is_a: CHEBI:33582 ! carbon group molecular entity
+relationship: BFO_0000051 CHEBI:27594 ! carbon atom
+
+[Term]
+id: CHEBI:50906
+name: role
+def: "A role is particular behaviour which a material entity may exhibit." []
+
+[Term]
+id: CHEBI:51086
+name: chemical role
+def: "A role played by the molecular entity or part thereof within a chemical context." []
+is_a: CHEBI:50906 ! role
+
+[Term]
+id: CHEBI:52206
+name: biochemical role
+def: "A biological role played by the molecular entity or part thereof within a biochemical context." []
+is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:52210
+name: pharmacological role
+def: "A biological role which describes how a drug interacts within a biological system and how the interactions affect its medicinal properties." []
+is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:52211
+name: physiological role
+is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:52217
+name: pharmaceutical
+def: "Any substance introduced into a living organism with therapeutic or diagnostic purpose." []
+synonym: "farmaco" RELATED []
+synonym: "medicament" RELATED []
+synonym: "pharmaceuticals" RELATED []
+is_a: CHEBI:33232 ! application
+
+[Term]
+id: CHEBI:59999
+name: chemical substance
+def: "A chemical substance is a portion of matter of constant composition, composed of molecular entities of the same type or of different types." []
+synonym: "Chemische Substanz" RELATED []
+is_a: CHEBI:24431 ! chemical entity
+
+[Term]
+id: CHEBI:60240
+name: divalent metal cation
+def: "A metal cation with a valence of two." []
+synonym: "a divalent metal cation" RELATED []
+is_a: CHEBI:25213 ! metal cation
+is_a: CHEBI:64641 ! divalent inorganic cation
+
+[Term]
+id: CHEBI:64047
+name: food additive
+def: "Any substance which is added to food to preserve or enhance its flavour and/or appearance." []
+synonym: "food additives" RELATED []
+is_a: CHEBI:33232 ! application
+is_a: CHEBI:78295 ! food component
+
+[Term]
+id: CHEBI:64641
+name: divalent inorganic cation
+def: "An inorganic cation with a valency of two." []
+is_a: CHEBI:36915 ! inorganic cation
+
+[Term]
+id: CHEBI:64708
+name: one-carbon compound
+def: "An organic molecular entity containing a single carbon atom (C1)." []
+synonym: "one-carbon compounds" RELATED []
+is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:65265
+name: antacid
+def: "Any substance which is used to neutralise stomach acidity." []
+synonym: "antacids" RELATED []
+is_a: CHEBI:23888 ! drug
+is_a: CHEBI:52210 ! pharmacological role
+
+[Term]
+id: CHEBI:75763
+name: eukaryotic metabolite
+def: "Any  metabolite produced during a metabolic reaction in eukaryotes, the taxon that include members of the fungi, plantae and animalia kingdoms." []
+synonym: "eukaryotic metabolites" RELATED []
+is_a: CHEBI:25212 ! metabolite
+
+[Term]
+id: CHEBI:75767
+name: animal metabolite
+def: "Any eukaryotic metabolite produced during a metabolic reaction in animals that include diverse creatures from sponges, insects to mammals." []
+synonym: "animal metabolites" RELATED []
+is_a: CHEBI:75763 ! eukaryotic metabolite
+
+[Term]
+id: CHEBI:75768
+name: mammalian metabolite
+def: "Any animal metabolite produced during a metabolic reaction in mammals." []
+synonym: "mammalian metabolites" RELATED []
+is_a: CHEBI:75767 ! animal metabolite
+
+[Term]
+id: CHEBI:75771
+name: mouse metabolite
+def: "Any mammalian metabolite produced during a metabolic reaction in a mouse (Mus musculus)." []
+synonym: "mouse metabolites" RELATED []
+synonym: "Mus musculus metabolite" RELATED []
+synonym: "Mus musculus metabolites" RELATED []
+is_a: CHEBI:75768 ! mammalian metabolite
+
+[Term]
+id: CHEBI:75772
+name: Saccharomyces cerevisiae metabolite
+def: "Any  fungal metabolite produced during a metabolic reaction in Baker's yeast (Saccharomyces cerevisiae)." []
+synonym: "baker's yeast metabolite" RELATED []
+synonym: "baker's yeast metabolites" RELATED []
+synonym: "baker's yeast secondary metabolite" RELATED []
+synonym: "baker's yeast secondary metabolites" RELATED []
+synonym: "S. cerevisiae metabolite" RELATED []
+synonym: "S. cerevisiae metabolites" RELATED []
+synonym: "S. cerevisiae secondary metabolite" RELATED []
+synonym: "S. cerevisiae secondary metabolites" RELATED []
+synonym: "Saccharomyces cerevisiae metabolites" RELATED []
+synonym: "Saccharomyces cerevisiae secondary metabolites" RELATED []
+is_a: CHEBI:76946 ! fungal metabolite
+
+[Term]
+id: CHEBI:75787
+name: prokaryotic metabolite
+def: "Any metabolite produced during a metabolic reaction in prokaryotes, the taxon that include members of domains such as the bacteria and archaea." []
+synonym: "prokaryotic metabolites" RELATED []
+is_a: CHEBI:25212 ! metabolite
+
+[Term]
+id: CHEBI:76946
+name: fungal metabolite
+def: "Any eukaryotic metabolite produced during a metabolic reaction in fungi, the kingdom that includes microorganisms such as the yeasts and moulds." []
+synonym: "fungal metabolites" RELATED []
+is_a: CHEBI:75763 ! eukaryotic metabolite
+
+[Term]
+id: CHEBI:76969
+name: bacterial metabolite
+def: "Any prokaryotic metabolite produced during a metabolic reaction in bacteria." []
+is_a: CHEBI:75787 ! prokaryotic metabolite
+
+[Term]
+id: CHEBI:76971
+name: Escherichia coli metabolite
+def: "Any bacterial metabolite produced during a metabolic reaction in Escherichia coli." []
+synonym: "E.coli metabolite" RELATED []
+synonym: "E.coli metabolites" RELATED []
+synonym: "Escherichia coli metabolites" RELATED []
+is_a: CHEBI:76969 ! bacterial metabolite
+
+[Term]
+id: CHEBI:77182
+name: food colouring
+def: "A food additive that imparts colour to food. In European countries, E-numbers for permitted food colours are from E 100 to E 199, divided into yellows (E 100-109), oranges (E 110-119), reds (E 120-129), blues and violets (E 130-139), greens (E 140-149), browns and blacks (E 150-159), and others (E 160-199)." []
+synonym: "food coloring" RELATED []
+synonym: "food colorings" RELATED []
+synonym: "food colourings" RELATED []
+is_a: CHEBI:64047 ! food additive
+
+[Term]
+id: CHEBI:77746
+name: human metabolite
+def: "Any mammalian metabolite  produced during a metabolic reaction in humans (Homo sapiens)." []
+synonym: "H. sapiens metabolite" RELATED []
+synonym: "H. sapiens metabolites" RELATED []
+synonym: "Homo sapiens metabolite" RELATED []
+synonym: "Homo sapiens metabolites" RELATED []
+is_a: CHEBI:75768 ! mammalian metabolite
+
+[Term]
+id: CHEBI:77960
+name: food firming agent
+def: "A food additive that is used to make or keep fruit or vegetable tissues firm and crisp. or which interacts with gelling agents such as pectin to produce or strengthen a gel." []
+synonym: "firming agent" RELATED []
+synonym: "firming agents" RELATED []
+synonym: "food firming agents" RELATED []
+is_a: CHEBI:64047 ! food additive
+
+[Term]
+id: CHEBI:78295
+name: food component
+def: "Any substance that is distributed in foodstuffs. It includes materials derived from plants or animals, such as vitamins or minerals, as well as environmental contaminants." []
+synonym: "dietary component" RELATED []
+synonym: "dietary components" RELATED []
+synonym: "food components" RELATED []
+is_a: CHEBI:52211 ! physiological role
+
+[Term]
+id: CL:0000000
+name: cell
+def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." []
+is_a: CARO:0000003 ! anatomical structure
+is_a: GO:0005575 ! cellular_component
+equivalent_to: GO:0005623 ! cell
+
+[Term]
+id: CL:0000003
+name: native cell
+def: "A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." []
+synonym: "cell in vivo" NARROW []
+is_a: CL:0000000 ! cell
+is_a: GO:0005623 ! cell
+
+[Term]
+id: CL:0000021
+name: female germ cell
+def: "Female germ cell is a germ cell that supports female gamete production." []
+is_a: CL:0000586 ! germ cell
+intersection_of: CL:0000586 ! germ cell
+intersection_of: RO:0002215 GO:0048477 ! capable of oogenesis
+relationship: RO:0002215 GO:0048477 ! capable of oogenesis
+
+[Term]
+id: CL:0000023
+name: oocyte
+def: "A female germ cell that has entered meiosis." []
+synonym: "oogonium" RELATED []
+is_a: CL:0000021 ! female germ cell
+relationship: RO:0000056 GO:0007143 ! participates in female meiotic division
+
+[Term]
+id: CL:0000039
+name: germ line cell
+def: "A cell that is within the developmental lineage of gametes and is able to pass along its genetic material to offspring." []
+is_a: CL:0000548 ! animal cell
+relationship: RO:0002215 GO:0022414 ! capable of reproductive process
+
+[Term]
+id: CL:0000219
+name: motile cell
+def: "A cell that moves by its own activities." []
+is_a: CL:0000003 ! native cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002215 GO:0048870 ! capable of cell motility
+relationship: RO:0002215 GO:0048870 ! capable of cell motility
+
+[Term]
+id: CL:0000225
+name: anucleate cell
+def: "A cell that lacks a nucleus." []
+synonym: "non-nucleated cell" EXACT []
+is_a: CL:0000003 ! native cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0000053 PATO:0001405 ! bearer of anucleate
+disjoint_from: CL:0002242 ! nucleate cell
+relationship: RO:0000053 PATO:0001405 ! bearer of anucleate
+
+[Term]
+id: CL:0000234
+name: phagocyte
+def: "Any cell capable of ingesting particulate matter via phagocytosis." []
+is_a: CL:0000219 ! motile cell
+is_a: CL:0000325 ! stuff accumulating cell
+is_a: CL:0000473 ! defensive cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002215 GO:0006909 ! capable of phagocytosis
+relationship: RO:0002215 GO:0006909 ! capable of phagocytosis
+
+[Term]
+id: CL:0000255
+name: eukaryotic cell
+is_a: CL:0000003 ! native cell
+
+[Term]
+id: CL:0000325
+name: stuff accumulating cell
+def: "A cell that is specialised to accumulate a particular substance(s)." []
+is_a: CL:0000003 ! native cell
+
+[Term]
+id: CL:0000473
+name: defensive cell
+def: "A cell whose primary function is to protect the organism." []
+is_a: CL:0000003 ! native cell
+
+[Term]
+id: CL:0000548
+name: animal cell
+is_a: CL:0000255 ! eukaryotic cell
+relationship: BFO:0000051 GO:0005902 ! has part microvillus
+
+[Term]
+id: CL:0000586
+name: germ cell
+def: "The reproductive cell in multicellular organisms." []
+is_a: CL:0000039 ! germ line cell
+relationship: RO:0002215 GO:0048609 ! capable of multicellular organismal reproductive process
+
+[Term]
+id: CL:0002242
+name: nucleate cell
+def: "A cell containing at least one nucleus." []
+is_a: CL:0000003 ! native cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: BFO:0000051 GO:0005634 ! has part nucleus
+relationship: BFO:0000051 GO:0005634 ! has part nucleus
+
+[Term]
+id: GO:0000003
+name: reproduction
+def: "The production of new individuals that contain some portion of genetic material inherited from one or more parent organisms." []
+synonym: "reproductive physiological process" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0000280
+name: nuclear division
+is_a: GO:0048285 ! organelle fission
+
+[Term]
+id: GO:0003006
+name: developmental process involved in reproduction
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0032502 ! developmental process
+
+[Term]
+id: GO:0005575
+name: cellular_component
+def: "The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together." []
+synonym: "cell or subcellular entity" EXACT []
+synonym: "cellular component" EXACT []
+synonym: "subcellular entity" RELATED []
+
+[Term]
+id: GO:0005623
+name: cell
+def: "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope." []
+is_a: CARO:0000003 ! anatomical structure
+is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0005634
+name: nucleus
+is_a: GO:0043231 ! intracellular membrane-bounded organelle
+is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0005886
+name: plasma membrane
+def: "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." []
+synonym: "bacterial inner membrane" NARROW []
+synonym: "cell membrane" EXACT []
+synonym: "cellular membrane" EXACT []
+synonym: "cytoplasmic membrane" EXACT []
+synonym: "inner endospore membrane" NARROW []
+synonym: "juxtamembrane" BROAD []
+synonym: "plasma membrane lipid bilayer" NARROW []
+synonym: "plasmalemma" EXACT []
+is_a: GO:0016020 ! membrane
+is_a: GO:0044464 ! cell part
+relationship: BFO:0000050 GO:0071944 ! part of cell periphery
+
+[Term]
+id: GO:0005902
+name: microvillus
+is_a: GO:0098858 ! actin-based cell projection
+
+[Term]
+id: GO:0005929
+name: cilium
+def: "A specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface and of some cytoplasmic parts. Each cilium is largely bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored to a basal body." []
+synonym: "eukaryotic flagellum" EXACT []
+synonym: "flagellum" RELATED []
+synonym: "microtubule-based flagellum" EXACT []
+is_a: GO:0042995 ! cell projection
+is_a: GO:0043226 ! organelle
+relationship: BFO:0000051 GO:0030990 ! has part intraciliary transport particle
+
+[Term]
+id: GO:0006810
+name: transport
+def: "The directed movement of substances (such as macromolecules, small molecules, ions) or cellular components (such as complexes and organelles) into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter, pore or motor protein." []
+synonym: "auxiliary transport protein activity" RELATED []
+synonym: "small molecule transport" NARROW []
+synonym: "solute:solute exchange" NARROW []
+synonym: "transport accessory protein activity" RELATED []
+is_a: GO:0051234 ! establishment of localization
+
+[Term]
+id: GO:0006897
+name: endocytosis
+def: "A vesicle-mediated transport process in which cells take up external materials or membrane constituents by the invagination of a small region of the plasma membrane to form a new membrane-bounded vesicle." []
+synonym: "nonselective vesicle endocytosis" RELATED []
+synonym: "plasma membrane invagination" EXACT []
+synonym: "vesicle endocytosis" EXACT []
+is_a: GO:0016192 ! vesicle-mediated transport
+relationship: BFO:0000051 GO:0006900 ! has part membrane budding
+relationship: BFO:0000051 GO:0010324 ! has part membrane invagination
+
+[Term]
+id: GO:0006900
+name: membrane budding
+def: "The evagination of a membrane, resulting in formation of a vesicle." []
+synonym: "membrane evagination" EXACT []
+synonym: "nonselective vesicle assembly" RELATED []
+synonym: "vesicle biosynthesis" EXACT []
+synonym: "vesicle budding" RELATED []
+synonym: "vesicle formation" EXACT []
+is_a: GO:0016050 ! vesicle organization
+is_a: GO:0061024 ! membrane organization
+relationship: BFO:0000050 GO:0016192 ! part of vesicle-mediated transport
+
+[Term]
+id: GO:0006909
+name: phagocytosis
+def: "An endocytosis process that results in the engulfment of external particulate material by phagocytes. The particles are initially contained within phagocytic vacuoles (phagosomes), which then fuse with primary lysosomes to effect digestion of the particles." []
+is_a: GO:0006897 ! endocytosis
+is_a: GO:0044765 ! single-organism transport
+
+[Term]
+id: GO:0006928
+name: movement of cell or subcellular component
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
+id: GO:0006996
+name: organelle organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of an organelle within a cell. An organelle is an organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." []
+synonym: "organelle organisation" EXACT []
+synonym: "organelle organization and biogenesis" RELATED []
+is_a: GO:0016043 ! cellular component organization
+
+[Term]
+id: GO:0007126
+name: meiotic nuclear division
+is_a: GO:0000280 ! nuclear division
+is_a: GO:1902589 ! single-organism organelle organization
+is_a: GO:1903046 ! meiotic cell cycle process
+
+[Term]
+id: GO:0007143
+name: female meiotic division
+is_a: GO:0007126 ! meiotic nuclear division
+
+[Term]
+id: GO:0007276
+name: gamete generation
+is_a: GO:0044702 ! single organism reproductive process
+is_a: GO:0048609 ! multicellular organismal reproductive process
+
+[Term]
+id: GO:0007281
+name: germ cell development
+is_a: GO:0003006 ! developmental process involved in reproduction
+is_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism
+is_a: GO:0048468 ! cell development
+
+[Term]
+id: GO:0007292
+name: female gamete generation
+is_a: GO:0007276 ! gamete generation
+
+[Term]
+id: GO:0008150
+name: biological_process
+def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." []
+synonym: "biological process" EXACT []
+synonym: "physiological process" EXACT []
+is_a: BFO:0000015 ! process
+
+[Term]
+id: GO:0009987
+name: cellular process
+def: "Any process that is carried out at the cellular level, but not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." []
+synonym: "cell growth and/or maintenance" NARROW []
+synonym: "cell physiology" EXACT []
+synonym: "cellular physiological process" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0010324
+name: membrane invagination
+def: "The infolding of a membrane." []
+is_a: GO:0061024 ! membrane organization
+
+[Term]
+id: GO:0016020
+name: membrane
+def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." []
+is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0016043
+name: cellular component organization
+def: "A process that results in the assembly, arrangement of constituent parts, or disassembly of a cellular component." []
+synonym: "cell organisation" EXACT []
+synonym: "cell organization and biogenesis" RELATED []
+synonym: "cellular component organisation at cellular level" EXACT []
+synonym: "cellular component organisation in other organism" EXACT []
+synonym: "cellular component organization at cellular level" EXACT []
+synonym: "cellular component organization in other organism" EXACT []
+is_a: GO:0009987 ! cellular process
+is_a: GO:0071840 ! cellular component organization or biogenesis
+
+[Term]
+id: GO:0016050
+name: vesicle organization
+def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a vesicle." []
+synonym: "vesicle organisation" EXACT []
+synonym: "vesicle organization and biogenesis" RELATED []
+is_a: GO:0006996 ! organelle organization
+
+[Term]
+id: GO:0016192
+name: vesicle-mediated transport
+def: "A cellular transport process in which transported substances are moved in membrane-bounded vesicles; transported substances are enclosed in the vesicle lumen or located in the vesicle membrane. The process begins with a step that directs a substance to the forming vesicle, and includes vesicle budding and coating. Vesicles are then targeted to, and fuse with, an acceptor membrane." []
+synonym: "nonselective vesicle transport" NARROW []
+synonym: "protein sorting along secretory pathway" RELATED []
+synonym: "vesicle trafficking" RELATED []
+synonym: "vesicle transport" EXACT []
+synonym: "vesicular transport" EXACT []
+is_a: GO:0006810 ! transport
+
+[Term]
+id: GO:0022402
+name: cell cycle process
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
+id: GO:0022412
+name: cellular process involved in reproduction in multicellular organism
+is_a: GO:0044702 ! single organism reproductive process
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
+id: GO:0022414
+name: reproductive process
+def: "A biological process that directly contributes to the process of producing new individuals by one or two organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." []
+is_a: GO:0008150 ! biological_process
+intersection_of: GO:0008150 ! biological_process
+intersection_of: BFO:0000050 GO:0000003 ! part of reproduction
+relationship: BFO:0000050 GO:0000003 ! part of reproduction
+
+[Term]
+id: GO:0030990
+name: intraciliary transport particle
+def: "A nonmembrane-bound oligomeric protein complex that participates in bidirectional transport of molecules (cargo) along axonemal microtubules." []
+synonym: "IFT complex" RELATED []
+synonym: "intraflagellar transport complex" EXACT []
+synonym: "intraflagellar transport particle" EXACT []
+is_a: GO:0043234 ! protein complex
+
+[Term]
+id: GO:0032502
+name: developmental process
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0032991
+name: macromolecular complex
+def: "A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which the constituent parts function together." []
+synonym: "macromolecule complex" EXACT []
+is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0040011
+name: locomotion
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0042995
+name: cell projection
+def: "A prolongation or process extending from a cell, e.g. a flagellum or axon." []
+synonym: "cell process" BROAD []
+synonym: "cellular process" BROAD []
+synonym: "cellular projection" EXACT []
+is_a: GO:0044464 ! cell part
+relationship: BFO:0000051 GO:0098590 ! has part plasma membrane region
+
+[Term]
+id: GO:0043226
+name: organelle
+def: "Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane." []
+is_a: GO:0005575 ! cellular_component
+
+[Term]
+id: GO:0043227
+name: membrane-bounded organelle
+is_a: GO:0043226 ! organelle
+
+[Term]
+id: GO:0043229
+name: intracellular organelle
+is_a: GO:0043226 ! organelle
+is_a: GO:0044424 ! intracellular part
+
+[Term]
+id: GO:0043231
+name: intracellular membrane-bounded organelle
+is_a: GO:0043227 ! membrane-bounded organelle
+is_a: GO:0043229 ! intracellular organelle
+
+[Term]
+id: GO:0043234
+name: protein complex
+def: "A stable macromolecular complex composed (only) of two or more polypeptide subunits along with any covalently attached molecules (such as lipid anchors or oligosaccharide) or non-protein prosthetic groups (such as nucleotides or metal ions). Prosthetic group in this context refers to a tightly bound cofactor. The component polypeptide subunits may be identical." []
+synonym: "protein-protein complex" EXACT []
+is_a: GO:0032991 ! macromolecular complex
+
+[Term]
+id: GO:0044422
+name: organelle part
+def: "Any constituent part of an organelle, an organized structure of distinctive morphology and function. Includes constituent parts of the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, but excludes the plasma membrane." []
+is_a: GO:0005575 ! cellular_component
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0043226 ! part of organelle
+relationship: BFO:0000050 GO:0043226 ! part of organelle
+
+[Term]
+id: GO:0044424
+name: intracellular part
+is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0044425
+name: membrane part
+def: "Any constituent part of a membrane, a double layer of lipid molecules that encloses all cells, and, in eukaryotes, many organelles; may be a single or double lipid bilayer; also includes associated proteins." []
+is_a: GO:0005575 ! cellular_component
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0016020 ! part of membrane
+relationship: BFO:0000050 GO:0016020 ! part of membrane
+
+[Term]
+id: GO:0044441
+name: ciliary part
+def: "Any constituent part of a cilium, a specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface. Each cilium is bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored basally in a centriole." []
+synonym: "cilial part" EXACT []
+synonym: "cilium part" EXACT []
+synonym: "flagellar part" NARROW []
+synonym: "flagellum component" NARROW []
+synonym: "flagellum part" NARROW []
+synonym: "microtubule-based flagellum part" EXACT []
+is_a: GO:0044422 ! organelle part
+is_a: GO:0044463 ! cell projection part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005929 ! part of cilium
+relationship: BFO:0000050 GO:0005929 ! part of cilium
+
+[Term]
+id: GO:0044459
+name: plasma membrane part
+def: "Any constituent part of the plasma membrane, the membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." []
+is_a: GO:0044425 ! membrane part
+is_a: GO:0044464 ! cell part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+relationship: BFO:0000050 GO:0005886 ! part of plasma membrane
+
+[Term]
+id: GO:0044463
+name: cell projection part
+def: "Any constituent part of a cell projection, a prolongation or process extending from a cell, e.g. a flagellum or axon." []
+is_a: GO:0044464 ! cell part
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0042995 ! part of cell projection
+relationship: BFO:0000050 GO:0042995 ! part of cell projection
+
+[Term]
+id: GO:0044464
+name: cell part
+def: "Any constituent part of a cell, the basic structural and functional unit of all organisms." []
+synonym: "cellular subcomponent" EXACT []
+synonym: "protoplast" RELATED []
+is_a: CARO:0000014 ! cell part
+is_a: GO:0005575 ! cellular_component
+intersection_of: GO:0005575 ! cellular_component
+intersection_of: BFO:0000050 GO:0005623 ! part of cell
+relationship: BFO:0000050 GO:0005623 ! part of cell
+
+[Term]
+id: GO:0044699
+name: single-organism process
+def: "A biological process that involves only one organism." []
+synonym: "single organism process" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0044702
+name: single organism reproductive process
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0044763
+name: single-organism cellular process
+is_a: GO:0009987 ! cellular process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0044765
+name: single-organism transport
+def: "The directed movement of substances (such as macromolecules, small molecules, ions) into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore, involving a single organism." []
+is_a: GO:0006810 ! transport
+is_a: GO:1902578 ! single-organism localization
+
+[Term]
+id: GO:0044767
+name: single-organism developmental process
+is_a: GO:0032502 ! developmental process
+is_a: GO:0044699 ! single-organism process
+
+[Term]
+id: GO:0048285
+name: organelle fission
+is_a: GO:0006996 ! organelle organization
+
+[Term]
+id: GO:0048468
+name: cell development
+is_a: GO:0048856 ! anatomical structure development
+is_a: GO:0048869 ! cellular developmental process
+
+[Term]
+id: GO:0048477
+name: oogenesis
+is_a: GO:0007281 ! germ cell development
+is_a: GO:0007292 ! female gamete generation
+
+[Term]
+id: GO:0048609
+name: multicellular organismal reproductive process
+is_a: GO:0022414 ! reproductive process
+
+[Term]
+id: GO:0048856
+name: anatomical structure development
+is_a: GO:0032502 ! developmental process
+
+[Term]
+id: GO:0048869
+name: cellular developmental process
+is_a: GO:0044763 ! single-organism cellular process
+is_a: GO:0044767 ! single-organism developmental process
+
+[Term]
+id: GO:0048870
+name: cell motility
+is_a: GO:0006928 ! movement of cell or subcellular component
+is_a: GO:0040011 ! locomotion
+
+[Term]
+id: GO:0051179
+name: localization
+def: "Any process in which a cell, a substance, or a cellular entity, such as a protein complex or organelle, is transported, tethered to or otherwise maintained in a specific location. In the case of substances, localization may also be achieved via selective degradation." []
+synonym: "establishment and maintenance of cellular component location" NARROW []
+synonym: "establishment and maintenance of localization" EXACT []
+synonym: "establishment and maintenance of position" EXACT []
+synonym: "establishment and maintenance of substance location" NARROW []
+synonym: "establishment and maintenance of substrate location" NARROW []
+synonym: "localisation" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0051234
+name: establishment of localization
+def: "Any process that localizes a substance or cellular component. This may occur via movement, tethering or selective degradation." []
+synonym: "establishment of localisation" EXACT []
+is_a: GO:0051179 ! localization
+
+[Term]
+id: GO:0061024
+name: membrane organization
+def: "A process which results in the assembly, arrangement of constituent parts, or disassembly of a membrane. A membrane is a double layer of lipid molecules that encloses all cells, and, in eukaryotes, many organelles; may be a single or double lipid bilayer; also includes associated proteins." []
+synonym: "cellular membrane organisation" EXACT []
+synonym: "cellular membrane organization" EXACT []
+synonym: "membrane organisation" EXACT []
+synonym: "membrane organization and biogenesis" RELATED []
+is_a: GO:0016043 ! cellular component organization
+
+[Term]
+id: GO:0071840
+name: cellular component organization or biogenesis
+def: "A process that results in the biosynthesis of constituent macromolecules, assembly, arrangement of constituent parts, or disassembly of a cellular component." []
+synonym: "cellular component organisation or biogenesis" EXACT []
+synonym: "cellular component organisation or biogenesis at cellular level" EXACT []
+synonym: "cellular component organization or biogenesis at cellular level" EXACT []
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0071944
+name: cell periphery
+def: "The part of a cell encompassing the cell cortex, the plasma membrane, and any external encapsulating structures." []
+is_a: GO:0044464 ! cell part
+
+[Term]
+id: GO:0098590
+name: plasma membrane region
+def: "A membrane that is a (regional) part of the plasma membrane." []
+synonym: "region of plasma membrane" EXACT []
+is_a: GO:0016020 ! membrane
+is_a: GO:0044459 ! plasma membrane part
+intersection_of: GO:0016020 ! membrane
+intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+relationship: BFO:0000050 GO:0005886 ! part of plasma membrane
+
+[Term]
+id: GO:0098796
+name: membrane protein complex
+def: "Any protein complex that is part of a membrane." []
+is_a: GO:0043234 ! protein complex
+is_a: GO:0044425 ! membrane part
+intersection_of: GO:0043234 ! protein complex
+intersection_of: BFO:0000050 GO:0016020 ! part of membrane
+relationship: BFO:0000050 GO:0016020 ! part of membrane
+
+[Term]
+id: GO:0098797
+name: plasma membrane protein complex
+def: "Any protein complex that is part of the plasma membrane." []
+is_a: GO:0044459 ! plasma membrane part
+is_a: GO:0098796 ! membrane protein complex
+intersection_of: GO:0043234 ! protein complex
+intersection_of: BFO:0000050 GO:0005886 ! part of plasma membrane
+relationship: BFO:0000050 GO:0005886 ! part of plasma membrane
+
+[Term]
+id: GO:0098858
+name: actin-based cell projection
+is_a: GO:0042995 ! cell projection
+
+[Term]
+id: GO:1902578
+name: single-organism localization
+def: "A localization which involves only one organism." []
+synonym: "single organism localization" EXACT []
+is_a: GO:0044699 ! single-organism process
+is_a: GO:0051179 ! localization
+
+[Term]
+id: GO:1902589
+name: single-organism organelle organization
+is_a: GO:0006996 ! organelle organization
+is_a: GO:0044763 ! single-organism cellular process
+
+[Term]
+id: GO:1903046
+name: meiotic cell cycle process
+is_a: GO:0022402 ! cell cycle process
+is_a: GO:0044702 ! single organism reproductive process
+
+[Term]
+id: PATO:0000001
+name: quality
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
+synonym: "trait" EXACT []
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+def: "A quality which inheres in a continuant." []
+synonym: "monadic quality of a continuant" EXACT []
+synonym: "monadic quality of an object" NARROW []
+synonym: "monadic quality of continuant" NARROW []
+synonym: "multiply inhering quality of a physical entity " EXACT []
+synonym: "quality of a continuant" EXACT []
+synonym: "quality of a single physical entity" EXACT []
+synonym: "quality of an object" EXACT []
+synonym: "quality of continuant" EXACT []
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001396
+name: cellular quality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001404
+name: nucleate quality
+is_a: PATO:0001396 ! cellular quality
+
+[Term]
+id: PATO:0001405
+name: anucleate
+is_a: PATO:0001404 ! nucleate quality
+
+[Term]
+id: PATO:0002505
+name: nucleated
+is_a: PATO:0001404 ! nucleate quality
+
+[Term]
+id: PORO:0000000
+name: sponge cell
+is_a: CL:0000000 ! cell
+is_a: GO:0005623 ! cell
+relationship: BFO:0000050 PORO:0000001 ! part of sponge
+created_by: cjm
+creation_date: 2011-04-22T06:40:57Z
+
+[Term]
+id: PORO:0000001
+name: sponge
+def: "Sponge bodies consist of jelly-like mesohyl sandwiched between two thin layers of cells. While all animals have unspecialized cells that can transform into specialized cells, sponges are unique in having some specialized cells that can transform into other types, often migrating between the main cell layers and the mesohyl in the process. Sponges do not have nervous, digestive or circulatory systems. Instead, most rely on maintaining a constant water flow through their bodies to obtain food and oxygen and to remove wastes, and the shapes of their bodies are adapted to maximize the efficiency of the water flow. All are sessile aquatic animals and, although there are freshwater species, the great majority are marine (salt water) species, ranging from tidal zones to depths exceeding 8,800 metres (5.5 mi)" [Wikipedia:Sponge]
+is_a: UBERON:0000468 ! multicellular organism
+created_by: cjm
+creation_date: 2011-04-22T06:42:26Z
+
+[Term]
+id: PORO:0000002
+name: mesohyl
+def: "An extracellular matrix enclosed by pinacoderm and choanoderm, the mesohyl is composed primarily of galectin, collagen, fibronectin-like molecules, dermatopontin, and other polypeptides. The mesohyl contains cells (microbial and eukaryotic) and skeletal elements (collagen, spongin, chitin, and/or minerals). (Boury-Esnault and Rützler 1997; Müller 2003)" []
+synonym: "mesenchyme" RELATED DEPRECATED []
+synonym: "mesoglea" RELATED []
+is_a: PORO:0000700 ! body layer
+relationship: RO:0002220 PORO:0000043 ! adjacent_to pinacoderm
+relationship: RO:0002220 PORO:0000200 ! adjacent_to choanoderm
+created_by: cjm
+creation_date: 2011-04-22T06:42:59Z
+
+[Term]
+id: PORO:0000003
+name: choanocyte
+def: "A cell that lines the interior of Asconoid, syconoid and leuconoid body type sponges that contain a central flagellum surrounded by a collar of microvilli which are connected by a thin membrane. The choanocyte is ovoid, with one end adjacent to the mesohyl (in some species). It is the closest family member to the free-living ancestor called choanoflagellate. The flagellae beat regularly, creating a water flow across the microvilli which can then filter nutrients and other food from the water taken from the collar of the sponge. Food particles are then phagocytosed by the cell. Choanocytes are found dotting the surface of the spongocoel in asconoid sponges and the radial canals in syconoid sponges, but they comprise entirely the chambers in leuconoid sponges. By cooperatively moving their flagella, choanocytes generate a flow of water through the sponges pores, into the spongocoel, and out through the osculum. This improves both respiratory and digestive functions for the sponge, pulling in oxygen and nutrients and allowing a rapid expulsion of carbon dioxide and other waste products. Although all cells in a sponge are capable of living on their own, choanocytes carry out most of the sponge's ingestion, passing digested materials to the amoebocytes for delivery to other cells." [ISBN:0030229073, Wikipedia:Choanocyte]
+comment: They bear more than a passing resemblance to Choanoflagellates, and demonstrate key steps in the evolution of animals. Scientist Nicole King helped to establish the distinction.[1] DNA sequencing indicates that multicellular choanoflagellates and poriferans are sister groups, both descended from the same eukaryotic clade. One can see modern choanoflagellates living in small colonies, illustrating the evolution of sponges by analogy. More complex animals, notably the cnidarians, possess cells whose structures are clearly derived from choanocytes, demonstrating their historical ties to phylum porifera.
+synonym: "collar cell" RELATED []
+is_a: PORO:0000914 ! flagellated cell
+relationship: BFO:0000050 PORO:0000022 ! part of spongocoel lining
+relationship: RO:0002202 PORO:0000009 ! develops from micromere
+created_by: cjm
+creation_date: 2011-04-22T06:47:33Z
+
+[Term]
+id: PORO:0000006
+name: sponge larval cell
+is_a: PORO:0000000 ! sponge cell
+intersection_of: PORO:0000000 ! sponge cell
+intersection_of: BFO:0000050 PORO:0000926 ! part of sponge larva
+relationship: BFO:0000050 PORO:0000926 ! part of sponge larva
+
+[Term]
+id: PORO:0000008
+name: macromere
+def: "Posterior non-ciliated larval cell that will differentiate into a pinacocyte." [http://www.ncbi.nlm.nih.gov/pubmed/24844197]
+is_a: PORO:0000006 ! sponge larval cell
+
+[Term]
+id: PORO:0000009
+name: micromere
+def: "anterior ciliated cell of the sponge larva that will differentiate into a choanocyte or spicule-forming cell" [http://www.ncbi.nlm.nih.gov/pubmed/24844197]
+is_a: PORO:0000006 ! sponge larval cell
+is_a: PORO:0000914 ! flagellated cell
+
+[Term]
+id: PORO:0000011
+name: sclerocyte
+def: "spicule secreting cells, found in sponges. They secrete calcareous or siliceous spicules which are found in the mesohyl layer of sponges. The sclerocytes produce spicules via formation of a cellular triad" [Wikipedia:Sclerocyte]
+comment: compare: "Cell involved in spicule secretion. In Demospon- ges, with intracellular secretion, sclerocytes are characterized by numerous mitochondria and the presence of spicule-axial filaments. In Calcarea, where secretion is extracellular, sclerocytes have septate junctions between them (sc in figure)." [http://www.portol.org/thesaurus]
+is_a: PORO:0000012 ! secretory cell
+relationship: RO:0002202 PORO:0000016 ! develops from archaeocyte
+relationship: RO:0003000 PORO:0000017 ! produces spicule
+created_by: cjm
+creation_date: 2011-04-22T06:54:11Z
+
+[Term]
+id: PORO:0000012
+name: secretory cell
+is_a: PORO:0000000 ! sponge cell
+created_by: cjm
+creation_date: 2011-04-22T06:55:19Z
+
+[Term]
+id: PORO:0000016
+name: archaeocyte
+def: "amoeba-like large cells with large nuclei that are totipotent. They also have important roles in feeding and in clearing debris that block the ostia." [ISBN:0030229073]
+synonym: "amoebocyte" RELATED []
+is_a: PORO:0000000 ! sponge cell
+relationship: RO:0002215 GO:0006909 ! capable of phagocytosis
+created_by: cjm
+creation_date: 2011-04-22T06:58:18Z
+
+[Term]
+id: PORO:0000017
+name: spicule
+def: "siliceous or calcareous entities that form the mineral skeleton of a sponge" []
+comment: located primarily in the mesohyl, but some project through the pinacoderm (Barnes).
+is_a: UBERON:0000476 ! acellular anatomical structure
+relationship: BFO:0000050 PORO:0000002 ! part of mesohyl
+relationship: BFO:0000050 PORO:0002042 ! part of mineral skeleton
+relationship: RO:0003001 PORO:0000011 ! produced_by sclerocyte
+property_value: PORO:0000995 "A component of the mineral skeleton, typically composed of silica or calcium carbonate[portol]. A structural element that provides structural support and deter predators. Large spicules, visible to the naked eye are referred to as megascleres, while smaller, microscopic ones are termed microscleres. The meshing of many spicules serves as the sponge's skeleton. Spicules are formed by sclerocytes, which are derived from archaeocytes. The sclerocyte begins with an organic filament, and adds silica to it. Spicules are generally elongated at a rate of 1-10 μm per hour. Once the spicule reaches a certain length it protrudes from the sclerocyte cell body, but remains within the cell's membrane. On occasion, sclerocytes may begin a second spicule while the first is still in progress." xsd:string {xref="Wikipedia:Sponge_spicule", xref="http://www.portol.org/thesaurus"}
+created_by: cjm
+creation_date: 2011-04-22T06:59:28Z
+
+[Term]
+id: PORO:0000020
+name: spongeocoel
+alt_id: PORO:0000037
+def: "large, central cavity of sponges. Water enters the spongocoel through hundreds of tiny pores (Ostia) and exits through the larger opening (osculum). Depending on the body plan of the sponge (which can be asconoid, syconoid, or leuconoid), the spongocoel could be a simple interior space of the sponge or a complexly branched inner structure. Regardless of body plan or class, the spongocoel is lined with choanocytes, which have flagella that push water through the spongocoel, creating a current." []
+comment: ATRIUM: "Preoscular cavity. This term is used specifically to designate the central exhalant cavity" [http://www.portol.org/thesaurus]
+synonym: "atrium" RELATED [http://www.portol.org/thesaurus]
+synonym: "cloaca" EXACT [http://www.portol.org/thesaurus]
+synonym: "gastal cavity" EXACT [http://www.portol.org/thesaurus]
+is_a: UBERON:0000466 ! immaterial anatomical entity
+created_by: cjm
+creation_date: 2011-04-22T07:05:15Z
+
+[Term]
+id: PORO:0000022
+name: spongocoel lining
+is_a: UBERON:0000465 ! material anatomical entity
+relationship: BFO:0000050 PORO:0000020 ! part of spongeocoel
+created_by: cjm
+creation_date: 2011-04-22T07:09:08Z
+
+[Term]
+id: PORO:0000023
+name: pinacocyte
+def: "flat cells found on the outermost layer of sponges. They can expand and contract to slightly alter the size of the sponge, and can also produce collagen. Delimits the sponge from the external milieu and always only in a layer one-cell deep" [http://www.portol.org/thesaurus, Wikipedia:Pinacocyte]
+is_a: PORO:0000000 ! sponge cell
+relationship: BFO:0000050 PORO:0000043 ! part of pinacoderm
+relationship: RO:0002202 PORO:0000008 ! develops from macromere
+created_by: cjm
+creation_date: 2011-04-22T07:11:56Z
+
+[Term]
+id: PORO:0000030
+name: calcareous spicule
+def: "A spicule composed largely of calcite having a radiate form, the number of rays being either two (diactine), three (triactine), or four (tetractine)." []
+is_a: PORO:0000017 ! spicule
+intersection_of: PORO:0000017 ! spicule
+intersection_of: RO:0002473 CHEBI:3311 ! composed primarily of calcium carbonate
+relationship: RO:0002473 CHEBI:46719 ! composed primarily of calcite
+created_by: cjm
+creation_date: 2011-04-22T07:20:56Z
+
+[Term]
+id: PORO:0000033
+name: calcium carbonate exoskeleton
+is_a: PORO:0000532 ! skeleton
+is_a: UBERON:0000476 ! acellular anatomical structure
+intersection_of: PORO:0000532 ! skeleton
+intersection_of: RO:0002473 CHEBI:3311 ! composed primarily of calcium carbonate
+relationship: RO:0002473 CHEBI:3311 ! composed primarily of calcium carbonate
+created_by: cjm
+creation_date: 2011-04-22T07:22:22Z
+
+[Term]
+id: PORO:0000043
+name: pinacoderm
+def: "The pinacoderm is the outer most layer of cells (pinacocytes) in the phylum Porifera (sponges), similar to the epidermis in other organisms. The pinacocytes are on the external surface of the sponge body and characterized as an epithelial layer of flattened cells." [Wikipedia:Pinacoderm]
+comment: compare with: "Surface lined by pinacocytes (ex and en in figure)." [http://www.portol.org/thesaurus]
+is_a: PORO:0000700 ! body layer
+is_a: PORO:0000905 ! sponge surface
+relationship: lined_by PORO:0000023 ! pinacocyte
+created_by: cjm
+creation_date: 2011-04-22T07:33:24Z
+
+[Term]
+id: PORO:0000095
+name: arrangement of spicules
+is_a: UBERON:0000480 ! anatomical group
+intersection_of: UBERON:0000480 ! anatomical group
+intersection_of: RO:0002473 PORO:0000017 ! composed primarily of spicule
+relationship: RO:0002473 PORO:0000017 ! composed primarily of spicule
+
+[Term]
+id: PORO:0000096
+name: arrangement of megascleres
+is_a: PORO:0000095 ! arrangement of spicules
+intersection_of: UBERON:0000480 ! anatomical group
+intersection_of: RO:0002473 PORO:0000098 ! composed primarily of megasclere
+relationship: RO:0002473 PORO:0000098 ! composed primarily of megasclere
+
+[Term]
+id: PORO:0000098
+name: megasclere
+def: "A large spicule, visible to the naked eye." [Wikipedia:Sponge_spicule]
+is_a: PORO:0000017 ! spicule
+
+[Term]
+id: PORO:0000200
+name: choanoderm
+def: "Surface lined by choanocytes." [http://www.portol.org/thesaurus]
+comment: Cytology
+is_a: PORO:0000700 ! body layer
+relationship: BFO:0000051 PORO:0000003 ! has part choanocyte
+
+[Term]
+id: PORO:0000412
+name: monaxonic megasclere
+def: "Linear, nonradiate spicule, or a spicule type not having more than two rays along one axis." [http://www.portol.org/thesaurus]
+comment: Spicules of Demospongiae
+synonym: "monaxon" RELATED []
+is_a: PORO:0000098 ! megasclere
+
+[Term]
+id: PORO:0000532
+name: skeleton
+def: "All structures supporting and protecting the sponge body." [http://www.portol.org/thesaurus]
+comment: Architecture of the Skeleton of Demospongiae. The skeleton of sponges consists of microscopic calcareous or silicious spicules. The demosponges include 90% of all species of sponges. Their "skeletons" are made of spicules consisting of fibers of the protein spongin, the mineral silica, or both. Where spicules of silica are present, they have a different shape from those in the otherwise similar glass sponges[WP].
+is_a: PORO:0000938 ! organism subdivision
+
+[Term]
+id: PORO:0000567
+name: style
+def: "Monaxon spicule with one end pointed, the other (head or base) blunt" [http://www.portol.org/thesaurus]
+comment: Spicules of Demospongiae. NOTE: wp says megasclere
+is_a: PORO:0002043 ! monactine
+
+[Term]
+id: PORO:0000700
+name: body layer
+is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: PORO:0000905
+name: sponge surface
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: PORO:0000914
+name: flagellated cell
+is_a: PORO:0000000 ! sponge cell
+intersection_of: GO:0005623 ! cell
+intersection_of: BFO:0000051 GO:0005929 ! has part cilium
+relationship: BFO:0000051 GO:0005929 ! has part cilium
+
+[Term]
+id: PORO:0000926
+name: sponge larva
+is_a: UBERON:0002548 ! larva
+intersection_of: UBERON:0002548 ! larva
+intersection_of: BFO:0000050 PORO:0000001 ! part of sponge
+relationship: BFO:0000050 PORO:0000001 ! part of sponge
+
+[Term]
+id: PORO:0000938
+name: organism subdivision
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: PORO:0002002
+name: acanthostyle
+comment: Subtypes of acanthostyle other than verticillate acanthostyle have yet to be named
+is_a: PORO:0000567 ! style
+intersection_of: PORO:0000567 ! style
+intersection_of: BFO:0000051 PORO:0002004 ! has part spine
+relationship: BFO:0000051 PORO:0002004 ! has part spine
+
+[Term]
+id: PORO:0002004
+name: spine
+is_a: UBERON:0000476 ! acellular anatomical structure
+
+[Term]
+id: PORO:0002005
+name: verticillate acanthostyle
+comment: Editor's note: logical definition still to be added
+is_a: PORO:0002002 ! acanthostyle
+
+[Term]
+id: PORO:0002042
+name: mineral skeleton
+is_a: PORO:0000532 ! skeleton
+is_a: UBERON:0000476 ! acellular anatomical structure
+
+[Term]
+id: PORO:0002043
+name: monactine
+def: "Megasclere with a single actine (one ray or one point)" []
+synonym: "monact" EXACT []
+is_a: PORO:0000412 ! monaxonic megasclere
+
+[Term]
+id: UBERON:0000000
+name: processual entity
+def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." []
+disjoint_from: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000061
+name: anatomical structure
+def: "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." []
+synonym: "biological structure" EXACT []
+synonym: "connected biological structure" EXACT []
+is_a: UBERON:0000465 ! material anatomical entity
+relationship: RO:0002496 UBERON:0000106 ! existence starts during or after zygote stage
+relationship: RO:0002497 UBERON:0000071 ! existence ends during or before death stage
+
+[Term]
+id: UBERON:0000062
+name: organ
+def: "Anatomical structure that performs a specific function or group of functions [WP]." []
+synonym: "anatomical unit" RELATED []
+synonym: "body organ" RELATED []
+synonym: "element" RELATED []
+is_a: UBERON:0010000 ! multicellular anatomical structure
+relationship: BFO:0000050 UBERON:0000467 ! part of anatomical system
+relationship: RO:0002002 UBERON:0006984 ! has boundary anatomical surface
+
+[Term]
+id: UBERON:0000066
+name: fully formed stage
+def: "The stage of development at which the animal is fully formed, including immaturity and maturity. Includes both sexually immature stage, and adult stage." []
+synonym: "adult stage" BROAD []
+synonym: "fully formed animal stage" EXACT []
+synonym: "juvenile-adult stage" EXACT []
+is_a: UBERON:0000105 ! life cycle stage
+relationship: BFO:0000050 UBERON:0000092 ! part of post-embryonic stage
+relationship: BFO:0000062 UBERON:0000111 ! preceded_by organogenesis stage
+relationship: BFO:0000063 UBERON:0000071 ! precedes death stage
+
+[Term]
+id: UBERON:0000067
+name: embryo stage part
+def: "A stage that is part of the embryo stage." []
+synonym: "embryonic stage part" EXACT []
+is_a: UBERON:0000105 ! life cycle stage
+intersection_of: UBERON:0000105 ! life cycle stage
+intersection_of: BFO:0000050 UBERON:0000068 ! part of embryo stage
+relationship: BFO:0000050 UBERON:0000068 ! part of embryo stage
+
+[Term]
+id: UBERON:0000068
+name: embryo stage
+def: "A life cycle stage that starts with fertilization and ends with the fully formed embryo." []
+synonym: "embryogenesis" RELATED []
+synonym: "embryonic stage" EXACT []
+is_a: UBERON:0000105 ! life cycle stage
+disjoint_from: UBERON:0000092 ! post-embryonic stage
+relationship: BFO:0000063 UBERON:0000066 ! precedes fully formed stage
+relationship: BFO:0000063 UBERON:0000092 ! precedes post-embryonic stage
+
+[Term]
+id: UBERON:0000069
+name: larval stage
+def: "A distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." []
+synonym: "ammocoete" NARROW []
+synonym: "ammocoete stage" NARROW []
+synonym: "bipinnaria" NARROW []
+synonym: "bipinnaria stage" NARROW []
+synonym: "caterpillar" NARROW []
+synonym: "caterpillar stage" NARROW []
+synonym: "glochidium" NARROW []
+synonym: "glochidium stage" NARROW []
+synonym: "grub" NARROW []
+synonym: "grub stage" NARROW []
+synonym: "larva" RELATED []
+synonym: "larva stage" EXACT []
+synonym: "leptocephalus" NARROW []
+synonym: "leptocephalus stage" NARROW []
+synonym: "maggot" NARROW []
+synonym: "maggot stage" NARROW []
+synonym: "metacestode" NARROW []
+synonym: "naiad, nymph" NARROW []
+synonym: "naiad, nymph stage" NARROW []
+synonym: "nauplius" NARROW []
+synonym: "nauplius stage" NARROW []
+synonym: "nymph" NARROW []
+synonym: "nymph stage" NARROW []
+synonym: "planula" NARROW []
+synonym: "planula stage" NARROW []
+synonym: "tornaria" NARROW []
+synonym: "trochophore" NARROW []
+synonym: "trochophore stage" NARROW []
+synonym: "veliger" NARROW []
+synonym: "veliger stage" NARROW []
+synonym: "wriggler" NARROW []
+synonym: "wriggler stage" NARROW []
+synonym: "zoea" NARROW []
+synonym: "zoea stage" NARROW []
+is_a: UBERON:0000105 ! life cycle stage
+relationship: BFO:0000050 UBERON:0000092 ! part of post-embryonic stage
+relationship: RO:0002087 UBERON:0000068 ! immediately_preceded_by embryo stage
+
+[Term]
+id: UBERON:0000071
+name: death stage
+def: "End of the life of an organism." []
+synonym: "death" RELATED []
+is_a: UBERON:0000105 ! life cycle stage
+relationship: RO:0002229 UBERON:0000104 ! ends life cycle
+
+[Term]
+id: UBERON:0000092
+name: post-embryonic stage
+def: "stage succeeding embryo, including mature structure" []
+synonym: "post-hatching stage" NARROW []
+synonym: "postembryonic" RELATED []
+synonym: "postembryonic stage" EXACT []
+is_a: UBERON:0000105 ! life cycle stage
+relationship: BFO:0000062 UBERON:0000068 ! preceded_by embryo stage
+
+[Term]
+id: UBERON:0000104
+name: life cycle
+def: "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism." []
+synonym: "entire life cycle" EXACT []
+synonym: "entire lifespan" EXACT []
+synonym: "life" EXACT []
+synonym: "lifespan" EXACT []
+is_a: UBERON:0000000 ! processual entity
+relationship: RO:0002224 UBERON:0000106 ! starts with zygote stage
+relationship: RO:0002230 UBERON:0000071 ! ends with death stage
+
+[Term]
+id: UBERON:0000105
+name: life cycle stage
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." []
+synonym: "developmental stage" NARROW []
+synonym: "stage" NARROW []
+is_a: UBERON:0000000 ! processual entity
+relationship: BFO:0000050 UBERON:0000104 ! part of life cycle
+
+[Term]
+id: UBERON:0000106
+name: zygote stage
+def: "A stage at which the organism is a single cell produced by means of sexual reproduction." []
+synonym: "1-cell stage" EXACT []
+synonym: "fertilized egg stage" EXACT []
+synonym: "fertilized egg stage" RELATED []
+synonym: "one cell stage" EXACT []
+synonym: "one-cell stage" RELATED []
+synonym: "zygote" RELATED []
+synonym: "zygotum" RELATED []
+is_a: UBERON:0000067 ! embryo stage part
+relationship: RO:0002223 UBERON:0000104 ! starts life cycle
+
+[Term]
+id: UBERON:0000107
+name: cleavage stage
+def: "The first few specialized divisions of an activated animal egg; Stage consisting of division of cells in the early embryo. The zygotes of many species undergo rapid cell cycles with no significant growth, producing a cluster of cells the same size as the original zygote. The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula." []
+is_a: UBERON:0000067 ! embryo stage part
+relationship: RO:0002087 UBERON:0000106 ! immediately_preceded_by zygote stage
+
+[Term]
+id: UBERON:0000108
+name: blastula stage
+def: "An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." []
+is_a: UBERON:0000067 ! embryo stage part
+relationship: BFO:0000062 UBERON:0000107 ! preceded_by cleavage stage
+
+[Term]
+id: UBERON:0000109
+name: gastrula stage
+def: "A stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage during embryonic development of most animals. The details of gastrulation vary from species to species, but usually result in the formation of the three primary germ layers, ectoderm, mesoderm and endoderm." []
+synonym: "blastocystis trilaminaris stage" RELATED []
+synonym: "trilaminar blastocyst stage" RELATED []
+synonym: "trilaminar blastoderm stage" RELATED []
+synonym: "trilaminar disk stage" RELATED []
+synonym: "trilaminar germ stage" RELATED []
+synonym: "trilaminar stage" RELATED []
+is_a: UBERON:0000067 ! embryo stage part
+relationship: BFO:0000062 UBERON:0000108 ! preceded_by blastula stage
+
+[Term]
+id: UBERON:0000110
+name: neurula stage
+def: "Staged defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate. This will give rise to the central nervous system." []
+is_a: UBERON:0000067 ! embryo stage part
+relationship: BFO:0000062 UBERON:0000109 ! preceded_by gastrula stage
+
+[Term]
+id: UBERON:0000111
+name: organogenesis stage
+def: "A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." []
+synonym: "segmentation stage" RELATED []
+is_a: UBERON:0000067 ! embryo stage part
+relationship: BFO:0000062 UBERON:0000110 ! preceded_by neurula stage
+
+[Term]
+id: UBERON:0000307
+name: blastula
+def: "Organism at the blastula stage - an early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence." []
+synonym: "blastosphere" RELATED []
+synonym: "blastula embryo" EXACT []
+is_a: UBERON:0000922 ! embryo
+intersection_of: UBERON:0000468 ! multicellular organism
+intersection_of: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
+relationship: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
+relationship: RO:0002202 UBERON:0007010 ! develops from cleaving embryo
+
+[Term]
+id: UBERON:0000465
+name: material anatomical entity
+def: "Anatomical entity that has mass." []
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000466
+name: immaterial anatomical entity
+def: "Anatomical entity that has no mass." []
+synonym: "immaterial physical anatomical entity" EXACT []
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000467
+name: anatomical system
+def: "Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function." []
+synonym: "anatomical systems" RELATED []
+synonym: "body system" EXACT []
+synonym: "connected anatomical system" EXACT []
+synonym: "organ system" EXACT []
+synonym: "system" BROAD []
+is_a: UBERON:0000061 ! anatomical structure
+relationship: BFO:0000050 UBERON:0000468 ! part of multicellular organism
+relationship: BFO:0000051 UBERON:0000062 ! has part organ
+relationship: RO:0002496 UBERON:0000111 ! existence starts during or after organogenesis stage
+
+[Term]
+id: UBERON:0000468
+name: multicellular organism
+def: "Anatomical structure that is an individual member of a species and consists of more than one cell." []
+synonym: "animal" NARROW []
+synonym: "body" RELATED []
+synonym: "Koerper" RELATED []
+synonym: "multi-cellular organism" EXACT []
+synonym: "organism" EXACT []
+synonym: "whole body" RELATED []
+synonym: "whole organism" EXACT []
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000476
+name: acellular anatomical structure
+def: "Anatomical structure that consists of cell parts and cell substances and together does not constitute a cell or a tissue." []
+synonym: "acellular anatomical structures" RELATED []
+is_a: UBERON:0000061 ! anatomical structure
+disjoint_from: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000479
+name: tissue
+def: "Multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation." []
+synonym: "portion of tissue" EXACT []
+synonym: "simple tissue" NARROW []
+synonym: "tissue portion" EXACT []
+is_a: UBERON:0010000 ! multicellular anatomical structure
+relationship: BFO:0000050 UBERON:0000468 ! part of multicellular organism
+
+[Term]
+id: UBERON:0000480
+name: anatomical group
+def: "Anatomical structure consisting of at least two non-overlapping organs, multi-tissue aggregates or portion of tissues or cells of different types that does not constitute an organism, organ, multi-tissue aggregate, or portion of tissue." []
+is_a: UBERON:0000061 ! anatomical structure
+relationship: BFO:0000050 UBERON:0000468 ! part of multicellular organism
+
+[Term]
+id: UBERON:0000922
+name: embryo
+def: "Anatomical entity that comprises the organism in the early stages of growth and differentiation that are characterized by cleavage, the laying down of fundamental tissues, and the formation of primitive organs and organ systems. For example, for mammals, the process would begin with zygote formation and end with birth. For insects, the process would begin at zygote formation and end with larval hatching. For plant zygotic embryos, this would be from zygote formation to the end of seed dormancy. For plant vegetative embryos, this would be from the initial determination of the cell or group of cells to form an embryo until the point when the embryo becomes independent of the parent plant." []
+synonym: "developing organism" RELATED []
+synonym: "developmental tissue" RELATED []
+synonym: "embryonic organism" EXACT []
+is_a: UBERON:0000468 ! multicellular organism
+intersection_of: UBERON:0000468 ! multicellular organism
+intersection_of: RO:0002489 UBERON:0000068 ! existence starts with embryo stage
+intersection_of: RO:0002493 UBERON:0000068 ! existence ends with embryo stage
+relationship: RO:0002489 UBERON:0000068 ! existence starts with embryo stage
+relationship: RO:0002493 UBERON:0000068 ! existence ends with embryo stage
+
+[Term]
+id: UBERON:0000990
+name: reproductive system
+alt_id: UBERON:FBbt_00004857-FMA_7160-MA_0000326-MIAA_0000305-WBbt_0005747-XAO_0000142-ZFA_0000632
+def: "Anatomical system that has as its parts the organs concerned with reproduction." [Wikipedia:Reproductive_system]
+synonym: "animal reproductive system" RELATED []
+synonym: "genital system" RELATED []
+synonym: "genital tract" RELATED []
+synonym: "genitalia" RELATED []
+synonym: "Geschlechtsorgan" RELATED []
+synonym: "organa genitalia" RELATED []
+synonym: "reproductive tissue" RELATED []
+synonym: "reproductive tract" RELATED []
+synonym: "systemata genitalia" RELATED []
+is_a: CARO:0000003 ! anatomical structure
+is_a: UBERON:0000467 ! anatomical system
+relationship: BFO:0000051 UBERON:0000991 ! has part gonad
+relationship: RO:0002492 UBERON:0000066 ! existence ends during fully formed stage
+
+[Term]
+id: UBERON:0000991
+name: gonad
+def: "Reproductive organ that produces and releases eggs (ovary) or sperm (testis)." []
+synonym: "gonada" EXACT []
+synonym: "gonads" RELATED []
+is_a: BFO:0000004 ! independent continuant
+is_a: UBERON:0003133 ! reproductive organ
+relationship: BFO:0000050 UBERON:0000990 ! part of reproductive system
+relationship: RO:0002202 UBERON:0005564 ! develops from gonad primordium
+
+[Term]
+id: UBERON:0001048
+name: primordium
+def: "Primordia are populations of contiguous cells that are morphologically distinct and already correspond in extent to a later organ/tissue[FBbt, Hartenstein, V. (2004)]." []
+synonym: "bud" RELATED []
+synonym: "future organ" RELATED []
+synonym: "placode" RELATED []
+synonym: "primordia" RELATED []
+synonym: "rudiment" RELATED []
+is_a: UBERON:0005423 ! developing anatomical structure
+relationship: BFO:0000050 UBERON:0000468 ! part of multicellular organism
+
+[Term]
+id: UBERON:0001062
+name: anatomical entity
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." []
+
+[Term]
+id: UBERON:0002050
+name: embryonic structure
+def: "Anatomical structure that is part of an embryo." []
+synonym: "developing embryonic structure" EXACT []
+synonym: "developing structure" RELATED []
+synonym: "embryonale Struktur" RELATED []
+synonym: "embryonic anatomical structure" EXACT []
+synonym: "embryonic structures" RELATED []
+is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0005423 ! developing anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: BFO:0000050 UBERON:0000922 ! part of embryo
+relationship: BFO:0000050 UBERON:0000922 ! part of embryo
+
+[Term]
+id: UBERON:0002548
+name: larva
+def: "A distinct juvenile form many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." []
+def: "a distinct juvenile form many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle." [Wikipedia:Larva]
+synonym: "ammocoete" NARROW []
+synonym: "bipinnaria" NARROW []
+synonym: "caterpillar" NARROW []
+synonym: "glochidium" NARROW []
+synonym: "grub" NARROW []
+synonym: "larval organism" EXACT []
+synonym: "leptocephalus" NARROW []
+synonym: "maggot" NARROW []
+synonym: "naiad" NARROW []
+synonym: "nymph" NARROW []
+synonym: "planula" NARROW []
+synonym: "tadpole" NARROW []
+synonym: "trochophore" NARROW []
+synonym: "veliger" NARROW []
+synonym: "wriggler" NARROW []
+synonym: "zoea" NARROW []
+is_a: UBERON:0000468 ! multicellular organism
+intersection_of: UBERON:0000468 ! multicellular organism
+intersection_of: existence_starts_and_ends_during UBERON:0000069 ! larval stage
+relationship: existence_starts_and_ends_during UBERON:0000069 ! larval stage
+
+[Term]
+id: UBERON:0003133
+name: reproductive organ
+def: "An organ involved in reproduction" []
+synonym: "genital organ" EXACT []
+synonym: "genitalia" RELATED []
+synonym: "reproductive system organ" EXACT []
+synonym: "sex organ" EXACT []
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0005156 ! reproductive structure
+relationship: BFO:0000050 UBERON:0000990 ! part of reproductive system
+
+[Term]
+id: UBERON:0004455
+name: neurula embryo
+def: "An embryo at the neurula stage." []
+synonym: "neurula" EXACT []
+is_a: UBERON:0000922 ! embryo
+intersection_of: UBERON:0000468 ! multicellular organism
+intersection_of: existence_starts_and_ends_during UBERON:0000110 ! neurula stage
+relationship: existence_starts_and_ends_during UBERON:0000110 ! neurula stage
+relationship: RO:0002202 UBERON:0004734 ! develops from gastrula
+
+[Term]
+id: UBERON:0004734
+name: gastrula
+def: "Organism at the gastrula stage." []
+synonym: "blastocystis trilaminaris" RELATED []
+synonym: "gastrula embryo" EXACT []
+synonym: "tri-laminar disc" RELATED []
+synonym: "tri-laminar disk" RELATED []
+synonym: "trilaminar blastocyst" RELATED []
+synonym: "trilaminar blastoderm" RELATED []
+synonym: "trilaminar disc" RELATED []
+synonym: "trilaminar disk" RELATED []
+synonym: "trilaminar germ" RELATED []
+is_a: UBERON:0000922 ! embryo
+intersection_of: UBERON:0000468 ! multicellular organism
+intersection_of: existence_starts_and_ends_during UBERON:0000109 ! gastrula stage
+relationship: existence_starts_and_ends_during UBERON:0000109 ! gastrula stage
+relationship: RO:0002202 UBERON:0000307 ! develops from blastula
+
+[Term]
+id: UBERON:0005156
+name: reproductive structure
+def: "Any anatomical structure that is part of the reproductive system." []
+synonym: "reproductive system element" EXACT []
+synonym: "reproductive system structure" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+intersection_of: UBERON:0000061 ! anatomical structure
+intersection_of: BFO:0000050 UBERON:0000990 ! part of reproductive system
+relationship: BFO:0000050 UBERON:0000990 ! part of reproductive system
+
+[Term]
+id: UBERON:0005291
+name: embryonic tissue
+def: "A portion of tissue that is part of an embryo." []
+synonym: "developing tissue" RELATED []
+synonym: "portion of embryonic tissue" EXACT []
+is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0002050 ! embryonic structure
+intersection_of: UBERON:0000479 ! tissue
+intersection_of: BFO:0000050 UBERON:0000922 ! part of embryo
+relationship: BFO:0000050 UBERON:0002050 ! part of embryonic structure
+
+[Term]
+id: UBERON:0005423
+name: developing anatomical structure
+synonym: "developing structure" RELATED []
+synonym: "developmental structure" RELATED []
+synonym: "developmental tissue" RELATED []
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0005564
+name: gonad primordium
+def: "Portion of tissue that gives rise to the immature gonad." []
+synonym: "future gonad" EXACT []
+synonym: "gonadal primordium" EXACT []
+synonym: "immature gonad" RELATED []
+synonym: "primitive gonad" EXACT []
+synonym: "undifferentiated gonad" EXACT []
+is_a: UBERON:0001048 ! primordium
+relationship: BFO:0000050 UBERON:0000990 ! part of reproductive system
+relationship: RO:0002387 UBERON:0000991 ! has potential to develop into gonad
+
+[Term]
+id: UBERON:0006598
+name: presumptive structure
+def: "Portion of embryonic tissue determined by fate mapping to become a structure." []
+synonym: "future structure" EXACT []
+synonym: "presumptive structures" EXACT []
+is_a: UBERON:0005423 ! developing anatomical structure
+intersection_of: UBERON:0005423 ! developing anatomical structure
+intersection_of: BFO:0000050 UBERON:0000922 ! part of embryo
+intersection_of: RO:0002387 UBERON:0000061 ! has potential to develop into anatomical structure
+relationship: BFO:0000050 UBERON:0000922 ! part of embryo
+relationship: RO:0002387 UBERON:0000061 ! has potential to develop into anatomical structure
+
+[Term]
+id: UBERON:0006984
+name: anatomical surface
+def: "A two dimensional anatomical structure that is the boundary between an anatomical structure and an anatomical substance, an anatomical space or the organism's environment. Examples include the surface of your skin, the surface of the lining of your gut; the surface of the endothelium of you aorta that is in contact with blood.n" []
+is_a: UBERON:0000466 ! immaterial anatomical entity
+
+[Term]
+id: UBERON:0007010
+name: cleaving embryo
+def: "Organism at the cleavage stage." []
+is_a: UBERON:0000922 ! embryo
+intersection_of: UBERON:0000468 ! multicellular organism
+intersection_of: RO:0002489 UBERON:0000107 ! existence starts with cleavage stage
+intersection_of: RO:0002493 UBERON:0000107 ! existence ends with cleavage stage
+relationship: RO:0002489 UBERON:0000107 ! existence starts with cleavage stage
+relationship: RO:0002493 UBERON:0000107 ! existence ends with cleavage stage
+
+[Term]
+id: UBERON:0009953
+name: post-embryonic organism
+def: "A multicellular organism that existence_starts_with a post-embryonic stage." []
+synonym: "post-hatching organism" NARROW []
+synonym: "post-natal organism" NARROW []
+synonym: "postnatal mouse" NARROW []
+synonym: "postnatal organism" EXACT []
+synonym: "TS28 mouse" NARROW []
+is_a: UBERON:0000468 ! multicellular organism
+intersection_of: UBERON:0000468 ! multicellular organism
+intersection_of: RO:0002489 UBERON:0000092 ! existence starts with post-embryonic stage
+relationship: RO:0002489 UBERON:0000092 ! existence starts with post-embryonic stage
+
+[Term]
+id: UBERON:0010000
+name: multicellular anatomical structure
+def: "An anatomical structure that has more than one cell as a part." []
+synonym: "multicellular structure" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Typedef]
+id: BFO:0000050
+name: part of
+name: part_of
+def: "a core relation that holds between a part and its whole" []
+is_transitive: true
+is_a: RO:0002131 ! overlaps
+inverse_of: BFO:0000051 ! has part
+
+[Typedef]
+id: BFO:0000051
+name: has part
+name: has_part
+def: "a core relation that holds between a whole and its part" []
+def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." []
+is_transitive: true
+is_a: RO:0002131 ! overlaps
+
+[Typedef]
+id: BFO:0000062
+name: preceded_by
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+synonym: "is preceded by" EXACT []
+synonym: "takes place after" EXACT []
+is_transitive: true
+
+[Typedef]
+id: BFO:0000063
+name: precedes
+is_transitive: true
+
+[Typedef]
+id: BFO_0000051
+name: has part
+is_transitive: true
+
+[Typedef]
+id: RO:0000052
+name: inheres in
+def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
+is_a: RO:0002314 ! inheres in part of
+inverse_of: RO:0000053 ! bearer of
+
+[Typedef]
+id: RO:0000053
+name: bearer of
+def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
+range: BFO:0000020 ! specifically dependent continuant
+
+[Typedef]
+id: RO:0000056
+name: participates in
+def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
+domain: BFO:0000002 ! continuant
+range: BFO:0000003 ! occurrent
+inverse_of: RO:0000057 ! has participant
+
+[Typedef]
+id: RO:0000057
+name: has participant
+def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
+domain: BFO:0000003 ! occurrent
+range: BFO:0000002 ! continuant
+holds_over_chain: BFO:0000051 RO:0000057
+
+[Typedef]
+id: RO:0000087
+name: has role
+
+[Typedef]
+id: RO:0002002
+name: has boundary
+
+[Typedef]
+id: RO:0002087
+name: immediately_preceded_by
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+synonym: "directly preceded by" EXACT []
+synonym: "is directly preceded by" EXACT []
+synonym: "is immediately preceded by" EXACT []
+synonym: "starts_at_end_of" EXACT []
+is_a: BFO:0000062 ! preceded_by
+
+[Typedef]
+id: RO:0002131
+name: overlaps
+def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
+holds_over_chain: BFO:0000050 BFO:0000050
+holds_over_chain: BFO:0000051 BFO:0000050 {http://purl.obolibrary.org/obo/RO_0002582="true"}
+holds_over_chain: BFO:0000051 RO:0002131
+is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
+id: RO:0002150
+name: continuous with
+name: continuous_with
+def: "X continuous_with Y if and only if X and Y share a fiat boundary." []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_symmetric: true
+is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
+id: RO:0002163
+name: spatially disjoint from
+def: "A is spatially_disjoint_from B if and only if they have no parts in common" []
+is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
+id: RO:0002180
+name: has component
+def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
+is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002202
+name: develops from
+name: develops_from
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+holds_over_chain: BFO:0000050 RO:0002202
+is_transitive: true
+is_a: RO:0002254 ! has developmental contribution from
+is_a: RO:0002258 ! developmentally preceded by
+inverse_of: RO:0002203 ! develops_into
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002203
+name: develops into
+name: develops_into
+def: "inverse of develops from" []
+is_transitive: true
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002387 ! has potential to develop into
+is_a: RO:0002388 ! has potential to directly develop into
+
+[Typedef]
+id: RO:0002215
+name: capable of
+def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. " []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000015 ! process
+is_a: RO:0002216 ! capable of part of
+is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0002216
+name: capable of part of
+def: "c stands in this relationship to p if and only if there exists some p' such that c is capable_of p', and p' is part_of p." []
+holds_over_chain: RO:0002215 BFO:0000050 {http://purl.obolibrary.org/obo/RO_0002582="true"}
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002500 ! causal agent in
+
+[Typedef]
+id: RO:0002219
+name: surrounded by
+name: surrounded_by
+def: "x surrounded_by y if and only if (1) x is adjacent to y and for every region r that is adjacent to x, r overlaps y (2) the shared boundary between x and y occupies the majority of the outermost boundary of x" []
+def: "x surrounded_by y iff: x is adjacent to y and for every region r adjacent to x, r overlaps y" []
+is_a: RO:0002220 ! adjacent_to
+inverse_of: RO:0002221 ! surrounds
+
+[Typedef]
+id: RO:0002220
+name: adjacent to
+name: adjacent_to
+def: "x adjacent to y if and only if x and y share a boundary" []
+def: "x adjacent to y if and only if x and y share a boundary." []
+def: "x adjacent_to y iff: x and y share a boundary" []
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_symmetric: true
+is_a: RO:0002163 ! spatially disjoint from
+
+[Typedef]
+id: RO:0002221
+name: surrounds
+def: "inverse of surrounded by" []
+def: "inverse of surrounded_by" []
+is_a: RO:0002220 ! adjacent_to
+
+[Typedef]
+id: RO:0002223
+name: starts
+def: "Relation between occurrents, shares a start boundary with." []
+is_a: BFO:0000050 ! part of
+inverse_of: RO:0002224 ! starts with
+
+[Typedef]
+id: RO:0002224
+name: starts with
+is_transitive: true
+is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002229
+name: ends
+def: "Relation between occurrents, shares an end boundary with." []
+synonym: "finishes" EXACT []
+is_a: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002230
+name: ends with
+is_transitive: true
+is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002234
+name: has output
+def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p." []
+is_a: RO:0000057 ! has participant
+inverse_of: RO:0002353 ! output of
+
+[Typedef]
+id: RO:0002254
+name: has developmental contribution from
+def: "x has developmental contribution from y iff x has some part z such that z develops from y" []
+domain: CARO:0000003 ! anatomical structure
+range: CARO:0000003 ! anatomical structure
+holds_over_chain: BFO:0000051 RO:0002202
+is_transitive: true
+is_a: RO:0002258 ! developmentally preceded by
+inverse_of: RO:0002255 ! developmentally contributes to
+
+[Typedef]
+id: RO:0002255
+name: developmentally contributes to
+name: developmentally_contributes_to
+def: "inverse of has developmental contribution from" []
+holds_over_chain: RO:0002203 BFO:0000050
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002385 ! has potential to developmentally contribute to
+
+[Typedef]
+id: RO:0002258
+name: developmentally preceded by
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+is_a: RO:0002324 ! developmentally related to
+inverse_of: RO:0002286 ! developmentally succeeded by
+
+[Typedef]
+id: RO:0002286
+name: developmentally succeeded by
+def: "Inverse of developmentally preceded by" []
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002314
+name: inheres in part of
+def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
+holds_over_chain: RO:0000052 BFO:0000050
+is_a: RO:0002502 ! depends on
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002323
+name: mereotopologically related to
+def: "A mereological relationship or a topological relationship" []
+
+[Typedef]
+id: RO:0002324
+name: developmentally related to
+def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
+
+[Typedef]
+id: RO:0002328
+name: functionally related to
+
+[Typedef]
+id: RO:0002329
+name: part of structure that is capable of
+def: "this relation holds between c and p when c is part of some c', and c' is capable of p." []
+holds_over_chain: BFO:0000050 RO:0002215 {http://purl.obolibrary.org/obo/RO_0002581="true"}
+is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0002353
+name: output of
+def: "inverse of has output" []
+is_a: RO:0000056 ! participates in
+is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0002384
+name: has developmental potential involving
+def: "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction)." []
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: RO:0002385
+name: has potential to developmentally contribute to
+def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y" []
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002387
+name: has potential to develop into
+def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002388
+name: has potential to directly develop into
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+is_a: RO:0002387 ! has potential to develop into
+
+[Typedef]
+id: RO:0002410
+name: causally related to
+def: "This relation groups causal relations between material entities and causal relations between processes" []
+is_a: RO:0002609 ! related via dependence to
+
+[Typedef]
+id: RO:0002473
+name: composed primarily of
+def: "x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y." []
+def: "x composed_primarily_of y iff: more than half of the mass of x is made from parts of y" []
+is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002488
+name: existence starts during
+def: "Relation between continuant c and occurrent s, such that every instance of c comes into existing during some s." []
+synonym: "begins_to_exist_during" EXACT []
+is_a: RO:0002496 ! existence starts during or after
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002489
+name: existence starts with
+def: "Relation between continuant and occurrent, such that c comes into existence at the start of p." []
+is_a: RO:0002488 ! existence starts during
+
+[Typedef]
+id: RO:0002492
+name: existence ends during
+def: "Relation between continuant c and occurrent s, such that every instance of c ceases to exist during some s, if it does not die prematurely." []
+synonym: "ceases_to_exist_during" EXACT []
+is_a: RO:0002497 ! existence ends during or before
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002493
+name: existence ends with
+def: "Relation between continuant and occurrent, such that c ceases to exist at the end of p." []
+is_a: RO:0002492 ! existence ends during
+
+[Typedef]
+id: RO:0002496
+name: existence starts during or after
+holds_over_chain: BFO:0000050 RO:0002496
+transitive_over: BFO:0000050 ! part of
+transitive_over: BFO:0000062 ! preceded_by
+
+[Typedef]
+id: RO:0002497
+name: existence ends during or before
+holds_over_chain: BFO:0000050 RO:0002497
+transitive_over: BFO:0000050 ! part of
+transitive_over: BFO:0000063 ! precedes
+
+[Typedef]
+id: RO:0002500
+name: causal agent in
+def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
+is_a: RO:0002595 ! causal relation between material entity and a process
+inverse_of: RO:0002608 ! has causal agent
+
+[Typedef]
+id: RO:0002502
+name: depends on
+
+[Typedef]
+id: RO:0002584
+name: has part structure that is capable of
+def: "s 'has part structure that is capable of' p if and only if there exists some part x such that s 'has part' x and x 'capable of' p" []
+holds_over_chain: BFO:0000051 RO:0002215
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002595 ! causal relation between material entity and a process
+
+[Typedef]
+id: RO:0002595
+name: causal relation between material entity and a process
+def: "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000015 ! process
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002608
+name: has causal agent
+def: "Inverse of 'causal agent in'" []
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002609
+name: related via dependence to
+def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
+
+[Typedef]
+id: RO:0003000
+name: produces
+def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+inverse_of: RO:0003001 ! produced_by
+
+[Typedef]
+id: RO:0003001
+name: produced by
+name: produced_by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+
+[Typedef]
+id: existence_starts_and_ends_during
+name: existence starts and ends during
+is_a: RO:0002488 ! existence starts during
+is_a: RO:0002492 ! existence ends during
+
+[Typedef]
+id: has_functional_parent
+name: has functional parent
+
+[Typedef]
+id: is_conjugate_acid_of
+name: is conjugate acid of
+
+[Typedef]
+id: is_conjugate_base_of
+name: is conjugate base of
+
+[Typedef]
+id: lined_by
+is_a: BFO:0000051 ! has part
+

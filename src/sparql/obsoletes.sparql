@@ -1,14 +1,13 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
-PREFIX consider: <http://www.geneontology.org/formats/oboInOwl#consider>
+prefix replacedBy: <http://purl.obolibrary.org/obo/IAO_0100001>
 
-SELECT ?cls ?replCls ?consCls WHERE {
-       ?cls a owl:Class  ;
-	    owl:deprecated "true"^^xsd:boolean .
-	OPTIONAL {?cls replaced_by: ?replCls}
-	OPTIONAL {?cls consider: ?consCls}
+SELECT ?cls ?consider ?replacedBy WHERE 
+{
+  ?cls a owl:Class .
+  ?cls owl:deprecated ?obs .
+  OPTIONAL { ?cls oio:consider ?consider } .
+  OPTIONAL { ?cls replacedBy: ?replacedBy } .
+  FILTER(?obs = true)
 }
-ORDER BY ?cls

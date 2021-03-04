@@ -18,6 +18,11 @@ release_artefacts:
   - simple
   - basic
   - custom-ext
+  - custom-basic
+  - custom-merged
+  - custom-core
+  - custom-composite-metazoan
+  - custom-composite-vertebrate
 edit_format: obo
 import_group:
   products:
@@ -28,11 +33,29 @@ import_group:
     - id: go
     - id: envo 
     - id: ro
+    - id: bspo
     - id: chebi
       is_large: TRUE
       use_gzipped: TRUE
     - id: pato
     - id: ncbitaxon
+      is_large: TRUE
+      use_gzipped: TRUE
     - id: nbo
+    # Pipeline dependencies (not directly imported)
+    - id: ceph
+    - id: cteno
+    - id: ehdaa2
+    - id: emapa
+    - id: fbbt
+    - id: fbdv
+    - id: ma
+    - id: poro
+    - id: wbbt
+    - id: wbls
+    - id: xao
+    - id: zfa
+    # caro, fma
+    # allen: dhba, dmba, hba, mba, pba
 robot_java_args: '-Xmx8G'
 create_obo_metadata: FALSE

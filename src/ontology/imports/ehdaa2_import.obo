@@ -1,0 +1,50 @@
+format-version: 1.2
+data-version: uberon/releases/2021-03-03/imports/ehdaa2_import.owl
+ontology: uberon/imports/ehdaa2_import
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/ehdaa2/releases/2013-07-04/ehdaa2.owl
+property_value: owl:versionInfo "2021-03-03" xsd:string
+
+[Term]
+id: AEO:0000169
+name: embryo
+namespace: http://www.xspan.org/obo.owl#
+def: "That part of the conceptus that will form the organism." [AEO:JB]
+is_a: CARO:0000012
+relationship: BFO:0000050 AEO:0000194 ! conceptus
+
+[Term]
+id: AEO:0000194
+name: conceptus
+namespace: http://www.xspan.org/obo.owl#
+def: "All the products of the fertilized egg." [AEO:JB]
+is_a: CARO:0000012
+
+[Term]
+id: EHDAA2:0000000
+name: Abstract human developmental anatomy
+namespace: human_developmental_anatomy
+
+[Term]
+id: EHDAA2:0000001
+name: human conceptus
+namespace: human_developmental_anatomy
+is_a: AEO:0000194 ! conceptus
+is_a: EHDAA2:0000000 ! Abstract human developmental anatomy
+relationship: RO:0002496 HsapDv:0000003
+
+[Term]
+id: EHDAA2:0000002
+name: human embryo
+namespace: human_developmental_anatomy
+is_a: AEO:0000169 ! embryo
+relationship: BFO:0000050 EHDAA2:0000001 ! human conceptus
+relationship: RO:0002496 HsapDv:0000007
+
+[Term]
+id: EHDAA2:0001330
+name: organ system group
+namespace: human_developmental_anatomy
+is_a: CARO:0000011
+relationship: BFO:0000050 EHDAA2:0000002 ! human embryo
+relationship: RO:0002496 HsapDv:0000034
+

@@ -1,0 +1,7714 @@
+format-version: 1.2
+data-version: uberon/releases/2021-03-03/imports/nbo_import.owl
+ontology: uberon/imports/nbo_import
+
+[Term]
+id: BFO:0000002
+name: continuant
+
+[Term]
+id: BFO:0000003
+name: occurrent
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000015
+name: process
+is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000019
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: BFO:0000020
+name: specifically dependent continuant
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: CARO:0000000
+name: anatomical entity
+is_a: CARO:0030000 ! biological entity
+
+[Term]
+id: CARO:0030000
+name: biological entity
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CHEBI:10545
+name: electron
+is_a: CHEBI:36338 ! lepton
+
+[Term]
+id: CHEBI:24431
+name: chemical entity
+
+[Term]
+id: CHEBI:24432
+name: biological role
+is_a: CHEBI:50906 ! role
+
+[Term]
+id: CHEBI:25585
+name: nonmetal atom
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:25805
+name: oxygen atom
+is_a: BFO:0000004 ! independent continuant
+is_a: CHEBI:25585 ! nonmetal atom
+is_a: CHEBI:33303 ! chalcogen
+
+[Term]
+id: CHEBI:33233
+name: fundamental particle
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:33250
+name: atom
+is_a: CHEBI:24431 ! chemical entity
+
+[Term]
+id: CHEBI:33252
+name: atomic nucleus
+is_a: CHEBI:36347 ! nuclear particle
+
+[Term]
+id: CHEBI:33253
+name: nucleon
+is_a: CHEBI:36339 ! baryon
+is_a: CHEBI:36347 ! nuclear particle
+
+[Term]
+id: CHEBI:33284
+name: nutrient
+is_a: CHEBI:78295 ! food component
+
+[Term]
+id: CHEBI:33290
+name: food
+is_a: CHEBI:52211 ! physiological role
+
+[Term]
+id: CHEBI:33303
+name: chalcogen
+is_a: CHEBI:33560 ! p-block element atom
+
+[Term]
+id: CHEBI:33318
+name: main group element atom
+is_a: CHEBI:33250 ! atom
+
+[Term]
+id: CHEBI:33560
+name: p-block element atom
+is_a: CHEBI:33318 ! main group element atom
+
+[Term]
+id: CHEBI:33937
+name: macronutrient
+is_a: CHEBI:33284 ! nutrient
+
+[Term]
+id: CHEBI:36338
+name: lepton
+is_a: CHEBI:33233 ! fundamental particle
+is_a: CHEBI:36340 ! fermion
+
+[Term]
+id: CHEBI:36339
+name: baryon
+is_a: CHEBI:36340 ! fermion
+is_a: CHEBI:36344 ! hadron
+
+[Term]
+id: CHEBI:36340
+name: fermion
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:36342
+name: subatomic particle
+
+[Term]
+id: CHEBI:36343
+name: composite particle
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:36344
+name: hadron
+is_a: CHEBI:36343 ! composite particle
+
+[Term]
+id: CHEBI:36347
+name: nuclear particle
+is_a: CHEBI:36342 ! subatomic particle
+
+[Term]
+id: CHEBI:50906
+name: role
+
+[Term]
+id: CHEBI:52211
+name: physiological role
+is_a: CHEBI:24432 ! biological role
+
+[Term]
+id: CHEBI:78295
+name: food component
+is_a: CHEBI:52211 ! physiological role
+
+[Term]
+id: GO:0000003
+name: reproduction
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0001101
+name: response to acid chemical
+is_a: GO:0042221 ! response to chemical
+
+[Term]
+id: GO:0003008
+name: system process
+is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0003014
+name: renal system process
+is_a: GO:0003008 ! system process
+
+[Term]
+id: GO:0006810
+name: transport
+is_a: GO:0051234 ! establishment of localization
+
+[Term]
+id: GO:0006950
+name: response to stress
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0007588
+name: excretion
+is_a: GO:0003008 ! system process
+
+[Term]
+id: GO:0007600
+name: sensory perception
+is_a: GO:0050877 ! nervous system process
+
+[Term]
+id: GO:0007601
+name: visual perception
+is_a: GO:0050953 ! sensory perception of light stimulus
+
+[Term]
+id: GO:0007605
+name: sensory perception of sound
+is_a: GO:0050954 ! sensory perception of mechanical stimulus
+
+[Term]
+id: GO:0007606
+name: sensory perception of chemical stimulus
+is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0007608
+name: sensory perception of smell
+is_a: GO:0007606 ! sensory perception of chemical stimulus
+
+[Term]
+id: GO:0007610
+name: behavior
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0007617
+name: mating behavior
+is_a: GO:0019098 ! reproductive behavior
+
+[Term]
+id: GO:0007618
+name: mating
+is_a: GO:0044703 ! multi-organism reproductive process
+
+[Term]
+id: GO:0007620
+name: copulation
+is_a: GO:0007618 ! mating
+
+[Term]
+id: GO:0007622
+name: rhythmic behavior
+is_a: GO:0007610 ! behavior
+is_a: GO:0048511 ! rhythmic process
+
+[Term]
+id: GO:0007623
+name: circadian rhythm
+is_a: GO:0048511 ! rhythmic process
+
+[Term]
+id: GO:0007625
+name: grooming behavior
+is_a: GO:0007610 ! behavior
+
+[Term]
+id: GO:0007626
+name: locomotory behavior
+is_a: GO:0007610 ! behavior
+
+[Term]
+id: GO:0007631
+name: feeding behavior
+is_a: GO:0007610 ! behavior
+
+[Term]
+id: GO:0008150
+name: biological_process
+is_a: BFO:0000015 ! process
+
+[Term]
+id: GO:0009266
+name: response to temperature stimulus
+is_a: GO:0009628 ! response to abiotic stimulus
+
+[Term]
+id: GO:0009414
+name: response to water deprivation
+is_a: GO:0006950 ! response to stress
+is_a: GO:0009415 ! response to water
+
+[Term]
+id: GO:0009415
+name: response to water
+is_a: GO:0001101 ! response to acid chemical
+is_a: GO:0009628 ! response to abiotic stimulus
+is_a: GO:0010035 ! response to inorganic substance
+is_a: GO:1901700 ! response to oxygen-containing compound
+
+[Term]
+id: GO:0009581
+name: detection of external stimulus
+is_a: GO:0009605 ! response to external stimulus
+is_a: GO:0051606 ! detection of stimulus
+
+[Term]
+id: GO:0009582
+name: detection of abiotic stimulus
+is_a: GO:0009628 ! response to abiotic stimulus
+is_a: GO:0051606 ! detection of stimulus
+
+[Term]
+id: GO:0009593
+name: detection of chemical stimulus
+is_a: GO:0051606 ! detection of stimulus
+
+[Term]
+id: GO:0009605
+name: response to external stimulus
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0009612
+name: response to mechanical stimulus
+is_a: GO:0009605 ! response to external stimulus
+is_a: GO:0009628 ! response to abiotic stimulus
+
+[Term]
+id: GO:0009628
+name: response to abiotic stimulus
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0010035
+name: response to inorganic substance
+is_a: GO:0042221 ! response to chemical
+
+[Term]
+id: GO:0016048
+name: detection of temperature stimulus
+is_a: GO:0009266 ! response to temperature stimulus
+is_a: GO:0009581 ! detection of external stimulus
+is_a: GO:0009582 ! detection of abiotic stimulus
+
+[Term]
+id: GO:0019098
+name: reproductive behavior
+is_a: GO:0007610 ! behavior
+is_a: GO:0048609 ! multicellular organismal reproductive process
+
+[Term]
+id: GO:0019233
+name: sensory perception of pain
+is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0019953
+name: sexual reproduction
+is_a: GO:0000003 ! reproduction
+is_a: GO:0044703 ! multi-organism reproductive process
+
+[Term]
+id: GO:0022410
+name: circadian sleep/wake cycle process
+is_a: GO:0048512 ! circadian behavior
+
+[Term]
+id: GO:0022414
+name: reproductive process
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0030421
+name: defecation
+is_a: GO:0007588 ! excretion
+
+[Term]
+id: GO:0030431
+name: sleep
+is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0031644
+name: regulation of nervous system process
+is_a: GO:0044057 ! regulation of system process
+
+[Term]
+id: GO:0031987
+name: locomotion involved in locomotory behavior
+is_a: GO:0040011 ! locomotion
+
+[Term]
+id: GO:0032101
+name: regulation of response to external stimulus
+is_a: GO:0048583 ! regulation of response to stimulus
+
+[Term]
+id: GO:0032501
+name: multicellular organismal process
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0032504
+name: multicellular organism reproduction
+is_a: GO:0000003 ! reproduction
+is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0032879
+name: regulation of localization
+is_a: GO:0050789 ! regulation of biological process
+
+[Term]
+id: GO:0040011
+name: locomotion
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0040012
+name: regulation of locomotion
+is_a: GO:0050789 ! regulation of biological process
+
+[Term]
+id: GO:0042221
+name: response to chemical
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0042745
+name: circadian sleep/wake cycle
+is_a: GO:0048512 ! circadian behavior
+
+[Term]
+id: GO:0042748
+name: circadian sleep/wake cycle, non-REM sleep
+is_a: GO:0022410 ! circadian sleep/wake cycle process
+
+[Term]
+id: GO:0042749
+name: regulation of circadian sleep/wake cycle
+is_a: GO:0042752 ! regulation of circadian rhythm
+is_a: GO:0050795 ! regulation of behavior
+is_a: GO:0051239 ! regulation of multicellular organismal process
+
+[Term]
+id: GO:0042752
+name: regulation of circadian rhythm
+is_a: GO:0050789 ! regulation of biological process
+
+[Term]
+id: GO:0043900
+name: regulation of multi-organism process
+is_a: GO:0050789 ! regulation of biological process
+
+[Term]
+id: GO:0044057
+name: regulation of system process
+is_a: GO:0051239 ! regulation of multicellular organismal process
+
+[Term]
+id: GO:0044062
+name: regulation of excretion
+is_a: GO:0044057 ! regulation of system process
+is_a: GO:0051046 ! regulation of secretion
+
+[Term]
+id: GO:0044703
+name: multi-organism reproductive process
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0051704 ! multi-organism process
+
+[Term]
+id: GO:0045187
+name: regulation of circadian sleep/wake cycle, sleep
+is_a: GO:0042749 ! regulation of circadian sleep/wake cycle
+
+[Term]
+id: GO:0045188
+name: regulation of circadian sleep/wake cycle, non-REM sleep
+is_a: GO:0045187 ! regulation of circadian sleep/wake cycle, sleep
+
+[Term]
+id: GO:0046903
+name: secretion
+is_a: GO:0006810 ! transport
+
+[Term]
+id: GO:0048511
+name: rhythmic process
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0048512
+name: circadian behavior
+is_a: GO:0007622 ! rhythmic behavior
+is_a: GO:0007623 ! circadian rhythm
+
+[Term]
+id: GO:0048583
+name: regulation of response to stimulus
+is_a: GO:0050789 ! regulation of biological process
+
+[Term]
+id: GO:0048609
+name: multicellular organismal reproductive process
+is_a: GO:0022414 ! reproductive process
+
+[Term]
+id: GO:0050789
+name: regulation of biological process
+is_a: GO:0065007 ! biological regulation
+
+[Term]
+id: GO:0050795
+name: regulation of behavior
+is_a: GO:0048583 ! regulation of response to stimulus
+
+[Term]
+id: GO:0050802
+name: circadian sleep/wake cycle, sleep
+is_a: GO:0022410 ! circadian sleep/wake cycle process
+is_a: GO:0030431 ! sleep
+
+[Term]
+id: GO:0050877
+name: nervous system process
+is_a: GO:0003008 ! system process
+
+[Term]
+id: GO:0050885
+name: neuromuscular process controlling balance
+is_a: GO:0050905 ! neuromuscular process
+
+[Term]
+id: GO:0050896
+name: response to stimulus
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0050905
+name: neuromuscular process
+is_a: GO:0050877 ! nervous system process
+
+[Term]
+id: GO:0050906
+name: detection of stimulus involved in sensory perception
+is_a: GO:0051606 ! detection of stimulus
+
+[Term]
+id: GO:0050907
+name: detection of chemical stimulus involved in sensory perception
+is_a: GO:0009593 ! detection of chemical stimulus
+is_a: GO:0050906 ! detection of stimulus involved in sensory perception
+
+[Term]
+id: GO:0050909
+name: sensory perception of taste
+is_a: GO:0007606 ! sensory perception of chemical stimulus
+
+[Term]
+id: GO:0050910
+name: detection of mechanical stimulus involved in sensory perception of sound
+is_a: GO:0050877 ! nervous system process
+is_a: GO:0050974 ! detection of mechanical stimulus involved in sensory perception
+
+[Term]
+id: GO:0050911
+name: detection of chemical stimulus involved in sensory perception of smell
+is_a: GO:0050907 ! detection of chemical stimulus involved in sensory perception
+
+[Term]
+id: GO:0050912
+name: detection of chemical stimulus involved in sensory perception of taste
+is_a: GO:0050907 ! detection of chemical stimulus involved in sensory perception
+
+[Term]
+id: GO:0050951
+name: sensory perception of temperature stimulus
+is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0050953
+name: sensory perception of light stimulus
+is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0050954
+name: sensory perception of mechanical stimulus
+is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0050957
+name: equilibrioception
+is_a: GO:0007600 ! sensory perception
+
+[Term]
+id: GO:0050961
+name: detection of temperature stimulus involved in sensory perception
+is_a: GO:0016048 ! detection of temperature stimulus
+is_a: GO:0050906 ! detection of stimulus involved in sensory perception
+
+[Term]
+id: GO:0050965
+name: detection of temperature stimulus involved in sensory perception of pain
+is_a: GO:0050961 ! detection of temperature stimulus involved in sensory perception
+is_a: GO:0062149 ! detection of stimulus involved in sensory perception of pain
+
+[Term]
+id: GO:0050966
+name: detection of mechanical stimulus involved in sensory perception of pain
+is_a: GO:0050974 ! detection of mechanical stimulus involved in sensory perception
+is_a: GO:0062149 ! detection of stimulus involved in sensory perception of pain
+
+[Term]
+id: GO:0050968
+name: detection of chemical stimulus involved in sensory perception of pain
+is_a: GO:0050907 ! detection of chemical stimulus involved in sensory perception
+is_a: GO:0062149 ! detection of stimulus involved in sensory perception of pain
+
+[Term]
+id: GO:0050973
+name: detection of mechanical stimulus involved in equilibrioception
+is_a: GO:0050974 ! detection of mechanical stimulus involved in sensory perception
+
+[Term]
+id: GO:0050974
+name: detection of mechanical stimulus involved in sensory perception
+is_a: GO:0050906 ! detection of stimulus involved in sensory perception
+is_a: GO:0050982 ! detection of mechanical stimulus
+
+[Term]
+id: GO:0050975
+name: sensory perception of touch
+is_a: GO:0050954 ! sensory perception of mechanical stimulus
+
+[Term]
+id: GO:0050976
+name: detection of mechanical stimulus involved in sensory perception of touch
+is_a: GO:0050974 ! detection of mechanical stimulus involved in sensory perception
+
+[Term]
+id: GO:0050982
+name: detection of mechanical stimulus
+is_a: GO:0009581 ! detection of external stimulus
+is_a: GO:0009582 ! detection of abiotic stimulus
+is_a: GO:0009612 ! response to mechanical stimulus
+
+[Term]
+id: GO:0051046
+name: regulation of secretion
+is_a: GO:0051049 ! regulation of transport
+
+[Term]
+id: GO:0051049
+name: regulation of transport
+is_a: GO:0032879 ! regulation of localization
+
+[Term]
+id: GO:0051179
+name: localization
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0051234
+name: establishment of localization
+is_a: GO:0051179 ! localization
+
+[Term]
+id: GO:0051239
+name: regulation of multicellular organismal process
+is_a: GO:0050789 ! regulation of biological process
+
+[Term]
+id: GO:0051356
+name: visual perception involved in equilibrioception
+is_a: GO:0007601 ! visual perception
+
+[Term]
+id: GO:0051606
+name: detection of stimulus
+is_a: GO:0050896 ! response to stimulus
+
+[Term]
+id: GO:0051704
+name: multi-organism process
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0051930
+name: regulation of sensory perception of pain
+is_a: GO:0051931 ! regulation of sensory perception
+
+[Term]
+id: GO:0051931
+name: regulation of sensory perception
+is_a: GO:0031644 ! regulation of nervous system process
+
+[Term]
+id: GO:0060004
+name: reflex
+is_a: GO:0009605 ! response to external stimulus
+
+[Term]
+id: GO:0060073
+name: micturition
+is_a: GO:0003014 ! renal system process
+is_a: GO:0007588 ! excretion
+
+[Term]
+id: GO:0060259
+name: regulation of feeding behavior
+is_a: GO:0050795 ! regulation of behavior
+
+[Term]
+id: GO:0062149
+name: detection of stimulus involved in sensory perception of pain
+is_a: GO:0050906 ! detection of stimulus involved in sensory perception
+
+[Term]
+id: GO:0065007
+name: biological regulation
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0065008
+name: regulation of biological quality
+is_a: GO:0065007 ! biological regulation
+
+[Term]
+id: GO:0080134
+name: regulation of response to stress
+is_a: GO:0048583 ! regulation of response to stimulus
+
+[Term]
+id: GO:0090325
+name: regulation of locomotion involved in locomotory behavior
+is_a: GO:0040012 ! regulation of locomotion
+is_a: GO:0050795 ! regulation of behavior
+
+[Term]
+id: GO:0098801
+name: regulation of renal system process
+is_a: GO:0044057 ! regulation of system process
+
+[Term]
+id: GO:1901700
+name: response to oxygen-containing compound
+is_a: GO:0042221 ! response to chemical
+
+[Term]
+id: GO:1905787
+name: regulation of detection of mechanical stimulus involved in sensory perception of touch
+is_a: GO:0032101 ! regulation of response to external stimulus
+is_a: GO:0051931 ! regulation of sensory perception
+
+[Term]
+id: GO:2000070
+name: regulation of response to water deprivation
+is_a: GO:0080134 ! regulation of response to stress
+
+[Term]
+id: GO:2000241
+name: regulation of reproductive process
+is_a: GO:0050789 ! regulation of biological process
+
+[Term]
+id: GO:2000292
+name: regulation of defecation
+is_a: GO:0044062 ! regulation of excretion
+
+[Term]
+id: GO:2000821
+name: regulation of grooming behavior
+is_a: GO:0050795 ! regulation of behavior
+
+[Term]
+id: NBO:0000001
+name: body part movement
+is_a: NBO:0000338 ! kinesthetic behavior
+
+[Term]
+id: NBO:0000007
+name: mouth movement
+is_a: NBO:0000001 ! body part movement
+
+[Term]
+id: NBO:0000027
+name: grooming behavior
+is_a: NBO:0000313 ! behavior process
+
+[Term]
+id: NBO:0000063
+name: regulation of eating behavior
+is_a: NBO:0002436 ! regulation of feeding behavior
+
+[Term]
+id: NBO:0000064
+name: regulation of drinking behavior
+is_a: NBO:0002436 ! regulation of feeding behavior
+
+[Term]
+id: NBO:0000073
+name: chewing
+is_a: NBO:0000747 ! jaw movement
+
+[Term]
+id: NBO:0000079
+name: feeding behavior
+is_a: NBO:0001845 ! consumption behavior
+
+[Term]
+id: NBO:0000130
+name: liquid consumption
+is_a: NBO:0000079 ! feeding behavior
+
+[Term]
+id: NBO:0000134
+name: food consumption
+is_a: NBO:0000079 ! feeding behavior
+
+[Term]
+id: NBO:0000308
+name: sensation behavior
+is_a: NBO:0000607 ! cognitive behavior
+
+[Term]
+id: NBO:0000313
+name: behavior process
+is_a: GO:0007610 ! behavior
+
+[Term]
+id: NBO:0000317
+name: vestibular behavior
+is_a: NBO:0000327 ! somatic sensation related behavior
+
+[Term]
+id: NBO:0000327
+name: somatic sensation related behavior
+is_a: NBO:0000751 ! perception behavior by means
+
+[Term]
+id: NBO:0000338
+name: kinesthetic behavior
+is_a: NBO:0000313 ! behavior process
+
+[Term]
+id: NBO:0000339
+name: motor coordination
+is_a: NBO:0000317 ! vestibular behavior
+
+[Term]
+id: NBO:0000342
+name: limb coordination
+is_a: NBO:0000347 ! gross motor coordination
+
+[Term]
+id: NBO:0000347
+name: gross motor coordination
+is_a: NBO:0000339 ! motor coordination
+
+[Term]
+id: NBO:0000355
+name: posture
+is_a: NBO:0000317 ! vestibular behavior
+
+[Term]
+id: NBO:0000356
+name: body posture
+is_a: NBO:0000355 ! posture
+
+[Term]
+id: NBO:0000357
+name: limb posture
+is_a: NBO:0000355 ! posture
+
+[Term]
+id: NBO:0000361
+name: gait
+is_a: NBO:0000342 ! limb coordination
+
+[Term]
+id: NBO:0000388
+name: involuntary movement behavior
+is_a: NBO:0000001 ! body part movement
+
+[Term]
+id: NBO:0000389
+name: reflexive behavior
+is_a: NBO:0000388 ! involuntary movement behavior
+
+[Term]
+id: NBO:0000411
+name: cranial nerve related reflex
+is_a: NBO:0000389 ! reflexive behavior
+
+[Term]
+id: NBO:0000412
+name: pupillary light reflex
+is_a: NBO:0000411 ! cranial nerve related reflex
+
+[Term]
+id: NBO:0000445
+name: tail movement
+is_a: NBO:0000001 ! body part movement
+
+[Term]
+id: NBO:0000451
+name: personal grooming
+is_a: NBO:0000027 ! grooming behavior
+
+[Term]
+id: NBO:0000545
+name: swallowing
+is_a: NBO:0000079 ! feeding behavior
+
+[Term]
+id: NBO:0000607
+name: cognitive behavior
+is_a: NBO:0000313 ! behavior process
+
+[Term]
+id: NBO:0000747
+name: jaw movement
+is_a: NBO:0000007 ! mouth movement
+
+[Term]
+id: NBO:0000751
+name: perception behavior by means
+is_a: NBO:0000308 ! sensation behavior
+
+[Term]
+id: NBO:0001786
+name: regulation of behavior
+is_a: NBO:0000313 ! behavior process
+
+[Term]
+id: NBO:0001845
+name: consumption behavior
+is_a: NBO:0000313 ! behavior process
+
+[Term]
+id: NBO:0002169
+name: regulation of consumption behavior
+is_a: NBO:0001786 ! regulation of behavior
+
+[Term]
+id: NBO:0002436
+name: regulation of feeding behavior
+is_a: NBO:0002169 ! regulation of consumption behavior
+
+[Term]
+id: PATO:0000001
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: PATO:0000051
+name: morphology
+is_a: BFO:0000019 ! quality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000052
+name: shape
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0001018
+name: physical quality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0001548
+name: quality of a liquid
+is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0002198
+name: quality of a substance
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: UBERON:0000000
+name: processual entity
+
+[Term]
+id: UBERON:0000009
+name: submucosa
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0000010
+name: peripheral nervous system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0011216 ! organ system subdivision
+
+[Term]
+id: UBERON:0000014
+name: zone of skin
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0034944 ! zone of organ
+
+[Term]
+id: UBERON:0000015
+name: non-material anatomical boundary
+is_a: UBERON:0000466 ! immaterial anatomical entity
+
+[Term]
+id: UBERON:0000019
+name: camera-type eye
+is_a: UBERON:0000047 ! simple eye
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0000020
+name: sense organ
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0000025
+name: tube
+is_a: UBERON:0004111 ! anatomical conduit
+
+[Term]
+id: UBERON:0000026
+name: appendage
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0000030
+name: lamina propria
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0000033
+name: head
+is_a: UBERON:0011676 ! subdivision of organism along main body axis
+
+[Term]
+id: UBERON:0000042
+name: serous membrane
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0000047
+name: simple eye
+is_a: UBERON:0000970 ! eye
+
+[Term]
+id: UBERON:0000055
+name: vessel
+is_a: UBERON:0004111 ! anatomical conduit
+
+[Term]
+id: UBERON:0000056
+name: ureter
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005179 ! pelvic region element
+is_a: UBERON:0006555 ! excretory tube
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0000057
+name: urethra
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0000058
+name: duct
+is_a: UBERON:0000063 ! organ subunit
+
+[Term]
+id: UBERON:0000059
+name: large intestine
+is_a: UBERON:0004921 ! subdivision of digestive tract
+is_a: UBERON:0013765 ! digestive system element
+
+[Term]
+id: UBERON:0000060
+name: anatomical wall
+is_a: UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0000061
+name: anatomical structure
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000062
+name: organ
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000063
+name: organ subunit
+is_a: UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0000064
+name: organ part
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000066
+name: fully formed stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000068
+name: embryo stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000071
+name: death stage
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000073
+name: regional part of nervous system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000481 ! multi-tissue structure
+
+[Term]
+id: UBERON:0000075
+name: subdivision of skeletal system
+is_a: UBERON:0011216 ! organ system subdivision
+
+[Term]
+id: UBERON:0000076
+name: external ectoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0000077
+name: mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0000078
+name: mixed ectoderm/mesoderm/endoderm-derived structure
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0000080
+name: mesonephros
+is_a: UBERON:0002113 ! kidney
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0000081
+name: metanephros
+is_a: UBERON:0002113 ! kidney
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0000083
+name: mesonephric tubule
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0005103 ! mesonephric epithelium
+is_a: UBERON:0006555 ! excretory tube
+
+[Term]
+id: UBERON:0000084
+name: ureteric bud
+is_a: UBERON:0000083 ! mesonephric tubule
+is_a: UBERON:0007499 ! epithelial sac
+is_a: UBERON:0034969 ! epithelial layer of duct
+
+[Term]
+id: UBERON:0000092
+name: post-embryonic stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000094
+name: membrane organ
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0000104
+name: life cycle
+is_a: UBERON:0000000 ! processual entity
+
+[Term]
+id: UBERON:0000105
+name: life cycle stage
+is_a: UBERON:0000000 ! processual entity
+
+[Term]
+id: UBERON:0000106
+name: zygote stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000107
+name: cleavage stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000108
+name: blastula stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000109
+name: gastrula stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000110
+name: neurula stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000111
+name: organogenesis stage
+is_a: BFO:0000003 ! occurrent
+is_a: UBERON:0000105 ! life cycle stage
+
+[Term]
+id: UBERON:0000153
+name: anterior region of body
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0000154
+name: posterior region of body
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0000158
+name: membranous layer
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0000159
+name: anal canal
+is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0000160
+name: intestine
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0000161
+name: orifice
+is_a: UBERON:0004111 ! anatomical conduit
+
+[Term]
+id: UBERON:0000162
+name: cloaca
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0013522 ! subdivision of tube
+
+[Term]
+id: UBERON:0000163
+name: embryonic cloaca
+is_a: UBERON:0000162 ! cloaca
+
+[Term]
+id: UBERON:0000164
+name: primitive urogenital sinus
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0000165
+name: mouth
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0000166
+name: oral opening
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000161 ! orifice
+
+[Term]
+id: UBERON:0000167
+name: oral cavity
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002553 ! anatomical cavity
+
+[Term]
+id: UBERON:0000168
+name: proximal-distal subdivision of colon
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0000174
+name: excreta
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0000178
+name: blood
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000179 ! haemolymphatic fluid
+
+[Term]
+id: UBERON:0000179
+name: haemolymphatic fluid
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0000307
+name: blastula
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:0000309
+name: body wall
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0000317
+name: colonic mucosa
+is_a: UBERON:0001207 ! mucosa of large intestine
+
+[Term]
+id: UBERON:0000328
+name: gut wall
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000060 ! anatomical wall
+
+[Term]
+id: UBERON:0000333
+name: intestinal gland
+is_a: UBERON:0003408 ! gland of digestive tract
+
+[Term]
+id: UBERON:0000344
+name: mucosa
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0000355
+name: pharyngeal mucosa
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0004785 ! respiratory system mucosa
+
+[Term]
+id: UBERON:0000383
+name: musculature of body
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0011216 ! organ system subdivision
+
+[Term]
+id: UBERON:0000389
+name: lens cortex
+is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0000390
+name: lens nucleus
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0034944 ! zone of organ
+
+[Term]
+id: UBERON:0000397
+name: colonic epithelium
+is_a: UBERON:0001278 ! epithelium of large intestine
+
+[Term]
+id: UBERON:0000409
+name: serous gland
+is_a: UBERON:0002365 ! exocrine gland
+
+[Term]
+id: UBERON:0000414
+name: mucous gland
+is_a: UBERON:0002365 ! exocrine gland
+
+[Term]
+id: UBERON:0000415
+name: artery wall
+is_a: UBERON:0035965 ! wall of blood vessel
+
+[Term]
+id: UBERON:0000456
+name: secretion of exocrine gland
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0000463
+name: organism substance
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000464
+name: anatomical space
+is_a: UBERON:0000466 ! immaterial anatomical entity
+
+[Term]
+id: UBERON:0000465
+name: material anatomical entity
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000466
+name: immaterial anatomical entity
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000467
+name: anatomical system
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0000468
+name: multicellular organism
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000475
+name: organism subdivision
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000476
+name: acellular anatomical structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0000477
+name: anatomical cluster
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0000478
+name: extraembryonic structure
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0000479
+name: tissue
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000481
+name: multi-tissue structure
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000483
+name: epithelium
+is_a: UBERON:0000479 ! tissue
+union_of: UBERON:0000486 ! multilaminar epithelium
+union_of: UBERON:0000490 ! unilaminar epithelium
+
+[Term]
+id: UBERON:0000484
+name: simple cuboidal epithelium
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0010077 ! cuboidal epithelium
+
+[Term]
+id: UBERON:0000485
+name: simple columnar epithelium
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0012274 ! columnar epithelium
+
+[Term]
+id: UBERON:0000486
+name: multilaminar epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0000487
+name: simple squamous epithelium
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0006914 ! squamous epithelium
+
+[Term]
+id: UBERON:0000488
+name: atypical epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0000489
+name: cavitated compound organ
+is_a: UBERON:0003103 ! compound organ
+
+[Term]
+id: UBERON:0000490
+name: unilaminar epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0000912
+name: mucus
+is_a: UBERON:0000456 ! secretion of exocrine gland
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0000915
+name: thoracic segment of trunk
+is_a: UBERON:0009569 ! subdivision of trunk
+is_a: UBERON:0011676 ! subdivision of organism along main body axis
+
+[Term]
+id: UBERON:0000916
+name: abdomen
+is_a: UBERON:0009569 ! subdivision of trunk
+
+[Term]
+id: UBERON:0000922
+name: embryo
+is_a: UBERON:0000468 ! multicellular organism
+
+[Term]
+id: UBERON:0000923
+name: germ layer
+is_a: UBERON:0010316 ! germ layer / neural crest
+
+[Term]
+id: UBERON:0000924
+name: ectoderm
+is_a: UBERON:0000923 ! germ layer
+
+[Term]
+id: UBERON:0000925
+name: endoderm
+is_a: UBERON:0000923 ! germ layer
+
+[Term]
+id: UBERON:0000926
+name: mesoderm
+is_a: UBERON:0000923 ! germ layer
+
+[Term]
+id: UBERON:0000930
+name: stomodeum
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0013522 ! subdivision of tube
+
+[Term]
+id: UBERON:0000931
+name: proctodeum
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0016566 ! pit
+
+[Term]
+id: UBERON:0000948
+name: heart
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005181 ! thoracic segment organ
+is_a: UBERON:0007100 ! primary circulatory organ
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0000955
+name: brain
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0000964
+name: cornea
+is_a: UBERON:0003102 ! surface structure
+is_a: UBERON:0010000 ! multicellular anatomical structure
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0000965
+name: lens of camera-type eye
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005389 ! transparent eye structure
+
+[Term]
+id: UBERON:0000966
+name: retina
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005388 ! photoreceptor array
+
+[Term]
+id: UBERON:0000970
+name: eye
+is_a: UBERON:0000020 ! sense organ
+
+[Term]
+id: UBERON:0000974
+name: neck
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0000982
+name: skeletal joint
+is_a: UBERON:0004905 ! articulation
+union_of: UBERON:0002217 ! synovial joint
+union_of: UBERON:0011134 ! nonsynovial joint
+
+[Term]
+id: UBERON:0000990
+name: reproductive system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0000991
+name: gonad
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003133 ! reproductive organ
+
+[Term]
+id: UBERON:0001003
+name: skin epidermis
+is_a: UBERON:0007376 ! outer epithelium
+is_a: UBERON:3000961 ! external integument structure
+
+[Term]
+id: UBERON:0001004
+name: respiratory system
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0001007
+name: digestive system
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0001008
+name: renal system
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0001009
+name: circulatory system
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0001013
+name: adipose tissue
+is_a: UBERON:0011822 ! dense irregular connective tissue
+
+[Term]
+id: UBERON:0001015
+name: musculature
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0011216 ! organ system subdivision
+
+[Term]
+id: UBERON:0001016
+name: nervous system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0001017
+name: central nervous system
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0011216 ! organ system subdivision
+
+[Term]
+id: UBERON:0001032
+name: sensory system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0001041
+name: foregut
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0001042
+name: chordate pharynx
+is_a: UBERON:0006562 ! pharynx
+
+[Term]
+id: UBERON:0001045
+name: midgut
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0001046
+name: hindgut
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0001048
+name: primordium
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0001049
+name: neural tube
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0016879 ! future central nervous system
+
+[Term]
+id: UBERON:0001052
+name: rectum
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0001062
+name: anatomical entity
+
+[Term]
+id: UBERON:0001068
+name: skin of back
+is_a: UBERON:0001085 ! skin of trunk
+
+[Term]
+id: UBERON:0001071
+name: superficial cervical artery
+is_a: UBERON:0012320 ! cervical artery
+
+[Term]
+id: UBERON:0001072
+name: posterior vena cava
+is_a: UBERON:0004087 ! vena cava
+
+[Term]
+id: UBERON:0001074
+name: pericardial cavity
+is_a: UBERON:0002323 ! coelemic cavity lumen
+is_a: UBERON:0035809 ! serous cavity
+
+[Term]
+id: UBERON:0001081
+name: endocardium of ventricle
+is_a: UBERON:0000487 ! simple squamous epithelium
+is_a: UBERON:0002165 ! endocardium
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0001082
+name: epicardium of ventricle
+is_a: UBERON:0002348 ! epicardium
+
+[Term]
+id: UBERON:0001083
+name: myocardium of ventricle
+is_a: UBERON:0002349 ! myocardium
+
+[Term]
+id: UBERON:0001084
+name: skin of head
+is_a: UBERON:0012180 ! head or neck skin
+
+[Term]
+id: UBERON:0001085
+name: skin of trunk
+is_a: UBERON:0000014 ! zone of skin
+
+[Term]
+id: UBERON:0001088
+name: urine
+is_a: UBERON:0000174 ! excreta
+
+[Term]
+id: UBERON:0001090
+name: synovial fluid
+is_a: UBERON:0007779 ! transudate
+is_a: UBERON:0007794 ! secretion of serous gland
+
+[Term]
+id: UBERON:0001133
+name: cardiac muscle tissue
+is_a: UBERON:0002036 ! striated muscle tissue
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0001135
+name: smooth muscle tissue
+is_a: UBERON:0002385 ! muscle tissue
+
+[Term]
+id: UBERON:0001136
+name: mesothelium
+is_a: UBERON:0000487 ! simple squamous epithelium
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0001137
+name: dorsum
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0001140
+name: renal vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0001155
+name: colon
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0001159
+name: sigmoid colon
+is_a: UBERON:0000168 ! proximal-distal subdivision of colon
+
+[Term]
+id: UBERON:0001169
+name: wall of large intestine
+is_a: UBERON:0001262 ! wall of intestine
+
+[Term]
+id: UBERON:0001207
+name: mucosa of large intestine
+is_a: UBERON:0001242 ! intestinal mucosa
+
+[Term]
+id: UBERON:0001208
+name: submucosa of large intestine
+is_a: UBERON:0009566 ! intestinal submucosa
+
+[Term]
+id: UBERON:0001209
+name: serosa of large intestine
+is_a: UBERON:0001243 ! serosa of intestine
+
+[Term]
+id: UBERON:0001215
+name: inferior mesenteric vein
+is_a: UBERON:0005617 ! mesenteric vein
+
+[Term]
+id: UBERON:0001224
+name: renal pelvis
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004111 ! anatomical conduit
+
+[Term]
+id: UBERON:0001242
+name: intestinal mucosa
+is_a: UBERON:0004786 ! gastrointestinal system mucosa
+
+[Term]
+id: UBERON:0001243
+name: serosa of intestine
+is_a: UBERON:0004782 ! gastrointestinal system serosa
+
+[Term]
+id: UBERON:0001245
+name: anus
+is_a: UBERON:0000161 ! orifice
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0001252
+name: adventitia of ureter
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005742 ! adventitia
+
+[Term]
+id: UBERON:0001253
+name: lamina propria of ureter
+is_a: UBERON:0000030 ! lamina propria
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0001255
+name: urinary bladder
+is_a: UBERON:0002075 ! viscus
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0018707 ! bladder organ
+
+[Term]
+id: UBERON:0001256
+name: wall of urinary bladder
+is_a: UBERON:0000060 ! anatomical wall
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0001259
+name: mucosa of urinary bladder
+is_a: UBERON:0000344 ! mucosa
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0001260
+name: serosa of urinary bladder
+is_a: UBERON:0000042 ! serous membrane
+
+[Term]
+id: UBERON:0001261
+name: lamina propria of urinary bladder
+is_a: UBERON:0000030 ! lamina propria
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0001262
+name: wall of intestine
+is_a: UBERON:0000328 ! gut wall
+
+[Term]
+id: UBERON:0001271
+name: pelvic girdle region
+is_a: UBERON:0007823 ! appendage girdle region
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0001277
+name: intestinal epithelium
+is_a: UBERON:0000485 ! simple columnar epithelium
+is_a: UBERON:0003350 ! epithelium of mucosa
+is_a: UBERON:0003929 ! digestive tract epithelium
+is_a: UBERON:0004808 ! gastrointestinal system epithelium
+
+[Term]
+id: UBERON:0001278
+name: epithelium of large intestine
+is_a: UBERON:0001277 ! intestinal epithelium
+
+[Term]
+id: UBERON:0001317
+name: internal iliac vein
+is_a: UBERON:0005610 ! iliac vein
+
+[Term]
+id: UBERON:0001338
+name: urethral gland
+is_a: UBERON:0000414 ! mucous gland
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0001353
+name: anal region
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0001415
+name: skin of pelvis
+is_a: UBERON:0003836 ! abdominal segment skin
+
+[Term]
+id: UBERON:0001416
+name: skin of abdomen
+is_a: UBERON:0003836 ! abdominal segment skin
+
+[Term]
+id: UBERON:0001417
+name: skin of neck
+is_a: UBERON:0012180 ! head or neck skin
+
+[Term]
+id: UBERON:0001418
+name: skin of thorax
+is_a: UBERON:0001085 ! skin of trunk
+
+[Term]
+id: UBERON:0001419
+name: skin of limb
+is_a: UBERON:0000014 ! zone of skin
+
+[Term]
+id: UBERON:0001421
+name: pectoral girdle region
+is_a: UBERON:0007823 ! appendage girdle region
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0001434
+name: skeletal system
+is_a: UBERON:0011216 ! organ system subdivision
+
+[Term]
+id: UBERON:0001440
+name: forelimb skeleton
+is_a: UBERON:0004381 ! skeleton of limb
+is_a: UBERON:0007272 ! pectoral appendage skeleton
+
+[Term]
+id: UBERON:0001441
+name: hindlimb skeleton
+is_a: UBERON:0004381 ! skeleton of limb
+is_a: UBERON:0007273 ! pelvic appendage skeleton
+
+[Term]
+id: UBERON:0001444
+name: subdivision of head
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0001456
+name: face
+is_a: UBERON:0001444 ! subdivision of head
+
+[Term]
+id: UBERON:0001458
+name: skin of lip
+is_a: UBERON:0001084 ! skin of head
+
+[Term]
+id: UBERON:0001474
+name: bone element
+is_a: UBERON:0004765 ! skeletal element
+
+[Term]
+id: UBERON:0001484
+name: articular capsule
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000094 ! membrane organ
+
+[Term]
+id: UBERON:0001555
+name: digestive tract
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000025 ! tube
+
+[Term]
+id: UBERON:0001556
+name: lower urinary tract
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0001585
+name: anterior vena cava
+is_a: UBERON:0004087 ! vena cava
+
+[Term]
+id: UBERON:0001586
+name: internal jugular vein
+is_a: UBERON:0004711 ! jugular vein
+
+[Term]
+id: UBERON:0001605
+name: ciliary muscle
+is_a: UBERON:0003386 ! smooth muscle of eye
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0011222 ! intra-ocular muscle
+
+[Term]
+id: UBERON:0001606
+name: muscle of iris
+is_a: UBERON:0011222 ! intra-ocular muscle
+
+[Term]
+id: UBERON:0001630
+name: muscle organ
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0005090 ! muscle structure
+
+[Term]
+id: UBERON:0001637
+name: artery
+is_a: UBERON:0003509 ! arterial blood vessel
+
+[Term]
+id: UBERON:0001638
+name: vein
+is_a: UBERON:0003920 ! venous blood vessel
+
+[Term]
+id: UBERON:0001653
+name: facial vein
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0003502 ! neck blood vessel
+is_a: UBERON:0009141 ! craniocervical region vein
+
+[Term]
+id: UBERON:0001676
+name: occipital bone
+is_a: UBERON:0010428 ! flat bone
+is_a: UBERON:0011164 ! neurocranium bone
+
+[Term]
+id: UBERON:0001703
+name: neurocranium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0011158 ! primary subdivision of skull
+
+[Term]
+id: UBERON:0001708
+name: jaw skeleton
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0001710
+name: lower jaw region
+is_a: UBERON:0000475 ! organism subdivision
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0001731
+name: cavity of pharynx
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0001750
+name: lacrimal apparatus
+is_a: UBERON:0000467 ! anatomical system
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0001766
+name: anterior chamber of eyeball
+is_a: UBERON:0006311 ! chamber of eyeball
+
+[Term]
+id: UBERON:0001768
+name: uvea
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0001769
+name: iris
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0001772
+name: corneal epithelium
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0001773
+name: sclera
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0001775
+name: ciliary body
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0001776
+name: optic choroid
+is_a: UBERON:0002203 ! vasculature of eye
+
+[Term]
+id: UBERON:0001778
+name: ciliary epithelium
+is_a: UBERON:0000488 ! atypical epithelium
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0001781
+name: layer of retina
+is_a: UBERON:0022303 ! nervous system cell part layer
+
+[Term]
+id: UBERON:0001796
+name: aqueous humor of eyeball
+is_a: UBERON:0006312 ! ocular refractive media
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0001801
+name: anterior segment of eyeball
+is_a: UBERON:0000063 ! organ subunit
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0001802
+name: posterior segment of eyeball
+is_a: UBERON:0000063 ! organ subunit
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0001803
+name: epithelium of lens
+is_a: UBERON:0000484 ! simple cuboidal epithelium
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0001804
+name: capsule of lens
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005764 ! acellular membrane
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0001817
+name: lacrimal gland
+is_a: UBERON:0002365 ! exocrine gland
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004859 ! eye gland
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0015154 ! lateral gland of orbital region
+
+[Term]
+id: UBERON:0001827
+name: secretion of lacrimal gland
+is_a: UBERON:0000456 ! secretion of exocrine gland
+
+[Term]
+id: UBERON:0001833
+name: lip
+is_a: UBERON:0003102 ! surface structure
+
+[Term]
+id: UBERON:0001835
+name: lower lip
+is_a: UBERON:0001833 ! lip
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0001891
+name: midbrain
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0001892
+name: rhombomere
+is_a: UBERON:0004731 ! neuromere
+
+[Term]
+id: UBERON:0001896
+name: medulla oblongata
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0001915
+name: endothelium of capillary
+is_a: UBERON:0004638 ! blood vessel endothelium
+
+[Term]
+id: UBERON:0001916
+name: endothelium of arteriole
+is_a: UBERON:0004638 ! blood vessel endothelium
+is_a: UBERON:0004700 ! arterial system endothelium
+
+[Term]
+id: UBERON:0001917
+name: endothelium of artery
+is_a: UBERON:0003915 ! endothelial tube
+is_a: UBERON:0004638 ! blood vessel endothelium
+is_a: UBERON:0004700 ! arterial system endothelium
+
+[Term]
+id: UBERON:0001918
+name: endothelium of venule
+is_a: UBERON:0004638 ! blood vessel endothelium
+is_a: UBERON:0004701 ! venous system endothelium
+
+[Term]
+id: UBERON:0001919
+name: endothelium of vein
+is_a: UBERON:0004638 ! blood vessel endothelium
+is_a: UBERON:0004701 ! venous system endothelium
+
+[Term]
+id: UBERON:0001943
+name: midbrain tegmentum
+is_a: UBERON:0002616 ! regional part of brain
+
+[Term]
+id: UBERON:0001948
+name: regional part of spinal cord
+is_a: UBERON:0000073 ! regional part of nervous system
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0001969
+name: blood plasma
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000179 ! haemolymphatic fluid
+
+[Term]
+id: UBERON:0001979
+name: venule
+is_a: UBERON:0003920 ! venous blood vessel
+
+[Term]
+id: UBERON:0001980
+name: arteriole
+is_a: UBERON:0003509 ! arterial blood vessel
+
+[Term]
+id: UBERON:0001981
+name: blood vessel
+is_a: UBERON:0000055 ! vessel
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0001982
+name: capillary
+is_a: UBERON:0001981 ! blood vessel
+is_a: UBERON:0010523 ! microcirculatory vessel
+
+[Term]
+id: UBERON:0001985
+name: corneal endothelium
+is_a: UBERON:0001986 ! endothelium
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0001986
+name: endothelium
+is_a: UBERON:0000487 ! simple squamous epithelium
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0001988
+name: feces
+is_a: UBERON:0000174 ! excreta
+
+[Term]
+id: UBERON:0002015
+name: kidney capsule
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003567 ! abdomen connective tissue
+is_a: UBERON:0011824 ! fibrous connective tissue
+
+[Term]
+id: UBERON:0002020
+name: gray matter
+is_a: UBERON:0011215 ! central nervous system cell part cluster
+
+[Term]
+id: UBERON:0002028
+name: hindbrain
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0002036
+name: striated muscle tissue
+is_a: UBERON:0002385 ! muscle tissue
+
+[Term]
+id: UBERON:0002049
+name: vasculature
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0002050
+name: embryonic structure
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0002067
+name: dermis
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0013754 ! integumentary system layer
+
+[Term]
+id: UBERON:0002072
+name: hypodermis
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0013754 ! integumentary system layer
+
+[Term]
+id: UBERON:0002075
+name: viscus
+is_a: UBERON:0005177 ! trunk region element
+
+[Term]
+id: UBERON:0002081
+name: cardiac atrium
+is_a: UBERON:0004151 ! cardiac chamber
+
+[Term]
+id: UBERON:0002082
+name: cardiac ventricle
+is_a: UBERON:0004151 ! cardiac chamber
+
+[Term]
+id: UBERON:0002090
+name: postcranial axial skeleton
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0002091
+name: appendicular skeleton
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0002097
+name: skin of body
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0002099
+name: cardiac septum
+is_a: UBERON:0003037 ! septum
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0002100
+name: trunk
+is_a: UBERON:0011676 ! subdivision of organism along main body axis
+
+[Term]
+id: UBERON:0002101
+name: limb
+is_a: UBERON:0004708 ! paired limb/fin
+
+[Term]
+id: UBERON:0002102
+name: forelimb
+is_a: UBERON:0002101 ! limb
+is_a: UBERON:0004710 ! pectoral appendage
+
+[Term]
+id: UBERON:0002103
+name: hindlimb
+is_a: UBERON:0002101 ! limb
+is_a: UBERON:0004709 ! pelvic appendage
+
+[Term]
+id: UBERON:0002104
+name: visual system
+is_a: UBERON:0001032 ! sensory system
+
+[Term]
+id: UBERON:0002105
+name: vestibulo-auditory system
+is_a: UBERON:0001032 ! sensory system
+
+[Term]
+id: UBERON:0002111
+name: artery smooth muscle tissue
+is_a: UBERON:0004237 ! blood vessel smooth muscle
+is_a: UBERON:0004695 ! arterial system smooth muscle
+
+[Term]
+id: UBERON:0002113
+name: kidney
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000489 ! cavitated compound organ
+is_a: UBERON:0005172 ! abdomen element
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0002120
+name: pronephros
+is_a: UBERON:0002113 ! kidney
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0002165
+name: endocardium
+is_a: UBERON:0002523 ! tunica intima
+is_a: UBERON:0005983 ! heart layer
+
+[Term]
+id: UBERON:0002166
+name: endocardium of atrium
+is_a: UBERON:0002165 ! endocardium
+
+[Term]
+id: UBERON:0002190
+name: subcutaneous adipose tissue
+is_a: UBERON:0001013 ! adipose tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0002193
+name: hemolymphoid system
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0002199
+name: integument
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0011216 ! organ system subdivision
+
+[Term]
+id: UBERON:0002200
+name: vasculature of head
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0002201
+name: vasculature of trunk
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0002203
+name: vasculature of eye
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002200 ! vasculature of head
+is_a: UBERON:0006876 ! vasculature of organ
+
+[Term]
+id: UBERON:0002204
+name: musculoskeletal system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0002213
+name: cartilaginous joint
+is_a: UBERON:0011134 ! nonsynovial joint
+
+[Term]
+id: UBERON:0002217
+name: synovial joint
+is_a: UBERON:0000982 ! skeletal joint
+
+[Term]
+id: UBERON:0002224
+name: thoracic cavity
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0002240
+name: spinal cord
+is_a: UBERON:0000489 ! cavitated compound organ
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005174 ! dorsal region element
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0002241
+name: chondrocranium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0011159 ! primary subdivision of cranial skeletal system
+
+[Term]
+id: UBERON:0002298
+name: brainstem
+is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0002302
+name: myocardium of atrium
+is_a: UBERON:0002349 ! myocardium
+
+[Term]
+id: UBERON:0002315
+name: gray matter of spinal cord
+is_a: UBERON:0002020 ! gray matter
+
+[Term]
+id: UBERON:0002323
+name: coelemic cavity lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002553 ! anatomical cavity
+
+[Term]
+id: UBERON:0002325
+name: epithelium of urethra
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0006555 ! excretory tube
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0002326
+name: lamina propria of urethra
+is_a: UBERON:0000030 ! lamina propria
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0002328
+name: notochord
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0002329
+name: somite
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005423 ! developing anatomical structure
+is_a: UBERON:0007503 ! epithelial vesicle
+
+[Term]
+id: UBERON:0002330
+name: exocrine system
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0002342
+name: neural crest
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0010316 ! germ layer / neural crest
+
+[Term]
+id: UBERON:0002343
+name: abdomen musculature
+is_a: UBERON:0004479 ! musculature of trunk
+
+[Term]
+id: UBERON:0002346
+name: neurectoderm
+is_a: UBERON:0000923 ! germ layer
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0002348
+name: epicardium
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0002349
+name: myocardium
+is_a: UBERON:0005983 ! heart layer
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0018260 ! layer of muscle tissue
+
+[Term]
+id: UBERON:0002350
+name: conducting system of heart
+is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
+is_a: UBERON:0010131 ! conducting tissue of heart
+
+[Term]
+id: UBERON:0002355
+name: pelvic region of trunk
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0002357
+name: serous pericardium
+is_a: UBERON:0000042 ! serous membrane
+
+[Term]
+id: UBERON:0002359
+name: fibrous pericardium
+is_a: UBERON:0000094 ! membrane organ
+is_a: UBERON:0005181 ! thoracic segment organ
+
+[Term]
+id: UBERON:0002365
+name: exocrine gland
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0002384
+name: connective tissue
+is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0002385
+name: muscle tissue
+is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0002390
+name: hematopoietic system
+is_a: UBERON:0000467 ! anatomical system
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0002406
+name: pericardial sac
+is_a: UBERON:0005181 ! thoracic segment organ
+is_a: UBERON:0005906 ! serous sac
+
+[Term]
+id: UBERON:0002407
+name: pericardium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000481 ! multi-tissue structure
+
+[Term]
+id: UBERON:0002408
+name: parietal serous pericardium
+is_a: UBERON:0022351 ! parietal serous membrane
+
+[Term]
+id: UBERON:0002409
+name: pericardial fluid
+is_a: UBERON:0007794 ! secretion of serous gland
+is_a: UBERON:0036217 ! coelomic fluid
+
+[Term]
+id: UBERON:0002416
+name: integumental system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0002417
+name: abdominal segment of trunk
+is_a: UBERON:0009569 ! subdivision of trunk
+is_a: UBERON:0011676 ! subdivision of organism along main body axis
+
+[Term]
+id: UBERON:0002418
+name: cartilage tissue
+is_a: UBERON:0004755 ! skeletal tissue
+
+[Term]
+id: UBERON:0002419
+name: skin gland
+is_a: UBERON:0003297 ! gland of integumental system
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0006003 ! integumentary adnexa
+
+[Term]
+id: UBERON:0002424
+name: oral epithelium
+is_a: UBERON:0003350 ! epithelium of mucosa
+is_a: UBERON:0003929 ! digestive tract epithelium
+
+[Term]
+id: UBERON:0002425
+name: visceral serous pericardium
+is_a: UBERON:0022350 ! visceral serous membrane
+
+[Term]
+id: UBERON:0002428
+name: limb bone
+is_a: UBERON:0002513 ! endochondral bone
+is_a: UBERON:0004375 ! bone of free limb or fin
+is_a: UBERON:0015061 ! limb endochondral element
+
+[Term]
+id: UBERON:0002443
+name: choroidal blood vessel
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0002460
+name: vesical vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0002466
+name: intestine secretion
+is_a: UBERON:0000456 ! secretion of exocrine gland
+
+[Term]
+id: UBERON:0002481
+name: bone tissue
+is_a: UBERON:0004755 ! skeletal tissue
+
+[Term]
+id: UBERON:0002506
+name: iris epithelium
+is_a: UBERON:0000488 ! atypical epithelium
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0002513
+name: endochondral bone
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0001474 ! bone element
+is_a: UBERON:0010363 ! endochondral element
+
+[Term]
+id: UBERON:0002521
+name: elastic tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0002522
+name: tunica media
+is_a: UBERON:0004797 ! blood vessel layer
+
+[Term]
+id: UBERON:0002523
+name: tunica intima
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0002530
+name: gland
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0002532
+name: epiblast (generic)
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0002539
+name: pharyngeal arch
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0010188 ! protuberance
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0002546
+name: cranial placode
+is_a: UBERON:0005085 ! ectodermal placode
+
+[Term]
+id: UBERON:0002553
+name: anatomical cavity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0002616
+name: regional part of brain
+is_a: UBERON:0000073 ! regional part of nervous system
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0003037
+name: septum
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0003052
+name: midbrain-hindbrain boundary
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0007651 ! anatomical junction
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0003055
+name: periderm
+is_a: UBERON:0000487 ! simple squamous epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0003056
+name: pre-chordal neural plate
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0003057
+name: chordal neural plate
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0003059
+name: presomitic mesoderm
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0003060
+name: pronephric duct
+is_a: UBERON:0009201 ! nephric duct
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0003061
+name: blood island
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0003063
+name: prechordal plate
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0003064
+name: intermediate mesoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0003068
+name: axial mesoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0003071
+name: eye primordium
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0001048 ! primordium
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0006598 ! presumptive structure
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0003072
+name: optic cup
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0003073
+name: lens placode
+is_a: UBERON:0002546 ! cranial placode
+is_a: UBERON:0006598 ! presumptive structure
+is_a: UBERON:0010312 ! immature eye
+is_a: UBERON:0011814 ! non-neurogenic ectodermal placode
+
+[Term]
+id: UBERON:0003074
+name: mesonephric duct
+is_a: UBERON:0000083 ! mesonephric tubule
+is_a: UBERON:0009201 ! nephric duct
+
+[Term]
+id: UBERON:0003075
+name: neural plate
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0016879 ! future central nervous system
+
+[Term]
+id: UBERON:0003076
+name: posterior neural tube
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0003077
+name: paraxial mesoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0007524 ! dense mesenchyme tissue
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0003080
+name: anterior neural tube
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0003081
+name: lateral plate mesoderm
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0007524 ! dense mesenchyme tissue
+
+[Term]
+id: UBERON:0003084
+name: heart primordium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0001048 ! primordium
+
+[Term]
+id: UBERON:0003089
+name: sclerotome
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005856 ! developing mesenchymal condensation
+is_a: UBERON:0007530 ! migrating mesenchyme population
+
+[Term]
+id: UBERON:0003099
+name: cranial neural crest
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0003102
+name: surface structure
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0003103
+name: compound organ
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0003104
+name: mesenchyme
+is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0003113
+name: dermatocranium
+is_a: UBERON:0011159 ! primary subdivision of cranial skeletal system
+
+[Term]
+id: UBERON:0003128
+name: cranium
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0003129
+name: skull
+is_a: UBERON:0000075 ! subdivision of skeletal system
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0003133
+name: reproductive organ
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0005156 ! reproductive structure
+
+[Term]
+id: UBERON:0003220
+name: metanephric mesenchyme
+is_a: UBERON:0003918 ! kidney mesenchyme
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0003236
+name: epithelium of lower jaw
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0035037 ! jaw epithelium
+
+[Term]
+id: UBERON:0003258
+name: endoderm of foregut
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0015833 ! foregut epithelium
+
+[Term]
+id: UBERON:0003259
+name: endoderm of midgut
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0003352 ! epithelium of midgut
+is_a: UBERON:0005911 ! endo-epithelium
+
+[Term]
+id: UBERON:0003260
+name: endoderm of hindgut
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0003353 ! epithelium of hindgut
+is_a: UBERON:0005911 ! endo-epithelium
+
+[Term]
+id: UBERON:0003278
+name: skeleton of lower jaw
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0003294
+name: gland of foregut
+is_a: UBERON:0003408 ! gland of digestive tract
+
+[Term]
+id: UBERON:0003295
+name: pharyngeal gland
+is_a: UBERON:0003408 ! gland of digestive tract
+is_a: UBERON:0036225 ! respiratory system gland
+
+[Term]
+id: UBERON:0003297
+name: gland of integumental system
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0003304
+name: mesoderm blood island
+is_a: UBERON:0003061 ! blood island
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0007503 ! epithelial vesicle
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0003314
+name: eye mesenchyme
+is_a: UBERON:0007213 ! mesenchyme derived from head neural crest
+is_a: UBERON:0009891 ! facial mesenchyme
+
+[Term]
+id: UBERON:0003324
+name: mesenchyme of lower jaw
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0034995 ! jaw mesenchyme
+
+[Term]
+id: UBERON:0003329
+name: submucosa of anal canal
+is_a: UBERON:0001208 ! submucosa of large intestine
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0003330
+name: submucosa of rectum
+is_a: UBERON:0001208 ! submucosa of large intestine
+
+[Term]
+id: UBERON:0003331
+name: submucosa of colon
+is_a: UBERON:0001208 ! submucosa of large intestine
+
+[Term]
+id: UBERON:0003334
+name: serosa of rectum
+is_a: UBERON:0001209 ! serosa of large intestine
+
+[Term]
+id: UBERON:0003335
+name: serosa of colon
+is_a: UBERON:0001209 ! serosa of large intestine
+
+[Term]
+id: UBERON:0003342
+name: mucosa of anal canal
+is_a: UBERON:0001207 ! mucosa of large intestine
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0003343
+name: mucosa of oral region
+is_a: UBERON:0003729 ! mouth mucosa
+
+[Term]
+id: UBERON:0003346
+name: mucosa of rectum
+is_a: UBERON:0001207 ! mucosa of large intestine
+
+[Term]
+id: UBERON:0003350
+name: epithelium of mucosa
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0003351
+name: pharyngeal epithelium
+is_a: UBERON:0003929 ! digestive tract epithelium
+is_a: UBERON:0004807 ! respiratory system epithelium
+is_a: UBERON:0005911 ! endo-epithelium
+
+[Term]
+id: UBERON:0003352
+name: epithelium of midgut
+is_a: UBERON:0003929 ! digestive tract epithelium
+
+[Term]
+id: UBERON:0003353
+name: epithelium of hindgut
+is_a: UBERON:0003929 ! digestive tract epithelium
+
+[Term]
+id: UBERON:0003354
+name: epithelium of rectum
+is_a: UBERON:0001278 ! epithelium of large intestine
+is_a: UBERON:0016885 ! epithelium of terminal part of digestive tract
+
+[Term]
+id: UBERON:0003371
+name: pelvic appendage bud ectoderm
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0003372
+name: pectoral appendage bud ectoderm
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0003386
+name: smooth muscle of eye
+is_a: UBERON:0001135 ! smooth muscle tissue
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0003388
+name: mesothelium of pericardial cavity
+is_a: UBERON:0001136 ! mesothelium
+
+[Term]
+id: UBERON:0003406
+name: cartilage of respiratory system
+is_a: UBERON:0007844 ! cartilage element
+
+[Term]
+id: UBERON:0003408
+name: gland of digestive tract
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002530 ! gland
+is_a: UBERON:0013765 ! digestive system element
+
+[Term]
+id: UBERON:0003412
+name: pelvic appendage bud mesenchyme
+is_a: UBERON:0010329 ! paired limb/fin bud mesenchyme
+
+[Term]
+id: UBERON:0003413
+name: pectoral appendage bud mesenchyme
+is_a: UBERON:0010329 ! paired limb/fin bud mesenchyme
+
+[Term]
+id: UBERON:0003426
+name: dermis adipose tissue
+is_a: UBERON:0001013 ! adipose tissue
+is_a: UBERON:0003585 ! dermis connective tissue
+
+[Term]
+id: UBERON:0003457
+name: head bone
+is_a: UBERON:0007914 ! bone of craniocervical region
+
+[Term]
+id: UBERON:0003458
+name: neck bone
+is_a: UBERON:0007914 ! bone of craniocervical region
+
+[Term]
+id: UBERON:0003462
+name: facial bone
+is_a: UBERON:0003457 ! head bone
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0003463
+name: trunk bone
+is_a: UBERON:0001474 ! bone element
+is_a: UBERON:0005177 ! trunk region element
+
+[Term]
+id: UBERON:0003464
+name: hindlimb bone
+is_a: UBERON:0002428 ! limb bone
+is_a: UBERON:0010742 ! bone of pelvic complex
+is_a: UBERON:0015022 ! hindlimb endochondral element
+
+[Term]
+id: UBERON:0003469
+name: respiratory system artery
+is_a: UBERON:0001637 ! artery
+is_a: UBERON:0003643 ! respiratory system arterial blood vessel
+
+[Term]
+id: UBERON:0003473
+name: thoracic cavity artery
+is_a: UBERON:0001637 ! artery
+is_a: UBERON:0003519 ! thoracic cavity blood vessel
+
+[Term]
+id: UBERON:0003475
+name: ureteric vein
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003520 ! pelvis blood vessel
+
+[Term]
+id: UBERON:0003476
+name: respiratory system venous blood vessel
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0003478
+name: vein of lower lip
+is_a: UBERON:0013136 ! vein of lip
+
+[Term]
+id: UBERON:0003479
+name: thoracic cavity vein
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003519 ! thoracic cavity blood vessel
+
+[Term]
+id: UBERON:0003489
+name: respiratory system capillary endothelium
+is_a: UBERON:0001915 ! endothelium of capillary
+is_a: UBERON:0004702 ! respiratory system blood vessel endothelium
+
+[Term]
+id: UBERON:0003494
+name: respiratory system venule
+is_a: UBERON:0001979 ! venule
+is_a: UBERON:0003504 ! respiratory system blood vessel
+
+[Term]
+id: UBERON:0003495
+name: respiratory system arteriole
+is_a: UBERON:0001980 ! arteriole
+is_a: UBERON:0003643 ! respiratory system arterial blood vessel
+
+[Term]
+id: UBERON:0003496
+name: head blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0003497
+name: abdomen blood vessel
+is_a: UBERON:0003835 ! abdominal segment blood vessel
+
+[Term]
+id: UBERON:0003498
+name: heart blood vessel
+is_a: UBERON:0003834 ! thoracic segment blood vessel
+is_a: UBERON:0005985 ! coronary vessel
+
+[Term]
+id: UBERON:0003499
+name: brain blood vessel
+is_a: UBERON:0001981 ! blood vessel
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0003500
+name: corneal blood vessel
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0003501
+name: retina blood vessel
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0003502
+name: neck blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0003504
+name: respiratory system blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0003509
+name: arterial blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0003511
+name: iris blood vessel
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0003513
+name: trunk blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0003514
+name: limb blood vessel
+is_a: UBERON:0007301 ! appendage blood vessel
+
+[Term]
+id: UBERON:0003515
+name: forelimb blood vessel
+is_a: UBERON:0003514 ! limb blood vessel
+is_a: UBERON:0007300 ! pectoral appendage blood vessel
+
+[Term]
+id: UBERON:0003516
+name: hindlimb blood vessel
+is_a: UBERON:0003514 ! limb blood vessel
+
+[Term]
+id: UBERON:0003517
+name: kidney blood vessel
+is_a: UBERON:0003497 ! abdomen blood vessel
+
+[Term]
+id: UBERON:0003519
+name: thoracic cavity blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0003520
+name: pelvis blood vessel
+is_a: UBERON:0003835 ! abdominal segment blood vessel
+
+[Term]
+id: UBERON:0003526
+name: respiratory system capillary
+is_a: UBERON:0001982 ! capillary
+is_a: UBERON:0003504 ! respiratory system blood vessel
+
+[Term]
+id: UBERON:0003527
+name: kidney capillary
+is_a: UBERON:0001982 ! capillary
+is_a: UBERON:0003517 ! kidney blood vessel
+
+[Term]
+id: UBERON:0003528
+name: brain gray matter
+is_a: UBERON:0002020 ! gray matter
+
+[Term]
+id: UBERON:0003531
+name: forelimb skin
+is_a: UBERON:0001419 ! skin of limb
+
+[Term]
+id: UBERON:0003532
+name: hindlimb skin
+is_a: UBERON:0001419 ! skin of limb
+
+[Term]
+id: UBERON:0003566
+name: head connective tissue
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0003567
+name: abdomen connective tissue
+is_a: UBERON:0003838 ! abdominal segment connective tissue
+
+[Term]
+id: UBERON:0003568
+name: neck connective tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0003570
+name: respiratory system connective tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0003585
+name: dermis connective tissue
+is_a: UBERON:0002384 ! connective tissue
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0003586
+name: trunk connective tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0003587
+name: limb connective tissue
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0003588
+name: forelimb connective tissue
+is_a: UBERON:0003587 ! limb connective tissue
+
+[Term]
+id: UBERON:0003589
+name: hindlimb connective tissue
+is_a: UBERON:0003587 ! limb connective tissue
+
+[Term]
+id: UBERON:0003593
+name: thoracic cavity connective tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0003594
+name: pelvis connective tissue
+is_a: UBERON:0003838 ! abdominal segment connective tissue
+
+[Term]
+id: UBERON:0003601
+name: neck cartilage
+is_a: UBERON:0007844 ! cartilage element
+
+[Term]
+id: UBERON:0003605
+name: eye skin gland
+is_a: UBERON:0002419 ! skin gland
+is_a: UBERON:0004859 ! eye gland
+is_a: UBERON:0015152 ! gland of ocular region
+
+[Term]
+id: UBERON:0003610
+name: heart elastic tissue
+is_a: UBERON:0003613 ! cardiovascular system elastic tissue
+is_a: UBERON:0003837 ! thoracic segment connective tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0003611
+name: respiratory system elastic tissue
+is_a: UBERON:0002521 ! elastic tissue
+is_a: UBERON:0003570 ! respiratory system connective tissue
+
+[Term]
+id: UBERON:0003613
+name: cardiovascular system elastic tissue
+is_a: UBERON:0002521 ! elastic tissue
+
+[Term]
+id: UBERON:0003614
+name: blood vessel elastic tissue
+is_a: UBERON:0003613 ! cardiovascular system elastic tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0003643
+name: respiratory system arterial blood vessel
+is_a: UBERON:0003504 ! respiratory system blood vessel
+is_a: UBERON:0003509 ! arterial blood vessel
+
+[Term]
+id: UBERON:0003644
+name: kidney arterial blood vessel
+is_a: UBERON:0003509 ! arterial blood vessel
+is_a: UBERON:0003517 ! kidney blood vessel
+
+[Term]
+id: UBERON:0003657
+name: limb joint
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000982 ! skeletal joint
+
+[Term]
+id: UBERON:0003684
+name: abdominal cavity
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0003687
+name: foramen magnum
+is_a: UBERON:0013685 ! foramen of skull
+
+[Term]
+id: UBERON:0003697
+name: abdominal wall
+is_a: UBERON:0000060 ! anatomical wall
+
+[Term]
+id: UBERON:0003713
+name: splenic vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0003714
+name: neural tissue
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0003729
+name: mouth mucosa
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000344 ! mucosa
+
+[Term]
+id: UBERON:0003827
+name: thoracic segment bone
+is_a: UBERON:0003463 ! trunk bone
+is_a: UBERON:0005181 ! thoracic segment organ
+
+[Term]
+id: UBERON:0003828
+name: abdominal segment bone
+is_a: UBERON:0003463 ! trunk bone
+is_a: UBERON:0005173 ! abdominal segment element
+
+[Term]
+id: UBERON:0003829
+name: urethra muscle tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005090 ! muscle structure
+
+[Term]
+id: UBERON:0003831
+name: respiratory system muscle
+is_a: UBERON:0001630 ! muscle organ
+
+[Term]
+id: UBERON:0003834
+name: thoracic segment blood vessel
+is_a: UBERON:0003513 ! trunk blood vessel
+
+[Term]
+id: UBERON:0003835
+name: abdominal segment blood vessel
+is_a: UBERON:0003513 ! trunk blood vessel
+
+[Term]
+id: UBERON:0003836
+name: abdominal segment skin
+is_a: UBERON:0001085 ! skin of trunk
+
+[Term]
+id: UBERON:0003837
+name: thoracic segment connective tissue
+is_a: UBERON:0003586 ! trunk connective tissue
+
+[Term]
+id: UBERON:0003838
+name: abdominal segment connective tissue
+is_a: UBERON:0003586 ! trunk connective tissue
+
+[Term]
+id: UBERON:0003839
+name: forelimb joint
+is_a: UBERON:0003657 ! limb joint
+
+[Term]
+id: UBERON:0003840
+name: hindlimb joint
+is_a: UBERON:0003657 ! limb joint
+
+[Term]
+id: UBERON:0003842
+name: neural tube lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0003848
+name: gonadal vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0003849
+name: mesencephalic neural crest
+is_a: UBERON:0002342 ! neural crest
+is_a: UBERON:0003099 ! cranial neural crest
+
+[Term]
+id: UBERON:0003852
+name: rhombencephalon neural crest
+is_a: UBERON:0002342 ! neural crest
+is_a: UBERON:0003099 ! cranial neural crest
+
+[Term]
+id: UBERON:0003853
+name: spinal cord neural crest
+is_a: UBERON:0002342 ! neural crest
+
+[Term]
+id: UBERON:0003854
+name: spinal cord neural plate
+is_a: UBERON:0003075 ! neural plate
+
+[Term]
+id: UBERON:0003855
+name: gonad mesenchyme
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0005156 ! reproductive structure
+
+[Term]
+id: UBERON:0003859
+name: forelimb mesenchyme
+is_a: UBERON:0009749 ! limb mesenchyme
+
+[Term]
+id: UBERON:0003860
+name: hindlimb mesenchyme
+is_a: UBERON:0009749 ! limb mesenchyme
+
+[Term]
+id: UBERON:0003886
+name: future coelemic cavity lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0003887
+name: intraembryonic coelom
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0003902
+name: retinal neural layer
+is_a: UBERON:0001781 ! layer of retina
+
+[Term]
+id: UBERON:0003914
+name: epithelial tube
+is_a: UBERON:0000025 ! tube
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0003915
+name: endothelial tube
+is_a: UBERON:0001986 ! endothelium
+is_a: UBERON:0003914 ! epithelial tube
+
+[Term]
+id: UBERON:0003918
+name: kidney mesenchyme
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0003920
+name: venous blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0003928
+name: digestive system duct
+is_a: UBERON:0000058 ! duct
+
+[Term]
+id: UBERON:0003929
+name: digestive tract epithelium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0003932
+name: cartilage element of chondrocranium
+is_a: UBERON:0003933 ! cranial cartilage
+
+[Term]
+id: UBERON:0003933
+name: cranial cartilage
+is_a: UBERON:0007844 ! cartilage element
+
+[Term]
+id: UBERON:0003937
+name: reproductive gland
+is_a: UBERON:0002530 ! gland
+is_a: UBERON:0005156 ! reproductive structure
+
+[Term]
+id: UBERON:0003967
+name: cutaneous elastic tissue
+is_a: UBERON:0002521 ! elastic tissue
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0003978
+name: valve
+is_a: UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0004015
+name: embryonic-extraembryonic boundary
+is_a: UBERON:0000015 ! non-material anatomical boundary
+
+[Term]
+id: UBERON:0004016
+name: dermatome
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0017650 ! developing mesenchymal structure
+
+[Term]
+id: UBERON:0004022
+name: germinal neuroepithelium
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0034706 ! proliferating neuroepithelium
+
+[Term]
+id: UBERON:0004060
+name: neural tube ventricular layer
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0034706 ! proliferating neuroepithelium
+
+[Term]
+id: UBERON:0004061
+name: neural tube mantle layer
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0034707 ! differentiating neuroepithelium
+
+[Term]
+id: UBERON:0004062
+name: neural tube marginal layer
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005162 ! multi cell part structure
+
+[Term]
+id: UBERON:0004087
+name: vena cava
+is_a: UBERON:0003479 ! thoracic cavity vein
+is_a: UBERON:0013768 ! great vessel of heart
+
+[Term]
+id: UBERON:0004088
+name: orbital region
+is_a: UBERON:0001444 ! subdivision of head
+
+[Term]
+id: UBERON:0004111
+name: anatomical conduit
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0004118
+name: vasculature of iris
+is_a: UBERON:0002203 ! vasculature of eye
+
+[Term]
+id: UBERON:0004119
+name: endoderm-derived structure
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0004120
+name: mesoderm-derived structure
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0004121
+name: ectoderm-derived structure
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0004122
+name: genitourinary system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0004128
+name: optic vesicle
+is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0004139
+name: cardiogenic plate
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0004140
+name: primary heart field
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0007688 ! anlage
+
+[Term]
+id: UBERON:0004141
+name: heart tube
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0004148
+name: cardiac vein
+is_a: UBERON:0003498 ! heart blood vessel
+is_a: UBERON:0005194 ! thoracic vein
+is_a: UBERON:0013140 ! systemic vein
+
+[Term]
+id: UBERON:0004151
+name: cardiac chamber
+is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0004160
+name: proepicardium
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0004161
+name: septum transversum
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0004176
+name: external genitalia
+is_a: UBERON:0003133 ! reproductive organ
+
+[Term]
+id: UBERON:0004177
+name: hemopoietic organ
+is_a: UBERON:0000062 ! organ
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0004185
+name: endodermal part of digestive tract
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0004219
+name: urethra smooth muscle layer
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0004220
+name: large intestine smooth muscle
+is_a: UBERON:0004221 ! intestine smooth muscle
+
+[Term]
+id: UBERON:0004221
+name: intestine smooth muscle
+is_a: UBERON:0004226 ! gastrointestinal system smooth muscle
+
+[Term]
+id: UBERON:0004225
+name: respiratory system smooth muscle
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0004226
+name: gastrointestinal system smooth muscle
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0004227
+name: kidney pelvis smooth muscle
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0004228
+name: urinary bladder smooth muscle
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0004231
+name: anal region smooth muscle
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0004234
+name: iris smooth muscle
+is_a: UBERON:0003386 ! smooth muscle of eye
+
+[Term]
+id: UBERON:0004236
+name: arteriole smooth muscle
+is_a: UBERON:0004237 ! blood vessel smooth muscle
+is_a: UBERON:0004695 ! arterial system smooth muscle
+
+[Term]
+id: UBERON:0004237
+name: blood vessel smooth muscle
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0004247
+name: bone of dorsum
+is_a: UBERON:0001474 ! bone element
+is_a: UBERON:0005174 ! dorsal region element
+
+[Term]
+id: UBERON:0004253
+name: skin muscle
+is_a: UBERON:0001630 ! muscle organ
+
+[Term]
+id: UBERON:0004258
+name: back blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0004267
+name: back connective tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0004277
+name: eye muscle
+is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0004288
+name: skeleton
+is_a: UBERON:0034925 ! anatomical collection
+
+[Term]
+id: UBERON:0004290
+name: dermomyotome
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000486 ! multilaminar epithelium
+is_a: UBERON:0016888 ! transitional anatomical structure
+
+[Term]
+id: UBERON:0004291
+name: heart rudiment
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0004292
+name: cardiac skeleton
+is_a: UBERON:0003837 ! thoracic segment connective tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0004297
+name: respiratory system blood vessel smooth muscle
+is_a: UBERON:0004225 ! respiratory system smooth muscle
+is_a: UBERON:0004237 ! blood vessel smooth muscle
+
+[Term]
+id: UBERON:0004341
+name: primitive streak
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000485 ! simple columnar epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0004347
+name: limb bud
+is_a: UBERON:0004357 ! paired limb/fin bud
+
+[Term]
+id: UBERON:0004348
+name: optic eminence
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0004356
+name: apical ectodermal ridge
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0004357
+name: paired limb/fin bud
+is_a: UBERON:0003102 ! surface structure
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0004362
+name: pharyngeal arch 1
+is_a: UBERON:0002539 ! pharyngeal arch
+
+[Term]
+id: UBERON:0004370
+name: anterior limiting lamina of cornea
+is_a: UBERON:0005769 ! basement membrane of epithelium
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0004375
+name: bone of free limb or fin
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010740 ! bone of appendage girdle complex
+
+[Term]
+id: UBERON:0004381
+name: skeleton of limb
+is_a: UBERON:0010712 ! limb skeleton subdivision
+is_a: UBERON:0011582 ! paired limb/fin skeleton
+
+[Term]
+id: UBERON:0004455
+name: neurula embryo
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:0004456
+name: entire sense organ system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0004461
+name: skeletal musculature of head
+is_a: UBERON:0008229 ! craniocervical region musculature
+
+[Term]
+id: UBERON:0004462
+name: musculature of body wall
+is_a: UBERON:0001015 ! musculature
+
+[Term]
+id: UBERON:0004464
+name: musculature of thorax
+is_a: UBERON:0004479 ! musculature of trunk
+
+[Term]
+id: UBERON:0004465
+name: musculature of neck
+is_a: UBERON:0008229 ! craniocervical region musculature
+
+[Term]
+id: UBERON:0004469
+name: musculature of back
+is_a: UBERON:0001015 ! musculature
+
+[Term]
+id: UBERON:0004470
+name: musculature of pelvic girdle
+is_a: UBERON:0004479 ! musculature of trunk
+is_a: UBERON:0014792 ! musculature of pelvic complex
+
+[Term]
+id: UBERON:0004471
+name: musculature of pectoral girdle
+is_a: UBERON:0014793 ! musculature of pectoral complex
+
+[Term]
+id: UBERON:0004473
+name: musculature of face
+is_a: UBERON:0008229 ! craniocervical region musculature
+
+[Term]
+id: UBERON:0004479
+name: musculature of trunk
+is_a: UBERON:0001015 ! musculature
+
+[Term]
+id: UBERON:0004480
+name: musculature of limb
+is_a: UBERON:0007271 ! appendage musculature
+
+[Term]
+id: UBERON:0004481
+name: musculature of upper limb
+is_a: UBERON:0004480 ! musculature of limb
+is_a: UBERON:0007269 ! pectoral appendage musculature
+
+[Term]
+id: UBERON:0004482
+name: musculature of lower limb
+is_a: UBERON:0004480 ! musculature of limb
+is_a: UBERON:0007270 ! pelvic appendage musculature
+
+[Term]
+id: UBERON:0004490
+name: cardiac muscle tissue of atrium
+is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
+
+[Term]
+id: UBERON:0004492
+name: cardiac muscle tissue of cardiac septum
+is_a: UBERON:0001133 ! cardiac muscle tissue
+
+[Term]
+id: UBERON:0004493
+name: cardiac muscle tissue of myocardium
+is_a: UBERON:0001133 ! cardiac muscle tissue
+
+[Term]
+id: UBERON:0004521
+name: vasculature of muscle organ
+is_a: UBERON:0004522 ! vasculature of musculoskeletal system
+is_a: UBERON:0006876 ! vasculature of organ
+
+[Term]
+id: UBERON:0004522
+name: vasculature of musculoskeletal system
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0004535
+name: cardiovascular system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0004537
+name: blood vasculature
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0004572
+name: arterial system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0007798 ! vascular system
+
+[Term]
+id: UBERON:0004581
+name: systemic venous system
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0004582
+name: venous system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0007798 ! vascular system
+
+[Term]
+id: UBERON:0004638
+name: blood vessel endothelium
+is_a: UBERON:0004852 ! cardiovascular system endothelium
+
+[Term]
+id: UBERON:0004688
+name: costo-cervical trunk
+is_a: UBERON:0001637 ! artery
+
+[Term]
+id: UBERON:0004695
+name: arterial system smooth muscle
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0004696
+name: venous system smooth muscle
+is_a: UBERON:0004237 ! blood vessel smooth muscle
+
+[Term]
+id: UBERON:0004698
+name: vena cava endothelium
+is_a: UBERON:0001919 ! endothelium of vein
+
+[Term]
+id: UBERON:0004700
+name: arterial system endothelium
+is_a: UBERON:0004852 ! cardiovascular system endothelium
+
+[Term]
+id: UBERON:0004701
+name: venous system endothelium
+is_a: UBERON:0004852 ! cardiovascular system endothelium
+
+[Term]
+id: UBERON:0004702
+name: respiratory system blood vessel endothelium
+is_a: UBERON:0004638 ! blood vessel endothelium
+is_a: UBERON:0004807 ! respiratory system epithelium
+
+[Term]
+id: UBERON:0004708
+name: paired limb/fin
+is_a: UBERON:0000026 ! appendage
+
+[Term]
+id: UBERON:0004709
+name: pelvic appendage
+is_a: UBERON:0004708 ! paired limb/fin
+
+[Term]
+id: UBERON:0004710
+name: pectoral appendage
+is_a: UBERON:0004708 ! paired limb/fin
+
+[Term]
+id: UBERON:0004711
+name: jugular vein
+is_a: UBERON:0003502 ! neck blood vessel
+is_a: UBERON:0009141 ! craniocervical region vein
+
+[Term]
+id: UBERON:0004716
+name: conceptus
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0004731
+name: neuromere
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004732 ! segmental subdivision of nervous system
+
+[Term]
+id: UBERON:0004732
+name: segmental subdivision of nervous system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000063 ! organ subunit
+
+[Term]
+id: UBERON:0004733
+name: segmental subdivision of hindbrain
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004732 ! segmental subdivision of nervous system
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0004734
+name: gastrula
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:0004755
+name: skeletal tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0004756
+name: dermal skeletal element
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004765 ! skeletal element
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0004760
+name: gland of anal canal
+is_a: UBERON:0003408 ! gland of digestive tract
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0004761
+name: cartilaginous neurocranium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0004765
+name: skeletal element
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0004766
+name: cranial bone
+is_a: UBERON:0003457 ! head bone
+
+[Term]
+id: UBERON:0004768
+name: bone of lower jaw
+is_a: UBERON:0012360 ! bone of jaw
+
+[Term]
+id: UBERON:0004770
+name: articular system
+is_a: UBERON:0034925 ! anatomical collection
+
+[Term]
+id: UBERON:0004777
+name: respiratory system submucosa
+is_a: UBERON:0000009 ! submucosa
+
+[Term]
+id: UBERON:0004779
+name: respiratory system lamina propria
+is_a: UBERON:0000030 ! lamina propria
+
+[Term]
+id: UBERON:0004780
+name: gastrointestinal system lamina propria
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000030 ! lamina propria
+
+[Term]
+id: UBERON:0004782
+name: gastrointestinal system serosa
+is_a: UBERON:0000042 ! serous membrane
+
+[Term]
+id: UBERON:0004784
+name: heart ventricle wall
+is_a: UBERON:0037144 ! wall of heart
+
+[Term]
+id: UBERON:0004785
+name: respiratory system mucosa
+is_a: UBERON:0000344 ! mucosa
+
+[Term]
+id: UBERON:0004786
+name: gastrointestinal system mucosa
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000344 ! mucosa
+
+[Term]
+id: UBERON:0004790
+name: skin mucous gland
+is_a: UBERON:0000414 ! mucous gland
+is_a: UBERON:0007771 ! epidermis gland
+is_a: UBERON:0019319 ! exocrine gland of integumental system
+
+[Term]
+id: UBERON:0004797
+name: blood vessel layer
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0004807
+name: respiratory system epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0004808
+name: gastrointestinal system epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0004817
+name: lacrimal gland epithelium
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0004819
+name: kidney epithelium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0004848
+name: respiratory system arterial endothelium
+is_a: UBERON:0001917 ! endothelium of artery
+is_a: UBERON:0004702 ! respiratory system blood vessel endothelium
+
+[Term]
+id: UBERON:0004849
+name: respiratory system venous endothelium
+is_a: UBERON:0001919 ! endothelium of vein
+is_a: UBERON:0004702 ! respiratory system blood vessel endothelium
+
+[Term]
+id: UBERON:0004852
+name: cardiovascular system endothelium
+is_a: UBERON:0001986 ! endothelium
+
+[Term]
+id: UBERON:0004859
+name: eye gland
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0004864
+name: vasculature of retina
+is_a: UBERON:0002203 ! vasculature of eye
+is_a: UBERON:0036302 ! vasculature of central nervous system plus retina
+
+[Term]
+id: UBERON:0004872
+name: splanchnic layer of lateral plate mesoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0004874
+name: somatopleure
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0004875
+name: nephrogenic cord
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0004876
+name: urogenital fold
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0004880
+name: chordamesoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0004902
+name: urogenital sinus epithelium
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0009846 ! embryonic cloacal epithelium
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0004905
+name: articulation
+is_a: UBERON:0034921 ! multi organ part structure
+
+[Term]
+id: UBERON:0004906
+name: ectodermal part of digestive tract
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0004907
+name: lower digestive tract
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0004909
+name: epithelium of gonad
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0005156 ! reproductive structure
+
+[Term]
+id: UBERON:0004921
+name: subdivision of digestive tract
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0013522 ! subdivision of tube
+
+[Term]
+id: UBERON:0004923
+name: organ component layer
+is_a: UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0004924
+name: submucosa of pharynx
+is_a: UBERON:0004777 ! respiratory system submucosa
+is_a: UBERON:0018257 ! submucosa of digestive tract
+
+[Term]
+id: UBERON:0004932
+name: submucosa of sigmoid colon
+is_a: UBERON:0003331 ! submucosa of colon
+
+[Term]
+id: UBERON:0004943
+name: submucosa of urinary bladder
+is_a: UBERON:0000009 ! submucosa
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0004980
+name: mucosa of ureter
+is_a: UBERON:0000344 ! mucosa
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0004993
+name: mucosa of sigmoid colon
+is_a: UBERON:0000317 ! colonic mucosa
+
+[Term]
+id: UBERON:0005006
+name: mucosa of renal pelvis
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000344 ! mucosa
+
+[Term]
+id: UBERON:0005032
+name: mucosa of lower lip
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0036294 ! mucosa of lip
+
+[Term]
+id: UBERON:0005058
+name: hemolymphoid system gland
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0005061
+name: neural groove
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0005062
+name: neural fold
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005157 ! epithelial fold
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0005068
+name: neural rod
+is_a: UBERON:0016879 ! future central nervous system
+
+[Term]
+id: UBERON:0005076
+name: hindbrain-spinal cord boundary
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0005080
+name: metanephric ureteric bud
+is_a: UBERON:0000084 ! ureteric bud
+
+[Term]
+id: UBERON:0005081
+name: ureter ureteric bud
+is_a: UBERON:0000084 ! ureteric bud
+
+[Term]
+id: UBERON:0005082
+name: tube lumen
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0005085
+name: ectodermal placode
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0001048 ! primordium
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0005090
+name: muscle structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0005095
+name: kidney rudiment
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0005103
+name: mesonephric epithelium
+is_a: UBERON:0004819 ! kidney epithelium
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0005106
+name: metanephric tubule
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0005108 ! metanephric epithelium
+is_a: UBERON:0006555 ! excretory tube
+
+[Term]
+id: UBERON:0005108
+name: metanephric epithelium
+is_a: UBERON:0004819 ! kidney epithelium
+is_a: UBERON:0012275 ! meso-epithelium
+
+[Term]
+id: UBERON:0005109
+name: metanephric smooth muscle tissue
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0005137
+name: metanephric capsule
+is_a: UBERON:0002015 ! kidney capsule
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0005153
+name: epithelial bud
+is_a: UBERON:0005157 ! epithelial fold
+
+[Term]
+id: UBERON:0005156
+name: reproductive structure
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0005157
+name: epithelial fold
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0005162
+name: multi cell part structure
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0005172
+name: abdomen element
+is_a: UBERON:0005173 ! abdominal segment element
+
+[Term]
+id: UBERON:0005173
+name: abdominal segment element
+is_a: UBERON:0005177 ! trunk region element
+
+[Term]
+id: UBERON:0005174
+name: dorsal region element
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0005177
+name: trunk region element
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0005178
+name: thoracic cavity element
+is_a: UBERON:0002075 ! viscus
+is_a: UBERON:0005181 ! thoracic segment organ
+
+[Term]
+id: UBERON:0005179
+name: pelvic region element
+is_a: UBERON:0005173 ! abdominal segment element
+
+[Term]
+id: UBERON:0005181
+name: thoracic segment organ
+is_a: UBERON:0005177 ! trunk region element
+
+[Term]
+id: UBERON:0005194
+name: thoracic vein
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003834 ! thoracic segment blood vessel
+
+[Term]
+id: UBERON:0005216
+name: optic eminence surface ectoderm
+is_a: UBERON:0000076 ! external ectoderm
+
+[Term]
+id: UBERON:0005234
+name: optic eminence ectoderm
+is_a: UBERON:0000924 ! ectoderm
+
+[Term]
+id: UBERON:0005249
+name: metanephric renal pelvis
+is_a: UBERON:0001224 ! renal pelvis
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0005250
+name: stomatodeum gland
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0005253
+name: head mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0005256
+name: trunk mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0005290
+name: myelencephalon
+is_a: UBERON:0004733 ! segmental subdivision of hindbrain
+
+[Term]
+id: UBERON:0005291
+name: embryonic tissue
+is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0005292
+name: extraembryonic tissue
+is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0005316
+name: endocardial endothelium
+is_a: UBERON:0008307 ! heart endothelium
+
+[Term]
+id: UBERON:0005321
+name: mesonephric smooth muscle tissue
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0005323
+name: mesonephric mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0005334
+name: oral lamina propria
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000030 ! lamina propria
+
+[Term]
+id: UBERON:0005388
+name: photoreceptor array
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0005389
+name: transparent eye structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0005409
+name: alimentary part of gastrointestinal system
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0005417
+name: forelimb bud
+is_a: UBERON:0004347 ! limb bud
+is_a: UBERON:0005419 ! pectoral appendage bud
+
+[Term]
+id: UBERON:0005418
+name: hindlimb bud
+is_a: UBERON:0004347 ! limb bud
+is_a: UBERON:0005420 ! pelvic appendage bud
+
+[Term]
+id: UBERON:0005419
+name: pectoral appendage bud
+is_a: UBERON:0004357 ! paired limb/fin bud
+
+[Term]
+id: UBERON:0005420
+name: pelvic appendage bud
+is_a: UBERON:0004357 ! paired limb/fin bud
+
+[Term]
+id: UBERON:0005421
+name: pectoral appendage apical ectodermal ridge
+is_a: UBERON:0004356 ! apical ectodermal ridge
+
+[Term]
+id: UBERON:0005422
+name: pelvic appendage apical ectodermal ridge
+is_a: UBERON:0004356 ! apical ectodermal ridge
+
+[Term]
+id: UBERON:0005423
+name: developing anatomical structure
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0005425
+name: presumptive neural retina
+is_a: UBERON:0006598 ! presumptive structure
+is_a: UBERON:0010312 ! immature eye
+
+[Term]
+id: UBERON:0005426
+name: lens vesicle
+is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0005427
+name: corneal primordium
+is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0001048 ! primordium
+is_a: UBERON:0010312 ! immature eye
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0005496
+name: neural tube lateral wall
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0005498
+name: primitive heart tube
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0005501
+name: rhombomere lateral wall
+is_a: UBERON:0005496 ! neural tube lateral wall
+
+[Term]
+id: UBERON:0005564
+name: gonad primordium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0001048 ! primordium
+
+[Term]
+id: UBERON:0005594
+name: head somite
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0002329 ! somite
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0005598
+name: trunk somite
+is_a: UBERON:0002329 ! somite
+
+[Term]
+id: UBERON:0005610
+name: iliac vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0005614
+name: lens anterior epithelium
+is_a: UBERON:0001803 ! epithelium of lens
+
+[Term]
+id: UBERON:0005617
+name: mesenteric vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0005638
+name: anterior chamber epithelium
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0005656
+name: lens vesicle epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0005688
+name: lens vesicle cavity
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0005702
+name: optic eminence mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0005720
+name: hindbrain venous system
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004582 ! venous system
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0005721
+name: pronephric mesoderm
+is_a: UBERON:0000926 ! mesoderm
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0005725
+name: olfactory system
+is_a: UBERON:0005726 ! chemosensory system
+
+[Term]
+id: UBERON:0005726
+name: chemosensory system
+is_a: UBERON:0001032 ! sensory system
+
+[Term]
+id: UBERON:0005729
+name: pectoral appendage field
+is_a: UBERON:0005732 ! paired limb/fin field
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0005730
+name: pelvic appendage field
+is_a: UBERON:0005732 ! paired limb/fin field
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0005732
+name: paired limb/fin field
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0007688 ! anlage
+
+[Term]
+id: UBERON:0005733
+name: limb field
+is_a: UBERON:0005732 ! paired limb/fin field
+
+[Term]
+id: UBERON:0005734
+name: tunica adventitia of blood vessel
+is_a: UBERON:0004797 ! blood vessel layer
+is_a: UBERON:0005742 ! adventitia
+
+[Term]
+id: UBERON:0005740
+name: tunica intima of artery
+is_a: UBERON:0002523 ! tunica intima
+is_a: UBERON:0004797 ! blood vessel layer
+
+[Term]
+id: UBERON:0005742
+name: adventitia
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0005744
+name: bone foramen
+is_a: UBERON:0004111 ! anatomical conduit
+
+[Term]
+id: UBERON:0005753
+name: caudal part of nephrogenic cord
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0005754
+name: rostral part of nephrogenic cord
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0005764
+name: acellular membrane
+is_a: UBERON:0000476 ! acellular anatomical structure
+
+[Term]
+id: UBERON:0005769
+name: basement membrane of epithelium
+is_a: UBERON:0005764 ! acellular membrane
+
+[Term]
+id: UBERON:0005792
+name: nephric ridge
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0005856
+name: developing mesenchymal condensation
+is_a: UBERON:0007524 ! dense mesenchyme tissue
+is_a: UBERON:0011585 ! cell condensation
+
+[Term]
+id: UBERON:0005863
+name: cartilaginous condensation
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005856 ! developing mesenchymal condensation
+
+[Term]
+id: UBERON:0005866
+name: pre-cartilage condensation
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0005856 ! developing mesenchymal condensation
+
+[Term]
+id: UBERON:0005867
+name: mandibular prominence
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0012314 ! embryonic facial prominence
+
+[Term]
+id: UBERON:0005902
+name: occipital region
+is_a: UBERON:0034921 ! multi organ part structure
+
+[Term]
+id: UBERON:0005906
+name: serous sac
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0005911
+name: endo-epithelium
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004119 ! endoderm-derived structure
+
+[Term]
+id: UBERON:0005913
+name: zone of bone organ
+is_a: UBERON:0034944 ! zone of organ
+
+[Term]
+id: UBERON:0005944
+name: axial skeleton plus cranial skeleton
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0005983
+name: heart layer
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0005985
+name: coronary vessel
+is_a: UBERON:0000055 ! vessel
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0006003
+name: integumentary adnexa
+is_a: UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0006056
+name: posterior surface of head
+is_a: UBERON:0036215 ! anatomical surface region
+
+[Term]
+id: UBERON:0006170
+name: mesonephric capsule
+is_a: UBERON:0002015 ! kidney capsule
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0006211
+name: buccopharyngeal membrane
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003037 ! septum
+
+[Term]
+id: UBERON:0006217
+name: cloacal membrane
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000158 ! membranous layer
+
+[Term]
+id: UBERON:0006235
+name: foregut-midgut junction
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0006238
+name: future brain
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0006241
+name: future spinal cord
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0006264
+name: mouth-foregut junction
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0006267
+name: notochordal plate
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0006268
+name: notochordal process
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0006283
+name: future cardiac ventricle
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0006311
+name: chamber of eyeball
+is_a: UBERON:0000063 ! organ subunit
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0006312
+name: ocular refractive media
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0006314
+name: bodily fluid
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0006347
+name: communicating artery
+is_a: UBERON:0001637 ! artery
+
+[Term]
+id: UBERON:0006355
+name: superior vesical vein
+is_a: UBERON:0002460 ! vesical vein
+
+[Term]
+id: UBERON:0006535
+name: skin secretion
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0006538
+name: respiratory system fluid/secretion
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0006544
+name: kidney vasculature
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002201 ! vasculature of trunk
+is_a: UBERON:0006876 ! vasculature of organ
+
+[Term]
+id: UBERON:0006553
+name: renal duct
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000058 ! duct
+
+[Term]
+id: UBERON:0006555
+name: excretory tube
+is_a: UBERON:0000025 ! tube
+
+[Term]
+id: UBERON:0006562
+name: pharynx
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0006574
+name: pectinate line
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0006595
+name: presumptive endoderm
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0006596
+name: presumptive blood
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0006598
+name: presumptive structure
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0006601
+name: presumptive ectoderm
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0006603
+name: presumptive mesoderm
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0006660
+name: muscular coat
+is_a: UBERON:0018260 ! layer of muscle tissue
+
+[Term]
+id: UBERON:0006675
+name: venous valve
+is_a: UBERON:0003978 ! valve
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0006677
+name: surface of epithelium
+is_a: UBERON:0036215 ! anatomical surface region
+
+[Term]
+id: UBERON:0006761
+name: corneo-scleral junction
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0006815
+name: areolar connective tissue
+is_a: UBERON:0011825 ! loose connective tissue
+
+[Term]
+id: UBERON:0006855
+name: muscular coat of ureter
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0006660 ! muscular coat
+
+[Term]
+id: UBERON:0006866
+name: terminal part of digestive tract
+is_a: UBERON:0004921 ! subdivision of digestive tract
+
+[Term]
+id: UBERON:0006876
+name: vasculature of organ
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0006904
+name: head mesenchyme from mesoderm
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005253 ! head mesenchyme
+
+[Term]
+id: UBERON:0006905
+name: mandibular process mesenchyme
+is_a: UBERON:0005253 ! head mesenchyme
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0006909
+name: lumen of digestive tract
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0006913
+name: lip epithelium
+is_a: UBERON:0003929 ! digestive tract epithelium
+
+[Term]
+id: UBERON:0006914
+name: squamous epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0006965
+name: vascular cord
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0006966
+name: coronary capillary
+is_a: UBERON:0001982 ! capillary
+is_a: UBERON:0003498 ! heart blood vessel
+
+[Term]
+id: UBERON:0006984
+name: anatomical surface
+is_a: UBERON:0010199 ! bona-fide anatomical boundary
+
+[Term]
+id: UBERON:0007005
+name: cardiogenic splanchnic mesoderm
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0007010
+name: cleaving embryo
+is_a: UBERON:0000922 ! embryo
+
+[Term]
+id: UBERON:0007026
+name: presumptive gut
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0007098
+name: mandibular neural crest
+is_a: UBERON:0003099 ! cranial neural crest
+
+[Term]
+id: UBERON:0007100
+name: primary circulatory organ
+is_a: UBERON:0015228 ! circulatory organ
+
+[Term]
+id: UBERON:0007135
+name: neural keel
+is_a: UBERON:0016879 ! future central nervous system
+
+[Term]
+id: UBERON:0007147
+name: lumen of midgut
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0007148
+name: lumen of hindgut
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0007158
+name: lumen of anal canal
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0007159
+name: lumen of colon
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0007177
+name: lamina propria of mucosa of colon
+is_a: UBERON:0011189 ! lamina propria of large intestine
+
+[Term]
+id: UBERON:0007188
+name: mesothelium of serous pericardium
+is_a: UBERON:0003388 ! mesothelium of pericardial cavity
+
+[Term]
+id: UBERON:0007213
+name: mesenchyme derived from head neural crest
+is_a: UBERON:0005253 ! head mesenchyme
+is_a: UBERON:0014387 ! mesenchyme derived from neural crest
+
+[Term]
+id: UBERON:0007237
+name: 1st arch mandibular component
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0007239
+name: tunica media of artery
+is_a: UBERON:0002522 ! tunica media
+
+[Term]
+id: UBERON:0007240
+name: tunica adventitia of artery
+is_a: UBERON:0005734 ! tunica adventitia of blood vessel
+
+[Term]
+id: UBERON:0007241
+name: tunica adventitia of vein
+is_a: UBERON:0005734 ! tunica adventitia of blood vessel
+
+[Term]
+id: UBERON:0007242
+name: tunica intima of vein
+is_a: UBERON:0002523 ! tunica intima
+is_a: UBERON:0004797 ! blood vessel layer
+
+[Term]
+id: UBERON:0007243
+name: tunica media of vein
+is_a: UBERON:0002522 ! tunica media
+
+[Term]
+id: UBERON:0007269
+name: pectoral appendage musculature
+is_a: UBERON:0007271 ! appendage musculature
+is_a: UBERON:0014793 ! musculature of pectoral complex
+
+[Term]
+id: UBERON:0007270
+name: pelvic appendage musculature
+is_a: UBERON:0007271 ! appendage musculature
+is_a: UBERON:0014792 ! musculature of pelvic complex
+
+[Term]
+id: UBERON:0007271
+name: appendage musculature
+is_a: UBERON:0001015 ! musculature
+
+[Term]
+id: UBERON:0007272
+name: pectoral appendage skeleton
+is_a: UBERON:0011582 ! paired limb/fin skeleton
+
+[Term]
+id: UBERON:0007273
+name: pelvic appendage skeleton
+is_a: UBERON:0011582 ! paired limb/fin skeleton
+
+[Term]
+id: UBERON:0007277
+name: presumptive hindbrain
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0007280
+name: presumptive endocardium
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0007281
+name: presumptive midbrain hindbrain boundary
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0007282
+name: presumptive segmental plate
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0007284
+name: presumptive neural plate
+is_a: UBERON:0016879 ! future central nervous system
+
+[Term]
+id: UBERON:0007285
+name: presumptive paraxial mesoderm
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0007297
+name: presumptive pronephric mesoderm
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0007300
+name: pectoral appendage blood vessel
+is_a: UBERON:0007301 ! appendage blood vessel
+
+[Term]
+id: UBERON:0007301
+name: appendage blood vessel
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0007302
+name: pectoral appendage vasculature
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0007304 ! appendage vasculature
+
+[Term]
+id: UBERON:0007303
+name: pharyngeal vasculature
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0006876 ! vasculature of organ
+
+[Term]
+id: UBERON:0007304
+name: appendage vasculature
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0007376
+name: outer epithelium
+is_a: UBERON:0003102 ! surface structure
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0007383
+name: enveloping layer of ectoderm
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0007389
+name: paired limb/fin cartilage
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002418 ! cartilage tissue
+
+[Term]
+id: UBERON:0007390
+name: pectoral appendage cartilage tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0007389 ! paired limb/fin cartilage
+
+[Term]
+id: UBERON:0007391
+name: pelvic appendage cartilage tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0007389 ! paired limb/fin cartilage
+
+[Term]
+id: UBERON:0007473
+name: lumen of epithelial sac
+is_a: UBERON:0012467 ! enclosed anatomical space
+
+[Term]
+id: UBERON:0007499
+name: epithelial sac
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0009856 ! sac
+
+[Term]
+id: UBERON:0007500
+name: epithelial tube open at both ends
+is_a: UBERON:0003914 ! epithelial tube
+
+[Term]
+id: UBERON:0007503
+name: epithelial vesicle
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0007524
+name: dense mesenchyme tissue
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0007530
+name: migrating mesenchyme population
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0007616
+name: layer of synovial tissue
+is_a: UBERON:0000042 ! serous membrane
+
+[Term]
+id: UBERON:0007617
+name: synovial cavity of joint
+is_a: UBERON:0002553 ! anatomical cavity
+
+[Term]
+id: UBERON:0007625
+name: pigment epithelium of eye
+is_a: UBERON:0019304 ! sensory organ epithelium
+
+[Term]
+id: UBERON:0007651
+name: anatomical junction
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0007687
+name: kidney field
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0006598 ! presumptive structure
+is_a: UBERON:0007688 ! anlage
+
+[Term]
+id: UBERON:0007688
+name: anlage
+is_a: UBERON:0000479 ! tissue
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0007690
+name: early pharyngeal endoderm
+is_a: UBERON:0003258 ! endoderm of foregut
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0007719
+name: bone of reproductive organ
+is_a: UBERON:0001474 ! bone element
+is_a: UBERON:0005156 ! reproductive structure
+
+[Term]
+id: UBERON:0007771
+name: epidermis gland
+is_a: UBERON:0002419 ! skin gland
+
+[Term]
+id: UBERON:0007779
+name: transudate
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0007794
+name: secretion of serous gland
+is_a: UBERON:0000456 ! secretion of exocrine gland
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0007798
+name: vascular system
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0007808
+name: adipose tissue of abdominal region
+is_a: UBERON:0001013 ! adipose tissue
+is_a: UBERON:0003567 ! abdomen connective tissue
+
+[Term]
+id: UBERON:0007811
+name: craniocervical region
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0007823
+name: appendage girdle region
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0007828
+name: girdle bone/zone
+is_a: UBERON:0010740 ! bone of appendage girdle complex
+
+[Term]
+id: UBERON:0007829
+name: pectoral girdle bone
+is_a: UBERON:0007828 ! girdle bone/zone
+is_a: UBERON:0010741 ! bone of pectoral complex
+
+[Term]
+id: UBERON:0007830
+name: pelvic girdle bone/zone
+is_a: UBERON:0003828 ! abdominal segment bone
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005179 ! pelvic region element
+is_a: UBERON:0005913 ! zone of bone organ
+is_a: UBERON:0007828 ! girdle bone/zone
+is_a: UBERON:0010742 ! bone of pelvic complex
+
+[Term]
+id: UBERON:0007831
+name: pectoral girdle skeleton
+is_a: UBERON:0010719 ! girdle skeleton
+
+[Term]
+id: UBERON:0007832
+name: pelvic girdle skeleton
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010719 ! girdle skeleton
+
+[Term]
+id: UBERON:0007842
+name: membrane bone
+is_a: UBERON:0001474 ! bone element
+
+[Term]
+id: UBERON:0007844
+name: cartilage element
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0004765 ! skeletal element
+
+[Term]
+id: UBERON:0007914
+name: bone of craniocervical region
+is_a: UBERON:0001474 ! bone element
+
+[Term]
+id: UBERON:0008114
+name: joint of girdle
+is_a: UBERON:0000982 ! skeletal joint
+
+[Term]
+id: UBERON:0008115
+name: surface of cartilage
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0036215 ! anatomical surface region
+
+[Term]
+id: UBERON:0008203
+name: pelvic cavity
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002553 ! anatomical cavity
+
+[Term]
+id: UBERON:0008229
+name: craniocervical region musculature
+is_a: UBERON:0001015 ! musculature
+
+[Term]
+id: UBERON:0008307
+name: heart endothelium
+is_a: UBERON:0004852 ! cardiovascular system endothelium
+
+[Term]
+id: UBERON:0008814
+name: pharyngeal arch system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0008816
+name: embryonic head
+is_a: UBERON:0000033 ! head
+
+[Term]
+id: UBERON:0008823
+name: neural tube derived brain
+is_a: UBERON:0000489 ! cavitated compound organ
+is_a: UBERON:0000955 ! brain
+
+[Term]
+id: UBERON:0008895
+name: splanchnocranium
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0011159 ! primary subdivision of cranial skeletal system
+
+[Term]
+id: UBERON:0008907
+name: dermal bone
+is_a: UBERON:0004756 ! dermal skeletal element
+is_a: UBERON:0007842 ! membrane bone
+
+[Term]
+id: UBERON:0008909
+name: perichordal bone
+is_a: UBERON:0012075 ! replacement bone
+
+[Term]
+id: UBERON:0008962
+name: forelimb bone
+is_a: UBERON:0002428 ! limb bone
+is_a: UBERON:0010741 ! bone of pectoral complex
+is_a: UBERON:0015021 ! forelimb endochondral element
+
+[Term]
+id: UBERON:0008998
+name: vasculature of brain
+is_a: UBERON:0006876 ! vasculature of organ
+is_a: UBERON:0036303 ! vasculature of central nervous system
+
+[Term]
+id: UBERON:0009010
+name: periurethral tissue
+is_a: UBERON:0000479 ! tissue
+
+[Term]
+id: UBERON:0009141
+name: craniocervical region vein
+is_a: UBERON:0013140 ! systemic vein
+
+[Term]
+id: UBERON:0009142
+name: entire embryonic mesenchyme
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0009145
+name: pharyngeal region of foregut
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0009196
+name: indifferent external genitalia
+is_a: UBERON:0004176 ! external genitalia
+
+[Term]
+id: UBERON:0009200
+name: limb epidermis
+is_a: UBERON:0001003 ! skin epidermis
+is_a: UBERON:3000981 ! limb external integument structure
+
+[Term]
+id: UBERON:0009201
+name: nephric duct
+is_a: UBERON:0003914 ! epithelial tube
+is_a: UBERON:0004819 ! kidney epithelium
+is_a: UBERON:0006553 ! renal duct
+is_a: UBERON:0006555 ! excretory tube
+union_of: UBERON:0003060 ! pronephric duct
+union_of: UBERON:0003074 ! mesonephric duct
+
+[Term]
+id: UBERON:0009479
+name: ectoderm of buccopharyngeal membrane
+is_a: UBERON:0000924 ! ectoderm
+
+[Term]
+id: UBERON:0009480
+name: endoderm of buccopharyngeal membrane
+is_a: UBERON:0000925 ! endoderm
+
+[Term]
+id: UBERON:0009482
+name: associated mesenchyme of foregut-midgut junction
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0009494
+name: pharyngeal arch mesenchymal region
+is_a: UBERON:0005253 ! head mesenchyme
+is_a: UBERON:0007524 ! dense mesenchyme tissue
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0009497
+name: epithelium of foregut-midgut junction
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0003929 ! digestive tract epithelium
+is_a: UBERON:0005911 ! endo-epithelium
+
+[Term]
+id: UBERON:0009503
+name: mesenchyme of hindgut
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0009521
+name: anal membrane endodermal component
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0005911 ! endo-epithelium
+
+[Term]
+id: UBERON:0009550
+name: endoderm of foregut-midgut junction
+is_a: UBERON:0000925 ! endoderm
+
+[Term]
+id: UBERON:0009566
+name: intestinal submucosa
+is_a: UBERON:0018257 ! submucosa of digestive tract
+
+[Term]
+id: UBERON:0009569
+name: subdivision of trunk
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0009581
+name: midbrain mantle layer
+is_a: UBERON:0004061 ! neural tube mantle layer
+
+[Term]
+id: UBERON:0009583
+name: spinal cord mantle layer
+is_a: UBERON:0004061 ! neural tube mantle layer
+
+[Term]
+id: UBERON:0009584
+name: 1st arch mandibular mesenchyme
+is_a: UBERON:0010042 ! 1st arch mesenchyme
+
+[Term]
+id: UBERON:0009611
+name: midbrain neural plate
+is_a: UBERON:0003075 ! neural plate
+
+[Term]
+id: UBERON:0009614
+name: hindbrain neural plate
+is_a: UBERON:0003075 ! neural plate
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0009615
+name: midbrain hindbrain boundary neural plate
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0009616
+name: presumptive midbrain
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0009617
+name: head paraxial mesoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005253 ! head mesenchyme
+
+[Term]
+id: UBERON:0009618
+name: trunk paraxial mesoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005256 ! trunk mesenchyme
+
+[Term]
+id: UBERON:0009669
+name: embryonic cloacal lumen
+is_a: UBERON:0012463 ! cloacal lumen
+
+[Term]
+id: UBERON:0009670
+name: rectal lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0009715
+name: stomodeal lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0009722
+name: entire pharyngeal arch endoderm
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0015833 ! foregut epithelium
+
+[Term]
+id: UBERON:0009749
+name: limb mesenchyme
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0009751
+name: cardiac mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0009842
+name: glandular acinus
+is_a: UBERON:0034922 ! cell cluster
+
+[Term]
+id: UBERON:0009844
+name: urogenital sinus lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0009845
+name: urogenital sinus mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0009846
+name: embryonic cloacal epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0009521 ! anal membrane endodermal component
+is_a: UBERON:0012481 ! cloacal epithelium
+
+[Term]
+id: UBERON:0009854
+name: digestive tract diverticulum
+is_a: UBERON:0004921 ! subdivision of digestive tract
+is_a: UBERON:0009856 ! sac
+
+[Term]
+id: UBERON:0009856
+name: sac
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0009881
+name: anterior lateral plate mesoderm
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0009891
+name: facial mesenchyme
+is_a: UBERON:0005253 ! head mesenchyme
+
+[Term]
+id: UBERON:0009916
+name: wall of ureter
+is_a: UBERON:0000060 ! anatomical wall
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0009919
+name: ureter smooth muscle
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0009920
+name: optic neural crest
+is_a: UBERON:0007213 ! mesenchyme derived from head neural crest
+is_a: UBERON:0007530 ! migrating mesenchyme population
+
+[Term]
+id: UBERON:0009953
+name: post-embryonic organism
+is_a: UBERON:0000468 ! multicellular organism
+
+[Term]
+id: UBERON:0009958
+name: bladder lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0009972
+name: ureteropelvic junction
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0009973
+name: ureterovesical junction
+is_a: UBERON:0003978 ! valve
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0010000
+name: multicellular anatomical structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0010042
+name: 1st arch mesenchyme
+is_a: UBERON:0009494 ! pharyngeal arch mesenchymal region
+
+[Term]
+id: UBERON:0010046
+name: entire pharyngeal arch associated mesenchyme
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0007524 ! dense mesenchyme tissue
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0010047
+name: oral gland
+is_a: UBERON:0002365 ! exocrine gland
+is_a: UBERON:0003408 ! gland of digestive tract
+
+[Term]
+id: UBERON:0010077
+name: cuboidal epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0010083
+name: future dermis
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0010096
+name: future myelencephalon
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0010131
+name: conducting tissue of heart
+is_a: UBERON:0001133 ! cardiac muscle tissue
+
+[Term]
+id: UBERON:0010152
+name: skin mucus
+is_a: UBERON:0000912 ! mucus
+
+[Term]
+id: UBERON:0010161
+name: lumen of blood vessel
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0010188
+name: protuberance
+is_a: UBERON:0034944 ! zone of organ
+
+[Term]
+id: UBERON:0010199
+name: bona-fide anatomical boundary
+is_a: UBERON:0000466 ! immaterial anatomical entity
+
+[Term]
+id: UBERON:0010227
+name: future cardiac atrium
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0010230
+name: eyeball of camera-type eye
+is_a: UBERON:0000020 ! sense organ
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0010252
+name: 1st arch mandibular mesenchyme from neural crest
+is_a: UBERON:0009584 ! 1st arch mandibular mesenchyme
+is_a: UBERON:0010259 ! 1st arch mesenchyme from neural crest
+
+[Term]
+id: UBERON:0010258
+name: mesenchyme from rhombencephalic neural crest
+is_a: UBERON:0007213 ! mesenchyme derived from head neural crest
+
+[Term]
+id: UBERON:0010259
+name: 1st arch mesenchyme from neural crest
+is_a: UBERON:0010042 ! 1st arch mesenchyme
+is_a: UBERON:0010258 ! mesenchyme from rhombencephalic neural crest
+is_a: UBERON:0010359 ! pharyngeal arch mesenchyme from neural crest
+
+[Term]
+id: UBERON:0010285
+name: midbrain basal plate
+is_a: UBERON:0002020 ! gray matter
+
+[Term]
+id: UBERON:0010286
+name: midbrain neural tube
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0010291
+name: layer of sclera
+is_a: UBERON:0004923 ! organ component layer
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0010294
+name: scleral endothelium
+is_a: UBERON:0001986 ! endothelium
+is_a: UBERON:0010291 ! layer of sclera
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0010299
+name: scleral mesenchyme
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0003104 ! mesenchyme
+
+[Term]
+id: UBERON:0010303
+name: extraembryonic epithelium
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0005292 ! extraembryonic tissue
+
+[Term]
+id: UBERON:0010312
+name: immature eye
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0010313
+name: neural crest-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0010314
+name: structure with developmental contribution from neural crest
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0010316
+name: germ layer / neural crest
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0010321
+name: skeletal element of eye region
+is_a: UBERON:0004765 ! skeletal element
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0010323
+name: cranial skeletal system
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0010328
+name: limb bud mesenchyme
+is_a: UBERON:0010329 ! paired limb/fin bud mesenchyme
+
+[Term]
+id: UBERON:0010329
+name: paired limb/fin bud mesenchyme
+is_a: UBERON:0010377 ! mesenchyme from somatopleure
+
+[Term]
+id: UBERON:0010336
+name: mandibular process mesenchyme from neural crest
+is_a: UBERON:0006905 ! mandibular process mesenchyme
+is_a: UBERON:0010258 ! mesenchyme from rhombencephalic neural crest
+
+[Term]
+id: UBERON:0010337
+name: mandibular process mesenchyme from head mesenchyme
+is_a: UBERON:0006904 ! head mesenchyme from mesoderm
+is_a: UBERON:0006905 ! mandibular process mesenchyme
+
+[Term]
+id: UBERON:0010339
+name: 1st arch mandibular mesenchyme from head mesenchyme
+is_a: UBERON:0009584 ! 1st arch mandibular mesenchyme
+is_a: UBERON:0010341 ! 1st arch mesenchyme from head mesenchyme
+
+[Term]
+id: UBERON:0010341
+name: 1st arch mesenchyme from head mesenchyme
+is_a: UBERON:0006904 ! head mesenchyme from mesoderm
+is_a: UBERON:0010042 ! 1st arch mesenchyme
+is_a: UBERON:0010360 ! pharyngeal arch mesenchyme from head mesenchyme
+
+[Term]
+id: UBERON:0010359
+name: pharyngeal arch mesenchyme from neural crest
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0014387 ! mesenchyme derived from neural crest
+
+[Term]
+id: UBERON:0010360
+name: pharyngeal arch mesenchyme from head mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0010362
+name: endoskeleton
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0010363
+name: endochondral element
+is_a: UBERON:0004765 ! skeletal element
+
+[Term]
+id: UBERON:0010364
+name: dermal skeleton
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0010371
+name: ecto-epithelium
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0010377
+name: mesenchyme from somatopleure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0007524 ! dense mesenchyme tissue
+
+[Term]
+id: UBERON:0010390
+name: lumen of urethra
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0010409
+name: ocular surface region
+is_a: UBERON:0000063 ! organ subunit
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0010418
+name: urethral opening
+is_a: UBERON:0000161 ! orifice
+
+[Term]
+id: UBERON:0010427
+name: ciliary processes
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0010428
+name: flat bone
+is_a: UBERON:0001474 ! bone element
+
+[Term]
+id: UBERON:0010522
+name: replacement element
+is_a: UBERON:0004765 ! skeletal element
+
+[Term]
+id: UBERON:0010523
+name: microcirculatory vessel
+is_a: UBERON:0000055 ! vessel
+
+[Term]
+id: UBERON:0010707
+name: appendage girdle complex
+is_a: UBERON:0000475 ! organism subdivision
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0010708
+name: pectoral complex
+is_a: UBERON:0010707 ! appendage girdle complex
+
+[Term]
+id: UBERON:0010709
+name: pelvic complex
+is_a: UBERON:0010707 ! appendage girdle complex
+
+[Term]
+id: UBERON:0010712
+name: limb skeleton subdivision
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0010719
+name: girdle skeleton
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0010740
+name: bone of appendage girdle complex
+is_a: UBERON:0001474 ! bone element
+
+[Term]
+id: UBERON:0010741
+name: bone of pectoral complex
+is_a: UBERON:0010740 ! bone of appendage girdle complex
+
+[Term]
+id: UBERON:0010742
+name: bone of pelvic complex
+is_a: UBERON:0010740 ! bone of appendage girdle complex
+
+[Term]
+id: UBERON:0010881
+name: limb cartilage element
+is_a: UBERON:0007844 ! cartilage element
+is_a: UBERON:0015061 ! limb endochondral element
+
+[Term]
+id: UBERON:0010882
+name: limb bone pre-cartilage condensation
+is_a: UBERON:0015061 ! limb endochondral element
+
+[Term]
+id: UBERON:0010883
+name: forelimb cartilage element
+is_a: UBERON:0010881 ! limb cartilage element
+is_a: UBERON:0015021 ! forelimb endochondral element
+
+[Term]
+id: UBERON:0010884
+name: forelimb bone pre-cartilage condensation
+is_a: UBERON:0010882 ! limb bone pre-cartilage condensation
+is_a: UBERON:0015021 ! forelimb endochondral element
+
+[Term]
+id: UBERON:0010885
+name: hindlimb cartilage element
+is_a: UBERON:0010881 ! limb cartilage element
+is_a: UBERON:0015022 ! hindlimb endochondral element
+
+[Term]
+id: UBERON:0010886
+name: hindlimb pre-cartilage condensation
+is_a: UBERON:0010882 ! limb bone pre-cartilage condensation
+is_a: UBERON:0015022 ! hindlimb endochondral element
+
+[Term]
+id: UBERON:0010912
+name: subdivision of skeleton
+is_a: UBERON:0011216 ! organ system subdivision
+
+[Term]
+id: UBERON:0011004
+name: pharyngeal arch cartilage
+is_a: UBERON:0003933 ! cranial cartilage
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0011107
+name: synovial joint of pelvic girdle
+is_a: UBERON:0002217 ! synovial joint
+is_a: UBERON:0008114 ! joint of girdle
+
+[Term]
+id: UBERON:0011108
+name: synovial joint of pectoral girdle
+is_a: UBERON:0002217 ! synovial joint
+is_a: UBERON:0008114 ! joint of girdle
+
+[Term]
+id: UBERON:0011134
+name: nonsynovial joint
+is_a: UBERON:0000982 ! skeletal joint
+
+[Term]
+id: UBERON:0011137
+name: axial skeletal system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0011138
+name: postcranial axial skeletal system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0011139
+name: synovial limb joint
+is_a: UBERON:0002217 ! synovial joint
+is_a: UBERON:0003657 ! limb joint
+
+[Term]
+id: UBERON:0011143
+name: upper urinary tract
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0011148
+name: submucosal gland
+is_a: UBERON:0000414 ! mucous gland
+
+[Term]
+id: UBERON:0011156
+name: facial skeleton
+is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0011158 ! primary subdivision of skull
+
+[Term]
+id: UBERON:0011158
+name: primary subdivision of skull
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0011159
+name: primary subdivision of cranial skeletal system
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0011164
+name: neurocranium bone
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0004766 ! cranial bone
+
+[Term]
+id: UBERON:0011189
+name: lamina propria of large intestine
+is_a: UBERON:0004780 ! gastrointestinal system lamina propria
+
+[Term]
+id: UBERON:0011198
+name: muscle layer of large intestine
+is_a: UBERON:0012367 ! muscle layer of intestine
+
+[Term]
+id: UBERON:0011215
+name: central nervous system cell part cluster
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005162 ! multi cell part structure
+
+[Term]
+id: UBERON:0011216
+name: organ system subdivision
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0011222
+name: intra-ocular muscle
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004277 ! eye muscle
+
+[Term]
+id: UBERON:0011249
+name: appendicular skeletal system
+is_a: UBERON:0000075 ! subdivision of skeletal system
+
+[Term]
+id: UBERON:0011270
+name: dorsal trunk
+is_a: UBERON:0009569 ! subdivision of trunk
+
+[Term]
+id: UBERON:0011272
+name: embryonic skin basal layer
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0011362
+name: cranial blood vasculature
+is_a: UBERON:0002200 ! vasculature of head
+is_a: UBERON:0004537 ! blood vasculature
+
+[Term]
+id: UBERON:0011574
+name: mesonephric duct lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005082 ! tube lumen
+
+[Term]
+id: UBERON:0011582
+name: paired limb/fin skeleton
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0011585
+name: cell condensation
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0011595
+name: jaw region
+is_a: UBERON:0000475 ! organism subdivision
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0011596
+name: future lower lip
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0003236 ! epithelium of lower jaw
+
+[Term]
+id: UBERON:0011642
+name: oral epithelium from ectoderm
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0002424 ! oral epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0011676
+name: subdivision of organism along main body axis
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0011695
+name: embryonic cardiovascular system
+is_a: UBERON:0004535 ! cardiovascular system
+
+[Term]
+id: UBERON:0011772
+name: lower jaw opening
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0011814
+name: non-neurogenic ectodermal placode
+is_a: UBERON:0005085 ! ectodermal placode
+
+[Term]
+id: UBERON:0011820
+name: atrioventricular region
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0011821
+name: irregular connective tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0011822
+name: dense irregular connective tissue
+is_a: UBERON:0011821 ! irregular connective tissue
+is_a: UBERON:0011823 ! dense connective tissue
+
+[Term]
+id: UBERON:0011823
+name: dense connective tissue
+is_a: UBERON:0002384 ! connective tissue
+
+[Term]
+id: UBERON:0011824
+name: fibrous connective tissue
+is_a: UBERON:0011822 ! dense irregular connective tissue
+
+[Term]
+id: UBERON:0011825
+name: loose connective tissue
+is_a: UBERON:0011821 ! irregular connective tissue
+
+[Term]
+id: UBERON:0011857
+name: acinus of lacrimal gland
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0011858 ! acinus of exocrine gland
+
+[Term]
+id: UBERON:0011858
+name: acinus of exocrine gland
+is_a: UBERON:0009842 ! glandular acinus
+
+[Term]
+id: UBERON:0011860
+name: collection of collagen fibrils
+is_a: UBERON:0000476 ! acellular anatomical structure
+
+[Term]
+id: UBERON:0011863
+name: bone collagen fibril
+is_a: UBERON:0011860 ! collection of collagen fibrils
+
+[Term]
+id: UBERON:0011892
+name: anterior uvea
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0011997
+name: coelom
+is_a: UBERON:0000481 ! multi-tissue structure
+
+[Term]
+id: UBERON:0012075
+name: replacement bone
+is_a: UBERON:0001474 ! bone element
+is_a: UBERON:0010522 ! replacement element
+
+[Term]
+id: UBERON:0012125
+name: dermatological-muscosal system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:0012180
+name: head or neck skin
+is_a: UBERON:0000014 ! zone of skin
+
+[Term]
+id: UBERON:0012239
+name: urinary bladder vasculature
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002201 ! vasculature of trunk
+is_a: UBERON:0006876 ! vasculature of organ
+
+[Term]
+id: UBERON:0012240
+name: urethral meatus
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010418 ! urethral opening
+
+[Term]
+id: UBERON:0012242
+name: internal urethral orifice
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010418 ! urethral opening
+
+[Term]
+id: UBERON:0012274
+name: columnar epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0012275
+name: meso-epithelium
+is_a: UBERON:0000483 ! epithelium
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0012292
+name: embryonic cloacal fold
+is_a: UBERON:0000481 ! multi-tissue structure
+
+[Term]
+id: UBERON:0012299
+name: mucosa of urethra
+is_a: UBERON:0000344 ! mucosa
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0012314
+name: embryonic facial prominence
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0012320
+name: cervical artery
+is_a: UBERON:0001637 ! artery
+is_a: UBERON:0003502 ! neck blood vessel
+
+[Term]
+id: UBERON:0012321
+name: deep cervical artery
+is_a: UBERON:0012320 ! cervical artery
+
+[Term]
+id: UBERON:0012360
+name: bone of jaw
+is_a: UBERON:0003462 ! facial bone
+is_a: UBERON:0013765 ! digestive system element
+
+[Term]
+id: UBERON:0012361
+name: internal anal region
+is_a: UBERON:0000481 ! multi-tissue structure
+
+[Term]
+id: UBERON:0012367
+name: muscle layer of intestine
+is_a: UBERON:0018261 ! muscular coat of digestive tract
+
+[Term]
+id: UBERON:0012375
+name: subserosa
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0012378
+name: muscle layer of urinary bladder
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0006660 ! muscular coat
+
+[Term]
+id: UBERON:0012416
+name: respiratory system arterial smooth muscle
+is_a: UBERON:0004297 ! respiratory system blood vessel smooth muscle
+is_a: UBERON:0004695 ! arterial system smooth muscle
+
+[Term]
+id: UBERON:0012418
+name: respiratory system venous smooth muscle
+is_a: UBERON:0004696 ! venous system smooth muscle
+
+[Term]
+id: UBERON:0012430
+name: tunica fibrosa of eyeball
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0012463
+name: cloacal lumen
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0012464
+name: cloacal vent
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000161 ! orifice
+
+[Term]
+id: UBERON:0012465
+name: lumen of terminal part of digestive tract
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0012466
+name: extraembryonic cavity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0012467
+name: enclosed anatomical space
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0012469
+name: external anal region
+is_a: UBERON:0000481 ! multi-tissue structure
+
+[Term]
+id: UBERON:0012475
+name: skeleton of pectoral complex
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0012476
+name: skeleton of pelvic complex
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0012478
+name: cloacal gland
+is_a: UBERON:0003408 ! gland of digestive tract
+
+[Term]
+id: UBERON:0012480
+name: cloacal mucosa
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000344 ! mucosa
+
+[Term]
+id: UBERON:0012481
+name: cloacal epithelium
+is_a: UBERON:0003929 ! digestive tract epithelium
+is_a: UBERON:0005911 ! endo-epithelium
+
+[Term]
+id: UBERON:0012482
+name: submucosa of cloaca
+is_a: UBERON:0018257 ! submucosa of digestive tract
+
+[Term]
+id: UBERON:0012483
+name: serosa of cloaca
+is_a: UBERON:0000042 ! serous membrane
+
+[Term]
+id: UBERON:0012486
+name: muscle layer of cloaca
+is_a: UBERON:0018261 ! muscular coat of digestive tract
+
+[Term]
+id: UBERON:0012489
+name: muscle layer of colon
+is_a: UBERON:0011198 ! muscle layer of large intestine
+
+[Term]
+id: UBERON:0012490
+name: muscle layer of anal canal
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0011198 ! muscle layer of large intestine
+
+[Term]
+id: UBERON:0013126
+name: vein of abdomen
+is_a: UBERON:0001638 ! vein
+is_a: UBERON:0003497 ! abdomen blood vessel
+
+[Term]
+id: UBERON:0013136
+name: vein of lip
+is_a: UBERON:0003496 ! head blood vessel
+is_a: UBERON:0003502 ! neck blood vessel
+is_a: UBERON:0009141 ! craniocervical region vein
+
+[Term]
+id: UBERON:0013140
+name: systemic vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0013158
+name: foregut-midgut junction gland
+is_a: UBERON:0003408 ! gland of digestive tract
+
+[Term]
+id: UBERON:0013232
+name: serous acinus
+is_a: UBERON:0011858 ! acinus of exocrine gland
+
+[Term]
+id: UBERON:0013241
+name: embryonic urethral groove
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0013411
+name: cranial cavity
+is_a: UBERON:0002553 ! anatomical cavity
+
+[Term]
+id: UBERON:0013514
+name: space surrounding organism
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0013522
+name: subdivision of tube
+is_a: UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0013685
+name: foramen of skull
+is_a: UBERON:0005744 ! bone foramen
+
+[Term]
+id: UBERON:0013686
+name: anatomical conduit space
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0013694
+name: brain endothelium
+is_a: UBERON:0001986 ! endothelium
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0013695
+name: colon endothelium
+is_a: UBERON:0000397 ! colonic epithelium
+is_a: UBERON:0001986 ! endothelium
+
+[Term]
+id: UBERON:0013700
+name: axial musculature
+is_a: UBERON:0001015 ! musculature
+
+[Term]
+id: UBERON:0013701
+name: main body axis
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0013702
+name: body proper
+is_a: UBERON:0000475 ! organism subdivision
+
+[Term]
+id: UBERON:0013704
+name: notochordal canal
+is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0013727
+name: notochordal fluid
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0013754
+name: integumentary system layer
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0013755
+name: arterial blood
+is_a: UBERON:0000178 ! blood
+
+[Term]
+id: UBERON:0013756
+name: venous blood
+is_a: UBERON:0000178 ! blood
+
+[Term]
+id: UBERON:0013757
+name: capillary blood
+is_a: UBERON:0000178 ! blood
+
+[Term]
+id: UBERON:0013765
+name: digestive system element
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0013768
+name: great vessel of heart
+is_a: UBERON:0001981 ! blood vessel
+
+[Term]
+id: UBERON:0014387
+name: mesenchyme derived from neural crest
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0010313 ! neural crest-derived structure
+
+[Term]
+id: UBERON:0014401
+name: renal venous blood vessel
+is_a: UBERON:0003517 ! kidney blood vessel
+is_a: UBERON:0003920 ! venous blood vessel
+
+[Term]
+id: UBERON:0014455
+name: subcutaneous abdominal adipose tissue
+is_a: UBERON:0002190 ! subcutaneous adipose tissue
+is_a: UBERON:0007808 ! adipose tissue of abdominal region
+
+[Term]
+id: UBERON:0014477
+name: thoracic skeleton
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0010912 ! subdivision of skeleton
+
+[Term]
+id: UBERON:0014703
+name: anal membrane ectodermal component
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0014717
+name: mucous acinus
+is_a: UBERON:0011858 ! acinus of exocrine gland
+
+[Term]
+id: UBERON:0014776
+name: midbrain neuromere
+is_a: UBERON:0004731 ! neuromere
+
+[Term]
+id: UBERON:0014777
+name: spinal neuromere
+is_a: UBERON:0004731 ! neuromere
+
+[Term]
+id: UBERON:0014783
+name: cloacal muscle
+is_a: UBERON:0001630 ! muscle organ
+is_a: UBERON:0013765 ! digestive system element
+
+[Term]
+id: UBERON:0014792
+name: musculature of pelvic complex
+is_a: UBERON:0001015 ! musculature
+
+[Term]
+id: UBERON:0014793
+name: musculature of pectoral complex
+is_a: UBERON:0001015 ! musculature
+
+[Term]
+id: UBERON:0014903
+name: primordial vasculature
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0001048 ! primordium
+
+[Term]
+id: UBERON:0015021
+name: forelimb endochondral element
+is_a: UBERON:0015061 ! limb endochondral element
+union_of: UBERON:0008962 ! forelimb bone
+union_of: UBERON:0010883 ! forelimb cartilage element
+union_of: UBERON:0010884 ! forelimb bone pre-cartilage condensation
+
+[Term]
+id: UBERON:0015022
+name: hindlimb endochondral element
+is_a: UBERON:0015061 ! limb endochondral element
+union_of: UBERON:0003464 ! hindlimb bone
+union_of: UBERON:0010885 ! hindlimb cartilage element
+union_of: UBERON:0010886 ! hindlimb pre-cartilage condensation
+
+[Term]
+id: UBERON:0015061
+name: limb endochondral element
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0010363 ! endochondral element
+union_of: UBERON:0002428 ! limb bone
+union_of: UBERON:0010881 ! limb cartilage element
+union_of: UBERON:0010882 ! limb bone pre-cartilage condensation
+
+[Term]
+id: UBERON:0015128
+name: subepicardial layer of epicardium
+is_a: UBERON:0007188 ! mesothelium of serous pericardium
+
+[Term]
+id: UBERON:0015129
+name: epicardial fat
+is_a: UBERON:0003837 ! thoracic segment connective tissue
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0035814 ! pericardial fat
+
+[Term]
+id: UBERON:0015152
+name: gland of ocular region
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0015154
+name: lateral gland of orbital region
+is_a: UBERON:0015152 ! gland of ocular region
+
+[Term]
+id: UBERON:0015165
+name: multi-unit eye
+is_a: UBERON:0000970 ! eye
+
+[Term]
+id: UBERON:0015178
+name: somite border
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0015179
+name: somite boundary epithelium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0015212
+name: lateral structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0015228
+name: circulatory organ
+is_a: UBERON:0003103 ! compound organ
+
+[Term]
+id: UBERON:0015329
+name: respiratory system basement membrane
+is_a: UBERON:0005769 ! basement membrane of epithelium
+
+[Term]
+id: UBERON:0015410
+name: heart plus pericardium
+is_a: UBERON:0005178 ! thoracic cavity element
+
+[Term]
+id: UBERON:0015418
+name: urethra mesenchymal layer
+is_a: UBERON:0003104 ! mesenchyme
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0015420
+name: ureteral valve
+is_a: UBERON:0003978 ! valve
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0015716
+name: anal canal epithelium
+is_a: UBERON:0001278 ! epithelium of large intestine
+is_a: UBERON:0014703 ! anal membrane ectodermal component
+
+[Term]
+id: UBERON:0015783
+name: smooth muscle layer in fatty layer of subcutaneous tissue
+is_a: UBERON:0001135 ! smooth muscle tissue
+
+[Term]
+id: UBERON:0015808
+name: eye epithelium
+is_a: UBERON:0007625 ! pigment epithelium of eye
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0015833
+name: foregut epithelium
+is_a: UBERON:0003929 ! digestive tract epithelium
+
+[Term]
+id: UBERON:0016545
+name: pharyngeal ectoderm
+is_a: UBERON:0000490 ! unilaminar epithelium
+is_a: UBERON:0003351 ! pharyngeal epithelium
+is_a: UBERON:0005291 ! embryonic tissue
+
+[Term]
+id: UBERON:0016548
+name: central nervous system gray matter layer
+is_a: UBERON:0022303 ! nervous system cell part layer
+
+[Term]
+id: UBERON:0016553
+name: respiratory system mucus
+is_a: UBERON:0000912 ! mucus
+
+[Term]
+id: UBERON:0016566
+name: pit
+is_a: UBERON:0036215 ! anatomical surface region
+
+[Term]
+id: UBERON:0016570
+name: lamina of gray matter of spinal cord
+is_a: UBERON:0011215 ! central nervous system cell part cluster
+is_a: UBERON:0022303 ! nervous system cell part layer
+
+[Term]
+id: UBERON:0016879
+name: future central nervous system
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0016880
+name: future nervous system
+is_a: UBERON:0006598 ! presumptive structure
+
+[Term]
+id: UBERON:0016885
+name: epithelium of terminal part of digestive tract
+is_a: UBERON:0003929 ! digestive tract epithelium
+
+[Term]
+id: UBERON:0016886
+name: muscle tissue of terminal part of digestive tract
+is_a: UBERON:0002385 ! muscle tissue
+
+[Term]
+id: UBERON:0016887
+name: entire extraembryonic component
+is_a: UBERON:0000481 ! multi-tissue structure
+
+[Term]
+id: UBERON:0016888
+name: transitional anatomical structure
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0017649
+name: dorsal body wall
+is_a: UBERON:0000309 ! body wall
+
+[Term]
+id: UBERON:0017650
+name: developing mesenchymal structure
+is_a: UBERON:0005423 ! developing anatomical structure
+
+[Term]
+id: UBERON:0017672
+name: abdominal viscera
+is_a: UBERON:0002075 ! viscus
+is_a: UBERON:0005172 ! abdomen element
+
+[Term]
+id: UBERON:0018111
+name: muscle layer of rectum
+is_a: UBERON:0011198 ! muscle layer of large intestine
+
+[Term]
+id: UBERON:0018112
+name: rectum smooth muscle tissue
+is_a: UBERON:0004220 ! large intestine smooth muscle
+is_a: UBERON:0004231 ! anal region smooth muscle
+is_a: UBERON:0016886 ! muscle tissue of terminal part of digestive tract
+
+[Term]
+id: UBERON:0018150
+name: skin of lower lip
+is_a: UBERON:0001458 ! skin of lip
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0018239
+name: rhombomere boundary
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0018256
+name: lacrimal vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0018257
+name: submucosa of digestive tract
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000009 ! submucosa
+
+[Term]
+id: UBERON:0018260
+name: layer of muscle tissue
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0018261
+name: muscular coat of digestive tract
+is_a: UBERON:0006660 ! muscular coat
+
+[Term]
+id: UBERON:0018543
+name: lumen of intestine
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0018649
+name: cardiac muscle tissue of ventricle
+is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
+
+[Term]
+id: UBERON:0018674
+name: heart vasculature
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002201 ! vasculature of trunk
+is_a: UBERON:0006876 ! vasculature of organ
+
+[Term]
+id: UBERON:0018707
+name: bladder organ
+is_a: UBERON:0000489 ! cavitated compound organ
+is_a: UBERON:0009856 ! sac
+
+[Term]
+id: UBERON:0019042
+name: reproductive system mucosa
+is_a: UBERON:0000344 ! mucosa
+is_a: UBERON:0005156 ! reproductive structure
+
+[Term]
+id: UBERON:0019204
+name: skin epithelium
+is_a: UBERON:0010371 ! ecto-epithelium
+
+[Term]
+id: UBERON:0019207
+name: chorioretinal region
+is_a: UBERON:0000481 ! multi-tissue structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+
+[Term]
+id: UBERON:0019263
+name: gray matter of hindbrain
+is_a: UBERON:0003528 ! brain gray matter
+
+[Term]
+id: UBERON:0019267
+name: gray matter of midbrain
+is_a: UBERON:0003528 ! brain gray matter
+
+[Term]
+id: UBERON:0019304
+name: sensory organ epithelium
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0019319
+name: exocrine gland of integumental system
+is_a: UBERON:0002365 ! exocrine gland
+is_a: UBERON:0003297 ! gland of integumental system
+
+[Term]
+id: UBERON:0022284
+name: lacrimal gland bud
+is_a: UBERON:0005153 ! epithelial bud
+is_a: UBERON:0015808 ! eye epithelium
+
+[Term]
+id: UBERON:0022288
+name: surface of eyeball
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0036215 ! anatomical surface region
+
+[Term]
+id: UBERON:0022293
+name: reproductive gland secretion
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
+id: UBERON:0022303
+name: nervous system cell part layer
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005162 ! multi cell part structure
+
+[Term]
+id: UBERON:0022350
+name: visceral serous membrane
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0022351
+name: parietal serous membrane
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0004923 ! organ component layer
+
+[Term]
+id: UBERON:0034705
+name: developing neuroepithelium
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000483 ! epithelium
+
+[Term]
+id: UBERON:0034706
+name: proliferating neuroepithelium
+is_a: UBERON:0034705 ! developing neuroepithelium
+
+[Term]
+id: UBERON:0034707
+name: differentiating neuroepithelium
+is_a: UBERON:0034705 ! developing neuroepithelium
+
+[Term]
+id: UBERON:0034709
+name: hindbrain marginal layer
+is_a: UBERON:0004062 ! neural tube marginal layer
+is_a: UBERON:0011215 ! central nervous system cell part cluster
+
+[Term]
+id: UBERON:0034710
+name: spinal cord ventricular layer
+is_a: UBERON:0004060 ! neural tube ventricular layer
+
+[Term]
+id: UBERON:0034878
+name: prechordal mesoderm
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002050 ! embryonic structure
+
+[Term]
+id: UBERON:0034905
+name: gland lumen
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0034921
+name: multi organ part structure
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0034922
+name: cell cluster
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0034925
+name: anatomical collection
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0034933
+name: layer of smooth muscle tissue
+is_a: UBERON:0018260 ! layer of muscle tissue
+
+[Term]
+id: UBERON:0034944
+name: zone of organ
+is_a: UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0034969
+name: epithelial layer of duct
+is_a: UBERON:0003914 ! epithelial tube
+
+[Term]
+id: UBERON:0034995
+name: jaw mesenchyme
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005253 ! head mesenchyme
+
+[Term]
+id: UBERON:0035037
+name: jaw epithelium
+is_a: UBERON:0003929 ! digestive tract epithelium
+
+[Term]
+id: UBERON:0035118
+name: material entity in digestive tract
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0035159
+name: entire surface of organism
+is_a: UBERON:0006984 ! anatomical surface
+
+[Term]
+id: UBERON:0035471
+name: posterior surface of kidney
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0036215 ! anatomical surface region
+
+[Term]
+id: UBERON:0035546
+name: uveal vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0035549
+name: vasculature of integument
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0035550
+name: superficial vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0035551
+name: deep vasculature
+is_a: UBERON:0002049 ! vasculature
+
+[Term]
+id: UBERON:0035552
+name: deep vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0035639
+name: ocular adnexa
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0035763
+name: cavity of cardiac chamber
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0002553 ! anatomical cavity
+
+[Term]
+id: UBERON:0035804
+name: future mouth
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0013522 ! subdivision of tube
+
+[Term]
+id: UBERON:0035805
+name: muscle layer of sigmoid colon
+is_a: UBERON:0012489 ! muscle layer of colon
+
+[Term]
+id: UBERON:0035809
+name: serous cavity
+is_a: UBERON:0002553 ! anatomical cavity
+
+[Term]
+id: UBERON:0035814
+name: pericardial fat
+is_a: UBERON:0035818 ! visceral fat
+
+[Term]
+id: UBERON:0035815
+name: paracardial fat
+is_a: UBERON:0035814 ! pericardial fat
+
+[Term]
+id: UBERON:0035818
+name: visceral fat
+is_a: UBERON:0001013 ! adipose tissue
+
+[Term]
+id: UBERON:0035819
+name: abdominopelvic cavity
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0000464 ! anatomical space
+
+[Term]
+id: UBERON:0035965
+name: wall of blood vessel
+is_a: UBERON:0000060 ! anatomical wall
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0036146
+name: cardiopharyngeal field
+is_a: UBERON:0002050 ! embryonic structure
+is_a: UBERON:0004120 ! mesoderm-derived structure
+is_a: UBERON:0005291 ! embryonic tissue
+is_a: UBERON:0007688 ! anlage
+
+[Term]
+id: UBERON:0036214
+name: rectosigmoid junction
+is_a: UBERON:0007651 ! anatomical junction
+
+[Term]
+id: UBERON:0036215
+name: anatomical surface region
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0036217
+name: coelomic fluid
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0036225
+name: respiratory system gland
+is_a: UBERON:0002530 ! gland
+
+[Term]
+id: UBERON:0036242
+name: post-embryonic notochord
+is_a: UBERON:0002328 ! notochord
+
+[Term]
+id: UBERON:0036244
+name: secretion of serous membrane
+is_a: UBERON:0007779 ! transudate
+
+[Term]
+id: UBERON:0036253
+name: orifice of skull
+is_a: UBERON:0000161 ! orifice
+
+[Term]
+id: UBERON:0036268
+name: pelvic vein
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0036294
+name: mucosa of lip
+is_a: UBERON:0003729 ! mouth mucosa
+is_a: UBERON:0013754 ! integumentary system layer
+
+[Term]
+id: UBERON:0036295
+name: renal pelvis/ureter
+is_a: UBERON:0000477 ! anatomical cluster
+
+[Term]
+id: UBERON:0036302
+name: vasculature of central nervous system plus retina
+is_a: UBERON:0002049 ! vasculature
+union_of: UBERON:0004864 ! vasculature of retina
+union_of: UBERON:0036303 ! vasculature of central nervous system
+
+[Term]
+id: UBERON:0036303
+name: vasculature of central nervous system
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0036302 ! vasculature of central nervous system plus retina
+
+[Term]
+id: UBERON:0036362
+name: wall of anal canal
+is_a: UBERON:0001169 ! wall of large intestine
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0036521
+name: wall of urethra
+is_a: UBERON:0000060 ! anatomical wall
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:0036925
+name: wall of eyeball
+is_a: UBERON:0000060 ! anatomical wall
+is_a: UBERON:0004121 ! ectoderm-derived structure
+
+[Term]
+id: UBERON:0037144
+name: wall of heart
+is_a: UBERON:0000060 ! anatomical wall
+is_a: UBERON:0004120 ! mesoderm-derived structure
+
+[Term]
+id: UBERON:1000021
+name: skin of face
+is_a: UBERON:0001084 ! skin of head
+
+[Term]
+id: UBERON:2001457
+name: postcranial axial cartilage
+is_a: UBERON:0007844 ! cartilage element
+
+[Term]
+id: UBERON:3000961
+name: external integument structure
+is_a: UBERON:0003102 ! surface structure
+
+[Term]
+id: UBERON:3000972
+name: head external integument structure
+is_a: UBERON:3000961 ! external integument structure
+
+[Term]
+id: UBERON:3000977
+name: body external integument structure
+is_a: UBERON:3000961 ! external integument structure
+
+[Term]
+id: UBERON:3000981
+name: limb external integument structure
+is_a: UBERON:3000961 ! external integument structure
+
+[Term]
+id: UBERON:3010200
+name: vasculature of respiratory integument
+is_a: UBERON:0003504 ! respiratory system blood vessel
+
+[Term]
+id: UBERON:4200230
+name: surface of bone
+is_a: UBERON:0006984 ! anatomical surface
+
+[Term]
+id: UBERON:4300226
+name: forelimb bud mesenchyme
+is_a: UBERON:0003413 ! pectoral appendage bud mesenchyme
+is_a: UBERON:0010328 ! limb bud mesenchyme
+
+[Term]
+id: UBERON:4300227
+name: hindlimb bud mesenchyme
+is_a: UBERON:0003412 ! pelvic appendage bud mesenchyme
+is_a: UBERON:0010328 ! limb bud mesenchyme
+
