@@ -24,6 +24,7 @@ CATALOG=                    catalog-v001.xml
 ROBOT=                      robot --catalog $(CATALOG)
 RELEASEDIR=                 ../..
 REPORTDIR=                  reports
+TEMPLATEDIR=                ../templates
 TMPDIR=                     tmp
 SCRIPTSDIR=                 ../scripts
 SPARQLDIR =                 ../sparql
@@ -52,7 +53,7 @@ PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern
 
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMAT) tsv)
-RELEASE_ARTEFACTS = $(sort  base full simple basic custom-ext custom-basic custom-merged custom-core custom-composite-metazoan custom-composite-vertebrate base full)
+RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full $(ONT)-simple ext basic merged core composite-metazoan composite-vertebrate $(ONT)-base $(ONT)-full)
 
 # ----------------------------------------
 # Top-level targets
@@ -79,7 +80,7 @@ $(TMPDIR) $(REPORTDIR) :
 ##
 ## By default this is the cross-product of {ont, ont-base} x FORMATS
 
-MAIN_PRODUCTS = $(sort $(foreach r,$(RELEASE_ARTEFACTS), $(ONT)-$(r)) $(ONT))
+MAIN_PRODUCTS = $(sort $(foreach r,$(RELEASE_ARTEFACTS), $(r)) $(ONT))
 MAIN_GZIPPED = 
 MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(foreach f,$(FORMATS), $(n).$(f))) $(MAIN_GZIPPED)
 
@@ -91,7 +92,7 @@ all_main: $(MAIN_FILES)
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
 
-IMPORTS =  pr cl go envo ro bspo chebi pato ncbitaxon nbo ceph cteno ehdaa2 emapa fbbt fbdv ma poro wbbt wbls xao zfa
+IMPORTS =  pr cl go envo ro bspo chebi pato ncbitaxon nbo ceph cteno ehdaa2 emapa fbbt fbdv ma poro wbbt wbls xao zfa caro
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -149,7 +150,6 @@ show_assets:
 # Release Management
 # ----------------------------------------
 
-KEEPRELATIONS=keeprelations.txt
 CLEANFILES=$(MAIN_FILES) $(SRCMERGED)
 # This should be executed by the release manager whenever time comes to make a release.
 # It will ensure that all assets/files are fresh, and will copy to release folder
@@ -197,9 +197,12 @@ $(SIMPLESEED): $(SRCMERGED) $(ONTOLOGYTERMS)
 	echo "http://www.geneontology.org/formats/oboInOwl#SubsetProperty" >> $@ &&\
 	echo "http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty" >> $@
 
-# Ugly hack which should be replaced by the dynamic import revision pipeline
-$(IMPORTSEED): $(PRESEED) prepare_patterns $(PATTERNDIR)/all_pattern_terms.txt 
-	if [ $(IMP) = true ]; then cat $(PRESEED) $(PATTERNDIR)/all_pattern_terms.txt | sort | uniq > $@; fi
+
+ALLSEED = $(PRESEED)  $(PATTERNDIR)/all_pattern_terms.txt \
+
+
+$(IMPORTSEED):  prepare_patterns  $(ALLSEED) 
+	if [ $(IMP) = true ]; then cat $(ALLSEED) | sort | uniq > $@; fi
 
 
 ANNOTATION_PROPERTIES=rdfs:label IAO:0000115 
@@ -230,24 +233,35 @@ imports/%_import.obo: imports/%_import.owl
 ## Module for ontology: pr
 
 imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/pr_terms_combined.txt --force true --individuals include --method BOT \
+	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T imports/pr_terms_combined.txt --force true --individuals include --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 ## Module for ontology: chebi
 
 imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/chebi_terms_combined.txt --force true --individuals include --method BOT \
+	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T imports/chebi_terms_combined.txt --force true --individuals include --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 ## Module for ontology: ncbitaxon
 
 imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/ncbitaxon_terms_combined.txt --force true --individuals include --method BOT \
+	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T imports/ncbitaxon_terms_combined.txt --force true --individuals include --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
+.PHONY: refresh-imports
+refresh-imports:
+	make IMP=true MIR=true PAT=false IMP_LARGE=true all_imports -B
+
+.PHONY: refresh-imports-excluding-large
+refresh-imports-excluding-large:
+	make IMP=true MIR=true PAT=false IMP_LARGE=false all_imports -B
+
+.PHONY: refresh-%
+refresh-%:
+	make IMP=true IMP_LARGE=true MIR=true PAT=false imports/$*_import.owl -B
 
 
 
@@ -258,6 +272,7 @@ imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms_combi
 
 IMP=true # Global parameter to bypass import generation
 MIR=true # Global parameter to bypass mirror generation
+IMP_LARGE=true # Global parameter to bypass handling of large imports
 PAT=true # Global parameter to bypass pattern generation
 
 ## ONTOLOGY: pr
@@ -265,7 +280,7 @@ PAT=true # Global parameter to bypass pattern generation
 mirror/pr.trigger: $(SRC)
 
 mirror/pr.owl: mirror/pr.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/%.owl
 
 
@@ -319,7 +334,7 @@ mirror/bspo.owl: mirror/bspo.trigger
 mirror/chebi.trigger: $(SRC)
 
 mirror/chebi.owl: mirror/chebi.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/chebi.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) convert -I $(URIBASE)/chebi.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/%.owl
 
 
@@ -337,7 +352,7 @@ mirror/pato.owl: mirror/pato.trigger
 mirror/ncbitaxon.trigger: $(SRC)
 
 mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ncbitaxon.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) convert -I $(URIBASE)/ncbitaxon.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/%.owl
 
 
@@ -458,14 +473,26 @@ mirror/zfa.owl: mirror/zfa.trigger
 .PRECIOUS: mirror/%.owl
 
 
+## ONTOLOGY: caro
+## Copy of caro is re-downloaded whenever source changes
+mirror/caro.trigger: $(SRC)
+
+mirror/caro.owl: mirror/caro.trigger
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/caro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: mirror/%.owl
+
+
 
 # ----------------------------------------
 # Subsets
 # ----------------------------------------
 subsets/%.tsv: subsets/%.owl
 	$(ROBOT) query -f tsv -i $< -s ../sparql/labels.sparql $@
+.PRECIOUS: subsets/%.tsv
+
 subsets/%.owl: $(ONT).owl
 	owltools --use-catalog $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: subsets/%.owl
 
 
 # ----------------------------------------
@@ -546,7 +573,7 @@ pattern_term_lists_default := $(patsubst %.tsv, $(PATTERNDIR)/data/default/%.txt
 
 # Generating the individual pattern modules and merging them into definitions.owl
 $(PATTERNDIR)/definitions.owl: prepare_patterns update_patterns dosdp_patterns_default  
-	if [ $(PAT) = true ] && [ "${individual_patterns_names_default}" ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
+	if [ $(PAT) = true ] [ "${individual_patterns_names_default}" ]   && [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
 
 individual_patterns_names_default := $(strip $(patsubst %.tsv,%, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv))))
 dosdp_patterns_default: $(SRC) all_imports .FORCE
@@ -595,12 +622,6 @@ $(ONT)-full.json: $(ONT)-full.owl
 $(ONT)-simple.obo: $(ONT)-simple.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT)-simple.json: $(ONT)-simple.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		convert --check false -f json -o $@.tmp.json &&\
-	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $@ && rm $@.tmp.json
-$(ONT)-basic.obo: $(ONT)-basic.owl
-	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-$(ONT)-basic.json: $(ONT)-basic.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $@ && rm $@.tmp.json
@@ -702,20 +723,6 @@ $(ONT)-simple.owl: $(SRC) $(OTHER_SRC) $(SIMPLESEED)
 		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
 		reduce -r ELK \
 		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
-# foo-basic: A version of -simple containing only relationships using relations on a configurable whitelist (default = BFO:0000050 (?)). See above (David comment) for explanation.
-# removes any axioms that contains one of the ops that not in the whitelist file
-
-$(ONT)-basic.owl: $(SRC) $(OTHER_SRC) $(SIMPLESEED) $(KEEPRELATIONS)
-	$(ROBOT) merge --input $< $(patsubst %, -i %, $(OTHER_SRC)) \
-		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
-		relax \
-		remove --axioms equivalent \
-		remove --axioms disjoint \
-		remove --term-file $(KEEPRELATIONS) --select complement --select object-properties --trim true \
-		relax \
-		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
-		reduce -r ELK \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
 
 ext.owl:

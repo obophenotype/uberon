@@ -1,8 +1,8 @@
 format-version: 1.2
-data-version: uberon/releases/2021-03-03/imports/emapa_import.owl
+data-version: uberon/releases/2021-03-09/imports/emapa_import.owl
 ontology: uberon/imports/emapa_import
 property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/emapa/releases/2020-02-12/emapa.owl
-property_value: owl:versionInfo "2021-03-03" xsd:string
+property_value: owl:versionInfo "2021-03-09" xsd:string
 
 [Term]
 id: EMAPA:0
@@ -256,7 +256,7 @@ is_a: EMAPA:36031 ! body region
 
 [Term]
 id: MmusDv:0000000
-name: mouse life cycle stage
+name: life cycle stage
 namespace: mouse_stages_ontology
 def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:0000105]
 synonym: "developmental stage" EXACT []
@@ -265,20 +265,20 @@ xref: UBERON:0000105
 
 [Term]
 id: MmusDv:0000001
-name: mouse life cycle
+name: life cycle
 namespace: mouse_developmental_stage
 def: "Temporal interval that defines mouse life from prenatal stage until late adult stage." [Bgee:curator]
 xref: UBERON:0000104
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 property_value: start_dpc "0.45" xsd:float
 
 [Term]
 id: MmusDv:0000002
-name: embryonic mouse stage
+name: embryonic stage
 namespace: mouse_developmental_stage
 def: "Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage." [Bgee:curator]
 comment: By embryo we mean in the sense of up to the 2nd week postfertilization (beginning of Theiler stage 23), we treat fetus as a separate stage.
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: part_of MmusDv:0000042 ! prenatal stage
 property_value: start_dpc "0.45" xsd:float
 property_value: start_dpf "0.0" xsd:float
@@ -296,8 +296,8 @@ synonym: "zygote stage" RELATED []
 xref: EMAPA:TS01
 xref: UBERON:0000106
 xref: XUO:0000045
-is_a: MmusDv:0000000 ! mouse life cycle stage
-relationship: part_of MmusDv:0000002 ! embryonic mouse stage
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
 property_value: start_dpc "0.45" xsd:float
 
 [Term]
@@ -307,8 +307,8 @@ namespace: mouse_developmental_stage
 def: "Embryonic stage consisting of division of cells in the early embryo." [UBERON:0000107]
 comment: The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula.
 xref: UBERON:0000107
-is_a: MmusDv:0000000 ! mouse life cycle stage
-relationship: part_of MmusDv:0000002 ! embryonic mouse stage
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
 
 [Term]
 id: MmusDv:0000005
@@ -322,7 +322,7 @@ synonym: "TS02" EXACT []
 synonym: "TS02 (E1-2.5)" RELATED [EMAPA:TS02]
 xref: EMAPA:TS02
 xref: XUO:0000046
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000003 ! Theiler stage 01
 relationship: part_of MmusDv:0000004 ! cleavage stage
 property_value: start_dpc "1.0" xsd:float
@@ -339,7 +339,7 @@ synonym: "TS03" EXACT []
 synonym: "TS03 (E1-3.5)" RELATED [EMAPA:TS03]
 xref: EMAPA:TS03
 xref: XUO:0000047
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000005 ! Theiler stage 02
 relationship: part_of MmusDv:0000004 ! cleavage stage
 property_value: start_dpc "2.0" xsd:float
@@ -350,8 +350,8 @@ name: blastula stage
 namespace: mouse_developmental_stage
 def: "Embryonic stage that is an early stage of embryonic development in animals and is produced by cleavage of a fertilized ovum, with formation of a central fluid-filled cavity called the blastocoel." [UBERON:0000108]
 comment: The blastula follows the morula and precedes the gastrula in the developmental sequence.
-is_a: MmusDv:0000000 ! mouse life cycle stage
-relationship: part_of MmusDv:0000002 ! embryonic mouse stage
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
 
 [Term]
 id: MmusDv:0000008
@@ -365,7 +365,7 @@ synonym: "TS04" EXACT []
 synonym: "TS04 (E2-4)" RELATED [EMAPA:TS04]
 xref: EMAPA:TS04
 xref: XUO:0000048
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000006 ! Theiler stage 03
 relationship: part_of MmusDv:0000007 ! blastula stage
 property_value: start_dpc "3.0" xsd:float
@@ -382,7 +382,7 @@ synonym: "TS05" EXACT []
 synonym: "TS05 (E3-5.5)" RELATED [EMAPA:TS05]
 xref: EMAPA:TS05
 xref: XUO:0000049
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000008 ! Theiler stage 04
 relationship: part_of MmusDv:0000007 ! blastula stage
 property_value: has_stage_marker GO:0001835
@@ -400,7 +400,7 @@ synonym: "TS06" EXACT []
 synonym: "TS06 (E4-5.5)" RELATED [EMAPA:TS06]
 xref: EMAPA:TS06
 xref: XUO:0000050
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000009 ! Theiler stage 05
 relationship: part_of MmusDv:0000007 ! blastula stage
 property_value: start_dpc "4.5" xsd:float
@@ -417,7 +417,7 @@ synonym: "TS07" EXACT []
 synonym: "TS07 (E4.5-6)" RELATED [EMAPA:TS07]
 xref: EMAPA:TS07
 xref: XUO:0000051
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000010 ! Theiler stage 06
 relationship: part_of MmusDv:0000007 ! blastula stage
 property_value: has_stage_marker GO:0007566
@@ -435,7 +435,7 @@ synonym: "TS08" EXACT []
 synonym: "TS08 (E5-6.5)" RELATED [EMAPA:TS08]
 xref: EMAPA:TS08
 xref: XUO:0000052
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000011 ! Theiler stage 07
 relationship: part_of MmusDv:0000007 ! blastula stage
 property_value: start_dpc "6.0" xsd:float
@@ -446,8 +446,8 @@ name: gastrula stage
 namespace: mouse_developmental_stage
 def: "Embryonic stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage." [UBERON:0000109]
 xref: UBERON:0000109
-is_a: MmusDv:0000000 ! mouse life cycle stage
-relationship: part_of MmusDv:0000002 ! embryonic mouse stage
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
 
 [Term]
 id: MmusDv:0000014
@@ -461,7 +461,7 @@ synonym: "TS09" EXACT []
 synonym: "TS09 (E6.25-7.25)" RELATED [EMAPA:TS09]
 xref: EMAPA:TS09
 xref: XUO:0000053
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000012 ! Theiler stage 08
 relationship: part_of MmusDv:0000013 ! gastrula stage
 property_value: has_stage_marker UBERON:0000926
@@ -478,7 +478,7 @@ synonym: "TS10" EXACT []
 synonym: "TS10 (E6.5-7.75)" RELATED [EMAPA:TS10]
 xref: EMAPA:TS10
 xref: XUO:0000054
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000014 ! Theiler stage 09
 relationship: part_of MmusDv:0000013 ! gastrula stage
 property_value: has_stage_marker UBERON:0003888
@@ -499,9 +499,9 @@ synonym: "TS11 (E7.25-8)" RELATED [EMAPA:TS11]
 xref: EMAPA:TS11
 xref: UBERON:0000110
 xref: XUO:0000055
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000015 ! Theiler stage 10
-relationship: part_of MmusDv:0000002 ! embryonic mouse stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
 property_value: has_stage_marker UBERON:0003075
 property_value: start_dpc "7.5" xsd:float
 
@@ -511,9 +511,9 @@ name: organogenesis stage
 namespace: mouse_developmental_stage
 def: "Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [UBERON:0000111]
 xref: UBERON:0000111
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000095 ! Theiler stage 11d
-relationship: part_of MmusDv:0000002 ! embryonic mouse stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
 
 [Term]
 id: MmusDv:0000019
@@ -526,7 +526,7 @@ synonym: "TS12" EXACT []
 synonym: "TS12 (E7.5-8.75)" RELATED [EMAPA:TS12]
 xref: EMAPA:TS12
 xref: XUO:0000056
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000017 ! Theiler stage 11
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: has_stage_marker EMAPA:16173
@@ -543,7 +543,7 @@ synonym: "TS13" EXACT []
 synonym: "TS13 (E8-9.25)" RELATED [EMAPA:TS13]
 xref: EMAPA:TS13
 xref: XUO:0000057
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000019 ! Theiler stage 12
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: has_stage_marker EMAPA:16441
@@ -562,7 +562,7 @@ synonym: "TS14" EXACT []
 synonym: "TS14 (E8.5-9.75)" RELATED [EMAPA:TS14]
 xref: EMAPA:TS14
 xref: XUO:0000058
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000020 ! Theiler stage 13
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: has_stage_marker EMAPA:16445
@@ -582,7 +582,7 @@ synonym: "TS15" EXACT []
 synonym: "TS15 (E9-10.25)" RELATED [EMAPA:TS15]
 xref: EMAPA:TS15
 xref: XUO:0000059
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000021 ! Theiler stage 14
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005417
@@ -599,7 +599,7 @@ synonym: "TS16" EXACT []
 synonym: "TS16 (E9.5-10.75)" RELATED [EMAPA:TS16]
 xref: EMAPA:TS16
 xref: XUO:0000060
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000022 ! Theiler stage 15
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005418
@@ -616,7 +616,7 @@ synonym: "TS17" EXACT []
 synonym: "TS17 (E10-11.25)" RELATED [EMAPA:TS17]
 xref: EMAPA:TS17
 xref: XUO:0000061
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000023 ! Theiler stage 16
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: has_stage_marker EMAPA:18411
@@ -634,7 +634,7 @@ synonym: "TS18" EXACT []
 synonym: "TS18 (E10.5-11.25)" RELATED [EMAPA:TS18]
 xref: EMAPA:TS18
 xref: XUO:0000062
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000024 ! Theiler stage 17
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: has_stage_marker UBERON:0005870
@@ -651,7 +651,7 @@ synonym: "TS19" EXACT []
 synonym: "TS19 (E11-12.25)" RELATED [EMAPA:TS19]
 xref: EMAPA:TS19
 xref: XUO:0000063
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000025 ! Theiler stage 18
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: start_dpc "11.5" xsd:float
@@ -667,7 +667,7 @@ synonym: "TS20" EXACT []
 synonym: "TS20 (E11.5-13)" RELATED [EMAPA:TS20]
 xref: EMAPA:TS20
 xref: XUO:0000064
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000026 ! Theiler stage 19
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: start_dpc "12.0" xsd:float
@@ -683,7 +683,7 @@ synonym: "TS21" EXACT []
 synonym: "TS21 (E12.5-14)" RELATED [EMAPA:TS21]
 xref: EMAPA:TS21
 xref: XUO:0000065
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000027 ! Theiler stage 20
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: start_dpc "13.0" xsd:float
@@ -699,7 +699,7 @@ synonym: "TS22" EXACT []
 synonym: "TS22 (E13.5-15)" RELATED [EMAPA:TS22]
 xref: EMAPA:TS22
 xref: XUO:0000066
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000028 ! Theiler stage 21
 relationship: part_of MmusDv:0000018 ! organogenesis stage
 property_value: has_stage_marker UBERON:0003606
@@ -712,7 +712,7 @@ namespace: mouse_developmental_stage
 def: "Prenatal stage that starts with the fully formed embryo and ends at birth." [Bgee:curator]
 comment: This stage describes the four Theiler stages that are commonly reported as equivalent to the human fetal period in the literature. They are anyway defined by embryonic days.
 xref: UBERON:0007220
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: part_of MmusDv:0000042 ! prenatal stage
 
 [Term]
@@ -726,7 +726,7 @@ synonym: "TS23" EXACT []
 synonym: "TS23 (E15)" RELATED [EMAPA:TS23]
 xref: EMAPA:TS23
 xref: XUO:0000067
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000029 ! Theiler stage 22
 relationship: part_of MmusDv:0000031 ! fetal stage
 property_value: start_dpc "15.0" xsd:float
@@ -742,7 +742,7 @@ synonym: "TS24" EXACT []
 synonym: "TS24 (E16)" RELATED [EMAPA:TS24]
 xref: EMAPA:TS24
 xref: XUO:0000068
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000032 ! Theiler stage 23
 relationship: part_of MmusDv:0000031 ! fetal stage
 property_value: start_dpc "16.0" xsd:float
@@ -752,13 +752,13 @@ id: MmusDv:0000034
 name: Theiler stage 25
 namespace: mouse_developmental_stage
 def: "Fetal stage during which the thickened skin forms wrinkles and the subcutaneous veins are less visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_25]
-comment: Embryonic age 17 dpc (day post coitum). Refers to the human fetal period.
+comment: Embryonic age 17 dpc (day post coitum). Refers to the human fetal period. Refers to rat Standard Witschi Stage 34 (see http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_25).
 synonym: "E17" EXACT []
 synonym: "TS25" EXACT []
 synonym: "TS25 (E17)" RELATED [EMAPA:TS25]
 xref: EMAPA:TS25
 xref: XUO:0000069
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000033 ! Theiler stage 24
 relationship: part_of MmusDv:0000031 ! fetal stage
 property_value: start_dpc "17.0" xsd:float
@@ -768,13 +768,13 @@ id: MmusDv:0000035
 name: Theiler stage 26
 namespace: mouse_developmental_stage
 def: "Fetal stage defined by long whiskers and during which the eyes are barely visible through the closed eyelids." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_26]
-comment: TS26 is used for the period from embryonic day 18 up to birth itself. [https://github.com/tfhayamizu]
+comment: TS26 is used for the period from embryonic day 18 up to birth itself. [https://github.com/tfhayamizu]. Refers to rat Standard Witschi Stage 35 (see http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_26).
 synonym: "E18" EXACT []
 synonym: "TS26" EXACT []
 synonym: "TS26 (E18)" RELATED [EMAPA:TS26]
 xref: EMAPA:TS26
 xref: XUO:0000070
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000034 ! Theiler stage 25
 relationship: part_of MmusDv:0000031 ! fetal stage
 property_value: end_wpb "0.0" xsd:float
@@ -786,8 +786,8 @@ name: prenatal stage
 namespace: mouse_developmental_stage
 def: "Mouse life cycle that starts with fertilization and ends with birth." [UBERON:0000068]
 xref: UBERON:0000068
-is_a: MmusDv:0000000 ! mouse life cycle stage
-relationship: part_of MmusDv:0000001 ! mouse life cycle
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000001 ! life cycle
 property_value: end_dpc "19.0" xsd:float
 property_value: end_ypb "0.0" xsd:float
 property_value: start_dpc "0.45" xsd:float
@@ -799,7 +799,7 @@ name: Theiler stage 11b
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the allantoic bud elongates ." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
 synonym: "TS11b" EXACT []
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000111 ! Theiler stage 11a
 relationship: part_of MmusDv:0000017 ! Theiler stage 11
 
@@ -809,7 +809,7 @@ name: Theiler stage 11c
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the head folds are formed while the neural groove becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
 synonym: "TS11c" EXACT []
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000093 ! Theiler stage 11b
 relationship: part_of MmusDv:0000017 ! Theiler stage 11
 
@@ -819,7 +819,7 @@ name: Theiler stage 11d
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the head folds continue to enlarge while the foregut pocket begins to form." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
 synonym: "TS11d" EXACT []
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by MmusDv:0000094 ! Theiler stage 11c
 relationship: part_of MmusDv:0000017 ! Theiler stage 11
 
@@ -829,7 +829,7 @@ name: Theiler stage 11a
 namespace: mouse_developmental_stage
 def: "Embryonic neurula stage during which the neural plate formation occurs and the amniotic cavity is sealed off into three distinct cavities - the amniotic cavity, the exocoelom and the ectoplacental cleft." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
 synonym: "TS11a" EXACT []
-is_a: MmusDv:0000000 ! mouse life cycle stage
+is_a: MmusDv:0000000 ! life cycle stage
 relationship: part_of MmusDv:0000017 ! Theiler stage 11
 
 [Typedef]
