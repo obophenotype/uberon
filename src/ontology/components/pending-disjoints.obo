@@ -1,0 +1,146 @@
+format-version: 1.2
+ontology: uberon/pending-disjoints
+property_value: dc-title "Uberon pending disjoints" xsd:string
+property_value: dc-description "This ontology contains disjointness axioms that give rise to unsatisfiable classes - they are excluded from the production release until they can be fixed. For more details, see the homepage of this ontology - http://purl.obolibrary.org/obo/uberon/docs/Inter-ontology-disjointness-Design-Pattern" xsd:string
+property_value: dc-creator "Chris Mungall" xsd:string
+property_value: foaf-homepage "http://purl.obolibrary.org/obo/uberon/docs/Inter-ontology-disjointness-Design-Pattern" xsd:anyURI
+idspace: NIF_GrossAnatomy http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#
+
+!! https://github.com/obophenotype/uberon/issues/370 ZFA in violation
+[Term]
+id: UBERON:0001434 ! skeletal system
+relationship: mutually_spatially_disjoint_with UBERON:0001016 ! nervous system
+
+!! 
+[Term]
+id: UBERON:0002294 ! biliary system
+relationship: mutually_spatially_disjoint_with UBERON:0002107 ! liver
+
+! REQUIRES PROPER PART
+! https://github.com/oborel/obo-relations/issues/78
+![Term]
+!id: UBERON:0000470 ! cell part
+!property_value: blockedBy https://sourceforge.net/p/obo/xenopus-anatomy-xao-term-requests/19/
+!property_value: unsatisfiable XAO:0000262 ! polar body
+!property_value: unsatisfiable WBbt:0008212 ! anterior spermathecal-uterine valve cell 5R -- see https://github.com/raymond91125/Wao/issues/4
+!disjoint_from: CL:0000000 ! cell
+
+[Term]
+id: UBERON:0000486 ! multilaminar epithelium
+disjoint_from: UBERON:0000490 ! unilaminar epithelium
+
+[Term]
+id: UBERON:0013702
+name: body proper
+relationship: mutually_spatially_disjoint_from UBERON:0000033 ! head  ** TODO **
+
+[Term]
+id: UBERON:0013702
+name: body proper
+relationship: mutually_spatially_disjoint_from UBERON:0002415 ! tail  ** VIOLATIONS: parachordal vessel, intersegmental vessel, dorsal longitudinal anastomotic vessel (ZFA) (tail and trunk vasculature) **
+
+[Term]
+id: UBERON:0000026 ! appendage
+relationship: mutually_spatially_disjoint_from UBERON:0013701 ! main body axis ** TODO - caro issue **
+
+[Term]
+id: UBERON:0000033 ! head
+relationship: mutually_spatially_disjoint_from UBERON:0002100 ! trunk
+
+[Term]
+id: UBERON:0001950 ! neocortex
+relationship: mutually_spatially_disjoint_from UBERON:0002421 {source="ABA"} ! hippocampal formation
+property_value: unsatisfiable UBERON:0001953 ! presubiculum
+
+[Term]
+id: UBERON:0000988 ! pons
+relationship: mutually_spatially_disjoint_from UBERON:0001896 {source="ABA"} ! medulla oblongata
+
+[Term]
+id: UBERON:0007529 ! loose mesenchyme tissue
+disjoint_from: UBERON:0007524 ! dense mesenchyme tissue
+! EHDAA2:0004581 'future jejunum & ileum mesentery (embryonic human)' UNSAT: EHDAA2:0004580 'coecum mesentery (embryonic human)' UNSAT: EHDAA2:0004579 'midgut part of future large intestine mesentery (embryonic human)' UNSAT: EHDAA2:0004718 'chorionic villus mesenchyme (embryonic human)'
+
+[Term]
+id: UBERON:0004185
+name: endodermal part of digestive tract
+disjoint_from: UBERON:0004906 ! ectodermal gut
+property_value: unsatisfiable ZFA:0000547 ! mouth
+
+[Term]
+id: UBERON:0001576
+name: intrinsic muscle of tongue
+disjoint_from: UBERON:0001575 ! extrinsic muscle of tongue
+property_value: unsatisfiable EMAPA:18880 {comment="because EMAPA makes the this part of the tongue, they are classified as intrinsic"} ! tongue extrinsic skeletal muscle
+
+! https://github.com/obophenotype/uberon/issues/360
+[Term]
+id: UBERON:0007823
+name: appendage girdle region
+relationship: mutually_spatially_disjoint_from UBERON:0004708 ! limb/fin
+property_value: unsatisfiable UBERON:2000623 ! basipterygium
+
+! https://github.com/obophenotype/uberon/issues/360
+![Term]
+!id: UBERON:0010707 ! appendage girdle complex
+!disjoint_union_over: part_of UBERON:0007823 ! appendage girdle region
+!disjoint_union_over: part_of UBERON:0004708 ! paired limb/fin
+
+! https://github.com/obophenotype/uberon/issues/387
+[Term]
+id: UBERON:0002227 ! spiral organ of cochlea
+relationship: only_in_taxon NCBITaxon:40674 ! Mammalia
+
+[Term]
+id: UBERON:0002316 ! white matter
+relationship: mutually_spatially_disjoint_with UBERON:0002020 ! gray matter
+!Unsatisfiable: UBERON:0008333 'hilum of inferior olivary complex'
+!Unsatisfiable: UBERON:0000432 'endopeduncular nucleus'
+!Unsatisfiable: UBERON:0002727 'medial medullary lamina of globus pallidus'
+!Unsatisfiable: UBERON:0002744 'hilum of dentate nucleus'
+!Unsatisfiable: UBERON:0002763 'accessory medullary lamina of globus pallidus'
+!Unsatisfiable: UBERON:0002765 'lateral medullary lamina of globus pallidus'
+
+[Typedef]
+id: mutually_spatially_disjoint_from
+name: mutually_spatially_disjoint_from
+def: "A is mutually_spatially_disjoint_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+synonym: "shares_no_parts_with" EXACT []
+!expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
+!expand_assertion_to: "DisjointClasses: (BFO_0000050 some ?X), (BFO_0000050 some ?Y)" []
+!expand_assertion_to: "Class: http://www.w3.org/2002/07/owl#Nothing EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/homepage
+
+[Typedef]
+id: dc-title
+name: title
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/title
+
+[Typedef]
+id: dc-creator
+name: creator
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/creator
+
+[Typedef]
+id: dc-description
+name: description
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/description
+
+[Typedef]
+id: seeAlso
+name: see also
+is_metadata_tag: true
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+
