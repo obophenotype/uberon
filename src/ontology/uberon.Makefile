@@ -1599,7 +1599,7 @@ bto-anat.obo:
 ALLENS = dmba hba dhba pba mba
 
 
-
+#TODO @cmungall has been removed!! especially bridges/aba.owl
 #aba.obo: ABA-src.obo
 #	$(SCRIPTSDIR)/make-aba-part-ofs.pl $< > $@
 #$(BRIDGEDIR)/aba.owl: aba.obo
