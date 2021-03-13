@@ -29,4 +29,5 @@ jobs:
       - name: Run ontology QC checks
         env:
           DEFAULT_BRANCH: master
-        run: cd src/ontology && mkdir -p tmp reports && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' IMP=false travis_test
+          ROBOT_JAVA_ARGS: -Xmx6G
+        run: cd src/ontology && mkdir -p tmp reports && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' IMP=false test
