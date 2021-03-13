@@ -3052,9 +3052,39 @@ is_a: CL:4023004 ! nuclear bag fiber
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023007
+name: L2/3 bipolar Vip expressing GABAergic cortical interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron with bipolar morphology, found in L2/3. L2/3 bipolar Vip Cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 Bipolar Vip Cells have great variability in firing patterns, though most are continuous adapting. L2/3 Bipolar Vip Cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper Vip cells." []
+subset: BDS_subset
+synonym: "L2/3 bipolar Vip (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023008
+name: intratelencephalic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to structures of telencephalic origins." []
+subset: BDS_subset
+synonym: "IT projecting neuron" EXACT []
+xref: ILX:0770100
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023009
+name: extratelencephalic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to structures not derived from telencephalon." []
+synonym: "ET projecting neuron" EXACT []
+xref: ILX:0770101
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023010
-name: alpha7 Lamp5 GABAergic interneuron of primary motor cortex (Mus musculus)
-def: "A Lamp5 GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells are located in L1 of the primary motor cortex and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A. Unlike typical Lamp5 electrophysiology, they have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing." []
+name: alpha7 Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells are located in L1 and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A. Unlike typical Lamp5 electrophysiology, they have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing." []
+subset: BDS_subset
+synonym: "A7 Lamp5 (Mus)" EXACT []
 is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -3062,15 +3092,43 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023011
 name: Lamp5 GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses Lamp5" []
-xref: xref (ILX:0770149)
+subset: BDS_subset
+xref: ILX:0770149
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023012
+name: near-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects axons locally rather than distantly." []
+synonym: "NP neuron" EXACT []
+xref: ILX:0770103
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023013
+name: corticothalamic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to the thalamus." []
+synonym: "CT projecting neuron" EXACT []
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023014
+name: L5 Vip expressing cortical GABAergic interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron found in L5. L5 Vip cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of Sst subclass and unlike typical Vip subclass cells that tend to show high input resistance. L5 Vip cells show particularly low resting membrane potential." []
+subset: BDS_subset
+synonym: "L5 VIP (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023015
 name: sncg GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses Gamma-synuclein" []
-def: "xref:(ILX:0770150)" []
+subset: BDS_subset
+xref: ILX:0770150
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -3078,7 +3136,8 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023016
 name: Vip GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses vasoactive intestinal polypeptide" []
-xref: xref:(ILX\:0770151)
+subset: BDS_subset
+xref: ILX:0770151
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -3086,7 +3145,8 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023017
 name: sst GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst)" []
-xref: xref:(ILX\:0770152)
+subset: BDS_subset
+xref: ILX:0770152
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -3094,8 +3154,108 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023018
 name: pvalb GABAergic cortical interneuron
 def: "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin." []
-xref: xref:(ILX\:0770154)
+subset: BDS_subset
+xref: ILX:0770154
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023019
+name: L5/6 CCK and Vip expressing cortical GABAergic interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells are found mainly in L5 and L6 and have large axonal arborization." []
+subset: BDS_subset
+synonym: "L5/6 CCK Vip (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023022
+name: canopy Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron that has extended axons in the surface of L1. Canopy Lamp5 cells resemble neurogliaform cells in having elongated horizontal axonal arbors largely confined to L1; but the dendritic arbors are wider and have fewer branches, while the axon is less tortuous and extends further from the soma" []
+subset: BDS_subset
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023023
+name: L5,6 Neurogliaform Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp 5 GABAergic cortical interneuron with neurogliaform morphology located in L5,6. L5,6 NGC Lamp5 have deep afterhyperpolarization (AHP) but narrow action potentials (APs). Unlike other deep neurogliaform cells (which are caudal ganglionic eminence (CGE) derived), L5,6 NGC Lamp5 cells are medial ganglionic eminence (MGE)-derived" []
+subset: BDS_subset
+synonym: "L5,6 NGC Lamp5 (mus)" EXACT []
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023024
+name: Neurogliaform Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron with layer-adapting morphology. NGC Lamp5 cells have a small round soma, short dendrites, and a wide dense axonal arbor that tends to establish a dense axonal mesh with high connection probability both to themselves and L2 pyramidal cells. NGC Lamp5 cells have unique synaptic properties that distinguish them from other GABAergic interneurons, including the release of GABA to the extracellular space via volume transmission, and the ability to produce GABA-B responses in connected postsynaptic targets." []
+subset: BDS_subset
+synonym: "NGC Lamp5 (mus)" EXACT []
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023025
+name: Long-range projecting Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is both an interneuron and a projecting neuron. They are found in all layers from upper L2/3 down to the bottom of L6. They have long-range projections, some with axons fading into white matter. These cells have low rebound potential, low hyperpolarization sag, and high variability in membrane time constant." []
+subset: BDS_subset
+synonym: "LP SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023027
+name: L5 ‘T-shaped’ Martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in L5 and possesses 'T-shaped' martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." []
+subset: BDS_subset
+synonym: "L5 T Martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023028
+name: L5 Non-martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in lower L5 with mostly local axonal arborization but with some sparse ascending axons. L5 Non-martinotti Sst cells show somatic localization and local axon plexus in L5b and L5b/6 and substantial innervation of L3 and L4, and receive thalamic input from the ventral posteromedial nucleus and specifically target L4 neurons, avoiding L5 pyramidal cells. L5 Non-martinotti Sst cells tend to show a higher input resistance and seem to be less stuttering." []
+subset: BDS_subset
+synonym: "L5 Non-martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023030
+name: L2/3/4 Fan martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that has \"Fanning-out' Martinotti morphology with local axon arbor and long ascending axons that spreads horizontally and arborizes significantly in L1. They have an adapting firing pattern and non-zero afterdepolarization (ADP)." []
+subset: BDS_subset
+synonym: "L2/3/5 Fan Martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023031
+name: L4 Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in lower L2/3 and upper 5, L4 Sst cells have martinotti morphology with ascending axons but denser local axons and sparser ‘fanning-out’ projections to L1. L4 Sst cells have smaller membrane time constant to calb2 (L2/3/5 Fan Martinotti Cell) and non-zero afterdepolarization (ADP)." []
+subset: BDS_subset
+synonym: "L4 SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023034
+name: L2/3 Pvalb like Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron transcriptomically between the Sst and the Pvalb families and found in L2/3. Some L2/3 PV-like SST cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like SST cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like SST cells have high maximum firing rate variability, with many classified as belonging to the Pvalb subclass on the basis of electrophysiology." []
+subset: BDS_subset
+synonym: "L2/3 PV-like SST Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023036
+name: Chandelier Pvalb GABAergic cortical interneuron (Mus musculus)
+def: "A Pvalb GABAergic cortical interneuron that is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells are mostly found in upper L2/3, with some in deep L5. Chandelier PV cells exhibit fast-spiking but lower firing rate compared to basket cells, and have practically absent hyperpolarization sag. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner." []
+subset: BDS_subset
+synonym: "Chandelier PV (Mus)" EXACT []
+xref: ILX:0107356
+is_a: CL:4023018 ! pvalb GABAergic cortical interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -7778,8 +7938,8 @@ namespace: uberon
 def: "Ganglion containing neurons that receive innervation from parasympathetic neurons in the central nervous system and subserves parasympathetic functions through innervation of smooth muscle, cardiac muscle and glands." [NLXANAT:100303]
 subset: pheno_slim
 subset: uberon_slim
-synonym: "ganglion parasympathicum" RELATED [BTO:0001256]
 synonym: "ganglion parasympathicum" RELATED LATIN [http://en.wikipedia.org/wiki/Parasympathetic_ganglion]
+synonym: "ganglion parasympathicum" RELATED [BTO:0001256]
 xref: BTO:0001256
 xref: EHDAA2:0001400
 xref: EMAPA:32813
@@ -7862,8 +8022,8 @@ namespace: uberon
 def: "An arrangement of nerve fibers, running from the spine where it proceeds through the neck then the axilla and into the arm where it innervates skin and muscle. [WP,modified]." [http://en.wikipedia.org/wiki/Brachial_plexus, UBERON:cjm]
 subset: uberon_slim
 synonym: "brachial plexus" EXACT [MA:0001180]
-synonym: "plexus brachialis" RELATED [http://en.wikipedia.org/wiki/Brachial_plexus]
 synonym: "plexus brachialis" RELATED LATIN [http://en.wikipedia.org/wiki/Brachial_plexus]
+synonym: "plexus brachialis" RELATED [http://en.wikipedia.org/wiki/Brachial_plexus]
 xref: Brachial:plexus
 xref: EHDAA2:0000180
 xref: EHDAA:3782
@@ -22297,8 +22457,8 @@ xref: BIRNLEX:1657
 xref: FMA:61909
 xref: FMA:71029
 xref: HBA:4165
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=134 {source="BIRNLEX:1657"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=134
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=134 {source="BIRNLEX:1657"}
 xref: http://en.wikipedia.org/wiki/Transverse_temporal_gyrus
 xref: http://linkedlifedata.com/resource/umls/id/C0262198
 xref: http://www.snomedbrowser.com/Codes/Details/279192003
@@ -33486,8 +33646,8 @@ synonym: "inferior ganglion of glossopharyngeal nerve" EXACT [FMA:53475]
 synonym: "inferior glossopharyngeal ganglion" EXACT [FMA:53475]
 synonym: "inferior glossopharyngeal ganglion of the glossopharyngeal (IX) nerve" EXACT [MP:0001084]
 synonym: "ninth cranial nerve inferior ganglion" EXACT [FMA:53475]
-synonym: "petrosal ganglion" RELATED [MP:0001084]
 synonym: "petrosal ganglion" RELATED [http://www.merriam-webster.com/medical/petrosal%20ganglion, MP:0001084]
+synonym: "petrosal ganglion" RELATED [MP:0001084]
 synonym: "petrous ganglion" RELATED [http://en.wikipedia.org/wiki/File\:Gray791.png, http://en.wikipedia.org/wiki/Inferior_ganglion_of_glossopharyngeal_nerve, http://www.merriam-webster.com/medical/petrous%20ganglion]
 xref: EHDAA2:0000711
 xref: EMAPA:17153
@@ -36438,8 +36598,8 @@ synonym: "fibrae nervi accessorius" RELATED LATIN [NeuroNames:792]
 xref: BAMS:11nf
 xref: BIRNLEX:916
 xref: FMA:72626
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792 {source="BIRNLEX:916"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792
 xref: http://linkedlifedata.com/resource/umls/id/C0175549
 xref: UMLS:C0175549 {source="BIRNLEX:916"}
 is_a: UBERON:0000122 ! neuron projection bundle
@@ -38078,8 +38238,8 @@ synonym: "stratum zonale colliculi superioris" EXACT LATIN [FMA:72406, FMA:TA]
 synonym: "stratum zonale of midbrain" EXACT LATIN [FMA:72406, FMA:TA]
 synonym: "stratum zonale of superior colliculus" EXACT [FMA:72406]
 synonym: "superior colliculus zonal layer" RELATED [BAMS:SCzo]
-synonym: "zonal layer of the superior colliculus" RELATED [BAMS:Zo]
 synonym: "zonal layer of the superior colliculus" RELATED [BAMS:zo]
+synonym: "zonal layer of the superior colliculus" RELATED [BAMS:Zo]
 xref: BAMS:SCzo
 xref: BAMS:Zo
 xref: BAMS:zo
@@ -49617,8 +49777,8 @@ relationship: part_of UBERON:0001927 {source="NIFSTD"} ! medial geniculate body
 id: UBERON:0023255
 name: sub-lobar region
 namespace: uberon
-synonym: "sub-lobar region" EXACT [BIRNLEX:1788]
 synonym: "sub-lobar region" EXACT HUMAN_PREFERRED [BIRNLEX:1788]
+synonym: "sub-lobar region" EXACT [BIRNLEX:1788]
 xref: BIRNLEX:1788
 is_a: UBERON:0016526 {source="NIFSTD"} ! lobe of cerebral hemisphere
 
@@ -49714,8 +49874,8 @@ id: UBERON:0023623
 name: ventral nerve root of sacral spinal cord
 namespace: uberon
 synonym: "anterior nerve root of sacral spinal cord" RELATED [BIRNLEX:755]
-synonym: "ventral nerve root of sacral spinal cord" EXACT HUMAN_PREFERRED [BIRNLEX:755]
 synonym: "ventral nerve root of sacral spinal cord" EXACT [BIRNLEX:755]
+synonym: "ventral nerve root of sacral spinal cord" EXACT HUMAN_PREFERRED [BIRNLEX:755]
 xref: BIRNLEX:755
 is_a: UBERON:0009633 {source="NIFSTD"} ! root of sacral nerve
 
@@ -50162,8 +50322,8 @@ is_a: UBERON:0022776 {source="NIFSTD"} ! composite part spanning multiple base r
 id: UBERON:0024183
 name: inferior transverse frontopolar gyrus
 namespace: uberon
-synonym: "inferior transverse frontopolar gyrus" EXACT [BIRNLEX:1064]
 synonym: "inferior transverse frontopolar gyrus" EXACT HUMAN_PREFERRED [BIRNLEX:1064]
+synonym: "inferior transverse frontopolar gyrus" EXACT [BIRNLEX:1064]
 xref: BIRNLEX:1064
 xref: FMA:274414
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=842
@@ -50607,8 +50767,8 @@ id: UBERON:0026721
 name: medial precentral sulcus
 namespace: uberon
 def: "A superficial feature of the frontal lobe that extends from the dorsal surface onto the medial surface of the superior frontal gyrus (Ono-90). (NN)" [BIRNLEX:4008]
-synonym: "medial precentral sulcus" EXACT HUMAN_PREFERRED [BIRNLEX:4008]
 synonym: "medial precentral sulcus" EXACT [BIRNLEX:4008]
+synonym: "medial precentral sulcus" EXACT HUMAN_PREFERRED [BIRNLEX:4008]
 xref: BIRNLEX:4008
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1610
 is_a: UBERON:0013118 ! sulcus of brain
@@ -50828,8 +50988,8 @@ is_a: UBERON:0025677 {source="NIFSTD"} ! paravermis parts of the cerebellar cort
 id: UBERON:0027331
 name: flocculonodular lobe, hemisphere portion
 namespace: uberon
-synonym: "hemispheric part of the flocculonodular lobe of the cerebellum" EXACT HUMAN_PREFERRED [NLXANAT:20081260]
 synonym: "hemispheric part of the flocculonodular lobe of the cerebellum" EXACT [NLXANAT:20081260]
+synonym: "hemispheric part of the flocculonodular lobe of the cerebellum" EXACT HUMAN_PREFERRED [NLXANAT:20081260]
 xref: NLXANAT:20081260
 is_a: UBERON:0002749 ! regional part of cerebellar cortex
 relationship: part_of UBERON:0002245 ! cerebellar hemisphere

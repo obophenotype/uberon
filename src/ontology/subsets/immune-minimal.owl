@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon/subsets/immune-minimal.owl#"
      xml:base="http://purl.obolibrary.org/obo/uberon/subsets/immune-minimal.owl"
-     xmlns:cl="http://purl.obolibrary.org/obo/cl#"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -156,12 +155,6 @@
     <!-- http://purl.obolibrary.org/obo/UBPROP_0000202 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000202"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/cl#location_grouping -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/cl#location_grouping"/>
     
 
 
@@ -2323,6 +2316,9 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000865">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000885"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A gut-associated lymphoid tissue macrophage found in lamina propria of the gut.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastrointestinal system (lamina propria) macrophage</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macrophage of gastrointestinal system (lamina propria)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macrophage of gastrointestinal tract (lamina propria)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000865</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastrointestinal tract (lamina propria) macrophage</rdfs:label>
@@ -8234,6 +8230,36 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0009007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000865"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A macrophage which is resident in the lamina propria of the small intestine.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macrophage of small intestine</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small intestine lamina propria resident macrophage</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009007</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#location_grouping"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastrointestinal tract (lamina propria) macrophage of small intestine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0009008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000865"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A macrophage which is resident in the lamina propria of the large intestine.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macrophage of large intestine</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large intestine lamina propria resident macrophage</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009008</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#location_grouping"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastrointestinal tract (lamina propria) macrophage of large intestine</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0009014 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009014">
@@ -8245,12 +8271,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphocyte that is part of a Peyer&apos;s patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer&apos;s patches by converting intestitial enterocytes into M cells.</obo:IAO_0000115>
-        <cl:location_grouping rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></cl:location_grouping>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-4183-8865</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peyer&apos;s patch resident lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small intestine Peyer&apos;s patch lymphocyte</oboInOwl:hasNarrowSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009014</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#location_grouping"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peyer&apos;s patch lymphocyte</rdfs:label>
     </owl:Class>
     
@@ -8266,11 +8291,9 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A follicular dendritic cell located in the Peyer&apos;s patch. These cells from a meshwork in which Peyer&apos;s patch B cells reside.</obo:IAO_0000115>
-        <cl:location_grouping rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></cl:location_grouping>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24437401</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-4183-8865</oboInOwl:hasDbXref>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009015</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#location_grouping"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peyer&apos;s patch follicular dendritic cell</rdfs:label>
     </owl:Class>
     
@@ -8281,12 +8304,33 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009018">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000542"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphocyte that resides in the lamina propria of the large intestine.</obo:IAO_0000115>
-        <cl:location_grouping rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></cl:location_grouping>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0003-4183-8865</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lamina propria lymphocyte of large intestine</oboInOwl:hasExactSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009018</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#location_grouping"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphocyte of large intestine lamina propria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0009023 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009023">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002419"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009014"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003454"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A T cell which resides in the Peyer&apos;s patch of the small intestine.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T cell of Peyer&apos;s patch of small intestine</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T cell of small intestine Peyer&apos;s patch</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009023</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#location_grouping"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small intestine Peyer&apos;s patch T cell</rdfs:label>
     </owl:Class>
     
 
@@ -9438,6 +9482,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001211"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000012"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA has [set of?] [aggregated,small] lymphoid [follice,nodule] of [colon, SI, I, etc]</owl:annotatedTarget>
+        <oboInOwl:external_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA</oboInOwl:external_ontology>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001211"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000012"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pp is a syn for Aggregated lymphoid follicle of small intestine; but MA uses Pp as covering both SI and LI. MA also includes follicle as a part. WP says duodenum and jejunum lack PPs</owl:annotatedTarget>
         <oboInOwl:external_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA</oboInOwl:external_ontology>
     </owl:Axiom>
@@ -9486,12 +9536,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8459"/>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/PMID:20181529"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001211"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000012"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA has [set of?] [aggregated,small] lymphoid [follice,nodule] of [colon, SI, I, etc]</owl:annotatedTarget>
-        <oboInOwl:external_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA</oboInOwl:external_ontology>
     </owl:Axiom>
     
 

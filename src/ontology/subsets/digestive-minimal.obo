@@ -157,8 +157,11 @@ id: CL:0000865
 name: gastrointestinal tract (lamina propria) macrophage
 namespace: cell
 def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." []
+synonym: "gastrointestinal system (lamina propria) macrophage" EXACT []
+synonym: "macrophage of gastrointestinal system (lamina propria)" EXACT []
+synonym: "macrophage of gastrointestinal tract (lamina propria)" EXACT []
 is_a: CL:0000885 ! gut-associated lymphoid tissue macrophage
-relationship: part_of UBERON:0001238 ! lamina propria of small intestine
+relationship: part_of UBERON:0004780 ! gastrointestinal system lamina propria
 
 [Term]
 id: CL:0000869
@@ -805,100 +808,156 @@ xref: http://en.wikipedia.org/wiki/Salivary_gland
 relationship: part_of UBERON:0001044 ! saliva-secreting gland
 
 [Term]
+id: CL:0009007
+name: gastrointestinal tract (lamina propria) macrophage of small intestine
+def: "A macrophage which is resident in the lamina propria of the small intestine." []
+subset: location_grouping
+synonym: "macrophage of small intestine" BROAD []
+synonym: "small intestine lamina propria resident macrophage" EXACT []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+relationship: part_of UBERON:0001238 ! lamina propria of small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009008
+name: gastrointestinal tract (lamina propria) macrophage of large intestine
+def: "A macrophage which is resident in the lamina propria of the large intestine." []
+subset: location_grouping
+synonym: "large intestine lamina propria resident macrophage" EXACT []
+synonym: "macrophage of large intestine" BROAD []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+relationship: part_of UBERON:0011189 ! lamina propria of large intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009009
 name: paneth cell of epithelium of large intestine
 def: "A paneth cell that is located in the epithelium of the large intestine." []
+subset: location_grouping
 synonym: "paneth-like cell" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 is_a: CL:0000510 ! paneth cell
 is_a: CL:0002658 ! glandular cell of the large intestine
 relationship: part_of UBERON:0001278 ! epithelium of large intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009011
 name: transit amplifying cell of large intestine
 def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the large intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." []
+subset: location_grouping
 synonym: "large intestine transit amplifying cell" EXACT []
 synonym: "transient amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
 synonym: "transient amplifying cell of large intestine" EXACT []
 synonym: "transit amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
 synonym: "transit-amplifying cell of large intestine" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 relationship: part_of UBERON:0001984 ! crypt of Lieberkuhn of large intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009012
 name: transit amplifying cell of small intestine
 def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the small intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." []
+subset: location_grouping
 synonym: "small intestine transit amplifying cell" EXACT []
 synonym: "transient amplifying cell of crypt of Lieberkuhn of small intestine" EXACT []
 synonym: "transient amplifying cell of small intestine" EXACT []
 synonym: "transit amplifying cell of crypt of Lieberkuhn of small intestine" EXACT []
 synonym: "transit-amplifying cell of small intestine" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 relationship: part_of UBERON:0001241 ! crypt of Lieberkuhn of small intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009014
 name: Peyer's patch lymphocyte
 def: "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." []
+subset: location_grouping
 synonym: "Peyer's patch resident lymphocyte" EXACT []
 synonym: "small intestine Peyer's patch lymphocyte" NARROW []
-xref: https://orcid.org/0000-0003-4183-8865
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009015
 name: Peyer's patch follicular dendritic cell
 def: "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside." []
-xref: https://orcid.org/0000-0003-4183-8865
-xref: PMID:24437401
+subset: location_grouping
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009016
 name: intestinal crypt stem cell of large intestine
 def: "An intestinal stem cell that is located in the large intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the large intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." []
+subset: location_grouping
 synonym: "crypt stem cell of large intestine" BROAD []
 synonym: "stem cell of large intestine crypt of Lieberkuhn" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0002250 ! intestinal crypt stem cell
 is_a: CL:0002253 ! epithelial cell of large intestine
 relationship: part_of UBERON:0001984 ! crypt of Lieberkuhn of large intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009017
 name: intestinal crypt stem cell of small intestine
 def: "An intestinal stem cell that is located in the small intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the small intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." []
+subset: location_grouping
 synonym: "crypt stem cell of small intestine" BROAD []
 synonym: "stem cell of small intestine crypt of Lieberkuhn" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0002250 ! intestinal crypt stem cell
 is_a: CL:0002254 ! epithelial cell of small intestine
 relationship: part_of UBERON:0001241 ! crypt of Lieberkuhn of small intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009018
 name: lymphocyte of large intestine lamina propria
 def: "A lymphocyte that resides in the lamina propria of the large intestine." []
+subset: location_grouping
 synonym: "lamina propria lymphocyte of large intestine" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 relationship: part_of UBERON:0011189 ! lamina propria of large intestine
-property_value: location_grouping "" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009021
+name: stromal cell of lamina propria of large intestine
+def: "A stromal cell found in the lamina propria of the large intestine." []
+subset: location_grouping
+relationship: part_of UBERON:0011189 ! lamina propria of large intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009022
+name: stromal cell of lamina propria of small intestine
+def: "A stromal cell found in the lamina propria of the small intestine." []
+subset: location_grouping
+relationship: part_of UBERON:0001238 ! lamina propria of small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009023
+name: small intestine Peyer's patch T cell
+def: "A T cell which resides in the Peyer's patch of the small intestine." []
+subset: location_grouping
+synonym: "T cell of Peyer's patch of small intestine" EXACT []
+synonym: "T cell of small intestine Peyer's patch" EXACT []
+is_a: CL:0009014 ! Peyer's patch lymphocyte
+relationship: part_of UBERON:0003454 ! small intestine Peyer's patch
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009024
+name: mesothelial cell of small intestine
+def: "A mesothelial cell that is part of the small intestine." []
+subset: location_grouping
+is_a: CL:0002254 ! epithelial cell of small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009025
+name: mesothelial cell of large intestine
+def: "A mesothelial cell that is part of the large intestine." []
+subset: location_grouping
+is_a: CL:0002253 ! epithelial cell of large intestine
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]

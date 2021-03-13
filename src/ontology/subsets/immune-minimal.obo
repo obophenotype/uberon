@@ -1362,6 +1362,9 @@ id: CL:0000865
 name: gastrointestinal tract (lamina propria) macrophage
 namespace: cell
 def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." []
+synonym: "gastrointestinal system (lamina propria) macrophage" EXACT []
+synonym: "macrophage of gastrointestinal system (lamina propria)" EXACT []
+synonym: "macrophage of gastrointestinal tract (lamina propria)" EXACT []
 is_a: CL:0000885 ! gut-associated lymphoid tissue macrophage
 
 [Term]
@@ -5279,35 +5282,63 @@ created_by: tmeehan
 creation_date: 2011-08-29T10:08:02Z
 
 [Term]
+id: CL:0009007
+name: gastrointestinal tract (lamina propria) macrophage of small intestine
+def: "A macrophage which is resident in the lamina propria of the small intestine." []
+subset: location_grouping
+synonym: "macrophage of small intestine" BROAD []
+synonym: "small intestine lamina propria resident macrophage" EXACT []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009008
+name: gastrointestinal tract (lamina propria) macrophage of large intestine
+def: "A macrophage which is resident in the lamina propria of the large intestine." []
+subset: location_grouping
+synonym: "large intestine lamina propria resident macrophage" EXACT []
+synonym: "macrophage of large intestine" BROAD []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009014
 name: Peyer's patch lymphocyte
 def: "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." []
+subset: location_grouping
 synonym: "Peyer's patch resident lymphocyte" EXACT []
 synonym: "small intestine Peyer's patch lymphocyte" NARROW []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0000542 ! lymphocyte
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009015
 name: Peyer's patch follicular dendritic cell
 def: "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside." []
-xref: https://orcid.org/0000-0003-4183-8865
-xref: PMID:24437401
+subset: location_grouping
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009018
 name: lymphocyte of large intestine lamina propria
 def: "A lymphocyte that resides in the lamina propria of the large intestine." []
+subset: location_grouping
 synonym: "lamina propria lymphocyte of large intestine" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0000542 ! lymphocyte
-property_value: location_grouping "" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009023
+name: small intestine Peyer's patch T cell
+def: "A T cell which resides in the Peyer's patch of the small intestine." []
+subset: location_grouping
+synonym: "T cell of Peyer's patch of small intestine" EXACT []
+synonym: "T cell of small intestine Peyer's patch" EXACT []
+is_a: CL:0002419 ! mature T cell
+is_a: CL:0009014 ! Peyer's patch lymphocyte
+relationship: part_of UBERON:0003454 ! small intestine Peyer's patch
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
