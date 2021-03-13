@@ -924,6 +924,7 @@ cl-core-new.obo: cell-ontology/cl.obo
 	owltools $< --make-subset-by-properties BFO:0000050 RO:0002202 RO:0002215 // --remove-axioms -t DisjointClasses -o -f obo $@
 
 # this is required for bridging axioms; ZFA inverts the usual directionality
+# TODO review directionality!!!
 $(TMPDIR)/cl-zfa-xrefs.obo: $(TMPDIR)/zfa.owl
 	$(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv
 	cat $@_xrefs_to_zfa.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@
