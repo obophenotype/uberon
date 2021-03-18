@@ -28,3 +28,7 @@ reports/robot_main_diff.md: tmp/$(ONT)-quick.obo tmp/$(ONT)-main.obo
 
 .PHONY: feature_diff
 feature_diff: reports/robot_main_diff.md
+
+
+NORM: uberon_edit.obo
+	owltools --use-catalog  $< --merge-axiom-annotations -o -f obo $@.norm && robot convert -i $@.norm -o $@.tmp.obo && rm $@.norm && mv $@.tmp.obo $<
