@@ -39,6 +39,7 @@ ELKRUN= owltools $(UCAT) $< $(QELK) --run-reasoner -r elk -u > $@.tmp || (tail -
 # materialize takes too long on travis
 #travis_test: ttest-uberon ttest-ext ttest-tax
 #TODO @cmungall Current travis test does nearly nothing
+# NICO replace by standard qc tests 
 travis_test: $(TMPDIR)/is_ok
 
 ttest-uberon: uberon.owl $(REPORTDIR)/bfo-check.txt
@@ -53,7 +54,7 @@ ttest-tax: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
 # ----------------------------------------
 # PREP: catalog
 # ----------------------------------------
-# TODO @cmungall FYI
+# TODO @cmungall FYI SAYSOK
 CATALOG_DYNAMIC=catalog-dynamic.xml
 $(CATALOG_DYNAMIC):
 	echo "From this day (12 March 2021) forward, $(CATALOG_DYNAMIC) is maintained manually. If you must updated it, plus run 'make update_dynamic_catalog'. Please review the diff carefully as some entries (like ro_import.owl) are omitted by the process."
@@ -98,6 +99,8 @@ core.owl: $(OWLSRC)
 # as part of the release
 # TODO is https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl still the right location?
 # TODO review this: maybe not needed anymore? (@balhoff)
+# TODO @cmungall questiosn we need this. Bring it into the main one. Talk to Wasila to bring into uberon proper (merge in uberon-edit)
+# TODO apparently our base does not contain phenoscape-ext!! Should do!
 $(TMPDIR)/phenoscape-ext.owl: $(SRC)
 	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
 
@@ -114,6 +117,7 @@ $(TMPDIR)/phenoscape-ext-noimports.owl: $(TMPDIR)/phenoscape-ext.owl core.owl
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
 ## TODO: omitting removal of DisjointClasses to see what happens
+# @matentzn maybe undo
 $(TMPDIR)/unreasoned.owl: $(OWLSRC) $(TMPDIR)/phenoscape-ext-noimports.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl 
 	owltools $(UCAT) $^ --merge-support-ontologies -o -f functional $@
 #	owltools $(UCAT) $^ --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
@@ -124,6 +128,7 @@ $(TMPDIR)/unreasoned.owl: $(OWLSRC) $(TMPDIR)/phenoscape-ext-noimports.owl $(BRI
 uberon-base.owl: $(TMPDIR)/unreasoned.owl
 	owltools $(UCAT) $< --remove-imports-declarations --remove-axioms -t Declaration --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@.tmp && mv $@.tmp $@
 
+# TODO document collected-* pattern (import files see http://uberon.github.io/downloads.html#multiont)
 # ----------------------------------------
 # STEP 3: Perform reasoning and create release ext.owl file
 # ----------------------------------------
@@ -136,7 +141,6 @@ uberon-base.owl: $(TMPDIR)/unreasoned.owl
 $(TMPDIR)/is_ok: $(TMPDIR)/materialized.owl
 	owltools $(UCAT) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
-#TODO Why is materialized.owl annotated? Was this supposed to be released?
 $(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl
 	$(ROBOT) --catalog $(CATALOG) relax -i $< materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
 		 reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed none \
@@ -258,7 +262,7 @@ mirror/chebi.owl: $(OWLSRC) mirror/chebi.obo
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools mirror/chebi.obo --extract-mingraph --rename-entity $(URIBASE)/chebi#has_part $(URIBASE)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/chebi.owl $(URIBASE)/chebi.owl -o $@ && touch $@; fi
 
 # Do not rebuild: PR is now too big
-# TODO Why this step?
+# TODO Why this step? (NICO: to get the branch and remove BFO top level). Dates back to the time when there were bad URIs, maybe we can switch to something normal now.
 mirror/aminoacid.owl: $(OWLSRC)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(URIBASE)/uberon/aminoacid.owl  -o $@; fi
 
@@ -298,13 +302,10 @@ $(TMPDIR)/ehdaa2.obo:
 $(TMPDIR)/fixed-ehdaa2.obo: $(TMPDIR)/ehdaa2.obo | $(SCRIPTSDIR)/obo-grep.pl $(SCRIPTSDIR)/fix-ehdaa2-stages.pl
 	$(SCRIPTSDIR)/obo-grep.pl -r 'id: (EHDAA2|AEO)' $< | $(SCRIPTSDIR)/fix-ehdaa2-stages.pl | grep -v ^alt_id > $@
 
-#TODO Whats right here? @cmungall
-mirror/ehdaa2.owl: $(TMPDIR)/fixed-ehdaa2.obo
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $< -o -f ofn $@; fi
-	#echo "MAKEERROR-LIKE WARNING: Using some terrible IRI to download.."
-	#owltools https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o -f ofn $@ 
+mirror/ehdaa2.owl:
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o -f ofn $@; fi
 
-CMUNGALL_OBO_SCRIPTS=https://raw.githubusercontent.com/cmungall/obo-scripts/master/
+#CMUNGALL_OBO_SCRIPTS=https://raw.githubusercontent.com/cmungall/obo-scripts/master/
 #$(SCRIPTSDIR)/%.pl:
 #	wget $(CMUNGALL_OBO_SCRIPTS)/$*.pl -O $@ && chmod +x $@
 #.PRECIOUS: $(SCRIPTSDIR)/%.pl
@@ -335,7 +336,7 @@ CMUNGALL_OBO_SCRIPTS=https://raw.githubusercontent.com/cmungall/obo-scripts/mast
 ####################################
 ### Local Ontology dependencies ####
 ####################################
-#TODO Why are these not normal mirrors?
+#TODO Why are these not normal mirrors? NICO: conceptually these are hacked mirrors
 
 # FEDERATED ONTOLOGY MIRRORING
 # TODO removed disjoint axioms from poro, see https://github.com/obophenotype/uberon/issues/1799
@@ -410,8 +411,6 @@ imports/pr_import.owl: mirror/pr.owl $(OWLSRC)
 #ncbitaxon.owl: 
 #	OWLTOOLS_MEMORY=14G owltools $(URIBASE)/ncbitaxon.owl -o $@ && touch $@
 ##	owltools $(URIBASE)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(URIBASE)/$@ -o $@
-aa:
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/imports/pr_import.owl mirror/pr.owl $(OWLSRC) --extract-module -s $(URIBASE)/pr.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/imports/pr_import.owl $(ONTBASE)/imports/pr_import.owl -o $@
 
 
 imports/ncbitaxon_import.owl: mirror/ncbitaxon.obo $(OWLSRC) $(TMPDIR)/composite-stages.obo
@@ -538,27 +537,6 @@ reports/stages-%-report.tsv: subsets/%-view.owl
 
 branches: reports/branches-nerve.png reports/branches-artery.png
 
-#TODO @cmungall
-reports/branches-%.png:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip -r uberon ontol-subset -query "class(R,$*),parent(ID,branching_part_of,_),subclassT(ID,R)" -rel branching_part_of -to png -cr branching_part_of > $@.tmp && mv $@.tmp $@
-
-#TODO @cmungall
-reports/circo-bones.dot:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip -r uberon ontol-subset -query "class(R,'bone element'),subclassT(ID,R)" -rel connected_to -to dot > $@.tmp && mv $@.tmp $@
-
-#TODO @cmungall
-reports/circo-head-muscles.dot:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip -r uberonp ontol-subset -query "class(R,'craniocervical muscle'),subclassT(ID,R)"  -rel attaches_to -rel connected_to -down 1 -to dot > $@.tmp && mv $@.tmp $@
-##	blip -r uberonp ontol-subset -query "class(R,'muscle organ'),subclassT(ID,R),parent_over_nr(part_of,ID,'UBERON:0007811')"  -rel attaches_to -rel connected_to -down 1 -to dot > $@.tmp && mv $@.tmp $@
-
-reports/circo-%.png: reports/circo-%.dot
-	circo -o$@ -Tpng $<
-
-
-
 # ----------------------------------------
 # EXTRACT TCs
 # ----------------------------------------
@@ -652,10 +630,11 @@ full-bridge-checks: $(patsubst %,$(REPORTDIR)/full-bridge-check-%.txt,$(CHECK_AO
 extra-full-bridge-checks: $(patsubst %,$(REPORTDIR)/extra-full-bridge-check-%.txt,$(EXTRA_FULL_CHECK_AO_LIST))
 
 ##$(REPORTDIR)/bfo-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
-#TODO @cmungall
+#TODO @cmungall: worth fixing!
+#TODO @matentzn: use ROBOT merge instead and dump debug modules..
 $(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(CATALOG_DYNAMIC)
 	echo "STRONG WARNING check $@ FAIL currently!"
-	OWLTOOLS_MEMORY=14G owltools $(URIBASE)/bfo.owl $(URIBASE)/ro.owl --catalog-xml $(CATALOG_DYNAMIC) $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl  --merge-support-ontologies -o $(REPORTDIR)/bfo-check.owl $(QELK) --run-reasoner -r elk -u > $@.tmp || true
+	OWLTOOLS_MEMORY=14G owltools $(URIBASE)/bfo.owl $(URIBASE)/ro.owl --catalog-xml $(CATALOG_DYNAMIC) $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl  --merge-support-ontologies -o $(REPORTDIR)/bfo-check.owl $(QELK) --run-reasoner -r elk -u > $@.tmp
 
 bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
 	OWLTOOLS_MEMORY=14G owltools   $(URIBASE)/bfo.owl --catalog-xml $(CATALOG_DYNAMIC) $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
@@ -674,7 +653,7 @@ $(REPORTDIR)/bridge-check-%.owl: uberon.owl $(BRIDGEDIR)/bridges $(TMPDIR)/exter
 $(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	owltools --no-debug --catalog-xml $(CATALOG_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
-#TODO @cmungall
+#TODO @cmungall: TRY again, CARO is worth fixing (SOP: take screenshot, make individual tickets with one explanation eachg)
 $(REPORTDIR)/bridge-check-caro.txt: |  $(CATALOG_DYNAMIC)
 	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
 	owltools --no-debug --catalog-xml $(CATALOG_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@ || true
@@ -720,11 +699,6 @@ $(REPORTDIR)/core-bridge-check-%.txt: core.owl $(BRIDGEDIR)/bridges $(TMPDIR)/ex
 $(TMPDIR)/ext-merged-%.owl: ext.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	owltools --catalog-xml $(CATALOG_DYNAMIC) $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-imports-closure  --merge-support-ontologies -o $@
 .PRECIOUS: $(TMPDIR)/ext-merged-%.owl
-	
-#TODO @cmungall this is never used
-$(REPORTDIR)/bridge-dv-check-%.txt: $(TMPDIR)/ext-merged-%.owl
-	owltools --no-debug $< --reasoner elk --check-disjointness-axioms  > $@.tmp && mv $@.tmp $@
-
 
 # check for dangling classes
 # TODO: add to Oort
@@ -739,7 +713,8 @@ $(REPORTDIR)/%-xp-check: %.obo
 
 # See: http://douroucouli.wordpress.com/2012/07/03/45/
 # TODO - make the OWL primary
-# TODO what is depictions.owl @cmungall
+# TODO what is depictions.owl @cmungall (useful, but merged)
+# TODO delete all depictions goals
 depictions.omn: $(SRC)
 	$(SCRIPTSDIR)/mk-image-ont.pl $< > $@
 depictions.owl: depictions.omn
@@ -784,7 +759,6 @@ QC_FILES = checks\
 #    depictions.owl\
 
 
-# TODO uberon-discv.txt has been removed no recipe
 uberon-qc: imports $(QC_FILES) all_subsets
 	cat $(REPORTDIR)/merged-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt 
 
@@ -893,19 +867,19 @@ subsets/%.owl: subsets/%.obo
 #.PRECIOUS: %-with-isa.obo
 
 # for now we use a simplified set of relations, as this is geared towards analysis
-#TODO @cmungall
-subsets/uberon-with-isa-for-%.obo: uberon.obo
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-ddb -i $< -u ontol_manifest_has_subclass_from_selected_xref -u ontol_management -goal "set_selected_idspaces('$*'),retractall(ontol_db:disjoint_from(_,_)),delete_relation_usage_except([develops_from,part_of,continuous_with,capable_of])" io-convert -to obo -o $@
-.PRECIOUS: %-with-isa.obo
+#TODO REMOVE Subsets andgoals @matentzn
+#subsets/uberon-with-isa-for-%.obo: uberon.obo
+#	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
+#	#blip-ddb -i $< -u ontol_manifest_has_subclass_from_selected_xref -u ontol_management -goal "set_selected_idspaces('$*'),retractall(ontol_db:disjoint_from(_,_)),delete_relation_usage_except([develops_from,part_of,continuous_with,capable_of])" io-convert -to obo -o $@
+#.PRECIOUS: %-with-isa.obo
 
-uberon-isa-to-%.obo: uberon.obo
-	$(SCRIPTSDIR)/obo-grep.pl -r '^id: $*' $< > $@
+#uberon-isa-to-%.obo: uberon.obo
+#	$(SCRIPTSDIR)/obo-grep.pl -r '^id: $*' $< > $@
 
 
 # @Dep
-other-bridges: merged.owl
-	owltools $< --extract-bridge-ontologies -d tmp -s uberon -x -o -f obo $(TMPDIR)/minimal.obo
+#other-bridges: merged.owl
+#	owltools $< --extract-bridge-ontologies -d tmp -s uberon -x -o -f obo $(TMPDIR)/minimal.obo
 
 # ----------------------------------------
 # CL (to be replaced)
@@ -942,15 +916,19 @@ $(TMPDIR)/cl-zfa-xrefs.obo: $(TMPDIR)/zfa.owl
 
 # NOTE: we should be able to replace these with oort now
 #TODO @cmungall
+#TODO @matentzn remove cycle. We need to check basic for cycles ideally in basic file. High priority. Maybe ontobio.
 $(REPORTDIR)/%-cycles: %.obo
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-#	owltools --no-debug $< --list-cycles -f > $@
+	owltools --no-debug $< --list-cycles -f > $@
 	#blip-findall -i $< "subclass_cycle/2" -label > $@
+
+src-cycles:
+	OWLTOOLS_MEMORY=12G owltools --use-catalog $(SRC) --list-cycles -f tmp/testcyles.tmp
 
 $(REPORTDIR)/%-allcycles: %.owl
 	owltools --no-debug $< --list-cycles -f > $@
 
 #TODO @cmungall
+#TODO @matentzn make ticket with report
 $(REPORTDIR)/basic-allcycles:
 	echo "STRONG WARNING: $@ skipped, because currently failing."
 	owltools --no-debug $< --list-cycles -f > $@ || true
@@ -959,6 +937,7 @@ $(REPORTDIR)/basic-allcycles:
 #TODO @cmungall
 #%-synclash: %.obo
 #	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
+#TODO @matentzn - like mondo, make sure that there are no label/exact syn clashes
 $(REPORTDIR)/%-synclash: %.obo
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
@@ -1035,7 +1014,9 @@ MAKESPMERGE= $(UCAT)\
   --map-ontology-iri $(URIBASE)/uberon.owl $(TMPDIR)/ext-weak.owl\
   --map-ontology-iri $(URIBASE)/fma.owl $(COMPONENTSDIR)/null.owl\
   --map-ontology-iri $(URIBASE)/uberon/bridge/uberon-bridge-to-fma.owl $(COMPONENTSDIR)/null.owl\
- $(URIBASE)/uberon/$(BRIDGEDIR)/collected-$*.owl --merge-imports-closure
+ $(URIBASE)/uberon/$(BRIDGEDIR)/collected-$*.owl
+ 
+#  --merge-imports-closure
 
 # bundled: collect all ontologies and do a basic (non-species) import closure merge
 # primarily for testing: not released
@@ -1049,23 +1030,26 @@ $(TMPDIR)/unreasoned-composite-%.owl: $(MBASE)
 .PRECIOUS: $(TMPDIR)/unreasoned-composite-%.owl
 
 # stage 2 (final) of composite build: reason
+#TODO add ontology annotations @matentzn
 composite-%.owl: $(TMPDIR)/unreasoned-composite-%.owl
-	$(ROBOT) reason -r ELK -i $< relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed asserted-only relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 
 # composute obo is made from owl
 composite-%.obo: composite-%.owl
 	owltools $< --add-obo-shorthand-to-properties -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp > $@
 
+#TODO @matentzn make diff between current release and this and send to chris
 composite-metazoan.owl: $(TMPDIR)/unreasoned-composite-metazoan.owl
-	$(ROBOT) reason -r ELK -i $< relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed asserted-only relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 
 composite-vertebrate.owl: $(TMPDIR)/unreasoned-composite-vertebrate.owl
-	$(ROBOT) reason -r ELK -i $< relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed asserted-only relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-vertebrate.owl
 
 #TODO is this needed?
+#TODO: 
 composite-metazoan-basic.obo: composite-metazoan.owl
 	owltools $<  --extract-mingraph --remove-axiom-annotations --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(URIBASE)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && mv $@.tmp  $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
 
@@ -1129,16 +1113,18 @@ $(BRIDGEDIR)/%.owl: $(BRIDGEDIR)/%.obo
 make-bridge-ontologies-from-xrefs.pl:
 	cp $(SCRIPTSDIR)/make-bridge-ontologies-from-xrefs.pl $@
 
-$(BRIDGEDIR)/bridges: $(BRIDGEDIR)/uberon-bridge-to-vhog.owl $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl make-bridge-ontologies-from-xrefs.pl
-	cd $(BRIDGEDIR) && perl ../make-bridge-ontologies-from-xrefs.pl ../$(TMPDIR)/seed.obo && perl ../make-bridge-ontologies-from-xrefs.pl -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && touch bridges
+#$(BRIDGEDIR)/bridges: $(BRIDGEDIR)/uberon-bridge-to-vhog.owl $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl make-bridge-ontologies-from-xrefs.pl
+#	cd $(BRIDGEDIR) && perl ../make-bridge-ontologies-from-xrefs.pl ../$(TMPDIR)/seed.obo && perl ../make-bridge-ontologies-from-xrefs.pl -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && touch bridges
 
 $(TMPDIR)/cl-with-xrefs.obo: $(TMPDIR)/cl-core.obo $(SCRIPTSDIR)/expand-idspaces.pl
 	egrep '^(idspace|treat-)' $(SRC) > $@ && cat $< >> $@.tmp && $(SCRIPTSDIR)/expand-idspaces.pl $@.tmp > $@
 
-$(BRIDGEDIR)/uberon-bridge-to-vhog.owl: $(SRC) $(SCRIPTSDIR)/mk-vhog-individs.pl
-	$(SCRIPTSDIR)/mk-vhog-individs.pl organ_association_vHOG.txt $(SRC) > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
+# TODO @matentzn get rid of all mentions of vhog
+#(BRIDGEDIR)/uberon-bridge-to-vhog.owl: $(SRC) $(SCRIPTSDIR)/mk-vhog-individs.pl
+#	$(SCRIPTSDIR)/mk-vhog-individs.pl organ_association_vHOG.txt $(SRC) > $@.ofn && owltools $@.ofn -o file://`pwd`/$@
 
-#TODO @cmungall
+#TODO @cmungall EMAP is dead, we can get rid of that. Rip out EMAP xrefs?
+#TODO check not imported in collected (@matentzn)
 $(BRIDGEDIR)/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt $(TMPDIR)/update-stages
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip ontol-query -r emapa -r emap -consult util/emap_to_cdef.pro -i $< -i uberon.obo -i $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo -query "mapping_EMAP_to_EMAPA(ID,_,_)" -to obo | perl -npe 's/OBO_REL://' > $@.tmp && $(SCRIPTSDIR)/emap-to-cdef-add-hdr.pl $@.tmp > $@
@@ -1150,7 +1136,8 @@ $(BRIDGEDIR)/uberon-ext-bridge-to-zfa.obo: $(BRIDGEDIR)/ext-xref.obo make-bridge
 	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ext-xref.obo
 
 # see #157
-#TODO @cmungall
+#TODO @cmungall 
+#TODO @matentzn dont spend much time but perhaps ticket
 ext-xref-conflict.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(U,Zx),id_idspace(Zx,'ZFA'),Zx\=Z" -select "x(U,Z,Zx)" -label > $@
@@ -1180,7 +1167,7 @@ dirs:
 	mkdir -p $(RELDIR)/bridge
 	mkdir -p $(RELDIR)/reports
 
-
+# TODO
 release: dirs
 	cp core.owl $(RELDIR)/core.owl ;\
 	cp $(SRC) $(RELDIR)/core.obo ;\
@@ -1188,7 +1175,7 @@ release: dirs
 	cp merged.{obo,owl} $(RELDIR)/ ;\
 	cp uberon-base.owl $(RELDIR) ;\
 	cp basic.{obo,owl,json} $(RELDIR)/ ;\
-	cp homology.owl $(RELDIR)/homology.owl ;\
+#	cp homology.owl $(RELDIR)/homology.owl ;\
 	cp *_import.owl $(RELDIR)/ ;\
 	cp $(BRIDGEDIR)/*.{obo,owl} $(RELDIR)/$(BRIDGEDIR)/ ;\
 	cp depictions.owl $(RELDIR)/ ;\
@@ -1207,7 +1194,7 @@ release: dirs
 	cp composite-brain.{obo,owl} $(RELDIR) ;\
 	cp composite-{vertebrate,metazoan}.{obo,owl} $(RELDIR) ;\
 	cp composite-{vertebrate,metazoan}-*.{obo,owl} $(RELDIR) ;\
-	cp reference/*.{owl,md} $(RELDIR)/reference  ;\
+# REMOVE RELASE	cp reference/*.{owl,md} $(RELDIR)/reference  ;\
 	make release-diff ;\
 	cp diffs/* $(RELDIR)/diffs/ ;\
 	echo done ;\
@@ -1240,12 +1227,14 @@ fbbt.obo:
 $(BRIDGEDIR)/fbbt-nd.obo: fbbt.obo
 	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && owltools --use-catalog $@.tmp -o -f obo $@
 
-#TODO @cmungall
+#TODO @cmungall 
+#TODO @mat revive
 $(BRIDGEDIR)/caro-bridge-to-zfa.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r uberonp -consult util/caro_equiv.pro "ec(C,Z,'ZFA')" -select C-Z  -no_pred | $(SCRIPTSDIR)/tbl2obolinks.pl --rel equivalent_to - > $@
 
 #TODO @cmungall
+#TODO @mat revive
 $(BRIDGEDIR)/caro-bridge-to-xao.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r uberonp -consult util/caro_equiv.pro "ec(C,Z,'XAO')" -select C-Z  -no_pred | $(SCRIPTSDIR)/tbl2obolinks.pl --rel equivalent_to - > $@
@@ -1263,29 +1252,35 @@ $(BRIDGEDIR)/caro-bridge-to-xao.obo:
 # ----------------------------------------
 
 #TODO @cmungall
+#TODO @mat / get rid for now
 xrefs/uberon-to-umls.tbl: uberon.obo
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r NCITA  -i $< "entity_xref(U,X),inst_sv(X,'\"UMLS_CUI\"',C,_)" -select U-C -no_pred -label -use_tabs > $@.tmp && mv $@.tmp $@
 
 #TODO @cmungall
+#TODO @mat / get rid for now
 xrefs/uberon-to-umls.obo: uberon.obo
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r NCITA  -i $< "entity_xref(U,X),inst_sv(X,'\"UMLS_CUI\"',C,_),atom_concat('UMLS:',C,CX)" -select U-CX -no_pred -use_tabs | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref  > $@.tmp && mv $@.tmp $@
 
 #TODO @cmungall
+#TODO @mat / get rid for now
 xrefs/uberon-to-umls-merged.obo: xrefs/uberon-to-umls.obo
 	obo-merge-tags.pl -t xref $(SRC) $< > $@ && diff -u $@ $(SRC) || echo
 
 
 
 # OBO-Format Hacking
+#TODO @mat / get rid for now 
+# Way that the way comments are tagged were up to date
 %-cmt.obo: %.obo
 	obo-add-comments.pl -t xref -t intersection_of $(SRC) animal_gross_anatomy/*/*.obo ../cell_type/cell.obo ../caro/caro.obo MIAA.obo animal_gross_anatomy/*/*/*.obo ~/cvs/fma-conversion/fma2/fma2.obo gemina_anatomy.obo birnlex_anatomy.obo NIF-GrossAnatomy.obo hao.obo HOG.obo efo_anat.obo $< > $@
 
+#TODO @mat / get rid for now
 caloha.obo:
 	wget ftp://ftp.nextprot.org/pub/current_release/controlled_vocabularies/caloha.obo -O $@
 
-
+#TODO @mat / get rid for now
 xcaloha.obo: caloha.obo
 	perl -npe 's/TS\-/CALOHA:TS\-/g' $< > $@
 
@@ -1323,6 +1318,7 @@ xcaloha.obo: caloha.obo
 # ----------------------------------------
 # Neurolex
 # ----------------------------------------
+# TODO: @matentzn remove
 nlx-%.owl: $(TMPDIR)/nlx_stage_all.rdf 
 	owltools --catalog-xml catalog-nlx.xml $< --abox-to-tbox  --reasoner-query -r elk -d  -l "$*" -c $(URIBASE)/nlx/neuron  -o $@
 #	owltools --catalog-xml catalog-nlx.xml $<  --reasoner-query -r elk -d -l "$*" --abox-to-tbox  --make-ontology-from-results $(URIBASE)/nlx/neuron.owl -o $@
@@ -1331,6 +1327,7 @@ nlx-%.owl: $(TMPDIR)/nlx_stage_all.rdf
 # Rules
 # ----------------------------------------
 #TODO @cmungall
+# TODO: @matentzn remove
 ipo.obo: uberon.obo
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall  -i $< -consult util/partof.pro new_part_of/2 -label -no_pred -use_tabs | sort -u | $(SCRIPTSDIR)/tbl2obolinks.pl  --rel part_of --source reference_0000032 - > $@
@@ -1340,17 +1337,17 @@ ipo.obo: uberon.obo
 # ----------------------------------------
 
 # DOCS
-#TODO @cmungall
+# TODO: @matentzn remove
 relation_table.txt:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r uberon -consult util/relation_report.pro "row(R)" -select R > relation_table.txt
 
-#TODO @cmungall
+# TODO: @matentzn remove number of uses of each relation.
 %-relstats: %.obo
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r uberon  "aggregate(count,X-T,parent(X,R,T),Num)" -select "R-Num" -no_pred | | sort -nk2 > $@
 
-#TODO @cmungall
+# TODO: @matentzn remove
 %-el.owl: %.owl
 	makeElWithoutReasoning.sh -i `pwd`/$< -o `pwd`/$@
 
@@ -1370,6 +1367,8 @@ ispellcheck: $(SRC)-ispellcheck
 # batch
 spellcheck: $(SRC)-spellcheck
 
+# TODO: @matentzn @cmungall likes this -> unix spell check we need a solution for all of OBO (ROBOT)
+# IF does not work, remove from here.
 %-spellcheck: %
 	cat $< | aspell -a check --home-dir . 
 
@@ -1380,43 +1379,45 @@ spellcheck: $(SRC)-spellcheck
 # wikipedia
 # ----------------------------------------
 
-#TODO @cmungall
+#TODO @matentzn remove
 %-wikipedia.xrefs: %.obo
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#(blip -i $< -u web_fetch_wikipedia -u query_anatomy findall class_wikipage/2 > $@) 2>&1 > $@.err
 
+#TODO @matentzn remove
 %-wikipedia.pro: %-wikipedia.xrefs
 	./wikitbl2defxref.pl $< | tbl2p > $@
 
+#TODO @matentzn remove
 %-wikipedia.merge: %-wikipedia.xrefs
 	./wikitbl2defxref.pl $< | cut -f2,3 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref > $@
 
 #nif_anatomy.obo:
 #	blip -i http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -f thea2_owl -import_all io-convert -to obo -u ontol_manifest_metadata_from_nif_via_thea -o $@.tmp && ./downcase-obo.pl $@.tmp > $@
 
-#TODO @cmungall
+#TODO @matentzn remove
 nif_subcellular.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip -i http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Subcellular.owl -f thea2_owl -import_all io-convert -to obo -u ontol_manifest_metadata_from_nif_via_thea -o $@.tmp && ./nif-downcase-obo.pl $@.tmp > $@
 
-#TODO @cmungall
+#TODO @matentzn remove
 nif_cell.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip -i http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Cell.owl -f thea2_owl -import_all io-convert -to obo -u ontol_manifest_metadata_from_nif_via_thea -o $@.tmp && ./nif-downcase-obo.pl $@.tmp > $@
 
 # VHOG
-organ_association.txt:
-	wget http://bgee.unil.ch/download/organ_association.txt
-
-stages.obo:
-	wget http://bgee.unil.ch/download/stages.obo
+#organ_association.txt:
+#	wget http://bgee.unil.ch/download/organ_association.txt
 
 #mapping_EMAP_to_EMAPA.txt:
 #	wget ftp://lausanne.isb-sib.ch/pub/databases/Bgee/general/mapping_EMAP_to_EMAPA.txt
+# TODO EMAP is long enpough dead remove from makefile
 mapping_EMAP_to_EMAPA.txt:
 	wget ftp://ftp.hgu.mrc.ac.uk/pub/MouseAtlas/Anatomy/EMAP-EMAPA.txt -O $@
 
 # e.g. raw_similarity_annotations.tsv
+
+# TODO get rid of that all.
 ASA=raw_similarity_annotations
 asa-%.tsv:
 	wget --no-check-certificate https://raw.githubusercontent.com/BgeeDB/anatomical-similarity-annotations/master/release/$*.tsv -O $@
@@ -1462,152 +1463,7 @@ simil%.pro: simil%.tsv
 # DBPEDIA
 # ----------------------------------------
 
-# note that dbpedia vastly underclassifies here.
-# 4k limit seems unusual...
-#TODO @cmungall
-dbpedia_all_AnatomicalStructure.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	# blip -debug sparql ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/AnatomicalStructure> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-
-# this should be subsumed by AnatomicalStructure
-dbpedia_all_Embryology.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#ßblip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type <http://dbpedia.org/ontology/Embryology> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-
-dbpedia_all_Animal_anatomy.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Animal_anatomy> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-
-dbpedia_all_Mammal_anatomy.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:Mammal_anatomy> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-
-dbpedia_category_%.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE {  ?x <http://purl.org/dc/terms/subject> <http://dbpedia.org/resource/Category:$*> }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-.PRECIOUS: dbpedia_category_%.pro
-
-dbpedia_type_%.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type dbpedia-owl:$* }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-
-dbpedia_TH.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT ?x,?y WHERE {  ?x <http://dbpedia.org/property/code> ?y . FILTER strStarts(str(?y),'TH H')  }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-
-
-dbpedia_all_Bone.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type dbpedia-owl:Bone }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-dbpedia_all_Nerve.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE {  ?x rdf:type dbpedia-owl:Nerve }" -write_prolog > $@.tmp && sort -u $@.tmp > $@
-
-dbpedia_subjects.pro:
-	sort -u dbpedia_all_*.pro > $@
-
-triples-%.pro: %.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -debug sparql -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
-#	blip-findall -debug sparql -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[sameAs('http://dbpedia.org/property/redirect')])" -select "rdf(S,P,O)" -write_prolog > $@
-.PRECIOUS: triples-%.pro
-
-dbpo-%.obo: triples-%.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip -i $< -u ontol_bridge_from_dbpedia io-convert -to obo > $@
-
-
-# everything as type AnatomicalStructure
-dbpedia_all.pro: dbpedia_subjects.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -debug sparql -i $< -u sparql_util "row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
-dbpedia_all-after-%.pro: dbpedia_all_AnatomicalStructure.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -debug sparql -i $< -u sparql_util "row(A),A@>'http://dbpedia.org/resource/$*',dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
-
-# everything with a def_xref to wikipedia
-dbpedia_rest.pro: dbpedia_all_AnatomicalStructure.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -i adhoc_uberon.pro -r uberon -i $< -u sparql_util "def_xref(C,X),wpxref_url(X,_,A),\+row(A),dbpedia_query_links(A,row(S,P,O),1000,[])" -select "rdf(S,P,O)" -write_prolog > $@
-
-dbpedia_ontol.obo: dbpedia_all.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip -i $< -u ontol_bridge_from_dbpedia io-convert -to obo > $@
-
-uberon-thumbnail-xrefs.obo: dbpedia_all.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -r uberonp -i dbpedia_all.pro -i adhoc_uberon.pro uberon_thumbnail/2 -label | cut -f2,3 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref > $@
-
-# MUSCLES
-dbpedia-muscles: dbpedia-muscle-origin-x.obo dbpedia-muscle-insertion-x.obo dbpedia-muscle-nerve-x.obo  dbpedia-muscle-action-x.obo dbpedia-muscle-antagonist-x.obo dbpedia-muscle-agonist-x.obo
-dbpedia-muscle-%.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE { ?x dbpprop:$* ?y. ?x rdf:type dbpedia-owl:Muscle}" -write_prolog > $@.tmp && mv $@.tmp $@
-.PRECIOUS: dbpedia-muscle-%.pro
-
-dbpedia-muscle-%-x.obo: dbpedia-muscle-%.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -debug match -consult util/dbpedia_to_link.pro -r uberon -i $< "wfact($*)" > $@.tmp && mv $@.tmp $@
-
-dbpedia-t-muscle-%.pro: dbpedia-muscle-%.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -i $< "row(A,B)" -select "row(A,'$*',B)" -write_prolog > $@
-
-dbpedia-ALL-muscle.pro: dbpedia-t-muscle-origin.pro dbpedia-t-muscle-insertion.pro dbpedia-t-muscle-nerve.pro  dbpedia-t-muscle-action.pro dbpedia-t-muscle-antagonist.pro 
-	cat dbpedia-t-muscle-*.pro > $@
-
-dbpedia-muscle-nlp.obo: dbpedia-ALL-muscle.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -debug match -consult util/dbpedia_to_link.pro -r uberon -u annotator -i $< "initialize_annotator,wfact_nlp" > $@.tmp && mv $@.tmp $@
-
-
-dbpredia-props: dbpedia-prop-articulations-x.obo
-
-dbpedia-prop-%.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE { ?x dbpprop:$* ?y}" -write_prolog > $@.tmp && mv $@.tmp $@
-.PRECIOUS: dbpedia-prop-%.pro
-
-dbpedia-prop-%-x.obo: dbpedia-prop-%.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -debug match -consult util/dbpedia_to_link.pro -r uberon -i $< "wfact($*)" > $@.tmp && mv $@.tmp $@
-
-dbpedia-latin.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE { ?x dbpprop:latin ?y. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
-
-dbpedia-depiction.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE { ?x foaf:depiction ?y. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
-
-dbpedia-redirects.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE { ?y dbpedia-owl:wikiPageRedirects ?x. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
-dbpedia-disambig.pro:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip ontol-sparql-remote "SELECT * WHERE { ?y dbpedia-owl:wikiPageDisambiguates ?x. ?x rdf:type dbpedia-owl:AnatomicalStructure}" -write_prolog > $@.tmp && mv $@.tmp $@
-
-dbpedia-list-AS.txt:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip -debug sparql ontol-sparql-remote "SELECT * WHERE { ?x rdf:type dbpedia-owl:AnatomicalStructure}" > $@.tmp && mv $@.tmp $@
-
-# then do obo-add-defs.pl defs.txt $(SRC)
-defs.txt:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "class_newdef(C,D)" | cut -f2,3 > $@
-
-syns.txt:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -index "metadata_nlp:entity_label_token_stemmed(1,0,1,0)" -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "dbpedia_syn(C,S),class(C,N)" -select "s(C,N,S)" > $@
-
-df.txt:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "dbpedia_devfrom(Post,Pre)" -select Post-Pre | cut -f2,3 > $@
-
-new.txt:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-	#blip-findall -i dbpedia_all.pro -r uberon -i adhoc_uberon.pro "dbpedia_new(C)" -select C > $@
-
+# @mat remove
 ma2ncitx.obo: ma2ncit.obo
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r MA -i $<  -r NCITA "class_xref(M,MX),atom_concat('ncithesaurus:',X,MX),inst_sv(C,_P,X,_)" -select "M-C" -no_pred -label -use_tabs | sort -u | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@
@@ -1615,6 +1471,8 @@ ma2ncitx.obo: ma2ncit.obo
 # ----------------------------------------
 # BTO
 # ----------------------------------------
+# @mat remove
+
 bto-anat.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip ontol-query -r brenda -index "ontol_db:parentT(1,-,1)" -query "parentT(ID,'BTO:0000042'),\+((class(X,N),atom_concat(_,'cell line',N),parentT(ID,X)))" -to obo  > $@
@@ -1627,6 +1485,7 @@ ALLENS = dmba hba dhba pba mba
 
 
 #TODO @cmungall has been removed!! especially bridges/aba.owl
+# @cmungall aba was replaced by mba 
 #aba.obo: ABA-src.obo
 #	$(SCRIPTSDIR)/make-aba-part-ofs.pl $< > $@
 #$(BRIDGEDIR)/aba.owl: aba.obo
@@ -1676,7 +1535,7 @@ uberon-nif-combined.owl: uberon.owl
 
 #uberon-nif-combined.obo: uberon.obo
 #	obo-cat.pl uberon.obo $(BRIDGEDIR)/uberon-bridge-to-nif_grossanatomy.obo ~/cvs/pkb-owl/ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.obo > $@
-
+#TODO maybe we dont need nif-c anymore
 uberon-nif-merged.owl: uberon-nif-combined.obo
 	owltools $< --reasoner elk  --merge-equivalent-classes -f  -t UBERON -o $@.tmp && grep -v '<oboInOwl:id' $@.tmp > $@
 #	owltools $< --reasoner elk --remove-axioms -t DisjointClasses --merge-equivalent-classes -a  -t UBERON -o $@.tmp && grep -v '<oboInOwl:id' $@.tmp > $@
@@ -1688,7 +1547,7 @@ uberon-nif-merged.obo:  uberon-nif-merged.owl
 # ----------------------------------------
 # UTIL
 # ----------------------------------------
-#TODO @cmungall
+#TODO @cmungall KEEP IT AS REMINDER
 util/ubermacros.el:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r ro -r go -r pato  -r pext -r mondo -r taxslim -r mondo_edit -consult util/write_ubermacros.pro  w > $@.tmp && sort -u $@.tmp > $@
@@ -1718,7 +1577,7 @@ patternizer:
 	pl2sparql   -e -c patterns/patternizer_conf.pl -A void.ttl -i ext doall
 
 # reverse engineer CSV from uberon axioms and DOSDPs
-#TODO @cmungall
+#TODO @cmungall nico leave as reminder 
 modules/%.csv: $(PSRC)
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -i $< -r pext  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_tuple($*)" > $@.tmp && mv $@.tmp $@
