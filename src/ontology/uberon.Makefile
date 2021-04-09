@@ -1043,6 +1043,15 @@ composite-%.obo: composite-%.owl
 composite-metazoan.owl: $(TMPDIR)/unreasoned-composite-metazoan.owl
 	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed asserted-only relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
+	
+composite-metazoan-last-release.owl:
+	wget http://svn.code.sf.net/p/obo/svn/uberon/releases/2020-09-16/composite-metazoan.owl -O $@
+
+reports/release-diff-composite.txt: composite-metazoan-last-release.owl composite-metazoan.owl
+	$(ROBOT) diff --left composite-metazoan-last-release.owl --right composite-metazoan.owl -o $@
+
+.PHONY: composite-diff
+composite-diff: reports/release-diff-composite.txt
 
 composite-vertebrate.owl: $(TMPDIR)/unreasoned-composite-vertebrate.owl
 	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed asserted-only relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
