@@ -962,11 +962,14 @@ CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard $(TMPDIR)/developmenta
 # TODO: properly trigger this from changes
 # "entity_xref_idspace(X,U,'UBERON')" -no_pred -label -select U-X
 # this is a basic xref query, all xrefs TO an uberon ID. The TSV output is col1:UberonID col2:speciesSpecificStageTermID
-$(TMPDIR)/merged-stages-xrefs.obo: $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo | $(TMPDIR)/update-stages blip
+$(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo: $(TMPDIR)/update-stages
+	test -f $@
+
+$(TMPDIR)/merged-stages-xrefs.obo: $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo
 	$(ROBOT) query -i $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo --query ../sparql/xrefs-to-uberon.sparql $@_xrefs_to_uberon.tsv 
 	cat $@_xrefs_to_uberon.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl -k  --rel xref - > $@.tmp && mv $@.tmp $@
 
-$(TMPDIR)/composite-stages.obo: $(TMPDIR)/merged-stages-xrefs.obo #$(TMPDIR)/update-stages
+$(TMPDIR)/composite-stages.obo: $(TMPDIR)/merged-stages-xrefs.obo $(TMPDIR)/update-stages
 	owltools $(CSTAGES) $(TMPDIR)/merged-stages-xrefs.obo --merge-support-ontologies -o -f obo --no-check $@
 
 # ----------------------------------------
