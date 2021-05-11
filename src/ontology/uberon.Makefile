@@ -1734,7 +1734,7 @@ cl_mondo_merged.owl:
 #### Temporary exclusions
 
 reports/composite-metazoan-dv.txt:
-	echo "ERROR ERROR WARNING ERROR: $@ currently fails!"
+	echo "ERROR ERROR WARNING ERROR: $@ currently fails!" && touch $@
 
 subsets/life-stages-composite.obo:
-	echo "ERROR ERROR WARNING ERROR: $@ currently fails!"
+	echo "ERROR ERROR WARNING ERROR: $@ currently fails!" && touch $@
