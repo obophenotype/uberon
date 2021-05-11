@@ -767,12 +767,6 @@ uberon-qc: imports $(QC_FILES) all_subsets
 $(REPORTDIR)/%-dv.txt: %.owl
 	owltools --no-debug $<  $(QELK) --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
-reports/composite-metazoan-dv.txt:
-	echo "ERROR ERROR WARNING ERROR: $@ currently fails!"
-
-subsets/life-stages-composite.obo:
-	echo "ERROR ERROR WARNING ERROR: $@ currently fails!"
-
 # TODO - need closure for taxslim too
 $(REPORTDIR)/%-obscheck.txt: %.obo
 	(($(SCRIPTSDIR)/obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) 2>&1 > $@
@@ -1735,3 +1729,12 @@ $(TMPDIR)/%_unsat.ofn: %
 		
 cl_mondo_merged.owl:
 	$(ROBOT) merge -i uberon.owl -I $(OBO)/cl.owl -o $@
+
+
+#### Temporary exclusions
+
+reports/composite-metazoan-dv.txt:
+	echo "ERROR ERROR WARNING ERROR: $@ currently fails!"
+
+subsets/life-stages-composite.obo:
+	echo "ERROR ERROR WARNING ERROR: $@ currently fails!"
