@@ -1035,7 +1035,7 @@ $(TMPDIR)/unreasoned-composite-%.owl: $(MBASE)
 # stage 2 (final) of composite build: reason
 #TODO add ontology annotations @matentzn
 composite-%.owl: $(TMPDIR)/unreasoned-composite-%.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed asserted-only relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 
 # composute obo is made from owl
@@ -1044,7 +1044,7 @@ composite-%.obo: composite-%.owl
 
 #TODO @matentzn make diff between current release and this and send to chris
 composite-metazoan.owl: $(TMPDIR)/unreasoned-composite-metazoan.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed asserted-only relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 	
 composite-metazoan-last-release.owl:
@@ -1712,6 +1712,10 @@ clean:
 	rm -rf ./*.tmp1
 	rm -rf ./*.tmp2
 
+explain:
+	robot explain --input tmp/unreasoned-composite-metazoan.owl --reasoner ELK \
+  --axiom "'Nucleus raphe obscurus' EquivalentTo: 'nucleus raphe obscurus'" \
+  --explanation tmp/explanation.md
 
 #uberon_edit-xp-check basic-allcycles uberon_edit-obscheck.txt:
 #	echo "skipping $@"
