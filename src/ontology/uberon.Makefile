@@ -1063,7 +1063,7 @@ composite-vertebrate.owl: $(TMPDIR)/unreasoned-composite-vertebrate.owl
 #TODO is this needed?
 #TODO: 
 composite-metazoan-basic.obo: composite-metazoan.owl
-	owltools $<  --extract-mingraph --remove-axiom-annotations --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(URIBASE)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && mv $@.tmp  $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
+	owltools --use-catalog $<  --extract-mingraph --remove-axiom-annotations --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(URIBASE)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && mv $@.tmp  $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@
 
 # ----------------------------------------
 # TAXON MODULES
