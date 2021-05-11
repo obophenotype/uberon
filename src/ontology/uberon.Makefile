@@ -1057,7 +1057,7 @@ reports/release-diff-composite.txt: composite-metazoan-last-release.owl composit
 composite-diff: reports/release-diff-composite.txt
 
 composite-vertebrate.owl: $(TMPDIR)/unreasoned-composite-vertebrate.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed asserted-only relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-vertebrate.owl
 
 #TODO is this needed?
