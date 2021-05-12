@@ -1043,7 +1043,6 @@ xref: TGMA:0000634
 xref: UMLS:C0017422 {source="ncithesaurus:Male_Genitalia"}
 xref: UMLS:C1963704 {source="ncithesaurus:Male_Reproductive_System"}
 xref: VHOG:0000725
-xref: WBbt:0008423
 xref: XAO:0000155
 is_a: UBERON:0000990 ! reproductive system
 property_value: UBPROP:0000003 "By far, sexual reproduction is the more common pattern among living vertebrate forms and its widespread occurrence suggests that it is the plesiomorphic, or primitive, reproductive mode among the vertebrates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000725", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0792383369 Lombardi J, Comparative vertebrate reproduction (1998) p.43"}
@@ -1494,7 +1493,6 @@ xref: OpenCyc:Mx4rvVipTZwpEbGdrcN5Y29ycA
 xref: TGMA:0000635
 xref: UMLS:C0700038 {source="ncithesaurus:Female_Reproductive_System"}
 xref: VHOG:0000726
-xref: WBbt:0006748
 xref: WikipediaCategory:Female_reproductive_system
 xref: XAO:0000156
 is_a: UBERON:0000990 ! reproductive system
@@ -1861,8 +1859,8 @@ def: "external genital organs of the female mammal[WP]." [http://en.wikipedia.or
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
-synonym: "female pudendum" EXACT [BTO:0003101]
 synonym: "female pudendum" EXACT [FMA:20462]
+synonym: "female pudendum" EXACT [BTO:0003101]
 synonym: "mammalian vulva" EXACT []
 synonym: "puboperineal region" EXACT [FMA:20462]
 synonym: "pudendum" RELATED [BTO:0003101]
@@ -3106,6 +3104,7 @@ namespace: uberon
 def: "A male organ involved in reproduction" [UBERON:xp]
 subset: organ_slim
 subset: pheno_slim
+synonym: "male genital" RELATED [WBbt:0008423]
 synonym: "male organism reproductive organ" EXACT [OBOL:automatic]
 synonym: "male organism reproductive structure" EXACT [OBOL:automatic]
 synonym: "male organism reproductive system organ" EXACT [OBOL:automatic]
@@ -3118,6 +3117,7 @@ synonym: "reproductive structure of male organism" EXACT [OBOL:automatic]
 synonym: "reproductive system organ of male organism" EXACT [OBOL:automatic]
 synonym: "sex organ of male organism" EXACT [OBOL:automatic]
 xref: MA:0000545
+xref: WBbt:0008423
 is_a: UBERON:0003133 ! reproductive organ
 relationship: part_of UBERON:0000079 ! male reproductive system
 
