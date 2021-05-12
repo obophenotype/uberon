@@ -64,7 +64,7 @@ $(CATALOG_DYNAMIC):
 
 .PHONY: update_dynamic_catalog
 update_dynamic_catalog:
-	echo "WARNING: You are updating the dynamic catalog. Note that this is done on the basis of a previous run of the pipeline, so all files are expected to be available. Do not do this if you dont know what you are doing."
+	echo "STRONG WARNING: You are updating the dynamic catalog. Note that this is done on the basis of a previous run of the pipeline, so all files are expected to be available. Do not do this if you dont know what you are doing."
 	$(SCRIPTSDIR)/make-catalog.pl uberon.owl ext.owl mirror/ncbitaxon.obo imports/*_import.owl mirror/ro.owl $(TMPDIR)/local-*owl $(BRIDGEDIR)/*owl $(TMPDIR)/allen-*.obo $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
@@ -87,7 +87,7 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
 # TODO issues/contributor.owl not being updated atm.
 # TODO: for the seeds to be correctly imported, we probably need to merge phenoscape in here
 $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
-	echo "WARNING: issues/contributor.owl needs to be manually updated."
+	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
 	owltools $(UCAT) $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@.tmp > $@
 	
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
@@ -415,7 +415,7 @@ imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
 	owltools $< --add-obo-shorthand-to-properties -o -f obo --no-check $@
 
 imports: imports/pato_import.obo imports/chebi_import.obo imports/pr_import.obo imports/ncbitaxon_import.obo imports/cl_import.obo imports/go_import.obo imports/ro_import.obo
-	echo "WARNING: THIS GOAL HARDBAKES THE FOLLOWING IMPORTS AND COULD BE INCOMPLETE: $^" && touch $@
+	echo "STRONG WARNING: THIS GOAL HARDBAKES THE FOLLOWING IMPORTS AND COULD BE INCOMPLETE: $^" && touch $@
 
 # ----------------------------------------
 # MARKDOWN EXPORT
@@ -628,7 +628,7 @@ extra-full-bridge-checks: $(patsubst %,$(REPORTDIR)/extra-full-bridge-check-%.tx
 # TODO @cmungall: worth fixing!
 # TODO @matentzn: use ROBOT merge instead and dump debug modules..
 $(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING check $@ FAIL currently!"
+	echo "STRONG WARNING: check $@ FAIL currently!"
 	OWLTOOLS_MEMORY=14G owltools $(URIBASE)/bfo.owl $(URIBASE)/ro.owl --catalog-xml $(CATALOG_DYNAMIC) $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl  --merge-support-ontologies -o $(REPORTDIR)/bfo-check.owl $(QELK) --run-reasoner -r elk -u > $@.tmp
 
 bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
@@ -994,7 +994,7 @@ $(TMPDIR)/unreasoned-composite-%.owl: $(MBASE)
 
 # stage 2 (final) of composite build: reason
 composite-%.owl: $(TMPDIR)/unreasoned-composite-%.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 
 # composute obo is made from owl
@@ -1002,11 +1002,11 @@ composite-%.obo: composite-%.owl
 	owltools $< --add-obo-shorthand-to-properties --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp > $@
 
 composite-metazoan.owl: $(TMPDIR)/unreasoned-composite-metazoan.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 
 composite-vertebrate.owl: $(TMPDIR)/unreasoned-composite-vertebrate.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-vertebrate.owl
 
 composite-metazoan-last-release.owl:
@@ -1618,7 +1618,7 @@ roundtrip_obo: $(SRC)
 .PHONY: normalize
 normalize: $(TMPDIR)/NORMALIZE.obo
 	mv $< $(SRC)
-	echo "$(SRC) has been overwritten! Please carefully check your diff before you commit!"
+	echo "WARNING: $(SRC) has been overwritten! Please carefully check your diff before you commit!"
 
 clean:
 	rm -rf ./*.tmp
