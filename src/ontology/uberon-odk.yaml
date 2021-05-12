@@ -21,7 +21,9 @@ release_artefacts:
   - custom-merged
   - custom-core
   - custom-composite-metazoan
+  - custom-composite-metazoan-basic
   - custom-composite-vertebrate
+  - custom-composite-vertebrate-basic
 edit_format: obo
 import_group:
   products:
@@ -57,5 +59,30 @@ import_group:
     - id: caro
     # fma
     # allen: dhba, dmba, hba, mba, pba
-robot_java_args: '-Xmx8G'
+components:
+  products:
+    - filename: phenoscape-ext.owl
+subset_group:
+  products:
+    - id: appendicular-minimal
+    - id: circulatory-minimal
+    - id: cranial-minimal
+    - id: cumbo
+    - id: digestive-minimal
+    - id: efo-slim
+    - id: excretory-minimal
+    - id: human-view
+    - id: immune-minimal
+    - id: life-stages-core
+    - id: merged-partonomy
+    - id: metazoan-view
+    - id: mouse-view
+    - id: musculoskeletal-minimal
+    - id: nephron-minimal
+    - id: nervous-minimal
+    - id: pulmonary-minimal
+    - id: reproductive-minimal
+    - id: sensory-minimal
+    - id: xenopus-view
+robot_java_args: '-Xmx20G'
 create_obo_metadata: FALSE
