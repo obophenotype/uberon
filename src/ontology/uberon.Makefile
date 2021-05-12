@@ -380,23 +380,23 @@ imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl reports/uberon-edit-obje
 	$(ROBOT) extract -i $< -m STAR -T reports/uberon-edit-object-properties.csv annotate -O $(URIBASE)/uberon/ro.owl -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@
 
 imports/pato_import.owl: mirror/pato.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl--extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
 
 # TODO - logical definitions go->ubr,cl
 imports/go_import.owl: mirror/go.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $<  $(TMPDIR)/seed.owl--extract-module -s $(URIBASE)/go.owl -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $<  $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/go.owl -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
 
 imports/envo_import.owl: mirror/envo.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl--extract-module -s $(URIBASE)/envo.owl -c --make-subset-by-properties --force --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/envo.owl -c --make-subset-by-properties --force --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
 
 imports/nbo_import.owl: mirror/nbo.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl--extract-module -s $(URIBASE)/nbo.owl -c --make-subset-by-properties --force  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/nbo.owl -c --make-subset-by-properties --force  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
 
 imports/chebi_import.owl: mirror/chebi.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl--extract-module -s $(URIBASE)/chebi.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/chebi.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
 
 imports/pr_import.owl: mirror/pr.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl--extract-module -s $(URIBASE)/pr.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pr.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
 
 # TODO - use full taxonomy
 #ncbitaxon.owl: 
