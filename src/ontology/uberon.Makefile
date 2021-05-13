@@ -247,16 +247,26 @@ mirror/envo.owl: $(OWLSRC)
 mirror/nbo.owl: $(OWLSRC) 
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/nbo.owl --extract-mingraph --set-ontology-id $(URIBASE)/nbo.owl -o $@; fi
 
-mirror/chebi.obo: $(OWLSRC)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate $(URIBASE)/chebi.obo -O $@.tmp && mv $@.tmp $@ && touch $@; fi
+mirror/chebi.obo.gz: $(OWLSRC)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate $(URIBASE)/chebi.obo.gz -O $@.tmp && mv $@.tmp $@ && touch $@; fi
 
-mirror/chebi.owl: $(OWLSRC) mirror/chebi.obo
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools mirror/chebi.obo --extract-mingraph --rename-entity $(URIBASE)/chebi#has_part $(URIBASE)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/chebi.owl $(URIBASE)/chebi.owl -o $@ && touch $@; fi
+mirror/chebi.obo: mirror/chebi.obo.gz
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then gunzip -c $< > $@; fi
+
+mirror/chebi.owl: mirror/chebi.obo
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $< --extract-mingraph --rename-entity $(URIBASE)/chebi#has_part $(URIBASE)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/chebi.owl $(URIBASE)/chebi.owl -o $@ && touch $@; fi
 
 # Do not rebuild: PR is now too big
 # Why this step? (NICO: to get the branch and remove BFO top level). Dates back to the time when there were bad URIs, maybe we can switch to something normal now.
-mirror/aminoacid.owl: $(OWLSRC)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/pr.owl  --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(URIBASE)/uberon/aminoacid.owl  -o $@; fi
+
+mirror/pr.owl.gz: $(OWLSRC)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate $(URIBASE)/pr.owl.gz -O $@.tmp && mv $@.tmp $@ && touch $@; fi
+
+mirror/pr-gunzip.owl: mirror/pr.owl.gz
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then gunzip -c $< > $@; fi
+
+mirror/aminoacid.owl: mirror/pr-gunzip.owl
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $< --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(URIBASE)/uberon/aminoacid.owl  -o $@; fi
 
 mirror/pr.owl: mirror/aminoacid.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools mirror/aminoacid.owl --extract-mingraph --rename-entity $(URIBASE)/pr#has_part $(URIBASE)/BFO_0000051 --rename-entity $(URIBASE)/pr#part_of $(URIBASE)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d components -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(URIBASE)/pr.owl -o $@ && touch $@; fi
