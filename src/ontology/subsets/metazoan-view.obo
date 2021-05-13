@@ -1,0 +1,1690 @@
+format-version: 1.2
+data-version: uberon/releases/2021-05-13/subsets/metazoan-view.owl
+subsetdef: added_for_HCA "Classes tagged with this subset property were added upon request from the Human Cell Atlas (HCA)."
+subsetdef: cumbo "CUMBO"
+subsetdef: cyclostome_subset "cyclostome structures"
+subsetdef: defined_by_cytoarchitecture "brain region defined by cyto-architecture"
+subsetdef: defined_by_ordinal_series "classes that are defined by relative position counting from first in a series of elements along an axis in an individual organism rather than by strict homology"
+subsetdef: developmental_classification "developmental_classification"
+subsetdef: dubious_grouping "Indicates that subclasses in AOs may be inappropriately linked"
+subsetdef: early_development "A class that represents an early developmental structure, like a blastocyst. This part of the ontology is undergoing review to remove inappropriate grouping classes."
+subsetdef: efo_slim "EFO slim"
+subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to be checked"
+subsetdef: feed_aligned "subset of classes that have logical defs text defs and synonyms aligned with FEED"
+subsetdef: functional_classification "functional_classification"
+subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
+subsetdef: homology_grouping "A grouping class that depends on an assumption of homology between subclasses"
+subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
+subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
+subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
+subsetdef: non_informative "abstract class brought in to group ontology classes but not informative"
+subsetdef: organ_slim "organs, excluding individual muscles and skeletal elements"
+subsetdef: pheno_slim "Phenotype slim"
+subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
+subsetdef: uberon_slim "Uberon slim - subset that excludes obscure terms and deep compositional terms"
+subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
+subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
+subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
+synonymtypedef: ABBREVIATION "abbreviation"
+synonymtypedef: BRAIN_NAME_ABV "brain name abbreviations (drosophila)"
+synonymtypedef: COMPARATIVE_PREFERRED "preferred term in the context of comparative anatomy"
+synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged"
+synonymtypedef: DEVELOPMENTAL "developmental term"
+synonymtypedef: DUBIOUS "dubious or contested synonym"
+synonymtypedef: HOMOLOGY "a synonym made on the basis of a possibly homologous structure in another species"
+synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
+synonymtypedef: INCONSISTENT "indicates that a synonym is used in an inconsistent or confusing way, typically between species"
+synonymtypedef: LATIN "latin term"
+synonymtypedef: MISSPELLING "a mis-spelling that is in common use and thus recorded"
+synonymtypedef: NON_AMNIOTE "synonym that is inappropriate for amniotes"
+synonymtypedef: NON_MAMMAL "synonym that is inappropriate for mammals"
+synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
+synonymtypedef: PLURAL "plural term"
+synonymtypedef: SENSU "taxonomic disambiguation"
+synonymtypedef: SYSTEMATIC "a systematic synonym used as the base name for design patterns"
+ontology: uberon/subsets/metazoan-view
+property_value: owl:versionInfo "2021-05-13" xsd:string
+
+[Typedef]
+id: RO:0002473
+alt_id: UBREL:0000002
+
+[Typedef]
+id: RO:0002488
+alt_id: BFO:0000068
+
+[Typedef]
+id: RO:0002492
+alt_id: BFO:0000069
+
+[Typedef]
+id: aboral_to
+name: aboral_to
+namespace: uberon
+def: "nearer to the aboral opening of the organism, on the oral-aboral axis." [BSPO:cjm]
+xref: BSPO:0015202
+is_transitive: true
+
+[Typedef]
+id: action_notes
+name: actions_notes
+namespace: uberon
+def: "Notes on how instances of this class functon biomechanically." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000014
+property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: adjacent_to
+name: adjacent_to
+namespace: uberon
+def: "x adjacent_to y iff: x and y share a boundary" []
+xref: RO:0002220
+is_symmetric: true
+
+[Typedef]
+id: ambiguous_for_taxon
+name: ambiguous_for_taxon
+namespace: uberon
+def: "S ambiguous_for_taxon T if the class S does not have a clear referent in taxon T. An example would be the class 'manual digit 1', which encompasses a homology hypotheses that is accepted for some species (e.g. human and mouse), but does not have a clear referent in Aves - the referent is dependent on the hypothesis embraced, and also on the ontogenetic stage." [PHENOSCPAE:asilomar_mtg]
+xref: RO:0002173
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: anastomoses_with
+name: anastomoses with
+namespace: uberon
+
+[Typedef]
+id: anterior_to
+name: anterior_to
+namespace: uberon
+def: "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer" [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000096
+is_transitive: true
+created_by: cjm
+creation_date: 2009-07-31T02:15:46Z
+
+[Typedef]
+id: anteriorly_connected_to
+name: anteriorly connected to
+namespace: uberon
+def: "x anteriorly_connected_to y iff the anterior part of x is connected to y. i.e. x connected_to y and x posterior_to y." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+is_a: connected_to ! connected to
+is_a: posterior_to ! posterior_to
+is_a: transitively_anteriorly_connected_to ! transitively anteriorly connected to
+
+[Typedef]
+id: appendage_segment_number
+name: appendage segment number
+namespace: uberon
+def: "x appendage_segment_number N if and only if (i) x is a appendage_segment, and (ii) x is appendage_segment number N in a series of appendage_segments repeated along an proximo-distal axis, with appendage_segment_number 1 being the proximalmost appendage_segment (in tetrapods this would be the stylopod, as we do not classify girdles as appendage segments)." [https://orcid.org/0000-0002-6601-2165]
+comment: Examples: in dropsphila coxa=1, trochanter=2, femur=3, tibia=4, tarsal segments 1-5=5-9, pretarsus=10
+xref: UBPROP:0000110
+property_value: is_count_of UBERON:0010758
+property_value: preceding_element_is BSPO:0000100
+is_metadata_tag: true
+
+[Typedef]
+id: attaches_to
+name: attaches_to
+namespace: uberon
+xref: RO:0002371
+property_value: seeAlso FMA:85990
+is_a: attaches_to_part_of ! attaches_to_part_of
+is_a: connects ! connects
+
+[Typedef]
+id: attaches_to_part_of
+name: attaches_to_part_of
+namespace: uberon
+xref: RO:0002177
+equivalent_to_chain: attaches_to part_of ! part of
+
+[Typedef]
+id: axiom_lost_from_external_ontology
+name: axiom_lost_from_external_ontology
+namespace: uberon
+def: "A textual description of an axiom loss in this ontology compared to an external ontology." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000002
+is_metadata_tag: true
+
+[Typedef]
+id: bearer_of
+name: bearer of
+namespace: uberon
+xref: RO:0000053
+
+[Typedef]
+id: boundary_of
+name: boundary of
+namespace: uberon
+xref: RO:0002000
+
+[Typedef]
+id: bounding_layer_of
+name: bounding layer of
+namespace: uberon
+comment: A relationship that applies between a continuant and its outer, bounding layer. Examples include the relationship between a multicellular organism and its integument, between an animal cell and its plasma membrane, and between a membrane bound organelle and its outer/bounding membrane.
+xref: RO:0002007
+is_a: part_of ! part of
+
+[Typedef]
+id: branching_part_of
+name: branching_part_of
+namespace: uberon
+xref: RO:0002380
+property_value: editor_note "we need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve" xsd:string
+property_value: seeAlso FMA:85994
+is_a: part_of ! part of
+inverse_of: has_branching_part ! has branching part
+
+[Typedef]
+id: capable_of
+name: capable of
+namespace: uberon
+xref: RO:0002215
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: capable_of_part_of
+name: capable of part of
+namespace: uberon
+xref: RO:0002216
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: channel_for
+name: channel for
+namespace: uberon
+synonym: "carries" BROAD []
+
+[Typedef]
+id: channels_from
+name: channels_from
+namespace: uberon
+is_transitive: true
+
+[Typedef]
+id: channels_into
+name: channels_into
+namespace: uberon
+is_transitive: true
+
+[Typedef]
+id: child_nucleus_of
+name: child nucleus of
+namespace: uberon
+xref: RO:0002476
+
+[Typedef]
+id: child_nucleus_of_in_hermaphrodite
+name: child nucleus of in hermaphrodite
+namespace: uberon
+xref: RO:0002477
+
+[Typedef]
+id: child_nucleus_of_in_male
+name: child nucleus of in male
+namespace: uberon
+xref: RO:0002478
+
+[Typedef]
+id: composed_primarily_of
+name: composed primarily of
+namespace: uberon
+def: "x composed_primarily_of y iff: more than half of the mass of x is made from parts of y" []
+xref: RO:0002473
+is_a: has_part ! has part
+
+[Typedef]
+id: conduit_for
+name: conduit for
+namespace: uberon
+def: "x is a conduit for y iff y passes through the lumen of x." []
+
+[Typedef]
+id: confers_advantage_in
+name: confers_advantage_in
+namespace: uberon
+synonym: "adapted_for" NARROW []
+xref: RO:0002322
+
+[Typedef]
+id: connected_to
+name: connected to
+namespace: uberon
+def: "Binary relationship: x connected_to y if and only if there exists some z such that z connects x and y in a ternary connected_to(x,y,z) relationship." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+comment: Connection does not imply overlaps.
+xref: RO:0002170
+property_value: seeAlso SIO:000652
+is_a: transitively_connected_to ! transitively_connected to
+
+[Typedef]
+id: connects
+name: connects
+namespace: uberon
+def: "Binary relationship: z connects x if and only if there exists some y such that z connects x and y in a ternary connected_to(x,y,z) relationship." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+xref: RO:0002176
+property_value: editor_note "this is currently used for both structural relationships (such as between a valve and the chamber it connects) and abstract relationships (anatomical lines and the entities they connect)" xsd:string
+
+[Typedef]
+id: contains
+name: contains
+namespace: uberon
+xref: RO:0001019
+
+[Typedef]
+id: contains_process
+name: contains process
+namespace: uberon
+xref: BFO:0000067
+
+[Typedef]
+id: continuous_with
+name: continuous_with
+namespace: uberon
+xref: RO:0002150
+is_symmetric: true
+
+[Typedef]
+id: contributes_to_morphology_of
+name: contributes to morphology of
+namespace: uberon
+xref: RO:0002433
+
+[Typedef]
+id: curator_notes
+name: curator notes
+namespace: uberon
+xref: IAO:0000232
+is_metadata_tag: true
+
+[Typedef]
+id: dc-contributor
+name: contributor
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/contributor
+is_metadata_tag: true
+
+[Typedef]
+id: dc-creator
+name: creator
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/creator
+is_metadata_tag: true
+
+[Typedef]
+id: dc-description
+name: description
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/description
+is_metadata_tag: true
+
+[Typedef]
+id: dc-publisher
+name: publisher
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/publisher
+is_metadata_tag: true
+
+[Typedef]
+id: dc-source
+name: derived from resource
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/source
+is_metadata_tag: true
+
+[Typedef]
+id: dc-title
+name: title
+namespace: uberon
+xref: http://purl.org/dc/elements/1.1/title
+is_metadata_tag: true
+
+[Typedef]
+id: dcterms-isReferencedBy
+name: is referenced by
+namespace: uberon
+xref: http://purl.org/dc/terms/isReferencedBy
+is_metadata_tag: true
+
+[Typedef]
+id: dcterms-license
+name: license
+namespace: uberon
+xref: http://purl.org/dc/terms/license
+is_metadata_tag: true
+
+[Typedef]
+id: deep_to
+name: deep_to
+namespace: uberon
+def: "Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000107
+is_transitive: true
+
+[Typedef]
+id: dental_formula
+name: dental formula
+namespace: uberon
+def: "Syntax: upper/lower = I.C.P.M / I.C.P.M. When used with generic tooth class applies to both deciduous and primary. Should also be used with a taxon property." [http://en.wikipedia.org/wiki/Dentition#Dental_formula]
+xref: UBPROP:0000113
+is_metadata_tag: true
+
+[Typedef]
+id: depicted_by
+name: depicted by
+namespace: uberon
+xref: depicted:by
+is_metadata_tag: true
+
+[Typedef]
+id: development_notes
+name: development_notes
+namespace: uberon
+def: "Notes on the ontogenic development of instances of this class." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000011
+property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: developmentally_contributes_to
+name: developmentally_contributes_to
+namespace: uberon
+xref: RO:0002255
+holds_over_chain: develops_into part_of
+is_a: has_potential_to_developmentally_contribute_to ! has potential to developmentally contribute to
+
+[Typedef]
+id: developmentally_induced_by
+name: developmentally_induced_by
+namespace: uberon
+def: "t1 developmentally_induced_by t2 if there is a process of organ induction (GO:0001759) with t1 and t2 as interacting participants. t2 causes t1 to change its fate from a precursor tissue type T to T', where T' develops_from T." [GO:0001759]
+comment: sources for developmentally_induced_by relationships in Uberon: Developmental Biology, Gilbert, 8th edition, figure 6.5(F)
+xref: RO:0002256
+
+[Typedef]
+id: developmentally_preceded_by
+name: developmentally preceded by
+namespace: uberon
+xref: RO:0002258
+
+[Typedef]
+id: developmentally_replaces
+name: developmentally_replaces
+namespace: uberon
+xref: RO:0002285
+
+[Typedef]
+id: develops_from
+name: develops_from
+namespace: uberon
+xref: RO:0002202
+is_transitive: true
+is_a: has_developmental_contribution_from ! has developmental contribution from
+inverse_of: develops_into ! develops_into
+
+[Typedef]
+id: develops_from_part_of
+name: develops_from_part_of
+namespace: uberon
+xref: RO:0002225
+holds_over_chain: directly_develops_from part_of
+is_a: develops_from ! develops_from
+
+[Typedef]
+id: develops_in
+name: develops_in
+namespace: uberon
+comment: This relation take from EHDAA2 - precise semantics yet to be defined
+xref: RO:0002226
+
+[Typedef]
+id: develops_into
+name: develops_into
+namespace: uberon
+xref: RO:0002203
+is_a: has_potential_to_develop_into ! has potential to develop into
+
+[Typedef]
+id: directly_develops_from
+name: directly_develops_from
+namespace: uberon
+xref: RO:0002207
+
+[Typedef]
+id: distal_to
+name: distal_to
+namespace: uberon
+def: "x distal_to y iff x is further along the proximo-distal axis than y, towards the appendage tip. A proximo-distal axis extends from tip of an appendage (distal) to where it joins the body (proximal)." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000097
+
+[Typedef]
+id: distally_connected_to
+name: distally connected to
+namespace: uberon
+def: "x distally_connected_to y iff the distal part of x is connected to y. i.e. x connected_to y and x proximal_to y." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+is_a: connected_to ! connected to
+is_a: proximal_to ! proximal_to
+is_a: transitively_distally_connected_to ! transitively distally connected to
+inverse_of: proximally_connected_to ! proximally connected to
+
+[Typedef]
+id: distalmost_part_of
+name: distalmost_part_of
+namespace: uberon
+def: "X distalmost_part_of Y <=> X is part_of Y and X is adjacent_to the distal boundary of Y" [https://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001108
+is_a: in_distal_side_of ! in_distal_side_of
+
+[Typedef]
+id: doap-GitRepository
+name: Git repository
+namespace: uberon
+xref: GitRepository
+is_metadata_tag: true
+
+[Typedef]
+id: doap-SVNRepository
+name: SVN repository
+namespace: uberon
+xref: SVNRepository
+is_metadata_tag: true
+
+[Typedef]
+id: doap-bug-database
+name: bug database
+namespace: uberon
+xref: bug-database
+is_metadata_tag: true
+
+[Typedef]
+id: doap-mailing-list
+name: mailing list
+namespace: uberon
+xref: mailing-list
+is_metadata_tag: true
+
+[Typedef]
+id: doap-wiki
+name: wiki
+namespace: uberon
+xref: wiki
+is_metadata_tag: true
+
+[Typedef]
+id: dorsal_to
+name: dorsal_to
+namespace: uberon
+def: "x dorsal_to y iff x is further along the dorso-ventral axis than y, towards the back. A dorso-ventral axis is an axis that bisects an organism from back (e.g. spinal column) to front (e.g. belly)." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000098
+is_transitive: true
+inverse_of: ventral_to ! ventral_to
+
+[Typedef]
+id: drains
+name: drains
+namespace: uberon
+comment: source: Wikipedia
+synonym: "drains blood from" EXACT []
+synonym: "drains from" EXACT []
+xref: RO:0002179
+is_a: connected_to ! connected to
+
+[Typedef]
+id: dubious_for_taxon
+name: dubious_for_taxon
+namespace: uberon
+def: "S dubious_for_taxon T if it is probably the case that no instances of S can be found in any instance of T." [https://orcid.org/0000-0002-6601-2165]
+comment: this relation lacks a strong logical interpretation, but can be used in place of never_in_taxon where it is desirable to state that the definition of the class is too strict for the taxon under consideration, but placing a never_in_taxon link would result in a chain of inconsistencies that will take time to resolve. Example: metencephalon in teleost
+xref: RO:0002174
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: editor_note
+name: editor note
+namespace: uberon
+xref: IAO:0000116
+is_metadata_tag: true
+
+[Typedef]
+id: ends
+name: ends
+namespace: uberon
+def: "Relation between occurrents, shares an end boundary with." [Allen:starts, https://orcid.org/0000-0002-6601-2165, ZFS:finishes]
+synonym: "finishes" EXACT []
+xref: RO:0002229
+is_a: part_of ! part of
+
+[Typedef]
+id: ends_with
+name: ends with
+namespace: uberon
+xref: RO:0002230
+is_transitive: true
+is_a: has_part ! has part
+
+[Typedef]
+id: example_of_usage
+name: example of usage
+namespace: uberon
+xref: IAO:0000112
+is_metadata_tag: true
+
+[Typedef]
+id: existence_ends_during
+name: existence ends during
+namespace: uberon
+def: "Relation between continuant c and occurrent s, such that every instance of c ceases to exist during some s, if it does not die prematurely." [https://orcid.org/0000-0002-6601-2165]
+synonym: "ceases_to_exist_during" EXACT []
+xref: RO:0002492
+is_a: existence_ends_during_or_before ! existence ends during or before
+transitive_over: part_of ! part of
+
+[Typedef]
+id: existence_ends_during_or_before
+name: existence ends during or before
+namespace: uberon
+xref: RO:0002497
+holds_over_chain: part_of existence_ends_during_or_before
+transitive_over: part_of ! part of
+transitive_over: precedes ! precedes
+transitive_over: simultaneous_with ! simultaneous_with
+
+[Typedef]
+id: existence_ends_with
+name: existence ends with
+namespace: uberon
+def: "Relation between continuant and occurrent, such that c ceases to exist at the end of p." [https://orcid.org/0000-0002-6601-2165]
+xref: RO:0002493
+is_a: existence_ends_during ! existence ends during
+
+[Typedef]
+id: existence_starts_and_ends_during
+name: existence starts and ends during
+namespace: uberon
+xref: RO:0002491
+is_a: existence_ends_during ! existence ends during
+is_a: existence_starts_during ! existence starts during
+
+[Typedef]
+id: existence_starts_during
+name: existence starts during
+namespace: uberon
+def: "Relation between continuant c and occurrent s, such that every instance of c comes into existing during some s." [https://orcid.org/0000-0002-6601-2165]
+synonym: "begins_to_exist_during" EXACT []
+xref: RO:0002488
+is_a: existence_starts_during_or_after ! existence starts during or after
+transitive_over: part_of ! part of
+
+[Typedef]
+id: existence_starts_during_or_after
+name: existence starts during or after
+namespace: uberon
+xref: RO:0002496
+holds_over_chain: developmentally_preceded_by existence_starts_during_or_after
+holds_over_chain: part_of existence_starts_during_or_after
+transitive_over: part_of ! part of
+transitive_over: preceded_by ! preceded_by
+transitive_over: simultaneous_with ! simultaneous_with
+
+[Typedef]
+id: existence_starts_with
+name: existence starts with
+namespace: uberon
+def: "Relation between continuant and occurrent, such that c comes into existence at the start of p." [https://orcid.org/0000-0002-6601-2165]
+xref: RO:0002489
+is_a: existence_starts_during ! existence starts during
+
+[Typedef]
+id: extends_fibers_into
+name: extends_fibers_into
+namespace: uberon
+is_symmetric: true
+is_a: connected_to ! connected to
+
+[Typedef]
+id: external_comment
+name: external_comment
+namespace: uberon
+def: "An alternate comment for a class taken unmodified from an external source. Note that obo format only allows a single comment for a class, and does not provide a structured means of adding provenance info." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000005
+is_metadata_tag: true
+
+[Typedef]
+id: external_definition
+name: external_definition
+namespace: uberon
+def: "An alternate textual definition for a class taken unmodified from an external source. This definition may have been used to derive a generalized definition for the new class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000001
+is_metadata_tag: true
+
+[Typedef]
+id: external_ontology_notes
+name: external_ontology_notes
+namespace: uberon
+def: "Notes on how similar or equivalent classes are represented in other ontologies." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000012
+property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: filtered_through
+name: filtered through
+namespace: uberon
+def: "Relationship between a fluid and a material entity, where the fluid is the output of a realization of a filtration role that inheres in the material entity." []
+comment: Relationship between a fluid and a filtration barrier, where the portion of fluid arises as a transformation of another portion of fluid on the other side of the barrier, with larger particles removed
+
+[Typedef]
+id: fma_set_term
+name: fma_set_term
+namespace: uberon
+xref: UBPROP:0000202
+property_value: external_ontology_notes "FMA has terms like 'set of X'. In general we do not include set-of terms in uberon, but provide a mapping between the singular form and the FMA set term" xsd:string {external_ontology="FMA"}
+is_metadata_tag: true
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+namespace: uberon
+xref: http://xmlns.com/foaf/0.1/homepage
+is_metadata_tag: true
+
+[Typedef]
+id: foaf-page
+name: page
+namespace: uberon
+xref: http://xmlns.com/foaf/0.1/page
+is_metadata_tag: true
+
+[Typedef]
+id: function_notes
+name: function_notes
+namespace: uberon
+def: "Notes on the evolved function of instances of this class." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000009
+property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: functionally_related_to
+name: functionally related to
+namespace: uberon
+xref: RO:0002328
+
+[Typedef]
+id: has_boundary
+name: has boundary
+namespace: uberon
+xref: RO:0002002
+
+[Typedef]
+id: has_branching_part
+name: has branching part
+namespace: uberon
+xref: RO:0002569
+is_transitive: true
+
+[Typedef]
+id: has_component
+name: has component
+namespace: uberon
+xref: RO:0002180
+is_a: has_part ! has part
+
+[Typedef]
+id: has_developmental_contribution_from
+name: has developmental contribution from
+namespace: uberon
+xref: RO:0002254
+holds_over_chain: has_part develops_from
+is_transitive: true
+
+[Typedef]
+id: has_fused_element
+name: has_fused_element
+namespace: uberon
+def: "x has_fused_element y iff: there exists some z : x has_part z, z homologous_to y, and y is a distinct element, the boundary between x and z is largely fiat" []
+comment: A single bone in one species may correspond to the fusion of two or more bones found as distinct elements in another. For example, tibiofibula has_fused_element tibia. A has_fused_element B does not imply that A has_part some B, rather than A has_part some B', where B' is not a subtype of B (because B is a distinct element but B' is a regional part) but has some evolutionary relationship to B.
+xref: RO:0002374
+
+[Typedef]
+id: has_member
+name: has member
+namespace: uberon
+xref: RO:0002351
+is_a: has_part ! has part
+
+[Typedef]
+id: has_muscle_antagonist
+name: has_muscle_antagonist
+namespace: uberon
+def: "m1 has_muscle_antagonist m2 iff m1 acts in opposition to m2, and m2 is responsible for returning the structure to its initial position." [http://en.wikipedia.org/wiki/Antagonist_(muscle)]
+xref: RO:0002568
+property_value: seeAlso dbpprop:antagonist
+
+[Typedef]
+id: has_muscle_insertion
+name: has_muscle_insertion
+namespace: uberon
+def: "m has_muscle_insertion s iff m is attaches_to s, and it is the case that when m contracts, s moves. Insertions are usually connections of muscle via tendon to bone." [http://en.wikipedia.org/wiki/Insertion_(anatomy)]
+comment: The insertion is the point of attachment of a muscle that moves the most when the muscle shortens, or the most distal end of limb muscles
+xref: RO:0002373
+property_value: seeAlso dbpprop:insertion
+is_a: attaches_to ! attaches_to
+
+[Typedef]
+id: has_muscle_origin
+name: has_muscle_origin
+namespace: uberon
+def: "m has_muscle_origin s iff m is attaches_to s, and it is the case that when m contracts, s does not move. The site of the origin tends to be more proximal and have greater mass than what the other end attaches to." [http://en.wikipedia.org/wiki/Insertion_(anatomy)#Muscles]
+comment: The origin is the end of a muscle that attaches to the more fixed part of the skeleton, which is the proximal end in limb muscles
+xref: RO:0002372
+property_value: seeAlso dbpprop:origin
+is_a: attaches_to ! attaches_to
+
+[Typedef]
+id: has_no_connections_with
+name: has_no_connections_with
+namespace: uberon
+def: "A is has_no_connections_with B if there are no parts of A or B that have a connection with the other." [https://orcid.org/0000-0002-6601-2165]
+xref: RO:0002475
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (RO_0002170 some (BFO_0000050 some ?Y))" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: has_part
+name: has part
+namespace: uberon
+xref: BFO:0000051
+is_transitive: true
+
+[Typedef]
+id: has_potential_to_develop_into
+name: has potential to develop into
+namespace: uberon
+def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
+xref: RO:0002387
+
+[Typedef]
+id: has_potential_to_developmentally_contribute_to
+name: has potential to developmentally contribute to
+namespace: uberon
+def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y" []
+xref: RO:0002385
+
+[Typedef]
+id: has_potential_to_directly_develop_into
+name: has potential to directly develop into
+namespace: uberon
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+xref: RO:0002388
+
+[Typedef]
+id: has_quality
+name: has quality
+namespace: uberon
+xref: RO:0000086
+is_a: bearer_of ! bearer of
+
+[Typedef]
+id: has_relational_adjective
+name: has_relational_adjective
+namespace: uberon
+xref: UBPROP:0000007
+property_value: curator_notes "Used to connect a class to an adjectival form of its label. For example, a class with label 'intestine' may have a relational adjective 'intestinal'." xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: has_skeleton
+name: has skeleton
+namespace: uberon
+def: "A relation between a subdivision of an organism and the single subdivision of skeleton that provides structural support for that subdivision." [http://orcid.org/0000-0002-6601-2165]
+synonym: "has sekeletal support" RELATED []
+synonym: "has supporting framework" RELATED []
+xref: RO:0002551
+is_a: has_part ! has part
+inverse_of: skeleton_of ! skeleton of
+
+[Typedef]
+id: has_start
+name: has_start
+namespace: uberon
+
+[Typedef]
+id: homologous_in
+name: homologous_in
+namespace: uberon
+comment: Status: experimental
+is_metadata_tag: true
+
+[Typedef]
+id: homologous_to
+name: homologous_to
+namespace: uberon
+xref: RO:0002158
+
+[Typedef]
+id: homology_notes
+name: homology_notes
+namespace: uberon
+def: "Notes on the homology status of this class." [https://orcid.org/0000-0002-6601-2165]
+comment: This annotation property may be replaced with an annotation property from an external ontology such as IAO
+xref: UBPROP:0000003
+is_metadata_tag: true
+
+[Typedef]
+id: immediate_transformation_of
+name: immediate transformation of
+namespace: uberon
+synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
+synonym: "immediately transforms from" EXACT [SIO:000658]
+xref: RO:0002495
+property_value: seeAlso SIO:000658
+is_a: transformation_of ! transformation of
+
+[Typedef]
+id: immediately_anterior_to
+name: immediately_anterior_to
+namespace: uberon
+xref: BSPO:0015009
+is_a: adjacent_to ! adjacent_to
+is_a: anterior_to ! anterior_to
+
+[Typedef]
+id: immediately_deep_to
+name: immediately_deep_to
+namespace: uberon
+def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001107
+is_a: adjacent_to ! adjacent_to
+is_a: deep_to ! deep_to
+
+[Typedef]
+id: immediately_posterior_to
+name: immediately_posterior_to
+namespace: uberon
+xref: BSPO:0015012
+is_a: adjacent_to ! adjacent_to
+is_a: posterior_to ! posterior_to
+
+[Typedef]
+id: immediately_preceded_by
+name: immediately_preceded_by
+namespace: uberon
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+synonym: "directly preceded by" EXACT []
+synonym: "is directly preceded by" EXACT []
+synonym: "is immediately preceded by" EXACT [SIO:000251]
+synonym: "starts_at_end_of" EXACT []
+xref: RO:0002087
+property_value: external_definition "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]." xsd:string {source="SIO:000251"}
+property_value: seeAlso SIO:000251
+is_a: preceded_by ! preceded_by
+
+[Typedef]
+id: immediately_superficial_to
+name: immediately_superficial_to
+namespace: uberon
+xref: BSPO:0015014
+is_a: adjacent_to ! adjacent_to
+is_a: superficial_to ! superficial_to
+
+[Typedef]
+id: implements_design_pattern
+name: implements_design_pattern
+namespace: uberon
+xref: UBPROP:0000006
+is_metadata_tag: true
+
+[Typedef]
+id: in_anterior_side_of
+name: in_anterior_side_of
+namespace: uberon
+def: "X anterior_side_of Y <=> if Y is subdivided into two anterior and posterior portions, X is part_of the anterior portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000123
+is_a: part_of ! part of
+
+[Typedef]
+id: in_central_side_of
+name: in_central_side_of
+namespace: uberon
+def: "X in_central_side Y <=> if Y is subdivided into left and right portions around some median divisor, all parts of X are closer to the median divisor than the outermost lateral sides." [BSPO:cjm]
+property_value: seeAlso BSPO:0000059
+property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+is_a: part_of ! part of
+
+[Typedef]
+id: in_deep_part_of
+name: in_deep_part_of
+namespace: uberon
+def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the deep portion." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001101
+is_a: part_of ! part of
+
+[Typedef]
+id: in_distal_side_of
+name: in_distal_side_of
+namespace: uberon
+def: "X distal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the distal portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000125
+is_a: part_of ! part of
+
+[Typedef]
+id: in_dorsal_side_of
+name: in_dorsal_side_of
+namespace: uberon
+xref: BSPO:0015101
+is_a: part_of ! part of
+
+[Typedef]
+id: in_innermost_side_of
+name: in_innermost_side_of
+namespace: uberon
+is_a: in_lateral_side_of ! in_lateral_side_of
+
+[Typedef]
+id: in_lateral_side_of
+name: in_lateral_side_of
+namespace: uberon
+def: "X in_lateral_side_of Y <=> if X is in_left_side_of Y or X is in_right_side_of Y. X is often, but not always a paired structure" [https://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000126
+property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+is_a: part_of ! part of
+disjoint_from: in_central_side_of ! in_central_side_of
+
+[Typedef]
+id: in_left_side_of
+name: in_left_side_of
+namespace: uberon
+def: "X in_left_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000120
+property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+is_a: in_lateral_side_of ! in_lateral_side_of
+
+[Typedef]
+id: in_outermost_side_of
+name: in_outermost_side_of
+namespace: uberon
+is_a: in_lateral_side_of ! in_lateral_side_of
+
+[Typedef]
+id: in_posterior_side_of
+name: in_posterior_side_of
+namespace: uberon
+def: "X posterior_side_of Y <=> if Y is subdivided into two anterior and posterior portions, X is part_of the posterior portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000122
+is_a: part_of ! part of
+
+[Typedef]
+id: in_proximal_side_of
+name: in_proximal_side_of
+namespace: uberon
+def: "X proximal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the proximal portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000124
+is_a: part_of ! part of
+inverse_of: in_distal_side_of ! in_distal_side_of
+
+[Typedef]
+id: in_right_side_of
+name: in_right_side_of
+namespace: uberon
+def: "X in_right_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
+xref: BSPO:0000121
+property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
+is_a: in_lateral_side_of ! in_lateral_side_of
+
+[Typedef]
+id: in_superficial_part_of
+name: in_superficial_part_of
+namespace: uberon
+def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the superficial portion." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001100
+is_a: part_of ! part of
+
+[Typedef]
+id: in_taxon
+name: in taxon
+namespace: uberon
+xref: RO:0002162
+holds_over_chain: attaches_to in_taxon
+holds_over_chain: connected_to in_taxon
+holds_over_chain: connects in_taxon
+holds_over_chain: continuous_with in_taxon
+holds_over_chain: developmentally_induced_by in_taxon
+holds_over_chain: develops_from in_taxon
+holds_over_chain: existence_ends_during in_taxon
+holds_over_chain: existence_starts_during in_taxon
+holds_over_chain: extends_fibers_into in_taxon
+holds_over_chain: has_developmental_contribution_from in_taxon
+holds_over_chain: has_potential_to_develop_into in_taxon
+holds_over_chain: innervated_by in_taxon
+holds_over_chain: overlaps in_taxon
+holds_over_chain: part_of in_taxon
+holds_over_chain: produced_by in_taxon
+holds_over_chain: produces in_taxon
+holds_over_chain: supplies in_taxon
+
+[Typedef]
+id: in_ventral_side_of
+name: in_ventral_side_of
+namespace: uberon
+xref: BSPO:0015102
+is_a: part_of ! part of
+
+[Typedef]
+id: indirectly_supplies
+name: indirectly_supplies
+namespace: uberon
+def: "a indirectly_supplies s iff a has a branch and the branch supplies or indirectly supplies s" []
+property_value: editor_note "add to RO" xsd:string
+holds_over_chain: has_branching_part indirectly_supplies
+holds_over_chain: has_branching_part supplies
+is_transitive: true
+
+[Typedef]
+id: innervated_by
+name: innervated_by
+namespace: uberon
+comment: http://code.google.com/p/obo-relations/issues/detail?id=6
+synonym: "nerve supply" EXACT [FMA:85999]
+xref: RO:0002005
+property_value: seeAlso dbprop:nerve
+property_value: seeAlso FMA:85999
+inverse_of: innervates ! innervates
+transitive_over: branching_part_of ! branching_part_of
+
+[Typedef]
+id: innervates
+name: innervates
+namespace: uberon
+comment: http://code.google.com/p/obo-relations/issues/detail?id=6
+xref: RO:0002134
+transitive_over: part_of ! part of
+
+[Typedef]
+id: input_of
+name: input of
+namespace: uberon
+xref: RO:0002352
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: intersects_midsagittal_plane_of
+name: intersects_midsagittal_plane_of
+namespace: uberon
+def: "X intersects_median_plane of iff X crosses the midine plane of Y." []
+xref: BSPO:0005001
+is_a: part_of ! part of
+
+[Typedef]
+id: is_count_of
+name: is count of
+namespace: uberon
+xref: UBPROP:0000100
+is_metadata_tag: true
+
+[Typedef]
+id: layer_part_of
+name: layer part of
+namespace: uberon
+is_a: part_of ! part of
+
+[Typedef]
+id: located_in
+name: located_in
+namespace: uberon
+xref: RO:0001025
+
+[Typedef]
+id: location_notes
+name: location_notes
+namespace: uberon
+def: "Notes on the location, position or part-parents of instances of this class." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000015
+property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: location_of
+name: location_of
+namespace: uberon
+xref: RO:0001015
+
+[Typedef]
+id: lumen_of
+name: lumen of
+namespace: uberon
+xref: RO:0002571
+is_a: part_of ! part of
+
+[Typedef]
+id: luminal_space_of
+name: luminal space of
+namespace: uberon
+xref: RO:0002572
+is_a: part_of ! part of
+
+[Typedef]
+id: member_of
+name: member of
+namespace: uberon
+xref: RO:0002350
+is_a: part_of ! part of
+inverse_of: has_member ! has member
+
+[Typedef]
+id: mutually_spatially_disjoint_with
+name: mutually_spatially_disjoint_with
+namespace: uberon
+xref: RO:0002171
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: never_in_taxon
+name: never_in_taxon
+namespace: uberon
+def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [http://www.ncbi.nlm.nih.gov/pubmed/20973947]
+xref: RO:0002161
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: only_in_taxon
+name: only_in_taxon
+namespace: uberon
+def: "S only_in_taxon T iff: S SubClassOf in_taxon only T" [http://www.ncbi.nlm.nih.gov/pubmed/20973947]
+xref: RO:0002160
+is_a: in_taxon ! in taxon
+
+[Typedef]
+id: oral_to
+name: oral_to
+namespace: uberon
+def: "nearer to the oral opening of the organism, on the oral-aboral axis." [BSPO:cjm]
+xref: BSPO:0015201
+is_transitive: true
+
+[Typedef]
+id: output_of
+name: output of
+namespace: uberon
+xref: RO:0002353
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: overlaps
+name: overlaps
+namespace: uberon
+def: "A overlaps B if they share some part in common." []
+xref: RO:0002131
+expand_expression_to: "BFO_0000051 some (BFO_0000050 some ?Y)" []
+
+[Typedef]
+id: paired_appendage_number
+name: paired_appendage number
+namespace: uberon
+def: "x paired_appendage_number N if and only if (i) x is a paired_appendage, and (ii) x is paired_appendage number N in a series of paired_appendages repeated along an anterior-posterior axis, with paired_appendage_number 1 being the anteriormost paired_appendage. In vertebrates, this is the pectoral appendage" [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000109
+property_value: is_count_of UBERON:0000026
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: part_of
+name: part of
+namespace: uberon
+xref: BFO:0000050
+is_transitive: true
+inverse_of: has_part ! has part
+
+[Typedef]
+id: part_of_structure_that_is_capable_of
+name: part of structure that is capable of
+namespace: uberon
+xref: RO:0002329
+holds_over_chain: part_of capable_of
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: participates_in
+name: participates in
+namespace: uberon
+xref: RO:0000056
+
+[Typedef]
+id: phalanx_number
+name: phalanx number
+namespace: uberon
+def: "x phalanx_number N if and only if (i) x is a phalanx, and (ii) x is phalanx number N in a series of phalanges repeated along an prixomo-distal axis, with phalanx_number 1 being the proximalmost phalanx. Note that in humans, the distalmost phalanx has phlanax_number 3, except in ray_number 1, where the distalmost has phalanx_number 2" [http://en.wikipedia.org/wiki/Phalanx_bone#Phalangeal_formula, https://orcid.org/0000-0002-6601-2165]
+comment: Most land mammals including humans have a 2-3-3-3-3 formula in both the hands (or paws) and feet. Primitive reptiles typically had the formula 2-3-4-4-5, and this pattern, with some modification, remained in many later reptiles and in the mammal-like reptiles. The phalangeal formula in the flippers of cetaceans (marine mammals) is 2-12-8-1
+xref: UBPROP:0000105
+property_value: is_count_of UBERON:0003221
+property_value: preceding_element_is BSPO:0000100
+is_metadata_tag: true
+
+[Typedef]
+id: pharyngeal_arch_number
+name: pharyngeal arch number
+namespace: uberon
+def: "x pharyngeal_arch_number N if and only if (i) x is a pharyngeal arch, and (ii) x is ancestrally pharyngeal arch number N in a series of pharyngeal arches repeated along a antero-posterior axis, with arch_number 1 being the mandibular arch." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000103
+property_value: is_count_of UBERON:0002539
+property_value: preceding_element_is BSPO:0000096
+property_value: terminology_notes "gill arch N = PA N-2. the term branchial_arch is ambiguous." xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: postaxial_to
+name: postaxial_to
+namespace: uberon
+def: "x preaxial_to y iff x is further along the preaxial-postaxial axis than y, towards the postaxial side." [http://medical-dictionary.thefreedictionary.com/postaxial]
+synonym: "posterior_to (developmentally)" RELATED [MA:th]
+xref: BSPO:0001114
+is_transitive: true
+
+[Typedef]
+id: postaxialmost_part_of
+name: postaxialmost_part_of
+namespace: uberon
+xref: BSPO:0001115
+is_a: part_of ! part of
+
+[Typedef]
+id: posterior_to
+name: posterior_to
+namespace: uberon
+def: "x posterior_to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail." [http://orcid.org/0000-0002-6601-2165]
+synonym: "caudal_to" NARROW []
+xref: BSPO:0000099
+is_transitive: true
+
+[Typedef]
+id: posteriorly_connected_to
+name: posteriorly connected to
+namespace: uberon
+def: "x posteriorly_connected_to y iff the posterior part of x is connected to y. i.e. x connected_to y and x anterior_to y." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+is_a: anterior_to ! anterior_to
+is_a: connected_to ! connected to
+
+[Typedef]
+id: preaxial_to
+name: preaxial_to
+namespace: uberon
+def: "x preaxial_to y iff x is further along the preaxial-postaxial axis than y, towards the front." [http://medical-dictionary.thefreedictionary.com/preaxial]
+synonym: "anterior_to (developmentally)" RELATED [MA:th]
+synonym: "lateral (radial) to" RELATED []
+synonym: "medial (tibial) to" RELATED []
+xref: BSPO:1000000
+is_transitive: true
+
+[Typedef]
+id: preaxialmost_part_of
+name: preaxialmost_part_of
+namespace: uberon
+xref: BSPO:0001113
+is_a: part_of ! part of
+
+[Typedef]
+id: preceded_by
+name: preceded_by
+namespace: uberon
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+synonym: "is preceded by" EXACT [SIO:000249]
+synonym: "takes place after" EXACT [Allen:precedes]
+xref: BFO:0000062
+is_transitive: true
+
+[Typedef]
+id: precedes
+name: precedes
+namespace: uberon
+xref: BFO:0000063
+is_transitive: true
+
+[Typedef]
+id: preceding_element_is
+name: preceding element is
+namespace: uberon
+def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000101
+is_metadata_tag: true
+
+[Typedef]
+id: present_in_taxon
+name: present_in_taxon
+namespace: uberon
+def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [https://orcid.org/0000-0002-6601-2165]
+synonym: "applicable for taxon" EXACT []
+xref: RO:0002175
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: produced_by
+name: produced_by
+namespace: uberon
+xref: RO:0003001
+
+[Typedef]
+id: produces
+name: produces
+namespace: uberon
+xref: RO:0003000
+
+[Typedef]
+id: protects
+name: protects
+namespace: uberon
+
+[Typedef]
+id: provenance_notes
+name: obsolete provenance_notes
+namespace: uberon
+xref: UBPROP:0000004
+is_obsolete: true
+
+[Typedef]
+id: proximal_to
+name: proximal_to
+namespace: uberon
+def: "x proximal_to y iff x is closer to the point of attachment with the body than y." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000100
+
+[Typedef]
+id: proximally_connected_to
+name: proximally connected to
+namespace: uberon
+def: "x proximally_connected_to y iff the proximal part of x is connected to y. i.e. x connected_to y and x distal_to y." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+is_a: connected_to ! connected to
+is_a: distal_to ! distal_to
+is_a: transitively_proximally_connected_to ! transitively proximally connected to
+
+[Typedef]
+id: proximalmost_part_of
+name: proximalmost_part_of
+namespace: uberon
+def: "X proximalmost_part_of Y <=> X is part_of Y and X is adjacent_to the proximal boundary of Y" [https://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0001106
+is_a: in_proximal_side_of ! in_proximal_side_of
+
+[Typedef]
+id: ray_number
+name: ray number
+namespace: uberon
+def: "x ray_number N if and only if (i) x is a ray, and (ii) x is ancestrally associated with ray number N in a series of phalanges repeated along a radio-ulnar or equivalent axis, with ray_number 1 being the anteriormost ray." [https://orcid.org/0000-0002-6601-2165]
+comment: The correct terminology is yet to be established; in tetrapods 'ray' might mean the mereological sum of the phalanges of a manual digit plus a metatarsal bone (or equivalent for hindlimb)
+xref: UBPROP:0000104
+property_value: is_count_of UBERON:0002544
+property_value: preceding_element_is BSPO:1000000
+is_metadata_tag: true
+
+[Typedef]
+id: repeated_element_number
+name: repeated element number
+namespace: uberon
+def: "A property used to indicate the position of an element where that element is of a type that is serially repeated linearly along some axis for which a total ordering exists. The ordering may represent an ancestral condition" [https://orcid.org/0000-0002-6601-2165]
+comment: The range is currently non-negative integer
+xref: UBPROP:0000102
+is_metadata_tag: true
+
+[Typedef]
+id: rhombomere_number
+name: rhombomere number
+namespace: uberon
+def: "x rhombomere_number N if and only if (i) x is a rhombomere, and (ii) x is rhombomere number N in a series of rhombomeres repeated along an anterior-posterior axis, with rhombomere_number 1 being the anteriormost rhombomere." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000111
+property_value: is_count_of UBERON:0001892
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: rib_number
+name: rib number
+namespace: uberon
+def: "x rib_number N if and only if (i) x is a rib, and (ii) x is rib number N in a series of ribs repeated along an anterior-posterior axis, with rib_number 1 being the anteriormost rib. Note that this property counts ribs, *not* the adjoining vertebrae." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000106
+property_value: external_ontology_notes "Note that in TAO, ribs are numbered by *vertebrae*" xsd:string {external_ontology="TAO"}
+property_value: is_count_of UBERON:0002228
+property_value: preceding_element_is BSPO:0000096
+property_value: taxon_notes "In the early tetrapods, every vertebra bore a pair of ribs, although those on the thoracic vertebrae are typically the longest. In most subsequent forms, many of these early ribs have been lost, and in living amphibians and reptiles, there is great variation in rib structure and number. For example, turtles have only eight pairs of ribs, which are developed into a bony or cartilagenous carapace and plastron, while snakes have numerous ribs running along the full length of their trunk. Frogs typically have no ribs, aside from a sacral pair, which form part of the pelvis. Mammals usually also only have distinct ribs on the thoracic vertebra, although fixed cervical ribs are also present in monotremes. In marsupials and placental mammals, the cervical and lumbar ribs are found only as tiny remnants fused to the vertebrae, where they are referred to as transverse processes. In general, the structure and number of the true ribs in humans is similar to that in other mammals. Unlike reptiles, caudal ribs are never found in mammals." xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: seeAlso
+name: see also
+namespace: uberon
+xref: seeAlso
+is_metadata_tag: true
+
+[Typedef]
+id: serially_homologous_to
+name: serially_homologous_to
+namespace: uberon
+xref: RO:0002159
+
+[Typedef]
+id: sexually_homologous_to
+name: sexually_homologous_to
+namespace: uberon
+is_a: homologous_to ! homologous_to
+
+[Typedef]
+id: simultaneous_with
+name: simultaneous_with
+namespace: uberon
+def: "Relation between occurrents, shares start and end boundaries." [Allen:is_equal_to, https://orcid.org/0000-0002-6601-2165]
+synonym: "coincides_with" EXACT []
+synonym: "is_equal_to" EXACT []
+xref: RO:0002082
+is_a: ends ! ends
+is_a: starts ! starts
+
+[Typedef]
+id: site_of
+name: site_of
+namespace: uberon
+def: "c site_of p if c is the bearer of a disposition that is realized by a process that has p as part" []
+synonym: "capable_of_has_part" RELATED []
+
+[Typedef]
+id: skeleton_of
+name: skeleton of
+namespace: uberon
+xref: RO:0002576
+is_a: part_of ! part of
+
+[Typedef]
+id: somite_number
+name: somite number
+namespace: uberon
+def: "x somite_number N if and only if (i) x is a somite, and (ii) x is somite number N in a series of somites repeated along an anterior-posterior axis, with somite_number 1 being the anteriormost somite." [https://github.com/obophenotype/uberon/issues/100, https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000108
+property_value: is_count_of UBERON:0002329
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+
+[Typedef]
+id: source_atlas
+name: source atlas
+namespace: uberon
+xref: UBPROP:0000201
+is_metadata_tag: true
+
+[Typedef]
+id: starts
+name: starts
+namespace: uberon
+def: "Relation between occurrents, shares a start boundary with." [Allen:starts, https://orcid.org/0000-0002-6601-2165]
+xref: RO:0002223
+is_a: part_of ! part of
+inverse_of: starts_with ! starts with
+
+[Typedef]
+id: starts_with
+name: starts with
+namespace: uberon
+xref: RO:0002224
+is_transitive: true
+is_a: has_part ! has part
+
+[Typedef]
+id: structure_notes
+name: structure_notes
+namespace: uberon
+def: "Notes on the structure, composition or histology of instances of this class." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000010
+property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: subdivision_of
+name: subdivision of
+namespace: uberon
+comment: placeholder relation. X = 'subdivision of A' and subdivision_of some B means that X is the mereological sum of A and B
+
+[Typedef]
+id: superficial_to
+name: superficial_to
+namespace: uberon
+def: "Near the outer surface of the organism. Thus, skin is superficial to the muscle layer." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000108
+
+[Typedef]
+id: supplies
+name: supplies
+namespace: uberon
+def: "relation between an artery and the structure is supplies with blood." []
+comment: source: FMA
+synonym: "arterial supply of" EXACT [FMA:86003]
+xref: RO:0002178
+property_value: seeAlso FMA:86003
+is_a: connected_to ! connected to
+
+[Typedef]
+id: surrounded_by
+name: surrounded_by
+namespace: uberon
+def: "x surrounded_by y iff: x is adjacent to y and for every region r adjacent to x, r overlaps y" [https://orcid.org/0000-0002-6601-2165]
+xref: RO:0002219
+inverse_of: surrounds ! surrounds
+
+[Typedef]
+id: surrounds
+name: surrounds
+namespace: uberon
+def: "inverse of surrounded_by" [https://orcid.org/0000-0002-6601-2165]
+xref: RO:0002221
+
+[Typedef]
+id: synapsed_by
+name: synapsed by
+namespace: uberon
+def: "Relation between an anatomical structure (including cells) and a neuron that chemically synapses to it." []
+
+[Typedef]
+id: taxon_notes
+name: taxon_notes
+namespace: uberon
+def: "Notes on the how instances of this class vary across species." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000008
+is_metadata_tag: true
+
+[Typedef]
+id: terminology_notes
+name: terminology_notes
+namespace: uberon
+def: "Notes on how lexical conventions regarding this class, in particular any issues that may arise due to homonyny or synonymy." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000013
+property_value: editor_note "This annotation property may be replaced with an annotation property from an external ontology such as IAO" xsd:string
+is_metadata_tag: true
+
+[Typedef]
+id: tooth_number
+name: tooth number
+namespace: uberon
+def: "x tooth_number N if and only if (i) x is a tooth, and (ii) x is ancestrally tooth number N in a series of teeth repeated along an anterior-posterior axis, typically on the lateral side of a structure such as a jaw, with tooth_number 1 being the anteriormost. Note that this count refers to the total number of teeth starting from the first, regardless of the type of tooth. If sub-systems are required for numbering within a series of teeth of the same type, consider a subproperty. For example, in a human, maxillary canine = tooth 3 of upper jaw = canine_tooth 1 of upper jaw" []
+xref: UBPROP:0000112
+property_value: is_count_of UBERON:0001091
+property_value: preceding_element_is BSPO:0000096
+property_value: seeAlso UBPROP:0000113
+is_metadata_tag: true
+
+[Typedef]
+id: transformation_of
+name: transformation of
+namespace: uberon
+synonym: "transforms from" EXACT [SIO:000657]
+xref: RO:0002494
+property_value: seeAlso SIO:000657
+is_transitive: true
+is_a: develops_from ! develops_from
+
+[Typedef]
+id: transitively_anteriorly_connected_to
+name: transitively anteriorly connected to
+namespace: uberon
+def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+is_transitive: true
+
+[Typedef]
+id: transitively_connected_to
+name: transitively_connected to
+namespace: uberon
+is_transitive: true
+
+[Typedef]
+id: transitively_distally_connected_to
+name: transitively distally connected to
+namespace: uberon
+def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+is_transitive: true
+
+[Typedef]
+id: transitively_proximally_connected_to
+name: transitively proximally connected to
+namespace: uberon
+def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+is_transitive: true
+
+[Typedef]
+id: tributary_of
+name: tributary_of
+namespace: uberon
+synonym: "drains into" RELATED [dbpowl:drainsTo]
+xref: RO:0002376
+
+[Typedef]
+id: trunk_part_of
+name: trunk_part_of
+namespace: uberon
+is_a: part_of ! part of
+
+[Typedef]
+id: ventral_to
+name: ventral_to
+namespace: uberon
+def: "x ventral_to y iff x is further along the dorso-ventral axis than y, towards the front. A dorso-ventral axis is an axis that bisects an organism from back (e.g. spinal column) to front (e.g. belly)." [http://orcid.org/0000-0002-6601-2165]
+xref: BSPO:0000102
+is_transitive: true
+
+[Typedef]
+id: vertebra_number
+name: vertebra number
+namespace: uberon
+def: "x vertebra_number N if and only if (i) x is a vertebra, and (ii) x is vertebra number N in a series of vertebras repeated along an anterior-posterior axis, with vertebra_number 1 being the anteriormost vertebra (also known as the atlas)." [https://orcid.org/0000-0002-6601-2165]
+xref: UBPROP:0000107
+property_value: is_count_of UBERON:0002412
+property_value: preceding_element_is BSPO:0000096
+is_metadata_tag: true
+

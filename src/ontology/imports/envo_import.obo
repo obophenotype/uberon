@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: uberon/releases/2021-05-11/imports/envo_import.owl
+data-version: uberon/releases/2021-05-13/imports/envo_import.owl
 ontology: uberon/imports/envo_import
 
 [Term]
@@ -2039,9 +2039,30 @@ name: biological_process
 is_a: BFO:0000015 ! process
 
 [Term]
+id: GO:0008152
+name: metabolic process
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0009987
+name: cellular process
+is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0015979
+name: photosynthesis
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
 id: GO:0032501
 name: multicellular organismal process
 is_a: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0044237
+name: cellular metabolic process
+is_a: GO:0008152 ! metabolic process
+is_a: GO:0009987 ! cellular process
 
 [Term]
 id: NCBITaxon:1

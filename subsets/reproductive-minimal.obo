@@ -3,8 +3,13 @@ ontology: uberon/subsets/reproductive-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000990>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000990>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -514,6 +519,7 @@ created_by: haendel
 id: CL:0008033
 name: decidual pericyte
 def: "A pericyte of the decidual vasculature." []
+subset: added_for_HCA
 synonym: "decidual perivascular cell" EXACT []
 is_a: CL:2000078 ! placental pericyte
 relationship: part_of UBERON:0002450 ! decidua
@@ -1037,7 +1043,6 @@ xref: TGMA:0000634
 xref: UMLS:C0017422 {source="ncithesaurus:Male_Genitalia"}
 xref: UMLS:C1963704 {source="ncithesaurus:Male_Reproductive_System"}
 xref: VHOG:0000725
-xref: WBbt:0008423
 xref: XAO:0000155
 is_a: UBERON:0000990 ! reproductive system
 property_value: UBPROP:0000003 "By far, sexual reproduction is the more common pattern among living vertebrate forms and its widespread occurrence suggests that it is the plesiomorphic, or primitive, reproductive mode among the vertebrates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000725", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0792383369 Lombardi J, Comparative vertebrate reproduction (1998) p.43"}
@@ -1170,6 +1175,7 @@ xref: NCIT:C22174
 xref: Preputial:gland
 xref: UMLS:C1947929 {source="ncithesaurus:Prepucial_Gland_MMHCC"}
 is_a: UBERON:0003937 ! reproductive gland
+property_value: RO:0002161 NCBITaxon:9606 {source="ISBN:0123813611", source="MP:0013329"}
 property_value: UBPROP:0000001 "the paired, lobulated, modified sebaceous glands of the corona, the neck of the glans penis, and the inner surface of the prepuce with pheromonal functions in male rodents; male preputial secretions strongly attract females, may accelerate estrus, and have been implicated in intermale aggression; homologous to the clitoral glands (aka female preputial glands) in female rodents; there is no true anatomical equivalent in humans." xsd:string {external_class="MP:0002717", ontology="MP"}
 property_value: UBPROP:0000003 "There is debate about whether humans have functional homologues to preputial glands." xsd:string {source="Human_homologoues"}
 property_value: UBPROP:0000202 FMA:71652
@@ -1487,7 +1493,6 @@ xref: OpenCyc:Mx4rvVipTZwpEbGdrcN5Y29ycA
 xref: TGMA:0000635
 xref: UMLS:C0700038 {source="ncithesaurus:Female_Reproductive_System"}
 xref: VHOG:0000726
-xref: WBbt:0006748
 xref: WikipediaCategory:Female_reproductive_system
 xref: XAO:0000156
 is_a: UBERON:0000990 ! reproductive system
@@ -1854,8 +1859,8 @@ def: "external genital organs of the female mammal[WP]." [http://en.wikipedia.or
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
-synonym: "female pudendum" EXACT [FMA:20462]
 synonym: "female pudendum" EXACT [BTO:0003101]
+synonym: "female pudendum" EXACT [FMA:20462]
 synonym: "mammalian vulva" EXACT []
 synonym: "puboperineal region" EXACT [FMA:20462]
 synonym: "pudendum" RELATED [BTO:0003101]
@@ -3066,6 +3071,7 @@ xref: TGMA:0000591
 xref: UMLS:C0017420 {source="ncithesaurus:Genitalia"}
 xref: WBbt:0008422
 is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0000990 ! reproductive system
 property_value: UBPROP:0000012 "GO uses genitalia for the singular organ" xsd:string {external_ontology="GO"}
 
 [Term]
@@ -3098,6 +3104,7 @@ namespace: uberon
 def: "A male organ involved in reproduction" [UBERON:xp]
 subset: organ_slim
 subset: pheno_slim
+synonym: "male genital" RELATED [WBbt:0008423]
 synonym: "male organism reproductive organ" EXACT [OBOL:automatic]
 synonym: "male organism reproductive structure" EXACT [OBOL:automatic]
 synonym: "male organism reproductive system organ" EXACT [OBOL:automatic]
@@ -3110,6 +3117,7 @@ synonym: "reproductive structure of male organism" EXACT [OBOL:automatic]
 synonym: "reproductive system organ of male organism" EXACT [OBOL:automatic]
 synonym: "sex organ of male organism" EXACT [OBOL:automatic]
 xref: MA:0000545
+xref: WBbt:0008423
 is_a: UBERON:0003133 ! reproductive organ
 relationship: part_of UBERON:0000079 ! male reproductive system
 
@@ -3295,6 +3303,7 @@ synonym: "reproductive system gland" EXACT [OBOL:automatic]
 synonym: "sex gland" EXACT [MP:0000653]
 xref: MA:0001751
 is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0000990 ! reproductive system
 
 [Term]
 id: UBERON:0003946
@@ -3307,6 +3316,7 @@ synonym: "labyrinthine layer of placenta" EXACT [GO:0060713]
 synonym: "placental labyrinth" EXACT []
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0001987 ! placenta
+property_value: RO:0002161 NCBITaxon:9606 {source="http://placentation.ucsd.edu"}
 property_value: seeAlso http://placentation.ucsd.edu/placenta.html xsd:anyURI
 property_value: UBPROP:0000008 "Mouse-human differences: The mouse and human placentas have labyrinthine and villous types of interdigitation between maternal and fetal tissues, respectively ... The mouse placental labyrinth is composed of an intricate network of maternal blood spaces and embryonal blood vessels. Maternal and embryonal blood is separated by a placental barrier that consists of four cellular layers: layer I trophoblasts line the maternal lacunae, trophoblasts in layers II and III form syncytial-like layers, and endothelial cells line the embryonic vessels[DOI: 10.1073/pnas.96.14.8138 ]" xsd:string
 
@@ -3749,6 +3759,7 @@ xref: NCIT:C82952
 xref: UMLS:C0228051 {source="ncithesaurus:Gubernaculum_Testis"}
 is_a: UBERON:0005156 ! reproductive structure
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/76/Gray1138.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:9721 {notes="primordium does not develop", source="ISBN:0123971756"}
 property_value: UBPROP:0000007 "gubernacular" xsd:string
 property_value: UBPROP:0000012 "WP def is male/female, split term? EMAP is male-specific. vestigial adult in FMA. TODO" xsd:string {external_ontology="MA"}
 
@@ -4697,6 +4708,7 @@ xref: UMLS:C0227956 {source="ncithesaurus:Preputial_Gland"}
 is_a: UBERON:0000359 ! preputial gland
 is_a: UBERON:0010147 ! male accessory sex gland
 relationship: part_of UBERON:0001332 ! prepuce of penis
+property_value: RO:0002161 NCBITaxon:9606 {source="ISBN:0123813611"}
 property_value: UBPROP:0000012 "FMA:19653 was previously placed here, but ISBN:0123813611 states that no true equivalent in humans. See also https://sourceforge.net/p/obo/mammalian-phenotype-requests/1261/" xsd:string {external_ontology="FMA"}
 
 [Term]
@@ -4715,6 +4727,7 @@ xref: NCIT:C77617
 xref: UMLS:C2699356 {source="ncithesaurus:Clitoral_Gland"}
 is_a: UBERON:0000359 ! preputial gland
 is_a: UBERON:0005398 ! female reproductive gland
+property_value: RO:0002161 NCBITaxon:9606 {source="ISBN:0123813611"}
 property_value: UBPROP:0000001 "large, lobulated, modified sebaceous glands located on the side of the clitoris in female mice; little is known about their function and, unlike other sebaceous glands, they undergo progressive atrophy of the glandular portion with marked ductal ectasia as mice age; there is no equivalent gland in humans." xsd:string {source="MGI:J:63036", source="MP"}
 property_value: UBPROP:0000008 "there is no true anatomical equivalent in humans" xsd:string {source="MP"}
 
@@ -4940,6 +4953,7 @@ xref: http://www.snomedbrowser.com/Codes/Details/27962002
 xref: MA:0000406
 is_a: UBERON:0007719 ! bone of reproductive organ
 relationship: part_of UBERON:0000989 ! penis
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000008 "found in most mammals, with the exception of humans" xsd:string
 
 [Term]
@@ -4956,6 +4970,7 @@ xref: EMAPA:30823
 xref: MA:0000387
 is_a: UBERON:0007719 ! bone of reproductive organ
 relationship: part_of UBERON:0002411 ! clitoris
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0006594
@@ -5552,6 +5567,7 @@ xref: BTO:0000490
 xref: EMAPA:29836
 xref: MA:0001740
 is_a: UBERON:0001328 {source="MA"} ! lobe of prostate
+property_value: RO:0002161 NCBITaxon:9606 {never_in_taxon="PMID:15163300"}
 
 [Term]
 id: UBERON:0007719
@@ -5562,6 +5578,7 @@ synonym: "baculum" NARROW []
 synonym: "os penis/os clitoris" RELATED []
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0003133 ! reproductive organ
+property_value: RO:0002161 NCBITaxon:9606 {source="Wikipedia"}
 
 [Term]
 id: UBERON:0007773
@@ -5881,6 +5898,7 @@ subset: pheno_slim
 xref: MA:0001723
 is_a: UBERON:0005398 ! female reproductive gland
 relationship: part_of UBERON:0002450 {source="MP"} ! decidua
+property_value: RO:0002161 NCBITaxon:9443 {source="MP:0010777"}
 
 [Term]
 id: UBERON:0008935
@@ -6015,6 +6033,7 @@ xref: NCIT:C77955
 xref: UMLS:C2698103 {source="ncithesaurus:Ampullary_Gland"}
 is_a: UBERON:0005399 {source="MA"} ! male reproductive gland
 relationship: part_of UBERON:0001000 ! vas deferens
+property_value: RO:0002161 NCBITaxon:9606 {source="MP"}
 property_value: UBPROP:0000008 "Ampullary glands are situated in an ampulla-like enlargement of the seminal duct, or embedded in the latter; they are present, eg in the Shrew, Ruminants, and certain Carnivores and Rodents. (Wiedersheim et al., 1907)" xsd:string {source="MorphoBank"}
 property_value: UBPROP:0000008 "there is no known human counterpart to the ampullary glands of the mouse[MP]" xsd:string
 property_value: UBPROP:0000010 "usually encapsulated by connective tissue and containing smooth muscle" xsd:string
@@ -6779,6 +6798,7 @@ synonym: "penis spine" RELATED []
 xref: Penile:spines
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000989 ! penis
+property_value: RO:0002161 NCBITaxon:9606
 property_value: RO:0002175 NCBITaxon:40674
 
 [Term]
@@ -6789,6 +6809,7 @@ def: "A sphincter muscle that is part of a vagina." [OBOL:automatic]
 synonym: "sphincter of vagina" EXACT []
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000996 ! vagina
+property_value: RO:0002161 NCBITaxon:9606
 property_value: RO:0002175 NCBITaxon:8509
 
 [Term]
@@ -7461,6 +7482,7 @@ xref: EMAPA:29808
 xref: MA:0003124
 is_a: UBERON:0001328 ! lobe of prostate
 relationship: part_of UBERON:0008808 ! prostate gland dorsolateral lobe
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0016408
@@ -7755,6 +7777,7 @@ namespace: uberon
 synonym: "genital mucosa" EXACT [BTO:0002439]
 xref: BTO:0002439
 is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0000990 ! reproductive system
 
 [Term]
 id: UBERON:0019197

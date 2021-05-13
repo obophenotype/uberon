@@ -3,8 +3,13 @@ ontology: uberon/subsets/cranial-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010323>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0010323>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -437,6 +442,7 @@ xref: Occipital:bone
 xref: OpenCyc:Mx4rwQtsiZwpEbGdrcN5Y29ycA
 xref: UMLS:C0028784 {source="ncithesaurus:Occipital_Bone"}
 is_a: UBERON:0011164 ! neurocranium bone
+relationship: part_of UBERON:0001703 {source="FMA"} ! neurocranium
 relationship: part_of UBERON:0005902 {source="FMA"} ! occipital region
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/27/Gray194.png xsd:anyURI
 property_value: UBPROP:0000008 "formed from the sclerotome of the occipital somites. It is not present in living or fossil agnathans or cartilaginous fishes, but appears to have arisen in parallel in many bony fishes. Incorporation of the occipital ver- tebrae into the skull was associated with the annexation of the upper part of the spinal cord into the brain, together with the first 2 spinal nerves as cranial nerves XI and XII" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/11523816"}
@@ -604,6 +610,7 @@ is_a: UBERON:0011597 ! bone of upper jaw
 is_a: UBERON:0012071 ! palate bone
 relationship: part_of UBERON:0011085 ! palatoquadrate arch
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/44/Gray996.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32519 {source="TAO"}
 property_value: UBPROP:0000001 "Dermal bone that forms the antero-lateral region of the palate and is located ventral to the autopalatine. The dermopalatine is bilaterally paired and usually bears teeth.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000015", ontology="TAO", source="TAO:GA_TG"}
 property_value: UBPROP:0000005 "Dermopalatine: same as palatine. The prefix is used by fish people because the palatine is a dermal replacement bone for a section of the autopalatine section of the palatoquadrate. In that context, palatine is potentially ambiguous.[Palaeos]" xsd:string {date_retrieved="2012-09-17", source="http://palaeos.com/vertebrates/glossary/glossaryD.html"}
 property_value: UBPROP:0000005 "In ostariophysans, the dermopalatine is absent.[TAO]" xsd:string {date_retrieved="2012-09-06", external_class="TAO:0000015", ontology="TAO", source="Curator"}
@@ -1392,6 +1399,7 @@ xref: UMLS:C1266928 {source="ncithesaurus:Nasal_Turbinate"}
 is_a: UBERON:0011164 ! neurocranium bone
 is_a: UBERON:0035612 ! nasal turbinal
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e9/Gray153.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:436486 {notes="disputed", source="http://palaeos.com/vertebrates/bones/braincase/ethmoid.html"}
 property_value: UBPROP:0000008 "In humans, the turbinates divide the nasal airway into three groove-like air passages -and are responsible for forcing inhaled air to flow in a steady, regular pattern around the largest possible surface of cilia and climate controlling tissue." xsd:string {source="WP,unvetted"}
 property_value: UBPROP:0000008 "Turbinals are only ossified in birds and derived synapsids." xsd:string
 property_value: UBPROP:0000012 "FMA considers nasal concha and nasal concha of ethmoid bone to be synonymous. We disambiguate these here" xsd:string {external_ontology="FMA"}
@@ -1421,6 +1429,7 @@ xref: UMLS:C0024957 {source="ncithesaurus:Maxillary_Sinus"}
 is_a: UBERON:0001825 ! paranasal sinus
 relationship: part_of UBERON:0002397 ! maxilla
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3d/Gray1199.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:33554
 
 [Term]
 id: UBERON:0001825
@@ -1721,6 +1730,7 @@ is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0003113 {source="ISBN:0073040584"} ! dermatocranium
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/4a/Gray160.png xsd:anyURI
 property_value: IAO:0000116 "requires checking embryonic vs adult; isa fetal organ part in FMA; adult bone of upper jaw in AAO and ZFA; split. Note that we have loops if we add develops_from UBERON:0005620 primary palate" xsd:string
+property_value: RO:0002161 NCBITaxon:7901 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Dermal bone that forms the anteriormost element of the upper jaw. It articulates with the maxilla posterodorsally and its antimere medially. The premaxilla is paired.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000567", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "One of the bones of the upper jaw situated between and in front of the maxillae. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000426", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000001 "Paired, intramembranous bones located at the anterior end of the skull; they form the anterior-most segment of the maxillary arch.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000461", ontology="AAO", source="AAO:LAP"}
@@ -2234,6 +2244,7 @@ xref: XAO:0003086
 xref: ZFA:0000444
 relationship: part_of UBERON:0008895 {source="ZFA"} ! splanchnocranium
 property_value: IAO:0000116 "requires review, possible split; TAO/ZFA structure is splanchoncranium (but includes some dermal bones as parts). Note AAO also includes 'palatoquadrate and suspensorium' as a class" xsd:string
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0003110
@@ -2306,6 +2317,7 @@ xref: XAO:0003169
 xref: ZFA:0000863
 is_a: UBERON:0011159 ! primary subdivision of cranial skeletal system
 property_value: IAO:0000116 "wikipedia treats skull roof and dermatocranium as synonymous, but some sources treat the roof as being part of the dermatocranium - see UBERONREF:0000007" xsd:string
+property_value: RO:0002161 NCBITaxon:7777 {source="ISBN:0073040584"}
 property_value: UBPROP:0000001 "Anatomical cluster that is part of the cranium and composed of dermally derived bones.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000863", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Anatomical cluster that is part of the cranium which consists of dermally derived bones.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010154", ontology="AAO", source="AAO:BJB"}
 
@@ -4558,6 +4570,7 @@ xref: VHOG:0000689
 xref: ZFA:0000621
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0003108 {source="AAO"} ! suspensorium
+property_value: RO:0002161 NCBITaxon:40674
 property_value: UBPROP:0000001 "Endochondral bone that commonly articulates with the ectopterygoid anteriorly, the metapterygoid dorsally, and the symplectic postero-medially. The quadrate is formed from the posterior part of the palatoquadrate cartilage, or pars quadrata. The quadrate is a paired bone.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO", source="TAO:GA_TG"}
 property_value: UBPROP:0000002 "relationship loss: overlaps quadrate-hyomandibula joint (TAO:0001801)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO"}
 property_value: UBPROP:0000002 "relationship loss: overlaps quadrate-metapterygoid joint (TAO:0001803)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO"}
@@ -5008,6 +5021,7 @@ def: "Sclerotic rings are rings of bone found in the eyes of several groups of v
 synonym: "scleral ring" EXACT [http://en.wikipedia.org/wiki/Sclerotic_ring]
 xref: Sclerotic:ring
 is_a: UBERON:0010290 {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"} ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0007833
@@ -5586,6 +5600,7 @@ is_a: UBERON:0003932 {source="ZFA"} ! cartilage element of chondrocranium
 is_a: UBERON:0010296 ! scleral skeletal element
 property_value: IAO:0000116 "consider distinguishing cup from predecessor of ossicle. Hall: The scleral cartilaginous cup is a distinctly sepa- rate element composed of hyaline cartilage" xsd:string
 property_value: IAO:0000116 "relationship to sclera - overlaps?" xsd:string
+property_value: RO:0002161 NCBITaxon:32525 {source="PMID:17051547 - but present in monotremes"}
 property_value: UBPROP:0000001 "Bilaterally paired thin continuous band of cartilage that sagittally encircles the eye.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001509", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "May be calcified in chondrichthyans. Tetrapods without this element (e.g., snakes and mammals) have a collagenous sclera. May not be homologous - see http://www.ncbi.nlm.nih.gov/pubmed/17051547. cup-shaped in birds. Present in monotremes." xsd:string
 
@@ -5600,6 +5615,8 @@ synonym: "sclerotic ossicle" EXACT []
 xref: http://www.snomedbrowser.com/Codes/Details/45632000
 is_a: UBERON:0010296 ! scleral skeletal element
 relationship: part_of UBERON:0001697 {source="ZFA"} ! orbit of skull
+property_value: RO:0002161 NCBITaxon:7777 {source="PMID:17051547 Walls 1942"}
+property_value: RO:0002161 NCBITaxon:7878 {source="PMID:17051547 Kemp 1999"}
 property_value: UBPROP:0000008 "The distribution of scleral ossicles and scleral cartilage among verte- brate taxa is not the same. Some taxa (e.g., birds) have both elements; some only have one element (e.g., crocodiles only have a scleral cartilage); while others (e.g., snakes) have neither element (Walls, 1942) number of ossicles making up the sclerotic ring as well as the shape of both the individual plates and the sclerotic ring is variable among tetrapod taxa.... It is therefore extremely likely that scleral skeletal elements (ossicles and cartilage) of all rep- tiles (including birds) are homologous (but cannot be assumed for reptiles and teleosts)" xsd:string
 property_value: UBPROP:0000009 "The function of these elements is to support the eye from within the sclera; scleral ossicles play an additional important role during accommodation in terrestrial vertebrates (Lemmrich, 1931; Walls, 1942; King and McLelland, 1984)." xsd:string
 
@@ -5609,6 +5626,7 @@ name: scleral skeletal element
 namespace: uberon
 is_a: UBERON:0010321 ! skeletal element of eye region
 property_value: IAO:0000232 "An eye adnexal structure, but not necessarily part of the eyeball" xsd:string
+property_value: RO:0002161 NCBITaxon:40674 {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"}
 
 [Term]
 id: UBERON:0010297
@@ -5620,6 +5638,7 @@ xref: ZFA:0001411
 is_a: UBERON:0003462 ! facial bone
 is_a: UBERON:0010290 ! scleral ossicle
 relationship: part_of UBERON:0002241 {source="ZFA"} ! chondrocranium
+property_value: RO:0002161 NCBITaxon:32523
 property_value: UBPROP:0000001 "A pair of small dish-shaped bones that cap the anterior and posterior margin of the eyeball.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001411", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "The scleral ossicles [of teleosts] are reported to form indirectly by endochondral (Hall and Miyake, 1992) or by perichondral ossification (Patterson, 1977) from a cartilage element that is also present in the sclera. This is unlike the scleral ossicles of reptiles, which develop directly from ectomesenchyme (i.e., intramembranous ossification) and independently from the scleral cartilage" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"}
 
@@ -5630,6 +5649,7 @@ namespace: uberon
 comment: are of dermal (neural crest) origin, develop intramembranously within the scleral mesenchyme, and are induced to form by overlying (transient) epithelial scleral papillae (Nelson, 1942; Murray, 1943; Fyfe and Hall, 1981, 1983; Hall, 1981, 2005; Pinto and Hall, 1991)
 is_a: UBERON:0003462 ! facial bone
 is_a: UBERON:0010290 ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:32443
 property_value: UBPROP:0000011 "The scleral ossicles [in reptiles]" xsd:string
 
 [Term]
@@ -5828,6 +5848,8 @@ xref: Prefrontal:bone
 is_a: UBERON:0003462 ! facial bone
 relationship: part_of UBERON:0003113 {notes="orbital series", source="ISBN:0073040584"} ! dermatocranium
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/44/Dromaeosaurus_skull_en.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:40674
+property_value: RO:0002161 NCBITaxon:8782
 property_value: UBPROP:0000008 "It first evolved in the sarcopterygian clade Rhipidistia, which includes lungfish and the Tetrapodomorpha. The prefrontal is found in most modern and extinct lungfish, amphibians and reptiles. It is very small, fused to the frontals or lost in many groups of coelurosaurian theropod dinosaurs and is completely absent in their modern descendants, the birds. The prefrontal was also lost in early mammaliaforms and so is not present in modern mammals either" xsd:string {source="WP"}
 
 [Term]
@@ -5867,6 +5889,7 @@ synonym: "mesethmoid" RELATED [AAO:0000303]
 synonym: "ventral nasal capsule" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/21270050]
 xref: AAO:0000303
 relationship: part_of UBERON:0011241 {source="ISBN:0073040584"} ! ethmoid region
+property_value: RO:0002161 NCBITaxon:8782
 property_value: RO:0002174 NCBITaxon:8292 {editor_note="check AAO"}
 property_value: UBPROP:0000001 "Endochondral ossification of the anteromedial portion of the braincase.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000303", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: part_of braincase and otic capsule skeleton (AAO:0000052)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000303", ontology="AAO"}
@@ -6302,6 +6325,8 @@ is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0003113 {notes="temporal series", source="ISBN:0073040584"} ! dermatocranium
 property_value: depicted:by Archaeopteryx:skull.png xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/eb/Skull_synapsida_1.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:40674 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:8509 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Paired intramembranous bones that completes the maxillary arch posteriorly; they appear at the end of, or just after, metamorphosis[AAO:0000532]." xsd:string {source="AAO:0000532"}
 
 [Term]
@@ -7108,6 +7133,7 @@ namespace: uberon
 def: "Otic notches are invagination in the posterior margin of the skull roof, one behind each orbit. Such notches are found in labyrinthodonts and some of their immediate ancestors, but not their reptilian descendants. The presence or absence of the otic notches is one of the traits used to separate the amniotes from the amphibian grade tetrapods." [http://en.wikipedia.org/wiki/Otic_notch]
 xref: Otic:notch
 relationship: part_of UBERON:0003113 ! dermatocranium
+property_value: RO:0002161 NCBITaxon:32524
 property_value: UBPROP:0000009 "The notches have been interpreted as part of an auditory structure, and are often shown holding a tympanum similar to those seen in modern anurans. Analysis of the columella (the stapes in amphibians and reptiles) of labyrinthodonts however indicate it did not function in transmitting low energy vibrations, thus rendering them effectively deaf to airborne sound. The otic notch instead functioned as a spiracle, at least in the early forms" xsd:string
 
 [Term]
@@ -7291,6 +7317,7 @@ namespace: uberon
 def: "A bony buttress on the inner surface of the foremost part of the ape mandible, functioning to reinforce the mandible." [http://web.archive.org/web/20060830160800/www.anth.ucsb.edu/glossary/glossary.html]
 xref: Simian:shelf
 relationship: part_of UBERON:0001684 ! mandible
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0013454
@@ -7477,6 +7504,7 @@ namespace: uberon
 def: "Subdivision of skeleton that is part of the velum and consists of a complex arrangement of thin cartilage rods and arches" [http://orcid.org/0000-0002-6601-2165, ISBN:9780226315683]
 synonym: "skeleton of velum" EXACT [http://orcid.org/0000-0002-6601-2165]
 relationship: part_of UBERON:0008895 {notes="in hagfishes it is difficult to separate neurocranium from visceral skeleton"} ! splanchnocranium
+property_value: RO:0002161 NCBITaxon:7776
 property_value: RO:0002175 NCBITaxon:7762
 
 [Term]
@@ -9545,6 +9573,7 @@ def: "A ridge of bone connecting left and right orbital margins located beneath 
 synonym: "infra-orbital bridge" EXACT []
 relationship: part_of UBERON:0003129 ! skull
 property_value: depicted:by http://media.eol.org/content/2010/03/24/02/63782_580_360.jpg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:9606
 property_value: RO:0002175 NCBITaxon:8499
 
 [Term]

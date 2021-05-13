@@ -3,8 +3,13 @@ ontology: uberon/subsets/appendicular-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0002091>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0002091>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -490,6 +495,7 @@ is_a: UBERON:0015054 ! iliac endochondral element
 relationship: part_of UBERON:0001272 {source="FMA"} ! innominate bone
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mellybelly
+property_value: RO:0002161 NCBITaxon:32443 {source="Wikipedia"}
 property_value: RO:0002174 NCBITaxon:8570 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Paired, rodlike endochondral bones that constitute the anterior pelvic girdle.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000772", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000007 "iliac" xsd:string
@@ -1848,6 +1854,7 @@ xref: NCIT:C32223
 xref: UMLS:C0582791 {source="ncithesaurus:Bone_of_the_Extremity"}
 is_a: UBERON:0004375 ! bone of free limb or fin
 is_a: UBERON:0015061 ! limb endochondral element
+relationship: part_of UBERON:0004381 ! skeleton of limb
 property_value: IAO:0000232 "the formal definition is very inclusive, and includes sesamoids" xsd:string
 property_value: UBPROP:0000012 "NCITA includes clavicle. MA:'limb bone' is actually a bone of limb or girdle" xsd:string {external_ontology="NCIT"}
 
@@ -2165,6 +2172,7 @@ xref: UMLS:C0448188 {source="ncithesaurus:Bone_of_the_Lower_Extremity"}
 is_a: UBERON:0002428 ! limb bone
 is_a: UBERON:0010742 ! bone of pelvic complex
 is_a: UBERON:0015022 ! hindlimb endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 property_value: UBPROP:0000012 "the MA class is actually bone of pelvic complex; in contrast the NCIT class excludes ilium etc" xsd:string {external_ontology="MA"}
 
 [Term]
@@ -5390,6 +5398,7 @@ xref: TAO:0000184
 xref: VSAO:0000187
 xref: ZFA:0000184
 is_a: UBERON:0007829 ! pectoral girdle bone
+property_value: RO:0002161 NCBITaxon:40674 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Dermal bone that articulates dorsally with the supracleithrum and ventro-medially with the scapula and coracoid and mesocoracoid bone when the last bone is present. With the posttemporal and supracleithrum, the cleithrum supports the primary pectoral girdle. The cleithrum is located immediately behind the branchial cavity.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000184", ontology="TAO", source="TAO:wd"}
 property_value: UBPROP:0000001 "Paired bones of intramembranous origin. Each cleithrum extends medially from a point near the suprascapular-scapular articulation to invest the anterior margin of the suprascapula, and occasionoally it may extend to the dorsal (medial) surface. Usually, this bone is bifurcate.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000750", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: part_of scapular area (AAO:0000935)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000750", ontology="AAO"}
@@ -5419,6 +5428,7 @@ xref: VSAO:0000158
 xref: ZFA:0000332
 is_a: UBERON:0007829 ! pectoral girdle bone
 property_value: IAO:0000116 "check developmental relationships." xsd:string
+property_value: RO:0002161 NCBITaxon:32525 {reference="ISBN:0-03-910284-X"}
 property_value: UBPROP:0000001 "Endochondral bone that articulates dorsally with the scapula and with the mesocoracoid when the latter is present, posteriorly with the lower two or three proximal radials and antero-ventrally with the cleithrum. The coracoid develops from the scapulo-coracoid cartilage. The coracoid is paired.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000332", ontology="TAO", source="TAO:GA_TG", source="TAO:wd"}
 property_value: UBPROP:0000001 "Paired cartilaginous structures or endochondral bones located on the posterolateral portions of the zonal area of the pectoral girdle.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000764", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: part_of zonal element (AAO:0000936)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000764", ontology="AAO"}
@@ -6511,6 +6521,7 @@ is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0010388 {source="ISBN:0073040584"} ! proximal segment of rib
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/alex-dececchi
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
+property_value: RO:0002161 NCBITaxon:8827 {source="http://www.ncbi.nlm.nih.gov/pubmed/15755883"}
 property_value: UBPROP:0000001 "Posteriorly directed process (occasionally directed anteriorly) usually associated with the rib (sometimes with the transverse process) of the third vertebra; they provide the origin of the mm serratus superior, medius, and inferior.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000741", ontology="AAO", source="AAO:Pugener_2002"}
 
 [Term]
@@ -8204,6 +8215,7 @@ xref: EMAPA:32623
 xref: EMAPA:35933
 xref: MA:0000612
 is_a: UBERON:0010740 ! bone of appendage girdle complex
+relationship: part_of UBERON:0002091 ! appendicular skeleton
 property_value: IAO:0000116 "considering adding pectoral and pelvic complex skeleton classes" xsd:string
 property_value: UBPROP:0000012 "note that the MA class includes girdle parts so it belongs here;" xsd:string {external_ontology="MA"}
 
@@ -8820,6 +8832,7 @@ xref: http://en.wikipedia.org/wiki/Interclavicle
 xref: VSAO:0000161
 is_a: UBERON:0007829 ! pectoral girdle bone
 property_value: IAO:0000116 "See discussion on pectoral girdles - change relationship to overlaps? Kardong: enlarged oval scale" xsd:string
+property_value: RO:0002161 NCBITaxon:32525
 property_value: RO:0002175 NCBITaxon:9257
 property_value: UBPROP:0000008 "Present in therapids and monotremes, reduced in size in marsupials and placentals. In birds, the interclavicle is fused with the clavicles to form the furcula (wishbone); the furcula forms a 'Y' shape and the interclavicle is the stem of the 'Y'." xsd:string
 
@@ -8980,6 +8993,7 @@ xref: FMA:43700
 xref: http://en.wikipedia.org/wiki/Fovea_of_head_of_femur
 is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0004412 ! proximal epiphysis of femur
+property_value: RO:0002161 NCBITaxon:9709
 
 [Term]
 id: UBERON:0012080
@@ -9318,6 +9332,7 @@ synonym: "marsupial bone" NARROW []
 xref: Epipubic:bone
 is_a: UBERON:0007830 {source="cjm"} ! pelvic girdle bone/zone
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/4c/Macropus_major_hind_legs.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:314146
 property_value: UBPROP:0000001 "Epipubic bones are a pair of bones projecting forward from the pelvic bones of modern marsupials and of some fossil mammals: multituberculates, monotremes, and even basal eutherians (the ancestors of placental mammals). In modern marsupials the epipubic bones are often called 'marsupial bones' because they support the mother's pouch ('marsupium' is Latin for 'pouch'), but their presence on other groups of mammals indicates that this was not their original function, which some researchers think was to assist locomotion by supporting some of the muscles that flex the thigh. The epipubic bones were first described in 1698 but their functions have remained unresolved. It has been suggested that they form part of a kinetic linkage stretching from the femur on one side to the ribs on the opposite side. This linkage is formed by a series of muscles: each epipubic bone is connected to the femur by the pectineus muscle, and to the ribs and vertebrae by the pyramidalis, rectus abdominis, and external and internal obliques. According to this hypothesis, the epipubic bones act as levers to stiffen the trunk during locomotion[Wikipedia:Epipubic_bone]." xsd:string {source="Epipubic:bone"}
 property_value: UBPROP:0000007 "epipubic" xsd:string
 
@@ -9328,6 +9343,12 @@ namespace: uberon
 def: "A canal through the medial epicondyle at the distal end of the vertebrate humerus, usually traversed by the median nerve and brachial artery." [http://www.jstor.org/discover/10.2307/2422468]
 xref: Entepicondylar:foramen
 relationship: part_of UBERON:0004404 ! distal epiphysis of humerus
+property_value: RO:0002161 NCBITaxon:91561
+property_value: RO:0002161 NCBITaxon:9365
+property_value: RO:0002161 NCBITaxon:9397
+property_value: RO:0002161 NCBITaxon:9604
+property_value: RO:0002161 NCBITaxon:9721
+property_value: RO:0002161 NCBITaxon:9975
 property_value: RO:0002175 NCBITaxon:376911
 property_value: RO:0002175 NCBITaxon:37887
 property_value: RO:0002175 NCBITaxon:38624
@@ -11384,6 +11405,7 @@ xref: EMAPA:37825 {source="MA:th"}
 xref: UBERONTEMP:d522e981-3a43-4cab-9862-4344b5c3ff22
 is_a: UBERON:0002228 ! rib
 property_value: IAO:0000116 "Trunk, presacral and sacral ribs do not have a 'part of some region' asserted for them, we should add it to them[PHENOSCAPE:ad]" xsd:string
+property_value: RO:0002161 NCBITaxon:9606 {source="should be all Theria, see https://github.com/obophenotype/mouse-anatomy-ontology/issues/116"}
 property_value: UBPROP:0000008 "May be homologous with the transverse processes of cervical vertebra" xsd:string
 
 [Term]
@@ -11392,6 +11414,7 @@ name: lumbar rib
 namespace: uberon
 def: "A rib that is attached to a lumbar vertebra." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0002228 ! rib
+property_value: RO:0002161 NCBITaxon:32525
 property_value: UBPROP:0000008 "May be homologous with the transverse processes of lumbar vertebra" xsd:string
 
 [Term]
@@ -11426,6 +11449,7 @@ namespace: uberon
 def: "fourth most proximal phalanx in manual or pedal digits." [PHENOSCAPE:alex]
 xref: UBERONTEMP:a8b5fbe4-0d00-4464-97ee-81ffd58a44f8
 is_a: UBERON:0003221 ! phalanx
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0018326

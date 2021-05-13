@@ -3,8 +3,13 @@ ontology: uberon/subsets/nervous-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001016>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001016>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -1150,7 +1155,7 @@ id: CL:0000717
 name: fusimotor neuron
 namespace: cell
 def: "A subset of motor neurons that innervates intrafusal muscle fibers and has small diameter axons." []
-is_a: CL:0000100 ! motor neuron
+is_a: CL:0008039 ! lower motor neuron
 
 [Term]
 id: CL:0000740
@@ -1768,6 +1773,7 @@ name: smooth muscle cell of the brain vasculature
 namespace: cell
 def: "A vascular associated smooth muscle cell of the brain vasculature." []
 is_a: CL:0002319 ! neural cell
+relationship: part_of UBERON:0000955 ! brain
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:20Z
 
@@ -2107,6 +2113,26 @@ is_a: CL:0002319 ! neural cell
 relationship: part_of UBERON:0003718 ! muscle spindle
 created_by: dos
 creation_date: 2020-09-26T21:07:01Z
+
+[Term]
+id: CL:0008048
+name: upper motor neuron
+def: "A glutamatergic motor neuron with a soma in the brainstem or cerebral cortex.  They do not synapse directly to muscles but rather to lower motor neurons, which do.  They are the main controllers of voluntary movement." []
+is_a: CL:0000100 ! motor neuron
+is_a: CL:0000679 ! glutamatergic neuron
+created_by: dos
+creation_date: 2020-09-28T09:41:48Z
+
+[Term]
+id: CL:0008049
+name: Betz cell
+def: "A giant pyramidal neuron with a soma in layer Vb of the primary motor cortex that sends its axons down the spinal cord via the corticospinal tract, either synapsing directly with alpha motor neurons, or targeting interneurons in the spinal cord. In humans, Betz cells are the largest known in the central nervous system." []
+synonym: "pyramidal cell of Betz" EXACT []
+is_a: CL:2000049 ! primary motor cortex pyramidal cell
+property_value: depicted:by https://en.wikipedia.org/w/index.php?title=Betz_cell&oldid=977472330#/media/File:GolgiStainedPyramidalCell.jpg xsd:string
+property_value: RO:0002175 NCBITaxon:9443
+created_by: dos
+creation_date: 2020-09-28T09:52:58Z
 
 [Term]
 id: CL:0009000
@@ -2632,8 +2658,8 @@ synonym: "hippocampus (CA) pyramidal cell" EXACT []
 synonym: "hippocampus (CA) pyramidal neuron" EXACT []
 xref: NIFSTD:sao131261273
 xref: SAO:sao131261273
+is_a: CL:0000598 ! pyramidal neuron
 is_a: CL:0002608 ! hippocampal neuron
-is_a: CL:2000056 ! Meynert cell
 relationship: part_of UBERON:0002313 ! hippocampus pyramidal layer
 
 [Term]
@@ -2883,8 +2909,7 @@ name: primary motor cortex pyramidal cell
 namespace: cell
 def: "Any pyramidal cell that is part of a primary motor cortex." []
 comment: http://www.ncbi.nlm.nih.gov/pubmed/12524689
-is_a: CL:2000056 ! Meynert cell
-relationship: part_of UBERON:0001384 ! primary motor cortex
+is_a: CL:0000598 ! pyramidal neuron
 created_by: TermGenie
 creation_date: 2014-10-06T17:39:04Z
 
@@ -2893,8 +2918,7 @@ id: CL:2000056
 name: Meynert cell
 namespace: cell
 def: "Any pyramidal cell that is part of a regional part of cerebral cortex." []
-is_a: CL:0000598 ! pyramidal neuron
-is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:2000049 ! primary motor cortex pyramidal cell
 created_by: TermGenie
 creation_date: 2014-10-06T19:20:41Z
 
@@ -3047,9 +3071,40 @@ is_a: CL:4023004 ! nuclear bag fiber
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023007
+name: L2/3 bipolar Vip expressing GABAergic cortical interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron with bipolar morphology, with a soma found in L2/3. L2/3 bipolar Vip Cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 Bipolar Vip Cells have great variability in firing patterns, though most are continuous adapting. L2/3 Bipolar Vip Cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper Vip cells." []
+subset: BDS_subset
+synonym: "L2/3 bipolar Vip (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023008
+name: intratelencephalic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to structures of telencephalic origins." []
+subset: BDS_subset
+synonym: "IT projecting neuron" EXACT []
+xref: ILX:0770100
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023009
+name: extratelencephalic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to structures not derived from telencephalon." []
+subset: BDS_subset
+synonym: "ET projecting neuron" EXACT []
+xref: ILX:0770101
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023010
-name: alpha7 Lamp5 GABAergic interneuron of primary motor cortex (Mus musculus)
-def: "A Lamp5 GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells are located in L1 of the primary motor cortex and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A. Unlike typical Lamp5 electrophysiology, they have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing." []
+name: alpha7 Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells have soma found in L1 and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A. Unlike typical Lamp5 electrophysiology, they have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing." []
+subset: BDS_subset
+synonym: "A7 Lamp5 (Mus)" EXACT []
 is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -3057,15 +3112,45 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023011
 name: Lamp5 GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses Lamp5" []
-xref: xref (ILX:0770149)
+subset: BDS_subset
+xref: ILX:0770149
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023012
+name: near-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects axons locally rather than distantly." []
+subset: BDS_subset
+synonym: "NP neuron" EXACT []
+xref: ILX:0770103
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023013
+name: corticothalamic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to the thalamus." []
+subset: BDS_subset
+synonym: "CT projecting neuron" EXACT []
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023014
+name: L5 Vip expressing cortical GABAergic interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron with a soma found in L5. L5 Vip cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of Sst subclass and unlike typical Vip subclass cells that tend to show high input resistance. L5 Vip cells show particularly low resting membrane potential." []
+subset: BDS_subset
+synonym: "L5 VIP (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023015
 name: sncg GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses Gamma-synuclein" []
-def: "xref:(ILX:0770150)" []
+subset: BDS_subset
+xref: ILX:0770150
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -3073,7 +3158,8 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023016
 name: Vip GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses vasoactive intestinal polypeptide" []
-xref: xref:(ILX\:0770151)
+subset: BDS_subset
+xref: ILX:0770151
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -3081,7 +3167,8 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023017
 name: sst GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst)" []
-xref: xref:(ILX\:0770152)
+subset: BDS_subset
+xref: ILX:0770152
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -3089,9 +3176,285 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023018
 name: pvalb GABAergic cortical interneuron
 def: "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin." []
-xref: xref:(ILX\:0770154)
+subset: BDS_subset
+xref: ILX:0770154
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023019
+name: L5/6 CCK and Vip expressing cortical GABAergic interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." []
+subset: BDS_subset
+synonym: "L5/6 CCK Vip (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023022
+name: canopy Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron that has extended axons in the surface of L1. Canopy Lamp5 cells resemble neurogliaform cells in having elongated horizontal axonal arbors largely confined to L1; but the dendritic arbors are wider and have fewer branches, while the axon is less tortuous and extends further from the soma" []
+subset: BDS_subset
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023023
+name: L5,6 Neurogliaform Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp 5 GABAergic cortical interneuron with neurogliaform morphology with a soma found in L5,6. L5,6 NGC Lamp5 have deep afterhyperpolarization (AHP) but narrow action potentials (APs). Unlike other deep neurogliaform cells (which are caudal ganglionic eminence (CGE) derived), L5,6 NGC Lamp5 cells are medial ganglionic eminence (MGE)-derived" []
+subset: BDS_subset
+synonym: "L5,6 NGC Lamp5 (mus)" EXACT []
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023024
+name: Neurogliaform Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron with layer-adapting morphology. NGC Lamp5 cells have a small round soma, short dendrites, and a wide dense axonal arbor that tends to establish a dense axonal mesh with high connection probability both to themselves and L2 pyramidal cells. NGC Lamp5 cells have unique synaptic properties that distinguish them from other GABAergic interneurons, including the release of GABA to the extracellular space via volume transmission, and the ability to produce GABA-B responses in connected postsynaptic targets." []
+subset: BDS_subset
+synonym: "NGC Lamp5 (mus)" EXACT []
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023025
+name: Long-range projecting Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is both an interneuron and a projecting neuron. They are found in all layers from upper L2/3 down to the bottom of L6. They have long-range projections, some with axons fading into white matter. These cells have low rebound potential, low hyperpolarization sag, and high variability in membrane time constant." []
+subset: BDS_subset
+synonym: "LP SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023027
+name: L5 ‘T-shaped’ Martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron with a soma found in L5 and possesses 'T-shaped' martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." []
+subset: BDS_subset
+synonym: "L5 T Martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023028
+name: L5 Non-martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron with a soma found in lower L5 with mostly local axonal arborization but with some sparse ascending axons. L5 Non-martinotti Sst cells show somatic localization and local axon plexus in L5b and L5b/6 and substantial innervation of L3 and L4, and receive thalamic input from the ventral posteromedial nucleus and specifically target L4 neurons, avoiding L5 pyramidal cells. L5 Non-martinotti Sst cells tend to show a higher input resistance and seem to be less stuttering." []
+subset: BDS_subset
+synonym: "L5 Non-martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023030
+name: L2/3/4 Fan martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that has \"Fanning-out' Martinotti morphology with local axon arbor and long ascending axons that spreads horizontally and arborizes significantly in L1. They have an adapting firing pattern and non-zero afterdepolarization (ADP)." []
+subset: BDS_subset
+synonym: "L2/3/5 Fan Martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023031
+name: L4 Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron with a soma found in lower L2/3 and upper 5, L4 Sst cells have martinotti morphology with ascending axons but denser local axons and sparser ‘fanning-out’ projections to L1. L4 Sst cells have smaller membrane time constant to calb2 (L2/3/5 Fan Martinotti Cell) and non-zero afterdepolarization (ADP)." []
+subset: BDS_subset
+synonym: "L4 SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023034
+name: L2/3 Pvalb like Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron transcriptomically between the Sst and the Pvalb families with a soma found in L2/3. Some L2/3 PV-like SST cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like SST cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like SST cells have high maximum firing rate variability, with many classified as belonging to the Pvalb subclass on the basis of electrophysiology." []
+subset: BDS_subset
+synonym: "L2/3 PV-like SST Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023036
+name: Chandelier Pvalb GABAergic cortical interneuron (Mus musculus)
+def: "A Pvalb GABAergic cortical interneuron that is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells have soma found in in upper L2/3, with some in deep L5. Chandelier PV cells exhibit fast-spiking but lower firing rate compared to basket cells, and have practically absent hyperpolarization sag. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner." []
+subset: BDS_subset
+synonym: "Chandelier PV (Mus)" EXACT []
+xref: ILX:0107356
+is_a: CL:4023018 ! pvalb GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023038
+name: L6b glutamatergic cortical neuron
+def: "A glutamatergic neuron with a soma found in cortical layer 6b. They are transcriptomically related to corticothalamic-projecting neurons but have differential projections to the thalamus or anterior cingulate." []
+subset: BDS_subset
+xref: ILX:0770163
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023040
+name: L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+def: "A intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layers L2/3-6" []
+subset: BDS_subset
+synonym: "L2/3-6 IT projecting neuron" EXACT []
+is_a: CL:4023008 ! intratelencephalic-projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023041
+name: L5 extratelencephalic projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron, with a soma found in the deeper portion of L5, that has long-range axonal projections including deep subcortical targets outside of the telencephalon and, in some cases, the spinal cord. While the L5 ET neuron projections are not limited to ET targets, they are clearly differentiated from the neuron subclasses whose projections are constrained to intratelencephalic (IT) targets.  L5 ET neurons are generally the largest excitatory cortical neurons, typically having a thick apical dendrite with a prominent dendritic tuft in layer 1 and displaying burst-firing physiological characteristics." []
+subset: BDS_subset
+synonym: "burst-firing layer 5 neuron" EXACT []
+synonym: "L5b neuron" EXACT []
+synonym: "pyramidal tract (PT) neuron" EXACT []
+synonym: "subcerebral projection (SCPN) neuron" EXACT []
+synonym: "thick-tufted layer 5 pyramidal neuron" EXACT []
+is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023042
+name: L6 corticothalamic-projecting glutamatergic cortical neuron
+def: "A corticothalamic-projecting neuron with a soma found in cortical layer 6." []
+subset: BDS_subset
+synonym: "L6 CT" EXACT []
+is_a: CL:4023013 ! corticothalamic-projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023043
+name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the primary motor cortex." []
+subset: BDS_subset
+synonym: "L5/6 NP" EXACT []
+xref: ILX:0770161
+is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023044
+name: non-medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that does not project to the medulla. Non-MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. Non-MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." []
+subset: BDS_subset
+synonym: "non-MY ET MOp (Mus)" EXACT []
+is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023045
+name: medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that projects to the medulla. MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." []
+subset: BDS_subset
+synonym: "MY ET MOp (Mus)" EXACT []
+is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023046
+name: L6b subplate glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "An excitatory glutamatergic neuron transcriptomically related to the CT subclass, with a soma preferentially located in the bottom of L6 of the primary motor cortex." []
+subset: BDS_subset
+is_a: CL:4023038 ! L6b glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023047
+name: L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3." []
+subset: BDS_subset
+synonym: "L2/3 IT MOp (Mus)" EXACT []
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023048
+name: L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "An intratelencephalic-projecting glutamatergic with a soma located in upper L5 of the primary motor cortex. These cells have thin untufted apical dendrites." []
+subset: BDS_subset
+synonym: "L4/5 IT MOp (Mus)" EXACT []
+xref: ILX:0770174
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023049
+name: L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in L5 of the primary motor cortex." []
+subset: BDS_subset
+synonym: "L5 IT MOp (Mus)" EXACT []
+xref: ILX:0770157
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023050
+name: L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in L6 of the primary motor cortex. These cells are short untufted pyramidal cells, which could be stellate or inverted." []
+subset: BDS_subset
+synonym: "L6 IT MOp (Mus)" EXACT []
+xref: ILX:0770158
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023051
+name: vascular leptomeningeal cell
+def: "A type of mesothelial fibroblast that is derived from the neural crest, is localized on blood vessels, and is a key component of the pia and arachnoid membranes surrounding the brain." []
+subset: BDS_subset
+synonym: "VLMC" EXACT []
+xref: ILX:0770143
+is_a: CL:4023058 ! mesothelial fibroblast of the leptomeninx
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023052
+name: Betz upper motor neuron
+def: "A Betz cell that synapses with lower motor neurons directly." []
+is_a: CL:0008049 ! Betz cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+property_value: RO:0002175 NCBITaxon:9606
+
+[Term]
+id: CL:4023053
+name: spinal interneuron synapsing Betz cell
+def: "A Betz cell that syanpses with spinal interneurons." []
+is_a: CL:0008049 ! Betz cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+property_value: RO:0002175 NCBITaxon:9685
+property_value: RO:0002175 NCBITaxon:9989
+
+[Term]
+id: CL:4023055
+name: corticothalamic VAL/VM projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index." []
+subset: BDS_subset
+synonym: "CT VAL/VM MOp (Mus)" EXACT []
+is_a: CL:4023042 ! L6 corticothalamic-projecting glutamatergic cortical neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023056
+name: vascular leptomeningeal cell (Mus musculus)
+def: "A type of mouse mesothelial fibroblast that is derived from the neural crest, is localized on blood vessels, and is a key component of the pia and arachnoid membranes surrounding the brain." []
+subset: BDS_subset
+synonym: "VLMC (Mus)" EXACT []
+is_a: CL:4023051 ! vascular leptomeningeal cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023058
+name: mesothelial fibroblast of the leptomeninx
+def: "A mesothelial fibroblast found in the leptomeninx." []
+is_a: CL:0002319 ! neural cell
+relationship: part_of UBERON:0000391 ! leptomeninx
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023065
+name: meis2 expressing cortial GABAergic cell (Mus musculus)
+def: "A mouse GABAergic cell located in the cerebral cortex that expresses meis2." []
+subset: BDS_subset
+is_a: CL:0000617 ! GABAergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: UBERON:0000005
@@ -4627,6 +4990,7 @@ xref: MIAA:0000339
 xref: NLX:146329
 xref: WBbt:0005829
 is_a: UBERON:0005053 ! primary nerve cord
+property_value: RO:0002161 NCBITaxon:7711
 property_value: UBPROP:0000001 "A cluster of neurons that extends posteriorly from the embryonic and larval brain and is surrounded by a connective tissue sheath." xsd:string {source="FBbt:00001102"}
 property_value: UBPROP:0000008 "The ventral nerve cords make up the nervous system of some phyla of the invertebrates, particularly within the nematodes, annelids and the arthropods. It usually consists of cerebral ganglia anteriorly with the nerve cords running down the ventral ('belly', as opposed to back) plane of the organism. This characteristic is important in qualifying the difference compared to the chordates, which have a dorsal nerve cord. Ventral nerve cords from anterior to posterior (the thoracic and abdominal tagma in the arthropods) are made up of segmented ganglia that are connected by a tract of nerve fibers passing from one side to the other of the nerve cord called commissures. The complete system bears some likeness to a rope ladder. In some animals the bilateral ganglia are fused into a single large ganglion per segment. This characteristic is found mostly in the insects." xsd:string
 
@@ -5080,6 +5444,7 @@ xref: XAO:0000009
 xref: ZFA:0000152
 is_a: UBERON:0005388 ! photoreceptor array
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/ed/Human_eye_cross-sectional_view_grayscale.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:6656
 property_value: UBPROP:0000001 "The portion of the eye developing from the optic primordium and including the neural retina and the retinal pigment layer. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000152", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "The eye of the adult lamprey is remarkably similar to our own, and it possesses numerous features (including the expression of opsin genes) that are very similar to those of the eyes of jawed vertebrates. The lamprey's camera-like eye has a lens, an iris and extra-ocular muscles (five of them, unlike the eyes of jawed vertebrates, which have six), although it lacks intra-ocular muscles. Its retina also has a structure very similar to that of the retinas of other vertebrates, with three nuclear layers comprised of the cell bodies of photoreceptors and bipolar, horizontal, amacrine and ganglion cells. The southern hemisphere lamprey, Geotria australis, possesses five morphological classes of retinal photoreceptor and five classes of opsin, each of which is closely related to the opsins of jawed vertebrates. Given these similarities, we reach the inescapable conclusion that the last common ancestor of jawless and jawed vertebrates already possessed an eye that was comparable to that of extant lampreys and gnathostomes. Accordingly, a vertebrate camera-like eye must have been present by the time that lampreys and gnathostomes diverged, around 500 Mya.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000229", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1038/nrn2283 Lamb TD, Collin SP and Pugh EN Jr, Evolution of the vertebrate eye: opsins, photoreceptors, retina and eye cup. Nature Reviews Neuroscience (2007)"}
 property_value: UBPROP:0000007 "retinal" xsd:string
@@ -5197,6 +5562,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000467 ! anatomical system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:6040
 property_value: UBPROP:0000001 "A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000396", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Anatomical system consisting of nerve bodies and nerve fibers which regulate the response of the body to external and internal stimuli.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000324", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "Nervous systems evolved in the ancestor of Eumetazoa.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000402", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.117"}
@@ -5248,6 +5614,7 @@ xref: VHOG:0000293
 xref: XAO:0000215
 xref: ZFA:0000012
 relationship: part_of UBERON:0001016 ! nervous system
+property_value: RO:0002161 NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 property_value: UBPROP:0000001 "Part of the nervous system which includes the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000090", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000001 "The brain and spinal cord. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000012", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina (CUMBO)." xsd:string {source="BIRNLEX:1099"}
@@ -5493,6 +5860,7 @@ xref: Mushroom:body
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000955 ! brain
+property_value: RO:0002161 NCBITaxon:6217
 property_value: RO:0002175 NCBITaxon:6340
 property_value: RO:0002175 NCBITaxon:6656
 property_value: UBPROP:0000008 "Also in annelids. 'Comparison to the vertebrate pallium reveals that the annelid mushroom bodies develop from similar molecular coordinates within a conserved overall molecular brain topology and that their development involves conserved patterning mechanisms and produces conserved neuron types that existed already in the proto- stome-deuterostome ancestors. These data indicate deep homology of pallium and mushroom bodies and date back the origin of higher brain centers to prebilaterian times'" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/20813265"}
@@ -7768,8 +8136,8 @@ namespace: uberon
 def: "Ganglion containing neurons that receive innervation from parasympathetic neurons in the central nervous system and subserves parasympathetic functions through innervation of smooth muscle, cardiac muscle and glands." [NLXANAT:100303]
 subset: pheno_slim
 subset: uberon_slim
-synonym: "ganglion parasympathicum" RELATED LATIN [http://en.wikipedia.org/wiki/Parasympathetic_ganglion]
 synonym: "ganglion parasympathicum" RELATED [BTO:0001256]
+synonym: "ganglion parasympathicum" RELATED LATIN [http://en.wikipedia.org/wiki/Parasympathetic_ganglion]
 xref: BTO:0001256
 xref: EHDAA2:0001400
 xref: EMAPA:32813
@@ -7852,8 +8220,8 @@ namespace: uberon
 def: "An arrangement of nerve fibers, running from the spine where it proceeds through the neck then the axilla and into the arm where it innervates skin and muscle. [WP,modified]." [http://en.wikipedia.org/wiki/Brachial_plexus, UBERON:cjm]
 subset: uberon_slim
 synonym: "brachial plexus" EXACT [MA:0001180]
-synonym: "plexus brachialis" RELATED LATIN [http://en.wikipedia.org/wiki/Brachial_plexus]
 synonym: "plexus brachialis" RELATED [http://en.wikipedia.org/wiki/Brachial_plexus]
+synonym: "plexus brachialis" RELATED LATIN [http://en.wikipedia.org/wiki/Brachial_plexus]
 xref: Brachial:plexus
 xref: EHDAA2:0000180
 xref: EHDAA:3782
@@ -11469,6 +11837,7 @@ xref: UMLS:C0018220 {source="ncithesaurus:Gray_Matter"}
 xref: VHOG:0001768
 xref: ZFA:0001681
 is_a: UBERON:0011215 ! central nervous system cell part cluster
+relationship: part_of UBERON:0001017 ! central nervous system
 property_value: depicted:by Spinal:nerve.svg xsd:anyURI
 property_value: UBPROP:0000001 "Multi-tissue comprised of neurons, dendrites, axon terminals, glial cells, and capillaries.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0002197", ontology="TAO", source="ZFIN:curator"}
 
@@ -11804,6 +12173,7 @@ xref: ZFA:0000100
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001895 {source="FMA", source="MA"} ! metencephalon
 property_value: depicted:by Cerebellum:NIH.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:117565 {source="ISBN:0471888893"}
 property_value: RO:0002174 NCBITaxon:117569 {source="http://icb.oxfordjournals.org/content/42/4/743.full"}
 property_value: RO:0002175 NCBITaxon:117569 {source="ISBN:0471888893"}
 property_value: UBPROP:0000001 "Dorsal part of the hindbrain that coordinates muscle movement, posture, and balance.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010485", ontology="AAO", source="AAO:BJB"}
@@ -12300,6 +12670,7 @@ is_a: UBERON:0007245 ! nuclear complex of neuraxis
 is_a: UBERON:0019263 ! gray matter of hindbrain
 relationship: part_of UBERON:0002037 ! cerebellum
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/23/Gray707.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32443 {contributor="michaelerice", source="http://www.ncbi.nlm.nih.gov/pubmed/17134989", source="http://www.ncbi.nlm.nih.gov/pubmed/2040726"}
 
 [Term]
 id: UBERON:0002131
@@ -14886,6 +15257,7 @@ xref: UMLS:C0006121 {source="ncithesaurus:Brain_Stem"}
 xref: VHOG:0001457
 xref: ZFA:0001707
 is_a: UBERON:0002616 ! regional part of brain
+relationship: part_of UBERON:0000955 ! brain
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b7/Gray719.png xsd:anyURI
 property_value: UBPROP:0000001 "Multi-tissue structure that has as its parts the medulla oblongata of the hindbrain and the tegmentum of the midbrain.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0002156", ontology="TAO", source="ISBN:3764351209"}
 property_value: UBPROP:0000001 "Multi-tissue structure that has as its parts the medulla oblongata of the hindbrain and the tegmentum of the midbrain[ZFA,adopted][ZFA:0001707]." xsd:string {source="ZFA:0001707"}
@@ -15330,6 +15702,7 @@ xref: VHOG:0001608
 is_a: UBERON:0002473 {source="FMA-part_of", source="MA"} ! intercerebral commissure
 is_a: UBERON:0005340 {source="MP"} ! dorsal telencephalic commissure
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/aa/Gray733.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:9255 {source="Wikipedia"}
 property_value: UBPROP:0000001 "The largest commissure of the brain connecting the cerebral hemispheres. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001608", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/corpus+callosum"}
 property_value: UBPROP:0000003 "In addition to the anterior commissure, placental mammals have a phylogenetically new forebrain commissure, the corpus callosum, which primarily interconnects the neocortex of the cerebral hemispheres.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001608", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1111/j.1749-6632.1969.tb20447.x Ebner FF, A comparison of primitive forebrain organization in metatherian and eutherian mammals. Annals of the New York Academy of Sciences (1969)"}
 property_value: UBPROP:0000008 "The corpus callosum is found only in placental mammals. other groups do have other brain structures that allow for communication between the two hemispheres, such as the anterior commissure, which serves as the primary mode of interhemispheric communication in marsupials." xsd:string {source="Species_Differences"}
@@ -15478,6 +15851,7 @@ xref: OpenCyc:Mx4rvvmzqZwpEbGdrcN5Y29ycA
 xref: UMLS:C0013313 {source="ncithesaurus:Dura_Mater"}
 is_a: UBERON:0002360 ! meninx
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/8e/Meninges-en.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32443 {source="ISBN:0073040584"}
 property_value: UBPROP:0000001 "the outermost of the three layers of the meninges surrounding the brain and spinal cord. The other two meningeal layers are the pia mater and the arachnoid mater. The dura surrounds the brain and the spinal cord and is responsible for keeping in the cerebrospinal fluid[Wikipedia:Dura_mater]." xsd:string {source="Dura:mater"}
 property_value: UBPROP:0000009 "capable of inducing chondrogenesis - requires contact with an epithelium - http://www.ncbi.nlm.nih.gov/pubmed/16496288" xsd:string
 property_value: UBPROP:0000012 "some ontologies consider dura mater part of the CNS, others dispute this and claim it surrounds it (e.g. DOI:10.1111/joa.12381)[https://github.com/obophenotype/uberon/issues/1261]" xsd:string
@@ -15721,6 +16095,7 @@ xref: VHOG:0001178
 xref: ZFA:0001197
 relationship: part_of UBERON:0002196 {source="FMA", source="ZFA"} ! adenohypophysis
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/f/fb/Gray1181.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8782 {source="ISBN:0471888893"}
 property_value: RO:0002175 NCBITaxon:117569 {source="Ariens, p. 1192"}
 property_value: UBPROP:0000003 "It (the hypophysis) develops embryonically in all vertebrates from two ectodermal evaginations that meet and unite. An infundibulum grows ventrally from the diencephalon of the brain, and Rathke's pouch extends dorsally from the roof of the developing mouth, or stomodaeum. The infundibulum remains connected to the floor of the diencephalon, which becomes the hypothalamus, and gives rise to the part of the gland known as the neurohypophysis. (...) Rathke's pouch loses its connection with the stomodaeum in most adult vertebrates and gives rise to the rest of the gland, the adenohypophysis. (...) A well-developed hypophyseal system with functional connections to the hypothalamus is unique to craniates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001178", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.510 and Figure 15-5"}
 
@@ -15748,6 +16123,7 @@ xref: TAO:0001196
 xref: VHOG:0001114
 relationship: part_of UBERON:0002196 ! adenohypophysis
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b9/Pituitary_gland_representation.PNG xsd:anyURI
+property_value: RO:0002161 NCBITaxon:7955 {source="ZFA:0001196"}
 property_value: UBPROP:0000003 "It (the hypophysis) develops embryonically in all vertebrates from two ectodermal evaginations that meet and unite. An infundibulum grows ventrally from the diencephalon of the brain, and Rathke's pouch extends dorsally from the roof of the developing mouth, or stomodaeum. The infundibulum remains connected to the floor of the diencephalon, which becomes the hypothalamus, and gives rise to the part of the gland known as the neurohypophysis. (...) Rathke's pouch loses its connection with the stomodaeum in most adult vertebrates and gives rise to the rest of the gland, the adenohypophysis. (...) A well-developed hypophyseal system with functional connections to the hypothalamus is unique to craniates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001114", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.510 and Figure 15-5"}
 
 [Term]
@@ -22279,8 +22655,8 @@ xref: BIRNLEX:1657
 xref: FMA:61909
 xref: FMA:71029
 xref: HBA:4165
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=134 {source="BIRNLEX:1657"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=134
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=134 {source="BIRNLEX:1657"}
 xref: http://en.wikipedia.org/wiki/Transverse_temporal_gyrus
 xref: http://linkedlifedata.com/resource/umls/id/C0262198
 xref: http://www.snomedbrowser.com/Codes/Details/279192003
@@ -27099,8 +27475,8 @@ synonym: "internal capsule (Burdach)" RELATED [NeuroNames:198]
 synonym: "lateral part of substantia nigra" EXACT [FMA:76844]
 synonym: "pars lateralis" EXACT [BIRNLEX:866]
 synonym: "pars lateralis substantiae nigrae" EXACT LATIN [FMA:76844, FMA:TA]
-synonym: "substantia nigra lateral part" RELATED [BAMS:SNL]
 synonym: "substantia nigra lateral part" RELATED [BAMS:SNl]
+synonym: "substantia nigra lateral part" RELATED [BAMS:SNL]
 synonym: "substantia nigra, lateral division" RELATED [BAMS:SNL]
 synonym: "substantia nigra, lateral part" EXACT [ABA:SNI]
 synonym: "substantia nigra, pars lateralis" RELATED [BAMS:SNL]
@@ -31272,6 +31648,7 @@ xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1243
 xref: Interposed:nucleus
 xref: NLXANAT:20081242
 is_a: UBERON:0008995 ! nucleus of cerebellar nuclear complex
+property_value: RO:0002161 NCBITaxon:8570 {source="ISBN:0471888893"}
 property_value: UBPROP:0000001 "The interposed nucleus is a deep nucleus of the cerebellum and is composed of the globose nuclei and the emboliform nuclei. It is located in in the roof (dorsal aspect) of the fourth ventricle, lateral to the fastigial nucleus. It receives its afferent supply from the anterior lobe of the cerebellum and sends output via the superior cerebellar peduncle to the red nucleus." xsd:string {source="Interposed:nucleus"}
 property_value: UBPROP:0000009 "modulates muscle stretch reflexes of proximal limb muscles[WP]" xsd:string
 
@@ -32720,6 +33097,7 @@ xref: FMA:76552
 xref: MESH:D012171
 xref: XAO:0004153
 relationship: part_of UBERON:0000966 ! retina
+property_value: RO:0002161 NCBITaxon:8782 {source="http://www.ncbi.nlm.nih.gov/pubmed/21622558", source="http://www.ncbi.nlm.nih.gov/pubmed/2772405", submitter="michaelerice"}
 
 [Term]
 id: UBERON:0004869
@@ -32730,6 +33108,8 @@ synonym: "parietal eye" EXACT [http://en.wikipedia.org/wiki/Parietal_eye]
 synonym: "third eye" RELATED [http://en.wikipedia.org/wiki/Parietal_eye]
 xref: Parietal:eye
 relationship: part_of UBERON:0015238 {source="cjm"} ! pineal complex
+property_value: RO:0002161 NCBITaxon:40674
+property_value: RO:0002161 NCBITaxon:8782
 
 [Term]
 id: UBERON:0004904
@@ -33113,6 +33493,7 @@ xref: http://en.wikipedia.org/wiki/Myelencephalon
 xref: MA:0000205
 xref: VHOG:0000456
 is_a: UBERON:0004733 ! segmental subdivision of hindbrain
+relationship: part_of UBERON:0002028 ! hindbrain
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg xsd:anyURI
 property_value: RO:0002174 NCBITaxon:7955
 property_value: UBPROP:0000001 "The posterior of the two brain vesicles formed by specialization of the rhombencephalon in the developing embryo, it comprises the medulla oblongata. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000456", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/myelencephalon"}
@@ -33275,6 +33656,7 @@ xref: EMAPA:37400 {source="MA:th"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1894
 xref: MBA:1033
 is_a: UBERON:0004003 ! cerebellum hemisphere lobule
+property_value: RO:0002161 NCBITaxon:9606 {source="MP"}
 property_value: UBPROP:0000008 "This is a structure present in rodents and is not present in humans. The cerebellum hemisphere structure and lobulation is dramatically different between these species." xsd:string
 
 [Term]
@@ -33462,8 +33844,8 @@ synonym: "inferior ganglion of glossopharyngeal nerve" EXACT [FMA:53475]
 synonym: "inferior glossopharyngeal ganglion" EXACT [FMA:53475]
 synonym: "inferior glossopharyngeal ganglion of the glossopharyngeal (IX) nerve" EXACT [MP:0001084]
 synonym: "ninth cranial nerve inferior ganglion" EXACT [FMA:53475]
-synonym: "petrosal ganglion" RELATED [MP:0001084]
 synonym: "petrosal ganglion" RELATED [http://www.merriam-webster.com/medical/petrosal%20ganglion, MP:0001084]
+synonym: "petrosal ganglion" RELATED [MP:0001084]
 synonym: "petrous ganglion" RELATED [http://en.wikipedia.org/wiki/File\:Gray791.png, http://en.wikipedia.org/wiki/Inferior_ganglion_of_glossopharyngeal_nerve, http://www.merriam-webster.com/medical/petrous%20ganglion]
 xref: EHDAA2:0000711
 xref: EMAPA:17153
@@ -36041,8 +36423,8 @@ synonym: "principle auditory receptive areas" EXACT [BIRNLEX:1582]
 xref: BIRNLEX:1582
 xref: BIRNLEX:1774
 xref: FMA:68638
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=95 {source="BIRNLEX:1582"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=95
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=95 {source="BIRNLEX:1582"}
 xref: http://linkedlifedata.com/resource/umls/id/C1272502
 xref: UMLS:C1272502 {source="BIRNLEX:1774"}
 is_a: UBERON:0013529 {source="NIFSTD"} ! Brodmann area
@@ -36414,8 +36796,8 @@ synonym: "fibrae nervi accessorius" RELATED LATIN [NeuroNames:792]
 xref: BAMS:11nf
 xref: BIRNLEX:916
 xref: FMA:72626
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792 {source="BIRNLEX:916"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792 {source="BIRNLEX:916"}
 xref: http://linkedlifedata.com/resource/umls/id/C0175549
 xref: UMLS:C0175549 {source="BIRNLEX:916"}
 is_a: UBERON:0000122 ! neuron projection bundle
@@ -36619,6 +37001,8 @@ xref: NCIT:C12627
 xref: UMLS:C0027750 {source="ncithesaurus:Myelinated_Nerve_Fiber"}
 is_a: UBERON:0006134 ! nerve fiber
 property_value: IAO:0000116 "consider adding link to UBERON:0002316 ! white matter of neuraxis" xsd:string
+property_value: RO:0002161 NCBITaxon:117569
+property_value: RO:0002161 NCBITaxon:7762
 property_value: RO:0002175 NCBITaxon:7776
 property_value: UBPROP:0000008 "http://www1.pbrc.hawaii.edu/~danh/MyelinEvolution/evolution.html, http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=6134604, Wikipedia:Myelin#Invertebrate_myelin" xsd:string
 
@@ -38052,8 +38436,8 @@ synonym: "stratum zonale colliculi superioris" EXACT LATIN [FMA:72406, FMA:TA]
 synonym: "stratum zonale of midbrain" EXACT LATIN [FMA:72406, FMA:TA]
 synonym: "stratum zonale of superior colliculus" EXACT [FMA:72406]
 synonym: "superior colliculus zonal layer" RELATED [BAMS:SCzo]
-synonym: "zonal layer of the superior colliculus" RELATED [BAMS:zo]
 synonym: "zonal layer of the superior colliculus" RELATED [BAMS:Zo]
+synonym: "zonal layer of the superior colliculus" RELATED [BAMS:zo]
 xref: BAMS:SCzo
 xref: BAMS:Zo
 xref: BAMS:zo
@@ -39518,8 +39902,8 @@ id: UBERON:0007710
 name: intermediate nucleus of lateral lemniscus
 namespace: uberon
 synonym: "intermediate nucleus of the lateral lemniscus" RELATED [BAMS:ILL]
-synonym: "nucleus of the lateral lemniscus horizontal part" RELATED [BAMS:NLLh]
 synonym: "nucleus of the lateral lemniscus horizontal part" RELATED [BAMS:Nllh]
+synonym: "nucleus of the lateral lemniscus horizontal part" RELATED [BAMS:NLLh]
 synonym: "nucleus of the lateral lemniscus, horizontal part" EXACT [ABA:NLLh]
 xref: BAMS:ILL
 xref: BAMS:NLLh
@@ -41602,6 +41986,7 @@ xref: EHDAA2:0004469
 xref: FMA:258745
 is_a: UBERON:0007245 ! nuclear complex of neuraxis
 is_a: UBERON:0019269 ! gray matter of diencephalon
+relationship: part_of UBERON:0001894 {source="EHDAA2"} ! diencephalon
 
 [Term]
 id: UBERON:0010245
@@ -42238,6 +42623,7 @@ comment: Shares characteristics with neurohypophysis
 xref: BTO:0001848
 is_a: UBERON:0010133 ! neuroendocrine gland
 relationship: part_of UBERON:0002240 {source="BTO"} ! spinal cord
+property_value: RO:0002161 NCBITaxon:32523 {source="ISBN:0471888893"}
 
 [Term]
 id: UBERON:0011360
@@ -45907,6 +46293,7 @@ synonym: "dorsal ventricular ridge" EXACT []
 synonym: "DVR" RELATED ABBREVIATION [http://www.ncbi.nlm.nih.gov/pubmed/23027930]
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0000203 ! pallium
+property_value: RO:0002161 NCBITaxon:40674
 property_value: RO:0002175 NCBITaxon:8782
 property_value: UBPROP:0000008 "Because of the phyletic continuity of the DVR in living reptiles and birds, and its numerous similarities in topography, histology, and connections in these two groups, there is little question that the DVR of reptiles and birds is homologous as a telencephalic neural center. In contrast, the telencephalon in living mammals does not appear to have a DVR. It has been suggested, however, that their predecessors did have such a ridge, and that its cells migrated to the surface of the telencephalon during development to form part of the cerebral cortices which characterize all living mammals (Karten, 1969, 1991)[http://icb.oxfordjournals.org/content/42/4/743.full]" xsd:string
 
@@ -46507,6 +46894,7 @@ synonym: "parapineal gland" RELATED []
 xref: TAO:0001360
 xref: ZFA:0001360
 relationship: part_of UBERON:0015238 {source="ZFA"} ! pineal complex
+property_value: RO:0002161 NCBITaxon:40674
 property_value: UBPROP:0000001 "An unpaired left-sided accessory organ which plays a role in establishing lateral brain left right asymmetry[ZFA:0001360, ZFIN:ZDB-PUB-030206-1]." xsd:string {source="ZFA:0001360, ZFIN:ZDB-PUB-030206-1"}
 property_value: UBPROP:0000008 "In lampreys and apparently in some fossil fish, the parapineal body and the pineal body (epiphysis) are a bilateral pair of structures rather than being located in series, one in front of the other. A pair of visual structures may have been the ancestral condition of this pineal complex (Weichert, 1970, p.622). The parapineal organs of lampreys, tadpoles, and lizards possess cells similar to rods and cones. Frogs possess a brow spot or frontal organ where ancestral pineal eye might have been (Weichert, 1970, p.622)" xsd:string
 
@@ -47655,8 +48043,8 @@ xref: BAMS:APS
 xref: BIRNLEX:1096
 xref: DHBA:10642
 xref: FMA:61891
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=282
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=282 {source="BIRNLEX:1096"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=282
 xref: http://en.wikipedia.org/wiki/Anterior_perforated_substance
 xref: http://linkedlifedata.com/resource/umls/id/C0162436
 xref: http://www.snomedbrowser.com/Codes/Details/369108006
@@ -49684,8 +50072,8 @@ id: UBERON:0023623
 name: ventral nerve root of sacral spinal cord
 namespace: uberon
 synonym: "anterior nerve root of sacral spinal cord" RELATED [BIRNLEX:755]
-synonym: "ventral nerve root of sacral spinal cord" EXACT [BIRNLEX:755]
 synonym: "ventral nerve root of sacral spinal cord" EXACT HUMAN_PREFERRED [BIRNLEX:755]
+synonym: "ventral nerve root of sacral spinal cord" EXACT [BIRNLEX:755]
 xref: BIRNLEX:755
 is_a: UBERON:0009633 {source="NIFSTD"} ! root of sacral nerve
 
@@ -50110,8 +50498,8 @@ id: UBERON:0024110
 name: basis pontis
 namespace: uberon
 def: "The basis pontis is the anterior portion of the pons." [http://en.wikipedia.org/wiki/Basilar_part_of_pons]
-synonym: "basis pontis" EXACT [NLXANAT:20090704]
 synonym: "basis pontis" EXACT HUMAN_PREFERRED [NLXANAT:20090704]
+synonym: "basis pontis" EXACT [NLXANAT:20090704]
 xref: http://en.wikipedia.org/wiki/Basilar_part_of_pons
 xref: NLXANAT:20090704
 is_a: UBERON:0002616 ! regional part of brain
@@ -50520,8 +50908,8 @@ id: UBERON:0026546
 name: principal neuronal circuit
 namespace: uberon
 def: "A neuronal circuit bearing a principal projection neuron whose axon extends beyond the region where its soma is located to synapse on the dendrites of cells in other regions of the nervous system (BB)." [BIRNLEX:2514]
-synonym: "principal neuronal circuit" EXACT [BIRNLEX:2514]
 synonym: "principal neuronal circuit" EXACT HUMAN_PREFERRED [BIRNLEX:2514]
+synonym: "principal neuronal circuit" EXACT [BIRNLEX:2514]
 xref: BIRNLEX:2514
 is_a: UBERON:0024914 {source="NIFSTD"} ! circuit part of central nervous system
 
@@ -50577,8 +50965,8 @@ id: UBERON:0026721
 name: medial precentral sulcus
 namespace: uberon
 def: "A superficial feature of the frontal lobe that extends from the dorsal surface onto the medial surface of the superior frontal gyrus (Ono-90). (NN)" [BIRNLEX:4008]
-synonym: "medial precentral sulcus" EXACT HUMAN_PREFERRED [BIRNLEX:4008]
 synonym: "medial precentral sulcus" EXACT [BIRNLEX:4008]
+synonym: "medial precentral sulcus" EXACT HUMAN_PREFERRED [BIRNLEX:4008]
 xref: BIRNLEX:4008
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1610
 is_a: UBERON:0013118 ! sulcus of brain
@@ -51217,8 +51605,8 @@ is_a: UBERON:0026777 {source="NIFSTD"} ! Ongur, Price, and Ferry (2003) prefront
 id: UBERON:0028439
 name: Ongur, Price, and Ferry (2003) area Iapm
 namespace: uberon
-synonym: "ongur, price, and ferry (2003) area iapm" EXACT [BIRNLEX:4094]
 synonym: "ongur, price, and ferry (2003) area iapm" EXACT HUMAN_PREFERRED [BIRNLEX:4094]
+synonym: "ongur, price, and ferry (2003) area iapm" EXACT [BIRNLEX:4094]
 xref: BIRNLEX:4094
 is_a: UBERON:0026777 {source="NIFSTD"} ! Ongur, Price, and Ferry (2003) prefrontal cortical partition scheme region
 
@@ -52797,6 +53185,7 @@ relationship: part_of UBERON:0001898 ! hypothalamus
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cerivs
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/michaelerice
+property_value: RO:0002161 NCBITaxon:32523
 property_value: RO:0002175 NCBITaxon:8022 {source="http://www.ncbi.nlm.nih.gov/pubmed/4115676"}
 property_value: UBPROP:0000009 "Although its function remains hypothetical, it may contain sensory receptors for depth chemical detection. Other probable functions are osmoregulation ionic transport skeletal growth and tooth regeneration, although other homeostatic functions are not excluded" xsd:string
 property_value: UBPROP:0000009 "response to photoperiodic signals[PMID:23820554]" xsd:string
@@ -53457,6 +53846,8 @@ xref: TAO:0000235
 xref: ZFA:0000235
 is_a: UBERON:0006569 {source="ZFA"} ! diencephalic nucleus
 is_a: UBERON:0035568 ! superficial pretectal nucleus
+property_value: RO:0002161 NCBITaxon:27686 {source="ISBN:0471888893"}
+property_value: RO:0002161 NCBITaxon:7900 {source="ISBN:0471888893"}
 property_value: UBPROP:0000001 "Diencephalic nucleus that is part of the superficial pretectum and is caudally contiguous with the caudal pretectal nucleus. Cells of the magnocellular superficial pretectal nucleus are slightly larger and more orderly around a central neuropil than those of the caudal pretectal nucleus. From Neuroanatomy of the Zebrafish Brain." xsd:string {source="ZFA:0000235"}
 
 [Term]
@@ -53497,6 +53888,7 @@ xref: TAO:0000635
 xref: ZFA:0000635
 is_a: UBERON:0014450 ! pretectal nucleus
 relationship: part_of UBERON:2000183 ! central pretectum
+property_value: RO:0002161 NCBITaxon:40674
 property_value: RO:0002175 NCBITaxon:118040 {source="ISBN:0471888893"}
 property_value: RO:0002175 NCBITaxon:7898 {source="ISBN:0471888893"}
 property_value: UBPROP:0000001 "Diencephalic nucleus that is part of the central pretectum and is dorsal to the magnocellular superficial pretectal nucleus and the caudal pretectal nucleus. From Neuroanatomy of the Zebrafish Brain." xsd:string {source="ZFA:0000635"}
@@ -53521,6 +53913,7 @@ namespace: uberon
 def: "Any nucleus found in the superficial pretectum." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0014450 ! pretectal nucleus
 relationship: part_of UBERON:2000687 ! superficial pretectum
+property_value: RO:0002161 NCBITaxon:40674
 property_value: RO:0002175 NCBITaxon:118040 {src="ISBN:0471888893"}
 property_value: UBPROP:0000008 "Lateral in Squalimorphi due to lateral movements of neurons during pretectal development[ISBN:0471888893]" xsd:string
 
@@ -53538,6 +53931,7 @@ xref: ZFA:0000601
 is_a: UBERON:0006569 ! diencephalic nucleus
 is_a: UBERON:0014450 ! pretectal nucleus
 relationship: part_of UBERON:2000293 {source="ZFA"} ! synencephalon
+property_value: RO:0002161 NCBITaxon:40674
 property_value: RO:0002175 NCBITaxon:118040 {src="ISBN:0471888893"}
 
 [Term]
@@ -53769,6 +54163,7 @@ synonym: "dorsal cord" RELATED [WBbt:0006750]
 synonym: "dorsal nerve cord" NARROW [WBbt:0006750]
 xref: WBbt:0006750
 is_a: UBERON:0011215 {source="cjm"} ! central nervous system cell part cluster
+property_value: RO:0002161 NCBITaxon:7711
 
 [Term]
 id: UBERON:0035608

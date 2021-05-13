@@ -3,8 +3,13 @@ ontology: uberon/subsets/pulmonary-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001004>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001004>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -462,6 +467,7 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 id: CL:0019001
 name: tracheobronchial serous cell
 def: "Any serous secreting cell that is part of the tracheobronchial epithelium." []
+subset: added_for_HCA
 synonym: "serous cell of tracheobronchial tree" EXACT []
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
@@ -471,6 +477,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T16:03:27Z xsd:da
 id: CL:0019002
 name: tracheobronchial chondrocyte
 def: "Any chondrocyte that is part of the tracheobronchial tree." []
+subset: added_for_HCA
 synonym: "chondrocyte of tracheobronchial tree" EXACT []
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
@@ -480,6 +487,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T17:29:51Z xsd:da
 id: CL:0019003
 name: tracheobronchial goblet cell
 def: "Any goblet cell that is part of the tracheobronchial epithelium." []
+subset: added_for_HCA
 synonym: "goblet cell of tracheobronchial tree" EXACT []
 is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
 is_a: CL:0002370 ! respiratory goblet cell
@@ -1068,6 +1076,7 @@ xref: OpenCyc:Mx4rvVjxE5wpEbGdrcN5Y29ycA
 xref: UMLS:C0014540 {source="ncithesaurus:Epiglottis"}
 relationship: part_of UBERON:0001051 ! hypopharynx
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e2/Gray958.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8782
 property_value: UBPROP:0000007 "epiglottal" xsd:string
 
 [Term]
@@ -1286,6 +1295,7 @@ xref: XAO:0000117
 xref: ZFA:0000272
 is_a: UBERON:0000467 ! anatomical system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 property_value: UBPROP:0000001 "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000541", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000202", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.599 and Figure 18-23"}
 
@@ -1462,6 +1472,7 @@ xref: Thoracid:diaphragm
 xref: UMLS:C0011980 {source="ncithesaurus:Diaphragm"}
 xref: VHOG:0000713
 is_a: UBERON:0003831 ! respiratory system muscle
+property_value: RO:0002161 NCBITaxon:8782 {source="Comparative_anatomy_and_evolution"}
 property_value: UBPROP:0000001 "The diaphragm is a skeletal muscle that is responsible for contraction and expansion of the lungs[GO]." xsd:string {source="GO:0060539"}
 property_value: UBPROP:0000003 "The mammals are characterized by a diaphragm, which separates the thoracic portion of the body cavity from the abdominal region and assists in drawing air into the lungs and forcing it out. Modern reptiles lack a muscular diaphragm and it is reasonable to suppose that the diaphragm developed as a new device that made possible a large degree of oxygen intake for active animals. The change may have taken place during the transition from reptile to mammal (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000713", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0471384618 Colbert EH, Evolution of the vertebrates: a history of the backboned animals through time (2001) p.278"}
 property_value: UBPROP:0000007 "phrenic" xsd:string
@@ -2031,6 +2042,7 @@ xref: OpenCyc:Mx4rvp2ZWJwpEbGdrcN5Y29ycA
 xref: UMLS:C0024957 {source="ncithesaurus:Maxillary_Sinus"}
 is_a: UBERON:0001825 ! paranasal sinus
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3d/Gray1199.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:33554
 
 [Term]
 id: UBERON:0001824
@@ -2426,6 +2438,8 @@ xref: VHOG:0000310
 xref: XAO:0000119
 is_a: UBERON:0000171 ! respiration organ
 relationship: part_of UBERON:0000170 {note="some species only have a single lung"} ! pair of lungs
+property_value: RO:0002161 NCBITaxon:32443 {editor="BGEE:fb", source="https://github.com/obophenotype/uberon/issues/701"}
+property_value: RO:0002161 NCBITaxon:7777 {editor="BGEE:fb", source="https://github.com/obophenotype/uberon/issues/701"}
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/701 xsd:anyURI
 property_value: UBPROP:0000001 "Either of two organs which allow gas exchange absorbing oxygen from inhaled air and releasing carbon dioxide with exhaled air.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010567", ontology="AAO", source="AAO:SBH"}
 property_value: UBPROP:0000003 "Lungs had already developed as paired ventral pockets from the intestine in the ancestor of Osteognathostomata. (...) In actinopterygian fishes, apart from Cladistia, the ventral intestinal pocket migrates dorsally and becomes the swim-bladder, a mainly hydrostatical organ (reference 1); Comparative transcriptome analyses indicate molecular homology of zebrafish swimbladder and Mammalian lung (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000310", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.210, DOI:10.1371/journal.pone.0024019 Zheng W, Wang Z, Collins JE, Andrews RM, Stemple D, Gong Z, Comparative transcriptome analyses indicate molecular homology of zebrafish swimbladder and Mammalian lung. PLoS One (2011)"}
@@ -2837,6 +2851,7 @@ xref: XAO:0000121
 is_a: UBERON:0000117 ! respiratory tube
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/18/Respiratory_system_complete_numbered.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8507 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Each of the two primary divisions of the trachea leading respectively into the right and the left lung. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000262", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "bronchial" xsd:string
 property_value: UBPROP:0000008 "In humans, the main bronchus is histologically identical to trachea; 2ary and 3ary bronchi are not; epithelium becomes simple columnar, goblet cell number decreases, elastic fibers in lamina propria increases, distribution more uniform. Muscular layer between mucosa and submucosa appears. cartilage rings become discontinuous plates connected by fibrous connective tissue" xsd:string
@@ -3336,6 +3351,7 @@ xref: AAO:0010171
 xref: http://en.wikipedia.org/wiki/Gill
 xref: MESH:D005880
 relationship: part_of UBERON:0001004 ! respiratory system
+property_value: RO:0002161 NCBITaxon:32524
 
 [Term]
 id: UBERON:0003091
@@ -3832,6 +3848,7 @@ def: "An artery that is part of a respiratory system [Automatically generated de
 xref: EMAPA:37569 {source="MA:th"}
 xref: MA:0001804
 is_a: UBERON:0003643 ! respiratory system arterial blood vessel
+relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0003489
@@ -3943,6 +3960,7 @@ synonym: "venule of respiratory system" EXACT [OBOL:automatic]
 xref: EMAPA:37587 {source="MA:th"}
 xref: MA:0001813
 is_a: UBERON:0003504 ! respiratory system blood vessel
+relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0003495
@@ -4030,6 +4048,7 @@ synonym: "respiratory system capillary vessel" EXACT [OBOL:automatic]
 xref: EMAPA:37574 {source="MA:th"}
 xref: MA:0001807
 is_a: UBERON:0003504 ! respiratory system blood vessel
+relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0003529
@@ -4488,6 +4507,7 @@ def: "An arterial blood vessel that is part of a respiratory system [Automatical
 xref: EMAPA:37565 {source="MA:th"}
 xref: MA:0001800
 is_a: UBERON:0003504 ! respiratory system blood vessel
+relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0003706
@@ -5136,6 +5156,7 @@ synonym: "venous endothelium of respiratory system" EXACT [OBOL:automatic]
 xref: EMAPA:37585 {source="MA:th"}
 xref: MA:0001811
 is_a: UBERON:0004702 ! respiratory system blood vessel endothelium
+relationship: part_of UBERON:0003504 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! respiratory system blood vessel
 
 [Term]
 id: UBERON:0004861
@@ -6821,6 +6842,7 @@ xref: Pharyngeal:slit
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: depicted:by 280px-Gill:slits.png xsd:anyURI
 property_value: IAO:0000116 "requires review. Kardong uses the term pharyngeal slit for Chondrichthyans. 'branchial slit' may also be used for amniote structures." xsd:string
+property_value: RO:0002161 NCBITaxon:7742
 property_value: UBPROP:0000008 "homologous to pharyngeal pouches" xsd:string
 property_value: UBPROP:0000008 "may have been present in deuterostome ancestor[PMID:11961109]" xsd:string
 property_value: UBPROP:0000008 "Some hemichordate species can have as many as 200 gill slits" xsd:string
@@ -6983,6 +7005,7 @@ xref: NCIT:C33021
 xref: UMLS:C1261076 {source="ncithesaurus:Upper_Lobe_of_the_Left_Lung"}
 is_a: UBERON:0008948 {source="FMA"} ! upper lobe of lung
 is_a: UBERON:0008951 ! left lung lobe
+property_value: RO:0002161 NCBITaxon:10088 {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0008953
@@ -7005,6 +7028,7 @@ xref: NCIT:C33020
 xref: UMLS:C1261077 {source="ncithesaurus:Lower_Lobe_of_the_Left_Lung"}
 is_a: UBERON:0008949 {source="FMA"} ! lower lobe of lung
 is_a: UBERON:0008951 ! left lung lobe
+property_value: RO:0002161 NCBITaxon:10088 {source="ISBN:0123813611"}
 
 [Term]
 id: UBERON:0008954
@@ -7023,6 +7047,7 @@ xref: http://www.snomedbrowser.com/Codes/Details/184916009
 xref: NCIT:C40373
 xref: UMLS:C0225740 {source="ncithesaurus:Lingula"}
 relationship: part_of UBERON:0008952 {source="ISBN:0123813611"} ! upper lobe of left lung
+property_value: RO:0002161 NCBITaxon:10088 {source="ISBN:0123813611"}
 property_value: UBPROP:0000008 "the lingula of the left lung in humans is not normally considered a true lobe" xsd:string {seeAlso="https://github.com/obophenotype/uberon/issues/79"}
 property_value: UBPROP:0000012 "in Galen, it is a middle lobe" xsd:string
 
@@ -7217,6 +7242,7 @@ synonym: "gill basket" EXACT [http://www.briancoad.com/dictionary/DicPics/branch
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: depicted:by http://dev.duit.uwa.edu.au/zoology/media/lamp/E19.jpg xsd:anyURI
 property_value: IAO:0000116 "developmental relationship needs to be changed if the scope is broadened, as NC is vertebrate-specific" xsd:string
+property_value: RO:0002161 NCBITaxon:117570
 property_value: UBPROP:0000008 "May also be present in amphioxus" xsd:string
 property_value: UBPROP:0000009 "functions by elastic recoil" xsd:string
 
@@ -7447,6 +7473,7 @@ synonym: "spiracle" BROAD SENSU [NCBITaxon:7742]
 synonym: "vertebrate spiracle" EXACT []
 xref: Vertebrates
 relationship: part_of UBERON:0001004 ! respiratory system
+property_value: RO:0002161 NCBITaxon:32523
 property_value: RO:0002175 NCBITaxon:119203
 property_value: UBPROP:0000008 "In elasmobranchs (sharks and rays), a spiracle is found behind each eye, and is often used to pump water through the gills while the animal is at rest (Fouts, 2003). A spiracle is also found in primitive bony fishes as the chirrups." xsd:string
 property_value: UBPROP:0000008 "The spiracle is still found in all cartilaginous fish except chimaeras, and in bony fishes in the coelacanth, sturgeon, paddlefish and bichirs. It is also seen as an otic notch in the skull of the extinct labyrinthodonts, and is thought to be associated with the ear opening in amniotes and frogs" xsd:string {source="WP"}
@@ -8105,6 +8132,7 @@ namespace: uberon
 def: "A respiratory pump found in basal craniates" [http://en.wikipedia.org/wiki/http\://palaeos.com/vertebrates/glossary/glossaryUV.html]
 synonym: "velum" BROAD []
 is_a: UBERON:0000171 ! respiration organ
+property_value: RO:0002161 NCBITaxon:7776
 property_value: RO:0002175 NCBITaxon:7762
 property_value: UBPROP:0000008 "this is restricted to hagfishes; structure with same name found in tunicates." xsd:string
 property_value: UBPROP:0000009 "Muscular scroll-like flap that moves water through median nostril and over gills" xsd:string
@@ -8294,6 +8322,7 @@ namespace: uberon
 def: "Subdivision of skeleton that is part of the velum and consists of a complex arrangement of thin cartilage rods and arches" [http://orcid.org/0000-0002-6601-2165, ISBN:9780226315683]
 synonym: "skeleton of velum" EXACT [http://orcid.org/0000-0002-6601-2165]
 relationship: part_of UBERON:0012121 ! respiratory velum
+property_value: RO:0002161 NCBITaxon:7776
 property_value: RO:0002175 NCBITaxon:7762
 
 [Term]
@@ -8597,6 +8626,7 @@ def: "The external part of the developing pharynx that is made of ectoderm. Duri
 xref: TAO:0001379
 xref: ZFA:0001379
 is_a: UBERON:0003351 ! pharyngeal epithelium
+relationship: part_of UBERON:0001042 ! chordate pharynx
 
 [Term]
 id: UBERON:0017616
@@ -8690,6 +8720,7 @@ namespace: uberon
 synonym: "branchial bar" RELATED []
 synonym: "gill bar" RELATED []
 relationship: part_of UBERON:0001042 ! chordate pharynx
+property_value: RO:0002161 NCBITaxon:7776
 property_value: RO:0002175 NCBITaxon:117569
 property_value: RO:0002175 NCBITaxon:7737
 property_value: UBPROP:0000008 "Haikouella possessed a small number of pharyngeal bars that may have been composed of mucocartilage, as in modern lampreys (Holland and Chen, 2001). the pharyngeal bars of Haikouella were probably derived from neural crest, as were the sensory components of the cranial nerves that innervated its pharyngeal muscles[http://icb.oxfordjournals.org/content/42/4/743.full]" xsd:string
@@ -9246,6 +9277,7 @@ name: vasculature of respiratory integument
 namespace: uberon/phenoscape-anatomy
 def: "Blood vessels in respiratory skin." [AAO:EJS]
 is_a: UBERON:0003504 ! respiratory system blood vessel
+relationship: part_of UBERON:0001004 ! respiratory system
 property_value: IAO:0000116 "Modified from the original AAO source" xsd:string
 created_by: amphibian_anatomy_curators
 

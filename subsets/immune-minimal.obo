@@ -3,8 +3,13 @@ ontology: uberon/subsets/immune-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0002405>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0002405>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -1357,6 +1362,9 @@ id: CL:0000865
 name: gastrointestinal tract (lamina propria) macrophage
 namespace: cell
 def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." []
+synonym: "gastrointestinal system (lamina propria) macrophage" EXACT []
+synonym: "macrophage of gastrointestinal system (lamina propria)" EXACT []
+synonym: "macrophage of gastrointestinal tract (lamina propria)" EXACT []
 is_a: CL:0000885 ! gut-associated lymphoid tissue macrophage
 
 [Term]
@@ -5274,35 +5282,107 @@ created_by: tmeehan
 creation_date: 2011-08-29T10:08:02Z
 
 [Term]
+id: CL:0009007
+name: gastrointestinal tract (lamina propria) macrophage of small intestine
+def: "A macrophage which is resident in the lamina propria of the small intestine." []
+subset: location_grouping
+synonym: "macrophage of small intestine" BROAD []
+synonym: "small intestine lamina propria resident macrophage" EXACT []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009008
+name: gastrointestinal tract (lamina propria) macrophage of large intestine
+def: "A macrophage which is resident in the lamina propria of the large intestine." []
+subset: location_grouping
+synonym: "large intestine lamina propria resident macrophage" EXACT []
+synonym: "macrophage of large intestine" BROAD []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009014
 name: Peyer's patch lymphocyte
 def: "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." []
+subset: location_grouping
 synonym: "Peyer's patch resident lymphocyte" EXACT []
 synonym: "small intestine Peyer's patch lymphocyte" NARROW []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0000542 ! lymphocyte
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009015
 name: Peyer's patch follicular dendritic cell
 def: "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside." []
-xref: https://orcid.org/0000-0003-4183-8865
-xref: PMID:24437401
+subset: location_grouping
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009018
 name: lymphocyte of large intestine lamina propria
 def: "A lymphocyte that resides in the lamina propria of the large intestine." []
+subset: location_grouping
 synonym: "lamina propria lymphocyte of large intestine" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0000542 ! lymphocyte
-property_value: location_grouping "" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009023
+name: small intestine Peyer's patch T cell
+def: "A T cell which resides in the Peyer's patch of the small intestine." []
+subset: location_grouping
+synonym: "T cell of Peyer's patch of small intestine" EXACT []
+synonym: "T cell of small intestine Peyer's patch" EXACT []
+is_a: CL:0002419 ! mature T cell
+is_a: CL:0009014 ! Peyer's patch lymphocyte
+relationship: part_of UBERON:0003454 ! small intestine Peyer's patch
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009031
+name: T cell of appendix
+def: "A T cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix T cell" EXACT []
+synonym: "T cell of appendix vermiformis" EXACT []
+synonym: "T cell of vermiform appendix" EXACT []
+is_a: CL:0000084 ! T cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009032
+name: B cell of appendix
+def: "A B cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix B cell" EXACT []
+synonym: "B cell of appendix vermiformis" EXACT []
+synonym: "B cell of vermiform appendix" EXACT []
+is_a: CL:0000236 ! B cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009033
+name: plasma cell of appendix
+def: "A plasma cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix plasma cell" EXACT []
+synonym: "plasma cell of appendix vermiformis" EXACT []
+synonym: "plasma cell of vermiform appendix" EXACT []
+is_a: CL:0000786 ! plasma cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009034
+name: dendritic cell of appendix
+def: "A dendritic cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix dendritic cell" EXACT []
+synonym: "dendritic cell of appendix vermiformis" EXACT []
+synonym: "dendritic cell of vermiform appendix" EXACT []
+is_a: CL:0000451 ! dendritic cell
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -5604,6 +5684,8 @@ xref: ZFA_RETIRED:0005318
 is_a: UBERON:0005057 ! immune organ
 relationship: part_of UBERON:0002465 ! lymphoid system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b8/Illu_lymph_node_structure.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32443 {source="https://doi.org/10.1177/0192623311409597", source="ZFA:0005318"}
+property_value: RO:0002161 NCBITaxon:8570 {source="Wikipedia"}
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/650 xsd:anyURI
 property_value: UBPROP:0000003 "Lymph nodes that are associated with the lymphatic system have evolved in mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001273", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.630"}
 
@@ -5616,6 +5698,7 @@ comment: Phenotype notes: Leydig's organ can be quite large - a 1.6-kilogram (3.
 subset: uberon_slim
 xref: Leydig's:organ
 is_a: UBERON:0005057 ! immune organ
+property_value: RO:0002161 NCBITaxon:7863 {source="Wikipedia"}
 property_value: UBPROP:0000008 "Found in elasmobranchs (sharks and rays) but with some exceptions." xsd:string
 
 [Term]
@@ -5860,6 +5943,7 @@ xref: NCIT:C12771
 xref: Peyer's:patch
 xref: UMLS:C0031272 {source="ncithesaurus:Peyer_s_Patch"}
 is_a: UBERON:0001962 {source="FMA", source="MA"} ! gut-associated lymphoid tissue
+property_value: RO:0002161 NCBITaxon:8459 {source="http://www.ncbi.nlm.nih.gov/pubmed/PMID:20181529"}
 property_value: UBPROP:0000008 "Reptiles have accumulations of lymphocytes in their guts that may be primitive Peyer's patches (Zapata and Solas)." xsd:string
 property_value: UBPROP:0000012 "FMA has [set of?] [aggregated,small] lymphoid [follice,nodule] of [colon, SI, I, etc]" xsd:string {external_ontology="FMA"}
 property_value: UBPROP:0000012 "Pp is a syn for Aggregated lymphoid follicle of small intestine; but MA uses Pp as covering both SI and LI. MA also includes follicle as a part. WP says duodenum and jejunum lack PPs" xsd:string {external_ontology="MA"}
@@ -7125,6 +7209,9 @@ xref: FMA:63199
 xref: http://www.snomedbrowser.com/Codes/Details/9081000
 xref: Sinusoids
 relationship: part_of UBERON:0001250 ! red pulp of spleen
+property_value: RO:0002161 NCBITaxon:10088 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
+property_value: RO:0002161 NCBITaxon:9681 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
+property_value: RO:0002161 NCBITaxon:9822 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
 property_value: RO:0002175 NCBITaxon:10114 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
 property_value: UBPROP:0000008 "Whereas man and the rat are in the 'sinusal' group, the mouse belongs in the 'nonsinusal' group. The red pulp of spleens of rat, dog, man, and many other mammals contains an elaborate plexus of sinuses; that of mouse, cat, pig and others has no true sinuses and relatively few veins leading from the meshes into collecting veins - http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml" xsd:string
 
@@ -7452,6 +7539,7 @@ def: "The compartment located between the marginal zone and the red pulp harbori
 subset: pheno_slim
 relationship: part_of UBERON:0002106 ! spleen
 property_value: IAO:0000116 "TODO - check spleen marginal sinus" xsd:string
+property_value: RO:0002161 NCBITaxon:9989 {source="MP:0002363"}
 property_value: RO:0002175 NCBITaxon:9606
 property_value: UBPROP:0000008 "The perifollicular zone, which is present in human and not rodents, may be the functional equivalent of the marginal sinus in rodents." xsd:string {source="MP:0002363"}
 
@@ -7849,6 +7937,7 @@ namespace: uberon
 def: "An elongate paired tissue ventral to the kidneys and partialy enveloping the anterior gonads in Elasmobranchii. Apparently important to the immune system" [http://www.fishbase.org/glossary/Glossary.php?q=epigonal+organ]
 synonym: "subgonal organ" EXACT []
 is_a: UBERON:0005057 ! immune organ
+property_value: RO:0002161 NCBITaxon:7863 {source="Wikipedia"}
 
 [Term]
 id: UBERON:0010015
@@ -7992,6 +8081,7 @@ xref: NCIT:C49776
 xref: UMLS:C1710157 {source="ncithesaurus:Splenic_Marginal_Sinus"}
 is_a: UBERON:0001959 ! white pulp of spleen
 property_value: IAO:0000116 "Note that there is no consensus in the literature about which compartments constitute the white pulp or the ramifications of the microvasculature. In addition, notable differences exist between humans and rodents. In this ontology, the marginal sinus (which may not exist in human) has been included as part of the white pulp. The perifollicular zone, which is present in human and not rodents, may be the functional equivalent of the marginal sinus in rodents." xsd:string {source="MP:0002363"}
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0010399
@@ -8380,7 +8470,6 @@ synonym: "penicillar artery" RELATED []
 synonym: "penicilli" EXACT PLURAL [http://www.merriam-webster.com/medical/penicilli]
 synonym: "penicillus" EXACT [FMA:16038]
 xref: FMA:16038
-is_a: UBERON:0010399 ! spleen trabecular artery
 is_a: UBERON:0022292 ! splenic arteriole
 relationship: part_of UBERON:0010401 ! spleen central arteriole
 
@@ -8890,6 +8979,7 @@ xref: http://en.wikipedia.org/wiki/Deep_parotid_lymph_nodes
 xref: http://www.snomedbrowser.com/Codes/Details/279142004
 is_a: UBERON:0015857 {source="FMA"} ! parotid lymph node
 is_a: UBERON:0015918 ! deep lymph node
+property_value: RO:0002161 NCBITaxon:10090 {source="http://www.ncbi.nlm.nih.gov/pubmed/16624319"}
 
 [Term]
 id: UBERON:0016394

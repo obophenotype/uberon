@@ -3,8 +3,13 @@ ontology: uberon/subsets/digestive-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001007>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001007>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -152,8 +157,11 @@ id: CL:0000865
 name: gastrointestinal tract (lamina propria) macrophage
 namespace: cell
 def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." []
+synonym: "gastrointestinal system (lamina propria) macrophage" EXACT []
+synonym: "macrophage of gastrointestinal system (lamina propria)" EXACT []
+synonym: "macrophage of gastrointestinal tract (lamina propria)" EXACT []
 is_a: CL:0000885 ! gut-associated lymphoid tissue macrophage
-relationship: part_of UBERON:0001238 ! lamina propria of small intestine
+relationship: part_of UBERON:0004780 ! gastrointestinal system lamina propria
 
 [Term]
 id: CL:0000869
@@ -800,100 +808,285 @@ xref: http://en.wikipedia.org/wiki/Salivary_gland
 relationship: part_of UBERON:0001044 ! saliva-secreting gland
 
 [Term]
+id: CL:0009007
+name: gastrointestinal tract (lamina propria) macrophage of small intestine
+def: "A macrophage which is resident in the lamina propria of the small intestine." []
+subset: location_grouping
+synonym: "macrophage of small intestine" BROAD []
+synonym: "small intestine lamina propria resident macrophage" EXACT []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+relationship: part_of UBERON:0001238 ! lamina propria of small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009008
+name: gastrointestinal tract (lamina propria) macrophage of large intestine
+def: "A macrophage which is resident in the lamina propria of the large intestine." []
+subset: location_grouping
+synonym: "large intestine lamina propria resident macrophage" EXACT []
+synonym: "macrophage of large intestine" BROAD []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+relationship: part_of UBERON:0011189 ! lamina propria of large intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009009
 name: paneth cell of epithelium of large intestine
 def: "A paneth cell that is located in the epithelium of the large intestine." []
+subset: location_grouping
 synonym: "paneth-like cell" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 is_a: CL:0000510 ! paneth cell
 is_a: CL:0002658 ! glandular cell of the large intestine
 relationship: part_of UBERON:0001278 ! epithelium of large intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009011
 name: transit amplifying cell of large intestine
 def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the large intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." []
+subset: location_grouping
 synonym: "large intestine transit amplifying cell" EXACT []
 synonym: "transient amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
 synonym: "transient amplifying cell of large intestine" EXACT []
 synonym: "transit amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
 synonym: "transit-amplifying cell of large intestine" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 relationship: part_of UBERON:0001984 ! crypt of Lieberkuhn of large intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009012
 name: transit amplifying cell of small intestine
 def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the small intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." []
+subset: location_grouping
 synonym: "small intestine transit amplifying cell" EXACT []
 synonym: "transient amplifying cell of crypt of Lieberkuhn of small intestine" EXACT []
 synonym: "transient amplifying cell of small intestine" EXACT []
 synonym: "transit amplifying cell of crypt of Lieberkuhn of small intestine" EXACT []
 synonym: "transit-amplifying cell of small intestine" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 relationship: part_of UBERON:0001241 ! crypt of Lieberkuhn of small intestine
-property_value: location_grouping "" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009013
+name: fetal hepatobiliary progenitor cell
+def: "A progenitor cell with hepatic and biliary lineage potential, identified in mouse and human, and anatomically restricted to the ductal plate of fetal liver." []
+subset: added_for_HCA
+synonym: "fetal hepatobiliary hybrid progenitor cell" EXACT []
+synonym: "HHyP cell" EXACT []
+relationship: part_of UBERON:0002394 ! bile duct
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009014
 name: Peyer's patch lymphocyte
 def: "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." []
+subset: location_grouping
 synonym: "Peyer's patch resident lymphocyte" EXACT []
 synonym: "small intestine Peyer's patch lymphocyte" NARROW []
-xref: https://orcid.org/0000-0003-4183-8865
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009015
 name: Peyer's patch follicular dendritic cell
 def: "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside." []
-xref: https://orcid.org/0000-0003-4183-8865
-xref: PMID:24437401
+subset: location_grouping
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009016
 name: intestinal crypt stem cell of large intestine
 def: "An intestinal stem cell that is located in the large intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the large intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." []
+subset: location_grouping
 synonym: "crypt stem cell of large intestine" BROAD []
 synonym: "stem cell of large intestine crypt of Lieberkuhn" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0002250 ! intestinal crypt stem cell
 is_a: CL:0002253 ! epithelial cell of large intestine
 relationship: part_of UBERON:0001984 ! crypt of Lieberkuhn of large intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009017
 name: intestinal crypt stem cell of small intestine
 def: "An intestinal stem cell that is located in the small intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the small intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." []
+subset: location_grouping
 synonym: "crypt stem cell of small intestine" BROAD []
 synonym: "stem cell of small intestine crypt of Lieberkuhn" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0002250 ! intestinal crypt stem cell
 is_a: CL:0002254 ! epithelial cell of small intestine
 relationship: part_of UBERON:0001241 ! crypt of Lieberkuhn of small intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009018
 name: lymphocyte of large intestine lamina propria
 def: "A lymphocyte that resides in the lamina propria of the large intestine." []
+subset: location_grouping
 synonym: "lamina propria lymphocyte of large intestine" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 relationship: part_of UBERON:0011189 ! lamina propria of large intestine
-property_value: location_grouping "" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009020
+name: tuft cell of appendix
+def: "An intestinal tuft cell that is a part of a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix tuft cell" EXACT []
+synonym: "tuft cell of appendix vermiformis" EXACT []
+synonym: "tuft cell of vermiform appendix" EXACT []
+is_a: CL:0002203 ! brush cell of epithelium proper of large intestine
+is_a: CL:1000405 ! epithelial cell of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009021
+name: stromal cell of lamina propria of large intestine
+def: "A stromal cell found in the lamina propria of the large intestine." []
+subset: location_grouping
+relationship: part_of UBERON:0011189 ! lamina propria of large intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009022
+name: stromal cell of lamina propria of small intestine
+def: "A stromal cell found in the lamina propria of the small intestine." []
+subset: location_grouping
+relationship: part_of UBERON:0001238 ! lamina propria of small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009023
+name: small intestine Peyer's patch T cell
+def: "A T cell which resides in the Peyer's patch of the small intestine." []
+subset: location_grouping
+synonym: "T cell of Peyer's patch of small intestine" EXACT []
+synonym: "T cell of small intestine Peyer's patch" EXACT []
+is_a: CL:0009014 ! Peyer's patch lymphocyte
+relationship: part_of UBERON:0003454 ! small intestine Peyer's patch
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009024
+name: mesothelial cell of small intestine
+def: "A mesothelial cell that is part of the small intestine." []
+subset: location_grouping
+is_a: CL:0002254 ! epithelial cell of small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009025
+name: mesothelial cell of large intestine
+def: "A mesothelial cell that is part of the large intestine." []
+subset: location_grouping
+is_a: CL:0002253 ! epithelial cell of large intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009026
+name: enterocyte of appendix
+def: "An enterocyte that is a part of a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix enterocyte" EXACT []
+synonym: "enterocyte of appendix vermiformis" EXACT []
+synonym: "enterocyte of vermiform appendix" EXACT []
+is_a: CL:1000347 ! vacuolar absorptive cell of epithelium of colon
+is_a: CL:1000405 ! epithelial cell of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009027
+name: transit amplifying cell of appendix
+def: "A transit amplifying cell that is part of a crypt of Lieberkuhn of large intestine." []
+subset: location_grouping
+synonym: "appendix transit amplifying cell" EXACT []
+synonym: "transit amplifying cell of appendix vermiformis" EXACT []
+synonym: "transit amplifying cell of vermiform appendix" EXACT []
+is_a: CL:0009011 ! transit amplifying cell of large intestine
+relationship: part_of UBERON:0013486 ! crypt of Lieberkuhn of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009028
+name: intestinal crypt stem cell of appendix
+def: "An intestinal crypt stem cell that is located in the vermiform appendix. These stem cells reside at the bottom of crypts in the appendix and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." []
+subset: location_grouping
+synonym: "appendix intestinal crypt stem cell" EXACT []
+synonym: "intestinal crypt stem cell of appendix vermiformis" EXACT []
+synonym: "intestinal crypt stem cell of vermiform appendix" EXACT []
+synonym: "stem cell of intestinal crypt of Lieberkuhn of appendix" EXACT []
+synonym: "stem cell of intestinal crypt of Lieberkuhn of appendix vermiformis" EXACT []
+is_a: CL:0009016 ! intestinal crypt stem cell of large intestine
+is_a: CL:1000405 ! epithelial cell of appendix
+relationship: part_of UBERON:0013486 ! crypt of Lieberkuhn of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009029
+name: mesothelial cell of appendix
+def: "A mesothelial cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix mesothelial cell" EXACT []
+synonym: "mesothelial cell of appendix vermiformis" EXACT []
+synonym: "mesothelial cell of vermiform appendix" EXACT []
+is_a: CL:0009025 ! mesothelial cell of large intestine
+is_a: CL:1000405 ! epithelial cell of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009030
+name: enteroendocrine cell of appendix
+def: "An intestinal enteroendocrine cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix enteroendocrine cell" EXACT []
+synonym: "enteroendocrine cell of appendix vermiformis" EXACT []
+synonym: "enteroendocrine cell of vermiform appendix" EXACT []
+is_a: CL:1001516 ! intestinal enteroendocrine cell
+is_a: CL:1001585 ! appendix glandular cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009031
+name: T cell of appendix
+def: "A T cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix T cell" EXACT []
+synonym: "T cell of appendix vermiformis" EXACT []
+synonym: "T cell of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009032
+name: B cell of appendix
+def: "A B cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix B cell" EXACT []
+synonym: "B cell of appendix vermiformis" EXACT []
+synonym: "B cell of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009033
+name: plasma cell of appendix
+def: "A plasma cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix plasma cell" EXACT []
+synonym: "plasma cell of appendix vermiformis" EXACT []
+synonym: "plasma cell of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009034
+name: dendritic cell of appendix
+def: "A dendritic cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix dendritic cell" EXACT []
+synonym: "dendritic cell of appendix vermiformis" EXACT []
+synonym: "dendritic cell of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -2305,6 +2498,7 @@ xref: OpenCyc:Mx4rvVjxE5wpEbGdrcN5Y29ycA
 xref: UMLS:C0014540 {source="ncithesaurus:Epiglottis"}
 relationship: part_of UBERON:0001051 ! hypopharynx
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e2/Gray958.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8782
 property_value: UBPROP:0000007 "epiglottal" xsd:string
 
 [Term]
@@ -2574,6 +2768,10 @@ is_a: UBERON:0004921 {source="cjm"} ! subdivision of digestive tract
 is_a: UBERON:0010039 {source="cjm"} ! food storage organ
 relationship: part_of UBERON:0001041 ! foregut
 property_value: depicted:by Stomach:diagram.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:7864 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:7878 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:7955 {source="ZFA"}
+property_value: RO:0002161 NCBITaxon:9259 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Portion of alimentary canal with increased circular and longitudinal smooth muscle. Bounded posteriorly by the pyloric sphincter. Mucosal lining has increased folding.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000579", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000003 "It appears that the stomach has an ancient origin. The stomach first appears in the fish lineage. The prevertebrate chordates do not have a true stomach, whereas the cartilaginous and bony fish do. Although most fish do have a true stomach, some fish species appear to have lost the stomach secondarily. The remaining vertebrate lineages do have a true stomach (at least in the adult animal), although there is great variation in the size and shape of the stomach.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000408", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1046/j.1525-142x.2000.00076.x Smith DM, Grasty RC, Theodosiou NA, Tabin CJ, Nascone-Yoder NM, Evolutionary relationships between the amphibian, avian, and mammalian stomachs. Evolution and development (2000)"}
 property_value: UBPROP:0000008 "We restrict this to the vertebrate specific structure - see the grouping class 'food storage organ' for analogous structures in other species. Teleosts: Zebrafish is functionally stomach-less, but may retain ontogenic footprint. Although the precise shape and size of the stomach varies widely among different vertebrates, the relative positions of the oesophageal and duodenal openings remain relatively constant. As a result, the organ always curves somewhat to the left before curving back to meet the pyloric sphincter. However, lampreys, hagfishes, chimaeras, lungfishes, and some teleost fish have no stomach at all, with the oesophagus opening directly into the intestine. The gastric lining is usually divided into two regions, an anterior portion lined by fundic glands, and a posterior with pyloric glands. Cardiac glands are unique to mammals, and even then are absent in a number of species. The distributions of these glands vary between species, and do not always correspond with the same regions as in man. Furthermore, in many non-human mammals, a portion of the stomach anterior to the cardiac glands is lined with epithelium essentially identical to that of the oesophagus. Ruminants, in particular, have a complex stomach, the first three chambers of which are all lined with oesophageal mucosa" xsd:string {source="WP:Stomach#In_other_animals"}
@@ -3347,6 +3545,7 @@ xref: VHOG:0001559
 is_a: UBERON:0009854 ! digestive tract diverticulum
 relationship: part_of UBERON:0001155 {source="EHDAA2"} ! colon
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/82/Stomach_colon_rectum_diagram.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32443 {source="Wikipedia"}
 property_value: UBPROP:0000007 "caecal" xsd:string
 property_value: UBPROP:0000008 "A cecum is present in most amniote species, and also in lungfish, but not in any living species of amphibian. In reptiles, it is usually a single median structure, arising from the dorsal side of the large intestine. Birds typically have two paired ceca, as, unlike other mammals, do hyraxes. Most mammalian herbivores have a relatively large cecum, hosting a large number of bacteria, which aid in the enzymatic breakdown of plant materials such as cellulose; in many species, it is considerably wider than the colon. In contrast, obligatory carnivores, whose diets contain little or no plant material, have a reduced cecum, which is often partially or wholly replaced by the vermiform appendix. Many fish have a number of small outpocketings, called pyloric ceca, along their intestine; despite the name they are not homologous with the cecum of amniotes, and their purpose is to increase the overall area of the digestive epithelium.[2] Some invertebrates, such as squid,[3] may also have structures with the same name, but these have no relationship with those of vertebrates." xsd:string {source="WP"}
 
@@ -4134,6 +4333,7 @@ xref: VHOG:0001466
 xref: XAO:0000457
 is_a: UBERON:0011185 ! gastrointestinal sphincter
 relationship: part_of UBERON:0001166 ! pylorus
+property_value: RO:0002161 NCBITaxon:8355
 property_value: UBPROP:0000003 "(...) the adult Xenopus stomach exhibits both glandular and aglandular regions and a distinct pyloric sphincter similar to that of the amniotic vertebrates (...).[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001466", ontology="VHOG", source="http://bgee.unil.ch/", source="https://doi.org/10.1046/j.1525-142x.2000.00076.x"}
 
 [Term]
@@ -4356,6 +4556,7 @@ xref: Peyer's:patch
 xref: UMLS:C0031272 {source="ncithesaurus:Peyer_s_Patch"}
 is_a: UBERON:0001962 {source="FMA", source="MA"} ! gut-associated lymphoid tissue
 relationship: part_of UBERON:0001242 ! intestinal mucosa
+property_value: RO:0002161 NCBITaxon:8459 {source="http://www.ncbi.nlm.nih.gov/pubmed/PMID:20181529"}
 property_value: UBPROP:0000008 "Reptiles have accumulations of lymphocytes in their guts that may be primitive Peyer's patches (Zapata and Solas)." xsd:string
 property_value: UBPROP:0000012 "FMA has [set of?] [aggregated,small] lymphoid [follice,nodule] of [colon, SI, I, etc]" xsd:string {external_ontology="FMA"}
 property_value: UBPROP:0000012 "Pp is a syn for Aggregated lymphoid follicle of small intestine; but MA uses Pp as covering both SI and LI. MA also includes follicle as a part. WP says duodenum and jejunum lack PPs" xsd:string {external_ontology="MA"}
@@ -5123,6 +5324,8 @@ xref: VHOG:0000309
 xref: WBbt:0005743
 xref: ZFA:0000112
 relationship: part_of UBERON:0001007 ! digestive system
+property_value: RO:0002161 NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
+property_value: RO:0002161 NCBITaxon:41324 {source="https://doi.org/10.1371/journal.pone.0016309"}
 property_value: UBPROP:0000001 "The alimentary or digestive tract, and associated organs.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000112", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "The bilaterian gut is typically a complete tube that opens to the exterior at both ends. It consists of mouth, foregut, midgut, hindgut, and anus (reference 1); Although all vertebrates have a digestive tract and accessory glands, various parts of this system are not necessarily homologous, analogous, or even present in all species. Therefore, broad comparisons can be best made under the listings of headgut, foregut, midgut, pancreas and biliary system, hindgut (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000309", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.203, ISBN:978-0521617147 Stevens CE and Hume ID, Comparative physiology of the vertebrate digestive system (2004) p.11"}
 property_value: UBPROP:0000012 "FMA also has a term 'gastrointestinal tract', but this includes the liver." xsd:string {external_ontology="FMA"}
@@ -5390,6 +5593,7 @@ xref: UMLS:C0222734 {source="ncithesaurus:Palatine_Bone"}
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0011085 ! palatoquadrate arch
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/44/Gray996.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32519 {source="TAO"}
 property_value: UBPROP:0000001 "Dermal bone that forms the antero-lateral region of the palate and is located ventral to the autopalatine. The dermopalatine is bilaterally paired and usually bears teeth.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000015", ontology="TAO", source="TAO:GA_TG"}
 property_value: UBPROP:0000005 "Dermopalatine: same as palatine. The prefix is used by fish people because the palatine is a dermal replacement bone for a section of the autopalatine section of the palatoquadrate. In that context, palatine is potentially ambiguous.[Palaeos]" xsd:string {date_retrieved="2012-09-17", source="http://palaeos.com/vertebrates/glossary/glossaryD.html"}
 property_value: UBPROP:0000005 "In ostariophysans, the dermopalatine is absent.[TAO]" xsd:string {date_retrieved="2012-09-06", external_class="TAO:0000015", ontology="TAO", source="Curator"}
@@ -5787,6 +5991,7 @@ xref: Soft:palate
 xref: UMLS:C0030219 {source="ncithesaurus:Soft_Palate"}
 relationship: part_of UBERON:0001716 {source="MA"} ! secondary palate
 property_value: depicted:by Tonsils:diagram.jpg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8782 {source="GOC:fmc"}
 property_value: UBPROP:0000001 "A muscular arch-shaped structure that is composed of the musculus uvuli and parts of tensor veli palatini, levator veli palatini, palatoglossus and palatopharyngeus and attaches to the hard palate and modulates the connections between the oral cavity and pharynx soft tissue arch .[FEED]" xsd:string {date_retrieved="2012-07-02", ontology="FEED", url="http://www.feedexp.org"}
 property_value: UBPROP:0000007 "velar" xsd:string
 
@@ -5941,6 +6146,7 @@ xref: OpenCyc:Mx4rvp2ZWJwpEbGdrcN5Y29ycA
 xref: UMLS:C0024957 {source="ncithesaurus:Maxillary_Sinus"}
 relationship: part_of UBERON:0002397 ! maxilla
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3d/Gray1199.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:33554
 
 [Term]
 id: UBERON:0001828
@@ -6115,6 +6321,7 @@ xref: ZFA:0007006
 relationship: part_of UBERON:0000165 {source="BTO", source="FMA-implicit", source="VHOG", source="ZFA"} ! mouth
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/90/Lips.JPG xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/99/Mouth.jpg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8782
 property_value: UBPROP:0000001 "Surface structure that is one of the two fleshy folds surrounding the opening of the mouth.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0007006", ontology="TAO", source="http://purl.obolibrary.org/obo/uberon/http/:www.medterms.com/script/main/art.asp?articlekey=9458", source="ZFIN:curator"}
 property_value: UBPROP:0000007 "labial" xsd:string
 
@@ -6753,6 +6960,9 @@ is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0002423 {source="MA", source="ZFA", source="cjm"} ! hepatobiliary system
 property_value: depicted:by Abdomal:organs.svg xsd:anyURI
 property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/b/b1/GallbladderAnatomy-en.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:10114 {source="ISBN:9780120749034"}
+property_value: RO:0002161 NCBITaxon:8801 {source="GOC:mr", source="ISBN:9781840761122"}
+property_value: RO:0002161 NCBITaxon:8930 {source="GOC:mr", source="ISBN:9781840761122"}
 property_value: UBPROP:0000001 "Membranous muscular sac in which the bile from the liver remains stored until it is required. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000221", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000001 "Organ attached to the liver which stores bile and empties into the duodenum via the bile duct as needed for digestion.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010114", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000002 "relationship type change: differentiates_from endoderm (AAO:0000139) CHANGED TO: develops_from endoderm (UBERON:0000925)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010114", ontology="AAO"}
@@ -6828,6 +7038,7 @@ xref: XAO:0000236
 is_a: UBERON:0004921 {order="3", source="cjm"} ! subdivision of digestive tract
 relationship: part_of UBERON:0002108 ! small intestine
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b3/Tractus_intestinalis_duodenum.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:7955 {source="ZFA:0000348"}
 property_value: UBPROP:0000001 "The fixed portion of the small intestine deeply lodged in the posterior wall of the abdomen and extending from the pylorus to the beginning of the jejunum. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000052", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "duodenal" xsd:string
 property_value: UBPROP:0000008 "In fish, the divisions of the small intestine are not as clear, and the terms anterior intestine or proximal intestine may be used instead of duodenum." xsd:string {scope="NCBITaxon:32443", source="http://en.wikipedia.org/wiki/Duodenum"}
@@ -6942,6 +7153,7 @@ xref: ZFA:0000567
 is_a: UBERON:0011597 ! bone of upper jaw
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/4a/Gray160.png xsd:anyURI
 property_value: IAO:0000116 "requires checking embryonic vs adult; isa fetal organ part in FMA; adult bone of upper jaw in AAO and ZFA; split. Note that we have loops if we add develops_from UBERON:0005620 primary palate" xsd:string
+property_value: RO:0002161 NCBITaxon:7901 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Dermal bone that forms the anteriormost element of the upper jaw. It articulates with the maxilla posterodorsally and its antimere medially. The premaxilla is paired.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000567", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "One of the bones of the upper jaw situated between and in front of the maxillae. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000426", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000001 "Paired, intramembranous bones located at the anterior end of the skull; they form the anterior-most segment of the maxillary arch.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000461", ontology="AAO", source="AAO:LAP"}
@@ -7949,6 +8161,7 @@ synonym: "foregut endoderm" EXACT [OBOL:automatic]
 xref: EHDAA2:0004568
 xref: EHDAA:524
 is_a: UBERON:0015833 ! foregut epithelium
+relationship: part_of UBERON:0001041 ! foregut
 property_value: IAO:0000116 "TODO - check" xsd:string
 
 [Term]
@@ -7962,6 +8175,7 @@ xref: EMAPA:16257
 xref: RETIRED_EHDAA2:0001194
 xref: VHOG:0001080
 is_a: UBERON:0003352 ! epithelium of midgut
+relationship: part_of UBERON:0001045 ! midgut
 property_value: IAO:0000116 "TODO - check" xsd:string
 
 [Term]
@@ -7973,6 +8187,7 @@ synonym: "hindgut endoderm" EXACT [OBOL:automatic]
 xref: EHDAA:979
 xref: RETIRED_EHDAA2:0000781
 is_a: UBERON:0003353 ! epithelium of hindgut
+relationship: part_of UBERON:0001046 ! hindgut
 property_value: IAO:0000116 "TODO - check" xsd:string
 
 [Term]
@@ -9325,6 +9540,9 @@ xref: FMA:63199
 xref: http://www.snomedbrowser.com/Codes/Details/9081000
 xref: Sinusoids
 relationship: part_of UBERON:0001250 ! red pulp of spleen
+property_value: RO:0002161 NCBITaxon:10088 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
+property_value: RO:0002161 NCBITaxon:9681 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
+property_value: RO:0002161 NCBITaxon:9822 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
 property_value: RO:0002175 NCBITaxon:10114 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
 property_value: UBPROP:0000008 "Whereas man and the rat are in the 'sinusal' group, the mouse belongs in the 'nonsinusal' group. The red pulp of spleens of rat, dog, man, and many other mammals contains an elaborate plexus of sinuses; that of mouse, cat, pig and others has no true sinuses and relatively few veins leading from the meshes into collecting veins - http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml" xsd:string
 
@@ -10162,6 +10380,7 @@ xref: BTO:0001157
 xref: http://www.snomedbrowser.com/Codes/Details/80455007
 is_a: UBERON:0003408 ! gland of digestive tract
 relationship: part_of UBERON:0001052 ! rectum
+property_value: RO:0002161 NCBITaxon:32523
 property_value: RO:0002175 NCBITaxon:118072
 property_value: RO:0002175 NCBITaxon:119203
 property_value: UBPROP:0000009 "shark liver produces copious amounts of urea, making the shark hyperosmotic to seawater, & thus a shark acts like a fresh water fish, constantly gaining water. Excess salts are concentrated by the rectal gland and secreted" xsd:string
@@ -11704,6 +11923,7 @@ def: "The compartment located between the marginal zone and the red pulp harbori
 subset: pheno_slim
 relationship: part_of UBERON:0002106 ! spleen
 property_value: IAO:0000116 "TODO - check spleen marginal sinus" xsd:string
+property_value: RO:0002161 NCBITaxon:9989 {source="MP:0002363"}
 property_value: RO:0002175 NCBITaxon:9606
 property_value: UBPROP:0000008 "The perifollicular zone, which is present in human and not rodents, may be the functional equivalent of the marginal sinus in rodents." xsd:string {source="MP:0002363"}
 
@@ -12507,6 +12727,7 @@ xref: http://en.wikipedia.org/wiki/Labrum_(arthropod_mouthpart)
 xref: TADS:0000039
 relationship: part_of UBERON:0000165 ! mouth
 property_value: IAO:0000116 "this term should be ceded to the arthropod anatomy ontology" xsd:string
+property_value: RO:0002161 NCBITaxon:57294
 
 [Term]
 id: UBERON:0006081
@@ -12838,6 +13059,7 @@ xref: TAO:0000621
 xref: VHOG:0000689
 xref: ZFA:0000621
 is_a: UBERON:0011597 ! bone of upper jaw
+property_value: RO:0002161 NCBITaxon:40674
 property_value: UBPROP:0000001 "Endochondral bone that commonly articulates with the ectopterygoid anteriorly, the metapterygoid dorsally, and the symplectic postero-medially. The quadrate is formed from the posterior part of the palatoquadrate cartilage, or pars quadrata. The quadrate is a paired bone.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO", source="TAO:GA_TG"}
 property_value: UBPROP:0000002 "relationship loss: overlaps quadrate-hyomandibula joint (TAO:0001801)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO"}
 property_value: UBPROP:0000002 "relationship loss: overlaps quadrate-metapterygoid joint (TAO:0001803)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO"}
@@ -13153,6 +13375,7 @@ xref: BSA:0000064
 xref: BTO:0003173
 xref: http://en.wikipedia.org/wiki/Endostyle
 relationship: part_of UBERON:0006562 ! pharynx
+property_value: RO:0002161 NCBITaxon:7776
 property_value: RO:0002175 NCBITaxon:7712
 property_value: RO:0002175 NCBITaxon:7735
 property_value: RO:0002175 NCBITaxon:7745
@@ -14417,6 +14640,7 @@ is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: depicted:by 280px-Gill:slits.png xsd:anyURI
 property_value: IAO:0000116 "requires review. Kardong uses the term pharyngeal slit for Chondrichthyans. 'branchial slit' may also be used for amniote structures." xsd:string
+property_value: RO:0002161 NCBITaxon:7742
 property_value: UBPROP:0000008 "homologous to pharyngeal pouches" xsd:string
 property_value: UBPROP:0000008 "may have been present in deuterostome ancestor[PMID:11961109]" xsd:string
 property_value: UBPROP:0000008 "Some hemichordate species can have as many as 200 gill slits" xsd:string
@@ -14752,6 +14976,7 @@ synonym: "gill basket" EXACT [http://www.briancoad.com/dictionary/DicPics/branch
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: depicted:by http://dev.duit.uwa.edu.au/zoology/media/lamp/E19.jpg xsd:anyURI
 property_value: IAO:0000116 "developmental relationship needs to be changed if the scope is broadened, as NC is vertebrate-specific" xsd:string
+property_value: RO:0002161 NCBITaxon:117570
 property_value: UBPROP:0000008 "May also be present in amphioxus" xsd:string
 property_value: UBPROP:0000009 "functions by elastic recoil" xsd:string
 
@@ -14951,6 +15176,7 @@ subset: emapa_ehdaa2
 xref: EHDAA2:0000573
 xref: EMAPA:16564
 is_a: UBERON:0003929 ! digestive tract epithelium
+relationship: part_of UBERON:0003929 {source="EHDAA2"} ! digestive tract epithelium
 relationship: part_of UBERON:0006235 ! foregut-midgut junction
 
 [Term]
@@ -15180,6 +15406,7 @@ xref: EHDAA2:0004621
 xref: EMAPA:32754
 xref: FMA:293087
 is_a: UBERON:0015833 ! foregut epithelium
+relationship: part_of UBERON:0003929 {source="EHDAA2"} ! digestive tract epithelium
 relationship: part_of UBERON:0008814 ! pharyngeal arch system
 
 [Term]
@@ -15199,6 +15426,7 @@ synonym: "cloacal epithelium" BROAD [EHDAA2:0004585]
 xref: EHDAA2:0004585
 is_a: UBERON:0012481 ! cloacal epithelium
 relationship: part_of UBERON:0000163 ! embryonic cloaca
+relationship: part_of UBERON:0003929 {source="EHDAA2"} ! digestive tract epithelium
 
 [Term]
 id: UBERON:0009847
@@ -15411,6 +15639,7 @@ synonym: "intestinal spiral valve" EXACT []
 synonym: "spiral valve" BROAD []
 xref: Spiral:valve
 relationship: part_of UBERON:0002108 ! small intestine
+property_value: RO:0002161 NCBITaxon:32523 {source="Wikipedia"}
 
 [Term]
 id: UBERON:0010017
@@ -15763,6 +15992,7 @@ namespace: uberon
 def: "Oral gland in reptiles situated immediately above the lip." [ISBN:0073040584]
 xref: Duvernoy's:gland
 is_a: UBERON:0010047 ! oral gland
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0010050
@@ -15771,6 +16001,7 @@ namespace: uberon
 def: "Oral gland in reptiles situated immediately below the lip." [ISBN:0073040584]
 xref: Duvernoy's:gland
 is_a: UBERON:0010047 ! oral gland
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0010052
@@ -15959,6 +16190,7 @@ def: "A fleshy protuberance at the pylorus of some species such as ruminants and
 synonym: "torus pyloricus" EXACT []
 xref: http://www.snomedbrowser.com/Codes/Details/14214007
 relationship: part_of UBERON:0001166 ! pylorus
+property_value: RO:0002161 NCBITaxon:314146
 
 [Term]
 id: UBERON:0010239
@@ -16017,6 +16249,7 @@ def: "Mesenchyme that develops_from a neural crest and is part of a 1st arch man
 xref: EHDAA2:0000037
 is_a: UBERON:0009584 ! 1st arch mandibular mesenchyme
 is_a: UBERON:0010259 {source="inferred"} ! 1st arch mesenchyme from neural crest
+relationship: part_of UBERON:0009584 {source="EHDAA2"} ! 1st arch mandibular mesenchyme
 
 [Term]
 id: UBERON:0010253
@@ -16098,6 +16331,7 @@ synonym: "pharyngeal arch 1 mesenchyme from neural crest" EXACT []
 xref: EMAPA:16129
 is_a: UBERON:0010042 ! 1st arch mesenchyme
 is_a: UBERON:0010359 ! pharyngeal arch mesenchyme from neural crest
+relationship: part_of UBERON:0010042 ! 1st arch mesenchyme
 
 [Term]
 id: UBERON:0010264
@@ -16137,6 +16371,7 @@ namespace: uberon
 def: "Mesenchyme that develops_from a neural crest and is part of a mandibular process mesenchyme." [OBOL:automatic]
 xref: EHDAA2:0004603
 is_a: UBERON:0006905 ! mandibular process mesenchyme
+relationship: part_of UBERON:0006905 {source="EHDAA2"} ! mandibular process mesenchyme
 
 [Term]
 id: UBERON:0010337
@@ -16145,6 +16380,7 @@ namespace: uberon
 def: "Mesenchyme that develops_from a head mesenchyme from mesoderm and is part of a mandibular process mesenchyme." [OBOL:automatic]
 xref: EHDAA2:0004604
 is_a: UBERON:0006905 ! mandibular process mesenchyme
+relationship: part_of UBERON:0006905 {source="EHDAA2"} ! mandibular process mesenchyme
 
 [Term]
 id: UBERON:0010338
@@ -16163,6 +16399,7 @@ def: "Mesenchyme that develops_from a head mesenchyme from mesoderm and is part 
 xref: EHDAA2:0000036
 is_a: UBERON:0009584 ! 1st arch mandibular mesenchyme
 is_a: UBERON:0010341 ! 1st arch mesenchyme from head mesenchyme
+relationship: part_of UBERON:0009584 {source="EHDAA2"} ! 1st arch mandibular mesenchyme
 
 [Term]
 id: UBERON:0010341
@@ -16173,6 +16410,7 @@ synonym: "mesenchyme derived from head mesoderm of mesenchyme of 1st arch" EXACT
 xref: EMAPA:16130
 is_a: UBERON:0010042 ! 1st arch mesenchyme
 is_a: UBERON:0010360 ! pharyngeal arch mesenchyme from head mesenchyme
+relationship: part_of UBERON:0010042 {source="EMAPA"} ! 1st arch mesenchyme
 
 [Term]
 id: UBERON:0010343
@@ -16294,6 +16532,7 @@ xref: NCIT:C49776
 xref: UMLS:C1710157 {source="ncithesaurus:Splenic_Marginal_Sinus"}
 is_a: UBERON:0001959 ! white pulp of spleen
 property_value: IAO:0000116 "Note that there is no consensus in the literature about which compartments constitute the white pulp or the ramifications of the microvasculature. In addition, notable differences exist between humans and rodents. In this ontology, the marginal sinus (which may not exist in human) has been included as part of the white pulp. The perifollicular zone, which is present in human and not rodents, may be the functional equivalent of the marginal sinus in rodents." xsd:string {source="MP:0002363"}
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0010399
@@ -16383,6 +16622,7 @@ synonym: "palatal choana" EXACT []
 synonym: "palatal cleft" RELATED []
 relationship: part_of UBERON:0001716 ! secondary palate
 property_value: IAO:0000116 "todo - check AAO:0000025 apertura nasalis interna" xsd:string
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000001 "Hole on the nasal capsule that connects the nasal and buccal cavites.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000025", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: subclass nasal opening (AAO:0000316)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000025", ontology="AAO"}
 property_value: UBPROP:0000009 "has function in pressure equalization in birds that fly to high altitudes" xsd:string
@@ -16618,6 +16858,8 @@ xref: Quadratojugal:bone
 is_a: UBERON:0011597 ! bone of upper jaw
 property_value: depicted:by Archaeopteryx:skull.png xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/eb/Skull_synapsida_1.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:40674 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:8509 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Paired intramembranous bones that completes the maxillary arch posteriorly; they appear at the end of, or just after, metamorphosis[AAO:0000532]." xsd:string {source="AAO:0000532"}
 
 [Term]
@@ -16630,6 +16872,7 @@ synonym: "under-tongue" RELATED [http://en.wikipedia.org/wiki/Sublingua]
 xref: http://en.wikipedia.org/wiki/Sublingua
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0000165 ! mouth
+property_value: RO:0002161 NCBITaxon:9606 {source="Wikipedia"}
 
 [Term]
 id: UBERON:0011289
@@ -16919,6 +17162,7 @@ namespace: uberon
 synonym: "lower jaw future lip" EXACT [EHDAA2:0001020]
 xref: EHDAA2:0001020
 is_a: UBERON:0003236 ! epithelium of lower jaw
+relationship: part_of UBERON:0001710 {source="EHDAA2"} ! lower jaw region
 
 [Term]
 id: UBERON:0011597
@@ -17087,6 +17331,7 @@ namespace: uberon
 def: "An epithelium that develops_from a ectoderm and is part of a oral epithelium." [OBOL:automatic]
 xref: EHDAA2:0004137
 is_a: UBERON:0002424 ! oral epithelium
+relationship: part_of UBERON:0002424 ! oral epithelium
 
 [Term]
 id: UBERON:0011698
@@ -18041,7 +18286,6 @@ synonym: "penicillar artery" RELATED []
 synonym: "penicilli" EXACT PLURAL [http://www.merriam-webster.com/medical/penicilli]
 synonym: "penicillus" EXACT [FMA:16038]
 xref: FMA:16038
-is_a: UBERON:0010399 ! spleen trabecular artery
 is_a: UBERON:0022292 ! splenic arteriole
 relationship: part_of UBERON:0010401 ! spleen central arteriole
 
@@ -18185,6 +18429,7 @@ namespace: uberon
 def: "A bony buttress on the inner surface of the foremost part of the ape mandible, functioning to reinforce the mandible." [http://web.archive.org/web/20060830160800/www.anth.ucsb.edu/glossary/glossary.html]
 xref: Simian:shelf
 relationship: part_of UBERON:0001684 ! mandible
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0013471
@@ -18547,6 +18792,7 @@ synonym: "colorectal endothelial cell" RELATED [CALOHA:TS-0162]
 synonym: "colorectal endothelium" RELATED [CALOHA:TS-0162]
 xref: CALOHA:TS-0162
 is_a: UBERON:0000397 ! colonic epithelium
+relationship: part_of UBERON:0001155 ! colon
 
 [Term]
 id: UBERON:0013696
@@ -19263,6 +19509,7 @@ def: "The external part of the developing pharynx that is made of ectoderm. Duri
 xref: TAO:0001379
 xref: ZFA:0001379
 is_a: UBERON:0003351 ! pharyngeal epithelium
+relationship: part_of UBERON:0001042 ! chordate pharynx
 
 [Term]
 id: UBERON:0016547
@@ -20607,6 +20854,7 @@ synonym: "branchial bar" RELATED []
 synonym: "gill bar" RELATED []
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0001042 ! chordate pharynx
+property_value: RO:0002161 NCBITaxon:7776
 property_value: RO:0002175 NCBITaxon:117569
 property_value: RO:0002175 NCBITaxon:7737
 property_value: UBPROP:0000008 "Haikouella possessed a small number of pharyngeal bars that may have been composed of mucocartilage, as in modern lampreys (Holland and Chen, 2001). the pharyngeal bars of Haikouella were probably derived from neural crest, as were the sensory components of the cranial nerves that innervated its pharyngeal muscles[http://icb.oxfordjournals.org/content/42/4/743.full]" xsd:string
@@ -22828,11 +23076,11 @@ created_by: https://orcid.org/0000-0003-2699-3066
 id: UBERON:8400001
 name: hepatic acinus zone 1
 namespace: uberon
-def: "The region of the hepatic acinus that is closest to the arterial blood supply and has the highest oxygen concentration. Hepatocytes in this region are primarily involved in oxidative energy metabolism." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
+def: "The region of the hepatic acinus that is closest to the arterial blood supply and has the highest oxygen concentration. Zone 1 is located in the periportal region of the liver lobule, closest to the portal triad. Hepatocytes in this region are primarily involved in oxidative energy metabolism." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
 synonym: "hepatic acinus periportal zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
-synonym: "liver lobule periportal zone" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0001172 ! hepatic acinus
+property_value: RO:0002175 "Mammalia" xsd:string
 created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-09-08T14:14:21Z
 
@@ -22840,13 +23088,13 @@ creation_date: 2020-09-08T14:14:21Z
 id: UBERON:8400002
 name: hepatic acinus zone 3
 namespace: uberon
-def: "The region of the hepatic acinus immediately surrounding the central veins. This region has the lowest oxygen concentration in the acinus. Hepatocytes in this region are the primary location for the biotransformation of drugs." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
+def: "The region of the hepatic acinus immediately surrounding the central veins. This region has the lowest oxygen concentration in the acinus. Zone 3 is located in the centrilobular region of the liver lobule, closest to the central vein. Hepatocytes in this region are the primary location for the biotransformation of drugs." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
 synonym: "hepatic acinus centrilobular zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 synonym: "hepatic acinus pericentral zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 synonym: "hepatic acinus perivenous zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
-synonym: "liver lobule centrilobular region" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0001172 ! hepatic acinus
+property_value: RO:0002175 "Mammalia" xsd:string
 created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-09-08T15:05:03Z
 
@@ -22854,11 +23102,11 @@ creation_date: 2020-09-08T15:05:03Z
 id: UBERON:8400003
 name: hepatic acinus zone 2
 namespace: uberon
-def: "The region of the hepatic acinus in between zones 1 and 3. Blood in this region has an intermediate oxygen concentration relative to the other two zones of the hepatic acinus. Hepatocytes in this region have mixed functionality in comparison with those in zones 1 and 3." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
+def: "The region of the hepatic acinus in between zones 1 and 3. Blood in this region has an intermediate oxygen concentration relative to the other two zones of the hepatic acinus. Zone 2 is located in the midzonal region of the liver lobule. Hepatocytes in this region have mixed functionality in comparison with those in zones 1 and 3." [http://www.ncbi.nlm.nih.gov/pubmed/29763190]
 synonym: "hepatic acinus intermediary zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
-synonym: "liver lobule midzonal region" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0001172 ! hepatic acinus
+property_value: RO:0002175 "Mammalia" xsd:string
 created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-09-08T15:15:57Z
 
@@ -22866,20 +23114,22 @@ creation_date: 2020-09-08T15:15:57Z
 id: UBERON:8400005
 name: metabolic zone of liver
 namespace: uberon
-def: "Any of the metabolic zones found in the hepatic acinus. Liver tissue is heterogenous at the level of morphometry and histochemistry. This heterogeneity is linked to the position of a cell within the functional unit of the tissue, which, in turn, is related to the blood supply: Cells located in the upstream zone differ from those in the downstream zone with respect to subcellular structures, key enzymes, translocators, and receptors and, therefore, have different metabolic capacities. This is the basis for \"metabolic zonation\", a concept first proposed for carbohydrate metabolism and later expanded to include amino acid and ammonia metabolism, xenobiotic metabolism, protective metabolism, and formation of plasma proteins." [http://www.ncbi.nlm.nih.gov/pubmed/8839925]
+def: "Any of the metabolic zones found in the liver. Liver tissue is heterogenous at the level of morphometry and histochemistry. This heterogeneity is linked to the position of a cell within the functional unit of the tissue, which, in turn, is related to the blood supply: cells located in the upstream zone differ from those in the downstream zone with respect to subcellular structures, key enzymes, translocators, and receptors and, therefore, have different metabolic capacities. This is the basis for \"metabolic zonation\", a concept first proposed in mammals for carbohydrate metabolism and later expanded to include amino acid and ammonia metabolism, xenobiotic metabolism, protective metabolism, and formation of plasma proteins." [http://www.ncbi.nlm.nih.gov/pubmed/8839925, https://doi.org/10.1016/S0968-0004(78)91764-4]
 synonym: "hepatic acinus metabolic zone" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/8839925]
 relationship: part_of UBERON:0002107 ! liver
+property_value: RO:0002175 "Mammalia" xsd:string
 created_by: http://orcid.org/0000-0003-2034-601X
-creation_date: 202z-09-29T15:45:36Z
+creation_date: 2020-09-29T15:45:36Z
 
 [Term]
 id: UBERON:8400006
 name: liver lobule periportal region
 namespace: uberon
-def: "The region of the liver lobule that is closest to the portal triad." [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
+def: "The region of the liver lobule that is closest to the portal triad. The functionally-defined hepatic acinus zone 1 is generally found in this region." [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 synonym: "hepatic acinus zone 1" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0004647 ! liver lobule
+property_value: RO:0002175 "Mammalia" xsd:string
 created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-10-05T12:56:57Z
 
@@ -22887,10 +23137,11 @@ creation_date: 2020-10-05T12:56:57Z
 id: UBERON:8400007
 name: liver lobule centrilobular region
 namespace: uberon
-def: "The region of the liver lobule that is closest to the central vein." [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
+def: "The region of the liver lobule that is closest to the central vein. The functionally-defined hepatic acinus zone 3 is generally found in this region." [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 synonym: "hepatic acinus zone 3" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0004647 ! liver lobule
+property_value: RO:0002175 "Mammalia" xsd:string
 created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-10-05T15:43:18Z
 
@@ -22898,10 +23149,11 @@ creation_date: 2020-10-05T15:43:18Z
 id: UBERON:8400008
 name: liver lobule midzonal region
 namespace: uberon
-def: "The region of the liver lobule that is between the periportal and centrilobular regions." [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
+def: "The region of the liver lobule that is between the periportal and centrilobular regions. The functionally-defined hepatic acinus zone 2 is generally found in this region." [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 synonym: "hepatic acinus zone 2" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/28126520]
 is_a: UBERON:8400005 ! metabolic zone of liver
 relationship: part_of UBERON:0004647 ! liver lobule
+property_value: RO:0002175 "Mammalia" xsd:string
 created_by: http://orcid.org/0000-0003-2034-601X
 creation_date: 2020-10-05T15:52:22Z
 
@@ -22954,6 +23206,29 @@ xref: TA2:2952
 xref: WikipediaVersioned:Duodenojejunal_flexure&oldid=937307798
 is_a: UBERON:8410024 ! intestinal junction
 relationship: part_of UBERON:0002108 ! small intestine
+
+[Term]
+id: UBERON:8410003
+name: ductal plate
+namespace: uberon
+def: "In human, ductal plate is a double-layered cylindrical structure of bile duct epithelium that surrounds the portal ramifications by the eighth gestational week. After approximately the 12th gestational week, remodelling of ductal plate begins, and maturity is attained by the end of gestation or early postnatal period." [http://orcid.org/0000-0002-7073-9172, http://www.ncbi.nlm.nih.gov/pubmed/28515578]
+subset: added_for_HCA
+relationship: part_of UBERON:0002394 ! bile duct
+property_value: RO:0002175 "Mammalia" xsd:string
+property_value: UBPROP:0000008 "Temporal stages still need to be fully researched across species." xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410004
+name: small intestine arteriole
+namespace: uberon
+def: "Arteriole of villus of small intestine." [http://orcid.org/0000-0003-4183-8865/]
+subset: location_grouping
+synonym: "arteriole of small intestine" EXACT []
+synonym: "arteriole of villus of small intestine" EXACT []
+synonym: "small intestine villus arteriole" EXACT []
+relationship: part_of UBERON:0001213 ! intestinal villus
+created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: UBERON:8410016

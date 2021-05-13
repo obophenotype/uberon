@@ -3,8 +3,13 @@ ontology: uberon/subsets/musculoskeletal-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0002204>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0002204>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -1322,7 +1327,6 @@ xref: EMAPA:36272
 xref: FMA:23997
 xref: http://www.snomedbrowser.com/Codes/Details/280735005
 xref: Transverse:foramen
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005744 ! bone foramen
 relationship: part_of UBERON:0001077 ! transverse process of vertebra
 relationship: part_of UBERON:0002413 ! cervical vertebra
@@ -1593,6 +1597,7 @@ xref: FMA:13427
 xref: http://www.snomedbrowser.com/Codes/Details/166962007
 xref: Nuchal:ligament
 is_a: UBERON:0008846 ! skeletal ligament
+property_value: RO:0002161 NCBITaxon:9596
 property_value: RO:0002175 NCBITaxon:9606
 property_value: RO:0002175 NCBITaxon:9608
 property_value: RO:0002175 NCBITaxon:9788
@@ -1776,6 +1781,7 @@ xref: XAO:0004042
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0002204 ! musculoskeletal system
 property_value: IAO:0000116 "consider whether this should be restricted to skeletal musculature. See https://github.com/obophenotype/uberon/issues/77" xsd:string
+property_value: RO:0002161 NCBITaxon:6040
 property_value: UBPROP:0000001 "Anatomical system that consists of the muscles of the body.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000033", ontology="VSAO", source="VSAO:curator"}
 property_value: UBPROP:0000012 "we place the MA term musculature here, rather than under uberon:musculature, as this seems more appropriate given the structure of MA" xsd:string {external_ontology="MA"}
 
@@ -2051,6 +2057,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/12/I
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/alex-dececchi
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: IAO:0000116 "in EMAPA and EHDAA2 this is part of the skeleton of pectoral girdle; the classic def of pectoral girdle (see WP) excludes the rib cage and sternum" xsd:string
+property_value: RO:0002161 NCBITaxon:8570 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Single element that constitutes the postzonal area of the pectoral girdle.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000765", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: part_of postzonal element (AAO:0000938)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000765", ontology="AAO"}
 property_value: UBPROP:0000003 "Fishes lack a sternum. (...) A sternum is absent in the first fossil tetrapods, but it is present in modern amphibians. (...) Thus, a sternum occurs in some modern amphibians, birds, mammals and archosaurs. However, its absence in the common ancestors to these groups means that it has arisen independently several times within the field of the midventral connective tissue.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000856", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.294"}
@@ -2439,7 +2446,6 @@ xref: NCIT:C32577
 xref: OpenCyc:Mx4rvorHEpwpEbGdrcN5Y29ycA
 xref: UMLS:C0224521 {source="ncithesaurus:Facet_Joint"}
 xref: Zygapophysial:joint
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0002217 ! synovial joint
 relationship: part_of UBERON:0003861 ! neural arch
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/d2/Gray90.png xsd:anyURI
@@ -2692,6 +2698,10 @@ xref: ZFA:0000694
 is_a: UBERON:0003913 ! tooth-like structure
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/14/Teeth_by_David_Shankbone.jpg xsd:anyURI
 property_value: IAO:0000116 "we place ZFA ctb 5 tooth here for now. Consider changing name from calcaeeous tooth. Note that sea cucumbers develop calcareous tooth-like structures" xsd:string
+property_value: RO:0002161 NCBITaxon:189497 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:8782
+property_value: RO:0002161 NCBITaxon:9257 {source="http://www.ncbi.nlm.nih.gov/pubmed/10210685"}
+property_value: RO:0002161 NCBITaxon:9761
 property_value: UBPROP:0000003 "The ancestor of recent vertebrate teeth was a tooth-like structure on the outer body surface of jawless fishes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001733", ontology="VHOG", source="http://bgee.unil.ch/", source="PMID:19266065 Koussoulakou DS, Margaritis LH, Koussoulakos SL, A curriculum vitae of teeth: evolution, generation, regeneration. International Journal of Biological Sciences (2009)"}
 property_value: UBPROP:0000007 "dental" xsd:string
 property_value: UBPROP:0000008 "absent in living platypus, present in toothed Miocene platypus Obduron dicksoni" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/10210685"}
@@ -2944,6 +2954,7 @@ xref: UMLS:C0011980 {source="ncithesaurus:Diaphragm"}
 xref: VHOG:0000713
 is_a: UBERON:0003830 ! thoracic segment muscle
 is_a: UBERON:0003831 ! respiratory system muscle
+property_value: RO:0002161 NCBITaxon:8782 {source="Comparative_anatomy_and_evolution"}
 property_value: UBPROP:0000001 "The diaphragm is a skeletal muscle that is responsible for contraction and expansion of the lungs[GO]." xsd:string {source="GO:0060539"}
 property_value: UBPROP:0000003 "The mammals are characterized by a diaphragm, which separates the thoracic portion of the body cavity from the abdominal region and assists in drawing air into the lungs and forcing it out. Modern reptiles lack a muscular diaphragm and it is reasonable to suppose that the diaphragm developed as a new device that made possible a large degree of oxygen intake for active animals. The change may have taken place during the transition from reptile to mammal (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000713", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0471384618 Colbert EH, Evolution of the vertebrates: a history of the backboned animals through time (2001) p.278"}
 property_value: UBPROP:0000007 "phrenic" xsd:string
@@ -3415,6 +3426,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000075 ! subdivision of skeletal system
 relationship: part_of UBERON:0011138 {source="cjm"} ! postcranial axial skeletal system
 property_value: IAO:0000116 "Note that in contrast to VSAO, this is a subset of the skeletal system, and thus includes intervertebral joints, cartilage and ligaments etc. Some ontologies such as AAO seem to purely refer to the skeleton" xsd:string
+property_value: RO:0002161 NCBITaxon:7762
 property_value: UBPROP:0000001 "Anatomical cluster that consists of all the vertebra in the body.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000185", ontology="VSAO", source="VSAO:curator"}
 property_value: UBPROP:0000001 "The vertebral column consists of a series of vertebrae connected by ligaments. It provides a supporting axis for the body and protects the spinal cord. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001142", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/vertebral+column"}
 property_value: UBPROP:0000003 "Vertebrata is characterized by three synapomorphies. First, vertebrates have a backbone composed of vertebrae (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001142", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.53"}
@@ -3589,6 +3601,7 @@ xref: UMLS:C0227238 {source="ncithesaurus:Pyloric_Sphincter"}
 xref: VHOG:0001466
 xref: XAO:0000457
 is_a: UBERON:0011185 ! gastrointestinal sphincter
+property_value: RO:0002161 NCBITaxon:8355
 property_value: UBPROP:0000003 "(...) the adult Xenopus stomach exhibits both glandular and aglandular regions and a distinct pyloric sphincter similar to that of the amniotic vertebrates (...).[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001466", ontology="VHOG", source="http://bgee.unil.ch/", source="https://doi.org/10.1046/j.1525-142x.2000.00076.x"}
 
 [Term]
@@ -3789,7 +3802,6 @@ synonym: "pelvis ossea" EXACT []
 synonym: "skeletal system of pelvis" EXACT [FMA:16580]
 xref: FMA:16580
 xref: http://www.snomedbrowser.com/Codes/Details/46633002
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000075 {source="FMA"} ! subdivision of skeletal system
 property_value: IAO:0000116 "TODO add taxon-specific part of relations connecting sub-structures to this." xsd:string
 property_value: UBPROP:0000012 "in FMA, this is part of the axial skeletal system" xsd:string {external_ontology="FMA"}
@@ -3857,6 +3869,7 @@ is_a: UBERON:0015054 ! iliac endochondral element
 relationship: part_of UBERON:0001272 {source="FMA"} ! innominate bone
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mellybelly
+property_value: RO:0002161 NCBITaxon:32443 {source="Wikipedia"}
 property_value: RO:0002174 NCBITaxon:8570 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Paired, rodlike endochondral bones that constitute the anterior pelvic girdle.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000772", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000007 "iliac" xsd:string
@@ -4641,6 +4654,7 @@ xref: UMLS:C0242694 {source="ncithesaurus:Soleus"}
 is_a: UBERON:0004256 ! hindlimb zeugopod muscle
 relationship: part_of UBERON:0001665 {source="FMA"} ! triceps surae
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/57/Illu_lower_extremity_muscles.jpg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:9611 {source="http://en.wikipedia.org/wiki/Soleus"}
 property_value: UBPROP:0000007 "soleal" xsd:string
 property_value: UBPROP:0000009 "responsible for plantar flexion of the foot" xsd:string {source="MP:0003081"}
 
@@ -7690,6 +7704,7 @@ xref: TAO:0005145
 xref: VHOG:0001245
 xref: XAO:0000172
 xref: ZFA:0005145
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001015 ! musculature
 property_value: UBPROP:0000001 "Portion of tissue composed of contractile fibers.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005145", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "It seems clear that the metazoan ancestor inherited from its unicellular descendants an actin cytoskeleton and motor-proteins of the myosin superfamily. Within metazoans, these two molecules were arranged into effective contractile units, the muscles. The basic trends for muscle evolution are already expressed in the diploblastic taxa.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001245", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.75"}
@@ -7781,6 +7796,7 @@ xref: OpenCyc:Mx4rwQtsiZwpEbGdrcN5Y29ycA
 xref: UMLS:C0028784 {source="ncithesaurus:Occipital_Bone"}
 is_a: UBERON:0010428 {source="FMA"} ! flat bone
 is_a: UBERON:0011164 ! neurocranium bone
+relationship: part_of UBERON:0001703 {source="FMA"} ! neurocranium
 relationship: part_of UBERON:0005902 {source="FMA"} ! occipital region
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/27/Gray194.png xsd:anyURI
 property_value: UBPROP:0000008 "formed from the sclerotome of the occipital somites. It is not present in living or fossil agnathans or cartilaginous fishes, but appears to have arisen in parallel in many bony fishes. Incorporation of the occipital ver- tebrae into the skull was associated with the annexation of the upper part of the spinal cord into the brain, together with the first 2 spinal nerves as cranial nerves XI and XII" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/11523816"}
@@ -7985,6 +8001,7 @@ is_a: UBERON:0011597 ! bone of upper jaw
 is_a: UBERON:0012071 ! palate bone
 relationship: part_of UBERON:0011085 ! palatoquadrate arch
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/44/Gray996.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32519 {source="TAO"}
 property_value: UBPROP:0000001 "Dermal bone that forms the antero-lateral region of the palate and is located ventral to the autopalatine. The dermopalatine is bilaterally paired and usually bears teeth.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000015", ontology="TAO", source="TAO:GA_TG"}
 property_value: UBPROP:0000005 "Dermopalatine: same as palatine. The prefix is used by fish people because the palatine is a dermal replacement bone for a section of the autopalatine section of the palatoquadrate. In that context, palatine is potentially ambiguous.[Palaeos]" xsd:string {date_retrieved="2012-09-17", source="http://palaeos.com/vertebrates/glossary/glossaryD.html"}
 property_value: UBPROP:0000005 "In ostariophysans, the dermopalatine is absent.[TAO]" xsd:string {date_retrieved="2012-09-06", external_class="TAO:0000015", ontology="TAO", source="Curator"}
@@ -8774,6 +8791,8 @@ is_a: UBERON:0010365 {source="VSAO"} ! odontoid tissue
 is_a: UBERON:4000013 ! mineralized skeletal tissue
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/66/Enamelorgan11-17-05.jpg xsd:anyURI
 property_value: IAO:0000116 "current classification under substance of tooth may be turned into taxon GCI (e.g. sharks have enamel in dermal denticles)" xsd:string
+property_value: RO:0002161 NCBITaxon:9359 {source="http://www.ncbi.nlm.nih.gov/pubmed/19730686"}
+property_value: RO:0002161 NCBITaxon:9816 {source="http://www.ncbi.nlm.nih.gov/pubmed/19730686"}
 property_value: UBPROP:0000001 "Skeletal tissue that consists of an avascular, noncollagenous, hypermineralized matrix that is deposited by ameloblasts that are excluded from the matrix. Enamel develops from organic pre-enamel tissue that is replaced by a largely inorganic matrix.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000065", ontology="VSAO", source="PSPUB:0000170"}
 property_value: UBPROP:0000012 "part_of tooth enamel organ in MA" xsd:string {external_ontology="MA"}
 
@@ -8928,6 +8947,7 @@ is_a: UBERON:0005913 ! zone of bone organ
 is_a: UBERON:0011164 ! neurocranium bone
 is_a: UBERON:0035612 ! nasal turbinal
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e9/Gray153.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:436486 {notes="disputed", source="http://palaeos.com/vertebrates/bones/braincase/ethmoid.html"}
 property_value: UBPROP:0000008 "In humans, the turbinates divide the nasal airway into three groove-like air passages -and are responsible for forcing inhaled air to flow in a steady, regular pattern around the largest possible surface of cilia and climate controlling tissue." xsd:string {source="WP,unvetted"}
 property_value: UBPROP:0000008 "Turbinals are only ossified in birds and derived synapsids." xsd:string
 property_value: UBPROP:0000012 "FMA considers nasal concha and nasal concha of ethmoid bone to be synonymous. We disambiguate these here" xsd:string {external_ontology="FMA"}
@@ -8958,6 +8978,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0001825 ! paranasal sinus
 relationship: part_of UBERON:0002397 ! maxilla
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3d/Gray1199.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:33554
 
 [Term]
 id: UBERON:0001774
@@ -9687,6 +9708,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C1706851
 xref: MA:0000708
 xref: NCIT:C49195
 xref: UMLS:C1706851 {source="ncithesaurus:Artery_Smooth_Muscle_Tissue"}
+is_a: UBERON:0001135 {source="FMA"} ! smooth muscle tissue
 is_a: UBERON:0004237 ! blood vessel smooth muscle
 is_a: UBERON:0004695 ! arterial system smooth muscle
 
@@ -10208,7 +10230,6 @@ xref: MA:0001417
 xref: NCIT:C52729
 xref: Tubercle:(rib)
 xref: UMLS:C0222809 {source="ncithesaurus:Rib_Tubercle"}
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0002231 {source="FMA"} ! body of rib
 
@@ -10374,6 +10395,7 @@ is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0003113 {source="ISBN:0073040584"} ! dermatocranium
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/4a/Gray160.png xsd:anyURI
 property_value: IAO:0000116 "requires checking embryonic vs adult; isa fetal organ part in FMA; adult bone of upper jaw in AAO and ZFA; split. Note that we have loops if we add develops_from UBERON:0005620 primary palate" xsd:string
+property_value: RO:0002161 NCBITaxon:7901 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Dermal bone that forms the anteriormost element of the upper jaw. It articulates with the maxilla posterodorsally and its antimere medially. The premaxilla is paired.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000567", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "One of the bones of the upper jaw situated between and in front of the maxillae. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000426", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000001 "Paired, intramembranous bones located at the anterior end of the skull; they form the anterior-most segment of the maxillary arch.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000461", ontology="AAO", source="AAO:LAP"}
@@ -10716,6 +10738,7 @@ xref: VHOG:0001271
 xref: ZFA:0005063
 is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
 is_a: UBERON:0010131 {source="FMA"} ! conducting tissue of heart
+relationship: part_of UBERON:0002349 {source="FMA"} ! myocardium
 property_value: IAO:0000116 "EHDAA2 divides the system from the tissue" xsd:string
 property_value: UBPROP:0000003 "The fish heart displays clear polarity of contraction in a posterior-to-anterior direction. The contraction waves originate in the sinus venosus and terminate in the conus arteriosus. The nodal phenotype persists in the inflow region of the heart, varying from the venosinus to the sinoatrial junctional areas in different species . Similar to the mammalian situation, pacemaker tissue with a lower intrinsic rhythmicity is also found at the atrioventricular junction.[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001271", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1152/physrev.00006.2003 Moorman AFM, Christoffels VM, Cardiac Chamber Formation: Development, Genes, and Evolution. Physiological Reviews (2003)"}
 
@@ -11393,6 +11416,7 @@ is_a: UBERON:0008001 {source="FMA"} ! irregular bone
 is_a: UBERON:0010913 ! vertebral element
 property_value: IAO:0000116 "Consider changing name to make distinction from inferred superclass 'vertebral element' clear" xsd:string
 property_value: IAO:0000116 "we follow FMA in making this an irregular bone - however vertebra have 'epiphyses' which are currently classified as belonging to long bones" xsd:string
+property_value: RO:0002161 NCBITaxon:7901 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Endochondral bone that forms around the notochord and is part of the vertebral column.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001189", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Main component of the vertebral column. It consists of two essential parts, a dorsal neural arch and a ventral centrum.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000691", ontology="AAO", source="AAO:Pugener_and_Maglia_2008"}
 
@@ -11545,6 +11569,7 @@ xref: UMLS:C0582791 {source="ncithesaurus:Bone_of_the_Extremity"}
 is_a: UBERON:0002513 ! endochondral bone
 is_a: UBERON:0004375 ! bone of free limb or fin
 is_a: UBERON:0015061 ! limb endochondral element
+relationship: part_of UBERON:0004381 ! skeleton of limb
 property_value: IAO:0000232 "the formal definition is very inclusive, and includes sesamoids" xsd:string
 property_value: UBPROP:0000012 "NCITA includes clavicle. MA:'limb bone' is actually a bone of limb or girdle" xsd:string {external_ontology="NCIT"}
 
@@ -12219,6 +12244,7 @@ xref: TAO:0001591
 xref: VSAO:0000145
 xref: XAO:0004018
 xref: ZFA:0001591
+is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0001474 ! bone element
 is_a: UBERON:0010363 {source="VSAO"} ! endochondral element
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/ee/Hypertrophic_Zone_of_Epiphyseal_Plate.jpg xsd:anyURI
@@ -12473,6 +12499,7 @@ xref: ZFA:0000444
 is_a: UBERON:0010912 ! subdivision of skeleton
 relationship: part_of UBERON:0008895 {source="ZFA"} ! splanchnocranium
 property_value: IAO:0000116 "requires review, possible split; TAO/ZFA structure is splanchoncranium (but includes some dermal bones as parts). Note AAO also includes 'palatoquadrate and suspensorium' as a class" xsd:string
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0003109
@@ -12571,6 +12598,7 @@ xref: ZFA:0000863
 is_a: UBERON:0011159 ! primary subdivision of cranial skeletal system
 relationship: part_of UBERON:0010364 ! dermal skeleton
 property_value: IAO:0000116 "wikipedia treats skull roof and dermatocranium as synonymous, but some sources treat the roof as being part of the dermatocranium - see UBERONREF:0000007" xsd:string
+property_value: RO:0002161 NCBITaxon:7777 {source="ISBN:0073040584"}
 property_value: UBPROP:0000001 "Anatomical cluster that is part of the cranium and composed of dermally derived bones.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000863", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Anatomical cluster that is part of the cranium which consists of dermally derived bones.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010154", ontology="AAO", source="AAO:BJB"}
 
@@ -13417,6 +13445,7 @@ xref: UMLS:C0448188 {source="ncithesaurus:Bone_of_the_Lower_Extremity"}
 is_a: UBERON:0002428 ! limb bone
 is_a: UBERON:0010742 ! bone of pelvic complex
 is_a: UBERON:0015022 ! hindlimb endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 property_value: UBPROP:0000012 "the MA class is actually bone of pelvic complex; in contrast the NCIT class excludes ilium etc" xsd:string {external_ontology="MA"}
 
 [Term]
@@ -14613,6 +14642,7 @@ xref: NCIT:C32258
 xref: UMLS:C0010482 {source="ncithesaurus:Canine_Tooth"}
 is_a: UBERON:0001091 ! calcareous tooth
 property_value: depicted:by Azawakh:K9.jpg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:337687 {notes="Although there are a few exceptions, the dental formula for the great majority of cricetids is 1.0.0.3", source="http://en.wikipedia.org/wiki/Cricetidae"}
 property_value: UBPROP:0000008 "Most species that develop them normally have four per individual, two in the upper jaw and two in the lower, separated within each jaw by its incisors; humans and dogs are examples. In most animals, canines are the anterior-most teeth in the maxillary bone. The four canines in humans are the two maxillary canines and the two mandibular canines." xsd:string
 
 [Term]
@@ -20880,7 +20910,6 @@ xref: AAO:0000695
 xref: FMA:11951
 xref: http://www.snomedbrowser.com/Codes/Details/277423002
 xref: MA:0002876
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0003861 ! neural arch
 property_value: UBPROP:0000001 "Paired plates that form the neural arch. The lateral margin of each lamina rests dorsal to the superior end of the pedicel, and the medial end fuses to the medial end of the opposite lamina.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000695", ontology="AAO", source="AAO:Pugener_and_Maglia_2008"}
 
@@ -20927,6 +20956,7 @@ def: "A portion of smooth muscle tissue that is part of a venous system [Automat
 xref: EMAPA:36613
 xref: MA:0000715
 is_a: UBERON:0004237 ! blood vessel smooth muscle
+relationship: part_of UBERON:0004237 ! blood vessel smooth muscle
 
 [Term]
 id: UBERON:0004704
@@ -21023,6 +21053,7 @@ xref: VSAO:0000187
 xref: ZFA:0000184
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:0008907 {source="ZFA", source="ZFIN:ZDB-PUB-060210-7"} ! dermal bone
+property_value: RO:0002161 NCBITaxon:40674 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Dermal bone that articulates dorsally with the supracleithrum and ventro-medially with the scapula and coracoid and mesocoracoid bone when the last bone is present. With the posttemporal and supracleithrum, the cleithrum supports the primary pectoral girdle. The cleithrum is located immediately behind the branchial cavity.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000184", ontology="TAO", source="TAO:wd"}
 property_value: UBPROP:0000001 "Paired bones of intramembranous origin. Each cleithrum extends medially from a point near the suprascapular-scapular articulation to invest the anterior margin of the suprascapula, and occasionoally it may extend to the dorsal (medial) surface. Usually, this bone is bifurcate.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000750", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: part_of scapular area (AAO:0000935)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000750", ontology="AAO"}
@@ -21080,6 +21111,7 @@ xref: ZFA:0000332
 is_a: UBERON:0002513 {source="VSAO"} ! endochondral bone
 is_a: UBERON:0007829 ! pectoral girdle bone
 property_value: IAO:0000116 "check developmental relationships." xsd:string
+property_value: RO:0002161 NCBITaxon:32525 {reference="ISBN:0-03-910284-X"}
 property_value: UBPROP:0000001 "Endochondral bone that articulates dorsally with the scapula and with the mesocoracoid when the latter is present, posteriorly with the lower two or three proximal radials and antero-ventrally with the cleithrum. The coracoid develops from the scapulo-coracoid cartilage. The coracoid is paired.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000332", ontology="TAO", source="TAO:GA_TG", source="TAO:wd"}
 property_value: UBPROP:0000001 "Paired cartilaginous structures or endochondral bones located on the posterolateral portions of the zonal area of the pectoral girdle.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000764", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: part_of zonal element (AAO:0000936)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000764", ontology="AAO"}
@@ -22550,7 +22582,6 @@ synonym: "ventral tubercle of atlas" EXACT [MP:0010731]
 xref: FMA:23991
 xref: http://www.snomedbrowser.com/Codes/Details/281224005
 xref: MA:0002871
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0005814 ! arch of atlas
 property_value: IAO:0000116 "TODO - check: anterior vs ventral; arch vs transverse process" xsd:string
@@ -22577,7 +22608,6 @@ synonym: "anterior tubercle of cervical vertebra" EXACT [FMA:24126]
 synonym: "tuberculum cervicales anterius vertebrae" EXACT LATIN [FMA:24126, FMA:TA]
 xref: FMA:24126
 xref: http://en.wikipedia.org/wiki/Anterior_tubercle_of_cervical_vertebra
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0002413 ! cervical vertebra
 
@@ -22591,7 +22621,6 @@ synonym: "posterior tubercle of cervical vertebra" EXACT [FMA:24128]
 synonym: "tuberculum cervicales posterius vertebrae" EXACT LATIN [FMA:24128, FMA:TA]
 xref: FMA:24128
 xref: http://en.wikipedia.org/wiki/Posterior_tubercle_of_cervical_vertebra
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0002413 ! cervical vertebra
 
@@ -22608,6 +22637,7 @@ xref: EHDAA2_RETIRED:0003147
 xref: EMAPA:32731
 xref: VSAO:0000092
 xref: XAO:0004022
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0004288 {source="AEO"} ! skeleton
 property_value: UBPROP:0000012 "isa cell condensation in VSAO; has_part chondroblast in AEO" xsd:string {external_ontology="VSAO"}
 
@@ -22623,6 +22653,7 @@ synonym: "prechondrogenic condensation" EXACT []
 xref: AEO:0000150
 xref: EHDAA2:0003150
 xref: EMAPA:32736
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0004288 {source="AEO"} ! skeleton
 property_value: UBPROP:0000001 "A closely packed aggregation of mesenchymal cells just prior to their differentiation into embryonic cartilage." xsd:string {source="http://dictionary.reference.com/browse/precartilage"}
 
@@ -23123,7 +23154,6 @@ xref: AAO:0000739
 xref: FMA:24530
 xref: NCIT:C116112
 xref: Structure_of_individual_vertebrae
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0002412 ! vertebra
 
@@ -23175,6 +23205,7 @@ xref: TAO:0000519
 xref: ZFA:0000519
 is_a: UBERON:0010358 ! arch of centrum of vertebra
 relationship: part_of UBERON:0001095 ! caudal vertebra
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000001 "Bony canal attached to the ventral surface or the vertebral centrum that encloses and protects the caudal artery and vein ventrally. The arch consists of right and left halves, which are fused ventrally to give a V- or Y-shape to the ventral aspect of the vertebra.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000726", ontology="AAO", source="AAO:Pugener_2002"}
 property_value: UBPROP:0000001 "Hemal arches extend ventrally from the centra of caudal and transitional vertebrae to enclose the caudal artery and vein. In cyprinids, the hemal arch forms directly in membrane bone.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000519", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000002 "relationship loss: develops_from basiventral (TAO:0001361)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000519", ontology="TAO"}
@@ -24082,6 +24113,7 @@ xref: http://en.wikipedia.org/wiki/Baculum
 xref: http://www.snomedbrowser.com/Codes/Details/27962002
 xref: MA:0000406
 is_a: UBERON:0007719 ! bone of reproductive organ
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000008 "found in most mammals, with the exception of humans" xsd:string
 
 [Term]
@@ -24097,6 +24129,7 @@ synonym: "os clitoridis" EXACT [http://en.wikipedia.org/wiki/Baculum]
 xref: EMAPA:30823
 xref: MA:0000387
 is_a: UBERON:0007719 ! bone of reproductive organ
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0006444
@@ -24337,6 +24370,7 @@ xref: ZFA:0000621
 is_a: UBERON:0002513 ! endochondral bone
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0003108 {source="AAO"} ! suspensorium
+property_value: RO:0002161 NCBITaxon:40674
 property_value: UBPROP:0000001 "Endochondral bone that commonly articulates with the ectopterygoid anteriorly, the metapterygoid dorsally, and the symplectic postero-medially. The quadrate is formed from the posterior part of the palatoquadrate cartilage, or pars quadrata. The quadrate is a paired bone.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO", source="TAO:GA_TG"}
 property_value: UBPROP:0000002 "relationship loss: overlaps quadrate-hyomandibula joint (TAO:0001801)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO"}
 property_value: UBPROP:0000002 "relationship loss: overlaps quadrate-metapterygoid joint (TAO:0001803)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000621", ontology="TAO"}
@@ -25725,6 +25759,7 @@ xref: NCIT:C32201
 xref: UMLS:C1704302 {source="ncithesaurus:Bicuspid_Tooth"}
 is_a: UBERON:0013164 ! molariform tooth
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/6c/Gray1003.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:337687 {notes="Although there are a few exceptions, the dental formula for the great majority of cricetids is 1.0.0.3", source="http://en.wikipedia.org/wiki/Cricetidae"}
 property_value: UBPROP:0000008 "In humans, there are two premolars per quadrant, making eight premolars total in the mouth. They have at least two cusps. Premolars can be considered as a 'transitional tooth' during chewing, or mastication. It has properties of both the anterior canines and posterior molars, and so food can be transferred from the canines to the premolars and finally to the molars for grinding, instead of directly from the canines to the molars. The premolars in humans are the maxillary first premolar, maxillary second premolar, mandibular first premolar, and the mandibular second premolar. There is always one large buccal cusp, especially so in the mandibular first premolar. The lower second premolar almost always presents with two lingual cusps. Premolar teeth by definition are permanent teeth distal to the canines preceded by deciduous molars. In primitive mammals there are four premolars per quadrant. The most mesial two have been lost in Catarrhines. Paleontologists refer to human premolars as Pm3 and Pm4" xsd:string
 
 [Term]
@@ -25873,7 +25908,6 @@ namespace: uberon
 synonym: "scapular border" EXACT [FMA:23797]
 xref: EMAPA:25124
 xref: FMA:23797
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 
 [Term]
@@ -26284,6 +26318,7 @@ def: "A cartilage tissue that is part of a paired limb or fin." [http://orcid.or
 subset: homology_grouping
 xref: TAO:0001543
 xref: ZFA:0001543
+is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0002418 ! cartilage tissue
 relationship: part_of UBERON:0002091 ! appendicular skeleton
 property_value: UBPROP:0000001 "Cartilage which is part of one of the paired fins.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001543", ontology="TAO", source="ZFIN:curator"}
@@ -26363,6 +26398,7 @@ xref: MA:0002294
 xref: NCIT:C52917
 xref: UMLS:C1707983 {source="ncithesaurus:Extensor_Digitorum_Lateralis"}
 is_a: UBERON:0011024 {source="Wikipedia"} ! extrinsic extensor muscle of manus
+property_value: RO:0002161 NCBITaxon:9606 {source="ISBN:9780716717553"}
 
 [Term]
 id: UBERON:0007614
@@ -26439,6 +26475,7 @@ def: "A bone that is part of a reproductive organ." [https://github.com/obopheno
 synonym: "baculum" NARROW []
 synonym: "os penis/os clitoris" RELATED []
 is_a: UBERON:0001474 ! bone element
+property_value: RO:0002161 NCBITaxon:9606 {source="Wikipedia"}
 
 [Term]
 id: UBERON:0007721
@@ -26878,6 +26915,7 @@ def: "Sclerotic rings are rings of bone found in the eyes of several groups of v
 synonym: "scleral ring" EXACT [http://en.wikipedia.org/wiki/Sclerotic_ring]
 xref: Sclerotic:ring
 is_a: UBERON:0010290 {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"} ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0007805
@@ -27161,6 +27199,7 @@ is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0010388 {source="ISBN:0073040584"} ! proximal segment of rib
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/alex-dececchi
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
+property_value: RO:0002161 NCBITaxon:8827 {source="http://www.ncbi.nlm.nih.gov/pubmed/15755883"}
 property_value: UBPROP:0000001 "Posteriorly directed process (occasionally directed anteriorly) usually associated with the rib (sometimes with the transverse process) of the third vertebra; they provide the origin of the mm serratus superior, medius, and inferior.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000741", ontology="AAO", source="AAO:Pugener_2002"}
 
 [Term]
@@ -29484,6 +29523,7 @@ synonym: "gill basket" EXACT [http://www.briancoad.com/dictionary/DicPics/branch
 is_a: UBERON:0010912 ! subdivision of skeleton
 property_value: depicted:by http://dev.duit.uwa.edu.au/zoology/media/lamp/E19.jpg xsd:anyURI
 property_value: IAO:0000116 "developmental relationship needs to be changed if the scope is broadened, as NC is vertebrate-specific" xsd:string
+property_value: RO:0002161 NCBITaxon:117570
 property_value: UBPROP:0000008 "May also be present in amphioxus" xsd:string
 property_value: UBPROP:0000009 "functions by elastic recoil" xsd:string
 
@@ -30507,6 +30547,7 @@ synonym: "retractor bulbi muscle" EXACT []
 xref: AAO:0010122
 is_a: UBERON:0001601 {source="cjm"} ! extra-ocular muscle
 property_value: IAO:0000116 "TODO - add innervation relationships" xsd:string
+property_value: RO:0002161 NCBITaxon:9606 {source="Wikipedia"}
 property_value: RO:0002175 NCBITaxon:40674
 property_value: UBPROP:0000008 "In most other mammals it also innervates the musculus retractor bulbi, which can retract the eye for protection" xsd:string {source="wiki/Abducens_nerve"}
 
@@ -30568,6 +30609,7 @@ is_a: UBERON:0003932 {source="ZFA"} ! cartilage element of chondrocranium
 is_a: UBERON:0010296 ! scleral skeletal element
 property_value: IAO:0000116 "consider distinguishing cup from predecessor of ossicle. Hall: The scleral cartilaginous cup is a distinctly sepa- rate element composed of hyaline cartilage" xsd:string
 property_value: IAO:0000116 "relationship to sclera - overlaps?" xsd:string
+property_value: RO:0002161 NCBITaxon:32525 {source="PMID:17051547 - but present in monotremes"}
 property_value: UBPROP:0000001 "Bilaterally paired thin continuous band of cartilage that sagittally encircles the eye.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001509", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "May be calcified in chondrichthyans. Tetrapods without this element (e.g., snakes and mammals) have a collagenous sclera. May not be homologous - see http://www.ncbi.nlm.nih.gov/pubmed/17051547. cup-shaped in birds. Present in monotremes." xsd:string
 
@@ -30582,6 +30624,8 @@ synonym: "sclerotic ossicle" EXACT []
 xref: http://www.snomedbrowser.com/Codes/Details/45632000
 is_a: UBERON:0010296 ! scleral skeletal element
 relationship: part_of UBERON:0001697 {source="ZFA"} ! orbit of skull
+property_value: RO:0002161 NCBITaxon:7777 {source="PMID:17051547 Walls 1942"}
+property_value: RO:0002161 NCBITaxon:7878 {source="PMID:17051547 Kemp 1999"}
 property_value: UBPROP:0000008 "The distribution of scleral ossicles and scleral cartilage among verte- brate taxa is not the same. Some taxa (e.g., birds) have both elements; some only have one element (e.g., crocodiles only have a scleral cartilage); while others (e.g., snakes) have neither element (Walls, 1942) number of ossicles making up the sclerotic ring as well as the shape of both the individual plates and the sclerotic ring is variable among tetrapod taxa.... It is therefore extremely likely that scleral skeletal elements (ossicles and cartilage) of all rep- tiles (including birds) are homologous (but cannot be assumed for reptiles and teleosts)" xsd:string
 property_value: UBPROP:0000009 "The function of these elements is to support the eye from within the sclera; scleral ossicles play an additional important role during accommodation in terrestrial vertebrates (Lemmrich, 1931; Walls, 1942; King and McLelland, 1984)." xsd:string
 
@@ -30591,6 +30635,7 @@ name: scleral skeletal element
 namespace: uberon
 is_a: UBERON:0010321 ! skeletal element of eye region
 property_value: IAO:0000232 "An eye adnexal structure, but not necessarily part of the eyeball" xsd:string
+property_value: RO:0002161 NCBITaxon:40674 {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"}
 
 [Term]
 id: UBERON:0010297
@@ -30603,6 +30648,7 @@ is_a: UBERON:0002513 {source="ZFA"} ! endochondral bone
 is_a: UBERON:0003462 ! facial bone
 is_a: UBERON:0010290 ! scleral ossicle
 relationship: part_of UBERON:0002241 {source="ZFA"} ! chondrocranium
+property_value: RO:0002161 NCBITaxon:32523
 property_value: UBPROP:0000001 "A pair of small dish-shaped bones that cap the anterior and posterior margin of the eyeball.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001411", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "The scleral ossicles [of teleosts] are reported to form indirectly by endochondral (Hall and Miyake, 1992) or by perichondral ossification (Patterson, 1977) from a cartilage element that is also present in the sclera. This is unlike the scleral ossicles of reptiles, which develop directly from ectomesenchyme (i.e., intramembranous ossification) and independently from the scleral cartilage" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"}
 
@@ -30614,6 +30660,7 @@ comment: are of dermal (neural crest) origin, develop intramembranously within t
 is_a: UBERON:0002514 {source="http://www.ncbi.nlm.nih.gov/pubmed/11237469"} ! intramembranous bone
 is_a: UBERON:0003462 ! facial bone
 is_a: UBERON:0010290 ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:32443
 property_value: UBPROP:0000011 "The scleral ossicles [in reptiles]" xsd:string
 
 [Term]
@@ -30779,7 +30826,6 @@ synonym: "vertebra arch" NARROW [MA:0001453]
 synonym: "vertebral arch" NARROW [FMA:11946]
 xref: EMAPA:36614
 xref: FMA:11946
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0002412 {source="FMA"} ! vertebra
 property_value: UBPROP:0000003 "(...) certain common components [of vertebral structure] are found in nearly all vertebrate. A representative vertebra has a vertebral arch or neural arch, which extends dorsally around the spinal cord.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001670", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.270"}
@@ -32248,6 +32294,7 @@ xref: EMAPA:32623
 xref: EMAPA:35933
 xref: MA:0000612
 is_a: UBERON:0010740 ! bone of appendage girdle complex
+relationship: part_of UBERON:0002091 ! appendicular skeleton
 property_value: IAO:0000116 "considering adding pectoral and pelvic complex skeleton classes" xsd:string
 property_value: UBPROP:0000012 "note that the MA class includes girdle parts so it belongs here;" xsd:string {external_ontology="MA"}
 
@@ -32363,6 +32410,8 @@ is_a: UBERON:0003462 ! facial bone
 is_a: UBERON:0008907 {source="ISBN:0073040584"} ! dermal bone
 relationship: part_of UBERON:0003113 {notes="orbital series", source="ISBN:0073040584"} ! dermatocranium
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/44/Dromaeosaurus_skull_en.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:40674
+property_value: RO:0002161 NCBITaxon:8782
 property_value: UBPROP:0000008 "It first evolved in the sarcopterygian clade Rhipidistia, which includes lungfish and the Tetrapodomorpha. The prefrontal is found in most modern and extinct lungfish, amphibians and reptiles. It is very small, fused to the frontals or lost in many groups of coelurosaurian theropod dinosaurs and is completely absent in their modern descendants, the birds. The prefrontal was also lost in early mammaliaforms and so is not present in modern mammals either" xsd:string {source="WP"}
 
 [Term]
@@ -32429,7 +32478,6 @@ synonym: "supraglenoid tuberosity" EXACT [FMA:23263]
 synonym: "tuberculum supraglenoidale" RELATED LATIN [http://en.wikipedia.org/wiki/Supraglenoid_tubercle]
 xref: FMA:23263
 xref: Supraglenoid:tubercle
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0006633 ! coracoid process of scapula
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/a6/Gray205_left_scapula_lateral_view.png xsd:anyURI
@@ -32708,6 +32756,7 @@ synonym: "ventral nasal capsule" EXACT [http://www.ncbi.nlm.nih.gov/pubmed/21270
 xref: AAO:0000303
 is_a: UBERON:0010363 {source="TAO"} ! endochondral element
 relationship: part_of UBERON:0011241 {source="ISBN:0073040584"} ! ethmoid region
+property_value: RO:0002161 NCBITaxon:8782
 property_value: RO:0002174 NCBITaxon:8292 {editor_note="check AAO"}
 property_value: UBPROP:0000001 "Endochondral ossification of the anteromedial portion of the braincase.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000303", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: part_of braincase and otic capsule skeleton (AAO:0000052)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000303", ontology="AAO"}
@@ -32749,6 +32798,8 @@ xref: VSAO:0000127
 is_a: UBERON:0003828 ! abdominal segment bone
 is_a: UBERON:0008907 {source="VSAO"} ! dermal bone
 relationship: part_of UBERON:0014478 ! rib skeletal system
+property_value: RO:0002161 NCBITaxon:40674 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:8782
 property_value: RO:0002175 NCBITaxon:8508 {source="Wikipedia"}
 property_value: UBPROP:0000008 "These bones may have been derived from the ventral scales found in animals like rhipidistians, labyrinthodonts, and Acanthostega, and may be related to ventral elements of turtle plastrons" xsd:string {source="WP"}
 
@@ -33093,6 +33144,7 @@ xref: FMA:46302
 xref: http://www.snomedbrowser.com/Codes/Details/141804004
 is_a: UBERON:0010940 ! muscle of digastric group
 is_a: UBERON:0018544 ! trigeminal nerve muscle
+property_value: RO:0002161 NCBITaxon:9599
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/538 xsd:anyURI
 property_value: UBPROP:0000001 "The anterior digastric is a pharyngeal arch I muscle that participates in oral/pharygeal behaviors and is innervated by the nerve to mylohyoid and superficial to mylohyoid muscle, and lacks the midline raphe.[FEED]" xsd:string {date_retrieved="2012-07-02", ontology="FEED", url="http://www.feedexp.org"}
 property_value: UBPROP:0000008 "absent in orangutans" xsd:string {source="https://doi.org/10.1007/BF02547558"}
@@ -34045,6 +34097,7 @@ xref: NCIT:C98784
 xref: Stifle:joint
 xref: UMLS:C1456798 {source="ncithesaurus:Stifle_Joint"}
 is_a: UBERON:0001485 ! knee joint
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0011124
@@ -34417,6 +34470,7 @@ synonym: "chondrocranium bone" EXACT [MA:0001478]
 xref: EMAPA:35238
 xref: http://www.snomedbrowser.com/Codes/Details/120229002
 xref: MA:0001478
+is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004766 ! cranial bone
 relationship: part_of UBERON:0001703 ! neurocranium
 
@@ -34492,6 +34546,7 @@ xref: ZFA:0005484
 is_a: UBERON:0011171 ! joint connecting upper and lower jaws
 property_value: IAO:0000232 "over time, the synapsids' quadrate-articular jaw joint (which the rest of the tetrapods possess) was replaced by a dentary-squamosal joint (which all living mammals possess), while the quadrate and articular migrated, shrank, and became part of the complex of middle ear bones." xsd:string {source="evograms:05"}
 property_value: IAO:0000232 "see comments for UBERON:0004744 articular/anguloarticular." xsd:string
+property_value: RO:0002161 NCBITaxon:32525 {source="http://evolution.berkeley.edu"}
 property_value: UBPROP:0000001 "Joint that articulates quadrate and anguloarticular bones. Quadrate-articular joint is paired.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001802", ontology="TAO", source="TAO:wd"}
 
 [Term]
@@ -34675,6 +34730,7 @@ synonym: "intrinsic ocular muscle" EXACT [EMAPA:18808]
 xref: AAO:0010038
 xref: EMAPA:18808
 xref: FMA:49150
+is_a: UBERON:0001630 {notes="organ component in FMA"} ! muscle organ
 is_a: UBERON:0004277 ! eye muscle
 relationship: part_of UBERON:0003386 {source="EMAPA"} ! smooth muscle of eye
 property_value: UBPROP:0000001 "Muscles within the eye (bulbus oculi).[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010038", ontology="AAO", source="AAO:EJS"}
@@ -34926,6 +34982,8 @@ is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0003113 {notes="temporal series", source="ISBN:0073040584"} ! dermatocranium
 property_value: depicted:by Archaeopteryx:skull.png xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/eb/Skull_synapsida_1.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:40674 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:8509 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Paired intramembranous bones that completes the maxillary arch posteriorly; they appear at the end of, or just after, metamorphosis[AAO:0000532]." xsd:string {source="AAO:0000532"}
 
 [Term]
@@ -36347,7 +36405,6 @@ def: "Paired processes that arise near the midpoint of the neural arch lamina, f
 synonym: "diapophysis" BROAD [AAO:0000706]
 synonym: "transverse process" BROAD [AAO:0000706]
 xref: AAO:0000706
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0003861 {source="ISBN:0073040584"} ! neural arch
 property_value: IAO:0000116 "taken from AAO, requires attention of amphibian anatomy experts, in particular, relationship to transverse processes" xsd:string
@@ -36363,6 +36420,7 @@ xref: VSAO:0000161
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:0008907 {source="VSAO"} ! dermal bone
 property_value: IAO:0000116 "See discussion on pectoral girdles - change relationship to overlaps? Kardong: enlarged oval scale" xsd:string
+property_value: RO:0002161 NCBITaxon:32525
 property_value: RO:0002175 NCBITaxon:9257
 property_value: UBPROP:0000008 "Present in therapids and monotremes, reduced in size in marsupials and placentals. In birds, the interclavicle is fused with the clavicles to form the furcula (wishbone); the furcula forms a 'Y' shape and the interclavicle is the stem of the 'Y'." xsd:string
 
@@ -37394,6 +37452,7 @@ xref: FMA:43700
 xref: http://en.wikipedia.org/wiki/Fovea_of_head_of_femur
 is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0004412 ! proximal epiphysis of femur
+property_value: RO:0002161 NCBITaxon:9709
 
 [Term]
 id: UBERON:0012080
@@ -38005,6 +38064,7 @@ namespace: uberon
 def: "A sphincter muscle that is part of a vagina." [OBOL:automatic]
 synonym: "sphincter of vagina" EXACT []
 is_a: UBERON:0004590 ! sphincter muscle
+property_value: RO:0002161 NCBITaxon:9606
 property_value: RO:0002175 NCBITaxon:8509
 
 [Term]
@@ -38044,6 +38104,7 @@ synonym: "epitrochlearis" EXACT [BTO:0000423]
 synonym: "wing epitrochlearis muscle" NARROW SENSU [NCBITaxon:8782, OBOL:automatic]
 xref: BTO:0000423
 is_a: UBERON:0003662 {source="BTO"} ! forelimb muscle
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0012615
@@ -38262,6 +38323,7 @@ synonym: "marsupial bone" NARROW []
 xref: Epipubic:bone
 is_a: UBERON:0007830 {source="cjm"} ! pelvic girdle bone/zone
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/4c/Macropus_major_hind_legs.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:314146
 property_value: UBPROP:0000001 "Epipubic bones are a pair of bones projecting forward from the pelvic bones of modern marsupials and of some fossil mammals: multituberculates, monotremes, and even basal eutherians (the ancestors of placental mammals). In modern marsupials the epipubic bones are often called 'marsupial bones' because they support the mother's pouch ('marsupium' is Latin for 'pouch'), but their presence on other groups of mammals indicates that this was not their original function, which some researchers think was to assist locomotion by supporting some of the muscles that flex the thigh. The epipubic bones were first described in 1698 but their functions have remained unresolved. It has been suggested that they form part of a kinetic linkage stretching from the femur on one side to the ribs on the opposite side. This linkage is formed by a series of muscles: each epipubic bone is connected to the femur by the pectineus muscle, and to the ribs and vertebrae by the pyramidalis, rectus abdominis, and external and internal obliques. According to this hypothesis, the epipubic bones act as levers to stiffen the trunk during locomotion[Wikipedia:Epipubic_bone]." xsd:string {source="Epipubic:bone"}
 property_value: UBPROP:0000007 "epipubic" xsd:string
 
@@ -38273,6 +38335,12 @@ def: "A canal through the medial epicondyle at the distal end of the vertebrate 
 xref: Entepicondylar:foramen
 is_a: UBERON:0005744 ! bone foramen
 relationship: part_of UBERON:0004404 ! distal epiphysis of humerus
+property_value: RO:0002161 NCBITaxon:91561
+property_value: RO:0002161 NCBITaxon:9365
+property_value: RO:0002161 NCBITaxon:9397
+property_value: RO:0002161 NCBITaxon:9604
+property_value: RO:0002161 NCBITaxon:9721
+property_value: RO:0002161 NCBITaxon:9975
 property_value: RO:0002175 NCBITaxon:376911
 property_value: RO:0002175 NCBITaxon:37887
 property_value: RO:0002175 NCBITaxon:38624
@@ -38308,6 +38376,7 @@ synonym: "M. caudofemoralis" EXACT []
 xref: EMAPA:36226
 xref: http://en.wikipedia.org/wiki/Caudofemoralis
 is_a: UBERON:0003663 ! hindlimb muscle
+property_value: RO:0002161 NCBITaxon:9606 {source="https://doi.org/10.1002/ar.22919"}
 property_value: RO:0002175 NCBITaxon:399537 {source="https://doi.org/10.1002/ar.22919"}
 property_value: RO:0002175 NCBITaxon:8492 {source="Wikipedia"}
 property_value: RO:0002175 NCBITaxon:8782 {source="Wikipedia"}
@@ -38322,6 +38391,7 @@ def: "Otic notches are invagination in the posterior margin of the skull roof, o
 xref: Otic:notch
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0003113 ! dermatocranium
+property_value: RO:0002161 NCBITaxon:32524
 property_value: UBPROP:0000009 "The notches have been interpreted as part of an auditory structure, and are often shown holding a tympanum similar to those seen in modern anurans. Analysis of the columella (the stapes in amphibians and reptiles) of labyrinthodonts however indicate it did not function in transmitting low energy vibrations, thus rendering them effectively deaf to airborne sound. The otic notch instead functioned as a spiracle, at least in the early forms" xsd:string
 
 [Term]
@@ -38549,6 +38619,7 @@ def: "A bony buttress on the inner surface of the foremost part of the ape mandi
 xref: Simian:shelf
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0001684 ! mandible
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0013454
@@ -38842,6 +38913,7 @@ namespace: uberon
 def: "A long muscle found in reptiles that originates on the ilium and crosses the acetabulum and the knee joint before being inserted on the tibia." [ISBN:0073040584]
 synonym: "ambiens" RELATED []
 is_a: UBERON:0003663 ! hindlimb muscle
+property_value: RO:0002161 NCBITaxon:40674
 property_value: UBPROP:0000001 "The tendon of the ambiens muscle passes obliquely over the knee joint. It assists in the control of the bird's toes. This muscle is present in some reptiles but not mammals. It is present in caiques and some other South American genera, but missing in most parrot genera. This was first noted by Garrod (1874) who proposed using this and other anatomical differences to classify parrots. For oproperty_value external_definitionanatomical differences among parrots see carotid arteries, furcula, and uropygial gland" xsd:string {source="http://caiquesite.com/glossary.htm"}
 
 [Term]
@@ -39106,6 +39178,7 @@ def: "Subdivision of skeleton that is part of the velum and consists of a comple
 synonym: "skeleton of velum" EXACT [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0010912 ! subdivision of skeleton
 relationship: part_of UBERON:0008895 {notes="in hagfishes it is difficult to separate neurocranium from visceral skeleton"} ! splanchnocranium
+property_value: RO:0002161 NCBITaxon:7776
 property_value: RO:0002175 NCBITaxon:7762
 
 [Term]
@@ -39856,6 +39929,8 @@ def: "One of two bilaterally symmetrical holes (fenestrae) in the temporal bone.
 synonym: "temporal fenestrae" RELATED PLURAL []
 is_a: UBERON:0004705 ! fenestra
 relationship: part_of UBERON:0001678 ! temporal bone
+property_value: RO:0002161 NCBITaxon:32525 {notes="in extant mammals the synapsis temporal fenestra is closed by the sphenoid", source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:8459 {source="Wikipedia"}
 
 [Term]
 id: UBERON:0014460
@@ -39915,6 +39990,7 @@ xref: TAO:0002100
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000075 ! subdivision of skeletal system
 relationship: part_of UBERON:0011138 ! postcranial axial skeletal system
+property_value: RO:0002161 NCBITaxon:7778 {source="Wikipedia"}
 
 [Term]
 id: UBERON:0014483
@@ -41112,6 +41188,7 @@ synonym: "skeletal muscle" RELATED [FBbt:00005073]
 xref: FBbt:00005073
 xref: HAO:0001922
 relationship: part_of UBERON:0007095 ! somatic musculature
+property_value: RO:0002161 NCBITaxon:7742
 property_value: UBPROP:0000001 "The muscle that is attached at either end to the cuticle[HAO]." xsd:string {source="http://api.hymao.org/api/ref/67791", source="HAO:0001922"}
 
 [Term]
@@ -43533,6 +43610,7 @@ xref: UBERONTEMP:d522e981-3a43-4cab-9862-4344b5c3ff22
 is_a: UBERON:0002228 ! rib
 is_a: UBERON:0003458 ! neck bone
 property_value: IAO:0000116 "Trunk, presacral and sacral ribs do not have a 'part of some region' asserted for them, we should add it to them[PHENOSCAPE:ad]" xsd:string
+property_value: RO:0002161 NCBITaxon:9606 {source="should be all Theria, see https://github.com/obophenotype/mouse-anatomy-ontology/issues/116"}
 property_value: UBPROP:0000008 "May be homologous with the transverse processes of cervical vertebra" xsd:string
 
 [Term]
@@ -43541,6 +43619,7 @@ name: lumbar rib
 namespace: uberon
 def: "A rib that is attached to a lumbar vertebra." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0002228 ! rib
+property_value: RO:0002161 NCBITaxon:32525
 property_value: UBPROP:0000008 "May be homologous with the transverse processes of lumbar vertebra" xsd:string
 
 [Term]
@@ -43611,6 +43690,7 @@ xref: EMAPS:1818928
 xref: MA:0003141
 xref: Panniculus:carnosus
 is_a: UBERON:0008876 ! hypodermis skeletal muscle layer
+property_value: RO:0002161 NCBITaxon:9606 {notes="vestigial or barely detectable"}
 property_value: RO:0002175 NCBITaxon:9261 {notes="by contraction of various parts of the panniculus carnosus, the short-beaked echidna can change shape, the most characteristic shape change being achieved by rolling itself into a ball when threatened, so protecting its belly and presenting a defensive array of sharp spines"}
 property_value: UBPROP:0000007 "pannicular" xsd:string
 property_value: UBPROP:0000008 "In humans, the platysma has features of the panniculaus carnosus[ISBN:0123813611]." xsd:string
@@ -43674,7 +43754,6 @@ name: atlantal spinal nerve foramen
 namespace: uberon
 def: "Foramen housing the root of the spinal nerve seen in the neural arch of the first vertebrae (atlas). (see Edwards 1976)" [PHENOSCAPE:nizar]
 xref: UBERONTEMP:4fd613b3-3fd4-422e-a2f7-d7a2cde79d60
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005744 ! bone foramen
 relationship: part_of UBERON:0005814 ! arch of atlas
 property_value: UBPROP:0000008 "In extant taxa this is restricted to some members of Caudata" xsd:string
@@ -43724,6 +43803,7 @@ namespace: uberon
 def: "A protuberence or true tooth that is used during hatching to break the eggshell." [PHENOSCAPE:alex]
 xref: Egg:tooth
 is_a: UBERON:0003913 ! tooth-like structure
+property_value: RO:0002161 NCBITaxon:9347
 
 [Term]
 id: UBERON:0018277
@@ -44037,6 +44117,7 @@ namespace: uberon
 def: "fourth most proximal phalanx in manual or pedal digits." [PHENOSCAPE:alex]
 xref: UBERONTEMP:a8b5fbe4-0d00-4464-97ee-81ffd58a44f8
 is_a: UBERON:0003221 ! phalanx
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0018323
@@ -45498,6 +45579,7 @@ synonym: "branchial bar" RELATED []
 synonym: "gill bar" RELATED []
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004765 ! skeletal element
+property_value: RO:0002161 NCBITaxon:7776
 property_value: RO:0002175 NCBITaxon:117569
 property_value: RO:0002175 NCBITaxon:7737
 property_value: UBPROP:0000008 "Haikouella possessed a small number of pharyngeal bars that may have been composed of mucocartilage, as in modern lampreys (Holland and Chen, 2001). the pharyngeal bars of Haikouella were probably derived from neural crest, as were the sensory components of the cranial nerves that innervated its pharyngeal muscles[http://icb.oxfordjournals.org/content/42/4/743.full]" xsd:string
@@ -45614,6 +45696,7 @@ synonym: "M. spinalis caudalis" EXACT []
 synonym: "spinalis caudalis" EXACT []
 is_a: UBERON:0003897 ! axial muscle
 is_a: UBERON:0035091 {source="http://www.ncbi.nlm.nih.gov/pubmed/22753107"} ! extrinsic post-anal tail muscle
+property_value: RO:0002161 NCBITaxon:9606 {source="cjm"}
 property_value: RO:0002175 NCBITaxon:28376
 property_value: UBPROP:0000009 "The m. spinalis caudalis is hypothesized to be a stabilizer of the vertebral column[PMID:22753107]" xsd:string
 
@@ -46100,6 +46183,7 @@ synonym: "infra-orbital bridge" EXACT []
 is_a: UBERON:0005913 ! zone of bone organ
 relationship: part_of UBERON:0003129 ! skull
 property_value: depicted:by http://media.eol.org/content/2010/03/24/02/63782_580_360.jpg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:9606
 property_value: RO:0002175 NCBITaxon:8499
 
 [Term]
@@ -46267,6 +46351,7 @@ name: orovelar muscle
 namespace: uberon
 def: "." [https://github.com/obophenotype/uberon/issues/1264]
 is_a: UBERON:0001630 ! muscle organ
+property_value: RO:0002161 NCBITaxon:7776
 
 [Term]
 id: UBERON:0036172
@@ -46332,6 +46417,7 @@ name: post-embryonic notochord
 namespace: uberon
 def: "A notochord that has persisted beyond the embryonic stage." [UBERON:cjm]
 is_a: UBERON:0002328 ! notochord
+property_value: RO:0002161 NCBITaxon:32524
 property_value: RO:0002175 NCBITaxon:118072
 property_value: RO:0002175 NCBITaxon:7737
 property_value: RO:0002175 NCBITaxon:7746
@@ -46401,7 +46487,6 @@ def: "The part of vertebra located between the inferior and superior articular p
 synonym: "pars interarticularis" EXACT []
 xref: http://www.snomedbrowser.com/Codes/Details/705098005
 xref: Pars:interarticularis
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0002412 ! vertebra
 
@@ -48595,7 +48680,6 @@ namespace: uberon/phenoscape-anatomy
 def: "Endochondral bone that is the anterodorsally oriented process of the third neural arch." [TAO:wd]
 synonym: "anterodorsal process of neural arch 3" EXACT [TAO:0000911]
 synonym: "transverse process of the third vertebra" EXACT [TAO:0000911]
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:2001394 ! neural arch 3
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -48770,7 +48854,6 @@ synonym: "hypurapophyses" EXACT PLURAL [TAO:0001028]
 synonym: "parhypurapophyses" EXACT [TAO:0001028]
 synonym: "parhypurapophyses processes" EXACT [TAO:0001028]
 xref: ZFA:0001028
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:2000438 ! parhypural
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -49539,7 +49622,7 @@ created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001275
-name: sublingual
+name: sublingual bone
 namespace: uberon/phenoscape-anatomy
 def: "Endochondral bone that is the median element of the ventral hyoid arch, generally lying between the paired ventral hypohyals." [TAO:je]
 is_a: UBERON:0002513 ! endochondral bone
@@ -49590,7 +49673,7 @@ id: UBERON:2001333
 name: sublingual dorsal and ventral fused
 namespace: uberon/phenoscape-anatomy
 def: "Sublingual that is the single element resulting from the fusion of the sublingual dorsal ossification and sublingual ventral ossification." [TAO:wd]
-is_a: UBERON:2001275 ! sublingual
+is_a: UBERON:2001275 ! sublingual bone
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -49923,7 +50006,7 @@ id: UBERON:2001475
 name: sublingual dorsal ossification
 namespace: uberon/phenoscape-anatomy
 def: "Sublingual that is the dorsal element paired with the sublingual ventral ossification." [TAO:wd]
-is_a: UBERON:2001275 ! sublingual
+is_a: UBERON:2001275 ! sublingual bone
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -49932,7 +50015,7 @@ id: UBERON:2001476
 name: sublingual ventral ossification
 namespace: uberon/phenoscape-anatomy
 def: "Sublingual that is the ventral element paired with the sublingual dorsal ossification." [TAO:wd]
-is_a: UBERON:2001275 ! sublingual
+is_a: UBERON:2001275 ! sublingual bone
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -50343,7 +50426,6 @@ id: UBERON:2001548
 name: intercalarium ascending process
 namespace: uberon/phenoscape-anatomy
 xref: ZFA:0001602
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:2000525 ! intercalarium
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -51675,7 +51757,6 @@ name: coracoid foramen
 namespace: uberon/phenoscape-anatomy
 def: "Foramen that is located in the coracoid." [TAO:wd]
 xref: ZFA:0005426
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005744 ! bone foramen
 relationship: part_of UBERON:0004743 ! coracoid bone
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -53983,7 +54064,6 @@ id: UBERON:2002008
 name: neural lamina
 namespace: uberon/phenoscape-anatomy
 def: "Neural lamina is a median, vertical ridge or bony septum between neural spine 3 and neural spine 4 on the dorsal side of the Weberian vertebra. Neural lamina is unpaired." [TAO:wd]
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:2001190 ! Weberian vertebra
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -54186,7 +54266,6 @@ id: UBERON:2002030
 name: ventral keel of coracoid
 namespace: uberon/phenoscape-anatomy
 def: "Process on the ventral surface of the horizontal limb of the coracoid, close to and parallel to the coracoid-cleithrum joint. Ventral keel of coracoid is paired." [TAO:wd]
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0004743 ! coracoid bone
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -54290,7 +54369,6 @@ namespace: uberon/phenoscape-anatomy
 def: "Process that arises and projects posterolaterally from parapophysis 4. Posterior limb of parapophysis 4 is bilaterally paired." [TAO:wd]
 synonym: "posterior branch of parapophysis 4" EXACT [TAO:0002043]
 synonym: "posterior wing of parapophysis 4" EXACT [TAO:0002043]
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:2001971 ! parapophysis 4
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -55060,7 +55138,6 @@ name: pseudourostyle
 namespace: uberon/phenoscape-anatomy
 def: "An elongate lateral process ventrally placed to the proximal region of the pleurostyle. The pseudourostyle is paired." [TAO:GA_TG]
 comment: The pseudourostyle occurs only in certain teleost subgroups. It may be well developed in certain characiforms.
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:2002084 ! pleurostyle
 property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -58556,7 +58633,6 @@ id: UBERON:3000692
 name: pedicel
 namespace: uberon/phenoscape-anatomy
 def: "Paired stalks located dorsolateral to the vertebral centrum that provide support to the lateral margins of the neural arch laminae." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0002412 ! vertebra
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -58567,7 +58643,6 @@ name: atlantal cotyle
 namespace: uberon/phenoscape-anatomy
 def: "Anterior, single or paired concave facets for articulation with the condyle(s) of the urostyle." [AAO:Francis_1934]
 synonym: "cavitas glenoidalis" RELATED [UBERON:3000694]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001092 ! vertebral bone 1
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -58607,7 +58682,6 @@ id: UBERON:3000707
 name: pleurapophysis
 namespace: uberon/phenoscape-anatomy
 def: "Paired processes that represent the rib attachments to the vertebra plus the ribs." [AAO:Duellman_and_Trueb_1994]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0002412 ! vertebra
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -58709,7 +58783,6 @@ id: UBERON:3000727
 name: haemal arch lamina
 namespace: uberon/phenoscape-anatomy
 def: "Paired plates that form the haemal arch. The lateral margin of each lamina is firmly attached to the ventral surface of the caudal vertebral centrum and the medial end fuses to the medial end of the opposite lamina." [AAO:Pugener_2002]
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0006065 ! hemal arch
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -58720,7 +58793,6 @@ id: UBERON:3000728
 name: nucal keel
 namespace: uberon/phenoscape-anatomy
 def: "Longitudinal process found in all cervical vertebrae, except the atlas, for the attachment of dorsal head musculature." [AAO:Duellman_and_Trueb_1994]
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0001092 ! vertebral bone 1
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -58740,7 +58812,6 @@ id: UBERON:3000735
 name: mid-dorsal keel
 namespace: uberon/phenoscape-anatomy
 def: "Ridge-shaped structure present on the dorsomedial surface of the neural arch lamina; this structure is produced at the point of junction of the contralateral sides of each neural arch." [AAO:Pugener_2002]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0003861 ! neural arch
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -58761,7 +58832,6 @@ name: urostyle cotyle
 namespace: uberon/phenoscape-anatomy
 def: "Anterior, single or paired concave facets for articulation with the sacral condyle(s)." [AAO:LAP]
 synonym: "fossa condyloidea ossis coccygei" RELATED [UBERON:3000744]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0003106 ! urostyle
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -58782,7 +58852,6 @@ name: urostyle ridge
 namespace: uberon/phenoscape-anatomy
 def: "Longitudinal crest on the dorsal side of the urostyle formed by the caudal neural arches." [AAO:Maglia_et_al_2007]
 synonym: "crista ossi coccygei" RELATED [UBERON:3000746]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0003106 ! urostyle
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -58806,7 +58875,6 @@ id: UBERON:3000752
 name: pars acromialis
 namespace: uberon/phenoscape-anatomy
 def: "Prominent structure (anteromedial head) that forms the anterior section of the ventral margin of the scapula." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -58817,7 +58885,6 @@ name: pars glenoidalis of scapula
 namespace: uberon/phenoscape-anatomy
 def: "Concave structure (posteromedial head) that forms the posterior head of the ventral margin of the scapula. The pars glenoidalis articulates with the humerus, and comprises the dorsal portion of the glenoid fossa." [AAO:LAP]
 synonym: "glenoid head of scapula" EXACT []
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59090,7 +59157,6 @@ id: UBERON:3000799
 name: cartilago paraglenoidalis
 namespace: uberon/phenoscape-anatomy
 def: "Strip of cartilage that separates the coracoid from the scapula." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59111,7 +59177,6 @@ id: UBERON:3000801
 name: caput glenoidale
 namespace: uberon/phenoscape-anatomy
 def: "Convex articular facet of the vertebral centrum for the articulation with the adjacent centrum." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001075 ! bony vertebral centrum
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59121,7 +59186,6 @@ id: UBERON:3000802
 name: fossa glenoidalis
 namespace: uberon/phenoscape-anatomy
 def: "Concave articular facet of the vertebral centrum for the articulation with the adjacent centrum." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001075 ! bony vertebral centrum
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59131,7 +59195,6 @@ id: UBERON:3000803
 name: sulcus articularis lateralis
 namespace: uberon/phenoscape-anatomy
 def: "In a zygapophysis that has ridges and sulci, the lateral canal between the carina distalis and the carina medialis." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006062 ! zygapophysis
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59141,7 +59204,6 @@ id: UBERON:3000804
 name: sulcus articularis medialis
 namespace: uberon/phenoscape-anatomy
 def: "In a zygapophysis that has ridges and sulci, the medial canal between the carina medialis and the carina proximalis." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006062 ! zygapophysis
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59151,7 +59213,6 @@ id: UBERON:3000805
 name: carina proximalis
 namespace: uberon/phenoscape-anatomy
 def: "In a zygapophysis that has ridges and sulci, the proximal ridge." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006062 ! zygapophysis
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59161,7 +59222,6 @@ id: UBERON:3000806
 name: carina medialis
 namespace: uberon/phenoscape-anatomy
 def: "In a zygapophysis that has ridges and sulci, the medial ridge." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006062 ! zygapophysis
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59171,7 +59231,6 @@ id: UBERON:3000807
 name: carina distalis
 namespace: uberon/phenoscape-anatomy
 def: "In a zygapophysis that has ridges and sulci, the distal ridge." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006062 ! zygapophysis
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59181,7 +59240,6 @@ id: UBERON:3000808
 name: parasagittal processes
 namespace: uberon/phenoscape-anatomy
 def: "Paired, posteriorly directed process at the posterior margin of each neural arch lamina." [AAO:Cannatella_1985]
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0003861 ! neural arch
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -59202,7 +59260,6 @@ id: UBERON:3000810
 name: fissura sagittalis
 namespace: uberon/phenoscape-anatomy
 def: "Medial groove in the longitudinal ridge of the urostyle formed by the incomplete dorsal fusion of the caudal neural arches." [AAO:Maglia_et_al_2007]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:3000746 ! urostyle ridge
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59253,7 +59310,6 @@ id: UBERON:3000816
 name: margo fenestralis
 namespace: uberon/phenoscape-anatomy
 def: "Anterior margin of the coracoid, which forms the posterior edge of the pectoral fenestra." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0004743 ! coracoid bone
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59263,7 +59319,6 @@ id: UBERON:3000817
 name: margo posterior
 namespace: uberon/phenoscape-anatomy
 def: "Posterior margin of the coracoid." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0004743 ! coracoid bone
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59273,7 +59328,6 @@ id: UBERON:3000818
 name: margo anterior of scapula
 namespace: uberon/phenoscape-anatomy
 def: "Anterior margin of the scapula." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59283,7 +59337,6 @@ id: UBERON:3000819
 name: margo clavicularis
 namespace: uberon/phenoscape-anatomy
 def: "Inferior margin of the pars acromialis of the scapula, which articulates with the clavicule." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59293,7 +59346,6 @@ id: UBERON:3000820
 name: margo posterior of scapula
 namespace: uberon/phenoscape-anatomy
 def: "Posterior margin of the scapula." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59303,7 +59355,6 @@ id: UBERON:3000821
 name: margo suprascapularis
 namespace: uberon/phenoscape-anatomy
 def: "Superior margin of the scapula, which articulates with the suprascapula." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59313,7 +59364,6 @@ id: UBERON:3000822
 name: pars suprascapularis
 namespace: uberon/phenoscape-anatomy
 def: "Superior portion of the scapula, which is thinner than the rest of the shaft." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59333,7 +59383,6 @@ id: UBERON:3000824
 name: tenuitas cristaeformis
 namespace: uberon/phenoscape-anatomy
 def: "Leading (anterior) portion of the scapula, which is thinner than the rest of the shaft." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
@@ -59343,7 +59392,6 @@ id: UBERON:3000825
 name: crista longitudinalis scapula
 namespace: uberon/phenoscape-anatomy
 def: "Longitudinal ridge on the medial (inner) face of the scapula." [AAO:LAP]
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0006849 ! scapula
 property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
@@ -62338,7 +62386,6 @@ id: UBERON:4200040
 name: acrocoracoid process
 namespace: none
 def: "Anatomical process located in the proximal region of the coracoid in avian theropods, that is hook-shaped. [NI]" []
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0004743 ! coracoid bone
 created_by: AD
@@ -62652,7 +62699,6 @@ id: UBERON:4200095
 name: infraspinous process
 namespace: none
 def: "Process on infraspinous (region below the spine) of scapula." []
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0006849 ! scapula
 created_by: AD
@@ -62851,7 +62897,6 @@ id: UBERON:4200123
 name: scapular process
 namespace: none
 def: "The dorsal extension of the scapulocoracoid above the level of the glenoid region in basal gnathostomes. Modified from Brazeau 2009." []
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:4100000 ! skeletal element projection
 relationship: part_of UBERON:0006849 ! scapula
 created_by: AD
@@ -62889,7 +62934,6 @@ id: UBERON:4200127
 name: suprascapula foramen
 namespace: none
 def: "The route through which structures pass between the base of the neck and the posterior scapular region. It is formed by the suprascapular notch of the scapula and the superior transverse scapular ligament. From http://medical-dictionary.thefreedictionary.com/suprascapular+foramen" []
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005744 ! bone foramen
 relationship: part_of UBERON:0006849 ! scapula
 created_by: AD

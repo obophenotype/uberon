@@ -3,8 +3,13 @@ ontology: uberon/subsets/excretory-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001008>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001008>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -271,10 +276,9 @@ is_a: CL:0005010 ! renal intercalated cell
 id: CL:0009019
 name: nephrogenic zone cell
 def: "A kidney cortical cell that is part of the nephrogenic zone." []
+subset: added_for_HCA
 synonym: "cortical nephrogenic niche cell" EXACT []
 synonym: "cortical nephrogenic zone cell" EXACT []
-xref: https://orcid.org/0000-0002-3163-0115
-xref: PMID:29449449
 is_a: CL:0002681 ! kidney cortical cell
 relationship: part_of UBERON:0009871 ! nephrogenic zone
 created_by: http://orcid.org/0000-0002-2825-0621
@@ -1589,6 +1593,7 @@ xref: VHOG:0000500
 xref: XAO:0000148
 is_a: UBERON:0005103 ! mesonephric epithelium
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0000080 ! mesonephros
 property_value: IAO:0000116 "TODO check" xsd:string
 property_value: UBPROP:0000001 "Any of the renal tubules composing the mesonephros. In mammals they function as excretory structures during the early embryonic development but are later incorporated into the reproductive system. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000500", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/mesonephric+tubule"}
 property_value: UBPROP:0000003 "As the pronephros regresses, the archinephric duct induces the sequential differentiation of tubules in the more caudal parts of the nephric ridge. (...) Tubules that differentiate in the middle part of the nephric ridge form a kidney called the mesonephros. This kidney functions in the embryos and larvae of all vertebrates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000500", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.639"}
@@ -1892,6 +1897,8 @@ xref: XAO:0000143
 xref: ZFA:0000163
 is_a: UBERON:0000467 ! anatomical system
 property_value: IAO:0000116 "In various sources such as Encyclopedia Britannica, the excretory and urinary systems are indeed the same system (see wikipedia talk page); we merge two BTO classes here" xsd:string
+property_value: RO:0002161 NCBITaxon:110815 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 property_value: UBPROP:0000001 "An anatomical system which consists of organs and tissues which produce, store, and excrete urine.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010257", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "Evolution of vertebrate renal anatomy appears quite conservative when compared, for example, to evolution of respiratory and cardiovascular systems in vertebrates. Major anatomical changes in vertebrates kidneys separate those of birds and mammals from kidneys of lower vertebrates. General increase in animal size from fish to mammals is reflected by an increase in total number of nephrons per kidney, rather than by constant change in tubular dimensions.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000723", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-3540428541 Kapoor BG, Bhavna Khanna, Ichthyology Handbook (2004) p.406"}
 property_value: UBPROP:0000008 "In humans, the renal system comprises a pair of kidneys, a pair of ureters, urinary bladder, urethra, sphincter muscle and associated blood vessels" xsd:string {source="GO"}
@@ -2050,7 +2057,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/1106008
 xref: MA:0001644
 xref: Major:calyx
 is_a: UBERON:0006517 ! kidney calyx
-is_a: UBERON:0014401 ! renal venous blood vessel
 property_value: depicted:by Kidney:PioM.png xsd:anyURI
 
 [Term]
@@ -2069,7 +2075,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/26293004
 xref: MA:0001645
 xref: Minor:calyx
 is_a: UBERON:0006517 ! kidney calyx
-is_a: UBERON:0014401 ! renal venous blood vessel
 property_value: depicted:by Kidney:PioM.png xsd:anyURI
 
 [Term]
@@ -2332,6 +2337,7 @@ xref: VHOG:0000740
 xref: XAO:0000154
 relationship: part_of UBERON:0001556 {source="FMA"} ! lower urinary tract
 property_value: depicted:by Urinary:system.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8782 {editor="BGEE:Ann", id="GOTAX:0010073", source="https://github.com/obophenotype/uberon/issues/454"}
 property_value: UBPROP:0000001 "A saccular organ in which urine accumulates before discharge from the body. [Bemis_WE, Functional_Anatomy_of_the_Vertebrates:_An_Evolutionary_Perspective, Glossary_G-29, Grande_L, Liem_KF, Third_Edition_(2001)_Orlando_Fla.:_Harcourt_College_Publishers, Walker_WF][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000740", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000001 "Anatomical structure which consists of a membranous sac used to temporarily store urine until it is excreted from the body.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000623", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "In tetrapods, the urinary bladder arises as an outpocketing of the cloaca. (...) The tetrapod urinary bladder appears first among amphibians and is present in Sphenodon, turtles, most lizards, ostriches among birds, and all mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000740", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.577-78"}
@@ -3328,6 +3334,7 @@ xref: XAO:0000242
 xref: ZFA:0000546
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0009201 {source="GO"} ! nephric duct
+relationship: part_of UBERON:0000080 ! mesonephros
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/6d/Gray1109.png xsd:anyURI
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/rfoulger
@@ -3408,6 +3415,7 @@ xref: EMAPA:31443
 xref: http://www.snomedbrowser.com/Codes/Details/275409003
 xref: MA:0002586
 is_a: UBERON:0003517 ! kidney blood vessel
+relationship: part_of UBERON:0006544 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! kidney vasculature
 
 [Term]
 id: UBERON:0003546
@@ -3428,6 +3436,7 @@ synonym: "kidney arterial system" RELATED [EMAPA:31436]
 xref: EMAPA:31436
 xref: MA:0002578
 is_a: UBERON:0003517 ! kidney blood vessel
+relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0003820
@@ -4973,6 +4982,7 @@ def: "A metanephric tubule is an epithelial tube that is part of the metanephros
 xref: VHOG:0001526
 is_a: UBERON:0005108 ! metanephric epithelium
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0000081 ! metanephros
 property_value: UBPROP:0000003 "The ureteric diverticulum grows dorsally into the posterior region of the nephric ridge. Here it enlarges and stimulates the growth of metanephric tubules that come to make up the metanephric kidney. The metanephros becomes the adult kidney of amniotes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001526", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.543"}
 
 [Term]
@@ -6684,6 +6694,7 @@ xref: Wolffian:duct
 is_a: UBERON:0004819 ! kidney epithelium
 is_a: UBERON:0006553 ! renal duct
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0009622
@@ -7645,6 +7656,7 @@ synonym: "venous blood vessel of kidney" EXACT []
 xref: EMAPA:31450
 xref: MA:0002591
 is_a: UBERON:0003517 ! kidney blood vessel
+relationship: part_of UBERON:0002113 ! kidney
 property_value: UBPROP:0000012 "we follow MA and MP in distinguishing the venous blood vessel from the vein. The kidney cortex vein is not considered a renal vein, nor is the vasa recta" xsd:string {external_ontology="MA"}
 
 [Term]

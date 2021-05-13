@@ -3,8 +3,13 @@ ontology: uberon/subsets/sensory-minimal
 owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0009001>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000018>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0004456>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0005388>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0004456>))\n\n# Class: <http://purl.obolibrary.org/obo/CL_0009001> (compound eye retinal cell)\n\nSubClassOf(<http://purl.obolibrary.org/obo/CL_0009001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0005388> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000018>))))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
+id: BFO:0000001
+name: entity
+
+[Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -1731,6 +1736,7 @@ subset: uberon_slim
 synonym: "pit eye" EXACT [http://en.wikipedia.org/wiki/Eye#Pit_eyes]
 xref: http://en.wikipedia.org/wiki/Stemma
 is_a: UBERON:0000047 ! simple eye
+property_value: RO:0002161 NCBITaxon:7742
 
 [Term]
 id: UBERON:0000047
@@ -1770,6 +1776,7 @@ subset: grouping_class
 subset: uberon_slim
 xref: Multiple_lenses
 is_a: UBERON:0000047 ! simple eye
+property_value: RO:0002161 NCBITaxon:7742
 
 [Term]
 id: UBERON:0000053
@@ -2243,6 +2250,7 @@ is_a: UBERON:0005388 ! photoreceptor array
 relationship: part_of UBERON:0001802 ! posterior segment of eyeball
 relationship: part_of UBERON:0019207 ! chorioretinal region
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/ed/Human_eye_cross-sectional_view_grayscale.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:6656
 property_value: UBPROP:0000001 "The portion of the eye developing from the optic primordium and including the neural retina and the retinal pigment layer. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000152", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "The eye of the adult lamprey is remarkably similar to our own, and it possesses numerous features (including the expression of opsin genes) that are very similar to those of the eyes of jawed vertebrates. The lamprey's camera-like eye has a lens, an iris and extra-ocular muscles (five of them, unlike the eyes of jawed vertebrates, which have six), although it lacks intra-ocular muscles. Its retina also has a structure very similar to that of the retinas of other vertebrates, with three nuclear layers comprised of the cell bodies of photoreceptors and bipolar, horizontal, amacrine and ganglion cells. The southern hemisphere lamprey, Geotria australis, possesses five morphological classes of retinal photoreceptor and five classes of opsin, each of which is closely related to the opsins of jawed vertebrates. Given these similarities, we reach the inescapable conclusion that the last common ancestor of jawless and jawed vertebrates already possessed an eye that was comparable to that of extant lampreys and gnathostomes. Accordingly, a vertebrate camera-like eye must have been present by the time that lampreys and gnathostomes diverged, around 500 Mya.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000229", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1038/nrn2283 Lamb TD, Collin SP and Pugh EN Jr, Evolution of the vertebrate eye: opsins, photoreceptors, retina and eye cup. Nature Reviews Neuroscience (2007)"}
 property_value: UBPROP:0000007 "retinal" xsd:string
@@ -3289,6 +3297,7 @@ xref: VHOG:0000311
 xref: XAO:0000190
 relationship: part_of UBERON:0001690 ! ear
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/29/Gray907.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:9709 {source="Wikipedia"}
 property_value: UBPROP:0000001 "The external part of the organ, which consists of an outer portion (external auditory meatus) which leads to the tympanum. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000311", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000003 "Some species, like Amolops tormotus (Feng et al. 2006), have a cavity in front of the tympanic membrane which is considered to be an ear canal and thus an outer ear. (...) The ancestral lineage of amphibians separated from the mammalian lineage, approximately 350 million years ago, in the paleozoic era. Many of the important developments in the auditory systems emerged after the ancestral paths separated (Manley and Clack 2003). This implies that shared features, like the tympanic middle ear, developed independently in different vertebrate lineages.[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000311", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1007/s00359-008-0327-1 Schoffelen RLM, Segenhout JM, Van Dijk P, Mechanics of the exceptional anuran ear. Journal of Comparative Physiology A (2008)"}
 property_value: UBPROP:0000012 "in XAO this includes and is only the tympanum" xsd:string {external_ontology="XAO"}
@@ -4919,6 +4928,7 @@ xref: VHOG:0001476
 is_a: UBERON:0004859 ! eye gland
 relationship: part_of UBERON:0001750 ! lacrimal apparatus
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/cf/Gray896.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8570 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
 property_value: UBPROP:0000001 "Lobular organ the parenchyma of which consists of glandular acini which communicate the lacrimal sac. Examples: There only two instances, right lacrimal and left lacrimal glands." xsd:string {source="FMA:59101"}
 property_value: UBPROP:0000001 "The preorbital gland is a paired exocrine gland found in many species of hoofed animals, which is homologous to the lacrimal gland found in humans. These glands are trenchlike slits of dark blue to black, nearly bare skin extending from the medial canthus of each eye. They are lined by a combination of sebaceous and sudoriferous glands, and they produce secretions which contain pheromones and other semiochemical compounds. Ungulates frequently deposit these secretions on twigs and grass as a means of communication with other animals. The preorbital gland serves different roles in different species. Pheromone-containing secretions from the preorbital gland may serve to establish an animal's dominance (especially in preparation for breeding), mark its territory, or simply to produce a pleasurable sensation to the animal. Because of its critical role in scent marking, the preorbital gland is usually considered as a type of scent gland. A further function of these glands may be to produce antimicrobial compounds against skin pathogens. Antimicrobial compounds found in these glands may be biosynthesized by the animal itself, or by microorganisms that live in these glands[Wikipedia:Preorbital_gland]." xsd:string {source="Preorbital:gland"}
 property_value: UBPROP:0000006 https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
@@ -5390,6 +5400,7 @@ xref: http://www.snomedbrowser.com/Codes/Details/280426002
 xref: MA:0001295
 relationship: part_of UBERON:0001750 {source="FMA"} ! lacrimal apparatus
 property_value: IAO:0000116 "TODO - resolve lacrimal canaliculus vs larcimal duct" xsd:string
+property_value: RO:0002161 NCBITaxon:8459 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
 property_value: UBPROP:0000008 "chelonians lack a lacrimal duct, and lacrimal/harderian secretions remain in or spill from the conjunctival sac[PMID:7559104]" xsd:string
 
 [Term]
@@ -5970,6 +5981,7 @@ xref: http://en.wikipedia.org/wiki/Nares
 xref: OpenCyc:Mx4rvViCLpwpEbGdrcN5Y29ycA
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000004 ! nose
+property_value: RO:0002161 NCBITaxon:7745 {source="http://webs.lander.edu/rsfox/invertebrates/ammocoetes.html"}
 property_value: UBPROP:0000012 "this is a 'set of anatomical planes' in FMA" xsd:string {external_ontology="FMA"}
 
 [Term]
@@ -6626,6 +6638,7 @@ xref: UMLS:C0041445 {source="ncithesaurus:Tympanic_Membrane"}
 xref: VHOG:0001146
 xref: XAO:0000212
 relationship: part_of UBERON:0001756 {source="MA"} ! middle ear
+property_value: RO:0002161 NCBITaxon:8459 {source="Wikipedia"}
 property_value: UBPROP:0000001 "The thin membrane which closes externally the cavity of the middle ear and is deeply sited at the bottom of the external auditory meatus. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001146", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000003 "In particular, a tympanic membrane was not present in the earliest tetrapods (...). An ear utilizing a tympanic membrane evolved independently at least three times in tetrapods: (1) in the lineage that leads to anurans (frogs), (2) in the line of evolution to turtles and diapsids, and (3) in the late synapsid lineage that gave rise to mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001146", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.418"}
 property_value: UBPROP:0000011 "The tympanic membrane (TM) has three layers, two epithelia provided by the external acoustic meatus (EAM) and the MEC, derived respectively from the first pharyngeal cleft and pouch, and a mesenchymally derived fibrous stratum" xsd:string
@@ -7050,6 +7063,7 @@ xref: XAO:0000095
 xref: ZFA:0000034
 is_a: UBERON:0001032 ! sensory system
 property_value: IAO:0000116 "we model this as being potentially inclusive of lateral line scales, and thus overlapping with the skeletal system. This is to accomodate TAO" xsd:string
+property_value: RO:0002161 NCBITaxon:32524 {source="http://tolweb.org/Amniota"}
 property_value: UBPROP:0000001 "A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000034", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Sensory system which develops from a specialized series of dorsolateral ectodermal placodes named lateral line placodes.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000975", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000002 "relationship loss: is_formed_by lateral line receptor organ (AAO:0001001)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000975", ontology="AAO"}
@@ -8831,6 +8845,11 @@ xref: NCIT:C77619
 xref: UMLS:C0018597 {source="ncithesaurus:Harderian_Gland"}
 is_a: UBERON:0004859 ! eye gland
 relationship: part_of UBERON:0000019 ! camera-type eye
+property_value: RO:0002161 NCBITaxon:33554 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
+property_value: RO:0002161 NCBITaxon:9397 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
+property_value: RO:0002161 NCBITaxon:9443 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
+property_value: RO:0002161 NCBITaxon:9606 {notes="may be transient in embryos", source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
+property_value: RO:0002161 NCBITaxon:9787 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
 property_value: RO:0002175 NCBITaxon:10047 {source="ISBN:1118473523"}
 property_value: RO:0002175 NCBITaxon:8293 {source="https://sourceforge.net/p/geneontology/ontology-requests/10639"}
 property_value: RO:0002175 NCBITaxon:8342 {source="https://sourceforge.net/p/geneontology/ontology-requests/10639"}
@@ -9290,6 +9309,7 @@ xref: MESH:D012171
 xref: XAO:0004153
 is_a: UBERON:0002203 ! vasculature of eye
 relationship: part_of UBERON:0000966 ! retina
+property_value: RO:0002161 NCBITaxon:8782 {source="http://www.ncbi.nlm.nih.gov/pubmed/21622558", source="http://www.ncbi.nlm.nih.gov/pubmed/2772405", submitter="michaelerice"}
 
 [Term]
 id: UBERON:0004868
@@ -9796,6 +9816,7 @@ xref: RETIRED_EHDAA2:0000976
 xref: UMLS:C1182652 {source="ncithesaurus:Subcapsular_Epithelium_of_the_Lens"}
 xref: VHOG:0001425
 is_a: UBERON:0001803 ! epithelium of lens
+relationship: part_of UBERON:0000965 ! lens of camera-type eye
 property_value: UBPROP:0000010 "Cells of the subcapsular epithelium (or anterior lens cells) are mitotically active. In adult individuals they only cover the anterior 'hemisphere' of the lens. As they divide, cells gradually move towards the equator of the lens where they tranform into lens fibres. The apical part of the gradually elongating cell extends between the subcapsular epithelium and adjacent lens fibres towards the anterior pole of the lens. The basal part extends towards the posterior pole. The nucleus remains close to the equatorial plane of the lens - http://www.lab.anhb.uwa.edu.au/mb140/corepages/eye/eye.htm" xsd:string
 
 [Term]
@@ -10593,6 +10614,7 @@ namespace: uberon
 def: "Acellular mineralized structure located in the statocyst (balance organ) of some aquatic invertebrates[WP,CJM]." [https://orcid.org/0000-0002-6601-2165]
 synonym: "calcareous statoliths" NARROW []
 relationship: part_of UBERON:0006583 ! statocyst
+property_value: RO:0002161 NCBITaxon:7742
 
 [Term]
 id: UBERON:0006583
@@ -10605,6 +10627,7 @@ synonym: "statocyst organ" RELATED []
 xref: http://en.wikipedia.org/wiki/Statocyst
 is_a: UBERON:0000020 ! sense organ
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/7e/Statocyst.jpg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:7742
 property_value: RO:0002174 NCBITaxon:110815 {source="Wikipedia"}
 property_value: RO:0002175 NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 property_value: RO:0002175 NCBITaxon:6073
@@ -11476,6 +11499,7 @@ def: "Sclerotic rings are rings of bone found in the eyes of several groups of v
 synonym: "scleral ring" EXACT [http://en.wikipedia.org/wiki/Sclerotic_ring]
 xref: Sclerotic:ring
 is_a: UBERON:0010290 {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"} ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0007818
@@ -11914,6 +11938,8 @@ xref: AAO:0001006
 xref: TAO:0002104
 is_a: UBERON:0035555 ! lateral line sense organ
 relationship: part_of UBERON:0010202 ! lateral line
+property_value: RO:0002161 NCBITaxon:7915
+property_value: RO:0002161 NCBITaxon:7922
 property_value: RO:0002175 NCBITaxon:7746
 property_value: RO:0002175 NCBITaxon:7777
 property_value: RO:0002175 NCBITaxon:7900
@@ -11935,6 +11961,8 @@ synonym: "ampullae of Lorenzini" EXACT PLURAL [http://en.wikipedia.org/wiki/Ampu
 xref: http://en.wikipedia.org/wiki/Ampullae_of_Lorenzini
 is_a: UBERON:0035555 ! lateral line sense organ
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/88/Electroreceptors_in_a_sharks_head.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32443 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:32523
 property_value: RO:0002175 NCBITaxon:119203
 
 [Term]
@@ -12643,6 +12671,8 @@ xref: UMLS:C0028058 {source="ncithesaurus:Nictitating_Membrane"}
 is_a: UBERON:0001711 ! eyelid
 relationship: part_of UBERON:0001811 ! conjunctiva
 property_value: IAO:0000116 "We exclude the shark structure for this via a taxon constraint." xsd:string
+property_value: RO:0002161 NCBITaxon:376913 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:8570
 property_value: RO:0002175 NCBITaxon:261739
 property_value: RO:0002175 NCBITaxon:8292
 property_value: RO:0002175 NCBITaxon:8782
@@ -12795,6 +12825,7 @@ synonym: "retractor bulbi muscle" EXACT []
 xref: AAO:0010122
 is_a: UBERON:0001601 {source="cjm"} ! extra-ocular muscle
 property_value: IAO:0000116 "TODO - add innervation relationships" xsd:string
+property_value: RO:0002161 NCBITaxon:9606 {source="Wikipedia"}
 property_value: RO:0002175 NCBITaxon:40674
 property_value: UBPROP:0000008 "In most other mammals it also innervates the musculus retractor bulbi, which can retract the eye for protection" xsd:string {source="wiki/Abducens_nerve"}
 
@@ -12829,6 +12860,7 @@ is_a: UBERON:0010296 ! scleral skeletal element
 relationship: part_of UBERON:0001773 {source="cjm"} ! sclera
 property_value: IAO:0000116 "consider distinguishing cup from predecessor of ossicle. Hall: The scleral cartilaginous cup is a distinctly sepa- rate element composed of hyaline cartilage" xsd:string
 property_value: IAO:0000116 "relationship to sclera - overlaps?" xsd:string
+property_value: RO:0002161 NCBITaxon:32525 {source="PMID:17051547 - but present in monotremes"}
 property_value: UBPROP:0000001 "Bilaterally paired thin continuous band of cartilage that sagittally encircles the eye.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001509", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "May be calcified in chondrichthyans. Tetrapods without this element (e.g., snakes and mammals) have a collagenous sclera. May not be homologous - see http://www.ncbi.nlm.nih.gov/pubmed/17051547. cup-shaped in birds. Present in monotremes." xsd:string
 
@@ -12842,6 +12874,8 @@ synonym: "sclerotic bone" EXACT [ZFA:0001411]
 synonym: "sclerotic ossicle" EXACT []
 xref: http://www.snomedbrowser.com/Codes/Details/45632000
 is_a: UBERON:0010296 ! scleral skeletal element
+property_value: RO:0002161 NCBITaxon:7777 {source="PMID:17051547 Walls 1942"}
+property_value: RO:0002161 NCBITaxon:7878 {source="PMID:17051547 Kemp 1999"}
 property_value: UBPROP:0000008 "The distribution of scleral ossicles and scleral cartilage among verte- brate taxa is not the same. Some taxa (e.g., birds) have both elements; some only have one element (e.g., crocodiles only have a scleral cartilage); while others (e.g., snakes) have neither element (Walls, 1942) number of ossicles making up the sclerotic ring as well as the shape of both the individual plates and the sclerotic ring is variable among tetrapod taxa.... It is therefore extremely likely that scleral skeletal elements (ossicles and cartilage) of all rep- tiles (including birds) are homologous (but cannot be assumed for reptiles and teleosts)" xsd:string
 property_value: UBPROP:0000009 "The function of these elements is to support the eye from within the sclera; scleral ossicles play an additional important role during accommodation in terrestrial vertebrates (Lemmrich, 1931; Walls, 1942; King and McLelland, 1984)." xsd:string
 
@@ -12921,6 +12955,7 @@ name: scleral skeletal element
 namespace: uberon
 relationship: part_of UBERON:0000019 ! camera-type eye
 property_value: IAO:0000232 "An eye adnexal structure, but not necessarily part of the eyeball" xsd:string
+property_value: RO:0002161 NCBITaxon:40674 {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"}
 
 [Term]
 id: UBERON:0010297
@@ -12930,6 +12965,7 @@ synonym: "sclerotic bones" RELATED PLURAL [ZFA:0001411]
 xref: TAO:0001411
 xref: ZFA:0001411
 is_a: UBERON:0010290 ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:32523
 property_value: UBPROP:0000001 "A pair of small dish-shaped bones that cap the anterior and posterior margin of the eyeball.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001411", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "The scleral ossicles [of teleosts] are reported to form indirectly by endochondral (Hall and Miyake, 1992) or by perichondral ossification (Patterson, 1977) from a cartilage element that is also present in the sclera. This is unlike the scleral ossicles of reptiles, which develop directly from ectomesenchyme (i.e., intramembranous ossification) and independently from the scleral cartilage" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"}
 
@@ -12939,6 +12975,7 @@ name: intramembranous scleral ossicle
 namespace: uberon
 comment: are of dermal (neural crest) origin, develop intramembranously within the scleral mesenchyme, and are induced to form by overlying (transient) epithelial scleral papillae (Nelson, 1942; Murray, 1943; Fyfe and Hall, 1981, 1983; Hall, 1981, 2005; Pinto and Hall, 1991)
 is_a: UBERON:0010290 ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:32443
 property_value: UBPROP:0000011 "The scleral ossicles [in reptiles]" xsd:string
 
 [Term]
@@ -13131,6 +13168,7 @@ synonym: "palatal choana" EXACT []
 synonym: "palatal cleft" RELATED []
 is_a: UBERON:0010425 ! internal naris
 property_value: IAO:0000116 "todo - check AAO:0000025 apertura nasalis interna" xsd:string
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000001 "Hole on the nasal capsule that connects the nasal and buccal cavites.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000025", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: subclass nasal opening (AAO:0000316)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000025", ontology="AAO"}
 property_value: UBPROP:0000009 "has function in pressure equalization in birds that fly to high altitudes" xsd:string
@@ -13200,6 +13238,7 @@ synonym: "median anterior naris" EXACT []
 synonym: "median nostril" EXACT []
 synonym: "nasohypophysial opening" EXACT [http://tolweb.org/Hyperoartia]
 is_a: UBERON:0005928 ! external naris
+property_value: RO:0002161 NCBITaxon:314146
 property_value: RO:0002175 NCBITaxon:7762
 
 [Term]
@@ -13357,6 +13396,8 @@ namespace: uberon
 def: "Moist, hairless, crenelated area around nostrils of some mammals" [http://anthro.palomar.edu/primate/glossary.htm, http://en.wikipedia.org/wiki/Rhinarium]
 xref: http://en.wikipedia.org/wiki/Rhinarium
 relationship: part_of UBERON:0007827 ! external nose
+property_value: RO:0002161 NCBITaxon:9475
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000008 "Absent in Tarsiers" xsd:string
 
 [Term]
@@ -13763,6 +13804,7 @@ xref: NCIT:C77616
 is_a: UBERON:0013229 ! eyelid gland
 relationship: part_of UBERON:0010207 ! nictitating membrane
 property_value: IAO:0000232 "This gland is distinct from the other medial ocular gland, the Harderian gland, and is typified by clusters of glandular tissue within the nictitating membrane" xsd:string
+property_value: RO:0002161 NCBITaxon:39107 {source="ISBN:1118473523"}
 property_value: RO:0002175 NCBITaxon:10047 {source="ISBN:1118473523"}
 
 [Term]
@@ -14015,6 +14057,7 @@ xref: XAO:0003145
 is_a: UBERON:0000020 ! sense organ
 relationship: part_of UBERON:0001855 {source="MA-abduced"} ! cochlear duct of membranous labyrinth
 property_value: IAO:0000116 "consider classifying as a sensory epithelium" xsd:string
+property_value: RO:0002161 NCBITaxon:40674
 property_value: UBPROP:0000001 "A sensory structure in the lagenar portion of an amphibian's membranous labyrinth between the oval and round windows.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0011018", ontology="AAO", source="XAO:curator"}
 
 [Term]
@@ -14294,6 +14337,7 @@ name: multi-unit eye
 namespace: uberon
 def: "An eye consisting of multiple light-sensing organs" [http://orcid.org/0000-0002-6601-2165, http://www.ncbi.nlm.nih.gov/pubmed/21062451]
 is_a: UBERON:0000970 ! eye
+property_value: RO:0002161 NCBITaxon:7742
 property_value: RO:0002175 NCBITaxon:6340 {notes="present on tentacular crown", source="http://www.ncbi.nlm.nih.gov/pubmed/21062451"}
 property_value: RO:0002175 NCBITaxon:6544 {notes="present on mantle edge in arcacean Bivalvia", source="http://www.ncbi.nlm.nih.gov/pubmed/21062451"}
 property_value: RO:0002175 NCBITaxon:7588 {notes="The eyes (optic cushions) on the oral surface of Asteroida (Echinodermata), close to the base of the terminal tentacles, are also composed of a number of simple ocelli - as many as 80-200 in certain species", source="http://www.ncbi.nlm.nih.gov/pubmed/21062451"}
@@ -14308,6 +14352,11 @@ synonym: "tapetal layer" EXACT []
 synonym: "tapetum layer" EXACT []
 xref: SPD:0000343
 relationship: part_of UBERON:0000970 ! eye
+property_value: RO:0002161 NCBITaxon:8782 {editor="cjm", source="http://www.ncbi.nlm.nih.gov/pubmed/14738502"}
+property_value: RO:0002161 NCBITaxon:9321 {editor="cjm", source="http://www.ncbi.nlm.nih.gov/pubmed/14738502"}
+property_value: RO:0002161 NCBITaxon:9443 {editor="cjm", source="http://www.ncbi.nlm.nih.gov/pubmed/14738502"}
+property_value: RO:0002161 NCBITaxon:9606
+property_value: RO:0002161 NCBITaxon:9822 {editor="cjm", source="http://www.ncbi.nlm.nih.gov/pubmed/14738502"}
 property_value: UBPROP:0000007 "tapetal" xsd:string
 
 [Term]
@@ -15012,6 +15061,7 @@ namespace: uberon
 def: "An opening of the otic duct within the inner ear. The recessus basilaris can open to the saccule (in frogs) or the lagena (in salamanders and caecilians). The sensory epithelium of the recessus basilaris is the basilar papilla (or papilla basilaris). Reference: Lewis, E.R. and R.E. Lombard. 1988. The amphibian inner ear. Pp. 93-123 in Fritszch, B., et al. (eds.), The Evolution of the Amphibian Auditory System. Wiley & Sons. [curated by D. Blackburn]" [PHENOSCAPE:wd]
 synonym: "basilar papillar recess" EXACT []
 relationship: part_of UBERON:0001846 ! internal ear
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0019206
@@ -15147,6 +15197,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C1882706
 xref: MA:0003109
 xref: NCIT:C60574
 is_a: UBERON:0001817 {source="MA"} ! lacrimal gland
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0019325
@@ -15162,6 +15213,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C1882664
 xref: MA:0003110
 xref: NCIT:C60564
 is_a: UBERON:0001817 {source="MA"} ! lacrimal gland
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000008 "more than 10% of rat exorbital gland appears to be composed of harderian gland-like cells by 22 months of age (Coujard 1974; Sashima et al. 1989).[PMID:7559104]" xsd:string
 
 [Term]

@@ -213,6 +213,7 @@ xref: VHOG:0000402
 xref: WBbt:0005735
 xref: XAO:0000177
 xref: ZFA:0000396
+relationship: never_in_taxon NCBITaxon:6040
 
 [Term]
 id: UBERON:0001017
@@ -258,6 +259,7 @@ xref: UMLS:C0927232 {source="BIRNLEX:1099"}
 xref: VHOG:0000293
 xref: XAO:0000215
 xref: ZFA:0000012
+relationship: never_in_taxon NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -362,7 +364,6 @@ xref: UMLS:C0037925 {source="BIRNLEX:1709"}
 xref: VHOG:0000601
 xref: XAO:0000020
 xref: ZFA:0000075
-relationship: develops_from UBERON:0001017 ! central nervous system
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -587,9 +588,7 @@ id: develops_from
 name: develops_from
 namespace: uberon
 xref: RO:0002202
-holds_over_chain: part_of develops_from
 is_transitive: true
-transitive_over: part_of ! part of
 
 [Typedef]
 id: doap-GitRepository
