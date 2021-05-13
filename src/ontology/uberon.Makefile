@@ -1145,7 +1145,7 @@ prepare_release: release-diff
 
 prepare_release: copy_additional_files
 
-copy_additional_files: dirs
+copy_additional_files:
 	rm -rf ../../bridge
 	mkdir -p ../../bridge 
 	cp $(BRIDGEDIR)/*.{obo,owl} ../../bridge/ ;\
@@ -1596,10 +1596,10 @@ $(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC)
 	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
 
-$(TMPDIR)/$(ONT)-quick.obo: | dirs
+$(TMPDIR)/$(ONT)-quick.obo: | $(TMPDIR)
 	$(ROBOT) merge -i $(SRC) reason -o $@.owl && mv $@.owl $@
 
-$(TMPDIR)/$(ONT)-main.obo: | dirs
+$(TMPDIR)/$(ONT)-main.obo: | $(TMPDIR)
 	git show master:$(SRC) > $@
 	$(ROBOT) merge -i $@ reason -o $@.owl && mv $@.owl $@
 
