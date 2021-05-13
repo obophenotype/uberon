@@ -1130,7 +1130,7 @@ ext-xref-conflict2.obo:
 	#blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(Ux,Z),id_idspace(Ux,'UBERON'),Ux\=U" -select "x(U,Z,Ux)" -label > $@
 
 release-diff:
-	cd diffs && make
+	cd diffs && make all
 
 # ----------------------------------------
 # RELEASE DEPLOYMENT
