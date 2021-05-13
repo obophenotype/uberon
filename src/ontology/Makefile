@@ -529,7 +529,7 @@ subsets/%.obo: subsets/%.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 
 subsets/%.json: subsets/%.owl
-	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json && mv $@.tmp.json &&\
+	$(ROBOT) convert --input $< --check false -f json -o $@.tmp.json && mv $@.tmp.json $@ &&\
 	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $@ && rm $@.tmp.json
 
 
