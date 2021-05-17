@@ -64,13 +64,26 @@
    - ....
 
 
+## Overview of Migration to ODK (Q2 2021)
 
+*Problem*: The Uberon pipeline is the single most complex overall pipeline for any ontology. It has grown so complex over the years that only one person could run it, let alone understand it: Chris. 
 
+*Goal*: The goal is to migrate the Uberon pipeline to a more standard ODK-like setup. A lot of what is happening in the pipeline is out of scope for ODK (taxon constraints, cross-species bridges), but other things can be standardised (ROBOT report, DOSDP pattern workflows, imports). Ultimately, we want four people at least to be able to run releases, to reduce the ["Bus factor"](https://en.wikipedia.org/wiki/Bus_factor) of the project. We also want to generally share our understanding of the pipeline and document it better.
 
-
-
-
-
+To achieve this, the following rough steps are performed.
+1. An  ODK config (`src/ontology/uberon-odk.yaml`) file is created that defines all the relevant release artefacts for Uberon
+1. The repository structure is moved to the typical ODK layout, which means 
+   - the edit file is now in `src/ontology/uberon-edit.obo`
+   - the custom Make pipeline now moved to `src/ontology/uberon.Makefile` - this is where the magic happens.
+1. The pipeline is run with `sh run.sh make all -B`
+1. We are reviewing the a number of key release artefacts and try to get them to an OK state. Instructions for review:
+   - Review a few key files and diffs:
+```
+git clone https://github.com/matentzn/uberon_test.git
+cd uberon_test
+make diff
+```
+    It is important that this is done with a bit of care.
 
 
 
