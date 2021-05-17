@@ -515,16 +515,26 @@ metazoan-view.owl: ext.owl
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
 #ext-taxon-axioms.owl 
-subsets/%-view.owl: ext.owl contexts/context-%.owl
-	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
-.PRECIOUS: subsets/%-view.owl
-
-human:
-	OWLTOOLS_MEMORY=14G owltools $(UCAT) ext.owl contexts/context-human.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@.owl
+#subsets/%-view.owl: ext.owl contexts/context-%.owl
+#	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+#.PRECIOUS: subsets/%-view.owl
 
 
-subsets/%-view.obo: subsets/%-view.owl
-	owltools $(UCAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
+subsets/xenopus-view.owl: ext.owl contexts/context-xenopus.owl
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+
+subsets/human-view.owl: ext.owl contexts/context-human.owl
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+
+subsets/metazoan-view.owl: ext.owl contexts/context-metazoan.owl
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+
+subsets/mouse-view.owl: ext.owl contexts/context-mouse.owl
+	OWLTOOLS_MEMORY=14G owltools $(UCAT) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+
+
+#subsets/%-view.obo: subsets/%-view.owl
+#	owltools $(UCAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
 
 # note: drosophila too slow....
 #RPT_SPECIES = human mouse zebrafish xenopus
@@ -787,17 +797,67 @@ subsets/merged-partonomy.owl: merged.owl
 	      -o $@
 .PRECIOUS: subsets/merged-partonomy.owl
 
+SUBSETCMD=owltools $< --reasoner-query -r elk -d  "$(PART_OF) some $(TERM_ID)" --reasoner-query $(TERM_ID) --make-ontology-from-results $(URIBASE)/uberon/$@ -o $@  2>&1 > $@.LOG
 
-subsets/%-minimal.owl: subsets/merged-partonomy.owl
-	$(eval TERM_ID := $(TERM_$*))
-	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some $(TERM_ID)" --reasoner-query $(TERM_ID) --make-ontology-from-results $(URIBASE)/uberon/$@ -o $@  2>&1 > $@.LOG
-.PRECIOUS: subsets/%-minimal.owl
-subsets/%-minimal.obo: subsets/%-minimal.owl
-	$(ROBOT) convert -i $< --check false -o $@.tmp.obo && mv $@.tmp.obo $@
-subsets/%-minimal.json: subsets/%-minimal.owl
-	$(ROBOT) convert -i $< --check false -o $@.tmp.json && mv $@.tmp.json $@
-subsets/%-minimal.tsv: subsets/%-minimal.owl
-	$(ROBOT) export -i $< -c "ID|label|SYNONYMS"  -e $@.tmp && mv $@.tmp $@
+subsets/appendicular-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_appendicular))
+	$(SUBSETCMD)
+
+subsets/circulatory-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_circulatory))
+	$(SUBSETCMD)
+
+subsets/cranial-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_cranial))
+	$(SUBSETCMD)
+
+subsets/digestive-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_digestive))
+	$(SUBSETCMD)
+
+subsets/excretory-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_excretory))
+	$(SUBSETCMD)
+
+subsets/immune-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_immune))
+	$(SUBSETCMD)
+
+subsets/musculoskeletal-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_musculoskeletal))
+	$(SUBSETCMD)
+
+subsets/nephron-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_nephron))
+	$(SUBSETCMD)
+
+subsets/nervous-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_nervous))
+	$(SUBSETCMD)
+
+subsets/pulmonary-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_pulmonary))
+	$(SUBSETCMD)
+
+subsets/reproductive-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_reproductive))
+	$(SUBSETCMD)
+
+subsets/sensory-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_sensory))
+	$(SUBSETCMD)
+
+#subsets/%-minimal.owl: subsets/merged-partonomy.owl
+#	$(eval TERM_ID := $(TERM_$*))
+#	owltools $< --reasoner-query -r elk -d  "$(PART_OF) some $(TERM_ID)" --reasoner-query $(TERM_ID) --make-ontology-from-results $(URIBASE)/uberon/$@ -o $@  2>&1 > $@.LOG
+#.PRECIOUS: subsets/%-minimal.owl
+
+#subsets/%-minimal.obo: subsets/%-minimal.owl
+#	$(ROBOT) convert -i $< --check false -o $@.tmp.obo && mv $@.tmp.obo $@
+#subsets/%-minimal.json: subsets/%-minimal.owl
+#	$(ROBOT) convert -i $< --check false -o $@.tmp.json && mv $@.tmp.json $@
+#subsets/%-minimal.tsv: subsets/%-minimal.owl
+#	$(ROBOT) export -i $< -c "ID|label|SYNONYMS"  -e $@.tmp && mv $@.tmp $@
 
 # TODO: need to add subclass axioms for all intersections
 subsets/musculoskeletal-full.obo: merged.owl
@@ -823,9 +883,9 @@ subsets/life-stages-core.owl: uberon.owl
 subsets/immaterial.obo: merged.owl
 	owltools $< --reasoner-query -r elk -d  UBERON_0000466  --make-ontology-from-results $(URIBASE)/uberon/$@ -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
 
-
-subsets/%.owl: subsets/%.obo
-	owltools $< -o $@.tmp && mv $@.tmp $@
+#
+#subsets/%.owl: subsets/%.obo
+#	owltools $< -o $@.tmp && mv $@.tmp $@
 
 
 # ----------------------------------------
@@ -1077,6 +1137,7 @@ $(TMPDIR)/uberon-taxmod-%.owl: ext.owl
 
 #taxtable.txt: $(SRC)
 #	owltools $< --make-class-taxon-matrix --query-taxa external/ncbitaxon-subsets/taxslim.obo -o z NCBITaxon:9606 NCBITaxon:7955
+
 
 
 # ----------------------------------------
