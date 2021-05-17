@@ -510,8 +510,6 @@ nh-%.owl: nh-%.obo
 #nh-nematode.owl: composite-wbbt.owl
 #	owljs-grep -v $(XSPECIES_RE) -o $@ $<
 
-metazoan-view.owl: ext.owl
-	ln -s $< $@ 
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
 #ext-taxon-axioms.owl 
@@ -526,8 +524,8 @@ subsets/xenopus-view.owl: ext.owl contexts/context-xenopus.owl
 subsets/human-view.owl: ext.owl contexts/context-human.owl
 	OWLTOOLS_MEMORY=14G owltools $(UCAT) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
 
-subsets/metazoan-view.owl: ext.owl contexts/context-metazoan.owl
-	OWLTOOLS_MEMORY=14G owltools $(UCAT) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+subsets/metazoan-view.owl: ext.owl
+	ln -s $< $@ 
 
 subsets/mouse-view.owl: ext.owl contexts/context-mouse.owl
 	OWLTOOLS_MEMORY=14G owltools $(UCAT) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
