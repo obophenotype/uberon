@@ -12,22 +12,13 @@ To achieve this, the following rough steps are performed.
    - the edit file is now in `src/ontology/uberon-edit.obo`
    - the custom Make pipeline now moved to `src/ontology/uberon.Makefile` - this is where the magic happens.
 1. The pipeline is run with `sh run.sh make all -B`
-1. We are reviewing the a number of key release artefacts and try to get them to an OK state. Instructions for review:
-   - Review a few key files and diffs:
-```
-    git clone https://github.com/matentzn/uberon_test.git
-    cd uberon_test
-    make diff
-```
-    - It is important that this is done with a bit of care.
-    - Review the dependency trees of key goals (next section below)
-    - Review [config](https://github.com/obophenotype/uberon/blob/odk-upgrade/src/ontology/uberon-odk.yaml) to make sure it makes sense.
-    - @cmungall spend some time reviewing the revised [Makefile](https://github.com/obophenotype/uberon/blob/odk-upgrade/src/ontology/uberon.Makefile)
+1. We are reviewing the a number of key release artefacts and try to get them to an OK state. 
+
 
 ## Build recipe of key goals
 
 1. Intermediate artefacts (other than imports and mirrors):
-   - composite-metazoan.owl
+   - composite-metazoan.owl (super weird: odk version has imports while last release version does not)
      - tmp/unreasoned-composite-metazoan.owl
        - _ext-weak.owl_ (ext without disjoint classes)
          - ext.owl (does not trigger imports along the way!)
