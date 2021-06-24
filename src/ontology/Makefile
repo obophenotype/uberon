@@ -41,15 +41,8 @@ TODAY ?=                    $(shell date +%Y-%m-%d)
 OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/phenoscape-ext.owl 
+OTHER_SRC =                 $(COMPONENTSDIR)/phenoscape-ext.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
-PATTERNDIR=                 ../patterns
-DOSDP_SCHEMA=                http:// # change to PURL when ready.
-PATTERN_TESTER=              simple_pattern_tester.py
-DOSDPT=                      dosdp-tools
-PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.owl
-
-
 
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
@@ -62,7 +55,7 @@ RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full $(ONT)-simple ext basic merge
 .PHONY: .FORCE
 
 .PHONY: all
-all: odkversion all_imports patterns all_main all_subsets sparql_test all_reports all_assets
+all: odkversion all_imports all_main all_subsets sparql_test all_reports all_assets
 
 .PHONY: test
 test: odkversion sparql_test all_reports 
@@ -172,8 +165,6 @@ CLEANFILES=$(MAIN_FILES) $(SRCMERGED)
 .PHONY: prepare_release
 prepare_release: $(ASSETS) $(PATTERN_RELEASE_FILES)
 	rsync -R $(RELEASE_ASSETS) $(RELEASEDIR) &&\
-  mkdir -p $(RELEASEDIR)/patterns &&\
-  cp $(PATTERN_RELEASE_FILES) $(RELEASEDIR)/patterns &&\
   rm -f $(CLEANFILES) &&\
   echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on your git hosting site such as GitHub or GitLab"
 
@@ -213,10 +204,10 @@ $(SIMPLESEED): $(SRCMERGED) $(ONTOLOGYTERMS)
 	echo "http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty" >> $@
 
 
-ALLSEED = $(PRESEED)  $(PATTERNDIR)/all_pattern_terms.txt \
+ALLSEED = $(PRESEED) \
 
 
-$(IMPORTSEED):  prepare_patterns  $(ALLSEED) 
+$(IMPORTSEED):  $(ALLSEED) 
 	if [ $(IMP) = true ]; then cat $(ALLSEED) | sort | uniq > $@; fi
 
 
@@ -302,7 +293,7 @@ $(COMPONENTSDIR)/%:
 IMP=true # Global parameter to bypass import generation
 MIR=true # Global parameter to bypass mirror generation
 IMP_LARGE=true # Global parameter to bypass handling of large imports
-PAT=true # Global parameter to bypass pattern generation
+
 
 ## ONTOLOGY: pr
 ## Copy of pr is re-downloaded whenever source changes
@@ -574,71 +565,6 @@ all_reports_onestep: $(SRC)
 ifneq ($(SPARQL_EXPORTS_ARGS),)
 	$(ROBOT) query -f tsv -i $< $(SPARQL_EXPORTS_ARGS)
 endif
-# ----------------------------------------
-# Patterns (experimental)
-# ----------------------------------------
-
-# Test patterns for schema compliance:
-
-.PHONY: patterns
-patterns: all_imports $(PATTERNDIR)/pattern.owl $(PATTERNDIR)/definitions.owl
-
-.PHONY: pattern_clean
-pattern_clean:
-	echo "Not implemented"
-
-.PHONY: pattern_schema_checks
-pattern_schema_checks: update_patterns
-	if [ $(PAT) = true ]; then $(PATTERN_TESTER) $(PATTERNDIR)/dosdp-patterns/; fi
-
-#This command is a workaround for the absence of -N and -i in wget of alpine (the one ODK depend on now). It downloads all patterns specified in external.txt
-.PHONY: update_patterns
-update_patterns: .FORCE
-	if [ $(PAT) = true ]; then rm -f $(PATTERNDIR)/dosdp-patterns/*.yaml.1 || true; fi
-	if [ $(PAT) = true ] && [ -s $(PATTERNDIR)/dosdp-patterns/external.txt ]; then wget -i $(PATTERNDIR)/dosdp-patterns/external.txt --backups=1 -P $(PATTERNDIR)/dosdp-patterns; fi
-	if [ $(PAT) = true ]; then rm -f $(PATTERNDIR)/dosdp-patterns/*.yaml.1 || true; fi
-
-
-$(PATTERNDIR)/pattern.owl: pattern_schema_checks update_patterns
-	if [ $(PAT) = true ]; then $(DOSDPT) prototype --obo-prefixes true --template=$(PATTERNDIR)/dosdp-patterns --outfile=$@; fi
-
-individual_patterns_default := $(patsubst %.tsv, $(PATTERNDIR)/data/default/%.ofn, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv)))
-pattern_term_lists_default := $(patsubst %.tsv, $(PATTERNDIR)/data/default/%.txt, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv)))
-
-
-
-
-
-# Generating the individual pattern modules and merging them into definitions.owl
-$(PATTERNDIR)/definitions.owl: prepare_patterns update_patterns dosdp_patterns_default  
-	if [ $(PAT) = true ] && [ "${individual_patterns_names_default}" ]   && [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
-
-individual_patterns_names_default := $(strip $(patsubst %.tsv,%, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv))))
-dosdp_patterns_default: $(SRC) all_imports .FORCE
-	if [ $(PAT) = true ] && [ "${individual_patterns_names_default}" ]; then $(DOSDPT) generate --catalog=catalog-v001.xml --infile=$(PATTERNDIR)/data/default/ --template=$(PATTERNDIR)/dosdp-patterns --batch-patterns="$(individual_patterns_names_default)" --ontology=$< --obo-prefixes=true --outfile=$(PATTERNDIR)/data/default; fi
-
-
-
-
-
-# Generating the seed file from all the TSVs. If Pattern generation is deactivated, we still extract a seed from definitions.owl
-$(PATTERNDIR)/all_pattern_terms.txt: $(pattern_term_lists_default)   $(PATTERNDIR)/pattern_owl_seed.txt
-	if [ $(PAT) = true ]; then cat $^ | sort | uniq > $@; else $(ROBOT) query --use-graphs true -f csv -i ../patterns/definitions.owl --query ../sparql/terms.sparql $@; fi
-
-$(PATTERNDIR)/pattern_owl_seed.txt: $(PATTERNDIR)/pattern.owl
-	if [ $(PAT) = true ]; then $(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/terms.sparql $@; fi
-
-$(PATTERNDIR)/data/default/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/default/%.tsv .FORCE
-	if [ $(PAT) = true ]; then $(DOSDPT) terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@; fi
-
-.PHONY: prepare_patterns
-prepare_patterns:
-	if [ $(PAT) = true ]; then touch $(PATTERNDIR)/data $(pattern_term_lists_default)  ; fi
-	if [ $(PAT) = true ]; then touch $(PATTERNDIR)/data $(individual_patterns_default)  ; fi
-
-
-
-
 
 # ----------------------------------------
 # Release artefacts: export formats
@@ -730,6 +656,7 @@ $(ONT).json: $(ONT)-full.owl
 # -----------------------------------------------------
 # Release artefacts: variants (base, full, simple, etc)
 # -----------------------------------------------------
+SHARED_ROBOT_COMMANDS = 
 
 $(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
 	touch $(ONTOLOGYTERMS) && \
@@ -748,7 +675,7 @@ $(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
 $(ONT)-base.owl: $(SRC) $(OTHER_SRC)
 	$(ROBOT) remove --input $< --select imports --trim false \
 		merge $(patsubst %, -i %, $(OTHER_SRC)) \
-		annotate --link-annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		 $(SHARED_ROBOT_COMMANDS) annotate --link-annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
 		--ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
 
@@ -758,7 +685,7 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
 		relax \
 		reduce -r ELK \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
 
 # foo-simple: (edit->reason,relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest")
 # drop every axiom: filter --term-file keep_terms.txt --trim true
@@ -773,7 +700,7 @@ $(ONT)-simple.owl: $(SRC) $(OTHER_SRC) $(SIMPLESEED)
 		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
 		reduce -r ELK \
 		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
 
 ext.owl:
 	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in uberon.Makefile!" && false
