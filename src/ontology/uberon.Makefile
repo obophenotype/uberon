@@ -1143,7 +1143,7 @@ $(TMPDIR)/uberon-taxmod-%.owl: ext.owl
 
 # seed.owl is never released - it is used to seed module extraction
 $(TMPDIR)/seed.owl: $(OWLSRC) $(TMPDIR)/cl-core.obo # $(COMPONENTSDIR)/phenoscape-ext.owl
-	owltools $(UCAT) $(OWLSRC) $< $(TMPDIR)/cl-core.obo --merge-support-ontologies -o -f functional $@
+	owltools $(UCAT) $(OWLSRC) $(TMPDIR)/cl-core.obo --merge-support-ontologies -o -f functional $@
 
 # this is used for xrefs for bridge files
 # TODO: investigate why this necessary: --add-support-from-imports --remove-imports-declarations
