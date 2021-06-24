@@ -1013,9 +1013,9 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 # COMPOSITE ANATOMY: BUILDING
 # ----------------------------------------
 
-.PHONY: dependencies
-dependencies:
-	apt-get install -y libjson-perl
+#.PHONY: dependencies
+#dependencies:
+#	apt-get install -y libjson-perl
 
 # many external ontologies do not adhere to all uberon constraints
 $(TMPDIR)/ext-weak.owl: ext.owl | $(TMPDIR)
@@ -1025,8 +1025,7 @@ MBASE = $(TMPDIR)/ext-weak.owl $(BRIDGEDIR)/bridges $(TMPDIR)/local-ma.owl $(TMP
 	$(TMPDIR)/local-zfa.owl $(TMPDIR)/local-fbbt.owl $(TMPDIR)/local-fbdv.owl \
 	$(TMPDIR)/local-wbbt.owl $(TMPDIR)/local-wbls.owl $(TMPDIR)/local-ceph.owl \
 	$(TMPDIR)/local-cteno.owl $(TMPDIR)/local-poro.owl $(TMPDIR)/allen-mba.obo $(TMPDIR)/allen-pba.obo $(TMPDIR)/allen-hba.obo \
-	$(TMPDIR)/allen-dmba.obo $(TMPDIR)/allen-dhba.obo uberon.owl \
-	dependencies
+	$(TMPDIR)/allen-dmba.obo $(TMPDIR)/allen-dhba.obo uberon.owl
 
 # A subset of OPs will be turned into taxon GCIs
 
@@ -1499,11 +1498,11 @@ $(TMPDIR)/allen-pba.json: | $(TMPDIR)
 $(TMPDIR)/allen-mba.json: | $(TMPDIR)
 	wget http://api.brain-map.org/api/v2/structure_graph_download/1.json -O $@
 
-$(TMPDIR)/allen-%.obo: $(TMPDIR)/allen-%.json $(SCRIPTSDIR)/allen-json2obo.pl | dependencies
+$(TMPDIR)/allen-%.obo: $(TMPDIR)/allen-%.json $(SCRIPTSDIR)/allen-json2obo.pl
 	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
 
 UNSATS=--term DHBA:146035008 --term DHBA:146035004 --term DHBA:146035012
-$(TMPDIR)/allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen-json2obo.pl .FORCE | dependencies
+$(TMPDIR)/allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen-json2obo.pl
 	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
 	$(ROBOT) remove -i $@ --prefix "DHBA: http://purl.obolibrary.org/obo/DHBA_" $(UNSATS) --axioms logical -o $@.tmp.obo && mv $@.tmp.obo $@
 
