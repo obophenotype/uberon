@@ -105,12 +105,12 @@ core.owl: $(OWLSRC)
 # as part of the release
 # TODO @cmungall questiosn we need this. Bring it into the main one. Talk to Wasila to bring into uberon proper (merge in uberon-edit)
 # FIXED apparently our base does not contain phenoscape-ext!! (It does, through unreasoned)
-$(TMPDIR)/phenoscape-ext-src.owl: $(SRC)
-	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
+#$(TMPDIR)/phenoscape-ext-src.owl: $(SRC)
+#	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
 	
 # including the imports would lead to circularity, so we remove these here
-$(COMPONENTSDIR)/phenoscape-ext.owl: $(TMPDIR)/phenoscape-ext-src.owl core.owl
-	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
+#$(COMPONENTSDIR)/phenoscape-ext.owl: $(TMPDIR)/phenoscape-ext-src.owl core.owl
+#	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
 # Not used anywhere so commenting out
 #$(TMPDIR)/phenoscape_homology.owl:
@@ -120,7 +120,7 @@ $(COMPONENTSDIR)/phenoscape-ext.owl: $(TMPDIR)/phenoscape-ext-src.owl core.owl
 ##
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
-$(TMPDIR)/unreasoned.owl: $(OWLSRC) $(COMPONENTSDIR)/phenoscape-ext.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl 
+$(TMPDIR)/unreasoned.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl # $(COMPONENTSDIR)/phenoscape-ext.owl
 	owltools $(UCAT) $^ --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
 
 # First pass at making base module
@@ -1142,7 +1142,7 @@ $(TMPDIR)/uberon-taxmod-%.owl: ext.owl
 # ----------------------------------------
 
 # seed.owl is never released - it is used to seed module extraction
-$(TMPDIR)/seed.owl: $(COMPONENTSDIR)/phenoscape-ext.owl $(OWLSRC) $(TMPDIR)/cl-core.obo
+$(TMPDIR)/seed.owl: $(OWLSRC) $(TMPDIR)/cl-core.obo # $(COMPONENTSDIR)/phenoscape-ext.owl
 	owltools $(UCAT) $(OWLSRC) $< $(TMPDIR)/cl-core.obo --merge-support-ontologies -o -f functional $@
 
 # this is used for xrefs for bridge files
