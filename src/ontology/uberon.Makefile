@@ -933,7 +933,7 @@ cl-core-new.obo: cell-ontology/cl.obo
 
 # this is required for bridging axioms; ZFA inverts the usual directionality
 # TODO review directionality!!!
-$(TMPDIR)/cl-zfa-xrefs.obo: $(TMPDIR)/zfa.owl
+$(TMPDIR)/cl-zfa-xrefs.obo: mirror/zfa.owl
 	$(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv
 	cat $@_xrefs_to_zfa.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@
 
@@ -1040,7 +1040,7 @@ MERGESPECIES =\
 
 MERGE_EQSETS =  --merge-equivalence-sets -s UBERON 10 -s CL 9 -s CARO 5  -l UBERON 10 -l CL 9 -d UBERON 10 -d CL 9
 
-MAKESPMERGE= $(UCAT)\
+MAKESPMERGE= --catalog-xml $(CATALOG)\
   --map-ontology-iri $(URIBASE)/uberon.owl $(TMPDIR)/ext-weak.owl\
   --map-ontology-iri $(URIBASE)/fma.owl $(COMPONENTSDIR)/null.owl\
   --map-ontology-iri $(URIBASE)/uberon/bridge/uberon-bridge-to-fma.owl $(COMPONENTSDIR)/null.owl\
@@ -1056,7 +1056,7 @@ bundled-%.owl: $(MBASE)
 
 # stage1 of composite build: do a species merge, but no additional reasoning
 $(TMPDIR)/unreasoned-composite-%.owl: $(MBASE)
-	OWLTOOLS_MEMORY=12G owltools $(MAKESPMERGE) --reasoner elk $(MERGESPECIES) $(MERGE_EQSETS) -o -f ofn $@
+	OWLTOOLS_MEMORY=12G owltools $(MAKESPMERGE) --merge-import-closure --reasoner elk $(MERGESPECIES) $(MERGE_EQSETS) -o -f ofn $@
 .PRECIOUS: $(TMPDIR)/unreasoned-composite-%.owl
 
 # stage 2 (final) of composite build: reason
@@ -1159,7 +1159,7 @@ $(BRIDGEDIR)/%.owl: $(BRIDGEDIR)/%.obo
 make-bridge-ontologies-from-xrefs.pl:
 	cp $(SCRIPTSDIR)/make-bridge-ontologies-from-xrefs.pl $@
 
-$(BRIDGEDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl make-bridge-ontologies-from-xrefs.pl
+$(BRIDGEDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(TMPDIR)/cl-zfa-xrefs.obo $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl make-bridge-ontologies-from-xrefs.pl
 	cd $(BRIDGEDIR) && perl ../make-bridge-ontologies-from-xrefs.pl ../$(TMPDIR)/seed.obo && perl ../make-bridge-ontologies-from-xrefs.pl -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && touch bridges
 
 $(TMPDIR)/cl-with-xrefs.obo: $(TMPDIR)/cl-core.obo $(SCRIPTSDIR)/expand-idspaces.pl
