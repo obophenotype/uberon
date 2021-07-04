@@ -1,6 +1,5 @@
 format-version: 1.2
 ontology: uberon/subsets/circulatory-minimal
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001009>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001009>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
 id: BFO:0000001
@@ -20229,7 +20228,9 @@ relationship: part_of UBERON:0001616 ! maxillary artery
 id: UBERON:0018410
 name: lacteal
 namespace: uberon
-def: "a lymphatic capillary that absorbs dietary fats in the villi of the small intestine." [http://en.wikipedia.org/wiki/Lacteals]
+def: "A lymphatic capillary that absorbs dietary fats in the villi of the small intestine." [http://en.wikipedia.org/wiki/Lacteals]
+synonym: "lymphatic capillary of small intestine" EXACT [http://orcid.org/0000-0003-4183-8865/]
+synonym: "small intestine lymphatic capillary" EXACT [http://orcid.org/0000-0003-4183-8865/]
 xref: FMA:68443
 xref: http://en.wikipedia.org/wiki/Lacteals
 xref: http://www.snomedbrowser.com/Codes/Details/282414002
@@ -22069,19 +22070,19 @@ is_a: UBERON:0012310 {source="FMA"} ! deep lateral cervical lymph node
 [Term]
 id: UBERON:2000039
 name: median axial vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0000039
 is_a: UBERON:0001638 ! vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000096
 name: cardinal system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0000096
 is_a: UBERON:0004537 ! blood vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -22100,42 +22101,42 @@ relationship: part_of UBERON:0004363 ! pharyngeal arch artery
 [Term]
 id: UBERON:2000214
 name: hypobranchial vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "hypobranchial vessels" EXACT PLURAL [TAO:0000214]
 xref: ZFA:0000214
 is_a: UBERON:0003498 ! heart blood vessel
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000484
 name: celiacomesenteric artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0000484
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000666
 name: filamental artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "filamental arteries" EXACT PLURAL [TAO:0000666]
 xref: ZFA:0000666
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:0007303 ! pharyngeal vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000673
 name: hypobranchial artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A pair of HA are connect one to each AA1. They run rostromedially until at the extreme rostro-ventral midline the two vessels merge and then run straight caudally along the ventral midline until they reach the cranial end of the ventral aorta (VA). There, the single HA passes just dorsal to the rostral end of the VA and then immediately splits again into a pair of HA. The paired HA continue caudally just to either side of the ventral midline. The HA provide blood supply to the ventral branchial region and the heart.sogai et al. 2001." [ZFIN:curator]
 synonym: "HA" EXACT [TAO:0000673]
 xref: ZFA:0000673
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -22166,26 +22167,26 @@ property_value: UBPROP:0000001 "Artery that is part of the pharyngeal arches 3-5
 [Term]
 id: UBERON:2001051
 name: caudal division of the internal carotid artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "CaDI" EXACT [TAO:0001051]
 xref: ZFA:0001051
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001532 ! internal carotid artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001052
 name: primordial hindbrain channel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The paired vessels that run along the lateral walls of the hindbrain and drain into the anterior cardinal veins. Isogai et al. (2002)" [ZFIN:curator]
 synonym: "medial head vein" EXACT [TAO:0001052]
 synonym: "PHCB" EXACT [TAO:0001052]
 xref: ZFA:0001052
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -22203,25 +22204,25 @@ relationship: part_of UBERON:0001530 {source="EHDAA2"} ! common carotid artery p
 [Term]
 id: UBERON:2001054
 name: lateral dorsal aorta
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Connect the outflow of the aortic arches to the dorsal aorta. The place where the lateral dorsal aorta fuse is is called the radiax of the aorta. Isogai et al. 2001." [ZFIN:curator]
 synonym: "LDA" EXACT [TAO:0001054]
 xref: ZFA:0001054
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001059
 name: cranial division of the internal carotid artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "CrDI" EXACT [TAO:0001059]
 synonym: "rostral division of the internal carotid artery" EXACT [TAO:0001059]
 xref: ZFA:0001059
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001532 ! internal carotid artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -22241,63 +22242,63 @@ property_value: UBPROP:0000001 "Branches dorsally from the cranial division of t
 [Term]
 id: UBERON:2001063
 name: posterior caudal vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001063
 is_a: UBERON:0003481 ! tail vein
 relationship: part_of UBERON:0010204 ! tail vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001073
 name: axial vasculature
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001073
 is_a: UBERON:0002049 ! vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001286
 name: caudal vein plexus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001286
 is_a: UBERON:0010204 ! tail vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001857
 name: hyoidean artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "An artery that passes along the ventral portions of the hyoid arch; supplies oxygenated blood to the pseudobranch." [TAO:wd]
 is_a: UBERON:0003469 ! respiratory system artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001975
 name: suprabranchial artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005000
 name: basal communicating artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "BCA" EXACT [TAO:0005000]
 xref: ZFA:0005000
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003496 ! head blood vessel
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005010
 name: mid cerebral vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The mesencephalic veins (MsV) enter the mid cerebral veins (MCeV) at the dorsal midline. THe MCeVs originate at the dorsal midline, proceede lateraly in a ventral direction to drain into the paired primordial midbrain channels (PHBC). ogai et al. 2001., Kimmel et al. 1993" [ZFIN:curator]
 synonym: "MCeV" EXACT [TAO:0005010]
 synonym: "mid-cerebral vein" EXACT [TAO:0005010]
@@ -22305,23 +22306,23 @@ synonym: "middle cerebral vein" EXACT [TAO:0005010]
 xref: ZFA:0005010
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005011
 name: pseudobranchial artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A vascular loop attached to the efferent part of the mandibular arch that forms at 3.5 dpf. Isogai et al. 2001." [ZFIN:curator]
 xref: ZFA:0005011
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005012
 name: afferent filamental artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "AFA" EXACT [TAO:0005012]
 synonym: "afferent filamental arteries" EXACT PLURAL [TAO:0005012]
 xref: ZFA:0005012
@@ -22329,26 +22330,26 @@ is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:2000666 ! filamental artery
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005013
 name: concurrent branch afferent branchial artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The branch of the afferent branchial artery that continues posteriodorsally. Isogai et al. 2001." [ZFIN:curator]
 synonym: "CCB" EXACT [TAO:0005013]
 xref: ZFA:0005013
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005014
 name: recurrent branch afferent branchial artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The anterioventral proceeding branch of the afferent branchial artery. Isogai et al. 2001." [ZFIN:curator]
 synonym: "RCB" EXACT [TAO:0005014]
 synonym: "recurrent branch afferent branchial arteries" EXACT PLURAL [TAO:0005014]
@@ -22356,99 +22357,99 @@ xref: ZFA:0005014
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005015
 name: afferent lamellar arteriole
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "afferent lamellar arterioles" EXACT PLURAL [TAO:0005015]
 synonym: "AFL" EXACT [TAO:0005015]
 xref: ZFA:0005015
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:2005012 ! afferent filamental artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005017
 name: primordial midbrain channel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The vessel between the anterior cerebral vein and the mid cerebral vein. Isogai et al. 2001." [ZFIN:curator]
 synonym: "PMBC" EXACT [TAO:0005017]
 xref: ZFA:0005017
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005018
 name: efferent filamental artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "EFA" EXACT [TAO:0005018]
 xref: ZFA:0005018
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:2000202 ! efferent portion of pharyngeal arch artery
 relationship: part_of UBERON:2000666 ! filamental artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005019
 name: efferent lamellar arteriole
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "efferent lamellar arterioles" EXACT PLURAL [TAO:0005019]
 synonym: "ELA" EXACT [TAO:0005019]
 xref: ZFA:0005019
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:2005018 ! efferent filamental artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005020
 name: central artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Arteries that irrigate the forebrain and midbrain Isogai et al. 2001." [ZFIN:curator]
 synonym: "CtA" EXACT [TAO:0005020]
 xref: ZFA:0005020
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003499 ! brain blood vessel
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005021
 name: cerebellar central artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Extend upward from the PCS, branch to provide an arterial feed to the hindbrain, then drain back down into the PHBC Isogai et al. 2001." [ZFIN:curator]
 synonym: "CCtA" EXACT [TAO:0005021]
 xref: ZFA:0005021
 is_a: UBERON:2005020 ! central artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005022
 name: opercular artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The opercular artery arises from the hyoid stump on the first aortic arch, then follows the lateral margin of the operculum (gill covering) ventrally to reconnect into the proximal part of the first aortic arch. Isogai et al. 2001." [ZFIN:curator]
 synonym: "external carotid artery" RELATED [TAO:0005022]
 synonym: "ORA" EXACT [TAO:0005022]
 xref: ZFA:0005022
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005025
 name: dorsal longitudinal anastomotic vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Trunk vessel that connects to the primitive hindbrain channel and the basilar artery at the caudal end of the medulla oblongata. Isogai et al. 2001." [ZFIN:curator]
 synonym: "DLAV" EXACT [TAO:0005025]
 xref: ZFA:0005025
@@ -22456,74 +22457,74 @@ is_a: UBERON:0003513 ! trunk blood vessel
 is_a: UBERON:0003524 ! tail blood vessel
 relationship: part_of UBERON:0002201 ! vasculature of trunk
 relationship: part_of UBERON:0010204 ! tail vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005026
 name: primary head sinus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Main route for venous drainage of the anterior and mid cerebral veins as well as portions of the primordial hindbrain channel. Isogai et al. 2001." [ZFIN:curator]
 synonym: "lateral head vein" EXACT [TAO:0005026]
 synonym: "PHS" EXACT [TAO:0005026]
 xref: ZFA:0005026
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005027
 name: posterior cerebral vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vein that drains the dorsal longitudinal vessel and the caudal portions of the venous capillary network of the medulla oblongata. Isogai et al. 2001." [ZFIN:curator]
 synonym: "caudal cerebral vein" EXACT [TAO:0005027]
 synonym: "PCeV" EXACT [TAO:0005027]
 xref: ZFA:0005027
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005030
 name: dorsal ciliary vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "DCV" EXACT [TAO:0005030]
 xref: ZFA:0005030
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005031
 name: dorsal longitudinal vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vessel that connects to the primitive hindbrain channel and the basilar artery at the caudal end of the medulla oblongata. Isogai et al. 2001." [ZFIN:curator]
 synonym: "DLV" EXACT [TAO:0005031]
 xref: ZFA:0005031
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003499 ! brain blood vessel
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005032
 name: optic vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vein that connects to the hyaloid vein that drains the eye. External to eye. Isogai et al. 2001." [ZFIN:curator]
 synonym: "OV" EXACT [TAO:0005032]
 xref: ZFA:0005032
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005034
 name: parachordal vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vessels run longitudinally along the horizontal myoseptum. These vessels are not functional until after lumenization which occurs near 4 dpf. Isogai et al. 2003." [ZFIN:curator]
 synonym: "PAV" EXACT [TAO:0005034]
 xref: ZFA:0005034
@@ -22531,423 +22532,423 @@ is_a: UBERON:0003481 ! tail vein
 is_a: UBERON:0003513 ! trunk blood vessel
 relationship: part_of UBERON:0002201 ! vasculature of trunk
 relationship: part_of UBERON:0010204 ! tail vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005036
 name: supraintestinal artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A continuation of the anterior mesenteric artery, which branches out from the dorsal aorta just caudal to the pronephric glomus. Isogai et al. 2001." [ZFIN:curator]
 synonym: "SIA" EXACT [TAO:0005036]
 xref: ZFA:0005036
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005038
 name: supraintestinal vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005038
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003513 ! trunk blood vessel
 relationship: part_of UBERON:0002201 ! vasculature of trunk
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005044
 name: optic artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The artery that carries blood to the eye. It branches from the internal carotid artery and enters the eye ventrally through the optic fissure. Isogai et al. 2001." [ZFIN:curator]
 xref: ZFA:0005044
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003496 ! head blood vessel
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005048
 name: primitive prosencephalic artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vessel that branches from cranial division of the internal carotid artery, extending laterally around the rostral end of the head. Isogai et al. 2001." [ZFIN:curator]
 synonym: "PPrA" EXACT [TAO:0005048]
 xref: ZFA:0005048
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005049
 name: prosencephalic artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "After the primitive prosencephalic artery forms it becomes disconnected from the cranial division of the internal carotid artery and instead it connects to the anterior mesencephalic central artery and the communicating vessels of the palatocerebral artery." [ZFIN:curator]
 synonym: "PrA" EXACT [TAO:0005049]
 xref: ZFA:0005049
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005050
 name: palatocerebral artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The PLA branches ventrally from the CrDI. It extends rostrally along the base of mid- and forebrain, then loops medially and links to the corresponding vessel from the other side of the embryo. Isogai et al. 2001." [ZFIN:curator]
 synonym: "PLA" EXACT [TAO:0005050]
 xref: ZFA:0005050
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005051
 name: communicating vessel palatocerebral artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Connect the palatocerebral artery with the prosencephalic artery. Isogai et al. 2001." [ZFIN:curator]
 synonym: "CMV" EXACT [TAO:0005051]
 synonym: "communicating vessels" EXACT [TAO:0005051]
 xref: ZFA:0005051
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005052
 name: anterior mesencephalic central artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Arteries that irrigate rostral regions of the midbrain. They extend between the Basial communicating artery to the anterior cerebral vein. Isogai et al. 2001." [ZFIN:curator]
 synonym: "AMCtA" EXACT [TAO:0005052]
 synonym: "rostral mesencephalic central artery" EXACT [TAO:0005052]
 xref: ZFA:0005052
 is_a: UBERON:2005020 ! central artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005053
 name: nasal ciliary artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "NCA" EXACT [TAO:0005053]
 xref: ZFA:0005053
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005054
 name: inner optic circle
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "IOC" EXACT [TAO:0005054]
 xref: ZFA:0005054
 is_a: UBERON:0002203 ! vasculature of eye
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005055
 name: median palatocerebral vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Drains the PLA loop proceeds straight caudally along the cranial midline just above the pharynx, just below the diencephalon. Forms a 'T' with the palatocerebral veins. Isogai et al. 2001." [ZFIN:curator]
 synonym: "MPLV" EXACT [TAO:0005055]
 xref: ZFA:0005055
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005056
 name: palatocerebral vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vein that drains the median palatocerebral vein into the optic vein. Isogai et al. 2001." [ZFIN:curator]
 synonym: "PLV" EXACT [TAO:0005056]
 xref: ZFA:0005056
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005066
 name: bulbus arteriosus outer layer
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Composed of scattered layers of interrupted elastic lamina. Hu et al. 2001." [ZFIN:curator]
 synonym: "bulbus arteriosus externa" EXACT [TAO:0005066]
 xref: ZFA:0005066
 relationship: part_of UBERON:0004706 ! bulbus cordis
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005067
 name: bulbus arteriosus middle layer
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Composed of 7-10 layers of helically arranged smooth muscle cells surrounded by a fine network of collagen, reticular, and elastic fibrils. Hu et al. 2001." [ZFIN:curator]
 synonym: "bulbus arteriosus media" EXACT [TAO:0005067]
 xref: ZFA:0005067
 relationship: part_of UBERON:0004706 ! bulbus cordis
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005068
 name: bulbus arteriosus inner layer
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Composed of subendothelium with longitudinally oriented collagen, reticular fibrils, elastic fibers, and smooth muscle cells bound by a thin endothelial layer. Hu et al. 2001." [ZFIN:curator]
 synonym: "bulbus arteriosus intima" EXACT [TAO:0005068]
 xref: ZFA:0005068
 relationship: part_of UBERON:0004706 ! bulbus cordis
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005072
 name: endocardial ring
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005072
 relationship: part_of UBERON:0002165 ! endocardium
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005073
 name: atrioventricular ring
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "AV ring" EXACT [TAO:0005073]
 xref: ZFA:0005073
 is_a: UBERON:2005072 ! endocardial ring
 relationship: part_of UBERON:0002081 ! cardiac atrium
 relationship: part_of UBERON:0002082 ! cardiac ventricle
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005074
 name: central cardiac conduction system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cardiac conduction system, characterized by slow impulse propagation and prolonged refractory periods." [ZFIN:curator]
 xref: ZFA:0005074
 is_a: UBERON:0002350 ! conducting system of heart
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005075
 name: peripheral cardiac conduction system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Portion of the cardiac conduction system, with rapid impulse propagation." [ZFIN:curator]
 xref: ZFA:0005075
 is_a: UBERON:0002350 ! conducting system of heart
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005078
 name: middle mesencephalic central artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Project rostrally and dorsally from the AMCtA to to irrigate the midportion of the midbrain Isogai et al. 2001." [ZFIN:curator]
 synonym: "MMCtA" EXACT [TAO:0005078]
 xref: ZFA:0005078
 is_a: UBERON:2005020 ! central artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005079
 name: posterior mesencephalic central artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Project dorsally from BCA to irrigate the caudal part of midbrain Isogai et al. 2001." [ZFIN:curator]
 synonym: "caudal mesencephalic central artery" EXACT [TAO:0005079]
 synonym: "PMCtA" EXACT [TAO:0005079]
 xref: ZFA:0005079
 is_a: UBERON:2005020 ! central artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005080
 name: anterior mesenteric artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Unpaired artery departing from dorsal aorta, typically supplying the small intestine" [ISBN10:0073040584]
 synonym: "AMA" EXACT [TAO:0005080]
 synonym: "rostral mesenteric artery" EXACT [TAO:0005080]
 xref: ZFA:0005080
 is_a: UBERON:0005616 {source="cjm"} ! mesenteric artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005082
 name: dorsal branch nasal ciliary artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005082
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:2005053 ! nasal ciliary artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005083
 name: ventral branch nasal ciliary artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005083
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:2005053 ! nasal ciliary artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005084
 name: metencephalic artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "These arteies branch dorsally from both sides of the posterior communicating artery looping up to join with the opposite MtA as well as with both middle cerebral veins at the dorsal midline of the head. Isogai et al. 2001." [ZFIN:curator]
 xref: ZFA:0005084
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005085
 name: nasal artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The nasal arteries start at the internal carotid artey and travel rostrally, passing along the right and left walls of the nasal sac at the most rostral end of the head. From the nasal sac, the NA flows into the nasal veins. Isogai et al. 2001." [ZFIN:curator]
 synonym: "NA" EXACT [TAO:0005085]
 xref: ZFA:0005085
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005087
 name: pectoral vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "PV" EXACT [TAO:0005087]
 xref: ZFA:0005087
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0007300 ! pectoral appendage blood vessel
 relationship: part_of UBERON:0007302 ! pectoral appendage vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005088
 name: posterior mesenteric artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Unpaired artery departing from dorsal aorta that typically supplies the large intestine" [ISBN10:0073040584]
 synonym: "caudal mesenteric artery" EXACT [TAO:0005088]
 synonym: "PMA" EXACT [TAO:0005088]
 xref: ZFA:0005088
 is_a: UBERON:0005616 {source="cjm"} ! mesenteric artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005089
 name: swim bladder artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "An elaborate set of vessels that branche off caudally from the anterior mesenteric artery just after the dorsal aorta. The SBA vascular loops are located on the ventral side of the swim bladder. Isogai et al. 2001." [ZFIN:curator]
 synonym: "SBA" EXACT [TAO:0005089]
 xref: ZFA:0005089
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005093
 name: nasal vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "NV" EXACT [TAO:0005093]
 xref: ZFA:0005093
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005097
 name: caudal fin vasculature
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005097
 is_a: UBERON:0007304 ! appendage vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005098
 name: central ray artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Positioned in the intraray mesenchym between the hemirays of the lepidotrichia,. Huang et al. 2003." [ZFIN:curator]
 xref: ZFA:0005098
 is_a: UBERON:0007304 ! appendage vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005099
 name: ray vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Lie flanking and just lateral to the fin ray, in the interray mesenchyme. Huang et al. 2003." [ZFIN:curator]
 xref: ZFA:0005099
 is_a: UBERON:0007304 ! appendage vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005100
 name: intervessel commissure
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vessels that travel between artery and veins or vein and vein in a single ray." [ZFIN:curator]
 synonym: "intervessel comisures" EXACT PLURAL [TAO:0005100]
 xref: ZFA:0005100
 is_a: UBERON:0007304 ! appendage vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005101
 name: interray vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vessels that travel between veins in adjacent rays." [ZFIN:curator]
 synonym: "interray vessels" EXACT PLURAL [TAO:0005101]
 xref: ZFA:0005101
 is_a: UBERON:0007304 ! appendage vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005106
 name: longitudinal lateral lymphatic vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "LLL" EXACT [TAO:0005106]
 xref: ZFA:0005106
 is_a: UBERON:0004536 ! lymph vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005219
 name: choroid plexus vascular circuit
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cranial vasculature where the posterior cerebral veins and the trans-choroid plexus branch form a circuit around the 4th ventricle choroid plexus." [ZFIN:ZDB-PUB-080908-11]
 synonym: "choroid vascular circuit" RELATED [TAO:0005219]
 synonym: "CVC" EXACT [TAO:0005219]
 xref: ZFA:0005219
 is_a: UBERON:0008998 ! vasculature of brain
 relationship: part_of UBERON:0001886 ! choroid plexus
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005248
 name: trans-choroid plexus branch
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "TCB" EXACT [TAO:0005248]
 xref: ZFA:0005248
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003499 ! brain blood vessel
 relationship: part_of UBERON:2005219 ! choroid plexus vascular circuit
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -22992,56 +22993,56 @@ property_value: UBPROP:0000001 "Blood vessel endothelium that has pores that all
 [Term]
 id: UBERON:2005295
 name: axial blood vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005295
 is_a: UBERON:2001073 ! axial vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005303
 name: caudal fin lymph vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005303
 is_a: UBERON:0007384 ! appendage lymph vessel
 relationship: part_of UBERON:2005097 ! caudal fin vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005304
 name: caudal fin blood vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005304
 is_a: UBERON:0007301 ! appendage blood vessel
 relationship: part_of UBERON:2005097 ! caudal fin vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005319
 name: intersegmental lymph vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "islv" EXACT [TAO:0005319]
 xref: ZFA:0005319
 is_a: UBERON:0004536 ! lymph vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005320
 name: dorsal longitudinal lymphatic vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "dllv" EXACT [TAO:0005320]
 xref: ZFA:0005320
 is_a: UBERON:0004536 ! lymph vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:3010200
 name: vasculature of respiratory integument
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Blood vessels in respiratory skin." [AAO:EJS]
 is_a: UBERON:0003504 ! respiratory system blood vessel
 property_value: IAO:0000116 "Modified from the original AAO source" xsd:string
@@ -23050,212 +23051,212 @@ created_by: amphibian_anatomy_curators
 [Term]
 id: UBERON:3010243
 name: ventricular musculature
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0002082 ! cardiac ventricle
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010404
 name: capillary system of liver
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The smallest of the blood vessels, parts of the microcirculation, of the liver." [XAO:curator]
 synonym: "liver capillary" EXACT [UBERON:3010404]
 is_a: UBERON:0001982 ! capillary
 is_a: UBERON:0015796 ! liver blood vessel
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010413
 name: left channel of ventral aorta
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0003085 ! ventral aorta
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010417
 name: posterior palatine artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010423
 name: larval aorta
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0000947 ! aorta
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010424
 name: right channel of ventral aorta
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0003085 ! ventral aorta
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010489
 name: muscular artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Part of the external carotid which delivers blood to the mm rectus cervicis and interhyoideus posterior." [AAO:BJB]
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001070 ! external carotid artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010494
 name: lateral pretrosal artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Part of the internal carotid which supplies blood to the ear and branches to two additional arteries." [AAO:BJB]
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 is_a: UBERON:0020550 ! auricular blood vessel
 relationship: part_of UBERON:0001532 ! internal carotid artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010496
 name: mandibular artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Part of lateral pretrosal artery which supplies blood to the roof of the mouth." [AAO:BJB]
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:3010494 ! lateral pretrosal artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010498
 name: cutaneus artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Artery which supplies blood to the thymus and parotoid region." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010499
 name: coeliaco-mesenteric artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "This artery has many branches which supply blood to various organs in the viscus." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010500
 name: gastrico-linealis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Major branch which supplies blood to the spleen and dorsal wall of the stomach." [AAO:BJB]
 is_a: UBERON:0003509 ! arterial blood vessel
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010501
 name: duodeno-pancreatic artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Major branch which supplies blood to pancreas and duodenum." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010502
 name: duodeno-hepatic artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Major branch supplying blood via many smaller branches to the liver, duodenum, ventral wall of the stomach, and gall bladder." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010503
 name: oviduct artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "One of three arteries which are part of the renal artery supplying blood to the anterior, middle, and posterior parts of the oviduct." [AAO:BJB]
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001184 ! renal artery
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010506
 name: postcaval vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "One of three major veins which enter the sinus venosus." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010507
 name: precaval vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Either of a pair of veins which enter on either side of the sinus venosus." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010515
 name: lateral vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Either of the veins which collect blood from the trunk and skin and drain into the subclavian vein." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010516
 name: cutaneus magnus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anterior part of the lateral vein." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:3010515 ! lateral vein
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010517
 name: ventral abdominal vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A vein formed by the combination of veins in the pelvic region which collects blood from the liver, stomach, intestines, and gall bladder." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:0010194 ! hepatic portal system
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010519
 name: Jacobson's vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Either of a pair of veins which receives many small vesicles from the kidney and collects blood from the oviducal vein." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:0010195 ! renal portal system
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010520
 name: oviducal vein
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vein which collects blood from the oviduct." [AAO:EJS]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:0010195 ! renal portal system
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
@@ -23289,6 +23290,26 @@ relationship: part_of UBERON:0002354 {source="https://github.com/obophenotype/ub
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
+id: UBERON:8410001
+name: small intestine venule
+namespace: uberon
+def: "Venule of villus of small intestine." [https://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "venule of small intestine" EXACT []
+is_a: UBERON:0001979 ! venule
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410002
+name: small intestine lymphatic vessel
+namespace: uberon
+def: "A lymphatic vessel that supplies the small intestine." [http://orcid.org/0000-0003-4183-8865/]
+subset: location_grouping
+synonym: "lymphatic vessel of small intestine" EXACT []
+is_a: UBERON:0001473 ! lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: UBERON:8410004
 name: small intestine arteriole
 namespace: uberon
@@ -23297,6 +23318,52 @@ subset: location_grouping
 synonym: "arteriole of small intestine" EXACT []
 synonym: "arteriole of villus of small intestine" EXACT []
 synonym: "small intestine villus arteriole" EXACT []
+is_a: UBERON:0001980 ! arteriole
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410008
+name: venule of anorectum
+namespace: uberon
+def: "A venule that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+synonym: "anorectum venule" EXACT []
+is_a: UBERON:0001979 ! venule
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410009
+name: arteriole of anorectum
+namespace: uberon
+def: "An arteriole that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+synonym: "anorectum arteriole" EXACT []
+is_a: UBERON:0001980 ! arteriole
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410013
+name: afferent lymphatic vessel valve
+namespace: uberon
+def: "A valve in an afferent lymphatic vessel. It manages the flow of lymphatic fluid into the lymph node carrying immune cells and is essential for the correct flow of fluid through the lymphatic system." [http://orcid.org/0000-0003-4183-8865/]
+synonym: "valve of afferent lymphatic vessel" EXACT []
+is_a: UBERON:0034949 ! lymphatic valve
+relationship: part_of UBERON:0010396 ! afferent lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410014
+name: efferent lymphatic vessel valve
+namespace: uberon
+def: "A valve in an efferent lymphatic vessel. It manages the flow of lymphatic fluid out of the lymph node carrying immune cells and is essential for the correct flow of fluid through the lymphatic system." [http://orcid.org/0000-0003-4183-8865/]
+synonym: "valve of efferent lymphatic vessel" EXACT []
+is_a: UBERON:0034949 ! lymphatic valve
+relationship: part_of UBERON:0010397 ! efferent lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410015
+name: arteriole of colon
+namespace: uberon
+def: "An arteriole located in the colon." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865/]
 is_a: UBERON:0001980 ! arteriole
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -23321,6 +23388,16 @@ relationship: part_of UBERON:0001138 ! superior mesenteric vein
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
+id: UBERON:8410020
+name: venule of appendix
+namespace: uberon
+def: "A venule located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "venule of vermiform appendix" EXACT []
+synonym: "vermiform appendix venule" EXACT []
+is_a: UBERON:0001979 ! venule
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: UBERON:8410022
 name: left colic artery
 namespace: uberon
@@ -23337,6 +23414,39 @@ namespace: uberon
 def: "The right colic artery may arise directly from the superior mesenteric artery (SMA) but often arises from a common trunk with the ileocolic artery or middle colic artery. It supplies the ascending colon." [https://orcid.org/0000-0003-4183-8865, ISBN:9780443103735]
 xref: FMA:14811
 is_a: UBERON:0001637 ! artery
+
+[Term]
+id: UBERON:8410028
+name: arteriole of appendix
+namespace: uberon
+def: "An arteriole located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "appendix vermiformis arteriole" EXACT []
+synonym: "arteriole of appendix vermiformis" EXACT []
+synonym: "arteriole of vermiform appendix" EXACT []
+synonym: "vermiform appendix arteriole" EXACT []
+is_a: UBERON:0001980 ! arteriole
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410029
+name: lymphatic capillary of appendix
+namespace: uberon
+def: "A lymphatic capillary that is located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "lymphatic capillary of appendix vermiformis" EXACT []
+synonym: "lymphatic capillary of vermiform appendix" EXACT []
+is_a: UBERON:0006842 ! lymphatic capillary
+is_a: UBERON:8410030 ! lymphatic vessel of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410030
+name: lymphatic vessel of appendix
+namespace: uberon
+def: "A lymphatic vessel located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "lymphatic vessel of appendix vermiformis" EXACT []
+synonym: "lymphatic vessel of vermiform appendix" EXACT []
+is_a: UBERON:0001473 ! lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: UBERON:8410033
@@ -23356,6 +23466,156 @@ def: "An artery that enters the lymph node at the hilum and branches into smalle
 synonym: "artery of lymph node" EXACT []
 synonym: "hilar artery of lymph node" EXACT []
 is_a: UBERON:0001637 ! artery
+
+[Term]
+id: UBERON:8410035
+name: medullary arteriole of lymph node
+namespace: uberon
+def: "An arteriole that arises from the hilar artery of a lymph node and radiates centrifugally, branching in the medulla." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "arteriole of medulla of lymph node" EXACT []
+is_a: UBERON:8410042 ! arteriole of lymph node
+relationship: part_of UBERON:8410034 ! lymph node artery
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410036
+name: medullary venule of lymph node
+namespace: uberon
+def: "Medullary venules are a continuation of high endothelial venules which condense repeatedly in the interfollicular cortex and peripheral deep cortical unit and then transition to medullary venules at the corticomedullary junction. The medullary venules condense and return centripetally to the hilar vein." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "venule of medulla of lymph node" EXACT []
+is_a: UBERON:8410041 ! venule of lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410037
+name: high endothelial venule
+namespace: uberon
+def: "High endothelial venules are specialized blood vessels adapted for lymphocyte trafficking. They form a spatially organized network, which controls both the type of lymphocyte and the site of entry into lymphoid tissues. Uniquely, high endothelial venules express vascular addressins that regulate lymphocyte entry into lymphoid organs. They perform this function in all lymphoid organs except the spleen." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/28217126]
+xref: BTO:0004528
+xref: NCIT:C32739
+is_a: UBERON:0035428 ! postcapillary venule
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410038
+name: high endothelial venule of lymph node
+namespace: uberon
+def: "A high endothelial venule that is part of a of lymph node." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/28217126]
+synonym: "lymph node high endothelial venule" EXACT []
+is_a: UBERON:8410037 ! high endothelial venule
+is_a: UBERON:8410041 ! venule of lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410039
+name: high endothelial venule of appendix
+namespace: uberon
+def: "A high endothelial venule that is located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/28217126]
+synonym: "appendix high endothelial venule" EXACT []
+synonym: "high endothelial venule of appendix vermiformis" EXACT []
+synonym: "high endothelial venule of vermiform appendix" EXACT []
+is_a: UBERON:8410020 ! venule of appendix
+is_a: UBERON:8410037 ! high endothelial venule
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410040
+name: high endothelial venule of small intestine Peyer's patch
+namespace: uberon
+def: "A high endothelial venule that is located in a Peyer's patch in the small intestine." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/20800822, http://www.ncbi.nlm.nih.gov/pubmed/28217126]
+synonym: "high endothelial venule of Peyer's patch" BROAD []
+synonym: "high endothelial venule of Peyer's patch of small intestine" EXACT []
+is_a: UBERON:8410037 ! high endothelial venule
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410041
+name: venule of lymph node
+namespace: uberon
+def: "A venule that is part of a lymph node." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "lymph node venule" EXACT []
+is_a: UBERON:0001979 ! venule
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410042
+name: arteriole of lymph node
+namespace: uberon
+def: "An arteriole that is part of a lymph node." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "lymph node arteriole" EXACT []
+is_a: UBERON:0001980 ! arteriole
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410044
+name: vein of appendix
+namespace: uberon
+def: "A vein that is part of a vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "vein of appendix vermiformis" EXACT []
+synonym: "vein of vermiform appendix" EXACT []
+is_a: UBERON:0001638 ! vein
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410045
+name: artery of appendix
+namespace: uberon
+def: "An artery that is part of a vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "artery of appendix vermiformis" EXACT []
+synonym: "artery of vermiform appendix" EXACT []
+is_a: UBERON:0001637 ! artery
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410048
+name: venule of colon
+namespace: uberon
+def: "A venule located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865]
+is_a: UBERON:0001979 ! venule
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410051
+name: lymphatic vessel of colon
+namespace: uberon
+def: "A lymphatic vessel located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865/]
+is_a: UBERON:0001473 ! lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410054
+name: lymphatic capillary of colon
+namespace: uberon
+def: "A lymphatic capillary located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865/]
+is_a: UBERON:0006842 ! lymphatic capillary
+is_a: UBERON:8410051 ! lymphatic vessel of colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410055
+name: lymphatic capillary of anorectum
+namespace: uberon
+def: "A lymphatic capillary located in the anorectum." [https://orcid.org/0000-0003-3440-1876]
+is_a: UBERON:0006842 ! lymphatic capillary
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410056
+name: capillary of anorectum
+namespace: uberon
+def: "A capillary that is part of the anorectum." [http://orcid.org/0000-0003-3440-1876]
+synonym: "blood vessel capillary of anorectum" EXACT []
+is_a: UBERON:0001982 ! capillary
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410057
+name: capillary of colon
+namespace: uberon
+def: "A capillary that is part of the colon." [http://orcid.org/0000-0003-3440-1876]
+synonym: "blood vessel capillary of colon" EXACT []
+is_a: UBERON:0001982 ! capillary
+created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: http://owltools.org/Q
@@ -23379,6 +23639,7 @@ property_value: IAO:0000112 "my brain is part of my body (continuant parthood, t
 property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
 property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
 property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
 property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string

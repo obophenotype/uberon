@@ -7,7 +7,6 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:core="http://purl.obolibrary.org/obo/core#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
@@ -110,6 +109,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBPROP_0000004 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000004"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBPROP_0000006 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000006"/>
@@ -161,12 +166,6 @@
     <!-- http://purl.obolibrary.org/obo/UBPROP_0000202 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000202"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#provenance_notes -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/core#provenance_notes"/>
     
 
 
@@ -372,6 +371,7 @@
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a core relation that holds between a part and its whole</obo:IAO_0000115>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
 
@@ -30459,11 +30459,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011150"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000211</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gill lamellae</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2000211</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gill lamella</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30471,7 +30472,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gill lamellae</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000211</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/core#PLURAL"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
     </owl:Axiom>
     
 
@@ -30485,10 +30486,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011150"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000319</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2000319</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branchiostegal membrane</rdfs:label>
     </owl:Class>
     
@@ -30510,11 +30512,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009120"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0000666</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">filamental arteries</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2000666</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">filamental artery</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30522,7 +30525,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">filamental arteries</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0000666</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/core#PLURAL"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
     </owl:Axiom>
     
 
@@ -30577,10 +30580,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001042"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001467</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2001467</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharyngeal mesoderm</rdfs:label>
     </owl:Class>
     
@@ -30597,9 +30601,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An artery that passes along the ventral portions of the hyoid arch; supplies oxygenated blood to the pseudobranch.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2001857</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hyoidean artery</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30621,10 +30626,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anatomical cluster that is an outgrowth of the soft tissue around the dorsolateral corner of a branchial arch that is internally supported by a core of rigid cartilage-like tissue. Epibranchial arborescent organ is paired.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">suprabranchial organ</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2001990</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greenwood, P. H. 1961 (A revision of the genus Dinotopterus Blgr. (pisces, Clariidae) with notes on the comparative anatomy of the suprabranchial organs in the Clariidae. Bull. British Mus (Nat. His.), Zool. 7(4): 217-241.) described this structure in certain catfishes and applied the term suprabranchial organ to it. To avoid possible confusion with distinctly different structures bearing the name suprabranchial organs in other teleosts, the term epibranchial arborescent organ is used here following the lead of de Pinna 1993.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epibranchial arborescent organ</rdfs:label>
     </owl:Class>
@@ -30653,14 +30659,15 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anatomical space that is the external opening of a gill slit connecting the pharyngeal cavity to the exterior. Gill opening is usually paired and located on the lateral or ventral surfaces of the head.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005389</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branchial aperture</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branchial opening</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gill aperture</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opercular opening</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2002057</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In teleosts, there is typically a single gill opening posterior to the operculum.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gill opening</rdfs:label>
     </owl:Class>
@@ -30706,9 +30713,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001042"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2002116</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epibranchial organ</rdfs:label>
     </owl:Class>
     
@@ -30730,12 +30738,13 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_2000716"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005012</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AFA</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afferent filamental arteries</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2005012</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afferent filamental artery</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30749,7 +30758,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afferent filamental arteries</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005012</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/core#PLURAL"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
     </owl:Axiom>
     
 
@@ -30765,11 +30774,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The branch of the afferent branchial artery that continues posteriodorsally. Isogai et al. 2001.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005013</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CCB</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2005013</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concurrent branch afferent branchial artery</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30798,12 +30808,13 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The anterioventral proceeding branch of the afferent branchial artery. Isogai et al. 2001.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005014</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RCB</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">recurrent branch afferent branchial arteries</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2005014</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">recurrent branch afferent branchial artery</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30823,7 +30834,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">recurrent branch afferent branchial arteries</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005014</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/core#PLURAL"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
     </owl:Axiom>
     
 
@@ -30844,12 +30855,13 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005012"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005015</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AFL</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afferent lamellar arterioles</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2005015</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afferent lamellar arteriole</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30863,7 +30875,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afferent lamellar arterioles</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005015</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/core#PLURAL"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
     </owl:Axiom>
     
 
@@ -30884,11 +30896,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_2000666"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005018</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EFA</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2005018</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efferent filamental artery</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30916,12 +30929,13 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005018"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005019</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ELA</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efferent lamellar arterioles</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2005019</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efferent lamellar arteriole</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30935,7 +30949,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efferent lamellar arterioles</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0005019</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/core#PLURAL"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
     </owl:Axiom>
     
 
@@ -30945,9 +30959,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_3000085">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001707"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accessory cavity located ventral to the cavum principale and cavum medius.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000085</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cavum inferius</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30963,9 +30978,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_3000086">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001707"/>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000086</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cavum internasale</rdfs:label>
     </owl:Class>
     
@@ -30976,9 +30992,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_3000087">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001707"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small accessory cavity located between the cavum principale and cavum inferius.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000087</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cavum medius</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -30994,9 +31011,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_3000088">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001707"/>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000088</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cavum praenasale</rdfs:label>
     </owl:Class>
     
@@ -31007,9 +31025,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_3000089">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001707"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The largest part of the nasal cavity, containing the olfactory epithelium.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000089</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cavum principale</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31032,10 +31051,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paired processes that extend posteroventrally from the anterolateral margins of the cricoid ring.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processus trachealis</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000676</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bronchial process</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31062,10 +31082,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002375"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral process</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000677</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral process of cricoid cartilage</rdfs:label>
     </owl:Class>
     
@@ -31081,10 +31102,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Median process located on the posterior end of the cricoid cartilage.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spina oesophagea</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000678</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">esophageal process</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31112,10 +31134,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anterior end of the arytenoid cartilage.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prominentia apicalis anterior</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000688</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prominentia apicalis dorsalis</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31143,10 +31166,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Posterior (cardiac) end of the arytenoid cartilage.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prominentia apicalis posterior</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000689</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prominentia apicalis ventralis</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31174,10 +31198,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paired processes located on the anterior end of the cricoid cartilage.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processus articularis anterior</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3000948</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articular process</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31205,9 +31230,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of the inferior cavity of the olfactory organ, found in anurans.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3010197</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lateral recess</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31230,9 +31256,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blood vessels in respiratory skin.</obo:IAO_0000115>
-        <obo:IAO_0000116>Modified from the original AAO source</obo:IAO_0000116>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Modified from the original AAO source</obo:IAO_0000116>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3010200</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vasculature of respiratory integument</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31254,9 +31281,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Either of the short tubes which bifurcate posteriorly from the trachea and lead into the lungs.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3010524</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bronchial tube</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31279,7 +31307,8 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muscular vestibule between the pharynx and lungs, lying between the posterior cornua of the hyoid.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3010613</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">laryngo-tracheal chamber</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -31311,6 +31340,37 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Opening of the tracheal system on the surface of the body.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FlyBase:FBrf0166419</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_8410043 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8410043">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0036225"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002185"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A submucosal gland located in a bronchus.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">airway submucosal gland</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EFO:0010666</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bronchial submucosal gland</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">submucosal bronchial gland</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">submucosal bronchus gland</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:8410043</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bronchus submucosal gland</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8410043"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A submucosal gland located in a bronchus.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0003-3440-1876"/>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0003-4183-8865"/>
     </owl:Axiom>
     
 

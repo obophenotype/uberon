@@ -3,12 +3,12 @@
 ## Left
 - Ontology IRI: `http://purl.obolibrary.org/obo/uberon.owl`
 - Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2021-02-12/uberon.owl`
-- Loaded from: `file:/work/src/ontology/diffs/uberon-lastbuild.owl`
+- Loaded from: `file:/work/knocean/uberon/src/ontology/diffs/uberon-lastbuild.owl`
 
 ## Right
 - Ontology IRI: `http://purl.obolibrary.org/obo/uberon.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2021-05-11/uberon.owl`
-- Loaded from: `file:/work/src/ontology/diffs/../../../uberon.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2021-05-13/uberon.owl`
+- Loaded from: `file:/work/knocean/uberon/src/ontology/diffs/../../../uberon.owl`
 
 ### Ontology imports 
 
@@ -606,6 +606,12 @@
 
 
 
+### bile duct `http://purl.obolibrary.org/obo/UBERON_0002394`
+#### Removed
+- [bile duct](http://purl.obolibrary.org/obo/UBERON_0002394) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
+
+
 ### bladder organ `http://purl.obolibrary.org/obo/UBERON_0018707`
 #### Removed
 - [bladder organ](http://purl.obolibrary.org/obo/UBERON_0018707) SubClassOf [sac](http://purl.obolibrary.org/obo/UBERON_0009856) 
@@ -1101,6 +1107,14 @@
 ### chamber of eyeball `http://purl.obolibrary.org/obo/UBERON_0006311`
 #### Removed
 - [chamber of eyeball](http://purl.obolibrary.org/obo/UBERON_0006311) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+
+
+
+### channel for `http://purl.obolibrary.org/obo/uberon/core#channel_for`
+#### Removed
+- [channel for](http://purl.obolibrary.org/obo/uberon/core#channel_for) Domain [anatomical conduit](http://purl.obolibrary.org/obo/UBERON_0004111) 
+
+- [channel for](http://purl.obolibrary.org/obo/uberon/core#channel_for) Range [organism substance](http://purl.obolibrary.org/obo/UBERON_0000463) 
 
 
 
@@ -1779,6 +1793,24 @@
 - [dorsal ventricular ridge of pallium](http://purl.obolibrary.org/obo/UBERON_0014733) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [NCBITaxon_40674](http://purl.obolibrary.org/obo/NCBITaxon_40674) 
 
 
+### drains `http://purl.obolibrary.org/obo/RO_0002179`
+#### Removed
+- [drains](http://purl.obolibrary.org/obo/RO_0002179) Domain [vein](http://purl.obolibrary.org/obo/UBERON_0001638) 
+
+
+
+### duct of salivary gland `http://purl.obolibrary.org/obo/UBERON_0001837`
+#### Removed
+- [duct of salivary gland](http://purl.obolibrary.org/obo/UBERON_0001837) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
+
+
+### duct of seminal vesicle `http://purl.obolibrary.org/obo/UBERON_0005903`
+#### Removed
+- [duct of seminal vesicle](http://purl.obolibrary.org/obo/UBERON_0005903) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
+
+
 ### ductal plate `http://purl.obolibrary.org/obo/UBERON_8410003`
 
 #### Added
@@ -1886,6 +1918,36 @@
 
 
 
+### efferent duct `http://purl.obolibrary.org/obo/UBERON_0006946`
+#### Removed
+- [efferent duct](http://purl.obolibrary.org/obo/UBERON_0006946) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
+
+
+### efferent filamental artery `http://purl.obolibrary.org/obo/UBERON_2005018`
+#### Removed
+- [efferent filamental artery](http://purl.obolibrary.org/obo/UBERON_2005018) SubClassOf [venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003920) 
+
+
+
+### efferent lamellar arteriole `http://purl.obolibrary.org/obo/UBERON_2005019`
+#### Removed
+- [efferent lamellar arteriole](http://purl.obolibrary.org/obo/UBERON_2005019) SubClassOf [venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003920) 
+
+
+
+### efferent portion of pharyngeal arch artery `http://purl.obolibrary.org/obo/UBERON_2000202`
+#### Removed
+- [efferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000202) SubClassOf [craniocervical region vein](http://purl.obolibrary.org/obo/UBERON_0009141) 
+
+
+
+### efferent spiracular artery `http://purl.obolibrary.org/obo/UBERON_0017617`
+#### Removed
+- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [craniocervical region vein](http://purl.obolibrary.org/obo/UBERON_0009141) 
+
+
+
 ### egg tooth `http://purl.obolibrary.org/obo/UBERON_0018276`
 
 #### Added
@@ -1896,6 +1958,12 @@
 
 #### Added
 - [eggshell](http://purl.obolibrary.org/obo/UBERON_0005079) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [NCBITaxon_32525](http://purl.obolibrary.org/obo/NCBITaxon_32525) 
+
+
+### ejaculatory duct `http://purl.obolibrary.org/obo/UBERON_0000999`
+#### Removed
+- [ejaculatory duct](http://purl.obolibrary.org/obo/UBERON_0000999) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
 
 
 ### embryonic cloacal epithelium `http://purl.obolibrary.org/obo/UBERON_0009846`
@@ -2182,6 +2250,12 @@
 ### epidermis gland `http://purl.obolibrary.org/obo/UBERON_0007771`
 #### Removed
 - [epidermis gland](http://purl.obolibrary.org/obo/UBERON_0007771) SubClassOf [skin gland](http://purl.obolibrary.org/obo/UBERON_0002419) 
+
+
+
+### epididymis `http://purl.obolibrary.org/obo/UBERON_0001301`
+#### Removed
+- [epididymis](http://purl.obolibrary.org/obo/UBERON_0001301) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
 
 
 
@@ -2890,6 +2964,14 @@
 - [haemal arch lamina](http://purl.obolibrary.org/obo/UBERON_3000727) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
 
+### has skeleton `http://purl.obolibrary.org/obo/RO_0002551`
+#### Removed
+- [has skeleton](http://purl.obolibrary.org/obo/RO_0002551) Domain [organism subdivision](http://purl.obolibrary.org/obo/UBERON_0000475) 
+
+- [has skeleton](http://purl.obolibrary.org/obo/RO_0002551) Range [subdivision of skeleton](http://purl.obolibrary.org/obo/UBERON_0010912) 
+
+
+
 ### head bone `http://purl.obolibrary.org/obo/UBERON_0003457`
 #### Removed
 - [head bone](http://purl.obolibrary.org/obo/UBERON_0003457) SubClassOf [bone of craniocervical region](http://purl.obolibrary.org/obo/UBERON_0007914) 
@@ -3389,6 +3471,16 @@
 - [incurrent foramen of ectepicondylar foramen](http://purl.obolibrary.org/obo/UBERON_4200229) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
 
+### inferior branch of oculomotor nerve `http://purl.obolibrary.org/obo/UBERON_0015161`
+#### Removed
+- [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+
+- [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
+
+- [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+
+
+
 ### infralabial gland `http://purl.obolibrary.org/obo/UBERON_0010050`
 
 #### Added
@@ -3697,6 +3789,8 @@
 
 
 ### lacrimal drainage system `http://purl.obolibrary.org/obo/UBERON_0001850`
+#### Removed
+- [lacrimal drainage system](http://purl.obolibrary.org/obo/UBERON_0001850) SubClassOf [anatomical conduit](http://purl.obolibrary.org/obo/UBERON_0004111) 
 
 #### Added
 - [lacrimal drainage system](http://purl.obolibrary.org/obo/UBERON_0001850) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [NCBITaxon_8459](http://purl.obolibrary.org/obo/NCBITaxon_8459) 
@@ -3857,6 +3951,12 @@
 
 #### Added
 - [lateral tubercle of astragalus](http://purl.obolibrary.org/obo/UBERON_4200182) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
+
+
+### lateral vaginal canal `http://purl.obolibrary.org/obo/UBERON_0013523`
+#### Removed
+- [lateral vaginal canal](http://purl.obolibrary.org/obo/UBERON_0013523) SubClassOf [anatomical conduit](http://purl.obolibrary.org/obo/UBERON_0004111) 
+
 
 
 ### lateral ventricle choroid plexus epithelium `http://purl.obolibrary.org/obo/UBERON_0004274`
@@ -4148,6 +4248,20 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "ISBN:0471888893"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### major calyx `http://purl.obolibrary.org/obo/UBERON_0001226`
+#### Removed
+- [major calyx](http://purl.obolibrary.org/obo/UBERON_0001226) SubClassOf [renal venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0014401) 
+
+- [major calyx](http://purl.obolibrary.org/obo/UBERON_0001226) SubClassOf [vein of abdomen](http://purl.obolibrary.org/obo/UBERON_0013126) 
+
+
+
+### male genital duct `http://purl.obolibrary.org/obo/UBERON_0006947`
+#### Removed
+- [male genital duct](http://purl.obolibrary.org/obo/UBERON_0006947) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
+
+
 ### male preputial gland `http://purl.obolibrary.org/obo/UBERON_0005301`
 
 #### Added
@@ -4276,6 +4390,12 @@
 
 #### Added
 - [median external naris](http://purl.obolibrary.org/obo/UBERON_0010893) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [NCBITaxon_314146](http://purl.obolibrary.org/obo/NCBITaxon_314146) 
+
+
+### median vaginal canal `http://purl.obolibrary.org/obo/UBERON_0013524`
+#### Removed
+- [median vaginal canal](http://purl.obolibrary.org/obo/UBERON_0013524) SubClassOf [anatomical conduit](http://purl.obolibrary.org/obo/UBERON_0004111) 
+
 
 
 ### medulla oblongata `http://purl.obolibrary.org/obo/UBERON_0001896`
@@ -4562,6 +4682,14 @@
 - [milk](http://purl.obolibrary.org/obo/UBERON_0001913) SubClassOf [produced_by](http://purl.obolibrary.org/obo/RO_0003001) some [mammary gland](http://purl.obolibrary.org/obo/UBERON_0001911) 
 
 
+### minor calyx `http://purl.obolibrary.org/obo/UBERON_0001227`
+#### Removed
+- [minor calyx](http://purl.obolibrary.org/obo/UBERON_0001227) SubClassOf [vein of abdomen](http://purl.obolibrary.org/obo/UBERON_0013126) 
+
+- [minor calyx](http://purl.obolibrary.org/obo/UBERON_0001227) SubClassOf [renal venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0014401) 
+
+
+
 ### mixed ectoderm/mesoderm/endoderm-derived structure `http://purl.obolibrary.org/obo/UBERON_0000078`
 #### Removed
 - [mixed ectoderm/mesoderm/endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0000078) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
@@ -4609,6 +4737,18 @@
 - [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
 - [mucosa of lower lip](http://purl.obolibrary.org/obo/UBERON_0005032) SubClassOf [mucosa of lip](http://purl.obolibrary.org/obo/UBERON_0036294) 
+
+
+
+### mucosa of major calyx `http://purl.obolibrary.org/obo/UBERON_0005007`
+#### Removed
+- [mucosa of major calyx](http://purl.obolibrary.org/obo/UBERON_0005007) SubClassOf [blood vessel layer](http://purl.obolibrary.org/obo/UBERON_0004797) 
+
+
+
+### mucosa of minor calyx `http://purl.obolibrary.org/obo/UBERON_0005008`
+#### Removed
+- [mucosa of minor calyx](http://purl.obolibrary.org/obo/UBERON_0005008) SubClassOf [blood vessel layer](http://purl.obolibrary.org/obo/UBERON_0004797) 
 
 
 
@@ -4850,6 +4990,12 @@
 - [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "XAO:0003103"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### nasolacrimal duct `http://purl.obolibrary.org/obo/UBERON_0002392`
+#### Removed
+- [nasolacrimal duct](http://purl.obolibrary.org/obo/UBERON_0002392) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
+
+
 ### neck bone `http://purl.obolibrary.org/obo/UBERON_0003458`
 #### Removed
 - [neck bone](http://purl.obolibrary.org/obo/UBERON_0003458) SubClassOf [bone of craniocervical region](http://purl.obolibrary.org/obo/UBERON_0007914) 
@@ -5054,6 +5200,12 @@
 
 - [nictitating membrane](http://purl.obolibrary.org/obo/UBERON_0010207) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [NCBITaxon_376913](http://purl.obolibrary.org/obo/NCBITaxon_376913) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### nose `http://purl.obolibrary.org/obo/UBERON_0000004`
+#### Removed
+- [nose](http://purl.obolibrary.org/obo/UBERON_0000004) SubClassOf [organism subdivision](http://purl.obolibrary.org/obo/UBERON_0000475) 
+
 
 
 ### notochord `http://purl.obolibrary.org/obo/UBERON_0002328`
@@ -5626,6 +5778,12 @@
 
 
 
+### penicillar arteriole `http://purl.obolibrary.org/obo/UBERON_0013132`
+#### Removed
+- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) 
+
+
+
 ### penile spine `http://purl.obolibrary.org/obo/UBERON_0012328`
 
 #### Added
@@ -5770,6 +5928,12 @@
 ### pharyngeal vasculature `http://purl.obolibrary.org/obo/UBERON_0007303`
 #### Removed
 - [pharyngeal vasculature](http://purl.obolibrary.org/obo/UBERON_0007303) SubClassOf [vasculature of organ](http://purl.obolibrary.org/obo/UBERON_0006876) 
+
+
+
+### phrenic nerve `http://purl.obolibrary.org/obo/UBERON_0001884`
+#### Removed
+- [phrenic nerve](http://purl.obolibrary.org/obo/UBERON_0001884) SubClassOf [thoracic cavity artery](http://purl.obolibrary.org/obo/UBERON_0003473) 
 
 
 
@@ -6269,6 +6433,12 @@
 
 
 
+### renal afferent arteriole `http://purl.obolibrary.org/obo/UBERON_0004639`
+#### Removed
+- [renal afferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004639) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+
+
+
 ### renal pelvis `http://purl.obolibrary.org/obo/UBERON_0001224`
 #### Removed
 - [renal pelvis](http://purl.obolibrary.org/obo/UBERON_0001224) SubClassOf [anatomical conduit](http://purl.obolibrary.org/obo/UBERON_0004111) 
@@ -6322,6 +6492,12 @@
 
 #### Added
 - [reproductive system mucosa](http://purl.obolibrary.org/obo/UBERON_0019042) SubClassOf [part of](http://purl.obolibrary.org/obo/BFO_0000050) some [reproductive system](http://purl.obolibrary.org/obo/UBERON_0000990) 
+
+
+### respiratory airway `http://purl.obolibrary.org/obo/UBERON_0001005`
+#### Removed
+- [respiratory airway](http://purl.obolibrary.org/obo/UBERON_0001005) SubClassOf [anatomical conduit](http://purl.obolibrary.org/obo/UBERON_0004111) 
+
 
 
 ### respiratory system `http://purl.obolibrary.org/obo/UBERON_0001004`
@@ -6487,6 +6663,12 @@
 
 
 
+### ruminant esophageal groove `http://purl.obolibrary.org/obo/UBERON_0010229`
+#### Removed
+- [ruminant esophageal groove](http://purl.obolibrary.org/obo/UBERON_0010229) SubClassOf [anatomical conduit](http://purl.obolibrary.org/obo/UBERON_0004111) 
+
+
+
 ### saccus vasculosus `http://purl.obolibrary.org/obo/UBERON_0034943`
 
 #### Added
@@ -6612,6 +6794,12 @@
 - [segmental subdivision of hindbrain](http://purl.obolibrary.org/obo/UBERON_0004733) SubClassOf [segmental subdivision of nervous system](http://purl.obolibrary.org/obo/UBERON_0004732) 
 
 - [segmental subdivision of hindbrain](http://purl.obolibrary.org/obo/UBERON_0004733) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+
+
+
+### seminiferous tubule of testis `http://purl.obolibrary.org/obo/UBERON_0001343`
+#### Removed
+- [seminiferous tubule of testis](http://purl.obolibrary.org/obo/UBERON_0001343) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
 
 
 
@@ -7084,12 +7272,12 @@
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### sublingual `http://purl.obolibrary.org/obo/UBERON_2001275`
+### sublingual bone `http://purl.obolibrary.org/obo/UBERON_2001275`
 #### Removed
-- [sublingual](http://purl.obolibrary.org/obo/UBERON_2001275) [label](http://www.w3.org/2000/01/rdf-schema#label) "sublingual"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [sublingual bone](http://purl.obolibrary.org/obo/UBERON_2001275) [label](http://www.w3.org/2000/01/rdf-schema#label) "sublingual"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [sublingual](http://purl.obolibrary.org/obo/UBERON_2001275) [label](http://www.w3.org/2000/01/rdf-schema#label) "sublingual bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [sublingual bone](http://purl.obolibrary.org/obo/UBERON_2001275) [label](http://www.w3.org/2000/01/rdf-schema#label) "sublingual bone"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### sublingual dorsal and ventral fused `http://purl.obolibrary.org/obo/UBERON_2001333`
@@ -7204,6 +7392,16 @@
 - [superficial pretectal nucleus](http://purl.obolibrary.org/obo/UBERON_0035568) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [NCBITaxon_40674](http://purl.obolibrary.org/obo/NCBITaxon_40674) 
 
 
+### superior branch of oculomotor nerve `http://purl.obolibrary.org/obo/UBERON_0015162`
+#### Removed
+- [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
+
+- [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+
+- [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+
+
+
 ### superior parathyroid gland `http://purl.obolibrary.org/obo/UBERON_0006749`
 
 #### Added
@@ -7214,6 +7412,12 @@
 
 #### Added
 - [supinator process](http://purl.obolibrary.org/obo/UBERON_4200037) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
+
+
+### supplies `http://purl.obolibrary.org/obo/RO_0002178`
+#### Removed
+- [supplies](http://purl.obolibrary.org/obo/RO_0002178) Domain [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+
 
 
 ### supraacetabular buttress `http://purl.obolibrary.org/obo/UBERON_4200039`
@@ -7803,6 +8007,12 @@
 - [vaginal sphincter](http://purl.obolibrary.org/obo/UBERON_0012487) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
+### vas deferens `http://purl.obolibrary.org/obo/UBERON_0001000`
+#### Removed
+- [vas deferens](http://purl.obolibrary.org/obo/UBERON_0001000) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
+
+
 ### vasculature of brain `http://purl.obolibrary.org/obo/UBERON_0008998`
 #### Removed
 - [vasculature of brain](http://purl.obolibrary.org/obo/UBERON_0008998) SubClassOf [vasculature of central nervous system](http://purl.obolibrary.org/obo/UBERON_0036303) 
@@ -7947,6 +8157,12 @@
 
 #### Added
 - [ventral nerve cord](http://purl.obolibrary.org/obo/UBERON_0000934) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [NCBITaxon_7711](http://purl.obolibrary.org/obo/NCBITaxon_7711) 
+
+
+### ventral pancreatic duct `http://purl.obolibrary.org/obo/UBERON_0001064`
+#### Removed
+- [ventral pancreatic duct](http://purl.obolibrary.org/obo/UBERON_0001064) SubClassOf [tube](http://purl.obolibrary.org/obo/UBERON_0000025) 
+
 
 
 ### ventral ridge system `http://purl.obolibrary.org/obo/UBERON_4200159`

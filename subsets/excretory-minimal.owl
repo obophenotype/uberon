@@ -7,7 +7,6 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:core="http://purl.obolibrary.org/obo/core#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
@@ -104,6 +103,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBPROP_0000004 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000004"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBPROP_0000006 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000006"/>
@@ -155,12 +160,6 @@
     <!-- http://purl.obolibrary.org/obo/UBPROP_0000202 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000202"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/core#provenance_notes -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/core#provenance_notes"/>
     
 
 
@@ -324,6 +323,7 @@
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a core relation that holds between a part and its whole</obo:IAO_0000115>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
+        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
         <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
 
@@ -26576,10 +26576,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003060"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001055</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2001055</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pronephric duct opening</rdfs:label>
     </owl:Class>
     
@@ -26595,10 +26596,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Islands of eosinic cells found on the lateroventral surface of the kidney. Function is thought to be that of the parathyroid gland in other vertebrates, which are lacking in fishes. These cells secrete hypocalcin (teleocalcin) to regulate calcium metabolism.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001200</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2001200</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">corpuscles of Stannius</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -26619,10 +26621,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000080"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001293</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2001293</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior kidney</rdfs:label>
     </owl:Class>
     
@@ -26638,11 +26641,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003060"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0001623</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior pronephric ducts</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2002225</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior pronephric duct</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -26650,7 +26654,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">posterior pronephric ducts</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO:0002225</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/core#PLURAL"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
     </owl:Axiom>
     
 
@@ -26666,10 +26670,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Portion of the renal tubule which is just posterior to the distal early tubule.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005292</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2005292</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distal late tubule</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -26692,11 +26697,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Simple squamous epithelium that lines the capsule of the pronephric glomerulus.</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA:0005311</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pronephric parietal epithelial layer</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:2005311</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pronephric glomerular capsule epithelium</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -26724,9 +26730,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000083"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3010392</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesonephric early proximal tubule</rdfs:label>
     </owl:Class>
     
@@ -26741,13 +26748,20 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000083"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The site of bicarbonate resorption in the adult kidney. It is equivalent to the convoluted distal segment of metanephric nephrons. [Xenbase]</obo:IAO_0000115>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The site of bicarbonate resorption in the adult kidney. It is equivalent to the convoluted distal segment of metanephric nephrons.</obo:IAO_0000115>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DT1</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3010393</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesonephric late distal segment</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_3010393"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The site of bicarbonate resorption in the adult kidney. It is equivalent to the convoluted distal segment of metanephric nephrons.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xenbase</oboInOwl:hasDbXref>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_3010393"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -26767,14 +26781,15 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000083"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PT3</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">late proximal segment</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proximal tubule 3</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opisthonephros</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proximal straight segment</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3010394</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesonephric late proximal tubule</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -26819,11 +26834,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005309"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2011-04-20T05:19:55Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PT2</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3011120</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">early proximal tubule</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -26844,10 +26860,11 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005309"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <core:provenance_notes rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</core:provenance_notes>
+        <obo:UBPROP_0000004 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amphibian_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2011-04-20T05:21:45Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon/phenoscape-anatomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UBERON:3011121</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">late distal segment</rdfs:label>
     </owl:Class>
     

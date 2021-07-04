@@ -1055,9 +1055,24 @@ bundled-%.owl: $(MBASE)
 .PRECIOUS: $(TMPDIR)/unreasoned-composite-%.owl
 
 # stage1 of composite build: do a species merge, but no additional reasoning
-$(TMPDIR)/unreasoned-composite-%.owl: $(MBASE)
-	OWLTOOLS_MEMORY=12G owltools $(MAKESPMERGE) --merge-import-closure --reasoner elk $(MERGESPECIES) $(MERGE_EQSETS) -o -f ofn $@
+#$(TMPDIR)/unreasoned-composite-%.owl: $(MBASE)
+#	OWLTOOLS_MEMORY=12G owltools $(MAKESPMERGE) --merge-import-closure --reasoner elk $(MERGESPECIES) $(MERGE_EQSETS) -o -f ofn $@
+#.PRECIOUS: $(TMPDIR)/unreasoned-composite-%.owl
+
+$(TMPDIR)/merged-composite-%.owl: $(MBASE)
+	OWLTOOLS_MEMORY=12G owltools $(MAKESPMERGE) --merge-import-closure -o -f ofn $@
+.PRECIOUS: $(TMPDIR)/merged-composite-%.owl
+
+$(TMPDIR)/stripped-composite-%.owl: $(TMPDIR)/merged-composite-%.owl
+	$(ROBOT) remove -i $< -T unsats.txt --axioms logical -o $@
+
+$(TMPDIR)/unreasoned-composite-%.owl: $(TMPDIR)/stripped-composite-%.owl
+	OWLTOOLS_MEMORY=12G owltools $< --reasoner elk $(MERGESPECIES) $(MERGE_EQSETS) -o -f ofn $@
 .PRECIOUS: $(TMPDIR)/unreasoned-composite-%.owl
+
+#explain:
+#	$(ROBOT) explain -i $(TMPDIR)/unreasoned-composite-metazoan.owl --reasoner ELK -M unsatisfiability --unsatisfiable all --explanation unsat_all_explanation.md
+
 
 # stage 2 (final) of composite build: reason
 composite-%.owl: $(TMPDIR)/unreasoned-composite-%.owl

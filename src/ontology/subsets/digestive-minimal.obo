@@ -1,6 +1,5 @@
 format-version: 1.2
 ontology: uberon/subsets/digestive-minimal
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001007>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001007>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
 id: BFO:0000001
@@ -97,6 +96,7 @@ namespace: cell
 def: "An epithelial cell that has its apical plasma membrane folded into microvilli to provide ample surface for the absorption of nutrients from the intestinal lumen." []
 xref: BTO:0000398
 xref: FMA:62122
+is_a: CL:0000677 ! gut absorptive cell
 is_a: CL:0002563 ! intestinal epithelial cell
 
 [Term]
@@ -115,6 +115,13 @@ xref: BTO:0002741
 xref: CALOHA:TS-0452
 xref: FMA:67763
 relationship: part_of UBERON:0002107 ! liver
+
+[Term]
+id: CL:0000677
+name: gut absorptive cell
+namespace: cell
+def: "Cell of the intestinal epithelium with a brush border made up of many parallel packed microvilli; associated with absorption, particularly of macromolecules." []
+relationship: part_of UBERON:0001277 ! intestinal epithelium
 
 [Term]
 id: CL:0000682
@@ -387,6 +394,9 @@ namespace: cell
 alt_id: CL:1000387
 def: "Brush cell found in the epithelial layer of the colon." []
 comment: Brush cells are a distinct cell type from brush border cell-types.
+synonym: "brush cell of large intestine" EXACT []
+synonym: "tuft cell of epithelium of large intestine" EXACT []
+synonym: "tuft cell of large intestine" EXACT []
 xref: FMA:263222
 is_a: CL:0002253 ! epithelial cell of large intestine
 is_a: CL:0019032 ! intestinal tuft cell
@@ -800,6 +810,14 @@ created_by: tmeehan
 creation_date: 2011-09-27T11:59:01Z
 
 [Term]
+id: CL:0009003
+name: larval midgut cell
+def: "Any cell in the midgut (middle subdivision of a digestive tract) of a larva." []
+xref: GOC:pr
+xref: http://en.wikipedia.org/wiki/Insect#Midgut
+relationship: part_of UBERON:0001555 ! digestive tract
+
+[Term]
 id: CL:0009005
 name: salivary gland cell
 def: "Any cell in a salivary gland." []
@@ -1086,6 +1104,28 @@ subset: location_grouping
 synonym: "appendix dendritic cell" EXACT []
 synonym: "dendritic cell of appendix vermiformis" EXACT []
 synonym: "dendritic cell of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009035
+name: stromal cell of lamina propria of vermiform appendix
+def: "A stromal cell found in the lamina propria of the vermiform appendix." []
+subset: location_grouping
+synonym: "stromal cell of appendix lamina propria" EXACT []
+synonym: "stromal cell of lamina propria of appendix vermiformis" EXACT []
+is_a: CL:0009021 ! stromal cell of lamina propria of large intestine
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009036
+name: appendix macrophage
+def: "A macrophage located in the vermiform appendix." []
+subset: location_grouping
+synonym: "macrophage of appendix" EXACT []
+synonym: "macrophage of appendix vermiformis" EXACT []
+synonym: "macrophage of vermiform appendix" EXACT []
 relationship: part_of UBERON:0001154 ! vermiform appendix
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -1593,6 +1633,7 @@ def: "A M cell that is part of the epithelium proper of appendix." []
 xref: FMA:263140
 is_a: CL:1000360 ! microfold cell of epithelium proper of large intestine
 is_a: CL:1000405 ! epithelial cell of appendix
+is_a: UBERON:0000397 ! colonic epithelium
 is_a: UBERON:0009697 ! epithelium of appendix
 
 [Term]
@@ -2169,6 +2210,7 @@ xref: XAO:0003029
 xref: ZFA:0000547
 xref: ZFA:0000590
 is_a: UBERON:0004921 {notes="the mouth contains structures such as jaw skeleton that may not strictly be considered tract parts"} ! subdivision of digestive tract
+relationship: part_of UBERON:0001555 ! digestive tract
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/06/Mouth_illustration-Otis_Archives.jpg xsd:anyURI
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/661 xsd:anyURI
 property_value: UBPROP:0000001 "Cavity in which food is initially ingested and generally contains teeth, tongue and glands.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010355", ontology="AAO", source="AAO:BJB"}
@@ -3553,7 +3595,7 @@ property_value: UBPROP:0000008 "A cecum is present in most amniote species, and 
 id: UBERON:0001154
 name: vermiform appendix
 namespace: uberon
-def: "A blind-ended tube connected to the cecum, from which it develops embryologically[WP]." [http://en.wikipedia.org/wiki/Vermiform_appendix]
+def: "A blind-ended tube connected to the cecum, from which it develops embryologically[WP]." [http://en.wikipedia.org/wiki/Vermiform_appendix, https://orcid.org/0000-0002-6826-8770]
 subset: efo_slim
 subset: organ_slim
 subset: uberon_slim
@@ -3587,8 +3629,9 @@ xref: UMLS:C0003617 {source="ncithesaurus:Vermiform_Appendix"}
 xref: Vermiform:appendix
 xref: VHOG:0001306
 is_a: UBERON:0013765 ! digestive system element
-relationship: part_of UBERON:0001153 {source="MA"} ! caecum
+relationship: part_of UBERON:0000059 ! large intestine
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/ad/Gray536.png xsd:anyURI
+property_value: RO:0002175 "Mammalia" xsd:string
 property_value: UBPROP:0000001 "Organ with organ cavity which is continuous proximally with the cecum and distally terminates in the tip of the appendix. Examples: There is only one appendix[FMA:14542]." xsd:string {source="FMA:14542"}
 property_value: UBPROP:0000003 "A comparative anatomical approach reveals three apparent morphotypes of the cecal appendix, as well as appendix-like structures in some species that lack a true cecal appendix. Cladistic analyses indicate that the appendix has evolved independently at least twice (at least once in diprotodont marsupials and at least once in Euarchontoglires), shows a highly significant (P < 0.0001) phylogenetic signal in its distribution, and has been maintained in mammalian evolution for 80 million years or longer.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001306", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1111/j.1420-9101.2009.01809.x Smith HF, Fisher RE, Everett ML, Thomas AD, Randal Bollinger R, Parker W, Comparative anatomy and phylogenetic distribution of the mammalian cecal appendix. Journal of Evolutionary Biology (2009)"}
 property_value: UBPROP:0000007 "appendiceal" xsd:string
@@ -3597,7 +3640,7 @@ property_value: UBPROP:0000007 "appendiceal" xsd:string
 id: UBERON:0001155
 name: colon
 namespace: uberon
-def: "Last portion of the large intestine before it becomes the rectum." [http://en.wikipedia.org/wiki/Colon_(anatomy), http://orcid.org/0000-0002-6601-2165, ZFIN:curator]
+def: "A portion of the large intestine before it becomes the rectum. In mammals, the colon is the most part of the large intestine, excluding the vermiform appendix, the rectum and the anal canal." [http://en.wikipedia.org/wiki/Colon_(anatomy), http://orcid.org/0000-0002-2825-0621, http://orcid.org/0000-0002-6601-2165, ZFIN:curator]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -3630,6 +3673,7 @@ xref: XAO:0000243
 xref: ZFA:0000706
 is_a: UBERON:0004921 {order="3", source="cjm"} ! subdivision of digestive tract
 relationship: part_of UBERON:0000059 {source="FMA"} ! large intestine
+property_value: IAO:0000116 "Some references do not consider the caecum to be part of the colon." xsd:string {xref="http://orcid.org/0000-0002-1572-1316"}
 property_value: IAO:0000116 "TODO - abstract this such that it legitimately covers all vertebrates" xsd:string
 property_value: UBPROP:0000001 "The last portion of the digestive system, it extracts water and salt from solid wastes before they are eliminated from the body.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010400", ontology="AAO", source="UBERON:0001155"}
 property_value: UBPROP:0000001 "The posterior intestine has short longitudinally arranged epithelial folds which are similar to the colon of higher vertebrates. Wallace et al, 2005.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000706", ontology="TAO", source="ZFIN:curator"}
@@ -4852,7 +4896,7 @@ xref: http://www.snomedbrowser.com/Codes/Details/83488001
 xref: MA:0002668
 xref: NCIT:C32827
 xref: UMLS:C0227515 {source="ncithesaurus:Interlobular_Bile_Duct"}
-is_a: UBERON:0003704 {souce="MA-part-of", source="FMA"} ! intrahepatic bile duct
+is_a: UBERON:0003704 {source="FMA", source="MA-part-of"} ! intrahepatic bile duct
 relationship: part_of UBERON:0001279 {source="FMA", source="MA", source="MP"} ! portal triad
 
 [Term]
@@ -10906,7 +10950,7 @@ synonym: "vermiform appendix submucosa" EXACT [OBOL:automatic]
 synonym: "vermix submucosa" EXACT [OBOL:automatic]
 xref: FMA:14992
 xref: http://www.snomedbrowser.com/Codes/Details/86833001
-is_a: UBERON:0004927 ! submucosa of cecum
+is_a: UBERON:0001208 ! submucosa of large intestine
 relationship: part_of UBERON:0001154 ! vermiform appendix
 
 [Term]
@@ -11207,7 +11251,7 @@ synonym: "vermix organ mucosa" EXACT [OBOL:automatic]
 xref: CALOHA:TS-2022
 xref: FMA:14991
 xref: http://www.snomedbrowser.com/Codes/Details/362155000
-is_a: UBERON:0000314 ! cecum mucosa
+is_a: UBERON:0001207 ! mucosa of large intestine
 relationship: part_of UBERON:0001154 ! vermiform appendix
 
 [Term]
@@ -13137,7 +13181,7 @@ property_value: UBPROP:0000012 "TAO has mandibular sensory canal, which is part 
 id: UBERON:0006676
 name: muscularis mucosa
 namespace: uberon
-def: "A the thin layer of smooth muscle found in most parts of the gastrointestinal tract, located outside the lamina propria mucosae and separating it from the submucosa[WP]." [http://en.wikipedia.org/wiki/Muscularis_mucosae]
+def: "A thin layer of smooth muscle found in most parts of the gastrointestinal tract, located outside the lamina propria mucosae and separating it from the submucosa[WP]." [http://en.wikipedia.org/wiki/Muscularis_mucosae]
 synonym: "gut muscularis" EXACT [EMAPA:35385]
 synonym: "lamina muscularis mucosa" RELATED [BTO:0004839]
 synonym: "laminar muscularis mucosa" RELATED [http://en.wikipedia.org/wiki/Muscularis_mucosae]
@@ -14908,25 +14952,14 @@ xref: UMLS:C1305188 {source="ncithesaurus:Right_Colon"}
 relationship: part_of UBERON:0001155 {source="BTO"} ! colon
 
 [Term]
-id: UBERON:0008978
-name: anal sac
-namespace: uberon
-def: "In carnivores, either of two sacs found between the internal and external anal sphincters, lined with sebaceous glands and in some species with apocrine glands." [BTO:0001681]
-xref: BTO:0001681
-xref: EMAPA:37395 {source="MA:th"}
-xref: http://www.snomedbrowser.com/Codes/Details/362169000
-xref: MA:0003058
-xref: MESH:D000695
-relationship: part_of UBERON:0001245 {source="BTO"} ! anus
-
-[Term]
 id: UBERON:0008989
-name: submocosal esophageal gland
+name: submucosal esophageal gland
 namespace: uberon
 def: "One of the racemose glands in the walls of the esophagus that in humans are small and serve principally to lubricate the food but in some birds secrete a milky fluid on which the young are fed." [BTO:0003634, http://en.wikipedia.org/wiki/Esophageal_glands]
 synonym: "esophageal gland" EXACT [FMA:9404]
 synonym: "glandulae oesophageae" EXACT [http://en.wikipedia.org/wiki/Esophageal_glands]
 synonym: "mucous gland of submucosa of esophagus" EXACT [FMA:9404]
+synonym: "submocosal esophageal gland" RELATED []
 xref: BTO:0003634
 xref: Esophageal:glands
 xref: FMA:9404
@@ -15394,7 +15427,7 @@ synonym: "epithelium of vermiform appendix" EXACT [FMA:63581]
 xref: CALOHA:TS-2062
 xref: EHDAA2:0004561
 xref: FMA:63581
-is_a: UBERON:0005636 ! caecum epithelium
+is_a: UBERON:0001278 ! epithelium of large intestine
 relationship: part_of UBERON:0004989 ! mucosa of appendix
 
 [Term]
@@ -16826,23 +16859,6 @@ xref: Infraorbital:canal
 relationship: part_of UBERON:0002397 ! maxilla
 
 [Term]
-id: UBERON:0011253
-name: gland of anal sac
-namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Anal_gland]
-synonym: "anal gland" RELATED []
-synonym: "anal sac gland" EXACT []
-synonym: "castor sac" NARROW SENSU [NCBITaxon:29132]
-synonym: "musk gland" RELATED []
-xref: Anal:gland
-xref: http://linkedlifedata.com/resource/umls/id/C0162322
-xref: http://www.snomedbrowser.com/Codes/Details/91610001
-xref: NCIT:C32068
-xref: UMLS:C0162322 {source="ncithesaurus:Anal_Gland"}
-is_a: UBERON:0003408 ! gland of digestive tract
-relationship: part_of UBERON:0008978 ! anal sac
-
-[Term]
 id: UBERON:0011267
 name: quadratojugal bone
 namespace: uberon
@@ -18184,7 +18200,7 @@ synonym: "serosa of vermiform appendix" EXACT [FMA:14997]
 synonym: "visceral peritoneum of vermiform appendix" EXACT [FMA:14997]
 xref: FMA:14997
 xref: http://www.snomedbrowser.com/Codes/Details/22488003
-is_a: UBERON:0003335 ! serosa of colon
+is_a: UBERON:0001209 ! serosa of large intestine
 relationship: part_of UBERON:0001154 ! vermiform appendix
 
 [Term]
@@ -18580,7 +18596,7 @@ def: "An intestinal crypt that is located in the appendix." [http://orcid.org/00
 synonym: "appendiceal crypt" EXACT []
 synonym: "appendiceal crypt of Lieberkuhn" EXACT []
 xref: http://www.snomedbrowser.com/Codes/Details/21512007
-is_a: UBERON:0013485 ! crypt of Lieberkuhn of colon
+is_a: UBERON:0001984 ! crypt of Lieberkuhn of large intestine
 relationship: part_of UBERON:0004989 ! mucosa of appendix
 
 [Term]
@@ -20179,7 +20195,9 @@ relationship: part_of UBERON:0002397 ! maxilla
 id: UBERON:0018410
 name: lacteal
 namespace: uberon
-def: "a lymphatic capillary that absorbs dietary fats in the villi of the small intestine." [http://en.wikipedia.org/wiki/Lacteals]
+def: "A lymphatic capillary that absorbs dietary fats in the villi of the small intestine." [http://en.wikipedia.org/wiki/Lacteals]
+synonym: "lymphatic capillary of small intestine" EXACT [http://orcid.org/0000-0003-4183-8865/]
+synonym: "small intestine lymphatic capillary" EXACT [http://orcid.org/0000-0003-4183-8865/]
 xref: FMA:68443
 xref: http://en.wikipedia.org/wiki/Lacteals
 xref: http://www.snomedbrowser.com/Codes/Details/282414002
@@ -21336,13 +21354,6 @@ xref: FMA:289360
 is_a: UBERON:0003729 ! mouth mucosa
 
 [Term]
-id: UBERON:0036019
-name: castor sac
-namespace: uberon
-def: "A non-glandular region of the anal wall in which castoreum is produced." [http://www.ncbi.nlm.nih.gov/pubmed/24415179]
-is_a: UBERON:0008978 ! anal sac
-
-[Term]
 id: UBERON:0036072
 name: respiratory primordium epithelium
 namespace: uberon
@@ -21501,11 +21512,11 @@ relationship: part_of UBERON:0002106 ! spleen
 [Term]
 id: UBERON:2000103
 name: supramaxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Dermal bone that is located on the dorsal margin of the maxilla, usually at the dorso-posterior region of maxilla. The supramaxilla is a paired bone." [TAO:ga_tg]
 comment: The supramaxilla may be present as one or two bones.
 is_a: UBERON:0011597 ! bone of upper jaw
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -21522,39 +21533,39 @@ relationship: part_of UBERON:0004363 ! pharyngeal arch artery
 [Term]
 id: UBERON:2000224
 name: quadrate ventral process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that is the ventral, posteriorly-oriented bony extension of the quadrate." [TAO:wd]
 xref: ZFA:0001593
 relationship: part_of UBERON:0006597 ! quadrate bone
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000240
 name: metapterygoid
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Endochondral bone that forms the posteriormost element of the palatal complex. It overlies the quadrate and symplectic, posteriorly it articulates with the hyomandibula and anteriorly with the entopterygoid and ectopterygoid. It curves dorsally to form the posteroventral surface of the orbit. The metapterygoid is paired." [ZFIN:curator]
 synonym: "metapterygoids" EXACT PLURAL [TAO:0000240]
 xref: ZFA:0000240
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0011085 ! palatoquadrate arch
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000422
 name: retroarticular
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The retroarticular is a cartilage bone that forms at the posteroventral tip of Meckel's cartilage where the interoperculomandibular ligament attaches (5.1 mm NL). In the adult it is basically triangular in shape. The retroarticular is ligamentously connected to the interopercle and preopercle posteriorly and abuts the ventral shelf of the dentary anteriorly." [ZFIN:curator]
 xref: ZFA:0000422
 is_a: UBERON:0004768 ! bone of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000620
 name: autopalatine
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Endochondral bone that is part of the antero-lateral region of the palate. Commonly, it articulates with the maxilla anterolaterally and with the ethmoidal region medially. It may also articulate with the dermopalatine ventro-laterally and with the entopterygoid posteriorly. The autopalatine is paired." [ZFIN:curator]
 comment: The cartilaginous autopalatine forms from the anterior palatoquadrate arch. Possession of a dorsomedial process, which abuts the ethmoid, is a unique feature shared by Cypriniformes (Fink and Fink, 1981). The palatine has two components, the autopalatine (derived from pars autopalatine) and the dermal component having teeth, the dermopalatine Arratia & Schultze 1990. The element in cypriniforms is only the cartilage part, so that it is more correct to name it autopalatine and not as palatine in general that it implies a fusion of elements (as in perciforms).
 synonym: "palatine bone" RELATED [TAO:0000620]
@@ -21562,51 +21573,51 @@ synonym: "palatines" EXACT PLURAL [TAO:0000620]
 xref: ZFA:0000620
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0011085 ! palatoquadrate arch
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000657
 name: entopterygoid
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Dermal bone that forms the ventro-medial part of the palate and the antero-ventral and ventral wall of the orbit. The entopterygoid is a paired bone." [TAO:GA_TG]
 synonym: "endopterygoid bone" EXACT []
 synonym: "mesopterygoid" EXACT [TAO:0000657]
 xref: ZFA:0000657
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0011085 ! palatoquadrate arch
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000666
 name: filamental artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "filamental arteries" EXACT PLURAL [TAO:0000666]
 xref: ZFA:0000666
 relationship: part_of UBERON:0007303 ! pharyngeal vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000695
 name: labial cavities
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0000695
 relationship: part_of UBERON:0001007 ! digestive system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000699
 name: entopterygoid vertical strut
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that is the dorsally directed, vertical process of the entopterygoid. The strut sometimes articulates with the orbitosphenoid." [TAO:wd]
 comment: Fink and Fink 1981, present in gymnotoids.
 synonym: "endopterygoid vertical strut" EXACT [TAO:0000699]
 synonym: "mesopterygoid vertical strut" EXACT [TAO:0000699]
 relationship: part_of UBERON:2000657 ! entopterygoid
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -21624,225 +21635,225 @@ property_value: UBPROP:0000001 "Artery that is part of the pharyngeal arches 3-5
 [Term]
 id: UBERON:2001076
 name: intestinal bulb
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "This anteriormost portion of the intestine has the most digestive enzymes and the greatest epithelial surface area. Wallace et al, 2005." [ZFIN:curator]
 synonym: "anterior intestine" EXACT [TAO:0001076]
 xref: ZFA:0001076
 relationship: part_of UBERON:0000160 ! intestine
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001129
 name: pharyngeal pouches 2-6
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001129
 is_a: UBERON:0004117 ! pharyngeal pouch
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001274
 name: coronomeckelian
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Tendon bone located on the median side of the lower jaw, dorsal to Meckel's cartilage and medial to the angular. The coronomeckelian forms as an ossification of the tendon of the adductor mandibulae muscle. The coronomeckelian is a paired bone." [ZFIN:curator]
 synonym: "sesamoid articular" EXACT [TAO:0001274]
 synonym: "sesamoid coronoid" EXACT [TAO:0001274]
 xref: ZFA:0001274
 is_a: UBERON:0004768 ! bone of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001324
 name: enteric musculature
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001324
 relationship: part_of UBERON:0001555 ! digestive tract
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001371
 name: pancreatic system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001371
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001007 ! digestive system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001406
 name: kinethmoid bone
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sesamoid bone located in the premaxillary-ethmoid ligament, between the mesethmoid and the premaxilla. The kinethmoid is an unpaired median bone." [TAO:GA_TG, ZFIN:curator]
 comment: The kinethmoid is part of the protrusion mechanism of the upper jaw and is restricted to cypriniform fishes.
 synonym: "kinethmoideum bone" EXACT [TAO:0001406]
 xref: ZFA:0001406
 is_a: UBERON:0011597 ! bone of upper jaw
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001430
 name: pneumatic duct
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A duct connecting the esophagus to the posterior chamber of the swim bladder. Finney et al, 2006." [ZFIN:curator]
 xref: ZFA:0001430
 is_a: UBERON:0003928 ! digestive system duct
 relationship: part_of UBERON:0001043 ! esophagus
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001467
 name: pharyngeal mesoderm
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001467
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001577
 name: premaxilla ascending process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process of the premaxilla that extends posteriorly and overlays the mesethmoid." [ZFIN:curator]
 xref: ZFA:0001577
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001578
 name: anterior dorsomedial process of autopalatine
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "In cypriniforms the anterior portion of the palatine has a dorsomedial process which abuts against the mesethmoid. Such a process is not present in other ostariophysans or in other primitive teleosts." [ZFIN:curator]
 xref: ZFA:0001578
 relationship: part_of UBERON:2000620 ! autopalatine
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001603
 name: maxilla ascending process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that is the upper portion of the maxilla that rests on the posterior surface of the lateral portion of the premaxilla." [TAO:wd]
 comment: Synonyms maxilla ascending arm used in Zanata and Vari 2005, and maxilla upper arm used in Weitzman 1962
 synonym: "maxilla ascending arm" EXACT [TAO:0001603]
 synonym: "maxilla upper arm" EXACT [TAO:0001603]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001610
 name: quadrate dorsal process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "An endochondral bone that is the dorsally-oriented bony extension of the quadrate, extending from the anterior portion of the bone." [TAO:wd]
 comment: Term from Weitzman, 1962 and Sidlauskas and Vari, 2008.
 synonym: "quadrate superior arm" EXACT [TAO:0001610]
 relationship: part_of UBERON:0006597 ! quadrate bone
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001611
 name: quadrate posterodorsal process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that is the posterior extension of the quadrate and located dorsal to the quadrate ventral process." [TAO:wd]
 comment: Term from Weitzman, 1962 and Sidlauskas and Vari, 2008.
 relationship: part_of UBERON:0006597 ! quadrate bone
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001626
 name: premaxillary tooth
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Tooth that is attached to the premaxilla." [TAO:wd]
 is_a: UBERON:0003267 ! tooth of upper jaw
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001632
 name: ectopterygoid tooth
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Tooth that is attached to the ectopterygoid bone." [TAO:wd]
 is_a: UBERON:0012070 ! palatal tooth
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001692
 name: median premaxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Dermal bone that is located in the middle of the upper jaw, independently formed by fusion of tooth bases attached to soft tissue in the middle portion of the upper lip. The median premaxilla bears teeth in adults." [TAO:wd]
 comment: Recorded in trichomycterid subfamilies Stegophilinae and Vandelliinae (Baskin, 1973). submitted by Mario de Pinna.
 is_a: UBERON:0011597 ! bone of upper jaw
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001805
 name: articular bone
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Endochondral bone that is located posterior to the dentary, medial to the angular and antero-dorsal to the retroarticular forming the lower jaw. The articular bears a dorso-posterior articular facet for the condyle of the quadrate. The articular is a paired bone." [TAO:wd]
 comment: The articular fuses with the angular bone in clupeocephalans forming the anguloarticular.
 synonym: "articular" EXACT [TAO:0001805]
 xref: AAO:0000028
 is_a: UBERON:0004768 ! bone of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 property_value: UBPROP:0000001 "Endochondral ossification of the posterior articular part of Meckel's cartilage.[AAO]" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001935
 name: oral disk
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Lip that is expanded to form a broad, rounded cup around the mouth." [TAO:wd]
 is_a: UBERON:0001833 ! lip
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001990
 name: epibranchial arborescent organ
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anatomical cluster that is an outgrowth of the soft tissue around the dorsolateral corner of a branchial arch that is internally supported by a core of rigid cartilage-like tissue. Epibranchial arborescent organ is paired." [TAO:wd]
 comment: Greenwood, P. H. 1961 (A revision of the genus Dinotopterus Blgr. (pisces, Clariidae) with notes on the comparative anatomy of the suprabranchial organs in the Clariidae. Bull. British Mus (Nat. His.), Zool. 7(4): 217-241.) described this structure in certain catfishes and applied the term suprabranchial organ to it. To avoid possible confusion with distinctly different structures bearing the name suprabranchial organs in other teleosts, the term epibranchial arborescent organ is used here following the lead of de Pinna 1993.
 synonym: "suprabranchial organ" EXACT [TAO:0001990]
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002012
 name: dentary foramen
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Foramen located on the dentary for passage of the mandibular nerve." [TAO:wd]
 xref: ZFA:0005427
 relationship: part_of UBERON:0004742 ! dentary
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002020
 name: hypomaxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Dermal bone bearing teeth located between the distal end of the premaxilla and the middle of the maxilla. The hypomaxilla is a paired bone." [TAO:ga_tg]
 comment: Hypomaxilla is a bone restricted to some clupeiforms. See Berry (1964) for a detailed account of the distribution of the hypomaxilla within clupeiforms and specifically in Herengula.
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0011085 ! palatoquadrate arch
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002057
 name: gill opening
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anatomical space that is the external opening of a gill slit connecting the pharyngeal cavity to the exterior. Gill opening is usually paired and located on the lateral or ventral surfaces of the head." [TAO:wd]
 comment: In teleosts, there is typically a single gill opening posterior to the operculum.
 synonym: "branchial aperture" EXACT [TAO:0002057]
@@ -21851,194 +21862,194 @@ synonym: "gill aperture" EXACT [TAO:0002057]
 synonym: "opercular opening" EXACT [TAO:0002057]
 xref: ZFA:0005389
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002092
 name: rostral cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Median chondrified cartilage bound to premaxillary ascending process by a rostro-premaxilla ligament." [TAO:wd]
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0001709 ! upper jaw region
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002108
 name: buccal papilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Papilla that is part of the mouth." [TAO:wd]
 relationship: part_of UBERON:0000165 ! mouth
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002116
 name: epibranchial organ
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002257
 name: premaxilla dentigerous process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "premaxilla alveolar process" EXACT [TAO:0002257]
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005012
 name: afferent filamental artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "AFA" EXACT [TAO:0005012]
 synonym: "afferent filamental arteries" EXACT PLURAL [TAO:0005012]
 xref: ZFA:0005012
 relationship: part_of UBERON:2000666 ! filamental artery
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005013
 name: concurrent branch afferent branchial artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The branch of the afferent branchial artery that continues posteriodorsally. Isogai et al. 2001." [ZFIN:curator]
 synonym: "CCB" EXACT [TAO:0005013]
 xref: ZFA:0005013
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005014
 name: recurrent branch afferent branchial artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The anterioventral proceeding branch of the afferent branchial artery. Isogai et al. 2001." [ZFIN:curator]
 synonym: "RCB" EXACT [TAO:0005014]
 synonym: "recurrent branch afferent branchial arteries" EXACT PLURAL [TAO:0005014]
 xref: ZFA:0005014
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005015
 name: afferent lamellar arteriole
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "afferent lamellar arterioles" EXACT PLURAL [TAO:0005015]
 synonym: "AFL" EXACT [TAO:0005015]
 xref: ZFA:0005015
 relationship: part_of UBERON:2005012 ! afferent filamental artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005018
 name: efferent filamental artery
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "EFA" EXACT [TAO:0005018]
 xref: ZFA:0005018
 relationship: part_of UBERON:2000202 ! efferent portion of pharyngeal arch artery
 relationship: part_of UBERON:2000666 ! filamental artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005019
 name: efferent lamellar arteriole
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "efferent lamellar arterioles" EXACT PLURAL [TAO:0005019]
 synonym: "ELA" EXACT [TAO:0005019]
 xref: ZFA:0005019
 relationship: part_of UBERON:2005018 ! efferent filamental artery
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005126
 name: intestinal bulb epithelium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Intestinal epithelium which lines the lumen of the intestinal bulb." [ZFIN:curator]
 xref: ZFA:0005126
 is_a: UBERON:0001277 ! intestinal epithelium
 relationship: part_of UBERON:2001076 ! intestinal bulb
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005170
 name: extrahepatic duct
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Bile duct that collects from the intrahepatic ducts and feeds into the common bile duct." [ZFIN:curator]
 xref: ZFA:0005170
 is_a: UBERON:0002394 ! bile duct
 relationship: part_of UBERON:0005171 ! hepatic duct
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005174
 name: ventral liver lobe
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Portion of the liver which develops on the fish's ventral side." [ZFIN:curator]
 synonym: "3rd lobe" EXACT [TAO:0005174]
 synonym: "third lobe" EXACT [TAO:0005174]
 xref: ZFA:0005174
 relationship: part_of UBERON:0002107 ! liver
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005256
 name: intervillus pockets
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A portion of tissue formed between the base of the intestinal villi that is part of the intestinal epithelium where intestinal stem cells are located. In the intestine no crypts are present, but, the regions between the villi, the intervillus pockets, have a crypt-like function. Cells are produced in the intervillus pockets and shed from the villus tips." [ZFIN:ZDB-PUB-050209-3]
 xref: ZFA:0005256
 relationship: part_of UBERON:0001277 ! intestinal epithelium
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005273
 name: intestinal mucosal muscle
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A thin layer of smooth muscle immediately beneath the base of the villi which permits the intestinal mucosa to dynamically move and fold." [ZFIN:ZDB-PUB-090217-11]
 synonym: "intestinal lamina muscularis mucosae" RELATED [http:www.vivo.colostate.edu/hbooks/pathphys/digestion/basics/gi_microanatomy.html]
 xref: ZFA:0005273
 is_a: UBERON:0004221 ! intestine smooth muscle
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005279
 name: enteric circular muscle
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Smooth muscle of the enteric muscle system in which the cells are aligned perpendicular to the lumen of the gut." [ZFIN:curator]
 xref: ZFA:0005279
 relationship: part_of UBERON:2001324 ! enteric musculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005346
 name: extrapancreatic duct
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Portion of the pancreatic duct, external to the pancreas body that connects the pancreas with the hepatopancreatic ampulla." [ZFIN:ZDB-PUB-050623-3]
 xref: ZFA:0005346
 is_a: UBERON:0003928 ! digestive system duct
 relationship: part_of UBERON:0007329 ! pancreatic duct
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:3000003
 name: alary process of premaxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Dorsal process that extends toward the nasal bone. The posterior (inner) face of each alary process is concave and is invested dorsomedially by the superior prenasal cartilage and ventromedially by the inferior prenasal cartilage." [AAO:LAP]
 synonym: "dorsal process of premaxilla" RELATED [UBERON:3000003]
 synonym: "pars dorsalis of premaxilla" RELATED [UBERON:3000003]
@@ -22050,48 +22061,48 @@ synonym: "processus ascendens of premaxilla" RELATED [UBERON:3000003]
 synonym: "processus frontalis of premaxilla" RELATED [UBERON:3000003]
 synonym: "processus nasalis of premaxilla" RELATED [UBERON:3000003]
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000006
 name: alveolar foramen
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Foramen for the R. alveolaris of Nerve VII and the alveolar artery." [AAO:LAP]
 synonym: "inferior dental foramen" RELATED [UBERON:3000006]
 is_a: UBERON:0011772 ! lower jaw opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000012
 name: angulosplenial coronoid process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Point of insertion of the adductor mandibulae musculature." [AAO:LAP]
 relationship: part_of UBERON:3000966 ! angulosplenial
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000017
 name: anterior process of pars palatina of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0004527 ! alveolar process of maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000022
 name: antorbital process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000400 ! pars facialis of maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000031
 name: ascending process of palatoquadrate
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "apophyse ascendens" RELATED [UBERON:3000031]
 synonym: "cartilage craniofacial" RELATED [UBERON:3000031]
 synonym: "oberste abteilung des zweiten visceralbogens" RELATED [UBERON:3000031]
@@ -22100,349 +22111,349 @@ synonym: "pediculus" RELATED [UBERON:3000031]
 synonym: "processus ascendens of palatoquadrate" RELATED [UBERON:3000031]
 synonym: "schlafenflugelknorpel" RELATED [UBERON:3000031]
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000036
 name: basal process of palatoquadrate
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that extends medially from the ventromedial corner of the palatoquadrate cartilage and articulates or fuses to the anterior wall of the otic capsule via the basitrabecular process." [AAO:LAP]
 synonym: "processus basalis" RELATED [UBERON:3000036]
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000038
 name: basimandibulare
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0003278 ! skeleton of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000110
 name: crista contacta
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Thin, horizontal ridge that extends medially from the corpus of the septomaxilla; it lays on the lamina inferior." [AAO:LAP]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000111
 name: crista dentalis of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0004527 ! alveolar process of maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000112
 name: crista dentalis of premaxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "dental ridge of premaxilla" RELATED [UBERON:3000112]
 relationship: part_of UBERON:0034898 ! alveolar ridge of premaxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000115
 name: crista lateralis of premaxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000177
 name: flange of quadratojugal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0011267 ! quadratojugal bone
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000237
 name: infrarostral cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Larval lower jaw lies anterior to Meckels cartilage." [AAO:EJS]
 synonym: "infralabial cartilage" RELATED [UBERON:3000237]
 synonym: "mentomeckelian cartilage" RELATED [UBERON:3000237]
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0001708 ! jaw skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000255
 name: lamina anterior of pars facialis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000400 ! pars facialis of maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000281
 name: margo orbitalis of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Dorsal margin of the maxilla between the frontal and zygomatico-maxillary processes." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000288
 name: maxillopalatine
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A compound bone consisting of maxilla and palatine, can also contain a prefrontal and/or lacrimal; present in adult Gymnophiona." [AAO:EJS]
 is_a: UBERON:0011597 ! bone of upper jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000295
 name: median symphysis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0001709 ! upper jaw region
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000323
 name: nasopremaxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A compound bone consisting of premaxilla, nasal and sometimes septomaxilla in adult members of Caeciliidae and Typhlonectidae." [AAO:EJS]
 is_a: UBERON:0011597 ! bone of upper jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000363
 name: otic ligament
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000365
 name: otic process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000375
 name: palatine process of the pars facialis of the maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000400 ! pars facialis of maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000380
 name: palatoquadrate articular process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000394
 name: pars articularis of mandibular arch
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Posterior end of Meckel's cartilage that forms the articular head of the mandibular arch." [AAO:LAP]
 relationship: part_of UBERON:0003107 ! Meckel's cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000400
 name: pars facialis of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000401
 name: pars facialis of maxillopalatine
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000288 ! maxillopalatine
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000446
 name: posterior condyle
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000515 ! pseudoangular
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000450
 name: posterior mental process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0003278 ! skeleton of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000453
 name: posterolateral vomerine process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0002396 ! vomer
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000459
 name: prearticular coronoid process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Point of insertion of the masticatory musculature." [AAO:LAP]
 relationship: part_of UBERON:0011637 ! prearticular bone
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000467
 name: preorbital process of the pars facialis of the maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000400 ! pars facialis of maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000492
 name: processus infrafenestralis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Posterior part of the corpus of the septomaxilla; the posterior surface of the processus infrafenestralis is in contact with the oblique cartilage." [AAO:LAP]
 synonym: "dorsal crest" RELATED [UBERON:3000492]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000493
 name: processus internus of pseudoangular
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "processus internus" BROAD []
 relationship: part_of UBERON:3000515 ! pseudoangular
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000500
 name: processus posterior of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Posterior, toothless portion of the maxilla by which it usually comes in contact with the quadratojugal." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000505
 name: processus pterygoideus of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Posterior end of the pars palatina of the maxilla that is in contact with the anterior ramus of the pterygoid." [AAO:LAP]
 is_a: UBERON:0004527 ! alveolar process of maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000509
 name: processus suprafenestralis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000645 ! corpus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000512
 name: processus zygomatico-maxillaris
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Posterodorsal extension of the maxilla by which it establishes contact with the squamosal." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000515
 name: pseudoangular
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0004768 ! bone of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000516
 name: pseudobasal process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000518
 name: pseudodentary
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Compound bone of adult Gymnophiona, consisting of dentary, coronoid and mentomeckelian." [AAO:EJS]
 is_a: UBERON:0004768 ! bone of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000519
 name: pseudodentary tooth
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0003268 ! tooth of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon. Logical definition added by cjm." xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon. Logical definition added by cjm." xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000523
 name: pterygoid process of palatoquadrate
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that extends anteriorly from the anterolateral margin of the palatoquadrate and articulates or synchondrotically fuses to the posterior end of the posterior maxillary process." [AAO:LAP]
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000527
 name: quadrate process of palatoquadrate
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000539
 name: recessus marsupiatus of premaxilla
-namespace: uberon/phenoscape-anatomy
-def: "Is a recess on the surface of the premaxilla near to the base of the pars facialis." []
+namespace: uberon
+def: "Is a recess on the surface of the premaxilla near to the base of the pars facialis." [PHENOSCAPE]
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000540
 name: recessus vaginiformis
-namespace: uberon/phenoscape-anatomy
-def: "Is a space on the interior surface of the pars facialis of the maxilla" []
+namespace: uberon
+def: "Is a space on the interior surface of the pars facialis of the maxilla" [PHENOSCAPE]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000543
 name: retroarticular process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Bony process that is part of the articular and is the point of insertion of the m. interhuoideus posterior." [AAO:LAP]
 relationship: part_of UBERON:3000515 ! pseudoangular
 created_by: amphibian_anatomy_curators
@@ -22450,429 +22461,442 @@ created_by: amphibian_anatomy_curators
 [Term]
 id: UBERON:3000547
 name: rostral process
-namespace: uberon/phenoscape-anatomy
-def: "Is a process of the nasal bone directed anteriorly towards the rostrum." []
+namespace: uberon
+def: "Is a process of the nasal bone directed anteriorly towards the rostrum." [PHENOSCAPE]
 relationship: part_of UBERON:0001709 ! upper jaw region
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000581
 name: sulcus dentalis of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Groove located between the pars dentalis and the bases of the maxillary teeth." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000582
 name: sulcus dentalis of premaxilla
-namespace: uberon/phenoscape-anatomy
-def: "Groove located between the pars dentalis and the bases of the premaxillary teeth." []
+namespace: uberon
+def: "Groove located between the pars dentalis and the bases of the premaxillary teeth." [PHENOSCAPE]
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000583
 name: sulcus for Meckels cartilage
-namespace: uberon/phenoscape-anatomy
-def: "A groove on the palatoquadrate that is occupied by the Meckel's cartilage." []
+namespace: uberon
+def: "A groove on the palatoquadrate that is occupied by the Meckel's cartilage." [PHENOSCAPE]
 relationship: part_of UBERON:3000012 ! angulosplenial coronoid process
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000597
 name: symphysis maxillaris
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0001709 ! upper jaw region
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000605
 name: tentacular foramen
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0011773 ! upper jaw opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000634
 name: vomerine canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0002396 ! vomer
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000642
 name: maxillopalatine tooth
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0003267 ! tooth of upper jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon. Logical definition added by cjm" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon. Logical definition added by cjm" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000645
 name: corpus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 alt_id: UBERON:3010459
 def: "Basal part of the septomaxilla." [AAO:LAP]
 synonym: "centrum" RELATED [UBERON:3000645]
 synonym: "pars horizontalis" RELATED [UBERON:3000645]
 is_a: UBERON:0012360 ! bone of jaw
 relationship: part_of UBERON:3000998 ! suprarostral cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000646
 name: margo libera
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anterior, rounded portion of the corpus of the septomaxilla." [AAO:LAP]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000647
 name: crista interna
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sharp ridge that extends medially from the basal part of the processus infrafenestralis; it separates the diverticulum proncipale from the diverticulum medium." [AAO:LAP]
 relationship: part_of UBERON:3000492 ! processus infrafenestralis
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000649
 name: anterior process of vomer
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that extends anterolaterally toward the maxilla-premaxilla articulation." [AAO:LAP]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000650
 name: processus frontalis of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anterio portion of the maxilla that may contact the nasal and take part in the formation of a groove for the nasolacrimal duct." [AAO:LAP]
 synonym: "processus frontalis" BROAD []
 synonym: "processus praeorbitalis of the pars facialis" RELATED [UBERON:3000650]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000651
 name: lamina anterior of maxilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Most anterior part of the maxilla, which is in contact with the premaxilla." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000652
 name: fossa maxillaris
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Depression lacated on the inner surface of the maxilla between the palatine process and the pars palatina." [AAO:LAP]
-comment: Alternative more fish orientated definition.\n\n A fossa that is a depression in the proximal end of the maxilla involved in articulation with the palatine. [Baldwin, CC and Johnson GD. 1996. Interrelationships of Aulopiformes. Pages 355-404 in MLJ Stiassny, LR Parenti, and DG Johnson, (eds.), Interrelationships of fishes. Academic Press, San Diego, CA.]
+comment: Alternative more fish orientated definition: A fossa that is a depression in the proximal end of the maxilla involved in articulation with the palatine [Baldwin, CC and Johnson GD. 1996. Interrelationships of Aulopiformes. Pages 355-404 in MLJ Stiassny, LR Parenti, and DG Johnson, (eds.), Interrelationships of fishes. Academic Press, San Diego, CA.]. [PHENOSCAPE]
 synonym: "maxillary saddle" EXACT []
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000653
 name: pars glenoidalis of quadratojugal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Portion of the quadratojugal that makes contact dorsally with the distal portion of the squamosal." [AAO:LAP]
 relationship: part_of UBERON:0011267 ! quadratojugal bone
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000654
 name: pars jugalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anterior part of the quadratojugal that is in contact with the processus posterior of the maxilla." [AAO:LAP]
 relationship: part_of UBERON:0011267 ! quadratojugal bone
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000657
 name: dentigerous process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Tooth-bearing process of the vomer." [AAO:LAP]
 synonym: "torus dentigerous" RELATED [UBERON:3000657]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000658
 name: prechoanal process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that extends laterally from the anterior process; its bifurcation from the postchoanal process occurs at the level of the dentigerous process." [AAO:LAP]
 synonym: "processus choanalis anterior" RELATED [UBERON:3000658]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000659
 name: postchoanal process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that extends laterally from the anterior process; its bifurcation from the prechoanal process occurs at the level of the dentigerous process." [AAO:LAP]
 synonym: "processus choanalis posterior" RELATED [UBERON:3000659]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000660
 name: margo choanalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Margin between the prechoanal and postchoanal process. It bounds the fenestra endochoanalis." [AAO:LAP]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000661
 name: crista vomeri
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Ridge on the dorsal surface of the vomer that runs from the anterior to the postchoanal processes of the vomer; it takes part in the fixation of the bone to the lateral margin of the solum nasi." [AAO:LAP]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000966
 name: angulosplenial
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Dermal bone of anuran lower jaw investing lingual and ventral surfaces of Meckel's cartilage; forming coronoid process and articulating with palatoquadrate posteriorly." [AAO:EJS]
 synonym: "angular" RELATED [UBERON:3000966]
 synonym: "goniale" RELATED [UBERON:3000966]
 is_a: UBERON:0004768 ! bone of lower jaw
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000998
 name: suprarostral cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Larval upper jaws articulate with trabecular horns." [AAO:EJS]
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0001708 ! jaw skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3001003
 name: cloacal fold
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0000162 ! cloaca
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010061
 name: anterior quadratocranial commissure
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cartilage that bridges palatoquadrate to ethmoid region." [AAO:EJS]
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010091
 name: upper lip protuberances
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0001834 ! upper lip
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010094
 name: quadratoethmoid process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that projects from anterior margin of commissure as site of attachment for quadratoethmoid ligament." [AAO:EJS]
 relationship: part_of UBERON:3010061 ! anterior quadratocranial commissure
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010144
 name: odontoids
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Toothlike processes found on the mandible of some anurans; can be formed by dentary or dentary + mentomeckelian bones; odontoids lack enamel and dentine present in true teeth." [AAO:EJS]
 relationship: part_of UBERON:0001710 ! lower jaw region
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010404
 name: capillary system of liver
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The smallest of the blood vessels, parts of the microcirculation, of the liver." [XAO:curator]
 synonym: "liver capillary" EXACT [UBERON:3010404]
 is_a: UBERON:0015796 ! liver blood vessel
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010458
 name: suprarostral ala
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "ala" BROAD []
 synonym: "alae" RELATED PLURAL []
 relationship: part_of UBERON:3000998 ! suprarostral cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010528
 name: articular process of palatoquadrate
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010589
 name: cloacal papilla
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A small, ridge-like projection from the antero-ventral wall of the cloacal chamber." [AAO:BMZ]
 relationship: part_of UBERON:0000162 ! cloaca
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010590
 name: amphibian cloacal gland
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A structure that surrounds the cloacal opening, consisting of a mass of coarse tubules." [AAO:BMZ]
 is_a: UBERON:0012478 ! cloacal gland
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010820
 name: suboccular arch
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010821
 name: hyoquadrate process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A projection on the suboccular arch, ventral to the muscular process, that serves as the articulation point for the lateral process of the ceratohyal of the hyobranchial skeleton." [AAO:AMM]
 is_a: UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010824
 name: processus triangularis of palatoquadrate cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "processus triangularis" BROAD []
 relationship: part_of UBERON:0004752 ! palatoquadrate cartilage
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:4200198
 name: incisor process
-def: "Process that is part of the mandible that is in close proximity to the incisor teeth. " []
+namespace: uberon
+def: "Process that is part of the mandible that is in close proximity to the incisor teeth. " [PHENOSCAPE]
 relationship: part_of UBERON:0001684 ! mandible
 created_by: AD
 
 [Term]
 id: UBERON:4200234
 name: precoronoid bone
+namespace: uberon
 is_a: UBERON:0011598 ! coronoid bone
 
 [Term]
 id: UBERON:4200235
 name: postcoronoid bone
+namespace: uberon
 is_a: UBERON:0011598 ! coronoid bone
 
 [Term]
 id: UBERON:4200236
 name: anterior coronoid bone
+namespace: uberon
 is_a: UBERON:0011598 ! coronoid bone
 
 [Term]
 id: UBERON:4200237
 name: posterior coronoid bone
+namespace: uberon
 is_a: UBERON:0011598 ! coronoid bone
 
 [Term]
 id: UBERON:4200238
 name: coronoid fang
+namespace: uberon
 is_a: UBERON:0011603 ! coronoid tooth
 
 [Term]
 id: UBERON:4200243
 name: surangular pit line
-def: "...a v-shaped pair of ridges, each carrying three or four smallpores Modified from Ahlberg et al. 2005" []
+namespace: uberon
+def: "...a v-shaped pair of ridges, each carrying three or four smallpores Modified from Ahlberg et al. 2005" [PHENOSCAPE]
 is_a: UBERON:0011636 ! surangular bone
 
 [Term]
 id: UBERON:4200245
 name: parasymphysial plate
-def: "Bone, often with tooth attachments, on the lingual side of the anterior of the lower jaw." []
+namespace: uberon
+def: "Bone, often with tooth attachments, on the lingual side of the anterior of the lower jaw." [PHENOSCAPE]
 is_a: UBERON:0004768 ! bone of lower jaw
 
 [Term]
 id: UBERON:4200246
 name: mesial parasymphysial foramen
+namespace: uberon
 is_a: UBERON:4200245 ! parasymphysial plate
 
 [Term]
 id: UBERON:4200247
 name: lateral parasymphysial foramen
+namespace: uberon
 is_a: UBERON:4200245 ! parasymphysial plate
 
 [Term]
 id: UBERON:4200250
 name: meckelian bone
-def: "The ossification of the Meckel's cartilage." []
+namespace: uberon
+def: "The ossification of the Meckel's cartilage." [PHENOSCAPE]
 is_a: UBERON:0001708 ! jaw skeleton
 
 [Term]
 id: UBERON:4200251
 name: meckelian foramen
+namespace: uberon
 relationship: part_of UBERON:4200250 ! meckelian bone
 
 [Term]
 id: UBERON:4300002
 name: palatine prong
-namespace: none
-def: "A process on the palatine that projects outward and upward and articulates with a depression (maxillary saddle) in the proximal end of the maxilla. [Gosline WA et al, 1966; Baldwin, CC and Johnson GD. 1996. Interrelationships of Aulopiformes. Pages 355-404 in MLJ Stiassny, LR Parenti, and DG Johnson, (eds.), Interrelationships of fishes. Academic Press, San Diego, CA.]]" []
+namespace: uberon
+def: "A process on the palatine that projects outward and upward and articulates with a depression (maxillary saddle) in the proximal end of the maxilla [Gosline WA et al, 1966; Baldwin, CC and Johnson GD. 1996. Interrelationships of Aulopiformes. Pages 355-404 in MLJ Stiassny, LR Parenti, and DG Johnson, (eds.), Interrelationships of fishes. Academic Press, San Diego, CA.]." [PHENOSCAPE]
 relationship: part_of UBERON:0001682 ! palatine bone
 created_by: WD
 
 [Term]
 id: UBERON:4300017
 name: rostrodermethmoid
-namespace: none
-def: "Dermal bone formed by the fusion of dermethmoids and rostral bones.  [Fink, W L Weitzman, S H. 1982. Relationships of the stomiiform fishes (Teleostei), with a description of Diplophos Bulletin of The Museum of Comparative Zoology 150:31-93. http://www.biodiversitylibrary.org/part/28697]" []
+namespace: uberon
+def: "Dermal bone formed by the fusion of dermethmoids and rostral bones [Fink, W L Weitzman, S H. 1982. Relationships of the stomiiform fishes (Teleostei), with a description of Diplophos Bulletin of The Museum of Comparative Zoology 150:31-93. http://www.biodiversitylibrary.org/part/28697]." [PHENOSCAPE]
 is_a: UBERON:0011597 ! bone of upper jaw
 created_by: WD
 
 [Term]
 id: UBERON:4300129
 name: dorsal pelvic gland
+namespace: uberon
 def: "Cloacal glands that secrete into the dorsal roof of the cloacal tube and or the anterior cloacal chamber. Found in male salamanders." [http://www.jstor.org/stable/1466953]
 is_a: UBERON:0012478 ! cloacal gland
 created_by: WD
@@ -22880,6 +22904,7 @@ created_by: WD
 [Term]
 id: UBERON:4300130
 name: lateral pelvic gland
+namespace: uberon
 comment: Cloacal gland present in males that secrete into the dorsolateral walls of the cloaca (between dorsal pelvic gland and anterior ventral pelvic gland clusters). Found in salamanders. {xref="http://www.jstor.org/stable/1466953"}
 is_a: UBERON:0012478 ! cloacal gland
 created_by: WD
@@ -22887,7 +22912,8 @@ created_by: WD
 [Term]
 id: UBERON:4300133
 name: upper jaw symphyseal region
-def: " The region of the upper jaw on or near the midline. [PHENOSCAPE:WD]" []
+namespace: uberon
+def: " The region of the upper jaw on or near the midline." [PHENOSCAPE:WD]
 synonym: "upper jaw symphysial region" EXACT []
 is_a: UBERON:0001709 ! upper jaw region
 created_by: WD
@@ -22895,73 +22921,83 @@ created_by: WD
 [Term]
 id: UBERON:4300137
 name: lingual region
-def: "The region of an anatomical structure (such as a tooth or jaw bone) facing the tongue. [PHENOSCAPE:WD]" []
+namespace: uberon
+def: "The region of an anatomical structure (such as a tooth or jaw bone) facing the tongue." [PHENOSCAPE:WD]
 relationship: part_of UBERON:0000165 ! mouth
 created_by: WD
 
 [Term]
 id: UBERON:4300138
 name: labial region
-def: "The region of an anatomical structure, such as a tooth or jaw bone, facing the lips.[PHENOSCAPE:WD]" []
+namespace: uberon
+def: "The region of an anatomical structure, such as a tooth or jaw bone, facing the lips.[PHENOSCAPE:WD]" [PHENOSCAPE]
 relationship: part_of UBERON:0000165 ! mouth
 created_by: WD
 
 [Term]
 id: UBERON:4300139
 name: posterolingual region
-def: "The region of an anatomical structure, such as a tooth or jaw bone, oriented posteriorly and facing the lips.[PHENOSCAPE:WD]" []
+namespace: uberon
+def: "The region of an anatomical structure, such as a tooth or jaw bone, oriented posteriorly and facing the lips." [PHENOSCAPE:WD]
 relationship: part_of UBERON:0000165 ! mouth
 created_by: WD
 
 [Term]
 id: UBERON:4300174
 name: actinopterygian pyloric caecum
+namespace: uberon
 def: "A finger-like out-pocketing of the intestine where it meets the end of the stomach (pylorus). Also spelled cecum (ceca). Serves to aid digestion." [http://www.briancoad.com/dictionary/complete%20dictionary.htm]
 synonym: "pyloric appendage" EXACT [TAO:0002253]
 synonym: "pyloric caeca" EXACT PLURAL []
 synonym: "pyloric caecum" EXACT []
 xref: TAO:0002253
 is_a: UBERON:0009854 ! digestive tract diverticulum
-property_value: editor_note "See https://github.com/obophenotype/uberon/issues/368" xsd:string
+property_value: IAO:0000116 "See https://github.com/obophenotype/uberon/issues/368" xsd:string
 created_by: WD
 
 [Term]
 id: UBERON:4300199
 name: postsplenial
-def: "Dermal bone of the lower jaw." []
+namespace: uberon
+def: "Dermal bone of the lower jaw." [PHENOSCAPE]
 is_a: UBERON:0004768 ! bone of lower jaw
 
 [Term]
 id: UBERON:4300243
 name: premaxillary tooth 2
-def: "Premaxillary tooth that is the second tooth in a premaxillary tooth series, and positioned adjacent to the symphyseal tooth." []
+namespace: uberon
+def: "Premaxillary tooth that is the second tooth in a premaxillary tooth series, and positioned adjacent to the symphyseal tooth." [PHENOSCAPE]
 is_a: UBERON:2001626 ! premaxillary tooth
 created_by: WD
 
 [Term]
 id: UBERON:4300244
 name: premaxillary tooth 3
-def: "Premaxillary tooth that is the third tooth in a premaxillary tooth series, and positioned adjacent to the second tooth." []
+namespace: uberon
+def: "Premaxillary tooth that is the third tooth in a premaxillary tooth series, and positioned adjacent to the second tooth." [PHENOSCAPE]
 is_a: UBERON:2001626 ! premaxillary tooth
 created_by: WD
 
 [Term]
 id: UBERON:4300246
 name: dentary tooth 2
-def: "Dentary tooth that is the second tooth in a dentary tooth series, and positioned adjacent to the symphyseal tooth." []
+namespace: uberon
+def: "Dentary tooth that is the second tooth in a dentary tooth series, and positioned adjacent to the symphyseal tooth." [PHENOSCAPE]
 is_a: UBERON:0011594 ! dentary tooth
 created_by: WD
 
 [Term]
 id: UBERON:4300247
 name: dentary tooth 3
-def: "Dentary tooth that is the third tooth in a dentary tooth series, and positioned adjacent to the symphyseal tooth." []
+namespace: uberon
+def: "Dentary tooth that is the third tooth in a dentary tooth series, and positioned adjacent to the symphyseal tooth." [PHENOSCAPE]
 is_a: UBERON:0011594 ! dentary tooth
 created_by: WD
 
 [Term]
 id: UBERON:4300252
 name: ethmo-palatine cartilage
+namespace: uberon
 def: "The ethmo-palatine cartilage (EPC) is a distinct body situated between the posterior surface of the upper arm of the premaxilla and the anterior margin of the palatine. There is usually only a single cartilage mass lying between these bones, although that cartilage is apparently subdivided into two units in some taxa (e.g., the Old World characiform family Citharinidae, Vari, 1979:294). Vari 1989a." [https://doi.org/10.5479/si.00810282.471]
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0011085 ! palatoquadrate arch
@@ -22969,7 +23005,8 @@ relationship: part_of UBERON:0011085 ! palatoquadrate arch
 [Term]
 id: UBERON:4500016
 name: premaxilla articular process
-def: "Pharyngeal arch bone immediately posterior to the ascending process, the medial surface of which articulates with the anterior end of the maxillary." []
+namespace: uberon
+def: "Pharyngeal arch bone immediately posterior to the ascending process, the medial surface of which articulates with the anterior end of the maxillary." [PHENOSCAPE]
 comment: The change from a premaxilla in which the ascending and articular processes are separate to one in which they are firmly united has occurred many times in higher teleosts. - Gosline, 1987 (Jaw Structures and Movements in Higher Teleostean Fishes)
 synonym: "articular process of the premaxilla" EXACT []
 relationship: part_of UBERON:0002244 ! premaxilla
@@ -22978,7 +23015,8 @@ created_by: LMJ
 [Term]
 id: UBERON:4500018
 name: premaxilla maxillary process
-def: "Process of the premaxilla that extends upward, and often lies against the medial surface of the maxillary." []
+namespace: uberon
+def: "Process of the premaxilla that extends upward, and often lies against the medial surface of the maxillary." [PHENOSCAPE]
 synonym: "postmaxillary process" EXACT []
 relationship: part_of UBERON:0002244 ! premaxilla
 created_by: LMJ
@@ -23208,6 +23246,26 @@ is_a: UBERON:8410024 ! intestinal junction
 relationship: part_of UBERON:0002108 ! small intestine
 
 [Term]
+id: UBERON:8410001
+name: small intestine venule
+namespace: uberon
+def: "Venule of villus of small intestine." [https://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "venule of small intestine" EXACT []
+relationship: part_of UBERON:0001213 ! intestinal villus
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410002
+name: small intestine lymphatic vessel
+namespace: uberon
+def: "A lymphatic vessel that supplies the small intestine." [http://orcid.org/0000-0003-4183-8865/]
+subset: location_grouping
+synonym: "lymphatic vessel of small intestine" EXACT []
+relationship: part_of UBERON:0002108 ! small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: UBERON:8410003
 name: ductal plate
 namespace: uberon
@@ -23228,6 +23286,83 @@ synonym: "arteriole of small intestine" EXACT []
 synonym: "arteriole of villus of small intestine" EXACT []
 synonym: "small intestine villus arteriole" EXACT []
 relationship: part_of UBERON:0001213 ! intestinal villus
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410005
+name: transitional glandular epithelium of anorectum
+namespace: uberon
+def: "Glandular epithelium of the anal transition zone. The anal transition zone is defined loosely as the tissue interposed between the uninterrupted squamous epithelium of the anoderm and the uninterrupted mucosal epithelium of the anal canal in the anorectum." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/8425694]
+synonym: "anorectum transitional glandular epithelium" EXACT []
+synonym: "glandular epithelium of anal transition zone" EXACT []
+synonym: "glandular epithelium of the anal transition zone" EXACT []
+is_a: UBERON:0015716 ! anal canal epithelium
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410006
+name: submucous nerve plexus of anorectum
+namespace: uberon
+def: "Submucous nerve plexus that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+synonym: "anorectum submucous nerve plexus" EXACT []
+relationship: part_of UBERON:8410050 ! anorectum
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410007
+name: myenteric nerve plexus of anorectum
+namespace: uberon
+def: "Myenteric nerve plexus that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+synonym: "anorectum myenteric nerve plexus" EXACT []
+is_a: UBERON:0002439 ! myenteric nerve plexus
+relationship: part_of UBERON:8410050 ! anorectum
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410008
+name: venule of anorectum
+namespace: uberon
+def: "A venule that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+synonym: "anorectum venule" EXACT []
+relationship: part_of UBERON:8410050 ! anorectum
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410009
+name: arteriole of anorectum
+namespace: uberon
+def: "An arteriole that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+synonym: "anorectum arteriole" EXACT []
+relationship: part_of UBERON:8410050 ! anorectum
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410011
+name: myenteric nerve plexus of appendix
+namespace: uberon
+def: "Myenteric nerve plexus that is located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "myenteric nerve plexus of appendix vermiformis" EXACT []
+synonym: "myenteric nerve plexus of vermiform appendix" EXACT []
+is_a: UBERON:0002439 ! myenteric nerve plexus
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410012
+name: submucous nerve plexus of appendix
+namespace: uberon
+def: "Submucous nerve plexus that is located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "submucous nerve plexus of appendix vermiformis" EXACT []
+synonym: "submucous nerve plexus of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410015
+name: arteriole of colon
+namespace: uberon
+def: "An arteriole located in the colon." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865/]
+relationship: part_of UBERON:0001155 ! colon
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -23253,12 +23388,260 @@ relationship: part_of UBERON:0002108 ! small intestine
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
+id: UBERON:8410020
+name: venule of appendix
+namespace: uberon
+def: "A venule located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "venule of vermiform appendix" EXACT []
+synonym: "vermiform appendix venule" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: UBERON:8410024
 name: intestinal junction
 namespace: uberon
 def: "An anatomical junction between two parts of the intestine." [ORCID:0000-0002-7073-9172]
 synonym: "junction of intestine" EXACT []
 relationship: part_of UBERON:0000160 ! intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410028
+name: arteriole of appendix
+namespace: uberon
+def: "An arteriole located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "appendix vermiformis arteriole" EXACT []
+synonym: "arteriole of appendix vermiformis" EXACT []
+synonym: "arteriole of vermiform appendix" EXACT []
+synonym: "vermiform appendix arteriole" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410029
+name: lymphatic capillary of appendix
+namespace: uberon
+def: "A lymphatic capillary that is located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "lymphatic capillary of appendix vermiformis" EXACT []
+synonym: "lymphatic capillary of vermiform appendix" EXACT []
+is_a: UBERON:8410030 ! lymphatic vessel of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410030
+name: lymphatic vessel of appendix
+namespace: uberon
+def: "A lymphatic vessel located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "lymphatic vessel of appendix vermiformis" EXACT []
+synonym: "lymphatic vessel of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410031
+name: muscularis mucosae of appendix
+namespace: uberon
+def: "A muscularis mucosa that is part of a vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "muscularis mucosae of appendix vermiformis" EXACT []
+synonym: "muscularis mucosae of vermiform appendix" EXACT []
+is_a: UBERON:0001239 ! muscularis mucosae of large intestine
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410039
+name: high endothelial venule of appendix
+namespace: uberon
+def: "A high endothelial venule that is located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/28217126]
+synonym: "appendix high endothelial venule" EXACT []
+synonym: "high endothelial venule of appendix vermiformis" EXACT []
+synonym: "high endothelial venule of vermiform appendix" EXACT []
+is_a: UBERON:8410020 ! venule of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410040
+name: high endothelial venule of small intestine Peyer's patch
+namespace: uberon
+def: "A high endothelial venule that is located in a Peyer's patch in the small intestine." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/20800822, http://www.ncbi.nlm.nih.gov/pubmed/28217126]
+synonym: "high endothelial venule of Peyer's patch" BROAD []
+synonym: "high endothelial venule of Peyer's patch of small intestine" EXACT []
+relationship: part_of UBERON:0003454 ! small intestine Peyer's patch
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410044
+name: vein of appendix
+namespace: uberon
+def: "A vein that is part of a vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "vein of appendix vermiformis" EXACT []
+synonym: "vein of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410045
+name: artery of appendix
+namespace: uberon
+def: "An artery that is part of a vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "artery of appendix vermiformis" EXACT []
+synonym: "artery of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410046
+name: appendix smooth muscle circular layer
+namespace: uberon
+def: "A circular muscle layer of muscular coat that is part of a vermiform appendix smooth muscle." [http://orcid.org/0000-0003-3440-1876]
+synonym: "smooth muscle circular layer of appendix" EXACT []
+synonym: "smooth muscle circular layer of appendix vermiformis" EXACT []
+synonym: "smooth muscle circular layer of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410047
+name: appendix smooth muscle longitudinal layer
+namespace: uberon
+def: "A longitudinal muscle layer of muscular coat that is part of a vermiform appendix smooth muscle." [http://orcid.org/0000-0003-3440-1876]
+synonym: "smooth muscle longitudinal layer of appendix" EXACT []
+synonym: "smooth muscle longitudinal layer of appendix vermiformis" EXACT []
+synonym: "smooth muscle longitudinal layer of vermiform appendix" EXACT []
+relationship: part_of UBERON:0001154 ! vermiform appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410048
+name: venule of colon
+namespace: uberon
+def: "A venule located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865]
+relationship: part_of UBERON:0001155 ! colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410049
+name: serosal nerve fiber of appendix
+namespace: uberon
+def: "A nerve fiber that is located in the serosa of vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "nerve fiber of serosa of appendix" EXACT []
+synonym: "nerve fibre of serosa of appendix" EXACT []
+synonym: "serosal nerve fiber of appendix vermiformis" EXACT []
+synonym: "serosal nerve fiber of vermiform appendix" EXACT []
+synonym: "serosal nerve fibre of appendix" EXACT []
+synonym: "serosal nerve fibre of appendix vermiformis" EXACT []
+synonym: "serosal nerve fibre of vermiform appendix" EXACT []
+relationship: part_of UBERON:0012498 ! serosa of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410050
+name: anorectum
+namespace: uberon
+def: "A subdivision of the digestive tract in humans that includes the rectum, the anal canal and the anus." [http://orcid.org/0000-0002-6826-8770, http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/29742860, https://doi.org/10.1007/978-3-319-26938-2_8, https://doi.org/10.1148/rg.2015150037]
+synonym: "anorectal canal" NARROW []
+is_a: UBERON:0004921 ! subdivision of digestive tract
+relationship: part_of UBERON:0000059 ! large intestine
+property_value: IAO:0000116 "The anatomy, pathology and medical community considers the anus to be part of the large intestine, and supports the use of 'anorectum' to include rectum, anal canal and anus. Although a few resources seem to only include the distal part of the rectum in 'anorectum', this UBERON grouping term is meant to refer more broadly to the whole of rectum." xsd:string
+property_value: RO:0002175 "Homo sapiens" xsd:string
+property_value: UBPROP:0000007 "anorectal" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410051
+name: lymphatic vessel of colon
+namespace: uberon
+def: "A lymphatic vessel located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865/]
+relationship: part_of UBERON:0001155 ! colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410054
+name: lymphatic capillary of colon
+namespace: uberon
+def: "A lymphatic capillary located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865/]
+is_a: UBERON:8410051 ! lymphatic vessel of colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410055
+name: lymphatic capillary of anorectum
+namespace: uberon
+def: "A lymphatic capillary located in the anorectum." [https://orcid.org/0000-0003-3440-1876]
+relationship: part_of UBERON:8410050 ! anorectum
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410056
+name: capillary of anorectum
+namespace: uberon
+def: "A capillary that is part of the anorectum." [http://orcid.org/0000-0003-3440-1876]
+synonym: "blood vessel capillary of anorectum" EXACT []
+relationship: part_of UBERON:8410050 ! anorectum
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410057
+name: capillary of colon
+namespace: uberon
+def: "A capillary that is part of the colon." [http://orcid.org/0000-0003-3440-1876]
+synonym: "blood vessel capillary of colon" EXACT []
+relationship: part_of UBERON:0001155 ! colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410058
+name: myenteric nerve plexus of colon
+namespace: uberon
+def: "Myenteric nerve plexus that is located in the colon." [http://orcid.org/0000-0003-3440-1876]
+is_a: UBERON:0002439 ! myenteric nerve plexus
+relationship: part_of UBERON:0001155 ! colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410059
+name: submucous nerve plexus of colon
+namespace: uberon
+def: "Submucous nerve plexus that is located in the colon." [http://orcid.org/0000-0003-3440-1876]
+relationship: part_of UBERON:0001155 ! colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410060
+name: colon smooth muscle circular layer
+namespace: uberon
+def: "A circular muscle layer of muscular coat that is part of a colon smooth muscle." [http://orcid.org/0000-0003-3440-1876]
+synonym: "smooth muscle circular layer of colon" EXACT []
+is_a: UBERON:0012398 ! large intestine smooth muscle circular layer
+relationship: part_of UBERON:0001155 ! colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410061
+name: colon smooth muscle longitudinal layer
+namespace: uberon
+def: "A longitudinal muscle layer of muscular coat that is part of a colon smooth muscle." [http://orcid.org/0000-0003-3440-1876]
+synonym: "smooth muscle longitudinal layer of colon" EXACT []
+is_a: UBERON:0012399 ! large intestine smooth muscle longitudinal layer
+relationship: part_of UBERON:0001155 ! colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410063
+name: myenteric nerve plexus of small intestine
+namespace: uberon
+def: "Myenteric nerve plexus that is part of the small intestine." [http://orcid.org/0000-0003-3440-1876]
+is_a: UBERON:0002439 ! myenteric nerve plexus
+relationship: part_of UBERON:0002108 ! small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410064
+name: submucous nerve plexus of small intestine
+namespace: uberon
+def: "Submucous nerve plexus that is located in the small intestine." [http://orcid.org/0000-0003-3440-1876]
+relationship: part_of UBERON:0002108 ! small intestine
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -23283,6 +23666,7 @@ property_value: IAO:0000112 "my brain is part of my body (continuant parthood, t
 property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
 property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
 property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
 property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string
