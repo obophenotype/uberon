@@ -1,10 +1,14 @@
 format-version: 1.2
 ontology: uberon/subsets/excretory-minimal
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001008>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001008>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
+
+[Term]
+id: BFO:0000001
+name: entity
 
 [Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -271,10 +275,9 @@ is_a: CL:0005010 ! renal intercalated cell
 id: CL:0009019
 name: nephrogenic zone cell
 def: "A kidney cortical cell that is part of the nephrogenic zone." []
+subset: added_for_HCA
 synonym: "cortical nephrogenic niche cell" EXACT []
 synonym: "cortical nephrogenic zone cell" EXACT []
-xref: https://orcid.org/0000-0002-3163-0115
-xref: PMID:29449449
 is_a: CL:0002681 ! kidney cortical cell
 relationship: part_of UBERON:0009871 ! nephrogenic zone
 created_by: http://orcid.org/0000-0002-2825-0621
@@ -1589,6 +1592,7 @@ xref: VHOG:0000500
 xref: XAO:0000148
 is_a: UBERON:0005103 ! mesonephric epithelium
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0000080 ! mesonephros
 property_value: IAO:0000116 "TODO check" xsd:string
 property_value: UBPROP:0000001 "Any of the renal tubules composing the mesonephros. In mammals they function as excretory structures during the early embryonic development but are later incorporated into the reproductive system. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000500", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/mesonephric+tubule"}
 property_value: UBPROP:0000003 "As the pronephros regresses, the archinephric duct induces the sequential differentiation of tubules in the more caudal parts of the nephric ridge. (...) Tubules that differentiate in the middle part of the nephric ridge form a kidney called the mesonephros. This kidney functions in the embryos and larvae of all vertebrates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000500", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.639"}
@@ -1892,6 +1896,8 @@ xref: XAO:0000143
 xref: ZFA:0000163
 is_a: UBERON:0000467 ! anatomical system
 property_value: IAO:0000116 "In various sources such as Encyclopedia Britannica, the excretory and urinary systems are indeed the same system (see wikipedia talk page); we merge two BTO classes here" xsd:string
+property_value: RO:0002161 NCBITaxon:110815 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 property_value: UBPROP:0000001 "An anatomical system which consists of organs and tissues which produce, store, and excrete urine.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010257", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "Evolution of vertebrate renal anatomy appears quite conservative when compared, for example, to evolution of respiratory and cardiovascular systems in vertebrates. Major anatomical changes in vertebrates kidneys separate those of birds and mammals from kidneys of lower vertebrates. General increase in animal size from fish to mammals is reflected by an increase in total number of nephrons per kidney, rather than by constant change in tubular dimensions.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000723", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-3540428541 Kapoor BG, Bhavna Khanna, Ichthyology Handbook (2004) p.406"}
 property_value: UBPROP:0000008 "In humans, the renal system comprises a pair of kidneys, a pair of ureters, urinary bladder, urethra, sphincter muscle and associated blood vessels" xsd:string {source="GO"}
@@ -2050,7 +2056,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/1106008
 xref: MA:0001644
 xref: Major:calyx
 is_a: UBERON:0006517 ! kidney calyx
-is_a: UBERON:0014401 ! renal venous blood vessel
 property_value: depicted:by Kidney:PioM.png xsd:anyURI
 
 [Term]
@@ -2069,7 +2074,6 @@ xref: http://www.snomedbrowser.com/Codes/Details/26293004
 xref: MA:0001645
 xref: Minor:calyx
 is_a: UBERON:0006517 ! kidney calyx
-is_a: UBERON:0014401 ! renal venous blood vessel
 property_value: depicted:by Kidney:PioM.png xsd:anyURI
 
 [Term]
@@ -2332,6 +2336,7 @@ xref: VHOG:0000740
 xref: XAO:0000154
 relationship: part_of UBERON:0001556 {source="FMA"} ! lower urinary tract
 property_value: depicted:by Urinary:system.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8782 {editor="BGEE:Ann", id="GOTAX:0010073", source="https://github.com/obophenotype/uberon/issues/454"}
 property_value: UBPROP:0000001 "A saccular organ in which urine accumulates before discharge from the body. [Bemis_WE, Functional_Anatomy_of_the_Vertebrates:_An_Evolutionary_Perspective, Glossary_G-29, Grande_L, Liem_KF, Third_Edition_(2001)_Orlando_Fla.:_Harcourt_College_Publishers, Walker_WF][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000740", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000001 "Anatomical structure which consists of a membranous sac used to temporarily store urine until it is excreted from the body.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000623", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "In tetrapods, the urinary bladder arises as an outpocketing of the cloaca. (...) The tetrapod urinary bladder appears first among amphibians and is present in Sphenodon, turtles, most lizards, ostriches among birds, and all mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000740", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.577-78"}
@@ -3328,6 +3333,7 @@ xref: XAO:0000242
 xref: ZFA:0000546
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0009201 {source="GO"} ! nephric duct
+relationship: part_of UBERON:0000080 ! mesonephros
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/6d/Gray1109.png xsd:anyURI
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/rfoulger
@@ -3408,6 +3414,7 @@ xref: EMAPA:31443
 xref: http://www.snomedbrowser.com/Codes/Details/275409003
 xref: MA:0002586
 is_a: UBERON:0003517 ! kidney blood vessel
+relationship: part_of UBERON:0006544 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! kidney vasculature
 
 [Term]
 id: UBERON:0003546
@@ -3428,6 +3435,7 @@ synonym: "kidney arterial system" RELATED [EMAPA:31436]
 xref: EMAPA:31436
 xref: MA:0002578
 is_a: UBERON:0003517 ! kidney blood vessel
+relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0003820
@@ -4973,6 +4981,7 @@ def: "A metanephric tubule is an epithelial tube that is part of the metanephros
 xref: VHOG:0001526
 is_a: UBERON:0005108 ! metanephric epithelium
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0000081 ! metanephros
 property_value: UBPROP:0000003 "The ureteric diverticulum grows dorsally into the posterior region of the nephric ridge. Here it enlarges and stimulates the growth of metanephric tubules that come to make up the metanephric kidney. The metanephros becomes the adult kidney of amniotes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001526", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.543"}
 
 [Term]
@@ -6684,6 +6693,7 @@ xref: Wolffian:duct
 is_a: UBERON:0004819 ! kidney epithelium
 is_a: UBERON:0006553 ! renal duct
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0009622
@@ -7645,6 +7655,7 @@ synonym: "venous blood vessel of kidney" EXACT []
 xref: EMAPA:31450
 xref: MA:0002591
 is_a: UBERON:0003517 ! kidney blood vessel
+relationship: part_of UBERON:0002113 ! kidney
 property_value: UBPROP:0000012 "we follow MA and MP in distinguishing the venous blood vessel from the vein. The kidney cortex vein is not considered a renal vein, nor is the vasa recta" xsd:string {external_ontology="MA"}
 
 [Term]
@@ -8000,88 +8011,88 @@ relationship: part_of UBERON:0001334 {source="FMA"} ! female urethra
 [Term]
 id: UBERON:2001055
 name: pronephric duct opening
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001055
 relationship: part_of UBERON:0003060 ! pronephric duct
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001200
 name: corpuscles of Stannius
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Islands of eosinic cells found on the lateroventral surface of the kidney. Function is thought to be that of the parathyroid gland in other vertebrates, which are lacking in fishes. These cells secrete hypocalcin (teleocalcin) to regulate calcium metabolism." [ZFIN:curator]
 xref: ZFA:0001200
 relationship: part_of UBERON:0000080 ! mesonephros
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001293
 name: posterior kidney
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001293
 relationship: part_of UBERON:0000080 ! mesonephros
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002225
 name: posterior pronephric duct
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "posterior pronephric ducts" EXACT PLURAL [TAO:0002225]
 xref: ZFA:0001623
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0003060 ! pronephric duct
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005292
 name: distal late tubule
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Portion of the renal tubule which is just posterior to the distal early tubule." [ZFIN:curator]
 xref: ZFA:0005292
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0001231 ! nephron tubule
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005311
 name: pronephric glomerular capsule epithelium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Simple squamous epithelium that lines the capsule of the pronephric glomerulus." [ZFIN:curator]
 synonym: "pronephric parietal epithelial layer" EXACT [TAO:0005311]
 xref: ZFA:0005311
 is_a: UBERON:0004211 ! nephron epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:3010392
 name: mesonephric early proximal tubule
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0000083 ! mesonephric tubule
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010393
 name: mesonephric late distal segment
-namespace: uberon/phenoscape-anatomy
-def: "The site of bicarbonate resorption in the adult kidney. It is equivalent to the convoluted distal segment of metanephric nephrons. [Xenbase]" []
+namespace: uberon
+def: "The site of bicarbonate resorption in the adult kidney. It is equivalent to the convoluted distal segment of metanephric nephrons." [Xenbase]
 synonym: "DT1" EXACT [UBERON:3010393]
 relationship: part_of UBERON:0000083 ! mesonephric tubule
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010394
 name: mesonephric late proximal tubule
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "late proximal segment" EXACT [UBERON:3010394]
 synonym: "opisthonephros" RELATED [UBERON:3010394]
 synonym: "proximal straight segment" RELATED [UBERON:3010394]
@@ -8089,25 +8100,25 @@ synonym: "proximal tubule 3" EXACT [UBERON:3010394]
 synonym: "PT3" EXACT [UBERON:3010394]
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0000083 ! mesonephric tubule
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3011120
 name: early proximal tubule
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "PT2" EXACT [UBERON:3011120]
 relationship: part_of UBERON:0005309 ! pronephric nephron
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 creation_date: 2011-04-20T05:19:55Z
 
 [Term]
 id: UBERON:3011121
 name: late distal segment
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0005309 ! pronephric nephron
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 creation_date: 2011-04-20T05:21:45Z
 
@@ -8133,6 +8144,7 @@ property_value: IAO:0000112 "my brain is part of my body (continuant parthood, t
 property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
 property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
 property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
 property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string

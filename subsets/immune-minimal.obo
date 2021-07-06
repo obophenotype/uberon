@@ -1,10 +1,14 @@
 format-version: 1.2
 ontology: uberon/subsets/immune-minimal
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0002405>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0002405>))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
+
+[Term]
+id: BFO:0000001
+name: entity
 
 [Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -1357,6 +1361,9 @@ id: CL:0000865
 name: gastrointestinal tract (lamina propria) macrophage
 namespace: cell
 def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." []
+synonym: "gastrointestinal system (lamina propria) macrophage" EXACT []
+synonym: "macrophage of gastrointestinal system (lamina propria)" EXACT []
+synonym: "macrophage of gastrointestinal tract (lamina propria)" EXACT []
 is_a: CL:0000885 ! gut-associated lymphoid tissue macrophage
 
 [Term]
@@ -5274,35 +5281,118 @@ created_by: tmeehan
 creation_date: 2011-08-29T10:08:02Z
 
 [Term]
+id: CL:0009007
+name: gastrointestinal tract (lamina propria) macrophage of small intestine
+def: "A macrophage which is resident in the lamina propria of the small intestine." []
+subset: location_grouping
+synonym: "macrophage of small intestine" BROAD []
+synonym: "small intestine lamina propria resident macrophage" EXACT []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009008
+name: gastrointestinal tract (lamina propria) macrophage of large intestine
+def: "A macrophage which is resident in the lamina propria of the large intestine." []
+subset: location_grouping
+synonym: "large intestine lamina propria resident macrophage" EXACT []
+synonym: "macrophage of large intestine" BROAD []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009014
 name: Peyer's patch lymphocyte
 def: "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." []
+subset: location_grouping
 synonym: "Peyer's patch resident lymphocyte" EXACT []
 synonym: "small intestine Peyer's patch lymphocyte" NARROW []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0000542 ! lymphocyte
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009015
 name: Peyer's patch follicular dendritic cell
 def: "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside." []
-xref: https://orcid.org/0000-0003-4183-8865
-xref: PMID:24437401
+subset: location_grouping
 relationship: part_of UBERON:0001211 ! Peyer's patch
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009018
 name: lymphocyte of large intestine lamina propria
 def: "A lymphocyte that resides in the lamina propria of the large intestine." []
+subset: location_grouping
 synonym: "lamina propria lymphocyte of large intestine" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0000542 ! lymphocyte
-property_value: location_grouping "" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009023
+name: small intestine Peyer's patch T cell
+def: "A T cell which resides in the Peyer's patch of the small intestine." []
+subset: location_grouping
+synonym: "T cell of Peyer's patch of small intestine" EXACT []
+synonym: "T cell of small intestine Peyer's patch" EXACT []
+is_a: CL:0002419 ! mature T cell
+is_a: CL:0009014 ! Peyer's patch lymphocyte
+relationship: part_of UBERON:0003454 ! small intestine Peyer's patch
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009031
+name: T cell of appendix
+def: "A T cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix T cell" EXACT []
+synonym: "T cell of appendix vermiformis" EXACT []
+synonym: "T cell of vermiform appendix" EXACT []
+is_a: CL:0000084 ! T cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009032
+name: B cell of appendix
+def: "A B cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix B cell" EXACT []
+synonym: "B cell of appendix vermiformis" EXACT []
+synonym: "B cell of vermiform appendix" EXACT []
+is_a: CL:0000236 ! B cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009033
+name: plasma cell of appendix
+def: "A plasma cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix plasma cell" EXACT []
+synonym: "plasma cell of appendix vermiformis" EXACT []
+synonym: "plasma cell of vermiform appendix" EXACT []
+is_a: CL:0000786 ! plasma cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009034
+name: dendritic cell of appendix
+def: "A dendritic cell that is located in a vermiform appendix." []
+subset: location_grouping
+synonym: "appendix dendritic cell" EXACT []
+synonym: "dendritic cell of appendix vermiformis" EXACT []
+synonym: "dendritic cell of vermiform appendix" EXACT []
+is_a: CL:0000451 ! dendritic cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009036
+name: appendix macrophage
+def: "A macrophage located in the vermiform appendix." []
+subset: location_grouping
+synonym: "macrophage of appendix" EXACT []
+synonym: "macrophage of appendix vermiformis" EXACT []
+synonym: "macrophage of vermiform appendix" EXACT []
+is_a: CL:0000235 ! macrophage
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -5321,6 +5411,15 @@ synonym: "bone marrow mononuclear cell" EXACT []
 is_a: CL:0000842 ! mononuclear cell
 is_a: CL:1001610 ! bone marrow hematopoietic cell
 created_by: GOC:cjm
+
+[Term]
+id: CL:0011018
+name: lymphoid tissue–inducer cell
+def: "A group 3 innate lymphoid cell that express ROR gamma t and IL-7R alpha in the absence of lineage markers (e.g. CD3, CD19, B220, CD11c, Gr-1), with the functional ability to interact with mesenchymal cells through lymphotoxin and tumor necrosis factor. Lymphoid tissue-inducer cells are key to the development of lymph nodes and Peyer’s patches." []
+synonym: "LTi" EXACT []
+synonym: "lymphoid tissue inducer cell" EXACT []
+is_a: CL:0001071 ! group 3 innate lymphoid cell
+created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: CL:0011024
@@ -5604,6 +5703,8 @@ xref: ZFA_RETIRED:0005318
 is_a: UBERON:0005057 ! immune organ
 relationship: part_of UBERON:0002465 ! lymphoid system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b8/Illu_lymph_node_structure.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32443 {source="https://doi.org/10.1177/0192623311409597", source="ZFA:0005318"}
+property_value: RO:0002161 NCBITaxon:8570 {source="Wikipedia"}
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/650 xsd:anyURI
 property_value: UBPROP:0000003 "Lymph nodes that are associated with the lymphatic system have evolved in mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001273", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.630"}
 
@@ -5616,6 +5717,7 @@ comment: Phenotype notes: Leydig's organ can be quite large - a 1.6-kilogram (3.
 subset: uberon_slim
 xref: Leydig's:organ
 is_a: UBERON:0005057 ! immune organ
+property_value: RO:0002161 NCBITaxon:7863 {source="Wikipedia"}
 property_value: UBPROP:0000008 "Found in elasmobranchs (sharks and rays) but with some exceptions." xsd:string
 
 [Term]
@@ -5860,6 +5962,7 @@ xref: NCIT:C12771
 xref: Peyer's:patch
 xref: UMLS:C0031272 {source="ncithesaurus:Peyer_s_Patch"}
 is_a: UBERON:0001962 {source="FMA", source="MA"} ! gut-associated lymphoid tissue
+property_value: RO:0002161 NCBITaxon:8459 {source="http://www.ncbi.nlm.nih.gov/pubmed/PMID:20181529"}
 property_value: UBPROP:0000008 "Reptiles have accumulations of lymphocytes in their guts that may be primitive Peyer's patches (Zapata and Solas)." xsd:string
 property_value: UBPROP:0000012 "FMA has [set of?] [aggregated,small] lymphoid [follice,nodule] of [colon, SI, I, etc]" xsd:string {external_ontology="FMA"}
 property_value: UBPROP:0000012 "Pp is a syn for Aggregated lymphoid follicle of small intestine; but MA uses Pp as covering both SI and LI. MA also includes follicle as a part. WP says duodenum and jejunum lack PPs" xsd:string {external_ontology="MA"}
@@ -7125,6 +7228,9 @@ xref: FMA:63199
 xref: http://www.snomedbrowser.com/Codes/Details/9081000
 xref: Sinusoids
 relationship: part_of UBERON:0001250 ! red pulp of spleen
+property_value: RO:0002161 NCBITaxon:10088 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
+property_value: RO:0002161 NCBITaxon:9681 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
+property_value: RO:0002161 NCBITaxon:9822 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
 property_value: RO:0002175 NCBITaxon:10114 {source="http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml"}
 property_value: UBPROP:0000008 "Whereas man and the rat are in the 'sinusal' group, the mouse belongs in the 'nonsinusal' group. The red pulp of spleens of rat, dog, man, and many other mammals contains an elaborate plexus of sinuses; that of mouse, cat, pig and others has no true sinuses and relatively few veins leading from the meshes into collecting veins - http://www.informatics.jax.org/greenbook/chapters/chapter13.shtml" xsd:string
 
@@ -7452,6 +7558,7 @@ def: "The compartment located between the marginal zone and the red pulp harbori
 subset: pheno_slim
 relationship: part_of UBERON:0002106 ! spleen
 property_value: IAO:0000116 "TODO - check spleen marginal sinus" xsd:string
+property_value: RO:0002161 NCBITaxon:9989 {source="MP:0002363"}
 property_value: RO:0002175 NCBITaxon:9606
 property_value: UBPROP:0000008 "The perifollicular zone, which is present in human and not rodents, may be the functional equivalent of the marginal sinus in rodents." xsd:string {source="MP:0002363"}
 
@@ -7752,7 +7859,7 @@ subset: pheno_slim
 synonym: "germinal center" BROAD [BTO:0003671]
 synonym: "lymph node activated zone" RELATED []
 synonym: "lymph node central zone" RELATED []
-synonym: "lymph node light zone" RELATED []
+synonym: "lymph node light zone" NARROW []
 synonym: "lymph node nodule" RELATED []
 xref: BTO:0003671
 xref: CALOHA:TS-1269
@@ -7849,6 +7956,7 @@ namespace: uberon
 def: "An elongate paired tissue ventral to the kidneys and partialy enveloping the anterior gonads in Elasmobranchii. Apparently important to the immune system" [http://www.fishbase.org/glossary/Glossary.php?q=epigonal+organ]
 synonym: "subgonal organ" EXACT []
 is_a: UBERON:0005057 ! immune organ
+property_value: RO:0002161 NCBITaxon:7863 {source="Wikipedia"}
 
 [Term]
 id: UBERON:0010015
@@ -7992,6 +8100,7 @@ xref: NCIT:C49776
 xref: UMLS:C1710157 {source="ncithesaurus:Splenic_Marginal_Sinus"}
 is_a: UBERON:0001959 ! white pulp of spleen
 property_value: IAO:0000116 "Note that there is no consensus in the literature about which compartments constitute the white pulp or the ramifications of the microvasculature. In addition, notable differences exist between humans and rodents. In this ontology, the marginal sinus (which may not exist in human) has been included as part of the white pulp. The perifollicular zone, which is present in human and not rodents, may be the functional equivalent of the marginal sinus in rodents." xsd:string {source="MP:0002363"}
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0010399
@@ -8071,15 +8180,19 @@ relationship: part_of UBERON:0002006 {source="MP"} ! cortex of lymph node
 
 [Term]
 id: UBERON:0010420
-name: lymph node follicular corona
+name: lymph node germinal center mantle zone
 namespace: uberon
-def: "A part of the secondary follicle in which naive B cells reside along with some helper T cells, macrophages and follicular dendritic cells; these are displaced by the expanding germinal centre and form a 'mantle' around it" [https://github.com/obophenotype/uberon/issues/7, MP:MP]
+def: "A part of the secondary follicle in which naive B cells reside along with some helper T cells, macrophages and follicular dendritic cells; these are displaced by the expanding germinal centre and form a 'mantle' around it." [http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/25656706, https://github.com/obophenotype/uberon/issues/7, https://orcid.org/0000-0001-9990-8331, MP:MP]
 subset: pheno_slim
+synonym: "germinal center mantle zone" BROAD []
 synonym: "lymph node B cell corona" EXACT [CL:tm]
-synonym: "lymph node dark zone" EXACT [CL:tm]
+synonym: "lymph node dark zone" RELATED [CL:tm]
+synonym: "lymph node follicular corona" EXACT []
 synonym: "lymph node follicular mantle" EXACT [MA:0002990]
 synonym: "lymph node inactive zone" EXACT [CL:tm]
 synonym: "lymph node peripheral zone" EXACT [CL:tm]
+synonym: "mantle zone of germinal center" BROAD []
+synonym: "mantle zone of lymph node germinal center" EXACT []
 xref: EMAPA:37661 {source="MA:th"}
 xref: MA:0002990
 is_a: UBERON:0010755 ! secondary follicle corona
@@ -8161,7 +8274,7 @@ namespace: uberon
 def: "A collection of activated B cells at the center of a secondary follicle, formed after B cells become activated and migrate to the center." [CL:tm, http://en.wikipedia.org/wiki/Germinal_center, https://orcid.org/0000-0002-6601-2165]
 comment: A germinal center is a specialized microenvironment formed when activated B cells enter lymphoid follicles. Germinal centers are the foci for B cell proliferation and somatic hypermutation.[GO]
 synonym: "central zone of follice" EXACT [CL:tm]
-synonym: "light zone of follicle" EXACT [CL:tm]
+synonym: "light zone of follicle" NARROW [CL:tm]
 synonym: "lymhpoid nodule" RELATED [CL:tm]
 synonym: "nodule" RELATED [CL:tm]
 synonym: "reaction center of follicle" EXACT [CL:tm]
@@ -8183,7 +8296,7 @@ name: secondary follicle corona
 namespace: uberon
 def: "The part of the secondary follicle that surrounds the germinal center." [CL:tm, https://orcid.org/0000-0002-6601-2165]
 synonym: "B cell corona" RELATED []
-synonym: "dark zone of follicle" EXACT [CL:tm]
+synonym: "dark zone of follicle" RELATED [CL:tm]
 synonym: "inactive zone of follicle" EXACT [CL:tm]
 synonym: "mantle zone" RELATED []
 synonym: "peripheral zone of follicle" EXACT [CL:tm]
@@ -8380,7 +8493,6 @@ synonym: "penicillar artery" RELATED []
 synonym: "penicilli" EXACT PLURAL [http://www.merriam-webster.com/medical/penicilli]
 synonym: "penicillus" EXACT [FMA:16038]
 xref: FMA:16038
-is_a: UBERON:0010399 ! spleen trabecular artery
 is_a: UBERON:0022292 ! splenic arteriole
 relationship: part_of UBERON:0010401 ! spleen central arteriole
 
@@ -8890,6 +9002,7 @@ xref: http://en.wikipedia.org/wiki/Deep_parotid_lymph_nodes
 xref: http://www.snomedbrowser.com/Codes/Details/279142004
 is_a: UBERON:0015857 {source="FMA"} ! parotid lymph node
 is_a: UBERON:0015918 ! deep lymph node
+property_value: RO:0002161 NCBITaxon:10090 {source="http://www.ncbi.nlm.nih.gov/pubmed/16624319"}
 
 [Term]
 id: UBERON:0016394
@@ -9041,7 +9154,9 @@ is_a: UBERON:0009114 ! cervical thymus
 id: UBERON:0018410
 name: lacteal
 namespace: uberon
-def: "a lymphatic capillary that absorbs dietary fats in the villi of the small intestine." [http://en.wikipedia.org/wiki/Lacteals]
+def: "A lymphatic capillary that absorbs dietary fats in the villi of the small intestine." [http://en.wikipedia.org/wiki/Lacteals]
+synonym: "lymphatic capillary of small intestine" EXACT [http://orcid.org/0000-0003-4183-8865/]
+synonym: "small intestine lymphatic capillary" EXACT [http://orcid.org/0000-0003-4183-8865/]
 xref: FMA:68443
 xref: http://en.wikipedia.org/wiki/Lacteals
 xref: http://www.snomedbrowser.com/Codes/Details/282414002
@@ -10608,41 +10723,238 @@ relationship: part_of UBERON:0002106 ! spleen
 [Term]
 id: UBERON:2005106
 name: longitudinal lateral lymphatic vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "LLL" EXACT [TAO:0005106]
 xref: ZFA:0005106
 is_a: UBERON:0004536 ! lymph vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005303
 name: caudal fin lymph vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005303
 is_a: UBERON:0007384 ! appendage lymph vessel
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005319
 name: intersegmental lymph vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "islv" EXACT [TAO:0005319]
 xref: ZFA:0005319
 is_a: UBERON:0004536 ! lymph vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005320
 name: dorsal longitudinal lymphatic vessel
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "dllv" EXACT [TAO:0005320]
 xref: ZFA:0005320
 is_a: UBERON:0004536 ! lymph vasculature
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
+
+[Term]
+id: UBERON:8410002
+name: small intestine lymphatic vessel
+namespace: uberon
+def: "A lymphatic vessel that supplies the small intestine." [http://orcid.org/0000-0003-4183-8865/]
+subset: location_grouping
+synonym: "lymphatic vessel of small intestine" EXACT []
+is_a: UBERON:0001473 ! lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410013
+name: afferent lymphatic vessel valve
+namespace: uberon
+def: "A valve in an afferent lymphatic vessel. It manages the flow of lymphatic fluid into the lymph node carrying immune cells and is essential for the correct flow of fluid through the lymphatic system." [http://orcid.org/0000-0003-4183-8865/]
+synonym: "valve of afferent lymphatic vessel" EXACT []
+is_a: UBERON:0034949 ! lymphatic valve
+relationship: part_of UBERON:0010396 ! afferent lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410014
+name: efferent lymphatic vessel valve
+namespace: uberon
+def: "A valve in an efferent lymphatic vessel. It manages the flow of lymphatic fluid out of the lymph node carrying immune cells and is essential for the correct flow of fluid through the lymphatic system." [http://orcid.org/0000-0003-4183-8865/]
+synonym: "valve of efferent lymphatic vessel" EXACT []
+is_a: UBERON:0034949 ! lymphatic valve
+relationship: part_of UBERON:0010397 ! efferent lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410029
+name: lymphatic capillary of appendix
+namespace: uberon
+def: "A lymphatic capillary that is located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "lymphatic capillary of appendix vermiformis" EXACT []
+synonym: "lymphatic capillary of vermiform appendix" EXACT []
+is_a: UBERON:0006842 ! lymphatic capillary
+is_a: UBERON:8410030 ! lymphatic vessel of appendix
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410030
+name: lymphatic vessel of appendix
+namespace: uberon
+def: "A lymphatic vessel located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+synonym: "lymphatic vessel of appendix vermiformis" EXACT []
+synonym: "lymphatic vessel of vermiform appendix" EXACT []
+is_a: UBERON:0001473 ! lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410032
+name: trabecular sinus of lymph node
+namespace: uberon
+def: "The trabecular sinus is the lymph-filled space outside the trabeculae between lobules of the lymph node. This is a continuation of the subcapsular sinus which receives the afferent vessels and is present beneath the capsule. This space is traversed by both reticular fibers and cells in the lymph." [http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/32491649, WikipediaVersioned:Lymph_node&oldid=1020495758]
+synonym: "lymph node trabecular sinus" EXACT []
+relationship: part_of UBERON:0000029 ! lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410035
+name: medullary arteriole of lymph node
+namespace: uberon
+def: "An arteriole that arises from the hilar artery of a lymph node and radiates centrifugally, branching in the medulla." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "arteriole of medulla of lymph node" EXACT []
+is_a: UBERON:8410042 ! arteriole of lymph node
+relationship: part_of UBERON:0002007 ! medulla of lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410036
+name: medullary venule of lymph node
+namespace: uberon
+def: "Medullary venules are a continuation of high endothelial venules which condense repeatedly in the interfollicular cortex and peripheral deep cortical unit and then transition to medullary venules at the corticomedullary junction. The medullary venules condense and return centripetally to the hilar vein." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "venule of medulla of lymph node" EXACT []
+is_a: UBERON:8410041 ! venule of lymph node
+relationship: part_of UBERON:0002007 ! medulla of lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410038
+name: high endothelial venule of lymph node
+namespace: uberon
+def: "A high endothelial venule that is part of a of lymph node." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/28217126]
+synonym: "lymph node high endothelial venule" EXACT []
+is_a: UBERON:8410041 ! venule of lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410040
+name: high endothelial venule of small intestine Peyer's patch
+namespace: uberon
+def: "A high endothelial venule that is located in a Peyer's patch in the small intestine." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/20800822, http://www.ncbi.nlm.nih.gov/pubmed/28217126]
+synonym: "high endothelial venule of Peyer's patch" BROAD []
+synonym: "high endothelial venule of Peyer's patch of small intestine" EXACT []
+relationship: part_of UBERON:0003454 ! small intestine Peyer's patch
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410041
+name: venule of lymph node
+namespace: uberon
+def: "A venule that is part of a lymph node." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "lymph node venule" EXACT []
+relationship: part_of UBERON:0000029 ! lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410042
+name: arteriole of lymph node
+namespace: uberon
+def: "An arteriole that is part of a lymph node." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "lymph node arteriole" EXACT []
+relationship: part_of UBERON:0000029 ! lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410051
+name: lymphatic vessel of colon
+namespace: uberon
+def: "A lymphatic vessel located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865/]
+is_a: UBERON:0001473 ! lymphatic vessel
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410052
+name: lymph node germinal center light zone
+namespace: uberon
+def: "Lymph node germinal centers contain two microenvironments: the light zone and the dark zone. The light zone is sparsely populated with B cells and includes additional cell types such as follicular dendritic cells, lymph node tingible macrophages and T follicular helper cells." [http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/25656706, http://www.ncbi.nlm.nih.gov/pubmed/8011279]
+synonym: "germinal center light zone" BROAD []
+synonym: "light zone of germinal center" BROAD []
+synonym: "light zone of lymph node germinal center" EXACT []
+is_a: UBERON:0001744 ! lymphoid tissue
+relationship: part_of UBERON:0009039 ! lymph node germinal center
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410053
+name: lymph node germinal center dark zone
+namespace: uberon
+def: "Lymph node germinal centers contain two microenvironments: the light zone and the dark zone. The dark zone is densely populated with B cell blasts and reticular cells." [http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/25656706, http://www.ncbi.nlm.nih.gov/pubmed/8011279]
+synonym: "dark zone of germinal center" BROAD []
+synonym: "dark zone of lymph node germinal center" EXACT []
+synonym: "germinal center dark zone" BROAD []
+is_a: UBERON:0001744 ! lymphoid tissue
+relationship: part_of UBERON:0009039 ! lymph node germinal center
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410054
+name: lymphatic capillary of colon
+namespace: uberon
+def: "A lymphatic capillary located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865/]
+is_a: UBERON:0006842 ! lymphatic capillary
+is_a: UBERON:8410051 ! lymphatic vessel of colon
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410055
+name: lymphatic capillary of anorectum
+namespace: uberon
+def: "A lymphatic capillary located in the anorectum." [https://orcid.org/0000-0003-3440-1876]
+is_a: UBERON:0006842 ! lymphatic capillary
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410065
+name: lymph node follicle marginal zone
+namespace: uberon
+def: "Histologically, the marginal zone pattern of the lymph node is characterized by lymphoid follicles with three distinct layers. The inner layer is composed of follicular center zones, the middle layer of darkly stained mantle zones, and the outer layer of marginal zones. However, the marginal zone pattern is rarely seen in reactive lymph nodes except for mesenteric lymph nodes. Lymph node marginal zones are populated by marginal zone B cells which express CD19 and CD20 and have the phenotypic features of memory B cells." [http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/11026094, http://www.ncbi.nlm.nih.gov/pubmed/12076268]
+synonym: "lymph node marginal zone" BROAD []
+synonym: "marginal zone of lymph node" BROAD []
+synonym: "marginal zone of lymph node follicle" EXACT []
+is_a: UBERON:0001744 ! lymphoid tissue
+relationship: part_of UBERON:0000029 ! lymph node
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410066
+name: lymph node paracortex
+namespace: uberon
+def: "The lymph node paracortex is the middle layer of the lymph node and is mostly populated by T cells and dendritic cells. The paracortex also contains specialised blood vessels called high endothelial venules which allow lymphocytes to enter the node." [http://orcid.org/0000-0001-9990-8331, http://orcid.org/0000-0003-4183-8865/, https://www.immunology.org/public-information/bitesized-immunology/organs-and-tissues/lymph-node]
+is_a: UBERON:0001744 ! lymphoid tissue
+relationship: part_of UBERON:0010417 ! lymph node T cell domain
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8410067
+name: lymph node interfollicular cortex
+namespace: uberon
+def: "Follicules in the lymph node are surrounded and separated by the interfollicular cortex. Together with the lymph node follicle, the interfollicular cortex of the lymph node lobule make up the superficial cortex of the lymph node. Capillaries empty into the high endothelial venules located in the interfollicular cortex. The interfollicular cortex also serves as transit corriders for lymphocytes migrating between the B and T cell areas." [http://orcid.org/0000-0001-9990-8331, http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
+synonym: "interfollicular cortex of lymph node" EXACT []
+is_a: UBERON:0001744 ! lymphoid tissue
+relationship: part_of UBERON:0010417 ! lymph node T cell domain
+created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: http://owltools.org/Q
@@ -10666,6 +10978,7 @@ property_value: IAO:0000112 "my brain is part of my body (continuant parthood, t
 property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
 property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
 property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
 property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string

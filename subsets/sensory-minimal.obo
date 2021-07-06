@@ -1,10 +1,14 @@
 format-version: 1.2
 ontology: uberon/subsets/sensory-minimal
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://owltools.org/Q>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/CL_0009001>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000018>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0004456>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0005388>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://owltools.org/Q> (<http://owltools.org/Q>)\n\nEquivalentClasses(<http://owltools.org/Q> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0004456>))\n\n# Class: <http://purl.obolibrary.org/obo/CL_0009001> (compound eye retinal cell)\n\nSubClassOf(<http://purl.obolibrary.org/obo/CL_0009001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0005388> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000018>))))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
+
+[Term]
+id: BFO:0000001
+name: entity
 
 [Term]
 id: BFO:0000002
 name: continuant
+is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000002 ! continuant
 
 [Term]
@@ -139,6 +143,13 @@ name: eye photoreceptor cell
 namespace: cell
 is_a: CL:0000210 ! photoreceptor cell
 relationship: part_of UBERON:0000970 ! eye
+
+[Term]
+id: CL:0000315
+name: tears secreting cell
+namespace: cell
+def: "A cell secreting tears, the fluid secreted by the lacrimal glands. This fluid moistens the conjunctiva and cornea." []
+relationship: part_of UBERON:0001817 ! lacrimal gland
 
 [Term]
 id: CL:0000347
@@ -419,19 +430,6 @@ id: CL:0000721
 name: equatorial cone cell (sensu Endopterygota)
 namespace: cell
 is_a: CL:0000718 ! compound eye cone cell
-
-[Term]
-id: CL:0000740
-name: retinal ganglion cell
-namespace: cell
-def: "The set of neurons that receives neural inputs via bipolar, horizontal and amacrine cells. The axons of these cells make up the optic nerve." []
-synonym: "gangliocyte" EXACT []
-synonym: "ganglion cell of retina" EXACT []
-synonym: "RGC" EXACT []
-xref: BTO:0001800
-xref: FMA:67765
-is_a: CL:0009004 ! retinal cell
-relationship: part_of UBERON:0000966 ! retina
 
 [Term]
 id: CL:0000745
@@ -1144,12 +1142,6 @@ is_a: CL:0000098 ! sensory epithelial cell
 created_by: haendel
 
 [Term]
-id: CL:0008021
-name: anterior lateral line ganglion neuron
-is_a: CL:2000031 ! lateral line ganglion neuron
-relationship: part_of UBERON:2001391 ! anterior lateral line ganglion
-
-[Term]
 id: CL:0008027
 name: rod bipolar cell (sensu Mus)
 def: "A bipolar neuron found in the retina that is synapsed by rod photoreceptor cells.  These neurons have axons that arborize and synapse to targets in inner plexiform layers 4 and 5 and depolarize in response to light." []
@@ -1218,12 +1210,6 @@ is_a: CL:0009004 ! retinal cell
 relationship: part_of UBERON:0000966 ! retina
 
 [Term]
-id: CL:0011113
-name: spiral ganglion neuron
-def: "Neuron found in the spriral ganglion." []
-relationship: part_of UBERON:0000395 ! cochlear ganglion
-
-[Term]
 id: CL:1000050
 name: lateral line nerve glial cell
 relationship: part_of UBERON:0008906 ! lateral line nerve
@@ -1257,12 +1243,6 @@ id: CL:1000239
 name: anterior lateral line nerve glial cell
 is_a: CL:1000050 ! lateral line nerve glial cell
 relationship: part_of UBERON:2000425 ! anterior lateral line nerve
-
-[Term]
-id: CL:1000245
-name: posterior lateral line ganglion neuron
-is_a: CL:2000031 ! lateral line ganglion neuron
-relationship: part_of UBERON:2001314 ! posterior lateral line ganglion
 
 [Term]
 id: CL:1000378
@@ -1446,15 +1426,6 @@ is_a: CL:0000287 ! eye photoreceptor cell
 relationship: part_of UBERON:0000018 ! compound eye
 created_by: TermGenie
 creation_date: 2014-06-24T23:16:45Z
-
-[Term]
-id: CL:2000031
-name: lateral line ganglion neuron
-namespace: cell
-def: "Any neuron that is part of a lateral line ganglion." []
-relationship: part_of UBERON:2000120 ! lateral line ganglion
-created_by: TermGenie
-creation_date: 2014-06-25T01:17:57Z
 
 [Term]
 id: CL:2000034
@@ -1731,6 +1702,7 @@ subset: uberon_slim
 synonym: "pit eye" EXACT [http://en.wikipedia.org/wiki/Eye#Pit_eyes]
 xref: http://en.wikipedia.org/wiki/Stemma
 is_a: UBERON:0000047 ! simple eye
+property_value: RO:0002161 NCBITaxon:7742
 
 [Term]
 id: UBERON:0000047
@@ -1770,6 +1742,7 @@ subset: grouping_class
 subset: uberon_slim
 xref: Multiple_lenses
 is_a: UBERON:0000047 ! simple eye
+property_value: RO:0002161 NCBITaxon:7742
 
 [Term]
 id: UBERON:0000053
@@ -2243,6 +2216,7 @@ is_a: UBERON:0005388 ! photoreceptor array
 relationship: part_of UBERON:0001802 ! posterior segment of eyeball
 relationship: part_of UBERON:0019207 ! chorioretinal region
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/ed/Human_eye_cross-sectional_view_grayscale.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:6656
 property_value: UBPROP:0000001 "The portion of the eye developing from the optic primordium and including the neural retina and the retinal pigment layer. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000152", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "The eye of the adult lamprey is remarkably similar to our own, and it possesses numerous features (including the expression of opsin genes) that are very similar to those of the eyes of jawed vertebrates. The lamprey's camera-like eye has a lens, an iris and extra-ocular muscles (five of them, unlike the eyes of jawed vertebrates, which have six), although it lacks intra-ocular muscles. Its retina also has a structure very similar to that of the retinas of other vertebrates, with three nuclear layers comprised of the cell bodies of photoreceptors and bipolar, horizontal, amacrine and ganglion cells. The southern hemisphere lamprey, Geotria australis, possesses five morphological classes of retinal photoreceptor and five classes of opsin, each of which is closely related to the opsins of jawed vertebrates. Given these similarities, we reach the inescapable conclusion that the last common ancestor of jawless and jawed vertebrates already possessed an eye that was comparable to that of extant lampreys and gnathostomes. Accordingly, a vertebrate camera-like eye must have been present by the time that lampreys and gnathostomes diverged, around 500 Mya.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000229", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1038/nrn2283 Lamb TD, Collin SP and Pugh EN Jr, Evolution of the vertebrate eye: opsins, photoreceptors, retina and eye cup. Nature Reviews Neuroscience (2007)"}
 property_value: UBPROP:0000007 "retinal" xsd:string
@@ -3289,6 +3263,7 @@ xref: VHOG:0000311
 xref: XAO:0000190
 relationship: part_of UBERON:0001690 ! ear
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/29/Gray907.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:9709 {source="Wikipedia"}
 property_value: UBPROP:0000001 "The external part of the organ, which consists of an outer portion (external auditory meatus) which leads to the tympanum. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000311", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000003 "Some species, like Amolops tormotus (Feng et al. 2006), have a cavity in front of the tympanic membrane which is considered to be an ear canal and thus an outer ear. (...) The ancestral lineage of amphibians separated from the mammalian lineage, approximately 350 million years ago, in the paleozoic era. Many of the important developments in the auditory systems emerged after the ancestral paths separated (Manley and Clack 2003). This implies that shared features, like the tympanic middle ear, developed independently in different vertebrate lineages.[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000311", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1007/s00359-008-0327-1 Schoffelen RLM, Segenhout JM, Van Dijk P, Mechanics of the exceptional anuran ear. Journal of Comparative Physiology A (2008)"}
 property_value: UBPROP:0000012 "in XAO this includes and is only the tympanum" xsd:string {external_ontology="XAO"}
@@ -4919,6 +4894,7 @@ xref: VHOG:0001476
 is_a: UBERON:0004859 ! eye gland
 relationship: part_of UBERON:0001750 ! lacrimal apparatus
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/cf/Gray896.png xsd:anyURI
+property_value: RO:0002161 NCBITaxon:8570 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
 property_value: UBPROP:0000001 "Lobular organ the parenchyma of which consists of glandular acini which communicate the lacrimal sac. Examples: There only two instances, right lacrimal and left lacrimal glands." xsd:string {source="FMA:59101"}
 property_value: UBPROP:0000001 "The preorbital gland is a paired exocrine gland found in many species of hoofed animals, which is homologous to the lacrimal gland found in humans. These glands are trenchlike slits of dark blue to black, nearly bare skin extending from the medial canthus of each eye. They are lined by a combination of sebaceous and sudoriferous glands, and they produce secretions which contain pheromones and other semiochemical compounds. Ungulates frequently deposit these secretions on twigs and grass as a means of communication with other animals. The preorbital gland serves different roles in different species. Pheromone-containing secretions from the preorbital gland may serve to establish an animal's dominance (especially in preparation for breeding), mark its territory, or simply to produce a pleasurable sensation to the animal. Because of its critical role in scent marking, the preorbital gland is usually considered as a type of scent gland. A further function of these glands may be to produce antimicrobial compounds against skin pathogens. Antimicrobial compounds found in these glands may be biosynthesized by the animal itself, or by microorganisms that live in these glands[Wikipedia:Preorbital_gland]." xsd:string {source="Preorbital:gland"}
 property_value: UBPROP:0000006 https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
@@ -5390,6 +5366,7 @@ xref: http://www.snomedbrowser.com/Codes/Details/280426002
 xref: MA:0001295
 relationship: part_of UBERON:0001750 {source="FMA"} ! lacrimal apparatus
 property_value: IAO:0000116 "TODO - resolve lacrimal canaliculus vs larcimal duct" xsd:string
+property_value: RO:0002161 NCBITaxon:8459 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
 property_value: UBPROP:0000008 "chelonians lack a lacrimal duct, and lacrimal/harderian secretions remain in or spill from the conjunctival sac[PMID:7559104]" xsd:string
 
 [Term]
@@ -5970,6 +5947,7 @@ xref: http://en.wikipedia.org/wiki/Nares
 xref: OpenCyc:Mx4rvViCLpwpEbGdrcN5Y29ycA
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000004 ! nose
+property_value: RO:0002161 NCBITaxon:7745 {source="http://webs.lander.edu/rsfox/invertebrates/ammocoetes.html"}
 property_value: UBPROP:0000012 "this is a 'set of anatomical planes' in FMA" xsd:string {external_ontology="FMA"}
 
 [Term]
@@ -6626,6 +6604,7 @@ xref: UMLS:C0041445 {source="ncithesaurus:Tympanic_Membrane"}
 xref: VHOG:0001146
 xref: XAO:0000212
 relationship: part_of UBERON:0001756 {source="MA"} ! middle ear
+property_value: RO:0002161 NCBITaxon:8459 {source="Wikipedia"}
 property_value: UBPROP:0000001 "The thin membrane which closes externally the cavity of the middle ear and is deeply sited at the bottom of the external auditory meatus. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001146", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000003 "In particular, a tympanic membrane was not present in the earliest tetrapods (...). An ear utilizing a tympanic membrane evolved independently at least three times in tetrapods: (1) in the lineage that leads to anurans (frogs), (2) in the line of evolution to turtles and diapsids, and (3) in the late synapsid lineage that gave rise to mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001146", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.418"}
 property_value: UBPROP:0000011 "The tympanic membrane (TM) has three layers, two epithelia provided by the external acoustic meatus (EAM) and the MEC, derived respectively from the first pharyngeal cleft and pouch, and a mesenchymally derived fibrous stratum" xsd:string
@@ -7050,6 +7029,7 @@ xref: XAO:0000095
 xref: ZFA:0000034
 is_a: UBERON:0001032 ! sensory system
 property_value: IAO:0000116 "we model this as being potentially inclusive of lateral line scales, and thus overlapping with the skeletal system. This is to accomodate TAO" xsd:string
+property_value: RO:0002161 NCBITaxon:32524 {source="http://tolweb.org/Amniota"}
 property_value: UBPROP:0000001 "A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000034", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Sensory system which develops from a specialized series of dorsolateral ectodermal placodes named lateral line placodes.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000975", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000002 "relationship loss: is_formed_by lateral line receptor organ (AAO:0001001)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000975", ontology="AAO"}
@@ -8831,6 +8811,11 @@ xref: NCIT:C77619
 xref: UMLS:C0018597 {source="ncithesaurus:Harderian_Gland"}
 is_a: UBERON:0004859 ! eye gland
 relationship: part_of UBERON:0000019 ! camera-type eye
+property_value: RO:0002161 NCBITaxon:33554 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
+property_value: RO:0002161 NCBITaxon:9397 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
+property_value: RO:0002161 NCBITaxon:9443 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
+property_value: RO:0002161 NCBITaxon:9606 {notes="may be transient in embryos", source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
+property_value: RO:0002161 NCBITaxon:9787 {source="http://www.ncbi.nlm.nih.gov/pubmed/7559104"}
 property_value: RO:0002175 NCBITaxon:10047 {source="ISBN:1118473523"}
 property_value: RO:0002175 NCBITaxon:8293 {source="https://sourceforge.net/p/geneontology/ontology-requests/10639"}
 property_value: RO:0002175 NCBITaxon:8342 {source="https://sourceforge.net/p/geneontology/ontology-requests/10639"}
@@ -9290,6 +9275,7 @@ xref: MESH:D012171
 xref: XAO:0004153
 is_a: UBERON:0002203 ! vasculature of eye
 relationship: part_of UBERON:0000966 ! retina
+property_value: RO:0002161 NCBITaxon:8782 {source="http://www.ncbi.nlm.nih.gov/pubmed/21622558", source="http://www.ncbi.nlm.nih.gov/pubmed/2772405", submitter="michaelerice"}
 
 [Term]
 id: UBERON:0004868
@@ -9796,6 +9782,7 @@ xref: RETIRED_EHDAA2:0000976
 xref: UMLS:C1182652 {source="ncithesaurus:Subcapsular_Epithelium_of_the_Lens"}
 xref: VHOG:0001425
 is_a: UBERON:0001803 ! epithelium of lens
+relationship: part_of UBERON:0000965 ! lens of camera-type eye
 property_value: UBPROP:0000010 "Cells of the subcapsular epithelium (or anterior lens cells) are mitotically active. In adult individuals they only cover the anterior 'hemisphere' of the lens. As they divide, cells gradually move towards the equator of the lens where they tranform into lens fibres. The apical part of the gradually elongating cell extends between the subcapsular epithelium and adjacent lens fibres towards the anterior pole of the lens. The basal part extends towards the posterior pole. The nucleus remains close to the equatorial plane of the lens - http://www.lab.anhb.uwa.edu.au/mb140/corepages/eye/eye.htm" xsd:string
 
 [Term]
@@ -10593,6 +10580,7 @@ namespace: uberon
 def: "Acellular mineralized structure located in the statocyst (balance organ) of some aquatic invertebrates[WP,CJM]." [https://orcid.org/0000-0002-6601-2165]
 synonym: "calcareous statoliths" NARROW []
 relationship: part_of UBERON:0006583 ! statocyst
+property_value: RO:0002161 NCBITaxon:7742
 
 [Term]
 id: UBERON:0006583
@@ -10605,6 +10593,7 @@ synonym: "statocyst organ" RELATED []
 xref: http://en.wikipedia.org/wiki/Statocyst
 is_a: UBERON:0000020 ! sense organ
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/7e/Statocyst.jpg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:7742
 property_value: RO:0002174 NCBITaxon:110815 {source="Wikipedia"}
 property_value: RO:0002175 NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 property_value: RO:0002175 NCBITaxon:6073
@@ -11476,6 +11465,7 @@ def: "Sclerotic rings are rings of bone found in the eyes of several groups of v
 synonym: "scleral ring" EXACT [http://en.wikipedia.org/wiki/Sclerotic_ring]
 xref: Sclerotic:ring
 is_a: UBERON:0010290 {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"} ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0007818
@@ -11914,6 +11904,8 @@ xref: AAO:0001006
 xref: TAO:0002104
 is_a: UBERON:0035555 ! lateral line sense organ
 relationship: part_of UBERON:0010202 ! lateral line
+property_value: RO:0002161 NCBITaxon:7915
+property_value: RO:0002161 NCBITaxon:7922
 property_value: RO:0002175 NCBITaxon:7746
 property_value: RO:0002175 NCBITaxon:7777
 property_value: RO:0002175 NCBITaxon:7900
@@ -11935,6 +11927,8 @@ synonym: "ampullae of Lorenzini" EXACT PLURAL [http://en.wikipedia.org/wiki/Ampu
 xref: http://en.wikipedia.org/wiki/Ampullae_of_Lorenzini
 is_a: UBERON:0035555 ! lateral line sense organ
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/88/Electroreceptors_in_a_sharks_head.svg xsd:anyURI
+property_value: RO:0002161 NCBITaxon:32443 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:32523
 property_value: RO:0002175 NCBITaxon:119203
 
 [Term]
@@ -12643,6 +12637,8 @@ xref: UMLS:C0028058 {source="ncithesaurus:Nictitating_Membrane"}
 is_a: UBERON:0001711 ! eyelid
 relationship: part_of UBERON:0001811 ! conjunctiva
 property_value: IAO:0000116 "We exclude the shark structure for this via a taxon constraint." xsd:string
+property_value: RO:0002161 NCBITaxon:376913 {source="Wikipedia"}
+property_value: RO:0002161 NCBITaxon:8570
 property_value: RO:0002175 NCBITaxon:261739
 property_value: RO:0002175 NCBITaxon:8292
 property_value: RO:0002175 NCBITaxon:8782
@@ -12795,6 +12791,7 @@ synonym: "retractor bulbi muscle" EXACT []
 xref: AAO:0010122
 is_a: UBERON:0001601 {source="cjm"} ! extra-ocular muscle
 property_value: IAO:0000116 "TODO - add innervation relationships" xsd:string
+property_value: RO:0002161 NCBITaxon:9606 {source="Wikipedia"}
 property_value: RO:0002175 NCBITaxon:40674
 property_value: UBPROP:0000008 "In most other mammals it also innervates the musculus retractor bulbi, which can retract the eye for protection" xsd:string {source="wiki/Abducens_nerve"}
 
@@ -12829,6 +12826,7 @@ is_a: UBERON:0010296 ! scleral skeletal element
 relationship: part_of UBERON:0001773 {source="cjm"} ! sclera
 property_value: IAO:0000116 "consider distinguishing cup from predecessor of ossicle. Hall: The scleral cartilaginous cup is a distinctly sepa- rate element composed of hyaline cartilage" xsd:string
 property_value: IAO:0000116 "relationship to sclera - overlaps?" xsd:string
+property_value: RO:0002161 NCBITaxon:32525 {source="PMID:17051547 - but present in monotremes"}
 property_value: UBPROP:0000001 "Bilaterally paired thin continuous band of cartilage that sagittally encircles the eye.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001509", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "May be calcified in chondrichthyans. Tetrapods without this element (e.g., snakes and mammals) have a collagenous sclera. May not be homologous - see http://www.ncbi.nlm.nih.gov/pubmed/17051547. cup-shaped in birds. Present in monotremes." xsd:string
 
@@ -12842,6 +12840,8 @@ synonym: "sclerotic bone" EXACT [ZFA:0001411]
 synonym: "sclerotic ossicle" EXACT []
 xref: http://www.snomedbrowser.com/Codes/Details/45632000
 is_a: UBERON:0010296 ! scleral skeletal element
+property_value: RO:0002161 NCBITaxon:7777 {source="PMID:17051547 Walls 1942"}
+property_value: RO:0002161 NCBITaxon:7878 {source="PMID:17051547 Kemp 1999"}
 property_value: UBPROP:0000008 "The distribution of scleral ossicles and scleral cartilage among verte- brate taxa is not the same. Some taxa (e.g., birds) have both elements; some only have one element (e.g., crocodiles only have a scleral cartilage); while others (e.g., snakes) have neither element (Walls, 1942) number of ossicles making up the sclerotic ring as well as the shape of both the individual plates and the sclerotic ring is variable among tetrapod taxa.... It is therefore extremely likely that scleral skeletal elements (ossicles and cartilage) of all rep- tiles (including birds) are homologous (but cannot be assumed for reptiles and teleosts)" xsd:string
 property_value: UBPROP:0000009 "The function of these elements is to support the eye from within the sclera; scleral ossicles play an additional important role during accommodation in terrestrial vertebrates (Lemmrich, 1931; Walls, 1942; King and McLelland, 1984)." xsd:string
 
@@ -12921,6 +12921,7 @@ name: scleral skeletal element
 namespace: uberon
 relationship: part_of UBERON:0000019 ! camera-type eye
 property_value: IAO:0000232 "An eye adnexal structure, but not necessarily part of the eyeball" xsd:string
+property_value: RO:0002161 NCBITaxon:40674 {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"}
 
 [Term]
 id: UBERON:0010297
@@ -12930,6 +12931,7 @@ synonym: "sclerotic bones" RELATED PLURAL [ZFA:0001411]
 xref: TAO:0001411
 xref: ZFA:0001411
 is_a: UBERON:0010290 ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:32523
 property_value: UBPROP:0000001 "A pair of small dish-shaped bones that cap the anterior and posterior margin of the eyeball.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001411", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "The scleral ossicles [of teleosts] are reported to form indirectly by endochondral (Hall and Miyake, 1992) or by perichondral ossification (Patterson, 1977) from a cartilage element that is also present in the sclera. This is unlike the scleral ossicles of reptiles, which develop directly from ectomesenchyme (i.e., intramembranous ossification) and independently from the scleral cartilage" xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/17051547"}
 
@@ -12939,6 +12941,7 @@ name: intramembranous scleral ossicle
 namespace: uberon
 comment: are of dermal (neural crest) origin, develop intramembranously within the scleral mesenchyme, and are induced to form by overlying (transient) epithelial scleral papillae (Nelson, 1942; Murray, 1943; Fyfe and Hall, 1981, 1983; Hall, 1981, 2005; Pinto and Hall, 1991)
 is_a: UBERON:0010290 ! scleral ossicle
+property_value: RO:0002161 NCBITaxon:32443
 property_value: UBPROP:0000011 "The scleral ossicles [in reptiles]" xsd:string
 
 [Term]
@@ -13131,6 +13134,7 @@ synonym: "palatal choana" EXACT []
 synonym: "palatal cleft" RELATED []
 is_a: UBERON:0010425 ! internal naris
 property_value: IAO:0000116 "todo - check AAO:0000025 apertura nasalis interna" xsd:string
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000001 "Hole on the nasal capsule that connects the nasal and buccal cavites.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000025", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000002 "relationship loss: subclass nasal opening (AAO:0000316)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000025", ontology="AAO"}
 property_value: UBPROP:0000009 "has function in pressure equalization in birds that fly to high altitudes" xsd:string
@@ -13200,6 +13204,7 @@ synonym: "median anterior naris" EXACT []
 synonym: "median nostril" EXACT []
 synonym: "nasohypophysial opening" EXACT [http://tolweb.org/Hyperoartia]
 is_a: UBERON:0005928 ! external naris
+property_value: RO:0002161 NCBITaxon:314146
 property_value: RO:0002175 NCBITaxon:7762
 
 [Term]
@@ -13357,6 +13362,8 @@ namespace: uberon
 def: "Moist, hairless, crenelated area around nostrils of some mammals" [http://anthro.palomar.edu/primate/glossary.htm, http://en.wikipedia.org/wiki/Rhinarium]
 xref: http://en.wikipedia.org/wiki/Rhinarium
 relationship: part_of UBERON:0007827 ! external nose
+property_value: RO:0002161 NCBITaxon:9475
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000008 "Absent in Tarsiers" xsd:string
 
 [Term]
@@ -13763,6 +13770,7 @@ xref: NCIT:C77616
 is_a: UBERON:0013229 ! eyelid gland
 relationship: part_of UBERON:0010207 ! nictitating membrane
 property_value: IAO:0000232 "This gland is distinct from the other medial ocular gland, the Harderian gland, and is typified by clusters of glandular tissue within the nictitating membrane" xsd:string
+property_value: RO:0002161 NCBITaxon:39107 {source="ISBN:1118473523"}
 property_value: RO:0002175 NCBITaxon:10047 {source="ISBN:1118473523"}
 
 [Term]
@@ -14015,6 +14023,7 @@ xref: XAO:0003145
 is_a: UBERON:0000020 ! sense organ
 relationship: part_of UBERON:0001855 {source="MA-abduced"} ! cochlear duct of membranous labyrinth
 property_value: IAO:0000116 "consider classifying as a sensory epithelium" xsd:string
+property_value: RO:0002161 NCBITaxon:40674
 property_value: UBPROP:0000001 "A sensory structure in the lagenar portion of an amphibian's membranous labyrinth between the oval and round windows.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0011018", ontology="AAO", source="XAO:curator"}
 
 [Term]
@@ -14294,6 +14303,7 @@ name: multi-unit eye
 namespace: uberon
 def: "An eye consisting of multiple light-sensing organs" [http://orcid.org/0000-0002-6601-2165, http://www.ncbi.nlm.nih.gov/pubmed/21062451]
 is_a: UBERON:0000970 ! eye
+property_value: RO:0002161 NCBITaxon:7742
 property_value: RO:0002175 NCBITaxon:6340 {notes="present on tentacular crown", source="http://www.ncbi.nlm.nih.gov/pubmed/21062451"}
 property_value: RO:0002175 NCBITaxon:6544 {notes="present on mantle edge in arcacean Bivalvia", source="http://www.ncbi.nlm.nih.gov/pubmed/21062451"}
 property_value: RO:0002175 NCBITaxon:7588 {notes="The eyes (optic cushions) on the oral surface of Asteroida (Echinodermata), close to the base of the terminal tentacles, are also composed of a number of simple ocelli - as many as 80-200 in certain species", source="http://www.ncbi.nlm.nih.gov/pubmed/21062451"}
@@ -14308,6 +14318,11 @@ synonym: "tapetal layer" EXACT []
 synonym: "tapetum layer" EXACT []
 xref: SPD:0000343
 relationship: part_of UBERON:0000970 ! eye
+property_value: RO:0002161 NCBITaxon:8782 {editor="cjm", source="http://www.ncbi.nlm.nih.gov/pubmed/14738502"}
+property_value: RO:0002161 NCBITaxon:9321 {editor="cjm", source="http://www.ncbi.nlm.nih.gov/pubmed/14738502"}
+property_value: RO:0002161 NCBITaxon:9443 {editor="cjm", source="http://www.ncbi.nlm.nih.gov/pubmed/14738502"}
+property_value: RO:0002161 NCBITaxon:9606
+property_value: RO:0002161 NCBITaxon:9822 {editor="cjm", source="http://www.ncbi.nlm.nih.gov/pubmed/14738502"}
 property_value: UBPROP:0000007 "tapetal" xsd:string
 
 [Term]
@@ -15012,6 +15027,7 @@ namespace: uberon
 def: "An opening of the otic duct within the inner ear. The recessus basilaris can open to the saccule (in frogs) or the lagena (in salamanders and caecilians). The sensory epithelium of the recessus basilaris is the basilar papilla (or papilla basilaris). Reference: Lewis, E.R. and R.E. Lombard. 1988. The amphibian inner ear. Pp. 93-123 in Fritszch, B., et al. (eds.), The Evolution of the Amphibian Auditory System. Wiley & Sons. [curated by D. Blackburn]" [PHENOSCAPE:wd]
 synonym: "basilar papillar recess" EXACT []
 relationship: part_of UBERON:0001846 ! internal ear
+property_value: RO:0002161 NCBITaxon:40674
 
 [Term]
 id: UBERON:0019206
@@ -15147,6 +15163,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C1882706
 xref: MA:0003109
 xref: NCIT:C60574
 is_a: UBERON:0001817 {source="MA"} ! lacrimal gland
+property_value: RO:0002161 NCBITaxon:9606
 
 [Term]
 id: UBERON:0019325
@@ -15162,6 +15179,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C1882664
 xref: MA:0003110
 xref: NCIT:C60564
 is_a: UBERON:0001817 {source="MA"} ! lacrimal gland
+property_value: RO:0002161 NCBITaxon:9606
 property_value: UBPROP:0000008 "more than 10% of rat exorbital gland appears to be composed of harderian gland-like cells by 22 months of age (Coujard 1974; Sashima et al. 1989).[PMID:7559104]" xsd:string
 
 [Term]
@@ -15816,19 +15834,19 @@ property_value: UBPROP:0000015 "located anterior and ventral to the exterior ear
 [Term]
 id: UBERON:1500003
 name: lateral line canal lumen
-namespace: none
-def: "Anatomical space that contains a portion of the lateral line system." [] {comment="PHENOSCAPE:MAH"}
+namespace: uberon
+def: "Anatomical space that contains a portion of the lateral line system." [PHENOSCAPE] {comment="PHENOSCAPE:MAH"}
 comment: TO DO: think about definitions for spaces in bone, in which pass through nerves, muscles, tendons and are defined by them.
 relationship: part_of UBERON:0002540 ! lateral line system
 
 [Term]
 id: UBERON:2000116
 name: macula lagena
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0000116
 is_a: UBERON:0000054 ! macula
 relationship: part_of UBERON:0002518 ! otolith organ
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -15848,89 +15866,89 @@ relationship: part_of UBERON:0002540 ! lateral line system
 [Term]
 id: UBERON:2000125
 name: mandibular lateral line neuromast
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Neuromast that is part of the mandibular lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 synonym: "neuromast mandibular" EXACT [TAO:0000125]
 synonym: "neuromasts mandibular" EXACT PLURAL [TAO:0000125]
 xref: ZFA:0000125
 is_a: UBERON:0008904 ! neuromast
 relationship: part_of UBERON:2000259 ! mandibular lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000136
 name: otic lateral line neuromast
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Neuromast that is part of the otic lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 synonym: "neuromast otic" EXACT [TAO:0000136]
 synonym: "neuromasts otic" EXACT PLURAL [TAO:0000136]
 xref: ZFA:0000136
 is_a: UBERON:0008904 ! neuromast
 relationship: part_of UBERON:2000464 ! otic lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000168
 name: anterior macula
-namespace: uberon/phenoscape-anatomy
-def: "Patches of thickened, pseudostratified epithelium of the inner ear, consisting of regular arrays of sensory hair cells interspersed with supporting cells. Each patch has its own charcteristic shape and polarity pattern. (See Anatomical Atlas entry for sensory patches of the ear by T. Whitfield.)" [ZFIN:curator]
+namespace: uberon
+def: "Macula that is located in the developing anterior inner ear, and gives rise to the macula utricle. (See Anatomical Atlas entry for sensory patches of the ear by T. Whitfield.)" [ZFIN:curator]
 synonym: "am" EXACT [TAO:0000168]
 xref: ZFA:0000168
 is_a: UBERON:0000054 ! macula
 relationship: part_of UBERON:0002518 ! otolith organ
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000175
 name: posterior lateral line nerve
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cranial nerve which enters the brain between cranial nerves VIII and IX; contains afferents and sensory efferents to the posterior lateral line ganglion and middle ganglion. Fibers from the posterior lateral line ganglion innervate the occipital dorsal lateral line and trunk lateral lines." [ZFIN:curator]
 synonym: "caudal lateral line nerve" EXACT [TAO:0000175]
 xref: ZFA:0000175
 is_a: UBERON:0008906 ! lateral line nerve
 relationship: part_of UBERON:2001471 ! posterior lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000225
 name: lateral crista primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "lateral crista primordia" EXACT PLURAL [TAO:0000225]
 xref: ZFA:0000225
 is_a: UBERON:0003240 ! epithelium of lateral semicircular canal
 is_a: UBERON:0003249 ! epithelium of otic placode
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000228
 name: lateral line primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "lateral line primordia" EXACT PLURAL [TAO:0000228]
 synonym: "llp" EXACT [TAO:0000228]
 xref: ZFA:0000228
 relationship: part_of UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000232
 name: lateral semicircular canal primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "lateral semicircular canal primordia" EXACT PLURAL [TAO:0000232]
 xref: ZFA:0000232
 relationship: part_of UBERON:0001840 ! semicircular canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000234
 name: macula neglecta
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Macula positioned on the floor of the utricle adjacent to the utriculosaccular foramen at the base of the common crus." [ZFA:0000234]
 xref: ZFA:0000234
 is_a: UBERON:0000054 ! macula
@@ -15940,147 +15958,147 @@ created_by: teleost_anatomy_curators
 [Term]
 id: UBERON:2000259
 name: mandibular lateral line
-namespace: uberon/phenoscape-anatomy
-def: "One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+namespace: uberon
+def: "One of eight distinct lateral lines in the 4-day larva consisting of 2 neuromast. One neuromast is positioned at the front edge of the jaw the second posteriorly on the mandible. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 xref: ZFA:0000259
 is_a: UBERON:2001470 ! anterior lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000315
 name: asteriscus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "lagenar otolith" EXACT [TAO:0000315]
 synonym: "lagenolith" EXACT [TAO:0000315]
 xref: ZFA:0000315
 is_a: UBERON:0002280 ! otolith
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000411
 name: posterior crista primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "posterior crista primordia" EXACT PLURAL [TAO:0000411]
 xref: ZFA:0000411
 is_a: UBERON:0003239 ! epithelium of posterior semicircular canal
 is_a: UBERON:0003249 ! epithelium of otic placode
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000412
 name: posterior semicircular canal primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "posterior semicircular canal primordia" EXACT PLURAL [TAO:0000412]
 xref: ZFA:0000412
 relationship: part_of UBERON:0001840 ! semicircular canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000424
 name: opercular lateral line
-namespace: uberon/phenoscape-anatomy
-def: "One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+namespace: uberon
+def: "One of eight distinct lateral lines in the 4-day larva positioned posteriorly to the second arch skeletal element. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 xref: ZFA:0000424
 is_a: UBERON:2001470 ! anterior lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000425
 name: anterior lateral line nerve
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cranial nerve which enters the brain between cranial nerves VI and VII; contains afferents and sensory efferents to the anterior lateral line ganglia." [ZFIN:curator]
 synonym: "rostral lateral line nerve" EXACT [TAO:0000425]
 xref: ZFA:0000425
 is_a: UBERON:0008906 ! lateral line nerve
 relationship: part_of UBERON:2001468 ! anterior lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000464
 name: otic lateral line
-namespace: uberon/phenoscape-anatomy
-def: "One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+namespace: uberon
+def: "One of eight distinct lateral lines in the 4-day larva positioned anterior to the ear. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 xref: ZFA:0000464
 is_a: UBERON:2001470 ! anterior lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000469
 name: anterior semicircular canal primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "anterior semicircular canal primordia" EXACT PLURAL [TAO:0000469]
 xref: ZFA:0000469
 relationship: part_of UBERON:0001840 ! semicircular canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000530
 name: lapillus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "utricular otolith" EXACT [TAO:0000530]
 synonym: "utriculith" EXACT [TAO:0000530]
 xref: ZFA:0000530
 is_a: UBERON:0002280 ! otolith
 relationship: part_of UBERON:0001853 ! utricle of membranous labyrinth
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000558
 name: posterior macula
-namespace: uberon/phenoscape-anatomy
-def: "Patches of thickened, pseudostratified epithelium of the inner ear, consisting of regular arrays of sensory hair cells interspersed with supporting cells. Each patch has its own charcteristic shape and polarity pattern. (See Anatomical Atlas entry for sensory patches of the ear by T. Whitfield.)" [ZFIN:curator]
+namespace: uberon
+def: "Macula that is located in the developing posterior inner ear, and gives rise to the macula neglecta and the macula saccule. (See Anatomical Atlas entry for sensory patches of the ear by T. Whitfield.)" [ZFIN:curator]
 synonym: "pm" EXACT [TAO:0000558]
 synonym: "posteromedial macula" EXACT [TAO:0000558]
 xref: ZFA:0000558
 is_a: UBERON:0000054 ! macula
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000676
 name: sagitta
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "saccular otolith" EXACT [TAO:0000676]
 synonym: "sacculith" EXACT [TAO:0000676]
 xref: ZFA:0000676
 is_a: UBERON:0002280 ! otolith
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000813
 name: infraorbital lateral line neuromast
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Neuromast that is part of the infraorbital lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 synonym: "neuromast infraorbital" EXACT [TAO:0000813]
 synonym: "neuromasts infraorbital" EXACT PLURAL [TAO:0000813]
 xref: ZFA:0000813
 is_a: UBERON:0008904 ! neuromast
 relationship: part_of UBERON:0003094 ! infraorbital lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2000814
 name: opercular lateral line neuromast
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Neuromast that is part of the opercular lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 synonym: "neuromast opercular" EXACT [TAO:0000814]
 synonym: "neuromasts opercular" EXACT PLURAL [TAO:0000814]
 xref: ZFA:0000814
 is_a: UBERON:0008904 ! neuromast
 relationship: part_of UBERON:2000424 ! opercular lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -16100,14 +16118,14 @@ relationship: part_of UBERON:0003096 ! middle lateral line
 [Term]
 id: UBERON:2000940
 name: posterior lateral line neuromast
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Neuromast that is part of the posterior lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 synonym: "neuromast posterior" EXACT [TAO:0000940]
 synonym: "neuromasts posterior" EXACT PLURAL [TAO:0000940]
 xref: ZFA:0000940
 is_a: UBERON:0008904 ! neuromast
 relationship: part_of UBERON:0006334 ! posterior lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -16142,22 +16160,21 @@ relationship: part_of UBERON:0003090 ! supraorbital lateral line
 id: UBERON:2001156
 name: posterior lateral line placode
 namespace: uberon
-namespace: uberon/phenoscape-anatomy
 xref: ZFA:0001156
 relationship: part_of UBERON:2001471 ! posterior lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001157
 name: posterior lateral line primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A migrating group of cells originating from the posterior lateral line placode. The primordium deposits seven to nine neuromasts and interneuromasts between them during its posterior migration to the tail. Gompel et al, 2001." [ZFIN:curator]
 synonym: "posterior lateral line primordia" EXACT PLURAL [TAO:0001157]
 xref: ZFA:0001157
 is_a: UBERON:2000228 ! lateral line primordium
 relationship: part_of UBERON:2001471 ! posterior lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -16174,22 +16191,21 @@ is_a: UBERON:2001391 ! anterior lateral line ganglion
 [Term]
 id: UBERON:2001313
 name: ventral anterior lateral line ganglion
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "anteroventral lateral line ganglion" EXACT [TAO:0001313]
 xref: ZFA:0001313
 is_a: UBERON:2001391 ! anterior lateral line ganglion
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001314
 name: posterior lateral line ganglion
 namespace: uberon
-namespace: uberon/phenoscape-anatomy
 def: "The posterior lateral line ganglion develops from a cranial ectodermal placode and contains sensory neurons that innervate the posterior lateral line system." [ZFIN:curator]
 xref: ZFA:0001314
 is_a: UBERON:2000120 ! lateral line ganglion
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -16210,7 +16226,6 @@ property_value: UBPROP:0000001 "Lateral line placode that gives rise to the ante
 [Term]
 id: UBERON:2001391
 name: anterior lateral line ganglion
-namespace: none
 namespace: uberon
 def: "The anteror lateral line ganglia develops from cranial ectodermal placodes and contain sensory neurons that innervate the anterior lateral line system." [ZFIN:curator]
 subset: efo_slim
@@ -16224,51 +16239,51 @@ relationship: part_of UBERON:2001468 ! anterior lateral line system
 [Term]
 id: UBERON:2001426
 name: posterior naris
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "posterior nostril" EXACT [TAO:0001426]
 xref: ZFA:0001426
 is_a: UBERON:0005928 ! external naris
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001427
 name: anterior naris
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "anterior nostril" EXACT [TAO:0001427]
 xref: ZFA:0001427
 is_a: UBERON:0005928 ! external naris
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001428
 name: olfactory rosette
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "nasal rosette" EXACT [TAO:0001428]
 xref: ZFA:0001428
 is_a: UBERON:0019306 ! nose epithelium
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001432
 name: anterior sclerotic bone
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sclerotic bone that is located anterior to the eye." [TAO:wd]
 xref: ZFA:0001432
 is_a: UBERON:0010297 ! endochondral scleral ossicle
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001433
 name: posterior sclerotic bone
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sclerotic bone that is located posterior to the eye." [TAO:wd]
 xref: ZFA:0001433
 is_a: UBERON:0010297 ! endochondral scleral ossicle
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -16295,125 +16310,125 @@ relationship: part_of UBERON:2001468 ! anterior lateral line system
 [Term]
 id: UBERON:2001471
 name: posterior lateral line system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The posterior lateral line system develops from cranial ectodermal placodes, situated behind the ear, that give rise to both the neuromasts and the posterior lateral line sensory nerves that innervate the neuromasts. The posterior lateral line system consists of small sensory patches (neuromasts) located superficially on the skin or just under the skin in fluid-filled canals on the head of all fishes and most amphibians. The neuromasts are innervated by several lateral line nerves, which project primarily to the hindbrain. The posterior mechanosensory lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance." [ZFIN:curator]
 xref: ZFA:0001471
 is_a: UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001472
 name: anterior lateral line neuromast
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Neuromast that is part of the anterior lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 synonym: "neuromast anterior" EXACT [TAO:0001472]
 xref: ZFA:0001472
 is_a: UBERON:0008904 ! neuromast
 relationship: part_of UBERON:2001470 ! anterior lateral line
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001480
 name: dorsal anterior lateral line nerve
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Nerve fibers originating from the dorsal anterior lateral line ganglion. These rami innervate the otic, supraorbital, and infraorbital neuromasts." [ZFIN:curator]
 xref: ZFA:0001480
 is_a: UBERON:0008906 ! lateral line nerve
 relationship: part_of UBERON:2000425 ! anterior lateral line nerve
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001481
 name: ventral anterior lateral line nerve
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Nerve fibers originating from the ventral anterior lateral line ganglion. These rami innervate the mandibular and opercular neuromasts." [ZFIN:curator]
 xref: ZFA:0001481
 is_a: UBERON:0008906 ! lateral line nerve
 relationship: part_of UBERON:2000425 ! anterior lateral line nerve
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001482
 name: middle lateral line nerve
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Nerve fibers originating from the middle lateral line ganglion. These fibers innervate the middle lateral line." [ZFIN:curator]
 xref: ZFA:0001482
 is_a: UBERON:0008906 ! lateral line nerve
 relationship: part_of UBERON:2000175 ! posterior lateral line nerve
 relationship: part_of UBERON:2005114 ! middle lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001483
 name: middle lateral line ganglion
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The middle lateral line ganglion develops from a cranial ectodermal placode and contains sensory neurons that innervate the middle lateral line." [ZFIN:curator]
 xref: ZFA:0001483
 is_a: UBERON:2000120 ! lateral line ganglion
 relationship: part_of UBERON:2005114 ! middle lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001612
 name: sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Multi-tissue structure that is a fluid-filled canal in the integument and usually dermal bones, and contains one or more neuromast organs." [TAO:wd]
 comment: Sensory canals usually communicate with the environment via pores in the sensory canal or at the distal ends of tubules, which extend from canal where pores would otherwise be.
 synonym: "lateral line canal" EXACT [TAO:0001612]
 synonym: "lateral-line canal" EXACT [TAO:0001612]
 xref: ZFA:0005443
 relationship: part_of UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001617
 name: trunk sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal on trunk which is posterior to the pectoral girdle and often reaching to or onto the caudal fin. The trunk sensory canal is bilaterally paired." [TAO:wd]
 comment: Pores frequently piercing scales if present; occasionally enclosed in bony ossicles.
 synonym: "trunk lateral line canal" EXACT [TAO:0001617]
 xref: ZFA:0005444
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001872 ! trunk sensory canal system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001619
 name: post-otic sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal between and in close proximity to the trunk sensory canal and anteriorly with the otic and preoperculo-mandibular sensory canals. The post-otic sensory canal is bilaterally paired." [TAO:wd]
 comment: May be continuous with to the trunk sensory canal and anteriorly with the otic and preoperculo-mandibular sensory canals.
 synonym: "post-temporal canal" EXACT [TAO:0001619]
 xref: ZFA:0005394
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001873 ! head sensory canal system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001629
 name: otic sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal between and in close proximity posteriorly with the post-otic and preoperculo-mandibular sensory canals, and anteriorly with the supraorbital and infraorbital sensory canals. The otic sensory canal is bilaterally paired." [TAO:wd]
 comment: May be continuous with the post-otic and preoperculo-mandibular sensory canals, and anteriorly with the supraorbital and infraorbital sensory canals.
 xref: ZFA:0005393
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001873 ! head sensory canal system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001630
 name: supratemporal sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 alt_id: UBERON:2001618
 def: "Sensory canal that crosses over the dorsal midline and in close proximity to the contralateral post-otic sensory canals. The supratemporal sensory canal is unpaired." [TAO:wd]
 synonym: "occipital canal" EXACT [TAO:0001630]
@@ -16421,158 +16436,158 @@ synonym: "occipital sensory canal" EXACT [TAO:0001630]
 synonym: "supratemporal canal" EXACT [TAO:0001630]
 xref: ZFA:0005445
 is_a: UBERON:2001612 ! sensory canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001810
 name: supraorbital sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal anterior to and in close proximity to the otic and infraorbital sensory canals. The supraorbital sensory canal is bilaterally paired." [TAO:wd]
 comment: May be continuous with otic and infraorbital sensory canals.
 synonym: "supraorbital canal" EXACT [TAO:0001810]
 xref: ZFA:0005396
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001873 ! head sensory canal system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001811
 name: infraorbital sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal lateral or ventral to and in close proximity to the otic and supraorbital sensory canals at their union. The infraorbital sensory canal is bilaterally paired and associated with the infraorbital bones." [TAO:wd]
 comment: May be continuous with otic and supraorbital sensory canals at their union.
 synonym: "infraorbital canal" EXACT [TAO:0001811]
 xref: ZFA:0005392
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001873 ! head sensory canal system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001812
 name: preoperculo-mandibular sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal lateral or ventral to and in close proximity to the otic and post-otic sensory canals at their union. The preoperculo-mandibular sensory canal is bilaterally paired and associated with the preopercle, angular and dentary bones." [TAO:wd]
 comment: May be continuous with the otic and post-otic sensory canals at their union.
 synonym: "preoperculo-mandibular canal" EXACT [TAO:0001812]
 xref: ZFA:0005395
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001873 ! head sensory canal system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001813
 name: preopercular sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal lateral or ventral to and in close proximity with the otic and post-otic sensory canals at their union, and anteroventrally with the mandibular sensory canal. The preopercular sensory canal is bilaterally paired and associated with the preopercle bone." [TAO:wd]
 comment: May be continuous with the otic and post-otic sensory canals at their union.
 xref: ZFA:0005448
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001812 ! preoperculo-mandibular sensory canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001814
 name: mandibular sensory canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal anterior and ventral to and in close proximity with the preoperculo-mandibular sensory canal. The mandible sensory canal is bilaterally paired and associated with the angular and dentary bones." [TAO:wd]
 comment: May be continuous with the preoperculo-mandibular sensory canal.
 synonym: "mandibular canal" RELATED [TAO:0001814]
 xref: ZFA:0005451
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001812 ! preoperculo-mandibular sensory canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001824
 name: lateral line scale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Scale that is associated with the lateral line sensory canal." [TAO:wd]
 xref: ZFA:0005530
 relationship: part_of UBERON:2002099 ! lateral line scale series
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001872
 name: trunk sensory canal system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Lateral line system on trunk." [TAO:wd]
 is_a: UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001873
 name: head sensory canal system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Lateral line system on head and pectoral girdle." [TAO:wd]
 synonym: "cephalic sensory canal system" EXACT [TAO:0001873]
 xref: ZFA:0005391
 is_a: UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001933
 name: sensory canal tubule
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory canal that is a side branch between a sensory canal proximally and a pore at its distal end. Sensory canal tubule is bilaterally paired although often imperfectly so." [TAO:wd]
 xref: ZFA:0005447
 is_a: UBERON:2001612 ! sensory canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002099
 name: lateral line scale series
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anatomical cluster that consists of more than one lateral line scale." [TAO:wd]
 is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002193
 name: dorsolateral septum
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Portion of tissue that grows in from the dorsolateral wall of the otic vesicle, forming a dorsolateral partition between the developing anterior and posterior semicircular canals." [ZFIN:ZDB-PUB-961014-383]
 synonym: "dorsal bar" RELATED [TAO:0002193]
 xref: ZFA:0001672
 relationship: part_of UBERON:0001841 ! anterior semicircular canal
 relationship: part_of UBERON:0001842 ! posterior semicircular canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002206
 name: macula communis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001671
 is_a: UBERON:0006937 ! inner ear epithelium
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002223
 name: pillar of the semicircular canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0001717
 relationship: part_of UBERON:0001840 ! semicircular canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002248
 name: supratemporal commissure
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Lateral line canal that that crosses the supratemporal region posterior to the openings of the endolymphatic ducts and connects the lateral canals of each side." [DOI: 10.1002/cne.900280102]
 comment: Not clear what the taxon constraints are here. The cited reference discusses two species of dogfish.
 is_a: UBERON:1500003 ! lateral line canal lumen
@@ -16581,20 +16596,20 @@ created_by: teleost_anatomy_curators
 [Term]
 id: UBERON:2002275
 name: Jakubowski's organ
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Neuromast of the supraorbital sensory canal in the nasal bone. It is innervated by the buccal nerve rather than by the supraorbital nerve, which invariably innervates neuromasts of the supraorbital canal. (Johnson and Patterson 1993)." [TAO:wd]
 is_a: UBERON:0008904 ! neuromast
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005054
 name: inner optic circle
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "IOC" EXACT [TAO:0005054]
 xref: ZFA:0005054
 is_a: UBERON:0002203 ! vasculature of eye
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -16611,154 +16626,154 @@ relationship: part_of UBERON:0003095 ! dorsal lateral line
 [Term]
 id: UBERON:2005114
 name: middle lateral line system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005114
 is_a: UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005115
 name: primary posterior lateral line primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Primordium that forms the first neuromasts of the posterior lateral line. This primordium travels at 1.5-1.7 somites/hour and deposits neuromast that are polarized along the antero-posterior axis." [ZFIN:curator]
 synonym: "primary posterior lateral line primordia" EXACT PLURAL [TAO:0005115]
 synonym: "primI" EXACT [TAO:0005115]
 xref: ZFA:0005115
 is_a: UBERON:2001157 ! posterior lateral line primordium
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005116
 name: secondary posterior lateral line primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Second lateral line primordium. These primordia moves at 0.2 somites/hour and deposite neromasts that are polarized in a dorso-ventral direction." [ZFIN:curator]
 synonym: "secondary posterior lateral line primordia" EXACT PLURAL [TAO:0005116]
 xref: ZFA:0005116
 is_a: UBERON:2001157 ! posterior lateral line primordium
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005117
 name: anterior lateral line primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A migrating group of cells originating from an anterior lateral line placode. The primordium deposits neuromasts and interneuromasts between them during its migration." [ZFIN:curator]
 synonym: "anterior lateral line primordia" EXACT PLURAL [TAO:0005117]
 xref: ZFA:0005117
 is_a: UBERON:2000228 ! lateral line primordium
 relationship: part_of UBERON:2001468 ! anterior lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005118
 name: middle lateral line primordium
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A migrating group of cells originating from the middle lateral line placode. The primordium deposits neuromasts with interneuromasts between them." [ZFIN:curator]
 synonym: "middle lateral line primordia" EXACT PLURAL [TAO:0005118]
 xref: ZFA:0005118
 is_a: UBERON:2000228 ! lateral line primordium
 relationship: part_of UBERON:2005114 ! middle lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005121
 name: middle lateral line placode
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005121
 relationship: part_of UBERON:2005114 ! middle lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005144
 name: ampullary nerve
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A branch of the 8th cranial nerve that innervates the cristae ampullaris." [ZFIN:curator]
 xref: ZFA:0005144
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005227
 name: protoneuromast
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "immature neuromast" RELATED [TAO:0005227]
 synonym: "proto neuromast" RELATED [TAO:0005227]
 synonym: "proto-neuromast" RELATED [TAO:0005227]
 xref: ZFA:0005227
 relationship: part_of UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005409
 name: pars superior ear
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The dorsal part of the ear. Comprises the three semicircular canals, which connect to the utricle." [ZFIN:curator]
 xref: ZFA:0005409
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005410
 name: pars inferior ear
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The ventral portion of the ear. It contains the saccule and the laguena which are the primary auditory organs." [ZFIN:curator]
 xref: ZFA:0005410
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005411
 name: common crus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005411
 relationship: part_of UBERON:2005409 ! pars superior ear
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005412
 name: transverse canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Duct that crosses the midline connecting the sacculi." [ZFIN:curator]
 xref: ZFA:0005412
 relationship: part_of UBERON:0002105 ! vestibulo-auditory system
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005415
 name: inner ear foramen
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Foramen in the inner ear." [ZFIN:curator]
 xref: ZFA:0005415
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005416
 name: sacculoagenar foramen
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 xref: ZFA:0005416
 is_a: UBERON:2005415 ! inner ear foramen
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2007054
 name: pillar of the anterior semicircular canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "anterior hub of the semicircular canal" EXACT [TAO:0007054]
 synonym: "anterior pillar" EXACT [TAO:0007054]
 synonym: "anterior pillar of the semicircular canal" EXACT [TAO:0007054]
@@ -16766,13 +16781,13 @@ synonym: "horizontal hub" RELATED [TAO:0007054]
 xref: ZFA:0007054
 is_a: UBERON:2002223 ! pillar of the semicircular canal
 relationship: part_of UBERON:0001841 ! anterior semicircular canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2007055
 name: pillar of the lateral semicircular canal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "lateral hub of the semicircular canal" EXACT [TAO:0007055]
 synonym: "ventral bar" EXACT [TAO:0007055]
 synonym: "ventral pillar" EXACT [TAO:0007055]
@@ -16780,13 +16795,13 @@ synonym: "ventral piller of the semicircular canal" EXACT [TAO:0007055]
 xref: ZFA:0007055
 is_a: UBERON:2002223 ! pillar of the semicircular canal
 relationship: part_of UBERON:0001843 ! lateral semicircular canal
-property_value: provenance_notes "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:3000002
 name: alary cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Paired, cup-shaped cartilage that are dorsal to the septomaxillae and anterior to the oblique cartilage. The anterior, convex face of each alary cartilage is synchondrotically fused to the superior prenasal cartilage and the ventral edge is fused to the superior margin of the crista intermedia." [AAO:LAP]
 synonym: "alinasal cartilage" RELATED [UBERON:3000002]
 synonym: "cartilago alaris" RELATED [UBERON:3000002]
@@ -16798,219 +16813,219 @@ synonym: "processus alaris" RELATED [UBERON:3000002]
 synonym: "second upper labial" RELATED [UBERON:3000002]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000015
 name: anterior maxillary process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that extends anteriorly from the planum triangulare and invests the medial face of the pars facialis of the maxilla." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000016
 name: anterior nasal wall
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Paired, vertical, and relatively straight plates that form the anterior limit of the nasal capsule." [AAO:LAP]
 synonym: "prenasal wall" RELATED [UBERON:3000016]
 synonym: "solum anterius" RELATED [UBERON:3000016]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000057
 name: canalis semicircularis anterior
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001840 ! semicircular canal
 relationship: part_of UBERON:0001842 ! posterior semicircular canal
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000059
 name: capsular process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Narrow process of the skeletal support that projects forward." [AAO:LAP]
 relationship: part_of UBERON:3000565 ! skeletal support for eminentia olfactoria
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000068
 name: cartilago ectochoanalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Lateral cartilaginous border of the fenestra endochoanalis." [AAO:LAP]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000069
 name: cartilago infranarina
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000079
 name: cartilago retronarina
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000085
 name: cavum inferius
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Accessory cavity located ventral to the cavum principale and cavum medius." [AAO:LAP]
 is_a: UBERON:0001707 ! nasal cavity
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000086
 name: cavum internasale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001707 ! nasal cavity
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000087
 name: cavum medius
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Small accessory cavity located between the cavum principale and cavum inferius." [AAO:LAP]
 is_a: UBERON:0001707 ! nasal cavity
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000088
 name: cavum praenasale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001707 ! nasal cavity
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000089
 name: cavum principale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "The largest part of the nasal cavity, containing the olfactory epithelium." [AAO:LAP] {comment="AAO:EJS"}
 is_a: UBERON:0001707 ! nasal cavity
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000110
 name: crista contacta
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Thin, horizontal ridge that extends medially from the corpus of the septomaxilla; it lays on the lamina inferior." [AAO:LAP]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000113
 name: crista intermedia
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Paired, oblique plates of cartilage located ventral to the alary cartilages. The dorsomedial margin of each crista intermedia is fused to the transitional zone between the septum nasi and the tectum nasi, whereas the ventrolateral margin bears two laminae, the lamina superior and the lamina inferior." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000117
 name: crista subnasalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Ventral crest of the paries nasi." [AAO:LAP]
 synonym: "subnasal crest" RELATED [UBERON:3000117]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000118
 name: crista supraorbitalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Short and blunt process that extends posteriorly from the posteromedial margin of the postnasal wall, on the anterodorsal corner of the orbit above the medial orbitonasal foramen." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000141
 name: endolymphatic system
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000155
 name: extremitas anterior
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Large anterior outgrowth of the septomaxilla that is directed into the space between the alary cartilage and the lamina inferior." [AAO:LAP]
 synonym: "anterior ramus" RELATED [UBERON:3000155]
 relationship: part_of UBERON:0011167 ! septomaxilla bone
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000160
 name: fenestra dorsalis nasi
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000161
 name: fenestra endochoanalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Opening on the ventral aspect of the nasal capsule. It contains the apertura nasalis interna." [AAO:LAP]
 synonym: "fenestra exochoanalis" RELATED [UBERON:3000161]
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000162
 name: fenestra endonarina communis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Opening on the anterolateral aspect of the nasal capsule. It contains the apertura nasalis externa." [AAO:LAP]
 synonym: "apertura nasalis externa" RELATED [UBERON:3000162]
 synonym: "fenestra narina" RELATED [UBERON:3000162]
 synonym: "narial fenestra" RELATED [UBERON:3000162]
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000164
 name: fenestra lateralis nasi
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Opening on the lateral side of the nasal capsule." [AAO:LAP]
 synonym: "fenestra infraconchalis" RELATED [UBERON:3000164]
 synonym: "fenestra retronarina" RELATED [UBERON:3000164]
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000166
 name: fenestra nasobasalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Small opening at the anterior tip of the nasal capsule, on the floor of the cavum inferius. It is located medially to the base of the inferior prenasal cartilage and serves for the passage of the ramus medialis narium and arteria orbitonasalis." [AAO:LAP]
 synonym: "basal fenestra" RELATED [UBERON:3000166]
 synonym: "fenestra basalis nasi" RELATED [UBERON:3000166]
@@ -17018,39 +17033,39 @@ synonym: "foramen apicale" RELATED [UBERON:3000166]
 synonym: "foramen epiphaniale" RELATED [UBERON:3000166]
 synonym: "nasobasal fenestra" RELATED [UBERON:3000166]
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000167
 name: fenestra nasolateralis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Elongated opening located on the lateral side of the nasal capsule." [AAO:LAP]
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000170
 name: fenestra precerebralis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000171
 name: fenestra prechoanalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Large opening of the nasal floor anterior to the fenestra endochoanalis." [AAO:LAP]
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000178
 name: footplate of pars media plectri
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Independent, horizontal bar of cartilage located on the anterior part of the fenestra ovalis in front of the pars interna plectri." [AAO:LAP]
 synonym: "fenestral plate" RELATED [UBERON:3000178]
 synonym: "interstapediale" RELATED [UBERON:3000178]
@@ -17058,119 +17073,119 @@ synonym: "otostapes" RELATED [UBERON:3000178]
 synonym: "pars otica columellae" RELATED [UBERON:3000178]
 synonym: "pseudooperculum" RELATED [UBERON:3000178]
 relationship: part_of UBERON:3000408 ! pars media plectri
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000189
 name: foramen orbitonasale laterale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000190
 name: foramen orbitonasale mediale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "canalis orbitonasalis" RELATED [UBERON:3000190]
 synonym: "canalis orbitonasalis medialis" RELATED [UBERON:3000190]
 synonym: "foramen orbitonasale" RELATED [UBERON:3000190]
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000234
 name: inferior prenasal cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Elongate cartilage that extends anteroventrally from the solum nasi to abut the ventral portion of the posterior aspect of the alary process of the premaxilla. It was first described by Wiedersheim in 1876." [AAO:LAP]
 synonym: "inferior prenasal process" RELATED [UBERON:3000234]
 synonym: "processus prenasalis inferior" RELATED [UBERON:3000234]
 synonym: "processus prenasalis inferior lateralis" RELATED [UBERON:3000234]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000259
 name: lamina inferior
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Lateral expansion of the crista intermedia that serves as the floor of the cavum medium." [AAO:LAP]
 synonym: "lamina inferior cristae intermediae" RELATED [UBERON:3000259]
 relationship: part_of UBERON:0006332 ! nasal capsule
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000260
 name: lamina nariochoanalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Free, dorsal margin of the lamina inferior." [AAO:LAP]
 relationship: part_of UBERON:0006332 ! nasal capsule
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000263
 name: lamina precerebralis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Posterior face of septum nasi." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000264
 name: lamina superior
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Lateral expansion of the crista intermedia that serves as the roof of the cavum medium." [AAO:LAP]
 synonym: "lamina superior cristae intermediae" RELATED [UBERON:3000264]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000290
 name: medial inferior prenasal cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000291
 name: medial orbitonasal foramen
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Opening on the postnasal wall for the medial branch (= ramus medialis nasi) of the ophthalmicus nerve." [AAO:LAP]
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000294
 name: median prenasal process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anterior projection of the septum nasi that protrudes through the anterior nasal wall." [AAO:LAP]
 synonym: "processus prenasalis medius" RELATED [UBERON:3000294]
 relationship: part_of UBERON:0001706 ! nasal septum
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000316
 name: nasal opening
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0006332 ! nasal capsule
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000329
 name: oblique cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Semi-circular cartilaginous sheet that lies lateral to the side of the septum nasi." [AAO:LAP]
 synonym: "cartilago obliqua" RELATED [UBERON:3000329]
 synonym: "cartilago obliqua nasi" RELATED [UBERON:3000329]
@@ -17179,60 +17194,60 @@ synonym: "dorsal process" RELATED [UBERON:3000329]
 synonym: "lamina obliqua" RELATED [UBERON:3000329]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000333
 name: olfactory foramen
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:3000316 ! nasal opening
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000381
 name: paranasal commissure
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cartilaginous bridge that extends posteriorly to the anterolateral corner of the posterior nasal wall." [AAO:LAP]
 synonym: "commissura lateralis nasi" RELATED [UBERON:3000381]
 synonym: "connection between lamina nariochoanalis and postnasal wall" RELATED [UBERON:3000381]
 synonym: "processus lingularis" RELATED [UBERON:3000381]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000389
 name: paries nasi
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Paired, elongate, ventrolaterally-orieted cartilaginous structures that extend to the premaxilla-maxilla articulation." [AAO:LAP]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000393
 name: pars amphibiorum
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000395
 name: pars basilaris
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000399
 name: pars externa plectri
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "extracolumellare" RELATED [UBERON:3000399]
 synonym: "extrapediale" RELATED [UBERON:3000399]
 synonym: "extraplectral" RELATED [UBERON:3000399]
@@ -17241,133 +17256,133 @@ synonym: "hyostapes" RELATED [UBERON:3000399]
 synonym: "medio-stapedial" RELATED [UBERON:3000399]
 synonym: "pars quadrata columellae" RELATED [UBERON:3000399]
 relationship: part_of UBERON:3000443 ! plectral apparatus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000405
 name: pars inferior of labyrinth
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000406
 name: pars interna plectri
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Plate-like structure that lies in the fenestra ovalis. It arises within the membrana opercularis in the posterior part of the fenestra." [AOO:LAP]
 synonym: "operculum auris" RELATED [UBERON:3000406]
 synonym: "operculum fenestrae ovalis" RELATED [UBERON:3000406]
 relationship: part_of UBERON:3000443 ! plectral apparatus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000408
 name: pars media plectri
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000443 ! plectral apparatus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000428
 name: perilymphatic system
-namespace: uberon/phenoscape-anatomy
-def: "Consists of enlarged cistern against which the operculum and footplate of the columella rest in the oval window. Together with the endolymphatic systems comprises the membranous labryinth of the inner ear. Duellman and Trueb 1994." []
+namespace: uberon
+def: "Consists of enlarged cistern against which the operculum and footplate of the columella rest in the oval window. Together with the endolymphatic systems comprises the membranous labryinth of the inner ear. Duellman and Trueb 1994." [PHENOSCAPE]
 is_a: UBERON:0001032 ! sensory system
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000434
 name: planum antorbitale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000437
 name: planum conchale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000438
 name: planum internasale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000440
 name: planum terminale
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Vertical plate of cartilage that is fused posterodorsally to the oblique cartilage and anteriorly to the lamina inferior." [AAO:LAP]
 synonym: "pars terminalis" RELATED [UBERON:3000440]
 synonym: "terminal plate" RELATED [UBERON:3000440]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000441
 name: planum triangulare
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cartilaginous, distal expansion of the lamina orbitonasalis that invests the pars facialis of the maxilla medially." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000443
 name: plectral apparatus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Complex sound-conducting anatomical structure." [AAO:LAP]
 is_a: UBERON:0001686 ! auditory ossicle bone
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000448
 name: posterior maxillary process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Process that extends posteriorly from the planum triangulare and invests the maxilla laterally and the anterior ramus of the pterygoid medially." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000449
 name: posterior maxillary process dorsal process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000448 ! posterior maxillary process
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000454
 name: postnasal wall
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Paired, anteriorly concave structures that form the posterior limit of nasal capsule. It consists of two parts: a ventral piece, the lamina orbitonasalis, and a dorsal plate that is part of the tectum nasi." [AAO:LAP]
 synonym: "posterior wall of nasal capsule" BROAD []
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000486
 name: processus ascendens plectri
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cartilaginous or ligamentous connection between the pars externa plectri and the crista parotica." [AAO:LAP]
 synonym: "laterohyale" RELATED [UBERON:3000486]
 synonym: "processus ascendens columellae" RELATED [UBERON:3000486]
@@ -17375,112 +17390,112 @@ synonym: "processus dorsalis columellae" RELATED [UBERON:3000486]
 synonym: "processus superior columellae" RELATED [UBERON:3000486]
 synonym: "suprastapediale" RELATED [UBERON:3000486]
 relationship: part_of UBERON:3000399 ! pars externa plectri
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000492
 name: processus infrafenestralis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Posterior part of the corpus of the septomaxilla; the posterior surface of the processus infrafenestralis is in contact with the oblique cartilage." [AAO:LAP]
 synonym: "dorsal crest" RELATED [UBERON:3000492]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000509
 name: processus suprafenestralis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000645 ! corpus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000538
 name: recessus fenestrae ovalis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000428 ! perilymphatic system
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000547
 name: rostral process
-namespace: uberon/phenoscape-anatomy
-def: "Is a process of the nasal bone directed anteriorly towards the rostrum." []
+namespace: uberon
+def: "Is a process of the nasal bone directed anteriorly towards the rostrum." [PHENOSCAPE]
 relationship: part_of UBERON:0001681 ! nasal bone
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000560
 name: septum semicircularium anterior
-namespace: uberon/phenoscape-anatomy
-def: "The anterior connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." []
+namespace: uberon
+def: "The anterior connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." [PHENOSCAPE]
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000561
 name: septum semicircularium laterale
-namespace: uberon/phenoscape-anatomy
-def: "The lateral connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." []
+namespace: uberon
+def: "The lateral connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." [PHENOSCAPE]
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000562
 name: septum semircularium posterior
-namespace: uberon/phenoscape-anatomy
-def: "The posterior connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." []
+namespace: uberon
+def: "The posterior connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." [PHENOSCAPE]
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000563
 name: seydels palatal process
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000068 ! cartilago ectochoanalis
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000565
 name: skeletal support for eminentia olfactoria
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Elevation of the dorsal surface of the solum nasi medial to the fenestra endochoanalis that provides support for the eminentia olfactoria." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000569
 name: solum nasi
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Unpaired, horizontal plate that forms the floor of the nasal capsule." [AAO:LAP]
 synonym: "nasal floor" RELATED [UBERON:3000569]
 synonym: "planum basale" RELATED [UBERON:3000569]
 synonym: "solum nasale" RELATED [UBERON:3000569]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000570
 name: spatium sacculare
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:3000428 ! perilymphatic system
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000580
 name: stylus of pars media plectri
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 synonym: "columella" RELATED [UBERON:3000580]
 synonym: "columella auris" RELATED [UBERON:3000580]
 synonym: "columellare" RELATED [UBERON:3000580]
@@ -17493,310 +17508,311 @@ synonym: "stapes" RELATED [UBERON:3000580]
 synonym: "stelidium" RELATED [UBERON:3000580]
 synonym: "stilus columellare" RELATED [UBERON:3000580]
 relationship: part_of UBERON:3000408 ! pars media plectri
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000586
 name: superior prenasal cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Paired, elongate cartilages that extend anteroventrally to abut the dorsomedial margin of the posterior face of the alary process of the premaxilla. The function of these cartilages is to transmit the movement of the premaxilla to the alary cartilages during the closure of the apertura nasalis externa." [AAO:LAP]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000601
 name: tectum nasi
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Roof of the nasal capsule, confluent with lamina orbitonasalis posteriorly and united to septum nasi." [AAO:LAP]
 synonym: "tectum nasale" RELATED [UBERON:3000601]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000644
 name: processus lingularis of nasal skeleton
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Rod-shaped process that extends caudally from the inferior edge of the planum terminale." [AAO:LAP]
 synonym: "lingular process" RELATED [UBERON:3000644]
 synonym: "processus lingularis" BROAD []
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000645
 name: corpus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 alt_id: UBERON:3010459
 def: "Basal part of the septomaxilla." [AAO:LAP]
 synonym: "centrum" RELATED [UBERON:3000645]
 synonym: "pars horizontalis" RELATED [UBERON:3000645]
 relationship: part_of UBERON:0011167 ! septomaxilla bone
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000646
 name: margo libera
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Anterior, rounded portion of the corpus of the septomaxilla." [AAO:LAP]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000647
 name: crista interna
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sharp ridge that extends medially from the basal part of the processus infrafenestralis; it separates the diverticulum proncipale from the diverticulum medium." [AAO:LAP]
 relationship: part_of UBERON:3000492 ! processus infrafenestralis
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3000648
 name: crista praeopercularis
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Synchondrotic or synostotic connection between the footplate of the pars media plectri and the ventral margin of the fenestra ovalis." [AAO:LAP]
 relationship: part_of UBERON:3000408 ! pars media plectri
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010007
 name: pit organ
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 alt_id: UBERON:3010823
 def: "Mechanoreceptive organ of the lateral line, smaller than neuromasts, they are located on the surface of the epidermis. These receptors receive afferent and efferent innervation." [AAO:EJS]
 relationship: part_of UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010079
 name: upper eyelid protuberances
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0001712 ! upper eyelid
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010105
 name: anterodorsal lateral line nerve (ADLLN)
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory nerve of the anterior lateral line component. It develops from the preotic anterodorsal placode. ADLLN branches into two rami innervating orbital lines of neuromasts." [AAO:SIQ]
 is_a: UBERON:0008906 ! lateral line nerve
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010109
 name: anteroventral lateral line nerve (AVLLN)
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory nerve of the anterior lateral line component. It develops from preotic anteroventral placode. AVLLN innervates lower jaw lines of neuromasts." [AAO:EJS]
 is_a: UBERON:0008906 ! lateral line nerve
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010115
 name: posterior lateral line nerve (PLLN)
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory nerve of the posterior lateral line component. It develops from de postotic posterior placode. PLLN innervates the trunk lines of neuromasts." [AAO:EJS]
 is_a: UBERON:0008906 ! lateral line nerve
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010125
 name: musculus levator bulbi
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Cranial nerve V innervated; ventral to the eye." [AAO:EJS]
 is_a: UBERON:0001601 ! extra-ocular muscle
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010126
 name: middle lateral line nerve (MLLN)
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Sensory nerve of the posterior lateral line component. It develops from the postotic middle placode. MLLN innervates neuromasts located over the otic capsule and the suprabranchial line of neuromasts." [AAO:EJS]
 is_a: UBERON:0008906 ! lateral line nerve
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010146
 name: lacrimal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Investing bone in non-teleosts associated with nasolacrimal duct and lying between pars facialis of maxilla and prefrontal and sometimes nasal." [AAO:EJS]
 synonym: "ectethmoid" RELATED [UBERON:3010146]
 is_a: UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010197
 name: lateral recess
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "A part of the inferior cavity of the olfactory organ, found in anurans." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001707 ! nasal cavity
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010706
 name: lateral line nucleus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 relationship: part_of UBERON:0002540 ! lateral line system
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010728
 name: otic opercular element
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Round, flat bone or cartilage that lies in the fenestra ovalis and articulates with the columella." [AAO:DBW]
 synonym: "otic operculum" EXACT []
 relationship: part_of UBERON:0001690 ! ear
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010735
 name: ramus anterior of CN VIII
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Formed by fibers from the anterior semicircular canal and sacculus." [AAO:EJS]
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010736
 name: ramus posterior of CN VIII
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Composed of two rami: a short ventral ramus innervating the cochlea (lagena and papille basilar), and a long dorsal ramus innervating the posterior semicircular canal." [AAO:EJS]
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010757
 name: ramus superficial ophthalmic
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Dorsal branch of ADLLN that innervates supraorbital line of neuromasts." [AAO:EJS]
 is_a: UBERON:3010105 ! anterodorsal lateral line nerve (ADLLN)
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010759
 name: ramus buccal
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Ventral ramus of the ADLLN that innervates the infraorbital line of neuromasts." [AAO:EJS]
 is_a: UBERON:3010105 ! anterodorsal lateral line nerve (ADLLN)
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010765
 name: ramus mandibularis externus
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Runs together with motor fibers of the hyomandibular trunk of VII. The mandibularis externus of AVLLN branches into three ramules ." [AAO:SIQ]
 is_a: UBERON:3010109 ! anteroventral lateral line nerve (AVLLN)
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010778
 name: jugal ramule
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "This ramule innervates the jugal line of neuromasts and is the dorsal branch of the ramus mandibularis externus." [AAO:SIQ]
 is_a: UBERON:3010765 ! ramus mandibularis externus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010794
 name: oral ramule
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Medial branch of the ramus mandibularis externus. This ramule innervates the oral and angular lines of neuromasts." [AAO:EJS]
 is_a: UBERON:3010765 ! ramus mandibularis externus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010795
 name: preopercular ramule
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Ventral branch of the ramus mandibularis externus. This ramule have a superior and an inferior division, both innervating the preopercular line of neuromasts." [AAO:EJS]
 is_a: UBERON:3010765 ! ramus mandibularis externus
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010796
 name: ramus supraotic
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Small ramus of the MLLN that innervates neuromasts located at the posterior margin of the otic capsule." [AAO:SIQ]
 is_a: UBERON:3010126 ! middle lateral line nerve (MLLN)
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010798
 name: ramulus suprabranchialis anterior
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Ramulus that innervates the suprabranchial line of neuromasts." [AAO:SIQ]
 is_a: UBERON:3010126 ! middle lateral line nerve (MLLN)
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010799
 name: ramulus suprabranchialis posterior
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Ramulus innervating the suprabranchial line of neuromasts." [AAO:SIQ]
 is_a: UBERON:3010126 ! middle lateral line nerve (MLLN)
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010801
 name: ramus lateral
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "Ventral division of the trunk of the PLLN, this prominent ramus extends over the lateral trunk and caudal musculature innervating the lateral line of neuromasts." [AAO:SIQ]
 is_a: UBERON:3010115 ! posterior lateral line nerve (PLLN)
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010804
 name: ramus ventral
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 def: "This ramus leaves the postotic ganglionic complex together with the third branchial ramus of X. This ramule innervates the ventral line of neuromasts." [AAO:SIQ]
 is_a: UBERON:3010115 ! posterior lateral line nerve (PLLN)
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010827
 name: anterior prenasal cartilage
-namespace: uberon/phenoscape-anatomy
+namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: provenance_notes "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:4200199
 name: sallet sensory system
-def: "Ciliary restraint system in the inner ear that uses sallets instead of the tectorial membrane." []
+namespace: uberon
+def: "Ciliary restraint system in the inner ear that uses sallets instead of the tectorial membrane." [PHENOSCAPE]
 synonym: "sallet restraint system" EXACT []
 relationship: part_of UBERON:0002105 ! vestibulo-auditory system
 created_by: AD
@@ -17804,8 +17820,8 @@ created_by: AD
 [Term]
 id: UBERON:4300005
 name: aphakic space
-namespace: none
-def: "The space in the pupil, which is not occupied by the lens. A rostral aphakic space may enhance the forward binocular field of vision. " []
+namespace: uberon
+def: "The space in the pupil, which is not occupied by the lens. A rostral aphakic space may enhance the forward binocular field of vision. " [PHENOSCAPE]
 xref: http://www.briancoad.com/Dictionary/Introduction%20and%20A-F.htm
 relationship: part_of UBERON:0000970 ! eye
 created_by: WD
@@ -17813,7 +17829,8 @@ created_by: WD
 [Term]
 id: UBERON:4300126
 name: tectorial restraint system
-def: "Tectorial restraint system is a type of ciliary restraint system for hair cells in the inner ear.  In tectorial restraint systems, the tectorial membrane restrains the cilia of the hair cells by attaching either directly to ciliary tufts or indirectly through various kinds of fibrous structure (simple fibers, fibrous strands, finger-like processes, tectorial plates). [Phylogenetic Relationships of the Lizard Families: Essays Commemorating Charles L. Camp. 1988. Eds. R Estes, GK Pregill. Stanford University Press]" []
+namespace: uberon
+def: "Tectorial restraint system is a type of ciliary restraint system for hair cells in the inner ear.  In tectorial restraint systems, the tectorial membrane restrains the cilia of the hair cells by attaching either directly to ciliary tufts or indirectly through various kinds of fibrous structure (simple fibers, fibrous strands, finger-like processes, tectorial plates) [Phylogenetic Relationships of the Lizard Families: Essays Commemorating Charles L. Camp. 1988. Eds. R Estes, GK Pregill. Stanford University Press]." [PHENOSCAPE]
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001846 ! internal ear
 created_by: WD
@@ -17821,7 +17838,8 @@ created_by: WD
 [Term]
 id: UBERON:4300176
 name: parietal branch of the supraorbital canal
-def: "Branch of supraorbital sensory canal that extends to the parietal." []
+namespace: uberon
+def: "Branch of supraorbital sensory canal that extends to the parietal." [PHENOSCAPE]
 is_a: UBERON:2001612 ! sensory canal
 relationship: part_of UBERON:2001873 ! head sensory canal system
 created_by: http://orcid.org/0000-0003-3162-7490
@@ -17829,27 +17847,31 @@ created_by: http://orcid.org/0000-0003-3162-7490
 [Term]
 id: UBERON:4300181
 name: posterior sclerotic cartilage
-def: "Sclerotic cartilage that is located posterior to the eye." []
+namespace: uberon
+def: "Sclerotic cartilage that is located posterior to the eye." [PHENOSCAPE]
 is_a: UBERON:0010289 ! scleral cartilage
 created_by: http://orcid.org/0000-0003-3162-7490
 
 [Term]
 id: UBERON:4300182
 name: anterior sclerotic cartilage
-def: "Sclerotic cartilage that is located anterior to the eye." []
+namespace: uberon
+def: "Sclerotic cartilage that is located anterior to the eye." [PHENOSCAPE]
 is_a: UBERON:0010289 ! scleral cartilage
 created_by: http://orcid.org/0000-0003-3162-7490
 
 [Term]
 id: UBERON:4300238
 name: pored lateral line scale
+namespace: uberon
 is_a: UBERON:2001824 ! lateral line scale
 created_by: WD
 
 [Term]
 id: UBERON:4300241
 name: ethmoid commissure
-def: "Sensory canal that traverses the rostral bone." []
+namespace: uberon
+def: "Sensory canal that traverses the rostral bone." [PHENOSCAPE]
 synonym: "ethmoid lateral line commissure" EXACT []
 is_a: UBERON:2001612 ! sensory canal
 created_by: WD
@@ -17857,7 +17879,8 @@ created_by: WD
 [Term]
 id: UBERON:4300242
 name: lateral line scale 6
-def: "The sixth scale in the lateral line series." []
+namespace: uberon
+def: "The sixth scale in the lateral line series." [PHENOSCAPE]
 is_a: UBERON:2001824 ! lateral line scale
 created_by: WD
 
@@ -18019,6 +18042,7 @@ property_value: IAO:0000112 "my brain is part of my body (continuant parthood, t
 property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
 property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
 property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
 property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
 property_value: IAO:0000118 "part_of" xsd:string
