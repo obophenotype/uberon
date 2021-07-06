@@ -121,7 +121,7 @@ core.owl: $(OWLSRC)
 ## TODO - restore Disjoints
 ## TODO - get rid of declarations and inferred subclass axioms for other ontology classes
 $(TMPDIR)/unreasoned.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl # $(COMPONENTSDIR)/phenoscape-ext.owl
-	owltools $(UCAT) $^ --merge-support-ontologies --remove-axioms  --remove-axioms -t ObjectPropertyDomain --remove-axioms -t ObjectPropertyRange -o -f functional $@
+	owltools $(UCAT) $^ --merge-support-ontologies -o -f functional $@
 
 # First pass at making base module
 # Currently this will be missing the temporary reflexivity axioms.
