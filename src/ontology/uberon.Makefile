@@ -6,6 +6,7 @@
 BRIDGEDIR =            bridge
 CONFIGDIR =            config
 TAXMODSDIR =           taxmods
+BRI=                   true
 
 OWLSRC =               $(TMPDIR)/uberon-edit.owl
 CATALOG_DYNAMIC =      catalog-dynamic.xml
@@ -385,29 +386,29 @@ $(TMPDIR)/local-%.obo: $(TMPDIR)/local-%.owl
 #	owltools $(USECAT) --extract-
 
 # Import module for RO
-#
+# if [ $(MIR) = true ] && [ $(IMP) = true ]; then command; fi
 # No TBox; use an OP seed that is derived from a separate sparql query
 imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl reports/uberon-edit-object-properties.csv
-	$(ROBOT) extract -i $< -m STAR -T reports/uberon-edit-object-properties.csv annotate -O $(URIBASE)/uberon/ro.owl -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m STAR -T reports/uberon-edit-object-properties.csv annotate -O $(URIBASE)/uberon/ro.owl -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
 
 imports/pato_import.owl: mirror/pato.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	if [ $(IMP) = true ]; then owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 # TODO - logical definitions go->ubr,cl
 imports/go_import.owl: mirror/go.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $<  $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/go.owl -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	if [ $(IMP) = true ]; then owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $<  $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/go.owl -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 imports/envo_import.owl: mirror/envo.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/envo.owl -c --make-subset-by-properties --force --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	if [ $(IMP) = true ]; then owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/envo.owl -c --make-subset-by-properties --force --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 imports/nbo_import.owl: mirror/nbo.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/nbo.owl -c --make-subset-by-properties --force  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	if [ $(IMP) = true ]; then owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/nbo.owl -c --make-subset-by-properties --force  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 imports/chebi_import.owl: mirror/chebi.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/chebi.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	if [ $(IMP) = true ]; then owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/chebi.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 imports/pr_import.owl: mirror/pr.owl $(TMPDIR)/seed.owl
-	owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pr.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	if [ $(IMP) = true ]; then owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pr.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 # TODO - use full taxonomy
 #ncbitaxon.owl: 
@@ -416,14 +417,14 @@ imports/pr_import.owl: mirror/pr.owl $(TMPDIR)/seed.owl
 
 
 imports/ncbitaxon_import.owl: mirror/ncbitaxon.obo $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo
-	OWLTOOLS_MEMORY=14G owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo --merge-support-ontologies --extract-module -s $(URIBASE)/ncbitaxon.owl -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	if [ $(IMP) = true ]; then OWLTOOLS_MEMORY=14G owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo --merge-support-ontologies --extract-module -s $(URIBASE)/ncbitaxon.owl -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 # CL - take **everything**
 imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
-	owltools $(UCAT) $<  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@
+	if [ $(IMP) = true ]; then owltools $(UCAT) $<  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 %_import.obo: %_import.owl
-	owltools $< --add-obo-shorthand-to-properties -o -f obo --no-check $@
+	if [ $(IMP) = true ]; then owltools $< --add-obo-shorthand-to-properties -o -f obo --no-check $@; fi
 
 imports: imports/pato_import.obo imports/chebi_import.obo imports/pr_import.obo imports/ncbitaxon_import.obo imports/cl_import.obo imports/go_import.obo imports/ro_import.obo
 	echo "STRONG WARNING: THIS GOAL HARDBAKES THE FOLLOWING IMPORTS AND COULD BE INCOMPLETE: $^" && touch $@
@@ -1168,7 +1169,7 @@ $(TMPDIR)/seed.owl: $(OWLSRC) $(TMPDIR)/cl-core.obo # $(COMPONENTSDIR)/phenoscap
 $(TMPDIR)/seed.obo: $(TMPDIR)/seed.owl
 	owltools $(UCAT) $< --add-support-from-imports --remove-imports-declarations  -o -f obo --no-check $@.tmp && $(SCRIPTSDIR)/obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
-BRIDGESRC_OBO = $(SRC) $(TMPDIR)/cl-with-xrefs.obo
+#BRIDGESRC_OBO = $(SRC) $(TMPDIR)/cl-with-xrefs.obo
 $(BRIDGEDIR)/uberon-bridge-to-nifstd.obo: $(SRC)
 	$(SCRIPTSDIR)/xref-to-equiv.pl uberon/$(BRIDGEDIR)/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
 $(BRIDGEDIR)/%.owl: $(BRIDGEDIR)/%.obo
@@ -1178,10 +1179,10 @@ make-bridge-ontologies-from-xrefs.pl:
 	cp $(SCRIPTSDIR)/make-bridge-ontologies-from-xrefs.pl $@
 
 $(BRIDGEDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(TMPDIR)/cl-zfa-xrefs.obo $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl make-bridge-ontologies-from-xrefs.pl
-	cd $(BRIDGEDIR) && perl ../make-bridge-ontologies-from-xrefs.pl ../$(TMPDIR)/seed.obo && perl ../make-bridge-ontologies-from-xrefs.pl -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && touch bridges
+	if [ $(BRI) = true ]; then cd $(BRIDGEDIR) && perl ../make-bridge-ontologies-from-xrefs.pl ../$(TMPDIR)/seed.obo && perl ../make-bridge-ontologies-from-xrefs.pl -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && touch bridges; fi
 
 $(TMPDIR)/cl-with-xrefs.obo: $(TMPDIR)/cl-core.obo $(SCRIPTSDIR)/expand-idspaces.pl
-	egrep '^(idspace|treat-)' $(SRC) > $@ && cat $< >> $@.tmp && $(SCRIPTSDIR)/expand-idspaces.pl $@.tmp > $@
+	if [ $(BRI) = true ]; then egrep '^(idspace|treat-)' $(SRC) > $@ && cat $< >> $@.tmp && $(SCRIPTSDIR)/expand-idspaces.pl $@.tmp > $@; fi
 
 # TODO @cmungall EMAP is dead, we can get rid of that. Rip out EMAP xrefs?
 # TODO check not imported in collected (@matentzn)
@@ -1719,7 +1720,7 @@ clean:
 	
 
 explain:
-	robot explain --input tmp/unreasoned-composite-metazoan.owl --reasoner ELK \
+	$(ROBOT) explain --input tmp/unreasoned-composite-metazoan.owl --reasoner ELK \
   --axiom "'Nucleus raphe obscurus' EquivalentTo: 'nucleus raphe obscurus'" \
   --explanation tmp/explanation.md
 
@@ -1748,7 +1749,7 @@ subsets/life-stages-composite.obo:
 
 OLDLOCATION=http://svn.code.sf.net/p/obo/svn/uberon/releases/2020-09-16
 diffr-%:
-	robot diff --left-iri $(OLDLOCATION)/$* --right ../../$* -o diff_$(shell echo $* | tr -cd '[:alnum:]._-').txt
+	$(ROBOT) diff --left-iri $(OLDLOCATION)/$* --right ../../$* -o diff_$(shell echo $* | tr -cd '[:alnum:]._-').txt
 
 diffs-%:
-	robot diff --left-iri $(OLDLOCATION)/subsets/$* --right ../../subsets/$* -o diff_$(shell echo $* | tr -cd '[:alnum:]._-').txt
+	$(ROBOT) diff --left-iri $(OLDLOCATION)/subsets/$* --right ../../subsets/$* -o diff_$(shell echo $* | tr -cd '[:alnum:]._-').txt
