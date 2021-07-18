@@ -88,7 +88,8 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
 # TODO: for the seeds to be correctly imported, we probably need to merge phenoscape in here
 $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	owltools $(UCAT) $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@.tmp > $@
+	owltools $(UCAT) $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@.tmp
+	$(ROBOT) query -i $@.tmp --update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru -o $@
 	
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
@@ -554,9 +555,11 @@ branches: reports/branches-nerve.png reports/branches-artery.png
 # EXTRACT TCs
 # ----------------------------------------
 
+
+
 # experimental: for propagation to GO
 $(TMPDIR)/uberon-taxon-constraints.obo: $(SRC)
-	obo-filter-relationships.pl -t only_in_taxon -t never_in_taxon $<  | obo-filter-tags.pl -t id -t name -t relationship - | $(SCRIPTSDIR)/obo-grep.pl --noheader -r relationship: - > $@.tmp && cat $@.tmp taxon-relations.obo > $@
+	$(SCRIPTSDIR)/obo-filter-relationships.pl -t only_in_taxon -t never_in_taxon $<  | $(SCRIPTSDIR)/obo-filter-tags.pl -t id -t name -t relationship - | $(SCRIPTSDIR)/obo-grep.pl --noheader -r relationship: - > $@.tmp && cat $@.tmp $(COMPONENTSDIR)/taxon-relations.obo > $@
 
 $(TMPDIR)/uberon-taxon-constraints.owl: $(TMPDIR)/uberon-taxon-constraints.obo
 	owltools $< --expand-macros -o $@
