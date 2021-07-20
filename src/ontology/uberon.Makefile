@@ -154,7 +154,7 @@ $(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl
 TMP_REFL=$(COMPONENTSDIR)/reflexivity_axioms.owl
 ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 	owltools $(UCAT) $< $(TMP_REFL) --merge-support-ontologies -o $(TMPDIR)/m1.owl && \
-	$(ROBOT) --catalog $(CATALOG) reduce -i $(TMPDIR)/m1.owl -r elk \
+	$(ROBOT) --catalog $(CATALOG) merge -i $(TMPDIR)/m1.owl --collapse-import-closure false \
 	unmerge -i $(TMP_REFL) \
 	annotate -O $(URIBASE)/uberon/$@ -V  $(RELEASE)/$@ -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
