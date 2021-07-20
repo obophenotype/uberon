@@ -1363,6 +1363,7 @@ xref: VHOG:0000605
 xref: Wikipedia:Ureter
 xref: XAO:0000144
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0011143 {source="FMA"} ! upper urinary tract
 relationship: part_of UBERON:0036295 ! renal pelvis/ureter
 property_value: depicted:by Urinary:system.svg xsd:anyURI
 property_value: UBPROP:0000001 "Anatomical structure consisting of long narrow duct which carries urine from the kidney to the urinary bladder.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010254", ontology="AAO", source="AAO:BJB"}
@@ -1655,6 +1656,7 @@ xref: UMLS:C0231057 {source="ncithesaurus:Urogenital_Sinus"}
 xref: VHOG:0000414
 xref: Wikipedia:Definitive_urogenital_sinus
 relationship: part_of UBERON:0000163 {source="MP-def"} ! embryonic cloaca
+relationship: part_of UBERON:0001008 {source="EHDAA2"} ! renal system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/6d/Gray1109.png xsd:anyURI
 property_value: UBPROP:0000001 "The ventral part of the cloaca after its separation from the rectum, giving rise to the lower part of the bladder in both sexes, to the prostatic portion of the male urethra, and to the urethra and vestibule in the female. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000414", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/urogenital+sinus"}
 property_value: UBPROP:0000003 "In mammals the lowly monotremes still have a cloaca. Higher types have done away with this structure and have a separate anal outlet for the rectum. The monotreme cloaca shows the initiation of this subdivision. The cloaca has such includes only the distal part, roughly comparable to the proctodeum. The more proximal part is divided into (1) a large dorsal passage into which the intestine opens, the coprodeum, and (2) a ventral portion, the urodeum with which the bladder connects. (...) the development of the placental mammals recapitulates in many respects the phylogenetic story. In the sexually indifferent stage of placental mammal there is a cloaca. While the indifferent stage still persists, a septum develops, and extends out to the closing membrane. This divides the cloaca into two chambers: a coprodeum continuous with the gut above, and a urodeum or urogenital sinus below.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000414", ontology="VHOG", source="ISBN:978-0721676678 Romer AS, Vertebrate body (1970)p.388-89 and Figure 300", source="http://bgee.unil.ch/"}
@@ -1770,6 +1772,7 @@ xref: FMA:20019
 xref: NCIT:C61122
 xref: SCTID:279869001
 is_a: UBERON:0010187 ! female urethral gland
+relationship: part_of UBERON:0001334 ! female urethra
 property_value: IAO:0000116 "compare with Skene's gland" xsd:string
 property_value: UBPROP:0000010 "check and part_of relationships to mammalian vulva / urethra" xsd:string
 
@@ -2019,6 +2022,7 @@ xref: NCIT:C12739
 xref: SCTID:362211004
 xref: UMLS:C0022655 {source="ncithesaurus:Renal_Cortex"}
 xref: Wikipedia:Renal_cortex
+relationship: part_of UBERON:0002113 ! kidney
 relationship: part_of UBERON:0008987 {source="FMA"} ! renal parenchyma
 property_value: depicted:by Illu:kidney.jpg xsd:anyURI
 property_value: UBPROP:0000010 "In the adult metanephros, it forms a continuous smooth outer zone with a number of projections that extend down between the pyramids. It contains the renal corpuscles and the renal tubules except for parts of the loop of Henle which descend into the renal medulla. It also contains blood vessels and cortical collecting ducts. The renal cortex is the part of the kidney where ultrafiltration occurs.[WP]" xsd:string
@@ -2114,6 +2118,7 @@ xref: Wikipedia:Renal_corpuscle
 xref: ZFA:0005281
 relationship: part_of UBERON:0001225 ! cortex of kidney
 relationship: part_of UBERON:0001285 {source="MA", source="ZFA"} ! nephron
+relationship: part_of UBERON:0007684 {source="FMA"} ! uriniferous tubule
 property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
 property_value: UBPROP:0000001 "A mass of arterial capillaries enveloped in a capsule and attached to a tubule in the kidney[BTO]" xsd:string {date_retrieved="2012-11-28", external_class="BTO:0000333", ontology="BTO", source="BTO:curator"}
 property_value: UBPROP:0000001 "A tuft of capillaries found in a Bowman's capsule in which waste products are filtered from the blood and urine formation is initiated. Paired highly vascularized structures of the pronephros, responsible for blood filtration.[XAO]" xsd:string {date_retrieved="2012-11-28", external_class="XAO:0000146", ontology="XAO", source="XAO:curator"}
@@ -2190,6 +2195,7 @@ xref: Wikipedia:Renal_tubule
 xref: ZFA:0001287
 is_a: UBERON:0004211 ! nephron epithelium
 is_a: UBERON:0009773 {source="GO"} ! renal tubule
+relationship: part_of UBERON:0001285 ! nephron
 property_value: UBPROP:0000012 "note that in ISBN:0073040584 (Vertebrates, Kardong), the uriniferous tubule contains the nephron, so we have a separate class, rather than using a synonym, as in MA" xsd:string {external_ontology="MA"}
 
 [Term]
@@ -2225,6 +2231,7 @@ xref: Wikipedia:Collecting_tubule
 xref: ZFA:0005294
 is_a: UBERON:0006555 ! excretory tube
 relationship: part_of UBERON:0001285 {notes="checkme", source="GO"} ! nephron
+relationship: part_of UBERON:0007684 {source="FMA"} ! uriniferous tubule
 property_value: UBPROP:0000001 "Renal duct that collects the output from renal tubules.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005294", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000012 "in ISBN:0073040584 (Vertebrates, Kardong), the nephron is adjacent to the collecting tubule, consistent with FMA, but not GO. Wikipedia says: Many sources include the connecting tubule as part of the collecting duct system. However, the embryological origin is more similar to the nephron than it is to the rest of the collecting duct (which derives from the ureteric bud), and other sources therefore classify the connecting tubule with the nephron" xsd:string {external_ontology="FMA"}
 
@@ -2243,6 +2250,7 @@ xref: FMA:15892
 xref: MA:0002652
 xref: SCTID:392273001
 xref: SCTID:47879001
+relationship: part_of UBERON:0000056 ! ureter
 relationship: part_of UBERON:0009916 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! wall of ureter
 
 [Term]
@@ -2259,7 +2267,10 @@ xref: EMAPA:28841
 xref: FMA:15896
 xref: MA:0002653
 xref: SCTID:2771005
+relationship: part_of UBERON:0000056 ! ureter
+relationship: part_of UBERON:0001008 ! renal system
 relationship: part_of UBERON:0004980 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mucosa of ureter
+relationship: part_of UBERON:0009916 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! wall of ureter
 
 [Term]
 id: UBERON:0001254
@@ -2426,6 +2437,7 @@ xref: MA:0001692
 xref: NCIT:C32205
 xref: SCTID:362224004
 xref: UMLS:C0227691 {source="ncithesaurus:Bladder_Mucosa"}
+relationship: part_of UBERON:0001255 ! urinary bladder
 relationship: part_of UBERON:0001256 ! wall of urinary bladder
 
 [Term]
@@ -2449,6 +2461,7 @@ xref: EMAPA:28661
 xref: FMA:15932
 xref: MA:0001696
 xref: SCTID:5868002
+relationship: part_of UBERON:0001255 ! urinary bladder
 relationship: part_of UBERON:0001256 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! wall of urinary bladder
 property_value: IAO:0000116 "TODO - check serosa/peritoneum" xsd:string
 
@@ -2473,6 +2486,8 @@ xref: FMA:15935
 xref: MA:0001695
 xref: NCIT:C48940
 xref: UMLS:C1706967 {source="ncithesaurus:Bladder_Lamina_Propria"}
+relationship: part_of UBERON:0001255 ! urinary bladder
+relationship: part_of UBERON:0001256 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! wall of urinary bladder
 relationship: part_of UBERON:0001259 ! mucosa of urinary bladder
 property_value: UBPROP:0000010 "Contains loose to dense connective tissue, variably sized blood vessels that may be close to epithelium, lymphatics, variable adipose tissue" xsd:string
 
@@ -2599,6 +2614,7 @@ xref: Wikipedia:Proximal_convoluted_tubule
 xref: ZFA:0005290
 is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
 is_a: UBERON:0006853 ! renal cortex tubule
+relationship: part_of UBERON:0001225 {notes="checkme"} ! cortex of kidney
 relationship: part_of UBERON:0004134 {notes="MA uses subclass", source="GOC:mtg_kidney_jan10"} ! proximal tubule
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/Gray1128.png xsd:anyURI
 property_value: UBPROP:0000001 "Renal tubule that connects to the renal corpuscle.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005290", ontology="TAO", source="ZFIN:curator"}
@@ -2711,6 +2727,7 @@ xref: MA:0001677
 xref: SCTID:244953001
 xref: Wikipedia:Thick_ascending_limb_of_loop_of_Henle
 is_a: UBERON:0009035 {source="MA"} ! renal straight tubule
+relationship: part_of UBERON:0004135 {source="GOC:dph", source="MA-modified-from-isa"} ! distal tubule
 relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/Gray1128.png xsd:anyURI
 property_value: IAO:0000116 "TODO - thick/thin check. Also - does the loop of Henle overlap the distal convoluted tubule? FMA divides DCT into straight and convoluted portions" xsd:string
@@ -2737,6 +2754,7 @@ xref: UMLS:C0022676 {source="ncithesaurus:Distal_Convoluted_Tubule"}
 xref: Wikipedia:Distal_convoluted_tubule
 is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
 is_a: UBERON:0006853 ! renal cortex tubule
+relationship: part_of UBERON:0001225 ! cortex of kidney
 relationship: part_of UBERON:0004135 {source="EMAPA", source="GO", source="MA-modified-from-isa"} ! distal tubule
 property_value: depicted:by Kidney:nephron.png xsd:anyURI
 property_value: UBPROP:0000001 "a portion of kidney nephron between the loop of Henle and the collecting duct system[Wikipedia:Distal_convoluted_tubule]." xsd:string {source="Wikipedia:Distal_convoluted_tubule"}
@@ -2762,6 +2780,7 @@ xref: EMAPA:28310
 xref: FMA:17733
 xref: MA:0001653
 relationship: part_of UBERON:0000362 ! renal medulla
+relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0001294
@@ -2783,6 +2802,7 @@ xref: EMAPA:28349
 xref: FMA:17734
 xref: MA:0001652
 relationship: part_of UBERON:0000362 ! renal medulla
+relationship: part_of UBERON:0002113 ! kidney
 property_value: UBPROP:0000008 "unique to mammals" xsd:string {source="GO:0072053"}
 
 [Term]
@@ -3142,6 +3162,7 @@ subset: pheno_slim
 xref: EMAPA:28278
 xref: FMA:84141
 xref: MA:0002602
+relationship: part_of UBERON:0001229 {source="MA"} ! renal corpuscle
 relationship: part_of UBERON:0002303 {source="MA"} ! juxtaglomerular apparatus
 relationship: part_of UBERON:0002319 {source="MA"} ! mesangium
 property_value: IAO:0000116 "check MA part_ofs - should be spatially disjoint from renal glomerulus?" xsd:string
@@ -3180,6 +3201,7 @@ xref: EMAPA:37785 {source="MA:th"}
 xref: FMA:85276
 xref: MA:0001689
 relationship: part_of UBERON:0000057 ! urethra
+relationship: part_of UBERON:0001008 ! renal system
 
 [Term]
 id: UBERON:0002335
@@ -3228,6 +3250,7 @@ xref: SCTID:278918009
 xref: UMLS:C0006366 {source="ncithesaurus:Cowper_s_Gland"}
 xref: Wikipedia:Bulbourethral_gland
 is_a: UBERON:0010186 ! male urethral gland
+relationship: part_of UBERON:0001333 {notes="check this", source="MA"} ! male urethra
 property_value: depicted:by Male:anatomy.png xsd:anyURI
 property_value: UBPROP:0000001 "Either of two small racemose glands that are located below the prostate and discharge a component of the seminal fluid into the urethra. They are homologous to the Bartholin's glands in the female[BTO]." xsd:string {ontology="BTO", source="BTO:0001698"}
 property_value: UBPROP:0000001 "Lobular organ the parenchyma of which consists of glandular acini which communicate the bulbar part of the urethra. Examples: There only two instances, right and left bulbo-urethral glands[FMA]" xsd:string {ontology="FMA", source="FMA:9599"}
@@ -3351,6 +3374,7 @@ xref: EMAPA:28457
 xref: MA:0001682
 xref: TAO:0005306
 xref: ZFA:0005306
+relationship: part_of UBERON:0002113 ! kidney
 relationship: part_of UBERON:0006544 ! kidney vasculature
 
 [Term]
@@ -3369,6 +3393,7 @@ xref: EMAPA:31443
 xref: MA:0002586
 xref: SCTID:275409003
 is_a: UBERON:0003517 ! kidney blood vessel
+relationship: part_of UBERON:0002113 ! kidney
 relationship: part_of UBERON:0006544 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! kidney vasculature
 
 [Term]
@@ -3379,6 +3404,7 @@ def: "A macula densa that is part of a distal convoluted tubule [Automatically g
 xref: MA:0001668
 is_a: UBERON:0002335 ! macula densa
 relationship: part_of UBERON:0001292 {source="MA"} ! distal convoluted tubule
+relationship: part_of UBERON:0002335 {source="MA"} ! macula densa
 
 [Term]
 id: UBERON:0003644
@@ -3403,6 +3429,7 @@ synonym: "prostate primordium" RELATED []
 synonym: "prostatic bud" EXACT []
 xref: EMAPA:36141
 is_a: UBERON:0004902 ! urogenital sinus epithelium
+relationship: part_of UBERON:0004902 ! urogenital sinus epithelium
 property_value: UBPROP:0000009 "AR activation releases instructive signals from UGM that acts on UGS epithelium (UGE) to stimulate cell proliferation, form prostate ductal progenitors (prostatic buds), and regulate cell adhesion dynamics to permit prostatic bud outgrowth. There are three phases of prostatic budding: (1) the specification phase, when instructive developmental cues define where buds will form in the UGS, (2) the initiation phase, when prostatic buds begin to form, and (3) the elongation phase, when proliferation, cell adhesion, and cell migration coordinate outgrowth of prostatic buds into UGM. Timing of prostatic bud formation and the quantity and pattern of buds that are formed in the UGS are strictly regulated [3, 4]. The position of prostatic buds as they emerge from the UGS in utero determines the arrangement of prostate ducts in adulthood.[PMID:18977204]" xsd:string
 
 [Term]
@@ -3463,6 +3490,8 @@ xref: EMAPA:28281
 xref: MA:0002611
 xref: MESH:D007687
 is_a: UBERON:0006853 ! renal cortex tubule
+relationship: part_of UBERON:0001225 {notes="checkme"} ! cortex of kidney
+relationship: part_of UBERON:0001231 {source="multiple"} ! nephron tubule
 property_value: IAO:0000116 "TODO - ensure definition works across species." xsd:string
 
 [Term]
@@ -3517,6 +3546,7 @@ synonym: "endothelium of renal glomerulus" EXACT [OBOL:automatic]
 synonym: "renal glomerulus endothelium" EXACT [OBOL:automatic]
 xref: BTO:0004631
 is_a: UBERON:0004188 ! glomerular epithelium
+relationship: part_of UBERON:0000074 ! renal glomerulus
 relationship: part_of UBERON:0004190 ! renal glomerulus vasculature
 
 [Term]
@@ -3791,6 +3821,7 @@ xref: TAO:0005284
 xref: UMLS:C0226356 {source="ncithesaurus:Glomerular_Capillary"}
 xref: ZFA:0005284
 is_a: UBERON:0003527 ! kidney capillary
+relationship: part_of UBERON:0000074 ! renal glomerulus
 relationship: part_of UBERON:0004190 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! renal glomerulus vasculature
 property_value: UBPROP:0000001 "Capillary that is part of the renal glomerulus. Glomerular capillary endothelial membranes in zebrafish normally have a fenestrated morphology that is visible at the ultrastructural level.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005284", ontology="TAO", source="ZFIN:ZDB-PUB-000824-1", source="ZFIN:curator"}
 
@@ -4083,6 +4114,7 @@ xref: NCIT:C13318
 xref: SCTID:25631003
 xref: UMLS:C0225339 {source="ncithesaurus:Transitional_Epithelium"}
 is_a: UBERON:0000365 ! urothelium
+relationship: part_of UBERON:0001255 ! urinary bladder
 relationship: part_of UBERON:0001259 ! mucosa of urinary bladder
 property_value: UBPROP:0000010 "5-7 cell layers thick in contracted bladder, 2-3 cells thick in distended bladder; lines renal pelvis, ureters, bladder, most of urethra but not distal urethra" xsd:string
 
@@ -4149,6 +4181,7 @@ synonym: "collecting duct of metanephros" EXACT []
 synonym: "metanephric collecting tubule" RELATED [VHOG:0000983]
 xref: VHOG:0000983
 is_a: UBERON:0001232 ! collecting duct of renal tubule
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
@@ -4158,6 +4191,7 @@ namespace: uberon
 def: "juxtaglomerular apparatus of the mature vertebrate kidney, or metanephros." [GO:0072206]
 synonym: "juxtaglomerular apparatus of metanephros" EXACT []
 is_a: UBERON:0002303 ! juxtaglomerular apparatus
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
 
 [Term]
@@ -4241,6 +4275,7 @@ xref: NCIT:C49310
 xref: UMLS:C1710585 {source="ncithesaurus:Urethra_Transitional_Cell_Epithelium"}
 is_a: UBERON:0000365 ! urothelium
 is_a: UBERON:0002325 ! epithelium of urethra
+relationship: part_of UBERON:0000057 ! urethra
 
 [Term]
 id: UBERON:0004788
@@ -4317,6 +4352,7 @@ synonym: "urethra skeletal muscle tissue" EXACT [OBOL:automatic]
 synonym: "urethral skeletal muscle" RELATED [MA:0001690]
 xref: EMAPA:37788 {source="MA:th"}
 xref: MA:0001690
+relationship: part_of UBERON:0000057 ! urethra
 relationship: part_of UBERON:0003829 ! urethra muscle tissue
 
 [Term]
@@ -4347,6 +4383,8 @@ xref: SCTID:277855007
 xref: SCTID:277857004
 xref: Wikipedia:Urethral_sphincter
 is_a: UBERON:0003829 ! urethra muscle tissue
+relationship: part_of UBERON:0000057 ! urethra
+relationship: part_of UBERON:0001556 ! lower urinary tract
 
 [Term]
 id: UBERON:0004918
@@ -4366,6 +4404,7 @@ xref: FMA:45769
 xref: SCTID:277856008
 xref: Wikipedia:Internal_sphincter_muscle_of_urethra
 is_a: UBERON:0004917 ! urethral sphincter
+relationship: part_of UBERON:0000057 ! urethra
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/ba/Gray407.png xsd:anyURI
 
 [Term]
@@ -4388,6 +4427,7 @@ xref: NCIT:C52561
 xref: SCTID:19101001
 xref: UMLS:C1710586 {source="ncithesaurus:Urethralis"}
 is_a: UBERON:0004917 ! urethral sphincter
+relationship: part_of UBERON:0000057 ! urethra
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/70/Gray1166.png xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/d7/Gray1142.png xsd:anyURI
 
@@ -4407,6 +4447,7 @@ xref: BTO:0002117
 xref: EMAPA:32275
 xref: FMA:15929
 xref: SCTID:88384001
+relationship: part_of UBERON:0001255 ! urinary bladder
 relationship: part_of UBERON:0001256 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! wall of urinary bladder
 
 [Term]
@@ -4469,6 +4510,7 @@ synonym: "ureteric mucosa" EXACT [FMA:15894]
 xref: FMA:15894
 xref: galen:MucousMembraneOfUreter
 xref: SCTID:40476001
+relationship: part_of UBERON:0000056 ! ureter
 relationship: part_of UBERON:0009916 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! wall of ureter
 
 [Term]
@@ -4835,6 +4877,7 @@ xref: EMAPA:35514
 xref: FMA:17719
 xref: MA:0002625
 xref: Wikipedia:Descending_limb_of_loop_of_Henle
+relationship: part_of UBERON:0001288 ! loop of Henle
 relationship: part_of UBERON:0004136 ! intermediate tubule
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/Gray1128.png xsd:anyURI
 
@@ -4861,6 +4904,7 @@ name: short descending thin limb
 namespace: uberon
 def: "The short descending thin limb is the descending thin limb of a short nephron that has a squamous epithelial morphology[GO]." [GO:0072063]
 is_a: UBERON:0004211 ! nephron epithelium
+relationship: part_of UBERON:0001285 ! nephron
 property_value: IAO:0000116 "TODO - epithelium types" xsd:string
 
 [Term]
@@ -4869,6 +4913,7 @@ name: long descending thin limb
 namespace: uberon
 def: "The long descending limb starts in the inner stripe of the outer medulla and extends into the inner medulla[GO]." [GO:0072064]
 is_a: UBERON:0004211 ! nephron epithelium
+relationship: part_of UBERON:0001285 ! nephron
 
 [Term]
 id: UBERON:0005101
@@ -4967,6 +5012,7 @@ namespace: uberon
 def: "The metanephric ascending thin limb is a segment of a nephron tubule in the metanephros lying in the inner medulla that is permeable to ions but not to water and has a simple epithelium; active transepithelial solute transport is absent[GO]." [GO:0072218]
 is_a: UBERON:0004193 ! loop of Henle ascending limb thin segment
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005129 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric distal tubule
 
 [Term]
@@ -4975,6 +5021,7 @@ name: metanephric cortical collecting duct
 namespace: uberon
 def: "The metanephric cortical collecting duct is the portion of the metanephric collecting duct that resides in the renal cortex[GO]." [GO:0072219]
 is_a: UBERON:0004203 ! cortical collecting duct
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0004737 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric collecting duct
 relationship: part_of UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
 
@@ -4984,6 +5031,7 @@ name: metanephric descending thin limb
 namespace: uberon
 def: "It extends to the tip of the metanephric loop of Henle[GO]." [GO:0072220]
 is_a: UBERON:0005096 ! descending thin limb
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005130 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric loop of Henle
 
 [Term]
@@ -4994,6 +5042,8 @@ def: "The metanephric distal convoluted tubule is a portion of the metanephric n
 xref: VHOG:0001569
 is_a: UBERON:0001292 ! distal convoluted tubule
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 relationship: part_of UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
 
 [Term]
@@ -5003,6 +5053,7 @@ namespace: uberon
 def: "The metanephric early distal convoluted tubule contains metanephric DCT cells and is vasopressin-insensitive[GO]." [GO:0072222]
 is_a: UBERON:0005101 ! early distal convoluted tubule
 is_a: UBERON:0005134 ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005117 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric distal convoluted tubule
 relationship: part_of UBERON:0005129 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric distal tubule
 
@@ -5012,6 +5063,7 @@ name: metanephric glomerular mesangium
 namespace: uberon
 def: "The metanephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the metanephros, which helps to support the capillary loops in a renal glomerulus[GO]." [GO:0072223]
 is_a: UBERON:0002320 ! glomerular mesangium
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005133 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus vasculature
 
 [Term]
@@ -5021,6 +5073,7 @@ namespace: uberon
 def: "The metanephric late distal convoluted tubule contains metanephric DCT cells and intercalated (IC) alpha and beta cells and is vasopressin-sensitive[GO]." [GO:0072225]
 is_a: UBERON:0005102 ! late distal convoluted tubule
 is_a: UBERON:0005134 ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005117 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric distal convoluted tubule
 relationship: part_of UBERON:0005129 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric distal tubule
 
@@ -5039,6 +5092,7 @@ namespace: uberon
 def: "The metanephric macula densa is an area of specialized cells in the distal tubule of the metanephros that makes contact with the vascular pole of the glomerulus[GO]." [GO:0072227]
 is_a: UBERON:0002335 ! macula densa
 is_a: UBERON:0005134 ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0004738 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric juxtaglomerular apparatus
 
 [Term]
@@ -5047,6 +5101,7 @@ name: metanephric prebend segment
 namespace: uberon
 def: "The metanephric prebend segment is a part of the metanephric descending thin limb that lies before the bend and exhibits permeabilities characteristic of the ascending limb, especially negligible water permeability[GO]." [GO:0072228]
 is_a: UBERON:0004207 ! prebend segment of loop of Henle
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005116 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric descending thin limb
 
 [Term]
@@ -5057,6 +5112,8 @@ def: "The metanephric proximal convoluted tubule is the most proximal portion of
 xref: VHOG:0001570
 is_a: UBERON:0001287 ! proximal convoluted tubule
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 relationship: part_of UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
 
 [Term]
@@ -5066,7 +5123,10 @@ namespace: uberon
 def: "The metanephric proximal straight tubule is the part of the metanephric descending limb that extends from the metanephric proximal convoluted tubule to the metanephric descending thin tubule[GO]." [GO:0072230]
 is_a: UBERON:0001290 ! proximal straight tubule
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 relationship: part_of UBERON:0005151 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric proximal tubule
+relationship: part_of UBERON:0010533 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
 property_value: IAO:0000116 "TODO - place mammalian xrefs here rather than at parent" xsd:string
 
 [Term]
@@ -5075,6 +5135,7 @@ name: metanephric S1
 namespace: uberon
 def: "The S1 portion is the initial portion of the metanephric proximal convoluted tubule and is responsible for avid reabsorption of water and solutes[GO]." [GO:0072231]
 is_a: UBERON:0004196 ! proximal convoluted tubule segment 1
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005124 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric proximal convoluted tubule
 
 [Term]
@@ -5084,6 +5145,8 @@ namespace: uberon
 def: "At the macula densa, the thick ascending limb connects to the distal convoluted tubule[GO]." [GO:0072233]
 is_a: UBERON:0001291 ! thick ascending limb of loop of Henle
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005129
@@ -5093,6 +5156,8 @@ alt_id: UBERON:0005150
 def: "The metanephric distal tubule is a metanephric nephron tubule that begins at the metanephric macula densa and extends to the metanephric connecting tubule[GO]." [GO:0072235]
 is_a: UBERON:0004135 ! distal tubule
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005130
@@ -5101,7 +5166,9 @@ namespace: uberon
 def: "The metanephric loop of Henle is a metanephric nephron tubule that connects the proximal convoluted tubule to the distal convoluted tubule in the metanephros[GO]." [GO:0072236]
 is_a: UBERON:0001288 ! loop of Henle
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0004136 ! intermediate tubule
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005132
@@ -5110,6 +5177,7 @@ namespace: uberon
 def: "Long nephrons are associated with juxtamedullary glomeruli and extend into the inner medulla in the metanephros[GO]." [GO:0072238]
 is_a: UBERON:0004194 ! long nephron
 is_a: UBERON:0005110 ! metanephric nephron
+relationship: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0005133
@@ -5118,6 +5186,7 @@ namespace: uberon
 alt_id: UBERON:0005143
 def: "The metanephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the metanephric glomerulus[GO]." [GO:0072239]
 is_a: UBERON:0004190 ! renal glomerulus vasculature
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0004736 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus
 
 [Term]
@@ -5127,6 +5196,7 @@ namespace: uberon
 def: "The metanephric nephron epithelium is a tissue that covers the surface of a nephron in the metanephros[GO]." [GO:0072243]
 is_a: UBERON:0004211 ! nephron epithelium
 is_a: UBERON:0005108 ! metanephric epithelium
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
@@ -5136,7 +5206,9 @@ namespace: uberon
 def: "A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains 'feet' that interdigitate with the 'feet' of other glomerular epithelial cells in the metanephros[GO]." [GO:0072244]
 is_a: UBERON:0004188 ! glomerular epithelium
 is_a: UBERON:0005134 ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0004736 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005136
@@ -5145,6 +5217,9 @@ namespace: uberon
 def: "The metanephric glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus of the metanephros[GO]." [GO:0072264]
 is_a: UBERON:0004189 ! glomerular endothelium
 is_a: UBERON:0005135 ! metanephric glomerular epithelium
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0004736 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 relationship: part_of UBERON:0005133 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus vasculature
 
 [Term]
@@ -5162,6 +5237,8 @@ name: metanephric long descending thin limb
 namespace: uberon
 is_a: UBERON:0005100 ! long descending thin limb
 is_a: UBERON:0005134 ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005140
@@ -5170,6 +5247,7 @@ namespace: uberon
 def: "Short nephrons are associated with mid-cortical and superficial glomeruli, are situated entirely in the outer medulla, and have no thin ascending limb[GO]." [GO:0072270]
 is_a: UBERON:0004195 ! short nephron
 is_a: UBERON:0005110 ! metanephric nephron
+relationship: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0005141
@@ -5178,6 +5256,8 @@ namespace: uberon
 def: "The metanephric short descending thin limb is the descending thin limb of a short nephron in the metanephros that has a squamous epithelial morphology[GO]." [GO:0072271]
 is_a: UBERON:0005099 ! short descending thin limb
 is_a: UBERON:0005134 ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005144
@@ -5185,6 +5265,7 @@ name: metanephric glomerular capillary
 namespace: uberon
 def: "This process pertains to the initial formation of a structure from unspecified parts[GO]." [GO:0072277]
 is_a: UBERON:0004212 ! glomerular capillary
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0004736 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric glomerulus
 relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
@@ -5206,6 +5287,8 @@ def: "A metanephric nephron tubule is an epithelial tube that is part of the met
 is_a: UBERON:0001231 ! nephron tubule
 is_a: UBERON:0005106 ! metanephric tubule
 is_a: UBERON:0005134 ! metanephric nephron epithelium
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005147
@@ -5217,6 +5300,7 @@ xref: EHDAA2:0001245
 xref: EHDAA:9346
 xref: EMAPA:27678
 is_a: UBERON:0005108 ! metanephric epithelium
+relationship: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0005148
@@ -5224,6 +5308,7 @@ name: metanephric S-shaped body
 namespace: uberon
 def: "The metanephric S-shaped body is the successor of the metanephric comma-shaped body that contributes to the morphogenesis of a nephron in the metanephros[GO]." [GO:0072284]
 is_a: UBERON:0004199 ! S-shaped body
+relationship: part_of UBERON:0000081 ! metanephros
 relationship: part_of UBERON:0005110 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
@@ -5233,6 +5318,8 @@ namespace: uberon
 def: "The metanephric connecting tubule is a tubular segment of the metanephric nephron; it connects the distal convoluted tubule to the collecting duct in the metanephros[GO]." [GO:0072286]
 is_a: UBERON:0005097 ! renal connecting tubule
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 
 [Term]
 id: UBERON:0005151
@@ -5242,6 +5329,8 @@ alt_id: UBERON:0005131
 def: "The metanephric proximal tubule is a metanephric nephron tubule that connects Bowman's capsule to the descending thin limb of the loop of Henle in the metanephros. It has a brush border epithelial morphology[GO]." [GO:0072288]
 is_a: UBERON:0004134 ! proximal tubule
 is_a: UBERON:0005146 ! metanephric nephron tubule
+relationship: part_of UBERON:0000081 ! metanephros
+relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephric nephron
 relationship: part_of UBERON:0010533 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! metanephros cortex
 
 [Term]
@@ -5345,6 +5434,7 @@ xref: SCTID:245693005
 xref: Wikipedia:Bone_marrow_of_ovaryry_interstitium
 is_a: UBERON:0005215 ! kidney interstitium
 relationship: part_of UBERON:0000362 ! renal medulla
+relationship: part_of UBERON:0005215 {source="MA"} ! kidney interstitium
 property_value: UBPROP:0000009 "It functions in renal water reabsorption by building up a high hypertonicity, which draws water out of the thin descending limb of the loop of Henle and the collecting duct system. This hypertonicity, in turn, is created by an efflux of urea from the inner medullary collecting duct." xsd:string
 
 [Term]
@@ -5358,6 +5448,7 @@ xref: EMAPA:28337
 xref: MA:0002621
 is_a: UBERON:0005211 ! renal medulla interstitium
 relationship: part_of UBERON:0001293 {source="MA"} ! outer medulla of kidney
+relationship: part_of UBERON:0005211 {source="MA"} ! renal medulla interstitium
 
 [Term]
 id: UBERON:0005214
@@ -5371,6 +5462,7 @@ xref: EMAPA:28364
 xref: MA:0002620
 is_a: UBERON:0005211 ! renal medulla interstitium
 relationship: part_of UBERON:0001294 {source="MA"} ! inner medulla of kidney
+relationship: part_of UBERON:0005211 {source="MA"} ! renal medulla interstitium
 
 [Term]
 id: UBERON:0005215
@@ -5446,6 +5538,7 @@ xref: SCTID:243707006
 xref: Wikipedia:Medullary_interstitium
 is_a: UBERON:0005215 ! kidney interstitium
 relationship: part_of UBERON:0001225 {source="MA"} ! cortex of kidney
+relationship: part_of UBERON:0005215 {source="MA"} ! kidney interstitium
 property_value: UBPROP:0000010 "In the renal cortex, interstitial fibroblasts produce erythropoietin and are distinguished from other interstitial cells by their prominent F-actin cytoskeleton, abundance of rough endoplasmic reticulum, and by ecto-5'-nucleotidase expression in their plasma membrane. The resident dendritic cells belong to the mononuclear phagocyte system and fulfil a sentinel function. They are characterized by their expression of MHC class II and CD11c." xsd:string {source="PMID:18575881"}
 
 [Term]
@@ -5524,6 +5617,7 @@ def: "The collecting duct is the final common path through which urine flows bef
 xref: AAO:0010390
 xref: XAO:0000151
 is_a: UBERON:0001232 ! collecting duct of renal tubule
+relationship: part_of UBERON:0000080 ! mesonephros
 relationship: part_of UBERON:0005322 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 
 [Term]
@@ -5574,6 +5668,7 @@ namespace: uberon
 def: "The mesonephric macula densa is an area of specialized cells in the distal tubule of the mesonephros that makes contact with the vascular pole of the glomerulus[GO]." [GO:0061220]
 is_a: UBERON:0002335 ! macula densa
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
 relationship: part_of UBERON:0005320 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric juxtaglomerular apparatus
 
 [Term]
@@ -5599,6 +5694,7 @@ name: mesonephric glomerulus vasculature
 namespace: uberon
 def: "The mesonephric glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the mesonephric glomerulus[GO]." [GO:0061231]
 is_a: UBERON:0004190 ! renal glomerulus vasculature
+relationship: part_of UBERON:0000080 ! mesonephros
 relationship: part_of UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
 
 [Term]
@@ -5608,6 +5704,8 @@ namespace: uberon
 def: "A mesonephric glomerular visceral epithelial cell is a specialized epithelial cell that contains 'feet' that interdigitate with the 'feet' of other glomerular epithelial cells in the mesonephros[GO]." [GO:0061232]
 is_a: UBERON:0004188 ! glomerular epithelium
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
+relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 relationship: part_of UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
 
 [Term]
@@ -5627,6 +5725,7 @@ synonym: "mesonephric renal tubule" EXACT [https://orcid.org/0000-0002-6601-2165
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0001231 ! nephron tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
 
 [Term]
 id: UBERON:0005330
@@ -5635,6 +5734,7 @@ namespace: uberon
 def: "The mesonephric nephron epithelium is a tissue that covers the surface of a nephron in the mesonephros[GO]." [GO:0061241]
 is_a: UBERON:0004211 ! nephron epithelium
 is_a: UBERON:0005103 ! mesonephric epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
 relationship: part_of UBERON:0005322 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 
 [Term]
@@ -5646,6 +5746,7 @@ synonym: "mesonephric vesicle" EXACT []
 xref: SCTID:361407006
 xref: ZFA:0005586
 is_a: UBERON:0005103 ! mesonephric epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
 
 [Term]
 id: UBERON:0005332
@@ -5772,6 +5873,8 @@ xref: TAO:0005285
 xref: UMLS:C0599297 {source="ncithesaurus:Glomerular_Basement_Membrane"}
 xref: Wikipedia:Glomerular_basement_membrane
 xref: ZFA:0005285
+relationship: part_of UBERON:0000074 ! renal glomerulus
+relationship: part_of UBERON:0001229 ! renal corpuscle
 relationship: part_of UBERON:0004188 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! glomerular epithelium
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/de/PhysiologieGlom%C3%A9rulaire.png xsd:anyURI
 property_value: UBPROP:0000001 "Membrane between the mesonephric podocytes and the renal glomerular capillaries. It is a trilaminar structure composed of the fused basement membranes of the glomerular capillaries and basement membrane of the podocytes. The capillary membranes touch the GBM at contact points that are separated by pores. The membrane is semi-permeable allowing water and small molecules to pass into the renal capsular space.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005285", ontology="TAO", source="ZFIN:ZDB-PUB-000824-1"}
@@ -5917,6 +6020,8 @@ namespace: uberon
 synonym: "pronephros proximal tubule" EXACT [GO:0039011]
 is_a: UBERON:0004134 ! proximal tubule
 is_a: UBERON:0005310 ! pronephric nephron tubule
+relationship: part_of UBERON:0002120 ! pronephros
+relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
 
 [Term]
 id: UBERON:0006174
@@ -5935,6 +6040,8 @@ name: pronephric distal tubule
 namespace: uberon
 is_a: UBERON:0004135 ! distal tubule
 is_a: UBERON:0005310 ! pronephric nephron tubule
+relationship: part_of UBERON:0002120 ! pronephros
+relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
 
 [Term]
 id: UBERON:0006182
@@ -5942,6 +6049,7 @@ name: mesonephric glomerular mesangium
 namespace: uberon
 def: "The mesonephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the mesonephros, which helps to support the capillary loops in a renal glomerulus" [GO:0061247]
 is_a: UBERON:0002320 ! glomerular mesangium
+relationship: part_of UBERON:0000080 ! mesonephros
 relationship: part_of UBERON:0005326 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus vasculature
 
 [Term]
@@ -5950,6 +6058,7 @@ name: mesonephric glomerular capillary
 namespace: uberon
 def: "." [GO:0061249]
 is_a: UBERON:0004212 ! glomerular capillary
+relationship: part_of UBERON:0000080 ! mesonephros
 relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 relationship: part_of UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
 
@@ -5961,6 +6070,8 @@ def: "The mesonephric connecting tubule is a tubular segment of the mesonephric 
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0005097 ! renal connecting tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
+relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 
 [Term]
 id: UBERON:0006190
@@ -5970,6 +6081,8 @@ def: "The mesonephric distal tubule is a mesonephric nephron tubule that begins 
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0004135 ! distal tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
+relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 property_value: UBPROP:0000012 "ZFA has terms for developing tubule" xsd:string {external_ontology="ZFA"}
 
 [Term]
@@ -5980,6 +6093,8 @@ def: "The mesonephric proximal tubule extends from the capsule to the distal tub
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0004134 ! proximal tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
+relationship: part_of UBERON:0000080 ! mesonephros
+relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 property_value: UBPROP:0000012 "ZFA has terms for developing tubule" xsd:string {external_ontology="ZFA"}
 
 [Term]
@@ -6111,6 +6226,7 @@ xref: EMAPA:28083
 xref: MA:0002618
 is_a: UBERON:0005215 ! kidney interstitium
 relationship: part_of UBERON:0001224 {source="MA"} ! renal pelvis
+relationship: part_of UBERON:0005215 {source="MA"} ! kidney interstitium
 
 [Term]
 id: UBERON:0006374
@@ -6266,6 +6382,7 @@ synonym: "podocyte layer" RELATED [MA:0002607]
 xref: EMAPA:28254
 xref: MA:0002607
 is_a: UBERON:0004188 ! glomerular epithelium
+relationship: part_of UBERON:0000074 ! renal glomerulus
 
 [Term]
 id: UBERON:0006853
@@ -6292,6 +6409,7 @@ xref: EMAPA:28402
 xref: MA:0002615
 is_a: UBERON:0006853 ! renal cortex tubule
 relationship: part_of UBERON:0001291 {source="MA"} ! thick ascending limb of loop of Henle
+relationship: part_of UBERON:0006853 {source="MA"} ! renal cortex tubule
 
 [Term]
 id: UBERON:0006855
@@ -6308,6 +6426,7 @@ xref: EMAPA:28811
 xref: FMA:15893
 xref: MA:0002654
 xref: SCTID:3563003
+relationship: part_of UBERON:0000056 ! ureter
 relationship: part_of UBERON:0009916 {source="FMA"} ! wall of ureter
 
 [Term]
@@ -6354,6 +6473,8 @@ xref: MA:0002490
 xref: NCIT:C32207
 xref: UMLS:C1511195 {source="ncithesaurus:Bladder_Muscularis_Mucosa"}
 is_a: UBERON:0004228 ! urinary bladder smooth muscle
+relationship: part_of UBERON:0001255 ! urinary bladder
+relationship: part_of UBERON:0001259 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mucosa of urinary bladder
 relationship: part_of UBERON:0001261 ! lamina propria of urinary bladder
 property_value: UBPROP:0000010 "One study observed that in humans this layer is frequently discontinuous, sparse or sometimes hyperplastic or absent[PMID:3631381]" xsd:string
 
@@ -6418,6 +6539,8 @@ xref: TAO:0002238
 xref: ZFA:0001620
 is_a: UBERON:0001287 ! proximal convoluted tubule
 is_a: UBERON:0005310 ! pronephric nephron tubule
+relationship: part_of UBERON:0002120 ! pronephros
+relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
 
 [Term]
 id: UBERON:0007306
@@ -6427,6 +6550,7 @@ def: "A glomerular capillary that is part of a pronephros." [OBOL:automatic]
 xref: TAO:0005309
 xref: ZFA:0005309
 is_a: UBERON:0004212 ! glomerular capillary
+relationship: part_of UBERON:0002120 ! pronephros
 relationship: part_of UBERON:0004739 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric glomerulus
 relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
 
@@ -6439,6 +6563,7 @@ synonym: "pronephric glomerular filtration membrane" EXACT [ZFA:0005313]
 xref: TAO:0005313
 xref: ZFA:0005313
 is_a: UBERON:0005777 ! glomerular basement membrane
+relationship: part_of UBERON:0002120 ! pronephros
 relationship: part_of UBERON:0004739 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric glomerulus
 
 [Term]
@@ -6451,6 +6576,8 @@ xref: TAO:0002236
 xref: ZFA:0001622
 is_a: UBERON:0005310 ! pronephric nephron tubule
 is_a: UBERON:0006337 ! distal early tubule
+relationship: part_of UBERON:0002120 ! pronephros
+relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
 
 [Term]
 id: UBERON:0007653
@@ -6482,6 +6609,7 @@ def: "functional unit of the kidney that forms urine, consisting of two parts, t
 xref: FMA:17691
 is_a: UBERON:0004819 ! kidney epithelium
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0002113 {source="FMA"} ! kidney
 
 [Term]
 id: UBERON:0007685
@@ -6491,6 +6619,7 @@ synonym: "region of renal tubule" RELATED [FMA:17692]
 synonym: "renal tubule region" EXACT [FMA:17692]
 xref: FMA:17692
 is_a: UBERON:0001231 ! nephron tubule
+relationship: part_of UBERON:0001231 ! nephron tubule
 property_value: UBPROP:0000012 "consider moving MA:0000377 renal tubule here, as it includes the various segments (proximal etc) as subclasses, not parts" xsd:string {external_ontology="MA"}
 
 [Term]
@@ -6633,6 +6762,8 @@ xref: TAO:0002239
 xref: ZFA:0001621
 is_a: UBERON:0001290 ! proximal straight tubule
 is_a: UBERON:0005310 ! pronephric nephron tubule
+relationship: part_of UBERON:0002120 ! pronephros
+relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric nephron
 relationship: part_of UBERON:0006173 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! pronephric proximal tubule
 
 [Term]
@@ -6665,6 +6796,7 @@ xref: MA:0001680
 xref: NCIT:C49273
 xref: SCTID:245251000
 xref: UMLS:C1709901 {source="ncithesaurus:Renal_Tubule_Basement_Membrane"}
+relationship: part_of UBERON:0001231 {source="MA"} ! nephron tubule
 relationship: part_of UBERON:0004810 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! nephron tubule epithelium
 
 [Term]
@@ -6685,6 +6817,7 @@ subset: pheno_slim
 synonym: "renal tubule (generic)" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "tubule of excretory system" EXACT [https://orcid.org/0000-0002-6601-2165, OBOL:automatic]
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0001008 ! renal system
 property_value: IAO:0000232 "this class groups vertebrate nephron tubules with analagous structures such as insect Malpighian tubules" xsd:string
 
 [Term]
@@ -6791,6 +6924,7 @@ synonym: "renunculus" RELATED [http://www.mondofacto.com/facts/dictionary?lobus+
 xref: FMA:17670
 xref: SCTID:361330004
 xref: Wikipedia:Cortical_lobule
+relationship: part_of UBERON:0002113 ! kidney
 relationship: part_of UBERON:0009913 {source="FMA"} ! renal lobe
 
 [Term]
@@ -6821,6 +6955,7 @@ subset: pheno_slim
 synonym: "ureteral smooth muscle" EXACT [MP:0011426]
 synonym: "ureteral smooth muscle layer" EXACT [EMAPA:28844]
 xref: EMAPA:28811
+relationship: part_of UBERON:0000056 ! ureter
 relationship: part_of UBERON:0006855 ! muscular coat of ureter
 
 [Term]
@@ -6939,6 +7074,7 @@ xref: FMA:72007
 xref: SCTID:245983001
 xref: Wikipedia:Straight_venules_of_kidney
 is_a: UBERON:0006544 ! kidney vasculature
+relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0010186
@@ -7027,6 +7163,7 @@ synonym: "presumptive nephron" EXACT []
 synonym: "primitive nephron" BROAD []
 is_a: UBERON:0004819 ! kidney epithelium
 is_a: UBERON:0006555 ! excretory tube
+relationship: part_of UBERON:0002113 ! kidney
 property_value: UBPROP:0000012 "EHDAA2 treats this as already having a tubular structure, but in the ZFA representation this is a cluster of cells" xsd:string {external_ontology="EHDAA2"}
 
 [Term]
@@ -7048,6 +7185,7 @@ synonym: "primitive mesonephric nephron" EXACT []
 xref: ZFA:0005584
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0010532 ! primitive nephron
+relationship: part_of UBERON:0000080 ! mesonephros
 
 [Term]
 id: UBERON:0010535
@@ -7060,6 +7198,7 @@ synonym: "primitive nephron" BROAD [EHDAA2:0001516]
 xref: EHDAA2:0001516
 is_a: UBERON:0005106 ! metanephric tubule
 is_a: UBERON:0010532 ! primitive nephron
+relationship: part_of UBERON:0000081 ! metanephros
 
 [Term]
 id: UBERON:0010537
@@ -7221,6 +7360,7 @@ def: "A luminal layer of epithelium that is part of a ureter." [OBOL:automatic]
 subset: pheno_slim
 xref: EMAPA:37779 {source="MA:th"}
 xref: MA:0002656
+relationship: part_of UBERON:0000056 ! ureter
 relationship: part_of UBERON:0001254 ! urothelium of ureter
 
 [Term]
@@ -7384,6 +7524,7 @@ synonym: "urethral crest of male" EXACT [MP:anna]
 xref: FMA:85270
 xref: SCTID:279470007
 is_a: UBERON:0012296 ! urethral crest
+relationship: part_of UBERON:0001335 {source="FMA-modified"} ! prostatic urethra
 relationship: part_of UBERON:0005015 {source="cjm"} ! mucosa of prostatic urethra
 
 [Term]
@@ -7504,6 +7645,7 @@ synonym: "tunica muscularis (vesica urinaria)" EXACT [FMA:TA]
 xref: FMA:15930
 xref: NCIT:C32206
 xref: UMLS:C1288327 {source="ncithesaurus:Bladder_Muscular_Coat"}
+relationship: part_of UBERON:0001255 ! urinary bladder
 relationship: part_of UBERON:0001256 {source="FMA"} ! wall of urinary bladder
 
 [Term]
@@ -7630,6 +7772,7 @@ def: "A muscularis mucosa that is part of a fundus of urinary bladder." [OBOL:au
 xref: EMAPA:28625
 is_a: UBERON:0006912 ! urinary bladder muscularis mucosa
 relationship: part_of UBERON:0006082 ! fundus of urinary bladder
+relationship: part_of UBERON:0006912 {source="EMAPA"} ! urinary bladder muscularis mucosa
 
 [Term]
 id: UBERON:0016505
@@ -7762,6 +7905,7 @@ def: "A renal cortex interstitium that is part of a left kidney." [OBOL:automati
 synonym: "cortical interstitial tissue of left kidney" EXACT []
 is_a: UBERON:0005270 ! renal cortex interstitium
 is_a: UBERON:0018113 ! left kidney interstitium
+relationship: part_of UBERON:0004538 ! left kidney
 
 [Term]
 id: UBERON:0018118
@@ -7771,6 +7915,7 @@ def: "A renal cortex interstitium that is part of a right kidney." [OBOL:automat
 synonym: "cortical interstitial tissue of right kidney" EXACT []
 is_a: UBERON:0005270 ! renal cortex interstitium
 is_a: UBERON:0018114 ! right kidney interstitium
+relationship: part_of UBERON:0004539 ! right kidney
 
 [Term]
 id: UBERON:0018119
@@ -7780,6 +7925,7 @@ def: "A renal medulla interstitium that is part of a left kidney." [OBOL:automat
 synonym: "medullary interstitial tissue of left kidney" EXACT []
 is_a: UBERON:0005211 ! renal medulla interstitium
 is_a: UBERON:0018113 ! left kidney interstitium
+relationship: part_of UBERON:0004538 ! left kidney
 
 [Term]
 id: UBERON:0018120
@@ -7789,6 +7935,7 @@ def: "A renal medulla interstitium that is part of a right kidney." [OBOL:automa
 synonym: "medullary interstitial tissue of right kidney" EXACT []
 is_a: UBERON:0005211 ! renal medulla interstitium
 is_a: UBERON:0018114 ! right kidney interstitium
+relationship: part_of UBERON:0004539 ! right kidney
 
 [Term]
 id: UBERON:0034770
@@ -7806,6 +7953,7 @@ name: juxtaglomerular arteriole
 namespace: uberon
 xref: EMAPA:27991
 is_a: UBERON:0003644 ! kidney arterial blood vessel
+relationship: part_of UBERON:0006544 ! kidney vasculature
 property_value: IAO:0000116 "compare with afferent arteriole" xsd:string
 
 [Term]
@@ -7861,6 +8009,7 @@ synonym: "peritubular capillary plexus" EXACT [FMA:272218]
 xref: FMA:272218
 xref: SCTID:36447007
 is_a: UBERON:0035762 ! capillary network of kidney
+relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0035762
@@ -7869,6 +8018,7 @@ namespace: uberon
 synonym: "capillary plexus of kidney" EXACT [FMA:280922]
 xref: FMA:280922
 is_a: UBERON:0006544 ! kidney vasculature
+relationship: part_of UBERON:0002113 ! kidney
 
 [Term]
 id: UBERON:0036295

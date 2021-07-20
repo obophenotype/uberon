@@ -2146,6 +2146,7 @@ xref: VHOG:0000169
 xref: Wikipedia:Lens_(anatomy)
 xref: XAO:0000008
 xref: ZFA:0000035
+is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005389 ! transparent eye structure
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 property_value: UBPROP:0000003 "The eye of the adult lamprey is remarkably similar to our own, and it possesses numerous features (including the expression of opsin genes) that are very similar to those of the eyes of jawed vertebrates. The lamprey's camera-like eye has a lens, an iris and extra-ocular muscles (five of them, unlike the eyes of jawed vertebrates, which have six), although it lacks intra-ocular muscles. Its retina also has a structure very similar to that of the retinas of other vertebrates, with three nuclear layers comprised of the cell bodies of photoreceptors and bipolar, horizontal, amacrine and ganglion cells. The southern hemisphere lamprey, Geotria australis, possesses five morphological classes of retinal photoreceptor and five classes of opsin, each of which is closely related to the opsins of jawed vertebrates. Given these similarities, we reach the inescapable conclusion that the last common ancestor of jawless and jawed vertebrates already possessed an eye that was comparable to that of extant lampreys and gnathostomes. Accordingly, a vertebrate camera-like eye must have been present by the time that lampreys and gnathostomes diverged, around 500 Mya.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000169", ontology="VHOG", source="DOI:10.1038/nrn2283 Lamb TD, Collin SP and Pugh EN Jr, Evolution of the vertebrate eye: opsins, photoreceptors, retina and eye cup. Nature Reviews Neuroscience (2007)", source="http://bgee.unil.ch/"}
@@ -2435,6 +2436,7 @@ xref: MA:0001233
 xref: NCIT:C49481
 xref: SCTID:244073008
 xref: UMLS:C0222110 {source="ncithesaurus:Ear_Skin"}
+relationship: part_of UBERON:0001691 ! external ear
 relationship: part_of UBERON:0001757 ! pinna
 
 [Term]
@@ -2475,6 +2477,7 @@ xref: SCTID:244726006
 xref: UMLS:C0224122 {source="ncithesaurus:Orbicularis_Oculi"}
 xref: Wikipedia:Orbicularis_oculi_muscle
 is_a: UBERON:0004277 ! eye muscle
+relationship: part_of UBERON:0000019 {source="FMA"} ! camera-type eye
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e2/Gray379.png xsd:anyURI
 
 [Term]
@@ -2549,6 +2552,7 @@ xref: UMLS:C0038151 {source="ncithesaurus:Stapedius_Muscle"}
 xref: VHOG:0000813
 xref: Wikipedia:Stapedius_muscle
 is_a: UBERON:0004113 ! muscle of auditory ossicle
+relationship: part_of UBERON:0001756 ! middle ear
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/65/Musculusstapedius.png xsd:anyURI
 property_value: UBPROP:0000003 "The depressor mandibulae of tetrapods, which opens the jaws, is the homologue of the levator operculi and epihyoidean. In mammals, the depressor mandibulae evolves into the stapedius (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000813", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.398", source="http://bgee.unil.ch/"}
 
@@ -2578,6 +2582,7 @@ xref: UMLS:C0039529 {source="ncithesaurus:Tensor_Tympani"}
 xref: VHOG:0000698
 xref: Wikipedia:Tensor_tympani_muscle
 is_a: UBERON:0004113 ! muscle of auditory ossicle
+relationship: part_of UBERON:0001756 {source="FMA"} ! middle ear
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/82/Gray912.png xsd:anyURI
 property_value: UBPROP:0000003 "The division of the adductor mandibulae in the various lines of tetrapod evolution correlates with divergences in their methods of feeding. (...) As the jaws become stronger and their movements more complex in the line of evolution toward mammals, the adductor complex becomes divided into several distinct muscles (temporalis, masseter, pterygoideus, tensor tympani, tensor veli palati).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000698", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.333-334 and same reference Table 10-4", source="http://bgee.unil.ch/"}
 
@@ -2614,6 +2619,7 @@ xref: VHOG:0000549
 xref: Wikipedia:Extraocular_muscles
 xref: ZFA:0000511
 is_a: UBERON:0004277 ! eye muscle
+relationship: part_of UBERON:0000019 {source="MA"} ! camera-type eye
 relationship: part_of UBERON:0003269 {source="EHDAA2"} ! skeletal muscle tissue of eye
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/61/MRI_of_human_eye.jpg xsd:anyURI
 property_value: IAO:0000116 "todo - resolve discrepancies in which muscles are considered extra-ocular" xsd:string
@@ -2783,6 +2789,7 @@ xref: UMLS:C0229189 {source="ncithesaurus:Sphincter_Pupillae_Muscle"}
 xref: Wikipedia:Iris_sphincter_muscle
 is_a: UBERON:0001606 ! muscle of iris
 is_a: UBERON:0004234 {source="BTO"} ! iris smooth muscle
+relationship: part_of UBERON:0001769 ! iris
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/2f/Gray878.png xsd:anyURI
 property_value: UBPROP:0000008 "In humans, it functions to constrict the pupil in bright light or during accommodation. Its dimensions are about 0.75 mm wide by 0.15 mm thick. It is controlled by parasympathetic fibers that originate from the Edinger-Westphal nucleus, travel along the oculomotor nerve (CN III), synapse in the ciliary ganglion, and then enter the eye via the short ciliary nerves. Initially, all the myocytes are of the smooth muscle type, but much later in life, so that ultimately most cells are of the striated muscle type. [WP,unvetted]" xsd:string
 property_value: UBPROP:0000008 "WP says: It is found in vertebrates and some cephalopods; this class refers to the vertebrate structure" xsd:string
@@ -2890,6 +2897,7 @@ xref: SCTID:277771001
 xref: UMLS:C0035301 {source="ncithesaurus:Retinal_Artery"}
 xref: Wikipedia:Central_retinal_artery
 is_a: UBERON:0003501 ! retina blood vessel
+relationship: part_of UBERON:0004864 ! vasculature of retina
 property_value: depicted:by Gray514:updated.png xsd:anyURI
 
 [Term]
@@ -3041,6 +3049,7 @@ xref: VHOG:0000461
 xref: Wikipedia:Auditory_ossicle
 xref: XAO:0000214
 is_a: UBERON:0035130 ! auditory ossicle endochondral element
+relationship: part_of UBERON:0001756 {source="MA"} ! middle ear
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b0/Illu_auditory_ossicles.jpg xsd:anyURI
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: IAO:0000116 "This should probably be restricted to mammals - the AAO/XAO structures may group non-homologous structures [Wikipedia:Evolution_of_mammalian_auditory_ossicles] see https://github.com/seger/aao/issues/5." xsd:string
@@ -3250,6 +3259,7 @@ xref: SCTID:181197004
 xref: UMLS:C0027432 {source="ncithesaurus:Nasal_Septum"}
 xref: VHOG:0000017
 xref: Wikipedia:Nasal_septum
+relationship: part_of UBERON:0000004 ! nose
 relationship: part_of UBERON:0006813 {source="AAO"} ! nasal skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/65/Gray854.png xsd:anyURI
 property_value: IAO:0000116 "We follow AAO in making this part of the nasal skeleton" xsd:string
@@ -3582,6 +3592,7 @@ xref: NCIT:C32905
 xref: UMLS:C0022903 {source="ncithesaurus:Lacrimal_Apparatus"}
 xref: Wikipedia:Lacrimal_apparatus
 is_a: UBERON:0000467 ! anatomical system
+relationship: part_of UBERON:0000019 {source="FMA", source="MA"} ! camera-type eye
 relationship: part_of UBERON:0010409 {source="MA"} ! ocular surface region
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/cf/Gray896.png xsd:anyURI
 property_value: IAO:0000116 "TODO - resolve canaliculus vs tear duct vs lacrimal vs nasolacrimal" xsd:string
@@ -3736,6 +3747,7 @@ xref: NCIT:C12811
 xref: SCTID:280648000
 xref: UMLS:C0042160 {source="ncithesaurus:Uvea"}
 xref: Wikipedia:Uvea
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/eb/Gray869.png xsd:anyURI
 property_value: IAO:0000116 "TODO - check child terms, isa vs partof. See also MA:0001284 ! tunica vasculosa plexus" xsd:string
@@ -3864,6 +3876,7 @@ xref: TAO:0002187
 xref: UMLS:C0459875 {source="ncithesaurus:Corneal_Epithelium"}
 xref: Wikipedia:Corneal_epithelium
 xref: ZFA:0001683
+is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0015808 ! eye epithelium
 relationship: part_of UBERON:0000964 ! cornea
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/66/Gray871.png xsd:anyURI
@@ -3897,6 +3910,7 @@ xref: VHOG:0001274
 xref: Wikipedia:Sclera
 xref: XAO:0000183
 xref: ZFA:0005563
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0012430 {source="FMA"} ! tunica fibrosa of eyeball
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg xsd:anyURI
 property_value: UBPROP:0000001 "The sclera, also known as the white part of the eye, is the opaque (usually white, though certain animals, such as horses and lizards, can have black sclera), fibrous, protective, outer layer of the eye containing collagen and elastic fiber. It is derived from the neural crest. In children, it is thinner and shows some of the underlying pigment, appearing slightly blue. In the elderly, however, fatty deposits on the sclera can make it appear slightly yellow. The sclera forms the posterior five sixths of the connective tissue coat of the globe. It is continuous with the dura mater and the cornea, and maintains the shape of the globe, offering resistance to internal and external forces, and provides an attachment for the extraocular muscle insertions. The sclera is perforated by plenty of nerves and vessels passing through the posterior scleral foramen, the hole that is formed by the optic nerve. At the optic disk the outer two-thirds of the sclera continues with the dura mater (outer coat of the brain) via the dural sheath of the optic nerve. The inner third joins with some choroidal tissue to form a plate (lamina cribrosa) across the optic nerve with perforations through which the optic fibers (fasciculi). The thickness of the sclera varies from 1mm at the posterior pole to 0.3 mm just behind the rectus muscle insertions. The sclera's blood vessels are mainly on the surface, and together with the conjunctiva (which lies on top) This is a thin layer covering the sclera. Along with the vessels of the conjunctiva, those of the sclera renders the inflamed eye bright red. [WP,unvetted][Wikipedia:Sclera]." xsd:string {source="Wikipedia:Sclera"}
@@ -4962,6 +4976,7 @@ xref: VHOG:0001144
 xref: Wikipedia:Semicircular_canal
 xref: XAO:0000198
 xref: ZFA:0000431
+relationship: part_of UBERON:0001846 {source="MA"} ! internal ear
 relationship: part_of UBERON:0001849 {source="OG"} ! membranous labyrinth
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/33/Balance_Disorder_Illustration_A.png xsd:anyURI
 property_value: UBPROP:0000001 "Fluid-filled toroidal spaces, arranged orthogonally to each other in the ear, that detect angular accelerations. (See Anatomical Atlas entry for semicircular canals by T. Whitfield.)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000431", ontology="TAO", source="ZFIN:curator"}
@@ -6045,6 +6060,7 @@ xref: SCTID:279810008
 xref: VHOG:0000791
 xref: Wikipedia:Endolymphatic_sac
 is_a: UBERON:0006937 ! inner ear epithelium
+relationship: part_of UBERON:0001846 {source="VHOG"} ! internal ear
 property_value: IAO:0000116 "EHDAA2 structure is embryonic" xsd:string
 property_value: UBPROP:0000001 "The blind extremity of the endolymphatic duct. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000791", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/endolymphatic+sac"}
 property_value: UBPROP:0000003 "Many adult anamniotes have an endolymphatic duct that opens onto the surface of the head. In other vertebrates, it either is lost or forms a small, deeply seated endolymphatic sac.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000791", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.413-414 and Figure 12-15", source="http://bgee.unil.ch/"}
@@ -6259,6 +6275,7 @@ xref: Wikipedia:Hyaloid_artery
 xref: XAO:0004155
 xref: ZFA:0005045
 is_a: UBERON:0005492 ! hyaloid vessel
+relationship: part_of UBERON:0005492 {source="ZFA"} ! hyaloid vessel
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg xsd:anyURI
 property_value: UBPROP:0000001 "Artery that is internal to the eye. Isogai et al. 2001.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005045", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "In humans, Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus. During the tenth week of development the lens grows independent of a blood supply and the hyaloid artery usually regresses. Its proximal portion remains as the central artery of the retina. Regression of the hyaloid artery leaves a clear central zone through the vitreous called the hyaloid canal or Cloquet's canal. Occasionally the artery may not fully regress, resulting in the condition persistent hyaloid artery. More commonly, small remnants of the artery may remain. Free remnants can sometimes be seen as 'floaters'. An anterior remnant of the hyaloid artery can be seen in some people as Mittendorf's dot, a small pinpoint-like scar on the posterior surface of the lens. A posterior remnant may be seen where the artery left the optic disc, and is known as Bergmeister's papilla" xsd:string
@@ -6613,6 +6630,7 @@ xref: UMLS:C0545784 {source="BIRNLEX:4106"}
 xref: UMLS:C0545784 {source="ncithesaurus:Fungiform_Papilla"}
 xref: UMLS:C1267558 {source="BIRNLEX:4106"}
 xref: Wikipedia:Fungiform_papilla
+is_a: UBERON:0001726 {source="MA"} ! papilla of tongue
 is_a: UBERON:0014389 ! gustatory papilla of tongue
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/6e/Gray1014.png xsd:anyURI
 property_value: UBPROP:0000001 "The fungiform papillae are mushroom shaped e (projections) on the tongue. They are located on the top (dorsal) surface of the tongue, scattered throughout the filiform papilla but mainly at the tip and lateral margins of the tongue. They have taste buds on their superior (upper) surface which can distinguish the five tastes: sweet, sour, bitter, salty, and umami. They have a core of connective tissue. They are innervated by the seventh cranial nerve, more specifically via the submandibular ganglion, chorda tympani, and geniculate ganglion ascending to the solitary nucleus (the sensory component of the Vagus nerve in the brainstem). [WP,unvetted][Wikipedia:Fungiform_papilla]." xsd:string {source="Wikipedia:Fungiform_papilla"}
@@ -6766,6 +6784,7 @@ subset: pheno_slim
 xref: FMA:52312
 xref: MA:0002824
 xref: SCTID:149380004
+relationship: part_of UBERON:0001846 ! internal ear
 relationship: part_of UBERON:0018231 ! labyrinthine artery
 
 [Term]
@@ -6811,6 +6830,7 @@ xref: Wikipedia:Otolith_organ
 xref: ZFA:0000559
 is_a: UBERON:0006585 ! vestibular organ
 relationship: part_of UBERON:0001862 ! vestibular labyrinth
+relationship: part_of UBERON:0004681 ! vestibular system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/cb/Bigotolith.jpg xsd:anyURI
 property_value: IAO:0000116 "Representation of utricle, sacule and otoliths in correspondence to other ontologies may require review. In EHDAA2, saccule and utricle are epithelia" xsd:string
 property_value: UBPROP:0000003 "In fishes, as in other vertebrates, the vestibular end-organs are divided into a gravity receptor system, with three subdivisions and an angular acceleration receptor system. The gravity receptor system on each side consists of utricular, saccular, and lagenar maculae, each covered by an otolith (reference 1); (...)considerations have led to our rethinking issues related to the origin of several aspects of vertebrate hearing, and to the view that many basic auditory functions evolved very early in vertebrate history, and that the functions observed in more `advanced' vertebrates, such as birds and mammals, are frequently modifications of themes first encountered in fishes, and perhaps even more ancestral animals (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001676", ontology="VHOG", source="PMID:11581521 Moorman SJ, Development of sensory systems in zebrafish (Danio rerio). ILAR Journal (2001), DOI:10.1016/S0378-5955(00)00168-4 Fay RR, Popper AN, Evolution of hearing in vertebrates: the inner ears and processing. Hearing research (2000)", source="http://bgee.unil.ch/"}
@@ -7138,6 +7158,7 @@ xref: SCTID:368961005
 xref: UMLS:C1184862 {source="BIRNLEX:2528"}
 xref: Wikipedia:Inner_tunnel
 is_a: UBERON:0036250 ! zone of basilar membrane of cochlea
+relationship: part_of UBERON:0002226 ! basilar membrane of cochlea
 
 [Term]
 id: UBERON:0002822
@@ -7193,6 +7214,7 @@ xref: Wikipedia:Scarpa%27s_ganglion
 is_a: UBERON:0006585 ! vestibular organ
 relationship: part_of UBERON:0001862 ! vestibular labyrinth
 relationship: part_of UBERON:0002827 ! vestibulocochlear ganglion
+relationship: part_of UBERON:0004681 ! vestibular system
 
 [Term]
 id: UBERON:0002825
@@ -7283,6 +7305,7 @@ xref: SCTID:369020000
 xref: UMLS:C0228437 {source="BIRNLEX:2576"}
 xref: UMLS:C1289449 {source="BIRNLEX:2576"}
 is_a: UBERON:0007633 ! nucleus of trapezoid body
+relationship: part_of UBERON:0002128 ! superior olivary complex
 relationship: part_of UBERON:0002971 {source="Wikipedia"} ! periolivary nucleus
 
 [Term]
@@ -7321,6 +7344,7 @@ xref: MA:0002757
 xref: MBA:122
 xref: UMLS:C0175432 {source="BIRNLEX:804"}
 is_a: UBERON:0007247 ! nucleus of superior olivary complex
+relationship: part_of UBERON:0002128 ! superior olivary complex
 
 [Term]
 id: UBERON:0002976
@@ -7336,6 +7360,7 @@ xref: HBA:9180
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=573 {source="BIRNLEX:814"}
 xref: UMLS:C0175431 {source="BIRNLEX:814"}
 is_a: UBERON:0007247 ! nucleus of superior olivary complex
+relationship: part_of UBERON:0002128 ! superior olivary complex
 
 [Term]
 id: UBERON:0002985
@@ -7441,6 +7466,7 @@ xref: VHOG:0000128
 xref: XAO:0000442
 xref: ZFA:0000443
 is_a: UBERON:2001470 ! anterior lateral line
+relationship: part_of UBERON:2001470 {source="TAO"} ! anterior lateral line
 property_value: UBPROP:0000001 "One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000443", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "The lateral line that is located above the eye. [Butler_AB_and_Hodos_W, Comparative_vertebrate_neuroanatomy:_Evolution_and_Adaptation_(1996)_New_York:_Wiley-Liss_Inc., p.27][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000128", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000003 "The mechanosensory lateral line system is widely distributed in aquatic anamniotes. It was apparently present in the earliest vertebrates, as it has been identified in agnathans, cartilaginous fishes, bony fishes, lungfishes, the crossopterygian Latimeria, and aquatic amphibians.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000128", ontology="VHOG", source="ISBN:978-0471210054 Butler AB and Hodos W, Comparative vertebrate neuroanatomy: Evolution and Adaptation (2005) p.195", source="http://bgee.unil.ch/"}
@@ -7457,6 +7483,7 @@ xref: VHOG:0000131
 xref: XAO:0000458
 xref: ZFA:0000400
 is_a: UBERON:2001470 ! anterior lateral line
+relationship: part_of UBERON:2001470 {source="TAO"} ! anterior lateral line
 property_value: UBPROP:0000001 "One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000400", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "The mechanosensory lateral line system is widely distributed in aquatic anamniotes. It was apparently present in the earliest vertebrates, as it has been identified in agnathans, cartilaginous fishes, bony fishes, lungfishes, the crossopterygian Latimeria, and aquatic amphibians.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000131", ontology="VHOG", source="ISBN:978-0471210054 Butler AB and Hodos W, Comparative vertebrate neuroanatomy: Evolution and Adaptation (2005) p.195", source="http://bgee.unil.ch/"}
 
@@ -7473,6 +7500,7 @@ xref: VHOG:0000132
 xref: XAO:0000459
 xref: ZFA:0000524
 is_a: UBERON:2001470 ! anterior lateral line
+relationship: part_of UBERON:2001470 {source="TAO"} ! anterior lateral line
 property_value: UBPROP:0000001 "One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000524", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "The lateral line that is located below the eye. [Butler_AB_and_Hodos_W, Comparative_vertebrate_neuroanatomy:_Evolution_and_Adaptation_(1996)_New_York:_Wiley-Liss_Inc., p.27][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000132", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000003 "The mechanosensory lateral line system is widely distributed in aquatic anamniotes. It was apparently present in the earliest vertebrates, as it has been identified in agnathans, cartilaginous fishes, bony fishes, lungfishes, the crossopterygian Latimeria, and aquatic amphibians.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000132", ontology="VHOG", source="ISBN:978-0471210054 Butler AB and Hodos W, Comparative vertebrate neuroanatomy: Evolution and Adaptation (2005) p.195", source="http://bgee.unil.ch/"}
@@ -7505,6 +7533,7 @@ xref: VHOG:0000133
 xref: XAO:0000463
 xref: ZFA:0000344
 is_a: UBERON:2001470 ! anterior lateral line
+relationship: part_of UBERON:2001470 {source="TAO"} ! anterior lateral line
 property_value: UBPROP:0000001 "One of eight distinct lateral lines in the 4-day larva. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000344", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000002 "relationship loss: develops_from middle lateral line primordium (TAO:0005118)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000344", ontology="TAO"}
 property_value: UBPROP:0000002 "relationship loss: part_of middle lateral line system (TAO:0005114)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000344", ontology="TAO"}
@@ -7644,6 +7673,7 @@ xref: MA:0001204
 xref: RETIRED_EHDAA2:0002155
 xref: VHOG:0000634
 is_a: UBERON:0006932 {source="FMA"} ! vestibular epithelium
+relationship: part_of UBERON:0001853 ! utricle of membranous labyrinth
 relationship: part_of UBERON:0002214 {source="FMA"} ! macula of utricle of membranous labyrinth
 property_value: IAO:0000116 "TODO - check relationships w.r.t macula" xsd:string
 
@@ -7758,6 +7788,7 @@ xref: EHDAA2:0000485
 xref: EHDAA:2910
 xref: EMAPA:16673
 xref: VHOG:0001084
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000019 ! camera-type eye
 property_value: IAO:0000116 "TODO - change mesenchyme relationships to precursor_of" xsd:string
 
@@ -7951,6 +7982,7 @@ synonym: "vertebrate eye sebaceous gland" EXACT [OBOL:automatic]
 xref: EMAPA:37531 {source="MA:th"}
 xref: MA:0002452
 is_a: UBERON:0003605 ! eye skin gland
+relationship: part_of UBERON:0000019 ! camera-type eye
 
 [Term]
 id: UBERON:0003500
@@ -7983,6 +8015,7 @@ xref: MA:0001317
 xref: MESH:D012171
 xref: SCTID:280692003
 xref: XAO:0004153
+relationship: part_of UBERON:0000966 ! retina
 relationship: part_of UBERON:0004864 ! vasculature of retina
 
 [Term]
@@ -8007,6 +8040,7 @@ synonym: "blood vessel of iris" EXACT [OBOL:automatic]
 xref: EMAPA:37387 {source="MA:th"}
 xref: MA:0001290
 xref: ZFA:0005568
+relationship: part_of UBERON:0001769 ! iris
 relationship: part_of UBERON:0004118 ! vasculature of iris
 
 [Term]
@@ -8175,6 +8209,7 @@ xref: UMLS:C1518263 {source="ncithesaurus:Neural_Retina"}
 xref: VHOG:0000535
 xref: XAO:0003216
 xref: ZFA:0000046
+is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0001781 ! layer of retina
 property_value: UBPROP:0000003 "(...) an essentially similar sequence of events occurs during the embryonic development of the vertebrate eye. The eye initially develops as a single median evagination of the diencephalon that soon bifurcates to form the paired optic vesicles. As each optic vesicle grows towards the body surface, its proximal part narrows as the optic stalk, and its distal part invaginates to form a two-layered optic cup. (...) The outer layer of the optic cup becomes the pigment layer of the retina, whereas the inner layer differentiates into the photoreceptive cells and neuronal layers of the retina.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000535", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.429", source="http://bgee.unil.ch/"}
 
@@ -8314,6 +8349,7 @@ xref: MESH:D016570
 xref: SCTID:280652000
 xref: Wikipedia:Bruch's_membrane
 xref: ZFA:0005562
+relationship: part_of UBERON:0001776 {source="FMA", source="ZFA"} ! optic choroid
 relationship: part_of UBERON:0013399 ! blood vessel layer of choroid
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/gkoutos
@@ -8456,6 +8492,7 @@ xref: EMAPA:32831
 xref: MA:0002770
 xref: SCTID:279759001
 xref: Wikipedia:Osseous_ampullae
+relationship: part_of UBERON:0001840 ! semicircular canal
 relationship: part_of UBERON:0001856 {source="MA"} ! semicircular duct
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/65/Vestibular_system%27s_semicircular_canal-_a_cross-section.jpg xsd:anyURI
 property_value: IAO:0000116 "TODO check duct vs canal. Also check FMA - has many subtypes of semicircular canal such as 'ampulla of anterior semicircular canal'" xsd:string
@@ -8652,6 +8689,7 @@ xref: FMA:312338
 xref: MA:0001270
 is_a: UBERON:0003386 {source="MA"} ! smooth muscle of eye
 relationship: part_of UBERON:0001606 ! muscle of iris
+relationship: part_of UBERON:0001769 ! iris
 property_value: IAO:0000116 "see notes for muscle of iris." xsd:string
 
 [Term]
@@ -8825,6 +8863,7 @@ synonym: "keratinized epithelium of tongue" EXACT [FMA:74865]
 xref: FMA:74865
 xref: MA:0002787
 is_a: UBERON:0006919 ! tongue squamous epithelium
+relationship: part_of UBERON:0001723 ! tongue
 
 [Term]
 id: UBERON:0004681
@@ -8986,6 +9025,7 @@ xref: NCIT:C33736
 xref: SCTID:362529005
 xref: UMLS:C0459586 {source="ncithesaurus:Tarsal_Plate"}
 xref: Wikipedia:Tarsus_(eyelids)
+relationship: part_of UBERON:0001711 {source="FMA"} ! eyelid
 relationship: part_of UBERON:0003581 {source="cjm"} ! eyelid connective tissue
 property_value: UBPROP:0000008 "In most taxa (birds, mammals, lizards), the tarsal plate is described as a dense, fibrous connective tissue, possibly including cartilage, present within one or both of the upper and lower eyelids (Gau- thier et al., 1988; Rieppel, 2000). In humans, the tarsal plate of the upper eyelid is composed of collagens types I, III, and V, as well as glycosaminogly- cans (chondroitin sulphate 4 and 6), aggrecan, and cartilage oligomeric matrix proteins but lacks collagen type II as well as chondrocytes (Milz et al., 2005). Thus, for humans, the upper tarsal plate represents neither a truly fibrous nor a truly cartilagi- nous element but instead one that is composed of a unique transitional tissue (Milz et al., 2005). In many birds, lizards, and Sphenodon (the tuatara), the upper eyelid has lim- ited mobility and a putative tarsal plate is instead found within the lower eyelid (Underwood, 1970; Gau- thier et al., 1988)." xsd:string {source="PMID:16496288"}
 
@@ -9526,6 +9566,7 @@ xref: FMA:312291
 xref: MA:0000272
 xref: VHOG:0001477
 is_a: CARO:0000000 ! anatomical entity
+relationship: part_of UBERON:0000019 ! camera-type eye
 relationship: part_of UBERON:0002203 ! vasculature of eye
 property_value: UBPROP:0000001 "A depression in the front of the vitreous body, lodging the lens. [adapted_from_the_definition_of_the_hyaloid_fossa]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001477", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/hyaloid+fossa"}
 
@@ -9598,6 +9639,7 @@ synonym: "tubotympanic recess space" EXACT []
 xref: EHDAA2:0002095
 xref: FMA:312393
 is_a: CARO:0000000 ! anatomical entity
+relationship: part_of UBERON:0001756 {source="MA"} ! middle ear
 relationship: part_of UBERON:0010020 ! tubotympanic recess epithelium
 
 [Term]
@@ -9783,6 +9825,7 @@ xref: NCIT:C12803
 xref: SCTID:280694002
 xref: UMLS:C0040573 {source="ncithesaurus:Trabecular_Meshwork"}
 xref: Wikipedia:Trabecular_meshwork
+relationship: part_of UBERON:0000019 ! camera-type eye
 relationship: part_of UBERON:0003956 ! aqueous drainage system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/22/Gray870.png xsd:anyURI
 property_value: IAO:0000116 "TODO check syns - ligaments" xsd:string
@@ -9949,6 +9992,7 @@ xref: NCIT:C34201
 xref: UMLS:C1517769 {source="ncithesaurus:Lens_Pit"}
 xref: VHOG:0000806
 is_a: CARO:0000000 ! anatomical entity
+relationship: part_of UBERON:0000019 ! camera-type eye
 relationship: part_of UBERON:0000965 ! lens of camera-type eye
 property_value: UBPROP:0000001 "A pitlike depression in the ectoderm of the lens placode where the primordial lens is developing. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000806", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/lens+pit"}
 
@@ -9983,6 +10027,7 @@ xref: UMLS:C1513875 {source="ncithesaurus:Nasolacrimal_Groove"}
 xref: VHOG:0001307
 xref: Wikipedia:Lacrimal_groove
 is_a: UBERON:0019306 ! nose epithelium
+relationship: part_of UBERON:0000004 {source="EHDAA2"} ! nose
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3f/Gray163.png xsd:anyURI
 
 [Term]
@@ -10077,6 +10122,7 @@ xref: SCTID:368790005
 xref: UMLS:C0229105 {source="ncithesaurus:Orbitalis_Muscle"}
 xref: Wikipedia:Orbitalis_muscle
 is_a: UBERON:0004277 ! eye muscle
+relationship: part_of UBERON:0000019 {source="FMA"} ! camera-type eye
 property_value: UBPROP:0000012 "subclass of 'muscle layer' in FMA" xsd:string {external_ontology="FMA"}
 
 [Term]
@@ -10215,6 +10261,7 @@ xref: SCTID:362179003
 xref: UMLS:C0930558 {source="ncithesaurus:Lingual_Salivary_Gland"}
 xref: Wikipedia:Anterior_lingual_glands
 is_a: UBERON:0003409 ! gland of tongue
+relationship: part_of UBERON:0001723 ! tongue
 
 [Term]
 id: UBERON:0006332
@@ -10232,6 +10279,7 @@ xref: MA:0000283
 xref: TAO:0002035
 xref: ZFA:0005507
 is_a: UBERON:0001823 ! nasal cartilage
+relationship: part_of UBERON:0000004 {source="MA"} ! nose
 property_value: IAO:0000116 "consider splitting this class. Developing cartilage in mammals?" xsd:string {source="ZFA"}
 property_value: UBPROP:0000001 "Multi-tissue structure that is the connective tissue sheath that surrounds, except for external opening(s) in adult, the olfactory epithelium.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0002035", ontology="TAO", source="TAO:wd"}
 property_value: UBPROP:0000001 "Structure that has both respiratory and olfactory functions and lies anterior to the braincase, in the foremost section of the cranium.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000313", ontology="AAO", source="AAO:LAP"}
@@ -10462,6 +10510,7 @@ xref: SCTID:264113009
 xref: UMLS:C2339893 {source="ncithesaurus:Frenulum"}
 xref: Wikipedia:Frenulum_of_tongue
 is_a: UBERON:0005020 ! mucosa of tongue
+relationship: part_of UBERON:0001723 ! tongue
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/13/Gray1202.png xsd:anyURI
 
 [Term]
@@ -10551,6 +10600,7 @@ xref: MESH:D013137
 xref: SCTID:361315008
 xref: Wikipedia:Osseous_spiral_lamina
 relationship: part_of UBERON:0006723 {source="FMA"} ! cochlear modiolus
+relationship: part_of UBERON:0007223 {source="MA"} ! osseus cochlea
 
 [Term]
 id: UBERON:0006725
@@ -10748,6 +10798,7 @@ namespace: uberon
 def: "A non-keratinized stratified squamous epithelium that is part of a tongue." [OBOL:automatic]
 xref: FMA:62130
 is_a: UBERON:0006919 ! tongue squamous epithelium
+relationship: part_of UBERON:0001723 ! tongue
 
 [Term]
 id: UBERON:0006918
@@ -10757,6 +10808,7 @@ def: "A parakeratinized epithelium that is part of a tongue." [OBOL:automatic]
 synonym: "tongue parakeratinized epithelium" EXACT []
 xref: FMA:74908
 is_a: UBERON:0003357 ! epithelium of tongue
+relationship: part_of UBERON:0001723 ! tongue
 
 [Term]
 id: UBERON:0006919
@@ -10767,6 +10819,7 @@ subset: pheno_slim
 synonym: "squamous epithelium of tongue" EXACT [OBOL:automatic]
 xref: MA:0002786
 is_a: UBERON:0003357 ! epithelium of tongue
+relationship: part_of UBERON:0001723 ! tongue
 relationship: part_of UBERON:0005020 ! mucosa of tongue
 property_value: UBPROP:0000012 "this is a singleton subclass of tongue epithelium in MA" xsd:string {external_ontology="MA"}
 
@@ -10855,6 +10908,7 @@ subset: pheno_slim
 xref: EMAPA:35620
 xref: MA:0000239
 is_a: CARO:0000000 ! anatomical entity
+relationship: part_of UBERON:0001839 ! bony labyrinth
 relationship: part_of UBERON:0001844 ! cochlea
 property_value: IAO:0000116 "TODO - check this. in MA, cochlea is not part of the bony labyrinth" xsd:string
 
@@ -10965,6 +11019,7 @@ xref: NCIT:C32988
 xref: SCTID:276957006
 xref: UMLS:C0229871 {source="ncithesaurus:Lingual_Tonsil"}
 xref: Wikipedia:Lingual_tonsils
+relationship: part_of UBERON:0001723 ! tongue
 relationship: part_of UBERON:0010033 ! posterior part of tongue
 property_value: depicted:by Illu04:tongue.jpg xsd:anyURI
 
@@ -11191,6 +11246,7 @@ xref: SCTID:362405000
 xref: UMLS:C0228436 {source="BIRNLEX:745"}
 xref: UMLS:C1289449 {source="BIRNLEX:745"}
 is_a: UBERON:0007247 ! nucleus of superior olivary complex
+relationship: part_of UBERON:0002128 {source="NIFSTD"} ! superior olivary complex
 
 [Term]
 id: UBERON:0007691
@@ -11340,6 +11396,7 @@ def: "A saddle-shaped area that includes the nasal root and the lateral aspects 
 subset: pheno_slim
 xref: MA:0002874
 xref: Wikipedia:Nasal_bridge
+is_a: UBERON:0000061 {source="AEO"} ! anatomical structure
 relationship: part_of UBERON:0000004 ! nose
 
 [Term]
@@ -11680,6 +11737,7 @@ subset: organ_slim
 synonym: "ampullae of Lorenzini" EXACT PLURAL [Wikipedia:Ampullae_of_Lorenzini]
 xref: Wikipedia:Ampullae_of_Lorenzini
 is_a: UBERON:0035555 ! lateral line sense organ
+relationship: part_of UBERON:0002540 ! lateral line system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/88/Electroreceptors_in_a_sharks_head.svg xsd:anyURI
 property_value: RO:0002161 NCBITaxon:32443 {source="Wikipedia"}
 property_value: RO:0002161 NCBITaxon:32523
@@ -11703,6 +11761,8 @@ is_a: UBERON:0009732 ! sublaminar layers S1 or S2 or S5
 is_a: UBERON:0009733 ! sublaminar layers S1 or S2 or S3
 is_a: UBERON:0009735 ! sublaminar layers S1 or S3 or S4
 is_a: UBERON:0009737 ! sublaminar layers S1 or S2 or S3 or S4
+relationship: part_of UBERON:0001795 ! inner plexiform layer of retina
+relationship: part_of UBERON:0008927 ! sublaminar layers S1 or S2
 
 [Term]
 id: UBERON:0008923
@@ -11716,6 +11776,9 @@ is_a: UBERON:0009732 ! sublaminar layers S1 or S2 or S5
 is_a: UBERON:0009733 ! sublaminar layers S1 or S2 or S3
 is_a: UBERON:0009734 ! sublaminar layers S2 or S3 or S4
 is_a: UBERON:0009737 ! sublaminar layers S1 or S2 or S3 or S4
+relationship: part_of UBERON:0001795 ! inner plexiform layer of retina
+relationship: part_of UBERON:0008927 ! sublaminar layers S1 or S2
+relationship: part_of UBERON:0008928 ! sublaminar layers S2 or S3
 
 [Term]
 id: UBERON:0008924
@@ -11730,6 +11793,8 @@ is_a: UBERON:0009734 ! sublaminar layers S2 or S3 or S4
 is_a: UBERON:0009735 ! sublaminar layers S1 or S3 or S4
 is_a: UBERON:0009736 ! sublaminar layers S3 or S4 or S5
 is_a: UBERON:0009737 ! sublaminar layers S1 or S2 or S3 or S4
+relationship: part_of UBERON:0001795 ! inner plexiform layer of retina
+relationship: part_of UBERON:0008928 ! sublaminar layers S2 or S3
 
 [Term]
 id: UBERON:0008925
@@ -11743,6 +11808,8 @@ is_a: UBERON:0009734 ! sublaminar layers S2 or S3 or S4
 is_a: UBERON:0009735 ! sublaminar layers S1 or S3 or S4
 is_a: UBERON:0009736 ! sublaminar layers S3 or S4 or S5
 is_a: UBERON:0009737 ! sublaminar layers S1 or S2 or S3 or S4
+relationship: part_of UBERON:0001795 ! inner plexiform layer of retina
+relationship: part_of UBERON:0008929 ! sublaminar layers S4 or S5
 
 [Term]
 id: UBERON:0008926
@@ -11753,6 +11820,8 @@ xref: CP:0000117
 is_a: UBERON:0008929 ! sublaminar layers S4 or S5
 is_a: UBERON:0009732 ! sublaminar layers S1 or S2 or S5
 is_a: UBERON:0009736 ! sublaminar layers S3 or S4 or S5
+relationship: part_of UBERON:0001795 ! inner plexiform layer of retina
+relationship: part_of UBERON:0008929 ! sublaminar layers S4 or S5
 
 [Term]
 id: UBERON:0008927
@@ -11914,6 +11983,7 @@ xref: SCTID:70839004
 xref: UMLS:C1711401 {source="ncithesaurus:Tympanic_Epithelium"}
 is_a: UBERON:0010071 ! layer of tympanic membrane
 is_a: UBERON:0015813 ! middle ear epithelium
+relationship: part_of UBERON:0002364 ! tympanic membrane
 
 [Term]
 id: UBERON:0009648
@@ -11936,6 +12006,7 @@ def: "The nasal fin is an epithelial seam that develops by fusion between the ep
 xref: EHDAA2:0004548
 xref: FMA:295940
 is_a: UBERON:0005384 ! nasal cavity epithelium
+relationship: part_of UBERON:0005384 {source="EHDAA2"} ! nasal cavity epithelium
 
 [Term]
 id: UBERON:0009672
@@ -12150,6 +12221,7 @@ xref: SCTID:361516008
 xref: UMLS:C1284046 {source="ncithesaurus:Tubotympanic_Recess"}
 xref: VHOG:0001297
 is_a: UBERON:0015813 ! middle ear epithelium
+relationship: part_of UBERON:0001756 {source="MA"} ! middle ear
 property_value: UBPROP:0000003 "The tympanic cavity and auditory tube of an amniote develop from the first embryonic pharyngeal pouch, so they are homologous to the first gill pouch, or spiracle, of a fish. We are uncertain whether this homology strictly applies to the middle ear cavity and auditory tube of lissamphibians, which show certain peculiarities in their development.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001297", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.417", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -12258,6 +12330,7 @@ name: tympanic cavity epithelium
 namespace: uberon
 xref: EHDAA2:0004116
 is_a: UBERON:0015813 ! middle ear epithelium
+relationship: part_of UBERON:0001756 {source="EHDAA2"} ! middle ear
 
 [Term]
 id: UBERON:0010065
@@ -12265,6 +12338,7 @@ name: auditory meatus epithelium
 namespace: uberon
 xref: EHDAA2:0004114
 is_a: UBERON:0015814 ! outer ear epithelium
+relationship: part_of UBERON:0001691 {source="EHDAA2"} ! external ear
 
 [Term]
 id: UBERON:0010069
@@ -12641,6 +12715,7 @@ namespace: uberon
 def: "An endothelium that is part of a sclera." [OBOL:automatic]
 is_a: UBERON:0010291 {source="Wikipedia"} ! layer of sclera
 is_a: UBERON:0015808 ! eye epithelium
+relationship: part_of UBERON:0001773 ! sclera
 
 [Term]
 id: UBERON:0010295
@@ -12657,6 +12732,7 @@ xref: NCIT:C33652
 xref: SCTID:368851004
 xref: UMLS:C1704397 {source="ncithesaurus:Substantia_Propria"}
 is_a: UBERON:0010291 {source="Wikipedia"} ! layer of sclera
+relationship: part_of UBERON:0001773 ! sclera
 
 [Term]
 id: UBERON:0010296
@@ -12812,6 +12888,7 @@ def: "A vein that is part of a conjunctiva." [OBOL:automatic]
 synonym: "conjunctival blood vessel" BROAD []
 xref: FMA:70887
 xref: SCTID:149885003
+relationship: part_of UBERON:0001811 ! conjunctiva
 relationship: part_of UBERON:0010366 ! conjunctival vasculature
 
 [Term]
@@ -12964,6 +13041,7 @@ name: stapedius pre-muscle condensation
 namespace: uberon
 xref: EHDAA2:0001909
 is_a: UBERON:0009506 ! mesenchyme of middle ear
+relationship: part_of UBERON:0001756 {source="EHDAA2"} ! middle ear
 
 [Term]
 id: UBERON:0010935
@@ -12971,6 +13049,7 @@ name: tensor tympani pre-muscle condensation
 namespace: uberon
 xref: EHDAA2:0002002
 is_a: UBERON:0009506 ! mesenchyme of middle ear
+relationship: part_of UBERON:0001756 {source="EHDAA2"} ! middle ear
 
 [Term]
 id: UBERON:0010953
@@ -13083,6 +13162,7 @@ xref: AAO:0010038
 xref: EMAPA:18808
 xref: FMA:49150
 is_a: UBERON:0004277 ! eye muscle
+relationship: part_of UBERON:0000019 ! camera-type eye
 relationship: part_of UBERON:0003386 {source="EMAPA"} ! smooth muscle of eye
 property_value: UBPROP:0000001 "Muscles within the eye (bulbus oculi).[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010038", ontology="AAO", source="AAO:EJS"}
 
@@ -13240,7 +13320,9 @@ synonym: "vasculosa oculi" RELATED [MP:0005194]
 synonym: "ventral uveal tract" EXACT []
 xref: EMAPA:37417 {source="MA:th"}
 xref: SCTID:280656002
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001768 {source="MP"} ! uvea
+relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 
 [Term]
 id: UBERON:0011918
@@ -13338,6 +13420,7 @@ def: "A fold of skin at the caudal border of the auricle." [ISBN:9783899930993]
 synonym: "cutaneous marginal pouch" RELATED []
 synonym: "marginal cutaneous pouch" RELATED []
 is_a: UBERON:0001459 ! skin of external ear
+relationship: part_of UBERON:0001757 ! pinna
 
 [Term]
 id: UBERON:0012430
@@ -13437,6 +13520,7 @@ xref: SCTID:278361003
 xref: Wikipedia:Ciaccio's_glands
 is_a: UBERON:0013226 ! accessory lacrimal gland
 is_a: UBERON:0013229 ! eyelid gland
+relationship: part_of UBERON:0001711 {source="ncithesaurus"} ! eyelid
 
 [Term]
 id: UBERON:0013226
@@ -13479,6 +13563,7 @@ xref: SCTID:280586002
 xref: Wikipedia:Gland_of_Moll
 is_a: UBERON:0003605 ! eye skin gland
 is_a: UBERON:0013229 ! eyelid gland
+relationship: part_of UBERON:0001711 ! eyelid
 
 [Term]
 id: UBERON:0013229
@@ -13515,6 +13600,7 @@ namespace: uberon
 def: "Any of the sebaceous glands that are in the eyelid. Examples: gland of Zeis (services eyelashes), gland of Meibom (tarsal gland - unconnected to eyelids)." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0003484 ! eye sebaceous gland
 is_a: UBERON:0013229 ! eyelid gland
+relationship: part_of UBERON:0001711 ! eyelid
 
 [Term]
 id: UBERON:0013233
@@ -13840,6 +13926,7 @@ subset: pheno_slim
 synonym: "gustatory papilla taste bud" EXACT []
 synonym: "gustatory papillae taste bud" EXACT [MP:0006260]
 is_a: UBERON:0001727 ! taste bud
+relationship: part_of UBERON:0001723 ! tongue
 relationship: part_of UBERON:0014389 ! gustatory papilla of tongue
 
 [Term]
@@ -13851,6 +13938,7 @@ synonym: "lingual gustatory epithelium" EXACT [http://orcid.org/0000-0002-6601-2
 xref: BIRNLEX:4099
 xref: UMLS:C1179150 {source="BIRNLEX:4099"}
 is_a: UBERON:0003357 ! epithelium of tongue
+relationship: part_of UBERON:0001723 ! tongue
 
 [Term]
 id: UBERON:0014521
@@ -14025,6 +14113,7 @@ xref: FMA:59083
 xref: SCTID:280957009
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001811 ! conjunctiva
+relationship: part_of UBERON:0005908 {source="FMA"} ! conjunctival sac
 
 [Term]
 id: UBERON:0015165
@@ -14355,6 +14444,7 @@ comment: See https://sourceforge.net/p/obo/zebrafish-anatomy-zfa-term-requests/1
 synonym: "otoconial-statoconial membrane" EXACT [ISBN:1565939948]
 synonym: "otolith membrane" NARROW []
 xref: FMA:75570
+relationship: part_of UBERON:0001862 {source="MA-abduced"} ! vestibular labyrinth
 relationship: part_of UBERON:0002518 ! otolith organ
 
 [Term]
@@ -14423,6 +14513,7 @@ xref: DMBA:17274
 xref: FMA:75730
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2852
 is_a: UBERON:0007247 ! nucleus of superior olivary complex
+relationship: part_of UBERON:0002128 ! superior olivary complex
 
 [Term]
 id: UBERON:0017629
@@ -14539,6 +14630,7 @@ name: posterior incudal ligament
 namespace: uberon
 def: "A fold of mucous membrane that runs from the fossa incudus to the incus." [ISBN:9781604061550]
 is_a: UBERON:0018154 ! ligament of middle ear
+relationship: part_of UBERON:0001756 ! middle ear
 
 [Term]
 id: UBERON:0018156
@@ -14546,6 +14638,7 @@ name: malleal ligament
 namespace: uberon
 def: "A skeletal ligament that attaches to the malleus." [ISBN:9781604061550]
 is_a: UBERON:0018154 ! ligament of middle ear
+relationship: part_of UBERON:0001756 ! middle ear
 
 [Term]
 id: UBERON:0018157
@@ -14610,6 +14703,7 @@ xref: FMA:59191
 xref: SCTID:281070008
 xref: Wikipedia:Gland_of_Zeis
 is_a: UBERON:0013231 ! sebaceous gland of eyelid
+relationship: part_of UBERON:0001711 ! eyelid
 
 [Term]
 id: UBERON:0018323
@@ -14777,6 +14871,7 @@ synonym: "choroid and retina" EXACT []
 synonym: "retinachoroid" EXACT []
 synonym: "retinachoroidal region" EXACT []
 xref: SCTID:110701000
+is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0010230 ! eyeball of camera-type eye
 
 [Term]
@@ -15004,6 +15099,7 @@ xref: DHBA:15561
 xref: DMBA:17260
 xref: FMA:72475
 is_a: UBERON:0007247 ! nucleus of superior olivary complex
+relationship: part_of UBERON:0002128 {source="FMA"} ! superior olivary complex
 relationship: part_of UBERON:0002971 {source="Wikipedia"} ! periolivary nucleus
 
 [Term]
@@ -15143,6 +15239,7 @@ def: "One of the lingual glands located on the lateral margins of the tongue, at
 synonym: "gland of Weber" EXACT []
 synonym: "posterior superficial lingual gland" EXACT [MGI:anna]
 is_a: UBERON:0003409 ! gland of tongue
+relationship: part_of UBERON:0001723 ! tongue
 property_value: UBPROP:0000008 "in humans, the ducts of posterior superficial lingual glands open into the crypts of lingual tonsils; mucous supplied by these glands may help to cleanse the crypts and aid in deglutition" xsd:string
 
 [Term]
@@ -15411,6 +15508,7 @@ xref: FMA:75710
 xref: SCTID:368962003
 xref: UMLS:C1184863
 is_a: UBERON:0036250 ! zone of basilar membrane of cochlea
+relationship: part_of UBERON:0002226 ! basilar membrane of cochlea
 
 [Term]
 id: UBERON:0036250
@@ -15648,6 +15746,7 @@ synonym: "lateral crista primordia" EXACT PLURAL [TAO:0000225]
 xref: ZFA:0000225
 is_a: UBERON:0003240 ! epithelium of lateral semicircular canal
 is_a: UBERON:0003249 ! epithelium of otic placode
+relationship: part_of UBERON:0001843 ! lateral semicircular canal
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -15689,6 +15788,7 @@ namespace: uberon
 def: "One of eight distinct lateral lines in the 4-day larva consisting of 2 neuromast. One neuromast is positioned at the front edge of the jaw the second posteriorly on the mandible. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 xref: ZFA:0000259
 is_a: UBERON:2001470 ! anterior lateral line
+relationship: part_of UBERON:2001470 ! anterior lateral line
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -15711,6 +15811,7 @@ synonym: "posterior crista primordia" EXACT PLURAL [TAO:0000411]
 xref: ZFA:0000411
 is_a: UBERON:0003239 ! epithelium of posterior semicircular canal
 is_a: UBERON:0003249 ! epithelium of otic placode
+relationship: part_of UBERON:0001842 ! posterior semicircular canal
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -15731,6 +15832,7 @@ namespace: uberon
 def: "One of eight distinct lateral lines in the 4-day larva positioned posteriorly to the second arch skeletal element. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 xref: ZFA:0000424
 is_a: UBERON:2001470 ! anterior lateral line
+relationship: part_of UBERON:2001470 ! anterior lateral line
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -15753,6 +15855,7 @@ namespace: uberon
 def: "One of eight distinct lateral lines in the 4-day larva positioned anterior to the ear. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
 xref: ZFA:0000464
 is_a: UBERON:2001470 ! anterior lateral line
+relationship: part_of UBERON:2001470 ! anterior lateral line
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -15990,6 +16093,7 @@ namespace: uberon
 synonym: "nasal rosette" EXACT [TAO:0001428]
 xref: ZFA:0001428
 is_a: UBERON:0019306 ! nose epithelium
+relationship: part_of UBERON:0000004 ! nose
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -16299,6 +16403,7 @@ name: macula communis
 namespace: uberon
 xref: ZFA:0001671
 is_a: UBERON:0006937 ! inner ear epithelium
+relationship: part_of UBERON:0001846 ! internal ear
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -17405,6 +17510,7 @@ name: otic opercular element
 namespace: uberon
 def: "Round, flat bone or cartilage that lies in the fenestra ovalis and articulates with the columella." [AAO:DBW]
 synonym: "otic operculum" EXACT []
+relationship: part_of UBERON:0001032 ! sensory system
 relationship: part_of UBERON:0001690 ! ear
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators

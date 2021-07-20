@@ -2185,6 +2185,7 @@ xref: TAO:0002247
 xref: VHOG:0000607
 xref: ZFA:0001615
 is_a: UBERON:0002165 ! endocardium
+relationship: part_of UBERON:0002082 ! cardiac ventricle
 relationship: part_of UBERON:0004784 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! heart ventricle wall
 
 [Term]
@@ -2222,6 +2223,7 @@ xref: TAO:0005061
 xref: VHOG:0000604
 xref: ZFA:0005061
 is_a: UBERON:0002349 ! myocardium
+relationship: part_of UBERON:0002082 ! cardiac ventricle
 relationship: part_of UBERON:0004784 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! heart ventricle wall
 property_value: UBPROP:0000001 "Muscular layer of the cardiac ventricle composed of a compact myocardial layer surrounding the trabecular layer Hu et al. 2001.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005061", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "As noted, the hearts of birds and mammals have four chambers that arises from the two chambers (atrium and ventricle) of the fish heart.[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000604", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.481", source="http://bgee.unil.ch/"}
@@ -3458,6 +3460,7 @@ xref: FMA:19795
 xref: MA:0001946
 xref: SCTID:244294001
 xref: Wikipedia:Dorsal_artery_of_penis
+is_a: UBERON:0001637 {source="MA"} ! artery
 is_a: UBERON:0003835 ! abdominal segment blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0007315 ! internal pudendal artery
@@ -3583,6 +3586,7 @@ xref: MA:0002099
 xref: SCTID:11653007
 xref: Wikipedia:Deep_circumflex_iliac_vein
 is_a: UBERON:0035552 ! deep vein
+relationship: part_of UBERON:0035551 ! deep vasculature
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/bd/Gray585.png xsd:anyURI
 
 [Term]
@@ -3916,6 +3920,7 @@ xref: SCTID:368496000
 xref: UMLS:C0226807
 xref: Wikipedia:Median_cubital_vein
 is_a: UBERON:0001411 ! basilic vein
+relationship: part_of UBERON:0001411 ! basilic vein
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/ba/Gray574.png xsd:anyURI
 property_value: IAO:0000116 "Merged median cubital and basilic veins on basis of wikipedia synonym - needs verificied" xsd:string
 
@@ -4018,6 +4023,7 @@ xref: VHOG:0001249
 xref: Wikipedia:Lymphatic_vessel
 xref: XAO:0000375
 relationship: part_of UBERON:0004536 ! lymph vasculature
+relationship: part_of UBERON:0006558 ! lymphatic part of lymphoid system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/44/Illu_lymph_capillary.jpg xsd:anyURI
 property_value: RO:0002174 NCBITaxon:8342 {source="DOI:10.1152/japplphysiol.00201.2013"}
 property_value: UBPROP:0000001 "A network of blunt ended vessels lacking direct connection to the blood vascular system. These vessels collect and drain fluids and macromolecules from interstitial spaces throughout the animal. They derive from a subpopulation of endothelial cells and have walls that are much thinner than the blood carrying vessels. Lymphatic vessels are usually classified as either superficial or deep.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005105", ontology="TAO", source="ZFIN:curator"}
@@ -4046,6 +4052,7 @@ xref: SCTID:181299009
 xref: UMLS:C0003956 {source="ncithesaurus:Ascending_Aorta"}
 xref: Wikipedia:Ascending_aorta
 is_a: UBERON:0001515 ! thoracic aorta
+relationship: part_of UBERON:0001515 ! thoracic aorta
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e6/Gray506.svg xsd:anyURI
 
 [Term]
@@ -4069,6 +4076,7 @@ xref: SCTID:181300001
 xref: VHOG:0001196
 xref: Wikipedia:Arch_of_aorta
 is_a: UBERON:0001515 ! thoracic aorta
+relationship: part_of UBERON:0001515 ! thoracic aorta
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e6/Gray506.svg xsd:anyURI
 property_value: IAO:0000232 "Do not confuse with aortic arch" xsd:string
 property_value: UBPROP:0000001 "The curving portion between the ascending aorta and the descending aorta, giving rise to the brachiocephalic trunk, the left common carotid artery, and the left subclavian artery. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001196", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/arch+of+aorta"}
@@ -4095,6 +4103,8 @@ xref: SCTID:261399002
 xref: UMLS:C0011666 {source="ncithesaurus:Descending_Aorta"}
 xref: Wikipedia:Descending_aorta
 is_a: UBERON:0005800 {source="FMA"} ! section of aorta
+relationship: part_of UBERON:0000947 {source="FMA"} ! aorta
+relationship: part_of UBERON:0001009 ! circulatory system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e6/Gray506.svg xsd:anyURI
 property_value: UBPROP:0000011 "results from fusion of left and right dorsal aortae" xsd:string
 
@@ -4900,6 +4910,7 @@ xref: SCTID:322151008
 xref: Wikipedia:Venous_plexus
 is_a: UBERON:0004537 ! blood vasculature
 is_a: UBERON:0005629 ! vascular plexus
+relationship: part_of UBERON:0001009 ! circulatory system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/bd/Gray585.png xsd:anyURI
 
 [Term]
@@ -5161,6 +5172,7 @@ xref: Wikipedia:Central_retinal_artery
 is_a: UBERON:0003501 ! retina blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001619 ! ophthalmic artery
+relationship: part_of UBERON:0004864 ! vasculature of retina
 property_value: depicted:by Gray514:updated.png xsd:anyURI
 
 [Term]
@@ -5190,6 +5202,7 @@ xref: Wikipedia:Coronary_circulation#Coronary_anatomy
 xref: ZFA:0005812
 is_a: UBERON:0003498 ! heart blood vessel
 is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0000948 ! heart
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/46/Gray492.png xsd:anyURI
 
 [Term]
@@ -5449,6 +5462,8 @@ xref: Wikipedia:Basilar_artery
 xref: ZFA:0005002
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0035307 ! branch of vertebral artery
+relationship: part_of UBERON:0001533 ! subclavian artery
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/2e/Circle_of_Willis_en.svg xsd:anyURI
 property_value: UBPROP:0000001 "Artery that runs along the ventral keel of the hindbrain. It lies between the primordial hindbrain channels(PHBC). It irrigates the hindbrain and is connected, through the hindbrain, to the PHBC by the central arteries." xsd:string {source="ZFA:0005002"}
 property_value: UBPROP:0000001 "The unpaired artery that is formed by the union of the two vertebral arteries, runs forward within the skull just under the pons, divides into the two posterior cerebral arteries, and supplies the pons, cerebellum, posterior part of the cerebrum, and the inner ear[MP]." xsd:string {source="MP:0013186"}
@@ -5663,6 +5678,7 @@ xref: NCIT:C52846
 xref: SCTID:181340007
 xref: UMLS:C0007569 {source="ncithesaurus:Coeliac_Artery"}
 xref: Wikipedia:Celiac_artery
+is_a: UBERON:0004573 {source="FMA"} ! systemic artery
 is_a: UBERON:0012254 ! abdominal aorta artery
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/65/Gray532.png xsd:anyURI
 
@@ -5918,6 +5934,7 @@ xref: SCTID:798000
 xref: UMLS:C0226526 {source="ncithesaurus:Deep_Temporal_Vein"}
 is_a: UBERON:0001671 ! temporal vein
 is_a: UBERON:0035552 ! deep vein
+relationship: part_of UBERON:0035551 ! deep vasculature
 
 [Term]
 id: UBERON:0001662
@@ -6329,6 +6346,7 @@ xref: VHOG:0001765
 xref: Wikipedia:Venule
 xref: ZFA:0005315
 is_a: UBERON:0003920 ! venous blood vessel
+relationship: part_of UBERON:0001009 ! circulatory system
 property_value: depicted:by Illu:capillary.jpg xsd:anyURI
 property_value: UBPROP:0000001 "Multi-tissue structure part of the blood vasculature formed by the anastomosis of capillaries. Venules carry blood toward the heart.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005315", ontology="TAO", source="ZFIN:curator"}
 
@@ -6600,6 +6618,7 @@ xref: SCTID:244247009
 xref: UMLS:C0006257 {source="ncithesaurus:Bronchial_Artery"}
 xref: Wikipedia:Bronchial_artery
 is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0004571 ! systemic arterial system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/a7/Gray1032.png xsd:anyURI
 
 [Term]
@@ -6755,6 +6774,7 @@ xref: Wikipedia:Atrioventricular_cushions
 xref: XAO:0004189
 xref: ZFA:0001317
 is_a: UBERON:0009751 ! cardiac mesenchyme
+relationship: part_of UBERON:0000948 {source="ZFA"} ! heart
 relationship: part_of UBERON:0002165 {source="ZFA"} ! endocardium
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c7/Gray465.png xsd:anyURI
 property_value: UBPROP:0000001 "Swellings of tissue present between the endocardial and myocardial cell layers that will give rise to the interstitial cells of the cardiac valves.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001317", ontology="TAO", source="ZFIN:curator"}
@@ -7289,8 +7309,8 @@ synonym: "s. interventriculare cordis" RELATED LATIN [Wikipedia:Interventricular
 synonym: "septum inferius" RELATED [Wikipedia:Interventricular_septum]
 synonym: "septum membranaceum" RELATED [Wikipedia:Interventricular_septum]
 synonym: "ventricle septum" RELATED []
-synonym: "ventricular septum" RELATED [Wikipedia:Interventricular_septum]
 synonym: "ventricular septum" RELATED [MA:0000085]
+synonym: "ventricular septum" RELATED [Wikipedia:Interventricular_septum]
 xref: BTO:0002483
 xref: EFO:0001956
 xref: EHDAA:2603
@@ -7753,6 +7773,7 @@ xref: ZFA:0005045
 is_a: UBERON:0001637 {source="ZFA"} ! artery
 is_a: UBERON:0003499 ! brain blood vessel
 is_a: UBERON:0005492 ! hyaloid vessel
+relationship: part_of UBERON:0005492 {source="ZFA"} ! hyaloid vessel
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg xsd:anyURI
 property_value: UBPROP:0000001 "Artery that is internal to the eye. Isogai et al. 2001.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005045", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000008 "In humans, Usually fully regressed before birth, its purpose is to supply nutrient to the developing lens in the growing fetus. During the tenth week of development the lens grows independent of a blood supply and the hyaloid artery usually regresses. Its proximal portion remains as the central artery of the retina. Regression of the hyaloid artery leaves a clear central zone through the vitreous called the hyaloid canal or Cloquet's canal. Occasionally the artery may not fully regress, resulting in the condition persistent hyaloid artery. More commonly, small remnants of the artery may remain. Free remnants can sometimes be seen as 'floaters'. An anterior remnant of the hyaloid artery can be seen in some people as Mittendorf's dot, a small pinpoint-like scar on the posterior surface of the lens. A posterior remnant may be seen where the artery left the optic disc, and is known as Bergmeister's papilla" xsd:string
@@ -7994,6 +8015,7 @@ xref: Wikipedia:Myocardium
 xref: XAO:0000065
 xref: ZFA:0001319
 is_a: UBERON:0005983 ! heart layer
+relationship: part_of UBERON:0000948 ! heart
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/6e/Glanzstreifen.jpg xsd:anyURI
 property_value: IAO:0000116 "TODO - check 'Myocardum proper' in FMA. We superclass the more generic class for now. FMA has is_a muscle layer - should we add this? ZFA and BTO both have is_a 'cardiac muscle' (tissue?). But in U we also follow FMA and have cardiac muscle tissue of myocardium (there is also Fibrocollagenous connective tissue of myocardium), which would be identical (see issue-10). Note that GO also treats left/right ventricular cardiac muscle tissue synonymous with ventricular myocardium" xsd:string
 property_value: UBPROP:0000001 "Robust muscular tunic of the heart which forms the basic part of its walls. Its external surface is covered by the pericardium and its internal one by the endocardium. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000083", ontology="VHOG", source="http://bgee.unil.ch/"}
@@ -8116,6 +8138,7 @@ xref: ZFA:0005070
 is_a: UBERON:0004491 ! cardiac muscle tissue of interatrial septum
 is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
 is_a: UBERON:0010131 {source="cjm"} ! conducting tissue of heart
+relationship: part_of UBERON:0002085 ! interatrial septum
 relationship: part_of UBERON:0002350 ! conducting system of heart
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/50/ConductionsystemoftheheartwithouttheHeart.png xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/92/Gray501.png xsd:anyURI
@@ -8151,6 +8174,7 @@ xref: UMLS:C0006382 {source="ncithesaurus:Atrioventricular_Bundle"}
 xref: Wikipedia:Bundle_of_His
 is_a: UBERON:0010131 {source="cjm"} ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
+relationship: part_of UBERON:0002350 ! conducting system of heart
 relationship: part_of UBERON:0004146 {source="GO"} ! His-Purkinje system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/50/ConductionsystemoftheheartwithouttheHeart.png xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b6/ECG_Principle_fast.gif xsd:anyURI
@@ -8179,6 +8203,8 @@ xref: UMLS:C0034144 {source="ncithesaurus:Purkinje_Fiber"}
 xref: Wikipedia:Purkinje_fiber
 is_a: UBERON:0010131 {source="FMA"} ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
+relationship: part_of UBERON:0002350 {source="FMA", source="GO", source="MA"} ! conducting system of heart
+relationship: part_of UBERON:0004146 {source="GO"} ! His-Purkinje system
 relationship: part_of UBERON:8000009 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! Purkinje fiber network
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/96/Gray498.png xsd:anyURI
 
@@ -8256,6 +8282,7 @@ xref: FMA:9868
 xref: RETIRED_EHDAA2:0001443
 xref: SCTID:361326002
 xref: TAO:0000054
+relationship: part_of UBERON:0001009 ! circulatory system
 relationship: part_of UBERON:0002407 ! pericardium
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/7e/Gray489.png xsd:anyURI
 
@@ -8597,6 +8624,7 @@ xref: FMA:7269
 xref: MA:0002831
 xref: SCTID:118755002
 xref: Wikipedia:Trabeculae_carneae
+relationship: part_of UBERON:0000948 ! heart
 relationship: part_of UBERON:0002082 {source="WP"} ! cardiac ventricle
 property_value: UBPROP:0000009 "The purpose of the trabeculae carneae is most likely to prevent suction that would occur with a flat surfaced membrane and thus impair the heart's ability to pump efficiently. The trabeculae carneae also serve a similar function to papillary muscles in that their contraction pulls on the chordae tendineae, preventing inversion of the mitral (bicuspid) and tricuspid valves, that is, their bulging towards the atrial chambers, which would lead to subsequent leakage of the blood into the atria. So by the action of papillary muscles on the atrioventricular valves, backflow of the blood from the ventricles into the atria is prevented" xsd:string {source="WP"}
 property_value: UBPROP:0000012 "Note that WP states they are ventricular, but MP has classes for atrial ventricular carnea." xsd:string {external_ontology="MP"}
@@ -8992,6 +9020,7 @@ synonym: "cardiac muscle tissue of auricle" EXACT [FMA:84279]
 xref: EMAPA:36056
 xref: FMA:84279
 is_a: UBERON:0004490 ! cardiac muscle tissue of atrium
+relationship: part_of UBERON:0001133 ! cardiac muscle tissue
 relationship: part_of UBERON:0006618 ! atrium auricular region
 
 [Term]
@@ -9089,6 +9118,7 @@ xref: FMA:84084
 xref: VHOG:0000999
 is_a: UBERON:0004492 ! cardiac muscle tissue of cardiac septum
 is_a: UBERON:0004667 ! interventricular septum muscular part
+relationship: part_of UBERON:0002094 ! interventricular septum
 
 [Term]
 id: UBERON:0003388
@@ -9433,6 +9463,7 @@ xref: EMAPA:37575 {source="MA:th"}
 xref: MA:0001808
 is_a: UBERON:0001915 ! endothelium of capillary
 is_a: UBERON:0004702 ! respiratory system blood vessel endothelium
+relationship: part_of UBERON:0003504 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! respiratory system blood vessel
 relationship: part_of UBERON:0003526 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! respiratory system capillary
 
 [Term]
@@ -9495,6 +9526,7 @@ xref: EMAPA:35397
 xref: MA:0002483
 is_a: UBERON:0003834 ! thoracic segment blood vessel
 is_a: UBERON:0005985 ! coronary vessel
+relationship: part_of UBERON:0000948 ! heart
 relationship: part_of UBERON:0018674 ! heart vasculature
 
 [Term]
@@ -9983,6 +10015,7 @@ synonym: "elastic tissue of circulatory system" EXACT [OBOL:automatic]
 synonym: "textus connectivus elasticus of cardiovascular system" EXACT [OBOL:automatic]
 synonym: "textus connectivus elasticus of circulatory system" EXACT [OBOL:automatic]
 xref: MA:0002857
+relationship: part_of UBERON:0001009 ! circulatory system
 relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
@@ -10024,6 +10057,7 @@ xref: FMA:74433
 xref: MA:0002903
 xref: SCTID:48467007
 is_a: UBERON:0002522 ! tunica media
+relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0004663 ! aorta wall
 
 [Term]
@@ -10045,6 +10079,7 @@ xref: FMA:74419
 xref: MA:0002904
 xref: SCTID:362031007
 is_a: UBERON:0004797 ! blood vessel layer
+relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0004663 ! aorta wall
 
 [Term]
@@ -10364,6 +10399,7 @@ xref: SCTID:340163004
 xref: TAO:0005261
 xref: Wikipedia:Sinusoid_(blood_vessel)
 xref: ZFA:0005261
+is_a: UBERON:0001982 {source="Wikipedia-inconsistent"} ! capillary
 is_a: UBERON:2005260 {source="Wikipedia", source="ZFA"} ! fenestrated capillary
 property_value: UBPROP:0000001 "Fenestrated blood vessel endothelium with pores that are large enough for blood cells to pass. The basal lamina and gap junctions may be discontinuous.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005261", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000007 "sinusoidal" xsd:string
@@ -10454,6 +10490,7 @@ xref: MESH:D016570
 xref: SCTID:280652000
 xref: Wikipedia:Bruch's_membrane
 xref: ZFA:0005562
+relationship: part_of UBERON:0001776 {source="FMA", source="ZFA"} ! optic choroid
 relationship: part_of UBERON:0013399 ! blood vessel layer of choroid
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/gkoutos
@@ -10662,6 +10699,8 @@ xref: TAO:0005060
 xref: ZFA:0005060
 is_a: UBERON:0004124 ! myocardium trabecular layer
 relationship: part_of UBERON:0001083 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! myocardium of ventricle
+relationship: part_of UBERON:0002082 ! cardiac ventricle
+relationship: part_of UBERON:0004784 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! heart ventricle wall
 property_value: IAO:0000116 "TODO - check FMA" xsd:string
 
 [Term]
@@ -10680,6 +10719,8 @@ xref: TAO:0005062
 xref: ZFA:0005062
 is_a: UBERON:0004125 ! myocardial compact layer
 relationship: part_of UBERON:0001083 {source="ZFA"} ! myocardium of ventricle
+relationship: part_of UBERON:0002082 ! cardiac ventricle
+relationship: part_of UBERON:0004784 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! heart ventricle wall
 property_value: UBPROP:0000001 "The outer layer the ventricular myocardium, muscle fibers are arranged in a compact form and involved the entire ventricle.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005062", ontology="TAO", source="ZFIN:curator"}
 
 [Term]
@@ -10721,6 +10762,7 @@ synonym: "VCS" EXACT []
 synonym: "ventricular conduction system" EXACT []
 is_a: UBERON:0010131 {source="cjm"} ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
+relationship: part_of UBERON:0002082 {source="GO-def"} ! cardiac ventricle
 relationship: part_of UBERON:0002350 {source="GO"} ! conducting system of heart
 property_value: UBPROP:0000001 "the intraventricular conduction system from the bundle of His to the distal Purkinje fibers, which carries the impulse to the ventricles." xsd:string {source="http://medical-dictionary.thefreedictionary.com/His-Purkinje+system"}
 
@@ -11345,6 +11387,7 @@ xref: VHOG:0000122
 xref: Wikipedia:Aortic_arches
 xref: XAO:0000341
 xref: ZFA:0005004
+is_a: UBERON:0001637 {source="ZFA"} ! artery
 is_a: UBERON:0003469 ! respiratory system artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:0007303 {source="ZFA"} ! pharyngeal vasculature
@@ -11432,6 +11475,7 @@ synonym: "atrial myocardium" RELATED [GO:0055009, GOC:mtg_heart]
 synonym: "cardiac atrium muscle" EXACT [GO:0055009]
 xref: FMA:7283
 is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
+relationship: part_of UBERON:0002081 ! cardiac atrium
 relationship: part_of UBERON:0002302 ! myocardium of atrium
 property_value: UBPROP:0000012 "in GO, this is equivalent to the atrial myocardium, but FMA distinguishes these two. Consider merging." xsd:string {external_ontology="GO"}
 
@@ -11531,6 +11575,7 @@ def: "A portion of trabecula carnea cardiac muscle tissue that is part of a righ
 xref: FMA:84429
 is_a: UBERON:0003381 ! cardiac muscle of right ventricle
 is_a: UBERON:0003452 ! trabecula carnea cardiac muscle tissue
+relationship: part_of UBERON:0002080 ! heart right ventricle
 relationship: part_of UBERON:0006570 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! trabecula carnea of right ventricle
 
 [Term]
@@ -11541,6 +11586,7 @@ def: "A portion of trabecula carnea cardiac muscle tissue that is part of a left
 xref: FMA:84430
 is_a: UBERON:0003382 ! cardiac muscle of left ventricle
 is_a: UBERON:0003452 ! trabecula carnea cardiac muscle tissue
+relationship: part_of UBERON:0002084 ! heart left ventricle
 relationship: part_of UBERON:0006571 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! trabecula carnea of left ventricle
 
 [Term]
@@ -11619,6 +11665,7 @@ synonym: "set of blood vessels" EXACT []
 xref: TAO:0001079
 xref: ZFA:0001079
 is_a: UBERON:0002049 ! vasculature
+relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0004540
@@ -11761,6 +11808,7 @@ xref: MA:0002719
 xref: SCTID:362030008
 xref: VHOG:0000273
 is_a: UBERON:0007798 {source="MA"} ! vascular system
+relationship: part_of UBERON:0004535 {source="EHDAA2"} ! cardiovascular system
 property_value: UBPROP:0000003 "The appearance of Chordata and subsequently the vertebrates is accompanied by a rapid structural diversification of this primitive linear heart: looping, unidirectional circulation, an enclosed vasculature, and the conduction system.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000273", ontology="VHOG", source="DOI:10.1196/annals.1341.002 Bishopric NH, Evolution of the heart from bacteria to man. Annals of the New York Academy of Sciences (2005)", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -11922,6 +11970,7 @@ xref: FMA:14283
 xref: MA:0002902
 xref: SCTID:24996002
 is_a: UBERON:0005734 ! tunica adventitia of blood vessel
+relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0004663 ! aorta wall
 
 [Term]
@@ -12338,6 +12387,7 @@ namespace: uberon
 def: "Any of the tissue layers that comprise a blood vessel. Examples: tunica media, tunica adventitia." [http://orcid.org/0000-0002-6601-2165]
 xref: EMAPA:36296
 xref: MA:0002854
+relationship: part_of UBERON:0001981 ! blood vessel
 relationship: part_of UBERON:0035965 ! wall of blood vessel
 property_value: depicted:by Blood:vessels.svg xsd:anyURI
 
@@ -12362,6 +12412,8 @@ xref: MA:0001801
 is_a: UBERON:0001917 ! endothelium of artery
 is_a: UBERON:0004702 ! respiratory system blood vessel endothelium
 relationship: part_of UBERON:0003469 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! respiratory system artery
+relationship: part_of UBERON:0003504 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! respiratory system blood vessel
+relationship: part_of UBERON:0003643 ! respiratory system arterial blood vessel
 
 [Term]
 id: UBERON:0004849
@@ -12536,6 +12588,7 @@ name: left ventricular compact myocardium
 namespace: uberon
 def: "." [GO:0003224]
 is_a: UBERON:0004127 ! compact layer of ventricle
+relationship: part_of UBERON:0002084 ! heart left ventricle
 relationship: part_of UBERON:0003382 {source="GO"} ! cardiac muscle of left ventricle
 relationship: part_of UBERON:0006566 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! left ventricle myocardium
 
@@ -12545,6 +12598,7 @@ name: left ventricular trabecular myocardium
 namespace: uberon
 def: "." [GO:0003225]
 is_a: UBERON:0004126 ! trabecular layer of ventricle
+relationship: part_of UBERON:0002084 ! heart left ventricle
 relationship: part_of UBERON:0003382 {source="GO"} ! cardiac muscle of left ventricle
 
 [Term]
@@ -12553,6 +12607,7 @@ name: right ventricular compact myocardium
 namespace: uberon
 def: "." [GO:0003226]
 is_a: UBERON:0004127 ! compact layer of ventricle
+relationship: part_of UBERON:0002080 ! heart right ventricle
 relationship: part_of UBERON:0003381 {source="GO"} ! cardiac muscle of right ventricle
 relationship: part_of UBERON:0006567 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! right ventricle myocardium
 
@@ -12562,6 +12617,7 @@ name: right ventricular trabecular myocardium
 namespace: uberon
 def: "." [GO:0003227]
 is_a: UBERON:0004126 ! trabecular layer of ventricle
+relationship: part_of UBERON:0002080 ! heart right ventricle
 relationship: part_of UBERON:0003381 {source="GO"} ! cardiac muscle of right ventricle
 
 [Term]
@@ -12671,6 +12727,7 @@ xref: NCIT:C52855
 xref: SCTID:244222007
 xref: UMLS:C0226184 {source="ncithesaurus:Ethmoidal_Artery"}
 xref: Wikipedia:Ethmoidal_arteries
+is_a: UBERON:0001637 {source="MA"} ! artery
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001619 ! ophthalmic artery
@@ -12963,6 +13020,7 @@ xref: UMLS:C0149603 {source="ncithesaurus:Anterior_Spinal_Artery"}
 xref: Wikipedia:Anterior_spinal_artery
 is_a: UBERON:0002458 ! spinal artery
 is_a: UBERON:0035307 ! branch of vertebral artery
+relationship: part_of UBERON:0004571 ! systemic arterial system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/73/Anterior_spinal_cord_-_very_low_mag.jpg xsd:anyURI
 
 [Term]
@@ -13043,6 +13101,7 @@ xref: UMLS:C0456944 {source="ncithesaurus:Coronary_Sinus"}
 xref: Wikipedia:Coronary_sinus
 is_a: UBERON:0003498 ! heart blood vessel
 is_a: UBERON:0003920 ! venous blood vessel
+relationship: part_of UBERON:0000948 ! heart
 relationship: part_of UBERON:0004581 ! systemic venous system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray491.png xsd:anyURI
 property_value: UBPROP:0000010 "The sinus, before entering the auricle, is considerably dilated - nearly to the size of the end of the little finger. Its wall is partly muscular, and at its junction with the great coronary vein is somewhat constricted and furnished with a valve consisting of two unequal segments" xsd:string {source="WP"}
@@ -13076,9 +13135,11 @@ xref: SCTID:253684002
 xref: UMLS:C0013273 {source="ncithesaurus:Ductus_Arteriosus"}
 xref: VHOG:0000923
 xref: Wikipedia:Ductus_arteriosus
+is_a: UBERON:0001637 {source="MA"} ! artery
 is_a: UBERON:0003498 ! heart blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0004145 {source="EHDAA2"} ! outflow tract
+relationship: part_of UBERON:0004571 ! systemic arterial system
 relationship: part_of UBERON:0011695 ! embryonic cardiovascular system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/ee/Gray502.png xsd:anyURI
 property_value: UBPROP:0000001 "The temporary channel or blood vessel between the aorta and pulmonary artery in the fetus. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000923", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/ductus+arteriosus"}
@@ -13331,6 +13392,7 @@ xref: XAO:0000376
 xref: XAO:0004147
 is_a: UBERON:0004365 ! vitelline blood vessel
 is_a: UBERON:0013140 ! systemic vein
+relationship: part_of UBERON:0004581 ! systemic venous system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/7e/Gray475.png xsd:anyURI
 property_value: UBPROP:0000001 "One of two veins that run upward at first in front, and subsequently on either side of the intestinal canal. They unite on the ventral aspect of the canal, and beyond this are connected to one another by two anastomotic branches, one on the dorsal, and the other on the ventral aspect of the duodenal portion of the intestine, which is thus encircled by two venous rings; into the middle or dorsal anastomosis the superior mesenteric vein opens. The portions of the veins above the upper ring become interrupted by the developing liver and broken up by it into a plexus of small capillary-like vessels termed sinusoids.[XAO]" xsd:string {ontology="XAO", source="XAO:0004147"}
 property_value: UBPROP:0000003 "Within each vertebrate group, the veins compose a few main functional systems that arise embryologically from what seems to be a common developmental pattern. (...) Early in development, three major sets of paired veins are present: the vitelline veins from the yolk sac, the cardinal veins from the body of the embryo itself, and the lateral abdominal veins from the pelvic region. The paired vitelline veins are among the first vessels to appear in the embryo. They arise over the yolk and follow the yolk stalk into the body. They then turn anteriorly, continue along the gut, and enter the sinus venosus.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000401", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.460", source="http://bgee.unil.ch/"}
@@ -13416,6 +13478,7 @@ xref: MA:0000482
 xref: SCTID:361454005
 xref: VHOG:0000432
 is_a: UBERON:0010277 {source="MA"} ! mesocardium
+relationship: part_of UBERON:0003282 {source="MA"} ! mesentery of heart
 property_value: UBPROP:0000001 "The mesentery of the embryonic heart. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000432", ontology="VHOG", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -13645,6 +13708,7 @@ xref: EMAPA:35904
 xref: FMA:5900
 xref: XAO:0004143
 is_a: UBERON:0002049 ! vasculature
+relationship: part_of UBERON:0001009 ! circulatory system
 property_value: UBPROP:0000001 "In a vascular plexus, the contents of the vessels mix. A plexus allows blood to flow via multiple routes. If one branch of the plexus is obstructed, the blood may flow via the open branches[Wikipedia:Plexus#Circulatory_system]." xsd:string {source="Wikipedia:Plexus#Circulatory_system"}
 
 [Term]
@@ -13694,6 +13758,7 @@ xref: galen:IntimaOfArtery
 xref: SCTID:40022005
 is_a: UBERON:0004797 ! blood vessel layer
 relationship: part_of UBERON:0000415 ! artery wall
+relationship: part_of UBERON:0001637 ! artery
 
 [Term]
 id: UBERON:0005800
@@ -13756,6 +13821,7 @@ xref: SCTID:362063001
 xref: UMLS:C0226727 {source="ncithesaurus:Portal_Venous_System"}
 xref: Wikipedia:Portal_venous_system
 is_a: UBERON:0002049 ! vasculature
+relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0005912
@@ -13987,7 +14053,9 @@ xref: galen:LeftBundleBranch
 xref: SCTID:277690001
 is_a: UBERON:0010131 ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
+relationship: part_of UBERON:0002350 {source="FMA"} ! conducting system of heart
 relationship: part_of UBERON:0002353 ! bundle of His
+relationship: part_of UBERON:0004146 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! His-Purkinje system
 
 [Term]
 id: UBERON:0005987
@@ -14010,7 +14078,9 @@ xref: galen:RightBundleBranch
 xref: SCTID:277689005
 is_a: UBERON:0010131 ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
+relationship: part_of UBERON:0002350 {source="FMA"} ! conducting system of heart
 relationship: part_of UBERON:0002353 ! bundle of His
+relationship: part_of UBERON:0004146 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! His-Purkinje system
 
 [Term]
 id: UBERON:0005988
@@ -14179,6 +14249,7 @@ xref: FMA:7240
 xref: SCTID:261417002
 is_a: UBERON:0005484 {source="FMA"} ! tricuspid valve leaflet
 is_a: UBERON:0006009 ! cusp of cardiac valve
+relationship: part_of UBERON:0002134 ! tricuspid valve
 property_value: IAO:0000116 "check whether we need to separate cusp/leaflet/valve" xsd:string
 
 [Term]
@@ -14550,6 +14621,7 @@ xref: EMAPA:16827
 xref: VHOG:0000502
 xref: Wikipedia:Aorticopulmonary_septum
 is_a: UBERON:0004142 ! outflow tract septum
+relationship: part_of UBERON:0004145 {source="EMAPA"} ! outflow tract
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b9/Gray470.png xsd:anyURI
 
 [Term]
@@ -14599,7 +14671,10 @@ subset: emapa_ehdaa2
 xref: EHDAA2:0001498
 xref: EHDAA:818
 xref: EMAPA:16242
+is_a: UBERON:0001638 {source="EHDAA2"} ! vein
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0004581 ! systemic venous system
+relationship: part_of UBERON:0009141 {source="EHDAA2"} ! craniocervical region vein
 
 [Term]
 id: UBERON:0006296
@@ -14628,6 +14703,7 @@ xref: NCIT:C34308
 xref: SCTID:308829001
 xref: UMLS:C0231090 {source="ncithesaurus:Supracardinal_Vein"}
 is_a: UBERON:0013140 ! systemic vein
+relationship: part_of UBERON:0004581 ! systemic venous system
 
 [Term]
 id: UBERON:0006305
@@ -14653,6 +14729,7 @@ xref: EHDAA:1945
 xref: EMAPA:17020
 xref: RETIRED_EHDAA2:0002172
 relationship: part_of UBERON:0004581 ! systemic venous system
+relationship: part_of UBERON:0004582 ! venous system
 
 [Term]
 id: UBERON:0006310
@@ -14663,6 +14740,7 @@ xref: EHDAA2:0002210
 xref: EHDAA:1945
 xref: EMAPA:17020
 relationship: part_of UBERON:0004581 ! systemic venous system
+relationship: part_of UBERON:0004582 ! venous system
 
 [Term]
 id: UBERON:0006338
@@ -15128,6 +15206,7 @@ xref: SCTID:55433007
 xref: Wikipedia:Deep_dorsal_vein_of_the_penis
 is_a: UBERON:0035552 ! deep vein
 relationship: part_of UBERON:0001317 ! internal iliac vein
+relationship: part_of UBERON:0035551 ! deep vasculature
 
 [Term]
 id: UBERON:0006662
@@ -15280,6 +15359,7 @@ xref: Wikipedia:Deep_dorsal_vein_of_clitoris
 is_a: UBERON:0003480 ! vein of clitoris
 is_a: UBERON:0035552 ! deep vein
 relationship: part_of UBERON:0001317 ! internal iliac vein
+relationship: part_of UBERON:0035551 ! deep vasculature
 
 [Term]
 id: UBERON:0006694
@@ -15305,6 +15385,7 @@ xref: UMLS:C0149562 {source="ncithesaurus:Anterior_Communicating_Artery"}
 xref: Wikipedia:Anterior_communicating_artery
 is_a: UBERON:0006347 ! communicating artery
 is_a: UBERON:0035380 ! branch of anterior cerebral artery
+relationship: part_of UBERON:0003709 ! circle of Willis
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/2e/Circle_of_Willis_en.svg xsd:anyURI
 
 [Term]
@@ -15383,6 +15464,7 @@ xref: UMLS:C0162405 {source="ncithesaurus:Lymphatic_Capillary"}
 xref: ZFA:0005252
 is_a: UBERON:0001473 {source="FMA"} ! lymphatic vessel
 is_a: UBERON:0010523 {source="ZFA"} ! microcirculatory vessel
+relationship: part_of UBERON:0004536 ! lymph vasculature
 property_value: IAO:0000116 "TODO - check superclass" xsd:string
 property_value: UBPROP:0000001 "Microvessel of the lymphatic system lined with a single layer of overlapping endothelial cells.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005252", ontology="TAO", source="ZFIN:curator"}
 
@@ -15463,6 +15545,7 @@ synonym: "heart capillary" EXACT [GO:0003248]
 xref: ZFA:0005813
 is_a: UBERON:0001982 ! capillary
 is_a: UBERON:0003498 ! heart blood vessel
+relationship: part_of UBERON:0000948 ! heart
 relationship: part_of UBERON:0018674 {source="ZFA"} ! heart vasculature
 
 [Term]
@@ -15703,6 +15786,7 @@ xref: EMAPA:16589
 xref: FMA:19741
 xref: VHOG:0000778
 is_a: UBERON:0003388 ! mesothelium of pericardial cavity
+relationship: part_of UBERON:0002407 ! pericardium
 property_value: UBPROP:0000003 "Found in all vertebrates, the VP (visceral pericardium) is also known as the cardiac epimysium. This outermost layer of the epicardium consists of a thin layer of mesothelial cells over a dense network of collagen and elastin fibers.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000778", ontology="VHOG", source="DOI:10.1152/ajpheart.00967.2007 Jöbsis PD, Ashikaga H, Wen H, Rothstein EC, Horvath KA, McVeigh ER, Balaban RS, The visceral pericardium: macromolecular structure and contribution to passive mechanical properties of the left ventricle. American journal of physiology, Heart and circulatory physiology (2007)", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -15717,6 +15801,7 @@ synonym: "pericardium parietal mesothelium" EXACT [EMAPA:16588]
 xref: EMAPA:16588
 xref: FMA:19742
 is_a: UBERON:0003388 ! mesothelium of pericardial cavity
+relationship: part_of UBERON:0002407 ! pericardium
 property_value: UBPROP:0000012 "EMAPA:16588 belongs here on the basis of exact synonym" xsd:string {external_ontology="EMAPA"}
 
 [Term]
@@ -15756,6 +15841,7 @@ xref: SCTID:84300001
 xref: UMLS:C1710627 {source="ncithesaurus:Venous_System_Smooth_Muscle_Tissue"}
 is_a: UBERON:0002522 ! tunica media
 relationship: part_of UBERON:0000415 ! artery wall
+relationship: part_of UBERON:0001637 ! artery
 
 [Term]
 id: UBERON:0007240
@@ -15770,6 +15856,7 @@ xref: FMA:14274
 xref: SCTID:113261001
 is_a: UBERON:0005734 ! tunica adventitia of blood vessel
 relationship: part_of UBERON:0000415 ! artery wall
+relationship: part_of UBERON:0001637 ! artery
 
 [Term]
 id: UBERON:0007241
@@ -15932,6 +16019,9 @@ xref: SCTID:31708008
 xref: Wikipedia:Deep_external_pudendal_artery
 is_a: UBERON:0001355 ! deep femoral artery
 is_a: UBERON:0013137 ! external pudendal artery
+relationship: part_of UBERON:0001308 {source="FMA"} ! external iliac artery
+relationship: part_of UBERON:0002060 {source="FMA"} ! femoral artery
+relationship: part_of UBERON:0035551 ! deep vasculature
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/43/Gray549.png xsd:anyURI
 
 [Term]
@@ -15947,6 +16037,7 @@ xref: SCTID:47954000
 xref: Wikipedia:Superficial_external_pudendal_artery
 is_a: UBERON:0004573 ! systemic artery
 is_a: UBERON:0013137 ! external pudendal artery
+relationship: part_of UBERON:0001308 {source="FMA"} ! external iliac artery
 relationship: part_of UBERON:0002060 ! femoral artery
 relationship: part_of UBERON:0035549 ! vasculature of integument
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/43/Gray549.png xsd:anyURI
@@ -16037,6 +16128,7 @@ xref: MESH:D016909
 xref: NCIT:C12824
 xref: SCTID:181351007
 xref: UMLS:C0085427 {source="ncithesaurus:Tibial_Artery"}
+is_a: UBERON:0001637 {source="MESH"} ! artery
 is_a: UBERON:0003516 ! hindlimb blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0002250 ! popliteal artery
@@ -16244,6 +16336,7 @@ def: "The dorsal artery of clitoris is a branch of the internal pudendal artery.
 xref: FMA:20867
 xref: SCTID:244298003
 xref: Wikipedia:Dorsal_artery_of_clitoris
+is_a: UBERON:0001637 {source="MA"} ! artery
 is_a: UBERON:0003835 ! abdominal segment blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0007315 ! internal pudendal artery
@@ -16281,6 +16374,7 @@ synonym: "pulmonary system" EXACT [ISBN:0073040584]
 xref: FMA:45621
 xref: Wikipedia:Pulmonary_circulation
 is_a: UBERON:0007798 {source="Obol"} ! vascular system
+relationship: part_of UBERON:0004535 {source="FMA"} ! cardiovascular system
 property_value: UBPROP:0000001 "Subdivision of cardiovascular system which has as its parts the pulmonary arterial and venous tree organs.[FMA]" xsd:string {ontology="FMA", source="FMA:45621"}
 
 [Term]
@@ -16363,6 +16457,7 @@ xref: FMA:5036
 xref: SCTID:113340006
 xref: Wikipedia:Superficial_inguinal_lymph_nodes
 is_a: UBERON:0015917 ! superficial lymph node
+relationship: part_of UBERON:0035549 ! vasculature of integument
 
 [Term]
 id: UBERON:0009025
@@ -16530,6 +16625,7 @@ synonym: "deep external pudic vein" RELATED []
 xref: FMA:44488
 is_a: UBERON:0018253 ! external pudendal vein
 is_a: UBERON:0035552 ! deep vein
+relationship: part_of UBERON:0035551 ! deep vasculature
 
 [Term]
 id: UBERON:0009049
@@ -16539,6 +16635,7 @@ synonym: "superficial external pudic vein" RELATED []
 xref: FMA:21377
 is_a: UBERON:0018253 ! external pudendal vein
 is_a: UBERON:0035550 ! superficial vein
+relationship: part_of UBERON:0035549 ! vasculature of integument
 
 [Term]
 id: UBERON:0009054
@@ -16636,6 +16733,7 @@ xref: EHDAA2:0004535
 xref: FMA:70310
 xref: SCTID:361507009
 is_a: UBERON:0002064 {source="FMA"} ! common cardinal vein
+relationship: part_of UBERON:0004344 {source="EHDAA2"} ! cardinal vein
 property_value: UBPROP:0000008 "only a vestige of the right duct in the adult hagfish (21)[PMID:20959416, S1]" xsd:string
 
 [Term]
@@ -16839,7 +16937,9 @@ xref: NCIT:C33362
 xref: SCTID:244212001
 xref: UMLS:C0149573 {source="ncithesaurus:Posterior_Inferior_Cerebellar_Artery"}
 xref: Wikipedia:Posterior_inferior_cerebellar_artery
+is_a: UBERON:0001637 {source="EHDAA2"} ! artery
 is_a: UBERON:0035307 ! branch of vertebral artery
+relationship: part_of UBERON:0001535 {source="FMA"} ! vertebral artery
 
 [Term]
 id: UBERON:0009689
@@ -16914,6 +17014,7 @@ xref: EHDAA2:0000304
 xref: FMA:70311
 xref: SCTID:361506000
 is_a: UBERON:0002064 {source="FMA"} ! common cardinal vein
+relationship: part_of UBERON:0004344 {source="EHDAA2"} ! cardinal vein
 property_value: UBPROP:0000008 "the left duct atrophies at metamorphosis in the lamprey (22)[PMID:20959416, S1]" xsd:string
 
 [Term]
@@ -17112,6 +17213,7 @@ xref: ZFA:0005094
 is_a: UBERON:0002203 {source="ZFA"} ! vasculature of eye
 is_a: UBERON:0005629 {source="XAO"} ! vascular plexus
 relationship: part_of UBERON:0001776 {source="ZFA"} ! optic choroid
+relationship: part_of UBERON:0002200 {source="XAO"} ! vasculature of head
 property_value: IAO:0000116 "Consider merging with capillary layer. Consider choriocapillaris complex" xsd:string
 property_value: UBPROP:0000001 "A plexus of capillaries that is located anteromedial to the eye. It is a capillary layer in the choroid. It is in contact with the basal surface of the retinal pigmented epithelium and supplies the photoreceptors with oxygen and nutrients. The fused basement membrane of this capillary layer and the pigmented epithelium is called Bruchs's membrane.[XAO:0004176]." xsd:string {source="XAO:0004176"}
 property_value: UBPROP:0000001 "Is an ocular vasculature that develops adjacent to the pigment epithelium of the eye. The optic choroid vascular plexus develops from the primitive mesencephalic artery. Initially blood enters from the mesencephalic central artery, and the dorsal ciliary vein. The plexus drains via the ophthalmic vein. The plexus supplies blood to the retina[ZFA:0005094]." xsd:string {source="ZFA:0005094"}
@@ -17256,6 +17358,7 @@ xref: EMAPA:17328
 xref: MA:0001872
 is_a: UBERON:0005208 ! right atrium valve
 is_a: UBERON:0006675 ! venous valve
+relationship: part_of UBERON:0002078 ! right cardiac atrium
 property_value: UBPROP:0000012 "part_of in EHDAA2. Only child in MA." xsd:string {external_ontology="EHDAA2"}
 
 [Term]
@@ -17509,6 +17612,7 @@ subset: pheno_slim
 synonym: "cardiac mesentery" RELATED [EMAPA:16212]
 xref: EMAPA:16212
 xref: MA:0000098
+relationship: part_of UBERON:0000948 {source="MA"} ! heart
 relationship: part_of UBERON:0003282 ! mesentery of heart
 property_value: IAO:0000116 "consider merging with heart mesentery" xsd:string
 property_value: UBPROP:0000007 "mesocardial" xsd:string
@@ -17862,6 +17966,7 @@ def: "Each of the two arteries arising from the hypogastric arteries of the fetu
 synonym: "embryonic umbilical artery" EXACT [VHOG:0000599]
 xref: VHOG:0000599
 is_a: UBERON:0001637 ! artery
+relationship: part_of UBERON:0004572 {source="VHOG"} ! arterial system
 property_value: UBPROP:0000001 "Each of the two arteries arising from the hypogastric arteries of the fetus and passing throught the umbilical cord to the placenta. [Dorian_AF, Elsevier's_encyclopaedic_dictionary_of_medicine, Part_B:_Anatomy_(1988)_Amsterdam_etc.:_Elsevier][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000599", ontology="VHOG", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -17892,6 +17997,7 @@ namespace: uberon
 synonym: "extraembryonic umbilical artery right" EXACT [EHDAA2:0001721]
 xref: EHDAA2:0001721
 is_a: UBERON:0011693 ! extraembryonic portion of umbilical artery
+relationship: part_of UBERON:0007807 {source="EHDAA2"} ! connecting stalk vasculature
 
 [Term]
 id: UBERON:0011737
@@ -17962,6 +18068,7 @@ xref: EMAPA:18249
 xref: NCIT:C34196
 xref: VHOG:0001000
 is_a: UBERON:0034953 ! embryonic lymph sac
+relationship: part_of UBERON:0006558 {source="VHOG"} ! lymphatic part of lymphoid system
 property_value: UBPROP:0000001 "Lymphatic vessels develop from lymph sacs that arise from developing veins, which are derived from mesoderm. The first lymph sacs to appear are the paired jugular lymph sacs at the junction of the internal jugular and subclavian veins. [Wikipedia:Lymphatic_system][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001000", ontology="VHOG", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -18450,6 +18557,7 @@ synonym: "labial vein of face" EXACT []
 synonym: "lip vein" EXACT [OBOL:automatic]
 synonym: "vena labialis" EXACT LATIN []
 xref: SCTID:367664002
+is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0003502 ! neck blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
@@ -18594,6 +18702,7 @@ namespace: uberon
 def: "A hole with that connects the left and right aorta in animals of the order Crocodilia." [Wikipedia:Foramen_of_Panizza]
 xref: Wikipedia:Foramen_of_Panizza
 relationship: part_of UBERON:0000948 ! heart
+relationship: part_of UBERON:0004535 {source="Wikipedia"} ! cardiovascular system
 property_value: UBPROP:0000008 "Crocodilians have a completely separated ventricle with deoxygenated blood from the body, or systemic circulation, in the right ventricle and oxygenated blood from the lungs, or pulmonary circulation, in the left ventricle, as in birds and mammals. Two vessels, the left aorta and the pulmonary artery, exit the right ventricle. Blood from the right ventricle goes to the lungs through the pulmonary artery, as in mammals and birds. However, when a unique active valve leading to the pulmonary artery contracts, pressure in the right ventricle can increase and blood can leave the right ventricle, enter the left aortic arch, and therefore bypass the pulmonary circulation. The foramen of panizza connects the left and right aorta. Deoxygenated blood from the right ventricle, sitting in the left aorta, can flow into the right aorta through the foramen of panizza. When the heart is relaxed, some oxygenated blood from the left ventricle, sitting in the right aorta, can flow into the left aorta across the foramen of panizza. However, some species of Crocodilians have regulatory sphincters that prevent unwanted flow of blood through the foramen of panizza during non-diving" xsd:string
 
 [Term]
@@ -18867,6 +18976,7 @@ xref: NCIT:C33352
 xref: SCTID:369342007
 is_a: UBERON:0013151 ! choroidal artery
 is_a: UBERON:0035508 ! branch of posterior cerebral artery
+relationship: part_of UBERON:0001636 {source="FMA"} ! posterior cerebral artery
 
 [Term]
 id: UBERON:0014699
@@ -19060,6 +19170,8 @@ synonym: "ventricular leaflet of mitral valve" EXACT [FMA:7243]
 xref: FMA:7243
 xref: SCTID:244355000
 is_a: UBERON:0007151 {source="FMA"} ! mitral valve leaflet
+relationship: part_of UBERON:0002135 {source="FMA"} ! mitral valve
+relationship: part_of UBERON:0007151 {source="FMA"} ! mitral valve leaflet
 
 [Term]
 id: UBERON:0014903
@@ -19112,6 +19224,7 @@ synonym: "anterior internodal fasciculus" EXACT [FMA:9480]
 synonym: "anterior internodal tract muscle tissue" EXACT [FMA:9480]
 xref: FMA:9480
 is_a: UBERON:0009966 {source="FMA"} ! internodal tract
+relationship: part_of UBERON:0002350 {source="FMA"} ! conducting system of heart
 
 [Term]
 id: UBERON:0015126
@@ -19363,6 +19476,7 @@ name: bulbar spiral septum
 namespace: uberon
 xref: SCTID:361469006
 is_a: UBERON:0002099 ! cardiac septum
+relationship: part_of UBERON:0000948 ! heart
 
 [Term]
 id: UBERON:0015227
@@ -19570,6 +19684,7 @@ xref: FMA:61217
 xref: SCTID:279141006
 xref: Wikipedia:Superficial_parotid_lymph_nodes
 is_a: UBERON:0015917 ! superficial lymph node
+relationship: part_of UBERON:0035549 ! vasculature of integument
 property_value: UBPROP:0000001 "Rostromedial to the sublingual and mandibular salivary glands Dorsolateral to the mandibular lymph node Ventral to the external acoustic pore, caudal to the extraorbital lacrimal gland, cranioventral to the parotid salivary gland, dorsal to the junction between the superficial temporal vein (v.) and the maxillary v.." xsd:string {source="PMID:16624319", taxon="NCBITaxon:10090"}
 
 [Term]
@@ -19579,6 +19694,7 @@ namespace: uberon
 synonym: "superficial intraparotid node" EXACT []
 xref: SCTID:68339009
 is_a: UBERON:0015917 ! superficial lymph node
+relationship: part_of UBERON:0035549 ! vasculature of integument
 
 [Term]
 id: UBERON:0016393
@@ -19700,6 +19816,7 @@ xref: FMA:50982
 xref: Wikipedia:Superficial_cerebral_veins
 is_a: UBERON:0001663 {source="FMA"} ! cerebral vein
 is_a: UBERON:0035550 ! superficial vein
+relationship: part_of UBERON:0035549 ! vasculature of integument
 
 [Term]
 id: UBERON:0016564
@@ -19716,6 +19833,7 @@ name: cerebral blood vessel
 namespace: uberon
 def: "A blood vessel that is part of a cerebellum." [OBOL:automatic]
 is_a: UBERON:0003499 ! brain blood vessel
+relationship: part_of UBERON:0008998 ! vasculature of brain
 
 [Term]
 id: UBERON:0016890
@@ -20103,6 +20221,7 @@ synonym: "ventricular muscle" RELATED [http://orcid.org/0000-0002-6601-2165]
 xref: FMA:83450
 is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
 relationship: part_of UBERON:0001083 ! myocardium of ventricle
+relationship: part_of UBERON:0002082 ! cardiac ventricle
 
 [Term]
 id: UBERON:0018674
@@ -20245,6 +20364,7 @@ namespace: uberon
 xref: EMAPA:27991
 is_a: UBERON:0001980 ! arteriole
 is_a: UBERON:0003644 ! kidney arterial blood vessel
+relationship: part_of UBERON:0006544 ! kidney vasculature
 property_value: IAO:0000116 "compare with afferent arteriole" xsd:string
 
 [Term]
@@ -20375,6 +20495,7 @@ xref: SCTID:368079006
 xref: Wikipedia:Superficial_epigastric_artery
 is_a: UBERON:0004573 ! systemic artery
 is_a: UBERON:0006349 ! epigastric artery
+relationship: part_of UBERON:0001308 {source="FMA"} ! external iliac artery
 relationship: part_of UBERON:0002060 ! femoral artery
 
 [Term]
@@ -20399,6 +20520,7 @@ xref: NCIT:C97112
 xref: SCTID:75061007
 xref: Wikipedia:Aortic_body
 relationship: part_of UBERON:0001508 ! arch of aorta
+relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0034972
@@ -20893,6 +21015,7 @@ xref: UMLS:C0226741
 xref: Wikipedia:Cystic_vein
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:0001138 ! superior mesenteric vein
+relationship: part_of UBERON:0005806 {source="ncithesaurus"} ! portal system
 
 [Term]
 id: UBERON:0035395
@@ -20957,6 +21080,7 @@ xref: SCTID:362036002
 xref: UMLS:C0226037
 xref: Wikipedia:Circumflex_branch_of_left_coronary_artery
 is_a: UBERON:0035395 ! branch of left coronary artery
+relationship: part_of UBERON:0001626 {source="FMA"} ! left coronary artery
 
 [Term]
 id: UBERON:0035428
@@ -21350,6 +21474,7 @@ xref: EHDAA2:0004525
 xref: FMA:280884
 is_a: UBERON:0006877 ! vasculature of liver
 is_a: UBERON:0035755 ! systemic capillary plexus
+relationship: part_of UBERON:0006877 {source="EHDAA2"} ! vasculature of liver
 
 [Term]
 id: UBERON:0035757
@@ -21614,6 +21739,7 @@ name: anterior wall of left ventricle
 namespace: uberon
 xref: FMA:9560
 is_a: UBERON:0036285 ! wall of left ventricle
+relationship: part_of UBERON:0036285 {source="FMA"} ! wall of left ventricle
 
 [Term]
 id: UBERON:0036289
@@ -21946,6 +22072,7 @@ namespace: uberon
 synonym: "hypobranchial vessels" EXACT PLURAL [TAO:0000214]
 xref: ZFA:0000214
 is_a: UBERON:0003498 ! heart blood vessel
+relationship: part_of UBERON:0000948 ! heart
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22027,6 +22154,7 @@ synonym: "PHCB" EXACT [TAO:0001052]
 xref: ZFA:0001052
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22133,6 +22261,7 @@ synonym: "BCA" EXACT [TAO:0005000]
 xref: ZFA:0005000
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003496 ! head blood vessel
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22147,6 +22276,7 @@ synonym: "middle cerebral vein" EXACT [TAO:0005010]
 xref: ZFA:0005010
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22223,6 +22353,7 @@ synonym: "PMBC" EXACT [TAO:0005017]
 xref: ZFA:0005017
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22263,6 +22394,7 @@ synonym: "CtA" EXACT [TAO:0005020]
 xref: ZFA:0005020
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003499 ! brain blood vessel
+relationship: part_of UBERON:0008998 ! vasculature of brain
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22313,6 +22445,7 @@ synonym: "PHS" EXACT [TAO:0005026]
 xref: ZFA:0005026
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22326,6 +22459,7 @@ synonym: "PCeV" EXACT [TAO:0005027]
 xref: ZFA:0005027
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22337,6 +22471,7 @@ synonym: "DCV" EXACT [TAO:0005030]
 xref: ZFA:0005030
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22349,6 +22484,7 @@ synonym: "DLV" EXACT [TAO:0005031]
 xref: ZFA:0005031
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003499 ! brain blood vessel
+relationship: part_of UBERON:0008998 ! vasculature of brain
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22361,6 +22497,7 @@ synonym: "OV" EXACT [TAO:0005032]
 xref: ZFA:0005032
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22408,6 +22545,7 @@ def: "The artery that carries blood to the eye. It branches from the internal ca
 xref: ZFA:0005044
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003496 ! head blood vessel
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22485,6 +22623,7 @@ namespace: uberon
 synonym: "IOC" EXACT [TAO:0005054]
 xref: ZFA:0005054
 is_a: UBERON:0002203 ! vasculature of eye
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22497,6 +22636,7 @@ synonym: "MPLV" EXACT [TAO:0005055]
 xref: ZFA:0005055
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22509,6 +22649,7 @@ synonym: "PLV" EXACT [TAO:0005056]
 xref: ZFA:0005056
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22705,6 +22846,7 @@ synonym: "NV" EXACT [TAO:0005093]
 xref: ZFA:0005093
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0002200 ! vasculature of head
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -22846,6 +22988,7 @@ name: caudal fin lymph vessel
 namespace: uberon
 xref: ZFA:0005303
 is_a: UBERON:0007384 ! appendage lymph vessel
+relationship: part_of UBERON:0004536 ! lymph vasculature
 relationship: part_of UBERON:2005097 ! caudal fin vasculature
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
@@ -23128,6 +23271,7 @@ synonym: "Purkinje fibre network" EXACT [PMID:26786210]
 is_a: UBERON:0010131 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! conducting tissue of heart
 is_a: UBERON:0018649 ! cardiac muscle tissue of ventricle
 relationship: part_of UBERON:0002354 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! cardiac Purkinje fiber
+relationship: part_of UBERON:0004146 {source="https://github.com/obophenotype/uberon/issues/1785", source="https://orcid.org/0000-0001-5208-3432", source="https://orcid.org/0000-0002-9791-0064"} ! His-Purkinje system
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]

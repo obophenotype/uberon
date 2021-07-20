@@ -675,7 +675,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000106"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000012"/>
         <owl:annotatedTarget>Note that in TAO, ribs are numbered by *vertebrae*</owl:annotatedTarget>
-        <oboInOwl:external_ontology>TAO</oboInOwl:external_ontology>
+        <oboInOwl:external_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAO</oboInOwl:external_ontology>
     </owl:Axiom>
     
 
@@ -2286,6 +2286,12 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)</obo:IAO_0000115>
         <obo:UBPROP_0000001>Anatomical structure consisting of a discrete aggregate of neuronal soma[GO][GO_REF:0000021].</obo:UBPROP_0000001>
         <obo:UBPROP_0000012>Proposed CUMBO def from MM: A subcortical part of the nervous system consisting of a relatively compact group of cells that is distinguishable histologically that share a commonality of cytoarchitecture, chemoarchitecturel and connectivity. (comments: I put in &apos;subcortical&apos; because I don&apos;t think we consider either the cerebellar cortex or cerebral cortex to be nuclei. Some people distinguish between a nucleus and a laminar structure (see Wikipedia definition). However, there are structures identified as nuclei that are laminar, e.g., lateral geniculate nucleus, although they are not laminated in all species. Also, I put in &apos;relatively compact&apos; and &apos;distiguishable by histology&apos; because we have groups of cells, e.g., cholinergic cell groups, doparminergic cell groups that are related on the 3 criteria but which we don&apos;t tend to consider nuclei because they don&apos;t occupy an easily defined territory. But all is open to debate.</obo:UBPROP_0000012>
@@ -2305,6 +2311,17 @@
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#cumbo"/>
         <rdfs:label>neural nucleus</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000125"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <oboInOwl:source>CUMBO</oboInOwl:source>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000125"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -2458,7 +2475,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP].</owl:annotatedTarget>
         <oboInOwl:hasDbXref>Wikipedia:Brain</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/300</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obophenotype/uberon/issues/300</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000955"/>
@@ -2841,6 +2858,18 @@
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001018"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>tract of neuraxis</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>FMA:83847</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001018"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>nerve tract</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>BIRNLEX:1649</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001018"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A group of axons linking two or more neuropils and having a common origin, termination[FBbt].</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://flybrain.uni-freiburg.de/Flybrain/html/terms/terms.html</oboInOwl:hasDbXref>
@@ -2857,18 +2886,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>neuraxis tract</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:83847</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001018"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>tract of neuraxis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:83847</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001018"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
-        <owl:annotatedTarget>nerve tract</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>BIRNLEX:1649</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2913,7 +2930,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Axon tract that crosses the midline of the central nervous system[NIF, modified]. In the context of Drosophila refers to a broad band of axons connecting equivalent neuropils each side of the brain[FBbt].</owl:annotatedTarget>
         <oboInOwl:hasDbXref>NLXANAT:20090513</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/300</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obophenotype/uberon/issues/300</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/325</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -3430,13 +3447,13 @@
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062">
-        <rdfs:label>preceded_by</rdfs:label>
         <oboInOwl:id>preceded_by</oboInOwl:id>
+        <rdfs:label>preceded_by</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>BFO:0000062</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>takes place after</oboInOwl:hasExactSynonym>
-        <oboInOwl:shorthand>preceded_by</oboInOwl:shorthand>
         <obo:IAO_0000115>X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)</obo:IAO_0000115>
+        <oboInOwl:shorthand>preceded_by</oboInOwl:shorthand>
         <oboInOwl:hasExactSynonym>is preceded by</oboInOwl:hasExactSynonym>
     </rdf:Description>
     <owl:Axiom>
@@ -3476,11 +3493,11 @@
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000096">
-        <rdfs:label>anterior_to</rdfs:label>
         <oboInOwl:id>anterior_to</oboInOwl:id>
+        <rdfs:label>anterior_to</rdfs:label>
         <oboInOwl:creation_date>2009-07-31T02:15:46Z</oboInOwl:creation_date>
-        <oboInOwl:created_by>cjm</oboInOwl:created_by>
         <oboInOwl:hasDbXref>BSPO:0000096</oboInOwl:hasDbXref>
+        <oboInOwl:created_by>cjm</oboInOwl:created_by>
         <obo:IAO_0000115>x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>anterior_to</oboInOwl:shorthand>
@@ -3493,10 +3510,10 @@
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000097">
         <obo:IAO_0000115>x distal_to y iff x is further along the proximo-distal axis than y, towards the appendage tip. A proximo-distal axis extends from tip of an appendage (distal) to where it joins the body (proximal).</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>BSPO:0000097</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>distal_to</oboInOwl:shorthand>
-        <rdfs:label>distal_to</rdfs:label>
+        <oboInOwl:hasDbXref>BSPO:0000097</oboInOwl:hasDbXref>
         <oboInOwl:id>distal_to</oboInOwl:id>
+        <rdfs:label>distal_to</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <owl:Axiom>
@@ -3522,11 +3539,11 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000099">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasNarrowSynonym>caudal_to</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasDbXref>BSPO:0000099</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>posterior_to</oboInOwl:shorthand>
+        <oboInOwl:hasDbXref>BSPO:0000099</oboInOwl:hasDbXref>
         <obo:IAO_0000115>x posterior_to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail.</obo:IAO_0000115>
-        <rdfs:label>posterior_to</rdfs:label>
         <oboInOwl:id>posterior_to</oboInOwl:id>
+        <rdfs:label>posterior_to</rdfs:label>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000099"/>
@@ -3539,8 +3556,8 @@
         <oboInOwl:id>proximal_to</oboInOwl:id>
         <oboInOwl:hasDbXref>BSPO:0000100</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:shorthand>proximal_to</oboInOwl:shorthand>
         <obo:IAO_0000115>x proximal_to y iff x is closer to the point of attachment with the body than y.</obo:IAO_0000115>
+        <oboInOwl:shorthand>proximal_to</oboInOwl:shorthand>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000100"/>
@@ -3549,8 +3566,8 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000102">
-        <oboInOwl:id>ventral_to</oboInOwl:id>
         <rdfs:label>ventral_to</rdfs:label>
+        <oboInOwl:id>ventral_to</oboInOwl:id>
         <obo:IAO_0000115>x ventral_to y iff x is further along the dorso-ventral axis than y, towards the front. A dorso-ventral axis is an axis that bisects an organism from back (e.g. spinal column) to front (e.g. belly).</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>BSPO:0000102</oboInOwl:hasDbXref>
@@ -3566,8 +3583,8 @@
         <oboInOwl:shorthand>deep_to</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <rdfs:label>deep_to</rdfs:label>
-        <oboInOwl:id>deep_to</oboInOwl:id>
         <obo:IAO_0000115>Further away from the surface of the organism. Thus, the muscular layer is deep to the skin, but superficial to the intestines.</obo:IAO_0000115>
+        <oboInOwl:id>deep_to</oboInOwl:id>
         <oboInOwl:hasDbXref>BSPO:0000107</oboInOwl:hasDbXref>
     </rdf:Description>
     <owl:Axiom>
@@ -3577,9 +3594,9 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000108">
-        <oboInOwl:id>superficial_to</oboInOwl:id>
         <oboInOwl:hasDbXref>BSPO:0000108</oboInOwl:hasDbXref>
         <rdfs:label>superficial_to</rdfs:label>
+        <oboInOwl:id>superficial_to</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>superficial_to</oboInOwl:shorthand>
         <obo:IAO_0000115>Near the outer surface of the organism. Thus, skin is superficial to the muscle layer.</obo:IAO_0000115>
@@ -3592,9 +3609,9 @@
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000120">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <rdfs:label>in_left_side_of</rdfs:label>
         <oboInOwl:id>in_left_side_of</oboInOwl:id>
         <oboInOwl:hasDbXref>BSPO:0000120</oboInOwl:hasDbXref>
-        <rdfs:label>in_left_side_of</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern</rdfs:seeAlso>
         <obo:IAO_0000115>X in_left_side_of Y &lt;=&gt; if Y is subdivided into left and right portions, X is part_of the left portion.</obo:IAO_0000115>
         <oboInOwl:shorthand>in_left_side_of</oboInOwl:shorthand>
@@ -3607,11 +3624,11 @@
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000121">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>in_right_side_of</oboInOwl:id>
         <rdfs:label>in_right_side_of</rdfs:label>
+        <oboInOwl:id>in_right_side_of</oboInOwl:id>
         <oboInOwl:hasDbXref>BSPO:0000121</oboInOwl:hasDbXref>
-        <obo:IAO_0000115>X in_right_side_of Y &lt;=&gt; if Y is subdivided into left and right portions, X is part_of the right portion.</obo:IAO_0000115>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern</rdfs:seeAlso>
+        <obo:IAO_0000115>X in_right_side_of Y &lt;=&gt; if Y is subdivided into left and right portions, X is part_of the right portion.</obo:IAO_0000115>
         <oboInOwl:shorthand>in_right_side_of</oboInOwl:shorthand>
     </rdf:Description>
     <owl:Axiom>
@@ -3625,8 +3642,8 @@
         <oboInOwl:shorthand>in_posterior_side_of</oboInOwl:shorthand>
         <obo:IAO_0000115>X posterior_side_of Y &lt;=&gt; if Y is subdivided into two anterior and posterior portions, X is part_of the posterior portion.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BSPO:0000122</oboInOwl:hasDbXref>
-        <rdfs:label>in_posterior_side_of</rdfs:label>
         <oboInOwl:id>in_posterior_side_of</oboInOwl:id>
+        <rdfs:label>in_posterior_side_of</rdfs:label>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000122"/>
@@ -3637,8 +3654,8 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000123">
         <oboInOwl:shorthand>in_anterior_side_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <rdfs:label>in_anterior_side_of</rdfs:label>
         <oboInOwl:id>in_anterior_side_of</oboInOwl:id>
+        <rdfs:label>in_anterior_side_of</rdfs:label>
         <oboInOwl:hasDbXref>BSPO:0000123</oboInOwl:hasDbXref>
         <obo:IAO_0000115>X anterior_side_of Y &lt;=&gt; if Y is subdivided into two anterior and posterior portions, X is part_of the anterior portion.</obo:IAO_0000115>
     </rdf:Description>
@@ -3651,8 +3668,8 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000124">
         <oboInOwl:shorthand>in_proximal_side_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <rdfs:label>in_proximal_side_of</rdfs:label>
         <oboInOwl:id>in_proximal_side_of</oboInOwl:id>
+        <rdfs:label>in_proximal_side_of</rdfs:label>
         <obo:IAO_0000115>X proximal_side_of Y &lt;=&gt; if Y is subdivided into distal and proximal portions, X is part_of the proximal portion.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BSPO:0000124</oboInOwl:hasDbXref>
     </rdf:Description>
@@ -3693,9 +3710,9 @@
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0001100">
         <oboInOwl:shorthand>in_superficial_part_of</oboInOwl:shorthand>
-        <rdfs:label>in_superficial_part_of</rdfs:label>
-        <obo:IAO_0000115>X superficial_part_of Y &lt;=&gt; if Y is subdivided into two superficial and deep portions, X is part_of the superficial portion.</obo:IAO_0000115>
         <oboInOwl:id>in_superficial_part_of</oboInOwl:id>
+        <obo:IAO_0000115>X superficial_part_of Y &lt;=&gt; if Y is subdivided into two superficial and deep portions, X is part_of the superficial portion.</obo:IAO_0000115>
+        <rdfs:label>in_superficial_part_of</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>BSPO:0001100</oboInOwl:hasDbXref>
     </rdf:Description>
@@ -3709,8 +3726,8 @@
         <oboInOwl:shorthand>in_deep_part_of</oboInOwl:shorthand>
         <oboInOwl:hasDbXref>BSPO:0001101</oboInOwl:hasDbXref>
         <obo:IAO_0000115>X superficial_part_of Y &lt;=&gt; if Y is subdivided into two superficial and deep portions, X is part_of the deep portion.</obo:IAO_0000115>
-        <rdfs:label>in_deep_part_of</rdfs:label>
         <oboInOwl:id>in_deep_part_of</oboInOwl:id>
+        <rdfs:label>in_deep_part_of</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <owl:Axiom>
@@ -3724,8 +3741,8 @@
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>BSPO:0001106</oboInOwl:hasDbXref>
         <obo:IAO_0000115>X proximalmost_part_of Y &lt;=&gt; X is part_of Y and X is adjacent_to the proximal boundary of Y</obo:IAO_0000115>
-        <rdfs:label>proximalmost_part_of</rdfs:label>
         <oboInOwl:id>proximalmost_part_of</oboInOwl:id>
+        <rdfs:label>proximalmost_part_of</rdfs:label>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0001106"/>
@@ -3749,8 +3766,8 @@
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0001108">
         <oboInOwl:hasDbXref>BSPO:0001108</oboInOwl:hasDbXref>
-        <rdfs:label>distalmost_part_of</rdfs:label>
         <oboInOwl:id>distalmost_part_of</oboInOwl:id>
+        <rdfs:label>distalmost_part_of</rdfs:label>
         <oboInOwl:shorthand>distalmost_part_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <obo:IAO_0000115>X distalmost_part_of Y &lt;=&gt; X is part_of Y and X is adjacent_to the distal boundary of Y</obo:IAO_0000115>
@@ -3762,8 +3779,8 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0001113">
-        <oboInOwl:id>preaxialmost_part_of</oboInOwl:id>
         <rdfs:label>preaxialmost_part_of</rdfs:label>
+        <oboInOwl:id>preaxialmost_part_of</oboInOwl:id>
         <oboInOwl:hasDbXref>BSPO:0001113</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>preaxialmost_part_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -3774,8 +3791,8 @@
         <oboInOwl:hasDbXref>BSPO:0001114</oboInOwl:hasDbXref>
         <obo:IAO_0000115>x preaxial_to y iff x is further along the preaxial-postaxial axis than y, towards the postaxial side.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>postaxial_to</oboInOwl:id>
         <rdfs:label>postaxial_to</rdfs:label>
+        <oboInOwl:id>postaxial_to</oboInOwl:id>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0001114"/>
@@ -3797,16 +3814,16 @@
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0005001">
-        <oboInOwl:id>intersects_midsagittal_plane_of</oboInOwl:id>
-        <rdfs:label>intersects_midsagittal_plane_of</rdfs:label>
         <obo:IAO_0000115>X intersects_median_plane of iff X crosses the midine plane of Y.</obo:IAO_0000115>
+        <rdfs:label>intersects_midsagittal_plane_of</rdfs:label>
+        <oboInOwl:id>intersects_midsagittal_plane_of</oboInOwl:id>
         <oboInOwl:hasDbXref>BSPO:0005001</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>intersects_midsagittal_plane_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0015009">
-        <rdfs:label>immediately_anterior_to</rdfs:label>
         <oboInOwl:id>immediately_anterior_to</oboInOwl:id>
+        <rdfs:label>immediately_anterior_to</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>BSPO:0015009</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>immediately_anterior_to</oboInOwl:shorthand>
@@ -3815,15 +3832,15 @@
         <oboInOwl:shorthand>immediately_posterior_to</oboInOwl:shorthand>
         <oboInOwl:hasDbXref>BSPO:0015012</oboInOwl:hasDbXref>
         <oboInOwl:id>immediately_posterior_to</oboInOwl:id>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <rdfs:label>immediately_posterior_to</rdfs:label>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0015014">
         <oboInOwl:shorthand>immediately_superficial_to</oboInOwl:shorthand>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>BSPO:0015014</oboInOwl:hasDbXref>
-        <rdfs:label>immediately_superficial_to</rdfs:label>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>immediately_superficial_to</oboInOwl:id>
+        <rdfs:label>immediately_superficial_to</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0015101">
         <oboInOwl:shorthand>in_dorsal_side_of</oboInOwl:shorthand>
@@ -3835,8 +3852,8 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0015102">
         <oboInOwl:shorthand>in_ventral_side_of</oboInOwl:shorthand>
         <oboInOwl:hasDbXref>BSPO:0015102</oboInOwl:hasDbXref>
-        <oboInOwl:id>in_ventral_side_of</oboInOwl:id>
         <rdfs:label>in_ventral_side_of</rdfs:label>
+        <oboInOwl:id>in_ventral_side_of</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0015201">
@@ -3854,12 +3871,12 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0015202">
-        <rdfs:label>aboral_to</rdfs:label>
         <oboInOwl:id>aboral_to</oboInOwl:id>
+        <rdfs:label>aboral_to</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <obo:IAO_0000115>nearer to the aboral opening of the organism, on the oral-aboral axis.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>BSPO:0015202</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>aboral_to</oboInOwl:shorthand>
+        <oboInOwl:hasDbXref>BSPO:0015202</oboInOwl:hasDbXref>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0015202"/>
@@ -3868,8 +3885,8 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_1000000">
-        <rdfs:label>preaxial_to</rdfs:label>
         <oboInOwl:id>preaxial_to</oboInOwl:id>
+        <rdfs:label>preaxial_to</rdfs:label>
         <obo:IAO_0000115>x preaxial_to y iff x is further along the preaxial-postaxial axis than y, towards the front.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BSPO:1000000</oboInOwl:hasDbXref>
         <oboInOwl:hasRelatedSynonym>medial (tibial) to</oboInOwl:hasRelatedSynonym>
@@ -3900,8 +3917,8 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000056">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>participates_in</oboInOwl:shorthand>
-        <oboInOwl:hasDbXref>RO:0000056</oboInOwl:hasDbXref>
         <rdfs:label>participates in</rdfs:label>
+        <oboInOwl:hasDbXref>RO:0000056</oboInOwl:hasDbXref>
         <oboInOwl:id>participates_in</oboInOwl:id>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000086">
@@ -3914,8 +3931,8 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0001015">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>RO:0001015</oboInOwl:hasDbXref>
-        <oboInOwl:id>location_of</oboInOwl:id>
         <rdfs:label>location_of</rdfs:label>
+        <oboInOwl:id>location_of</oboInOwl:id>
         <oboInOwl:shorthand>location_of</oboInOwl:shorthand>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0001019">
@@ -3933,8 +3950,8 @@
         <oboInOwl:shorthand>located_in</oboInOwl:shorthand>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002000">
-        <rdfs:label>boundary of</rdfs:label>
         <oboInOwl:hasDbXref>RO:0002000</oboInOwl:hasDbXref>
+        <rdfs:label>boundary of</rdfs:label>
         <oboInOwl:id>boundary_of</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>boundary_of</oboInOwl:shorthand>
@@ -3953,8 +3970,8 @@
         <oboInOwl:shorthand>innervated_by</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>innervated_by</oboInOwl:id>
-        <rdfs:label>innervated_by</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/dbprop_nerve"/>
+        <rdfs:label>innervated_by</rdfs:label>
         <oboInOwl:hasDbXref>RO:0002005</oboInOwl:hasDbXref>
     </rdf:Description>
     <owl:Axiom>
@@ -3974,8 +3991,8 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002082">
         <oboInOwl:hasDbXref>RO:0002082</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>is_equal_to</oboInOwl:hasExactSynonym>
-        <oboInOwl:shorthand>simultaneous_with</oboInOwl:shorthand>
         <oboInOwl:hasExactSynonym>coincides_with</oboInOwl:hasExactSynonym>
+        <oboInOwl:shorthand>simultaneous_with</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <rdfs:label>simultaneous_with</rdfs:label>
         <oboInOwl:id>simultaneous_with</oboInOwl:id>
@@ -3989,13 +4006,13 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002087">
-        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/SIO_000251"/>
         <oboInOwl:hasDbXref>RO:0002087</oboInOwl:hasDbXref>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/SIO_000251"/>
         <oboInOwl:hasExactSynonym>directly preceded by</oboInOwl:hasExactSynonym>
         <oboInOwl:shorthand>immediately_preceded_by</oboInOwl:shorthand>
         <oboInOwl:hasExactSynonym>is immediately preceded by</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>starts_at_end_of</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>starts_at_end_of</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>is directly preceded by</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <obo:UBPROP_0000001>A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251].</obo:UBPROP_0000001>
@@ -4015,12 +4032,12 @@
         <oboInOwl:source>SIO:000251</oboInOwl:source>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
-        <oboInOwl:hasDbXref>RO:0002131</oboInOwl:hasDbXref>
         <oboInOwl:id>overlaps</oboInOwl:id>
+        <oboInOwl:hasDbXref>RO:0002131</oboInOwl:hasDbXref>
         <obo:IAO_0000115>A overlaps B if they share some part in common.</obo:IAO_0000115>
         <obo:IAO_0000424>BFO_0000051 some (BFO_0000050 some ?Y)</obo:IAO_0000424>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <rdfs:label>overlaps</rdfs:label>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>overlaps</oboInOwl:shorthand>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002134">
@@ -4035,12 +4052,12 @@
         <oboInOwl:shorthand>continuous_with</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>RO:0002150</oboInOwl:hasDbXref>
-        <oboInOwl:id>continuous_with</oboInOwl:id>
         <rdfs:label>continuous_with</rdfs:label>
+        <oboInOwl:id>continuous_with</oboInOwl:id>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002158">
-        <oboInOwl:id>homologous_to</oboInOwl:id>
         <rdfs:label>homologous_to</rdfs:label>
+        <oboInOwl:id>homologous_to</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>homologous_to</oboInOwl:shorthand>
         <oboInOwl:hasDbXref>RO:0002158</oboInOwl:hasDbXref>
@@ -4118,8 +4135,8 @@
         <oboInOwl:hasExactSynonym>arterial supply of</oboInOwl:hasExactSynonym>
         <oboInOwl:hasDbXref>RO:0002178</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <rdfs:label>supplies</rdfs:label>
         <oboInOwl:id>supplies</oboInOwl:id>
+        <rdfs:label>supplies</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/FMA_86003"/>
     </rdf:Description>
     <owl:Axiom>
@@ -4135,8 +4152,8 @@
         <oboInOwl:hasDbXref>RO:0002179</oboInOwl:hasDbXref>
         <rdfs:label>drains</rdfs:label>
         <oboInOwl:id>drains</oboInOwl:id>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasExactSynonym>drains blood from</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
         <rdfs:label>has component</rdfs:label>
@@ -4178,8 +4195,8 @@
         <obo:IAO_0000115>x surrounded_by y iff: x is adjacent to y and for every region r adjacent to x, r overlaps y</obo:IAO_0000115>
         <oboInOwl:hasDbXref>RO:0002219</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <rdfs:label>surrounded_by</rdfs:label>
         <oboInOwl:id>surrounded_by</oboInOwl:id>
+        <rdfs:label>surrounded_by</rdfs:label>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002219"/>
@@ -4191,16 +4208,16 @@
         <oboInOwl:shorthand>adjacent_to</oboInOwl:shorthand>
         <oboInOwl:hasDbXref>RO:0002220</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>adjacent_to</oboInOwl:id>
         <rdfs:label>adjacent_to</rdfs:label>
         <obo:IAO_0000115>x adjacent_to y iff: x and y share a boundary</obo:IAO_0000115>
-        <oboInOwl:id>adjacent_to</oboInOwl:id>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002221">
         <oboInOwl:hasDbXref>RO:0002221</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <obo:IAO_0000115>inverse of surrounded_by</obo:IAO_0000115>
-        <rdfs:label>surrounds</rdfs:label>
         <oboInOwl:id>surrounds</oboInOwl:id>
+        <rdfs:label>surrounds</rdfs:label>
         <oboInOwl:shorthand>surrounds</oboInOwl:shorthand>
     </rdf:Description>
     <owl:Axiom>
@@ -4227,16 +4244,16 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002224">
         <rdfs:label>starts with</rdfs:label>
         <oboInOwl:id>starts_with</oboInOwl:id>
-        <oboInOwl:hasDbXref>RO:0002224</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasDbXref>RO:0002224</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>starts_with</oboInOwl:shorthand>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>RO:0002225</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>develops_from_part_of</oboInOwl:shorthand>
-        <oboInOwl:id>develops_from_part_of</oboInOwl:id>
         <rdfs:label>develops_from_part_of</rdfs:label>
+        <oboInOwl:id>develops_from_part_of</oboInOwl:id>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002226">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -4249,10 +4266,10 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002229">
         <obo:IAO_0000115>Relation between occurrents, shares an end boundary with.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>finishes</oboInOwl:hasExactSynonym>
-        <oboInOwl:shorthand>ends</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <rdfs:label>ends</rdfs:label>
+        <oboInOwl:shorthand>ends</oboInOwl:shorthand>
         <oboInOwl:id>ends</oboInOwl:id>
+        <rdfs:label>ends</rdfs:label>
         <oboInOwl:hasDbXref>RO:0002229</oboInOwl:hasDbXref>
     </rdf:Description>
     <owl:Axiom>
@@ -4279,8 +4296,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002255">
         <oboInOwl:hasDbXref>RO:0002255</oboInOwl:hasDbXref>
-        <rdfs:label>developmentally_contributes_to</rdfs:label>
         <oboInOwl:id>developmentally_contributes_to</oboInOwl:id>
+        <rdfs:label>developmentally_contributes_to</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>developmentally_contributes_to</oboInOwl:shorthand>
     </rdf:Description>
@@ -4301,15 +4318,15 @@
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002258">
         <oboInOwl:hasDbXref>RO:0002258</oboInOwl:hasDbXref>
-        <rdfs:label>developmentally preceded by</rdfs:label>
         <oboInOwl:id>developmentally_preceded_by</oboInOwl:id>
+        <rdfs:label>developmentally preceded by</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>developmentally_preceded_by</oboInOwl:shorthand>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002285">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>developmentally_replaces</oboInOwl:id>
         <rdfs:label>developmentally_replaces</rdfs:label>
+        <oboInOwl:id>developmentally_replaces</oboInOwl:id>
         <oboInOwl:hasDbXref>RO:0002285</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>developmentally_replaces</oboInOwl:shorthand>
     </rdf:Description>
@@ -4332,8 +4349,8 @@
         <oboInOwl:id>part_of_structure_that_is_capable_of</oboInOwl:id>
         <rdfs:label>part of structure that is capable of</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:shorthand>part_of_structure_that_is_capable_of</oboInOwl:shorthand>
         <oboInOwl:hasDbXref>RO:0002329</oboInOwl:hasDbXref>
+        <oboInOwl:shorthand>part_of_structure_that_is_capable_of</oboInOwl:shorthand>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002350">
         <oboInOwl:id>member_of</oboInOwl:id>
@@ -4350,8 +4367,8 @@
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002352">
-        <rdfs:label>input of</rdfs:label>
         <oboInOwl:hasDbXref>RO:0002352</oboInOwl:hasDbXref>
+        <rdfs:label>input of</rdfs:label>
         <oboInOwl:shorthand>input_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>input_of</oboInOwl:id>
@@ -4375,8 +4392,8 @@
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/dbpprop_origin"/>
         <oboInOwl:hasDbXref>RO:0002372</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>has_muscle_origin</oboInOwl:id>
         <rdfs:label>has_muscle_origin</rdfs:label>
+        <oboInOwl:id>has_muscle_origin</oboInOwl:id>
         <rdfs:comment>The origin is the end of a muscle that attaches to the more fixed part of the skeleton, which is the proximal end in limb muscles</rdfs:comment>
         <obo:IAO_0000115>m has_muscle_origin s iff m is attaches_to s, and it is the case that when m contracts, s does not move. The site of the origin tends to be more proximal and have greater mass than what the other end attaches to.</obo:IAO_0000115>
         <oboInOwl:shorthand>has_muscle_origin</oboInOwl:shorthand>
@@ -4405,8 +4422,8 @@
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002374">
         <oboInOwl:hasDbXref>RO:0002374</oboInOwl:hasDbXref>
-        <rdfs:label>has_fused_element</rdfs:label>
         <oboInOwl:id>has_fused_element</oboInOwl:id>
+        <rdfs:label>has_fused_element</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>has_fused_element</oboInOwl:shorthand>
         <obo:IAO_0000115>x has_fused_element y iff: there exists some z : x has_part z, z homologous_to y, and y is a distinct element, the boundary between x and z is largely fiat</obo:IAO_0000115>
@@ -4417,8 +4434,8 @@
         <oboInOwl:hasRelatedSynonym>drains into</oboInOwl:hasRelatedSynonym>
         <oboInOwl:shorthand>tributary_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>tributary_of</oboInOwl:id>
         <rdfs:label>tributary_of</rdfs:label>
+        <oboInOwl:id>tributary_of</oboInOwl:id>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002376"/>
@@ -4427,8 +4444,8 @@
         <oboInOwl:hasDbXref>dbpowl:drainsTo</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002380">
-        <rdfs:label>branching_part_of</rdfs:label>
         <oboInOwl:id>branching_part_of</oboInOwl:id>
+        <rdfs:label>branching_part_of</rdfs:label>
         <oboInOwl:shorthand>branching_part_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <obo:IAO_0000116>we need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve</obo:IAO_0000116>
@@ -4437,16 +4454,16 @@
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002385">
         <oboInOwl:shorthand>has_potential_to_developmentally_contribute_to</oboInOwl:shorthand>
-        <oboInOwl:hasDbXref>RO:0002385</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasDbXref>RO:0002385</oboInOwl:hasDbXref>
         <oboInOwl:id>has_potential_to_developmentally_contribute_to</oboInOwl:id>
         <obo:IAO_0000115>x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y</obo:IAO_0000115>
         <rdfs:label>has potential to developmentally contribute to</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002387">
         <oboInOwl:hasDbXref>RO:0002387</oboInOwl:hasDbXref>
-        <oboInOwl:id>has_potential_to_develop_into</oboInOwl:id>
         <rdfs:label>has potential to develop into</rdfs:label>
+        <oboInOwl:id>has_potential_to_develop_into</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>has_potential_to_develop_into</oboInOwl:shorthand>
         <obo:IAO_0000115>x has the potential to develop into y iff x develops into y or if x is capable of developing into y</obo:IAO_0000115>
@@ -4461,8 +4478,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002433">
         <oboInOwl:shorthand>contributes_to_morphology_of</oboInOwl:shorthand>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <rdfs:label>contributes to morphology of</rdfs:label>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>RO:0002433</oboInOwl:hasDbXref>
         <oboInOwl:id>contributes_to_morphology_of</oboInOwl:id>
     </rdf:Description>
@@ -4498,8 +4515,8 @@
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002488">
         <oboInOwl:id>RO:0002488</oboInOwl:id>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>RO:0002488</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <rdfs:label>existence starts during</rdfs:label>
         <obo:IAO_0000115>Relation between continuant c and occurrent s, such that every instance of c comes into existing during some s.</obo:IAO_0000115>
         <oboInOwl:id>existence_starts_during</oboInOwl:id>
@@ -4515,10 +4532,10 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002489">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>RO:0002489</oboInOwl:hasDbXref>
-        <obo:IAO_0000115>Relation between continuant and occurrent, such that c comes into existence at the start of p.</obo:IAO_0000115>
         <oboInOwl:shorthand>existence_starts_with</oboInOwl:shorthand>
-        <rdfs:label>existence starts with</rdfs:label>
+        <obo:IAO_0000115>Relation between continuant and occurrent, such that c comes into existence at the start of p.</obo:IAO_0000115>
         <oboInOwl:id>existence_starts_with</oboInOwl:id>
+        <rdfs:label>existence starts with</rdfs:label>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002489"/>
@@ -4527,11 +4544,11 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002491">
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>RO:0002491</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:shorthand>existence_starts_and_ends_during</oboInOwl:shorthand>
-        <oboInOwl:id>existence_starts_and_ends_during</oboInOwl:id>
         <rdfs:label>existence starts and ends during</rdfs:label>
+        <oboInOwl:id>existence_starts_and_ends_during</oboInOwl:id>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002492">
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -4565,8 +4582,8 @@
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002496">
         <oboInOwl:hasDbXref>RO:0002496</oboInOwl:hasDbXref>
-        <rdfs:label>existence starts during or after</rdfs:label>
         <oboInOwl:id>existence_starts_during_or_after</oboInOwl:id>
+        <rdfs:label>existence starts during or after</rdfs:label>
         <oboInOwl:shorthand>existence_starts_during_or_after</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
@@ -4584,8 +4601,8 @@
         <oboInOwl:hasDbXref>RO:0002551</oboInOwl:hasDbXref>
         <obo:IAO_0000115>A relation between a subdivision of an organism and the single subdivision of skeleton that provides structural support for that subdivision.</obo:IAO_0000115>
         <rdfs:label>has skeleton</rdfs:label>
-        <oboInOwl:hasRelatedSynonym>has sekeletal support</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>has_skeleton</oboInOwl:id>
+        <oboInOwl:hasRelatedSynonym>has sekeletal support</oboInOwl:hasRelatedSynonym>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002551"/>
@@ -4597,10 +4614,10 @@
         <oboInOwl:hasDbXref>RO:0002568</oboInOwl:hasDbXref>
         <obo:IAO_0000115>m1 has_muscle_antagonist m2 iff m1 acts in opposition to m2, and m2 is responsible for returning the structure to its initial position.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <rdfs:label>has_muscle_antagonist</rdfs:label>
         <oboInOwl:id>has_muscle_antagonist</oboInOwl:id>
-        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/dbpprop_antagonist"/>
+        <rdfs:label>has_muscle_antagonist</rdfs:label>
         <oboInOwl:shorthand>has_muscle_antagonist</oboInOwl:shorthand>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/dbpprop_antagonist"/>
     </rdf:Description>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002568"/>
@@ -4625,8 +4642,8 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002572">
         <oboInOwl:shorthand>luminal_space_of</oboInOwl:shorthand>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <rdfs:label>luminal space of</rdfs:label>
         <oboInOwl:hasDbXref>RO:0002572</oboInOwl:hasDbXref>
+        <rdfs:label>luminal space of</rdfs:label>
         <oboInOwl:id>luminal_space_of</oboInOwl:id>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002576">
@@ -4637,15 +4654,15 @@
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003000">
-        <oboInOwl:id>produces</oboInOwl:id>
         <rdfs:label>produces</rdfs:label>
+        <oboInOwl:id>produces</oboInOwl:id>
         <oboInOwl:shorthand>produces</oboInOwl:shorthand>
-        <oboInOwl:hasDbXref>RO:0003000</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasDbXref>RO:0003000</oboInOwl:hasDbXref>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0003001">
-        <rdfs:label>produced_by</rdfs:label>
         <oboInOwl:id>produced_by</oboInOwl:id>
+        <rdfs:label>produced_by</rdfs:label>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref>RO:0003001</oboInOwl:hasDbXref>
         <oboInOwl:shorthand>produced_by</oboInOwl:shorthand>
@@ -4689,8 +4706,8 @@
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#conduit_for">
-        <rdfs:label>conduit for</rdfs:label>
         <obo:IAO_0000115>x is a conduit for y iff y passes through the lumen of x.</obo:IAO_0000115>
+        <rdfs:label>conduit for</rdfs:label>
         <oboInOwl:id>conduit_for</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
@@ -4719,14 +4736,14 @@
         <oboInOwl:id>filtered_through</oboInOwl:id>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#has_start">
-        <oboInOwl:id>has_start</oboInOwl:id>
         <rdfs:label>has_start</rdfs:label>
+        <oboInOwl:id>has_start</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#in_central_side_of">
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern</rdfs:seeAlso>
-        <rdfs:label>in_central_side_of</rdfs:label>
         <oboInOwl:id>in_central_side_of</oboInOwl:id>
+        <rdfs:label>in_central_side_of</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000059"/>
         <obo:IAO_0000115>X in_central_side Y &lt;=&gt; if Y is subdivided into left and right portions around some median divisor, all parts of X are closer to the median divisor than the outermost lateral sides.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -4738,8 +4755,8 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#in_innermost_side_of">
-        <oboInOwl:id>in_innermost_side_of</oboInOwl:id>
         <rdfs:label>in_innermost_side_of</rdfs:label>
+        <oboInOwl:id>in_innermost_side_of</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#in_outermost_side_of">
@@ -4751,8 +4768,8 @@
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <obo:IAO_0000116>add to RO</obo:IAO_0000116>
         <obo:IAO_0000115>a indirectly_supplies s iff a has a branch and the branch supplies or indirectly supplies s</obo:IAO_0000115>
-        <rdfs:label>indirectly_supplies</rdfs:label>
         <oboInOwl:id>indirectly_supplies</oboInOwl:id>
+        <rdfs:label>indirectly_supplies</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#layer_part_of">
         <rdfs:label>layer part of</rdfs:label>
@@ -4789,8 +4806,8 @@
         <oboInOwl:hasDbXref>http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern</oboInOwl:hasDbXref>
     </owl:Axiom>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#sexually_homologous_to">
-        <oboInOwl:id>sexually_homologous_to</oboInOwl:id>
         <rdfs:label>sexually_homologous_to</rdfs:label>
+        <oboInOwl:id>sexually_homologous_to</oboInOwl:id>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#site_of">

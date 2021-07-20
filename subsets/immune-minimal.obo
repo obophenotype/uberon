@@ -5716,6 +5716,7 @@ comment: Phenotype notes: Leydig's organ can be quite large - a 1.6-kilogram (3.
 subset: uberon_slim
 xref: Wikipedia:Leydig's_organ
 is_a: UBERON:0005057 ! immune organ
+relationship: part_of UBERON:0002405 ! immune system
 property_value: RO:0002161 NCBITaxon:7863 {source="Wikipedia"}
 property_value: UBPROP:0000008 "Found in elasmobranchs (sharks and rays) but with some exceptions." xsd:string
 
@@ -6006,7 +6007,9 @@ xref: SCTID:35845000
 xref: UMLS:C1519475 {source="ncithesaurus:Splenic_Lymphoid_Follicle"}
 is_a: UBERON:0000444 ! lymphoid follicle
 relationship: part_of UBERON:0001959 {source="CL:tm", source="MA"} ! white pulp of spleen
+relationship: part_of UBERON:0002106 ! spleen
 relationship: part_of UBERON:0006561 {source="FMA"} ! non-lymphatic part of lymphoid system
+relationship: part_of UBERON:1000024 {source="FMA"} ! parenchyma of spleen
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/tmeehan
 
@@ -6068,6 +6071,7 @@ xref: NCIT:C33607
 xref: SCTID:61987002
 xref: UMLS:C0229688 {source="ncithesaurus:Splenic_Trabecula"}
 xref: Wikipedia:Trabeculae_of_spleen
+relationship: part_of UBERON:0002106 ! spleen
 relationship: part_of UBERON:1000024 {source="FMA"} ! parenchyma of spleen
 
 [Term]
@@ -6154,6 +6158,7 @@ xref: VHOG:0001249
 xref: Wikipedia:Lymphatic_vessel
 xref: XAO:0000375
 relationship: part_of UBERON:0004536 ! lymph vasculature
+relationship: part_of UBERON:0006558 ! lymphatic part of lymphoid system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/44/Illu_lymph_capillary.jpg xsd:anyURI
 property_value: RO:0002174 NCBITaxon:8342 {source="DOI:10.1152/japplphysiol.00201.2013"}
 property_value: UBPROP:0000001 "A network of blunt ended vessels lacking direct connection to the blood vascular system. These vessels collect and drain fluids and macromolecules from interstitial spaces throughout the animal. They derive from a subpopulation of endothelial cells and have walls that are much thinner than the blood carrying vessels. Lymphatic vessels are usually classified as either superficial or deep.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005105", ontology="TAO", source="ZFIN:curator"}
@@ -6271,6 +6276,7 @@ xref: NCIT:C73468
 xref: SCTID:56411004
 xref: UMLS:C0459892 {source="ncithesaurus:Waldeyers_Tonsillar_Ring"}
 xref: Wikipedia:Waldeyer's_ring
+is_a: UBERON:0001961 {source="MA"} ! mucosa-associated lymphoid tissue
 is_a: UBERON:0001962 ! gut-associated lymphoid tissue
 property_value: seeAlso FMA:79771
 
@@ -6499,6 +6505,7 @@ xref: Wikipedia:Spleen
 xref: XAO:0000328
 xref: ZFA:0000436
 is_a: UBERON:0005057 ! immune organ
+relationship: part_of UBERON:0002405 ! immune system
 property_value: depicted:by Illu:spleen.jpg xsd:anyURI
 property_value: UBPROP:0000001 "An organ involved in red blood cell filtration and immune response.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010395", ontology="AAO", source="AAO:BMZ"}
 property_value: UBPROP:0000003 "With the advent of clonal selection, the accumulation and segregation of T and B cells in specialized organs for antigen presentation became necessary, and indeed the spleen is found in all jawed vertebrates, but not in agnathans or invertebrates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000120", ontology="VHOG", source="ISBN:978-0781765190 Paul WE, Fundamental Immunology (2008) p.94", source="http://bgee.unil.ch/"}
@@ -6656,6 +6663,7 @@ xref: Wikipedia:Thymus
 xref: XAO:0000163
 xref: ZFA:0001078
 is_a: UBERON:0005057 ! immune organ
+relationship: part_of UBERON:0002405 {source="XAO"} ! immune system
 property_value: depicted:by Illu:thymus.jpg xsd:anyURI
 property_value: IAO:0000116 "check - a subtype of gland? not in GO. NCIT has thymus and thymus gland. EHDAA2 has ductless gland." xsd:string
 property_value: UBPROP:0000001 "Anatomical structure which originates as several paired thickenings on the dorsal side of the pharyngeal pouches and secretes thymosin.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010548", ontology="AAO", source="AAO:BJB"}
@@ -6728,6 +6736,7 @@ xref: UMLS:C1519547 {source="ncithesaurus:Tonsilar_Tissue"}
 xref: UMLS:C1519548 {source="ncithesaurus:Tonsillar_Lymphoid_Tissue"}
 xref: VHOG:0001139
 xref: Wikipedia:Tonsil
+is_a: UBERON:0001961 {source="FMA"} ! mucosa-associated lymphoid tissue
 is_a: UBERON:0001962 ! gut-associated lymphoid tissue
 relationship: part_of UBERON:0001735 {source="cjm"} ! tonsillar ring
 property_value: IAO:0000232 "the term 'tonsil' can be ambiguous, sometimes refering specifically to the palatine tonsil, sometimes generically to include the cecal tonsils of avians. This class represents lymphoid tissue that is part of the tonsillar ring, in the mouth/throat region" xsd:string
@@ -7252,6 +7261,7 @@ xref: EMAPA:37960 {source="MA:th"}
 xref: FMA:15843
 is_a: UBERON:0001249 ! spleen lymphoid follicle
 is_a: UBERON:0010422 ! primary nodular lymphoid tissue
+relationship: part_of UBERON:0002106 ! spleen
 property_value: UBPROP:0000012 "FMA:15843 is classified as primary follicle so it belongs here" xsd:string {external_ontology="FMA"}
 
 [Term]
@@ -7265,6 +7275,7 @@ synonym: "splenic secondary B cell follicle" EXACT [MP:0008472]
 xref: EMAPA:37961 {source="MA:th"}
 is_a: UBERON:0001249 ! spleen lymphoid follicle
 is_a: UBERON:0001745 ! secondary nodular lymphoid tissue
+relationship: part_of UBERON:0002106 ! spleen
 
 [Term]
 id: UBERON:0004232
@@ -7476,6 +7487,7 @@ xref: MA:0000764
 xref: NCIT:C49760
 xref: UMLS:C1710156 {source="ncithesaurus:Spleen_Germinal_Center"}
 is_a: UBERON:0010754 ! germinal center
+relationship: part_of UBERON:0002106 ! spleen
 relationship: part_of UBERON:0004042 {source="CL:tm"} ! spleen secondary B follicle
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/tmeehan
@@ -7521,6 +7533,7 @@ xref: SCTID:279088007
 xref: UMLS:C0008840 {source="ncithesaurus:Chyle_Cistern"}
 xref: Wikipedia:Cisterna_chyli
 relationship: part_of UBERON:0001631 ! thoracic duct
+relationship: part_of UBERON:0002465 ! lymphoid system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/75/Gray599.png xsd:anyURI
 property_value: UBPROP:0000008 "In dogs, it is located to the left and often ventral to the aorta; in cats it is left and dorsal; in guinea pigs it runs to the left and drains into the left innominate vein" xsd:string
 
@@ -7652,6 +7665,7 @@ xref: TAO:0005252
 xref: UMLS:C0162405 {source="ncithesaurus:Lymphatic_Capillary"}
 xref: ZFA:0005252
 is_a: UBERON:0001473 {source="FMA"} ! lymphatic vessel
+relationship: part_of UBERON:0004536 ! lymph vasculature
 property_value: IAO:0000116 "TODO - check superclass" xsd:string
 property_value: UBPROP:0000001 "Microvessel of the lymphatic system lined with a single layer of overlapping endothelial cells.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005252", ontology="TAO", source="ZFIN:curator"}
 
@@ -7801,6 +7815,7 @@ xref: MA:0002989
 xref: NCIT:C49757
 xref: SCTID:327147000
 is_a: UBERON:0010754 ! germinal center
+relationship: part_of UBERON:0000029 ! lymph node
 relationship: part_of UBERON:0010753 {source="MA"} ! lymph node secondary follicle
 
 [Term]
@@ -7812,6 +7827,7 @@ subset: organ_slim
 synonym: "dorsal fat body" EXACT [PMCID:PMC2093943]
 synonym: "pro-vertebral arch" EXACT [PMCID:PMC2093943]
 is_a: UBERON:0005057 ! immune organ
+relationship: part_of UBERON:0002405 ! immune system
 property_value: UBPROP:0000008 "The supraneural body from hematopoietically stimulated lampreys appears to be histologically-similar to 'bone marrow' in higher vertebrates and contains all blood cell lineages and their precursors, including lymphocytes at all stages of maturity" xsd:string
 
 [Term]
@@ -7841,6 +7857,7 @@ def: "A thymus-like lympho-epithelial structures, in the tips of the gill filame
 comment: Genes: FOXN1
 subset: organ_slim
 is_a: UBERON:0005057 ! immune organ
+relationship: part_of UBERON:0002405 ! immune system
 
 [Term]
 id: UBERON:0009744
@@ -7888,6 +7905,7 @@ namespace: uberon
 def: "An elongate paired tissue ventral to the kidneys and partialy enveloping the anterior gonads in Elasmobranchii. Apparently important to the immune system" [http://www.fishbase.org/glossary/Glossary.php?q=epigonal+organ]
 synonym: "subgonal organ" EXACT []
 is_a: UBERON:0005057 ! immune organ
+relationship: part_of UBERON:0002405 ! immune system
 property_value: RO:0002161 NCBITaxon:7863 {source="Wikipedia"}
 
 [Term]
@@ -7932,6 +7950,7 @@ def: "Digestive gland of crustaceans with functions approximately analogous to l
 synonym: "crustacean digestive gland" RELATED []
 synonym: "midgut gland" RELATED [BTO:0000597]
 is_a: UBERON:0005057 ! immune organ
+relationship: part_of UBERON:0002405 {source="PMID:18025161"} ! immune system
 property_value: IAO:0000116 "this term should be ceded to the arthropod anatomy ontology" xsd:string
 
 [Term]
@@ -7990,6 +8009,7 @@ xref: FMA:312350
 xref: MA:0000743
 is_a: UBERON:0010422 ! primary nodular lymphoid tissue
 is_a: UBERON:0010748 ! lymph node follicle
+relationship: part_of UBERON:0000029 ! lymph node
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/tmeehan
 
@@ -8087,6 +8107,7 @@ synonym: "lymph node B-cell domain" EXACT [MP:0002344]
 synonym: "nodular lymph node cortex" EXACT [MP:0002344]
 xref: MA:0002851
 is_a: UBERON:0010392 ! B cell domain
+relationship: part_of UBERON:0000029 ! lymph node
 relationship: part_of UBERON:0002006 {source="MP"} ! cortex of lymph node
 
 [Term]
@@ -8105,6 +8126,7 @@ xref: EMAPA:37663 {source="MA:th"}
 xref: MA:0002852
 xref: SCTID:326870003
 is_a: UBERON:0010393 ! T cell domain
+relationship: part_of UBERON:0000029 ! lymph node
 relationship: part_of UBERON:0002006 {source="MP"} ! cortex of lymph node
 
 [Term]
@@ -8125,6 +8147,7 @@ synonym: "mantle zone of lymph node germinal center" EXACT []
 xref: EMAPA:37661 {source="MA:th"}
 xref: MA:0002990
 is_a: UBERON:0010755 ! secondary follicle corona
+relationship: part_of UBERON:0000029 ! lymph node
 relationship: part_of UBERON:0010753 {source="MA"} ! lymph node secondary follicle
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/tmeehan
@@ -8147,6 +8170,7 @@ synonym: "splenic B cell corona" EXACT [MP:0002360]
 synonym: "splenic corona" BROAD [CL:tm]
 xref: EMAPA:37962 {source="MA:th"}
 is_a: UBERON:0010755 ! secondary follicle corona
+relationship: part_of UBERON:0002106 ! spleen
 relationship: part_of UBERON:0004042 {source="CL:tm"} ! spleen secondary B follicle
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/tmeehan
@@ -8182,6 +8206,7 @@ synonym: "follicle of lymph node" EXACT []
 xref: EMAPA:35527
 xref: MA:0000742
 is_a: UBERON:0000444 ! lymphoid follicle
+relationship: part_of UBERON:0000029 ! lymph node
 relationship: part_of UBERON:0002006 {notes="issues/7", source="MP-def"} ! cortex of lymph node
 
 [Term]
@@ -8195,6 +8220,7 @@ xref: FMA:312352
 xref: MA:0000744
 is_a: UBERON:0001745 ! secondary nodular lymphoid tissue
 is_a: UBERON:0010748 {source="MA"} ! lymph node follicle
+relationship: part_of UBERON:0000029 ! lymph node
 
 [Term]
 id: UBERON:0010754
@@ -8274,6 +8300,7 @@ xref: EMAPA:18249
 xref: NCIT:C34196
 xref: VHOG:0001000
 is_a: UBERON:0034953 ! embryonic lymph sac
+relationship: part_of UBERON:0006558 {source="VHOG"} ! lymphatic part of lymphoid system
 property_value: UBPROP:0000001 "Lymphatic vessels develop from lymph sacs that arise from developing veins, which are derived from mesoderm. The first lymph sacs to appear are the paired jugular lymph sacs at the junction of the internal jugular and subclavian veins. [Wikipedia:Lymphatic_system][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001000", ontology="VHOG", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -8297,6 +8324,7 @@ xref: SCTID:143723007
 xref: UMLS:C0229876 {source="ncithesaurus:Tonsillar_Crypt"}
 xref: Wikipedia:Tonsillar_crypts
 is_a: UBERON:0013696 ! tonsil epithelium
+relationship: part_of UBERON:0002372 {source="MA"} ! tonsil
 
 [Term]
 id: UBERON:0012236
@@ -8407,6 +8435,7 @@ comment: Hemal nodes are characterized by the presence of large numbers of eryth
 synonym: "hemal node" EXACT []
 xref: Wikipedia:Haemal_nodes
 is_a: UBERON:0005057 ! immune organ
+relationship: part_of UBERON:0002405 ! immune system
 
 [Term]
 id: UBERON:0013132
@@ -8419,6 +8448,7 @@ synonym: "penicillus" EXACT [FMA:16038]
 xref: FMA:16038
 is_a: UBERON:0010399 ! spleen trabecular artery
 is_a: UBERON:0022292 ! splenic arteriole
+relationship: part_of UBERON:0001959 {source="FMA"} ! white pulp of spleen
 relationship: part_of UBERON:0010401 ! spleen central arteriole
 
 [Term]
@@ -8516,6 +8546,7 @@ xref: NCIT:C77651
 xref: SCTID:245341003
 xref: UMLS:C0229751
 xref: Wikipedia:Tracheobronchial_lymph_nodes
+is_a: UBERON:0000029 {source="MA"} ! lymph node
 is_a: UBERON:0007644 ! thoracic lymph node
 property_value: UBPROP:0000001 "Single (unpaired) lymph node at the tracheal bifurcation." xsd:string {source="PMID:16624319", taxon="NCBITaxon:10090"}
 
@@ -8529,6 +8560,7 @@ xref: FMA:61216
 xref: MA:0003088
 xref: SCTID:279140007
 xref: Wikipedia:Parotid_lymph_nodes
+is_a: UBERON:0000029 {source="MA"} ! lymph node
 is_a: UBERON:0015870 ! lymph node of head
 
 [Term]
@@ -8836,6 +8868,7 @@ name: sciatic lymph node
 namespace: uberon
 def: "A lymph node that is medial to the gluteus superficialis m., caudal to gluteus medius m. and sciatic nerve lymph node" [PMID:16624319]
 xref: MA:0002884
+is_a: UBERON:0000029 {source="MA"} ! lymph node
 is_a: UBERON:0016398 ! lymph node of lower limb
 property_value: RO:0002175 NCBITaxon:10090 {source="PMID:16624319"}
 
@@ -9189,6 +9222,7 @@ xref: FMA:16656
 xref: NCIT:C88141
 xref: SCTID:245368003
 xref: UMLS:C0229822
+is_a: UBERON:0015876 {source="ncithesaurus"} ! pelvic lymph node
 is_a: UBERON:0015880 {source="FMA"} ! external iliac lymph node
 
 [Term]
@@ -10021,6 +10055,7 @@ id: UBERON:0038687
 name: visceral lymph node of abdomen
 namespace: uberon
 xref: FMA:277227
+is_a: UBERON:0000029 {source="FMA"} ! lymph node
 is_a: UBERON:0002507 ! abdominal lymph node
 
 [Term]
@@ -10660,6 +10695,7 @@ name: caudal fin lymph vessel
 namespace: uberon
 xref: ZFA:0005303
 is_a: UBERON:0007384 ! appendage lymph vessel
+relationship: part_of UBERON:0004536 ! lymph vasculature
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -10770,6 +10806,7 @@ namespace: uberon
 def: "A high endothelial venule that is part of a of lymph node." [http://orcid.org/0000-0003-3440-1876, PMID:28217126]
 synonym: "lymph node high endothelial venule" EXACT []
 is_a: UBERON:8410041 ! venule of lymph node
+relationship: part_of UBERON:0000029 ! lymph node
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]

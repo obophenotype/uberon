@@ -107,6 +107,7 @@ xref: FMA:23479
 xref: galen:NeckOfRadius
 xref: SCTID:181942005
 is_a: UBERON:0005055 ! zone of long bone
+relationship: part_of UBERON:0001423 ! radius bone
 relationship: part_of UBERON:0004413 {source="FMA"} ! proximal epiphysis of radius
 
 [Term]
@@ -170,10 +171,12 @@ xref: UMLS:C0020164 {source="ncithesaurus:Humerus"}
 xref: VHOG:0001158
 xref: Wikipedia:Humerus
 xref: XAO:0003210
+is_a: UBERON:0002495 {source="FMA"} ! long bone
 is_a: UBERON:0003461 ! shoulder bone
 is_a: UBERON:0003607 ! forelimb long bone
 is_a: UBERON:0004250 ! upper arm bone
 is_a: UBERON:0015053 ! humerus endochondral element
+relationship: part_of UBERON:0001440 {source="FMA"} ! forelimb skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/67/Illu_upper_extremity.jpg xsd:anyURI
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mellybelly
@@ -206,9 +209,11 @@ xref: OpenCyc:Mx4rvtq3-ZwpEbGdrcN5Y29ycA
 xref: SCTID:182061009
 xref: UMLS:C0040184 {source="ncithesaurus:Tibia"}
 xref: Wikipedia:Tibia
+is_a: UBERON:0002495 {source="FMA"} ! long bone
 is_a: UBERON:0003608 ! hindlimb long bone
 is_a: UBERON:0004251 ! hindlimb zeugopod bone
 is_a: UBERON:0015004 ! tibia endochondral element
+relationship: part_of UBERON:0010720 ! hindlimb zeugopod skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/2a/Gray260.png xsd:anyURI
 property_value: UBPROP:0000001 "One of the two long bones of endochondral origin of the hind-epipodium; it is a straight, simple bone whose section is more or less rectangular at the ends and circular at its central portion.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000890", ontology="AAO", source="AAO:LAP"}
 
@@ -271,6 +276,7 @@ xref: XAO:0003214
 is_a: UBERON:0003608 ! hindlimb long bone
 is_a: UBERON:0003826 ! upper leg bone
 is_a: UBERON:0015052 ! femur endochondral element
+relationship: part_of UBERON:0001441 {source="FMA"} ! hindlimb skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/73/Gray252.png xsd:anyURI
 property_value: UBPROP:0000001 "Endochondral longbone connecting the pelvic girdle with posterior zeugopodium.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000186", ontology="VSAO", source="VSAO:NI"}
 property_value: UBPROP:0000001 "Paired, elongate, cylindrical bones of endochondral origin that form the thighs, extending from the pelvic girdles to the knees.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000889", ontology="AAO", source="AAO:LAP"}
@@ -385,6 +391,7 @@ xref: VSAO:0005031
 xref: Wikipedia:Clavicle
 is_a: UBERON:0002495 {source="FMA"} ! long bone
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 {source="FMA", source="VSAO"} ! pectoral girdle skeleton
 property_value: depicted:by Pectoral:girdles-en.svg xsd:anyURI
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mellybelly
@@ -448,6 +455,7 @@ xref: MESH:A02.835.232.611
 xref: SCTID:361776002
 xref: Wikipedia:Hip_bone
 is_a: UBERON:0007830 ! pelvic girdle bone/zone
+relationship: part_of UBERON:0007832 ! pelvic girdle skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/8b/Gray341.png xsd:anyURI
 property_value: IAO:0000116 "currently this class is restricted to exclude the teleost bone as the definition mentions ilium, ischium and pubis. In future we may add a grouping class for girdle bones that supports the appendage" xsd:string
 property_value: UBPROP:0000008 "The hip/pelvic bone/basipterygium first appears in fishes, where it consists of a simple, usually triangular bone, to which the pelvic fin articulates. The hip bones on each side usually connect with each other at the forward end, and are even solidly fused in lungfishes and sharks, but they never attach to the vertebral column" xsd:string {source="WP"}
@@ -484,6 +492,7 @@ xref: Wikipedia:Ilium_(bone)
 is_a: UBERON:0007830 ! pelvic girdle bone/zone
 is_a: UBERON:0015054 ! iliac endochondral element
 relationship: part_of UBERON:0001272 {source="FMA"} ! innominate bone
+relationship: part_of UBERON:0007832 {source="VSAO"} ! pelvic girdle skeleton
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mellybelly
 property_value: RO:0002161 NCBITaxon:32443 {source="Wikipedia"}
@@ -520,6 +529,7 @@ xref: Wikipedia:Ischium
 is_a: UBERON:0007830 {source="MA"} ! pelvic girdle bone/zone
 is_a: UBERON:0015056 ! ischial endochondral element
 relationship: part_of UBERON:0001272 ! innominate bone
+relationship: part_of UBERON:0007832 {source="VSAO"} ! pelvic girdle skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/29/Illu_pelvic_girdle.jpg xsd:anyURI
 property_value: UBPROP:0000001 "Paired bones of endochondral origin that constitute the posterior elements of the pelvic girdle. They are synostotically fused to each other and form the posterior part of the acetabulum.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000860", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000007 "ischial" xsd:string
@@ -548,6 +558,7 @@ xref: Wikipedia:Pubis_(bone)
 is_a: UBERON:0007830 {source="MA"} ! pelvic girdle bone/zone
 is_a: UBERON:0015055 ! pubic endochondral element
 relationship: part_of UBERON:0001272 {source="FMA"} ! innominate bone
+relationship: part_of UBERON:0007832 {source="VSAO"} ! pelvic girdle skeleton
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/alex-dececchi
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: UBPROP:0000001 "Paired, cartilaginous (ocassionally calcified) elements that form the ventral portion of the pelvic girdle. Each is located ventral to the acetabulum between the anteroventral margin of the ischium and the posteroventral margin of the illium. When the element calcifies or ossifies, its articulation with adjacent elements is difficult to distinguish. Both pubes are synchondrotically fused to one another.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000861", ontology="AAO", source="AAO:LAP"}
@@ -579,6 +590,7 @@ xref: Wikipedia:Radius_(bone)
 is_a: UBERON:0003466 ! forelimb zeugopod bone
 is_a: UBERON:0003607 ! forelimb long bone
 is_a: UBERON:0015001 ! radius endochondral element
+relationship: part_of UBERON:0010703 {source="VSAO"} ! forelimb zeugopod skeleton
 property_value: UBPROP:0000001 "One of the two long bones of endochondral origin of the fore-epipodium; it is located on the lateral side of the ulna. Its upper end articulates with both the humerus and the ulna, whereas the lower articulates with the carpals.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000788", ontology="AAO", source="AAO:LAP"}
 
 [Term]
@@ -605,6 +617,7 @@ xref: Wikipedia:Ulna
 is_a: UBERON:0003466 ! forelimb zeugopod bone
 is_a: UBERON:0003607 ! forelimb long bone
 is_a: UBERON:0015003 ! ulna endochondral element
+relationship: part_of UBERON:0010703 {source="VSAO"} ! forelimb zeugopod skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/67/Illu_upper_extremity.jpg xsd:anyURI
 property_value: UBPROP:0000001 "One of the two long bones of endochondral origin of the fore-epipodium; it is located on the medial (inner) side of the radius. The upper end of the ulna articulates with the lower end of the humerus forming a strong hinge joint with the carpals, whereas the lower articulates with the carpals.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000789", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000007 "ulnar" xsd:string
@@ -740,6 +753,7 @@ xref: VSAO:0005043
 xref: Wikipedia:Trapezium_(bone)
 is_a: UBERON:0001481 {source="FMA"} ! distal carpal bone
 is_a: UBERON:0015084 ! distal carpal bone 1 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 property_value: UBPROP:0000008 "located between radiale and first metacarpal[VSAO]. in humans - The capitate articulates with 1st metacarpal distally, scaphoid proximally, trapezoid medially, 2nd metacarpal medially" xsd:string {source="WP"}
 
 [Term]
@@ -773,6 +787,7 @@ xref: VSAO:0005044
 xref: Wikipedia:Trapezoid_bone
 is_a: UBERON:0001481 ! distal carpal bone
 is_a: UBERON:0015087 ! distal carpal bone 2 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 property_value: UBPROP:0000001 "Small element that articulates with the prepollex, metacarpal II(I) and metacarpal III(II). It may be fused to element Y or carpal 3(2).[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000848", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000001 "The trapezoid bone (lesser multangular bone) is a carpal bone in tetrapods, including humans. It is the smallest bone in the distal row. It may be known by its wedge-shaped form, the broad end of the wedge constituting the dorsal, the narrow end the palmar surface; and by its having four articular facets touching each other, and separated by sharp edges. It is homologous with the 'second distal carpal' of reptiles and amphibians. The etymology derives from the Greek trapezion which means 'irregular quadrilateral,' from tra- 'four' and peza 'foot' or 'edge. ' Literally, 'a little table' from trapeza meaning 'table' and -oeides 'shaped.[Wikipedia:Trapezoid_bone]" xsd:string {source="Wikipedia:Trapezoid_bone"}
 property_value: UBPROP:0000008 "located in the distal part of the carpus and articulating with the second metacarpal, the distal carpals 1 and 2 and the radiale.[VSAO] in humans - The capitate articulates with 2nd metacarpal distally, scaphoid proximally, trapezium medially, capitate medially[WP] Amphibians: Small element that articulates with the prepollex, metacarpal II(I) and metacarpal III(II). It may be fused to element Y or carpal 3(2)" xsd:string {source="AAO"}
@@ -806,6 +821,7 @@ xref: VSAO:0005045
 xref: Wikipedia:Capitate_bone
 is_a: UBERON:0001481 {source="FMA", source="palaeos"} ! distal carpal bone
 is_a: UBERON:0015090 ! distal carpal bone 3 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/50/Carpus.png xsd:anyURI
 property_value: UBPROP:0000001 "Small element that articulates anteriorly with metacarpal III(II). It may be fused to carpals 2(1), 4(3), 5(4), or other elements.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000849", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000008 "medially located and articulates with metacarpals 2-4, distal carpal 5 and the intermedium[VSAO] In the human hand, the capitate bone is the largest of the carpal bones, and occupies the center of the wrist - The capitate articulates with seven bones: the scaphoid and lunate proximally, the second metacarpal, third metacarpal, and fourth metacarpal distally, the lesser multangular on the radial side, and the hamate on the ulnar side" xsd:string {source="WP"}
@@ -840,6 +856,7 @@ xref: VSAO:0005046
 xref: Wikipedia:Hamate_bone
 is_a: UBERON:0001481 {source="FMA"} ! distal carpal bone
 is_a: UBERON:0015093 ! distal carpal bone 4 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/50/Carpus.png xsd:anyURI
 property_value: UBPROP:0000001 "Small element that articulates anteriorly with metacarpal IV(III). It may be fused to carpal 3(2), 5(4), or other elements.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000850", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000008 "articulates with the lunar, distal carpal 3, the ulnare as well as metacarpals 4 and 5.[VSAO]. In the human hand the lunate proximally the fourth and fifth metacarpals distally the triangular medially the capitate laterally[WP] Amphibians: Small element that articulates anteriorly with metacarpal IV(III). It may be fused to carpal 3(2), 5(4), or other elements" xsd:string {source="AAO"}
@@ -868,6 +885,7 @@ xref: Wikipedia:Carpus
 is_a: UBERON:0003656 ! mesopodium bone
 is_a: UBERON:0005897 ! manus bone
 is_a: UBERON:0015049 ! carpus endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/58/Carpus.svg xsd:anyURI
 property_value: UBPROP:0000008 "In tetrapods, the carpals is the sole cluster of the bones in the wrist between the radius and ulna and the metacarpus. The bones of the carpus do not belong to individual fingers (or toes in quadrupeds), whereas those of the metacarpus do. The corresponding part of the foot is the tarsus. The carpal bones allow the wrist to move and rotate vertically, horizontally and laterally. In human anatomy, the main role of the carpus is to facilitate effective positioning of the hand and powerful use of the extensors and flexors of the forearm, but the mobility of individual carpal bones increase the freedom of movements at the wrist." xsd:string {source="Wikipedia:Carpus"}
 
@@ -906,6 +924,8 @@ is_a: UBERON:0003221 ! phalanx
 is_a: UBERON:0003607 ! forelimb long bone
 is_a: UBERON:0004249 ! manual digit bone
 is_a: UBERON:0015024 ! manual digit phalanx endochondral element
+relationship: part_of UBERON:0010688 ! skeleton of manual acropodium
+relationship: part_of UBERON:5102389 ! manual digit digitopodial skeleton
 property_value: UBPROP:0000001 "Dumb-bell shaped bones of endochondral origin with cartilaginous epiphyses that make the four digits of the manus. The terminal phalanges are much smaller than the proximal and penultimate phalanges. The typical phalangeal formula of the manus, in a medial to lateral sequence, is 2-2-3-3.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000947", ontology="AAO", source="AAO:LAP"}
 
 [Term]
@@ -1103,9 +1123,11 @@ xref: NCIT:C12718
 xref: SCTID:302529003
 xref: UMLS:C0016068 {source="ncithesaurus:Fibula"}
 xref: Wikipedia:Fibula
+is_a: UBERON:0002495 {source="FMA"} ! long bone
 is_a: UBERON:0003608 ! hindlimb long bone
 is_a: UBERON:0004251 ! hindlimb zeugopod bone
 is_a: UBERON:0015013 ! fibula endochondral element
+relationship: part_of UBERON:0010720 ! hindlimb zeugopod skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/16/Illu_lower_extremity.jpg xsd:anyURI
 property_value: UBPROP:0000001 "One of the two long bones of endochondral origin of the hind-epipodium; it is a rather more slender bone than the tibia but of about the same length.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000891", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000007 "fibular" xsd:string
@@ -1140,6 +1162,7 @@ xref: UMLS:C0039316 {source="ncithesaurus:Tarsal_Bone"}
 is_a: UBERON:0003656 ! mesopodium bone
 is_a: UBERON:0005899 ! pes bone
 is_a: UBERON:0015050 ! tarsus endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: depicted:by Ankle:en.svg xsd:anyURI
 property_value: UBPROP:0000008 "In primitive tetrapods, such as Trematops, the tarsus consists of three rows of bones. There are three proximal tarsals, the tibiale, intermedium, and fibulare, named for their points of articulation with the bones of the lower limb. These are followed by a second row of four bones, referred to as the centralia (singular: centrale), and then a row of five distal tarsals, each articulating with a single metatarsal. In the great majority of tetrapods, including all of those alive today, this simple pattern is modified by the loss and fusion of various of the bones.[3] In reptiles and mammals, there are normally just two proximal tarsals, the calcaneus (equivalent to the amphibian fibulare) and the talus (probably derived from a fusion of multiple bones). In mammals, including humans, the talus forms a hinge joint with the tibia, a feature especially well developed in the artiodactyls. The calcaneus is also modified, forming a heel for the attachment of the Achilles tendon. Neither of these adaptations is found in reptiles, which have a relatively simple structure to both bones.[3] The fifth distal tarsal disappears relatively early in evolution, with the remainder becoming the cuneiform and cuboid bones. Reptiles usually retain two centralia, while mammals typically have only one (the navicular).[3] In birds, the tarsus has disappeared, with the proximal tarsals having fused with the tibia, the centralia having disappeared, and the distal bones having fused with the metatarsals to form a single tarsometatarsus bone, effectively giving the leg a third segment" xsd:string {source="Wikipedia:Tarsus_(skeleton)"}
 
@@ -1206,6 +1229,8 @@ is_a: UBERON:0003221 ! phalanx
 is_a: UBERON:0003608 ! hindlimb long bone
 is_a: UBERON:0004248 ! pedal digit bone
 is_a: UBERON:0015030 ! pedal digit phalanx endochondral element
+relationship: part_of UBERON:0010696 ! skeleton of pedal acropodium
+relationship: part_of UBERON:5101466 ! pedal digit digitopodial skeleton
 property_value: UBPROP:0000001 "Dumb-bell shaped bones of endochondral origin with cartilaginous epiphyses that make the five digits of the pes. The terminal phalanges are much smaller than the proximal and penultimate phalanges. The typical phalangeal formula of the pes, in a medial to lateral sequence, is 2(1)-2-3-4(3)-3(2).[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000930", ontology="AAO", source="AAO:LAP"}
 
 [Term]
@@ -1317,6 +1342,7 @@ xref: VSAO:0005052
 xref: Wikipedia:Medial_cuneiform_bone
 is_a: UBERON:0010721 ! distal tarsal bone
 is_a: UBERON:0015102 ! distal tarsal bone 1 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/81/Gray290.png xsd:anyURI
 property_value: UBPROP:0000001 "Small element that articulates with the prehallux, metatarsal I and element Y. It may be fused to tarsal 2.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000918", ontology="AAO", source="AAO:LAP"}
 
@@ -1359,6 +1385,7 @@ xref: VSAO:0005053
 xref: Wikipedia:Intermediate_cuneiform_bone
 is_a: UBERON:0010721 ! distal tarsal bone
 is_a: UBERON:0015105 ! distal tarsal bone 2 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/52/Gray291.png xsd:anyURI
 property_value: UBPROP:0000001 "Small element that articulates anteriorly with metatarsal II. It may be fused to tarsal 1 or to tarsal 3.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000919", ontology="AAO", source="AAO:LAP"}
 
@@ -1400,6 +1427,7 @@ xref: VSAO:0005054
 xref: Wikipedia:Lateral_cuneiform_bone
 is_a: UBERON:0010721 ! distal tarsal bone
 is_a: UBERON:0015108 ! distal tarsal bone 3 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/52/Gray291.png xsd:anyURI
 property_value: UBPROP:0000001 "Small element that articulates anteriorly with metatarsal III. It may be fused to tarsal 2.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000920", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000005 "In some types, the cuneiform is found as two or three bones, in which case the more anterior ('dorsal' in dorsal/plantar terminology) is the ectocuneiform, while the more posterior or plantar bones are the mesocuneiform and entocuneiform.[Palaeos]" xsd:string {date_retrieved="2012-09-17", source="http://palaeos.com/vertebrates/glossary/glossaryE.html"}
@@ -1469,6 +1497,7 @@ xref: SCTID:306715004
 is_a: UBERON:0001435 ! carpal bone
 is_a: UBERON:0014395 ! proximal mesopodial bone
 is_a: UBERON:0015078 ! proximal carpal endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0001481
@@ -1484,6 +1513,7 @@ xref: SCTID:306716003
 is_a: UBERON:0001435 ! carpal bone
 is_a: UBERON:0015068 ! distal carpal endochondral element
 is_a: UBERON:0018102 ! distal mesopodial bone
+relationship: part_of UBERON:0009880 ! carpal skeleton
 property_value: UBPROP:0000001 "Series of elements that articulate with the metacarpals.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000847", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000008 "Primitively, each of the distal bones appears to have articulated with a single metacarpal" xsd:string {source="WP"}
 
@@ -1637,6 +1667,7 @@ xref: SCTID:361325003
 xref: UMLS:C0730117 {source="ncithesaurus:Proximal_Phalanx_of_Hand"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0004302 ! proximal phalanx
+relationship: part_of UBERON:5102389 ! manual digit digitopodial skeleton
 
 [Term]
 id: UBERON:0002235
@@ -1655,6 +1686,7 @@ xref: SCTID:361104005
 xref: UMLS:C0222809 {source="ncithesaurus:Rib_Tubercle"}
 xref: Wikipedia:Tubercle_(rib)
 relationship: part_of UBERON:0002231 {source="FMA"} ! body of rib
+relationship: part_of UBERON:0010388 {source="PMID:15906248"} ! proximal segment of rib
 
 [Term]
 id: UBERON:0002236
@@ -1868,6 +1900,7 @@ xref: UMLS:C0030647 {source="ncithesaurus:Patella"}
 xref: Wikipedia:Patella
 is_a: UBERON:0005893 ! leg bone
 is_a: UBERON:0011141 ! appendicular ossicle
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 property_value: depicted:by Knee:diagram.svg xsd:anyURI
 property_value: UBPROP:0000007 "patellar" xsd:string
 
@@ -2064,6 +2097,7 @@ xref: FMA:7576
 xref: SCTID:263359009
 xref: Wikipedia:Neck_of_rib
 is_a: UBERON:0005055 ! zone of long bone
+relationship: part_of UBERON:0002228 ! rib
 relationship: part_of UBERON:0010388 {source="PMID:15906248"} ! proximal segment of rib
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5c/Gray122.png xsd:anyURI
 
@@ -2080,6 +2114,7 @@ xref: EMAPA:37303 {source="MA:th"}
 xref: MA:0000592
 xref: OpenCyc:Mx4rwKTXoJwpEbGdrcN5Y29ycA
 is_a: UBERON:0008962 ! forelimb bone
+relationship: part_of UBERON:0001440 ! forelimb skeleton
 
 [Term]
 id: UBERON:0003461
@@ -2230,6 +2265,7 @@ xref: SCTID:181975002
 xref: UMLS:C1711344 {source="ncithesaurus:Hand_Digit_1_Phalanx"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0015025 ! manual digit 1 phalanx endochondral element
+relationship: part_of UBERON:5101463 ! manual digit 1 digitopodial skeleton
 
 [Term]
 id: UBERON:0003636
@@ -2275,6 +2311,7 @@ xref: SCTID:361783009
 xref: UMLS:C1708312 {source="ncithesaurus:Hand_Digit_2_Phalanx"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0015026 ! manual digit 2 phalanx endochondral element
+relationship: part_of UBERON:5103622 ! manual digit 2 digitopodial skeleton
 
 [Term]
 id: UBERON:0003637
@@ -2319,6 +2356,7 @@ xref: SCTID:361785002
 xref: UMLS:C1708314 {source="ncithesaurus:Hand_Digit_3_Phalanx"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0015027 ! manual digit 3 phalanx endochondral element
+relationship: part_of UBERON:5103623 ! manual digit 3 digitopodial skeleton
 
 [Term]
 id: UBERON:0003638
@@ -2363,6 +2401,7 @@ xref: SCTID:361787005
 xref: UMLS:C1708316 {source="ncithesaurus:Hand_Digit_4_Phalanx"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0015028 ! manual digit 4 phalanx endochondral element
+relationship: part_of UBERON:5103624 ! manual digit 4 digitopodial skeleton
 
 [Term]
 id: UBERON:0003639
@@ -2410,6 +2449,7 @@ xref: SCTID:361789008
 xref: UMLS:C1708317 {source="ncithesaurus:Hand_Digit_5_Phalanx"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0015029 ! manual digit 5 phalanx endochondral element
+relationship: part_of UBERON:5103625 ! manual digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0003640
@@ -2445,6 +2485,7 @@ xref: SCTID:361798006
 xref: UMLS:C1708080 {source="ncithesaurus:Foot_Digit_1_Phalanx"}
 is_a: UBERON:0001449 ! phalanx of pes
 is_a: UBERON:0015031 ! pedal digit 1 phalanx endochondral element
+relationship: part_of UBERON:5103631 ! pedal digit 1 digitopodial skeleton
 
 [Term]
 id: UBERON:0003641
@@ -2471,6 +2512,7 @@ xref: SCTID:361800004
 xref: UMLS:C1708082 {source="ncithesaurus:Foot_Digit_2_Phalanx"}
 is_a: UBERON:0001449 ! phalanx of pes
 is_a: UBERON:0015032 ! pedal digit 2 phalanx endochondral element
+relationship: part_of UBERON:5103632 ! pedal digit 2 digitopodial skeleton
 
 [Term]
 id: UBERON:0003642
@@ -2497,6 +2539,7 @@ xref: SCTID:361802007
 xref: UMLS:C1708084 {source="ncithesaurus:Foot_Digit_3_Phalanx"}
 is_a: UBERON:0001449 ! phalanx of pes
 is_a: UBERON:0015033 ! pedal digit 3 phalanx endochondral element
+relationship: part_of UBERON:5103633 ! pedal digit 3 digitopodial skeleton
 
 [Term]
 id: UBERON:0003645
@@ -2924,6 +2967,7 @@ synonym: "metapodial bone" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "metapodium bone" EXACT [http://en.wiktionary.org/wiki/metapodial, https://orcid.org/0000-0002-6601-2165]
 xref: EMAPA:37284 {source="MA:th"}
 xref: MA:0000301
+is_a: UBERON:0002495 {source="FMA-abduced"} ! long bone
 is_a: UBERON:0003606 ! limb long bone
 is_a: UBERON:0012357 ! digitopodium bone
 relationship: part_of UBERON:0010546 {notes="https://github.com/obophenotype/uberon/wiki/Skeleton-partonomy-Design-Pattern"} ! metapodial skeleton
@@ -2964,6 +3008,7 @@ xref: SCTID:361804008
 xref: UMLS:C1708086 {source="ncithesaurus:Foot_Digit_4_Phalanx"}
 is_a: UBERON:0001449 ! phalanx of pes
 is_a: UBERON:0015034 ! pedal digit 4 phalanx endochondral element
+relationship: part_of UBERON:5103634 ! pedal digit 4 digitopodial skeleton
 
 [Term]
 id: UBERON:0003863
@@ -2992,6 +3037,7 @@ xref: SCTID:361806005
 xref: UMLS:C1708088 {source="ncithesaurus:Foot_Digit_5_Phalanx"}
 is_a: UBERON:0001449 ! phalanx of pes
 is_a: UBERON:0015035 ! pedal digit 5 phalanx endochondral element
+relationship: part_of UBERON:5103635 ! pedal digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0003864
@@ -3014,6 +3060,7 @@ xref: SCTID:371230003
 xref: UMLS:C0223828 {source="ncithesaurus:Middle_Phalanx_of_the_Hand"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0004301 ! middle phalanx
+relationship: part_of UBERON:5102389 ! manual digit digitopodial skeleton
 
 [Term]
 id: UBERON:0003865
@@ -3039,6 +3086,7 @@ xref: SCTID:361782004
 xref: UMLS:C1269782 {source="ncithesaurus:Distal_Phalanx_of_Hand"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0004300 ! distal phalanx
+relationship: part_of UBERON:5102389 ! manual digit digitopodial skeleton
 
 [Term]
 id: UBERON:0003866
@@ -3057,6 +3105,7 @@ xref: MA:0001386
 xref: SCTID:83207005
 is_a: UBERON:0001449 ! phalanx of pes
 is_a: UBERON:0004301 ! middle phalanx
+relationship: part_of UBERON:5101466 ! pedal digit digitopodial skeleton
 
 [Term]
 id: UBERON:0003867
@@ -3082,6 +3131,7 @@ xref: SCTID:361797001
 xref: UMLS:C0224026 {source="ncithesaurus:Distal_Phalanx_of_Foot"}
 is_a: UBERON:0001449 ! phalanx of pes
 is_a: UBERON:0004300 ! distal phalanx
+relationship: part_of UBERON:5101466 ! pedal digit digitopodial skeleton
 
 [Term]
 id: UBERON:0003868
@@ -3105,6 +3155,7 @@ xref: SCTID:85533000
 xref: UMLS:C0224020 {source="ncithesaurus:Proximal_Phalanx_of_Foot"}
 is_a: UBERON:0001449 ! phalanx of pes
 is_a: UBERON:0004302 ! proximal phalanx
+relationship: part_of UBERON:5101466 ! pedal digit digitopodial skeleton
 
 [Term]
 id: UBERON:0003958
@@ -3114,6 +3165,7 @@ def: "The layer of the epiphyseal plate where new bone matrix is deposited" [MP:
 subset: pheno_slim
 xref: EMAPA:37896 {source="MA:th"}
 is_a: UBERON:0005055 ! zone of long bone
+relationship: part_of UBERON:0002495 ! long bone
 relationship: part_of UBERON:0002516 ! epiphyseal plate
 
 [Term]
@@ -3356,6 +3408,7 @@ xref: SCTID:361784003
 is_a: UBERON:0003636 ! manual digit 2 phalanx
 is_a: UBERON:0003865 ! distal phalanx of manus
 is_a: UBERON:0014484 ! distal phalanx of digit 2
+relationship: part_of UBERON:5103622 ! manual digit 2 digitopodial skeleton
 
 [Term]
 id: UBERON:0004312
@@ -3387,6 +3440,7 @@ xref: SCTID:370674002
 is_a: UBERON:0003637 ! manual digit 3 phalanx
 is_a: UBERON:0003865 ! distal phalanx of manus
 is_a: UBERON:0014485 ! distal phalanx of digit 3
+relationship: part_of UBERON:5103623 ! manual digit 3 digitopodial skeleton
 
 [Term]
 id: UBERON:0004313
@@ -3410,6 +3464,7 @@ xref: SCTID:361788000
 is_a: UBERON:0003638 ! manual digit 4 phalanx
 is_a: UBERON:0003865 ! distal phalanx of manus
 is_a: UBERON:0014486 ! distal phalanx of digit 4
+relationship: part_of UBERON:5103624 ! manual digit 4 digitopodial skeleton
 
 [Term]
 id: UBERON:0004314
@@ -3433,6 +3488,7 @@ xref: SCTID:361790004
 is_a: UBERON:0003639 ! manual digit 5 phalanx
 is_a: UBERON:0003865 ! distal phalanx of manus
 is_a: UBERON:0014487 ! distal phalanx of digit 5
+relationship: part_of UBERON:5103625 ! manual digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0004315
@@ -3454,6 +3510,7 @@ xref: SCTID:361799003
 is_a: UBERON:0003640 ! pedal digit 1 phalanx
 is_a: UBERON:0003867 ! distal phalanx of pes
 is_a: UBERON:0014483 ! distal phalanx of digit 1
+relationship: part_of UBERON:5103631 ! pedal digit 1 digitopodial skeleton
 
 [Term]
 id: UBERON:0004316
@@ -3475,6 +3532,7 @@ xref: SCTID:361801000
 is_a: UBERON:0003641 ! pedal digit 2 phalanx
 is_a: UBERON:0003867 ! distal phalanx of pes
 is_a: UBERON:0014484 ! distal phalanx of digit 2
+relationship: part_of UBERON:5103632 ! pedal digit 2 digitopodial skeleton
 
 [Term]
 id: UBERON:0004317
@@ -3504,6 +3562,7 @@ xref: SCTID:370673008
 is_a: UBERON:0003642 ! pedal digit 3 phalanx
 is_a: UBERON:0003867 ! distal phalanx of pes
 is_a: UBERON:0014485 ! distal phalanx of digit 3
+relationship: part_of UBERON:5103633 ! pedal digit 3 digitopodial skeleton
 
 [Term]
 id: UBERON:0004318
@@ -3525,6 +3584,7 @@ xref: SCTID:361805009
 is_a: UBERON:0003862 ! pedal digit 4 phalanx
 is_a: UBERON:0003867 ! distal phalanx of pes
 is_a: UBERON:0014486 ! distal phalanx of digit 4
+relationship: part_of UBERON:5103634 ! pedal digit 4 digitopodial skeleton
 
 [Term]
 id: UBERON:0004319
@@ -3548,6 +3608,7 @@ xref: SCTID:244674003
 is_a: UBERON:0003863 ! pedal digit 5 phalanx
 is_a: UBERON:0003867 ! distal phalanx of pes
 is_a: UBERON:0014487 ! distal phalanx of digit 5
+relationship: part_of UBERON:5103635 ! pedal digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0004320
@@ -3579,6 +3640,7 @@ xref: SCTID:263407002
 is_a: UBERON:0003636 ! manual digit 2 phalanx
 is_a: UBERON:0003864 ! middle phalanx of manus
 is_a: UBERON:0014488 ! middle phalanx of digit 2
+relationship: part_of UBERON:5103622 ! manual digit 2 digitopodial skeleton
 
 [Term]
 id: UBERON:0004321
@@ -3613,6 +3675,7 @@ xref: SCTID:370729003
 is_a: UBERON:0003637 ! manual digit 3 phalanx
 is_a: UBERON:0003864 ! middle phalanx of manus
 is_a: UBERON:0014489 ! middle phalanx of digit 3
+relationship: part_of UBERON:5103623 ! manual digit 3 digitopodial skeleton
 
 [Term]
 id: UBERON:0004322
@@ -3644,6 +3707,7 @@ xref: SCTID:263409004
 is_a: UBERON:0003638 ! manual digit 4 phalanx
 is_a: UBERON:0003864 ! middle phalanx of manus
 is_a: UBERON:0014490 ! middle phalanx of digit 4
+relationship: part_of UBERON:5103624 ! manual digit 4 digitopodial skeleton
 
 [Term]
 id: UBERON:0004323
@@ -3675,6 +3739,7 @@ xref: SCTID:263410009
 is_a: UBERON:0003639 ! manual digit 5 phalanx
 is_a: UBERON:0003864 ! middle phalanx of manus
 is_a: UBERON:0014491 ! middle phalanx of digit 5
+relationship: part_of UBERON:5103625 ! manual digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0004324
@@ -3700,6 +3765,7 @@ xref: SCTID:182152006
 is_a: UBERON:0003641 ! pedal digit 2 phalanx
 is_a: UBERON:0003866 ! middle phalanx of pes
 is_a: UBERON:0014488 ! middle phalanx of digit 2
+relationship: part_of UBERON:5103632 ! pedal digit 2 digitopodial skeleton
 
 [Term]
 id: UBERON:0004325
@@ -3728,6 +3794,7 @@ xref: SCTID:370677009
 is_a: UBERON:0003642 ! pedal digit 3 phalanx
 is_a: UBERON:0003866 ! middle phalanx of pes
 is_a: UBERON:0014489 ! middle phalanx of digit 3
+relationship: part_of UBERON:5103633 ! pedal digit 3 digitopodial skeleton
 
 [Term]
 id: UBERON:0004326
@@ -3753,6 +3820,7 @@ xref: SCTID:182156009
 is_a: UBERON:0003862 ! pedal digit 4 phalanx
 is_a: UBERON:0003866 ! middle phalanx of pes
 is_a: UBERON:0014490 ! middle phalanx of digit 4
+relationship: part_of UBERON:5103634 ! pedal digit 4 digitopodial skeleton
 
 [Term]
 id: UBERON:0004327
@@ -3777,6 +3845,7 @@ xref: SCTID:244673009
 is_a: UBERON:0003863 ! pedal digit 5 phalanx
 is_a: UBERON:0003866 ! middle phalanx of pes
 is_a: UBERON:0014491 ! middle phalanx of digit 5
+relationship: part_of UBERON:5103635 ! pedal digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0004328
@@ -3802,6 +3871,7 @@ xref: SCTID:263403003
 is_a: UBERON:0002234 ! proximal phalanx of manus
 is_a: UBERON:0003636 ! manual digit 2 phalanx
 is_a: UBERON:0014502 ! proximal phalanx of digit 2
+relationship: part_of UBERON:5103622 ! manual digit 2 digitopodial skeleton
 
 [Term]
 id: UBERON:0004329
@@ -3828,6 +3898,7 @@ xref: SCTID:370735003
 is_a: UBERON:0002234 ! proximal phalanx of manus
 is_a: UBERON:0003637 ! manual digit 3 phalanx
 is_a: UBERON:0014503 ! proximal phalanx of digit 3
+relationship: part_of UBERON:5103623 ! manual digit 3 digitopodial skeleton
 
 [Term]
 id: UBERON:0004330
@@ -3853,6 +3924,7 @@ xref: SCTID:263405005
 is_a: UBERON:0002234 ! proximal phalanx of manus
 is_a: UBERON:0003638 ! manual digit 4 phalanx
 is_a: UBERON:0014504 ! proximal phalanx of digit 4
+relationship: part_of UBERON:5103624 ! manual digit 4 digitopodial skeleton
 
 [Term]
 id: UBERON:0004331
@@ -3878,6 +3950,7 @@ xref: SCTID:263406006
 is_a: UBERON:0002234 ! proximal phalanx of manus
 is_a: UBERON:0003639 ! manual digit 5 phalanx
 is_a: UBERON:0014505 ! proximal phalanx of digit 5
+relationship: part_of UBERON:5103625 ! manual digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0004332
@@ -3900,6 +3973,7 @@ xref: SCTID:182150003
 is_a: UBERON:0003640 ! pedal digit 1 phalanx
 is_a: UBERON:0003868 ! proximal phalanx of pes
 is_a: UBERON:0014501 ! proximal phalanx of digit 1
+relationship: part_of UBERON:5103631 ! pedal digit 1 digitopodial skeleton
 
 [Term]
 id: UBERON:0004333
@@ -3923,6 +3997,7 @@ xref: SCTID:182151004
 is_a: UBERON:0003641 ! pedal digit 2 phalanx
 is_a: UBERON:0003868 ! proximal phalanx of pes
 is_a: UBERON:0014502 ! proximal phalanx of digit 2
+relationship: part_of UBERON:5103632 ! pedal digit 2 digitopodial skeleton
 
 [Term]
 id: UBERON:0004334
@@ -3947,6 +4022,7 @@ xref: SCTID:370734004
 is_a: UBERON:0003642 ! pedal digit 3 phalanx
 is_a: UBERON:0003868 ! proximal phalanx of pes
 is_a: UBERON:0014503 ! proximal phalanx of digit 3
+relationship: part_of UBERON:5103633 ! pedal digit 3 digitopodial skeleton
 
 [Term]
 id: UBERON:0004335
@@ -3970,6 +4046,7 @@ xref: SCTID:182155008
 is_a: UBERON:0003862 ! pedal digit 4 phalanx
 is_a: UBERON:0003868 ! proximal phalanx of pes
 is_a: UBERON:0014504 ! proximal phalanx of digit 4
+relationship: part_of UBERON:5103634 ! pedal digit 4 digitopodial skeleton
 
 [Term]
 id: UBERON:0004336
@@ -3995,6 +4072,7 @@ xref: SCTID:244672004
 is_a: UBERON:0003863 ! pedal digit 5 phalanx
 is_a: UBERON:0003868 ! proximal phalanx of pes
 is_a: UBERON:0014505 ! proximal phalanx of digit 5
+relationship: part_of UBERON:5103635 ! pedal digit 5 digitopodial skeleton
 
 [Term]
 id: UBERON:0004337
@@ -4015,6 +4093,7 @@ xref: SCTID:182007006
 is_a: UBERON:0003620 ! manual digit 1 phalanx
 is_a: UBERON:0003865 ! distal phalanx of manus
 is_a: UBERON:0014483 ! distal phalanx of digit 1
+relationship: part_of UBERON:5101463 ! manual digit 1 digitopodial skeleton
 property_value: UBPROP:0000008 "The human pollical distal phalanx (PDP) has a pronounced insertion for the flexor pollicis longus (asymmetric towards the radial side), an ungual fossa, and a pair of dissymmetric ungual spines (the ulnar being more prominent). This asymmetry is necessary to ensure that the thumb pulp is always facing the pulps of the other digits, an osteological configuration which provides the maximum contact surface with held objects." xsd:string {source="WP"}
 
 [Term]
@@ -4035,6 +4114,7 @@ xref: SCTID:181992006
 is_a: UBERON:0002234 ! proximal phalanx of manus
 is_a: UBERON:0003620 ! manual digit 1 phalanx
 is_a: UBERON:0014501 ! proximal phalanx of digit 1
+relationship: part_of UBERON:5101463 ! manual digit 1 digitopodial skeleton
 
 [Term]
 id: UBERON:0004375
@@ -4368,6 +4448,7 @@ xref: FMA:32826
 xref: SCTID:310655007
 is_a: UBERON:0004379 ! distal epiphysis
 is_a: UBERON:0004382 ! epiphysis of humerus
+relationship: part_of UBERON:0000976 ! humerus
 
 [Term]
 id: UBERON:0004405
@@ -4382,6 +4463,7 @@ xref: SCTID:302527001
 xref: Wikipedia:Lower_extremity_of_tibia
 is_a: UBERON:0004379 ! distal epiphysis
 is_a: UBERON:0004383 ! epiphysis of tibia
+relationship: part_of UBERON:0000979 ! tibia
 
 [Term]
 id: UBERON:0004406
@@ -4396,6 +4478,7 @@ xref: FMA:32844
 xref: SCTID:280016000
 is_a: UBERON:0004379 ! distal epiphysis
 is_a: UBERON:0004384 ! epiphysis of femur
+relationship: part_of UBERON:0000981 ! femur
 property_value: UBPROP:0000001 "Head of the femur that articulates with the tibia and fibula.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000893", ontology="AAO", source="AAO:LAP"}
 
 [Term]
@@ -4411,6 +4494,7 @@ xref: SCTID:280013008
 xref: Wikipedia:Lower_extremity_of_radius
 is_a: UBERON:0004379 ! distal epiphysis
 is_a: UBERON:0004385 ! epiphysis of radius
+relationship: part_of UBERON:0001423 ! radius bone
 
 [Term]
 id: UBERON:0004408
@@ -4424,6 +4508,7 @@ xref: FMA:33754
 xref: SCTID:302521000
 is_a: UBERON:0004379 ! distal epiphysis
 is_a: UBERON:0004386 ! epiphysis of ulna
+relationship: part_of UBERON:0001424 ! ulna
 
 [Term]
 id: UBERON:0004409
@@ -4440,6 +4525,7 @@ xref: FMA:226577
 xref: SCTID:272707006
 is_a: UBERON:0004387 ! epiphysis of phalanx of manus
 is_a: UBERON:0004448 ! distal epiphysis of phalanx
+relationship: part_of UBERON:0001436 ! phalanx of manus
 
 [Term]
 id: UBERON:0004410
@@ -4454,6 +4540,7 @@ xref: SCTID:129111008
 xref: SCTID:280018004
 is_a: UBERON:0004379 ! distal epiphysis
 is_a: UBERON:0004388 ! epiphysis of fibula
+relationship: part_of UBERON:0001446 ! fibula
 
 [Term]
 id: UBERON:0004411
@@ -4473,6 +4560,7 @@ xref: SCTID:280028008
 xref: Wikipedia:Upper_extremity_of_humerus
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004382 ! epiphysis of humerus
+relationship: part_of UBERON:0000976 ! humerus
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/ad/Gray207.png xsd:anyURI
 
 [Term]
@@ -4487,6 +4575,7 @@ xref: FMA:32841
 xref: SCTID:244702009
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004384 ! epiphysis of femur
+relationship: part_of UBERON:0000981 ! femur
 
 [Term]
 id: UBERON:0004413
@@ -4502,6 +4591,7 @@ xref: SCTID:280029000
 xref: Wikipedia:Upper_extremity_of_radius
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004385 ! epiphysis of radius
+relationship: part_of UBERON:0001423 ! radius bone
 
 [Term]
 id: UBERON:0004414
@@ -4517,6 +4607,7 @@ xref: FMA:226482
 xref: SCTID:272704004
 is_a: UBERON:0004387 ! epiphysis of phalanx of manus
 is_a: UBERON:0004447 ! proximal epiphysis of phalanx
+relationship: part_of UBERON:0001436 ! phalanx of manus
 
 [Term]
 id: UBERON:0004415
@@ -4531,6 +4622,7 @@ xref: FMA:33817
 xref: SCTID:119545008
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004389 ! epiphysis of metatarsal bone
+relationship: part_of UBERON:0001448 ! metatarsal bone
 
 [Term]
 id: UBERON:0004416
@@ -4546,6 +4638,7 @@ xref: FMA:33795
 xref: SCTID:272695001
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004390 ! epiphysis of metacarpal bone
+relationship: part_of UBERON:0002374 ! metacarpal bone
 
 [Term]
 id: UBERON:0004417
@@ -4644,6 +4737,7 @@ xref: FMA:42788
 xref: SCTID:181978000
 is_a: UBERON:0004391 ! epiphysis of first metacarpal bone
 is_a: UBERON:0004416 ! proximal epiphysis of metacarpal bone
+relationship: part_of UBERON:0003645 ! metacarpal bone of digit 1
 
 [Term]
 id: UBERON:0004423
@@ -4658,6 +4752,7 @@ xref: FMA:42791
 xref: SCTID:263461004
 is_a: UBERON:0004392 ! epiphysis of second metacarpal bone
 is_a: UBERON:0004416 ! proximal epiphysis of metacarpal bone
+relationship: part_of UBERON:0003646 ! metacarpal bone of digit 2
 
 [Term]
 id: UBERON:0004424
@@ -4672,6 +4767,7 @@ xref: FMA:42794
 xref: SCTID:263465008
 is_a: UBERON:0004393 ! epiphysis of third metacarpal bone
 is_a: UBERON:0004416 ! proximal epiphysis of metacarpal bone
+relationship: part_of UBERON:0003647 ! metacarpal bone of digit 3
 
 [Term]
 id: UBERON:0004425
@@ -4686,6 +4782,7 @@ xref: FMA:42797
 xref: SCTID:263469002
 is_a: UBERON:0004394 ! epiphysis of fourth metacarpal bone
 is_a: UBERON:0004416 ! proximal epiphysis of metacarpal bone
+relationship: part_of UBERON:0003648 ! metacarpal bone of digit 4
 
 [Term]
 id: UBERON:0004426
@@ -4700,6 +4797,7 @@ xref: FMA:42800
 xref: SCTID:263473004
 is_a: UBERON:0004416 ! proximal epiphysis of metacarpal bone
 is_a: UBERON:0011104 ! epiphysis of fifth metacarpal bone
+relationship: part_of UBERON:0003649 ! metacarpal bone of digit 5
 
 [Term]
 id: UBERON:0004427
@@ -4713,6 +4811,7 @@ xref: FMA:42963
 xref: SCTID:182124002
 is_a: UBERON:0004395 ! epiphysis of first metatarsal bone
 is_a: UBERON:0004415 ! proximal epiphysis of metatarsal bone
+relationship: part_of UBERON:0003650 ! metatarsal bone of digit 1
 
 [Term]
 id: UBERON:0004428
@@ -4726,6 +4825,7 @@ xref: FMA:42964
 xref: SCTID:182130002
 is_a: UBERON:0004396 ! epiphysis of second metatarsal bone
 is_a: UBERON:0004415 ! proximal epiphysis of metatarsal bone
+relationship: part_of UBERON:0003651 ! metatarsal bone of digit 2
 
 [Term]
 id: UBERON:0004429
@@ -4739,6 +4839,7 @@ xref: FMA:42965
 xref: SCTID:182135007
 is_a: UBERON:0004397 ! epiphysis of third metatarsal bone
 is_a: UBERON:0004415 ! proximal epiphysis of metatarsal bone
+relationship: part_of UBERON:0003652 ! metatarsal bone of digit 3
 
 [Term]
 id: UBERON:0004430
@@ -4752,6 +4853,7 @@ xref: FMA:42966
 xref: SCTID:182140004
 is_a: UBERON:0004398 ! epiphysis of fourth metatarsal bone
 is_a: UBERON:0004415 ! proximal epiphysis of metatarsal bone
+relationship: part_of UBERON:0003653 ! metatarsal bone of digit 4
 
 [Term]
 id: UBERON:0004431
@@ -4765,6 +4867,7 @@ xref: FMA:42967
 xref: SCTID:182145009
 is_a: UBERON:0004399 ! epiphysis of fifth metatarsal bone
 is_a: UBERON:0004415 ! proximal epiphysis of metatarsal bone
+relationship: part_of UBERON:0003654 ! metatarsal bone of digit 5
 
 [Term]
 id: UBERON:0004432
@@ -5019,6 +5122,7 @@ namespace: uberon
 def: "A proximal epiphysis that is part of a phalanx [Automatically generated definition]." [OBOL:automatic]
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004446 ! epiphysis of phalanx
+relationship: part_of UBERON:0003221 ! phalanx
 
 [Term]
 id: UBERON:0004448
@@ -5029,6 +5133,7 @@ synonym: "head of phalanx" EXACT []
 xref: SCTID:110520001
 is_a: UBERON:0004379 ! distal epiphysis
 is_a: UBERON:0004446 ! epiphysis of phalanx
+relationship: part_of UBERON:0003221 ! phalanx
 
 [Term]
 id: UBERON:0004601
@@ -5308,6 +5413,7 @@ xref: VSAO:0000187
 xref: Wikipedia:Cleithrum
 xref: ZFA:0000184
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 {source="ZFA"} ! pectoral girdle skeleton
 property_value: RO:0002161 NCBITaxon:40674 {source="Wikipedia"}
 property_value: UBPROP:0000001 "Dermal bone that articulates dorsally with the supracleithrum and ventro-medially with the scapula and coracoid and mesocoracoid bone when the last bone is present. With the posttemporal and supracleithrum, the cleithrum supports the primary pectoral girdle. The cleithrum is located immediately behind the branchial cavity.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000184", ontology="TAO", source="TAO:wd"}
 property_value: UBPROP:0000001 "Paired bones of intramembranous origin. Each cleithrum extends medially from a point near the suprascapular-scapular articulation to invest the anterior margin of the suprascapula, and occasionoally it may extend to the dorsal (medial) surface. Usually, this bone is bifurcate.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000750", ontology="AAO", source="AAO:LAP"}
@@ -5337,6 +5443,7 @@ xref: VSAO:0000158
 xref: Wikipedia:Coracoid
 xref: ZFA:0000332
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 {source="VSAO"} ! pectoral girdle skeleton
 property_value: IAO:0000116 "check developmental relationships." xsd:string
 property_value: RO:0002161 NCBITaxon:32525 {reference="ISBN:0-03-910284-X"}
 property_value: UBPROP:0000001 "Endochondral bone that articulates dorsally with the scapula and with the mesocoracoid when the latter is present, posteriorly with the lower two or three proximal radials and antero-ventrally with the cleithrum. The coracoid develops from the scapulo-coracoid cartilage. The coracoid is paired.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000332", ontology="TAO", source="TAO:GA_TG", source="TAO:wd"}
@@ -5417,6 +5524,7 @@ id: UBERON:0005809
 name: cortex of manus bone
 namespace: uberon
 def: "The outer or sperficial part of a bone of the manus." [PHENOSCAPE:ad]
+relationship: part_of UBERON:0001442 ! skeleton of manus
 relationship: part_of UBERON:0005897 ! manus bone
 
 [Term]
@@ -5524,6 +5632,7 @@ xref: EMAPA:17713
 xref: VHOG:0001120
 is_a: UBERON:0010883 ! forelimb cartilage element
 is_a: UBERON:0015053 ! humerus endochondral element
+relationship: part_of UBERON:0001440 {source="EHDAA2"} ! forelimb skeleton
 
 [Term]
 id: UBERON:0006246
@@ -5538,6 +5647,7 @@ xref: EMAPA:17427
 xref: VHOG:0000950
 is_a: UBERON:0010884 ! forelimb bone pre-cartilage condensation
 is_a: UBERON:0015053 ! humerus endochondral element
+relationship: part_of UBERON:0001440 {source="EHDAA2"} ! forelimb skeleton
 
 [Term]
 id: UBERON:0006247
@@ -5550,6 +5660,7 @@ xref: EHDAA:9568
 xref: EMAPA:18029
 xref: VHOG:0000964
 is_a: UBERON:0015054 ! iliac endochondral element
+relationship: part_of UBERON:0007832 {source="EHDAA2"} ! pelvic girdle skeleton
 
 [Term]
 id: UBERON:0006254
@@ -5562,6 +5673,7 @@ xref: EHDAA2:0000890
 xref: EHDAA:9570
 xref: EMAPA:26930
 is_a: UBERON:0015056 ! ischial endochondral element
+relationship: part_of UBERON:0007832 {source="EHDAA2"} ! pelvic girdle skeleton
 
 [Term]
 id: UBERON:0006255
@@ -5574,6 +5686,7 @@ xref: EHDAA:7153
 xref: EMAPA:18348
 xref: VHOG:0000962
 is_a: UBERON:0015056 ! ischial endochondral element
+relationship: part_of UBERON:0007832 {source="EHDAA2"} ! pelvic girdle skeleton
 
 [Term]
 id: UBERON:0006285
@@ -5586,6 +5699,7 @@ xref: EHDAA:9572
 xref: EMAPA:18349
 xref: VHOG:0000965
 is_a: UBERON:0015055 ! pubic endochondral element
+relationship: part_of UBERON:0007832 {source="EHDAA2"} ! pelvic girdle skeleton
 
 [Term]
 id: UBERON:0006286
@@ -5598,6 +5712,7 @@ xref: EMAPA:18054
 xref: VHOG:0001318
 is_a: UBERON:0010883 ! forelimb cartilage element
 is_a: UBERON:0015001 ! radius endochondral element
+relationship: part_of UBERON:0010703 ! forelimb zeugopod skeleton
 
 [Term]
 id: UBERON:0006287
@@ -5623,6 +5738,7 @@ xref: EHDAA:8368
 xref: EMAPA:18343
 xref: VHOG:0001125
 is_a: UBERON:0015057 ! scapula endochondral element
+relationship: part_of UBERON:0007831 {source="EHDAA2"} ! pectoral girdle skeleton
 
 [Term]
 id: UBERON:0006291
@@ -5635,6 +5751,7 @@ xref: EHDAA:6041
 xref: EMAPA:18027
 xref: VHOG:0000960
 is_a: UBERON:0015057 ! scapula endochondral element
+relationship: part_of UBERON:0007831 {source="EHDAA2"} ! pectoral girdle skeleton
 property_value: UBPROP:0000011 "the scapula has been shown to develop from multiple tissues, such as the dermomyotome of the somites, the mesodermal portion of the soma- topleure (a domain of the lateral plate mesoderm or LPM) and neural crest cell-derived mesenchyme (Huang et al., 2000; Matsuoka et al., 2005; Wang et al., 2005)." xsd:string {source="PMID:21455939"}
 
 [Term]
@@ -5648,6 +5765,7 @@ xref: EMAPA:18055
 xref: VHOG:0001155
 is_a: UBERON:0010883 ! forelimb cartilage element
 is_a: UBERON:0015003 ! ulna endochondral element
+relationship: part_of UBERON:0010703 ! forelimb zeugopod skeleton
 
 [Term]
 id: UBERON:0006430
@@ -5736,6 +5854,7 @@ xref: AAO:0000901
 xref: XAO:0003209
 is_a: UBERON:0003466 ! forelimb zeugopod bone
 is_a: UBERON:0015002 ! radius-ulna endochondral element
+relationship: part_of UBERON:0010703 {source="VSAO"} ! forelimb zeugopod skeleton
 
 [Term]
 id: UBERON:0006717
@@ -5988,6 +6107,7 @@ xref: SCTID:304590006
 xref: Wikipedia:Head_of_ulna
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004386 ! epiphysis of ulna
+relationship: part_of UBERON:0001424 ! ulna
 
 [Term]
 id: UBERON:0006836
@@ -6040,6 +6160,7 @@ xref: Wikipedia:Scapula
 xref: ZFA:0000583
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:0015057 ! scapula endochondral element
+relationship: part_of UBERON:0007831 {source="ZFA-abduced"} ! pectoral girdle skeleton
 property_value: depicted:by Pectoral:girdles-en.svg xsd:anyURI
 property_value: UBPROP:0000001 "Endochondral bone that is located medial to the cleithrum, and articulates ventrally with the coracoid, medially with the mesocoracoid when the later is present and posteriorly with the upper one to three proximal radials. The scapula develops from the scapulocoracoid cartilage and belongs to the primary pectoral girdle. It may be perforated by the scapular foramen or it may be notched ventr and forms together with a similar notch of the coracoid the scapulocoracoid foramen[TAO:0000583]." xsd:string {source="TAO:0000583"}
 property_value: UBPROP:0000001 "Paired bony elements of endochondral origin. They are situated at the level of the jaw articulation, in a vertical position, with the suprascapular margin being dorsal and the glenoid end being ventral.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000751", ontology="AAO", source="AAO:LAP"}
@@ -6095,6 +6216,8 @@ subset: pheno_slim
 xref: FMA:32878
 is_a: UBERON:0004378 ! proximal metaphysis
 is_a: UBERON:0006865 ! metaphysis of femur
+relationship: part_of UBERON:0000981 ! femur
+relationship: part_of UBERON:0006862 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! diaphysis of femur
 
 [Term]
 id: UBERON:0006864
@@ -6105,6 +6228,8 @@ subset: pheno_slim
 xref: FMA:32881
 is_a: UBERON:0004377 ! distal metaphysis
 is_a: UBERON:0006865 ! metaphysis of femur
+relationship: part_of UBERON:0000981 ! femur
+relationship: part_of UBERON:0006862 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! diaphysis of femur
 
 [Term]
 id: UBERON:0006865
@@ -6117,6 +6242,7 @@ xref: EMAPA:37540 {source="MA:th"}
 xref: FMA:32875
 xref: MA:0003052
 is_a: UBERON:0001438 ! metaphysis
+relationship: part_of UBERON:0000981 ! femur
 relationship: part_of UBERON:0006862 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! diaphysis of femur
 
 [Term]
@@ -6138,6 +6264,7 @@ xref: SCTID:361792007
 xref: UMLS:C0015815 {source="ncithesaurus:Femoral_Neck"}
 xref: Wikipedia:Femur_neck
 is_a: UBERON:0005055 ! zone of long bone
+relationship: part_of UBERON:0000981 ! femur
 relationship: part_of UBERON:0006863 ! proximal metaphysis of femur
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/97/Gray243.png xsd:anyURI
 
@@ -6346,6 +6473,7 @@ xref: Wikipedia:Pectoral_girdle
 xref: XAO:0003063
 xref: ZFA:0000407
 is_a: UBERON:0010719 ! girdle skeleton
+relationship: part_of UBERON:0002091 {source="XAO"} ! appendicular skeleton
 relationship: part_of UBERON:0012475 ! skeleton of pectoral complex
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/22/Pectoral_girdle_front_diagram.svg xsd:anyURI
 property_value: UBPROP:0000001 "Anatomical cluster of paired dermal and endochondral bones that attaches to the dorso-posterior part of the cranium, and support the radials and pectoral fin. It consists of two components: the primary pectoral girdle consisting of the endochondral coracoid, scapula and mesocoracoid bones, and the secondary pectoral girdle consisting of the dermal posttemporal, supracleithrum, cleithrum and poscleithrum(thra) bones.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000407", ontology="TAO", source="TAO:wd"}
@@ -6403,6 +6531,7 @@ synonym: "fused clavicle" RELATED []
 synonym: "wishbone" RELATED [Wikipedia:Furcula]
 xref: Wikipedia:Furcula
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 property_value: IAO:0000116 "currently assigned to be part of the pectoral girdle, but this may be incorrect if PG is a paired structure." xsd:string
 property_value: RO:0002175 NCBITaxon:436495
 property_value: RO:0002175 NCBITaxon:8782
@@ -6506,6 +6635,7 @@ xref: FMA:42353
 xref: SCTID:368448000
 is_a: UBERON:0005897 ! manus bone
 is_a: UBERON:0011141 ! appendicular ossicle
+relationship: part_of UBERON:0001442 ! skeleton of manus
 
 [Term]
 id: UBERON:0008000
@@ -6517,6 +6647,7 @@ xref: FMA:45096
 xref: SCTID:244675002
 is_a: UBERON:0005899 ! pes bone
 is_a: UBERON:0011141 ! appendicular ossicle
+relationship: part_of UBERON:0001445 {source="FMA"} ! skeleton of pes
 
 [Term]
 id: UBERON:0008194
@@ -6526,6 +6657,7 @@ def: "The tibiotarsus is the large bone between the femur and the tarsometatarsu
 xref: Wikipedia:Tibiotarsus
 is_a: UBERON:0003464 ! hindlimb bone
 is_a: UBERON:0015011 ! tibiotarsus endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 
 [Term]
 id: UBERON:0008195
@@ -6535,6 +6667,7 @@ def: "The tarsometatarsus is a bone that is found in the lower leg of certain te
 xref: Wikipedia:Tarsometatarsus
 is_a: UBERON:0005899 ! pes bone
 is_a: UBERON:0015012 ! tarsometatarsus endochondral element
+relationship: part_of UBERON:0001445 ! skeleton of pes
 property_value: UBPROP:0000008 "found in birds" xsd:string {source="VSAO"}
 
 [Term]
@@ -6576,6 +6709,7 @@ def: "In the giant panda, a large digitlike preaxial element that articulates wi
 synonym: "os sesamoideum radiale" EXACT [ISBN:0226313379]
 is_a: UBERON:0001435 ! carpal bone
 is_a: UBERON:0007997 ! sesamoid bone of manus
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0008449
@@ -6610,6 +6744,7 @@ xref: UMLS:C0932431 {source="ncithesaurus:Head_of_the_Tibia"}
 xref: Wikipedia:Upper_extremity_of_tibia
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004383 ! epiphysis of tibia
+relationship: part_of UBERON:0000979 ! tibia
 
 [Term]
 id: UBERON:0008775
@@ -6631,6 +6766,7 @@ xref: UMLS:C0223908 {source="ncithesaurus:Head_of_the_Fibula"}
 xref: Wikipedia:Head_of_fibula
 is_a: UBERON:0004380 ! proximal epiphysis
 is_a: UBERON:0004388 ! epiphysis of fibula
+relationship: part_of UBERON:0001446 ! fibula
 property_value: UBPROP:0000001 "The upper extremity or head of the fibula is of an irregular quadrate form, presenting above a flattened articular surface, directed upward, forward, and medialward, for articulation with a corresponding surface on the lateral condyle of the tibia. On the lateral side is a thick and rough prominence continued behind into a pointed eminence, the apex, which projects upward from the posterior part of the head. The prominence, at its upper and lateral part, gives attachment to the tendon of the Biceps femoris and to the fibular collateral ligament of the knee-joint, the ligament dividing the tendon into two parts. The remaining part of the circumference of the head is rough, for the attachment of muscles and ligaments. It presents in front a tubercle for the origin of the upper and anterior fibers of the Peronæus longus, and a surface for the attachment of the anterior ligament of the head; and behind, another tubercle, for the attachment of the posterior ligament of the head and the origin of the upper fibers of the Soleus[Wikipedia:Head_of_fibula]." xsd:string {source="Wikipedia:Head_of_fibula"}
 
 [Term]
@@ -6869,6 +7005,7 @@ xref: FMA:32858
 xref: SCTID:182056007
 xref: Wikipedia:Medial_condyle_of_femur
 is_a: UBERON:0009980 ! condyle of femur
+relationship: part_of UBERON:0004406 {source="FMA"} ! distal epiphysis of femur
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/53/Gray246.png xsd:anyURI
 
 [Term]
@@ -6885,6 +7022,7 @@ xref: FMA:32859
 xref: SCTID:182057003
 xref: Wikipedia:Lateral_condyle_of_femur
 is_a: UBERON:0009980 ! condyle of femur
+relationship: part_of UBERON:0004406 {source="FMA"} ! distal epiphysis of femur
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/53/Gray246.png xsd:anyURI
 
 [Term]
@@ -6901,6 +7039,7 @@ xref: galen:LateralFemoralEpicondyle
 xref: SCTID:209275007
 xref: Wikipedia:Lateral_epicondyle_of_the_femur
 is_a: UBERON:0005055 ! zone of long bone
+relationship: part_of UBERON:0004406 {source="FMA"} ! distal epiphysis of femur
 relationship: part_of UBERON:0009985 {source="FMA"} ! lateral condyle of femur
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/53/Gray246.png xsd:anyURI
 
@@ -6917,6 +7056,7 @@ xref: galen:MedialFemoralEpicondyle
 xref: SCTID:209172001
 xref: Wikipedia:Medial_epicondyle_of_the_femur
 is_a: UBERON:0005055 ! zone of long bone
+relationship: part_of UBERON:0004406 {source="FMA"} ! distal epiphysis of femur
 relationship: part_of UBERON:0009984 {source="FMA"} ! medial condyle of femur
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e0/Gray345.png xsd:anyURI
 
@@ -7040,6 +7180,7 @@ namespace: uberon
 def: "A pre-cartilage condensation that has the potential to develop into a tarsal bone." [OBOL:automatic]
 xref: EHDAA2:0001978
 is_a: UBERON:0015050 ! tarsus endochondral element
+relationship: part_of UBERON:0001445 {source="EHDAA2"} ! skeleton of pes
 
 [Term]
 id: UBERON:0010541
@@ -7048,6 +7189,7 @@ namespace: uberon
 def: "A cartilaginous condensation that has the potential to develop into a tarsal bone." [OBOL:automatic]
 xref: EHDAA2:0001977
 is_a: UBERON:0015050 ! tarsus endochondral element
+relationship: part_of UBERON:0001445 {source="EHDAA2"} ! skeleton of pes
 
 [Term]
 id: UBERON:0010543
@@ -7098,6 +7240,7 @@ xref: Wikipedia:Metacarpus
 xref: XAO:0003208
 is_a: UBERON:0010546 ! metapodial skeleton
 is_a: UBERON:0015042 ! manual digit metacarpus endochondral element
+relationship: part_of UBERON:0012151 {source="PHENOSCAPE:ni"} ! skeleton of manual digitopodium
 property_value: depicted:by Metacarpals:numbered-en.svg xsd:anyURI
 property_value: UBPROP:0000001 "Segment of the forearm corresponding to the metacarpus, which articulates with the carpals at one end and with the phalanges at the other end.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000946", ontology="AAO", source="AAO:LAP"}
 
@@ -7127,6 +7270,7 @@ xref: Wikipedia:Metatarsus
 xref: XAO:0003212
 is_a: UBERON:0010546 ! metapodial skeleton
 is_a: UBERON:0015036 ! pedal digit metatarsal endochondral element
+relationship: part_of UBERON:0012152 {source="PHENOSCAPE:ni"} ! skeleton of pedal digitopodium
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/52/Gray291.png xsd:anyURI
 property_value: UBPROP:0000001 "Segment of the leg corresponding to the metatarsus, which articulates with the carpals at one end and with the phalanges at the other end.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000221", ontology="AAO", source="AAO:LAP"}
 
@@ -7927,6 +8071,7 @@ xref: TAO:0000027
 xref: VSAO:0000169
 xref: ZFA:0000027
 is_a: UBERON:0011582 ! paired limb/fin skeleton
+relationship: part_of UBERON:0002091 ! appendicular skeleton
 property_value: UBPROP:0000001 "Skeletal system that consists of the paired fins (pectoral or pelvic fins).[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000027", ontology="TAO", source="TAO:wd"}
 property_value: UBPROP:0000001 "Skeletal system that consists of the paired fins (pectoral or pelvic fins).[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000169", ontology="VSAO", source="TAO:curator"}
 
@@ -7940,6 +8085,7 @@ xref: EHDAA2:0000808
 xref: EMAPA:18347
 xref: VHOG:0001126
 is_a: UBERON:0015054 ! iliac endochondral element
+relationship: part_of UBERON:0007832 {source="EHDAA2"} ! pelvic girdle skeleton
 
 [Term]
 id: UBERON:0010718
@@ -7950,6 +8096,7 @@ synonym: "pubic cartilage condensation" RELATED [EMAPA:26928]
 xref: EHDAA2:0001573
 xref: EMAPA:26928
 is_a: UBERON:0015055 ! pubic endochondral element
+relationship: part_of UBERON:0007832 {source="EHDAA2"} ! pelvic girdle skeleton
 
 [Term]
 id: UBERON:0010719
@@ -8004,6 +8151,7 @@ xref: Wikipedia:Cuneiform_(anatomy)
 is_a: UBERON:0001447 ! tarsal bone
 is_a: UBERON:0015099 ! distal tarsal endochondral element
 is_a: UBERON:0018102 ! distal mesopodial bone
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/9e/Gray268.png xsd:anyURI
 property_value: UBPROP:0000001 "Series of elements that articulate with the metatarsals.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000914", ontology="AAO", source="AAO:LAP"}
 
@@ -8048,6 +8196,7 @@ xref: AAO:0000932
 xref: VSAO:0005055
 is_a: UBERON:0010721 ! distal tarsal bone
 is_a: UBERON:0015111 ! distal tarsal bone 4 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: IAO:0000116 "We need to restrict the logical definition such that it is *only* connecting to metatarsal 4" xsd:string
 property_value: UBPROP:0000001 "Small element that articulates anteriorly with metatarsal IV. It may be absent in some taxa.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000932", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000013 "NominaAnatomicaVeterinaria uses os cuboideum as an official synonym for distal tarsal IV, but some sources also use this as the label for the human cuboid bone which is regarded to be formed from tarsals IV and V. We therefore decline to use exact syns in either case." xsd:string
@@ -8065,6 +8214,7 @@ xref: AAO:0000933
 xref: VSAO:0005056
 is_a: UBERON:0010721 ! distal tarsal bone
 is_a: UBERON:0015114 ! distal tarsal bone 5 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: UBPROP:0000001 "Small element that articulates anteriorly with metatarsal V. It may be absent in some taxa.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000933", ontology="AAO", source="AAO:Francis_1934"}
 
 [Term]
@@ -8082,6 +8232,7 @@ xref: AAO:0000851
 xref: VSAO:0005047
 is_a: UBERON:0001481 ! distal carpal bone
 is_a: UBERON:0015096 ! distal carpal bone 5 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 property_value: UBPROP:0000001 "Small element that articulates anteriorly with metacarpal IV(V). It may be fused to carpal 4(3), 5(4), the ulnare, radiale, or other elements.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000851", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000008 "lost in most reptiles and mammals[VSAO]. Small element that articulates anteriorly with metacarpal IV(V). It may be fused to carpal 4(3), 5(4), the ulnare, radiale, or other elements" xsd:string {source="AAO"}
 
@@ -8125,6 +8276,7 @@ xref: EMAPA:32633
 xref: EMAPA:35934
 xref: MA:0000660
 is_a: UBERON:0010740 {source="MA"} ! bone of appendage girdle complex
+relationship: part_of UBERON:0002091 ! appendicular skeleton
 property_value: UBPROP:0000012 "the MA class called 'hindlimb bone' belongs here, as it includes bones in the pelvic girdle" xsd:string {external_ontology="MA"}
 
 [Term]
@@ -8214,6 +8366,7 @@ synonym: "calcaneous pre-cartilage condensation" EXACT []
 xref: EMAPA:17736
 is_a: UBERON:0010886 ! hindlimb pre-cartilage condensation
 is_a: UBERON:0015014 ! calcaneum endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0010842
@@ -8224,6 +8377,7 @@ synonym: "calcaneous cartilage element" EXACT []
 xref: EMAPA:18143
 is_a: UBERON:0015014 ! calcaneum endochondral element
 is_a: UBERON:0035129 ! pes cartilage element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0010843
@@ -8250,6 +8404,7 @@ namespace: uberon
 def: "A pre-cartilage condensation that has the potential to develop into a radius bone." [OBOL:automatic]
 xref: EHDAA2:0001586
 is_a: UBERON:0015001 ! radius endochondral element
+relationship: part_of UBERON:0010703 ! forelimb zeugopod skeleton
 property_value: IAO:0000116 "still to decide whether this is a distinct pre-cartilage condensation" xsd:string
 
 [Term]
@@ -8260,6 +8415,7 @@ def: "A pre-cartilage condensation that has the potential to develop into a ulna
 xref: EHDAA2:0002100
 xref: EHDAA:6226
 is_a: UBERON:0015003 ! ulna endochondral element
+relationship: part_of UBERON:0010703 ! forelimb zeugopod skeleton
 
 [Term]
 id: UBERON:0010848
@@ -8270,6 +8426,7 @@ synonym: "radio-ulna cartilage condensation" EXACT [EMAPA:17711]
 xref: EMAPA:17711
 is_a: UBERON:0010883 ! forelimb cartilage element
 is_a: UBERON:0015002 ! radius-ulna endochondral element
+relationship: part_of UBERON:0010703 ! forelimb zeugopod skeleton
 property_value: UBPROP:0000012 "note that this is not represented as a single unit in EHDAA2" xsd:string {external_ontology="EHDAA2"}
 
 [Term]
@@ -8280,6 +8437,7 @@ def: "A cartilaginous condensation that has the potential to develop into a tibi
 xref: EMAPA:18155
 is_a: UBERON:0010885 ! hindlimb cartilage element
 is_a: UBERON:0015004 ! tibia endochondral element
+relationship: part_of UBERON:0010720 ! hindlimb zeugopod skeleton
 
 [Term]
 id: UBERON:0010850
@@ -8288,6 +8446,7 @@ namespace: uberon
 def: "A pre-cartilage condensation that has the potential to develop into a tibia." [OBOL:automatic]
 xref: EHDAA2:0002036
 is_a: UBERON:0015004 ! tibia endochondral element
+relationship: part_of UBERON:0010720 ! hindlimb zeugopod skeleton
 
 [Term]
 id: UBERON:0010851
@@ -8300,6 +8459,7 @@ synonym: "fibulra cartilage condensation" RELATED [EMAPA:18154]
 xref: EMAPA:18154
 is_a: UBERON:0010885 ! hindlimb cartilage element
 is_a: UBERON:0015013 ! fibula endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 
 [Term]
 id: UBERON:0010852
@@ -8311,6 +8471,7 @@ synonym: "fibular pre-cartilage condensation" EXACT []
 xref: EHDAA2:0000509
 xref: EHDAA:6196
 is_a: UBERON:0015013 ! fibula endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 
 [Term]
 id: UBERON:0010853
@@ -8396,6 +8557,7 @@ namespace: uberon
 def: "A cartilaginous condensation that has the potential to develop into a tarsometatarsus." [OBOL:automatic]
 is_a: UBERON:0015012 ! tarsometatarsus endochondral element
 is_a: UBERON:0035129 ! pes cartilage element
+relationship: part_of UBERON:0001445 ! skeleton of pes
 
 [Term]
 id: UBERON:0010901
@@ -8403,6 +8565,7 @@ name: tarsometatarsus pre-cartilage condensation
 namespace: uberon
 def: "A pre-cartilage condensation that has the potential to develop into a tarsometatarsus." [OBOL:automatic]
 is_a: UBERON:0015012 ! tarsometatarsus endochondral element
+relationship: part_of UBERON:0001445 ! skeleton of pes
 
 [Term]
 id: UBERON:0010902
@@ -8411,6 +8574,7 @@ namespace: uberon
 def: "A cartilaginous condensation that has the potential to develop into a tibiotarsus." [OBOL:automatic]
 is_a: UBERON:0010885 ! hindlimb cartilage element
 is_a: UBERON:0015011 ! tibiotarsus endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 
 [Term]
 id: UBERON:0010903
@@ -8418,6 +8582,7 @@ name: tibiotarsus pre-cartilage condensation
 namespace: uberon
 def: "A pre-cartilage condensation that has the potential to develop into a tibiotarsus." [OBOL:automatic]
 is_a: UBERON:0015011 ! tibiotarsus endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 
 [Term]
 id: UBERON:0010905
@@ -8560,6 +8725,7 @@ def: "The carpometacarpus is the fusion of the carpal and metacarpal bone, essen
 synonym: "carpometacarpus bone" EXACT []
 xref: Wikipedia:Carpometacarpus
 is_a: UBERON:0005897 ! manus bone
+relationship: part_of UBERON:0001442 ! skeleton of manus
 
 [Term]
 id: UBERON:0011216
@@ -8723,6 +8889,7 @@ synonym: "interclavicle bone" EXACT [http://orcid.org/0000-0002-6601-2165]
 xref: VSAO:0000161
 xref: Wikipedia:Interclavicle
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 {source="VSAO"} ! pectoral girdle skeleton
 property_value: IAO:0000116 "See discussion on pectoral girdles - change relationship to overlaps? Kardong: enlarged oval scale" xsd:string
 property_value: RO:0002161 NCBITaxon:32525
 property_value: RO:0002175 NCBITaxon:9257
@@ -8930,6 +9097,7 @@ def: "One of two elements that constitute the basal row of tarsals. The fibulare
 synonym: "astragalus" RELATED [AAO:0000913]
 xref: AAO:0000913
 is_a: UBERON:0011679 ! proximal tarsal bone
+relationship: part_of UBERON:0009879 {source="AAO"} ! tarsal skeleton
 property_value: UBPROP:0000001 "One of two element that constitute the basal row of tarsals. The fibulare constitutes the preaxial element. In salamanders this element is aproximatelly rounded, whereas in anurans it is an elongate, cylindrical bone with the proximal and distal heads fused to the heads of the tibiale.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000913", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000008 "In salamanders this element is aproximatelly rounded, whereas in anurans it is an elongate, cylindrical bone with the proximal and distal heads fused to the heads of the tibiale" xsd:string {source="AAO"}
 
@@ -9489,6 +9657,7 @@ synonym: "metaphysis of ulna" EXACT [FMA:33767]
 xref: FMA:33767
 is_a: UBERON:0001438 ! metaphysis
 relationship: part_of UBERON:0001010 {source="FMA"} ! diaphysis of ulna
+relationship: part_of UBERON:0001424 ! ulna
 
 [Term]
 id: UBERON:0013749
@@ -9553,6 +9722,7 @@ synonym: "lower end of metacarpal bone" EXACT [FMA:33798]
 xref: FMA:33798
 is_a: UBERON:0004379 ! distal epiphysis
 is_a: UBERON:0004390 ! epiphysis of metacarpal bone
+relationship: part_of UBERON:0002374 ! metacarpal bone
 
 [Term]
 id: UBERON:0013774
@@ -10151,6 +10321,7 @@ synonym: "head of distal phalanx of toe" EXACT []
 is_a: UBERON:0011976 ! epiphysis of distal phalanx of pes
 is_a: UBERON:0013122 ! distal epiphysis of phalanx of pes
 is_a: UBERON:0014887 ! distal epiphysis of distal phalanx of digit
+relationship: part_of UBERON:0003867 ! distal phalanx of pes
 
 [Term]
 id: UBERON:0014881
@@ -10251,6 +10422,7 @@ xref: SCTID:182006002
 is_a: UBERON:0004409 ! distal epiphysis of phalanx of manus
 is_a: UBERON:0011979 ! epiphysis of distal phalanx of manus
 is_a: UBERON:0014887 ! distal epiphysis of distal phalanx of digit
+relationship: part_of UBERON:0003865 ! distal phalanx of manus
 
 [Term]
 id: UBERON:0014887
@@ -10327,6 +10499,7 @@ def: "A tibiotarsus bone or its cartilage or pre-cartilage precursor." [https://
 synonym: "tibiotarsus element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 synonym: "tibiotarsus skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 is_a: UBERON:0015022 ! hindlimb endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 
 [Term]
 id: UBERON:0015012
@@ -10359,6 +10532,7 @@ def: "A calcaneum bone or its cartilage or pre-cartilage precursor." [https://gi
 synonym: "calcaneum element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 synonym: "calcaneum skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 is_a: UBERON:0015050 ! tarsus endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015021
@@ -10684,6 +10858,7 @@ def: "A femur bone or its cartilage or pre-cartilage precursor." [https://github
 synonym: "femur element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 synonym: "femur skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 is_a: UBERON:0015022 ! hindlimb endochondral element
+relationship: part_of UBERON:0001441 ! hindlimb skeleton
 
 [Term]
 id: UBERON:0015053
@@ -10693,6 +10868,7 @@ def: "A humerus bone or its cartilage or pre-cartilage precursor." [https://gith
 synonym: "humerus element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 synonym: "humerus skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 is_a: UBERON:0015021 ! forelimb endochondral element
+relationship: part_of UBERON:0001440 ! forelimb skeleton
 
 [Term]
 id: UBERON:0015054
@@ -10778,6 +10954,7 @@ synonym: "distal carpal" RELATED SYSTEMATIC [UBERON:cjm]
 synonym: "distal carpal" RELATED [AAO:0000847]
 is_a: UBERON:0015049 ! carpus endochondral element
 is_a: UBERON:0018099 ! distal mesopodial endochondral element
+relationship: part_of UBERON:0009880 {source="skeleton pattern"} ! carpal skeleton
 
 [Term]
 id: UBERON:0015069
@@ -10805,6 +10982,7 @@ synonym: "proximal carpal" RELATED SYSTEMATIC [UBERON:cjm]
 synonym: "proximal carpal element" EXACT [UBERON:cjm]
 is_a: UBERON:0015049 ! carpus endochondral element
 is_a: UBERON:0017750 ! proximal mesopodial endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015079
@@ -10814,6 +10992,7 @@ def: "A proximal carpal endochondral element that is composed primarily of carti
 is_a: UBERON:0015078 ! proximal carpal endochondral element
 is_a: UBERON:0017751 ! proximal mesopodial cartilage element
 is_a: UBERON:0035128 ! manus cartilage element
+relationship: part_of UBERON:0001442 ! skeleton of manus
 
 [Term]
 id: UBERON:0015080
@@ -10822,6 +11001,7 @@ namespace: uberon
 def: "A proximal carpal endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0010884 ! forelimb bone pre-cartilage condensation
 is_a: UBERON:0015078 ! proximal carpal endochondral element
+relationship: part_of UBERON:0001442 ! skeleton of manus
 
 [Term]
 id: UBERON:0015081
@@ -10831,6 +11011,7 @@ def: "A proximal mesopodial endochondral element that is part of a hindlimb." [O
 synonym: "proximal tarsal" RELATED SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015050 ! tarsus endochondral element
 is_a: UBERON:0017750 ! proximal mesopodial endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015082
@@ -10840,6 +11021,7 @@ def: "A proximal tarsal endochondral element that is composed primarily of carti
 is_a: UBERON:0015081 ! proximal tarsal endochondral element
 is_a: UBERON:0017751 ! proximal mesopodial cartilage element
 is_a: UBERON:0035129 ! pes cartilage element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015083
@@ -10855,6 +11037,7 @@ name: distal carpal bone 1 endochondral element
 namespace: uberon
 synonym: "distal carpal 1" RELATED SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015049 ! carpus endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015085
@@ -10863,6 +11046,7 @@ namespace: uberon
 def: "A distal carpal bone 1 endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 is_a: UBERON:0015084 ! distal carpal bone 1 endochondral element
 is_a: UBERON:0035128 ! manus cartilage element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015086
@@ -10871,6 +11055,7 @@ namespace: uberon
 def: "A distal carpal bone 1 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0010884 ! forelimb bone pre-cartilage condensation
 is_a: UBERON:0015084 ! distal carpal bone 1 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015087
@@ -10878,6 +11063,7 @@ name: distal carpal bone 2 endochondral element
 namespace: uberon
 synonym: "distal carpal 2" RELATED SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015049 ! carpus endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015088
@@ -10886,6 +11072,7 @@ namespace: uberon
 def: "A distal carpal bone 2 endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 is_a: UBERON:0015087 ! distal carpal bone 2 endochondral element
 is_a: UBERON:0035128 ! manus cartilage element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015089
@@ -10894,6 +11081,7 @@ namespace: uberon
 def: "A distal carpal bone 2 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0010884 ! forelimb bone pre-cartilage condensation
 is_a: UBERON:0015087 ! distal carpal bone 2 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015090
@@ -10901,6 +11089,7 @@ name: distal carpal bone 3 endochondral element
 namespace: uberon
 synonym: "distal carpal 3" RELATED SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015049 ! carpus endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015091
@@ -10909,6 +11098,7 @@ namespace: uberon
 def: "A distal carpal bone 3 endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 is_a: UBERON:0015090 ! distal carpal bone 3 endochondral element
 is_a: UBERON:0035128 ! manus cartilage element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015092
@@ -10917,6 +11107,7 @@ namespace: uberon
 def: "A distal carpal bone 3 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0010884 ! forelimb bone pre-cartilage condensation
 is_a: UBERON:0015090 ! distal carpal bone 3 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015093
@@ -10924,6 +11115,7 @@ name: distal carpal bone 4 endochondral element
 namespace: uberon
 synonym: "distal carpal 4" RELATED SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015049 ! carpus endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015094
@@ -10932,6 +11124,7 @@ namespace: uberon
 def: "A distal carpal bone 4 endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 is_a: UBERON:0015093 ! distal carpal bone 4 endochondral element
 is_a: UBERON:0035128 ! manus cartilage element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015095
@@ -10940,6 +11133,7 @@ namespace: uberon
 def: "A distal carpal bone 4 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0010884 ! forelimb bone pre-cartilage condensation
 is_a: UBERON:0015093 ! distal carpal bone 4 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015096
@@ -10947,6 +11141,7 @@ name: distal carpal bone 5 endochondral element
 namespace: uberon
 synonym: "distal carpal 5" RELATED SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015049 ! carpus endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015097
@@ -10955,6 +11150,7 @@ namespace: uberon
 def: "A distal carpal bone 5 endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 is_a: UBERON:0015096 ! distal carpal bone 5 endochondral element
 is_a: UBERON:0035128 ! manus cartilage element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015098
@@ -10963,6 +11159,7 @@ namespace: uberon
 def: "A distal carpal bone 5 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0010884 ! forelimb bone pre-cartilage condensation
 is_a: UBERON:0015096 ! distal carpal bone 5 endochondral element
+relationship: part_of UBERON:0009880 ! carpal skeleton
 
 [Term]
 id: UBERON:0015099
@@ -10972,6 +11169,7 @@ def: "A distal mesopodial endochondral element that is part of a hindlimb." [OBO
 synonym: "distal tarsal" RELATED SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015050 ! tarsus endochondral element
 is_a: UBERON:0018099 ! distal mesopodial endochondral element
+relationship: part_of UBERON:0009879 {source="skeleton pattern"} ! tarsal skeleton
 
 [Term]
 id: UBERON:0015100
@@ -10981,6 +11179,7 @@ def: "A distal tarsal endochondral element that is composed primarily of cartila
 is_a: UBERON:0015099 ! distal tarsal endochondral element
 is_a: UBERON:0018100 ! distal mesopodial cartilage element
 is_a: UBERON:0035129 ! pes cartilage element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015101
@@ -10990,6 +11189,7 @@ def: "A distal tarsal endochondral element that is composed primarily of a pre-c
 is_a: UBERON:0010886 ! hindlimb pre-cartilage condensation
 is_a: UBERON:0015099 ! distal tarsal endochondral element
 is_a: UBERON:0018101 ! distal mesopodial pre-cartilage condensation
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015102
@@ -11007,6 +11207,7 @@ synonym: "distal tarsal 1 cartilage" EXACT [UBERON:cjm]
 synonym: "distal tarsal 1 cartilage element" EXACT SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015100 ! distal tarsal cartilage
 is_a: UBERON:0015102 ! distal tarsal bone 1 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015104
@@ -11015,6 +11216,7 @@ namespace: uberon
 def: "A distal tarsal bone 1 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0015101 ! distal tarsal bone pre-cartilage condensation
 is_a: UBERON:0015102 ! distal tarsal bone 1 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015105
@@ -11032,6 +11234,7 @@ synonym: "distal tarsal 2 cartilage" EXACT [UBERON:cjm]
 synonym: "distal tarsal 2 cartilage element" EXACT SYSTEMATIC [UBERON:cjm]
 is_a: UBERON:0015100 ! distal tarsal cartilage
 is_a: UBERON:0015105 ! distal tarsal bone 2 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015107
@@ -11040,6 +11243,7 @@ namespace: uberon
 def: "A distal tarsal bone 2 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0015101 ! distal tarsal bone pre-cartilage condensation
 is_a: UBERON:0015105 ! distal tarsal bone 2 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015108
@@ -11055,6 +11259,7 @@ namespace: uberon
 def: "A distal tarsal bone 3 endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 is_a: UBERON:0015100 ! distal tarsal cartilage
 is_a: UBERON:0015108 ! distal tarsal bone 3 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015110
@@ -11063,6 +11268,7 @@ namespace: uberon
 def: "A distal tarsal bone 3 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0015101 ! distal tarsal bone pre-cartilage condensation
 is_a: UBERON:0015108 ! distal tarsal bone 3 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015111
@@ -11078,6 +11284,7 @@ namespace: uberon
 def: "A distal tarsal bone 4 endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 is_a: UBERON:0015100 ! distal tarsal cartilage
 is_a: UBERON:0015111 ! distal tarsal bone 4 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015113
@@ -11086,6 +11293,7 @@ namespace: uberon
 def: "A distal tarsal bone 4 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0015101 ! distal tarsal bone pre-cartilage condensation
 is_a: UBERON:0015111 ! distal tarsal bone 4 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015114
@@ -11101,6 +11309,7 @@ namespace: uberon
 def: "A distal tarsal bone 5 endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 is_a: UBERON:0015100 ! distal tarsal cartilage
 is_a: UBERON:0015114 ! distal tarsal bone 5 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015116
@@ -11109,6 +11318,7 @@ namespace: uberon
 def: "A distal tarsal bone 5 endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 is_a: UBERON:0015101 ! distal tarsal bone pre-cartilage condensation
 is_a: UBERON:0015114 ! distal tarsal bone 5 endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 
 [Term]
 id: UBERON:0015180
@@ -11141,6 +11351,7 @@ def: "A compact bone tissue that is part of a bone tissue of long bone." [OBOL:a
 subset: pheno_slim
 xref: FMA:32674
 is_a: UBERON:0005808 ! bone tissue of long bone
+relationship: part_of UBERON:0005808 ! bone tissue of long bone
 
 [Term]
 id: UBERON:0016423
@@ -11183,6 +11394,7 @@ synonym: "digit 6" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-660
 synonym: "digit 6 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "digit VI digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -11194,6 +11406,7 @@ synonym: "digit 7" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-660
 synonym: "digit 7 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "digit VII digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -11205,6 +11418,7 @@ synonym: "digit 8" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-660
 synonym: "digit 8 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "digit VIII digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -11420,6 +11634,7 @@ name: styliform element
 namespace: uberon
 def: "An unjointed, rod-like bony or cartilaginous structures that extend from distal limb joints in tetrapods." [DOI:10.1038/nature14423, https://github.com/obophenotype/uberon/issues/695]
 is_a: UBERON:0015021 ! forelimb endochondral element
+relationship: part_of UBERON:0001440 ! forelimb skeleton
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/alex-dececchi
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/balhoff
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
@@ -11458,6 +11673,7 @@ namespace: uberon
 def: "paired fin radial element that is composed of bone tissue." [https://github.com/obophenotype/uberon/issues/251, OBOL:automatic]
 is_a: UBERON:0004375 ! bone of free limb or fin
 is_a: UBERON:1600006 ! paired fin radial element
+relationship: part_of UBERON:4300013 ! paired fin radial skeleton
 
 [Term]
 id: UBERON:1500007
@@ -11551,6 +11767,7 @@ synonym: "postcleithra" EXACT PLURAL [TAO:0000410]
 synonym: "postcleithrum" EXACT [PSPUB:0000164]
 xref: ZFA:0000410
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11588,6 +11805,7 @@ synonym: "posttemporale" EXACT [TAO:0000549]
 synonym: "suprascapula" RELATED [TAO:0000549]
 xref: ZFA:0000549
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11603,6 +11821,7 @@ synonym: "supracleithrum" EXACT [PSPUB:0000164]
 synonym: "épiclithrum" EXACT [PSPUB:0000132]
 xref: ZFA:0000594
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11645,6 +11864,7 @@ synonym: "supratemporal" RELATED [TAO:0000663]
 synonym: "tabular" RELATED [TAO:Harrington_1955, TAO:Weitzman_1962]
 xref: ZFA:0000663
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12058,6 +12278,7 @@ synonym: "posttemporal" RELATED [TAO:0001998]
 synonym: "posttemporo-supracleithrum" EXACT [TAO:0001998]
 synonym: "supracleithrum" RELATED [TAO:0001998]
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12121,6 +12342,7 @@ namespace: uberon
 def: "Bone that is a fusion of the pterotic, posttemporal, and supracleithrum bones." [TAO:wd]
 synonym: "pterotic-supracleithrum" EXACT [TAO:0002019]
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12342,6 +12564,7 @@ def: "Pelvic fin radial elements are internal skeletal supports of the pelvic fi
 synonym: "pelvic actinost" RELATED [TAO:0000508]
 synonym: "pelvic radial" RELATED [TAO:0000508]
 is_a: UBERON:1600006 ! paired fin radial element
+relationship: part_of UBERON:0010711 ! pelvic fin skeleton
 relationship: part_of UBERON:4440010 ! pelvic fin radial skeleton
 
 [Term]
@@ -12652,6 +12875,7 @@ synonym: "entosternal" RELATED [UBERON:3000762]
 synonym: "infracoracoid" RELATED [UBERON:3000762]
 synonym: "sterni ossa media" RELATED [UBERON:3000762]
 is_a: UBERON:3000936 ! zonal element
+relationship: part_of UBERON:3000757 ! zonal area
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12793,6 +13017,7 @@ name: collum antibrachii
 namespace: uberon
 def: "In a fused radio-ulna, the proximal portion of the compound bone (where the sulcus longitudinalis is barely evident or absent) is a cylindrical pillar." [AAO:LAP]
 relationship: part_of UBERON:0006715 ! radio-ulna
+relationship: part_of UBERON:0010703 ! forelimb zeugopod skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13407,6 +13632,7 @@ name: element Y of hind mesopodium
 namespace: uberon
 def: "Oval tarsal element that is located on the anteromedial side of the tibiale. Anteriorly, it articulates with the proximal prehallux, tarsals 1, 2, and 3." [AAO:LAP]
 is_a: UBERON:0015050 ! tarsus endochondral element
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13546,6 +13772,7 @@ namespace: uberon
 def: "Distal-most centrale when two are present." [AAO:EJS]
 is_a: UBERON:0001447 ! tarsal bone
 is_a: UBERON:0012131 ! centrale
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13556,6 +13783,7 @@ namespace: uberon
 def: "Rectangular cartilage or bone between the distal basal commune and the proximal intermedium." [AAO:EJS]
 is_a: UBERON:0001435 ! carpal bone
 is_a: UBERON:0012131 ! centrale
+relationship: part_of UBERON:0009880 ! carpal skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13575,6 +13803,7 @@ namespace: uberon
 def: "The proximal-most rectangular cartilage or bone when two centralelia are present." [AAO:EJS]
 is_a: UBERON:0001447 ! tarsal bone
 is_a: UBERON:0012131 ! centrale
+relationship: part_of UBERON:0009879 ! tarsal skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13645,6 +13874,7 @@ name: proximal-most prepollical element
 namespace: uberon
 def: "Is the proximal-most prepollical element." [PHENOSCAPE]
 is_a: UBERON:4200140 ! prepollical element
+relationship: part_of UBERON:0012135 ! prepollex skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13654,6 +13884,7 @@ name: distal-most prepollical element
 namespace: uberon
 def: "Is the distal-most prepollical element." [PHENOSCAPE]
 is_a: UBERON:4200140 ! prepollical element
+relationship: part_of UBERON:0012135 ! prepollex skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13662,6 +13893,7 @@ id: UBERON:3010684
 name: proximal-most prehallical element
 namespace: uberon
 is_a: UBERON:4200141 ! prehallical element
+relationship: part_of UBERON:3000922 ! prehallux skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13670,6 +13902,7 @@ id: UBERON:3010685
 name: distal-most prehallical element
 namespace: uberon
 is_a: UBERON:4200141 ! prehallical element
+relationship: part_of UBERON:3000922 ! prehallux skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13697,6 +13930,7 @@ def: "Dermal bone of pectoral girdle that is dorsal to and articulates with the 
 comment: In sarcopterygians; analogous in position to postcleithrum in actinopterygians.
 synonym: "anocleithra" EXACT PLURAL [VSAO:0000160]
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (vertebrate_skeletal_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: vertebrate_skeletal_anatomy_curators
 
@@ -13955,6 +14189,7 @@ name: ectepicondylar flange
 namespace: uberon
 def: "Flange present of the distal region of the humerus, associated with extensor musculature of forelimb." [PHENOSCAPE]
 xref: PHENOSCAPE:ni
+relationship: part_of UBERON:0000976 ! humerus
 relationship: part_of UBERON:0006807 ! ectepicondyle of humerus
 created_by: AD
 
@@ -14026,6 +14261,7 @@ namespace: uberon
 def: "Narrow bone that lies ventral to the level of insertion of the pectoral fin and is sutured to the posterior edges of both the clavicle and cleithrum. Based on Forey 1998." [PHENOSCAPE]
 comment: The presence of this bone is a synapomorphy of coelacanth fishes.
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 created_by: AD
 
 [Term]
@@ -14067,6 +14303,7 @@ id: UBERON:4200029
 name: adductor crest
 namespace: uberon
 def: "A bony crest on venteral side of femur that is the attachment site for the adductor muscles." [PHENOSCAPE:AD]
+relationship: part_of UBERON:0000981 ! femur
 relationship: part_of UBERON:4200028 ! adductor blade
 created_by: AD
 
@@ -14076,6 +14313,7 @@ name: antitrochanter
 namespace: uberon
 def: "Raised surface at the posterior portion of the acetabulum (see Nesbitt, 2011)." [PHENOSCAPE:NI]
 relationship: part_of UBERON:0001269 ! acetabular part of hip bone
+relationship: part_of UBERON:0001273 ! ilium
 created_by: AD
 
 [Term]
@@ -14157,6 +14395,7 @@ id: UBERON:4200043
 name: brevis fossa
 namespace: uberon
 def: "Fossa located on the brevis shelf." [PHENOSCAPE]
+relationship: part_of UBERON:0001273 ! ilium
 relationship: part_of UBERON:4200042 ! brevis shelf
 created_by: AD
 
@@ -14647,6 +14886,7 @@ synonym: "humeral neck" EXACT []
 xref: FMA:23356
 xref: NCIT:C33164
 is_a: UBERON:0005055 ! zone of long bone
+relationship: part_of UBERON:0000976 ! humerus
 relationship: part_of UBERON:0004411 ! proximal epiphysis of humerus
 
 [Term]
@@ -14937,6 +15177,7 @@ name: dorsal cleithrum
 namespace: uberon
 comment: According to Forey 1988, History of the Coelacanth fish:\n\n'In placoderms there are large overlapping plates which completely encircle the body and superficially may be matched with those in osteichthyans (Stensio, 1959; Forey, 1980; Jarvik, 1980). Thus, the anterior median ventral, anteroventral and anterior lateral of placoderms lie in the same positions as the interclavicle, clavicle (ventral cleithrum) and cleithrum (dorsal cleithrum) of osteichthyans.'
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 created_by: WD
 
 [Term]
@@ -14945,6 +15186,7 @@ name: ventral cleithrum
 namespace: uberon
 comment: According to Forey 1988, History of the Coelacanth fish:\n\n'In placoderms there are large overlapping plates which completely encircle the body and superficially may be matched with those in osteichthyans (Stensio, 1959; Forey, 1980; Jarvik, 1980). Thus, the anterior median ventral, anteroventral and anterior lateral of placoderms lie in the same positions as the interclavicle, clavicle (ventral cleithrum) and cleithrum (dorsal cleithrum) of osteichthyans.'
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 created_by: WD
 
 [Term]
@@ -15081,6 +15323,7 @@ name: ectocoracoid bone
 namespace: uberon
 def: "A paired dermal bone in Gasterosteiformes connected with the coracoid and extending posteriorly. Has also been applied to the element below the scapula and applied to the coracoid in Dipnoi. Dictionary of Ichthyology. " [PHENOSCAPE]
 is_a: UBERON:0007829 ! pectoral girdle bone
+relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
 created_by: WD
 
 [Term]
@@ -15291,6 +15534,7 @@ synonym: "manual digit 1 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165
 synonym: "manual digit I digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
 is_a: UBERON:5106048 ! digit 1 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15301,6 +15545,7 @@ def: "A subdivision of the skeleton of the autopod consisting of the phalanges o
 synonym: "pedal digit" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15311,6 +15556,7 @@ def: "A subdivision of the skeleton of the autopod consisting of the phalanges o
 synonym: "manual digit" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
 synonym: "manual digit skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15334,6 +15580,7 @@ synonym: "manual digit 2 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165
 synonym: "manual digit II digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
 is_a: UBERON:5106049 ! digit 2 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15346,6 +15593,7 @@ synonym: "manual digit 3 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165
 synonym: "manual digit III digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
 is_a: UBERON:5106050 ! digit 3 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15358,6 +15606,7 @@ synonym: "manual digit 4 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165
 synonym: "manual digit IV digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
 is_a: UBERON:5106051 ! digit 4 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15370,6 +15619,7 @@ synonym: "manual digit 5 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165
 synonym: "manual digit V digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
 is_a: UBERON:5106052 ! digit 5 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15382,6 +15632,7 @@ synonym: "pedal digit 1 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit I digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
 is_a: UBERON:5106048 ! digit 1 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15394,6 +15645,7 @@ synonym: "pedal digit 2 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit II digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
 is_a: UBERON:5106049 ! digit 2 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15406,6 +15658,7 @@ synonym: "pedal digit 3 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit III digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
 is_a: UBERON:5106050 ! digit 3 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15418,6 +15671,7 @@ synonym: "pedal digit 4 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit IV digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
 is_a: UBERON:5106051 ! digit 4 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15430,6 +15684,7 @@ synonym: "pedal digit 5 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit V digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
 is_a: UBERON:5106052 ! digit 5 digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15441,6 +15696,7 @@ synonym: "digit 1" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-660
 synonym: "digit 1 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "digit I digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15452,6 +15708,7 @@ synonym: "digit 2" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-660
 synonym: "digit 2 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "digit II digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15463,6 +15720,7 @@ synonym: "digit 3" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-660
 synonym: "digit 3 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "digit III digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15474,6 +15732,7 @@ synonym: "digit 4" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-660
 synonym: "digit 4 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "digit IV digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15485,6 +15744,7 @@ synonym: "digit 5" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-660
 synonym: "digit 5 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "digit V digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5102544 ! individual digit of digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15497,6 +15757,7 @@ synonym: "manual digit 6 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165
 synonym: "manual digit VI digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:0016876 ! digit 6 digitopodial skeleton
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15509,6 +15770,7 @@ synonym: "manual digit 7 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165
 synonym: "manual digit VII digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:0016877 ! digit 7 digitopodial skeleton
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15521,6 +15783,7 @@ synonym: "manual digit 8 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165
 synonym: "manual digit VIII digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:0016878 ! digit 8 digitopodial skeleton
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15532,6 +15795,7 @@ synonym: "pedal digit 6" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-00
 synonym: "pedal digit 6 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit VI digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15543,6 +15807,7 @@ synonym: "pedal digit 7" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-00
 synonym: "pedal digit 7 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit VII digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15554,6 +15819,7 @@ synonym: "pedal digit 8" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-00
 synonym: "pedal digit 8 skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "pedal digit VIII digitopodial skeleton" EXACT COMPARATIVE_PREFERRED [https://github.com/obophenotype/uberon/issues/458]
 is_a: UBERON:5101466 ! pedal digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15564,6 +15830,7 @@ def: "A subdivision of the skeleton of the autopod consisting of the phalanges o
 synonym: "alular digit" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
 synonym: "alular digit skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15574,6 +15841,7 @@ def: "A subdivision of the skeleton of the autopod consisting of the phalanges o
 synonym: "manual major digit (Aves)" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
 synonym: "manual major digit (Aves) skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
@@ -15584,6 +15852,7 @@ def: "A subdivision of the skeleton of the autopod consisting of the phalanges o
 synonym: "manual minor digit (Aves)" RELATED COMPARATIVE_PREFERRED [http://orcid.org/0000-0002-6601-2165]
 synonym: "manual minor digit (Aves) skeleton" RELATED [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:5102389 ! manual digit digitopodial skeleton
+relationship: part_of UBERON:0012150 ! skeleton of digitopodium
 property_value: IAO:0000232 "this class represents a series of phalanges plus a metapodial element. In comparative anatomy terminology we would call this a 'digit', but the label 'digit' is sometimes used to exclude metapodials and to include soft tissue. This series of elements is hypothesized to be homologous to radials." xsd:string
 
 [Term]
