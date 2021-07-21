@@ -1,28 +1,84 @@
 format-version: 1.2
+subsetdef: 1_STAR ""
+subsetdef: 3_STAR ""
+subsetdef: abnormal_slim ""
+subsetdef: added_for_HCA ""
 subsetdef: added_for_HCA "Classes tagged with this subset property were added upon request from the Human Cell Atlas (HCA)."
+subsetdef: attribute_slim ""
+subsetdef: BDS_subset ""
+subsetdef: cell_quality ""
+subsetdef: cumbo ""
 subsetdef: cumbo "CUMBO"
+subsetdef: cyclostome_subset ""
 subsetdef: cyclostome_subset "cyclostome structures"
 subsetdef: defined_by_cytoarchitecture "brain region defined by cyto-architecture"
 subsetdef: defined_by_ordinal_series "classes that are defined by relative position counting from first in a series of elements along an axis in an individual organism rather than by strict homology"
+subsetdef: developmental_classification ""
 subsetdef: developmental_classification "developmental_classification"
+subsetdef: disposition_slim ""
+subsetdef: dubious_grouping ""
 subsetdef: dubious_grouping "Indicates that subclasses in AOs may be inappropriately linked"
+subsetdef: early_development ""
 subsetdef: early_development "A class that represents an early developmental structure, like a blastocyst. This part of the ontology is undergoing review to remove inappropriate grouping classes."
+subsetdef: efo_slim ""
 subsetdef: efo_slim "EFO slim"
+subsetdef: emapa_ehdaa2 ""
 subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to be checked"
 subsetdef: feed_aligned "subset of classes that have logical defs text defs and synonyms aligned with FEED"
+subsetdef: functional_classification ""
 subsetdef: functional_classification "functional_classification"
+subsetdef: gocheck_do_not_annotate ""
+subsetdef: gocheck_do_not_manually_annotate ""
+subsetdef: goslim_agr ""
+subsetdef: goslim_aspergillus ""
+subsetdef: goslim_candida ""
+subsetdef: goslim_chembl ""
+subsetdef: goslim_drosophila ""
+subsetdef: goslim_flybase_ribbon ""
+subsetdef: goslim_generic ""
+subsetdef: goslim_metagenomics ""
+subsetdef: goslim_mouse ""
+subsetdef: goslim_pir ""
+subsetdef: goslim_plant ""
+subsetdef: goslim_pombe ""
+subsetdef: goslim_synapse ""
+subsetdef: goslim_yeast ""
+subsetdef: grouping_class ""
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
+subsetdef: homology_grouping ""
 subsetdef: homology_grouping "A grouping class that depends on an assumption of homology between subclasses"
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_gocam ""
+subsetdef: inconsistent_with_fma ""
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
+subsetdef: location_grouping ""
+subsetdef: major_organ ""
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
 subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
+subsetdef: mpath_slim ""
+subsetdef: non_informative ""
 subsetdef: non_informative "abstract class brought in to group ontology classes but not informative"
+subsetdef: organ_slim ""
 subsetdef: organ_slim "organs, excluding individual muscles and skeletal elements"
+subsetdef: pheno_slim ""
 subsetdef: pheno_slim "Phenotype slim"
+subsetdef: phenotype_rcn ""
 subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
+subsetdef: relational_slim ""
+subsetdef: ro-eco ""
+subsetdef: RO:0002259 ""
+subsetdef: scalar_slim ""
+subsetdef: uberon_slim ""
 subsetdef: uberon_slim "Uberon slim - subset that excludes obscure terms and deep compositional terms"
+subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
+subsetdef: unverified_taxonomic_grouping ""
 subsetdef: unverified_taxonomic_grouping "Indicates that the class encompasses classes from other AOs that have not been verified"
+subsetdef: upper_level ""
 subsetdef: upper_level "abstract upper-level terms not directly useful for analysis"
+subsetdef: value_slim ""
+subsetdef: vertebrate_core ""
 subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
 synonymtypedef: ABBREVIATION "abbreviation"
 synonymtypedef: BRAIN_NAME_ABV "brain name abbreviations (drosophila)"
@@ -354,6 +410,7 @@ xref: VHOG:0000601
 xref: Wikipedia:Spinal_cord
 xref: XAO:0000020
 xref: ZFA:0000075
+relationship: develops_from UBERON:0001017 ! central nervous system
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -562,6 +619,7 @@ is_metadata_tag: true
 id: depicted_by
 name: depicted by
 namespace: uberon
+xref: depicted:by
 xref: http://xmlns.com/foaf/0.1/depicted_by
 is_metadata_tag: true
 
@@ -575,10 +633,15 @@ is_metadata_tag: true
 
 [Typedef]
 id: develops_from
+name: develops from
 name: develops_from
 namespace: uberon
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+comment: This is the transitive form of the develops from relation
 xref: RO:0002202
+holds_over_chain: part_of develops_from
 is_transitive: true
+transitive_over: part_of ! part_of
 
 [Typedef]
 id: doap-GitRepository
@@ -731,6 +794,7 @@ is_metadata_tag: true
 id: immediate_transformation_of
 name: immediate transformation of
 namespace: uberon
+def: "x immediate transformation of y iff x immediately succeeds y temporally at a time boundary t, and all of the matter present in x at t is present in y at t, and all the matter in y at t is present in x at t" []
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: RO:0002495
@@ -769,10 +833,13 @@ is_class_level: true
 
 [Typedef]
 id: never_in_taxon
+name: never in taxon
 name: never_in_taxon
 namespace: uberon
 def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [PMID:20973947]
+def: "x never in taxon T if and only if T is a class, and x does not instantiate the class expression \"in taxon some T\". Note that this is a shortcut relation, and should be used as a hasValue restriction in OWL." []
 xref: RO:0002161
+expand_assertion_to: "?X DisjointWith RO_0002162 some ?Y " []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
 is_metadata_tag: true
 is_class_level: true
@@ -788,7 +855,16 @@ is_metadata_tag: true
 [Typedef]
 id: part_of
 name: part of
+name: part_of
+namespace: external
+namespace: protein
+namespace: quality
 namespace: uberon
+def: "a core relation that holds between a part and its whole" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000050
 is_transitive: true
 
@@ -819,6 +895,7 @@ is_metadata_tag: true
 
 [Typedef]
 id: present_in_taxon
+name: present in taxon
 name: present_in_taxon
 namespace: uberon
 def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [https://orcid.org/0000-0002-6601-2165]
@@ -873,6 +950,7 @@ id: seeAlso
 name: see also
 namespace: uberon
 xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+xref: seeAlso
 is_metadata_tag: true
 
 [Typedef]
@@ -926,10 +1004,11 @@ is_metadata_tag: true
 id: transformation_of
 name: transformation of
 namespace: uberon
+def: "x transformation of y if x is the immediate transformation of y, or is linked to y through a chain of transformation relationships" []
 synonym: "transforms from" EXACT [SIO:000657]
 xref: RO:0002494
 is_transitive: true
-is_a: develops_from ! develops_from
+is_a: develops_from ! develops from
 
 [Typedef]
 id: vertebra_number
