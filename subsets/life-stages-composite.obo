@@ -1,7 +1,7 @@
 format-version: 1.2
 ontology: uberon/subsets/life-stages-composite.obo
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" xsd:string
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000001>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012101>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000001> (<http://purl.obolibrary.org/obo/BFO_0000001>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/BFO_0000001> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012101> (<http://purl.obolibrary.org/obo/UBERON_0012101>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012101>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012101> (<http://purl.obolibrary.org/obo/UBERON_0012101>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
 
 [Term]
 id: AcarDv:0000006
@@ -16,16 +16,11 @@ property_value: IAO:0000589 "aged stage (anolis)" xsd:string
 property_value: start_mph "24.0" xsd:float
 
 [Term]
-id: BFO:0000001
-name: entity
-
-[Term]
 id: BFO:0000003
 name: occurrent
 namespace: FlyBase development CV
 def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
 def: "An entity that has temporal parts and that happens, unfolds or develops through time. Sometimes also called perdurants." [BFOC:ANON]
-is_a: BFO:0000001 ! entity
 relationship: part_of BFO:0000003 ! occurrent
 
 [Term]
@@ -8708,7 +8703,7 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
 relationship: precedes UBERON:0000071 ! death stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/566
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/566 xsd:anyURI
 
 [Term]
 id: UBERON:0000068
@@ -8807,7 +8802,7 @@ property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/c
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/dosumis
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/fbastian
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mmc46
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/562
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/562 xsd:anyURI
 property_value: UBPROP:0000008 "The pupal stage is found only in holometabolous insects, those that undergo a complete metamorphosis, going through four life stages; embryo, larva, pupa and imago" xsd:string
 
 [Term]
@@ -8838,7 +8833,7 @@ xref: WBls:0000093
 xref: WBls:0000103
 is_a: UBERON:0000105 ! life cycle stage
 relationship: preceded_by UBERON:0000068 ! embryo stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/344
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/344 xsd:anyURI
 property_value: UBPROP:0000008 "In birds, the postnatal stage begins when the beak penetrates the shell (i.e., external pipping) (Brown et al. 1997)" xsd:string
 
 [Term]
@@ -8941,7 +8936,7 @@ xref: ZFS:0000045
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000107 ! cleavage stage
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png
+property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png xsd:anyURI
 property_value: IAO:0000116 "consider adding a preceding stage 'morula stage' as part of cleavage" xsd:string
 
 [Term]
@@ -8984,7 +8979,7 @@ xref: XAO:1000006
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000109 ! gastrula stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/343
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/343 xsd:anyURI
 
 [Term]
 id: UBERON:0000111
@@ -9002,7 +8997,7 @@ xref: OGES:000032
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000110 ! neurula stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/533
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/533 xsd:anyURI
 
 [Term]
 id: UBERON:0000112
@@ -9023,7 +9018,7 @@ xref: XtroDO:0000083
 xref: ZFS:0000051
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000066 ! fully formed stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/427
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/427 xsd:anyURI
 property_value: UBPROP:0000001 "The stage of being a sexually immature adult animal[XAO:1000010]." xsd:string {source="XAO:1000010"}
 property_value: UBPROP:0000008 "In mammals this would include infant (nourishment from lactation) and juvenile (prepubertal no longer dependent on mother)" xsd:string
 
@@ -9045,8 +9040,8 @@ xref: ZFS:0000044
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000066 ! fully formed stage
 relationship: preceded_by UBERON:0000112 ! sexually immature stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/345
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/499
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/345 xsd:anyURI
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/499 xsd:anyURI
 
 [Term]
 id: UBERON:0004707
@@ -9081,7 +9076,7 @@ xref: XAO:1000008
 xref: XtroDO:0000056
 is_a: UBERON:0000069 ! larval stage
 property_value: RO:0002175 NCBITaxon:8355
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/534
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/534 xsd:anyURI
 property_value: UBPROP:0000012 "the XAO class denotes a stage" xsd:string {external_ontology="XAO"}
 
 [Term]
@@ -9091,7 +9086,7 @@ namespace: uberon
 def: "Nematode larval development begins with the newly hatched first-stage larva (L1) and ends with the end of the last larval stage (for example the fourth larval stage (L4) in C. elegans). Each stage of nematode larval development is characterized by proliferation of specific cell lineages and an increase in body size without alteration of the basic body plan. Nematode larval stages are separated by molts in which each stage-specific exoskeleton, or cuticle, is shed and replaced anew." [GO:0002119]
 xref: WBls:0000023
 is_a: UBERON:0000069 ! larval stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/567
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/567 xsd:anyURI
 
 [Term]
 id: UBERON:0004730
@@ -9101,7 +9096,7 @@ def: "This begins with the newly hatched first-instar larva, through its maturat
 xref: FBdv:00005336
 is_a: UBERON:0000069 ! larval stage
 property_value: RO:0002175 NCBITaxon:7227
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/526
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/526 xsd:anyURI
 
 [Term]
 id: UBERON:0007220
@@ -9126,8 +9121,8 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
 relationship: preceded_by UBERON:0004707 ! pharyngula stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/355
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/565
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/355 xsd:anyURI
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/565 xsd:anyURI
 
 [Term]
 id: UBERON:0007221
@@ -9156,7 +9151,7 @@ xref: OGES:000025
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000112 ! sexually immature stage
 property_value: IAO:0000116 "consider splitting infant/newborn" xsd:string
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/350
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/350 xsd:anyURI
 
 [Term]
 id: UBERON:0007222
@@ -9175,7 +9170,7 @@ xref: UMLS:C0001792 {source="ncithesaurus:Elderly"}
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
 relationship: preceded_by UBERON:0018241 ! prime adult stage
-property_value: seeAlso https://github.com/obophenotype/uberon/issues/495
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/495 xsd:anyURI
 
 [Term]
 id: UBERON:0007232
