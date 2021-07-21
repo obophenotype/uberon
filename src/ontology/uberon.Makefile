@@ -178,9 +178,10 @@ merged.obo: merged.owl
 	owltools $< -o -f obo --no-check $@.tmp && mv $@.tmp $@
 
 # strip imports and dangling references
-uberon.owl: ext.owl
-	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
+# owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
 
+uberon.owl: ext.owl
+	$(ROBOT) merge -i $< annotate -O $(URIBASE)/$@ -V  $(RELEASE)/$@ -o $@
 
 # also do OE check here
 uberon.obo: uberon.owl
