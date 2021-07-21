@@ -1753,3 +1753,7 @@ diffr-%:
 
 diffs-%:
 	$(ROBOT) diff --left-iri $(OLDLOCATION)/subsets/$* --right ../../subsets/$* -o diff_$(shell echo $* | tr -cd '[:alnum:]._-').txt
+
+.PHONY: dirs
+dirs:
+	mkdir -p tmp mirror reports
