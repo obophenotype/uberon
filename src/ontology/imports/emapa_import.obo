@@ -1,0 +1,857 @@
+format-version: 1.2
+data-version: uberon/releases/2021-07-20/imports/emapa_import.owl
+ontology: uberon/imports/emapa_import
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/emapa/releases/2020-02-12/emapa.owl
+property_value: owl:versionInfo "2021-07-20" xsd:string
+
+[Term]
+id: EMAPA:0
+name: Anatomical structure
+namespace: anatomical_structure
+
+[Term]
+id: EMAPA:16033
+name: 1-cell stage embryo
+namespace: anatomical_structure
+synonym: "1-cell embryo" RELATED []
+synonym: "fertilized egg" RELATED []
+synonym: "one-cell embryo" RELATED []
+is_a: EMAPA:36032 ! early embryo
+relationship: part_of EMAPA:36041 ! 1-cell stage conceptus
+relationship: RO:0002497 MmusDv:0000003 ! Theiler stage 01
+
+[Term]
+id: EMAPA:16039
+name: embryo
+namespace: anatomical_structure
+relationship: part_of EMAPA:36040 ! conceptus
+relationship: RO:0002496 MmusDv:0000008 ! Theiler stage 04
+relationship: RO:0002497 MmusDv:0000035 ! Theiler stage 26
+
+[Term]
+id: EMAPA:16069
+name: embryo ectoderm
+namespace: anatomical_structure
+synonym: "embryonic ectoderm" RELATED []
+is_a: EMAPA:35985 ! ectoderm
+relationship: part_of EMAPA:16039 ! embryo
+relationship: RO:0002496 MmusDv:0000014 ! Theiler stage 09
+
+[Term]
+id: EMAPA:16073
+name: neural ectoderm
+namespace: anatomical_structure
+synonym: "neurectoderm" RELATED []
+is_a: EMAPA:16069 ! embryo ectoderm
+relationship: RO:0002496 MmusDv:0000015 ! Theiler stage 10
+relationship: RO:0002497 MmusDv:0000023 ! Theiler stage 16
+
+[Term]
+id: EMAPA:16089
+name: future brain
+namespace: anatomical_structure
+alt_id: EMAPA:16471
+relationship: part_of EMAPA:16073 ! neural ectoderm
+relationship: part_of EMAPA:31858 ! head
+relationship: RO:0002496 MmusDv:0000017 ! Theiler stage 11
+relationship: RO:0002497 MmusDv:0000023 ! Theiler stage 16
+
+[Term]
+id: EMAPA:16103
+name: organ system
+namespace: anatomical_structure
+relationship: part_of EMAPA:16039 ! embryo
+relationship: RO:0002496 MmusDv:0000017 ! Theiler stage 11
+
+[Term]
+id: EMAPA:16144
+name: future prosencephalon
+namespace: anatomical_structure
+relationship: part_of EMAPA:16089 ! future brain
+relationship: RO:0002496 MmusDv:0000019 ! Theiler stage 12
+relationship: RO:0002497 MmusDv:0000020 ! Theiler stage 13
+
+[Term]
+id: EMAPA:16469
+name: nervous system
+namespace: anatomical_structure
+is_a: EMAPA:16103 ! organ system
+relationship: RO:0002496 MmusDv:0000021 ! Theiler stage 14
+
+[Term]
+id: EMAPA:16470
+name: central nervous system
+namespace: anatomical_structure
+synonym: "CNS" RELATED []
+synonym: "neural tube" RELATED []
+relationship: part_of EMAPA:16469 ! nervous system
+relationship: RO:0002496 MmusDv:0000021 ! Theiler stage 14
+
+[Term]
+id: EMAPA:16512
+name: prosencephalon
+namespace: anatomical_structure
+relationship: develops_from EMAPA:16144 ! future prosencephalon
+relationship: part_of EMAPA:16089 ! future brain
+relationship: RO:0002496 MmusDv:0000021 ! Theiler stage 14
+relationship: RO:0002497 MmusDv:0000021 ! Theiler stage 14
+
+[Term]
+id: EMAPA:16514
+name: future diencephalon
+namespace: anatomical_structure
+relationship: part_of EMAPA:16512 ! prosencephalon
+relationship: RO:0002496 MmusDv:0000021 ! Theiler stage 14
+relationship: RO:0002497 MmusDv:0000021 ! Theiler stage 14
+
+[Term]
+id: EMAPA:16640
+name: future forebrain
+namespace: anatomical_structure
+synonym: "prosencephalon" RELATED []
+relationship: develops_from EMAPA:16512 ! prosencephalon
+relationship: part_of EMAPA:16089 ! future brain
+relationship: RO:0002496 MmusDv:0000022 ! Theiler stage 15
+relationship: RO:0002497 MmusDv:0000023 ! Theiler stage 16
+
+[Term]
+id: EMAPA:16647
+name: future neurohypophysis
+namespace: anatomical_structure
+alt_id: EMAPA:16898
+is_a: EMAPA:16897 ! diencephalon gland
+relationship: part_of EMAPA:32796 ! future pituitary
+relationship: RO:0002497 MmusDv:0000026 ! Theiler stage 19
+
+[Term]
+id: EMAPA:16894
+name: brain
+namespace: anatomical_structure
+is_a: EMAPA:35949 ! organ
+relationship: develops_from EMAPA:16089 ! future brain
+relationship: part_of EMAPA:16470 ! central nervous system
+relationship: part_of EMAPA:31858 ! head
+relationship: RO:0002496 MmusDv:0000024 ! Theiler stage 17
+
+[Term]
+id: EMAPA:16895
+name: forebrain
+namespace: anatomical_structure
+synonym: "prosencephalon" RELATED []
+relationship: develops_from EMAPA:16640 ! future forebrain
+relationship: part_of EMAPA:16894 ! brain
+relationship: RO:0002496 MmusDv:0000024 ! Theiler stage 17
+
+[Term]
+id: EMAPA:16896
+name: diencephalon
+namespace: anatomical_structure
+alt_id: EMAPA:16641
+relationship: develops_from EMAPA:16514 ! future diencephalon
+relationship: part_of EMAPA:16640 ! future forebrain
+relationship: part_of EMAPA:16895 ! forebrain
+relationship: RO:0002496 MmusDv:0000022 ! Theiler stage 15
+
+[Term]
+id: EMAPA:16897
+name: diencephalon gland
+namespace: anatomical_structure
+alt_id: EMAPA:16646
+is_a: EMAPA:18425 ! gland
+relationship: part_of EMAPA:16896 ! diencephalon
+relationship: RO:0002496 MmusDv:0000022 ! Theiler stage 15
+
+[Term]
+id: EMAPA:18425
+name: gland
+namespace: anatomical_structure
+is_a: EMAPA:35949 ! organ
+relationship: RO:0002496 MmusDv:0000020 ! Theiler stage 13
+
+[Term]
+id: EMAPA:25765
+name: mouse
+namespace: anatomical_structure
+is_a: EMAPA:0 ! Anatomical structure
+
+[Term]
+id: EMAPA:31858
+name: head
+namespace: anatomical_structure
+is_a: EMAPA:36031 ! body region
+relationship: part_of EMAPA:36867 ! craniocervical region
+
+[Term]
+id: EMAPA:32796
+name: future pituitary
+namespace: anatomical_structure
+relationship: part_of EMAPA:31858 ! head
+relationship: RO:0002496 MmusDv:0000021 ! Theiler stage 14
+relationship: RO:0002497 MmusDv:0000026 ! Theiler stage 19
+
+[Term]
+id: EMAPA:35949
+name: organ
+namespace: anatomical_structure
+relationship: part_of EMAPA:16039 ! embryo
+relationship: RO:0002496 MmusDv:0000017 ! Theiler stage 11
+
+[Term]
+id: EMAPA:35985
+name: ectoderm
+namespace: anatomical_structure
+is_a: EMAPA:36033 ! germ layer
+
+[Term]
+id: EMAPA:36031
+name: body region
+namespace: anatomical_structure
+relationship: part_of EMAPA:16039 ! embryo
+relationship: RO:0002496 MmusDv:0000017 ! Theiler stage 11
+
+[Term]
+id: EMAPA:36032
+name: early embryo
+namespace: anatomical_structure
+relationship: part_of EMAPA:36473 ! early conceptus
+relationship: RO:0002496 MmusDv:0000003 ! Theiler stage 01
+relationship: RO:0002497 MmusDv:0000008 ! Theiler stage 04
+
+[Term]
+id: EMAPA:36033
+name: germ layer
+namespace: anatomical_structure
+relationship: part_of EMAPA:25765 ! mouse
+relationship: RO:0002496 MmusDv:0000010 ! Theiler stage 06
+relationship: RO:0002497 MmusDv:0000035 ! Theiler stage 26
+
+[Term]
+id: EMAPA:36040
+name: conceptus
+namespace: anatomical_structure
+relationship: part_of EMAPA:25765 ! mouse
+relationship: RO:0002496 MmusDv:0000003 ! Theiler stage 01
+relationship: RO:0002497 MmusDv:0000035 ! Theiler stage 26
+
+[Term]
+id: EMAPA:36041
+name: 1-cell stage conceptus
+namespace: anatomical_structure
+is_a: EMAPA:36473 ! early conceptus
+relationship: RO:0002497 MmusDv:0000003 ! Theiler stage 01
+
+[Term]
+id: EMAPA:36473
+name: early conceptus
+namespace: anatomical_structure
+is_a: EMAPA:36040 ! conceptus
+relationship: RO:0002497 MmusDv:0000012 ! Theiler stage 08
+
+[Term]
+id: EMAPA:36867
+name: craniocervical region
+namespace: anatomical_structure
+synonym: "head and neck" RELATED []
+is_a: EMAPA:36031 ! body region
+
+[Term]
+id: MmusDv:0000000
+name: life cycle stage
+namespace: mouse_stages_ontology
+def: "A spatiotemporal region encompassing some part of the life cycle of an organism." [UBERON:0000105]
+synonym: "developmental stage" EXACT []
+synonym: "stage" NARROW []
+xref: UBERON:0000105
+
+[Term]
+id: MmusDv:0000001
+name: life cycle
+namespace: mouse_developmental_stage
+def: "Temporal interval that defines mouse life from prenatal stage until late adult stage." [Bgee:curator]
+xref: UBERON:0000104
+is_a: MmusDv:0000000 ! life cycle stage
+property_value: start_dpc "0.45" xsd:float
+
+[Term]
+id: MmusDv:0000002
+name: embryonic stage
+namespace: mouse_developmental_stage
+def: "Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage." [Bgee:curator]
+comment: By embryo we mean in the sense of up to the 2nd week postfertilization (beginning of Theiler stage 23), we treat fetus as a separate stage.
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000042 ! prenatal stage
+property_value: start_dpc "0.45" xsd:float
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: MmusDv:0000003
+name: Theiler stage 01
+namespace: mouse_developmental_stage
+def: "Embryonic stage defined by a one-cell embryo (fertilised egg) with zona pellucida present." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_1]
+comment: "Starts the mouse development sequence, range from embryonic age 0-0.9 dpc (day post coitum). Assumes that fertilization takes place around midnight during a 7pm to 5am dark cycle. Noon of the day on which the vaginal plug is found the embryos are aged 0.5 d.p.c (days post coitum)." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Timed_Pregnancy "adapted from"]
+synonym: "E0-2.5" EXACT []
+synonym: "Theiler stage 1" EXACT []
+synonym: "TS01 (E0-2.5)" RELATED [EMAPA:TS01]
+synonym: "zygote stage" RELATED []
+xref: EMAPA:TS01
+xref: UBERON:0000106
+xref: XUO:0000045
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
+property_value: start_dpc "0.45" xsd:float
+
+[Term]
+id: MmusDv:0000004
+name: cleavage stage
+namespace: mouse_developmental_stage
+def: "Embryonic stage consisting of division of cells in the early embryo." [UBERON:0000107]
+comment: The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula.
+xref: UBERON:0000107
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
+
+[Term]
+id: MmusDv:0000005
+name: Theiler stage 02
+namespace: mouse_developmental_stage
+def: "Embryonic cleavage stage defined by a dividing 2-4 cells egg." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_2]
+comment: Embryonic age 1 dpc (day post coitum).
+synonym: "E1-2.5" EXACT []
+synonym: "Theiler stage 2" EXACT []
+synonym: "TS02" EXACT []
+synonym: "TS02 (E1-2.5)" RELATED [EMAPA:TS02]
+xref: EMAPA:TS02
+xref: XUO:0000046
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000003 ! Theiler stage 01
+relationship: part_of MmusDv:0000004 ! cleavage stage
+property_value: start_dpc "1.0" xsd:float
+
+[Term]
+id: MmusDv:0000006
+name: Theiler stage 03
+namespace: mouse_developmental_stage
+def: "Embryonic cleavage stage defined by a dividing 4-16 cells egg, early to fully compacted morula." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_3]
+comment: Embryonic age 2 dpc (day post coitum).
+synonym: "E1-3.5" EXACT []
+synonym: "Theiler stage 3" EXACT []
+synonym: "TS03" EXACT []
+synonym: "TS03 (E1-3.5)" RELATED [EMAPA:TS03]
+xref: EMAPA:TS03
+xref: XUO:0000047
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000005 ! Theiler stage 02
+relationship: part_of MmusDv:0000004 ! cleavage stage
+property_value: start_dpc "2.0" xsd:float
+
+[Term]
+id: MmusDv:0000007
+name: blastula stage
+namespace: mouse_developmental_stage
+def: "Embryonic stage that is an early stage of embryonic development in animals and is produced by cleavage of a fertilized ovum, with formation of a central fluid-filled cavity called the blastocoel." [UBERON:0000108]
+comment: The blastula follows the morula and precedes the gastrula in the developmental sequence.
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
+
+[Term]
+id: MmusDv:0000008
+name: Theiler stage 04
+namespace: mouse_developmental_stage
+def: "Embryonic blastula stage defined by a dividing 16-40 cells egg, with early evidence of the blastocoelic cavity." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_4]
+comment: Embryonic age 3 dpc (day post coitum).
+synonym: "E2-4" EXACT []
+synonym: "Theiler stage 4" EXACT []
+synonym: "TS04" EXACT []
+synonym: "TS04 (E2-4)" RELATED [EMAPA:TS04]
+xref: EMAPA:TS04
+xref: XUO:0000048
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000006 ! Theiler stage 03
+relationship: part_of MmusDv:0000007 ! blastula stage
+property_value: start_dpc "3.0" xsd:float
+
+[Term]
+id: MmusDv:0000009
+name: Theiler stage 05
+namespace: mouse_developmental_stage
+def: "Embryonic blastula stage defined by a zona free blastocyst (zona pellucida absent)." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_5]
+comment: Embryonic age 4 dpc (day post coitum).
+synonym: "E3-5.5" EXACT []
+synonym: "Theiler stage 5" EXACT []
+synonym: "TS05" EXACT []
+synonym: "TS05 (E3-5.5)" RELATED [EMAPA:TS05]
+xref: EMAPA:TS05
+xref: XUO:0000049
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000008 ! Theiler stage 04
+relationship: part_of MmusDv:0000007 ! blastula stage
+property_value: has_stage_marker GO:0001835
+property_value: start_dpc "4.0" xsd:float
+
+[Term]
+id: MmusDv:0000010
+name: Theiler stage 06
+namespace: mouse_developmental_stage
+def: "Embryonic blastula stage during which the blastocyst attaches, with first evidence of embryonic endoderm cells covering the blastocoelic surface of the inner cell mass." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_6]
+comment: Embryonic age 4.5 dpc (day post coitum). Refers to human CarnegieStage04.
+synonym: "E4-5.5" EXACT []
+synonym: "Theiler stage 6" EXACT []
+synonym: "TS06" EXACT []
+synonym: "TS06 (E4-5.5)" RELATED [EMAPA:TS06]
+xref: EMAPA:TS06
+xref: XUO:0000050
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000009 ! Theiler stage 05
+relationship: part_of MmusDv:0000007 ! blastula stage
+property_value: start_dpc "4.5" xsd:float
+
+[Term]
+id: MmusDv:0000011
+name: Theiler stage 07
+namespace: mouse_developmental_stage
+def: "Embryonic blastula stage defined by implantation and formation of the egg cylinder resulting from the rapid increase in the number of inner cell mass cells." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_7]
+comment: Embryonic age 5 dpc (day post coitum). Refers to human CarnegieStage05.
+synonym: "E4.5-6" EXACT []
+synonym: "Theiler stage 7" EXACT []
+synonym: "TS07" EXACT []
+synonym: "TS07 (E4.5-6)" RELATED [EMAPA:TS07]
+xref: EMAPA:TS07
+xref: XUO:0000051
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000010 ! Theiler stage 06
+relationship: part_of MmusDv:0000007 ! blastula stage
+property_value: has_stage_marker GO:0007566
+property_value: start_dpc "5.0" xsd:float
+
+[Term]
+id: MmusDv:0000012
+name: Theiler stage 08
+namespace: mouse_developmental_stage
+def: "Embryonic blastula stage during which the egg cylinder differentiates into embryonic and extra-embryonic regions, and the pro-amniotic cavity appears." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_8]
+comment: Embryonic age 6 dpc (day post coitum). Refers to human CarnegieStage05.
+synonym: "E5-6.5" EXACT []
+synonym: "Theiler stage 8" EXACT []
+synonym: "TS08" EXACT []
+synonym: "TS08 (E5-6.5)" RELATED [EMAPA:TS08]
+xref: EMAPA:TS08
+xref: XUO:0000052
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000011 ! Theiler stage 07
+relationship: part_of MmusDv:0000007 ! blastula stage
+property_value: start_dpc "6.0" xsd:float
+
+[Term]
+id: MmusDv:0000013
+name: gastrula stage
+namespace: mouse_developmental_stage
+def: "Embryonic stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage." [UBERON:0000109]
+xref: UBERON:0000109
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000002 ! embryonic stage
+
+[Term]
+id: MmusDv:0000014
+name: Theiler stage 09
+namespace: mouse_developmental_stage
+def: "Embryonic gastrula stage during which gastrulation starts with first evidence of mesoderm and visible embryonic axis." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_9]
+comment: Embryonic age 6.5 dpc (day post coitum).
+synonym: "E6.25-7.25" EXACT []
+synonym: "Theiler stage 9" EXACT []
+synonym: "TS09" EXACT []
+synonym: "TS09 (E6.25-7.25)" RELATED [EMAPA:TS09]
+xref: EMAPA:TS09
+xref: XUO:0000053
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000012 ! Theiler stage 08
+relationship: part_of MmusDv:0000013 ! gastrula stage
+property_value: has_stage_marker UBERON:0000926
+property_value: start_dpc "6.5" xsd:float
+
+[Term]
+id: MmusDv:0000015
+name: Theiler stage 10
+namespace: mouse_developmental_stage
+def: "Embryonic gastrula stage during which the primitive streak bulges into the pro-amniotic cavity and forms the amniotic fold; the exocoelom appears; the allantoic bud first appears, gastrulation continues and the node becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_10]
+comment: Embryonic age 7 dpc (day post coitum), (range 6.5-7.5 dpc). Refers to human CarnegieStage08.
+synonym: "E6.5-7.75" EXACT []
+synonym: "TS10" EXACT []
+synonym: "TS10 (E6.5-7.75)" RELATED [EMAPA:TS10]
+xref: EMAPA:TS10
+xref: XUO:0000054
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000014 ! Theiler stage 09
+relationship: part_of MmusDv:0000013 ! gastrula stage
+property_value: has_stage_marker UBERON:0003888
+property_value: has_stage_marker UBERON:0004340
+property_value: has_stage_marker UBERON:0005971
+property_value: start_dpc "7.0" xsd:float
+
+[Term]
+id: MmusDv:0000017
+name: Theiler stage 11
+namespace: mouse_developmental_stage
+def: "Embryonic stage called presomite stage and defined by the formation of the neural plate." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
+comment: This stage starts the emergence of the central nervous system at embryonic age 7.5 dpc (day post coitum).
+synonym: "E7.25-8" EXACT []
+synonym: "neurula stage" RELATED []
+synonym: "TS11" EXACT []
+synonym: "TS11 (E7.25-8)" RELATED [EMAPA:TS11]
+xref: EMAPA:TS11
+xref: UBERON:0000110
+xref: XUO:0000055
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000015 ! Theiler stage 10
+relationship: part_of MmusDv:0000002 ! embryonic stage
+property_value: has_stage_marker UBERON:0003075
+property_value: start_dpc "7.5" xsd:float
+
+[Term]
+id: MmusDv:0000018
+name: organogenesis stage
+namespace: mouse_developmental_stage
+def: "Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism." [UBERON:0000111]
+xref: UBERON:0000111
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000095 ! Theiler stage 11d
+relationship: part_of MmusDv:0000002 ! embryonic stage
+
+[Term]
+id: MmusDv:0000019
+name: Theiler stage 12
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which first somites become visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_12]
+comment: Embryonic age 8 dpc (day post coitum). Refers to human CarnegieStage09.
+synonym: "E7.5-8.75" EXACT []
+synonym: "TS12" EXACT []
+synonym: "TS12 (E7.5-8.75)" RELATED [EMAPA:TS12]
+xref: EMAPA:TS12
+xref: XUO:0000056
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000017 ! Theiler stage 11
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: has_stage_marker EMAPA:16173
+property_value: start_dpc "8.0" xsd:float
+
+[Term]
+id: MmusDv:0000020
+name: Theiler stage 13
+namespace: mouse_developmental_stage
+def: "Organogenesis stage defined by the turning of the embryo; initiated in embryos with 6-8 pairs of somites and usually completed in embryos with 14-16 pairs of somites." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_13]
+comment: Embryonic age 8.5 dpc (day post coitum). Refers to human CarnegieStage10.
+synonym: "E8-9.25" EXACT []
+synonym: "TS13" EXACT []
+synonym: "TS13 (E8-9.25)" RELATED [EMAPA:TS13]
+xref: EMAPA:TS13
+xref: XUO:0000057
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000019 ! Theiler stage 12
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: has_stage_marker EMAPA:16441
+property_value: has_stage_marker EMAPA:16445
+property_value: has_stage_marker EMAPA:16449
+property_value: start_dpc "8.5" xsd:float
+
+[Term]
+id: MmusDv:0000021
+name: Theiler stage 14
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which the rostral extremity of the neural tube closes in embryos with usually about 15-18 somite pairs. Late in the stage the 3rd branchial arch becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_14]
+comment: Embryonic age 9 dpc (day post coitum). Refers to human CarnegieStage11.
+synonym: "E8.5-9.75" EXACT []
+synonym: "TS14" EXACT []
+synonym: "TS14 (E8.5-9.75)" RELATED [EMAPA:TS14]
+xref: EMAPA:TS14
+xref: XUO:0000058
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000020 ! Theiler stage 13
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: has_stage_marker EMAPA:16445
+property_value: has_stage_marker EMAPA:16449
+property_value: has_stage_marker EMAPA:16453
+property_value: has_stage_marker EMAPA:16457
+property_value: start_dpc "9.0" xsd:float
+
+[Term]
+id: MmusDv:0000022
+name: Theiler stage 15
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which the posterior neuropore forms and the condensation of the forelimb bud becomes apparent near the 8th-12th somite pairs." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_15]
+comment: Embryonic age 9.5 dpc (day post coitum). Refers to human CarnegieStage12.
+synonym: "E9-10.25" EXACT []
+synonym: "TS15" EXACT []
+synonym: "TS15 (E9-10.25)" RELATED [EMAPA:TS15]
+xref: EMAPA:TS15
+xref: XUO:0000059
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000021 ! Theiler stage 14
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: has_stage_marker UBERON:0005417
+property_value: start_dpc "9.5" xsd:float
+
+[Term]
+id: MmusDv:0000023
+name: Theiler stage 16
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which the posterior neuropore closes and the hind limb bud becomes visible at the level of the 23rd-28th somites." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_16]
+comment: Embryonic age 10 dpc (day post coitum). Refers to human CarnegieStages 13 to 15.
+synonym: "E9.5-10.75" EXACT []
+synonym: "TS16" EXACT []
+synonym: "TS16 (E9.5-10.75)" RELATED [EMAPA:TS16]
+xref: EMAPA:TS16
+xref: XUO:0000060
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000022 ! Theiler stage 15
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: has_stage_marker UBERON:0005418
+property_value: start_dpc "10.0" xsd:float
+
+[Term]
+id: MmusDv:0000024
+name: Theiler stage 17
+namespace: mouse_developmental_stage
+def: "Organogenesis stage defined by the deepening of the lens pit and the first appearance of the physiological umbilical hernia." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_17]
+comment: Embryonic age 10.5 dpc (day post coitum). Refers to human CarnegieStages 13 to 15.
+synonym: "E10-11.25" EXACT []
+synonym: "TS17" EXACT []
+synonym: "TS17 (E10-11.25)" RELATED [EMAPA:TS17]
+xref: EMAPA:TS17
+xref: XUO:0000061
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000023 ! Theiler stage 16
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: has_stage_marker EMAPA:18411
+property_value: has_stage_marker UBERON:0006259
+property_value: start_dpc "10.5" xsd:float
+
+[Term]
+id: MmusDv:0000025
+name: Theiler stage 18
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which the lens vesicle gradually closes and the nasal pits start to form. The rapid growth of the brain is striking." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_18]
+comment: Embryonic age 11 dpc (day post coitum). Refers to human CarnegieStages 13 to 15.
+synonym: "E10.5-11.25" EXACT []
+synonym: "TS18" EXACT []
+synonym: "TS18 (E10.5-11.25)" RELATED [EMAPA:TS18]
+xref: EMAPA:TS18
+xref: XUO:0000062
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000024 ! Theiler stage 17
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: has_stage_marker UBERON:0005870
+property_value: start_dpc "11.0" xsd:float
+
+[Term]
+id: MmusDv:0000026
+name: Theiler stage 19
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which the lens vesicle becomes completely closed and detached from the ectoderm, and peripheral margins of the eye become well defined." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_19]
+comment: Embryonic age 11.5 dpc (day post coitum). Refers to human CarnegieStage16.
+synonym: "E11-12.25" EXACT []
+synonym: "TS19" EXACT []
+synonym: "TS19 (E11-12.25)" RELATED [EMAPA:TS19]
+xref: EMAPA:TS19
+xref: XUO:0000063
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000025 ! Theiler stage 18
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: start_dpc "11.5" xsd:float
+
+[Term]
+id: MmusDv:0000027
+name: Theiler stage 20
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which the handplate develops angles corresponding to the future digits, and tongue and brain vesicles are clearly visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_20]
+comment: Embryonic age 12 dpc (day post coitum). Refers to human CarnegieStage17.
+synonym: "E11.5-13" EXACT []
+synonym: "TS20" EXACT []
+synonym: "TS20 (E11.5-13)" RELATED [EMAPA:TS20]
+xref: EMAPA:TS20
+xref: XUO:0000064
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000026 ! Theiler stage 19
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: start_dpc "12.0" xsd:float
+
+[Term]
+id: MmusDv:0000028
+name: Theiler stage 21
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which the digit widths and locations can be discerned, and the pinna rapidly develops and forms a crest at right angles to the head." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_21]
+comment: Embryonic age 13 dpc (day post coitum). Refers to human CarnegieStages 18 and 19.
+synonym: "E12.5-14" EXACT []
+synonym: "TS21" EXACT []
+synonym: "TS21 (E12.5-14)" RELATED [EMAPA:TS21]
+xref: EMAPA:TS21
+xref: XUO:0000065
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000027 ! Theiler stage 20
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: start_dpc "13.0" xsd:float
+
+[Term]
+id: MmusDv:0000029
+name: Theiler stage 22
+namespace: mouse_developmental_stage
+def: "Organogenesis stage during which the fingers are clearly visible and the long bones of the limbs are present." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_22]
+comment: Embryonic age 14 dpc (day post coitum). Refers to human CarnegieStages 20 to 23.
+synonym: "E13.5-15" EXACT []
+synonym: "TS22" EXACT []
+synonym: "TS22 (E13.5-15)" RELATED [EMAPA:TS22]
+xref: EMAPA:TS22
+xref: XUO:0000066
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000028 ! Theiler stage 21
+relationship: part_of MmusDv:0000018 ! organogenesis stage
+property_value: has_stage_marker UBERON:0003606
+property_value: start_dpc "14.0" xsd:float
+
+[Term]
+id: MmusDv:0000031
+name: fetal stage
+namespace: mouse_developmental_stage
+def: "Prenatal stage that starts with the fully formed embryo and ends at birth." [Bgee:curator]
+comment: This stage describes the four Theiler stages that are commonly reported as equivalent to the human fetal period in the literature. They are anyway defined by embryonic days.
+xref: UBERON:0007220
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000042 ! prenatal stage
+
+[Term]
+id: MmusDv:0000032
+name: Theiler stage 23
+namespace: mouse_developmental_stage
+def: "Fetal stage during which the toes separate and hair follicles are present in the cephalic region but not at the periphery of the vibrissae." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_23]
+comment: Embryonic age 15 dpc (day post coitum). Refers to the human fetal period.
+synonym: "E15" EXACT []
+synonym: "TS23" EXACT []
+synonym: "TS23 (E15)" RELATED [EMAPA:TS23]
+xref: EMAPA:TS23
+xref: XUO:0000067
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000029 ! Theiler stage 22
+relationship: part_of MmusDv:0000031 ! fetal stage
+property_value: start_dpc "15.0" xsd:float
+
+[Term]
+id: MmusDv:0000033
+name: Theiler stage 24
+namespace: mouse_developmental_stage
+def: "Fetal stage during which the umbilical hernia disappears and there is a corresponding increase in the size of the peritoneal sac." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_24]
+comment: Embryonic age 16 dpc (day post coitum). Refers to the human fetal period.
+synonym: "E16" EXACT []
+synonym: "TS24" EXACT []
+synonym: "TS24 (E16)" RELATED [EMAPA:TS24]
+xref: EMAPA:TS24
+xref: XUO:0000068
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000032 ! Theiler stage 23
+relationship: part_of MmusDv:0000031 ! fetal stage
+property_value: start_dpc "16.0" xsd:float
+
+[Term]
+id: MmusDv:0000034
+name: Theiler stage 25
+namespace: mouse_developmental_stage
+def: "Fetal stage during which the thickened skin forms wrinkles and the subcutaneous veins are less visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_25]
+comment: Embryonic age 17 dpc (day post coitum). Refers to the human fetal period. Refers to rat Standard Witschi Stage 34 (see http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_25).
+synonym: "E17" EXACT []
+synonym: "TS25" EXACT []
+synonym: "TS25 (E17)" RELATED [EMAPA:TS25]
+xref: EMAPA:TS25
+xref: XUO:0000069
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000033 ! Theiler stage 24
+relationship: part_of MmusDv:0000031 ! fetal stage
+property_value: start_dpc "17.0" xsd:float
+
+[Term]
+id: MmusDv:0000035
+name: Theiler stage 26
+namespace: mouse_developmental_stage
+def: "Fetal stage defined by long whiskers and during which the eyes are barely visible through the closed eyelids." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_26]
+comment: TS26 is used for the period from embryonic day 18 up to birth itself. [https://github.com/tfhayamizu]. Refers to rat Standard Witschi Stage 35 (see http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_26).
+synonym: "E18" EXACT []
+synonym: "TS26" EXACT []
+synonym: "TS26 (E18)" RELATED [EMAPA:TS26]
+xref: EMAPA:TS26
+xref: XUO:0000070
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000034 ! Theiler stage 25
+relationship: part_of MmusDv:0000031 ! fetal stage
+property_value: end_wpb "0.0" xsd:float
+property_value: start_dpc "18.0" xsd:float
+
+[Term]
+id: MmusDv:0000042
+name: prenatal stage
+namespace: mouse_developmental_stage
+def: "Mouse life cycle that starts with fertilization and ends with birth." [UBERON:0000068]
+xref: UBERON:0000068
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000001 ! life cycle
+property_value: end_dpc "19.0" xsd:float
+property_value: end_ypb "0.0" xsd:float
+property_value: start_dpc "0.45" xsd:float
+property_value: start_dpf "0.0" xsd:float
+
+[Term]
+id: MmusDv:0000093
+name: Theiler stage 11b
+namespace: mouse_developmental_stage
+def: "Embryonic neurula stage during which the neural plate formation occurs and the allantoic bud elongates ." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
+synonym: "TS11b" EXACT []
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000111 ! Theiler stage 11a
+relationship: part_of MmusDv:0000017 ! Theiler stage 11
+
+[Term]
+id: MmusDv:0000094
+name: Theiler stage 11c
+namespace: mouse_developmental_stage
+def: "Embryonic neurula stage during which the neural plate formation occurs and the head folds are formed while the neural groove becomes visible." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
+synonym: "TS11c" EXACT []
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000093 ! Theiler stage 11b
+relationship: part_of MmusDv:0000017 ! Theiler stage 11
+
+[Term]
+id: MmusDv:0000095
+name: Theiler stage 11d
+namespace: mouse_developmental_stage
+def: "Embryonic neurula stage during which the neural plate formation occurs and the head folds continue to enlarge while the foregut pocket begins to form." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
+synonym: "TS11d" EXACT []
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: immediately_preceded_by MmusDv:0000094 ! Theiler stage 11c
+relationship: part_of MmusDv:0000017 ! Theiler stage 11
+
+[Term]
+id: MmusDv:0000111
+name: Theiler stage 11a
+namespace: mouse_developmental_stage
+def: "Embryonic neurula stage during which the neural plate formation occurs and the amniotic cavity is sealed off into three distinct cavities - the amniotic cavity, the exocoelom and the ectoplacental cleft." [http://php.med.unsw.edu.au/embryology/index.php?title=Mouse_Stages#Theiler_Stage_11]
+synonym: "TS11a" EXACT []
+is_a: MmusDv:0000000 ! life cycle stage
+relationship: part_of MmusDv:0000017 ! Theiler stage 11
+
+[Typedef]
+id: immediately_preceded_by
+name: immediately_preceded_by
+namespace: mouse_stages_ontology
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+xref: RO:0002087
+is_a: preceded_by ! preceded_by
+
+[Typedef]
+id: part_of
+name: part of
+namespace: mouse_stages_ontology
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: preceded_by
+name: preceded_by
+namespace: mouse_stages_ontology
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+xref: BFO:0000062
+is_transitive: true
+
