@@ -1,0 +1,18 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?uberon_curie ?curie
+WHERE {
+  ?term a owl:Class .
+  ?term <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?uberon_curie .
+  FILTER(isIRI(?term) && regex(str(?uberon_curie), "UBERON:"))
+	BIND(
+		IF(	
+			regex(str(?term), "http[:][/][/]www[.]ebi[.]ac[.]uk[/]efo[/]EFO[_]")
+				|| regex(str(?term), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]")
+				|| regex(str(?term), "http[:][/][/]www[.]orpha.net[/]ORDO[/]"),
+			REPLACE(
+				REPLACE(STR(?term), "http[:][/][/]purl[.]obolibrary[.]org[/]obo[/]|http[:][/][/]www[.]ebi[.]ac[.]uk[/]efo[/]|http[:][/][/]www[.]orpha.net[/]ORDO[/]", "", "i"),
+			"[_]", ":", "i")
+			,?term) 
+		AS ?curie)
+}
