@@ -208,7 +208,10 @@ uberon.json.gz: uberon.json
 
 # remember to git mv - this replaces uberon-simple
 # TODO: ensure relaxation is properly implemented; see for example craniofacial suture
-basic.owl:  uberon.owl
+old-uberon.owl: ext.owl
+	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
+
+basic.owl:  old-uberon.owl
 	owltools $(UCAT) $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@
 basic.obo: basic.owl
 	$(MAKEOBO)
