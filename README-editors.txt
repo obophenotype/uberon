@@ -165,5 +165,13 @@ Need to import CARO, but this will require some work particularly
 aligning FMA and others (we have removed the disjointness between
 material and immaterial in our current version).
 
+Importing new Uberon terms in CL:
 
+If you have ODK tools installed locally:
+From the CL repo, in /src/ontology, run:
+sh run.sh make refresh-uberon
 
+If you don't have ODK tools installed locally:
+Add the term(s) you need to uberon_terms.txt (full path: https://github.com/obophenotype/cell-ontology/blob/master/src/ontology/imports/uberon_terms.txt), using either github or your local text editor.
+Make a pull request and tag Shawn (shawntanzk) and Nico (matentzn), asking that they refresh the import for you.
+Next time you pull, you will see the new terms and axioms. Note, some terms will get through just by chance, others need to be added in that term file.
