@@ -1,0 +1,88 @@
+id: uberon
+title: "Uberon multi-species anatomy ontology"
+github_org: obophenotype
+repo: uberon
+#report_fail_on: ERROR
+report_fail_on: None
+use_dosdps: FALSE
+export_formats:
+  - owl
+  - obo
+  - json
+namespaces: 
+  - http://purl.obolibrary.org/obo/UBERON_
+  - http://purl.obolibrary.org/obo/uberon#
+release_artefacts: 
+  - base
+  - full
+  - simple
+  - custom-ext
+  - custom-basic
+  - custom-merged
+  - custom-core
+  - custom-composite-metazoan
+  - custom-composite-metazoan-basic
+  - custom-composite-vertebrate
+  - custom-composite-vertebrate-basic
+edit_format: obo
+import_group:
+  release_imports: TRUE
+  products:
+    - id: pr
+      is_large: TRUE
+      use_gzipped: TRUE
+    - id: cl
+    - id: go
+    - id: envo 
+    - id: ro
+    - id: bspo
+    - id: chebi
+      is_large: TRUE
+      use_gzipped: TRUE
+    - id: pato
+    - id: ncbitaxon
+      is_large: TRUE
+      use_gzipped: TRUE
+    - id: nbo
+    # Pipeline dependencies (not directly imported)
+    - id: ceph
+    - id: cteno
+    - id: ehdaa2
+    - id: emapa
+    - id: fbbt
+    - id: fbdv
+    - id: ma
+    - id: poro
+    - id: wbbt
+    - id: wbls
+    - id: xao
+    - id: zfa
+    - id: caro
+    # fma
+    # allen: dhba, dmba, hba, mba, pba
+subset_group:
+  products:
+    - id: appendicular-minimal
+    - id: circulatory-minimal
+    - id: cranial-minimal
+    - id: cumbo
+    - id: digestive-minimal
+    - id: efo-slim
+    - id: excretory-minimal
+    - id: human-view
+    - id: immune-minimal
+    - id: life-stages-core
+    - id: merged-partonomy
+    - id: metazoan-view
+    - id: mouse-view
+    - id: musculoskeletal-minimal
+    - id: nephron-minimal
+    - id: nervous-minimal
+    - id: pulmonary-minimal
+    - id: reproductive-minimal
+    - id: sensory-minimal
+    - id: xenopus-view
+    - id: amniote-basic
+    - id: euarchontoglires-basic
+robot_java_args: '-Xmx20G'
+create_obo_metadata: FALSE

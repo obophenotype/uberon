@@ -1,0 +1,82 @@
+ontology: uberon/bridge/uberon-bridge-to-hsapdv
+data-version: 2021-07-20
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
+
+[Term]
+id: HsapDv:0000002 ! 
+property_value: IAO:0000589 "embryo stage (HsapDv)" xsd:string
+intersection_of: UBERON:0000068 ! embryo stage
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:0000001 ! 
+property_value: IAO:0000589 "life cycle (HsapDv)" xsd:string
+intersection_of: UBERON:0000104 ! life cycle
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:0000000 ! 
+property_value: IAO:0000589 "life cycle stage (HsapDv)" xsd:string
+intersection_of: UBERON:0000105 ! life cycle stage
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:0000006 ! 
+property_value: IAO:0000589 "blastula stage (HsapDv)" xsd:string
+intersection_of: UBERON:0000108 ! blastula stage
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:0000010 ! 
+property_value: IAO:0000589 "gastrula stage (HsapDv)" xsd:string
+intersection_of: UBERON:0000109 ! gastrula stage
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:0000012 ! 
+property_value: IAO:0000589 "neurula stage (HsapDv)" xsd:string
+intersection_of: UBERON:0000110 ! neurula stage
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:0000015 ! 
+property_value: IAO:0000589 "organogenesis stage (HsapDv)" xsd:string
+intersection_of: UBERON:0000111 ! organogenesis stage
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:0000082 ! 
+property_value: IAO:0000589 "neonate stage (HsapDv)" xsd:string
+intersection_of: UBERON:0007221 ! neonate stage
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:0000093 ! 
+property_value: IAO:0000589 "late adult stage (HsapDv)" xsd:string
+intersection_of: UBERON:0007222 ! late adult stage
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: HsapDv:ENTITY
+name: HsapDv entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:9606
+relationship: only_in_taxon NCBITaxon:9606
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/hsapdv#part_of
+equivalent_to: BFO:0000050
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/hsapdv#develops_from
+equivalent_to: RO:0002225
+
