@@ -30,4 +30,4 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           ROBOT_JAVA_ARGS: -Xmx6G
-        run: cd src/ontology && mkdir -p tmp reports && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' IMP=false test
+        run: cd src/ontology && mkdir -p tmp reports && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' IMP=false BRI=false MIR=false test
