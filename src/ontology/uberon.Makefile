@@ -1761,3 +1761,5 @@ diffs-%:
 .PHONY: dirs
 dirs:
 	mkdir -p tmp mirror reports
+
+test: uberon-qc
