@@ -33,4 +33,4 @@ jobs:
         run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' IMP=false BRI=false MIR=false test > TESTLOG.log
       - name: The job has failed
         if: ${{ failure() }}
-        run: tail -200 src/ontology/TESTLOG.log
+        run: tail -20 src/ontology/TESTLOG.log
