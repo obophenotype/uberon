@@ -676,7 +676,7 @@ $(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAM
 
 # TODO @cmungall: TRY again, CARO is worth fixing (SOP: take screenshot, make individual tickets with one explanation eachg)
 SKIPPED=$(REPORTDIR)/quick-bridge-check-wbbt.txt $(REPORTDIR)/bridge-check-caro.txt \
-				$(REPORTDIR)/quick-bridge-check-wbls.txt $(REPORTDIR)/bridge-check-wbls.owl
+				$(REPORTDIR)/quick-bridge-check-wbls.txt $(REPORTDIR)/bridge-check-wbls.txt
 $(SKIPPED): |  $(CATALOG_DYNAMIC)
 	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
 	#owltools --no-debug --catalog-xml $(CATALOG_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@ || true
