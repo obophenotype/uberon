@@ -30,7 +30,7 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           ROBOT_JAVA_ARGS: -Xmx6G
-        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' IMP=false BRI=false MIR=false test > TESTLOG.log
+        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' BRI=false test > TESTLOG.log
       - name: Last rows of QC report
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
