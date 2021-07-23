@@ -942,8 +942,8 @@ cl-core-new.obo: cell-ontology/cl.obo
 # this is required for bridging axioms; ZFA inverts the usual directionality
 # TODO review directionality!!!
 $(TMPDIR)/cl-zfa-xrefs.obo: mirror/zfa.owl
-	$(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv
-	cat $@_xrefs_to_zfa.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv &&\
+	cat $@_xrefs_to_zfa.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@; fi
 
 
 	#blip-findall -r ZFA "entity_xref(Z,C),id_idspace(C,'CL')" -select C-Z -use_tabs -no_pred | $(SCRIPTSDIR)/tbl2obolinks.pl  --rel xref > $@
@@ -970,8 +970,9 @@ $(REPORTDIR)/%-allcycles: %.owl
 
 # TODO @matentzn make ticket with report
 $(REPORTDIR)/basic-allcycles: basic.owl
-	echo "STRONG WARNING: $@ skipped, because currently failing."
-	owltools --no-debug $< --list-cycles -f > $@ || true
+	owltools --no-debug $< --list-cycles -f > $@
+
+test: $(REPORTDIR)/basic-allcycles
 
 #%-synclash: %.obo
 #	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
