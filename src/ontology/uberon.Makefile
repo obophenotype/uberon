@@ -970,8 +970,9 @@ $(REPORTDIR)/%-allcycles: %.owl
 
 # TODO @matentzn make ticket with report
 $(REPORTDIR)/basic-allcycles: basic.owl
-	echo "STRONG WARNING: $@ skipped, because currently failing."
-	owltools --no-debug $< --list-cycles -f > $@ || true
+	owltools --no-debug $< --list-cycles -f > $@
+
+test: $(REPORTDIR)/basic-allcycles
 
 #%-synclash: %.obo
 #	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
