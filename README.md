@@ -1,7 +1,7 @@
 ![Build Status](https://github.com/obophenotype/uberon/workflows/CI/badge.svg)
 <!--[![DOI](https://zenodo.org/badge/13996/obophenotype/uberon.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/uberon)-->
 
-Uberon is a multi-species anatomy ontology.
+# Uberon - a multi-species anatomy ontology
 
 This repository contains the ontology *source*, and is primarily of
 relevance to Uberon editors/developers.
