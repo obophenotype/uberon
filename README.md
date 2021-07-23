@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/obophenotype/uberon.svg?branch=master)](https://travis-ci.org/obophenotype/uberon)
+![Build Status](https://github.com/obophenotype/uberon/workflows/CI/badge.svg)
 <!--[![DOI](https://zenodo.org/badge/13996/obophenotype/uberon.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/uberon)-->
 
 Uberon is a multi-species anatomy ontology.
@@ -13,7 +13,7 @@ download the compiled versions of the ontology, please visit
 ## Content
 
 This repository contains the editors version of the ontology
-(uberon_edit.obo), and the material required to make a release.
+(src/ontology/uberon-edit.obo), and the material required to make a release.
 
 ## Editors:
 
