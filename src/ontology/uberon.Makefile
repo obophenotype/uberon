@@ -90,7 +90,7 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
 # TODO: Huge number of printouts that pollute the general logs
 $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	owltools $(UCAT) $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@.tmp
+	owltools --no-logging $(UCAT) $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@.tmp
 	$(ROBOT) query -i $@.tmp --update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru -o $@
 
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
@@ -164,9 +164,6 @@ ext.obo: ext.owl
 	owltools $(UCAT) $< --merge-import-closure  -o -f obo --no-check $@.tmp && mv $@.tmp $@
 #	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f $(RELSLIM) // -o -f obo --no-check $@.tmp && mv $@.tmp $@
 
-ext.json: ext.owl
-	$(MAKEJSON)
-
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
 # ----------------------------------------
@@ -188,10 +185,6 @@ uberon.owl: ext.owl
 uberon.obo: uberon.owl
 	$(MAKEOBO)
 .PRECIOUS: uberon.obo
-
-uberon.json: uberon.owl
-	$(MAKEJSON)
-.PRECIOUS: uberon.json
 
 uberon.yaml: uberon.owl
 	$(MAKEYAML)
