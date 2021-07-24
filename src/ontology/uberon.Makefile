@@ -159,11 +159,6 @@ ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 	unmerge -i $(TMP_REFL) \
 	annotate -O $(URIBASE)/uberon/$@ -V  $(RELEASE)/$@ -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
-# ext.obo is a relation subset of this. TODO: use case?
-ext.obo: ext.owl
-	owltools $(UCAT) $< --merge-import-closure  -o -f obo --no-check $@.tmp && mv $@.tmp $@
-#	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f $(RELSLIM) // -o -f obo --no-check $@.tmp && mv $@.tmp $@
-
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
 # ----------------------------------------
@@ -172,8 +167,6 @@ ext.obo: ext.owl
 # TODO: do we need this intermediate step? Used for subsets
 merged.owl: ext.owl
 	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@
-merged.obo: merged.owl
-	owltools $< -o -f obo --no-check $@.tmp && mv $@.tmp $@
 
 # strip imports and dangling references
 # owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
@@ -1756,3 +1749,61 @@ diffs-%:
 .PHONY: dirs
 dirs:
 	mkdir -p tmp mirror reports
+
+normalise_release_serialisation_ofn:
+	sh ../scripts/normalisation/norm_ofn.sh ../../subsets/xenopus-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../subsets/human-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../subsets/mouse-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/human-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/mouse-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/xenopus-view.owl
+
+normalise_release_serialisation_rdfmxml:
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../ext.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../core.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-base.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../merged.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/caro_import.owl src/ontology/imports/fbbt_import.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/amniote-basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/appendicular-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/circulatory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/cranial-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/cumbo.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/digestive-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/efo-slim.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/euarchontoglires-basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/excretory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/immune-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/life-stages-core.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/merged-partonomy.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/musculoskeletal-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/nephron-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/nervous-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/pulmonary-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/reproductive-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/sensory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/amniote-basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/appendicular-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/circulatory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/cranial-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/cumbo.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/digestive-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/efo-slim.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/euarchontoglires-basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/excretory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/immune-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/life-stages-core.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/merged-partonomy.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/musculoskeletal-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/nephron-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/nervous-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/pulmonary-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/reproductive-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/sensory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-simple.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon.owl
+
+normalise_release: 
+	make normalise_release_serialisation_rdfmxml -B
+	make normalise_release_serialisation_ofn -B
