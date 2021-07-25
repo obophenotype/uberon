@@ -1803,6 +1803,7 @@ normalise_release_serialisation_rdfmxml:
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/sensory-minimal.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-simple.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/fbbt_import.owl
 
 normalise_release: 
 	make normalise_release_serialisation_rdfmxml -B
