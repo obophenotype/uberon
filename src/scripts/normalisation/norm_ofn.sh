@@ -18,7 +18,7 @@ sed -E "s/Annotation[(](oboInOwl[:]source [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:
 sed -E "s/Annotation[(](oboInOwl[:]source [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]source [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]source [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
-sed -E "s/AnnotationAssertion[(](oboInOwl[:]hasDbXref [^)]*)[)]/AnnotationAssertion(\1^^xsd:string)/" |\
+sed -E "s/AnnotationAssertion[(](oboInOwl[:]hasDbXref [^)]*[\"])[)]/AnnotationAssertion(\1^^xsd:string)/" |\
 sed -E "s/[ ][(]produced[_]by[)]/ (produced by)/" |\
 sed -E "s/[ ][(]capable[_]of[)]/ (capable of)/" |\
 sed -E "s/[ ][(]developmentally[_]replaces[)]/ (developmentally replaces)/" |\
