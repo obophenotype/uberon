@@ -18,7 +18,13 @@ sed -E "s/Annotation[(](oboInOwl[:]source [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:
 sed -E "s/Annotation[(](oboInOwl[:]source [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]source [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]source [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
+sed -E "s/Annotation[(](oboInOwl[:]notes [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
+sed -E "s/Annotation[(](oboInOwl[:]notes [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
+sed -E "s/Annotation[(](oboInOwl[:]notes [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
+sed -E "s/Annotation[(](oboInOwl[:]date_retrieved [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
+sed -E "s/Annotation[(](oboInOwl[:]date_retrieved [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/AnnotationAssertion[(](oboInOwl[:]hasDbXref [^)]*[\"])[)]/AnnotationAssertion(\1^^xsd:string)/" |\
+sed -E "s/AnnotationAssertion[(](oboInOwl[:]created_by [^)]*[\"])[)]/AnnotationAssertion(\1^^xsd:string)/" |\
 sed -E "s/[ ][(]produced[_]by[)]/ (produced by)/" |\
 sed -E "s/[ ][(]capable[_]of[)]/ (capable of)/" |\
 sed -E "s/[ ][(]developmentally[_]replaces[)]/ (developmentally replaces)/" |\
@@ -48,6 +54,9 @@ sed -E "s/[ ][(]distalmost_part_of[)]/ (distalmost part of)/" |\
 sed -E "s/[ ][(]located_in[)]/ (located in)/" |\
 sed -E "s/[ ][(]attaches_to_part_of[)]/ (attaches to part of)/" |\
 sed -E "s/[ ][(]surrounded_by[)]/ (surrounded by)/" |\
+sed -E "s/[ ][(]attaches_to_part_of[)]/ (attaches to part of)/" |\
+sed -E "s/[ ][(]has_muscle_antagonist[)]/ (has_muscle antagonist)/" |\
+sed -E "s/[ ][(]has_boundary[)]/ (has boundary)/" |\
 sed -E "s/[ ][(]capable[_]of[)]/ (capable of)/" >$1.tmp
 mv $1.tmp $1
 
