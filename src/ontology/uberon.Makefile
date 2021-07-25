@@ -1808,3 +1808,6 @@ normalise_release_serialisation_rdfmxml:
 normalise_release: 
 	make normalise_release_serialisation_rdfmxml -B
 	make normalise_release_serialisation_ofn -B
+
+normalise_robot: .FORCE
+	$(ROBOT) convert -i $(SRC) -f obo --check false -o $(SRC)
