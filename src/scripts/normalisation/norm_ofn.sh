@@ -11,6 +11,8 @@ sed -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^x
 sed -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
+sed -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
+sed -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]external_ontology [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]external_ontology [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
 sed -E "s/Annotation[(](oboInOwl[:]external_ontology [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" |\
@@ -43,6 +45,7 @@ sed -E "s/[ ][(]participates[_]in[)]/ (participates in)/" |\
 sed -E "s/[ ][(]continuous[_]with[)]/ (continuous with)/" |\
 sed -E "s/[ ][(]only[_]in[_]taxon[)]/ (only in taxon)/" |\
 sed -E "s/[ ][(]never[_]in[_]taxon[)]/ (never in taxon)/" |\
+sed -E "s/[ ][(]present[_]in[_]taxon[)]/ (present in taxon)/" |\
 sed -E "s/[ ][(]serially[_]homologous[_]to[)]/ (serially homologous to)/" |\
 sed -E "s/[ ][(]has[_]component[)]/ (has component)/" |\
 sed -E "s/[ ][(]posterior_to[)]/ (posterior to)/" |\
@@ -55,7 +58,7 @@ sed -E "s/[ ][(]located_in[)]/ (located in)/" |\
 sed -E "s/[ ][(]attaches_to_part_of[)]/ (attaches to part of)/" |\
 sed -E "s/[ ][(]surrounded_by[)]/ (surrounded by)/" |\
 sed -E "s/[ ][(]attaches_to_part_of[)]/ (attaches to part of)/" |\
-sed -E "s/[ ][(]has_muscle_antagonist[)]/ (has_muscle antagonist)/" |\
+sed -E "s/[ ][(]has_muscle_antagonist[)]/ (has muscle antagonist)/" |\
 sed -E "s/[ ][(]has_boundary[)]/ (has boundary)/" |\
 sed -E "s/[ ][(]capable[_]of[)]/ (capable of)/" >$1.tmp
 mv $1.tmp $1
