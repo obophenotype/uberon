@@ -169,9 +169,9 @@
 
 
 
-### participates_in `http://purl.obolibrary.org/obo/RO_0000056`
+### participates in `http://purl.obolibrary.org/obo/RO_0000056`
 #### Removed
-- [participates_in](http://purl.obolibrary.org/obo/RO_0000056) [label](http://www.w3.org/2000/01/rdf-schema#label) "participates in" 
+- [participates in](http://purl.obolibrary.org/obo/RO_0000056) [label](http://www.w3.org/2000/01/rdf-schema#label) "participates in" 
 
 
 
