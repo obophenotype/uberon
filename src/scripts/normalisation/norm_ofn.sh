@@ -64,5 +64,5 @@ sed -E "s/[ ][(]capable[_]of[)]/ (capable of)/" >$1.tmp
 mv $1.tmp $1
 
 echo "Checking if still parses with normal robot"
-robot convert -i $1 -o $1.tmp.owl
+robot --catalog catalog-v001.xml convert -i $1 -o $1.tmp.owl
 rm $1.tmp.owl
