@@ -1811,6 +1811,7 @@ normalise_release_serialisation_rdfmxml:
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/fbbt_import.owl
 
+.PHONY: normalise_release
 normalise_release: 
 	make normalise_release_serialisation_rdfmxml -B
 	make normalise_release_serialisation_ofn -B
