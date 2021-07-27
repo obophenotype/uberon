@@ -203,10 +203,10 @@ basic.owl:  old-uberon.owl
 basic.obo: basic.owl
 	$(MAKEOBO)
 
-subsets/efo-slim.owl: basic.owl
-	owltools $(UCAT) $< --extract-ontology-subset --subset efo_slim --iri $(URIBASE)/uberon/$@ -o $@
-subsets/efo-slim.obo: subsets/efo-slim.owl
-	$(MAKEOBO)
+#subsets/efo-slim.owl: basic.owl
+#	owltools $(UCAT) $< --extract-ontology-subset --subset efo_slim --iri $(URIBASE)/uberon/$@ -o $@
+#subsets/efo-slim.obo: subsets/efo-slim.owl
+#	$(MAKEOBO)
 subsets/cumbo.owl: basic.owl
 	owltools $(UCAT) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
 subsets/cumbo.obo: subsets/cumbo.owl
@@ -1779,7 +1779,6 @@ normalise_release_serialisation_rdfmxml:
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/cranial-minimal.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/cumbo.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/digestive-minimal.owl
-	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/efo-slim.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/euarchontoglires-basic.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/excretory-minimal.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/immune-minimal.owl
@@ -1797,7 +1796,6 @@ normalise_release_serialisation_rdfmxml:
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/cranial-minimal.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/cumbo.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/digestive-minimal.owl
-	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/efo-slim.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/euarchontoglires-basic.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/excretory-minimal.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/immune-minimal.owl
@@ -1813,6 +1811,7 @@ normalise_release_serialisation_rdfmxml:
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/fbbt_import.owl
 
+.PHONY: normalise_release
 normalise_release: 
 	make normalise_release_serialisation_rdfmxml -B
 	make normalise_release_serialisation_ofn -B
