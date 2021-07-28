@@ -1834,4 +1834,4 @@ test_obsolete:
 test_owlaxioms:
 	! grep "owl-axioms: " uberon-edit.obo
 
-#test: test_owlaxioms 
+test: test_owlaxioms 
