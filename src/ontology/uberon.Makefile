@@ -1828,7 +1828,7 @@ obocheck:
 test_obsolete:
 	! grep "! obsolete" uberon-edit.obo
 
-#test: test_obsolete
+test: test_obsolete
 
 .PHONY: test_owlaxioms
 test_owlaxioms:
