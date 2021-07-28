@@ -87,11 +87,12 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
 
 # TODO issues/contributor.owl not being updated atm.
 # TODO: for the seeds to be correctly imported, we probably need to merge phenoscape in here
+# TODO: Huge number of printouts that pollute the general logs
 $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	owltools $(UCAT) $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@.tmp
-	$(ROBOT) query -i $@.tmp --update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru -o $@
-	
+	owltools --no-logging $(UCAT) $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@.tmp &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@.tmp
+	$(ROBOT) query -i $@.tmp --update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru --update $(SPARQLDIR)/remove_axioms.ru -o $@
+
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
 
@@ -158,14 +159,6 @@ ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 	unmerge -i $(TMP_REFL) \
 	annotate -O $(URIBASE)/uberon/$@ -V  $(RELEASE)/$@ -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
-# ext.obo is a relation subset of this. TODO: use case?
-ext.obo: ext.owl
-	owltools $(UCAT) $< --merge-import-closure  -o -f obo --no-check $@.tmp && mv $@.tmp $@
-#	owltools $(UCAT) $< --merge-import-closure  --make-subset-by-properties -f $(RELSLIM) // -o -f obo --no-check $@.tmp && mv $@.tmp $@
-
-ext.json: ext.owl
-	$(MAKEJSON)
-
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
 # ----------------------------------------
@@ -174,22 +167,17 @@ ext.json: ext.owl
 # TODO: do we need this intermediate step? Used for subsets
 merged.owl: ext.owl
 	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@
-merged.obo: merged.owl
-	owltools $< -o -f obo --no-check $@.tmp && mv $@.tmp $@
 
 # strip imports and dangling references
-uberon.owl: ext.owl
-	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
+# owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
 
+uberon.owl: ext.owl
+	$(ROBOT) merge -i $< annotate -O $(URIBASE)/$@ -V  $(RELEASE)/$@ -o $@
 
 # also do OE check here
 uberon.obo: uberon.owl
 	$(MAKEOBO)
 .PRECIOUS: uberon.obo
-
-uberon.json: uberon.owl
-	$(MAKEJSON)
-.PRECIOUS: uberon.json
 
 uberon.yaml: uberon.owl
 	$(MAKEYAML)
@@ -207,15 +195,18 @@ uberon.json.gz: uberon.json
 
 # remember to git mv - this replaces uberon-simple
 # TODO: ensure relaxation is properly implemented; see for example craniofacial suture
-basic.owl:  uberon.owl
+old-uberon.owl: ext.owl
+	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
+
+basic.owl:  old-uberon.owl
 	owltools $(UCAT) $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@
 basic.obo: basic.owl
 	$(MAKEOBO)
 
-subsets/efo-slim.owl: basic.owl
-	owltools $(UCAT) $< --extract-ontology-subset --subset efo_slim --iri $(URIBASE)/uberon/$@ -o $@
-subsets/efo-slim.obo: subsets/efo-slim.owl
-	$(MAKEOBO)
+#subsets/efo-slim.owl: basic.owl
+#	owltools $(UCAT) $< --extract-ontology-subset --subset efo_slim --iri $(URIBASE)/uberon/$@ -o $@
+#subsets/efo-slim.obo: subsets/efo-slim.owl
+#	$(MAKEOBO)
 subsets/cumbo.owl: basic.owl
 	owltools $(UCAT) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
 subsets/cumbo.obo: subsets/cumbo.owl
@@ -389,7 +380,7 @@ $(TMPDIR)/local-%.obo: $(TMPDIR)/local-%.owl
 # if [ $(MIR) = true ] && [ $(IMP) = true ]; then command; fi
 # No TBox; use an OP seed that is derived from a separate sparql query
 imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl reports/uberon-edit-object-properties.csv
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m STAR -T reports/uberon-edit-object-properties.csv annotate -O $(URIBASE)/uberon/ro.owl -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m STAR -T reports/uberon-edit-object-properties.csv annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && owltools $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
 
 imports/pato_import.owl: mirror/pato.owl $(TMPDIR)/seed.owl
 	if [ $(IMP) = true ]; then owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
@@ -409,6 +400,14 @@ imports/chebi_import.owl: mirror/chebi.owl $(TMPDIR)/seed.owl
 
 imports/pr_import.owl: mirror/pr.owl $(TMPDIR)/seed.owl
 	if [ $(IMP) = true ]; then owltools $(UCAT) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pr.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
+
+imports/fbbt_import.owl: mirror/fbbt.owl imports/fbbt_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/fbbt_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru --update $(SPARQLDIR)/remove_axioms.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: imports/%_import.owl
 
 # TODO - use full taxonomy
 #ncbitaxon.owl: 
@@ -938,8 +937,8 @@ cl-core-new.obo: cell-ontology/cl.obo
 # this is required for bridging axioms; ZFA inverts the usual directionality
 # TODO review directionality!!!
 $(TMPDIR)/cl-zfa-xrefs.obo: mirror/zfa.owl
-	$(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv
-	cat $@_xrefs_to_zfa.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv &&\
+	cat $@_xrefs_to_zfa.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@; fi
 
 
 	#blip-findall -r ZFA "entity_xref(Z,C),id_idspace(C,'CL')" -select C-Z -use_tabs -no_pred | $(SCRIPTSDIR)/tbl2obolinks.pl  --rel xref > $@
@@ -966,8 +965,9 @@ $(REPORTDIR)/%-allcycles: %.owl
 
 # TODO @matentzn make ticket with report
 $(REPORTDIR)/basic-allcycles: basic.owl
-	echo "STRONG WARNING: $@ skipped, because currently failing."
-	owltools --no-debug $< --list-cycles -f > $@ || true
+	owltools --no-debug $< --list-cycles -f > $@
+
+test: $(REPORTDIR)/basic-allcycles
 
 #%-synclash: %.obo
 #	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
@@ -1757,3 +1757,64 @@ diffs-%:
 .PHONY: dirs
 dirs:
 	mkdir -p tmp mirror reports
+
+normalise_release_serialisation_ofn:
+	sh ../scripts/normalisation/norm_ofn.sh ../../subsets/xenopus-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../subsets/human-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../subsets/mouse-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/human-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/mouse-view.owl
+	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/xenopus-view.owl
+
+normalise_release_serialisation_rdfmxml:
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../ext.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../core.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-base.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../merged.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/caro_import.owl src/ontology/imports/fbbt_import.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/amniote-basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/appendicular-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/circulatory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/cranial-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/cumbo.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/digestive-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/euarchontoglires-basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/excretory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/immune-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/life-stages-core.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/merged-partonomy.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/musculoskeletal-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/nephron-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/nervous-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/pulmonary-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/reproductive-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/sensory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/amniote-basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/appendicular-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/circulatory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/cranial-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/cumbo.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/digestive-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/euarchontoglires-basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/excretory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/immune-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/life-stages-core.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/merged-partonomy.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/musculoskeletal-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/nephron-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/nervous-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/pulmonary-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/reproductive-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../subsets/sensory-minimal.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-simple.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/fbbt_import.owl
+
+.PHONY: normalise_release
+normalise_release: 
+	make normalise_release_serialisation_rdfmxml -B
+	make normalise_release_serialisation_ofn -B
+
+normalise_robot: .FORCE
+	$(ROBOT) convert -i $(SRC) -f obo --check false -o $(SRC)
