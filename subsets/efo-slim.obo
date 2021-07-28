@@ -153,7 +153,6 @@ xref: UMLS:C0022131 {source="ncithesaurus:Islet_of_Langerhans"}
 xref: VHOG:0000646
 xref: Wikipedia:Islets_of_Langerhans
 xref: XAO:0000159
-relationship: develops_from UBERON:0000925 ! endoderm
 relationship: fma_set_term FMA:76489
 relationship: part_of UBERON:0000016 ! endocrine pancreas
 
@@ -252,6 +251,7 @@ xref: VHOG:0000399
 xref: Wikipedia:Peripheral_nervous_system
 xref: XAO:0000178
 xref: ZFA:0000142
+relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -654,7 +654,6 @@ xref: UMLS:C0041951 {source="ncithesaurus:Ureter"}
 xref: VHOG:0000605
 xref: Wikipedia:Ureter
 xref: XAO:0000144
-relationship: develops_from UBERON:0005721 ! pronephric mesoderm
 relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: part_of UBERON:0001008 ! renal system
 relationship: part_of UBERON:0002355 {xref="MA:0000378"} ! pelvic region of trunk
@@ -689,6 +688,7 @@ xref: VHOG:0001264
 xref: Wikipedia:Urethra
 xref: XAO:0000153
 relationship: develops_from UBERON:0000926 ! mesoderm
+relationship: part_of UBERON:0001008 ! renal system
 
 [Term]
 id: UBERON:0000059
@@ -843,7 +843,7 @@ xref: Wikipedia:Glomerulus
 xref: ZFA:0001288
 is_a: UBERON:0000064 ! organ part
 relationship: develops_from UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0005721 ! pronephric mesoderm
+relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0002113 ! kidney
 created_by: Melissa Haendel
@@ -1150,7 +1150,6 @@ xref: ZFA:0001184
 is_a: UBERON:0008897 ! fin
 relationship: develops_from UBERON:0002531 ! paired fin bud
 relationship: develops_from UBERON:0005420 ! pelvic appendage bud
-relationship: part_of UBERON:0000475 ! organism subdivision
 
 [Term]
 id: UBERON:0000155
@@ -1179,7 +1178,6 @@ xref: TAO:0001113
 xref: Wikipedia:Theca_of_follicle
 xref: ZFA:0001113
 relationship: part_of UBERON:0000064 ! organ part
-relationship: part_of UBERON:0000992 ! ovary
 
 [Term]
 id: UBERON:0000160
@@ -1318,7 +1316,6 @@ property_value: dc-contributor https://github.com/cmungall
 property_value: dc-contributor https://github.com/tmeehan
 relationship: develops_from UBERON:0006596 ! presumptive blood
 relationship: immediate_transformation_of UBERON:0006596 {source="Bgee:AN"} ! presumptive blood
-relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: part_of UBERON:0002390 ! hematopoietic system
 
 [Term]
@@ -2075,6 +2072,7 @@ xref: MIAA:0000339
 xref: NLX:146329
 xref: WBbt:0005829
 xref: Wikipedia:Ventral_nerve_cord
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: never_in_taxon NCBITaxon:7711
 relationship: part_of UBERON:0000475 ! organism subdivision
 relationship: part_of UBERON:0001017 ! central nervous system
@@ -2449,6 +2447,7 @@ xref: Wikipedia:Cornea
 xref: XAO:0000180
 xref: ZFA:0000640
 relationship: develops_from UBERON:0001048 ! primordium
+relationship: develops_from UBERON:0007284 ! presumptive neural plate
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0002416 ! integumental system
 
@@ -2616,9 +2615,6 @@ is_a: UBERON:0001474 ! bone element
 is_a: UBERON:0002428 ! limb bone
 property_value: dc-contributor https://github.com/cmungall
 property_value: dc-contributor https://github.com/mellybelly
-relationship: part_of UBERON:0001460 ! arm
-relationship: part_of UBERON:0002091 ! appendicular skeleton
-relationship: part_of UBERON:0002472 ! stylopod
 
 [Term]
 id: UBERON:0000977
@@ -2707,6 +2703,7 @@ xref: Wikipedia:Tibia
 is_a: UBERON:0001474 ! bone element
 is_a: UBERON:0002428 ! limb bone
 is_a: UBERON:0003464 ! hindlimb bone
+relationship: part_of UBERON:0002091 ! appendicular skeleton
 relationship: part_of UBERON:0003823 ! hindlimb zeugopod
 
 [Term]
@@ -2748,7 +2745,6 @@ is_a: UBERON:0001474 ! bone element
 is_a: UBERON:0002428 ! limb bone
 is_a: UBERON:0003464 ! hindlimb bone
 relationship: part_of UBERON:0000376 {source="FMA"} ! hindlimb stylopod
-relationship: part_of UBERON:0002091 ! appendicular skeleton
 
 [Term]
 id: UBERON:0000982
@@ -3132,8 +3128,7 @@ def: "external genital organs of the female mammal[WP]." [Wikipedia:Vulva]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
-synonym: "female pudendum" EXACT [BTO:0003101]
-synonym: "female pudendum" EXACT [FMA:20462]
+synonym: "female pudendum" EXACT [BTO:0003101, FMA:20462]
 synonym: "mammalian vulva" EXACT []
 synonym: "puboperineal region" EXACT [FMA:20462]
 synonym: "pudendum" RELATED [BTO:0003101]
@@ -3621,7 +3616,6 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 relationship: never_in_taxon NCBITaxon:6040
-relationship: part_of UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0001017
@@ -3666,7 +3660,9 @@ xref: VHOG:0000293
 xref: Wikipedia:Central_nervous_system
 xref: XAO:0000215
 xref: ZFA:0000012
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
+relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -3771,7 +3767,9 @@ xref: UMLS:C0018494 {source="ncithesaurus:Hair"}
 xref: VHOG:0001191
 xref: Wikipedia:Hair
 relationship: develops_from UBERON:0002073 ! hair follicle
+relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001003 {source="FMA"} ! skin epidermis
+relationship: part_of UBERON:0002416 ! integumental system
 
 [Term]
 id: UBERON:0001038
@@ -3854,7 +3852,6 @@ xref: XAO:0003227
 xref: ZFA:0000056
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001004 ! respiratory system
-relationship: part_of UBERON:0001007 ! digestive system
 
 [Term]
 id: UBERON:0001043
@@ -3896,7 +3893,6 @@ xref: XAO:0000127
 xref: ZFA:0000204
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001007 ! digestive system
 relationship: part_of UBERON:0002100 ! trunk
 
 [Term]
@@ -4355,7 +4351,6 @@ xref: SCTID:181614006
 xref: UMLS:C0011980 {source="ncithesaurus:Diaphragm"}
 xref: VHOG:0000713
 xref: Wikipedia:Thoracid_diaphragm
-relationship: develops_from UBERON:0003059 ! presomitic mesoderm
 relationship: never_in_taxon NCBITaxon:8782 {source="Wikipedia:Thoracic_diaphragm#Comparative_anatomy_and_evolution"}
 relationship: part_of UBERON:0001004 ! respiratory system
 relationship: part_of UBERON:0004479 ! musculature of trunk
@@ -4389,6 +4384,7 @@ xref: UMLS:C0021724 {source="ncithesaurus:Intercostal_Muscle"}
 xref: VHOG:0000903
 xref: Wikipedia:Intercostal_muscle
 relationship: develops_from UBERON:0002050 ! embryonic structure
+relationship: develops_from UBERON:0003059 ! presomitic mesoderm
 relationship: part_of UBERON:0001443 ! chest
 
 [Term]
@@ -4416,7 +4412,6 @@ xref: SCTID:181747008
 xref: UMLS:C0224362 {source="ncithesaurus:Musculus_Latissimus_Dorsi"}
 xref: VHOG:0000930
 xref: Wikipedia:Latissimus_dorsi_muscle
-relationship: part_of UBERON:0001015 ! musculature
 
 [Term]
 id: UBERON:0001130
@@ -4727,7 +4722,6 @@ xref: SCTID:362165006
 xref: UMLS:C0227389 {source="ncithesaurus:Descending_Colon"}
 xref: Wikipedia:Descending_colon
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001155 ! colon
 
 [Term]
@@ -4954,6 +4948,7 @@ xref: Wikipedia:Adrenal_cortex
 xref: XAO:0000165
 is_a: UBERON:0000064 ! organ part
 relationship: develops_from UBERON:0000926 {source="Wikipedia"} ! mesoderm
+relationship: develops_from UBERON:0007284 ! presumptive neural plate
 relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0000949 ! endocrine system
 relationship: part_of UBERON:0002530 ! gland
@@ -4992,8 +4987,6 @@ xref: UMLS:C0001629 {source="ncithesaurus:Adrenal_Medulla"}
 xref: VHOG:0001378
 xref: Wikipedia:Adrenal_medulla
 xref: XAO:0000166
-relationship: develops_from UBERON:0000926 ! mesoderm
-relationship: develops_from UBERON:0007284 ! presumptive neural plate
 relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0000949 ! endocrine system
 relationship: part_of UBERON:0002530 ! gland
@@ -5141,6 +5134,7 @@ relationship: develops_from UBERON:0005256 ! trunk mesenchyme
 relationship: develops_from UBERON:0011004 ! pharyngeal arch cartilage
 relationship: dubious_for_taxon NCBITaxon:8570 {source="Wikipedia"}
 relationship: never_in_taxon NCBITaxon:32443 {source="Wikipedia"}
+relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001464 ! hip
 relationship: part_of UBERON:0001474 ! bone element
 relationship: part_of UBERON:0007832 {source="VSAO"} ! pelvic girdle skeleton
@@ -5233,7 +5227,7 @@ xref: UMLS:C0014533 {source="ncithesaurus:Epididymis"}
 xref: VHOG:0001265
 xref: Wikipedia:Epididymis
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0005721 ! pronephric mesoderm
+relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000079 ! male reproductive system
 
@@ -5363,7 +5357,7 @@ xref: VHOG:0001363
 xref: Wikipedia:Seminiferous_tubule
 xref: XAO:0003088
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000926 ! mesoderm
+relationship: develops_from UBERON:0005294 ! gonadal ridge
 relationship: part_of UBERON:0000473 ! testis
 
 [Term]
@@ -6070,7 +6064,6 @@ xref: SCTID:181620007
 xref: UMLS:C0224234 {source="ncithesaurus:Deltoid"}
 xref: VHOG:0000846
 xref: Wikipedia:Deltoid_muscle
-relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: develops_from UBERON:0003059 ! presomitic mesoderm
 relationship: part_of UBERON:0001015 ! musculature
 
@@ -6437,6 +6430,7 @@ xref: XAO:0000115
 xref: ZFA:0000082
 is_a: UBERON:0001981 ! blood vessel
 relationship: fma_set_term FMA:63814
+relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0001645
@@ -6513,7 +6507,6 @@ xref: UMLS:C0035327 {source="ncithesaurus:Retinal_Vein"}
 xref: Wikipedia:Central_retinal_vein
 is_a: UBERON:0001981 ! blood vessel
 relationship: develops_from UBERON:0001981 ! blood vessel
-relationship: develops_from UBERON:0007284 ! presumptive neural plate
 relationship: part_of UBERON:0000033 ! head
 relationship: part_of UBERON:0000970 ! eye
 relationship: part_of UBERON:0001017 ! central nervous system
@@ -6571,8 +6564,6 @@ is_a: UBERON:0001714 ! cranial ganglion
 property_value: dc-contributor https://github.com/ANiknejad
 property_value: dc-contributor https://github.com/cmungall
 property_value: dc-contributor https://github.com/mellybelly
-relationship: develops_from UBERON:0003070 ! trigeminal placode complex
-relationship: develops_from UBERON:0005563 ! trigeminal neural crest
 
 [Term]
 id: UBERON:0001684
@@ -6607,6 +6598,7 @@ xref: SCTID:181812008
 xref: UMLS:C0024687 {source="ncithesaurus:Mandible"}
 xref: Wikipedia:Human_mandible
 is_a: UBERON:0004742 ! dentary
+relationship: develops_from UBERON:0007284 ! presumptive neural plate
 
 [Term]
 id: UBERON:0001690
@@ -6732,6 +6724,7 @@ relationship: develops_from UBERON:0001714 ! cranial ganglion
 relationship: develops_from UBERON:0003078 ! epibranchial placode
 relationship: develops_from UBERON:0003849 ! mesencephalic neural crest
 relationship: develops_from UBERON:0007213 ! mesenchyme derived from head neural crest
+relationship: develops_from UBERON:0007284 ! presumptive neural plate
 
 [Term]
 id: UBERON:0001705
@@ -6794,7 +6787,6 @@ xref: SCTID:362637005
 xref: VHOG:0000453
 xref: Wikipedia:Lower_jaw
 is_a: UBERON:0000475 ! organism subdivision
-relationship: part_of UBERON:0000165 ! mouth
 
 [Term]
 id: UBERON:0001714
@@ -6955,6 +6947,7 @@ xref: VSAO:0000034
 xref: Wikipedia:Oropharynx
 xref: XAO:0004048
 is_a: UBERON:0000064 ! organ part
+relationship: develops_from UBERON:0000925 ! endoderm
 relationship: part_of UBERON:0001007 ! digestive system
 relationship: part_of UBERON:0001042 ! chordate pharynx
 
@@ -7048,7 +7041,6 @@ xref: VHOG:0001279
 xref: Wikipedia:Larynx
 xref: XAO:0003081
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000925 ! endoderm
 relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
@@ -7136,8 +7128,6 @@ xref: VHOG:0000101
 xref: Wikipedia:Iris_(anatomy)
 xref: XAO:0000185
 xref: ZFA:0001238
-relationship: develops_from UBERON:0000924 ! ectoderm
-relationship: develops_from UBERON:0003071 ! eye primordium
 relationship: part_of UBERON:0000033 ! head
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000970 ! eye
@@ -7243,6 +7233,7 @@ xref: UMLS:C0029127 {source="ncithesaurus:Optic_Disc"}
 xref: VHOG:0000551
 xref: Wikipedia:Optic_disc
 is_a: UBERON:0000064 ! organ part
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0000966 ! retina
 
 [Term]
@@ -7306,9 +7297,6 @@ xref: Wikipedia:Lacrimal_gland
 xref: Wikipedia:Preorbital_gland
 is_a: UBERON:0002530 ! gland
 relationship: never_in_taxon NCBITaxon:8570 {source="PMID:7559104"}
-relationship: part_of UBERON:0000033 ! head
-relationship: part_of UBERON:0000064 ! organ part
-relationship: part_of UBERON:0000970 ! eye
 
 [Term]
 id: UBERON:0001828
@@ -7415,6 +7403,7 @@ xref: XAO:0000197
 xref: ZFA:0000374
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001474 ! bone element
+relationship: part_of UBERON:0001690 ! ear
 relationship: part_of UBERON:0001846 ! internal ear
 relationship: part_of UBERON:0003128 ! cranium
 
@@ -7560,7 +7549,6 @@ xref: UMLS:C0039485 {source="BIRNLEX:1160"}
 xref: UMLS:C1268978 {source="BIRNLEX:1160"}
 xref: Wikipedia:Temporal_lobe
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 
 [Term]
@@ -7594,7 +7582,6 @@ xref: UMLS:C0030560 {source="BIRNLEX:1148"}
 xref: UMLS:C0030560 {source="ncithesaurus:Parietal_Lobe_of_the_Brain"}
 xref: Wikipedia:Parietal_lobe
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 
 [Term]
@@ -8378,6 +8365,7 @@ xref: Wikipedia:Pineal_gland
 xref: XAO:0000160
 xref: ZFA:0000019
 is_a: UBERON:0002530 ! gland
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0000949 ! endocrine system
 relationship: part_of UBERON:0001899 ! epithalamus
 relationship: present_in_taxon NCBITaxon:117569 {source="Hardisty, p. 310"}
@@ -8922,6 +8910,7 @@ xref: NCIT:C49221
 xref: TAO:0001499
 xref: UMLS:C1179544 {source="ncithesaurus:Esophageal_Epithelium"}
 xref: ZFA:0001499
+relationship: part_of UBERON:0001007 ! digestive system
 relationship: part_of UBERON:0001043 ! esophagus
 
 [Term]
@@ -8963,7 +8952,6 @@ xref: Wikipedia:Blood_vessel
 xref: XAO:0001011
 xref: ZFA:0005314
 relationship: develops_from UBERON:0006965 {source="GO:0072360"} ! vascular cord
-relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0001982
@@ -8995,6 +8983,7 @@ xref: Wikipedia:Capillary
 xref: XAO:0000116
 xref: ZFA:0005250
 is_a: UBERON:0001981 {source="FMA", source="MA", source="XAO"} ! blood vessel
+relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0001986
@@ -9015,6 +9004,7 @@ xref: NCIT:C12481
 xref: SCTID:27168002
 xref: UMLS:C0014257 {source="ncithesaurus:Endothelium"}
 relationship: develops_from UBERON:0000926 {possible_exception="UBERON:0001985", source="FMA-inferred"} ! mesoderm
+relationship: part_of UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0001987
@@ -9159,6 +9149,7 @@ xref: TAO:0001155
 xref: UMLS:C0206111 {source="BIRNLEX:1166"}
 xref: Wikipedia:Enteric_nervous_system
 xref: ZFA:0001155
+relationship: develops_from UBERON:0007284 ! presumptive neural plate
 relationship: part_of UBERON:0000010 ! peripheral nervous system
 
 [Term]
@@ -9265,7 +9256,6 @@ xref: UMLS:C0028785 {source="BIRNLEX:1136"}
 xref: UMLS:C0028785 {source="ncithesaurus:Occipital_Lobe"}
 xref: Wikipedia:Occipital_lobe
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 
 [Term]
@@ -9597,7 +9587,6 @@ xref: UMLS:C0024109 {source="ncithesaurus:Lung"}
 xref: VHOG:0000310
 xref: Wikipedia:Lung
 xref: XAO:0000119
-relationship: develops_from UBERON:0000925 ! endoderm
 relationship: develops_from UBERON:0005597 ! lung primordium
 relationship: never_in_taxon NCBITaxon:32443 {editor="BGEE:fb", source="https://github.com/obophenotype/uberon/issues/701"}
 relationship: never_in_taxon NCBITaxon:7777 {editor="BGEE:fb", source="https://github.com/obophenotype/uberon/issues/701"}
@@ -9760,6 +9749,7 @@ relationship: develops_from UBERON:0001003 ! skin epidermis
 relationship: develops_from UBERON:0001048 ! primordium
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001003 {source="FMA"} ! skin epidermis
+relationship: part_of UBERON:0002416 ! integumental system
 
 [Term]
 id: UBERON:0002081
@@ -9914,8 +9904,7 @@ synonym: "s. interventriculare cordis" RELATED LATIN [Wikipedia:Interventricular
 synonym: "septum inferius" RELATED [Wikipedia:Interventricular_septum]
 synonym: "septum membranaceum" RELATED [Wikipedia:Interventricular_septum]
 synonym: "ventricle septum" RELATED []
-synonym: "ventricular septum" RELATED [Wikipedia:Interventricular_septum]
-synonym: "ventricular septum" RELATED [MA:0000085]
+synonym: "ventricular septum" RELATED [MA:0000085, Wikipedia:Interventricular_septum]
 xref: BTO:0002483
 xref: EFO:0001956
 xref: EHDAA:2603
@@ -9962,7 +9951,6 @@ xref: SCTID:181469002
 xref: UMLS:C1123023 {source="ncithesaurus:Skin"}
 xref: Wikipedia:Skin
 xref: XAO:0000023
-relationship: part_of UBERON:0002416 ! integumental system
 
 [Term]
 id: UBERON:0002100
@@ -10164,7 +10152,6 @@ xref: VHOG:0000120
 xref: Wikipedia:Spleen
 xref: XAO:0000328
 xref: ZFA:0000436
-relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: develops_from UBERON:0001048 ! primordium
 relationship: part_of UBERON:0000916 ! abdomen
 relationship: part_of UBERON:0001007 ! digestive system
@@ -10294,9 +10281,7 @@ xref: VHOG:0000221
 xref: Wikipedia:Gallbladder
 xref: XAO:0000135
 xref: ZFA:0000208
-relationship: develops_from UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000925 ! endoderm
-relationship: develops_from UBERON:0001048 ! primordium
+relationship: develops_from UBERON:0003894 ! liver primordium
 relationship: never_in_taxon NCBITaxon:10114 {source="ISBN:9780120749034"}
 relationship: never_in_taxon NCBITaxon:8801 {source="GOC:mr", source="ISBN:9781840761122"}
 relationship: never_in_taxon NCBITaxon:8930 {source="GOC:mr", source="ISBN:9781840761122"}
@@ -10741,6 +10726,7 @@ xref: VHOG:0000262
 xref: Wikipedia:Bronchus
 xref: XAO:0000121
 relationship: never_in_taxon NCBITaxon:8507 {source="Wikipedia"}
+relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001004 ! respiratory system
 
 [Term]
@@ -10851,6 +10837,7 @@ xref: TAO:0000030
 xref: UMLS:C0229451 {source="ncithesaurus:Macula_of_Utricle"}
 xref: Wikipedia:Macula_of_utricle
 xref: ZFA:0000030
+relationship: part_of UBERON:0001690 ! ear
 relationship: part_of UBERON:0002518 ! otolith organ
 
 [Term]
@@ -10887,9 +10874,11 @@ xref: UMLS:C0029207 {source="ncithesaurus:Organ_of_Corti"}
 xref: UMLS:C0029207 {source="BIRNLEX:2526"}
 xref: VHOG:0001567
 xref: Wikipedia:Organ_of_Corti
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: dubious_for_taxon NCBITaxon:8292
 relationship: dubious_for_taxon NCBITaxon:8457
 relationship: part_of UBERON:0000064 ! organ part
+relationship: part_of UBERON:0001032 ! sensory system
 relationship: part_of UBERON:0001846 ! internal ear
 relationship: present_in_taxon NCBITaxon:40674
 
@@ -11406,6 +11395,7 @@ xref: FMA:87217
 xref: MA:0002572
 xref: SCTID:181301002
 is_a: UBERON:0000064 ! organ part
+relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0001515 ! thoracic aorta
 
 [Term]
@@ -11519,7 +11509,6 @@ xref: UMLS:C0004247 {source="ncithesaurus:Atrioventricular_Node"}
 xref: VHOG:0001474
 xref: Wikipedia:Atrioventricular_node
 xref: ZFA:0005070
-relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0002350 ! conducting system of heart
 
 [Term]
@@ -11648,6 +11637,7 @@ xref: VHOG:0001261
 xref: Wikipedia:Prostate
 is_a: UBERON:0002530 ! gland
 relationship: develops_from UBERON:0000925 ! endoderm
+relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: develops_from UBERON:0007688 ! anlage
 relationship: part_of UBERON:0000079 ! male reproductive system
 
@@ -11688,8 +11678,6 @@ xref: Wikipedia:Thymus
 xref: XAO:0000163
 xref: ZFA:0001078
 is_a: UBERON:0002530 ! gland
-relationship: develops_from UBERON:0000925 ! endoderm
-relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: develops_from UBERON:0005562 {source="ZFA"} ! thymus primordium
 relationship: part_of UBERON:0000475 ! organism subdivision
 relationship: part_of UBERON:0000949 {source="XAO"} ! endocrine system
@@ -11992,6 +11980,7 @@ xref: ZFA:0005023
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0002423 ! hepatobiliary system
 relationship: develops_from UBERON:0003061 {evidence="definitional"} ! blood island
+relationship: part_of UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0002391
@@ -12085,6 +12074,7 @@ xref: Wikipedia:Vertebra
 xref: XAO:0004019
 xref: ZFA:0001189
 is_a: UBERON:0001474 ! bone element
+relationship: develops_from UBERON:0003059 ! presomitic mesoderm
 relationship: develops_from UBERON:0011004 ! pharyngeal arch cartilage
 relationship: never_in_taxon NCBITaxon:7901 {source="Wikipedia"}
 relationship: part_of UBERON:0001130 ! vertebral column
@@ -12525,6 +12515,7 @@ xref: MIAA:0000165
 xref: WBbt:0005178
 xref: Wikipedia:Ovotestis
 relationship: develops_from UBERON:0005564 ! gonad primordium
+relationship: part_of UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0002538
@@ -12735,6 +12726,7 @@ xref: SCTID:279167001
 xref: UMLS:C0152302 {source="ncithesaurus:Postcentral_Gyrus"}
 xref: UMLS:C0152302 {source="BIRNLEX:1070"}
 xref: Wikipedia:Postcentral_gyrus
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001872 ! parietal lobe
 
 [Term]
@@ -12795,6 +12787,7 @@ xref: SCTID:279166005
 xref: UMLS:C0152296 {source="BIRNLEX:1303"}
 xref: UMLS:C0152296 {source="ncithesaurus:Superior_Frontal_Convolution"}
 xref: Wikipedia:Superior_frontal_gyrus
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001870 ! frontal cortex
 
 [Term]
@@ -12859,6 +12852,7 @@ xref: NCIT:C33393
 xref: UMLS:C0152299 {source="BIRNLEX:1455"}
 xref: UMLS:C0152299 {source="ncithesaurus:Precentral_Gyrus"}
 xref: Wikipedia:Precentral_gyrus
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001870 ! frontal cortex
 
 [Term]
@@ -12897,7 +12891,6 @@ xref: UMLS:C0175196 {source="BIRNLEX:1508"}
 xref: UMLS:C0175196 {source="ncithesaurus:Entorhinal_Cortex"}
 xref: Wikipedia:Entorhinal_cortex
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0000956 ! cerebral cortex
 relationship: part_of UBERON:0001871 ! temporal lobe
 relationship: part_of UBERON:0005366 ! olfactory lobe
@@ -12995,6 +12988,7 @@ is_a: UBERON:0001714 {source="ZFA"} ! cranial ganglion
 relationship: develops_from UBERON:0001714 ! cranial ganglion
 relationship: develops_from UBERON:0003849 ! mesencephalic neural crest
 relationship: develops_from UBERON:0007213 ! mesenchyme derived from head neural crest
+relationship: develops_from UBERON:0007284 ! presumptive neural plate
 
 [Term]
 id: UBERON:0002924
@@ -13180,6 +13174,7 @@ xref: XAO:0000056
 xref: ZFA:0000031
 relationship: develops_from UBERON:0006599 ! presumptive hypochord
 relationship: immediate_transformation_of UBERON:0006599 {source="Bgee:AN"} ! presumptive hypochord
+relationship: part_of UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0003059
@@ -13455,7 +13450,6 @@ relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: develops_from UBERON:0004880 ! chordamesoderm
 relationship: develops_from UBERON:0007286 ! presumptive floor plate
 relationship: immediate_transformation_of UBERON:0007286 ! presumptive floor plate
-relationship: part_of UBERON:0002050 ! embryonic structure
 
 [Term]
 id: UBERON:0003083
@@ -13554,7 +13548,6 @@ synonym: "aorta-gonads-mesonephros region" RELATED [XAO:0003051]
 synonym: "DLP" EXACT [XAO:0003051]
 xref: AAO:0011008
 xref: XAO:0003051
-relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0002390 {source="XAO"} ! hematopoietic system
 
@@ -13748,6 +13741,7 @@ xref: EMAPA:16165
 xref: TAO:0001434
 xref: VHOG:0000300
 xref: ZFA:0001434
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0003079 ! floor plate
 
@@ -13795,6 +13789,7 @@ xref: EFO:0000811
 xref: MA:0002547
 xref: XAO:0003050
 is_a: UBERON:0001013 ! adipose tissue
+relationship: part_of UBERON:0000990 ! reproductive system
 
 [Term]
 id: UBERON:0003464
@@ -14043,7 +14038,6 @@ xref: VHOG:0000796
 xref: ZFA:0000935
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0003099 {source="ZFA"} ! cranial neural crest
-relationship: develops_from UBERON:0007284 ! presumptive neural plate
 
 [Term]
 id: UBERON:0003850
@@ -14110,7 +14104,6 @@ xref: VHOG:0001670
 xref: Wikipedia:Vertebral_arch
 xref: ZFA:0001066
 is_a: UBERON:0001474 ! bone element
-relationship: part_of UBERON:0002412 ! vertebra
 
 [Term]
 id: UBERON:0003881
@@ -14578,8 +14571,6 @@ xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1372
 xref: NCIT:C34111
 xref: UMLS:C1511061 {source="ncithesaurus:Basal_Plate"}
 xref: Wikipedia:Basal_plate_(neural_tube)
-relationship: develops_from UBERON:0000924 ! ectoderm
-relationship: part_of UBERON:0001016 ! nervous system
 relationship: part_of UBERON:0002050 ! embryonic structure
 
 [Term]
@@ -14717,6 +14708,9 @@ xref: NCIT:C34161
 xref: TAO:0000360
 xref: XAO:0000337
 xref: ZFA:0000360
+relationship: develops_from UBERON:0001048 ! primordium
+relationship: develops_from UBERON:0007005 ! cardiogenic splanchnic mesoderm
+relationship: develops_from UBERON:0007688 ! anlage
 relationship: part_of UBERON:0000922 ! embryo
 
 [Term]
@@ -14750,6 +14744,7 @@ xref: FMA:242003
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=91
 xref: UMLS:C0152301 {source="BIRNLEX:1049"}
 xref: Wikipedia:Orbitofrontal_cortex
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001870 {source="GO", source="MP"} ! frontal cortex
 
 [Term]
@@ -15006,8 +15001,6 @@ xref: VHOG:0001022
 xref: ZFA:0000191
 is_a: UBERON:0001474 ! bone element
 relationship: develops_from UBERON:0002067 ! dermis
-relationship: develops_from UBERON:0003099 ! cranial neural crest
-relationship: develops_from UBERON:0007284 ! presumptive neural plate
 relationship: part_of UBERON:0001710 ! lower jaw region
 relationship: part_of UBERON:0004288 ! skeleton
 
@@ -15036,7 +15029,6 @@ is_a: UBERON:0001474 ! bone element
 property_value: dc-contributor https://github.com/alex-dececchi
 property_value: dc-contributor https://github.com/cmungall
 relationship: develops_from UBERON:0002067 ! dermis
-relationship: develops_from UBERON:0007284 ! presumptive neural plate
 relationship: develops_from UBERON:0011004 ! pharyngeal arch cartilage
 relationship: part_of UBERON:0001710 ! lower jaw region
 
@@ -15053,8 +15045,10 @@ xref: EFO:0003542
 xref: TAO:0000575
 xref: ZFA:0000575
 is_a: UBERON:0001474 ! bone element
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: develops_from UBERON:0003932 ! cartilage element of chondrocranium
 relationship: develops_from UBERON:0011004 ! pharyngeal arch cartilage
+relationship: part_of UBERON:0003128 ! cranium
 
 [Term]
 id: UBERON:0004801
@@ -15104,6 +15098,7 @@ xref: UMLS:C1706824 {source="ncithesaurus:Aorta_Endothelium"}
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0000947 ! aorta
 relationship: part_of UBERON:0000947 ! aorta
+relationship: part_of UBERON:0004535 ! cardiovascular system
 
 [Term]
 id: UBERON:0004880
@@ -15179,7 +15174,6 @@ xref: SCTID:258971005
 xref: TAO:0001112
 xref: Wikipedia:Membrana_granulosa
 xref: ZFA:0001112
-relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000992 ! ovary
 
@@ -15339,6 +15333,8 @@ xref: VHOG:0000685
 xref: Wikipedia:Inferior_ganglion_of_vagus_nerve
 is_a: UBERON:0001714 ! cranial ganglion
 relationship: develops_from UBERON:0003078 ! epibranchial placode
+relationship: develops_from UBERON:0003099 ! cranial neural crest
+relationship: develops_from UBERON:0007284 ! presumptive neural plate
 
 [Term]
 id: UBERON:0005366
@@ -15359,7 +15355,6 @@ xref: NCIT:C33204
 xref: UMLS:C0178780 {source="ncithesaurus:Olfactory_Lobe"}
 xref: VHOG:0000833
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 relationship: part_of UBERON:0001893 ! telencephalon
 
@@ -15539,7 +15534,6 @@ xref: TAO:0001385
 xref: VHOG:0001066
 xref: ZFA:0001385
 is_a: UBERON:0002050 ! embryonic structure
-relationship: part_of UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0005420 ! pelvic appendage bud
 
 [Term]
@@ -15608,7 +15602,6 @@ xref: UMLS:C0448345 {source="ncithesaurus:Hyoid_Muscle"}
 xref: VHOG:0001494
 xref: ZFA:0000521
 is_a: UBERON:0000933 ! pharyngeal muscle
-relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: develops_from UBERON:0006904 ! head mesenchyme from mesoderm
 
 [Term]
@@ -15632,6 +15625,7 @@ xref: VHOG:0001372
 xref: XAO:0004091
 xref: ZFA:0001178
 relationship: develops_from UBERON:0000924 {source="https://github.com/obophenotype/uberon/wiki/The-neural-crest"} ! ectoderm
+relationship: part_of UBERON:0000468 ! multicellular organism
 
 [Term]
 id: UBERON:0005499
@@ -16023,7 +16017,6 @@ xref: XAO:0001002
 is_a: UBERON:0001048 {source="XAO"} ! primordium
 relationship: develops_from UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001007 ! digestive system
 relationship: part_of UBERON:0001048 ! primordium
 
 [Term]
@@ -16150,7 +16143,6 @@ xref: NCIT:C12803
 xref: SCTID:280694002
 xref: UMLS:C0040573 {source="ncithesaurus:Trabecular_Meshwork"}
 xref: Wikipedia:Trabecular_meshwork
-relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0000033 ! head
 relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0000970 ! eye
@@ -16400,6 +16392,7 @@ xref: AAO:0000472
 xref: EFO:0003462
 xref: TAO:0001334
 xref: ZFA:0001334
+relationship: part_of UBERON:0000922 ! embryo
 
 [Term]
 id: UBERON:0006601
@@ -16939,7 +16932,6 @@ xref: EFO:0003424
 xref: TAO:0000063
 xref: ZFA:0000063
 relationship: develops_from UBERON:0000924 ! ectoderm
-relationship: part_of UBERON:0000922 ! embryo
 
 [Term]
 id: UBERON:0007285
@@ -17294,7 +17286,7 @@ xref: AAO:0001004
 xref: EFO:0003513
 xref: TAO:0000243
 xref: ZFA:0000243
-relationship: develops_from UBERON:0009955 ! neurogenic placode
+relationship: develops_from UBERON:0000924 ! ectoderm
 
 [Term]
 id: UBERON:0008930
@@ -17494,7 +17486,6 @@ xref: EFO:0003705
 xref: TAO:0005042
 xref: ZFA:0005042
 is_a: UBERON:0000926 {source="ZFA"} ! mesoderm
-relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: part_of UBERON:0000926 ! mesoderm
 
 [Term]
@@ -17524,8 +17515,6 @@ synonym: "pancreatic ductal epithelium" EXACT [FMA:67681]
 xref: EFO:0002556
 xref: FMA:67681
 relationship: develops_from UBERON:0000924 {source="FMA-inferred"} ! ectoderm
-relationship: develops_from UBERON:0000925 ! endoderm
-relationship: part_of UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001264 ! pancreas
 relationship: part_of UBERON:0002530 ! gland
 
@@ -17635,7 +17624,6 @@ xref: VHOG:0000511
 xref: ZFA:0001272
 property_value: dc-contributor https://github.com/cmungall
 property_value: dc-contributor https://github.com/mellybelly
-relationship: develops_from UBERON:0002539 ! pharyngeal arch
 relationship: develops_from UBERON:0007284 ! presumptive neural plate
 relationship: part_of UBERON:0000165 ! mouth
 relationship: part_of UBERON:0004288 ! skeleton
@@ -17661,6 +17649,7 @@ xref: UMLS:C0017558 {source="ncithesaurus:Gill"}
 xref: VHOG:0001214
 xref: XAO:0000120
 xref: ZFA:0000354
+relationship: develops_from UBERON:0000925 ! endoderm
 relationship: develops_from UBERON:0001048 ! primordium
 relationship: develops_from UBERON:0002539 ! pharyngeal arch
 relationship: develops_from UBERON:0004117 ! pharyngeal pouch
@@ -17695,7 +17684,6 @@ xref: TAO:0001405
 xref: ZFA:0001405
 is_a: UBERON:0003932 {source="TAO"} ! cartilage element of chondrocranium
 relationship: develops_from UBERON:0005945 {source="ISBN:0073040584"} ! neurocranial trabecula
-relationship: part_of UBERON:0003112 ! olfactory region
 
 [Term]
 id: UBERON:0011606
@@ -17712,7 +17700,6 @@ xref: Wikipedia:Hyomandibula
 xref: ZFA:0000672
 is_a: UBERON:0001474 ! bone element
 relationship: develops_from UBERON:0011607 {source="TAO"} ! hyomandibular cartilage
-relationship: part_of UBERON:0004288 ! skeleton
 
 [Term]
 id: UBERON:0011607
@@ -17727,7 +17714,6 @@ xref: TAO:0001422
 xref: VHOG:0000688
 xref: ZFA:0001422
 is_a: UBERON:0011004 {source="TAO"} ! pharyngeal arch cartilage
-relationship: part_of UBERON:0004288 ! skeleton
 
 [Term]
 id: UBERON:0011634
@@ -17945,7 +17931,6 @@ xref: UMLS:C0016733 {source="BIRNLEX:928"}
 xref: UMLS:C0016733 {source="ncithesaurus:Frontal_Lobe"}
 xref: UMLS:C1268977 {source="BIRNLEX:928"}
 is_a: UBERON:0000064 ! organ part
-relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 
 [Term]
@@ -18279,7 +18264,6 @@ is_metadata_tag: true
 
 [Typedef]
 id: develops_from
-name: develops_from
 namespace: uberon
 xref: RO:0002202
 is_transitive: true
@@ -18433,12 +18417,11 @@ is_metadata_tag: true
 
 [Typedef]
 id: immediate_transformation_of
-name: immediate transformation of
 namespace: uberon
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: RO:0002495
-is_a: transformation_of ! transformation of
+is_a: transformation_of
 
 [Typedef]
 id: implements_design_pattern
@@ -18628,12 +18611,11 @@ is_metadata_tag: true
 
 [Typedef]
 id: transformation_of
-name: transformation of
 namespace: uberon
 synonym: "transforms from" EXACT [SIO:000657]
 xref: RO:0002494
 is_transitive: true
-is_a: develops_from ! develops_from
+is_a: develops_from
 
 [Typedef]
 id: vertebra_number

@@ -1,7 +1,17 @@
 format-version: 1.2
 ontology: uberon/subsets/life-stages-core.obo
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon core (generic stages only)" xsd:string
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012101>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012101> (perinatal stage)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n\n\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000068>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000069>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000092>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012101>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UBERON_0014405>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/UBERON_0012101> (perinatal stage)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000068>)))\nSubClassOf(<http://purl.obolibrary.org/obo/UBERON_0012101> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0000092>)))\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing <http://purl.obolibrary.org/obo/UBERON_0000069>)\nSubClassOf(owl:Nothing <http://purl.obolibrary.org/obo/UBERON_0014405>)\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
+
+[Term]
+id: BFO:0000001
+name: entity
+
+[Term]
+id: BFO:0000003
+name: occurrent
+is_a: BFO:0000001 ! entity
+relationship: part_of BFO:0000003 ! occurrent
 
 [Term]
 id: UBERON:0000000
@@ -9,6 +19,7 @@ name: processual entity
 namespace: uberon
 def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." [span:ProcessualEntity]
 subset: upper_level
+is_a: BFO:0000003 ! occurrent
 
 [Term]
 id: UBERON:0000066
@@ -25,6 +36,7 @@ xref: EFO:0001272
 xref: FBdv:00005369
 xref: WBls:0000041
 xref: XtroDO:0000084
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
@@ -51,6 +63,7 @@ xref: WBls:0000003
 xref: WBls:0000092
 xref: WBls:0000102
 xref: XAO:1000012
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 disjoint_from: UBERON:0000092 ! post-embryonic stage
 relationship: precedes UBERON:0000066 ! fully formed stage
@@ -159,6 +172,7 @@ xref: OGES:000024
 xref: WBls:0000022
 xref: WBls:0000093
 xref: WBls:0000103
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: preceded_by UBERON:0000068 ! embryo stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/344 xsd:anyURI
@@ -215,6 +229,7 @@ xref: VHOG:0000745
 xref: Wikipedia:Zygote
 xref: XAO:1000001
 xref: ZFS:0000001
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 property_value: seeAlso EMAPA:16033
@@ -238,6 +253,7 @@ xref: PdumDv:0000200
 xref: Wikipedia:Cleavage_(embryo)
 xref: XAO:1000004
 xref: ZFS:0000046
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0000106 ! zygote stage
 relationship: part_of UBERON:0000068 ! embryo stage
@@ -261,6 +277,7 @@ xref: WBls:0000005
 xref: Wikipedia:Blastula
 xref: XAO:1000003
 xref: ZFS:0000045
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000107 ! cleavage stage
@@ -290,6 +307,7 @@ xref: OGES:000019
 xref: WBls:0000010
 xref: XAO:1000005
 xref: ZFS:0000047
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000108 {source="BILS"} ! blastula stage
@@ -304,6 +322,7 @@ xref: BILS:0000110
 xref: HsapDv:0000012
 xref: MmusDv:0000017
 xref: XAO:1000006
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000109 ! gastrula stage
@@ -322,6 +341,7 @@ xref: MmusDv:0000018
 xref: OGES:000005
 xref: OGES:000032
 xref: Wikipedia:Organogenesis
+is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000110 ! neurula stage
@@ -737,24 +757,68 @@ relationship: part_of UBERON:0018685 ! nursing stage
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 
+[Term]
+id: UBERON:8000000
+name: first instar larva stage
+namespace: uberon
+def: "The first stage of instar larva stage." [IDOMAL:0000656]
+is_a: UBERON:0004730 ! instar larval stage
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: UBERON:8000001
+name: second instar larva stage
+namespace: uberon
+def: "The second stage of instar larva stage." [IDOMAL:0000657]
+is_a: UBERON:0004730 ! instar larval stage
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: UBERON:8000002
+name: third instar larva stage
+namespace: uberon
+def: "The third stage of instar larva stage." [IDOMAL:0000658]
+synonym: "third instar larva" EXACT []
+is_a: UBERON:0004730 ! instar larval stage
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: UBERON:8000003
+name: fourth instar larva stage
+namespace: uberon
+def: "The fourth stage of instar larva stage." [IDOMAL:0000659]
+synonym: "fourth instar larva" EXACT []
+is_a: UBERON:0004730 ! instar larval stage
+created_by: http://orcid.org/0000-0001-5208-3432
+
 [Typedef]
 id: has_part
 is_transitive: true
+is_a: RO:0002131
 
 [Typedef]
 id: immediately_preceded_by
 is_a: preceded_by
+inverse_of: RO:0002090
 
 [Typedef]
 id: part_of
 is_transitive: true
+is_a: RO:0002131
 inverse_of: has_part
 
 [Typedef]
 id: preceded_by
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
 is_transitive: true
+is_a: RO:0002086
+inverse_of: precedes
 
 [Typedef]
 id: precedes
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
 is_transitive: true
+is_a: RO:0002222
 
