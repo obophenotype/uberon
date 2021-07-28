@@ -1818,3 +1818,20 @@ normalise_release:
 
 normalise_robot: .FORCE
 	$(ROBOT) convert -i $(SRC) -f obo --check false -o $(SRC)
+
+.PHONY: obocheck
+obocheck:
+	fastobo-validator uberon-edit.obo
+#test: obocheck
+
+.PHONY: test_obsolete
+test_obsolete:
+	! grep "! obsolete" uberon-edit.obo
+
+#test: test_obsolete
+
+.PHONY: test_owlaxioms
+test_owlaxioms:
+	! grep "owl-axioms: " uberon-edit.obo
+
+#test: test_owlaxioms 
