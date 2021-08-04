@@ -1822,7 +1822,7 @@ normalise_robot: .FORCE
 .PHONY: obocheck
 obocheck:
 	fastobo-validator uberon-edit.obo
-#test: obocheck
+test: obocheck
 
 .PHONY: test_obsolete
 test_obsolete:
