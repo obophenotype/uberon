@@ -228,6 +228,10 @@ subsets/cumbo.obo: subsets/cumbo.owl
 # The typical pipeline (see uberon-qc) is to first make imports, then the rest of the release
 
 # merge BSPO into RO
+mirror/bspo.owl: mirror/bspo.trigger
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo.owl remove --select "BFO:* RO:*" --select "object-properties" --axioms "annotation" -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: mirror/bspo.owl
+
 mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/ro.owl mirror/bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
 
