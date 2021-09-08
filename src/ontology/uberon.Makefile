@@ -930,7 +930,7 @@ subsets/immaterial.obo: merged.owl
 # TODO: use --make-subset-by-properties
 # note: requires symlink to cl directory
 $(TMPDIR)/cl-core.obo: $(SRC)
-	owltools $(URIBASE)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-axiom-annotations --remove-imports-declarations -o -f obo --no-check $@
+	owltools $(URIBASE)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-dangling --remove-axiom-annotations --remove-imports-declarations -o -f obo --no-check $@
 #$(TMPDIR)/cl-core.obo: cell-ontology/cl.obo
 #	$(SCRIPTSDIR)/obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | grep -v ^equivalent | grep -v ^owl-axioms | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
 
