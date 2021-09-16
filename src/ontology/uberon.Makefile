@@ -228,6 +228,10 @@ subsets/cumbo.obo: subsets/cumbo.owl
 # The typical pipeline (see uberon-qc) is to first make imports, then the rest of the release
 
 # merge BSPO into RO
+mirror/bspo.owl: mirror/bspo.trigger
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo.owl remove --select "BFO:* RO:*" --select "object-properties" --axioms "annotation" -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: mirror/bspo.owl
+
 mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/ro.owl mirror/bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
 
@@ -926,7 +930,7 @@ subsets/immaterial.obo: merged.owl
 # TODO: use --make-subset-by-properties
 # note: requires symlink to cl directory
 $(TMPDIR)/cl-core.obo: $(SRC)
-	owltools $(URIBASE)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-axiom-annotations --remove-imports-declarations -o -f obo --no-check $@
+	owltools $(URIBASE)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-dangling --remove-axiom-annotations --remove-imports-declarations -o -f obo --no-check $@
 #$(TMPDIR)/cl-core.obo: cell-ontology/cl.obo
 #	$(SCRIPTSDIR)/obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | grep -v ^equivalent | grep -v ^owl-axioms | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
 
@@ -1822,7 +1826,7 @@ normalise_robot: .FORCE
 .PHONY: obocheck
 obocheck:
 	fastobo-validator uberon-edit.obo
-#test: obocheck
+test: obocheck
 
 .PHONY: test_obsolete
 test_obsolete:
@@ -1834,4 +1838,4 @@ test_obsolete:
 test_owlaxioms:
 	! grep "owl-axioms: " uberon-edit.obo
 
-#test: test_owlaxioms 
+test: test_owlaxioms 
